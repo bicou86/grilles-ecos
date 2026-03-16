@@ -48,6 +48,15 @@ Each evaluation grid is divided into sections (anamnesis, clinical reasoning, co
 - **Deployment type**: Static (publicDir: ".")
 - **No backend, no database, no authentication**
 
+## Notion Integration
+
+A Notion case library mirrors all 253 cases for workspace-level browsing:
+- **Hub page**: "Grilles ECOS – Cas Cliniques" (page ID: `32585631-48fa-8190-9f85-db4effe44263`)
+- **Database**: "Cas Cliniques ECOS" (DB ID: `674c7c65e534495b822c1e35ed3cf69d`, data source: `2d326552-e05b-4d54-a69e-107b3f06b5b7`)
+- **Schema**: Cas (title), Numéro (number), Catégorie (select), Démographie (text), URL (url)
+- **Views**: Default table, "Par catégorie" (board grouped by Catégorie), "Galerie" (gallery)
+- **Case URLs**: Point to the live app's dev domain; will need updating if the domain changes or the app is deployed to a custom domain
+
 ## External Dependencies
 
 None — all files are fully self-contained with no external CSS frameworks, JavaScript libraries, or API integrations. The only external resource is Google Fonts (Inter) loaded in `index.html`.
