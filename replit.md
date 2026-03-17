@@ -29,10 +29,23 @@ Preferred communication style: Simple, everyday language.
 
 - Real-time search with French diacritics normalization (NFD decomposition)
 - Category filter tabs with ARIA accessibility (tablist, aria-selected)
+- **Medical system filter dropdown** — 18 specialties classified using title + diagnosis keyword matching; each card has a `data-system` attribute; category + system filters combine via AND logic
+- **Clear filters button** — appears when any filter is active; resets all filters in one click
 - Dynamic card count that updates on filter/search
 - 3-column responsive grid (1 col on mobile, 2 on tablet, 3 on desktop)
 - Sections hide entirely when no cards match; "Aucun résultat" shown when nothing matches
 - Sticky toolbar that stays at top when scrolling
+- Triage case titles show short clean complaint names (not the long filename-based format)
+
+### Medical System Classification
+
+All 253 cases are classified into 18 specialties using keyword matching on title + diagnosis text + demographics:
+- Gastro-entérologie (33), Pédiatrie (27), Rhumatologie (26), Neurologie (23), Cardiologie (22)
+- Gynécologie (18), Pneumologie (18), Psychiatrie (14), Médecine générale (13)
+- Urologie/Néphrologie (11), Endocrinologie (9), ORL (8), Vasculaire (8), Urgences (7)
+- Ophtalmologie (6), Hématologie/Oncologie (4), Gériatrie (3), Dermatologie (3)
+
+Classification script: `/tmp/cases_enriched.json` (ephemeral; regenerate from index.html if needed)
 
 ### Scoring Structure (Individual Cases)
 
