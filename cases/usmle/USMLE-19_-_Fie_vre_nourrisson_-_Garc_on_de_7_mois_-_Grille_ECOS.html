@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE-19 - Fièvre nourrisson - Garçon de 7 mois - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE-19 - Fièvre nourrisson - Garçon de 7 mois</h1>
+            <p style="margin: 5px 0;">📍 Cabinet médical</p>
+            <p style="margin: 5px 0;">👤 La mère de Josh White, un garçon de 7 mois, vient au cabinet en se plaignant que son enfant a de la fièvre</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/37</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Motif principal <span class="patient-response">[Mon enfant a de la fièvre]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Motif principal" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de la fièvre <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Hier]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Température mesurée <span class="patient-response">[Je l'ai mesurée sur son front, et elle était de 38,3°C]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Symptômes respiratoires <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Écoulement nasal <span class="patient-response">[Oui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Toux <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Essoufflement <span class="patient-response">[Je pense que oui ; il respire rapidement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Signes de détresse <span class="patient-response">[Je n'ai pas remarqué de rétractions abdominales ni de dilatation des narines]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Symptômes ORL <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Tirer sur les oreilles <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Écoulement des oreilles <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Difficulté à avaler <span class="patient-response">[Je ne sais pas, mais il n'a rien mangé depuis hier et refuse de boire au biberon ou au sein]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Symptômes généraux <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">État général <span class="patient-response">[Il a l'air fatigué et irrité depuis hier]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changement d'appétit <span class="patient-response">[Il ne mange rien du tout]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Éruption cutanée <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tremblements/convulsions <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Symptômes digestifs et urinaires <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Nausées/vomissements <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Transit intestinal <span class="patient-response">[Non, pas de changement dans les habitudes intestinales ou la couleur/la consistance des selles]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Habitudes urinaires <span class="patient-response">[Non, pas de changement dans les habitudes urinaires, l'odeur ou la couleur de l'urine]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Habitudes de sommeil <span class="patient-response">[La nuit dernière, il n'a pas bien dormi et a pleuré quand je l'ai couché]</span> <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="2" data-criteria="Habitudes de sommeil" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Contacts et exposition <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Contacts malades famille <span class="patient-response">[Son frère de 3 ans a eu une infection des voies respiratoires supérieures il y a une semaine, mais il va bien maintenant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Crèche <span class="patient-response">[Oui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Contacts malades crèche <span class="patient-response">[Je ne sais pas]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Histoire médicale du nourrisson <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Vaccinations <span class="patient-response">[À jour]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-0" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dernier contrôle <span class="patient-response">[Il y a deux semaines, et tout allait bien avec lui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-1" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Histoire de naissance <span class="patient-response">[C'était un accouchement vaginal à 40 semaines sans complications]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-2" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Développement <span class="patient-response">[Poids, taille, et développement du langage normaux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-3" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Alimentation <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Type d'alimentation <span class="patient-response">[Je l'allaite, et je lui donne toutes les vitamines prescrites. Il refuse de téter depuis hier. Il mange aussi de la nourriture pour bébé 3x/j]</span></div>        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="2" data-criteria="Alimentation" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Antécédents médicaux <span class="patient-response">[Jaunisse dans la première semaine de vie]</span> <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a11" value="2" data-criteria="Antécédents médicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a11" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Antécédents chirurgicaux <span class="patient-response">[Aucun]</span> <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="2" data-criteria="Antécédents chirurgicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+<div class="criteria-row" id="criteria-a13">
+    <div>
+        <div class="criteria-text">13. Médicaments actuels <span class="patient-response">[Paracétamol]</span> <button class="comment-button" onclick="toggleComment('a13')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a13">
+            <textarea class="comment-textarea" id="comment-a13" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a13'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="2" data-criteria="Médicaments actuels" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a13">0</div>
+</div>
+<div class="criteria-row" id="criteria-a14">
+    <div>
+        <div class="criteria-text">14. Allergies médicamenteuses <span class="patient-response">[Non]</span> <button class="comment-button" onclick="toggleComment('a14')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a14">
+            <textarea class="comment-textarea" id="comment-a14" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a14'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="2" data-criteria="Allergies médicamenteuses" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a14">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/2</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Examen clinique non réalisé <span class="patient-response">[L'examen sera effectué après l'anamnèse]</span> <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="Examen clinique non réalisé" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/28</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Hypothèses diagnostiques <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">2 points si au moins 2 diagnostics pertinents mentionnés, 1 point si 1 diagnostic</div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Hypothèses diagnostiques" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Infections respiratoires</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Infection virale des voies respiratoires supérieures</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre modérée (38,3°C)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Rhinorrhée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Contact frère avec IVRS récente<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Collectivité (crèche)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge compatible<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Saison probable<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Tachypnée présente</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Examen clinique, panel viral si besoin</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Pneumonie</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Tachypnée/dyspnée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Refus alimentaire<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Contact infectieux récent<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Collectivité<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de toux<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de signes de lutte décrits</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Radiographie thoracique</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Bronchiolite débutante</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge < 2 ans<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Rhinorrhée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Tachypnée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Contact infectieux<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Difficultés alimentaires<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de toux<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de sibilants décrits</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Examen clinique, saturation O2</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Infections ORL</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Otite moyenne aiguë</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge (pic 6-24 mois)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irritabilité<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Refus alimentaire<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Troubles sommeil<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Post-IVRS fréquent<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Crèche (facteur risque)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de tirage d'oreilles</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Otoscopie pneumatique</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Infections graves</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Méningite</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irritabilité importante<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Refus alimentaire total<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Léthargie<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge à risque<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de convulsions<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vaccinations à jour</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Ponction lombaire si suspicion</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Bactériémie occulte</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre sans foyer<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge 3-36 mois<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Altération état général<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  T° < 39°C<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vaccinations à jour<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Source ORL probable</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Hémoculture, NFS, CRP</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Autres infections</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Infection urinaire</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre sans foyer évident<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Garçon < 1 an<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irritabilité<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Refus alimentaire<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de signes urinaires<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Source ORL probable</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ ECBU par cathétérisme</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Gastroentérite débutante</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Refus alimentaire<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Collectivité<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de vomissements<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de diarrhée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Transit normal</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Surveillance clinique</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens complémentaires de première intention <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Examen clinique complet avec otoscopie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Saturation en oxygène</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Si fièvre > 39°C ou mauvais état général : NFS, CRP</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Bandelette urinaire (si disponible) ou ECBU</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Radiographie thoracique si signes respiratoires</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens selon orientation clinique <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Panel viral respiratoire (VRS, grippe) si épidémie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hémoculture si suspicion bactériémie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ponction lombaire si signes méningés</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test antigénique streptocoque si > 3 ans</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Procalcitonine si doute infection bactérienne</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Prise en charge immédiate <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Traitement symptomatique</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Paracétamol 15mg/kg/dose toutes les 6h<br />
+            <span style="margin-left: 10px;">•</span> Alternance ibuprofène 10mg/kg si > 6 mois<br />
+            <span style="margin-left: 10px;">•</span> Hydratation orale fractionnée<br />
+            <span style="margin-left: 10px;">•</span> Désobstruction rhinopharyngée (sérum physiologique)<br />
+            <span style="margin-left: 10px;">•</span> Position semi-assise<br />
+            <span style="margin-left: 10px;">•</span> Surveillance température</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Critères d'hospitalisation</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Âge < 3 mois avec T° > 38°C<br />
+            <span style="margin-left: 10px;">•</span> Signes de gravité (détresse respiratoire)<br />
+            <span style="margin-left: 10px;">•</span> Déshydratation<br />
+            <span style="margin-left: 10px;">•</span> Suspicion méningite<br />
+            <span style="margin-left: 10px;">•</span> Échec traitement ambulatoire<br />
+            <span style="margin-left: 10px;">•</span> Contexte social défavorable</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Antibiothérapie selon étiologie</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> OMA : amoxicilline 80-90mg/kg/j si < 2 ans<br />
+            <span style="margin-left: 10px;">•</span> Pneumonie : amoxicilline ou amox-clav<br />
+            <span style="margin-left: 10px;">•</span> IU : céphalosporine orale<br />
+            <span style="margin-left: 10px;">•</span> Pas d'ATB si viral probable<br />
+            <span style="margin-left: 10px;">•</span> Attendre résultats si possible</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="2" data-criteria="Prise en charge immédiate" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Surveillance et conseils <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Surveillance température toutes les 4h</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hydratation régulière (petit volume)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Consulter si aggravation ou non amélioration 48h</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Signes d'alarme : somnolence, détresse respiratoire</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Éviction crèche jusqu'à apyrexie 24h</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Lavage des mains famille</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-5" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Information parentale <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Évolution naturelle infections virales (3-5 jours)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Importance hydratation</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Utilisation correcte antipyrétiques</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas d'antibiotiques si viral</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Consultation de contrôle si besoin</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-4" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Numéro urgence si aggravation</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-5" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+<div class="criteria-row" id="criteria-m7">
+    <div>
+        <div class="criteria-text">7. Signes d'alarme à communiquer <button class="comment-button" onclick="toggleComment('m7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Red Flags - Urgences pédiatriques</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Détresse respiratoire</div>
+                <div class="redflags-description">→ Tirage, battement ailes du nez = Hospitalisation urgente</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Altération de conscience</div>
+                <div class="redflags-description">→ Somnolence, difficile à réveiller = Urgence neurologique</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. Déshydratation</div>
+                <div class="redflags-description">→ Pli cutané, yeux cernés, oligurie = Réhydratation IV</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Purpura fébrile</div>
+                <div class="redflags-description">→ Méningococcémie = Urgence vitale, ATB immédiat</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">5. Convulsions</div>
+                <div class="redflags-description">→ Même si fébriles = Évaluation urgente</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m7">
+            <textarea class="comment-textarea" id="comment-m7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="2" data-criteria="Signes d'alarme à communiquer" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m7">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Clôture type</h4>
+                    <div class="cloture-content cloture-content-green">Madame White, la fièvre de votre enfant pourrait être due à une simple infection des voies respiratoires supérieures, ou elle pourrait être attribuable à une otite causée par un virus ou certains types de bactéries. Je voudrais l'examiner afin de mieux déterminer la cause de sa fièvre et d'exclure des causes plus graves, telles qu'une méningite. En plus d'un examen clinique détaillé, votre bébé pourrait avoir besoin de quelques analyses de sang, d'une analyse d'urine et peut-être d'une radiographie pulmonaire. Avez-vous des questions pour moi ?</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Questions difficiles à poser</h4>
+                    <div class="cloture-content">[Est-ce que mon bébé va bien aller ? Dois-je emmener mon bébé à l'hôpital ?]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse type du candidat</h4>
+                    <div class="cloture-content cloture-content-green">Je comprends que vous êtes inquiète et que vous voulez des réponses, mais je dois d'abord examiner votre enfant. Bien que je soupçonne qu'il s'agisse d'une infection virale, je dois m'assurer qu'il n'a rien de plus grave qui pourrait nécessiter un séjour à l'hôpital.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/87</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 👂 Otite moyenne aiguë (OMA) – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Contexte clinique</h5>
+<ul class="resume-subsection-points">
+<li>Enfant < 2 ans, souvent suite à une IVRS récente</li>
+<li>Symptômes d’apparition brutale : fièvre, pleurs, irritabilité</li>
+<li>Otalgie (généralement unilatérale)</li>
+<li>Tirage ou frottement de l’oreille</li>
+<li>Refus d’alimentation ou troubles du sommeil</li>
+<li>Vomissements, diarrhée parfois associés</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Facteurs de risque</h5>
+<ul class="resume-subsection-points">
+<li>Crèche ou collectivité</li>
+<li>Tabagisme passif</li>
+<li>Absence d’allaitement maternel</li>
+<li>ATCD d’OMA récidivantes</li>
+<li>Malformations ORL (ex. : fente palatine)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Otoscope</h5>
+<ul class="resume-subsection-points">
+<li>Tympan bombant, opaque, congestionné</li>
+<li>Abolition du triangle lumineux</li>
+<li>Mobilité réduite au test pneumatique</li>
+<li>Otorrhée si tympan perforé</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Autres signes</h5>
+<ul class="resume-subsection-points">
+<li>Fièvre modérée à élevée</li>
+<li>Irritabilité, pleurs</li>
+<li>Pas de signe de complication (mastodynie, raideur de nuque)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Pas d’examen systématique</h5>
+<ul class="resume-subsection-points">
+<li>Diagnostic clinique</li>
+<li>Pas de biologie sauf doute diagnostique ou complication</li>
+<li>Paracentèse rare, réservée aux échecs thérapeutiques ou formes compliquées</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Stratégie thérapeutique</h5>
+<ul class="resume-subsection-points">
+<li>Observation possible (≥ 2 ans, forme légère, unilatérale)</li>
+<li>ATB <span class="highlight-important">immédiat</span>s si < 6 mois, bilatérale < 2 ans, fièvre > 39°C, otorrhée, mauvais état général</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Antibiothérapie</h5>
+<ul class="resume-subsection-points">
+<li>Amoxicilline PO <span class="highlight-range">7-10</span> jours (<span class="highlight-range">80–90</span> mg/kg/j)</li>
+<li>Augmentin si échec ou conjonctivite associée</li>
+<li>Alternative si allergie : macrolide (azithromycine)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement symptomatique</h5>
+<ul class="resume-subsection-points">
+<li>Paracétamol ± ibuprofène</li>
+<li>Surveillance à <span class="highlight-range">48–72</span>h</li>
+<li>Hydratation et repos</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Complications à surveiller</h5>
+<ul class="resume-subsection-points">
+<li>Mastoïdite (douleur rétro-auriculaire, œdème)</li>
+<li>Perforation tympanique persistante</li>
+<li>Otite séreuse chronique</li>
+<li>Méningite (rare)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet">Toujours examiner les tympans avec un otoscope</li>
+<li class="resume-bullet highlight">Tympan bombant <span class="equals">=</span> signe clé</li>
+<li class="resume-bullet">Antibiothérapie pas systématique : dépend de l’âge et de la sévérité</li>
+<li class="resume-bullet highlight">Amoxicilline <span class="equals">=</span> traitement de 1ère intention</li>
+<li class="resume-bullet with-data">Surveillance rapprochée à <span class="highlight-range">48–72</span>h si traitement différé</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations de l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>Si l'étudiant-e demande après examen :</li>
+                <li>• Otoscopie : tympan droit bombé et rouge</li>
+                <li>• Auscultation : MV normaux, pas de râles</li>
+                <li>• Saturation : 96% air ambiant</li>
+                <li>• Gorge : pharynx érythémateux</li>
+                <li>• État hydratation : correct</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>OMA très fréquente à 7 mois</li>
+                <li>Signes OMA peuvent être frustes</li>
+                <li>Pneumonie possible sans toux</li>
+                <li>Méningite toujours à exclure</li>
+                <li>Hydratation prioritaire</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Ne pas examiner les tympans</li>
+                <li>Minimiser la tachypnée</li>
+                <li>Oublier risque déshydratation</li>
+                <li>ATB systématiques si viral</li>
+                <li>Ne pas expliquer signes alarme</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique concernant la vignette</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Diagnostic</h4>
+            <p>Otite moyenne aiguë droite sur surinfection post-virale, dans contexte d'infection respiratoire haute avec contage familial</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Épidémiologie fièvre du nourrisson</h4>
+            <p>Problème fréquent en pédiatrie :</p>
+            <ul>
+                <li>20-30% consultations pédiatriques</li>
+                <li>Pic incidence 6-24 mois</li>
+                <li>80% causes virales</li>
+                <li>OMA : complication 30% IVRS</li>
+                <li>Risque bactériémie : 1-2% si > 39°C</li>
+                <li>Méningite : 0,5% fièvres sans foyer</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Particularités du nourrisson fébrile</h4>
+            <p>Défis diagnostiques :</p>
+            <ul>
+                <li>Signes cliniques frustes</li>
+                <li>Examen difficile (pleurs)</li>
+                <li>Communication non verbale</li>
+                <li>Système immunitaire immature</li>
+                <li>Risque infection invasive plus élevé</li>
+                <li>Déshydratation rapide</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Otite moyenne aiguë</h4>
+            <p>Pathologie ORL la plus fréquente :</p>
+            <ul>
+                <li>Incidence : 50% avant 1 an, 80% avant 3 ans</li>
+                <li>Facteurs risque : crèche, tabagisme passif</li>
+                <li>Post-IVRS dans 70% cas</li>
+                <li>Pneumocoque, Haemophilus, Moraxella</li>
+                <li>Diagnostic : otoscopie bombement + rougeur</li>
+                <li>Épanchement seul ≠ OMA</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Critères diagnostiques OMA</h4>
+            <p>AAP 2013 :</p>
+            <ul>
+                <li>Début aigu</li>
+                <li>Épanchement rétrotympanique</li>
+                <li>ET inflammation tympan</li>
+                <li>Bombement modéré/sévère</li>
+                <li>OU otorrhée non traumatique</li>
+                <li>Otalgie ou irritabilité si non verbal</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Évaluation gravité nourrisson fébrile</h4>
+            <p>Échelle de Yale (YIOS) :</p>
+            <ul>
+                <li>Qualité des pleurs</li>
+                <li>Réaction stimulation parentale</li>
+                <li>État éveil</li>
+                <li>Couleur</li>
+                <li>Hydratation</li>
+                <li>Réponse sociale</li>
+                <li>Score > 10 = risque infection sévère</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Bilan paraclinique selon âge</h4>
+            <p>Recommandations actuelles :</p>
+            <ul>
+                <li>< 1 mois : bilan septique complet</li>
+                <li>1-3 mois + fièvre > 38°C : NFS, hémoculture, ECBU, ± PL</li>
+                <li>3-36 mois bien + T < 39°C : selon clinique</li>
+                <li>3-36 mois + T > 39°C : NFS, ECBU</li>
+                <li>Baisse seuil depuis vaccination Hib/pneumo</li>
+                <li>Biomarqueurs : CRP > PCT > GB</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Traitement OMA</h4>
+            <p>Approche différenciée :</p>
+            <ul>
+                <li>< 6 mois : ATB systématique</li>
+                <li>6-24 mois : ATB si certain ou bilatéral</li>
+                <li>> 2 ans unilatérale : option observation 48h</li>
+                <li>Amoxicilline 80-90 mg/kg/j en 2 prises</li>
+                <li>Si échec 48h : amox-clav</li>
+                <li>Durée : 5j si > 2 ans, 10j si < 2 ans</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Antipyrétiques chez nourrisson</h4>
+            <p>Utilisation rationnelle :</p>
+            <ul>
+                <li>Paracétamol : 15mg/kg/6h (max 60mg/kg/j)</li>
+                <li>Ibuprofène : 10mg/kg/8h si > 6 mois</li>
+                <li>Alternance non recommandée systématiquement</li>
+                <li>Objectif : confort, pas normalisation T°</li>
+                <li>Méthodes physiques peu efficaces</li>
+                <li>Éviter aspirine (Reye)</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Prévention infections nourrisson</h4>
+            <p>Mesures efficaces :</p>
+            <ul>
+                <li>Allaitement maternel exclusif 6 mois</li>
+                <li>Vaccination complète et à jour</li>
+                <li>Éviter tabagisme passif</li>
+                <li>Limiter collectivité si possible</li>
+                <li>Hygiène des mains ++</li>
+                <li>Position surélevée si reflux</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Messages clés</h4>
+            <ul>
+                <li>OMA = complication fréquente IVRS</li>
+                <li>Otoscopie systématique si fièvre</li>
+                <li>Diagnostic OMA = critères stricts</li>
+                <li>ATB pas systématiques > 2 ans</li>
+                <li>Surveillance hydratation cruciale</li>
+                <li>Information parents sur évolution</li>
+                <li>Signes alarme bien expliqués</li>
+                <li>Suivi 48-72h si pas amélioration</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Paracétamol 15mg/kg toutes les 6h</li>
+                <li>Ibuprofène 10mg/kg/8h si > 6 mois</li>
+                <li>Amoxicilline 80-90mg/kg/j si OMA</li>
+                <li>Sérum physiologique nasal pluriquotidien</li>
+                <li>Hydratation orale fractionnée</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>Otoscopie pneumatique obligatoire</li>
+                <li>Saturation O2</li>
+                <li>ECBU si fièvre sans foyer</li>
+                <li>NFS/CRP si aspect toxique</li>
+                <li>Radio thorax si signes pulmonaires</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Fièvre nourrisson (OMA probable)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, motif, contexte infectieux</li>
+                <li>Caractériser la fièvre <span class="arrow">→</span> début, T°, évolution, antipyrétiques</li>
+                <li>Symptômes associés <span class="arrow">→</span> respiratoires, ORL, digestifs, urinaires, neuro</li>
+                <li>État général <span class="arrow">→</span> éveil, irritabilité, alimentation, hydratation</li>
+                <li>Facteurs de risque <span class="arrow">→</span> collectivité, contage familial, tabagisme passif</li>
+                <li>Antécédents <span class="arrow">→</span> grossesse, naissance, vaccinations</li>
+                <li>Examen clinique <span class="arrow">→</span> constantes, tympans, poumons, hydratation, nuque</li>
+                <li>Résumé + hypothèse principale + DD</li>
+                <li>Examens complémentaires adaptés <span class="arrow">→</span> NFS, CRP, ECBU, radio thorax, PL si doute</li>
+                <li>Prise en charge <span class="arrow">→</span> antipyrétiques, hydratation, ATB si OMA confirmée</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide : FEVER</div>
+    <ul class="mnemo-items">
+        <li>F = Focus de l’infection ?</li>
+        <li>E = État général (éveil, tonus, hydratation)</li>
+        <li>V = Voies respiratoires/ORL</li>
+        <li>E = Examen complet (tympans, gorge, poumons, nuque)</li>
+        <li>R = Red flags (détresse respi, convulsions, purpura, léthargie)</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de Josh White, un garçon de 7 mois, amené par sa mère car il présente de la fièvre depuis hier.</p><p>La température a été mesurée au front à 38,3°C. Sa mère a donné du paracétamol. Depuis hier, elle a remarqué que Josh a le nez qui coule, qu’il respire plus vite que d’habitude et qu’il semble fatigué et irritable. Il refuse de téter au sein ou au biberon et n’a presque rien mangé. La nuit dernière, il a très mal dormi et pleurait dès qu’elle essayait de le recoucher. Il n’a pas présenté de convulsions, pas de vomissements, pas de diarrhée, et ses urines et selles restent normales. </p><p>Dans les expositions, son frère de 3 ans a eu une infection respiratoire haute il y a une semaine, et Josh va à la crèche. Les vaccinations sont à jour. Il est né à terme, par voie basse, sans complications. Son développement est normal. Comme antécédent médical, il avait présenté une jaunisse néonatale, mais rien depuis. </p><p>À l’examen clinique (fourni par l’expert), ses constantes sont correctes avec une saturation à 96% en air ambiant. L’auscultation pulmonaire est normale, sans râles ni sibilants. À l’otoscopie, le tympan droit apparaît rouge et bombé. Le pharynx est un peu rouge, l’état d’hydratation est conservé et il n’y a pas de signe méningé. </p><p>En résumé, il s’agit d’un nourrisson de 7 mois fébrile, avec rhinorrhée, irritabilité, refus alimentaire et tympan droit bombé et congestif. Mon hypothèse principale est une otite moyenne aiguë droite, probablement post-virale. Les diagnostics différentiels incluent une infection virale des voies respiratoires supérieures simple, une bronchiolite débutante, une pneumonie, une infection urinaire ou plus rarement une méningite.</p><p>Comme examens complémentaires, en première intention je réaliserais une otoscopie bilatérale complète, je vérifierais la saturation en oxygène, et si la fièvre s’élevait au-delà de 39°C ou si l’état général se dégradait, je demanderais une NFS et une CRP. Un ECBU par cathéter serait indiqué si l’examen ne retrouvait pas de foyer évident. Une radiographie thoracique serait utile si signes respiratoires inquiétants.</p><p>En termes de prise en charge, je commencerais par du paracétamol en traitement symptomatique, une bonne hydratation et des lavages de nez réguliers. L’otite moyenne aiguë confirmée à cet âge justifie une antibiothérapie par amoxicilline à forte dose. Je conseillerais aussi une surveillance rapprochée avec réévaluation dans 48 heures si pas d’amélioration ou aggravation.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : Josh White, 7 mois, présente une fièvre à 38,3°C depuis hier.</p><p>B (Background) : Né à terme, vaccins à jour, contage familial (frère malade récemment), va en crèche. Symptômes actuels : rhinorrhée, tachypnée, irritabilité, refus alimentaire.</p><p>A (Assessment) : Suspicion otite moyenne aiguë droite confirmée par tympan rouge et bombé. DD : IVRS virale simple, bronchiolite, pneumonie, infection urinaire.</p><p>R (Recommendation) : Traitement symptomatique (paracétamol, lavages de nez, hydratation) et antibiothérapie par amoxicilline. Surveillance clinique rapprochée et réévaluation dans 48h.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 OMA : les 3C</h5>
+                <ul class="presentation-points">
+                    <li>C <span class="equals">=</span> Crèche (facteur de risque)</li>
+                    <li>C <span class="equals">=</span> Contage viral récent</li>
+                    <li>C <span class="equals">=</span> Congestion et bombement tympan</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Signes d’alarme pédiatriques</h5>
+                <ul class="presentation-points">
+                    <li>Somnolence ou léthargie</li>
+                    <li>Convulsions</li>
+                    <li>Détresse respiratoire</li>
+                    <li>Déshydratation</li>
+                    <li>Purpura fébrile</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Antibio OMA : règle des âges</h5>
+                <ul class="presentation-points">
+                    <li>< 6 mois <span class="arrow">→</span> ATB systématique</li>
+                    <li><span class="highlight-range">6–24</span> mois <span class="arrow">→</span> ATB si certain ou bilatéral</li>
+                    <li>> 2 ans unilatérale simple <span class="arrow">→</span> surveillance possible</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Otite moyenne aiguë</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Âge 7 mois (fréquent)</li>
+                                <li>Fièvre, irritabilité, troubles du sommeil</li>
+                                <li>Refus alimentaire</li>
+                                <li>Tympan droit rouge et bombé</li>
+                                <li>Crèche et contage viral</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas d’otorrhée spontanée (mais non nécessaire pour diagnostic)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Infection virale des voies respiratoires supérieures</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Rhinorrhée</li>
+                                <li>Fièvre modérée</li>
+                                <li>Contage familial</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Tympan bombé orientant vers OMA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Pneumonie</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Fièvre</li>
+                                <li>Respiration rapide</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de toux</li>
+                                <li>Auscultation normale</li>
+                                <li>Pas de signes de lutte</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q4</span>
+                        <span class="q-text">Infection urinaire</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Fièvre isolée possible chez nourrisson</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Présence d’un foyer ORL évident</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q5</span>
+                        <span class="q-text">Méningite</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Âge à risque</li>
+                                <li>Fièvre, irritabilité</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de convulsions</li>
+                                <li>Pas de raideur nuque</li>
+                                <li>Bon état hydratation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Examen clinique complet avec otoscopie</li>
+                            <li>Saturation O2</li>
+                            <li>NFS, CRP si fièvre > 39°C ou mauvais état général</li>
+                            <li>ECBU par cathéter si pas de foyer</li>
+                            <li>Radio thorax si signes pulmonaires</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Otite moyenne aiguë droite sur surinfection post-virale</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Paracétamol 15 mg/kg toutes les 6h</li>
+                                <li>Hydratation orale fractionnée</li>
+                                <li>Lavage de nez régulier</li>
+                                <li>Amoxicilline forte dose (<span class="highlight-range">80–90</span> mg/kg/j) en 2 prises</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Surveillance de la température et de l’état général</li>
+                            <li>Réévaluation clinique dans 48 heures</li>
+                            <li>Informer parents sur signes d’alarme (somnolence, convulsions, purpura, détresse respi)</li>
+                            <li>Éviction crèche jusqu’à apyrexie</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour la mère (patient simulé)</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Mère de Josh White |             <strong>Âge :</strong> Mère d'un nourrisson de 7 mois<br>
+            <strong>Contexte :</strong> Mère inquiète venant consulter pour fièvre de son bébé
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Mon enfant a de la fièvre.</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> Il ne veut rien manger et respire vite.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Consignes</h4>
+            <ul>
+                <li>Montrer de l'inquiétude concernant la situation de votre enfant.</li>
+                <li>Tenir un poupon ou faire comme si vous aviez votre bébé.</li>
+                <li>Mentionner spontanément que son frère était malade.</li>
+                <li>Insister sur le fait qu'il refuse de manger.</li>
+                <li>Poser des questions sur la gravité.</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Fièvre :</strong>
+                <ul>
+                    <li>Début hier</li>
+                    <li>38,3°C au front</li>
+                    <li>Donné paracétamol</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes :</strong>
+                <ul>
+                    <li>Nez qui coule</li>
+                    <li>Respire vite</li>
+                    <li>Fatigué et irrité</li>
+                    <li>Refuse sein et biberon</li>
+                    <li>Mauvaise nuit</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Exposition :</strong>
+                <ul>
+                    <li>Frère 3 ans IVRS il y a 1 semaine</li>
+                    <li>Va à la crèche</li>
+                    <li>Contacts malades inconnus</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant la consultation :</strong>
+                <ul>
+                    <li>Bercer le poupon</li>
+                    <li>Regard inquiet</li>
+                    <li>Questions fréquentes</li>
+                    <li>Prise de notes</li>
+                    <li>Demander si hôpital nécessaire</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents</h4>
+            <div class="property-group">
+                <strong>Naissance :</strong>
+                <ul>
+                    <li>Accouchement normal à terme</li>
+                    <li>Pas de complications</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Médicaux :</strong>
+                <ul>
+                    <li>Jaunisse première semaine</li>
+                    <li>Sinon en bonne santé</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Croissance :</strong>
+                <ul>
+                    <li>Développement normal</li>
+                    <li>Vaccins à jour</li>
+                    <li>Dernier contrôle il y a 2 semaines</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Alimentation</h4>
+            <div class="property-group">
+                <strong>Normale :</strong>
+                <ul>
+                    <li>Allaitement maternel</li>
+                    <li>Nourriture bébé 3x/jour</li>
+                    <li>Vitamines prescrites</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Actuelle :</strong>
+                <ul>
+                    <li>Refuse tout depuis hier</li>
+                    <li>Pas de vomissements</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 37, examen: 2, management: 28, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 14, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 1, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 7, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

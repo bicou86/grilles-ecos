@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE-24 - Douleur talon - Homme de 31 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE-24 - Douleur talon - Homme de 31 ans</h1>
+            <p style="margin: 5px 0;">📍 Cabinet médical</p>
+            <p style="margin: 5px 0;">👤 Will Foreman, 31 ans, consulte son médecin traitant en se plaignant de douleurs au talon</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">125/80 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">69 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">14/min</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">37.2°C</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/43</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Motif principal <span class="patient-response">[Douleur au talon droit]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Motif principal" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de la douleur <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[La douleur est plus intense au niveau du talon]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Elle est apparue progressivement au cours des deux dernières semaines]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Événements précipitants <span class="patient-response">[Pas vraiment, mais je m'entraîne pour un marathon]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Caractère <span class="patient-response">[Intermittente]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence <span class="patient-response">[Elle me fait généralement mal tous les jours. Cela semble être pire le matin]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Timing matinal <span class="patient-response">[Cela fait le plus mal lors des premiers pas que je fais après m'être levé du lit]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Progression <span class="patient-response">[Cela n'a pas vraiment changé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[Lorsque ça fait mal, cela peut atteindre un 7/10]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[Parfois, la douleur irradie dans la voûte plantaire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-8" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Irradiation proximale <span class="patient-response">[Non, pas dans la jambe ou venant du dos]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-9" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Qualité <span class="patient-response">[Douleur de type étirement/déchirement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-10" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Symptômes neurologiques <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Brûlure <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Picotements <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Engourdissements <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Facteurs modulateurs <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs soulageants <span class="patient-response">[Masser la voûte plantaire et appliquer de la glace]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs aggravants <span class="patient-response">[Marcher pieds nus ou marcher après être resté assis pendant une longue période]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Antécédents de douleurs <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Douleurs articulaires ailleurs <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Épisodes similaires antérieurs <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Blessures pieds/chevilles <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Symptômes généraux <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Nausées/vomissements <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changements de poids/appétit <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fièvre/frissons <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Diarrhée/constipation <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fatigue <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-4" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Antécédents médicaux <span class="patient-response">[Non]</span> <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="2" data-criteria="Antécédents médicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Antécédents chirurgicaux <span class="patient-response">[Aucun]</span> <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="2" data-criteria="Antécédents chirurgicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Médicaments actuels <span class="patient-response">[Je prends parfois de l'ibuprofène pour la douleur]</span> <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="2" data-criteria="Médicaments actuels" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Antécédents familiaux <span class="patient-response">[Mon père a de l'arthrose]</span> <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="2" data-criteria="Antécédents familiaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Mode de vie et habitudes <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Je travaille comme comptable]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-0" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Loisirs <span class="patient-response">[Coureur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-1" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tabagisme <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-2" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Alcool <span class="patient-response">[Je bois environ 1 à 2 bières par semaine]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-3" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Drogues illicites <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-4" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Histoire sexuelle <span class="patient-response">[Je suis sexuellement actif avec ma femme depuis 10 ans]</span> <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="2" data-criteria="Histoire sexuelle" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+<div class="criteria-row" id="criteria-a13">
+    <div>
+        <div class="criteria-text">13. Allergies médicamenteuses <span class="patient-response">[Aucune allergie médicamenteuse connue]</span> <button class="comment-button" onclick="toggleComment('a13')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a13">
+            <textarea class="comment-textarea" id="comment-a13" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a13'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="2" data-criteria="Allergies médicamenteuses" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a13">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/23</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. État général <span class="patient-response">[Le patient est agréable et ne semble pas en détresse aiguë]</span> <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="État général" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examen cardiovasculaire <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[RR et FC normaux ; B1/B2 normaux ; pas de souffles, frottements ou galops]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pouls distaux <span class="patient-response">[Pouls tibial postérieur et pédieux 2+ bilatéralement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Temps de remplissage capillaire <span class="patient-response">[Normal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen pulmonaire <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Auscultation <span class="patient-response">[Clair à l'auscultation bilatéralement]</span></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e3" value="2" data-criteria="Examen pulmonaire" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e3" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e3" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen abdominal <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Bruits intestinaux normaux en quantité et qualité]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Détendu, souple et indolore]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Examen musculosquelettique - Pied et cheville <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection bilatérale <span class="patient-response">[Légère pronation arrière/médio-pied bilatéralement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation talon <span class="patient-response">[Sensibilité sur la tubérosité calcanéenne médiale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation fascia plantaire <span class="patient-response">[Sensibilité marquée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-2" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation tendon d'Achille <span class="patient-response">[À évaluer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-3" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation bourses rétrocalcanéennes <span class="patient-response">[À évaluer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-4" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Amplitude de mouvement <span class="patient-response">[Normale à la hanche, genou, cheville et pied]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-5" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test de dorsiflexion et extension des orteils <span class="patient-response">[Douleur à la plante du talon et de la voûte plantaire avec dorsiflexion des orteils]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-6" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Force <span class="patient-response">[5/5 en flexion dorsale et plantaire de la cheville]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-7" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Examen neurologique <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Sensibilité au toucher léger <span class="patient-response">[Intacte dans les distributions L4-S1]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-0" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réflexe achilléen <span class="patient-response">[1+ bilatéralement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-1" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Force musculaire <span class="patient-response">[5/5 à la hanche, genou, cheville et pied]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-2" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+<div class="criteria-row" id="criteria-e7">
+    <div>
+        <div class="criteria-text">7. Évaluation de la marche <button class="comment-button" onclick="toggleComment('e7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Observation <span class="patient-response">[Démarche non antalgique]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e7-detail-0" value="1" onchange="updateDetailScore('e7', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test en charge <span class="patient-response">[À évaluer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e7-detail-1" value="1" onchange="updateDetailScore('e7', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test après position assise <span class="patient-response">[Douleur lors des premiers pas]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e7-detail-2" value="1" onchange="updateDetailScore('e7', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e7">
+            <textarea class="comment-textarea" id="comment-e7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e7">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/25</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Hypothèses diagnostiques <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">2 points si au moins 2 diagnostics pertinents mentionnés, 1 point si 1 diagnostic</div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Hypothèses diagnostiques" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Pathologies du fascia plantaire</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Fasciite plantaire</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Coureur (marathon)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur progressive sur 2 semaines<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur maximale premiers pas du matin<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur après position assise prolongée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Localisation plante du talon<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sensibilité tubérosité calcanéenne médiale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur à la dorsiflexion des orteils<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début récent (2 semaines)</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Rx pied (épine calcanéenne), échographie</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Fractures de fatigue</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Fracture de stress du calcanéum</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Entraînement marathon (surcharge)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur au talon<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Intensité importante (7/10)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de douleur diffuse<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de compression latérale douloureuse<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Amélioration avec repos</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Rx initial, scintigraphie osseuse ou IRM si forte suspicion</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Pathologies du tendon d'Achille</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Tendinite achilléenne</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Coureur (surmenage)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur avec dorsiflexion<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur plantaire (vs postérieure)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de sensibilité du tendon décrite<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de nodules palpables</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Échographie, IRM si doute</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Bursite rétrocalcanéenne</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Activité sportive intense<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Possible irritation chronique<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur plantaire (vs postérieure)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de gonflement postérieur<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de problème de chaussures mentionné</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Échographie, Rx (déformation de Haglund)</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Neuropathies compressives</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Syndrome du tunnel tarsien</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irradiation voûte plantaire<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Position debout prolongée (comptable)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de brûlures/picotements<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'engourdissements<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sensibilité normale à l'examen<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Caractère mécanique prédominant</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ EMG/VCN, test de Tinel</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Autres causes</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Corps étranger plantaire</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur localisée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Coureur (exposition)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de plaie visible<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'érythème/chaleur locale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Évolution progressive<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pattern typique fasciite</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Rx pied, échographie si doute</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Entorse de cheville</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Activité sportive<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de traumatisme<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Localisation talon (vs cheville)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'œdème/ecchymose<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Stabilité ligamentaire normale</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Rx cheville si trauma</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens complémentaires immédiats <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Rx pied droit face et profil (épine calcanéenne, fracture)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rx cheville droite si douleur remonte</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens selon évolution <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Échographie fascia plantaire et tendon d'Achille</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">IRM pied/cheville si échec traitement conservateur</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Scintigraphie osseuse si suspicion fracture de stress à 6-8 semaines</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">EMG/VCN si symptômes neurologiques apparaissent</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Prise en charge conservatrice <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Repos et modification d'activité</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> ARRÊT course temporaire (4-6 semaines)<br />
+            <span style="margin-left: 10px;">•</span> Activités alternatives : natation, vélo<br />
+            <span style="margin-left: 10px;">•</span> Éviter marche pieds nus sur surfaces dures<br />
+            <span style="margin-left: 10px;">•</span> Chaussures avec bon support de voûte<br />
+            <span style="margin-left: 10px;">•</span> Talonnettes en gel si soulagement<br />
+            <span style="margin-left: 10px;">•</span> Reprise progressive après résolution</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Traitement anti-inflammatoire</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> AINS : ibuprofène 600mg x 3/j x 2 semaines<br />
+            <span style="margin-left: 10px;">•</span> Glace 15-20 min x 3-4/j<br />
+            <span style="margin-left: 10px;">•</span> Massage transverse profond fascia<br />
+            <span style="margin-left: 10px;">•</span> Éviter infiltrations corticoïdes phase aiguë<br />
+            <span style="margin-left: 10px;">•</span> Paracétamol 1g x 4/j si AINS contre-indiqués</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Kinésithérapie et étirements</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Étirements fascia plantaire 3x/jour<br />
+            <span style="margin-left: 10px;">•</span> Étirements mollet et tendon d'Achille<br />
+            <span style="margin-left: 10px;">•</span> Exercice avec balle tennis sous pied<br />
+            <span style="margin-left: 10px;">•</span> Renforcement muscles intrinsèques pied<br />
+            <span style="margin-left: 10px;">•</span> Attelle nocturne en dorsiflexion<br />
+            <span style="margin-left: 10px;">•</span> Taping ou strapping si soulagement</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="2" data-criteria="Prise en charge conservatrice" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Prévention des récidives <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Analyse biomécanique de course</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Correction troubles statiques (semelles)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chaussures adaptées avec amorti</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Échauffement systématique avant course</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Augmentation progressive des distances</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Surfaces souples préférentiellement</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-5" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Maintien souplesse mollet/fascia</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-6" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Indications traitement avancé <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Échec traitement conservateur > 2-3 mois</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Infiltration corticoïdes guidée échographie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ondes de choc extracorporelles</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Plasma riche en plaquettes (PRP)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chirurgie exceptionnelle (fasciotomie)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-4" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Avis spécialisé médecine du sport</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-5" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+<div class="criteria-row" id="criteria-m7">
+    <div>
+        <div class="criteria-text">7. Signes d'alarme et suivi <button class="comment-button" onclick="toggleComment('m7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Red Flags - Complications podologiques</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Rupture fascia plantaire</div>
+                <div class="redflags-description">→ Pop audible + ecchymose plantaire = Immobilisation + IRM</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Fracture de stress évolutive</div>
+                <div class="redflags-description">→ Douleur croissante malgré repos = Scintigraphie/IRM urgente</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. Syndrome compartimental</div>
+                <div class="redflags-description">→ Douleur + tension extrême = Urgence chirurgicale</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Infection tissus mous</div>
+                <div class="redflags-description">→ Fièvre + rougeur + chaleur = ATB urgents</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">5. Neuropathie évolutive</div>
+                <div class="redflags-description">→ Déficit sensitif/moteur = EMG + avis neuro</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m7">
+            <textarea class="comment-textarea" id="comment-m7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="2" data-criteria="Signes d'alarme et suivi" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m7">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Clôture type</h4>
+                    <div class="cloture-content cloture-content-green">Monsieur Foreman, la cause la plus probable de votre douleur au talon est une fasciite plantaire, qui est la cause la plus fréquente de douleur à la plante du talon. Elle se résout généralement en quelques mois avec un traitement conservateur comprenant des étirements, des massages, des AINS et l'évitement des activités douloureuses. Je vous recommande fortement de réduire votre course à pied et d'éviter de marcher pieds nus sur des surfaces dures jusqu'à ce que cela s'améliore. Nous allons faire une radiographie aujourd'hui pour vérifier qu'il n'y a pas de fracture ou de corps étranger évident et pour rechercher d'éventuelles épines calcanéennes. Si vous le souhaitez, je peux vous envoyer en kinésithérapie pour vous aider à démarrer ces exercices. Si vos symptômes ne répondent pas à ce traitement au cours des 2 prochains mois, nous pourrions envisager une scintigraphie osseuse pour exclure une fracture de stress. Avez-vous des questions pour moi ?</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Questions difficiles à poser</h4>
+                    <div class="cloture-content">[Docteur, pouvez-vous me prescrire des antidouleurs puissants pour que je puisse continuer à courir ? Je m'entraîne pour un marathon.]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse type du candidat</h4>
+                    <div class="cloture-content cloture-content-green">Nous devons d'abord faire une évaluation complète pour déterminer la cause de votre douleur. Ensuite, nous pourrons discuter de la nature de votre traitement.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/111</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations de l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>L'expert-e intervient si l'étudiant-e demande :</li>
+                <li>• Rx pied : épine calcanéenne présente, pas de fracture</li>
+                <li>• Test compression calcanéum : négatif</li>
+                <li>• Test windlass (dorsiflexion gros orteil) : positif</li>
+                <li>• Échographie : épaississement fascia > 4mm</li>
+                <li>• Signe de la corde d'arc : fascia tendu palpable</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Diagnostic clinique évident</li>
+                <li>Repos sportif OBLIGATOIRE</li>
+                <li>Traitement conservateur efficace 90%</li>
+                <li>Éviter infiltrations précoces</li>
+                <li>Éducation patient sur durée guérison (2-3 mois)</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Céder à demande antalgiques puissants</li>
+                <li>Autoriser poursuite course</li>
+                <li>Ne pas examiner biomécanique</li>
+                <li>Oublier étirements quotidiens</li>
+                <li>Promettre guérison rapide</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique concernant la vignette</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Diagnostic</h4>
+            <p>Fasciite plantaire typique chez un coureur de fond avec surcharge mécanique progressive</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Anatomie et biomécanique</h4>
+            <p>Fascia plantaire = aponévrose fibreuse :</p>
+            <ul>
+                <li>Origine : tubérosité médiale calcanéum</li>
+                <li>Insertion : bases phalanges proximales</li>
+                <li>Fonction : maintien voûte plantaire</li>
+                <li>Mécanisme windlass : tension en dorsiflexion</li>
+                <li>Charges : 2-3x poids corps en course</li>
+                <li>Microtraumatismes répétés → dégénérescence</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Épidémiologie fasciite plantaire</h4>
+            <p>Pathologie podologique la plus fréquente :</p>
+            <ul>
+                <li>Prévalence : 10% population générale</li>
+                <li>Pic : 40-60 ans</li>
+                <li>Coureurs : 10% incidence annuelle</li>
+                <li>Bilatéral : 30% des cas</li>
+                <li>Facteurs risque : surpoids, pied plat/creux</li>
+                <li>Professions debout : risque augmenté</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Présentation clinique typique</h4>
+            <p>Triade diagnostique :</p>
+            <ul>
+                <li>Douleur talon plantaire médial</li>
+                <li>Pire premiers pas matin (post-static dyskinesia)</li>
+                <li>Amélioration avec activité puis récidive</li>
+                <li>Start-up pain caractéristique</li>
+                <li>Sensibilité tubérosité calcanéenne</li>
+                <li>Test windlass positif (pathognomonique)</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Examens complémentaires</h4>
+            <p>Rarement nécessaires si typique :</p>
+            <ul>
+                <li>Rx : épine calcanéenne 50% (non corrélée)</li>
+                <li>Échographie : épaississement > 4mm</li>
+                <li>IRM : œdème médullaire si stress fracture</li>
+                <li>Scintigraphie : hyperfixation focale</li>
+                <li>EMG : si neuropathie suspectée</li>
+                <li>Biologie : inutile sauf si systémique</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Traitement conservateur - Phase aiguë</h4>
+            <p>Succès 90% à 6 mois :</p>
+            <ul>
+                <li>Repos relatif 4-6 semaines minimum</li>
+                <li>AINS 10-14 jours</li>
+                <li>Glace 3-4x/jour</li>
+                <li>Étirements fascia et mollet 3x/jour</li>
+                <li>Massage balle tennis</li>
+                <li>Taping low-dye si soulagement</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Kinésithérapie spécifique</h4>
+            <p>Programme structuré :</p>
+            <ul>
+                <li>Étirement fascia : towel stretch</li>
+                <li>Étirement gastrocnémien/soléaire</li>
+                <li>Renforcement intrinsèques : towel curl</li>
+                <li>Proprioception sur plan instable</li>
+                <li>Mobilisations articulaires médio-pied</li>
+                <li>Correction chaîne postérieure</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Orthèses et chaussage</h4>
+            <p>Support biomécanique :</p>
+            <ul>
+                <li>Talonnettes gel phase aiguë</li>
+                <li>Semelles sur mesure si trouble statique</li>
+                <li>Attelle nocturne dorsiflexion 90°</li>
+                <li>Chaussures : drop 10-12mm idéal</li>
+                <li>Éviter minimalistes phase aiguë</li>
+                <li>Rotation 2-3 paires pour coureurs</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Traitements de seconde ligne</h4>
+            <p>Si échec > 3 mois :</p>
+            <ul>
+                <li>Infiltration corticoïdes : max 2-3/an</li>
+                <li>Ondes de choc : 3-5 séances</li>
+                <li>PRP : résultats variables</li>
+                <li>Prolothérapie : peu d'évidence</li>
+                <li>Botox : études en cours</li>
+                <li>Radiofréquence : cas réfractaires</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Indications chirurgicales</h4>
+            <p>Exceptionnelles < 5% :</p>
+            <ul>
+                <li>Échec conservateur > 12 mois</li>
+                <li>Fasciotomie partielle endoscopique</li>
+                <li>Libération nerf Baxter si compression</li>
+                <li>Récupération 3-6 mois</li>
+                <li>Risque rupture fascia, pied plat</li>
+                <li>Résultats imprévisibles</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Retour au sport</h4>
+            <p>Progressif et surveillé :</p>
+            <ul>
+                <li>Indolence complète au repos</li>
+                <li>Marche sans douleur 30 min</li>
+                <li>Programme retour course sur 6-8 sem</li>
+                <li>Augmentation 10% distance/semaine</li>
+                <li>Surfaces souples initialement</li>
+                <li>Maintien étirements à vie</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Messages clés</h4>
+            <ul>
+                <li>Diagnostic clinique dans 95% cas</li>
+                <li>Repos sportif non négociable</li>
+                <li>Traitement conservateur = gold standard</li>
+                <li>Étirements quotidiens obligatoires</li>
+                <li>Guérison 3-6 mois moyenne</li>
+                <li>Récidive 30% si facteurs non corrigés</li>
+                <li>Chirurgie = dernier recours</li>
+                <li>Prévention > traitement pour coureurs</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Ibuprofène 600mg tid x 10-14j + IPP</li>
+                <li>Paracétamol 1g qid si AINS CI</li>
+                <li>Glace 15-20 min tid-qid</li>
+                <li>Étirements fascia 30 sec x 10 rép tid</li>
+                <li>Attelle nocturne si douleur matinale ++</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>Rx pied F+P (épine calcanéenne)</li>
+                <li>Échographie si doute diagnostique</li>
+                <li>IRM si suspicion rupture/fracture stress</li>
+                <li>Pas de biologie sauf si suspicion systémique</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour le patient standardisé</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Will Foreman |             <strong>Âge :</strong> 31 ans<br>
+            <strong>Contexte :</strong> Homme actif, comptable et coureur de marathon
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Douleur au talon droit.</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> C'est pire le matin et j'ai un marathon dans 2 mois.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Consignes</h4>
+            <ul>
+                <li>Faites semblant d'avoir mal à la plante du talon droit et dans la voûte plantaire droite lorsque l'examinateur étend vos orteils (les soulève vers le haut).</li>
+                <li>Montrez des signes de douleur lorsque l'examinateur palpe la voûte plantaire droite et la plante de votre talon droit.</li>
+                <li>Montrez des signes de douleur lors des premiers pas après avoir été assis.</li>
+                <li>Marchez normalement mais mentionnez la douleur matinale.</li>
+                <li>Insistez sur votre désir de continuer l'entraînement.</li>
+                <li>Demandez des antidouleurs puissants pour pouvoir courir.</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Douleur :</strong>
+                <ul>
+                    <li>Talon droit principalement</li>
+                    <li>Graduelle sur 2 semaines</li>
+                    <li>Pire le matin au lever</li>
+                    <li>Premiers pas très douloureux</li>
+                    <li>Après position assise prolongée</li>
+                    <li>Type étirement/déchirement</li>
+                    <li>Intensité 7/10 au maximum</li>
+                    <li>Irradie parfois voûte plantaire</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Facteurs déclenchants :</strong>
+                <ul>
+                    <li>Entraînement marathon</li>
+                    <li>Augmentation kilométrage récent</li>
+                    <li>Marche pieds nus aggrave</li>
+                    <li>Activité prolongée</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Traitements :</strong>
+                <ul>
+                    <li>Glace soulage un peu</li>
+                    <li>Massage voûte aide</li>
+                    <li>Ibuprofène occasionnel</li>
+                    <li>Effet limité</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Position assise confortable</li>
+                    <li>Pas de boiterie visible</li>
+                    <li>Inquiétude sur marathon</li>
+                    <li>Motivation pour continuer sport</li>
+                    <li>Demande solutions rapides</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant l'examen :</strong>
+                <ul>
+                    <li>Douleur palpation talon plantaire</li>
+                    <li>Douleur extension orteils</li>
+                    <li>Douleur voûte plantaire</li>
+                    <li>Pas de douleur tendon Achille</li>
+                    <li>Force normale</li>
+                    <li>Sensibilité normale</li>
+                    <li>Marche normale mais mention douleur</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Habitudes</h4>
+            <p><strong>Profession :</strong> Comptable (assis ++)</p>
+            <p><strong>Sport :</strong> Course à pied régulière</p>
+            <p><strong>Objectif :</strong> Marathon dans 2 mois</p>
+            <p><strong>Alcool :</strong> 1-2 bières/semaine</p>
+            <p><strong>Tabac :</strong> Non</p>
+            <p><strong>Drogues :</strong> Non</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Médicaments</h4>
+            <div class="property-group">
+                <strong>Actuels :</strong>
+                <ul>
+                    <li>Ibuprofène au besoin</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Allergies :</strong>
+                <ul>
+                    <li>Aucune</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents</h4>
+            <div class="property-group">
+                <strong>Médicaux :</strong>
+                <ul>
+                    <li>Aucun</li>
+                    <li>Pas de diabète</li>
+                    <li>Pas de rhumatisme</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Chirurgicaux :</strong>
+                <ul>
+                    <li>Aucun</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Familiaux :</strong>
+                <ul>
+                    <li>Père avec arthrose</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Traumatiques :</strong>
+                <ul>
+                    <li>Pas de blessure pied/cheville</li>
+                    <li>Pas de trauma récent</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 43, examen: 23, management: 25, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 13, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 7, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 7, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

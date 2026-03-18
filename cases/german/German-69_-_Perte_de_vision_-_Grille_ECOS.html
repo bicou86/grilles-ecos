@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German-69 - Perte de vision - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - German-69 - Perte de vision</h1>
+            <p style="margin: 5px 0;">📍 Cabinet de médecine générale</p>
+            <p style="margin: 5px 0;">👤 M. Müller, 78 ans, se présente pour des problèmes de vision qu'il a remarqués depuis quelques mois.</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/49</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Présentation avec nom, fonction et tâche <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Présentation avec nom, fonction et tâche" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Question d'entrée ouverte <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Qu'est-ce qui vous amène aujourd'hui ? <span class="patient-response">[J'ai remarqué que je vois de plus en plus mal]</span></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a2" value="2" data-criteria="Question d'entrée ouverte" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a2" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Caractérisation de la baisse de vision <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Apparition <span class="patient-response">[progressive sur quelques mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évolution <span class="patient-response">[aggravation progressive]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Unilatérale ou bilatérale <span class="patient-response">[bilatérale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Prédominance vision de loin ou de près <span class="patient-response">[surtout de loin]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Symptômes visuels associés <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Photosensibilité <span class="patient-response">[oui, doit porter des lunettes de soleil plus souvent car ébloui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Amélioration paradoxale vision de près <span class="patient-response">[oui, impression soudaine de mieux voir de près]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vision des couleurs <span class="patient-response">[rien de particulier remarqué]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Halos lumineux <span class="patient-response">[parfois autour des lumières]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vision double <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vision trouble/voilée <span class="patient-response">[oui, comme à travers un brouillard]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Symptômes oculaires associés <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Douleurs oculaires <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rougeur oculaire <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Larmoiement <span class="patient-response">[parfois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sécrétions <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sensation de corps étranger <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-4" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Symptômes généraux et drapeaux rouges <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Céphalées <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Claudication de la mâchoire <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleurs temporales <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Symptômes B (fièvre, sueurs nocturnes, perte de poids) <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Facteurs de risque cardiovasculaire <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Hypertension artérielle <span class="patient-response">[oui, traitée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Diabète <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dyslipidémie <span class="patient-response">[oui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tabagisme <span class="patient-response">[ancien fumeur, arrêt il y a 10 ans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-3" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Consommation d'alcool <span class="patient-response">[occasionnelle]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-4" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Anamnèse médicamenteuse <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Corticothérapie systémique <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Collyre myotique <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autres médicaments <span class="patient-response">[traitement pour l'hypertension et le cholestérol]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Antécédents ophtalmologiques <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Chirurgie oculaire antérieure <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-0" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Traumatisme oculaire <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-1" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Glaucome <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-2" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Myopie/hypermétropie <span class="patient-response">[presbytie, porte des lunettes pour lire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-3" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Antécédents médicaux personnels <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Diabète <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-0" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pathologies systémiques <span class="patient-response">[hypertension, dyslipidémie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-1" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chirurgies antérieures <span class="patient-response">[appendicectomie dans l'enfance]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-2" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Antécédents familiaux <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Pathologies oculaires familiales <span class="patient-response">[père avait une dégénérescence maculaire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-0" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Inquiétude du patient <span class="patient-response">[a peur d'avoir la même chose que son père]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-1" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Cataracte familiale <span class="patient-response">[mère opérée de cataracte à 75 ans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-2" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Allergies <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Allergies médicamenteuses <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-0" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autres allergies <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-1" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+<div class="criteria-row" id="criteria-a13">
+    <div>
+        <div class="criteria-text">13. Anamnèse sociale et impact fonctionnel <span class="patient-response">[Vit seul dans son appartement, retraité]</span> <button class="comment-button" onclick="toggleComment('a13')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Situation de vie <span class="patient-response">[vit seul]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-0" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autonomie <span class="patient-response">[autonome mais difficultés croissantes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-1" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Activités quotidiennes <span class="patient-response">[difficultés pour lire, regarder la télévision]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-2" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Conduite automobile <span class="patient-response">[évite de conduire la nuit]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-3" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a13">
+            <textarea class="comment-textarea" id="comment-a13" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a13'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a13">0</div>
+</div>
+<div class="criteria-row" id="criteria-a14">
+    <div>
+        <div class="criteria-text">14. Évaluation globale de la qualité de l'anamnèse <button class="comment-button" onclick="toggleComment('a14')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Anamnèse ciblée et bien conduite</div><div class="scoring-rule">Bien = oui, suffisant = ±, insuffisant = non</div>        <div class="criterion-comment-section" id="comment-section-a14">
+            <textarea class="comment-textarea" id="comment-a14" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a14'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="2" data-criteria="Évaluation globale de la qualité de l'anamnèse" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a14">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/26</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Acuité visuelle <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Vision de loin avec correction <span class="patient-response">[diminuée bilatéralement, 0.4 OD, 0.5 OG]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vision de près avec correction <span class="patient-response">[relativement préservée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test du trou sténopéique <span class="patient-response">[amélioration partielle]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examen des annexes et segment antérieur <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Paupières <span class="patient-response">[normales]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Conjonctive <span class="patient-response">[calme]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Cornée <span class="patient-response">[transparente]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chambre antérieure <span class="patient-response">[profondeur normale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen à la lampe à fente <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Cristallin <span class="patient-response">[opacification jaunâtre diffuse visible]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Type d'opacité <span class="patient-response">[nucléaire prédominante]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Densité <span class="patient-response">[modérée à sévère]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Test du reflet rouge rétinien <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Reflet rouge <span class="patient-response">[diminué, opacification apparaît plus foncée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Symétrie <span class="patient-response">[atteinte bilatérale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Pupilles et réflexes pupillaires <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Taille et symétrie <span class="patient-response">[isocorie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réflexe photomoteur direct <span class="patient-response">[présent bilatéralement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réflexe consensuel <span class="patient-response">[présent]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-2" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Défaut pupillaire afférent relatif <span class="patient-response">[absent]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-3" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Tonus oculaire <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Palpation bidigitale <span class="patient-response">[normal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-0" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Mesure si disponible <span class="patient-response">[non réalisée en cabinet]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-1" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+<div class="criteria-row" id="criteria-e7">
+    <div>
+        <div class="criteria-text">7. Fond d'œil <button class="comment-button" onclick="toggleComment('e7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Visualisation <span class="patient-response">[difficile en raison de l'opacité cristallinienne]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e7-detail-0" value="1" onchange="updateDetailScore('e7', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ce qui est visible <span class="patient-response">[papille et vaisseaux partiellement visibles]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e7-detail-1" value="1" onchange="updateDetailScore('e7', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Exclusion de pathologie rétinienne évidente <span class="patient-response">[dans la mesure du possible]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e7-detail-2" value="1" onchange="updateDetailScore('e7', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e7">
+            <textarea class="comment-textarea" id="comment-e7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e7">0</div>
+</div>
+<div class="criteria-row" id="criteria-e8">
+    <div>
+        <div class="criteria-text">8. Examen neurologique de base <button class="comment-button" onclick="toggleComment('e8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Champs visuels par confrontation <span class="patient-response">[normaux dans les limites de l'examen]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e8-detail-0" value="1" onchange="updateDetailScore('e8', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Oculomotricité <span class="patient-response">[normale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e8-detail-1" value="1" onchange="updateDetailScore('e8', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nerfs crâniens <span class="patient-response">[normaux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e8-detail-2" value="1" onchange="updateDetailScore('e8', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e8">
+            <textarea class="comment-textarea" id="comment-e8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e8">0</div>
+</div>
+<div class="criteria-row" id="criteria-e9">
+    <div>
+        <div class="criteria-text">9. Évaluation globale de la qualité de l'examen clinique <button class="comment-button" onclick="toggleComment('e9')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Examen clinique ciblé et bien conduit</div><div class="scoring-rule">Bien = oui, suffisant = ±, insuffisant = non</div>        <div class="criterion-comment-section" id="comment-section-e9">
+            <textarea class="comment-textarea" id="comment-e9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e9" value="2" data-criteria="Évaluation globale de la qualité de l'examen clinique" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e9" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e9" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e9">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/22</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Diagnostic principal <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Cataracte sénile bilatérale</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Type nucléaire prédominant</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Diagnostics différentiels <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="2" data-criteria="Diagnostics différentiels" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels de la baisse d'acuité visuelle</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Autres causes d'opacité des milieux</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Cataracte</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge avancé (78 ans)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Baisse progressive bilatérale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vision floue, voilée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Photophobie<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Cristallin opalescent à l'examen</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Examen à la lampe à fente, fond d'œil</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Opacités cornéennes</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Cornée claire à l'examen<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'antécédent de kératite</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Examen à la lampe à fente</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Hémorragie du vitré</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Installation progressive<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de myodésopsies brutales<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de diabète connu</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Fond d'œil, échographie mode B</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Pathologies rétiniennes</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Dégénérescence maculaire liée à l'âge (DMLA)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Antécédent familial (père)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge avancé<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Amélioration en vision de loin<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de métamorphopsies<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de scotome central</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Fond d'œil, OCT maculaire, angiographie</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Rétinopathie diabétique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de diabète connu<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Glycémie normale</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Glycémie, fond d'œil</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Décollement de rétine</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de phosphènes<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de voile périphérique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Installation progressive</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Fond d'œil dilaté, échographie B</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Neuropathies optiques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Glaucome chronique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pression intraoculaire normale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'excavation papillaire<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Atteinte centrale précoce atypique</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Tonométrie, fond d'œil, champ visuel</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Neuropathie optique ischémique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Installation progressive<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Bilatérale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de déficit altitudinal</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Fond d'œil, angiographie</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Névrite optique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge avancé<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de douleur oculaire<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Installation lente</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ IRM cérébrale et orbitaire</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Urgences à exclure</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Glaucome aigu par fermeture de l'angle</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de douleur oculaire<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de nausées/vomissements<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de halos colorés<br>&nbsp;&nbsp;&nbsp;&nbsp;•  PIO normale</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Tonométrie, gonioscopie</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Artérite temporale (Horton)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de céphalées<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de claudication de la mâchoire<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Installation progressive<br>&nbsp;&nbsp;&nbsp;&nbsp;•  VS normale</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ VS, CRP, biopsie artère temporale</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Occlusion vasculaire rétinienne</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Installation progressive<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Bilatérale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de BAV brutale</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Fond d'œil, angiographie rétinienne</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens complémentaires <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Biométrie oculaire (si chirurgie envisagée)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Échographie oculaire mode B (si fond d'œil non visible)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">OCT maculaire (pour exclure pathologie maculaire associée)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Glycémie (dépistage diabète)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Bilan préopératoire si chirurgie planifiée</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Traitement <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Traitement conservateur</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Aucun traitement médical efficace pour la cataracte<br />
+            <span style="margin-left: 10px;">•</span> Adaptation de la correction optique temporaire<br />
+            <span style="margin-left: 10px;">•</span> Amélioration de l'éclairage<br />
+            <span style="margin-left: 10px;">•</span> Lunettes de soleil pour la photophobie</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Traitement chirurgical</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Indication opératoire posée (gêne fonctionnelle significative)<br />
+            <span style="margin-left: 10px;">•</span> Phacoémulsification avec implant intraoculaire<br />
+            <span style="margin-left: 10px;">•</span> Information sur les risques et bénéfices<br />
+            <span style="margin-left: 10px;">•</span> Planification de la chirurgie (œil le plus atteint d'abord)</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="2" data-criteria="Traitement" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Information du patient <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Explication de la nature de la cataracte</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rassurer : pas la même pathologie que son père (DMLA)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Excellent pronostic avec la chirurgie (>95% de succès)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Risques chirurgicaux faibles mais existants</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Récupération visuelle habituelle en quelques semaines</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Suivi et orientation <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Référence en ophtalmologie pour évaluation chirurgicale</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Suivi régulier en attendant la chirurgie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Surveillance de la progression</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Contrôle postopératoire après chirurgie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+<div class="criteria-row" id="criteria-m7">
+    <div>
+        <div class="criteria-text">7. Évaluation globale de la qualité de la prise en charge <button class="comment-button" onclick="toggleComment('m7')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Prise en charge cohérente et bien conduite</div><div class="scoring-rule">Bien = oui, suffisant = ±, insuffisant = non</div>        <div class="criterion-comment-section" id="comment-section-m7">
+            <textarea class="comment-textarea" id="comment-m7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="2" data-criteria="Évaluation globale de la qualité de la prise en charge" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m7">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/117</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">🧠 Cataracte – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse ciblée</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes visuels (progressifs, bilatéraux, indolores)</h5>
+<ul class="resume-subsection-points">
+<li>Baisse de l'acuité visuelle (surtout nocturne)</li>
+<li>Éblouissement (notamment en pleine lumière, phares)</li>
+<li>Halos lumineux, vision voilée</li>
+<li>Diplopie monoculaire</li>
+<li>Amélioration paradoxale de la vision de près ("second sight" dans cataractes nucléaires)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Contexte</h5>
+<ul class="resume-subsection-points">
+<li>Âge avancé (cause la plus fréquente)</li>
+<li>Diabète, tabagisme, exposition solaire, stéroïdes</li>
+<li>Antécédents traumatiques ou chirurgie oculaire</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examen ophtalmologique</h5>
+<ul class="resume-subsection-points">
+<li>Acuité visuelle : normale au début, puis baisse progressive</li>
+<li>Réflexe rouge (au fond d'œil) : diminution, opacité, leucocorie possible</li>
+<li>Slit-lamp (lampe à fente) : opacification du cristallin (gris/blanc/jaune/brun), forme spécifique : en étoile (post-traumatique)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens complémentaires</h5>
+<ul class="resume-subsection-points">
+<li>Mesure de la pression intraoculaire</li>
+<li>Examen du fond d'œil : souvent limité par l'opacité</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Tests spécialisés (selon plainte visuelle)</h5>
+<ul class="resume-subsection-points">
+<li>Glare test, test de sensibilité au contraste</li>
+<li>OCT : recherche de pathologie maculaire associée</li>
+<li>Échographie B : si fond d'œil inaccessible</li>
+<li>⚠️ 1/3 des patients ont des pathologies oculaires associées (ex. : glaucome, DMLA)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Stratégie globale</h5>
+<ul class="resume-subsection-points">
+<li>Pas de traitement médical efficace</li>
+<li>Lunettes ou correction optique en phase précoce</li>
+<li>Indication chirurgicale si : gêne fonctionnelle (conduite, lecture), co-pathologie nécessitant fond d'œil clair, risque de glaucome secondaire</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Chirurgie</h5>
+<ul class="resume-subsection-points">
+<li class="with-arrow">Bilatéral <span class="arrow">→</span> chirurgie différée sauf indication spécifique</li>
+</ul>
+<table class="resume-table">
+<thead><tr>
+<th>Technique</th>
+<th>Indication</th>
+<th>Particularités</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="first-col">Phacoémulsification + implant</td>
+<td>Technique de <span class="highlight-important">référence</span></td>
+<td>Ambulatoire possible</td>
+</tr>
+<tr>
+<td class="first-col">Extracapsulaire</td>
+<td>Alternative</td>
+<td>Si cataracte très dure</td>
+</tr>
+<tr>
+<td class="first-col">MSICS</td>
+<td>Pays en développement</td>
+<td>Coût réduit</td>
+</tr>
+<tr>
+<td class="first-col">Anesthésie</td>
+<td>Locale + sédation</td>
+<td>Rarement générale</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Préparation pré-opératoire</h5>
+<ul class="resume-subsection-points">
+<li>Pas d'arrêt des anticoagulants dans la plupart des cas</li>
+<li>Évaluation co-morbidités (HTA, diabète, cardiaque)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Post-opératoire</h5>
+<ul class="resume-subsection-points">
+<li>Collyres anti-inflammatoires et/ou ATB</li>
+<li>Repos relatif, protection oculaire</li>
+<li>Correction optique ajustée à <span class="highlight-range">4–12</span> semaines</li>
+<li>Surveillance des complications : infection, œdème, DMLA masquée</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet">Savoir reconnaître les signes fonctionnels typiques</li>
+<li class="resume-bullet">Penser à la recherche systémique de causes ou facteurs aggravants</li>
+<li class="resume-bullet">Insister sur l'impact fonctionnel dans le quotidien (éblouissement, conduite, lecture)</li>
+<li class="resume-bullet">Savoir expliquer les options chirurgicales, les risques, et la convalescence</li>
+<li class="resume-bullet">Ne pas négliger la co-pathologie ophtalmologique associée</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Perte de vision progressive (Homme 78 ans)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, ATCD, motif de consultation</li>
+                <li>Symptôme actuel <span class="arrow">→</span> début, évolution, caractéristiques (mono/bilatérale, vision loin/près, signes associés)</li>
+                <li>ATCD / traitements / facteurs de risque</li>
+                <li>Examen clinique ciblé (acuité, lampe à fente, PIO, fond d'œil)</li>
+                <li>Résumé en une phrase</li>
+                <li>Hypothèse principale + diagnostics différentiels</li>
+                <li>Examens complémentaires</li>
+                <li>Prise en charge <span class="highlight-important">immédiat</span>e / traitement / suivi</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo express : MAPS</div>
+    <ul class="mnemo-items">
+        <li>Motif</li>
+        <li>Antécédents</li>
+        <li>Points d'examen</li>
+        <li>Suites</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 minutes)</h4>
+            <div class="presentation-content"><p>Il s'agit d'un patient de 78 ans, hypertendu et dyslipidémique, ancien fumeur, qui consulte pour une baisse progressive de la vision bilatérale depuis plusieurs mois.</p><p>Il décrit une vision de loin floue, comme à travers un brouillard, avec photophobie et halos autour des lumières, mais paradoxalement une amélioration de la vision de près. Pas de douleur, pas de rougeur, pas de céphalée.</p><p>ATCD familiaux : père atteint de DMLA, mère opérée de cataracte. Il vit seul, autonome mais limité pour la lecture, la TV et la conduite nocturne.</p><p>À l'examen : acuité visuelle 0,4 à droite et 0,5 à gauche, améliorable partiellement au trou sténopéique. La lampe à fente montre une opacification jaunâtre diffuse du cristallin, de type nucléaire. Reflet rouge atténué, fond d'œil difficile à visualiser. PIO normale, pupilles réactives.</p><p>En résumé, il s'agit d'une perte visuelle bilatérale, progressive, indolore, avec opacification du cristallin, évoquant une cataracte sénile nucléaire bilatérale.</p><p>Les diagnostics différentiels incluent une DMLA, un glaucome chronique, une opacité cornéenne ou une neuropathie optique.</p><p>Les examens complémentaires comprennent une biométrie oculaire pour planification chirurgicale, éventuellement une OCT maculaire et une échographie B si fond d'œil inaccessible.</p><p>La prise en charge est chirurgicale, par phacoémulsification avec implant intraoculaire, en commençant par l'œil le plus atteint. En attendant : correction optique adaptée, lunettes de soleil.</p><p>Je rassure le patient sur le pronostic : >95 % de succès, récupération visuelle en quelques semaines. Suivi ophtalmologique jusqu'à l'intervention et postopératoire ensuite.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : Patient de 78 ans, HTA et dyslipidémie, baisse de vision bilatérale progressive depuis plusieurs mois.</p><p>B (Background) : Symptômes : flou, halos lumineux, photophobie, amélioration de près. ATCD familiaux : DMLA, cataracte.</p><p>A (Assessment) : Cataracte sénile bilatérale probable, opacification cristallinienne confirmée à la lampe à fente.</p><p>R (Recommendation) : Référer en ophtalmologie pour chirurgie (phacoémulsification + implant). En attendant, adaptation lunettes et éclairage, surveillance.</p></div>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo : SBAR</div>
+    <ul class="mnemo-items">
+        <li>Situation</li>
+        <li>Background</li>
+        <li>Assessment</li>
+        <li>Recommendation</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>Signes typiques de cataracte → 3H</h5>
+                <ul class="presentation-points">
+                    <li>Halos lumineux</li>
+                    <li>Hypersensibilité à la lumière (photophobie)</li>
+                    <li>Haze visuel ("brouillard")</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>Traitement de la cataracte → FOI</h5>
+                <ul class="presentation-points">
+                    <li>Phacoémulsification</li>
+                    <li>Ophtalmologiste</li>
+                    <li>Implant intraoculaire</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour / contre le diagnostic principal et les DD</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Cataracte sénile nucléaire</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Âge avancé</li>
+                                <li>Progression lente bilatérale</li>
+                                <li>Vision de brouillard</li>
+                                <li>Halos lumineux</li>
+                                <li>Myopie d'induction</li>
+                                <li>Opacification cristallinienne à la lampe à fente</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Aucun argument majeur contre</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">DMLA</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>ATCD familial</li>
+                                <li>Âge avancé</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de scotome central</li>
+                                <li>Pas de métamorphopsies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Glaucome chronique</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Âge</li>
+                                <li>ATCD vasculaires</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>PIO normale</li>
+                                <li>Pas d'excavation papillaire</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Examens à demander</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Biométrie oculaire pour chirurgie</li>
+                            <li>OCT maculaire pour exclure pathologie rétinienne associée</li>
+                            <li>Échographie B si fond d'œil non visible</li>
+                            <li>Bilan préopératoire standard (NFS, coag, glycémie)</li>
+                        </ul>
+                    </div>
+                    <div class="presentation-analyse">
+                        <span class="analyse-icon">💡</span>
+                        <span class="analyse-text">👉 Analyse orale : « Ces examens confirment la cataracte et préparent la chirurgie. »</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Cataracte sénile bilatérale, type nucléaire</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Chirurgie par phacoémulsification + implant intraoculaire (œil le plus atteint en premier)</li>
+                                <li>En attendant : correction optique adaptée, amélioration éclairage, lunettes de soleil</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi/complications</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Surveillance jusqu'à l'opération</li>
+                            <li>Contrôle postopératoire rapproché</li>
+                            <li>Risques rares : infection (endophtalmie), hémorragie, décollement rétinien, opacification secondaire de la capsule</li>
+                        </ul>
+                    </div>
+                    <div class="presentation-astuce">
+                        <span class="astuce-icon">💡</span>
+                        <span class="astuce-text">👉 Mnémo postop : "3R" <span class="arrow">→</span> Récupération rapide, Risque faible, Respect suivi ophtalmo</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 49, examen: 26, management: 22, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 14, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 9, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 7, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

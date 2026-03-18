@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESCOS-6 - AVP - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - RESCOS-6 - AVP</h1>
+            <p style="margin: 5px 0;">📍 Urgences - Salle de déchocage</p>
+            <p style="margin: 5px 0;">👤 Monsieur Merz, 24 ans, emmené au déchoc suite à un accident de la route. Un-e infirmier-ère est présent-e pour aider.</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">160/90 mmHg (initial)</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">55 bpm (initial)</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/27</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. ABCDE - Airways <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Vérifier la perméabilité des voies aériennes</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Stabilisation de la colonne cervicale</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation de la capacité de parler</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. ABCDE - Breathing <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation de la respiration</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Administration d'oxygène à haut débit</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche de signes de détresse respiratoire</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. ABCDE - Circulation <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation hémodynamique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche d'hémorragie externe</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Mise en place de voies veineuses</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. ABCDE - Disability <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation neurologique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Glasgow Coma Scale</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen des pupilles</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. ABCDE - Exposure <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Déshabillage complet du patient</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Prévention de l'hypothermie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche de lésions cachées</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse ciblée trauma <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Mécanisme de l'accident <span class="patient-response">[AVP à 80 km/h contre arbre]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Port de la ceinture de sécurité</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Perte de connaissance <span class="patient-response">[pas sûr]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleur principale <span class="patient-response">[épaule droite 10/10]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Toxiques <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Alcool <span class="patient-response">[3x 0.5L bière + 1 gin-tonic]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Cannabis <span class="patient-response">[1 joint partagé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autres substances <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Heure de la dernière consommation <span class="patient-response">[il y a 3h]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-3" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Antécédents et allergies <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Antécédents médicaux <span class="patient-response">[aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[aucune]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vaccins <span class="patient-response">[à jour]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-3" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Examen des voies aériennes et colonne cervicale <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Maintien de l'axe tête-cou-tronc</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation de la mobilité cervicale</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Retrait prudent de la minerve avec stabilisation</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examen respiratoire <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation pulmonaire bilatérale</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche d'un pneumothorax</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche d'un volet costal</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen circulatoire - Recherche hémorragie <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Palpation abdominale</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation du bassin <span class="patient-response">[douleur +++ à la symphyse]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation des os longs</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Inspection sous la minerve et derrière la tête</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen neurologique <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Score de Glasgow</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Déficit moteur/sensitif</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réflexes</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Examen de l'épaule droite <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[douleur humérus proximal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Mobilité active/passive</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-2" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fonction neurovasculaire distale</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-3" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Log-roll <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Examen du dos</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-0" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation du rachis</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-1" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche de lésions postérieures</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-2" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/18</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Gestion immédiate - Antalgie <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Administration d'antalgie IV</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation de l'efficacité</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Gestion circulatoire <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Mise en place de 2 voies veineuses de gros calibre</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hydratation IV (cristalloïdes)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Quantité et vitesse appropriées</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Identification et stabilisation fracture bassin <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Diagnostic de fracture du bassin</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Mise en place ceinture pelvienne</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Stabilisation hémodynamique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Examens complémentaires <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Radiographie du bassin <span class="patient-response">[fracture openbook B]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Radiographie de l'épaule <span class="patient-response">[fracture peu déplacée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">FAST/échographie si disponible</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Laboratoire (NFS, groupe sanguin, coag)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Diagnostic principal évoqué <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Choc hémorragique sur fracture du bassin</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fracture de l'épaule droite</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Polytraumatisme</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Collaboration interprofessionnelle <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Communication claire avec l'infirmier-ère</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Délégation appropriée des tâches</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Travail d'équipe efficace</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/85</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 🚨 Évaluation primaire ABCDE – Polytraumatisé avec choc hémorragique sur fracture du bassin – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse (si possible, recueillie par témoins ou secours)</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Circonstances</h5>
+<ul class="resume-subsection-points">
+<li>Accident de la voie publique, chute de grande hauteur, écrasement</li>
+<li>Notion de traumatisme à haute cinétique</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes rapportés (si conscience conservée)</h5>
+<ul class="resume-subsection-points">
+<li>Douleur pelvienne intense</li>
+<li>Impossibilité de se mobiliser</li>
+<li>Sensation de malaise, vertiges</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Facteurs aggravants</h5>
+<ul class="resume-subsection-points">
+<li>Antécédents hémorragiques ou anticoagulation</li>
+<li>Perte de connaissance initiale</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique (évaluation primaire – approche ABCDE)</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">A – Airway (voies aériennes)</h5>
+<ul class="resume-subsection-points">
+<li>Vérifier perméabilité des voies aériennes</li>
+<li>Immobilisation cervicale systématique</li>
+<li>Intubation si Glasgow ≤ 8 ou détresse respiratoire</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">B – Breathing (ventilation)</h5>
+<ul class="resume-subsection-points">
+<li>Inspection thorax : mouvements, plaies, emphysème</li>
+<li>Auscultation bilatérale : rechercher pneumothorax ou hémothorax</li>
+<li>Oxygénothérapie haut débit</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">C – Circulation</h5>
+<ul class="resume-subsection-points">
+<li>Constantes vitales : TA basse, tachycardie, marbrures (choc hémorragique)</li>
+<li>Recherche hémorragie externe</li>
+<li>Palpation du bassin : instabilité (éviter mobilisations répétées)</li>
+<li>Immobilisation pelvienne <span class="highlight-important">immédiat</span>e (ceinture pelvienne ou drap serré)</li>
+<li>2 voies IV de gros calibre, remplissage prudent (cristalloïdes ± transfusion massive)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">D – Disability (neurologique)</h5>
+<ul class="resume-subsection-points">
+<li>Évaluation du score de Glasgow</li>
+<li>Examen pupillaire</li>
+<li>Recherche déficit neurologique périphérique</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">E – Exposure/Environment</h5>
+<ul class="resume-subsection-points">
+<li>Déshabiller complètement le patient pour recherche lésions associées</li>
+<li>Prévenir hypothermie (couverture, réchauffement actif)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques (après stabilisation initiale)</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Biologie</h5>
+<ul class="resume-subsection-points">
+<li>NFS, hémoglobine</li>
+<li>Groupage sanguin et RAI</li>
+<li>Bilan de coagulation</li>
+<li>Gaz du sang (lactates, acidose métabolique)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Imagerie</h5>
+<ul class="resume-subsection-points">
+<li>Échographie FAST : recherche hémopéritoine</li>
+<li>Radiographie du bassin en <span class="highlight-important">urgence</span></li>
+<li>Scanner corps entier (traumascanner) après stabilisation hémodynamique</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Mesures initiales</h5>
+<ul class="resume-subsection-points">
+<li>Oxygénation haut débit</li>
+<li>Immobilisation cervicale et pelvienne</li>
+<li>2 voies IV gros calibre, remplissage limité, transfusion précoce (protocole hémorragie massive)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Mesures spécifiques choc hémorragique bassin</h5>
+<ul class="resume-subsection-points">
+<li>Ceinture pelvienne serrée pour réduire le saignement</li>
+<li>Transfusion précoce (ratio 1:1:1 si disponible)</li>
+<li>Acide tranexamique IV si hémorragie active</li>
+<li>Appeler <span class="highlight-important">immédiat</span>ement équipe chirurgicale/traumato + radiologie interventionnelle</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Options définitives</h5>
+<ul class="resume-subsection-points">
+<li>Embolisation artérielle (radiologie interventionnelle)</li>
+<li>Fixateur externe ou vissage pelvien en <span class="highlight-important">urgence</span></li>
+<li>Chirurgie hémostatique selon disponibilité</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Évaluation primaire ABCDE <span class="equals">=</span> prioritaire</li>
+<li class="resume-bullet highlight">Tout polytraumatisé avec instabilité hémodynamique + fracture du bassin <span class="equals">=</span> choc hémorragique jusqu’à preuve du contraire</li>
+<li class="resume-bullet">Immobilisation pelvienne <span class="highlight-important">immédiat</span>e</li>
+<li class="resume-bullet">Transfusion massive précoce (plasma/culots plaquettes équilibrés)</li>
+<li class="resume-bullet">Recours rapide à embolisation ou chirurgie</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser (si conscience conservée)</h5>
+<ul class="resume-subsection-points">
+<li>Circonstances de l’accident ? Haute cinétique ?</li>
+<li>Douleur localisée au bassin ou ailleurs ?</li>
+<li>ATCD médicaux, traitements anticoagulants ?</li>
+<li>Perte de connaissance initiale ?</li>
+</ul>
+</div>
+<div class="resume-subsection urgence">
+<h5 class="subsection-title">Examens à faire (urgence)</h5>
+<ul class="resume-subsection-points">
+<li>ABCDE complet</li>
+<li>TA, FC, SpO₂, température, Glasgow</li>
+<li>Examen bassin (mobilisation minimale)</li>
+<li>FAST écho abdominal</li>
+<li>Radio bassin</li>
+<li>Bilans sanguins (NFS, groupage, coagulation)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Immobilisation <span class="highlight-important">immédiat</span>e (cervicale et pelvienne) + oxygénation</li>
+<li>Voies IV, transfusion massive, acide tranexamique</li>
+<li>Embolisation ou chirurgie hémostatique en <span class="highlight-important">urgence</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Polytraumatisme post-AVP (fracture du bassin + choc hémorragique)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Introduction <span class="arrow">→</span> âge, contexte (AVP haute cinétique, arrivée déchocage)</li>
+                <li>ABCDE systématique : voies aériennes, ventilation, circulation, neurologie, exposition</li>
+                <li>Airway : immobilisation cervicale, évaluation Glasgow, perméabilité</li>
+                <li>Breathing : auscultation bilatérale, recherche pneumothorax/hémothorax, O₂ haut débit</li>
+                <li>Circulation : TA, FC, recherche hémorragie externe, palpation bassin, immobilisation pelvienne, 2 VVP gros calibre, remplissage prudent, protocole transfusion massive</li>
+                <li>Disability : score de Glasgow, examen pupillaire, déficit moteur</li>
+                <li>Exposure : déshabillage complet, recherche lésions cachées, prévention hypothermie</li>
+                <li>Anamnèse si possible : mécanisme, perte de connaissance, douleurs, toxiques, ATCD</li>
+                <li>Examens urgents : FAST, radio bassin, radio épaule, labo (NFS, groupage, coagulation, lactates)</li>
+                <li>Résumé + hypothèse principale (choc hémorragique sur fracture bassin, polytraumatisme) + diagnostics différentiels (lésion intra-abdo, thoracique, neuro)</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide : ABCDE + PELVIS</div>
+    <ul class="mnemo-items">
+        <li>A = Airway + immobilisation cervicale</li>
+        <li>B = Breathing (auscultation, O₂)</li>
+        <li>C = Circulation (TA, 2 VVP, hémorragie, ceinture pelvienne)</li>
+        <li>D = Disability (Glasgow, pupilles)</li>
+        <li>E = Exposure (déshabillage, hypothermie)</li>
+        <li>P = Pelvic binder</li>
+        <li>E = Echo FAST</li>
+        <li>L = Lactates (choc hémorragique)</li>
+        <li>V = Voies veineuses gros calibre</li>
+        <li>I = Imagerie (radio bassin, trauma scanner)</li>
+        <li>S = Sang (transfusion massive)</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de M. Merz, un jeune homme de 24 ans, qui a été amené en salle de déchocage après un accident de la route à 80 km/h contre un arbre. À l’arrivée, il est conscient, tension artérielle initiale 160/90 mmHg, fréquence cardiaque 55 bpm. L’infirmier est présent pour assister.</p><p>Je procède immédiatement à une évaluation primaire selon l’approche ABCDE. A : les voies aériennes sont perméables, le patient parle, mais je maintiens une immobilisation stricte de la colonne cervicale. B : la respiration est spontanée, j’administre de l’oxygène haut débit et ausculte les poumons pour éliminer un pneumothorax ou hémothorax. C : la tension artérielle est correcte mais le patient est à risque de choc hémorragique. Je recherche une hémorragie externe, mets en place deux voies veineuses de gros calibre et débute un remplissage prudent par cristalloïdes. À la palpation, le bassin est douloureux et instable, ce qui évoque une fracture ouverte de type open-book. Une ceinture pelvienne est immédiatement mise en place pour stabilisation. D : le patient est conscient, Glasgow 15, pupilles réactives, pas de déficit moteur. E : je déshabille complètement le patient pour rechercher d’autres lésions et préviens l’hypothermie avec des couvertures.</p><p>L’anamnèse recueillie révèle une douleur intense à l’épaule droite (10/10) et à la symphyse pubienne. Il a consommé de l’alcool (bières et gin-tonic) et un joint 3h avant l’accident. Pas d’antécédents médicaux, chirurgicaux ou allergies connus. Les vaccins sont à jour.</p><p>À l’examen secondaire, l’épaule droite est tuméfiée avec douleur à la palpation de l’humérus proximal. L’examen neurologique est normal. Le rachis est palpé (log-roll), sans anomalies détectées. Une hémorragie interne reste suspectée.</p><p>En résumé, il s’agit d’un polytraumatisé avec fracture instable du bassin, choc hémorragique probable et fracture de l’épaule droite. Les diagnostics différentiels incluent une hémorragie intra-abdominale ou thoracique associée.</p><p>Les examens complémentaires urgents sont une échographie FAST, une radiographie du bassin, une radiographie de l’épaule, et des analyses biologiques (NFS, groupage, coagulation, gaz sanguins). Après stabilisation, un trauma scanner sera indiqué.</p><p>La prise en charge comprend une antalgie IV adaptée, un remplissage prudent avec protocole de transfusion massive, l’administration précoce d’acide tranexamique, et la collaboration avec l’équipe de chirurgie traumatologique et la radiologie interventionnelle pour une éventuelle embolisation artérielle. L’objectif est la stabilisation hémodynamique rapide et le contrôle du saignement.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : M. Merz, 24 ans, polytraumatisé post-AVP, conscient, douleurs bassin et épaule droite.</p><p>B (Background) : Accident haute cinétique, consommation alcool et cannabis, pas d’ATCD médicaux.</p><p>A (Assessment) : Suspicion choc hémorragique sur fracture instable du bassin + fracture épaule droite. DD : hémorragie intra-abdominale/thoracique.</p><p>R (Recommendation) : ABCDE, ceinture pelvienne, 2 VVP, remplissage prudent, transfusion massive, FAST, radio bassin et épaule, appel chirurgie/traumato et radiologie interventionnelle.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 Polytraumatisme : mnémo AMPLE</h5>
+                <ul class="presentation-points">
+                    <li>A <span class="equals">=</span> Allergies</li>
+                    <li>M <span class="equals">=</span> Médicaments</li>
+                    <li>P <span class="equals">=</span> Passé médical</li>
+                    <li>L <span class="equals">=</span> Last meal (dernier repas)</li>
+                    <li>E <span class="equals">=</span> Environnement/événement (mécanisme de l’accident)</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Priorités choc hémorragique</h5>
+                <ul class="presentation-points">
+                    <li>Identifier et contrôler source du saignement</li>
+                    <li>Limiter remplissage cristalloïdes</li>
+                    <li>Transfusion précoce (ratio plasma/plaquettes/culots)</li>
+                    <li>Acide tranexamique < 3h post-trauma</li>
+                    <li>Appeler chirurgiens et radiologues interventionnels</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>⚠️ Pièges ECOS</h5>
+                <ul class="presentation-points">
+                    <li>Mobiliser bassin plusieurs fois <span class="arrow">→</span> risque aggravation hémorragie</li>
+                    <li>Oublier hypothermie (favorise coagulopathie)</li>
+                    <li>Se focaliser sur douleur épaule et négliger hémorragie pelvienne</li>
+                    <li>Retarder appel équipe spécialisée</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Choc hémorragique sur fracture du bassin</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Mécanisme haute énergie</li>
+                                <li>Douleur et instabilité pelvienne</li>
+                                <li>TA initialement correcte mais risque effondrement rapide</li>
+                                <li>Hémorragie interne probable</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas encore d’hypotension sévère (stade précoce)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Fracture isolée de l’épaule</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur intense épaule droite</li>
+                                <li>Fracture proximale humérus</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Ne justifie pas instabilité hémodynamique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Hémorragie intra-abdominale</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Traumatisme cinétique élevé</li>
+                                <li>Malaise, vertiges</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de défense abdominale ni masse palpée initialement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Échographie FAST</li>
+                            <li>Radio bassin</li>
+                            <li>Radio épaule</li>
+                            <li>Biologie : NFS, groupage, coagulation, gaz du sang</li>
+                            <li>Trauma scanner après stabilisation</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Polytraumatisme avec fracture instable du bassin compliquée de choc hémorragique, associée à fracture humérus proximal droit</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Immobilisation cervicale et pelvienne</li>
+                                <li>Oxygène haut débit</li>
+                                <li>Antalgie IV</li>
+                                <li>2 VVP gros calibre</li>
+                                <li>Remplissage prudent</li>
+                                <li>Transfusion massive</li>
+                                <li>Acide tranexamique précoce</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-section">
+                            <strong>Specifique :</strong>
+                            <ul>
+                                <li>Radiologie interventionnelle (embolisation artérielle)</li>
+                                <li>Fixateur externe bassin ou chirurgie hémostatique</li>
+                                <li>Prise en charge fracture épaule en différé</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Surveillance réanimation</li>
+                            <li>Correction triade létale (hypothermie, coagulopathie, acidose)</li>
+                            <li>Bilan lésionnel complet par scanner</li>
+                            <li>Suivi chirurgical et traumatologique</li>
+                            <li>Rééducation fonctionnelle</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 27, examen: 20, management: 18, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 8, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 6, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 6, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

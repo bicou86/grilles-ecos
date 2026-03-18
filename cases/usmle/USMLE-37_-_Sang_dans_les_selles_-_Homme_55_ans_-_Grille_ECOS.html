@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE-37 - Sang dans les selles - Homme 55 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE-37 - Sang dans les selles - Homme 55 ans</h1>
+            <p style="margin: 5px 0;">📍 Clinique de médecine générale</p>
+            <p style="margin: 5px 0;">👤 Kenneth Klein, 55 ans, se présente à la clinique en se plaignant de la présence de sang dans ses selles</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">130/80 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">76 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">16/min</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">36.9°C</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/42</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Motif principal <span class="patient-response">[Sang dans les selles]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Motif principal" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation du saignement <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Il y a un mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence <span class="patient-response">[Chaque fois que j'ai une selle, je vois du sang mélangé dedans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chronologie du sang <span class="patient-response">[Le sang est mélangé avec les selles marron]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Couleur du sang <span class="patient-response">[Rouge vif]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleur lors de la défécation <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Méléna <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Troubles du transit intestinal <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Constipation chronique <span class="patient-response">[Eh bien, j'ai eu de la constipation pendant longtemps, et je continue à prendre des laxatifs. Au début, ils m'apportaient un certain soulagement, mais maintenant, ils ne me servent plus du tout]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence des selles <span class="patient-response">[J'ai eu 2 selles par semaine au cours des 6 derniers mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Diarrhée récente <span class="patient-response">[J'ai eu de la diarrhée ces 2 derniers jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence de la diarrhée <span class="patient-response">[Trois fois par jour]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Description de la diarrhée <span class="patient-response">[Liquide, marron, mélangée avec du sang]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Urgence défécatoire <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ténesme <span class="patient-response">[Un peu]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Mucus dans les selles <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Symptômes associés <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Fièvre ou frissons <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleur abdominale <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nausées ou vomissements <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changements de poids <span class="patient-response">[J'ai perdu environ 4,5 kg au cours des 6 derniers mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changements d'appétit <span class="patient-response">[Mon appétit est resté le même]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Facteurs de risque et habitudes <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Régime alimentaire <span class="patient-response">[Je mange beaucoup de malbouffe. Je ne mange jamais de légumes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Voyages récents <span class="patient-response">[Non, mais je pense partir en voyage avec ma famille la semaine prochaine. Pensez-vous que je devrais rester à la maison ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Contact avec personnes malades <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Exercice physique <span class="patient-response">[Je marche une demi-heure tous les jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Symptômes urinaires <span class="patient-response">[Non]</span> <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a6" value="2" data-criteria="Symptômes urinaires" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a6" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Médicaments actuels <span class="patient-response">[Non. J'avais l'habitude de prendre beaucoup de laxatifs (Dulcolax), mais j'ai arrêté tous les médicaments lorsque la diarrhée a commencé]</span> <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="2" data-criteria="Médicaments actuels" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Antécédents médicaux <span class="patient-response">[J'ai eu une bronchite il y a 3 semaines ; elle a été traitée avec de l'amoxicilline]</span> <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="2" data-criteria="Antécédents médicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Antécédents chirurgicaux <span class="patient-response">[Hémorroïdes réséquées il y a 4 ans]</span> <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="2" data-criteria="Antécédents chirurgicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Antécédents familiaux <span class="patient-response">[Mon père est décédé à 55 ans d'un cancer du côlon. Ma mère est vivante et en bonne santé]</span> <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="2" data-criteria="Antécédents familiaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Mode de vie et habitudes <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Avocat]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-0" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Consommation d'alcool <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-1" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Drogues illicites <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-2" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tabac <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-3" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Activité sexuelle <span class="patient-response">[Avec ma femme]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-4" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Allergies médicamenteuses <span class="patient-response">[Aucune]</span> <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="2" data-criteria="Allergies médicamenteuses" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/13</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Aspect général <span class="patient-response">[Le patient ne semble pas en détresse aiguë]</span> <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="Aspect général" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Signes vitaux <span class="patient-response">[Normaux]</span> <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e2" value="2" data-criteria="Signes vitaux" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e2" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen cardiovasculaire <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Auscultation <span class="patient-response">[RR et FC normaux ; B1/B2 normaux ; pas de souffles, frottements ou galops]</span></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e3" value="2" data-criteria="Examen cardiovasculaire" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e3" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e3" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen pulmonaire <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Auscultation <span class="patient-response">[Bruits respiratoires clairs bilatéralement]</span></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e4" value="2" data-criteria="Examen pulmonaire" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e4" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e4" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Examen abdominal <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Bruits intestinaux normaux en quantité et qualité]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Détendu, souple et indolore]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Percussion <span class="patient-response">[Pas d'hépato-splénomégalie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-2" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Mention de l'examen rectal <span class="patient-response">[L'examen rectal sera effectué après discussion avec le patient]</span> <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e6" value="2" data-criteria="Mention de l'examen rectal" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e6" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/15</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Hypothèses diagnostiques <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">2 points si au moins 2 diagnostics pertinents mentionnés, 1 point si 1 diagnostic</div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Hypothèses diagnostiques" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Pathologies malignes</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Cancer colorectal</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge 55 ans (risque augmenté)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  ATCD familial (père décédé à 55 ans de CCR)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sang mélangé aux selles depuis 1 mois<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Changement du transit (constipation → diarrhée)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte de poids involontaire de 4,5 kg<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ténesme<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Régime pauvre en fibres<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Appétit conservé</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Coloscopie totale urgente avec biopsies</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Pathologies bénignes</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Hémorroïdes</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  ATCD d'hémorroïdes opérées<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sang rouge vif<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Constipation chronique (facteur favorisant)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Utilisation prolongée de laxatifs<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sang mélangé aux selles (pas typique)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de douleur à la défécation<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte de poids associée</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Examen rectal, anuscopie</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Diverticulose compliquée</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge > 50 ans<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Régime pauvre en fibres<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Constipation chronique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Saignement rouge vif possible<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Saignement habituellement abondant et intermittent<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de douleur abdominale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de fièvre</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Coloscopie, CT abdominal si suspicion diverticulite</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Pathologies infectieuses</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Colite à Clostridium difficile</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Antibiothérapie récente (amoxicilline il y a 3 semaines)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Diarrhée aiguë depuis 2 jours<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Profession exposée (avocat = stress)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de fièvre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de douleur abdominale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sang visible rare dans C. difficile<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Délai court après antibiotiques</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ PCR C. difficile dans les selles, toxines A/B</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Autres causes</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Maladie inflammatoire chronique de l'intestin (MICI)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Diarrhée sanglante<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ténesme<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte de poids<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début tardif (55 ans)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de douleur abdominale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de symptômes extra-intestinaux<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Evolution courte (1 mois)</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Coloscopie avec biopsies étagées, calprotectine fécale</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Angiodysplasie</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge > 50 ans<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Saignement rouge vif<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Saignement habituellement intermittent<br>&nbsp;&nbsp;&nbsp;&nbsp;•  N'explique pas les autres symptômes</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Coloscopie, angiographie si nécessaire</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens complémentaires urgents <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Examen rectal avec toucher rectal</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test FIT (recherche de sang occulte dans les selles)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">FSC (recherche anémie)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ionogramme, urée, créatinine</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">CRP, VS</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens complémentaires prioritaires <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Coloscopie totale avec biopsies (dans les 2 semaines)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">PCR C. difficile et toxines dans les selles</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Coproculture avec recherche de leucocytes fécaux</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Calprotectine fécale si suspicion MICI</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Prise en charge symptomatique <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Mesures immédiates</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Arrêt des laxatifs<br />
+            <span style="margin-left: 10px;">•</span> Hydratation orale suffisante<br />
+            <span style="margin-left: 10px;">•</span> Régime sans résidus temporaire<br />
+            <span style="margin-left: 10px;">•</span> Surveillance des signes vitaux<br />
+            <span style="margin-left: 10px;">•</span> Éducation signes d'alarme</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Si colite à C. difficile confirmée</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Vancomycine orale 125mg × 4/jour × 10 jours<br />
+            <span style="margin-left: 10px;">•</span> Ou fidaxomicine 200mg × 2/jour × 10 jours<br />
+            <span style="margin-left: 10px;">•</span> Isolement contact<br />
+            <span style="margin-left: 10px;">•</span> Probiotiques après traitement<br />
+            <span style="margin-left: 10px;">•</span> Éviter antidiarrhéiques</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Conseils diététiques</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Augmentation progressive des fibres<br />
+            <span style="margin-left: 10px;">•</span> Hydratation 1,5-2L/jour<br />
+            <span style="margin-left: 10px;">•</span> Légumes et fruits quotidiens<br />
+            <span style="margin-left: 10px;">•</span> Réduction viande rouge<br />
+            <span style="margin-left: 10px;">•</span> Éviter aliments transformés</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Dépistage familial</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Coloscopie pour les apparentés au 1er degré<br />
+            <span style="margin-left: 10px;">•</span> Début 10 ans avant âge diagnostic du parent<br />
+            <span style="margin-left: 10px;">•</span> Ou à 40 ans (le plus précoce)<br />
+            <span style="margin-left: 10px;">•</span> Conseil génétique si syndrome familial</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="2" data-criteria="Prise en charge symptomatique" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Signes d'alarme à surveiller <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Red Flags - Signes nécessitant une consultation urgente</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Hémorragie massive</div>
+                <div class="redflags-description">→ Urgences, réanimation, endoscopie urgente</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Douleur abdominale intense</div>
+                <div class="redflags-description">→ Perforation, ischémie, urgence chirurgicale</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. Fièvre élevée</div>
+                <div class="redflags-description">→ Colite sévère, mégacôlon toxique</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Signes de choc</div>
+                <div class="redflags-description">→ Hypotension, tachycardie, pâleur = urgence vitale</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">5. Occlusion intestinale</div>
+                <div class="redflags-description">→ Arrêt matières/gaz, distension = urgence chirurgicale</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="2" data-criteria="Signes d'alarme à surveiller" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Clôture type</h4>
+                    <div class="cloture-content cloture-content-green">Monsieur Klein, les symptômes que vous décrivez peuvent être dus à des problèmes facilement traitables, comme des hémorroïdes, une infection dans votre côlon ou une diverticulose. Cependant, ils peuvent également être le signe d'une maladie plus grave, comme un cancer colorectal. Il est crucial que nous effectuions des analyses de sang, un examen des selles, et probablement une coloscopie, qui consiste à examiner votre côlon à l'aide d'un tube fin contenant une caméra. Je vais également devoir effectuer un examen rectal aujourd'hui. Une fois que nous aurons posé un diagnostic, nous devrions être en mesure de traiter votre problème. Avez-vous des questions pour moi ?</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Questions difficiles à poser</h4>
+                    <div class="cloture-content">[Mon père avait un cancer du côlon. Est-ce que je pourrais l'avoir aussi ?] [Que signifie ce mot 'coloscopie' ?]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse type du candidat</h4>
+                    <div class="cloture-content cloture-content-green">C'est une possibilité. Parlez-moi davantage des symptômes que vous avez et qui vous inquiètent par rapport au cancer. / La coloscopie est un examen qui permet de voir l'intérieur de votre côlon avec une petite caméra au bout d'un tube flexible. C'est le meilleur moyen de détecter d'éventuels polypes ou tumeurs.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/90</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 🧬 Cancer colorectal – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes d’appel</h5>
+<ul class="resume-subsection-points">
+<li>Rectorragies ou hématochézie</li>
+<li>Troubles du transit récents (constipation, diarrhée, alternance)</li>
+<li>Sensation de masse rectale ou ténesme</li>
+<li>Douleurs abdominales ou rectales</li>
+<li>Anémie ferriprive (fatigue, dyspnée d’effort, pâleur)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Contexte et facteurs de risque</h5>
+<ul class="resume-subsection-points">
+<li>Âge > 50 ans</li>
+<li>Antécédents familiaux de cancer colorectal ou polypes adénomateux</li>
+<li>Syndromes héréditaires : HNPCC (Lynch), polypose adénomateuse familiale</li>
+<li>MICI (rectocolite hémorragique, maladie de Crohn colique)</li>
+<li>Facteurs environnementaux : alimentation riche en graisses/viandes rouges, sédentarité, tabac, alcool</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Évolution</h5>
+<ul class="resume-subsection-points">
+<li>Symptômes souvent insidieux et intermittents</li>
+<li>Découverte parfois au stade métastatique (foie, poumon, péritoine)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examen abdominal et rectal</h5>
+<ul class="resume-subsection-points">
+<li>Palpation abdominale : recherche masse ou hépatomégalie (métastases)</li>
+<li>TR : masse rectale palpable, saignement</li>
+<li>Recherche d’adénopathies sus-claviculaires (ganglion de Troisier)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Signes de complications</h5>
+<ul class="resume-subsection-points">
+<li>Occlusion intestinale (distension abdominale, vomissements, arrêt gaz/selles)</li>
+<li>Perforation (péritonite)</li>
+<li>Hémorragie digestive basse</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens de confirmation</h5>
+<ul class="resume-subsection-points">
+<li>Coloscopie totale avec biopsies <span class="equals">=</span> examen de <span class="highlight-important">référence</span></li>
+<li>Anatomopathologie : adénocarcinome dans la majorité des cas</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Bilan d’extension</h5>
+<ul class="resume-subsection-points">
+<li>Scanner thoraco-abdomino-pelvien (métastases hépatiques, pulmonaires, péritonéales)</li>
+<li>IRM rectale pour cancers du rectum (staging local)</li>
+<li>Marqueur tumoral CEA (suivi, non diagnostic)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement curatif</h5>
+<ul class="resume-subsection-points">
+<li>Chirurgie : hémicolectomie droite/gauche, sigmoïdectomie, amputation abdomino-périnéale (rectum bas)</li>
+<li>Curage ganglionnaire systématique</li>
+<li>Résection de métastases si résécables</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitements complémentaires</h5>
+<ul class="resume-subsection-points">
+<li>Chimiothérapie adjuvante selon stade (FOLFOX, CAPOX)</li>
+<li>Radiochimiothérapie néoadjuvante pour cancers du rectum localement avancés</li>
+<li>Thérapies ciblées (anti-EGFR, anti-VEGF) en métastatique</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Prise en charge globale</h5>
+<ul class="resume-subsection-points">
+<li>Surveillance endoscopique post-thérapeutique</li>
+<li>Dépistage familial si facteur génétique</li>
+<li>Soins de support (douleur, nutrition, psychologique)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Toute rectorragie après 50 ans <span class="equals">=</span> coloscopie obligatoire</li>
+<li class="resume-bullet highlight">Anémie ferriprive inexpliquée <span class="equals">=</span> cancer colorectal jusqu’à preuve du contraire</li>
+<li class="resume-bullet highlight">Coloscopie avec biopsie <span class="equals">=</span> diagnostic de certitude</li>
+<li class="resume-bullet highlight">Chirurgie <span class="equals">=</span> traitement principal</li>
+<li class="resume-bullet">Radiochimiothérapie néoadjuvante pour cancer du rectum avancé</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser</h5>
+<ul class="resume-subsection-points">
+<li>Troubles du transit récents ? Rectorragies ?</li>
+<li>Perte de poids, asthénie, anorexie ?</li>
+<li>ATCD familiaux de cancer colorectal ou polypes ?</li>
+<li>Antécédents personnels de MICI, polypes ?</li>
+<li>Facteurs de risque : alimentation, tabac, alcool ?</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens à faire</h5>
+<ul class="resume-subsection-points">
+<li>TR systématique</li>
+<li>Coloscopie totale avec biopsies</li>
+<li>Scanner TAP pour bilan d’extension</li>
+<li>IRM rectale si localisation rectale</li>
+<li>Bilan biologique : NFS, ferritine, CEA</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Confirmer diagnostic par coloscopie + biopsie</li>
+<li>Chirurgie avec exérèse tumorale + curage ganglionnaire</li>
+<li>Radiochimiothérapie pour rectum avancé, chimio ± thérapies ciblées si métastatique</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations de l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>L'expert-e intervient si l'étudiant-e dit vouloir faire :</li>
+                <li>• Toucher rectal : confirmer nécessité absolue</li>
+                <li>• Test sang occulte : mentionner qu'il est inutile si sang visible</li>
+                <li>• Coloscopie : délai maximal 2 semaines</li>
+                <li>• Lavement baryté : obsolète, préférer coloscopie</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>ATCD familial = dépistage aurait dû débuter à 45 ans</li>
+                <li>Sang mélangé aux selles = origine colique probable</li>
+                <li>Perte de poids = drapeau rouge pour malignité</li>
+                <li>Antibiothérapie récente = penser C. difficile</li>
+                <li>Coloscopie totale obligatoire à 55 ans avec ces symptômes</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Banaliser le saignement (hémorroïdes)</li>
+                <li>Oublier l'ATCD familial crucial</li>
+                <li>Ne pas faire le toucher rectal</li>
+                <li>Retarder la coloscopie</li>
+                <li>Négliger le risque de C. difficile</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique concernant la vignette</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Diagnostic</h4>
+            <p>Rectorragie chronique sur terrain à risque nécessitant exclusion urgente d'un cancer colorectal</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Cancer colorectal</h4>
+            <p>Troisième cancer le plus fréquent :</p>
+            <ul>
+                <li>Incidence augmente après 50 ans</li>
+                <li>Facteurs de risque : âge, ATCD familiaux, MICI, polypose</li>
+                <li>Séquence adénome-carcinome (10-15 ans)</li>
+                <li>Localisation : 70% côlon gauche et rectum</li>
+                <li>Symptômes selon localisation (droite = anémie, gauche = troubles transit)</li>
+                <li>Survie 5 ans : 90% stade I, 10% stade IV</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Hémorragie digestive basse</h4>
+            <p>Approche diagnostique systématique :</p>
+            <ul>
+                <li>Sang rouge = origine anale, rectale ou colique gauche</li>
+                <li>Méléna = origine haute ou côlon droit</li>
+                <li>Volume et fréquence orientent gravité</li>
+                <li>Âge > 50 ans = coloscopie systématique</li>
+                <li>Causes fréquentes : diverticules, angiodysplasie, cancer, hémorroïdes</li>
+                <li>Mortalité < 5% si prise en charge appropriée</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Dépistage familial CCR</h4>
+            <p>Recommandations selon risque :</p>
+            <ul>
+                <li>Risque moyen : coloscopie à 50 ans</li>
+                <li>ATCD familial 1er degré < 60 ans : début à 40 ans ou 10 ans avant</li>
+                <li>≥ 2 apparentés 1er degré : début à 40 ans</li>
+                <li>Syndrome Lynch : début 20-25 ans</li>
+                <li>PAF : début 10-12 ans</li>
+                <li>Intervalle : tous les 5-10 ans si normal</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Colite à C. difficile</h4>
+            <p>Infection nosocomiale majeure :</p>
+            <ul>
+                <li>1ère cause diarrhée post-antibiotiques</li>
+                <li>Délai : 3 jours à 8 semaines post-ATB</li>
+                <li>Facteurs risque : âge, ATB, IPP, hospitalisation</li>
+                <li>Spectre : diarrhée simple → colite fulminante</li>
+                <li>Diagnostic : PCR plus sensible que toxines</li>
+                <li>Récidive 20-30% des cas</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Prise en charge rectorragie</h4>
+            <p>Stratégie selon présentation :</p>
+            <ul>
+                <li>Évaluation hémodynamique prioritaire</li>
+                <li>Toucher rectal systématique</li>
+                <li>Coloscopie : gold standard diagnostic</li>
+                <li>Préparation colique si état stable</li>
+                <li>Biopsies multiples si lésion suspecte</li>
+                <li>Scanner si coloscopie incomplète</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Aspects nutritionnels CCR</h4>
+            <p>Prévention par l'alimentation :</p>
+            <ul>
+                <li>Fibres : réduction risque 10% par 10g/jour</li>
+                <li>Viande rouge : augmentation risque 17% par 100g/jour</li>
+                <li>Charcuterie : augmentation risque 18% par 50g/jour</li>
+                <li>Calcium et vitamine D : effet protecteur</li>
+                <li>Alcool et tabac : facteurs de risque</li>
+                <li>Activité physique : réduction risque 25%</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Pronostic et surveillance</h4>
+            <p>Après traitement CCR :</p>
+            <ul>
+                <li>Stade I-II : survie 5 ans > 80%</li>
+                <li>Stade III : survie 5 ans 40-70%</li>
+                <li>Surveillance : coloscopie à 1 an puis tous 3-5 ans</li>
+                <li>ACE tous 3-6 mois × 5 ans</li>
+                <li>Scanner TAP annuel × 3 ans si stade II-III</li>
+                <li>Récidive : 80% dans les 2 premières années</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Résumé du cas clinique</h4>
+            <p>Patient de 55 ans à très haut risque de CCR (ATCD familial, âge, symptômes d'alarme) nécessitant coloscopie urgente. La présentation avec rectorragie, modification du transit et perte de poids est hautement suspecte. L'antibiothérapie récente complique le tableau avec possibilité de C. difficile surajouté. Le retard de dépistage (aurait dû débuter à 45 ans) aggrave le pronostic potentiel.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Conclusion</h4>
+            <ul>
+                <li>Toute rectorragie après 50 ans = cancer jusqu'à preuve du contraire</li>
+                <li>L'ATCD familial modifie drastiquement la stratégie de dépistage</li>
+                <li>La coloscopie ne doit pas être retardée devant des signes d'alarme</li>
+                <li>Le régime alimentaire influence significativement le risque</li>
+                <li>La détection précoce transforme le pronostic</li>
+                <li>L'éducation familiale sur le dépistage est cruciale</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>C. difficile : vancomycine 125mg × 4/j × 10j (1ère ligne)</li>
+                <li>Alternative : fidaxomicine 200mg × 2/j × 10j</li>
+                <li>Fer si anémie : fer(II) 100-200mg/j</li>
+                <li>Préparation colique : PEG 4L la veille</li>
+                <li>Chimio adjuvante stade III : FOLFOX ou CAPOX</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>Coloscopie : sensibilité 95% pour lésions > 1cm</li>
+                <li>FIT : seuil 100 ng/mL, Se 79%, Sp 94%</li>
+                <li>ACE : N < 5 ng/mL, élevé dans 70% CCR</li>
+                <li>CT colonographie : alternative si coloscopie impossible</li>
+                <li>Calprotectine : N < 50 μg/g, élevée si inflammation</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Rectorragie chronique (suspicion cancer colorectal vs autres causes)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, profession, motif (sang dans les selles)</li>
+                <li>Caractériser saignement <span class="arrow">→</span> durée (1 mois), fréquence (chaque selle), aspect (sang mélangé), couleur (rouge vif), douleur ?</li>
+                <li>Troubles du transit <span class="arrow">→</span> constipation chronique, diarrhée récente, ténesme</li>
+                <li>Signes associés <span class="arrow">→</span> perte de poids 4,5 kg, appétit conservé, fatigue ?</li>
+                <li>Facteurs de risque <span class="arrow">→</span> ATCD familial cancer colorectal, régime pauvre en fibres, >50 ans</li>
+                <li>ATCD médicaux <span class="arrow">→</span> hémorroïdes opérées, bronchite récente traitée ATB</li>
+                <li>Examen clinique <span class="arrow">→</span> constantes normales, abdomen souple, TR obligatoire</li>
+                <li>Résumé + hypothèse principale + diagnostics différentiels</li>
+                <li>Examens complémentaires <span class="arrow">→</span> NFS/ferritine, coloscopie totale avec biopsies, PCR C. difficile si diarrhée post-ATB</li>
+                <li>Prise en charge <span class="arrow">→</span> PEC urgente si cancer suspecté, isolement si C. difficile, suivi nutritionnel et familial</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide : SANG</div>
+    <ul class="mnemo-items">
+        <li>S = Sang mêlé aux selles</li>
+        <li>A = ATCD familial (père cancer colorectal)</li>
+        <li>N = Nouvelle modification du transit</li>
+        <li>G = Graisse/fibres absentes (facteur risque alimentaire)</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de M. Kenneth Klein, un homme de 55 ans, avocat, qui consulte pour du sang dans ses selles depuis environ un mois.</p><p>Il décrit la présence de sang rouge vif, entremêlé aux selles brunes, observé à chaque selle. Il ne ressent pas de douleur lors de la défécation et n’a pas eu de méléna. Ses troubles du transit sont anciens, avec une constipation chronique de plusieurs mois (2 selles par semaine, sous laxatifs inefficaces). Depuis 2 jours, il présente une diarrhée aqueuse, environ trois selles par jour, toujours mélangées de sang, accompagnées d’un ténesme léger mais sans mucus.</p><p>Il n’a pas eu de fièvre, pas de douleur abdominale ni de nausées. Il rapporte une perte de poids involontaire de 4,5 kg en 6 mois, sans perte d’appétit. Ses habitudes alimentaires sont pauvres en fibres, essentiellement de la malbouffe. Il ne fume pas, ne boit pas d’alcool et marche quotidiennement.</p><p>Dans ses antécédents, il a eu des hémorroïdes opérées il y a 4 ans et une bronchite traitée récemment par amoxicilline. Son père est décédé à 55 ans d’un cancer du côlon, ce qui le rend particulièrement anxieux. Il s’inquiète de son voyage prévu avec sa famille la semaine prochaine.</p><p>À l’examen, il est en bon état général, sans détresse. Ses constantes sont normales (TA 130/80, FC 76, FR 16, T° 36,9). L’abdomen est souple et indolore, sans masse ni organomégalie. Le toucher rectal reste à réaliser.</p><p>En résumé, il s’agit d’un homme de 55 ans, avec rectorragies persistantes depuis 1 mois, troubles du transit, perte de poids et ATCD familial fort. Mon hypothèse principale est un cancer colorectal. Les diagnostics différentiels incluent une récidive d’hémorroïdes, une diverticulose, une colite à C. difficile (vu antibiothérapie récente), une MICI ou une angiodysplasie.</p><p>Comme examens complémentaires, je demanderais en urgence une NFS/ferritine, une coloscopie totale avec biopsies, et selon l’évolution une PCR C. difficile. La prise en charge inclura la préparation colique, une discussion multidisciplinaire en cas de cancer confirmé, et des mesures hygiéno-diététiques et de dépistage familial.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : M. Klein, 55 ans, présente sang dans les selles depuis 1 mois, diarrhée récente, perte de poids.</p><p>B (Background) : Constipation chronique, hémorroïdes opérées, ATB récent, père décédé CCR à 55 ans, régime pauvre en fibres.</p><p>A (Assessment) : Suspicion forte cancer colorectal. DD : hémorroïdes récidivantes, diverticulose, colite à C. difficile, MICI, angiodysplasie.</p><p>R (Recommendation) : NFS/ferritine, coloscopie totale avec biopsies sous 2 semaines, TR immédiat. PEC multidisciplinaire si cancer, traitement C. difficile si confirmé.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 Signes d’alarme CCR</h5>
+                <ul class="presentation-points">
+                    <li>Âge > 50 ans</li>
+                    <li>ATCD familial CCR</li>
+                    <li>Modification récente du transit</li>
+                    <li>Sang mêlé aux selles</li>
+                    <li>Perte de poids</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Diagnostic différentiel rapide</h5>
+                <ul class="presentation-points">
+                    <li>Hémorroïdes : sang rouge en surface, douleur possible</li>
+                    <li>Diverticulose : saignement intermittent, abondant</li>
+                    <li>Colite à C. difficile : diarrhée post-ATB, toxines</li>
+                    <li>MICI : diarrhée chronique avec mucus, jeunes patients</li>
+                    <li>Angiodysplasie : saignement intermittent, âge avancé</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>⚠️ Pièges ECOS</h5>
+                <ul class="presentation-points">
+                    <li>Banaliser le saignement vu ATCD hémorroïdes</li>
+                    <li>Oublier le TR systématique</li>
+                    <li>Retarder la coloscopie</li>
+                    <li>Négliger le risque infectieux post-ATB</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Cancer colorectal</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Âge 55 ans</li>
+                                <li>ATCD familial 1er degré CCR</li>
+                                <li>Rectorragies mélangées aux selles</li>
+                                <li>Modification transit</li>
+                                <li>Perte de poids</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Appétit conservé</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Hémorroïdes</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>ATCD hémorroïdes</li>
+                                <li>Sang rouge vif</li>
+                                <li>Constipation chronique</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Sang mélangé aux selles</li>
+                                <li>Perte de poids</li>
+                                <li>Pas de douleur anale</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Colite à C. difficile</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>ATB récent</li>
+                                <li>Diarrhée sanglante aiguë</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de fièvre</li>
+                                <li>Sang visible rare</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q4</span>
+                        <span class="q-text">MICI</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Diarrhée sanglante</li>
+                                <li>Ténesme</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Âge tardif</li>
+                                <li>Pas de douleur abdominale</li>
+                                <li>Évolution courte</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Toucher rectal</li>
+                            <li>NFS, ferritine</li>
+                            <li>Coloscopie totale avec biopsies</li>
+                            <li>PCR C. difficile si diarrhée persistante</li>
+                            <li>Coproculture si suspicion infectieuse</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Suspicion forte cancer colorectal, confirmation coloscopie + biopsies</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Hydratation, arrêt laxatifs</li>
+                                <li>Éducation signes alarme</li>
+                                <li>PEC colite infectieuse si confirmée</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-section">
+                            <strong>Specifique :</strong>
+                            <ul>
+                                <li>Chirurgie curative si CCR confirmé</li>
+                                <li>Chimiothérapie adjuvante selon stade</li>
+                                <li>Radiochimiothérapie si rectum</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Surveillance clinique + biologique</li>
+                            <li>Coloscopie post-opératoire</li>
+                            <li>Scanner TAP selon protocole</li>
+                            <li>Dépistage familial (coloscopie à 40 ans ou 10 ans avant cas index)</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour le patient standardisé</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Kenneth Klein |             <strong>Âge :</strong> 55 ans<br>
+            <strong>Contexte :</strong> Homme marié avec deux enfants, avocat, consultant pour rectorragies
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> J'ai du sang dans mes selles depuis un mois.</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> Je suis inquiet car mon père est mort du cancer du côlon.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Consignes</h4>
+            <ul>
+                <li>Si la coloscopie est mentionnée, demandez : 'Que signifie ce mot ?'</li>
+                <li>Paraissez inquiet mais pas en détresse aiguë.</li>
+                <li>Mentionnez votre voyage prévu la semaine prochaine.</li>
+                <li>Insistez sur l'inefficacité des laxatifs.</li>
+                <li>Montrez de l'anxiété concernant le cancer.</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Symptôme principal :</strong>
+                <ul>
+                    <li>Sang rouge vif mélangé aux selles</li>
+                    <li>Présent à chaque selle depuis 1 mois</li>
+                    <li>Pas de douleur associée</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>Constipation chronique 6 mois (2 selles/semaine)</li>
+                    <li>Diarrhée récente depuis 2 jours</li>
+                    <li>Perte de poids 4,5 kg en 6 mois</li>
+                    <li>Ténesme léger</li>
+                    <li>Appétit conservé</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Facteurs déclenchants :</strong>
+                <ul>
+                    <li>Usage prolongé de laxatifs</li>
+                    <li>Antibiothérapie récente</li>
+                    <li>Régime pauvre en fibres</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Réponse aux symptômes :</strong>
+                <ul>
+                    <li>Arrêt des laxatifs avec diarrhée</li>
+                    <li>Inquiétude croissante</li>
+                    <li>Report du voyage ?</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Représentation de la maladie :</strong>
+                <ul>
+                    <li>Peur du cancer comme son père</li>
+                    <li>Espoir que ce soit bénin</li>
+                    <li>Veut des réponses rapides</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Anxiété palpable</li>
+                    <li>Questions sur le pronostic</li>
+                    <li>Préoccupation voyage famille</li>
+                    <li>Recherche réassurance</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant le status :</strong>
+                <ul>
+                    <li>Abdomen souple</li>
+                    <li>Aucune douleur à la palpation</li>
+                    <li>Coopératif mais tendu</li>
+                    <li>Appréhension examen rectal</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse par systèmes</h4>
+            <div class="property-group">
+                <strong>Digestif :</strong>
+                <ul>
+                    <li>Pas de douleur abdominale</li>
+                    <li>Pas de nausées/vomissements</li>
+                    <li>Pas de méléna</li>
+                    <li>Transit très perturbé</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Général :</strong>
+                <ul>
+                    <li>Pas de fièvre</li>
+                    <li>Perte de poids involontaire</li>
+                    <li>Fatigue modérée</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Urinaire :</strong>
+                <ul>
+                    <li>Aucun symptôme urinaire</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Habitudes</h4>
+            <p><strong>Médicaments :</strong> Dulcolax (arrêté récemment)</p>
+            <p><strong>Tabac :</strong> Non-fumeur</p>
+            <p><strong>Alcool :</strong> Non</p>
+            <p><strong>Alimentation :</strong> Malbouffe, pas de légumes</p>
+            <p><strong>Exercice :</strong> Marche 30 min/jour</p>
+            <p><strong>Profession :</strong> Avocat (stress++)</p>
+            <p><strong>Drogues :</strong> Jamais</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Histoire Medicale</h4>
+            <ul>
+                <li>Bronchite traitée amoxicilline il y a 3 semaines</li>
+                <li>Hémorroïdes opérées il y a 4 ans</li>
+                <li>Père décédé cancer côlon à 55 ans</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 42, examen: 13, management: 15, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 12, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 6, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 5, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE Triage 39 - Cas téléphonique - Suspicion de maltraitance - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE Triage 39 - Cas téléphonique - Suspicion de maltraitance</h1>
+            <p style="margin: 5px 0;">📍 Consultation téléphonique - Clinique médicale</p>
+            <p style="margin: 5px 0;">👤 Joey (3 ans), fille de Kelly Richards qui appelle pour suspicion de maltraitance sexuelle - Urgence médico-légale avec équipe spécialisée</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/74</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Identification du problème et inquiétudes maternelles <span class="patient-response">[Appel mère [Kelly Richards], fille [Joey, 3 ans], suspicion [maltraitance sexuelle], marques [sur parties intimes], changements comportement [n'agit pas comme d'habitude]]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="exemples-phrases"><div class="exemple-phrase">"Bonjour, Mme Richards ? C'est le Dr Humboldt."</div><div class="exemple-phrase">"En quoi puis-je vous aider aujourd'hui ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Identification du problème et inquiétudes maternelles" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Nature des préoccupations et changements comportementaux <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Type suspicion <span class="patient-response">[du type sexuel]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Comportement au change <span class="patient-response">[n'agit pas comme d'habitude]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Irritabilité <span class="patient-response">[vraiment irritable sans raison]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Marques observées <span class="patient-response">[toutes ces marques sur elle]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Questionnement maternel <span class="patient-response">[à quoi ça ressemble si quelqu'un lui faisait quelque chose ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Voulez-vous dire des abus sexuels ou des marques qui pourraient provenir de maltraitance physique ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Information générale sur les signes de maltraitance <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Difficultés diagnostic <span class="patient-response">[très difficiles à déterminer sur un seul aspect]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Signes possibles <span class="patient-response">[petites coupures, éruptions, rougeurs, œdème]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Absence signes <span class="patient-response">[souvent aucune manifestation extérieure]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nécessité examen <span class="patient-response">[examiner Joey au cabinet]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Empathie médecin <span class="patient-response">[désolé d'apprendre que cela pourrait se produire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Les abus sexuels sont très difficiles à déterminer sur un seul aspect, madame."</div><div class="exemple-phrase">"J'aimerais examiner Joey au cabinet pour mieux évaluer tout problème éventuel."</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Réassurance et évitement de spécification <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Variabilité apparence <span class="patient-response">[maltraitance peut prendre tellement de formes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Détermination multiple <span class="patient-response">[pas uniquement déterminée sur base d'un seul signe]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nécessité équipe <span class="patient-response">[assistante sociale conseillère]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation appropriée <span class="patient-response">[aborder correctement ce qui pourrait se passer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Résolution situation <span class="patient-response">[parler avec Joey et résoudre]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Il est très difficile de dire dans chaque cas, Mme Richards."</div><div class="exemple-phrase">"La maltraitance peut prendre tellement de formes qu'il y a beaucoup d'apparences différentes."</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Hésitations maternelles et réassurance <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Peur exagération <span class="patient-response">[probablement folle]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Éviter accusations <span class="patient-response">[ne veux pas commencer quelque chose]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Incertitude <span class="patient-response">[je ne sais tout simplement pas]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Besoin réflexion <span class="patient-response">[y réfléchir un moment]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Peur conséquences <span class="patient-response">[ne veux pas en faire toute une histoire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-4" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Gardez à l'esprit que venir au cabinet n'accuserait absolument personne de quoi que ce soit."</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Explication du processus d'évaluation <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Absence accusation <span class="patient-response">[être évaluée ne conduirait pas nécessairement à actions]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ressources disponibles <span class="patient-response">[assistante sociale, Protection enfance]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Environnement sécurisé <span class="patient-response">[havre de paix]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Aide nécessaire <span class="patient-response">[apporter à Joey l'aide dont elle a besoin]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Utilisation ressources <span class="patient-response">[peut passer par nos ressources]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-4" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Quand vous viendrez ici, nous vous offrirons des ressources et un havre de paix pour que vous puissiez faire ce qui est le mieux pour vous et votre enfant."</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Description détaillée du processus médical <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Discussion situation <span class="patient-response">[vous nous expliquerez exactement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen présence mère <span class="patient-response">[en votre présence]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Détermination marques <span class="patient-response">[causées par maltraitance]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Prélèvements échantillons <span class="patient-response">[liquides et photographies]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-3" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tests invisibles <span class="patient-response">[tester choses qu'on ne peut pas voir]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-4" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Environnement sûr <span class="patient-response">[fournir environnement sûr pour parler]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-5" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Nous ferons un examen sur Joey, en votre présence, pour déterminer s'il y a des marques qui auraient pu être causées par quelque chose comme une maltraitance."</div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Équilibre entre protection et famille <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Peur blesser <span class="patient-response">[ne veux blesser personne]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Éviter accusations <span class="patient-response">[ne vais pas accuser quiconque]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Objectif protection <span class="patient-response">[protéger les enfants]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Contact nuisible <span class="patient-response">[personnes qui causent tort n'aient pas contact]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-3" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Meilleur intérêt <span class="patient-response">[ce serait le mieux pour Joey et vous-même]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-4" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"La dernière chose que moi, ou n'importe lequel d'entre nous ici à la clinique, voulons faire est de briser une famille."</div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Description des marques et symptômes <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Âge enfant <span class="patient-response">[elle a 3 ans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-0" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[sur ses parties intimes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-1" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Apparence <span class="patient-response">[marques rouges, comme genou écorché]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-2" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Œdème <span class="patient-response">[elle a l'air enflée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-3" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleur <span class="patient-response">[pleure quand je l'essuie, vraiment douloureuse]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-4" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Quel âge a Joey ? À quoi ressemblent les marques ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Chronologie et contexte familial <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Découverte récente <span class="patient-response">[remarqué seulement hier soir]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-0" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Contexte garde <span class="patient-response">[revenue de chez son père hier soir]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-1" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence garde <span class="patient-response">[il les prend tout le temps]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-2" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Première fois <span class="patient-response">[première fois que quelque chose comme ça arrive]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-3" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Comportement retour <span class="patient-response">[elle allait bien quand déposée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-4" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Depuis combien de temps agit-elle comme ça et a-t-elle ces marques ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Problèmes d'apprentissage de la propreté <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Évitement toilettes <span class="patient-response">[ne veut pas y aller]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-0" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Timidité nouvelle <span class="patient-response">[timide à ce sujet]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-1" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Culottes apprentissage <span class="patient-response">[un peu lente pour apprentissage propreté]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-2" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Refus changement <span class="patient-response">[ne veut pas que je la change]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-3" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Comportement nouveau <span class="patient-response">[c'est nouveau]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-4" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Depuis que vous l'avez récupérée, a-t-elle eu des problèmes pour aller aux toilettes ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Évolution temporelle et contraintes socio-économiques <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Durée symptômes <span class="patient-response">[peut-être semaine dernière aussi]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-0" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Aggravation récente <span class="patient-response">[plus depuis qu'elle est revenue]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-1" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Contraintes travail <span class="patient-response">[travaille les week-ends]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-2" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Obligation garde <span class="patient-response">[ne peux pas l'avoir tout le temps]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-3" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Questionnement <span class="patient-response">[qu'est-ce que je suis censée faire ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-4" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Est-ce que c'est seulement depuis hier ou est-ce que ça dure depuis plus longtemps ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+<div class="criteria-row" id="criteria-a13">
+    <div>
+        <div class="criteria-text">13. Peurs concernant les conséquences <button class="comment-button" onclick="toggleComment('a13')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Peur retrait enfant <span class="patient-response">[ne viens pas si vous dites enlever mon bébé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-0" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Incertitude procédures <span class="patient-response">[que feriez-vous ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-1" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hors contrôle médecin <span class="patient-response">[c'est hors de mes mains]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-2" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Décision externe <span class="patient-response">[pas à moi de décider]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-3" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Intérêts Protection enfance <span class="patient-response">[aucun intérêt à accuser ou prendre enfants]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-4" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Je ne peux certainement pas dire ce qui se passera si nous déterminons que Joey a subi un incident de maltraitance."</div></div>        <div class="criterion-comment-section" id="comment-section-a13">
+            <textarea class="comment-textarea" id="comment-a13" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a13'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a13">0</div>
+</div>
+<div class="criteria-row" id="criteria-a14">
+    <div>
+        <div class="criteria-text">14. Sécurité et fratrie <button class="comment-button" onclick="toggleComment('a14')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Sécurité domicile <span class="patient-response">[vous sentez-vous en sécurité ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a14-detail-0" value="1" onchange="updateDetailScore('a14', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Absence menace <span class="patient-response">[pas l'impression que je vais être battue]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a14-detail-1" value="1" onchange="updateDetailScore('a14', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autre enfant <span class="patient-response">[fils de 8 ans chez voisin]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a14-detail-2" value="1" onchange="updateDetailScore('a14', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Possibilité amener <span class="patient-response">[je peux aller le chercher]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a14-detail-3" value="1" onchange="updateDetailScore('a14', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation fratrie <span class="patient-response">[raison penser qu'il pourrait avoir été impliqué ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a14-detail-4" value="1" onchange="updateDetailScore('a14', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Peur générale <span class="patient-response">[j'ai juste peur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a14-detail-5" value="1" onchange="updateDetailScore('a14', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Vous sentez-vous en sécurité en ce moment ? Quand vous viendrez, pouvez-vous l'amener aussi ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a14">
+            <textarea class="comment-textarea" id="comment-a14" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a14'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a14">0</div>
+</div>
+<div class="criteria-row" id="criteria-a15">
+    <div>
+        <div class="criteria-text">15. Validation du rôle parental et engagement <button class="comment-button" onclick="toggleComment('a15')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Incertitude situation <span class="patient-response">[ne sais pas si quelque chose se passe]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a15-detail-0" value="1" onchange="updateDetailScore('a15', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Volonté protection <span class="patient-response">[veux m'assurer qu'elle est en sécurité]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a15-detail-1" value="1" onchange="updateDetailScore('a15', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rôle maternel <span class="patient-response">[c'est votre travail en tant que maman]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a15-detail-2" value="1" onchange="updateDetailScore('a15', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Validation médecin <span class="patient-response">[vous ne faites rien d'autre que la meilleure chose]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a15-detail-3" value="1" onchange="updateDetailScore('a15', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Accord consultation <span class="patient-response">[oui, je peux venir]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a15-detail-4" value="1" onchange="updateDetailScore('a15', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"C'est votre travail en tant que maman, je pense."</div><div class="exemple-phrase">"Votre travail en tant que parent est de protéger vos enfants."</div></div>        <div class="criterion-comment-section" id="comment-section-a15">
+            <textarea class="comment-textarea" id="comment-a15" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a15'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a15">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/2</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Limitation consultation téléphonique <span class="patient-response">[Aucun examen physique possible [consultation téléphonique]]</span> <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="exemples-phrases"><div class="exemple-phrase">"J'aimerais examiner Joey au cabinet pour mieux évaluer tout problème éventuel."</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="Limitation consultation téléphonique" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/28</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Diagnostic différentiel et évaluation <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="exemples-phrases"><div class="exemple-phrase">"Les abus sexuels en particulier peuvent causer de petites coupures sur les organes génitaux ou des éruptions cutanées ou simplement des rougeurs ou un œdème."</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Diagnostic différentiel et évaluation" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Maltraitance</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Abus sexuel</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Marques génitales rouges et œdème<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur au nettoyage<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Changement comportement<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Régression propreté<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irritabilité nouvelle<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Découverte post-garde paternelle</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Examen médico-légal, prélèvements IST, photographies</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Maltraitance physique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Marques génitales<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Apparence ecchymotique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Localisation suspecte<br>Arguments CONTRE :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Absence autres traumatismes</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Examen corporel complet, photographies</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes non-maltraitantes</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Traumatisme accidentel</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Enfant de 3 ans actif<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Chutes possibles<br>Arguments CONTRE :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Localisation génitale inhabituelle<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Changements comportementaux</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Anamnèse détaillée mécanisme</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Infection urinaire</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irritation génitale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur mictionnelle possible<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Rougeur<br>Arguments CONTRE :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Localisation spécifique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Aspect ecchymotique</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ ECBU, examen urologique</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Candidose</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Rougeur génitale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irritation<br>Arguments CONTRE :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Aspect non typique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Œdème associé</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Prélèvement mycologique</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Urgence de l'évaluation médicale <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Nécessité examen <span class="patient-response">[Joey a vraiment besoin d'être évaluée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Clarification situation <span class="patient-response">[aider à clarifier la situation]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Environnement approprié <span class="patient-response">[personnes qui travaillent couramment avec cela]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Meilleure conduite <span class="patient-response">[la meilleure chose à faire dans votre situation]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Bénéfice mutuel <span class="patient-response">[pour vous-même et Joey]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Elle a vraiment besoin d'être évaluée ici, et nous pouvons aider à clarifier la situation."</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Équipe multidisciplinaire et ressources <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Assistante sociale <span class="patient-response">[conseillère peut discuter]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Détermination probabilité <span class="patient-response">[aider déterminer si maltraitance probable]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Communication enfant <span class="patient-response">[parler avec Joey]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Protection enfance <span class="patient-response">[service appelé Protection enfance]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ressources clinique <span class="patient-response">[nos ressources ici]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Nous avons une assistante sociale qui est conseillère et qui peut également discuter avec vous de la situation."</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Processus d'examen médico-légal <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Discussion préalable <span class="patient-response">[discuterons avec vous de la situation]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen supervisé <span class="patient-response">[examen en votre présence]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche marques <span class="patient-response">[déterminer marques causées par maltraitance]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Prélèvements biologiques <span class="patient-response">[échantillons de liquides]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Documentation <span class="patient-response">[photographies pour tester]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-4" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tests complémentaires <span class="patient-response">[choses qu'on ne peut pas voir]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-5" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Nous prélèverions également des échantillons de liquides et des photographies pour tester des choses que nous ne pouvons pas voir."</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Gestion des Services de protection de l'enfance <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Décision externe <span class="patient-response">[Services protection enfance détermineront]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Absence volonté nuire <span class="patient-response">[aucun intérêt à accuser ou prendre enfants]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Aide maximale <span class="patient-response">[vous aideront de toutes manières possibles]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hébergement sécurisé <span class="patient-response">[endroit sûr où rester si nécessaire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Préservation famille <span class="patient-response">[ne veulent pas voir enfant séparé parents]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"J'aimerais vous dire que les Services de protection de l'enfance et notre assistante sociale détermineront quoi faire."</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Évaluation de la sécurité immédiate <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Sécurité maternelle <span class="patient-response">[vous sentez-vous en sécurité ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Menaces potentielles <span class="patient-response">[quelqu'un vous ferait du mal si veniez ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Protection fratrie <span class="patient-response">[autre enfant, fils 8 ans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation étendue <span class="patient-response">[raison penser impliqué aussi ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réassurance générale <span class="patient-response">[essayons juste d'aider]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-4" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Vous sentez-vous en sécurité en ce moment ? Il n'y a aucune accusation portée contre qui que ce soit en ce moment."</div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Validation du rôle parental et responsabilité</h4>
+                    <div class="cloture-content cloture-content-green">Je ne sais tout simplement pas si quelque chose se passe, et je veux m'assurer qu'elle est en sécurité. C'est votre travail en tant que maman, je pense. Je pense que vous ne faites rien d'autre que la meilleure chose pour vos enfants. Votre travail en tant que parent est de protéger vos enfants. C'est la bonne chose à faire.</div>
+                    <div class="exemples-phrases">
+                        <div class="exemple-phrase">"C'est votre travail en tant que maman, je pense."</div>
+                        <div class="exemple-phrase">"Votre travail en tant que parent est de protéger vos enfants."</div>
+                    </div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Engagement pour consultation immédiate</h4>
+                    <div class="cloture-content cloture-content-green">Puis-je m'attendre à ce que vous veniez aujourd'hui, alors ? Oui, je peux venir. Nous vous attendrons alors. Je serai là sous peu.</div>
+                    <div class="exemples-phrases">
+                        <div class="exemple-phrase">"Puis-je m'attendre à ce que vous veniez aujourd'hui, alors ? Nous vous attendrons alors."</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/124</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations pour l'expert - Gestion suspicion maltraitance</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Consultation téléphonique délicate nécessitant empathie</li>
+                <li>Suspicion fondée : marques génitales + changements comportement</li>
+                <li>Contexte garde partagée avec découverte post-visite paternelle</li>
+                <li>Mère hésitante mais coopérative, peurs légitimes</li>
+                <li>Urgence évaluation médico-légale avec équipe spécialisée</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Signes Alarme</h4>
+            <ul>
+                <li>Marques génitales avec œdème et douleur</li>
+                <li>Régression apprentissage propreté</li>
+                <li>Changements comportement soudains</li>
+                <li>Évitement situations change/toilettes</li>
+                <li>Irritabilité nouvelle inexpliquée</li>
+                <li>Découverte post-garde spécifique</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Objectifs de communication</h4>
+            <ul>
+                <li>Rassurer mère sans minimiser inquiétudes</li>
+                <li>Éviter spécifications diagnostiques téléphone</li>
+                <li>Encourager consultation sans forcer</li>
+                <li>Expliquer processus évaluation</li>
+                <li>Garantir confidentialité et sécurité</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Défis spécifiques</h4>
+            <ul>
+                <li>Équilibrer urgence et réassurance</li>
+                <li>Gérer peurs maternelles légitimes</li>
+                <li>Éviter leading questions</li>
+                <li>Maintenir objectivité diagnostique</li>
+                <li>Coordonner équipe multidisciplinaire</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie et Pratique - Suspicion maltraitance infantile</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Communication téléphonique en suspicion maltraitance</h4>
+            <p>Empathie sans leading questions, encouragement consultation, éviter spécifications diagnostiques. Rassurer sur processus tout en prenant au sérieux.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Signes comportementaux maltraitance</h4>
+            <p>Régression développementale, évitement situations spécifiques, changements comportement soudains. Contexte familial et garde partagée.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Évaluation médico-légale pédiatrique</h4>
+            <p>Équipe spécialisée, examen supervisé, prélèvements appropriés, documentation photographique, coordination services protection.</p>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>Analyse d'urine et culture urinaire</li>
+                <li>Frottis microscopiques et cultures (vaginaux, oraux, anaux)</li>
+                <li>Tests antigéniques gonorrhée et chlamydia</li>
+                <li>Tests RPR, anticorps VIH, hépatites B et C</li>
+                <li>Échantillons cheveux et ongles</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Signalement obligatoire si suspicion fondée</li>
+                <li>Évaluation équipe multidisciplinaire</li>
+                <li>Documentation précise et objective</li>
+                <li>Support psychologique famille</li>
+                <li>Coordination services protection enfance</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-protocole">
+    <div class="annexe-title">Protocole d'évaluation maltraitance pédiatrique</div>
+    <div class="annexe-protocole-content">
+        <div class="protocole-section">
+            <h4>Évaluation initiale</h4>
+            <ul>
+                <li>Anamnèse détaillée avec mère</li>
+                <li>Observation comportement enfant</li>
+                <li>Examen physique complet documenté</li>
+                <li>Photographies médico-légales</li>
+                <li>Évaluation psychologique</li>
+            </ul>
+        </div>
+        <div class="protocole-section">
+            <h4>Prélèvements biologiques</h4>
+            <ul>
+                <li>Prélèvements IST sites multiples</li>
+                <li>ECBU pour infection urinaire</li>
+                <li>Sérologies virales hépatites/VIH</li>
+                <li>Culture mycologique si indiqué</li>
+                <li>ADN si agression récente</li>
+            </ul>
+        </div>
+        <div class="protocole-section">
+            <h4>Équipe multidisciplinaire</h4>
+            <ul>
+                <li>Médecin pédiatre formé</li>
+                <li>Assistante sociale spécialisée</li>
+                <li>Psychologue enfant</li>
+                <li>Services protection enfance</li>
+                <li>Forces de l'ordre si nécessaire</li>
+            </ul>
+        </div>
+        <div class="protocole-section">
+            <h4>Aspects légaux</h4>
+            <ul>
+                <li>Signalement obligatoire</li>
+                <li>Documentation médicale précise</li>
+                <li>Conservation preuves</li>
+                <li>Témoignage médical possible</li>
+                <li>Respect secret médical</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Instructions pour la mère (actrice) - Kelly Richards</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Kelly Richards |  | <strong>Enfant :</strong> Joey (3 ans) et fils (8 ans)<br>
+            <strong>Contexte :</strong> Mère divorcée soupçonnant maltraitance sexuelle de sa fille après garde paternelle
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Suspicion maltraitance sexuelle fille</p>
+            <p><strong>Inquiétudes :</strong> Marques génitales, changements comportement</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Ton émotionnel :</strong>
+                <ul>
+                    <li>Anxieuse mais déterminée</li>
+                    <li>Hésitante par moments</li>
+                    <li>Protectrice envers enfants</li>
+                    <li>Peur des conséquences</li>
+                    <li>En larmes lors entretien</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Coopération médicale :</strong>
+                <ul>
+                    <li>Écoute conseils médecin</li>
+                    <li>Pose questions pertinentes</li>
+                    <li>Exprime clairement craintes</li>
+                    <li>Accepte finalement consultation</li>
+                    <li>Demande réassurance multiple</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Réponses typiques :</strong>
+                <ul>
+                    <li>Sur marques : 'Comme genou écorché là-bas'</li>
+                    <li>Sur peurs : 'Je ne veux pas en faire toute une histoire'</li>
+                    <li>Sur enfant : 'Elle pleure quand je l'essuie'</li>
+                    <li>Sur garde : 'Il les prend tout le temps'</li>
+                    <li>Sur décision : 'Je ne sais tout simplement pas'</li>
+                    <li>Sur venue : 'Oui, je peux venir'</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Situation Familiale</h4>
+            <p><strong>Statut :</strong> Mère divorcée</p>
+            <p><strong>Garde :</strong> Partagée, ex-mari prend enfants week-ends</p>
+            <p><strong>Travail :</strong> Travaille week-ends, contraintes financières</p>
+            <p><strong>Enfants :</strong> Joey (3 ans) et fils (8 ans)</p>
+            <p><strong>Découverte :</strong> Après retour garde paternelle</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Symptomes Observes</h4>
+            <div class="property-group">
+                <strong>Marques :</strong>
+                <ul>
+                    <li>Localisation : parties intimes</li>
+                    <li>Apparence : marques rouges comme genou écorché</li>
+                    <li>Œdème : a l'air enflée</li>
+                    <li>Douleur : pleure quand essuyée</li>
+                    <li>Aspect : vraiment douloureuse</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Comportement :</strong>
+                <ul>
+                    <li>N'agit pas comme d'habitude au change</li>
+                    <li>Irritabilité sans raison récente</li>
+                    <li>Évitement toilettes depuis</li>
+                    <li>Timidité nouvelle pour changement</li>
+                    <li>Régression apprentissage propreté</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Chronologie :</strong>
+                <ul>
+                    <li>Découverte : hier soir</li>
+                    <li>Début possible : semaine dernière</li>
+                    <li>Aggravation : depuis retour garde</li>
+                    <li>Première fois : ce genre situation</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Preoccupations Maternelles</h4>
+            <div class="property-group">
+                <strong>Peurs :</strong>
+                <ul>
+                    <li>Probablement folle</li>
+                    <li>En faire toute une histoire</li>
+                    <li>Blesser quelqu'un innocent</li>
+                    <li>Accuser à tort</li>
+                    <li>Conséquences pour famille</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Questionnements :</strong>
+                <ul>
+                    <li>À quoi ressemble maltraitance ?</li>
+                    <li>Comment être sûre ?</li>
+                    <li>Que va-t-il se passer ?</li>
+                    <li>Va-t-on m'enlever mon bébé ?</li>
+                    <li>Qu'est-ce que je suis censée faire ?</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Contraintes :</strong>
+                <ul>
+                    <li>Travail week-ends obligatoire</li>
+                    <li>Pressions financières</li>
+                    <li>Garde partagée nécessaire</li>
+                    <li>Distance géographique</li>
+                    <li>Isolement social</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-note">
+    <div class="annexe-title">Note du patient - Consultation téléphonique</div>
+    <div class="annexe-note-content">
+        <div class="note-section">
+            <h4>Anamnèse</h4>
+            <p>Appel téléphonique de la mère d'une fillette de 3 ans avec lésions génitales nouvellement découvertes suspectées d'être compatibles avec des abus sexuels. La mère indique que les marques sont sur la région génitale de l'enfant et comprennent une apparence de type ecchymose et un œdème. L'enfant a également été agitée depuis 1 semaine et a eu une certaine irritabilité lors de l'utilisation des toilettes pendant cette période. Garde partagée entre parents séparés avec découverte de ces marques au retour de l'enfant après une visite de week-end chez le père. Mère en larmes lors de l'entretien mais a accepté de se présenter à la clinique le jour même de l'appel.</p>
+        </div>
+        <div class="note-section">
+            <h4>Examen physique</h4>
+            <p>Aucun examen physique</p>
+        </div>
+        <div class="note-section">
+            <h4>Diagnostic différentiel</h4>
+            <ul>
+                <li>Abus sexuel</li>
+                <li>Maltraitance physique</li>
+                <li>Traumatisme accidentel</li>
+                <li>Infection urinaire</li>
+                <li>Candidose</li>
+            </ul>
+        </div>
+        <div class="note-section">
+            <h4>Bilan diagnostique</h4>
+            <ul>
+                <li>Analyse d'urine et culture urinaire</li>
+                <li>Frottis microscopiques et cultures vaginaux, oraux et anaux</li>
+                <li>Tests antigéniques pour gonorrhée et chlamydia sur échantillons génitaux et oraux</li>
+                <li>Tests RPR, anticorps VIH, hépatites B et C</li>
+                <li>Échantillons de cheveux et d'ongles</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 74, examen: 2, management: 28, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 15, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 1, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 6, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

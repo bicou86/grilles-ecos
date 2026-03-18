@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESCOS-18 - Douleur abdominale - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - RESCOS-18 - Douleur abdominale</h1>
+            <p style="margin: 5px 0;">📍 Cabinet du généraliste</p>
+            <p style="margin: 5px 0;">👤 Mme Katia Marguet, 39 ans, consulte pour des douleurs abdominales. Elle est connue pour des problèmes de poids avec un BMI à 32.5 kg/m²</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">143/82 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">SaO2</div>
+                    <div class="vital-sign-value">98 %</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">37.8°C</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">IMC</div>
+                    <div class="vital-sign-value">32.5 kg/m²</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/31</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Caractérisation de la douleur <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[douleur dans le haut du ventre à droite]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Quantité <span class="patient-response">[6/10]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Qualité <span class="patient-response">[écrasement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[vers l'épaule droite]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chronologie <span class="patient-response">[début brutal de la douleur la nuit dernière. Douleur constante qui ne part pas]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs aggravants/soulageants <span class="patient-response">[aucun facteur atténuant, aucun facteur aggravant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les six = oui, quatre à cinq = ±, aucun à trois = non</div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Symptômes associés - fièvre <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début/chronologie <span class="patient-response">[état subfébrile à 37.8°C apparu en même temps que les douleurs]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[37.8°C]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fluctuation</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Présence de frissons</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Présence de transpiration</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les cinq = oui, deux à quatre = ±, aucun à un = non</div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Symptômes associés - nausées <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Présence de nausée <span class="patient-response">[nausées depuis le début des douleurs]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Présence de vomissement <span class="patient-response">[non, pas de vomissements]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Début/durée des nausées <span class="patient-response">[depuis le début des douleurs]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les trois = oui, un à deux = ±, aucun = non</div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Symptômes similaires par le passé <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a4" value="2" data-criteria="Symptômes similaires par le passé" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a4" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse par système - digestives (selles) <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Quantité <span class="patient-response">[normale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence <span class="patient-response">[1x à selle/jour]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Couleur <span class="patient-response">[couleur habituelle]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Présence de sang <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les quatre = oui, deux à trois = ±, aucun à un = non</div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Antécédents <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Médicaux (maladies) <span class="patient-response">[syndrome métabolique : hypertension artérielle, diabète de type 2 non insulino-requérant, surpoids]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hospitalisations <span class="patient-response">[seules hospitalisations dans le cadre des accouchements]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Opérations <span class="patient-response">[accouchement ayant nécessité une césarienne]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les trois = oui, un à deux = ±, aucun = non</div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Habitudes - alimentation <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Alimentation habituelle <span class="patient-response">[très variable, pas toujours sain]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Contenu du dernier repas <span class="patient-response">[raclette le soir d'avant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Consommation d'alcool <span class="patient-response">[1-2 verres de vin rouge le soir]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[aucune allergie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-3" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div><div class="scoring-rule">Au moins trois = oui, deux = ±, aucun à un = non</div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Médicaments <span class="patient-response">[Glucophage (metformin) 500mg 2x/j [08:00-20:00], Atorvastatine 20mg 1x/j [08:00], Amlodipine 5mg 1x/j [08:00]]</span> <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="2" data-criteria="Médicaments" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Anamnèse en général - ciblée, fil conducteur <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">Bien = oui, suffisant = ±, insuffisant = non</div>        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="2" data-criteria="Anamnèse en général - ciblée, fil conducteur" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Installation du patient <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Jambes décroisées</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Bras le long du corps</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tête légèrement surélevée</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Abdomen visible en entier (si nécessaire, premier bouton du pantalon enlevé)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-3" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Se positionne à droite de la patiente</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-4" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div></div><div class="scoring-rule">Les cinq = oui, trois à quatre = ±, aucun à deux = non</div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Auscultation abdominale <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Ausculte les 4 quadrants</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation avant toute autre partie de l'examen clinique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div><div class="scoring-rule">Les deux = oui, un = ±, aucun = non</div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Percussion <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Des 4 quadrants</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Délimitation de la taille du foie à la percussion (ou autre technique appropriée)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div><div class="scoring-rule">Les deux = oui, un = ±, aucun = non</div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Palpation <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Superficielle <span class="patient-response">[légère douleur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Profonde (à deux mains) <span class="patient-response">[franche douleur, surtout au cadrant haut-droit]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Teste la détente</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Commence par le côté non douloureux</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-3" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div></div><div class="scoring-rule">Les quatre = oui, trois = ±, aucun à deux = non</div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Tests spécifiques <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Signe de Murphy <span class="patient-response">[positif : bloquez votre inspiration et grimacez de douleur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation du point de McBurney <span class="patient-response">[ne pas simuler de douleur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Signe du Psoas</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-2" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div></div><div class="scoring-rule">Au moins deux = oui, un = ±, aucun = non</div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Evoque un toucher rectal <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e6" value="2" data-criteria="Evoque un toucher rectal" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e6" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+<div class="criteria-row" id="criteria-e7">
+    <div>
+        <div class="criteria-text">7. Status en général - réalisé de manière structurée, correcte et professionnelle <button class="comment-button" onclick="toggleComment('e7')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">Bien = oui, suffisant = ±, insuffisant = non</div>        <div class="criterion-comment-section" id="comment-section-e7">
+            <textarea class="comment-textarea" id="comment-e7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e7" value="2" data-criteria="Status en général - réalisé de manière structurée, correcte et professionnelle" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e7" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e7" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e7">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/10</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Mentionne une cholécystite comme hypothèse diagnostique principale <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Mentionne une cholécystite comme hypothèse diagnostique principale" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Evoque un diagnostic différentiel plausible <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Cholangite</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pancréatite</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Appendicite</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hépatite</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pyélonéphrite</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Trouble gynécologique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-5" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div><div class="scoring-rule">Au moins deux = oui, un = ±, aucun = non</div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Causes hépatobiliaires</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Cholangite</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur hypochondre droit<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Contexte de lithiase possible<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Absence d'ictère (triade de Charcot incomplète)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  État général préservé<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de signes de sepsis</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Bilan hépatique complet, hémocultures, US abdominal</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Hépatite aiguë</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur hypochondre droit<br>&nbsp;&nbsp;&nbsp;&nbsp;•  État subfébrile<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Absence d'ictère<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de notion d'exposition virale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Signe de Murphy positif</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Transaminases, sérologies hépatites, US hépatique</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes pancréatiques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Pancréatite aiguë</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur abdominale haute<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Nausées<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Repas gras (raclette) comme facteur déclenchant<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Consommation d'alcool (2 verres/jour)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur à droite et non en barre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irradiation vers l'épaule et non le dos<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Intensité modérée (6/10)</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Lipases, amylases, CT abdominal si suspicion forte</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes appendiculaires</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Appendicite</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur abdominale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Nausées<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Localisation haute et non en FID<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début brutal et non progressif<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Point de McBurney non douloureux</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ NFS, CRP, US ou CT abdominal</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes urinaires</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Pyélonéphrite</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur latéralisée<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de symptômes urinaires (dysurie, pollakiurie)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Loges rénales non douloureuses<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Localisation antérieure</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Bandelette urinaire, ECBU, US rénal</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes gynécologiques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Torsion/kyste ovarien</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Femme en âge de procréer<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur abdominale brutale<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Localisation haute<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Règles régulières<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Signe de Murphy positif</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ βHCG, US pelvienne</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Grossesse extra-utérine</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Femme en âge de procréer<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur abdominale<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Mari vasectomisé<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Règles régulières<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Localisation haute</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ βHCG en urgence, US pelvienne</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Management en général <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">Bien = oui, suffisant = ±, insuffisant = non</div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m3" value="2" data-criteria="Management en général" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m3" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m3" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/81</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 🧪 Cholécystite aiguë – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes typiques</h5>
+<ul class="resume-subsection-points">
+<li>Douleur de l'hypochondre droit (intense, continue, irradiant à l'épaule droite ou l’omoplate)</li>
+<li>Fièvre ± frissons</li>
+<li>Nausées, vomissements</li>
+<li>Anorexie</li>
+<li>Début souvent postprandial (après repas riche en graisses)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Facteurs de risque</h5>
+<ul class="resume-subsection-points">
+<li>Antécédents de lithiase biliaire</li>
+<li>Femme, âge > 40 ans, obésité, grossesse</li>
+<li>Jeûne prolongé, alimentation parentérale</li>
+<li>Pathologies critiques (cholé. acalculée)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Signes cliniques clés</h5>
+<ul class="resume-subsection-points">
+<li>Fièvre modérée</li>
+<li>Douleur à la palpation de l’HCD</li>
+<li>Signe de Murphy positif (arrêt inspiratoire à la palpation)</li>
+<li>Défense localisée ou douleur à la percussion</li>
+<li>± ictère modéré (si obstacle biliaire associé)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Biologie</h5>
+<ul class="resume-subsection-points">
+<li class="with-arrow">Syndrome inflammatoire (CRP <span class="arrow-updown">↑</span>, hyperleucocytose)</li>
+<li>ASAT/ALAT, GGT, PAL, bilirubine ± modifiés si obstacle biliaire</li>
+<li>Lipase si doute sur pancréatite associée</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Imagerie</h5>
+<ul class="resume-subsection-points">
+<li>Échographie abdominale : examen de choix</li>
+<li>Signes échographiques : épaississement pariétal, distension, lithiase enclavée, halo péri-vésiculaire</li>
+<li>Scanner si doute diagnostic ou complications</li>
+<li>IRM biliaire (MRCP) si suspicion de lithiase associée du cholédoque</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Mesures initiales</h5>
+<ul class="resume-subsection-points">
+<li>Hospitalisation</li>
+<li>Jeûne, perfusion IV, antalgiques (paracétamol, ± morphine), antiémétiques</li>
+<li>Antibiothérapie IV empirique (ex : céphalosporine + métronidazole)</li>
+<li>Surveillance des signes de gravité (sepsis, péritonite)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Chirurgie</h5>
+<ul class="resume-subsection-points">
+<li>Cholécystectomie laparoscopique en <span class="highlight-important">urgence</span> (≤72h) si patient stable</li>
+<li>Si contre-indication chirurgicale : drainage vésiculaire (choléystostomie percutanée)</li>
+<li>Cholécystectomie différée si amélioration après traitement médical chez patient à risque</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Suivi</h5>
+<ul class="resume-subsection-points">
+<li>Réévaluation clinique et biologique régulière</li>
+<li>Prévention récidive : cholécystectomie même différée si épisode aigu résolu</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Douleur HCD + fièvre + Murphy positif <span class="equals">=</span> évoquer cholécystite aiguë</li>
+<li class="resume-bullet highlight">Échographie abdo <span class="equals">=</span> examen clé</li>
+<li class="resume-bullet">Antibiothérapie IV rapide, jeûne, antalgiques</li>
+<li class="resume-bullet">Chirurgie dans les 72h si possible</li>
+<li class="resume-bullet">Attention aux formes graves : sepsis, gangrène, perforation</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser</h5>
+<ul class="resume-subsection-points">
+<li>Douleur HCD continue, irradiant à l’épaule ou omoplate ?</li>
+<li>Fièvre, frissons, nausées, vomissements ?</li>
+<li>Antécédents de lithiase biliaire ou épisodes similaires ?</li>
+<li>Facteurs de risque : femme, >40 ans, obésité, jeûne prolongé ?</li>
+<li>Signes de gravité : malaise, confusion, sepsis ?</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens à faire</h5>
+<ul class="resume-subsection-points">
+<li>Constantes vitales : TA, FC, FR, SpO₂, T°</li>
+<li>Inspection : ictère cutanéo-muqueux éventuel</li>
+<li>Palpation HCD : douleur, défense, signe de Murphy</li>
+<li>Recherche de péritonite (perforation possible)</li>
+<li>Évaluer état général et signes de sepsis</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Hospitalisation + jeûne + perfusion IV + antibiothérapie IV empirique</li>
+<li>Échographie abdominale (diagnostic positif et recherche complications)</li>
+<li>Cholécystectomie laparoscopique en <span class="highlight-important">urgence</span> ≤72h (ou drainage si CI)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations de l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>Vous n'avez pas à intervenir dans cette station</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Le tableau est typique d'une cholécystite aiguë</li>
+                <li>La patiente présente au moins 4 des "5F" classiques : Female, Fat (BMI > 30), Forty, Fertile</li>
+                <li>Signe de Murphy positif très évocateur</li>
+                <li>Repas gras (raclette) comme facteur déclenchant</li>
+                <li>Syndrome métabolique comme terrain favorisant</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Ne pas oublier d'examiner la taille du foie</li>
+                <li>Penser à la consommation d'alcool (facteur de risque pour pancréatite)</li>
+                <li>Attention au diagnostic différentiel de cholangite (triade de Charcot)</li>
+                <li>Ne pas négliger les causes gynécologiques chez une femme en âge de procréer</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique concernant la vignette</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Cholécystite aiguë</h4>
+            <p>Inflammation de la vésicule biliaire, le plus souvent secondaire à une obstruction du canal cystique par un calcul.</p>
+            <ul>
+                <li>Incidence : pathologie fréquente, 3e urgence chirurgicale digestive</li>
+                <li>Physiopathologie : obstruction → distension → inflammation → infection possible</li>
+                <li>Mortalité : 0.1-0.5% si non compliquée, jusqu'à 30% si perforation</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Facteurs de risque - Les "5F"</h4>
+            <p>Mnémotechnique classique pour les facteurs de risque de lithiase biliaire :</p>
+            <ul>
+                <li>Fair : plus prévalent dans la population caucasienne</li>
+                <li>Female : prédominance féminine (2-3:1)</li>
+                <li>Fat : BMI > 30 kg/m²</li>
+                <li>Forty : vers la quarantaine</li>
+                <li>Fertile : multiparité (≥ 2 enfants)</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Présentation clinique</h4>
+            <ul>
+                <li>Douleur hypochondre droit constante > 6 heures</li>
+                <li>Irradiation possible vers l'épaule droite ou le dos</li>
+                <li>Signe de Murphy : arrêt inspiratoire lors de la palpation sous-costale droite</li>
+                <li>Fièvre dans 30-50% des cas</li>
+                <li>Nausées/vomissements fréquents</li>
+                <li>Déclenchement typique après repas gras</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>Biologie : hyperleucocytose, CRP ↑, bilan hépatique (recherche cholestase)</li>
+                <li>US abdominal : examen de choix, épaississement pariétal > 3mm, liquide péri-vésiculaire</li>
+                <li>CT abdominal : si doute diagnostique ou complications</li>
+                <li>Cholangio-IRM : si suspicion de lithiase de la VBP</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Diagnostics différentiels principaux</h4>
+            <ul>
+                <li>Cholangite : triade de Charcot (fièvre + douleur + ictère), urgence ++</li>
+                <li>Pancréatite : douleur en barre, lipases ↑↑</li>
+                <li>Hépatite aiguë : transaminases ↑↑↑</li>
+                <li>Colique hépatique simple : douleur < 6h, pas de fièvre</li>
+                <li>Causes extra-digestives : pyélonéphrite, pneumonie basale droite</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Prise en charge</h4>
+            <ul>
+                <li>Hospitalisation systématique</li>
+                <li>Mise à jeun, réhydratation IV</li>
+                <li>Antalgie : AINS ou morphiniques selon intensité</li>
+                <li>Antibiothérapie si signes infectieux : C3G + métronidazole</li>
+                <li>Cholécystectomie dans les 72h idéalement</li>
+                <li>Si terrain fragile : drainage percutané possible</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Complications</h4>
+            <ul>
+                <li>Cholécystite gangréneuse</li>
+                <li>Perforation vésiculaire → péritonite biliaire</li>
+                <li>Abcès péri-vésiculaire</li>
+                <li>Fistule bilio-digestive</li>
+                <li>Iléus biliaire (rare)</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Points clés pour l'ECOS</h4>
+            <p>Quand vous êtes à un ECOS où on vous demande de pratiquer des anamnèses et status ciblés, pensez aux DD afin de mieux identifier ce qui est nécessaire pour augmenter ou diminuer la probabilité d'un diagnostic.</p>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Antalgie : Kétorolac 30mg IV ou Morphine selon EVA</li>
+                <li>Antibiothérapie : Ceftriaxone 2g/j + Métronidazole 500mg 3x/j</li>
+                <li>Antiémétiques : Ondansétron 4-8mg IV si nécessaire</li>
+                <li>Réhydratation : NaCl 0.9% selon pertes</li>
+                <li>IPP si terrain à risque ulcéreux (AINS)</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>NFS : hyperleucocytose > 10 G/L dans 60% des cas</li>
+                <li>CRP : élévation dans 80% des cas</li>
+                <li>Bilan hépatique : recherche cholestase (GGT, PAL ↑)</li>
+                <li>Lipases : normales (DD pancréatite)</li>
+                <li>US abdominal : sensibilité 95%, spécificité 98%</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Douleur abdominale (suspicion de cholécystite aiguë)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, ATCD (syndrome métabolique), motif de consultation</li>
+                <li>Caractériser la douleur <span class="arrow">→</span> HCD, brutale, constante, irradiation épaule droite, EVA 6/10</li>
+                <li>Symptômes associés <span class="arrow">→</span> fièvre 37.8°C, nausées sans vomissements</li>
+                <li>ATCD médicaux : HTA, diabète type 2, surpoids ; chirurgicaux : césarienne ; familiaux : RAS</li>
+                <li>Traitements <span class="arrow">→</span> metformine, atorvastatine, amlodipine</li>
+                <li>Habitudes <span class="arrow">→</span> repas gras (raclette), alcool modéré, tabac occasionnel</li>
+                <li>Examen clinique ciblé <span class="arrow">→</span> sensibilité HCD, signe de Murphy positif, pas de douleur rénale ni appendiculaire</li>
+                <li>Résumé + hypothèse principale : cholécystite aiguë ; DD : cholangite, pancréatite, appendicite, hépatite, pyélonéphrite, cause gynécologique</li>
+                <li>Examens complémentaires <span class="arrow">→</span> NFS, CRP, bilan hépatique, lipase, échographie abdo</li>
+                <li>Prise en charge <span class="arrow">→</span> hospitalisation, jeûne, perfusion, antalgiques, antibiothérapie IV, cholécystectomie</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide : 5F (facteurs de risque lithiases biliaires)</div>
+    <ul class="mnemo-items">
+        <li>Female</li>
+        <li>Fat (IMC >30)</li>
+        <li>Forty (≈ quarantaine)</li>
+        <li>Fertile (4 enfants, multiparité)</li>
+        <li>Fair (population caucasienne)</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de Mme Katia Marguet, une femme de 39 ans, employée de commerce, connue pour un syndrome métabolique comprenant une hypertension artérielle, un diabète de type 2 non insulino-requérant et un surpoids avec un IMC à 32.5. Elle consulte aujourd’hui pour des douleurs abdominales apparues brutalement la nuit dernière.</p><p>La douleur est localisée dans l’hypochondre droit, décrite comme un écrasement, d’intensité 6/10, constante et sans facteur aggravant ni soulageant. Elle irradie vers l’épaule droite. La douleur est apparue quelques heures après un repas gras, en l’occurrence une raclette, et persiste depuis.</p><p>Elle a présenté un état subfébrile à 37.8 °C et des nausées depuis le début de la douleur, mais pas de vomissements. Pas de diarrhée, pas de sang dans les selles, pas de symptômes urinaires, règles régulières.</p><p>Pour ses antécédents, elle est connue pour un syndrome métabolique, a déjà eu une césarienne, pas d’allergies, vaccinations à jour. Ses traitements sont la metformine, l’atorvastatine et l’amlodipine. Elle consomme 1–2 verres de vin par jour, fume occasionnellement, et son mari est vasectomisé.</p><p>À l’examen clinique, la patiente présente une douleur à la palpation superficielle et surtout profonde de l’hypochondre droit, avec un signe de Murphy franc, entraînant un blocage inspiratoire. Pas de douleur lombaire ni au point de McBurney.</p><p>En résumé, il s’agit d’une femme obèse, avec facteurs de risque biliaires, présentant une douleur brutale et continue de l’hypochondre droit irradiant à l’épaule droite, fébricule, nausées et un signe de Murphy positif. Mon hypothèse principale est une cholécystite aiguë lithiasique. Les diagnostics différentiels incluent une cholangite, une pancréatite biliaire, une hépatite aiguë, une appendicite haute, une pyélonéphrite ou une cause gynécologique comme une torsion ovarienne.</p><p>Comme examens complémentaires, je demanderais une NFS, CRP, bilan hépatique (ASAT, ALAT, PAL, GGT, bilirubine), lipase et une échographie abdominale en première intention. Selon les résultats, un scanner ou une IRM biliaire pourraient compléter.</p><p>En termes de prise en charge, je propose une hospitalisation, un jeûne strict, une réhydratation IV, une analgésie adaptée, des antiémétiques, et une antibiothérapie IV empirique. Le traitement définitif est une cholécystectomie laparoscopique, idéalement dans les 72 heures.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : Mme Marguet, 39 ans, douleur brutale et persistante de l’hypochondre droit depuis la nuit dernière.</p><p>B (Background) : Syndrome métabolique (HTA, diabète, obésité), césarienne antérieure, pas d’allergies, repas gras déclencheur.</p><p>A (Assessment) : Suspicion de cholécystite aiguë. DD : cholangite, pancréatite, hépatite, appendicite, pyélonéphrite, torsion ovarienne.</p><p>R (Recommendation) : Bilan biologique (NFS, CRP, bilan hépatique, lipase), échographie abdominale, hospitalisation, jeûne, perfusion, antalgiques, antibiothérapie, préparation à cholécystectomie.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 Facteurs de risque lithiases biliaires : 5F</h5>
+                <ul class="presentation-points">
+                    <li>Female</li>
+                    <li>Fat</li>
+                    <li>Forty</li>
+                    <li>Fertile</li>
+                    <li>Fair</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Signe de Murphy : MURPHY</h5>
+                <ul class="presentation-points">
+                    <li>Main sous le rebord costal droit</li>
+                    <li>UR (respiration profonde)</li>
+                    <li>Positif <span class="equals">=</span> blocage inspiratoire par douleur</li>
+                    <li>Hypochondre droit ciblé</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>⚠️ Pièges ECOS</h5>
+                <ul class="presentation-points">
+                    <li>Ne pas oublier la triade de Charcot pour la cholangite</li>
+                    <li>Toujours doser la lipase pour exclure pancréatite</li>
+                    <li>Examiner la sphère gynécologique chez une femme jeune</li>
+                    <li>Bien caractériser irradiation <span class="arrow">→</span> épaule (cholécystite) vs dos (pancréatite)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Cholécystite aiguë</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur HCD brutale et persistante > 6h</li>
+                                <li>Irradiation épaule droite</li>
+                                <li>Fièvre 37.8°C</li>
+                                <li>Nausées</li>
+                                <li>Signe de Murphy positif</li>
+                                <li>Facteurs de risque (5F)</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas d’ictère franc</li>
+                                <li>Fièvre modérée</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Pancréatite aiguë</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur abdominale haute</li>
+                                <li>Repas gras comme facteur déclenchant</li>
+                                <li>Consommation d’alcool</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Douleur localisée à droite et non en barre</li>
+                                <li>Irradiation épaule et non dos</li>
+                                <li>Intensité modérée (6/10)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Cholangite</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur HCD</li>
+                                <li>Fièvre</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas d’ictère</li>
+                                <li>Pas de signes de sepsis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q4</span>
+                        <span class="q-text">Appendicite</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Douleur haute et non en FID</li>
+                                <li>Début brutal et non progressif</li>
+                                <li>Point de McBurney non douloureux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>NFS, CRP</li>
+                            <li>Bilan hépatique (ASAT, ALAT, PAL, GGT, bilirubine)</li>
+                            <li>Lipase (DD pancréatite)</li>
+                            <li>Échographie abdominale (examen clé)</li>
+                            <li>± Scanner ou IRM biliaire selon contexte</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Cholécystite aiguë lithiasique probable</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Hospitalisation</li>
+                                <li>Jeûne, perfusion IV</li>
+                                <li>Antalgiques IV adaptés</li>
+                                <li>Antiémétiques</li>
+                                <li>Antibiothérapie IV empirique (C3G + métronidazole)</li>
+                                <li>Préparation à cholécystectomie laparoscopique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Surveillance clinique et biologique rapprochée</li>
+                            <li>Cholécystectomie idéalement dans les 72h</li>
+                            <li>Suivi post-op et prévention récidive</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour la patiente standardisée</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Katia Marguet |             <strong>Âge :</strong> 39 ans<br>
+            <strong>Contexte :</strong> Employée de commerce consultant au cabinet du généraliste pour douleur abdominale
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> J'ai eu très mal au ventre cette nuit</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> C'est pas passé tout seul, alors mon mari m'a amenée à l'hôpital ce matin</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Symptôme principal :</strong>
+                <ul>
+                    <li>Douleur abdominale</li>
+                    <li>Localisation : Douleur dans le haut du ventre à droite</li>
+                    <li>Qualité : Écrasement</li>
+                    <li>Quantité/intensité : 6/10</li>
+                    <li>Irradiation : Vers l'épaule droite</li>
+                    <li>Chronologie : Début brutal de la douleur la nuit dernière. Douleur constante qui ne part pas</li>
+                    <li>Développement : Très rapide, en quelques minutes</li>
+                    <li>Circonstances de survenue : Quelques heures après le repas (raclette), on allait se mettre au lit</li>
+                    <li>Facteurs atténuants : Aucun</li>
+                    <li>Facteurs aggravants : Aucun</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>État subfébrile à 37.8°C apparu en même temps que les douleurs</li>
+                    <li>Nausées depuis le début des douleurs mais pas de vomissements</li>
+                    <li>Note : à ne mentionner seulement si le médecin pose des questions précises sur la fièvre ou les nausées/vomissements</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Réponse aux symptômes :</strong>
+                <ul>
+                    <li>A été consulter chez le médecin traitant</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Douleur dans le haut du ventre à droite (grimace douloureuse de temps en temps)</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant le status :</strong>
+                <ul>
+                    <li>Légère douleur lorsque l'étudiant palpe superficiellement et franche douleur lorsqu'il palpe profondément votre ventre, surtout au cadrant haut-droit</li>
+                    <li>Lorsqu'il glisse ses mains sous vos côtes alors qu'il vous a demandé d'inspirer à fond : bloquez votre inspiration et grimacez de douleur [signe de Murphy positif]</li>
+                    <li>Quand il tape sur le dos [sur les loges rénales] et quand il appuie sur le bas du ventre à droite (au point de McBurney) : ne pas simuler de douleur</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse par systèmes</h4>
+            <div class="property-group">
+                <strong>Générale :</strong>
+                <ul>
+                    <li>État subfébrile</li>
+                    <li>Pas de trouble de l'état de conscience</li>
+                    <li>Pas de perte de poids récente</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Cardiovasculaire :</strong>
+                <ul>
+                    <li>Pas de palpitation</li>
+                    <li>Pas d'œdème</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Pulmonaire :</strong>
+                <ul>
+                    <li>Pas de peine à respirer</li>
+                    <li>Pas de toux</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Neurologique :</strong>
+                <ul>
+                    <li>Pas de vertiges</li>
+                    <li>Pas de paresthésie</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Digestive :</strong>
+                <ul>
+                    <li>Normale : 1x à selle/jour, couleur et quantité habituelles</li>
+                    <li>Nausées mais pas de vomissement</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Génito-urinaire :</strong>
+                <ul>
+                    <li>Pas de dysurie</li>
+                    <li>Pas de pollakiurie</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Gynécologique :</strong>
+                <ul>
+                    <li>Règles régulières</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Habitudes</h4>
+            <p><strong>Médicaments :</strong> Glucophage (metformin) 500mg 2x/j [08:00-20:00], Atorvastatine 20mg 1x/j [08:00], Amlodipine 5mg 1x/j [08:00]. Note : vous connaissez bien vos médicaments et les récitez spontanément au médecin si il/elle le demande</p>
+            <p><strong>Alimentation :</strong> Raclette le soir d'avant, le reste du temps, très variable pas toujours sain</p>
+            <p><strong>Activité physique :</strong> Fais du vélo 1 fois par semaine</p>
+            <p><strong>Sommeil :</strong> Satisfaisant, 8h en moyenne</p>
+            <p><strong>Tabac :</strong> Occasionnellement (3 cig. par mois)</p>
+            <p><strong>Alcool :</strong> 1-2 verres de vin rouge le soir</p>
+            <p><strong>Drogues :</strong> Aucune</p>
+            <p><strong>Sexualité :</strong> Rapports non protégés réguliers avec son mari (qui a fait une vasectomie après la naissance du dernier enfant il y a 4 ans)</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Informations personnelles</h4>
+            <p><strong>Profession :</strong> Employée de commerce</p>
+            <p><strong>Hobbies :</strong> Séries, bières artisanales</p>
+            <p><strong>Poids :</strong> Surpoids (BMI 25-30)</p>
+            <p><strong>Orientation sexuelle :</strong> Hétérosexuelle</p>
+            <p><strong>État civil :</strong> Mariée</p>
+            <p><strong>État d'esprit :</strong> Douleur dans le haut du ventre à droite (grimace douloureuse de temps en temps)</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Histoire Medicale</h4>
+            <ul>
+                <li>Patiente connue pour un syndrome métabolique (hypertension artérielle, diabète de type 2 non insulino-requérant, surpoids)</li>
+                <li>Mère de 4 enfants, tous en bonne santé</li>
+                <li>Seules hospitalisations dans le cadre des accouchements, notamment un accouchement ayant nécessité une césarienne</li>
+                <li>Pas d'allergie</li>
+                <li>Vaccins à jour</li>
+                <li>L'anamnèse familiale est sans particularité</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 31, examen: 20, management: 10, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 9, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 7, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 3, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

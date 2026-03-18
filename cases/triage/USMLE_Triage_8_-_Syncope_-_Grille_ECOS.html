@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE Triage 8 - Syncope - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE Triage 8 - Syncope</h1>
+            <p style="margin: 5px 0;">📍 Service des urgences</p>
+            <p style="margin: 5px 0;">👤 James Patterson, un homme de 23 ans, se présente aux urgences pour l'évaluation d'une chute ayant entraîné une fracture dentaire.</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">118/72 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">54 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">12/min</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">36.9°C</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/44</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Introduction et approche empathique (nom, fonction et questions ouvertes) <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="exemples-phrases"><div class="exemple-phrase">"Bonjour M. Patterson, je suis le Dr Drake."</div><div class="exemple-phrase">"Je comprends que vous avez fait une chute aujourd'hui et que vous vous êtes cassé une dent ? Puis-je vous demander de m'expliquer ce qui s'est passé ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Introduction et approche empathique (nom, fonction et questions ouvertes)" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de l'épisode syncopal <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Perte de connaissance confirmée <span class="patient-response">[oui, quelques secondes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Circonstances <span class="patient-response">[montait escaliers, se réveillé sur marche du haut]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Durée <span class="patient-response">[quelques secondes selon témoin]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Récupération <span class="patient-response">[confus au réveil ('dans les vapes')]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Traumatisme associé <span class="patient-response">[fracture dentaire, lacération labiale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Vous semblez un peu hésitant. Vous souvenez-vous bien de l'incident ?"</div><div class="exemple-phrase">"D'accord. Donc, avez-vous perdu connaissance ?"</div><div class="exemple-phrase">"Revenez à l'incident lui-même pour moi, si vous voulez bien. Vous souvenez-vous avoir trébuché sur une marche puis avoir heurté votre visage, ou avez-vous d'abord perdu connaissance puis êtes tombé ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Témoignage et circonstances exactes <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Témoin présent <span class="patient-response">[ami avec lui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Description du témoin <span class="patient-response">[ne savait pas immédiatement qu'il était tombé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Position retrouvée <span class="patient-response">[sur marche du haut des escaliers]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Délai de récupération <span class="patient-response">[quelques secondes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Aucune convulsion observée <span class="patient-response">[ami redescendu quelques secondes après]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Très bien. Votre ami a-t-il dit que vous avez eu des convulsions quand vous étiez au sol ? Quelque chose comme une crise d'épilepsie ?"</div><div class="exemple-phrase">"Votre ami a-t-il dit combien de temps vous êtes resté inconscient ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Symptômes précédant la syncope <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Douleurs thoraciques <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpitations <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vertiges ou étourdissements <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Activité précédente <span class="patient-response">[partie de racquetball habituelle]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Montée d'escaliers habituelle <span class="patient-response">[vit au 3e étage, habitude de courir]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Juste avant de perdre connaissance, aviez-vous des douleurs thoraciques ou la sensation que votre cœur battait fort ?"</div><div class="exemple-phrase">"Et des vertiges ou des étourdissements ?"</div><div class="exemple-phrase">"Que faisiez-vous avant cet incident ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Antécédents d'épisodes similaires <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Syncopes antérieures <span class="patient-response">[non, sauf liées à l'alcool à l'université]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Crises d'épilepsie <span class="patient-response">[non, pas que je sache]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Problèmes cardiaques <span class="patient-response">[non, sportif avec examens médicaux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">ECG ou échocardiographie antérieurs <span class="patient-response">[jamais fait]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Cela vous est-il déjà arrivé auparavant ?"</div><div class="exemple-phrase">"D'accord. Avez-vous déjà eu une crise d'épilepsie ?"</div><div class="exemple-phrase">"Et des problèmes cardiaques ?"</div><div class="exemple-phrase">"Avez-vous déjà eu un ECG, ou un médecin a-t-il déjà regardé votre cœur avec un appareil d'échographie ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Symptômes systémiques récents <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Maladies récentes <span class="patient-response">[rhume il y a 3 mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Symptômes digestifs <span class="patient-response">[diarrhée récente, quelques jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Caractéristiques diarrhée <span class="patient-response">[liquide, pas de sang]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nausées/vomissements <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleurs thoraciques au repos <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-4" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Très bien. Avez-vous eu des maladies récentes ? Des problèmes de santé mineurs ?"</div><div class="exemple-phrase">"Et des nausées, vomissements, maux d'estomac, diarrhée ?"</div><div class="exemple-phrase">"Avez-vous eu des nausées ou des vomissements avec ça ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Médicaments et suppléments <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Suppléments <span class="patient-response">[poudre de protéines le matin]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Composition supplément <span class="patient-response">[protéine de soja uniquement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Très bien. Prenez-vous des médicaments ?"</div><div class="exemple-phrase">"Et des compléments alimentaires ?"</div><div class="exemple-phrase">"Y a-t-il d'autres ingrédients que des protéines dedans ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Habitudes de vie <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Tabac <span class="patient-response">[non, trop de sport]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Alcool actuel <span class="patient-response">[oui, quelques verres/semaine, weekends]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Quantité précise <span class="patient-response">[3-4 verres quand sort]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dernière consommation <span class="patient-response">[3 bières samedi, il y a 5 jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-3" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Questions CAGE <span class="patient-response">[toutes négatives]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-4" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Très bien. Fumez-vous ou utilisez-vous d'autres produits du tabac ?"</div><div class="exemple-phrase">"Vous avez mentionné que vous buviez de la bière avant. En buvez-vous toujours ?"</div><div class="exemple-phrase">"Combien de verres par nuit le week-end diriez-vous ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Antécédents médicaux personnels <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Santé générale <span class="patient-response">[en bonne santé, première fois aux urgences]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-0" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hospitalisations <span class="patient-response">[jamais]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-1" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chirurgies <span class="patient-response">[aucune]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-2" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Activité sportive <span class="patient-response">[athlétisme universitaire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-3" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examens médicaux sportifs <span class="patient-response">[normaux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-4" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Êtes-vous allé chez le médecin pour autre chose qu'une maladie mineure dans votre vie ? Surtout quelque chose pour lequel vous avez passé la nuit à l'hôpital ?"</div><div class="exemple-phrase">"Et des interventions chirurgicales ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Histoire familiale <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Père <span class="patient-response">[hypertension artérielle, pas d'autres problèmes cardiaques]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-0" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Mère <span class="patient-response">[dépression]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-1" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Frère <span class="patient-response">[syndrome de Down]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-2" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Syncopes familiales <span class="patient-response">[aucune]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-3" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Problèmes cardiaques familiaux <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-4" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Quelqu'un dans votre famille a-t-il des maladies importantes ?"</div><div class="exemple-phrase">"Spécifiquement, quelqu'un a-t-il eu un problème de perte de connaissance ?"</div><div class="exemple-phrase">"Vous avez dit que votre père avait de l'hypertension artérielle, d'autres problèmes avec son cœur ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/27</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Préparation à l'examen <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Se laver les mains</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Commenter les signes vitaux normaux</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Expliquer l'examen au patient</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"D'accord. J'aimerais faire un examen physique maintenant, si vous n'y voyez pas d'inconvénient."</div><div class="exemple-phrase">"Laissez-moi juste me laver les mains."</div><div class="exemple-phrase">"Il semble que vos signes vitaux soient normaux, alors permettez-moi d'abord de regarder dans vos oreilles..."</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Mesure de la pression artérielle <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">PA aux deux bras <span class="patient-response">[120/72 droit, 118/70 gauche]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Noter les différences à haute voix</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche d'hypotension orthostatique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen ORL et traumatisme <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Examen de la tête <span class="patient-response">[atraumatique, normocéphale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Otoscopie <span class="patient-response">[tympans gris nacré bilatéraux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen ophtalmologique <span class="patient-response">[pupilles égales, réactives]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen buccal détaillé <span class="patient-response">[fracture incisive droite, lacération labiale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche fragments dentaires <span class="patient-response">[pas incrustés]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-4" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen neurologique complet <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Sensation tactile <span class="patient-response">[normale aux 4 extrémités]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Force motrice <span class="patient-response">[5/5 partout]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nerfs crâniens <span class="patient-response">[II-XII intacts]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réflexes ostéotendineux <span class="patient-response">[2+ symétriques]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-3" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Proprioception <span class="patient-response">[intacte]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-4" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test piqué/mousse <span class="patient-response">[normal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-5" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dysdiadococinésie <span class="patient-response">[normale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-6" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test de Romberg <span class="patient-response">[négatif]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-7" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation de la marche <span class="patient-response">[normale, talons/orteils]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-8" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Signe de Babinski <span class="patient-response">[flexion plantaire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-9" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Clonus de cheville <span class="patient-response">[un battement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-10" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Examen cardiovasculaire <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation 4 foyers <span class="patient-response">[rythme régulier]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche de souffles <span class="patient-response">[aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche frottements/galops <span class="patient-response">[absents]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-2" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation carotidienne <span class="patient-response">[pas de souffles]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-3" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vérification des pouls <span class="patient-response">[normaux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-4" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Diagnostics différentiels <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Diagnostics différentiels" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels de syncope chez l'adulte jeune sportif</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Causes cardiaques (priorité chez sportif)</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Arythmie cardiaque</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Syncope d'effort (après racquetball)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sportif (risque arythmies)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte de connaissance brutale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Récupération rapide<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Bradycardie relative (54 bpm)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de palpitations<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'ATCD cardiaques<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Examens sportifs normaux</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ ECG 12 dérivations, Holter 24h</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Cardiomyopathie hypertrophique obstructive</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Jeune sportif<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Syncope d'effort<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Première manifestation possible<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de souffles à l'auscultation<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'ATCD familiaux<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Examens sportifs normaux antérieurs</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Échocardiographie transthoracique</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes vasculaires</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Hypotension orthostatique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sportif (risque déshydratation)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Syncope lors montée escaliers<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Diarrhée récente (déshydratation)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Récupération rapide<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  PA normale au repos<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de vertiges prémonitoires</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Test d'inclinaison, mesures orthostatiques</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Syncope vasovagale</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge jeune<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Contexte émotionnel possible<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Récupération rapide sans séquelles<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de récidive<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de prodromes typiques<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Contexte d'effort physique</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Test d'inclinaison (tilt test)</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes neurologiques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Crise d'épilepsie</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte de connaissance brutale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Confusion post-critique ('dans les vapes')<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Première crise possible<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de convulsions observées<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Récupération très rapide<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Examen neurologique normal<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Circonstances (escaliers)</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ EEG, IRM cérébrale si récidive</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes métaboliques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Hypoglycémie</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sportif (consommation glucides)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Récupération rapide<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de signes neurovégétatifs<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de notion de jeûne<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Glycémie non mesurée</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Glycémie capillaire, HbA1c</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens d'urgence immédiate <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">ECG 12 dérivations (recherche arythmies, QT long)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Glycémie capillaire</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test orthostatique (couché/debout)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Troponines (éliminer ischémie)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens complémentaires selon orientation <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">NFS (recherche d'anémie)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ionogramme complet avec magnésium</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fonction rénale et hépatique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">CT cérébral (si suspicion traumatisme)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Échocardiographie si ECG anormal</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Prise en charge immédiate <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Stabilisation et surveillance</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Monitoring cardiaque continu<br />
+            <span style="margin-left: 10px;">•</span> Voie veineuse périphérique<br />
+            <span style="margin-left: 10px;">•</span> Surveillance neurologique<br />
+            <span style="margin-left: 10px;">•</span> Position demi-assise<br />
+            <span style="margin-left: 10px;">•</span> Réhydratation si nécessaire<br />
+            <span style="margin-left: 10px;">•</span> NPO en attendant évaluation complète</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Gestion du traumatisme dentaire</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Évaluation orthodontique urgente<br />
+            <span style="margin-left: 10px;">•</span> Nettoyage de la plaie labiale<br />
+            <span style="margin-left: 10px;">•</span> Analgésie appropriée<br />
+            <span style="margin-left: 10px;">•</span> Prévention infectieuse locale<br />
+            <span style="margin-left: 10px;">•</span> Pas de fragments à extraire</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Investigations cardiologiques</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> ECG sériels si anormal<br />
+            <span style="margin-left: 10px;">•</span> Consultation cardiologie si anomalie<br />
+            <span style="margin-left: 10px;">•</span> Holter 24-48h si suspicion arythmique<br />
+            <span style="margin-left: 10px;">•</span> Échocardiographie de stress si indiquée<br />
+            <span style="margin-left: 10px;">•</span> Éviter efforts intenses jusqu'à clarification</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="2" data-criteria="Prise en charge immédiate" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Communication et conseils <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Explication des causes possibles</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Importance du bilan cardiaque chez sportif</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Consignes de sécurité (conduite, sport)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Retour si récidive ou symptômes</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Suivi programmé en cardiologie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"M. Patterson, vous avez eu ce que nous appelons une 'syncope', ce qui signifie simplement un épisode de perte de connaissance."</div><div class="exemple-phrase">"D'après votre récit de l'incident et votre examen physique, je ne peux pas dire avec certitude ce qui l'a causé."</div><div class="exemple-phrase">"Une raison de la syncope est quelque chose appelé 'hypotension orthostatique'."</div><div class="exemple-phrase">"Une autre possibilité est que vous ayez eu un rythme cardiaque anormal, peut-être juste pour une seconde, qui a causé un manque d'oxygène délivré à votre cerveau."</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Red flags et contre-indications <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Signes d'alerte nécessitant bilan cardiaque urgent</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Syncope d'effort répétée</div>
+                <div class="redflags-description">Risque de mort subite cardiaque</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Antécédents familiaux de mort subite</div>
+                <div class="redflags-description">Cardiomyopathie héréditaire</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. Douleurs thoraciques associées</div>
+                <div class="redflags-description">Ischémie myocardique</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Palpitations avant syncope</div>
+                <div class="redflags-description">Arythmie ventriculaire</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">5. ECG anormal</div>
+                <div class="redflags-description">Cardiopathie sous-jacente</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="2" data-criteria="Red flags et contre-indications" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Explication diagnostique et plan</h4>
+                    <div class="cloture-content cloture-content-green">M. Patterson, vous avez eu ce que nous appelons une 'syncope', ce qui signifie simplement un épisode de perte de connaissance. D'après votre récit de l'incident et votre examen physique, je ne peux pas dire avec certitude ce qui l'a causé. Cependant, parce que c'est une question très importante pour trouver la réponse, j'aimerais faire quelques tests sur vous. Une raison de la syncope est quelque chose appelé 'hypotension orthostatique'. Ceci est causé lorsque votre corps, pour une raison ou une autre, ne compense pas correctement la baisse normale de la pression artérielle qui se produit lorsque nous nous levons ou faisons une activité intense. Nous pouvons tester cela en vérifiant votre pression artérielle dans plusieurs positions différentes. Une autre possibilité est que vous ayez eu un rythme cardiaque anormal, peut-être juste pour une seconde, qui a causé un manque d'oxygène délivré à votre cerveau. Pour cette possibilité, j'aimerais obtenir un ECG, qui est ce test dont j'avais parlé plus tôt pour vérifier l'activité électrique de votre cœur. En plus de ceux-ci, j'aimerais également obtenir des analyses de sang et un scanner de votre tête. Le scanner est une radiographie spéciale qui peut montrer des coupes transversales de votre cerveau pour montrer s'il y a des dommages réels causés par cette chute. Dès que j'aurai les résultats, je reviendrai pour les discuter avec vous. J'aimerais sortir maintenant et organiser cela avec mon infirmière.
+
+Y a-t-il un autre aspect de vos soins de santé dont nous n'avons pas déjà discuté ? D'accord alors, merci.</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Question difficile du patient</h4>
+                    <div class="cloture-content">[Est-ce que ça peut être grave ? Suis-je en danger ?]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse appropriée du candidat</h4>
+                    <div class="cloture-content cloture-content-green">C'est compréhensible que vous vous inquiétiez. La plupart des syncopes chez les jeunes ne sont pas dangereuses, mais comme vous êtes sportif, nous devons être très prudents et écarter toute cause cardiaque. Les tests que nous allons faire vont nous donner des réponses rassurantes.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/111</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 ⚡ Syncope chez le jeune sportif – Origine cardiaque – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes et contexte</h5>
+<ul class="resume-subsection-points">
+<li>Syncope brutale, souvent sans prodromes</li>
+<li>Survenue à l’effort ou <span class="highlight-important">immédiat</span>ement après</li>
+<li>Palpitations précédant la perte de connaissance</li>
+<li>Douleur thoracique, dyspnée, malaise</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Facteurs de risque / contexte familial</h5>
+<ul class="resume-subsection-points">
+<li>ATCD familiaux de mort subite ou de cardiopathie</li>
+<li>Antécédents de syncope inexpliquée</li>
+<li>ATCD personnels de cardiopathie congénitale ou connue</li>
+<li>Prise de médicaments allongeant QT</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Signes à rechercher</h5>
+<ul class="resume-subsection-points">
+<li>Souffle cardiaque (sténose aortique, cardiomyopathie hypertrophique obstructive)</li>
+<li>Pouls irrégulier (arythmie)</li>
+<li>TA basse, signes d’insuffisance cardiaque</li>
+<li>Examen neurologique normal (≠ épilepsie)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">ECG</h5>
+<ul class="resume-subsection-points">
+<li>Allongement QT, Brugada</li>
+<li>Pré-excitation (WPW)</li>
+<li>Troubles du rythme ventriculaire ou supraventriculaire</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Imagerie et tests</h5>
+<ul class="resume-subsection-points">
+<li>Échocardiographie : hypertrophie, sténose, cardiomyopathie</li>
+<li>IRM cardiaque si suspicion de cardiomyopathie ou anomalie structurelle</li>
+<li>Test d’effort avec ECG</li>
+<li>Holter ECG si palpitations intermittentes</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Mesures générales</h5>
+<ul class="resume-subsection-points">
+<li>Arrêt <span class="highlight-important">immédiat</span> du sport compétitif jusqu’au bilan complet</li>
+<li>Hospitalisation si syncope à l’effort inexpliquée</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement spécifique selon cause</h5>
+<ul class="resume-subsection-points">
+<li>Bradyarythmie : implantation d’un stimulateur cardiaque</li>
+<li>Tachyarythmie : ablation par radiofréquence si possible</li>
+<li>Cardiomyopathie hypertrophique ou canalopathie (long QT, Brugada) : défibrillateur implantable (ICD) selon risque</li>
+<li>Sténose aortique serrée : chirurgie valvulaire</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Toute syncope à l’effort chez un jeune sportif <span class="equals">=</span> considérer cause cardiaque jusqu’à preuve du contraire</li>
+<li class="resume-bullet">Toujours rechercher ATCD familiaux de mort subite</li>
+<li class="resume-bullet">ECG, écho et test d’effort sont essentiels</li>
+<li class="resume-bullet">Arrêt du sport jusqu’à évaluation spécialisée</li>
+<li class="resume-bullet">Prise en charge spécifique selon l’étiologie (rythmique, structurelle, génétique)</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser</h5>
+<ul class="resume-subsection-points">
+<li>Syncope survenue à l’effort ou au repos ?</li>
+<li>Prodromes (palpitations, douleur thoracique, dyspnée) ?</li>
+<li>ATCD familiaux de mort subite ou cardiopathie ?</li>
+<li>Médicaments en cours (QT, antiarythmiques, psychotropes) ?</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens à faire</h5>
+<ul class="resume-subsection-points">
+<li>Constantes vitales (TA, FC, SpO₂)</li>
+<li>ECG 12 dérivations</li>
+<li>Échocardiographie cardiaque</li>
+<li>Test d’effort + Holter ECG</li>
+<li>IRM cardiaque selon suspicion</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Arrêt du sport <span class="highlight-important">immédiat</span> et bilan complet</li>
+<li>ECG, écho et test d’effort systématiques</li>
+<li>Orientation spécialisée (rythmologie/cardiologie du sport)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Points clés pour l'évaluation</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Homme de 23 ans sportif avec premier épisode syncopal</li>
+                <li>Syncope lors d'effort (montée escaliers après sport)</li>
+                <li>Témoin présent, pas de convulsions observées</li>
+                <li>Récupération rapide avec confusion transitoire</li>
+                <li>Traumatisme secondaire (fracture dentaire)</li>
+                <li>Bradycardie relative (54 bpm) chez sportif</li>
+                <li>Diarrhée récente (déshydratation possible)</li>
+                <li>Aucun antécédent cardiaque connu</li>
+                <li>Examens médicaux sportifs antérieurs normaux</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Banaliser la syncope chez un jeune sportif</li>
+                <li>Ne pas faire d'ECG systématique</li>
+                <li>Oublier le test orthostatique</li>
+                <li>Ne pas explorer les antécédents familiaux cardiaques</li>
+                <li>Négliger l'impact de la diarrhée (déshydratation)</li>
+                <li>Ne pas donner de consignes de sécurité</li>
+                <li>Retour au sport sans bilan cardiaque</li>
+                <li>Ne pas programmer de suivi spécialisé</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Rappels théoriques - Syncope chez le sportif</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Étiologies de syncope chez le jeune sportif</h4>
+            <p>Causes cardiaques (20%) : cardiomyopathie hypertrophique, DAVD, coronaropathie précoce, troubles du rythme héréditaires. Causes vasculaires (70%) : hypotension orthostatique, syncope vasovagale. Causes neurologiques (5%) : épilepsie. Causes métaboliques (5%) : hypoglycémie.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Cardiomyopathie hypertrophique obstructive</h4>
+            <p>Première cause de mort subite chez jeunes sportifs. Transmission autosomique dominante. Syncope d'effort typique. Diagnostic : échocardiographie (hypertrophie asymétrique), ECG (ondes Q, HVG). Contre-indication absolue au sport de compétition.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Bilan de syncope chez sportif</h4>
+            <p>ECG 12 dérivations obligatoire. Échocardiographie si ECG anormal ou syncope d'effort. Test d'effort si suspicion ischémique. Holter si suspicion rythmique. IRM cardiaque si cardiomyopathie suspectée.</p>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Arrêt immédiat du sport jusqu'à bilan complet</li>
+                <li>ECG et échocardiographie systématiques</li>
+                <li>Consultation cardiologique spécialisée obligatoire</li>
+                <li>Test d'effort supervisé si pas de contre-indication</li>
+                <li>Reprise progressive après clearance cardiologique</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>ECG 12 dérivations : recherche troubles rythme/conduction</li>
+                <li>Échocardiographie : fonction VG, hypertrophie, valvulopathies</li>
+                <li>Holter 24-48h : arythmies intermittentes</li>
+                <li>Test d'inclinaison : hypotension orthostatique, syncope vasovagale</li>
+                <li>IRM cardiaque : cardiomyopathies, cicatrices myocardiques</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Syncope à l’effort (homme 23 ans, sportif)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, motif (homme 23 ans, chute avec perte de connaissance, fracture dentaire)</li>
+                <li>Caractériser la syncope <span class="arrow">→</span> circonstances (effort <span class="equals">=</span> montée escaliers après sport), durée (quelques secondes), récupération (confusion transitoire), témoin (ami, pas de convulsions)</li>
+                <li>Symptômes associés <span class="arrow">→</span> pas de douleur thoracique, pas de palpitations, pas de prodromes, pas de convulsions observées</li>
+                <li>Contexte médical <span class="arrow">→</span> diarrhée récente (déshydratation possible), pas d’ATCD médicaux, sportif universitaire</li>
+                <li>ATCD familiaux <span class="arrow">→</span> père HTA, pas de morts subites, pas de cardiopathie familiale</li>
+                <li>Habitudes <span class="arrow">→</span> sport intensif, pas de tabac, alcool modéré, pas de médicaments</li>
+                <li>Examen clinique <span class="arrow">→</span> constantes normales sauf bradycardie relative (54 bpm), examen cardio et neuro normaux, fracture incisive, lacération labiale</li>
+                <li>Résumé + hypothèse principale <span class="arrow">→</span> syncope d’effort (cause cardiaque à éliminer en priorité), DD : arythmie, cardiomyopathie hypertrophique, hypotension orthostatique, syncope vasovagale, épilepsie, hypoglycémie</li>
+                <li>Examens complémentaires <span class="arrow">→</span> ECG 12 dérivations, glycémie capillaire, bilan orthostatique, troponines, NFS/iono, écho cardiaque, Holter, test d’effort, IRM cardiaque si suspicion</li>
+                <li>PEC <span class="arrow">→</span> surveillance monitorée, arrêt sport, bilan cardio complet, prise en charge du traumatisme dentaire, explications et consignes sécurité</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide SYNCOPE</div>
+    <ul class="mnemo-items">
+        <li>S = Signe d’alerte (syncope à l’effort)</li>
+        <li>Y = Young (sportif jeune, penser cause cardiaque)</li>
+        <li>N = Neuro (épilepsie ? mais examen normal)</li>
+        <li>C = Cardiaque (arythmie, CMH, QT long, Brugada)</li>
+        <li>O = Orthostatique (déshydratation, diarrhée)</li>
+        <li>P = Prodromes absents (donc cause rythmique ?)</li>
+        <li>E = ECG systématique</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de James Patterson, un étudiant de 23 ans, sportif universitaire, qui se présente aux urgences après une chute ayant entraîné une fracture dentaire. En interrogeant le patient et son ami témoin, on comprend qu’il a perdu connaissance brutalement en montant les escaliers après un match de racquetball. L’épisode a duré quelques secondes, il a repris conscience rapidement mais avec une confusion transitoire. Il se plaint de douleur dentaire et labiale. </p><p>Avant l’épisode, il n’a présenté ni douleur thoracique, ni palpitations, ni vertiges, ni malaise. Son ami n’a observé aucun mouvement anormal, aucune convulsion, ni perte d’urines. C’est son premier épisode syncopal, hormis quelques ‘black-out’ liés à l’alcool par le passé. </p><p>Concernant son état de santé, il est en général en bonne santé, n’a jamais été hospitalisé, pas de chirurgie, pas de traitement en cours. Ses habitudes de vie incluent un entraînement sportif intense, une consommation d’alcool modérée le week-end, pas de tabac, et des suppléments protéinés. Il rapporte une diarrhée récente non sanglante, ce qui suggère une possible déshydratation contributive. </p><p>Ses antécédents familiaux sont marqués uniquement par une HTA chez son père, sans morts subites ni cardiopathies connues. À l’examen, ses constantes sont normales hormis une bradycardie relative à 54 bpm, compatible avec son statut de sportif. L’examen cardio, neuro et ORL est rassurant, hormis la fracture dentaire et la lacération labiale. </p><p>En résumé, il s’agit d’un homme de 23 ans, sportif, présentant une syncope d’effort avec chute et traumatisme dentaire. Les causes cardiaques doivent être éliminées en priorité : arythmie, cardiomyopathie hypertrophique, QT long, Brugada. Les diagnostics différentiels incluent une hypotension orthostatique (déshydratation récente), une syncope vasovagale (mais contexte atypique), une crise d’épilepsie (peu probable sans convulsions ni signes post-critique), et une hypoglycémie. </p><p>La prise en charge initiale consiste en une surveillance monitorée, mise en place d’une voie veineuse, réhydratation, prise en charge du traumatisme dentaire. Les examens à demander en urgence incluent un ECG 12 dérivations, une glycémie capillaire, un bilan orthostatique et des troponines. Secondairement, on réalisera une NFS, ionogramme, fonction rénale, échocardiographie, Holter 24-48h, test d’effort, voire IRM cardiaque. </p><p>En attendant le bilan complet, il doit absolument interrompre toute activité sportive. Je lui expliquerais que la plupart des syncopes chez le jeune sont bénignes, mais qu’en tant que sportif, on doit écarter une cause cardiaque avant d’autoriser la reprise. Le suivi cardiologique spécialisé est indispensable.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : James Patterson, 23 ans, syncope brutale à l’effort, chute avec fracture dentaire.</p><p>B (Background) : Sportif universitaire, sans antécédents, diarrhée récente, pas de morts subites familiales.</p><p>A (Assessment) : Syncope d’effort, cause cardiaque à éliminer en priorité (arythmie, cardiomyopathie hypertrophique, QT long). DD : hypotension orthostatique, syncope vasovagale, épilepsie, hypoglycémie.</p><p>R (Recommendation) : ECG, glycémie, orthostatique, troponines, suivi cardio complet, arrêt sport temporaire, surveillance monitorée.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 Red flags syncope sportive</h5>
+                <ul class="presentation-points">
+                    <li>Survenue à l’effort</li>
+                    <li>Absence de prodrome</li>
+                    <li>ATCD familiaux de mort subite</li>
+                    <li>ECG anormal</li>
+                    <li>Syncope répétée</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Étiologies majeures chez le sportif</h5>
+                <ul class="presentation-points">
+                    <li>Cardiomyopathie hypertrophique</li>
+                    <li>Arythmies (TV, BAV, QT long, Brugada)</li>
+                    <li>Hypotension orthostatique/déshydratation</li>
+                    <li>Syncope vasovagale</li>
+                    <li>Hypoglycémie</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 PEC immédiate en 3 points</h5>
+                <ul class="presentation-points">
+                    <li>Surveillance monitorée + voie IV</li>
+                    <li>ECG systématique</li>
+                    <li>Arrêt du sport jusqu’au bilan</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>⚠️ Pièges ECOS</h5>
+                <ul class="presentation-points">
+                    <li>Banaliser la syncope chez jeune sportif</li>
+                    <li>Oublier l’ECG</li>
+                    <li>Ne pas rechercher antécédents familiaux</li>
+                    <li>Autoriser reprise sport trop tôt</li>
+                    <li>Négliger les consignes de sécurité (conduite, récidive)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Arythmie cardiaque</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Syncope brutale à l’effort</li>
+                                <li>Récupération rapide</li>
+                                <li>Bradycardie relative</li>
+                                <li>Sportif</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de palpitations</li>
+                                <li>Pas d’ATCD cardiaques</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Cardiomyopathie hypertrophique</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Jeune sportif</li>
+                                <li>Syncope d’effort</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de souffle à l’auscultation</li>
+                                <li>Pas d’ATCD familiaux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Hypotension orthostatique</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Diarrhée récente</li>
+                                <li>Déshydratation possible</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de vertiges prodromiques</li>
+                                <li>PA normale</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q4</span>
+                        <span class="q-text">Syncope vasovagale</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Âge jeune</li>
+                                <li>Récupération rapide</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de déclencheur émotionnel</li>
+                                <li>Pas de prodrome typique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q5</span>
+                        <span class="q-text">Épilepsie</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Confusion post-critique transitoire</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de convulsions</li>
+                                <li>Pas de morsure de langue</li>
+                                <li>Pas d’incontinence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q6</span>
+                        <span class="q-text">Hypoglycémie</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Effort physique récent</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de symptômes neurovégétatifs</li>
+                                <li>Pas de jeûne prolongé</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>ECG 12 dérivations</li>
+                            <li>Glycémie capillaire</li>
+                            <li>Mesure orthostatique</li>
+                            <li>Troponines</li>
+                            <li>NFS, ionogramme, fonction rénale</li>
+                            <li>Échocardiographie si suspicion</li>
+                            <li>Holter <span class="highlight-range">24-48</span>h si suspicion arythmique</li>
+                            <li>IRM cardiaque si anomalie structurelle suspectée</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Syncope d’effort chez un sportif, origine cardiaque à éliminer</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Surveillance monitorée</li>
+                                <li>Arrêt sport</li>
+                                <li>Réhydratation si besoin</li>
+                                <li>Prise en charge fracture dentaire</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-section">
+                            <strong>Secondaire :</strong>
+                            <ul>
+                                <li>ECG, écho, Holter, test d’effort</li>
+                                <li>Orientation cardiologique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Consultation cardiologie spécialisée</li>
+                            <li>Reprise sport uniquement après clearance</li>
+                            <li>Informer patient : revenir en cas de récidive, palpitations, douleur thoracique</li>
+                            <li>Dépistage familial si pathologie cardiaque confirmée</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Instructions pour le patient standardisé</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> James Patterson |             <strong>Âge :</strong> 23 ans<br>
+            <strong>Contexte :</strong> Étudiant universitaire, athlète (course à pied), première visite aux urgences
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Chute avec fracture dentaire</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> J'ai perdu connaissance en montant les escaliers</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Syncope :</strong>
+                <ul>
+                    <li>Il y a 30-45 minutes</li>
+                    <li>Montait escaliers en courant après racquetball</li>
+                    <li>Perte de connaissance brutale</li>
+                    <li>Réveil sur marche du haut</li>
+                    <li>Confusion initiale ('dans les vapes')</li>
+                    <li>Douleur dentaire et labiale au réveil</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Activité précédente :</strong>
+                <ul>
+                    <li>Partie de racquetball avec ami</li>
+                    <li>Activité habituelle (lundis/jeudis)</li>
+                    <li>Rien de particulièrement intense</li>
+                    <li>Montée habituelle des escaliers (3e étage)</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Témoin :</strong>
+                <ul>
+                    <li>Ami avec lui</li>
+                    <li>N'a pas vu la chute directement</li>
+                    <li>A continué à monter, puis redescendu</li>
+                    <li>A trouvé patient qui reprenait conscience</li>
+                    <li>Durée estimée : quelques secondes</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Attitude :</strong>
+                <ul>
+                    <li>Minimise l'incident initialement</li>
+                    <li>Dit que c'est 'juste un accident'</li>
+                    <li>Inquiet mais veut rassurer</li>
+                    <li>Coopératif pour l'examen</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant la consultation :</strong>
+                <ul>
+                    <li>Se touche la dent cassée</li>
+                    <li>Montre la lèvre gonflée</li>
+                    <li>Hésite sur les détails (confusion)</li>
+                    <li>Insiste sur le fait qu'il est sportif</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant l'examen :</strong>
+                <ul>
+                    <li>Examen neurologique normal</li>
+                    <li>Pouls lent mais régulier</li>
+                    <li>Fracture dentaire visible</li>
+                    <li>Lacération labiale avec œdème</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Habitudes</h4>
+            <p><strong>Sport :</strong> Athlétisme universitaire, très actif</p>
+            <p><strong>Alcool :</strong> 3-4 verres/week-end, dernière fois samedi</p>
+            <p><strong>Tabac :</strong> Non (incompatible avec sport)</p>
+            <p><strong>Médicaments :</strong> Aucun</p>
+            <p><strong>Suppléments :</strong> Protéines de soja le matin</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents familiaux</h4>
+            <p><strong>Père :</strong> Hypertension, pas d'autres problèmes cardiaques</p>
+            <p><strong>Mère :</strong> Dépression</p>
+            <p><strong>Fratrie :</strong> Frère avec syndrome de Down</p>
+            <p><strong>Morts subites :</strong> Aucune connue</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Symptômes associés</h4>
+            <div class="property-group">
+                <strong>Avant :</strong>
+                <ul>
+                    <li>Aucun vertige</li>
+                    <li>Pas de douleurs thoraciques</li>
+                    <li>Pas de palpitations</li>
+                    <li>Pas de nausées</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Pendant :</strong>
+                <ul>
+                    <li>Aucun souvenir</li>
+                    <li>Pas de convulsions observées</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Après :</strong>
+                <ul>
+                    <li>Confusion transitoire</li>
+                    <li>Douleur faciale</li>
+                    <li>Saignement labial</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents</h4>
+            <div class="property-group">
+                <strong>Médicaux :</strong>
+                <ul>
+                    <li>Généralement en bonne santé</li>
+                    <li>Jamais hospitalisé</li>
+                    <li>Première visite aux urgences</li>
+                    <li>Examens médicaux sportifs normaux</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Syncopes :</strong>
+                <ul>
+                    <li>Jamais de vraie syncope</li>
+                    <li>Quelques 'black-out' à l'université (alcool)</li>
+                    <li>Jamais de crises d'épilepsie</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Symptomes Recents</h4>
+            <div class="property-group">
+                <strong>Diarrhée :</strong>
+                <ul>
+                    <li>Quelques jours</li>
+                    <li>Liquide, pas de sang</li>
+                    <li>Avait oublié de le mentionner</li>
+                    <li>Pas de nausées/vomissements</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 44, examen: 27, management: 20, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 10, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 5, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 6, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

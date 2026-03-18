@@ -1,0 +1,2641 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE Triage 25 - Douleur à l'épaule - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸
+                Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE Triage 25 - Douleur à l'épaule</h1>
+            <p style="margin: 5px 0;">📍 Clinique</p>
+            <p style="margin: 5px 0;">👤 Michael McKinney, un homme de 34 ans, se présente à la clinique en se plaignant
+                d'une douleur à l'épaule droite.</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">138/88 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">36.9°C</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">60 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">16/min</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/51</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+                <div class="criteria-row" id="criteria-a1">
+                    <div>
+                        <div class="criteria-text">1. Introduction et approche empathique (nom, fonction et questions
+                            ouvertes) <button class="comment-button" onclick="toggleComment('a1')"
+                                title="Ajouter un commentaire">📝</button></div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"Bonjour, M. McKinney, je suis le Dr Nelson."</div>
+                            <div class="exemple-phrase">"Je comprends que vous avez eu des douleurs à l'épaule
+                                dernièrement."</div>
+                            <div class="exemple-phrase">"Pouvez-vous m'en dire plus ?"</div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-a1">
+                            <textarea class="comment-textarea" id="comment-a1"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="a1" value="2"
+                            data-criteria="Introduction et approche empathique (nom, fonction et questions ouvertes)"
+                            onchange="updateScore('a', this)" />
+                    </div>
+                    <div class="checkbox-group" style="visibility: hidden;">
+                        <input type="radio" disabled />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+                    </div>
+                    <div class="points-display" id="points-a1">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-a2">
+                    <div>
+                        <div class="criteria-text">2. Caractérisation de la douleur (OPQRST) <button
+                                class="comment-button" onclick="toggleComment('a2')"
+                                title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Localisation <span
+                                        class="patient-response">[épaule droite antérieure]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a2-detail-0" value="1"
+                                            onchange="updateDetailScore('a2', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Durée <span class="patient-response">[environ 2
+                                        mois]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a2-detail-1" value="1"
+                                            onchange="updateDetailScore('a2', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Début progressif <span
+                                        class="patient-response">[fin saison softball]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a2-detail-2" value="1"
+                                            onchange="updateDetailScore('a2', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Qualité <span class="patient-response">[aiguë,
+                                        pas constante]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a2-detail-3" value="1"
+                                            onchange="updateDetailScore('a2', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Intensité <span class="patient-response">[7/10
+                                        au maximum, 0/10 au repos]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a2-detail-4" value="1"
+                                            onchange="updateDetailScore('a2', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Irradiation <span
+                                        class="patient-response">[reste localisée, région antérieure]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a2-detail-5" value="1"
+                                            onchange="updateDetailScore('a2', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas de traumatisme spécifique</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a2-detail-6" value="1"
+                                            onchange="updateDetailScore('a2', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Joueur première base, bras lanceur droit</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a2-detail-7" value="1"
+                                            onchange="updateDetailScore('a2', 'a')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"Vous souvenez-vous d'une première fois où vous vous êtes blessé
+                                ?"</div>
+                            <div class="exemple-phrase">"Y a-t-il autre chose qui déclenche la douleur ?"</div>
+                            <div class="exemple-phrase">"La douleur irradie-t-elle quelque part ?"</div>
+                            <div class="exemple-phrase">"Sur une échelle de 0 à 10, où évalueriez-vous cette douleur ?"
+                            </div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-a2">
+                            <textarea class="comment-textarea" id="comment-a2"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-a2">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-a3">
+                    <div>
+                        <div class="criteria-text">3. Facteurs aggravants et soulageants <button class="comment-button"
+                                onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Douleur nocturne <span
+                                        class="patient-response">[se retourne, doit changer position]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a3-detail-0" value="1"
+                                            onchange="updateDetailScore('a3', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Musculation aggrave <span
+                                        class="patient-response">[développé couché]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a3-detail-1" value="1"
+                                            onchange="updateDetailScore('a3', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Mouvements au-dessus tête <span
+                                        class="patient-response">[fait le plus mal]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a3-detail-2" value="1"
+                                            onchange="updateDetailScore('a3', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Gym 1 jour/2 <span
+                                        class="patient-response">[alterne haut/bas corps]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a3-detail-3" value="1"
+                                            onchange="updateDetailScore('a3', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">AINS peu efficaces <span
+                                        class="patient-response">[naproxène aide un peu]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a3-detail-4" value="1"
+                                            onchange="updateDetailScore('a3', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Ibuprofène inefficace <span
+                                        class="patient-response">[essayé il y a 2 semaines]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a3-detail-5" value="1"
+                                            onchange="updateDetailScore('a3', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas essayé chaud/froid <span
+                                        class="patient-response">[sauna sans effet]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a3-detail-6" value="1"
+                                            onchange="updateDetailScore('a3', 'a')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"Je peux imaginer à quel point cela peut être inconfortable."
+                            </div>
+                            <div class="exemple-phrase">"Avez-vous fait quelque chose pour la douleur ?"</div>
+                            <div class="exemple-phrase">"Qu'en est-il d'une compresse chaude ou froide ?"</div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-a3">
+                            <textarea class="comment-textarea" id="comment-a3"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-a3">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-a4">
+                    <div>
+                        <div class="criteria-text">4. Recherche de signes inflammatoires et instabilité <button
+                                class="comment-button" onclick="toggleComment('a4')"
+                                title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas rougeur/œdème visible</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a4-detail-0" value="1"
+                                            onchange="updateDetailScore('a4', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas sensation instabilité <span
+                                        class="patient-response">[non, pas cette sensation]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a4-detail-1" value="1"
+                                            onchange="updateDetailScore('a4', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Jamais luxation épaule <span
+                                        class="patient-response">[non]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a4-detail-2" value="1"
+                                            onchange="updateDetailScore('a4', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas blocage articulaire <span
+                                        class="patient-response">[non]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a4-detail-3" value="1"
+                                            onchange="updateDetailScore('a4', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas picotements/engourdissement <span
+                                        class="patient-response">[non]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a4-detail-4" value="1"
+                                            onchange="updateDetailScore('a4', 'a')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"La zone est-elle déjà devenue rouge ou enflée ?"</div>
+                            <div class="exemple-phrase">"Votre épaule vous a-t-elle semblé instable ?"</div>
+                            <div class="exemple-phrase">"Avez-vous déjà eu une luxation de cette épaule ?"</div>
+                            <div class="exemple-phrase">"S'est-elle déjà bloquée ?"</div>
+                            <div class="exemple-phrase">"Ressentez-vous des picotements ou engourdissement ?"</div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-a4">
+                            <textarea class="comment-textarea" id="comment-a4"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-a4">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-a5">
+                    <div>
+                        <div class="criteria-text">5. Dépistage douleurs référées <button class="comment-button"
+                                onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas douleur thoracique <span
+                                        class="patient-response">[non, pas du tout]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a5-detail-0" value="1"
+                                            onchange="updateDetailScore('a5', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas dyspnée <span
+                                        class="patient-response">[non]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a5-detail-1" value="1"
+                                            onchange="updateDetailScore('a5', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas congestion/toux <span
+                                        class="patient-response">[non]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a5-detail-2" value="1"
+                                            onchange="updateDetailScore('a5', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas douleur abdominale <span
+                                        class="patient-response">[non, rien]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a5-detail-3" value="1"
+                                            onchange="updateDetailScore('a5', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas autres problèmes articulaires actuels</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a5-detail-4" value="1"
+                                            onchange="updateDetailScore('a5', 'a')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"Avez-vous eu des douleurs thoraciques ou difficultés
+                                respiratoires ?"</div>
+                            <div class="exemple-phrase">"Une congestion thoracique ou de la toux ?"</div>
+                            <div class="exemple-phrase">"Qu'en est-il de douleurs abdominales ?"</div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-a5">
+                            <textarea class="comment-textarea" id="comment-a5"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-a5">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-a6">
+                    <div>
+                        <div class="criteria-text">6. Antécédents traumatiques et sportifs <button
+                                class="comment-button" onclick="toggleComment('a6')"
+                                title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Policier actif <span
+                                        class="patient-response">[métier difficile]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a6-detail-0" value="1"
+                                            onchange="updateDetailScore('a6', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Athlétique <span class="patient-response">[gars
+                                        assez athlétique]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a6-detail-1" value="1"
+                                            onchange="updateDetailScore('a6', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Fracture pouce passée</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a6-detail-2" value="1"
+                                            onchange="updateDetailScore('a6', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Entorses chevilles multiples <span
+                                        class="patient-response">[les deux]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a6-detail-3" value="1"
+                                            onchange="updateDetailScore('a6', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Blessure par balle jambe droite <span
+                                        class="patient-response">[il y a 2 ans]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a6-detail-4" value="1"
+                                            onchange="updateDetailScore('a6', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Balle dans muscle <span
+                                        class="patient-response">[m'a effleuré]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a6-detail-5" value="1"
+                                            onchange="updateDetailScore('a6', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Bonne récupération <span
+                                        class="patient-response">[plutôt bien récupéré]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a6-detail-6" value="1"
+                                            onchange="updateDetailScore('a6', 'a')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"Avez-vous eu d'autres problèmes avec vos articulations ou
+                                muscles ?"</div>
+                            <div class="exemple-phrase">"On dirait que vous l'avez été - c'est un métier difficile."
+                            </div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-a6">
+                            <textarea class="comment-textarea" id="comment-a6"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-a6">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-a7">
+                    <div>
+                        <div class="criteria-text">7. Antécédents médicaux <button class="comment-button"
+                                onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Dysfonction érectile <span
+                                        class="patient-response">[arrive parfois]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a7-detail-0" value="1"
+                                            onchange="updateDetailScore('a7', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Eczéma coudes <span
+                                        class="patient-response">[applique stéroïde si grave]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a7-detail-1" value="1"
+                                            onchange="updateDetailScore('a7', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas hospitalisation <span
+                                        class="patient-response">[jamais passé nuit]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a7-detail-2" value="1"
+                                            onchange="updateDetailScore('a7', 'a')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"Qu'en est-il d'autres problèmes dans vos antécédents médicaux
+                                ?"</div>
+                            <div class="exemple-phrase">"Quelque chose pour lequel vous avez vu le médecin ?"</div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-a7">
+                            <textarea class="comment-textarea" id="comment-a7"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-a7">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-a8">
+                    <div>
+                        <div class="criteria-text">8. Antécédents chirurgicaux <button class="comment-button"
+                                onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Amygdalectomie <span
+                                        class="patient-response">[12 ans]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a8-detail-0" value="1"
+                                            onchange="updateDetailScore('a8', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Chirurgie blessure balle <span
+                                        class="patient-response">[jambe droite]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a8-detail-1" value="1"
+                                            onchange="updateDetailScore('a8', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas autres chirurgies</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a8-detail-2" value="1"
+                                            onchange="updateDetailScore('a8', 'a')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"Qu'en est-il des chirurgies, autres que cette blessure par
+                                balle ?"</div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-a8">
+                            <textarea class="comment-textarea" id="comment-a8"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-a8">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-a9">
+                    <div>
+                        <div class="criteria-text">9. Médicaments actuels <button class="comment-button"
+                                onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Vardénafil <span
+                                        class="patient-response">[occasionnellement pour dysfonction érectile]</span>
+                                </div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a9-detail-0" value="1"
+                                            onchange="updateDetailScore('a9', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Naproxène PRN <span
+                                        class="patient-response">[occasionnel]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a9-detail-1" value="1"
+                                            onchange="updateDetailScore('a9', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Ibuprofène PRN <span
+                                        class="patient-response">[essayé sans succès]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a9-detail-2" value="1"
+                                            onchange="updateDetailScore('a9', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Stéroïde topique PRN <span
+                                        class="patient-response">[eczéma, pas utilisé depuis mois]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a9-detail-3" value="1"
+                                            onchange="updateDetailScore('a9', 'a')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"Prenez-vous d'autres médicaments ?"</div>
+                            <div class="exemple-phrase">"Est-ce seulement un médicament topique ?"</div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-a9">
+                            <textarea class="comment-textarea" id="comment-a9"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-a9">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-a10">
+                    <div>
+                        <div class="criteria-text">10. Habitudes de vie <button class="comment-button"
+                                onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Non-fumeur <span class="patient-response">[non,
+                                        plutôt en bonne santé]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a10-detail-0" value="1"
+                                            onchange="updateDetailScore('a10', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Alcool occasionnel <span
+                                        class="patient-response">[bière avec dîner 1×/sem]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a10-detail-1" value="1"
+                                            onchange="updateDetailScore('a10', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas drogues <span
+                                        class="patient-response">[non, jamais]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a10-detail-2" value="1"
+                                            onchange="updateDetailScore('a10', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Suppléments arrêtés <span
+                                        class="patient-response">[en prenais mais pas continué]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a10-detail-3" value="1"
+                                            onchange="updateDetailScore('a10', 'a')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"Fumez-vous ou utilisez-vous du tabac ?"</div>
+                            <div class="exemple-phrase">"Buvez-vous de l'alcool ?"</div>
+                            <div class="exemple-phrase">"D'autres drogues ?"</div>
+                            <div class="exemple-phrase">"Qu'en est-il des compléments alimentaires ?"</div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-a10">
+                            <textarea class="comment-textarea" id="comment-a10"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-a10">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-a11">
+                    <div>
+                        <div class="criteria-text">11. Antécédents familiaux <button class="comment-button"
+                                onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Parents en bonne santé</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a11-detail-0" value="1"
+                                            onchange="updateDetailScore('a11', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Deux sœurs en bonne santé</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a11-detail-1" value="1"
+                                            onchange="updateDetailScore('a11', 'a')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas maladies importantes famille</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="a11-detail-2" value="1"
+                                            onchange="updateDetailScore('a11', 'a')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"Y a-t-il eu des maladies importantes dans votre famille ?"
+                            </div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-a11">
+                            <textarea class="comment-textarea" id="comment-a11"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-a11">0</div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')"
+                        title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese"
+                        placeholder="Commentaire sur la section anamnèse..."
+                        oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/34</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+                <div class="criteria-row" id="criteria-e1">
+                    <div>
+                        <div class="criteria-text">1. Préparation à l'examen <button class="comment-button"
+                                onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"J'aimerais faire un examen physique maintenant, si vous le
+                                voulez bien."</div>
+                            <div class="exemple-phrase">"Laissez-moi juste me laver les mains."</div>
+                            <div class="exemple-phrase">"Il semble que vos signes vitaux soient normaux."</div>
+                            <div class="exemple-phrase">"Veuillez enlever votre chemise pour que je puisse examiner vos
+                                épaules."</div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-e1">
+                            <textarea class="comment-textarea" id="comment-e1"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="e1" value="2" data-criteria="Préparation à l'examen"
+                            onchange="updateScore('e', this)" />
+                    </div>
+                    <div class="checkbox-group" style="visibility: hidden;">
+                        <input type="radio" disabled />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+                    </div>
+                    <div class="points-display" id="points-e1">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-e2">
+                    <div>
+                        <div class="criteria-text">2. Examen neurologique membre supérieur <button
+                                class="comment-button" onclick="toggleComment('e2')"
+                                title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Sensibilité tactile bilatérale <span
+                                        class="patient-response">[normale]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e2-detail-0" value="1"
+                                            onchange="updateDetailScore('e2', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Réflexes ostéotendineux <span
+                                        class="patient-response">[2+ bilatéraux]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e2-detail-1" value="1"
+                                            onchange="updateDetailScore('e2', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Force musculaire globale <span
+                                        class="patient-response">[5/5 partout]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e2-detail-2" value="1"
+                                            onchange="updateDetailScore('e2', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas déficit neurologique focal</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e2-detail-3" value="1"
+                                            onchange="updateDetailScore('e2', 'e')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-e2">
+                            <textarea class="comment-textarea" id="comment-e2"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-e2">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-e3">
+                    <div>
+                        <div class="criteria-text">3. Inspection épaules <button class="comment-button"
+                                onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Apparence symétrique <span
+                                        class="patient-response">[pas asymétrie]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e3-detail-0" value="1"
+                                            onchange="updateDetailScore('e3', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas érythème visible</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e3-detail-1" value="1"
+                                            onchange="updateDetailScore('e3', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas œdème/déformation</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e3-detail-2" value="1"
+                                            onchange="updateDetailScore('e3', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas atrophie musculaire</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e3-detail-3" value="1"
+                                            onchange="updateDetailScore('e3', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Comparaison bilatérale</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e3-detail-4" value="1"
+                                            onchange="updateDetailScore('e3', 'e')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-e3">
+                            <textarea class="comment-textarea" id="comment-e3"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-e3">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-e4">
+                    <div>
+                        <div class="criteria-text">4. Palpation structures épaule <button class="comment-button"
+                                onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Sensibilité région gléno-humérale antérieure
+                                    <span class="patient-response">[légère]</span>
+                                </div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e4-detail-0" value="1"
+                                            onchange="updateDetailScore('e4', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Processus coracoïde <span
+                                        class="patient-response">[pas sensible]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e4-detail-1" value="1"
+                                            onchange="updateDetailScore('e4', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Tendon biceps <span
+                                        class="patient-response">[pas sensible]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e4-detail-2" value="1"
+                                            onchange="updateDetailScore('e4', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Articulation acromio-claviculaire</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e4-detail-3" value="1"
+                                            onchange="updateDetailScore('e4', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Coiffe des rotateurs</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e4-detail-4" value="1"
+                                            onchange="updateDetailScore('e4', 'e')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"Pouvez-vous me montrer où se trouve votre douleur ?"</div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-e4">
+                            <textarea class="comment-textarea" id="comment-e4"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-e4">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-e5">
+                    <div>
+                        <div class="criteria-text">5. Amplitude de mouvement passive et active <button
+                                class="comment-button" onclick="toggleComment('e5')"
+                                title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Flexion complète</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e5-detail-0" value="1"
+                                            onchange="updateDetailScore('e5', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Extension complète</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e5-detail-1" value="1"
+                                            onchange="updateDetailScore('e5', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Abduction/adduction complètes</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e5-detail-2" value="1"
+                                            onchange="updateDetailScore('e5', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Rotation externe complète</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e5-detail-3" value="1"
+                                            onchange="updateDetailScore('e5', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Rotation interne complète</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e5-detail-4" value="1"
+                                            onchange="updateDetailScore('e5', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Amplitude complète mais douloureuse certains
+                                    mouvements</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e5-detail-5" value="1"
+                                            onchange="updateDetailScore('e5', 'e')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"Cette manœuvre provoque-t-elle une augmentation de la douleur
+                                ?"</div>
+                            <div class="exemple-phrase">"Pouvez-vous me montrer ce qui aggrave cette douleur ?"</div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-e5">
+                            <textarea class="comment-textarea" id="comment-e5"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-e5">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-e6">
+                    <div>
+                        <div class="criteria-text">6. Tests spéciaux - Conflit et coiffe <button class="comment-button"
+                                onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Test Neer <span
+                                        class="patient-response">[positif pour conflit]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e6-detail-0" value="1"
+                                            onchange="updateDetailScore('e6', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Test Hawkins <span
+                                        class="patient-response">[évalué]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e6-detail-1" value="1"
+                                            onchange="updateDetailScore('e6', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Test boîte vide <span
+                                        class="patient-response">[positif]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e6-detail-2" value="1"
+                                            onchange="updateDetailScore('e6', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Test isométrique sus-épineux <span
+                                        class="patient-response">[positif]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e6-detail-3" value="1"
+                                            onchange="updateDetailScore('e6', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Test arc douloureux passif</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e6-detail-4" value="1"
+                                            onchange="updateDetailScore('e6', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Force rotation interne/externe <span
+                                        class="patient-response">[normale]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e6-detail-5" value="1"
+                                            onchange="updateDetailScore('e6', 'e')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-e6">
+                            <textarea class="comment-textarea" id="comment-e6"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-e6">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-e7">
+                    <div>
+                        <div class="criteria-text">7. Tests spéciaux - Biceps et stabilité <button
+                                class="comment-button" onclick="toggleComment('e7')"
+                                title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Test Speed <span
+                                        class="patient-response">[négatif]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e7-detail-0" value="1"
+                                            onchange="updateDetailScore('e7', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Test Yergason <span
+                                        class="patient-response">[négatif]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e7-detail-1" value="1"
+                                            onchange="updateDetailScore('e7', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Test bras croisé <span
+                                        class="patient-response">[légèrement positif]</span></div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e7-detail-2" value="1"
+                                            onchange="updateDetailScore('e7', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas signe du sillon</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e7-detail-3" value="1"
+                                            onchange="updateDetailScore('e7', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Pas appréhension pendant manœuvres</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e7-detail-4" value="1"
+                                            onchange="updateDetailScore('e7', 'e')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Stabilité articulaire préservée</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="e7-detail-5" value="1"
+                                            onchange="updateDetailScore('e7', 'e')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-e7">
+                            <textarea class="comment-textarea" id="comment-e7"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('e7'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-e7">0</div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')"
+                        title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique
+                    </h4>
+                    <textarea class="comment-textarea" id="comment-section-examen"
+                        placeholder="Commentaire sur la section examen clinique..."
+                        oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/31</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+                <div class="criteria-row" id="criteria-m1">
+                    <div>
+                        <div class="criteria-text">1. Diagnostics différentiels <button class="comment-button"
+                                onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="criterion-comment-section" id="comment-section-m1">
+                            <textarea class="comment-textarea" id="comment-m1"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="m1" value="2" data-criteria="Diagnostics différentiels"
+                            onchange="updateScore('m', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+                    </div>
+                    <div class="points-display" id="points-m1">0</div>
+                </div>
+                <div class="annexe-item annexe-dd">
+                    <div class="annexe-title">Diagnostics différentiels de douleur d'épaule chez l'adulte jeune sportif
+                    </div>
+                    <div class="annexe-dd-content">
+                        <div class="dd-category">
+                            <h4>Pathologies de la coiffe des rotateurs</h4>
+                            <ul>
+                                <li>
+                                    <strong style="color: rgb(169, 34, 23);">Tendinopathie de la coiffe des
+                                        rotateurs</strong><br>
+                                    <div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong
+                                            style="color: #4caf50;">Arguments POUR:</strong><span
+                                            style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•
+                                            Sportif avec mouvements répétitifs (softball)<br>&nbsp;&nbsp;&nbsp;&nbsp;•
+                                            Douleur progressive sans traumatisme<br>&nbsp;&nbsp;&nbsp;&nbsp;• Douleur
+                                            nocturne caractéristique<br>&nbsp;&nbsp;&nbsp;&nbsp;• Test sus-épineux
+                                            positif<br>&nbsp;&nbsp;&nbsp;&nbsp;• Test boîte vide
+                                            positif<br>&nbsp;&nbsp;&nbsp;&nbsp;• Aggravation mouvements au-dessus
+                                            tête<br>&nbsp;&nbsp;&nbsp;&nbsp;• Âge compatible (34 ans)<br></span><strong
+                                            style="color: #f44336;">Arguments CONTRE:</strong><span
+                                            style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•
+                                            Force préservée (5/5)</span></div>
+                                    <div
+                                        style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">
+                                        → Échographie ou IRM si échec traitement conservateur</div>
+                                </li>
+                                <li>
+                                    <strong style="color: rgb(169, 34, 23);">Syndrome de conflit
+                                        sous-acromial</strong><br>
+                                    <div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong
+                                            style="color: #4caf50;">Arguments POUR:</strong><span
+                                            style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•
+                                            Test Neer positif<br>&nbsp;&nbsp;&nbsp;&nbsp;• Douleur mouvements
+                                            répétitifs<br>&nbsp;&nbsp;&nbsp;&nbsp;• Localisation antérieure
+                                            typique<br>&nbsp;&nbsp;&nbsp;&nbsp;• Aggravation activités
+                                            overhead<br>&nbsp;&nbsp;&nbsp;&nbsp;• Amélioration partielle
+                                            AINS<br></span><strong style="color: #f44336;">Arguments
+                                            CONTRE:</strong><span
+                                            style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•
+                                            Pas limitation amplitude mouvement</span></div>
+                                    <div
+                                        style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">
+                                        → Radio épaule (espace sous-acromial), échographie dynamique</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dd-category">
+                            <h4>Pathologies du labrum</h4>
+                            <ul>
+                                <li>
+                                    <strong style="color: rgb(169, 34, 23);">Lésion SLAP (déchirure labrum
+                                        supérieur)</strong><br>
+                                    <div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong
+                                            style="color: #4caf50;">Arguments POUR:</strong><span
+                                            style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•
+                                            Sportif lanceur (softball)<br>&nbsp;&nbsp;&nbsp;&nbsp;• Douleur
+                                            antérieure<br>&nbsp;&nbsp;&nbsp;&nbsp;• Test bras croisé légèrement
+                                            positif<br>&nbsp;&nbsp;&nbsp;&nbsp;• Douleur avec activités
+                                            overhead<br></span><strong style="color: #f44336;">Arguments
+                                            CONTRE:</strong><span
+                                            style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•
+                                            Pas sensation blocage<br>&nbsp;&nbsp;&nbsp;&nbsp;• Pas
+                                            instabilité<br>&nbsp;&nbsp;&nbsp;&nbsp;• Tests biceps négatifs</span></div>
+                                    <div
+                                        style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">
+                                        → Arthro-IRM pour visualisation labrum</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dd-category">
+                            <h4>Pathologies tendineuses</h4>
+                            <ul>
+                                <li>
+                                    <strong style="color: rgb(169, 34, 23);">Tendinite du biceps</strong><br>
+                                    <div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong
+                                            style="color: #4caf50;">Arguments POUR:</strong><span
+                                            style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•
+                                            Localisation antérieure<br>&nbsp;&nbsp;&nbsp;&nbsp;• Sportif avec mouvements
+                                            répétitifs<br></span><strong style="color: #f44336;">Arguments
+                                            CONTRE:</strong><span
+                                            style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•
+                                            Test Speed négatif<br>&nbsp;&nbsp;&nbsp;&nbsp;• Test Yergason
+                                            négatif<br>&nbsp;&nbsp;&nbsp;&nbsp;• Pas sensibilité gouttière
+                                            bicipitale</span></div>
+                                    <div
+                                        style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">
+                                        → Échographie pour évaluation tendon long biceps</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dd-category">
+                            <h4>Pathologies articulaires</h4>
+                            <ul>
+                                <li>
+                                    <strong style="color: rgb(169, 34, 23);">Arthrose gléno-humérale
+                                        débutante</strong><br>
+                                    <div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong
+                                            style="color: #4caf50;">Arguments POUR:</strong><span
+                                            style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•
+                                            Douleur progressive<br>&nbsp;&nbsp;&nbsp;&nbsp;• Aggravation fin
+                                            journée<br></span><strong style="color: #f44336;">Arguments
+                                            CONTRE:</strong><span
+                                            style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•
+                                            Âge jeune (34 ans)<br>&nbsp;&nbsp;&nbsp;&nbsp;• Amplitude mouvement
+                                            complète<br>&nbsp;&nbsp;&nbsp;&nbsp;• Pas raideur matinale décrite</span>
+                                    </div>
+                                    <div
+                                        style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">
+                                        → Radiographies standard (face, profil, axillaire)</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="criteria-row" id="criteria-m2">
+                    <div>
+                        <div class="criteria-text">2. Examens paracliniques immédiats <button class="comment-button"
+                                onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Radiographies épaule droite (3 incidences)
+                                </div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m2-detail-0" value="1"
+                                            onchange="updateDetailScore('m2', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Face vraie (Grashey)</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m2-detail-1" value="1"
+                                            onchange="updateDetailScore('m2', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Profil de coiffe (outlet view)</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m2-detail-2" value="1"
+                                            onchange="updateDetailScore('m2', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Axillaire pour éliminer luxation occulte</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m2-detail-3" value="1"
+                                            onchange="updateDetailScore('m2', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Recherche calcifications, arthrose, acromion
+                                    type III</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m2-detail-4" value="1"
+                                            onchange="updateDetailScore('m2', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Si radiographies normales : traitement
+                                    conservateur d'abord</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m2-detail-5" value="1"
+                                            onchange="updateDetailScore('m2', 'm')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-m2">
+                            <textarea class="comment-textarea" id="comment-m2"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-m2">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-m3">
+                    <div>
+                        <div class="criteria-text">3. Prise en charge thérapeutique initiale <button
+                                class="comment-button" onclick="toggleComment('m3')"
+                                title="Ajouter un commentaire">📝</button></div>
+                        <div class="therapy-section">
+                            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">
+                                Traitement médicamenteux</div>
+                            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> AINS réguliers (pas
+                                PRN) :<br />
+                                - Naproxène 500mg × 2/j × 2-3 semaines<br />
+                                - Avec protecteur gastrique si facteurs risque<br />
+                                - Importance observance régulière<br />
+                                <span style="margin-left: 10px;">•</span> Antalgiques si besoin :<br />
+                                - Paracétamol 1g × 3-4/j en alternance<br />
+                                <span style="margin-left: 10px;">•</span> Éviter opioïdes initialement
+                            </div>
+                        </div>
+                        <div class="therapy-section">
+                            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">
+                                Repos relatif et modifications activités</div>
+                            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Arrêt temporaire
+                                musculation épaule<br />
+                                <span style="margin-left: 10px;">•</span> Éviter mouvements overhead répétitifs<br />
+                                <span style="margin-left: 10px;">•</span> Pas sports lancer 3-4 semaines<br />
+                                <span style="margin-left: 10px;">•</span> Maintien activités bas du corps<br />
+                                <span style="margin-left: 10px;">•</span> Modifier position sommeil (oreiller
+                                support)<br />
+                                <span style="margin-left: 10px;">•</span> Éviter immobilisation complète
+                            </div>
+                        </div>
+                        <div class="therapy-section">
+                            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">
+                                Rééducation précoce</div>
+                            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Exercices pendulaires
+                                (Codman)<br />
+                                <span style="margin-left: 10px;">•</span> Étirements capsule postérieure<br />
+                                <span style="margin-left: 10px;">•</span> Renforcement isométrique progressif<br />
+                                <span style="margin-left: 10px;">•</span> Glace 15-20 min après activités<br />
+                                <span style="margin-left: 10px;">•</span> Kinésithérapie si pas amélioration 2-3
+                                semaines<br />
+                                <span style="margin-left: 10px;">•</span> Programme renforcement coiffe après phase
+                                aiguë
+                            </div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-m3">
+                            <textarea class="comment-textarea" id="comment-m3"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="m3" value="2" data-criteria="Prise en charge thérapeutique initiale"
+                            onchange="updateScore('m', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="m3" value="1" onchange="updateScore('m', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="m3" value="0" onchange="updateScore('m', this)" />
+                    </div>
+                    <div class="points-display" id="points-m3">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-m4">
+                    <div>
+                        <div class="criteria-text">4. Thérapies de deuxième ligne si échec <button
+                                class="comment-button" onclick="toggleComment('m4')"
+                                title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Infiltration corticoïdes sous-acromiale</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m4-detail-0" value="1"
+                                            onchange="updateDetailScore('m4', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">IRM si suspicion déchirure coiffe</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m4-detail-1" value="1"
+                                            onchange="updateDetailScore('m4', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Échographie diagnostique et thérapeutique</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m4-detail-2" value="1"
+                                            onchange="updateDetailScore('m4', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Référence orthopédie si lésion structurelle
+                                </div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m4-detail-3" value="1"
+                                            onchange="updateDetailScore('m4', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Arthroscopie si lésion SLAP confirmée</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m4-detail-4" value="1"
+                                            onchange="updateDetailScore('m4', 'm')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-m4">
+                            <textarea class="comment-textarea" id="comment-m4"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-m4">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-m5">
+                    <div>
+                        <div class="criteria-text">5. Suivi et surveillance <button class="comment-button"
+                                onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Réévaluation dans 2-3 semaines</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m5-detail-0" value="1"
+                                            onchange="updateDetailScore('m5', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Évaluer observance traitement</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m5-detail-1" value="1"
+                                            onchange="updateDetailScore('m5', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Vérifier amélioration douleur/fonction</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m5-detail-2" value="1"
+                                            onchange="updateDetailScore('m5', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Ajuster traitement selon réponse</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m5-detail-3" value="1"
+                                            onchange="updateDetailScore('m5', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Imagerie avancée si pas amélioration</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m5-detail-4" value="1"
+                                            onchange="updateDetailScore('m5', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Prévention récidives (technique lancer)</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m5-detail-5" value="1"
+                                            onchange="updateDetailScore('m5', 'm')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-m5">
+                            <textarea class="comment-textarea" id="comment-m5"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-m5">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-m6">
+                    <div>
+                        <div class="criteria-text">6. Communication du plan au patient <button class="comment-button"
+                                onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="details-with-checkboxes">
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Explication inflammation coiffe rotateurs</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m6-detail-0" value="1"
+                                            onchange="updateDetailScore('m6', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Description syndrome conflit</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m6-detail-1" value="1"
+                                            onchange="updateDetailScore('m6', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Possibilité déchirure labrum moins probable
+                                </div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m6-detail-2" value="1"
+                                            onchange="updateDetailScore('m6', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Importance traitement AINS régulier</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m6-detail-3" value="1"
+                                            onchange="updateDetailScore('m6', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Nécessité repos relatif épaule</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m6-detail-4" value="1"
+                                            onchange="updateDetailScore('m6', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Éviter musculation temporairement</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m6-detail-5" value="1"
+                                            onchange="updateDetailScore('m6', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Options si échec (infiltration, IRM)</div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m6-detail-6" value="1"
+                                            onchange="updateDetailScore('m6', 'm')" /></label> </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-text criteria-detail">Bon pronostic avec traitement conservateur
+                                </div>
+                                <div class="detail-checkboxes"> <label class="detail-checkbox"><input type="checkbox"
+                                            id="m6-detail-7" value="1"
+                                            onchange="updateDetailScore('m6', 'm')" /></label> </div>
+                            </div>
+                        </div>
+                        <div class="exemples-phrases">
+                            <div class="exemple-phrase">"M. McKinney, il y a quelques possibilités qui pourraient causer
+                                votre douleur."</div>
+                            <div class="exemple-phrase">"Je pense qu'elle pourrait être causée par une inflammation des
+                                tendons de la coiffe des rotateurs."</div>
+                            <div class="exemple-phrase">"Ces tendons peuvent être blessés par une tension ou déchirure
+                                partielle."</div>
+                            <div class="exemple-phrase">"L'inflammation cause ce qu'on appelle un 'conflit'."</div>
+                            <div class="exemple-phrase">"Le tendon enflammé est pris entre deux os dans l'épaule."</div>
+                            <div class="exemple-phrase">"Une autre possibilité est une petite déchirure dans la cupule
+                                (labrum)."</div>
+                            <div class="exemple-phrase">"J'aimerais commencer une thérapie ici et vous revoir dans
+                                quelques semaines."</div>
+                            <div class="exemple-phrase">"Le Naprosyn doit être pris constamment, pas seulement quand ça
+                                fait mal."</div>
+                            <div class="exemple-phrase">"Je recommande pas de musculation ou sports de lancer pendant
+                                cette période."</div>
+                            <div class="exemple-phrase">"Si cet essai n'est pas couronné de succès, nous avons d'autres
+                                options."</div>
+                            <div class="exemple-phrase">"Cela comprend éventuellement l'injection de stéroïde ou une
+                                IRM."</div>
+                            <div class="exemple-phrase">"J'espère que nous pourrons régler cela sans ces prochaines
+                                étapes."</div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-m6">
+                            <textarea class="comment-textarea" id="comment-m6"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="checkbox-group"></div>
+                    <div class="points-display" id="points-m6">0</div>
+                </div>
+                <div class="criteria-row" id="criteria-m7">
+                    <div>
+                        <div class="criteria-text">7. Conseils de prévention <button class="comment-button"
+                                onclick="toggleComment('m7')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="redflags-section">
+                            <div class="redflags-title">⚠️ Signes d'alarme nécessitant réévaluation urgente</div>
+                            <div class="redflags-item">
+                                <div class="redflags-text">1. Faiblesse brutale du bras</div>
+                                <div class="redflags-description">Rupture complète coiffe des rotateurs</div>
+                            </div>
+                            <div class="redflags-item">
+                                <div class="redflags-text">2. Luxation récidivante</div>
+                                <div class="redflags-description">Instabilité gléno-humérale</div>
+                            </div>
+                            <div class="redflags-item">
+                                <div class="redflags-text">3. Douleur nocturne croissante</div>
+                                <div class="redflags-description">Possible déchirure évolutive</div>
+                            </div>
+                            <div class="redflags-item">
+                                <div class="redflags-text">4. Fièvre avec douleur épaule</div>
+                                <div class="redflags-description">Arthrite septique à éliminer</div>
+                            </div>
+                            <div class="redflags-item">
+                                <div class="redflags-text">5. Échec traitement conservateur 6 semaines</div>
+                                <div class="redflags-description">Lésion structurelle probable</div>
+                            </div>
+                        </div>
+                        <div class="criterion-comment-section" id="comment-section-m7">
+                            <textarea class="comment-textarea" id="comment-m7"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('m7'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="m7" value="2" data-criteria="Conseils de prévention"
+                            onchange="updateScore('m', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="m7" value="1" onchange="updateScore('m', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="m7" value="0" onchange="updateScore('m', this)" />
+                    </div>
+                    <div class="points-display" id="points-m7">0</div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')"
+                        title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management"
+                        placeholder="Commentaire sur la section management..."
+                        oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Explication complète du plan diagnostique et thérapeutique</h4>
+                    <div class="cloture-content cloture-content-green">M. McKinney, il y a quelques possibilités qui
+                        pourraient causer votre douleur d'après ce que vous m'avez dit et mon examen physique. Je pense
+                        qu'elle pourrait être causée par une inflammation directe des tendons qui composent ce qu'on
+                        appelle la coiffe des rotateurs. La coiffe des rotateurs est un ensemble de muscles et de
+                        tendons qui maintiennent l'articulation de l'épaule ensemble et fournissent la puissance
+                        musculaire pour la bouger. Ces tendons peuvent être blessés par une tension ou une déchirure
+                        partielle comme c'est probablement le cas chez vous. Les gaines autour du tendon s'enflamment
+                        souvent à cause de cela. Cette inflammation cause ce qu'on appelle un 'conflit', qui est le
+                        piégeage des gaines tendineuses enflammées entre deux os opposés dans l'épaule. Cela se produit
+                        lorsque le tendon lui-même est déchiré ou enflammé ou que la gaine qui l'entoure s'enflamme,
+                        provoquant son léger élargissement. Parce que l'épaule a beaucoup de structures dans un petit
+                        espace, ces tendons enflammés et élargis sont parfois pris entre des zones osseuses, ce qui
+                        cause de la douleur. Une autre possibilité est qu'il y ait une petite déchirure dans la cupule
+                        qui maintient la boule de l'épaule en place. La déchirure peut être une irritation qui se
+                        produit avec certains types de mouvements causant votre douleur. Bien que je pense que c'est
+                        moins probable, j'aimerais commencer une thérapie ici à la clinique et vous revoir en suivi dans
+                        quelques semaines pour évaluer comment ça se passe. La thérapie consistera en une dose constante
+                        du médicament que vous avez essayé, le Naprosyn. Cela fonctionne pour réduire l'inflammation
+                        dans cette zone et calmer l'irritation. Ce médicament doit être pris constamment au cours des
+                        prochaines semaines et je vais également vous conseiller de ne pas forcer cette épaule pendant
+                        cette période. Je recommande pas de musculation ou de sports qui pourraient causer une tension
+                        de cette zone. Plus elle est tendue, plus l'inflammation peut se produire, ce qui recommence le
+                        cycle. Il existe d'autres thérapies qui pourraient être utiles si cet essai thérapeutique n'est
+                        pas couronné de succès. Cependant, commencer ce médicament et avoir votre suivi est le meilleur
+                        plan d'action pour le moment. Si nous devons, nous devrons peut-être passer à l'étape suivante
+                        lors de votre prochain rendez-vous. Cela comprend éventuellement l'injection de cette épaule
+                        avec un stéroïde ou l'obtention d'une étude diagnostique comme une IRM. J'espère cependant que
+                        nous pourrons régler cela sans ces prochaines étapes. Avez-vous des questions sur votre
+                        diagnostic ou votre plan de traitement ?
+
+                        Y a-t-il un autre aspect de vos soins de santé dont nous n'avons pas déjà discuté ? D'accord
+                        alors, merci.</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Question difficile du patient</h4>
+                    <div class="cloture-content">[Est-ce que je vais pouvoir reprendre la musculation et le softball
+                        bientôt ? C'est important pour mon travail de policier de rester en forme.]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse appropriée du candidat</h4>
+                    <div class="cloture-content cloture-content-green">Je comprends parfaitement votre préoccupation, M.
+                        McKinney. Rester en forme est effectivement crucial pour votre travail de policier. La bonne
+                        nouvelle est que la plupart des tendinopathies de la coiffe des rotateurs répondent bien au
+                        traitement conservateur. Je recommande une pause de 3-4 semaines pour les activités qui
+                        sollicitent l'épaule, mais vous pouvez absolument continuer le cardio et l'entraînement du bas
+                        du corps. Après 2-3 semaines, si la douleur s'améliore, nous pourrons commencer une reprise
+                        progressive avec des exercices de renforcement spécifiques pour l'épaule. Pour le softball, je
+                        dirais plutôt 4-6 semaines avant de reprendre les lancers. L'important est de bien traiter
+                        maintenant pour éviter que ça devienne chronique. Avec votre forme physique de base et votre
+                        motivation, je suis confiant que vous pourrez reprendre toutes vos activités. Nous réévaluerons
+                        dans 2-3 semaines et ajusterons le plan selon votre progression.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button
+                                class="comment-button" onclick="toggleComment('c1')"
+                                title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+                            Explique le déroulement de la consultation et vérifie les préoccupations du patient,
+                            commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les
+                            émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button"
+                                onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du
+                            temps<br />
+                            Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et
+                            s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button"
+                                onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la
+                            compréhension<br />
+                            Langage adapté au niveau du patient, pas de jargon, explications compréhensibles,
+                            reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la
+                            consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button"
+                                onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+                            Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et
+                            expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button
+                                class="comment-button" onclick="toggleComment('c5')"
+                                title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5"
+                                placeholder="Commentaire sur ce critère..."
+                                oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale"
+                            onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')"
+                        title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication
+                    </h4>
+                    <textarea class="comment-textarea" id="comment-section-communication"
+                        placeholder="Commentaire sur la section communication..."
+                        oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/136</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+        <div class="resume">
+            <h3 class="resume-main-title">📚 💪 Tendinopathie de la coiffe des rotateurs – Résumé ECOS</h3>
+            <div class="resume-content">
+                <div class="resume-section section-anamnese">
+                    <h4 class="section-title">🔍 Anamnèse</h4>
+                    <div class="resume-subsection">
+                        <h5 class="subsection-title">Symptômes principaux</h5>
+                        <ul class="resume-subsection-points">
+                            <li>Douleur d’épaule progressive, souvent antéro-latérale</li>
+                            <li>Douleur lors des mouvements en élévation ou en abduction</li>
+                            <li>Douleur nocturne, surtout en décubitus latéral</li>
+                            <li>Gêne fonctionnelle dans les gestes du quotidien (se coiffer, s’habiller, porter un
+                                objet)</li>
+                        </ul>
+                    </div>
+                    <div class="resume-subsection">
+                        <h5 class="subsection-title">Contexte et facteurs de risque</h5>
+                        <ul class="resume-subsection-points">
+                            <li>Activités répétitives bras en hauteur (sport de lancer, natation, travail manuel)</li>
+                            <li>Âge > 40 ans (processus dégénératif progressif)</li>
+                            <li>Mauvaise posture scapulaire ou déséquilibre musculaire</li>
+                        </ul>
+                    </div>
+                    <div class="resume-subsection">
+                        <h5 class="subsection-title">Éléments d’orientation</h5>
+                        <ul class="resume-subsection-points">
+                            <li>Absence de traumatisme initial</li>
+                            <li>Douleur déclenchée à l’effort et soulagée au repos</li>
+                            <li>Pas de perte brutale de force (≠ rupture de coiffe)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resume-section section-examen">
+                    <h4 class="section-title">👀 Examen clinique</h4>
+                    <div class="resume-subsection">
+                        <h5 class="subsection-title">Inspection</h5>
+                        <ul class="resume-subsection-points">
+                            <li>Épaule souvent normale en statique</li>
+                            <li>Parfois amyotrophie sus- ou sous-épineuse si tendinopathie chronique</li>
+                        </ul>
+                    </div>
+                    <div class="resume-subsection">
+                        <h5 class="subsection-title">Mobilité</h5>
+                        <ul class="resume-subsection-points">
+                            <li>Mobilité passive conservée</li>
+                            <li>Mobilité active douloureuse (élévation/abduction)</li>
+                        </ul>
+                    </div>
+                    <div class="resume-subsection">
+                        <h5 class="subsection-title">Tests spécifiques</h5>
+                        <ul class="resume-subsection-points">
+                            <li>Test de Jobe (sus-épineux) : douleur à l’abduction contrariée</li>
+                            <li>Test du Patte (sous-épineux) : douleur en rotation externe contrariée</li>
+                            <li>Lift-off test (sous-scapulaire) : douleur lors du décollement de la main du dos</li>
+                            <li>Palm-up test (long biceps) : douleur lors de la flexion contrariée</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resume-section section-examen">
+                    <h4 class="section-title">🧪 Examens diagnostiques</h4>
+                    <div class="resume-subsection">
+                        <h5 class="subsection-title">Imagerie</h5>
+                        <ul class="resume-subsection-points">
+                            <li>Échographie : examen de 1ère intention (tendinopathie, bursite associée)</li>
+                            <li>IRM si doute diagnostique, suspicion rupture partielle ou échec du traitement</li>
+                            <li>Radiographie standard : éliminer calcification ou cause osseuse</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resume-section section-management">
+                    <h4 class="section-title">⚙️ Prise en charge</h4>
+                    <div class="resume-subsection">
+                        <h5 class="subsection-title">Traitement conservateur</h5>
+                        <ul class="resume-subsection-points">
+                            <li>Repos relatif, éviter les gestes déclenchants</li>
+                            <li>Antalgiques ± AINS</li>
+                            <li>Kinésithérapie : travail d’amplitude, renforcement des muscles de la coiffe et de la
+                                scapula</li>
+                            <li>Infiltration cortisonée sous-acromiale si douleur rebelle</li>
+                        </ul>
+                    </div>
+                    <div class="resume-subsection">
+                        <h5 class="subsection-title">Traitement chirurgical</h5>
+                        <ul class="resume-subsection-points">
+                            <li>Rare, discuté en cas d’échec du traitement médical prolongé</li>
+                            <li>Acromioplastie arthroscopique ± geste sur la coiffe si lésion évolutive</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resume-section section-keypoints">
+                    <h4 class="section-title">✅ Points clés ECOS</h4>
+                    <ul class="resume-points">
+                        <li class="resume-bullet">Douleur progressive de l’épaule, surtout aux mouvements en élévation
+                        </li>
+                        <li class="resume-bullet">Mobilité passive conservée, mobilité active douloureuse</li>
+                        <li class="resume-bullet">Test de Jobe douloureux mais non déficitaire</li>
+                        <li class="resume-bullet">Échographie est l’examen de <span
+                                class="highlight-important">référence</span></li>
+                        <li class="resume-bullet highlight">Traitement conservateur <span class="equals">=</span>
+                            première intention</li>
+                    </ul>
+                </div>
+                <div class="resume-section">
+                    <h4 class="section-title">📋 Check-list rapide ECOS</h4>
+                    <div class="resume-subsection">
+                        <h5 class="subsection-title">Questions à poser</h5>
+                        <ul class="resume-subsection-points">
+                            <li>Depuis quand douleur de l’épaule ? Progressive ou brutale ?</li>
+                            <li>Douleur nocturne ? Sommeil perturbé ?</li>
+                            <li>Gêne dans les gestes du quotidien (se coiffer, s’habiller, porter un sac) ?</li>
+                            <li>Activité sportive ou professionnelle sollicitant l’épaule ?</li>
+                        </ul>
+                    </div>
+                    <div class="resume-subsection">
+                        <h5 class="subsection-title">Examens à faire</h5>
+                        <ul class="resume-subsection-points">
+                            <li>Inspection : recherche d’amyotrophie</li>
+                            <li>Mobilité active vs passive</li>
+                            <li>Tests spécifiques : Jobe, Patte, Lift-off, Palm-up</li>
+                            <li>Échographie (± IRM selon contexte)</li>
+                        </ul>
+                    </div>
+                    <div class="resume-subsection">
+                        <h5 class="subsection-title">PEC en 3 points</h5>
+                        <ul class="resume-subsection-points">
+                            <li>Éliminer une rupture (force conservée mais douloureuse en tendinopathie)</li>
+                            <li>Débuter traitement conservateur (antalgiques, kinésithérapie, repos relatif)</li>
+                            <li>Envisager infiltration si échec, chirurgie seulement en dernier recours</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="annexes">
+            <h3>Annexes</h3>
+            <div class="annexes-grid">
+                <div class="annexe-item annexe-expert">
+                    <div class="annexe-title">Points clés pour l'évaluation - Douleur d'épaule chez le sportif</div>
+                    <div class="annexe-expert-content">
+                        <div class="expert-section">
+                            <h4>Points clés</h4>
+                            <ul>
+                                <li>Homme 34 ans, policier et sportif actif</li>
+                                <li>Douleur progressive sans traumatisme franc = tendinopathie probable</li>
+                                <li>Douleur nocturne = signe caractéristique pathologie coiffe</li>
+                                <li>Tests Neer et boîte vide positifs = conflit sous-acromial</li>
+                                <li>Force préservée 5/5 = pas rupture complète</li>
+                                <li>Localisation antérieure + sportif lanceur = penser SLAP</li>
+                                <li>FC 60 bpm normale chez sportif entraîné</li>
+                                <li>Échec AINS PRN = nécessité traitement régulier</li>
+                            </ul>
+                        </div>
+                        <div class="expert-section">
+                            <h4>Pièges</h4>
+                            <ul>
+                                <li>Ne pas rechercher douleurs référées (thoracique, abdominale)</li>
+                                <li>Oublier examen neurologique complet</li>
+                                <li>Ne pas tester les deux épaules pour comparaison</li>
+                                <li>Prescrire AINS en PRN au lieu de régulier</li>
+                                <li>Ne pas insister sur repos sportif temporaire</li>
+                                <li>Faire IRM trop tôt avant essai conservateur</li>
+                                <li>Oublier position sommeil dans conseils</li>
+                                <li>Ne pas programmer suivi rapproché</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="annexe-item annexe-theorie">
+                    <div class="annexe-title">Rappels théoriques - Pathologies de l'épaule chez le sportif</div>
+                    <div class="annexe-theorie-content">
+                        <div class="theorie-section">
+                            <h4>Anatomie fonctionnelle de la coiffe</h4>
+                            <p>Coiffe des rotateurs : sus-épineux (abduction), sous-épineux (rotation externe), petit
+                                rond (rotation externe), sous-scapulaire (rotation interne). Espace sous-acromial :
+                                7-14mm normal, <7mm=conflit. Arc coracoacromial : ligament protective. Stabilisateurs
+                                    statiques : labrum, ligaments gléno-huméraux. Stabilisateurs dynamiques : coiffe,
+                                    deltoïde, biceps.</p>
+                        </div>
+                        <div class="theorie-section">
+                            <h4>Syndrome de conflit sous-acromial</h4>
+                            <p>Stades Neer : I-œdème/hémorragie (<25 ans), II-fibrose/tendinite (25-40 ans), III-rupture
+                                    partielle/complète (>40 ans). Types acromion : I-plat (17%), II-courbe (43%),
+                                    III-crochu (40%, plus conflit). Causes : surmenage, instabilité, anomalies osseuses.
+                                    Tests cliniques : Neer (Se 75%, Sp 48%), Hawkins (Se 80%, Sp 60%), Jobe (Se 86%, Sp
+                                    50%).</p>
+                        </div>
+                        <div class="theorie-section">
+                            <h4>Lésions SLAP et pathologies du labrum</h4>
+                            <p>SLAP = Superior Labrum Anterior-Posterior. Types Snyder : I-effilochage, II-décollement
+                                biceps, III-anse seau, IV-extension biceps. Sportifs overhead : 35% prévalence. Tests :
+                                O'Brien (Se 63%, Sp 73%), Speed (Se 32%, Sp 75%), Yergason (Se 43%, Sp 79%). Arthro-IRM
+                                : Se 82-100%, Sp 71-98%.</p>
+                        </div>
+                        <div class="theorie-section theorie-section-rappels">
+                            <h4>Rappels thérapeutiques</h4>
+                            <ul>
+                                <li>Phase aiguë (0-3 semaines) : repos relatif, AINS réguliers, glace, mobilisation
+                                    douce</li>
+                                <li>Exercices pendulaires Codman : 5 min × 3/jour dès J1</li>
+                                <li>AINS : efficacité similaire entre molécules, importance régularité > PRN</li>
+                                <li>Phase subaiguë (3-6 semaines) : étirements capsule, renforcement isométrique</li>
+                                <li>Infiltration corticoïdes : 70-90% amélioration court terme, max 3/an</li>
+                                <li>Kinésithérapie : protocole Neer modifié, 85% succès à 3 mois</li>
+                                <li>Chirurgie : acromioplastie si échec 6 mois, réparation coiffe si rupture</li>
+                                <li>Retour sport : progressif après 6-12 semaines selon pathologie</li>
+                            </ul>
+                        </div>
+                        <div class="theorie-section theorie-section-examens">
+                            <h4>Examens complémentaires</h4>
+                            <ul>
+                                <li>Radiographies standard : face vraie, outlet view, axillaire (luxation occulte)</li>
+                                <li>Échographie : opérateur-dépendant, Se 87%, Sp 96% pour ruptures complètes</li>
+                                <li>IRM : gold standard coiffe, Se 89%, Sp 93%, coût élevé</li>
+                                <li>Arthro-IRM : labrum++, invasive, Se 82-100% lésions SLAP</li>
+                                <li>Arthroscanner : alternative si CI IRM, moins performant tissus mous</li>
+                                <li>EMG : si suspicion compression nerveuse (nerf suprascapulaire)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-patient">
+                    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Douleur à l’épaule (suspicion
+                        tendinopathie coiffe des rotateurs / conflit sous-acromial)</h3>
+                    <div class="presentation-content">
+                        <div class="presentation-section section-checklist">
+                            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+                            <ul class="presentation-points">
+                                <li>Intro <span class="arrow">→</span> âge, profession, motif de consultation</li>
+                                <li>Caractériser douleur (OPQRST) <span class="arrow">→</span> localisation antérieure
+                                    épaule droite, début progressif fin saison softball, EVA 7/10 max</li>
+                                <li>Durée <span class="arrow">→</span> 2 mois, aggravée par mouvements overhead,
+                                    développé couché, nocturne</li>
+                                <li>Facteurs soulageants/aggravants <span class="arrow">→</span> AINS peu efficaces,
+                                    repos relatif améliore</li>
+                                <li>Signes associés <span class="arrow">→</span> pas instabilité, pas paresthésies, pas
+                                    fièvre</li>
+                                <li>Examen clinique <span class="arrow">→</span> inspection, palpation, mobilité
+                                    active/passive, tests spéciaux (Neer, Hawkins, Jobe, Speed, Yergason)</li>
+                                <li>Résumé + hypothèse principale + diagnostics différentiels</li>
+                                <li>Examens complémentaires <span class="arrow">→</span> radiographies standard,
+                                    échographie/IRM si échec traitement conservateur</li>
+                                <li>Prise en charge <span class="arrow">→</span> AINS réguliers, repos relatif,
+                                    kinésithérapie, glace, infiltration corticoïdes si échec</li>
+                            </ul>
+                            <div class="mnemo-box">
+                                <div class="mnemo-title">💡 👉 Mnémo rapide : PAIN</div>
+                                <ul class="mnemo-items">
+                                    <li>P = Pain nocturne (typique tendinopathie)</li>
+                                    <li>A = Activities overhead aggravent</li>
+                                    <li>I = Impingement tests positifs (Neer, Hawkins)</li>
+                                    <li>N = No rupture complète (force conservée)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="presentation-section section-longue">
+                            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+                            <div class="presentation-content">
+                                <p>Il s’agit de M. Michael McKinney, un homme de 34 ans, policier actif et sportif, qui
+                                    consulte pour une douleur à l’épaule droite depuis environ deux mois.</p>
+                                <p>La douleur a débuté progressivement à la fin de sa saison de softball, sans
+                                    traumatisme spécifique. Elle est localisée en avant de l’épaule droite, décrite
+                                    comme aiguë, survenant surtout lors de certains mouvements. Son intensité est
+                                    évaluée à 7 sur 10 au maximum, mais à 0 au repos. La douleur ne s’irradie pas et
+                                    reste localisée. Elle est particulièrement gênante la nuit, l’obligeant parfois à
+                                    changer de position.</p>
+                                <p>La douleur est aggravée par les mouvements au-dessus de la tête, notamment au
+                                    développé couché et aux exercices de musculation sollicitant les épaules. Elle est
+                                    légèrement soulagée par le repos. Il a essayé l’ibuprofène sans succès et prend du
+                                    naproxène de temps en temps, avec un soulagement partiel.</p>
+                                <p>Il n’a pas noté de rougeur, d’œdème, ni de sensation d’instabilité. Pas d’épisodes de
+                                    luxation, pas de blocage articulaire, pas de picotements ou d’engourdissement. Pas
+                                    de douleurs thoraciques, respiratoires ou abdominales.</p>
+                                <p>Ses antécédents sont marqués par quelques blessures sportives (entorses de cheville,
+                                    fracture du pouce) et une blessure par balle à la jambe droite il y a deux ans, bien
+                                    récupérée. Il a un eczéma traité par topiques et une dysfonction érectile traitée
+                                    occasionnellement par vardénafil. Chirurgie antérieure : amygdalectomie et chirurgie
+                                    suite à la balle. Pas de tabac, alcool occasionnel, pas de drogues. Ses parents et
+                                    ses sœurs sont en bonne santé.</p>
+                                <p>À l’examen, les constantes vitales sont normales. L’épaule est symétrique, sans
+                                    déformation ni amyotrophie. La palpation retrouve une légère sensibilité de la
+                                    région gléno-humérale antérieure. L’amplitude articulaire est complète, mais
+                                    certains mouvements déclenchent la douleur. Les tests spéciaux montrent un test de
+                                    Neer positif, un test de Hawkins évalué, un test de la boîte vide positif avec
+                                    douleur, et un test isométrique du sus-épineux positif. Les tests pour le biceps
+                                    (Speed et Yergason) sont négatifs. La force globale est conservée (5/5), sans
+                                    déficit neurologique.</p>
+                                <p>En résumé, il s’agit d’un homme jeune, sportif, avec une douleur progressive de
+                                    l’épaule droite, nocturne et aggravée par les mouvements overhead, avec tests de
+                                    conflit positifs et force conservée. L’hypothèse principale est une tendinopathie de
+                                    la coiffe des rotateurs, possiblement associée à un syndrome de conflit
+                                    sous-acromial. Les diagnostics différentiels incluent une lésion SLAP, une tendinite
+                                    du biceps, ou plus rarement une arthrose gléno-humérale débutante.</p>
+                                <p>En termes d’examens complémentaires, je demanderais des radiographies de l’épaule
+                                    (face vraie, profil de coiffe, axillaire) pour éliminer une cause osseuse. Une
+                                    échographie ou une IRM seraient réservées en cas d’échec du traitement conservateur.
+                                </p>
+                                <p>La prise en charge initiale repose sur un traitement médicamenteux avec AINS
+                                    réguliers pendant 2 à 3 semaines, du paracétamol en alternance si nécessaire, un
+                                    repos relatif en évitant les mouvements overhead et la musculation de l’épaule, des
+                                    exercices pendulaires et de la glace après l’effort. En cas d’échec, une
+                                    infiltration corticoïde pourra être proposée. Je prévois une réévaluation clinique à
+                                    2-3 semaines et une reprise progressive du sport après amélioration.</p>
+                            </div>
+                        </div>
+                        <div class="presentation-section section-express">
+                            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+                            <div class="presentation-content">
+                                <p>S (Situation) : M. McKinney, 34 ans, policier, présente une douleur progressive de
+                                    l’épaule droite depuis 2 mois.</p>
+                                <p>B (Background) : Sportif, joueur de softball, douleur nocturne, aggravée par
+                                    musculation et mouvements overhead. Pas traumatisme franc, pas instabilité.</p>
+                                <p>A (Assessment) : Suspicion tendinopathie coiffe des rotateurs avec conflit
+                                    sous-acromial. DD : lésion SLAP, tendinite du biceps, arthrose débutante.</p>
+                                <p>R (Recommendation) : Radiographies standard, traitement conservateur (AINS réguliers,
+                                    repos relatif, kinésithérapie, glace). Réévaluation 2-3 semaines, infiltration
+                                    corticoïde si échec.</p>
+                            </div>
+                        </div>
+                        <div class="presentation-section section-mnemo">
+                            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+                            <div class="presentation-subsection">
+                                <h5>👉 Douleur épaule chronique – mnemonic SOFTBALL</h5>
+                                <ul class="presentation-points">
+                                    <li>S <span class="equals">=</span> Sportif avec mouvements overhead</li>
+                                    <li>O <span class="equals">=</span> Onset progressif</li>
+                                    <li>F <span class="equals">=</span> Force conservée</li>
+                                    <li>T <span class="equals">=</span> Tests Neer/Jobe positifs</li>
+                                    <li>B <span class="equals">=</span> Biceps normal (Speed, Yergason négatifs)</li>
+                                    <li>A <span class="equals">=</span> At night pain (douleur nocturne)</li>
+                                    <li>L <span class="equals">=</span> Localisation antérieure</li>
+                                    <li>L <span class="equals">=</span> Lancer sportif typique</li>
+                                </ul>
+                            </div>
+                            <div class="presentation-subsection">
+                                <h5>👉 Coiffe des rotateurs</h5>
+                                <ul class="presentation-points">
+                                    <li>S <span class="equals">=</span> Sus-épineux <span class="arrow">→</span>
+                                        abduction</li>
+                                    <li>SS <span class="equals">=</span> Sous-scapulaire <span class="arrow">→</span>
+                                        rotation interne</li>
+                                    <li>SE <span class="equals">=</span> Sous-épineux <span class="arrow">→</span>
+                                        rotation externe</li>
+                                    <li>PR <span class="equals">=</span> Petit rond <span class="arrow">→</span>
+                                        rotation externe</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="presentation-section section-questions">
+                            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses
+                                orales)</h4>
+                            <div class="presentation-subsection">
+                                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                                <div class="qa-container">
+                                    <div class="presentation-qa">
+                                        <div class="presentation-question">
+                                            <span class="q-number">Q1</span>
+                                            <span class="q-text">Tendinopathie de la coiffe des rotateurs</span>
+                                        </div>
+                                        <div class="presentation-reponse structured">
+                                            <div class="reponse-pour">
+                                                <div class="arg-title">✅ Arguments POUR</div>
+                                                <ul class="arg-list">
+                                                    <li>Douleur progressive sans traumatisme</li>
+                                                    <li>Douleur nocturne caractéristique</li>
+                                                    <li>Tests Jobe/boîte vide positifs</li>
+                                                    <li>Aggravation overhead</li>
+                                                </ul>
+                                            </div>
+                                            <div class="reponse-contre">
+                                                <div class="arg-title">❌ Arguments CONTRE</div>
+                                                <ul class="arg-list">
+                                                    <li>Force préservée (pas rupture complète)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="presentation-qa">
+                                        <div class="presentation-question">
+                                            <span class="q-number">Q2</span>
+                                            <span class="q-text">Syndrome de conflit sous-acromial</span>
+                                        </div>
+                                        <div class="presentation-reponse structured">
+                                            <div class="reponse-pour">
+                                                <div class="arg-title">✅ Arguments POUR</div>
+                                                <ul class="arg-list">
+                                                    <li>Test Neer positif</li>
+                                                    <li>Douleur overhead</li>
+                                                    <li>Localisation antérieure</li>
+                                                </ul>
+                                            </div>
+                                            <div class="reponse-contre">
+                                                <div class="arg-title">❌ Arguments CONTRE</div>
+                                                <ul class="arg-list">
+                                                    <li>Pas limitation franche de mobilité</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="presentation-qa">
+                                        <div class="presentation-question">
+                                            <span class="q-number">Q3</span>
+                                            <span class="q-text">Lésion SLAP</span>
+                                        </div>
+                                        <div class="presentation-reponse structured">
+                                            <div class="reponse-pour">
+                                                <div class="arg-title">✅ Arguments POUR</div>
+                                                <ul class="arg-list">
+                                                    <li>Sportif lanceur</li>
+                                                    <li>Douleur antérieure</li>
+                                                </ul>
+                                            </div>
+                                            <div class="reponse-contre">
+                                                <div class="arg-title">❌ Arguments CONTRE</div>
+                                                <ul class="arg-list">
+                                                    <li>Pas de blocage articulaire</li>
+                                                    <li>Tests biceps négatifs</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="presentation-subsection">
+                                <h5>2. Examens complémentaires immédiats</h5>
+                                <div class="qa-container">
+                                    <div class="presentation-qa">
+                                        <div class="presentation-question">
+                                            <span class="q-number">Q1</span>
+                                            <span class="q-text">Quels examens demanderiez-vous ?</span>
+                                        </div>
+                                        <div class="presentation-reponse list">
+                                            <ul class="response-list">
+                                                <li>Radiographies de l’épaule (face vraie, profil de coiffe, axillaire)
+                                                </li>
+                                                <li>Échographie ou IRM si échec traitement conservateur</li>
+                                                <li>Pas d’imagerie avancée en première intention</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="presentation-subsection">
+                                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                                <div class="qa-container">
+                                    <div class="presentation-qa">
+                                        <div class="presentation-question">
+                                            <span class="q-number">Q1</span>
+                                            <span class="q-text">Diagnostic</span>
+                                        </div>
+                                        <div class="presentation-reponse text">Tendinopathie de la coiffe des rotateurs
+                                            avec conflit sous-acromial</div>
+                                    </div>
+                                    <div class="presentation-qa">
+                                        <div class="presentation-question">
+                                            <span class="q-number">Q2</span>
+                                            <span class="q-text">Traitement</span>
+                                        </div>
+                                        <div class="presentation-reponse">
+                                            <div class="reponse-section">
+                                                <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat
+                                                    :</strong>
+                                                <ul>
+                                                    <li>AINS réguliers <span class="highlight-range">2-3</span> semaines
+                                                    </li>
+                                                    <li>Repos relatif, éviter overhead</li>
+                                                    <li>Paracétamol si besoin</li>
+                                                    <li>Exercices pendulaires, glace</li>
+                                                    <li>Rééducation précoce</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="presentation-qa">
+                                        <div class="presentation-question">
+                                            <span class="q-number">Q3</span>
+                                            <span class="q-text">Suivi</span>
+                                        </div>
+                                        <div class="presentation-reponse list">
+                                            <ul class="response-list">
+                                                <li>Réévaluation clinique à <span class="highlight-range">2-3</span>
+                                                    semaines</li>
+                                                <li>Si échec : infiltration corticoïde, IRM</li>
+                                                <li>Reprise progressive sport après amélioration</li>
+                                                <li>Conseils prévention récidive (technique de lancer, échauffement)
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="annexe-item annexe-scenario">
+                    <div class="annexe-title">Instructions pour le patient standardisé</div>
+                    <div class="annexe-scenario-content">
+                        <div class="scenario-info">
+                            <strong>Nom :</strong> Michael McKinney | <strong>Âge :</strong> 34 ans<br>
+                            <strong>Contexte :</strong> Policier actif, sportif, consultation pour douleur épaule droite
+                        </div>
+                        <div class="scenario-section">
+                            <h4>Motif de consultation</h4>
+                            <p><strong>Plainte principale :</strong> Douleur épaule droite depuis 2 mois</p>
+                            <p><strong>Si on demande s'il y a autre chose :</strong> Gêne pour dormir et s'entraîner</p>
+                        </div>
+                        <div class="scenario-section">
+                            <h4>Anamnèse actuelle</h4>
+                            <div class="property-group">
+                                <strong>Début :</strong>
+                                <ul>
+                                    <li>Apparu pendant saison softball</li>
+                                    <li>Joueur première base, droitier</li>
+                                    <li>Fin de saison quand commencé</li>
+                                    <li>Pas moment spécifique blessure</li>
+                                    <li>Juste commencé faire mal</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Localisation :</strong>
+                                <ul>
+                                    <li>Juste ici (montrer épaule droite antérieure)</li>
+                                    <li>Reste principalement là</li>
+                                    <li>Région avant de l'épaule</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Caractéristiques :</strong>
+                                <ul>
+                                    <li>Terriblement mal pour dormir</li>
+                                    <li>Me retourne et doit changer position</li>
+                                    <li>Mal quand m'entraîne</li>
+                                    <li>Plutôt aigu, pas tout le temps</li>
+                                    <li>Pas mal assis à parler</li>
+                                    <li>Certains mouvements seulement</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="scenario-section">
+                            <h4>Simulation</h4>
+                            <div class="property-group">
+                                <strong>Attitude :</strong>
+                                <ul>
+                                    <li>Policier professionnel</li>
+                                    <li>Sportif frustré par limitation</li>
+                                    <li>Coopératif et motivé</li>
+                                    <li>Veut solution rapide</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Durant l'entretien :</strong>
+                                <ul>
+                                    <li>Assis confortablement</li>
+                                    <li>Montre région antérieure épaule droite</li>
+                                    <li>Pas douleur au repos</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Durant l'examen :</strong>
+                                <ul>
+                                    <li>Légère sensibilité palpation antérieure</li>
+                                    <li>Douleur avec certains tests (Neer, boîte vide)</li>
+                                    <li>Amplitude mouvement complète</li>
+                                    <li>Force normale mais douloureuse</li>
+                                    <li>Coopératif tous tests</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="scenario-section">
+                            <h4>Antécédents familiaux</h4>
+                            <div class="property-group">
+                                <ul>
+                                    <li>Parents vont bien</li>
+                                    <li>Deux sœurs vont bien</li>
+                                    <li>Pas maladies importantes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="scenario-section">
+                            <h4>Antécédents médicaux</h4>
+                            <div class="property-group">
+                                <strong>Traumatiques :</strong>
+                                <ul>
+                                    <li>Gars assez athlétique</li>
+                                    <li>Cassé pouce une fois</li>
+                                    <li>Entorses chevilles plusieurs fois</li>
+                                    <li>Les deux chevilles</li>
+                                    <li>Rien extraordinaire</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Professionnels :</strong>
+                                <ul>
+                                    <li>Policier</li>
+                                    <li>Balle dans jambe droite il y a 2 ans</li>
+                                    <li>Juste dans muscle, m'a effleuré</li>
+                                    <li>Plutôt bien récupéré</li>
+                                    <li>Ont dit j'ai eu chance</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Médicaux :</strong>
+                                <ul>
+                                    <li>Dysfonction érectile parfois</li>
+                                    <li>Vardénafil occasionnellement</li>
+                                    <li>Eczéma coudes</li>
+                                    <li>Stéroïde topique si grave</li>
+                                    <li>Pas utilisé depuis quelques mois</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Chirurgicaux :</strong>
+                                <ul>
+                                    <li>Amygdales enlevées à 12 ans</li>
+                                    <li>Chirurgie blessure balle</li>
+                                    <li>Sinon rien</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="scenario-section">
+                            <h4>Facteurs déclenchants</h4>
+                            <div class="property-group">
+                                <strong>Musculation :</strong>
+                                <ul>
+                                    <li>Vais gym 1 jour sur 2</li>
+                                    <li>Mal avec développé couché</li>
+                                    <li>N'importe quoi intense avec épaule</li>
+                                    <li>Mouvements au-dessus tête pire</li>
+                                    <li>Travaille haut corps 1 fois/2</li>
+                                    <li>Sinon jambes et abdos</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Quotidien :</strong>
+                                <ul>
+                                    <li>Plus actif fin de journée</li>
+                                    <li>Probablement pire à ce moment</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="scenario-section">
+                            <h4>Traitements</h4>
+                            <div class="property-group">
+                                <strong>Médicaments :</strong>
+                                <ul>
+                                    <li>Naproxène autre jour, aide un peu</li>
+                                    <li>Ne veux pas prendre longtemps</li>
+                                    <li>Pas tout le temps</li>
+                                    <li>Ibuprofène il y a 2 semaines</li>
+                                    <li>N'a pas aidé, essayé naproxène</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Autres :</strong>
+                                <ul>
+                                    <li>Jamais fait chaud/froid</li>
+                                    <li>Parfois sauna mais fait rien</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="scenario-section">
+                            <h4>Symptômes négatifs</h4>
+                            <div class="property-group">
+                                <strong>Inflammation :</strong>
+                                <ul>
+                                    <li>Non, fait juste mal</li>
+                                    <li>Pas voir différence en regardant</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Instabilité :</strong>
+                                <ul>
+                                    <li>Non, pas cette sensation</li>
+                                    <li>Jamais eu luxation</li>
+                                    <li>Jamais bloquée</li>
+                                    <li>Pas picotements/engourdissement</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Systémiques :</strong>
+                                <ul>
+                                    <li>Pas douleur thoracique</li>
+                                    <li>Pas difficultés respiratoires</li>
+                                    <li>Pas congestion/toux</li>
+                                    <li>Pas douleur abdominale</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="scenario-section">
+                            <h4>Habitudes de vie</h4>
+                            <div class="property-group">
+                                <strong>Tabac :</strong>
+                                <ul>
+                                    <li>Non, plutôt en bonne santé</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Alcool :</strong>
+                                <ul>
+                                    <li>Occasionnellement</li>
+                                    <li>Bière avec dîner parfois</li>
+                                    <li>Peut-être 1 fois/semaine</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Drogues :</strong>
+                                <ul>
+                                    <li>Non, jamais</li>
+                                </ul>
+                            </div>
+                            <div class="property-group">
+                                <strong>Suppléments :</strong>
+                                <ul>
+                                    <li>En prenais mais pas continué</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general"
+                placeholder="Commentaire général sur l'évaluation..."
+                oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: { anamnese: 51, examen: 34, management: 31, communication: 20 },
+    coef: { anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25 },
+    sectionInfo: [
+                { key: "anamnese", prefix: "a", count: 11, label: "Anamnèse" },
+                { key: "examen", prefix: "e", count: 7, label: "Examen clinique", scoreId: "statusScore" },
+                { key: "management", prefix: "m", count: 7, label: "Management" },
+                { key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true }
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+
+</html>

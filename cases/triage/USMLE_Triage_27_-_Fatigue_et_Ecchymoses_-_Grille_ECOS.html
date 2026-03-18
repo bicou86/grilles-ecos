@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE Triage 27 - Fatigue et Ecchymoses - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE Triage 27 - Fatigue et Ecchymoses</h1>
+            <p style="margin: 5px 0;">📍 Consultation médicale</p>
+            <p style="margin: 5px 0;">👤 John Clarkson, un homme de 62 ans, se présente avec des plaintes de fatigue et d'ecchymoses.</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">140/85 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">36.9°C</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">66 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">12/min</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/65</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Introduction et approche empathique (nom, fonction et questions ouvertes) <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="exemples-phrases"><div class="exemple-phrase">"Bonjour M. Clarkson, je suis le Dr Wanik."</div><div class="exemple-phrase">"Je comprends que vous avez de la fatigue et des ecchymoses cutanées."</div><div class="exemple-phrase">"Pouvez-vous me dire ce qui se passe ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Introduction et approche empathique (nom, fonction et questions ouvertes)" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de la fatigue <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Durée <span class="patient-response">[vraiment épuisé depuis 3 semaines]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sévérité <span class="patient-response">[mal à garder yeux ouverts]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Impact travail <span class="patient-response">[pilote remorqueur, pas endormi au travail]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Type fatigue <span class="patient-response">[os et corps font mal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Constante <span class="patient-response">[fatigue constante]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Augmentation récente <span class="patient-response">[vraiment augmenté 3 dernières semaines]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Jamais eu avant <span class="patient-response">[jamais vraiment eu ça]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Avez-vous changé vos horaires de travail ?"</div><div class="exemple-phrase">"Est-ce que cela a commencé il y a 3 semaines ?"</div><div class="exemple-phrase">"Je parie que c'est difficile avec concentration requise."</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Habitudes de sommeil et contexte professionnel <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Pilote remorqueur fleuve <span class="patient-response">[19 ans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Horaires jour <span class="patient-response">[lever au coucher soleil]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sommeil régulier <span class="patient-response">[23h à 6h, comme horloge]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas difficultés sommeil <span class="patient-response">[n'a plus besoin réveil]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Corps habitué horaire <span class="patient-response">[19 ans travail]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Quelles sont vos heures de sommeil la nuit ?"</div><div class="exemple-phrase">"Des difficultés à dormir ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Caractérisation des ecchymoses <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Grosses ecchymoses <span class="patient-response">[regarder celles-ci]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[bras et hanche]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Se cogne souvent <span class="patient-response">[mais jamais causé ça]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Disproportionnées <span class="patient-response">[énormes, pas souvenir impact fort]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Durée <span class="patient-response">[dernières semaines]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hanche droite <span class="patient-response">[depuis au moins 2 semaines]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Parlez-moi de ces ecchymoses cutanées."</div><div class="exemple-phrase">"Quand ont-elles commencé à apparaître ?"</div><div class="exemple-phrase">"Je vais vous examiner partout dans quelques minutes."</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Troubles de la coagulation <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Coupures fréquentes <span class="patient-response">[hameçon, par accident]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Saignement prolongé <span class="patient-response">[saigné longtemps]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nécessité 2ème chiffon <span class="patient-response">[jusqu'à arrêt]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Inhabituel <span class="patient-response">[bizarre maintenant que mentionné]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Vous êtes-vous coupé ou déchiré la peau récemment ?"</div><div class="exemple-phrase">"A-t-elle saigné longtemps ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Symptômes constitutionnels <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Pas fièvre <span class="patient-response">[n'ai pas eu]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas sueurs nocturnes <span class="patient-response">[ne transpire pas beaucoup]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas céphalées <span class="patient-response">[rarement maux tête]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Courbatures diffuses <span class="patient-response">[mal partout]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleurs musculaires <span class="patient-response">[dans muscles]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-4" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sensation os douloureux <span class="patient-response">[os impression faire mal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-5" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Comme grippe <span class="patient-response">[grande fatigue comme grippe]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-6" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Autre chose comme de la fièvre ou des sueurs nocturnes ?"</div><div class="exemple-phrase">"Avez-vous eu des maux de tête ou des douleurs ?"</div><div class="exemple-phrase">"Ces courbatures se concentrent-elles quelque part ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Appétit et perte de poids <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Appétit diminué <span class="patient-response">[mange un peu moins]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas faim <span class="patient-response">[pas voulu beaucoup nourriture]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Perte poids non intentionnelle</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">113kg habituellement → 108kg <span class="patient-response">[5kg perdus]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-3" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Surpris perte <span class="patient-response">[pas essayé, juste arrivé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-4" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Qu'en est-il de l'alimentation - avez-vous de l'appétit ?"</div><div class="exemple-phrase">"Avez-vous perdu du poids récemment ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Antécédents médicaux importants <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Embolie pulmonaire <span class="patient-response">[il y a 3 mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Crachait sang <span class="patient-response">[sentais horrible]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">TVP origine <span class="patient-response">[caillot venait jambe]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Médicament important <span class="patient-response">[dit très important]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-3" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Prise quotidienne <span class="patient-response">[tous les jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-4" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fracture bras <span class="patient-response">[il y a 5 ans, accident remorqueur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-5" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Avez-vous déjà vu le médecin pour quelque chose ?"</div><div class="exemple-phrase">"Il y a seulement 3 mois, hein ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Médicaments actuels <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Warfarine probable <span class="patient-response">[sonne familier]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-0" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ajustement selon analyses <span class="patient-response">[médecin ajuste dose]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-1" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Observance correcte <span class="patient-response">[oui, tous jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-2" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Aspirine quotidienne <span class="patient-response">[avale tous jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-3" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ibuprofène occasionnel <span class="patient-response">[temps en temps]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-4" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Déteste pilules <span class="patient-response">[haine médicaments]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-5" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Vous souvenez-vous du médicament que vous prenez ?"</div><div class="exemple-phrase">"Serait-ce de la Warfarine ?"</div><div class="exemple-phrase">"Le médecin a-t-il ajusté la dose ?"</div><div class="exemple-phrase">"Prenez-vous d'autres médicaments ?"</div><div class="exemple-phrase">"Avez-vous pris de l'ibuprofène récemment ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Habitudes de vie <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Tabac actif <span class="patient-response">[1/2 paquet/jour actuellement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-0" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ex-gros fumeur <span class="patient-response">[1 paquet/jour × 40 ans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-1" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réduction post-EP <span class="patient-response">[depuis caillot]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-2" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Difficile arrêter <span class="patient-response">[40 ans habitude]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-3" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Refuse aide sevrage <span class="patient-response">[j'aime ça, seul vice]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-4" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas alcool <span class="patient-response">[pas le temps, pas intéressé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-5" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas drogues <span class="patient-response">[non, pas pour moi]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-6" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Fumez-vous ou avez-vous déjà fumé ?"</div><div class="exemple-phrase">"Souhaitez-vous de l'aide pour arrêter ?"</div><div class="exemple-phrase">"Buvez-vous de l'alcool ?"</div><div class="exemple-phrase">"Qu'en est-il d'autres drogues ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Antécédents chirurgicaux et familiaux <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Appendicectomie <span class="patient-response">[adolescent]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-0" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Divorcé <span class="patient-response">[3 garçons université]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-1" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Travaille dur <span class="patient-response">[pour études enfants]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-2" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Parents décédés <span class="patient-response">[mère 86 ans tabac, père 76 ans cardiaque]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-3" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Frère diabétique <span class="patient-response">[Philadelphie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-4" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Qu'en est-il des chirurgies ?"</div><div class="exemple-phrase">"Êtes-vous marié ?"</div><div class="exemple-phrase">"Qu'en est-il des maladies majeures dans votre famille ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Revue des systèmes négatifs <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Pas maladie récente <span class="patient-response">[pas rhume/grippe]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-0" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas faiblesse/syncope <span class="patient-response">[pas problème]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-1" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vision normale <span class="patient-response">[remarquerait tout suite]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-2" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Respiration normale <span class="patient-response">[tout disparu après hôpital]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-3" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas dyspnée <span class="patient-response">[respiration va bien]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-4" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Avez-vous eu des maladies récentes ?"</div><div class="exemple-phrase">"Vous sentez-vous faible ou comme si vous alliez vous évanouir ?"</div><div class="exemple-phrase">"Avez-vous un changement dans votre vision ?"</div><div class="exemple-phrase">"Avez-vous des difficultés respiratoires ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/34</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Préparation à l'examen <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="exemples-phrases"><div class="exemple-phrase">"J'aimerais faire un examen physique maintenant, si vous le permettez."</div><div class="exemple-phrase">"Laissez-moi juste me laver les mains."</div><div class="exemple-phrase">"On dirait que vos signes vitaux sont normaux."</div><div class="exemple-phrase">"J'aimerais d'abord écouter votre cœur..."</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="Préparation à l'examen" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examen des ganglions lymphatiques <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Chaînes cervicales antérieures</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chaînes cervicales postérieures</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ganglions axillaires</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ganglions supraclaviculaires</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ganglions inguinaux</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-4" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ganglions fémoraux</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-5" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ganglions poplités</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-6" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Adénopathie diffuse modérée <span class="patient-response">[trouvée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-7" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Avez-vous remarqué ces bosses sous votre peau ?"</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen pulmonaire <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation postérieure 6 zones</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Clairs bilatéralement</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas ronchi/râles/sibilances</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen cardiovasculaire <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation 4 zones antérieures</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rythme régulier</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas souffles/frottements/galops</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Examen abdominal complet <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation bruits intestinaux <span class="patient-response">[normaux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche souffles <span class="patient-response">[absents]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation 4 quadrants <span class="patient-response">[souple, non douloureux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-2" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Signe Murphy <span class="patient-response">[négatif]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-3" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rebond McBurney <span class="patient-response">[négatif]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-4" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Percussion limites foie <span class="patient-response">[pas hépatomégalie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-5" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation rate <span class="patient-response">[splénomégalie positive]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-6" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pointe rate déplacée <span class="patient-response">[notée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-7" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Examen cutané systématique <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Examen séquentiel toutes zones</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-0" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Bras <span class="patient-response">[grandes ecchymoses maculaires]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-1" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Mains <span class="patient-response">[ruptures cutanées minimales]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-2" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Jambes <span class="patient-response">[ecchymoses tibias antérieurs]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-3" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pieds examinés</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-4" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Abdomen/dos vérifiés</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-5" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Cou inspecté</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-6" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Aine/hanches <span class="patient-response">[ecchymose droite 5×6cm]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-7" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Lésions non blanchissables</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-8" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas sensibilité ecchymoses</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-9" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Ces ecchymoses sont-elles sensibles quand je les touche ?"</div></div>        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/27</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Diagnostics différentiels <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Diagnostics différentiels" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels de pancytopénie avec splénomégalie</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Hémopathies malignes</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Leucémie lymphoïde chronique (LLC)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Homme 62 ans (pic 60-70 ans)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue progressive 3 semaines<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Adénopathies diffuses<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Splénomégalie<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ecchymoses spontanées<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte poids 5kg<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes B partiels<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Évolution rapide (3 semaines)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas infections récurrentes</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ NFS + frottis, immunophénotypage, cytogénétique</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Leucémie myéloïde chronique (LMC)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge compatible<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Splénomégalie importante<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue et perte poids<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Syndrome tumoral<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Évolution rapide<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ecchymoses précoces (phase blastique?)</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ NFS, recherche BCR-ABL, myélogramme</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Leucémie aiguë myéloïde (LAM)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début brutal 3 semaines<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pancytopénie probable<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ecchymoses/saignements<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue intense<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Courbatures osseuses<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas fièvre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Splénomégalie inhabituelle</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ NFS urgente, frottis, myélogramme urgent</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Lymphome (Hodgkin/non-Hodgkin)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Adénopathies diffuses<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Splénomégalie<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes B (perte poids)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue progressive<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ecchymoses précoces<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Troubles coagulation</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Biopsie ganglionnaire, TDM TAP, LDH</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Myélome multiple</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge >60 ans<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleurs osseuses diffuses<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue (anémie)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte poids<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Adénopathies (rares)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Splénomégalie (rare)</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Électrophorèse protéines, calcium, créatinine</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes médicamenteuses</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Surdosage warfarine</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sous warfarine confirmé<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ecchymoses spontanées<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Saignement prolongé<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Interaction aspirine possible<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ajustements dose mentionnés<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue intense inhabituelle<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte poids inexpliquée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Adénopathies/splénomégalie</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ INR urgent, TP/TCA, NFS</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Autres causes hématologiques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Purpura thrombotique thrombocytopénique (PTT)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ecchymoses spontanées<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue (anémie hémolytique)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début subaigu<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas fièvre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas troubles neurologiques<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas insuffisance rénale apparente</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Frottis (schizocytes), LDH, haptoglobine, ADAMTS13</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Aplasie médullaire</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pancytopénie probable<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ecchymoses/saignements<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue sévère<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Splénomégalie (rare)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Adénopathies (rares)</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ NFS, réticulocytes, myélogramme + biopsie</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens paracliniques urgents <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">NFS avec formule manuelle URGENT</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Frottis sanguin (blastes, cellules anormales)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">INR/TP/TCA (surdosage warfarine)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ionogramme, urée, créatinine</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Bilan hépatique complet + LDH</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Calcium, phosphore (myélome)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-5" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche sang occulte selles</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-6" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens complémentaires selon résultats <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Si blastes : myélogramme urgent</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Si lymphocytose : immunophénotypage</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Si pic monoclonal : électrophorèse protéines</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Si cytopenies : biopsie médullaire</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">TDM TAP si lymphome suspecté</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vitamine B12, folates si macrocytose</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-5" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Prise en charge immédiate <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Mesures urgentes si INR élevé</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Arrêt warfarine immédiat<br />
+            <span style="margin-left: 10px;">•</span> Si INR >5 sans saignement :<br />
+            - Vitamine K 2.5-5mg PO<br />
+            <span style="margin-left: 10px;">•</span> Si INR >9 ou saignement :<br />
+            - Vitamine K 5-10mg IV lent<br />
+            - PFC ou complexe prothrombinique<br />
+            <span style="margin-left: 10px;">•</span> Surveillance INR 6-12h</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Support symptomatique</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Repos relatif (fatigue)<br />
+            <span style="margin-left: 10px;">•</span> Éviter traumatismes (ecchymoses)<br />
+            <span style="margin-left: 10px;">•</span> Compression saignements<br />
+            <span style="margin-left: 10px;">•</span> Analgésie douleurs osseuses :<br />
+            - Paracétamol 1g × 4/j<br />
+            - Éviter AINS (warfarine)<br />
+            <span style="margin-left: 10px;">•</span> Hydratation adéquate</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Surveillance et précautions</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Numération quotidienne si cytopénie<br />
+            <span style="margin-left: 10px;">•</span> Signes infection (neutropénie?)<br />
+            <span style="margin-left: 10px;">•</span> Signes saignement actif<br />
+            <span style="margin-left: 10px;">•</span> Pression artérielle (140/85)<br />
+            <span style="margin-left: 10px;">•</span> Consultation hématologie urgente<br />
+            <span style="margin-left: 10px;">•</span> Hospitalisation si critères sévérité</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="2" data-criteria="Prise en charge immédiate" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Communication diagnostique au patient <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Problème possiblement lié warfarine</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vérification dosage sanguin nécessaire</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Possibilité cancer sang (leucémie) mais rare</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nécessité analyses sanguines multiples</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Possible biopsie si analyses anormales</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Résultats analyses ne sont pas définitifs</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-5" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autres causes possibles à explorer</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-6" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Organisation prélèvements avec infirmière</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-7" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"M. Clarkson, je ne peux pas dire exactement ce qui se passe."</div><div class="exemple-phrase">"Cela pourrait être ce médicament que vous prenez."</div><div class="exemple-phrase">"C'est un médicament qui peut faire avoir des ecchymoses facilement."</div><div class="exemple-phrase">"Il ne devrait pas causer la fatigue et perte de poids."</div><div class="exemple-phrase">"Une autre maladie pourrait être un cancer rare appelé leucémie."</div><div class="exemple-phrase">"C'est un cancer qui se forme dans le sang."</div><div class="exemple-phrase">"Cette maladie est très rare dans l'ensemble."</div><div class="exemple-phrase">"Seulement une petite possibilité chez vous."</div><div class="exemple-phrase">"Les analyses sanguines ne pourront pas dire avec certitude."</div><div class="exemple-phrase">"Si résultats suggèrent possibilité, autres tests nécessaires."</div><div class="exemple-phrase">"Biopsie os ou ganglions pour être sûr."</div><div class="exemple-phrase">"Pour l'instant, simple piqûre dans votre bras."</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Critères d'hospitalisation <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Indications d'hospitalisation immédiate</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Pancytopénie sévère</div>
+                <div class="redflags-description">Hb <7g/dL, plaquettes <20000, neutrophiles <500</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Saignement actif non contrôlé</div>
+                <div class="redflags-description">Hémorragie digestive, épistaxis prolongée, hématurie</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. INR >9 ou hémorragie sous AVK</div>
+                <div class="redflags-description">Nécessité antagonisation urgente</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Syndrome de leucostase</div>
+                <div class="redflags-description">GB >100000 avec symptômes neurologiques/pulmonaires</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">5. Syndrome de lyse tumorale</div>
+                <div class="redflags-description">Hyperuricémie, hyperkaliémie, hyperphosphatémie</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="2" data-criteria="Critères d'hospitalisation" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Explication complète des diagnostics et plan</h4>
+                    <div class="cloture-content cloture-content-green">M. Clarkson, je ne peux pas dire exactement ce qui se passe pour produire vos symptômes dont nous avons parlé aujourd'hui. Mais il y a quelques choses pour lesquelles j'aimerais faire des tests, et nous pourrons mieux comprendre. Premièrement, cela pourrait être ce médicament que vous prenez. C'est un médicament qui peut vous faire avoir des ecchymoses facilement, bien qu'il ne devrait pas causer la fatigue et la perte de poids que vous avez eues. Je peux vérifier avec une analyse sanguine si c'est le problème. Une autre maladie que cela pourrait être est un cancer rare appelé leucémie. C'est un type de cancer qui se forme dans le sang et affecte différentes zones de votre corps. Dans votre cas, je penserais à un type spécifique, mais il est vraiment trop tôt pour le dire. Et cette maladie est très rare dans l'ensemble et seulement une petite possibilité chez vous. Je pourrai mieux le dire avec des analyses sanguines. Si les résultats des analyses sanguines suggèrent que cela pourrait être une forte possibilité, nous devrions faire d'autres tests - à savoir, une biopsie de votre os ou de vos ganglions lymphatiques - pour en être sûr. Donc gardez à l'esprit que les analyses sanguines ne pourront pas dire avec certitude d'une manière ou d'une autre. De plus, ce n'est qu'une possibilité peu probable de ce qui se passe ici. En ce qui concerne d'autres possibilités, il y en a quelques-unes, et je ferai également des analyses de laboratoire pour elles. Pour celles-ci, nous aurons besoin de sang d'une simple piqûre d'aiguille dans votre bras. J'aimerais sortir et organiser cela avec mon infirmière si vous le permettez.
+
+Y a-t-il un autre aspect de vos soins de santé dont nous n'avons pas déjà discuté ? D'accord alors, merci.</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Question difficile du patient</h4>
+                    <div class="cloture-content">[Docteur, vous pensez vraiment que j'ai un cancer ? Je ne peux pas arrêter de travailler, j'ai trois garçons à l'université à payer.]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse appropriée du candidat</h4>
+                    <div class="cloture-content cloture-content-green">M. Clarkson, je comprends votre inquiétude, surtout avec vos responsabilités familiales. Pour être honnête, je ne pense pas que le cancer soit l'explication la plus probable. Vos symptômes pourraient très bien être causés par votre médicament anticoagulant, la warfarine, surtout si la dose est trop élevée. C'est beaucoup plus fréquent et expliquerait vos ecchymoses et saignements. La fatigue pourrait avoir d'autres causes simples comme une anémie due aux petits saignements répétés. Je mentionne la leucémie parce qu'il est important d'être complet et de ne rien manquer, mais les chances sont faibles. Les analyses sanguines nous donneront rapidement des réponses - dès aujourd'hui pour certaines. Si c'est juste un problème de dosage de médicament, c'est facilement corrigible. Essayons de ne pas nous inquiéter du pire scénario avant d'avoir les résultats. Je m'engage à vous tenir informé rapidement pour que vous puissiez planifier en conséquence.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/146</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Points clés pour l'évaluation - Pancytopénie et troubles de coagulation</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Homme 62 ans avec EP/TVP récente sous anticoagulation</li>
+                <li>Triade : fatigue sévère + ecchymoses spontanées + perte poids</li>
+                <li>Warfarine + aspirine = risque hémorragique majoré</li>
+                <li>Splénomégalie + adénopathies = syndrome lymphoprolifératif probable</li>
+                <li>Douleurs osseuses diffuses = infiltration médullaire?</li>
+                <li>Symptômes pseudo-grippaux = cytokines tumorales?</li>
+                <li>Profession à risque (pilote) = évaluation aptitude travail</li>
+                <li>40 paquets-années = facteur risque hémopathies</li>
+                <li>Évolution rapide 3 semaines = processus aigu/subaigu</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Ne pas vérifier nom exact anticoagulant (patient incertain)</li>
+                <li>Oublier interaction warfarine-aspirine</li>
+                <li>Ne pas faire INR en urgence si warfarine</li>
+                <li>Minimiser adénopathies + splénomégalie</li>
+                <li>Ne pas faire frottis sanguin (blastes?)</li>
+                <li>Oublier risque professionnel (pilote)</li>
+                <li>Ne pas dépister syndrome de lyse</li>
+                <li>Retarder consultation hématologie</li>
+                <li>Ne pas évaluer critères hospitalisation</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Rappels théoriques - Pancytopénie et syndromes myéloprolifératifs</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Diagnostic différentiel des pancytopénies</h4>
+            <p>Causes centrales : aplasie médullaire, myélodysplasie, leucémies aiguës, myélofibrose, infiltration médullaire (lymphome, myélome, métastases). Causes périphériques : hypersplénisme, CIVD, PTT/SHU, infections sévères (VIH, leishmaniose). Carences : B12, folates, cuivre. Médicaments : chimiothérapie, antiépileptiques, antibiotiques.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Warfarine et interactions médicamenteuses</h4>
+            <p>Cible INR EP/TVP : 2-3. Demi-vie : 36-42h. Potentialisation : aspirine, AINS, antibiotiques, amiodarone, statines. Antagonisation : vitamine K, rifampicine, millepertuis. Surveillance : INR hebdomadaire si stable, plus fréquent si ajustements. Complications : hémorragie 1-3%/an, majeure 0.5-1%/an.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Syndromes lymphoprolifératifs chroniques</h4>
+            <p>LLC : plus fréquente leucémie adulte >60 ans, lymphocytose >5000, immunophénotype CD5+/CD19+/CD23+. Stades Binet : A (Hb>10, plaq>100, <3 aires), B (3-5 aires), C (Hb<10 ou plaq<100). Pronostic : A-10 ans, B-7 ans, C-2 ans. Complications : infections, transformation Richter, cytopénies auto-immunes.</p>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Surdosage AVK : INR 5-9 sans saignement = vitamine K 1-2.5mg PO</li>
+                <li>INR >9 ou saignement : vitamine K 5-10mg IV + PFC/CCP</li>
+                <li>Syndrome de lyse : hyperhydratation, allopurinol, rasburicase si sévère</li>
+                <li>Support transfusionnel : CGR si Hb<7, plaquettes si <10000 ou saignement</li>
+                <li>Neutropénie fébrile : antibiothérapie large spectre urgente</li>
+                <li>LLC : observation si stade A, FCR ou ibrutinib si symptomatique</li>
+                <li>LAM : chimiothérapie d'induction urgente (7+3)</li>
+                <li>Myélome : VRD (bortezomib, lenalidomide, dexamethasone)</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>NFS + frottis : indispensable, recherche blastes, cellules anormales</li>
+                <li>Myélogramme : >20% blastes = leucémie aiguë, infiltration lymphoïde LLC</li>
+                <li>Immunophénotypage : différencie LAM/LAL, caractérise LLC</li>
+                <li>Cytogénétique : pronostic leucémies (t(15;17), t(8;21), del(17p))</li>
+                <li>Biologie moléculaire : BCR-ABL (LMC), mutations FLT3/NPM1 (LAM)</li>
+                <li>Biopsie ganglionnaire : lymphome, transformation Richter</li>
+                <li>TEP-scan : bilan extension lymphome, myélome</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Instructions pour le patient standardisé</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> John Clarkson |             <strong>Âge :</strong> 62 ans<br>
+            <strong>Contexte :</strong> Pilote de remorqueur, divorcé, 3 fils à l'université
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Fatigue et ecchymoses depuis 3 semaines</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> Vraiment épuisé tout le temps</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Fatigue :</strong>
+                <ul>
+                    <li>Juste fatigué, vraiment épuisé</li>
+                    <li>Depuis environ 3 semaines</li>
+                    <li>Mal à garder yeux ouverts</li>
+                    <li>Pilote remorqueur sur fleuve</li>
+                    <li>Travaille heures folles habituellement</li>
+                    <li>Mais c'est plus que ça</li>
+                    <li>Pas endormi au travail</li>
+                    <li>Vraiment vraiment épuisé tout le temps</li>
+                    <li>Pas dans mes habitudes</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Caractéristiques :</strong>
+                <ul>
+                    <li>Os et corps font mal</li>
+                    <li>Sommeil aussi mais fatigue constante</li>
+                    <li>Jamais vraiment eu ça avant</li>
+                    <li>Vraiment augmenté 3 dernières semaines</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Travail :</strong>
+                <ul>
+                    <li>Travaille le jour</li>
+                    <li>Lever au coucher soleil</li>
+                    <li>Fait ça depuis 19 ans</li>
+                    <li>Toujours dehors tous temps</li>
+                    <li>Pas été malade récemment</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Attitude :</strong>
+                <ul>
+                    <li>Homme bourru mais coopératif</li>
+                    <li>Travailleur acharné, préoccupé travail</li>
+                    <li>Minimise un peu symptômes</li>
+                    <li>Surpris par certaines constatations</li>
+                    <li>Inquiet mais pragmatique</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Assis fatigué, voûté</li>
+                    <li>Remonte manches pour montrer</li>
+                    <li>Gestes lents (fatigue)</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant l'examen :</strong>
+                <ul>
+                    <li>Montre ecchymoses multiples</li>
+                    <li>Coopératif pour palpation</li>
+                    <li>Peut noter ganglions gonflés</li>
+                    <li>Légère sensibilité rate</li>
+                    <li>Pas douleur ecchymoses au toucher</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents familiaux</h4>
+            <p><strong>0 :</strong> Parents décédés</p>
+            <p><strong>1 :</strong> Maman tabagisme 86 ans</p>
+            <p><strong>2 :</strong> Papa crise cardiaque 76 ans</p>
+            <p><strong>3 :</strong> Frère Philadelphie diabète</p>
+            <p><strong>4 :</strong> Rien autre</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents médicaux</h4>
+            <div class="property-group">
+                <strong>Embolie pulmonaire :</strong>
+                <ul>
+                    <li>Caillot sang poumons il y a 3 mois</li>
+                    <li>Sentais vraiment horrible</li>
+                    <li>Crachais sang et tout</li>
+                    <li>Caillot venait jambe</li>
+                    <li>Coincé dans poumon</li>
+                    <li>Médicament très important</li>
+                    <li>Le prends tous jours</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Médicament :</strong>
+                <ul>
+                    <li>Pas souviens nom exact</li>
+                    <li>(Si suggère Warfarine) Sonne familier, oui</li>
+                    <li>Médecin ajuste dose avec analyses</li>
+                    <li>Prends comme prescrit, tous jours</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Autres médicaments :</strong>
+                <ul>
+                    <li>Déteste pilules</li>
+                    <li>Aspirine tous jours aussi</li>
+                    <li>Ibuprofène temps en temps</li>
+                    <li>Pas pris récemment</li>
+                    <li>Pensais aspirine pareil</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Traumatisme :</strong>
+                <ul>
+                    <li>Bras cassé il y a 5 ans</li>
+                    <li>Remorqueur emporté contre pile pont</li>
+                    <li>Cassé bras dans accident</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Chirurgie :</strong>
+                <ul>
+                    <li>Appendice enlevé adolescent</li>
+                    <li>Rien d'autre</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Sommeil</h4>
+            <ul>
+                <li>23h à environ 6h matin</li>
+                <li>Comme une horloge</li>
+                <li>Corps habitué horaire</li>
+                <li>N'ai plus besoin réveil</li>
+                <li>19 ans travail font ça</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Ecchymoses</h4>
+            <div class="property-group">
+                <strong>Description :</strong>
+                <ul>
+                    <li>Grosses ecchymoses (remonter manches)</li>
+                    <li>Sur bras et hanche</li>
+                    <li>Me cogne tout le temps</li>
+                    <li>Mais jamais causé ça</li>
+                    <li>Toujours coupure/ecchymose quelque part</li>
+                    <li>Celles-ci énormes</li>
+                    <li>Pas souvenir frappé assez fort</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Chronologie :</strong>
+                <ul>
+                    <li>Dernières semaines</li>
+                    <li>Hanche droite au moins 2 semaines</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Saignements :</strong>
+                <ul>
+                    <li>Me coupe tout temps par accident</li>
+                    <li>Hameçon ou quelque chose</li>
+                    <li>L'autre jour saigné longtemps</li>
+                    <li>Dû prendre 2ème chiffon</li>
+                    <li>Bizarre maintenant que mentionné</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Symptômes associés</h4>
+            <div class="property-group">
+                <strong>Constitutionnels :</strong>
+                <ul>
+                    <li>Pas fièvre</li>
+                    <li>Pas transpire beaucoup nuit</li>
+                    <li>Rarement maux tête</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Douleurs :</strong>
+                <ul>
+                    <li>Courbatures dans corps</li>
+                    <li>Mal partout</li>
+                    <li>Pas isolé quelque part</li>
+                    <li>Dans muscles partout</li>
+                    <li>Os impression faire mal</li>
+                    <li>Comme grippe, grande fatigue</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Appétit :</strong>
+                <ul>
+                    <li>Mange peut-être un peu moins</li>
+                    <li>Pas voulu beaucoup nourriture</li>
+                    <li>Juste pas faim</li>
+                    <li>Poids : 113kg → 108kg</li>
+                    <li>Vérifié hier soir</li>
+                    <li>Surpris, pas essayé</li>
+                    <li>Juste arrivé</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Habitudes de vie</h4>
+            <div class="property-group">
+                <strong>Tabac :</strong>
+                <ul>
+                    <li>Fumé 1 paquet/jour × 40 ans</li>
+                    <li>Depuis caillot réduit 1/2 paquet</li>
+                    <li>Sais mauvais pour moi</li>
+                    <li>40 ans habitude difficile arrêter</li>
+                    <li>Médecin hôpital dit arrêter complètement</li>
+                    <li>(Si aide proposée) Non j'aime ça</li>
+                    <li>Mon seul vice maintenant</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Alcool :</strong>
+                <ul>
+                    <li>Pas le temps</li>
+                    <li>Travaille tout temps</li>
+                    <li>Rentre maison pas intéressé</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Drogues :</strong>
+                <ul>
+                    <li>Non, pas pour moi</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Situation Familiale</h4>
+            <ul>
+                <li>Divorcé</li>
+                <li>Trois garçons</li>
+                <li>Tous université</li>
+                <li>Pourquoi travaille si dur</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Symptômes négatifs</h4>
+            <ul>
+                <li>Pas faible/évanouir</li>
+                <li>Vision normale (remarquerait)</li>
+                <li>Respiration : tout disparu après hôpital</li>
+                <li>Fais très attention maintenant</li>
+                <li>Pas difficultés respiratoires</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 65, examen: 34, management: 27, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 12, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 6, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 6, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

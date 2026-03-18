@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE-27 - Fatigue - Homme 61 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE-27 - Fatigue - Homme 61 ans</h1>
+            <p style="margin: 5px 0;">📍 Cabinet médical</p>
+            <p style="margin: 5px 0;">👤 William Jordan, 61 ans, vient au cabinet en se plaignant de fatigue</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">135/85 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">70 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">13/min</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">37°C</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/45</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Motif principal <span class="patient-response">[Je me sens fatigué, faible, sans énergie]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Motif principal" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de la fatigue <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Il y a six mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Événements associés <span class="patient-response">[Aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Progression de la fatigue au cours de la journée <span class="patient-response">[La même tout au long de la journée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Impact sur le travail/performance <span class="patient-response">[Oui, je n'ai pas l'énergie de faire ma promenade quotidienne de 30 minutes avec mon chien, et même au travail, je ne suis pas aussi énergique qu'avant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Symptômes généraux <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Changements d'appétit <span class="patient-response">[J'ai peu d'appétit]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changements de poids <span class="patient-response">[J'ai perdu 3,6 kg au cours des six derniers mois. Je n'avais pas l'intention de perdre du poids]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fièvre/frissons, douleur thoracique, toux, essoufflement, intolérance au froid, changements de peau/cheveux <span class="patient-response">[Aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Symptômes digestifs <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Changement des habitudes intestinales <span class="patient-response">[J'ai des selles 2 à 3 fois par semaine. Cela dure depuis 10 ans. Récemment, j'ai remarqué des selles plus malodorantes et d'apparence graisseuse]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sang dans les selles <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nausées/vomissements <span class="patient-response">[Parfois, je me sens nauséeux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Douleur abdominale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Présence de douleur <span class="patient-response">[Oui, je ressens une gêne ici (région épigastrique)]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Il y a quatre mois ; elle a augmenté progressivement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Qualité <span class="patient-response">[Vague, profonde]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[4/10]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs aggravants/atténuants <span class="patient-response">[Rien ne l'aggrave, mais je me sens mieux quand je me penche en avant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-4" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Relation avec la nourriture <span class="patient-response">[Aucune]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-5" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[La gêne irradie vers mon dos]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-6" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Symptômes psychiatriques <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Sentiment de dépression <span class="patient-response">[Oui, je me sens triste]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Raison de la tristesse <span class="patient-response">[Je ne sais pas vraiment]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pensées/plans/tentatives de suicide <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sentiments de culpabilité, de honte, d'inutilité <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Problèmes de sommeil <span class="patient-response">[Je me réveille inhabituellement tôt le matin. Depuis 2 mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-4" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Perte de concentration <span class="patient-response">[Oui, je n'arrive plus à me concentrer en regardant les infos ou en jouant aux cartes avec mes amis]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-5" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Perte d'intérêt <span class="patient-response">[Je ne prends plus de plaisir à jouer aux cartes avec mes amis. Je trouve que la vie est ennuyeuse]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-6" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Médicaments actuels <span class="patient-response">[Paracétamol, mais cela n'aide pas]</span> <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="2" data-criteria="Médicaments actuels" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Antécédents médicaux <span class="patient-response">[Aucun]</span> <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="2" data-criteria="Antécédents médicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Antécédents psychiatriques <span class="patient-response">[Aucun]</span> <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="2" data-criteria="Antécédents psychiatriques" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Antécédents chirurgicaux <span class="patient-response">[Appendicectomie à l'âge de 16 ans]</span> <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="2" data-criteria="Antécédents chirurgicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Antécédents familiaux <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Père <span class="patient-response">[Mon père est mort dans un accident de voiture et avait du diabète]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-0" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Mère <span class="patient-response">[Ma mère est morte d'un cancer du sein]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-1" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Habitudes et mode de vie <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Policier, retraité depuis un an]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-0" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Consommation d'alcool <span class="patient-response">[Deux bières par jour et 3 à 4 le week-end. C'est comme ça depuis des années. Cela m'aide à me détendre]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-1" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Drogues illicites <span class="patient-response">[Jamais]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-2" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tabac <span class="patient-response">[J'ai arrêté il y a 6 mois après avoir fumé un paquet par jour pendant 30 ans (parce que cela me dégoûtait et me rendait malade)]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-3" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Exercice <span class="patient-response">[Je marche 30 minutes tous les jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-4" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Régime alimentaire <span class="patient-response">[Régulier ; j'aime la malbouffe]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-5" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Activité sexuelle <span class="patient-response">[Sexuellement actif avec ma femme]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-6" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+<div class="criteria-row" id="criteria-a13">
+    <div>
+        <div class="criteria-text">13. Allergies médicamenteuses <span class="patient-response">[Aucune allergie médicamenteuse connue]</span> <button class="comment-button" onclick="toggleComment('a13')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a13">
+            <textarea class="comment-textarea" id="comment-a13" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a13'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="2" data-criteria="Allergies médicamenteuses" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a13">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/18</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Aspect général <span class="patient-response">[Le patient ne semble pas en détresse aiguë, mais a l'air triste]</span> <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="Aspect général" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examen de la tête et du cou <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection des conjonctives <span class="patient-response">[Pas de pâleur conjonctivale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Inspection de la bouche et de la gorge <span class="patient-response">[Bouche et pharynx normaux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation des ganglions lymphatiques <span class="patient-response">[Pas d'adénopathie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen de la glande thyroïde <span class="patient-response">[Thyroïde normale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen cardiovasculaire <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Auscultation <span class="patient-response">[RR et FC normaux ; B1/B2 normaux ; pas de souffles, frottements ou galops]</span></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e3" value="2" data-criteria="Examen cardiovasculaire" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e3" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e3" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen pulmonaire <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Auscultation <span class="patient-response">[Murmures vésiculaires clairs bilatéralement]</span></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e4" value="2" data-criteria="Examen pulmonaire" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e4" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e4" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Examen abdominal <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Bruits intestinaux normaux en quantité et qualité]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Percussion</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Détendu, souple, légère sensibilité épigastrique]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-2" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Détente <span class="patient-response">[Pas de détente]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-3" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Signe de Murphy <span class="patient-response">[Négatif]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-4" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hépato-splénomégalie <span class="patient-response">[Pas d'hépato-splénomégalie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-5" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Examen des extrémités <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection <span class="patient-response">[Pas d'œdème]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-0" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-1" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/15</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Hypothèses diagnostiques <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">2 points si au moins 2 diagnostics pertinents mentionnés, 1 point si 1 diagnostic</div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Hypothèses diagnostiques" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Causes organiques prioritaires</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Cancer du pancréas</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Antécédents de tabagisme (30 paquets-années)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Régime riche en graisses<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte de poids non intentionnelle de 3,6 kg<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Selles malodorantes et d'apparence graisseuse (malabsorption)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur épigastrique irradiant vers le dos<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Amélioration en se penchant en avant<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Dépression pouvant être manifestation initiale</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ CT abdominal, AST/ALT/bilirubine/phosphatases alcalines (PAL)</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Pancréatite chronique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Antécédents de consommation d'alcool (>14 verres/semaine)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur épigastrique irradiant vers le dos<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Selles malodorantes et d'apparence graisseuse<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Amélioration en se penchant en avant<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Absence d'épisodes récurrents de douleur similaire</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Amylase, lipase, CT abdominal</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Maladie ulcéreuse peptique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur épigastrique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Nausées<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte de poids inhabituelle pour ulcère non compliqué<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de relation avec les repas</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Gastroscopie</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Hypothyroïdie</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue et faiblesse<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Constipation chronique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes dépressifs<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur abdominale inhabituelle</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ TSH</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes psychiatriques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Dépression majeure</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR (critères SIC E CAPS):<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sommeil perturbé (réveil matinal précoce depuis 2 mois)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Intérêt diminué (anhédonie)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Culpabilité: Non<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Énergie diminuée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Concentration diminuée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Appétit diminué avec perte de poids<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Psychomoteur: Ralentissement<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Suicide: Pas d'idées suicidaires</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ TSH pour exclure hypothyroïdie</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens complémentaires de base <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">FSC et recherche de sang occulte dans les selles</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Glycémie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Études des graisses fécales</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">TSH</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens complémentaires spécialisés <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Amylase, lipase</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">AST/ALT/bilirubine (directe, indirecte, et totale)/phosphatases alcalines (PAL)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">CT abdominal</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">US abdominal</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Gastroscopie si symptômes persistants</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Prise en charge de la dépression <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Système de soutien</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Système de soutien à domicile (amis, famille)<br />
+            <span style="margin-left: 10px;">•</span> Systèmes de soutien à l'hôpital et dans la communauté<br />
+            <span style="margin-left: 10px;">•</span> Référence à l'assistante sociale</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Compétences de gestion du stress</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Exercice adapté<br />
+            <span style="margin-left: 10px;">•</span> Techniques de relaxation<br />
+            <span style="margin-left: 10px;">•</span> Passer plus de temps avec la famille et les amis</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Suivi psychologique</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Évaluation psychiatrique si symptômes persistants<br />
+            <span style="margin-left: 10px;">•</span> Considérer antidépresseurs si dépression confirmée<br />
+            <span style="margin-left: 10px;">•</span> Psychothérapie de soutien</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="2" data-criteria="Prise en charge de la dépression" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Signes d'alarme à surveiller <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Red Flags - Signes nécessitant une consultation urgente</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Ictère ou coloration jaune de la peau/yeux</div>
+                <div class="redflags-description">→ Suggère obstruction biliaire, consultation immédiate</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Aggravation rapide de la douleur abdominale</div>
+                <div class="redflags-description">→ Possible complication pancréatique</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. Perte de poids rapide supplémentaire</div>
+                <div class="redflags-description">→ Suggère progression d'une pathologie sous-jacente</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Idées suicidaires</div>
+                <div class="redflags-description">→ Urgence psychiatrique, consultation immédiate</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">5. Vomissements persistants ou selles noires</div>
+                <div class="redflags-description">→ Possibles complications digestives</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="2" data-criteria="Signes d'alarme à surveiller" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Clôture type</h4>
+                    <div class="cloture-content cloture-content-green">Monsieur Jordan, vos symptômes sont compatibles avec plusieurs diagnostics différents. Ils peuvent être causés par un ulcère qui pourrait être traité avec un traitement antibiotique et des anti-acides, ou ils peuvent avoir une cause plus sérieuse, comme un cancer du pancréas. Je vais vous programmer un CT abdominal qui pourrait révéler la source de votre douleur, et je vais également effectuer des analyses de sang. Je sais que vous êtes préoccupé par votre prochain voyage, mais les résultats des tests devraient être disponibles dans quelques jours, et ils devraient nous donner une bonne idée de ce qui ne va pas. En attendant, notre assistante sociale peut vous rencontrer pour vous aider à trouver des moyens de gérer le stress que vous avez vécu. Avez-vous des questions pour moi ?</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Questions difficiles à poser</h4>
+                    <div class="cloture-content">[Je veux partir en voyage avec ma femme. Pouvons-nous faire les tests après mon retour ?]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse type du candidat</h4>
+                    <div class="cloture-content cloture-content-green">Vous ne semblez pas être en assez bonne forme pour profiter d'un voyage. Faisons quelques analyses de sang initiales, puis nous verrons comment vous vous sentez et déciderons si nous pouvons vous laisser partir.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/98</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 🧬 Cancer du pancréas – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes principaux</h5>
+<ul class="resume-subsection-points">
+<li>Douleur abdominale épigastrique transfixiante irradiant dans le dos</li>
+<li>Amaigrissement rapide, anorexie, asthénie</li>
+<li>Ictère progressif avec prurit (tumeurs céphaliques)</li>
+<li>Nausées, troubles digestifs</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Contexte et facteurs de risque</h5>
+<ul class="resume-subsection-points">
+<li>Âge > 60 ans</li>
+<li>Tabac (facteur majeur)</li>
+<li>Alcoolisme chronique</li>
+<li>Pancréatite chronique</li>
+<li>Diabète récent ou aggravé</li>
+<li>Antécédents familiaux de cancer pancréatique (formes héréditaires rares)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Évolution</h5>
+<ul class="resume-subsection-points">
+<li>Symptômes souvent tardifs</li>
+<li>Découverte au stade localement avancé ou métastatique dans la majorité des cas</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Inspection</h5>
+<ul class="resume-subsection-points">
+<li>Amaigrissement, altération état général</li>
+<li>Ictère cutanéo-muqueux avec prurit (si obstruction biliaire)</li>
+<li>Grattage cutané (lésions excoriées)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Palpation</h5>
+<ul class="resume-subsection-points">
+<li>Hépatomégalie (métastases hépatiques)</li>
+<li>Vésicule palpable indolore (signe de Courvoisier-Terrier)</li>
+<li>Douleur épigastrique provoquée</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Autres signes</h5>
+<ul class="resume-subsection-points">
+<li>Ascite (carcinose péritonéale)</li>
+<li>Adénopathie sus-claviculaire gauche (Troisier)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Biologie</h5>
+<ul class="resume-subsection-points">
+<li class="with-arrow">Cholestase biologique si ictère (bilirubine conjuguée, PAL, GGT <span class="arrow-updown">↑</span>)</li>
+<li>CA <span class="highlight-range">19-9</span> souvent élevé (non spécifique, suivi évolutif)</li>
+<li>NFS, fonction hépatique, glycémie</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Imagerie</h5>
+<ul class="resume-subsection-points">
+<li>Échographie abdominale : première intention si ictère</li>
+<li>Scanner TAP injecté <span class="equals">=</span> examen clé pour diagnostic et bilan d’extension</li>
+<li>IRM pancréatique ou bili-IRM si doute</li>
+<li>Échoendoscopie avec biopsie : confirmation histologique</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement curatif (si tumeur résécable)</h5>
+<ul class="resume-subsection-points">
+<li>Chirurgie : duodénopancréatectomie céphalique (Whipple) pour tumeur céphalique</li>
+<li>Pancréatectomie gauche ± splénectomie pour tumeurs corporeo-caudales</li>
+<li>Curage ganglionnaire systématique</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement complémentaire</h5>
+<ul class="resume-subsection-points">
+<li>Chimiothérapie adjuvante (gemcitabine, FOLFIRINOX)</li>
+<li>Chimiothérapie néoadjuvante dans certains cas (formes borderline résécables)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement palliatif</h5>
+<ul class="resume-subsection-points">
+<li>Drainage biliaire endoscopique (stent) si ictère obstructif</li>
+<li>Chimiothérapie palliative si métastases</li>
+<li>Antalgiques (jusqu’aux morphiniques, bloc cœliaque si douleurs rebelles)</li>
+<li>Soins de support nutritionnels et psychologiques</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Cancer pancréatique <span class="equals">=</span> diagnostic souvent tardif, mauvais pronostic</li>
+<li class="resume-bullet">Symptômes clés : douleur épigastrique transfixiante, ictère progressif, amaigrissement</li>
+<li class="resume-bullet highlight">Scanner TAP <span class="equals">=</span> examen de <span class="highlight-important">référence</span></li>
+<li class="resume-bullet">Confirmation histologique indispensable avant chimiothérapie</li>
+<li class="resume-bullet">Chirurgie seule option curative mais souvent inapplicable (découverte tardive)</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser</h5>
+<ul class="resume-subsection-points">
+<li>Douleur abdominale ? Irradiation dorsale ?</li>
+<li>Amaigrissement, anorexie, fatigue ?</li>
+<li>Ictère, prurit, urines foncées, selles décolorées ?</li>
+<li>ATCD pancréatite chronique, tabac, alcool ?</li>
+<li>Diabète récent ou aggravé ? Antécédents familiaux ?</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens à faire</h5>
+<ul class="resume-subsection-points">
+<li>Examen clinique complet (ictère, amaigrissement, Courvoisier, Troisier)</li>
+<li>Biologie : NFS, fonction hépatique, glycémie, CA <span class="highlight-range">19-9</span></li>
+<li>Échographie abdominale (ictère obstructif)</li>
+<li>Scanner TAP injecté (diagnostic et extension)</li>
+<li>Échoendoscopie avec biopsie pour histologie</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Scanner TAP pour diagnostic et bilan d’extension</li>
+<li>Confirmation histologique avant chimiothérapie</li>
+<li>Chirurgie si tumeur résécable, sinon traitement palliatif (drainage, chimio, soins de support)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations de l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>L'expert-e intervient si l'étudiant-e dit vouloir faire :</li>
+                <li>• FSC : donner résultat montrant légère anémie</li>
+                <li>• Glycémie : donner résultat montrant hyperglycémie modérée</li>
+                <li>• Enzymes pancréatiques : donner résultats avec lipase légèrement élevée</li>
+                <li>• CT abdominal : mentionner qu'il sera programmé en externe</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>La présentation suggère une pathologie pancréatique (cancer vs pancréatite chronique)</li>
+                <li>Les symptômes dépressifs peuvent être secondaires à une pathologie organique</li>
+                <li>La malabsorption (selles graisseuses) oriente vers une insuffisance pancréatique</li>
+                <li>L'arrêt récent du tabac après diagnostic pourrait être un signe d'alerte</li>
+                <li>La consommation d'alcool est un facteur de risque de pancréatite chronique</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Se focaliser uniquement sur la dépression sans explorer les causes organiques</li>
+                <li>Oublier de quantifier précisément la consommation d'alcool</li>
+                <li>Ne pas faire le lien entre les selles graisseuses et la pathologie pancréatique</li>
+                <li>Omettre l'examen abdominal approfondi</li>
+                <li>Ne pas explorer les antécédents familiaux de cancer</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique concernant la vignette</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Diagnostic</h4>
+            <p>Suspicion élevée de cancer du pancréas avec syndrome dépressif secondaire</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Cancer du pancréas - Présentation clinique</h4>
+            <p>Le cancer du pancréas se présente souvent de manière insidieuse :</p>
+            <ul>
+                <li>Douleur épigastrique vague irradiant au dos (70% des cas)</li>
+                <li>Perte de poids involontaire (90% des cas)</li>
+                <li>Ictère si tête du pancréas atteinte (obstruction biliaire)</li>
+                <li>Insuffisance pancréatique exocrine → malabsorption → stéatorrhée</li>
+                <li>Diabète de novo dans 25% des cas</li>
+                <li>Dépression peut précéder le diagnostic de plusieurs mois</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Facteurs de risque du cancer du pancréas</h4>
+            <p>Plusieurs facteurs augmentent le risque :</p>
+            <ul>
+                <li>Tabagisme (RR 2-3, persiste 10-15 ans après arrêt)</li>
+                <li>Pancréatite chronique (souvent liée à l'alcool)</li>
+                <li>Diabète (surtout si récent après 50 ans)</li>
+                <li>Obésité et régime riche en graisses</li>
+                <li>Antécédents familiaux (10% des cas)</li>
+                <li>Âge > 60 ans</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Pancréatite chronique - Diagnostic différentiel</h4>
+            <p>La pancréatite chronique partage plusieurs caractéristiques :</p>
+            <ul>
+                <li>Douleur épigastrique irradiant au dos</li>
+                <li>Amélioration par antéflexion (signe du coussin)</li>
+                <li>Insuffisance pancréatique → malabsorption</li>
+                <li>Alcoolisme responsable de 70-80% des cas</li>
+                <li>Évolution par poussées récurrentes typiquement</li>
+                <li>Calcifications pancréatiques au CT</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Insuffisance pancréatique exocrine</h4>
+            <p>Se manifeste quand >90% du parenchyme est détruit :</p>
+            <ul>
+                <li>Stéatorrhée (selles graisseuses, malodorantes)</li>
+                <li>Perte de poids malgré apport calorique normal</li>
+                <li>Carences en vitamines liposolubles (A, D, E, K)</li>
+                <li>Test: élastase fécale diminuée</li>
+                <li>Traitement: enzymes pancréatiques de substitution</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Dépression et cancer</h4>
+            <p>La dépression peut être un symptôme précoce de cancer :</p>
+            <ul>
+                <li>Précède souvent le diagnostic de cancer du pancréas</li>
+                <li>Mécanisme: cytokines pro-inflammatoires</li>
+                <li>Toujours rechercher cause organique si dépression tardive</li>
+                <li>Critères DSM-5: au moins 5 symptômes pendant 2 semaines</li>
+                <li>Mnémonique SIC E CAPS pour les critères</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Examens complémentaires</h4>
+            <p>Bilan étagé selon la suspicion clinique :</p>
+            <ul>
+                <li>1ère intention: FSC, glycémie, bilan hépatique, lipase</li>
+                <li>CA 19-9: marqueur tumoral peu sensible/spécifique</li>
+                <li>CT abdominal avec contraste: examen de choix</li>
+                <li>IRM/MRCP si doute diagnostique</li>
+                <li>Écho-endoscopie + biopsie si masse suspecte</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Résumé du cas clinique</h4>
+            <p>Patient de 61 ans présentant un tableau évocateur de pathologie pancréatique maligne: triade classique de douleur épigastrique, perte de poids et apparition récente de selles graisseuses suggérant une insuffisance pancréatique. Les symptômes dépressifs associés renforcent cette suspicion. L'investigation doit être rapide vu le pronostic sombre du cancer du pancréas.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Conclusion</h4>
+            <ul>
+                <li>Toute fatigue avec perte de poids après 50 ans nécessite une investigation</li>
+                <li>La dépression d'apparition tardive doit faire rechercher une cause organique</li>
+                <li>Les selles graisseuses orientent vers une pathologie pancréatique</li>
+                <li>Le CT abdominal est l'examen clé pour le diagnostic</li>
+                <li>La prise en charge doit être multidisciplinaire (oncologue, psychiatre, assistante sociale)</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Enzymes pancréatiques si insuffisance exocrine confirmée</li>
+                <li>Analgésie adaptée (palier OMS selon intensité)</li>
+                <li>Support nutritionnel avec diététicien</li>
+                <li>Prise en charge de la dépression si persistante</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>CT abdominal: masse pancréatique, dilatation canalaire, métastases</li>
+                <li>CA 19-9: élevé dans 80% des cancers du pancréas avancés</li>
+                <li>Élastase fécale: diminuée si insuffisance pancréatique</li>
+                <li>Glycémie à jeun: dépistage diabète secondaire</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Fatigue, perte de poids et douleurs abdominales (suspicion cancer pancréatique)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, profession, motif (fatigue, perte de poids, douleurs abdominales)</li>
+                <li>Caractériser fatigue <span class="arrow">→</span> durée (6 mois), constante, impact fonctionnel (arrêt promenades, baisse énergie travail)</li>
+                <li>Perte de poids <span class="arrow">→</span> 3,6 kg en 6 mois, anorexie</li>
+                <li>Douleurs <span class="arrow">→</span> épigastriques, sourdes, irradiant au dos, soulagées par antéflexion</li>
+                <li>Transit <span class="arrow">→</span> constipation chronique, selles graisseuses et malodorantes (stéatorrhée)</li>
+                <li>Signes psychiatriques <span class="arrow">→</span> tristesse, anhédonie, réveil précoce, concentration diminuée</li>
+                <li>ATCD <span class="arrow">→</span> appendicectomie, ex-fumeur 30 PA, alcool quotidien, mère cancer du sein, père diabète</li>
+                <li>Examen clinique <span class="arrow">→</span> état général altéré, douleur épigastrique modérée, pas d’ictère, pas d’HSM</li>
+                <li>Résumé + hypothèse principale + DD</li>
+                <li>Examens complémentaires <span class="arrow">→</span> FSC, lipase, glycémie, bilan hépatique, TSH, CT abdo injecté</li>
+                <li>Prise en charge <span class="arrow">→</span> multidisciplinaire, enzymes pancréatiques, prise en charge douleur et nutrition, soutien psychiatrique</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide : PANCREAS</div>
+    <ul class="mnemo-items">
+        <li>P = Perte de poids</li>
+        <li>A = Amaigrissement + Anorexie</li>
+        <li>N = Nausées</li>
+        <li>C = Constipation / stéatorrhée</li>
+        <li>R = Risque alcool + tabac</li>
+        <li>E = Epigastralgie transfixiante</li>
+        <li>A = Antéflexion soulage</li>
+        <li>S = Suspicion cancer pancréas</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de M. William Jordan, un homme de 61 ans, policier récemment retraité, qui consulte pour une fatigue persistante évoluant depuis environ six mois.</p><p>Il décrit une sensation constante de faiblesse, l’empêchant de réaliser ses promenades quotidiennes avec son chien et réduisant son énergie dans les activités sociales. Depuis la même période, il note une perte de poids involontaire de 3,6 kg, associée à une perte d’appétit. Il a aussi remarqué récemment des selles plus grasses, malodorantes et difficiles à évacuer, suggérant une stéatorrhée.</p><p>Depuis quatre mois, il souffre de douleurs abdominales diffuses, surtout en région épigastrique, décrites comme sourdes et profondes, irradiant vers le dos, soulagées lorsqu’il se penche en avant. Il n’a pas de vomissements, ni de rectorragies. Parfois, des nausées.</p><p>Il rapporte également des symptômes psychiatriques : tristesse persistante sans raison précise, perte d’intérêt pour ses activités habituelles comme les cartes avec ses amis, réveils précoces, perte de concentration. Il nie toute idée suicidaire.</p><p>Dans ses antécédents, on note une appendicectomie, un tabagisme ancien (30 paquets-années, sevré il y a 6 mois car cela le dégoûtait), une consommation régulière d’alcool (2 bières par jour, plus le week-end). Son père était diabétique et sa mère est décédée d’un cancer du sein. Pas de traitement en dehors du paracétamol inefficace.</p><p>À l’examen, M. Jordan est amaigri, triste, penché en avant. Ses constantes sont normales. L’abdomen est souple, avec une sensibilité modérée à la palpation épigastrique, sans défense ni masse palpable. Pas d’ictère ni d’hépatosplénomégalie.</p><p>En résumé, il s’agit d’un homme de 61 ans avec une triade évocatrice : douleur épigastrique irradiant au dos soulagée par antéflexion, perte de poids avec stéatorrhée, et syndrome dépressif récent. Mon hypothèse principale est un cancer du pancréas. Les diagnostics différentiels incluent une pancréatite chronique (alcool), un ulcère gastro-duodénal et une hypothyroïdie.</p><p>Comme examens complémentaires, je demanderais une FSC (anémie possible), glycémie (diabète de novo), bilan hépatique et pancréatique (lipase, ALAT, PAL, bilirubine), TSH, et surtout un CT abdomino-pelvien injecté. Une échoendoscopie avec biopsie confirmerait le diagnostic.</p><p>La prise en charge doit être multidisciplinaire : traitement de la douleur (paliers OMS, bloc cœliaque si besoin), enzymes pancréatiques de substitution, soutien nutritionnel, accompagnement psychiatrique et orientation oncologique. La chirurgie est le seul traitement curatif, mais la majorité des cas sont diagnostiqués à un stade avancé.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : M. Jordan, 61 ans, présente fatigue, perte de poids et douleurs épigastriques irradiant au dos.</p><p>B (Background) : Ex-fumeur 30 PA, consommation d’alcool chronique, constipation ancienne, selles graisseuses récentes, ATCD familiaux de cancer.</p><p>A (Assessment) : Suspicion forte de cancer du pancréas. DD : pancréatite chronique, ulcère gastro-duodénal, hypothyroïdie, dépression.</p><p>R (Recommendation) : FSC, glycémie, bilan hépatique et pancréatique, TSH, CT abdomino-pelvien injecté. PEC multidisciplinaire avec oncologie, nutrition et psychiatrie.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 Triade classique cancer pancréas</h5>
+                <ul class="presentation-points">
+                    <li>Douleur épigastrique transfixiante irradiant au dos</li>
+                    <li>Amaigrissement rapide</li>
+                    <li>Stéatorrhée (insuffisance pancréatique)</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Critères SIC E CAPS (dépression)</h5>
+                <ul class="presentation-points">
+                    <li>S <span class="equals">=</span> Sommeil perturbé</li>
+                    <li>I <span class="equals">=</span> Intérêt diminué</li>
+                    <li>C <span class="equals">=</span> Concentration diminuée</li>
+                    <li>E <span class="equals">=</span> Énergie diminuée</li>
+                    <li>C <span class="equals">=</span> Culpabilité (ici absente)</li>
+                    <li>A <span class="equals">=</span> Appétit diminué avec perte de poids</li>
+                    <li>P <span class="equals">=</span> Psychomoteur ralenti</li>
+                    <li>S <span class="equals">=</span> Suicide (non ici)</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>⚠️ Pièges ECOS</h5>
+                <ul class="presentation-points">
+                    <li>Attribuer fatigue uniquement à dépression</li>
+                    <li>Oublier de relier stéatorrhée à pancréas</li>
+                    <li>Négliger bilan pancréatique devant perte poids > 50 ans</li>
+                    <li>Proposer coloscopie avant CT abdo</li>
+                    <li>Sous-estimer consommation alcool</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Cancer du pancréas</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Âge > 60 ans</li>
+                                <li>Douleur épigastrique irradiant au dos</li>
+                                <li>Perte de poids involontaire</li>
+                                <li>Stéatorrhée récente</li>
+                                <li>Antéflexion soulage</li>
+                                <li>Tabac/alcool</li>
+                                <li>Dépression récente</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas encore d’ictère</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Pancréatite chronique</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Alcoolisme chronique</li>
+                                <li>Douleur épigastrique irradiant au dos</li>
+                                <li>Stéatorrhée</li>
+                                <li>Soulagement antéflexion</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas d’antécédents de poussées douloureuses récurrentes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Ulcère gastro-duodénal</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur épigastrique</li>
+                                <li>Nausées</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de lien avec repas</li>
+                                <li>Perte de poids inhabituelle</li>
+                                <li>Douleur irradiant au dos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q4</span>
+                        <span class="q-text">Hypothyroïdie</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Fatigue</li>
+                                <li>Constipation</li>
+                                <li>Symptômes dépressifs</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de frilosité</li>
+                                <li>Pas de sécheresse cutanée</li>
+                                <li>Douleur abdominale atypique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>FSC, ferritine</li>
+                            <li>Glycémie</li>
+                            <li>Lipase, ALAT, PAL, bilirubine</li>
+                            <li>TSH</li>
+                            <li>CT abdomino-pelvien injecté</li>
+                            <li>Échoendoscopie avec biopsie si masse</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Suspicion de cancer du pancréas confirmé par imagerie et biopsie</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Analgésie adaptée (paliers OMS, bloc cœliaque si douleurs rebelles)</li>
+                                <li>Enzymes pancréatiques de substitution</li>
+                                <li>Support nutritionnel</li>
+                                <li>Soutien psychiatrique</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-section">
+                            <strong>Specifique :</strong>
+                            <ul>
+                                <li>Chirurgie si tumeur résécable</li>
+                                <li>Chimiothérapie adjuvante/néoadjuvante selon stade</li>
+                                <li>PEC palliative si non résécable (drainage, chimio, soins de support)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Consultation oncologique multidisciplinaire</li>
+                            <li>Surveillance clinique et biologique régulière</li>
+                            <li>Scanner TAP pour évaluation de la réponse</li>
+                            <li>Prise en charge psychologique continue</li>
+                            <li>Prévention secondaire : sevrage alcool, alimentation équilibrée</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour le patient standardisé</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> William Jordan |             <strong>Âge :</strong> 61 ans<br>
+            <strong>Contexte :</strong> Homme se présentant au cabinet pour fatigue
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Je me sens vraiment fatigué, docteur. Je n'ai plus d'énergie.</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> J'ai aussi des douleurs au ventre et je me sens triste sans raison.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Consignes</h4>
+            <ul>
+                <li>Montrez-vous faible et triste, et penchez-vous en avant en position assise.</li>
+                <li>Montrez une gêne abdominale qui augmente lorsque vous êtes allongé sur le dos.</li>
+                <li>Montrez des signes de douleur à la palpation de la région épigastrique.</li>
+                <li>Parler lentement avec peu d'énergie dans la voix.</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Symptôme principal :</strong>
+                <ul>
+                    <li>Fatigue</li>
+                    <li>Début : Il y a six mois</li>
+                    <li>Progression : Constante tout au long de la journée</li>
+                    <li>Impact : Ne peut plus faire sa promenade quotidienne de 30 minutes</li>
+                    <li>Pas d'énergie au travail</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>Perte d'appétit</li>
+                    <li>Perte de poids de 3,6 kg non intentionnelle</li>
+                    <li>Selles malodorantes et graisseuses récemment</li>
+                    <li>Gêne épigastrique vague et profonde</li>
+                    <li>Nausées occasionnelles</li>
+                    <li>Tristesse sans raison</li>
+                    <li>Réveil matinal précoce</li>
+                    <li>Perte de concentration</li>
+                    <li>Perte d'intérêt pour les activités</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Réponse aux symptômes :</strong>
+                <ul>
+                    <li>J'ai essayé le paracétamol mais ça n'aide pas</li>
+                    <li>Je me penche en avant quand j'ai mal au ventre</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Représentation de la maladie :</strong>
+                <ul>
+                    <li>Je ne sais pas ce qui ne va pas</li>
+                    <li>J'espère que ce n'est rien de grave</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Position penchée en avant</li>
+                    <li>Voix faible et monotone</li>
+                    <li>Peu de contact visuel</li>
+                    <li>Mouvements lents</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant le status :</strong>
+                <ul>
+                    <li>Douleur à la palpation épigastrique</li>
+                    <li>Inconfort en décubitus dorsal</li>
+                    <li>Soulagement en position penchée</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse par systèmes</h4>
+            <div class="property-group">
+                <strong>Générale :</strong>
+                <ul>
+                    <li>Fatigue persistante</li>
+                    <li>Perte de poids involontaire</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Neurologique :</strong>
+                <ul>
+                    <li>Trouble de concentration</li>
+                    <li>Pas de céphalées</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Digestive :</strong>
+                <ul>
+                    <li>Constipation chronique (10 ans)</li>
+                    <li>Selles graisseuses récentes</li>
+                    <li>Nausées occasionnelles</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Psychiatrique :</strong>
+                <ul>
+                    <li>Tristesse</li>
+                    <li>Anhédonie</li>
+                    <li>Insomnie de réveil précoce</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Habitudes</h4>
+            <p><strong>Médicaments :</strong> Paracétamol au besoin</p>
+            <p><strong>Tabac :</strong> Ex-fumeur - 1 paquet/jour pendant 30 ans, arrêt il y a 6 mois</p>
+            <p><strong>Alcool :</strong> 2 bières/jour, 3-4 le week-end</p>
+            <p><strong>Sexualité :</strong> Active avec épouse</p>
+            <p><strong>Drogues :</strong> Jamais</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Histoire Medicale</h4>
+            <ul>
+                <li>Aucun antécédent médical significatif</li>
+                <li>Appendicectomie à 16 ans</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 45, examen: 18, management: 15, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 13, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 6, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 5, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

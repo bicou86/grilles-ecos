@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German-44 - Erythème - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - German-44 - Erythème</h1>
+            <p style="margin: 5px 0;">📍 Cabinet de médecine générale</p>
+            <p style="margin: 5px 0;">👤 Mme Kählin, 27 ans, consulte suite à l'apparition d'un érythème cutané</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">127/82 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">73 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">37.8°C</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/35</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Désinfection des mains, présentation avec nom, fonction et but de la consultation <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Désinfection des mains, présentation avec nom, fonction et but de la consultation" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Exploration du symptôme principal <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a2" value="2" data-criteria="Exploration du symptôme principal" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a2" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Caractéristiques de l'érythème <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Douleur <span class="patient-response">[Non douloureux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sensation de brûlure <span class="patient-response">[Pas de brûlure]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Prurit <span class="patient-response">[Pas de démangeaisons]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Évolution temporelle et facteurs déclenchants <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Durée <span class="patient-response">[Depuis environ 3 semaines]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteur déclenchant <span class="patient-response">[Aucun déclencheur identifié]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évolution <span class="patient-response">[Progressif]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Antécédents d'épisodes similaires <span class="patient-response">[Non, premier épisode]</span> <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a5" value="2" data-criteria="Antécédents d'épisodes similaires" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a5" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a5" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Symptômes associés <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Fatigue/asthénie <span class="patient-response">[Un peu fatiguée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Arthralgies <span class="patient-response">[Légères douleurs articulaires]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Céphalées <span class="patient-response">[Céphalées fréquentes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Perte de poids <span class="patient-response">[Possible]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Revue des systèmes <span class="patient-response">[Rien de particulier]</span> <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="2" data-criteria="Revue des systèmes" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Habitudes de vie <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Tabac <span class="patient-response">[5 paquets-années]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Alcool <span class="patient-response">[Occasionnel]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Drogues <span class="patient-response">[Cannabis rarement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Médicaments actuels <span class="patient-response">[Contraception orale combinée]</span> <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="2" data-criteria="Médicaments actuels" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Antécédents médicaux et chirurgicaux <span class="patient-response">[Amygdalectomie dans l'enfance, sinon rien]</span> <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="2" data-criteria="Antécédents médicaux et chirurgicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Antécédents familiaux <span class="patient-response">[Grands-parents hypertendus après 65 ans, grand-père avec goutte]</span> <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a11" value="2" data-criteria="Antécédents familiaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a11" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a11" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Anamnèse sociale <span class="patient-response">[Vit avec son compagnon, travaille au bureau]</span> <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="2" data-criteria="Anamnèse sociale" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+<div class="criteria-row" id="criteria-a13">
+    <div>
+        <div class="criteria-text">13. Anamnèse de voyage et exposition solaire <button class="comment-button" onclick="toggleComment('a13')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Voyage récent <span class="patient-response">[Retour d'Italie il y a 2 semaines]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-0" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évolution pendant le voyage <span class="patient-response">[Érythème plus marqué en vacances]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-1" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fièvre au retour <span class="patient-response">[Pas de fièvre remarquée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-2" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Exposition solaire <span class="patient-response">[Oui, pendant les vacances]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-3" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a13">
+            <textarea class="comment-textarea" id="comment-a13" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a13'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a13">0</div>
+</div>
+<div class="criteria-row" id="criteria-a14">
+    <div>
+        <div class="criteria-text">14. Évaluation globale de la qualité de l'anamnèse <button class="comment-button" onclick="toggleComment('a14')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Anamnèse ciblée et bien conduite</div><div class="scoring-rule">Bien = oui, suffisant = ±, insuffisant = non</div>        <div class="criterion-comment-section" id="comment-section-a14">
+            <textarea class="comment-textarea" id="comment-a14" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a14'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="2" data-criteria="Évaluation globale de la qualité de l'anamnèse" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a14">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/18</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Inspection générale <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">État des yeux <span class="patient-response">[Légèrement secs et rouges]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Muqueuses <span class="patient-response">[Rosées]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examen cutané détaillé <span class="patient-response">[Érythème rouge légèrement squameux au niveau du dos - voir image en annexe]</span> <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Description de l'érythème</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Localisation</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Aspect</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen articulaire <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Douleur à la palpation <span class="patient-response">[Articulations légèrement douloureuses à la pression]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Épanchement articulaire <span class="patient-response">[Pas d'épanchement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Limitation des mouvements <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen cardio-pulmonaire <span class="patient-response">[Sans particularité]</span> <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e4" value="2" data-criteria="Examen cardio-pulmonaire" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e4" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e4" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Examen neurologique <span class="patient-response">[Pas d'anomalie]</span> <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e5" value="2" data-criteria="Examen neurologique" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e5" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e5" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Recherche de signes évocateurs de lupus <span class="patient-response">[Tous absents]</span> <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Éruption malaire</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-0" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ulcérations buccales</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-1" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Alopécie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-2" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Phénomène de Raynaud</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-3" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+<div class="criteria-row" id="criteria-e7">
+    <div>
+        <div class="criteria-text">7. Évaluation globale de la qualité de l'examen clinique <button class="comment-button" onclick="toggleComment('e7')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Examen ciblé et bien conduit</div><div class="scoring-rule">Bien = oui, suffisant = ±, insuffisant = non</div>        <div class="criterion-comment-section" id="comment-section-e7">
+            <textarea class="comment-textarea" id="comment-e7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e7" value="2" data-criteria="Évaluation globale de la qualité de l'examen clinique" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e7" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e7" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e7">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Diagnostic de suspicion principal <span class="patient-response">[Lupus érythémateux cutané (CLE)]</span> <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Diagnostic de suspicion principal" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Diagnostics différentiels évoqués <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="2" data-criteria="Diagnostics différentiels évoqués" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Dermatoses inflammatoires</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Psoriasis</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Plaques érythémato-squameuses bien délimitées<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Localisations typiques (coudes, genoux)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Antécédents familiaux possibles</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Diagnostic clinique, biopsie si doute</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Photodermatose</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Éruption liée à l'exposition solaire<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Amélioration à l'ombre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Récidive à chaque exposition</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Phototests, dosage porphyrines si suspicion</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens complémentaires proposés <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Biologie sanguine <span class="patient-response">[VS, CRP, anticorps anti-nucléaires (ANA), hémoglobine]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Analyse d'urine <span class="patient-response">[Bandelette urinaire - recherche protéinurie/hématurie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fonction rénale <span class="patient-response">[Créatinine, urée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Justification des examens <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Recherche de signes de lupus systémique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation de l'inflammation</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dépistage d'atteinte rénale (néphrite lupique)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Traitement proposé <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Mesures générales</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Protection solaire stricte : Éviter l'exposition solaire, crème solaire SPF 50+, vêtements couvrants</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Traitement topique</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Corticostéroïdes topiques : Application locale sur les lésions actives × Selon évolution<br />
+            <span style="margin-left: 10px;">•</span> Inhibiteurs de la calcineurine : Alternative aux corticoïdes, surtout pour le visage × Traitement au long cours possible</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="2" data-criteria="Traitement proposé" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Information sur l'évolution possible <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Red Flags</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Évolution vers lupus systémique</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Signes d'alerte</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="2" data-criteria="Information sur l'évolution possible" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+<div class="criteria-row" id="criteria-m7">
+    <div>
+        <div class="criteria-text">7. Surveillance et suivi recommandés <button class="comment-button" onclick="toggleComment('m7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Contrôle dans 4-6 semaines avec résultats</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-0" value="1" onchange="updateDetailScore('m7', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Surveillance biologique régulière si ANA positifs</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-1" value="1" onchange="updateDetailScore('m7', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen des autres systèmes à chaque consultation</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-2" value="1" onchange="updateDetailScore('m7', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Référence en dermatologie si évolution défavorable</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-3" value="1" onchange="updateDetailScore('m7', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m7">
+            <textarea class="comment-textarea" id="comment-m7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m7">0</div>
+</div>
+<div class="criteria-row" id="criteria-m8">
+    <div>
+        <div class="criteria-text">8. Évaluation globale de la qualité de la prise en charge <button class="comment-button" onclick="toggleComment('m8')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Prise en charge cohérente et bien conduite</div><div class="scoring-rule">Bien = oui, suffisant = ±, insuffisant = non</div>        <div class="criterion-comment-section" id="comment-section-m8">
+            <textarea class="comment-textarea" id="comment-m8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m8" value="2" data-criteria="Évaluation globale de la qualité de la prise en charge" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m8" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m8" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m8">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/93</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 🌺 Lupus érythémateux cutané – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes principaux</h5>
+<ul class="resume-subsection-points">
+<li>Éruptions cutanées photosensibles, souvent après exposition solaire</li>
+<li>Prurit ou sensation de brûlure possible</li>
+<li>Atteinte chronique ou récidivante</li>
+<li>Contexte de maladies auto-immunes parfois associé</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Facteurs favorisants</h5>
+<ul class="resume-subsection-points">
+<li>Exposition aux UV (UVA/UVB)</li>
+<li>Tabagisme</li>
+<li>Médicaments (terbinafine, hydrochlorothiazide, etc.)</li>
+<li>Terrain auto-immun</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Formes cliniques principales</h5>
+<ul class="resume-subsection-points">
+<li>Forme aiguë : érythème en « aile de papillon » non cicatriciel</li>
+<li>Forme subaiguë : plaques annulaires ou psoriasiformes, dépigmentations résiduelles</li>
+<li>Forme chronique (discoïde) : plaques érythémateuses squameuses bien limitées avec cicatrices atrophiques, parfois alopécie cicatricielle</li>
+<li>Forme intermittente (tumidus) : plaques rouges indurées, non cicatricielles</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Localisations fréquentes</h5>
+<ul class="resume-subsection-points">
+<li>Visage (nez, pommettes)</li>
+<li>Cuir chevelu (risque alopécie cicatricielle)</li>
+<li>Zones photo-exposées : bras, décolleté, tronc</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Biologie</h5>
+<ul class="resume-subsection-points">
+<li>ANA parfois positifs mais moins fréquents que dans le SLE</li>
+<li>Anti-SSA/Ro fréquents dans les formes subaiguës</li>
+<li>Anti-dsDNA et anti-Sm rares sauf si atteinte systémique associée</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Histologie</h5>
+<ul class="resume-subsection-points">
+<li>Biopsie cutanée : dépôt en bande (lupus band test) limité aux zones atteintes (≠ SLE)</li>
+<li>Interface dermatite avec infiltrat lymphocytaire</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Différentiels</h5>
+<ul class="resume-subsection-points">
+<li>Rosacée</li>
+<li>Psoriasis</li>
+<li>Dermatite séborrhéique</li>
+<li>Photodermatose polymorphe</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Mesures générales</h5>
+<ul class="resume-subsection-points">
+<li>Photoprotection stricte (crèmes SPF 50+, vêtements protecteurs)</li>
+<li>Arrêt du tabac</li>
+<li>Éviter médicaments inducteurs</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement topique</h5>
+<ul class="resume-subsection-points">
+<li>Corticostéroïdes topiques</li>
+<li>Inhibiteurs de calcineurine (tacrolimus, off-label)</li>
+<li>± Vitamine D topique</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement systémique</h5>
+<ul class="resume-subsection-points">
+<li>Hydroxychloroquine (1ère intention si atteinte étendue ou réfractaire)</li>
+<li>Corticostéroïdes systémiques ou immunosuppresseurs (cas sévères, atypiques ou systémiques)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Photosensibilité + lésions cutanées chroniques <span class="equals">=</span> évoquer lupus cutané</li>
+<li class="resume-bullet">Biopsie cutanée confirme le diagnostic</li>
+<li class="resume-bullet">Toujours rechercher signes de passage en lupus systémique</li>
+<li class="resume-bullet highlight">Hydroxychloroquine <span class="equals">=</span> traitement de fond de <span class="highlight-important">référence</span></li>
+<li class="resume-bullet highlight">Photoprotection <span class="equals">=</span> mesure essentielle de prévention</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser</h5>
+<ul class="resume-subsection-points">
+<li>Depuis quand les lésions cutanées sont-elles présentes ?</li>
+<li>Relation avec exposition solaire ?</li>
+<li>Prurit, brûlure, douleur cutanée ?</li>
+<li>Antécédents familiaux ou personnels de maladies auto-immunes ?</li>
+<li>Prise de médicaments inducteurs ?</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens à faire</h5>
+<ul class="resume-subsection-points">
+<li>Inspection cutanée complète</li>
+<li>Biopsie cutanée si diagnostic incertain</li>
+<li>Sérologie auto-immune (ANA, anti-SSA/Ro, anti-dsDNA)</li>
+<li>Recherche atteinte systémique (urines, créat, hémogramme)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Photoprotection + arrêt tabac</li>
+<li>Corticothérapie topique ± hydroxychloroquine</li>
+<li>Surveillance pour dépister évolution vers lupus systémique</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Érythème cutané chronique photosensible (suspicion de lupus érythémateux cutané)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, profession, motif (femme 27 ans, érythème cutané chronique depuis 3 semaines)</li>
+                <li>Caractériser l’éruption <span class="arrow">→</span> localisation dos, rouge légèrement squameuse, non douloureuse, non prurigineuse</li>
+                <li>Évolution <span class="arrow">→</span> progressive, aggravée au soleil (voyage Italie), pas d’épisodes antérieurs</li>
+                <li>Symptômes associés <span class="arrow">→</span> fatigue, céphalées fréquentes, arthralgies diffuses, légère perte de poids</li>
+                <li>ATCD <span class="arrow">→</span> amygdalectomie, contraception orale, tabac 5 PA, cannabis occasionnel</li>
+                <li>ATCD familiaux <span class="arrow">→</span> HTA tardive, goutte grand-père</li>
+                <li>Habitudes <span class="arrow">→</span> vie de couple, emploi de bureau, voyage récent Italie avec exposition solaire</li>
+                <li>Examen clinique <span class="arrow">→</span> érythème rouge squameux au dos, muqueuses normales, articulations sensibles mais sans épanchement, pas de signes de lupus systémique (Raynaud, alopécie, ulcérations absentes)</li>
+                <li>Résumé + hypothèse principale : lupus érythémateux cutané (forme subaiguë) ; DD : psoriasis, photodermatose</li>
+                <li>Examens complémentaires <span class="arrow">→</span> ANA, anti-SSA/Ro, VS/CRP, hémogramme, créatinine, BU, ± biopsie cutanée</li>
+                <li>Prise en charge <span class="arrow">→</span> photoprotection stricte, arrêt tabac, corticoïdes topiques, ± inhibiteurs de la calcineurine, suivi rapproché, hydroxychloroquine si atteinte persistante ou étendue</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide LUPUS</div>
+    <ul class="mnemo-items">
+        <li>L = Lésions cutanées photosensibles</li>
+        <li>U = UV déclencheur</li>
+        <li>P = Plaques squameuses rouges</li>
+        <li>U = Urines (protéinurie/hématurie à rechercher)</li>
+        <li>S = Surveillance évolutive vers lupus systémique</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de Mme Kählin, une femme de 27 ans, secrétaire, qui consulte pour un érythème cutané évoluant depuis environ 3 semaines. L’éruption est localisée au niveau du dos, décrite comme rouge, légèrement squameuse, non douloureuse et non prurigineuse. Elle est apparue de manière progressive, sans facteur déclenchant clair, mais la patiente rapporte une aggravation nette pendant ses vacances en Italie, avec exposition solaire importante.</p><p>C’est la première fois qu’elle présente ce type de problème cutané. Elle décrit par ailleurs une fatigue inhabituelle, des céphalées fréquentes, de légères douleurs articulaires diffuses et une perte de poids modérée.</p><p>Ses antécédents incluent une amygdalectomie dans l’enfance. Elle prend une contraception orale combinée. Pas d’autres traitements. Elle fume environ 5 paquets-années, consomme de l’alcool de façon occasionnelle et du cannabis rare. Sa famille est globalement en bonne santé, hormis des grands-parents hypertendus après 65 ans et un grand-père atteint de goutte. Elle vit avec son compagnon et travaille en bureau.</p><p>À l’examen, on observe un érythème rouge légèrement squameux au niveau du dos. Pas de lésions typiques de lupus systémique comme une éruption malaire, pas d’ulcérations buccales, pas d’alopécie, pas de Raynaud. Ses articulations sont sensibles à la palpation mais sans épanchement ni limitation. Les muqueuses sont normales, l’examen cardio-pulmonaire et neurologique est sans particularité.</p><p>En résumé, il s’agit d’une jeune femme avec une lésion cutanée chronique photosensible, des arthralgies et une asthénie. Mon hypothèse principale est un lupus érythémateux cutané (probablement subaigu). Les diagnostics différentiels incluent un psoriasis (plaque érythémato-squameuse mais localisations typiques absentes) et une photodermatose (mais la persistance est inhabituelle).</p><p>Comme examens complémentaires, je demanderais un bilan immunologique (ANA, anti-SSA/Ro, ± anti-dsDNA si suspicion systémique), un hémogramme, VS/CRP, créatinine, une bandelette urinaire pour dépister une atteinte rénale, et éventuellement une biopsie cutanée si doute diagnostique. </p><p>La prise en charge repose sur des mesures générales (photoprotection stricte, arrêt tabac), un traitement topique par corticoïdes ou inhibiteurs de la calcineurine, et en cas d’atteinte persistante ou étendue, l’introduction d’hydroxychloroquine. Un suivi rapproché est nécessaire pour dépister une éventuelle évolution vers un lupus systémique.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : Mme Kählin, 27 ans, présente un érythème cutané rouge squameux chronique depuis 3 semaines, aggravé au soleil.</p><p>B (Background) : Pas de maladies chroniques, contraception orale, tabac 5 PA, voyage récent Italie avec forte exposition solaire.</p><p>A (Assessment) : Suspicion lupus érythémateux cutané subaigu. DD : psoriasis, photodermatose.</p><p>R (Recommendation) : Bilan immunologique (ANA, anti-SSA/Ro), hémogramme, créatinine, BU, biopsie cutanée si doute. PEC : photoprotection, arrêt tabac, corticoïdes topiques, suivi rapproché, hydroxychloroquine si atteinte persistante.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 Formes cliniques de lupus cutané</h5>
+                <ul class="presentation-points">
+                    <li>Aigu : érythème malaire en aile de papillon</li>
+                    <li>Subaigu : plaques annulaires/psoriasiformes, dépigmentations résiduelles</li>
+                    <li>Chronique discoïde : plaques squameuses avec cicatrices atrophiques, risque alopécie cicatricielle</li>
+                    <li>Tumidus : plaques rouges indurées, non cicatricielles</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Signes d’alarme pour lupus systémique</h5>
+                <ul class="presentation-points">
+                    <li>Atteinte rénale (protéinurie, hématurie)</li>
+                    <li>Atteinte neurologique (convulsions, troubles cognitifs)</li>
+                    <li>Arthrites franches</li>
+                    <li>Cytopénies inexpliquées</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 PEC pratique</h5>
+                <ul class="presentation-points">
+                    <li>Photoprotection SPF 50+</li>
+                    <li>Corticothérapie topique</li>
+                    <li>Inhibiteurs de la calcineurine si visage</li>
+                    <li>Hydroxychloroquine si étendu/persistant</li>
+                    <li>Surveillance biologique régulière</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>⚠️ Pièges ECOS</h5>
+                <ul class="presentation-points">
+                    <li>Ne pas confondre avec psoriasis ou photodermatose</li>
+                    <li>Toujours relier à exposition solaire</li>
+                    <li>Ne pas oublier BU/créat pour dépistage néphrite lupique</li>
+                    <li>Toujours évoquer le risque d’évolution vers lupus systémique</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Lupus érythémateux cutané</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Érythème squameux chronique, non prurigineux</li>
+                                <li>Aggravation après exposition solaire</li>
+                                <li>Arthralgies, céphalées, fatigue associées</li>
+                                <li>Atteinte jeune femme</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de lésions malaires</li>
+                                <li>Pas de signes systémiques sévères</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Psoriasis</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Plaques squameuses rouges</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de localisations typiques (coudes, genoux, cuir chevelu)</li>
+                                <li>Pas d’antécédents familiaux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Photodermatose</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Éruption aggravée par exposition solaire</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Persistance inhabituelle après fin d’exposition</li>
+                                <li>Pas de prurit important</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>ANA, anti-SSA/Ro, ± anti-dsDNA</li>
+                            <li>VS/CRP</li>
+                            <li>Hémogramme</li>
+                            <li>Créatinine, urée</li>
+                            <li>Bandelette urinaire</li>
+                            <li>Biopsie cutanée si doute diagnostique</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Lupus érythémateux cutané (forme subaiguë probable)</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Photoprotection stricte</li>
+                                <li>Corticothérapie topique</li>
+                                <li>Inhibiteurs de la calcineurine si visage</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-section">
+                            <strong>Specifique :</strong>
+                            <ul>
+                                <li>Hydroxychloroquine si atteinte persistante ou étendue</li>
+                                <li>Corticoïdes systémiques ou immunosuppresseurs si formes sévères</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Contrôle à <span class="highlight-range">4-6</span> semaines</li>
+                            <li>Surveillance biologique régulière si ANA positifs</li>
+                            <li>Dépistage atteinte systémique à chaque consultation</li>
+                            <li><span class="highlight-important">Référence</span> en dermatologie si évolution défavorable</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="images-wrapper">
+<div class="annexe-item">
+    <div class="annexe-title">Image clinique - Érythème cutané</div>
+    <div class="annexe-description">Photographie montrant un érythème rouge légèrement squameux typique du lupus érythémateux cutané au niveau du dos</div>
+    <div class="annexe-image">
+        <img src="data:image/jpeg;base64,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" alt="Image clinique - Érythème cutané" />
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 35, examen: 18, management: 20, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 14, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 7, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 8, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

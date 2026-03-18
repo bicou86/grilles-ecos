@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE Triage 36 - Cas téléphonique - Douleur abdominale - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE Triage 36 - Cas téléphonique - Douleur abdominale</h1>
+            <p style="margin: 5px 0;">📍 Consultation téléphonique - Cabinet médical</p>
+            <p style="margin: 5px 0;">👤 Andy Lightfoot, homme de 22 ans, appelle pour douleurs abdominales sévères</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/57</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Introduction professionnelle et identification du problème <span class="patient-response">[Douleur abdominale [estomac me tue], sensation [entrailles vont exploser], sévérité [comme poignardé avec couteau]]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="exemples-phrases"><div class="exemple-phrase">"Bonjour M."</div><div class="exemple-phrase">"Lightfoot, c'est le Dr Franks."</div><div class="exemple-phrase">"Comment puis-je vous aider cet après-midi ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Introduction professionnelle et identification du problème" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Chronologie et caractérisation de la douleur <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début des symptômes <span class="patient-response">[il y a 4 heures environ]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Moment déclencheur <span class="patient-response">[après petit-déjeuner]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évolution <span class="patient-response">[empire progressivement depuis début]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Durée d'aggravation <span class="patient-response">[environ 1 heure pour devenir grave]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[10/10, au moins un 10]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Depuis combien de temps vous sentez-vous ainsi ? Sur une échelle de 0 à 10, où évalueriez-vous cette douleur ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Localisation et irradiation de la douleur <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Localisation principale <span class="patient-response">[haut du ventre, épigastrique]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[dos, milieu du dos]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Stabilité localisation <span class="patient-response">[restée au même endroit]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Aggravation progressive <span class="patient-response">[semble s'aggraver]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Description <span class="patient-response">[comme poignardé de l'intérieur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Où avez-vous mal ? Est-ce que la douleur irradie quelque part, comme dans votre dos ou votre épaule ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Symptômes digestifs associés <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Vomissements <span class="patient-response">[cinq fois déjà ce matin]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Contenu vomissements <span class="patient-response">[œufs et crêpes du petit-déjeuner]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Absence de sang <span class="patient-response">[pas de sang dans vomi]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Constipation <span class="patient-response">[pas allé aux toilettes du tout]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Miction <span class="patient-response">[uriné un peu mais rien d'autre]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Vous avez dit que vous aviez vomi plus tôt ; y avait-il du sang dans ce vomi ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Facteurs déclenchants et alimentation <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Repas déclencheur <span class="patient-response">[petit-déjeuner avant douleur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Composition repas <span class="patient-response">[œufs, crêpes, lait, yaourt]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Habitudes alimentaires <span class="patient-response">[gros petit-déjeuner, saute déjeuner]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Normalité du repas <span class="patient-response">[rien d'inhabituel, 2x/semaine]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Impossibilité manger après <span class="patient-response">[ne pouvait pas manger après]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-4" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Il semble donc que vous avez pu manger."</div><div class="exemple-phrase">"Avez-vous mangé avant ou après le début de la douleur ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Antécédents de douleurs similaires <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Problèmes gastriques antérieurs <span class="patient-response">[problèmes d'estomac]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Épisode similaire <span class="patient-response">[il y a environ 6 mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autotraitement antérieur <span class="patient-response">[médicaments contre douleur de sa sœur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Résolution spontanée <span class="patient-response">[a pu dormir avec médicaments]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Médicaments inconnus <span class="patient-response">[ne sait pas ce qu'étaient les pilules]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-4" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Avez-vous déjà eu ce type de douleur auparavant ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Traitements antérieurs et compliance <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Médicament prescrit <span class="patient-response">[oméprazole]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Efficacité limitée <span class="patient-response">[n'a pas beaucoup aidé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Arrêt traitement <span class="patient-response">[arrêté il y a une semaine]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Raison arrêt <span class="patient-response">[à court et pas renouvelé ordonnance]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-3" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Diagnostic antérieur <span class="patient-response">[reflux acide]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-4" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Vous avez dit qu'on vous avait prescrit un médicament—quel est ce médicament ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Caractéristiques temporelles de la douleur <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Nature constante <span class="patient-response">[toujours là]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Variations <span class="patient-response">[peut-être un peu pire par moments]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Persistance <span class="patient-response">[semble assez constante]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Aggravation respiratoire <span class="patient-response">[fait mal si respiration profonde]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-3" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Absence douleur thoracique <span class="patient-response">[rien de tout cela]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-4" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Quand vous ressentez cette douleur, est-elle constante, ou va-t-elle et vient-elle ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Symptômes systémiques <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Fièvre <span class="patient-response">[non, pas vraiment]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-0" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Problèmes respiratoires <span class="patient-response">[non, pas vraiment]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-1" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleur thoracique <span class="patient-response">[non, rien de tout cela]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-2" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vertiges <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-3" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">État général <span class="patient-response">[très difficile à supporter]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-4" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Avez-vous eu chaud, comme si vous aviez de la fièvre ? Avez-vous eu des problèmes respiratoires ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Antécédents médicaux généraux <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Consultations antérieures <span class="patient-response">[vu médecin pour oméprazole]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-0" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Diagnostic établi <span class="patient-response">[reflux acide]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-1" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hospitalisations <span class="patient-response">[jamais passé la nuit]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-2" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chirurgies <span class="patient-response">[non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-3" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Eczéma <span class="patient-response">[pas de poussée depuis un an]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-4" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Qu'en est-il d'autres choses pour lesquelles vous avez vu le médecin ? Avez-vous déjà eu une chirurgie ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Habitudes de vie et facteurs de risque <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Consommation alcool <span class="patient-response">[parfois, environ une bière tous les soirs]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-0" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Consommation sociale <span class="patient-response">[plus les week-ends quand sort]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-1" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dernière consommation <span class="patient-response">[hier soir, quelques bières et un shot]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-2" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Questions CAGE <span class="patient-response">[toutes négatives]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-3" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Relation alcool-douleur <span class="patient-response">[nie douleur liée à alcool]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-4" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Buvez-vous de l'alcool ? Avez-vous déjà remarqué une douleur dans votre abdomen après ou quand vous buvez de l'alcool ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Facteurs de risque supplémentaires <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Tabac <span class="patient-response">[chique parfois quand sort]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-0" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence tabac <span class="patient-response">[pas depuis un moment]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-1" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Cigarettes <span class="patient-response">[ne fume pas]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-2" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Antécédents familiaux <span class="patient-response">[non contributifs]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-3" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Opération père <span class="patient-response">[épaule l'année dernière, rien d'autre]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-4" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Qu'en est-il d'autres choses, comme les produits du tabac ? Quelqu'un dans votre famille a-t-il eu des maladies majeures ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/2</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Limitation consultation téléphonique <span class="patient-response">[Pas d'examen physique possible [consultation téléphonique]]</span> <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="exemples-phrases"><div class="exemple-phrase">"Je ne peux pas en dire autant par téléphone, cependant, parce que vous n'êtes pas ici pour que je vous examine."</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="Limitation consultation téléphonique" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/27</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Impression diagnostique et diagnostic différentiel <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="exemples-phrases"><div class="exemple-phrase">"Après avoir écouté vos symptômes, je pense qu'il est préférable que vous veniez aux urgences pour être vu."</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Impression diagnostique et diagnostic différentiel" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Urgences abdominales</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Perforation ulcère gastro-duodénal</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur épigastrique sévère brutale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irradiation dorsale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Antécédents reflux/oméprazole<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vomissements répétés<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Intensité 10/10<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Consommation alcool récente</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Urgences immédiates, radiographie thoracique debout, CT abdominal</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Pancréatite aiguë</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur épigastrique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irradiation dorsale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vomissements<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Consommation alcool<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début post-prandial</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Amylase/Lipase, CT abdominal</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Occlusion intestinale</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vomissements répétés<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Absence de selles<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur abdominale sévère<br>Arguments CONTRE :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Localisation épigastrique</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Radiographie abdominale, CT abdominal</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Pathologies moins urgentes</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Gastrite aiguë sévère</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur épigastrique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vomissements<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Antécédents reflux<br>Arguments CONTRE :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Intensité inhabituelle<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irradiation dorsale</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Évaluation clinique, essai thérapeutique</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Simples gaz intestinaux</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments CONTRE :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Intensité 10/10<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vomissements répétés<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irradiation dorsale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début brutal</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Évaluation clinique</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Explication des risques et urgence de consultation <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Préoccupation ulcère <span class="patient-response">[ulcère ou conséquence grave d'un ulcère]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Risque perforation <span class="patient-response">[trou formé dans estomac ou intestin]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Gravité potentielle <span class="patient-response">[peut être mortel]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Limitation téléphone <span class="patient-response">[pas en mesure évaluation complète]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nécessité examens <span class="patient-response">[tests nécessaires pour exclusion]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Le fait que vous ayez une crise de douleur inhabituellement sévère ainsi que l'historique de traitement de problèmes d'estomac m'inquiète pour un ulcère."</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Orientation vers les urgences <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Directive claire <span class="patient-response">[venir aux urgences pour être vu]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Justification <span class="patient-response">[médecin urgentiste mieux placé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation complète <span class="patient-response">[déterminer cause réelle]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Diagnostic différentiel <span class="patient-response">[autres possibilités à explorer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation immédiate <span class="patient-response">[douleur si sévère]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Quand vous viendrez, le médecin urgentiste sera mieux en mesure de déterminer ce qui cause votre douleur."</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Alternatives diagnostiques expliquées <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Simples gaz <span class="patient-response">[possibilité moins probable]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Problèmes pancréatiques <span class="patient-response">[pancréas]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autres maladies <span class="patient-response">[plusieurs autres possibilités]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nécessité évaluation <span class="patient-response">[doivent être évaluées immédiatement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sévérité justifiant urgence <span class="patient-response">[douleur si sévère]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-4" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Si ce n'est pas le cas, il y a plusieurs autres possibilités, des simples gaz à d'autres maladies telles que des problèmes avec votre pancréas."</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Organisation du transport et suivi <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Coordination avec urgences <span class="patient-response">[appeler et informer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Information préalable <span class="patient-response">[au courant de ce dont nous avons parlé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Délai d'attente <span class="patient-response">[ne peut pas dire combien de temps]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Préparation équipe <span class="patient-response">[ils sauront que vous venez]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Transport patient <span class="patient-response">[avez-vous moyen de transport ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Je vais appeler les urgences et m'assurer qu'ils sont au courant de ce dont nous avons parlé et de votre cas."</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Plan de secours et mesures de sécurité <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Alternative transport <span class="patient-response">[si pas de transport disponible]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Plan ambulance <span class="patient-response">[rappeler et organiser ambulance]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sécurité patient <span class="patient-response">[venir vous chercher]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Questions finales <span class="patient-response">[avez-vous des questions ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Clôture professionnelle <span class="patient-response">[merci beaucoup, nous nous parlerons bientôt]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-4" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Si vous n'y arrivez pas, veuillez rappeler et nous organiserons une ambulance pour venir vous chercher."</div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Empathie et explication des limitations</h4>
+                    <div class="cloture-content cloture-content-green">Je sais qu'il n'est pas toujours facile de prendre rendez-vous quand vous avez des problèmes immédiats. Laissez-moi vous poser quelques questions sur cette douleur, et nous allons déterminer quoi faire. Néanmoins, nous pourrons parler et déterminer quoi faire, d'accord ?</div>
+                    <div class="exemples-phrases">
+                        <div class="exemple-phrase">Je sais qu'il n'est pas toujours facile de prendre rendez-vous quand vous avez des problèmes immédiats.</div>
+                    </div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Communication claire des risques</h4>
+                    <div class="cloture-content cloture-content-green">Cela peut être mortel, et par téléphone, je ne suis pas en mesure de faire une évaluation complète ou de commander les tests nécessaires pour m'assurer que cela ne se produit pas. Pensez-vous pouvoir venir pour moi ? Avez-vous un moyen de transport pour l'hôpital ?</div>
+                    <div class="exemples-phrases">
+                        <div class="exemple-phrase">Cela peut être mortel, et par téléphone, je ne suis pas en mesure de faire une évaluation complète.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/106</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 ⚠️ Ulcère gastro-duodénal perforé – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes typiques</h5>
+<ul class="resume-subsection-points">
+<li>Douleur abdominale brutale, intense, souvent épigastrique puis diffuse</li>
+<li>Douleur en coup de poignard, persistante</li>
+<li>Nausées, vomissements possibles</li>
+<li>Arrêt des gaz et des selles (iléus réflexe)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Contexte évocateur</h5>
+<ul class="resume-subsection-points">
+<li>Antécédents d’ulcère gastrique ou duodénal</li>
+<li>Prise d’AINS, corticoïdes</li>
+<li>Alcool, tabac</li>
+<li>Absence d’antécédent abdominal aigu connu</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Signes physiques</h5>
+<ul class="resume-subsection-points">
+<li>Abdomen en bois (contracture généralisée)</li>
+<li>Douleur à la palpation diffuse</li>
+<li>Disparition de la matité hépatique (pneumopéritoine)</li>
+<li>Tachycardie, hypotension, signes de choc</li>
+<li>Fièvre possible (péritonite secondaire)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens complémentaires</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Biologie</h5>
+<ul class="resume-subsection-points">
+<li>Leucocytose neutrophile</li>
+<li class="with-arrow">Signe de déshydratation ou d’hypovolémie (urée, créatinine <span class="arrow-updown">↑</span>)</li>
+<li>Recherche de troubles électrolytiques</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Imagerie</h5>
+<ul class="resume-subsection-points">
+<li>Radiographie thorax/abdomen debout : pneumopéritoine (air sous diaphragme)</li>
+<li>Scanner abdomino-pelvien avec contraste : examen de <span class="highlight-important">référence</span> (perforation, fuite, liquide libre, étiologie)</li>
+<li>Échographie : alternative si contre-indication au scanner</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Mesures initiales</h5>
+<ul class="resume-subsection-points">
+<li>Mise à jeun stricte</li>
+<li>Voie veineuse, remplissage IV, correction hydro-électrolytique</li>
+<li>Oxygénothérapie si besoin</li>
+<li>Antibiothérapie à large spectre IV</li>
+<li>IPP IV</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement chirurgical</h5>
+<ul class="resume-subsection-points">
+<li>Indication chirurgicale en <span class="highlight-important">urgence</span> (péritonite)</li>
+<li>Laparotomie ou laparoscopie</li>
+<li>Fermeture du perforation (patch épiploïque de Graham si petite perforation duodénale)</li>
+<li>Résection gastrique en cas d’ulcère gastrique perforé suspect de malignité</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Suivi post-opératoire</h5>
+<ul class="resume-subsection-points">
+<li>Surveillance en soins continus ou réanimation si choc septique</li>
+<li>Contrôle des bilans biologiques et hydriques</li>
+<li>Eradication d’Helicobacter pylori secondairement</li>
+<li>Prévention secondaire : sevrage AINS/alcool/tabac, traitement anti-sécrétoire</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Douleur abdominale brutale + abdomen en bois <span class="equals">=</span> perforation digestive jusqu’à preuve du contraire</li>
+<li class="resume-bullet">Le pneumopéritoine au scanner ou à la radio est diagnostic</li>
+<li class="resume-bullet">C’est une <span class="highlight-important">urgence</span> chirurgicale absolue</li>
+<li class="resume-bullet highlight">Prise en charge initiale <span class="equals">=</span> réanimation + antibiotiques + chirurgie</li>
+<li class="resume-bullet">Les ulcères antérieurs perforent, les postérieurs saignent</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser</h5>
+<ul class="resume-subsection-points">
+<li>Début brutal de la douleur ? Type coup de poignard ?</li>
+<li>Localisation initiale (épigastrique) puis diffusion</li>
+<li>Antécédents d’ulcère, AINS, corticoïdes, tabac, alcool</li>
+<li>Nausées, vomissements, arrêt gaz/selles</li>
+<li>Signes de gravité : malaise, hypotension, état de choc</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens à faire</h5>
+<ul class="resume-subsection-points">
+<li>Constantes vitales : TA, FC, FR, SpO₂, température</li>
+<li>Inspection/auscultation : silence abdominal</li>
+<li>Palpation : défense ou contracture généralisée</li>
+<li>Percussion : disparition matité hépatique</li>
+<li>Rechercher signes de choc hypovolémique</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Réanimation initiale : perfusion IV, oxygène, antibiothérapie, IPP</li>
+<li>Confirmation diagnostique par imagerie (radio ou scanner)</li>
+<li>Chirurgie en <span class="highlight-important">urgence</span> (laparoscopie/laparotomie, patch de Graham ou résection selon contexte)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations pour l'expert - Consultation téléphonique d'urgence</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Cas typique d'orientation urgente par téléphone</li>
+                <li>Suspicion forte de perforation ulcère peptique</li>
+                <li>Consultation téléphonique = limitations importantes</li>
+                <li>Décision d'orientation basée sur anamnèse seule</li>
+                <li>Communication efficace des risques vitaux</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Défis spécifiques</h4>
+            <ul>
+                <li>Absence d'examen physique</li>
+                <li>Évaluation limitée par téléphone</li>
+                <li>Décision rapide d'orientation</li>
+                <li>Communication claire des risques</li>
+                <li>Organisation transport d'urgence</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Objectifs d'apprentissage</h4>
+            <ul>
+                <li>Anamnèse téléphonique structurée</li>
+                <li>Reconnaissance patterns d'urgence</li>
+                <li>Communication empathique à distance</li>
+                <li>Gestion limitations consultation</li>
+                <li>Orientation appropriée et sécurisée</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie et Pratique - Consultation téléphonique d'urgence</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Anamnèse téléphonique structurée</h4>
+            <p>Questions ciblées, chronologie précise, caractérisation symptômes. Compenser absence examen physique par anamnèse détaillée.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Reconnaissance urgences abdominales</h4>
+            <p>Douleur 10/10 + vomissements + antécédents ulcère + irradiation dorsale = suspicion perforation. Pattern classique nécessitant orientation immédiate.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Communication des risques</h4>
+            <p>Expliquer clairement gravité potentielle, limitations consultation téléphonique, nécessité évaluation urgente. Rassurer tout en orientant.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Examens différentiels</h4>
+            <ul>
+                <li>Perforation ulcère peptique (urgence vitale)</li>
+                <li>Pancréatite aiguë (alcool + douleur dorsale)</li>
+                <li>Occlusion intestinale (vomissements + constipation)</li>
+                <li>Gastrite sévère (moins probable vu intensité)</li>
+                <li>Cholangite (moins probable vu localisation)</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Orientation urgente si suspicion perforation</li>
+                <li>Pas de conseils thérapeutiques par téléphone</li>
+                <li>Coordination avec équipe urgences</li>
+                <li>Information patient sur gravité potentielle</li>
+                <li>Organisation transport sécurisé</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Douleur abdominale aiguë (consultation téléphonique, suspicion ulcère perforé/pancréatite)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, contexte (consultation téléphonique), motif : douleur abdominale aiguë</li>
+                <li>Caractériser douleur <span class="arrow">→</span> début brutal post-prandial, épigastrique, irradiation dorsale, type coup de poignard, EVA 10/10</li>
+                <li>Évolution <span class="arrow">→</span> progressive en 1h, aggravée respiration profonde</li>
+                <li>Symptômes associés <span class="arrow">→</span> vomissements répétés sans sang, constipation, pas de diarrhée, pas de fièvre rapportée</li>
+                <li>ATCD <span class="arrow">→</span> reflux gastrique traité par oméprazole, arrêt il y a 1 semaine, épisode similaire il y a 6 mois</li>
+                <li>Habitudes de vie <span class="arrow">→</span> alcool régulier (bières + shot hier), tabac à chiquer occasionnel</li>
+                <li>Famille <span class="arrow">→</span> non contributif</li>
+                <li>Résumé + hypothèse principale : ulcère perforé ou pancréatite aiguë ; DD : occlusion, gastrite sévère</li>
+                <li>Examens complémentaires <span class="arrow">→</span> impossibles par téléphone mais nécessaires : NFS, bilan hépatique, lipase/amylase, radio thorax/abdomen, scanner abdo</li>
+                <li>Prise en charge <span class="arrow">→</span> orientation <span class="highlight-important">immédiat</span>e aux <span class="highlight-important">urgence</span>s, hospitalisation, imagerie + bilan biologique, PEC chirurgicale si perforation, PEC médicale si pancréatite</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide : DOULEUR</div>
+    <ul class="mnemo-items">
+        <li>D = Douleur épigastrique brutale</li>
+        <li>O = Oméprazole arrêté (ATCD ulcère)</li>
+        <li>U = Urines et selles perturbées (constipation)</li>
+        <li>L = Lipase/amylase à demander (pancréas)</li>
+        <li>E = Émission vomissements répétés</li>
+        <li>U = Urgence vitale suspectée</li>
+        <li>R = Radiographie/scanner indispensable</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit d’Andy Lightfoot, un jeune homme de 22 ans, étudiant, que j’ai eu en consultation téléphonique. Il appelle car il présente depuis environ 4 heures une douleur abdominale très sévère. La douleur est apparue brutalement après un petit-déjeuner copieux composé d’œufs et de crêpes. Elle a rapidement augmenté en intensité en l’espace d’une heure, pour atteindre un niveau qu’il décrit comme 10/10, 'comme si on le poignardait dans l’estomac'. La douleur est localisée à l’épigastre et irradie vers le dos, reste constante, et s’aggrave lorsqu’il prend une inspiration profonde.</p><p>Il a déjà vomi cinq fois ce matin, sans sang, uniquement les aliments du petit-déjeuner. Il n’a pas eu de selles depuis, et rapporte une constipation. Il nie diarrhée, douleurs thoraciques ou difficultés respiratoires, mais dit que la douleur est insupportable. Pas de fièvre rapportée.</p><p>Dans ses antécédents, il a un reflux gastrique traité par oméprazole, qu’il a arrêté il y a une semaine faute de renouvellement d’ordonnance. Il se rappelle avoir eu un épisode similaire il y a environ six mois, qu’il avait calmé avec des médicaments contre la douleur donnés par sa sœur, sans diagnostic précis. Pas d’antécédents chirurgicaux, pas d’allergies connues. Pas d’antécédents familiaux significatifs.</p><p>Concernant ses habitudes de vie, il consomme de l’alcool quotidiennement, environ une bière le soir, et davantage le week-end. Hier soir, il a bu plusieurs bières et un shot. Il chique du tabac occasionnellement en sortie, mais ne fume pas. Pas de consommation de drogues.</p><p>En résumé, nous avons un jeune homme avec une douleur abdominale épigastrique brutale et intense, irradiant dans le dos, avec vomissements répétés, antécédent de reflux sous IPP arrêté récemment, et consommation alcoolique. Mon hypothèse principale est un ulcère gastro-duodénal compliqué, notamment perforé. Un diagnostic différentiel important est la pancréatite aiguë. D’autres hypothèses incluent une occlusion intestinale ou une gastrite sévère.</p><p>Étant donné la gravité des symptômes et l’absence d’examen possible par téléphone, la seule attitude est de l’orienter immédiatement aux urgences. Les examens complémentaires nécessaires incluent un bilan biologique (NFS, ionogramme, CRP, enzymes pancréatiques, bilan hépatique), une radiographie thorax/abdomen pour rechercher un pneumopéritoine, et un scanner abdominal injecté. La prise en charge dépendra du diagnostic : réanimation + chirurgie si perforation, traitement médical et surveillance si pancréatite.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : Andy Lightfoot, 22 ans, consulte par téléphone pour douleur abdominale brutale, épigastrique, EVA 10/10, irradiant au dos, avec vomissements.</p><p>B (Background) : ATCD reflux traité par oméprazole arrêté il y a 1 semaine, épisode similaire il y a 6 mois, consommation d’alcool hier soir.</p><p>A (Assessment) : Suspicion d’ulcère perforé ou pancréatite aiguë. DD : occlusion, gastrite sévère.</p><p>R (Recommendation) : Orientation immédiate aux urgences, bilan biologique et imagerie abdominale en urgence, PEC chirurgicale si perforation, médicale si pancréatite.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 Ulcère perforé : DRAME</h5>
+                <ul class="presentation-points">
+                    <li>D <span class="equals">=</span> Douleur brutale, coup de poignard</li>
+                    <li>R <span class="equals">=</span> Radiographie (pneumopéritoine)</li>
+                    <li>A <span class="equals">=</span> Abdomen en bois (péritonite)</li>
+                    <li>M <span class="equals">=</span> Mise à jeun, IPP, antibiotiques IV</li>
+                    <li>E <span class="equals">=</span> Exérèse ou patch chirurgical</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Pancréatite aiguë : 3A</h5>
+                <ul class="presentation-points">
+                    <li>Alcool</li>
+                    <li>Amylase/Lipase <span class="arrow-updown">↑</span></li>
+                    <li>Abdomen épigastrique + irradiation dorsale</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>⚠️ Pièges ECOS</h5>
+                <ul class="presentation-points">
+                    <li>Sous-estimer la douleur (<span class="highlight-important">urgence</span> vitale !)</li>
+                    <li>Oublier limites consultation téléphonique</li>
+                    <li>Donner un traitement à distance sans orientation</li>
+                    <li>Ne pas mentionner examens indispensables</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Ulcère gastro-duodénal perforé</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur brutale épigastrique</li>
+                                <li>Irradiation dorsale</li>
+                                <li>Vomissements répétés</li>
+                                <li>Arrêt IPP</li>
+                                <li>Consommation alcool</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de défense abdominale objectivable (consultation téléphonique)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Pancréatite aiguë</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur épigastrique irradiant au dos</li>
+                                <li>Alcool récent</li>
+                                <li>Vomissements</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de confirmation biologique par téléphone</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Occlusion intestinale</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Vomissements répétés</li>
+                                <li>Absence de selles</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Douleur épigastrique localisée plutôt que diffuse</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>NFS, CRP, ionogramme</li>
+                            <li>Lipase, amylase</li>
+                            <li>Bilan hépatique complet</li>
+                            <li>Radio thorax/abdomen debout</li>
+                            <li>Scanner abdomino-pelvien injecté</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Suspicion d’ulcère gastro-duodénal perforé ou pancréatite aiguë</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Hospitalisation en <span class="highlight-important">urgence</span></li>
+                                <li>Mise à jeun</li>
+                                <li>Voies veineuses larges</li>
+                                <li>Remplissage IV</li>
+                                <li>IPP IV</li>
+                                <li>Antibiothérapie large spectre</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-section">
+                            <strong>Specifique :</strong>
+                            <ul>
+                                <li>Chirurgie si perforation</li>
+                                <li>Traitement médical (repos pancréatique, hydratation, antalgiques, nutrition) si pancréatite</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Surveillance en soins intensifs si instabilité</li>
+                            <li>Évaluation et correction facteurs favorisants (alcool, AINS, IPP)</li>
+                            <li>Prévention secondaire (éradication H. pylori si ulcère, sevrage alcool/tabac)</li>
+                            <li>Suivi gastro-entérologie</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Instructions pour le patient standardisé - Consultation téléphonique - Andy Lightfoot</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Andy Lightfoot |             <strong>Âge :</strong> 22 ans<br>
+            <strong>Contexte :</strong> Étudiant avec douleurs abdominales sévères nécessitant orientation urgente
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Douleurs abdominales sévères</p>
+            <p><strong>Urgence ressentie :</strong> Appel téléphonique car douleur insupportable</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Début des symptômes :</strong>
+                <ul>
+                    <li>Il y a 4 heures environ</li>
+                    <li>Après petit-déjeuner normal</li>
+                    <li>Aggravation progressive en 1 heure</li>
+                    <li>Maintenant insupportable (10/10)</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Caractéristiques de la douleur :</strong>
+                <ul>
+                    <li>Localisation : haut du ventre (épigastrique)</li>
+                    <li>Irradiation : milieu du dos</li>
+                    <li>Qualité : comme poignardé avec couteau</li>
+                    <li>Intensité : 10/10, au moins un 10</li>
+                    <li>Évolution : empire constamment</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>Vomissements : 5 fois ce matin</li>
+                    <li>Contenu : œufs et crêpes du petit-déjeuner</li>
+                    <li>Pas de sang dans vomissements</li>
+                    <li>Constipation : pas allé aux toilettes</li>
+                    <li>Miction : peu, uriné un peu</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Déclencheurs :</strong>
+                <ul>
+                    <li>Petit-déjeuner : œufs, crêpes, lait, yaourt</li>
+                    <li>Rien d'inhabituel dans repas</li>
+                    <li>Habitude : gros petit-déjeuner 2x/semaine</li>
+                    <li>Impossible de manger après début douleur</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Ton de douleur :</strong>
+                <ul>
+                    <li>Voix tendue par douleur</li>
+                    <li>Interruptions par inconfort</li>
+                    <li>Demandes répétées d'aide</li>
+                    <li>Expressions dramatiques (entrailles vont exploser)</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Coopération durant l'entretien :</strong>
+                <ul>
+                    <li>Répond à toutes questions</li>
+                    <li>Quelques hésitations sur détails</li>
+                    <li>Focalisé sur obtenir aide</li>
+                    <li>Accepte recommandations médecin</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Réponses typiques :</strong>
+                <ul>
+                    <li>Sur douleur : 'Mon estomac me tue'</li>
+                    <li>Sur intensité : 'C'est un 10, au moins un 10'</li>
+                    <li>Sur urgence : 'Je n'aurais pas appelé si pas si grave'</li>
+                    <li>Sur transport : 'Oui, je pense' / 'Oui, je peux en avoir un'</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents médicaux</h4>
+            <div class="property-group">
+                <strong>Problèmes gastriques :</strong>
+                <ul>
+                    <li>Problèmes d'estomac antérieurs</li>
+                    <li>Épisode similaire il y a 6 mois</li>
+                    <li>Traité avec médicaments de sa sœur</li>
+                    <li>Résolution avec repos et analgésiques</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Traitement actuel :</strong>
+                <ul>
+                    <li>Oméprazole prescrit pour reflux acide</li>
+                    <li>Efficacité limitée</li>
+                    <li>Arrêté il y a 1 semaine (rupture stock)</li>
+                    <li>Pas renouvelé ordonnance</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Autres antécédents :</strong>
+                <ul>
+                    <li>Eczéma : pas de poussée depuis 1 an</li>
+                    <li>Jamais hospitalisé</li>
+                    <li>Pas d'interventions chirurgicales</li>
+                    <li>Antécédents familiaux non contributifs</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Habitudes de vie</h4>
+            <div class="property-group">
+                <strong>Alcool :</strong>
+                <ul>
+                    <li>1 bière/soir habituellement</li>
+                    <li>Plus les week-ends socialement</li>
+                    <li>Hier soir : quelques bières + 1 shot</li>
+                    <li>Pas d'alcoolisme (CAGE négatif)</li>
+                    <li>Nie relation alcool-douleur</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Tabac :</strong>
+                <ul>
+                    <li>Chique parfois en sortie</li>
+                    <li>Pas depuis un moment</li>
+                    <li>Ne fume pas cigarettes</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Alimentation :</strong>
+                <ul>
+                    <li>Étudiant : gros petit-déjeuner, saute déjeuner</li>
+                    <li>Habitude régulière</li>
+                    <li>Copine prépare petit-déjeuner 2x/semaine</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-note">
+    <div class="annexe-title">Note du patient - Consultation téléphonique</div>
+    <div class="annexe-note-content">
+        <div class="note-section">
+            <h4>Anamnèse</h4>
+            <p>Homme de 22 ans avec douleur abdominale sévère depuis 4 heures. La douleur a commencé après un repas copieux et s'est intensifiée en environ 1 heure jusqu'à une douleur de 10/10. Les symptômes associés incluent nausées/vomissements et douleur irradiant vers le milieu du dos. Une évaluation antérieure par son médecin traitant a abouti à une prescription d'oméprazole, que le patient a essayé puis a choisi de ne pas renouveler en raison de son inefficacité. Sans médicament depuis 1 semaine. Auto-traitement antérieur d'un épisode similaire avec un antalgique inconnu il y a 6 mois. Nie diarrhée, douleur thoracique, plaintes respiratoires (bien que l'inspiration profonde cause une aggravation de la douleur), vertiges, ou fièvre subjective. La douleur est déclarée comme étant grossièrement non liée à la consommation d'alcool bien que la dernière consommation soit la nuit avant le début de la douleur.</p>
+        </div>
+        <div class="note-section">
+            <h4>Examen physique</h4>
+            <p>Pas d'examen physique.</p>
+        </div>
+        <div class="note-section">
+            <h4>Diagnostic différentiel</h4>
+            <ul>
+                <li>Maladie ulcéreuse peptique</li>
+                <li>Gastrite aiguë</li>
+                <li>Pancréatite aiguë</li>
+                <li>Maladie inflammatoire de l'intestin (maladie de Crohn)</li>
+                <li>Lithiase biliaire (cholécystite, cholédocholithiase)</li>
+            </ul>
+        </div>
+        <div class="note-section">
+            <h4>Bilan diagnostique</h4>
+            <ul>
+                <li>NFS avec formule leucocytaire</li>
+                <li>Radiographie thoracique, debout</li>
+                <li>TDM abdominale</li>
+                <li>Bilan hépatique incluant : ASAT/ALAT, bilirubine (fractionnée), amylase/lipase, phosphatases alcalines</li>
+                <li>Bilan métabolique de base incluant Ca</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 57, examen: 2, management: 27, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 12, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 1, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 6, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMBOSS-15 - Douleur abdominale chronique - Garçon 6 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AMBOSS-15 - Douleur abdominale chronique - Garçon 6 ans</h1>
+            <p style="margin: 5px 0;">📍 Consultation téléphonique</p>
+            <p style="margin: 5px 0;">👤 Leo Morris, garçon de 6 ans, présenté par son père pour douleurs abdominales persistantes</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/48</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Motif principal <span class="patient-response">[Mon fils dit qu'il a mal au ventre chaque matin, et puis il dit qu'il ne veut pas aller à l'école à cause de ça. C'est devenu une vraie épreuve de le faire sortir de la maison et l'amener à l'arrêt de bus le matin]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Motif principal" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de la douleur abdominale <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[Il ne peut pas vraiment me montrer où - il dit juste que tout son ventre fait mal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Intensité (échelle 0-10) <span class="patient-response">[Il n'est pas là maintenant, donc je ne peux pas lui demander. Si je devais deviner, je dirais environ 5 parce que si je le distrais, il semble pouvoir l'oublier pendant quelques minutes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Qualité <span class="patient-response">[Ça semble être une douleur sourde]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Il l'a de façon intermittente depuis environ 8 mois maintenant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Événements précipitants <span class="patient-response">[Eh bien, ma femme et moi avons divorcé il y a 2 ans, et elle a finalement déménagé à peu près au moment où ça a commencé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Symptômes associés à la consommation de certains aliments <span class="patient-response">[Non, je n'ai pas pu relier son mal de ventre à un type particulier de nourriture]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Progression/constant/intermittent <span class="patient-response">[Ça a commencé avec juste quelques épisodes au printemps dernier. Puis c'est parti pendant les vacances d'été, mais c'est revenu en septembre. Depuis, il ne se passe pas une semaine sans au moins une journée difficile. Mais il n'a mal que le matin d'après ce que je peux voir, et le reste de la journée il va bien]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Épisodes antérieurs <span class="patient-response">[Pas avant le printemps dernier]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[Pas que je sache]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-8" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs améliorants <span class="patient-response">[Rien ne semble l'influencer du tout. C'est vraiment frustrant pour moi en tant que père, d'essayer de comprendre comment l'aider]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-9" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs aggravants <span class="patient-response">[Eh bien, il ne l'a pas les week-ends, donc je suppose que les matins d'école empirent les choses]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-10" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Symptômes associés - Souillures <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Présence <span class="patient-response">[C'est vraiment étrange, mais je remarque qu'il souille ses sous-vêtements quelques fois par semaine aussi, presque comme s'il avait oublié d'aller aux toilettes ou y était arrivé trop tard. Ça sent mauvais, et j'ai peur que les autres enfants le remarquent et qu'il se fasse harceler ou perde des amis]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence <span class="patient-response">[Cette semaine, c'est arrivé 3 jours ! Et c'est comme ça depuis environ 3 semaines maintenant. Avant ça, ça n'arrivait qu'environ une fois par mois. Ça a commencé à peu près en même temps que le mal de ventre]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Diarrhée <span class="patient-response">[Eh bien, ses selles ont toujours été plus liquides que solides, je dirais, mais il ne va qu'une fois par jour]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Constipation <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Couleur <span class="patient-response">[Jaune clair. Et ça sent vraiment mauvais aussi]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sang <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Recherche de symptômes spécifiques pédiatriques <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Fièvre <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vomissements <span class="patient-response">[Au printemps dernier, il a eu environ 3 jours où il se sentait mal à l'estomac. Il avait de la fièvre et se sentait vraiment mal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Éruption/changements cutanés <span class="patient-response">[En fait, il me semble terriblement pâle, mais bon, c'est l'hiver]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pleurs/irritabilité <span class="patient-response">[Juste ces pleurnicheries quand il monte les escaliers et doit marcher plus de quelques pâtés de maisons. Ce n'est plus un petit enfant, mais il se plaint comme un bambin quand on se promène en ville]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Problèmes urinaires/énurésie <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Problèmes de sommeil <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Activité (enjoué) <span class="patient-response">[Eh bien, il s'est senti vraiment fatigué dernièrement, maintenant que vous le mentionnez. En montant les escaliers vers notre appartement, il a commencé à pleurer quelques fois et voulait une pause. Il ne faisait jamais ça avant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Comment le problème affecte l'enfant <span class="patient-response">[Il semble plus irritable maintenant. Je ne me souviens pas qu'il était comme ça avant que tous ces symptômes commencent]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-7" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Comment le problème affecte le parent <span class="patient-response">[Eh bien, je me sens frustré à ce sujet. Ma femme a déménagé, donc je suis parent seul, et l'amener à l'école à temps pour que j'arrive au bureau est devenu vraiment difficile]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-8" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Punition pour les symptômes <span class="patient-response">[Non, mais je me suis mis en colère à ce sujet et je l'ai grondé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-9" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Récompense pour les symptômes <span class="patient-response">[Eh bien, je le laisse rester à la maison parfois parce qu'il semble vraiment bouleversé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-10" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Antécédents médicaux et chirurgicaux <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Antécédents médicaux <span class="patient-response">[Aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Antécédents chirurgicaux <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hospitalisations antérieures <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Histoire prénatale <span class="patient-response">[Ma femme a eu une grossesse et un accouchement normaux à l'hôpital]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Allergies et médicaments <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Contacts malades <span class="patient-response">[Les poux et la varicelle circulent à l'école en ce moment]</span> <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="2" data-criteria="Contacts malades" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Antécédents familiaux <span class="patient-response">[J'ai une allergie aux arachides]</span> <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="2" data-criteria="Antécédents familiaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Vaccinations <span class="patient-response">[Elles sont à jour]</span> <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="2" data-criteria="Vaccinations" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Croissance et développement <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Croissance et développement <span class="patient-response">[Tout a été normal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-0" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Garderie/école <span class="patient-response">[Il va à l'école depuis l'automne, quand il a commencé la première année]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-1" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Problèmes à l'école/notes <span class="patient-response">[Il semble heureux et ses résultats ont été bons jusqu'à présent]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-2" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Habitudes alimentaires <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Habitudes alimentaires <span class="patient-response">[Il mange de tout. Sa nourriture préférée est la pizza]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-0" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Appétit <span class="patient-response">[Il a été excellent]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-1" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dernier contrôle <span class="patient-response">[Nous étions chez le médecin pour un contrôle avant qu'il commence l'école, et tout allait bien]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-2" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/2</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Non disponible dans les cas téléphoniques <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="Non disponible dans les cas téléphoniques" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/17</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Hypothèses diagnostiques <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">2 points si au moins 2 diagnostics pertinents mentionnés, 1 point si 1 diagnostic</div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Hypothèses diagnostiques" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Causes organiques probables</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Maladie cœliaque</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur abdominale persistante depuis 8 mois<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Stéatorrhée (selles jaune clair, malodorantes)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pâleur suggérant anémie ferriprive<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue et intolérance à l'effort<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Irritabilité (malabsorption affectant bien-être)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Encoprésie secondaire possible (troubles digestifs)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Malabsorption de fer typique de maladie cœliaque</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Anticorps anti-transglutaminase IgA + IgA totales</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Trouble anxieux de séparation</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début coïncidant avec départ de la mère<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes uniquement les matins d'école<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Absence de symptômes les week-ends<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Père permet absences (renforcement)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Croissance/développement normaux<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Encoprésie peut être psychologique<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Stéatorrhée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pâleur et fatigue suggèrent cause organique</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Évaluation pédopsychiatrique après bilan organique</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Autres causes à considérer</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Allergie alimentaire (entérite allergique)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR : ATCD familiaux d'allergie (père)<br><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de lien avec aliments spécifiques</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Panel IgE allergies pédiatriques</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Mucoviscidose</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR : Stéatorrhée, malabsorption<br><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Croissance normale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'infections respiratoires</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Test de la sueur</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Insuffisance pancréatique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR : Stéatorrhée<br><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Croissance normale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Bon appétit</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Élastase fécale</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Autres troubles anxieux</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Anxiété généralisée, anxiété sociale à explorer</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Évaluation psychologique</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens complémentaires de première intention <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Examen physique <span class="patient-response">[Toujours noter l'examen physique comme partie du bilan dans un cas téléphonique - à faire lors de la consultation en personne]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Anticorps anti-transglutaminase tissulaire IgA (tTG) <span class="patient-response">[le gold standard pour diagnostiquer la maladie cœliaque ; aussi utilisé pour le suivi post-diagnostic et régime sans gluten]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">IgA quantitatives <span class="patient-response">[La déficience en IgA est relativement fréquente (environ 3% des patients) et peut entraîner des résultats tTG faussement négatifs. Chez les patients avec IgA quantitativement faibles, les IgG anti-peptides de gliadine déamidée (DGP) peuvent être utilisées pour tester la maladie cœliaque au lieu des tTG]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens biologiques <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">FSC, VGM, TCMH <span class="patient-response">[Une hémoglobine basse est un critère d'anémie. Une anémie hypochrome microcytaire suggérerait une anémie ferriprive]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Panel IgE allergies pédiatriques <span class="patient-response">[Exclure d'autres allergènes alimentaires (malgré l'absence d'association des symptômes avec la consommation de certains aliments) est important dans ce cas, car il y a des antécédents familiaux d'allergie alimentaire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Communication avec le parent <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Explications au parent des impressions diagnostiques préliminaires</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Explication du plan de prise en charge</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Utilisation d'un langage non médical et clarification des termes médicaux</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation de l'accord du parent avec le plan diagnostique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche des préoccupations et questions du parent</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-4" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Soutien et conseils parentaux <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Réaction appropriée au défi concernant la frustration parentale</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Conseils pour rester calme lors des épisodes</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Éviter punitions et récompenses liées aux symptômes</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Importance du suivi médical</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rassurer sur la démarche diagnostique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div>        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Si maladie cœliaque confirmée</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Régime strict sans gluten à vie<br />
+            <span style="margin-left: 10px;">•</span> Consultation diététicienne spécialisée</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Thérapie cognitivo-comportementale</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Techniques de relaxation adaptées à l'âge<br />
+            <span style="margin-left: 10px;">•</span> Travail avec l'école<br />
+            <span style="margin-left: 10px;">•</span> Soutien parental</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Défi : Culpabilité parentale</h4>
+                    <div class="cloture-content">[Je me sens mal parce que parfois je perds mon sang-froid avec lui. Je suis juste tellement frustré parce qu'on dirait qu'il n'agit vraiment pas selon son âge en ce moment]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse type du candidat</h4>
+                    <div class="cloture-content cloture-content-green">M. Morris, je peux comprendre votre frustration. Les symptômes de votre fils durent depuis assez longtemps maintenant, et rien de ce que vous faites ne semble aider, ce qui vous met en tant que parent dans une position difficile et même effrayante. Vous avez fait ce qu'il fallait en m'appelant. Vous pouvez le soutenir maintenant en restant calme quand les douleurs au ventre et les accidents surviennent. Je recommanderais aussi de l'amener pour quelques tests afin que nous puissions rechercher une cause physiologique à ses symptômes comme une intolérance alimentaire. Après avoir reçu les résultats des tests, nous pourrons discuter des mesures à prendre pour l'aider à aller mieux. Avez-vous d'autres questions ?</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/87</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 🌾 Maladie cœliaque – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes digestifs</h5>
+<ul class="resume-subsection-points">
+<li>Diarrhée chronique, parfois stéatorrhée</li>
+<li>Ballonnements, douleurs abdominales</li>
+<li>Nausées, vomissements</li>
+<li>Perte d’appétit, perte de poids</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Manifestations extra-digestives</h5>
+<ul class="resume-subsection-points">
+<li>Fatigue, irritabilité, dépression</li>
+<li>Anémie ferriprive</li>
+<li>Troubles osseux (ostéoporose, hypocalcémie)</li>
+<li>Neuropathie périphérique (paresthésies, ataxie)</li>
+<li>Dermatite herpétiforme</li>
+<li>Retard de croissance ou puberté chez l’enfant</li>
+<li>Infertilité ou fausses couches à répétition</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Facteurs de risque et associations</h5>
+<ul class="resume-subsection-points">
+<li>Antécédents familiaux de maladie cœliaque</li>
+<li>Autres maladies auto-immunes (thyroïdite, diabète de type 1)</li>
+<li>Syndromes génétiques : Turner, Down</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Points à rechercher</h5>
+<ul class="resume-subsection-points">
+<li>Signes de malnutrition (IMC, fonte musculaire)</li>
+<li>Signes carentiels : pâleur, glossite, troubles neurologiques</li>
+<li>Douleurs abdominales à la palpation</li>
+<li>Éruption cutanée (dermatite herpétiforme)</li>
+<li>Retard staturo-pondéral chez l’enfant</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Biologie</h5>
+<ul class="resume-subsection-points">
+<li>Anticorps anti-transglutaminase IgA (tTG-IgA)</li>
+<li>IgA totales (dépister déficit en IgA)</li>
+<li>Anticorps anti-endomysium IgA (EMA)</li>
+<li>Carences : fer, B12, folates, calcium, vitamine D</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Confirmation par endoscopie</h5>
+<ul class="resume-subsection-points">
+<li>Biopsies duodénales : atrophie villositaire, hyperplasie cryptique</li>
+<li>Endoscopie indiquée avant tout régime sans gluten</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Autres examens</h5>
+<ul class="resume-subsection-points">
+<li>Évaluation de la densité osseuse (ostéodensitométrie)</li>
+<li>Bilan hépatique (hépatopathies associées)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement diététique</h5>
+<ul class="resume-subsection-points">
+<li>Régime strict sans gluten à vie (exclusion : blé, orge, seigle, épeautre)</li>
+<li>Aliments autorisés : riz, maïs, pommes de terre, soja, millet</li>
+<li>Réintroduction des produits laitiers après 6 mois si intolérance secondaire au lactose</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Soutien nutritionnel</h5>
+<ul class="resume-subsection-points">
+<li>Supplémentation en cas de carences (fer, B12, folates, calcium, vit. D)</li>
+<li>Suivi de la croissance chez l’enfant</li>
+<li>Surveillance nutritionnelle et osseuse (ostéoporose)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Éducation et suivi</h5>
+<ul class="resume-subsection-points">
+<li>Consultation diététicien</li>
+<li>Support psychologique et groupes de soutien</li>
+<li>Éviter même les traces de gluten (alimentation, médicaments)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Diarrhée chronique + carences <span class="equals">=</span> penser à maladie cœliaque</li>
+<li class="resume-bullet">Demander systématiquement les anticorps tTG-IgA + IgA totales</li>
+<li class="resume-bullet">Biopsies duodénales nécessaires avant de débuter le régime</li>
+<li class="resume-bullet highlight">Traitement <span class="equals">=</span> régime sans gluten à vie</li>
+<li class="resume-bullet">Surveillance des carences et du risque d’ostéoporose</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser</h5>
+<ul class="resume-subsection-points">
+<li>Diarrhée chronique, stéatorrhée ?</li>
+<li>Perte de poids, anorexie, fatigue ?</li>
+<li>Manifestations extra-digestives : anémie, ostéoporose, neuropathie, dermatite herpétiforme ?</li>
+<li>ATCD familiaux de maladie cœliaque ou autres maladies auto-immunes ?</li>
+<li>Alimentation actuelle (gluten) ?</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens à faire</h5>
+<ul class="resume-subsection-points">
+<li>Constantes vitales, état nutritionnel (IMC, perte de poids)</li>
+<li>Recherche signes carentiels (pâleur, glossite, anomalies neuro)</li>
+<li>Examen cutané (dermatite herpétiforme)</li>
+<li>Biologie : anticorps tTG-IgA + IgA totales, bilan carentiel</li>
+<li>Endoscopie avec biopsies duodénales</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Ne pas débuter de régime avant confirmation histologique</li>
+<li>Régime strict sans gluten à vie après confirmation</li>
+<li>Surveillance nutritionnelle, biologique et osseuse régulière</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations de l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>Anticorps anti-tTG IgA : 85 U/mL (N < 20)</li>
+                <li>IgA totales : Normales</li>
+                <li>FSC : Hb 9.5 g/dL, VGM 68 fL (anémie microcytaire)</li>
+                <li>Ferritine : 8 ng/mL (carence martiale)</li>
+                <li>Panel allergies : Négatif</li>
+                <li>Si biopsie duodénale : Atrophie villositaire Marsh 3b</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Maladie cœliaque = cause fréquente douleur abdominale chronique enfant</li>
+                <li>Stéatorrhée + anémie = malabsorption jusqu'à preuve contraire</li>
+                <li>Toujours doser IgA totales avec anti-tTG (déficit IgA = faux négatifs)</li>
+                <li>Régime sans gluten strict = seul traitement</li>
+                <li>Aspect psychosocial important mais ne pas manquer cause organique</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Se focaliser uniquement sur aspect psychologique</li>
+                <li>Ne pas reconnaître stéatorrhée</li>
+                <li>Oublier de doser IgA totales</li>
+                <li>Ne pas proposer examen physique ultérieur</li>
+                <li>Minimiser impact sur famille</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique concernant la vignette</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Diagnostic le plus probable</h4>
+            <p>Maladie cœliaque avec malabsorption et anémie ferriprive</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Maladie cœliaque</h4>
+            <p>Entéropathie auto-immune au gluten :</p>
+            <ul>
+                <li>Prévalence : 1% population, pic 6-24 mois et 40-50 ans</li>
+                <li>Génétique : HLA-DQ2 (95%) ou DQ8 (5%)</li>
+                <li>Pathophysiologie : gluten → inflammation → atrophie villositaire</li>
+                <li>Formes : classique (malabsorption), atypique, silencieuse</li>
+                <li>Associations : diabète type 1, thyroïdite, trisomie 21</li>
+                <li>Complications : lymphome T intestinal si non traité</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Présentation clinique pédiatrique</h4>
+            <p>Manifestations variables selon âge :</p>
+            <ul>
+                <li>Classique : diarrhée chronique, stéatorrhée, distension abdominale</li>
+                <li>Retard croissance : poids puis taille</li>
+                <li>Anémie ferriprive : pâleur, fatigue, irritabilité</li>
+                <li>Manifestations extra-intestinales : dermatite herpétiforme</li>
+                <li>Troubles comportement : irritabilité, apathie</li>
+                <li>Symptômes atypiques : constipation, douleurs abdominales isolées</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Diagnostic de la maladie cœliaque</h4>
+            <p>Approche sérologique puis histologique :</p>
+            <ul>
+                <li>1er niveau : Anti-tTG IgA + IgA totales</li>
+                <li>Si déficit IgA : Anti-tTG IgG ou anti-DGP IgG</li>
+                <li>Anti-endomysium : haute spécificité, plus cher</li>
+                <li>Biopsie duodénale : gold standard, classification Marsh</li>
+                <li>Critères ESPGHAN : possibilité diagnostic sans biopsie si tTG > 10× normale</li>
+                <li>HLA-DQ2/DQ8 : valeur prédictive négative excellente</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Prise en charge de la maladie cœliaque</h4>
+            <p>Régime sans gluten strict à vie :</p>
+            <ul>
+                <li>Éviction totale : blé, seigle, orge, (avoine contaminée)</li>
+                <li>Éducation famille : lecture étiquettes, contamination croisée</li>
+                <li>Diététicienne spécialisée indispensable</li>
+                <li>Supplémentation initiale : fer, folates, vitamines</li>
+                <li>Suivi : tTG à 6 mois, 12 mois puis annuel</li>
+                <li>Normalisation : muqueuse 6-24 mois, croissance rattrapage</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Diagnostic différentiel psychosocial</h4>
+            <p>Trouble anxieux de séparation :</p>
+            <ul>
+                <li>Prévalence : 4% enfants, pic 7-9 ans</li>
+                <li>Critères : anxiété excessive séparation × 4 semaines</li>
+                <li>Symptômes somatiques fréquents : douleurs abdominales, céphalées</li>
+                <li>Facteurs risque : tempérament anxieux, surprotection parentale</li>
+                <li>Déclencheurs : divorce, déménagement, décès</li>
+                <li>Traitement : TCC, désensibilisation progressive</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Approche globale douleur abdominale chronique</h4>
+            <p>Algorithme diagnostique pédiatrique :</p>
+            <ul>
+                <li>Définition : > 3 épisodes en 3 mois affectant fonctionnement</li>
+                <li>Organique 10% : maladie cœliaque, MICI, parasitose</li>
+                <li>Fonctionnel 90% : critères Rome IV</li>
+                <li>Drapeaux rouges : perte poids, sang, fièvre, réveil nocturne</li>
+                <li>Bilan initial : FSC, VS, CRP, tTG, calprotectine fécale</li>
+                <li>Approche biopsychosociale toujours nécessaire</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Régime sans gluten : Éviction blé, seigle, orge, malt, avoine non certifiée</li>
+                <li>Supplémentation fer : 3-6 mg/kg/j fer élément si anémie</li>
+                <li>Acide folique : 1 mg/j × 3 mois si carence</li>
+                <li>Vitamine D : 800-1000 UI/j si carence</li>
+                <li>Calcium : 500-1000 mg/j selon âge si apports insuffisants</li>
+                <li>Probiotiques : Souches spécifiques peuvent aider transition</li>
+                <li>Anxiolytiques : Éviter, privilégier approche psychothérapeutique</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>Anti-transglutaminase IgA : Sensibilité 95%, spécificité 95%</li>
+                <li>IgA sériques totales : Exclure déficit IgA (3% maladie cœliaque)</li>
+                <li>Anti-endomysium IgA : Spécificité proche 100%, plus coûteux</li>
+                <li>HLA-DQ2/DQ8 : VPN > 99%, utile cas douteux</li>
+                <li>Biopsie duodénale : 4-6 prélèvements, classification Marsh</li>
+                <li>Bilan malabsorption : Fer, B12, folates, vitamines liposolubles</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Douleur abdominale chronique (enfant, suspicion maladie cœliaque)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, motif de consultation, contexte psychosocial</li>
+                <li>Caractériser la douleur <span class="arrow">→</span> localisation, intensité, évolution, cyclicité (ex. matinale, scolaire)</li>
+                <li>Symptômes digestifs associés <span class="arrow">→</span> diarrhée, stéatorrhée, encoprésie, sang</li>
+                <li>Symptômes extra-digestifs <span class="arrow">→</span> fatigue, pâleur, retard croissance, irritabilité</li>
+                <li>ATCD médicaux et chirurgicaux, croissance/développement</li>
+                <li>Antécédents familiaux (allergies, auto-immunes)</li>
+                <li>Habitudes alimentaires, vaccination, scolarité</li>
+                <li>Examen clinique <span class="arrow">→</span> poids, taille, IMC, abdomen, signes carentiels</li>
+                <li>Résumé + hypothèse principale + DD (cœliaque, anxiété, allergies, mucoviscidose…)</li>
+                <li>Examens complémentaires <span class="arrow">→</span> sérologie tTG-IgA + IgA totales, FSC, ferritine, ± biopsies</li>
+                <li>Prise en charge <span class="arrow">→</span> régime sans gluten si confirmé, soutien parental, TCC si anxiété</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide : PAIN</div>
+    <ul class="mnemo-items">
+        <li>P = Paleur + fatigue (anémie ferriprive)</li>
+        <li>A = Abdominal pain (douleurs chroniques, stéatorrhée)</li>
+        <li>I = Irritabilité + impact scolaire</li>
+        <li>N = No gluten (traitement si confirmé)</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de Léo Morris, un garçon de 6 ans, amené en consultation téléphonique par son père, pour des douleurs abdominales persistantes depuis environ 8 mois.</p><p>Son père rapporte que Léo se plaint quasiment chaque matin de douleurs diffuses dans tout le ventre, avec une intensité modérée qu’il estime à 5 sur 10. Ces douleurs apparaissent surtout les jours d’école, alors que le week-end il n’a pas de symptômes. Elles semblent aussi s’améliorer quand l’enfant est distrait. Le père ajoute qu’il a remarqué des selles liquides, jaune clair et très malodorantes, environ une fois par jour, et depuis trois semaines des souillures de sous-vêtements plusieurs fois par semaine. Il n’y a pas de sang dans les selles. Léo paraît aussi plus fatigué, plus irritable et son père le trouve pâle. Il dit qu’il se plaint d’essoufflement et de fatigue inhabituelle dans les escaliers.</p><p>Il n’y a pas de fièvre, pas de vomissements récents, pas d’éruption cutanée. Son appétit reste bon, il mange varié avec une préférence pour la pizza. Son développement et sa croissance ont été normaux jusqu’à présent. Ses vaccinations sont à jour.</p><p>Pour ses antécédents, il n’a pas eu de maladie chronique ni de chirurgie. Il n’a pas d’allergies connues et ne prend aucun médicament. Sur le plan familial, son père a une allergie aux arachides. Dans son contexte psychosocial, ses parents sont divorcés depuis deux ans, et sa mère a déménagé peu avant le début des symptômes. Depuis, son père gère seul la scolarité et décrit beaucoup de difficultés le matin pour l’envoyer à l’école.</p><p>En résumé, il s’agit d’un garçon de 6 ans, avec douleurs abdominales chroniques matinales, stéatorrhée, encoprésie récente, fatigue, pâleur et contexte psychosocial compliqué. Mon hypothèse principale est une maladie cœliaque avec malabsorption et anémie ferriprive. Les diagnostics différentiels incluent un trouble anxieux de séparation, une allergie alimentaire, une mucoviscidose ou une insuffisance pancréatique.</p><p>Comme examens complémentaires, je demanderais un examen clinique complet en présentiel avec mesures de croissance, une NFS et ferritine, des anticorps anti-transglutaminase IgA avec dosage des IgA totales, et si nécessaire une biopsie duodénale pour confirmation. Un panel allergologique ou un test de la sueur pourraient être discutés selon le bilan initial.</p><p>En termes de prise en charge, je proposerais de rassurer le père, d’éviter toute punition liée aux symptômes, d’instaurer un suivi médical rapproché et d’expliquer que si le diagnostic de maladie cœliaque est confirmé, le traitement repose sur un régime strict sans gluten à vie, associé à un suivi diététique et nutritionnel.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : Léo Morris, 6 ans, présente depuis 8 mois des douleurs abdominales matinales avec encoprésie et fatigue.</p><p>B (Background) : Croissance normale jusque-là, pas d’ATCD, contexte psychosocial marqué par départ de la mère. Selles liquides jaune clair, malodorantes, pâleur et irritabilité.</p><p>A (Assessment) : Suspicion maladie cœliaque avec anémie ferriprive. DD : anxiété de séparation, allergies alimentaires, mucoviscidose.</p><p>R (Recommendation) : Examen clinique, NFS + ferritine, anticorps anti-tTG IgA avec IgA totales, endoscopie avec biopsies si nécessaire, soutien parental et orientation diététique si cœliaque confirmé.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 Maladie cœliaque = 3A</h5>
+                <ul class="presentation-points">
+                    <li>Anémie ferriprive</li>
+                    <li>Abdomen douloureux</li>
+                    <li>Atrophie villositaire (biopsie)</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Gluten = BSA</h5>
+                <ul class="presentation-points">
+                    <li>Blé</li>
+                    <li>Seigle</li>
+                    <li>Orge (⚠️ avoine si contamination)</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>⚠️ Drapeaux rouges pédiatriques</h5>
+                <ul class="presentation-points">
+                    <li>Perte de poids ou cassure de croissance</li>
+                    <li>Selles graisseuses ou sanglantes</li>
+                    <li>Fièvre persistante</li>
+                    <li>Douleurs nocturnes</li>
+                    <li>Fatigue inhabituelle</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Maladie cœliaque</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur abdominale chronique</li>
+                                <li>Selles jaune clair malodorantes (stéatorrhée)</li>
+                                <li>Pâleur et fatigue <span class="arrow">→</span> anémie ferriprive</li>
+                                <li>Perte de tolérance à l’effort</li>
+                                <li>Encoprésie secondaire</li>
+                                <li>ATCD familiaux allergiques</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Croissance encore normale (mais risque de cassure à venir)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Trouble anxieux de séparation</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Début après départ de la mère</li>
+                                <li>Symptômes matinaux liés à l’école</li>
+                                <li>Absence de symptômes le week-end</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Présence de stéatorrhée et d’anémie <span class="arrow">→</span> pas expliqué par anxiété seule</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Allergie alimentaire</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>ATCD familial allergie</li>
+                                <li>Diarrhée chronique</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de lien clair avec aliments spécifiques</li>
+                                <li>Appétit conservé</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q4</span>
+                        <span class="q-text">Mucoviscidose</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Stéatorrhée</li>
+                                <li>Fatigue</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas d’infections respiratoires</li>
+                                <li>Croissance normale</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Examen clinique complet (poids, taille, IMC, abdomen, TR)</li>
+                            <li>NFS, ferritine</li>
+                            <li>Anticorps anti-transglutaminase IgA + IgA totales</li>
+                            <li>Biopsie duodénale si sérologie positive</li>
+                            <li>± Panel IgE, ± test de la sueur selon contexte</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Maladie cœliaque avec malabsorption et anémie ferriprive probable</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Régime strict sans gluten à vie</li>
+                                <li>Suivi diététique spécialisé</li>
+                                <li>Supplémentation en fer et vitamines selon bilan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Contrôle sérologique tTG-IgA à 6 mois, 12 mois puis annuel</li>
+                            <li>Surveillance croissance et développement</li>
+                            <li>Éducation parentale sur lecture des étiquettes et risques de contamination</li>
+                            <li>Support psychologique si anxiété associée</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour le parent standardisé</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Père de Leo Morris |             <strong>Âge :</strong> Père d'un garçon de 6 ans<br>
+            <strong>Contexte :</strong> Père divorcé consultant par téléphone pour douleurs abdominales chroniques de son fils
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Mon fils dit qu'il a mal au ventre chaque matin, et puis il dit qu'il ne veut pas aller à l'école à cause de ça.</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> C'est devenu une vraie épreuve de le faire sortir de la maison et l'amener à l'arrêt de bus le matin.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Consignes</h4>
+            <ul>
+                <li>Vous êtes frustré par le problème de votre fils et le fait que rien de ce que vous avez fait jusqu'à présent n'a aidé.</li>
+                <li>Vous n'êtes pas au courant de la signification des termes médicaux (ex: anticorps anti-transglutaminase) et demandez des clarifications si l'examinateur les utilise.</li>
+                <li>Défi : Quand l'examinateur a fini de vous poser toutes ses questions, dire 'Je me sens mal parce que parfois je perds mon sang-froid avec lui. Je suis juste tellement frustré parce qu'on dirait qu'il n'agit vraiment pas selon son âge en ce moment.'</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Symptôme principal :</strong>
+                <ul>
+                    <li>Douleurs abdominales matinales depuis 8 mois</li>
+                    <li>Refus d'aller à l'école</li>
+                    <li>Absence de localisation précise</li>
+                    <li>Intensité modérée (5/10)</li>
+                    <li>Amélioration avec distraction</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>Encoprésie 2-3 fois/semaine</li>
+                    <li>Selles jaune clair malodorantes</li>
+                    <li>Consistance liquide des selles</li>
+                    <li>Pâleur notée</li>
+                    <li>Fatigue et pleurnicheries à l'effort</li>
+                    <li>Irritabilité accrue</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Ton frustré mais concerné</li>
+                    <li>Mentionner difficultés de parent seul</li>
+                    <li>Exprimer inquiétude pour enfant</li>
+                    <li>Demander clarifications termes médicaux</li>
+                    <li>Révéler culpabilité à la fin</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant le status :</strong>
+                <ul>
+                    <li>Non applicable (consultation téléphonique)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 48, examen: 2, management: 17, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 11, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 1, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 5, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

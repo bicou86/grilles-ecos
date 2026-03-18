@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE-18 - Ictère néonatal - Garçon de 5 jours - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE-18 - Ictère néonatal - Garçon de 5 jours</h1>
+            <p style="margin: 5px 0;">📍 Consultation téléphonique au cabinet</p>
+            <p style="margin: 5px 0;">👤 La mère de David Whitestone, un garçon de 5 jours, appelle le cabinet en se plaignant que son enfant a la peau et les yeux jaunes</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/47</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Motif principal <span class="patient-response">[Mon bébé a la peau et les yeux jaunes]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Motif principal" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de l'ictère <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Je l'ai remarqué hier]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Progression <span class="patient-response">[Cela ne s'aggrave pas, mais je suis toujours inquiète]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[C'est principalement visible sur son visage et ses mains]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Âge de l'enfant <span class="patient-response">[Cinq jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. État général du nouveau-né <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Activité <span class="patient-response">[Oui, il est joueur et actif. Il pleure de temps en temps]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Éveil et réactivité <span class="patient-response">[Oui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tremblements/convulsions <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Alimentation <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Type d'alimentation <span class="patient-response">[Allaitement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Début allaitement <span class="patient-response">[A commencé peu après la naissance]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence <span class="patient-response">[Toutes les 4 à 5 heures]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Qualité de la tétée <span class="patient-response">[Oui, il tète bien]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Transit et mictions <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence des selles <span class="patient-response">[Il a 2 à 3 selles par jour]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Couleur des selles <span class="patient-response">[Marron]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sang dans les selles <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence urinaire <span class="patient-response">[Toutes les 3 à 4 heures]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nombre de couches mouillées <span class="patient-response">[Environ 7 à 8 couches par jour]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-4" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Symptômes associés <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Vomissements <span class="patient-response">[Aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Distension abdominale <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fièvre <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Infection respiratoire <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Respiration rapide <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-4" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Bouche sèche <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-5" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Contacts malades <span class="patient-response">[Pas à ma connaissance]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-6" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Groupes sanguins <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Groupe mère <span class="patient-response">[Je suis B Rh positif]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Groupe père <span class="patient-response">[Mon mari est A Rh positif]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Groupe bébé <span class="patient-response">[Mon bébé est aussi B Rh positif]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Histoire obstétricale <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Autres grossesses <span class="patient-response">[J'ai une fille de 3 ans et je n'ai pas eu de fausses couches. Elle est en bonne santé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Type d'accouchement <span class="patient-response">[C'était un accouchement vaginal sans complications]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Complications grossesse <span class="patient-response">[Oui, j'ai eu une culture positive pour certaines bactéries et j'ai reçu des antibiotiques avant l'accouchement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Terme <span class="patient-response">[À terme]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-3" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Première selle du bébé <span class="patient-response">[Peu après la naissance]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-4" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sortie hôpital <span class="patient-response">[Sans incident]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-5" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Habitudes pendant grossesse <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Tabagisme <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-0" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Alcool <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-1" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Drogues récréatives <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-2" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Antécédents médicaux du bébé <span class="patient-response">[Aucun]</span> <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="2" data-criteria="Antécédents médicaux du bébé" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Antécédents chirurgicaux du bébé <span class="patient-response">[Aucun]</span> <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a11" value="2" data-criteria="Antécédents chirurgicaux du bébé" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a11" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Médicaments actuels <span class="patient-response">[Aucun]</span> <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="2" data-criteria="Médicaments actuels" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+<div class="criteria-row" id="criteria-a13">
+    <div>
+        <div class="criteria-text">13. Antécédents familiaux <span class="patient-response">[Ma fille a également eu une jaunisse après la première semaine de sa naissance. Elle a été hospitalisée]</span> <button class="comment-button" onclick="toggleComment('a13')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a13">
+            <textarea class="comment-textarea" id="comment-a13" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a13'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="2" data-criteria="Antécédents familiaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a13">0</div>
+</div>
+<div class="criteria-row" id="criteria-a14">
+    <div>
+        <div class="criteria-text">14. Allergies médicamenteuses <span class="patient-response">[Aucune. Il n'a pris aucun médicament]</span> <button class="comment-button" onclick="toggleComment('a14')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a14">
+            <textarea class="comment-textarea" id="comment-a14" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a14'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="2" data-criteria="Allergies médicamenteuses" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a14">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/2</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Examen clinique non réalisé (consultation téléphonique) <span class="patient-response">[Consultation téléphonique uniquement]</span> <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="Examen clinique non réalisé (consultation téléphonique)" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/27</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Hypothèses diagnostiques <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">2 points si au moins 2 diagnostics pertinents mentionnés, 1 point si 1 diagnostic</div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Hypothèses diagnostiques" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Causes physiologiques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Ictère physiologique du nouveau-né</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge 5 jours (pic J3-J7)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Nouveau-né à terme<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Bon état général<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Alimentation correcte<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Selles marron normales<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Diurèse normale<br>Physiopathologie:<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Hémolyse physiologique accrue<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Immaturité hépatique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Déficit transitoire glucuronosyltransférase</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Bilirubinémie totale et conjuguée</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes hémolytiques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Incompatibilité ABO</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Mère B+, Père A+, Enfant B+<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Risque théorique d'anticorps anti-A<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ictère précoce (< 7 jours)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  ATCD familial (sœur hospitalisée)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Enfant même groupe que mère<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de signes d'anémie décrits</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Test de Coombs direct, FSC</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Déficit en G6PD</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Garçon (lié à l'X)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ictère néonatal<br>&nbsp;&nbsp;&nbsp;&nbsp;•  ATCD familial possible<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de facteur déclenchant<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'origine ethnique à risque mentionnée</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Dosage G6PD</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes infectieuses</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Sepsis néonatal précoce</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Culture maternelle positive<br>&nbsp;&nbsp;&nbsp;&nbsp;•  ATB avant accouchement<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge < 7 jours<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ictère comme signe<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Enfant actif et joueur<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de fièvre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Alimentation normale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de détresse</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Hémoculture, CRP, NFS</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Infection urinaire</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Cause fréquente ictère prolongé<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Garçon (plus à risque)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de fièvre<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Diurèse normale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Bon état général</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ ECBU</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes liées à l'allaitement</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Ictère au lait maternel précoce</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Allaitement maternel exclusif<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début J4-J5<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Bonne prise alimentaire<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Selles fréquentes<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Diurèse normale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de déshydratation</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Poids, évaluation allaitement</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes congénitales</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Hypothyroïdie congénitale</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ictère prolongé possible<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Nouveau-né<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Enfant actif<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de léthargie<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Alimentation normale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début précoce (J4)</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ TSH néonatale (dépistage)</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Recommandations immédiates <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Consultation en présentiel URGENTE aujourd'hui</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation clinique complète du nouveau-né</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Mesure transcutanée de la bilirubine si disponible</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Prélèvement bilirubine totale et conjuguée</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation de l'allaitement</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens complémentaires urgents <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Bilirubinémie totale et conjuguée</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">FSC avec réticulocytes</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Groupe sanguin mère et enfant</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test de Coombs direct</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">CRP si suspicion infection</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Prise en charge selon seuils <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Photothérapie</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Seuils selon nomogramme de Bhutani<br />
+            <span style="margin-left: 10px;">•</span> À J5 terme : > 15-17 mg/dL généralement<br />
+            <span style="margin-left: 10px;">•</span> Photothérapie intensive si proche seuil exsanguino<br />
+            <span style="margin-left: 10px;">•</span> Surveillance bilirubine /4-6h sous photothérapie<br />
+            <span style="margin-left: 10px;">•</span> Protection oculaire obligatoire<br />
+            <span style="margin-left: 10px;">•</span> Maintien bonne hydratation</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Mesures générales</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Poursuite allaitement maternel<br />
+            <span style="margin-left: 10px;">•</span> Augmentation fréquence tétées (8-12/jour)<br />
+            <span style="margin-left: 10px;">•</span> Supplémentation si perte > 10% poids<br />
+            <span style="margin-left: 10px;">•</span> Exposition lumière indirecte à domicile<br />
+            <span style="margin-left: 10px;">•</span> Éviter exposition solaire directe</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Critères d'hospitalisation</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Bilirubine > seuil photothérapie<br />
+            <span style="margin-left: 10px;">•</span> Signes de mauvaise tolérance<br />
+            <span style="margin-left: 10px;">•</span> Difficultés alimentaires<br />
+            <span style="margin-left: 10px;">•</span> Déshydratation<br />
+            <span style="margin-left: 10px;">•</span> Suspicion cause pathologique</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="2" data-criteria="Prise en charge selon seuils" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Surveillance et suivi <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Contrôle bilirubine selon évolution</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pic attendu J5-J7 puis décroissance</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rebond possible à l'arrêt photothérapie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Surveillance poids et hydratation</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Suivi rapproché jusqu'à normalisation</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Information et réassurance parentale <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Explication ictère physiologique fréquent</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Risques si non traité (encéphalopathie)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Efficacité excellente photothérapie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Importance consultation aujourd'hui</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Soutien allaitement maternel</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-4" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Signes d'alarme à surveiller</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-5" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+<div class="criteria-row" id="criteria-m7">
+    <div>
+        <div class="criteria-text">7. Signes d'alarme à communiquer <button class="comment-button" onclick="toggleComment('m7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Red Flags - Urgences néonatales</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Léthargie ou somnolence excessive</div>
+                <div class="redflags-description">→ Encéphalopathie bilirubinique = Urgence absolue</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Refus alimentaire ou tétées inefficaces</div>
+                <div class="redflags-description">→ Déshydratation/hypoglycémie = Hospitalisation</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. Cri aigu ou geignard</div>
+                <div class="redflags-description">→ Signe neurologique = Évaluation urgente</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Extension ictère (tronc, membres)</div>
+                <div class="redflags-description">→ Progression = Réévaluation bilirubine</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">5. Selles décolorées ou urines foncées</div>
+                <div class="redflags-description">→ Cholestase = Bilan hépatique urgent</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m7">
+            <textarea class="comment-textarea" id="comment-m7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="2" data-criteria="Signes d'alarme à communiquer" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m7">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Clôture type</h4>
+                    <div class="cloture-content cloture-content-green">Madame Whitestone, au vu des informations que vous m'avez fournies, il est fort probable qu'il s'agisse d'une jaunisse physiologique. Cette condition atteint généralement son pic entre le 4e et le 5e jour après la naissance et disparaît progressivement en 1 à 2 semaines. Cependant, l'allaitement, certaines autres conditions pathologiques et certains défauts de naissance peuvent également causer une jaunisse chez les nourrissons, et ceux-ci doivent être exclus. Je vous suggère de venir avec votre enfant au centre médical pour une évaluation plus approfondie. J'espère que vous avez compris ce que nous avons discuté aujourd'hui. Avez-vous des préoccupations ou des questions ?</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Questions difficiles à poser</h4>
+                    <div class="cloture-content">[Est-ce que cette jaunisse peut nuire à mon bébé ? Pourquoi est-il comme ça ?]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse type du candidat</h4>
+                    <div class="cloture-content cloture-content-green">Les nouveau-nés développent souvent une légère jaunisse physiologique après la naissance. Ce type de jaunisse physiologique se résout généralement et ne représente que rarement une menace pour le bébé. Cependant, si votre nouveau-né a un type de jaunisse plus sévère, ses niveaux de pigments jaunes, connus sous le nom de niveaux de bilirubine, peuvent devenir trop élevés et endommager son cerveau. Pour déterminer la gravité de la maladie de votre enfant, je dois l'examiner au cabinet et effectuer des analyses de sang. Après l'avoir vu, je devrais être en mesure de vous donner une évaluation plus précise de son état.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/96</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 🍼 Ictère physiologique du nouveau-né – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Contexte typique</h5>
+<ul class="resume-subsection-points">
+<li>Nourrisson né à terme, en bon état général</li>
+<li>Début de l’ictère entre 24h et 72h de vie</li>
+<li>Allaitement ou biberon bien toléré</li>
+<li>Pas de facteurs de risque majeurs d’hyperbilirubinémie sévère</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Absence de signes d’appel</h5>
+<ul class="resume-subsection-points">
+<li class="with-arrow">Pas d’ictère dans les premières 24h (<span class="arrow">→</span> suspecter une cause pathologique si présent)</li>
+<li>Pas de fièvre, léthargie, ou signes neurologiques</li>
+<li>Pas d’antécédent de maladie hépatique ou hémolytique familiale</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Évaluation de l’ictère</h5>
+<ul class="resume-subsection-points">
+<li>Coloration jaune cutanée céphalocaudale</li>
+<li>Conjonctives ictériques</li>
+<li>État général conservé (tonus, succion, éveil)</li>
+<li>Poids et courbe de croissance normaux</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Éléments rassurants</h5>
+<ul class="resume-subsection-points">
+<li>Ictère isolé sans autres signes de pathologie</li>
+<li>Absence de splénomégalie, hépatomégalie</li>
+<li>Nombre normal de selles/urines</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Bilan de base si doute</h5>
+<ul class="resume-subsection-points">
+<li>Dosage de la bilirubine totale (± fractionnée si atypique)</li>
+<li>Évaluation selon l’âge postnatal sur les courbes de Bhutani (AAP)</li>
+<li>Dosage transcutané en première intention (puis sanguin si > 75e percentile)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Non systématique si typique</h5>
+<ul class="resume-subsection-points">
+<li>Pas de bilan sanguin nécessaire si forme typique et nouveau-né à bas risque</li>
+<li>Surveillance clinique simple possible</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Mesures générales</h5>
+<ul class="resume-subsection-points">
+<li>Allaitement fréquent (≥ 8 fois/24h)</li>
+<li>Surveillance du poids et des apports</li>
+<li>Information et rassurance parentale</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Photothérapie si seuil dépassé</h5>
+<ul class="resume-subsection-points">
+<li>Initiée selon courbes AAP (âge en heures et facteurs de risque)</li>
+<li>Surveillance biologique régulière</li>
+<li>Protection oculaire, hydratation</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Hospitalisation si sévère</h5>
+<ul class="resume-subsection-points">
+<li>Si taux proche du seuil d’échange transfusionnel</li>
+<li>Si signes neurologiques évocateurs d’atteinte cérébrale</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet">Début entre J2 et J3, bébé à terme, en bon état général</li>
+<li class="resume-bullet">Pas d’ictère < 24h : sinon suspecter ictère pathologique</li>
+<li class="resume-bullet">Surveillance clinique + bilirubine selon courbes</li>
+<li class="resume-bullet">Favoriser l’alimentation pour accélérer l’élimination de la bilirubine</li>
+<li class="resume-bullet">Photothérapie uniquement si seuil atteint</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations de l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>Si l'étudiant-e demande des résultats :</li>
+                <li>• Bilirubine totale : 13 mg/dL (sous seuil photothérapie)</li>
+                <li>• Bilirubine conjuguée : 0.5 mg/dL</li>
+                <li>• Test de Coombs : négatif</li>
+                <li>• FSC : Hb 16 g/dL, réticulocytes 3%</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Ictère à J5 = évaluation urgente obligatoire</li>
+                <li>Nomogramme de Bhutani pour décision thérapeutique</li>
+                <li>Photothérapie efficace si indiquée</li>
+                <li>Allaitement maternel à encourager</li>
+                <li>Risque ictère nucléaire si > 25 mg/dL</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Rassurer sans voir l'enfant</li>
+                <li>Ne pas demander consultation urgente</li>
+                <li>Arrêter allaitement maternel</li>
+                <li>Minimiser ATCD familial</li>
+                <li>Oublier risque infection</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique concernant la vignette</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Diagnostic</h4>
+            <p>Ictère néonatal à J5 très probablement physiologique mais nécessitant exclusion causes pathologiques (incompatibilité ABO, infection, ictère au lait maternel)</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Épidémiologie ictère néonatal</h4>
+            <p>Problème fréquent en néonatologie :</p>
+            <ul>
+                <li>60% nouveau-nés à terme visiblement ictériques</li>
+                <li>80% prématurés</li>
+                <li>Pic physiologique J3-J5 à terme</li>
+                <li>Plus tardif chez prématuré (J5-J7)</li>
+                <li>Résolution spontanée 1-2 semaines</li>
+                <li>< 5% nécessitent photothérapie</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Physiopathologie ictère physiologique</h4>
+            <p>Mécanismes multiples :</p>
+            <ul>
+                <li>Production accrue : durée vie GR courte (90j)</li>
+                <li>Conjugaison diminuée : immaturité UGT1A1</li>
+                <li>Circulation entéro-hépatique augmentée</li>
+                <li>Captation hépatique réduite</li>
+                <li>Polyglobulie physiologique à la naissance</li>
+                <li>Résorption hémorragies (bosse sérosanguine)</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Classification temporelle</h4>
+            <p>Selon âge d'apparition :</p>
+            <ul>
+                <li>< 24h : TOUJOURS pathologique</li>
+                <li>J2-J7 : physiologique possible</li>
+                <li>> J14 : ictère prolongé, bilan étiologique</li>
+                <li>Prématuré : seuils et durée différents</li>
+                <li>Terme ethnique : seuils plus bas si asiatique</li>
+                <li>Allaitement : peut prolonger jusqu'à 12 semaines</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Évaluation clinique</h4>
+            <p>Progression céphalo-caudale :</p>
+            <ul>
+                <li>Zone 1 (tête/cou) : 5 mg/dL</li>
+                <li>Zone 2 (tronc sup) : 10 mg/dL</li>
+                <li>Zone 3 (tronc inf) : 15 mg/dL</li>
+                <li>Zone 4 (membres) : 18 mg/dL</li>
+                <li>Zone 5 (paumes/plantes) : > 20 mg/dL</li>
+                <li>Peu fiable, mesure nécessaire</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Causes pathologiques précoces</h4>
+            <p>À exclure systématiquement :</p>
+            <ul>
+                <li>Hémolyse immune : ABO, Rh, sous-groupes</li>
+                <li>Hémolyse non-immune : G6PD, sphérocytose</li>
+                <li>Sepsis : GBS, E. coli, Listeria</li>
+                <li>Polycythémie : retard clampage, diabète maternel</li>
+                <li>Résorption : céphalhématome, ecchymoses</li>
+                <li>Génétique : Crigler-Najjar, Gilbert</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Ictère et allaitement</h4>
+            <p>Deux entités distinctes :</p>
+            <ul>
+                <li>Ictère précoce (J2-J4) : déshydratation relative</li>
+                <li>Ictère tardif (> J7) : facteur lait maternel</li>
+                <li>Mécanisme : β-glucuronidase, prégnanediol</li>
+                <li>Ne JAMAIS arrêter allaitement</li>
+                <li>Augmenter fréquence tétées</li>
+                <li>Supplémentation si perte > 10%</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Indications photothérapie</h4>
+            <p>Selon nomogramme Bhutani :</p>
+            <ul>
+                <li>Basé sur âge postnatal et facteurs risque</li>
+                <li>Nouveau-né à terme J5 : ~17-18 mg/dL</li>
+                <li>Prématuré : seuils plus bas</li>
+                <li>Facteurs risque : hémolyse, sepsis, G6PD</li>
+                <li>Photothérapie intensive si proche exsanguino</li>
+                <li>Efficacité : ↓ 1-2 mg/dL par 4-6h</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Complications neurologiques</h4>
+            <p>Encéphalopathie bilirubinique :</p>
+            <ul>
+                <li>Aiguë : léthargie, hypotonie, cri aigu</li>
+                <li>Chronique : ictère nucléaire (kernictère)</li>
+                <li>Seuil toxique : > 25-30 mg/dL</li>
+                <li>Plus bas si facteurs risque</li>
+                <li>Séquelles : surdité, athétose, retard</li>
+                <li>Prévention : respect seuils traitement</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Surveillance post-sortie</h4>
+            <p>Points clés suivi :</p>
+            <ul>
+                <li>Évaluation avant sortie maternité</li>
+                <li>Contrôle J3-J5 systématique</li>
+                <li>Plus rapproché si facteurs risque</li>
+                <li>Bilirubine transcutanée acceptable</li>
+                <li>Rebond post-photothérapie possible</li>
+                <li>Information parentale cruciale</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Messages clés</h4>
+            <ul>
+                <li>Ictère < 24h = toujours pathologique</li>
+                <li>Évaluation clinique urgente si ictère à J5</li>
+                <li>Mesure bilirubine obligatoire</li>
+                <li>Nomogramme pour décision thérapeutique</li>
+                <li>Ne jamais arrêter allaitement maternel</li>
+                <li>Photothérapie très efficace si indiquée</li>
+                <li>Surveillance étroite jusqu'à résolution</li>
+                <li>Information parentale sur signes alarme</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Photothérapie standard : 8-10 μW/cm²/nm</li>
+                <li>Photothérapie intensive : > 30 μW/cm²/nm</li>
+                <li>Distance lampes : 20-40 cm</li>
+                <li>Protection oculaire obligatoire</li>
+                <li>Exsanguino-transfusion si échec</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>Bilirubine totale et conjuguée obligatoire</li>
+                <li>Groupe sanguin + Coombs si hémolyse</li>
+                <li>FSC avec réticulocytes</li>
+                <li>CRP si suspicion infection</li>
+                <li>G6PD selon origine ethnique</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Ictère néonatal (David, 5 jours)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, motif, contexte familial</li>
+                <li>Caractériser l’ictère : début, progression, localisation</li>
+                <li>État général <span class="arrow">→</span> éveil, tonus, convulsions, succion</li>
+                <li>Alimentation <span class="arrow">→</span> allaitement, efficacité, fréquence tétées</li>
+                <li>Élimination <span class="arrow">→</span> urines, selles (fréquence, couleur)</li>
+                <li>Antécédents <span class="arrow">→</span> grossesse, accouchement, ATCD familiaux (ictère, hémolyse, maladies métaboliques)</li>
+                <li>Groupes sanguins mère/père/enfant</li>
+                <li>Examen clinique <span class="arrow">→</span> évaluation céphalocaudale, signes neurologiques, hydratation</li>
+                <li>Résumé + hypothèse principale + DD (physiologique, lait maternel, hémolyse, infection, hypothyroïdie)</li>
+                <li>Examens complémentaires <span class="arrow">→</span> bilirubine totale/conjuguée, FSC, Coombs, CRP</li>
+                <li>Prise en charge <span class="arrow">→</span> photothérapie si seuil, soutien allaitement, hospitalisation si besoin</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide : JAUNE</div>
+    <ul class="mnemo-items">
+        <li>J = Jour d’apparition (<24h toujours pathologique)</li>
+        <li>A = Allaitement (qualité/quantité)</li>
+        <li>U = Urines/selles (fréquence, couleur)</li>
+        <li>N = Nomogramme Bhutani</li>
+        <li>E = État général (tonus, éveil, convulsions)</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de David Whitestone, un petit garçon de 5 jours, dont la mère appelle car elle a remarqué que sa peau et ses yeux sont jaunes depuis hier. L’ictère est surtout visible au niveau du visage et des mains. La mère dit que la coloration ne semble pas s’aggraver depuis hier, mais elle reste inquiète.</p><p>David est actif et joueur, il pleure normalement et réagit bien aux stimulations. Il n’a pas présenté de tremblements ni de convulsions.</p><p>Il est nourri exclusivement au sein, avec des tétées toutes les 4 à 5 heures, et sa mère estime qu’il tète bien. Il a 2 à 3 selles marron par jour et mouille environ 7 à 8 couches en 24 heures. Pas de sang dans les selles, pas de vomissements, pas de fièvre, pas de détresse respiratoire. Il ne présente pas de signes de déshydratation.</p><p>Pour ses antécédents, la grossesse était menée à terme, avec un accouchement vaginal sans complications. La mère avait une culture positive pour certaines bactéries en fin de grossesse et a reçu des antibiotiques en intrapartum. Le nouveau-né a fait son méconium peu après la naissance et la sortie de maternité s’est faite sans problème. </p><p>Au niveau familial, il a une sœur de 3 ans qui avait aussi présenté un ictère néonatal nécessitant une hospitalisation. Le groupe sanguin de la mère est B Rh positif, le père est A Rh positif, et David est B Rh positif.</p><p>En résumé, il s’agit d’un nourrisson de 5 jours, à terme, en bon état général, nourri au sein efficacement, qui présente un ictère apparu à J4, non aggravé, avec un contexte familial d’ictère néonatal. Mon hypothèse principale est un ictère physiologique du nouveau-né. Les diagnostics différentiels incluent un ictère au lait maternel, une hémolyse (incompatibilité ABO, déficit en G6PD), une infection néonatale ou plus rarement une hypothyroïdie congénitale.</p><p>Comme examens complémentaires, je demanderais une bilirubine totale et conjuguée, une FSC avec réticulocytes, un groupage et un test de Coombs, et une CRP en cas de suspicion infectieuse. La décision thérapeutique repose sur le nomogramme de Bhutani.</p><p>En termes de prise en charge, je proposerais une consultation en urgence pour évaluation clinique, une surveillance rapprochée de la bilirubine et du poids, le maintien et l’optimisation de l’allaitement maternel, et la mise en place d’une photothérapie si les seuils sont atteints. L’hospitalisation serait indiquée en cas de bilirubine élevée ou de signes de mauvaise tolérance.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : David, nouveau-né de 5 jours, présente un ictère cutanéo-muqueux apparu hier.</p><p>B (Background) : À terme, accouchement normal, allaitement exclusif toutes les 4-5h, selles marron normales, 7-8 couches mouillées/24h. Antécédent familial d’ictère nécessitant hospitalisation.</p><p>A (Assessment) : Suspicion ictère physiologique. DD : ictère au lait maternel, incompatibilité ABO, déficit G6PD, infection néonatale.</p><p>R (Recommendation) : Consultation urgente pour évaluation clinique et dosage bilirubine, FSC, Coombs. Surveillance rapprochée. Photothérapie si seuil dépassé. Allaitement à poursuivre et renforcer.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 Rappel physiologique</h5>
+                <ul class="presentation-points">
+                    <li>Pic entre J3 et J5</li>
+                    <li>Résolution spontanée en <span class="highlight-range">1-2</span> semaines</li>
+                    <li>Due à immaturité hépatique + polyglobulie néonatale</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Photothérapie : '4P'</h5>
+                <ul class="presentation-points">
+                    <li>Précoce si seuil dépassé</li>
+                    <li>Puissance (intensité ≥ 30 μW/cm²/nm si intensive)</li>
+                    <li>Protection oculaire</li>
+                    <li>Poids/hydratation surveillés</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>⚠️ Red Flags</h5>
+                <ul class="presentation-points">
+                    <li>Ictère < 24h</li>
+                    <li>Fièvre, léthargie, convulsions</li>
+                    <li>Perte de poids > <span class="highlight-percent">10%</span></li>
+                    <li>Selles décolorées, urines foncées</li>
+                    <li>Extension rapide tronc/membres</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Ictère physiologique</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Âge J5 (pic physiologique)</li>
+                                <li>Bébé à terme, en bon état général</li>
+                                <li>Allaitement efficace</li>
+                                <li>Transit et diurèse normaux</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>ATCD familial d’ictère sévère (prudent)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Ictère au lait maternel</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Allaitement exclusif</li>
+                                <li>Âge J4-J5 typique</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Bonne prise alimentaire</li>
+                                <li>Transit normal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Incompatibilité ABO</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Mère B+, père A+, enfant B+ <span class="arrow">→</span> risque théorique anti-A</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Enfant même groupe que mère</li>
+                                <li>Pas d’anémie ou hémolyse cliniquement évidente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q4</span>
+                        <span class="q-text">Déficit G6PD</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Garçon, ictère néonatal</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de facteur déclenchant connu</li>
+                                <li>Pas d’origine ethnique à risque précisée</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q5</span>
+                        <span class="q-text">Infection néonatale</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>ATCD culture maternelle positive</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de fièvre</li>
+                                <li>Pas de léthargie</li>
+                                <li>Bon état général</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Bilirubine totale et conjuguée</li>
+                            <li>FSC avec réticulocytes</li>
+                            <li>Groupage et Coombs direct</li>
+                            <li>CRP si suspicion infection</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Ictère physiologique du nouveau-né</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Poursuite et optimisation allaitement</li>
+                                <li>Surveillance rapprochée bilirubine et poids</li>
+                                <li>Photothérapie si seuil dépassé</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Contrôle bilirubine selon courbes</li>
+                            <li>Surveillance clinique quotidienne</li>
+                            <li>Informer parents sur red flags</li>
+                            <li>Suivi pédiatrique jusqu’à résolution</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour la mère (patient simulé)</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Mère de David Whitestone |             <strong>Âge :</strong> Mère d'un nouveau-né de 5 jours<br>
+            <strong>Contexte :</strong> Mère inquiète appelant pour son bébé ictérique
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Mon bébé a la peau et les yeux jaunes.</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> Je suis inquiète mais je n'ai pas de moyen de transport.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Consignes</h4>
+            <ul>
+                <li>Montrer de l'inquiétude pour la santé de votre enfant.</li>
+                <li>Mentionner que vous préférez éviter de venir sauf si nécessaire (pas de transport).</li>
+                <li>Être rassurée par les explications mais rester vigilante.</li>
+                <li>Poser des questions sur les risques pour votre bébé.</li>
+                <li>Mentionner l'hospitalisation de votre fille aînée pour jaunisse.</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Ictere :</strong>
+                <ul>
+                    <li>Remarqué hier (J4)</li>
+                    <li>Visible visage et mains</li>
+                    <li>Pas d'aggravation</li>
+                    <li>Inquiétude maternelle</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>État général :</strong>
+                <ul>
+                    <li>Bébé actif et joueur</li>
+                    <li>Pleure normalement</li>
+                    <li>Éveillé et réactif</li>
+                    <li>Pas de convulsions</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Alimentation :</strong>
+                <ul>
+                    <li>Allaitement maternel exclusif</li>
+                    <li>Tète bien</li>
+                    <li>Toutes les 4-5 heures</li>
+                    <li>Commencé après naissance</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Elimination :</strong>
+                <ul>
+                    <li>2-3 selles/jour marron</li>
+                    <li>7-8 couches mouillées/jour</li>
+                    <li>Urines toutes les 3-4h</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant l'appel :</strong>
+                <ul>
+                    <li>Voix inquiète mais calme</li>
+                    <li>Questions sur la gravité</li>
+                    <li>Hésitation sur déplacement</li>
+                    <li>Soulagement si rassurant</li>
+                    <li>Prise de notes des conseils</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents</h4>
+            <div class="property-group">
+                <strong>Grossesse :</strong>
+                <ul>
+                    <li>Accouchement vaginal à terme</li>
+                    <li>Culture positive → antibiotiques</li>
+                    <li>Pas de complications majeures</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Familiaux :</strong>
+                <ul>
+                    <li>Fille 3 ans en bonne santé</li>
+                    <li>Hospitalisée pour jaunisse après 1 semaine</li>
+                    <li>Pas de fausses couches</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Groupes Sanguins :</strong>
+                <ul>
+                    <li>Mère : B Rh+</li>
+                    <li>Père : A Rh+</li>
+                    <li>Bébé : B Rh+</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 47, examen: 2, management: 27, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 14, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 1, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 7, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

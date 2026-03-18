@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESCOS-9 - Boiterie pédiatrique - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - RESCOS-9 - Boiterie pédiatrique</h1>
+            <p style="margin: 5px 0;">📍 Urgences, médecin assistant</p>
+            <p style="margin: 5px 0;">👤 Charlotte, 2 ans, amenée par sa mère Mme Borloz pour boiterie.</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">100/46 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">98 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">22/min</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">39.9°C</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (70%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/41</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Caractérisation de la boiterie <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[depuis quand ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Durée <span class="patient-response">[combien de temps ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évolution <span class="patient-response">[s'aggrave, stable, s'améliore ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[quelle jambe, quelle articulation ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les quatre = oui, trois = ±, aucun à deux = non</div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de la hanche <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Rougeur <span class="patient-response">[présente ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chaleur <span class="patient-response">[présente ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Œdèmes <span class="patient-response">[présents ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Perte de fonction <span class="patient-response">[limitation des mouvements ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les quatre = oui, trois = ±, aucun à deux = non</div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Atteinte d'une autre articulation <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Actuellement <span class="patient-response">[autres articulations touchées ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dans le passé <span class="patient-response">[antécédents articulaires ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les deux = oui, un = ±, aucun = non</div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Antécédents de traumatismes des membres inférieurs <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Récents <span class="patient-response">[trauma récent ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Anciens <span class="patient-response">[trauma anciens ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les deux = oui, un = ±, aucun = non</div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Caractérisation des douleurs <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Durée <span class="patient-response">[depuis quand ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[faible, modérée, forte ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réponse aux antalgiques <span class="patient-response">[efficacité des médicaments ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les trois = oui, deux = ±, aucun à un = non</div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Caractérisation de la fièvre <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Durée <span class="patient-response">[depuis quand ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[température maximale ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réponse au fébrifuges <span class="patient-response">[efficacité paracétamol/ibuprofène ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les trois = oui, deux = ±, aucun à un = non</div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Caractérisation de la rhinorrhée <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[depuis quand ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Couleur/aspect des sécrétions <span class="patient-response">[claires, jaunes, vertes ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Toux associée <span class="patient-response">[présente ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les trois = oui, deux = ±, aucun à un = non</div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Présence d'éruptions cutanées <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="2" data-criteria="Présence d'éruptions cutanées" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. État général <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Activités <span class="patient-response">[diminution des activités ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-0" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Apathie <span class="patient-response">[enfant plus calme que d'habitude ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-1" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Comportement <span class="patient-response">[changement de comportement ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-2" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les trois = oui, deux = ±, aucun à un = non</div>        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Antécédents similaires <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Chez la patiente <span class="patient-response">[déjà eu des épisodes similaires ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-0" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dans la famille <span class="patient-response">[cas similaires en famille ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-1" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les deux = oui, un = ±, aucun = non</div>        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Antécédents médicaux <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Maladies <span class="patient-response">[maladies connues ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-0" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chirurgies <span class="patient-response">[interventions chirurgicales ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-1" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hospitalisations <span class="patient-response">[hospitalisations antérieures ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-2" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[traitements actuels ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-3" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vaccins <span class="patient-response">[vaccinations à jour ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-4" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div></div><div class="scoring-rule">Les cinq = oui, quatre = ±, aucun à trois = non</div>        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Antécédents familiaux <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="2" data-criteria="Antécédents familiaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a12" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+<div class="criteria-row" id="criteria-a13">
+    <div>
+        <div class="criteria-text">13. Développement de l'enfant <button class="comment-button" onclick="toggleComment('a13')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Grossesse <span class="patient-response">[déroulement de la grossesse ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-0" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Événements néonataux <span class="patient-response">[problèmes à la naissance ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-1" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Croissance <span class="patient-response">[courbe de croissance normale ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-2" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Développement psycho-moteur <span class="patient-response">[acquisitions normales ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-3" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div></div><div class="scoring-rule">Au moins trois = oui, deux = ±, aucun à un = non</div>        <div class="criterion-comment-section" id="comment-section-a13">
+            <textarea class="comment-textarea" id="comment-a13" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a13'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a13">0</div>
+</div>
+<div class="criteria-row" id="criteria-a14">
+    <div>
+        <div class="criteria-text">14. Anamnèse en général - ciblée, fil conducteur <button class="comment-button" onclick="toggleComment('a14')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">Bien = oui, suffisant = ±, insuffisant = non</div>        <div class="criterion-comment-section" id="comment-section-a14">
+            <textarea class="comment-textarea" id="comment-a14" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a14'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="2" data-criteria="Anamnèse en général - ciblée, fil conducteur" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a14">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (30%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/15</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Diagnostic principal - arthrite septique de la hanche <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Diagnostic principal - arthrite septique de la hanche" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Diagnostic différentiel <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Ostéomyélite</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Synovite aiguë transitoire (rhume de hanche)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Maladie de Legg-Calvé-Perthes</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div><div class="scoring-rule">Au moins deux = oui, un = ±, aucun = non</div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Investigations complémentaires - bilan sanguin <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">FSC <span class="patient-response">[formule sanguine complète]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">CRP <span class="patient-response">[protéine C-réactive]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">VS <span class="patient-response">[vitesse de sédimentation]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hémoculture <span class="patient-response">[recherche bactérienne dans le sang]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div><div class="scoring-rule">Au moins trois = oui, deux = ±, aucun à un = non</div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Investigations complémentaires - imagerie <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Radiographie <span class="patient-response">[radiographie de la hanche]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Échographie <span class="patient-response">[échographie de la hanche]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div></div><div class="scoring-rule">Les deux = oui, un = ±, aucun = non</div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Prise en charge - propose une hospitalisation ou de référer la patiente en orthopédie <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="2" data-criteria="Prise en charge - propose une hospitalisation ou de référer la patiente en orthopédie" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Management en général <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">Bien = oui, suffisant = ±, insuffisant = non</div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="2" data-criteria="Management en général" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/56</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations pour l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>Évaluer la reconnaissance du tableau d'arthrite septique</li>
+                <li>Vérifier l'identification des signes de gravité</li>
+                <li>Observer la prise en compte de l'urgence orthopédique</li>
+                <li>Noter la qualité de l'anamnèse pédiatrique</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Urgence orthopédique (arthrite septique de hanche)</li>
+                <li>Début brutal avec fièvre élevée</li>
+                <li>Refus d'appui et douleur à la mobilisation</li>
+                <li>Âge à risque (< 5 ans)</li>
+                <li>Vaccins non à jour = facteur de risque</li>
+                <li>Nécessité d'hospitalisation immédiate</li>
+                <li>Drainage chirurgical urgent indiqué</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Banaliser en pensant à une simple synovite</li>
+                <li>Ne pas reconnaître l'urgence</li>
+                <li>Omettre le statut vaccinal</li>
+                <li>Ne pas proposer d'hospitalisation</li>
+                <li>Oublier les hémocultures</li>
+                <li>Ne pas évoquer le drainage chirurgical</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique sur l'arthrite septique pédiatrique</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Épidémiologie et agents pathogènes</h4>
+            <p>L'arthrite septique est une urgence orthopédique pédiatrique.</p>
+            <ul>
+                <li>Incidence : 5-12/100 000 enfants/an</li>
+                <li>Pic d'incidence : nourrissons et enfants < 5 ans</li>
+                <li>Staphylococcus aureus : agent le plus fréquent</li>
+                <li>Streptococcus pyogenes : 2e cause</li>
+                <li>Haemophilus influenzae si non vacciné</li>
+                <li>Hanche et genou : localisations préférentielles</li>
+                <li>Septicémie associée dans 30-40% des cas</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Physiopathologie</h4>
+            <p>Dissémination hématogène vers l'articulation avec destruction rapide.</p>
+            <ul>
+                <li>Bactériémie avec localisation articulaire</li>
+                <li>Vascularisation riche de la synoviale</li>
+                <li>Inflammation intense avec épanchement</li>
+                <li>Enzymes bactériennes détruisant le cartilage</li>
+                <li>Augmentation pression intra-articulaire</li>
+                <li>Ischémie et nécrose cartilagineuse</li>
+                <li>Séquelles irréversibles si retard > 48h</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Présentation clinique</h4>
+            <p>Tableau aigu avec fièvre et impotence fonctionnelle.</p>
+            <ul>
+                <li>Fièvre élevée (> 38.5°C) dans 80% des cas</li>
+                <li>Douleur intense à la mobilisation</li>
+                <li>Refus d'appui complet</li>
+                <li>Position antalgique (hanche fléchie)</li>
+                <li>Signes inflammatoires locaux variables</li>
+                <li>Altération de l'état général</li>
+                <li>Irritabilité chez le nourrisson</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Facteurs de risque</h4>
+            <p>Conditions prédisposant à l'arthrite septique.</p>
+            <ul>
+                <li>Âge < 5 ans (immaturité immunitaire)</li>
+                <li>Vaccinations incomplètes</li>
+                <li>Infection récente (ORL, cutanée)</li>
+                <li>Traumatisme articulaire récent</li>
+                <li>Immunosuppression</li>
+                <li>Maladie chronique</li>
+                <li>Malnutrition</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Diagnostic différentiel</h4>
+            <p>Autres causes de boiterie fébrile chez l'enfant.</p>
+            <ul>
+                <li>Ostéomyélite adjacente</li>
+                <li>Synovite aiguë transitoire</li>
+                <li>Maladie de Legg-Calvé-Perthes</li>
+                <li>Fracture (fatigue, pathologique)</li>
+                <li>Arthrite juvénile idiopathique</li>
+                <li>Tumeur osseuse primitive</li>
+                <li>Cellulite des tissus mous</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Examens complémentaires</h4>
+            <p>Bilan biologique et radiologique orienté.</p>
+            <ul>
+                <li>NFS : hyperleucocytose avec polynucléose</li>
+                <li>CRP élevée (> 20 mg/L)</li>
+                <li>VS accélérée</li>
+                <li>Hémocultures (positives 30-60%)</li>
+                <li>Radiographie : normale initialement</li>
+                <li>Échographie : épanchement intra-articulaire</li>
+                <li>Ponction articulaire diagnostique</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Prise en charge</h4>
+            <p>Urgence chirurgicale avec drainage et antibiothérapie.</p>
+            <ul>
+                <li>Hospitalisation immédiate</li>
+                <li>Drainage chirurgical urgent (< 6h)</li>
+                <li>Antibiothérapie IV empirique immédiate</li>
+                <li>Immobilisation temporaire</li>
+                <li>Kinésithérapie précoce</li>
+                <li>Surveillance clinique et biologique</li>
+                <li>Adaptation ATB selon antibiogramme</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Flucloxacilline IV : 200mg/kg/j en 4 prises</li>
+                <li>Céfuroxime IV : 150mg/kg/j en 3 prises</li>
+                <li>Clindamycine IV : 40mg/kg/j en 4 prises</li>
+                <li>Paracétamol : 15mg/kg/prise, max 60mg/kg/j</li>
+                <li>Immobilisation 48-72h post-drainage</li>
+                <li>Kinésithérapie dès J3-J5</li>
+                <li>ATB PO relais après 48h d'apyrexie</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>NFS avec formule leucocytaire</li>
+                <li>CRP, VS</li>
+                <li>Hémocultures × 2</li>
+                <li>Radiographie bassin face + hanche profil</li>
+                <li>Échographie de hanche</li>
+                <li>Ponction articulaire écho-guidée</li>
+                <li>Culture et antibiogramme liquide synovial</li>
+                <li>Scanner ou IRM si doute diagnostique</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour le/la patient(e) standardisé(e)</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Mme Borloz (mère de Charlotte) |             <strong>Âge :</strong> Mère d'une enfant de 2 ans<br>
+            <strong>Contexte :</strong> Mère inquiète amenant sa fille Charlotte aux urgences pour boiterie et fièvre
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Ma fille Charlotte boite depuis hier et elle a de la fièvre</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> Elle ne veut plus marcher normalement et elle pleure quand on la bouge</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Symptôme principal :</strong>
+                <ul>
+                    <li>Boiterie apparue brutalement hier</li>
+                    <li>Refus de poser le pied droit par terre</li>
+                    <li>Pleurs quand on manipule la jambe droite</li>
+                    <li>Préfère rester assise ou couchée</li>
+                    <li>Marche avec protection du membre inférieur droit</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>Fièvre depuis 24h (jusqu'à 39.9°C)</li>
+                    <li>Rhinorrhée claire depuis 3 jours</li>
+                    <li>Diminution de l'appétit</li>
+                    <li>Apathie et fatigue</li>
+                    <li>Irritabilité inhabituelle</li>
+                    <li>Dort mal depuis 2 nuits</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Évolution :</strong>
+                <ul>
+                    <li>Début brutal hier matin</li>
+                    <li>Aggravation progressive</li>
+                    <li>Fièvre qui monte malgré le paracétamol</li>
+                    <li>Boiterie de plus en plus marquée</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Tenir l'enfant dans les bras ou sur les genoux</li>
+                    <li>Montrer de l'inquiétude maternelle</li>
+                    <li>Décrire précisément le début brutal des symptômes</li>
+                    <li>Insister sur le changement de comportement de l'enfant</li>
+                    <li>Mentionner que l'enfant ne veut plus jouer</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Questions à poser :</strong>
+                <ul>
+                    <li>Est-ce que c'est grave docteur ?</li>
+                    <li>Pourquoi elle ne veut plus marcher ?</li>
+                    <li>Est-ce que ça va passer tout seul ?</li>
+                    <li>Faut-il l'hospitaliser ?</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse par systèmes</h4>
+            <div class="property-group">
+                <strong>Générale :</strong>
+                <ul>
+                    <li>Fièvre élevée</li>
+                    <li>Diminution de l'appétit</li>
+                    <li>Fatigue inhabuelle</li>
+                    <li>Perte d'intérêt pour les jeux</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Locomoteur :</strong>
+                <ul>
+                    <li>Boiterie membre inférieur droit</li>
+                    <li>Douleur à la mobilisation de la hanche droite</li>
+                    <li>Refus de porter le poids sur la jambe droite</li>
+                    <li>Aucune autre articulation touchée</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Respiratoire :</strong>
+                <ul>
+                    <li>Rhinorrhée claire</li>
+                    <li>Pas de toux</li>
+                    <li>Pas de difficultés respiratoires</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Habitudes</h4>
+            <p><strong>Alimentation :</strong> Allaitement + diversification alimentaire normale</p>
+            <p><strong>Activité physique :</strong> Marche depuis 15 mois, très active habituellement</p>
+            <p><strong>Sommeil :</strong> Dort mal depuis 2 nuits à cause de la douleur</p>
+            <p><strong>Médicaments :</strong> Paracétamol donné pour la fièvre</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Informations personnelles</h4>
+            <p><strong>Contexte familial :</strong> Famille avec un seul enfant</p>
+            <p><strong>Vaccination :</strong> Vaccins non à jour (parents réticents)</p>
+            <p><strong>Inquiétudes :</strong> Très inquiète de voir sa fille ne plus vouloir marcher</p>
+            <p><strong>État d'esprit :</strong> Anxieuse mais collaborative</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents familiaux</h4>
+            <p><strong>0 :</strong> Pas d'antécédents particuliers</p>
+            <p><strong>1 :</strong> Pas de maladie rhumatismale en famille</p>
+            <p><strong>2 :</strong> Parents en bonne santé</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Histoire Medicale</h4>
+            <ul>
+                <li>Grossesse et accouchement sans particularité</li>
+                <li>Développement psychomoteur normal</li>
+                <li>Marche acquise à 15 mois</li>
+                <li>Vaccins non à jour (parents réticents)</li>
+                <li>Pas d'hospitalisation antérieure</li>
+                <li>Pas de chirurgie</li>
+                <li>Aucune allergie connue</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Information A Donner</h4>
+            <p>Si demandé spécifiquement : Charlotte a été en contact avec d'autres enfants à la crèche où il y a eu quelques cas de rhume la semaine dernière.</p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+        // Déclaration des variables globales
+        window.audioContext = null;
+        
+        function updateScore(section, element) {
+            const value = element.value;
+            const name = element.name;
+            let pointValue;
+
+            if (section === "communication") {
+                const map = { A: 4, B: 3, C: 2, D: 1, E: 0 };
+                pointValue = map[value] || 0;
+                // Mettre à jour la classe de couleur pour communication
+                const criteriaRow = document.getElementById("criteria-" + name);
+                if (criteriaRow) {
+                    criteriaRow.classList.remove("score-a", "score-b", "score-c", "score-d", "score-e", "lacune-rouge", "lacune-orange", "lacune-verte");
+                    criteriaRow.classList.add("score-" + value.toLowerCase());
+                    // Ajouter les classes lacune pour communication
+                    if (value === "E" || value === "D") {
+                        criteriaRow.classList.add("lacune-rouge");
+                    } else if (value === "C") {
+                        criteriaRow.classList.add("lacune-orange");
+                    } else if (value === "A" || value === "B") {
+                        criteriaRow.classList.add("lacune-verte");
+                    }
+                }
+            } else {
+                pointValue = Number(value) || 0;
+                // Mettre à jour la classe de couleur pour autres critères
+                const criteriaRow = document.getElementById("criteria-" + name);
+                if (criteriaRow) {
+                    criteriaRow.classList.remove("score-0", "score-1", "score-2", "lacune-rouge", "lacune-orange", "lacune-verte");
+                    criteriaRow.classList.add("score-" + value);
+                    // Ajouter les classes lacune pour critères normaux
+                    if (pointValue === 0) {
+                        criteriaRow.classList.add("lacune-rouge");
+                    } else if (pointValue === 1) {
+                        criteriaRow.classList.add("lacune-orange");
+                    } else if (pointValue >= 2) {
+                        criteriaRow.classList.add("lacune-verte");
+                    }
+                }
+            }
+
+            const pointsElement = document.getElementById("points-" + name);
+            if (pointsElement) {
+                pointsElement.textContent = pointValue;
+            }
+
+            calculateScores();
+        }
+
+        function updateDetailScore(criterionId, prefix) {
+            let totalScore = 0;
+            const detailCheckboxes = document.querySelectorAll('input[id^="' + criterionId + '-detail-"]');
+            const maxDetailsScore = detailCheckboxes.length;
+            
+            detailCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    totalScore += Number(checkbox.value) || 0;
+                }
+            });
+            
+            const pointsElement = document.getElementById("points-" + criterionId);
+            if (pointsElement) {
+                pointsElement.textContent = totalScore;
+            }
+            
+            // Mettre à jour la classe de couleur en fonction du score et du max
+            const criteriaRow = document.getElementById("criteria-" + criterionId);
+            if (criteriaRow) {
+                criteriaRow.classList.remove("score-0", "score-1", "score-2", "score-3", "score-4", "score-5", "score-max", "lacune-rouge", "lacune-orange", "lacune-verte");
+                
+                // Déterminer la classe appropriée avec les seuils 1/3 et 2/3
+                const oneThird = maxDetailsScore / 3;
+                const twoThirds = (maxDetailsScore * 2) / 3;
+                
+                if (totalScore < oneThird) {
+                    criteriaRow.classList.add("score-0");
+                    criteriaRow.classList.add("lacune-rouge");
+                } else if (totalScore > twoThirds) {
+                    criteriaRow.classList.add("score-max");
+                    criteriaRow.classList.add("lacune-verte");
+                } else {
+                    // Score entre 1/3 et 2/3
+                    criteriaRow.classList.add("score-1");
+                    criteriaRow.classList.add("lacune-orange");
+                }
+            }
+            
+            calculateScores();
+        }
+
+        function calculateScores() {
+            const isNewFormat = true;
+            const missingItems = [];
+            let scores = {};
+            let maxScores = {};
+            let coef = {};
+            let sectionInfo = [];
+
+            // Configuration pour le nouveau format
+            scores["anamnese"] = 0;
+            maxScores["anamnese"] = 41;
+            coef["anamnese"] = 0.7;
+            sectionInfo.push({key: "anamnese", prefix: "a", count: 14, label: "Anamnèse"});
+            scores["management"] = 0;
+            maxScores["management"] = 15;
+            coef["management"] = 0.3;
+            sectionInfo.push({key: "management", prefix: "m", count: 6, label: "Management"});
+
+            // Calcul des scores pour chaque section
+            sectionInfo.forEach(section => {
+                let sectionScore = 0;
+                
+                if (section.isComm) {
+                    // Section communication spéciale
+                    for (let i = 1; i <= section.count; i++) {
+                        const radio = document.querySelector("input[name=\"" + section.prefix + i + "\"]:checked");
+                        if (radio) {
+                            const val = radio.value;
+                            const map = { A: 4, B: 3, C: 2, D: 1, E: 0 };
+                            sectionScore += map[val] || 0;
+                        } else {
+                            const criteria = document.querySelector("input[name=\"" + section.prefix + i + "\"][data-criteria]");
+                            if (criteria) missingItems.push(section.label + " : " + criteria.dataset.criteria);
+                        }
+                    }
+                } else {
+                    // Sections normales
+                    for (let i = 1; i <= section.count; i++) {
+                        const criterionId = section.prefix + i;
+                        // Vérifier si ce critère a des détails avec checkboxes
+                        const detailCheckboxes = document.querySelectorAll('input[id^="' + criterionId + '-detail-"]');
+                        
+                        if (detailCheckboxes.length > 0) {
+                            // Ce critère a des détails, on calcule le score basé sur les détails
+                            let detailScore = 0;
+                            let hasCheckedDetail = false;
+                            detailCheckboxes.forEach(checkbox => {
+                                if (checkbox.checked) {
+                                    detailScore += Number(checkbox.value) || 0;
+                                    hasCheckedDetail = true;
+                                }
+                            });
+                            sectionScore += detailScore;
+                            
+                            if (!hasCheckedDetail) {
+                                const criteria = document.querySelector("input[name=\"" + criterionId + "\"][data-criteria]");
+                                if (criteria) {
+                                    missingItems.push(section.label + " : " + criteria.dataset.criteria);
+                                } else {
+                                    // Rechercher le texte du critère directement
+                                    const criteriaText = document.querySelector("#criteria-" + criterionId + " .criteria-text");
+                                    if (criteriaText) {
+                                        missingItems.push(section.label + " : " + criteriaText.textContent.split(". ")[1].split(" [")[0]);
+                                    }
+                                }
+                            }
+                        } else {
+                            // Critère normal sans détails
+                            const radio = document.querySelector("input[name=\"" + criterionId + "\"]:checked");
+                            if (radio) {
+                                sectionScore += Number(radio.value) || 0;
+                            } else {
+                                const criteria = document.querySelector("input[name=\"" + criterionId + "\"][data-criteria]");
+                                if (criteria) missingItems.push(section.label + " : " + criteria.dataset.criteria);
+                            }
+                        }
+                    }
+                }
+                
+                scores[section.key] = sectionScore;
+                const scoreId = section.scoreId || section.key + "Score";
+                const scoreElement = document.getElementById(scoreId);
+                if (scoreElement) scoreElement.textContent = sectionScore;
+            });
+
+            // Calcul des pourcentages par section
+            let percentages = {};
+            let globalPercentage = 0;
+            let isStarted = false;
+            
+            sectionInfo.forEach(section => {
+                const score = scores[section.key];
+                const max = maxScores[section.key];
+                const percentage = max > 0 ? (score / max) * 100 : 0;
+                percentages[section.key] = percentage;
+                globalPercentage += percentage * coef[section.key];
+                if (score > 0) isStarted = true;
+            });
+
+            const totalScoreText = isStarted ? Math.round(globalPercentage) : 0;
+            document.getElementById("totalScore").textContent = totalScoreText + "%";
+
+            // Mise à jour des pourcentages affichés
+            sectionInfo.forEach(section => {
+                const percentageElement = document.getElementById(section.key + "-percentage");
+                if (percentageElement) {
+                    percentageElement.textContent = Math.round(percentages[section.key]);
+                }
+            });
+
+            const gradeElement = document.getElementById("globalGrade");
+            const totalScoreElement = document.getElementById("totalScore");
+            const scoreBody = totalScoreElement ? totalScoreElement.closest(".total-body") : null;
+            const gradeBody = gradeElement ? gradeElement.closest(".total-body") : null;
+            const sections = sectionInfo.map(s => s.key);
+
+            const allClasses = ["note-a", "note-b", "note-c", "note-d", "note-e", "note-neutral"];
+
+            function getClass(p) {
+                if (p === 0) return "note-neutral";
+                if (p >= 90) return "note-a";
+                if (p >= 80) return "note-b";
+                if (p >= 70) return "note-c";
+                if (p >= 60) return "note-d";
+                return "note-e";
+            }
+
+            const gradeClass = getClass(globalPercentage);
+            const gradeLabel = isStarted ? gradeClass.split("-")[1].toUpperCase() : "A-E";
+            if (gradeElement) gradeElement.textContent = gradeLabel;
+
+            const pourcentBody = document.querySelector(".total-pourcent-body");
+
+            [gradeElement, scoreBody, gradeBody, pourcentBody].forEach(el => {
+                if (el) {
+                    el.classList.remove(...allClasses);
+                    el.classList.add(gradeClass);
+                }
+            });
+
+            sections.forEach(id => {
+                const percentageElement = document.getElementById(id + "-percentage");
+                if (percentageElement) {
+                    const value = parseInt(percentageElement.textContent);
+                    const section = percentageElement.closest(".total-pourcent-section");
+                    const sectionClass = getClass(value);
+                    if (section) {
+                        section.classList.remove(...allClasses);
+                        section.classList.add(sectionClass);
+                    }
+                }
+            });
+
+            // Appliquer les couleurs aux sections principales
+            sectionInfo.forEach(section => {
+                const percentage = percentages[section.key];
+                const allSections = document.querySelectorAll(".section");
+                allSections.forEach(sectionEl => {
+                    const headerText = sectionEl.querySelector(".section-header")?.textContent || "";
+                    if (headerText.includes(section.label)) {
+                        const sectionClass = getClass(percentage);
+                        sectionEl.classList.remove(...allClasses);
+                        sectionEl.classList.add(sectionClass);
+                    }
+                });
+            });
+
+            if (missingItems.length > 0) {
+                document.getElementById("missingItems").style.display = "block";
+                document.getElementById("missingList").innerHTML = missingItems.map(item =>
+                    "<div class=\"missing-item\">• " + item + "</div>"
+                ).join("");
+            } else {
+                document.getElementById("missingItems").style.display = "none";
+            }
+        }
+        // MINUTEUR ECOS 13 MINUTES
+        window.timerInterval = null;
+        window.currentSeconds = 13 * 60;
+        window.isRunning = false;
+        window.hasStarted = false;
+        window.hasFinished = false;
+        window.hasStoppedManually = false;
+
+        window.currentMode = 'revision';
+
+        function colorPatientResponses() {
+            // Version simplifiée inspirée du générateur v1
+            const elements = document.querySelectorAll('.criteria-text, .sub-criteria, .redflags-text, .dd-item, .therapy-section, .detail-text, .cloture-content');
+            elements.forEach(element => {
+                const text = element.innerHTML;
+                // Colorer uniquement les réponses patient en bleu (pas les examens complémentaires)
+                let coloredText = text.replace(/\[([^\]]+)\]/g, '<span style="color: rgb(44, 90, 160); font-weight: 500;">[$1]</span>');
+                element.innerHTML = coloredText;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            switchMode('revision');
+            calculateScores();
+            colorPatientResponses();
+            // Appeler une deuxième fois après un court délai pour s'assurer que tout est chargé
+            setTimeout(function() {
+                colorPatientResponses();
+            }, 100);
+            // Appel supplémentaire après un délai plus long pour garantir que tout est chargé
+            setTimeout(function() {
+                colorPatientResponses();
+            }, 500);
+            // Auto-resize tous les textareas au chargement
+            const allTextareas = document.querySelectorAll('.comment-textarea');
+            allTextareas.forEach(textarea => {
+                if (textarea.value) {
+                    autoResizeTextarea(textarea);
+                }
+            });
+        });
+        
+        // S'assurer que la hauteur est bien définie avant l'impression
+        window.addEventListener('beforeprint', function() {
+            const allTextareas = document.querySelectorAll('.comment-textarea');
+            allTextareas.forEach(textarea => {
+                if (textarea.value && textarea.value.trim()) {
+                    // S'assurer que le textarea a une hauteur définie
+                    if (!textarea.style.height || textarea.style.height === 'auto') {
+                        autoResizeTextarea(textarea);
+                    }
+                }
+            });
+        });
+
+
+        function initAudio() {
+            if (!window.audioContext) {
+                window.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playBeep() {
+            initAudio();
+            const oscillator = window.audioContext.createOscillator();
+            const gainNode = window.audioContext.createGain();
+            oscillator.connect(gainNode);
+            gainNode.connect(window.audioContext.destination);
+            oscillator.frequency.value = 800;
+            oscillator.type = 'sine';
+            gainNode.gain.setValueAtTime(0.3, window.audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, window.audioContext.currentTime + 0.5);
+            oscillator.start(window.audioContext.currentTime);
+            oscillator.stop(window.audioContext.currentTime + 0.5);
+        }
+
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'fr-FR';
+                utterance.rate = 0.9;
+                utterance.volume = 0.8;
+                speechSynthesis.speak(utterance);
+            }
+        }
+
+        function playSound(message) {
+            playBeep();
+            setTimeout(() => speak(message), 500);
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return minutes + ":" + secs.toString().padStart(2, "0");
+        }
+
+        function toggleCheckboxes(disabled) {
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => {
+                radio.disabled = disabled;
+            });
+            const detailCheckboxes = document.querySelectorAll('.detail-checkbox input[type="checkbox"]');
+            detailCheckboxes.forEach(checkbox => {
+                checkbox.disabled = disabled;
+            });
+        }
+
+        function colorCriteriaByScore() {
+            if (!window.hasFinished && !window.hasStoppedManually) return;
+
+            const normalCriteriaRows = document.querySelectorAll('.criteria-row');
+            normalCriteriaRows.forEach(row => {
+                const id = row.id;
+                if (!id) return;
+                const criteriaName = id.replace('criteria-', '');
+                const checkedRadio = document.querySelector('input[name="' + criteriaName + '"]:checked');
+                row.classList.remove('criteria-zero-points', 'criteria-one-point', 'criteria-full-points', 'criteria-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
+                if (checkedRadio) {
+                    const score = Number(checkedRadio.value) || 0;
+                    if (score === 0) {
+                        row.classList.add('criteria-zero-points');
+                        row.classList.add('lacune-rouge');
+                    } else if (score === 1) {
+                        row.classList.add('criteria-one-point');
+                        row.classList.add('lacune-orange');
+                    } else if (score >= 2) {
+                        row.classList.add('criteria-full-points');
+                        row.classList.add('lacune-verte');
+                    }
+                } else {
+                    row.classList.add('criteria-not-answered');
+                    row.classList.add('lacune-rouge');
+                }
+            });
+
+            const communicationRows = document.querySelectorAll('.communication-section');
+            communicationRows.forEach(row => {
+                const id = row.id;
+                if (!id) return;
+                const criteriaName = id.replace('criteria-', '');
+                const checkedRadio = document.querySelector('input[name="' + criteriaName + '"]:checked');
+                row.classList.remove('communication-note-a', 'communication-note-b', 'communication-note-c', 'communication-note-d', 'communication-note-e', 'communication-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
+                if (checkedRadio) {
+                    const grade = checkedRadio.value.toLowerCase();
+                    row.classList.add("communication-note-" + grade);
+                    if (grade === 'e' || grade === 'd') {
+                        row.classList.add('lacune-rouge');
+                    } else if (grade === 'c') {
+                        row.classList.add('lacune-orange');
+                    } else if (grade === 'a' || grade === 'b') {
+                        row.classList.add('lacune-verte');
+                    }
+                } else {
+                    row.classList.add('communication-not-answered');
+                    row.classList.add('lacune-rouge');
+                }
+            });
+        }
+
+        function startTimer() {
+            if (window.isRunning || window.currentMode !== 'exam') return;
+            window.isRunning = true;
+            window.hasStarted = true;
+            window.hasStoppedManually = false;
+            document.body.classList.add('timer-running');
+            toggleCheckboxes(false);
+            playSound("Début de la station");
+            document.getElementById('startBtn').style.display = 'none';
+            document.getElementById('stopBtn').style.display = 'inline-block';
+            document.getElementById('resetBtn').disabled = true;
+            document.getElementById('timerStatus').textContent = 'En cours';
+            document.getElementById('timerStatus').className = 'timer-status status-running';
+            
+            window.timerInterval = setInterval(() => {
+                window.currentSeconds--;
+                document.getElementById('timerDisplay').textContent = formatTime(window.currentSeconds);
+                const container = document.getElementById('timerContainer');
+                if (window.currentSeconds === 2 * 60) {
+                    if (window.currentMode === 'exam') {
+                        playSound("Il vous reste 2 minutes");
+                    }
+                    container.classList.add('timer-warning');
+                    document.getElementById('timerStatus').textContent = '2 min restantes';
+                    document.getElementById('timerStatus').className = 'timer-status status-warning';
+                }
+                if (window.currentSeconds <= 30) {
+                    container.classList.add('timer-critical');
+                }
+                if (window.currentSeconds <= 0) {
+                    endTimer();
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            if (!window.isRunning) return;
+            clearInterval(window.timerInterval);
+            window.isRunning = false;
+            window.hasStoppedManually = true;
+            document.body.classList.remove('timer-running');
+            // Ne pas désactiver les checkboxes pour permettre de continuer à cocher après arrêt
+            // toggleCheckboxes(true);
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('stopBtn').style.display = 'none';
+            document.getElementById('resetBtn').disabled = false;
+            document.getElementById('timerStatus').textContent = 'Arrêté';
+            document.getElementById('timerStatus').className = 'timer-status';
+            colorCriteriaByScore();
+        }
+
+        function endTimer() {
+            clearInterval(window.timerInterval);
+            window.isRunning = false;
+            window.hasFinished = true;
+            window.currentSeconds = 0;
+            document.body.classList.remove('timer-running');
+            if (window.currentMode === 'exam') {
+                playSound("Fin de la station. Veuillez sortir");
+                // Repasser automatiquement en mode révision après la fin du timer
+                switchMode('revision');
+            }
+            document.getElementById('timerDisplay').textContent = '0:00';
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('stopBtn').style.display = 'none';
+            document.getElementById('resetBtn').disabled = false;
+            document.getElementById('timerStatus').textContent = 'Terminé';
+            document.getElementById('timerStatus').className = 'timer-status status-finished';
+            document.getElementById('timerStatus').style.display = 'block';
+            document.getElementById('timerContainer').className = 'timer-container';
+            // Ne pas désactiver les checkboxes après la fin pour permettre de continuer
+            // toggleCheckboxes(true);
+            colorCriteriaByScore();
+        }
+
+        function resetTimer() {
+            clearInterval(window.timerInterval);
+            window.timerInterval = null;
+            window.currentSeconds = 13 * 60;
+            window.isRunning = false;
+            window.hasStarted = false;
+            window.hasFinished = false;
+            window.hasStoppedManually = false;
+            document.getElementById('timerDisplay').textContent = '13:00';
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('stopBtn').style.display = 'none';
+            // Supprimer la coloration des critères
+            const criteriaAndCommRows = document.querySelectorAll('.criteria-row, .communication-section');
+            criteriaAndCommRows.forEach(row => {
+                row.classList.remove('score-0', 'score-1', 'score-2', 'score-a', 'score-b', 'score-c', 'score-d', 'score-e');
+            });
+            // Supprimer la coloration des sections
+            const allSections = document.querySelectorAll('.section');
+            allSections.forEach(section => {
+                section.classList.remove('note-a', 'note-b', 'note-c', 'note-d', 'note-e');
+                section.classList.add('note-neutral');
+            });
+            document.getElementById('timerStatus').style.display = 'none';
+            document.getElementById('timerContainer').className = 'timer-container';
+            // En mode révision, ne pas désactiver les checkboxes
+            if (window.currentMode === 'exam') {
+                toggleCheckboxes(true);
+            }
+            const allRadios = document.querySelectorAll('input[type="radio"]');
+            allRadios.forEach(radio => {
+                radio.checked = false;
+            });
+            // Réinitialiser les detail-checkboxes
+            const allDetailCheckboxes = document.querySelectorAll('.detail-checkbox input[type="checkbox"]');
+            allDetailCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            const allPointsDisplays = document.querySelectorAll('.points-display');
+            allPointsDisplays.forEach(display => {
+                display.textContent = '0';
+            });
+            const allCriteriaRows = document.querySelectorAll('.criteria-row');
+            allCriteriaRows.forEach(row => {
+                row.classList.remove('criteria-zero-points', 'criteria-one-point', 'criteria-full-points', 'criteria-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
+            });
+            const allCommunicationRows = document.querySelectorAll('.communication-section');
+            allCommunicationRows.forEach(row => {
+                row.classList.remove('communication-note-a', 'communication-note-b', 'communication-note-c', 'communication-note-d', 'communication-note-e', 'communication-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
+            });
+            calculateScores();
+            // Supprimer tous les commentaires et cacher les textareas
+            const allTextareas = document.querySelectorAll('.comment-textarea');
+            allTextareas.forEach(textarea => {
+                textarea.value = '';
+                textarea.style.height = textarea.classList.contains('comment-textarea') && textarea.closest('.section-comment-section.global') ? '30px' : (textarea.closest('.section-comment-section') ? '28px' : '26px');
+            });
+            // Cacher toutes les sections de commentaires ouvertes
+            const allCommentSections = document.querySelectorAll('.criterion-comment-section.show, .section-comment-section.show');
+            allCommentSections.forEach(section => {
+                section.classList.remove('show');
+            });
+            // Mettre à jour les boutons de commentaires
+            const allCommentButtons = document.querySelectorAll('.comment-button, .section-comment-button');
+            allCommentButtons.forEach(button => {
+                button.classList.remove('has-content');
+            });
+        }
+        
+        function switchMode(mode) {
+            window.currentMode = mode;
+            const body = document.body;
+            body.className = mode + '-mode';
+            const buttons = document.querySelectorAll('.mode-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons.forEach(btn => {
+                if (btn.textContent.includes(mode === "revision" ? "Révision" : "Examen")) {
+                    btn.classList.add("active");
+                }
+            });
+            if (mode === 'revision') {
+                toggleCheckboxes(false);
+                showLacunesButton();
+            } else {
+                if (!window.hasStarted) {
+                    toggleCheckboxes(true);
+                }
+                hideLacunesButton();
+            }
+        }
+        
+        function showLacunesButton() {
+            const btn = document.querySelector('.lacune-button');
+            if (btn) btn.style.display = 'block';
+        }
+        
+        function hideLacunesButton() {
+            const btn = document.querySelector('.lacune-button');
+            if (btn) btn.style.display = 'none';
+        }
+        
+        function identifyLacunes() {
+            // Critères standards (anamnèse, examen, management)
+            const criteria = document.querySelectorAll(".criteria-row");
+            criteria.forEach(criterion => {
+                const id = criterion.id.replace("criteria-", "");
+                const pointsElement = document.getElementById("points-" + id);
+                const points = pointsElement ? parseInt(pointsElement.textContent) : 0;
+                
+                criterion.classList.remove("lacune-rouge", "lacune-orange", "lacune-verte");
+                
+                if (points === 0) {
+                    criterion.classList.add("lacune-rouge");
+                } else if (points === 1) {
+                    criterion.classList.add("lacune-orange");
+                } else if (points >= 2) {
+                    criterion.classList.add("lacune-verte");
+                }
+            });
+            
+            // Critères communication (échelle A-E)
+            const commCriteria = document.querySelectorAll(".communication-section");
+            commCriteria.forEach(criterion => {
+                const id = criterion.id.replace("criteria-", "");
+                const radio = document.querySelector("input[name=\"" + id + "\"]:checked");
+                
+                criterion.classList.remove("lacune-rouge", "lacune-orange", "lacune-verte");
+                
+                if (!radio) {
+                    criterion.classList.add("lacune-rouge");
+                } else {
+                    const grade = radio.value;
+                    if (grade === "E" || grade === "D") {
+                        criterion.classList.add("lacune-rouge");
+                    } else if (grade === "C") {
+                        criterion.classList.add("lacune-orange");
+                    } else if (grade === "A" || grade === "B") {
+                        criterion.classList.add("lacune-verte");
+                    }
+                }
+            });
+        }
+        function toggleComment(id) {
+            const section = document.getElementById("comment-section-" + id);
+            const textarea = document.getElementById("comment-" + id);
+            if (section) {
+                section.classList.toggle("show");
+                // Focus automatiquement sur le textarea quand on ouvre la section
+                if (section.classList.contains("show") && textarea) {
+                    textarea.focus();
+                }
+            }
+        }
+
+        function updateCommentButton(id) {
+            const textarea = document.getElementById("comment-" + id);
+            const criterionRow = document.getElementById("criteria-" + id);
+            const commentSection = document.getElementById("comment-section-" + id);
+            if (textarea && criterionRow) {
+                const button = criterionRow.querySelector(".comment-button");
+                if (button) {
+                    if (textarea.value.trim()) {
+                        button.classList.add("has-content");
+                        if (commentSection) commentSection.classList.add("has-content");
+                    } else {
+                        button.classList.remove("has-content");
+                        if (commentSection) commentSection.classList.remove("has-content");
+                    }
+                }
+            }
+        }
+
+        function toggleSectionComment(section) {
+            const commentSection = document.getElementById("section-comment-" + section);
+            const textarea = document.getElementById("comment-section-" + section);
+            if (commentSection) {
+                commentSection.classList.toggle("show");
+                // Focus automatiquement sur le textarea quand on ouvre la section
+                if (commentSection.classList.contains("show") && textarea) {
+                    textarea.focus();
+                }
+            }
+        }
+
+        function updateSectionComment(section) {
+            const textarea = document.getElementById("comment-section-" + section);
+            const commentSection = document.getElementById("section-comment-" + section);
+            const buttons = document.querySelectorAll(".section-comment-button");
+            buttons.forEach(button => {
+                if (button.getAttribute("onclick") && button.getAttribute("onclick").includes(section)) {
+                    if (textarea && textarea.value.trim()) {
+                        button.classList.add("has-content");
+                        if (commentSection) commentSection.classList.add("has-content");
+                    } else {
+                        button.classList.remove("has-content");
+                        if (commentSection) commentSection.classList.remove("has-content");
+                    }
+                }
+            });
+        }
+
+        function updateGeneralComment() {
+            const textarea = document.getElementById("comment-general");
+            if (textarea) {
+                const section = textarea.closest(".section-comment-section");
+                if (section) {
+                    if (textarea.value.trim()) {
+                        section.classList.add("has-content");
+                    } else {
+                        section.classList.remove("has-content");
+                    }
+                }
+            }
+        }
+
+        function autoResizeTextarea(textarea) {
+            // Reset height to auto to get correct scrollHeight
+            textarea.style.height = "auto";
+            // Set new height based on content
+            const newHeight = textarea.scrollHeight + 2;
+            textarea.style.height = newHeight + "px";
+        }
+
+    </script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    <script>
+        // Appel final pour s'assurer que tout est coloré
+        // Forcer la coloration finale
+        if (window.colorPatientResponses) {
+            window.colorPatientResponses();
+        }
+    </script>
+<script src="../persistence.js"></script>
+</body>
+</html>

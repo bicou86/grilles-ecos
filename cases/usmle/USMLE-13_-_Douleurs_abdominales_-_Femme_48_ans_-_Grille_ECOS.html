@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE-13 - Douleurs abdominales - Femme 48 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE-13 - Douleurs abdominales - Femme 48 ans</h1>
+            <p style="margin: 5px 0;">📍 Clinique médicale</p>
+            <p style="margin: 5px 0;">👤 Sharon Smith, 48 ans, consulte en raison de douleurs abdominales</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">135/70 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">36.9°C</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">16/min</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">76 bpm</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/37</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Motif principal <span class="patient-response">[Douleur abdominale]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Motif principal" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de la douleur <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Il y a deux semaines]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Constant/intermittent <span class="patient-response">[Eh bien, je n'ai pas tout le temps mal. Ça va et ça vient]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence <span class="patient-response">[Au moins une fois par jour]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Progression <span class="patient-response">[Ça devient pire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[Quand j'ai mal, c'est 7/10, et ça peut redescendre à 0]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[C'est ici (montre l'épigastre)]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Qualité <span class="patient-response">[Brûlure]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs atténuants <span class="patient-response">[La nourriture, les antiacides, et le lait]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-8" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs aggravants <span class="patient-response">[Les repas lourds et la faim]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-9" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Types de nourriture qui aggravent la douleur <span class="patient-response">[Les repas lourds et gras, comme la pizza]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-10" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Relation entre la nourriture et la douleur <span class="patient-response">[Eh bien, en général, la douleur diminue ou disparaît complètement quand je mange, mais elle revient après 2-3 heures]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-11" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Symptômes digestifs associés <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Épisodes similaires dans le passé <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nausées/vomissements <span class="patient-response">[Parfois je me sens nauséeuse quand j'ai mal. Hier, j'ai vomi pour la première fois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Description du vomi <span class="patient-response">[C'était un liquide jaune acide]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sang dans le vomi <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Diarrhée/constipation <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changements de poids <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changements d'appétit <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changement de la couleur des selles <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Médicaments actuels <span class="patient-response">[Antiacide, ibuprofène (2 comprimés 2 à 3 fois par jour si demandé)]</span> <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a4" value="2" data-criteria="Médicaments actuels" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a4" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Antécédents médicaux <span class="patient-response">[J'ai eu une infection urinaire il y a un an, traitée avec de l'amoxicilline, et de l'arthrose dans les deux genoux, pour laquelle je prends de l'ibuprofène]</span> <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a5" value="2" data-criteria="Antécédents médicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a5" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">6. Antécédents chirurgicaux <span class="patient-response">[2 césariennes]</span> <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="2" data-criteria="Antécédents chirurgicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">7. Antécédents familiaux <span class="patient-response">[Mon père est décédé à 55 ans d'un cancer du pancréas. Ma mère est en vie et en bonne santé]</span> <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="2" data-criteria="Antécédents familiaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">8. Habitudes de vie <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Femme au foyer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-0" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Consommation d'alcool <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-1" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Usage de drogues illicites <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-2" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tabagisme <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-3" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Activité sexuelle <span class="patient-response">[Avec mon mari (rires)]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-4" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">9. Allergies médicamenteuses <span class="patient-response">[Aucune]</span> <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="2" data-criteria="Allergies médicamenteuses" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/13</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Aspect général <span class="patient-response">[La patiente ne semble pas en détresse aiguë]</span> <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="Aspect général" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examen cardiovasculaire <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Auscultation <span class="patient-response">[RR et FC normaux, pas de souffles, frottements ou galops]</span></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e2" value="2" data-criteria="Examen cardiovasculaire" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e2" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e2" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen pulmonaire <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection <span class="patient-response">[Thorax indolore]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Bruits respiratoires clairs bilatéralement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen abdominal <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection <span class="patient-response">[Détendu, cicatrice de césarienne]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Bruits intestinaux normaux en quantité et qualité]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation superficielle <span class="patient-response">[Souple et indolore]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation profonde <span class="patient-response">[Douleur épigastrique sans détente]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-3" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Signe de Murphy <span class="patient-response">[Positif]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-4" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche d'organomégalie <span class="patient-response">[Pas d'hépato-splénomégalie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-5" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Percussion <span class="patient-response">[Normale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-6" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/23</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Hypothèses diagnostiques <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">2 points si au moins 2 diagnostics pertinents mentionnés, 1 point si 1 diagnostic</div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Hypothèses diagnostiques" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Causes gastro-intestinales</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Maladie ulcéreuse peptique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur épigastrique brûlante<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Soulagée par la nourriture, antiacides et lait<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Aggravée par la faim<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Réapparaît 2-3 heures après les repas<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Utilisation d'AINS (ibuprofène pour arthrose)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vomissement liquide jaune acide<br>Facteurs de risque:<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Femme de 48 ans<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Prise chronique d'AINS</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Gastroscopie avec biopsies, Test H. pylori</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Cholécystite/Lithiase biliaire</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Femme de 48 ans (4F)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur aggravée par les repas lourds et gras<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Nausées et vomissements<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Signe de Murphy positif à l'examen<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur épigastrique<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur soulagée par la nourriture<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'irradiation scapulaire droite<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Caractère intermittent</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ US abdominal, bilan hépatique complet</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Gastrite aiguë</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Utilisation régulière d'AINS<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur épigastrique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Nausées et vomissements<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Amélioration initiale avec antiacides<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Durée prolongée (2 semaines)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Caractère rythmé par les repas</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Gastroscopie</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes pancréatiques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Pancréatite chronique débutante</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur épigastrique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Aggravée par repas gras<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Nausées<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de consommation d'alcool<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'irradiation dorsale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Amélioration avec antiacides</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Lipase, amylase, CT abdominal</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes néoplasiques à exclure</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Cancer du pancréas</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Antécédent familial fort (père décédé à 55 ans)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur épigastrique<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge relativement jeune (48 ans)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de perte de poids<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'ictère<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur intermittente<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Amélioration avec nourriture</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ CA 19-9, CT abdominal avec protocole pancréatique</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Cancer gastrique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur épigastrique persistante<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Nausées et vomissements<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de perte de poids<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de satiété précoce<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Évolution courte (2 semaines)</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Gastroscopie avec biopsies multiples</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens complémentaires urgents <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">NFS (recherche anémie, saignement occulte)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test H. pylori (antigène dans les selles ou test respiratoire)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Bilan hépatique complet (ASAT, ALAT, bilirubine, phosphatases alcalines, GGT)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Lipase, amylase</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test FIT (recherche de sang occulte dans les selles)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ionogramme, urée, créatinine</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-5" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens complémentaires selon évolution <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Gastroscopie avec biopsies (dans les 2-4 semaines)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">US abdominal (lithiase biliaire, pancréas)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen rectal avec recherche de sang occulte</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">CT abdominal si suspicion de pathologie pancréatique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">CA 19-9 si forte suspicion néoplasique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">ECG (facteurs de risque cardiovasculaire)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-5" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Prise en charge immédiate <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Traitement symptomatique</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> IPP : oméprazole 40mg/jour à jeun<br />
+            <span style="margin-left: 10px;">•</span> Antiacides : hydroxyde d'aluminium/magnésium PRN<br />
+            <span style="margin-left: 10px;">•</span> Arrêt immédiat de l'ibuprofène<br />
+            <span style="margin-left: 10px;">•</span> Alternative antalgique : paracétamol 1g x3-4/jour<br />
+            <span style="margin-left: 10px;">•</span> Antiémétiques si nausées : métoclopramide 10mg x3/jour</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Mesures hygiéno-diététiques</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Repas fractionnés (5-6 petits repas/jour)<br />
+            <span style="margin-left: 10px;">•</span> Éviter aliments irritants (épicés, acides, gras)<br />
+            <span style="margin-left: 10px;">•</span> Éviter jeûne prolongé<br />
+            <span style="margin-left: 10px;">•</span> Limiter café, thé, boissons gazeuses<br />
+            <span style="margin-left: 10px;">•</span> Position semi-assise après repas<br />
+            <span style="margin-left: 10px;">•</span> Éviter repas 3h avant coucher</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Si H. pylori positif</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Trithérapie 14 jours :<br />
+            - IPP double dose (oméprazole 40mg x2/j)<br />
+            - Amoxicilline 1g x2/j<br />
+            - Clarithromycine 500mg x2/j<br />
+            <span style="margin-left: 10px;">•</span> Alternative si allergie pénicilline :<br />
+            - IPP + métronidazole + clarithromycine<br />
+            <span style="margin-left: 10px;">•</span> Contrôle éradication obligatoire à 4-6 semaines</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Surveillance et suivi</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Réévaluation clinique dans 2 semaines<br />
+            <span style="margin-left: 10px;">•</span> Gastroscopie si persistance malgré traitement<br />
+            <span style="margin-left: 10px;">•</span> Surveillance effet secondaire IPP long terme<br />
+            <span style="margin-left: 10px;">•</span> Éducation sur alternatives aux AINS<br />
+            <span style="margin-left: 10px;">•</span> Dépistage cancer pancréas si indiqué (antécédent familial)</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="2" data-criteria="Prise en charge immédiate" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Signes d'alarme à surveiller <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Red Flags - Signes nécessitant une réévaluation urgente</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Hématémèse ou méléna</div>
+                <div class="redflags-description">→ Hémorragie digestive haute, hospitalisation urgente</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Douleur abdominale brutale généralisée</div>
+                <div class="redflags-description">→ Perforation d'ulcère, chirurgie urgente</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. Perte de poids inexpliquée</div>
+                <div class="redflags-description">→ Néoplasie possible, investigations approfondies</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Ictère ou urines foncées</div>
+                <div class="redflags-description">→ Obstruction biliaire, imagerie urgente</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">5. Vomissements incoercibles</div>
+                <div class="redflags-description">→ Sténose pylorique, hospitalisation</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">6. Anémie sévère</div>
+                <div class="redflags-description">→ Saignement chronique, endoscopie urgente</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="2" data-criteria="Signes d'alarme à surveiller" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Communication avec la patiente <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Explication claire des hypothèses diagnostiques</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rassurer sur faible probabilité de cancer du pancréas</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Importance de l'arrêt des AINS</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Plan d'investigation par étapes</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Demander si elle a des questions ou préoccupations</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-4" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Clôture type</h4>
+                    <div class="cloture-content cloture-content-green">Madame Smith, plusieurs troubles peuvent causer une douleur similaire à celle que vous décrivez. Ce type de douleur est le plus souvent dû à un ulcère, une infection abdominale, ou un calcul biliaire. Nous devrons effectuer des tests pour confirmer le diagnostic et exclure des maladies plus graves. Ces tests incluront un examen rectal, une échographie abdominale, des analyses de sang, et peut-être une gastroscopie, qui examine votre estomac à l'aide d'une petite caméra introduite par la bouche. Une fois le diagnostic posé, nous pourrons traiter votre condition et soulager votre douleur. Avez-vous des questions pour moi ?</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Questions difficiles à poser</h4>
+                    <div class="cloture-content cloture-content-green">Mon père avait un cancer du pancréas. Est-ce que je pourrais l'avoir aussi ?</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse type du candidat</h4>
+                    <div class="cloture-content cloture-content-green">Il est très peu probable que vous ayez un cancer du pancréas, car vos symptômes ne correspondent pas à ceux de cette maladie. Cependant, nous allons effectuer des tests sanguins et radiologiques pour exclure cette possibilité.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/93</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 🩺 Ulcère gastrique – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes digestifs</h5>
+<ul class="resume-subsection-points">
+<li>Douleur épigastrique post-prandiale (souvent 30 min à 1h après les repas)</li>
+<li>Sensation de brûlure ou de crampe « en étau »</li>
+<li>Satiété précoce, ballonnements</li>
+<li>Nausées, vomissements</li>
+<li>RGO, éructations</li>
+<li>Perte d'appétit, amaigrissement</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Facteurs de risque</h5>
+<ul class="resume-subsection-points">
+<li>Prise chronique d'AINS ou aspirine</li>
+<li>Tabagisme, alcool</li>
+<li>Infection à Helicobacter pylori</li>
+<li>Stress physiologique (hospitalisation, brûlures, sepsis)</li>
+<li>Antécédents de PUD (ulcère peptique)</li>
+<li>Âge > 60 ans ou ATCD familial de cancer gastrique</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Signes d’alerte (red flags)</h5>
+<ul class="resume-subsection-points">
+<li>Amaigrissement inexpliqué</li>
+<li>Vomissements persistants</li>
+<li>Méléna, hématémèse</li>
+<li>Dysphagie, odynophagie</li>
+<li>Anémie ou fatigue</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Signes à l’inspection et palpation abdominale</h5>
+<ul class="resume-subsection-points">
+<li>Douleur à la palpation épigastrique</li>
+<li>Signe de défense (en cas de perforation)</li>
+<li>Signes de déshydratation ou d'anémie (pâleur, tachycardie)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Complications à rechercher</h5>
+<ul class="resume-subsection-points">
+<li>Hémorragie digestive (méléna, hypotension)</li>
+<li>Perforation (abdomen aigu, défense)</li>
+<li>Sténose pylorique (vomissements tardifs, dilatation gastrique)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Biologie</h5>
+<ul class="resume-subsection-points">
+<li>NFS : recherche anémie</li>
+<li>CRP, VS : inflammation</li>
+<li>H. pylori : test respiratoire à l’urée, antigène fécal ou biopsie</li>
+<li>FOBT (sang occulte dans les selles)</li>
+<li>Bilan hépatique et rénal selon contexte</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Imagerie et endoscopie</h5>
+<ul class="resume-subsection-points">
+<li>Endoscopie œsogastroduodénale (EGD) <span class="equals">=</span> examen clé</li>
+<li>Biopsies systématiques pour éliminer cancer</li>
+<li>Recherche de signes de complications : saignement, perforation</li>
+<li>Échographie ou scanner abdo si suspicion de complication (perforation, masse)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Mesures générales</h5>
+<ul class="resume-subsection-points">
+<li>Arrêt des AINS, tabac, alcool</li>
+<li>Alimentation fractionnée, sans irritants gastriques</li>
+<li>Éducation du patient</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement médical</h5>
+<ul class="resume-subsection-points">
+<li>IPP (oméprazole, ésoméprazole) pendant <span class="highlight-range">4–8</span> semaines</li>
+<li>Éradication d’H. pylori si test positif : trithérapie (IPP + amoxicilline + clarithromycine)</li>
+<li>Antiacides ou sucralfate selon les cas</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Suivi</h5>
+<ul class="resume-subsection-points">
+<li>Contrôle endoscopique à <span class="highlight-range">8–12</span> semaines si ulcère gastrique (pour vérifier cicatrisation)</li>
+<li>Contrôle de l’éradication H. pylori 4 semaines après traitement</li>
+<li>Surveillance clinique : récidives, complications</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Indications chirurgicales</h5>
+<ul class="resume-subsection-points">
+<li>Complications (perforation, hémorragie sévère, sténose)</li>
+<li>Résistance au traitement médical</li>
+<li>Ulcère malin ou doute sur tumeur</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet">Ulcère gastrique : douleur après les repas + amaigrissement</li>
+<li class="resume-bullet">Rechercher systématiquement prise AINS / H. pylori</li>
+<li class="resume-bullet">Endoscopie avec biopsies systématique pour exclure cancer</li>
+<li class="resume-bullet">IPP + éradication H. pylori si positif</li>
+<li class="resume-bullet">Surveillance endoscopique obligatoire pour ulcère gastrique</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser</h5>
+<ul class="resume-subsection-points">
+<li>Douleur épigastrique post-prandiale ? Depuis combien de temps ?</li>
+<li>Facteurs aggravants : AINS, tabac, alcool ?</li>
+<li>Signes d’alarme : amaigrissement, vomissements persistants, méléna, hématémèse ?</li>
+<li>Antécédents familiaux de cancer gastrique ?</li>
+<li>ATCD d’ulcère ou infection à H. pylori ?</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens à faire</h5>
+<ul class="resume-subsection-points">
+<li>Constantes vitales (TA, FC, T°, FR)</li>
+<li>Recherche pâleur, signes d’anémie ou déshydratation</li>
+<li>Palpation épigastrique (douleur, défense)</li>
+<li>Endoscopie œsogastroduodénale avec biopsies</li>
+<li>Biologie : NFS, CRP, test H. pylori</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Arrêt AINS, tabac, alcool + mesures hygiéno-diététiques</li>
+<li>IPP <span class="highlight-range">4–8</span> semaines ± éradication H. pylori si positif</li>
+<li>Contrôle endoscopique obligatoire pour confirmer cicatrisation et exclure cancer</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations de l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>L'expert-e intervient si l'étudiant-e demande des résultats :</li>
+                <li>• Test H. pylori : mentionner résultat positif ou négatif selon scénario</li>
+                <li>• NFS : normale ou légère anémie si saignement occulte</li>
+                <li>• Bilan hépatique : normal sauf si cholécystite</li>
+                <li>• Lipase : normale (exclut pancréatite)</li>
+                <li>• Test FIT : peut être positif si ulcère saignant</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Utilisation chronique d'AINS = facteur de risque majeur d'ulcère</li>
+                <li>Douleur soulagée par nourriture = typique d'ulcère duodénal</li>
+                <li>Signe de Murphy positif = penser cholécystite</li>
+                <li>Antécédent familial cancer pancréas = surveillance mais peu probable ici</li>
+                <li>Arrêt des AINS essentiel dans la prise en charge</li>
+                <li>Test H. pylori et gastroscopie indiqués</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Ne pas demander les médicaments actuels (AINS)</li>
+                <li>Oublier l'antécédent familial de cancer du pancréas</li>
+                <li>Ne pas effectuer le signe de Murphy</li>
+                <li>Omettre l'examen rectal pour recherche de méléna</li>
+                <li>Ne pas proposer l'arrêt des AINS</li>
+                <li>Oublier le test H. pylori</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique concernant la vignette</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Diagnostic</h4>
+            <p>Ulcère peptique probable sur utilisation chronique d'AINS avec possible infection H. pylori. Diagnostic différentiel incluant cholécystite vu le signe de Murphy positif.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Maladie ulcéreuse peptique</h4>
+            <p>Ulcération de la muqueuse gastrique ou duodénale :</p>
+            <ul>
+                <li>Prévalence : 5-10% de la population</li>
+                <li>Causes principales : H. pylori (60-90%) et AINS (10-25%)</li>
+                <li>Localisation : 4x plus fréquent au duodénum qu'à l'estomac</li>
+                <li>Symptômes : douleur épigastrique rythmée par repas</li>
+                <li>Ulcère duodénal : soulagé par nourriture, douleur 2-3h après repas</li>
+                <li>Ulcère gastrique : aggravé par nourriture immédiatement</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Rôle des AINS dans l'ulcère</h4>
+            <p>Mécanisme physiopathologique des AINS :</p>
+            <ul>
+                <li>Inhibition COX-1 → diminution prostaglandines protectrices</li>
+                <li>Altération barrière muqueuse gastrique</li>
+                <li>Diminution flux sanguin muqueux</li>
+                <li>Risque multiplié par 4-6 vs population générale</li>
+                <li>Risque augmenté avec : âge >65 ans, antécédent ulcère, corticoïdes</li>
+                <li>Co-prescription IPP réduit risque de 70%</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Helicobacter pylori</h4>
+            <p>Bactérie spiralée Gram négatif :</p>
+            <ul>
+                <li>Prévalence : 50% population mondiale, 20-30% pays développés</li>
+                <li>Transmission : oro-orale ou féco-orale, enfance</li>
+                <li>Mécanisme : uréase → ammoniaque → neutralise acidité</li>
+                <li>90% ulcères duodénaux, 60-70% ulcères gastriques</li>
+                <li>Risque cancer gastrique multiplié par 3-6</li>
+                <li>Éradication diminue récidive ulcère de 60% à <5%</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Cholécystite vs ulcère</h4>
+            <p>Éléments différentiels importants :</p>
+            <ul>
+                <li>Cholécystite : douleur HCD > épigastre, colique</li>
+                <li>Murphy+ : arrêt inspiratoire à palpation vésicule</li>
+                <li>Déclenchée par repas gras, dure 30min-6h</li>
+                <li>Ulcère : douleur épigastre, brûlure, rythmée</li>
+                <li>Les deux peuvent coexister (20% cholélithiase asymptomatique)</li>
+                <li>US abdominale différencie facilement</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Complications de l'ulcère</h4>
+            <p>Surveillance des complications potentielles :</p>
+            <ul>
+                <li>Hémorragie (15-20%) : hématémèse, méléna, anémie</li>
+                <li>Perforation (5%) : douleur brutale, péritonite</li>
+                <li>Sténose pylorique (2%) : vomissements, satiété précoce</li>
+                <li>Pénétration (rare) : dans pancréas, douleur dorsale</li>
+                <li>Mortalité globale : 2-3% (surtout hémorragie)</li>
+                <li>AINS + H. pylori = risque synergique</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Approche diagnostique</h4>
+            <p>Stratégie d'investigation recommandée :</p>
+            <ul>
+                <li>Test H. pylori non invasif en première intention</li>
+                <li>Gastroscopie si : âge >45 ans, signes alarme, échec traitement</li>
+                <li>US abdominal si suspicion biliaire (Murphy+)</li>
+                <li>Test FIT/sang occulte si suspicion saignement</li>
+                <li>Arrêt IPP 2 semaines avant test H. pylori</li>
+                <li>Biopsies antrales et fundiques si gastroscopie</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Prise en charge thérapeutique</h4>
+            <p>Traitement adapté à l'étiologie :</p>
+            <ul>
+                <li>Arrêt définitif AINS ou switch COX-2 sélectif</li>
+                <li>IPP 4-8 semaines (cicatrisation 90-95%)</li>
+                <li>Si H. pylori+ : trithérapie 14 jours</li>
+                <li>Contrôle éradication obligatoire à 4-6 semaines</li>
+                <li>Maintenance IPP si AINS obligatoires</li>
+                <li>Modification habitudes : repas réguliers, arrêt tabac</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Cancer du pancréas - Dépistage</h4>
+            <p>Considérations vu l'antécédent familial :</p>
+            <ul>
+                <li>Risque relatif x2-3 si parent 1er degré</li>
+                <li>Âge moyen diagnostic : 70 ans</li>
+                <li>Symptômes tardifs : douleur, ictère, perte poids</li>
+                <li>Pas de dépistage systématique recommandé</li>
+                <li>Surveillance si ≥2 parents ou syndrome familial</li>
+                <li>IRM/MRCP annuelle si très haut risque</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Messages clés du cas</h4>
+            <ul>
+                <li>AINS + douleur épigastrique = ulcère jusqu'à preuve contraire</li>
+                <li>Arrêt AINS prioritaire dans prise en charge</li>
+                <li>Test H. pylori systématique avant traitement</li>
+                <li>Murphy+ impose échographie biliaire</li>
+                <li>Gastroscopie si persistance malgré traitement</li>
+                <li>Rassurer sur cancer pancréas mais expliquer surveillance</li>
+                <li>Importance observance et contrôle éradication H. pylori</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>IPP première intention : oméprazole 40mg/j × 4-8 semaines</li>
+                <li>Trithérapie H. pylori : IPP + amoxicilline 1g×2 + clarithromycine 500mg×2 × 14j</li>
+                <li>Alternative allergie : IPP + métronidazole 500mg×2 + clarithromycine × 14j</li>
+                <li>Quadrithérapie si échec : IPP + bismuth + métronidazole + tétracycline × 14j</li>
+                <li>Antalgiques : paracétamol, éviter AINS</li>
+                <li>Prophylaxie si AINS obligatoires : IPP au long cours</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>Test H. pylori non invasif : antigène selles (Se 94%, Sp 92%) ou test respiratoire urée-13C (Se 95%, Sp 95%)</li>
+                <li>Gastroscopie : visualisation directe, biopsies pour H. pylori et histologie, test uréase rapide</li>
+                <li>US abdominal : première ligne si Murphy+, lithiase (Se 95%, Sp 98%), épaississement paroi vésiculaire</li>
+                <li>NFS : recherche anémie ferriprive si saignement occulte</li>
+                <li>Test FIT : plus sensible que gaïac pour sang occulte</li>
+                <li>Lipase/amylase : normale (exclut pancréatite)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Douleur épigastrique chronique (ulcère peptique vs cholécystite)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, motif (douleur abdominale épigastrique depuis 2 semaines)</li>
+                <li>Caractériser douleur <span class="arrow">→</span> brûlure, intermittente, EVA 7/10 max, soulagée par repas/lait/antiacides, aggravée par faim et repas lourds</li>
+                <li>Évolution <span class="arrow">→</span> s’aggrave, réapparaît <span class="highlight-range">2-3</span>h après repas</li>
+                <li>Symptômes associés <span class="arrow">→</span> nausées, vomissement bilieux (sans sang), pas de diarrhée, pas de perte de poids</li>
+                <li>ATCD <span class="arrow">→</span> arthrose (ibuprofène chronique), 2 césariennes, père cancer pancréas</li>
+                <li>Examen clinique <span class="arrow">→</span> douleur épigastrique à palpation, signe de Murphy positif, pas de défense, pas d’hépato-splénomégalie</li>
+                <li>Résumé + hypothèse principale (ulcère peptique sous AINS ± H. pylori) + DD (cholécystite/lithiase, gastrite, pancréatite, cancer pancréas)</li>
+                <li>Examens complémentaires <span class="arrow">→</span> NFS, bilan hépatique, lipase/amylase, test H. pylori, écho abdo, endoscopie si persistance</li>
+                <li>Prise en charge <span class="arrow">→</span> arrêt AINS, IPP, test et traitement H. pylori, conseils hygiéno-diététiques</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide : AINS</div>
+    <ul class="mnemo-items">
+        <li>A = Antiacides soulagent</li>
+        <li>I = Ibuprofène chronique (facteur de risque ulcère)</li>
+        <li>N = Nourriture soulage mais douleur revient après 2-3h</li>
+        <li>S = Signe de Murphy positif (penser aussi lithiase)</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de Mme Sharon Smith, une femme de 48 ans, femme au foyer, qui consulte pour une douleur abdominale évoluant depuis environ deux semaines. Elle décrit une douleur de type brûlure localisée à l’épigastre, d’intensité allant jusqu’à 7 sur 10, intermittente, qui survient au moins une fois par jour. Elle précise que la douleur est soulagée lorsqu’elle mange, par le lait ou les antiacides, mais qu’elle réapparaît deux à trois heures après le repas. Elle note que les repas lourds et gras, comme la pizza, ou les périodes de jeûne aggravent ses symptômes.</p><p>Elle rapporte parfois des nausées associées, et a eu un épisode de vomissement hier, de liquide jaune acide sans sang. Elle nie diarrhée, constipation, perte de poids ou changement d’appétit. Dans ses antécédents, on note une arthrose des genoux traitée par ibuprofène 2 à 3 fois par jour, une infection urinaire ancienne, et deux césariennes. Pas d’allergies. Dans sa famille, son père est décédé d’un cancer du pancréas à 55 ans, ce qui l’inquiète.</p><p>À l’examen clinique, Mme Smith n’est pas en détresse. L’auscultation cardio-pulmonaire est normale. L’abdomen est souple, non défense, mais douloureux à la palpation de l’épigastre. Le signe de Murphy est positif. Pas d’hépato-splénomégalie, pas de masse abdominale.</p><p>En résumé, nous avons une femme de 48 ans présentant une douleur épigastrique à type de brûlure, rythmée par les repas, soulagée par la nourriture mais récidivant après quelques heures, dans un contexte de prise chronique d’AINS. Mon hypothèse principale est un ulcère peptique favorisé par les AINS et possiblement H. pylori. Les diagnostics différentiels incluent une gastrite aiguë, une cholécystite/lithiase biliaire (vu le signe de Murphy et la relation aux repas gras), plus rarement une pancréatite chronique ou un cancer gastrique/pancréatique.</p><p>Comme examens complémentaires, je demanderais une NFS pour rechercher une anémie, un test H. pylori (antigène selles ou test respiratoire), un bilan hépatique complet, une lipase/amylase, et une échographie abdominale pour explorer la vésicule. En cas de persistance, une gastroscopie avec biopsies sera indiquée.</p><p>En termes de prise en charge immédiate, il est essentiel d’arrêter l’ibuprofène, de mettre en place un traitement par IPP (oméprazole), d’ajuster l’antalgie par paracétamol, et de proposer des mesures hygiéno-diététiques (repas fractionnés, éviter épices, café, alcool). Si H. pylori est positif, une trithérapie d’éradication sera proposée. Je rassurerais la patiente en expliquant que le cancer du pancréas est peu probable ici mais qu’un bilan est nécessaire pour l’exclure.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : Mme Smith, 48 ans, présente des douleurs épigastriques intermittentes depuis 2 semaines.</p><p>B (Background) : Arthrose traitée par ibuprofène chronique, père cancer pancréas, 2 césariennes.</p><p>A (Assessment) : Suspicion ulcère peptique lié aux AINS ± H. pylori. DD : gastrite, cholécystite/lithiase, pancréatite, cancer gastrique/pancréas.</p><p>R (Recommendation) : Arrêt AINS, mise sous IPP, test H. pylori, NFS, bilan hépatique, lipase, écho abdo, gastroscopie si persistance.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 Ulcère peptique : DUO</h5>
+                <ul class="presentation-points">
+                    <li>D <span class="equals">=</span> Douleur épigastrique</li>
+                    <li>U <span class="equals">=</span> Ulcère duodénal : soulagé par nourriture, revient après <span class="highlight-range">2-3</span>h</li>
+                    <li>O <span class="equals">=</span> Origine AINS/H. pylori</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Cholécystite : 4F</h5>
+                <ul class="presentation-points">
+                    <li>Female</li>
+                    <li>Forty (âge autour de <span class="highlight-range">40-50</span> ans)</li>
+                    <li>Fat (surpoids)</li>
+                    <li>Fertile (grossesses antérieures, césariennes)</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Pièges ECOS</h5>
+                <ul class="presentation-points">
+                    <li>Oublier de demander médicaments (AINS)</li>
+                    <li>Ne pas rechercher ATCD familiaux de cancer pancréas</li>
+                    <li>Ne pas examiner vésicule biliaire (Murphy)</li>
+                    <li>Oublier test H. pylori</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Ulcère peptique</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur épigastrique brûlante</li>
+                                <li>Soulagée par nourriture/antiacides</li>
+                                <li>Réapparaît <span class="highlight-range">2-3</span>h après repas</li>
+                                <li>AINS chroniques</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas d’hémorragie digestive visible</li>
+                                <li>Pas de perte de poids</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Cholécystite/lithiase biliaire</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur aggravée par repas gras</li>
+                                <li>Naussées/vomissements</li>
+                                <li>Signe de Murphy positif</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Douleur soulagée par repas</li>
+                                <li>Pas d’irradiation scapulaire</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Cancer pancréas</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur épigastrique</li>
+                                <li>ATCD familial</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Âge relativement jeune</li>
+                                <li>Pas de perte de poids</li>
+                                <li>Pas d’ictère</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>NFS (anémie ?)</li>
+                            <li>Test H. pylori</li>
+                            <li>Bilan hépatique</li>
+                            <li>Lipase, amylase</li>
+                            <li>Échographie abdominale</li>
+                            <li>Gastroscopie avec biopsies si persistance</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Ulcère peptique probable lié aux AINS ± H. pylori ; DD cholécystite</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Arrêt AINS</li>
+                                <li>IPP (oméprazole 40 mg/j)</li>
+                                <li>Antalgie par paracétamol</li>
+                                <li>Antiacides si besoin</li>
+                                <li>Mesures hygiéno-diététiques</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-section">
+                            <strong>Specifique :</strong>
+                            <ul>
+                                <li>Éradication H. pylori si positif</li>
+                                <li>Gastroscopie si symptômes persistants</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Réévaluation à 2 semaines</li>
+                            <li>Contrôle éradication H. pylori à <span class="highlight-range">4-6</span> semaines</li>
+                            <li>Gastroscopie de contrôle si ulcère gastrique</li>
+                            <li>Surveillance complications (hémorragie, perforation)</li>
+                            <li>Éducation sur alternatives aux AINS</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour la patiente standardisée</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Sharon Smith |             <strong>Âge :</strong> 48 ans<br>
+            <strong>Contexte :</strong> Femme de 48 ans, mariée avec 4 enfants, venant à la clinique pour douleurs abdominales
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Douleur abdominale.</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> J'ai mal à l'estomac depuis deux semaines.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Consignes</h4>
+            <ul>
+                <li>Montrez l'épigastre avec votre main quand on vous demande la localisation de la douleur.</li>
+                <li>Exprimez de la douleur lors de la palpation épigastrique (grimace, retrait).</li>
+                <li>Montrez une douleur à la palpation de l'hypocondre droit lors de l'inspiration profonde (signe de Murphy positif).</li>
+                <li>Paraissez soulagée quand vous parlez de la nourriture qui améliore la douleur.</li>
+                <li>Riez légèrement quand vous mentionnez l'activité sexuelle avec votre mari.</li>
+                <li>Si l'échographie est mentionnée, demandez : 'Qu'est-ce qu'une échographie ?'</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Symptôme principal :</strong>
+                <ul>
+                    <li>Douleur épigastrique depuis 2 semaines</li>
+                    <li>Douleur brûlante</li>
+                    <li>Intensité 7/10 au maximum, peut descendre à 0</li>
+                    <li>Va et vient, au moins une fois par jour</li>
+                    <li>S'aggrave progressivement</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>Nausées occasionnelles avec la douleur</li>
+                    <li>Un épisode de vomissement hier (liquide jaune acide)</li>
+                    <li>Pas de sang dans le vomi</li>
+                    <li>Pas de changement de poids</li>
+                    <li>Pas de changement d'appétit</li>
+                    <li>Selles normales, pas de changement de couleur</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Facteurs déclenchants :</strong>
+                <ul>
+                    <li>Faim aggrave la douleur</li>
+                    <li>Repas lourds et gras aggravent (pizza)</li>
+                    <li>Douleur réapparaît 2-3 heures après les repas</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Facteurs améliorants :</strong>
+                <ul>
+                    <li>Nourriture soulage temporairement</li>
+                    <li>Antiacides ont aidé au début</li>
+                    <li>Lait améliore la douleur</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Main posée sur l'épigastre</li>
+                    <li>Expression faciale montrant l'inconfort</li>
+                    <li>Gestuelle pour montrer la zone douloureuse</li>
+                    <li>Soulagement visible quand vous parlez de ce qui améliore</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant le status :</strong>
+                <ul>
+                    <li>Douleur à la palpation épigastrique</li>
+                    <li>Signe de Murphy positif (arrêt inspiratoire)</li>
+                    <li>Pas de défense abdominale</li>
+                    <li>Abdomen souple en dehors de l'épigastre</li>
+                    <li>Coopération totale à l'examen</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse par systèmes</h4>
+            <div class="property-group">
+                <strong>Medicale :</strong>
+                <ul>
+                    <li>Infection urinaire il y a un an (amoxicilline)</li>
+                    <li>Arthrose des deux genoux</li>
+                    <li>Prend ibuprofène 2 comprimés 2-3 fois/jour pour l'arthrose</li>
+                    <li>Pas d'épisodes similaires dans le passé</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Chirurgicale :</strong>
+                <ul>
+                    <li>2 césariennes</li>
+                    <li>Pas d'autres chirurgies</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Familiale :</strong>
+                <ul>
+                    <li>Père décédé à 55 ans d'un cancer du pancréas</li>
+                    <li>Mère en vie et en bonne santé</li>
+                    <li>4 enfants en bonne santé</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Habitudes</h4>
+            <p><strong>Médicaments :</strong> Antiacides, ibuprofène (2 comprimés 2-3 fois/jour)</p>
+            <p><strong>Tabac :</strong> Non</p>
+            <p><strong>Alcool :</strong> Non</p>
+            <p><strong>Profession :</strong> Femme au foyer</p>
+            <p><strong>Drogues :</strong> Non</p>
+            <p><strong>Allergies :</strong> Aucune allergie médicamenteuse</p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 37, examen: 13, management: 23, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 9, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 4, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 6, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

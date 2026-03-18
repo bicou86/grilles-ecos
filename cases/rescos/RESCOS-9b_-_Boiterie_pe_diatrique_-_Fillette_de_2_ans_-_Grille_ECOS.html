@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESCOS-9b - Boiterie pédiatrique - Fillette de 2 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - RESCOS-9b - Boiterie pédiatrique - Fillette de 2 ans</h1>
+            <p style="margin: 5px 0;">📍 Urgences d'un hôpital pédiatrique</p>
+            <p style="margin: 5px 0;">👤 Charlotte Borloz, 2 ans, amenée par son parent pour boiterie fébrile</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">100/46 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">98 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">22/min</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">39.9°C</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/44</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Motif de consultation <span class="patient-response">[Ma fille, Charlotte, boite]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Motif de consultation" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de la boiterie <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Il y a 7 jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Durée <span class="patient-response">[Depuis 7 jours, de plus en plus]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Evolution <span class="patient-response">[De pire en pire, chaque jour c'est pire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[Hanche gauche]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Caractérisation de la hanche <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Rougeur <span class="patient-response">[Pas observée par les parents]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chaleur <span class="patient-response">[Parents pas sûrs]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Œdème <span class="patient-response">[Parents pas sûrs]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Perte de fonction <span class="patient-response">[Ne veut plus poser le pied gauche par terre aujourd'hui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Atteinte d'une autre articulation <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Actuellement <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dans le passé <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Antécédents de traumatismes des membres inférieurs <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Récents <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Anciens <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Caractérisation des douleurs <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Durée <span class="patient-response">[Depuis 7 jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[Pas de pleurs, pas de douleur perçue si on la laisse tranquille, difficile à juger]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réponse aux antalgiques <span class="patient-response">[Un peu mieux avec du Dafalgan au début, mais maintenant ça ne fait plus rien]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Caractérisation de la fièvre <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Durée <span class="patient-response">[Depuis 4 jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[Jusqu'à 39.6°C, plusieurs pics par jour]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réponse au fébrifuges <span class="patient-response">[Baisse avec Dafalgan 180mg per os mais remonte après]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Caractérisation de la rhinorrhée <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Depuis 3 jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Couleur/aspect des sécrétions <span class="patient-response">[Sécrétions claires, non-purulentes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Toux associée <span class="patient-response">[Non, pas de toux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Présence d'éruptions cutanées <span class="patient-response">[Non, pas d'éruption]</span> <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="2" data-criteria="Présence d'éruptions cutanées" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. État général <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Activités <span class="patient-response">[Moins active, veut être portée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-0" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Apathie <span class="patient-response">[Non, mais plus grincheuse et irritable que d'habitude]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-1" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Comportement <span class="patient-response">[Plus grincheuse et irritable que d'habitude]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-2" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Antécédents similaires <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Chez la patiente <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-0" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dans la famille <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a11-detail-1" value="1" onchange="updateDetailScore('a11', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Antécédents médicaux <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Maladies <span class="patient-response">[Aucune, fille en bonne santé habituellement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-0" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chirurgies <span class="patient-response">[Aucune]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-1" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hospitalisations <span class="patient-response">[Aucune]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-2" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Aucun médicament au long cours, seulement Dafalgan actuellement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-3" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vaccins <span class="patient-response">[Vaccinée selon calendrier, à jour]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-4" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+<div class="criteria-row" id="criteria-a13">
+    <div>
+        <div class="criteria-text">13. Antécédents familiaux <span class="patient-response">[Rien de particulier]</span> <button class="comment-button" onclick="toggleComment('a13')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a13">
+            <textarea class="comment-textarea" id="comment-a13" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a13'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="2" data-criteria="Antécédents familiaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="1" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a13">0</div>
+</div>
+<div class="criteria-row" id="criteria-a14">
+    <div>
+        <div class="criteria-text">14. Développement de l'enfant <button class="comment-button" onclick="toggleComment('a14')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Grossesse <span class="patient-response">[Sans particularité]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a14-detail-0" value="1" onchange="updateDetailScore('a14', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Événements néonataux <span class="patient-response">[Accouchement et période périnatale sans particularité]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a14-detail-1" value="1" onchange="updateDetailScore('a14', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Croissance <span class="patient-response">[Croissance normale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a14-detail-2" value="1" onchange="updateDetailScore('a14', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Développement psycho-moteur <span class="patient-response">[Bon développement de l'enfant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a14-detail-3" value="1" onchange="updateDetailScore('a14', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a14">
+            <textarea class="comment-textarea" id="comment-a14" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a14'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a14">0</div>
+</div>
+<div class="criteria-row" id="criteria-a15">
+    <div>
+        <div class="criteria-text">15. Anamnèse systématique <button class="comment-button" onclick="toggleComment('a15')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Digestive <span class="patient-response">[Pas de diarrhée ni vomissement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a15-detail-0" value="1" onchange="updateDetailScore('a15', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pulmonaire <span class="patient-response">[Pas de toux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a15-detail-1" value="1" onchange="updateDetailScore('a15', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ostéo-articulaire <span class="patient-response">[Boiterie décrite]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a15-detail-2" value="1" onchange="updateDetailScore('a15', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a15">
+            <textarea class="comment-textarea" id="comment-a15" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a15'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a15">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/13</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. État général <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Cutané <span class="patient-response">[Pas d'éruption]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">ORL <span class="patient-response">[Rhinorrhée claire, reste sp]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">CV <span class="patient-response">[sp]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Resp <span class="patient-response">[sp]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-3" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Abdo <span class="patient-response">[sp]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-4" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examen ostéo-articulaire <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Pas de rougeur ni chaleur ni œdème des articulations</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleur à la mobilisation passive de la hanche gauche</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Limitation d'abduction et rotation interne</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Flexion, extension, adduction et rotation externes possibles mais douloureuses</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen neurologique <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Nerfs crâniens sp</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tonus, motricité sp</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sensibilité, coordination des 4 membres sp</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas de signes méningés</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/14</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Diagnostic principal - Arthrite septique de la hanche <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Diagnostic principal - Arthrite septique de la hanche" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Diagnostic différentiel <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="2" data-criteria="Diagnostic différentiel" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Causes infectieuses</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Ostéomyélite du fémur</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre élevée persistante<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur progressive<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Refus d'appui</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Radiographie, IRM ou CT selon clinique</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Arthrite septique de la hanche</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre élevée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Refus d'appui<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Limitation douloureuse des mouvements<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Position antalgique avec flexion, légère abduction et rotation externe</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ US de hanche, ponction articulaire</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes inflammatoires</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Synovite aiguë transitoire (rhume de hanche)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge compatible (2-10 ans)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Contexte viral (rhinorrhée)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Boiterie</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ US de hanche, exclusion des autres causes</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Arthrite juvénile</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Absence d'antécédents<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'atteinte d'autres articulations<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début aigu</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Bilan inflammatoire, anticorps</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Causes orthopédiques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Maladie de Legg-Calvé-Perthes (ostéochondrite primitive)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge jeune (pic 4-8 ans)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre élevée inhabituelle<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début aigu</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Radiographie, IRM</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Tumeur osseuse</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Évolution rapide sur 7 jours<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Contexte fébrile</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Radiographie, IRM</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Investigations complémentaires - bilan sanguin <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">FSC</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">CRP</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">VS</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hémoculture</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Investigations complémentaires - imagerie <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Radiographie bassin face et hanche axiale</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">US de hanche (plus IRM ou CT selon clinique)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Prise en charge - propose une hospitalisation ou de référer la patiente en orthopédie <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="2" data-criteria="Prise en charge - propose une hospitalisation ou de référer la patiente en orthopédie" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Management en général <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Traitement urgent</div>
+            <div style="color: #998800;">- Antibiothérapie intraveineuse après prélèvements<br />
+            - Antalgie adaptée<br />
+            - Mise au repos de l'articulation</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Traitement définitif</div>
+            <div style="color: #998800;">- Ponction-biopsie du liquide articulaire pour analyse<br />
+            - Frottis gorge Kingella kingae<br />
+            - Consultation orthopédique ou chirurgicale urgente<br />
+            - Rinçage, nettoyage et drainage de l'articulation si confirmé</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="2" data-criteria="Management en général" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m6" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Informer le parent du diagnostic principal retenu et de deux autres diagnostics différentiels</h4>
+                    <div class="cloture-content cloture-content-green">« Madame/Monsieur, je suspecte que Charlotte ait une arthrite septique de la hanche, c'est-à-dire une infection de l'articulation. C'est une urgence qui nécessite une hospitalisation immédiate. Il pourrait aussi s'agir d'une infection de l'os (ostéomyélite) ou d'une inflammation transitoire de la hanche liée au rhume qu'elle a eu. »</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Informer Mme/M Borloz de la suite des examens complémentaires envisagés</h4>
+                    <div class="cloture-content cloture-content-green">« Nous allons faire une prise de sang pour chercher des signes d'infection, une radiographie et une échographie de la hanche. Si l'infection se confirme, Charlotte devra recevoir des antibiotiques par perfusion et peut-être avoir une ponction de l'articulation. »</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Informer Mme/M Borloz de la suite de la prise en charge immédiate</h4>
+                    <div class="cloture-content cloture-content-green">« Charlotte va être hospitalisée immédiatement. Un chirurgien orthopédiste pédiatrique va venir l'examiner rapidement. Le traitement antibiotique sera débuté après les prélèvements. Je comprends votre inquiétude, mais nous allons tout faire pour soigner rapidement Charlotte. »</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/91</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 🦴 Boiterie fébrile chez l’enfant – Arthrite septique de hanche – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes à rechercher</h5>
+<ul class="resume-subsection-points">
+<li>Boiterie aiguë, refus de marcher ou boiterie douloureuse</li>
+<li>Fièvre souvent présente (> 38,5°C)</li>
+<li>Douleur de hanche ou de cuisse (parfois genou par irradiation)</li>
+<li>Début souvent rapide (en heures)</li>
+<li>Refus de mobilisation de la hanche (en flexion, rotation interne)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Contexte clinique</h5>
+<ul class="resume-subsection-points">
+<li>Âge : surtout < 3 ans</li>
+<li>ATCD d'infection récente (ORL, cutanée)</li>
+<li>Traumatisme mineur parfois évoqué</li>
+<li>Vaccination incomplète (Haemophilus, pneumocoque)</li>
+<li>Recherche de point d’entrée infectieux</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Signes locaux</h5>
+<ul class="resume-subsection-points">
+<li>Douleur à la mobilisation passive de la hanche</li>
+<li>Position antalgique (flexion, abduction, rotation externe)</li>
+<li>Refus de mise en charge</li>
+<li>Raideur et limitation des amplitudes</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Signes généraux</h5>
+<ul class="resume-subsection-points">
+<li>Fièvre</li>
+<li>Altération de l’état général</li>
+<li>Irritabilité chez le nourrisson</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Biologie</h5>
+<ul class="resume-subsection-points">
+<li>CRP > 20 mg/L, hyperleucocytose (> 12 000/mm³)</li>
+<li>VS souvent élevée</li>
+<li>Hémocultures (avant ATB)</li>
+<li>Ponction articulaire (si suspicion forte ou écho positive)</li>
+<li>Examen direct, culture, PCR sur liquide articulaire</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Imagerie</h5>
+<ul class="resume-subsection-points">
+<li>Échographie de hanche : épanchement articulaire (diagnostic rapide, non invasif)</li>
+<li>Radiographie bassin : pour éliminer d’autres causes (Perthes, fractures, etc.)</li>
+<li>IRM : en cas de doute, pour étendre le bilan à l’os (ostéomyélite associée)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Mesures initiales</h5>
+<ul class="resume-subsection-points">
+<li>Hospitalisation <span class="highlight-important">immédiat</span>e</li>
+<li>Repos strict, mise au lit sans appui</li>
+<li>ATB probabiliste IV après ponction/hémocultures : céfotaxime + oxacilline (ou vancomycine si suspicion MRSA)</li>
+<li>Antalgiques (paracétamol ± morphine)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Chirurgie</h5>
+<ul class="resume-subsection-points">
+<li>Ponction-évacuation articulaire (souvent nécessaire d’emblée)</li>
+<li>Arthrotomie ou lavage articulaire en cas d'échec ou forme sévère</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Suivi</h5>
+<ul class="resume-subsection-points">
+<li>Adaptation de l’ATB selon germes (durée totale ~<span class="highlight-range">3-4</span> semaines)</li>
+<li>Kinésithérapie après phase aiguë</li>
+<li>Surveillance de la croissance osseuse (complications possibles : épiphysiolyse, nécrose, inégalité des membres)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Toute boiterie fébrile chez l’enfant <span class="equals">=</span> arthrite septique jusqu’à preuve du contraire</li>
+<li class="resume-bullet">Examen de la hanche bilatéral systématique</li>
+<li class="resume-bullet highlight">Échographie rapide <span class="equals">=</span> outil clé de triage</li>
+<li class="resume-bullet">Ponction articulaire si épanchement + fièvre</li>
+<li class="resume-bullet">ATB IV en <span class="highlight-important">urgence</span>, sans attendre les résultats de culture</li>
+<li class="resume-bullet">Ne pas oublier de faire les hémocultures</li>
+</ul>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés 🚶‍♂️ Boiterie de l’enfant</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Âge <span class="equals">=</span> élément clé pour orienter diagnostic</li>
+<li class="resume-bullet highlight">Arthrite septique <span class="equals">=</span> diagnostic à éliminer en premier (<span class="highlight-important">urgence</span> absolue)</li>
+<li class="resume-bullet highlight">Synovite transitoire <span class="equals">=</span> cause bénigne la plus fréquente (<span class="highlight-range">3–8</span> ans)</li>
+<li class="resume-bullet highlight">SCFE <span class="equals">=</span> à ne pas manquer chez l’ado en surpoids</li>
+<li class="resume-bullet highlight">Tout enfant fébrile avec boiterie <span class="equals">=</span> hospitalisation <span class="highlight-important">immédiat</span>e</li>
+</ul>
+<h5 class="table-title">Tableau comparatif</h5>
+<table class="resume-table tableau-comparatif" style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+<thead>
+<tr>
+<th style="border: 1px solid #ddd; padding: 10px; text-align: left; font-weight: bold;">Âge</th>
+<th style="border: 1px solid #ddd; padding: 10px; text-align: left; font-weight: bold;">Diagnostic principal</th>
+<th style="border: 1px solid #ddd; padding: 10px; text-align: left; font-weight: bold;">Symptômes clés</th>
+<th style="border: 1px solid #ddd; padding: 10px; text-align: left; font-weight: bold;">Points d’alerte</th>
+<th style="border: 1px solid #ddd; padding: 10px; text-align: left; font-weight: bold;">Conduite rapide ECOS</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background: #ffffff;">
+<td style="border: 1px solid #ddd; padding: 8px; font-weight: bold; white-space: nowrap;">0–3 ans</td>
+<td style="border: 1px solid #ddd; padding: 8px; color: rgb(169, 34, 23); font-weight: 600;">Arthrite septique, ostéomyélite</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Fièvre, AEG, boiterie brutale, impotence fonctionnelle</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Risque vital et fonctionnel</td>
+<td style="border: 1px solid #ddd; padding: 8px; color: rgb(52, 105, 46); font-style: italic;">Hospitaliser en urgence, NFS/CRP/VS, imagerie, ponction articulaire, ATB IV</td>
+</tr>
+<tr style="background: #f5f5f5;">
+<td style="border: 1px solid #ddd; padding: 8px; font-weight: bold; white-space: nowrap;">3–8 ans</td>
+<td style="border: 1px solid #ddd; padding: 8px; color: rgb(169, 34, 23); font-weight: 600;">Synovite transitoire, Legg-Calvé-Perthes</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Boiterie ± douleur hanche/genou, contexte viral récent, pas ou peu de fièvre</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Fièvre élevée, CRP ↑ → suspecter arthrite septique</td>
+<td style="border: 1px solid #ddd; padding: 8px; color: rgb(52, 105, 46); font-style: italic;">Échographie hanche, repos + AINS, surveillance rapprochée</td>
+</tr>
+<tr style="background: #ffffff;">
+<td style="border: 1px solid #ddd; padding: 8px; font-weight: bold; white-space: nowrap;">9–15 ans</td>
+<td style="border: 1px solid #ddd; padding: 8px; color: rgb(169, 34, 23); font-weight: 600;">Épiphysiolyse fémorale supérieure (SCFE), tumeurs osseuses</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Ado en surpoids, douleur hanche/genou, boiterie progressive</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Impotence brutale, AEG, douleur nocturne</td>
+<td style="border: 1px solid #ddd; padding: 8px; color: rgb(52, 105, 46); font-style: italic;">IRM/radio bassin, hospitalisation si SCFE, avis ortho rapide</td>
+</tr>
+<tr style="background: #f5f5f5;">
+<td style="border: 1px solid #ddd; padding: 8px; font-weight: bold; white-space: nowrap;">Tout âge</td>
+<td style="border: 1px solid #ddd; padding: 8px; color: rgb(169, 34, 23); font-weight: 600;">Traumatisme, tumeurs, AIJ</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Douleur localisée, parfois nocturne, tuméfaction</td>
+<td style="border: 1px solid #ddd; padding: 8px;">Fièvre persistante, masse, AEG</td>
+<td style="border: 1px solid #ddd; padding: 8px; color: rgb(52, 105, 46); font-style: italic;">Imagerie ciblée, hospitalisation si doute néoplasique ou infectieux</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS 🚶‍♂️ Boiterie de l’enfant</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser</h5>
+<ul class="resume-subsection-points">
+<li>Âge et début de la boiterie ?</li>
+<li>Douleur localisée où ? Irradie vers genou ?</li>
+<li>Fièvre ou AEG ?</li>
+<li>ATCD trauma récent ?</li>
+<li>ATCD infectieux ou viraux récents ?</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens à faire</h5>
+<ul class="resume-subsection-points">
+<li>Examen hanche/genou/pied bilatéral</li>
+<li>Mobilité hanche (rotation interne)</li>
+<li>Radiographies ciblées</li>
+<li>Échographie hanche</li>
+<li>Biologie (NFS, CRP, VS) si doute infectieux</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Éliminer arthrite septique (<span class="highlight-important">urgence</span>)</li>
+<li>Adapter examens selon âge et contexte</li>
+<li>Hospitaliser si doute diagnostic ou signes de gravité</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations pour l'expert évaluateur</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>La boiterie est un motif de consultation fréquent aux Urgences Pédiatriques</li>
+                <li>L'arthrite septique de la hanche est une urgence orthopédique à exclure dans la boiterie fébrile</li>
+                <li>L'âge détermine le diagnostic différentiel</li>
+                <li>Pour cet enfant de 2 ans, le plus fréquent est la synovite aiguë transitoire, mais les autres diagnostics différentiels importants sont: luxation congénitale de hanche, ostéochondrite primitive (Maladie de Legg-Perthes-Calvé), l'ostéomyélite, arthrite réactive, maladie rhumatologique, leucémie, tumeur</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Epidemiologie</h4>
+            <ul>
+                <li>Aux États-Unis: 0.12-0.18 per 100000 enfants présentent une arthrite septique de la hanche</li>
+                <li>Dans les arthrites septiques chez les enfants, le genou et la hanche sont les articulations les plus fréquemment touchées</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Clinique</h4>
+            <ul>
+                <li>Boiterie antalgique jusqu'au refus de charger la jambe</li>
+                <li>Position antalgique avec flexion, légère abduction et rotation externe</li>
+                <li>L'enfant résiste aux mouvements passifs en raison des douleurs</li>
+                <li>Pas forcément signes locaux</li>
+                <li>Fièvre mais pas toujours</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Bilan</h4>
+            <p><strong>Premier Temps :</strong> Bilan sanguin: FSC, CRP, VS, Hémoculture, éventuellement sérologies Lyme</p>
+            <p><strong>Imagerie :</strong> Radiographies bassin face et hanche axiale, US (plus IRM ou CT selon clinique), Frottis gorge Kingella kingae</p>
+            <p><strong>Deuxieme Temps :</strong> Ponction-biopsie du liquide articulaire</p>
+        </div>
+        <div class="expert-section">
+            <h4>Traitement</h4>
+            <ul>
+                <li>Antibiothérapie intraveineuse</li>
+                <li>Consultation orthopédique ou chirurgicale avec rinçage, nettoyage et drainage de l'articulation</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Complications</h4>
+            <ul>
+                <li>Ostéomyélite</li>
+                <li>Ostéonécrose</li>
+                <li>Destruction du cartilage articulaire</li>
+                <li>Différence de la longueur des jambes</li>
+                <li>Sepsis</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>Donner la carte du résumé de l'examen physique quand demandée</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Rappels théoriques sur l'arthrite septique pédiatrique</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Épidémiologie</h4>
+            <p>L'arthrite septique de la hanche est une urgence orthopédique à exclure dans toute boiterie fébrile chez l'enfant. L'incidence est de 0.12-0.18 per 100000 enfants aux États-Unis. Le genou et la hanche sont les articulations les plus fréquemment touchées chez l'enfant.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Diagnostic différentiel selon l'âge</h4>
+            <ul>
+                <li>< 3 ans: Arthrite septique, ostéomyélite, fracture sur maltraitance</li>
+                <li>3-10 ans: Synovite aiguë transitoire (rhume de hanche), arthrite septique, maladie de Legg-Calvé-Perthes</li>
+                <li>> 10 ans: Épiphysiolyse, arthrite juvénile, ostéochondrite</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Critères de Kocher</h4>
+            <p>Pour différencier arthrite septique et synovite transitoire:<br>- Fièvre > 38.5°C<br>- Refus d'appui<br>- VS > 40 mm/h<br>- Leucocytes > 12 G/L<br><br>Probabilité d'arthrite septique selon le nombre de critères:<br>0 critère: < 0.2%<br>1 critère: 3%<br>2 critères: 40%<br>3 critères: 93%<br>4 critères: 99%</p>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Antibiothérapie IV empirique après prélèvements: Flucloxacilline + Gentamicine ou Céfuroxime</li>
+                <li>Durée totale d'antibiothérapie: 3-6 semaines (IV puis PO)</li>
+                <li>Drainage articulaire urgent: arthrotomie ou arthroscopie selon l'expertise locale</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>US de hanche: Sensibilité > 90% pour détecter un épanchement articulaire</li>
+                <li>Ponction articulaire: Gold standard - analyse du liquide (cellularité, Gram, culture)</li>
+                <li>IRM: Si doute sur ostéomyélite associée ou abcès des parties molles</li>
+                <li>Frottis pharyngé pour Kingella kingae: Germe fastidieux, difficile à cultiver</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Boiterie fébrile (Arthrite septique de hanche)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, motif (boiterie, refus appui, fièvre)</li>
+                <li>Histoire <span class="arrow">→</span> début, évolution, intensité, contexte infectieux</li>
+                <li>Douleur <span class="arrow">→</span> localisation, intensité, facteurs aggravants/soulageants</li>
+                <li>Fièvre <span class="arrow">→</span> durée, pics, réponse aux antipyrétiques</li>
+                <li>ATCD traumatiques ? infectieux ? médicaux ?</li>
+                <li>Examen <span class="arrow">→</span> mobilité hanche, douleur passive, état général, autres articulations</li>
+                <li>Résumé <span class="arrow">→</span> suspicion principale + DD</li>
+                <li>Examens <span class="arrow">→</span> FSC, CRP, VS, hémocultures, radio bassin, US hanche, ponction si épanchement</li>
+                <li>Prise en charge <span class="arrow">→</span> hospitalisation, ATB IV après prélèvements, drainage si besoin</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo KOCHER (critères arthrite septique)</div>
+    <ul class="mnemo-items">
+        <li>K = Kick fever > 38.5°C</li>
+        <li>O = One leg (refus d’appui)</li>
+        <li>C = CRP/VS élevées</li>
+        <li>H = Hyperleuco > 12 G/L</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de Charlotte Borloz, une fillette de 2 ans, amenée aux urgences par sa maman pour une boiterie fébrile. </p><p>La boiterie a commencé il y a 7 jours, de façon progressive, et s’est aggravée chaque jour. Aujourd’hui, Charlotte ne veut plus poser le pied gauche au sol et demande constamment à être portée. La douleur est difficile à évaluer car elle ne pleure pas si on la laisse tranquille, mais dès qu’on mobilise sa jambe, elle se plaint. </p><p>Depuis 4 jours, elle a de la fièvre, jusqu’à 39,6°C avec plusieurs pics par jour. La température baisse un peu avec le Dafalgan, mais remonte ensuite. Sa maman rapporte aussi qu’elle est plus grincheuse et irritable que d’habitude. Elle présente une rhinorrhée claire depuis 3 jours, sans toux associée. Pas de diarrhée, pas de vomissements, pas d’éruption cutanée. </p><p>Dans ses antécédents, Charlotte est une enfant en bonne santé habituelle, sans maladies chroniques ni chirurgies. Les vaccins sont à jour. Pas d’antécédents familiaux particuliers, pas de traumatismes récents. La grossesse, la naissance et le développement se sont déroulés normalement. </p><p>À l’examen, Charlotte est fébrile à 39,9°C. Sa tension est 100/46, sa fréquence cardiaque 98 par minute, sa fréquence respiratoire 22. L’état général est altéré avec irritabilité. Pas d’éruption, pas de signe cutané particulier. Au niveau ostéo-articulaire, la hanche gauche est douloureuse à la mobilisation passive, surtout en abduction et rotation interne. Les autres mouvements sont possibles mais douloureux. Pas de rougeur ni chaleur visibles. Les autres articulations sont libres. Le reste de l’examen est normal, pas de signe neurologique ni abdominal. </p><p>En résumé, il s’agit d’une fillette de 2 ans avec boiterie aiguë, fièvre élevée persistante, et limitation douloureuse de la hanche gauche. Mon hypothèse principale est une arthrite septique de hanche, une urgence orthopédique. Les diagnostics différentiels incluent une ostéomyélite du fémur, une synovite aiguë transitoire post-virale, ou plus rarement une maladie de Legg-Calvé-Perthes ou une tumeur osseuse. </p><p>Comme examens complémentaires, je demanderais immédiatement une prise de sang avec FSC, CRP, VS et hémocultures, ainsi qu’une radiographie du bassin et une échographie de la hanche gauche. Si l’échographie montre un épanchement, une ponction articulaire doit être réalisée pour analyse du liquide synovial. </p><p>En termes de prise en charge, je proposerais une hospitalisation immédiate en pédiatrie avec avis orthopédique urgent. Une antibiothérapie intraveineuse sera débutée après les prélèvements, associée à des antalgiques. En cas de confirmation, un drainage articulaire chirurgical est souvent nécessaire.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : Charlotte, 2 ans, consulte pour boiterie fébrile, refus d’appui jambe gauche.</p><p>B (Background) : Symptômes évoluant depuis 7 jours, fièvre élevée persistante depuis 4 jours, pas de traumatisme. ATCD néant, vaccins à jour.</p><p>A (Assessment) : Suspicion d’arthrite septique de la hanche gauche. DD : ostéomyélite, synovite transitoire, Perthes.</p><p>R (Recommendation) : Hospitalisation immédiate, bilan infectieux et imagerie, ponction articulaire si épanchement, antibiothérapie IV après prélèvements, avis orthopédie/chirurgie.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 Critères de Kocher</h5>
+                <ul class="presentation-points">
+                    <li>Fièvre > 38,5°C</li>
+                    <li>Refus d’appui</li>
+                    <li>VS > 40</li>
+                    <li>Leucocytes > 12 G/L</li>
+                    <li><span class="arrow">→</span> <span class="highlight-range">3-4</span> critères <span class="equals">=</span> arthrite septique très probable</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Mnémo RED HIP</h5>
+                <ul class="presentation-points">
+                    <li>R <span class="equals">=</span> Refus d’appui</li>
+                    <li>E <span class="equals">=</span> Épanchement visible à l’écho</li>
+                    <li>D <span class="equals">=</span> Douleur passive</li>
+                    <li>H <span class="equals">=</span> High fever</li>
+                    <li>I <span class="equals">=</span> Inflammation (CRP, VS)</li>
+                    <li>P <span class="equals">=</span> Ponction nécessaire</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Arthrite septique</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Fièvre élevée persistante</li>
+                                <li>Boiterie refus d’appui</li>
+                                <li>Douleur et limitation passive hanche gauche</li>
+                                <li>Évolution rapide sur quelques jours</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de rougeur ni chaleur cutanée</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Synovite aiguë transitoire</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Âge compatible (2 ans)</li>
+                                <li>Contexte viral (rhinorrhée claire)</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Fièvre élevée inhabituelle</li>
+                                <li>Durée prolongée (7 jours)</li>
+                                <li>Altération état général</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Ostéomyélite</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Fièvre élevée</li>
+                                <li>Douleur osseuse possible</li>
+                                <li>Refus d’appui</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Mobilisation passive articulaire douloureuse plutôt qu’os localisé</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q4</span>
+                        <span class="q-text">Maladie de Perthes</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Âge trop jeune (pic <span class="highlight-range">4-8</span> ans)</li>
+                                <li>Fièvre élevée atypique</li>
+                                <li>Évolution brutale</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>FSC, CRP, VS, hémocultures</li>
+                            <li>Radiographie bassin face et hanche</li>
+                            <li>Échographie hanche (détecte épanchement)</li>
+                            <li>Ponction articulaire si épanchement</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Arthrite septique de la hanche gauche</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Hospitalisation</li>
+                                <li>ATB IV probabiliste après prélèvements</li>
+                                <li>Antalgiques</li>
+                                <li>Ponction ou drainage chirurgical de la hanche</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Durée ATB IV puis relais PO (<span class="highlight-range">3-6</span> semaines au total)</li>
+                            <li>Surveillance CRP et clinique</li>
+                            <li>Kinésithérapie à distance</li>
+                            <li>Surveillance croissance hanche (complications : nécrose, inégalité longueur des jambes)</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour le patient simulé - Parent de Charlotte</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Parent de Charlotte Borloz |             <strong>Âge :</strong> Parent d'une fillette de 2 ans<br>
+            <strong>Contexte :</strong> Urgences d'un hôpital pédiatrique
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Ma fille, Charlotte, boite</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> Elle ne marche pas comme il faut. Elle ne veut pas utiliser la jambe gauche ni poser le pied par terre maintenant.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <p><strong>Symptôme principal :</strong> Boiterie et refus de poser le pied gauche par terre</p>
+            <p><strong>Chronologie :</strong> Débuté il y a 7 jours, boîte de plus en plus, marche moins. Depuis aujourd'hui, ne veut plus marcher, veut être portée. Pas de différence entre le matin ou le soir.</p>
+            <div class="property-group">
+                <strong>Douleur :</strong>
+                <ul>
+                    <li>Localisation: Hanche gauche, peut-être vers la cuisse et le pli de l'aine gauche</li>
+                    <li>Intensité: Pas de pleurs, pas de douleur perçue si on la laisse tranquille (difficile à juger)</li>
+                    <li>Facteurs aggravants: Le temps qui passe, chaque jour c'est pire</li>
+                    <li>Facteurs atténuants: Un peu mieux avec du Dafalgan au début, mais maintenant ça ne fait plus rien</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>Fièvre à 39.6°C depuis 4 jours, plusieurs pics par jour. Baisse avec Dafalgan mais remonte</li>
+                    <li>Plus grincheuse et irritable que d'habitude</li>
+                    <li>Nez qui coule avec sécrétions claires depuis 3 jours</li>
+                    <li>Demande à être portée</li>
+                </ul>
+            </div>
+            <p><strong>Circonstances :</strong> Elle s'est réveillée le matin il y a 7 jours et a commencé à boiter</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Attitude :</strong>
+                <ul>
+                    <li>État d'inquiétude pour votre fille durant tout l'entretien</li>
+                </ul>
+            </div>
+            <p><strong>Reponse Standard :</strong> Je ne sais pas ce qui lui arrive mais je m'inquiète</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse par systèmes</h4>
+            <div class="property-group">
+                <strong>Générale :</strong>
+                <ul>
+                    <li>Fièvre à 39.6°C mesurée depuis 4 jours, plusieurs pics par jour</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Pulmonaire :</strong>
+                <ul>
+                    <li>Pas de toux</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Digestive :</strong>
+                <ul>
+                    <li>Pas de diarrhée ni vomissement</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Osteo Articulaire :</strong>
+                <ul>
+                    <li>Boiterie décrite</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>État d'esprit</h4>
+            <p>Inquiet-e pour votre fille</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents</h4>
+            <p><strong>Médicaux :</strong> Fille en bonne santé habituellement, sans maladie, ni médicament</p>
+            <p><strong>Chirurgicaux :</strong> Aucun</p>
+            <p><strong>Familiaux :</strong> Rien de particulier</p>
+            <p><strong>Vaccinations :</strong> Vaccinée et suivie par une pédiatre qui est actuellement en vacances</p>
+            <p><strong>Développement :</strong> Grossesse, accouchement, période périnatale sans particularité, bon développement de l'enfant, croissance normale</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Traitements</h4>
+            <div class="property-group">
+                <strong>Actuels :</strong>
+                <ul>
+                    <li>Dafalgan 180mg per os pour la fièvre et la douleur</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 44, examen: 13, management: 14, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 15, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 3, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 6, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

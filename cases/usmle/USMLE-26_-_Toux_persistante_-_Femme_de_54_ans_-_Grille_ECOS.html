@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE-26 - Toux persistante - Femme de 54 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE-26 - Toux persistante - Femme de 54 ans</h1>
+            <p style="margin: 5px 0;">📍 Cabinet médical</p>
+            <p style="margin: 5px 0;">👤 Marilyn McLean, 54 ans, se présente au cabinet en se plaignant d'une toux persistante</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">120/80 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">75 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">15/min</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">37.5°C</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/48</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Motif principal <span class="patient-response">[Toux persistante]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Motif principal" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de la toux <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Durée <span class="patient-response">[J'ai une toux depuis des années, surtout le matin. Ce dernier mois, la toux s'est aggravée et elle m'agace vraiment]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évolution journalière <span class="patient-response">[Non, pas de changements au cours de la journée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Progression récente <span class="patient-response">[Elle s'aggrave]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Toux nocturne <span class="patient-response">[Oui, parfois je ne peux pas dormir à cause de cela]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs modulateurs <span class="patient-response">[Aucun facteur soulageant ou aggravant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Expectorations <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Production <span class="patient-response">[Oui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Quantité <span class="patient-response">[Deux cuillères à café, stable]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Couleur <span class="patient-response">[Mucus jaunâtre]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Odeur <span class="patient-response">[Aucune]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Consistance <span class="patient-response">[Épais et visqueux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sang <span class="patient-response">[Oui, récemment]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Quantité de sang <span class="patient-response">[Stries]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Symptômes précédant l'hémoptysie <span class="patient-response">[Aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Symptômes associés respiratoires <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Essoufflement <span class="patient-response">[Oui, lorsque je monte les escaliers]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleur thoracique <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sibilances <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Symptômes constitutionnels <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Fièvre/frissons <span class="patient-response">[Fièvre légère, surtout la nuit. Je n'ai pas pris ma température. Je n'ai pas eu de frissons]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sueurs nocturnes <span class="patient-response">[Oui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fatigue <span class="patient-response">[Oui, je n'ai plus l'énergie que j'avais auparavant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Depuis quand <span class="patient-response">[Il y a deux mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changements d'appétit <span class="patient-response">[Oui, je n'ai plus d'appétit]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-4" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changements de poids <span class="patient-response">[J'ai perdu 2,7 kg au cours des deux derniers mois sans le vouloir]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-5" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Exposition et risques <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Exposition tuberculose <span class="patient-response">[Oui, je travaille dans une maison de retraite, et plusieurs de nos résidents sont sous traitement pour la tuberculose]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dernier test de Mantoux <span class="patient-response">[L'année dernière, avant de commencer à travailler dans la maison de retraite. Il était négatif]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Voyage récent <span class="patient-response">[Aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Revue des systèmes <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Douleur abdominale <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nausées/vomissements <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Diarrhée/constipation <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Antécédents médicaux <span class="patient-response">[Bronchite chronique]</span> <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="2" data-criteria="Antécédents médicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Antécédents chirurgicaux <span class="patient-response">[Amygdalectomie et adénoïdectomie à l'âge de 11 ans]</span> <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="2" data-criteria="Antécédents chirurgicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Médicaments actuels <span class="patient-response">[Sirop contre la toux en vente libre, multivitamines, inhalateur de Salbutamol (Ventolin)]</span> <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="2" data-criteria="Médicaments actuels" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Antécédents familiaux <span class="patient-response">[Mon père est décédé de vieillesse. Ma mère est vivante et a la maladie d'Alzheimer]</span> <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a11" value="2" data-criteria="Antécédents familiaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a11" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Mode de vie et habitudes <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Aide-soignante]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-0" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tabagisme <span class="patient-response">[Non, j'ai arrêté de fumer il y a 2 semaines]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-1" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Durée tabagisme <span class="patient-response">[J'ai fumé pendant les 35 dernières années]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-2" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Quantité <span class="patient-response">[Un à deux paquets par jour]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-3" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Alcool <span class="patient-response">[Aucune]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-4" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Drogues illicites <span class="patient-response">[Jamais]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-5" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+<div class="criteria-row" id="criteria-a13">
+    <div>
+        <div class="criteria-text">13. Histoire sexuelle <span class="patient-response">[Avec mon mari]</span> <button class="comment-button" onclick="toggleComment('a13')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a13">
+            <textarea class="comment-textarea" id="comment-a13" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a13'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="2" data-criteria="Histoire sexuelle" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a13" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a13">0</div>
+</div>
+<div class="criteria-row" id="criteria-a14">
+    <div>
+        <div class="criteria-text">14. Allergies médicamenteuses <span class="patient-response">[Aucune allergie médicamenteuse connue]</span> <button class="comment-button" onclick="toggleComment('a14')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a14">
+            <textarea class="comment-textarea" id="comment-a14" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a14'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="2" data-criteria="Allergies médicamenteuses" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a14">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/14</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. État général <span class="patient-response">[La patiente ne semble pas en détresse aiguë]</span> <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="État général" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examen de la tête et du cou <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection bouche et gorge <span class="patient-response">[Bouche et pharynx normaux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ganglions lymphatiques <span class="patient-response">[Pas d'adénopathie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Turgescence jugulaire <span class="patient-response">[Pas de turgescence jugulaire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen cardiovasculaire <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection <span class="patient-response">[Choc de pointe non déplacé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[RR et FC normaux ; B1/B2 normaux ; pas de souffles, frottements ou galops]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen pulmonaire <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Murmures vésiculaires clairs bilatéralement ; pas de ronchi, râles ou sibilances]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Frémitus normal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Percussion <span class="patient-response">[À évaluer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Examen abdominal <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Bruits intestinaux normaux en quantité et qualité]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Détendu, souple et indolore, pas d'hépato-splénomégalie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Examen des extrémités <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Inspection <span class="patient-response">[Pas de hippocratisme digital, cyanose ou œdème]</span></div>        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e6" value="2" data-criteria="Examen des extrémités" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e6" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e6" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/31</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Hypothèses diagnostiques <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">2 points si au moins 2 diagnostics pertinents mentionnés, 1 point si 1 diagnostic</div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Hypothèses diagnostiques" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Infections pulmonaires</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Tuberculose pulmonaire</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Exposition professionnelle directe TB active<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes constitutionnels (fièvre, sueurs nocturnes)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte de poids non intentionnelle (2,7 kg/2 mois)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue depuis 2 mois<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Hémoptysie (stries sang)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Toux aggravée récemment<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Test Mantoux négatif il y a 1 an<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de caverne à l'examen</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Test Mantoux/QuantiFERON, BAAR crachats x3, Rx thorax</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Pneumonie bactérienne</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre (37,5°C)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Expectorations purulentes jaunâtres<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Toux productive<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Terrain BPCO (facteur risque)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Évolution subaiguë (1 mois)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de consolidation à l'examen<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de frissons<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes constitutionnels importants</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Rx thorax, NFS, CRP, cultures crachats</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Abcès pulmonaire</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Évolution subaiguë<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre, sueurs nocturnes<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue progressive<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Expectorations purulentes<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'odeur fétide crachats<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de facteurs risque aspiration<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Examen pulmonaire normal</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ CT thorax avec contraste</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Néoplasies</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Cancer bronchique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Tabagisme 35 paquets-années<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Hémoptysie récente<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte de poids involontaire<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue, anorexie<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge et sexe (54 ans)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Toux chronique modifiée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  BPCO sous-jacente<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'hippocratisme digital<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Examen pulmonaire normal</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ CT thorax, cytologie crachats, bronchoscopie</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Maladies pulmonaires chroniques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Exacerbation de BPCO</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  ATCD bronchite chronique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Tabagisme important<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Toux productive chronique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Dyspnée d'effort<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Expectorations purulentes<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sueurs nocturnes atypiques<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte de poids importante<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Hémoptysie inhabituelle<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'augmentation dyspnée/sibilances</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Spirométrie, gaz du sang si dyspnée</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Infections atypiques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Pneumonie atypique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Début insidieux<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes systémiques<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Hémoptysie possible<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Toux productive (vs sèche)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Perte de poids importante<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Durée prolongée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de myalgies/céphalées</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Sérologies Mycoplasma, Chlamydia, Legionella</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens complémentaires urgents <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Radiographie thoracique face et profil</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test tuberculinique (Mantoux) ou QuantiFERON-Gold</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen des crachats : BAAR x3 jours consécutifs</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">NFS avec formule leucocytaire</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">VS, CRP</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Saturation O2 au repos et à l'effort</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-5" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens selon orientation <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">CT thorax haute résolution</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Cytologie des expectorations</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Cultures crachats (bactéries, mycobactéries)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Bronchoscopie avec LBA si imagerie anormale</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Biopsie transbronchique ou percutanée</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Spirométrie complète</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-5" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Marqueurs tumoraux (CEA, NSE, CYFRA 21-1)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-6" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Prise en charge immédiate <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Mesures d'isolement</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Isolement respiratoire si TB suspectée<br />
+            <span style="margin-left: 10px;">•</span> Masque chirurgical pour la patiente<br />
+            <span style="margin-left: 10px;">•</span> Chambre à pression négative si hospitalisation<br />
+            <span style="margin-left: 10px;">•</span> Précautions gouttelettes<br />
+            <span style="margin-left: 10px;">•</span> Information contacts professionnels<br />
+            <span style="margin-left: 10px;">•</span> Déclaration obligatoire si TB confirmée</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Traitement symptomatique</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Antitussifs codéinés si toux invalidante<br />
+            <span style="margin-left: 10px;">•</span> Bronchodilatateurs si obstruction<br />
+            <span style="margin-left: 10px;">•</span> Antipyrétiques si fièvre<br />
+            <span style="margin-left: 10px;">•</span> Hydratation adéquate<br />
+            <span style="margin-left: 10px;">•</span> Suppléments nutritionnels si dénutrition<br />
+            <span style="margin-left: 10px;">•</span> Oxygénothérapie si hypoxémie</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Mesures préventives travail</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Port masque FFP2 systématique<br />
+            <span style="margin-left: 10px;">•</span> Formation précautions TB<br />
+            <span style="margin-left: 10px;">•</span> Surveillance médicale renforcée<br />
+            <span style="margin-left: 10px;">•</span> Test annuel TB pour personnel<br />
+            <span style="margin-left: 10px;">•</span> Éviction si TB active confirmée<br />
+            <span style="margin-left: 10px;">•</span> Protection collègues et résidents</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="2" data-criteria="Prise en charge immédiate" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Arrêt tabac et support <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Féliciter arrêt récent (2 semaines)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Substituts nicotiniques si besoin</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Support psychologique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Groupe de soutien</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Surveillance syndrome sevrage</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Prévention rechute long terme</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-5" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Surveillance et suivi <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Résultats BAAR dans 24-48h</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Consultation pneumologie rapide</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Contrôle poids hebdomadaire</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Surveillance symptômes</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rx thorax contrôle selon évolution</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-4" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Compliance traitement si TB</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-5" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+<div class="criteria-row" id="criteria-m7">
+    <div>
+        <div class="criteria-text">7. Signes d'alarme <button class="comment-button" onclick="toggleComment('m7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Red Flags - Urgences pneumologiques</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Hémoptysie massive</div>
+                <div class="redflags-description">→ > 200ml/24h ou instabilité hémodynamique = Réanimation + embolisation</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Détresse respiratoire aiguë</div>
+                <div class="redflags-description">→ SpO2 < 90%, cyanose = Oxygène haut débit + hospitalisation</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. Syndrome cave supérieur</div>
+                <div class="redflags-description">→ Œdème facial, circulation collatérale = CT urgent + corticoïdes</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Douleur thoracique brutale</div>
+                <div class="redflags-description">→ Pneumothorax, EP = Rx/angio-CT urgent</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">5. Confusion/somnolence</div>
+                <div class="redflags-description">→ Hypercapnie, métastases cérébrales = Gaz du sang + imagerie</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m7">
+            <textarea class="comment-textarea" id="comment-m7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="2" data-criteria="Signes d'alarme" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m7">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Clôture type</h4>
+                    <div class="cloture-content cloture-content-green">Madame McLean, votre toux peut être due à une infection pulmonaire qui pourrait être traitée avec des antibiotiques, ou elle pourrait être causée par quelque chose de plus grave, comme un cancer. Nous devrons effectuer des analyses de sang et des tests d'expectoration, ainsi qu'une radiographie pulmonaire pour identifier la cause de votre toux. De plus, il se peut que nous devions réaliser des tests plus sophistiqués à l'avenir. Le fait que vous travailliez dans une maison de retraite vous expose à un risque accru de contracter la tuberculose, nous allons donc vous tester pour cela également. Je vous recommande également de respecter les précautions respiratoires standard lorsque vous travaillez avec des patients infectés par la tuberculose. Avez-vous des questions pour moi ?</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Questions difficiles à poser</h4>
+                    <div class="cloture-content">[Est-ce que j'irai mieux si j'arrête de fumer ?]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse type du candidat</h4>
+                    <div class="cloture-content cloture-content-green">Eh bien, nous devons d'abord déterminer exactement ce qui cause votre toux. Si vous arrêtez de fumer, votre toux chronique devrait s'améliorer. Mais peu importe ce qui cause votre toux, l'arrêt du tabac réduira considérablement votre risque de cancer à long terme.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/113</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 🦠 Tuberculose pulmonaire – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes respiratoires</h5>
+<ul class="resume-subsection-points">
+<li>Toux chronique > 3 semaines, souvent productive</li>
+<li>Expectorations purulentes ± hémoptysie</li>
+<li>Douleurs thoraciques</li>
+<li>Dyspnée à un stade avancé</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Signes généraux</h5>
+<ul class="resume-subsection-points">
+<li>Fièvre modérée ou vespérale</li>
+<li>Sueurs nocturnes</li>
+<li>Amaigrissement, anorexie</li>
+<li>Asthénie</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Facteurs de risque</h5>
+<ul class="resume-subsection-points">
+<li>Origine ou séjour en zone d’endémie (Afrique, Asie, Europe de l’Est)</li>
+<li>Immunodépression (VIH, corticoïdes, chimiothérapie)</li>
+<li>Conditions de vie précaires ou promiscuité</li>
+<li>Contact avec un cas connu de tuberculose</li>
+<li>Précédente infection tuberculeuse latente</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Signes cliniques</h5>
+<ul class="resume-subsection-points">
+<li>Souvent pauvre ou non spécifique</li>
+<li>Râles crépitants ou signes de condensation à l’auscultation</li>
+<li>Adénopathies cervicales (tuberculose ganglionnaire)</li>
+<li>Altération de l’état général</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Imagerie</h5>
+<ul class="resume-subsection-points">
+<li>Radiographie thoracique : lésions apicales, infiltrats, cavernes, nodules</li>
+<li>Scanner thoracique si doute ou bilan d’extension</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens microbiologiques</h5>
+<ul class="resume-subsection-points">
+<li>ECBC x3 pour BAAR (coloration de Ziehl-Neelsen)</li>
+<li>PCR (GeneXpert) pour confirmation rapide et recherche de résistance (Rifampicine)</li>
+<li>Culture sur milieu de Löwenstein (<span class="highlight-important">référence</span>, mais lente)</li>
+<li>Tubages gastriques ou LBA si impossibilité d’expectoration</li>
+<li>IDR à la tuberculine ou IGRA (Quantiferon) pour dépistage</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Bilan complémentaire</h5>
+<ul class="resume-subsection-points">
+<li>Sérologie VIH systématique</li>
+<li>NFS, CRP, fonction hépatique</li>
+<li>ECBU, fond d’œil si suspicion de dissémination</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Mesures initiales</h5>
+<ul class="resume-subsection-points">
+<li>Hospitalisation si forme contagieuse, contexte social instable, ou forme grave</li>
+<li>Isolement respiratoire en chambre à pression négative</li>
+<li>Déclaration obligatoire à l’ARS</li>
+<li>Dépistage et traitement des cas contacts</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement antituberculeux</h5>
+<ul class="resume-subsection-points">
+<li>Phase d’attaque (2 mois) : isoniazide + rifampicine + pyrazinamide + éthambutol</li>
+<li>Phase de continuation (4 mois) : isoniazide + rifampicine</li>
+<li>Suivi de l’observance (DOTS recommandé)</li>
+<li>Adaptation en cas de résistance ou toxicité</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Surveillance</h5>
+<ul class="resume-subsection-points">
+<li>Clinique : disparition des symptômes, reprise de poids</li>
+<li>Biologique : transaminases, NFS si toxicité</li>
+<li>Microbiologique : contrôle des expectorations (BAAR) à 2 mois</li>
+<li>Radiologique : contrôle en fin de traitement</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Toux chronique + signes généraux <span class="equals">=</span> penser à la tuberculose</li>
+<li class="resume-bullet">Rechercher systématiquement un terrain à risque</li>
+<li class="resume-bullet highlight">BAAR sur expectoration et PCR GeneXpert <span class="equals">=</span> diagnostics clés</li>
+<li class="resume-bullet">Traitement quadrithérapie de 6 mois avec suivi étroit</li>
+<li class="resume-bullet">Déclaration obligatoire et isolement si forme contagieuse</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations de l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>L'expert-e intervient si l'étudiant-e demande :</li>
+                <li>• Rx thorax : infiltrat apical droit avec petite caverne</li>
+                <li>• BAAR crachats : positifs (résultat dans 24h)</li>
+                <li>• NFS : GB 11000, lymphocytes 45%</li>
+                <li>• VS : 45 mm/h</li>
+                <li>• Mantoux : virage à 18mm (était 0mm)</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Isolement respiratoire IMMÉDIAT</li>
+                <li>TB très probable vu exposition + clinique</li>
+                <li>Cancer reste possible (double pathologie)</li>
+                <li>Déclaration obligatoire si TB confirmée</li>
+                <li>Enquête entourage professionnel/familial</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Ne pas isoler immédiatement</li>
+                <li>Oublier exposition professionnelle TB</li>
+                <li>Se focaliser sur cancer seul</li>
+                <li>Ne pas féliciter arrêt tabac</li>
+                <li>Minimiser risque transmission</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique concernant la vignette</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Diagnostic</h4>
+            <p>Tuberculose pulmonaire active très probable avec exposition professionnelle documentée. Cancer bronchique à exclure vu terrain tabagique important</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Tuberculose pulmonaire réactivée</h4>
+            <p>Épidémiologie et transmission :</p>
+            <ul>
+                <li>Incidence mondiale : 10 millions cas/an</li>
+                <li>Transmission aérienne (noyaux gouttelettes)</li>
+                <li>Risque soignants : 2-3x population générale</li>
+                <li>Latence : 5% progression 2 ans, 5% vie</li>
+                <li>Réactivation : immunodépression, âge, diabète</li>
+                <li>Contagiosité : BAAR+ > caverne > culture seule</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Présentation clinique TB pulmonaire</h4>
+            <p>Symptômes typiques progression lente :</p>
+            <ul>
+                <li>Toux > 3 semaines (95%)</li>
+                <li>Hémoptysie (25-50%)</li>
+                <li>Fièvre vespérale (80%)</li>
+                <li>Sueurs nocturnes profuses</li>
+                <li>Perte poids involontaire</li>
+                <li>Fatigue, anorexie</li>
+                <li>Dyspnée si atteinte étendue</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Diagnostic tuberculose</h4>
+            <p>Approche systématique :</p>
+            <ul>
+                <li>BAAR crachats x3 matins consécutifs</li>
+                <li>Culture Löwenstein (gold standard) 6-8 sem</li>
+                <li>PCR TB (GeneXpert) : résultat 2h</li>
+                <li>Rx thorax : infiltrats apicaux, cavernes</li>
+                <li>IGRA/Mantoux : infection latente vs active</li>
+                <li>Bronchoscopie si crachats négatifs</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Interprétation test tuberculinique</h4>
+            <p>Seuils selon risque :</p>
+            <ul>
+                <li>≥ 5mm : VIH+, contact récent TB, Rx anormale</li>
+                <li>≥ 10mm : immigrants, IVDU, personnel santé</li>
+                <li>≥ 15mm : population générale sans risque</li>
+                <li>Virage : augmentation ≥ 10mm en 2 ans</li>
+                <li>Faux négatifs : immunodépression, TB miliaire</li>
+                <li>IGRA : plus spécifique, pas affecté BCG</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Cancer bronchique et tabac</h4>
+            <p>Risque et présentation :</p>
+            <ul>
+                <li>Risque x20 si > 30 paquets-années</li>
+                <li>Latence 10-30 ans après exposition</li>
+                <li>Adénocarcinome > épidermoïde actuellement</li>
+                <li>Symptômes : toux modifiée, hémoptysie</li>
+                <li>Paranéoplasiques : hippocratisme, SIADH</li>
+                <li>Dépistage CT faible dose si > 55 ans + 30 PA</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Traitement tuberculose sensible</h4>
+            <p>Quadrithérapie initiale 2 mois :</p>
+            <ul>
+                <li>Rifampicine 10mg/kg/j</li>
+                <li>Isoniazide 5mg/kg/j + B6</li>
+                <li>Pyrazinamide 25mg/kg/j</li>
+                <li>Éthambutol 15mg/kg/j</li>
+                <li>Puis RH 4 mois si sensible</li>
+                <li>DOT (directly observed therapy) idéal</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Mesures santé publique TB</h4>
+            <p>Actions obligatoires :</p>
+            <ul>
+                <li>Déclaration immédiate ARS</li>
+                <li>Isolement respiratoire strict</li>
+                <li>Enquête entourage < 3 mois</li>
+                <li>Dépistage contacts étroits</li>
+                <li>Chimioprophylaxie si infection latente</li>
+                <li>Suivi contacts 2 ans</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>TB et personnel soignant</h4>
+            <p>Surveillance et prévention :</p>
+            <ul>
+                <li>Test pré-embauche obligatoire</li>
+                <li>Surveillance annuelle si exposition</li>
+                <li>Formation précautions aériennes</li>
+                <li>Masque FFP2 si TB suspectée/confirmée</li>
+                <li>Chambres pression négative</li>
+                <li>Éviction jusqu'à 3 BAAR négatifs</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Pronostic</h4>
+            <p>Facteurs influençant évolution :</p>
+            <ul>
+                <li>TB sensible : guérison > 95% si observance</li>
+                <li>Cavernes : contagiosité prolongée</li>
+                <li>Résistance : mortalité 40-60% si MDR</li>
+                <li>Comorbidités : VIH, diabète aggravent</li>
+                <li>Observance : clé du succès thérapeutique</li>
+                <li>Séquelles : fibrose, bronchectasies</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Messages clés</h4>
+            <ul>
+                <li>TB = urgence santé publique</li>
+                <li>Isolement immédiat si suspicion</li>
+                <li>3 BAAR négatifs pour lever isolement</li>
+                <li>Déclaration obligatoire ARS</li>
+                <li>Enquête entourage systématique</li>
+                <li>Traitement 6 mois minimum</li>
+                <li>Cancer peut coexister avec TB</li>
+                <li>Arrêt tabac reste prioritaire</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>RHZE 2 mois puis RH 4 mois</li>
+                <li>Pyridoxine 25mg/j (prévention neuropathie)</li>
+                <li>Surveillance transaminases mensuelle</li>
+                <li>Contrôle ophtalmologique (éthambutol)</li>
+                <li>DOT si possible pour observance</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>BAAR crachats x3 URGENT</li>
+                <li>Rx thorax face + profil</li>
+                <li>PCR TB (GeneXpert) si disponible</li>
+                <li>IGRA ou Mantoux</li>
+                <li>Bilan pré-thérapeutique : NFS, ASAT/ALAT, créat</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Toux persistante (suspicion tuberculose pulmonaire)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, profession, motif de consultation</li>
+                <li>Caractérisation de la toux <span class="arrow">→</span> durée, productivité, hémoptysie, évolution récente</li>
+                <li>Symptômes associés <span class="arrow">→</span> dyspnée, fièvre, sueurs nocturnes, perte de poids</li>
+                <li>Facteurs de risque <span class="arrow">→</span> exposition TB, tabac, comorbidités</li>
+                <li>Examen clinique <span class="arrow">→</span> constantes, inspection, auscultation, recherche d’adénopathies</li>
+                <li>Résumé + hypothèse principale + diagnostics différentiels</li>
+                <li>Examens complémentaires <span class="arrow">→</span> Rx thorax, BAAR, PCR TB, NFS/CRP</li>
+                <li>Prise en charge <span class="arrow">→</span> isolement respiratoire, ATB spécifiques si TB confirmée, soutien arrêt tabac</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide : COUGH</div>
+    <ul class="mnemo-items">
+        <li>C = Chronicity > 3 semaines</li>
+        <li>O = Origin (TB, cancer, BPCO, infection)</li>
+        <li>U = Unexplained weight loss / sweats</li>
+        <li>G = Gross blood (hémoptysie)</li>
+        <li>H = High risk exposures (soignants, TB contacts)</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de Mme Marilyn McLean, 54 ans, aide-soignante, qui consulte pour une toux persistante.</p><p>Elle rapporte que cette toux est présente depuis plusieurs années, surtout le matin avec des crachats blancs, mais qu’elle s’est aggravée au cours du dernier mois. Désormais, elle tousse tout au long de la journée et parfois la nuit, au point d’avoir du mal à dormir. Depuis quelques jours, elle a remarqué des stries de sang dans ses crachats.</p><p>Ses expectorations sont jaunâtres, épaisses et visqueuses, environ deux cuillères à café par jour, sans odeur particulière. Elle ne décrit pas de douleur thoracique, mais elle est plus essoufflée dans les escaliers qu’auparavant. Depuis deux mois, elle ressent une grande fatigue, a perdu son appétit et a perdu près de trois kilos sans le vouloir. Elle rapporte aussi de la fièvre le soir, qu’elle n’a pas mesurée, ainsi que des sueurs nocturnes abondantes.</p><p>Pour ses antécédents, elle est suivie pour une bronchite chronique. Elle a eu une amygdalectomie et une adénoïdectomie à l’âge de 11 ans. Elle n’a pas d’allergie connue. Ses médicaments habituels sont un sirop contre la toux en vente libre, des multivitamines et un inhalateur de Ventolin utilisé au besoin.</p><p>Dans ses habitudes de vie, elle fumait un à deux paquets par jour depuis 35 ans, mais elle a arrêté il y a deux semaines. Elle ne consomme pas d’alcool ni de drogues. Elle vit avec son mari. Au travail, elle est aide-soignante en maison de retraite, où plusieurs résidents sont actuellement traités pour une tuberculose. Son dernier test tuberculinique il y a un an était négatif.</p><p>À l’examen, ses constantes sont normales : tension artérielle 120/80, fréquence cardiaque 75, fréquence respiratoire 15, température 37,5. Elle ne présente pas de détresse respiratoire aiguë. L’examen de la bouche et du pharynx est normal, il n’y a pas d’adénopathie palpable. Le cœur est normal à l’auscultation. Les murmures vésiculaires sont normaux, sans râles ni sibilances. L’abdomen est souple et indolore, et il n’y a pas d’œdème ni d’hippocratisme digital aux extrémités.</p><p>En résumé, il s’agit d’une femme de 54 ans, tabagique chronique récemment sevrée, avec une toux chronique aggravée, une hémoptysie récente, une perte de poids et des sueurs nocturnes, dans un contexte d’exposition professionnelle à la tuberculose. Mon hypothèse principale est une tuberculose pulmonaire active. Les diagnostics différentiels incluent un cancer bronchique, un abcès pulmonaire, ou une exacerbation de BPCO.</p><p>Comme examens complémentaires, je demanderais en urgence une radiographie thoracique, trois examens d’expectorations pour BAAR, une PCR TB type GeneXpert, un test tuberculinique ou IGRA, une NFS et une CRP. Selon les résultats, un scanner thoracique et une bronchoscopie pourraient être indiqués.</p><p>En termes de prise en charge immédiate, j’indique un isolement respiratoire strict avec masque chirurgical, une hospitalisation si suspicion forte, une déclaration obligatoire en cas de confirmation, et une mise en route rapide du traitement antituberculeux si confirmé. J’encourage également la poursuite du sevrage tabagique et le soutien psychologique si besoin.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : Mme McLean, 54 ans, présente une toux persistante aggravée avec hémoptysie et altération de l’état général.</p><p>B (Background) : Antécédent de bronchite chronique, forte tabagique, travaille en maison de retraite avec exposition TB.</p><p>A (Assessment) : Suspicion tuberculose pulmonaire active. DD : cancer bronchique, BPCO, abcès pulmonaire.</p><p>R (Recommendation) : Isolement respiratoire immédiat, Rx thorax, BAAR ×3, PCR TB, NFS/CRP, orientation pneumologie.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>TB = THINK</h5>
+                <ul class="presentation-points">
+                    <li>T <span class="equals">=</span> Toux chronique > 3 semaines</li>
+                    <li>H <span class="equals">=</span> Hémoptysie</li>
+                    <li>I <span class="equals">=</span> Infiltrats apicaux au Rx</li>
+                    <li>N <span class="equals">=</span> Night sweats (sueurs nocturnes)</li>
+                    <li>K <span class="equals">=</span> Kilos perdus (amaigrissement)</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>⚠️ Urgence santé publique</h5>
+                <ul class="presentation-points">
+                    <li>Isolement respiratoire dès la suspicion</li>
+                    <li>Déclaration obligatoire ARS</li>
+                    <li>Recherche systématique des cas contacts</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Tuberculose pulmonaire</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Exposition professionnelle documentée</li>
+                                <li>Fièvre vespérale + sueurs nocturnes</li>
+                                <li>Amaigrissement, anorexie</li>
+                                <li>Hémoptysie</li>
+                                <li>Toux chronique aggravée</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Test Mantoux négatif il y a 1 an (mais possible virage récent)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Cancer bronchique</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Tabagisme 35 paquets-années</li>
+                                <li>Toux chronique modifiée</li>
+                                <li>Hémoptysie</li>
+                                <li>Perte de poids</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Examen pulmonaire normal</li>
+                                <li>Pas d’hippocratisme digital</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Exacerbation de BPCO</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Antécédent de bronchite chronique</li>
+                                <li>Tabagisme important</li>
+                                <li>Toux productive</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Hémoptysie atypique</li>
+                                <li>Sueurs nocturnes et perte de poids inhabituelles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Rx thorax face et profil</li>
+                            <li>BAAR expectoration ×3</li>
+                            <li>PCR TB GeneXpert</li>
+                            <li>Test tuberculinique ou IGRA</li>
+                            <li>NFS, CRP</li>
+                            <li>Consultation pneumologie rapide</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Tuberculose pulmonaire active</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Isolement respiratoire</li>
+                                <li>Quadrithérapie antituberculeuse : rifampicine, isoniazide, pyrazinamide, éthambutol</li>
+                                <li>Puis bithérapie 4 mois si souche sensible</li>
+                                <li>DOT pour observance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Surveillance clinique et pondérale</li>
+                            <li>Contrôle biologique (transaminases, NFS)</li>
+                            <li>Suivi microbiologique (BAAR de contrôle à 2 mois)</li>
+                            <li>Radiographie thoracique en fin de traitement</li>
+                            <li>Enquête et prophylaxie des contacts</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour la patiente standardisée</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Marilyn McLean |             <strong>Âge :</strong> 54 ans<br>
+            <strong>Contexte :</strong> Femme aide-soignante avec toux chronique aggravée
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Toux persistante.</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> J'ai aussi craché du sang récemment.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Consignes</h4>
+            <ul>
+                <li>Toussez lorsque le candidat entre dans la pièce.</li>
+                <li>Continuez à tousser toutes les 3-4 minutes pendant l'entretien.</li>
+                <li>Tenez un mouchoir taché de rouge pour simuler du sang. Ne le montrez pas au candidat sauf s'il le demande.</li>
+                <li>Pendant l'entretien, faites semblant d'avoir une forte quinte de toux.</li>
+                <li>Notez si le candidat vous offre un verre d'eau ou un mouchoir.</li>
+                <li>Montrez de l'inquiétude concernant votre exposition à la TB.</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Toux :</strong>
+                <ul>
+                    <li>Chronique depuis des années</li>
+                    <li>Pire le matin habituellement</li>
+                    <li>Aggravée depuis 1 mois</li>
+                    <li>Empêche de dormir parfois</li>
+                    <li>Productive</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Expectorations :</strong>
+                <ul>
+                    <li>2 cuillères à café/jour</li>
+                    <li>Jaunâtres, épaisses</li>
+                    <li>Stries de sang récemment</li>
+                    <li>Pas d'odeur</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>Essoufflement aux escaliers</li>
+                    <li>Fièvre légère nocturne</li>
+                    <li>Sueurs nocturnes</li>
+                    <li>Fatigue depuis 2 mois</li>
+                    <li>Perte appétit</li>
+                    <li>Perte 2,7 kg en 2 mois</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Toux productive régulière</li>
+                    <li>Essuyer bouche avec mouchoir</li>
+                    <li>Légère dyspnée après toux</li>
+                    <li>Inquiétude visible</li>
+                    <li>Questions sur cancer possible</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant l'examen :</strong>
+                <ul>
+                    <li>Coopérative</li>
+                    <li>Pas de détresse respiratoire</li>
+                    <li>Respiration calme entre quintes</li>
+                    <li>Légère anxiété palpable</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Médicaments</h4>
+            <div class="property-group">
+                <strong>Actuels :</strong>
+                <ul>
+                    <li>Sirop toux OTC</li>
+                    <li>Multivitamines</li>
+                    <li>Ventolin au besoin</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Expositions</h4>
+            <div class="property-group">
+                <strong>Tuberculose :</strong>
+                <ul>
+                    <li>Travaille maison retraite</li>
+                    <li>Plusieurs résidents avec TB</li>
+                    <li>Contact direct quotidien</li>
+                    <li>Mantoux négatif il y a 1 an</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Tabac :</strong>
+                <ul>
+                    <li>35 ans de tabagisme</li>
+                    <li>1-2 paquets/jour</li>
+                    <li>Arrêt il y a 2 semaines</li>
+                    <li>Difficile mais motivée</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents</h4>
+            <div class="property-group">
+                <strong>Médicaux :</strong>
+                <ul>
+                    <li>Bronchite chronique</li>
+                    <li>Diagnostiquée il y a 10 ans</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Chirurgicaux :</strong>
+                <ul>
+                    <li>Amygdalectomie enfant</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Familiaux :</strong>
+                <ul>
+                    <li>Père décédé âgé</li>
+                    <li>Mère Alzheimer</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 48, examen: 14, management: 31, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 14, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 6, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 7, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

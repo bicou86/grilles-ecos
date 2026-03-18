@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE-1 - Douleur thoracique - Homme de 46 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE-1 - Douleur thoracique - Homme de 46 ans</h1>
+            <p style="margin: 5px 0;">📍 Service d'urgences</p>
+            <p style="margin: 5px 0;">👤 Joseph Short, 46 ans, se présente aux urgences en se plaignant de douleurs thoraciques</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">165/85 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">90 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">22/min</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">37°C</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/40</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Motif principal <span class="patient-response">[Douleur thoracique]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Motif principal" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de la douleur <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début des symptômes <span class="patient-response">[Il y a quarante minutes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Événements précipitants <span class="patient-response">[Aucun ; dormait et s'est réveillé à 5h00]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Progression <span class="patient-response">[Sévérité constante]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Quantité <span class="patient-response">[7/10]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[Milieu de la poitrine, sous l'os]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[Vers le cou, le haut du dos et le bras gauche]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Qualité <span class="patient-response">[Pression, comme si quelque chose appuyait]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs d'amélioration/aggravation <span class="patient-response">[Aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Symptômes associés <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Dyspnée <span class="patient-response">[Oui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nausées/vomissements <span class="patient-response">[Je me sens nauséeux, mais je n'ai pas vomi]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Transpiration <span class="patient-response">[Oui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Toux, sifflements, douleurs abdominales, diarrhée/constipation <span class="patient-response">[Aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Épisodes précédents de douleur similaire <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Épisodes précédents <span class="patient-response">[Oui, mais pas exactement la même]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Au cours des 3 derniers mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sévérité <span class="patient-response">[Moins sévère]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence <span class="patient-response">[2-3 épisodes par semaine, chacun durant 5 à 10 minutes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Événements précipitants <span class="patient-response">[Monter les escaliers, travail physique, repas copieux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs d'amélioration <span class="patient-response">[Antiacides]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Médicaments actuels <span class="patient-response">[Antiacide, diurétique]</span> <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a5" value="2" data-criteria="Médicaments actuels" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a5" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Antécédents médicaux <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">HTA <span class="patient-response">[Depuis 5 ans, traitée par diurétique]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hypercholestérolémie <span class="patient-response">[Gérée par régime, pas très assidu]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">RGO <span class="patient-response">[Il y a 10 ans, traité par antiacides]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Antécédents chirurgicaux <span class="patient-response">[Aucun]</span> <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="2" data-criteria="Antécédents chirurgicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Antécédents familiaux <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Père <span class="patient-response">[Décédé d'un cancer du poumon à 72 ans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Mère <span class="patient-response">[Vivante avec ulcère gastrique]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Infarctus précoce dans la famille <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Habitudes et mode de vie <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Occupation <span class="patient-response">[Comptable]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-0" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tabagisme <span class="patient-response">[Arrêté il y a 3 mois, 1 paquet/jour pendant 25 ans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-1" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Alcool <span class="patient-response">[Occasionnelle]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-2" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Drogues illicites - Cocaïne <span class="patient-response">[Une fois par semaine depuis 10 ans, dernière prise hier après-midi]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-3" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Activité sexuelle <span class="patient-response">[Pas depuis 3 mois à cause de douleur thoracique pendant les rapports]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-4" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Exercice <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-5" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Régime alimentaire <span class="patient-response">[Régime strict prescrit pour cholestérol mais triche toujours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a9-detail-6" value="1" onchange="updateDetailScore('a9', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Allergies médicamenteuses <span class="patient-response">[Aucune]</span> <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="2" data-criteria="Allergies médicamenteuses" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/15</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Examen du cou <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Recherche de turgescence jugulaire <span class="patient-response">[Pas de TJ]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation carotidienne <span class="patient-response">[Pas de souffles]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examen cardiovasculaire <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection <span class="patient-response">[Impulsion apicale non déplacée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[RR et FC normales ; B1/B2 normaux ; pas de souffles, frottements ou galops]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Indolore]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen pulmonaire <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Bruits respiratoires clairs et symétriques bilatéralement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Thorax indolore]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Percussion</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen abdominal <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Bruits intestinaux normaux en quantité et qualité]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Détendu, souple et indolore, pas d'hépatosplénomégalie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Percussion</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Examen des extrémités <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Vérification des pouls périphériques <span class="patient-response">[2+ et symétriques]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vérification de la TA bilatérale <span class="patient-response">[165/85 mm Hg (les deux bras)]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche d'œdème <span class="patient-response">[Pas d'œdème]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-2" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche de cyanose</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-3" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/13</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Hypothèses diagnostiques <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">2 points si au moins 2 diagnostics pertinents mentionnés, 1 point si 1 diagnostic</div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Hypothèses diagnostiques" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Causes cardiaques prioritaires</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Ischémie ou infarctus myocardique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur thoracique rétrosternale en pression<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur irradiant vers le bras gauche, le haut du dos, et le cou<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur réveillant le patient la nuit<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Facteurs de risque: HTA, hypercholestérolémie, tabagisme</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ ECG, enzymes cardiaques (troponine, CK-MB)</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Ischémie myocardique induite par la cocaïne</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Antécédents de consommation de cocaïne<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Dernière prise hier après-midi<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur thoracique rétrosternale en pression<br>Physiopathologie:<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vasoconstriction coronarienne<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Augmentation de la demande en O2<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Thrombose</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ ECG, enzymes cardiaques, toxicologie urinaire</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Autres causes à éliminer</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">RGO</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur au milieu de la poitrine<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur précédente soulagée par des antiacides<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur précédente survenant après des repas copieux<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Antécédents connus de RGO</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Gastroscopie si récidivant</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Dissection aortique</strong><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Angio-CT thoracique</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Péricardite</strong><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ ECG, échocardiographie</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Pneumothorax</strong><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Radiographie thoracique</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Embolie pulmonaire</strong><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ D-dimères, angio-CT pulmonaire</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Costochondrite</strong><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Examen clinique</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens complémentaires urgents <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">ECG</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Enzymes cardiaques (CK, CK-MB, troponine)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Radiographie thoracique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Toxicologie urinaire</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens complémentaires secondaires <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Échocardiographie transthoracique (ETT)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test d'effort</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Gastroscopie si RGO persistant</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Prise en charge immédiate <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Mesures générales</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Monitoring cardiaque continu<br />
+            <span style="margin-left: 10px;">•</span> Voie veineuse périphérique<br />
+            <span style="margin-left: 10px;">•</span> Oxygène si saturation < 94%</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Traitement symptomatique</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Aspirine 300mg per os<br />
+            <span style="margin-left: 10px;">•</span> Dérivés nitrés sublinguaux<br />
+            <span style="margin-left: 10px;">•</span> Morphine si douleur sévère</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Conseils et suivi</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Arrêt immédiat de la cocaïne<br />
+            <span style="margin-left: 10px;">•</span> Contrôle des facteurs de risque cardiovasculaires<br />
+            <span style="margin-left: 10px;">•</span> Suivi cardiologique rapproché</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="2" data-criteria="Prise en charge immédiate" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Signes d'alarme à surveiller <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Red Flags - Signes d'urgence absolue</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Modifications ECG (sus-décalage ST)</div>
+                <div class="redflags-description">→ Activation immédiate du protocole STEMI</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Instabilité hémodynamique</div>
+                <div class="redflags-description">→ Réanimation, salle de cathétérisme</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. Douleur thoracique déchirante avec asymétrie tensionnelle</div>
+                <div class="redflags-description">→ Suspicion de dissection aortique, angio-CT urgent</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Détresse respiratoire aiguë</div>
+                <div class="redflags-description">→ Intubation si nécessaire</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="2" data-criteria="Signes d'alarme à surveiller" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m5" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Clôture type</h4>
+                    <div class="cloture-content cloture-content-green">Monsieur Short, la source de votre douleur peut être un problème cardiaque tel qu'une crise cardiaque ou une angine de poitrine, ou elle peut être due à un reflux acide, à des problèmes pulmonaires, ou à des troubles liés aux gros vaisseaux sanguins de votre poitrine. Il est crucial que nous effectuions certains tests pour identifier la source de votre problème. Nous commencerons par un ECG et une prise de sang, mais des tests plus complexes pourraient également être nécessaires. En attendant, je vous recommande fortement d'arrêter de consommer de la cocaïne, car l'utilisation de cette drogue peut entraîner divers problèmes médicaux, y compris des crises cardiaques. Avez-vous des questions pour moi ?</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Questions difficiles à poser</h4>
+                    <div class="cloture-content">[Est-ce une crise cardiaque ? Vais-je mourir ?]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse type du candidat</h4>
+                    <div class="cloture-content cloture-content-green">Comme vous le soupçonnez, vos symptômes sont préoccupants. Nous devons en savoir plus pour déterminer si votre douleur est potentiellement mortelle.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/88</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">🧠 Résumé ECOS – Syndrome coronarien aigu (SCA)</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes typiques</h5>
+<ul class="resume-subsection-points">
+<li>Douleur thoracique :</li>
+<li>• Typiquement constrictive, rétro-sternale</li>
+<li>• Irradiation possible (bras G, mâchoire, dos)</li>
+<li>• Non soulagée par le repos ou les nitrés</li>
+<li>• Durée > 20 min</li>
+<li>Signes accompagnateurs :</li>
+<li>• Dyspnée, nausées, sueurs, vertiges, syncope</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Facteurs de risque</h5>
+<ul class="resume-subsection-points">
+<li>Âge, sexe masculin, tabagisme, diabète, dyslipidémie, HTA, antécédents familiaux</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Pièges cliniques</h5>
+<ul class="resume-subsection-points">
+<li>Symptômes atypiques chez :</li>
+<li>• Femmes</li>
+<li>• Personnes âgées</li>
+<li>• Diabétiques (pouvant présenter une dyspnée isolée ou un malaise)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<ul class="resume-points">
+<li class="resume-category">Souvent normal, mais rechercher :</li>
+<li class="resume-bullet">• Instabilité hémodynamique : hypotension, tachy/bradycardie</li>
+<li class="resume-bullet">• Signes d'insuffisance cardiaque : râles pulmonaires, turgescence jugulaire, œdèmes</li>
+<li class="resume-bullet">• Arythmies, souffle systolique (insuffisance mitrale)</li>
+<li class="resume-bullet with-data">• Évaluer les facteurs de gravité : SpO₂ < <span class="highlight-percent">90 %</span>, état général altéré</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Classification du SCA</h4>
+<div class="resume-subsection">
+<table class="resume-table">
+<thead><tr>
+<th>Type de SCA</th>
+<th>ECG</th>
+<th>Troponine</th>
+<th>Lésions</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="first-col">STEMI (SCA ST+)</td>
+<td>Sus-décalage ST ou BBG récent</td>
+<td><span class="arrow-updown">↑</span><span class="arrow-updown">↑</span></td>
+<td>Occlusion complète d'une artère coronaire</td>
+</tr>
+<tr>
+<td class="first-col">NSTEMI (SCA ST−)</td>
+<td>Pas de ST+</td>
+<td><span class="arrow-updown">↑</span><span class="arrow-updown">↑</span></td>
+<td>Ischémie sous-endocardique par occlusion partielle</td>
+</tr>
+<tr>
+<td class="first-col">Angor instable</td>
+<td>Pas de ST+</td>
+<td>Normale</td>
+<td>Pas de nécrose mais risque d'évolution</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens complémentaires</h4>
+<ul class="resume-points">
+<li class="resume-bullet">ECG en <span class="highlight-important">urgence</span> (<10 min) : à répéter si doute</li>
+<li class="resume-bullet with-data">Troponine (à 0h puis <span class="highlight-range">1–3</span>h si besoin)</li>
+<li class="resume-bullet">Bilan biologique : NFS, iono, créat, CRP, glycémie, bilan lipidique</li>
+<li class="resume-bullet">Radiographie thoracique : exclure DD</li>
+<li class="resume-bullet">Échographie cardiaque : fonction VG, complications mécaniques</li>
+<li class="resume-bullet">Score de risque (ex. : TIMI, GRACE) pour guider la prise en charge</li>
+</ul>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge initiale</h4>
+<div class="resume-subsection urgence">
+<h5 class="subsection-title">🔴 En salle d'urgences (ou préhospitalier)</h5>
+<ul class="resume-subsection-points">
+<li>ABC, scope, SpO₂</li>
+<li>O₂ si SpO₂ < <span class="highlight-percent">90 %</span></li>
+<li>Aspirine per os <span class="highlight-important">immédiat</span>ement (<span class="highlight-range">160–325</span> mg)</li>
+<li>Nitroglycérine sublinguale si douleur persistante et TA stable</li>
+<li>Morphine si douleur persistante malgré nitrés</li>
+<li>Heparine ou fondaparinux (selon protocole local)</li>
+<li>Beta-bloquants si absence de contre-indications</li>
+</ul>
+</div>
+</div>
+<div class="resume-section">
+<h4 class="section-title">🚑 Stratégies spécifiques selon type</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">📌 STEMI</h5>
+<ul class="resume-subsection-points">
+<li>Revascularisation <span class="highlight-important">immédiat</span>e (<120 min) :</li>
+<li>• Angioplastie (PCI) <span class="equals">=</span> traitement de choix</li>
+<li>• Fibrinolyse si PCI impossible < 120 min</li>
+<li>Antiagrégation : Aspirine + inhibiteur P2Y12 (clopidogrel, ticagrelor)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">📌 NSTEMI / Angor instable</h5>
+<ul class="resume-subsection-points">
+<li>Stratification du risque :</li>
+<li class="with-arrow">• Haut risque <span class="arrow">→</span> angiographie rapide (<<span class="highlight-range">24–72</span>h)</li>
+<li class="with-arrow">• Bas risque <span class="arrow">→</span> test d'effort ou coronarographie différée</li>
+<li>TTT médical :</li>
+<li>• DAPT (aspirine + P2Y12)</li>
+<li>• Anticoagulants</li>
+<li>• Statine forte dose</li>
+<li>• BB ± IEC selon FE VG</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Toujours penser à l'<span class="highlight-important">urgence</span> vitale <span class="arrow">→</span> prioriser l'ECG</li>
+<li class="resume-bullet">Savoir interpréter l'ECG en phase aiguë</li>
+<li class="resume-bullet">Ne pas retarder le traitement par la biologie</li>
+<li class="resume-bullet highlight">En cas de STEMI <span class="arrow">→</span> PCI <span class="highlight-important">immédiat</span>e</li>
+<li class="resume-bullet">Expliquer clairement au patient les risques, examens et options</li>
+<li class="resume-bullet">⚠️ Toujours rechercher les signes de gravité : choc, dyspnée, arythmie, syncopes</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser</h5>
+<ul class="resume-subsection-points">
+<li>Caractère de la douleur : constrictive ? durée > 20 min ? irradiations ?</li>
+<li>Facteurs de risque cardio (tabac, diabète, HTA, dyslipidémie, ATCD familiaux) ?</li>
+<li>Symptômes associés : dyspnée, nausées, sueurs, malaise, syncope ?</li>
+<li>ATCD cardio : coronaropathie connue, angioplastie, stent, infarctus ?</li>
+<li>Prise actuelle d’antiagrégants ou anticoagulants ?</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens à faire</h5>
+<ul class="resume-subsection-points">
+<li>ECG 12 dérivations en < 10 min</li>
+<li>Troponines ultrasensibles (0h puis <span class="highlight-range">1–3</span>h)</li>
+<li>Constantes vitales : FC, TA, FR, SpO₂, T°</li>
+<li>Examen cardio-pulmonaire : râles, souffle, turgescence jugulaire</li>
+<li>Radiographie thoracique ± échocardiographie</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Aspirine <span class="highlight-important">immédiat</span>e + anticoagulation + antalgie adaptée</li>
+<li class="with-arrow">Stratification : STEMI <span class="arrow">→</span> PCI urgente / NSTEMI <span class="arrow">→</span> coronarographie < <span class="highlight-range">24–72</span>h</li>
+<li>Surveillance continue : scope, SpO₂, répétition ECG et troponines</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations de l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>L'expert-e intervient si l'étudiant-e dit vouloir faire :</li>
+                <li>• ECG : donner le résultat montrant des modifications du segment ST</li>
+                <li>• Analyses sanguines : donner les résultats avec troponine élevée</li>
+                <li>• Radiographie thoracique : donner un résultat normal</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>La présentation suggère fortement un syndrome coronarien aigu</li>
+                <li>La consommation de cocaïne est un facteur de risque majeur souvent sous-diagnostiqué</li>
+                <li>L'ECG et les enzymes cardiaques sont essentiels pour le diagnostic</li>
+                <li>Ne pas oublier les diagnostics différentiels potentiellement mortels</li>
+                <li>La prise en charge doit être rapide et systématique</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Ne pas demander sur la consommation de drogues</li>
+                <li>Se concentrer uniquement sur le RGO à cause des antécédents</li>
+                <li>Oublier l'examen des extrémités et la recherche de signes d'insuffisance cardiaque</li>
+                <li>Ne pas rechercher une asymétrie tensionnelle</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique concernant la vignette</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Diagnostic</h4>
+            <p>Syndrome coronarien aigu probablement lié à la consommation de cocaïne</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Physiopathologie de l'ischémie myocardique induite par la cocaïne</h4>
+            <p>La cocaïne provoque une ischémie myocardique par plusieurs mécanismes :</p>
+            <ul>
+                <li>Vasoconstriction coronarienne par stimulation alpha-adrénergique</li>
+                <li>Augmentation de la demande myocardique en oxygène</li>
+                <li>Thrombose coronarienne par activation plaquettaire</li>
+                <li>Athérosclérose accélérée chez les consommateurs chroniques</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Présentation clinique du syndrome coronarien aigu</h4>
+            <p>Le syndrome coronarien aigu se manifeste typiquement par :</p>
+            <ul>
+                <li>Douleur thoracique rétrosternale constrictive</li>
+                <li>Irradiation vers cou, mâchoire, bras gauche ou dos</li>
+                <li>Symptômes végétatifs : nausées, transpiration, anxiété</li>
+                <li>Dyspnée par insuffisance cardiaque aiguë</li>
+                <li>Durée > 20 minutes, non soulagée par le repos</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Examens complémentaires</h4>
+            <p>Les examens urgents à réaliser incluent :</p>
+            <ul>
+                <li>ECG 12 dérivations : recherche de sus ou sous-décalage ST, ondes Q</li>
+                <li>Troponine ultrasensible : élévation spécifique de nécrose myocardique</li>
+                <li>Radiographie thoracique : œdème pulmonaire, cardiomégalie</li>
+                <li>Toxicologie urinaire : confirmer la consommation de cocaïne</li>
+                <li>Échocardiographie : anomalies de la cinétique segmentaire</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Prise en charge immédiate</h4>
+            <p>La prise en charge suit le protocole MONA modifié :</p>
+            <ul>
+                <li>Morphine pour l'analgésie si douleur sévère</li>
+                <li>Oxygène si saturation < 94% ou détresse respiratoire</li>
+                <li>Nitrés sublinguaux (attention si consommation récente de cocaïne)</li>
+                <li>Aspirine 300mg en dose de charge</li>
+                <li>ÉVITER les bêta-bloquants en phase aiguë (risque de spasme coronarien paradoxal)</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Particularités liées à la cocaïne</h4>
+            <p>La prise en charge diffère sur certains points :</p>
+            <ul>
+                <li>Benzodiazépines pour réduire la stimulation sympathique</li>
+                <li>Éviter les bêta-bloquants non sélectifs (effet alpha non opposé)</li>
+                <li>Considérer les inhibiteurs calciques pour le vasospasme</li>
+                <li>Surveillance prolongée (récidive possible jusqu'à 24h)</li>
+                <li>Prise en charge de l'addiction indispensable</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Résumé du cas clinique</h4>
+            <p>Patient de 46 ans avec multiples facteurs de risque cardiovasculaires présentant un syndrome coronarien aigu typique. La consommation de cocaïne est un élément clé souvent sous-diagnostiqué. L'approche doit être systématique avec ECG et troponine en urgence, tout en adaptant le traitement aux particularités de l'intoxication à la cocaïne.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Conclusion</h4>
+            <ul>
+                <li>Toujours rechercher une consommation de cocaïne chez un patient jeune avec douleur thoracique</li>
+                <li>L'ECG et la troponine sont les examens clés pour le diagnostic</li>
+                <li>Éviter les bêta-bloquants en phase aiguë si consommation de cocaïne</li>
+                <li>La prise en charge de l'addiction est essentielle pour prévenir les récidives</li>
+                <li>Le pronostic dépend de la rapidité de la prise en charge</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>Protocole MONA: Morphine, Oxygène, Nitrés, Aspirine</li>
+                <li>Contre-indication des bêta-bloquants en cas de consommation récente de cocaïne</li>
+                <li>Importance du dépistage toxicologique aux urgences</li>
+                <li>Fenêtre thérapeutique pour la thrombolyse: < 12h</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>ECG: rechercher des modifications du segment ST, ondes Q pathologiques</li>
+                <li>Troponine: marqueur spécifique de nécrose myocardique</li>
+                <li>CK-MB: pic à 24h, normalisation en 48-72h</li>
+                <li>Échocardiographie: évaluation de la fonction ventriculaire et des anomalies segmentaires</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Présentation de cas ECOS - Station double</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Rappel du format systématisé</h4>
+            <div class="presentation-content"><p>Quand tu présentes un cas, garde toujours cette structure en tête :</p></div>
+            <ul class="presentation-points">
+                <li>Intro : « Il s'agit d'un patient de X ans, notamment connu pour [...], qui consulte/hospitalisé pour [...] »</li>
+                <li>Contexte : antécédents, médicaments, habitudes</li>
+                <li>Anamnèse actuelle : description détaillée de la plainte (chronologie + caractéristiques + symptômes associés)</li>
+                <li>Examen clinique : signes vitaux + points positifs et négatifs pertinents</li>
+                <li>Synthèse : une phrase qui résume le problème</li>
+                <li>Diagnostic différentiel : <span class="highlight-range">2-3</span> hypothèses, du plus au moins probable, avec arguments</li>
+                <li>Plan : examens complémentaires + prise en charge <span class="highlight-important">immédiat</span>e</li>
+                <li>Red flags à surveiller</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Checklist MAPS</div>
+    <ul class="mnemo-items">
+        <li>Motif</li>
+        <li>Antécédents</li>
+        <li>Points de l'examen</li>
+        <li>Suite (DD + plan)</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (complète, 2-3 minutes)</h4>
+            <div class="presentation-content"><p>Il s'agit d'un patient de 46 ans, notamment connu pour une HTA sous diurétique, une hypercholestérolémie et un RGO, qui consulte aujourd'hui aux urgences pour une douleur thoracique aiguë.</p><p>La douleur est apparue il y a environ 40 minutes, réveillant le patient à 5h du matin. Elle est décrite comme une pression rétro-sternale cotée à 7/10, irradiant vers le cou, le dos et le bras gauche. Elle est constante, sans facteur déclenchant ou soulagement identifié.</p><p>Elle s'accompagne de dyspnée, de nausées sans vomissements et de sueurs abondantes.<br>Le patient rapporte des épisodes plus courts depuis 3 mois, liés à l'effort ou aux repas copieux, soulagés par des antiacides.</p><p>Pas d'antécédent chirurgical, pas d'allergie connue.<br>Côté habitudes : ancien gros fumeur (25 paquets-années, sevré depuis 3 mois), alcool occasionnel, consommation de cocaïne hebdomadaire, dernière prise hier après-midi.</p><p>À l'examen : TA 165/85, FC 90, FR 22, T° 37°C. Les bruits cardiaques sont normaux, poumons clairs, abdomen souple, pouls périphériques présents et symétriques.<br>→ Donc patient stable hémodynamiquement mais algique.</p><p>Mes hypothèses principales : un syndrome coronarien aigu, possiblement en lien avec la consommation récente de cocaïne.<br>Autres diagnostics à envisager : RGO atypique, dissection aortique, péricardite, embolie pulmonaire ou pneumothorax.</p><p>Je propose en urgence : ECG 12 dérivations, troponine et enzymes cardiaques, radiographie thoracique, toxicologie urinaire.</p><p>Prise en charge immédiate : monitoring cardiaque, voie veineuse, aspirine 300 mg per os, dérivés nitrés sublinguaux, morphine si douleur persistante.<br>💡 Mnémo MONA modifié : Morphine, Oxygène, Nitrés, Aspirine... mais ⚠️ pas de bêta-bloquant en cas de cocaïne.</p><p>Je surveille particulièrement : sus-décalage ST, instabilité hémodynamique, douleur déchirante avec asymétrie tensionnelle, détresse respiratoire aiguë.</p><p>En conclusion, il s'agit probablement d'un syndrome coronarien aigu lié à la cocaïne, nécessitant confirmation rapide par ECG et troponine, et une prise en charge cardiologique adaptée.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (30 sec – SBAR)</h4>
+            <div class="presentation-content"><p>Il s'agit d'un homme de 46 ans, antécédents d'HTA, d'hypercholestérolémie et de RGO, qui consulte pour une douleur thoracique constrictive apparue brutalement il y a 40 minutes, irradiant au cou, au dos et au bras gauche, associée à dyspnée, nausées et sudation.</p><p>Il est stable hémodynamiquement (TA 165/85, FC 90), l'examen cardio-pulmonaire est normal.<br>Je suspecte un syndrome coronarien aigu lié à la cocaïne.</p><p>Je demande en urgence un ECG et une troponine, et j'installe le patient sous monitoring, aspirine, nitrés et morphine si besoin.</p></div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre le diagnostic principal et les DD</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels sont vos arguments pour un syndrome coronarien aigu ?</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur constrictive rétrosternale, irradiant au bras gauche, au dos et au cou</li>
+                                <li>Début brutal, >20 min, réveillant le patient</li>
+                                <li>Symptômes associés : dyspnée, nausées, sueurs</li>
+                                <li>Facteurs de risque : HTA, dyslipidémie, tabac, cocaïne</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de récidive prouvée d'angor stable connu (mais épisodes évocateurs)</li>
+                                <li>Pas de douleur déclenchée par effort ce matin</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Et pour le reflux gastro-œsophagien (RGO) ?</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Épisodes passés liés aux repas copieux, soulagés par antiacides</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Cette douleur actuelle est différente : prolongée, non liée à l'alimentation, associée à dyspnée et sueurs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Et la dissection aortique ?</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur thoracique brutale</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de caractère déchirant, pas d'asymétrie tensionnelle, pas de signes neurologiques ou d'insuffisance d'organe</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q4</span>
+                        <span class="q-text">Et une embolie pulmonaire ?</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur thoracique, dyspnée, tachypnée</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de facteur de risque embolique mentionné, pas de tachycardie, pas de désaturation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q5</span>
+                        <span class="q-text">Et un pneumothorax ?</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Douleur thoracique aiguë, dyspnée</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Auscultation pulmonaire normale, thorax indolore, pas de tympanisme</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats et analyse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens complémentaires demandez-vous en <span class="highlight-important">urgence</span> ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>ECG 12 dérivations</li>
+                            <li>Troponines / enzymes cardiaques</li>
+                            <li>Radiographie thoracique</li>
+                            <li>Toxicologie urinaire (cocaïne)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Analyse des résultats (fournis par l'examinateur)</span>
+                    </div>
+                    <div class="presentation-results">
+                        <strong>📊 Résultats :</strong>
+                        <ul>
+                            <li>ECG : sus-décalage ST en antérieur <span class="arrow">→</span> compatible STEMI</li>
+                            <li>Troponines : élevées <span class="arrow">→</span> confirme nécrose myocardique</li>
+                            <li>Radio thorax : normale <span class="arrow">→</span> écarte pneumothorax, dissection évidente</li>
+                            <li>Tox urine : positive cocaïne <span class="arrow">→</span> facteur déclenchant confirmé</li>
+                        </ul>
+                    </div>
+                    <div class="presentation-analyse">
+                        <span class="analyse-icon">💡</span>
+                        <span class="analyse-text">L'ECG et la troponine confirment un syndrome coronarien aigu avec sus-décalage du ST. La radiographie élimine une complication pulmonaire <span class="highlight-important">immédiat</span>e. La toxicologie positive à la cocaïne explique le mécanisme vasospastique et thrombose.</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement et suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quel est votre diagnostic définitif ?</span>
+                    </div>
+                    <div class="presentation-reponse text">Syndrome coronarien aigu avec sus-décalage du ST, probablement déclenché par la consommation récente de cocaïne.</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Quel est le traitement <span class="highlight-important">immédiat</span> ?</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #4CAF50;">🏥 Mesures générales :</strong>
+                            <ul>
+                                <li>Monitoring</li>
+                                <li>Oxygène si SpO₂ < <span class="highlight-percent">94%</span></li>
+                                <li>Voie veineuse</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-section">
+                            <strong style="color: #9C27B0;">💊 Traitement médicamenteux :</strong>
+                            <ul>
+                                <li>Aspirine 300 mg</li>
+                                <li>Nitrés sublinguaux</li>
+                                <li>Morphine si douleur sévère</li>
+                                <li>Benzodiazépines (si agitation liée cocaïne)</li>
+                                <li>⚠️ Pas de bêta-bloquants (risque spasme coronarien)</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-section">
+                            <strong style="color: #F44336; font-weight: bold;">🔄 Stratégie de reperfusion :</strong>
+                            <p>Activation salle de cathétérisme en <span class="highlight-important">urgence</span></p>
+                        </div>
+<div class="mnemo-box">
+    <div class="mnemo-content">💡 MONA modifié : Morphine, Oxygène, Nitrés, Aspirine — mais 🚫 bêta-bloquants si cocaïne</div>
+</div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Quelles complications surveiller et quel suivi prévoir ?</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #FF5722; font-weight: bold;">⚠️ Complications immédiates :</strong>
+                            <ul>
+                                <li>Arythmies</li>
+                                <li>Choc cardiogénique</li>
+                                <li>Récidive douleur</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-section">
+                            <strong style="color: #607D8B;">👁️ Surveillance :</strong>
+                            <p>Unité de soins intensifs cardiologiques</p>
+                        </div>
+                        <div class="reponse-section">
+                            <strong style="color: #2196F3;">📅 Suivi à long terme :</strong>
+                            <ul>
+                                <li>Contrôle strict des facteurs de risque (HTA, dyslipidémie, tabac)</li>
+                                <li>Sevrage complet de la cocaïne avec prise en charge addictologique</li>
+                                <li>Bilan cardiologique complet (échocardiographie, tests d'effort secondairement)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour le patient standardisé</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Joseph Short |             <strong>Âge :</strong> 46 ans<br>
+            <strong>Contexte :</strong> Homme se présentant aux urgences pour douleur thoracique
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> J'ai une douleur dans la poitrine qui m'a réveillé ce matin.</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> C'est vraiment douloureux et ça m'inquiète.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Consignes</h4>
+            <ul>
+                <li>Montrer de l'anxiété et de l'inconfort visible tout au long de la consultation.</li>
+                <li>Se tenir la poitrine avec la main et respirer rapidement.</li>
+                <li>Minimiser initialement la consommation de cocaïne si demandé directement, puis avouer si le médecin insiste.</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Symptôme principal :</strong>
+                <ul>
+                    <li>Douleur thoracique</li>
+                    <li>Localisation : Milieu de la poitrine, sous l'os</li>
+                    <li>Qualité : Pression, comme si quelque chose appuyait</li>
+                    <li>Quantité/intensité : 7/10</li>
+                    <li>Chronologie : Début il y a quarante minutes, m'a réveillé à 5h00</li>
+                    <li>Développement : Sévérité constante</li>
+                    <li>Circonstances de survenue : Aucun événement précipitant, dormait</li>
+                    <li>Facteurs atténuants : Aucun</li>
+                    <li>Facteurs déclenchants/aggravants : Aucun</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>Dyspnée</li>
+                    <li>Nausées</li>
+                    <li>Transpiration</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Réponse aux symptômes :</strong>
+                <ul>
+                    <li>Je suis venu directement aux urgences car j'étais très inquiet</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Représentation de la maladie :</strong>
+                <ul>
+                    <li>J'ai peur que ce soit une crise cardiaque</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Se tenir la poitrine avec la main</li>
+                    <li>Visage algique et transpirant</li>
+                    <li>Respiration rapide et superficielle</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant le status :</strong>
+                <ul>
+                    <li>Douleur à la palpation thoracique</li>
+                    <li>Anxiété visible lors de l'examen cardiovasculaire</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse par systèmes</h4>
+            <div class="property-group">
+                <strong>Générale :</strong>
+                <ul>
+                    <li>Transpiration importante</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Neurologique :</strong>
+                <ul>
+                    <li>Pas de troubles neurologiques</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Digestive :</strong>
+                <ul>
+                    <li>Nausées sans vomissements</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Psychiatrique :</strong>
+                <ul>
+                    <li>Très anxieux</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Habitudes</h4>
+            <p><strong>Médicaments :</strong> Antiacide (pour RGO), diurétique (pour HTA)</p>
+            <p><strong>Tabac :</strong> Ex-fumeur - 1 paquet/jour pendant 25 ans, arrêt il y a 3 mois</p>
+            <p><strong>Alcool :</strong> Occasionnellement</p>
+            <p><strong>Sexualité :</strong> Pas de problème particulier</p>
+            <p><strong>Drogues :</strong> Cocaïne 1x/semaine depuis 10 ans (à révéler si insistance)</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Histoire Medicale</h4>
+            <ul>
+                <li>HTA depuis 5 ans</li>
+                <li>Hypercholestérolémie</li>
+                <li>RGO</li>
+                <li>Épisodes similaires au cours des 3 derniers mois, 2-3 fois/semaine</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 40, examen: 15, management: 13, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 10, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 5, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 5, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

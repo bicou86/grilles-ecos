@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMBOSS-28 - Prise de poids - Homme 45 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AMBOSS-28 - Prise de poids - Homme 45 ans</h1>
+            <p style="margin: 5px 0;">📍 Cabinet médical</p>
+            <p style="margin: 5px 0;">👤 Steven Collins, homme de 45 ans, consultant pour prise de poids</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">36.5°C</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">130/80 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">60 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">14/min</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/42</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Motif principal <span class="patient-response">[J'ai pris au moins 7-10 livres]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Motif principal" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de la prise de poids <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Ça a commencé il y a environ 2 mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Événements précipitants <span class="patient-response">[Je suppose que ça a commencé juste après que ma femme m'ait quitté. Je ne suis pas sûr si ça a quelque chose à voir avec ça cependant ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Épisodes antérieurs <span class="patient-response">[Je n'ai jamais été mince, mais je n'ai jamais pris autant de poids en si peu de temps. Je pense que je pèse plus de 200 livres maintenant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Eh bien, maintenant que vous demandez, j'ai aussi été vraiment fatigué - complètement épuisé en fait]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Recherche de symptômes spécifiques <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Œdème des chevilles <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fièvre/frissons <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Éruption cutanée/changements cutanés <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleur thoracique <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dyspnée <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Problèmes intestinaux <span class="patient-response">[Oui, j'ai été constipé dernièrement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Troubles du sommeil <span class="patient-response">[Eh bien, je me réveille vraiment tôt le matin même si je suis encore fatigué. Je ne me sens jamais reposé. C'est pourquoi j'ai fait des siestes pendant la journée dernièrement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Appétit <span class="patient-response">[Je n'ai pas eu beaucoup d'appétit dernièrement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changements capillaires <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-8" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changements de voix <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-9" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Intolérance au froid <span class="patient-response">[Maintenant que vous le mentionnez, j'ai eu froid beaucoup dernièrement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-10" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Évaluation de l'humeur et symptômes dépressifs <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Humeur <span class="patient-response">[Je ne pense pas avoir vraiment été heureux depuis que ma femme est partie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Perte d'intérêt <span class="patient-response">[J'avais l'habitude de jouer au poker avec mes amis mais je n'y vais plus. Je préférerais être seul]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Culpabilité/faible estime de soi <span class="patient-response">[Je suis presque sûr que c'est ma faute si ma famille s'est écroulée. Je ne pouvais juste plus rendre ma femme heureuse]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Faible énergie <span class="patient-response">[Oui, en plus d'être toujours fatigué, je me sens aussi constamment épuisé. Je n'achète même plus d'épicerie. La plupart des jours je commande juste des plats à emporter]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Difficultés de concentration <span class="patient-response">[Oui, j'ai vraiment du mal au travail maintenant, et mon travail était vraiment la seule chose qui me maintenait encore en vie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Agitation ou ralentissement psychomoteur <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Idées suicidaires <span class="patient-response">[J'y ai pensé avant. Mais je ne le ferais pas vraiment - du moins pas maintenant. Je n'ai même pas l'énergie. Non, je n'ai jamais essayé de me tuer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Soutien social <span class="patient-response">[Ma sœur veille sur moi]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-7" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Antécédents médicaux <span class="patient-response">[J'ai du reflux]</span> <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a5" value="2" data-criteria="Antécédents médicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a5" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Allergies <span class="patient-response">[Aucune]</span> <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a6" value="2" data-criteria="Allergies" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a6" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Médicaments <span class="patient-response">[Aucun]</span> <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="2" data-criteria="Médicaments" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a7" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Hospitalisations et antécédents chirurgicaux <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Hospitalisations <span class="patient-response">[Jamais]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Antécédents chirurgicaux <span class="patient-response">[Aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Antécédents familiaux <span class="patient-response">[Ma famille est vraiment en bonne santé même si nous sommes tous un peu en surpoids]</span> <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="2" data-criteria="Antécédents familiaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Habitudes et mode de vie <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Travail <span class="patient-response">[Je suis agent d'assurance]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-0" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Domicile <span class="patient-response">[Je vis seul maintenant. Ma femme a déménagé après le divorce, et nous n'avons pas d'enfants]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-1" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Alcool <span class="patient-response">[Parfois j'ai une bière ou un verre de vin avant d'aller au lit. Ça rend plus facile de s'endormir]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-2" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Drogues récréatives <span class="patient-response">[Non, jamais]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-3" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tabac <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-4" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Exercice <span class="patient-response">[Je n'aime pas vraiment faire de l'exercice, mais même si j'aimais, je doute que j'aurais l'énergie maintenant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-5" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Alimentation <span class="patient-response">[Tout ce que les services de livraison autour de ma maison offrent. Beaucoup de pizza]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a10-detail-6" value="1" onchange="updateDetailScore('a10', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/17</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Mesures d'hygiène <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Lavage des mains</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Respect de la pudeur avec drap</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examen de la tête, yeux, oreilles, nez et gorge <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection de la tête</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Inspection des conjonctives <span class="patient-response">[Recherche de pâleur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Inspection du nez</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Inspection de l'oropharynx</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen du cou <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Examen de la glande thyroïde</div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e3" value="2" data-criteria="Examen du cou" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e3" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen cardiovasculaire <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Auscultation cardiaque</div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e4" value="2" data-criteria="Examen cardiovasculaire" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e4" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Examen thoracique <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Auscultation pulmonaire</div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e5" value="2" data-criteria="Examen thoracique" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e5" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Examen des extrémités et cutané <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection des membres inférieurs</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-0" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen cutané</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-1" value="1" onchange="updateDetailScore('e6', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+<div class="criteria-row" id="criteria-e7">
+    <div>
+        <div class="criteria-text">7. Examen neurologique <button class="comment-button" onclick="toggleComment('e7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation de l'orientation dans le temps, l'espace et les personnes</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e7-detail-0" value="1" onchange="updateDetailScore('e7', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen ciblé de l'état mental <span class="patient-response">[Parole lente, affect plat constaté]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e7-detail-1" value="1" onchange="updateDetailScore('e7', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen ciblé des réflexes ostéo-tendineux</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e7-detail-2" value="1" onchange="updateDetailScore('e7', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e7">
+            <textarea class="comment-textarea" id="comment-e7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e7">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/24</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Hypothèses diagnostiques <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">2 points si au moins 2 diagnostics pertinents mentionnés, 1 point si 1 diagnostic</div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Hypothèses diagnostiques" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Troubles psychiatriques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Trouble dépressif majeur (TDM)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Critères SIGECAPS (≥ 5/9 critères > 2 semaines) :<br>&nbsp;&nbsp;&nbsp;&nbsp;  • Humeur dépressive depuis divorce (2 mois)<br>&nbsp;&nbsp;&nbsp;&nbsp;  • Perte d'intérêt/plaisir (poker, isolement social)<br>&nbsp;&nbsp;&nbsp;&nbsp;  • Sentiments de culpabilité (divorce = sa faute)<br>&nbsp;&nbsp;&nbsp;&nbsp;  • Faible énergie/fatigue constante<br>&nbsp;&nbsp;&nbsp;&nbsp;  • Difficultés concentration (performance travail)<br>&nbsp;&nbsp;&nbsp;&nbsp;  • Perte d'appétit<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Facteur déclenchant clair : divorce récent<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Idées suicidaires passées (sans passage à l'acte)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Affect plat, parole lente à l'examen<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Évolution temporelle cohérente (2 mois)</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Diagnostic clinique, échelles depression (PHQ-9)</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Pathologies endocriniennes</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Hypothyroïdie</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Prise de poids malgré perte d'appétit<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue/asthénie persistante<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Intolérance au froid récente<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Constipation<br>&nbsp;&nbsp;&nbsp;&nbsp;•  TA limite élevée (130/80)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Bradycardie (FC 60)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Difficultés de concentration<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes dépressifs (can mimic)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de changements cutanés/capillaires décrits</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ TSH (meilleur test initial)</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Syndrome de Cushing</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Prise de poids rapide<br>&nbsp;&nbsp;&nbsp;&nbsp;•  HTA modérée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes dépressifs<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Faiblesse/fatigue<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de répartition androïde typique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de vergetures<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de visage lunaire décrit</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Cortisol libre urinaire 24h, test de freinage</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Troubles du sommeil</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Apnée obstructive du sommeil (AOS)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Réveil non réparateur<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue diurne/siestes<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes dépressifs secondaires<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Difficultés de concentration<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Facteurs de risque : obésité, alcool avant coucher<br>&nbsp;&nbsp;&nbsp;&nbsp;•  HTA secondaire possible<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Prise de poids malgré perte d'appétit<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Intolérance au froid</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Polysomnographie (test de référence)</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Autres causes à considérer</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Anémie</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue chronique<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Difficultés de concentration<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de pâleur évidente<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'essoufflement</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ NFS avec frottis</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Trouble de l'adaptation</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Facteur stressant identifié (divorce)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes < 6 mois post-événement<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Sévérité symptômes suggère TDM</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Évaluation clinique psychiatrique</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens complémentaires de première intention <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">TSH <span class="patient-response">[TSH est le meilleur test initial pour l'hypothyroïdie suspectée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">NFS <span class="patient-response">[Important d'évaluer l'anémie chez les patients avec fatigue]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Électrolytes, calcium, magnésium <span class="patient-response">[les anomalies électrolytiques peuvent se manifester par une dépression]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Mesure de la tension artérielle (24 heures) <span class="patient-response">[pour confirmer l'hypertension artérielle]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens complémentaires spécialisés <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Polysomnographie <span class="patient-response">[test de première ligne pour l'AOS suspectée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Cortisol libre urinaire 24h <span class="patient-response">[si suspicion syndrome de Cushing]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test de suppression à la dexaméthasone <span class="patient-response">[évaluation axe hypothalamo-hypophyso-surrénalien]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Évaluation du risque suicidaire <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation des idées suicidaires actuelles</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche de facteurs de risque (isolement, divorce récent)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation des facteurs protecteurs (soutien familial - sœur)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Plan de sécurité si risque élevé</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Orientation urgente si nécessaire</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-4" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Communication avec le patient <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Explications au patient des impressions diagnostiques préliminaires</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Explication du plan de prise en charge</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Utilisation d'un langage non médical et clarification des termes médicaux</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation de l'accord du patient avec le plan diagnostique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche des préoccupations et questions du patient</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Conseil et soutien <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Conseil sur les options de soutien pour les changements de poids et de régime</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réaction appropriée au défi sur les idées suicidaires</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Orientation vers ressources de santé mentale</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Éducation sur les signes d'alarme dépressifs</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Information sur les groupes de soutien</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-4" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div></div>        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Si trouble dépressif majeur confirmé</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Psychothérapie: TCC (thérapie cognitive-comportementale)<br />
+            <span style="margin-left: 10px;">•</span> Pharmacothérapie: ISRS (sertraline, citalopram)<br />
+            <span style="margin-left: 10px;">•</span> Dose initiale faible, augmentation progressive<br />
+            <span style="margin-left: 10px;">•</span> Surveillance effets secondaires 4-6 semaines</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Si hypothyroïdie confirmée</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Lévothyroxine: 25-50 μg/j initial si 50 ans<br />
+            <span style="margin-left: 10px;">•</span> 1.6 μg/kg/j si jeune et sain<br />
+            <span style="margin-left: 10px;">•</span> Contrôle TSH à 6-8 semaines<br />
+            <span style="margin-left: 10px;">•</span> Ajustement par paliers de 25 μg<br />
+            <span style="margin-left: 10px;">•</span> Cible TSH: 0.5-2.5 mUI/L</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Si apnée du sommeil confirmée</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> CPAP: (pression positive continue)<br />
+            <span style="margin-left: 10px;">•</span> Perte de poids si obésité<br />
+            <span style="margin-left: 10px;">•</span> Éviter alcool/sédatifs<br />
+            <span style="margin-left: 10px;">•</span> Hygiène du sommeil</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Mesures générales</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Amélioration nutrition/activité physique<br />
+            <span style="margin-left: 10px;">•</span> Soutien psychosocial post-divorce<br />
+            <span style="margin-left: 10px;">•</span> Limitation alcool: (interaction médicaments)</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Suivi régulier médecin traitant</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Plan de crise si idées suicidaires</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Défi : Idées suicidaires</h4>
+                    <div class="cloture-content">[Pourquoi dois-je vivre ?]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse type du candidat</h4>
+                    <div class="cloture-content cloture-content-green">M. Collins, à cause de votre question et des symptômes dont vous me parlez, je suis préoccupé que vous puissiez souffrir de dépression. Pensez-vous à mettre fin à votre vie en ce moment ? Si jamais vous envisagez de vous faire du mal ou de mettre fin à votre vie, j'aimerais que vous veniez aux urgences immédiatement. Si vous ne pouvez pas venir aux urgences, appelez s'il vous plaît le 911. J'aimerais aussi vous mettre en contact avec l'une de nos assistantes sociales aujourd'hui pour qu'elle puisse vous fournir des ressources précieuses. Ma porte est aussi toujours ouverte.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/103</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 📈 Prise de poids – Diagnostic final : Trouble dépressif majeur – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes typiques</h5>
+<ul class="resume-subsection-points">
+<li>Prise de poids insidieuse sans cause somatique évidente</li>
+<li>Hyperphagie ou grignotage émotionnel</li>
+<li>Humeur dépressive, pleurs faciles</li>
+<li>Perte d'intérêt pour les activités (anhédonie)</li>
+<li>Troubles du sommeil (hypersomnie ou insomnie)</li>
+<li>Fatigue persistante, ralentissement psychomoteur</li>
+<li>Idées noires ou pensées suicidaires</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Dépistage (mnémotechnique SIGECAPS)</h5>
+<ul class="resume-subsection-points">
+<li>**S**: troubles du sommeil</li>
+<li>**I**: perte d’intérêt (anhédonie)</li>
+<li>**G**: culpabilité ou dévalorisation</li>
+<li>**E**: perte d’énergie ou fatigue</li>
+<li>**C**: troubles de la concentration</li>
+<li>**A**: modifications de l’appétit/poids</li>
+<li>**P**: ralentissement ou agitation psychomotrice</li>
+<li>**S**: idées suicidaires</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Terrain et facteurs de risque</h5>
+<ul class="resume-subsection-points">
+<li>Antécédents personnels ou familiaux de dépression</li>
+<li>Facteurs psychosociaux : isolement, deuil, stress</li>
+<li>Femmes (pic de fréquence : 3ᵉ décennie)</li>
+<li>Comorbidités psychiatriques (anxiété, addiction)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Signes d’alerte ou associés</h5>
+<ul class="resume-subsection-points">
+<li>Surpoids ou obésité récente</li>
+<li>Tristesse de l’humeur, repli social</li>
+<li>Aspect négligé, discours lent ou monotone</li>
+<li>Lenteur psychomotrice, troubles de l’attention</li>
+<li>Exclusion de causes somatiques de prise de poids (hypothyroïdie, médicaments)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Bilan somatique initial</h5>
+<ul class="resume-subsection-points">
+<li>TSH : exclure une hypothyroïdie</li>
+<li>Bilan métabolique : glycémie, lipides, fonction hépatique</li>
+<li>Poids, IMC, périmètre abdominal</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Évaluation psychiatrique</h5>
+<ul class="resume-subsection-points">
+<li>Entretien structuré selon DSM-5</li>
+<li>Auto-questionnaires : PHQ-9, HADS</li>
+<li>Évaluer risque suicidaire</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement de 1ʳᵉ intention</h5>
+<ul class="resume-subsection-points">
+<li>Psychothérapie (TCC en particulier)</li>
+<li>Antidépresseurs : ISRS (ex. : sertraline, fluoxétine)</li>
+<li>Éducation thérapeutique et hygiène de vie (sommeil, activité physique)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Cas spécifiques</h5>
+<ul class="resume-subsection-points">
+<li>Trouble dépressif résistant : recours à la psychiatrie</li>
+<li>Symptômes psychotiques : traitement antipsychotique en association</li>
+<li>Grossesse/post-partum : prise en charge spécialisée</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Surveillance</h5>
+<ul class="resume-subsection-points">
+<li>Évaluation régulière de l’humeur et du poids</li>
+<li>Suivi des effets indésirables des traitements</li>
+<li>Risque suicidaire, observance thérapeutique</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Prise de poids inexpliquée <span class="equals">=</span> penser à un trouble dépressif majeur, surtout si appétit augmenté</li>
+<li class="resume-bullet">Utiliser SIGECAPS pour orienter l’entretien</li>
+<li class="resume-bullet">Éliminer une cause somatique (TSH, iatrogénie)</li>
+<li class="resume-bullet">Traitement combiné psychothérapie + ISRS</li>
+<li class="resume-bullet">Risque suicidaire à évaluer systématiquement</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser</h5>
+<ul class="resume-subsection-points">
+<li>Changements récents de poids ou d’appétit ?</li>
+<li>Humeur : tristesse, perte d’intérêt, culpabilité ?</li>
+<li>Troubles du sommeil ? Fatigue persistante ?</li>
+<li>Antécédents psychiatriques personnels ou familiaux ?</li>
+<li>Idées suicidaires ou risque suicidaire ?</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens à faire</h5>
+<ul class="resume-subsection-points">
+<li>Mesures anthropométriques : poids, IMC, périmètre abdominal</li>
+<li>Examen somatique pour exclure hypothyroïdie ou iatrogénie</li>
+<li>Évaluation psychiatrique structurée (DSM-5, PHQ-9)</li>
+<li>Dépistage comorbidités psychiatriques (anxiété, addiction)</li>
+<li>Bilan biologique de base : TSH, glycémie, lipides</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Confirmer diagnostic de dépression par entretien structuré</li>
+<li>Initier psychothérapie ± ISRS en première intention</li>
+<li>Évaluer et surveiller systématiquement le risque suicidaire</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations de l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>Évaluation risque suicidaire : faible actuellement</li>
+                <li>TSH : 8.5 mUI/L (élevé, hypothyroïdie)</li>
+                <li>T4 libre : 9 pmol/L (bas)</li>
+                <li>NFS : normale, pas d'anémie</li>
+                <li>Électrolytes : normaux</li>
+                <li>Score PHQ-9 : 16/27 (dépression modérée-sévère)</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>TDM = diagnostic clinique avec critères SIGECAPS</li>
+                <li>Hypothyroïdie peut mimer/aggraver dépression</li>
+                <li>Toujours exclure causes organiques avant TDM</li>
+                <li>Évaluation systématique risque suicidaire</li>
+                <li>Prise de poids + perte appétit = atypique pour TDM</li>
+                <li>Facteur déclenchant clair : divorce récent</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Négliger l'évaluation du risque suicidaire</li>
+                <li>Diagnostiquer TDM sans exclure hypothyroïdie</li>
+                <li>Oublier de rechercher apnée du sommeil</li>
+                <li>Minimiser l'impact du divorce récent</li>
+                <li>Ne pas proposer soutien psychosocial</li>
+                <li>Ignorer la constellation symptômes hypothyroïdie</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique concernant la vignette</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Diagnostic le plus probable</h4>
+            <p>Trouble dépressif majeur avec hypothyroïdie comorbide</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Trouble dépressif majeur</h4>
+            <p>Trouble de l'humeur caractérisé par épisodes dépressifs majeurs :</p>
+            <ul>
+                <li>Prévalence : 8-12% population générale</li>
+                <li>Sex-ratio : 2:1 femmes/hommes</li>
+                <li>Pic incidence : 20-30 ans et 30-40 ans</li>
+                <li>Facteurs de risque : stress, deuil, divorce, ATCD familiaux</li>
+                <li>Évolution : épisodique avec risque récidive 50-80%</li>
+                <li>Comorbidités : anxiété, troubles somatiques</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Critères diagnostiques DSM-5 TDM</h4>
+            <p>≥ 5 symptômes pendant ≥ 2 semaines (SIGECAPS) :</p>
+            <ul>
+                <li>S - Sleep : insomnie ou hypersomnie</li>
+                <li>I - Interest : perte d'intérêt/plaisir (anhédonie)</li>
+                <li>G - Guilt : culpabilité excessive, dévalorisation</li>
+                <li>E - Energy : fatigue, perte d'énergie</li>
+                <li>C - Concentration : difficultés cognitives</li>
+                <li>A - Appetite : perte/gain appétit/poids</li>
+                <li>P - Psychomotor : agitation ou ralentissement</li>
+                <li>S - Suicidality : idées de mort/suicide</li>
+                <li>Au moins 1 : humeur dépressive OU anhédonie</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Hypothyroïdie</h4>
+            <p>Déficit en hormones thyroïdiennes avec ralentissement métabolique :</p>
+            <ul>
+                <li>Prévalence : 4-8% population, 10:1 femmes/hommes</li>
+                <li>Étiologies : Hashimoto (80%), post-chirurgie/I131</li>
+                <li>Symptômes : fatigue, prise poids, intolérance froid</li>
+                <li>Signes : bradycardie, œdème, peau sèche</li>
+                <li>Complications : coma myxœdémateux, cardiopathie</li>
+                <li>Diagnostic : TSH élevée (> 4 mUI/L)</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Apnée obstructive du sommeil</h4>
+            <p>Obstruction récurrente voies aériennes supérieures :</p>
+            <ul>
+                <li>Prévalence : 15-30% hommes, 10-15% femmes</li>
+                <li>Facteurs de risque : obésité, âge, alcool, anatomie</li>
+                <li>Symptômes : ronflements, apnées, fatigue diurne</li>
+                <li>Complications : HTA, arythmies, AVC, dépression</li>
+                <li>Diagnostic : polysomnographie (IAH > 5/h)</li>
+                <li>Traitement : CPAP, perte poids, chirurgie</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Évaluation du risque suicidaire</h4>
+            <p>Systématique chez tout patient dépressif :</p>
+            <ul>
+                <li>Facteurs de risque : sexe masculin, âge > 45 ans, isolement</li>
+                <li>Idéation : fréquence, intensité, planification</li>
+                <li>Moyens : accès armes, médicaments, hauteur</li>
+                <li>Facteurs protecteurs : famille, religion, projets</li>
+                <li>Échelles : SAD PERSONS, Columbia, RUD</li>
+                <li>Hospitalisation si risque imminent</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Diagnostic différentiel dépression</h4>
+            <p>Éliminer causes organiques mimant TDM :</p>
+            <ul>
+                <li>Endocriniennes : hypothyroïdie, Cushing, Addison</li>
+                <li>Neurologiques : démence, Parkinson, AVC</li>
+                <li>Métaboliques : anémie, carence B12/folates</li>
+                <li>Médicamenteuses : bêtabloquants, corticoïdes</li>
+                <li>Substances : alcool, cannabis, opiacés</li>
+                <li>Autres : apnée sommeil, cancer, douleur chronique</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>TDM léger-modéré : psychothérapie (TCC) première ligne</li>
+                <li>TDM sévère : antidépresseur + psychothérapie</li>
+                <li>ISRS première ligne : sertraline 50 mg/j, citalopram 20 mg/j</li>
+                <li>Délai d'action : 4-6 semaines, optimisation 8-12 semaines</li>
+                <li>Durée traitement : 6-12 mois post-rémission</li>
+                <li>Hypothyroïdie : lévothyroxine 1.6 μg/kg/j</li>
+                <li>Surveillance TSH à 6-8 semaines</li>
+                <li>Évaluation risque suicidaire à chaque consultation</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>TSH : élimine hypothyroïdie (cause fréquente dépression)</li>
+                <li>NFS : élimine anémie (fatigue, troubles cognitifs)</li>
+                <li>Ionogramme complet : désordres électrolytiques</li>
+                <li>Glycémie à jeun : diabète, syndrome métabolique</li>
+                <li>Créatininémie : fonction rénale (médicaments)</li>
+                <li>Bilan hépatique : fonction hépatique (médicaments)</li>
+                <li>B12, folates : si suspicion carence</li>
+                <li>Polysomnographie : si suspicion apnée du sommeil</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Prise de poids et fatigue (Dépression majeure vs Hypothyroïdie)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, motif de consultation</li>
+                <li>Caractériser la prise de poids <span class="arrow">→</span> début, rapidité, contexte</li>
+                <li>Symptômes associés <span class="arrow">→</span> fatigue, troubles du sommeil, constipation, froid, humeur</li>
+                <li>ATCD médicaux et psychiatriques, traitements, allergies</li>
+                <li>Contexte psychosocial (divorce, isolement, soutien)</li>
+                <li>Examen clinique ciblé <span class="arrow">→</span> thyroïde, signes cutanés, bradycardie, affect dépressif</li>
+                <li>Résumé + hypothèse principale (TDM vs hypothyroïdie) + DD (Cushing, AOS, anémie)</li>
+                <li>Examens complémentaires <span class="arrow">→</span> TSH/T4L, NFS, électrolytes, polysomnographie si suspicion</li>
+                <li>PEC <span class="highlight-important">immédiat</span>e <span class="arrow">→</span> évaluation risque suicidaire, soutien, orientation psychiatrique si nécessaire</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide : SIGECAPS</div>
+    <ul class="mnemo-items">
+        <li>S = Sleep (troubles du sommeil)</li>
+        <li>I = Interest (anhédonie)</li>
+        <li>G = Guilt (culpabilité)</li>
+        <li>E = Energy (fatigue)</li>
+        <li>C = Concentration</li>
+        <li>A = Appetite/weight (appétit/poids)</li>
+        <li>P = Psychomotor (ralentissement/agitation)</li>
+        <li>S = Suicidality (idées suicidaires)</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de M. Steven Collins, 45 ans, agent d’assurance, qui consulte pour une prise de poids d’environ 3 à 5 kilos sur les deux derniers mois, dans un contexte de fatigue persistante.</p><p>La symptomatologie a commencé après son divorce récent, qu’il vit difficilement. Il décrit une humeur triste quasiment tous les jours, une perte d’intérêt pour ses activités habituelles — par exemple il ne joue plus au poker avec ses amis. Il exprime aussi un fort sentiment de culpabilité lié à son divorce, une baisse marquée d’énergie qui l’empêche même d’aller faire ses courses, et il a des difficultés de concentration au travail. Il se réveille tôt le matin sans se sentir reposé et fait des siestes dans la journée. Il mentionne également une constipation, une intolérance au froid et une perte d’appétit paradoxale malgré la prise de poids. Il rapporte avoir déjà eu des idées suicidaires, mais sans passage à l’acte. Sa sœur reste un soutien important.</p><p>Pour ses antécédents, il est connu pour un reflux gastro-œsophagien. Il n’a pas d’allergies connues ni d’antécédents chirurgicaux. Il ne prend aucun traitement régulier. Il ne fume pas, ne consomme pas de drogues, et boit occasionnellement de l’alcool le soir. Son régime est déséquilibré : il mange souvent des plats livrés type pizza. Depuis son divorce, il vit seul.</p><p>À l’examen clinique, les constantes sont les suivantes : tension artérielle 130/80, fréquence cardiaque 60 par minute, température 36,5°C, fréquence respiratoire 14 par minute. On note un IMC augmenté, un affect plat, une parole lente. L’examen cardiaque et pulmonaire est normal. La thyroïde n’est pas augmentée de volume. Pas d’œdème périphérique, la peau est normale.</p><p>En résumé, il s’agit d’un homme de 45 ans, qui présente une prise de poids, une fatigue, un syndrome dépressif franc, avec quelques signes évocateurs d’une hypothyroïdie. Mon hypothèse principale est un trouble dépressif majeur post-divorce, avec une hypothyroïdie comorbide possible. Les diagnostics différentiels incluent un syndrome de Cushing, une apnée du sommeil, ou une anémie.</p><p>Comme examens complémentaires, je demanderais en première intention une TSH et une T4 libre, une NFS et un ionogramme. En cas de suspicion d’apnée du sommeil, une polysomnographie serait indiquée. J’utiliserais également une évaluation psychiatrique standardisée, par exemple le PHQ-9.</p><p>En termes de prise en charge immédiate, je commencerais par évaluer le risque suicidaire et mettre en place un plan de sécurité si nécessaire. Je proposerais une orientation psychiatrique, tout en recherchant et en corrigeant une éventuelle cause organique comme une hypothyroïdie. Le traitement comprendrait une psychothérapie et, selon la sévérité, un antidépresseur ISRS.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : Homme 45 ans consulte pour prise de poids récente, fatigue, humeur dépressive.</p><p>B (Background) : Divorce récent, pas d’ATCD majeurs, reflux gastro-œsophagien. Pas de traitement. Soutien par sa sœur.</p><p>A (Assessment) : Symptômes remplissant critères TDM, mais signes physiques évocateurs d’hypothyroïdie. DD : Cushing, AOS, anémie.</p><p>R (Recommendation) : Bilan biologique (TSH, T4 libre, NFS), évaluation risque suicidaire, orientation psychiatrique, envisager traitement antidépresseur + substitution thyroïdienne selon résultats.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>SIGECAPS</h5>
+                <ul class="presentation-points">
+                    <li>Sleep</li>
+                    <li>Interest</li>
+                    <li>Guilt</li>
+                    <li>Energy</li>
+                    <li>Concentration</li>
+                    <li>Appetite/Weight</li>
+                    <li>Psychomotor</li>
+                    <li>Suicidality</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>Hypothyroïdie = 3C</h5>
+                <ul class="presentation-points">
+                    <li>Cold intolerance</li>
+                    <li>Constipation</li>
+                    <li>Cognitive troubles</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>⚠️ Red flags</h5>
+                <ul class="presentation-points">
+                    <li>Idées suicidaires</li>
+                    <li>Perte d’autonomie</li>
+                    <li>Épisode dépressif sévère</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Trouble dépressif majeur</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Humeur dépressive persistante</li>
+                                <li>Anhédonie</li>
+                                <li>Culpabilité excessive</li>
+                                <li>Fatigue/épuisement</li>
+                                <li>Troubles du sommeil</li>
+                                <li>Idées suicidaires passées</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Prise de poids paradoxale malgré perte d’appétit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Hypothyroïdie</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Prise de poids avec perte d’appétit</li>
+                                <li>Constipation</li>
+                                <li>Intolérance au froid</li>
+                                <li>Fatigue persistante</li>
+                                <li>Bradycardie relative</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de peau sèche, pas de perte de cheveux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Apnée du sommeil</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Fatigue diurne, siestes</li>
+                                <li>Alcool le soir</li>
+                                <li>Surpoids</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de ronflement rapporté</li>
+                                <li>Pas de pauses respi connues</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demander ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>TSH et T4 libre</li>
+                            <li>NFS</li>
+                            <li>Ionogramme sanguin</li>
+                            <li>Évaluation psychiatrique (PHQ-9)</li>
+                            <li>Polysomnographie si suspicion AOS</li>
+                        </ul>
+                    </div>
+                    <div class="presentation-analyse">
+                        <span class="analyse-icon">💡</span>
+                        <span class="analyse-text">👉 Analyse orale : « La TSH permet d’exclure une hypothyroïdie, la NFS une anémie, le PHQ-9 évalue la sévérité de la dépression. »</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Trouble dépressif majeur avec hypothyroïdie comorbide possible</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Évaluation et sécurisation du risque suicidaire</li>
+                            <li>Psychothérapie (TCC)</li>
+                            <li>Antidépresseur ISRS (ex. sertraline) si TDM confirmé</li>
+                            <li>Lévothyroxine si hypothyroïdie confirmée</li>
+                            <li>Hygiène de vie (activité, alimentation, sommeil)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Consultations rapprochées au début</li>
+                            <li>Surveillance du risque suicidaire</li>
+                            <li>Réévaluation clinique et biologique (TSH à <span class="highlight-range">6-8</span> semaines)</li>
+                            <li>Suivi psychiatrique/psychologique régulier</li>
+                        </ul>
+                    </div>
+                    <div class="presentation-astuce">
+                        <span class="astuce-icon">💡</span>
+                        <span class="astuce-text">👉 Astuce révision : penser à « BIO-PSYCHO-SOCIAL » : Bilan biologique, Prise en charge psychologique, Soutien social.</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour le patient standardisé</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Steven Collins |             <strong>Âge :</strong> 45 ans<br>
+            <strong>Contexte :</strong> Agent d'assurance récemment divorcé avec prise de poids et symptômes dépressifs majeurs
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> J'ai pris au moins 7-10 livres.</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> Je me sens complètement épuisé.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Consignes</h4>
+            <ul>
+                <li>Parler lentement et avec une voix monotone. Ne montrer aucune émotion (ex: sourire).</li>
+                <li>Vous n'êtes pas au courant de la signification des termes médicaux (ex: polysomnographie) et demandez des clarifications si l'examinateur les utilise.</li>
+                <li>Défi : Demander 'Pourquoi dois-je vivre ?'</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Symptôme principal :</strong>
+                <ul>
+                    <li>Prise de poids 7-10 livres en 2 mois</li>
+                    <li>Début après divorce récent</li>
+                    <li>Poids actuel > 200 livres</li>
+                    <li>Fatigue/épuisement constant</li>
+                    <li>Réveil précoce non réparateur</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>Constipation récente</li>
+                    <li>Intolérance au froid</li>
+                    <li>Perte d'appétit paradoxale</li>
+                    <li>Siestes diurnes fréquentes</li>
+                    <li>Isolement social progressif</li>
+                    <li>Difficultés concentration au travail</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Affect plat et expression inexpressive</li>
+                    <li>Parole lente et monotone</li>
+                    <li>Avouer culpabilité sur échec mariage</li>
+                    <li>Mentionner idées suicidaires passées</li>
+                    <li>Minimiser soutien social (sœur)</li>
+                    <li>Insister sur épuisement professionnel</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant le status :</strong>
+                <ul>
+                    <li>Attitude apathique générale</li>
+                    <li>Réponses lentes aux questions</li>
+                    <li>Éviter le contact visuel</li>
+                    <li>Signes possibles hypothyroïdie (bradycardie)</li>
+                    <li>Obésité récente visible</li>
+                    <li>Pas de signes évidents d'apnée du sommeil</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 42, examen: 17, management: 24, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 10, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 7, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 6, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

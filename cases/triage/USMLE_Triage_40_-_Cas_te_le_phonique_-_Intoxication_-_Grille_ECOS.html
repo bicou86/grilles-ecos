@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE Triage 40 - Cas téléphonique - Intoxication - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE Triage 40 - Cas téléphonique - Intoxication</h1>
+            <p style="margin: 5px 0;">📍 Consultation téléphonique - Service d'urgence</p>
+            <p style="margin: 5px 0;">👤 Caleb Johnson, garçon de 6 ans, ingestion de produits d'entretien (déboucheur à l'hydroxyde de potassium) - Urgence toxicologique caustique</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/37</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Identification rapide du problème et réassurance parentale <span class="patient-response">[Appel mère [JoAnn Johnson], fils [Caleb, 6 ans], ingestion [produits d'entretien], urgence [complètement affolée]]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="exemples-phrases"><div class="exemple-phrase">"Allô, Mme Johnson ? Je suis le Dr Smith."</div><div class="exemple-phrase">"Je comprends que votre fils a été en contact avec des produits chimiques à la maison."</div><div class="exemple-phrase">"Pouvez-vous m'en dire plus, s'il vous plaît ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Identification rapide du problème et réassurance parentale" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Circonstances de l'ingestion et chronologie <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Surveillance parentale <span class="patient-response">[dû aller dans chambre éteindre télé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Découverte enfant <span class="patient-response">[pleurait, assis sous évier dans placard]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Cachette <span class="patient-response">[se cachait parmi produits d'entretien]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vomissement initial <span class="patient-response">[vomi liquide vert]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Déclaration enfant <span class="patient-response">[dit qu'il en avait bu et que ça fait mal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Timing <span class="patient-response">[il y a seulement 5 ou 10 minutes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"S'il vous plaît, calmez-vous, nous allons gérer cela ensemble."</div><div class="exemple-phrase">"Il y a combien de temps pensez-vous qu'il a bu le produit chimique ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Identification du produit et agent caustique <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Produit suspect <span class="patient-response">[déboucheur de canalisation]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Indices visuels <span class="patient-response">[couleur verte, lèvres vertes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Corrélation vomissements <span class="patient-response">[ce qu'il a vomi]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Proximité produit <span class="patient-response">[le plus proche du déboucheur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Désordre <span class="patient-response">[tous produits renversés]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Avez-vous une idée de ce que c'était ? Pouvez-vous regarder le déboucheur et me dire ce qui est indiqué comme 'ingrédient actif' ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Composition chimique et agents co-ingérés <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Agent principal <span class="patient-response">[hydroxyde de potassium]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Type chimique <span class="patient-response">[alcali fort utilisé dans ces produits]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autres produits <span class="patient-response">[savon liquide et sec, nettoyant vitres]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Produit liquide ouvert <span class="patient-response">[savon liquide ouvert]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autres matériels <span class="patient-response">[tampons à récurer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Il est écrit hydroxyde de potassium."</div><div class="exemple-phrase">"C'est un type spécial de produit chimique utilisé dans ce genre de produits."</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Évaluation des symptômes respiratoires <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Pleurs <span class="patient-response">[pleure et mari l'a avec lui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hypersalivation <span class="patient-response">[bave beaucoup et n'arrête pas de pleurer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Toux <span class="patient-response">[tousse beaucoup aussi]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Respiration <span class="patient-response">[respire bien, comme quand pleure normalement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Absence stridor <span class="patient-response">[pas de bruits inhabituels, pas de sifflement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-4" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Respire-t-il bien, ou a-t-il du mal à faire entrer l'air ? Y a-t-il des bruits inhabituels quand il respire ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Symptômes gastro-intestinaux et évolution <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Vomissements répétés <span class="patient-response">[vomi deux fois depuis]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Contenu vomissements <span class="patient-response">[encore de ce liquide vert]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Apparence <span class="patient-response">[ressemble exactement au déboucheur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[mari l'a dans salle de bain]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleur <span class="patient-response">[on dirait juste qu'il a mal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-4" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Agit-il de façon inhabituelle d'une autre manière ? Comme des vomissements ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Antécédents médicaux et médicaments <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">TDAH <span class="patient-response">[il a un TDAH, rien d'autre]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Médicament TDAH <span class="patient-response">[prend son médicament pour TDAH]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autres médicaments <span class="patient-response">[tout ce qu'il aurait pu prendre ces derniers jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pas autres problèmes <span class="patient-response">[rien d'autre]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-3" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Caleb a-t-il d'autres problèmes médicaux ? S'il vous plaît, apportez tous les médicaments que Caleb pourrait prendre."</div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Logistique transport et distance hôpital <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Disponibilité véhicule <span class="patient-response">[oui, nous pouvons l'amener]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Distance <span class="patient-response">[habitons juste en bas de la rue]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Temps trajet <span class="patient-response">[environ 10 minutes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Communication <span class="patient-response">[parle sur téléphone portable]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-3" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Possibilité continue <span class="patient-response">[peux continuer à parler]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-4" value="1" onchange="updateDetailScore('a8', 'a')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Je veux que vous ameniez Caleb à l'hôpital."</div><div class="exemple-phrase">"Avez-vous une voiture ? À quelle distance de l'hôpital êtes-vous maintenant ?"</div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/2</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Limitation consultation téléphonique <span class="patient-response">[Pas d'examen physique possible [consultation téléphonique]]</span> <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="exemples-phrases"><div class="exemple-phrase">"J'ai suffisamment d'informations pour que nous sachions quoi faire avec lui ici."</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="Limitation consultation téléphonique" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/26</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Réassurance et gestion stress parental <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Confiance médicale <span class="patient-response">[je pense qu'il ira bien, madame]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Demande calme <span class="patient-response">[j'ai besoin que vous restiez calme]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Collaboration <span class="patient-response">[nous allons découvrir ce qui s'est passé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Guidance émotionnelle <span class="patient-response">[votre calme pourrait être le seul calme présent]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-3" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Je pense qu'il ira bien, madame."</div><div class="exemple-phrase">"J'ai besoin que vous restiez calme, et nous allons découvrir ce qui s'est passé."</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Diagnostic différentiel et gravité intoxication <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="exemples-phrases"><div class="exemple-phrase">"Maintenant, si c'est tout ce qu'il y a, il semble que le pire soit le déboucheur."</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="2" data-criteria="Diagnostic différentiel et gravité intoxication" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Intoxications caustiques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Ingestion caustique alcaline</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Hydroxyde de potassium (alcali fort)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Déboucheur canalisation<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vomissements verts correspondants<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Hypersalivation<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur oropharyngée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Toux irritative</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Gazométrie, ionogramme, radiographie thoracique</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Ingestion de détergent</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Savon liquide ouvert sous évier<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Co-ingestion possible<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Désordre produits d'entretien<br>Arguments CONTRE :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Déboucheur plus probable<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Couleur verte spécifique</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Apporter tous produits pour identification</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Complications possibles</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Lésion oropharyngée et œsophagienne</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Agent caustique confirmé<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleur rapportée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Hypersalivation<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vomissements persistants<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Toux irritative</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Endoscopie si cliniquement indiquée</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Pneumopathie d'inhalation</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Vomissements répétés<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Toux présente<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Risque aspiration<br>Arguments CONTRE :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Respiration normale<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de détresse respiratoire</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Radiographie thoracique, surveillance</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Perforation gastro-intestinale</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments POUR :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Agent caustique fort<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Risque nécrose pariétale<br>Arguments CONTRE :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Timing précoce<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Stabilité clinique rapportée</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Surveillance clinique, imagerie si détérioration</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Instructions collecte preuves et médicaments <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Rassemblement produits <span class="patient-response">[tout ce qui se trouve sous évier]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Principe exhaustivité <span class="patient-response">[même articles dont vous ne pensez pas qu'il les a ingérés]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Médicaments actuels <span class="patient-response">[tous médicaments que Caleb pourrait prendre]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Période récente <span class="patient-response">[tout ce qu'il aurait pu prendre ces derniers jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Identification <span class="patient-response">[je l'apporterai aussi]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Avant de partir, je veux que vous rassembliez tout ce qui se trouve sous l'évier où vous avez trouvé Caleb."</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Orientation urgente et transport sécurisé <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Décision hospitalisation <span class="patient-response">[je veux que vous ameniez Caleb à l'hôpital]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Transport optimal <span class="patient-response">[parents capables = moyen le plus rapide]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sécurité prioritaire <span class="patient-response">[ne soyez pas distraite en me parlant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Focus conduite <span class="patient-response">[concentrez-vous sur conduite en toute sécurité]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Destination précise <span class="patient-response">[directement à l'entrée des urgences]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-4" value="1" onchange="updateDetailScore('m4', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Je veux vous laisser partir pour que vous ne soyez pas au téléphone et en train de conduire en même temps."</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Préparation équipe hospitalière <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Information suffisante <span class="patient-response">[j'ai suffisamment d'informations]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Préparation équipe <span class="patient-response">[nous sachions quoi faire avec lui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Prise en charge rapide <span class="patient-response">[nous occuper de vous le plus rapidement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Préparatifs <span class="patient-response">[nous serons prêts à prendre soin de Caleb]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Arrivée <span class="patient-response">[dès votre arrivée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"J'ai suffisamment d'informations pour que nous sachions quoi faire avec lui ici."</div><div class="exemple-phrase">"Nous serons prêts à prendre soin de Caleb dès votre arrivée."</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Gestion sécurité transport et distractions <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Éviter distractions <span class="patient-response">[ne soyez pas au téléphone et en train de conduire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Moment stressant <span class="patient-response">[c'est un moment très stressant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Priorité sécurité <span class="patient-response">[ne veux pas que vous soyez distraite]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Conduite prudente <span class="patient-response">[soyez très prudente sur le trajet]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Absence amélioration <span class="patient-response">[rester au téléphone n'améliorera pas le pronostic]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-4" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div></div><div class="exemples-phrases"><div class="exemple-phrase">"Soyez très prudente sur le trajet, d'accord ? Nous vous verrons dans quelques minutes."</div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Gestion stress et priorisation sécurité</h4>
+                    <div class="cloture-content cloture-content-green">Je sais que c'est un moment très stressant, et je ne veux pas que vous soyez distraite en me parlant. Je veux juste que vous vous concentriez sur la conduite en toute sécurité, d'accord ?</div>
+                    <div class="exemples-phrases">
+                        <div class="exemple-phrase">"Je sais que c'est un moment très stressant, et je ne veux pas que vous soyez distraite en me parlant."</div>
+                    </div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réassurance finale et coordination arrivée</h4>
+                    <div class="cloture-content cloture-content-green">Nous serons prêts à prendre soin de Caleb dès votre arrivée. Soyez très prudente sur le trajet, d'accord ? Nous vous verrons dans quelques minutes.</div>
+                    <div class="exemples-phrases">
+                        <div class="exemple-phrase">"Nous serons prêts à prendre soin de Caleb dès votre arrivée."</div>
+                        <div class="exemple-phrase">"Soyez très prudente sur le trajet."</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/85</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations pour l'expert - Intoxication caustique pédiatrique</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Ingestion hydroxyde de potassium = alcali fort caustique</li>
+                <li>Urgence vraie nécessitant évaluation hospitalière immédiate</li>
+                <li>Gestion stress parental crucial pour sécurité transport</li>
+                <li>Éviter distractions au volant plus important que consultation prolongée</li>
+                <li>Préparation équipe urgences avec informations suffisantes</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Agent caustique</h4>
+            <ul>
+                <li>Hydroxyde de potassium = alcali fort</li>
+                <li>Débouchoir canalisation typique</li>
+                <li>Risque brûlures oropharyngées/œsophagiennes</li>
+                <li>Potentiel perforation si ingestion massive</li>
+                <li>Hypersalivation et vomissements typiques</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Symptômes d'alarme</h4>
+            <ul>
+                <li>Vomissements verts répétés</li>
+                <li>Hypersalivation importante</li>
+                <li>Toux irritative</li>
+                <li>Douleur oropharyngée</li>
+                <li>Pleurs incontrôlables</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Objectifs de communication</h4>
+            <ul>
+                <li>Rassurer parent sans minimiser urgence</li>
+                <li>Obtenir informations essentielles rapidement</li>
+                <li>Organiser transport sécurisé</li>
+                <li>Préparer équipe hospitalière</li>
+                <li>Éviter prolongation téléphonique dangereuse</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie et Pratique - Intoxication caustique pédiatrique</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Agents caustiques et mécanisme lésionnel</h4>
+            <p>Hydroxyde de potassium = alcali fort causant nécrose liquéfaction. Atteinte oropharyngée, œsophagienne possible. Risque perforation tardive.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Gestion téléphonique urgences pédiatriques</h4>
+            <p>Réassurance parentale, information rapide, orientation appropriée. Éviter prolongation dangereuse conversation au volant.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Transport et priorisation sécurité</h4>
+            <p>Transport parental souvent plus rapide. Prioriser sécurité trajet sur consultation téléphonique. Préparation équipe cruciale.</p>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>Gazométrie artérielle (équilibre acide-base)</li>
+                <li>Ionogramme et fonction rénale</li>
+                <li>Radiographie thoracique debout (perforation/aspiration)</li>
+                <li>NFS (surveillance hématologique)</li>
+                <li>Endoscopie si indication clinique</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>PAS de neutralisation (risque thermique)</li>
+                <li>PAS de vomissements provoqués</li>
+                <li>Surveillance voies respiratoires</li>
+                <li>Antalgie adaptée</li>
+                <li>Endoscopie précoce si indication</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-urgence">
+    <div class="annexe-title">Protocole urgence intoxication caustique</div>
+    <div class="annexe-urgence-content">
+        <div class="urgence-section">
+            <h4>Évaluation initiale</h4>
+            <ul>
+                <li>Évaluation voies respiratoires</li>
+                <li>Recherche signes perforation</li>
+                <li>Examen oropharyngé prudent</li>
+                <li>Évaluation état hémodynamique</li>
+                <li>Documentation lésions</li>
+            </ul>
+        </div>
+        <div class="urgence-section">
+            <h4>Contre-indications absolues</h4>
+            <ul>
+                <li>PAS de vomissements provoqués</li>
+                <li>PAS de neutralisation chimique</li>
+                <li>PAS de lavage gastrique</li>
+                <li>PAS de charbon activé</li>
+                <li>PAS de lait ou eau</li>
+            </ul>
+        </div>
+        <div class="urgence-section">
+            <h4>Surveillance des complications</h4>
+            <ul>
+                <li>Détresse respiratoire</li>
+                <li>Signes perforation</li>
+                <li>Hémorragie digestive</li>
+                <li>Choc hypovolémique</li>
+                <li>Sténoses tardives</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Instructions pour la mère (actrice) - JoAnn Johnson</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> JoAnn Johnson |  | <strong>Enfant :</strong> Caleb Johnson (6 ans)<br>
+            <strong>Contexte :</strong> Mère affolée après découverte ingestion produits caustiques par son fils
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Ingestion déboucheur canalisation</p>
+            <p><strong>Urgence ressentie :</strong> Complètement affolée, appel immédiat</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Ton émotionnel :</strong>
+                <ul>
+                    <li>Complètement affolée initialement</li>
+                    <li>Se calme avec réassurance médecin</li>
+                    <li>Inquiète mais coopérative</li>
+                    <li>Reconnaissante aide médicale</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Coopération médicale :</strong>
+                <ul>
+                    <li>Répond rapidement questions</li>
+                    <li>Suit instructions collecte</li>
+                    <li>Accepte orientation hôpital</li>
+                    <li>Priorise sécurité sur conseils médecin</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Réponses typiques :</strong>
+                <ul>
+                    <li>Sur timing : 'Il y a seulement 5 ou 10 minutes'</li>
+                    <li>Sur produit : 'Je pense que c'était le déboucheur'</li>
+                    <li>Sur couleur : 'Ses lèvres ont l'air un peu vertes'</li>
+                    <li>Sur état : 'Il bave beaucoup et n'arrête pas de pleurer'</li>
+                    <li>Sur transport : 'Oui, nous pouvons l'amener'</li>
+                    <li>Sur départ : 'Nous partons maintenant'</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Circonstances Ingestion</h4>
+            <div class="property-group">
+                <strong>Surveillance :</strong>
+                <ul>
+                    <li>Caleb jouait dans cuisine</li>
+                    <li>Mère partie dans chambre (télé, lit)</li>
+                    <li>Absence surveillance brève</li>
+                    <li>Découverte par pleurs enfant</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Découverte :</strong>
+                <ul>
+                    <li>Caleb sous évier dans placard</li>
+                    <li>Se cachait parmi produits entretien</li>
+                    <li>Pleurait quand découvert</li>
+                    <li>Vomi liquide vert sur place</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Déclaration :</strong>
+                <ul>
+                    <li>Enfant dit avoir bu produit</li>
+                    <li>Dit que ça fait mal</li>
+                    <li>Lèvres vertes</li>
+                    <li>Corrélation couleur vomissements</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Produits Impliques</h4>
+            <div class="property-group">
+                <strong>Principal :</strong>
+                <ul>
+                    <li>Déboucheur canalisation</li>
+                    <li>Ingrédient : hydroxyde de potassium</li>
+                    <li>Couleur verte</li>
+                    <li>Le plus proche de l'enfant</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Autres :</strong>
+                <ul>
+                    <li>Savon liquide (ouvert) et sec</li>
+                    <li>Nettoyant pour vitres</li>
+                    <li>Tampons à récurer</li>
+                    <li>Tous produits renversés</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Symptomes Enfant</h4>
+            <div class="property-group">
+                <strong>Immédiate :</strong>
+                <ul>
+                    <li>Vomissements liquide vert (2 fois)</li>
+                    <li>Pleurs incontrôlables</li>
+                    <li>Hypersalivation importante</li>
+                    <li>Toux fréquente</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Évaluation :</strong>
+                <ul>
+                    <li>Respiration normale pour pleurs</li>
+                    <li>Pas de bruits respiratoires anormaux</li>
+                    <li>Mari s'occupe dans salle de bain</li>
+                    <li>Apparence douleur générale</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Antecedents Enfant</h4>
+            <p><strong>Médical :</strong> TDAH</p>
+            <p><strong>Médicaments :</strong> Médicament TDAH (nom non précisé)</p>
+            <p><strong>Autres problèmes :</strong> Aucun autre</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Logistique</h4>
+            <div class="property-group">
+                <strong>Transport :</strong>
+                <ul>
+                    <li>Voiture disponible</li>
+                    <li>Distance : 10 minutes</li>
+                    <li>Habite près hôpital</li>
+                    <li>Mari présent pour aider</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Communication :</strong>
+                <ul>
+                    <li>Téléphone portable</li>
+                    <li>Peut parler en route</li>
+                    <li>Accepte raccrocher pour sécurité</li>
+                    <li>Prête partir immédiatement</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-note">
+    <div class="annexe-title">Note du patient - Consultation téléphonique</div>
+    <div class="annexe-note-content">
+        <div class="note-section">
+            <h4>Anamnèse</h4>
+            <p>Garçon de 6 ans avec ingestion rapportée de déboucheur contenant de l'hydroxyde de potassium. Ingestion environ 10 minutes avant le contact téléphonique. Co-ingestions rapportées : détergents et nettoyant pour vitres, bien que tous les agents soient non vérifiés. Patient vu avec déboucheur sur les lèvres et dans le vomitus. Symptômes actuels rapportés : vomissements, hypersalivation, toux et pleurs incontrôlables.</p>
+        </div>
+        <div class="note-section">
+            <h4>Antécédents</h4>
+            <p>TDAH</p>
+        </div>
+        <div class="note-section">
+            <h4>Médicaments</h4>
+            <p>Médicament pour TDAH inconnu</p>
+        </div>
+        <div class="note-section">
+            <h4>Examen physique</h4>
+            <p>Pas d'examen physique</p>
+        </div>
+        <div class="note-section">
+            <h4>Diagnostic différentiel</h4>
+            <ul>
+                <li>Ingestion caustique alcaline</li>
+                <li>Ingestion de détergent</li>
+                <li>Lésion oropharyngée et œsophagienne</li>
+                <li>Pneumopathie d'inhalation</li>
+                <li>Perforation gastro-intestinale</li>
+            </ul>
+        </div>
+        <div class="note-section">
+            <h4>Bilan diagnostique</h4>
+            <ul>
+                <li>Gazométrie artérielle</li>
+                <li>Ionogramme et fonction rénale</li>
+                <li>Radiographie thoracique, debout, face/profil</li>
+                <li>Numération formule sanguine</li>
+                <li>Endoscopie digestive si cliniquement indiquée</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 37, examen: 2, management: 26, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 8, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 1, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 6, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>

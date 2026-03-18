@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#dc2626">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Examen Blanc ECOS</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root { --bg-body: #f8fafc; --bg-card: #fff; --border: #e2e8f0; --text-primary: #1e293b; --text-secondary: #64748b; --text-muted: #94a3b8; }
+  [data-theme="dark"] { --bg-body: #0f172a; --bg-card: #1e293b; --border: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --text-muted: #64748b; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg-body: #0f172a; --bg-card: #1e293b; --border: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --text-muted: #64748b; }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-body); color: var(--text-primary); min-height: 100vh; }
+
+  header { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); color: white; padding: 2rem 1.5rem 1.5rem; text-align: center; position: relative; }
+  header h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: .2rem; }
+  header p { opacity: .8; font-size: .9rem; }
+  .back-link { position: absolute; top: 1rem; left: 1rem; color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; font-weight: 600; }
+  .back-link:hover { color: white; }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 1.5rem 1rem; }
+
+  /* === CONFIG PHASE === */
+  .config-section { background: var(--bg-card); border-radius: 16px; padding: 1.5rem; border: 1px solid var(--border); margin-bottom: 1rem; }
+  .config-section h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-primary); }
+  .config-row { display: flex; align-items: center; gap: 1rem; margin-bottom: .75rem; flex-wrap: wrap; }
+  .config-label { font-size: .85rem; font-weight: 600; color: var(--text-secondary); min-width: 140px; }
+  .config-options { display: flex; gap: .4rem; flex-wrap: wrap; }
+  .config-opt { padding: .45rem .9rem; border-radius: 8px; font-size: .8rem; font-weight: 600; border: 2px solid var(--border); background: var(--bg-card); color: var(--text-secondary); cursor: pointer; font-family: inherit; transition: all .2s; }
+  .config-opt:hover { border-color: var(--text-muted); color: var(--text-primary); }
+  .config-opt.active { border-color: #dc2626; background: #fef2f2; color: #dc2626; }
+
+  select.config-select { padding: .45rem .75rem; border: 2px solid var(--border); border-radius: 8px; font-size: .8rem; font-family: inherit; color: var(--text-primary); background: var(--bg-card); cursor: pointer; min-width: 200px; }
+  select.config-select:focus { border-color: #dc2626; outline: none; }
+  select.config-select:focus-visible { outline: 2px solid #dc2626; outline-offset: 2px; }
+
+  .start-btn { display: block; width: 100%; padding: .85rem; border-radius: 12px; font-size: 1rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; background: linear-gradient(135deg, #dc2626, #991b1b); color: white; transition: all .2s; margin-top: 1rem; }
+  .start-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 25px rgba(220,38,38,.3); }
+  .start-btn:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  /* === READING PHASE === */
+  .reading-phase { display: none; text-align: center; }
+  .reading-phase h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .5rem; }
+  .reading-card { background: var(--bg-card); border-radius: 16px; padding: 2rem; border: 1px solid var(--border); margin-bottom: 1rem; }
+  .station-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #dc2626; margin-bottom: .5rem; }
+  .case-title { font-size: 1.2rem; font-weight: 700; margin-bottom: .3rem; }
+  .case-sub { font-size: .9rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+  .reading-timer { font-size: 3rem; font-weight: 800; color: #dc2626; font-variant-numeric: tabular-nums; margin: 1rem 0; }
+  .reading-hint { font-size: .85rem; color: var(--text-muted); margin-bottom: 1rem; }
+  .skip-btn { padding: .6rem 1.5rem; border-radius: 8px; font-size: .85rem; font-weight: 600; border: 2px solid var(--border); background: var(--bg-card); color: var(--text-secondary); cursor: pointer; font-family: inherit; transition: all .2s; }
+  .skip-btn:hover { border-color: #dc2626; color: #dc2626; }
+
+  /* === IN-PROGRESS PHASE === */
+  .progress-phase { display: none; text-align: center; }
+  .progress-phase .reading-card { text-align: left; }
+  .progress-info { font-size: .9rem; color: var(--text-secondary); margin-bottom: 1rem; }
+  .go-btn { display: block; width: 100%; padding: .85rem; border-radius: 12px; font-size: 1rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; background: #16a34a; color: white; transition: all .2s; }
+  .go-btn:hover { background: #15803d; }
+  .quit-btn { margin-top: .75rem; padding: .5rem 1.2rem; border-radius: 8px; font-size: .8rem; font-weight: 600; border: 2px solid #fecaca; background: white; color: #dc2626; cursor: pointer; font-family: inherit; transition: all .2s; }
+  .quit-btn:hover { background: #fef2f2; }
+
+  /* === RESULTS PHASE === */
+  .results-phase { display: none; }
+  .results-phase h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 1rem; text-align: center; }
+  .results-card { background: var(--bg-card); border-radius: 16px; padding: 1.5rem; border: 1px solid var(--border); margin-bottom: 1rem; }
+  .results-summary { text-align: center; margin-bottom: 1.5rem; }
+  .results-avg { font-size: 3rem; font-weight: 800; }
+  .results-avg.grade-a { color: #22c55e; }
+  .results-avg.grade-b { color: #3b82f6; }
+  .results-avg.grade-c { color: #f59e0b; }
+  .results-avg.grade-d { color: #f97316; }
+  .results-avg.grade-e { color: #ef4444; }
+  .results-grade { font-size: 1.5rem; font-weight: 800; margin-top: .25rem; }
+  .results-label { font-size: .85rem; color: var(--text-muted); margin-top: .25rem; }
+
+  .result-row { display: flex; align-items: center; gap: .75rem; padding: .6rem 0; border-bottom: 1px solid var(--border); }
+  .result-row:last-child { border-bottom: none; }
+  .result-num { flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .75rem; background: var(--border); color: var(--text-secondary); }
+  .result-info { flex: 1; min-width: 0; }
+  .result-title { font-weight: 600; font-size: .85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .result-meta { font-size: .75rem; color: var(--text-muted); }
+  .result-score { flex-shrink: 0; font-weight: 700; font-size: .9rem; padding: .2rem .5rem; border-radius: 6px; }
+  .result-score.rs-a { background: #dcfce7; color: #15803d; }
+  .result-score.rs-b { background: #dbeafe; color: #1d4ed8; }
+  .result-score.rs-c { background: #fef3c7; color: #b45309; }
+  .result-score.rs-d { background: #ffedd5; color: #c2410c; }
+  .result-score.rs-e { background: #fee2e2; color: #dc2626; }
+  .result-score.rs-pending { background: #f1f5f9; color: #94a3b8; }
+
+  .results-actions { display: flex; gap: .75rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap; }
+  .results-actions .start-btn { width: auto; padding: .7rem 1.5rem; font-size: .9rem; }
+  .results-actions .back-btn { padding: .7rem 1.5rem; border-radius: 12px; font-size: .9rem; font-weight: 700; border: 2px solid var(--border); background: var(--bg-card); color: var(--text-secondary); cursor: pointer; font-family: inherit; transition: all .2s; text-decoration: none; display: inline-block; }
+  .results-actions .back-btn:hover { border-color: var(--text-muted); color: var(--text-primary); }
+
+  /* === PHASES VISIBILITY === */
+  .phase { display: none; opacity: 0; transform: translateY(10px); }
+  .phase.active { display: block; opacity: 1; transform: translateY(0); animation: phase-in .3s ease; }
+  @keyframes phase-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Timer urgency pulse */
+  .reading-timer.urgent { color: #ef4444; animation: timer-pulse 1s ease-in-out infinite; }
+  @keyframes timer-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+  /* Result row entrance */
+  .result-row { opacity: 0; transform: translateX(-10px); animation: row-enter .3s ease forwards; }
+  @keyframes row-enter { to { opacity: 1; transform: translateX(0); } }
+
+  @media (max-width: 639px) {
+    header h1 { font-size: 1.4rem; }
+    .config-row { flex-direction: column; align-items: flex-start; gap: .4rem; }
+    .config-label { min-width: auto; }
+    .reading-timer { font-size: 2.5rem; }
+    .results-avg { font-size: 2.5rem; }
+  }
+
+  /* Accessibility: focus-visible */
+  .config-opt:focus-visible, .start-btn:focus-visible, .skip-btn:focus-visible,
+  .go-btn:focus-visible, .quit-btn:focus-visible, .back-btn:focus-visible,
+  .back-link:focus-visible {
+    outline: 2px solid #dc2626; outline-offset: 2px;
+  }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+</style>
+</head>
+<body>
+<script>
+(function() { var t = localStorage.getItem('ecos_theme'); if (t) document.documentElement.setAttribute('data-theme', t); })();
+</script>
+
+<header>
+  <a href="index.html" class="back-link">&larr; Retour</a>
+  <h1>Examen Blanc ECOS</h1>
+  <p>Simulez un circuit d'examen réaliste</p>
+</header>
+
+<div class="container">
+
+  <!-- PHASE 1: CONFIGURATION -->
+  <div class="phase active" id="phaseConfig">
+    <div class="config-section">
+      <h2>Configuration de l'examen</h2>
+
+      <div class="config-row">
+        <span class="config-label">Nb de stations :</span>
+        <div class="config-options" id="stationOpts">
+          <button class="config-opt" data-val="6" aria-label="6 stations">6</button>
+          <button class="config-opt active" data-val="8" aria-label="8 stations">8</button>
+          <button class="config-opt" data-val="10" aria-label="10 stations">10</button>
+          <button class="config-opt" data-val="12" aria-label="12 stations">12</button>
+        </div>
+      </div>
+
+      <div class="config-row">
+        <span class="config-label">Source :</span>
+        <select class="config-select" id="sourceSelect">
+          <option value="all">Toutes les sources</option>
+          <option value="amboss">AMBOSS</option>
+          <option value="german">German</option>
+          <option value="rescos">RESCOS</option>
+          <option value="usmle">USMLE</option>
+          <option value="triage">Triage</option>
+        </select>
+      </div>
+
+      <div class="config-row">
+        <span class="config-label">Système :</span>
+        <select class="config-select" id="systemSelect">
+          <option value="all">Tous les systèmes</option>
+        </select>
+      </div>
+
+      <div class="config-row">
+        <span class="config-label">Lecture (min) :</span>
+        <div class="config-options" id="readingOpts">
+          <button class="config-opt" data-val="0" aria-label="0 minutes de lecture">0</button>
+          <button class="config-opt active" data-val="2" aria-label="2 minutes de lecture">2</button>
+          <button class="config-opt" data-val="3" aria-label="3 minutes de lecture">3</button>
+          <button class="config-opt" data-val="5" aria-label="5 minutes de lecture">5</button>
+        </div>
+      </div>
+
+      <div id="poolInfo" style="font-size:.8rem;color:#94a3b8;margin-top:.5rem;"></div>
+
+      <button class="start-btn" id="startExam">Lancer l'examen</button>
+    </div>
+  </div>
+
+  <!-- PHASE 2: READING PERIOD -->
+  <div class="phase" id="phaseReading">
+    <div class="reading-card">
+      <div class="station-label" id="readingStation">Station 1 / 8</div>
+      <div class="case-title" id="readingTitle">—</div>
+      <div class="case-sub" id="readingSub">—</div>
+      <div class="reading-hint">Lisez le contexte clinique. La grille d'évaluation commencera automatiquement.</div>
+      <div class="reading-timer" id="readingTimer">2:00</div>
+      <span class="sr-only" aria-live="polite" id="timerAnnounce"></span>
+      <button class="skip-btn" id="skipReading">Passer &rarr;</button>
+    </div>
+  </div>
+
+  <!-- PHASE 3: STATION IN PROGRESS (transition screen) -->
+  <div class="phase" id="phaseGo">
+    <div class="reading-card">
+      <div class="station-label" id="goStation">Station 1 / 8</div>
+      <div class="case-title" id="goTitle">—</div>
+      <div class="case-sub" id="goSub">—</div>
+      <p class="progress-info">Le chronomètre de 13 minutes démarrera automatiquement.</p>
+      <button class="go-btn" id="goBtn">Démarrer la station</button>
+      <button class="quit-btn" id="quitBtn">Quitter l'examen</button>
+    </div>
+  </div>
+
+  <!-- PHASE 4: RESULTS -->
+  <div class="phase" id="phaseResults">
+    <h2>Résultats de l'examen</h2>
+    <div class="results-card">
+      <div class="results-summary">
+        <div class="results-avg" id="resultsAvg">—</div>
+        <div class="results-grade" id="resultsGrade">—</div>
+        <div class="results-label">Score moyen</div>
+      </div>
+      <div id="resultsTable"></div>
+    </div>
+    <div class="results-actions">
+      <button class="start-btn" id="retryBtn">Nouvel examen</button>
+      <a href="index.html" class="back-btn">Retour au tableau de bord</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  // === CONSTANTS ===
+  var CIRCUIT_KEY = 'ecos_circuit';
+  var HISTORY_KEY = 'ecos_circuit_history';
+  var REGISTRY_KEY = 'ecos_registry';
+
+  // === LOAD CASE INDEX ===
+  var caseIndex = [];
+  try { caseIndex = JSON.parse(localStorage.getItem('ecos_case_index') || '[]'); } catch(e) {}
+
+  // Enrich with source and system from DOM metadata stored in index
+  // We'll parse source from the URL path
+  var enrichedCases = caseIndex.map(function(c) {
+    var parts = c.url.split('/');
+    var source = parts.length >= 2 ? parts[parts.length - 2] : '';
+    var fileKey = parts[parts.length - 1].replace(/\.html$/, '');
+    return { url: c.url, title: c.title, source: source, fileKey: fileKey };
+  });
+
+  // Load case meta for system info
+  var caseMeta = {};
+  try { caseMeta = JSON.parse(localStorage.getItem('ecos_case_meta') || '{}'); } catch(e) {}
+
+  // Populate system select from available systems
+  var systems = {};
+  enrichedCases.forEach(function(c) {
+    var meta = caseMeta[c.fileKey];
+    if (meta && meta.system) systems[meta.system] = true;
+  });
+  var systemSelect = document.getElementById('systemSelect');
+  Object.keys(systems).sort().forEach(function(sys) {
+    var opt = document.createElement('option');
+    opt.value = sys;
+    opt.textContent = sys;
+    systemSelect.appendChild(opt);
+  });
+
+  // === CONFIG UI ===
+  var numStations = 8;
+  var readingMinutes = 2;
+  var sourceFilter = 'all';
+  var systemFilter = 'all';
+
+  function setupOptionButtons(containerId, callback) {
+    var container = document.getElementById(containerId);
+    container.addEventListener('click', function(e) {
+      var btn = e.target.closest('.config-opt');
+      if (!btn) return;
+      container.querySelectorAll('.config-opt').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      callback(parseInt(btn.getAttribute('data-val'), 10));
+      updatePoolInfo();
+    });
+  }
+
+  setupOptionButtons('stationOpts', function(v) { numStations = v; });
+  setupOptionButtons('readingOpts', function(v) { readingMinutes = v; });
+
+  document.getElementById('sourceSelect').addEventListener('change', function() {
+    sourceFilter = this.value;
+    updatePoolInfo();
+  });
+  systemSelect.addEventListener('change', function() {
+    systemFilter = this.value;
+    updatePoolInfo();
+  });
+
+  function getFilteredPool() {
+    return enrichedCases.filter(function(c) {
+      if (sourceFilter !== 'all' && c.source !== sourceFilter) return false;
+      if (systemFilter !== 'all') {
+        var meta = caseMeta[c.fileKey];
+        if (!meta || meta.system !== systemFilter) return false;
+      }
+      return true;
+    });
+  }
+
+  function updatePoolInfo() {
+    var pool = getFilteredPool();
+    var info = document.getElementById('poolInfo');
+    info.textContent = pool.length + ' cas disponibles';
+    document.getElementById('startExam').disabled = pool.length < numStations;
+    if (pool.length < numStations) {
+      info.textContent += ' (minimum ' + numStations + ' requis)';
+      info.style.color = '#dc2626';
+    } else {
+      info.style.color = '#94a3b8';
+    }
+  }
+
+  updatePoolInfo();
+
+  // === PHASE MANAGEMENT ===
+  function showPhase(id) {
+    document.querySelectorAll('.phase').forEach(function(p) { p.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+  }
+
+  // === CIRCUIT STATE ===
+  var circuit = null;
+  var readingInterval = null;
+
+  function saveCircuit() {
+    try { localStorage.setItem(CIRCUIT_KEY, JSON.stringify(circuit)); } catch(e) {}
+  }
+
+  function clearCircuit() {
+    try { localStorage.removeItem(CIRCUIT_KEY); } catch(e) {}
+    circuit = null;
+  }
+
+  // === SHUFFLE ===
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  // === START EXAM ===
+  document.getElementById('startExam').addEventListener('click', function() {
+    var pool = getFilteredPool();
+    if (pool.length < numStations) return;
+
+    var selected = shuffle(pool).slice(0, numStations);
+    circuit = {
+      id: Date.now().toString(36),
+      config: { stations: numStations, source: sourceFilter, system: systemFilter, readingMinutes: readingMinutes },
+      stations: selected.map(function(c) {
+        return { url: c.url, title: c.title, fileKey: c.fileKey, source: c.source };
+      }),
+      current: 0,
+      phase: 'reading', // reading | go | station | done
+      scores: [],
+      startedAt: new Date().toISOString(),
+      completedAt: null
+    };
+    saveCircuit();
+    startStation(0);
+  });
+
+  // === STATION FLOW ===
+  function startStation(idx) {
+    circuit.current = idx;
+    var station = circuit.stations[idx];
+    var label = 'Station ' + (idx + 1) + ' / ' + circuit.stations.length;
+
+    if (readingMinutes > 0) {
+      // Reading phase
+      circuit.phase = 'reading';
+      saveCircuit();
+      showPhase('phaseReading');
+      document.getElementById('readingStation').textContent = label;
+      document.getElementById('readingTitle').textContent = station.title;
+      document.getElementById('readingSub').textContent = 'Source : ' + station.source.toUpperCase();
+      startReadingTimer(readingMinutes * 60);
+    } else {
+      // Skip to go phase
+      showGoPhase(idx);
+    }
+  }
+
+  function startReadingTimer(seconds) {
+    var remaining = seconds;
+    updateReadingDisplay(remaining);
+
+    if (readingInterval) clearInterval(readingInterval);
+    readingInterval = setInterval(function() {
+      remaining--;
+      updateReadingDisplay(remaining);
+      if (remaining <= 0) {
+        clearInterval(readingInterval);
+        readingInterval = null;
+        showGoPhase(circuit.current);
+      }
+    }, 1000);
+  }
+
+  function updateReadingDisplay(sec) {
+    var m = Math.floor(sec / 60);
+    var s = sec % 60;
+    document.getElementById('readingTimer').textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    // Timer urgency visual
+    var timerEl = document.getElementById('readingTimer');
+    timerEl.classList.toggle('urgent', sec <= 10 && sec > 0);
+    // Screen reader announcements at key moments
+    if (sec === 60 || sec === 30 || sec === 10 || sec === 0) {
+      var announce = document.getElementById('timerAnnounce');
+      if (announce) announce.textContent = sec > 0 ? sec + ' secondes restantes' : 'Temps ecoule';
+    }
+  }
+
+  document.getElementById('skipReading').addEventListener('click', function() {
+    if (readingInterval) { clearInterval(readingInterval); readingInterval = null; }
+    showGoPhase(circuit.current);
+  });
+
+  function showGoPhase(idx) {
+    circuit.phase = 'go';
+    saveCircuit();
+    var station = circuit.stations[idx];
+    var label = 'Station ' + (idx + 1) + ' / ' + circuit.stations.length;
+    showPhase('phaseGo');
+    document.getElementById('goStation').textContent = label;
+    document.getElementById('goTitle').textContent = station.title;
+    document.getElementById('goSub').textContent = 'Source : ' + station.source.toUpperCase();
+  }
+
+  document.getElementById('goBtn').addEventListener('click', function() {
+    if (!circuit) return;
+    circuit.phase = 'station';
+    saveCircuit();
+    // Navigate to the case page — scoring.js will detect circuit mode
+    window.location.href = circuit.stations[circuit.current].url;
+  });
+
+  document.getElementById('quitBtn').addEventListener('click', function() {
+    if (!confirm('Quitter l\'examen en cours ?')) return;
+    clearCircuit();
+    showPhase('phaseConfig');
+  });
+
+  // === RETURN FROM STATION ===
+  // When we return from a station, check if circuit is active and advance
+  function checkReturnFromStation() {
+    var raw;
+    try { raw = localStorage.getItem(CIRCUIT_KEY); } catch(e) { return false; }
+    if (!raw) return false;
+    try { circuit = JSON.parse(raw); } catch(e) { return false; }
+    if (!circuit || !circuit.stations) return false;
+
+    if (circuit.phase === 'returning') {
+      // Collect score from registry
+      var station = circuit.stations[circuit.current];
+      var registry = {};
+      try { registry = JSON.parse(localStorage.getItem(REGISTRY_KEY) || '{}'); } catch(e) {}
+      var entry = registry[station.fileKey];
+
+      circuit.scores[circuit.current] = entry ? { pct: entry.pct, grade: entry.grade } : { pct: 0, grade: '?' };
+
+      var nextIdx = circuit.current + 1;
+      if (nextIdx >= circuit.stations.length) {
+        // Exam complete
+        circuit.phase = 'done';
+        circuit.completedAt = new Date().toISOString();
+        saveCircuit();
+        saveToHistory();
+        showResults();
+      } else {
+        startStation(nextIdx);
+      }
+      return true;
+    }
+
+    // If circuit exists but phase is reading/go, resume
+    if (circuit.phase === 'reading' || circuit.phase === 'go') {
+      if (circuit.phase === 'reading') {
+        startStation(circuit.current);
+      } else {
+        showGoPhase(circuit.current);
+      }
+      return true;
+    }
+
+    if (circuit.phase === 'done') {
+      showResults();
+      return true;
+    }
+
+    return false;
+  }
+
+  // === RESULTS ===
+  function showResults() {
+    showPhase('phaseResults');
+
+    var totalPct = 0;
+    var counted = 0;
+    var html = '';
+
+    circuit.stations.forEach(function(station, i) {
+      var score = circuit.scores[i];
+      var pct = score ? score.pct : 0;
+      var grade = score ? score.grade : '?';
+      if (score && score.pct > 0) { totalPct += pct; counted++; }
+
+      var gc = 'rs-' + (grade || 'e').toLowerCase();
+      if (!score || grade === '?') gc = 'rs-pending';
+
+      html += '<div class="result-row" style="animation-delay:' + (i * 0.06) + 's">'
+        + '<div class="result-num">' + (i + 1) + '</div>'
+        + '<div class="result-info"><div class="result-title">' + station.title + '</div>'
+        + '<div class="result-meta">' + station.source.toUpperCase() + '</div></div>'
+        + '<div class="result-score ' + gc + '">' + (score ? pct + '%' : '—') + '</div>'
+        + '</div>';
+    });
+
+    document.getElementById('resultsTable').innerHTML = html;
+
+    var avg = counted > 0 ? Math.round(totalPct / counted) : 0;
+    var avgGrade = avg >= 90 ? 'A' : avg >= 80 ? 'B' : avg >= 70 ? 'C' : avg >= 60 ? 'D' : 'E';
+    var avgEl = document.getElementById('resultsAvg');
+    avgEl.textContent = avg + '%';
+    avgEl.className = 'results-avg grade-' + avgGrade.toLowerCase();
+    document.getElementById('resultsGrade').textContent = avgGrade;
+  }
+
+  function saveToHistory() {
+    var history = [];
+    try { history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]'); } catch(e) {}
+    history.push({
+      id: circuit.id,
+      config: circuit.config,
+      stations: circuit.stations.map(function(s, i) {
+        return { title: s.title, source: s.source, score: circuit.scores[i] || null };
+      }),
+      startedAt: circuit.startedAt,
+      completedAt: circuit.completedAt
+    });
+    // Keep last 20
+    if (history.length > 20) history = history.slice(-20);
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(history)); } catch(e) {}
+  }
+
+  // === RETRY ===
+  document.getElementById('retryBtn').addEventListener('click', function() {
+    clearCircuit();
+    showPhase('phaseConfig');
+  });
+
+  // === INIT: Check for returning from station or resumed circuit ===
+  if (!checkReturnFromStation()) {
+    showPhase('phaseConfig');
+  }
+
+  // === SAVE CASE META from index page (system info) ===
+  // This runs when coming from index.html. We store system metadata.
+  function saveCaseMetaFromIndex() {
+    var cards = document.querySelectorAll('a.card[data-system]');
+    if (cards.length === 0) return; // not on index page
+    var meta = {};
+    cards.forEach(function(card) {
+      var href = card.getAttribute('href');
+      var sys = card.getAttribute('data-system');
+      if (href && sys) {
+        var fk = href.split('/').pop().replace(/\.html$/, '');
+        meta[fk] = { system: sys };
+      }
+    });
+    try { localStorage.setItem('ecos_case_meta', JSON.stringify(meta)); } catch(e) {}
+  }
+  saveCaseMetaFromIndex();
+})();
+</script>
+
+</body>
+</html>

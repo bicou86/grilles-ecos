@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE-23 - Douleur genou - Femme de 33 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - USMLE-23 - Douleur genou - Femme de 33 ans</h1>
+            <p style="margin: 5px 0;">📍 Clinique médicale</p>
+            <p style="margin: 5px 0;">👤 Kathleen Moore, 33 ans, se présente à la clinique en se plaignant de douleurs au genou</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">130/80 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">76 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">16/min</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">37.7°C</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/53</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Motif principal <span class="patient-response">[Douleur au genou gauche]</span> <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="2" data-criteria="Motif principal" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a1" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Caractérisation de la douleur au genou <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Début <span class="patient-response">[Il y a deux jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fonction <span class="patient-response">[Je ne peux pas le bouger. J'utilise une canne pour marcher]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rougeur <span class="patient-response">[Oui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Gonflement <span class="patient-response">[Oui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs soulageants <span class="patient-response">[Le repos et le paracétamol aident un peu]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Facteurs aggravants <span class="patient-response">[Bouger mon genou et marcher]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Traumatisme <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Autres douleurs articulaires <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[Oui, mes poignets et mes doigts sont toujours douloureux et raides]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Durée <span class="patient-response">[Six mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Raideur matinale <span class="patient-response">[Oui, pendant une heure]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Antécédent arthrite <span class="patient-response">[Il y a cinq ans, j'avais un gros orteil gauche enflé et douloureux, mais l'enflure a disparu après que le médecin de la clinique d'urgence m'a donné un médicament]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Symptômes systémiques <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Fatigue <span class="patient-response">[Oui, je n'ai pas eu d'énergie pour travailler et je me sens fatiguée tout le temps depuis six mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fièvre/frissons <span class="patient-response">[Je me sens chaude maintenant, mais je n'ai pas de frissons]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Perte de poids <span class="patient-response">[J'ai perdu environ 5 kg au cours des six derniers mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Changements d'appétit <span class="patient-response">[Je n'ai pas beaucoup d'appétit]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Symptômes auto-immuns <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Photosensibilité <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Éruptions cutanées <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Ulcères buccaux <span class="patient-response">[J'en ai eu beaucoup dans la bouche le mois dernier, mais ils sont maintenant résolus. Ils semblent apparaître et disparaître]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Perte de cheveux <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Phénomène de Raynaud <span class="patient-response">[Parfois, mes doigts deviennent pâles puis bleus lorsqu'ils sont exposés au froid ou à l'eau froide]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-4" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Piqûre de tique <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-5" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Revue des systèmes <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Symptômes cardiaques <span class="patient-response">[Non, pas de douleur thoracique ou palpitations]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Symptômes pulmonaires <span class="patient-response">[Non, pas de dyspnée ou toux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Symptômes neurologiques <span class="patient-response">[Non, pas de convulsions, faiblesse, engourdissements]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Symptômes urinaires <span class="patient-response">[Non, pas d'hématurie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Douleur abdominale <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-4" value="1" onchange="updateDetailScore('a6', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Antécédents obstétricaux <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Grossesses <span class="patient-response">[J'ai 2 filles. Les deux ont été accouchées par césarienne]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fausses couches <span class="patient-response">[J'ai eu 2 fausses couches spontanées il y a longtemps]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-1" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dernières règles <span class="patient-response">[Il y a deux semaines]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-2" value="1" onchange="updateDetailScore('a7', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Antécédents médicaux <span class="patient-response">[Aucun]</span> <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="2" data-criteria="Antécédents médicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a8" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+<div class="criteria-row" id="criteria-a9">
+    <div>
+        <div class="criteria-text">9. Antécédents chirurgicaux <span class="patient-response">[Deux césariennes à 23 et 25 ans]</span> <button class="comment-button" onclick="toggleComment('a9')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a9">
+            <textarea class="comment-textarea" id="comment-a9" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a9'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="2" data-criteria="Antécédents chirurgicaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a9" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a9">0</div>
+</div>
+<div class="criteria-row" id="criteria-a10">
+    <div>
+        <div class="criteria-text">10. Médicaments actuels <span class="patient-response">[J'ai utilisé du paracétamol pour soulager ma douleur, mais cela ne fonctionne plus aussi bien]</span> <button class="comment-button" onclick="toggleComment('a10')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a10">
+            <textarea class="comment-textarea" id="comment-a10" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a10'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="2" data-criteria="Médicaments actuels" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a10" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a10">0</div>
+</div>
+<div class="criteria-row" id="criteria-a11">
+    <div>
+        <div class="criteria-text">11. Antécédents familiaux <span class="patient-response">[Ma mère a une polyarthrite rhumatoïde (PR) et vit dans une maison de retraite. Je ne connais pas mon père]</span> <button class="comment-button" onclick="toggleComment('a11')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a11">
+            <textarea class="comment-textarea" id="comment-a11" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a11'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a11" value="2" data-criteria="Antécédents familiaux" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a11" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a11">0</div>
+</div>
+<div class="criteria-row" id="criteria-a12">
+    <div>
+        <div class="criteria-text">12. Mode de vie et habitudes <button class="comment-button" onclick="toggleComment('a12')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Serveuse]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-0" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Tabagisme <span class="patient-response">[Oui, un paquet par jour depuis 20 ans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-1" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Alcool <span class="patient-response">[Je ne bois pas beaucoup, généralement 2 à 4 bières par semaine, sauf le week-end où je ne compte pas]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-2" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">CAGE <span class="patient-response">[Non (aux 4 questions)]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-3" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dernière consommation alcool <span class="patient-response">[Il y a quatre jours]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-4" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Drogues illicites <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a12-detail-5" value="1" onchange="updateDetailScore('a12', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a12">
+            <textarea class="comment-textarea" id="comment-a12" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a12'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a12">0</div>
+</div>
+<div class="criteria-row" id="criteria-a13">
+    <div>
+        <div class="criteria-text">13. Histoire sexuelle <button class="comment-button" onclick="toggleComment('a13')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Activité sexuelle <span class="patient-response">[Je suis sexuellement active avec un nouveau petit ami que j'ai rencontré il y a deux mois]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-0" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Protection <span class="patient-response">[Occasionnellement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-1" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nombre de partenaires <span class="patient-response">[Quatre au cours de la dernière année]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-2" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Orientation <span class="patient-response">[Uniquement des hommes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-3" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pertes vaginales <span class="patient-response">[Non]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-4" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Antécédents IST <span class="patient-response">[Oui, j'ai eu la gonorrhée il y a un an. J'ai pris des antibiotiques et j'étais bien après cela]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a13-detail-5" value="1" onchange="updateDetailScore('a13', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a13">
+            <textarea class="comment-textarea" id="comment-a13" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a13'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a13">0</div>
+</div>
+<div class="criteria-row" id="criteria-a14">
+    <div>
+        <div class="criteria-text">14. Allergies médicamenteuses <span class="patient-response">[Aucune allergie médicamenteuse connue]</span> <button class="comment-button" onclick="toggleComment('a14')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-a14">
+            <textarea class="comment-textarea" id="comment-a14" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a14'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="2" data-criteria="Allergies médicamenteuses" onchange="updateScore('a', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="a14" value="0" onchange="updateScore('a', this)" />
+    </div>
+    <div class="points-display" id="points-a14">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/23</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. État général <span class="patient-response">[La patiente ne semble pas en détresse aiguë mais favorise le genou gauche]</span> <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="2" data-criteria="État général" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group" style="visibility: hidden;">
+        <input type="radio" disabled />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e1" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examen de la bouche <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Inspection <span class="patient-response">[Pas de lésions buccales]</span></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e2" value="2" data-criteria="Examen de la bouche" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e2" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e2" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen musculosquelettique - Genou <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection genou gauche <span class="patient-response">[Érythème et gonflement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation genou gauche <span class="patient-response">[Sensibilité et douleur]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Amplitude de mouvement <span class="patient-response">[Limitée à la flexion et à l'extension du genou gauche]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Comparaison avec genou droit <span class="patient-response">[Genou droit normal]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen des autres articulations <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Mains et doigts <span class="patient-response">[Raideur bilatérale]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Poignets <span class="patient-response">[Examen à faire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Épaules <span class="patient-response">[Normales bilatéralement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Coudes <span class="patient-response">[Normaux bilatéralement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-3" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hanches <span class="patient-response">[Normales bilatéralement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-4" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Chevilles <span class="patient-response">[Normales bilatéralement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-5" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Examen des cheveux et de la peau <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Inspection cutanée <span class="patient-response">[À évaluer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Inspection des cheveux <span class="patient-response">[À évaluer]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Examen cardiovasculaire <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Auscultation <span class="patient-response">[RR et FC normaux ; B1/B2 normaux ; pas de souffles, frottements ou galops]</span></div>        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e6" value="2" data-criteria="Examen cardiovasculaire" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e6" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e6" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+<div class="criteria-row" id="criteria-e7">
+    <div>
+        <div class="criteria-text">7. Examen pulmonaire <button class="comment-button" onclick="toggleComment('e7')" title="Ajouter un commentaire">📝</button></div>
+<div class="sub-criteria">Auscultation <span class="patient-response">[Murmures vésiculaires clairs bilatéralement]</span></div>        <div class="criterion-comment-section" id="comment-section-e7">
+            <textarea class="comment-textarea" id="comment-e7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e7" value="2" data-criteria="Examen pulmonaire" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e7" value="1" onchange="updateScore('e', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="e7" value="0" onchange="updateScore('e', this)" />
+    </div>
+    <div class="points-display" id="points-e7">0</div>
+</div>
+<div class="criteria-row" id="criteria-e8">
+    <div>
+        <div class="criteria-text">8. Examen abdominal <button class="comment-button" onclick="toggleComment('e8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Bruits intestinaux normaux en quantité et qualité]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e8-detail-0" value="1" onchange="updateDetailScore('e8', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Détendu, souple et indolore]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e8-detail-1" value="1" onchange="updateDetailScore('e8', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Percussion <span class="patient-response">[Pas d'hépato-splénomégalie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e8-detail-2" value="1" onchange="updateDetailScore('e8', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e8">
+            <textarea class="comment-textarea" id="comment-e8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e8">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/31</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Hypothèses diagnostiques <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">2 points si au moins 2 diagnostics pertinents mentionnés, 1 point si 1 diagnostic</div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Hypothèses diagnostiques" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Diagnostics différentiels à considérer</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Arthrites inflammatoires</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Lupus érythémateux disséminé (LED)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Femme jeune en âge de procréer<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Polyarthralgies (doigts, poignets)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ulcères buccaux récurrents<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Phénomène de Raynaud<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes constitutionnels (fatigue, perte poids)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fausses couches répétées (SAPL ?)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de photosensibilité<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'éruption cutanée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de perte cheveux</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ ANA, anti-dsDNA, complément, NFS</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Polyarthrite rhumatoïde (PR)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Raideur matinale > 1h<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Atteinte symétrique mains/poignets<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes depuis 6 mois<br>&nbsp;&nbsp;&nbsp;&nbsp;•  ATCD familial (mère)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fatigue, perte poids<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Femme jeune<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de gonflement mains à l'examen<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Monoarthrite aiguë atypique</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ FR, anti-CCP, VS, CRP</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Arthrites microcristallines</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Goutte</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Monoarthrite aiguë<br>&nbsp;&nbsp;&nbsp;&nbsp;•  ATCD podagre typique (gros orteil)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Consommation alcool<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Inflammation importante genou<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre associée<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Femme préménopausée (rare)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Polyarthralgies chroniques associées</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Arthrocentèse avec cristaux, uricémie</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Pseudogoutte</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Atteinte genou (fréquente)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Monoarthrite aiguë<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Inflammation importante<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge jeune (33 ans vs > 60 ans habituellement)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de calcifications connues</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Arthrocentèse, Rx genou (chondrocalcinose)</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Arthrites septiques</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Arthrite gonococcique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Femme jeune sexuellement active<br>&nbsp;&nbsp;&nbsp;&nbsp;•  ATCD gonorrhée récent<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Partenaires multiples<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Protection occasionnelle<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Monoarthrite genou<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Fièvre<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de polyarthralgies migratrices<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas d'éruption cutanée typique</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Arthrocentèse, cultures (genou, col, gorge)</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Arthrite septique non gonococcique</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Monoarthrite aiguë fébrile<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Genou (localisation fréquente)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Inflammation importante<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de facteur risque (IVDU, immunosuppression)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de lésion articulaire préalable</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Arthrocentèse urgente, hémocultures</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Autres causes</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Arthrose précoce</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Profession debout (serveuse)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Douleurs chroniques mains<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Mécanique (effort aggrave)<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge jeune<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Inflammation aiguë importante<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Raideur matinale prolongée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Symptômes systémiques</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Rx genoux et mains</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Arthrite réactionnelle</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  ATCD IST (gonorrhée)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Monoarthrite<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Âge compatible<br></span><strong style="color: #f44336;">Arguments CONTRE:</strong><span style="color: #f44336; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Délai long depuis infection<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de symptômes urogénitaux actuels<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Pas de conjonctivite</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ HLA-B27, sérologies Chlamydia</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens complémentaires urgents <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Arthrocentèse du genou gauche URGENTE</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Analyse liquide : cellularité, Gram, cultures, cristaux</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">NFS avec formule leucocytaire</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">VS, CRP</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rx genou gauche</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Cultures cervicales pour gonocoque/chlamydia</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-5" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens selon orientation <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Bilan auto-immun : ANA, anti-dsDNA, FR, anti-CCP</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Complément C3/C4 si LED suspecté</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Anticorps antiphospholipides (fausses couches)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Uricémie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rx des mains (érosions PR)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Hémocultures si fièvre persiste</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-5" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">HLA-B27 si spondylarthropathie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-6" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Prise en charge immédiate <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Traitement symptomatique</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> AINS : ibuprofène 600mg x 3/j avec IPP<br />
+            <span style="margin-left: 10px;">•</span> Glace locale 20 min x 4/j<br />
+            <span style="margin-left: 10px;">•</span> Repos articulaire, attelle si besoin<br />
+            <span style="margin-left: 10px;">•</span> Canne pour décharge<br />
+            <span style="margin-left: 10px;">•</span> Paracétamol 1g x 4/j si insuffisant<br />
+            <span style="margin-left: 10px;">•</span> NE PAS infiltrer avant résultats arthrocentèse</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Antibiothérapie si arthrite septique</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Si gonocoque suspecté : ceftriaxone 1g IV/j<br />
+            <span style="margin-left: 10px;">•</span> + azithromycine 1g PO dose unique<br />
+            <span style="margin-left: 10px;">•</span> Si non gonococcique : selon antibiogramme<br />
+            <span style="margin-left: 10px;">•</span> Durée 2-4 semaines selon germe<br />
+            <span style="margin-left: 10px;">•</span> Drainage articulaire répété si besoin</div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Traitement spécifique selon diagnostic</div>
+            <div style="color: #998800;"><span style="margin-left: 10px;">•</span> Goutte : colchicine 0.5mg x 2-3/j ou AINS<br />
+            <span style="margin-left: 10px;">•</span> PR : méthotrexate après confirmation<br />
+            <span style="margin-left: 10px;">•</span> LED : hydroxychloroquine + corticoïdes<br />
+            <span style="margin-left: 10px;">•</span> Adapter selon résultats arthrocentèse<br />
+            <span style="margin-left: 10px;">•</span> Consultation rhumatologie rapide</div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="2" data-criteria="Prise en charge immédiate" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m4" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Prévention et conseils <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Protection sexuelle systématique (préservatifs)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Dépistage IST complet pour patiente et partenaire</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Arrêt tabac impératif (facteur aggravant PR)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Limitation consommation alcool</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Régime pauvre en purines si goutte</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Vaccination hépatite B si non fait</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-5" value="1" onchange="updateDetailScore('m5', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Surveillance et suivi <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Réévaluation clinique dans 48-72h</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Contrôle ponction si liquide purulent</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Suivi rhumatologie selon diagnostic</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Surveillance effets secondaires AINS</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Éducation sur signes d'alarme</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-4" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Support psychosocial (maladie chronique potentielle)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-5" value="1" onchange="updateDetailScore('m6', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+<div class="criteria-row" id="criteria-m7">
+    <div>
+        <div class="criteria-text">7. Signes d'alarme <button class="comment-button" onclick="toggleComment('m7')" title="Ajouter un commentaire">📝</button></div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Red Flags - Urgences rhumatologiques</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Arthrite septique</div>
+                <div class="redflags-description">→ Fièvre > 38.5°C + arthrite = Drainage urgent + ATB IV</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Polyarthrite fébrile</div>
+                <div class="redflags-description">→ Endocardite, sepsis = Hémocultures + écho cœur</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. Déficit neurologique</div>
+                <div class="redflags-description">→ Compression nerveuse/vasculaire = Imagerie urgente</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Signes de vascularite</div>
+                <div class="redflags-description">→ Purpura, nécrose cutanée = Biopsie + traitement urgent</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">5. Raideur rachidienne</div>
+                <div class="redflags-description">→ Spondylodiscite si fièvre = IRM rachis</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m7">
+            <textarea class="comment-textarea" id="comment-m7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="2" data-criteria="Signes d'alarme" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m7" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m7">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Clôture type</h4>
+                    <div class="cloture-content cloture-content-green">Madame Moore, plusieurs causes peuvent expliquer votre douleur au genou, telles que la goutte, une infection ou une polyarthrite rhumatoïde. Pour en savoir plus, je souhaiterais prélever du liquide de votre genou et faire des analyses de sang. Parfois, des infections provenant du bassin peuvent se propager à d'autres parties de votre corps, comme votre genou, c'est pourquoi je voudrais également faire un examen pelvien. Ces tests révéleront probablement la source de votre douleur. Vous avez mentionné plus tôt que vous n'utilisez pas toujours de préservatifs. Je sais que leur utilisation régulière peut être difficile, mais ils sont importants pour aider à contrôler la propagation des IST. Avez-vous des questions pour moi ?</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Questions difficiles à poser</h4>
+                    <div class="cloture-content">[Pensez-vous que je pourrai marcher normalement sur mon genou comme avant ?]</div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponse type du candidat</h4>
+                    <div class="cloture-content cloture-content-green">Très probablement, mais cela dépend du problème sous-jacent et de votre réponse au traitement. Je dois d'abord réaliser un examen clinique avant de pouvoir déterminer un plan de traitement approprié.</div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/127</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="resume">
+<h3 class="resume-main-title">📚 🦋 Lupus érythémateux disséminé (LED) – Arthrite aiguë du genou – Résumé ECOS</h3>
+<div class="resume-content">
+<div class="resume-section section-anamnese">
+<h4 class="section-title">🔍 Anamnèse</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Symptômes articulaires</h5>
+<ul class="resume-subsection-points">
+<li>Douleur aiguë du genou avec tuméfaction</li>
+<li>Raideur articulaire, impotence fonctionnelle</li>
+<li>Polyarthralgies migratrices souvent rapportées dans les antécédents</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Contexte systémique</h5>
+<ul class="resume-subsection-points">
+<li>Jeune femme (<span class="highlight-range">20–40</span> ans), antécédents de LED connus ou suspicion</li>
+<li>Épisodes de rash cutané photosensible, alopécie, ulcérations buccales</li>
+<li>Asthénie, fièvre, amaigrissement</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Facteurs déclenchants</h5>
+<ul class="resume-subsection-points">
+<li>Exposition solaire</li>
+<li>Stress, infection intercurrente</li>
+<li>Arrêt ou mauvaise observance d’un traitement de fond</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">👀 Examen clinique</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examen articulaire</h5>
+<ul class="resume-subsection-points">
+<li>Genou tuméfié, chaud, douloureux</li>
+<li>Épanchement modéré, mobilité diminuée mais non ankylosante</li>
+<li>Atteinte souvent bilatérale et symétrique au cours du LED</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Signes extra-articulaires</h5>
+<ul class="resume-subsection-points">
+<li>Éruption malaire en aile de papillon</li>
+<li>Lésions cutanées photosensibles</li>
+<li>Adénopathies, splénomégalie possibles</li>
+<li>Signes de néphropathie (œdèmes, HTA, protéinurie)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-examen">
+<h4 class="section-title">🧪 Examens diagnostiques</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Biologie</h5>
+<ul class="resume-subsection-points">
+<li>Syndrome inflammatoire biologique (VS, CRP)</li>
+<li>ANAs positifs, anti-dsDNA, anti-Sm spécifiques du LED</li>
+<li>Compléments C3, C4 abaissés en cas de poussée</li>
+<li>Bilan rénal (créatinine, protéinurie, ECBU)</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Ponction articulaire</h5>
+<ul class="resume-subsection-points">
+<li>Liquide inflammatoire stérile (≠ arthrite septique)</li>
+<li>Analyse pour éliminer infection ou arthrite microcristalline</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Imagerie</h5>
+<ul class="resume-subsection-points">
+<li>Échographie articulaire pour confirmer épanchement</li>
+<li>Radiographies articulaires souvent normales (≠ PR : pas d’érosions destructrices typiques)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-management">
+<h4 class="section-title">⚙️ Prise en charge</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement de l’arthrite aiguë</h5>
+<ul class="resume-subsection-points">
+<li>Repos articulaire relatif</li>
+<li>Antalgiques ± AINS (si pas de néphropathie sévère)</li>
+<li>Corticothérapie systémique ou infiltration intra-articulaire si poussée importante</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Traitement de fond du LED</h5>
+<ul class="resume-subsection-points">
+<li>Hydroxychloroquine (fondamental, sauf contre-indication)</li>
+<li>Corticothérapie adaptée aux poussées</li>
+<li>Immunosuppresseurs (méthotrexate, azathioprine, mycophénolate) selon atteintes</li>
+<li>Biothérapies (belimumab, rituximab) dans formes réfractaires</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Prise en charge globale</h5>
+<ul class="resume-subsection-points">
+<li>Photoprotection stricte</li>
+<li>Surveillance rénale régulière</li>
+<li>Prévention cardiovasculaire</li>
+<li>Suivi multidisciplinaire (rhumatologie, néphrologie, médecine interne)</li>
+</ul>
+</div>
+</div>
+<div class="resume-section section-keypoints">
+<h4 class="section-title">✅ Points clés ECOS</h4>
+<ul class="resume-points">
+<li class="resume-bullet highlight">Arthrite du LED <span class="equals">=</span> inflammatoire, non destructrice, souvent migratrice</li>
+<li class="resume-bullet">Toujours éliminer arthrite septique par ponction articulaire</li>
+<li class="resume-bullet">Rechercher systématiquement autres atteintes systémiques (cutanée, rénale, hématologique)</li>
+<li class="resume-bullet">Hydroxychloroquine est le traitement de fond de <span class="highlight-important">référence</span></li>
+<li class="resume-bullet">Surveillance rénale et hématologique régulière</li>
+</ul>
+</div>
+<div class="resume-section">
+<h4 class="section-title">📋 Check-list rapide ECOS</h4>
+<div class="resume-subsection">
+<h5 class="subsection-title">Questions à poser</h5>
+<ul class="resume-subsection-points">
+<li>Depuis quand douleur et gonflement du genou ? Évolution aiguë ou chronique ?</li>
+<li>Polyarthralgies migratrices dans le passé ?</li>
+<li>Antécédents de LED ou symptômes évocateurs (rash photosensible, ulcères buccaux, alopécie) ?</li>
+<li>Prise de traitement de fond ? Observance ?</li>
+<li>Signes associés : fièvre, fatigue, œdèmes, troubles urinaires ?</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">Examens à faire</h5>
+<ul class="resume-subsection-points">
+<li>Examen articulaire complet (autres articulations atteintes ?)</li>
+<li>Recherche de signes cutanés typiques (rash malaire, photosensibilité)</li>
+<li>Ponction articulaire (analyse cytobactériologique, cristaux)</li>
+<li>Biologie : VS, CRP, ANAs, anti-dsDNA, complément, créatinine, protéinurie</li>
+<li>Échographie ou radiographie genou</li>
+</ul>
+</div>
+<div class="resume-subsection">
+<h5 class="subsection-title">PEC en 3 points</h5>
+<ul class="resume-subsection-points">
+<li>Éliminer arthrite septique (ponction indispensable)</li>
+<li>Traiter la poussée : antalgiques, AINS (si possible), corticoïdes ± infiltration</li>
+<li>Poursuivre/adapter traitement de fond du LED (hydroxychloroquine, immunosuppresseurs)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations de l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>L'expert-e intervient si l'étudiant-e demande :</li>
+                <li>• Liquide synovial : 25000 GB/mm³, 85% PNN</li>
+                <li>• Gram : pas de germe visible</li>
+                <li>• Cristaux : négatifs</li>
+                <li>• VS : 45 mm/h</li>
+                <li>• CRP : 85 mg/L</li>
+                <li>• Si résultats futurs : ANA 1/640 homogène, anti-dsDNA positifs</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Arthrocentèse URGENTE obligatoire</li>
+                <li>Ne jamais infiltrer avant ponction</li>
+                <li>Penser IST chez jeune femme</li>
+                <li>LED probable (4-5 critères/11)</li>
+                <li>Conseil protection sexuelle crucial</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Ne pas faire arthrocentèse urgente</li>
+                <li>Oublier cultures gynécologiques</li>
+                <li>Traiter comme simple goutte</li>
+                <li>Ne pas reconnaître LED</li>
+                <li>Négliger conseil préservatifs</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique concernant la vignette</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Diagnostic</h4>
+            <p>Lupus érythémateux disséminé (LED) avec arthrite aiguë du genou, possiblement déclenchée par infection ou stress. Diagnostic différentiel incluant arthrite septique gonococcique vu les antécédents</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Critères diagnostiques du LED (ACR/EULAR 2019)</h4>
+            <p>Score ≥ 10 avec ANA ≥ 1/80 :</p>
+            <ul>
+                <li>ANA ≥ 1/80 (critère d'entrée obligatoire)</li>
+                <li>Fièvre : 2 points</li>
+                <li>Arthrite : 6 points</li>
+                <li>Ulcères buccaux : 2 points</li>
+                <li>Alopécie non cicatricielle : 2 points</li>
+                <li>Leucopénie < 4000 : 3 points</li>
+                <li>Thrombopénie < 100k : 4 points</li>
+                <li>Protéinurie > 0.5g/24h : 4 points</li>
+                <li>Anti-dsDNA ou anti-Sm : 6 points</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Manifestations articulaires du LED</h4>
+            <p>Spectre variable :</p>
+            <ul>
+                <li>Arthralgies : 90% des patients</li>
+                <li>Arthrite non érosive : 70%</li>
+                <li>Distribution symétrique habituelle</li>
+                <li>Petites articulations > grosses</li>
+                <li>Déformations réductibles (Jaccoud)</li>
+                <li>Ténosynovites fréquentes</li>
+                <li>Poussées aiguës possibles</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>LED et grossesse</h4>
+            <p>Risques obstétricaux augmentés :</p>
+            <ul>
+                <li>Fausses couches répétées : SAPL associé</li>
+                <li>Anticorps antiphospholipides : 30-40%</li>
+                <li>Prématurité, RCIU</li>
+                <li>Pré-éclampsie plus fréquente</li>
+                <li>Lupus néonatal si anti-SSA/SSB</li>
+                <li>Planification grossesse essentielle</li>
+                <li>Hydroxychloroquine à poursuivre</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Arthrite gonococcique disséminée</h4>
+            <p>Présentation classique :</p>
+            <ul>
+                <li>Femmes > hommes (4:1)</li>
+                <li>Infection génitale asymptomatique</li>
+                <li>Phase bactériémique : polyarthralgies, fièvre</li>
+                <li>Phase arthritique : mono/oligoarthrite</li>
+                <li>Genou > poignet > cheville</li>
+                <li>Ténosynovites caractéristiques</li>
+                <li>Lésions cutanées : pustules hémorragiques</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Approche monoarthrite aiguë</h4>
+            <p>Algorithme diagnostique :</p>
+            <ul>
+                <li>1. Exclure infection = arthrocentèse urgente</li>
+                <li>2. Liquide : aspect, cellules, Gram, cultures</li>
+                <li>3. Cristaux : goutte vs pseudogoutte</li>
+                <li>4. > 50 000 GB = septique jusqu'à preuve contraire</li>
+                <li>5. 3000-50 000 = inflammatoire</li>
+                <li>6. < 3000 = mécanique</li>
+                <li>7. Hémocultures si fièvre</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Phénomène de Raynaud</h4>
+            <p>Évaluation et signification :</p>
+            <ul>
+                <li>Primaire (90%) vs secondaire (10%)</li>
+                <li>Triphasique : blanc → bleu → rouge</li>
+                <li>LED, sclérodermie principales causes</li>
+                <li>Capillaroscopie anormale si secondaire</li>
+                <li>ANA, anti-centromères, anti-Scl70</li>
+                <li>Éviter froid, stress, vasoconstricteurs</li>
+                <li>Inhibiteurs calciques si sévère</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Ulcères buccaux récurrents</h4>
+            <p>Causes à considérer :</p>
+            <ul>
+                <li>LED : indolores, palais/muqueuses</li>
+                <li>Behçet : douloureux + génitaux</li>
+                <li>Aphtes idiopathiques : stress</li>
+                <li>Herpès : vésicules groupées</li>
+                <li>Carence B12, folates, fer</li>
+                <li>MICI (Crohn, RCH)</li>
+                <li>Médicamenteux (AINS, méthotrexate)</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Traitement du LED</h4>
+            <p>Approche personnalisée :</p>
+            <ul>
+                <li>Hydroxychloroquine : base pour tous</li>
+                <li>AINS/corticoïdes : poussées articulaires</li>
+                <li>Immunosuppresseurs si atteinte d'organe</li>
+                <li>Méthotrexate : arthrite réfractaire</li>
+                <li>Azathioprine : maintenance</li>
+                <li>Mycophénolate : néphrite lupique</li>
+                <li>Belimumab, rituximab si réfractaire</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Pronostic et suivi</h4>
+            <p>Évolution variable :</p>
+            <ul>
+                <li>Rémissions-rechutes habituelles</li>
+                <li>Mortalité normalisée si bien traité</li>
+                <li>Atteinte rénale = facteur pronostic majeur</li>
+                <li>Risque cardiovasculaire augmenté</li>
+                <li>Ostéoporose (corticoïdes)</li>
+                <li>Suivi : NFS, fonction rénale, anti-dsDNA</li>
+                <li>Dépistage complications annuel</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Messages clés</h4>
+            <ul>
+                <li>Monoarthrite fébrile = arthrocentèse urgente</li>
+                <li>LED : penser devant femme jeune + systémique</li>
+                <li>Fausses couches répétées = rechercher SAPL</li>
+                <li>IST : toujours dépister si comportement risque</li>
+                <li>Protection sexuelle : message systématique</li>
+                <li>Arthrite gonococcique : cultures multiples</li>
+                <li>Hydroxychloroquine : traitement de base LED</li>
+                <li>Suivi multidisciplinaire si LED confirmé</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>AINS : naproxène 500mg bid + oméprazole</li>
+                <li>Hydroxychloroquine 400mg/j si LED</li>
+                <li>Prednisone 0.5mg/kg/j si poussée sévère</li>
+                <li>Colchicine 0.5mg tid si goutte</li>
+                <li>Ceftriaxone 1g IV/j si gonocoque</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>Arthrocentèse urgente obligatoire</li>
+                <li>NFS, VS, CRP, fonction rénale</li>
+                <li>ANA, anti-dsDNA, complément</li>
+                <li>FR, anti-CCP</li>
+                <li>Cultures : genou, col, urines, gorge</li>
+                <li>Rx genou + mains</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="presentation-patient">
+    <h3 class="presentation-main-title">📑 Fiche ECOS – Cas : Douleur du genou (Lupus érythémateux disséminé)</h3>
+    <div class="presentation-content">
+        <div class="presentation-section section-checklist">
+            <h4 class="presentation-section-title">🧩 Checklist mentale (présentation systématisée)</h4>
+            <ul class="presentation-points">
+                <li>Intro <span class="arrow">→</span> âge, contexte, motif (douleur aiguë du genou, polyarthralgies chroniques)</li>
+                <li>Caractériser douleur genou <span class="arrow">→</span> début, évolution, mobilité, fièvre, signes inflammatoires</li>
+                <li>Autres articulations <span class="arrow">→</span> mains, poignets, raideur matinale >1h</li>
+                <li>Signes systémiques <span class="arrow">→</span> fatigue, perte poids, anorexie, fébricule</li>
+                <li>Signes auto-immuns <span class="arrow">→</span> ulcères buccaux, Raynaud, antécédents obstétricaux (fausses couches)</li>
+                <li>ATCD familiaux <span class="arrow">→</span> polyarthrite rhumatoïde</li>
+                <li>ATCD personnels <span class="arrow">→</span> IST (gonorrhée)</li>
+                <li>Habitudes de vie <span class="arrow">→</span> tabac, alcool, partenaires multiples, protection occasionnelle</li>
+                <li>Examen clinique <span class="arrow">→</span> genou tuméfié, rouge, chaud, mobilité limitée ; recherche signes cutanés ou muqueux ; examen autres articulations</li>
+                <li>Résumé + hypothèse principale + diagnostics différentiels</li>
+                <li>Examens complémentaires <span class="arrow">→</span> ponction articulaire, bilan immunologique (ANA, anti-dsDNA, FR, anti-CCP), VS, CRP, hémocultures si fièvre, imagerie</li>
+                <li>Prise en charge <span class="arrow">→</span> AINS, corticoïdes si LED, ATB IV si arthrite septique, hydroxychloroquine en fond si LED confirmé</li>
+            </ul>
+<div class="mnemo-box">
+    <div class="mnemo-title">💡 👉 Mnémo rapide : LUPUS</div>
+    <ul class="mnemo-items">
+        <li>L = Lesions mucocutanées (ulcères, rash, photosensibilité)</li>
+        <li>U = Unexplained fatigue & fièvre</li>
+        <li>P = Polyarthralgies, arthrite non érosive</li>
+        <li>U = Unusual obstetric history (fausses couches)</li>
+        <li>S = Systémique (rein, hémato, séreuses)</li>
+    </ul>
+</div>
+        </div>
+        <div class="presentation-section section-longue">
+            <h4 class="presentation-section-title">🎤 Version longue (≈2-3 min)</h4>
+            <div class="presentation-content"><p>Il s’agit de Mme Kathleen Moore, une femme de 33 ans, serveuse, qui consulte pour une douleur aiguë du genou gauche apparue il y a deux jours.</p><p>Elle rapporte que son genou est rouge, gonflé, chaud, très douloureux et qu’elle ne peut plus le mobiliser. Elle marche avec une canne. La douleur est aggravée par la marche et les mouvements, et un peu soulagée par le repos et le paracétamol, mais le soulagement reste incomplet.</p><p>En explorant les antécédents, elle décrit aussi des douleurs aux poignets et aux doigts, présentes depuis 6 mois, avec une raideur matinale d’environ une heure. Elle signale une fatigue intense et persistante, une perte de 5 kg en 6 mois et une anorexie. Elle se sent fébrile actuellement. Sur le plan muqueux, elle rapporte des ulcères buccaux récents qui apparaissent et disparaissent. Elle décrit aussi un phénomène de Raynaud déclenché par le froid.</p><p>Sur le plan obstétrical, elle a eu deux grossesses menées à terme par césarienne, mais aussi deux fausses couches spontanées précoces. Ses antécédents sont marqués par une infection gonococcique traitée l’an dernier. Sa mère est atteinte de polyarthrite rhumatoïde.</p><p>À l’examen, la patiente n’est pas en détresse aiguë, mais favorise son genou gauche. On retrouve un genou gauche tuméfié, chaud, rouge, douloureux à la palpation, avec mobilité réduite. Les autres articulations montrent une raideur des mains et poignets. Pas de rash cutané visible aujourd’hui, ni d’ulcère buccal actif.</p><p>En résumé, il s’agit d’une femme jeune présentant une monoarthrite aiguë fébrile sur genou, sur fond de polyarthralgies chroniques, d’ulcères buccaux récents, de phénomène de Raynaud et de fausses couches. Mon hypothèse principale est un lupus érythémateux disséminé avec arthrite aiguë. Les diagnostics différentiels incluent une polyarthrite rhumatoïde débutante, une arthrite septique gonococcique, une goutte ou pseudogoutte, et une arthrite réactionnelle.</p><p>En termes d’examens, je demanderais une ponction articulaire en urgence pour analyse cytobactériologique et recherche de cristaux, un bilan inflammatoire (NFS, VS, CRP), un bilan immunologique (ANA, anti-dsDNA, anti-CCP, FR, complément), ainsi que des cultures cervicales et sanguines vu le risque infectieux. Une imagerie du genou pourrait compléter.</p><p>La prise en charge repose initialement sur le traitement symptomatique avec repos, glace, antalgiques ± AINS. Si le LED est confirmé, un traitement de fond par hydroxychloroquine doit être instauré, avec corticoïdes en cas de poussée. Si l’arthrite septique est suspectée, une antibiothérapie IV adaptée doit être débutée après ponction.</p></div>
+        </div>
+        <div class="presentation-section section-express">
+            <h4 class="presentation-section-title">⚡ Version express (SBAR, 30 sec)</h4>
+            <div class="presentation-content"><p>S (Situation) : Mme Moore, 33 ans, présente une monoarthrite aiguë fébrile du genou gauche.</p><p>B (Background) : Polyarthralgies depuis 6 mois, ulcères buccaux récents, phénomène de Raynaud, fatigue chronique, perte de poids, ATCD gonorrhée, fausses couches répétées, mère atteinte de PR.</p><p>A (Assessment) : Hypothèse principale = lupus érythémateux disséminé avec arthrite aiguë. DD : arthrite septique gonococcique, polyarthrite rhumatoïde, goutte/pseudogoutte, arthrite réactionnelle.</p><p>R (Recommendation) : Arthrocentèse urgente, bilan inflammatoire, ANA et anti-dsDNA, hémocultures et prélèvements IST. Traitement symptomatique immédiat, puis hydroxychloroquine et corticoïdes si LED confirmé.</p></div>
+        </div>
+        <div class="presentation-section section-mnemo">
+            <h4 class="presentation-section-title">🎲 Touches ludiques / mnémos</h4>
+            <div class="presentation-subsection">
+                <h5>👉 Critères LED (SLICC/ACR-EULAR)</h5>
+                <ul class="presentation-points">
+                    <li>ANA ≥ 1/80 obligatoire</li>
+                    <li>Arthrite non érosive</li>
+                    <li>Ulcères buccaux</li>
+                    <li>Phénomène de Raynaud</li>
+                    <li>Atteinte systémique (rein, hémato, cutanée)</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>👉 Différencier LED vs PR</h5>
+                <ul class="presentation-points">
+                    <li>LED : non érosif, atteinte systémique, ulcères buccaux, Raynaud</li>
+                    <li>PR : érosif, symétrique, atteinte prédominante mains/poignets</li>
+                </ul>
+            </div>
+            <div class="presentation-subsection">
+                <h5>⚠️ Pièges ECOS</h5>
+                <ul class="presentation-points">
+                    <li>Oublier l’arthrocentèse en <span class="highlight-important">urgence</span></li>
+                    <li>Prescrire infiltration corticoïde avant exclusion infection</li>
+                    <li>Sous-estimer risque IST (arthrite gonococcique)</li>
+                    <li>Ne pas reconnaître les critères de LED</li>
+                    <li>Négliger le conseil sur protection sexuelle</li>
+                </ul>
+            </div>
+        </div>
+        <div class="presentation-section section-questions">
+            <h4 class="presentation-section-title">❓ Questions probables de l'examinateur (avec réponses orales)</h4>
+            <div class="presentation-subsection">
+                <h5>1. Arguments pour et contre chaque hypothèse</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Lupus érythémateux disséminé</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Femme jeune, 33 ans</li>
+                                <li>Polyarthralgies + monoarthrite aiguë</li>
+                                <li>Ulcères buccaux récents</li>
+                                <li>Phénomène de Raynaud</li>
+                                <li>Fatigue, perte de poids</li>
+                                <li>Fausses couches</li>
+                                <li>ANA/anti-dsDNA attendus positifs</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de rash cutané typique observé aujourd’hui</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Arthrite septique gonococcique</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Jeune femme sexuellement active</li>
+                                <li>ATCD IST gonorrhée</li>
+                                <li>Protection occasionnelle</li>
+                                <li>Monoarthrite fébrile</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Pas de polyarthralgies migratrices</li>
+                                <li>Pas d’éruption cutanée associée</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Polyarthrite rhumatoïde</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Raideur matinale > 1h</li>
+                                <li>Atteinte symétrique poignets et doigts</li>
+                                <li>Mère atteinte de PR</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Monoarthrite aiguë atypique</li>
+                                <li>Pas de déformation ni érosions visibles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q4</span>
+                        <span class="q-text">Goutte / pseudogoutte</span>
+                    </div>
+                    <div class="presentation-reponse structured">
+                        <div class="reponse-pour">
+                            <div class="arg-title">✅ Arguments POUR</div>
+                            <ul class="arg-list">
+                                <li>Monoarthrite aiguë douloureuse</li>
+                                <li>ATCD podagre 5 ans plus tôt</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-contre">
+                            <div class="arg-title">❌ Arguments CONTRE</div>
+                            <ul class="arg-list">
+                                <li>Sexe féminin préménopause <span class="equals">=</span> rare pour goutte</li>
+                                <li>Pas d’antécédent de chondrocalcinose (pseudogoutte)</li>
+                                <li>Polyarthralgies chroniques plus compatibles LED</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>2. Examens complémentaires immédiats</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Quels examens demanderiez-vous ?</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Arthrocentèse urgente du genou</li>
+                            <li>Analyse du liquide (cellules, Gram, cultures, cristaux)</li>
+                            <li>NFS, VS, CRP</li>
+                            <li>ANA, anti-dsDNA, complément</li>
+                            <li>FR, anti-CCP</li>
+                            <li>Hémocultures si fièvre</li>
+                            <li>Cultures cervico-vaginales</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="presentation-subsection">
+                <h5>3. Diagnostic définitif, traitement, suivi</h5>
+                <div class="qa-container">
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q1</span>
+                        <span class="q-text">Diagnostic</span>
+                    </div>
+                    <div class="presentation-reponse text">Lupus érythémateux disséminé avec arthrite aiguë du genou</div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q2</span>
+                        <span class="q-text">Traitement</span>
+                    </div>
+                    <div class="presentation-reponse">
+                        <div class="reponse-section">
+                            <strong style="color: #ff5722; font-weight: bold;">⚡ Traitement immédiat :</strong>
+                            <ul>
+                                <li>Repos, glace, antalgiques ± AINS</li>
+                                <li>Corticothérapie si poussée inflammatoire sévère</li>
+                                <li>Antibiothérapie IV si arthrite septique suspectée</li>
+                            </ul>
+                        </div>
+                        <div class="reponse-section">
+                            <strong>Fond :</strong>
+                            <ul>
+                                <li>Hydroxychloroquine systématique</li>
+                                <li>Corticostéroïdes adaptés aux poussées</li>
+                                <li>Immunosuppresseurs selon atteinte (méthotrexate, azathioprine, mycophénolate)</li>
+                                <li>Suivi rhumatologie</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="presentation-qa">
+                    <div class="presentation-question">
+                        <span class="q-number">Q3</span>
+                        <span class="q-text">Suivi</span>
+                    </div>
+                    <div class="presentation-reponse list">
+                        <ul class="response-list">
+                            <li>Contrôle clinique rapproché à <span class="highlight-range">48-72</span>h</li>
+                            <li>Suivi biologique (NFS, créatinine, complément, anti-dsDNA)</li>
+                            <li>Dépistage et prise en charge des complications obstétricales</li>
+                            <li>Photoprotection et hygiène de vie</li>
+                            <li>Suivi multidisciplinaire (rhumato, néphro, médecine interne)</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour la patiente standardisée</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Kathleen Moore |             <strong>Âge :</strong> 33 ans<br>
+            <strong>Contexte :</strong> Femme divorcée, mère de deux filles, serveuse
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> Douleur au genou gauche.</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> J'ai du mal à marcher.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Consignes</h4>
+            <ul>
+                <li>Faites semblant d'avoir mal lorsque le candidat bouge votre genou gauche dans toutes les directions.</li>
+                <li>Ne permettez pas au candidat de fléchir ou d'étendre complètement votre genou gauche.</li>
+                <li>Peignez votre genou gauche en rouge pour qu'il paraisse enflammé.</li>
+                <li>Utilisez une canne pour entrer dans la pièce.</li>
+                <li>Montrez de la douleur lors de la palpation du genou.</li>
+                <li>Favorisez visiblement le genou gauche en marchant.</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Douleur Genou :</strong>
+                <ul>
+                    <li>Début il y a 2 jours</li>
+                    <li>Ne peut pas bouger</li>
+                    <li>Rouge et gonflé</li>
+                    <li>Utilise canne pour marcher</li>
+                    <li>Repos aide un peu</li>
+                    <li>Paracétamol aide peu</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Autres douleurs :</strong>
+                <ul>
+                    <li>Poignets et doigts douloureux 6 mois</li>
+                    <li>Raides le matin 1 heure</li>
+                    <li>Gros orteil gonflé il y a 5 ans</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes systémiques :</strong>
+                <ul>
+                    <li>Fatiguée tout le temps</li>
+                    <li>Pas d'énergie pour travailler</li>
+                    <li>Perte 5 kg en 6 mois</li>
+                    <li>Pas d'appétit</li>
+                    <li>Se sent chaude maintenant</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptomes Auto Immuns :</strong>
+                <ul>
+                    <li>Ulcères bouche mois dernier</li>
+                    <li>Vont et viennent</li>
+                    <li>Doigts pâles puis bleus au froid</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Position antalgique</li>
+                    <li>Main sur genou occasionnellement</li>
+                    <li>Expression de douleur</li>
+                    <li>Inquiétude sur mobilité future</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant l'examen :</strong>
+                <ul>
+                    <li>Douleur à tous mouvements genou gauche</li>
+                    <li>Limitation flexion/extension</li>
+                    <li>Genou rouge et gonflé (maquillage)</li>
+                    <li>Coopération pour autres articulations</li>
+                    <li>Pas d'ulcères buccaux actuellement</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Habitudes</h4>
+            <p><strong>Profession :</strong> Serveuse (debout ++)</p>
+            <p><strong>Tabac :</strong> 1 paquet/jour depuis 20 ans</p>
+            <p><strong>Alcool :</strong> 2-4 bières/semaine, plus le weekend</p>
+            <div class="property-group">
+                <strong>Sexualité :</strong>
+                <ul>
+                    <li>Nouveau petit ami 2 mois</li>
+                    <li>4 partenaires dernière année</li>
+                    <li>Préservatifs occasionnels</li>
+                    <li>Hommes seulement</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Médicaments</h4>
+            <div class="property-group">
+                <strong>Actuels :</strong>
+                <ul>
+                    <li>Paracétamol (marche plus bien)</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Allergies :</strong>
+                <ul>
+                    <li>Aucune</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents</h4>
+            <div class="property-group">
+                <strong>Médicaux :</strong>
+                <ul>
+                    <li>Aucun diagnostic établi</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Chirurgicaux :</strong>
+                <ul>
+                    <li>2 césariennes (23 et 25 ans)</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Obstetricaux :</strong>
+                <ul>
+                    <li>2 filles</li>
+                    <li>2 fausses couches spontanées</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Familiaux :</strong>
+                <ul>
+                    <li>Mère avec polyarthrite rhumatoïde</li>
+                    <li>Vit en maison de retraite</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>IST :</strong>
+                <ul>
+                    <li>Gonorrhée il y a 1 an</li>
+                    <li>Traitée par antibiotiques</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    maxScores: {anamnese: 53, examen: 23, management: 31, communication: 20},
+    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    sectionInfo: [
+                {key: "anamnese", prefix: "a", count: 14, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 8, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 7, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    
+<script src="../persistence.js"></script>
+</body>
+</html>
