@@ -49,13 +49,17 @@
   .transcript-area::placeholder { color: var(--text-muted); }
   .char-count { font-size: .75rem; color: var(--text-muted); margin-top: .35rem; text-align: right; }
 
-  .grille-preview { max-height: 500px; overflow-y: auto; font-size: .8rem; line-height: 1.5; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--bg-body); }
+  .grille-preview { max-height: 500px; overflow-y: auto; font-size: .8rem; line-height: 1.5; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--bg-body); pointer-events: none; user-select: text; opacity: .85; }
   .grille-preview h1 { font-size: 1rem; }
   .grille-preview .mode-selector,
   .grille-preview .revision-controls,
   .grille-preview .timer-container,
   .grille-preview .print-button,
+  .grille-preview .simulation-bar,
+  .grille-preview .case-nav-bar,
+  .grille-preview .save-indicator,
   .grille-preview script { display: none !important; }
+  .grille-preview-label { font-size: .7rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .35rem; text-align: center; pointer-events: none; }
 
   .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: 10px; font-size: .9rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; transition: all .2s; text-decoration: none; }
   .btn-primary { background: linear-gradient(135deg, #1e40af, #7c3aed); color: white; }
@@ -75,10 +79,32 @@
 
   .loading { text-align: center; padding: 2rem; color: var(--text-muted); }
 
+  .post-sim { display: none; margin-top: 1.5rem; }
+  .post-sim.visible { display: block; }
+  .post-sim .panel { border-color: #7c3aed; border-width: 2px; }
+  .report-paste { width: 100%; min-height: 180px; padding: 1rem; border: 2px solid var(--border); border-radius: 10px; font-family: inherit; font-size: .85rem; line-height: 1.5; resize: vertical; background: var(--bg-body); color: var(--text-primary); }
+  .report-paste:focus { border-color: #6366f1; outline: none; }
+  .report-paste::placeholder { color: var(--text-muted); }
+
+  .flow-progress { display: flex; align-items: center; justify-content: center; gap: 0; max-width: 600px; margin: 0 auto 1.5rem; padding: 0 1rem; }
+  .flow-step { display: flex; align-items: center; gap: .4rem; font-size: .75rem; font-weight: 600; color: var(--text-muted); white-space: nowrap; }
+  .flow-step .dot { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; border: 2px solid var(--border); color: var(--text-muted); background: var(--bg-card); flex-shrink: 0; }
+  .flow-step.completed .dot { background: #22c55e; border-color: #22c55e; color: white; }
+  .flow-step.active .dot { background: linear-gradient(135deg, #1e40af, #7c3aed); border-color: #7c3aed; color: white; }
+  .flow-step.active { color: var(--text-primary); }
+  .flow-line { flex: 1; height: 2px; background: var(--border); min-width: 12px; }
+  .flow-line.done { background: #22c55e; }
+
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .grille-preview { max-height: 300px; }
+    .transcript-area { min-height: 200px; }
+  }
   @media (max-width: 639px) {
     header h1 { font-size: 1.2rem; }
     .btn { padding: .65rem 1rem; font-size: .85rem; }
     .transcript-area { min-height: 250px; }
+    .flow-step span:not(.dot) { display: none; }
   }
 </style>
 </head>
@@ -91,10 +117,23 @@
 </script>
 
 <header>
-  <a href="#" class="back-link" id="backLink">&larr; Retour au lanceur</a>
+  <div style="display:flex;justify-content:center;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap;">
+    <a href="#" class="back-link" id="backLink">&larr; Retour au lanceur</a>
+    <a href="#" class="back-link" id="grilleLink">&larr; Retour à la grille</a>
+  </div>
   <h1 id="headerTitle">Soumettre ma transcription</h1>
   <p>Collez votre conversation et obtenez votre rapport</p>
 </header>
+
+<div class="flow-progress">
+  <div class="flow-step completed"><span class="dot">&#10003;</span><span>Préparer</span></div>
+  <div class="flow-line done"></div>
+  <div class="flow-step completed"><span class="dot">&#10003;</span><span>Simuler</span></div>
+  <div class="flow-line done"></div>
+  <div class="flow-step active"><span class="dot">3</span><span>Transcrire</span></div>
+  <div class="flow-line"></div>
+  <div class="flow-step"><span class="dot">4</span><span>Rapport</span></div>
+</div>
 
 <div class="layout">
   <div class="panel">
@@ -121,12 +160,26 @@
   </div>
 </div>
 
+<div class="post-sim" id="postSimulation">
+  <div class="panel">
+    <div class="panel-title">📊 Après réception du rapport</div>
+    <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:1rem;">Copiez le rapport généré par l'Examinateur ECOS, puis collez-le ci-dessous pour le visualiser et le sauvegarder :</p>
+    <textarea class="report-paste" id="reportPaste" placeholder="Collez ici le rapport de l'Examinateur ECOS..."></textarea>
+    <div class="actions">
+      <button class="btn btn-primary" id="viewReportBtn" disabled>📊 Visualiser et sauvegarder mon rapport</button>
+    </div>
+    <div class="status-msg" id="reportStatus"></div>
+  </div>
+</div>
+
 <script src="../js/simulation.js"></script>
 <script src="../js/transcript.js"></script>
+<script src="../js/report.js"></script>
 <script>
 (function() {
   var sim = window.EcosSimulation;
   var trans = window.EcosTranscript;
+  var report = window.EcosReport;
   var params = sim.getParams();
   var caseId = params.caseId;
   var corpus = params.corpus;
@@ -139,8 +192,9 @@
   var caseUrl = sim.getCaseFileUrl(corpus, caseId);
   var displayName = sim.formatCaseName(caseId);
 
-  // Back link to launcher
+  // Back link to launcher + grille link
   document.getElementById('backLink').href = 'launcher.html?case=' + encodeURIComponent(caseId) + '&corpus=' + encodeURIComponent(corpus);
+  document.getElementById('grilleLink').href = '../cases/' + corpus + '/' + caseId + '.html';
   document.getElementById('headerTitle').textContent = displayName;
 
   // Viewer link
@@ -155,25 +209,28 @@
       return r.text();
     })
     .then(function(html) {
-      // Extract body content only, strip scripts
       var bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
       var content = bodyMatch ? bodyMatch[1] : html;
       content = content
         .replace(/<script[\s\S]*?<\/script>/gi, '')
         .replace(/src="data:image\/[^"]*"/gi, 'src=""');
-      preview.innerHTML = content;
+      // Make read-only: strip interactive elements
+      var tempDiv = document.createElement('div');
+      tempDiv.innerHTML = content;
+      var toRemove = tempDiv.querySelectorAll('input, textarea, select, button, .simulation-bar, .btn-simulate, .mode-selector, .revision-controls, .timer-container, .case-nav-bar, .save-indicator');
+      for (var i = 0; i < toRemove.length; i++) toRemove[i].remove();
+      var links = tempDiv.querySelectorAll('a');
+      for (var j = 0; j < links.length; j++) { links[j].removeAttribute('href'); links[j].style.color = 'inherit'; }
+      preview.innerHTML = '<div class="grille-preview-label">Lecture seule</div>' + tempDiv.innerHTML;
 
-      // Also update the header with actual title
       var title = sim.extractTitle(html);
-      if (title) {
-        document.getElementById('headerTitle').textContent = title;
-      }
+      if (title) document.getElementById('headerTitle').textContent = title;
     })
     .catch(function() {
       preview.innerHTML = '<div class="loading">Impossible de charger la grille.</div>';
     });
 
-  // Textarea character count and enable/disable submit
+  // Textarea character count and dynamic submit button
   var textarea = document.getElementById('transcriptInput');
   var charCount = document.getElementById('charCount');
   var submitBtn = document.getElementById('submitBtn');
@@ -181,13 +238,24 @@
   textarea.addEventListener('input', function() {
     var len = textarea.value.length;
     charCount.textContent = len.toLocaleString('fr-FR') + ' caractères';
-    submitBtn.disabled = len < 50;
+    if (len < 50) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Collez d\'abord votre transcription (min. 50 car.)';
+    } else {
+      submitBtn.disabled = false;
+      submitBtn.textContent = '📋 Obtenir mon rapport (' + len.toLocaleString('fr-FR') + ' car.)';
+    }
   });
 
   // Submit button
   submitBtn.addEventListener('click', function() {
     var transcription = textarea.value.trim();
-    if (!transcription) return;
+    if (transcription.length < 50) {
+      var status = document.getElementById('statusMsg');
+      status.textContent = '⚠ Veuillez coller votre transcription avant de continuer (minimum 50 caractères).';
+      status.className = 'status-msg visible info';
+      return;
+    }
 
     submitBtn.disabled = true;
     submitBtn.textContent = '⏳ Préparation...';
@@ -199,7 +267,6 @@
     trans.fetchGrilleContent(caseUrl)
       .then(function(grilleHtml) {
         var title = displayName;
-        // Try to extract from already loaded preview
         var h1 = preview.querySelector('h1');
         if (h1) title = h1.textContent.trim();
 
@@ -214,28 +281,74 @@
       .then(function(result) {
         var status = document.getElementById('statusMsg');
         if (result.success) {
-          status.innerHTML = '✓ Le prompt a été copié dans votre presse-papiers.<br><strong>Collez-le (Ctrl+V) dans le chat de l\'Examinateur ECOS qui vient de s\'ouvrir.</strong>';
+          status.innerHTML = '✅ Prompt copié dans le presse-papiers !<br><strong>L\'Examinateur ECOS s\'ouvre dans un nouvel onglet. Collez le prompt (Ctrl+V / Cmd+V) dans le chat.</strong>';
         } else {
-          status.innerHTML = '⚠ La copie automatique a échoué. Le prompt est très long — utilisez le bouton ci-dessous pour réessayer.';
+          status.innerHTML = '⚠ La copie automatique a échoué. Essayez de copier manuellement le prompt.';
         }
         status.className = 'status-msg visible success';
 
-        // Show viewer link
+        // Show viewer link + post-simulation section
         viewerLink.style.display = 'inline-flex';
+        document.getElementById('postSimulation').className = 'post-sim visible';
 
         // Open Examinateur ECOS
         window.open(trans.EXAMINATEUR_URL, '_blank');
 
-        submitBtn.textContent = '✓ Envoyé — Ouvrir à nouveau';
+        submitBtn.textContent = '✓ Envoyé — Ouvrir à nouveau l\'Examinateur';
         submitBtn.disabled = false;
       })
       .catch(function(err) {
         var status = document.getElementById('statusMsg');
         status.textContent = 'Erreur : ' + err.message;
         status.className = 'status-msg visible info';
-        submitBtn.textContent = '📊 Obtenir mon rapport de performance';
+        submitBtn.textContent = '📋 Obtenir mon rapport';
         submitBtn.disabled = false;
       });
+  });
+
+  // Post-simulation: report paste → save and redirect to viewer
+  var reportPaste = document.getElementById('reportPaste');
+  var viewReportBtn = document.getElementById('viewReportBtn');
+
+  reportPaste.addEventListener('input', function() {
+    viewReportBtn.disabled = reportPaste.value.trim().length < 20;
+  });
+
+  viewReportBtn.addEventListener('click', function() {
+    var md = reportPaste.value.trim();
+    if (!md) return;
+
+    // Compute simulation duration
+    var startRaw = localStorage.getItem('ecos_sim_start_' + caseId);
+    var duration = null;
+    if (startRaw) {
+      duration = Math.round((Date.now() - new Date(startRaw).getTime()) / 60000);
+      if (duration < 0 || duration > 480) duration = null; // Sanity check
+    }
+
+    // Save report with duration
+    var timestamp = Date.now();
+    var key = 'ecos_report_' + caseId + '_' + timestamp;
+    var score = report.extractScore(md);
+    try {
+      localStorage.setItem(key, JSON.stringify({
+        caseId: caseId,
+        corpus: corpus,
+        caseTitle: displayName,
+        markdown: md,
+        score: score,
+        duration: duration,
+        date: new Date().toISOString()
+      }));
+    } catch(e) {}
+
+    var reportStatus = document.getElementById('reportStatus');
+    reportStatus.textContent = '✓ Rapport sauvegardé ! Redirection...';
+    reportStatus.className = 'status-msg visible success';
+
+    setTimeout(function() {
+      window.location.href = '../report/viewer.html?case=' + encodeURIComponent(caseId) + '&corpus=' + encodeURIComponent(corpus) + '&key=' + encodeURIComponent(key);
+    }, 500);
   });
 })();
 </script>

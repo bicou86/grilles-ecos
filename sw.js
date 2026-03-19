@@ -1,4 +1,4 @@
-var CACHE_NAME = 'ecos-v3';
+var CACHE_NAME = 'ecos-v4';
 var APP_SHELL = [
   '/',
   '/index.html',
@@ -44,11 +44,11 @@ self.addEventListener('activate', function(event) {
 self.addEventListener('fetch', function(event) {
   var url = new URL(event.request.url);
 
-  // Only handle same-origin GET requests
-  if (event.request.method !== 'GET' || url.origin !== location.origin) return;
+  // Only handle GET requests
+  if (event.request.method !== 'GET') return;
 
   // Case HTML files and CSS: cache-first (lazy cache on first access)
-  if (url.pathname.match(/\/cases\/.*\.(html|css)$/)) {
+  if (url.origin === location.origin && url.pathname.match(/\/cases\/.*\.(html|css)$/)) {
     event.respondWith(
       caches.match(event.request).then(function(cached) {
         if (cached) return cached;
@@ -65,7 +65,7 @@ self.addEventListener('fetch', function(event) {
   }
 
   // App shell files: network-first
-  if (url.pathname === '/' || url.pathname.endsWith('.html') || url.pathname.endsWith('.js')) {
+  if (url.origin === location.origin && (url.pathname === '/' || url.pathname.endsWith('.html') || url.pathname.endsWith('.js'))) {
     event.respondWith(
       fetch(event.request).then(function(response) {
         if (response.ok) {

@@ -300,6 +300,7 @@
   <div style="display:flex;justify-content:center;gap:.75rem;margin-top:1rem;position:relative;flex-wrap:wrap;">
     <button class="stats-toggle" id="statsToggle" aria-expanded="false">Mes statistiques</button>
     <a href="exam.html" class="stats-toggle" style="text-decoration:none;background:rgba(220,38,38,.8);border-color:rgba(255,255,255,.4);">Examen blanc</a>
+    <a href="#historySection" class="stats-toggle" id="simHistoryBtn" style="display:none;text-decoration:none;background:rgba(124,58,237,.8);border-color:rgba(255,255,255,.4);">Mes simulations</a>
   </div>
 </header>
 
@@ -1427,6 +1428,7 @@ if ('serviceWorker' in navigator) {
   var section = document.getElementById('historySection');
   var list = document.getElementById('historyList');
   var countBadge = document.getElementById('historyCount');
+  var headerBtn = document.getElementById('simHistoryBtn');
 
   function getAllReports() {
     var reports = [];
@@ -1440,7 +1442,7 @@ if ('serviceWorker' in navigator) {
         } catch(e) {}
       }
     }
-    reports.sort(function(a, b) { return (b.timestamp || 0) - (a.timestamp || 0); });
+    reports.sort(function(a, b) { return new Date(b.date || 0) - new Date(a.date || 0); });
     return reports;
   }
 
@@ -1450,24 +1452,31 @@ if ('serviceWorker' in navigator) {
     return m ? parseInt(m[1], 10) : null;
   }
 
+  function formatCaseDisplay(caseId) {
+    return caseId.replace(/_-_/g, ' - ').replace(/_/g, ' ').replace(/ - Grille ECOS$/i, '').trim();
+  }
+
   function renderHistory() {
     var reports = getAllReports();
     if (reports.length === 0) {
       section.style.display = 'none';
+      headerBtn.style.display = 'none';
       return;
     }
     section.style.display = '';
+    headerBtn.style.display = '';
     countBadge.textContent = reports.length + ' rapport' + (reports.length > 1 ? 's' : '');
     list.innerHTML = '';
 
     reports.forEach(function(r) {
-      var score = r.score != null ? r.score : extractScore(r.report || r.content || '');
+      var score = r.score != null ? r.score : extractScore(r.markdown || '');
       var scoreClass = score != null ? (score >= 70 ? 'high' : score >= 50 ? 'mid' : 'low') : 'mid';
       var scoreText = score != null ? score : '?';
-      var date = r.timestamp ? new Date(r.timestamp).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+      var date = r.date ? new Date(r.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
       var caseId = r.caseId || r._key.replace('ecos_report_', '').replace(/_\d+$/, '');
       var corpus = r.corpus || '';
-      var title = r.caseTitle || caseId.replace(/_/g, ' ');
+      var title = r.caseTitle || formatCaseDisplay(caseId);
+      var durationStr = r.duration ? ' &middot; ' + r.duration + ' min' : '';
 
       var item = document.createElement('div');
       item.className = 'history-item';
@@ -1475,7 +1484,7 @@ if ('serviceWorker' in navigator) {
         '<div class="history-score ' + scoreClass + '">' + scoreText + '</div>' +
         '<div class="history-info">' +
           '<div class="h-title">' + title + '</div>' +
-          '<div class="h-meta">' + date + (corpus ? ' &middot; ' + corpus.toUpperCase() : '') + '</div>' +
+          '<div class="h-meta">' + date + (corpus ? ' &middot; ' + corpus.toUpperCase() : '') + durationStr + '</div>' +
         '</div>' +
         '<div class="history-actions">' +
           '<a href="report/viewer.html?case=' + encodeURIComponent(caseId) + '&corpus=' + encodeURIComponent(corpus) + '&key=' + encodeURIComponent(r._key) + '">Voir</a>' +
@@ -1494,6 +1503,13 @@ if ('serviceWorker' in navigator) {
       }
     });
   }
+
+  // Smooth scroll for header button
+  headerBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    section.style.display = '';
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 
   renderHistory();
 })();

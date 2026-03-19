@@ -64,9 +64,19 @@
   .status-msg.success { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
   [data-theme="dark"] .status-msg.success { background: #052e16; color: #86efac; border-color: #15803d; }
 
+  .flow-progress { display: flex; align-items: center; justify-content: center; gap: 0; max-width: 600px; margin: 0 auto 1.5rem; padding: 0 1rem; }
+  .flow-step { display: flex; align-items: center; gap: .4rem; font-size: .75rem; font-weight: 600; color: var(--text-muted); white-space: nowrap; }
+  .flow-step .dot { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; border: 2px solid var(--border); color: var(--text-muted); background: var(--bg-card); flex-shrink: 0; }
+  .flow-step.completed .dot { background: #22c55e; border-color: #22c55e; color: white; }
+  .flow-step.active .dot { background: linear-gradient(135deg, #1e40af, #7c3aed); border-color: #7c3aed; color: white; }
+  .flow-step.active { color: var(--text-primary); }
+  .flow-line { flex: 1; height: 2px; background: var(--border); min-width: 12px; }
+  .flow-line.done { background: #22c55e; }
+
   @media (max-width: 639px) {
     header h1 { font-size: 1.3rem; }
     .btn { padding: .65rem 1.2rem; font-size: .85rem; }
+    .flow-step span:not(.dot) { display: none; }
   }
 </style>
 </head>
@@ -83,6 +93,16 @@
   <h1 id="headerTitle">Simuler une station ECOS</h1>
   <p>Flux de simulation avec Patient ECOS</p>
 </header>
+
+<div class="flow-progress">
+  <div class="flow-step completed"><span class="dot">&#10003;</span><span>Préparer</span></div>
+  <div class="flow-line done"></div>
+  <div class="flow-step active"><span class="dot">2</span><span>Simuler</span></div>
+  <div class="flow-line"></div>
+  <div class="flow-step"><span class="dot">3</span><span>Transcrire</span></div>
+  <div class="flow-line"></div>
+  <div class="flow-step"><span class="dot">4</span><span>Rapport</span></div>
+</div>
 
 <div class="container">
   <div class="step-card">

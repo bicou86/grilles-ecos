@@ -85,9 +85,26 @@
   .status-msg.visible { display: block; }
   .status-msg.success { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
 
+  .flow-progress { display: flex; align-items: center; justify-content: center; gap: 0; max-width: 600px; margin: 0 auto 1.5rem; padding: 0 1rem; }
+  .flow-step { display: flex; align-items: center; gap: .4rem; font-size: .75rem; font-weight: 600; color: var(--text-muted); white-space: nowrap; }
+  .flow-step .dot { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; border: 2px solid var(--border); color: var(--text-muted); background: var(--bg-card); flex-shrink: 0; }
+  .flow-step.completed .dot { background: #22c55e; border-color: #22c55e; color: white; }
+  .flow-step.active .dot { background: linear-gradient(135deg, #1e40af, #7c3aed); border-color: #7c3aed; color: white; }
+  .flow-step.active { color: var(--text-primary); }
+  .flow-line { flex: 1; height: 2px; background: var(--border); min-width: 12px; }
+  .flow-line.done { background: #22c55e; }
+
+  @media print {
+    header, .flow-progress, #inputPanel, .actions, .actions-top, .status-msg { display: none !important; }
+    .report-display { border: none !important; padding: 0 !important; }
+    body { background: white !important; color: black !important; }
+    .panel { box-shadow: none !important; border: none !important; }
+  }
+
   @media (max-width: 639px) {
     header h1 { font-size: 1.2rem; }
     .btn { padding: .6rem 1rem; font-size: .8rem; }
+    .flow-step span:not(.dot) { display: none; }
   }
 </style>
 </head>
@@ -105,6 +122,16 @@
   <p>Visualisez et sauvegardez votre évaluation</p>
 </header>
 
+<div class="flow-progress">
+  <div class="flow-step completed"><span class="dot">&#10003;</span><span>Préparer</span></div>
+  <div class="flow-line done"></div>
+  <div class="flow-step completed"><span class="dot">&#10003;</span><span>Simuler</span></div>
+  <div class="flow-line done"></div>
+  <div class="flow-step completed"><span class="dot">&#10003;</span><span>Transcrire</span></div>
+  <div class="flow-line done"></div>
+  <div class="flow-step active"><span class="dot">4</span><span>Rapport</span></div>
+</div>
+
 <div class="container">
   <!-- Input panel -->
   <div class="panel" id="inputPanel">
@@ -120,6 +147,7 @@
     <div class="actions actions-top">
       <button class="btn btn-primary" id="saveBtn">💾 Sauvegarder dans mon historique</button>
       <a class="btn btn-secondary" id="grilleLink" href="#">Retour à la grille</a>
+      <button class="btn btn-secondary" onclick="window.print()">Imprimer / PDF</button>
       <a class="btn btn-secondary" href="../index.html">Accueil</a>
     </div>
     <div id="scoreBadge"></div>
@@ -137,6 +165,7 @@
   var params = sim.getParams();
   var caseId = params.caseId;
   var corpus = params.corpus;
+  var lsKey = new URLSearchParams(window.location.search).get('key') || '';
 
   // Set links
   if (caseId && corpus) {
@@ -147,16 +176,12 @@
     document.getElementById('grilleLink').href = '../index.html';
   }
 
-  // Display button
-  document.getElementById('displayBtn').addEventListener('click', function() {
-    var md = document.getElementById('reportInput').value.trim();
+  // Render report from markdown
+  function renderReport(md) {
     if (!md) return;
-
-    // Parse markdown
     var html = typeof marked !== 'undefined' ? marked.parse(md) : md.replace(/\n/g, '<br>');
     document.getElementById('reportDisplay').innerHTML = html;
 
-    // Extract and display score
     var score = report.extractScore(md);
     var badgeEl = document.getElementById('scoreBadge');
     if (score !== null) {
@@ -166,9 +191,40 @@
       badgeEl.innerHTML = '';
     }
 
-    // Show display, keep input for editing
     document.getElementById('displayPanel').style.display = 'block';
     document.getElementById('inputPanel').style.display = 'none';
+
+    // Update page title with case name
+    if (caseId) {
+      var name = report.formatCaseDisplay(caseId);
+      document.title = 'Rapport — ' + name;
+    }
+  }
+
+  // Auto-load from localStorage if key param is present
+  if (lsKey) {
+    try {
+      var saved = JSON.parse(localStorage.getItem(lsKey));
+      if (saved && saved.markdown) {
+        document.getElementById('reportInput').value = saved.markdown;
+        renderReport(saved.markdown);
+        // Pre-fill caseId/corpus from saved data if not in URL
+        if (!caseId && saved.caseId) {
+          caseId = saved.caseId;
+          corpus = saved.corpus || '';
+          if (caseId && corpus) {
+            document.getElementById('grilleLink').href = '../cases/' + corpus + '/' + caseId + '.html';
+          }
+        }
+      }
+    } catch(e) {}
+  }
+
+  // Display button
+  document.getElementById('displayBtn').addEventListener('click', function() {
+    var md = document.getElementById('reportInput').value.trim();
+    if (!md) return;
+    renderReport(md);
   });
 
   // Save button

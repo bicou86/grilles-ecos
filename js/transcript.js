@@ -42,7 +42,7 @@
   }
 
   /**
-   * Fetch grille HTML content (strips scripts and style for the prompt)
+   * Fetch grille HTML content (aggressively cleaned for prompt — strips all noise)
    */
   function fetchGrilleContent(url) {
     return fetch(url)
@@ -51,12 +51,26 @@
         return response.text();
       })
       .then(function(html) {
-        // Remove script tags, style tags, and base64 images to reduce size
         var cleaned = html
           .replace(/<script[\s\S]*?<\/script>/gi, '')
           .replace(/<style[\s\S]*?<\/style>/gi, '')
-          .replace(/src="data:image\/[^"]*"/gi, 'src="[image]"');
-        return cleaned;
+          .replace(/<link[^>]*>/gi, '')
+          .replace(/src="data:image\/[^"]*"/gi, 'src="[image]"')
+          .replace(/style="[^"]*"/gi, '')
+          .replace(/class="[^"]*"/gi, '')
+          .replace(/id="[^"]*"/gi, '')
+          .replace(/data-[a-z-]+="[^"]*"/gi, '')
+          .replace(/onclick="[^"]*"/gi, '')
+          .replace(/<input[^>]*type=["']radio["'][^>]*>/gi, '[ ]')
+          .replace(/<input[^>]*type=["']checkbox["'][^>]*>/gi, '[ ]')
+          .replace(/<input[^>]*>/gi, '')
+          .replace(/<textarea[^>]*>[\s\S]*?<\/textarea>/gi, '')
+          .replace(/<button[\s\S]*?<\/button>/gi, '')
+          .replace(/<meta[^>]*>/gi, '')
+          .replace(/<\/?(!DOCTYPE|html|head|body)[^>]*>/gi, '')
+          .replace(/\s{2,}/g, ' ')
+          .replace(/\n{3,}/g, '\n\n');
+        return cleaned.trim();
       });
   }
 
