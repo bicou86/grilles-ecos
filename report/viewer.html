@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1e40af">
+<title>Rapport de performance ECOS</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --bg-body: #f8fafc; --bg-card: #fff; --bg-toolbar: #fff;
+    --border: #e2e8f0; --border-hover: #cbd5e1;
+    --text-primary: #1e293b; --text-secondary: #64748b; --text-muted: #94a3b8;
+    --shadow-card: rgba(0,0,0,.08);
+  }
+  [data-theme="dark"] {
+    --bg-body: #0f172a; --bg-card: #1e293b; --bg-toolbar: #1e293b;
+    --border: #334155; --border-hover: #475569;
+    --text-primary: #f1f5f9; --text-secondary: #94a3b8; --text-muted: #64748b;
+    --shadow-card: rgba(0,0,0,.3);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg-body: #0f172a; --bg-card: #1e293b; --bg-toolbar: #1e293b;
+      --border: #334155; --border-hover: #475569;
+      --text-primary: #f1f5f9; --text-secondary: #94a3b8; --text-muted: #64748b;
+      --shadow-card: rgba(0,0,0,.3);
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-body); color: var(--text-primary); min-height: 100vh; }
+
+  header { background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); color: white; padding: 2rem 1.5rem 1.5rem; text-align: center; }
+  header h1 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: .3rem; }
+  header p { opacity: .8; font-size: .9rem; }
+  .back-link { display: inline-block; margin-bottom: .75rem; color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; font-weight: 600; }
+  .back-link:hover { color: white; }
+
+  .container { max-width: 800px; margin: 0 auto; padding: 1.5rem 1rem; }
+
+  .panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 2px 8px var(--shadow-card); }
+  .panel-title { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; }
+
+  .score-badge { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem 1.2rem; border-radius: 10px; font-size: 1.2rem; font-weight: 800; margin-bottom: 1rem; }
+  .score-badge.high { background: #dcfce7; color: #15803d; }
+  .score-badge.mid { background: #fef3c7; color: #b45309; }
+  .score-badge.low { background: #fee2e2; color: #dc2626; }
+  [data-theme="dark"] .score-badge.high { background: #052e16; color: #86efac; }
+  [data-theme="dark"] .score-badge.mid { background: #422006; color: #fde68a; }
+  [data-theme="dark"] .score-badge.low { background: #450a0a; color: #fca5a5; }
+
+  .report-input { width: 100%; min-height: 200px; padding: 1rem; border: 2px solid var(--border); border-radius: 10px; font-family: inherit; font-size: .85rem; line-height: 1.5; resize: vertical; background: var(--bg-body); color: var(--text-primary); }
+  .report-input:focus { border-color: #6366f1; outline: none; }
+  .report-input::placeholder { color: var(--text-muted); }
+
+  .report-display { line-height: 1.7; font-size: .9rem; }
+  .report-display h1 { font-size: 1.3rem; margin: 1.5rem 0 .75rem; font-weight: 800; }
+  .report-display h2 { font-size: 1.1rem; margin: 1.25rem 0 .5rem; font-weight: 700; color: #4f46e5; }
+  .report-display h3 { font-size: 1rem; margin: 1rem 0 .4rem; font-weight: 700; }
+  .report-display p { margin-bottom: .75rem; }
+  .report-display ul, .report-display ol { margin: .5rem 0 .75rem 1.5rem; }
+  .report-display li { margin-bottom: .3rem; }
+  .report-display strong { color: var(--text-primary); }
+  .report-display table { border-collapse: collapse; width: 100%; margin: .75rem 0; font-size: .85rem; }
+  .report-display th, .report-display td { border: 1px solid var(--border); padding: .5rem .75rem; text-align: left; }
+  .report-display th { background: var(--bg-body); font-weight: 700; }
+  .report-display blockquote { border-left: 3px solid #6366f1; padding-left: 1rem; margin: .75rem 0; color: var(--text-secondary); font-style: italic; }
+  .report-display code { background: var(--bg-body); padding: .15rem .4rem; border-radius: 4px; font-size: .85em; }
+
+  .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1.3rem; border-radius: 10px; font-size: .85rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; transition: all .2s; text-decoration: none; }
+  .btn-primary { background: linear-gradient(135deg, #1e40af, #7c3aed); color: white; }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(124,58,237,.3); }
+  .btn-secondary { background: var(--bg-card); color: #4f46e5; border: 2px solid #6366f1; }
+  .btn-secondary:hover { background: #eef2ff; }
+  .btn-danger { background: var(--bg-card); color: #dc2626; border: 2px solid #fca5a5; }
+  .btn-danger:hover { background: #fee2e2; }
+
+  .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1rem; }
+  .actions-top { margin-bottom: 1rem; }
+
+  .status-msg { display: none; margin-top: .75rem; padding: .75rem; border-radius: 8px; font-size: .85rem; font-weight: 600; }
+  .status-msg.visible { display: block; }
+  .status-msg.success { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+
+  @media (max-width: 639px) {
+    header h1 { font-size: 1.2rem; }
+    .btn { padding: .6rem 1rem; font-size: .8rem; }
+  }
+</style>
+</head>
+<body>
+<script>
+(function() {
+  var t = localStorage.getItem('ecos_theme');
+  if (t) document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+
+<header>
+  <a href="#" class="back-link" id="backLink">&larr; Retour</a>
+  <h1>Rapport de performance</h1>
+  <p>Visualisez et sauvegardez votre évaluation</p>
+</header>
+
+<div class="container">
+  <!-- Input panel -->
+  <div class="panel" id="inputPanel">
+    <div class="panel-title">📋 Collez votre rapport</div>
+    <textarea class="report-input" id="reportInput" placeholder="Collez ici le rapport généré par l'Examinateur ECOS..."></textarea>
+    <div class="actions">
+      <button class="btn btn-primary" id="displayBtn">Afficher le rapport</button>
+    </div>
+  </div>
+
+  <!-- Display panel (hidden initially) -->
+  <div class="panel" id="displayPanel" style="display:none;">
+    <div class="actions actions-top">
+      <button class="btn btn-primary" id="saveBtn">💾 Sauvegarder dans mon historique</button>
+      <a class="btn btn-secondary" id="grilleLink" href="#">Retour à la grille</a>
+      <a class="btn btn-secondary" href="../index.html">Accueil</a>
+    </div>
+    <div id="scoreBadge"></div>
+    <div class="report-display" id="reportDisplay"></div>
+    <div class="status-msg" id="statusMsg"></div>
+  </div>
+</div>
+
+<script src="../js/simulation.js"></script>
+<script src="../js/report.js"></script>
+<script>
+(function() {
+  var sim = window.EcosSimulation;
+  var report = window.EcosReport;
+  var params = sim.getParams();
+  var caseId = params.caseId;
+  var corpus = params.corpus;
+
+  // Set links
+  if (caseId && corpus) {
+    document.getElementById('backLink').href = '../simulation/transcript.html?case=' + encodeURIComponent(caseId) + '&corpus=' + encodeURIComponent(corpus);
+    document.getElementById('grilleLink').href = '../cases/' + corpus + '/' + caseId + '.html';
+  } else {
+    document.getElementById('backLink').href = '../index.html';
+    document.getElementById('grilleLink').href = '../index.html';
+  }
+
+  // Display button
+  document.getElementById('displayBtn').addEventListener('click', function() {
+    var md = document.getElementById('reportInput').value.trim();
+    if (!md) return;
+
+    // Parse markdown
+    var html = typeof marked !== 'undefined' ? marked.parse(md) : md.replace(/\n/g, '<br>');
+    document.getElementById('reportDisplay').innerHTML = html;
+
+    // Extract and display score
+    var score = report.extractScore(md);
+    var badgeEl = document.getElementById('scoreBadge');
+    if (score !== null) {
+      var cls = score >= 70 ? 'high' : (score >= 50 ? 'mid' : 'low');
+      badgeEl.innerHTML = '<div class="score-badge ' + cls + '">Score global : ' + score + '/100</div>';
+    } else {
+      badgeEl.innerHTML = '';
+    }
+
+    // Show display, keep input for editing
+    document.getElementById('displayPanel').style.display = 'block';
+    document.getElementById('inputPanel').style.display = 'none';
+  });
+
+  // Save button
+  document.getElementById('saveBtn').addEventListener('click', function() {
+    var md = document.getElementById('reportInput').value.trim();
+    if (!md) return;
+    var id = caseId || 'unknown';
+    var corp = corpus || 'unknown';
+    report.saveReport(id, corp, md);
+
+    var status = document.getElementById('statusMsg');
+    status.textContent = '✓ Rapport sauvegardé dans votre historique local.';
+    status.className = 'status-msg visible success';
+    this.disabled = true;
+    this.textContent = '✓ Sauvegardé';
+  });
+})();
+</script>
+</body>
+</html>

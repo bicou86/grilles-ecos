@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1e40af">
+<title>Soumettre ma transcription ECOS</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --bg-body: #f8fafc; --bg-card: #fff; --bg-toolbar: #fff;
+    --border: #e2e8f0; --border-hover: #cbd5e1;
+    --text-primary: #1e293b; --text-secondary: #64748b; --text-muted: #94a3b8;
+    --shadow-card: rgba(0,0,0,.08);
+  }
+  [data-theme="dark"] {
+    --bg-body: #0f172a; --bg-card: #1e293b; --bg-toolbar: #1e293b;
+    --border: #334155; --border-hover: #475569;
+    --text-primary: #f1f5f9; --text-secondary: #94a3b8; --text-muted: #64748b;
+    --shadow-card: rgba(0,0,0,.3);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg-body: #0f172a; --bg-card: #1e293b; --bg-toolbar: #1e293b;
+      --border: #334155; --border-hover: #475569;
+      --text-primary: #f1f5f9; --text-secondary: #94a3b8; --text-muted: #64748b;
+      --shadow-card: rgba(0,0,0,.3);
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-body); color: var(--text-primary); min-height: 100vh; }
+
+  header { background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); color: white; padding: 2rem 1.5rem 1.5rem; text-align: center; }
+  header h1 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: .3rem; }
+  header p { opacity: .8; font-size: .9rem; }
+  .back-link { display: inline-block; margin-bottom: .75rem; color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; font-weight: 600; }
+  .back-link:hover { color: white; }
+
+  .layout { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1rem; display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .layout { grid-template-columns: 1fr 1fr; } }
+
+  .panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px var(--shadow-card); }
+  .panel-title { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: .5rem; }
+
+  .transcript-area { width: 100%; min-height: 350px; padding: 1rem; border: 2px solid var(--border); border-radius: 10px; font-family: inherit; font-size: .9rem; line-height: 1.6; resize: vertical; background: var(--bg-body); color: var(--text-primary); transition: border-color .2s; }
+  .transcript-area:focus { border-color: #6366f1; outline: none; box-shadow: 0 0 0 3px rgba(99,102,241,.15); }
+  .transcript-area::placeholder { color: var(--text-muted); }
+  .char-count { font-size: .75rem; color: var(--text-muted); margin-top: .35rem; text-align: right; }
+
+  .grille-preview { max-height: 500px; overflow-y: auto; font-size: .8rem; line-height: 1.5; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--bg-body); }
+  .grille-preview h1 { font-size: 1rem; }
+  .grille-preview .mode-selector,
+  .grille-preview .revision-controls,
+  .grille-preview .timer-container,
+  .grille-preview .print-button,
+  .grille-preview script { display: none !important; }
+
+  .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: 10px; font-size: .9rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; transition: all .2s; text-decoration: none; }
+  .btn-primary { background: linear-gradient(135deg, #1e40af, #7c3aed); color: white; }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(124,58,237,.3); }
+  .btn-primary:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+  .btn-secondary { background: var(--bg-card); color: #4f46e5; border: 2px solid #6366f1; }
+  .btn-secondary:hover { background: #eef2ff; }
+
+  .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+  .status-msg { display: none; margin-top: .75rem; padding: .75rem; border-radius: 8px; font-size: .85rem; font-weight: 600; }
+  .status-msg.visible { display: block; }
+  .status-msg.success { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+  .status-msg.info { background: #dbeafe; color: #1d4ed8; border: 1px solid #bfdbfe; }
+  [data-theme="dark"] .status-msg.success { background: #052e16; color: #86efac; border-color: #15803d; }
+  [data-theme="dark"] .status-msg.info { background: #172554; color: #93c5fd; border-color: #1e40af; }
+
+  .loading { text-align: center; padding: 2rem; color: var(--text-muted); }
+
+  @media (max-width: 639px) {
+    header h1 { font-size: 1.2rem; }
+    .btn { padding: .65rem 1rem; font-size: .85rem; }
+    .transcript-area { min-height: 250px; }
+  }
+</style>
+</head>
+<body>
+<script>
+(function() {
+  var t = localStorage.getItem('ecos_theme');
+  if (t) document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+
+<header>
+  <a href="#" class="back-link" id="backLink">&larr; Retour au lanceur</a>
+  <h1 id="headerTitle">Soumettre ma transcription</h1>
+  <p>Collez votre conversation et obtenez votre rapport</p>
+</header>
+
+<div class="layout">
+  <div class="panel">
+    <div class="panel-title">📝 Transcription de la simulation</div>
+    <textarea class="transcript-area" id="transcriptInput" placeholder="Collez ici la transcription complète de votre conversation avec Patient ECOS..."></textarea>
+    <div class="char-count" id="charCount">0 caractères</div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="submitBtn" disabled>
+        📊 Obtenir mon rapport de performance
+      </button>
+      <a class="btn btn-secondary" id="viewerLink" href="#" style="display:none">
+        📄 Voir mes rapports
+      </a>
+    </div>
+    <div class="status-msg" id="statusMsg"></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">📋 Grille d'évaluation (référence)</div>
+    <div class="grille-preview" id="grillePreview">
+      <div class="loading">Chargement de la grille...</div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/simulation.js"></script>
+<script src="../js/transcript.js"></script>
+<script>
+(function() {
+  var sim = window.EcosSimulation;
+  var trans = window.EcosTranscript;
+  var params = sim.getParams();
+  var caseId = params.caseId;
+  var corpus = params.corpus;
+
+  if (!caseId || !corpus) {
+    document.getElementById('headerTitle').textContent = 'Paramètres manquants';
+    return;
+  }
+
+  var caseUrl = sim.getCaseFileUrl(corpus, caseId);
+  var displayName = sim.formatCaseName(caseId);
+
+  // Back link to launcher
+  document.getElementById('backLink').href = 'launcher.html?case=' + encodeURIComponent(caseId) + '&corpus=' + encodeURIComponent(corpus);
+  document.getElementById('headerTitle').textContent = displayName;
+
+  // Viewer link
+  var viewerLink = document.getElementById('viewerLink');
+  viewerLink.href = '../report/viewer.html?case=' + encodeURIComponent(caseId) + '&corpus=' + encodeURIComponent(corpus);
+
+  // Load grille preview
+  var preview = document.getElementById('grillePreview');
+  fetch(caseUrl)
+    .then(function(r) {
+      if (!r.ok) throw new Error('Not found');
+      return r.text();
+    })
+    .then(function(html) {
+      // Extract body content only, strip scripts
+      var bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+      var content = bodyMatch ? bodyMatch[1] : html;
+      content = content
+        .replace(/<script[\s\S]*?<\/script>/gi, '')
+        .replace(/src="data:image\/[^"]*"/gi, 'src=""');
+      preview.innerHTML = content;
+
+      // Also update the header with actual title
+      var title = sim.extractTitle(html);
+      if (title) {
+        document.getElementById('headerTitle').textContent = title;
+      }
+    })
+    .catch(function() {
+      preview.innerHTML = '<div class="loading">Impossible de charger la grille.</div>';
+    });
+
+  // Textarea character count and enable/disable submit
+  var textarea = document.getElementById('transcriptInput');
+  var charCount = document.getElementById('charCount');
+  var submitBtn = document.getElementById('submitBtn');
+
+  textarea.addEventListener('input', function() {
+    var len = textarea.value.length;
+    charCount.textContent = len.toLocaleString('fr-FR') + ' caractères';
+    submitBtn.disabled = len < 50;
+  });
+
+  // Submit button
+  submitBtn.addEventListener('click', function() {
+    var transcription = textarea.value.trim();
+    if (!transcription) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = '⏳ Préparation...';
+
+    // Save transcript
+    trans.saveTranscript(caseId, transcription);
+
+    // Fetch grille content for the prompt
+    trans.fetchGrilleContent(caseUrl)
+      .then(function(grilleHtml) {
+        var title = displayName;
+        // Try to extract from already loaded preview
+        var h1 = preview.querySelector('h1');
+        if (h1) title = h1.textContent.trim();
+
+        var prompt = trans.buildExaminateurPrompt(title, corpus, grilleHtml, transcription);
+
+        return sim.copyToClipboard(prompt).then(function() {
+          return { success: true };
+        }).catch(function() {
+          return { success: false, prompt: prompt };
+        });
+      })
+      .then(function(result) {
+        var status = document.getElementById('statusMsg');
+        if (result.success) {
+          status.innerHTML = '✓ Le prompt a été copié dans votre presse-papiers.<br><strong>Collez-le (Ctrl+V) dans le chat de l\'Examinateur ECOS qui vient de s\'ouvrir.</strong>';
+        } else {
+          status.innerHTML = '⚠ La copie automatique a échoué. Le prompt est très long — utilisez le bouton ci-dessous pour réessayer.';
+        }
+        status.className = 'status-msg visible success';
+
+        // Show viewer link
+        viewerLink.style.display = 'inline-flex';
+
+        // Open Examinateur ECOS
+        window.open(trans.EXAMINATEUR_URL, '_blank');
+
+        submitBtn.textContent = '✓ Envoyé — Ouvrir à nouveau';
+        submitBtn.disabled = false;
+      })
+      .catch(function(err) {
+        var status = document.getElementById('statusMsg');
+        status.textContent = 'Erreur : ' + err.message;
+        status.className = 'status-msg visible info';
+        submitBtn.textContent = '📊 Obtenir mon rapport de performance';
+        submitBtn.disabled = false;
+      });
+  });
+})();
+</script>
+</body>
+</html>

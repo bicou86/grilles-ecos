@@ -242,6 +242,26 @@
   .srs-btn.review:hover { background: #fef3c7; }
   .srs-due-tag { font-size: .6rem; font-weight: 700; color: #f59e0b; margin-left: .35rem; }
 
+  /* Simulation history */
+  .history-section { max-width: 960px; margin: 1.5rem auto; padding: 0 1rem; }
+  .history-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: .75rem; padding-bottom: .4rem; border-bottom: 2px solid var(--border); }
+  .history-header h2 { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); }
+  .history-header .badge-sim { font-size: .7rem; font-weight: 600; padding: .15rem .45rem; border-radius: 5px; background: #ede9fe; color: #6d28d9; }
+  .history-list { display: flex; flex-direction: column; gap: .5rem; }
+  .history-item { display: flex; align-items: center; gap: .75rem; background: var(--bg-card); border-radius: 12px; padding: .8rem 1rem; border: 1px solid var(--border); transition: all .2s; }
+  .history-item:hover { box-shadow: 0 4px 15px var(--shadow-card); }
+  .history-score { flex-shrink: 0; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .85rem; color: white; }
+  .history-score.high { background: #22c55e; }
+  .history-score.mid { background: #f59e0b; }
+  .history-score.low { background: #ef4444; }
+  .history-info { flex: 1; min-width: 0; }
+  .history-info .h-title { font-weight: 600; font-size: .85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .history-info .h-meta { font-size: .75rem; color: var(--text-muted); }
+  .history-actions { display: flex; gap: .3rem; }
+  .history-actions button, .history-actions a { font-size: .7rem; font-weight: 600; padding: .25rem .5rem; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); cursor: pointer; font-family: inherit; text-decoration: none; transition: all .15s; }
+  .history-actions button:hover, .history-actions a:hover { border-color: #6366f1; color: #4f46e5; }
+  .history-empty { text-align: center; padding: 2rem 1rem; color: var(--text-muted); font-size: .85rem; }
+
   /* Accessibility: skip link */
   .skip-link { position: absolute; top: -40px; left: 0; background: #1e40af; color: white; padding: .5rem 1rem; z-index: 200; font-weight: 600; font-size: .85rem; transition: top .2s; text-decoration: none; border-radius: 0 0 8px 0; }
   .skip-link:focus { top: 0; }
@@ -677,6 +697,14 @@
   <button class="no-results-btn" id="noResultsClear">Reinitialiser les filtres</button>
 </div>
 
+</div>
+
+<div class="history-section" id="historySection" style="display:none">
+  <div class="history-header">
+    <h2>Historique des simulations</h2>
+    <span class="badge-sim" id="historyCount">0 rapports</span>
+  </div>
+  <div class="history-list" id="historyList"></div>
 </div>
 
 <footer>
@@ -1390,6 +1418,84 @@ if ('serviceWorker' in navigator) {
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.content = next === 'dark' ? '#0f172a' : '#1e40af';
   });
+})();
+</script>
+
+<script>
+// === SIMULATION HISTORY ===
+(function() {
+  var section = document.getElementById('historySection');
+  var list = document.getElementById('historyList');
+  var countBadge = document.getElementById('historyCount');
+
+  function getAllReports() {
+    var reports = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var key = localStorage.key(i);
+      if (key && key.indexOf('ecos_report_') === 0) {
+        try {
+          var data = JSON.parse(localStorage.getItem(key));
+          data._key = key;
+          reports.push(data);
+        } catch(e) {}
+      }
+    }
+    reports.sort(function(a, b) { return (b.timestamp || 0) - (a.timestamp || 0); });
+    return reports;
+  }
+
+  function extractScore(text) {
+    if (!text) return null;
+    var m = text.match(/Score\s*global\s*[:=]\s*(\d+)/i) || text.match(/(\d+)\s*\/\s*100/);
+    return m ? parseInt(m[1], 10) : null;
+  }
+
+  function renderHistory() {
+    var reports = getAllReports();
+    if (reports.length === 0) {
+      section.style.display = 'none';
+      return;
+    }
+    section.style.display = '';
+    countBadge.textContent = reports.length + ' rapport' + (reports.length > 1 ? 's' : '');
+    list.innerHTML = '';
+
+    reports.forEach(function(r) {
+      var score = r.score != null ? r.score : extractScore(r.report || r.content || '');
+      var scoreClass = score != null ? (score >= 70 ? 'high' : score >= 50 ? 'mid' : 'low') : 'mid';
+      var scoreText = score != null ? score : '?';
+      var date = r.timestamp ? new Date(r.timestamp).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+      var caseId = r.caseId || r._key.replace('ecos_report_', '').replace(/_\d+$/, '');
+      var corpus = r.corpus || '';
+      var title = r.caseTitle || caseId.replace(/_/g, ' ');
+
+      var item = document.createElement('div');
+      item.className = 'history-item';
+      item.innerHTML =
+        '<div class="history-score ' + scoreClass + '">' + scoreText + '</div>' +
+        '<div class="history-info">' +
+          '<div class="h-title">' + title + '</div>' +
+          '<div class="h-meta">' + date + (corpus ? ' &middot; ' + corpus.toUpperCase() : '') + '</div>' +
+        '</div>' +
+        '<div class="history-actions">' +
+          '<a href="report/viewer.html?case=' + encodeURIComponent(caseId) + '&corpus=' + encodeURIComponent(corpus) + '&key=' + encodeURIComponent(r._key) + '">Voir</a>' +
+          '<button data-key="' + r._key + '">Suppr.</button>' +
+        '</div>';
+      list.appendChild(item);
+    });
+
+    list.addEventListener('click', function(e) {
+      var btn = e.target.closest('button[data-key]');
+      if (!btn) return;
+      var key = btn.getAttribute('data-key');
+      if (confirm('Supprimer ce rapport ?')) {
+        localStorage.removeItem(key);
+        renderHistory();
+      }
+    });
+  }
+
+  renderHistory();
 })();
 </script>
 

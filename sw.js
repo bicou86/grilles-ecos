@@ -1,4 +1,4 @@
-var CACHE_NAME = 'ecos-v1';
+var CACHE_NAME = 'ecos-v3';
 var APP_SHELL = [
   '/',
   '/index.html',
@@ -6,7 +6,13 @@ var APP_SHELL = [
   '/cases/scoring.js',
   '/cases/persistence.js',
   '/cases/srs.js',
-  '/cases/case-styles.css'
+  '/cases/case-styles.css',
+  '/simulation/launcher.html',
+  '/simulation/transcript.html',
+  '/report/viewer.html',
+  '/js/simulation.js',
+  '/js/transcript.js',
+  '/js/report.js'
 ];
 
 // Install: cache app shell
