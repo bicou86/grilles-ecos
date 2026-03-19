@@ -49,7 +49,7 @@
   .transcript-area::placeholder { color: var(--text-muted); }
   .char-count { font-size: .75rem; color: var(--text-muted); margin-top: .35rem; text-align: right; }
 
-  .grille-preview { max-height: 500px; overflow-y: auto; font-size: .8rem; line-height: 1.5; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--bg-body); pointer-events: none; user-select: text; opacity: .85; }
+  .grille-preview { max-height: 500px; overflow-y: auto; font-size: .8rem; line-height: 1.5; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--bg-body); user-select: text; opacity: .9; }
   .grille-preview h1 { font-size: 1rem; }
   .grille-preview .mode-selector,
   .grille-preview .revision-controls,
@@ -58,8 +58,20 @@
   .grille-preview .simulation-bar,
   .grille-preview .case-nav-bar,
   .grille-preview .save-indicator,
+  .grille-preview .criterion-comment-section,
   .grille-preview script { display: none !important; }
-  .grille-preview-label { font-size: .7rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .35rem; text-align: center; pointer-events: none; }
+  .grille-preview .header-row, .grille-preview .criteria-row, .grille-preview .detail-row { pointer-events: none; }
+  .grille-preview .checkbox-group { text-align: center; font-size: .75rem; color: var(--text-muted); }
+  .grille-preview .points-display { text-align: center; font-weight: 600; }
+  .grille-preview .section { margin-bottom: .75rem; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .grille-preview .section-header { background: var(--bg-card); padding: .5rem .75rem; font-weight: 600; font-size: .8rem; border-bottom: 1px solid var(--border); }
+  .grille-preview .header-row { font-weight: 600; font-size: .75rem; border-bottom: 1px solid var(--border); }
+  .grille-preview .criteria-row { border-bottom: 1px solid var(--border); padding: .4rem 0; }
+  .grille-preview .criteria-row:last-child { border-bottom: none; }
+  .grille-preview table { width: 100%; border-collapse: collapse; }
+  .grille-preview th, .grille-preview td { padding: 4px 8px; border: 1px solid var(--border); text-align: left; font-size: .8rem; }
+  .grille-preview th { background: var(--bg-card); font-weight: 600; }
+  .grille-preview-label { font-size: .7rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .35rem; text-align: center; }
 
   .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: 10px; font-size: .9rem; font-weight: 700; border: none; cursor: pointer; font-family: inherit; transition: all .2s; text-decoration: none; }
   .btn-primary { background: linear-gradient(135deg, #1e40af, #7c3aed); color: white; }
@@ -74,8 +86,12 @@
   .status-msg.visible { display: block; }
   .status-msg.success { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
   .status-msg.info { background: #dbeafe; color: #1d4ed8; border: 1px solid #bfdbfe; }
+  .status-msg.warning { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+  .status-msg.error { background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; }
   [data-theme="dark"] .status-msg.success { background: #052e16; color: #86efac; border-color: #15803d; }
   [data-theme="dark"] .status-msg.info { background: #172554; color: #93c5fd; border-color: #1e40af; }
+  [data-theme="dark"] .status-msg.warning { background: #422006; color: #fde68a; border-color: #92400e; }
+  [data-theme="dark"] .status-msg.error { background: #450a0a; color: #fca5a5; border-color: #dc2626; }
 
   .loading { text-align: center; padding: 2rem; color: var(--text-muted); }
 
@@ -94,6 +110,11 @@
   .flow-step.active { color: var(--text-primary); }
   .flow-line { flex: 1; height: 2px; background: var(--border); min-width: 12px; }
   .flow-line.done { background: #22c55e; }
+
+  .btn:focus-visible, .transcript-area:focus-visible, .report-paste:focus-visible, a:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+  }
 
   @media (max-width: 900px) {
     .layout { grid-template-columns: 1fr; }
@@ -125,20 +146,20 @@
   <p>Collez votre conversation et obtenez votre rapport</p>
 </header>
 
-<div class="flow-progress">
-  <div class="flow-step completed"><span class="dot">&#10003;</span><span>Préparer</span></div>
-  <div class="flow-line done"></div>
-  <div class="flow-step completed"><span class="dot">&#10003;</span><span>Simuler</span></div>
-  <div class="flow-line done"></div>
-  <div class="flow-step active"><span class="dot">3</span><span>Transcrire</span></div>
-  <div class="flow-line"></div>
-  <div class="flow-step"><span class="dot">4</span><span>Rapport</span></div>
-</div>
+<nav class="flow-progress" aria-label="Progression du flux de simulation">
+  <div class="flow-step completed"><span class="dot" aria-hidden="true">&#10003;</span><span>Préparer</span></div>
+  <div class="flow-line done" aria-hidden="true"></div>
+  <div class="flow-step completed"><span class="dot" aria-hidden="true">&#10003;</span><span>Simuler</span></div>
+  <div class="flow-line done" aria-hidden="true"></div>
+  <div class="flow-step active"><span class="dot" aria-hidden="true">3</span><span>Transcrire</span></div>
+  <div class="flow-line" aria-hidden="true"></div>
+  <div class="flow-step"><span class="dot" aria-hidden="true">4</span><span>Rapport</span></div>
+</nav>
 
 <div class="layout">
   <div class="panel">
-    <div class="panel-title">📝 Transcription de la simulation</div>
-    <textarea class="transcript-area" id="transcriptInput" placeholder="Collez ici la transcription complète de votre conversation avec Patient ECOS..."></textarea>
+    <div class="panel-title" id="transcriptLabel">📝 Transcription de la simulation</div>
+    <textarea class="transcript-area" id="transcriptInput" aria-labelledby="transcriptLabel" placeholder="Collez ici la transcription complète de votre conversation avec Patient ECOS..."></textarea>
     <div class="char-count" id="charCount">0 caractères</div>
 
     <div class="actions">
@@ -149,7 +170,7 @@
         📄 Voir mes rapports
       </a>
     </div>
-    <div class="status-msg" id="statusMsg"></div>
+    <div class="status-msg" id="statusMsg" role="status" aria-live="polite"></div>
   </div>
 
   <div class="panel">
@@ -164,11 +185,11 @@
   <div class="panel">
     <div class="panel-title">📊 Après réception du rapport</div>
     <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:1rem;">Copiez le rapport généré par l'Examinateur ECOS, puis collez-le ci-dessous pour le visualiser et le sauvegarder :</p>
-    <textarea class="report-paste" id="reportPaste" placeholder="Collez ici le rapport de l'Examinateur ECOS..."></textarea>
+    <textarea class="report-paste" id="reportPaste" aria-label="Rapport de l'Examinateur ECOS" placeholder="Collez ici le rapport de l'Examinateur ECOS..."></textarea>
     <div class="actions">
       <button class="btn btn-primary" id="viewReportBtn" disabled>📊 Visualiser et sauvegarder mon rapport</button>
     </div>
-    <div class="status-msg" id="reportStatus"></div>
+    <div class="status-msg" id="reportStatus" role="status" aria-live="polite"></div>
   </div>
 </div>
 
@@ -214,20 +235,37 @@
       content = content
         .replace(/<script[\s\S]*?<\/script>/gi, '')
         .replace(/src="data:image\/[^"]*"/gi, 'src=""');
-      // Make read-only: strip interactive elements
+      // Make read-only: replace interactive elements with visual placeholders
       var tempDiv = document.createElement('div');
       tempDiv.innerHTML = content;
-      var toRemove = tempDiv.querySelectorAll('input, textarea, select, button, .simulation-bar, .btn-simulate, .mode-selector, .revision-controls, .timer-container, .case-nav-bar, .save-indicator');
+      // Replace radio buttons with circle symbols
+      var radios = tempDiv.querySelectorAll('input[type="radio"]');
+      for (var r = 0; r < radios.length; r++) {
+        var sym = document.createTextNode('\u25CB');
+        radios[r].parentNode.replaceChild(sym, radios[r]);
+      }
+      // Replace checkboxes with square symbols
+      var checks = tempDiv.querySelectorAll('input[type="checkbox"]');
+      for (var c = 0; c < checks.length; c++) {
+        var sq = document.createTextNode('\u2610');
+        checks[c].parentNode.replaceChild(sq, checks[c]);
+      }
+      // Remove elements that are purely interactive or noise
+      var toRemove = tempDiv.querySelectorAll('textarea, select, button, .simulation-bar, .btn-simulate, .mode-selector, .revision-controls, .timer-container, .case-nav-bar, .save-indicator, .comment-button');
       for (var i = 0; i < toRemove.length; i++) toRemove[i].remove();
+      // Disable links
       var links = tempDiv.querySelectorAll('a');
-      for (var j = 0; j < links.length; j++) { links[j].removeAttribute('href'); links[j].style.color = 'inherit'; }
+      for (var j = 0; j < links.length; j++) { links[j].removeAttribute('href'); links[j].style.pointerEvents = 'none'; links[j].style.color = 'inherit'; }
+      // Remove onclick/onchange attributes
+      var allEls = tempDiv.querySelectorAll('[onclick],[onchange],[oninput]');
+      for (var k = 0; k < allEls.length; k++) { allEls[k].removeAttribute('onclick'); allEls[k].removeAttribute('onchange'); allEls[k].removeAttribute('oninput'); }
       preview.innerHTML = '<div class="grille-preview-label">Lecture seule</div>' + tempDiv.innerHTML;
 
       var title = sim.extractTitle(html);
       if (title) document.getElementById('headerTitle').textContent = title;
     })
     .catch(function() {
-      preview.innerHTML = '<div class="loading">Impossible de charger la grille.</div>';
+      preview.innerHTML = '<div class="loading">Impossible de charger la grille.<br><a href="' + caseUrl + '" style="color:#6366f1;font-weight:600;" target="_blank">Ouvrir la grille dans un nouvel onglet</a></div>';
     });
 
   // Textarea character count and dynamic submit button
@@ -272,6 +310,17 @@
 
         var prompt = trans.buildExaminateurPrompt(title, corpus, grilleHtml, transcription);
 
+        // Warn on long prompts
+        var promptLen = prompt.length;
+        var warnEl = document.getElementById('statusMsg');
+        if (promptLen > 200000) {
+          warnEl.innerHTML = '⚠ Le prompt est très long (' + Math.round(promptLen / 1000) + 'K caractères). Il pourrait dépasser la limite de contexte de Claude. Essayez de raccourcir votre transcription.';
+          warnEl.className = 'status-msg visible error';
+        } else if (promptLen > 100000) {
+          warnEl.innerHTML = '⚠ Le prompt est long (' + Math.round(promptLen / 1000) + 'K caractères). L\'évaluation devrait fonctionner, mais si vous obtenez une erreur, raccourcissez votre transcription.';
+          warnEl.className = 'status-msg visible warning';
+        }
+
         return sim.copyToClipboard(prompt).then(function() {
           return { success: true };
         }).catch(function() {
@@ -299,7 +348,7 @@
       })
       .catch(function(err) {
         var status = document.getElementById('statusMsg');
-        status.textContent = 'Erreur : ' + err.message;
+        status.innerHTML = '⚠ Erreur lors du chargement de la grille : ' + err.message + '<br>Vous pouvez <a href="' + caseUrl + '" target="_blank" style="color:#1d4ed8;font-weight:600;">ouvrir la grille manuellement</a> et copier/coller dans l\'Examinateur ECOS.';
         status.className = 'status-msg visible info';
         submitBtn.textContent = '📋 Obtenir mon rapport';
         submitBtn.disabled = false;

@@ -73,6 +73,11 @@
   .flow-line { flex: 1; height: 2px; background: var(--border); min-width: 12px; }
   .flow-line.done { background: #22c55e; }
 
+  .btn:focus-visible, a:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+  }
+
   @media (max-width: 639px) {
     header h1 { font-size: 1.3rem; }
     .btn { padding: .65rem 1.2rem; font-size: .85rem; }
@@ -94,15 +99,15 @@
   <p>Flux de simulation avec Patient ECOS</p>
 </header>
 
-<div class="flow-progress">
-  <div class="flow-step completed"><span class="dot">&#10003;</span><span>Préparer</span></div>
-  <div class="flow-line done"></div>
-  <div class="flow-step active"><span class="dot">2</span><span>Simuler</span></div>
-  <div class="flow-line"></div>
-  <div class="flow-step"><span class="dot">3</span><span>Transcrire</span></div>
-  <div class="flow-line"></div>
-  <div class="flow-step"><span class="dot">4</span><span>Rapport</span></div>
-</div>
+<nav class="flow-progress" aria-label="Progression du flux de simulation">
+  <div class="flow-step completed"><span class="dot" aria-hidden="true">&#10003;</span><span>Préparer</span></div>
+  <div class="flow-line done" aria-hidden="true"></div>
+  <div class="flow-step active"><span class="dot" aria-hidden="true">2</span><span>Simuler</span></div>
+  <div class="flow-line" aria-hidden="true"></div>
+  <div class="flow-step"><span class="dot" aria-hidden="true">3</span><span>Transcrire</span></div>
+  <div class="flow-line" aria-hidden="true"></div>
+  <div class="flow-step"><span class="dot" aria-hidden="true">4</span><span>Rapport</span></div>
+</nav>
 
 <div class="container">
   <div class="step-card">
@@ -120,7 +125,7 @@
     <button class="btn btn-primary" id="openPatient">
       🩺 Ouvrir Patient ECOS sur ChatGPT
     </button>
-    <div class="status-msg" id="copyStatus"></div>
+    <div class="status-msg" id="copyStatus" role="status" aria-live="polite"></div>
   </div>
 
   <div class="step-card">

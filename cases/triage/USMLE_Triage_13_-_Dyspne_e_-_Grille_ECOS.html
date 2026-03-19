@@ -38,6 +38,39 @@
         &#x1FA7A; Simuler cette station avec Patient ECOS
       </a>
     </div>
+    <div class="report-link-bar" id="reportLinkBar" style="display:none"></div>
+    <script>
+    (function(){
+      var bar = document.querySelector('.simulation-bar');
+      if (!bar) return;
+      var caseId = bar.getAttribute('data-case-id');
+      var corpus = bar.getAttribute('data-corpus');
+      if (!caseId) return;
+      var best = null;
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf('ecos_report_' + caseId + '_') === 0) {
+          try {
+            var d = JSON.parse(localStorage.getItem(k));
+            var s = d.score != null ? d.score : null;
+            if (s === null && d.markdown) {
+              var m = d.markdown.match(/Score\s*global\s*[:=]\s*(\d+)/i) || d.markdown.match(/(\d+)\s*\/\s*100/);
+              if (m) s = parseInt(m[1], 10);
+            }
+            if (!best || (d.date && (!best.date || d.date > best.date))) {
+              best = { key: k, score: s, date: d.date, corpus: d.corpus || corpus };
+            }
+          } catch(e) {}
+        }
+      }
+      if (best) {
+        var rlb = document.getElementById('reportLinkBar');
+        var scoreText = best.score != null ? ' (Score: ' + best.score + '/100)' : '';
+        rlb.innerHTML = '<a href="../../report/viewer.html?case=' + encodeURIComponent(caseId) + '&corpus=' + encodeURIComponent(best.corpus) + '&key=' + encodeURIComponent(best.key) + '">\u{1F4CA} Voir mon dernier rapport' + scoreText + '</a>';
+        rlb.style.display = '';
+      }
+    })();
+    </script>
             <p style="margin: 5px 0;">📍 Service des urgences</p>
             <p style="margin: 5px 0;">👤 Albert Baxter, homme de 65 ans, se présente au service des urgences avec une dyspnée croissante.</p>
             <div class="vital-signs" style="grid-template-columns: repeat(5, 1fr);">

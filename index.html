@@ -262,6 +262,33 @@
   .history-actions button:hover, .history-actions a:hover { border-color: #6366f1; color: #4f46e5; }
   .history-empty { text-align: center; padding: 2rem 1rem; color: var(--text-muted); font-size: .85rem; }
 
+  /* Simulation badge on case cards */
+  .sim-badge { position: absolute; bottom: .4rem; right: .5rem; font-size: .6rem; font-weight: 700; padding: .1rem .4rem; border-radius: 5px; line-height: 1.2; }
+  .sim-badge.sb-high { background: #dcfce7; color: #15803d; }
+  .sim-badge.sb-mid { background: #fef3c7; color: #b45309; }
+  .sim-badge.sb-low { background: #fee2e2; color: #dc2626; }
+  [data-theme="dark"] .sim-badge.sb-high { background: #052e16; color: #86efac; }
+  [data-theme="dark"] .sim-badge.sb-mid { background: #422006; color: #fde68a; }
+  [data-theme="dark"] .sim-badge.sb-low { background: #450a0a; color: #fca5a5; }
+
+  /* Delete confirmation modal */
+  .confirm-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 200; align-items: center; justify-content: center; }
+  .confirm-overlay.visible { display: flex; }
+  .confirm-box { background: var(--bg-card); border-radius: 12px; padding: 1.5rem; max-width: 360px; width: 90%; box-shadow: 0 8px 30px rgba(0,0,0,.2); text-align: center; }
+  .confirm-box p { margin-bottom: .75rem; font-size: .9rem; }
+  .confirm-box .confirm-detail { font-size: .8rem; color: var(--text-secondary); font-weight: 500; }
+  .confirm-box .confirm-actions { display: flex; gap: .5rem; justify-content: center; margin-top: 1rem; }
+  .confirm-box .confirm-actions button { padding: .5rem 1.2rem; border-radius: 8px; font-size: .8rem; font-weight: 600; border: none; cursor: pointer; font-family: inherit; transition: all .15s; }
+  .confirm-box .btn-del-yes { background: #dc2626; color: white; }
+  .confirm-box .btn-del-yes:hover { background: #b91c1c; }
+  .confirm-box .btn-del-no { background: var(--bg-body); color: var(--text-secondary); border: 1px solid var(--border); }
+  .confirm-box .btn-del-no:hover { background: var(--bg-card); }
+  .history-toolbar { display: flex; justify-content: flex-end; margin-bottom: .5rem; }
+  .history-toolbar button { font-size: .7rem; font-weight: 600; padding: .25rem .6rem; border-radius: 6px; border: 1px solid #fca5a5; background: var(--bg-card); color: #dc2626; cursor: pointer; font-family: inherit; transition: all .15s; }
+  .history-toolbar button:hover { background: #fee2e2; }
+  .history-toast { display: none; position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); background: #1e293b; color: white; padding: .5rem 1.2rem; border-radius: 8px; font-size: .8rem; font-weight: 600; z-index: 201; box-shadow: 0 4px 15px rgba(0,0,0,.2); }
+  .history-toast.visible { display: block; }
+
   /* Accessibility: skip link */
   .skip-link { position: absolute; top: -40px; left: 0; background: #1e40af; color: white; padding: .5rem 1rem; z-index: 200; font-weight: 600; font-size: .85rem; transition: top .2s; text-decoration: none; border-radius: 0 0 8px 0; }
   .skip-link:focus { top: 0; }
@@ -404,6 +431,14 @@
       <button class="clear-filters" id="clearFilters">✕ Réinitialiser</button>
     </div>
   </div>
+</div>
+
+<div class="history-section" id="historySection" style="display:none">
+  <div class="history-header">
+    <h2>Historique des simulations</h2>
+    <span class="badge-sim" id="historyCount">0 rapports</span>
+  </div>
+  <div class="history-list" id="historyList"></div>
 </div>
 
 <div class="content" id="content">
@@ -698,14 +733,6 @@
   <button class="no-results-btn" id="noResultsClear">Reinitialiser les filtres</button>
 </div>
 
-</div>
-
-<div class="history-section" id="historySection" style="display:none">
-  <div class="history-header">
-    <h2>Historique des simulations</h2>
-    <span class="badge-sim" id="historyCount">0 rapports</span>
-  </div>
-  <div class="history-list" id="historyList"></div>
 </div>
 
 <footer>
@@ -1422,6 +1449,18 @@ if ('serviceWorker' in navigator) {
 })();
 </script>
 
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-box">
+    <p><strong>Supprimer ce rapport ?</strong></p>
+    <p class="confirm-detail" id="confirmDetail"></p>
+    <div class="confirm-actions">
+      <button class="btn-del-yes" id="confirmYes">Supprimer</button>
+      <button class="btn-del-no" id="confirmNo">Annuler</button>
+    </div>
+  </div>
+</div>
+<div class="history-toast" id="historyToast"></div>
+
 <script>
 // === SIMULATION HISTORY ===
 (function() {
@@ -1429,6 +1468,60 @@ if ('serviceWorker' in navigator) {
   var list = document.getElementById('historyList');
   var countBadge = document.getElementById('historyCount');
   var headerBtn = document.getElementById('simHistoryBtn');
+  var overlay = document.getElementById('confirmOverlay');
+  var confirmYes = document.getElementById('confirmYes');
+  var confirmNo = document.getElementById('confirmNo');
+  var confirmDetail = document.getElementById('confirmDetail');
+  var toast = document.getElementById('historyToast');
+  var pendingDeleteKey = null;
+  var pendingDeleteAll = false;
+
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.className = 'history-toast visible';
+    setTimeout(function() { toast.className = 'history-toast'; }, 2000);
+  }
+
+  function showConfirm(detail, key, all) {
+    confirmDetail.textContent = detail;
+    pendingDeleteKey = key;
+    pendingDeleteAll = !!all;
+    overlay.className = 'confirm-overlay visible';
+  }
+
+  confirmNo.addEventListener('click', function() {
+    overlay.className = 'confirm-overlay';
+    pendingDeleteKey = null;
+    pendingDeleteAll = false;
+  });
+
+  confirmYes.addEventListener('click', function() {
+    overlay.className = 'confirm-overlay';
+    if (pendingDeleteAll) {
+      var keys = [];
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf('ecos_report_') === 0) keys.push(k);
+      }
+      keys.forEach(function(k) { localStorage.removeItem(k); });
+      showToast(keys.length + ' rapports supprimés');
+    } else if (pendingDeleteKey) {
+      localStorage.removeItem(pendingDeleteKey);
+      showToast('Rapport supprimé');
+    }
+    pendingDeleteKey = null;
+    pendingDeleteAll = false;
+    renderHistory();
+    decorateCards();
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) {
+      overlay.className = 'confirm-overlay';
+      pendingDeleteKey = null;
+      pendingDeleteAll = false;
+    }
+  });
 
   function getAllReports() {
     var reports = [];
@@ -1468,6 +1561,17 @@ if ('serviceWorker' in navigator) {
     countBadge.textContent = reports.length + ' rapport' + (reports.length > 1 ? 's' : '');
     list.innerHTML = '';
 
+    // Toolbar with "clear all" if > 2 reports
+    if (reports.length > 2) {
+      var toolbar = document.createElement('div');
+      toolbar.className = 'history-toolbar';
+      toolbar.innerHTML = '<button id="clearAllReports">Tout supprimer (' + reports.length + ')</button>';
+      list.appendChild(toolbar);
+      toolbar.querySelector('button').addEventListener('click', function() {
+        showConfirm('Tous les ' + reports.length + ' rapports seront supprimés.', null, true);
+      });
+    }
+
     reports.forEach(function(r) {
       var score = r.score != null ? r.score : extractScore(r.markdown || '');
       var scoreClass = score != null ? (score >= 70 ? 'high' : score >= 50 ? 'mid' : 'low') : 'mid';
@@ -1488,7 +1592,7 @@ if ('serviceWorker' in navigator) {
         '</div>' +
         '<div class="history-actions">' +
           '<a href="report/viewer.html?case=' + encodeURIComponent(caseId) + '&corpus=' + encodeURIComponent(corpus) + '&key=' + encodeURIComponent(r._key) + '">Voir</a>' +
-          '<button data-key="' + r._key + '">Suppr.</button>' +
+          '<button data-key="' + r._key + '" data-title="' + title.replace(/"/g, '&quot;') + '">Suppr.</button>' +
         '</div>';
       list.appendChild(item);
     });
@@ -1497,11 +1601,48 @@ if ('serviceWorker' in navigator) {
       var btn = e.target.closest('button[data-key]');
       if (!btn) return;
       var key = btn.getAttribute('data-key');
-      if (confirm('Supprimer ce rapport ?')) {
-        localStorage.removeItem(key);
-        renderHistory();
+      var title = btn.getAttribute('data-title') || '';
+      showConfirm(title, key, false);
+    });
+  }
+
+  // Add simulation badges on case cards
+  function decorateCards() {
+    // Remove old badges
+    var oldBadges = document.querySelectorAll('.sim-badge');
+    for (var b = 0; b < oldBadges.length; b++) oldBadges[b].remove();
+
+    var reports = getAllReports();
+    if (reports.length === 0) return;
+
+    // Build best-score map per caseId file href
+    var bestByHref = {};
+    reports.forEach(function(r) {
+      var caseId = r.caseId || '';
+      var corpus = r.corpus || '';
+      if (!caseId || !corpus) return;
+      var href = 'cases/' + corpus + '/' + caseId + '.html';
+      var score = r.score != null ? r.score : extractScore(r.markdown || '');
+      if (score === null) return;
+      if (!bestByHref[href] || score > bestByHref[href].score) {
+        bestByHref[href] = { score: score, key: r._key, corpus: corpus, caseId: caseId };
       }
     });
+
+    // Decorate matching cards
+    var cards = document.querySelectorAll('a.card[href]');
+    for (var c = 0; c < cards.length; c++) {
+      var cardHref = cards[c].getAttribute('href');
+      var best = bestByHref[cardHref];
+      if (best) {
+        var cls = best.score >= 70 ? 'sb-high' : (best.score >= 50 ? 'sb-mid' : 'sb-low');
+        var badge = document.createElement('span');
+        badge.className = 'sim-badge ' + cls;
+        badge.title = 'Simulation : ' + best.score + '/100';
+        badge.textContent = best.score;
+        cards[c].appendChild(badge);
+      }
+    }
   }
 
   // Smooth scroll for header button
@@ -1512,6 +1653,7 @@ if ('serviceWorker' in navigator) {
   });
 
   renderHistory();
+  decorateCards();
 })();
 </script>
 

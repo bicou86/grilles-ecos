@@ -42,7 +42,9 @@
   }
 
   /**
-   * Fetch grille HTML content (aggressively cleaned for prompt — strips all noise)
+   * Fetch grille HTML content, cleaned for the Examinateur prompt.
+   * Keeps structural HTML (divs, spans, h1-h6, tables) readable.
+   * Strips scripts, styles, buttons, comment textareas, event handlers.
    */
   function fetchGrilleContent(url) {
     return fetch(url)
@@ -52,24 +54,29 @@
       })
       .then(function(html) {
         var cleaned = html
+          // Remove non-content blocks
           .replace(/<script[\s\S]*?<\/script>/gi, '')
           .replace(/<style[\s\S]*?<\/style>/gi, '')
           .replace(/<link[^>]*>/gi, '')
+          .replace(/<meta[^>]*>/gi, '')
+          .replace(/<\/?(!DOCTYPE|html|head|body)[^>]*>/gi, '')
+          // Remove embedded images
           .replace(/src="data:image\/[^"]*"/gi, 'src="[image]"')
-          .replace(/style="[^"]*"/gi, '')
-          .replace(/class="[^"]*"/gi, '')
-          .replace(/id="[^"]*"/gi, '')
-          .replace(/data-[a-z-]+="[^"]*"/gi, '')
-          .replace(/onclick="[^"]*"/gi, '')
-          .replace(/<input[^>]*type=["']radio["'][^>]*>/gi, '[ ]')
+          // Replace interactive elements with text symbols
+          .replace(/<input[^>]*type=["']radio["'][^>]*>/gi, '( )')
           .replace(/<input[^>]*type=["']checkbox["'][^>]*>/gi, '[ ]')
           .replace(/<input[^>]*>/gi, '')
           .replace(/<textarea[^>]*>[\s\S]*?<\/textarea>/gi, '')
+          .replace(/<select[\s\S]*?<\/select>/gi, '[selection]')
           .replace(/<button[\s\S]*?<\/button>/gi, '')
-          .replace(/<meta[^>]*>/gi, '')
-          .replace(/<\/?(!DOCTYPE|html|head|body)[^>]*>/gi, '')
-          .replace(/\s{2,}/g, ' ')
-          .replace(/\n{3,}/g, '\n\n');
+          // Remove event handler attributes only (keep class/id for structure)
+          .replace(/\s*on(?:click|change|input|load|submit)="[^"]*"/gi, '')
+          .replace(/\s*data-[a-z-]+="[^"]*"/gi, '')
+          // Remove style attributes (but keep class for readability context)
+          .replace(/\s*style="[^"]*"/gi, '')
+          // Clean up whitespace
+          .replace(/\n{3,}/g, '\n\n')
+          .replace(/^\s+$/gm, '');
         return cleaned.trim();
       });
   }

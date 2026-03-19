@@ -94,6 +94,11 @@
   .flow-line { flex: 1; height: 2px; background: var(--border); min-width: 12px; }
   .flow-line.done { background: #22c55e; }
 
+  .btn:focus-visible, .report-input:focus-visible, a:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+  }
+
   @media print {
     header, .flow-progress, #inputPanel, .actions, .actions-top, .status-msg { display: none !important; }
     .report-display { border: none !important; padding: 0 !important; }
@@ -122,21 +127,21 @@
   <p>Visualisez et sauvegardez votre évaluation</p>
 </header>
 
-<div class="flow-progress">
-  <div class="flow-step completed"><span class="dot">&#10003;</span><span>Préparer</span></div>
-  <div class="flow-line done"></div>
-  <div class="flow-step completed"><span class="dot">&#10003;</span><span>Simuler</span></div>
-  <div class="flow-line done"></div>
-  <div class="flow-step completed"><span class="dot">&#10003;</span><span>Transcrire</span></div>
-  <div class="flow-line done"></div>
-  <div class="flow-step active"><span class="dot">4</span><span>Rapport</span></div>
-</div>
+<nav class="flow-progress" aria-label="Progression du flux de simulation">
+  <div class="flow-step completed"><span class="dot" aria-hidden="true">&#10003;</span><span>Préparer</span></div>
+  <div class="flow-line done" aria-hidden="true"></div>
+  <div class="flow-step completed"><span class="dot" aria-hidden="true">&#10003;</span><span>Simuler</span></div>
+  <div class="flow-line done" aria-hidden="true"></div>
+  <div class="flow-step completed"><span class="dot" aria-hidden="true">&#10003;</span><span>Transcrire</span></div>
+  <div class="flow-line done" aria-hidden="true"></div>
+  <div class="flow-step active"><span class="dot" aria-hidden="true">4</span><span>Rapport</span></div>
+</nav>
 
 <div class="container">
   <!-- Input panel -->
   <div class="panel" id="inputPanel">
     <div class="panel-title">📋 Collez votre rapport</div>
-    <textarea class="report-input" id="reportInput" placeholder="Collez ici le rapport généré par l'Examinateur ECOS..."></textarea>
+    <textarea class="report-input" id="reportInput" aria-label="Rapport de l'Examinateur ECOS" placeholder="Collez ici le rapport généré par l'Examinateur ECOS..."></textarea>
     <div class="actions">
       <button class="btn btn-primary" id="displayBtn">Afficher le rapport</button>
     </div>
@@ -152,7 +157,7 @@
     </div>
     <div id="scoreBadge"></div>
     <div class="report-display" id="reportDisplay"></div>
-    <div class="status-msg" id="statusMsg"></div>
+    <div class="status-msg" id="statusMsg" role="status" aria-live="polite"></div>
   </div>
 </div>
 
@@ -202,12 +207,18 @@
   }
 
   // Auto-load from localStorage if key param is present
+  var alreadySaved = false;
   if (lsKey) {
     try {
       var saved = JSON.parse(localStorage.getItem(lsKey));
       if (saved && saved.markdown) {
         document.getElementById('reportInput').value = saved.markdown;
         renderReport(saved.markdown);
+        alreadySaved = true;
+        // Mark save button as already done
+        var saveBtn = document.getElementById('saveBtn');
+        saveBtn.disabled = true;
+        saveBtn.textContent = '✓ Sauvegardé';
         // Pre-fill caseId/corpus from saved data if not in URL
         if (!caseId && saved.caseId) {
           caseId = saved.caseId;

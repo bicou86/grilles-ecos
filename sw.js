@@ -1,4 +1,4 @@
-var CACHE_NAME = 'ecos-v4';
+var CACHE_NAME = 'ecos-v5';
 var APP_SHELL = [
   '/',
   '/index.html',
