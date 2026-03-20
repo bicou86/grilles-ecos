@@ -261,6 +261,19 @@
   .history-actions button, .history-actions a { font-size: .7rem; font-weight: 600; padding: .25rem .5rem; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); cursor: pointer; font-family: inherit; text-decoration: none; transition: all .15s; }
   .history-actions button:hover, .history-actions a:hover { border-color: #6366f1; color: #4f46e5; }
   .history-empty { text-align: center; padding: 2rem 1rem; color: var(--text-muted); font-size: .85rem; }
+  .history-stats { font-size: .78rem; color: var(--text-secondary); margin-bottom: .6rem; font-weight: 500; display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+  .history-sparkline { width: 180px; height: 50px; flex-shrink: 0; }
+  .history-attempts-badge { font-size: .6rem; font-weight: 700; color: var(--text-muted); background: var(--bg-tab); padding: .1rem .35rem; border-radius: 4px; margin-left: .3rem; }
+  .history-expand-btn { font-size: .7rem; font-weight: 600; padding: .2rem .5rem; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-card); color: #6366f1; cursor: pointer; font-family: inherit; transition: all .15s; }
+  .history-expand-btn:hover { background: #eef2ff; border-color: #6366f1; }
+  .history-sub-list { display: none; padding-left: 1rem; margin-top: .35rem; flex-direction: column; gap: .35rem; }
+  .history-sub-list.visible { display: flex; }
+  .history-sub-item { display: flex; align-items: center; gap: .5rem; background: var(--bg-body); border-radius: 8px; padding: .5rem .75rem; border: 1px solid var(--border); font-size: .8rem; }
+  .history-sub-item .h-score-sm { flex-shrink: 0; width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .7rem; color: white; }
+  .history-sub-item .h-score-sm.high { background: #22c55e; }
+  .history-sub-item .h-score-sm.mid { background: #f59e0b; }
+  .history-sub-item .h-score-sm.low { background: #ef4444; }
+  .sim-badge .attempt-count { font-size: .5rem; opacity: .8; }
 
   /* Simulation badge on case cards */
   .sim-badge { position: absolute; bottom: .4rem; right: .5rem; font-size: .6rem; font-weight: 700; padding: .1rem .4rem; border-radius: 5px; line-height: 1.2; }
@@ -327,7 +340,8 @@
   <div style="display:flex;justify-content:center;gap:.75rem;margin-top:1rem;position:relative;flex-wrap:wrap;">
     <button class="stats-toggle" id="statsToggle" aria-expanded="false">Mes statistiques</button>
     <a href="exam.html" class="stats-toggle" style="text-decoration:none;background:rgba(220,38,38,.8);border-color:rgba(255,255,255,.4);">Examen blanc</a>
-    <a href="#historySection" class="stats-toggle" id="simHistoryBtn" style="display:none;text-decoration:none;background:rgba(124,58,237,.8);border-color:rgba(255,255,255,.4);">Mes simulations</a>
+    <a href="#historySection" class="stats-toggle" id="simHistoryBtn" style="display:none;text-decoration:none;background:rgba(124,58,237,.8);border-color:rgba(255,255,255,.4);"><span id="simHistoryBtnText">Mes simulations</span></a>
+    <a href="about.html" class="stats-toggle" style="text-decoration:none;background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);font-size:.8rem;">? Aide</a>
   </div>
 </header>
 
@@ -870,6 +884,10 @@
     btn.setAttribute('aria-selected', 'true');
     activeCategory = btn.getAttribute('data-cat');
     filterCards();
+    if (window._ecosSetHistoryFilter) {
+      var corpus = activeCategory === 'all' || activeCategory === 'due' ? 'all' : activeCategory;
+      window._ecosSetHistoryFilter(corpus);
+    }
   });
 
   systemSelect.addEventListener('change', function() {
@@ -885,6 +903,7 @@
     tabs.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
     tabs.querySelector('[data-cat="all"]').classList.add('active');
     tabs.querySelector('[data-cat="all"]').setAttribute('aria-selected', 'true');
+    if (window._ecosSetHistoryFilter) window._ecosSetHistoryFilter('all');
     filterCards();
   });
 
@@ -1504,7 +1523,9 @@ if ('serviceWorker' in navigator) {
         if (k && k.indexOf('ecos_report_') === 0) keys.push(k);
       }
       keys.forEach(function(k) { localStorage.removeItem(k); });
-      showToast(keys.length + ' rapports supprimés');
+      showToast(keys.length + ' rapports supprim\u00e9s');
+      section.style.display = 'none';
+      headerBtn.style.display = 'none';
     } else if (pendingDeleteKey) {
       localStorage.removeItem(pendingDeleteKey);
       showToast('Rapport supprimé');
@@ -1549,55 +1570,167 @@ if ('serviceWorker' in navigator) {
     return caseId.replace(/_-_/g, ' - ').replace(/_/g, ' ').replace(/ - Grille ECOS$/i, '').trim();
   }
 
+  var historyCorpusFilter = 'all';
+  window._ecosSetHistoryFilter = function(corpus) { historyCorpusFilter = corpus; renderHistory(); };
+
   function renderHistory() {
-    var reports = getAllReports();
-    if (reports.length === 0) {
+    var allReports = getAllReports();
+    var reports = historyCorpusFilter === 'all' ? allReports : allReports.filter(function(r) { return (r.corpus || '') === historyCorpusFilter; });
+    var btnText = document.getElementById('simHistoryBtnText');
+    // Header button always shows total count
+    btnText.textContent = 'Mes simulations (' + allReports.length + ')';
+    if (allReports.length === 0) {
       section.style.display = 'none';
       headerBtn.style.display = 'none';
       return;
     }
-    section.style.display = '';
     headerBtn.style.display = '';
-    countBadge.textContent = reports.length + ' rapport' + (reports.length > 1 ? 's' : '');
+    if (reports.length === 0) {
+      section.style.display = 'none';
+      return;
+    }
+    section.style.display = '';
+    var filterLabel = historyCorpusFilter !== 'all' ? ' (' + historyCorpusFilter.toUpperCase() + ')' : '';
+    countBadge.textContent = reports.length + ' rapport' + (reports.length > 1 ? 's' : '') + filterLabel;
     list.innerHTML = '';
 
-    // Toolbar with "clear all" if > 2 reports
-    if (reports.length > 2) {
+    // Compute stats summary
+    var totalScore = 0, scoreCount = 0, totalDuration = 0, durationCount = 0;
+    reports.forEach(function(r) {
+      var s = r.score != null ? r.score : extractScore(r.markdown || '');
+      if (s != null) { totalScore += s; scoreCount++; }
+      if (r.duration) { totalDuration += r.duration; durationCount++; }
+    });
+    var statsLine = reports.length + ' simulation' + (reports.length > 1 ? 's' : '');
+    if (scoreCount > 0) statsLine += ' \u00b7 Score moyen : ' + Math.round(totalScore / scoreCount) + '/100';
+    if (durationCount > 0) statsLine += ' \u00b7 Dur\u00e9e moyenne : ' + Math.round(totalDuration / durationCount) + ' min';
+    var statsEl = document.createElement('div');
+    statsEl.className = 'history-stats';
+    var statsText = document.createElement('span');
+    statsText.textContent = statsLine;
+    statsEl.appendChild(statsText);
+
+    // Sparkline chart if Chart.js available and >1 scored report
+    var scores = [];
+    reports.slice().reverse().forEach(function(r) {
+      var s = r.score != null ? r.score : extractScore(r.markdown || '');
+      if (s != null) scores.push(s);
+    });
+    if (typeof Chart !== 'undefined' && scores.length > 1) {
+      var sparkWrap = document.createElement('div');
+      sparkWrap.className = 'history-sparkline';
+      var sparkCanvas = document.createElement('canvas');
+      sparkWrap.appendChild(sparkCanvas);
+      statsEl.appendChild(sparkWrap);
+      var pointColors = scores.map(function(s) { return s >= 70 ? '#22c55e' : s >= 50 ? '#f59e0b' : '#ef4444'; });
+      new Chart(sparkCanvas, {
+        type: 'line',
+        data: {
+          labels: scores.map(function(_, i) { return ''; }),
+          datasets: [{ data: scores, borderColor: '#6366f1', borderWidth: 2, pointBackgroundColor: pointColors, pointRadius: 3, pointHoverRadius: 5, fill: false, tension: 0.3 }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(ctx) { return ctx.parsed.y + '/100'; } } } },
+          scales: { x: { display: false }, y: { display: false, min: 0, max: 100 } },
+          animation: { duration: 400 }
+        }
+      });
+    }
+    list.appendChild(statsEl);
+
+    // Toolbar with "clear all" if >= 2 reports
+    if (reports.length >= 2) {
       var toolbar = document.createElement('div');
       toolbar.className = 'history-toolbar';
-      toolbar.innerHTML = '<button id="clearAllReports">Tout supprimer (' + reports.length + ')</button>';
+      toolbar.innerHTML = '<button id="clearAllReports">\u{1F5D1} Tout supprimer (' + reports.length + ' rapports)</button>';
       list.appendChild(toolbar);
       toolbar.querySelector('button').addEventListener('click', function() {
-        showConfirm('Tous les ' + reports.length + ' rapports seront supprimés.', null, true);
+        showConfirm('Supprimer tous les ' + reports.length + ' rapports ?', null, true);
       });
     }
 
+    // Group reports by caseId
+    var grouped = {};
+    var groupOrder = [];
     reports.forEach(function(r) {
-      var score = r.score != null ? r.score : extractScore(r.markdown || '');
+      var cid = r.caseId || r._key.replace('ecos_report_', '').replace(/_\d+$/, '');
+      if (!grouped[cid]) { grouped[cid] = []; groupOrder.push(cid); }
+      grouped[cid].push(r);
+    });
+
+    groupOrder.forEach(function(cid) {
+      var group = grouped[cid];
+      var latest = group[0]; // already sorted by date desc
+      var score = latest.score != null ? latest.score : extractScore(latest.markdown || '');
       var scoreClass = score != null ? (score >= 70 ? 'high' : score >= 50 ? 'mid' : 'low') : 'mid';
       var scoreText = score != null ? score : '?';
-      var date = r.date ? new Date(r.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
-      var caseId = r.caseId || r._key.replace('ecos_report_', '').replace(/_\d+$/, '');
-      var corpus = r.corpus || '';
-      var title = r.caseTitle || formatCaseDisplay(caseId);
-      var durationStr = r.duration ? ' &middot; ' + r.duration + ' min' : '';
+      var date = latest.date ? new Date(latest.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+      var corpus = latest.corpus || '';
+      var title = latest.caseTitle || formatCaseDisplay(cid);
+      var durationStr = latest.duration ? ' &middot; ' + latest.duration + ' min' : '';
+      var attemptsBadge = group.length > 1 ? '<span class="history-attempts-badge">' + group.length + ' tentatives</span>' : '';
 
       var item = document.createElement('div');
       item.className = 'history-item';
+      item.style.flexWrap = 'wrap';
+      var actionsHtml =
+        '<div class="history-actions">' +
+          (group.length > 1 ? '<button class="history-expand-btn" data-case="' + cid + '">Voir les tentatives</button>' : '') +
+          '<a href="report/viewer.html?case=' + encodeURIComponent(cid) + '&corpus=' + encodeURIComponent(corpus) + '&key=' + encodeURIComponent(latest._key) + '">Voir</a>' +
+          '<button data-key="' + latest._key + '" data-title="' + title.replace(/"/g, '&quot;') + '">Suppr.</button>' +
+        '</div>';
       item.innerHTML =
         '<div class="history-score ' + scoreClass + '">' + scoreText + '</div>' +
         '<div class="history-info">' +
-          '<div class="h-title">' + title + '</div>' +
+          '<div class="h-title">' + title + attemptsBadge + '</div>' +
           '<div class="h-meta">' + date + (corpus ? ' &middot; ' + corpus.toUpperCase() : '') + durationStr + '</div>' +
-        '</div>' +
-        '<div class="history-actions">' +
-          '<a href="report/viewer.html?case=' + encodeURIComponent(caseId) + '&corpus=' + encodeURIComponent(corpus) + '&key=' + encodeURIComponent(r._key) + '">Voir</a>' +
-          '<button data-key="' + r._key + '" data-title="' + title.replace(/"/g, '&quot;') + '">Suppr.</button>' +
-        '</div>';
+        '</div>' + actionsHtml;
+
+      // Sub-list for multiple attempts
+      if (group.length > 1) {
+        var subList = document.createElement('div');
+        subList.className = 'history-sub-list';
+        subList.id = 'sub-' + cid;
+        subList.style.width = '100%';
+        group.forEach(function(sr, idx) {
+          var ss = sr.score != null ? sr.score : extractScore(sr.markdown || '');
+          var sc = ss != null ? (ss >= 70 ? 'high' : ss >= 50 ? 'mid' : 'low') : 'mid';
+          var st = ss != null ? ss : '?';
+          var sd = sr.date ? new Date(sr.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+          var sCorpus = sr.corpus || '';
+          var sDur = sr.duration ? ' &middot; ' + sr.duration + ' min' : '';
+          var sub = document.createElement('div');
+          sub.className = 'history-sub-item';
+          sub.innerHTML =
+            '<div class="h-score-sm ' + sc + '">' + st + '</div>' +
+            '<div style="flex:1;min-width:0;">' +
+              '<span style="font-size:.75rem;">' + sd + sDur + '</span>' +
+            '</div>' +
+            '<div class="history-actions">' +
+              '<a href="report/viewer.html?case=' + encodeURIComponent(cid) + '&corpus=' + encodeURIComponent(sCorpus) + '&key=' + encodeURIComponent(sr._key) + '">Voir</a>' +
+              '<button data-key="' + sr._key + '" data-title="Tentative du ' + sd + '">Suppr.</button>' +
+            '</div>';
+          subList.appendChild(sub);
+        });
+        item.appendChild(subList);
+      }
       list.appendChild(item);
     });
 
     list.addEventListener('click', function(e) {
+      // Expand/collapse sub-list
+      var expandBtn = e.target.closest('.history-expand-btn');
+      if (expandBtn) {
+        var caseKey = expandBtn.getAttribute('data-case');
+        var subEl = document.getElementById('sub-' + caseKey);
+        if (subEl) {
+          var isVisible = subEl.classList.contains('visible');
+          subEl.classList.toggle('visible');
+          expandBtn.textContent = isVisible ? 'Voir les tentatives' : 'Masquer';
+        }
+        return;
+      }
       var btn = e.target.closest('button[data-key]');
       if (!btn) return;
       var key = btn.getAttribute('data-key');
@@ -1617,11 +1750,13 @@ if ('serviceWorker' in navigator) {
 
     // Build best-score map per caseId file href
     var bestByHref = {};
+    var countByHref = {};
     reports.forEach(function(r) {
       var caseId = r.caseId || '';
       var corpus = r.corpus || '';
       if (!caseId || !corpus) return;
       var href = 'cases/' + corpus + '/' + caseId + '.html';
+      countByHref[href] = (countByHref[href] || 0) + 1;
       var score = r.score != null ? r.score : extractScore(r.markdown || '');
       if (score === null) return;
       if (!bestByHref[href] || score > bestByHref[href].score) {
@@ -1635,11 +1770,12 @@ if ('serviceWorker' in navigator) {
       var cardHref = cards[c].getAttribute('href');
       var best = bestByHref[cardHref];
       if (best) {
+        var cnt = countByHref[cardHref] || 1;
         var cls = best.score >= 70 ? 'sb-high' : (best.score >= 50 ? 'sb-mid' : 'sb-low');
         var badge = document.createElement('span');
         badge.className = 'sim-badge ' + cls;
-        badge.title = 'Simulation : ' + best.score + '/100';
-        badge.textContent = best.score;
+        badge.title = 'Meilleur score : ' + best.score + '/100' + (cnt > 1 ? ' (' + cnt + ' tentatives)' : '');
+        badge.innerHTML = best.score + (cnt > 1 ? '<span class="attempt-count"> \u00d7' + cnt + '</span>' : '');
         cards[c].appendChild(badge);
       }
     }

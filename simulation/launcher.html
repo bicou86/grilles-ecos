@@ -73,6 +73,15 @@
   .flow-line { flex: 1; height: 2px; background: var(--border); min-width: 12px; }
   .flow-line.done { background: #22c55e; }
 
+  .sim-timer { display: none; position: fixed; top: 1rem; right: 1rem; padding: .4rem .8rem; border-radius: 10px; font-size: .85rem; font-weight: 700; font-family: 'Inter', monospace; z-index: 50; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+  .sim-timer.visible { display: block; }
+  .sim-timer.green { background: #dcfce7; color: #15803d; }
+  .sim-timer.orange { background: #fef3c7; color: #92400e; }
+  .sim-timer.red { background: #fee2e2; color: #dc2626; }
+  [data-theme="dark"] .sim-timer.green { background: #052e16; color: #86efac; }
+  [data-theme="dark"] .sim-timer.orange { background: #422006; color: #fde68a; }
+  [data-theme="dark"] .sim-timer.red { background: #450a0a; color: #fca5a5; }
+
   .btn:focus-visible, a:focus-visible {
     outline: 2px solid #6366f1;
     outline-offset: 2px;
@@ -109,6 +118,7 @@
   <div class="flow-step"><span class="dot" aria-hidden="true">4</span><span>Rapport</span></div>
 </nav>
 
+<div class="sim-timer" id="simTimer"></div>
 <div class="container">
   <div class="step-card">
     <div id="caseInfo">
@@ -189,10 +199,38 @@
     })
     .catch(function() {});
 
+  // Timer logic
+  var timerEl = document.getElementById('simTimer');
+  var timerInterval = null;
+
+  function updateTimer() {
+    var startRaw = localStorage.getItem('ecos_sim_start_' + caseId);
+    if (!startRaw) return;
+    var elapsed = Math.floor((Date.now() - new Date(startRaw).getTime()) / 1000);
+    if (elapsed < 0) return;
+    var mins = Math.floor(elapsed / 60);
+    var secs = elapsed % 60;
+    timerEl.textContent = '\u23F1 ' + mins.toString().padStart(2, '0') + ':' + secs.toString().padStart(2, '0');
+    timerEl.className = 'sim-timer visible ' + (mins < 7 ? 'green' : mins < 10 ? 'orange' : 'red');
+  }
+
+  // Resume timer if simulation was already started
+  var existingStart = localStorage.getItem('ecos_sim_start_' + caseId);
+  if (existingStart) {
+    updateTimer();
+    timerInterval = setInterval(updateTimer, 1000);
+  }
+
   // Open Patient ECOS button
   document.getElementById('openPatient').addEventListener('click', function() {
     // Save simulation start time
     sim.saveSimStart(caseId);
+
+    // Start timer
+    if (!timerInterval) {
+      updateTimer();
+      timerInterval = setInterval(updateTimer, 1000);
+    }
 
     // Copy /start command to clipboard
     var startCommand = '/start ' + displayName;

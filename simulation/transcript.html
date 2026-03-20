@@ -61,13 +61,40 @@
   .grille-preview .criterion-comment-section,
   .grille-preview script { display: none !important; }
   .grille-preview .header-row, .grille-preview .criteria-row, .grille-preview .detail-row { pointer-events: none; }
+  .grille-preview .header-row {
+    display: grid; grid-template-columns: 2fr 80px 80px 80px 80px; gap: 10px;
+    padding: 10px 0; font-weight: 600; font-size: .75rem;
+    border-bottom: 1px solid var(--border); text-align: center; color: #333;
+  }
+  [data-theme="dark"] .grille-preview .header-row { color: var(--text-primary); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .grille-preview .header-row { color: var(--text-primary); } }
+  .grille-preview .header-row.communication-header { grid-template-columns: 2fr 80px 80px 80px 80px 80px; }
+  .grille-preview .header-row div:first-child { text-align: left; }
+  .grille-preview .criteria-row {
+    display: grid; grid-template-columns: 2fr 80px 80px 80px 80px; gap: 10px;
+    align-items: start; padding: 8px 0; border-bottom: 1px solid var(--border);
+  }
+  .grille-preview .criteria-row:last-child { border-bottom: none; }
+  .grille-preview .detail-row {
+    display: grid; grid-template-columns: 1fr 30px; align-items: start;
+    padding: 2px 0 2px 18px; gap: 4px; line-height: 1.2; font-size: .8rem;
+  }
   .grille-preview .checkbox-group { text-align: center; font-size: .75rem; color: var(--text-muted); }
   .grille-preview .points-display { text-align: center; font-weight: 600; }
+  .grille-preview .criteria-text { text-align: left; }
   .grille-preview .section { margin-bottom: .75rem; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
-  .grille-preview .section-header { background: var(--bg-card); padding: .5rem .75rem; font-weight: 600; font-size: .8rem; border-bottom: 1px solid var(--border); }
-  .grille-preview .header-row { font-weight: 600; font-size: .75rem; border-bottom: 1px solid var(--border); }
-  .grille-preview .criteria-row { border-bottom: 1px solid var(--border); padding: .4rem 0; }
-  .grille-preview .criteria-row:last-child { border-bottom: none; }
+  .grille-preview .section-header {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--bg-card); padding: .5rem .75rem; font-weight: 600; font-size: .8rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .grille-preview .vitals-bar, .grille-preview .vital-signs { display: flex; gap: 0; }
+  .grille-preview .vitals-bar > div, .grille-preview .vital-signs > div {
+    flex: 1; text-align: center; padding: 6px 8px; font-size: .75rem;
+    background: var(--bg-card); border-right: 1px solid var(--border);
+  }
+  .grille-preview .vitals-bar > div:last-child, .grille-preview .vital-signs > div:last-child { border-right: none; }
+  .grille-preview .total-sections { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 20px; margin-bottom: 30px; }
   .grille-preview table { width: 100%; border-collapse: collapse; }
   .grille-preview th, .grille-preview td { padding: 4px 8px; border: 1px solid var(--border); text-align: left; font-size: .8rem; }
   .grille-preview th { background: var(--bg-card); font-weight: 600; }
@@ -120,6 +147,11 @@
     .layout { grid-template-columns: 1fr; }
     .grille-preview { max-height: 300px; }
     .transcript-area { min-height: 200px; }
+    .grille-preview .header-row, .grille-preview .criteria-row {
+      grid-template-columns: 1fr 50px 50px 50px 50px; gap: 4px; font-size: .7rem;
+    }
+    .grille-preview .header-row.communication-header { grid-template-columns: 1fr 50px 50px 50px 50px 50px; }
+    .grille-preview .detail-row { grid-template-columns: 1fr 25px; padding-left: 8px; }
   }
   @media (max-width: 639px) {
     header h1 { font-size: 1.2rem; }
@@ -174,8 +206,8 @@
   </div>
 
   <div class="panel">
-    <div class="panel-title">📋 Grille d'évaluation (référence)</div>
-    <div class="grille-preview" id="grillePreview">
+    <div class="panel-title" id="grillePanelTitle">📋 Grille d'évaluation (référence)</div>
+    <div class="grille-preview" id="grillePreview" role="complementary" aria-labelledby="grillePanelTitle" aria-description="Cette grille est en mode lecture seule pour référence pendant la transcription">
       <div class="loading">Chargement de la grille...</div>
     </div>
   </div>
@@ -238,16 +270,20 @@
       // Make read-only: replace interactive elements with visual placeholders
       var tempDiv = document.createElement('div');
       tempDiv.innerHTML = content;
-      // Replace radio buttons with circle symbols
+      // Replace radio buttons with circle symbols (aria-hidden for screen readers)
       var radios = tempDiv.querySelectorAll('input[type="radio"]');
       for (var r = 0; r < radios.length; r++) {
-        var sym = document.createTextNode('\u25CB');
+        var sym = document.createElement('span');
+        sym.textContent = '\u25CB';
+        sym.setAttribute('aria-hidden', 'true');
         radios[r].parentNode.replaceChild(sym, radios[r]);
       }
-      // Replace checkboxes with square symbols
+      // Replace checkboxes with square symbols (aria-hidden for screen readers)
       var checks = tempDiv.querySelectorAll('input[type="checkbox"]');
       for (var c = 0; c < checks.length; c++) {
-        var sq = document.createTextNode('\u2610');
+        var sq = document.createElement('span');
+        sq.textContent = '\u2610';
+        sq.setAttribute('aria-hidden', 'true');
         checks[c].parentNode.replaceChild(sq, checks[c]);
       }
       // Remove elements that are purely interactive or noise
@@ -259,6 +295,10 @@
       // Remove onclick/onchange attributes
       var allEls = tempDiv.querySelectorAll('[onclick],[onchange],[oninput]');
       for (var k = 0; k < allEls.length; k++) { allEls[k].removeAttribute('onclick'); allEls[k].removeAttribute('onchange'); allEls[k].removeAttribute('oninput'); }
+      // Truncate long patient response text in brackets (preview only, not the prompt)
+      tempDiv.innerHTML = tempDiv.innerHTML.replace(/\[([^\]]{50,})\]/g, function(m, txt) {
+        return '[' + txt.substring(0, 47) + '...]';
+      });
       preview.innerHTML = '<div class="grille-preview-label">Lecture seule</div>' + tempDiv.innerHTML;
 
       var title = sim.extractTitle(html);
@@ -273,7 +313,7 @@
   var charCount = document.getElementById('charCount');
   var submitBtn = document.getElementById('submitBtn');
 
-  textarea.addEventListener('input', function() {
+  function updateSubmitBtn() {
     var len = textarea.value.length;
     charCount.textContent = len.toLocaleString('fr-FR') + ' caractères';
     if (len < 50) {
@@ -283,7 +323,9 @@
       submitBtn.disabled = false;
       submitBtn.textContent = '📋 Obtenir mon rapport (' + len.toLocaleString('fr-FR') + ' car.)';
     }
-  });
+  }
+  textarea.addEventListener('input', updateSubmitBtn);
+  updateSubmitBtn();
 
   // Submit button
   submitBtn.addEventListener('click', function() {

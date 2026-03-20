@@ -152,6 +152,7 @@
     <div class="actions actions-top">
       <button class="btn btn-primary" id="saveBtn">💾 Sauvegarder dans mon historique</button>
       <a class="btn btn-secondary" id="grilleLink" href="#">Retour à la grille</a>
+      <button class="btn btn-secondary" id="copyReportBtn">📋 Copier le rapport</button>
       <button class="btn btn-secondary" onclick="window.print()">Imprimer / PDF</button>
       <a class="btn btn-secondary" href="../index.html">Accueil</a>
     </div>
@@ -236,6 +237,26 @@
     var md = document.getElementById('reportInput').value.trim();
     if (!md) return;
     renderReport(md);
+  });
+
+  // Copy report button
+  document.getElementById('copyReportBtn').addEventListener('click', function() {
+    var md = document.getElementById('reportInput').value.trim();
+    if (!md) return;
+    var btn = this;
+    navigator.clipboard.writeText(md).then(function() {
+      btn.textContent = '\u2713 Copi\u00e9';
+      setTimeout(function() { btn.textContent = '\ud83d\udccb Copier le rapport'; }, 2000);
+    }).catch(function() {
+      // Fallback: select the textarea
+      var ta = document.getElementById('reportInput');
+      ta.style.display = 'block';
+      ta.select();
+      document.execCommand('copy');
+      ta.style.display = '';
+      btn.textContent = '\u2713 Copi\u00e9';
+      setTimeout(function() { btn.textContent = '\ud83d\udccb Copier le rapport'; }, 2000);
+    });
   });
 
   // Save button

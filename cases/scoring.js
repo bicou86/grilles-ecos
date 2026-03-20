@@ -261,13 +261,15 @@
                 });
             });
 
+            var missingEl = document.getElementById("missingItems");
+            var missingListEl = document.getElementById("missingList");
             if (missingItems.length > 0) {
-                document.getElementById("missingItems").style.display = "block";
-                document.getElementById("missingList").innerHTML = missingItems.map(item =>
+                if (missingEl) missingEl.style.display = "block";
+                if (missingListEl) missingListEl.innerHTML = missingItems.map(item =>
                     "<div class=\"missing-item\">• " + item + "</div>"
                 ).join("");
             } else {
-                document.getElementById("missingItems").style.display = "none";
+                if (missingEl) missingEl.style.display = "none";
             }
 
             // Save score to central registry for dashboard

@@ -1,8 +1,9 @@
-var CACHE_NAME = 'ecos-v5';
+var CACHE_NAME = 'ecos-v7';
 var APP_SHELL = [
   '/',
   '/index.html',
   '/exam.html',
+  '/about.html',
   '/cases/scoring.js',
   '/cases/persistence.js',
   '/cases/srs.js',
