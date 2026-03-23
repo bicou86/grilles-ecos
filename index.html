@@ -353,7 +353,7 @@
     <span class="welcome-icon">&#x1F44B;</span>
     <div class="welcome-text">
       <strong>Bienvenue sur Grilles ECOS !</strong>
-      253 cas cliniques avec grilles d'evaluation pour preparer l'examen ECOS. Cliquez sur un cas pour commencer.
+      253 cas cliniques avec grilles d'évaluation pour préparer l'examen ECOS. Cliquez sur un cas pour commencer.
     </div>
     <button class="welcome-close" id="welcomeClose" aria-label="Fermer">&times;</button>
   </div>
@@ -383,15 +383,15 @@
       <div class="chart-wrap"><canvas id="gradeChart"></canvas></div>
     </div>
     <div class="stat-card full-width">
-      <h3>Performance par specialite</h3>
+      <h3>Performance par spécialité</h3>
       <div class="chart-wrap" style="max-height:300px"><canvas id="radarChart" style="max-height:300px"></canvas></div>
     </div>
     <div class="stat-card full-width">
-      <h3>Activite recente</h3>
+      <h3>Activité récente</h3>
       <div id="recentActivity"></div>
     </div>
     <div class="stat-card full-width" id="dataManagement">
-      <h3>Gestion des donnees</h3>
+      <h3>Gestion des données</h3>
       <div class="data-actions">
         <button class="data-btn" id="exportJson">Exporter la sauvegarde (JSON)</button>
         <button class="data-btn" id="exportCsv">Exporter les scores (CSV)</button>
@@ -745,9 +745,9 @@
 
 <div class="no-results" id="noResults">
   <div class="no-results-icon">&#x1F50D;</div>
-  <h3>Aucun resultat</h3>
-  <p>Aucun cas clinique ne correspond a votre recherche.</p>
-  <button class="no-results-btn" id="noResultsClear">Reinitialiser les filtres</button>
+  <h3>Aucun résultat</h3>
+  <p>Aucun cas clinique ne correspond à votre recherche.</p>
+  <button class="no-results-btn" id="noResultsClear">Réinitialiser les filtres</button>
 </div>
 
 </div>
@@ -935,16 +935,47 @@
   });
   try { localStorage.setItem('ecos_case_meta', JSON.stringify(caseMeta)); } catch(e) {}
 
-  // === DISPLAY SCORE BADGES ON CARDS ===
+  // === BUILD MERGED REGISTRY (registry + simulation reports) ===
   var registry = {};
   try { registry = JSON.parse(localStorage.getItem('ecos_registry') || '{}'); } catch(e) {}
+
+  function buildMergedRegistry() {
+    var merged = {};
+    Object.keys(registry).forEach(function(fk) {
+      merged[fk] = { pct: registry[fk].pct || 0, grade: registry[fk].grade || '', date: registry[fk].date || '' };
+    });
+    for (var ri = 0; ri < localStorage.length; ri++) {
+      var rk = localStorage.key(ri);
+      if (!rk || rk.indexOf('ecos_report_') !== 0) continue;
+      try {
+        var rData = JSON.parse(localStorage.getItem(rk));
+        var rCaseId = rData.caseId || '';
+        if (!rCaseId) continue;
+        var rScore = rData.score != null ? rData.score : null;
+        if (rScore === null && rData.markdown) {
+          var sm = rData.markdown.match(/Score\s*global\s*[:=]\s*(\d+)/i) || rData.markdown.match(/(\d+)\s*\/\s*100/);
+          if (sm) rScore = parseInt(sm[1], 10);
+        }
+        if (rScore === null) continue;
+        var rGrade = rScore >= 90 ? 'A' : rScore >= 80 ? 'B' : rScore >= 70 ? 'C' : rScore >= 60 ? 'D' : 'E';
+        if (!merged[rCaseId] || rScore > merged[rCaseId].pct) {
+          merged[rCaseId] = { pct: rScore, grade: rGrade, date: rData.date || '' };
+        }
+      } catch(e) {}
+    }
+    return merged;
+  }
+
+  var cardRegistry = buildMergedRegistry();
+
+  // === DISPLAY SCORE BADGES ON CARDS ===
   var completedCount = 0;
 
   allCards.forEach(function(card) {
     var href = card.getAttribute('href');
     if (!href) return;
     var fileKey = href.split('/').pop().replace(/\.html$/, '');
-    var entry = registry[fileKey];
+    var entry = cardRegistry[fileKey];
     if (!entry) return;
 
     completedCount++;
@@ -996,35 +1027,7 @@
   }
 
   function buildStats() {
-    // Merge registry with simulation reports for complete stats
-    var mergedRegistry = {};
-    // Start with registry data
-    Object.keys(registry).forEach(function(fk) {
-      mergedRegistry[fk] = { pct: registry[fk].pct || 0, grade: registry[fk].grade || '', date: registry[fk].date || '' };
-    });
-    // Merge simulation reports (ecos_report_*)
-    for (var ri = 0; ri < localStorage.length; ri++) {
-      var rk = localStorage.key(ri);
-      if (!rk || rk.indexOf('ecos_report_') !== 0) continue;
-      try {
-        var rData = JSON.parse(localStorage.getItem(rk));
-        var rCaseId = rData.caseId || '';
-        var rCorpus = rData.corpus || '';
-        if (!rCaseId) continue;
-        var rScore = rData.score != null ? rData.score : null;
-        if (rScore === null && rData.markdown) {
-          var sm = rData.markdown.match(/Score\s*global\s*[:=]\s*(\d+)/i) || rData.markdown.match(/(\d+)\s*\/\s*100/);
-          if (sm) rScore = parseInt(sm[1], 10);
-        }
-        if (rScore === null) continue;
-        var rGrade = rScore >= 90 ? 'A' : rScore >= 80 ? 'B' : rScore >= 70 ? 'C' : rScore >= 60 ? 'D' : 'E';
-        var rFileKey = rCaseId; // caseId is already the fileKey
-        if (!mergedRegistry[rFileKey] || rScore > mergedRegistry[rFileKey].pct) {
-          mergedRegistry[rFileKey] = { pct: rScore, grade: rGrade, date: rData.date || '', corpus: rCorpus };
-        }
-      } catch(e) {}
-    }
-
+    var mergedRegistry = buildMergedRegistry();
     var mergedKeys = Object.keys(mergedRegistry);
     var regKeys = mergedKeys;
     var total = allCards.length;
@@ -1117,7 +1120,7 @@
         specData.push(Math.round(specScores[sys] / specCounts[sys]));
       });
 
-      if (specLabels.length > 0) {
+      if (specLabels.length >= 3) {
         new Chart(document.getElementById('radarChart'), {
           type: 'radar',
           data: {
@@ -1147,7 +1150,7 @@
           }
         });
       } else {
-        document.getElementById('radarChart').parentElement.innerHTML = '<div class="empty-state"><div style="font-size:1.5rem;margin-bottom:.3rem;opacity:.5">&#x1F4CA;</div>Complétez des cas pour voir vos performances par spécialité</div>';
+        document.getElementById('radarChart').parentElement.innerHTML = '<div class="empty-state"><div style="font-size:1.5rem;margin-bottom:.3rem;opacity:.5">&#x1F4CA;</div>Complétez des cas dans au moins 3 spécialités pour voir le radar</div>';
       }
     }
 
@@ -1176,7 +1179,7 @@
 
     var recentHtml = '';
     if (recentItems.length === 0) {
-      recentHtml = '<div class="empty-state"><div style="font-size:1.5rem;margin-bottom:.3rem;opacity:.5">&#x1F4DD;</div>Aucun cas complete pour le moment<br><span style="font-size:.75rem;color:#94a3b8">Choisissez un cas ci-dessous pour commencer</span></div>';
+      recentHtml = '<div class="empty-state"><div style="font-size:1.5rem;margin-bottom:.3rem;opacity:.5">&#x1F4DD;</div>Aucun cas complété pour le moment<br><span style="font-size:.75rem;color:#94a3b8">Choisissez un cas ci-dessous pour commencer</span></div>';
     } else {
       recentItems.forEach(function(item) {
         var d = new Date(item.date);
@@ -1221,20 +1224,19 @@
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    showDataStatus('Sauvegarde exportee avec succes', 'success');
+    showDataStatus('Sauvegarde exportée avec succès', 'success');
   });
 
   document.getElementById('exportCsv').addEventListener('click', function() {
-    var reg = {};
-    try { reg = JSON.parse(localStorage.getItem('ecos_registry') || '{}'); } catch(e) {}
+    var reg = buildMergedRegistry();
     var keys = Object.keys(reg);
-    if (keys.length === 0) { showDataStatus('Aucun score a exporter', 'error'); return; }
+    if (keys.length === 0) { showDataStatus('Aucun score à exporter', 'error'); return; }
     var bom = '\uFEFF';
-    var lines = [bom + 'Cas;Score (%);Note;Meilleur (%);Date'];
+    var lines = [bom + 'Cas;Score (%);Note;Date'];
     keys.sort().forEach(function(k) {
       var e = reg[k];
       var d = e.date ? new Date(e.date).toLocaleDateString('fr-FR') : '';
-      lines.push([k, e.pct || 0, e.grade || '', e.best || 0, d].join(';'));
+      lines.push([k, e.pct || 0, e.grade || '', d].join(';'));
     });
     var blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8' });
     var url = URL.createObjectURL(blob);
@@ -1245,7 +1247,7 @@
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    showDataStatus('Scores exportes en CSV', 'success');
+    showDataStatus('Scores exportés en CSV', 'success');
   });
 
   document.getElementById('importJson').addEventListener('change', function(e) {
@@ -1258,14 +1260,14 @@
         var keys = Object.keys(data);
         var ecosKeys = keys.filter(function(k) { return k.indexOf('ecos_') === 0; });
         if (ecosKeys.length === 0) {
-          showDataStatus('Fichier invalide : aucune donnee ECOS trouvee', 'error');
+          showDataStatus('Fichier invalide : aucune donnée ECOS trouvée', 'error');
           return;
         }
-        if (!confirm('Importer ' + ecosKeys.length + ' entrees ? Les donnees existantes seront fusionnees.')) return;
+        if (!confirm('Importer ' + ecosKeys.length + ' entrées ? Les données existantes seront fusionnées.')) return;
         ecosKeys.forEach(function(k) {
           try { localStorage.setItem(k, typeof data[k] === 'string' ? data[k] : JSON.stringify(data[k])); } catch(ex) {}
         });
-        showDataStatus('Importation reussie (' + ecosKeys.length + ' entrees). Rechargement...', 'success');
+        showDataStatus('Importation réussie (' + ecosKeys.length + ' entrées). Rechargement...', 'success');
         setTimeout(function() { location.reload(); }, 1000);
       } catch(ex) {
         showDataStatus('Erreur de lecture du fichier JSON', 'error');
