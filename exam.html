@@ -520,23 +520,40 @@
     var totalPct = 0;
     var counted = 0;
     var html = '';
+    var bestStation = null;
+    var worstStation = null;
 
     circuit.stations.forEach(function(station, i) {
       var score = circuit.scores[i];
       var pct = score ? score.pct : 0;
       var grade = score ? score.grade : '?';
-      if (score && score.pct > 0) { totalPct += pct; counted++; }
+      if (score && score.pct > 0) {
+        totalPct += pct;
+        counted++;
+        if (!bestStation || pct > bestStation.pct) bestStation = { idx: i, title: station.title, pct: pct, grade: grade };
+        if (!worstStation || pct < worstStation.pct) worstStation = { idx: i, title: station.title, pct: pct, grade: grade };
+      }
 
       var gc = 'rs-' + (grade || 'e').toLowerCase();
       if (!score || grade === '?') gc = 'rs-pending';
 
+      var detailLink = station.url ? ' <a href="' + station.url + '" style="font-size:.7rem;font-weight:600;color:#6366f1;text-decoration:none;">Voir la grille</a>' : '';
+
       html += '<div class="result-row" style="animation-delay:' + (i * 0.06) + 's">'
         + '<div class="result-num">' + (i + 1) + '</div>'
         + '<div class="result-info"><div class="result-title">' + station.title + '</div>'
-        + '<div class="result-meta">' + station.source.toUpperCase() + '</div></div>'
+        + '<div class="result-meta">' + station.source.toUpperCase() + detailLink + '</div></div>'
         + '<div class="result-score ' + gc + '">' + (score ? pct + '%' : '—') + '</div>'
         + '</div>';
     });
+
+    // Best / worst station summary
+    if (bestStation && worstStation && counted > 1) {
+      html += '<div style="margin-top:1rem;padding-top:.75rem;border-top:1px solid var(--border);font-size:.85rem;color:var(--text-secondary);">'
+        + '<div style="margin-bottom:.3rem;"><strong style="color:#22c55e;">Meilleure station :</strong> ' + bestStation.title + ' — ' + bestStation.pct + '% (' + bestStation.grade + ')</div>'
+        + '<div><strong style="color:#ef4444;">Station à améliorer :</strong> ' + worstStation.title + ' — ' + worstStation.pct + '% (' + worstStation.grade + ')</div>'
+        + '</div>';
+    }
 
     document.getElementById('resultsTable').innerHTML = html;
 
