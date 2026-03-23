@@ -601,7 +601,7 @@
 </div>
 
 <div class="section" data-section="rescos">
-  <div class="section-header"><span class="badge rescos">RESCOS</span><h2>Cas 1–40</h2><span class="count"></span></div>
+  <div class="section-header"><span class="badge rescos">RESCOS</span><h2>41 cas</h2><span class="count"></span></div>
   <div class="grid">
     <a class="card rescos" data-system="Hématologie/Oncologie" href="cases/rescos/RESCOS-1_-_Ade_nopathie_sus-claviculaire_-_ECC_Lymphatique_-_Grille_ECOS.html"><span class="num">1</span><div class="info"><div class="title">Adénopathie sus-claviculaire</div><div class="sub">ECC Lymphatique</div></div><span class="cat-tag">RES</span></a>
     <a class="card rescos" data-system="Hématologie/Oncologie" href="cases/rescos/RESCOS-2_-_Ade_nopathie_sus-claviculaire_-_Grille_ECOS.html"><span class="num">2</span><div class="info"><div class="title">Adénopathie sus-claviculaire</div><div class="sub">RESCOS</div></div><span class="cat-tag">RES</span></a>
@@ -753,7 +753,7 @@
 </div>
 
 <footer>
-  Préparation ECOS 2025 – Cas cliniques traduits
+  Préparation ECOS – Cas cliniques traduits
   <br>
   <button class="offline-btn" id="offlineBtn" style="display:none">&#x1F4E5; Télécharger pour hors-ligne</button>
   <div class="offline-progress" id="offlineProgress"></div>
@@ -769,6 +769,17 @@
   var noResults = document.getElementById('noResults');
   var allCards = Array.from(document.querySelectorAll('a.card'));
   var allSections = Array.from(document.querySelectorAll('.section'));
+
+  // Enrich German card subtitles with specialty from data-system
+  allCards.forEach(function(card) {
+    if (!card.classList.contains('german')) return;
+    var sys = card.getAttribute('data-system');
+    if (!sys) return;
+    var subEl = card.querySelector('.sub');
+    if (subEl && subEl.textContent.trim() === 'German') {
+      subEl.textContent = sys;
+    }
+  });
 
   // Welcome banner (first visit)
   if (!localStorage.getItem('ecos_visited')) {
@@ -1011,13 +1022,17 @@
   }
 
   statsToggle.addEventListener('click', function() {
-    var isOpen = statsPanel.classList.toggle('open');
-    statsToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    try { localStorage.setItem('ecos_stats_open', isOpen ? '1' : '0'); } catch(e) {}
-    if (isOpen && !statsPanel.dataset.built) {
-      buildStats();
-      statsPanel.dataset.built = '1';
+    var isOpen = statsPanel.classList.contains('open');
+    if (!isOpen) {
+      statsPanel.classList.add('open');
+      statsToggle.setAttribute('aria-expanded', 'true');
+      try { localStorage.setItem('ecos_stats_open', '1'); } catch(e) {}
+      if (!statsPanel.dataset.built) {
+        buildStats();
+        statsPanel.dataset.built = '1';
+      }
     }
+    statsPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   // Build stats on load if panel is open

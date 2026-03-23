@@ -186,13 +186,22 @@
   function renderReport(md) {
     if (!md) return;
     var html = typeof marked !== 'undefined' ? marked.parse(md) : md.replace(/\n/g, '<br>');
-    document.getElementById('reportDisplay').innerHTML = html;
+    var displayEl = document.getElementById('reportDisplay');
+    displayEl.innerHTML = html;
 
     var score = report.extractScore(md);
     var badgeEl = document.getElementById('scoreBadge');
     if (score !== null) {
       var cls = score >= 70 ? 'high' : (score >= 50 ? 'mid' : 'low');
       badgeEl.innerHTML = '<div class="score-badge ' + cls + '">Score global : ' + score + '/100</div>';
+      // Remove duplicate "Score global" headings from rendered markdown
+      var headings = displayEl.querySelectorAll('h1, h2, h3');
+      for (var hi = 0; hi < headings.length; hi++) {
+        if (/Score\s*global/i.test(headings[hi].textContent) && /\d+\s*\/\s*100/.test(headings[hi].textContent)) {
+          headings[hi].remove();
+          break;
+        }
+      }
     } else {
       badgeEl.innerHTML = '';
     }
