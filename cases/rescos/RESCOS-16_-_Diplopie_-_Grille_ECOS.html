@@ -33,51 +33,11 @@
     <div class="container">
         <div class="header">
             <h1>Grille d'évaluation ECOS - RESCOS-16 - Diplopie</h1>
-    <div class="simulation-bar" data-case-id="RESCOS-16_-_Diplopie_-_Grille_ECOS" data-case-title="Grille d'évaluation ECOS - RESCOS-16 - Diplopie" data-corpus="rescos">
-      <a href="../../simulation/launcher.html?case=RESCOS-16_-_Diplopie_-_Grille_ECOS&corpus=rescos" class="btn-simulate">
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=RESCOS-16" class="btn-simulate" target="_blank" rel="noopener">
         &#x1FA7A; Simuler cette station avec Patient ECOS
       </a>
     </div>
-    <div class="report-link-bar" id="reportLinkBar" style="display:none"></div>
-    <script>
-    (function(){
-      var bar = document.querySelector('.simulation-bar');
-      if (!bar) return;
-      var caseId = bar.getAttribute('data-case-id');
-      var corpus = bar.getAttribute('data-corpus');
-      if (!caseId) return;
-      function updateReportLink() {
-        var best = null;
-        for (var i = 0; i < localStorage.length; i++) {
-          var k = localStorage.key(i);
-          if (k && k.indexOf('ecos_report_' + caseId + '_') === 0) {
-            try {
-              var d = JSON.parse(localStorage.getItem(k));
-              var s = d.score != null ? d.score : null;
-              if (s === null && d.markdown) {
-                var m = d.markdown.match(/Score\s*global\s*[:=]\s*(\d+)/i) || d.markdown.match(/(\d+)\s*\/\s*100/);
-                if (m) s = parseInt(m[1], 10);
-              }
-              if (!best || (d.date && (!best.date || d.date > best.date))) {
-                best = { key: k, score: s, date: d.date, corpus: d.corpus || corpus };
-              }
-            } catch(e) {}
-          }
-        }
-        var rlb = document.getElementById('reportLinkBar');
-        if (best) {
-          var scoreText = best.score != null ? ' (Score: ' + best.score + '/100)' : '';
-          rlb.innerHTML = '<a href="../../report/viewer.html?case=' + encodeURIComponent(caseId) + '&corpus=' + encodeURIComponent(best.corpus) + '&key=' + encodeURIComponent(best.key) + '">\u{1F4CA} Voir mon dernier rapport' + scoreText + '</a>';
-          rlb.style.display = '';
-        } else {
-          rlb.style.display = 'none';
-        }
-      }
-      updateReportLink();
-      window.addEventListener('storage', updateReportLink);
-      window.addEventListener('focus', updateReportLink);
-    })();
-    </script>
             <p style="margin: 5px 0;">📍 Service d'urgences</p>
             <p style="margin: 5px 0;">👤 Mme Mia Graf, 26 ans, avocate, se présente pour ptose bilatérale et diplopie fluctuante depuis hier matin.</p>
             <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
