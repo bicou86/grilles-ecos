@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      input: ['index.html', 'exam.html'],
+      input: ['index.html', 'exam.html', 'about.html'],
     },
   },
   plugins: [
