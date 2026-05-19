@@ -2763,5 +2763,55 @@ Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contac
             window.colorPatientResponses();
         }
     </script>
+<!-- Barre de navigation entre cas (ajoutée pour cases/casecos) -->
+<style>
+.case-nav-bar { position: fixed; top: 20px; left: 20px; z-index: 1001; display: flex; align-items: center; gap: 0; background: white; border: 2px solid #2c5aa0; border-radius: 30px; padding: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+.case-nav-bar a, .case-nav-bar span { display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 24px; font-size: 0.78rem; font-weight: 600; text-decoration: none; color: #2c5aa0; transition: all 0.2s; white-space: nowrap; }
+.case-nav-bar a:hover { background: #eef2ff; }
+.case-nav-bar .nav-back { background: #2c5aa0; color: white; }
+.case-nav-bar .nav-back:hover { background: #1e40af; color: white; }
+.case-nav-bar .nav-position { font-size: 0.72rem; color: #64748b; padding: 6px 8px; cursor: default; }
+.case-nav-bar .nav-arrow { padding: 6px 10px; font-size: 0.95rem; }
+.case-nav-bar .nav-arrow.disabled { opacity: 0.3; pointer-events: none; }
+@media print { .case-nav-bar { display: none !important; } }
+</style>
+<script>
+(function() {
+  var caseIndex = [];
+  try { caseIndex = JSON.parse(localStorage.getItem('ecos_case_index') || '[]'); } catch(e) {}
+  function fileName(u) { var f = (u || '').split('/').pop(); try { return decodeURIComponent(f); } catch(e) { return f; } }
+  var currentFile = fileName(location.pathname);
+  var currentIdx = -1;
+  for (var i = 0; i < caseIndex.length; i++) {
+    if (caseIndex[i].url && fileName(caseIndex[i].url) === currentFile) { currentIdx = i; break; }
+  }
+  var nav = document.createElement('div');
+  nav.className = 'case-nav-bar';
+  var back = document.createElement('a');
+  back.href = '../../index.html';
+  back.className = 'nav-back';
+  back.textContent = '\u2190 Retour';
+  nav.appendChild(back);
+  if (currentIdx >= 0) {
+    var prev = document.createElement('a');
+    if (currentIdx > 0) { prev.href = '../../' + caseIndex[currentIdx - 1].url; prev.title = caseIndex[currentIdx - 1].title; }
+    else { prev.className = 'disabled'; }
+    prev.classList.add('nav-arrow');
+    prev.textContent = '\u2039';
+    nav.appendChild(prev);
+    var pos = document.createElement('span');
+    pos.className = 'nav-position';
+    pos.textContent = (currentIdx + 1) + ' / ' + caseIndex.length;
+    nav.appendChild(pos);
+    var next = document.createElement('a');
+    if (currentIdx < caseIndex.length - 1) { next.href = '../../' + caseIndex[currentIdx + 1].url; next.title = caseIndex[currentIdx + 1].title; }
+    else { next.className = 'disabled'; }
+    next.classList.add('nav-arrow');
+    next.textContent = '\u203A';
+    nav.appendChild(next);
+  }
+  if (document.body) document.body.insertBefore(nav, document.body.firstChild);
+})();
+</script>
 </body>
 </html>
