@@ -1,0 +1,2781 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMC-EthiqueLegale-V4 Consentement éclairé - Amputation urgente - Grille ECOS</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        .header { background: #2c5aa0; color: white; padding: 15px; margin: -20px -20px 20px -20px; border-radius: 8px 8px 0 0; }
+        .section { margin-bottom: 30px; border: 2px solid #ddd; border-radius: 8px; overflow: hidden; background-color: #ffffff; }
+        .section-header { background: #f8f9fa; padding: 15px; font-weight: bold; font-size: 18px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
+        .section-content { padding: 15px; background-color: #ffffff; }
+        .header-row { display: grid; grid-template-columns: 2fr 80px 80px 80px 80px; gap: 10px; padding: 10px 0; border-bottom: 2px solid #ddd; font-weight: bold; text-align: center; color: #333333; }
+        .header-row.communication-header { grid-template-columns: 2fr 80px 80px 80px 80px 80px; }
+        .header-row div:first-child { text-align: left; }
+        .criteria-row { display: grid; grid-template-columns: 2fr 80px 80px 80px 80px; gap: 10px; align-items: start; padding: 15px 0 15px 5px; border-bottom: 1px solid #eeeeee; }
+        .criteria-row:last-child { border-bottom: none; }
+        .criteria-text { font-weight: 500; }
+        .sub-criteria { font-size: 0.9em; color: #333; margin-top: 5px; padding-left: 18px; line-height: 1.2; }
+        .details-with-checkboxes { margin-top: 8px; }
+        .detail-row { display: grid; grid-template-columns: 1fr 100px; align-items: center; padding: 2px 0 2px 18px; gap: 10px; line-height: 1.1; }
+        .detail-text { font-size: 0.9em; color: #333; }
+        .patient-response-highlight { color: rgb(44, 90, 160) !important; }
+        .detail-text .patient-response-highlight { color: rgb(44, 90, 160) !important; }
+        .criteria-detail .patient-response-highlight { color: rgb(44, 90, 160) !important; }
+        .detail-checkboxes { text-align: center; }
+        .detail-checkbox input[type="checkbox"] { cursor: pointer; transform: scale(1.1); }
+        .patient-response { font-size: 0.9em; color: rgb(44, 90, 160); font-weight: 500; }
+        .exemples-phrases { margin-top: 8px; padding-left: 20px; }
+        .exemple-phrase { font-size: 0.9em; color: rgba(112, 188, 123, 0.95); font-style: italic; line-height: 1.4; margin: 3px 0; }
+        .checkbox-group { text-align: center; }
+        .points-display { text-align: center; font-weight: bold; color: #2c5aa0; font-size: 18px; }
+        .scoring-rule { font-size: 0.85em; color: #888; font-style: italic; margin-top: 8px; padding-left: 20px; }
+        .criteria-subheader { background: #fffbe6; padding: 10px 15px; margin: 10px 0 5px 0; border-left: 4px solid #faad14; font-weight: bold; color: #8b6914; }
+        input[type="radio"] { cursor: pointer; transform: scale(1.2); }
+        input[type="radio"]:disabled { opacity: 0.3; cursor: not-allowed; }
+        .score { font-weight: bold; color: hsl(216, 57%, 40%); font-size: 18px; }
+        .total-sections { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .total-section { display: flex; flex-direction: column; justify-content: space-between; text-align: center; background: #f0f8ff; border: 1px solid #ddd; border-radius: 8px; transition: all 0.3s; }
+        .total-label { background: #f8f9fa; padding: 5px; font-weight: bold; font-size: 20px; border-bottom: 1px solid #ddd; }
+        .total-body { flex: 1; display: flex; align-items: center; justify-content: center; padding: 5px; }
+        .total-pourcent-body { flex: 1; padding: 10px; }
+        .total-score, .total-note-globale { font-size: 56px; font-weight: bold; line-height: 1; }
+        .total-pourcent-sections { display: flex; flex-wrap: nowrap; gap: 10px; height: 100%; align-items: stretch; }
+        .total-pourcent-section { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; text-align: center; background: #416caa; padding: 10px; border-radius: 5px; transition: all 0.3s; border: none; }
+        .total-pourcent-section:last-child { border-right: none; }
+        .total-section-label { color: #eeeeee; font-size: 14px; font-weight: normal; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .pourcent-body { flex: 1; display: flex; align-items: center; justify-content: center; }
+        .total-pourcent-value { font-weight: bold; font-size: 28px; line-height: 1; color: white; transition: all 0.3s; }
+        .note-a { background-color: #e6f4ea; color: #2c974b; }
+        .note-a.total-pourcent-section { background-color: #2c974b; }
+        .note-b { background-color: #e9f3fd; color: #4e9cf0; }
+        .note-b.total-pourcent-section { background-color: #4e9cf0; }
+        .note-c { background-color: #fdf5e6; color: #f0ad4e; }
+        .note-c.total-pourcent-section { background-color: #f0ad4e; }
+        .note-d { background-color: #fceee3; color: #e67e22; }
+        .note-d.total-pourcent-section { background-color: #e67e22; }
+        .note-e { background-color: #fbeaea; color: #d9534f; }
+        .note-e.total-pourcent-section { background-color: #d9534f; }
+        .note-neutral { background-color: #f0f8ff; color: #2c5aa0; }
+        .note-neutral.total-pourcent-section { background-color: #6B8BC3; }
+        .note-a.total-pourcent-body { background-color: #e6f4ea; }
+        .note-b.total-pourcent-body { background-color: #e9f3fd; }
+        .note-c.total-pourcent-body { background-color: #fdf5e6; }
+        .note-d.total-pourcent-body { background-color: #fceee3; }
+        .note-e.total-pourcent-body { background-color: #fbeaea; }
+        .note-neutral.total-pourcent-body { background-color: #f0f8ff; }
+        /* Styles pour les sections avec coloration selon le score */
+        .section.note-a { border-color: #2c974b; }
+        .section.note-a .section-header { background-color: #e6f4ea; color: #2c974b; }
+        .section.note-b { border-color: #4e9cf0; }
+        .section.note-b .section-header { background-color: #e9f3fd; color: #4e9cf0; }
+        .section.note-c { border-color: #f0ad4e; }
+        .section.note-c .section-header { background-color: #fdf5e6; color: #f0ad4e; }
+        .section.note-d { border-color: #e67e22; }
+        .section.note-d .section-header { background-color: #fceee3; color: #e67e22; }
+        .section.note-e { border-color: #d9534f; }
+        .section.note-e .section-header { background-color: #fbeaea; color: #d9534f; }
+        .section.note-neutral { border-color: #ddd; }
+        .section.note-neutral .section-header { background-color: #f8f9fa; color: #333333; }
+        /* Styles pour les critères individuels */
+        .criteria-row.score-2 { background-color: rgba(44, 151, 75, 0.1); }
+        .criteria-row.score-2 .criteria-text { color: #2c974b; }
+        .criteria-row.score-max { background-color: rgba(44, 151, 75, 0.1); }
+        .criteria-row.score-max .criteria-text { color: #2c974b; }
+        .criteria-row.score-1 { background-color: rgba(240, 173, 78, 0.1); }
+        .criteria-row.score-1 .criteria-text { color: #f0ad4e; }
+        .criteria-row.score-0 { background-color: rgba(217, 83, 79, 0.1); }
+        .criteria-row.score-0 .criteria-text { color: #d9534f; }
+        .criteria-row:not(.score-0):not(.score-1):not(.score-2):not(.score-max) .criteria-text { color: #000; }
+        /* Styles supplémentaires pour les scores plus élevés */
+        .criteria-row.score-3 { background-color: rgba(44, 151, 75, 0.1); }
+        .criteria-row.score-3 .criteria-text { color: #2c974b; }
+        .criteria-row.score-4 { background-color: rgba(44, 151, 75, 0.1); }
+        .criteria-row.score-4 .criteria-text { color: #2c974b; }
+        .criteria-row.score-5 { background-color: rgba(44, 151, 75, 0.1); }
+        .criteria-row.score-5 .criteria-text { color: #2c974b; }
+        .communication-section.score-a { background-color: rgba(44, 151, 75, 0.1); }
+        .communication-section.score-a .communication-text { color: #2c974b; }
+        .communication-section.score-b { background-color: rgba(78, 156, 240, 0.1); }
+        .communication-section.score-b .communication-text { color: #4e9cf0; }
+        .communication-section.score-c { background-color: rgba(240, 173, 78, 0.1); }
+        .communication-section.score-c .communication-text { color: #f0ad4e; }
+        .communication-section.score-d { background-color: rgba(230, 126, 34, 0.1); }
+        .communication-section.score-d .communication-text { color: #e67e22; }
+        .communication-section.score-e { background-color: rgba(217, 83, 79, 0.1); }
+        .communication-section.score-e .communication-text { color: #d9534f; }
+        .missing-items { display: none !important; }
+        .missing-items h3 { margin-top: 0; }
+        .missing-item { color: #dc3545; font-weight: bold; }
+        .redflags-main-section { margin-top: 30px; padding: 20px; background: #fff5f5; border-radius: 8px; border: 1px solid #f5c6cb; }
+        .redflags-main-section h3 { margin-top: 0; border-bottom: 2px solid #f5c6cb; padding-bottom: 10px; }
+        .redflags-category-section { margin: 15px 0; padding: 10px; background: white; border-radius: 5px; border-left: 4px solid #dc3545; }
+        /* STYLES AMÉLIORÉS POUR LA SECTION RÉSUMÉ */
+        .resume { margin-top: 30px; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
+        .resume-main-title { margin: 0; padding: 20px 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 24px; font-weight: bold; letter-spacing: 0.5px; }
+        .resume-content { padding: 20px; }
+        .resume-section { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+        .resume-section:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+        .section-title { margin: 0 0 15px 0; font-size: 20px; font-weight: bold; padding-bottom: 10px; border-bottom: 3px solid; }
+        .section-anamnese .section-title { color: #2196F3; border-color: #E3F2FD; }
+        .section-examen .section-title { color: #4CAF50; border-color: #E8F5E9; }
+        .section-management .section-title { color: #FF9800; border-color: #FFF3E0; }
+        .section-diagnostic .section-title { color: #9C27B0; border-color: #F3E5F5; }
+        .section-keypoints .section-title { color: #F44336; border-color: #FFEBEE; }
+        .resume-points { list-style: none; padding-left: 0; margin: 15px 0; }
+        .resume-points li { padding: 8px 0 8px 25px; line-height: 1.7; position: relative; transition: background 0.2s; }
+        .resume-points li:hover { background: rgba(0,0,0,0.02); margin-left: -10px; padding-left: 35px; }
+        .resume-bullet:before { content: "▸"; position: absolute; left: 5px; color: #667eea; font-weight: bold; }
+        .resume-category { font-weight: bold; color: #333; background: linear-gradient(90deg, #f0f0f0 0%, transparent 100%); margin: 15px -10px 8px -10px !important; padding: 8px 10px 8px 35px !important; border-left: 4px solid #667eea; }
+        .resume-bullet.highlight { background: #FFF9C4; border-radius: 4px; padding: 10px 10px 10px 30px !important; margin: 5px 0; }
+        .resume-bullet.with-data { font-family: "Courier New", monospace; }
+        .resume-subsection { background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%); padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 5px solid #fdcb6e; }
+        .resume-subsection.urgence { background: linear-gradient(135deg, #fab1a0 0%, #ff7675 100%); border-left-color: #d63031; }
+        .subsection-title { color: #2d3436; margin: 0 0 12px 0; font-size: 17px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+        .resume-subsection-points { list-style: none; padding-left: 0; margin: 10px 0; }
+        .resume-subsection-points li { padding: 6px 0 6px 20px; line-height: 1.6; position: relative; color: #2d3436; }
+        .resume-subsection-points li:before { content: "•"; position: absolute; left: 5px; color: #636e72; font-weight: bold; }
+        .resume-subsection-points .with-arrow { font-weight: 500; }
+        .table-title { color: #34495e; font-size: 16px; margin: 15px 0 10px 0; font-weight: bold; }
+        .resume-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 15px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .resume-table th { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px; text-align: left; font-weight: bold; font-size: 14px; letter-spacing: 0.5px; }
+        .resume-table td { padding: 10px 12px; border-bottom: 1px solid #ecf0f1; font-size: 14px; }
+        .resume-table tr:last-child td { border-bottom: none; }
+        .resume-table tr:nth-child(even) { background: #f8f9fa; }
+        .resume-table tr:hover { background: #e8f4ff; }
+        .resume-table .first-col { font-weight: 600; color: #2c3e50; background: rgba(102, 126, 234, 0.05); }
+        /* Styles pour les mnémos */
+        .mnemo-box { background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%); padding: 15px; border-radius: 10px; margin: 15px 0; box-shadow: 0 4px 15px rgba(86, 171, 47, 0.2); }
+        .mnemo-title { color: white; font-size: 18px; font-weight: bold; margin-bottom: 10px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+        .mnemo-content { color: white; font-size: 16px; line-height: 1.6; font-weight: 500; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+        .mnemo-items { list-style: none; padding: 0; margin: 0; }
+        .mnemo-items li { color: white; padding: 5px 0; font-size: 15px; }
+        .mnemo-letter { display: inline-block; width: 25px; height: 25px; background: white; color: #56ab2f; text-align: center; line-height: 25px; border-radius: 50%; font-weight: bold; margin-right: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        /* Styles pour la mise en évidence du texte */
+        .highlight-percent { background: #FFE082; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #F57C00; }
+        .highlight-range { background: #B2EBF2; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #00838F; }
+        .highlight-important { background: #FFCDD2; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #C62828; text-transform: uppercase; font-size: 0.9em; }
+        .arrow { color: #FF6B6B; font-weight: bold; font-size: 1.2em; }
+        .arrow-updown { color: #4ECDC4; font-weight: bold; font-size: 1.2em; }
+        .equals { color: #95E77E; font-weight: bold; padding: 0 4px; }
+        .annexes { margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border: 1px solid #ddd; }
+        .annexes h3 { margin-top: 0; color: #2c5aa0; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        .annexes-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 20px; }
+        .annexe-item { padding: 15px; background: white; border-radius: 5px; border: 1px solid #e0e0e0; }
+        .annexe-expert { background: #d0e3ff !important; border: 2px solid #0066ff !important; }
+        .annexe-theorie { background: #e4f1e5 !important; border: 2px solid #2e7d32 !important; }
+        .annexe-scenario { background: #eceff1 !important; border: 2px solid #4d6a78 !important; }
+        .annexe-title { font-weight: bold; color: #2c5aa0; margin-bottom: 8px; font-size: 18px; }
+        .annexe-expert .annexe-title { color: #0066ff !important; }
+        .annexe-theorie .annexe-title { color: #2e7d32 !important; }
+        .annexe-scenario .annexe-title { color: #4d6a78 !important; }
+        .annexe-description { color: #666; font-style: italic; margin-bottom: 10px; font-size: 14px; }
+        .annexe-image { text-align: center; margin: 10px 0; }
+        .annexe-image img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        /* Conteneur flex pour les images */
+        .images-wrapper { 
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2%;
+            margin-top: 20px;
+        }
+        /* Style pour afficher les images en colonnes de 2 */
+        .annexe-item[data-image-id] { 
+            width: 49% !important;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .annexe-document { background: #f0f8ff; padding: 10px; border-radius: 4px; border-left: 4px solid #2c5aa0; white-space: pre-wrap; font-family: "Courier New", monospace; font-size: 13px; }
+        
+        /* STYLES AMÉLIORÉS POUR PRESENTATION PATIENT */
+        .presentation-patient { margin-top: 30px; padding: 0; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
+        .presentation-main-title { margin: 0; padding: 20px 25px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; font-size: 24px; font-weight: bold; letter-spacing: 0.5px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+        .presentation-content { padding: 20px; }
+        .presentation-section { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .presentation-section-title { margin: 0 0 15px 0; font-size: 20px; font-weight: bold; padding-bottom: 10px; border-bottom: 3px solid; }
+        /* Couleurs spécifiques par type de section */
+        .section-checklist .presentation-section-title { color: #00BCD4; border-color: #E0F7FA; }
+        .section-longue .presentation-section-title { color: #3F51B5; border-color: #E8EAF6; }
+        .section-express .presentation-section-title { color: #FFC107; border-color: #FFF8E1; }
+        .section-questions .presentation-section-title { color: #E91E63; border-color: #FCE4EC; }
+        .section-mnemo .presentation-section-title { color: #8BC34A; border-color: #F1F8E9; }
+        .section-intro .presentation-section-title { color: #795548; border-color: #EFEBE9; }
+        .section-synthese .presentation-section-title { color: #607D8B; border-color: #ECEFF1; }
+        /* Points et listes */
+        .presentation-points { list-style: none; padding-left: 0; margin: 15px 0; }
+        .presentation-points li { padding: 8px 0 8px 30px; line-height: 1.7; position: relative; border-left: 3px solid transparent; transition: all 0.3s; }
+        .presentation-points li:before { content: "✓"; position: absolute; left: 8px; color: #4CAF50; font-weight: bold; }
+        .presentation-points li:hover { background: rgba(76, 175, 80, 0.05); border-left-color: #4CAF50; }
+        /* Contenu formaté */
+        .presentation-content p { line-height: 1.8; color: #424242; margin: 10px 0; }
+        /* Sous-sections */
+        .presentation-subsection { background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%); padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 5px solid #009688; }
+        .presentation-subsection h5 { color: #00695c; margin: 0 0 12px 0; font-size: 17px; font-weight: bold; }
+        /* Questions et réponses */
+        .qa-container { background: #f5f5f5; padding: 15px; border-radius: 8px; margin-top: 15px; }
+        .presentation-qa { background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .presentation-qa:last-child { margin-bottom: 0; }
+        .presentation-question { display: flex; align-items: center; margin-bottom: 12px; padding: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px; font-weight: bold; }
+        .q-number { display: inline-block; min-width: 35px; height: 35px; background: white; color: #667eea; text-align: center; line-height: 35px; border-radius: 50%; font-weight: bold; margin-right: 12px; }
+        .q-text { flex: 1; }
+        .presentation-reponse { padding: 12px; background: #fafafa; border-radius: 6px; margin-top: 10px; }
+        .presentation-reponse.structured { display: flex; gap: 15px; }
+        .reponse-pour, .reponse-contre { flex: 1; }
+        .arg-title { font-weight: bold; margin-bottom: 8px; padding: 5px 10px; border-radius: 4px; }
+        .reponse-pour .arg-title { background: #E8F5E9; color: #2E7D32; }
+        .reponse-contre .arg-title { background: #FFEBEE; color: #C62828; }
+        .arg-list { list-style: none; padding-left: 0; margin: 8px 0; }
+        .arg-list li { padding: 5px 0 5px 20px; position: relative; }
+        .arg-list li:before { content: "▸"; position: absolute; left: 5px; }
+        .response-list { list-style: none; padding-left: 0; }
+        .response-list li { padding: 6px 0 6px 25px; position: relative; }
+        .response-list li:before { content: "•"; position: absolute; left: 8px; color: #667eea; font-weight: bold; font-size: 1.2em; }
+        .presentation-analyse { display: flex; align-items: start; gap: 10px; margin-top: 12px; padding: 10px; background: #FFF9C4; border-radius: 6px; border-left: 4px solid #FFC107; }
+        .analyse-icon { font-size: 1.5em; }
+        .analyse-text { flex: 1; color: #F57C00; font-style: italic; }
+        /* Style pour les astuces */
+        .presentation-astuce { display: flex; align-items: start; gap: 10px; margin-top: 12px; padding: 12px; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-radius: 8px; border-left: 4px solid #4CAF50; box-shadow: 0 2px 8px rgba(76, 175, 80, 0.15); }
+        .astuce-icon { font-size: 1.8em; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        .astuce-text { flex: 1; color: #2E7D32; font-weight: 500; font-size: 1.05em; line-height: 1.5; }
+        /* Style pour les sections de réponse spécifiques */
+        .reponse-section { margin: 10px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; }
+        .reponse-section strong { display: block; margin-bottom: 8px; font-size: 1.1em; }
+        .reponse-section ul { margin: 5px 0; padding-left: 25px; }
+        .reponse-section li { padding: 4px 0; }
+        
+        /* Styles pour le scénario de la patiente standardisée */
+        .annexe-scenario { grid-column: 1 / -1; max-width: none; }
+        .annexe-scenario-content { padding: 15px; background: transparent; border-radius: 4px; }
+        .scenario-info { background: #607d8b80; padding: 10px 15px; border-radius: 4px; margin-bottom: 15px; font-size: 15px; }
+        .scenario-section { margin-bottom: 20px; }
+        .scenario-subsection { margin-bottom: 15px; }
+        .scenario-subsection strong { color: #2c5aa0; }
+        .scenario-section h4 { color: #4d6a78; margin: 10px 0 5px 0; font-size: 16px; border-bottom: 1px solid #607d8b80; padding-bottom: 5px; }
+        .scenario-section ul { margin: 10px 0; padding-left: 25px; }
+        .scenario-section li { margin: 5px 0; line-height: 1.5; }
+        .scenario-subsection { margin: 10px 0 15px 0; }
+        .scenario-subsection strong { color: #555; }
+        .scenario-subsection ul { margin-top: 5px; }
+        
+        /* Styles pour les interventions de l'expert */
+        .annexe-interventions { grid-column: 1 / -1; max-width: none; }
+        .annexe-interventions-content { padding: 15px; }
+        .intervention-item { background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 12px; margin-bottom: 12px; }
+        .intervention-header { font-size: 15px; margin-bottom: 8px; color: #856404; }
+        .intervention-moment { font-weight: normal; font-style: italic; color: #666; }
+        .intervention-instruction { margin: 8px 0; color: #333; }
+        .intervention-message { background: #fff; padding: 8px 12px; border-left: 3px solid #ffc107; font-style: italic; color: #721c24; margin-top: 8px; }
+        
+        /* Styles pour les informations de l'expert */
+        .annexe-informations-expert { grid-column: 1 / -1; max-width: none; }
+        .annexe-informations-content { padding: 15px; background: #f5f5f5; border-radius: 4px; }
+        .info-section { margin-bottom: 20px; }
+        .info-section:last-child { margin-bottom: 0; }
+        .info-section h4 { color: #2c5aa0; margin: 0 0 10px 0; font-size: 16px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .annexe-expert .info-section h4 { color: #0066ff; border-bottom: 1px solid #0066ff80; }
+        .expert-section h4 { color: #0066ff; margin: 10px 0 5px 20px; font-size: 16px; border-bottom: 1px solid #0066ff80; padding-bottom: 5px; }
+        .info-section h5 { color: #4a7ba7; margin: 15px 0 8px 0; font-size: 14px; font-weight: 600; }
+        .info-section p { margin: 10px 0; line-height: 1.6; }
+        .info-section ul { margin: 10px 0; padding-left: 25px; }
+        .info-section li { margin: 5px 0; line-height: 1.5; }
+        
+        /* Styles pour les diagnostics différentiels dans annexes */
+        .annexe-dd-section { grid-column: 1 / -1; max-width: none; }
+        .annexe-dd-content { padding: 15px; background: #fff5f0; border-radius: 4px; }
+        .dd-category { margin-bottom: 20px; }
+        .dd-category:last-child { margin-bottom: 0; }
+        .dd-category h4 { color: #a92117; margin: 0 0 15px 0; font-size: 18px; border-bottom: 1px solid #e0d0c8; padding-bottom: 5px; }
+        .dd-category ul li::marker { color: rgb(169, 34, 23); }
+        .dd-items { display: flex; flex-direction: column; gap: 15px; }
+        .dd-item { background: white; border: 1px solid #e5e5e5; border-radius: 4px; padding: 12px; }
+        .dd-item-header { margin-bottom: 8px; }
+        .dd-diagnosis { color: #a92117; font-weight: 600; font-size: 15px; }
+        .dd-cause { margin-bottom: 8px; line-height: 1.5; font-size: 14px; }
+        .dd-test { font-size: 14px; margin-top: 5px; }
+        
+        /* Styles pour la théorie pratique */
+        .annexe-theorie-pratique { grid-column: 1 / -1; max-width: none; }
+        .annexe-theorie-content { padding: 15px; background: transparent; border-radius: 4px; }
+        .theorie-text { line-height: 1.6; color: #333; }
+        .theorie-section { margin-bottom: 20px; }
+        .theorie-section:last-child { margin-bottom: 0; }
+        .theorie-section h4 { color: #2e7d32; margin: 10px 0 5px 0; font-size: 16px; border-bottom: 1px solid #2e7d3280; padding-bottom: 5px; }
+        .theorie-section p { margin: 10px 0; line-height: 1.6; }
+        .theorie-section ul { margin: 10px 0; padding-left: 25px; }
+        .theorie-section li { margin: 5px 0; line-height: 1.5; }
+        /* Couleurs spécifiques pour les sections théoriques */
+        .theorie-section-rappels h4, .theorie-section-rappels p, .theorie-section-rappels li { color: rgb(153, 136, 0) !important; }
+        .theorie-section-examens h4, .theorie-section-examens p, .theorie-section-examens li { color: rgb(52, 105, 46) !important; }
+        /* Styles pour rappels thérapeutiques et examens complémentaires */
+        .annexe-rappels-therapeutiques, .annexe-examens-complementaires { grid-column: 1 / -1; max-width: none; }
+        .rappels-list, .examens-list { margin: 0; padding-left: 25px; }
+        .rappels-list li, .examens-list li { margin: 8px 0; line-height: 1.6; color: #333; }
+        .annexe-rappels-therapeutiques .annexe-title { color: #998800; }
+        .annexe-examens-complementaires .annexe-title { color: #346929; }
+        
+        /* Styles pour le tableau clinique */
+        .tableau-clinique { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+        .tableau-clinique thead { background-color: #2c5aa0; color: white; }
+        .tableau-clinique th { padding: 10px; text-align: left; border: 1px solid #ddd; }
+        .tableau-clinique tbody tr:nth-child(even) { background-color: #f9f9f9; }
+        .tableau-clinique tbody tr:hover { background-color: #e8f4f8; }
+        .tableau-clinique td { padding: 8px; border: 1px solid #ddd; }
+        
+        .communication-section { display: grid; grid-template-columns: 2fr 80px 80px 80px 80px 80px; gap: 10px; align-items: start; padding: 15px 0 15px 5px; border-bottom: 1px solid #eee; }
+        .communication-text { font-weight: 500; }
+        .communication-desc { font-size: 0.85em; color: #666; margin-top: 5px; font-style: italic; }
+        /* Section Clôture */
+        .cloture-section { margin-bottom: 20px; }
+        .cloture-section .section-header { background-color: #f0f4f8; }
+        .cloture-item { margin-bottom: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 5px; }
+        .cloture-title { color: #2c5aa0; margin: 0 0 10px 0; font-size: 16px; font-weight: bold; }
+        .cloture-content { color: #333; line-height: 1.6; font-style: italic; }
+        .cloture-content-green { color: rgb(112, 188, 123); font-weight: 500; }
+        .cloture-details { margin-top: 10px; }
+        .cloture-detail { color: #333; line-height: 1.8; margin: 5px 0; padding-left: 15px; position: relative; }
+        .cloture-detail:before { content: "•"; position: absolute; left: 0; color: #666; }
+        .cloture-qr-item { margin: 15px 0; padding: 10px; background: #f0f4f8; border-radius: 5px; border-left: 3px solid #2c5aa0; }
+        .cloture-question { color: #333; font-weight: bold; margin-bottom: 8px; }
+        .cloture-question .patient-response { color: rgb(44, 90, 160); }
+        .cloture-response { color: rgb(112, 188, 123); font-style: italic; margin-top: 8px; padding-left: 15px; }
+        .communication-desc-detail { font-size: 0.8em; color: #666; margin-left: 20px; font-style: normal; }
+        .vital-signs { margin-top: 10px; margin-bottom: 0px; display: grid; gap: 15px; font-size: 0.9em; }
+        .vital-sign { text-align: center; background: #416caa; padding: 10px; border-radius: 5px; }
+        .vital-sign-label { color: #eeeeee; }
+        .vital-sign-value { color: rgb(255, 255, 255); margin-top: 2px; }
+        .dd-section { background: #f0f8ff; padding: 15px; margin: 0 0 10px 0; border-radius: 5px; }
+        .dd-title { font-weight: bold; margin-bottom: 10px; color: #2c5aa0; }
+        .dd-category { margin: 10px 0; font-weight: bold; color: #2c5aa0; }
+        .dd-item { margin-left: 20px; margin-top: 5px; font-weight: bold; color: rgb(169, 34, 23); }
+        .dd-test { color: #666; font-style: italic; margin-left: 10px; }
+        .therapy-section { background: rgba(255, 250, 230, 0.4); padding: 10px 10px 0 20px; margin: 0; border-radius: 5px; color: #000; }
+        .therapy-title { font-weight: bold; margin-bottom: 5px; color: #998800; }
+        .redflags-section { background: #fff5f5; padding: 10px; margin: 5px 0; border-radius: 5px; }
+        .redflags-title { font-weight: bold; margin-bottom: 8px; color: #dc3545; }
+        .redflags-item { margin-bottom: 6px; padding-left: 22px; }
+        .redflags-text { color: #dc3545; font-weight: 500; }
+        .redflags-description { color: #666; font-size: 0.9em; margin-top: 2px; margin-left: 20px; }
+        .annexes { margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border: 1px solid #ddd; }
+        .annexes h3 { margin-top: 0; color: #2c5aa0; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        .annexes-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 20px; }
+        .annexe-item { padding: 15px; background: white; border-radius: 5px; border: 1px solid #e0e0e0; }
+        .annexe-expert { background: #d0e3ff !important; border: 2px solid #0066ff !important; }
+        .annexe-theorie { background: #e4f1e5 !important; border: 2px solid #2e7d32 !important; }
+        .annexe-scenario { background: #eceff1 !important; border: 2px solid #4d6a78 !important; }
+        .annexe-title { font-weight: bold; color: #2c5aa0; margin-bottom: 8px; font-size: 18px; }
+        .annexe-expert .annexe-title { color: #0066ff !important; }
+        .annexe-theorie .annexe-title { color: #2e7d32 !important; }
+        .annexe-scenario .annexe-title { color: #4d6a78 !important; }
+        .annexe-description { color: #666; font-style: italic; margin-bottom: 10px; font-size: 14px; }
+        .annexe-image { text-align: center; margin: 10px 0; }
+        .annexe-image img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        /* Conteneur flex pour les images */
+        .images-wrapper { 
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2%;
+            margin-top: 20px;
+        }
+        /* Style pour afficher les images en colonnes de 2 */
+        .annexe-item[data-image-id] { 
+            width: 49% !important;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .annexe-document { background: #f0f8ff; padding: 10px; border-radius: 4px; border-left: 4px solid #2c5aa0; white-space: pre-wrap; font-family: "Courier New", monospace; font-size: 13px; }
+        
+        /* MINUTEUR */
+        .timer-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.75);
+            border: 3px solid #2c5aa0;
+            border-radius: 15px;
+            padding: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-align: center;
+            min-width: 200px;
+        }
+        .timer-display {
+            font-size: 40px;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            font-family: 'Courier New', monospace;
+        }
+        .timer-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .timer-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        .start-btn {
+            background: #28a745;
+            color: white;
+        }
+        .start-btn:hover {
+            background: #218838;
+        }
+        .stop-btn {
+            background: #dc3545;
+            color: white;
+        }
+        .stop-btn:hover {
+            background: #c82333;
+        }
+        .reset-btn {
+            background: #6c757d;
+            color: white;
+        }
+        .reset-btn:hover {
+            background: #5a6268;
+        }
+        .timer-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .timer-btn:disabled:hover {
+            background: #6c757d;
+        }
+        .timer-status {
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .status-running {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        .status-warning {
+            background: #fff3cd;
+            color: #ff6f00;
+        }
+        .status-finished {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .timer-warning {
+            animation: pulse-warning 2s infinite;
+        }
+        .timer-critical {
+            animation: pulse-critical 1s infinite;
+        }
+        @keyframes pulse-warning {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @keyframes pulse-critical {
+            0%, 100% { transform: scale(1); border-color: #dc3545; }
+            50% { transform: scale(1.1); border-color: #ff0000; }
+        }
+        
+        /* COLORATION POST-MINUTEUR */
+        .criteria-zero-points {
+            background-color: rgba(251, 234, 234, 0.6) !important;
+        }
+        .criteria-one-point {
+            background-color: rgba(253, 245, 230, 0.6) !important;
+        }
+        .criteria-full-points {
+            background-color: rgba(230, 244, 234, 0.6) !important;
+        }
+        .criteria-not-answered {
+            background-color: rgba(240, 248, 255, 0.6) !important;
+        }
+        
+        /* COLORATION COMMUNICATION */
+        .communication-note-a {
+            background-color: rgba(230, 244, 234, 0.6) !important;
+        }
+        .communication-note-b {
+            background-color: rgba(233, 243, 253, 0.6) !important;
+        }
+        .communication-note-c {
+            background-color: rgba(253, 245, 230, 0.6) !important;
+        }
+        .communication-note-d {
+            background-color: rgba(252, 238, 227, 0.6) !important;
+        }
+        .communication-note-e {
+            background-color: rgba(251, 234, 234, 0.6) !important;
+        }
+        .communication-not-answered {
+            background-color: rgba(240, 248, 255, 0.6) !important;
+        }
+        
+        /* MODE SELECTOR */
+        .mode-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 2px solid #2c5aa0;
+            border-radius: 30px;
+            padding: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1001;
+            display: flex;
+            gap: 5px;
+        }
+        .mode-button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            background: transparent;
+            color: #2c5aa0;
+        }
+        .mode-button.active {
+            background: #2c5aa0;
+            color: white;
+        }
+        .mode-button:hover:not(.active) {
+            background: #e8f0fe;
+        }
+        
+        /* Mode-specific hiding and showing - CORRIGÉ */
+        .revision-mode .timer-container {
+            display: none !important;
+        }
+        .exam-mode .timer-container {
+            display: block !important;
+        }
+        .exam-mode .revision-controls {
+            display: none !important;
+        }
+        /* Masquer les descriptions et titres d'annexes en mode examen quand le timer est actif */
+        .exam-mode.timer-running .annexe-item .annexe-title,
+        .exam-mode.timer-running .annexe-item .annexe-description {
+            display: none !important;
+        }
+        
+        /* Revision controls */
+        .revision-controls {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: white;
+            border: 2px solid #4CAF50;
+            border-radius: 30px;
+            padding: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 5px;
+            z-index: 1000;
+        }
+        .lacune-button {
+            background: transparent;
+            color: #4CAF50;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .lacune-button:hover {
+            background: #4CAF50;
+            color: white;
+        }
+        .reset-revision-button {
+            background: transparent;
+            color: #6c757d;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .reset-revision-button:hover {
+            background: #6c757d;
+            color: white;
+        }
+        
+        /* Styles pour les commentaires discrets */
+        .comment-button { 
+            background: none; 
+            border: none; 
+            color: #2c5aa0; 
+            cursor: pointer; 
+            font-size: 14px; 
+            padding: 2px 6px; 
+            margin-left: 8px; 
+            border-radius: 3px; 
+            opacity: 0.6;
+            transition: all 0.2s;
+        }
+        .comment-button:hover { opacity: 1; background: rgba(44, 90, 160, 0.1); }
+        .comment-button.has-content { opacity: 1; color: #d9534f; }
+        .criterion-comment-section { 
+            display: none; 
+            margin: 8px 0 12px 20px; 
+            padding: 10px; 
+            background: #fafafa; 
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .criterion-comment-section.show { display: block; }
+        .section-comment-button {
+            background: rgba(44, 90, 160, 0.1);
+            border: 1px solid #2c5aa0;
+            color: #2c5aa0;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 4px 8px;
+            margin-left: 10px;
+            border-radius: 15px;
+            opacity: 0.8;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .section-comment-button:hover { 
+            opacity: 1; 
+            background: rgba(44, 90, 160, 0.2); 
+            transform: scale(1.05);
+        }
+        .section-comment-button.has-content { 
+            background: rgba(220, 53, 69, 0.1);
+            border-color: #d9534f;
+            color: #d9534f; 
+        }
+        .section-comment-section { 
+            display: none;
+            margin: 20px 0; 
+            padding: 12px; 
+            background: #f8f9fa; 
+            border-radius: 6px;
+        }
+        .section-comment-section.show { display: block; }
+        .section-comment-section.global { 
+            display: block; 
+            background: #f0f8ff; 
+        }
+        /* La section commentaire global reste toujours visible sauf à l'impression */
+        .comment-textarea { 
+            width: calc(100% - 0px); 
+            min-height: 26px; 
+            padding: 5px; 
+            margin-right: 0px;
+            border: 1px solid #ddd; 
+            border-radius: 3px; 
+            font-family: Arial, sans-serif;
+            font-size: 12px; 
+            resize: vertical;
+            box-sizing: border-box;
+            overflow-y: hidden;
+            color: #7b3f00;
+            height: 26px;
+        }
+        .section-comment-section .comment-textarea {
+            min-height: 28px;
+            font-size: 14px;
+            height: 28px;
+        }
+        .section-comment-section.global .comment-textarea {
+            min-height: 30px;
+            font-size: 16px;
+            height: 30px;
+        }
+        .comment-textarea:focus {
+            outline: none;
+            border-color: #2c5aa0;
+            box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.1);
+        }
+        
+        /* Masquer les boutons à l'impression */
+        @media print {
+            .comment-button,
+            .section-comment-button {
+                display: none !important;
+            }
+            .criterion-comment-section:not(.has-content),
+            .section-comment-section:not(.has-content) {
+                display: none !important;
+            }
+            .criterion-comment-section.has-content,
+            .section-comment-section.has-content {
+                display: block !important;
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Styles pour les lacunes */
+        .lacune-rouge {
+            background-color: #ffebee !important;
+        }
+        .lacune-orange {
+            background-color: #fff3e0 !important;
+        }
+        .lacune-verte {
+            background-color: #e8f5e8 !important;
+        }
+        
+        /* Bouton d'impression */
+        .print-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2c5aa0;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+            z-index: 1000;
+        }
+        .print-button:hover {
+            background: #1e3f70;
+        }
+        @media print {
+            /* Masquer les éléments interactifs */
+            .print-button, .mode-selector, .revision-controls, .missing-items { display: none !important; }
+            .comment-button, .section-comment-button { display: none !important; }
+            /* IMPORTANT: MASQUER LE MINUTEUR à L'IMPRESSION! */
+            .timer-container {
+                display: none !important;
+                visibility: hidden !important;
+                position: absolute !important;
+                left: -9999px !important;
+            }
+            /* Supprimer les bordures gauches à l'impression */
+            .criteria-row { border-left: none !important; }
+            .communication-section { border-left: none !important; }
+            .lacune-rouge { border-left: none !important; }
+            .lacune-orange { border-left: none !important; }
+            .lacune-verte { border-left: none !important; }
+            
+            /* Gestion des commentaires à l'impression */
+            .criterion-comment-section:not(.has-content),
+            .section-comment-section:not(.has-content) { display: none !important; }
+            .section-comment-section.global:not(.has-content) { display: none !important; }
+            .criterion-comment-section.has-content,
+            .section-comment-section.has-content { display: block !important; }
+            
+            /* Les textareas conservent leur hauteur actuelle à l'impression */
+            .comment-textarea {
+                border: 1px solid #ccc !important;
+                background: white !important;
+                padding: 4px !important;
+                margin-right: 15px !important;
+                resize: none !important;
+                font-size: 8pt !important;
+                font-family: Arial, sans-serif !important;
+                font-style: italic !important;
+                color: #333 !important;
+                border-radius: 2px !important;
+                /* Conserver la hauteur actuelle */
+                overflow: hidden !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            /* Sections commentaires */
+            .criterion-comment-section {
+                page-break-inside: avoid;
+                margin: 6px 0 8px 15px !important;
+                padding: 6px 8px !important;
+                background: #f9f9f9 !important;
+                border-left: 2px solid #666 !important;
+                border-radius: 0 3px 3px 0 !important;
+                box-shadow: none !important;
+            }
+            
+            /* Cacher les sections de commentaires vides */
+            .criterion-comment-section:not(.show) {
+                display: none !important;
+            }
+            .criterion-comment-section.show:not(.has-content) {
+                display: none !important;
+            }
+            
+            .section-comment-section {
+                page-break-inside: avoid;
+                margin: 5px 0 10px 0 !important;
+                padding: 6px 8px !important;
+                background: #f5f5f5 !important;
+                border: 1px solid #ccc !important;
+                border-radius: 4px !important;
+            }
+            
+            /* Cacher toutes les sections de commentaires vides à l'impression */
+            .section-comment-section {
+                display: none !important;
+            }
+            /* Montrer seulement les sections avec contenu */
+            .section-comment-section.has-content {
+                display: block !important;
+            }
+            
+            /* Configuration de la page */
+            @page { size: A4; margin: 10mm 9mm 10mm 10mm; }
+            body { margin: 0; background: white !important; font-size: 9pt; }
+            
+            /* Optimisation du container et des marges */
+            .container { 
+                max-width: 100%; 
+                margin: 0; 
+                box-shadow: none; 
+                padding: 0; 
+                background: white !important;
+            }
+            
+            /* Gestion du header pour qu'il ne soit jamais seul */
+            .header { 
+                page-break-after: avoid; 
+                margin: 0;
+                margin-bottom: 10px;
+                padding: 10px;
+                font-size: 8pt;
+            }
+            .header h1 { font-size: 14pt; margin: 0 0 5px 0; }
+            
+            /* Optimisation des signes vitaux */
+            .vital-signs { gap: 10px; margin: 5px 0; }
+            .vital-sign { padding: 5px; font-size: 8pt; }
+            
+            /* Forcer l'anamnèse à commencer sur la page 1 */
+            .section:first-of-type { page-break-before: avoid !important; }
+            .section:first-of-type .section-header { 
+                page-break-after: avoid; 
+                min-height: 20px;
+            }
+            .section:first-of-type .criteria-row:first-child { 
+                page-break-before: avoid !important; 
+            }
+            
+            /* Les autres sections peuvent se diviser si nécessaire */
+            .section { 
+                page-break-inside: auto; 
+                margin-bottom: 15px;
+            }
+            .section-header { 
+                page-break-after: avoid;
+                font-size: 12pt;
+                padding: 8px;
+            }
+            .section-content { padding: 8px; }
+            
+            /* Optimisation de la grille */
+            .header-row { 
+                grid-template-columns: 2.5fr 60px 60px 60px 60px; 
+                font-size: 8pt;
+            }
+            .header-row.communication-header { 
+                grid-template-columns: 2.5fr 60px 60px 60px 60px 60px; 
+                padding: 5px 0;
+            }
+            .criteria-row { 
+                grid-template-columns: 2.5fr 60px 60px 60px 60px; 
+                page-break-inside: avoid;
+                padding: 8px 0 8px 5px;
+            }
+            .criteria-text { font-size: 8.5pt; line-height: 1.1 !important; }
+            .sub-criteria { font-size: 7.5pt; padding-left: 15px; line-height: 1.1 !important; }
+            .detail-row { font-size: 7.5pt; padding: 1px 0 1px 15px; line-height: 1.0; }
+            .detail-text { font-size: 7.5pt; line-height: 1.1 !important; }
+            .patient-response { font-size: 7.5pt; }
+            .points-display { font-size: 14px; }
+            
+            /* Communication section */
+            .communication-section-container {
+                page-break-inside: avoid !important;
+            }
+            
+            /* Cloture section */
+            .cloture-section {
+                page-break-inside: avoid !important;
+            }
+            .cloture-item {
+                page-break-inside: avoid !important;
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+            .cloture-title { font-size: 10pt; }
+            .cloture-content { font-size: 8.5pt; line-height: 1.2 !important; }
+            .communication-section { 
+                grid-template-columns: 2.5fr 60px 60px 60px 60px 60px;
+                padding: 8px 0;
+            }
+            .communication-text { font-size: 8.5pt; }
+            .communication-desc { font-size: 7pt; }
+            
+            /* Optimisation des sections spéciales */
+            .dd-section { padding: 8px; margin: 0 0 5px 0; font-size: 8pt; }
+            .dd-title { font-size: 9pt; }
+            .dd-item { font-size: 8pt; margin-left: 15px; }
+            
+            .therapy-section { 
+                padding: 8px; 
+                margin: 0; 
+                font-size: 8pt;
+                background: rgba(255, 250, 230, 0.3) !important;
+                color: #000 !important;
+            }
+            .therapy-title { font-size: 9pt; }
+            
+            .redflags-section { padding: 8px; margin: 5px 0; }
+            .redflags-title { font-size: 9pt; }
+            .redflags-text { font-size: 8.5pt; }
+            .redflags-description { font-size: 7.5pt; }
+            
+            /* Optimisation des totaux */
+            .total-sections { 
+                gap: 6px;
+                margin-bottom: 6px;
+            }
+            .total-label { 
+                padding: 4px;
+                font-size: 16px;
+                border-radius: 8px 8px 0 0;
+            }
+            .total-body {
+                padding: 3px;
+                border-radius: 0 0 8px 8px;
+            }
+            .total-score,
+            .total-note-globale {
+                font-size: 32px;
+            }
+            .total-pourcent-body {
+                padding: 6px;
+                border-radius: 0 0 8px 8px;
+            }
+            .total-pourcent-sections {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 4px;
+                align-items: stretch;
+            }
+            .total-pourcent-section {
+                flex: 0 0 auto;
+                min-width: 60px;
+                padding: 6px 8px;
+                white-space: nowrap;
+            }
+            .total-section-label {
+                font-size: 11px;
+                margin-bottom: 3px;
+                white-space: nowrap;
+            }
+            .total-pourcent-value {
+                font-size: 20px;
+            }
+            .pourcent-body {
+                padding: 2px 0;
+            }
+            
+            
+            /* Optimisations pour la section résumé à l'impression */
+            .resume { 
+                page-break-before: always !important;
+                margin-top: 0 !important;
+                padding-top: 15px !important;
+            }
+            
+            .resume-section { 
+                page-break-inside: avoid !important;
+            }
+            
+            .resume-subsection { 
+                page-break-inside: avoid !important;
+            }
+            
+            .resume-table { 
+                page-break-inside: avoid !important;
+            }
+            
+            /* Optimisations pour les annexes à l'impression */
+            .annexes { 
+                page-break-before: always !important;
+                margin-top: 0 !important;
+                padding-top: 15px !important;
+            }
+            
+            .annexes-grid { 
+                display: block !important; 
+                margin-top: 15px !important; 
+            }
+            
+            .annexe-item { 
+                page-break-inside: avoid !important;
+                padding: 15px !important;
+                border: 1px solid #ddd !important;
+                margin-bottom: 15px !important;
+                width: 100% !important;
+            }
+            
+            /* Style spécifique pour les images à 50% */
+            .annexe-item[data-image-id] { 
+                width: 48% !important;
+                display: inline-block !important;
+                vertical-align: top !important;
+                margin-right: 2% !important;
+            }
+            
+            /* Ajustement pour aligner les images par paires */
+            .annexe-item[data-image-id]:nth-child(even) { 
+                margin-right: 0 !important;
+            }
+            
+            .annexe-title { 
+                font-size: 10pt !important;
+                margin-bottom: 5px !important;
+            }
+            
+            .annexe-description { 
+                font-size: 8pt !important;
+                line-height: 1.3 !important;
+                margin-bottom: 8px !important;
+            }
+            
+            /* Réduire l'interligne des detail-row */
+            .detail-row { 
+                line-height: 1.1 !important; 
+                padding: 2px 0 2px 15px !important;
+            }
+            
+            /* Réduire et ajuster les checkboxes des détails */
+            .detail-checkboxes { 
+                text-align: right !important;
+                padding-right: 5px !important;
+            }
+            .detail-checkbox input[type="checkbox"] { 
+                transform: scale(0.8) !important;
+                margin: 0 !important;
+            }
+            
+            /* Page-break pour DD section et théorie pratique */
+            .annexe-dd-section,
+            .annexe-theorie-pratique { 
+                page-break-before: always !important; 
+            }
+            
+            /* Pas de page-break dans les scenario-section */
+            .scenario-section, 
+            .scenario-subsection { 
+                page-break-inside: avoid !important; 
+            }
+            
+            /* Réduire l'interligne dans toutes les annexes */
+            .annexe-scenario-content,
+            .annexe-interventions-content,
+            .annexe-informations-content,
+            .annexe-theorie-content { 
+                line-height: 1.15 !important; 
+            }
+            
+            /* Styles spécifiques pour les sections du scénario */
+            .scenario-section {
+                margin-bottom: 8px !important;
+                padding: 4px !important;
+            }
+            
+            .scenario-section h4 {
+                font-size: 9.5pt !important;
+                margin: 0 0 4px 0 !important;
+                line-height: 1.1 !important;
+                color: #2c5aa0 !important;
+            }
+            
+            .scenario-subsection {
+                margin-bottom: 4px !important;
+                line-height: 1.1 !important;
+            }
+            
+            .scenario-subsection strong {
+                font-size: 8pt !important;
+                color: #333 !important;
+            }
+            
+            /* Listes dans les annexes */
+            .annexe-scenario-content ul,
+            .annexe-interventions-content ul,
+            .annexe-informations-content ul,
+            .annexe-theorie-content ul,
+            .scenario-section ul,
+            .scenario-subsection ul {
+                margin: 2px 0 !important;
+                padding-left: 16px !important;
+            }
+            
+            .annexe-scenario-content li,
+            .annexe-interventions-content li,
+            .annexe-informations-content li,
+            .annexe-theorie-content li,
+            .scenario-section li,
+            .scenario-subsection li {
+                margin-bottom: 1px !important;
+                line-height: 1.1 !important;
+                font-size: 7.5pt !important;
+            }
+            
+            /* Texte dans les sections */
+            .scenario-section p,
+            .scenario-subsection p {
+                margin: 2px 0 !important;
+                line-height: 1.1 !important;
+                font-size: 7.5pt !important;
+            }
+            
+            /* Info de base du patient */
+            .scenario-info {
+                font-size: 8pt !important;
+                padding: 6px !important;
+                margin-bottom: 8px !important;
+                line-height: 1.2 !important;
+            }
+            
+            /* Forcer les couleurs */
+            * { 
+                -webkit-print-color-adjust: exact !important; 
+                print-color-adjust: exact !important; 
+            }
+            
+            /* Fond blanc partout */
+            body, .container, .section, .section-content { background: white !important; }
+            
+        }
+    </style>
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AMC-EthiqueLegale-V4 Consentement éclairé - Amputation urgente</h1>
+            <p style="margin: 5px 0;">📍 Service des urgences chirurgicales - Hôpital cantonal</p>
+            <p style="margin: 5px 0;">👤 Monsieur Laurent Dupraz, 50 ans, enseignant de français au Collège, veuf, victime d'un accident de la circulation avec fracture ouverte du tibia gauche et hémorragie importante. Après stabilisation hémodynamique (transfusion, désinfection, bilan radiologique), l'état de conscience s'est amélioré. Les chirurgiens orthopédistes ont établi la nécessité d'une amputation de la jambe gauche dans un bref délai.</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">98/65 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">104 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">20/min</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">37.8°C</div>
+                </div>
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Recueil du récit de l'accident et du contexte <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Circonstances de l'accident <span class="patient-response">[accident de la circulation, désincarcération prolongée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Type de traumatisme et localisation <span class="patient-response">[fracture ouverte du tibia gauche, traumatisme grave du membre inférieur gauche]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évolution depuis l'arrivée aux urgences <span class="patient-response">[état initial de choc hémodynamique — TA 60/30 mmHg, état semi-confusionnel — puis amélioration progressive après réanimation et transfusion]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">État actuel subjectif <span class="patient-response">[le patient se sent mieux, plus lucide, reste anxieux et douloureux]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Compréhension du patient sur la gravité de sa situation <span class="patient-response">[explorer ce que le patient a compris de son état]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Exploration de la compréhension de la situation médicale et des enjeux <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Ce que le patient a déjà été informé <span class="patient-response">[a entendu la chirurgienne parler d'amputation, mais manque de clarté sur les raisons et l'urgence]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Compréhension du risque vital lié au délai <span class="patient-response">[explorer si le patient perçoit le danger d'une attente de 48 heures]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Questions que le patient souhaite poser <span class="patient-response">[laisser au patient l'espace pour formuler ses interrogations]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Représentation de l'amputation et de ses conséquences fonctionnelles <span class="patient-response">[craintes concernant l'avenir professionnel, la mobilité, l'image corporelle]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Exploration du souhait de consulter sa fille médecin et de ses valeurs <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Raison du souhait de consulter sa fille <span class="patient-response">[relation de confiance, désir d'un avis médical familial avant une décision irréversible]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Délai estimé pour joindre la fille <span class="patient-response">[48 heures — elle est en mission avec le CICR dans une région sans réseau téléphonique]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Présence d'autres proches facilement joignables <span class="patient-response">[explorer l'entourage : famille, amis, médecin traitant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Valeurs et priorités du patient <span class="patient-response">[autonomie, famille, qualité de vie, travail comme enseignant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Craintes principales <span class="patient-response">[peur de l'amputation, peur de mourir, peur de décider seul, peur de regretter sa décision]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Antécédents médicaux, traitements, allergies et situation sociale <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Antécédents médicaux <span class="patient-response">[explorer maladies chroniques, antécédents cardio-vasculaires ou de coagulation]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Antécédents chirurgicaux <span class="patient-response">[interventions antérieures éventuelles]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Traitements habituels <span class="patient-response">[médicaments anticoagulants, immunosuppresseurs ou autres]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[notamment aux anesthésiques ou à l'iode]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Situation sociale et familiale <span class="patient-response">[veuf, enseignant, entourage disponible]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Existence de directives anticipées <span class="patient-response">[a-t-il rédigé des directives anticipées ou désigné un représentant thérapeutique ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/15</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Évaluation formelle de la capacité de discernement pour cet acte précis <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Capacité à comprendre l'information médicale <span class="patient-response">[le patient comprend-il ce qu'est une amputation, pourquoi elle est nécessaire, quels en sont les risques et les alternatives ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Capacité à apprécier sa situation personnelle <span class="patient-response">[le patient reconnaît-il la gravité de son état et les conséquences de l'absence d'intervention dans les délais requis ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Capacité à raisonner <span class="patient-response">[le patient peut-il peser les avantages et inconvénients de l'intervention par rapport au refus ou au délai ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Capacité à exprimer un choix stable et cohérent <span class="patient-response">[le patient formule-t-il une position claire et constante, même en tenant compte de son souhait de consulter sa fille ?]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-3" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Conclusion sur le discernement <span class="patient-response">[Patient capable de discernement pour cet acte selon les critères de l'art. 16 CC : la capacité est présumée et le patient répond aux quatre critères]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-4" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Recherche des facteurs pouvant altérer transitoirement le discernement <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Séquelles du choc hémorragique initial <span class="patient-response">[état de conscience normalisé après réanimation, patient orienté dans les trois sphères]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Influence des antalgiques et sédatifs administrés <span class="patient-response">[évaluer le type et la dose des opioïdes reçus, leur effet sur la vigilance]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Niveau d'anxiété <span class="patient-response">[présent mais ne compromet pas la capacité de raisonner — patient réactif et cohérent]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Orientation temporo-spatiale <span class="patient-response">[orienté dans le temps, dans l'espace et par rapport à sa personne]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Cohérence du discours et de la pensée <span class="patient-response">[le patient tient un discours logique et cohérent avec sa situation]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-4" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Rappel des éléments cliniques objectifs orientant vers l'urgence chirurgicale <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Status hémodynamique actuel <span class="patient-response">[TA 98/65 mmHg sous perfusion, FC 104 bpm — instabilité résiduelle malgré la réanimation]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Status local du membre gauche <span class="patient-response">[fracture ouverte du tibia, plaie contaminée malgré le pansement stérile, risque d'ischémie tissulaire progressive]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Bilan biologique <span class="patient-response">[signes biologiques d'inflammation et de risque infectieux — CRP élevée, hyperleucocytose]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Bilan radiologique <span class="patient-response">[fracture ouverte comminutive du tibia gauche confirmée, lésions vasculaires associées selon le bilan d'imagerie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation du risque septique <span class="patient-response">[signes précoces d'inflammation locale évoquant un risque de sepsis dans les heures suivantes en l'absence d'intervention]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-4" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/9</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Délivrer une information complète, compréhensible et adaptée au patient <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Diagnostic et gravité <span class="patient-response">[fracture ouverte grave avec lésions vasculaires irréversibles — expliquer pourquoi la conservation n'est plus possible]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pronostic vital sans intervention dans le délai recommandé <span class="patient-response">[risque de sepsis, de choc septique et de choc hémorragique pouvant engager le pronostic vital dans les heures suivantes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Nature et déroulement de l'amputation <span class="patient-response">[intervention chirurgicale sous anesthésie générale, résection du membre sous le genou ou au-dessus selon les conclusions chirurgicales finales]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Conséquences fonctionnelles et réhabilitation <span class="patient-response">[perte définitive du membre — prothèse possible, rééducation, adaptations professionnelles envisageables pour un enseignant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-3" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Alternatives et leur faisabilité actuelle <span class="patient-response">[tenter de conserver le membre : techniquement non réalisable au vu du bilan lésionnel — l'expliquer clairement et honnêtement]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-4" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Risques de l'intervention <span class="patient-response">[risques anesthésiques, hémorragiques, infectieux et thromboemboliques propres à la chirurgie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-5" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Coûts et couverture <span class="patient-response">[prise en charge assurance-accident, hospitalisation couverte]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-6" value="1" onchange="updateDetailScore('m1', 'm')" /></label>    </div></div></div><div class="scoring-rule">Piège pédagogique central : l'urgence ne dispense pas de l'obligation d'informer et de recueillir un consentement éclairé. L'information doit être complète (diagnostic, pronostic, traitement proposé, risques, alternatives, conséquences fonctionnelles) et adaptée au niveau de compréhension du patient, sans réduire le consentement à une simple formalité. Un consentement obtenu sous pression émotionnelle ou par omission délibérée d'informations importantes est invalide.</div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Gérer le conflit entre autonomie du patient et bienfaisance médicale — explorer des solutions intermédiaires <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">Piège pédagogique : ne pas balayer l'autonomie du patient au nom de l'urgence, ni inversement laisser un délai de 48 heures qui exposerait le patient à un risque vital inacceptable. La solution attendue est de chercher activement une voie intermédiaire : joindre un autre proche de confiance, obtenir un second avis médical rapide, mobiliser le CICR pour contacter la fille en mission. Un délai maximal de quelques heures — et non 48 heures — est médicalement envisageable si les constantes restent stables et sous surveillance rapprochée.</div>        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Étape 1 — Créer les conditions d'un entretien de qualité</div>
+            <div class="therapy-items">
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Environnement propice</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> S'asseoir au chevet du patient, au calme, avec suffisamment de temps. Se présenter clairement (rôle, spécialité). Vérifier que le patient est confortablement installé, sa douleur contrôlée.</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Évaluation préalable du discernement</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Confirmer l'orientation et la capacité de compréhension avant de délivrer l'information. Utiliser un langage adapté, sans jargon médical.</div>
+                </div>
+            </div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Étape 2 — Délivrer une information complète et progressive</div>
+            <div class="therapy-items">
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Diagnostic et nécessité de l'amputation</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Expliquer clairement pourquoi la conservation du membre n'est plus possible et pourquoi l'amputation est nécessaire dans un bref délai.</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Risques en cas de délai</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Nommer explicitement les risques de sepsis, de choc septique et de choc hémorragique pouvant engager le pronostic vital si l'intervention est reportée au-delà des délais médicalement acceptables.</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Nature de l'intervention et suites opératoires</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Décrire le déroulement prévisible de l'amputation, l'anesthésie, la durée d'hospitalisation, la rééducation et les perspectives prothétiques.</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Conséquences fonctionnelles à long terme</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Aborder honnêtement les adaptations nécessaires dans la vie quotidienne et professionnelle (enseignement au Collège), les possibilités de prothèse et de réinsertion.</div>
+                </div>
+            </div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Étape 3 — Explorer les solutions intermédiaires au souhait du patient</div>
+            <div class="therapy-items">
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Joindre un proche de substitution</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Explorer avec le patient l'existence d'un autre proche de confiance (ami, famille, médecin traitant) qui pourrait être contacté rapidement pour lui apporter un soutien moral — non pour consentir à sa place.</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Contact avec le CICR</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Proposer de solliciter le service social de l'hôpital ou la direction pour transmettre un message d'urgence via le CICR à la fille en mission.</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Second avis chirurgical rapide</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Proposer un second avis chirurgical disponible dans l'hôpital si cela peut rassurer le patient, dans la mesure où cela ne retarde pas dangereusement l'intervention.</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Délai de réflexion adapté à l'urgence</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Expliquer clairement qu'un délai de 48 heures est médicalement inacceptable, mais qu'un délai de quelques heures sous surveillance rapprochée peut être envisageable si l'état hémodynamique reste stable.</div>
+                </div>
+            </div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Étape 4 — Documenter et formaliser le consentement</div>
+            <div class="therapy-items">
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Documentation au dossier</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Consigner au dossier médical : le contenu de l'entretien, les informations délivrées, les questions posées par le patient, les solutions intermédiaires explorées et la décision finalement prise.</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Consentement écrit ou oral documenté</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Recueillir le consentement écrit si possible. En cas d'impossibilité matérielle, documenter le consentement oral avec les témoins présents (infirmière, collègue médecin).</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Vérification de la liberté du consentement</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> S'assurer que le patient ne se sent pas soumis à une pression indue et qu'il sait qu'il a le droit de refuser, même si cela engage son pronostic vital.</div>
+                </div>
+            </div>
+        </div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Signaux d'alarme imposant de ne plus différer l'amputation</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Sepsis ou choc septique</div>
+                <div class="redflags-description">Fièvre >38.5°C ou hypothermie, hypotension persistante malgré le remplissage, tachycardie >120 bpm, confusion ou altération de la conscience → urgence chirurgicale absolue, état de nécessité possible.</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Instabilité hémodynamique progressive</div>
+                <div class="redflags-description">TA systolique <90 mmHg malgré la réanimation, index de choc >1.2 → risque vital immédiat, le délai de réflexion ne peut plus être accordé.</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. Ischémie tissulaire irréversible progressive</div>
+                <div class="redflags-description">Aggravation des signes locaux (nécrose, gangrène sèche ou humide débutante), absence de pouls distaux → extension du risque d'amputation plus haute, détérioration de l'état général.</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Altération de la conscience ou perte du discernement</div>
+                <div class="redflags-description">Toute altération de la vigilance rendant impossible le recueil d'un consentement valide → basculement vers le cadre de l'état de nécessité et de la volonté présumée (art. 378 al. 3 CC).</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">5. Aggravation biologique</div>
+                <div class="redflags-description">Hémocultures positives, CRP en forte hausse, lactate >2 mmol/L, coagulopathie de consommation → signes d'évolution vers un sepsis sévère nécessitant une intervention sans délai supplémentaire.</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="2" data-criteria="Gérer le conflit entre autonomie du patient et bienfaisance médicale — explorer des solutions intermédiaires" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m2" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Matrice décisionnelle selon la capacité de discernement et l'urgence</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Patient capable de discernement (situation actuelle)</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Consentement libre et éclairé recueilli</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Patient orienté, cohérent, comprend l'information, exprime un choix stable<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Capacité de discernement présumée et confirmée (art. 16 CC)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Consentement strictement personnel — la fille médecin n'a pas le droit de consentir à la place de son père capable de discernement</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Information complète délivrée verbalement et consignée au dossier
+→ Recueil du consentement écrit ou oral documenté
+→ Base légale : art. 10 Cst, art. 28 CC, art. 394 CO, loi genevoise sur la santé</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Solutions intermédiaires au souhait de consulter la fille</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Respecter l'autonomie sans compromettre la sécurité<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Délai maximal de quelques heures envisageable sous surveillance si constantes stables<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Joindre un autre proche de confiance (ami, autre membre de la famille, médecin traitant)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Organiser un second avis chirurgical rapide dans l'établissement<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Contacter le CICR pour un message d'urgence à la fille en mission</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Mobilisation du service social ou de l'assistante sociale de l'hôpital
+→ Contact avec le médecin traitant du patient
+→ Second avis chirurgical formel documenté si disponible dans l'heure</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Refus persistant malgré l'information complète et les solutions intermédiaires</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Un patient capable de discernement a le droit de refuser un traitement, même vital<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Le refus ne présume pas de l'incapacité de discernement<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Le devoir du médecin est d'informer sur les conséquences du refus, de documenter et de rechercher une évolution de la position</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Documenter le refus éclairé au dossier
+→ Consigner la compréhension du patient des conséquences
+→ Prévoir une réévaluation clinique et une nouvelle discussion dans les délais les plus brefs
+→ Base légale : droit à l'autodétermination, art. 10 Cst</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Patient incapable de discernement (hypothèse future — aggravation)</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Directives anticipées existantes</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Les directives anticipées priment sur toute autre décision<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Valides si rédigées par une personne capable de discernement et non révoquées</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Vérifier l'existence et la teneur des directives anticipées
+→ Appliquer les volontés exprimées si pertinentes à la situation actuelle
+→ Base légale : art. 370 CC</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Aucune directive anticipée — recours à la personne habilitée à consentir</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ordre de priorité légal (art. 378 CC) : conjoint/partenaire → descendants → père/mère → frères et sœurs → autre proche significatif<br>&nbsp;&nbsp;&nbsp;&nbsp;•  La fille est potentiellement habilitée à consentir, mais n'est pas joignable dans l'immédiat<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Le médecin doit agir selon les intérêts objectifs du patient et sa volonté présumée</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Identifier la personne habilitée à consentir selon l'ordre légal
+→ Documenter les tentatives de contact
+→ Base légale : art. 378-379 CC</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Urgence vitale immédiate — état de nécessité</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Aggravation hémodynamique avec mise en jeu immédiate du pronostic vital</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);"><strong style="color: #4caf50;">Arguments POUR:</strong><span style="color: #4caf50; font-weight: normal;"><br>&nbsp;&nbsp;&nbsp;&nbsp;•  Choc septique ou hémorragique impédant la communication et altérant irrémédiablement le discernement<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Recueil du consentement impossible dans les délais requis<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Le médecin est fondé à intervenir selon les intérêts objectifs du patient et sa volonté présumée (un homme de 50 ans souhaitant vivre)</span></div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Documentation rigoureuse de l'état clinique et de l'impossibilité de recueillir le consentement
+→ Décision collégiale (chef de service, anesthésiste, chirurgien) consignée au dossier
+→ Information a posteriori dès que le patient recouvre sa capacité
+→ Base légale : état de nécessité, art. 378 al. 3 CC</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Clôture type</h4>
+                    <div class="exemples-phrases">
+                        <div class="exemple-phrase">Monsieur Dupraz, je comprends que c'est une nouvelle bouleversante et que vous souhaiteriez pouvoir en parler avec votre fille avant de prendre cette décision. Votre désir est tout à fait légitime et je le respecte profondément.</div>
+                        <div class="exemple-phrase">Je dois cependant vous être entièrement honnête : les blessures de votre jambe sont telles que l'amputation est malheureusement inévitable. Ce qui est en jeu maintenant, c'est le délai : chaque heure qui passe augmente le risque que l'infection se propage et mette votre vie en danger — un risque que nous ne pouvons pas vous faire courir pendant 48 heures.</div>
+                        <div class="exemple-phrase">Ce que je vous propose concrètement : nous allons immédiatement contacter le CICR pour qu'ils tentent de joindre votre fille en urgence. Nous allons aussi appeler votre médecin traitant et chercher si un proche peut vous rejoindre dans l'heure. Pendant ce temps, vous êtes sous surveillance étroite. Mais si votre état se dégrade, nous devrons agir sans pouvoir attendre davantage.</div>
+                        <div class="exemple-phrase">La décision vous appartient, Monsieur Dupraz. Je suis là pour répondre à toutes vos questions et vous accompagner dans ce choix difficile. Avez-vous des questions ?</div>
+                    </div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Questions difficiles à poser</h4>
+                    <div class="cloture-details">
+                        <div class="cloture-detail"><span class="patient-response">[Et si j'attends que ma fille me conseille — elle est médecin, elle comprendrait mieux que moi ce qui est vraiment nécessaire ?]</span></div>
+                        <div class="cloture-detail"><span class="patient-response">[Est-ce qu'il n'y a vraiment aucun moyen de sauver ma jambe ?]</span></div>
+                        <div class="cloture-detail"><span class="patient-response">[Si je refuse et que mon état s'aggrave, est-ce que vous opérerez quand même sans mon accord ?]</span></div>
+                        <div class="cloture-detail"><span class="patient-response">[Comment vais-je vivre après — je suis enseignant, je suis debout toute la journée en classe ?]</span></div>
+                        <div class="cloture-detail"><span class="patient-response">[Qui va consentir à ma place si je perds connaissance ?]</span></div>
+                    </div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponses types du candidat</h4>
+                    <div class="exemples-phrases">
+                        <div class="exemple-phrase">Votre fille peut vous donner un soutien moral précieux, mais elle ne peut pas décider à votre place tant que vous êtes capable de le faire vous-même — et vous l'êtes. C'est votre droit et votre décision. Nous allons tout faire pour la joindre, mais cela ne peut pas nous faire attendre 48 heures.</div>
+                        <div class="exemple-phrase">Nous avons examiné toutes les options avec toute l'équipe chirurgicale. Les lésions vasculaires et osseuses de votre jambe ne laissent malheureusement pas de possibilité de conservation réaliste dans votre situation. Je comprends que ce soit douloureux à entendre.</div>
+                        <div class="exemple-phrase">Si votre état s'aggrave au point que vous ne soyez plus en mesure de communiquer, la loi suisse prévoit que le médecin agit alors selon vos intérêts objectifs et ce que vous auriez vraisemblablement souhaité. Votre fille, une fois jointe, serait alors impliquée dans la décision. C'est précisément pourquoi il est si important que nous parlions maintenant, pendant que vous pouvez exprimer votre volonté.</div>
+                        <div class="exemple-phrase">Une prothèse moderne permettra dans la grande majorité des cas une reprise d'une activité professionnelle normale, y compris l'enseignement. La rééducation est longue, mais les résultats fonctionnels sont souvent très bons. Ce n'est pas la vie que vous imaginiez, mais c'est une vie — et c'est ce que nous cherchons à préserver.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/64</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations pour l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>L'expert joue le rôle du patient standardisé ou observe la consultation selon le dispositif retenu.</li>
+                <li>L'expert évalue si le candidat évalue formellement la capacité de discernement selon les quatre critères de l'art. 16 CC.</li>
+                <li>L'expert vérifie que le candidat délivre une information complète (diagnostic, pronostic, risques du délai, alternatives, conséquences fonctionnelles) sans omettre d'éléments importants.</li>
+                <li>L'expert observe si le candidat cherche activement des solutions intermédiaires (contacter le CICR, un proche de substitution, proposer un second avis) plutôt que de simplement imposer son calendrier ou au contraire accepter un délai de 48 heures.</li>
+                <li>L'expert note si le candidat distingue correctement le rôle de la fille médecin (soutien moral, non consentement à la place du père capable de discernement) du rôle de représentant thérapeutique (uniquement en cas d'incapacité de discernement).</li>
+                <li>L'expert vérifie la maîtrise du cadre légal suisse : art. 16 CC (capacité de discernement), art. 378 CC (représentant thérapeutique), état de nécessité.</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Évaluer formellement la capacité de discernement pour cet acte précis selon les quatre critères de l'art. 16 CC (comprendre, apprécier, raisonner, exprimer un choix)</li>
+                <li>La capacité de discernement est présumée et doit être confirmée — non présumée absente au motif du choc initial résolu</li>
+                <li>Le consentement est un droit strictement personnel : la fille médecin ne peut pas consentir à la place de son père capable de discernement</li>
+                <li>L'urgence comprime le délai de réflexion mais ne le supprime pas : un délai de quelques heures sous surveillance est médicalement envisageable</li>
+                <li>Explorer activement des solutions intermédiaires : contacter le CICR, joindre un proche de substitution, proposer un second avis rapide</li>
+                <li>Si le patient perd le discernement, basculer vers le cadre légal de l'art. 378 CC (représentant thérapeutique) ou de l'état de nécessité</li>
+                <li>Documenter rigoureusement l'entretien, les informations délivrées et le consentement (ou le refus) au dossier</li>
+                <li>La tension éthique centrale — autonomie vs bienfaisance — ne se résout pas par la domination d'un principe sur l'autre, mais par une négociation respectueuse et la recherche d'un compromis temporel acceptable</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Balayer le souhait de délai du patient au motif de l'urgence sans chercher de solution intermédiaire — c'est une atteinte à l'autonomie</li>
+                <li>Accepter un délai de 48 heures sans évaluer objectivement le risque vital — c'est une violation du devoir de bienfaisance</li>
+                <li>Croire que la fille médecin peut consentir à la place de son père si celui-ci est encore capable de discernement</li>
+                <li>Ne pas évaluer formellement la capacité de discernement et se contenter d'une impression générale</li>
+                <li>Considérer que l'agitation ou l'anxiété du patient suffit à conclure à une incapacité de discernement</li>
+                <li>Délivrer une information incomplète (omettre les risques du délai ou les conséquences fonctionnelles) pour 'ne pas inquiéter' le patient — c'est le privilège thérapeutique mal utilisé</li>
+                <li>Recueillir un consentement sous sédatif actif ou immédiatement après l'état de choc sans vérifier la restauration du discernement</li>
+                <li>Ne pas documenter l'entretien et le consentement au dossier médical</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique — Consentement éclairé et capacité de discernement en situation d'urgence (droit suisse)</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Fondements juridiques du consentement au traitement en droit suisse</h4>
+            <p>Tout acte médical constitue une atteinte à l'intégrité corporelle qui n'est justifiée que par le consentement libre et éclairé du patient. Ce principe découle de plusieurs sources juridiques convergentes.</p>
+            <ul>
+                <li>Art. 10 Cst. : droit à la vie et liberté personnelle — l'intégrité corporelle est un droit fondamental</li>
+                <li>Art. 28 CC : protection de la personnalité — toute atteinte nécessite le consentement de la personne concernée</li>
+                <li>Art. 378 CC : représentation en cas d'incapacité de discernement</li>
+                <li>Art. 123-125 CP : voies de fait et lésions corporelles — justification par le consentement</li>
+                <li>Art. 394 ss CO : contrat de mandat médical — obligation d'information précontractuelle</li>
+                <li>Loi genevoise sur la santé et lois cantonales analogues : obligation d'information et de recueil du consentement éclairé</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Capacité de discernement (art. 16 CC)</h4>
+            <p>La capacité de discernement est définie négativement par l'art. 16 CC. Elle est présumée pour toute personne adulte. Il y a incapacité lorsque deux conditions cumulatives sont réunies : une altération de la faculté d'agir raisonnablement ET une cause légale d'altération.</p>
+            <ul>
+                <li>Condition 1 — Altération de la faculté d'agir raisonnablement : incapacité à comprendre, apprécier sa situation, raisonner ou exprimer un choix cohérent</li>
+                <li>Condition 2 — Cause légale : jeune âge, déficience mentale, troubles psychiques, ivresse ou 'autres causes semblables'</li>
+                <li>La capacité de discernement s'apprécie TOUJOURS par rapport à un acte déterminé : elle peut être partielle</li>
+                <li>La capacité de discernement est PRÉSUMÉE : c'est l'incapacité qui doit être établie, non la capacité</li>
+                <li>L'anxiété, la détresse émotionnelle ou la désaccord avec le médecin ne constituent pas en eux-mêmes une incapacité de discernement</li>
+                <li>Quatre critères d'évaluation pratique : comprendre l'information → apprécier sa situation → raisonner → exprimer un choix stable</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Le consentement éclairé : conditions de validité</h4>
+            <p>Le consentement au traitement médical doit réunir deux conditions essentielles : être libre et être éclairé.</p>
+            <ul>
+                <li>Libre : sans pression, sans contrainte, sans manipulation — le patient doit savoir qu'il peut refuser, même si cela engage son pronostic vital</li>
+                <li>Éclairé : information préalable suffisante portant sur le diagnostic, le pronostic, la nature du traitement, son déroulement, ses risques, ses alternatives et ses conséquences fonctionnelles</li>
+                <li>Délai de réflexion : pour une intervention lourde, un délai de 3 jours est en principe nécessaire — compressé en situation d'urgence</li>
+                <li>Strictement personnel : seul le patient capable de discernement peut consentir pour lui-même</li>
+                <li>Révocable à tout moment, même en cours d'intervention si le patient reste capable de discernement</li>
+                <li>Documenté : l'information délivrée et le consentement recueilli doivent être consignés au dossier médical</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Représentation en cas d'incapacité de discernement (art. 378 CC)</h4>
+            <p>Lorsqu'un patient est incapable de discernement et n'a pas rédigé de directives anticipées, la loi suisse désigne un ordre de priorité pour la personne habilitée à consentir.</p>
+            <ul>
+                <li>1er : conjoint ou partenaire enregistré, si vie commune ou soutien régulier</li>
+                <li>2e : personne désignée par le patient comme représentant thérapeutique</li>
+                <li>3e : descendants (enfants adultes) — en l'espèce la fille de M. Dupraz</li>
+                <li>4e : père ou mère</li>
+                <li>5e : frères et sœurs</li>
+                <li>La personne habilitée doit agir selon les intérêts objectifs et la volonté présumée du patient</li>
+                <li>En urgence, si la personne habilitée n'est pas joignable dans le délai médicalement acceptable, le médecin agit selon les intérêts objectifs et la volonté présumée du patient (art. 378 al. 3 CC)</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>La tension éthique : autonomie versus bienfaisance</h4>
+            <p>Le cas clinique illustre une tension classique entre deux principes bioéthiques fondamentaux : le respect de l'autonomie du patient et le devoir de bienfaisance/non-maléficence.</p>
+            <ul>
+                <li>Autonomie : droit du patient de décider de son propre corps, y compris de refuser un traitement vital — le souhait de délai est légitime et doit être respecté dans la mesure du possible</li>
+                <li>Bienfaisance/non-maléficence : obligation du médecin de ne pas laisser son patient mourir d'un retard évitable</li>
+                <li>Ces deux principes ne s'annulent pas mutuellement : la résolution passe par une négociation respectueuse et la recherche d'un compromis temporel</li>
+                <li>Solution intermédiaire : explorer toutes les voies permettant de raccourcir le délai d'attente (CICR, proche de substitution, second avis rapide) plutôt que d'imposer un calendrier unilatéral</li>
+                <li>Privilège thérapeutique : la possibilité, restrictive, d'adapter la forme de l'information sans la vider de sa substance — il ne s'agit pas d'omettre des informations importantes</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>État de nécessité en médecine d'urgence</h4>
+            <p>Lorsqu'un patient est dans l'incapacité de discernement et que son pronostic vital est immédiatement engagé, le médecin est fondé à intervenir selon le principe de l'état de nécessité.</p>
+            <ul>
+                <li>Conditions : incapacité de discernement avérée ET urgence vitale immédiate ET impossibilité de recueillir un consentement valide dans le délai requis</li>
+                <li>Le médecin agit selon les intérêts objectifs du patient et sa volonté présumée (un adulte en bonne santé souhaitant généralement vivre)</li>
+                <li>Obligation de documentation : l'état clinique, l'impossibilité de consentir et la décision collégiale doivent être rigoureusement consignés au dossier</li>
+                <li>Obligation d'information a posteriori : dès que le patient recouvre sa capacité de discernement, il doit être informé des décisions prises en son nom</li>
+                <li>La décision doit être idéalement collégiale (chef de service, anesthésiste) pour garantir son objectivité</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Résumé du cas clinique</h4>
+            <p>M. Dupraz, 50 ans, enseignant et veuf, est actuellement capable de discernement pour l'acte d'amputation proposé. Son souhait de délai pour consulter sa fille médecin est légitime mais ne peut être satisfait tel quel (48 heures), car le risque septique et hémorragique l'emporte. La solution médicalement et éthiquement correcte est de chercher activement des alternatives (CICR, proche de substitution, second avis rapide), de lui accorder le délai le plus long compatible avec sa sécurité, de documenter l'entretien et de recueillir son consentement éclairé. Si son état s'aggrave au point de compromettre son discernement, le cadre de l'état de nécessité ou de la représentation thérapeutique (art. 378 CC — fille en tant que descendante) s'appliquera.</p>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>La prise en charge chirurgicale de la fracture ouverte comminutive du tibia est une urgence orthopédique : parage, lavage abondant et fixation externe en première intention, amputation si les lésions vasculaires sont irréversibles</li>
+                <li>Antibioprophylaxie anti-staphylococcique (céfazoline 2g IV) débutée avant l'intervention chirurgicale</li>
+                <li>Analgésie multimodale : morphine IV titrée, AINS contre-indiqués en cas d'instabilité hémodynamique et de risque hémorragique</li>
+                <li>Prévention thromboembolique : héparine de bas poids moléculaire (HBPM) dès la stabilisation hémodynamique</li>
+                <li>Réanimation hémodynamique : cristalloïdes (NaCl 0.9% ou Ringer lactate), culots érythrocytaires si Hb <80 g/L ou instabilité hémodynamique persistante</li>
+                <li>Rééducation post-amputation : appareillage prothétique tibial ou fémoral selon le niveau d'amputation, kinésithérapie intensive, soutien psychologique</li>
+                <li>Soutien psychologique : annonce d'une amputation nécessite un accompagnement psychologique structuré dès les premières heures</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>Radiographie du membre inférieur gauche (face et profil) : évaluation de l'étendue de la fracture et des lésions osseuses</li>
+                <li>Angio-CT du membre inférieur gauche : bilan des lésions vasculaires — confirme l'irréversibilité des lésions et la nécessité de l'amputation</li>
+                <li>FSC (formule sanguine complète) : évaluation de l'anémie post-hémorragique et de l'hyperleucocytose</li>
+                <li>Bilan de coagulation : TP, TCA, fibrinogène — recherche d'une coagulopathie de consommation liée au choc hémorragique</li>
+                <li>CRP et procalcitonine : marqueurs d'inflammation et d'infection — évaluation du risque septique</li>
+                <li>Hémocultures : à prélever avant l'antibiothérapie si suspicion de sepsis</li>
+                <li>Lactate artériel : évaluation de la perfusion tissulaire — supérieur à 2 mmol/L orientant vers un sepsis</li>
+                <li>Ionogramme sanguin et créatinine : évaluation de la fonction rénale avant anesthésie et imagerie avec produit de contraste</li>
+                <li>Bilan pré-opératoire standard : groupe sanguin et RAI, bilan de coagulation complet, ECG, radiographie du thorax</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour le patient standardisé</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Laurent Dupraz |             <strong>Âge :</strong> 50 ans<br>
+            <strong>Contexte :</strong> Enseignant de français au Collège, veuf, victime d'un accident de la circulation avec fracture ouverte du tibia gauche. Après une longue désincarcération et un état initial de choc hémodynamique, il a été stabilisé aux urgences (transfusion, réanimation, désinfection et pansement). Son état de conscience s'est nettement amélioré. La chirurgienne lui a déjà annoncé brièvement la nécessité d'une amputation. Il comprend l'essentiel mais est très perturbé et souhaite pouvoir s'entretenir avec sa fille médecin, actuellement injoignable.
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> J'ai besoin de parler à ma fille avant qu'on me coupe la jambe. Elle est médecin, elle peut m'aider à comprendre. Pourquoi ça ne peut pas attendre 48 heures ?</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> J'ai encore mal à la jambe, je suis épuisé, mais je comprends mieux maintenant. J'ai peur.</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <p><strong>Événement principal :</strong> Accident de la circulation survenu ce matin. Désincarcération prolongée par les pompiers. Traumatisme grave de la jambe gauche avec fracture ouverte du tibia. Hémorragie importante. Arrivée aux urgences en état de choc hémodynamique (TA 60/30 mmHg) et de confusion.</p>
+            <div class="property-group">
+                <strong>Symptôme principal :</strong>
+                <ul>
+                    <li>Traumatisme du membre inférieur gauche — fracture ouverte du tibia avec hémorragie</li>
+                    <li>État de choc initial amélioré après réanimation et transfusion</li>
+                    <li>Douleur de la jambe gauche persistante, partiellement soulagée par les antalgiques</li>
+                    <li>Confusion initiale résolue — patient actuellement orienté et lucide</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>Anxiété importante face à l'annonce de l'amputation</li>
+                    <li>Fatigue liée au traumatisme et à la perte sanguine</li>
+                    <li>Absence de fièvre au moment de l'entretien</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Représentation de la maladie :</strong>
+                <ul>
+                    <li>A compris que son état est grave mais espère encore que la jambe peut être sauvée</li>
+                    <li>Perçoit la demande d'amputation comme précipitée et souhaite un deuxième avis de sa fille médecin</li>
+                    <li>Craint les conséquences fonctionnelles sur son métier d'enseignant (debout en classe toute la journée)</li>
+                    <li>Peur de prendre seul une décision aussi lourde et irréversible</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Attitude :</strong>
+                <ul>
+                    <li>Le patient est lucide, orienté et coopératif, mais clairement anxieux et émotionnellement fragile.</li>
+                    <li>Il ne remet pas en cause la gravité de sa situation mais cherche un délai pour consulter sa fille.</li>
+                    <li>Il est réceptif à une information claire et honnête, mais résiste si le médecin balaie son souhait de délai sans lui proposer de solution intermédiaire.</li>
+                    <li>Il accepte progressivement la réalité si le candidat montre de l'empathie, lui explique les risques du délai et propose des alternatives concrètes pour joindre sa fille.</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Demander dès le début si on peut attendre 48 heures.</li>
+                    <li>Poser la question de l'alternative à l'amputation ('Est-ce qu'on ne peut vraiment pas sauver ma jambe ?').</li>
+                    <li>Si le candidat propose de contacter le CICR ou le médecin traitant, montrer de la gratitude et un certain soulagement.</li>
+                    <li>Si le candidat répond avec empathie et explique clairement les risques du délai, exprimer progressivement une acceptation conditionnelle de l'intervention.</li>
+                    <li>Si le candidat balaie le souhait de délai sans proposer de solution, exprimer une résistance et de la méfiance.</li>
+                    <li>Poser des questions difficiles sur ce qui se passera s'il refuse ou s'il perd connaissance.</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant le status :</strong>
+                <ul>
+                    <li>Répondre aux questions sur l'orientation : donner son nom, la date approximative et le lieu sans hésitation.</li>
+                    <li>Montrer qu'il comprend les informations données en les reformulant avec ses propres mots si le candidat le lui demande.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Informations personnelles</h4>
+            <p><strong>Profession :</strong> Enseignant de français au Collège (gymnase)</p>
+            <p><strong>État civil :</strong> Veuf depuis 8 ans</p>
+            <p><strong>État d'esprit :</strong> Anxieux mais lucide et orienté — capable de soutenir une conversation cohérente et d'exprimer des préférences stables</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Inquiétudes</h4>
+            <div class="property-group">
+                <strong>Principales :</strong>
+                <ul>
+                    <li>Peur de décider seul une chose aussi irréversible</li>
+                    <li>Souhait de consulter sa fille médecin avant d'accepter</li>
+                    <li>Crainte de ne plus pouvoir enseigner après l'amputation</li>
+                    <li>Peur de mourir — mais aussi peur de vivre diminué</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Questions :</strong>
+                <ul>
+                    <li>Est-ce que ma fille pourra prendre la décision à ma place si je le lui demande ?</li>
+                    <li>Est-ce qu'il y a vraiment aucune autre option ?</li>
+                    <li>Si je refuse, qu'est-ce qui va se passer exactement ?</li>
+                    <li>Est-ce que je pourrai encore travailler après ?</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Antécédents</h4>
+            <p><strong>Médicaux :</strong> Aucun antécédent médical connu — patient en bonne santé habituelle</p>
+            <p><strong>Chirurgicaux :</strong> Appendicectomie à l'âge de 15 ans</p>
+            <p><strong>Allergies :</strong> Aucune allergie connue</p>
+            <p><strong>Médicaments :</strong> Aucun traitement habituel</p>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-defi">
+    <div class="annexe-title">Défi pédagogique — Le patient refuse l'amputation après information complète</div>
+    <div class="annexe-defi-content">
+        <p>Après avoir reçu une information complète et honnête, et après que le candidat a exploré toutes les solutions intermédiaires, M. Dupraz maintient son refus d'être opéré avant d'avoir parlé à sa fille. Il dit comprendre les risques mais veut attendre. Que faire ?</p>
+        <p><strong>Type de réponse attendue :</strong> Un patient capable de discernement a le droit de refuser un traitement, même si ce refus engage son pronostic vital. Le médecin ne peut pas passer outre ce refus éclairé. La conduite correcte est la suivante : (1) S'assurer que le refus est véritablement éclairé — le patient a bien compris les conséquences du refus et le risque vital ; (2) Documenter rigoureusement le refus éclairé au dossier, avec la signature du patient si possible, et la présence de témoins ; (3) Consigner que le patient comprend les conséquences de son refus ; (4) Prévoir une réévaluation clinique rapprochée (toutes les heures) et une nouvelle discussion à chaque aggravation ; (5) Continuer à chercher activement à joindre la fille par le CICR ; (6) Informer le chef de service et l'équipe soignante ; (7) Si l'état s'aggrave au point de compromettre le discernement, réévaluer la capacité et, si l'incapacité est avérée, agir selon le cadre légal de l'état de nécessité. Ce scénario illustre le fait que le respect de l'autonomie peut conduire à une issue défavorable — ce que le médecin doit accepter en tant que professionnel engagé dans le respect des droits du patient.</p>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+        // Déclaration des variables globales
+        window.audioContext = null;
+        
+        function updateScore(section, element) {
+            const value = element.value;
+            const name = element.name;
+            let pointValue;
+
+            if (section === "communication") {
+                const map = { A: 4, B: 3, C: 2, D: 1, E: 0 };
+                pointValue = map[value] || 0;
+                // Mettre à jour la classe de couleur pour communication
+                const criteriaRow = document.getElementById("criteria-" + name);
+                if (criteriaRow) {
+                    criteriaRow.classList.remove("score-a", "score-b", "score-c", "score-d", "score-e", "lacune-rouge", "lacune-orange", "lacune-verte");
+                    criteriaRow.classList.add("score-" + value.toLowerCase());
+                    // Ajouter les classes lacune pour communication
+                    if (value === "E" || value === "D") {
+                        criteriaRow.classList.add("lacune-rouge");
+                    } else if (value === "C") {
+                        criteriaRow.classList.add("lacune-orange");
+                    } else if (value === "A" || value === "B") {
+                        criteriaRow.classList.add("lacune-verte");
+                    }
+                }
+            } else {
+                pointValue = Number(value) || 0;
+                // Mettre à jour la classe de couleur pour autres critères
+                const criteriaRow = document.getElementById("criteria-" + name);
+                if (criteriaRow) {
+                    criteriaRow.classList.remove("score-0", "score-1", "score-2", "lacune-rouge", "lacune-orange", "lacune-verte");
+                    criteriaRow.classList.add("score-" + value);
+                    // Ajouter les classes lacune pour critères normaux
+                    if (pointValue === 0) {
+                        criteriaRow.classList.add("lacune-rouge");
+                    } else if (pointValue === 1) {
+                        criteriaRow.classList.add("lacune-orange");
+                    } else if (pointValue >= 2) {
+                        criteriaRow.classList.add("lacune-verte");
+                    }
+                }
+            }
+
+            const pointsElement = document.getElementById("points-" + name);
+            if (pointsElement) {
+                pointsElement.textContent = pointValue;
+            }
+
+            calculateScores();
+        }
+
+        function updateDetailScore(criterionId, prefix) {
+            let totalScore = 0;
+            const detailCheckboxes = document.querySelectorAll('input[id^="' + criterionId + '-detail-"]');
+            const maxDetailsScore = detailCheckboxes.length;
+            
+            detailCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    totalScore += Number(checkbox.value) || 0;
+                }
+            });
+            
+            const pointsElement = document.getElementById("points-" + criterionId);
+            if (pointsElement) {
+                pointsElement.textContent = totalScore;
+            }
+            
+            // Mettre à jour la classe de couleur en fonction du score et du max
+            const criteriaRow = document.getElementById("criteria-" + criterionId);
+            if (criteriaRow) {
+                criteriaRow.classList.remove("score-0", "score-1", "score-2", "score-3", "score-4", "score-5", "score-max", "lacune-rouge", "lacune-orange", "lacune-verte");
+                
+                // Déterminer la classe appropriée avec les seuils 1/3 et 2/3
+                const oneThird = maxDetailsScore / 3;
+                const twoThirds = (maxDetailsScore * 2) / 3;
+                
+                if (totalScore < oneThird) {
+                    criteriaRow.classList.add("score-0");
+                    criteriaRow.classList.add("lacune-rouge");
+                } else if (totalScore > twoThirds) {
+                    criteriaRow.classList.add("score-max");
+                    criteriaRow.classList.add("lacune-verte");
+                } else {
+                    // Score entre 1/3 et 2/3
+                    criteriaRow.classList.add("score-1");
+                    criteriaRow.classList.add("lacune-orange");
+                }
+            }
+            
+            calculateScores();
+        }
+
+        function calculateScores() {
+            const isNewFormat = false;
+            const missingItems = [];
+            let scores = {};
+            let maxScores = {};
+            let coef = {};
+            let sectionInfo = [];
+
+            // Configuration pour le format traditionnel
+            scores = {anamnese: 0, examen: 0, management: 0, communication: 0};
+            maxScores = {anamnese: 20, examen: 15, management: 9, communication: 20};
+            coef = {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25};
+            sectionInfo = [
+                {key: "anamnese", prefix: "a", count: 4, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 3, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 2, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ];
+
+            // Calcul des scores pour chaque section
+            sectionInfo.forEach(section => {
+                let sectionScore = 0;
+                
+                if (section.isComm) {
+                    // Section communication spéciale
+                    for (let i = 1; i <= section.count; i++) {
+                        const radio = document.querySelector("input[name=\"" + section.prefix + i + "\"]:checked");
+                        if (radio) {
+                            const val = radio.value;
+                            const map = { A: 4, B: 3, C: 2, D: 1, E: 0 };
+                            sectionScore += map[val] || 0;
+                        } else {
+                            const criteria = document.querySelector("input[name=\"" + section.prefix + i + "\"][data-criteria]");
+                            if (criteria) missingItems.push(section.label + " : " + criteria.dataset.criteria);
+                        }
+                    }
+                } else {
+                    // Sections normales
+                    for (let i = 1; i <= section.count; i++) {
+                        const criterionId = section.prefix + i;
+                        // Vérifier si ce critère a des détails avec checkboxes
+                        const detailCheckboxes = document.querySelectorAll('input[id^="' + criterionId + '-detail-"]');
+                        
+                        if (detailCheckboxes.length > 0) {
+                            // Ce critère a des détails, on calcule le score basé sur les détails
+                            let detailScore = 0;
+                            let hasCheckedDetail = false;
+                            detailCheckboxes.forEach(checkbox => {
+                                if (checkbox.checked) {
+                                    detailScore += Number(checkbox.value) || 0;
+                                    hasCheckedDetail = true;
+                                }
+                            });
+                            sectionScore += detailScore;
+                            
+                            if (!hasCheckedDetail) {
+                                const criteria = document.querySelector("input[name=\"" + criterionId + "\"][data-criteria]");
+                                if (criteria) {
+                                    missingItems.push(section.label + " : " + criteria.dataset.criteria);
+                                } else {
+                                    // Rechercher le texte du critère directement
+                                    const criteriaText = document.querySelector("#criteria-" + criterionId + " .criteria-text");
+                                    if (criteriaText) {
+                                        missingItems.push(section.label + " : " + criteriaText.textContent.split(". ")[1].split(" [")[0]);
+                                    }
+                                }
+                            }
+                        } else {
+                            // Critère normal sans détails
+                            const radio = document.querySelector("input[name=\"" + criterionId + "\"]:checked");
+                            if (radio) {
+                                sectionScore += Number(radio.value) || 0;
+                            } else {
+                                const criteria = document.querySelector("input[name=\"" + criterionId + "\"][data-criteria]");
+                                if (criteria) missingItems.push(section.label + " : " + criteria.dataset.criteria);
+                            }
+                        }
+                    }
+                }
+                
+                scores[section.key] = sectionScore;
+                const scoreId = section.scoreId || section.key + "Score";
+                const scoreElement = document.getElementById(scoreId);
+                if (scoreElement) scoreElement.textContent = sectionScore;
+            });
+
+            // Calcul des pourcentages par section
+            let percentages = {};
+            let globalPercentage = 0;
+            let isStarted = false;
+            
+            sectionInfo.forEach(section => {
+                const score = scores[section.key];
+                const max = maxScores[section.key];
+                const percentage = max > 0 ? (score / max) * 100 : 0;
+                percentages[section.key] = percentage;
+                globalPercentage += percentage * coef[section.key];
+                if (score > 0) isStarted = true;
+            });
+
+            const totalScoreText = isStarted ? Math.round(globalPercentage) : 0;
+            document.getElementById("totalScore").textContent = totalScoreText + "%";
+
+            // Mise à jour des pourcentages affichés
+            sectionInfo.forEach(section => {
+                const percentageElement = document.getElementById(section.key + "-percentage");
+                if (percentageElement) {
+                    percentageElement.textContent = Math.round(percentages[section.key]);
+                }
+            });
+
+            const gradeElement = document.getElementById("globalGrade");
+            const totalScoreElement = document.getElementById("totalScore");
+            const scoreBody = totalScoreElement ? totalScoreElement.closest(".total-body") : null;
+            const gradeBody = gradeElement ? gradeElement.closest(".total-body") : null;
+            const sections = sectionInfo.map(s => s.key);
+
+            const allClasses = ["note-a", "note-b", "note-c", "note-d", "note-e", "note-neutral"];
+
+            function getClass(p) {
+                if (p === 0) return "note-neutral";
+                if (p >= 90) return "note-a";
+                if (p >= 80) return "note-b";
+                if (p >= 70) return "note-c";
+                if (p >= 60) return "note-d";
+                return "note-e";
+            }
+
+            const gradeClass = getClass(globalPercentage);
+            const gradeLabel = isStarted ? gradeClass.split("-")[1].toUpperCase() : "A-E";
+            if (gradeElement) gradeElement.textContent = gradeLabel;
+
+            const pourcentBody = document.querySelector(".total-pourcent-body");
+
+            [gradeElement, scoreBody, gradeBody, pourcentBody].forEach(el => {
+                if (el) {
+                    el.classList.remove(...allClasses);
+                    el.classList.add(gradeClass);
+                }
+            });
+
+            sections.forEach(id => {
+                const percentageElement = document.getElementById(id + "-percentage");
+                if (percentageElement) {
+                    const value = parseInt(percentageElement.textContent);
+                    const section = percentageElement.closest(".total-pourcent-section");
+                    const sectionClass = getClass(value);
+                    if (section) {
+                        section.classList.remove(...allClasses);
+                        section.classList.add(sectionClass);
+                    }
+                }
+            });
+
+            // Appliquer les couleurs aux sections principales
+            sectionInfo.forEach(section => {
+                const percentage = percentages[section.key];
+                const allSections = document.querySelectorAll(".section");
+                allSections.forEach(sectionEl => {
+                    const headerText = sectionEl.querySelector(".section-header")?.textContent || "";
+                    if (headerText.includes(section.label)) {
+                        const sectionClass = getClass(percentage);
+                        sectionEl.classList.remove(...allClasses);
+                        sectionEl.classList.add(sectionClass);
+                    }
+                });
+            });
+
+            if (missingItems.length > 0) {
+                document.getElementById("missingItems").style.display = "block";
+                document.getElementById("missingList").innerHTML = missingItems.map(item =>
+                    "<div class=\"missing-item\">• " + item + "</div>"
+                ).join("");
+            } else {
+                document.getElementById("missingItems").style.display = "none";
+            }
+        }
+        // MINUTEUR ECOS 13 MINUTES
+        window.timerInterval = null;
+        window.currentSeconds = 13 * 60;
+        window.isRunning = false;
+        window.hasStarted = false;
+        window.hasFinished = false;
+        window.hasStoppedManually = false;
+
+        window.currentMode = 'revision';
+
+        function colorPatientResponses() {
+            // Version simplifiée inspirée du générateur v1
+            const elements = document.querySelectorAll('.criteria-text, .sub-criteria, .redflags-text, .dd-item, .therapy-section, .detail-text, .cloture-content');
+            elements.forEach(element => {
+                const text = element.innerHTML;
+                // Colorer uniquement les réponses patient en bleu (pas les examens complémentaires)
+                let coloredText = text.replace(/\[([^\]]+)\]/g, '<span style="color: rgb(44, 90, 160); font-weight: 500;">[$1]</span>');
+                element.innerHTML = coloredText;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            switchMode('revision');
+            calculateScores();
+            colorPatientResponses();
+            // Appeler une deuxième fois après un court délai pour s'assurer que tout est chargé
+            setTimeout(function() {
+                colorPatientResponses();
+            }, 100);
+            // Appel supplémentaire après un délai plus long pour garantir que tout est chargé
+            setTimeout(function() {
+                colorPatientResponses();
+            }, 500);
+            // Auto-resize tous les textareas au chargement
+            const allTextareas = document.querySelectorAll('.comment-textarea');
+            allTextareas.forEach(textarea => {
+                if (textarea.value) {
+                    autoResizeTextarea(textarea);
+                }
+            });
+        });
+        
+        // S'assurer que la hauteur est bien définie avant l'impression
+        window.addEventListener('beforeprint', function() {
+            const allTextareas = document.querySelectorAll('.comment-textarea');
+            allTextareas.forEach(textarea => {
+                if (textarea.value && textarea.value.trim()) {
+                    // S'assurer que le textarea a une hauteur définie
+                    if (!textarea.style.height || textarea.style.height === 'auto') {
+                        autoResizeTextarea(textarea);
+                    }
+                }
+            });
+        });
+
+
+        function initAudio() {
+            if (!window.audioContext) {
+                window.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playBeep() {
+            initAudio();
+            const oscillator = window.audioContext.createOscillator();
+            const gainNode = window.audioContext.createGain();
+            oscillator.connect(gainNode);
+            gainNode.connect(window.audioContext.destination);
+            oscillator.frequency.value = 800;
+            oscillator.type = 'sine';
+            gainNode.gain.setValueAtTime(0.3, window.audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, window.audioContext.currentTime + 0.5);
+            oscillator.start(window.audioContext.currentTime);
+            oscillator.stop(window.audioContext.currentTime + 0.5);
+        }
+
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'fr-FR';
+                utterance.rate = 0.9;
+                utterance.volume = 0.8;
+                speechSynthesis.speak(utterance);
+            }
+        }
+
+        function playSound(message) {
+            playBeep();
+            setTimeout(() => speak(message), 500);
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return minutes + ":" + secs.toString().padStart(2, "0");
+        }
+
+        function toggleCheckboxes(disabled) {
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => {
+                radio.disabled = disabled;
+            });
+            const detailCheckboxes = document.querySelectorAll('.detail-checkbox input[type="checkbox"]');
+            detailCheckboxes.forEach(checkbox => {
+                checkbox.disabled = disabled;
+            });
+        }
+
+        function colorCriteriaByScore() {
+            if (!window.hasFinished && !window.hasStoppedManually) return;
+
+            const normalCriteriaRows = document.querySelectorAll('.criteria-row');
+            normalCriteriaRows.forEach(row => {
+                const id = row.id;
+                if (!id) return;
+                const criteriaName = id.replace('criteria-', '');
+                const checkedRadio = document.querySelector('input[name="' + criteriaName + '"]:checked');
+                row.classList.remove('criteria-zero-points', 'criteria-one-point', 'criteria-full-points', 'criteria-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
+                if (checkedRadio) {
+                    const score = Number(checkedRadio.value) || 0;
+                    if (score === 0) {
+                        row.classList.add('criteria-zero-points');
+                        row.classList.add('lacune-rouge');
+                    } else if (score === 1) {
+                        row.classList.add('criteria-one-point');
+                        row.classList.add('lacune-orange');
+                    } else if (score >= 2) {
+                        row.classList.add('criteria-full-points');
+                        row.classList.add('lacune-verte');
+                    }
+                } else {
+                    row.classList.add('criteria-not-answered');
+                    row.classList.add('lacune-rouge');
+                }
+            });
+
+            const communicationRows = document.querySelectorAll('.communication-section');
+            communicationRows.forEach(row => {
+                const id = row.id;
+                if (!id) return;
+                const criteriaName = id.replace('criteria-', '');
+                const checkedRadio = document.querySelector('input[name="' + criteriaName + '"]:checked');
+                row.classList.remove('communication-note-a', 'communication-note-b', 'communication-note-c', 'communication-note-d', 'communication-note-e', 'communication-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
+                if (checkedRadio) {
+                    const grade = checkedRadio.value.toLowerCase();
+                    row.classList.add("communication-note-" + grade);
+                    if (grade === 'e' || grade === 'd') {
+                        row.classList.add('lacune-rouge');
+                    } else if (grade === 'c') {
+                        row.classList.add('lacune-orange');
+                    } else if (grade === 'a' || grade === 'b') {
+                        row.classList.add('lacune-verte');
+                    }
+                } else {
+                    row.classList.add('communication-not-answered');
+                    row.classList.add('lacune-rouge');
+                }
+            });
+        }
+
+        function startTimer() {
+            if (window.isRunning || window.currentMode !== 'exam') return;
+            window.isRunning = true;
+            window.hasStarted = true;
+            window.hasStoppedManually = false;
+            document.body.classList.add('timer-running');
+            toggleCheckboxes(false);
+            playSound("Début de la station");
+            document.getElementById('startBtn').style.display = 'none';
+            document.getElementById('stopBtn').style.display = 'inline-block';
+            document.getElementById('resetBtn').disabled = true;
+            document.getElementById('timerStatus').textContent = 'En cours';
+            document.getElementById('timerStatus').className = 'timer-status status-running';
+            
+            window.timerInterval = setInterval(() => {
+                window.currentSeconds--;
+                document.getElementById('timerDisplay').textContent = formatTime(window.currentSeconds);
+                const container = document.getElementById('timerContainer');
+                if (window.currentSeconds === 2 * 60) {
+                    if (window.currentMode === 'exam') {
+                        playSound("Il vous reste 2 minutes");
+                    }
+                    container.classList.add('timer-warning');
+                    document.getElementById('timerStatus').textContent = '2 min restantes';
+                    document.getElementById('timerStatus').className = 'timer-status status-warning';
+                }
+                if (window.currentSeconds <= 30) {
+                    container.classList.add('timer-critical');
+                }
+                if (window.currentSeconds <= 0) {
+                    endTimer();
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            if (!window.isRunning) return;
+            clearInterval(window.timerInterval);
+            window.isRunning = false;
+            window.hasStoppedManually = true;
+            document.body.classList.remove('timer-running');
+            // Ne pas désactiver les checkboxes pour permettre de continuer à cocher après arrêt
+            // toggleCheckboxes(true);
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('stopBtn').style.display = 'none';
+            document.getElementById('resetBtn').disabled = false;
+            document.getElementById('timerStatus').textContent = 'Arrêté';
+            document.getElementById('timerStatus').className = 'timer-status';
+            colorCriteriaByScore();
+        }
+
+        function endTimer() {
+            clearInterval(window.timerInterval);
+            window.isRunning = false;
+            window.hasFinished = true;
+            window.currentSeconds = 0;
+            document.body.classList.remove('timer-running');
+            if (window.currentMode === 'exam') {
+                playSound("Fin de la station. Veuillez sortir");
+                // Repasser automatiquement en mode révision après la fin du timer
+                switchMode('revision');
+            }
+            document.getElementById('timerDisplay').textContent = '0:00';
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('stopBtn').style.display = 'none';
+            document.getElementById('resetBtn').disabled = false;
+            document.getElementById('timerStatus').textContent = 'Terminé';
+            document.getElementById('timerStatus').className = 'timer-status status-finished';
+            document.getElementById('timerStatus').style.display = 'block';
+            document.getElementById('timerContainer').className = 'timer-container';
+            // Ne pas désactiver les checkboxes après la fin pour permettre de continuer
+            // toggleCheckboxes(true);
+            colorCriteriaByScore();
+        }
+
+        function resetTimer() {
+            clearInterval(window.timerInterval);
+            window.timerInterval = null;
+            window.currentSeconds = 13 * 60;
+            window.isRunning = false;
+            window.hasStarted = false;
+            window.hasFinished = false;
+            window.hasStoppedManually = false;
+            document.getElementById('timerDisplay').textContent = '13:00';
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('stopBtn').style.display = 'none';
+            // Supprimer la coloration des critères
+            const criteriaAndCommRows = document.querySelectorAll('.criteria-row, .communication-section');
+            criteriaAndCommRows.forEach(row => {
+                row.classList.remove('score-0', 'score-1', 'score-2', 'score-a', 'score-b', 'score-c', 'score-d', 'score-e');
+            });
+            // Supprimer la coloration des sections
+            const allSections = document.querySelectorAll('.section');
+            allSections.forEach(section => {
+                section.classList.remove('note-a', 'note-b', 'note-c', 'note-d', 'note-e');
+                section.classList.add('note-neutral');
+            });
+            document.getElementById('timerStatus').style.display = 'none';
+            document.getElementById('timerContainer').className = 'timer-container';
+            // En mode révision, ne pas désactiver les checkboxes
+            if (window.currentMode === 'exam') {
+                toggleCheckboxes(true);
+            }
+            const allRadios = document.querySelectorAll('input[type="radio"]');
+            allRadios.forEach(radio => {
+                radio.checked = false;
+            });
+            // Réinitialiser les detail-checkboxes
+            const allDetailCheckboxes = document.querySelectorAll('.detail-checkbox input[type="checkbox"]');
+            allDetailCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            const allPointsDisplays = document.querySelectorAll('.points-display');
+            allPointsDisplays.forEach(display => {
+                display.textContent = '0';
+            });
+            const allCriteriaRows = document.querySelectorAll('.criteria-row');
+            allCriteriaRows.forEach(row => {
+                row.classList.remove('criteria-zero-points', 'criteria-one-point', 'criteria-full-points', 'criteria-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
+            });
+            const allCommunicationRows = document.querySelectorAll('.communication-section');
+            allCommunicationRows.forEach(row => {
+                row.classList.remove('communication-note-a', 'communication-note-b', 'communication-note-c', 'communication-note-d', 'communication-note-e', 'communication-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
+            });
+            calculateScores();
+            // Supprimer tous les commentaires et cacher les textareas
+            const allTextareas = document.querySelectorAll('.comment-textarea');
+            allTextareas.forEach(textarea => {
+                textarea.value = '';
+                textarea.style.height = textarea.classList.contains('comment-textarea') && textarea.closest('.section-comment-section.global') ? '30px' : (textarea.closest('.section-comment-section') ? '28px' : '26px');
+            });
+            // Cacher toutes les sections de commentaires ouvertes
+            const allCommentSections = document.querySelectorAll('.criterion-comment-section.show, .section-comment-section.show');
+            allCommentSections.forEach(section => {
+                section.classList.remove('show');
+            });
+            // Mettre à jour les boutons de commentaires
+            const allCommentButtons = document.querySelectorAll('.comment-button, .section-comment-button');
+            allCommentButtons.forEach(button => {
+                button.classList.remove('has-content');
+            });
+        }
+        
+        function switchMode(mode) {
+            window.currentMode = mode;
+            const body = document.body;
+            body.className = mode + '-mode';
+            const buttons = document.querySelectorAll('.mode-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons.forEach(btn => {
+                if (btn.textContent.includes(mode === "revision" ? "Révision" : "Examen")) {
+                    btn.classList.add("active");
+                }
+            });
+            if (mode === 'revision') {
+                toggleCheckboxes(false);
+                showLacunesButton();
+            } else {
+                if (!window.hasStarted) {
+                    toggleCheckboxes(true);
+                }
+                hideLacunesButton();
+            }
+        }
+        
+        function showLacunesButton() {
+            const btn = document.querySelector('.lacune-button');
+            if (btn) btn.style.display = 'block';
+        }
+        
+        function hideLacunesButton() {
+            const btn = document.querySelector('.lacune-button');
+            if (btn) btn.style.display = 'none';
+        }
+        
+        function identifyLacunes() {
+            // Critères standards (anamnèse, examen, management)
+            const criteria = document.querySelectorAll(".criteria-row");
+            criteria.forEach(criterion => {
+                const id = criterion.id.replace("criteria-", "");
+                const pointsElement = document.getElementById("points-" + id);
+                const points = pointsElement ? parseInt(pointsElement.textContent) : 0;
+                
+                criterion.classList.remove("lacune-rouge", "lacune-orange", "lacune-verte");
+                
+                if (points === 0) {
+                    criterion.classList.add("lacune-rouge");
+                } else if (points === 1) {
+                    criterion.classList.add("lacune-orange");
+                } else if (points >= 2) {
+                    criterion.classList.add("lacune-verte");
+                }
+            });
+            
+            // Critères communication (échelle A-E)
+            const commCriteria = document.querySelectorAll(".communication-section");
+            commCriteria.forEach(criterion => {
+                const id = criterion.id.replace("criteria-", "");
+                const radio = document.querySelector("input[name=\"" + id + "\"]:checked");
+                
+                criterion.classList.remove("lacune-rouge", "lacune-orange", "lacune-verte");
+                
+                if (!radio) {
+                    criterion.classList.add("lacune-rouge");
+                } else {
+                    const grade = radio.value;
+                    if (grade === "E" || grade === "D") {
+                        criterion.classList.add("lacune-rouge");
+                    } else if (grade === "C") {
+                        criterion.classList.add("lacune-orange");
+                    } else if (grade === "A" || grade === "B") {
+                        criterion.classList.add("lacune-verte");
+                    }
+                }
+            });
+        }
+        function toggleComment(id) {
+            const section = document.getElementById("comment-section-" + id);
+            const textarea = document.getElementById("comment-" + id);
+            if (section) {
+                section.classList.toggle("show");
+                // Focus automatiquement sur le textarea quand on ouvre la section
+                if (section.classList.contains("show") && textarea) {
+                    textarea.focus();
+                }
+            }
+        }
+
+        function updateCommentButton(id) {
+            const textarea = document.getElementById("comment-" + id);
+            const criterionRow = document.getElementById("criteria-" + id);
+            const commentSection = document.getElementById("comment-section-" + id);
+            if (textarea && criterionRow) {
+                const button = criterionRow.querySelector(".comment-button");
+                if (button) {
+                    if (textarea.value.trim()) {
+                        button.classList.add("has-content");
+                        if (commentSection) commentSection.classList.add("has-content");
+                    } else {
+                        button.classList.remove("has-content");
+                        if (commentSection) commentSection.classList.remove("has-content");
+                    }
+                }
+            }
+        }
+
+        function toggleSectionComment(section) {
+            const commentSection = document.getElementById("section-comment-" + section);
+            const textarea = document.getElementById("comment-section-" + section);
+            if (commentSection) {
+                commentSection.classList.toggle("show");
+                // Focus automatiquement sur le textarea quand on ouvre la section
+                if (commentSection.classList.contains("show") && textarea) {
+                    textarea.focus();
+                }
+            }
+        }
+
+        function updateSectionComment(section) {
+            const textarea = document.getElementById("comment-section-" + section);
+            const commentSection = document.getElementById("section-comment-" + section);
+            const buttons = document.querySelectorAll(".section-comment-button");
+            buttons.forEach(button => {
+                if (button.getAttribute("onclick") && button.getAttribute("onclick").includes(section)) {
+                    if (textarea && textarea.value.trim()) {
+                        button.classList.add("has-content");
+                        if (commentSection) commentSection.classList.add("has-content");
+                    } else {
+                        button.classList.remove("has-content");
+                        if (commentSection) commentSection.classList.remove("has-content");
+                    }
+                }
+            });
+        }
+
+        function updateGeneralComment() {
+            const textarea = document.getElementById("comment-general");
+            if (textarea) {
+                const section = textarea.closest(".section-comment-section");
+                if (section) {
+                    if (textarea.value.trim()) {
+                        section.classList.add("has-content");
+                    } else {
+                        section.classList.remove("has-content");
+                    }
+                }
+            }
+        }
+
+        function autoResizeTextarea(textarea) {
+            // Reset height to auto to get correct scrollHeight
+            textarea.style.height = "auto";
+            // Set new height based on content
+            const newHeight = textarea.scrollHeight + 2;
+            textarea.style.height = newHeight + "px";
+        }
+
+    </script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    <script>
+        // Appel final pour s'assurer que tout est coloré
+        // Forcer la coloration finale
+        if (window.colorPatientResponses) {
+            window.colorPatientResponses();
+        }
+    </script>
+</body>
+</html>

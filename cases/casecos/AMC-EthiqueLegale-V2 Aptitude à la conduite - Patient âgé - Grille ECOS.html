@@ -1,0 +1,2863 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMC-EthiqueLegale-V2 Aptitude à la conduite - Patient âgé - Grille ECOS</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        .header { background: #2c5aa0; color: white; padding: 15px; margin: -20px -20px 20px -20px; border-radius: 8px 8px 0 0; }
+        .section { margin-bottom: 30px; border: 2px solid #ddd; border-radius: 8px; overflow: hidden; background-color: #ffffff; }
+        .section-header { background: #f8f9fa; padding: 15px; font-weight: bold; font-size: 18px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
+        .section-content { padding: 15px; background-color: #ffffff; }
+        .header-row { display: grid; grid-template-columns: 2fr 80px 80px 80px 80px; gap: 10px; padding: 10px 0; border-bottom: 2px solid #ddd; font-weight: bold; text-align: center; color: #333333; }
+        .header-row.communication-header { grid-template-columns: 2fr 80px 80px 80px 80px 80px; }
+        .header-row div:first-child { text-align: left; }
+        .criteria-row { display: grid; grid-template-columns: 2fr 80px 80px 80px 80px; gap: 10px; align-items: start; padding: 15px 0 15px 5px; border-bottom: 1px solid #eeeeee; }
+        .criteria-row:last-child { border-bottom: none; }
+        .criteria-text { font-weight: 500; }
+        .sub-criteria { font-size: 0.9em; color: #333; margin-top: 5px; padding-left: 18px; line-height: 1.2; }
+        .details-with-checkboxes { margin-top: 8px; }
+        .detail-row { display: grid; grid-template-columns: 1fr 100px; align-items: center; padding: 2px 0 2px 18px; gap: 10px; line-height: 1.1; }
+        .detail-text { font-size: 0.9em; color: #333; }
+        .patient-response-highlight { color: rgb(44, 90, 160) !important; }
+        .detail-text .patient-response-highlight { color: rgb(44, 90, 160) !important; }
+        .criteria-detail .patient-response-highlight { color: rgb(44, 90, 160) !important; }
+        .detail-checkboxes { text-align: center; }
+        .detail-checkbox input[type="checkbox"] { cursor: pointer; transform: scale(1.1); }
+        .patient-response { font-size: 0.9em; color: rgb(44, 90, 160); font-weight: 500; }
+        .exemples-phrases { margin-top: 8px; padding-left: 20px; }
+        .exemple-phrase { font-size: 0.9em; color: rgba(112, 188, 123, 0.95); font-style: italic; line-height: 1.4; margin: 3px 0; }
+        .checkbox-group { text-align: center; }
+        .points-display { text-align: center; font-weight: bold; color: #2c5aa0; font-size: 18px; }
+        .scoring-rule { font-size: 0.85em; color: #888; font-style: italic; margin-top: 8px; padding-left: 20px; }
+        .criteria-subheader { background: #fffbe6; padding: 10px 15px; margin: 10px 0 5px 0; border-left: 4px solid #faad14; font-weight: bold; color: #8b6914; }
+        input[type="radio"] { cursor: pointer; transform: scale(1.2); }
+        input[type="radio"]:disabled { opacity: 0.3; cursor: not-allowed; }
+        .score { font-weight: bold; color: hsl(216, 57%, 40%); font-size: 18px; }
+        .total-sections { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .total-section { display: flex; flex-direction: column; justify-content: space-between; text-align: center; background: #f0f8ff; border: 1px solid #ddd; border-radius: 8px; transition: all 0.3s; }
+        .total-label { background: #f8f9fa; padding: 5px; font-weight: bold; font-size: 20px; border-bottom: 1px solid #ddd; }
+        .total-body { flex: 1; display: flex; align-items: center; justify-content: center; padding: 5px; }
+        .total-pourcent-body { flex: 1; padding: 10px; }
+        .total-score, .total-note-globale { font-size: 56px; font-weight: bold; line-height: 1; }
+        .total-pourcent-sections { display: flex; flex-wrap: nowrap; gap: 10px; height: 100%; align-items: stretch; }
+        .total-pourcent-section { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; text-align: center; background: #416caa; padding: 10px; border-radius: 5px; transition: all 0.3s; border: none; }
+        .total-pourcent-section:last-child { border-right: none; }
+        .total-section-label { color: #eeeeee; font-size: 14px; font-weight: normal; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .pourcent-body { flex: 1; display: flex; align-items: center; justify-content: center; }
+        .total-pourcent-value { font-weight: bold; font-size: 28px; line-height: 1; color: white; transition: all 0.3s; }
+        .note-a { background-color: #e6f4ea; color: #2c974b; }
+        .note-a.total-pourcent-section { background-color: #2c974b; }
+        .note-b { background-color: #e9f3fd; color: #4e9cf0; }
+        .note-b.total-pourcent-section { background-color: #4e9cf0; }
+        .note-c { background-color: #fdf5e6; color: #f0ad4e; }
+        .note-c.total-pourcent-section { background-color: #f0ad4e; }
+        .note-d { background-color: #fceee3; color: #e67e22; }
+        .note-d.total-pourcent-section { background-color: #e67e22; }
+        .note-e { background-color: #fbeaea; color: #d9534f; }
+        .note-e.total-pourcent-section { background-color: #d9534f; }
+        .note-neutral { background-color: #f0f8ff; color: #2c5aa0; }
+        .note-neutral.total-pourcent-section { background-color: #6B8BC3; }
+        .note-a.total-pourcent-body { background-color: #e6f4ea; }
+        .note-b.total-pourcent-body { background-color: #e9f3fd; }
+        .note-c.total-pourcent-body { background-color: #fdf5e6; }
+        .note-d.total-pourcent-body { background-color: #fceee3; }
+        .note-e.total-pourcent-body { background-color: #fbeaea; }
+        .note-neutral.total-pourcent-body { background-color: #f0f8ff; }
+        /* Styles pour les sections avec coloration selon le score */
+        .section.note-a { border-color: #2c974b; }
+        .section.note-a .section-header { background-color: #e6f4ea; color: #2c974b; }
+        .section.note-b { border-color: #4e9cf0; }
+        .section.note-b .section-header { background-color: #e9f3fd; color: #4e9cf0; }
+        .section.note-c { border-color: #f0ad4e; }
+        .section.note-c .section-header { background-color: #fdf5e6; color: #f0ad4e; }
+        .section.note-d { border-color: #e67e22; }
+        .section.note-d .section-header { background-color: #fceee3; color: #e67e22; }
+        .section.note-e { border-color: #d9534f; }
+        .section.note-e .section-header { background-color: #fbeaea; color: #d9534f; }
+        .section.note-neutral { border-color: #ddd; }
+        .section.note-neutral .section-header { background-color: #f8f9fa; color: #333333; }
+        /* Styles pour les critères individuels */
+        .criteria-row.score-2 { background-color: rgba(44, 151, 75, 0.1); }
+        .criteria-row.score-2 .criteria-text { color: #2c974b; }
+        .criteria-row.score-max { background-color: rgba(44, 151, 75, 0.1); }
+        .criteria-row.score-max .criteria-text { color: #2c974b; }
+        .criteria-row.score-1 { background-color: rgba(240, 173, 78, 0.1); }
+        .criteria-row.score-1 .criteria-text { color: #f0ad4e; }
+        .criteria-row.score-0 { background-color: rgba(217, 83, 79, 0.1); }
+        .criteria-row.score-0 .criteria-text { color: #d9534f; }
+        .criteria-row:not(.score-0):not(.score-1):not(.score-2):not(.score-max) .criteria-text { color: #000; }
+        /* Styles supplémentaires pour les scores plus élevés */
+        .criteria-row.score-3 { background-color: rgba(44, 151, 75, 0.1); }
+        .criteria-row.score-3 .criteria-text { color: #2c974b; }
+        .criteria-row.score-4 { background-color: rgba(44, 151, 75, 0.1); }
+        .criteria-row.score-4 .criteria-text { color: #2c974b; }
+        .criteria-row.score-5 { background-color: rgba(44, 151, 75, 0.1); }
+        .criteria-row.score-5 .criteria-text { color: #2c974b; }
+        .communication-section.score-a { background-color: rgba(44, 151, 75, 0.1); }
+        .communication-section.score-a .communication-text { color: #2c974b; }
+        .communication-section.score-b { background-color: rgba(78, 156, 240, 0.1); }
+        .communication-section.score-b .communication-text { color: #4e9cf0; }
+        .communication-section.score-c { background-color: rgba(240, 173, 78, 0.1); }
+        .communication-section.score-c .communication-text { color: #f0ad4e; }
+        .communication-section.score-d { background-color: rgba(230, 126, 34, 0.1); }
+        .communication-section.score-d .communication-text { color: #e67e22; }
+        .communication-section.score-e { background-color: rgba(217, 83, 79, 0.1); }
+        .communication-section.score-e .communication-text { color: #d9534f; }
+        .missing-items { display: none !important; }
+        .missing-items h3 { margin-top: 0; }
+        .missing-item { color: #dc3545; font-weight: bold; }
+        .redflags-main-section { margin-top: 30px; padding: 20px; background: #fff5f5; border-radius: 8px; border: 1px solid #f5c6cb; }
+        .redflags-main-section h3 { margin-top: 0; border-bottom: 2px solid #f5c6cb; padding-bottom: 10px; }
+        .redflags-category-section { margin: 15px 0; padding: 10px; background: white; border-radius: 5px; border-left: 4px solid #dc3545; }
+        /* STYLES AMÉLIORÉS POUR LA SECTION RÉSUMÉ */
+        .resume { margin-top: 30px; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
+        .resume-main-title { margin: 0; padding: 20px 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 24px; font-weight: bold; letter-spacing: 0.5px; }
+        .resume-content { padding: 20px; }
+        .resume-section { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+        .resume-section:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+        .section-title { margin: 0 0 15px 0; font-size: 20px; font-weight: bold; padding-bottom: 10px; border-bottom: 3px solid; }
+        .section-anamnese .section-title { color: #2196F3; border-color: #E3F2FD; }
+        .section-examen .section-title { color: #4CAF50; border-color: #E8F5E9; }
+        .section-management .section-title { color: #FF9800; border-color: #FFF3E0; }
+        .section-diagnostic .section-title { color: #9C27B0; border-color: #F3E5F5; }
+        .section-keypoints .section-title { color: #F44336; border-color: #FFEBEE; }
+        .resume-points { list-style: none; padding-left: 0; margin: 15px 0; }
+        .resume-points li { padding: 8px 0 8px 25px; line-height: 1.7; position: relative; transition: background 0.2s; }
+        .resume-points li:hover { background: rgba(0,0,0,0.02); margin-left: -10px; padding-left: 35px; }
+        .resume-bullet:before { content: "▸"; position: absolute; left: 5px; color: #667eea; font-weight: bold; }
+        .resume-category { font-weight: bold; color: #333; background: linear-gradient(90deg, #f0f0f0 0%, transparent 100%); margin: 15px -10px 8px -10px !important; padding: 8px 10px 8px 35px !important; border-left: 4px solid #667eea; }
+        .resume-bullet.highlight { background: #FFF9C4; border-radius: 4px; padding: 10px 10px 10px 30px !important; margin: 5px 0; }
+        .resume-bullet.with-data { font-family: "Courier New", monospace; }
+        .resume-subsection { background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%); padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 5px solid #fdcb6e; }
+        .resume-subsection.urgence { background: linear-gradient(135deg, #fab1a0 0%, #ff7675 100%); border-left-color: #d63031; }
+        .subsection-title { color: #2d3436; margin: 0 0 12px 0; font-size: 17px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+        .resume-subsection-points { list-style: none; padding-left: 0; margin: 10px 0; }
+        .resume-subsection-points li { padding: 6px 0 6px 20px; line-height: 1.6; position: relative; color: #2d3436; }
+        .resume-subsection-points li:before { content: "•"; position: absolute; left: 5px; color: #636e72; font-weight: bold; }
+        .resume-subsection-points .with-arrow { font-weight: 500; }
+        .table-title { color: #34495e; font-size: 16px; margin: 15px 0 10px 0; font-weight: bold; }
+        .resume-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 15px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .resume-table th { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px; text-align: left; font-weight: bold; font-size: 14px; letter-spacing: 0.5px; }
+        .resume-table td { padding: 10px 12px; border-bottom: 1px solid #ecf0f1; font-size: 14px; }
+        .resume-table tr:last-child td { border-bottom: none; }
+        .resume-table tr:nth-child(even) { background: #f8f9fa; }
+        .resume-table tr:hover { background: #e8f4ff; }
+        .resume-table .first-col { font-weight: 600; color: #2c3e50; background: rgba(102, 126, 234, 0.05); }
+        /* Styles pour les mnémos */
+        .mnemo-box { background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%); padding: 15px; border-radius: 10px; margin: 15px 0; box-shadow: 0 4px 15px rgba(86, 171, 47, 0.2); }
+        .mnemo-title { color: white; font-size: 18px; font-weight: bold; margin-bottom: 10px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+        .mnemo-content { color: white; font-size: 16px; line-height: 1.6; font-weight: 500; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+        .mnemo-items { list-style: none; padding: 0; margin: 0; }
+        .mnemo-items li { color: white; padding: 5px 0; font-size: 15px; }
+        .mnemo-letter { display: inline-block; width: 25px; height: 25px; background: white; color: #56ab2f; text-align: center; line-height: 25px; border-radius: 50%; font-weight: bold; margin-right: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        /* Styles pour la mise en évidence du texte */
+        .highlight-percent { background: #FFE082; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #F57C00; }
+        .highlight-range { background: #B2EBF2; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #00838F; }
+        .highlight-important { background: #FFCDD2; padding: 2px 6px; border-radius: 3px; font-weight: bold; color: #C62828; text-transform: uppercase; font-size: 0.9em; }
+        .arrow { color: #FF6B6B; font-weight: bold; font-size: 1.2em; }
+        .arrow-updown { color: #4ECDC4; font-weight: bold; font-size: 1.2em; }
+        .equals { color: #95E77E; font-weight: bold; padding: 0 4px; }
+        .annexes { margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border: 1px solid #ddd; }
+        .annexes h3 { margin-top: 0; color: #2c5aa0; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        .annexes-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 20px; }
+        .annexe-item { padding: 15px; background: white; border-radius: 5px; border: 1px solid #e0e0e0; }
+        .annexe-expert { background: #d0e3ff !important; border: 2px solid #0066ff !important; }
+        .annexe-theorie { background: #e4f1e5 !important; border: 2px solid #2e7d32 !important; }
+        .annexe-scenario { background: #eceff1 !important; border: 2px solid #4d6a78 !important; }
+        .annexe-title { font-weight: bold; color: #2c5aa0; margin-bottom: 8px; font-size: 18px; }
+        .annexe-expert .annexe-title { color: #0066ff !important; }
+        .annexe-theorie .annexe-title { color: #2e7d32 !important; }
+        .annexe-scenario .annexe-title { color: #4d6a78 !important; }
+        .annexe-description { color: #666; font-style: italic; margin-bottom: 10px; font-size: 14px; }
+        .annexe-image { text-align: center; margin: 10px 0; }
+        .annexe-image img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        /* Conteneur flex pour les images */
+        .images-wrapper { 
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2%;
+            margin-top: 20px;
+        }
+        /* Style pour afficher les images en colonnes de 2 */
+        .annexe-item[data-image-id] { 
+            width: 49% !important;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .annexe-document { background: #f0f8ff; padding: 10px; border-radius: 4px; border-left: 4px solid #2c5aa0; white-space: pre-wrap; font-family: "Courier New", monospace; font-size: 13px; }
+        
+        /* STYLES AMÉLIORÉS POUR PRESENTATION PATIENT */
+        .presentation-patient { margin-top: 30px; padding: 0; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
+        .presentation-main-title { margin: 0; padding: 20px 25px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; font-size: 24px; font-weight: bold; letter-spacing: 0.5px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+        .presentation-content { padding: 20px; }
+        .presentation-section { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .presentation-section-title { margin: 0 0 15px 0; font-size: 20px; font-weight: bold; padding-bottom: 10px; border-bottom: 3px solid; }
+        /* Couleurs spécifiques par type de section */
+        .section-checklist .presentation-section-title { color: #00BCD4; border-color: #E0F7FA; }
+        .section-longue .presentation-section-title { color: #3F51B5; border-color: #E8EAF6; }
+        .section-express .presentation-section-title { color: #FFC107; border-color: #FFF8E1; }
+        .section-questions .presentation-section-title { color: #E91E63; border-color: #FCE4EC; }
+        .section-mnemo .presentation-section-title { color: #8BC34A; border-color: #F1F8E9; }
+        .section-intro .presentation-section-title { color: #795548; border-color: #EFEBE9; }
+        .section-synthese .presentation-section-title { color: #607D8B; border-color: #ECEFF1; }
+        /* Points et listes */
+        .presentation-points { list-style: none; padding-left: 0; margin: 15px 0; }
+        .presentation-points li { padding: 8px 0 8px 30px; line-height: 1.7; position: relative; border-left: 3px solid transparent; transition: all 0.3s; }
+        .presentation-points li:before { content: "✓"; position: absolute; left: 8px; color: #4CAF50; font-weight: bold; }
+        .presentation-points li:hover { background: rgba(76, 175, 80, 0.05); border-left-color: #4CAF50; }
+        /* Contenu formaté */
+        .presentation-content p { line-height: 1.8; color: #424242; margin: 10px 0; }
+        /* Sous-sections */
+        .presentation-subsection { background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%); padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 5px solid #009688; }
+        .presentation-subsection h5 { color: #00695c; margin: 0 0 12px 0; font-size: 17px; font-weight: bold; }
+        /* Questions et réponses */
+        .qa-container { background: #f5f5f5; padding: 15px; border-radius: 8px; margin-top: 15px; }
+        .presentation-qa { background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .presentation-qa:last-child { margin-bottom: 0; }
+        .presentation-question { display: flex; align-items: center; margin-bottom: 12px; padding: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px; font-weight: bold; }
+        .q-number { display: inline-block; min-width: 35px; height: 35px; background: white; color: #667eea; text-align: center; line-height: 35px; border-radius: 50%; font-weight: bold; margin-right: 12px; }
+        .q-text { flex: 1; }
+        .presentation-reponse { padding: 12px; background: #fafafa; border-radius: 6px; margin-top: 10px; }
+        .presentation-reponse.structured { display: flex; gap: 15px; }
+        .reponse-pour, .reponse-contre { flex: 1; }
+        .arg-title { font-weight: bold; margin-bottom: 8px; padding: 5px 10px; border-radius: 4px; }
+        .reponse-pour .arg-title { background: #E8F5E9; color: #2E7D32; }
+        .reponse-contre .arg-title { background: #FFEBEE; color: #C62828; }
+        .arg-list { list-style: none; padding-left: 0; margin: 8px 0; }
+        .arg-list li { padding: 5px 0 5px 20px; position: relative; }
+        .arg-list li:before { content: "▸"; position: absolute; left: 5px; }
+        .response-list { list-style: none; padding-left: 0; }
+        .response-list li { padding: 6px 0 6px 25px; position: relative; }
+        .response-list li:before { content: "•"; position: absolute; left: 8px; color: #667eea; font-weight: bold; font-size: 1.2em; }
+        .presentation-analyse { display: flex; align-items: start; gap: 10px; margin-top: 12px; padding: 10px; background: #FFF9C4; border-radius: 6px; border-left: 4px solid #FFC107; }
+        .analyse-icon { font-size: 1.5em; }
+        .analyse-text { flex: 1; color: #F57C00; font-style: italic; }
+        /* Style pour les astuces */
+        .presentation-astuce { display: flex; align-items: start; gap: 10px; margin-top: 12px; padding: 12px; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-radius: 8px; border-left: 4px solid #4CAF50; box-shadow: 0 2px 8px rgba(76, 175, 80, 0.15); }
+        .astuce-icon { font-size: 1.8em; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        .astuce-text { flex: 1; color: #2E7D32; font-weight: 500; font-size: 1.05em; line-height: 1.5; }
+        /* Style pour les sections de réponse spécifiques */
+        .reponse-section { margin: 10px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; }
+        .reponse-section strong { display: block; margin-bottom: 8px; font-size: 1.1em; }
+        .reponse-section ul { margin: 5px 0; padding-left: 25px; }
+        .reponse-section li { padding: 4px 0; }
+        
+        /* Styles pour le scénario de la patiente standardisée */
+        .annexe-scenario { grid-column: 1 / -1; max-width: none; }
+        .annexe-scenario-content { padding: 15px; background: transparent; border-radius: 4px; }
+        .scenario-info { background: #607d8b80; padding: 10px 15px; border-radius: 4px; margin-bottom: 15px; font-size: 15px; }
+        .scenario-section { margin-bottom: 20px; }
+        .scenario-subsection { margin-bottom: 15px; }
+        .scenario-subsection strong { color: #2c5aa0; }
+        .scenario-section h4 { color: #4d6a78; margin: 10px 0 5px 0; font-size: 16px; border-bottom: 1px solid #607d8b80; padding-bottom: 5px; }
+        .scenario-section ul { margin: 10px 0; padding-left: 25px; }
+        .scenario-section li { margin: 5px 0; line-height: 1.5; }
+        .scenario-subsection { margin: 10px 0 15px 0; }
+        .scenario-subsection strong { color: #555; }
+        .scenario-subsection ul { margin-top: 5px; }
+        
+        /* Styles pour les interventions de l'expert */
+        .annexe-interventions { grid-column: 1 / -1; max-width: none; }
+        .annexe-interventions-content { padding: 15px; }
+        .intervention-item { background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 12px; margin-bottom: 12px; }
+        .intervention-header { font-size: 15px; margin-bottom: 8px; color: #856404; }
+        .intervention-moment { font-weight: normal; font-style: italic; color: #666; }
+        .intervention-instruction { margin: 8px 0; color: #333; }
+        .intervention-message { background: #fff; padding: 8px 12px; border-left: 3px solid #ffc107; font-style: italic; color: #721c24; margin-top: 8px; }
+        
+        /* Styles pour les informations de l'expert */
+        .annexe-informations-expert { grid-column: 1 / -1; max-width: none; }
+        .annexe-informations-content { padding: 15px; background: #f5f5f5; border-radius: 4px; }
+        .info-section { margin-bottom: 20px; }
+        .info-section:last-child { margin-bottom: 0; }
+        .info-section h4 { color: #2c5aa0; margin: 0 0 10px 0; font-size: 16px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .annexe-expert .info-section h4 { color: #0066ff; border-bottom: 1px solid #0066ff80; }
+        .expert-section h4 { color: #0066ff; margin: 10px 0 5px 20px; font-size: 16px; border-bottom: 1px solid #0066ff80; padding-bottom: 5px; }
+        .info-section h5 { color: #4a7ba7; margin: 15px 0 8px 0; font-size: 14px; font-weight: 600; }
+        .info-section p { margin: 10px 0; line-height: 1.6; }
+        .info-section ul { margin: 10px 0; padding-left: 25px; }
+        .info-section li { margin: 5px 0; line-height: 1.5; }
+        
+        /* Styles pour les diagnostics différentiels dans annexes */
+        .annexe-dd-section { grid-column: 1 / -1; max-width: none; }
+        .annexe-dd-content { padding: 15px; background: #fff5f0; border-radius: 4px; }
+        .dd-category { margin-bottom: 20px; }
+        .dd-category:last-child { margin-bottom: 0; }
+        .dd-category h4 { color: #a92117; margin: 0 0 15px 0; font-size: 18px; border-bottom: 1px solid #e0d0c8; padding-bottom: 5px; }
+        .dd-category ul li::marker { color: rgb(169, 34, 23); }
+        .dd-items { display: flex; flex-direction: column; gap: 15px; }
+        .dd-item { background: white; border: 1px solid #e5e5e5; border-radius: 4px; padding: 12px; }
+        .dd-item-header { margin-bottom: 8px; }
+        .dd-diagnosis { color: #a92117; font-weight: 600; font-size: 15px; }
+        .dd-cause { margin-bottom: 8px; line-height: 1.5; font-size: 14px; }
+        .dd-test { font-size: 14px; margin-top: 5px; }
+        
+        /* Styles pour la théorie pratique */
+        .annexe-theorie-pratique { grid-column: 1 / -1; max-width: none; }
+        .annexe-theorie-content { padding: 15px; background: transparent; border-radius: 4px; }
+        .theorie-text { line-height: 1.6; color: #333; }
+        .theorie-section { margin-bottom: 20px; }
+        .theorie-section:last-child { margin-bottom: 0; }
+        .theorie-section h4 { color: #2e7d32; margin: 10px 0 5px 0; font-size: 16px; border-bottom: 1px solid #2e7d3280; padding-bottom: 5px; }
+        .theorie-section p { margin: 10px 0; line-height: 1.6; }
+        .theorie-section ul { margin: 10px 0; padding-left: 25px; }
+        .theorie-section li { margin: 5px 0; line-height: 1.5; }
+        /* Couleurs spécifiques pour les sections théoriques */
+        .theorie-section-rappels h4, .theorie-section-rappels p, .theorie-section-rappels li { color: rgb(153, 136, 0) !important; }
+        .theorie-section-examens h4, .theorie-section-examens p, .theorie-section-examens li { color: rgb(52, 105, 46) !important; }
+        /* Styles pour rappels thérapeutiques et examens complémentaires */
+        .annexe-rappels-therapeutiques, .annexe-examens-complementaires { grid-column: 1 / -1; max-width: none; }
+        .rappels-list, .examens-list { margin: 0; padding-left: 25px; }
+        .rappels-list li, .examens-list li { margin: 8px 0; line-height: 1.6; color: #333; }
+        .annexe-rappels-therapeutiques .annexe-title { color: #998800; }
+        .annexe-examens-complementaires .annexe-title { color: #346929; }
+        
+        /* Styles pour le tableau clinique */
+        .tableau-clinique { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+        .tableau-clinique thead { background-color: #2c5aa0; color: white; }
+        .tableau-clinique th { padding: 10px; text-align: left; border: 1px solid #ddd; }
+        .tableau-clinique tbody tr:nth-child(even) { background-color: #f9f9f9; }
+        .tableau-clinique tbody tr:hover { background-color: #e8f4f8; }
+        .tableau-clinique td { padding: 8px; border: 1px solid #ddd; }
+        
+        .communication-section { display: grid; grid-template-columns: 2fr 80px 80px 80px 80px 80px; gap: 10px; align-items: start; padding: 15px 0 15px 5px; border-bottom: 1px solid #eee; }
+        .communication-text { font-weight: 500; }
+        .communication-desc { font-size: 0.85em; color: #666; margin-top: 5px; font-style: italic; }
+        /* Section Clôture */
+        .cloture-section { margin-bottom: 20px; }
+        .cloture-section .section-header { background-color: #f0f4f8; }
+        .cloture-item { margin-bottom: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 5px; }
+        .cloture-title { color: #2c5aa0; margin: 0 0 10px 0; font-size: 16px; font-weight: bold; }
+        .cloture-content { color: #333; line-height: 1.6; font-style: italic; }
+        .cloture-content-green { color: rgb(112, 188, 123); font-weight: 500; }
+        .cloture-details { margin-top: 10px; }
+        .cloture-detail { color: #333; line-height: 1.8; margin: 5px 0; padding-left: 15px; position: relative; }
+        .cloture-detail:before { content: "•"; position: absolute; left: 0; color: #666; }
+        .cloture-qr-item { margin: 15px 0; padding: 10px; background: #f0f4f8; border-radius: 5px; border-left: 3px solid #2c5aa0; }
+        .cloture-question { color: #333; font-weight: bold; margin-bottom: 8px; }
+        .cloture-question .patient-response { color: rgb(44, 90, 160); }
+        .cloture-response { color: rgb(112, 188, 123); font-style: italic; margin-top: 8px; padding-left: 15px; }
+        .communication-desc-detail { font-size: 0.8em; color: #666; margin-left: 20px; font-style: normal; }
+        .vital-signs { margin-top: 10px; margin-bottom: 0px; display: grid; gap: 15px; font-size: 0.9em; }
+        .vital-sign { text-align: center; background: #416caa; padding: 10px; border-radius: 5px; }
+        .vital-sign-label { color: #eeeeee; }
+        .vital-sign-value { color: rgb(255, 255, 255); margin-top: 2px; }
+        .dd-section { background: #f0f8ff; padding: 15px; margin: 0 0 10px 0; border-radius: 5px; }
+        .dd-title { font-weight: bold; margin-bottom: 10px; color: #2c5aa0; }
+        .dd-category { margin: 10px 0; font-weight: bold; color: #2c5aa0; }
+        .dd-item { margin-left: 20px; margin-top: 5px; font-weight: bold; color: rgb(169, 34, 23); }
+        .dd-test { color: #666; font-style: italic; margin-left: 10px; }
+        .therapy-section { background: rgba(255, 250, 230, 0.4); padding: 10px 10px 0 20px; margin: 0; border-radius: 5px; color: #000; }
+        .therapy-title { font-weight: bold; margin-bottom: 5px; color: #998800; }
+        .redflags-section { background: #fff5f5; padding: 10px; margin: 5px 0; border-radius: 5px; }
+        .redflags-title { font-weight: bold; margin-bottom: 8px; color: #dc3545; }
+        .redflags-item { margin-bottom: 6px; padding-left: 22px; }
+        .redflags-text { color: #dc3545; font-weight: 500; }
+        .redflags-description { color: #666; font-size: 0.9em; margin-top: 2px; margin-left: 20px; }
+        .annexes { margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border: 1px solid #ddd; }
+        .annexes h3 { margin-top: 0; color: #2c5aa0; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        .annexes-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 20px; }
+        .annexe-item { padding: 15px; background: white; border-radius: 5px; border: 1px solid #e0e0e0; }
+        .annexe-expert { background: #d0e3ff !important; border: 2px solid #0066ff !important; }
+        .annexe-theorie { background: #e4f1e5 !important; border: 2px solid #2e7d32 !important; }
+        .annexe-scenario { background: #eceff1 !important; border: 2px solid #4d6a78 !important; }
+        .annexe-title { font-weight: bold; color: #2c5aa0; margin-bottom: 8px; font-size: 18px; }
+        .annexe-expert .annexe-title { color: #0066ff !important; }
+        .annexe-theorie .annexe-title { color: #2e7d32 !important; }
+        .annexe-scenario .annexe-title { color: #4d6a78 !important; }
+        .annexe-description { color: #666; font-style: italic; margin-bottom: 10px; font-size: 14px; }
+        .annexe-image { text-align: center; margin: 10px 0; }
+        .annexe-image img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        /* Conteneur flex pour les images */
+        .images-wrapper { 
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2%;
+            margin-top: 20px;
+        }
+        /* Style pour afficher les images en colonnes de 2 */
+        .annexe-item[data-image-id] { 
+            width: 49% !important;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .annexe-document { background: #f0f8ff; padding: 10px; border-radius: 4px; border-left: 4px solid #2c5aa0; white-space: pre-wrap; font-family: "Courier New", monospace; font-size: 13px; }
+        
+        /* MINUTEUR */
+        .timer-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.75);
+            border: 3px solid #2c5aa0;
+            border-radius: 15px;
+            padding: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-align: center;
+            min-width: 200px;
+        }
+        .timer-display {
+            font-size: 40px;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            font-family: 'Courier New', monospace;
+        }
+        .timer-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .timer-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        .start-btn {
+            background: #28a745;
+            color: white;
+        }
+        .start-btn:hover {
+            background: #218838;
+        }
+        .stop-btn {
+            background: #dc3545;
+            color: white;
+        }
+        .stop-btn:hover {
+            background: #c82333;
+        }
+        .reset-btn {
+            background: #6c757d;
+            color: white;
+        }
+        .reset-btn:hover {
+            background: #5a6268;
+        }
+        .timer-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .timer-btn:disabled:hover {
+            background: #6c757d;
+        }
+        .timer-status {
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .status-running {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        .status-warning {
+            background: #fff3cd;
+            color: #ff6f00;
+        }
+        .status-finished {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .timer-warning {
+            animation: pulse-warning 2s infinite;
+        }
+        .timer-critical {
+            animation: pulse-critical 1s infinite;
+        }
+        @keyframes pulse-warning {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @keyframes pulse-critical {
+            0%, 100% { transform: scale(1); border-color: #dc3545; }
+            50% { transform: scale(1.1); border-color: #ff0000; }
+        }
+        
+        /* COLORATION POST-MINUTEUR */
+        .criteria-zero-points {
+            background-color: rgba(251, 234, 234, 0.6) !important;
+        }
+        .criteria-one-point {
+            background-color: rgba(253, 245, 230, 0.6) !important;
+        }
+        .criteria-full-points {
+            background-color: rgba(230, 244, 234, 0.6) !important;
+        }
+        .criteria-not-answered {
+            background-color: rgba(240, 248, 255, 0.6) !important;
+        }
+        
+        /* COLORATION COMMUNICATION */
+        .communication-note-a {
+            background-color: rgba(230, 244, 234, 0.6) !important;
+        }
+        .communication-note-b {
+            background-color: rgba(233, 243, 253, 0.6) !important;
+        }
+        .communication-note-c {
+            background-color: rgba(253, 245, 230, 0.6) !important;
+        }
+        .communication-note-d {
+            background-color: rgba(252, 238, 227, 0.6) !important;
+        }
+        .communication-note-e {
+            background-color: rgba(251, 234, 234, 0.6) !important;
+        }
+        .communication-not-answered {
+            background-color: rgba(240, 248, 255, 0.6) !important;
+        }
+        
+        /* MODE SELECTOR */
+        .mode-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 2px solid #2c5aa0;
+            border-radius: 30px;
+            padding: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1001;
+            display: flex;
+            gap: 5px;
+        }
+        .mode-button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            background: transparent;
+            color: #2c5aa0;
+        }
+        .mode-button.active {
+            background: #2c5aa0;
+            color: white;
+        }
+        .mode-button:hover:not(.active) {
+            background: #e8f0fe;
+        }
+        
+        /* Mode-specific hiding and showing - CORRIGÉ */
+        .revision-mode .timer-container {
+            display: none !important;
+        }
+        .exam-mode .timer-container {
+            display: block !important;
+        }
+        .exam-mode .revision-controls {
+            display: none !important;
+        }
+        /* Masquer les descriptions et titres d'annexes en mode examen quand le timer est actif */
+        .exam-mode.timer-running .annexe-item .annexe-title,
+        .exam-mode.timer-running .annexe-item .annexe-description {
+            display: none !important;
+        }
+        
+        /* Revision controls */
+        .revision-controls {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: white;
+            border: 2px solid #4CAF50;
+            border-radius: 30px;
+            padding: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 5px;
+            z-index: 1000;
+        }
+        .lacune-button {
+            background: transparent;
+            color: #4CAF50;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .lacune-button:hover {
+            background: #4CAF50;
+            color: white;
+        }
+        .reset-revision-button {
+            background: transparent;
+            color: #6c757d;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .reset-revision-button:hover {
+            background: #6c757d;
+            color: white;
+        }
+        
+        /* Styles pour les commentaires discrets */
+        .comment-button { 
+            background: none; 
+            border: none; 
+            color: #2c5aa0; 
+            cursor: pointer; 
+            font-size: 14px; 
+            padding: 2px 6px; 
+            margin-left: 8px; 
+            border-radius: 3px; 
+            opacity: 0.6;
+            transition: all 0.2s;
+        }
+        .comment-button:hover { opacity: 1; background: rgba(44, 90, 160, 0.1); }
+        .comment-button.has-content { opacity: 1; color: #d9534f; }
+        .criterion-comment-section { 
+            display: none; 
+            margin: 8px 0 12px 20px; 
+            padding: 10px; 
+            background: #fafafa; 
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .criterion-comment-section.show { display: block; }
+        .section-comment-button {
+            background: rgba(44, 90, 160, 0.1);
+            border: 1px solid #2c5aa0;
+            color: #2c5aa0;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 4px 8px;
+            margin-left: 10px;
+            border-radius: 15px;
+            opacity: 0.8;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .section-comment-button:hover { 
+            opacity: 1; 
+            background: rgba(44, 90, 160, 0.2); 
+            transform: scale(1.05);
+        }
+        .section-comment-button.has-content { 
+            background: rgba(220, 53, 69, 0.1);
+            border-color: #d9534f;
+            color: #d9534f; 
+        }
+        .section-comment-section { 
+            display: none;
+            margin: 20px 0; 
+            padding: 12px; 
+            background: #f8f9fa; 
+            border-radius: 6px;
+        }
+        .section-comment-section.show { display: block; }
+        .section-comment-section.global { 
+            display: block; 
+            background: #f0f8ff; 
+        }
+        /* La section commentaire global reste toujours visible sauf à l'impression */
+        .comment-textarea { 
+            width: calc(100% - 0px); 
+            min-height: 26px; 
+            padding: 5px; 
+            margin-right: 0px;
+            border: 1px solid #ddd; 
+            border-radius: 3px; 
+            font-family: Arial, sans-serif;
+            font-size: 12px; 
+            resize: vertical;
+            box-sizing: border-box;
+            overflow-y: hidden;
+            color: #7b3f00;
+            height: 26px;
+        }
+        .section-comment-section .comment-textarea {
+            min-height: 28px;
+            font-size: 14px;
+            height: 28px;
+        }
+        .section-comment-section.global .comment-textarea {
+            min-height: 30px;
+            font-size: 16px;
+            height: 30px;
+        }
+        .comment-textarea:focus {
+            outline: none;
+            border-color: #2c5aa0;
+            box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.1);
+        }
+        
+        /* Masquer les boutons à l'impression */
+        @media print {
+            .comment-button,
+            .section-comment-button {
+                display: none !important;
+            }
+            .criterion-comment-section:not(.has-content),
+            .section-comment-section:not(.has-content) {
+                display: none !important;
+            }
+            .criterion-comment-section.has-content,
+            .section-comment-section.has-content {
+                display: block !important;
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Styles pour les lacunes */
+        .lacune-rouge {
+            background-color: #ffebee !important;
+        }
+        .lacune-orange {
+            background-color: #fff3e0 !important;
+        }
+        .lacune-verte {
+            background-color: #e8f5e8 !important;
+        }
+        
+        /* Bouton d'impression */
+        .print-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2c5aa0;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+            z-index: 1000;
+        }
+        .print-button:hover {
+            background: #1e3f70;
+        }
+        @media print {
+            /* Masquer les éléments interactifs */
+            .print-button, .mode-selector, .revision-controls, .missing-items { display: none !important; }
+            .comment-button, .section-comment-button { display: none !important; }
+            /* IMPORTANT: MASQUER LE MINUTEUR à L'IMPRESSION! */
+            .timer-container {
+                display: none !important;
+                visibility: hidden !important;
+                position: absolute !important;
+                left: -9999px !important;
+            }
+            /* Supprimer les bordures gauches à l'impression */
+            .criteria-row { border-left: none !important; }
+            .communication-section { border-left: none !important; }
+            .lacune-rouge { border-left: none !important; }
+            .lacune-orange { border-left: none !important; }
+            .lacune-verte { border-left: none !important; }
+            
+            /* Gestion des commentaires à l'impression */
+            .criterion-comment-section:not(.has-content),
+            .section-comment-section:not(.has-content) { display: none !important; }
+            .section-comment-section.global:not(.has-content) { display: none !important; }
+            .criterion-comment-section.has-content,
+            .section-comment-section.has-content { display: block !important; }
+            
+            /* Les textareas conservent leur hauteur actuelle à l'impression */
+            .comment-textarea {
+                border: 1px solid #ccc !important;
+                background: white !important;
+                padding: 4px !important;
+                margin-right: 15px !important;
+                resize: none !important;
+                font-size: 8pt !important;
+                font-family: Arial, sans-serif !important;
+                font-style: italic !important;
+                color: #333 !important;
+                border-radius: 2px !important;
+                /* Conserver la hauteur actuelle */
+                overflow: hidden !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            /* Sections commentaires */
+            .criterion-comment-section {
+                page-break-inside: avoid;
+                margin: 6px 0 8px 15px !important;
+                padding: 6px 8px !important;
+                background: #f9f9f9 !important;
+                border-left: 2px solid #666 !important;
+                border-radius: 0 3px 3px 0 !important;
+                box-shadow: none !important;
+            }
+            
+            /* Cacher les sections de commentaires vides */
+            .criterion-comment-section:not(.show) {
+                display: none !important;
+            }
+            .criterion-comment-section.show:not(.has-content) {
+                display: none !important;
+            }
+            
+            .section-comment-section {
+                page-break-inside: avoid;
+                margin: 5px 0 10px 0 !important;
+                padding: 6px 8px !important;
+                background: #f5f5f5 !important;
+                border: 1px solid #ccc !important;
+                border-radius: 4px !important;
+            }
+            
+            /* Cacher toutes les sections de commentaires vides à l'impression */
+            .section-comment-section {
+                display: none !important;
+            }
+            /* Montrer seulement les sections avec contenu */
+            .section-comment-section.has-content {
+                display: block !important;
+            }
+            
+            /* Configuration de la page */
+            @page { size: A4; margin: 10mm 9mm 10mm 10mm; }
+            body { margin: 0; background: white !important; font-size: 9pt; }
+            
+            /* Optimisation du container et des marges */
+            .container { 
+                max-width: 100%; 
+                margin: 0; 
+                box-shadow: none; 
+                padding: 0; 
+                background: white !important;
+            }
+            
+            /* Gestion du header pour qu'il ne soit jamais seul */
+            .header { 
+                page-break-after: avoid; 
+                margin: 0;
+                margin-bottom: 10px;
+                padding: 10px;
+                font-size: 8pt;
+            }
+            .header h1 { font-size: 14pt; margin: 0 0 5px 0; }
+            
+            /* Optimisation des signes vitaux */
+            .vital-signs { gap: 10px; margin: 5px 0; }
+            .vital-sign { padding: 5px; font-size: 8pt; }
+            
+            /* Forcer l'anamnèse à commencer sur la page 1 */
+            .section:first-of-type { page-break-before: avoid !important; }
+            .section:first-of-type .section-header { 
+                page-break-after: avoid; 
+                min-height: 20px;
+            }
+            .section:first-of-type .criteria-row:first-child { 
+                page-break-before: avoid !important; 
+            }
+            
+            /* Les autres sections peuvent se diviser si nécessaire */
+            .section { 
+                page-break-inside: auto; 
+                margin-bottom: 15px;
+            }
+            .section-header { 
+                page-break-after: avoid;
+                font-size: 12pt;
+                padding: 8px;
+            }
+            .section-content { padding: 8px; }
+            
+            /* Optimisation de la grille */
+            .header-row { 
+                grid-template-columns: 2.5fr 60px 60px 60px 60px; 
+                font-size: 8pt;
+            }
+            .header-row.communication-header { 
+                grid-template-columns: 2.5fr 60px 60px 60px 60px 60px; 
+                padding: 5px 0;
+            }
+            .criteria-row { 
+                grid-template-columns: 2.5fr 60px 60px 60px 60px; 
+                page-break-inside: avoid;
+                padding: 8px 0 8px 5px;
+            }
+            .criteria-text { font-size: 8.5pt; line-height: 1.1 !important; }
+            .sub-criteria { font-size: 7.5pt; padding-left: 15px; line-height: 1.1 !important; }
+            .detail-row { font-size: 7.5pt; padding: 1px 0 1px 15px; line-height: 1.0; }
+            .detail-text { font-size: 7.5pt; line-height: 1.1 !important; }
+            .patient-response { font-size: 7.5pt; }
+            .points-display { font-size: 14px; }
+            
+            /* Communication section */
+            .communication-section-container {
+                page-break-inside: avoid !important;
+            }
+            
+            /* Cloture section */
+            .cloture-section {
+                page-break-inside: avoid !important;
+            }
+            .cloture-item {
+                page-break-inside: avoid !important;
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+            .cloture-title { font-size: 10pt; }
+            .cloture-content { font-size: 8.5pt; line-height: 1.2 !important; }
+            .communication-section { 
+                grid-template-columns: 2.5fr 60px 60px 60px 60px 60px;
+                padding: 8px 0;
+            }
+            .communication-text { font-size: 8.5pt; }
+            .communication-desc { font-size: 7pt; }
+            
+            /* Optimisation des sections spéciales */
+            .dd-section { padding: 8px; margin: 0 0 5px 0; font-size: 8pt; }
+            .dd-title { font-size: 9pt; }
+            .dd-item { font-size: 8pt; margin-left: 15px; }
+            
+            .therapy-section { 
+                padding: 8px; 
+                margin: 0; 
+                font-size: 8pt;
+                background: rgba(255, 250, 230, 0.3) !important;
+                color: #000 !important;
+            }
+            .therapy-title { font-size: 9pt; }
+            
+            .redflags-section { padding: 8px; margin: 5px 0; }
+            .redflags-title { font-size: 9pt; }
+            .redflags-text { font-size: 8.5pt; }
+            .redflags-description { font-size: 7.5pt; }
+            
+            /* Optimisation des totaux */
+            .total-sections { 
+                gap: 6px;
+                margin-bottom: 6px;
+            }
+            .total-label { 
+                padding: 4px;
+                font-size: 16px;
+                border-radius: 8px 8px 0 0;
+            }
+            .total-body {
+                padding: 3px;
+                border-radius: 0 0 8px 8px;
+            }
+            .total-score,
+            .total-note-globale {
+                font-size: 32px;
+            }
+            .total-pourcent-body {
+                padding: 6px;
+                border-radius: 0 0 8px 8px;
+            }
+            .total-pourcent-sections {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 4px;
+                align-items: stretch;
+            }
+            .total-pourcent-section {
+                flex: 0 0 auto;
+                min-width: 60px;
+                padding: 6px 8px;
+                white-space: nowrap;
+            }
+            .total-section-label {
+                font-size: 11px;
+                margin-bottom: 3px;
+                white-space: nowrap;
+            }
+            .total-pourcent-value {
+                font-size: 20px;
+            }
+            .pourcent-body {
+                padding: 2px 0;
+            }
+            
+            
+            /* Optimisations pour la section résumé à l'impression */
+            .resume { 
+                page-break-before: always !important;
+                margin-top: 0 !important;
+                padding-top: 15px !important;
+            }
+            
+            .resume-section { 
+                page-break-inside: avoid !important;
+            }
+            
+            .resume-subsection { 
+                page-break-inside: avoid !important;
+            }
+            
+            .resume-table { 
+                page-break-inside: avoid !important;
+            }
+            
+            /* Optimisations pour les annexes à l'impression */
+            .annexes { 
+                page-break-before: always !important;
+                margin-top: 0 !important;
+                padding-top: 15px !important;
+            }
+            
+            .annexes-grid { 
+                display: block !important; 
+                margin-top: 15px !important; 
+            }
+            
+            .annexe-item { 
+                page-break-inside: avoid !important;
+                padding: 15px !important;
+                border: 1px solid #ddd !important;
+                margin-bottom: 15px !important;
+                width: 100% !important;
+            }
+            
+            /* Style spécifique pour les images à 50% */
+            .annexe-item[data-image-id] { 
+                width: 48% !important;
+                display: inline-block !important;
+                vertical-align: top !important;
+                margin-right: 2% !important;
+            }
+            
+            /* Ajustement pour aligner les images par paires */
+            .annexe-item[data-image-id]:nth-child(even) { 
+                margin-right: 0 !important;
+            }
+            
+            .annexe-title { 
+                font-size: 10pt !important;
+                margin-bottom: 5px !important;
+            }
+            
+            .annexe-description { 
+                font-size: 8pt !important;
+                line-height: 1.3 !important;
+                margin-bottom: 8px !important;
+            }
+            
+            /* Réduire l'interligne des detail-row */
+            .detail-row { 
+                line-height: 1.1 !important; 
+                padding: 2px 0 2px 15px !important;
+            }
+            
+            /* Réduire et ajuster les checkboxes des détails */
+            .detail-checkboxes { 
+                text-align: right !important;
+                padding-right: 5px !important;
+            }
+            .detail-checkbox input[type="checkbox"] { 
+                transform: scale(0.8) !important;
+                margin: 0 !important;
+            }
+            
+            /* Page-break pour DD section et théorie pratique */
+            .annexe-dd-section,
+            .annexe-theorie-pratique { 
+                page-break-before: always !important; 
+            }
+            
+            /* Pas de page-break dans les scenario-section */
+            .scenario-section, 
+            .scenario-subsection { 
+                page-break-inside: avoid !important; 
+            }
+            
+            /* Réduire l'interligne dans toutes les annexes */
+            .annexe-scenario-content,
+            .annexe-interventions-content,
+            .annexe-informations-content,
+            .annexe-theorie-content { 
+                line-height: 1.15 !important; 
+            }
+            
+            /* Styles spécifiques pour les sections du scénario */
+            .scenario-section {
+                margin-bottom: 8px !important;
+                padding: 4px !important;
+            }
+            
+            .scenario-section h4 {
+                font-size: 9.5pt !important;
+                margin: 0 0 4px 0 !important;
+                line-height: 1.1 !important;
+                color: #2c5aa0 !important;
+            }
+            
+            .scenario-subsection {
+                margin-bottom: 4px !important;
+                line-height: 1.1 !important;
+            }
+            
+            .scenario-subsection strong {
+                font-size: 8pt !important;
+                color: #333 !important;
+            }
+            
+            /* Listes dans les annexes */
+            .annexe-scenario-content ul,
+            .annexe-interventions-content ul,
+            .annexe-informations-content ul,
+            .annexe-theorie-content ul,
+            .scenario-section ul,
+            .scenario-subsection ul {
+                margin: 2px 0 !important;
+                padding-left: 16px !important;
+            }
+            
+            .annexe-scenario-content li,
+            .annexe-interventions-content li,
+            .annexe-informations-content li,
+            .annexe-theorie-content li,
+            .scenario-section li,
+            .scenario-subsection li {
+                margin-bottom: 1px !important;
+                line-height: 1.1 !important;
+                font-size: 7.5pt !important;
+            }
+            
+            /* Texte dans les sections */
+            .scenario-section p,
+            .scenario-subsection p {
+                margin: 2px 0 !important;
+                line-height: 1.1 !important;
+                font-size: 7.5pt !important;
+            }
+            
+            /* Info de base du patient */
+            .scenario-info {
+                font-size: 8pt !important;
+                padding: 6px !important;
+                margin-bottom: 8px !important;
+                line-height: 1.2 !important;
+            }
+            
+            /* Forcer les couleurs */
+            * { 
+                -webkit-print-color-adjust: exact !important; 
+                print-color-adjust: exact !important; 
+            }
+            
+            /* Fond blanc partout */
+            body, .container, .section, .section-content { background: white !important; }
+            
+        }
+    </style>
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+    
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+    
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AMC-EthiqueLegale-V2 Aptitude à la conduite - Patient âgé</h1>
+            <p style="margin: 5px 0;">📍 Cabinet de médecine générale</p>
+            <p style="margin: 5px 0;">👤 Monsieur Albert Favre, patient de 85 ans, suivi régulièrement, se présente à une consultation de routine. Il vous signale avoir récemment confondu la pédale de frein et la pédale d'accélérateur en manœuvrant son véhicule, provoquant un accident. Il mentionne également des troubles de la mémoire qu'il minimise. Il vient chercher votre avis sur sa capacité à continuer de conduire.</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(4, 1fr);">
+            </div>
+        </div>
+        <!-- ANAMNÈSE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/29</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Récit détaillé de l'accident et des incidents récents de conduite <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Circonstances de l'accident <span class="patient-response">[en manœuvrant dans son garage, a confondu le frein et l'accélérateur, a heurté le mur du fond]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Gravité des dégâts matériels et corporels <span class="patient-response">[dommages matériels légers, pas de blessé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autres incidents de conduite récents <span class="patient-response">[quelques accrochages mineurs dans les six derniers mois, une fois sorti d'un parking à contre-sens]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Kilométrage annuel et types de trajets habituels <span class="patient-response">[environ 3 000 km par an, trajets locaux courts, a renoncé à la conduite de nuit et à l'autoroute depuis deux ans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Sentiment subjectif du patient sur sa propre conduite <span class="patient-response">[pense conduire prudemment, nie tout problème, refuse d'admettre une difficulté]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Plaintes cognitives et évaluation de leur retentissement fonctionnel <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Nature des troubles mnésiques rapportés <span class="patient-response">[oublie le nom de certaines personnes, répète parfois les mêmes histoires, perd parfois ses clés]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Retentissement sur les activités instrumentales (IADL) <span class="patient-response">[parvient encore à faire ses courses seul, mais a renoncé à gérer ses finances lui-même]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Désorientation spatiale ou temporelle <span class="patient-response">[s'est égaré une fois dans un quartier pourtant familier]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Difficultés pour les gestes complexes ou les situations nouvelles <span class="patient-response">[dit ne plus utiliser son téléphone portable 'c'est trop compliqué pour moi']</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Conscience des troubles par le patient (anosognosie) <span class="patient-response">[minimise nettement, dit 'ça n'inquiète que ma fille']</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Avis de l'entourage <span class="patient-response">[la fille du patient a téléphoné au cabinet pour exprimer ses inquiétudes la semaine dernière]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Comorbidités susceptibles d'interférer avec l'aptitude à la conduite <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Troubles visuels <span class="patient-response">[porte des lunettes depuis longtemps, n'a pas consulté d'ophtalmo depuis trois ans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Troubles auditifs <span class="patient-response">[légère hypoacousie bilatérale non appareillée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Antécédents de syncopes, lipothymies ou pertes de connaissance <span class="patient-response">[nie toute syncope, un épisode de lipothymie orthostatique il y a un an]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Antécédents d'épilepsie <span class="patient-response">[aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Diabète et risque d'hypoglycémie <span class="patient-response">[pas de diabète connu]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pathologie cardio-vasculaire (insuffisance cardiaque, fibrillation auriculaire, angor) <span class="patient-response">[fibrillation auriculaire connue, traitée par anticoagulant]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Pathologie neurologique (Parkinson, AVC, neuropathie périphérique) <span class="patient-response">[pas d'antécédent neurologique documenté]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Syndrome d'apnées obstructives du sommeil <span class="patient-response">[ronflements signalés par sa fille, pas de bilan réalisé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Médicaments et substances interférant avec la conduite <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Liste complète des médicaments actuels <span class="patient-response">[apixaban (Eliquis®), bisoprolol, zopiclone au besoin le soir]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Benzodiazépines ou apparentés (hypnotiques) <span class="patient-response">[zopiclone occasionnelle, prise parfois le matin si mauvaise nuit]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autres psychotropes, antidouleurs opioïdes, antihistaminiques sédatifs <span class="patient-response">[aucun]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Consommation d'alcool <span class="patient-response">[un ou deux verres de vin aux repas selon lui]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Automédication <span class="patient-response">[prend parfois du paracétamol sans en parler]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Antécédents médicaux, chirurgicaux et contexte social <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Antécédents médicaux <span class="patient-response">[fibrillation auriculaire, hypertension artérielle traitée, antécédent de fracture du poignet (chute il y a 2 ans)]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Antécédents chirurgicaux <span class="patient-response">[cataracte opérée à droite il y a 4 ans]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Situation sociale et autonomie <span class="patient-response">[vit seul depuis le décès de sa femme il y a 3 ans, fille à 30 km]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Importance subjective de la voiture pour le patient <span class="patient-response">[la voiture représente son seul moyen d'autonomie, y tient énormément]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Autres activités et loisirs <span class="patient-response">[jardinageordinaire, courses locales]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-4" value="1" onchange="updateDetailScore('a5', 'a')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('anamnese')" title="Commentaire sur cette section">📝 Commentaire sur la section Anamnèse</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-anamnese">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'anamnèse</h4>
+                    <textarea class="comment-textarea" id="comment-section-anamnese" placeholder="Commentaire sur la section anamnèse..." oninput="updateSectionComment('anamnese'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- EXAMEN CLINIQUE -->
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/22</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Évaluation cognitive ciblée <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Mini-Mental State Examination (MMSE) <span class="patient-response">[score 22/30 : perte de 2 points en orientation temporelle, 2 points en rappel différé, 1 point au calcul sérié, 1 point en langage]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test de l'horloge (Clock Drawing Test) <span class="patient-response">[horloge mal construite, chiffres regroupés d'un côté, aiguilles incorrectes]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test MoCA (Montreal Cognitive Assessment) si disponible <span class="patient-response">[non réalisé ce jour, à planifier]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test de barrage ou Trail Making Test A et B <span class="patient-response">[non réalisé ce jour, à planifier lors d'une évaluation spécialisée]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-3" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Évaluation de la fluence verbale et du jugement</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-4" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Conclusion cognitive préliminaire <span class="patient-response">[MMSE 22/30 et test de l'horloge anormal : suspicion de trouble neurocognitif débutant, compatible avec une maladie d'Alzheimer débutante ou une autre démence — nécessite un bilan spécialisé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-5" value="1" onchange="updateDetailScore('e1', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Acuité visuelle et champ visuel <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Test d'acuité visuelle avec correction <span class="patient-response">[acuité réduite à 5/10 de l'œil gauche et 8/10 de l'œil droit avec lunettes actuelles]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Examen du champ visuel par confrontation <span class="patient-response">[suspicion de réduction du champ visuel gauche — à confirmer par périmétrie formelle]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche d'une diplopie ou de troubles de l'oculomotricité <span class="patient-response">[pas de diplopie]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Remarque sur la conformité aux critères légaux suisses <span class="patient-response">[l'acuité visuelle binoculaire avec correction doit atteindre au moins 6/10 selon l'OAC — à vérifier par ophtalmo]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examen neurologique et ostéo-articulaire <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Examen de la force musculaire des membres supérieurs et inférieurs <span class="patient-response">[force globalement conservée, légère faiblesse distale des membres inférieurs]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Réflexes ostéo-tendineux <span class="patient-response">[réflexes achilléens abolis bilatéralement, compatible avec une neuropathie périphérique de l'âge]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test de coordination (doigt-nez, marche en tandem) <span class="patient-response">[marche légèrement instable, tandem difficile]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Temps de réaction et mouvements rapides des mains <span class="patient-response">[ralentissement notable]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Amplitude articulaire cervicale (rotation pour les rétrovisions) <span class="patient-response">[rotation cervicale limitée bilatéralement à environ 45°, douloureuse]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-4" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Mobilité du membre supérieur (prise du volant) <span class="patient-response">[légère limitation de la pronosupination gauche séquellaire de la fracture du poignet]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-5" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Test d'équilibre (station unipodale) <span class="patient-response">[<5 secondes bilatéralement — risque de chute élevé]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-6" value="1" onchange="updateDetailScore('e3', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Examen cardio-vasculaire et mesure des constantes <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Mesure de la tension artérielle <span class="patient-response">[assis : 148/85 mmHg ; debout après 2 minutes : 124/78 mmHg (hypotension orthostatique modérée)]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Fréquence cardiaque et rythme <span class="patient-response">[72 bpm, rythme irrégulier (fibrillation auriculaire connue)]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Auscultation cardiaque <span class="patient-response">[bruits cardiaques irréguliers, pas de souffle valvulaire identifié]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Recherche de signes d'insuffisance cardiaque <span class="patient-response">[pas d'œdème des membres inférieurs, pas de turgescence jugulaire]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-3" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Audition — test au chuchotement ou diapason <span class="patient-response">[hypoacousie bilatérale confirmée, meilleure à droite]</span></div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-4" value="1" onchange="updateDetailScore('e4', 'e')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-examen">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur l'examen clinique</h4>
+                    <textarea class="comment-textarea" id="comment-section-examen" placeholder="Commentaire sur la section examen clinique..." oninput="updateSectionComment('examen'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- MANAGEMENT -->
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/13</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Synthèse de l'évaluation de l'aptitude à la conduite et décision clinique <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="scoring-rule">Piège pédagogique central : NE PAS confondre la CAPACITÉ de conduire (état momentané altéré par l'alcool, la fatigue ou un médicament) et l'APTITUDE à conduire (état durable lié à une maladie chronique ou un vieillissement). Ce patient ne peut probablement pas être déclaré apte à la conduite au vu des troubles cognitifs, de la réduction du champ visuel, du ralentissement psychomoteur et des médicaments sédatifs. Le médecin dispose en Suisse d'un DROIT d'annonce (et non d'une obligation systématique) au sens de l'art. 15d LCR : la procédure recommandée est de prioriser la persuasion douce avant tout signalement unilatéral à l'autorité cantonale.</div>        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Étape 1 — Évaluation clinique au cabinet (ce jour)</div>
+            <div class="therapy-items">
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Bilan cognitif de premier recours</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> MMSE, test de l'horloge, évaluation de l'orientation, de la mémoire différée et du jugement ; consigner les résultats chiffrés dans le dossier</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Évaluation de la vision, de l'audition et de la mobilité</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Acuité visuelle avec correction, champ visuel par confrontation, audition, rotation cervicale, mobilité des membres supérieurs, temps de réaction</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Revue des médicaments interférant avec la conduite</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Identifier et revoir la zopiclone (benzodiazépine apparentée) ; informer que la prise le matin est particulièrement dangereuse pour la conduite</div>
+                </div>
+            </div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Étape 2 — Persuasion douce et information</div>
+            <div class="therapy-items">
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Entretien structuré sur les risques</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Expliquer de manière non conflictuelle les éléments cliniques préoccupants, les risques pour le patient lui-même et pour autrui, et l'obligation légale de contrôle médical périodique dès 75 ans (OAC art. 27)</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Mobilisation de l'entourage</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Avec l'accord du patient, associer la fille à la démarche ; lui expliquer la situation et l'encourager à soutenir la décision d'arrêt ou d'évaluation spécialisée</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Proposition d'alternatives à la voiture</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Transport à la demande, taxis, accompagnement par l'entourage, livraison à domicile pour les courses — anticiper la perte d'autonomie ressentie</div>
+                </div>
+            </div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Étape 3 — Orientation vers des évaluations spécialisées</div>
+            <div class="therapy-items">
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Consultation mémoire (neurologie ou gériatrie)</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Bilan neuropsychologique complet (MoCA, Trail Making Test A et B, tests de mémoire, de l'attention et des fonctions exécutives) pour confirmer ou infirmer un trouble neurocognitif et en préciser l'étiologie</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Bilan ophtalmologique avec périmétrie</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Mesure formelle de l'acuité visuelle et du champ visuel ; les critères légaux suisses (OAC) exigent une acuité binoculaire corrigée ≥6/10 et un champ visuel horizontal ≥140°</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Examen médico-psychologique du trafic (IUML Genève)</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Unité de médecine et psychologie du trafic, Institut universitaire de médecine légale, Genève : évaluation standardisée des aptitudes cognitives, sensorielles et psychomotrices liées à la conduite ; peut inclure une course de contrôle</div>
+                </div>
+            </div>
+        </div>
+        <div class="therapy-section">
+            <div class="therapy-title" style="color: #000000; font-weight: bold; margin-top: 10px;">Étape 4 — Signalement à l'autorité (si nécessaire)</div>
+            <div class="therapy-items">
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Droit d'annonce selon l'art. 15d LCR</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Si le patient refuse toute évaluation et représente un danger manifeste pour autrui, le médecin peut (et non doit) signaler la situation au médecin cantonal ou au service des automobiles compétent, après en avoir informé le patient ; lever du secret médical autorisée dans ce cadre légal précis</div>
+                </div>
+                <div class="therapy-item" style="margin: 10px 0;">
+                    <div><span style="color: #000;">Traitement : </span><span style="color: #998800;">Documentation et traçabilité</span></div>
+                    <div style="margin-left: 20px; color: #666;"><em>Détails :</em> Consigner dans le dossier : les éléments cliniques observés, les informations données au patient, les démarches proposées, les réponses du patient, et le cas échéant la décision de signalement et ses motivations</div>
+                </div>
+            </div>
+        </div>
+        <div class="redflags-section">
+            <div class="redflags-title">⚠️ Signes imposant un avis de non-aptitude immédiat ou un signalement</div>
+            <div class="redflags-item">
+                <div class="redflags-text">1. Syncope inexpliquée ou perte de connaissance récente</div>
+                <div class="redflags-description">Toute syncope non expliquée ou insuffisamment investiguée constitue une contre-indication temporaire à la conduite jusqu'à élucidation — risque d'accident mortel.</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">2. Épilepsie insuffisamment contrôlée</div>
+                <div class="redflags-description">Crise d'épilepsie dans les 12 derniers mois selon l'OAC : contre-indication formelle à la conduite en Suisse, sauf avis spécialisé favorable.</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">3. Trouble neurocognitif sévère (MMSE <18) ou anosognosie majeure</div>
+                <div class="redflags-description">Un score MMSE très bas ou une anosognosie complète rendent impossible toute évaluation et tout consentement éclairé ; l'aptitude doit être suspendue sans délai.</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">4. Accidents ou incidents répétés de conduite</div>
+                <div class="redflags-description">Plusieurs accidents ou incidents récents documentés suggèrent une incapacité manifeste, indépendamment des résultats aux tests formels.</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">5. Déficit visuel sévère (acuité <6/10 binoculaire ou amputation majeure du champ visuel)</div>
+                <div class="redflags-description">Non-conformité aux exigences légales minimales de l'OAC — contre-indication formelle jusqu'à correction ou avis ophtalmologique.</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">6. Prise de médicaments sédatifs majeurs ou d'alcool excessive</div>
+                <div class="redflags-description">Toute conduite sous l'effet de benzodiazépines ou d'alcool est une contre-indication immédiate à la conduite et une infraction pénale.</div>
+            </div>
+            <div class="redflags-item">
+                <div class="redflags-text">7. Refus de toute évaluation face à un danger manifeste pour autrui</div>
+                <div class="redflags-description">Justifie l'exercice du droit d'annonce prévu par l'art. 15d LCR, après information préalable du patient et documentation rigoureuse.</div>
+            </div>
+        </div>
+        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="2" data-criteria="Synthèse de l'évaluation de l'aptitude à la conduite et décision clinique" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="1" onchange="updateScore('m', this)" />
+    </div>
+    <div class="checkbox-group">
+        <input type="radio" name="m1" value="0" onchange="updateScore('m', this)" />
+    </div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="annexe-item annexe-dd">
+    <div class="annexe-title">Matrice décisionnelle — aptitude à la conduite</div>
+    <div class="annexe-dd-content">
+        <div class="dd-category">
+            <h4>Distinction fondamentale : capacité vs aptitude</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Capacité momentanée à conduire (état transitoire)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments pour ce cadre :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  État altéré ponctuel : alcool, fatigue, hypoglycémie, prise récente de zopiclone<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Réversible en supprimant la cause<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ne justifie pas de mesures légales permanentes</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Contrôle de la médication (zopiclone le matin !)
+→ Dosage d'alcoolémie si suspect
+→ Conseil de ne pas conduire après la prise du somnifère</div>                </li>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Aptitude durable à conduire (état permanent)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Arguments pour ce cadre chez M. Favre :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Trouble neurocognitif probable (MMSE 22/30, test horloge anormal)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Anosognosie marquée (ne reconnaît pas ses limitations)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Réduction du champ visuel gauche à confirmer<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Ralentissement psychomoteur, rotation cervicale limitée<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Hypotension orthostatique, fibrillation auriculaire<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Accidents et incidents répétés récents<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Prise de zopiclone (apparenté aux benzodiazépines)</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Évaluation neuropsychologique spécialisée (consultation mémoire)
+→ Bilan ophtalmologique avec périmétrie formelle
+→ Examen médico-psychologique du trafic (Institut universitaire de médecine légale, Genève)
+→ Course de contrôle si évaluation intermédiaire souhaitable</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Option 1 — Persuasion douce (première étape recommandée)</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Conseil clair d'arrêt de la conduite et mobilisation de l'entourage</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Indications :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Trouble neurocognitif débutant avec anosognosie partielle<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Patient encore accessible au dialogue<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Alliance thérapeutique à préserver<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Entourage (fille) disponible et déjà préoccupé</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Entretien approfondi et bienveillant avec le patient
+→ Consultation avec la fille (avec accord du patient)
+→ Proposition d'alternatives à la conduite (transport à la demande, famille, taxis, transports publics)
+→ Documentation de la démarche dans le dossier</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Option 2 — Évaluation spécialisée (deuxième étape)</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Orientation vers une consultation mémoire et/ou un examen médico-psychologique du trafic</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Indications :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Doute clinique persistant sur l'aptitude<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Patient demandant une évaluation objective<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Résultats ambigus à l'évaluation de premier recours<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Contrôle médical périodique obligatoire dès 75 ans (OAC art. 27)</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Consultation mémoire (neurologie ou gériatrie) avec bilan neuropsychologique complet
+→ Examen médico-psychologique du trafic : Institut universitaire de médecine légale (IUML), Genève
+→ Périmétrie formelle (ophtalmologie)
+→ Course de contrôle avec moniteur agréé si aptitude incertaine</div>                </li>
+            </ul>
+        </div>
+        <div class="dd-category">
+            <h4>Option 3 — Signalement à l'autorité cantonale (dernier recours, droit d'annonce)</h4>
+            <ul>
+                <li>
+                    <strong style="color: rgb(169, 34, 23);">Signalement au médecin cantonal ou au service des automobiles (art. 15d LCR)</strong><br><div style="margin-left: 20px; color: rgb(80, 90, 110);">Indications au signalement :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Patient refuse toute évaluation ET présente un danger évident pour la collectivité<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Trouble cognitif sévère avec anosognosie majeure (impossibilité de consentement éclairé)<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Accidents répétés malgré l'information<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Échec de la persuasion douce et du processus d'évaluation<br><br>Base légale :<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Art. 15d LCR (Loi fédérale sur la circulation routière) : le médecin PEUT (droit, non obligation) annoncer à l'autorité compétente un conducteur dont l'aptitude est compromise<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Levée du secret médical autorisée par la loi dans ce contexte<br>&nbsp;&nbsp;&nbsp;&nbsp;•  Notification préalable recommandée au patient</div><div style="margin-left: 20px; margin-top: 5px; margin-bottom: 15px; color: rgb(52, 105, 46);">→ Signalement à l'autorité cantonale compétente (médecin cantonal ou service des automobiles selon canton)
+→ Information préalable au patient de l'intention de signalement
+→ Documentation rigoureuse dans le dossier médical
+→ Distinction des rôles : médecin traitant / médecin expert / médecin-conseil</div>                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Cadre légal suisse de l'aptitude à la conduite <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Contrôle médical périodique obligatoire dès 75 ans en Suisse : le conducteur doit se soumettre à un contrôle par un médecin agréé de niveau 1 tous les 2 ans selon l'OAC (Ordonnance réglant l'admission à la circulation routière) — M. Favre aurait dû avoir ce contrôle</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Critères médicaux minimaux d'aptitude définis par l'OAC : acuité visuelle binoculaire ≥6/10 avec correction, champ visuel horizontal ≥140°, absence d'épilepsie non contrôlée, absence de trouble cognitif sévère incompatible avec la conduite</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Rôle du médecin traitant vs médecin expert : le médecin traitant évalue et conseille ; l'expertise médicale formelle (attestation d'aptitude) est réalisée par un médecin agréé ou un centre spécialisé</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Art. 15d LCR — droit d'annonce : le médecin dispose d'un droit (et non d'une obligation) d'annoncer à l'autorité compétente (médecin cantonal ou service des automobiles) un conducteur dont l'aptitude est compromise ; la levée du secret médical est légalement autorisée dans ce cadre précis</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Distinction capitale pour l'examen : le médecin traitant n'a PAS une obligation de dénoncer — il a un droit de signaler, à exercer avec discernement après épuisement de la persuasion douce</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Planification du suivi et accompagnement du patient <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">    <div class="detail-text criteria-detail">Reconvocation rapprochée (dans les 2 à 4 semaines) pour évaluation de l'évolution et suivi de la démarche</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Demande de consultation en neurologie ou gériatrie pour bilan neuropsychologique complet (consultation mémoire)</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Demande de bilan ophtalmologique avec périmétrie et mise à jour de la correction optique</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Révision du traitement : discuter l'arrêt de la zopiclone avec une substitution non sédative pour les troubles du sommeil</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Soutien psychologique et social : orienter vers une assistante sociale ou un service d'aide à domicile pour anticiper les besoins liés à la réduction de l'autonomie</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div><div class="detail-row">    <div class="detail-text criteria-detail">Documentation précise dans le dossier médical : éléments cliniques, informations données, démarches proposées et réponses du patient</div>    <div class="detail-checkboxes">        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-5" value="1" onchange="updateDetailScore('m3', 'm')" /></label>    </div></div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('management')" title="Commentaire sur cette section">📝 Commentaire sur la section Management</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-management">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur le management</h4>
+                    <textarea class="comment-textarea" id="comment-section-management" placeholder="Commentaire sur la section management..." oninput="updateSectionComment('management'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- CLÔTURE -->
+        <div class="section cloture-section">
+            <div class="section-header">
+                <span>Clôture de consultation</span>
+            </div>
+            <div class="section-content">
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Clôture type</h4>
+                    <div class="exemples-phrases">
+                        <div class="exemple-phrase">Monsieur Favre, je dois vous parler très franchement parce que je me sens responsable de votre sécurité et de celle des autres usagers de la route. L'accident récent, les petits incidents des derniers mois et les difficultés de mémoire que vous décrivez m'inquiètent vraiment.</div>
+                        <div class="exemple-phrase">Je ne suis pas en mesure de vous dire aujourd'hui que vous êtes apte à conduire en toute sécurité. Ce que je vous propose, c'est de réaliser ensemble un bilan complet — pour votre mémoire avec un spécialiste, et pour votre vue — avant de prendre une décision définitive.</div>
+                        <div class="exemple-phrase">En attendant ce bilan, je vous demanderais très sérieusement d'éviter de prendre le volant. Votre sécurité et celle des autres en dépend. Et sachez qu'en Suisse, la loi prévoit un contrôle médical tous les deux ans dès 75 ans, ce qui signifie que cette évaluation était de toute façon nécessaire.</div>
+                    </div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Questions difficiles du patient</h4>
+                    <div class="cloture-details">
+                        <div class="cloture-detail"><span class="patient-response">[Vous allez m'interdire de conduire ? C'est ma seule liberté, si vous me retirez ma voiture je ne peux plus rien faire !]</span></div>
+                        <div class="cloture-detail"><span class="patient-response">[Mais cet accident c'était un simple moment d'inattention, tout le monde peut se tromper non ?]</span></div>
+                        <div class="cloture-detail"><span class="patient-response">[C'est ma fille qui vous a dit quelque chose, n'est-ce pas ? Elle exagère toujours.]</span></div>
+                        <div class="cloture-detail"><span class="patient-response">[Et si je refuse de faire ces examens, qu'est-ce que vous ferez ?]</span></div>
+                        <div class="cloture-detail"><span class="patient-response">[Mes réflexes sont très bons pour mon âge, j'ai 50 ans de conduite sans accident grave !]</span></div>
+                    </div>
+                </div>
+                <div class="cloture-item">
+                    <h4 class="cloture-title">Réponses types du candidat</h4>
+                    <div class="exemples-phrases">
+                        <div class="exemple-phrase">Je comprends tout à fait que la voiture représente pour vous une liberté essentielle. Ce n'est pas mon rôle de vous l'interdire, et je ne peux pas le faire arbitrairement. Mon rôle est de vous aider à évaluer si vous pouvez conduire en sécurité — pour vous et pour les autres.</div>
+                        <div class="exemple-phrase">L'accident n'est pas anodin, Monsieur Favre : confondre le frein et l'accélérateur, c'est une erreur qui peut avoir des conséquences très graves. Avec les résultats des tests de mémoire d'aujourd'hui, j'ai le devoir de vous proposer un bilan spécialisé.</div>
+                        <div class="exemple-phrase">Si vous refusez toute évaluation et que je juge que vous représentez un danger pour autrui, la loi suisse — l'article 15d de la Loi sur la circulation routière — m'autorise à le signaler au médecin cantonal. Mais je préfère de loin travailler avec vous, et non contre vous.</div>
+                        <div class="exemple-phrase">En attendant les résultats du bilan, je vous recommande fortement de ne pas prendre le volant. Et travaillons ensemble à trouver des alternatives pour que vous gardiez votre indépendance : taxis, transports à la demande, votre fille...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- COMMUNICATION -->
+        <div class="section communication-section-container">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Réponse aux sentiments et besoins du patient <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Empathie, écoute active, validation des émotions<br />
+Explique le déroulement de la consultation et vérifie les préoccupations du patient, commence l'anamnèse par une question ouverte ; reconnaît, verbalise et légitime les émotions, fournit du soutient</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Réponse aux sentiments du patient" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l'entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Organisation logique, transitions fluides, gestion du temps<br />
+Se présente par son nom et sa fonction, les étapes de l'entretien sont identifiables et s'enchaînent de manière logique, gestion du temps, adaptation à la situation</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l'entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Clarté, vocabulaire adapté, vérification de la compréhension<br />
+Langage adapté au niveau du patient, pas de jargon, explications compréhensibles, reformulations quand nécessaire, répétitions des points clés, fait une synthèse de la consultation, bonne articulation, ton et volume adéquats</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Contact visuel, posture, gestuelle appropriée<br />
+Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contact visuel et expression faciale adéquats, pauses quand nécessaire</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Évaluation générale de la communication <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Qualité globale de l'interaction médecin-patient</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Évaluation générale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 15px 0;">
+                    <button class="section-comment-button" onclick="toggleSectionComment('communication')" title="Commentaire sur cette section">📝 Commentaire sur la section Communication</button>
+                </div>
+                <div class="section-comment-section" id="section-comment-communication">
+                    <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 16px;">Commentaires sur la communication</h4>
+                    <textarea class="comment-textarea" id="comment-section-communication" placeholder="Commentaire sur la section communication..." oninput="updateSectionComment('communication'); autoResizeTextarea(this);"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/84</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+        <!-- ÉLÉMENTS MANQUANTS (MASQUÉS) -->
+        <!-- <div class="missing-items" id="missingItems" style="display: none;">
+            <h3>Éléments non évalués</h3>
+            <div id="missingList"></div>
+        </div> -->
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-expert">
+    <div class="annexe-title">Informations pour l'expert</div>
+    <div class="annexe-expert-content">
+        <div class="expert-section">
+            <h4>Rôles et interventions</h4>
+            <ul>
+                <li>L'expert joue le rôle du patient standardisé (M. Favre) ou observe le candidat selon la configuration de la station.</li>
+                <li>L'expert-e intervient si l'étudiant-e demande :</li>
+                <li>• Les résultats du MMSE : communiquer 22/30 avec le détail des items perdus</li>
+                <li>• Le test de l'horloge : décrire un dessin anormal (chiffres regroupés, aiguilles incorrectes)</li>
+                <li>• L'acuité visuelle : 8/10 OD, 5/10 OG avec correction actuelle</li>
+                <li>• La tension artérielle couchée/debout : TA assis 148/85, debout 124/78 (hypotension orthostatique)</li>
+                <li>• L'examen neurologique : réflexes achilléens abolis, instabilité à la marche, tandem difficile</li>
+                <li>• La rotation cervicale : limitée à 45° bilatéralement, douloureuse</li>
+                <li>• Le bilan ophtalmo récent : aucun depuis plus de 3 ans</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Points clés</h4>
+            <ul>
+                <li>Distinguer clairement la CAPACITÉ (état momentané) de l'APTITUDE (état durable) à conduire</li>
+                <li>Identifier les éléments cliniques d'inapitude probable : MMSE 22/30, test horloge anormal, hypoacousie, champ visuel réduit, ralentissement psychomoteur, rotation cervicale limitée, zopiclone</li>
+                <li>Reconnaître l'anosognosie du patient et adapter la communication en conséquence</li>
+                <li>Connaître le cadre légal suisse : contrôle périodique obligatoire dès 75 ans (OAC), droit d'annonce (art. 15d LCR — droit et non obligation)</li>
+                <li>Proposer la démarche par étapes : persuasion douce → évaluation spécialisée → signalement si nécessaire</li>
+                <li>Orienter vers les ressources spécialisées : consultation mémoire, bilan ophtalmologique, examen médico-psychologique du trafic (IUML Genève)</li>
+                <li>Aborder le thème de manière empathique en préservant l'alliance thérapeutique</li>
+                <li>Anticiper les alternatives à la voiture pour préserver l'autonomie du patient</li>
+            </ul>
+        </div>
+        <div class="expert-section">
+            <h4>Pièges</h4>
+            <ul>
+                <li>Confondre capacité et aptitude à la conduite : erreur conceptuelle fondamentale</li>
+                <li>Croire que le médecin a l'OBLIGATION de signaler : c'est un DROIT d'annonce, à exercer avec discernement</li>
+                <li>Retirer le permis de conduire directement : ce n'est pas le rôle ni le pouvoir du médecin traitant</li>
+                <li>Ne pas explorer les médicaments, notamment la zopiclone prise parfois le matin</li>
+                <li>Ne pas évaluer l'anosognosie : le patient qui nie ses limitations est plus à risque</li>
+                <li>Confondre le rôle du médecin traitant (conseiller, orienter) et du médecin expert (attester l'aptitude formellement)</li>
+                <li>Oublier de proposer des alternatives à la voiture pour éviter l'isolement social</li>
+                <li>Ne pas documenter la démarche dans le dossier médical</li>
+                <li>Adopter une attitude trop autoritaire ou paternaliste, qui risque de rompre l'alliance et de pousser le patient à consulter un autre médecin</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-theorie">
+    <div class="annexe-title">Théorie pratique — Aptitude à la conduite chez le conducteur âgé</div>
+    <div class="annexe-theorie-content">
+        <div class="theorie-section">
+            <h4>Concepts fondamentaux : capacité vs aptitude</h4>
+            <p>Il convient de distinguer deux notions souvent confondues. La capacité de conduire désigne un état momentané et transitoire pouvant être altéré par l'alcool, la fatigue, une hypoglycémie ou la prise d'un médicament sédatif. L'aptitude à conduire désigne un état durable, lié à une maladie chronique, un trouble neurocognitif, un déficit sensoriel ou des troubles moteurs.</p>
+        </div>
+        <div class="theorie-section">
+            <h4>Cadre légal suisse</h4>
+            <p>En Suisse, l'aptitude à la conduite est réglée par l'Ordonnance réglant l'admission à la circulation routière (OAC) et par la Loi fédérale sur la circulation routière (LCR). Dès 75 ans, un contrôle médical périodique tous les 2 ans par un médecin agréé de niveau 1 est obligatoire.</p>
+            <ul>
+                <li>OAC art. 27 : contrôle médical obligatoire dès 75 ans, tous les 2 ans</li>
+                <li>Critères minimaux : acuité visuelle binoculaire corrigée ≥6/10, champ visuel horizontal ≥140°, absence de trouble cognitif incompatible, absence d'épilepsie non contrôlée</li>
+                <li>Art. 15d LCR : droit d'annonce — le médecin PEUT (et non doit) signaler à l'autorité compétente un conducteur dont l'aptitude est compromise ; levée du secret médical autorisée</li>
+                <li>Le signalement se fait au médecin cantonal ou au service des automobiles selon le canton</li>
+                <li>Distinction des rôles : médecin traitant (évaluation et conseil), médecin expert (attestation formelle d'aptitude), médecin-conseil (avis sur demande de l'autorité)</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Évaluation clinique de l'aptitude chez le conducteur âgé</h4>
+            <p>L'évaluation de l'aptitude à la conduite chez le patient âgé est multidimensionnelle et doit couvrir les fonctions cognitives, sensorielles et motrices.</p>
+            <ul>
+                <li>Cognition : MMSE (seuil d'alerte <24/30), test de l'horloge, MoCA, Trail Making Test A et B (attention, fonctions exécutives, vitesse de traitement)</li>
+                <li>Vision : acuité visuelle avec correction, champ visuel (confrontation puis périmétrie formelle si suspicion), sensibilité aux contrastes</li>
+                <li>Audition : test au chuchotement, diapason — influence la communication avec les autres usagers</li>
+                <li>Motricité et réflexes : temps de réaction, force des membres, amplitude articulaire cervicale et des membres supérieurs</li>
+                <li>Médicaments : benzodiazépines, apparentés (zopiclone), antidépresseurs sédatifs, antiépileptiques, antipsychotiques, opioïdes</li>
+                <li>Comorbidités : diabète (hypoglycémie), épilepsie, syncope, fibrillation auriculaire, apnées du sommeil, Parkinson</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Démarche par étapes face à un conducteur probablement inapte</h4>
+            <p>La démarche recommandée suit une logique progressive, en préservant autant que possible l'alliance thérapeutique.</p>
+            <ul>
+                <li>Étape 1 : Évaluation clinique de premier recours au cabinet (tests cognitifs, vision, mobilité, médicaments)</li>
+                <li>Étape 2 : Persuasion douce — conseil clair d'arrêt temporaire, information sur les risques, mobilisation de l'entourage</li>
+                <li>Étape 3 : Orientation vers une évaluation spécialisée (consultation mémoire, bilan ophtalmologique, examen médico-psychologique du trafic)</li>
+                <li>Étape 4 : Si refus et danger manifeste — exercice du droit d'annonce (art. 15d LCR), après information préalable du patient</li>
+                <li>Documentation rigoureuse à chaque étape dans le dossier médical</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Communication avec le patient âgé et ses proches</h4>
+            <p>La gestion de l'aptitude à la conduite chez le patient âgé soulève d'importants enjeux relationnels et éthiques. La voiture représente souvent le dernier symbole d'autonomie et d'identité.</p>
+            <ul>
+                <li>Adopter une posture empathique et non paternaliste</li>
+                <li>Expliquer les risques pour le patient lui-même et pour autrui sans catastrophisme</li>
+                <li>Proposer des alternatives concrètes à la voiture pour préserver l'autonomie</li>
+                <li>Associer l'entourage avec l'accord du patient</li>
+                <li>Informer le patient de l'intention de signalement avant d'y procéder (recommandation déontologique)</li>
+                <li>Anticiper le risque d'isolement social lié à l'arrêt de la conduite</li>
+            </ul>
+        </div>
+        <div class="theorie-section">
+            <h4>Ressources spécialisées en Suisse</h4>
+            <p>Plusieurs structures permettent une évaluation formelle de l'aptitude à la conduite et une expertise médico-légale.</p>
+            <ul>
+                <li>Consultation mémoire (neurologie ou gériatrie) : bilan neuropsychologique complet</li>
+                <li>Institut universitaire de médecine légale (IUML), Genève : Unité de médecine et psychologie du trafic — examen médico-psychologique standardisé, peut inclure une course de contrôle</li>
+                <li>Offices cantonaux des automobiles : peuvent exiger un rapport médical ou une expertise en cas de doute</li>
+                <li>Médecins agréés de niveau 1 : habilitésà effectuer les contrôles périodiques obligatoires dès 75 ans</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-rappels">
+            <h4>Rappels thérapeutiques</h4>
+            <ul>
+                <li>La zopiclone (Imovane®) est un hypnotique apparenté aux benzodiazépines : elle altère la vigilance, les temps de réaction et les capacités cognitives, en particulier le lendemain matin — contre-indication formelle à la conduite dans les heures suivant la prise</li>
+                <li>Revoir systématiquement la liste des médicaments et identifier ceux classés dans les catégories à risque pour la conduite (liste de l'OFSP disponible)</li>
+                <li>L'hypotension orthostatique peut provoquer des malaises à la conduite, surtout après un long trajet assis — à rechercher activement chez le patient âgé sous traitement antihypertenseur ou antiparkinsonien</li>
+                <li>La fibrillation auriculaire augmente le risque d'AVC embolique, potentielle cause de perte de contrôle soudaine du véhicule — évaluer l'équilibre anticoagulant</li>
+                <li>En cas de syndrome d'apnées obstructives du sommeil non traité : somnolence diurne et altération cognitive — à évaluer systématiquement chez le conducteur âgé ronfleur</li>
+            </ul>
+        </div>
+        <div class="theorie-section theorie-section-examens">
+            <h4>Examens complémentaires</h4>
+            <ul>
+                <li>MMSE (Mini-Mental State Examination) : test de dépistage cognitif en 10 minutes ; seuil d'alerte à 24/30 ; score 22/30 chez M. Favre — investigation complémentaire obligatoire</li>
+                <li>Test de l'horloge (Clock Drawing Test) : sensible aux troubles des fonctions exécutives et visuo-spatiales particulièrement pertinentes pour la conduite</li>
+                <li>MoCA (Montreal Cognitive Assessment) : plus sensible que le MMSE pour les troubles légers ; recommandé en consultation mémoire</li>
+                <li>Trail Making Test A et B : évalue l'attention divisée, les fonctions exécutives et la vitesse de traitement — non réalisable en cabinet de premier recours, à déléguer au neuropsychologue</li>
+                <li>Périmétrie formelle (Goldman ou automatisée) : mesure objective du champ visuel ; critère légal suisse — champ horizontal ≥140° requis</li>
+                <li>Acuité visuelle avec correction : à mesurer avec les lunettes portées habituellement ; critère légal ≥6/10 binoculaire</li>
+                <li>Examen médico-psychologique du trafic (IUML Genève) : évaluation standardisée et validée des aptitudes à la conduite incluant tests neuropsychologiques, visuels, psychomoteurs et éventuellement une course de contrôle</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-scenario">
+    <div class="annexe-title">Scénario pour le patient standardisé</div>
+    <div class="annexe-scenario-content">
+        <div class="scenario-info">
+            <strong>Nom :</strong> Albert Favre |             <strong>Âge :</strong> 85 ans<br>
+            <strong>Contexte :</strong> Homme de 85 ans, veuf depuis 3 ans, vivant seul dans sa maison, suivi par ce médecin généraliste depuis 15 ans. Conducteur depuis 50 ans, il se rend à pied à son cabinet mais utilise quotidiennement sa voiture pour les courses et les déplacements locaux. Il a récemment eu un accident en confondant le frein et l'accélérateur et se plaint de troubles de la mémoire qu'il minimise fortement.
+        </div>
+        <div class="scenario-section">
+            <h4>Motif de consultation</h4>
+            <p><strong>Plainte principale :</strong> C'est ma fille qui m'a dit de venir vous voir. J'ai eu un petit accident en garant ma voiture, mais c'était un moment d'inattention, rien de grave.</p>
+            <p><strong>Si on demande s'il y a autre chose :</strong> J'ai des petits trous de mémoire parfois, mais à mon âge c'est normal, non ?</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse actuelle</h4>
+            <div class="property-group">
+                <strong>Symptôme principal :</strong>
+                <ul>
+                    <li>Il y a deux semaines, en rentrant ma voiture dans le garage, j'ai appuyé sur l'accélérateur au lieu du frein. J'ai heurté le mur du fond. Pas de blessé, juste un peu de dégâts.</li>
+                    <li>C'est arrivé une fois, n'en faites pas un drame. Je conduis depuis 50 ans sans problème grave.</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Symptômes associés :</strong>
+                <ul>
+                    <li>J'oublie parfois les noms, ou je me répète, mais c'est normal à 85 ans.</li>
+                    <li>J'ai eu deux ou trois petits accrochages ces derniers mois, mais rien de sérieux.</li>
+                    <li>Une fois je me suis un peu perdu en rentrant du supermarché, mais c'est parce qu'ils avaient changé les travaux.</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Représentation de la maladie :</strong>
+                <ul>
+                    <li>Le patient minimise fortement ses difficultés et les attribue à la fatigue ou à la vieillesse normale.</li>
+                    <li>Il est convaincu que sa conduite est sûre et que sa fille est trop inquiète.</li>
+                    <li>Il n'associe pas ses troubles de mémoire à ses problèmes de conduite.</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Réponse aux symptômes :</strong>
+                <ul>
+                    <li>Refuse d'admettre que ses capacités sont diminuées.</li>
+                    <li>Insiste sur ses 50 ans d'expérience de conduite.</li>
+                    <li>Si le médecin évoque les troubles de mémoire, répond 'À mon âge, tout le monde oublie des choses'.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Simulation</h4>
+            <div class="property-group">
+                <strong>Attitude :</strong>
+                <ul>
+                    <li>Légèrement défensif dès que la conduite est abordée.</li>
+                    <li>Chaleureux et coopératif sur les autres sujets médicaux.</li>
+                    <li>Montre de l'émotion (légère tristesse ou irritation) si la voiture est directement menacée.</li>
+                    <li>Peut dire : 'Ma voiture, c'est ma liberté. Sans elle, je suis prisonnier chez moi.'</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant l'entretien :</strong>
+                <ul>
+                    <li>Minimise l'accident ('un simple moment d'inattention').</li>
+                    <li>Nie ou minimise les autres incidents ('deux petits accrochages sans importance').</li>
+                    <li>Parle spontanément de l'accident seulement si directement interrogé, sinon n'en dit pas grand chose.</li>
+                    <li>Accuse la fille d'exagérer si le médecin évoque ses inquiétudes.</li>
+                    <li>Répond 'C'est normal à mon âge' à toutes les questions sur la mémoire.</li>
+                    <li>Si interrogé sur les médicaments, oublie de mentionner la zopiclone ('ah oui, parfois je prends quelque chose pour dormir').</li>
+                    <li>Si interrogé sur la conduite de nuit : 'Non, j'évite, je ne vois plus bien la nuit.'</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Durant l'examen :</strong>
+                <ul>
+                    <li>Accepte de faire les tests mais commente : 'Ces tests sont idiots, ça ne ressemble pas à conduire une voiture.'</li>
+                    <li>Au test de l'horloge, met les chiffres de façon désordonnée sans s'en apercevoir.</li>
+                    <li>Au rappel différé : oublie 2 des 3 mots sans s'en inquiéter.</li>
+                    <li>À l'examen de la rotation cervicale : se plaint de raideur ('j'ai de l'arthrose dans le cou').</li>
+                    <li>Ne se plaint pas de sa vision bien que l'acuité soit réduite à gauche.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Anamnèse par systèmes</h4>
+            <div class="property-group">
+                <strong>Générale :</strong>
+                <ul>
+                    <li>Bon appétit, poids stable</li>
+                    <li>Dors assez bien mais parfois prend une zopiclone</li>
+                    <li>Pas de chutes récentes sauf la chute du poignet il y a 2 ans</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Cardiovasculaire :</strong>
+                <ul>
+                    <li>Fibrillation auriculaire connue, suivie par le cardiologue</li>
+                    <li>Prend l'apixaban (Eliquis®) et le bisoprolol</li>
+                    <li>Un épisode de malaise debout il y a un an (lipothymie orthostatique)</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Neurologique :</strong>
+                <ul>
+                    <li>Troubles mnésiques qu'il minimise</li>
+                    <li>Pas de céphalées, pas de vertiges, pas de tremblements</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Osteo Articulaire :</strong>
+                <ul>
+                    <li>Arthrose cervicale (raideur et douleurs du cou)</li>
+                    <li>Séquelle de fracture du poignet gauche il y a 2 ans après une chute</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Pulmonaire :</strong>
+                <ul>
+                    <li>Pas de dyspnée au repos</li>
+                    <li>Marche environ 500 mètres avant d'être essoufflé</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Habitudes</h4>
+            <p><strong>Alcool :</strong> Un ou deux verres de vin aux repas ('j'ai toujours fait comme ça')</p>
+            <p><strong>Tabac :</strong> Non-fumeur</p>
+            <p><strong>Médicaments :</strong> Apixaban (Eliquis®), bisoprolol, zopiclone (parfois le soir, parfois aussi le matin si mauvaise nuit — 'pour récupérer')</p>
+            <p><strong>Activité :</strong> Jardinage, courses en voiture, promenades courtes à pied</p>
+            <p><strong>Autonomie :</strong> Vit seul, fait ses courses en voiture, encore autonome pour l'essentiel mais a délégué la gestion des finances à sa fille</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Informations personnelles</h4>
+            <p><strong>État civil :</strong> Veuf depuis 3 ans (décès de Mme Favre d'un cancer)</p>
+            <p><strong>Profession :</strong> Ancien ingénieur, retraité depuis 20 ans</p>
+            <p><strong>Hobbies :</strong> Jardinage, lecture, jeux de cartes avec des amis (moins fréquemment qu'avant)</p>
+            <p><strong>État d'esprit :</strong> Légère tristesse liée au deuil, mais ne se dit pas déprimé. La voiture représente symboliquement son autonomie et son lien social</p>
+        </div>
+        <div class="scenario-section">
+            <h4>Histoire Medicale</h4>
+            <ul>
+                <li>Fibrillation auriculaire (depuis 7 ans)</li>
+                <li>Hypertension artérielle (traitée)</li>
+                <li>Fracture du poignet gauche il y a 2 ans (chute dans le jardin)</li>
+                <li>Cataracte opérée à l'œil droit il y a 4 ans (bonne récupération visuelle à droite)</li>
+            </ul>
+        </div>
+        <div class="scenario-section">
+            <h4>Traitements</h4>
+            <div class="property-group">
+                <strong>Actuels :</strong>
+                <ul>
+                    <li>Apixaban (Eliquis®) 5 mg 2x/j (anticoagulant pour la fibrillation auriculaire)</li>
+                    <li>Bisoprolol 5 mg 1x/j (fréquence cardiaque)</li>
+                    <li>Zopiclone 7,5 mg au coucher au besoin (somnifère — à mentionner seulement si directement interrogé)</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Allergies :</strong>
+                <ul>
+                    <li>Aucune allergie connue</li>
+                </ul>
+            </div>
+        </div>
+        <div class="scenario-section">
+            <h4>Inquiétudes</h4>
+            <div class="property-group">
+                <strong>Principales :</strong>
+                <ul>
+                    <li>Perdre sa voiture et donc son autonomie</li>
+                    <li>Être perçu comme une charge pour sa fille</li>
+                    <li>Être 'mis en maison de retraite' si sa fille prend le contrôle</li>
+                </ul>
+            </div>
+            <div class="property-group">
+                <strong>Questions :</strong>
+                <ul>
+                    <li>Est-ce que vous allez me retirer mon permis ?</li>
+                    <li>C'est ma fille qui vous a contacté, n'est-ce pas ?</li>
+                    <li>Et si je refuse de faire ces examens, vous pouvez me forcer ?</li>
+                    <li>Quand est-ce que je pourrai reprendre le volant ?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="annexe-item annexe-defi">
+    <div class="annexe-title">Défi pédagogique — Le médecin doit-il prévenir le patient avant de le signaler à l'autorité ?</div>
+    <div class="annexe-defi-content">
+        <p>M. Favre refuse catégoriquement toute évaluation spécialisée et tout arrêt de la conduite. Il déclare : 'Si vous me signalez quelque part, je change de médecin.' Le candidat doit décider de la marche à suivre : signaler immédiatement, ou attendre encore ? Et dans quelle mesure doit-il informer le patient de son intention de signalement ?</p>
+        <p><strong>Type de réponse attendue :</strong> Du point de vue éthique et déontologique suisse, il est recommandé d'informer le patient de l'intention de signalement avant d'y procéder, pour plusieurs raisons : préserver autant que possible la confiance et l'alliance thérapeutique, respecter l'autonomie du patient, et lui donner une dernière chance de prendre lui-même la décision d'arrêter de conduire ou de se soumettre à une évaluation. Cette information préalable doit être documentée dans le dossier. Le médecin n'a cependant pas l'obligation de différer indéfiniment le signalement si le danger pour autrui est manifeste et immédiat. L'art. 15d LCR lui confère un droit d'annonce qu'il doit exercer avec discernement, en pesant la sécurité publique, l'autonomie du patient et le maintien de la relation thérapeutique.</p>
+    </div>
+</div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+        // Déclaration des variables globales
+        window.audioContext = null;
+        
+        function updateScore(section, element) {
+            const value = element.value;
+            const name = element.name;
+            let pointValue;
+
+            if (section === "communication") {
+                const map = { A: 4, B: 3, C: 2, D: 1, E: 0 };
+                pointValue = map[value] || 0;
+                // Mettre à jour la classe de couleur pour communication
+                const criteriaRow = document.getElementById("criteria-" + name);
+                if (criteriaRow) {
+                    criteriaRow.classList.remove("score-a", "score-b", "score-c", "score-d", "score-e", "lacune-rouge", "lacune-orange", "lacune-verte");
+                    criteriaRow.classList.add("score-" + value.toLowerCase());
+                    // Ajouter les classes lacune pour communication
+                    if (value === "E" || value === "D") {
+                        criteriaRow.classList.add("lacune-rouge");
+                    } else if (value === "C") {
+                        criteriaRow.classList.add("lacune-orange");
+                    } else if (value === "A" || value === "B") {
+                        criteriaRow.classList.add("lacune-verte");
+                    }
+                }
+            } else {
+                pointValue = Number(value) || 0;
+                // Mettre à jour la classe de couleur pour autres critères
+                const criteriaRow = document.getElementById("criteria-" + name);
+                if (criteriaRow) {
+                    criteriaRow.classList.remove("score-0", "score-1", "score-2", "lacune-rouge", "lacune-orange", "lacune-verte");
+                    criteriaRow.classList.add("score-" + value);
+                    // Ajouter les classes lacune pour critères normaux
+                    if (pointValue === 0) {
+                        criteriaRow.classList.add("lacune-rouge");
+                    } else if (pointValue === 1) {
+                        criteriaRow.classList.add("lacune-orange");
+                    } else if (pointValue >= 2) {
+                        criteriaRow.classList.add("lacune-verte");
+                    }
+                }
+            }
+
+            const pointsElement = document.getElementById("points-" + name);
+            if (pointsElement) {
+                pointsElement.textContent = pointValue;
+            }
+
+            calculateScores();
+        }
+
+        function updateDetailScore(criterionId, prefix) {
+            let totalScore = 0;
+            const detailCheckboxes = document.querySelectorAll('input[id^="' + criterionId + '-detail-"]');
+            const maxDetailsScore = detailCheckboxes.length;
+            
+            detailCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    totalScore += Number(checkbox.value) || 0;
+                }
+            });
+            
+            const pointsElement = document.getElementById("points-" + criterionId);
+            if (pointsElement) {
+                pointsElement.textContent = totalScore;
+            }
+            
+            // Mettre à jour la classe de couleur en fonction du score et du max
+            const criteriaRow = document.getElementById("criteria-" + criterionId);
+            if (criteriaRow) {
+                criteriaRow.classList.remove("score-0", "score-1", "score-2", "score-3", "score-4", "score-5", "score-max", "lacune-rouge", "lacune-orange", "lacune-verte");
+                
+                // Déterminer la classe appropriée avec les seuils 1/3 et 2/3
+                const oneThird = maxDetailsScore / 3;
+                const twoThirds = (maxDetailsScore * 2) / 3;
+                
+                if (totalScore < oneThird) {
+                    criteriaRow.classList.add("score-0");
+                    criteriaRow.classList.add("lacune-rouge");
+                } else if (totalScore > twoThirds) {
+                    criteriaRow.classList.add("score-max");
+                    criteriaRow.classList.add("lacune-verte");
+                } else {
+                    // Score entre 1/3 et 2/3
+                    criteriaRow.classList.add("score-1");
+                    criteriaRow.classList.add("lacune-orange");
+                }
+            }
+            
+            calculateScores();
+        }
+
+        function calculateScores() {
+            const isNewFormat = false;
+            const missingItems = [];
+            let scores = {};
+            let maxScores = {};
+            let coef = {};
+            let sectionInfo = [];
+
+            // Configuration pour le format traditionnel
+            scores = {anamnese: 0, examen: 0, management: 0, communication: 0};
+            maxScores = {anamnese: 29, examen: 22, management: 13, communication: 20};
+            coef = {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25};
+            sectionInfo = [
+                {key: "anamnese", prefix: "a", count: 5, label: "Anamnèse"},
+                {key: "examen", prefix: "e", count: 4, label: "Examen clinique", scoreId: "statusScore"},
+                {key: "management", prefix: "m", count: 3, label: "Management"},
+                {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
+            ];
+
+            // Calcul des scores pour chaque section
+            sectionInfo.forEach(section => {
+                let sectionScore = 0;
+                
+                if (section.isComm) {
+                    // Section communication spéciale
+                    for (let i = 1; i <= section.count; i++) {
+                        const radio = document.querySelector("input[name=\"" + section.prefix + i + "\"]:checked");
+                        if (radio) {
+                            const val = radio.value;
+                            const map = { A: 4, B: 3, C: 2, D: 1, E: 0 };
+                            sectionScore += map[val] || 0;
+                        } else {
+                            const criteria = document.querySelector("input[name=\"" + section.prefix + i + "\"][data-criteria]");
+                            if (criteria) missingItems.push(section.label + " : " + criteria.dataset.criteria);
+                        }
+                    }
+                } else {
+                    // Sections normales
+                    for (let i = 1; i <= section.count; i++) {
+                        const criterionId = section.prefix + i;
+                        // Vérifier si ce critère a des détails avec checkboxes
+                        const detailCheckboxes = document.querySelectorAll('input[id^="' + criterionId + '-detail-"]');
+                        
+                        if (detailCheckboxes.length > 0) {
+                            // Ce critère a des détails, on calcule le score basé sur les détails
+                            let detailScore = 0;
+                            let hasCheckedDetail = false;
+                            detailCheckboxes.forEach(checkbox => {
+                                if (checkbox.checked) {
+                                    detailScore += Number(checkbox.value) || 0;
+                                    hasCheckedDetail = true;
+                                }
+                            });
+                            sectionScore += detailScore;
+                            
+                            if (!hasCheckedDetail) {
+                                const criteria = document.querySelector("input[name=\"" + criterionId + "\"][data-criteria]");
+                                if (criteria) {
+                                    missingItems.push(section.label + " : " + criteria.dataset.criteria);
+                                } else {
+                                    // Rechercher le texte du critère directement
+                                    const criteriaText = document.querySelector("#criteria-" + criterionId + " .criteria-text");
+                                    if (criteriaText) {
+                                        missingItems.push(section.label + " : " + criteriaText.textContent.split(". ")[1].split(" [")[0]);
+                                    }
+                                }
+                            }
+                        } else {
+                            // Critère normal sans détails
+                            const radio = document.querySelector("input[name=\"" + criterionId + "\"]:checked");
+                            if (radio) {
+                                sectionScore += Number(radio.value) || 0;
+                            } else {
+                                const criteria = document.querySelector("input[name=\"" + criterionId + "\"][data-criteria]");
+                                if (criteria) missingItems.push(section.label + " : " + criteria.dataset.criteria);
+                            }
+                        }
+                    }
+                }
+                
+                scores[section.key] = sectionScore;
+                const scoreId = section.scoreId || section.key + "Score";
+                const scoreElement = document.getElementById(scoreId);
+                if (scoreElement) scoreElement.textContent = sectionScore;
+            });
+
+            // Calcul des pourcentages par section
+            let percentages = {};
+            let globalPercentage = 0;
+            let isStarted = false;
+            
+            sectionInfo.forEach(section => {
+                const score = scores[section.key];
+                const max = maxScores[section.key];
+                const percentage = max > 0 ? (score / max) * 100 : 0;
+                percentages[section.key] = percentage;
+                globalPercentage += percentage * coef[section.key];
+                if (score > 0) isStarted = true;
+            });
+
+            const totalScoreText = isStarted ? Math.round(globalPercentage) : 0;
+            document.getElementById("totalScore").textContent = totalScoreText + "%";
+
+            // Mise à jour des pourcentages affichés
+            sectionInfo.forEach(section => {
+                const percentageElement = document.getElementById(section.key + "-percentage");
+                if (percentageElement) {
+                    percentageElement.textContent = Math.round(percentages[section.key]);
+                }
+            });
+
+            const gradeElement = document.getElementById("globalGrade");
+            const totalScoreElement = document.getElementById("totalScore");
+            const scoreBody = totalScoreElement ? totalScoreElement.closest(".total-body") : null;
+            const gradeBody = gradeElement ? gradeElement.closest(".total-body") : null;
+            const sections = sectionInfo.map(s => s.key);
+
+            const allClasses = ["note-a", "note-b", "note-c", "note-d", "note-e", "note-neutral"];
+
+            function getClass(p) {
+                if (p === 0) return "note-neutral";
+                if (p >= 90) return "note-a";
+                if (p >= 80) return "note-b";
+                if (p >= 70) return "note-c";
+                if (p >= 60) return "note-d";
+                return "note-e";
+            }
+
+            const gradeClass = getClass(globalPercentage);
+            const gradeLabel = isStarted ? gradeClass.split("-")[1].toUpperCase() : "A-E";
+            if (gradeElement) gradeElement.textContent = gradeLabel;
+
+            const pourcentBody = document.querySelector(".total-pourcent-body");
+
+            [gradeElement, scoreBody, gradeBody, pourcentBody].forEach(el => {
+                if (el) {
+                    el.classList.remove(...allClasses);
+                    el.classList.add(gradeClass);
+                }
+            });
+
+            sections.forEach(id => {
+                const percentageElement = document.getElementById(id + "-percentage");
+                if (percentageElement) {
+                    const value = parseInt(percentageElement.textContent);
+                    const section = percentageElement.closest(".total-pourcent-section");
+                    const sectionClass = getClass(value);
+                    if (section) {
+                        section.classList.remove(...allClasses);
+                        section.classList.add(sectionClass);
+                    }
+                }
+            });
+
+            // Appliquer les couleurs aux sections principales
+            sectionInfo.forEach(section => {
+                const percentage = percentages[section.key];
+                const allSections = document.querySelectorAll(".section");
+                allSections.forEach(sectionEl => {
+                    const headerText = sectionEl.querySelector(".section-header")?.textContent || "";
+                    if (headerText.includes(section.label)) {
+                        const sectionClass = getClass(percentage);
+                        sectionEl.classList.remove(...allClasses);
+                        sectionEl.classList.add(sectionClass);
+                    }
+                });
+            });
+
+            if (missingItems.length > 0) {
+                document.getElementById("missingItems").style.display = "block";
+                document.getElementById("missingList").innerHTML = missingItems.map(item =>
+                    "<div class=\"missing-item\">• " + item + "</div>"
+                ).join("");
+            } else {
+                document.getElementById("missingItems").style.display = "none";
+            }
+        }
+        // MINUTEUR ECOS 13 MINUTES
+        window.timerInterval = null;
+        window.currentSeconds = 13 * 60;
+        window.isRunning = false;
+        window.hasStarted = false;
+        window.hasFinished = false;
+        window.hasStoppedManually = false;
+
+        window.currentMode = 'revision';
+
+        function colorPatientResponses() {
+            // Version simplifiée inspirée du générateur v1
+            const elements = document.querySelectorAll('.criteria-text, .sub-criteria, .redflags-text, .dd-item, .therapy-section, .detail-text, .cloture-content');
+            elements.forEach(element => {
+                const text = element.innerHTML;
+                // Colorer uniquement les réponses patient en bleu (pas les examens complémentaires)
+                let coloredText = text.replace(/\[([^\]]+)\]/g, '<span style="color: rgb(44, 90, 160); font-weight: 500;">[$1]</span>');
+                element.innerHTML = coloredText;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            switchMode('revision');
+            calculateScores();
+            colorPatientResponses();
+            // Appeler une deuxième fois après un court délai pour s'assurer que tout est chargé
+            setTimeout(function() {
+                colorPatientResponses();
+            }, 100);
+            // Appel supplémentaire après un délai plus long pour garantir que tout est chargé
+            setTimeout(function() {
+                colorPatientResponses();
+            }, 500);
+            // Auto-resize tous les textareas au chargement
+            const allTextareas = document.querySelectorAll('.comment-textarea');
+            allTextareas.forEach(textarea => {
+                if (textarea.value) {
+                    autoResizeTextarea(textarea);
+                }
+            });
+        });
+        
+        // S'assurer que la hauteur est bien définie avant l'impression
+        window.addEventListener('beforeprint', function() {
+            const allTextareas = document.querySelectorAll('.comment-textarea');
+            allTextareas.forEach(textarea => {
+                if (textarea.value && textarea.value.trim()) {
+                    // S'assurer que le textarea a une hauteur définie
+                    if (!textarea.style.height || textarea.style.height === 'auto') {
+                        autoResizeTextarea(textarea);
+                    }
+                }
+            });
+        });
+
+
+        function initAudio() {
+            if (!window.audioContext) {
+                window.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playBeep() {
+            initAudio();
+            const oscillator = window.audioContext.createOscillator();
+            const gainNode = window.audioContext.createGain();
+            oscillator.connect(gainNode);
+            gainNode.connect(window.audioContext.destination);
+            oscillator.frequency.value = 800;
+            oscillator.type = 'sine';
+            gainNode.gain.setValueAtTime(0.3, window.audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, window.audioContext.currentTime + 0.5);
+            oscillator.start(window.audioContext.currentTime);
+            oscillator.stop(window.audioContext.currentTime + 0.5);
+        }
+
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'fr-FR';
+                utterance.rate = 0.9;
+                utterance.volume = 0.8;
+                speechSynthesis.speak(utterance);
+            }
+        }
+
+        function playSound(message) {
+            playBeep();
+            setTimeout(() => speak(message), 500);
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return minutes + ":" + secs.toString().padStart(2, "0");
+        }
+
+        function toggleCheckboxes(disabled) {
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => {
+                radio.disabled = disabled;
+            });
+            const detailCheckboxes = document.querySelectorAll('.detail-checkbox input[type="checkbox"]');
+            detailCheckboxes.forEach(checkbox => {
+                checkbox.disabled = disabled;
+            });
+        }
+
+        function colorCriteriaByScore() {
+            if (!window.hasFinished && !window.hasStoppedManually) return;
+
+            const normalCriteriaRows = document.querySelectorAll('.criteria-row');
+            normalCriteriaRows.forEach(row => {
+                const id = row.id;
+                if (!id) return;
+                const criteriaName = id.replace('criteria-', '');
+                const checkedRadio = document.querySelector('input[name="' + criteriaName + '"]:checked');
+                row.classList.remove('criteria-zero-points', 'criteria-one-point', 'criteria-full-points', 'criteria-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
+                if (checkedRadio) {
+                    const score = Number(checkedRadio.value) || 0;
+                    if (score === 0) {
+                        row.classList.add('criteria-zero-points');
+                        row.classList.add('lacune-rouge');
+                    } else if (score === 1) {
+                        row.classList.add('criteria-one-point');
+                        row.classList.add('lacune-orange');
+                    } else if (score >= 2) {
+                        row.classList.add('criteria-full-points');
+                        row.classList.add('lacune-verte');
+                    }
+                } else {
+                    row.classList.add('criteria-not-answered');
+                    row.classList.add('lacune-rouge');
+                }
+            });
+
+            const communicationRows = document.querySelectorAll('.communication-section');
+            communicationRows.forEach(row => {
+                const id = row.id;
+                if (!id) return;
+                const criteriaName = id.replace('criteria-', '');
+                const checkedRadio = document.querySelector('input[name="' + criteriaName + '"]:checked');
+                row.classList.remove('communication-note-a', 'communication-note-b', 'communication-note-c', 'communication-note-d', 'communication-note-e', 'communication-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
+                if (checkedRadio) {
+                    const grade = checkedRadio.value.toLowerCase();
+                    row.classList.add("communication-note-" + grade);
+                    if (grade === 'e' || grade === 'd') {
+                        row.classList.add('lacune-rouge');
+                    } else if (grade === 'c') {
+                        row.classList.add('lacune-orange');
+                    } else if (grade === 'a' || grade === 'b') {
+                        row.classList.add('lacune-verte');
+                    }
+                } else {
+                    row.classList.add('communication-not-answered');
+                    row.classList.add('lacune-rouge');
+                }
+            });
+        }
+
+        function startTimer() {
+            if (window.isRunning || window.currentMode !== 'exam') return;
+            window.isRunning = true;
+            window.hasStarted = true;
+            window.hasStoppedManually = false;
+            document.body.classList.add('timer-running');
+            toggleCheckboxes(false);
+            playSound("Début de la station");
+            document.getElementById('startBtn').style.display = 'none';
+            document.getElementById('stopBtn').style.display = 'inline-block';
+            document.getElementById('resetBtn').disabled = true;
+            document.getElementById('timerStatus').textContent = 'En cours';
+            document.getElementById('timerStatus').className = 'timer-status status-running';
+            
+            window.timerInterval = setInterval(() => {
+                window.currentSeconds--;
+                document.getElementById('timerDisplay').textContent = formatTime(window.currentSeconds);
+                const container = document.getElementById('timerContainer');
+                if (window.currentSeconds === 2 * 60) {
+                    if (window.currentMode === 'exam') {
+                        playSound("Il vous reste 2 minutes");
+                    }
+                    container.classList.add('timer-warning');
+                    document.getElementById('timerStatus').textContent = '2 min restantes';
+                    document.getElementById('timerStatus').className = 'timer-status status-warning';
+                }
+                if (window.currentSeconds <= 30) {
+                    container.classList.add('timer-critical');
+                }
+                if (window.currentSeconds <= 0) {
+                    endTimer();
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            if (!window.isRunning) return;
+            clearInterval(window.timerInterval);
+            window.isRunning = false;
+            window.hasStoppedManually = true;
+            document.body.classList.remove('timer-running');
+            // Ne pas désactiver les checkboxes pour permettre de continuer à cocher après arrêt
+            // toggleCheckboxes(true);
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('stopBtn').style.display = 'none';
+            document.getElementById('resetBtn').disabled = false;
+            document.getElementById('timerStatus').textContent = 'Arrêté';
+            document.getElementById('timerStatus').className = 'timer-status';
+            colorCriteriaByScore();
+        }
+
+        function endTimer() {
+            clearInterval(window.timerInterval);
+            window.isRunning = false;
+            window.hasFinished = true;
+            window.currentSeconds = 0;
+            document.body.classList.remove('timer-running');
+            if (window.currentMode === 'exam') {
+                playSound("Fin de la station. Veuillez sortir");
+                // Repasser automatiquement en mode révision après la fin du timer
+                switchMode('revision');
+            }
+            document.getElementById('timerDisplay').textContent = '0:00';
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('stopBtn').style.display = 'none';
+            document.getElementById('resetBtn').disabled = false;
+            document.getElementById('timerStatus').textContent = 'Terminé';
+            document.getElementById('timerStatus').className = 'timer-status status-finished';
+            document.getElementById('timerStatus').style.display = 'block';
+            document.getElementById('timerContainer').className = 'timer-container';
+            // Ne pas désactiver les checkboxes après la fin pour permettre de continuer
+            // toggleCheckboxes(true);
+            colorCriteriaByScore();
+        }
+
+        function resetTimer() {
+            clearInterval(window.timerInterval);
+            window.timerInterval = null;
+            window.currentSeconds = 13 * 60;
+            window.isRunning = false;
+            window.hasStarted = false;
+            window.hasFinished = false;
+            window.hasStoppedManually = false;
+            document.getElementById('timerDisplay').textContent = '13:00';
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('stopBtn').style.display = 'none';
+            // Supprimer la coloration des critères
+            const criteriaAndCommRows = document.querySelectorAll('.criteria-row, .communication-section');
+            criteriaAndCommRows.forEach(row => {
+                row.classList.remove('score-0', 'score-1', 'score-2', 'score-a', 'score-b', 'score-c', 'score-d', 'score-e');
+            });
+            // Supprimer la coloration des sections
+            const allSections = document.querySelectorAll('.section');
+            allSections.forEach(section => {
+                section.classList.remove('note-a', 'note-b', 'note-c', 'note-d', 'note-e');
+                section.classList.add('note-neutral');
+            });
+            document.getElementById('timerStatus').style.display = 'none';
+            document.getElementById('timerContainer').className = 'timer-container';
+            // En mode révision, ne pas désactiver les checkboxes
+            if (window.currentMode === 'exam') {
+                toggleCheckboxes(true);
+            }
+            const allRadios = document.querySelectorAll('input[type="radio"]');
+            allRadios.forEach(radio => {
+                radio.checked = false;
+            });
+            // Réinitialiser les detail-checkboxes
+            const allDetailCheckboxes = document.querySelectorAll('.detail-checkbox input[type="checkbox"]');
+            allDetailCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            const allPointsDisplays = document.querySelectorAll('.points-display');
+            allPointsDisplays.forEach(display => {
+                display.textContent = '0';
+            });
+            const allCriteriaRows = document.querySelectorAll('.criteria-row');
+            allCriteriaRows.forEach(row => {
+                row.classList.remove('criteria-zero-points', 'criteria-one-point', 'criteria-full-points', 'criteria-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
+            });
+            const allCommunicationRows = document.querySelectorAll('.communication-section');
+            allCommunicationRows.forEach(row => {
+                row.classList.remove('communication-note-a', 'communication-note-b', 'communication-note-c', 'communication-note-d', 'communication-note-e', 'communication-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
+            });
+            calculateScores();
+            // Supprimer tous les commentaires et cacher les textareas
+            const allTextareas = document.querySelectorAll('.comment-textarea');
+            allTextareas.forEach(textarea => {
+                textarea.value = '';
+                textarea.style.height = textarea.classList.contains('comment-textarea') && textarea.closest('.section-comment-section.global') ? '30px' : (textarea.closest('.section-comment-section') ? '28px' : '26px');
+            });
+            // Cacher toutes les sections de commentaires ouvertes
+            const allCommentSections = document.querySelectorAll('.criterion-comment-section.show, .section-comment-section.show');
+            allCommentSections.forEach(section => {
+                section.classList.remove('show');
+            });
+            // Mettre à jour les boutons de commentaires
+            const allCommentButtons = document.querySelectorAll('.comment-button, .section-comment-button');
+            allCommentButtons.forEach(button => {
+                button.classList.remove('has-content');
+            });
+        }
+        
+        function switchMode(mode) {
+            window.currentMode = mode;
+            const body = document.body;
+            body.className = mode + '-mode';
+            const buttons = document.querySelectorAll('.mode-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons.forEach(btn => {
+                if (btn.textContent.includes(mode === "revision" ? "Révision" : "Examen")) {
+                    btn.classList.add("active");
+                }
+            });
+            if (mode === 'revision') {
+                toggleCheckboxes(false);
+                showLacunesButton();
+            } else {
+                if (!window.hasStarted) {
+                    toggleCheckboxes(true);
+                }
+                hideLacunesButton();
+            }
+        }
+        
+        function showLacunesButton() {
+            const btn = document.querySelector('.lacune-button');
+            if (btn) btn.style.display = 'block';
+        }
+        
+        function hideLacunesButton() {
+            const btn = document.querySelector('.lacune-button');
+            if (btn) btn.style.display = 'none';
+        }
+        
+        function identifyLacunes() {
+            // Critères standards (anamnèse, examen, management)
+            const criteria = document.querySelectorAll(".criteria-row");
+            criteria.forEach(criterion => {
+                const id = criterion.id.replace("criteria-", "");
+                const pointsElement = document.getElementById("points-" + id);
+                const points = pointsElement ? parseInt(pointsElement.textContent) : 0;
+                
+                criterion.classList.remove("lacune-rouge", "lacune-orange", "lacune-verte");
+                
+                if (points === 0) {
+                    criterion.classList.add("lacune-rouge");
+                } else if (points === 1) {
+                    criterion.classList.add("lacune-orange");
+                } else if (points >= 2) {
+                    criterion.classList.add("lacune-verte");
+                }
+            });
+            
+            // Critères communication (échelle A-E)
+            const commCriteria = document.querySelectorAll(".communication-section");
+            commCriteria.forEach(criterion => {
+                const id = criterion.id.replace("criteria-", "");
+                const radio = document.querySelector("input[name=\"" + id + "\"]:checked");
+                
+                criterion.classList.remove("lacune-rouge", "lacune-orange", "lacune-verte");
+                
+                if (!radio) {
+                    criterion.classList.add("lacune-rouge");
+                } else {
+                    const grade = radio.value;
+                    if (grade === "E" || grade === "D") {
+                        criterion.classList.add("lacune-rouge");
+                    } else if (grade === "C") {
+                        criterion.classList.add("lacune-orange");
+                    } else if (grade === "A" || grade === "B") {
+                        criterion.classList.add("lacune-verte");
+                    }
+                }
+            });
+        }
+        function toggleComment(id) {
+            const section = document.getElementById("comment-section-" + id);
+            const textarea = document.getElementById("comment-" + id);
+            if (section) {
+                section.classList.toggle("show");
+                // Focus automatiquement sur le textarea quand on ouvre la section
+                if (section.classList.contains("show") && textarea) {
+                    textarea.focus();
+                }
+            }
+        }
+
+        function updateCommentButton(id) {
+            const textarea = document.getElementById("comment-" + id);
+            const criterionRow = document.getElementById("criteria-" + id);
+            const commentSection = document.getElementById("comment-section-" + id);
+            if (textarea && criterionRow) {
+                const button = criterionRow.querySelector(".comment-button");
+                if (button) {
+                    if (textarea.value.trim()) {
+                        button.classList.add("has-content");
+                        if (commentSection) commentSection.classList.add("has-content");
+                    } else {
+                        button.classList.remove("has-content");
+                        if (commentSection) commentSection.classList.remove("has-content");
+                    }
+                }
+            }
+        }
+
+        function toggleSectionComment(section) {
+            const commentSection = document.getElementById("section-comment-" + section);
+            const textarea = document.getElementById("comment-section-" + section);
+            if (commentSection) {
+                commentSection.classList.toggle("show");
+                // Focus automatiquement sur le textarea quand on ouvre la section
+                if (commentSection.classList.contains("show") && textarea) {
+                    textarea.focus();
+                }
+            }
+        }
+
+        function updateSectionComment(section) {
+            const textarea = document.getElementById("comment-section-" + section);
+            const commentSection = document.getElementById("section-comment-" + section);
+            const buttons = document.querySelectorAll(".section-comment-button");
+            buttons.forEach(button => {
+                if (button.getAttribute("onclick") && button.getAttribute("onclick").includes(section)) {
+                    if (textarea && textarea.value.trim()) {
+                        button.classList.add("has-content");
+                        if (commentSection) commentSection.classList.add("has-content");
+                    } else {
+                        button.classList.remove("has-content");
+                        if (commentSection) commentSection.classList.remove("has-content");
+                    }
+                }
+            });
+        }
+
+        function updateGeneralComment() {
+            const textarea = document.getElementById("comment-general");
+            if (textarea) {
+                const section = textarea.closest(".section-comment-section");
+                if (section) {
+                    if (textarea.value.trim()) {
+                        section.classList.add("has-content");
+                    } else {
+                        section.classList.remove("has-content");
+                    }
+                }
+            }
+        }
+
+        function autoResizeTextarea(textarea) {
+            // Reset height to auto to get correct scrollHeight
+            textarea.style.height = "auto";
+            // Set new height based on content
+            const newHeight = textarea.scrollHeight + 2;
+            textarea.style.height = newHeight + "px";
+        }
+
+    </script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+    <script>
+        // Appel final pour s'assurer que tout est coloré
+        // Forcer la coloration finale
+        if (window.colorPatientResponses) {
+            window.colorPatientResponses();
+        }
+    </script>
+</body>
+</html>
