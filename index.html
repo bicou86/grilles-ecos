@@ -6702,6 +6702,46 @@
     </footer>
 
     <script>
+      // Redirection directe vers la grille quand l'URL contient ?station=<ID>
+      // (lien profond utilisé par ecos-sim). Le mapping ID -> URL de la grille
+      // est dérivé du DOM des cartes — pas de liste statique à maintenir.
+      (function () {
+        var p = new URLSearchParams(window.location.search);
+        var station = p.get("station");
+        if (!station) return;
+        var SECTION_BY_PREFIX = {
+          AMBOSS: "amboss",
+          German: "german",
+          RESCOS: "rescos",
+          USMLE: "usmle",
+          USMLE_Triage: "triage",
+        };
+        // Split sur le DERNIER tiret pour supporter USMLE_Triage-1 et RESCOS-9b
+        var idx = station.lastIndexOf("-");
+        if (idx === -1) return;
+        var prefix = station.slice(0, idx);
+        var num = station.slice(idx + 1);
+        var section = SECTION_BY_PREFIX[prefix];
+        if (!section) return;
+        var sectionEl = document.querySelector(
+          '.section[data-section="' + section + '"]',
+        );
+        if (!sectionEl) return;
+        var cards = sectionEl.querySelectorAll("a.card");
+        for (var i = 0; i < cards.length; i++) {
+          var numEl = cards[i].querySelector(".num");
+          if (numEl && numEl.textContent.trim() === num) {
+            var href = cards[i].getAttribute("href");
+            if (href) {
+              window.location.replace(href);
+              return;
+            }
+          }
+        }
+      })();
+    </script>
+
+    <script>
       (function () {
         var searchInput = document.getElementById("searchInput");
         var searchCount = document.getElementById("searchCount");
