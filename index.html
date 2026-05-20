@@ -6724,12 +6724,14 @@
         });
 
         // Bouton « Simuler » Patient ECOS sur chaque carte (hors CasECOS)
-        var SIM_PREFIXES = {
-          amboss: "AMBOSS",
-          german: "German",
-          rescos: "RESCOS",
-          usmle: "USMLE",
-          triage: "USMLE_Triage",
+        // Format station-id : la plupart des catégories utilisent "<PREFIX>-<num>",
+        // mais Triage côté ecos-sim utilise "USMLE Triage <num>" (espaces, pas de tiret).
+        var SIM_FORMATS = {
+          amboss: { prefix: "AMBOSS", sep: "-" },
+          german: { prefix: "German", sep: "-" },
+          rescos: { prefix: "RESCOS", sep: "-" },
+          usmle: { prefix: "USMLE", sep: "-" },
+          triage: { prefix: "USMLE Triage", sep: " " },
         };
         var SIM_BASE_URL = "https://ecos-sim.replit.app/simulation?station=";
         var SVG_NS = "http://www.w3.org/2000/svg";
@@ -6749,13 +6751,13 @@
           var section = card.closest(".section");
           if (!section) return;
           var sectionCat = section.getAttribute("data-section");
-          var prefix = SIM_PREFIXES[sectionCat];
-          if (!prefix) return;
+          var fmt = SIM_FORMATS[sectionCat];
+          if (!fmt) return;
           var numEl = card.querySelector(".num");
           if (!numEl) return;
           var num = numEl.textContent.trim();
           if (!num) return;
-          var stationId = prefix + "-" + num;
+          var stationId = fmt.prefix + fmt.sep + num;
           var url = SIM_BASE_URL + encodeURIComponent(stationId);
           var btn = document.createElement("button");
           btn.type = "button";
