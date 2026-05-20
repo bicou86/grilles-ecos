@@ -2,8 +2,8 @@
 
 ## Vue d'ensemble
 
-`grilles-ecos` est un site statique regroupant **253 grilles d'évaluation ECOS**
-(Examens Cliniques Objectifs Structurés / OSCEs) réparties en 5 corpus. Chaque
+`grilles-ecos` est un site statique regroupant **451 grilles d'évaluation ECOS**
+(Examens Cliniques Objectifs Structurés / OSCEs) réparties en 6 corpus. Chaque
 grille est une fiche de notation interactive autonome : on consulte le cas, on
 s'entraîne, puis on coche les critères pour obtenir un score.
 
@@ -42,7 +42,8 @@ grilles-ecos/
 │   ├── german/                    # 88 cas German
 │   ├── rescos/                    # 41 cas RESCOS
 │   ├── usmle/                     # 44 cas USMLE
-│   └── triage/                    # 40 cas Triage
+│   ├── triage/                    # 40 cas Triage
+│   └── casecos/                   # 198 cas CasECOS
 ├── manifest.json                  # Manifeste PWA
 └── sw.js                          # Service Worker PWA
 ```
@@ -57,7 +58,7 @@ Exemples :
 - `German-42_-_Eruption_cutane_e_-_Grille_ECOS.html`
 - `RESCOS-5_-_Douleur_thoracique_-_Femme_65_ans_-_Grille_ECOS.html`
 
-Les corpus disponibles sont : `amboss`, `german`, `rescos`, `usmle`, `triage`
+Les corpus disponibles sont : `amboss`, `german`, `rescos`, `usmle`, `triage`, `casecos`
 
 ## Structure localStorage
 

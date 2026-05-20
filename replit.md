@@ -2,7 +2,7 @@
 
 ## Overview
 
-A static French medical website serving 253 clinical case evaluation grids (Grilles ECOS) across 5 categories. Each HTML file is a self-contained interactive scoring sheet for evaluating medical student performance during simulated patient encounters (ECOS = Examens Cliniques Objectifs Structurés / OSCEs).
+A static French medical website serving 451 clinical case evaluation grids (Grilles ECOS) across 6 categories. Each HTML file is a self-contained interactive scoring sheet for evaluating medical student performance during simulated patient encounters (ECOS = Examens Cliniques Objectifs Structurés / OSCEs).
 
 ## Categories
 
@@ -39,7 +39,7 @@ Preferred communication style: Simple, everyday language.
 
 ### Medical System Classification
 
-All 253 cases are classified into 18 specialties using keyword matching on title + diagnosis text + demographics:
+All 451 cases are classified into 18 specialties using keyword matching on title + diagnosis text + demographics:
 - Gastro-entérologie (33), Pédiatrie (27), Rhumatologie (26), Neurologie (23), Cardiologie (22)
 - Gynécologie (18), Pneumologie (18), Psychiatrie (14), Médecine générale (13)
 - Urologie/Néphrologie (11), Endocrinologie (9), ORL (8), Vasculaire (8), Urgences (7)
@@ -63,7 +63,7 @@ Each evaluation grid is divided into sections (anamnesis, clinical reasoning, co
 
 ## Notion Integration
 
-A Notion case library mirrors all 253 cases for workspace-level browsing:
+A Notion case library mirrors all 451 cases for workspace-level browsing:
 - **Hub page**: "Grilles ECOS – Cas Cliniques" (page ID: `32585631-48fa-8190-9f85-db4effe44263`)
 - **Database**: "Cas Cliniques ECOS" (DB ID: `674c7c65e534495b822c1e35ed3cf69d`, data source: `2d326552-e05b-4d54-a69e-107b3f06b5b7`)
 - **Schema**: Cas (title), Numéro (number), Catégorie (select), Démographie (text), URL (url)
