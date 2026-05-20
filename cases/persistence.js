@@ -1,5 +1,10 @@
-(function() {
-  var pageKey = "ecos_" + location.pathname.split("/").pop().replace(/\.html$/, "");
+(function () {
+  var pageKey =
+    "ecos_" +
+    location.pathname
+      .split("/")
+      .pop()
+      .replace(/\.html$/, "");
 
   function saveState() {
     var state = { r: {}, c: {}, t: {} };
@@ -13,23 +18,40 @@
     }
     var texts = document.querySelectorAll("textarea");
     for (var i = 0; i < texts.length; i++) {
-      if (texts[i].id && texts[i].value.trim()) state.t[texts[i].id] = texts[i].value;
+      if (texts[i].id && texts[i].value.trim())
+        state.t[texts[i].id] = texts[i].value;
     }
-    try { localStorage.setItem(pageKey, JSON.stringify(state)); } catch(e) {}
+    try {
+      localStorage.setItem(pageKey, JSON.stringify(state));
+    } catch (e) {}
     updateSaveIndicator(true);
   }
 
   function loadState() {
     var raw;
-    try { raw = localStorage.getItem(pageKey); } catch(e) { return; }
+    try {
+      raw = localStorage.getItem(pageKey);
+    } catch (e) {
+      return;
+    }
     if (!raw) return;
     var state;
-    try { state = JSON.parse(raw); } catch(e) { return; }
+    try {
+      state = JSON.parse(raw);
+    } catch (e) {
+      return;
+    }
 
     if (state.r) {
       var names = Object.keys(state.r);
       for (var i = 0; i < names.length; i++) {
-        var radio = document.querySelector('input[type=radio][name="' + names[i] + '"][value="' + state.r[names[i]] + '"]');
+        var radio = document.querySelector(
+          'input[type=radio][name="' +
+            names[i] +
+            '"][value="' +
+            state.r[names[i]] +
+            '"]',
+        );
         if (radio) {
           radio.checked = true;
           radio.dispatchEvent(new Event("change"));
@@ -60,8 +82,14 @@
   }
 
   function clearState() {
-    if (confirm("Effacer toutes les r\u00e9ponses enregistr\u00e9es pour ce cas ?")) {
-      try { localStorage.removeItem(pageKey); } catch(e) {}
+    if (
+      confirm(
+        "Effacer toutes les r\u00e9ponses enregistr\u00e9es pour ce cas ?",
+      )
+    ) {
+      try {
+        localStorage.removeItem(pageKey);
+      } catch (e) {}
       location.reload();
     }
   }
@@ -71,19 +99,32 @@
     if (!el) return;
     el.textContent = saved ? "\u2713 Sauvegard\u00e9" : "";
     el.style.opacity = saved ? "1" : "0";
-    if (saved) { setTimeout(function() { el.style.opacity = "0.6"; }, 1500); }
+    if (saved) {
+      setTimeout(function () {
+        el.style.opacity = "0.6";
+      }, 1500);
+    }
   }
 
   var bar = document.createElement("div");
-  bar.style.cssText = "position:fixed;bottom:1rem;right:1rem;z-index:9999;display:flex;align-items:center;gap:0.5rem;";
+  bar.style.cssText =
+    "position:fixed;bottom:3.5rem;right:1rem;z-index:9999;display:flex;align-items:center;gap:0.5rem;";
   var indicator = document.createElement("span");
   indicator.id = "save-indicator";
-  indicator.style.cssText = "font-size:0.75rem;color:#16a34a;font-weight:600;transition:opacity 0.3s;opacity:0;font-family:Inter,sans-serif;background:white;padding:0.25rem 0.5rem;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,0.1);";
+  indicator.style.cssText =
+    "font-size:0.75rem;color:#16a34a;font-weight:600;transition:opacity 0.3s;opacity:0;font-family:Inter,sans-serif;background:white;padding:0.25rem 0.5rem;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,0.1);";
   var resetBtn = document.createElement("button");
   resetBtn.textContent = "R\u00e9initialiser";
-  resetBtn.style.cssText = "font-size:0.7rem;padding:0.3rem 0.6rem;border:1px solid #e2e8f0;border-radius:6px;background:white;color:#64748b;cursor:pointer;font-family:Inter,sans-serif;box-shadow:0 1px 3px rgba(0,0,0,0.1);transition:all 0.2s;";
-  resetBtn.onmouseover = function() { this.style.borderColor="#f87171"; this.style.color="#dc2626"; };
-  resetBtn.onmouseout = function() { this.style.borderColor="#e2e8f0"; this.style.color="#64748b"; };
+  resetBtn.style.cssText =
+    "font-size:0.7rem;padding:0.3rem 0.6rem;border:1px solid #e2e8f0;border-radius:6px;background:white;color:#64748b;cursor:pointer;font-family:Inter,sans-serif;box-shadow:0 1px 3px rgba(0,0,0,0.1);transition:all 0.2s;";
+  resetBtn.onmouseover = function () {
+    this.style.borderColor = "#f87171";
+    this.style.color = "#dc2626";
+  };
+  resetBtn.onmouseout = function () {
+    this.style.borderColor = "#e2e8f0";
+    this.style.color = "#64748b";
+  };
   resetBtn.onclick = clearState;
   bar.appendChild(indicator);
   bar.appendChild(resetBtn);
@@ -91,10 +132,10 @@
 
   loadState();
 
-  document.addEventListener("change", function(e) {
+  document.addEventListener("change", function (e) {
     if (e.target.type === "radio" || e.target.type === "checkbox") saveState();
   });
-  document.addEventListener("input", function(e) {
+  document.addEventListener("input", function (e) {
     if (e.target.tagName === "TEXTAREA") saveState();
   });
 })();
