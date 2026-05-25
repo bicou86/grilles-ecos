@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Grilles ECOS" />
-    <meta name="theme-color" content="#1e40af" />
+    <meta name="theme-color" content="#0f172a" />
     <link rel="manifest" href="/manifest.json" />
     <link
       rel="icon"
@@ -563,44 +563,6 @@
         margin-top: 0.4rem;
         font-size: 0.75rem;
         color: #64748b;
-      }
-
-      /* Welcome banner */
-      .welcome-banner {
-        background: #eff6ff;
-        border-bottom: 1px solid #bfdbfe;
-        display: none;
-      }
-      .welcome-inner {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0.75rem 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-      }
-      .welcome-icon {
-        font-size: 1.3rem;
-        flex-shrink: 0;
-      }
-      .welcome-text {
-        flex: 1;
-        font-size: 0.85rem;
-        color: #1e40af;
-        line-height: 1.4;
-      }
-      .welcome-text strong {
-        display: block;
-        margin-bottom: 0.15rem;
-      }
-      .welcome-close {
-        background: none;
-        border: none;
-        font-size: 1.2rem;
-        cursor: pointer;
-        color: #3b82f6;
-        padding: 0.25rem;
-        line-height: 1;
       }
 
       /* Improved no-results */
@@ -1210,7 +1172,6 @@
       .offline-btn:focus-visible,
       .clear-filters:focus-visible,
       .data-btn:focus-visible,
-      .welcome-close:focus-visible,
       .no-results-btn:focus-visible,
       .theme-toggle:focus-visible {
         outline: 2px solid #3b82f6;
@@ -1225,10 +1186,11 @@
   </head>
   <body>
     <script>
-      // Apply saved theme immediately to avoid FOUC
+      // Apply theme immediately to avoid FOUC.
+      // Default = dark; respects localStorage override if user toggled.
       (function () {
         var t = localStorage.getItem("ecos_theme");
-        if (t) document.documentElement.setAttribute("data-theme", t);
+        document.documentElement.setAttribute("data-theme", t || "dark");
       })();
     </script>
 
@@ -1290,20 +1252,6 @@
         >
       </div>
     </header>
-
-    <div class="welcome-banner" id="welcomeBanner">
-      <div class="welcome-inner">
-        <span class="welcome-icon">&#x1F44B;</span>
-        <div class="welcome-text">
-          <strong>Bienvenue sur Grilles ECOS !</strong>
-          451 cas cliniques avec grilles d'évaluation pour préparer l'examen
-          ECOS. Cliquez sur un cas pour commencer.
-        </div>
-        <button class="welcome-close" id="welcomeClose" aria-label="Fermer">
-          &times;
-        </button>
-      </div>
-    </div>
 
     <div class="srs-banner" id="srsBanner">
       <div class="srs-banner-inner">
@@ -6914,20 +6862,6 @@
           });
           card.appendChild(btn);
         });
-
-        // Welcome banner (first visit)
-        if (!localStorage.getItem("ecos_visited")) {
-          var wb = document.getElementById("welcomeBanner");
-          if (wb) wb.style.display = "block";
-          document
-            .getElementById("welcomeClose")
-            .addEventListener("click", function () {
-              document.getElementById("welcomeBanner").style.display = "none";
-              try {
-                localStorage.setItem("ecos_visited", "1");
-              } catch (e) {}
-            });
-        }
 
         // No-results clear button
         document

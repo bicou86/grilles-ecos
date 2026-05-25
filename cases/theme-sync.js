@@ -1,8 +1,10 @@
 (function () {
+  var t = null;
   try {
-    var t = localStorage.getItem("ecos_theme");
-    if (t === "dark" || t === "light") {
-      document.documentElement.setAttribute("data-theme", t);
-    }
+    t = localStorage.getItem("ecos_theme");
   } catch (e) {}
+  document.documentElement.setAttribute(
+    "data-theme",
+    t === "light" ? "light" : "dark",
+  );
 })();
