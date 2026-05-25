@@ -1,4 +1,4 @@
-var CACHE_NAME = "ecos-v13";
+var CACHE_NAME = "ecos-v14";
 var APP_SHELL = [
   "/",
   "/index.html",
@@ -7,6 +7,7 @@ var APP_SHELL = [
   "/cases/scoring.js",
   "/cases/persistence.js",
   "/cases/srs.js",
+  "/cases/theme-sync.js",
   "/cases/case-styles.css",
   "/cases/mobile-responsive.css",
 ];
