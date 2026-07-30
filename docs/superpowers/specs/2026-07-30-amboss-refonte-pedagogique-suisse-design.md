@@ -143,11 +143,15 @@ jamais dans un `.criteria-text` ni dans un attribut `data-criteria`.
 | C4 25 mg/dL (N 10–40) | C4 0,25 g/L (N 0,1–0,4) | 21 |
 | « 85 µmol/L (5 mg/dL) » | retirer la parenthèse en mg/dL | 37 |
 
-### Numéro d'urgence — 3 occurrences
+### Numéro d'urgence — 2 occurrences
 
-`911` (AMBOSS-28), `SAMU` (AMBOSS-35), `112` (AMBOSS-8) → **144**.
+`911` (AMBOSS-28) et `SAMU` (AMBOSS-35) → **144**.
 
 Le vault emploie 144 à 405 reprises et n'écrit jamais 911.
+
+`112` n'est **pas** remplacé : sa seule occurrence dans le corpus est
+`Score Global 0/112` (AMBOSS-8), un total de barème et non un numéro d'urgence.
+Un remplacement automatique corromprait la grille.
 
 ## Passe par grille
 
