@@ -67,8 +67,16 @@ def block_segment(html, name):
 
 
 def visible_text(html):
-    """Texte visible : sans balises, sans base64, espaces normalisés."""
-    txt = re.sub(r"<[^>]+>", " ", strip_base64(html))
+    """Texte visible : sans balises, sans base64, espaces normalisés.
+
+    Ne retire qu'une vraie balise HTML — un `<` suivi d'un nom de balise
+    (lettre ASCII). Un `<[^>]+>` naïf traiterait tout `<` nu comme une
+    ouverture de balise, y compris les seuils de laboratoire écrits
+    `Hb < 70 g/L (< 90 si coronarien)` : le `<` de « < 70 » ouvrirait alors
+    une pseudo-balise que le motif referme sur le prochain `>` réel (celui
+    du `</li>`), avalant toute la clause. Voir PROCEDURE.md § 6.
+    """
+    txt = re.sub(r'</?[a-zA-Z][a-zA-Z0-9]*(?:\s[^>]*?)?/?>', " ", strip_base64(html))
     txt = re.sub(r"&[a-z]+;", " ", txt)
     return re.sub(r"\s+", " ", txt).strip()
 

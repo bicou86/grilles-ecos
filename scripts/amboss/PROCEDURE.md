@@ -210,6 +210,55 @@ Deux corollaires vérifiés en même temps :
   céphalorachidien, conventionnellement rendu par µL (ou ×10⁶/L), jamais en G/L.
   Le champ des règles ci-dessus est l'hémogramme, pas tout compte cellulaire.
 
+**Piège d'outillage corrigé : `visible_text()` et le chevron nu.** Jusqu'à sa
+correction, `lib_amboss.visible_text()` retirait les balises par
+`re.sub(r"<[^>]+>", " ", …)`, qui traite tout `<` comme une ouverture de balise.
+Or les grilles écrivent des seuils de laboratoire avec des chevrons nus —
+`<li>6. Transfusion si Hb < 70 g/L (< 90 si coronarien)</li>` — et le `<` de
+« < 70 » ouvrait une **pseudo-balise** que le motif refermait sur le `>` du
+`</li>` qui suit, avalant toute la clause : `visible_text()` rendait
+« 6. Transfusion si Hb », et « < 90 si coronarien » disparaissait de tout texte
+de recherche, sans trace. Le défaut frappe précisément les valeurs de
+laboratoire — la donnée la plus sensible du corpus — puisque ce sont elles qui
+s'écrivent avec un chevron nu. Une recherche exhaustive du motif (chevron nu
+suivi d'un chiffre, fichier entier après `strip_base64`) trouve des dizaines
+d'occurrences réparties sur la majorité des 40 grilles : ce n'est pas un cas
+isolé, c'est une classe entière de contenu qui échappait à toute recherche
+fondée sur `visible_text()`.
+
+Ce que le défaut épargnait, et pourquoi : `check_nomenclature.py` travaille sur
+`strip_base64(html)` directement, jamais sur `visible_text()` — il est resté
+fiable. `list_items()` (utilisé par `report_redundancy.py` et
+`check_no_loss.py`) capture l'intérieur d'un `<li>` par
+`r"<li[^>]*>(.*?)</li>"` **avant** de passer chaque fragment à
+`visible_text()` : le `</li>` qui aurait refermé la pseudo-balise n'est déjà
+plus dans le fragment isolé, donc aucun `>` n'y reste pour l'avaler — la
+clause y survit. Ces deux scripts sont restés fiables par construction, pas
+par accident : vérifié en confirmant qu'aucune de leurs sorties (ni le total
+de `report_redundancy.py`, ni la liste de `check_no_loss.py` sur l'ensemble du
+projet) ne change entre l'ancien et le nouveau `visible_text()` — identiques
+au bit près.
+
+Corrigé : `visible_text()` ne retire plus qu'une vraie balise — `<` ou `</`
+suivi **immédiatement** d'une lettre ASCII, la seule syntaxe qu'une vraie
+balise HTML respecte —
+`re.sub(r'</?[a-zA-Z][a-zA-Z0-9]*(?:\s[^>]*?)?/?>', " ", …)`. Un chevron nu,
+qu'il soit suivi d'un chiffre ou d'un espace puis d'une lettre, n'ouvre plus de
+pseudo-balise. Limite résiduelle assumée : une lettre **collée** à un `<` nu
+sans espace (`<N` et non `< N`) reste indiscernable d'un vrai début de balise
+et peut encore être avalée jusqu'au `>` suivant. Vérifiée absente des 40
+grilles à cette date (tout `<lettre` du corpus correspond à une vraie balise
+HTML/SVG connue), mais rien ne garantit qu'une grille future n'introduira pas
+ce style d'écriture — angle mort à surveiller, du même ordre que les
+numérations en unité implicite ci-dessus.
+
+**Règle pratique : ne jamais chercher du texte dans une grille avec
+`re.sub(r"<[^>]+>", …)`, ni faire confiance à un `visible_text()` dont on n'a
+pas vérifié qu'il porte ce correctif.** Pour chercher un seuil ou toute valeur
+susceptible d'être adjacente à un `<` nu, préférer le HTML brut après
+`strip_base64` (comme `check_nomenclature.py`) — c'est la méthode qui ne peut
+pas être trompée par ce piège, corrigé ou non.
+
 Avant de commit une grille dédoublonnée, vérifier aussi qu'aucune information n'a
 disparu (règle du § 3) :
 
