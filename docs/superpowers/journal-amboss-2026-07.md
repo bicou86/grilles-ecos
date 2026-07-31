@@ -2040,3 +2040,340 @@ myorelaxant non commercialisé en Suisse et inapproprié après 65 ans ; contre-
 paracétamol désignée à tort comme métabolique ; gabapentine sans titration ni adaptation rénale
 chez un sujet âgé ; anévrisme de l'aorte abdominale totalement absent des drapeaux rouges alors que
 le patient en réunit le portrait.
+
+### AMBOSS-11 — Selles noires, homme de 65 ans, ulcère gastrique hémorragique sous AINS (page SSP : Rectorragies & Hémorragie Digestive Basse)
+
+Redondance : **20 paires → 5** (`report_redundancy.py AMBOSS-11_`). Quatre blocs présents.
+Grille de l'**axe 6** : `presentation`/Pièges ECOS supprimée après report dans `expert`/Pièges.
+
+**Modifications**
+
+*Sécurité thérapeutique — `theorie`/Rappels (voir les signalements en fin d'entrée)*
+
+- theorie · Rappels · **anti-H2** : « Ranitidine 150mg BID » → « **famotidine 20-40 mg × 2/j** — la
+  ranitidine n'est plus commercialisée depuis son retrait mondial de 2020 (contamination par
+  nitrosamines) ». **Correction factuelle interne** : la molécule proposée en cas d'intolérance aux
+  IPP n'existe plus sur le marché. Ni la page SSP ni la section notée ne parlent d'anti-H2 — il n'y
+  avait rien à arbitrer, seulement un fait devenu faux.
+- theorie · Rappels · **paracétamol** : « Paracétamol 1g QID, tramadol si insuffisant » → « 1 g
+  × 3-4/j — **plafond 4 g/j, ramené à 3 g/j** en cas de consommation chronique d'alcool (**le cas
+  ici : 1-2 bières par jour**), de poids < 50 kg ou d'insuffisance hépatique ; tramadol en réserve ».
+  Le patient boit tous les jours et l'alternative aux AINS est un **critère noté** (`m5`) : la
+  posologie proposée en remplacement ne pouvait pas rester sans plafond. Précédent AMBOSS-9.
+- theorie · Rappels · **allergie à la pénicilline** : « Alternative pénicilline : Métronidazole
+  500mg BID » → « **Allergie à la pénicilline — le cas de ce patient** : l'amoxicilline est
+  remplacée par métronidazole 500 mg × 2/j ». L'item existait mais ne disait pas qu'il s'appliquait
+  à *ce* patient, dont l'allergie est un sous-item noté (`a7` — « Allergies [Pénicilline] »).
+- resume · Traitement médical : la trithérapie d'éradication portait « IPP + amoxicilline +
+  clarithromycine » **sans mention de l'allergie**. Ajout de « — **si allergie à la pénicilline :
+  IPP + clarithromycine + métronidazole** », et de la durée (14 j) qui n'était que dans `theorie`.
+  Le bloc canonique, celui que l'étudiant révise, proposait à ce patient un antibiotique auquel il
+  est allergique.
+- theorie · Rappels · notation et molécule : « BID », « QID » → « × 2/j », « × 3-4/j » (précédents
+  AMBOSS-6 et 9) ; « Oméprazole 80mg bolus » → « **ésoméprazole** 80 mg en bolus », aligné sur le
+  critère noté `m5` (« IPP IV: Ésoméprazole 80 mg bolus puis 8 mg/h ») — **niveau 2**, la page SSP
+  ne nomme pas de molécule pour l'ulcère.
+
+*Prise en charge de l'hémorragie — le canonique reçoit ce que `theorie` cessait de porter*
+
+- resume · Prise en charge : **nouvelle sous-section « Hémorragie active — urgence »**. Le bloc
+  canonique ne portait que la prise en charge de l'ulcère chronique alors que la station est un
+  méléna : deux voies veineuses de gros calibre et remplissage, bilan initial (FSC, groupe + RAI et
+  commande de CE, crase, chimie), IPP IV à forte dose sans attendre l'endoscopie, endoscopie < 24 h
+  (< 12 h si instabilité) avec hémostase, transfusion si Hb < 70 g/L ou instabilité. Report
+  **préalable** à la réécriture de `theorie` (règle d'anti-perte).
+  source : SSP — PRISE EN CHARGE — « **2 voies veineuses périphériques de gros calibre (≥ 16-18 G)**,
+  monitoring continu » et « **Transfusion de CE** selon stratégie restrictive » ; section notée `m5`
+  — « Voie veineuse périphérique gros calibre: (18G) », « IPP IV: Ésoméprazole 80 mg bolus puis
+  8 mg/h », « Endoscopie digestive haute dans les 24h »
+- theorie · Prise en charge de l'HDH : la check-list numérotée de six points était **actionnable
+  dans `theorie`** et doublait ce que `resume` porte désormais. Réécrite en *pourquoi* : pourquoi la
+  réanimation précède l'enquête étiologique (on perd du sang total), pourquoi l'hémoglobine initiale
+  est faussement rassurante (l'hémodilution demande des heures), pourquoi la stratégie
+  transfusionnelle est restrictive, pourquoi l'IPP avant l'endoscopie stabilise le caillot sans
+  dispenser du geste, pourquoi l'érythromycine précède l'endoscopie, et ce que signe le rapport
+  urée/créatinine. Axe 2.
+  source : SSP — Cartes ECOS — « on perd du sang TOTAL : l'urgence est de restaurer la volémie
+  […] une stratégie transfusionnelle RESTRICTIVE améliore la survie » et « se fier à l'Hb initiale :
+  elle est faussement normale au début » ; SSP — Cartes ECOS — « l'urée monte, alors que la
+  créatinine reste normale »
+- theorie · Prévention secondaire : les six mesures redisaient `resume` au même format. Remplacées
+  par le rationnel — les 60 % de récidive à un an sans éradication, la gastroprotection qui ne
+  remplace pas l'arrêt des AINS et le COX-2 qui perd son bénéfice sous aspirine, le tabac qui
+  retarde la cicatrisation, le contrôle endoscopique qui exclut surtout un cancer ulcériforme
+  (lequel cicatrise aussi sous IPP), et le contrôle d'éradication à faire IPP arrêté. Axe 2.
+- resume · Suivi : ajout de « **Surveillance de l'hémoglobine et correction de la carence martiale
+  si anémie** » et de « IPP arrêté » sur le contrôle d'éradication — les deux venaient de `theorie`
+  et n'avaient pas d'équivalent dans le canonique.
+
+*Alignement du délai de contrôle endoscopique (niveau 2)*
+
+- resume · Suivi et presentation · Q3 : « Contrôle endoscopique à **8–12** semaines » → « à **6–8**
+  semaines ». Les trois blocs pédagogiques se contredisaient (`theorie` disait 6-8, `resume` et
+  `presentation` 8-12). La page SSP, consacrée à l'hémorragie **basse**, ne fixe aucun délai de
+  contrôle d'un ulcère gastrique : **niveau 2**, la section notée fait foi.
+  source : section notée `m5` — « Contrôle endoscopique à 6-8 semaines »
+
+*Axe 6 — `presentation`/Pièges ECOS supprimée, après report*
+
+- expert · Pièges : « Ne pas proposer d'alternative aux AINS » → « **Ne pas arrêter les AINS**, ou ne
+  pas proposer d'alternative antalgique (paracétamol) ». Report obligatoire avant suppression : la
+  sous-section supprimée portait « Oublier d'arrêter les AINS », qui n'était nulle part dans
+  `expert`/Pièges — l'arrêt n'y figurait que par son corollaire antalgique.
+- expert · Pièges : **ajout** de « **Confondre un méléna vrai avec des selles foncées par le fer, le
+  bismuth ou la betterave : confirmer l'aspect goudronneux et fétide** ». **Niveau 1**, piège
+  explicite de la page SSP sur le symptôme même de la station, absent de toute la grille.
+  source : SSP — Pièges — « Confondre **méléna vrai** avec selles foncées (betterave, fer) —
+  toujours confirmer l'aspect goudronné fétide et reclasser en HDA » ; SSP — frontmatter
+  `pieges_eliminatoires` — « Confondre rectorragie et méléna »
+- presentation · **Pièges ECOS supprimée** (axe 6). Les deux autres items étaient déjà dans
+  `expert`/Pièges : « Ne pas faire de TR » (à l'identique, et repris par le N du mnémo MELENA) et
+  « Retarder l'endoscopie en cas de patient "pressé" ».
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- presentation · mnémo **MELENA** : `mnemo-box` **déplacée** de la Checklist mentale vers Touches
+  ludiques (axe 5), sans toucher à ses clés ni à ses valeurs. C'est le mnémo le plus complet de la
+  grille.
+- presentation · **Classification de Forrest supprimée** de Touches ludiques : les six stades y
+  étaient recopiés de `theorie` au même format, avec les mêmes pourcentages. La version conservée
+  (`theorie`) est la plus riche — elle nomme correctement les taches « pigmentées » et rattache le
+  stade III au cas du patient. Anti-perte vérifiée stade par stade.
+- presentation · Q1 « Quels examens », Q2 « Traitement », Q3 « Suivi » : les trois listes deviennent
+  des **réponses orales**. Contenu intégralement repris, et complété de ce que le canonique porte
+  désormais : la substitution du métronidazole chez ce patient allergique, le contrôle
+  d'éradication IPP arrêté, le délai de 6-8 semaines, la prudence sur l'alcool pour le paracétamol.
+  Axes 1 et 2.
+- resume · Hémorragie active : la posologie exacte de l'IPP IV reste dans `theorie`/Rappels
+  thérapeutiques (section de queue, rôle de référence posologique) ; `resume` porte la stratégie et
+  y renvoie.
+
+**Divergences consignées**
+
+- **seuil transfusionnel du coronarien** : `theorie` dit « transfusion si Hb < 70 g/L (**< 90 si
+  coronarien**) », la page SSP dit « (**< 80 g/L** si cardiopathie ischémique) ». La consigne de
+  tâche demandait explicitement de ne pas retoucher ce seuil, déjà converti lors de la passe unités.
+  **Non corrigé**, consigné pour arbitrage : la conversion est juste, c'est la borne du coronarien
+  qui diverge de la page de référence.
+  source : SSP — PRISE EN CHARGE — « **Transfusion de CE** selon stratégie restrictive : seuil Hb
+  < 70 g/L (**< 80 g/L si cardiopathie ischémique**) » ; SSP — Cartes ECOS — « transfusion si
+  Hb < 70 g/L (< 80 si cardiopathie ischémique) »
+- **section notée `m5` · acide tranexamique** : « Acide tranexamique: 1g IV si saignement actif ».
+  L'essai HALT-IT (2020) n'a montré aucun bénéfice de l'acide tranexamique dans l'hémorragie
+  digestive, avec un excès d'événements thrombo-emboliques veineux ; il n'est plus recommandé dans
+  cette indication. Divergence **interne à une section notée** : consignée, **non corrigée** (barème
+  gelé) — signalée pour arbitrage.
+- **section notée `m3` · test H. pylori** : « **Test d'anticorps** H. pylori ». La sérologie ne
+  distingue pas l'infection active d'une infection passée ; les blocs pédagogiques disent, eux,
+  « test respiratoire à l'urée, antigène fécal ou biopsie », ce qui est correct. Le pédagogique n'a
+  **pas** été aligné sur la section notée (l'aligner l'aurait dégradé) : divergence consignée,
+  section notée inchangée.
+- **section notée `m5` · « Si cancer • Contrôle endoscopique à 6-8 semaines »** : le contrôle
+  endoscopique à 6-8 semaines est celui de l'**ulcère gastrique**, pas du cancer. L'intitulé de la
+  rubrique paraît interverti avec « Si ulcère ». Consigné, non corrigé.
+- **section notée `m5` · signes de comparaison manquants** : « Transfusion si Hb: 70 g/L », « Objectif:
+  TA  90/60 mmHg, FC  100/min ». Les « < » et « > » ont disparu. Même nature que le « 4cm »
+  d'AMBOSS-6 et l'« IMC 25 kg/m² » d'AMBOSS-9. Consigné, non corrigé.
+- **cinq paires de redondance restantes**, toutes acceptées : le M du mnémo MELENA face à
+  `expert`/Points clés (liste → mnémo, changement de format de restitution) et quatre arguments
+  POUR/CONTRE face à des items de `resume` (liste → argumentaire structuré).
+- **page SSP de référence** : le mapping rattache cette station d'hémorragie digestive **haute** à
+  la page « Rectorragies & Hémorragie Digestive Basse ». La page couvre le méléna et sa reclassification
+  en HDA, mais sa section PRISE EN CHARGE vise l'HDB ; la page « SSP — Nausées, Vomissements &
+  Hématémèse » porte, elle, l'algorithme d'HDH complet (pantoprazole 80 mg puis 8 mg/h, Rockall,
+  Forrest). Aucune n'a été substituée à l'autre — le mapping est le choix de l'utilisateur —, mais
+  un rattachement complémentaire mérite d'être arbitré.
+
+**Signalements de sécurité** — trois, tous corrigés ci-dessus, plus un non corrigé (barème gelé) :
+anti-H2 retiré du marché mondial en 2020 encore proposé en alternative aux IPP ; paracétamol sans
+plafond journalier chez un buveur quotidien, alors que c'est l'antalgique de remplacement noté ;
+trithérapie d'éradication à l'amoxicilline dans le bloc canonique d'un patient allergique à la
+pénicilline. **Non corrigé** : acide tranexamique dans l'hémorragie digestive (section notée).
+
+### AMBOSS-22 — Dysphagie, femme de 60 ans, adénocarcinome de l'œsophage sur Barrett (page SSP : Dysphagie)
+
+Redondance : **13 paires → 3** (`report_redundancy.py AMBOSS-22_`). Quatre blocs présents.
+Pas de sous-section `presentation`/Pièges ECOS — vérifié, la grille n'est pas de l'axe 6.
+
+**Modifications**
+
+*Vignette — trois erreurs factuelles dans la Version longue (niveau 2)*
+
+- presentation · Version longue : « elle **ne fume pas** et consomme occasionnellement de l'alcool »
+  → « elle **fume un demi-paquet par jour depuis 32 ans** et boit une à deux bières le week-end ».
+  Le tabagisme est un sous-item **noté** (`a10` — Habitudes et mode de vie), c'est un facteur de risque
+  central du cas, et « Conseil sur l'arrêt du tabac » est lui-même noté (`m5`) : la présentation
+  orale affirmait le contraire de la vignette. La version SBAR du même bloc disait, elle,
+  « tabagisme chronique » — le bloc se contredisait.
+  source : section notée `a10` — « Tabac [Oui, je fume un demi-paquet par jour depuis 32 ans] » et
+  « Alcool [J'ai peut-être 1-2 bières le week-end] »
+- presentation · Version longue : « elle est connue pour une **hypertension artérielle, traitée par
+  inhibiteur calcique** » → « elle est connue pour un **reflux gastro-œsophagien qui évolue depuis
+  18 ans**, qu'elle traite seule par antiacides (Rennie®), sans avoir jamais eu d'IPP ni
+  d'endoscopie ». L'hypertension et son traitement n'existent nulle part dans la station ; le RGO
+  ancien non traité est **l'** antécédent du cas (`a5` Antécédents médicaux, `a7` Médicaments) et la
+  clé du Barrett.
+- presentation · Version longue : « sa mère a eu un **cancer gastrique** » → « sa mère a une
+  **diverticulose colique** ». L'antécédent familial est noté (`a9`) et sans
+  rapport avec le diagnostic : l'erreur fabriquait un argument en faveur du cancer.
+
+*Renforcement du canonique (niveau 1)*
+
+- resume · Anamnèse : **nouvelle sous-section « Signes d'alarme (red flags) »**. Le bloc canonique
+  n'en portait aucune alors que toute la station repose sur eux — progression rapide et passage des
+  solides aux liquides, amaigrissement, anémie, âge > 50 ans, **impaction alimentaire (urgence
+  endoscopique, 144)**, fausses routes et pneumopathies récidivantes. Report préalable des cinq
+  items de `presentation`/Red flags (règle d'anti-perte).
+  source : SSP — Signes d'alarme — « amaigrissement, anémie, âge > 50 ans, impaction, fausses
+  routes » ; SSP — Red flags — « **Impaction alimentaire aiguë** avec impossibilité d'avaler la
+  salive → urgence endoscopique · **144** »
+- resume · Examens diagnostiques : ajout de « en **première intention** devant toute dysphagie » sur
+  l'endoscopie, de « **Jamais de traitement d'épreuve par IPP** devant une dysphagie : il atténue les
+  symptômes et retarde le diagnostic de cancer de plusieurs mois », et de « **Manométrie seulement
+  après une endoscopie normale** — jamais avant, sous peine de méconnaître une pseudo-achalasie
+  tumorale du cardia ». Les deux règles sont les pièges éliminatoires n° 1 et n° 4 de la page SSP et
+  n'étaient portées par aucun bloc canonique.
+  source : SSP — Règle d'or — « Toute **dysphagie** est un signe d'alarme → **OGD**, jamais de test
+  IPP d'épreuve. […] L'**OGD** précède toujours la manométrie pour éliminer une pseudo-achalasie
+  tumorale » ; SSP — frontmatter `pieges_eliminatoires`
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- presentation · mnémo **DYS-PHA-GIE** : `mnemo-box` **déplacée** de la Checklist mentale vers
+  Touches ludiques (axe 5), clés et valeurs intactes.
+- presentation · « ⚠️ Red flags de dysphagie » : la liste de cinq items recopiait `resume` au même
+  format. Après report dans le canonique, elle est remplacée par le **mnémo « OÙ ? et QUOI ? »**,
+  celui de la page SSP — siège et timing d'un côté, type d'aliment de l'autre, avec la progression
+  solides → liquides qui doit faire peur et le rappel que le siège désigné par la patiente est
+  trompeur. Changement de format de restitution (liste → mnémo), précédent AMBOSS-9/FRONT.
+  source : SSP — Mnémoniques — « **Dysphagie** — 2 questions clés : **OÙ ?** […] et **QUOI ?** » ;
+  SSP — Pièges — « Se fier au **siège désigné** par le patient […] plutôt qu'au **timing** »
+- presentation · « Facteurs de risque cancer œsophagien » **supprimée** : ses deux items doublaient
+  `theorie`/Cancer de l'œsophage au même format. Anti-perte vérifiée : le « régime pauvre en
+  fruits/légumes » est dans `resume`/Facteurs de risque.
+- presentation · « ⚡ Diagnostic clé » **supprimée** : « Endoscopie + biopsies = toujours première
+  étape » est désormais dans `resume`/Examens diagnostiques et dans `expert`/Points clés ; « Transit
+  baryté utile si suspicion trouble fonctionnel » est dans `theorie`/Approche diagnostique.
+- expert · Points clés : « Endoscopie avec biopsies = gold standard diagnostic » → « **L'endoscopie
+  avec biopsies est ce qu'on attend du candidat d'emblée, avant tout transit baryté** ». Axe 7 :
+  `expert` dit ce que l'examinateur observe, `resume` ce que l'étudiant retient — les deux disaient
+  la même phrase.
+- presentation · Q1 « Quels examens », Q2 « Traitement », Q3 « Suivi » : les trois réponses en liste
+  deviennent des **réponses orales**, complétées de l'ordre des examens (endoscopie d'abord, transit
+  baryté et manométrie seulement après une endoscopie normale). L'« analyse orale » et l'« astuce
+  révision » attenantes sont conservées, elles portent le *pourquoi* et la mémorisation. Axes 1 et 2.
+
+**Divergences consignées**
+
+- **section notée `m2` · transit baryté en première intention** : le critère « Examens
+  complémentaires de première intention » place le **transit baryté** au même rang que la FOGD
+  (« meilleur test initial pour suspicion d'anneau œsophagien et achalasie »). La page SSP tranche
+  l'inverse — l'OGD est le premier examen de toute dysphagie, le TOGD ne venant que pour un Zenker,
+  un trouble moteur ou une contre-indication —, et `expert`/Pièges compte « Faire transit baryté
+  avant endoscopie » parmi les pièges. Le **pédagogique a été maintenu sur la page SSP** (niveau 1) ;
+  la section notée est consignée, **non corrigée** (barème gelé).
+  source : SSP — EXAMENS COMPLÉMENTAIRES — « **OGD (endoscopie haute) = 1ᵉʳ examen** devant une
+  dysphagie œsophagienne » ; SSP — Points Clés ECOS — « Toute dysphagie = signe d'alarme → OGD »
+- **trois paires de redondance restantes**, toutes acceptées : deux items de `resume` face à des
+  arguments POUR (liste → argumentaire structuré) et une collision fortuite entre le piège
+  « Oublier ECG (douleur thoracique) » et l'argument « Douleur thoracique ».
+
+**Signalements de sécurité** — aucun signalement médicamenteux. Les trois erreurs de vignette
+corrigées ci-dessus valent toutefois signalement pédagogique : la Version longue est ce que
+l'étudiant récite, et elle inversait le statut tabagique de la patiente.
+
+### AMBOSS-15 — Douleur abdominale chronique, garçon de 6 ans, maladie cœliaque (page SSP : aucune — alignement des PEC reporté)
+
+Redondance : **8 paires → 3** (`report_redundancy.py AMBOSS-15_`). Quatre blocs présents.
+Pas de sous-section `presentation`/Pièges ECOS — vérifié, la grille n'est pas de l'axe 6.
+
+**Traitement partiel, assumé.** `docs/obsidian-mapping.yaml` ne rattache cette grille à aucune page
+SSP : elle figure dans la liste `unmapped`, avec la raison « douleur abdominale pédiatrique — page
+pédiatrique à créer » (la page `Skills ECOS/Skills — Réflexes Médicamenteux & Antidotes.md`, citée
+dans le brief de tâche, ne porte que deux grilles RESCOS de pharmacologie et aucune prise en charge
+par motif). L'**étape 4 d'alignement des prises en charge n'a donc pas été appliquée** : seul le
+dédoublonnage du § 3 l'a été, plus les corrections factuelles internes, qui ne passent pas par la
+hiérarchie. Les zones restées **sans arbitre** sont listées en fin d'entrée.
+
+**Modifications**
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- theorie · Prise en charge de la maladie cœliaque : les six mesures étaient une **check-list
+  actionnable dans `theorie`** et doublaient `resume`/Prise en charge. Réécrites en *pourquoi* :
+  pourquoi l'éviction doit être totale (quelques dizaines de milligrammes par jour entretiennent
+  l'atrophie), pourquoi la contamination croisée explique l'essentiel des échecs — bien plus que les
+  écarts assumés —, pourquoi la diététicienne n'est pas un supplément de confort, pourquoi la
+  supplémentation est transitoire, pourquoi la sérologie sert autant à l'observance qu'au
+  diagnostic, et pourquoi l'absence d'amélioration à quelques semaines ne justifie pas de
+  réintroduire le gluten. Axe 2.
+- resume · Éducation et suivi : ajout de « **Contrôle sérologique tTG-IgA à 6 mois, 12 mois, puis
+  annuel** » et de « **Normalisation attendue : muqueuse en 6 à 24 mois, rattrapage de la croissance
+  chez l'enfant** ». Les deux venaient de `theorie` et n'avaient aucun équivalent dans le canonique :
+  report **préalable** à la réécriture (règle d'anti-perte).
+- resume · Anamnèse : **nouvelle sous-section « Drapeaux rouges (douleur abdominale chronique de
+  l'enfant) »**, qui recueille les cinq items de `presentation`/Drapeaux rouges pédiatriques — perte
+  de poids ou cassure de croissance, selles graisseuses ou sanglantes, fièvre persistante, douleurs
+  nocturnes réveillant l'enfant, fatigue inhabituelle avec pâleur et intolérance à l'effort. Le
+  canonique n'en portait aucun alors que c'est ce qui sépare l'organique du fonctionnel dans cette
+  station. La sous-section de `presentation` est ensuite supprimée (donnée clinique, pas touche
+  ludique).
+- theorie · Approche globale : « Drapeaux rouges : perte poids, sang, fièvre, réveil nocturne » →
+  « **Les drapeaux rouges font basculer vers l'organique ; leur absence, elle, ne suffit pas à
+  conclure au fonctionnel** ». La liste vit désormais dans `resume` ; `theorie` en garde la valeur
+  discriminante — ce qui compte dans un cas où 90 % des douleurs sont fonctionnelles et où l'enfant
+  a bel et bien une cause organique.
+- presentation · mnémo **PAIN** : `mnemo-box` **déplacée** de la Checklist mentale vers Touches
+  ludiques (axe 5), à côté des mnémos 3A et BSA. Clés intactes ; « Paleur » corrigé en « **Pâleur** ».
+- presentation · Q1 « Quels examens », Q2 « Traitement », Q3 « Suivi » : les trois listes deviennent
+  des **réponses orales**. Contenu intégralement repris, et complété de ce que porte le canonique :
+  la raison du dosage simultané des IgA totales, le fait que la supplémentation est transitoire, et
+  la coexistence possible de l'anxiété de séparation avec la maladie cœliaque — sans qu'elle en soit
+  l'explication. Axes 1 et 2.
+- theorie · Présentation clinique pédiatrique : « Manifestations extra-intestinales : dermatite
+  herpétiforme » → « Manifestations extra-intestinales **de l'enfant** : dermatite herpétiforme,
+  **aphtose buccale récidivante, hypoplasie de l'émail dentaire définitif** ». L'item doublait
+  `resume`/Manifestations extra-digestives ; il porte maintenant ce que `resume` ne dit pas et qui
+  est propre à l'âge.
+
+*Contradiction entre deux blocs pédagogiques — le contrat tranche*
+
+- resume · Points clés : « Biopsies duodénales nécessaires avant de débuter le régime » → « …
+  **chez l'enfant, les critères ESPGHAN autorisent seuls de s'en passer (tTG ≥ 10× la norme +
+  anti-endomysium positifs)** ». `resume` posait la biopsie comme absolue là où `theorie` mentionnait
+  la voie sans biopsie : **`resume` est canonique**, il reçoit donc la nuance plutôt que `theorie` ne
+  perde l'information. La nuance ne change rien pour cet enfant (tTG 85 U/mL pour une norme < 20,
+  soit environ 4× — la biopsie reste nécessaire).
+
+**Divergences consignées**
+
+- **alignement des prises en charge non appliqué**, faute de page SSP de référence. Les zones
+  restées **sans arbitre**, à revoir si une page pédiatrique est créée ou si l'utilisateur décide
+  d'un rattachement complémentaire :
+  1. `theorie`/Rappels thérapeutiques — les **posologies pédiatriques au poids** : fer élément
+     3-6 mg/kg/j, acide folique 1 mg/j × 3 mois, vitamine D 800-1000 UI/j, calcium 500-1000 mg/j.
+     Elles sont plausibles et le fer est bien rapporté au poids, mais **aucune source du vault ne les
+     arbitre** ; la vitamine D à 800-1000 UI/j est une dose d'entretien plutôt que de correction
+     d'une carence avérée. Non modifiées.
+  2. `theorie`/Rappels — « **Probiotiques** : souches spécifiques peuvent aider transition », item
+     sans molécule, sans indication et sans niveau de preuve. Non modifié, non supprimé (rien ne
+     l'arbitre, et il ne porte aucun risque).
+  3. `resume`/Prise en charge — « **Réintroduction des produits laitiers après 6 mois** si
+     intolérance secondaire au lactose » : délai non arbitré.
+  4. `theorie`/Diagnostic — le seuil ESPGHAN et la place de l'HLA-DQ2/DQ8 : cohérents entre eux et
+     avec `resume` après la modification ci-dessus, mais sans page de référence pour les confirmer.
+  5. L'ensemble du versant **psychosocial** (trouble anxieux de séparation, TCC, soutien parental),
+     qui est un critère noté (`m5`) et n'a de page SSP correspondante ni en gastro ni en pédiatrie.
+- **section notée `m3` · panel IgE** : « Panel IgE allergies pédiatriques » est proposé au motif d'un
+  antécédent familial d'allergie aux arachides, alors que la vignette ne rapporte aucune association
+  entre les symptômes et un aliment. L'examen ne serait pas de première intention hors de ce
+  contexte. Consigné, **non corrigé** (barème gelé).
+- **trois paires de redondance restantes**, toutes acceptées : deux collisions de check-list face à
+  des arguments POUR (liste → argumentaire structuré) et la description des biopsies dans `resume`
+  face au **résultat de station** d'`expert` (« Marsh 3b »), qui sont deux rôles distincts.
+
+**Signalements de sécurité** — aucun. La relecture pédiatrique demandée (posologies au poids) n'a
+trouvé **aucune dose adulte ni dose sans référence au poids** : la seule posologie pondérale de la
+grille, le fer, est correctement exprimée en mg/kg/j ; il n'y a **pas de paracétamol** dans cette
+grille. Les quatre posologies sont néanmoins listées ci-dessus comme non arbitrées, faute de page de
+référence.
