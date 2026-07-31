@@ -403,9 +403,17 @@ Deux pièges déjà écartés, à ne pas réintroduire :
 - [ ] **Step 9: Enregistrer la mesure de redondance initiale**
 
 Run: `python3 scripts/amboss/report_redundancy.py > /tmp/redundancy-initial.txt; tail -2 /tmp/redundancy-initial.txt`
-Expected: `TOTAL : 280 paire(s) quasi identiques`
+Expected: `TOTAL : 301 paire(s) quasi identiques`
 
 Ce nombre est la référence. La tâche 16 vérifiera qu'il a nettement baissé.
+
+La mesure exploratoire menée pendant la conception annonçait 280. L'écart vient de
+la normalisation : `lib.visible_text()` supprime les entités HTML (`&nbsp;`,
+`&eacute;`…), ce que le script d'exploration ne faisait pas — les textes comparés
+diffèrent donc légèrement, et les ratios de similarité avec eux. **La référence est
+ce que produit `report_redundancy.py`**, puisque c'est lui qui mesurera aussi l'état
+final : seule la comparaison initial/final par un même script a un sens. Ne jamais
+ajuster le script pour retrouver un chiffre attendu.
 
 - [ ] **Step 10: Écrire la procédure de traitement**
 
@@ -549,7 +557,7 @@ Snapshot des invariants (barèmes, structure, blocs), vérificateurs de
 nomenclature et d'invariants, rapport de redondance, procédure de
 traitement et journal.
 
-État initial mesuré : 280 paires quasi identiques, 96 termes non suisses.
+État initial mesuré : 301 paires quasi identiques, 103 termes non suisses.
 
 Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>"
 ```
@@ -1467,7 +1475,7 @@ Expected: `OK — aucun terme non suisse detecte`, code de sortie 0
 - [ ] **Step 3: Mesurer la redondance finale**
 
 Run: `python3 scripts/amboss/report_redundancy.py > /tmp/redundancy-final.txt; tail -1 /tmp/redundancy-final.txt`
-Expected: un total nettement inférieur à 280.
+Expected: un total nettement inférieur à **301** (référence mesurée en tâche 1).
 
 - [ ] **Step 4: Vérifier que chaque paire restante est justifiée**
 
@@ -1512,7 +1520,7 @@ dans un navigateur. Vérifier :
 
 Créer `docs/superpowers/rapport-amboss-2026-07.md` reprenant :
 
-- l'état initial (280 paires, 96 termes non suisses) et l'état final mesuré ;
+- l'état initial (301 paires, 103 termes non suisses) et l'état final mesuré ;
 - le nombre de grilles traitées par catégorie (25 complètes, 15 allégées) ;
 - la liste des divergences consignées au journal et non corrigées, qui constituent
   la matière d'une prochaine passe ;
