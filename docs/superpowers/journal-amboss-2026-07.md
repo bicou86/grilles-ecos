@@ -122,26 +122,37 @@ Grille pilote. Redondance : 10 paires → 4 (`report_redundancy.py AMBOSS-1_`).
   antibiothérapie si cholécystite, cholécystectomie laparoscopique précoce » ; « ≤ 72 h » est
   l'opérationnalisation usuelle de « précoce », sans contradiction.
 
+*Arbitrage utilisateur — fix round 1 (règle de hiérarchie à trois niveaux, `PROCEDURE.md` § 4)*
+
+- resume · antibiothérapie, molécule : « Antibiothérapie IV empirique (ex : céphalosporine +
+  métronidazole) » → « Antibiothérapie IV empirique : amoxicilline-acide clavulanique 1 g × 3/j IV ;
+  si allergie, ciprofloxacine + métronidazole ».
+  source : **niveau 2** — la page SSP reste générique (« Colique biliaire / cholécystite : […]
+  antibiothérapie si cholécystite », sans molécule), donc la section notée `m5` de la grille fait
+  foi : « 1ère ligne: amoxicilline-acide clavulanique 1g × 3/j IV » et « Si allergie:
+  ciprofloxacine + métronidazole ». Vérifié : aucun autre bloc pédagogique ne portait l'ancienne
+  formule (`presentation`/Q2 ne nomme pas de molécule).
+- resume · β-hCG : ajout dans Examens diagnostiques / Biologie — « β-hCG chez toute femme en âge de
+  procréer, y compris après 45 ans : règle d'or — toute douleur abdominale est une grossesse
+  extra-utérine jusqu'à preuve du contraire ». Ajouté aussi à la réponse orale de
+  `presentation`/Q « Quels examens demanderiez-vous ? » sous la forme « β-hCG (femme en âge de
+  procréer) », qui reste un sous-ensemble strict de `resume` (axe 1).
+  source : SSP — Examens complémentaires / Biologie 1ʳᵉ intention — « β-hCG | GEU (toute femme en
+  âge de procréer) » ; Règle d'or — « Toute douleur abdominale chez une femme en âge de procréer
+  est une GEU jusqu'à preuve du contraire → β-hCG » ; pièges éliminatoires — « Oublier β-hCG femme
+  jeune ». Le barème ne bouge pas : l'étudiant l'apprend sans être noté dessus.
+
 **Divergences consignées**
 
 - section notée m5 · antibiothérapie, indication : la grille dit « Antibiothérapie si signes
   infectieux », la page SSP dit « antibiothérapie si cholécystite » (Conduites ciblées) — donc
   indiquée dès que le diagnostic est retenu. Non corrigé : la formulation est dans une section
-  notée (barème gelé) et elle est reprise à l'identique par `theorie` et `presentation` ; corriger
-  le seul pédagogique créerait une contradiction interne à la grille.
-- resume · antibiothérapie, molécule : la grille dit « céphalosporine + métronidazole », la section
-  notée m5 de la même grille dit « amoxicilline-acide clavulanique 1 g × 3/j IV, ciprofloxacine +
-  métronidazole si allergie ». Non corrigé : la page SSP ne nomme aucune molécule pour la
-  cholécystite (§ 4 cas 2 — ne rien inventer). Arbitrage clinique demandé.
+  notée (barème gelé) et elle est reprise à l'identique par `theorie` et `presentation`, désormais
+  cohérents avec elle par la règle de niveau 2.
 - section notée m5 · AINS : la grille dit « Analgésie : paracétamol IV, AINS si pas de CI », la page
   SSP dit « éviter les AINS si suspicion d'ulcère, IRA ou patient âgé » — or la patiente prend des
-  antiacides pour brûlures d'estomac. Non corrigé (section notée) ; la mise en garde a été portée
-  dans `resume`, bloc pédagogique.
-- grille entière · β-hCG : la page SSP en fait sa règle d'or (« toute douleur abdominale chez une
-  femme en âge de procréer est une GEU jusqu'à preuve du contraire ») et son premier piège
-  éliminatoire ; la grille ne le mentionne ni au pédagogique ni au barème. Non ajouté : l'ajouter au
-  seul pédagogique créerait un écart avec le barème gelé, et son applicabilité à 47 ans relève de
-  l'avis clinique.
+  antiacides pour brûlures d'estomac. Traité en **niveau 1** : la page SSP tranche, la mise en garde
+  est portée dans `resume` ; la section notée reste intacte. Précision, non contradiction.
 - resume · crase : la page SSP liste la crase (TP, INR, aPTT) avec l'indication « pré-opératoire » et
   la grille conduit à une cholécystectomie ≤ 72 h. Non ajoutée : la page SSP ne la rattache pas
   explicitement à la cholécystite.

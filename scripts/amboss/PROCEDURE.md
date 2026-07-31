@@ -60,18 +60,54 @@ Les 7 axes à traiter :
 Utiliser `python3 scripts/amboss/report_redundancy.py AMBOSS-N_` pour lister les
 paires détectées sur cette grille précise.
 
+**Sections de queue d'`annexe-theorie`.** Les deux dernières sections du bloc —
+`theorie-section-rappels` (Rappels thérapeutiques) puis `theorie-section-examens`
+(Examens complémentaires) — existent dans les 40 grilles et portent chacune une
+couleur propre en CSS (`cases/case-styles.css:961-971` : olive = thérapeutique,
+vert = examens, la même convention que les `c-yellow` / `c-green` des pages SSP).
+Elles ne se suppriment ni ne se déplacent. Quand un titre y est dupliqué avec une
+section du corps du bloc — cas d'`Examens complémentaires` dans les grilles 1 et 2,
+les seules concernées — c'est la **section de queue** qu'on conserve et celle du
+corps qu'on supprime.
+
+**Redire à l'oral, pas en liste.** Quand `presentation` doit reprendre `resume`, il
+le fait en registre parlé (`presentation-reponse text`). Une liste recopiée sous un
+en-tête « Q/R » ne constitue pas un changement de format et tombe sous la règle du
+format. Les mnémos, eux, gardent leur clé d'origine et reçoivent la traduction en
+valeur (`Fat : surcharge pondérale`) — même règle que les glossaires de schéma
+ci-dessous, et pour la même raison : supprimer le mot d'origine casserait le mnémo.
+
 ## 4. Aligner les prises en charge
 
-Trois cas, et trois seulement :
+Trois autorités, à interroger **dans cet ordre**. La première qui tranche le point
+l'emporte ; on ne descend au niveau suivant que si le niveau courant reste muet.
 
-| Situation | Action |
-|---|---|
-| La page SSP traite le point et la grille en diverge | Aligner sur la page SSP, journaliser avec la ligne source |
-| La page SSP ne traite pas le point | Laisser inchangé. **Ne rien inventer** |
-| Contradiction de fond non tranchable sans avis clinique | Laisser inchangé, consigner au journal |
+| Niveau | Situation | Autorité |
+|---|---|---|
+| 1 | La page SSP tranche explicitement le point | **La page SSP fait foi.** Aligner le pédagogique sur elle, journaliser avec la citation |
+| 2 | La page SSP reste générique **et** le pédagogique contredit la section notée | **La section notée fait foi.** Aligner le pédagogique sur elle, journaliser |
+| 3 | Ni l'une ni l'autre ne tranche | Laisser inchangé, consigner au journal. **Ne rien inventer** |
 
-L'alignement ne concerne **que les blocs pédagogiques**. Toute divergence repérée
-dans une section notée est consignée, jamais corrigée — le barème est gelé.
+Pourquoi la section notée l'emporte au niveau 2 : c'est ce sur quoi l'étudiant est
+évalué, elle est souvent plus précise (molécule, posologie, durée) et elle a déjà été
+suissifiée par les tâches 2 et 3.
+
+**Le barème reste gelé dans les trois cas.** On n'aligne jamais qu'en modifiant le
+pédagogique : une divergence repérée *dans* une section notée se consigne, elle ne se
+corrige pas. Au niveau 2, reprendre la formulation exacte de la section notée pour
+qu'aucun écart ne subsiste, puis vérifier qu'aucun autre bloc pédagogique ne porte
+encore l'ancienne formule.
+
+Attention à ne pas confondre **contradiction** et **précision**. Une mise en garde que
+la page SSP ajoute à ce que dit la section notée (AMBOSS-1 : « éviter les AINS si
+suspicion d'ulcère, IRA ou patient âgé » face à « AINS si pas de CI ») relève du
+niveau 1 : elle se porte dans le pédagogique, la section notée reste intacte, et il n'y
+a rien à consigner.
+
+Exemple de niveau 2 (AMBOSS-1) : la page SSP dit « antibiothérapie si cholécystite »
+sans nommer de molécule → `resume` a été aligné sur le protocole du critère noté `m5`
+(amoxicilline-acide clavulanique 1 g × 3/j IV ; ciprofloxacine + métronidazole si
+allergie), et non laissé sur le « céphalosporine + métronidazole » qu'il portait.
 
 ## 5. Journaliser
 
