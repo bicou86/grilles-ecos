@@ -95,3 +95,29 @@ python3 scripts/amboss/check_nomenclature.py  # doit sortir OK
 - Ajouter ou retirer un sous-item noté.
 - Toucher aux items ICE du critère `m4`.
 - Créer un bloc `resume` ou `presentation` absent.
+
+## Glossaires d'abréviations dans les légendes de schéma
+
+Certaines images (base64, jamais modifiées) affichent des abréviations
+anglophones imprimées dans le schéma lui-même (ex. `CBC`, `BMP`, mais aussi
+`EGD`/`NPO` en AMBOSS-11, `CTPA`/`PERC`/`PTP` en AMBOSS-12, `UL`/`ML`/`LL`
+en AMBOSS-31, `A`/`Vc` en AMBOSS-1). La légende HTML adjacente
+(`annexe-description`) sert de glossaire de traduction au format
+`ABREV : explication`. Dans ce cas précis, et dans ce cas seulement :
+
+- La **clé** reste l'abréviation d'origine, telle qu'imprimée dans l'image —
+  c'est elle que le lecteur voit dans le schéma et doit pouvoir retrouver.
+- La traduction / l'équivalent suisse va en **valeur**, après le « : ».
+
+Exemple (AMBOSS-33, schéma « Prise en charge de la méningite ») :
+`BMP : chimie sanguine (panel métabolique de base)` — jamais
+`chimie sanguine : panel métabolique de base` (la clé ne serait plus dans
+l'image, le lien légende ↔ schéma serait rompu).
+
+`check_nomenclature.py` encode cette exception par un lookahead négatif —
+`r"\bCBC\b(?! : )"`, `r"\bBMP\b(?! : )"` — qui exempte uniquement la forme
+clé-de-glossaire (terme immédiatement suivi de « : »). Toute autre occurrence
+de `CBC`/`BMP` comme terme médical ordinaire reste détectée normalement.
+
+Applicable aux tâches 4 à 15 : toute légende de schéma anglophone rencontrée
+doit suivre la même règle (clé = abréviation d'origine, valeur = traduction).

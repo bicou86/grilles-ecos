@@ -7,10 +7,18 @@ sys.path.insert(0, str(Path(__file__).parent))
 import lib_amboss as lib
 
 # Termes bannis et leur remplacement attendu.
+# CBC et BMP : exclus uniquement quand ils servent de cle de glossaire
+# (« CBC : ... », « BMP : ... »), immediatement suivis de « : ». Ce cas
+# traduit les abreviations d'un schema anglophone dont l'image (base64)
+# n'est pas modifiee : l'abreviation d'origine doit rester lisible en cle
+# pour que le lecteur puisse relier la legende au schema (ex. AMBOSS-33,
+# « BMP : chimie sanguine (panel metabolique de base) »). Le lookahead ne
+# joue que dans ce cas precis ; un CBC ou BMP employe ailleurs comme terme
+# medical (hors position de cle de glossaire) reste detecte normalement.
 BANNED = {
     r"\bNFS\b": "FSC",
-    r"\bCBC\b": "FSC",
-    r"\bBMP\b": "chimie sanguine",
+    r"\bCBC\b(?! : )": "FSC",
+    r"\bBMP\b(?! : )": "chimie sanguine",
     r"\bVicodin\b": "Tramadol (Tramal®)",
     r"\bTylenol\b": "Paracetamol (Dafalgan®)",
     r"\bTums\b": "Antiacides (Rennie®)",
