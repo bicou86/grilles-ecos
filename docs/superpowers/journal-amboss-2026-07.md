@@ -142,6 +142,19 @@ Grille pilote. Redondance : 10 paires → 4 (`report_redundancy.py AMBOSS-1_`).
   est une GEU jusqu'à preuve du contraire → β-hCG » ; pièges éliminatoires — « Oublier β-hCG femme
   jeune ». Le barème ne bouge pas : l'étudiant l'apprend sans être noté dessus.
 
+*Fix round 2 — perte détectée par `check_no_loss.py` (tâches 5b/5c)*
+
+- theorie · Examens complémentaires (queue) : lors de la fusion des deux sections dupliquées
+  ci-dessus, l'interprétation des transaminases (« ASAT, ALAT → atteinte hépatocellulaire ») avait
+  été emportée avec la liste supprimée, alors que celle des marqueurs de cholestase (PAL, GGT,
+  bilirubine) avait bien été conservée et même enrichie — l'étudiant apprenait à distinguer la
+  cholestase mais plus la cytolyse. Détecté par `check_no_loss.py 3b19e2f AMBOSS-1_`
+  (`.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/task-5b-report.md` § 5, item 2).
+  Réparé par l'ajout d'un item sœur à « Bilan hépatique » dans la section de queue :
+  « Transaminases (ASAT, ALAT) : atteinte hépatocellulaire plutôt que cholestatique » — interprétation
+  concise, pas la liste d'examens (déjà canonique dans `resume`). Sans effet sur la redondance
+  (toujours 4 paires) ni sur les invariants.
+
 **Divergences consignées**
 
 - section notée m5 · antibiothérapie, indication : la grille dit « Antibiothérapie si signes
@@ -268,6 +281,19 @@ Redondance : 6 paires → 3 (`report_redundancy.py AMBOSS-2_`).
   source : **niveau 1** — SSP, Cartes ECOS / β-hCG — « Piège : se fier à la date des dernières
   règles ou à “une contraception bien suivie” : les métrorragies manquent dans un tiers des cas et
   les règles sont jugées normales par une patiente sur quatre »
+
+*Fix round 2 — perte détectée par `check_no_loss.py` (tâches 5b/5c)*
+
+- theorie · Examens complémentaires (queue) : lors de la même fusion, la sémiologie échographique de
+  l'appendicite (« signe de la cible », « épaississement pariétal ») avait disparu de la zone
+  pédagogique — seule la sensibilité (86 %) restait enseignée ; la description ne survivait que dans
+  `annexe-scenario` (script de l'examinateur, invisible à l'étudiant qui révise). Détecté par
+  `check_no_loss.py 1873649 AMBOSS-2_`
+  (`.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/task-5b-report.md` § 5, item 1).
+  Réparé par l'ajout d'un item sœur à « US abdominale : Sensibilité 86 % » dans la section de queue :
+  « US abdominale positive : signe de la cible (coupe transversale), épaississement pariétal » —
+  interprétation de ce à quoi ressemble un examen positif, pas la liste d'examens (déjà canonique
+  dans `resume`). Sans effet sur la redondance (toujours 3 paires) ni sur les invariants.
 
 **Divergences consignées**
 
