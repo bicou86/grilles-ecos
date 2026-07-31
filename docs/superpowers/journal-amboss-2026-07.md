@@ -794,3 +794,343 @@ Deux sont des faux positifs du comparateur, appariés sur le seul mot « plaquet
   anti-agrégation plaquettaire » (`presentation`/Q2 — traitement).
 - « Double antiagrégation + anticoagulation » (`resume`/PEC en 3 points) ↔ « Double anti-agrégation
   plaquettaire » (`presentation`/Q2) : check-list → réponse orale, sous-ensemble strict (axe 3).
+
+### AMBOSS-18 — Toux chronique, femme 21 ans, asthme d'effort sur terrain atopique (page SSP : Toux Chronique)
+
+Redondance : 7 paires → 5 (`report_redundancy.py AMBOSS-18_`). Pas de sous-section
+`presentation`/Pièges ECOS — vérifié, l'axe 6 ne s'applique pas.
+
+**Modifications**
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- theorie · Diagnostic de l'asthme : la section était une liste de seuils recopiant
+  `resume`/Examens diagnostiques (paires à 0.84 sur le FeNO, 0.75 sur la méthacholine). Réécrite en
+  *pourquoi* — aucun symptôme n'est spécifique, seule la variabilité signe l'asthme ; une spirométrie
+  normale entre les crises n'exclut rien ; le double critère de réversibilité (≥ 12 % **et** ≥ 200 mL)
+  évite les faux positifs sur les petits volumes ; la méthacholine vaut par sa sensibilité, pas par sa
+  spécificité ; le FeNO prédit la réponse aux CSI et s'abaisse sous tabac ou CSI déjà pris. Les seuils
+  restent (axe 1 : `theorie` garde Se/Sp, seuils et indications). Axe 1.
+- theorie · Asthme, item « Triggers » : recopiait `resume`/Symptômes typiques (« Déclenchés par :
+  effort, allergènes, infections respiratoires, froid, émotions »). Remplacé par le mécanisme —
+  l'inflammation abaisse le seuil de la voie réflexe bronchoconstrictrice, c'est l'hyperréactivité qui
+  rend banals des stimuli inoffensifs. Les six déclencheurs sont conservés dans la reformulation.
+- presentation · mnémo ASTHME : la `mnemo-box` de la Checklist mentale est **déplacée** dans « Touches
+  ludiques / mnémos » (la Checklist mentale redevient une trame pure, axe 5), où elle **remplace**
+  « Asthme = TRIade ». Vérification item par item avant absorption : T « Toux chronique variable » → clé
+  T (« Toux chronique variable, nocturne ou à l'effort ») ; R « Réversible sous traitement » → clé M
+  (« Mesure EFR obligatoire — obstruction réversible sous traitement ») ; I « Intermittente + déclenchée »
+  → clé E (« Exacerbations déclenchées »). Les clés d'ASTHME restent intactes, seules leurs valeurs
+  absorbent.
+- presentation · « Asthme d'effort → PENSER à » : sous-section supprimée. C'était une liste clinique
+  recopiant `theorie` au même format, vérifiée item par item : « Crises après 5–10 min d'effort » →
+  `theorie`/Asthme d'effort « Timing : début 5-10 min exercice, pic 5-10 min post » ; « Régressent
+  spontanément 20–60 min après » → `theorie` « Durée : résolution spontanée 20-90 min » (surensemble) ;
+  « Prévention : salbutamol 15 min avant exercice » → `theorie`/Rappels thérapeutiques « Si AIE isolé :
+  Salbutamol 2 bouffées 15min avant exercice » (plus précis, avec la posologie). Aucun item propre.
+- presentation · Q3 « Suivi » : la réponse était une liste recopiant `theorie` (réévaluation à 3 mois,
+  technique d'inhalation, paliers GINA). Réécrite en registre oral, contenu intégralement conservé et
+  complétée du filet de sécurité de la page SSP.
+  source : SSP — Prise en charge / Filet de sécurité — « Si vous crachez du sang, si vous êtes
+  essoufflé·e au repos, si vous perdez du poids ou avez une fièvre prolongée, consultez rapidement. En
+  cas de détresse respiratoire, appelez le 144. »
+
+*Alignement des prises en charge sur la page SSP*
+
+- resume · salbutamol : « Ventoline (salbutamol) » → « Salbutamol (Ventolin®) » (3 occurrences :
+  Crise d'asthme, PEC en 3 points, Questions à poser où la marque disparaît au profit de la DCI).
+  « Ventoline » est la marque française ; la spécialité suisse est **Ventolin®**. Même molécule, même
+  posologie — alignement de dénomination, dans la lignée de la passe nomenclature des tâches 2 et 3.
+  source : la page SSP n'emploie que la DCI (« salbutamol nébulisé 5 mg ») ; la forme de marque
+  employée uniformément dans le vault est « Ventolin® » (Skills — Pulmonaire : « Salbutamol
+  (Ventolin®), terbutaline (Bricanyl®) » ; SSP — Détresse Respiratoire : « Salbutamol (Ventolin®) 5 mg
+  neb ×3 en 1 h »). Aucune occurrence de « Ventoline » dans le vault, aucune autre dans les 40 grilles.
+- resume · signes de gravité de la crise : « tachypnée, cyanose, trouble conscience » → « tirage,
+  cyanose, SpO₂ < 92 %, FR > 30/min, troubles de la conscience ». La tachypnée devient un seuil
+  chiffré, la désaturation est ajoutée. Précision, non contradiction.
+  source : **niveau 1** — SSP, Red flags — « **Détresse respiratoire aiguë** : tirage, cyanose,
+  SaO2 < 92%, FR > 30/min → Asthme aigu grave… »
+- resume · Crise d'asthme, item ajouté : « Détresse respiratoire aiguë : salbutamol 5 mg nébulisé
+  ± ipratropium, oxygène et monitorage ». Le bloc ne connaissait que la voie inhalée par chambre
+  (4-10 bouffées), adaptée à la crise légère à modérée ; la voie nébulisée de la détresse manquait.
+  source : **niveau 1** — SSP, Red flags — « O2, monitoring, **salbutamol nébulisé 5 mg** ± ipratropium »
+- resume · Examen physique : ajout de « Constantes et inspection : FR, SpO₂ à l'air ambiant, FC, TA,
+  T° ; recherche de cyanose et de tirage ». La check-list « Examens à faire » demandait des constantes
+  que le bloc canonique ne portait pas — l'axe 4 exige l'inverse (check-list ⊂ `resume`/Examen clinique).
+  source : **niveau 1** — SSP, Examen clinique — « **Constantes & inspection** : FR, SpO₂ à l'air
+  ambiant, FC, TA, T° ; cyanose, tirage, dyspnée »
+
+**Divergences consignées**
+
+- pédagogique · variabilité du débit de pointe : `resume`/Examens diagnostiques dit « variabilité
+  diurne > **10 %** », `theorie`/Diagnostic de l'asthme dit « variabilité > **20 %** sur 2 semaines ».
+  La page SSP ne donne aucun seuil de DEP ; la section notée non plus (« Mesure du débit de pointe
+  [pour surveiller la réponse à un essai de traitement bronchodilatateur] »). **Niveau 3** : laissé
+  inchangé des deux côtés, rien inventé. À arbitrer par l'utilisateur — le critère GINA actuel chez
+  l'adulte est une variabilité diurne moyenne > 10 %, le 20 % relève d'un critère plus ancien.
+- pédagogique · palier 1 GINA : `theorie`/Traitement de l'asthme enseigne « Palier 1 : SABA prn (si
+  < 2×/semaine) », schéma antérieur à la bascule GINA vers le CSI-formotérol à la demande. La page SSP
+  reste générique (« Corticostéroïde inhalé ± β2-agoniste si suspicion d'asthme ») et la section notée
+  écrit un « • Palier 1 » sans contenu. **Niveau 3** : laissé inchangé.
+- section notée · absence de critère de prise en charge chiffré : la grille n'évalue que l'anamnèse,
+  l'examen, les hypothèses, les examens et la communication ; aucun arbitrage de niveau 2 n'était
+  possible sur le traitement.
+
+**Paires de redondance restantes (5)**
+
+Trois relèvent de la Q/R prescrite par l'axe 1 — `presentation` restitue à l'oral un sous-ensemble
+strict de `resume` :
+
+- « EFR : spirométrie avec test de réversibilité » (`resume`/Examens à faire) ↔ « Spirométrie avec test
+  de réversibilité » (`presentation`/Q « Quels examens demanderiez-vous ? »).
+- « Spirométrie avec test de réversibilité = examen clé » (`resume`/Points clés) ↔ idem.
+- « Test de provocation (méthacholine) si diagnostic incertain » (`resume`) ↔ « Test de provocation à
+  la méthacholine si besoin » (`presentation`/même Q).
+
+Deux sont des faux positifs du comparateur :
+
+- « Radiographie thoracique : Normale » (`expert`/Rôles — **résultat** à délivrer pendant la station)
+  ↔ « Radiographie thoracique » (`presentation`/Q — **examen à demander**) : rôles de blocs opposés.
+- « Hyperréactivité bronchique augmentée » (`theorie`/Cannabis et poumons — effet du cannabis) ↔
+  « H = Hyperréactivité bronchique » (clé du mnémo ASTHME, protégée).
+
+### AMBOSS-19 — Toux chronique, femme 53 ans, BPCO GOLD 3 avec cœur pulmonaire débutant (page SSP : Toux Chronique)
+
+Redondance : 16 paires → 6 (`report_redundancy.py AMBOSS-19_`). Pas de sous-section
+`presentation`/Pièges ECOS — vérifié, l'axe 6 ne s'applique pas.
+
+**Modifications**
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- theorie · Manifestations cliniques BPCO : la section recopiait `resume`/Symptômes typiques et
+  `resume`/Examen clinique (paires à 0.74 sur la toux matinale). Réécrite en *pourquoi le diagnostic se
+  fait si tard* — le patient réduit son activité au rythme du déclin du VEMS, la toux matinale est
+  attribuée au tabac par le patient comme par le médecin. Vérification item par item : toux matinale
+  productive → `resume`/Symptômes typiques ; expectorations muqueuses à purulentes →
+  `resume`/Exacerbation, triade ; dyspnée d'effort → `resume` ; temps expiratoire, sibilants, ronchi →
+  `resume`/Examen clinique. Les deux items **propres** (phénotypes pink puffer / blue bloater,
+  manifestations systémiques) sont conservés et enrichis. Ajout du piège inverse : un amaigrissement
+  chez un fumeur de 70 PA n'est jamais « la BPCO » tant qu'un cancer n'est pas écarté.
+- theorie · Diagnostic de la BPCO : liste d'examens recopiant `resume`/Examens diagnostiques et
+  `expert`/Rôles (paire à **1.0** sur « Radiographie thorax : hyperinflation, aplatissement
+  diaphragmes », 0.75 sur les gaz du sang, 0.74 sur la définition spirométrique). Réécrite en *ce que
+  chaque examen apporte et ce qu'il n'apporte pas*. Anti-perte : « Test marche 6 min » et
+  « α1-antitrypsine » n'existaient nulle part ailleurs sous cette forme — conservés dans la réécriture.
+  Axe 1.
+- theorie · BPCO, définition spirométrique : « VEMS/CVF < 0.70 post-bronchodilatateur » doublait
+  `resume`/EFR. Remplacé par le *pourquoi* du seuil fixe (compromis qui sur-diagnostique après 70 ans
+  et sous-diagnostique avant 45) et du post-bronchodilatateur (écarte l'asthme, dont l'obstruction se
+  lève). L'item « Classification GOLD 1-4 selon VEMS » a été **porté d'abord** dans
+  `resume`/Examens diagnostiques (« GOLD 1 léger > 80 %, GOLD 2 modéré 50–79 %, GOLD 3 sévère 30–49 %,
+  GOLD 4 très sévère < 30 % ») et dans les libellés du tableau « GOLD staging » de `presentation`,
+  **avant** d'être remplacé en `theorie` par le rationnel (le VEMS gradue l'obstruction mais prédit mal
+  le handicap et les exacerbations).
+- theorie · Traitement de la BPCO : liste doublant `resume`/Prise en charge. Réécrite en rationnel —
+  l'arrêt du tabac ne restaure pas le VEMS mais ramène la pente du déclin à celle d'un non-fumeur ; les
+  bronchodilatateurs agissent sur la distension dynamique, pas sur l'obstruction fixe ; l'oxygène de
+  longue durée n'allonge la survie qu'à ≥ 15 h/j ; la réhabilitation casse la spirale dyspnée →
+  sédentarité ; chaque exacerbation évitée est du VEMS préservé. Anti-perte : le seuil complet de
+  l'oxygénothérapie (« ou < 60 avec polyglobulie ou cœur pulmonaire ») et l'indication complète des CSI
+  (« si exacerbations fréquentes ou asthme associé, et si éosinophiles > 300/µL ») sont conservés. Axe 2.
+- theorie · Arrêt du tabac, item « Approche 5A » : la liste des cinq A doublait le mnémo de
+  `presentation`/Touches ludiques. Remplacée par le *pourquoi* d'une méthode structurée (le conseil bref
+  seul obtient 2-3 % d'arrêts à un an ; la structure transforme une phrase en rendez-vous). Le mnémo
+  conservé garde ses clés anglaises et reçoit la traduction en valeur — « Ask : demander le statut
+  tabagique à chaque consultation », etc. — sur le modèle des glossaires de schéma.
+- presentation · mnémo OLD COPS : la `mnemo-box` de la Checklist mentale est **déplacée** dans
+  « Touches ludiques / mnémos » (axe 5), où elle **remplace** « BPCO = 3C ». Vérification item par item :
+  « C = Crachats chroniques » → clé C (« Crachats matinaux chroniques ») ; « C = Clope (tabac) facteur
+  principal » → clé L (« Longue histoire tabagique (la clope, facteur principal) ») ; « C = Capacité
+  respiratoire ↓ (VEMS) » → clé O (« Obstruction bronchique (VEMS ↓, capacité respiratoire
+  diminuée) »). 3C était un sous-ensemble strict d'OLD COPS.
+- presentation · Q3 « Suivi » : la réponse était une liste recopiant `resume` et `expert`/Pièges (paire
+  à 0.87 sur le dépistage du cancer pulmonaire). Réécrite en registre oral, contenu intégralement
+  conservé, complétée du filet de sécurité de la page SSP.
+- resume · Historique BPCO : « Vaccination : grippe, pneumocoque » → « Statut vaccinal : couverture
+  OFSP à jour ? ». L'item est une **question d'anamnèse** ; la liste des vaccins vit dans
+  `resume`/Mesures non pharmacologiques, canonique (paires à 1.0, 0.88, 0.86, 0.86, 0.79 et 0.73 —
+  six des seize paires portaient sur la vaccination).
+
+*Alignement des prises en charge sur la page SSP*
+
+- resume · Points clés ECOS, item ajouté : « Toute toux chronique : réviser la liste médicamenteuse —
+  l'IEC (ici lisinopril) est la cause iatrogène n° 1, à arrêter avec réévaluation à 4 semaines et
+  relais par un sartan si HTA ». **La patiente prend du lisinopril** (critère noté d'anamnèse
+  n° 7 : « Oui, je prends du lisinopril ») et **aucun** des quatre blocs pédagogiques ne mentionnait la
+  toux sous IEC. C'est le piège éliminatoire de la page SSP.
+  source : **niveau 1** — SSP, `pieges_eliminatoires` — « **Toux iatrogène (IEC) non dépistée** » ;
+  Règle d'or — « Toujours **réviser les médicaments** (toux sèche sous IEC) » ; Points Clés ECOS / À
+  faire absolument n° 2 — « Réviser la liste médicamenteuse — l'IEC est la cause iatrogène n°1 » ;
+  Prise en charge / Approche empirique séquentielle n° 1 — « Arrêt d'un éventuel IEC → réévaluation à
+  4 semaines (relais par un sartan si HTA) »
+- expert · Pièges, item ajouté : « Ne pas relever le lisinopril : toux iatrogène sous IEC non
+  dépistée » — versant examinateur du même point (axe 7 : `expert` = ce qui s'observe, `resume` = ce
+  que l'étudiant retient).
+  source : **niveau 1** — même citation
+- resume · Check-list / Questions à poser, item ajouté : « Traitement antihypertenseur ? Un IEC peut
+  donner une toux sèche même après des années ».
+  source : **niveau 1** — SSP, Pièges — « Oublier les IEC comme cause de toux sèche chronique — TOUJOURS
+  faire l'inventaire médicamenteux (incluant IEC pris depuis des années sans toux initiale) »
+- resume · vaccinations : « Vaccination : grippe, pneumocoque, COVID, coqueluche, zona » →
+  « Vaccinations OFSP : grippe annuelle, pneumocoque, COVID-19, dTpa (coqueluche), zona/varicelle selon
+  le terrain ».
+  source : **niveau 1** — SSP, Prise en charge / Surveillance & prévention — « **Vaccinations OFSP** :
+  grippe annuelle, pneumocoque, COVID-19, dTpa, zona / varicelle selon le terrain »
+- resume · antibiothérapie de l'exacerbation : « Antibiothérapie si critères : expectoration purulente,
+  dyspnée + fièvre (ex : amox-clav) » → « Antibiothérapie si ≥ 2 des 3 critères d'Anthonisen
+  (majoration de la dyspnée, du volume et de la purulence des expectorations), ou purulence isolée :
+  co-amoxicilline (Co-Amoxi®) PO ». Deux corrections dans un même item : (a) la **fièvre n'est pas un
+  critère d'Anthonisen** — le même bloc invoquait pourtant ces critères deux items plus haut
+  (« Antibiotiques en cas d'exacerbation infectieuse (critères d'Anthonisen) »), l'item était donc en
+  contradiction avec sa propre référence et élargissait indûment l'indication antibiotique ; (b) la
+  dénomination.
+  source : (b) **niveau 1** — SSP, Prise en charge / Surveillance & prévention — « **co-amoxicilline**
+  si comorbidités (SSI/SSMI) » ; (a) ni la page SSP ni la section notée ne définissent les critères
+  d'Anthonisen — correction de cohérence interne au bloc canonique, signalée à l'arbitrage.
+
+**Divergences consignées**
+
+- pédagogique et section notée · classification GOLD : `theorie`/Rappels thérapeutiques et la section
+  notée raisonnent en **GOLD A/B/C/D** (« GOLD C/D: LABA + LAMA ± CSI »), alors que la page SSP renvoie
+  à un pocketcard « **GOLD ABE** » — la révision 2023, qui fusionne C et D. La page SSP ne tranche pas
+  explicitement (simple nom de pocketcard dans « Skills connexes ») ; **niveau 2** : la section notée
+  fait foi, le pédagogique reste en A/B/C/D. Barème gelé, rien corrigé. À arbitrer.
+- pédagogique · corticoïde de l'exacerbation : `resume` écrit « prednisolone 40 mg/j pendant 5 j »,
+  `theorie`/Rappels thérapeutiques « prednisone 40 mg × 5 j ». Les deux molécules sont commercialisées
+  en Suisse et les deux régimes sont équivalents ; ni la page SSP ni la section notée ne tranchent.
+  **Niveau 3** : laissé inchangé.
+- pédagogique · score mMRC : `resume`/Historique BPCO parle du « Score mMRC de dyspnée **au repos** »,
+  alors que le mMRC gradue la dyspnée **à l'effort**. Ni la page SSP ni la section notée ne le
+  mentionnent. **Niveau 3** : laissé inchangé, signalé.
+
+**Paires de redondance restantes (6)**
+
+Trois relèvent des Q/R prescrites par les axes 1 et 2 — `presentation` restitue à l'oral un
+sous-ensemble strict de `resume` :
+
+- « Oxygénothérapie à long terme si PaO2 < 55 mmHg » (`resume`/Formes sévères) ↔ « Oxygénothérapie si
+  PaO2 < 55 mmHg » (`presentation`/Q2 « Traitement »).
+- « Réhabilitation respiratoire (kiné, exercice) » (`resume`) ↔ « Réhabilitation respiratoire »
+  (`presentation`/Q2).
+- « Vaccinations (grippe, pneumocoque) à jour ? » (`resume`/Check-list — **question à poser**) ↔
+  « Vaccination grippe + pneumocoque » (`presentation`/Q2 — **mesure à proposer**) : rôles distincts.
+
+Deux portent sur des clés de mnémo, protégées :
+
+- « Dyspnée d'effort progressive » (`resume`) ↔ « D = Dyspnée progressive » (mnémo OLD COPS).
+- « Spirométrie indispensable au diagnostic » (`resume`/Points clés) ↔ « S = Spirométrie
+  indispensable » (mnémo OLD COPS).
+
+La dernière est un changement de format explicite :
+
+- « Toux chronique productive (souvent matinale) » (`resume`) ↔ « Toux chronique productive > 5 ans »
+  (`presentation`/Q1 — argument POUR d'une argumentation pour/contre).
+
+### AMBOSS-31 — Toux et hémoptysie, homme 58 ans, cancer bronchopulmonaire probable (page SSP : Toux Chronique)
+
+Redondance : 9 paires → 3 (`report_redundancy.py AMBOSS-31_`). Pas de sous-section
+`presentation`/Pièges ECOS — vérifié, l'axe 6 ne s'applique pas. Le glossaire de schéma
+(`UL : lobe supérieur ; ML : lobe moyen ; LL : lobe inférieur`) respecte déjà la règle clé-anglaise /
+valeur-française : inchangé.
+
+**Modifications**
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- theorie · Présentation clinique cancer poumon : la section recopiait `resume`/Symptômes respiratoires
+  et systémiques (paire à 0.74 sur les symptômes B). Réécrite en *pourquoi ce cancer se révèle si tard,
+  et par quoi* — le parenchyme n'a pas de sensibilité propre, la douleur signe déjà l'atteinte pleurale
+  ou pariétale ; chez un fumeur qui tousse depuis des années, le signal n'est pas la toux mais son
+  changement de caractère ; les syndromes paranéoplasiques précèdent parfois toute anomalie
+  radiologique. **Tous les chiffres sont conservés** (toux 75 %, hémoptysie 30 %, perte de poids 50 %,
+  douleur 25 %, hippocratisme 30 %), ainsi que les sites métastatiques et les deux complications de
+  contiguïté. Axe 1.
+- expert · Points clés : « Radiographie thoracique première urgence » doublait `resume`/Imagerie et
+  `resume`/Examens à faire (paires à 0.77, 0.74 et 0.73 — quatre des neuf paires venaient de cet item).
+  Réécrit du point de vue de l'examinateur, rôle propre du bloc (axe 7) : « Observer si le candidat
+  demande l'imagerie d'emblée, sans la différer pour le coût ni attendre les résultats
+  microbiologiques ». L'urgence de la radiographie reste portée par `resume`/Imagerie (1ʳᵉ intention),
+  `resume`/Points clés et `presentation`/Q1 (« immédiate »).
+- presentation · mnémo CANCER : la `mnemo-box` de la Checklist mentale est **déplacée** dans « Touches
+  ludiques / mnémos » (axe 5), où elle **remplace** « Red flags toux chronique ». Vérification item par
+  item avant absorption : « Hémoptysie » → clé C (« Crachat sanglant (hémoptysie) ») ;
+  « Amaigrissement » → clé A ; « Sueurs nocturnes » → clé N (glose française ajoutée à la clé
+  anglaise) ; « Changement de caractère d'une toux de fumeur » → clé C (« Cough (toux persistante, ou
+  changement de caractère d'une toux de fumeur) ») ; « Hippocratisme digital » → porté en valeur de la
+  clé C et déjà présent dans `resume`/Examen clinique, `expert`/Points clés et
+  `theorie`/Hippocratisme digital.
+- presentation · titre « ⚠️ Diagnostic différentiel toux chronique (4 grands) » → « ⚠️ Diagnostic
+  différentiel **chez ce fumeur** (4 grands) ». Les quatre entrées (cancer, TB, BPCO/asthme,
+  bronchectasies) sont justes pour ce cas mais ne sont pas le différentiel général de la toux
+  chronique, que la page SSP tranche autrement (voir alignement ci-dessous). Les quatre entrées sont
+  conservées telles quelles.
+- presentation · Q3 « Suivi » : la réponse était une liste recopiant `resume`/Stratégie thérapeutique et
+  Support symptomatique. Réécrite en registre oral, contenu intégralement conservé (stadification
+  CT thoraco-abdomino-pelvien, PET-scan, échoendoscopie bronchique, colloque multidisciplinaire,
+  chirurgie si localisé, chimio/immunothérapie, soins de support, surveillance).
+
+*Alignement des prises en charge sur la page SSP*
+
+- resume · Points clés ECOS, item ajouté : « Toux chronique (> 8 semaines) : chez le non-fumeur, penser
+  d'abord UACS, asthme et RGO ; chez le fumeur, éliminer d'emblée cancer et tuberculose — et toujours
+  réviser les médicaments, la toux sèche sous IEC étant la cause iatrogène n° 1 ». La grille ne
+  connaissait que le différentiel du fumeur ; le cadre général de la page SSP manquait.
+  source : **niveau 1** — SSP, En Bref — « **Top 3 causes** (adulte non-fumeur, immunocompétent) :
+  UACS / écoulement post-nasal, asthme (incl. cough-variant), RGO » et « **Toujours éliminer** : cancer
+  bronchique, tuberculose, IC gauche, embolie pulmonaire, toux iatrogène sous IEC » ; Règle d'or —
+  « Toux > 8 semaines… Toujours **réviser les médicaments** (toux sèche sous IEC) »
+- resume · antitussifs : « Antitussifs si toux invalidante » → « … — jamais avant la radiographie et le
+  diagnostic, sous peine de masquer la tumeur ». Précision, non contradiction : l'antitussif reste
+  indiqué en palliatif une fois le diagnostic posé.
+  source : **niveau 1** — SSP, Pièges — « Prescrire un **antitussif** sans Rx ni diagnostic — risque de
+  masquer un cancer broncho-pulmonaire chez fumeur »
+- resume · symptômes systémiques : « Perte de poids, fatigue, fièvre » → « … , sueurs nocturnes ». Le
+  bloc canonique ignorait les sueurs nocturnes, alors qu'elles sont le red flag tuberculeux de la page
+  SSP et un symptôme majeur de ce patient.
+  source : **niveau 1** — SSP, Red flags — « **Toux + fièvre prolongée + sueurs nocturnes +
+  amaigrissement** ± contact / précarité / migration → Tuberculose pulmonaire »
+- theorie · Examens complémentaires (queue), radiographie : « Radiographie thoracique face + profil :
+  première intention » → « … premier examen, mais une radiographie normale n'exclut pas un cancer — les
+  lésions centrales ou de petite taille lui échappent, et devant des red flags persistants on pousse
+  jusqu'au scanner ». Le *pourquoi* remplace la redite (paire à 0.80 avec `resume`/Imagerie).
+  source : **niveau 1** — SSP, Cartes ECOS — « attribuer la toux à la « bronchite chronique du fumeur ».
+  Une **Rx normale n'exclut pas un cancer** — devant des red flags persistants, on pousse jusqu'au
+  scanner » ; « **CT thoracique** même si la radio est normale »
+- theorie · Examens complémentaires (queue), item ajouté : « PCR Xpert MTB/RIF sur les crachats :
+  résultat en quelques heures, et détecte d'emblée la résistance à la rifampicine ». La queue ne
+  connaissait que le Ziehl ×3, la culture et le QuantiFERON.
+  source : **niveau 1** — SSP, Examens complémentaires / 2ᵉ ligne — « Suspicion de tuberculose :
+  **crachats BAAR ×3 + PCR (Xpert MTB/RIF)**, IGRA (Quantiferon), isolement respiratoire »
+- expert · Pièges, item ajouté : « Oublier la déclaration obligatoire à l'OFSP et l'enquête d'entourage
+  si la TB est confirmée ». Aucun bloc pédagogique ne portait cette obligation, que la section notée
+  exige pourtant (« Si tuberculose pulmonaire confirmée · Déclaration obligatoire, enquête entourage »).
+  source : **niveau 1** — SSP, Examens complémentaires / 2ᵉ ligne — « **déclaration obligatoire à
+  l'OFSP** » ; confirmé au **niveau 2** par la section notée
+- theorie · Rappels thérapeutiques, item ajouté : « Vitamine B6 (pyridoxine) associée à l'isoniazide :
+  prophylaxie de la neuropathie périphérique ». Le bloc donnait les quatre molécules du RIPE et leurs
+  doses **sans la pyridoxine**, que la section notée exige (« Vitamine B6 prophylaxie neuropathie »).
+  Omission à conséquence clinique : l'isoniazide sans pyridoxine expose à une neuropathie périphérique.
+  source : **niveau 2** — section notée, Management / Conseil et soutien, « Si tuberculose pulmonaire
+  confirmée » — « Vitamine B6 prophylaxie neuropathie »
+
+**Divergences consignées**
+
+- pédagogique · dépistage du cancer pulmonaire : `theorie`/Cancer du poumon enseigne « Dépistage : CT
+  faible dose si **55-80 ans + 30 PA** », critère américain du NLST repris par l'USPSTF en 2013 et
+  **abaissé à 50-80 ans + 20 PA en 2021**. Surtout, la Suisse n'a **pas** de programme de dépistage
+  organisé du cancer pulmonaire. La page SSP ne mentionne aucun dépistage et la section notée non plus.
+  **Niveau 3** : laissé inchangé, rien inventé. À arbitrer par l'utilisateur.
+- `expert`/Rôles · unités : « FSC : Hb 11.2 g/dL » — l'hémoglobine se rend en g/L dans les laboratoires
+  suisses (112 g/L). Hors périmètre de la passe nomenclature (seul `mg/dL` était banni) et hors
+  périmètre de cette tâche ; signalé, non corrigé, pour ne pas désaligner cette grille du reste du
+  corpus.
+
+**Paires de redondance restantes (3)**
+
+- « Toux chronique ± hémoptysie » (`resume`/Symptômes respiratoires) ↔ « Toux chronique > 3 sem avec
+  hémoptysie » (`presentation`/Q2 « Tuberculose pulmonaire », argument POUR) : liste de symptômes →
+  argument d'une argumentation pour/contre, changement de format.
+- « Radiographie thoracique » (`resume`/Examens à faire) ↔ « Radiographie thoracique (immédiate) »
+  (`presentation`/Q « Quels examens demander ? ») : axe 1, Q/R en sous-ensemble strict.
+- « Radiographie thoracique (1ère intention) » (`resume`/Imagerie) ↔ idem : axe 1.
