@@ -36,9 +36,30 @@ BANNED = {
     #   ferritine     -> µg/L  (x1)
     # Ne peut pas attraper pg/mL ni U/mL : « ng/mL » n'y est pas sous-chaine.
     r"\bng/mL\b": "ng/L ou µg/L selon l'analyte",
+    # pg/mL : pas de facteur unique non plus —
+    #   vitamine B12 -> pmol/L (x0,738 ; 320 pg/mL = 236 pmol/L)
+    #   BNP / NT-proBNP -> ng/L (x1 ; 1 pg/mL = 1 ng/L), comme le vault
+    # Ne peut pas attraper ng/mL ni mg/mL : « pg/mL » n'y est pas sous-chaine.
+    r"\bpg/mL\b": "pmol/L ou ng/L selon l'analyte",
+    # /mm³ : numerations (leucocytes, plaquettes) -> G/L, x0,001.
+    # La barre oblique est indispensable au motif : elle borne le sens « par
+    # mm³ » (une concentration) et laisse passer un volume ecrit « 5 mm³ ».
+    # Sans risque de faux positif base64 : « ³ » n'appartient pas a l'alphabet
+    # base64, ce motif ne peut pas tomber dans un blob d'image.
+    r"/mm³": "G/L (x0,001)",
     r"\b911\b": "144",
     r"\bSAMU\b": "144",
 }
+
+# EXCEPTION — NE JAMAIS BANNIR « mg/mL ».
+# Deux occurrences dans AMBOSS-18 : « PC20 = 4 mg/mL » et « PC20 < 8 mg/mL ».
+# C'est la concentration de methacholine inhalee lors du test de provocation
+# bronchique, dont mg/mL est l'unite internationale correcte — ce n'est pas une
+# valeur de laboratoire rendue par un automate, il n'y a donc rien a convertir
+# en SI. Une passe future qui ajouterait r"\bmg/mL\b" a BANNED corromprait le
+# seuil diagnostique de l'asthme. Meme raisonnement pour toute unite de dose ou
+# de concentration administree (mg/kg, µg/bouffee, mg/mL) : la regle SI vise les
+# resultats de laboratoire, pas les posologies.
 # Pas de regle sur 112 : le corpus ne contient aucun numero d'urgence 112.
 # La seule occurrence est « Score Global 0/112 » dans AMBOSS-8 — un total de
 # bareme. La remplacer corromprait la grille.

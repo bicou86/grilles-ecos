@@ -166,6 +166,24 @@ python3 scripts/amboss/check_invariants.py    # doit sortir OK
 python3 scripts/amboss/check_nomenclature.py  # doit sortir OK
 ```
 
+**Toujours vérifier par les scripts, jamais par un `grep` direct.** Les scripts
+appliquent `lib.strip_base64` avant toute recherche ; un `grep` brut, lui, fouille
+aussi les images encodées, qui pèsent 95 % des fichiers. L'alphabet base64 contient
+les lettres, les chiffres, `+` et `/` : n'importe quelle courte séquence de ces
+caractères y apparaît par hasard. Constaté en tâche 7 — `grep g/dL` renvoyait trois
+occurrences (AMBOSS-33 ×1, AMBOSS-34 ×2), toutes à l'intérieur de blobs d'image
+(`…HvU8Jjtt0Mj/MQMVPEks9yEI2g/dLLxj1oAzRDvlVZ…`), alors qu'il n'en restait aucune
+dans le texte. Un motif contenant un caractère hors alphabet base64 (accent, `³`,
+espace) est immunisé ; les autres ne le sont pas.
+
+**Les règles d'unités SI ne visent que les résultats de laboratoire.** Elles ne
+s'appliquent ni aux posologies ni aux concentrations administrées. Cas à protéger,
+déjà rencontré : `PC20 = 4 mg/mL` et `PC20 < 8 mg/mL` en AMBOSS-18 désignent la
+concentration de méthacholine inhalée, dont `mg/mL` est l'unité internationale
+correcte — bannir `mg/mL` corromprait le seuil diagnostique de l'asthme.
+L'exception est répétée en commentaire dans `check_nomenclature.py`, à côté de la
+table `BANNED`, là où une passe future irait l'ajouter.
+
 Avant de commit une grille dédoublonnée, vérifier aussi qu'aucune information n'a
 disparu (règle du § 3) :
 

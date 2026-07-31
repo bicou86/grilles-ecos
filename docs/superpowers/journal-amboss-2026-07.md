@@ -1186,7 +1186,68 @@ ni de `pg/mL` ni de `U/mL` — vérifié par test avant activation, aucun faux p
   **pmol/L** (× 0,738) ; BNP (AMBOSS-19 « 85 pg/mL ») — à rendre en **ng/L**, × 1, comme le vault.
 - pédagogique · `/mm³` restant, 5 occurrences hors périmètre : leucocytes et plaquettes (AMBOSS-2, 8,
   24) — les laboratoires suisses rendent en **G/L** (10⁹/L), × 0,001.
-- **`mg/mL` d'AMBOSS-18 : à ne pas convertir.** Les deux occurrences (« PC20 = 4 mg/mL »,
-  « PC20 < 8 mg/mL ») désignent la **concentration de méthacholine inhalée**, dont mg/mL est l'unité
-  internationale correcte — ce n'est pas une valeur de laboratoire. Aucune règle de nomenclature ne
-  doit les viser.
+- pédagogique · troponine T d'AMBOSS-14, après conversion : le bloc lit désormais « Troponine T
+  initiale : 20 ng/L (limite normale) ». Le nombre est fidèle, mais **la conversion a déplacé le
+  référentiel implicite du scénario** — en Suisse, `ng/L` connote un dosage **hypersensible**, dont le
+  99ᵉ percentile est à ≈ 14 ng/L ; `ng/mL` connotait au contraire un dosage conventionnel, dont le
+  seuil tournait autour de 0,03 ng/mL. Sous dosage hs, 20 ng/L n'est plus « limite normale » mais déjà
+  au-dessus du seuil. La dynamique du cas reste cohérente dans les deux lectures (20 → 150, soit une
+  ascension nette qui signe la nécrose) ; seul le **qualificatif** devient discutable. Trancher
+  supposerait de décider quel dosage le scénario emploie — un choix d'auteur, pas de conversion.
+  **Niveau 3** : qualificatifs laissés intacts, la conversion est restée 1 pour 1. À arbitrer par
+  l'utilisateur : soit remplacer « limite normale » par « discrètement élevée » (lecture hs), soit
+  ramener la valeur initiale sous 14 ng/L.
+
+**Garde-fou — `mg/mL` d'AMBOSS-18 : ne jamais le bannir**
+
+Les deux occurrences (« Test méthacholine : Positif (PC20 = 4 mg/mL) » dans `expert`/Rôles,
+« Test méthacholine : PC20 < 8 mg/mL » dans `theorie`) désignent la **concentration de méthacholine
+inhalée** lors du test de provocation bronchique. `mg/mL` en est l'unité internationale correcte : ce
+n'est pas un résultat rendu par un automate de laboratoire, il n'y a rien à convertir en SI. Ajouter
+`\bmg/mL\b` à `BANNED` corromprait le seuil diagnostique de l'asthme. La règle générale, désormais
+écrite dans `PROCEDURE.md` § 6 et en commentaire dans `check_nomenclature.py` juste à côté de la table
+`BANNED` — là où une passe future irait l'ajouter — est que **les règles d'unités SI ne visent que les
+résultats de laboratoire, jamais les posologies ni les concentrations administrées** (mg/kg,
+µg/bouffée, mg/mL).
+
+### Passe unités SI — `pg/mL` et `/mm³` (fix round 2/5 de la tâche 7)
+
+Complète la passe précédente sur les deux unités restantes identifiées au rapport de round 1.
+Balayage du corpus : **4 occurrences de `pg/mL`** (grilles 17, 19, 20) et **5 de `/mm³`** (grilles 2,
+8, 24), soit 9 conversions. Après cette passe, **aucune occurrence** de `g/dL`, `ng/mL`, `pg/mL` ni
+`/mm³` ne subsiste dans le texte des 40 grilles.
+
+**Modifications**
+
+- **Vitamine B12 · `pg/mL` → `pmol/L`, × 0,738.** 3 valeurs. AMBOSS-17 : 320 → **236 pmol/L**,
+  qualificatif « (normale) » vérifié — l'intervalle suisse est d'environ 145-570 pmol/L, 236 y est
+  bien. AMBOSS-20 : la valeur **et son intervalle de référence** ont été convertis ensemble, 85 →
+  **63 pmol/L** et « N: 200-900 » → **« N: 148-664 »** (200 × 0,738 = 147,6 ; 900 × 0,738 = 664,2) ;
+  ne convertir que la valeur aurait fait passer un déficit franc pour une normale. AMBOSS-20, queue de
+  `theorie` : « < 200 pg/mL = déficit » → **« < 148 pmol/L = déficit »**, même borne que celle de
+  l'intervalle ci-dessus — la cohérence interne de la grille est préservée, et 63 reste bien sous 148.
+- **BNP · `pg/mL` → `ng/L`, × 1.** AMBOSS-19 : 85 pg/mL → **85 ng/L**, nombre inchangé. Qualificatif
+  « (légèrement élevé) » vérifié : le seuil d'insuffisance cardiaque du vault est « BNP ≥ 35 ng/L », 85
+  est donc bien une élévation modérée.
+  source : Skills — Cardiovasculaire — « **BNP ≥ 35 ng/L** ou **NT-proBNP ≥ 125 ng/L** »
+- **Leucocytes et plaquettes · `/mm³` → `G/L`, × 0,001.** 5 valeurs, dont **deux dans une section
+  notée** d'AMBOSS-24 (réponse patient du sous-item noté « FSC »). Qualificatifs vérifiés un à un :
+  AMBOSS-2 « leucocytose à 14 000/mm³ » → **14 G/L**, au-dessus de la norme 4-10 G/L, le mot
+  « leucocytose » reste exact ; AMBOSS-8 « leucocytes 12 000/mm³ » → **12 G/L** ; AMBOSS-24
+  « plaquettes < 150 000/mm³ » → **< 150 G/L**, seuil de thrombopénie conservé, et « leucocytes
+  > 10 000/mm³ » → **> 10 G/L** ; AMBOSS-24 « Plaquettes 180 000/mm³ (normale) » → **180 G/L**, dans
+  la norme 150-400 G/L, qualificatif exact.
+
+`\bpg/mL\b` et `/mm³` sont ajoutés à `BANNED`, portant à quatre les motifs d'unités de la table. La
+barre oblique de `/mm³` est indispensable : elle borne le sens « par mm³ » (une concentration) et
+laisse passer un volume écrit « 5 mm³ », qui est légitime. Bordage vérifié avant activation : aucun
+des deux motifs n'attrape `ng/mL`, `mg/mL`, `U/mL`, `mm/h` ni un volume en mm³.
+
+**Divergences consignées**
+
+- pédagogique · **numérations sans unité**, 3 occurrences hors de portée de tout motif : AMBOSS-18
+  « FSC : GB 8500 », AMBOSS-31 « leucocytes 12 000 », AMBOSS-33 « GB 15 000 ». Elles sont
+  implicitement en /mm³ et devraient se lire 8,5 G/L, 12 G/L et 15 G/L. Aucun motif de `BANNED` ne
+  peut les détecter — il n'y a pas d'unité à chercher. Signalées, **non converties** : les corriger
+  demande une lecture au cas par cas, et rien ne garantit qu'il n'en existe pas d'autres formes. À
+  traiter par une passe dédiée si l'utilisateur le souhaite.
