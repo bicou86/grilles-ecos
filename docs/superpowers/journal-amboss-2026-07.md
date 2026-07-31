@@ -2106,6 +2106,29 @@ Grille de l'**axe 6** : `presentation`/Pièges ECOS supprimée après report dan
   si anémie** » et de « IPP arrêté » sur le contrôle d'éradication — les deux venaient de `theorie`
   et n'avaient pas d'équivalent dans le canonique.
 
+*Seuil transfusionnel de la cardiopathie ischémique (niveau 1) — corrigé au fix round 1/5*
+
+- theorie · Prise en charge de l'HDH : « transfusion si Hb < 70 g/L (**< 90 si coronarien**) » →
+  « transfusion si Hb < 70 g/L, **seuil relevé à < 80 g/L en cas de cardiopathie ischémique** ».
+  La page SSP tranche explicitement le point, et deux fois : **niveau 1**, elle fait foi. La borne
+  de 90 g/L ne venait d'aucune source — ni de la page SSP, ni de la section notée, qui dit seulement
+  « Transfusion si Hb: 70 g/L ou instabilité ». Le terme « coronarien » est également remplacé par
+  « cardiopathie ischémique », la formulation de la page.
+  source : SSP — PRISE EN CHARGE — « **Transfusion de CE** selon stratégie restrictive : seuil Hb
+  < 70 g/L (**< 80 g/L si cardiopathie ischémique**) » ; SSP — Cartes ECOS, « HDB sévère — mesures
+  initiales de réanimation et seuil transfusionnel ? » — « transfusion si Hb < 70 g/L
+  (**< 80 si cardiopathie ischémique**) »
+  historique : la clause existe depuis l'import (`main` : « < 7 g/dL (< 9 si coronarien) ») et a été
+  convertie telle quelle par la passe unités (`5f9aafc` : « < 70 g/L (< 90 si coronarien) »). La
+  conversion était juste au facteur 10 près ; c'est la valeur d'origine qui divergeait de la page.
+  **Piège d'outillage à retenir** : `lib.visible_text()` supprime tout ce qui suit un `<` nu
+  jusqu'au `>` suivant — dans « Hb < 70 g/L (< 90 si coronarien)</li> », le `<` ouvre une
+  pseudo-balise qui court jusqu'au `>` de `</li>` et avale la clause entière. Toute recherche
+  passant par `visible_text` sur le fichier entier renvoie **zéro occurrence** de « coronarien ».
+  `report_redundancy.py` et `check_no_loss.py` y échappent (leur `list_items` capture l'intérieur du
+  `<li>`, sans le `</li>`), mais une vérification écrite à la main sur `visible_text` produit un faux
+  négatif. Chercher ces seuils sur le HTML brut après `strip_base64`, pas sur le texte visible.
+
 *Alignement du délai de contrôle endoscopique (niveau 2)*
 
 - resume · Suivi et presentation · Q3 : « Contrôle endoscopique à **8–12** semaines » → « à **6–8**
@@ -2150,14 +2173,6 @@ Grille de l'**axe 6** : `presentation`/Pièges ECOS supprimée après report dan
 
 **Divergences consignées**
 
-- **seuil transfusionnel du coronarien** : `theorie` dit « transfusion si Hb < 70 g/L (**< 90 si
-  coronarien**) », la page SSP dit « (**< 80 g/L** si cardiopathie ischémique) ». La consigne de
-  tâche demandait explicitement de ne pas retoucher ce seuil, déjà converti lors de la passe unités.
-  **Non corrigé**, consigné pour arbitrage : la conversion est juste, c'est la borne du coronarien
-  qui diverge de la page de référence.
-  source : SSP — PRISE EN CHARGE — « **Transfusion de CE** selon stratégie restrictive : seuil Hb
-  < 70 g/L (**< 80 g/L si cardiopathie ischémique**) » ; SSP — Cartes ECOS — « transfusion si
-  Hb < 70 g/L (< 80 si cardiopathie ischémique) »
 - **section notée `m5` · acide tranexamique** : « Acide tranexamique: 1g IV si saignement actif ».
   L'essai HALT-IT (2020) n'a montré aucun bénéfice de l'acide tranexamique dans l'hémorragie
   digestive, avec un excès d'événements thrombo-emboliques veineux ; il n'est plus recommandé dans
@@ -2184,11 +2199,13 @@ Grille de l'**axe 6** : `presentation`/Pièges ECOS supprimée après report dan
   Forrest). Aucune n'a été substituée à l'autre — le mapping est le choix de l'utilisateur —, mais
   un rattachement complémentaire mérite d'être arbitré.
 
-**Signalements de sécurité** — trois, tous corrigés ci-dessus, plus un non corrigé (barème gelé) :
+**Signalements de sécurité** — quatre, tous corrigés ci-dessus, plus un non corrigé (barème gelé) :
 anti-H2 retiré du marché mondial en 2020 encore proposé en alternative aux IPP ; paracétamol sans
 plafond journalier chez un buveur quotidien, alors que c'est l'antalgique de remplacement noté ;
 trithérapie d'éradication à l'amoxicilline dans le bloc canonique d'un patient allergique à la
-pénicilline. **Non corrigé** : acide tranexamique dans l'hémorragie digestive (section notée).
+pénicilline ; seuil transfusionnel du cardiopathe ischémique porté à 90 g/L au lieu de 80, soit une
+stratégie plus libérale que celle de la page de référence sur un patient qui saigne. **Non corrigé** :
+acide tranexamique dans l'hémorragie digestive (section notée).
 
 ### AMBOSS-22 — Dysphagie, femme de 60 ans, adénocarcinome de l'œsophage sur Barrett (page SSP : Dysphagie)
 
@@ -2282,18 +2299,18 @@ Pas de sous-section `presentation`/Pièges ECOS — vérifié, la grille n'est p
 corrigées ci-dessus valent toutefois signalement pédagogique : la Version longue est ce que
 l'étudiant récite, et elle inversait le statut tabagique de la patiente.
 
-### AMBOSS-15 — Douleur abdominale chronique, garçon de 6 ans, maladie cœliaque (page SSP : aucune — alignement des PEC reporté)
+### AMBOSS-15 — Douleur abdominale chronique, garçon de 6 ans, maladie cœliaque (page SSP : à créer — alignement des PEC reporté)
 
 Redondance : **8 paires → 3** (`report_redundancy.py AMBOSS-15_`). Quatre blocs présents.
 Pas de sous-section `presentation`/Pièges ECOS — vérifié, la grille n'est pas de l'axe 6.
 
-**Traitement partiel, assumé.** `docs/obsidian-mapping.yaml` ne rattache cette grille à aucune page
-SSP : elle figure dans la liste `unmapped`, avec la raison « douleur abdominale pédiatrique — page
-pédiatrique à créer » (la page `Skills ECOS/Skills — Réflexes Médicamenteux & Antidotes.md`, citée
-dans le brief de tâche, ne porte que deux grilles RESCOS de pharmacologie et aucune prise en charge
-par motif). L'**étape 4 d'alignement des prises en charge n'a donc pas été appliquée** : seul le
-dédoublonnage du § 3 l'a été, plus les corrections factuelles internes, qui ne passent pas par la
-hiérarchie. Les zones restées **sans arbitre** sont listées en fin d'entrée.
+**Traitement partiel, assumé.** `docs/obsidian-mapping.yaml` place cette grille dans la liste
+`unmapped`, avec la raison « douleur abdominale pédiatrique — **page pédiatrique à créer** ». La page
+de référence **n'existe pas encore** : ce n'est pas qu'une page inadéquate ait été écartée, c'est
+qu'aucune n'a encore été écrite pour ce motif. L'**étape 4 d'alignement des prises en charge n'a donc
+pas été appliquée** : seul le dédoublonnage du § 3 l'a été, plus les corrections factuelles internes,
+qui ne passent pas par la hiérarchie. Les zones restées **sans arbitre** sont listées en fin d'entrée
+— elles constituent, telles quelles, la liste de ce que la future page pédiatrique devra trancher.
 
 **Modifications**
 
@@ -2347,9 +2364,8 @@ hiérarchie. Les zones restées **sans arbitre** sont listées en fin d'entrée.
 
 **Divergences consignées**
 
-- **alignement des prises en charge non appliqué**, faute de page SSP de référence. Les zones
-  restées **sans arbitre**, à revoir si une page pédiatrique est créée ou si l'utilisateur décide
-  d'un rattachement complémentaire :
+- **alignement des prises en charge non appliqué**, la page de référence restant à écrire. Les zones
+  restées **sans arbitre**, à reprendre dès que la page pédiatrique existera :
   1. `theorie`/Rappels thérapeutiques — les **posologies pédiatriques au poids** : fer élément
      3-6 mg/kg/j, acide folique 1 mg/j × 3 mois, vitamine D 800-1000 UI/j, calcium 500-1000 mg/j.
      Elles sont plausibles et le fer est bien rapporté au poids, mais **aucune source du vault ne les
