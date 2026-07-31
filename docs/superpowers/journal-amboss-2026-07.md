@@ -1657,3 +1657,386 @@ deux points sont corrigés ci-dessus. Aucun ajout au barème.
   - « Douleurs pelviennes chroniques ou pesanteur » ↔ « Douleur pelvienne chronique » (0,77) : le
     second est une **valeur du mnémo 5D**. Un mnémo ne se démembre pas — supprimer le D de « Douleur
     pelvienne chronique » casserait la clé.
+
+### AMBOSS-7 — Toux et fièvre, fillette de 2 ans, bronchite avec suspicion de pneumonie (page SSP : Fièvre du Nourrisson)
+
+Redondance : **5 paires → 2** (`report_redundancy.py AMBOSS-7_`). Quatre blocs présents.
+**Pas de sous-section `presentation`/Pièges ECOS** — vérifié, axe 6 sans objet. Items ICE du critère
+`m4` « Communication avec la mère » **non touchés**, ainsi que `theorie`/Gestion de l'anxiété
+parentale, qui relève du même critère.
+
+**Modifications**
+
+*Sécurité — posologies pédiatriques (voir aussi les signalements en fin d'entrée)*
+
+- theorie · Rappels · paracétamol : « Paracétamol 15 mg/kg/dose **Q4-6H** » → le plafond journalier
+  devient le message, et `resume` reçoit la posologie complète « 15 mg/kg/dose **toutes les 6 h
+  (max 60 mg/kg/j)** ». **Niveau 1** : la page SSP tranche explicitement. À 15 mg/kg toutes les 4 h
+  sans plafond énoncé, on atteint 90 mg/kg/j, soit une fois et demie la dose maximale.
+  source : SSP — Cartes ECOS — « Paracétamol : 15 mg/kg toutes les 6 h (**max 60 mg/kg/j**) » ;
+  SSP — PRISE EN CHARGE — « Paracétamol 15 mg/kg/dose »
+- resume · Traitement symptomatique · AINS : ajout de « ibuprofène 10 mg/kg/dose après 6 mois,
+  **à éviter ici en raison de la déshydratation** » et de « **jamais d'aspirine chez l'enfant
+  (syndrome de Reye)** ». **Niveau 1**, mise en garde que la page SSP ajoute (précédent AMBOSS-1) :
+  l'enfant a une diarrhée et des signes de déshydratation débutants, et l'aspirine figure parmi les
+  pièges éliminatoires de la page.
+  source : SSP — Cartes ECOS — « **AINS contre-indiqués** en cas de varicelle […] et de
+  **déshydratation** (rein) » ; SSP — frontmatter `pieges_eliminatoires` — « Aspirine chez enfant
+  < 16 ans (Reye) » ; SSP — PRISE EN CHARGE — « **Jamais d'aspirine** chez l'enfant »
+- theorie · Signes de détresse respiratoire : « Tachypnée : > 40/min (**2-5 ans**) » →
+  « > 50/min (2-11 mois), > 40/min (**1-5 ans**), > 30/min (> 5 ans) ». **Correction factuelle
+  interne** : les seuils OMS sont 1-5 ans, pas 2-5 ans ; la formule d'origine laissait sans seuil
+  la tranche 1-2 ans, celle qui borde l'âge de la patiente. Ni la SSP ni la section notée ne
+  définissent ces seuils — rien à arbitrer, un fait à corriger.
+
+*Enrichissement du canonique (préalable au dédoublonnage, axes 1 et 2)*
+
+- resume · Examens diagnostiques : ajout de « SpO₂ systématique ; gaz du sang si détresse
+  respiratoire ou diarrhée profuse » et « Ionogramme et glycémie si diarrhée ou déshydratation ».
+  Ces examens étaient **notés** mais absents du canonique, ce qui empêchait la réponse orale de
+  `presentation` d'en être un sous-ensemble (axe 1).
+  source : section notée `m2` — « Saturation en oxygène », « Gaz du sang artériel [troubles
+  acido-basiques, diarrhée, symptômes respiratoires] », « Électrolytes, glucose [diarrhée liquide,
+  peut être déshydratée ou hypoglycémique] »
+- resume · Prise en charge : la SRO (50-100 mL/kg sur 4 h, Ringer lactate IV si modérée à sévère),
+  le seuil d'oxygénothérapie et les critères d'hospitalisation (SpO₂ < 92 %, déshydratation,
+  âge < 6 mois) et le protocole antibiotique (amoxicilline 80-90 mg/kg/j en **2-3 prises** ;
+  azithromycine 10 mg/kg J1 puis 5 mg/kg J2-5) descendent de `theorie`/Rappels vers `resume`, qui
+  est le canonique de l'axe 2. Formulations reprises de la section notée.
+  source : section notée `m5` — « Antibiothérapie: Amoxicilline 80-90 mg/kg/j **x2-3/j** »,
+  « Alternative: Azithromycine 10mg/kg J1 puis 5mg/kg J2-5 », « Hospitalisation si SpO2 < 92%,
+  déshydratation, âge < 6 mois », « Réhydratation orale: SRO 50-100 mL/kg sur 4h »,
+  « Réhydratation IV: Ringer lactate si modérée-sévère »
+- resume · Suivi : ajout de « Si hospitalisation : surveillance FR, SpO₂, poids, diurèse et état
+  général » — la réponse orale de `presentation`/Q3 le disait sans que le canonique le porte.
+  source : section notée `m5` — « Surveillance: FR, SpO2, état général » et « Surveillance: Poids,
+  diurèse, état conscience »
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- theorie · Bronchite aiguë chez l'enfant : cinq des six items redisaient `resume` au même format
+  (étiologie virale > 90 %, symptômes, évolution 7-10 j, traitement supportif). Remplacés par le
+  *pourquoi* — le rôle de l'adénovirus, qui donne à lui seul l'atteinte respiratoire **et**
+  digestive et explique la diarrhée sans seconde infection ; la régénération de l'épithélium cilié,
+  qui explique une toux qui traîne sans être un échec ; les trois signes de sortie de la bronchite
+  simple. Les virus courants et les complications sont conservés dans le texte de remplacement.
+  Axe 1. (Le point adénovirus vient de la section notée `m1` : « adénovirus peut causer symptômes
+  respiratoires + GI ».)
+- theorie · Pneumonie communautaire : « Critères d'hospitalisation » et « Traitement : amoxicilline »
+  sont supprimés (portés dans `resume` ci-dessus) et remplacés par ce qui décide de
+  l'hospitalisation — oxygénation, hydratation, réserve liée à l'âge — et par le fait que la
+  radiographie confirme le foyer sans séparer viral et bactérien. Axe 2.
+- theorie · Rappels thérapeutiques : le protocole recopiait `resume`. Remplacé par le rationnel —
+  la fièvre visée pour le confort et non pour le chiffre, le risque rénal des AINS chez un enfant
+  déshydraté, la voie orale préférée à la veineuse tant que l'enfant boit, l'inutilité des
+  bronchodilatateurs hors sibilants, la forte dose d'amoxicilline contre les pneumocoques de
+  sensibilité diminuée, et la distinction des deux seuils de SpO₂ (95 % = alerte, 92 % = oxygène et
+  hospitalisation). Axe 2.
+- presentation · mnémo **FEVER** : la `mnemo-box` de la Checklist mentale est **déplacée** vers
+  Touches ludiques, la Checklist redevenant une trame pure (axe 5). Elle n'est pas supprimée :
+  elle ne double pas « Pneumonie enfant = 4F », qui porte en propre le « Foyer pulmonaire ».
+  Précédent AMBOSS-2 / AMBOSS-3 / AMBOSS-6.
+- presentation · Q1 « Quels examens demanderiez-vous ? », Q2 « Traitement », Q3 « Suivi » : les trois
+  listes deviennent des réponses orales (`presentation-reponse text`). Une liste sous un en-tête Q/R
+  n'est pas un changement de format. Contenu intégralement repris, et enrichi de ce que la liste
+  laissait implicite : pourquoi la FSC et l'hématocrite, pourquoi l'ionogramme, et les signes
+  d'alerte concrets donnés à la mère. Axes 1 et 2.
+
+**Divergences consignées**
+
+- theorie · **« Incidence : 15-20% des bronchites peuvent évoluer »** (vers la pneumonie) : chiffre
+  élevé au regard de l'évolution habituelle d'une bronchite aiguë, mais ni la page SSP ni la section
+  notée ne le traitent, et je n'ai pas de source qui le contredise franchement. **Niveau 3** :
+  laissé inchangé, consigné pour arbitrage.
+- **paires de redondance restantes (2)**, toutes `resume` ↔ `presentation`, toutes justifiées par un
+  changement de format :
+  - « Altération de l'état général » ↔ « Altération état général » (0,90) et « Fièvre modérée ou
+    absente » ↔ « Fièvre modérée-élevée » (0,74) : les seconds sont des items d'`arg-list` dans
+    l'**argumentation pour/contre** d'une question d'examinateur — liste → argumentation
+    (précédent AMBOSS-6).
+
+**Signalements de sécurité** — deux, tous deux corrigés ci-dessus et remontés au rapport de tâche :
+plafond journalier de paracétamol absent d'une posologie en mg/kg répétée toutes les 4 à 6 heures ;
+ibuprofène proposé sans la contre-indication relative de la déshydratation chez une enfant qui en
+présente les signes. Aucune posologie pédiatrique en dose adulte ni sans référence au poids n'a été
+trouvée dans cette grille.
+
+### AMBOSS-8 — Troubles du transit, homme de 32 ans, maladie de Crohn iléo-colique (page SSP : Diarrhée)
+
+Redondance : **12 paires → 1** (`report_redundancy.py AMBOSS-8_`). Quatre blocs présents.
+**Pas de sous-section `presentation`/Pièges ECOS** — vérifié, axe 6 sans objet.
+
+**Modifications**
+
+*Alignements sur une autorité*
+
+- resume · Facteurs de risque : « Âge jeune (**< 30 ans**) » → « Adulte jeune : **pic d'incidence
+  entre 15 et 35 ans** ». **Correction factuelle interne** : la borne d'origine excluait le patient
+  lui-même, qui a 32 ans, et contredisait les trois autres blocs de la grille comme la section notée.
+  source : section notée `m1` — « Âge typique (**15-35 ans**) » ; theorie — « pic 15-35 ans »
+- resume · Facteurs de risque : « Antécédents familiaux de MICI » → « … **au 1ᵉʳ degré** ».
+  **Niveau 1**, précision de la page SSP.
+  source : SSP — ANAMNÈSE — « **ATCD familiaux 1ᵉʳ degré** : MICI, cancer colorectal, polypose,
+  maladie cœliaque »
+- resume · Examen périnéal et Check-list : ajout du **toucher rectal** (sang sur le doigtier, masse
+  rectale, tonus sphinctérien). **Niveau 1 et niveau 2 convergents** : le canonique ne portait que
+  l'« examen périnéal », alors que le TR est un sous-item noté et que la page SSP en fait un geste
+  obligatoire ; `expert`/Pièges dit déjà « Oublier le toucher rectal ».
+  source : SSP — EXAMEN CLINIQUE — « **Toucher rectal** : sang sur le doigtier, méléna, masse
+  rectale, tonus sphinctérien » et « À faire ✅ : séquence IAPA + **TR (sang, masse)** » ;
+  section notée `m2` — « **Examen rectal** [fait partie de l'examen abdominal complet et
+  particulièrement important en cas de saignement] »
+- resume · Examens diagnostiques : ajout de « **Recherche de sang occulte dans les selles** » et
+  « **Coproculture et parasitologie des selles** (exclure C. difficile, giardiase, amibiase) ».
+  Ces deux examens sont **notés** — la coproculture est même un critère à elle seule (`m3`) — et
+  étaient absents de tout le pédagogique.
+  source : section notée `m2` — « Recherche de sang occulte dans les selles » ; section notée `m3` —
+  « Coproculture; microscopie des selles pour œufs et parasites [pour exclure […] C. difficile,
+  giardiase et amibiase] » ; SSP — Diarrhée chronique — « Coproculture + parasites + *C. difficile*
+  si non encore réalisés »
+- resume · Imagerie : ajout de « US abdominale (épaississement pariétal) ; ASP si suspicion de
+  complication (distension, pneumopéritoine) » — les deux sont notés (`m4`) et absents du canonique.
+  source : section notée `m4` — « US abdominale [épaississement de la paroi] », « Radiographie
+  abdominale simple [distension intestinale ou pneumopéritoine] » ; SSP — « **Imagerie** : ASP /
+  échographie / CT abdominal injecté si suspicion de complication »
+- resume · Traitement des poussées : « Corticothérapie orale (budesonide ou prednisone) » →
+  « **budésonide ou prednisone 40-60 mg/j), puis décroissance progressive — jamais d'arrêt brutal** ».
+  Posologie et décroissance reprises de la section notée.
+  source : section notée `m6` — « Corticoïdes: **Prednisone 40-60mg/j puis décroissance** »
+- resume · Traitement de fond : ajout de « **Vaccins à jour *avant* toute immunosuppression** ; sous
+  azathioprine, **FSC, transaminases et créatinine mensuelles** ». Surveillance biologique d'un
+  immunosuppresseur myélo- et hépatotoxique, notée mais portée nulle part dans le pédagogique.
+  source : section notée `m6` — « Surveillance: FSC, transaminases, créatinine **mensuelle** » et
+  « **Vaccinations à jour avant immunosuppression** »
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- theorie · Signes d'alarme dans les troubles fonctionnels : la check-list de sept drapeaux rouges
+  était une **check-list actionnable logée dans `theorie`**, et doublait mot pour mot deux items de
+  `presentation`. Réécrite en *pourquoi* — pourquoi le réveil nocturne est organique, pourquoi la
+  perte de poids et l'anémie ne s'expliquent pas par un trouble de la motricité, pourquoi un
+  saignement impose de voir la lésion plutôt que de la présumer hémorroïdaire, pourquoi l'âge et
+  l'hérédité déplacent la probabilité *a priori*. **Les sept items sont conservés** dans le texte
+  de remplacement.
+- presentation · mnémo **ALARME** : `mnemo-box` **déplacée** de la Checklist mentale vers Touches
+  ludiques (axe 5). Sa valeur « A = Age **< 50** avec symptômes évocateurs » est corrigée en
+  « A = Âge : **début des symptômes après 50 ans** — ou cancer colorectal familial avant 50 ans » :
+  la formule d'origine **inversait** le drapeau rouge. **Niveau 1**, la clé du mnémo reste intacte.
+  La valeur « E » absorbe le réveil nocturne, repris de la sous-section supprimée ci-dessous.
+  source : SSP — Red flags — « **Début des symptômes après 50 ans** » ; SSP — Mnémoniques —
+  « Drapeaux rouges (diarrhée chronique) : sang · perte de poids · diarrhée nocturne · **âge > 50
+  ans** · ATCD familiaux »
+- presentation · **« ⚠️ Drapeaux rouges SII » supprimée** (Touches ludiques). Anti-perte vérifiée
+  item par item **avant** suppression : sang, perte de poids, anémie, symptômes nocturnes et ATCD
+  familiaux de cancer colorectal figurent tous les cinq dans `theorie`/Signes d'alarme réécrit, et
+  quatre sur cinq dans le mnémo ALARME conservé.
+- presentation · « 👉 Crohn vs RCH » : les trois items recopiaient le tableau `theorie`/Différences
+  clés au même format. Réécrits en **image mnémotechnique** — « de la bouche à l'anus, en peau de
+  léopard » contre « du rectum vers le haut, d'un seul tenant », et « la cigarette choisit son
+  camp ». Changement de format de restitution, le tableau discriminant reste dans `theorie`.
+- expert · Points clés : « Tabagisme = facteur aggravant Crohn, protecteur RCH » → « **Tabac = seul
+  facteur de risque modifiable du dossier : attendre du candidat qu'il en conseille l'arrêt** ».
+  L'item redisait `theorie` et `presentation` ; reformulé vers ce que l'examinateur **observe**
+  (axe 7). Le contraste Crohn/RCH reste porté par `theorie` et par le mnémo.
+- theorie · Rappels thérapeutiques : le protocole recopiait `resume`. Remplacé par le rationnel —
+  pourquoi le 5-ASA, qui agit dans la lumière sur une muqueuse, rend davantage dans la RCH ;
+  pourquoi le corticoïde n'entretient pas la rémission et se décroît toujours ; les 8 à 12 semaines
+  de latence de l'azathioprine, qui imposent le chevauchement ; le risque infectieux et
+  tuberculeux des anti-TNF, qui impose le bilan préalable ; la ciclosporine comme sauvetage ;
+  et le siège iléal de la maladie, qui explique les carences en B12 et en sels biliaires.
+  L'arrêt du tabac y est présenté comme le geste au meilleur rapport bénéfice-risque du dossier.
+  Axe 2.
+- presentation · Q1 « Quels examens », Q2 « Traitement », Q3 « Suivi » : les trois listes deviennent
+  des réponses orales. Contenu intégralement repris et complété par ce que le canonique porte
+  désormais (sang occulte, coproculture, décroissance des corticoïdes, surveillance biologique de
+  l'azathioprine, oncogénétique nommée). Axes 1 et 2.
+
+**Divergences consignées**
+
+- theorie et section notée `m6` · **5-ASA dans la maladie de Crohn** : la section notée prescrit
+  explicitement « Traitement de la maladie de **Crohn** légère-modérée • 5-ASA (mésalazine): 3-4g/j
+  PO + suppositoires/lavements ». La mésalazine n'est pourtant pas retenue par les recommandations
+  actuelles pour l'induction ni l'entretien du Crohn — son rendement est établi dans la RCH. La page
+  SSP reste générique (« **MICI** : 5-ASA (mésalazine), corticoïdes (budésonide)… »), le pédagogique
+  ne contredit pas la section notée, et le barème est gelé : **rien à arbitrer au sens du § 4**.
+  `resume` reprend donc la ligne de la section notée telle quelle, et la nuance (« ce qui explique
+  son rendement dans la RCH et **sa place discutée dans le Crohn** ») est portée par `theorie`.
+  Consigné pour arbitrage éditorial. Remonté au rapport de tâche.
+- **paire de redondance restante (1)** : « Tabac (facteur aggravant) » ↔ « Facteur aggravant tabac »
+  (0,74) — le second est un item d'`arg-list` dans l'argumentation pour/contre de la question
+  d'examinateur ; liste → argumentation (précédent AMBOSS-6).
+
+### AMBOSS-9 — Douleurs dorsales, homme de 71 ans, hernie discale L3-L4 sur terrain à risque (page SSP : Lombalgies)
+
+Redondance : **11 paires → 0** (`report_redundancy.py AMBOSS-9_`). Quatre blocs présents.
+Grille de l'**axe 6** : `presentation`/Pièges ECOS supprimée après report dans `expert`/Pièges.
+
+**Modifications**
+
+*Sécurité thérapeutique — `theorie`/Rappels (voir les signalements en fin d'entrée)*
+
+- theorie · Rappels · **myorelaxant** : « Myorelaxants : **Cyclobenzaprine** 5-10mg TID si spasmes »
+  → « **tizanidine 2-4 mg × 2-3/j**, brièvement, si contracture », avec la raison du changement
+  conservée dans l'item. **Niveau 1 et niveau 2 convergents** : la cyclobenzaprine n'est pas
+  commercialisée en Suisse, et son effet anticholinergique marqué la rend inappropriée après 65 ans
+  (confusion, chutes, rétention urinaire) — chez un homme de 71 ans.
+  source : SSP — PRISE EN CHARGE — « **Myorelaxant (tizanidine)** courte période si contracture » ;
+  section notée `m6` — « Myorelaxants si spasmes: **Tizanidine 2-4 mg × 2-3/j** »
+- theorie · Rappels · **paracétamol** : « Paracétamol 1g QID première ligne (**attention dose
+  maximale diabétique**) » → « 1 g × 3-4/j — **plafond 4 g/j, ramené à 3 g/j** si poids < 50 kg,
+  insuffisance hépatique ou consommation chronique d'alcool. **La limite est hépatique, pas
+  métabolique** ». **Correction factuelle interne** : le diabète ne modifie pas la dose maximale de
+  paracétamol ; la mise en garde d'origine désignait la mauvaise contre-indication et masquait la
+  vraie, chez un patient qui boit du vin.
+  source (posologie) : SSP — PRISE EN CHARGE — « **Paracétamol 1 g × 3-4/j** » ; section notée `m6` —
+  « Paracétamol 1g × 4/j »
+- theorie · Rappels · **AINS** : ajout de « la durée la plus courte possible » et du contrôle de la
+  fonction rénale et de la tension chez ce patient de 71 ans **diabétique**. **Niveau 1**, mise en
+  garde ajoutée par la page SSP (précédent AMBOSS-1).
+  source : SSP — PRISE EN CHARGE — « **AINS courte durée (si pas de CI)** »
+- theorie · Rappels · **tramadol** : « si douleur sévère (prudence personne âgée) » → « **en réserve
+  et pour quelques jours seulement** », avec le motif (chutes, hyponatrémie, seuil convulsif) et le
+  rappel que l'opioïde au long cours est un piège éliminatoire. **Niveau 1**.
+  source : SSP — PRISE EN CHARGE — « **tramadol en réserve, courte durée** » ; SSP — frontmatter
+  `pieges_eliminatoires` — « **Opioïdes au long cours** » ; SSP — Cartes ECOS — « aucun bénéfice
+  démontré au-delà de quelques jours […] tolérance, hyperalgésie induite, dépendance, chutes »
+- theorie · Rappels · **gabapentine** : « Gabapentine 300mg TID » → « **titration progressive** à
+  partir de 300 mg le soir, jusqu'à 900 mg × 3/j au maximum, **en adaptant à la fonction rénale** ».
+  **Niveau 1 et niveau 2 convergents** : débuter d'emblée à 300 mg × 3/j chez un sujet âgé expose
+  à la somnolence et à la chute.
+  source : SSP — Lombalgie chronique — « gabapentine/prégabaline (Compendium, **titration**) » ;
+  section notée `m6` — « Gabapentine: 300 mg **progressivement** jusqu'à 900 mg × 3/j »
+- theorie · Rappels · notation : « QID », « TID », « Q6H » → « × 3-4/j », « × 3/j », « toutes les
+  6 h » (précédent AMBOSS-6, lisibilité d'une posologie).
+
+*Drapeaux rouges — renforcement du canonique (niveau 1)*
+
+- resume · Signes d'alerte : ajout de trois drapeaux rouges de la page SSP qui manquaient au
+  canonique alors qu'ils visent précisément ce patient — **fracture vertébrale** (traumatisme même
+  minime, terrain ostéoporotique), **métastase vertébrale** (ATCD ou risque néoplasique, perte de
+  poids, douleur non soulagée par le repos) et surtout l'**anévrisme de l'aorte abdominale** chez
+  l'homme > 60 ans avec facteurs de risque cardiovasculaires. L'AAA n'apparaissait **nulle part**
+  dans la grille — ni dans le pédagogique, ni dans la liste des diagnostics différentiels de la
+  section notée — alors que le patient en réunit le portrait : 71 ans, 40 paquets-années, diabétique.
+  source : SSP — Règle d'or — « chez l'homme > 60 ans avec FRCV, **palper l'abdomen (AAA fissuré)** » ;
+  SSP — Points Clés ECOS, À faire absolument n° 3 — « **Palper l'abdomen chez l'homme > 60 ans avec
+  FRCV (AAA)** » ; SSP — Pièges — « **Oublier les causes extra-spinales : AAA**, colique néphrétique,
+  pathologie gynécologique » ; SSP — Red flags — fracture et métastase
+- resume · Examen clinique et Check-list : ajout de l'examen **périnéal** (sensibilité en selle
+  S2-S4, tonus sphinctérien au toucher rectal, globe vésical) et de la **palpation abdominale**
+  (masse pulsatile, auscultation aortique, pouls). Le TR est un critère **noté** (`m2`) et le
+  canonique ne le portait pas.
+  source : SSP — EXAMEN CLINIQUE — « **Périnée** (si suspicion queue de cheval) : sensibilité en
+  selle (S2-S4), tonus sphinctérien, globe vésical » et « **Palpation abdominale** : masse pulsatile
+  (AAA), auscultation aortique, pouls » ; section notée `m2` — « **Examen rectal** [Les lésions des
+  fibres nerveuses L3-S5 (syndrome de la queue de cheval)…] »
+- resume · Examens diagnostiques : ajout de la biologie de drapeau rouge — « FSC, CRP/VS, calcémie,
+  PAL, **électrophorèse des protéines (myélome)**, PSA chez l'homme > 50 ans » — et de l'indication
+  de la **DEXA** (homme ≥ 70 ans, ou ≥ 50 ans avec facteurs de risque). La DEXA est un critère noté
+  à elle seule (`m4`) ; le myélome n'était évoqué nulle part.
+  source : SSP — EXAMENS COMPLÉMENTAIRES — « Si red flag ou > 6 semaines — Biologie : FSC, CRP, VS,
+  calcémie, PAL, **électrophorèse des protéines (myélome)** » ; section notée `m4` — « Absorptiométrie
+  biphotonique (DEXA) […] **hommes ≥ 70 ans** »
+- resume · Prise en charge : « **Repos relatif** (éviter immobilisation prolongée) » → « **Maintien
+  de l'activité (« rester actif ») — ni alitement ni immobilisation prolongée** », plus l'ajout de
+  « **Réassurance argumentée** : plus de 90 % des lombalgies aiguës guérissent en 4 à 6 semaines ».
+  **Niveau 1** : « repos relatif » affaiblissait le message central de la page SSP, dont l'absence
+  de mobilisation précoce est un **piège éliminatoire**.
+  source : SSP — PRISE EN CHARGE — « **Maintien de l'activité (« rester actif »), éviter l'alitement
+  prolongé** » ; SSP — frontmatter `pieges_eliminatoires` — « **Pas de mobilisation précoce** » ;
+  SSP — Points Clés, Pièges n° 5 — « **Oublier la mobilisation précoce / prescrire l'alitement** » ;
+  SSP — Règle d'or — « > 90 % sont mécaniques non spécifiques et guérissent en < 4-6 semaines »
+- resume et theorie · **Lasègue** : « positif si douleur **< 70°** » et « douleur irradiant dans le
+  territoire radiculaire » → « douleur radiculaire **entre 30 et 60°** ». **Niveau 1**, la page SSP
+  tranche le seuil ; au-delà de 60° c'est l'étirement des ischio-jambiers qu'on teste.
+  source : SSP — Manœuvres radiculaires — « **Lasègue** (sciatique) : douleur radiculaire **30-60°**
+  = positif »
+
+*Axe 6 — `presentation`/Pièges ECOS supprimée, après report*
+
+- expert · Pièges : **ajout en tête** de « **Ne pas examiner les sphincters ni la sensibilité en
+  selle : manquer un syndrome de la queue de cheval est le piège éliminatoire n° 1** ». Report
+  obligatoire avant suppression (précédent AMBOSS-3, tâche 5) : l'item n'existait **pas** dans
+  `expert`/Pièges — il ne figurait que dans `expert`/Points clés sous la forme « Ne pas oublier
+  l'examen rectal » — et c'est le premier piège éliminatoire de la page SSP.
+  source : SSP — frontmatter `pieges_eliminatoires` — « **Manquer queue de cheval (urgence chir)** » ;
+  SSP — Pièges — « **Minimiser le syndrome queue de cheval** » ; SSP — Règle d'or
+- expert · Pièges : « Ne pas explorer les facteurs de risque néoplasiques » enrichi de « — **ici
+  l'antécédent familial de cancer de la prostate** », qui était le contenu propre de l'item
+  « Ignorer ATCD familial cancer (prostate) » de la sous-section supprimée.
+- expert · Pièges : **ajout** de « **Rassurer sans filet de sécurité : la réassurance doit
+  s'accompagner des signes qui imposent de reconsulter** », qui recueille l'item « Rassurer mais
+  rester vigilant sur red flags » de la sous-section supprimée — le seul des cinq à n'avoir aucun
+  équivalent dans `expert`.
+  source : SSP — Cartes ECOS — « la réassurance doit être **active et argumentée** »
+- presentation · **Pièges ECOS supprimée** (axe 6). Les deux items restants étaient déjà dans
+  `expert`/Pièges : « Se limiter au diagnostic d'entorse musculaire » (à l'identique) et « Négliger
+  ostéoporose chez homme > 70 ans » (« Oublier le dépistage ostéoporose chez homme > 70 ans »).
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- presentation · mnémo **DORSAL** : `mnemo-box` **déplacée** de la Checklist mentale vers Touches
+  ludiques (axe 5). Sa valeur « R = Red flags (queue de cheval, métastases, infection) » devient
+  « R = Red flags (**voir FRONT**) », renvoi au mnémo qui les détaille.
+- presentation · « 👉 Red flags lombalgie » : la liste de cinq items recopiait `resume`/Signes
+  d'alerte au même format. Convertie en **mnémo FRONT**, celui de la page SSP — Fièvre, Raideur
+  matinale, Oncologie, Neuro (queue de cheval), Traumatisme — avec l'AAA en ligne hors rachis.
+  Changement de format de restitution (liste → mnémo) ; les cinq items d'origine sont tous repris,
+  et la Raideur matinale (spondylarthrite axiale) est **ajoutée** depuis la page SSP.
+  source : SSP — Mnémoniques — « **Red flags = FRONT** : Fièvre · Raideur matinale · Oncologie ·
+  Neuro (queue de cheval) · Traumatisme »
+- presentation · « 👉 PEC initiale lombalgie » **supprimée**. Anti-perte vérifiée item par item :
+  « Paracétamol ± AINS », « Maintien activité » et « Chirurgie si déficit neurologique » sont dans
+  `resume`/Prise en charge, « Pas d'imagerie si pas de red flags » dans `resume`/Examens
+  diagnostiques ; le mnémo DORSAL conservé en porte la synthèse (« A = Antalgiques + activité
+  adaptée »).
+- theorie · Examen clinique de la lombalgie : la check-list de six items était **actionnable dans
+  `theorie`** et doublait `resume`/Check-list. Réécrite en *pourquoi* : ce que sépare la palpation
+  d'une épineuse et celle des paravertébraux, ce que distingue une limitation segmentaire d'une
+  raideur inflammatoire, pourquoi le Lasègue perd sa sensibilité après 60 ans — un Lasègue négatif
+  n'écarte donc rien chez ce patient —, ce que le testing par racine transforme en niveau lésionnel,
+  pourquoi le déficit sphinctérien de la queue de cheval est trop tardif pour être attendu, et
+  pourquoi l'AAA érode la face antérieure des vertèbres. L'inspection est conservée. Axe 4.
+- theorie · Prise en charge de la lombalgie aiguë : les six items redisaient `resume` au même
+  format. Remplacés par le rationnel — le déconditionnement et la sensibilisation centrale
+  produits par l'immobilisation, la réassurance argumentée contre le « ce n'est rien »,
+  l'antalgie conçue comme un moyen de rendre le mouvement possible (et l'escalade comme un aveu
+  d'échec), la physiothérapie qui traite le déconditionnement et non la lésion, l'infiltration qui
+  agit sur l'inflammation radiculaire sans modifier l'histoire naturelle, et la chirurgie qui
+  n'accélère que le délai de soulagement sauf déficit progressif ou queue de cheval. Axe 2.
+- theorie · Imagerie · DEXA : l'indication (homme > 70 ans) descend dans `resume` et l'item porte
+  désormais le motif — ostéoporose masculine sous-diagnostiquée et sous-traitée, mortalité
+  post-fracture plus élevée que chez la femme.
+- expert · Rôles et interventions : « DEXA scan : T-score -2.1 **(ostéopénie)** » → « T-score
+  -2.1 ». La donnée de station reste dans `expert`, son interprétation (< -1 = ostéopénie,
+  < -2.5 = ostéoporose) dans `theorie`/Examens complémentaires. Séparation des rôles.
+- presentation · Q1 « Quels diagnostics », Q1 « Quels examens », Q1 « Traitement initial »,
+  Q2 « Quand envisager la chirurgie », Q1 « Mesures au long terme » : les cinq listes deviennent des
+  réponses orales. Contenu intégralement repris, et complété de ce que le canonique porte
+  désormais : le raisonnement d'âge derrière chaque diagnostic différentiel, la biologie de drapeau
+  rouge, la tizanidine à la place du myorelaxant anonyme, la surveillance rénale sous AINS chez un
+  diabétique, la réassurance argumentée, le filet de sécurité, et le délai de 24-48 h de la
+  décompression dans la queue de cheval. Axes 1 et 2.
+
+**Divergences consignées**
+
+- **délai avant chirurgie** : `resume` dit « douleur invalidante > 6-8 semaines », `theorie` disait
+  « échec 6-12 semaines ». Ni la page SSP ni la section notée ne fixent ce délai. **Niveau 3** :
+  aucune des deux bornes n'est arbitrée ; `resume` garde 6-8 semaines et la réécriture de `theorie`
+  ne rouvre pas le chiffre (« les quelques semaines d'attente »). Consigné.
+- **section notée `m6` · « Perte de poids si IMC 25 kg/m² »** : le signe de comparaison manque, la
+  formule usuelle étant « > 25 kg/m² ». Divergence **interne à une section notée** : consignée,
+  **non corrigée** (barème gelé). Même nature que le « 4cm » relevé en AMBOSS-6.
+- **section notée `m6` · « Bloc radiculaire sélectif L: 3 guidé par imagerie »** : ponctuation
+  visiblement corrompue pour « bloc radiculaire sélectif **L3** ». Consigné, non corrigé.
+- **section notée `m6` · « Conseil sur les pratiques sexuelles sûres »** : sous-item noté du critère
+  « Conseil et prévention » sans rapport apparent avec une lombalgie chez un homme de 71 ans, et
+  qu'aucun élément de la vignette n'introduit. Consigné, **non corrigé** (barème gelé) — signalé
+  pour arbitrage.
+- **aucune paire de redondance restante** sur cette grille.
+
+**Signalements de sécurité** — quatre, tous corrigés ci-dessus et remontés au rapport de tâche :
+myorelaxant non commercialisé en Suisse et inapproprié après 65 ans ; contre-indication du
+paracétamol désignée à tort comme métabolique ; gabapentine sans titration ni adaptation rénale
+chez un sujet âgé ; anévrisme de l'aorte abdominale totalement absent des drapeaux rouges alors que
+le patient en réunit le portrait.
