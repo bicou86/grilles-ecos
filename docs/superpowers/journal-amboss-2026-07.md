@@ -1251,3 +1251,54 @@ des deux motifs n'attrape `ng/mL`, `mg/mL`, `U/mL`, `mm/h` ni un volume en mm³.
   peut les détecter — il n'y a pas d'unité à chercher. Signalées, **non converties** : les corriger
   demande une lecture au cas par cas, et rien ne garantit qu'il n'en existe pas d'autres formes. À
   traiter par une passe dédiée si l'utilisateur le souhaite.
+
+### Passe unités SI — numérations en unité implicite (fix round 3/5 de la tâche 7)
+
+Dernier volet de la passe unités. Les trois numérations sanguines écrites **sans unité du tout**,
+signalées au round 2 comme hors de portée de tout motif, sont converties. Recherche d'exhaustivité
+menée indépendamment sur les 40 grilles (tout nombre ≥ 1000 au voisinage d'un terme d'hémogramme :
+GB, globules blancs, leucocytes, plaquettes, thrombocytes, PNN, neutrophiles, lymphocytes,
+éosinophiles) : elle ne donne que ces trois-là.
+
+**Modifications**
+
+- **Leucocytes · unité implicite `/mm³` → `G/L`, × 0,001.** 3 valeurs, toutes dans `expert`/Rôles et
+  interventions (données de station à délivrer au candidat) :
+  - AMBOSS-18 : « FSC : GB 8500, éosinophiles 6% » → « FSC : **GB 8.5 G/L**, éosinophiles 6% ».
+    8,5 G/L est **normal** (norme 4-10 G/L), ce qui est cohérent avec une station d'asthme sans
+    infection bactérienne. Le « 6% » qui suit est un **pourcentage de formule**, pas une numération :
+    laissé intact. Il reste d'ailleurs interprétable — 6 % de 8,5 G/L font 0,51 G/L d'éosinophiles,
+    au-dessus du seuil d'éosinophilie, ce que la grille enseigne comme argument de terrain atopique.
+  - AMBOSS-31 : « FSC : Hb 112 g/L, leucocytes 12 000 » → « … **leucocytes 12 G/L** ». 12 G/L est
+    au-dessus de la norme, l'élévation modérée du cas est conservée.
+  - AMBOSS-33 : « FSC : GB 15 000, plaquettes normales » → « FSC : **GB 15 G/L**, plaquettes
+    normales ». 15 G/L reste franchement lisible comme une **hyperleucocytose**, attendue dans une
+    hémorragie sous-arachnoïdienne (leucocytose de stress).
+
+Aucune des trois n'est dans une section notée. Après ce round, **plus aucune valeur de laboratoire du
+corpus n'est rendue en unité non suisse ni en unité implicite**.
+
+**Vérifications de cohabitation `g/L` / `G/L`**
+
+Deux lignes portent désormais les deux notations : AMBOSS-8 et AMBOSS-31, toutes deux
+« FSC : Hb 112 g/L, leucocytes 12 G/L ». Vérifié : c'est la convention du vault, qui écrit `G/L` sans
+glose et fait cohabiter les deux notations sur une même ligne (« plaquettes ≤ 100 G/L » à côté de
+« fibrinogène < 1.5 g/L »). Aucune glose ajoutée — en ajouter divergerait de la source. La casse seule
+distingue les deux unités, et les libellés (`Hb` vs `leucocytes`) lèvent toute ambiguïté résiduelle.
+Le cas d'AMBOSS-8 date du round 2 et n'avait pas été signalé alors : il l'est ici.
+
+**Divergences consignées**
+
+- `expert`/Rôles d'AMBOSS-33 · **numération de LCR, à ne pas convertir** : « PL (si faite) : GR 50 000,
+  xanthochromie présente ». C'est un compte d'**érythrocytes dans le liquide céphalorachidien**, rendu
+  conventionnellement par µL (ou ×10⁶/L), **jamais en G/L** — l'unité G/L est celle de l'hémogramme.
+  Hors périmètre de la recherche d'exhaustivité, qui portait sur les termes d'hémogramme. Signalé,
+  **non converti** ; à traiter éditorialement avec le reste d'AMBOSS-33 si l'utilisateur le souhaite.
+
+**Garde-fou — un angle mort qui ne peut pas être automatisé**
+
+`check_nomenclature.py` cherche des unités ; une valeur écrite sans unité lui échappe **par
+construction**. Aucun motif de `BANNED` ne peut détecter « GB 8500 » : il n'y a rien à chercher. La
+règle est donc écrite dans `PROCEDURE.md` § 6 avec le résultat daté de la recherche exhaustive, et
+avec sa limite : le corpus est propre à cette date, mais rien ne le maintiendra propre — toute grille
+nouvelle, réécrite ou réimportée doit être relue à la main sur ce point.

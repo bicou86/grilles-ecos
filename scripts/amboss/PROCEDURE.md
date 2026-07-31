@@ -184,6 +184,32 @@ correcte — bannir `mg/mL` corromprait le seuil diagnostique de l'asthme.
 L'exception est répétée en commentaire dans `check_nomenclature.py`, à côté de la
 table `BANNED`, là où une passe future irait l'ajouter.
 
+**Angle mort assumé : les numérations en unité implicite.** `check_nomenclature.py`
+cherche des unités ; une valeur écrite sans unité lui échappe par construction, et
+aucun motif ne peut l'attraper — « GB 8500 » ne contient rien à détecter. Ces
+numérations sanguines sous-entendent le `/mm³` et doivent se lire en `G/L`
+(× 0,001). La recherche exhaustive a été faite **une fois**, en tâche 7, sur les
+40 grilles — tout nombre ≥ 1000 au voisinage d'un terme d'hémogramme (GB, globules
+blancs, leucocytes, plaquettes, thrombocytes, PNN, neutrophiles, lymphocytes,
+éosinophiles) — et n'a donné que trois cas, tous corrigés : AMBOSS-18 « GB 8500 »
+→ 8.5 G/L, AMBOSS-31 « leucocytes 12 000 » → 12 G/L, AMBOSS-33 « GB 15 000 » →
+15 G/L. **Le corpus est propre à cette date, mais rien ne le maintiendra propre :**
+toute grille nouvelle, réécrite ou réimportée doit être relue à la main sur ce
+point, car aucun garde-fou automatique n'est possible. Un garde-fou qui ne peut pas
+exister doit au moins être documenté comme absent.
+
+Deux corollaires vérifiés en même temps :
+
+- `g/L` (hémoglobine, protéines) et `G/L` (numérations) peuvent cohabiter sur une
+  même ligne — « FSC : Hb 112 g/L, leucocytes 12 G/L » en AMBOSS-8 et AMBOSS-31.
+  C'est la convention du vault, qui écrit `G/L` sans glose et mélange les deux
+  notations au besoin (« plaquettes ≤ 100 G/L », « fibrinogène < 1.5 g/L »). La
+  casse seule les distingue : ne pas « harmoniser » l'une sur l'autre.
+- Une numération de **LCR** ne se convertit pas en `G/L` : AMBOSS-33 porte
+  « PL (si faite) : GR 50 000 », qui est un compte d'érythrocytes dans le liquide
+  céphalorachidien, conventionnellement rendu par µL (ou ×10⁶/L), jamais en G/L.
+  Le champ des règles ci-dessus est l'hémogramme, pas tout compte cellulaire.
+
 Avant de commit une grille dédoublonnée, vérifier aussi qu'aucune information n'a
 disparu (règle du § 3) :
 
