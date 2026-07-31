@@ -146,6 +146,23 @@ python3 scripts/amboss/check_invariants.py    # doit sortir OK
 python3 scripts/amboss/check_nomenclature.py  # doit sortir OK
 ```
 
+Avant de commit une grille dédoublonnée, vérifier aussi qu'aucune information n'a
+disparu (règle du § 3) :
+
+```bash
+python3 scripts/amboss/check_no_loss.py HEAD AMBOSS-N_
+```
+
+Compare la zone pédagogique de `HEAD` (avant les modifications en cours) à l'état
+du disque — utiliser une autre référence si le dédoublonnage a démarré ailleurs.
+C'est un **rapport, pas un test** : il sort toujours avec le code 0, y compris
+quand il signale des disparitions ; ne jamais le câbler comme porte bloquante.
+Chaque item « disparu » listé doit être relu : la plupart sont des fusions ou des
+reformulations (le seuil de ressemblance, identique à `report_redundancy.py`, ne
+reconnaît pas les paraphrases) — ne creuser que ceux dont le contenu ne se
+retrouve nulle part ailleurs dans le fichier, y compris hors de la zone
+pédagogique (ex. un critère noté).
+
 ## Interdits
 
 - Lire un fichier de grille en entier (jusqu'à 2,77 Mo).
