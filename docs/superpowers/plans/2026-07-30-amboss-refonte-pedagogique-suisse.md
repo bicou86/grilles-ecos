@@ -1178,9 +1178,9 @@ Les deux ont les quatre blocs. AMBOSS-11 figure parmi les 13 grilles avec
 
 - [ ] **Step 2: Traiter AMBOSS-15 — cas particulier, sans alignement des PEC**
 
-`docs/obsidian-mapping.yaml` rattache AMBOSS-15 à
-`Skills ECOS/Skills — Réflexes Médicamenteux & Antidotes.md`, qui ne porte pas de
-prise en charge par motif. Pour cette grille :
+AMBOSS-15 figure dans la liste `unmapped:` de `docs/obsidian-mapping.yaml`, avec la
+raison « douleur abdominale pédiatrique — page pédiatrique à créer ». Elle n'a donc
+aucune page de référence. Pour cette grille :
 
 - appliquer le dédoublonnage selon le contrat (§ 3 de `PROCEDURE.md`) ;
 - **ne pas** appliquer l'étape 4 d'alignement des PEC ;

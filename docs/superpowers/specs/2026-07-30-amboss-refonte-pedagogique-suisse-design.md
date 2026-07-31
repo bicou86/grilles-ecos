@@ -176,11 +176,20 @@ L'étape 3 ne s'applique que lorsque la page SSP **couvre explicitement** le poi
 
 ### Cas particulier AMBOSS-15
 
-`docs/obsidian-mapping.yaml` rattache AMBOSS-15 (douleur abdominale chronique, garçon de
-6 ans) non à une page `SSP ECOS/` mais à `Skills ECOS/Skills — Réflexes Médicamenteux &
-Antidotes.md`, qui ne porte pas de prise en charge par motif. Pour cette grille, seules la
-nomenclature et le dédoublonnage s'appliquent ; l'alignement des PEC est reporté et
-consigné au journal, faute de page de référence adéquate.
+AMBOSS-15 (douleur abdominale chronique, garçon de 6 ans) ne figure pas dans la section
+`pages:` de `docs/obsidian-mapping.yaml` mais dans sa liste **`unmapped:`**, avec la
+raison « douleur abdominale pédiatrique — page pédiatrique à créer ». Elle n'a donc
+aucune page de référence.
+
+Pour cette grille, seules la nomenclature et le dédoublonnage s'appliquent ; l'alignement
+des PEC est reporté et consigné au journal, avec la liste des zones restées sans arbitre,
+pour que l'utilisateur puisse décider d'un rattachement.
+
+*Correction du 2026-07-31 : une version antérieure de cette spec la disait rattachée à
+`Skills — Réflexes Médicamenteux & Antidotes.md`, qui ne porte en réalité que deux grilles
+RESCOS. L'erreur venait du script d'analyse initial. La conséquence opératoire est
+identique — pas de page de référence — mais le motif diffère : la page n'existe pas encore,
+elle n'est pas inadéquate.*
 
 ### Contrainte de lecture
 
