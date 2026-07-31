@@ -23,6 +23,19 @@ BANNED = {
     r"\bTylenol\b": "Paracetamol (Dafalgan®)",
     r"\bTums\b": "Antiacides (Rennie®)",
     r"\bmg/dL\b": "unites SI",
+    # g/dL : hemoglobine (et proteines) — les laboratoires suisses rendent en g/L,
+    # facteur x10 (Hb 11.2 g/dL -> 112 g/L). Le vault ecrit uniformement g/L
+    # (« Hb < 70 g/L », « Hb F < 120 / H < 130 g/L »). Le motif ne peut pas
+    # attraper mg/dL ni ng/dL : dans « mg/dL » comme dans « ng/dL » il n'y a pas
+    # de frontiere de mot entre la lettre de prefixe et le « g ».
+    r"\bg/dL\b": "g/L (x10)",
+    # ng/mL : pas de facteur unique, l'analyte decide —
+    #   troponine T   -> ng/L  (x1000 ; 0.08 ng/mL = 80 ng/L)
+    #   D-dimeres     -> µg/L  (x1 ; 1 ng/mL = 1 µg/L, preserve le seuil 500 et
+    #                    la regle age-ajustee « age x 10 », definie en µg/L)
+    #   ferritine     -> µg/L  (x1)
+    # Ne peut pas attraper pg/mL ni U/mL : « ng/mL » n'y est pas sous-chaine.
+    r"\bng/mL\b": "ng/L ou µg/L selon l'analyte",
     r"\b911\b": "144",
     r"\bSAMU\b": "144",
 }

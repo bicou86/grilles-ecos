@@ -859,19 +859,24 @@ Redondance : 7 paires → 5 (`report_redundancy.py AMBOSS-18_`). Pas de sous-sec
   que le bloc canonique ne portait pas — l'axe 4 exige l'inverse (check-list ⊂ `resume`/Examen clinique).
   source : **niveau 1** — SSP, Examen clinique — « **Constantes & inspection** : FR, SpO₂ à l'air
   ambiant, FC, TA, T° ; cyanose, tirage, dyspnée »
+- theorie · variabilité du débit de pointe : « variabilité > **20 %** sur 2 semaines » → « variabilité
+  **diurne moyenne > 10 %** sur 2 semaines ». `resume`/Examens diagnostiques disait déjà « variabilité
+  diurne > 10 % » : les deux blocs pédagogiques se contredisaient. Ce n'est pas un arbitrage de
+  niveau 3 mais l'application du **contrat de blocs** — `resume` est la source canonique, `theorie`
+  s'aligne sur elle. Les deux raisons convergent : le critère GINA actuel chez l'adulte est bien une
+  variabilité diurne moyenne > 10 %, le 20 % relevant d'un critère plus ancien.
+  source : contrat de blocs (`PROCEDURE.md` § 3, `resume` = source canonique) ; fix round 1/5
 
 **Divergences consignées**
 
-- pédagogique · variabilité du débit de pointe : `resume`/Examens diagnostiques dit « variabilité
-  diurne > **10 %** », `theorie`/Diagnostic de l'asthme dit « variabilité > **20 %** sur 2 semaines ».
-  La page SSP ne donne aucun seuil de DEP ; la section notée non plus (« Mesure du débit de pointe
-  [pour surveiller la réponse à un essai de traitement bronchodilatateur] »). **Niveau 3** : laissé
-  inchangé des deux côtés, rien inventé. À arbitrer par l'utilisateur — le critère GINA actuel chez
-  l'adulte est une variabilité diurne moyenne > 10 %, le 20 % relève d'un critère plus ancien.
-- pédagogique · palier 1 GINA : `theorie`/Traitement de l'asthme enseigne « Palier 1 : SABA prn (si
-  < 2×/semaine) », schéma antérieur à la bascule GINA vers le CSI-formotérol à la demande. La page SSP
-  reste générique (« Corticostéroïde inhalé ± β2-agoniste si suspicion d'asthme ») et la section notée
-  écrit un « • Palier 1 » sans contenu. **Niveau 3** : laissé inchangé.
+- pédagogique · palier 1 GINA : `theorie`/Traitement de l'asthme enseigne « **Palier 1 : SABA prn (si
+  < 2×/semaine)** », schéma antérieur à la bascule GINA de 2019. Le schéma actuel ne reconnaît plus de
+  palier SABA seul : le palier 1 est un **CSI-formotérol à la demande** (*anti-inflammatory reliever*),
+  parce que le SABA seul laisse l'inflammation non traitée et augmente le risque d'exacerbation grave.
+  La page SSP reste générique (« Corticostéroïde inhalé ± β2-agoniste si suspicion d'asthme ») et la
+  section notée écrit un « • Palier 1 » **sans contenu** — elle n'affirme donc rien à quoi s'aligner.
+  **Niveau 3** : laissé inchangé. Corriger supposerait de récrire le palier 1 dans `theorie` **et** de
+  renseigner le sous-item vide de la section notée, donc de rouvrir le barème.
 - section notée · absence de critère de prise en charge chiffré : la grille n'évalue que l'anamnèse,
   l'examen, les hypothèses, les examens et la communication ; aucun arbitrage de niveau 2 n'était
   possible sur le traitement.
@@ -1134,3 +1139,54 @@ valeur-française : inchangé.
 - « Radiographie thoracique » (`resume`/Examens à faire) ↔ « Radiographie thoracique (immédiate) »
   (`presentation`/Q « Quels examens demander ? ») : axe 1, Q/R en sous-ensemble strict.
 - « Radiographie thoracique (1ère intention) » (`resume`/Imagerie) ↔ idem : axe 1.
+
+### Passe unités SI — `g/dL` et `ng/mL` (fix round 1/5 de la tâche 7)
+
+Née de l'observation n° 7 du rapport de tâche 7 : l'hémoglobine d'AMBOSS-31 était rendue en `g/dL`.
+Le manque dépassait cette grille — les passes de nomenclature des tâches 2 et 3 n'avaient banni que
+`mg/dL`. Balayage du corpus entier : **12 occurrences de `g/dL`** (grilles 6, 8, 11, 15, 16, 17, 27,
+31) et **8 de `ng/mL`** (grilles 12, 14, 15, 25), soit 20 conversions.
+
+**Modifications**
+
+Chaque analyte a reçu son facteur propre — il n'y a pas de conversion mécanique d'unité :
+
+- **Hémoglobine · `g/dL` → `g/L`, × 10.** 12 valeurs, dont deux **dans une section notée**
+  d'AMBOSS-11 (le bullet « Transfusion si Hb: 7 g/dL ou instabilité » et la description de red flag
+  « Hb < 7 g/dL »). Remplacement 1 pour 1 de texte, aucun sous-item ajouté ni retiré —
+  `check_invariants.py` reste vert. AMBOSS-11 portait aussi « Transfusion si Hb < 7 g/dL (**< 9** si
+  coronarien) » : les **deux** valeurs ont été converties (< 70 g/L, < 90 si coronarien), la seconde
+  étant implicitement en g/dL.
+  source : le vault écrit uniformément g/L — « Hb < 70 g/L », « Hb transfusion ≥ 70 g/L »,
+  « Hb F < 120 / H < 130 g/L » ; aucune occurrence de g/dL.
+- **Troponine T · `ng/mL` → `ng/L`, × 1000.** 3 valeurs : AMBOSS-12 (0.08 → 80), AMBOSS-14 (0.02 → 20
+  et 0.15 → 150). C'est la seule conversion qui déplace la virgule ; la convention suisse pour la
+  troponine hypersensible est le ng/L, comme le vault le fait déjà pour les peptides natriurétiques
+  (Skills — Cardiovasculaire : « BNP ≥ 35 ng/L ou NT-proBNP ≥ 125 ng/L »).
+- **D-dimères et ferritine · `ng/mL` → `µg/L`, × 1.** 5 valeurs (D-dimères : 2850, 850, deux seuils à
+  500 ; ferritine : 8). 1 ng/mL = 1 µg/L **exactement** : les nombres sont inchangés, seule la
+  notation devient SI. Ce choix préserve deux choses que le passage en mg/L FEU aurait cassées : le
+  seuil 500 tel que le vault l'écrit (Skills — Références Rapides : « D-dimères | < 500 ng/mL ») et la
+  **règle âge-ajustée « âge × 10 »**, qui n'est définie qu'en µg/L (SSP — Dyspnée : « seuil ajusté
+  (âge × 10 ng/mL si > 50 ans) »).
+  source : ferritine — le vault écrit µg/L (7 occurrences, aucune en ng/mL).
+
+`\bg/dL\b` et `\bng/mL\b` sont ajoutés à la table `BANNED` de `check_nomenclature.py`, avec le facteur
+par analyte en commentaire, pour que le manque ne se reforme pas. Les deux motifs sont bordés : dans
+`mg/dL` comme dans `ng/dL` il n'y a pas de frontière de mot avant le `g`, et `ng/mL` n'est sous-chaîne
+ni de `pg/mL` ni de `U/mL` — vérifié par test avant activation, aucun faux positif sur le corpus.
+
+**Divergences consignées**
+
+- vault · D-dimères : après cette passe les grilles écrivent `µg/L` là où le vault écrit encore
+  `ng/mL` (Skills — Références Rapides, SSP — Dyspnée). Les **nombres sont identiques**, seule la
+  notation diffère ; c'est le vault qui gagnerait à s'aligner. Signalé, rien changé dans le vault.
+- pédagogique · `pg/mL` restant, 4 occurrences hors périmètre de cette passe : vitamine B12
+  (AMBOSS-17 « 320 pg/mL », AMBOSS-20 « 85 pg/mL (N: 200-900) ») — les laboratoires suisses rendent en
+  **pmol/L** (× 0,738) ; BNP (AMBOSS-19 « 85 pg/mL ») — à rendre en **ng/L**, × 1, comme le vault.
+- pédagogique · `/mm³` restant, 5 occurrences hors périmètre : leucocytes et plaquettes (AMBOSS-2, 8,
+  24) — les laboratoires suisses rendent en **G/L** (10⁹/L), × 0,001.
+- **`mg/mL` d'AMBOSS-18 : à ne pas convertir.** Les deux occurrences (« PC20 = 4 mg/mL »,
+  « PC20 < 8 mg/mL ») désignent la **concentration de méthacholine inhalée**, dont mg/mL est l'unité
+  internationale correcte — ce n'est pas une valeur de laboratoire. Aucune règle de nomenclature ne
+  doit les viser.

@@ -123,6 +123,26 @@ corrige pas. Au niveau 2, reprendre la formulation exacte de la section notée p
 qu'aucun écart ne subsiste, puis vérifier qu'aucun autre bloc pédagogique ne porte
 encore l'ancienne formule.
 
+**La hiérarchie n'arbitre qu'entre sources divergentes.** Elle départage la page SSP,
+la section notée et le pédagogique quand ils se contredisent. Elle ne s'applique pas
+à une **erreur factuelle interne à un bloc** — un énoncé faux en lui-même, qui ne
+contredit aucune autre source parce qu'aucune autre source ne le porte. Une telle
+erreur **se corrige directement**, sans passer par les trois niveaux, et se documente
+au journal comme toute autre modification. Le niveau 3 (« laisser inchangé, ne rien
+inventer ») vise l'arbitrage impossible entre deux formulations défendables ; il ne
+protège pas un fait faux.
+
+Exemple (AMBOSS-19, tâche 7) : `resume` invoquait « les critères d'Anthonisen » dans
+un item, puis indiquait l'antibiothérapie sur « expectoration purulente, dyspnée +
+**fièvre** » deux items plus loin. La fièvre ne fait pas partie des critères
+d'Anthonisen — l'item contredisait sa propre référence et élargissait indûment
+l'indication antibiotique. Ni la page SSP ni la section notée ne définissent ces
+critères : il n'y avait donc rien à arbitrer, seulement un fait à corriger.
+
+Le test pratique : *une autre source dit-elle le contraire ?* Si oui → hiérarchie à
+trois niveaux. Si non, et que l'énoncé est faux dans l'absolu ou incohérent avec
+lui-même → correction directe.
+
 Attention à ne pas confondre **contradiction** et **précision**. Une mise en garde que
 la page SSP ajoute à ce que dit la section notée (AMBOSS-1 : « éviter les AINS si
 suspicion d'ulcère, IRA ou patient âgé » face à « AINS si pas de CI ») relève du
