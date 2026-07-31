@@ -1302,3 +1302,358 @@ construction**. Aucun motif de `BANNED` ne peut détecter « GB 8500 » : il n'y
 règle est donc écrite dans `PROCEDURE.md` § 6 avec le résultat daté de la recherche exhaustive, et
 avec sa limite : le corpus est propre à cette date, mais rien ne le maintiendra propre — toute grille
 nouvelle, réécrite ou réimportée doit être relue à la main sur ce point.
+
+### AMBOSS-4 — Saignements vaginaux, femme 50 ans, post-ménopause (page SSP : Saignement Vaginal Anormal)
+
+Redondance : **13 paires → 1** (`report_redundancy.py AMBOSS-4_`). Quatre blocs présents.
+Vérifié : cette grille **n'a pas** de sous-section `presentation`/Pièges ECOS — l'axe 6 ne
+s'y applique pas (relecture directe du bloc `presentation`, confirmée par `seg.count`).
+
+**Modifications**
+
+*Alignements sur une autorité*
+
+- resume · Dépistage 🎗️ Cancer du col : « Dès 25 ans **en France** (tous les 3 à 5 ans selon le test
+  utilisé) » → « **Femmes 30-65 ans : frottis tous les 3 ans OU frottis + test HPV tous les 5 ans** ».
+  **Niveau 2** : la page SSP ne fixe pas d'âge de dépistage ; la section notée le fixe, et le
+  pédagogique la contredisait (25 ans vs 30-65 ans) tout en citant un référentiel national qui n'est
+  pas la Suisse.
+  source : section notée `m2` — critère « Frottis cervical et test HPV » — « Femmes 30-65 ans :
+  frottis tous les 3 ans OU frottis + HPV tous les 5 ans »
+  Vérifié après coup qu'aucun autre bloc ne porte l'ancienne formule : `theorie`/queue dit
+  « Co-testing (frottis + HPV) : Stratégie optimale 30-65 ans » — cohérent.
+- theorie · Saignements post-ménopausiques, épidémiologie : « Causes malignes dans **5-10 %** des
+  cas » et « Causes bénignes : atrophie (**50 %**), polypes (**10-30 %**) » → « Cancer de l'endomètre :
+  **10-15 %** des saignements post-ménopausiques, cause maligne la plus fréquente — à exclure en
+  premier » et « Causes bénignes : atrophie (**60 %**), polypes (**20 %**), hyperplasie ». **Niveau 1.**
+  source : SSP — DIAGNOSTIC DIFFÉRENTIEL, ligne « Post-ménopause » — « Atrophie (60 %), polypes
+  (20 %), cancer de l'endomètre (10-15 %) »
+- theorie · Saignements post-ménopausiques, item ajouté : « L'atrophie est la cause la plus fréquente,
+  mais c'est un diagnostic d'élimination — jamais retenu en première intention ». **Niveau 1**, et
+  correction de l'erreur factuelle décrite plus bas.
+  source : SSP — Cartes ECOS, « Saignement post-ménopause » — « l'atrophie endométriale est la cause
+  la plus fréquente — mais c'est un diagnostic d'élimination, jamais un diagnostic de première
+  intention »
+
+*Erreurs factuelles corrigées directement (pas d'arbitrage : aucune autre source ne les portait)*
+
+- presentation · Touches ludiques, sous-section « Tout saignement post-ménopausique = CANCER » :
+  l'item « Polype ou atrophie **plus rares** mais jamais à évoquer en premier » était **faux sur la
+  fréquence** — l'atrophie est la cause la plus fréquente (60 %), pas une cause rare. L'information
+  correcte (fréquence élevée + statut de diagnostic d'élimination) a été portée dans `theorie` **avant**
+  la suppression de la sous-section (voir ci-dessous).
+- presentation · Q3 « Suivi » : l'item « **Dépistage HPV pour partenaires** » a été retiré. Il n'existe
+  pas de test HPV validé ni recommandé pour le partenaire masculin ; aucune source du dossier ne le
+  porte, et la section notée prescrit au contraire préservatifs + vaccination. Remplacé, dans la
+  réponse orale, par le contenu de la section notée.
+  source : section notée `m5` — « Pratiques sexuelles sûres : Préservatifs systématiques »,
+  « Vaccination HPV jusqu'à 45 ans : (rattrapage possible) », « Dépistage régulier : Frottis + HPV
+  tous les 3-5 ans »
+- presentation · Version longue : « la première fois que cela se produit depuis deux ans, **date de sa
+  ménopause** » → « … **date de ses dernières règles** ». Le même paragraphe indiquait deux phrases
+  plus loin « sa ménopause est survenue à 45 ans » : le bloc se contredisait lui-même. La formule
+  retenue est celle de la section notée (« Dernières règles [Il y a 2 ans] »).
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- theorie · « Approche diagnostique systématique » → **« Pourquoi cette séquence diagnostique »**. La
+  liste des cinq examens (examen pelvien, frottis + HPV, US transvaginale, biopsie, hystéroscopie)
+  redisait `resume`/Examens diagnostiques au même format. Remplacée par le rationnel : l'échographie
+  comme test de **tri** (8 mm ici, donc biopsie obligatoire), l'histologie seule décisive même si
+  l'endomètre paraît fin, le col visualisé d'abord, et le parallélisme des deux voies (cervicale /
+  endométriale). Axe 1. Anti-perte vérifiée item par item : les cinq examens figurent dans
+  `resume`/Examens diagnostiques et `resume`/Examens à faire ; le seuil de 4 mm est conservé dans
+  `theorie`/queue (« Endomètre < 4mm exclut cancer dans 99 % des cas »).
+  source : SSP — Cartes ECOS — « seule l'histologie tranche ; l'échographie endovaginale sert de tri
+  (endomètre > 4-5 mm → hystéroscopie), mais un saignement récidivant impose l'histologie même si
+  l'endomètre paraît fin »
+- theorie · Rappels thérapeutiques (section de queue, conservée) : le protocole recopiait
+  `resume`/Traitement selon le stade et `resume`/Chirurgie. Remplacé par le rationnel — pourquoi le
+  geste dépend de la profondeur d'invasion et non du volume, pourquoi la radiochimiothérapie remplace
+  la chirurgie au stade localement avancé, pourquoi l'annexectomie complète l'hystérectomie
+  (site métastatique + source œstrogénique), pourquoi la vaccination ne dispense ni du préservatif ni
+  du dépistage, pourquoi le tabac agit sur la progression et pas seulement sur l'incidence. Axe 2.
+  Précisions reprises **mot pour mot** de la section notée `m5` : conisation de la zone de
+  transformation, hystérectomie radicale + lymphadénectomie, trachélectomie si désir de fertilité
+  (IA2-IB1), radiothérapie externe + curiethérapie, rattrapage HPV jusqu'à 45 ans.
+- theorie · Cancer de l'endomètre : item « Saignement post-ménopausique : symptôme cardinal »
+  supprimé — doublon strict de `resume`/Symptômes fréquents (« Métrorragies post-ménopausiques
+  (symptôme principal) »), même format. Axe 1 / règle du format.
+- presentation · mnémo **POST** : la `mnemo-box` de la Checklist mentale est **déplacée** vers Touches
+  ludiques, où elle remplace la sous-section « Tout saignement post-ménopausique = CANCER » dont les
+  trois items la doublaient (P = Post-ménopause, O = Oncologie en premier). La Checklist mentale
+  redevient une trame pure (axe 5). Clés P/O/S/T intactes, valeurs francisées : « S = Speculum exam
+  obligatoire » → « S = Spéculum : visualisation du col obligatoire » ; « T = Transvaginal US +
+  biopsie » → « T = Transvaginale (échographie) + biopsie de l'endomètre ».
+- presentation · « 2. Examens complémentaires immédiats », Q1 : la liste de sept examens est réécrite
+  en registre parlé (`presentation-reponse text`). Une liste recopiée sous un en-tête Q/R n'est pas un
+  changement de format. Les sept items sont tous repris dans la réponse orale. Axe 1.
+- presentation · « 3. … », Q2 « Traitement » : liste → réponse orale. Le point clé est explicité —
+  il n'y a pas de traitement à ce stade, la priorité est l'histologie, la décision revient à la RCP.
+  Axe 2.
+- presentation · « 3. … », Q3 « Suivi » : liste → réponse orale (voir aussi la correction factuelle
+  ci-dessus).
+
+*Différenciation `expert` / `resume` (axe 7)*
+
+- expert · Points clés : « Tout saignement post-ménopausique = cancer jusqu'à preuve du contraire »
+  → « **Attendu du candidat** : nommer d'emblée le cancer devant ce saignement post-ménopausique et
+  proposer hystéroscopie + biopsie — l'omission de l'histologie est éliminatoire ». `expert` dit
+  désormais ce que l'**examinateur observe** ; `resume`/Points clés garde l'énoncé que l'étudiant
+  retient.
+  source : SSP — frontmatter `pieges_eliminatoires` — « Saignement post-ménopause sans hystéroscopie
+  + biopsie »
+
+*Anti-perte — informations portées dans le canonique*
+
+- resume · Examens clés 🎗️ Cancer de l'endomètre : ajout de « FSC : retentissement hématologique du
+  saignement (anémie ferriprive) ». La FSC n'existait que dans la liste Q/R de `presentation` que ce
+  travail réécrit ; elle est exigée par la section notée et par la SSP.
+  source : SSP — EXAMENS COMPLÉMENTAIRES — « FSC (anémie), fer / ferritine (carence martiale) » ;
+  section notée `m2` — « FSC [pour évaluer une anémie] »
+- resume · Inspection et palpation 🎗️ Cancer du col : ajout de « Constantes vitales, état général et
+  recherche d'un épanchement (ascite, pleural) dans les formes avancées ». Ces deux éléments
+  n'existaient que dans la check-list rapide ; l'axe 4 demande que la check-list soit un sous-ensemble
+  strict de `resume`/Examen clinique — c'est le canonique qui les reçoit, pas la check-list qui les perd.
+  source : SSP — Points Clés ECOS n° 4 — « Évaluer le retentissement (signes vitaux, pâleur, anémie,
+  choc) »
+
+**β-hCG — vérification explicite, aucune modification**
+
+La patiente est **ménopausée depuis plus de 12 mois** (dernières règles il y a 2 ans, âge 50 ans) :
+elle n'est pas « en âge de procréer » au sens de la règle d'or de la page SSP, dont la ligne
+« Post-ménopause » du tableau de DD porte un tout autre drapeau (« Tout saignement = cancer jusqu'à
+preuve du contraire »). La réponse type de la section notée le dit elle-même : « Par définition, si
+vous n'avez pas eu de règles pendant 12 mois, vous êtes en ménopause ». **Aucun β-hCG n'est donc
+ajouté** — l'ajouter serait une erreur d'orientation, pas une sécurité.
+
+**Divergences consignées**
+
+- section notée `a12` · **âge de la ménopause incohérent** : le critère porte simultanément
+  « Dernières règles [Il y a 2 ans] » (soit ménopause à 48 ans) et « Âge de la ménopause [45 ans] ».
+  Les deux valeurs ne peuvent pas être vraies ensemble. Divergence **interne à une section notée** :
+  consignée, **non corrigée** (barème gelé). Le pédagogique a été rendu cohérent avec la première
+  formulation, qui est celle du scénario de la patiente standardisée (« Premier épisode en 2 ans »).
+  À trancher éditorialement si l'utilisateur souhaite unifier.
+- resume · **paire de redondance restante (1)** : `resume`/Facteurs de risque « Absence de dépistage
+  (frottis) » ↔ `presentation`/Q1 Arguments POUR « Absence de dépistage » (0,83). Conservée :
+  changement de format légitime — liste de facteurs de risque → **argumentation pour/contre** devant
+  une question d'examinateur, qui est la raison d'être du bloc `presentation`.
+
+---
+
+### AMBOSS-5 — Nausées, femme 19 ans, grossesse précoce sur implant (page SSP : Nausées, Vomissements & Hématémèse)
+
+Redondance : **3 paires → 1** (`report_redundancy.py AMBOSS-5_`). Quatre blocs présents.
+Grille de l'axe 6 : `presentation`/Pièges ECOS supprimée après report intégral dans `expert`/Pièges.
+
+**Modifications**
+
+*Alignements sur une autorité — sécurité*
+
+- resume · Cas sévères (hyperémèse) : **ajout** de « **Thiamine (vitamine B1) 100 mg IM/IV AVANT tout
+  apport glucosé** — sinon risque d'encéphalopathie de Gayet-Wernicke ». **Niveau 1** : la page SSP
+  ajoute une mise en garde que la section notée ne porte qu'en partie (elle prescrit la thiamine mais
+  pas l'antériorité par rapport au glucose, qui est tout l'enjeu). La section notée reste intacte.
+  source : SSP — Cartes ECOS, « Femme en âge de procréer qui vomit » — « supplémenter en thiamine (B1)
+  **AVANT tout apport glucosé** → sinon risque d'encéphalopathie de Gayet-Wernicke » ; posologie de la
+  section notée `m5` — « Supplémentation : Thiamine (B1) 100 mg IM/IV »
+- resume · Traitement médicamenteux : « Alternatives : métoclopramide, ondansétron (2e ligne) » →
+  « Alternatives : métoclopramide, **puis** ondansétron (2e ligne, **avec prudence au 1er trimestre**) ».
+  **Niveau 1**, précision ajoutée par la page SSP.
+  source : SSP — PRISE EN CHARGE, Antiémétiques — « Grossesse : doxylamine + pyridoxine (vitamine B6)
+  en 1ʳᵉ ligne, puis métoclopramide ; **ondansétron au T1 avec prudence** »
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- presentation · **Pièges ECOS supprimée** (axe 6). Anti-perte vérifiée item par item **avant**
+  suppression, deux items ont dû être portés dans `expert`/Pièges :
+  - « Croire à tort que l'implant contraceptif exclut une grossesse » → `expert` disait seulement
+    « Se fier uniquement à la contraception par implant » ; l'item devient « Se fier uniquement à la
+    contraception par implant, **en croyant à tort qu'il exclut une grossesse** ».
+  - « Ne pas proposer de test de grossesse **chez une femme en âge de procréer** » → `expert` disait
+    « Ne pas faire de test de grossesse systématique » ; l'item devient « … **chez toute femme en âge
+    de procréer — piège éliminatoire** ». C'est la formulation de la règle d'or de la page SSP.
+    source : SSP — Pièges — « Oublier β-HCG chez toute femme en âge de procréer » ; frontmatter
+    `pieges_eliminatoires` — « Pas de β-hCG/glycémie/Na/K »
+  - « Ignorer le vécu psychologique d'une grossesse imprévue » → `expert`/« Mauvaise gestion du déni de
+    grossesse » devient « Mauvaise gestion du déni de grossesse **et du vécu psychologique d'une
+    grossesse imprévue** ».
+  - « Oublier d'exclure GEU ou MIP » : déjà présent à l'identique dans `expert`/Pièges, rien à porter.
+- presentation · mnémo **PREGNANT** : la `mnemo-box` de la Checklist mentale est **déplacée** vers
+  Touches ludiques, où elle **absorbe** la sous-section « Grossesse précoce = les 3N » — dont les trois
+  items (Nausées, No rules/aménorrhée, Nycturie/pollakiurie) sont strictement inclus dans PREGNANT
+  (N, R + A, P). Précédent AMBOSS-2 (APPENDIX ⊃ les 3A). Les huit clés restent intactes ; la valeur de
+  P absorbe la nycturie. La Checklist mentale redevient une trame pure (axe 5).
+  Valeurs anglophones francisées selon la règle des glossaires (clé conservée, traduction en valeur) :
+  « G = GI symptoms (nausées, vomissements) » → « G = **Gastro-intestinal** : nausées et vomissements » ;
+  « N = Nipple/breast changes » → « N = **Nipple (sein)** : sensibilité mammaire, parfois absente au
+  début ». Même règle appliquée au mnémo RISK : « S = Surgery tubaire » → « S = **Surgery : chirurgie
+  tubaire** ».
+- theorie · queue Examens complémentaires : « FSC, ionogramme si vomissements importants » était le
+  **doublon exact** (ratio 1,00) de la liste Q/R de `presentation`. La liste part de `presentation`
+  (réécrite en oral) et l'item de `theorie` reçoit le *pourquoi* qui lui manquait : « hyponatrémie et
+  hypokaliémie de déplétion signent la sévérité — avec la cétonurie et la perte de poids ≥ 5 %, ce
+  sont elles qui font poser l'hospitalisation ». Axe 1.
+  source : section notée `m5` — « Hospitalisation si perte poids 5 % ou cétonurie »
+- presentation · « 2. Examens complémentaires immédiats », Q1 : liste → réponse orale. Les cinq items
+  sont repris dans la réponse. Axe 1.
+- presentation · « 3. … », Q2 « Traitement » : liste → réponse orale. Axe 2. La formulation retenue est
+  celle de la page SSP (« doxylamine + pyridoxine en première intention »).
+
+*Anti-perte — information portée dans le canonique*
+
+- resume · Check-list rapide, Examens à faire : ajout de « **β-hCG urinaire ou plasmatique en premier**
+  (règle d'or chez toute femme en âge de procréer) », en tête de liste. La check-list de la grille
+  omettait l'examen qui fait le diagnostic, alors qu'il figure dans `resume`/Examens de confirmation et
+  dans `resume`/Points clés.
+  source : SSP — Règle d'or — « β-hCG chez toute femme en âge de procréer »
+
+**β-hCG — vérification explicite**
+
+Présent et central dans les quatre blocs avant intervention (`resume`/Points clés, `expert`/Points
+clés et Rôles, `theorie`/DD et queue, `presentation`/mnémo PREGNANT « T = Test β-hCG systématique »).
+Deux renforts seulement : la check-list de `resume` (ci-dessus) et la formulation « chez toute femme en
+âge de procréer » dans `expert`/Pièges. Aucun ajout au barème.
+
+**Divergences consignées**
+
+- section notée `m5` vs page SSP · **ordre de la 1ʳᵉ ligne antiémétique de la grossesse** : la section
+  notée procède par paliers — « Vitamine B6 (pyridoxine) : 10-25 mg × 3/j ; Doxylamine + pyridoxine
+  (Diclectin) **si insuffisant** » — tandis que la page SSP donne d'emblée la **combinaison** en 1ʳᵉ
+  ligne. `resume` est resté sur la page SSP (niveau 1) et porte « 1ère intention : doxylamine +
+  pyridoxine (Vit. B6) ». Les deux formulations sont compatibles en pratique (escalade à l'intérieur de
+  la même ligne) ; consignée pour mémoire, **rien n'a été modifié dans la section notée**.
+- `presentation`/Version longue conserve « pyridoxine ± doxylamine », qui est l'ordre de la section
+  notée. Laissé tel quel : ce n'est pas une redondance et les deux ordres sont défendables.
+- **paire de redondance restante (1)** : `resume`/Contexte de grossesse « Test de grossesse positif »
+  ↔ `expert`/Rôles et interventions « Test de grossesse : β-hCG positif à 2500 UI/L » (0,76).
+  Conservée : rôles de blocs distincts — `expert` porte la **valeur que l'examinateur remet au
+  candidat pour faire tourner la station**, `resume` porte l'élément d'anamnèse à retenir. Supprimer
+  l'un des deux casserait soit la station, soit la révision.
+
+---
+
+### AMBOSS-6 — Douleurs pelviennes, femme 30 ans, fibromes / endométriose (page SSP : Douleur - Masse Pelvienne)
+
+Redondance : **15 paires → 4** (`report_redundancy.py AMBOSS-6_`). Quatre blocs présents.
+Grille de l'axe 6 : `presentation`/Pièges ECOS supprimée après report dans `expert`/Pièges.
+
+**Modifications**
+
+*Alignements sur une autorité — β-hCG*
+
+- resume · Biologie : « Bêta-HCG **en cas de suspicion de grossesse** » → « **β-hCG systématique chez
+  toute femme en âge de procréer** — avant toute imagerie irradiante ou tout médicament tératogène ».
+  **Niveau 1** : la page SSP tranche explicitement et en fait sa règle d'or ; la section notée dit la
+  même chose. Le pédagogique restreignait indûment l'indication de l'examen le plus important du cas.
+  source : SSP — Règle d'or — « Devant toute douleur ou masse pelvienne chez une femme en âge de
+  procréer : β-hCG urinaire / sanguin **IMMÉDIAT** » ; SSP — ANAMNÈSE — « β-hCG **systématique** chez
+  femme en âge de procréer » ; section notée `m2` — « β-hCG urinaire [exclure grossesse avant examens
+  invasifs car patiente essaie de concevoir] »
+- expert · Pièges : **ajout en tête** de « Ne pas demander de β-hCG : toute douleur pelvienne chez une
+  femme en âge de procréer impose d'exclure une grossesse — piège éliminatoire ». Report obligatoire
+  avant la suppression de `presentation`/Pièges ECOS (précédent AMBOSS-3, tâche 5) : l'item n'existait
+  **nulle part** dans `expert`, et c'est le piège éliminatoire n° 1 de la page SSP.
+  source : SSP — frontmatter `pieges_eliminatoires` — « Ne pas demander β-hCG chez femme en âge
+  procréer » ; SSP — Pièges
+
+*Alignements sur une autorité — thérapeutique*
+
+- resume · Traitements médicamenteux : « **Antagonistes GnRH (ex : élagolix)**, parfois en association
+  hormonale » → « **Agonistes GnRH (leuprolide)** : réduction du volume avant chirurgie, **6 mois au
+  maximum**, avec **add-back œstro-progestatif** si prolongé ». **Niveau 2** : la page SSP ne nomme
+  aucun médicament de cette classe ; la section notée en nomme un, d'une autre classe, et le
+  pédagogique la contredisait. Formulation reprise de la section notée.
+  source : section notée `m6` — « Agonistes GnRH : leuprolide pour réduction pré-op (**max 6 mois**) »
+  et « Agonistes GnRH + **add-back thérapy** (oestrogènes/progestatifs) »
+  Vérifié après coup qu'aucun autre bloc ne porte l'ancienne formule : `theorie`/PEC de la
+  dysménorrhée secondaire et `theorie`/Rappels disaient déjà « agonistes GnRH (leuprolide) ».
+- theorie · Rappels thérapeutiques : la durée maximale et son motif sont ajoutés — « 6 mois au maximum,
+  la déminéralisation osseuse limitant la durée — d'où l'add-back œstro-progestatif si le traitement
+  doit être prolongé ». Le *pourquoi* revient à `theorie`, la consigne actionnable à `resume`.
+- theorie · Rappels thérapeutiques · notation posologique : « ibuprofène 400-600mg **TID** » →
+  « 400-600 mg **× 3/j** » et « Acide tranexamique 1g **TID** » → « 1 g **× 3/j** ». Abréviation latine
+  remplacée par la notation de la section notée (« ibuprofène 400-600mg **x3/j** ») — lisibilité d'une
+  posologie.
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- presentation · **Pièges ECOS supprimée** (axe 6). Anti-perte vérifiée item par item **avant**
+  suppression : β-hCG porté dans `expert` (ci-dessus) ; « Oublier de rechercher une anémie **liée aux
+  ménorragies** » a enrichi l'item `expert` qui disait seulement « Oublier de rechercher une anémie » ;
+  « Oublier de relier symptômes au cycle menstruel » et « Ne pas explorer la question de l'infertilité »
+  étaient déjà présents dans `expert` (« Manquer le lien entre symptômes et cycle menstruel », « Ne pas
+  aborder la question de l'infertilité »).
+- presentation · mnémo **5D de l'endométriose** : la `mnemo-box` de la Checklist mentale est
+  **déplacée** vers Touches ludiques, où elle **absorbe** la sous-section « Endométriose = 3D » —
+  strictement incluse. Titre explicité : « Endométriose = les 5D (les 3D classiques + 2) », ce qui
+  préserve la triade classique que `theorie` continue de citer. La Checklist mentale redevient une
+  trame pure (axe 5). Précédent AMBOSS-2 / AMBOSS-3.
+- presentation · Checklist mentale : « Symptômes associés → dysménorrhée, dyspareunie, dyschésie,
+  ménorragie, infertilité » → « Symptômes associés → **dérouler les 5D**, puis les ménorragies et leur
+  retentissement ». La trame renvoie au mnémo au lieu de recopier `theorie`/Endométriose (« Symptômes
+  classiques : 3D … »). Axe 5.
+- theorie · « Approche diagnostique » → **« Pourquoi cette séquence diagnostique »**. La liste numérotée
+  de six examens redisait `resume`/Imagerie et `theorie`/queue au même format. Remplacée par ce que
+  chaque examen **ajoute** : l'échographie tranche l'essentiel mais ne voit pas l'endométriose
+  péritonéale, l'IRM sépare fibrome et adénomyose, l'hystéroscopie identifie le fibrome sous-muqueux,
+  la laparoscopie voit **et** traite, le CA-125 est trop peu spécifique pour la routine. Axe 1.
+  Anti-perte : les deux items **uniques** de la liste — hystéroscopie / fibrome sous-muqueux, et
+  CA-125 non recommandé en routine — n'existaient nulle part ailleurs et sont **conservés** dans le
+  texte de remplacement ; les quatre autres figurent dans `resume` ou dans `theorie`/queue.
+- theorie · Rappels thérapeutiques · AINS : l'item recopiait la posologie désormais portée par
+  `resume`. Remplacé par le mécanisme — blocage des prostaglandines endométriales — et par sa
+  conséquence pratique : débuter dès les premières douleurs ou la veille des règles plutôt qu'à la
+  demande (la patiente prend justement de l'ibuprofène « quand la douleur est forte »). Axe 2.
+- theorie · Impact sur la fertilité : « Évaluation fertilité : spermogramme partenaire, HSG, réserve
+  ovarienne » était une **check-list actionnable dans `theorie`**, doublant `presentation`/Q3 Suivi.
+  Remplacée par le rationnel : « L'infertilité est celle d'un couple : explorer l'endométriose sans
+  spermogramme du partenaire, sans test de perméabilité tubaire ni évaluation de la réserve ovarienne,
+  c'est risquer de traiter la mauvaise cause ». La liste actionnable reste dans `presentation`/Q3.
+- presentation · « 2. Examens complémentaires immédiats », Q1 : liste → réponse orale. Les cinq items
+  sont repris. Axe 1.
+- presentation · « 3. … », Q2 « Traitement » : liste → réponse orale. Axe 2. La réponse explicite ce
+  que la liste laissait implicite : la contraception hormonale continue supprimerait les symptômes mais
+  est **incompatible avec le désir de conception**, qui est le motif profond de la consultation.
+
+*Anti-perte — information portée dans le canonique*
+
+- resume · Traitements médicamenteux : ajout de « **AINS en 1ʳᵉ ligne de la dysménorrhée : ibuprofène
+  400-600 mg × 3/j** ». Les AINS figuraient dans la check-list « PEC en 3 points » sans figurer dans
+  `resume`/Prise en charge : l'axe 3 demande que la check-list soit un sous-ensemble strict du
+  canonique — c'est le canonique qui les reçoit.
+  source : section notée `m6` — « AINS : ibuprofène 400-600mg x3/j pour dysménorrhée »
+
+**β-hCG — vérification explicite**
+
+Présent dans `resume` (Biologie, Examens à faire), `presentation` (Checklist mentale, Q1, Version
+longue, SBAR), mais **absent d'`expert`/Pièges** et **restreint à tort** dans `resume`/Biologie. Les
+deux points sont corrigés ci-dessus. Aucun ajout au barème.
+
+**Divergences consignées**
+
+- resume · **élagolix, non enregistré en Suisse** : la formule remplacée nommait « Antagonistes GnRH
+  (ex : élagolix) ». L'élagolix n'est pas commercialisé en Suisse ; l'antagoniste GnRH enregistré en CH
+  pour le fibrome et l'endométriose est l'association **relugolix/estradiol/noréthistérone (Ryeqo®)**.
+  La correction appliquée suit la **section notée**, qui prescrit un **agoniste** (leuprolide), et non
+  une substitution de molécule dans la même classe : ni la page SSP ni la section notée ne mentionnent
+  d'antagoniste, il n'y avait donc rien à arbitrer de ce côté. Consigné pour arbitrage éditorial si
+  l'utilisateur souhaite réintroduire la classe des antagonistes avec la molécule suisse.
+- section notée `m6` · **seuil de taille probablement amputé** : « Myomectomie si fibromes sous-muqueux
+  ou **4cm** ». Le signe de comparaison manque — la formule usuelle est « > 4 cm ». Divergence
+  **interne à une section notée** : consignée, **non corrigée** (barème gelé).
+- section notée `m6` · molécules non reprises dans le pédagogique, sans contradiction : « Progestatifs :
+  dienogest 2 mg/j ou désogestrel 75 μg/j » et « Stimulation ovarienne : clomifène ou gonadotrophines ».
+  `resume` étant centré sur le léiomyome, ces lignes relèvent de l'endométriose et de l'AMP. Rien de
+  faux dans le pédagogique — **aucune modification**, signalé si l'utilisateur veut enrichir `resume`.
+- **paires de redondance restantes (4)**, toutes `resume` ↔ `presentation`, toutes justifiées par un
+  changement de format :
+  - « Douleurs pelviennes chroniques ou pesanteur » ↔ « Douleurs pelviennes chroniques » (0,82) et
+    ↔ « Douleurs pelviennes chroniques et cycliques » (0,79) : les seconds sont des items d'`arg-list`
+    dans l'**argumentation pour/contre** d'une question d'examinateur — liste → argumentation.
+  - « Antécédents familiaux de fibromes » ↔ « Antécédents familiaux » (0,78) : même argumentation
+    pour/contre.
+  - « Douleurs pelviennes chroniques ou pesanteur » ↔ « Douleur pelvienne chronique » (0,77) : le
+    second est une **valeur du mnémo 5D**. Un mnémo ne se démembre pas — supprimer le D de « Douleur
+    pelvienne chronique » casserait la clé.
