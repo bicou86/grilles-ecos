@@ -60,6 +60,31 @@ Les 7 axes à traiter :
 Utiliser `python3 scripts/amboss/report_redundancy.py AMBOSS-N_` pour lister les
 paires détectées sur cette grille précise.
 
+**Le dédoublonnage ne perd jamais d'information.** Avant de supprimer une section ou
+une sous-section jugée redondante, la comparer item par item au bloc canonique et
+vérifier qu'elle n'en porte aucun qui y soit absent. S'il en reste un, le **porter
+dans le canonique avant** la suppression — jamais l'inverse, jamais après. Un item
+qui n'a de place dans aucun bloc canonique n'est pas redondant : c'est qu'il est
+unique, et il se conserve. Cette vérification est obligatoire et prime sur les
+sept axes : un axe dit *où* l'information doit vivre, il n'autorise pas à la perdre.
+Elle vaut aussi pour les sections dont un axe prescrit la suppression en bloc.
+
+Deux précédents, tous deux issus de la tâche 5 :
+
+- *Axe 6.* `presentation`/Pièges ECOS d'AMBOSS-3 portait « Oublier de demander un
+  test β-hCG », absent d'`expert`/Pièges — et c'est le piège éliminatoire n° 1 de la
+  page SSP. L'item a été porté dans `expert`/Pièges, **puis** la sous-section
+  supprimée. C'est le geste à reproduire sur les onze grilles restantes de l'axe 6 :
+  la suppression est prescrite, la perte ne l'est pas.
+- *Mnémos.* Quand une `mnemo-box` de `presentation`/Checklist mentale est le mnémo le
+  **plus complet** de la grille, elle se **déplace** vers `presentation`/Touches
+  ludiques — la Checklist mentale redevenant une trame pure (axe 5) — au lieu d'être
+  supprimée. C'est bien la redondance qui décide, pas le type de bloc : le pilote
+  AMBOSS-1 a pu supprimer la sienne parce qu'elle doublait strictement les 6F déjà
+  présents dans Touches ludiques ; AMBOSS-2 (APPENDIX ⊃ « les 3A ») et AMBOSS-3
+  (OVAIRE, après absorption de NAFT dans ses valeurs) ont dû la déplacer. Les clés
+  du mnémo conservé restent intactes, seules les valeurs absorbent les items repris.
+
 **Sections de queue d'`annexe-theorie`.** Les deux dernières sections du bloc —
 `theorie-section-rappels` (Rappels thérapeutiques) puis `theorie-section-examens`
 (Examens complémentaires) — existent dans les 40 grilles et portent chacune une
@@ -131,6 +156,8 @@ python3 scripts/amboss/check_nomenclature.py  # doit sortir OK
 - Ajouter ou retirer un sous-item noté.
 - Toucher aux items ICE du critère `m4`.
 - Créer un bloc `resume` ou `presentation` absent.
+- Supprimer une section ou une sous-section sans l'avoir comparée item par item au
+  bloc canonique — y compris quand un axe en prescrit la suppression.
 
 ## Glossaires d'abréviations dans les légendes de schéma
 

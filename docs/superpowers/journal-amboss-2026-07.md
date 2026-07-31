@@ -378,9 +378,24 @@ Redondance : 5 paires → 3 (`report_redundancy.py AMBOSS-3_`).
   inhibiteurs de PARP si BRCA+) et la page SSP est muette. Pas de contradiction, seulement une
   addition. **Niveau 3** : laissé inchangé.
 - portée de la page SSP : « Douleur Abdominale » ne cite le cancer de l'ovaire ni dans son DD Top 5
-  ni dans ses conduites ciblées. Tout le versant oncologique de cette grille relève donc du niveau 2
-  (section notée) ou du niveau 3 ; seul le versant « douleur abdominale de la femme en âge de
-  procréer » a pu être arbitré au niveau 1.
+  ni dans ses conduites ciblées. Seul le versant « douleur abdominale de la femme en âge de
+  procréer » a pu être arbitré au niveau 1 (β-hCG, ordre des examens, piège de la contraception).
+  **Sont restées sans arbitre de niveau 1, faute de couverture par la page SSP** — chacune vérifiée
+  comme non contredite par la section notée m6, donc traitée en niveau 3 et laissée inchangée :
+  1. `resume`/Chimiothérapie — protocole platine + taxane, ± bevacizumab (anti-VEGF), voie
+     intrapéritonéale ;
+  2. `resume`/Thérapies ciblées — inhibiteurs de PARP (olaparib, niraparib, rucaparib), indication
+     et place en entretien ;
+  3. `resume`/En cas de récidive — seuil des 6 mois, notion de résistance au platine, place des
+     soins palliatifs ;
+  4. `resume`/Chirurgie — étendue de la stadification (hystérectomie, annexectomie, omentectomie,
+     curage) et seuil de résidu ;
+  5. `theorie`/Rappels thérapeutiques — prophylaxie BRCA+ (salpingo-ovariectomie après 35-40 ans),
+     surveillance semestrielle dès 30 ans, réduction de risque par contraceptifs oraux ;
+  6. `theorie`/Syndrome BRCA — pénétrances chiffrées et critères de test génétique.
+  Un rattachement complémentaire à une seconde page SSP (masses annexielles / oncologie
+  gynécologique) rendrait ces six zones arbitrables. Le mapping relevant du choix de l'utilisateur,
+  aucune autre page n'a été consultée.
 
 **Paires de redondance restantes (3) — justifiées par un changement de format**
 
