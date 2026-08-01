@@ -3585,3 +3585,364 @@ même bloc qu'AMBOSS-33, contient un `x` et est resté intact.
 - `git diff --stat` : 8 fichiers, **14 insertions / 14 suppressions**, une ligne modifiée par
   correction. Aucun `.criteria-text` touché, aucun crochet de réponse patient touché, aucun sous-item
   ajouté ni retiré.
+
+---
+
+## Tâche 13 — cinq grilles allégées (AMBOSS-10, 16, 17, 20, 21)
+
+Ces cinq grilles ne portent que **deux** blocs pédagogiques, `annexe-expert` et
+`annexe-theorie` : ni `resume`, ni `presentation`. Les axes 1 à 6 du contrat, qui portent sur
+ces deux blocs absents, ne s'appliquent pas. Le seul axe applicable est le contrat de rôle
+`expert` (faire tourner la station) ↔ `theorie` (comprendre le cas), et l'axe 7 (points clés
+différenciés). Aucun bloc n'a été créé : `blocks` reste `["expert", "theorie"]` sur les cinq,
+vérifié par `check_invariants.py`.
+
+`resume` n'existant pas, il n'y a pas de source canonique habituelle. Les contradictions entre
+`expert` et `theorie` ont été arbitrées par la hiérarchie à trois niveaux, et à défaut par le
+contrat de rôle : `theorie` porte le raisonnement, `expert` la conduite.
+
+Redondance mesurée par `report_redundancy.py` : **4 paires → 0** (10 : 0→0 · 16 : 1→0 ·
+17 : 1→0 · 20 : 0→0 · 21 : 2→0).
+
+### AMBOSS-10 — Douleurs dorsales et raideur, homme de 26 ans (page SSP : Lombalgies)
+
+**Modifications**
+
+*Contrat de rôle — `expert`/Points clés purgé de la théorie*
+
+- expert · Points clés : « HLA-B27 positif dans 90% spondylarthrite ankylosante » supprimé —
+  épidémiologie pure, portée par `theorie`/Spondylarthrite ankylosante (« Association HLA-B27 :
+  90-95% des cas », valeur **plus précise**) et par `theorie`/Examens (« Pas diagnostique seul,
+  8% population générale positive »). Aucune perte.
+- expert · Points clés : « Sacro-iliite précoce peut être uniquement clinique (IRM plus sensible
+  que radio) » supprimé après **portage** de sa nuance dans `theorie`/Examens complémentaires
+  (section de queue), dont la ligne radiographique devient « Sacro-iliite bilatérale — signe
+  tardif, la radio peut rester normale des années (forme non radiographique, sacro-iliite d'abord
+  clinique) ». Le portage précède la suppression, jamais l'inverse.
+
+*Sécurité — niveau 1, la page SSP tranche*
+
+- expert · Pièges : ajout de « Ne pas dépister le syndrome de la queue de cheval devant toute
+  lombalgie : troubles sphinctériens, anesthésie en selle, déficit moteur bilatéral → IRM en
+  urgence ».
+  source : SSP — Lombalgies — frontmatter `pieges_eliminatoires` — « **Manquer queue de cheval
+  (urgence chir)** » (piège éliminatoire n° 1) ; § EXAMEN CLINIQUE — « **À faire ✅** : toujours
+  rechercher les troubles sphinctériens + sensibilité périnéale (queue de cheval) » ; § Red flags —
+  « Sciatique bilatérale + anesthésie en selle + troubles sphinctériens → Syndrome de la queue de
+  cheval · IRM lombaire en URGENCE immédiate ».
+  Vérifié avant ajout : les motifs « queue de cheval », « sphinct » et « anesthésie en selle » ne
+  figuraient **nulle part** dans la grille (recherche sur `strip_base64`, jamais de `grep` brut).
+  La section notée dépiste bien les symptômes sous des libellés génériques (« Problèmes urinaires »,
+  « Problèmes intestinaux », « Engourdissement (particulièrement membres inférieurs) », « Dysfonction
+  érectile ») mais aucun bloc pédagogique n'en donnait la raison. Section notée intacte.
+
+*Erreur factuelle interne (correction directe, hors hiérarchie)*
+
+- theorie · Arthrite psoriasique : « Dactylite : **pathognomonique** des spondylarthropathies » →
+  « Dactylite (« doigt en saucisse ») : **très évocatrice** des spondylarthropathies ». La dactylite
+  n'est pas pathognomonique : elle s'observe aussi dans la drépanocytose, la sarcoïdose, la
+  tuberculose et la goutte. Aucune autre source de la grille ne porte cet énoncé — il n'y avait rien
+  à arbitrer, seulement un fait faux à corriger.
+
+**Divergences consignées**
+
+- theorie · Spondylarthrite ankylosante : « Prévalence : 0.5-1% population » est haut pour la
+  spondylarthrite ankylosante stricte (0.1-0.5 % en Europe) mais compatible avec la
+  spondyloarthrite axiale au sens large. Ni la page SSP ni la section notée ne donnent de chiffre :
+  niveau 3, laissé inchangé.
+
+### AMBOSS-16 — Troubles du sommeil, femme de 32 ans (page SSP : Troubles du Sommeil)
+
+**Modifications**
+
+*Contrat de rôle — la paire de redondance et son voisinage*
+
+- expert · Points clés : « TCC-I = traitement première ligne insomnie chronique » supprimé — c'est
+  la paire détectée à 0.83 par `report_redundancy.py` face à `theorie`/Rappels thérapeutiques
+  (« TCC-I : 6-8 séances, première ligne insomnie chronique »). Même format, même contenu ;
+  `theorie` en dit strictement plus (nombre de séances) et porte en outre toute la section TCC-I
+  (efficacité, restriction de sommeil, contrôle du stimulus).
+- expert · Points clés : « Éviter benzodiazépines (risque dépendance) » supprimé — porté deux fois
+  ailleurs : `theorie`/Pharmacothérapie (« Benzodiazépines : éviter (tolérance, dépendance) »,
+  rationnel) et `expert`/Pièges (« Prescrire hypnotiques d'emblée », conduite). Aucune perte.
+
+*Sécurité — niveau 1, la page SSP tranche*
+
+- expert · Pièges : ajout de « Banaliser le réveil précoce : ne pas rechercher une dépression ni le
+  risque suicidaire (PHQ-9, question directe sur les idées noires) ».
+  source : SSP — Troubles du Sommeil — § Points Clés ECOS — « 5. Devant un **réveil précoce** →
+  rechercher une **dépression** et la **suicidalité** » ; § Pièges à éviter — « 3. Banaliser un
+  réveil précoce (signe classique de dépression) » ; § Red flags — « Insomnie + dépression avec
+  idéations suicidaires actives → Crise suicidaire · URGENCE psychiatrique ».
+  La patiente **présente** le réveil précoce (section notée, « Réveil précoce [Oui. Je me réveille
+  généralement avant que mon réveil sonne] ») ; aucun bloc de la grille ne mentionnait la
+  suicidalité. `theorie`/Examens citait déjà le PHQ-9, sans jamais dire pourquoi.
+
+*Incohérence interne à `theorie` — deux seuils de caféine*
+
+- theorie · Rappels thérapeutiques : « Restriction caféine : Maximum 200-300mg/j, rien après 14h »
+  → « Restriction caféine : sevrage progressif, cible ≤ 200-300 mg/j (2-3 tasses) chez
+  l'insomniaque, rien après 14h ». Le même bloc portait deux plafonds différents sans qualificatif :
+  `theorie`/Caféine et sommeil dit « Limite recommandée : 400mg/j », valeur que la page SSP tranche
+  explicitement (§ Hygiène du sommeil — « Caféine (quantité, horaire — **seuil > 400 mg/j**) »).
+  Les 200-300 mg/j sont une **cible thérapeutique** chez l'insomniaque, non un second plafond
+  général : la qualification lève la contradiction sans rien retirer. Le « sevrage progressif »
+  reprend `theorie`/Caféine (« Sevrage : céphalées, fatigue, irritabilité 24-48h »).
+
+*Alignement niveau 1 — pratique suisse*
+
+- theorie · Examens complémentaires : « Polysomnographie : Si suspicion apnées ou mouvements
+  périodiques » → « Polygraphie nocturne ambulatoire (1er examen recommandé, moins coûteux) ou
+  polysomnographie : … ».
+  source : SSP — Troubles du Sommeil — § EXAMENS COMPLÉMENTAIRES — « **Polygraphie nocturne**
+  (1ᵉʳ examen recommandé, moins coûteux) ou **polysomnographie** si suspicion de SAOS » ; repris au
+  § Apports des Cours — « Polygraphie nocturne : 1ᵉʳ examen recommandé (moins coûteux que la
+  polysomnographie complète) ».
+
+**Divergences consignées**
+
+- Section notée, critère m3 · « Mesure de la pression artérielle sur 24 heures [Parce que cette
+  patiente présente une pression artérielle élevée (**directives AHA/ACC 2017**)…] » — référentiel
+  américain dans une grille suissifiée. Barème gelé, section notée non touchée : consigné.
+- SSP · syndrome des jambes sans repos : la page l'inscrit dans les cinq diagnostics à « toujours
+  chercher » et prescrit la ferritine (cible > 75 µg/L). Aucun bloc de la grille ne le mentionne.
+  Non ajouté : l'absence ne crée pas de risque pour la patiente (contrairement à la suicidalité),
+  et la vignette ne comporte aucune impatience des jambes. Consigné pour arbitrage.
+
+### AMBOSS-17 — Troubles de mémoire, femme de 70 ans (page SSP : Troubles de la Mémoire & Démences)
+
+**Modifications**
+
+*Contrat de rôle — `expert`/Points clés ramené à ce que l'examinateur observe (axe 7)*
+
+- expert · Points clés : « MMSE < 24/30 = démence (ajuster selon éducation) » supprimé — seuil
+  théorique porté à l'identique par `theorie`/Mini-Mental State Examination (« Seuils : Normal ≥ 27,
+  démence < 24 (ajuster éducation) »).
+- expert · Points clés : « Alzheimer = démence la plus fréquente (60-70%) » supprimé **après
+  portage** du chiffre dans `theorie`/Maladie d'Alzheimer, dont l'introduction devient « Démence
+  neurodégénérative la plus fréquente (**60-70 % des démences**) ». Chiffre confirmé par la page SSP
+  (§ En Bref — « Maladie d'Alzheimer (60-70 %) > démence vasculaire (~20 %) »).
+- expert · Points clés : « Diagnostic clinique + exclusion causes réversibles » supprimé — doublon
+  interne du point suivant (« Toujours rechercher causes traitables (B12, thyroïde) », conservé) et
+  de `theorie`/Bilan démence en entier.
+- expert · Points clés : « Planification précoce (directives anticipées) » supprimé — c'est la paire
+  détectée à 0.72 face à `theorie`/Prise en charge Alzheimer (« Anticipation : tutelle, directives
+  anticipées, conduite »), qui en est un **sur-ensemble strict**.
+
+*Sécurité — niveau 1, la page SSP tranche : la pseudo-démence dépressive*
+
+- expert · Pièges : ajout de « Conclure à une démence sans avoir exclu une dépression du sujet âgé
+  (pseudo-démence) ni un delirium — la patiente réunit humeur triste, anhédonie, réveil précoce et
+  anorexie (GDS-15) ».
+  source : SSP — Troubles de la Mémoire & Démences — § DD Top 5 — « Maladie d'Alzheimer ·
+  **Pseudo-démence dépressive** · … » (2ᵉ diagnostic différentiel) ; § Pièges à éviter — « 1. Conclure
+  « démence » sans exclure un delirium ou une **dépression du sujet âgé** » ; § Tests complémentaires
+  — « **GDS-15** : dépister une dépression du sujet âgé ».
+  La section notée déroule un syndrome dépressif **complet** (§ 6 État psychologique : humeur basse
+  depuis le décès du caniche il y a un an, perte d'intérêt pour le backgammon, énergie faible,
+  concentration effondrée ; § 4 : réveil vers 4h-5h, appétit diminué), et aucun bloc pédagogique ne
+  nommait la pseudo-démence dépressive ni le GDS-15.
+- theorie · Bilan démence : « Bilan causes réversibles : TSH, B12, folates, calcémie » → « … TSH,
+  B12, folates, calcémie, **natrémie** ; **dépression du sujet âgé (GDS-15)** ; **revue des
+  médicaments à risque cognitif** (anticholinergiques, benzodiazépines — critères STOPP/START) ».
+  source : SSP — § Points Clés ECOS — « 3. Exclure les causes réversibles : delirium, **dépression**,
+  B12, TSH, HPN, **iatrogénie**, hématome sous-dural » ; frontmatter `pieges_eliminatoires` —
+  « Manquer cause réversible (TSH, B12, syphilis, **médicaments**) » ; § ANAMNÈSE — « Médication :
+  … appliquer les critères **STOPP/START** ». La patiente prend de l'hydrochlorothiazide, d'où la
+  natrémie. Aucun sous-item noté ajouté ni retiré.
+
+*Erreur de suissification (niveau 1) — la tutelle n'existe plus pour l'adulte en Suisse*
+
+- theorie · Prise en charge Alzheimer : « Anticipation : **tutelle**, directives anticipées,
+  conduite » → « Anticipation : directives anticipées et **mandat pour cause d'inaptitude**
+  (art. 360 ss CC), signalement à l'**APEA/KESB** pour une **curatelle** adaptée si besoin de
+  protection (art. 390 ss CC), aptitude à la conduite (**art. 15d LCR**) ».
+  source : SSP — § Aspects médico-légaux (cadre suisse) — « Directives anticipées et **mandat pour
+  cause d'inaptitude** (art. 360 ss et 370 ss CC) … Si capacité de discernement altérée et besoin de
+  protection → signalement à l'**APEA / KESB** → **curatelle** adaptée (art. 390 ss CC) … annonce
+  possible au médecin cantonal / Service des automobiles (**art. 15d LCR**) ».
+  La tutelle de l'adulte a été **abolie** par la révision du droit de la protection de l'adulte
+  entrée en vigueur le 1ᵉʳ janvier 2013 ; le terme ne subsiste que pour les mineurs. L'employer pour
+  une femme de 70 ans était faux en droit suisse. C'est également la reprise de la
+  `pieges_eliminatoires` « Pas d'évaluation conduite (LCR art. 15d) ».
+
+*Erreur factuelle interne (correction directe, hors hiérarchie)*
+
+- theorie · Hydrocéphalie à pression normale : « IRM : dilatation ventriculaire, **angle calleux
+  < 40°** » → « **angle calleux < 90° (normal 100-120°)** ». Le seuil de l'angle calleux dans l'HPN
+  est de 90° (Ishii et al. : ~60° dans l'HPN contre ~104° dans la maladie d'Alzheimer) ; 40° n'est le
+  seuil d'aucune référence et aurait fait manquer la **seule démence potentiellement curable**. Ni la
+  page SSP ni la section notée ne donnent de valeur : rien à arbitrer, un fait faux à corriger.
+
+**Divergences consignées**
+
+- Section notée, critère « Mini-Mental State Examination » : deux américanismes dans les réponses
+  de la patiente standardisée — « Répondre avec **président des États-Unis** incorrect » et
+  « Répondre avec l'**État** correct ». L'orientation temporelle et spatiale d'un MMSE suisse
+  interrogerait le conseiller fédéral / le président de la Confédération et le canton. Barème gelé,
+  section notée non touchée : consigné.
+- theorie · Rappels : la mémantine est indiquée « MMSE < 15 » tandis que `theorie`/Prise en charge
+  place les anticholinestérasiques à « MMSE 10-26 » — il subsiste une zone (MMSE 15-19) où aucune
+  ligne ne tranche. Les deux plages sont défendables : niveau 3, laissé inchangé.
+
+### AMBOSS-20 — Diminution de sensation dans les extrémités, homme de 42 ans (page SSP : Neuropathie Périphérique)
+
+**Vérification préalable — cohérence de la conversion B12 (tâche 12)**
+
+Contrôlée avant et après travail, intacte : `expert` porte « Vitamine B12 : **63 pmol/L**
+(N: **148-664**) » et la queue de `theorie` « Vitamine B12 sérique : **< 148 pmol/L** = déficit ».
+63 < 148 → le déficit annoncé est bien lu, et la borne basse de l'intervalle coïncide au pmol près
+avec le seuil de la queue. Les quatre nombres issus de « 85 pg/mL (N: 200-900) » restent cohérents
+entre eux (× 0,738). **Aucune de ces deux lignes n'a été modifiée.**
+
+**Modifications**
+
+*Contrat de rôle — `expert`/Points clés purgé de la théorie*
+
+- expert · Points clés : « IPP + malabsorption = double risque déficit B12 » supprimé —
+  `theorie`/Déficit en vitamine B12 porte « Causes : malabsorption (**IPP, pancréatite**),
+  alcoolisme, régime végétarien », sur-ensemble strict.
+- expert · Points clés : « Traiter B12 avant folates (éviter aggravation neuro) » supprimé après
+  **portage du rationnel** dans `theorie`/Rappels, dont la ligne devient « Folates : 5 mg/j APRÈS
+  début B12 — **donnés seuls, ils corrigent l'anémie mais laissent progresser l'atteinte
+  neurologique** ». La conduite reste par ailleurs dans `expert`/Pièges (« Donner folates avant
+  B12 »). L'item figurait donc trois fois ; il en reste deux, chacune dans son bloc de rôle.
+- expert · Points clés : « Pancréatite chronique → diabète secondaire fréquent » supprimé après
+  **portage** dans `theorie`/Polyneuropathie diabétique, dont l'introduction devient « Complication
+  microvasculaire du diabète — **y compris du diabète secondaire à une pancréatite chronique
+  (type 3c), fréquent dans ce contexte** ». Cette information n'existait nulle part ailleurs : sans
+  le portage, la suppression aurait été une perte.
+- expert · Points clés : « Neuropathie peut être multifactorielle » supprimé — c'est la thèse même
+  de `theorie`/Diagnostic le plus probable (« Polyneuropathie **mixte** : déficit sévère en B12 …
+  **+** polyneuropathie alcoolique ») et la conduite est dans `expert`/Pièges (« Ne tester qu'une
+  seule cause de neuropathie »).
+
+Les deux points conservés dans `expert`/Points clés — « Romberg + = atteinte cordons postérieurs
+(B12) » et « CAGE 4/4 = dépendance alcoolique sévère » — sont exactement les deux résultats positifs
+que l'examinateur délivre et qui sont produits par la station (« Test de Romberg [Positif] » en
+section notée ; les quatre questions CAGE toutes positives à l'anamnèse).
+
+*Alignement niveau 1 — bilan de 1ʳᵉ intention de toute polyneuropathie*
+
+- theorie · Examens complémentaires : « TSH, créatinine : éliminer autres causes » → « TSH,
+  créatinine, **folates**, **thiamine**, **électrophorèse des protéines sériques** : éliminer les
+  autres causes (hypothyroïdie, urémie, carences associées, **gammapathie monoclonale**) ».
+  source : SSP — Neuropathie Périphérique — § Bilan de 1ʳᵉ intention (SGAIM/SSN) — « Vitamine B12
+  (…), **folates** » et « **Électrophorèse des protéines sériques + immunofixation** (gammapathie
+  monoclonale, MGUS, amyloïdose AL) » ; § Points Clés ECOS — « 5. Demander le bilan de 1ʳᵉ intention
+  (glycémie / HbA1c, B12, TSH, **électrophorèse**) ». La section notée les demande déjà
+  (critères m2 et m3), la théorie ne les justifiait pas.
+
+**Divergences consignées**
+
+- theorie · Rappels : « Gabapentine : 300 mg × 3/j, augmenter progressivement » se lit comme un
+  **début** à 900 mg/j, ce qui est la dose du 3ᵉ jour du schéma de titration usuel, chez un patient
+  éthylique à risque de sédation et de chute. La formulation reste défendable (le libellé Neurontin®
+  atteint 300 mg × 3/j à J3) et ni la page SSP ni la section notée ne donnent de posologie :
+  niveau 3, laissé inchangé, consigné.
+- theorie · Rappels : la duloxétine, citée en 1ʳᵉ ligne de la douleur neuropathique par la page SSP
+  (§ Douleur neuropathique — SGAIM/SSN), est absente de la grille. Non ajoutée : les trois autres
+  molécules de 1ʳᵉ ligne y sont, l'absence ne crée pas de risque. Consigné.
+
+### AMBOSS-21 — Hématurie, homme de 23 ans (page SSP : Hématurie)
+
+**Vérification préalable — valeurs converties en tâche 3**
+
+Contrôlées, cohérentes avec leurs qualificatifs voisins, **non touchées** :
+« C3 : **0.45 g/L** (N: 0.9-1.8) - **abaissé** » (0,45 < 0,9 ✓), « C4 : **0.25 g/L** (N: 0.1-0.4) -
+**normal** » (0,25 dans l'intervalle ✓, cohérent avec `theorie` « C4 normal : voie classique non
+activée »), « Créatinine : **159 μmol/L** (**légèrement élevée**) » (~1,5 × la limite supérieure de
+l'homme adulte ✓).
+
+**Modifications**
+
+*Contrat de rôle — les deux paires de redondance : le résultat à `expert`, le pourquoi à `theorie`*
+
+Les deux paires détectées à 0.82 opposaient un **résultat de station** (dans `expert`) au **même
+résultat** recopié dans la section de queue de `theorie`. La queue de `theorie` ne se supprime ni ne
+se déplace : c'est son contenu qui a été ramené à son rôle, le *pourquoi* de l'examen.
+
+- theorie · Examens complémentaires : « Analyse urine + sédiment : hématurie, protéinurie,
+  cylindres » → « Analyse d'urine + sédiment : **hématies déformées et cylindres hématiques =
+  origine glomérulaire** (hématies normales et caillots = origine urologique) ; quantifier par le
+  **rapport protéinurie/créatininurie** ».
+  source : SSP — Hématurie — § Glomérulaire vs urologique — distinction clé (tableau : « Sédiment —
+  Hématies déformées, cylindres hématiques » vs « Hématies normales, pas de cylindre » ; « Caillots
+  — Absents » vs « Présents ») ; § EXAMENS COMPLÉMENTAIRES, 1re intention — « FSC, créatinine,
+  ionogramme · **rapport protéinurie / créatininurie** ». Le résultat reste dans `expert`
+  (« Analyse urine : hématurie +++, protéinurie ++, cylindres hématiques »).
+- theorie · Examens complémentaires : « Échographie rénale : reins augmentés taille, échostructure
+  normale » → « Échographie **réno-vésicale** : **écarter une cause urologique** (lithiase, obstacle,
+  masse, dilatation) — non contributive au diagnostic positif de GNAPS ».
+  source : SSP — § EXAMENS COMPLÉMENTAIRES, 1re intention — « **Échographie réno-vésicale** : masse,
+  lithiase, dilatation, résidu post-mictionnel ». Le résultat reste dans `expert` (« Échographie :
+  reins taille augmentée, échostructure normale ») **et** dans la section notée (critère m2).
+
+*Contrat de rôle — `expert`/Points clés*
+
+- expert · Points clés : « Syndrome néphritique complet : hématurie + HTA + œdèmes » supprimé —
+  `theorie`/Syndrome néphritique aigu développe la triade sur six items (hématurie, HTA, œdèmes,
+  protéinurie, oligurie, cylindres) avec leur mécanisme.
+- expert · Points clés : « C3 bas + ASLO élevé = diagnostic GNPS quasi certain » supprimé —
+  `theorie`/Diagnostic biologique GNAPS porte les deux marqueurs et leur signification, et
+  `theorie`/Néphropathie à IgA vs GNAPS porte la **combinaison** (« GNAPS : C3 bas transitoire,
+  ASLO élevé »).
+- expert · Points clés : « Pas de corticoïdes dans GNPS (différent autres GN) » supprimé après
+  **portage** dans `theorie`/Rappels thérapeutiques : « Pas de corticoïdes ni d'immunosuppresseurs
+  dans la GNAPS, à la différence des autres glomérulonéphrites : le traitement est symptomatique ».
+  L'information n'existait nulle part ailleurs — sans le portage, la suppression aurait été une
+  perte, et une perte thérapeutique.
+- expert · Points clés : sigle harmonisé « GNPS » → « **GNAPS** », forme employée six fois par
+  `theorie` et par le titre du diagnostic. Les deux sigles coexistaient dans la même grille.
+
+*Contradiction `expert` ↔ `theorie` tranchée par le contrat de rôle*
+
+- expert · Pièges : « Confondre avec néphropathie IgA (**délai 2-5 jours**) » → « Confondre avec
+  néphropathie IgA (hématurie **synpharyngitique, 1-3 jours** après l'infection) ». `theorie`
+  écrivait « IgA : hématurie **1-3 jours** post-infection (synpharyngitique) » : les deux blocs
+  donnaient un délai différent pour le **discriminant même du cas**. Ni la page SSP (« Berger =
+  post-IVRS du sujet jeune », sans délai) ni la section notée ne tranchent — niveau 3. Le contrat de
+  rôle s'applique alors : le raisonnement appartient à `theorie`, c'est donc `expert` qui s'aligne.
+
+*Posologies pédiatriques sur une station adulte — correction avec conservation des deux valeurs*
+
+Le bloc `theorie`/Rappels était rédigé pour une GNAPS **de l'enfant** (pic 5-12 ans) alors que la
+station est un homme de **23 ans**. Chaque ligne reçoit la valeur adulte, la valeur pédiatrique
+étant conservée entre parenthèses — rien n'est perdu :
+
+- « Furosémide : 1-2 mg/kg si œdèmes importants » → « Furosémide : **20-40 mg IV ou PO chez
+  l'adulte** (1-2 mg/kg chez l'enfant) si œdèmes importants ».
+- « Antihypertenseurs si TA > **95e percentile** » → « Antihypertenseurs si TA **≥ 140/90 mmHg chez
+  l'adulte** (> 95e percentile chez l'enfant) ». Il n'existe pas de courbe de percentiles tensionnels
+  pour l'adulte : le critère était inapplicable à cette station.
+- « Pénicilline V : 250-500 mg × 2/j × 10j » → « Pénicilline V : **500 mg × 2/j × 10 j chez
+  l'adulte** (250 mg × 2/j chez l'enfant) si streptocoque actif ». La borne basse de la plage était
+  la dose de l'enfant de moins de 27 kg.
+
+**Divergences consignées**
+
+- `annexe-dd` (bloc de diagnostics différentiels, **hors zone pédagogique**, à l'intérieur de la
+  section Management) prescrit « **Repos au lit** phase aiguë » tandis que `theorie`/Rappels dit
+  « **Repos relatif** phase aiguë (**pas alitement strict**) ». La doctrine actuelle est celle de
+  `theorie` ; `annexe-dd` n'est ni un bloc pédagogique au sens de l'outillage ni un critère noté, et
+  se trouve hors du périmètre de la tâche. Non corrigé, consigné.
+- L'hospitalisation : la page SSP la réserve au syndrome néphritique avec **HTA sévère** et IRA
+  (§ Red flags). La TA du patient est 135/85 mmHg et la créatinine 159 μmol/L : « Surveillance simple
+  suffit souvent, hospitalisation si sévère » (`expert`) reste juste pour ce cas. Aucune divergence.
+
+**Vérifications (tâche 13)**
+
+- `check_invariants.py` → `OK — 40 grilles, tous les invariants preserves` (code 0). `blocks` reste
+  `["expert", "theorie"]` sur les cinq grilles ; `maxScores`, `scoreSpans`, `criteriaCount`,
+  `detailCount`, `radioCount`, `checkboxCount` inchangés : **barème gelé**.
+- `check_nomenclature.py` → `OK — aucun terme non suisse detecte` (code 0).
+- `report_redundancy.py` par grille : **4 paires → 0** (10 : 0→0 · 16 : 1→0 · 17 : 1→0 · 20 : 0→0 ·
+  21 : 2→0).
+- `check_no_loss.py ce250fd` par grille : 4 + 3 + 6 + 6 + 7 = **26 items signalés**, tous relus
+  un à un — 13 reformulations enrichies (l'item reste, réécrit), 8 suppressions dont le contenu est
+  porté à l'identique ou en plus précis par un autre bloc, 4 portages explicites documentés
+  ci-dessus (dont deux vers un `<p>`, invisible à `check_no_loss.py` qui ne lit que les `<li>`),
+  1 correction intentionnelle (« tutelle », faux en droit suisse). **Aucune perte réelle.**
+- `git diff --numstat` : 5 fichiers, **22 insertions / 33 suppressions**, toutes dans la zone
+  pédagogique. Aucun `.criteria-text` touché, aucun crochet de réponse patient touché, aucun
+  sous-item noté ajouté ni retiré, aucun item ICE touché.
