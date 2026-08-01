@@ -2971,3 +2971,506 @@ découvert seulement par le balayage de clôture et non par la liste de citation
 - `report_redundancy.py`, sans filtre : 123 paires, inchangé par cette passe — les zones touchées
   (`criteria-text`, `detail-text`, scénario) sont hors du périmètre des quatre blocs pédagogiques que
   compare ce script.
+
+### AMBOSS-35 — Brûlures d'estomac, femme de 54 ans, angor d'effort sur coronaropathie avec RGO concomitant (page SSP : Pyrosis (RGO))
+
+Redondance : **9 paires → 1** (`report_redundancy.py AMBOSS-35_`). Quatre blocs présents.
+Pas de sous-section `presentation`/Pièges ECOS — vérifié, l'axe 6 ne s'applique pas.
+
+**Modifications**
+
+*Alignement des prises en charge*
+
+- resume · nitrés · **niveau 1, sécurité** : « Nitroglycérine sublinguale si douleur persistante et
+  PAS > **100** mmHg » → « … PAS > **90** mmHg — **jamais en cas d'infarctus inférieur ou du
+  ventricule droit** (débit précharge-dépendant) ». La contre-indication au nitré dans l'infarctus
+  droit n'existait nulle part dans la grille. Même correction qu'AMBOSS-14 en tâche 6, même source.
+  source : SSP — Pyrosis renvoie explicitement à [[SSP — Douleur Thoracique]] pour le DD du SCA ;
+  celle-ci, Prise en charge / SCA — « <span>nitroglycérine</span> SL si TA > 90 ; … — **cave
+  infarctus inférieur / droit : pas de nitré** (précharge-dépendant) »
+- resume · anticoagulation : « enoxaparine ou fondaparinux » → « **HNF**, énoxaparine ou
+  fondaparinux ». · resume · stratégie invasive : « (coronarographie ± angioplastie) » → « … **en
+  urgence si ST+ ou NSTEMI à haut risque** » — la précision n'existait que dans la check-list
+  « PEC en 3 points », dont l'axe 3 fait un sous-ensemble strict du bloc parent.
+- resume · Autres bilans · **niveau 1** : ajout de « Une fois la cause cardiaque écartée : **OGD avec
+  biopsies** — imposée ici par l'âge > 50 ans et un RGO ancien de 10 ans (recherche d'un **œsophage
+  de Barrett**) ». La patiente a 54 ans et dix ans de reflux : la page SSP en fait une indication
+  d'endoscopie, et rien dans la grille ne la portait.
+  source : SSP — Règle d'or — « Les drapeaux rouges (dysphagie, perte de poids, hémorragie digestive,
+  anémie, **> 50 ans**, échec des IPP) imposent une **OGD**. […] Un **RGO ancien (> 5-10 ans)** impose
+  de chercher un **œsophage de Barrett** »
+- resume · Examen clinique : ajout des **constantes vitales** (TA, FC, FR, SpO₂, T°), absentes du bloc
+  canonique alors que la check-list « Examens à faire » les exigeait (axe 4).
+
+*Corrections factuelles (internes aux blocs)*
+
+- expert · Rôles et interventions · **sécurité** : « Test nitroglycérine : soulagement partiel
+  **suggère angor** » → « … **non discriminant** (les nitrés soulagent aussi le spasme œsophagien) ».
+  L'énoncé transformait un test non discriminant en argument diagnostique, dans la station même dont
+  tout l'enjeu est de ne pas conclure « c'est digestif » trop vite. Il contredisait de surcroît
+  `theorie`, qui disait déjà « soulage angor ET spasme œsophagien ».
+  source : SSP — Cartes ECOS — « un spasme œsophagien peut céder aux dérivés nitrés, et un angor peut
+  être soulagé par un antiacide. La clinique seule ne peut donc structurellement pas trancher »
+- theorie · Rappels thérapeutiques : « Aspirine : 75-100 mg/j (**prévention primaire** si risque) » →
+  « … au long cours (**prévention secondaire**, une fois la coronaropathie établie) ». Chez une
+  patiente dont le diagnostic retenu est un angor d'effort sur coronaropathie, cette dose est de la
+  prévention secondaire ; l'aspirine en prévention primaire n'est plus recommandée en routine.
+- presentation · mnémo **DOULOURED** : le mnémo comptait **neuf lettres pour huit items** — la
+  seconde clé `U` n'avait aucune valeur. Elle reçoit « Urgence → appel 144 si suspicion de SCA »,
+  reprise de `resume`/Prise en charge initiale : aucune donnée clinique nouvelle n'est introduite,
+  seule la clé orpheline est comblée. Clés d'origine intactes, conformément à la règle des mnémos.
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- presentation · mnémo DOULOURED : la `mnemo-box` de la Checklist mentale est **déplacée** vers
+  « Touches ludiques / mnémos » (la Checklist mentale redevient une trame pure, axe 5). Aucun mnémo
+  ne l'y doublait — Touches ludiques ne portait que des listes comparatives.
+- theorie · RGO vs Angor : les deux items « RGO : post-prandial, position, aliments acides » et
+  « Angor : effort, stress, froid, soulagement repos » sont **supprimés** — paires à 0.85 et 0.95
+  avec la sous-section « RGO vs Angor » de Touches ludiques, même format, même contenu. La section
+  bascule sur le *pourquoi* (axe 1) et reçoit l'explication qui manquait à toute la grille :
+  l'**innervation viscérale afférente commune (métamères T1-T5)**, qui rend les deux douleurs
+  référées au même territoire. Le contraste mémorisable reste seul porté par Touches ludiques.
+  source : SSP — Cartes ECOS — « l'œsophage et le cœur partagent la même innervation viscérale
+  afférente (métamères **T1-T5**) : leurs douleurs sont référées au MÊME territoire rétrosternal »
+- theorie · RGO vs Angor : l'item « IPP test : amélioration RGO en 1-2 semaines » reçoit la condition
+  de prise — « à condition d'une prise **30 min avant le repas** — beaucoup d'« échecs d'IPP » ne sont
+  qu'une erreur de prise ». La patiente a précisément arrêté son oméprazole.
+  source : SSP — Mnémoniques — « **IPP** : à prendre **30 min AVANT le repas** […] beaucoup
+  d'« échecs d'IPP » sont des erreurs de prise »
+- expert · Points clés : réécrits en registre d'**observation d'examinateur** (axe 7), `resume`
+  gardant le registre « ce que l'étudiant retient ». « Stress aidant = facteur de risque
+  indépendant » disparaît du bloc expert — c'est de la théorie, et `theorie`/Syndrome de l'aidant la
+  porte déjà en entier (risque CV +60 %, isolement social, dépression 40 %) : la paire à 0.72
+  expert ↔ theorie tombe.
+- presentation · Q1 « Quels examens », Q2 « Traitement », Q3 « Suivi » : les trois réponses en liste
+  deviennent des **réponses orales**. Elles portaient quatre des neuf paires, dont une à **1.00**
+  (« ECG 12 dérivations en urgence »). Contenu intégralement conservé, l'indication d'OGD y étant
+  ajoutée par cohérence avec `resume`.
+- presentation · Checklist mentale : « Facteurs de risque → tabac, HTA, dyslipidémie, ATCD familiaux,
+  stress » → « Facteurs de risque cardiovasculaires → les énumérer, puis situer l'exposition au
+  stress ». L'énumération recopiait `resume`/Contexte à risque (paire à 0.77) ; la trame conserve
+  l'étape, pas la liste clinique (axe 5).
+
+**Divergences consignées**
+
+- **section notée `m5` · seuil d'oxygénothérapie** : la section notée dit « Oxygène si SpO2 94% »,
+  `resume` et le mnémo disent « si SaO₂ < **90 %** ». Le pédagogique n'a **pas** été aligné sur la
+  section notée, contrairement à ce que prescrirait le niveau 2, pour deux raisons : la doctrine du
+  corpus tranche explicitement en faveur de 90 % — SSP — Douleur Thoracique, carte ECOS : « donner de
+  l'O₂ à un coronarien **non hypoxémique** : c'est inutile voire délétère (vasoconstriction
+  coronaire) — **pas d'O₂ si SpO₂ ≥ 90 %** » — et le texte de la section notée est **visiblement
+  corrompu** à cet endroit (le `<` de « < 94 % » a disparu, comme le montrent les mutilations voisines
+  « Aspirine 160-: 325 mg », « Nitroglycérine sublinguale 0.: 4 mg », « IEC si HTA/diabète
+  (ramipril 2.5- » suivi d'un titre vide). Une section notée mutilée ne peut pas faire autorité sur un
+  seuil chiffré. **Barème gelé** : rien n'a été modifié dans la section notée, l'écart est consigné ici.
+- **une paire de redondance restante**, acceptée : la glose du mnémo DOULOURED (« Urgence → appel 144
+  si suspicion de SCA ») face à `resume`/Prise en charge initiale — règle des mnémos, précédent CENTOR
+  d'AMBOSS-30.
+
+**Signalements de sécurité** — **trois**, tous corrigés sauf le premier qui est consigné :
+1. **Seuil d'oxygénothérapie de la section notée** (SpO2 94 % au lieu de < 90 %, dans un texte
+   corrompu) — non corrigé, barème gelé, consigné ci-dessus.
+2. **Absence totale de contre-indication des nitrés dans l'infarctus inférieur / du ventricule
+   droit**, dans une station de suspicion de SCA, avec un seuil tensionnel par ailleurs trop haut.
+3. **« Le test à la nitroglycérine suggère un angor »** en bloc expert — un test non discriminant
+   présenté comme argument diagnostique, exactement le raisonnement que la station veut faire échouer.
+
+### AMBOSS-37 — Changements cutanés, nouveau-née de 4 jours, ictère d'allaitement (page SSP mappée : Éruption Cutanée)
+
+Redondance : **5 paires → 0** (`report_redundancy.py AMBOSS-37_`). Quatre blocs présents.
+Pas de sous-section `presentation`/Pièges ECOS — vérifié, l'axe 6 ne s'applique pas.
+
+**Divergence de rattachement — à arbitrer en priorité**
+
+`docs/obsidian-mapping.yaml` rattache AMBOSS-37 à **`SSP ECOS/SSP — Éruption Cutanée.md`**, page de
+dermatologie qui ne contient **aucune** occurrence d'« ictère », « bilirubine », « nouveau-né »,
+« Coombs » ni « photothérapie » (recherche exhaustive sur ses 498 lignes). Or la grille est une
+station d'**ictère néonatal** : son `resume` s'intitule « Ictère néonatal (ictère d'allaitement) ».
+Le rattachement vient manifestement du titre du cas (« Changements cutanés »).
+
+Le vault possède une page exactement adéquate, **`SSP ECOS/SSP — Ictère Néonatal.md`**, aujourd'hui
+rattachée à la seule USMLE-18 (« Garçon 5 jours, la peau et les yeux jaunes ») — le même tableau
+clinique à un jour près. **Recommandation : rerattacher AMBOSS-37 à `SSP — Ictère Néonatal`.**
+Le fichier de mapping n'a pas été modifié : il sort du périmètre de cette tâche.
+
+Conséquence méthodologique assumée : la page mappée étant muette sur tout le sujet, elle place
+l'intégralité de la grille au **niveau 3**. Les alignements ci-dessous citent donc
+`SSP — Ictère Néonatal`, en le signalant à chaque fois — aucun n'est présenté comme venant de la page
+mappée. Les points touchant à la sécurité néonatale ne pouvaient pas rester non arbitrés au seul
+motif d'une ligne de mapping.
+
+**Modifications**
+
+*Alignement des prises en charge*
+
+- resume · photothérapie · **niveau 2** : « Photothérapie si seuil dépassé selon **courbes de
+  l'AAP** » → « … sur le **nomogramme de Bhutani** (âge en **heures de vie** + facteurs de risque) ».
+  La section notée dit « Interprétation selon **nomogramme de Bhutani** », `theorie` a une section
+  entière intitulée « Nomogramme de Bhutani » : le bloc canonique était le seul à invoquer une
+  référence américaine, et il contredisait les deux autres.
+  source : section notée `m5` — « Mesure transcutanée ou sérique de bilirubine · Interprétation selon
+  nomogramme de Bhutani » ; corroboré par SSP — Ictère Néonatal — « **Photothérapie** selon seuils
+  **Bhutani** (âge en **heures** + facteurs de risque) »
+- resume · Examens initiaux : « Courbe percentile selon âge postnatal » → « **Report de la bilirubine
+  totale sur le nomogramme de Bhutani** (percentiles selon l'âge en **heures de vie**) ». Résout la
+  paire à 0.89 avec `theorie` et fixe l'unité de temps dans le bloc canonique.
+- resume · ictère prolongé : « persistant > **10 jours** » → « > **2 semaines** », et de même dans le
+  mnémo FEVER-YELLOW (« YELLOW = ictère prolongé > 10 jours ») et dans Touches ludiques (« persistant
+  > 10j »). La grille se contredisait : `theorie`/Types d'ictère disait « > **J14** : Prolongé » et la
+  section de queue « TSH : si ictère prolongé > **2 semaines** ». Les quatre mentions sont désormais
+  cohérentes sur 2 semaines, valeur du seuil de référence.
+  source : SSP — Ictère Néonatal — red flags, Règle d'or et Points Clés — « **Ictère prolongé > 2
+  semaines** » (×3)
+
+*Renforcement du canonique — sécurité néonatale*
+
+- resume · Traitements spécifiques : ajout de « **Jamais de photothérapie sur un ictère à bilirubine
+  conjuguée** : inefficace et exposant au « bronze baby » — c'est un bilan de cholestase qui
+  s'impose ». Le bloc canonique prescrivait la photothérapie sur un seuil de bilirubine **totale**
+  sans jamais mentionner que la fraction conjuguée en est une contre-indication. Absent de toute la
+  grille.
+  source : SSP — Ictère Néonatal, carte ECOS — « un ictère à bilirubine conjuguée ne se traite JAMAIS
+  par photothérapie (inefficace, risque de « **bronze baby** ») »
+- resume · Examens initiaux : ajout de « Toute **bilirubine conjuguée** élevée (> 20 % du total ou
+  > 17 µmol/L) est **pathologique quelle que soit la valeur** : cholestase, atrésie des voies
+  biliaires — la **chirurgie de Kasai doit être faite avant 60 jours de vie** ». La grille ne portait
+  ni le seuil de la fraction conjuguée ni la fenêtre chirurgicale, qui est le fait le plus
+  chrono-dépendant de tout l'ictère néonatal.
+  source : SSP — Ictère Néonatal, Règle d'or — « **bilirubine conjuguée > 20 % du total ou > 17
+  µmol/L** » ; Prise en charge — « **chirurgie de Kasai avant 60 jours** de vie »
+- resume · Examen clinique : ajout de « **Signes de kernictère** : léthargie, hypotonie, cris aigus,
+  opisthotonos — urgence absolue ». Le bloc canonique ne les portait pas ; ils n'existaient que dans
+  la section notée (redflags) et, partiellement, dans une réponse de `presentation`.
+  source : SSP — Ictère Néonatal, red flags — « Signes de **kernictère** (hypotonie, léthargie, cris
+  aigus, opisthotonos) »
+- theorie · Indications photothérapie · **sécurité** : le tableau de seuils indexé **par journée**
+  (J1 > 170, J2 > 260, J3 > 310, J4+ > 340 µmol/L) contredisait la section « Nomogramme de Bhutani »
+  du même bloc, qui indexe en **heures**. Les valeurs sont **conservées telles quelles** (niveau 3 :
+  rien n'a été inventé) mais leur statut est explicité — « La décision se prend en reportant la
+  bilirubine totale sur le nomogramme de Bhutani, à l'âge exact **en heures de vie**. Les valeurs
+  ci-dessous ne sont que des **ordres de grandeur par journée** » — et la ligne manquante est ajoutée :
+  « **Avant 24 h de vie, aucun seuil ne s'applique** : tout ictère y est pathologique et impose un
+  bilan d'hémolyse, pas une décision de photothérapie sur un chiffre ». Un seuil « J1 » écrasait en un
+  chiffre unique les 24 premières heures, précisément la fenêtre où le chiffre ne décide de rien.
+  source : SSP — Ictère Néonatal, carte ECOS — « Le seuil dépend de l'âge **en heures** parce que la
+  bilirubine suit une cinétique d'accumulation » ; Points Clés — « **Ictère < 24h = pathologique**
+  (hémolyse jusqu'à preuve contraire) »
+
+*Corrections factuelles (internes aux blocs)*
+
+- presentation · mnémo **FEVER-YELLOW** : « **R = Recoloration** selles (décolorées = atrésie
+  biliaire) » → « **R = Regarder les selles** (décolorées = atrésie biliaire) ». Le mnémo de drapeaux
+  rouges nommait une « recoloration » là où le signe d'alarme est une **dé**coloration : le mot
+  désignait le contraire du signe recherché. Clé R conservée.
+- presentation · mnémo FEVER-YELLOW : « E = **Early onset** < 24h » → « E = **Émergence avant 24h de
+  vie** ». Clé E conservée, valeur rendue en français — même règle clé/valeur que les glossaires de
+  schéma.
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- presentation · mnémo JAUNE : la `mnemo-box` de la Checklist mentale est **déplacée** vers « Touches
+  ludiques / mnémos » (la Checklist mentale redevient une trame pure, axe 5). Elle ne double pas
+  FEVER-YELLOW, déjà présent : JAUNE est une trame de bilan, FEVER-YELLOW une liste de drapeaux
+  rouges — les deux sont conservés.
+- theorie · Nomogramme de Bhutani : l'item « Courbes percentiles selon âge postnatal (heures) » est
+  supprimé (paire à 0.89 avec `resume`, désormais canonique sur ce point) et la section bascule sur le
+  *pourquoi* (axe 1) : « la bilirubine suit une cinétique d'accumulation, si bien qu'une même valeur
+  est rassurante à 96 h et alarmante à 24 h ». Les quatre zones de percentiles restent.
+- theorie · section de queue Examens complémentaires : « TSH : si ictère prolongé > 2 semaines » →
+  énoncé d'indication motivée (« l'hypothyroïdie congénitale ralentit la conjugaison — à demander
+  devant tout ictère dépassant 2 semaines, **même chez un enfant qui va bien** »), pour se distinguer
+  de la liste de `resume` (paire à 0.72). La section de queue est conservée à sa place, conformément
+  au § 3.
+- theorie · Types d'ictère : l'item cholestase reçoit la raison de l'urgence — « la fibrose progresse
+  vite, passé 2-3 mois le Kasai échoue et seule la transplantation reste ».
+- presentation · Q1 « Quels examens », Q2 « Traitement », Q3 « Suivi » : les trois réponses en liste
+  deviennent des **réponses orales**. Le filet de sécurité parental y est explicité au lieu d'être
+  résumé en « signes de gravité ».
+  source : SSP — Ictère Néonatal, Script ECOS — « selles très pâles (blanches/grisâtres), bébé très
+  mou ou difficile à réveiller, refus de téter […] → consultez sans attendre »
+
+**Vérifications propres à la station néonatale**
+
+- **Posologies au poids** : la zone pédagogique ne contient **aucune posologie médicamenteuse**. Les
+  seules valeurs chiffrées de `theorie`/Rappels thérapeutiques sont des réglages de photothérapie
+  (irradiance 30 puis 45-60 µW/cm²/nm, distance 30-50 cm, rotation toutes les 2-3 h), qui ne se
+  calculent pas au poids. La seule dose pondérale de la grille, « Albumine 1 g/kg si
+  hypoalbuminémie », est dans la section notée et **porte bien le `/kg`**.
+- **Seuils sans référence temporelle** : aucun ne subsiste. Les quatre seuils de photothérapie
+  portaient déjà une référence en journées ; leur statut d'ordre de grandeur et le renvoi à l'âge en
+  heures ont été explicités ci-dessus.
+- **Cohérence des deux passes antérieures** : « Visible si bilirubine > **85 μmol/L** » (conversion de
+  la parenthèse « (5 mg/dL) » retirée en tâche 2) — 85 µmol/L = 4,97 mg/dL, conversion exacte, aucune
+  mention résiduelle de `mg/dL` dans la grille. Poids de naissance en grammes : « **3 175 g** à la
+  naissance, **3 016 g** à la sortie, soit une perte de poids de **5 %** » — (3175 − 3016)/3175 =
+  5,007 %, le pourcentage du récit reste juste après la conversion, et les deux valeurs concordent
+  avec les réponses patient des critères notés « Poids de naissance » et « Poids au dernier contrôle ».
+
+**Divergences consignées**
+
+- **rattachement SSP** : voir ci-dessus. C'est la divergence principale de cette grille.
+- **seuils de photothérapie par journée** : les quatre valeurs (170 / 260 / 310 / 340 µmol/L) n'ont
+  été ni modifiées ni recalculées — ni la page mappée, ni la section notée, ni
+  `SSP — Ictère Néonatal` ne donnent de table chiffrée qui permettrait de les arbitrer. Niveau 3.
+
+### AMBOSS-38 — Douleur à la cheville, femme de 28 ans, entorse de cheville grade I-II (page SSP : Entorse de Cheville)
+
+Redondance : **15 paires → 1** (`report_redundancy.py AMBOSS-38_`). Quatre blocs présents.
+Grille de l'**axe 6** : sous-section `presentation`/Pièges ECOS traitée avec l'anti-perte.
+
+**Modifications**
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- presentation · sous-section « ⚠️ Pièges ECOS » **supprimée en entier** (axe 6). **Anti-perte
+  préalable**, deux items portés dans `expert`/Pièges avant la suppression : « Négliger facteurs
+  risque fracture stress » y devient « … **propres à cette patiente : coureuse de marathon en
+  restriction calorique (triade de l'athlète féminine / RED-S)** » — l'ancrage au cas n'existait que
+  dans la sous-section supprimée ; et « Omettre conseils prévention récidive » devient « … **au
+  premier rang la rééducation proprioceptive** », seule mention du geste dans un bloc de pièges.
+  Les trois autres items doublaient `expert` à 1.00, 0.98 et 0.88. Reproduction du geste β-hCG
+  d'AMBOSS-3.
+- presentation · mnémo OTTAWA : la `mnemo-box` de la Checklist mentale est **déplacée** vers « Touches
+  ludiques / mnémos » (la Checklist mentale redevient une trame pure, axe 5), où elle **remplace** les
+  trois sous-sections qui recopiaient `theorie` et `resume` au même format : « Classification des
+  entorses » (paires à 0.81 et 0.73), « Classification de Weber » et « PEC initiale entorse
+  (GREC/RICE) » (paires à 0.86 et 0.78). Vérification item par item avant suppression : les qualificatifs
+  de laxité (« instabilité modérée », « instabilité majeure ») manquaient à `theorie` et y ont été
+  **portés** ; les trois lignes de Weber y figuraient déjà en entier ; « Mobilisation précoce dès
+  tolérance » a été porté dans `resume`, qui ne mentionnait nulle part la remise en charge (voir
+  ci-dessous).
+- theorie · Règles d'Ottawa : l'énumération des six critères est **supprimée** au profit du *pourquoi*
+  (axe 1) — sensibilité 98-100 % lue comme une **règle d'exclusion** (30 à 40 % de radiographies
+  évitées), raison du bord postérieur, limites d'applicabilité. **Anti-perte préalable** : les
+  critères ont d'abord été rendus complets dans `resume` — la distinction Rx cheville / Rx pied selon
+  la zone douloureuse, les 6 cm distaux, le naviculaire, et « à la fois immédiatement après le
+  traumatisme **et à la consultation** » pour les 4 pas.
+- presentation · Q1 diagnostics, Q1 examens, Q1 et Q2 prise en charge, Q1 prévention : les **cinq**
+  réponses en liste deviennent des **réponses orales**. Contenu intégralement conservé.
+
+*Alignement des prises en charge — niveau 1*
+
+- resume · Prise en charge : ajout de « **Mise en charge et mobilisation précoces dès la tolérance :
+  elles font mieux que l'immobilisation prolongée** ». La remise en charge précoce était répétée trois
+  fois dans la grille (`expert`, `theorie`, Touches ludiques — trois paires de redondance) et absente
+  du bloc canonique, c'est-à-dire absente de là où l'étudiant révise le traitement.
+  source : SSP — Prise en charge — « **Mise en charge précoce** selon douleur (**mieux que
+  l'immobilisation prolongée**) »
+- resume · Traitement complémentaire · **sécurité** : ajout de « **Thromboprophylaxie** à discuter si
+  immobilisation stricte en décharge avec facteurs de risque ». Absente de toute la grille, alors que
+  la page SSP la mentionne deux fois.
+  source : SSP — Prise en charge — « **Prophylaxie thrombo-embolique** à discuter en cas
+  d'immobilisation stricte avec FdR » ; carte ECOS — « Ne pas oublier la **thromboprophylaxie** si
+  immobilisation stricte + décharge »
+- resume · Examen clinique · **sécurité** : ajout de « **Palpation systématique de la fibula
+  proximale** — une fracture de Maisonneuve siège au col, très à distance de la cheville » et de
+  « **Test de Thompson** si claquement dans le mollet ou perte de propulsion (rupture du tendon
+  d'Achille) ». La palpation de la fibula proximale n'était citée que comme piège en bloc expert,
+  jamais comme geste d'examen ; la rupture du tendon d'Achille était absente de la grille entière
+  alors que `resume` interroge d'emblée sur un « craquement ».
+  source : SSP — En Bref — « **Toujours rechercher : fracture de Maisonneuve** (fibula proximale) » ;
+  carte ECOS — « La palpation de la **fibula proximale** (col/tête) — **systématique** devant toute
+  entorse de cheville » ; Pièges — « Le **claquement** + impossibilité de propulsion n'est pas une
+  entorse grave — exclure la **rupture du tendon d'Achille** (Thompson) »
+- resume · Points clés : ajout de « **Mollet douloureux** après une entorse = exclure une **TVP**
+  (score de Wells ou de Genève, écho-doppler) ; **cheville chaude ou fébrile** = ponction, jamais une
+  simple entorse ». Deux des quatre Points Clés ECOS de la page SSP, absents de la grille.
+  source : SSP — Points Clés ECOS (items 3 et 4)
+- resume · Imagerie : ajout de « Radiographie de **jambe entière** si suspicion de fracture de
+  Maisonneuve » — la radiographie de cheville seule y est normale ou peu parlante.
+  source : SSP — Examens complémentaires — « **Rx jambe** si suspicion de Maisonneuve »
+- resume · mécanisme : « Mécanisme en inversion ou éversion » → correspondance mécanisme → ligament
+  (« inversion (supination) → **LTFA** ± calcanéo-fibulaire ± talo-fibulaire postérieur ; éversion
+  (plus rare, plus sévère) → **ligament deltoïde** ± syndesmose »), ce qui différencie l'item de
+  `theorie` (paire à 0.85), qui garde l'épidémiologie chiffrée.
+  source : SSP — En Bref
+- resume · antalgie : « paracétamol ± **AINS** » → « paracétamol ± **ibuprofène en cure courte** ».
+  source : SSP — Prise en charge — « Antalgie palier OMS (paracétamol, **ibuprofène courte durée**) »
+
+*Corrections factuelles (internes aux blocs)*
+
+- resume · « Test en varus forcé (**stabilité sous-talienne**) » → « **Inversion forcée (talar tilt)** :
+  bâillement augmenté = atteinte du **ligament calcanéo-fibulaire ± LTFA** ». Le test d'inversion
+  forcée explore les ligaments latéraux de la cheville, non l'articulation sous-talienne : le libellé
+  désignait la mauvaise structure.
+  source : SSP — Tests spécifiques, tableau — « **Inversion forcée (talar tilt)** […] Bâillement
+  augmenté = atteinte du **LCF** ± LTFA »
+- presentation · mnémo **OTTAWA**, deux clés fausses corrigées, clés d'origine conservées :
+  « T = **Talon** / 5e métatarsien douloureux » → « T = **Tubérosité de la base du 5e métatarsien** »
+  (le calcanéus n'est **pas** un critère d'Ottawa — le mnémo faisait entrer un os étranger à la
+  règle) ; « A = **Articulation** malléolaire latérale » → « A = **Arête postérieure de la malléole
+  latérale (6 cm)** » (le critère porte sur le bord postérieur de l'os, non sur l'articulation, et
+  c'est précisément la distinction qui fait la valeur de la règle). La clé « T = Tibia » reçoit la
+  même précision, et la dernière clé A, « Anamnèse traumatique », devient « **Applicable ?** Ni avant
+  18 ans, ni si intoxication, polytraumatisme, déficit sensitif ou trauma de plus de 10 jours » —
+  les limites d'applicabilité étaient absentes de toute la grille.
+  source : SSP — Règles d'Ottawa, pocketcard ; carte ECOS — « on palpe le **bord postérieur** de la
+  malléole, car c'est là que court la corticale osseuse » ; « **Piège :** non applicable si < 18 ans,
+  intoxication, polytraumatisme, déficit sensitif ou trauma > 10 jours »
+- theorie · Règles d'Ottawa : la limite pédiatrique reçoit sa raison — « plaques de croissance non
+  visibles sur radiographie standard, seuil abaissé ».
+  source : SSP — Pièges
+- theorie · Rappels thérapeutiques : « Cryothérapie : **10-20** min » → « **15-20** min », aligné sur
+  `resume` (canonique) qui disait déjà 15-20 ; « pas direct sur peau » → « **jamais à même la peau** »,
+  formule reprise dans `resume`.
+- theorie · PEACE & LOVE : « - Avoid anti-inflammatoires : retardent guérison » → « … **à limiter en
+  phase aiguë**, ils retardent la cicatrisation — **ibuprofène en cure courte si la douleur
+  l'exige** ». L'item posait une interdiction que la page SSP ne pose pas. Clé « Avoid » conservée
+  (mnémo), valeur nuancée.
+  source : SSP — Prise en charge — « ibuprofène **courte durée** »
+- theorie · Entorse de cheville : ajout de l'ordre de rupture des ligaments latéraux et de son
+  corollaire — « une rupture complète peut être **moins douloureuse** qu'une rupture partielle, les
+  fibres nociceptives étant sectionnées : **ne jamais grader sur la seule douleur** ».
+  source : SSP — carte ECOS sur les grades
+
+- expert · Points clés : réécrits en registre d'**observation d'examinateur** (axe 7) ; la paire à
+  0.73 avec `theorie` sur la mobilisation précoce tombe, le geste vivant désormais dans `resume`
+  (canonique) et sa temporalité (« J2-3 si toléré ») dans `theorie`/Rappels.
+
+**Divergences consignées**
+
+- **une paire de redondance restante**, acceptée : `resume`/« Tests de stabilité ligamentaire (tiroir
+  antérieur, varus forcé) » face à `expert`/« Tests ligamentaires : tiroir antérieur négatif, varus
+  forcé douloureux ». Ce sont deux rôles distincts — la check-list de ce qu'il faut faire d'un côté,
+  le **résultat de station** que l'expert délivre de l'autre. Même arbitrage qu'en AMBOSS-30.
+
+**Signalements de sécurité** — **quatre**, tous corrigés :
+1. **Thromboprophylaxie absente de la grille entière**, alors que le traitement proposé comprend
+   l'immobilisation par attelle et que la page SSP la mentionne deux fois.
+2. **Rupture du tendon d'Achille jamais évoquée**, ni le test de Thompson, alors que `resume`
+   interroge d'emblée sur un craquement — c'est le piège explicite de la page SSP.
+3. **Palpation de la fibula proximale absente de l'examen clinique canonique** (elle n'existait que
+   comme piège), dans une grille dont le diagnostic différentiel comprend la fracture de Maisonneuve.
+4. **Mnémo OTTAWA enseignant deux critères faux** — le talon (calcanéus), qui n'appartient pas à la
+   règle, et l'« articulation » malléolaire à la place du bord postérieur de l'os, c'est-à-dire
+   exactement la distinction dont dépend la sensibilité de la règle.
+
+### AMBOSS-39 — Douleur à l'épaule, homme de 52 ans, rupture du supra-épineux (page SSP : Douleur d'Épaule)
+
+Redondance : **11 paires → 0** (`report_redundancy.py AMBOSS-39_`). Quatre blocs présents.
+Grille de l'**axe 6** : sous-section `presentation`/Pièges ECOS traitée avec l'anti-perte.
+
+**Vérification de la substitution de la tâche 3 (Vicodin → Tramal®)**
+
+Substitution **cohérente et complète**. Les cinq mentions du corpus de la grille disent toutes
+« Tramal® (tramadol) » : critère noté `6. Médicaments` (« J'ai essayé du Tramal® (tramadol) de ma
+copine, qu'il lui restait d'une chirurgie l'année dernière »), Checklist mentale, Version longue,
+scénario du patient standardisé (« Mentionner usage Tramal® (tramadol) copine »). **Aucune**
+occurrence résiduelle de « Vicodin » ni d'« hydrocodone ». L'effet indésirable du récit,
+**étourdissements**, reste plausible et même typique du tramadol (vertiges chez ~ 1 patient sur 4,
+effet indésirable le plus fréquent après les nausées). La qualification d'« opioïde non prescrit »
+qui structure `expert`/Points clés, `expert`/Pièges et le critère noté « Conseil sur l'utilisation
+d'opioïdes sur ordonnance » reste exacte : le tramadol est bien un analgésique opioïde (agoniste μ
+faible et inhibiteur de la recapture des monoamines).
+
+**Modifications**
+
+*Renforcement du canonique — sécurité*
+
+- resume · Examens diagnostiques · **sécurité, niveau 1** : ajout de « **ECG et troponines** devant
+  toute **épaule gauche** douloureuse **après 50 ans** : un SCA peut se projeter là et n'y donner
+  aucun signe local ». Le patient a 52 ans et consulte pour une épaule **gauche**. La cause cardiaque
+  n'existait dans la grille que sous forme de deux allusions en bloc expert (« Auscultation thorax :
+  normale (éliminer cause cardiaque) », « Oublier causes cardiaques épaule gauche ») — jamais dans le
+  bloc canonique, jamais comme examen à demander. C'est le **premier piège éliminatoire** de la page SSP.
+  source : SSP — pièges éliminatoires — « **Manquer SCA atypique (ECG systématique chez > 50 ans)** » ;
+  Red flags — « Douleur épaule **gauche** + douleur thoracique + dyspnée ou sueurs → **SCA** (douleur
+  projetée) · **ECG** STAT + **troponines** » ; Points Clés — « Ne pas oublier les causes viscérales :
+  **SCA (épaule G)** »
+- resume · Points clés : ajout de « Avant de conclure à une cause locale : écarter les **causes
+  projetées** — SCA pour l'épaule gauche, cholécystite ou abcès sous-phrénique pour la droite, tumeur
+  de Pancoast — et **toujours examiner le rachis cervical** ».
+  source : SSP — Points Clés ECOS (items 1 et 2)
+- resume · Tests spécifiques : ajout de l'**examen du rachis cervical (manœuvre de Spurling)** —
+  « une névralgie cervico-brachiale C5-C6 mime parfaitement une tendinopathie d'épaule ». Absent de
+  la grille entière, alors que c'est le premier des Pièges de la page SSP.
+  source : SSP — Pièges — « **Omettre l'examen cervical** : une névralgie cervico-brachiale C5-C6
+  **mime parfaitement** une tendinopathie de l'épaule » ; Points Clés — « **Toujours examiner le
+  rachis cervical** […] manœuvre de Spurling »
+- resume · Examens diagnostiques : ajout de « **VS et CRP** si douleur bilatérale des ceintures avec
+  raideur matinale après 50 ans : **polymyalgie rhumatismale**, à ne pas dissocier d'une **artérite de
+  Horton** ». Le patient a 52 ans ; ni la PPR ni Horton n'apparaissaient dans la grille.
+  source : SSP — Red flags — « **> 50 ans** : douleur ceintures scapulaire et pelvienne bilatérale +
+  raideur matinale + **VS > 50 mm/h** → **Polymyalgie rhumatismale** ± **artérite de Horton** » ;
+  Points Clés
+- resume · Tests spécifiques : ajout du **drop-arm** (« chute brutale du bras à la descente = rupture
+  massive, avis chirurgical ») et de l'**arc douloureux 60-120° avec Neer et Hawkins**, qui
+  n'existaient que dans `theorie` et dans une sous-section de `presentation`.
+
+*Corrections factuelles (internes aux blocs)*
+
+- theorie · Tests cliniques : « **Patte (lift-off)** : infra-épineux/petit rond » → « **Patte :
+  rotation externe contrariée en abduction à 90°** — infra-épineux et petit rond. **À ne pas confondre
+  avec le lift-off, qui est le test de Gerber** ». La liste attribuait le **même** test — le lift-off —
+  à deux manœuvres différentes, deux lignes de suite (« Patte (lift-off) », puis « Gerber
+  (lift-off) »), et contredisait `resume`, qui distingue correctement « Test du Patte : rotation
+  externe contrariée » et « Lift-off test (sous-scapulaire) ». `resume` étant canonique et exact, c'est
+  `theorie` qui a été corrigé.
+- resume · « Lift-off test (sous-scapulaire) » → « **Lift-off test de Gerber** (sous-scapulaire) »,
+  l'éponyme n'existant que dans `theorie` et `presentation`.
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- presentation · sous-section « ⚠️ Pièges ECOS » **supprimée en entier** (axe 6). **Anti-perte
+  préalable** : « Toujours comparer mobilité active vs passive » a été porté dans `expert`/Pièges
+  (« **Ne pas comparer systématiquement la mobilité active à la mobilité passive — c'est ce qui sépare
+  la coiffe de l'atteinte articulaire** »), où aucun item ne le portait ; le contenu clinique existait
+  dans `resume` mais le **piège**, lui, n'existait nulle part ailleurs. Les quatre autres items
+  doublaient `expert` à 0.92, 0.74 et 0.73. Reproduction du geste β-hCG d'AMBOSS-3.
+- presentation · mnémo COIFFE : la `mnemo-box` de la Checklist mentale est **déplacée** vers « Touches
+  ludiques / mnémos » (la Checklist mentale redevient une trame pure, axe 5), où elle **remplace** la
+  sous-section « Tests spécifiques épaule » — liste recopiant `theorie`/Tests cliniques au même
+  format, porteuse à elle seule de quatre paires dont **deux à 1.00** (« Gerber (lift-off) :
+  subscapulaire » et « arc douloureux 60-120° = conflit sous-acromial ») et une à 0.94. Vérification
+  item par item avant suppression : les cinq tests ont d'abord été rendus présents dans `resume`
+  (arc douloureux, Neer et Hawkins avec leur technique y ont été **ajoutés**), `theorie` conservant
+  Jobe, Patte, Gerber et drop-arm avec leur signification. La sous-section « Facteurs de risque
+  rupture coiffe » est **conservée** : elle porte les ancrages professionnels du cas (peintre,
+  carreleur, tennis) que le bloc canonique ne nomme pas.
+- theorie · Tests cliniques : la liste bascule sur le *pourquoi* (axe 1) — ce que chaque manœuvre
+  démontre, et surtout la hiérarchie qui les ordonne : « le premier partage n'est pas un test mais une
+  comparaison : mobilité active diminuée avec passive conservée = atteinte de la coiffe ; les deux
+  diminuées, surtout en rotation externe = atteinte articulaire ». La Se 86 % / Sp 50 % de Jobe y est
+  lue (« sensible mais peu spécifique, il ouvre la question du supra-épineux, il ne la tranche pas »).
+  source : SSP — Pièges — « Confondre limitation **active vs passive** : passive normale + active
+  diminuée = **coiffe** ; toutes deux diminuées = **articulation** (capsulite, arthrose) »
+- theorie · Anatomie : « Supra-épineux : abduction, plus fréquemment lésé » → « … **de loin le plus
+  fréquemment lésé (environ 90 % des ruptures de coiffe)** » — le chiffre n'existait que dans
+  `expert`/Points clés, réécrit par l'axe 7.
+- presentation · Q1 examens, Q1 et Q2 prise en charge, Q1 prévention : les **quatre** réponses en
+  liste deviennent des **réponses orales**. La réponse « examens » y gagne l'ECG (cohérence avec
+  `resume`) et la réponse « traitement initial » le conseil sur le tramadol non prescrit, qui était
+  porté par la sous-section Pièges supprimée.
+- presentation · argument POUR « Douleur nocturne empêchant le sommeil » → « **Douleur nocturne
+  invalidante, signe fort de rupture** » : l'item recopiait `resume` au caractère près (paire à
+  **1.00**) ; un argument doit argumenter, non décrire — c'est le changement de format que la règle
+  exige.
+- expert · Points clés : réécrits en registre d'**observation d'examinateur** (axe 7).
+
+**Signalements de sécurité** — **trois**, tous corrigés :
+1. **Aucun ECG ni troponine dans le bloc canonique** d'une station de douleur d'**épaule gauche** chez
+   un homme de **52 ans**, alors que « manquer un SCA atypique — ECG systématique chez > 50 ans » est
+   le piège éliminatoire n° 1 de la page SSP. La cause cardiaque n'était qu'allusive, en bloc expert.
+2. **Examen du rachis cervical absent de la grille entière** : la névralgie cervico-brachiale C5-C6,
+   qui mime la tendinopathie d'épaule, n'était ni dans l'examen clinique ni dans le diagnostic
+   différentiel.
+3. **Le lift-off attribué à deux tests différents** dans la même liste de `theorie` — un candidat
+   suivant ce bloc explore le sous-scapulaire en croyant tester l'infra-épineux.
+
+**Vérifications communes aux quatre grilles**
+
+- `check_invariants.py` → `OK — 40 grilles, tous les invariants preserves` (code 0). Les champs gelés
+  couvrent `maxScores`, `scoreSpans`, `criteriaCount`, `detailCount`, `radioCount`, `checkboxCount` :
+  **barème inchangé**, aucun sous-item noté ajouté ni retiré sur les quatre grilles.
+- `check_nomenclature.py` → `OK — aucun terme non suisse detecte` (code 0). Aucune valeur en `g/dL`,
+  `ng/mL`, `pg/mL`, `/mm³`, en livres ni en unité implicite n'a été introduite ; les seules unités
+  ajoutées sont `µmol/L` (bilirubine conjuguée, AMBOSS-37) et `mmHg` (AMBOSS-35).
+- `check_no_loss.py 544ea59` : 22 items signalés sur AMBOSS-35, 14 sur AMBOSS-37, 43 sur AMBOSS-38 et
+  35 sur AMBOSS-39, **tous relus un par un**. Aucune perte : ce sont des reformulations, des
+  corrections assumées et documentées ci-dessus, ou des passages de liste à réponse orale. Les items
+  supprimés au titre de l'axe 6 ou de la règle du format ont été comparés au bloc canonique **avant**
+  suppression, et ce qui leur était propre y a été porté d'abord.
+- Aucun `.criteria-text` ni crochet de réponse patient touché ; items ICE du critère `m4` intacts ;
+  aucun bloc créé. Équilibre `<div>` / `</div>` du fichier entier vérifié à zéro sur les quatre grilles.
+- Redondance globale de ces quatre grilles : **40 paires → 2**.
