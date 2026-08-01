@@ -3143,12 +3143,12 @@ Pas de sous-section `presentation`/Pièges ECOS — vérifié, l'axe 6 ne s'appl
 3. **« Le test à la nitroglycérine suggère un angor »** en bloc expert — un test non discriminant
    présenté comme argument diagnostique, exactement le raisonnement que la station veut faire échouer.
 
-### AMBOSS-37 — Changements cutanés, nouveau-née de 4 jours, ictère d'allaitement (page SSP mappée : Éruption Cutanée)
+### AMBOSS-37 — Changements cutanés, nouveau-née de 4 jours, ictère d'allaitement (page SSP : Ictère Néonatal — rattachement corrigé le 2026-08-01)
 
 Redondance : **5 paires → 0** (`report_redundancy.py AMBOSS-37_`). Quatre blocs présents.
 Pas de sous-section `presentation`/Pièges ECOS — vérifié, l'axe 6 ne s'applique pas.
 
-**Divergence de rattachement — à arbitrer en priorité**
+**Divergence de rattachement — arbitrée et corrigée le 2026-08-01** (voir l'addendum en fin d'entrée)
 
 `docs/obsidian-mapping.yaml` rattache AMBOSS-37 à **`SSP ECOS/SSP — Éruption Cutanée.md`**, page de
 dermatologie qui ne contient **aucune** occurrence d'« ictère », « bilirubine », « nouveau-né »,
@@ -3160,6 +3160,7 @@ Le vault possède une page exactement adéquate, **`SSP ECOS/SSP — Ictère Né
 rattachée à la seule USMLE-18 (« Garçon 5 jours, la peau et les yeux jaunes ») — le même tableau
 clinique à un jour près. **Recommandation : rerattacher AMBOSS-37 à `SSP — Ictère Néonatal`.**
 Le fichier de mapping n'a pas été modifié : il sort du périmètre de cette tâche.
+*(Recommandation suivie le 2026-08-01 — `arbitrages-amboss-2026-08.md` § 1.1. Voir l'addendum.)*
 
 Conséquence méthodologique assumée : la page mappée étant muette sur tout le sujet, elle place
 l'intégralité de la grille au **niveau 3**. Les alignements ci-dessous citent donc
@@ -3280,6 +3281,147 @@ motif d'une ligne de mapping.
 - **seuils de photothérapie par journée** : les quatre valeurs (170 / 260 / 310 / 340 µmol/L) n'ont
   été ni modifiées ni recalculées — ni la page mappée, ni la section notée, ni
   `SSP — Ictère Néonatal` ne donnent de table chiffrée qui permettrait de les arbitrer. Niveau 3.
+
+---
+
+**Addendum du 2026-08-01 — rattachement corrigé, alignement régularisé**
+
+Décision : `docs/superpowers/arbitrages-amboss-2026-08.md` § 1.1. `docs/obsidian-mapping.yaml` déplace
+l'entrée d'AMBOSS-37 de `SSP ECOS/SSP — Éruption Cutanée.md` vers `SSP ECOS/SSP — Ictère Néonatal.md`,
+libellé inchangé, placée avant USMLE-18 conformément au `CORPUS_ORDER` de
+`scripts/build_obsidian_mapping.py` (amboss = 0 < usmle = 3).
+
+**Conséquence sur la hiérarchie du § 4.** La page de référence n'est plus muette : les alignements de
+la tâche 12 ci-dessus, qui citaient `SSP — Ictère Néonatal` en signalant que le mapping disait autre
+chose, cessent d'être des dérogations et deviennent des **niveaux 1** ordinaires. Aucun n'a eu à être
+défait. Les trois corrections antérieures sont revérifiées et cohérentes :
+
+- « Visible si bilirubine > **85 μmol/L** » — parenthèse mg/dL retirée, valeur SI seule. Conservée.
+- Poids de naissance **3 175 g** / **3 016 g**, perte **5 %**. Conservés, calcul revérifié.
+- Contre-indication de photothérapie sur bilirubine conjuguée et fenêtre de **Kasai < 60 jours**
+  (tâche 12) — toutes deux confirmées mot pour mot par la page : Prise en charge — « **chirurgie de
+  Kasai avant 60 jours** de vie » ; carte ECOS — « un ictère à bilirubine conjuguée ne se traite
+  JAMAIS par photothérapie (inefficace, risque de « bronze baby ») ». `theorie`/Types d'ictère porte
+  la raison de la fenêtre (« passé 2-3 mois le Kasai échoue »), corroborée par la carte ECOS de la
+  page (« passé ~2-3 mois, la cirrhose est constituée et le Kasai échoue → seule la transplantation
+  reste »). Rien à défaire.
+
+**Modifications — niveau 1, la page SSP tranche**
+
+*Prise en charge*
+
+- resume · Traitements spécifiques : ajout de « **Exsanguino-transfusion** si la bilirubine dépasse le
+  seuil critique du nomogramme ou devant des signes de kernictère ». Le bloc canonique s'arrêtait à la
+  photothérapie ; l'exsanguino-transfusion n'existait que dans une `therapy-section` de la section
+  notée `m4` et dans une réponse orale de `presentation` — donc nulle part dans la source de révision.
+  Graphie hyphénée reprise de la section notée.
+  source : SSP — Ictère Néonatal, Prise en charge — « **Exsanguinotransfusion** si bilirubine > seuil
+  critique ou signes de **kernictère** »
+- resume · Traitements spécifiques : ajout de « **Immunoglobulines IV** si hémolyse allo-immune
+  documentée (incompatibilité ABO ou Rh) ». **Absent de la grille entière** — ni `resume`, ni
+  `theorie`, ni `expert`, ni la section notée. Directement pertinent ici : la mère est O positif, le
+  groupe de l'enfant est inconnu et l'incompatibilité ABO est le 3ᵉ diagnostic différentiel de la
+  station.
+  source : SSP — Ictère Néonatal, Prise en charge — « **Immunoglobulines IV** si **hémolyse
+  allo-immune** (ABO/Rh) »
+
+*Bilan étiologique*
+
+- resume · En cas de doute : « Groupe sanguin mère/enfant + test de Coombs » → « Groupe sanguin
+  **ABO/Rh** mère/enfant + test de Coombs **direct** ».
+  source : SSP — Ictère Néonatal, Examens complémentaires — « **Groupe ABO/Rh mère et bébé + Coombs
+  direct** »
+- resume · En cas de doute : « Hémogramme, réticulocytes » → « Hémogramme, réticulocytes, **frottis
+  sanguin** ». Le frottis manquait aux quatre blocs et à la section notée, alors qu'il porte à lui
+  seul la distinction sphérocytose / schizocytes.
+  source : SSP — Ictère Néonatal, Examens complémentaires — « NFS, réticulocytes, **frottis**
+  (hémolyse, sphérocytose) » (« NFS » rendu par « Hémogramme » : `check_nomenclature.py` bannit `NFS`)
+- resume · En cas de doute : « Évaluation hépatique si ictère à bilirubine conjuguée » →
+  « **Échographie hépatobiliaire + bilan hépatique complet (± scintigraphie biliaire)** si ictère à
+  bilirubine conjuguée **ou prolongé au-delà de 2 semaines** ». L'item nommait un examen générique là
+  où la page nomme trois examens et deux déclencheurs, dont l'ictère prolongé, que la grille ne
+  raccordait à aucune imagerie.
+  source : SSP — Ictère Néonatal, Examens complémentaires — « Si ictère > 2 sem ou conjuguée élevée :
+  **échographie hépatobiliaire** + **bilan hépatique complet** + **scintigraphie biliaire** »
+- theorie · section de queue Examens complémentaires : « Échographie **abdominale** : si selles
+  décolorées » → « Échographie **hépatobiliaire** : si bilirubine conjuguée élevée, selles décolorées
+  ou ictère au-delà de 2 semaines ». Même élargissement, même source. La section de queue reste à sa
+  place (§ 3) et garde sa forme « examen : quand / pourquoi », distincte de la liste de `resume`.
+
+*Correction factuelle — la page contredit la grille*
+
+- theorie · section de queue Examens complémentaires : « Test de Coombs : **positif dans
+  incompatibilités** » → « Test de Coombs : **souvent faiblement positif, voire négatif, dans
+  l'incompatibilité ABO** — une hémolyse réelle peut exister malgré un Coombs peu parlant ».
+  L'énoncé antérieur était faux dans le sens dangereux : il autorisait à écarter une hémolyse ABO sur
+  un Coombs négatif, chez une enfant dont la mère est O positif. Il doublait par ailleurs l'item
+  « Groupe sanguin mère et enfant + Coombs : si suspicion hémolyse » deux lignes plus haut, qui reste
+  seul à porter l'indication.
+  source : SSP — Ictère Néonatal, carte ECOS « Bilan d'un ictère néonatal évoquant une hémolyse »,
+  piège — « dans l'incompatibilité ABO, le **Coombs direct est souvent faiblement positif, voire
+  négatif** : une hémolyse réelle peut exister malgré un Coombs peu parlant »
+
+*Facteurs abaissant le seuil*
+
+- theorie · Indications photothérapie : ajout de « - **Hypoalbuminémie** » à la liste des facteurs de
+  risque, et du *pourquoi* (rôle exclusif du bloc) — « Ces facteurs déplacent la bilirubine de
+  l'albumine ou abaissent le seuil de neurotoxicité : l'atteinte neurologique peut survenir à une
+  bilirubine totale par ailleurs jugée rassurante ». L'hypoalbuminémie manquait à la liste alors que
+  la section notée `m4` agit déjà dessus (« Albumine 1 g/kg si hypoalbuminémie ») : la grille traitait
+  un facteur qu'elle n'avait jamais listé.
+  source : SSP — Ictère Néonatal, carte ECOS « Signes de kernictère », piège — « l'**acidose**,
+  l'**hypoalbuminémie**, la **prématurité**, le **sepsis** et certains médicaments **DÉPLACENT la
+  bilirubine de l'albumine** : la toxicité peut donc survenir à des taux totaux jugés rassurants »
+
+*Précision d'examen clinique*
+
+- resume · Examen clinique : « Évaluation de la coloration cutanée (zones céphalocaudales) » → « … —
+  **estimation visuelle peu fiable au-delà du tronc et trompeuse selon la carnation : confirmer par
+  bilirubinométrie transcutanée ou dosage sanguin** ». La page qualifie deux fois l'appréciation
+  visuelle d'insuffisante ; la grille la prescrivait sans réserve.
+  source : SSP — Ictère Néonatal, Examen clinique — « Évaluation visuelle (cephalo-caudale, **peu
+  fiable au-delà du tronc**) ; **bilirubinométrie transcutanée** » ; carte ECOS photothérapie,
+  piège — « l'estimation visuelle est très imprécise (et trompeuse selon la carnation) →
+  **bilirubine transcutanée ou sanguine, toujours** »
+
+**Barème** : inchangé. Aucun sous-item noté ajouté ni retiré, `window.caseConfig.maxScores`
+(`anamnese: 45, examen: 2, management: 16, communication: 20`) et les `<span class="score">` intacts,
+`baseline.json` non régénéré — la règle 2 de la décision de cadrage ne s'applique pas.
+`check_invariants.py` → `OK — 40 grilles` · `check_nomenclature.py` → `OK` ·
+`report_redundancy.py AMBOSS-37_` → **0 paire avant, 0 paire après**.
+
+`check_no_loss.py c7ddca8 AMBOSS-37_` signale **4 items**, tous verdictés comme reformulations en
+place, aucune perte :
+
+| Item signalé | Verdict |
+|---|---|
+| « évaluation de la coloration cutanée (zones céphalocaudales) » | Conservé mot pour mot comme début de l'item enrichi |
+| « évaluation hépatique si ictère à bilirubine conjuguée » | Remplacé par un sur-ensemble strict (3 examens nommés, déclencheur élargi) |
+| « échographie abdominale si selles décolorées » | Remplacé par un sur-ensemble strict ; « selles décolorées » reste un déclencheur |
+| « test de Coombs positif dans incompatibilités » | Énoncé faux, corrigé. Le lien Coombs ↔ incompatibilité subsiste dans `theorie` (item groupe + Coombs), dans `annexe-dd` (« → Groupage sanguin + test de Coombs ») et dans la section notée `m2` |
+
+**Divergences consignées — addendum**
+
+- **TSH conditionnée à l'ictère prolongé** : la page liste la TSH dans le bilan sans condition
+  (Examens complémentaires ; carte ECOS du bilan d'hémolyse), la grille la conditionne à « > 2
+  semaines » dans `resume` **et** dans `theorie`. Non corrigé : ce n'est pas une contradiction mais un
+  resserrement défendable, et il est motivé par la vignette elle-même — le dépistage néonatal d'Emma
+  est déclaré normal, ce que `annexe-dd` relève déjà (« Hypothyroïdie congénitale — dépistage néonatal
+  normal »). Niveau 3.
+- **`presentation`/Touches ludiques, ictère au lait maternel « J7-J15 »** : `theorie` et `annexe-dd`
+  disent « début J4-J7, pic J10-J15 ». Le mnémo compresse les deux en une plage unique. La page SSP ne
+  date pas cet ictère : rien à arbitrer (niveau 3), et l'écart reste interne à un aide-mémoire.
+- **`theorie`, pic physiologique J3-5 (Épidémiologie) vs J4-J7 (Types selon timing)** : même nature,
+  même niveau 3 — la page ne date pas le pic.
+- **Hors zone pédagogique, à traiter par le balayage du groupe 2.1** : la `therapy-section` de `m4`
+  porte « Supplémentation temporaire si perte **10%** poids » et « Arrêt si **2 valeurs seuil** », deux
+  signes de comparaison manquants (`> 10 %` et `2 valeurs < seuil`). Les formes correctes existent
+  ailleurs dans la grille — `resume`/Examen clinique « > 10 % = inquiétant », `theorie`/Optimisation
+  « uniquement si perte > 10% », `theorie`/Rappels « 2 valeurs < seuil à 12-24h intervalle ». La
+  première figure nommément dans la liste des 14 occurrences du § 2.1 des arbitrages (« perte 10%
+  poids ») ; la seconde n'y figure pas et est signalée ici. **Non corrigées** : hors de `peda_bounds`
+  et relevant d'un balayage décidé séparément, qui doit les traiter d'un seul geste sur les 10
+  grilles concernées.
 
 ### AMBOSS-38 — Douleur à la cheville, femme de 28 ans, entorse de cheville grade I-II (page SSP : Entorse de Cheville)
 
