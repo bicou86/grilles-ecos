@@ -5887,3 +5887,328 @@ d'atteignabilité — les 39 autres n'en avaient jamais eu.
   modifié** ; réponses patient 54 → 50, les quatre retirées étant celles du critère ;
   sous-items notés 59 → 54 (les 4 d'`a12b` + 1 de `m6`), **aucun ajouté** ; **aucun item
   ICE touché** ; `radioCount` inchangé.
+
+### Tâche c6 — alignements sur les référentiels actuels (arbitrages § « Groupe 4 »)
+
+Sept points, cinq grilles. **Aucun n'a relevé de la règle 2** : la vérification préalable
+a montré qu'aucun sous-item noté n'était concerné (détail ci-dessous, point [8]). Toutes
+les corrections tombent donc sous la **règle 1** — correction factuelle sans changement
+de structure. `maxScores`, `<span class="score">` et `sectionInfo[].count` sont **intacts
+sur les 40 grilles**, `baseline.json` n'a pas été régénéré, et la simulation de
+remplissage complet rend **100 %** sur les cinq grilles touchées.
+
+#### [7] AMBOSS-31 — dépistage du cancer pulmonaire par CT faible dose
+
+**Modification**
+
+- theorie · Cancer du poumon : « Dépistage : CT faible dose si 55-80 ans + 30 PA »
+  → « Dépistage : CT thoracique faible dose annuel si 50-80 ans + 20 PA, tabagisme actif
+  ou sevré depuis moins de 15 ans (critères USPSTF 2021) », **plus un item ajouté** :
+  « En Suisse : pas de programme de dépistage organisé du cancer pulmonaire —
+  l'indication se discute au cas par cas chez le fumeur à haut risque ».
+
+source : les seuils portés par la grille (55-80 ans, 30 PA) sont ceux du **NLST /
+USPSTF 2013** ; l'USPSTF les a abaissés en **2021** à 50-80 ans et 20 paquets-années.
+Erreur factuelle datée, corrigée directement (PROCEDURE § 4, dernier paragraphe).
+
+`SSP — Toux Chronique` **ne mentionne aucun dépistage** — ni organisé, ni opportuniste :
+la seule occurrence du couple âge/tabac y est un **drapeau rouge diagnostique**,
+« Toux + tabac ≥ 20 PA + AEG / amaigrissement chez patient > 50 ans → Cancer
+broncho-pulmonaire · Rx thorax en urgence » (§ Red flags), repris à l'identique en carte
+ECOS. La page ne tranchait donc pas le point, mais ses propres seuils (**≥ 20 PA**,
+**> 50 ans**) coïncident avec les critères 2021 et non avec ceux de 2013 : la grille
+était en écart avec sa page de référence sur les chiffres, sans la contredire
+formellement. Le second item — absence de programme organisé en Suisse — est ajouté
+parce que c'est le point qui décide, pour un candidat suisse, si la question se pose en
+station ; il n'existait nulle part dans le corpus.
+
+Ajout d'un `<li>` en `theorie` : bloc **non noté**, invisible à `snapshot_one()` (qui ne
+compte pas les `<li>`), sans effet sur le barème.
+
+#### [8] AMBOSS-19 — classification GOLD A/B/C/D → ABE (2023)
+
+**Modifications**
+
+- theorie / Rappels thérapeutiques : les quatre items `GOLD A / B / C / D` deviennent
+  `GOLD A / B / E` **plus un item explicitant la réforme**. Le compte d'items est
+  inchangé (4 → 4).
+  - `GOLD A : SABA (salbutamol) ou SAMA (ipratropium) prn` → « GOLD A (peu symptomatique,
+    au plus 1 exacerbation modérée) : un bronchodilatateur — SABA (salbutamol) ou SAMA
+    (ipratropium) prn »
+  - `GOLD B : LABA (formotérol) ou LAMA (tiotropium) régulier` → « GOLD B (mMRC ≥ 2 ou
+    CAT ≥ 10, au plus 1 exacerbation modérée) : **LABA + LAMA d'emblée** (ex:
+    indacatérol/glycopyrronium) »
+  - `GOLD C` + `GOLD D` fusionnés → « GOLD E (≥ 2 exacerbations modérées ou ≥ 1
+    hospitalisation) : LABA + LAMA (ex: formotérol + tiotropium), + CSI si éosinophiles
+    ≥ 300/µL »
+  - item ajouté : « Classification ABE depuis GOLD 2023 : les anciens groupes C et D sont
+    fusionnés en E, car c'est le risque d'exacerbation et non le niveau de symptômes qui
+    commande l'escalade »
+- section Management, `therapy-section` du critère m5 (« Prise en charge de la BPCO
+  probable ») : les trois puces `GOLD A / GOLD B / GOLD C-D` deviennent
+  `GOLD A / GOLD B / GOLD E`, avec la même correction sur le groupe B
+  (« LABA + LAMA d'emblée ») et la mention « groupes C/D fusionnés, ABE 2023 ».
+
+source : `SSP — Toux Chronique` § Skills connexes — « Pocketcard Scores — Genève EP,
+CURB-65, qSOFA, **GOLD ABE** », et § Références PDF — « RMS — BPCO : recommandations
+**GOLD 2023** ». La page fait foi (PROCEDURE § 4, niveau 1).
+
+**Pourquoi la règle 2 ne s'applique pas — vérification.** La crainte de l'arbitrage était
+que la grille cote **séparément** C et D. Elle ne le fait pas :
+
+- aucun `.criteria-text` ni `.detail-text.criteria-detail` de la grille ne contient la
+  chaîne « GOLD » (recherche exhaustive sur `strip_base64(html)`) ;
+- les deux emplacements corrigés sont, l'un un `<li>` d'`annexe-theorie`, l'autre une
+  puce textuelle d'un `therapy-section`. Ce dernier vit **à l'intérieur** du
+  `criteria-row` de m5, mais ne porte **aucune case** — comme `annexe-dd`, c'est un
+  encadré descriptif hébergé par une ligne notée. Les cinq sous-items notés de m5
+  (`m5-detail-0` à `-4`) portent tous sur le sevrage tabagique et l'empathie, aucun sur
+  les groupes GOLD ;
+- la puce `therapy-section` **groupait déjà C et D** (`GOLD C/D: LABA + LAMA ± CSI`) : la
+  fusion ne pouvait donc rien y retirer.
+
+Conséquence : `maxScores` **19 (management)**, `<span>` **/19** et `count` **5** sont
+inchangés. Simulation de remplissage complet après correction : anamnèse 50/50 · examen
+15/15 · management 19/19 · communication 20/20 → **100 %**.
+
+**Les grades spirométriques GOLD 1-4 n'ont pas été touchés** — ils sont restés `1/2/3/4`
+partout (resume, `presentation`/GOLD staging, `theorie`, diagnostic « stade GOLD 3 »).
+GOLD 2023 n'a fusionné que les **groupes d'évaluation** ABCD, pas les grades de VEMS :
+confondre les deux aurait cassé le diagnostic de la vignette.
+
+**Le seuil d'éosinophiles** passe de « > 300 » (unité implicite) à « ≥ 300/µL », forme
+déjà employée dans le même bloc (`theorie`, « CSI : … si éosinophiles > 300/µL — jamais
+en monothérapie »). L'unité implicite échappait au balayage de la tâche 7, dont le
+critère était « tout nombre ≥ 1000 au voisinage d'un terme d'hémogramme » : 300 passait
+sous le seuil. Illustration de l'angle mort documenté en PROCEDURE § 6.
+
+#### [9a] AMBOSS-18 — palier 1 GINA : SABA seul → CSI-formotérol à la demande
+
+**Modifications**
+
+- theorie / Traitement de l'asthme (« Approche par paliers GINA ») : les cinq paliers sont
+  réécrits (5 → 5 items).
+  - `Palier 1 : SABA prn (si < 2×/semaine)` → « Palier 1 : CSI-formotérol faible dose à
+    la demande — le SABA seul n'est plus recommandé par GINA, même pour des symptômes
+    rares »
+  - paliers 2 à 4 : la **voie privilégiée** (CSI-formotérol à la demande, puis MART) est
+    portée en tête, la **voie alternative** (CSI quotidien, puis CSI-LABA) conservée
+    derrière — aucune des options antérieures n'est perdue
+  - `Palier 5 : + anti-IgE, anti-IL5, corticoïdes oraux` → « + LAMA, phénotypage et
+    biothérapies (anti-IgE, anti-IL5, anti-IL4R) ; corticoïdes oraux en dernier recours »
+- section Management, `therapy-section` du critère m6 (« Traitement de fond si asthme
+  confirmé ») : la puce **`• Palier 1` était vide** — un fragment sans contenu, du même
+  ordre que les troncatures d'import du § Groupe 2. Elle est renseignée : « Palier 1:
+  CSI-formotérol faible dose à la demande (jamais un SABA seul) ». Les puces 2 et 3
+  suivent la même correction. Trois puces avant, trois puces après.
+- presentation · Q2 « Traitement » / ⚡ Traitement immédiat : « Salbutamol en spray à la
+  demande » + « CSI faible dose si symptômes fréquents » → « CSI-formotérol faible dose à
+  la demande (palier 1-2 GINA) » + « Passage au CSI-formotérol en fond et en secours si
+  symptômes fréquents ». C'était **l'ancienne doctrine reformulée dans une réponse
+  orale** : la laisser aurait fait dire au candidat le contraire de ce que la théorie
+  corrigée enseigne (PROCEDURE § 4 — « vérifier qu'aucun autre bloc pédagogique ne porte
+  encore l'ancienne formule »).
+
+source : `SSP — Toux Chronique` reste **générique** sur le sujet — son § Prise en charge
+écrit « Corticostéroïde inhalé ± β2-agoniste si suspicion d'asthme / cough-variant » et
+son mnémo « (3) corticoïde inhalé si asthme », sans jamais nommer de palier ni prescrire
+un SABA seul. Aucun sous-item noté de la grille ne prescrit de SABA en traitement de
+fond (les seuls détails notés citant un bronchodilatateur portent sur le **débit de
+pointe** et les **EFR**). Ni contradiction avec la page, ni contradiction avec la section
+notée : **erreur factuelle interne au bloc**, corrigée directement (PROCEDURE § 4).
+
+**Le SABA de secours n'a pas été banni** — il reste dans la voie alternative du palier 2,
+dans les rappels thérapeutiques de la crise (« Crise légère : Salbutamol 100μg 2-4
+bouffées q20min × 3 »), dans le `resume`/Crise d'asthme (Ventolin® 4-10 bouffées,
+salbutamol 5 mg nébulisé) et pour le bronchospasme d'effort. Ce que GINA a écarté est le
+**SABA seul comme traitement**, pas le SABA comme secours.
+
+#### [9b] AMBOSS-19 — score mMRC : « au repos » → « à l'effort »
+
+**Modification**
+
+- resume · Exacerbation aiguë de BPCO / Historique BPCO : « Score mMRC de dyspnée au
+  repos » → « Score mMRC de dyspnée à l'effort : le grade est défini par le niveau
+  d'effort qui déclenche l'essoufflement (0 = effort intense, 4 = habillage) ».
+
+source : erreur factuelle interne, corrigée directement. Le mMRC gradue la dyspnée **par
+le niveau d'effort qui la déclenche** — grade 0 : essoufflé seulement à l'effort intense ;
+grade 4 : trop essoufflé pour sortir, ou essoufflé en s'habillant. Une dyspnée « au
+repos » n'est pas une graduation mMRC. Le même bloc `theorie` en donnait déjà l'usage
+correct (« d'où l'intérêt de la quantifier (mMRC) plutôt que de la demander ») ; c'est
+l'item du `resume` qui était faux. Occurrence **unique dans le corpus** (recherche
+exhaustive : 3 occurrences de « mMRC », dans la seule AMBOSS-19).
+
+#### [4] et [10] AMBOSS-14 — troponine cohérente avec le diagnostic d'angor instable
+
+**Modification**
+
+- expert / Rôles et interventions :
+  - `Troponine T initiale : 20 ng/L (limite normale)` → « Troponine T hs initiale :
+    8 ng/L (seuil du laboratoire : 99ᵉ percentile à 14 ng/L) »
+  - `Troponine T à 3h : 150 ng/L (positive)` → « Troponine T hs à 3 h : 10 ng/L — delta
+    non significatif, les deux dosages restent négatifs »
+
+source : erreur factuelle interne, corrigée directement — mais surtout **contradiction
+frontale avec le reste de la grille**, qui enseigne partout l'inverse :
+
+| Bloc | Ce que la grille enseignait déjà |
+|---|---|
+| **section notée `m3-detail-1`** | « Troponine T, CK-MB [seraient élevées dans l'infarctus du myocarde et rarement dans la péricardite mais **négatives dans l'angor instable**] » |
+| `annexe-dd` | « Troponine initialement normale possible (**négative dans l'angor instable**) » |
+| `resume`/Biomarqueurs | « **Troponines négatives** (≠ NSTEMI où elles sont positives) » |
+| `resume`/Points clés | « Angor instable = douleur thoracique prolongée **sans élévation de troponines** » · « Troponines négatives différencient de NSTEMI » |
+| `expert`/Points clés | « Troponine peut être normale initialement dans angor instable » |
+| `theorie` | « La troponine sépare l'angor instable du NSTEMI — ischémie sans nécrose contre ischémie avec nécrose » |
+| `presentation`/mnémo INS | « S = angor instable (**troponine -**) » |
+| diagnostic retenu | « Syndrome coronarien aigu (**angor instable**) induit par amphétamines » — 6 occurrences |
+
+Le seul endroit de la grille à dire le contraire était le bloc `expert`, c'est-à-dire
+**la seule source que l'examinateur lit à voix haute**. Une troponine à 150 ng/L déclarée
+« positive » définit un NSTEMI : le candidat qui répondait « angor instable » — la
+réponse attendue et notée — était contredit par le résultat qu'on venait de lui donner.
+
+**Choix des valeurs.** Le seuil hs suisse (hs-cTnT, 99ᵉ percentile) est **14 ng/L** ;
+c'est le référentiel qu'implique l'unité `ng/L`, où `ng/mL` connotait un dosage
+conventionnel. La conversion d'unité de la passe nomenclature avait donc déplacé le
+référentiel sans que les qualificatifs suivent : « 20 ng/L (limite normale) » était
+devenu faux par le seul effet de la conversion.
+
+- **8 ng/L** à l'admission : détectable, franchement sous le 99ᵉ percentile.
+- **10 ng/L** à 3 h : delta de **2 ng/L**, sous le seuil de variation significative de
+  l'algorithme hs 0/1 h de l'ESC (Δ ≥ 3 ng/L pour l'exclusion, ≥ 5 ng/L pour l'inclusion),
+  et sous le 99ᵉ percentile aux deux temps.
+
+La **cinétique surveillée est conservée** — deux dosages, une valeur qui bouge, un delta à
+interpréter — parce que c'est précisément ce que la grille enseigne ailleurs :
+`resume` « Algorithme troponine hs 0/1 h (ESC) ou 0/3 h : une valeur isolée négative ne
+suffit jamais », `theorie`/Examens « c'est le **delta** entre deux dosages, non la valeur
+isolée, qui signe l'événement aigu », et `expert`/Pièges « Se contenter d'une troponine
+initiale normale sans la répéter ». Ce piège reste jouable : la valeur initiale est
+négative, il faut quand même redoser.
+
+Le qualificatif « positive » disparaît. La mention `hs` est ajoutée pour concorder avec
+les deux blocs qui parlaient déjà de « troponine hs ». Aucune autre occurrence de valeur
+de troponine dans la grille : ni dans le `scenario` (vérifié — il ne porte aucun résultat
+de laboratoire), ni dans les réponses orales de `presentation`, qui citent des **temps de
+prélèvement** (« troponines sériées (0h, 3h, 6h) ») et jamais des chiffres.
+
+#### [33] AMBOSS-29 — la branche anémie devient jouable
+
+**Modification**
+
+- expert / Rôles et interventions :
+  - `FSC : lymphocytose 60%, 15% lymphocytes atypiques` → « FSC : **Hb 98 g/L, VGM 74 fL,
+    TCMH 23 pg (anémie microcytaire hypochrome)** ; lymphocytose 60%, 15% lymphocytes
+    atypiques »
+  - deux items ajoutés : « Bilan martial : ferritine 5 μg/L (N: 15-150), fer sérique
+    5 μmol/L (N: 10-30), transferrine 3.8 g/L (N: 2.0-3.6) » et « TIBC 95 μmol/L
+    (N: 45-72), saturation de la transferrine 5% (N: 20-45) — carence martiale absolue »
+
+**Pourquoi.** La grille note deux critères et un bloc thérapeutique entier sur l'anémie
+ferriprive, sans qu'aucun résultat ne permette d'y répondre :
+
+- critère noté (examens biologiques) : « FSC et frottis sanguin [pour évaluer l'**anémie
+  microcytaire hypochrome**, signe d'anémie ferriprive…] » ;
+- critère noté suivant : « Fer sérique, ferritine, transferrine, capacité totale de
+  fixation du fer (TIBC) [montrerait **↓ fer sérique et ferritine**, et **↑ transferrine
+  sérique et capacité totale de fixation du fer** dans l'anémie ferriprive] » ;
+- `therapy-section` « Si anémie ferriprive confirmée » : sulfate ferreux 200 mg × 3/j,
+  prise à jeun ou avec vitamine C, recherche de la cause des ménorragies, contrôle FSC à
+  4-6 semaines ;
+- `expert`/Pièges : « **Négliger anémie ferriprive (ménorragies)** ».
+
+Le bloc `expert` ne délivrait pourtant que le versant mononucléose (monospot, formule
+lymphocytaire, transaminases). Le candidat qui demandait l'hémogramme rouge ou le bilan
+martial — geste explicitement noté et explicitement listé comme piège à ne pas manquer —
+n'obtenait rien : la branche était morte.
+
+**Justification des valeurs créées.** C'est la première fois du projet qu'une donnée
+clinique est créée plutôt que corrigée. Trois contraintes l'ont bornée :
+
+1. *Le tableau de la vignette.* Femme de 18 ans, fatigue, et une anamnèse gynécologique
+   notée qui décrit des **ménorragies franches** : règles régulières de **8 jours**,
+   « tampon de la plus grande taille changé toutes les 2 heures », « plus abondantes que
+   celles de mes amies ». Perte martiale chronique d'installation lente → carence
+   **absolue** avec anémie microcytaire hypochrome bien tolérée. Hb 98 g/L : assez basse
+   pour expliquer la fatigue et justifier le traitement, assez haute pour ne poser aucune
+   question transfusionnelle qui sortirait du cadre de la station.
+2. *Ce que la section notée attend.* Le détail noté prescrit le sens de chaque paramètre :
+   fer sérique **abaissé**, ferritine **abaissée**, transferrine **augmentée**, TIBC
+   **augmentée**. Les valeurs suivent exactement ce patron, et la microcytose /
+   hypochromie qu'annonce l'autre critère noté est présente (VGM 74 fL, TCMH 23 pg).
+3. *La cohérence interne.* Les nombres tiennent ensemble et ne sont pas décoratifs :
+   TIBC 95 μmol/L = transferrine 3.8 g/L × 25,1 (facteur de conversion standard) ;
+   saturation 5 % = 5 ÷ 95 ; Hb 98 g/L avec VGM 74 fL et TCMH 23 pg impliquent
+   GR ≈ 4,26 T/L, Ht ≈ 0,31 et CCMH ≈ 311 g/L, soit bien une hypochromie. Une ferritine à
+   5 μg/L reste sous le seuil que la grille enseigne elle-même (`theorie` : « Diagnostic :
+   ferritine < 30 μg/L (gold standard) ») et sous la borne basse du laboratoire, ce qui
+   rend le diagnostic **certain malgré l'infection EBV concomitante** — la ferritine est
+   un réactant de phase aiguë, elle ne peut être faussement basse, seulement faussement
+   normale ou haute.
+
+Les valeurs justifient donc, sans ambiguïté, la supplémentation martiale que cote le bloc
+thérapeutique. Unités suisses : `g/L` pour l'hémoglobine, `fL` pour le VGM, `μg/L` pour la
+ferritine, `μmol/L` pour le fer et la TIBC — et le caractère `μ` employé est celui du
+fichier (U+03BC, ses deux autres occurrences). Formulation calquée sur les précédents du
+corpus : AMBOSS-15 « FSC : Hb 95 g/L, VGM 68 fL (anémie microcytaire) » / « Ferritine :
+8 µg/L (carence martiale) », AMBOSS-11 « FSC : Hb 92 g/L, VGM 72 fL (anémie
+microcytaire) ».
+
+`expert` n'est **pas** une section notée : l'ajout relève de la règle 1. Aucun sous-item,
+aucune case, aucun point n'a bougé.
+
+**Contrôles (tâche c6)**
+
+- `check_invariants.py` → `OK — 40 grilles, tous les invariants preserves` (code 0),
+  **sans régénération de `baseline.json`** : la règle 2 ne s'est appliquée à aucun des
+  sept points.
+- `check_nomenclature.py` → `OK — aucun terme non suisse detecte` (code 0). Unités
+  introduites : `ng/L`, `g/L`, `fL`, `pg`, `μg/L`, `μmol/L`, `/µL` — toutes hors table
+  `BANNED`, aucune unité impériale ni `ng/mL`.
+- `report_redundancy.py` → **147** paires, **inchangé**. Les trois items ajoutés en
+  AMBOSS-29 ont été mesurés contre tous les items des autres blocs avant écriture :
+  meilleur score **0.52** (« Bilan martial : ferritine 5 μg/L… » contre `theorie` « Bilan
+  martial : fer, ferritine, transferrine, TIBC »), sous le seuil de 0.72.
+- `check_no_loss.py 5221638` → **16 items signalés sur 5 grilles, aucun n'est une perte**.
+  Chacun est un item que la tâche a délibérément réécrit ; le seuil de ressemblance du
+  script ne reconnaît pas les reformulations. Verdict item par item :
+  - **AMBOSS-14 (2)** — les deux valeurs de troponine : c'étaient les valeurs fautives,
+    remplacées par les valeurs corrigées.
+  - **AMBOSS-18 (7)** — les 5 paliers GINA, réécrits en 5 paliers ; les 2 items de la
+    réponse orale Q2, réécrits. Vérifié : « CSI faible dose quotidien », « CSI + LABA »,
+    « CSI moyenne/forte + LABA ± LAMA », « anti-IgE », « anti-IL5 » et « corticoïdes
+    oraux » survivent tous dans les items de remplacement. Seuls disparaissent
+    « SABA prn » comme palier 1 — la correction elle-même — et « CSI dose moyenne » comme
+    option isolée du palier 3, dont la notion subsiste au palier 4.
+  - **AMBOSS-19 (5)** — l'item mMRC, réécrit ; les 4 items GOLD, réécrits en 4. Les
+    molécules citées ont toutes été **conservées après contrôle** : la première rédaction
+    perdait `formotérol` et `tiotropium`, absents du reste de la grille (recherche
+    exhaustive) ; ils ont été réintroduits comme exemple du LABA + LAMA du groupe E.
+  - **AMBOSS-29 (1)** — l'ancienne ligne FSC, dont le contenu intégral (« lymphocytose
+    60%, 15% lymphocytes atypiques ») est repris mot pour mot dans la ligne étendue.
+  - **AMBOSS-31 (1)** — l'ancienne ligne de dépistage, remplacée par deux lignes.
+- Simulation de remplissage complet (rejeu de `cases/scoring.js`) sur les 40 grilles :
+  **0 grille en écart**, et **100 %** pour AMBOSS-14, 18, 19, 29 et 31.
+- Équilibre des balises vérifié contre `5221638` : `<ul>`, `<div>`, `<span>`, `<p>`,
+  `<h4>`, `<h5>` **inchangés sur les cinq grilles** ; seuls deux compteurs de `<li>`
+  bougent — AMBOSS-29 105 → 107 (bloc `expert`) et AMBOSS-31 203 → 204 (bloc `theorie`),
+  tous deux dans des blocs non notés.
+
+**Divergences consignées, non corrigées**
+
+- **AMBOSS-14 · `expert`** : « Échocardiographie : Hypokinésie segmentaire latérale ».
+  Une anomalie de cinétique segmentaire au repos est classiquement associée à la nécrose,
+  mais elle est également décrite dans l'ischémie sévère et la sidération myocardique, et
+  son territoire (latéral) concorde exactement avec le sous-décalage ST V4-V6 du même
+  bloc. Défendable en l'état : relève du jugement d'auteur, non du fait faux. Signalé
+  pour arbitrage.
+- **AMBOSS-29 · `therapy-section` « Si anémie ferriprive confirmée »** : la puce
+  **`• Durée` est vide**. Même signature que la puce `• Palier 1` d'AMBOSS-18 corrigée
+  ci-dessus, et le contenu perdu est presque certainement celui que porte la `theorie` de
+  la même grille — « Durée fer : 3-6 mois après normalisation Hb ». Non corrigé : hors du
+  périmètre des sept alignements, relève de la passe « défauts d'import » (§ Groupe 2).
+- **AMBOSS-27 · `expert`** : « Dosages hormonaux : Cortisol 8h bas ( » — parenthèse
+  ouverte jamais fermée, contenu perdu. Même famille de défaut, même arbitrage.
+- **AMBOSS-29 · `expert`** : « Transaminases : ASAT 85, ALAT 95 (légèrement élevées) » —
+  unités implicites, déjà inventoriées à l'arbitrage § Groupe 6 [34]. Non traité ici.
