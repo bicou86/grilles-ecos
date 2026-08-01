@@ -1438,3 +1438,114 @@ correction, la grille porte **0 « marqueur »** et **0 « IRM »**. Aucune pert
 accidentelle.
 
 Aucune grille n'a été lue en entier, aucun contrôle n'a employé un `grep` brut.
+
+---
+
+### Tâche g8 (suite) — German-29, l'entrée « tumeur osseuse / métastase »
+
+**Départ `1978c16`. 1 entrée d'`annexe-dd` réécrite. Le boilerplate
+« marqueurs tumoraux » tombe de 4 à 3 occurrences, et les 3 restantes sont
+justes : le point est clos.**
+
+**Ce n'était pas un retrait, c'était une réécriture — et le niveau 1 la dicte.**
+L'entrée disait « Tumeur osseuse primitive ou métastase → **CT abdominal,
+marqueurs tumoraux** ». Deux fautes distinctes : un examen qui ne montre pas la
+lésion (un CT abdominal cherche un primitif, il n'image pas la hanche, et il
+vient après la radiographie) et un marqueur que ni la page ni le corrigé ne
+nomment. La station est une **nécrose aseptique de la tête fémorale** chez
+M. Müller, 42 ans, **transplanté rénal sous corticothérapie** (`m1` :
+« Nécrose aseptique de la tête fémorale (ostéonécrose) » ; `m8` : « Collaboration
+avec néphrologue (ajustement immunosuppression) »).
+
+**Niveau 1 — page « SSP — Douleur de Hanche », 413 lignes, 0 occurrence de
+« marqueur ».** Elle traite le point trois fois, et chaque fois nommément :
+
+- DD Top 5 : « Douleur nocturne constante + AEG + amaigrissement ± antécédent de
+  cancer connu → Métastase osseuse / néoplasie · **RX hanche + scintigraphie
+  osseuse** » — c'est la ligne qui répond exactement à la question du bloc,
+  « qu'est-ce qui départage ? » ;
+- tableau de prise en charge : « Métastase / fracture pathologique · ATCD
+  néoplasique (sein, poumon, prostate, rein, thyroïde, **myélome**) → IRM / CT
+  TAP · **électrophorèse des protéines** · avis oncologique » ;
+- biologie : « Si red flag (fièvre, AEG) : FSC, CRP, VS, créatinine, calcémie,
+  phosphatémie, **électrophorèse des protéines** (myélome) ».
+
+**Niveau 2 — la section notée**, qui concorde : `m3` « Examens complémentaires
+d'imagerie » cote Radiographie bassin face + hanche face/profil [signes
+d'ostéolyse et ostéosclérose côte à côte] · IRM de hanche · Échographie ·
+**Scintigraphie osseuse** si IRM contre-indiquée ; `m4` « Examens biologiques »
+cote FSC, CRP, VS · hémocultures si fièvre · ponction articulaire · **bilan
+phosphocalcique** · fonction rénale. **Ni CT abdominal, ni marqueur tumoral, ni
+imagerie abdominale d'aucune sorte.**
+
+**Modifications**
+
+- `annexe-dd` German-29 · Tumeur osseuse primitive ou métastase : « → CT
+  abdominal, marqueurs tumoraux » → « → **Radiographie bassin + hanche,
+  scintigraphie osseuse, électrophorèse des protéines si suspicion de myélome** »
+  source : SSP — Douleur de Hanche, DD Top 5 « RX hanche + scintigraphie
+  osseuse » (transcription), et biologie « électrophorèse des protéines
+  (myélome) » ; section notée `m3` (« Radiographie bassin face + hanche
+  face/profil », « Scintigraphie osseuse ») et `m4` (« bilan phosphocalcique »).
+
+**Trois choix de rédaction, et ce qui les motive.**
+
+1. **La radiographie passe en tête.** C'est le premier examen des trois entrées
+   voisines du même bloc (Coxarthrose, Arthrite septique, Arthrite réactive,
+   Fracture de contrainte) et le premier de `m3`. L'entrée fautive la sautait.
+2. **Le CT est retiré, pas remplacé par « CT TAP ».** La page ne cite le CT TAP
+   qu'en **colonne de prise en charge**, une fois la métastase retenue — c'est du
+   bilan d'extension et de la recherche du primitif, hors du contrat de rôle
+   d'`annexe-dd` (« l'examen qui départage »). La section notée n'a **aucun** CT.
+   Le retenir aurait été garder la moitié juste d'un examen mal placé.
+3. **L'électrophorèse est incluse, avec sa garde.** Le myélome est le
+   différentiel qui change la conduite devant une lésion osseuse, la page le
+   nomme deux fois et l'associe explicitement à l'électrophorèse, et `m4` cote
+   déjà le bilan phosphocalcique et la VS — les deux autres axes du même
+   raisonnement. La garde « si suspicion de myélome » reprend la parenthèse de la
+   page et la grammaire du bloc, qui écrit déjà « si doute », « si épanchement »,
+   « si IRM contre-indiquée ». **Elle est proposée, pas imposée** — un myélome à
+   42 ans reste rare, et sans la garde l'entrée prescrirait une électrophorèse à
+   tout le monde.
+
+**Rien n'a été inventé** : chaque terme de la nouvelle entrée est présent
+littéralement soit dans la page SSP, soit dans la section notée de German-29,
+souvent dans les deux. La question de savoir s'il fallait s'arrêter s'est posée
+pour le seul point de l'électrophorèse ; la garde conditionnelle la tranche, sur
+le modèle de German-18 (« marqueurs tumoraux **si suspecte** »), la seule entrée
+du corpus dont la garde est ce qui la rend exacte.
+
+**Vérifications** — `check_invariants.py` OK (88), `check_nomenclature.py` OK,
+`check_reachability.py` OK 88/88 à 100 %, `report_redundancy.py` **14** et
+**90** intra-bloc — **les deux inchangés** : la nouvelle entrée s'apparie au plus
+à **0,44** avec les items du même bloc (voisin le plus proche : « arthrose de
+hanche radiographie bassin face hanche profil »), loin du seuil de 0,72, et
+l'ancienne n'était appariée à rien. L'unique paire intra-bloc de German-29
+(**0,79**, « contexte d'immunosuppression / radiographie, ponction articulaire si
+épanchement » contre « syndrome de Reiter / … ») **préexiste et est légitime** :
+deux arthrites qui partagent réellement le même examen qui départage — vérifié
+identique à `1978c16`. AMBOSS aux trois verts et redondance **147**. Commande de
+détection du défaut de gabarit : **4**, inchangée. `baseline.json` non régénéré.
+
+**Aucune modification du barème** : 1 insertion pour 1 suppression, dans le seul
+`<div>` d'examen. Aucun `.criteria-text`, aucun `<input>`, aucune
+`patient-response` dans le diff (0 ligne). Comptes identiques à `1978c16` :
+`<div>` 860, `<li>` 10, `<strong>` 10, `<input>` 169, `criteria-row` 36, radio
+52, checkbox 117. Le bloc `redflags` et les quatre blocs `therapy` de la grille
+n'ont pas été ouverts — aucun `</div>` déplacé dans un `criteria-row`.
+`boundsAnomalies` et `uncoveredContent` vides.
+
+`check_no_loss.py 1978c16 German-29_` : **1 item signalé**, la chaîne remplacée.
+Contrôle mot à mot : les seuls mots qui quittent la grille sont **« abdominal »,
+« marqueurs », « tumoraux »**. « Tumeur osseuse primitive ou métastase » est
+intact, et « CT » reste présent par l'entrée « Fracture de contrainte du col
+fémoral → Radiographie, CT ou IRM si doute ». Après correction German-29 porte
+**0 « marqueur »** et **0 « CT abdominal »**. Aucune perte accidentelle.
+
+**Le point « marqueurs tumoraux » est clos.** Décompte final mesuré sur les 88
+grilles : **3 occurrences**, German-12 et 13 (ACE, cancer colorectal) et
+German-18 (CA-125 sur masse annexielle, gardée par « si suspecte »). Les trois
+sont **justes** et doivent rester. Les 4 autres occurrences de « marqueur » du
+corpus (German-11, 51, 76, 77) sont des « marqueurs **inflammatoires** », sans
+rapport. 13 au départ de la campagne → 8 → 6 (g7) → 4 → **3, et plus rien à
+retirer ni à réécrire**.

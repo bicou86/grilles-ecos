@@ -49,6 +49,18 @@ d'AMBOSS rejoués pour établir que la campagne German n'a rien perturbé chez l
 > intra-bloc de cette grille. Inter-blocs **14**, AMBOSS **147**, barème gelé, commande de
 > gabarit toujours à **4**. Rapport :
 > `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/g8-report.md`.
+>
+> **Puis German-29, dans la même tâche — et le point est clos.** L'entrée « Tumeur osseuse
+> primitive ou métastase → **CT abdominal, marqueurs tumoraux** » a été réécrite en
+> « → **Radiographie bassin + hanche, scintigraphie osseuse, électrophorèse des protéines
+> si suspicion de myélome** ». Ce n'était pas un retrait de boilerplate mais une réécriture
+> dictée au **niveau 1** : « SSP — Douleur de Hanche » dit « RX hanche + scintigraphie
+> osseuse » pour la métastase et nomme l'**électrophorèse des protéines (myélome)**, avec
+> **0 occurrence de « marqueur »** sur 413 lignes ; la section notée concorde (`m3` cote
+> radiographie, IRM, échographie, scintigraphie ; `m4` le bilan phosphocalcique) et ne
+> porte **aucun CT**. Redondance **inchangée** cette fois — 14 et 90. Décompte final :
+> **3 occurrences** de « marqueurs tumoraux », toutes justes (German-12, 13, 18). **Il ne
+> reste ni retrait ni réécriture en attente sur ce point.**
 
 | # | Vérification | Résultat |
 |---|---|---|
@@ -131,7 +143,7 @@ sections notées ni sur les deux blocs de niveau 2 qui y vivent (`therapy`, `red
 | Paires quasi identiques **dans** un même bloc | **638** | **91** (−86 %) — **90** après g8 |
 | Réponses Q/R en liste (`presentation-reponse list`) | **31** | **0** |
 | Défauts de gabarit d'`annexe-dd` réparés | — | **67** — **88** après g7, soit la totalité |
-| Boilerplate « marqueurs tumoraux » | 13 | **8** — **6** après g7 (German-34 ×2), **4** après g8 (German-21 ×2) |
+| Boilerplate « marqueurs tumoraux » | 13 | **8** — **6** après g7 (German-34 ×2), **3** après g8 (German-21 ×2, German-29) — les 3 restantes sont justes |
 | Boilerplate « US si doute » | 4 | **2** |
 | Items de contenu, tous blocs | 2 656 | 2 123 |
 | Volume rédactionnel | 199 540 c. | 193 009 c. |
@@ -311,7 +323,7 @@ German-5 : la clearance du rachis cervical par les **règles canadiennes ou NEXU
 
 ## 4. Ce qui reste non corrigé, et pourquoi
 
-### 4.1 Les « marqueurs tumoraux » restants — un arbitrage organe par organe *(8 → 6 après g7 → 4 après g8)*
+### 4.1 Les « marqueurs tumoraux » — un arbitrage organe par organe, **clos par g8** *(13 → 8 → 6 → 3)*
 
 Le lot g5b avait transmis « marqueurs tumoraux » comme un boilerplate **faux à chaque
 occurrence**, avec consigne de le rechercher. Le lot g5c a établi que **la généralisation
@@ -322,12 +334,12 @@ est trop large** :
 - German-12 et 13, cancer colorectal : l'**ACE** fait partie du bilan initial.
 
 Le boilerplate est faux quand l'organe n'a pas de marqueur utile — poumon, cerveau, tissus
-mous, œsophage, ORL. Il restait **8 occurrences dans 6 grilles** (German-12, 13, 18, 21 ×2,
-29, 34 ×2) ; g7 a retiré les deux de German-34 — les seules qui fussent dans son périmètre
-de réparation, parce qu'elles doublaient un examen juste prisonnier du nom du diagnostic —
-et **g8 les deux de German-21. Il en reste 4.** **Aucune passe globale n'a été faite, et il
-ne faut pas en faire : une passe mécanique les retirerait toutes, y compris les trois qui
-sont justes.**
+mous, œsophage, ORL, os. Il restait **8 occurrences dans 6 grilles** (German-12, 13, 18,
+21 ×2, 29, 34 ×2) ; g7 a retiré les deux de German-34 — les seules qui fussent dans son
+périmètre de réparation, parce qu'elles doublaient un examen juste prisonnier du nom du
+diagnostic — puis **g8 les deux de German-21 et celle de German-29. Il en reste 3, et
+les trois sont justes.** **Aucune passe globale n'a été faite, et il ne fallait pas en
+faire : une passe mécanique aurait détruit ces trois entrées correctes.**
 
 **Ce que g8 a corrigé, et une prémisse à rectifier.** Cette section annonçait que German-21
 portait « exactement les mêmes organes — œsophage et ORL — que German-34 ». C'est **faux à
@@ -345,19 +357,29 @@ et « → **Gastroscopie avec biopsies multiples de la lésion** » — le vocab
 German-21 (« gastroscopie ») plutôt que celui de German-34 (« endoscopie digestive haute »),
 puisque c'est celui que porte sa section notée.
 
-**Les 4 restantes, verdictées organe par organe.**
+**Les 4 qui restaient à l'ouverture de g8, verdictées organe par organe — 3 gardées, 1
+réécrite.**
 
 | Grille | Organe | Marqueur réellement en jeu | Avis |
 |---|---|---|---|
 | German-12 | côlon | **ACE** | **Juste sur le marqueur** — l'ACE fait partie du bilan initial d'un cancer colique. L'entrée met déjà « Coloscopie avec biopsies » en tête, l'ordre pédagogique est bon. Le point discutable n'est pas le marqueur mais l'**IRM** : la page « SSP — Constipation » porte 0 « IRM » et répond « coloscopie » (7 occurrences) ; l'IRM est l'examen du **rectum**, pas du côlon. Priorité basse. |
-| German-13 | côlon **et rectum** | **ACE** | **La plus défendable des quatre.** « Cancer colorectal » inclut le rectum, où l'IRM pelvienne *est* l'examen de stadification ; la coloscopie avec biopsies est en tête. Ne pas toucher. |
+| German-13 | côlon **et rectum** | **ACE** | **La plus défendable de toutes.** « Cancer colorectal » inclut le rectum, où l'IRM pelvienne *est* l'examen de stadification ; la coloscopie avec biopsies est en tête. Ne pas toucher. |
 | German-18 | ovaire | **CA-125** | **Juste, et déjà correctement gardée** par « si suspecte » — c'est la garde conditionnelle qui rend l'entrée exacte. La retirer serait une régression. Ne pas toucher. |
-| German-29 | os (hanche), métastase | *aucun marqueur nommé* | **Le seul des quatre qui soit fautif — et pas par le marqueur.** « Tumeur osseuse primitive ou métastase → CT abdominal, marqueurs tumoraux » : la page « SSP — Douleur de Hanche » tranche au **niveau 1** et dit « **RX hanche + scintigraphie osseuse** » pour la métastase, puis « IRM / CT TAP · **électrophorèse des protéines** » ; elle porte **0 « marqueur »**. La section notée de German-29 cote radiographie du bassin, IRM de hanche, échographie, scintigraphie osseuse, FSC/CRP/VS, bilan phosphocalcique — **ni CT abdominal ni marqueur**. Le défaut de fond est l'**examen** : le CT abdominal ne montre pas la lésion de hanche, il cherche un primitif, et il arrive après la radiographie. Correction à faire, mais c'est une réécriture d'entrée, pas un retrait de boilerplate. |
+| German-29 | os (hanche), métastase | électrophorèse des protéines *(myélome)* | **RÉÉCRITE par g8** — la seule fautive des quatre, et pas par le marqueur. « Tumeur osseuse primitive ou métastase → CT abdominal, marqueurs tumoraux » : la page « SSP — Douleur de Hanche » tranche au **niveau 1** — « **RX hanche + scintigraphie osseuse** » pour la métastase, puis « IRM / CT TAP · **électrophorèse des protéines** · avis oncologique », **0 « marqueur »** sur 413 lignes. La section notée concorde : `m3` cote radiographie bassin + hanche, IRM, échographie, scintigraphie ; `m4` le bilan phosphocalcique — **ni CT abdominal ni marqueur**. Le défaut de fond était l'**examen** : un CT abdominal ne montre pas la lésion de hanche, il cherche un primitif, et il vient après la radiographie. Rendu : « → **Radiographie bassin + hanche, scintigraphie osseuse, électrophorèse des protéines si suspicion de myélome** ». |
 
-Autrement dit : **il ne reste aucun retrait pur à faire**. German-12, 13 et 18 sont justes ;
-German-29 demande une réécriture guidée par sa page SSP, qui est explicite. Le point
-« marqueurs tumoraux » peut être clos comme *motif de recherche* ; ce qui subsiste est un
-défaut d'examen dans une seule grille.
+**Le point est clos.** Décompte final mesuré sur les 88 grilles : **3 occurrences** de
+« marqueurs tumoraux », German-12, 13 et 18, **toutes justes** — il ne reste ni retrait ni
+réécriture en attente. Les 4 autres occurrences du mot « marqueur » dans le corpus
+(German-11, 51, 76, 77) désignent des « marqueurs **inflammatoires** », sans rapport.
+Trajectoire complète : **13 → 8 → 6 (g7) → 3 (g8)**.
+
+Ce que ce point aura appris, et qui vaut au-delà de lui : **un boilerplate ne se juge pas au
+motif, il se juge à l'organe.** Sur les treize occurrences de départ, **dix étaient à
+retirer ou à réécrire, trois étaient justes** — et le motif seul ne distinguait pas les unes
+des autres. Il a fallu ouvrir chaque grille, y lire l'organe, la page SSP et la section
+notée. La dernière (German-29) n'était d'ailleurs même pas une erreur de marqueur : c'était
+une erreur d'**examen** que le marqueur signalait par accident. Une passe mécanique aurait
+détruit trois entrées correctes **et** laissé intacte la faute la plus grave du lot.
 
 ### 4.2 German-75 — la station porte une tuberculose, son bloc de différentiels ne la porte pas
 
@@ -601,6 +623,14 @@ distinguer fait tomber le rapport à 0,67, sous le seuil. **Le chiffre a donc ba
 bonne raison** — une redondance réelle en moins, non un item perdu — et c'est le seul cas du
 corpus où la mesure de redondance a servi de témoin à une erreur de fond plutôt que de
 mesure de forme.
+
+La réécriture de German-29, dans la même tâche, **ne bouge ni l'un ni l'autre** : la nouvelle
+entrée s'apparie au plus à **0,44** avec les items de son bloc, et l'ancienne ne s'appariait
+à rien. L'unique paire intra-bloc de German-29 (**0,79**) est **antérieure et légitime** —
+« Arthrite septique » et « Arthrite réactive » y reçoivent réellement le même examen qui
+départage, « Radiographie, ponction articulaire si épanchement ». Deux hypothèses qui
+partagent vraiment leur examen ne sont pas un doublon à corriger : c'est la différence,
+mesurable, avec le couple de German-21.
 
 ### 6.5 Non-perte d'information
 
