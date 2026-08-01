@@ -36,12 +36,26 @@ d'AMBOSS rejoués pour établir que la campagne German n'a rien perturbé chez l
 > compatibles** et deux incompatibles. La description du défaut, sa cause et son périmètre
 > sont exacts par ailleurs.
 
+> **Mise à jour — tâche g8 (départ `7ae720f`).** Les **deux entrées de German-21** ont été
+> corrigées à leur tour : le boilerplate « marqueurs tumoraux » **tombe de 6 à 4
+> occurrences**. Une rectification factuelle accompagne ce geste — le § 4.1 annonçait que
+> German-21 portait « œsophage et **ORL** », comme German-34 ; la lecture du fichier établit
+> qu'elle porte **œsophage et cancer gastrique**. Les deux organes se tranchent de la même
+> façon (la gastroscopie avec biopsies est l'examen qui départage, il n'y a de marqueur
+> diagnostique ni pour l'un ni pour l'autre), mais la prémisse « mêmes organes que
+> German-34 » n'était exacte qu'à moitié. La redondance intra-bloc passe de **91 à 90** :
+> les deux entrées de German-21 étaient appariées **entre elles** à 0,86 — c'est le
+> boilerplate qui les rendait quasi identiques, et le distinguer supprime la seule paire
+> intra-bloc de cette grille. Inter-blocs **14**, AMBOSS **147**, barème gelé, commande de
+> gabarit toujours à **4**. Rapport :
+> `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/g8-report.md`.
+
 | # | Vérification | Résultat |
 |---|---|---|
 | 1 | Les six vérificateurs, sur les deux corpus | **OK** — German : invariants, nomenclature, atteignabilité au vert, `boundsAnomalies` et `uncoveredContent` vides sur les 88. AMBOSS : quatre vérificateurs au vert, redondance **147**, inchangée |
 | 2 | Barème inchangé depuis `4819f53` | **OK** — 880 champs recalculés de part et d'autre sur les 88 grilles, **zéro divergence** |
 | 3 | Intégrité structurelle | **OK depuis g7** — balises et blocs sains sur 88/88. Les **21 entrées d'`annexe-dd`** qui portaient encore le défaut de gabarit (German-27, 34, 56) ont été réparées ; à `32f8875` cette ligne était un **ÉCHEC partiel**. Voir « Le défaut » ci-dessous |
-| 4 | Redondance | **OK** — 83 → 14 paires inter-blocs, 638 → 91 intra-bloc. 12 des 14 sont des clés de mnémo, protégées par la règle du format ; les 2 dernières sont des faux positifs de similarité, pas des doublons |
+| 4 | Redondance | **OK** — 83 → 14 paires inter-blocs, 638 → 91 intra-bloc (**90 depuis g8**). 12 des 14 sont des clés de mnémo, protégées par la règle du format ; les 2 dernières sont des faux positifs de similarité, pas des doublons |
 | 5 | Non-perte d'information | **OK** — 652 items signalés, aucune perte réelle retrouvée par l'analyse de motifs, y compris sur les thèmes sensibles |
 | 6 | Contrôle fonctionnel en navigateur | **OK** — 88/88 grilles remplies intégralement dans Chrome sans interface : minuteur, score, dénominateur, coloration et absence de balise orpheline |
 
@@ -114,10 +128,10 @@ sections notées ni sur les deux blocs de niveau 2 qui y vivent (`therapy`, `red
 | Puces de remplissage « À évaluer cliniquement » | **345** | **0** |
 | Examens génériques (« Examens complémentaires selon contexte clinique » et 3 variantes) | **262** | **0** |
 | Paires quasi identiques **entre** blocs | **83** | **14** (−83 %) |
-| Paires quasi identiques **dans** un même bloc | **638** | **91** (−86 %) |
+| Paires quasi identiques **dans** un même bloc | **638** | **91** (−86 %) — **90** après g8 |
 | Réponses Q/R en liste (`presentation-reponse list`) | **31** | **0** |
 | Défauts de gabarit d'`annexe-dd` réparés | — | **67** — **88** après g7, soit la totalité |
-| Boilerplate « marqueurs tumoraux » | 13 | **8** — **6** après g7 (les deux de German-34) |
+| Boilerplate « marqueurs tumoraux » | 13 | **8** — **6** après g7 (German-34 ×2), **4** après g8 (German-21 ×2) |
 | Boilerplate « US si doute » | 4 | **2** |
 | Items de contenu, tous blocs | 2 656 | 2 123 |
 | Volume rédactionnel | 199 540 c. | 193 009 c. |
@@ -297,7 +311,7 @@ German-5 : la clearance du rachis cervical par les **règles canadiennes ou NEXU
 
 ## 4. Ce qui reste non corrigé, et pourquoi
 
-### 4.1 Les « marqueurs tumoraux » restants — un arbitrage organe par organe *(8 → 6 après g7)*
+### 4.1 Les « marqueurs tumoraux » restants — un arbitrage organe par organe *(8 → 6 après g7 → 4 après g8)*
 
 Le lot g5b avait transmis « marqueurs tumoraux » comme un boilerplate **faux à chaque
 occurrence**, avec consigne de le rechercher. Le lot g5c a établi que **la généralisation
@@ -309,15 +323,41 @@ est trop large** :
 
 Le boilerplate est faux quand l'organe n'a pas de marqueur utile — poumon, cerveau, tissus
 mous, œsophage, ORL. Il restait **8 occurrences dans 6 grilles** (German-12, 13, 18, 21 ×2,
-29, 34 ×2) ; **il en reste 6** depuis g7, qui a retiré les deux de German-34 — les seules
-qui fussent dans son périmètre de réparation, parce qu'elles doublaient un examen juste
-prisonnier du nom du diagnostic. **Aucune passe globale n'a été faite, et il ne faut pas en
-faire : une passe mécanique les retirerait toutes, y compris les trois qui sont justes.**
+29, 34 ×2) ; g7 a retiré les deux de German-34 — les seules qui fussent dans son périmètre
+de réparation, parce qu'elles doublaient un examen juste prisonnier du nom du diagnostic —
+et **g8 les deux de German-21. Il en reste 4.** **Aucune passe globale n'a été faite, et il
+ne faut pas en faire : une passe mécanique les retirerait toutes, y compris les trois qui
+sont justes.**
 
-**Les deux de German-21 sont le prochain candidat, et le seul dont la réponse soit déjà
-connue** : elles portent exactement les mêmes organes — œsophage et ORL — que celles
-retirées de German-34, et g5c les avait déjà jugées fausses. Les trois autres
-(German-12, 13, 18) sont justes ; German-29 reste à arbitrer.
+**Ce que g8 a corrigé, et une prémisse à rectifier.** Cette section annonçait que German-21
+portait « exactement les mêmes organes — œsophage et ORL — que German-34 ». C'est **faux à
+moitié** : German-21 (*Douleur abdominale*, station de reflux) porte **Cancer de
+l'œsophage** et **Cancer gastrique**, jamais d'ORL. La conclusion tient malgré tout, pour la
+même raison qu'à l'œsophage : ni l'œsophage ni l'estomac n'ont de marqueur d'usage
+diagnostique, et l'examen qui départage est la **gastroscopie avec biopsies** — que la
+section notée `m3` de German-21 cote déjà (« Gastroscopie », « Test à l'uréase avec
+biopsie »), sans marqueur ni IRM, et que les entrées voisines du même bloc emploient déjà
+(« Œsophagite de reflux → pH-métrie, gastroscopie », « Ulcère gastrique ou duodénal →
+Gastroscopie, test *Helicobacter pylori* »). La page « SSP — Douleur Abdominale » porte
+**0 « marqueur »** et ne cite l'IRM que pour la grossesse et la lithiase de la voie biliaire
+principale : elle ne contredit rien. Rendu : « → **Gastroscopie avec biopsies étagées** »
+et « → **Gastroscopie avec biopsies multiples de la lésion** » — le vocabulaire de
+German-21 (« gastroscopie ») plutôt que celui de German-34 (« endoscopie digestive haute »),
+puisque c'est celui que porte sa section notée.
+
+**Les 4 restantes, verdictées organe par organe.**
+
+| Grille | Organe | Marqueur réellement en jeu | Avis |
+|---|---|---|---|
+| German-12 | côlon | **ACE** | **Juste sur le marqueur** — l'ACE fait partie du bilan initial d'un cancer colique. L'entrée met déjà « Coloscopie avec biopsies » en tête, l'ordre pédagogique est bon. Le point discutable n'est pas le marqueur mais l'**IRM** : la page « SSP — Constipation » porte 0 « IRM » et répond « coloscopie » (7 occurrences) ; l'IRM est l'examen du **rectum**, pas du côlon. Priorité basse. |
+| German-13 | côlon **et rectum** | **ACE** | **La plus défendable des quatre.** « Cancer colorectal » inclut le rectum, où l'IRM pelvienne *est* l'examen de stadification ; la coloscopie avec biopsies est en tête. Ne pas toucher. |
+| German-18 | ovaire | **CA-125** | **Juste, et déjà correctement gardée** par « si suspecte » — c'est la garde conditionnelle qui rend l'entrée exacte. La retirer serait une régression. Ne pas toucher. |
+| German-29 | os (hanche), métastase | *aucun marqueur nommé* | **Le seul des quatre qui soit fautif — et pas par le marqueur.** « Tumeur osseuse primitive ou métastase → CT abdominal, marqueurs tumoraux » : la page « SSP — Douleur de Hanche » tranche au **niveau 1** et dit « **RX hanche + scintigraphie osseuse** » pour la métastase, puis « IRM / CT TAP · **électrophorèse des protéines** » ; elle porte **0 « marqueur »**. La section notée de German-29 cote radiographie du bassin, IRM de hanche, échographie, scintigraphie osseuse, FSC/CRP/VS, bilan phosphocalcique — **ni CT abdominal ni marqueur**. Le défaut de fond est l'**examen** : le CT abdominal ne montre pas la lésion de hanche, il cherche un primitif, et il arrive après la radiographie. Correction à faire, mais c'est une réécriture d'entrée, pas un retrait de boilerplate. |
+
+Autrement dit : **il ne reste aucun retrait pur à faire**. German-12, 13 et 18 sont justes ;
+German-29 demande une réécriture guidée par sa page SSP, qui est explicite. Le point
+« marqueurs tumoraux » peut être clos comme *motif de recherche* ; ce qui subsiste est un
+défaut d'examen dans une seule grille.
 
 ### 4.2 German-75 — la station porte une tuberculose, son bloc de différentiels ne la porte pas
 
@@ -479,7 +519,7 @@ correctement trié les lectures de g5b : 4 pages lues sur 12 possibles, 3 rendem
 | German | `check_nomenclature.py` | **OK** — aucun terme non suisse, code 0 |
 | German | `check_reachability.py` | **OK** — 88 grilles, barème atteignable à 100 % sur chaque section, code 0 |
 | German | `report_redundancy.py` | 14 paires inter-blocs |
-| German | `report_redundancy.py --intra` | + 91 paires intra-bloc |
+| German | `report_redundancy.py --intra` | + 91 paires intra-bloc — **90 depuis g8** |
 | German | `check_no_loss.py 4819f53` | 652 items signalés sur 80 grilles, rapport, code 0 |
 | AMBOSS | `check_invariants.py` | **OK** — 40 grilles, code 0 |
 | AMBOSS | `check_nomenclature.py` | **OK**, code 0 |
@@ -552,6 +592,16 @@ pas le texte comparé**. La remontée de 59 à 66 notée ci-dessus vient donc de
 arguments, pas de la sortie des examens — la nuance n'était pas isolable avant g7, qui a
 fait la seconde opération sans la première.
 
+**g8 laisse l'inter-blocs à 14 et fait tomber l'intra-bloc à 90.** La paire perdue est celle
+de German-21, appariée à **0,86** — « cancer de l œsophage imagerie ct irm biopsie marqueurs
+tumoraux » contre « cancer gastrique imagerie ct irm biopsie marqueurs tumoraux ». C'était
+la **seule** paire intra-bloc de cette grille, et elle ne devait sa similarité qu'au
+boilerplate : deux diagnostics différents recevaient mot pour mot la même conduite. La
+distinguer fait tomber le rapport à 0,67, sous le seuil. **Le chiffre a donc baissé pour la
+bonne raison** — une redondance réelle en moins, non un item perdu — et c'est le seul cas du
+corpus où la mesure de redondance a servi de témoin à une erreur de fond plutôt que de
+mesure de forme.
+
 ### 6.5 Non-perte d'information
 
 `check_no_loss.py 4819f53` signale **652 items sur 80 grilles**. Le volume est attendu : la
@@ -623,7 +673,7 @@ python3 scripts/german/check_invariants.py         # OK — 88 grilles, code 0
 python3 scripts/german/check_nomenclature.py       # OK — aucun terme non suisse, code 0
 python3 scripts/german/check_reachability.py       # OK — 88 grilles à 100 %, code 0
 python3 scripts/german/report_redundancy.py        # TOTAL : 14 paire(s)
-python3 scripts/german/report_redundancy.py --intra  # + 91 paire(s) intra-bloc
+python3 scripts/german/report_redundancy.py --intra  # + 90 paire(s) intra-bloc (91 avant g8)
 python3 scripts/german/check_no_loss.py 4819f53    # rapport, code 0 en toutes circonstances
 
 python3 scripts/amboss/check_invariants.py         # OK — 40 grilles, code 0

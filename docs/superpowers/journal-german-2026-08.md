@@ -1310,3 +1310,131 @@ portent que **deux** styles de `<div>`, `rgb(52, 105, 46)` (examen, 12
 occurrences) et `rgb(80, 90, 110)` (arguments, 11) — aucune troisième variante ne
 pouvait échapper au motif. Aucune grille n'a été lue en entier, aucun contrôle
 n'a employé un `grep` brut.
+
+---
+
+### Tâche g8 — Les deux « marqueurs tumoraux » de German-21 (œsophage, estomac)
+
+**Départ `7ae720f`. 2 entrées d'`annexe-dd` corrigées. Le boilerplate
+« marqueurs tumoraux » tombe de 6 à 4 occurrences dans le corpus.**
+
+**Prémisse vérifiée avant d'éditer — elle n'était exacte qu'à moitié.** La
+consigne annonçait, comme le § 4.1 du rapport g6, que German-21 portait « les
+mêmes organes que German-34 — œsophage et **ORL** ». Lecture du bloc : German-21
+(*Douleur abdominale*, station de reflux chez un sacristain de 56 ans) porte
+**Cancer de l'œsophage** et **Cancer gastrique**. Son unique `annexe-dd` compte
+dix entrées, **aucune ORL** ; le mot n'apparaît nulle part dans la grille. La
+prémisse tient sur l'œsophage, tombe sur l'ORL, et l'arbitrage reste valable pour
+l'estomac par le même raisonnement — d'où correction, mais avec une formulation
+qui n'est pas celle de German-34.
+
+**Les trois autorités, dans l'ordre.**
+
+- **Niveau 1 — page « SSP — Douleur Abdominale »** (mapping `docs/obsidian-mapping.yaml`,
+  seule page desservant German-21) : **0 occurrence de « marqueur »**, 0 de
+  « œsoph », et l'IRM n'y est citée que pour la **grossesse** et la **lithiase de
+  la voie biliaire principale**. Sur l'endoscopie : « Scanner abdominal préféré ;
+  **endoscopie** pour confirmation ». La page ne prescrit pas le point mais ne le
+  contredit pas — elle **infirme** en revanche « IRM » et « marqueurs tumoraux »
+  par absence mesurable, comme « SSP — Toux Chronique » l'avait fait pour
+  German-75.
+- **Niveau 2 — section notée `m3` « Examens diagnostiques »** : Gastroscopie ·
+  pH-métrie œsophagienne · **Test à l'uréase avec biopsie** · Analyses sanguines
+  [Gastrine, vitamine B12, auto-anticorps] · Radiographie ou CT [hernie
+  para-œsophagienne]. **Aucun marqueur tumoral, aucune IRM.** Le corrigé que lit
+  l'examinateur dit « gastroscopie », et le bloc pédagogique disait « imagerie ».
+- **Le bloc lui-même** employait déjà « gastroscopie » deux fois sur des entrées
+  voisines : « Œsophagite de reflux → pH-métrie, gastroscopie » et « Ulcère
+  gastrique ou duodénal → Gastroscopie, test *Helicobacter pylori* ». Le
+  boilerplate était donc en contradiction avec ses propres voisins de liste.
+
+**Modifications**
+
+- `annexe-dd` German-21 · Cancer de l'œsophage : « → Imagerie (CT/IRM), biopsie,
+  marqueurs tumoraux » → « → **Gastroscopie avec biopsies étagées** »
+  source : SSP — Dysphagie, « OGD = 1ᵉʳ examen … avec biopsies étagées », 0
+  occurrence de « marqueur » (autorité établie en g7 pour le même organe) ;
+  section notée `m3` de German-21, « Gastroscopie ».
+- `annexe-dd` German-21 · Cancer gastrique : « → Imagerie (CT/IRM), biopsie,
+  marqueurs tumoraux » → « → **Gastroscopie avec biopsies multiples de la
+  lésion** »
+  source : section notée `m3` de German-21 (« Gastroscopie », « Test à l'uréase
+  avec biopsie ») ; page SSP, 0 « marqueur ». L'estomac n'a pas davantage que
+  l'œsophage de marqueur d'usage diagnostique — l'ACE et le CA 19-9 y sont des
+  outils de suivi, pas de diagnostic.
+
+**Pourquoi « gastroscopie » et non « endoscopie digestive haute » comme en
+German-34.** German-34 est une dysphagie, dont la page SSP et le bloc emploient
+« endoscopie » ; German-21 est une station de reflux dont la **section notée**
+écrit « Gastroscopie » et dont deux entrées voisines l'écrivent aussi. La
+consigne autorisait explicitement l'adaptation au contexte de la grille, et le
+niveau 2 fait foi sur le vocabulaire du corrigé. Les deux formulations désignent
+le même examen.
+
+**Pourquoi les deux entrées ne sont pas rendues identiques.** L'`annexe-dd` sert
+à nommer *l'examen qui départage*, et deux hypothèses distinctes qui reçoivent
+mot pour mot la même conduite n'apprennent rien — c'était précisément le défaut
+du boilerplate. « Biopsies étagées » (protocole de l'œsophage, y compris pour le
+Barrett que la même liste porte) et « biopsies multiples de la lésion » (règle de
+l'ulcère gastrique, dont la même liste porte l'entrée) distinguent les deux
+gestes sans rien ajouter d'inventé. Aucune stadification n'a été ajoutée : le CT
+TAP, l'écho-endoscopie et le PET-CT relèvent du bilan d'extension, hors du
+contrat de rôle d'`annexe-dd`.
+
+**Divergences consignées — les 4 « marqueurs tumoraux » restants, non corrigés**
+
+- `annexe-dd` German-12 · côlon, « Coloscopie avec biopsies ; imagerie (CT/IRM),
+  marqueurs tumoraux » : **le marqueur est juste** (ACE, bilan initial), la
+  coloscopie est déjà en tête. Non corrigé. Le point discutable est l'**IRM** —
+  page « SSP — Constipation » : 0 « IRM », 7 « coloscopie » ; l'IRM est l'examen
+  du rectum, pas du côlon. Priorité basse.
+- `annexe-dd` German-13 · côlon **et rectum**, « Coloscopie avec biopsies,
+  imagerie (CT/IRM), marqueurs tumoraux » : **juste sur les deux points**,
+  « colorectal » incluant le rectum où l'IRM pelvienne est l'examen de
+  stadification. Non corrigé, et à ne pas corriger.
+- `annexe-dd` German-18 · ovaire, « US pelvienne, marqueurs tumoraux **si
+  suspecte** » : **juste**, le CA-125 est le complément standard d'une masse
+  annexielle suspecte, et c'est la garde conditionnelle qui rend l'entrée exacte.
+  Non corrigé, et à ne pas corriger.
+- `annexe-dd` German-29 · os / métastase, « Tumeur osseuse primitive ou métastase
+  → CT abdominal, marqueurs tumoraux » : **fautif, mais par l'examen plus que par
+  le marqueur.** La page « SSP — Douleur de Hanche » tranche au **niveau 1** —
+  « RX hanche + **scintigraphie osseuse** » pour la métastase, puis « IRM / CT
+  TAP · **électrophorèse des protéines** » ; **0 occurrence de « marqueur »** sur
+  ses 413 lignes. La section notée de German-29 cote radiographie du bassin, IRM
+  de hanche, échographie, scintigraphie osseuse si IRM contre-indiquée, FSC/CRP/VS,
+  bilan phosphocalcique — **ni CT abdominal ni marqueur**. Un CT abdominal ne
+  montre pas la lésion de hanche : il cherche un primitif, et il vient après la
+  radiographie. Non corrigé — hors périmètre de cette tâche, qui ne portait que
+  sur German-21 ; c'est une réécriture d'entrée, pas un retrait de boilerplate.
+
+**Vérifications** — `check_invariants.py` OK (88), `check_nomenclature.py` OK,
+`check_reachability.py` OK 88/88 à 100 %, `report_redundancy.py` **14**
+(inchangé) et **90** intra-bloc — **91 avant**, et l'écart est expliqué et voulu :
+la paire perdue est la seule paire intra-bloc de German-21, appariée à **0,86**,
+« cancer de l œsophage imagerie ct irm biopsie marqueurs tumoraux » contre
+« cancer gastrique imagerie ct irm biopsie marqueurs tumoraux ». Elle ne devait sa
+similarité qu'au boilerplate ; les deux entrées distinguées s'apparient à 0,67,
+sous le seuil de 0,72. **Une redondance réelle en moins, pas un item perdu.**
+AMBOSS aux trois verts et redondance **147**. Commande de détection du défaut de
+gabarit : **4**, les flèches sémantiques de German-65 (×3) et German-66 (×1),
+valeur attendue inchangée. `baseline.json` non régénéré.
+
+**Aucune modification du barème** : le diff ne touche que deux `<div>` d'examen à
+l'intérieur du bloc `annexe-dd`, qui ne porte aucune case à cocher ; le
+`<input type="radio">` du `criteria-row` hôte appartient au critère englobant et
+n'a pas été approché. Aucun `.criteria-text`, aucun `<input>`, aucune
+`patient-response` dans le diff — 2 insertions pour 2 suppressions, une ligne par
+entrée. `boundsAnomalies` et `uncoveredContent` vides.
+
+`check_no_loss.py 7ae720f German-21_` : **2 items signalés**, tous deux
+verdictés — ce sont exactement les deux chaînes remplacées. Contrôle mot à mot du
+résidu : les seuls mots qui disparaissent de la grille sont **« imagerie »,
+« IRM », « marqueurs », « tumoraux »**, c'est-à-dire la totalité de ce qui devait
+partir et rien d'autre. « Cancer de l'œsophage », « Cancer gastrique » et
+« biopsie » (sous la forme « biopsies ») sont toujours présents ; « CT » reste
+dans la grille par la section notée `m3` (« Radiographie ou CT »). Après
+correction, la grille porte **0 « marqueur »** et **0 « IRM »**. Aucune perte
+accidentelle.
+
+Aucune grille n'a été lue en entier, aucun contrôle n'a employé un `grep` brut.
