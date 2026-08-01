@@ -4934,3 +4934,195 @@ Zona auriculaire (syndrome de Ramsay Hunt). Deux blocs pédagogiques. Redondance
 - `git diff --numstat` : 5 fichiers, **29 insertions / 32 suppressions**, toutes dans la zone
   pédagogique (contrôlé hunk par hunk contre `peda_bounds`). Aucun `.criteria-text` touché, aucun
   crochet de réponse patient touché, aucun sous-item noté ajouté ni retiré, aucun item ICE touché.
+
+### Tâche c3a — dédoublonnage du bloc `annexe-dd`, grilles AMBOSS-1 à 20
+
+Axe unique : `annexe-dd` ↔ `presentation`/« 1. Arguments pour et contre chaque hypothèse ».
+Règle appliquée (mandat c3a, `arbitrages-amboss-2026-08.md` § 1.2) : `annexe-dd` est
+**canonique** pour le raisonnement différentiel et garde l'argumentaire complet ;
+`presentation` cède et ne conserve que les deux ou trois arguments décisifs à énoncer à
+l'oral. Tout argument absent d'`annexe-dd` y a été **porté avant** d'être retiré de
+`presentation` (règle anti-perte, `PROCEDURE.md` § 3).
+
+Convention d'insertion : les puces ajoutées à `annexe-dd` sont placées **avant** la
+dernière puce du `<li>`, celle à laquelle l'examen discriminant `→ …` reste collé — sans
+quoi `check_no_loss.py` signale à tort la disparition de l'item composite (limite connue,
+`PROCEDURE.md` § 6, « la découpe ne porte pas sur `→` »).
+
+**Modifications**
+
+*AMBOSS-1 — Douleurs abdominales, femme 47 ans*
+- annexe-dd · Cholécystite : ajout de « Irradiation à l'épaule droite » et « Cependant :
+  Pas d'ictère franc », portés depuis `presentation` avant suppression.
+- annexe-dd · Pancréatite biliaire : ajout de « Cependant : Douleur surtout hypocondre
+  droit » et « Cependant : Pas d'alcoolisme chronique ». Cholédocholithiase : ajout de
+  « Cependant : Absence d'ictère ».
+- presentation · Arguments pour/contre : 22 items → 8.
+- **Signalement** : la grille n'emploie jamais l'en-tête « Arguments CONTRE » ; ses
+  contre-arguments sont écrits « Cependant : … » **à l'intérieur** de la liste « Arguments
+  POUR ». Convention conservée (non inventée), c'est elle qui a fait lire l'argumentaire
+  comme unilatéral en tâche c2.
+
+*AMBOSS-2 — Douleurs abdominales, femme 23 ans*
+- annexe-dd · Appendicite : ajout « Cependant : Pas de vomissements ». MIP inchangée.
+  GEU : ajout « Cependant : Sous pilule contraceptive » et « Cependant : Des règles
+  récentes n'écartent pas la GEU — jugées normales par une patiente sur quatre, le β-hCG
+  reste obligatoire ». Infection urinaire : ajout de deux contre-arguments (douleur FID
+  avec signes d'appendicite, pas de brûlures mictionnelles actuelles).
+- annexe-dd · Torsion ovarienne — **correction factuelle** : « Début brutal de douleur
+  sévère » → « Douleur sévère (9/10) d'aggravation rapide », plus « Cependant : Début
+  progressif la veille, douleur non brutale ». La vignette décrit une douleur diffuse et
+  sourde la veille au soir, devenue intense le matin ; l'ancien libellé donnait comme
+  argument POUR un caractère brutal que la section notée contredit (`PROCEDURE.md` § 4,
+  niveau 2).
+- presentation : 24 items → 10.
+- **Signalement** : même convention « Cependant : » sans en-tête CONTRE.
+
+*AMBOSS-3 — Douleurs abdominales, femme 34 ans*
+- annexe-dd · Cancer de l'ovaire : ajout « Cependant : Âge jeune (34 ans), mais possible
+  si BRCA+ ». GEU : ajout « Saignements légers inhabituels » (POUR) et « Cependant : Pas
+  de retard franc de règles ». Appendicite : ajout de deux contre-arguments (pas de
+  symptômes chroniques, pas de fièvre ni de leucocytose). Rupture de kyste : précision
+  de « N'explique pas les autres symptômes » → « … (ballonnements, pollakiurie, perte
+  d'appétit) ».
+- presentation : Q3 (rupture de kyste) et Q4 (appendicite) supprimées — contenu
+  intégralement porté par `annexe-dd` ; Q1 et Q2 réduites. 16 items → 5.
+- **Signalement** : même convention « Cependant : ».
+- **Divergence consignée** : `annexe-dd` et `theorie` portent le même énoncé au mot près,
+  « Augmentation du périmètre abdominal (souvent premier signe) » (ratio 1.00). Le
+  glose « souvent premier signe » relève du rôle de `theorie` ; le retirer d'`annexe-dd`
+  sortirait des deux motifs autorisés par le mandat (porter un argument, corriger une
+  erreur). Non corrigé, laissé à arbitrage.
+
+*AMBOSS-4 — Saignements vaginaux, femme 50 ans*
+- annexe-dd · Cancer du col : ajout « Col anormal, friable et ulcéré au spéculum »
+  (constat d'examen porté depuis `presentation`, confirmé par la section notée « Examen
+  pelvien : donner le résultat montrant un col anormal »).
+- presentation : Q3 (causes bénignes) supprimée, Q1 et Q2 réduites. 17 items → 4.
+- **Erreur médicale retirée** : `presentation`/Q1 donnait « Multiparité est légèrement
+  protectrice » comme argument CONTRE le **cancer du col**. La multiparité est un
+  cofacteur de risque du cancer du col chez la femme HPV-positive ; elle n'est protectrice
+  que pour l'endomètre — ce que la grille dit correctement ailleurs (`annexe-dd` la classe
+  en POUR pour le col et en CONTRE pour l'endomètre). Item supprimé, non porté.
+
+*AMBOSS-5 — Nausées, femme 19 ans*
+- annexe-dd · GEU : ajout « Pas de métrorragies rapportées » (CONTRE). MIP : ajout
+  « Douleurs pelviennes peu marquées » (CONTRE). Infection urinaire : ajout « Pas de
+  fièvre » (CONTRE).
+- presentation : Q4 (infection urinaire) supprimée, Q1-Q3 réduites. 21 items → 7.
+
+*AMBOSS-6 — Douleurs pelviennes, femme 30 ans*
+- annexe-dd · Fibromes : ajout « Utérus augmenté de volume possible » (POUR) et création
+  d'une section « Arguments CONTRE » avec « Pas de masse palpable décrite à ce stade ».
+  Adénomyose : ajout « Âge jeune (30 ans) » (CONTRE).
+- presentation : Q3 (adénomyose) supprimée, Q1 et Q2 réduites. 17 items → 5.
+
+*AMBOSS-7 — Toux et fièvre, fillette 2 ans*
+- annexe-dd · Bronchite aiguë : création d'une section « Arguments CONTRE » avec « Fièvre
+  élevée persistante » et « Tachypnée (plutôt en faveur d'une pneumonie) ».
+- presentation : 17 items → 7.
+
+*AMBOSS-8 — Troubles du transit, homme 32 ans*
+- annexe-dd · Crohn : ajout « Tabagisme (facteur aggravant du Crohn) » (POUR). RCH : ajout
+  « Alternance constipation/diarrhée atypique » (CONTRE).
+- presentation : Q4 (SII) supprimée, Q1-Q3 réduites. 20 items → 6.
+- **Divergence consignée** : `presentation`/SII listait « Sang, perte de poids, **aphtes**
+  = drapeaux rouges ». `annexe-dd` retient la triade classique « sang, perte de poids,
+  douleur nocturne » ; les aphtes sont un signe extradigestif de MICI, pas un drapeau
+  rouge du SII. Version d'`annexe-dd` conservée.
+
+*AMBOSS-9 — Douleurs dorsales, homme 71 ans*
+- annexe-dd · Métastases osseuses — **correction d'une erreur factuelle interne** : les
+  arguments CONTRE listaient « Absence de perte de poids · **Sueurs nocturnes** ·
+  **Symptômes urinaires** ». Sans la négation, les deux derniers énonçaient l'inverse de
+  ce qu'ils veulent dire et devenaient des arguments POUR. La section notée répond
+  « Sueurs nocturnes [Non] » et « Problèmes urinaires [Non] » : corrigé en « Absence de
+  sueurs nocturnes » et « Absence de symptômes urinaires ». Aucune redondance sur cette
+  grille, seul ce point la concernait.
+
+*AMBOSS-11 — Selles noires, homme 65 ans*
+- annexe-dd · Ulcère gastrique : création d'une section « Arguments CONTRE » avec « Pas
+  d'hématémèse, symptômes relativement modérés ».
+- presentation : 14 items → 6.
+
+*AMBOSS-12 — Douleur thoracique, femme 35 ans*
+- annexe-dd inchangé : les 20 items de `presentation` s'y retrouvaient tous. C'est le cas
+  annoncé par la tâche c2 (aucun diagnostic propre au bloc).
+- presentation : Q3 (pneumonie atypique) et Q4 (péricardite) supprimées, Q1 et Q2
+  réduites. 20 items → 5.
+
+*AMBOSS-13 — Douleur thoracique, homme 35 ans*
+- annexe-dd · Contusion costale : création d'une section « Arguments CONTRE » — « Une
+  contusion isolée n'explique ni l'abolition du murmure vésiculaire, ni la diminution du
+  frémitus, ni l'hypersonorité » (les trois contre-arguments de `presentation` fusionnés
+  en un énoncé, pour ne pas recréer trois doublons avec `resume`). Hémothorax : ajout
+  « Pas de matité des bases » (CONTRE).
+- presentation : Q3 (hémothorax) et Q4 (pneumothorax spontané) supprimées, Q1 et Q2
+  réduites. 15 items → 4.
+
+*AMBOSS-14 — Douleur thoracique, homme 45 ans*
+- annexe-dd · SCA : création d'une section « Arguments CONTRE » — « Pas d'irradiation » et
+  « Troponine initialement normale possible (négative dans l'angor instable) », cohérent
+  avec l'arbitrage [4] (angor instable = troponine négative). Contusion costale : ajout
+  « Douleur constante, non localisée à un point ». Pneumothorax : ajout « Pas de
+  tympanisme, murmure vésiculaire conservé ».
+- presentation : Q3 (contusion costale), Q4 (pneumothorax) et Q5 (embolie pulmonaire)
+  supprimées ; Q1 et Q2 réduites. 21 items → 5.
+
+*AMBOSS-15 — Douleur abdominale chronique, garçon 6 ans*
+- annexe-dd inchangé : tous les items retirés de `presentation` y figuraient déjà.
+- presentation : Q3 (allergie alimentaire) et Q4 (mucoviscidose) supprimées, Q1 et Q2
+  réduites. 18 items → 6.
+
+*AMBOSS-18 — Toux chronique, femme 21 ans*
+- annexe-dd · Asthme : création d'une section « Arguments CONTRE » avec « Auscultation
+  normale en dehors des crises ». Pneumonie atypique : ajout « Douleur thoracique
+  récente » (POUR).
+- presentation : Q3 (pneumonie atypique) supprimée, Q1 et Q2 réduites. 17 items → 4.
+
+*AMBOSS-19 — Toux chronique, femme 53 ans*
+- annexe-dd · BPCO : ajout « Auscultation : ronchi, sibilants, expiration prolongée » et
+  « Pas de variation circadienne des symptômes (asthme moins probable) » (POUR), plus une
+  section « Arguments CONTRE » — « Pas de crépitants (qui orienteraient vers une
+  insuffisance cardiaque) ».
+- **Reclassement logique** : « Pas de variation circadienne (asthme moins probable) »
+  figurait dans `presentation` sous « Arguments CONTRE la BPCO » alors qu'il plaide **pour**
+  la BPCO contre l'asthme. Porté du bon côté.
+- presentation : 18 items → 7.
+
+**Divergences consignées (sans modification)**
+
+- AMBOSS-10, 16, 20 · les paires résiduelles opposent `annexe-dd` à `expert` ou `theorie`,
+  pas à `presentation` (ces trois grilles n'ont pas de bloc `presentation`). Rôles
+  distincts : `expert` énonce un piège (« manquer les antécédents familiaux de psoriasis »)
+  ou un résultat d'examen donné en station (CAGE 4/4, ENMG), `annexe-dd` un argument du
+  cas. Hors de l'axe arbitré par le mandat, non traitées.
+- AMBOSS-1, 5, 6, 15 · plusieurs paires résiduelles opposent `annexe-dd` à une **valeur de
+  mnémo** de `presentation` (6F, PREGNANT, 3A…) dont la clé doit rester intacte
+  (`PROCEDURE.md` § 3, « Redire à l'oral, pas en liste »). Non traitées.
+- AMBOSS-12 · la paire `annexe-dd` ↔ `expert` sur le score de Wells signalée en tâche c2
+  est un **faux positif de ressemblance** : `annexe-dd` donne le score de la patiente
+  (7,5), `expert` le seuil de décision (« > 4 = probabilité élevée → angio-CT directe »).
+  Les deux énoncés sont cohérents, rien à corriger.
+
+**Vérifications (tâche c3a)**
+
+- `check_invariants.py` → `OK — 40 grilles, tous les invariants preserves` (code 0).
+  `radioCount` inchangé sur les 40 grilles : aucun `<input type="radio">` du `criteria-row`
+  hôte n'a été touché. `maxScores`, `scoreSpans`, `criteriaCount`, `detailCount`,
+  `checkboxCount` inchangés — **barème gelé**.
+- `check_nomenclature.py` → `OK — aucun terme non suisse detecte` (code 0).
+- `report_redundancy.py` par grille, avant → après (grilles 1 à 20) : **177 → 100 paires**
+  (−44 %), dont paires impliquant `annexe-dd` : **128 → 62** (−52 %). Corpus entier :
+  240 → 163.
+- `check_no_loss.py c2fa88c` : **52 items signalés sur 16 grilles**, tous relus un à un —
+  aucune perte réelle. Répartition : 34 reformulations ou synonymes (« pas de brûlures
+  mictionnelles » ↔ « pas de dysurie », « contact viral fraternel » ↔ « contact malade
+  (frère…) »), 12 suppressions dont le contenu est porté à l'identique ou en plus précis
+  par `annexe-dd`, `resume` ou `theorie`, 5 items composites scindés par l'ajout d'une
+  puce (l'examen `→ …` se rattache à la nouvelle dernière puce, les deux moitiés
+  subsistent), 1 correction factuelle assumée (AMBOSS-2, « Début brutal de douleur
+  sévère »).
+- `git diff --numstat` : 16 fichiers, **32 insertions / 493 suppressions**. Aucun
+  `.criteria-text` touché, aucun crochet de réponse patient touché, aucun sous-item noté
+  ajouté ni retiré, aucun item ICE touché.
