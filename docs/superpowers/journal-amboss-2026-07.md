@@ -4348,3 +4348,380 @@ Syndrome de Sheehan six mois après une hémorragie du post-partum.
 - `git diff --numstat` : 5 fichiers, **35 insertions / 40 suppressions**, toutes dans la zone
   pédagogique (contrôlé ligne à ligne contre `peda_bounds`). Aucun `.criteria-text` touché, aucun
   crochet de réponse patient touché, aucun sous-item noté ajouté ni retiré, aucun item ICE touché.
+
+### AMBOSS-29 — Fatigue, femme de 18 ans (page SSP : Fatigue)
+
+Mononucléose infectieuse (EBV) sur suspicion d'anémie ferriprive par ménorragies. Deux blocs
+pédagogiques seulement (`expert`, `theorie`) : axes 1 à 6 sans objet, seul opère le contrat de rôle.
+Redondance : 5 paires → 0.
+
+**Modifications**
+
+*Contrat de rôle — `expert`/Points clés purgé de la théorie (2 des 5 paires)*
+
+- expert · Points clés : « Lymphocytes atypiques > 10% = pathognomonique » supprimé après **portage**
+  du seuil dans `theorie`/Diagnostic (voir la correction factuelle ci-dessous). Le portage précède
+  la suppression.
+- expert · Points clés : « Éviter amoxicilline : éruption dans 90% cas EBV » supprimé —
+  `theorie`/Rappels porte « ÉVITER amoxicilline : éruption 90% cas », `theorie`/Présentation clinique
+  « Éruption : 5-10% spontané, 90% si amoxicilline », et le message de conduite reste dans
+  `expert`/Pièges (« Prescrire amoxicilline pour 'pharyngite' »). Aucune perte.
+
+*Erreur factuelle interne (correction directe, hors hiérarchie)*
+
+- theorie · Diagnostic : « Lymphocytes atypiques = cellules Downey pathognomoniques » →
+  « Lymphocytes atypiques (cellules de Downey) > 10% : **caractéristiques du syndrome
+  mononucléosique, évocateurs d'EBV mais non spécifiques (CMV, primo-infection VIH,
+  toxoplasmose)** ». « Pathognomonique » était faux dans l'absolu et contredisait le propre
+  `annexe-dd` de la grille, qui retient la primo-infection VIH et le CMV avec l'argument
+  « syndrome mononucléosique ». La patiente a 2 partenaires sur l'année : conclure à l'EBV sur les
+  lymphocytes atypiques ferait manquer une primo-infection VIH.
+
+*Contrat de rôle — le résultat à `expert`, le seuil et le pourquoi à `theorie` (3 paires restantes)*
+
+- theorie · Diagnostic : « FSC : lymphocytose > 50%, > 10% lymphocytes atypiques » → « FSC :
+  **seuils d'interprétation** — lymphocytose relative > 50%, lymphocytes atypiques > 10% ; **y
+  chercher aussi une anémie microcytaire (ménorragies)** ». La ligne cesse de doubler le résultat de
+  station (`expert` « FSC : lymphocytose 60%, 15% lymphocytes atypiques ») et reprend ce que le
+  critère noté m2 dit de la FSC (« pour évaluer l'anémie microcytaire hypochrome »).
+- theorie · Présentation clinique : « Adénopathies : cervicales postérieures +++ (90%) » → ajout de
+  « — la topographie **postérieure** oriente vers l'EBV, à l'inverse des adénopathies antérieures de
+  l'angine à streptocoque ». La ligne cesse de répéter le résultat d'examen de `expert`.
+- theorie · Examens complémentaires (queue) : « Transaminases : ASAT/ALAT souvent élevées » →
+  « Transaminases : **recherche d'une hépatite EBV, anictérique dans la plupart des cas — et
+  dépistage d'une hépatite virale devant toute fatigue** ». L'élévation reste portée par
+  `theorie`/Diagnostic (« élévation modérée 80% cas ») : rien n'est perdu.
+
+*Sécurité — niveau 1, la page SSP tranche*
+
+- theorie · Examens complémentaires (queue) : ajout de « **β-hCG : systématique chez toute femme en
+  âge de procréer** ». Aucune occurrence de β-hCG ni de test de grossesse dans la grille entière
+  (recherche sur `strip_base64`) : la seule mention de grossesse est l'item d'anamnèse
+  « Grossesses [Non] », qui est une gestité, pas un test.
+  source : SSP — Fatigue — § Pièges — « Oublier la **grossesse** chez femme jeune (**βHCG
+  systématique**) » ; § Examens complémentaires, légende — « FSC, VS, TSH, transaminases, ferritine
+  et **test de grossesse** en bilan de base ». La patiente a 18 ans et déclare une activité sexuelle
+  avec deux partenaires sur l'année (critère noté a11).
+- theorie · Examens complémentaires (queue) : « TSH : si fatigue persistante > 3 mois » → « **Bilan
+  minimal de toute fatigue, sans attendre : FSC, ferritine, TSH, glycémie, CRP/VS** (ici ATCD
+  thyroïdien maternel) ». Différer la TSH de trois mois contredisait à la fois la page SSP et le
+  critère noté m3, qui fait doser « TSH, T3 libre, T4 libre » sans condition de durée.
+  source : SSP — Fatigue — `pieges_eliminatoires` — « **Ne pas faire bilan minimal (Hb, TSH,
+  ferritine, glycémie, CRP, VS)** » ; § Règle d'or — « Bilan minimal incontournable : FSC, TSH,
+  ferritine, glycémie, CRP/VS ». Même geste qu'en AMBOSS-27 (tâche 14), grille sœur de la même page.
+
+**Divergences consignées**
+
+- expert · Rôles : « Transaminases : **ASAT 85, ALAT 95** » — valeurs en unité implicite (U/L).
+  Hors du champ de la passe d'unités, qui a porté sur l'hémogramme (PROCEDURE.md § 6, « angle mort
+  assumé ») : non modifié, signalé pour une passe d'unités ultérieure.
+- Section notée, bloc `therapy-section` « Si anémie ferriprive confirmée » : l'item « **Durée** » est
+  orphelin, sans valeur après le mot. Barème gelé : non corrigé, consigné.
+- La grille ne délivre **aucun résultat d'hémogramme rouge ni de bilan martial** : `expert`/Rôles
+  donne la seule ligne lymphocytaire de la FSC, alors que le critère noté m2 fait demander la FSC
+  « pour évaluer l'anémie microcytaire hypochrome », que m3 fait doser « fer sérique, ferritine,
+  transferrine, TIBC », qu'un bloc thérapeutique entier traite l'anémie ferriprive et que
+  `expert`/Pièges avertit de « négliger l'anémie ferriprive (ménorragies) ». La branche martiale de
+  la station n'a donc aucun résultat à délivrer. Corriger imposerait d'**inventer** une hémoglobine
+  et une ferritine chez cette patiente : niveau 3, laissé inchangé, consigné pour arbitrage.
+
+### AMBOSS-32 — Lésion génitale, femme de 17 ans (page SSP : Leucorrhées)
+
+Co-infection VPH (condylomes) + Chlamydia + gonocoque chez une mineure. Deux blocs pédagogiques.
+Redondance : 0 paire avant et après — **aucune suppression n'a été faite sur cette grille**, en
+application de la consigne de tâche : le coût d'une répétition sur un contenu de protection de la
+patiente est très inférieur au coût d'une omission. `expert`/Points clés conserve donc ses six items,
+y compris ceux qui recoupent `theorie` (préservatifs sans latex, vaccination VPH post-exposition,
+confidentialité de la mineure).
+
+**Modifications**
+
+*Prise en charge — niveau 1, la page SSP tranche explicitement*
+
+- theorie · Rappels : « Chlamydia : **azithromycine 1g dose unique (1ère ligne)** » / « Alternative :
+  doxycycline 100 mg × 2/j × 7j » → « Chlamydia : **doxycycline 100 mg × 2/j × 7j (1ère ligne)** » /
+  « Alternative : **azithromycine 1 g PO dose unique** (grossesse, doute sur l'observance —
+  doxycycline CI aux T2-T3) ». Les deux molécules restent, leur rang s'inverse.
+  source : SSP — Leucorrhées — § Cervicite (Chlamydia / Gonocoque) — « **Doxycycline 100 mg × 2/j
+  × 7 j (Chlamydia 1ʳᵉ ligne)** … OU **azithromycine 1 g PO (alternative)** » ; § Mnémoniques —
+  « Cervicite = IST : **doxycycline** + ceftriaxone + traitement partenaire + abstinence 7 j +
+  déclaration OFSP » ; § Grossesse — « Doxycycline CI au T2-T3 → amoxicilline ou azithromycine ».
+- theorie · Rappels : « Gonorrhée : ceftriaxone 500 mg IM **+ azithromycine 1g** » → « Gonorrhée :
+  **ceftriaxone 500 mg-1 g IM dose unique, associée au traitement anti-chlamydia en cas de
+  co-infection** ». Les deux tests sont positifs chez cette patiente.
+  source : SSP — Leucorrhées — « **Ceftriaxone 500 mg-1 g IM dose unique** si gonocoque ».
+- theorie · Rappels : « Test de contrôle : 3-4 semaines après traitement » → « **Test de guérison :
+  PCR à 4-6 semaines si grossesse, persistance des symptômes ou doute sur l'observance** ».
+  source : SSP — Leucorrhées — « **Test de guérison : PCR à 4-6 sem** si grossesse, persistance,
+  doute observance ».
+- theorie · Rappels : « Abstinence : 7 jours après traitement **monodose** » → « **Abstinence
+  sexuelle : 7 jours après la fin du traitement** ». La restriction à la monodose laissait sans
+  consigne le traitement de 7 jours devenu première ligne.
+  source : SSP — Leucorrhées — « **Abstinence sexuelle 7 j** ».
+
+*Suissification — niveau 1*
+
+- theorie · Rappels : ajout de « **Déclaration obligatoire à l'OFSP : chlamydia, gonocoque,
+  syphilis** ». La grille ne portait ce point que dans la section notée, sous la forme générique
+  « Déclaration obligatoire ».
+  source : SSP — Leucorrhées — § Points Clés ECOS — « Cervicite = IST → traiter le/les partenaire(s)
+  + dépister les autres IST + **déclaration OFSP (gonocoque, chlamydia, syphilis)** ».
+- theorie · Rappels : « Notification partenaires : 60 jours précédents » → ajout de « — notification
+  anonyme possible par les **centres de santé sexuelle (Profa, Santé Sexuelle Suisse)** ».
+  `expert`/Points clés annonçait « notification anonyme possible » sans nommer de canal.
+  source : SSP — Leucorrhées — § Skills connexes — « **Notification anonyme partenaires** : centres
+  de santé sexuelle (**Profa, Santé Sexuelle Suisse**) ».
+
+*Sécurité — protection de la patiente mineure, niveau 1*
+
+- theorie · Confidentialité médicale chez mineurs : ajout de « **Fondement en Suisse : la mineure
+  capable de discernement (art. 16 CC) consent seule et sa confidentialité s'impose, y compris
+  vis-à-vis des représentants légaux** ». La grille affirmait « Informer les parents sans consentement
+  (illégal) » sans jamais nommer le critère qui fonde la règle, alors que c'est lui que la patiente
+  oppose au défi de la station.
+- theorie · Confidentialité médicale chez mineurs : ajout de « **Dépister une relation non consentie
+  ou sous contrainte (partenaire en position d'autorité ou de dépendance, sexualité tarifée) — si
+  suspicion d'abus sexuel : LAVI 0848 800 244, CURML, signalement adapté ; 147 Pro Juventute pour la
+  patiente** ». Aucun dépistage d'abus ne figurait dans la grille : la maltraitance n'y apparaissait
+  que comme une **limite** à la confidentialité, jamais comme quelque chose à rechercher. La patiente
+  a 17 ans, déclare 8 partenaires sur l'année, « souvent des aventures d'un soir », et aucune
+  protection barrière.
+  source : SSP — Leucorrhées — § Red flags — « Suspicion d'**abus sexuel** → **LAVI**, **CURML**,
+  signalement adapté » ; § En Bref — « **LAVI 0848 800 244** (violences sexuelles) » ; § Skills
+  connexes — « **147 Pro Juventute** (ado) ».
+- theorie · Confidentialité médicale chez mineurs : « Limites : danger imminent, maltraitance,
+  **incapacité** » → « … **incapacité de discernement** », terme du droit suisse.
+- theorie · Examens complémentaires (queue) : « Test VIH 4e génération : dépistage systématique si
+  IST » → ajout de « — **un test négatif n'exclut pas une exposition récente, à refaire à 6 semaines
+  (fenêtre sérologique)** ». `expert`/Rôles délivre « Test VIH : négatif (avec consentement) » à une
+  patiente à exposition répétée non protégée : sans cette réserve, le résultat se lit comme une
+  exclusion. Interprétation d'examen — rôle propre de la section.
+
+**Divergences consignées**
+
+- Section notée, bloc `therapy-section` : « **Azithromycine 1 g dose unique PO** / Ou doxycycline »
+  et « Ceftriaxone 500 mg IM **PLUS azithromycine 1 g PO** » — le bloc pédagogique est désormais
+  aligné sur la page SSP (niveau 1), la section notée reste gelée et diverge sur le rang des deux
+  molécules et sur la bithérapie de la gonococcie. De même « Test de guérison à 3-4 semaines ».
+- Aucune mention de la **PrEP** dans la grille, alors que la patiente cumule 8 partenaires sur
+  l'année et l'absence de protection barrière. Ni la page SSP ni la section notée n'abordent la PrEP :
+  niveau 3, rien inventé, signalé pour arbitrage.
+
+### AMBOSS-33 — Céphalée, femme de 55 ans (page SSP : Céphalée)
+
+Hémorragie sous-arachnoïdienne sur rupture d'anévrisme de la communicante antérieure, avec fièvre à
+38.7 °C, Kernig et Brudzinski positifs et sinusite récente — méningite bactérienne co-suspectée.
+Deux blocs pédagogiques. Redondance : 0 paire avant et après.
+
+**Modifications**
+
+*Contrat de rôle — `expert`/Points clés purgé de la théorie*
+
+- expert · Points clés : « Nimodipine systématique si HSA (prévention vasospasme) » supprimé — porté
+  trois fois ailleurs et en plus précis : `theorie`/Prise en charge (« Nimodipine : 60 mg × 6/j PO
+  × 21j »), `theorie`/Rappels (« nimodipine 60 mg × 6/j PO × 21 jours systématique ») et le message
+  de conduite dans `expert`/Pièges (« Oublier prévention vasospasme (nimodipine) »).
+- expert · Points clés : « Mortalité HSA : 50% (25% avant hôpital) » supprimé — `theorie`/HSA porte
+  la même donnée ventilée (« Mortalité : 50% (25% pré-hospitalier, **25% hospitalier**) »).
+
+*Erreur factuelle interne et alignement — niveau 1, la page SSP tranche*
+
+- theorie · Présentation clinique : « 'Pire céphalée de ma vie' : **pathognomonique** » → « 'Pire
+  céphalée de ma vie', **maximale en moins d'une minute : HSA jusqu'à preuve du contraire, même si
+  l'examen neurologique est strictement normal** ». « Pathognomonique » était faux — le coup de
+  tonnerre est un drapeau rouge, non une certitude — et contredisait `expert`/Points clés, qui écrit
+  correctement « = HSA **jusqu'à preuve contraire** ».
+  source : SSP — Céphalée — § Cartes ECOS — « « la pire céphalée de ma vie », maximale d'emblée
+  (< 1 min) = **HSA jusqu'à preuve du contraire, même si l'examen neuro est strictement normal** ».
+- theorie · Examens complémentaires (queue) : « Si CT négatif **< 6h : angio-CT ou angio-IRM** » et
+  « Si CT négatif > 6h : PL » → « Si CT négatif **et clinique évocatrice : PL (xanthochromie,
+  spectrophotométrie), idéalement ≥ 12h après le début — la sensibilité du CT chute après 6-12h, un
+  CT normal n'élimine pas l'HSA** » et « **Angio-CT ou angio-IRM une fois l'HSA confirmée**, puis
+  angiographie 4 vaisseaux : localisation de l'anévrisme ». L'algorithme d'origine faisait de
+  l'angio-CT l'étape suivant un CT négatif, alors que l'examen qui exclut l'HSA est la PL et que
+  l'angio sert à localiser l'anévrisme **après** confirmation.
+  source : SSP — Céphalée — § HSA — « **CT cérébral natif en urgence** (Se > 95 % si réalisé < 6 h) ;
+  **si CT négatif et clinique évocatrice → PL** avec recherche de xanthochromie (**idéalement
+  ≥ 12 h**) ; **angio-CT / angio-IRM si HSA confirmée** » ; § Cartes ECOS — « la sensibilité du CT
+  chute (< 90 %) après 6-12h → un CT normal à H24 **N'ÉLIMINE PAS l'HSA : la PL reste obligatoire** » ;
+  `pieges_eliminatoires` — « **Manquer HSA (CT puis PL si CT-)** ».
+- theorie · Diagnostic HSA : « PL si CT négatif + forte suspicion : xanthochromie » → « … : **la
+  xanthochromie (bilirubine) distingue l'HSA d'une PL traumatique** ». Rend interprétable le
+  résultat que `expert` délivre (« PL (si faite) : GR 50 000, xanthochromie présente »), **sans
+  toucher à cette ligne**.
+  source : SSP — Céphalée — § Cartes ECOS — « La **xanthochromie (bilirubine) distingue l'HSA d'une
+  PL traumatique** ».
+
+*Sécurité — niveau 1, la page SSP tranche*
+
+- theorie · Méningite bactérienne : « Traitement : ATB empirique urgente < 1h » → « … — **ne jamais
+  la retarder pour le CT ou la PL : hémocultures, puis antibiotiques et dexaméthasone immédiatement,
+  imagerie et PL ensuite** ». La grille poussait le candidat vers « CT IMMÉDIAT » puis PL après CT
+  (`expert`/Pièges « Faire PL avant CT (risque engagement si HTIC) ») sans jamais dire que
+  l'antibiothérapie ne s'ordonne pas dans cette file d'attente — chez une patiente à 38.7 °C avec
+  méningisme, c'est l'erreur de séquence létale.
+  source : SSP — Céphalée — § Red flags — « Fièvre + raideur de nuque (méningisme) → Méningite
+  bactérienne · **Antibiothérapie empirique IV immédiate** » ; § Méningite bactérienne — « Purpura
+  fulminans → ceftriaxone 2 g IV/IM en préhospitalier **sans délai** » ; « dexaméthasone **avant ou
+  avec la 1ʳᵉ dose d'antibiotiques** ».
+- theorie · Examens complémentaires (queue) : ajout de « **Hémocultures × 2 avant toute
+  antibiothérapie si fièvre ou suspicion de méningite (ici T° 38.7 °C)** ». La section de queue,
+  qui liste les examens à demander, n'en portait aucune ; les hémocultures ne figuraient que dans le
+  critère noté m3.
+  source : SSP — Céphalée — § Examens — « **Hémocultures × 2**, lactate, procalcitonine si suspicion
+  de **méningite** / sepsis ».
+
+**Points protégés — vérifiés intacts**
+
+- `expert`/Rôles « PL (si faite) : **GR 50 000**, xanthochromie présente » : **non modifié**. Compte
+  d'érythrocytes dans le LCR, rendu par µL, jamais en G/L (PROCEDURE.md § 6).
+- Légende du schéma « Prise en charge de la méningite » : les clés `BMP :` et `CBC :` sont
+  **conservées** telles quelles, l'image n'étant pas modifiée. `expert`/Rôles « FSC : GB 15 G/L »
+  reste tel que corrigé en tâche 7.
+
+**Divergences consignées**
+
+- expert · Rôles : « Ionogramme : **Na 135**, glucose 7.2 mmol/L » — sodium en unité implicite
+  (mmol/L). Signalé pour une passe d'unités ultérieure, non modifié.
+- theorie · Prise en charge HSA et `theorie`/Rappels se recouvrent sur trois lignes (contrôle
+  tensionnel, nimodipine, analgésie). Recouvrement **interne** à `theorie`, que
+  `report_redundancy.py` ne mesure pas (il compare des blocs entre eux) et qu'aucun axe ne
+  prescrit de traiter. Non restructuré, signalé.
+- theorie · Rappels : « Anti-épileptique prophylactique : lévétiracétam » et `theorie`/PEC
+  « **Triple-H** si vasospasme » sont présentés comme des standards, alors que la prophylaxie
+  systématique et le triple-H ont l'un et l'autre reculé au profit d'une hypertension induite en
+  euvolémie. Ni la page SSP ni la section notée ne tranchent (la section notée écrit elle aussi
+  « triple-H thérapie ») : niveau 3, laissé inchangé.
+
+### AMBOSS-36 — Fatigue, homme de 54 ans (page SSP : Fatigue)
+
+Hépatite C aiguë sur hépatopathie alcoolique chez un usager de drogues intraveineuses. Deux blocs
+pédagogiques. Redondance : 0 paire avant et après. **Alignement distinct de celui d'AMBOSS-29** :
+même page SSP, tableaux sans recouvrement (femme de 18 ans / homme de 54 ans), aucune transposition.
+
+**Modifications**
+
+*Contrat de rôle — `expert`/Points clés purgé de la théorie*
+
+- expert · Points clés : « **Window period : 4-10 semaines pour séroconversion** » supprimé après
+  **portage** dans `theorie`/Examens complémentaires (queue), dont la ligne de sérologies devient
+  « Sérologies virales : HBsAg, anti-HBc, anti-HCV, ARN-VHC — **l'anti-VHC reste négatif pendant la
+  fenêtre sérologique de 4-10 semaines : en phase aiguë, c'est l'ARN-VHC qui fait le diagnostic** ».
+  Le portage précède la suppression. La donnée était absente de `theorie`, qui ne portait que
+  l'incubation (2-12 semaines) : sans elle, un anti-VHC négatif se lit comme une exclusion alors que
+  le diagnostic retenu est une hépatite C **aiguë**.
+- expert · Points clés : « Hépatite C aiguë : 75% asymptomatique, **25% ictère** » supprimé —
+  `theorie`/Hépatite C aiguë porte « Incidence : 75% asymptomatique, **25% symptomatique** » et
+  « ictère dans **20-30%** ». L'item supprimé confondait symptomatique et ictérique : c'est la
+  version fausse qui disparaît, les deux exactes restent.
+- expert · Points clés : « Alcool + virus = synergie pour progression cirrhose » supprimé — une
+  **section entière** de `theorie` (« Co-infection VHC/alcool ») développe la synergie (progression
+  × 3, CHC × 100, réponse antivirale diminuée, décompensation plus rapide).
+
+*Sécurité — erreur factuelle interne (correction directe, hors hiérarchie)*
+
+- theorie · Rappels : « Prophylaxie sevrage : **diazépam** selon score CIWA » → « Prophylaxie
+  sevrage : **benzodiazépine** selon score CIWA — **en cas d'hépatopathie, préférer l'oxazépam ou le
+  lorazépam (glucuronoconjugaison directe), le diazépam s'accumulant et pouvant précipiter une
+  encéphalopathie** ». Le patient a une hépatite alcoolique avec risque de cirrhose ; le diazépam,
+  à métabolisme oxydatif hépatique et à demi-vie longue, s'accumule et peut déclencher une
+  encéphalopathie. La section notée reste générique (« benzodiazépines, thiamine ») : elle ne
+  contredisait pas la ligne, il n'y avait donc rien à arbitrer, seulement un fait à corriger.
+
+*Erreur factuelle interne — formule inutilisable en unités suisses*
+
+- theorie · Hépatite alcoolique : « Score Maddrey : (4.6 × (**TP** patient - **TP** témoin)) + **bili
+  totale** » → « Score de Maddrey : 4.6 × (**temps de prothrombine** du patient - témoin, **en
+  secondes**) + bilirubine totale **÷ 17.1 (bilirubine en µmol/L)** ». Deux défauts : « TP » se lit
+  en Suisse comme le *taux* de prothrombine en pourcentage alors que la formule prend un *temps* en
+  secondes ; et la bilirubine, rendue en µmol/L par les laboratoires suisses, doit être convertie
+  avant d'entrer dans la formule — sans le facteur, le score calculé est faux d'un ordre de grandeur
+  et l'indication des corticoïdes (seuil ≥ 32) avec lui. Le facteur est écrit en division par 17.1
+  plutôt qu'en nommant l'unité anglo-saxonne, bannie par `check_nomenclature.py`.
+
+**Divergences consignées**
+
+- theorie · Hépatite alcoolique : « ASAT/ALAT > 2, **ASAT < 300** » — valeur en unité implicite
+  (U/L). Signalé pour une passe d'unités ultérieure, non modifié.
+- theorie · Rappels : « Alternative : **pentoxifylline** 400 mg × 3/j si CI stéroïdes » — molécule
+  dont le bénéfice n'a pas été confirmé dans l'hépatite alcoolique sévère. Ni la page SSP ni la
+  section notée ne tranchent : niveau 3, laissé inchangé.
+- Aucune mention de la **naloxone à emporter** ni de la vaccination **hépatite A** dans la prise en
+  charge de réduction des risques d'un usager de drogues intraveineuses, alors que la surdose est
+  la première cause de décès de cette population. Ni la page SSP (Fatigue) ni la section notée
+  n'abordent le sujet : niveau 3, rien inventé, signalé pour arbitrage.
+- Section notée, blocs `therapy-section` : trois artefacts d'import subsistent — « signes vitau**xx** »,
+  « Pas d'antiviraux sauf forme sévère**x sauf forme sévère** », « antiviraux action directe**x
+  guérison 95% avec antiviraux action directe** ». Barème gelé : non corrigés, consignés.
+
+### AMBOSS-40 — Vertiges, homme de 25 ans (page SSP : Vertiges)
+
+Zona auriculaire (syndrome de Ramsay Hunt). Deux blocs pédagogiques. Redondance : 1 paire → 0.
+
+**Modifications**
+
+*Contrat de rôle — `expert`/Points clés purgé de la théorie (la paire détectée)*
+
+- expert · Points clés : « VZV réactivation ganglion géniculé » supprimé — `theorie` porte la même
+  donnée deux fois, en tête de section (« Réactivation du VZV dans le ganglion géniculé (VII) ») et
+  en item (« Pathogénie : réactivation VZV ganglion géniculé »). Aucune perte.
+
+*Sécurité — niveau 1, la page SSP tranche ; drapeau rouge entièrement absent*
+
+- theorie · Névrite vestibulaire : ajout de « **HINTS devant tout syndrome vestibulaire aigu : head
+  impulse NORMAL, nystagmus changeant de sens ou skew deviation = AVC du tronc ou du cervelet
+  jusqu'à preuve du contraire — c'est le head impulse pathologique qui rassure. Toujours tester la
+  marche : impossible = central** ». Ni « HINTS », ni « skew », ni « AVC », ni « cérébelleux » n'avaient
+  **une seule occurrence** dans la grille entière (recherche sur `strip_base64`) : une station de
+  vertige aigu ne portait aucune trace de l'urgence qu'elle doit d'abord exclure. `expert` délivre
+  pourtant un « Head thrust test : positif côté droit » sans que rien n'explique ce que ce résultat
+  écarte — ni ce qu'un résultat normal aurait imposé.
+  source : SSP — Vertiges — § Règle d'or — « Devant un **syndrome vestibulaire aigu continu**, c'est
+  l'examen **HINTS+** (et non l'IRM précoce) qui exclut le mieux un **AVC du tronc / cervelet**. Un
+  **AVC cérébelleux peut mimer une névrite vestibulaire isolée** → toujours réaliser HINTS+ et tester
+  la marche » ; § Pièges — « **Head Impulse NORMAL en aigu = PLUS inquiétant (AVC postérieur), pas
+  rassurant** » ; `pieges_eliminatoires` — « **Manquer AVC fosse postérieure · HINTS mal réalisé** ».
+- theorie · Névrite vestibulaire : « Nystagmus : horizontal, unidirectionnel » → « … , **inhibé par
+  la fixation — vertical, multidirectionnel ou non inhibé = central** ».
+  source : SSP — Vertiges — § Orientation Périphérique vs Central — « Nystagmus | Horizontal ou
+  rotatoire, unidirectionnel, **inhibé par la fixation** | **Multidirectionnel, vertical, non
+  inhibé** ».
+
+*Prise en charge — niveau 1, la page SSP tranche*
+
+- theorie · Rappels : « Antivertigineux : méclizine 25 mg × 3/j **PRN** » → « … , **cure courte
+  < 3 jours — au-delà ils freinent la compensation centrale** ». Le « PRN » ouvrait une prescription
+  sans borne de durée, alors que `theorie` explique par ailleurs que la récupération passe par la
+  « compensation centrale 6-12 semaines ».
+  source : SSP — Vertiges — § Névrite vestibulaire — « Antivertigineux symptomatiques **courts
+  (< 3 j, pour ne pas freiner la compensation centrale)** ».
+
+**Divergences consignées**
+
+- expert · Points clés « Paralysie faciale dans **60%** cas » face à `theorie`/Ramsay Hunt « **Triade** :
+  vésicules auriculaires + **paralysie faciale** + otalgie », qui fait de la paralysie faciale un
+  élément définitionnel, et « Extension possible : **VIII (60%)** ». La section notée tranche dans le
+  sens de `expert` (signe d'alarme n° 1 : « Paralysie faciale — Zona = **risque 60%** → corticoïdes
+  urgents ») : niveau 2, `expert` conservé, tension `theorie` consignée sans être corrigée faute de
+  source qui départage la définition du syndrome de son risque évolutif.
+- theorie · Rappels emploie « méclizine », la page SSP « méclozine » et la section notée
+  « Méclizine ». Variante orthographique, non harmonisée pour ne pas s'écarter de la section notée
+  gelée.
+
+**Vérifications (tâche 15)**
+
+- `check_invariants.py` → `OK — 40 grilles, tous les invariants preserves` (code 0). `blocks` reste
+  `["expert", "theorie"]` sur les cinq grilles ; `maxScores`, `scoreSpans`, `criteriaCount`,
+  `detailCount`, `radioCount`, `checkboxCount` inchangés : **barème gelé**.
+- `check_nomenclature.py` → `OK — aucun terme non suisse detecte` (code 0). Aucune valeur introduite
+  en `g/dL`, `ng/mL`, `pg/mL`, `/mm³`, en livres ni en unité implicite ; la conversion du score de
+  Maddrey est écrite en facteur (÷ 17.1) et en µmol/L, sans nommer l'unité bannie.
+- `report_redundancy.py` par grille : **6 paires → 0** (29 : 5→0 · 32 : 0→0 · 33 : 0→0 · 36 : 0→0 ·
+  40 : 1→0).
+- `check_no_loss.py 2d09e16` par grille : 3 + 7 + 8 + 6 + 2 = **26 items signalés**, tous relus un à
+  un — 18 reformulations enrichies ou fusions (l'item reste, réécrit), 6 suppressions dont le contenu
+  est porté à l'identique ou en plus précis par un autre bloc, 2 portages explicites documentés
+  ci-dessus. **Aucune perte réelle.**
+- `git diff --numstat` : 5 fichiers, **29 insertions / 32 suppressions**, toutes dans la zone
+  pédagogique (contrôlé hunk par hunk contre `peda_bounds`). Aucun `.criteria-text` touché, aucun
+  crochet de réponse patient touché, aucun sous-item noté ajouté ni retiré, aucun item ICE touché.
