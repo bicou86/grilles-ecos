@@ -190,3 +190,147 @@ le fichier caractère par caractère : 20 sont des puces réelles conservées ma
 devenues plus courtes que le seuil `min_len=18` de `list_items()` (« AIT »,
 « TVP », « FAI », « L2-L3 », « alcool d'hier », « signe de Déjérine »…), et 6
 sont l'effet du renommage `NFS` → `FSC` du volet A dans le même intervalle.
+
+### German-44 (Érythème — lupus érythémateux cutané) — grille pilote du corpus, tâche g3
+
+Page SSP : `SSP ECOS/SSP — Éruption Cutanée.md` (mapping ligne 1254).
+Blocs présents : `annexe-dd`, `redflags`, `therapy` ×2, `resume`, `presentation`,
+`annexe-image`. **Ni `annexe-expert` ni `annexe-theorie`** — ils n'existent nulle
+part dans ce corpus, donc les axes 1, 2, 6 et 7 de `scripts/amboss/PROCEDURE.md`
+§ 3, qui reposent sur eux, sont **sans objet ici**. Restent applicables : `resume`
+canonique (axes 3 et 4), la trame de présentation (axe 5), la règle du format et
+la règle anti-perte.
+
+**La page SSP ne tranche rien de cette grille.** Elle couvre l'éruption cutanée
+générique — toxidermie, purpura fébrile, SJS/Lyell, DRESS, érysipèle — et ne porte
+aucune occurrence de « lupus », « ANA », « anti-SSA », « hydroxychloroquine » ni
+« photosensibilité ». Le seul point où elle recoupe la grille est
+« Biopsie cutanée si doute diagnostique » (§ 🔬 EXAMENS COMPLÉMENTAIRES), que
+`resume` porte déjà mot pour mot. **Niveau 3** sur toute la prise en charge : rien
+à aligner, rien inventé. L'arbitrage s'est donc fait au niveau 2 (section notée)
+et par le contrat de blocs.
+
+**Modifications**
+
+- annexe-dd · Psoriasis : « Arguments POUR : Plaques érythémato-squameuses bien
+  délimitées · **Localisations typiques (coudes, genoux)** · **Antécédents
+  familiaux possibles** » → POUR conservé sur la seule plaque, les deux autres
+  **déplacés en Arguments CONTRE** sous leur forme négative
+  (« Localisations typiques absentes (coudes, genoux, cuir chevelu) »,
+  « Pas d'antécédents familiaux »).
+  source : section notée `e2` « Examen cutané détaillé [Érythème rouge légèrement
+  squameux **au niveau du dos**] » et `a11` « Antécédents familiaux [Grands-parents
+  hypertendus après 65 ans, grand-père avec goutte] » — **niveau 2**. Le bloc
+  affirmait comme arguments *pour* le psoriasis deux éléments que la section notée
+  déclare absents chez cette patiente.
+- annexe-dd · Photodermatose : « POUR : Éruption liée à l'exposition solaire ·
+  **Amélioration à l'ombre** · **Récidive à chaque exposition** » → POUR resserré
+  sur « Aggravation nette pendant les vacances en Italie », les deux autres
+  critères **déplacés en CONTRE** en gardant leur nom
+  (« Persistance après la fin de l'exposition, sans amélioration à l'ombre »,
+  « Premier épisode, sans récidive à chaque exposition »), plus « Pas de prurit ».
+  source : sections notées `a4` [Depuis environ 3 semaines], `a13` [Retour d'Italie
+  il y a 2 semaines], `a5` [Non, premier épisode], `a3` [Pas de démangeaisons].
+- annexe-dd · les cinq arguments CONTRE ci-dessus sont **portés depuis**
+  `presentation`/« Arguments pour et contre » (Q2 et Q3), pas inventés. C'est le
+  geste anti-perte : porter d'abord dans le bloc dont c'est le rôle, supprimer
+  ensuite. Le bloc ne portait que des « Arguments POUR » et ne **départageait**
+  donc rien, alors que c'est sa raison d'être au contrat.
+- resume · Prise en charge / Traitement topique : « Inhibiteurs de calcineurine
+  (tacrolimus, off-label) » → « … **— surtout sur le visage** ».
+  source : `therapy` du critère noté `m5`, « Inhibiteurs de la calcineurine :
+  Alternative aux corticoïdes, **surtout pour le visage** » — niveau 2. Porté
+  avant la suppression de « Inhibiteurs de la calcineurine si visage » dans
+  `presentation`.
+- resume · Prise en charge : **nouvelle sous-section « Signes d'alarme (passage
+  systémique) »** — atteinte rénale (protéinurie, hématurie), atteinte
+  neurologique (convulsions, troubles cognitifs), arthrites franches, cytopénies
+  inexpliquées. Portée depuis `presentation`/Touches ludiques, où elle était la
+  seule **donnée clinique** que le bloc canonique ne portait pas — ce que le
+  contrat interdit à `presentation` (« ne porte jamais : toute donnée clinique
+  nouvelle »). Elle rend enfin actionnable le point clé « Toujours rechercher
+  signes de passage en lupus systémique », qui restait sans contenu.
+- presentation · Touches ludiques / **« Formes cliniques de lupus cutané »** :
+  supprimée. Doublon strict de `resume`/Examen clinique/Formes cliniques
+  principales, **même format** (liste) — 3 des 17 paires. Comparée item par item
+  avant suppression : aigu, subaigu, chronique discoïde et tumidus figurent tous
+  dans `resume` ; « risque alopécie cicatricielle » y est déjà (« parfois alopécie
+  cicatricielle ») et « malaire » subsiste trois fois ailleurs dans la grille.
+- presentation · Touches ludiques / **« PEC pratique »** : supprimée. Check-list
+  actionnable — ce que le contrat interdit à `presentation` — doublant
+  `resume`/Prise en charge et le `therapy` du critère `m5`. Ses cinq items sont
+  tous retrouvés (le « visage » ayant été porté dans `resume` juste avant).
+- presentation · Touches ludiques / Pièges ECOS : puce « Toujours relier à
+  exposition solaire » supprimée. Même contenu et même format que
+  `resume`/Questions à poser « Relation avec exposition solaire ? », et déjà le
+  point clé n° 1 du `resume` (« Photosensibilité + lésions cutanées chroniques =
+  évoquer lupus cutané »). Les trois autres pièges restent : **l'axe 6 d'AMBOSS
+  — « supprimer `presentation`/Pièges ECOS » — est sans objet ici**, faute
+  d'`annexe-expert` ; c'est le seul bloc de pièges de la grille.
+- presentation · `mnemo-box` LUPUS **déplacée** de « Checklist mentale » vers
+  « Touches ludiques / mnémos ». Geste de l'axe 5 et précédent AMBOSS-2/3 : la
+  checklist redevient une trame pure. Les cinq clés sont intactes. État du corpus
+  après coup : AMBOSS 15/15 en `section-mnemo`, German 11 encore en
+  `section-checklist` et 3 en `section-express` — les 14 autres grilles à mnémo
+  suivront.
+- presentation · Q1 « Lupus érythémateux cutané » : « Érythème squameux chronique,
+  non prurigineux » + « Aggravation après exposition solaire » **fusionnés** en
+  « Érythème squameux chronique **photosensible**, non prurigineux ». Réduction
+  aux arguments décisifs ; « photosensible » dit exactement l'aggravation solaire,
+  qui figure par ailleurs dans la version longue, le SBAR et `annexe-dd`.
+- presentation · Q2 « Psoriasis » et Q3 « Photodermatose » (POUR/CONTRE
+  structurés) **remplacés par une seule réponse orale** : « Pourquoi écarter le
+  psoriasis et la photodermatose ? ». C'est le miroir d'`annexe-dd` qui cède,
+  après que le contenu discriminant y a été porté ; le passage liste → narration
+  parlée est le changement de format que la règle autorise, et c'est le rôle même
+  du bloc (restituer à l'oral).
+- presentation · Q « Quels examens demanderiez-vous ? », Q2 « Traitement », Q3
+  « Suivi » : les trois `presentation-reponse list` / `<ul>` **convertis en
+  `presentation-reponse text`** en registre parlé.
+  motif : « Une liste recopiée sous un en-tête Q/R ne constitue pas un changement
+  de format » (`scripts/amboss/PROCEDURE.md` § 3, « Redire à l'oral, pas en
+  liste »). Q3/Suivi recopiait de surcroît **mot pour mot** les quatre
+  sous-items du critère noté `m7` — duplication de niveau 2 qu'aucune mesure de
+  redondance ne peut voir, les sections notées n'étant pas des blocs. Contenu
+  strictement conservé, `<span class="highlight-range">` et
+  `<span class="highlight-important">` compris.
+
+**Divergences consignées**
+
+- redflags (`m6`) · le second signal d'alarme s'intitule **« 2. Signes d'alerte »**
+  et ne dit rien. C'est le corrigé d'un critère noté (**niveau 2**), et le
+  compléter reviendrait à écrire le corrigé à la place de l'auteur — règle 3 des
+  arbitrages (jugement d'auteur). **Non corrigé.** Le contenu qui le remplirait
+  est désormais dans `resume`/« Signes d'alarme (passage systémique) ». À noter
+  que la procédure interdit par ailleurs de modifier `redflags` pour résoudre un
+  doublon : ici il ne s'agissait pas d'un doublon, mais la conclusion est la même.
+- resume · deux paires **intra-bloc** subsistent, structurelles : « Éviter
+  médicaments inducteurs » (Prise en charge) ↔ « Prise de médicaments
+  inducteurs ? » (Questions à poser) — une mesure et une question ; et « Biopsie
+  cutanée confirme le diagnostic » (Points clés) ↔ « Biopsie cutanée si diagnostic
+  incertain » (Examens à faire) — l'indication et son rendement. Le chiffre
+  intra-bloc mesure, il ne prescrit pas.
+
+**Vérifications** — `check_invariants.py` OK (88), `check_nomenclature.py` OK,
+`check_reachability.py` OK 88/88 à 100 %. **Aucune modification du barème** : les
+trois blocs touchés ne portent ni `<input>` ni case, `maxScores`, `scoreSpans`,
+`sectionCounts`, `criteriaCount`, `detailCount`, `radioCount` et `checkboxCount`
+sont inchangés — règle 1 des arbitrages, pas de régénération de `baseline.json`.
+AMBOSS intact, redondance **147**. `<div>`/`<ul>`/`<li>`/`<span>` appariés (602,
+21, 79, 87), équilibre bloc par bloc vérifié.
+
+Redondance German-44 : **17 → 2** paires inter-blocs (corpus 82 → 67).
+Les deux qui restent sont **le même item** — la clé `S` du mnémo LUPUS,
+« S = Surveillance évolutive vers lupus systémique », face à
+`resume`/PEC en 3 points et à `redflags`/`m6`. Un mnémo garde sa clé d'origine
+(§ 3, « supprimer le mot d'origine casserait le mnémo ») : la paire est le prix
+du format mnémotechnique, qui n'est ni une liste ni une narration.
+
+`check_no_loss.py fbe42f9` : 18 items signalés, **verdictés un à un, aucune perte
+réelle**. Cinq sont les arguments portés dans `annexe-dd`, un est la nuance
+« visage » portée dans `resume`, quatre sont les items de « Formes cliniques » et
+« PEC pratique » retrouvés dans `resume` ou `therapy`, et les huit derniers sont
+l'effet mécanique des trois conversions liste → narration : `list_items()`
+n'extrait pas le texte d'un `presentation-reponse text`, si bien qu'une réponse
+orale complète y apparaît toujours comme une disparition. Présence contrôlée
+chaîne par chaîne sur le HTML brut après `strip_base64` — jamais par `grep`.
