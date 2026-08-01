@@ -3474,3 +3474,114 @@ faible et inhibiteur de la recapture des monoamines).
 - Aucun `.criteria-text` ni crochet de réponse patient touché ; items ICE du critère `m4` intacts ;
   aucun bloc créé. Équilibre `<div>` / `</div>` du fichier entier vérifié à zéro sur les quatre grilles.
 - Redondance globale de ces quatre grilles : **40 paires → 2**.
+
+### Passe typographique — caractère `:` parasite dans les valeurs numériques (tâche 12b)
+
+**Exception au gel des sections notées, explicitement autorisée par l'utilisateur.** Les 14
+corrections ci-dessous portent toutes sur des blocs `therapy-section` situés **hors** de la zone
+pédagogique, donc dans du contenu gelé depuis le début du projet. L'utilisateur a autorisé cette
+exception **au motif que la correction est purement typographique** : elle retire un caractère
+parasite introduit à l'import, sans changer le nombre de sous-items, les checkboxes ni les
+`maxScores`. Le gel portait sur l'ajout et le retrait d'items, pas sur la réparation d'un caractère
+parasite. Treize corrections sur quatorze consistent au retrait exact de la chaîne `: `
+(deux-points + espace) ; la quatorzième restaure les quatre lettres d'un nom de molécule tronqué.
+
+**Origine du défaut** — présent **dès le commit initial** `0ba8bca` (« Initial commit via Netlify »)
+sur les dix grilles concernées : c'est bien un défaut d'import, non une régression du projet. Aucune
+version intacte n'existe donc dans l'historique git, et aucune reconstitution n'a pu être vérifiée
+par `git show` — chacune l'a été par son contexte clinique et par des formes intactes voisines.
+
+**Modifications** — décimales coupées (3)
+
+- AMBOSS-14 · SCA : « Nitroglycérine sublinguale 0.: 4mg » → « Nitroglycérine sublinguale **0.4mg** »
+- AMBOSS-35 · angor stable : « Nitroglycérine sublinguale 0.: 4 mg » → « Nitroglycérine sublinguale **0.4 mg** »
+- AMBOSS-34 · thrombolyse : « Alteplase 0.: 9 mg/kg (max 90 mg) » → « Alteplase **0.9 mg/kg** (max 90 mg) »
+  reconstitution confirmée par le plafond de la même ligne : 0,9 mg/kg × 100 kg = 90 mg.
+
+**Modifications** — plages posologiques coupées (10)
+
+- AMBOSS-14 · SCA : « Morphine 2-: 4mg IV » → « Morphine **2-4mg** IV »
+- AMBOSS-29 · mononucléose : « Paracétamol 500-: 1000 mg × 3-4/j » → « Paracétamol **500-1000 mg** × 3-4/j »
+- AMBOSS-30 · mononucléose : « Paracétamol 500-: 1000 mg × 3-4/j » → « Paracétamol **500-1000 mg** × 3-4/j »
+- AMBOSS-33 · méningite : « Vancomycine 15-: 20 mg/kg × 2/j IV » → « Vancomycine **15-20 mg/kg** × 2/j IV »
+- AMBOSS-35 · angor stable : « Aspirine 160-: 325 mg » → « Aspirine **160-325 mg** »
+- AMBOSS-35 · angor stable : « métoprolol 25-: 50 mg × 2/j » → « métoprolol **25-50 mg** × 2/j »
+- AMBOSS-38 · fracture de stress : « Apports calciques 1000-: 1200 mg/j » → « Apports calciques **1000-1200 mg/j** »
+- AMBOSS-40 · paralysie faciale : « Prednisone 60-: 80 mg/j × 5j » → « Prednisone **60-80 mg/j** × 5j »
+- AMBOSS-40 · Ménière, crise aiguë : « Diazépam 5-: 10 mg IV/IM » → « Diazépam **5-10 mg** IV/IM »  ← **hors liste initiale**
+- AMBOSS-40 · Ménière, fond : « Bétahistine 16-: 24 mg × 2/j » → « Bétahistine **16-24 mg** × 2/j »  ← **hors liste initiale**
+
+**Modification** — nom de molécule tronqué (1)
+
+- AMBOSS-33 · méningite : « Ceftria: 2g × 2/j IV » → « **Ceftriaxone** 2g × 2/j IV »
+  Vérification demandée, en trois points : (a) le bloc `annexe-theorie` de la même grille prescrit
+  « Méningite empirique : **C3G** + vancomycine + ampicilline », et les trois autres lignes du bloc
+  noté sont précisément vancomycine, ampicilline (si > 50 ans) et dexaméthasone — le terme manquant
+  est donc une céphalosporine de 3ᵉ génération ; (b) parmi les C3G, seule la **ceftriaxone** possède
+  le radical `Ceftria` conservé (la céfotaxime aurait laissé `Céfota`) ; (c) la posologie **2 g × 2/j
+  IV** est bien la dose méningée de la ceftriaxone — le double de la dose des autres indications —,
+  cohérente avec l'énoncé restant.
+
+**Notation décimale** — le point a été retenu (`0.4`, `0.9`) et non la virgule, conformément à
+l'usage majoritaire mesuré sur le corpus : 46 décimales au point contre 16 à la virgule en zone
+notée, 52 contre 23 en zone pédagogique (bloc `<script>` exclu). L'usage local est plus net encore :
+la ligne voisine d'AMBOSS-34 écrit « Thrombolyse IV (si **4.5**h du début) » et « INR **1.7** », celle
+d'AMBOSS-35 « ramipril **2.5**- ». La virgule reste la forme des prose pédagogiques récemment
+rédigées (« 37,5 °C », « NaCl 0,9 % ») : les deux conventions cohabitent par zone, et l'édition n'a
+pas cherché à les uniformiser au-delà de son périmètre.
+
+**Espacement** — préservé tel quel dans chaque site : la correction retire `: ` et rien d'autre.
+AMBOSS-14 garde donc `0.4mg` et `2-4mg` sans espace, comme son voisin intact « Aspirine: 300mg » ;
+AMBOSS-35 garde `0.4 mg` et `160-325 mg` avec espace. Forme cible confirmée par une plage **intacte**
+du même fichier qu'une des corrections : AMBOSS-40 écrit « Antivertigineux: Méclizine **25-50** mg
+× 3/j ».
+
+**Divergences consignées** — quatre mots tronqués **non corrigés**, laissés à l'arbitrage
+
+Le balayage a révélé que la troncature de `Ceftria` n'était pas isolée : le défaut coupe le mot à un
+`x` et absorbe les lettres suivantes jusqu'au chiffre (`Ceftria|xone `, `Amo|xicilline `,
+`Céfo|xitine `, `Ciproflo|xacine `, `Ma|ximum `). Ces quatre-là ne sont pas corrigés parce que leur
+réparation exige de **restituer des lettres perdues** — ce n'est plus typographique — et parce que
+la lecture n'est pas unique. La règle n'est du reste pas fiable : `Dexaméthasone: 10 mg`, dans le
+même bloc qu'AMBOSS-33, contient un `x` et est resté intact.
+
+- AMBOSS-2 · antibioprophylaxie péri-opératoire : « **Amo**: 2g IV » — « Amoxicilline 2 g » et
+  « Amoxicilline-acide clavulanique 2 g » produisent le **même** tronçon `Amo`. Deux molécules
+  distinctes : non corrigé.
+- AMBOSS-2 · antibioprophylaxie péri-opératoire : « **Céfo**: 2g IV + métronidazole 500 mg IV » —
+  la céfoxitine est la seule céphalosporine dont le radical donne `Céfo` (la céfuroxime donnerait
+  `Céfuro`), mais son association au métronidazole est redondante, la céfoxitine couvrant déjà les
+  anaérobies. Le contexte ne tranche pas : non corrigé.
+- AMBOSS-2 · antibioprophylaxie péri-opératoire : « **Ciproflo**: 400 mg IV + métronidazole 500 mg
+  IV » — « ciprofloxacine 400 mg IV » est la seule lecture plausible, mais la ligne appartient au
+  même bloc de trois que les deux précédentes : corriger une ligne sur trois y serait arbitraire.
+- AMBOSS-39 · infiltration : « **Ma**: <span>•</span> Maximum 3 injections/an » — le fragment `Ma: `
+  précède un bullet intact « Maximum 3 injections/an ». La réparation consisterait à **supprimer** un
+  fragment, donc à toucher au nombre de puces : hors mandat par construction.
+
+**Divergences consignées** — deux autres artefacts d'import, non corrigés
+
+- AMBOSS-39 · pronostic : « Taux guérison 95% avec **antiviraux action directe**x succès conservateur:
+  70-80% ruptures partielles ». La mention d'antiviraux à action directe (vocabulaire de l'hépatite C)
+  dans une station de **rupture de coiffe des rotateurs** est un contenu étranger ; le `x` accolé et
+  le `: ` intercalé signent le même défaut d'import. Réécriture de fond, hors mandat typographique.
+- AMBOSS-38 · fracture de stress : « Apports calciques 1000-1200 mg/j ; Vitamine D 800-1000 UI/j ;
+  Éviter déficit énergétique **× Vitamine D 800-1000 UI/j** » — la mention de vitamine D est
+  **dupliquée** dans la même puce, raccordée par un `×` parasite. Seule la plage `1000-: 1200` a été
+  réparée ; la déduplication supposerait de retirer du texte d'une section notée.
+
+**Vérifications**
+
+- `check_invariants.py` → `OK — 40 grilles, tous les invariants preserves` (code 0). C'est la preuve
+  que le barème n'a pas bougé : `maxScores`, `scoreSpans`, `blocks`, `criteriaCount`, `detailCount`,
+  `radioCount`, `checkboxCount` tous identiques au snapshot.
+- `check_nomenclature.py` → `OK — aucun terme non suisse detecte` (code 0).
+- `report_redundancy.py` → `TOTAL : 85 paire(s)`, **identique** au total relevé avant les
+  modifications.
+- `check_no_loss.py f623e5a` → `TOTAL : 0 item(s) disparu(s) sur 8 grille(s) modifiee(s)`.
+- Balayage final sur les 40 grilles (`strip_base64` appliqué, jamais de `grep` brut) : **0 occurrence
+  résiduelle** des motifs `\d+\s*-\s*:\s*\d+` et `\d+[.,]\s*:\s*\d+`. Restent les 4 mots tronqués
+  consignés ci-dessus, délibérément.
+- `git diff --stat` : 8 fichiers, **14 insertions / 14 suppressions**, une ligne modifiée par
+  correction. Aucun `.criteria-text` touché, aucun crochet de réponse patient touché, aucun sous-item
+  ajouté ni retiré.
