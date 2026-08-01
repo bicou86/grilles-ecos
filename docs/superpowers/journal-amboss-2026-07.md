@@ -5326,3 +5326,203 @@ orale). Aucune ne porte de bloc `presentation`, donc pas de miroir à réduire.
 - `git diff --numstat` : 11 fichiers, **10 insertions / 87 suppressions**. Aucun
   `.criteria-text` touché, aucun crochet de réponse patient touché, aucun sous-item noté
   ajouté ni retiré, aucun item ICE touché.
+
+### Passe défauts d'import (arbitrages § « Décision de cadrage », règles 1 et 2)
+
+Base : `137ae8e`. Cinq volets. Le gel du barème est levé sous conditions ; seule
+AMBOSS-9 relève de la règle 2, tout le reste de la règle 1.
+
+**Modifications — volet A · négations perdues sous « Arguments CONTRE »**
+
+Balayage exhaustif des **57 blocs `reponse-contre` de `presentation`** (22 grilles) et
+des **148 sections « Arguments CONTRE » d'`annexe-dd`** (37 grilles), plus les
+**21 puces « Cependant : »** que les grilles 1, 2 et 3 emploient à leur place — **365
+puces lues au total**. Deux inversions de polarité trouvées, toutes deux tranchées par
+le scénario :
+
+- AMBOSS-25 · `annexe-dd`, Syndrome de loge aigu : « Douleur extrême » →
+  « Absence de douleur extrême » ; « Tension compartiment » →
+  « Absence de tension du compartiment ».
+  source : scénario — « Douleur sourde intensité 6/10 ». Le diagnostic n'avait aucun
+  argument POUR : ses deux seules puces, sous CONTRE et sans négation, énonçaient
+  exactement les deux signes cardinaux du syndrome de loge.
+- AMBOSS-3 · `annexe-dd`, Appendicite aiguë : « Cependant : Pas de symptômes
+  chroniques, absents dans l'appendicite » → « Cependant : Symptômes chroniques,
+  absents dans l'appendicite ». Négation **parasite** (défaut miroir).
+  source : scénario — « Douleur sourde depuis quelques semaines » ; confirmé par la
+  puce voisine « N'explique pas la douleur sourde de 3 semaines ».
+
+**Modifications — volet B · signes de comparaison manquants**
+
+26 occurrences sur 20 grilles (le relevé initial en portait 15 sur 11). Signature
+utile : là où le signe a disparu, un **double espace** subsiste souvent (grilles 5, 6,
+11, 36, 39).
+
+- AMBOSS-3 : « objectif résidu 1cm » → « < 1cm » (source : `resume` de la même grille —
+  « résection complète ou résiduelle < 1 cm »)
+- AMBOSS-5 : « si perte poids  5% » → « > 5% »
+- AMBOSS-6 : « fibromes sous-muqueux ou  4cm » → « ou > 4cm »
+- AMBOSS-7 : « Oxygénothérapie: si SpO2 92% » → « < 92% » ·
+  « Hospitalisation si SpO2 92%, déshydratation, âge 6 mois » → « SpO2 < 92% […]
+  âge < 6 mois » (**deux** signes sur la même ligne)
+- AMBOSS-9 : « Perte de poids si IMC 25 kg/m² » → « > 25 kg/m² »
+- AMBOSS-11 : « Transfusion si Hb: 70 g/L » → « si Hb < 70 g/L » (source : `presentation` de
+  la même grille — « Je ne transfuserais que si l'hémoglobine passe sous 70 g/L ») ·
+  « Objectif: TA  90/60 mmHg, FC  100/min » → « TA > 90/60 mmHg, FC < 100/min »
+- AMBOSS-12 : « pour maintenir SpO2 92% » → « **>** 92% ». Le relevé initial lisait
+  « < 92 % » ; le verbe « maintenir » impose le sens inverse.
+- AMBOSS-14 : « Oxygène si SpO2 90% » → « < 90% » ·
+  « Nitroglycérine sublinguale 0.4mg (si TA 90 mmHg) » → « si TA > 90 mmHg »
+- AMBOSS-19 : « Oxygénothérapie si PaO2 55 mmHg » → « < 55 mmHg » (source : `resume` de
+  la même grille — « Oxygénothérapie à long terme si PaO2 < 55 mmHg »)
+- AMBOSS-23 : « Indication si perte 30 dB » → « > 30 dB »
+- AMBOSS-28 : « Lévothyroxine: 25-50 μg/j initial si 50 ans » → « si > 50 ans »
+- AMBOSS-33 : « Oxygène si SpO2 94% » → « < 94% » · « cible PAS 140 » → « < 140 » ·
+  « Contrôle TA urgent: PAS 140 mmHg » → « < 140 mmHg » ·
+  « Neurochirurgie si hématome 30 mL » → « > 30 mL » ·
+  « Ampicilline: 2g × 6/j IV (si 50 ans) » → « si > 50 ans » (couverture *Listeria*)
+- AMBOSS-34 : « Oxygène si SpO2 94% » → « < 94% » · « Thrombolyse IV (si 4.5h du
+  début) » → « < 4.5h » · « INR 1.7 » → « INR > 1.7 » · « si sténose 70% » → « > 70% »
+- AMBOSS-35 : « Oxygène si SpO2 94% » → « < 94% »
+- AMBOSS-37 : « si perte 10% poids » → « > 10% » · « Arrêt si 2 valeurs seuil » →
+  « 2 valeurs < seuil » (source : `resume` de la même grille — « Arrêt : 2 valeurs
+  < seuil à 12-24h intervalle »)
+
+**Modifications — volet C · molécules tronquées (AMBOSS-2, critère m5)**
+
+- « Ciproflo: 400 mg IV + métronidazole 500 mg IV » → **Ciprofloxacine** (certain).
+- « Amo: 2g IV » → **Amoxicilline-acide clavulanique**. La ligne est la 1ʳᵉ intention et
+  **ne porte pas de métronidazole** : elle exige donc une couverture anaérobie propre,
+  que l'amoxicilline seule n'a pas.
+  source : `resume` de la même grille — « Antibioprophylaxie IV dans l'heure précédant
+  l'incision : amoxicilline-acide clavulanique, ou céphalosporine + métronidazole
+  500 mg IV, ou ciprofloxacine 400 mg IV + métronidazole 500 mg IV » : trois options,
+  même ordre. Dose laissée à « 2g » — convention maison, cf. AMBOSS-1 m5
+  « amoxicilline-acide clavulanique 1g × 3/j IV », qui chiffre le composant amoxicilline.
+- « Céfo: 2g IV + métronidazole » → **Céfoxitine**. Seule céphalosporine dont le premier
+  `x` tombe après « Céfo » (céfotaxime donnerait « Céfota », céfuroxime « Céfuro ») ;
+  dose 2 g IV conforme. Réserve consignée en divergence.
+
+**Modifications — volet D · artefacts d'import**
+
+- AMBOSS-39 : « <span>•</span> <span>•</span> Ma: <span>•</span> Maximum 3
+  injections/an » → « <span>•</span> <span>•</span> Maximum 3 injections/an ». Le
+  fragment orphelin `Ma:` et sa puce sont fusionnés avec la puce suivante ; le double
+  marqueur de tête est conservé — il marque un sous-niveau (mêmes doubles marqueurs sur
+  « Phase 1/2/3 » sous « Kinésithérapie », et sur les trois antibiotiques d'AMBOSS-33).
+- AMBOSS-39 : « Taux guérison  95% avec antiviraux action direct**ex** succès
+  conservateur: 70-80% ruptures partielles » → « Taux succès conservateur: 70-80%
+  ruptures partielles ». Le fragment d'hépatite C, sans rapport avec une rupture de
+  coiffe, est retiré ; la phrase d'origine se recompose exactement.
+- AMBOSS-38 : « […] ; Éviter déficit énergétique × Vitamine D 800-1000 UI/j » → « […] ;
+  Éviter déficit énergétique ». Déduplication.
+
+Trois artefacts de la **même famille**, non listés à l'arbitrage, trouvés au balayage et
+corrigés au même titre :
+
+- AMBOSS-36 : « Taux guérison  95% avec antiviraux action direct**ex** guérison 95% avec
+  antiviraux action directe » → « Taux guérison > 95% avec antiviraux action directe ».
+  C'est la **source** du fragment parasite d'AMBOSS-39 ; ici le vocabulaire est à sa
+  place (hépatite B/C).
+  source : `theorie` de la même grille — « Taux guérison : > 95% avec AAD même si
+  UDIV actif ».
+- AMBOSS-36 : « Pas d'antiviraux sauf forme sévère**x** sauf forme sévère » →
+  « Pas d'antiviraux sauf forme sévère ».
+- AMBOSS-35 : « Éviter repas 3h avant coucher × Éviter repas 3h avant coucher » →
+  une seule occurrence ; « Perte de poids si surpoids: <span>•</span> Perte de poids si
+  surpoids ; Arrêt tabac » → « Perte de poids si surpoids ; Arrêt tabac ».
+
+**Modification — volet E · AMBOSS-9, barème inatteignable (règle 2)**
+
+`maxScores.anamnese` 53 → **49** · `sectionInfo[anamnese].count` 13 → **12** ·
+`<span class="score">…/53</span>` → **…/49**. La page ne porte que 12 critères
+(`criteria-a1` … `criteria-a12`), dont la somme des maxima vaut 49 :
+a1 = 2, a2 = 10, a3 = 2, a4 = 12, a5 = 4, a6 = 2, a7 = 2, a8 = 2, a9 = 2, a10 = 2,
+a11 = 2, a12 = 7. Aucun 13ᵉ critère n'est écrit : `count: 13` faisait boucler
+`scoring.js` sur un `a13` inexistant, qui rapportait 0.
+
+Vérification par simulation du remplissage complet (algorithme de `cases/scoring.js`
+rejoué hors navigateur : somme des détails cochés, sinon radio de valeur maximale) :
+
+| | avant | après |
+|---|---|---|
+| Anamnèse | 49/53 = 92,45 % | **49/49 = 100 %** |
+| Examen clinique | 13/13 | 13/13 |
+| Management | 17/17 | 17/17 |
+| Communication | 20/20 | 20/20 |
+| **Global** | **98 %** | **100 %** |
+
+Le même calcul rejoué sur les **40** grilles ne trouve aucune autre section dont le
+maximum atteignable diffère du maximum déclaré ; et `maxScores` concorde avec le
+`<span class="score">` des 40 grilles, avant comme après.
+
+**Régénération de `baseline.json`** — `snapshot_invariants.py`. Diff : **deux lignes,
+toutes deux sur AMBOSS-9**, justifiées une à une :
+
+- `maxScores.anamnese` : 53 → 49 — somme des maxima des 12 critères réellement écrits ;
+- `scoreSpans.anamneseScore` : 53 → 49 — dénominateur affiché, tenu synchrone avec
+  `maxScores` comme l'exige la règle 2.
+
+`sectionInfo[].count` **n'apparaît pas** dans le diff : `snapshot_one()` ne le capture
+pas. Angle mort de l'outillage — un `count` désaccordé du nombre de critères écrits ne
+sera signalé par aucun garde-fou. Le contrôle existe désormais sous forme de script
+jetable (rejeu de `scoring.js`), pas de garde-fou permanent.
+
+**Divergences consignées**
+
+- AMBOSS-19 · `annexe-dd`, BPCO : l'unique argument CONTRE est « Pas de crépitants (qui
+  orienteraient vers une insuffisance cardiaque) ». Le fait est exact (status :
+  « Pas de crépitants ») mais il plaide **pour** la BPCO : mal signé, non mal nié.
+  Le corriger supposerait de le **déplacer** sous POUR — où le bloc emploie déjà
+  exactement ce procédé (« Pas de variation circadienne des symptômes (asthme moins
+  probable) ») — ce qui laisserait la BPCO sans aucun argument CONTRE. Non corrigé :
+  déplacement éditorial, hors de la restitution d'une négation.
+- AMBOSS-12 · `annexe-dd`, Pneumothorax : « Pas de début brutal » contredit le scénario
+  (« Douleur thoracique gauche début brutal ce matin ») **et** la puce voisine du même
+  bloc (« Début brutal douleur », sous CONTRE de la pneumonie atypique). Ni ajouter ni
+  retirer la négation ne répare : « Début brutal » plaiderait *pour* le pneumothorax.
+  L'énoncé visé est irrécouvrable — non corrigé.
+- AMBOSS-22 · `annexe-dd` et `presentation`, Achalasie : l'argument POUR
+  « Dysphagie intermittente solides ET liquides » décrit la maladie, non la patiente,
+  dont la dysphagie est « progressive solides → liquides » — ce que dit la puce CONTRE
+  du même diagnostic. Défaut de polarité **côté POUR**, hors périmètre du volet A.
+- AMBOSS-18 · `annexe-dd`, Pneumonie atypique : « Symptômes URI actuels » sous CONTRE.
+  Des symptômes de voies aériennes supérieures précèdent typiquement une pneumonie
+  atypique ; la puce n'est défendable que lue « l'infection haute actuelle suffit à
+  expliquer le tableau ». Le contexte ne tranche pas — non corrigé.
+- AMBOSS-3 · critère m5 : « Cytoréduction maximale: **ximale** si carcinose » — même
+  troncature au `x` que le volet C, mais le préfixe perdu n'est pas restituable
+  (« résection maximale » ? « chirurgie maximale » ?). Seul le seuil `< 1cm` a été
+  corrigé. Non corrigé : restituer les lettres perdues serait deviner.
+- AMBOSS-2 · critère m5 : « Appendicectomie laparoscopique en urgence: (gold standard)
+  × Traitement immédiat » — artefact `×` dont les deux moitiés ne sont pas identiques :
+  la déduplication ne s'applique pas et l'ordre d'origine est indevinable. Non corrigé.
+- AMBOSS-2 · critère m5 : « Céfoxitine 2g IV + métronidazole 500 mg IV » — la
+  céfoxitine, céphamycine, couvre déjà les anaérobies ; le métronidazole y est
+  pharmacologiquement redondant. La restitution du nom est acquise, l'association est
+  un choix d'auteur préexistant — non touchée.
+- AMBOSS-31 · critère m5 : « Dépistage CT : si 55-80 ans + 30 PA » — signe manquant
+  devant « 30 PA », mais la ligne entière doit devenir « 50-80 ans + 20 PA » au titre du
+  point [7] des arbitrages (groupe 4). Laissée intacte pour ne pas entrer en conflit.
+- AMBOSS-35 · critère m5 : « Oxygène si SpO2 < 94% » après correction du signe, alors
+  que le point [25] des arbitrages prescrit « < 90 % » et que le `resume` de la même
+  grille écrit déjà « si SaO2 < 90 % ». Le volet B ne portait que le signe ; la valeur
+  relève du groupe 3.
+- AMBOSS-26 · `annexe-dd`, Algie vasculaire de la face : « Durée > 2h (AVF 15min-3h) »
+  — le seuil tombe *à l'intérieur* de l'intervalle qu'il est censé exclure. Signe
+  présent, valeur discutable : jugement d'auteur, non corrigé.
+
+**Contrôles**
+
+- `check_invariants.py` → `OK — 40 grilles, tous les invariants preserves` (code 0),
+  après régénération du snapshot. Avant régénération, il ne signalait que les **deux**
+  différences d'AMBOSS-9 ci-dessus, sur cette seule grille.
+- `check_nomenclature.py` → `OK — aucun terme non suisse detecte` (code 0).
+- `report_redundancy.py` → **147** paires, inchangé (147 avant).
+- `check_no_loss.py 137ae8e` → **0 item disparu sur 20 grilles modifiées**.
+- `git diff --numstat` : 20 grilles, **41 insertions / 41 suppressions**. Aucun
+  `.criteria-text` touché, aucun crochet de réponse patient touché, aucun item ICE
+  touché ; les lignes protégées d'AMBOSS-33 (`GR 50 000` du LCR, clés `BMP :` / `CBC :`)
+  et les contenus de protection d'AMBOSS-24 et 32 sont intacts. Un seul sous-item de
+  liste retiré (le fragment `Ma:` d'AMBOSS-39), non noté — `criteriaCount`,
+  `detailCount`, `radioCount`, `checkboxCount` inchangés sur les 40 grilles.
