@@ -90,3 +90,103 @@ OK (88 grilles, barème inchangé) ; `check_reachability.py` OK (88 grilles à
 `<li>`/`<span>` appariés et `</html>` final sur les 88. AMBOSS inchangé :
 `check_invariants`, `check_nomenclature`, `check_reachability` OK,
 `report_redundancy` 147.
+
+### Volet B — Suppression du remplissage automatique d'`annexe-dd` (tâche g2)
+
+Arbitrage utilisateur : **le remplissage est supprimé, aucun contenu médical
+n'est créé en remplacement.** Une entrée réduite à son seul nom de diagnostic
+reste utile — la liste des hypothèses à évoquer est en soi le contenu principal
+du bloc.
+
+Script : `scripts/german/prune_dd_filler.py`.
+
+**Ce que porte le bloc, mesuré et non échantillonné.** Les 78 segments
+`annexe-dd` des 88 grilles portent **484 entrées `<li>`**, toutes de la même
+forme, sans une seule exception (contrôlé : le résidu de chaque `<li>` une fois
+ses trois éléments retirés est exactement `<br>`) :
+
+    <li><strong>NOM</strong><br>
+        <div …rgb(80, 90, 110)>ARGUMENTS</div>
+        <div …rgb(52, 105, 46)>→ EXAMEN</div></li>
+
+soit **588 puces d'arguments** (216 formulations distinctes) et **484 examens**
+(129 formulations distinctes). Les deux listes ont été lues intégralement pour
+établir la liste des formulations génériques — le critère retenu étant *une
+formulation qui serait vraie pour n'importe quel diagnostic de n'importe quelle
+grille*.
+
+**Modifications**
+
+- annexe-dd · arguments : **345 puces « À évaluer cliniquement » supprimées**,
+  dans 71 grilles — 59 % des 588 puces. Une seule formulation générique existe
+  dans tout le corpus, et ses 345 occurrences sont **toutes** seules dans leur
+  `<div>` : aucun cas mixte où elle cohabiterait avec un argument réel. Le
+  `<div>` entier part, jamais le seul texte.
+- annexe-dd · examens : **262 flèches supprimées** sur 484, en **quatre**
+  formulations — « Examens complémentaires selon contexte clinique » (258),
+  « Bilan biologique spécifique » (2), « Évaluation clinique approfondie » (1),
+  « Anamnèse » seule (1). Aucune ne nomme d'examen : ni organe, ni technique, ni
+  analyte, ni score.
+- annexe-dd · mise en forme : le `<br>` qui suivait le nom est retiré dans les
+  **209 entrées réduites au nom seul**, où il n'a plus rien à séparer. Il est
+  conservé partout ailleurs, ce qui laisse l'interligne existant inchangé.
+
+**Ce qui subsiste** : les 484 noms de diagnostic (aucun n'est touché),
+**243 puces d'arguments réelles** et **222 examens discriminants réels**. Sur
+les 209 entrées réduites au nom seul, 82 portent déjà dans leur nom l'examen ou
+la précision qui départage — « Achalasie → Manométrie œsophagienne », « Corps
+étranger/calcul → Radiographie, échographie », « Irritation du nerf ulnaire
+[Signe de Tinel] » — et 127 restent un nom nu, c'est-à-dire une hypothèse à
+évoquer.
+
+**Suppression d'élément, jamais de texte.** Le script ne fait que supprimer des
+plages de caractères mesurées et disjointes, chacune couvrant un élément entier.
+Preuve *a posteriori*, rejouée sur les 88 grilles : le contenu de chaque fichier
+après passe est **exactement** son contenu avant passe privé des 816 plages
+planifiées, et l'ensemble des chaînes retirées ne compte que **6 formes
+distinctes** (les 4 `<div>` d'examen générique, le `<div>` d'argument générique,
+et `<br>`), pour 70 401 caractères. Rien d'autre n'a bougé dans les 88 fichiers.
+Le bloc `annexe-dd` étant le **frère** d'un `criteria-row` qui porte l'`<input
+type="radio">` du critère englobant, c'est la propriété qui garantit qu'aucun
+`</div>` n'a pu se déplacer — le défaut de German-84. German-84 ne porte
+d'ailleurs aucun `annexe-dd` et n'est pas modifiée.
+
+**Divergences consignées**
+
+- annexe-dd · formulations **limites conservées**, parce qu'elles ne seraient
+  pas vraies de n'importe quel diagnostic : arguments « rare » (2),
+  « diagnostic d'exclusion », « peu probable vu l'âge », « sans cause évidente »,
+  « processus inflammatoire » ; examens « Anamnèse médicamenteuse » (2),
+  « Anamnèse, audiométrie », « Examen neurologique, imagerie », « Examen
+  ophtalmologique », « Évaluation cognitive », « Révision du traitement »,
+  « Examen clinique, évaluation environnement », « Critères temporels DSM-5 »,
+  « Évaluation temporelle des symptômes », « Diagnostic clinique, biopsie si
+  doute ». La plus discutable est **« Évaluation temporelle des symptômes »**
+  (German-4, trouble de l'adaptation) : conservée parce que le calendrier est
+  précisément ce qui la sépare du trouble dépressif persistant de la même liste,
+  dont l'examen est « Critères temporels DSM-5 ».
+- annexe-dd · les **89 flèches portées par le nom lui-même** (« Fracture
+  vertébrale → Radiographie si critères présents ») ne sont pas touchées : elles
+  font partie du nom, qui est hors périmètre. Elles expliquent qu'une entrée
+  puisse perdre son `<div>` d'examen générique tout en conservant un examen.
+- annexe-dd · trois formulations citées au brief comme génériques **n'existent
+  pas dans ce bloc** : « selon contexte clinique » seul (0 — les 258 occurrences
+  sont la formule longue), « Examen clinique complet » (2 occurrences, toutes
+  **hors** `annexe-dd`, donc hors périmètre et non touchées), « Anamnèse et
+  examen clinique » (0 dans tout le corpus).
+
+**Vérifications** — `check_invariants.py` OK (barème inchangé : le bloc ne porte
+aucune case à cocher) ; `check_reachability.py` OK, 88/88 à 100 % ;
+`check_nomenclature.py` OK ; `bounds_anomalies()` et `uncovered_content()` vides
+sur les 88 ; intégrité `<div>`/`<ul>`/`<li>`/`<span>` appariés et `</html>` final
+sur les 88. Redondance **inter-blocs 83 → 82**, **intra-bloc 638 → 118**
+(−81 %) : le remplissage était dupliqué d'une entrée à l'autre *dans* le même
+bloc, donc intra ; le chiffre inter-blocs bouge peu parce que 63 des 88 grilles
+n'ont qu'`annexe-dd` et aucun bloc avec quoi former une paire.
+`check_no_loss.py 4819f53` : 405 items signalés sur 79 grilles, **audités un à
+un**, aucune perte réelle — 379 ont un résidu vide (pur remplissage) ou retrouvé
+tel quel ; les 26 restants sont des artefacts de mesure, vérifiés présents dans
+le fichier caractère par caractère : 20 sont des puces réelles conservées mais
+devenues plus courtes que le seuil `min_len=18` de `list_items()` (« AIT »,
+« TVP », « FAI », « L2-L3 », « alcool d'hier », « signe de Déjérine »…), et 6
+sont l'effet du renommage `NFS` → `FSC` du volet A dans le même intervalle.
