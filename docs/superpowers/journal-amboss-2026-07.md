@@ -155,6 +155,15 @@ Grille pilote. Redondance : 10 paires → 4 (`report_redundancy.py AMBOSS-1_`).
   concise, pas la liste d'examens (déjà canonique dans `resume`). Sans effet sur la redondance
   (toujours 4 paires) ni sur les invariants.
 
+*Fix round 3 — anglicisme non traduit, détecté par le balayage large de la tâche 10b (tâche 10c)*
+
+- annexe Diagnostics différentiels · intitulé : « Choledocholithiasis » → « Cholédocholithiase » —
+  orthographe anglaise/latine (suffixe `-iasis`, sans accent) non traduite, incohérente avec la même
+  entité correctement rendue en français dans AMBOSS-36 (« Cholédocholithiase »). Ni un germanisme ni
+  lié au défaut du chevron nu (aucun `<` nu à proximité) : remontée par la passe B (filet large, mots
+  collés ≥ 18 lettres) du balayage anglicismes/germanismes de la tâche 10b
+  (`.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/task-10b-report.md` § 3.1).
+
 **Divergences consignées**
 
 - section notée m5 · antibiothérapie, indication : la grille dit « Antibiothérapie si signes
@@ -1302,6 +1311,57 @@ construction**. Aucun motif de `BANNED` ne peut détecter « GB 8500 » : il n'y
 règle est donc écrite dans `PROCEDURE.md` § 6 avec le résultat daté de la recherche exhaustive, et
 avec sa limite : le corpus est propre à cette date, mais rien ne le maintiendra propre — toute grille
 nouvelle, réécrite ou réimportée doit être relue à la main sur ce point.
+
+### Passe unités SI — numérations en unité implicite, dernier lot (tâche 10c)
+
+Complète la passe précédente (« fix round 3/5 de la tâche 7 » ci-dessus, qui se croyait exhaustive).
+Quatre valeurs supplémentaires étaient en réalité invisibles à cette recherche, pour deux raisons
+distinctes, établies et démontrées dans
+`.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/task-10b-report.md` (§ 3.2) :
+
+- **Défaut d'outillage.** `lib_amboss.visible_text()` traitait tout `<` nu (seuil de laboratoire
+  écrit `plaquettes < 30 000`) comme l'ouverture d'une balise, avalant tout le texte jusqu'au `>` réel
+  suivant : la valeur numérique disparaissait du texte examiné par toute recherche fondée sur
+  `visible_text()`, alors que le terme de recherche (« plaquettes ») restait visible juste avant.
+  Corrigé au commit `9df1484` (motif de balise restreint à un `<`/`</` suivi immédiatement d'une
+  lettre ASCII). Explique directement 3 des 4 valeurs : AMBOSS-24 ×2, AMBOSS-34 ×1.
+- **Angle mort de vocabulaire.** La recherche du round précédent couvrait « leucocytes » mais pas la
+  variante substantive « leucocytose » (numération élevée) — explique la 4ᵉ valeur, AMBOSS-30, qui n'a
+  pourtant aucun chevron nu à proximité.
+
+**Modifications**
+
+- **Leucocytes/plaquettes · unité implicite (`000` ou `k`) → `G/L`, × 0,001.** 4 valeurs, 3 grilles,
+  toutes dans des blocs pédagogiques (`theorie`/`expert`), aucune en section notée :
+  - AMBOSS-24, `theorie`/Purpura thrombopénique immunologique : « Traitement si plaquettes < 30 000
+    ou saignements » → « … **< 30 G/L** ou saignements ».
+  - AMBOSS-24, `theorie`/Rappels thérapeutiques : « PTI aigu : corticoïdes si plaquettes < 30 000 » →
+    « … **< 30 G/L** ». Seuil clinique standard de traitement du PTI en cas de saignement ; cohérent
+    avec les deux valeurs de plaquettes déjà correctement en G/L ailleurs dans la même grille
+    (« plaquettes < 150 G/L », « Plaquettes 180 G/L (normale) »).
+  - AMBOSS-34, `theorie`/Thrombolyse intraveineuse : « CI relatives : AVC étendu, INR > 1.7,
+    plaquettes < 100k » → « … plaquettes **< 100 G/L** ». « 100k » est une abréviation (k = mille) et
+    non un nombre écrit en toutes lettres : vérifié avant conversion qu'elle désigne sans ambiguïté
+    100 000, lecture usuelle du seuil transfusionnel plaquettaire pré-thrombolyse. L'INR > 1.7 sur la
+    même ligne n'est pas concerné — un INR est un rapport sans unité.
+  - AMBOSS-30, `expert`/Rôles et interventions : « FSC : leucocytose 14 000, PNN 75% » →
+    « FSC : leucocytose **14 G/L**, PNN 75% ». 14 G/L reste au-dessus de la norme (4-10 G/L) : le
+    qualificatif « leucocytose » demeure exact après conversion. Le « 75% » de PNN, un pourcentage de
+    formule et non une numération absolue, n'est pas concerné.
+
+**Balayage de clôture (tâche 10c)**
+
+Recherche refaite sur les 40 grilles avec `visible_text()` corrigé et un vocabulaire élargi à 16
+variantes (leucocytes, leucocytose, hyperleucocytose, GB, globules blancs, plaquettes, thrombocytes,
+thrombopénie, thrombocytose, PNN, polynucléaires, neutrophiles, lymphocytes, lymphocytose,
+éosinophiles, éosinophilie), par deux méthodes indépendantes et convergentes (terme → nombre voisin,
+et nombre → terme voisin), complétées par un audit manuel des 29 nombres bruts ≥ 1000 sans unité du
+corpus toutes causes confondues (dates de publication, incidences épidémiologiques « X/100 000 »,
+fréquences en Hz, doses déjà en mg/µg, poids de naissance déjà en g — aucun n'est une numération
+sanguine non convertie). Seul candidat retenu par les deux méthodes : la divergence déjà consignée
+d'AMBOSS-33 ci-dessus (« PL (si faite) : GR 50 000 ») — revérifiée, toujours à dessein non convertie
+(numération de LCR, jamais en G/L), pas une nouvelle trouvaille. **Aucune numération en unité
+implicite restante sur le corpus** à l'issue de ce lot.
 
 ### AMBOSS-4 — Saignements vaginaux, femme 50 ans, post-ménopause (page SSP : Saignement Vaginal Anormal)
 
