@@ -5751,6 +5751,8 @@ règle 1 ; seul AMBOSS-9 relève de la règle 2.
   déclaré correspond désormais au barème atteignable, mais un critère affiché reste non
   noté. Le réparer supposerait de renommer `a12b` en `a13` et de remonter
   `maxScores.anamnese` à 53 — ce que l'arbitrage n'a pas retenu. Non corrigé.
+  **→ Tranché depuis : voir le complément en fin de section. Le critère est retiré, la
+  divergence est close.**
 - AMBOSS-34 · dose d'aspirine : la grille et les arbitrages disent **160-300 mg**,
   SSP — Parésie - AVC dit **250-300 mg**. Les deux excluent le 325 mg américain et
   l'intervalle de la grille contient celui de la page ; la borne basse diverge seule.
@@ -5794,3 +5796,94 @@ règle 1 ; seul AMBOSS-9 relève de la règle 2.
   complet, et `maxScores` = `<span class="score">` = total atteignable partout.
 - `git diff --numstat` : 12 grilles + `baseline.json`, **31 insertions / 28
   suppressions**. Un seul sous-item noté retiré, dans la seule grille prévue.
+
+### Tâche c5 (complément) — retrait du critère `a12b` d'AMBOSS-9
+
+Suite donnée à la divergence consignée ci-dessus. Après inspection du contenu, le
+critère `a12b` « 13. Histoire sexuelle » est **retiré en entier**, et non plus
+seulement signalé.
+
+**Pourquoi le retrait plutôt que la réparation de l'atteignabilité**
+
+Trois faits convergent, et c'est leur conjonction qui tranche :
+
+1. **Le contenu est hors sujet.** Les quatre sous-items sont « Activité sexuelle
+   [Oui] », « Avec qui [Ma petite amie] », « Nombre de partenaires dans l'année [J'ai
+   couché avec 2 femmes au cours de l'année passée] », « Protection [J'utilise toujours
+   des préservatifs] » — une anamnèse d'IST chez un **homme de 71 ans consultant aux
+   urgences pour lombalgie avec sciatalgie**.
+2. **C'est le pendant exact du sous-item retiré de `m6`** au même titre (« Conseil sur
+   les pratiques sexuelles sûres »). Les deux viennent du même résidu de station ; en
+   retirer un et garder l'autre aurait laissé la grille incohérente — l'anamnèse aurait
+   posé des questions dont la prise en charge n'aurait plus rien fait.
+3. **Il était déjà mort au calcul.** `calculateScores()` itère `prefix + i` pour `i` de
+   1 à `count`, ce qui engendre `a1`…`a12` — jamais `a12b`, quelle que soit la valeur de
+   `count`. Le retirer supprime donc l'écart entre ce qui s'affiche et ce qui se compte,
+   sans rien retirer au barème.
+
+source : SSP — Lombalgies ne comporte **aucune** mention d'anamnèse sexuelle, de
+partenaires ni de dépistage IST. Le seul point voisin du corpus est le drapeau rouge de
+la queue de cheval — « Troubles urinaires, sexuels, ou anesthésie en selle ? », dans le
+`resume` de la grille — qui est d'une autre nature (déficit neurologique, pas
+comportement sexuel) et **reste intact**.
+
+**Vérification de non-perte (PROCEDURE § 3), faite avant le retrait.** Recherche
+exhaustive des quatre réponses dans toute la grille : elles n'apparaissent **nulle part
+ailleurs** — ni dans le `scenario`, ni dans `presentation`, ni dans aucun bloc
+pédagogique. Il n'y avait donc rien à porter ailleurs avant de supprimer. Le retrait est
+**volontaire et intégral** : le motif est que ce contenu n'a pas sa place dans la
+station, pas qu'il ferait doublon.
+
+**Ce que le retrait déplace — et ce qu'il ne déplace pas**
+
+| Champ | Avant | Après |
+|---|---|---|
+| `maxScores.anamnese` | 49 | **49 — inchangé** |
+| `<span class="score">…/N</span>` (`anamneseScore`) | /49 | **/49 — inchangé** |
+| `sectionInfo[].count` (anamnèse) | 12 | **12 — inchangé** |
+| `criteriaCount` | 24 | **23** |
+| `detailCount` / `checkboxCount` | 58 | **54** |
+| `radioCount` | 61 | **61 — inchangé** |
+
+Le barème ne bouge pas d'un point : les quatre cases valaient déjà zéro au calcul. Mais
+la **structure** bouge — un critère et quatre sous-items notés disparaissent — donc la
+règle 2 s'applique et `baseline.json` est régénéré. Diff : **4 lignes, toutes sur
+AMBOSS-9**.
+
+**Rectification d'un fait de l'arbitrage.** La décision de retrait s'appuyait notamment
+sur « `a12b` ne porte aucune case à cocher ni radio — zéro `a12b-detail-*`, zéro
+`input` ». C'est inexact : le critère portait bien **4 `<input type="checkbox">`**
+(`a12b-detail-0` à `a12b-detail-3`), chacun `value="1"`, avec leur `onchange`
+`updateDetailScore('a12b', 'a')`. Il ne portait, cela oui, **aucun radio** — les trois
+`checkbox-group` de la ligne étaient vides. La décision de retrait n'en est pas changée
+(les trois motifs ci-dessus tiennent), mais sa conséquence l'est : ce n'était pas un
+retrait sans effet sur les compteurs, c'est bien un retrait relevant de la règle 2.
+C'est précisément le cas que l'arbitrage avait prévu — « si `check_invariants` signale
+un écart, c'est que le critère portait un élément que mon inspection a manqué » — et il
+s'est réalisé.
+
+**Simulation du remplissage complet après retrait** (rejeu de `cases/scoring.js`) :
+anamnèse **49/49** · examen 13/13 · management **16/16** · communication 20/20 →
+**100 %**. Et surtout : **plus aucun sous-item orphelin**. AMBOSS-9 est désormais la
+seule grille du corpus à avoir été auditée sur ce point et à en sortir sans écart
+d'atteignabilité — les 39 autres n'en avaient jamais eu.
+
+**Contrôles**
+
+- `check_invariants.py` → avant régénération : **3 différences, toutes sur AMBOSS-9** —
+  `criteriaCount` 24 → 23, `detailCount` 58 → 54, `checkboxCount` 58 → 54. **Ni
+  `maxScores` ni `scoreSpans` ne sont signalés**, ce qui est la preuve mécanique que le
+  barème est resté à 49 : le contrôle les compare et ne les voit pas bouger. Après
+  régénération : `OK — 40 grilles` (code 0).
+- `check_nomenclature.py` → `OK — aucun terme non suisse detecte` (code 0).
+- `report_redundancy.py` → **147** paires, inchangé.
+- `check_no_loss.py 1a97af0` → 0 item disparu. **Ce zéro ne vaut pas quitus** : le script
+  ne balaie que la zone pédagogique, et `a12b` vivait dans la section notée — il ne
+  pouvait structurellement pas voir ce retrait. La non-perte a été établie à la main
+  (recherche exhaustive des quatre réponses dans le fichier entier, ci-dessus), pas par
+  le script.
+- Audit ciblé d'AMBOSS-9 sur l'ensemble de la tâche (`a35a775` → état courant) :
+  `.criteria-text` 24 → 23, **un seul retiré** (« 13. Histoire sexuelle »), **aucun
+  modifié** ; réponses patient 54 → 50, les quatre retirées étant celles du critère ;
+  sous-items notés 59 → 54 (les 4 d'`a12b` + 1 de `m6`), **aucun ajouté** ; **aucun item
+  ICE touché** ; `radioCount` inchangé.
