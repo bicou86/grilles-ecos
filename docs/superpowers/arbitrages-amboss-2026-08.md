@@ -102,13 +102,45 @@ plutôt que de deviner.
 
 ### 2.4 AMBOSS-9 — barème inatteignable
 
-`caseConfig` déclare `count: 13` et `anamnese: 53` ; la page ne contient que 12 critères
-totalisant 49 points. Le score plafonne à 98 %. Défaut présent dès la première version.
+`caseConfig` déclare `count: 13` et `anamnese: 53` ; le calcul ne peut atteindre que
+12 critères, totalisant 49 points. Le score plafonne à 98 %. Défaut présent dès la
+première version.
 
-**Décision : ramener `maxScores.anamnese` à 49 et `count` à 12.** C'est la seule correction
-qui n'invente rien. Écrire le 13ᵉ critère supposerait de créer du contenu médical noté que
-personne n'a rédigé, et d'en fixer arbitrairement la valeur. Le `<span>` et le snapshot
-sont mis à jour en conséquence.
+**Décision : ramener `maxScores.anamnese` à 49 et `count` à 12**, puis **retirer le
+critère résiduel** (voir ci-dessous). Le `<span>` et le snapshot sont mis à jour.
+
+*Révision du 2026-08-01, après inspection.* Mon premier motif — « le 13ᵉ critère n'existe
+pas » — était faux. Il existe, sous l'identifiant **`a12b`**, et c'est précisément pourquoi
+il est injoignable : `calculateScores()` itère `prefix + i`, donc `a1`…`a12`, jamais
+`a12b`. Trois faits ont ensuite tranché son sort :
+
+1. il s'intitule « 13. Histoire sexuelle » et porte quatre réponses patient — activité
+   sexuelle, « ma petite amie », « 2 femmes au cours de l'année passée », « j'utilise
+   toujours des préservatifs » — chez un homme de **71 ans consultant pour lombalgie** ;
+2. c'est le pendant exact du « Conseil sur les pratiques sexuelles sûres » retiré du
+   critère `m6` de la même grille au § Groupe 3, pour le même motif — résidu d'une autre
+   station.
+
+**Le critère `a12b` est donc retiré en entier.** En conserver un pendant qu'on retire
+l'autre aurait rendu la grille incohérente. La conclusion chiffrée reste la même qu'au
+premier arbitrage ; le raisonnement qui y mène est corrigé.
+
+*Seconde révision, même jour.* Un troisième motif figurait ici — « il ne contient aucune
+case à cocher ni radio » — et il était **faux** : `a12b` portait quatre
+`<input type="checkbox">` (`a12b-detail-0` à `-3`). Ma vérification employait une
+expression régulière cassée par un double échappement et rendait zéro. Les trois
+`checkbox-group` de la ligne étaient vides de radio, ce qui a pu donner le change.
+
+La décision tient sans ce motif, sur les deux autres. Et le retrait s'est révélé **indolore
+pour le barème** : `check_invariants` a signalé l'écart sur `criteriaCount`, `detailCount`
+et `checkboxCount`, mais **ni sur `maxScores`, ni sur `scoreSpans`**. C'est la preuve
+mécanique que ces quatre cases ne pesaient aucun point — elles étaient cochables mais leur
+critère restait hors de la boucle de calcul. Un sous-item peut donc relever de la règle 2
+par sa structure sans valoir un seul point.
+
+*Défaut résiduel à connaître* : `sectionInfo[].count` n'est capté par aucun garde-fou —
+`snapshot_one()` ne le capture pas, il n'apparaît donc dans aucun diff de baseline. C'est
+pourtant le champ qui rendait ce barème inatteignable. Correction portée au groupe 6.
 
 ## Groupe 3 — Erreurs médicales en section notée (correction de fond)
 
@@ -162,6 +194,12 @@ modifier dans le vault** — il appartient à l'utilisateur et sert d'autres cor
 - [34] Trois unités implicites hors hémogramme (ASAT/ALAT, Na) → **balayage et conversion**.
 - [37] `report_redundancy.py` ignore les paires intra-bloc (`if b1 == b2: continue`) →
   **ajouter un mode intra-bloc** et mesurer, sans le rendre bloquant.
+- **`sectionInfo[].count` échappe à tout garde-fou** → l'ajouter à `snapshot_one()`. C'est
+  le champ qui rendait le barème d'AMBOSS-9 inatteignable : déclaré à 13 pour 12 critères
+  joignables, sans qu'aucun contrôle ne puisse le voir. `check_invariants` compare des
+  comptes d'éléments, jamais l'**atteignabilité** du barème par le calcul — un écart entre
+  ce qui est déclaré et ce qui est calculable reste invisible. Ajouter une vérification
+  dédiée : pour chaque section, le maximum simulé doit égaler `maxScores`.
 - [32] AMBOSS-23, remboursement des appareils auditifs « variable selon pays/assurance » →
   **suissifier** : forfait AI/AVS.
 - [21], [24], [26], [27] : traités au groupe 2.
