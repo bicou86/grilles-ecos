@@ -538,3 +538,231 @@ la puce de Pièges de German-19, tous retrouvés dans `resume`,
 d'`annexe-dd` dont la normalisation a changé parce que le bloc a été
 restructuré. Présence contrôlée chaîne par chaîne sur le HTML après
 `strip_base64` — jamais par `grep`.
+
+---
+
+### Lot g5a — les 25 grilles à `annexe-dd` seul de German-1 à German-30
+
+Périmètre établi : German-1 à 30, moins les 4 grilles riches déjà traitées au lot
+g4 (15, 19, 22, 27 — `resume` **et** `presentation`) et moins German-1, sans
+`annexe-dd` (3 `therapy-section` seulement, niveau 2, hors périmètre). Restent
+**25 grilles** : 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 20, 21,
+23, 24, 25, 26, 28, 29, 30. German-24 y figure : elle porte un `resume` mais pas
+de `presentation`, donc elle n'était pas du lot g4.
+
+Aucun dédoublonnage inter-blocs possible (`report_redundancy.py` : **0 paire**
+sur les 25 avant comme après). Le travail a porté sur les quatre points de la
+consigne. **7 grilles modifiées** : 5, 6, 12, 13, 24, 28, 30.
+
+#### 1. Le défaut de structure d'`annexe-dd` — **32 occurrences, 32 réparées**
+
+Le lot g4 décrivait la flèche « → examen qui départage » avalée dans la puce
+« Arguments POUR ». Le balayage de ce lot en trouve **deux variantes**, la
+seconde étant de loin la plus fréquente et non encore documentée :
+
+| Variante | Où tombe la flèche | Occurrences | Grilles |
+|---|---|---:|---|
+| **A** — celle de g4 | dans le `<div>` des arguments (`rgb(80, 90, 110)`) | **2** | 5, 6 |
+| **B** — nouvelle | dans le `<strong>` du **nom du diagnostic** | **30** | 5, 6, 13, 28, 30 |
+
+La variante B produit des noms d'hypothèse absurdes — « Fracture de côte →
+Radiographie thoracique », « Colite à Clostridium difficile → Recherche de
+toxines A et B » — et, dans 9 cas, **coexiste avec un `<div>` d'examen déjà
+présent**, si bien que la même entrée porte deux lignes d'examens concurrentes.
+Elle échappe entièrement au motif de recherche proposé par g4 (« `Arguments
+POUR:` suivi d'un `→` dans la même puce ») : le balayage doit porter sur la
+présence d'un `→` **hors** du `<div class` d'examen, pas sur les arguments.
+
+Réparation, dans les deux variantes : l'examen quitte l'élément qui l'avait
+avalé et rejoint son propre `<div style="… color: rgb(52, 105, 46);">`, la forme
+canonique du corpus. Quand un `<div>` d'examen existait déjà, les deux listes
+sont **fusionnées**, l'examen qui départage placé en tête, les doublons stricts
+écartés — aucune suppression de contenu.
+
+**Modifications**
+
+- `annexe-dd` · German-30, 4 entrées : « Fracture de côte → Radiographie
+  thoracique » + examen « → Radiographie, CT si complexe » → nom « Fracture de
+  côte », examen « → Radiographie thoracique, CT si complexe ». Idem Contusion
+  costale, Pneumothorax (fusion des trois modalités), Hémothorax.
+- `annexe-dd` · German-28, 8 entrées : nom et examen séparés à l'identique
+  (Otite moyenne aiguë virale / bactérienne, Otite externe, Pharyngite/angine,
+  Douleur dentaire irradiée, Adénite cervicale, Tympan rouge par pleurs
+  intenses, Corps étranger auriculaire).
+- `annexe-dd` · German-13, 8 entrées : idem, avec fusion pour Colite ulcéreuse,
+  Cancer colorectal et Tumeur neuroendocrine.
+- `annexe-dd` · German-5, 6 entrées : 5 en variante B, 1 en variante A
+  (« Arguments POUR: • WAD grade I-II → Diagnostic clinique » → argument
+  « • WAD grade I-II », examen « → Diagnostic clinique »).
+- `annexe-dd` · German-6, 6 entrées : 1 en variante A, 5 en variante B. Ces six
+  entrées cumulaient un **troisième** défaut — les arguments cliniques logés
+  dans le nom après un « : » (« Ménopause : âge compatible, troubles
+  menstruels → FSH, LH, œstradiol »). Les trois éléments ont été rendus à leurs
+  trois places : nom, `Arguments POUR:` en puces, examen. Contenu intégralement
+  conservé, aucune formulation nouvelle.
+
+#### 2. Erreurs factuelles internes — 3 corrections directes
+
+- `annexe-dd` · **German-28**, Pharyngite/angine : l'examen qui départageait
+  était « → **ECG, test d'effort, coronarographie** » — un bilan coronarien dans
+  une station d'**otalgie pédiatrique**. Contamination d'import manifeste : la
+  grille ne porte aucun critère cardiologique (`m1`-`m8` sont otoscopie,
+  antibiothérapie, conseils aux parents), la section notée `m3` nomme au
+  contraire « Test rapide streptocoque si suspicion d'angine associée ». Ligne
+  **supprimée**, l'examen resté prisonnier du nom (« Test rapide streptocoque si
+  indiqué ») prenant sa place. C'est la seule suppression sèche du lot.
+- `annexe-dd` · **German-13**, Colite à *Clostridium difficile* : « → Coloscopie,
+  calprotectine fécale » — ce sont les examens de la MICI, chaîne strictement
+  identique à celle de l'entrée « Colite ulcéreuse » deux lignes plus haut.
+  Même motif que la colite infectieuse de German-19 (lot g4). Remplacé par le
+  test qui départage réellement, cf. § 4.
+- `annexe-dd` · **German-5**, Hernie discale cervicale avec compression :
+  « → Examen clinique, **US si doute** » — l'ultrason n'explore pas le rachis
+  cervical. « US si doute » retiré ; l'IRM, prisonnière du nom (« → IRM si
+  déficit neurologique »), reprend sa place : « → Examen neurologique, IRM si
+  déficit neurologique ».
+
+#### 3. Alignements de niveau 1 — la page SSP tranche, 4 fois
+
+Contrairement au lot g4 (1 sur 10 pages), quatre points ont été tranchés — parce
+que quatre de ces pages sont **mono-grille ou quasi** (AVP, Constipation,
+Douleur au Poignet, Diarrhée), là où les pages génériques du lot g4 desservaient
+jusqu'à 14 grilles.
+
+**Modifications**
+
+- `annexe-dd` · German-5, Fracture vertébrale : « → Radiographie si critères
+  présents, CT si complexe » → « → **Imagerie seulement si les règles
+  canadiennes du rachis cervical (CCR) ou NEXUS** ne permettent pas la
+  clearance ; CT si complexe ».
+  source : `SSP — AVP` — « **Rachis cervical** : palpation des épineuses sous
+  MILS, **règles canadiennes (CCR)** ou **NEXUS** pour clearance » et
+  « Exclure lésion grave par règles canadiennes (CCR) ou NEXUS ; **pas
+  d'imagerie systématique** en WAD I-II ».
+- `annexe-dd` · German-12, Constipation fonctionnelle : « → Radiographie
+  abdominale, coloscopie si alarme » → « → **Critères de Rome IV et échelle de
+  Bristol** ; coloscopie si drapeaux rouges ou début après 50 ans ». Même geste
+  pour le SII avec constipation (« → Critères de Rome IV (SII-C) ; coloscopie si
+  drapeaux rouges ») et pour le Cancer du côlon, dont l'examen diagnostique
+  manquait (« → **Coloscopie avec biopsies** ; imagerie (CT/IRM), marqueurs
+  tumoraux »).
+  source : `SSP — Constipation`, Règle d'or — « Caractériser avec l'**échelle de
+  Bristol** et les **critères de Rome IV** (constipation fonctionnelle). […]
+  Une constipation d'apparition récente après 50 ans ou avec drapeaux rouges
+  impose une **coloscopie** (cancer colorectal) ». La page ne contient **aucune**
+  occurrence de « radiographie », et la section notée `m4` n'en nomme pas non
+  plus (FSC/CRP, test FIT, US ou CT, coloscopie).
+- `annexe-dd` · German-13, Colite à *C. difficile* : « → Coloscopie,
+  calprotectine fécale » → « → **GDH + toxines A/B dans les selles (± PCR
+  confirmatoire)** ».
+  source : `SSP — Diarrhée` — « *C. difficile* : **GDH + toxines A/B** (± PCR
+  confirmatoire) si ATB / hospitalisation < 8 sem ».
+- `annexe-dd` · German-13, Infections parasitaires chroniques : le nom portait
+  « → Examen parasitologique des selles » et l'argument une puce isolée
+  « • 3 échantillons » → examen unique « → **Recherche de parasites dans les
+  selles × 3 jours consécutifs** ; FSC, CRP, hémocultures si fièvre ».
+  source : `SSP — Diarrhée` — « **Recherche de parasites × 3 jours** (lambliase,
+  amibiase, cryptosporidies) ».
+- `resume` · German-24, Traitement chirurgical : « section du **ligament
+  annulaire antérieur** » → « section du **rétinaculum des fléchisseurs** ».
+  source : `SSP — Douleur au Poignet` — « le nerf médian passe sous le
+  **rétinaculum des fléchisseurs** avec les 9 tendons fléchisseurs » ; la page
+  ne contient aucune occurrence de « ligament annulaire ». La section notée `m6`
+  dit déjà « Section du rétinaculum des fléchisseurs » : l'alignement de
+  niveau 1 supprime du même coup l'écart de vocabulaire avec le niveau 2.
+
+#### 4. Duplication avec la section notée — **aucun cas**
+
+Recherche menée hors outillage, l'angle mort étant structurel
+(`report_redundancy.py` ne voit que des blocs, et les sections notées n'en sont
+pas). Deux comparaisons systématiques sur les 25 grilles : items d'`annexe-dd`
+et de `resume` contre les `criteria-text`/`detail-text` hors bloc (seuil 0.72),
+puis les seuls `<div>` d'examen d'`annexe-dd` contre les `detail-text` (seuil
+abaissé à 0.62). Les 18 appariements obtenus sont **tous** des recoupements
+légitimes de rôle : le critère noté énumère les examens à proposer, `annexe-dd`
+en rattache un à une hypothèse précise — « Coloscopie avec biopsies » figure
+dans `m4` de German-13 et départage à la fois Crohn, RCH et cancer colorectal,
+c'est exactement son emploi. Aucune reprise de l'ordre ni du découpage d'un
+corrigé.
+
+C'est un écart net avec le lot g4, qui trouvait le motif **systématique** (sept
+réponses « Suivi » recopiant leur critère). L'explication est structurelle : le
+motif de g4 vivait dans `presentation`, bloc **absent des 25 grilles de ce lot**.
+Sur German, la duplication pédagogique ↔ noté est un risque de `presentation` et
+de `resume`, pas d'`annexe-dd`.
+
+Le seul couple relevé — German-24, `resume`/Traitement conservateur face à `m5`
+(« Attelle nocturne en position neutre du poignet » ↔ « Port d'attelle nocturne
+en position neutre » ; « Antalgiques ± infiltration cortisonée dans le canal
+carpien » ↔ « Infiltration de corticoïdes dans le canal carpien ») — est une
+**condensation**, pas une copie : `m5` porte six items dans un autre ordre, le
+`resume` en retient trois reformulés. Laissé tel quel.
+
+#### 5. Contrat de rôle — aucune violation
+
+Balayage des 25 `annexe-dd` sur les marqueurs de check-list actionnable, de
+conduite de station et de registre oral (guillemets, 1ʳᵉ/2ᵉ personne, verbes de
+prescription, posologies, « suivi », « contrôle à »). **Deux occurrences**, toutes
+deux légitimes : German-2 « → Audiométrie de suivi, dosage médicamenteux » et
+German-11 « Médicaments • Benzodiazépines • Opiacés → Révision du traitement » —
+cette dernière étant l'examen qui départage une chute iatrogène, conservée
+délibérément par le volet B (`prune_dd_filler.py`, table `GENERIC_EXAMS`).
+Rien à retirer, rien à porter ailleurs.
+
+**Divergences consignées**
+
+- section notée · **German-5**, `m3` « Justifie l'absence d'imagerie
+  immédiate » : le sous-item dit « **Critères d'Ottawa négatifs** ». Les règles
+  d'Ottawa portent sur la cheville, le pied et le genou ; la clearance du rachis
+  cervical relève des règles canadiennes (CCR) ou de NEXUS. La page
+  `SSP — AVP` le dit huit fois et ne contient **aucune** occurrence
+  d'« Ottawa » : c'est un niveau 1 caractérisé. **Non corrigé** — la divergence
+  est *dans* la section notée, que la procédure gèle (« une divergence repérée
+  dans une section notée se consigne, elle ne se corrige pas »). Le pédagogique,
+  lui, a été aligné (§ 3). **À arbitrer par vous** : c'est le seul endroit du lot
+  où un étudiant peut apprendre une règle de décision fausse, et elle est dans le
+  corrigé que lit l'examinateur.
+- `annexe-dd` · **German-13**, Maladie cœliaque : « Anticorps
+  anti-transglutaminase, anti-**gliadine**, anti-endomysium ». Les anticorps
+  anti-gliadine natifs sont abandonnés au profit des anti-peptides désamidés ;
+  la page `SSP — Diarrhée` nomme « sérologie (anti-tTG IgA + IgA totales) » sans
+  écarter explicitement les anti-gliadine. Ni niveau 1 ni erreur interne
+  caractérisée (la formulation reste défendable, seulement datée) → **niveau 3,
+  non corrigé**.
+- `annexe-dd` · **German-6** : la section notée `m2` énumère 15 diagnostics
+  différentiels, `annexe-dd` n'en porte que 6 — manquent notamment les causes
+  médicamenteuses, le syndrome de Cushing, l'abus d'alcool chronique et la
+  rosacée. Enrichissement possible (le contenu est dans le fichier), **non
+  fait** : hors des quatre points de la consigne, et le geste porterait sur dix
+  hypothèses à documenter. Signalé.
+- `annexe-dd` · **27 noms de diagnostic entre crochets** sur les 485 du corpus,
+  dans 6 grilles (14, 21, 22, 72, 80, 83) — « [Trouble des conduites] ». German-14
+  en porte 6, German-21 une. Ces crochets ne sont pas une convention de la
+  grille (German-14 ne les emploie ailleurs que pour la question du patient en
+  `m7`) ; ils ne touchent aucun `.criteria-text` ni aucune `patient-response` et
+  ne peuvent donc pas déplacer le barème. Les lots g3 et g4 ne les ont pas
+  touchés non plus dans German-22 et German-72. **Non corrigé**, cohérence de
+  traitement ; défaut d'import cosmétique à arbitrer sur le corpus entier.
+- `resume` · **German-24** : la fiche est cohérente et autonome, sans doublon
+  avec la section notée (§ 4). Aucune modification hors l'alignement de
+  niveau 1 du § 3.
+
+**Vérifications** — `check_invariants.py` OK (88), `check_nomenclature.py` OK,
+`check_reachability.py` OK 88/88 à 100 %, `report_redundancy.py` **14** (inchangé),
+AMBOSS aux trois verts et redondance **147**. **Aucune modification du barème** :
+`git diff` ne contient aucun `.criteria-text`, aucun `<input>`, aucun
+`<span class="score">`, aucun `maxScores`, aucun `sectionInfo` — vérifié
+mécaniquement, règle 1 des arbitrages, `baseline.json` non régénéré. Balises
+appariées sur les 7 fichiers (`div`, `ul`, `li`, `span`, `strong`),
+`boundsAnomalies` et `uncoveredContent` vides. Le diff est symétrique — 36
+insertions pour 36 suppressions, aucune ligne créée ni détruite.
+
+`check_no_loss.py deb95f5` : **10 items signalés sur 7 grilles, verdictés un à
+un, aucune perte réelle**. Neuf sont l'effet mécanique de la séparation d'un
+`<li>` en trois éléments — `list_items()` rendait auparavant le nom, les
+arguments et l'examen en une seule chaîne. Le dixième est German-24, où le mot
+remplacé est l'alignement lui-même. Chaque fragment conservé a été recontrôlé
+par sa présence littérale dans le HTML après `strip_base64` — 89 chaînes
+vérifiées, jamais par `grep` — et chacune des cinq suppressions voulues (« US si
+doute », « Radiographie abdominale », « Coloscopie, calprotectine fécale »,
+« coronarographie », « ligament annulaire ») confirmée absente.
