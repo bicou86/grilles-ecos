@@ -766,3 +766,200 @@ par sa présence littérale dans le HTML après `strip_base64` — 89 chaînes
 vérifiées, jamais par `grep` — et chacune des cinq suppressions voulues (« US si
 doute », « Radiographie abdominale », « Coloscopie, calprotectine fécale »,
 « coronarographie », « ligament annulaire ») confirmée absente.
+
+### Volet g5b — Deuxième lot des grilles à `annexe-dd` seul (German-31 à 60)
+
+**Périmètre — 20 grilles.** German-31 à 60, moins les 6 grilles riches déjà
+traitées (**34, 42, 43, 48, 56** du lot g4 et **44**, la grille pilote de
+`ff4605c` — critère d'exclusion inchangé : un `resume` **et** une
+`presentation`), moins **38 et 39** qui ne portent aucun bloc pédagogique, moins
+**52 et 54** qui n'ont pas d'`annexe-dd` (`therapy-section` seules, niveau 2,
+hors périmètre — même motif que German-1 en g5a) :
+
+> **31, 32, 33, 35, 36, 37, 40, 41, 45, 46, 47, 49, 50, 51, 53, 55, 57, 58, 59, 60**
+
+**10 grilles modifiées** : 31, 32, 33, 37, 40, 41, 46, 49, 51, 55. Les 10 autres
+ont été balayées sur les quatre points sans appeler de modification.
+
+**Modifications — défaut de structure (31 occurrences, 4 grilles)**
+
+Le motif corrigé transmis par g5a — **tout `→` situé hors du `<div>` d'examen
+canonique** — est le bon et il est le seul nécessaire. Recherche menée sur les
+20 grilles : **31 flèches hors emplacement**, toutes de la **variante B** (avalée
+dans le `<strong>` du nom du diagnostic), **zéro** de la variante A (avalée dans
+la puce d'arguments). Le lot ne contient donc aucun cas de la variante que
+décrivait g4.
+
+| Grille | Occ. | Entrées | Dont coexistant avec un `<div>` d'examen déjà présent |
+|---|---:|---:|---:|
+| German-31 | 7 | 7 | 6 |
+| German-32 | 6 | 6 | 5 |
+| German-33 | 8 | 8 | 4 |
+| German-37 | 10 | 10 | 3 |
+| **Total** | **31** | **31** | **18** |
+
+Contrôle de gabarit préalable : les blocs `annexe-dd` du lot ne portent que
+**deux** styles de `<div>` — `rgb(52, 105, 46)` (examen, 45 occurrences) et
+`rgb(80, 90, 110)` (arguments, 21). Le motif de recherche ne pouvait donc pas
+manquer une troisième variante.
+
+Réparation identique partout : l'examen quitte le `<strong>` et rejoint son
+propre `<div>`. Quand un `<div>` existait déjà, les deux listes sont fusionnées
+— doublons stricts écartés, **rien de supprimé** hors les corrections factuelles
+ci-dessous. Après réparation, les 31 entrées portent toutes leur examen à sa
+place (German-31 6→7 `<div>` d'examen, German-32 5→6, German-33 4→8,
+German-37 3→10).
+
+**Modifications — erreurs factuelles internes et contaminations d'import**
+
+- `annexe-dd` · **German-55**, Lithiase biliaire/cholédocienne :
+  « → **CT abdominal sans contraste, US rénal** » → « → Échographie abdominale
+  (voies biliaires), cholangio-IRM si doute ». **Contamination d'import
+  caractérisée** : la chaîne est **strictement identique** à celle de l'entrée
+  « Lithiase urinaire » de German-51, où elle est juste — c'est le protocole de
+  la colique néphrétique, transposé tel quel sur une lithiase **biliaire**, donc
+  sur le mauvais organe. Même motif que le *C. difficile* de German-13 (g5a) et
+  la colite infectieuse de German-19 (g4). Niveaux 1 **et** 2 concordants :
+  `SSP — Ictère` porte « Échographie abdominale (1ʳᵉ intention) : dilatation des
+  voies biliaires (cholédoque > 7 mm), lithiase » et « Cholangio-IRM (MRCP) :
+  exploration non invasive de référence des voies biliaires », et sa liste de
+  pièges éliminatoires dit « Pas d'échographie + CPRE si lithiase » ; la section
+  notée `m5` énumère « Échographie abdominale · Recherche de lithiase · Voies
+  biliaires ».
+- `annexe-dd` · **German-46**, Anémie hémolytique auto-immune :
+  « → **FSC, ferritine, B12, folates** » → « → Test de Coombs direct, bilan
+  d'hémolyse (bilirubine, LDH, haptoglobine), réticulocytes ». La chaîne
+  remplacée est celle des **trois entrées d'anémie carentielle** de la même
+  grille, recopiée à l'identique : ferritine, B12 et folates diagnostiquent une
+  carence, jamais une hémolyse, et le nom de l'entrée dit lui-même « Test de
+  Coombs positif ». Niveau 2 : `m2` nomme « Bilan d'hémolyse [Bilirubine, LDH,
+  haptoglobine] » et « FSC complète [Hb, VGM, CCMH, **réticulocytes**] ».
+- `annexe-dd` · **German-33**, Hernie hiatale : « → **Examen clinique, US si
+  doute** » → « → Radiographie, gastroscopie ». L'ultrason n'explore pas une
+  hernie hiatale. La chaîne est **la même** que celle que g5a a retirée de la
+  hernie discale cervicale de German-5 : boilerplate d'import, deuxième
+  occurrence dans le corpus.
+- `annexe-dd` · **German-40**, Infection urinaire : « → **FSC, CRP, hémocultures
+  si fièvre** » → « → Bandelette urinaire, ECBU ». Station d'**énurésie
+  pédiatrique** : l'examen qui départage y est l'analyse d'urine, absente de la
+  ligne, et les hémocultures n'ont aucune place dans ce bilan. Niveau 1 :
+  `SSP — Énurésie Nocturne` porte « Bandelette urinaire systématique (éliminer
+  une infection, une glycosurie) », « Bandelette urinaire + ECBU STAT », et
+  range parmi ses pièges éliminatoires « Manquer cause organique (glycosurie,
+  ECBU, écho rénale) ». Niveau 2 concordant : `m3` dit « Analyse d'urine
+  (bandelette et culture) ».
+- `annexe-dd` · **German-51**, Infection urinaire : même chaîne
+  « → FSC, CRP, hémocultures si fièvre » → « → ECBU, bandelette urinaire, FSC,
+  CRP ; hémocultures si fièvre ». Ici l'ECBU manquait seul ; les autres examens
+  sont conservés (fusion, pas remplacement). Niveaux 1 et 2 : `SSP — Hématurie`
+  compte « ECBU systematique » parmi ses pièges éliminatoires, `m4` porte
+  « Culture urinaire (ECBU) ».
+- `annexe-dd` · **German-31**, Syndrome coronarien aigu : « → ECG, troponines,
+  **test d'effort** » → « → ECG, troponines, échocardiographie ». L'épreuve
+  d'effort est **contre-indiquée** dans un syndrome coronarien aigu ; la chaîne
+  est celle du syndrome coronarien **chronique** (elle figure telle quelle sous
+  ce diagnostic en German-33). Niveau 2 : `m3` dit « ECG (éliminer SCA) » et
+  « FSC, CRP, troponine », jamais de test d'effort.
+- `annexe-dd` · **German-37**, Prostatite aiguë : « → ECBU, **PSA**, toucher
+  rectal » → « → ECBU, toucher rectal doux, échographie si doute d'obstacle ».
+  Niveau 1 : `SSP — Dysurie` ne contient **aucune** occurrence de « PSA »
+  (mesuré : 0), et nomme au contraire « Toucher rectal chez l'homme : prostate
+  douloureuse, bombée, chaude → prostatite (**massage à éviter en phase
+  aiguë**) » et « ECBU • hémocultures ; écho si doute d'obstacle ». Le PSA est
+  faussement élevé en prostatite aiguë et n'y départage rien.
+- `annexe-dd` · **German-49**, Adénopathie : « → FSC, CRP, **ECBU, hémocultures
+  selon contexte** » → « → Échographie inguinale, FSC, CRP ». Station de
+  **hernie inguinale** : ni ECBU ni hémocultures n'y départagent une adénopathie
+  inguinale. Niveau 2 : `m3` dit « Échographie inguinale pour confirmation » et
+  le `therapy` du même critère « Échographie inguinale : confirmation
+  diagnostique ».
+- `annexe-dd` · **German-49**, Tumeur des tissus mous : « → CT abdominal,
+  **marqueurs tumoraux** » → « → Échographie inguinale, CT abdominal ». Aucun
+  marqueur sérique ne départage une tumeur des tissus mous.
+- `annexe-dd` · **German-41**, Tumeur cérébrale : « → Imagerie (CT/IRM), biopsie,
+  **marqueurs tumoraux** » → « → Imagerie cérébrale (CT/IRM), biopsie ». Même
+  boilerplate. Niveau 2 : `m3` nomme « Imagerie : échographie carotides, CT/IRM
+  cérébral », sans marqueur.
+- `annexe-dd` · **German-33**, Cancer de l'œsophage : « → Imagerie (CT/IRM),
+  biopsie, **marqueurs tumoraux** » → « → Gastroscopie avec biopsies, imagerie
+  (CT/IRM) pour le bilan d'extension ». Troisième occurrence du même
+  boilerplate ; l'examen qui départage est la gastroscopie avec biopsies,
+  l'imagerie relevant du bilan d'extension.
+- `annexe-dd` · **German-46**, Saignement gastro-intestinal occulte :
+  « → Gastroscopie, test Helicobacter pylori » → « → Gastroscopie **et
+  coloscopie**, test Helicobacter pylori ». Alignement de niveau 2 : `m6` dit
+  « Si suspicion saignement GI [Gastroscopie, coloscopie] », et le nom de
+  l'entrée cite la maladie inflammatoire intestinale, que la gastroscopie seule
+  ne peut pas explorer.
+
+**« Marqueurs tumoraux » est un boilerplate d'import**, présent à l'identique
+sous trois diagnostics sans rapport (cancer de l'œsophage en German-33, tumeur
+cérébrale en German-41, tumeur des tissus mous en German-49) et faux pour
+chacun. Il est retiré des trois ; à rechercher au-delà de German-60.
+
+**Divergences consignées**
+
+- `annexe-dd` · **German-33** : les entrées « Angor stable » et « Syndrome
+  coronarien chronique » sont deux noms du même tableau, dans deux catégories
+  voisines du même bloc. Ce n'est pas une erreur factuelle mais un doublon
+  d'intitulé ; les fusionner relèverait d'un jugement d'auteur → **niveau 3, non
+  corrigé**.
+- `annexe-dd` · **German-36** : l'entrée « Bronchectasies » n'a aucun examen qui
+  départage, alors que le CT thoracique haute résolution est le seul à trancher.
+  Entrée réduite au nom du diagnostic seul, forme **voulue** par le volet B —
+  non remplie, conformément à la consigne.
+- Section notée · **German-51** : `m3` cote « PSA (si homme > 50 ans) » dans une
+  station d'hématurie. C'est défendable (le PSA participe au bilan d'une
+  hématurie masculine) et la divergence serait **dans** la section notée, que la
+  procédure gèle → non corrigé, signalé pour cohérence avec le retrait du PSA en
+  German-37, où le contexte (prostatite aiguë) est différent.
+
+**Contrat de rôle — aucune violation.** Balayage des 20 blocs sur 21 marqueurs de
+check-list actionnable, de conduite de station et de registre oral (« expliquer »,
+« se présenter », « prescrire », « orienter vers », « hospitaliser »…) :
+**0 occurrence**. Aucun remplissage rétabli ; les entrées réduites au nom du
+diagnostic seul (German-51, 53, 55, 57, 58, 59, 60…) sont restées telles quelles.
+
+**Duplication avec la section notée — aucun cas**, ce qui confirme l'explication
+structurelle de g5a. Comparaison systématique des items d'`annexe-dd` aux
+`criteria-text`, `detail-text`, `redflags-text` et `patient-response` hors bloc,
+seuil 0.72 : **11 appariements**, tous des recoupements légitimes de rôle ou des
+faux positifs de similarité de chaîne (German-60 « Hypotension essentielle » face
+à « Hypertension artérielle », German-55 « Hépatite médicamenteuse » face à
+« Allergies médicamenteuses »). Les autres opposent un **argument** du
+différentiel à l'**acte** que cote le critère (German-57 « Tabagisme important »
+face à l'item d'anamnèse du même nom, German-49 « Localisation inguinale
+typique » face à « Palpation inguinale spécifique »). Rien à supprimer.
+
+**Le rendement du niveau 1 se prédit bien par le nombre de grilles desservies.**
+Les trois pages qui ont tranché desservent **2, 5 et 6** grilles
+(`SSP — Énurésie Nocturne`, `SSP — Dysurie`, `SSP — Ictère`) ; les pages muettes
+en desservent 16 à 27 (`SSP — Douleur Thoracique` 27, `SSP — Dyspnée` 26,
+`SSP — Lombalgies` 24, `SSP — Fatigue` 16). L'indicateur de g5a se vérifie sur ce
+lot. Exception à noter : `SSP — Ballonnement (Météorisme)` ne dessert que
+German-49 mais reste muette, parce qu'elle **ne traite pas le sujet de la
+grille** — la station porte sur une hernie inguinale ; la mono-grille prédit la
+précision de la page, pas sa pertinence.
+
+**Vérifications** — `check_invariants.py` OK (88), `check_nomenclature.py` OK,
+`check_reachability.py` OK 88/88 à 100 %, `report_redundancy.py` **14**
+(inchangé), AMBOSS aux trois verts et redondance **147**. **Aucune modification
+du barème** : `git diff` ne contient aucun `.criteria-text`, aucun `<input>`,
+aucun `<span class="score">`, aucun `maxScores`, aucun `sectionInfo`, aucune
+`patient-response` — vérifié mécaniquement (0 ligne). Règle 1 des arbitrages,
+`baseline.json` non régénéré. Le diff est symétrique : **39 insertions pour 39
+suppressions**, aucune ligne créée ni détruite. `boundsAnomalies` et
+`uncoveredContent` vides sur les 10 fichiers. Aucun `</div>` déplacé dans un
+`criteria-row` — les blocs `redflags` et `therapy` n'ont pas été ouverts.
+
+`check_no_loss.py 129f03b` : **8 items signalés sur 10 grilles**, verdictés un à
+un. Aucun n'est une perte accidentelle : un est l'effet mécanique de la fusion
+(German-32, reformulation sous le seuil de ressemblance), les **sept autres sont
+les suppressions voulues** documentées ci-dessus (« US si doute », « marqueurs
+tumoraux » ×2, « PSA », « test d'effort », « FSC, ferritine, B12, folates »,
+« CT abdominal sans contraste, US rénal », « ECBU, hémocultures selon
+contexte »). Chaque fragment conservé a été recontrôlé par sa présence littérale
+dans le HTML après `strip_base64`, jamais par `grep`. Le contrôle de couverture
+préalable — résidu des `<li>` après retrait du `<strong>`, du `<div>` d'examen et
+du `<div>` d'arguments — rend **zéro caractère** sur les 20 grilles : aucun
+contenu du bloc n'a échappé à la relecture.
