@@ -47,6 +47,18 @@ BANNED = {
     # Sans risque de faux positif base64 : « ³ » n'appartient pas a l'alphabet
     # base64, ce motif ne peut pas tomber dans un blob d'image.
     r"/mm³": "G/L (x0,001)",
+    # /µL : strictement la meme unite que /mm³, ecrite autrement — 300/µL = 0,3 G/L.
+    # Elle a echappe a la passe unites parce que la table ne bannissait que la
+    # graphie « /mm³ » : AMBOSS-19 a porte « eosinophiles > 300/µL » jusqu'a la
+    # seconde phase sans qu'aucun controle ne bronche.
+    # Le motif EXIGE un terme d'hemogramme devant la valeur, et c'est deliberé :
+    # une numeration de LCR se rend justement par µL et jamais en G/L
+    # (PROCEDURE.md § 6, « PL : GR 50 000 » d'AMBOSS-33). Bannir « /µL » tout court
+    # signalerait a tort la seule ecriture correcte de ce cas. Les deux graphies du
+    # micro sont acceptees (U+00B5 et U+03BC) : le corpus emploie les deux.
+    r"(?:leucocytes?|[ée]osinophiles?|neutrophiles?|lymphocytes?|monocytes?|basophiles?"
+    r"|plaquettes?|thrombocytes?|globules?\s+blancs?|\bGB\b)[^<]{0,30}/\s?[µμ]L":
+        "G/L (x0,001)",
     r"\b911\b": "144",
     r"\bSAMU\b": "144",
 }

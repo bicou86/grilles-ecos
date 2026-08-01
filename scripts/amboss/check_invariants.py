@@ -10,7 +10,12 @@ from snapshot_invariants import snapshot_one
 BASE = Path(__file__).parent / "baseline.json"
 
 # Champs dont toute variation est une regression.
-FROZEN = ["maxScores", "scoreSpans", "blocks",
+# `sectionCounts` (sectionInfo[].count) a ete ajoute apres coup : c'est le champ
+# qui rendait le bareme d'AMBOSS-9 inatteignable sans qu'aucun controle puisse
+# le voir. Le geler interdit toute derive ; verifier qu'il est *juste* — que le
+# bareme declare est bien atteignable par le calcul — est le role distinct de
+# `check_reachability.py`, qui ne compare a aucun passe.
+FROZEN = ["maxScores", "scoreSpans", "sectionCounts", "blocks",
           "criteriaCount", "detailCount", "radioCount", "checkboxCount"]
 
 

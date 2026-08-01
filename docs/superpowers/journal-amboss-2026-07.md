@@ -6212,3 +6212,171 @@ aucune case, aucun point n'a bougé.
   ouverte jamais fermée, contenu perdu. Même famille de défaut, même arbitrage.
 - **AMBOSS-29 · `expert`** : « Transaminases : ASAT 85, ALAT 95 (légèrement élevées) » —
   unités implicites, déjà inventoriées à l'arbitrage § Groupe 6 [34]. Non traité ici.
+
+### Tâche c7 — pérennisation de l'outillage et défauts résiduels
+
+Base : `c9a1598`. Deux volets : trois interventions d'outillage, puis les six défauts
+résiduels signalés par les tâches précédentes.
+
+#### Outillage — `check_reachability.py` (garde-fou nouveau)
+
+`check_invariants.py` compare des **comptes d'éléments** à un snapshot : il répond à
+« le barème est-il le même qu'hier ? », jamais à « le barème est-il juste ? ». C'est ce
+trou qui a laissé AMBOSS-9 déclarer `anamnese: 53` pour 49 points calculables et
+`count: 13` pour douze critères écrits, depuis le commit initial du dépôt et pendant
+toute la première phase, sans qu'aucun contrôle bronche.
+
+`scripts/amboss/check_reachability.py` rejoue `calculateScores()` (`cases/scoring.js`)
+sur le DOM et **simule le remplissage complet** : détails tous cochés, radios à leur
+valeur maximale, communication au niveau A. Il exige, section par section, que le
+maximum simulé égale `maxScores` **et** le `<span class="score">`, et que le global
+pondéré tombe sur 100 %. Il signale trois écarts que rien d'autre ne voit : un `count`
+qui promet un critère absent de la page (« ABSENT »), un sous-item **orphelin** hors de
+la séquence `prefix1..prefixN` — donc cochable mais jamais compté —, et un `maxScores`
+désaccordé du dénominateur affiché. **Sortie 1 en cas d'écart**, contrairement à
+`check_no_loss.py` qui est un rapport.
+
+Porté depuis le script jetable de la tâche c5 (celui qui avait trouvé `a12b`), avec
+`sys.path` relatif, sortie silencieuse en cas de succès, filtre de grille positionnel et
+détail lisible critère par critère.
+
+Contrôle de non-régression du garde-fou lui-même, sur deux états passés d'AMBOSS-9 :
+
+| État | Verdict rendu |
+|---|---|
+| `a845c1b` (origine) | `ECART` — anamnese atteignable=49 maxScores=53 affiche=/53 · `count=13 promet 1 critère que la page ne porte pas : a13` · orphelin `a12b` · global **98 %** |
+| `1a97af0` (après correction 53 → 49, avant retrait d'`a12b`) | `ECART` — orphelin `a12b` seul |
+| état courant | `OK` |
+
+Sur les 40 grilles : `OK — 40 grille(s), bareme atteignable a 100 % sur chaque section`.
+
+#### Outillage — `sectionInfo[].count` entre dans le snapshot
+
+`snapshot_one()` capture désormais `sectionCounts` (clé de section → `count`), ajouté à
+la liste `FROZEN` de `check_invariants.py`. `baseline.json` régénéré : **240 lignes
+ajoutées, 0 supprimée** — six lignes par grille sur les 40, soit exactement l'ajout du
+nouveau champ et rien d'autre. Vérifié aussi champ par champ hors `git diff` : aucune
+grille ne présente d'autre différence que l'apparition de `sectionCounts`.
+
+Le champ est désormais **gelé** ; qu'il soit **juste** reste établi par
+`check_reachability.py`. Les deux contrôles sont complémentaires, aucun ne remplace
+l'autre.
+
+#### Outillage — mode intra-bloc de `report_redundancy.py`
+
+Drapeau `--intra`, **sans effet sur le comportement par défaut** : la sortie sans
+drapeau est identique **au bit près** à celle de la version précédente (comparaison
+`diff` de la sortie complète sur les 40 grilles). Les paires intra-bloc sont comptées et
+affichées séparément, jamais additionnées au chiffre de référence.
+
+Mesure obtenue — **236 paires intra-bloc sur 37 grilles** :
+
+| Bloc | Paires | dont ≥ 0.95 |
+|---|---|---|
+| `annexe-dd` | 128 | 22 |
+| `resume` | 65 | 9 |
+| `theorie` | 24 | 0 |
+| `presentation` | 18 | 2 |
+| `expert` | 1 | 0 |
+
+**Rien n'a été corrigé** : c'est une mesure, pas une passe. Réserve d'interprétation :
+les 128 paires d'`annexe-dd` sont en bonne part **structurelles et légitimes** — le bloc
+répète le même argument sous plusieurs hypothèses du différentiel, ce que PROCEDURE § 3
+documente déjà (« nausées et vomissements » sous six hypothèses d'AMBOSS-1). Les
+108 paires hors `annexe-dd`, dont 11 à ressemblance ≥ 0.95 et quelques doublons stricts
+(ratio 1.0 dans le `resume` d'AMBOSS-4), sont le gisement réel.
+
+#### Modifications — défauts résiduels
+
+- AMBOSS-29 · section Management, `therapy-section` « Si anémie ferriprive confirmée » :
+  la puce **`• Durée` était vide** (même signature que `• Palier 1` d'AMBOSS-18, corrigée
+  en tâche c6) → « Durée: 3-6 mois après normalisation de l'Hb ».
+  source : la grille elle-même — `theorie`/Rappels thérapeutiques porte « Durée fer :
+  3-6 mois après normalisation Hb ». Le contexte confirme le contenu perdu.
+  Un `therapy-section` ne porte aucune case : barème inchangé (règle 1).
+
+- AMBOSS-19 · `theorie`, deux occurrences : « éosinophiles > 300/µL » → « > 0.3 G/L » et
+  « + CSI si éosinophiles ≥ 300/µL » → « ≥ 0.3 G/L ».
+  source : doctrine du corpus (PROCEDURE § 6) — une numération sanguine se rend en `G/L`,
+  et `/µL` est **strictement la même unité que `/mm³`**, déjà bannie. Historique du
+  défaut : à `a845c1b` la grille écrivait « éosinophiles > 300 » **sans unité** ; le
+  balayage de la tâche 7 ne portait que sur les valeurs ≥ 1000 et l'a manqué ; la tâche c6
+  l'a écrit « ≥ 300/µL » en notant elle-même que `/µL` était « hors table `BANNED` ».
+  Trois passes successives, trois raisons différentes de ne pas le voir.
+
+- AMBOSS-32 · `annexe-dd`, VPH : « IST la plus fréquente **aux États-Unis** » →
+  « IST la plus fréquente, tous pays confondus ».
+  source : `SSP — Leucorrhées` ne porte **aucune** donnée de fréquence ni de prévalence
+  suisse (recherche exhaustive sur « fréquent », « prévalence », « VPH/HPV », « condylome »,
+  « chlamyd- ») : l'ancrage national est retiré plutôt que remplacé, conformément à la
+  première option de l'arbitrage [Groupe 6, point 32]. Le fait reste vrai sans lui.
+
+- AMBOSS-23 · `theorie` : « Remboursement : variable selon pays/assurance » → « forfait de
+  l'AI avant l'âge AVS, forfait AVS ensuite — l'AVS ne finance qu'un appareillage
+  monaural, l'AI peut couvrir le binaural. Octroi sur expertise ORL ;
+  l'assurance-maladie de base (LAMal) ne participe pas ».
+  source : suissification, arbitrages [32]. `SSP — Perte d'Audition` est **muette** sur le
+  remboursement (vérifié) : le contenu vient du régime suisse des moyens auxiliaires, pas
+  d'une page. **Aucun montant en francs n'est donné** — les forfaits sont chiffrés et
+  révisables, les citer sans source les rendrait faux à terme. Le point qui compte
+  cliniquement est retenu : la restriction monaurale de l'AVS contredit l'item voisin de
+  la même grille (« appareillage bilatéral préférable au monaural »), et le patient a
+  65 ans.
+
+- AMBOSS-29 · `expert` : « Transaminases : ASAT 85, ALAT 95 » → « ASAT 85 U/L, ALAT 95
+  U/L ».
+- AMBOSS-33 · `expert` : « Ionogramme : Na 135, glucose 7.2 mmol/L » → « Na 135 mmol/L,
+  glucose 7.2 mmol/L ».
+- AMBOSS-36 · `theorie` : « Biologie : ASAT/ALAT > 2, ASAT < 300 » → « ASAT < 300 U/L ».
+  source pour les trois : arbitrages [Groupe 6, point 34] — « trois unités implicites hors
+  hémogramme (ASAT/ALAT, Na) ». Balayage dédié fait sur ASAT, ALAT, GGT, PAL, Na,
+  natrémie, K⁺, kaliémie, bilirubine, créatinine et urée dans les 40 grilles : ces trois
+  sites sont les seuls. Le ratio ASAT/ALAT et le rapport urée/créatinine d'AMBOSS-11 sont
+  **sans dimension** et n'ont pas été touchés.
+
+#### Modification — `check_nomenclature.py`
+
+Ajout à `BANNED` d'un motif « terme d'hémogramme + valeur + `/µL` » (les deux graphies du
+micro, U+00B5 et U+03BC). Il **exige le terme devant la valeur**, délibérément : une
+numération de LCR se rend par µL et jamais en G/L — « PL : GR 50 000 » d'AMBOSS-33 est
+protégée par construction. Motif testé sur dix chaînes construites (cinq à détecter, cinq
+à laisser passer, dont deux cas de LCR et le `mg/mL` de la méthacholine) : dix sur dix.
+
+#### Divergences consignées
+
+- **AMBOSS-27 · `expert` — le défaut signalé n'existe pas.** La tâche c6 avait consigné
+  « Dosages hormonaux : Cortisol 8h bas ( — parenthèse ouverte jamais fermée, contenu
+  perdu ». Le texte réel est **`Cortisol 8h bas (< 100 nmol/L)`**, complet et cohérent
+  avec la `theorie` de la même grille (« Cortisol 8h : normal > 550 nmol/L, déficit
+  < 100 nmol/L »). Le signalement est un artefact du **chevron nu** documenté en
+  PROCEDURE § 6 : un motif du genre `Cortisol[^<]{0,80}` s'arrête sur le `<` du seuil et
+  rend exactement « Cortisol 8h bas ( ». Contrôle : sur les 40 grilles, **aucun `<li>` ne
+  porte de parenthèses déséquilibrées**, et neuf autres grilles écrivent la même
+  construction `(< valeur)` (AMBOSS-11, 17, 20, 34, 37 ×3, 40 ×2). Rien à corriger.
+- **AMBOSS-34 · section notée `a?` (réponse patient)** : « Acuité visuelle basse
+  (< 20/200) à gauche » — notation de Snellen en pieds, convention américaine ; la Suisse
+  emploie l'acuité décimale (20/200 = 0,1). Trouvé au balayage des constructions `(<` ;
+  hors du périmètre des six défauts confiés, et en section notée. Non corrigé.
+- **AMBOSS-23 · remboursement** : les montants des forfaits AI/AVS n'ont pas été écrits,
+  faute de source vérifiable dans le vault. Si un chiffre est voulu, il devra venir d'une
+  source datée.
+
+#### Contrôles
+
+- `check_invariants.py` → `OK — 40 grilles, tous les invariants preserves` (code 0),
+  après régénération du snapshot pour le seul ajout de `sectionCounts`.
+- `check_nomenclature.py` → `OK — aucun terme non suisse detecte` (code 0), motif `/µL`
+  compris.
+- `check_reachability.py` → `OK — 40 grille(s), bareme atteignable a 100 %` (code 0).
+- `report_redundancy.py` → **147** paires, inchangé · `--intra` → **236** paires
+  intra-bloc.
+- `check_no_loss.py a845c1b` → 781 items signalés sur 40 grilles depuis l'origine
+  (rapport, code 0).
+- Intégrité structurelle des 40 fichiers : `div` 27008/27008, `ul` 1329/1329,
+  `li` 6247/6247, `p` 736/736, `span` 4550/4550, `</html>` final 40/40, blocs
+  `annexe-dd`/`expert`/`theorie` présents 40/40.
+- Barème contre `a845c1b`, recalculé champ par champ : **écarts sur la seule AMBOSS-9**
+  (`maxScores` anamnèse 53 → 49 et management 17 → 16, `scoreSpans` idem,
+  `sectionCounts` anamnèse 13 → 12, `criteriaCount` 24 → 23, `detailCount` et
+  `checkboxCount` 59 → 54). Les 39 autres grilles sont identiques à l'origine sur les
+  huit champs gelés.

@@ -207,9 +207,54 @@ défini en tête de ce fichier.
 ## 6. Vérifier
 
 ```bash
-python3 scripts/amboss/check_invariants.py    # doit sortir OK
-python3 scripts/amboss/check_nomenclature.py  # doit sortir OK
+python3 scripts/amboss/check_invariants.py     # doit sortir OK
+python3 scripts/amboss/check_nomenclature.py   # doit sortir OK
+python3 scripts/amboss/check_reachability.py   # doit sortir OK
 ```
+
+**Les trois sortent 1 en cas d'écart** — ce sont des portes, pas des rapports.
+`check_no_loss.py` et `report_redundancy.py`, eux, sortent toujours 0 : ils listent,
+ils ne jugent pas.
+
+**`check_invariants` et `check_reachability` ne posent pas la même question.** Le
+premier compare l'état courant à `baseline.json` : il répond à *« le barème est-il le
+même qu'hier ? »*. Un barème faux depuis l'origine y reste vert indéfiniment. Le second
+ne compare à aucun passé : il rejoue `calculateScores()` sur le DOM, simule le
+remplissage complet de la grille et vérifie que le maximum ainsi atteint égale
+`maxScores` **et** le `<span class="score">`, section par section, avec un global à
+100 %. Il répond à *« le barème est-il atteignable ? »*.
+
+C'est ce trou qu'AMBOSS-9 a traversé pendant tout le projet : `count: 13` pour douze
+critères écrits et `anamnese: 53` pour 49 points calculables, défaut présent dès le
+commit initial. Aucun compte d'éléments ne pouvait le voir — `criteriaCount` compte les
+libellés présents, jamais ceux que la boucle va chercher. `check_reachability.py`
+signale les trois formes de l'écart : un `count` qui promet un critère absent
+(« ABSENT »), un sous-item **orphelin** dont l'identifiant sort de la séquence
+`prefix1..prefixN` et qui n'entre donc jamais dans le calcul (`a12b`), et un `maxScores`
+désaccordé du dénominateur affiché.
+
+Depuis, `sectionInfo[].count` est **aussi** capté par `snapshot_one()` sous la clé
+`sectionCounts` et gelé par `check_invariants`. Les deux contrôles sont complémentaires
+et aucun ne remplace l'autre : l'un empêche la dérive d'une valeur juste, l'autre établit
+qu'elle l'est.
+
+**Mesurer la redondance intra-bloc.** `report_redundancy.py` ne compte par défaut que les
+paires **entre blocs différents** (`if b1 == b2: continue`) : c'est l'unité dans laquelle
+tous les chiffres du projet sont exprimés, de 301 au départ à 147 aujourd'hui, et **ce
+comportement par défaut ne doit pas changer** sous peine de rendre les mesures
+incomparables. Le drapeau `--intra` ajoute les paires internes à un même bloc, comptées
+et affichées **séparément** :
+
+```bash
+python3 scripts/amboss/report_redundancy.py --intra
+```
+
+Cet angle mort n'avait jamais été mesuré. Il n'était visible que par ricochet — deux items
+d'un même `resume` s'appariant au même item de la `presentation` (AMBOSS-1, échographie ;
+AMBOSS-31, radiographie). Attention à l'interprétation : une bonne part de l'intra-bloc
+d'`annexe-dd` est **structurelle et légitime**, le même argument valant sous plusieurs
+hypothèses du différentiel (« nausées et vomissements » figure sous six hypothèses
+d'AMBOSS-1). Le chiffre intra-bloc mesure, il ne prescrit pas.
 
 **Toujours vérifier par les scripts, jamais par un `grep` direct.** Les scripts
 appliquent `lib.strip_base64` avant toute recherche ; un `grep` brut, lui, fouille
@@ -242,6 +287,23 @@ blancs, leucocytes, plaquettes, thrombocytes, PNN, neutrophiles, lymphocytes,
 toute grille nouvelle, réécrite ou réimportée doit être relue à la main sur ce
 point, car aucun garde-fou automatique n'est possible. Un garde-fou qui ne peut pas
 exister doit au moins être documenté comme absent.
+
+**Le seuil « ≥ 1000 » de ce balayage était lui-même un angle mort.** Il a laissé passer
+le seuil d'éosinophiles d'AMBOSS-19 — « CSI si éosinophiles > 300 », sans unité, à trois
+chiffres donc sous le seuil de recherche. Le défaut a survécu à la tâche 7, à la
+vérification finale et à la première phase entière ; il n'a été trouvé qu'en relançant le
+même balayage **sur les valeurs à trois chiffres**. Retenir : le critère d'un balayage
+exhaustif est aussi faillible que le motif d'un script, et il n'en laisse aucune trace.
+
+**Deux graphies pour la même unité : `/mm³` et `/µL`.** Elles sont strictement
+équivalentes (300/µL = 0,3 G/L) et la table `BANNED` ne portait que la première. La
+tâche c6 a donc « corrigé » l'unité implicite d'AMBOSS-19 en `≥ 300/µL` — juste sur le
+fond, non suisse dans la forme — et `check_nomenclature.py` est resté vert, son propre
+journal notant que `/µL` était « hors table `BANNED` ». Les deux occurrences sont
+maintenant en `G/L`, et le motif a été ajouté à la table. Il **exige un terme
+d'hémogramme devant la valeur**, et c'est délibéré : une numération de LCR se rend
+justement par µL et jamais en G/L (« PL : GR 50 000 » d'AMBOSS-33, ci-dessus). Bannir
+`/µL` tout court signalerait à tort la seule écriture correcte de ce cas.
 
 Deux corollaires vérifiés en même temps :
 
@@ -303,6 +365,16 @@ pas vérifié qu'il porte ce correctif.** Pour chercher un seuil ou toute valeur
 susceptible d'être adjacente à un `<` nu, préférer le HTML brut après
 `strip_base64` (comme `check_nomenclature.py`) — c'est la méthode qui ne peut
 pas être trompée par ce piège, corrigé ou non.
+
+**Le même piège produit aussi des faux positifs, pas seulement des faux négatifs.** La
+tâche c6 a signalé « AMBOSS-27 · `expert` : *Cortisol 8h bas (* — parenthèse ouverte
+jamais fermée, contenu perdu ». Le texte réel est `Cortisol 8h bas (< 100 nmol/L)` : il
+est complet. Ce qui a été signalé, c'est ce qu'un motif du genre `Cortisol[^<]{0,80}`
+rend — il s'arrête sur le `<` du seuil. Vérification faite depuis : sur les 40 grilles,
+**aucun `<li>` ne porte de parenthèses déséquilibrées**, et neuf autres grilles écrivent
+la même construction `(< valeur)` sans que personne l'ait jamais signalée. Avant de
+déclarer un texte mutilé, contrôler qu'un chevron nu n'a pas simplement borné la
+recherche.
 
 Avant de commit une grille dédoublonnée, vérifier aussi qu'aucune information n'a
 disparu (règle du § 3) :
