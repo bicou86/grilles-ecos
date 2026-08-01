@@ -2,6 +2,7 @@
 
 Branche `refonte-amboss-suisse` · Référence d'origine (outillage en place, avant toute
 modification de contenu) : `4819f53` · État vérifié : `32f8875`, sept commits plus loin ·
+**Défaut du § 0 réparé depuis, par la tâche g7 — voir l'encadré** ·
 Journal détaillé : `docs/superpowers/journal-german-2026-08.md` · Procédure :
 `scripts/german/PROCEDURE-german.md`
 
@@ -15,20 +16,38 @@ Journal détaillé : `docs/superpowers/journal-german-2026-08.md` · Procédure 
 
 Six vérifications ont été menées sur l'ensemble du corpus, et les quatre vérificateurs
 d'AMBOSS rejoués pour établir que la campagne German n'a rien perturbé chez le voisin.
-**Cinq passent. Une échoue.**
+**Cinq passaient. Une échouait — elle passe depuis la tâche g7.**
+
+> **Mise à jour — tâche g7 (départ `7e9285e`).** Le défaut décrit ci-dessous **n'existe
+> plus**. Les 21 entrées de German-27, 34 et 56 ont été réparées par le geste des lots
+> g5a/b/c : l'examen a quitté le nom du diagnostic pour son `<div>` canonique, les cinq
+> couples compatibles ont été fusionnés et les deux couples incompatibles des cancers de
+> German-34 tranchés en faveur de l'examen prisonnier. La commande de détection de l'annexe
+> ne rend plus que les **4 flèches sémantiques légitimes** de German-65 et 66. Redondance
+> inchangée (14 inter-blocs, 91 intra-bloc), AMBOSS inchangé (147), barème gelé. La
+> vérification n° 3 est donc **OK**, et le corpus German ne porte plus aucun défaut de
+> gabarit d'`annexe-dd`. Détail : `docs/superpowers/journal-german-2026-08.md`, entrée
+> « Tâche g7 » ; rapport :
+> `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/g7-report.md`.
+>
+> Deux chiffres de la section ci-dessous sont à rectifier, la relecture mécanique des
+> 26 entrées les ayant établis autrement : les entrées à **double ligne d'examens** sont
+> **sept** et non six — le tableau du § 0 en a d'ailleurs toujours listé sept — dont **cinq
+> compatibles** et deux incompatibles. La description du défaut, sa cause et son périmètre
+> sont exacts par ailleurs.
 
 | # | Vérification | Résultat |
 |---|---|---|
 | 1 | Les six vérificateurs, sur les deux corpus | **OK** — German : invariants, nomenclature, atteignabilité au vert, `boundsAnomalies` et `uncoveredContent` vides sur les 88. AMBOSS : quatre vérificateurs au vert, redondance **147**, inchangée |
 | 2 | Barème inchangé depuis `4819f53` | **OK** — 880 champs recalculés de part et d'autre sur les 88 grilles, **zéro divergence** |
-| 3 | Intégrité structurelle | **ÉCHEC partiel** — balises et blocs sains sur 88/88, mais **21 entrées d'`annexe-dd` portent encore le défaut de gabarit** que les lots g5a/b/c ont réparé partout ailleurs. Voir « Le défaut » ci-dessous |
+| 3 | Intégrité structurelle | **OK depuis g7** — balises et blocs sains sur 88/88. Les **21 entrées d'`annexe-dd`** qui portaient encore le défaut de gabarit (German-27, 34, 56) ont été réparées ; à `32f8875` cette ligne était un **ÉCHEC partiel**. Voir « Le défaut » ci-dessous |
 | 4 | Redondance | **OK** — 83 → 14 paires inter-blocs, 638 → 91 intra-bloc. 12 des 14 sont des clés de mnémo, protégées par la règle du format ; les 2 dernières sont des faux positifs de similarité, pas des doublons |
 | 5 | Non-perte d'information | **OK** — 652 items signalés, aucune perte réelle retrouvée par l'analyse de motifs, y compris sur les thèmes sensibles |
 | 6 | Contrôle fonctionnel en navigateur | **OK** — 88/88 grilles remplies intégralement dans Chrome sans interface : minuteur, score, dénominateur, coloration et absence de balise orpheline |
 
-### Le défaut
+### Le défaut *(réparé par g7 — la description ci-dessous est celle de l'état `32f8875`)*
 
-**Vingt et une entrées d'`annexe-dd`, dans trois grilles, portent encore l'examen qui
+**Vingt et une entrées d'`annexe-dd`, dans trois grilles, portaient l'examen qui
 départage à l'intérieur du nom du diagnostic au lieu de son propre élément.** German-27
 (9 entrées sur 10), German-34 (9 sur 10), German-56 (3 sur 6).
 
@@ -70,9 +89,10 @@ biopsie, marqueurs tumoraux ». Ce sont deux des huit occurrences restantes du b
 l'œsophage et l'ORL** (§ 4). Un étudiant qui lit cette entrée voit d'abord une imagerie
 là où le geste diagnostique est l'endoscopie.
 
-**Rien n'a été corrigé** : ce rapport est une vérification, pas une passe de traitement.
-Le défaut est mesurable en une commande, et le geste de réparation est celui, déjà rodé,
-des lots g5a/b/c.
+**Rien n'avait été corrigé à `32f8875`** : ce rapport est une vérification, pas une passe
+de traitement. Le défaut était mesurable en une commande, et le geste de réparation était
+celui, déjà rodé, des lots g5a/b/c — c'est celui qu'a appliqué la tâche **g7**, qui a
+réparé les 21 entrées et retiré les deux `<div>` génériques des cancers de German-34.
 
 Ce défaut n'a aucune conséquence sur le barème ni sur le rendu de la page : les balises
 restent équilibrées, le contrôle fonctionnel passe sur les trois grilles concernées, et le
@@ -96,8 +116,8 @@ sections notées ni sur les deux blocs de niveau 2 qui y vivent (`therapy`, `red
 | Paires quasi identiques **entre** blocs | **83** | **14** (−83 %) |
 | Paires quasi identiques **dans** un même bloc | **638** | **91** (−86 %) |
 | Réponses Q/R en liste (`presentation-reponse list`) | **31** | **0** |
-| Défauts de gabarit d'`annexe-dd` réparés | — | **67** |
-| Boilerplate « marqueurs tumoraux » | 13 | **8** |
+| Défauts de gabarit d'`annexe-dd` réparés | — | **67** — **88** après g7, soit la totalité |
+| Boilerplate « marqueurs tumoraux » | 13 | **8** — **6** après g7 (les deux de German-34) |
 | Boilerplate « US si doute » | 4 | **2** |
 | Items de contenu, tous blocs | 2 656 | 2 123 |
 | Volume rédactionnel | 199 540 c. | 193 009 c. |
@@ -277,7 +297,7 @@ German-5 : la clearance du rachis cervical par les **règles canadiennes ou NEXU
 
 ## 4. Ce qui reste non corrigé, et pourquoi
 
-### 4.1 Les huit « marqueurs tumoraux » restants — un arbitrage organe par organe
+### 4.1 Les « marqueurs tumoraux » restants — un arbitrage organe par organe *(8 → 6 après g7)*
 
 Le lot g5b avait transmis « marqueurs tumoraux » comme un boilerplate **faux à chaque
 occurrence**, avec consigne de le rechercher. Le lot g5c a établi que **la généralisation
@@ -288,10 +308,16 @@ est trop large** :
 - German-12 et 13, cancer colorectal : l'**ACE** fait partie du bilan initial.
 
 Le boilerplate est faux quand l'organe n'a pas de marqueur utile — poumon, cerveau, tissus
-mous, œsophage, ORL. Il reste **8 occurrences dans 6 grilles** (German-12, 13, 18, 21 ×2,
-29, 34 ×2). Deux d'entre elles sont celles de German-34 signalées au § 0 : elles doublent
-un examen juste prisonnier du nom du diagnostic. **Une passe globale les retirerait toutes,
-y compris les trois qui sont justes.**
+mous, œsophage, ORL. Il restait **8 occurrences dans 6 grilles** (German-12, 13, 18, 21 ×2,
+29, 34 ×2) ; **il en reste 6** depuis g7, qui a retiré les deux de German-34 — les seules
+qui fussent dans son périmètre de réparation, parce qu'elles doublaient un examen juste
+prisonnier du nom du diagnostic. **Aucune passe globale n'a été faite, et il ne faut pas en
+faire : une passe mécanique les retirerait toutes, y compris les trois qui sont justes.**
+
+**Les deux de German-21 sont le prochain candidat, et le seul dont la réponse soit déjà
+connue** : elles portent exactement les mêmes organes — œsophage et ORL — que celles
+retirées de German-34, et g5c les avait déjà jugées fausses. Les trois autres
+(German-12, 13, 18) sont justes ; German-29 reste à arbitrer.
 
 ### 4.2 German-75 — la station porte une tuberculose, son bloc de différentiels ne la porte pas
 
@@ -372,8 +398,16 @@ conçu à l'avance.
 
 **Une quatrième leçon découle du § 0 : une correction de patron doit s'accompagner d'un
 rejeu sur ce qui a déjà été traité.** Les trois corrections ci-dessus ont toutes été
-transmises au lot suivant ; aucune n'a été rejouée en arrière. C'est mécaniquement ce qui
-laisse 21 défauts dans German-27, 34 et 56.
+transmises au lot suivant ; aucune n'a été rejouée en arrière. C'est mécaniquement ce qui a
+laissé 21 défauts dans German-27, 34 et 56 — et c'est ce rejeu qu'a fait la tâche **g7**,
+au coût d'un seul commit, ce qui mesure le prix réel de la leçon : la réparation a demandé
+21 lignes, la détecter a demandé une campagne entière.
+
+**Le corollaire outillé.** La commande de détection de l'annexe est désormais un garde-fou
+utilisable en une ligne, avec une valeur attendue connue — **4**, les flèches sémantiques
+de German-65 et 66 — et non zéro. Un motif de détection n'est utile durablement que si sa
+valeur normale est écrite quelque part ; sans elle, le prochain lecteur relira les
+4 occurrences légitimes comme un défaut, ou les 21 vraies comme du bruit.
 
 ### 5.2 Un indicateur découvert : le rendement du niveau 1 se prédit sans ouvrir la page
 
@@ -483,7 +517,7 @@ ni `<input>`, ni `<span class="score">`, ni `maxScores`, ni `sectionInfo`.
 | Nombre de segments par bloc, contre `4819f53` | identique — aucun bloc créé ni supprimé |
 | `criteria-row` équilibrés | 3 072/3 072 |
 | `criteria-row` en englobant d'autres | **1** — German-84 `m7`, englobe 4. **Mesuré identique à `4819f53`** |
-| Défaut de gabarit d'`annexe-dd` | **21 occurrences résiduelles** — German-27, 34, 56. Voir § 0 |
+| Défaut de gabarit d'`annexe-dd` | **0** — les 21 occurrences résiduelles de German-27, 34 et 56 ont été réparées par g7. À `32f8875` : 21. Voir § 0 |
 
 ### 6.4 Redondance
 
@@ -509,6 +543,14 @@ inter-blocs qui ne bougeait que de 83 à 82. La suite est plus fine : `presentat
 de 37 à 5 (conversion de format), `resume` de 21 à 19, tandis qu'`annexe-dd` **remonte** de
 59 à 66 — l'ajout des arguments POUR/CONTRE et la sortie des examens hors du nom créent des
 items courts qui se ressemblent. Le chiffre intra-bloc mesure, il ne prescrit pas.
+
+**g7 n'a bougé ni l'un ni l'autre : 14 et 91, à l'unité près.** Les 21 examens sortis du
+nom n'ont créé aucune paire ni détruit aucune ancienne, et c'est mécanique : la
+normalisation d'un `<li>` d'`annexe-dd` concatène déjà le nom, l'examen et les arguments en
+un seul texte, si bien que **déplacer un fragment à l'intérieur du même `<li>` ne change
+pas le texte comparé**. La remontée de 59 à 66 notée ci-dessus vient donc de l'ajout des
+arguments, pas de la sortie des examens — la nuance n'était pas isolable avant g7, qui a
+fait la seconde opération sans la première.
 
 ### 6.5 Non-perte d'information
 
@@ -566,8 +608,9 @@ communication au meilleur niveau — puis lecture de l'affichage réel.
 | Réponses entre crochets colorées en `rgb(44, 90, 160)` | **4 227 crochets, 4 227 colorés** |
 | Balise orpheline visible dans le texte rendu | **aucune** |
 
-Les trois grilles qui portent le défaut de gabarit du § 0 passent le contrôle : le défaut
-est un problème de lisibilité pédagogique, pas de rendu. German-84, avec son `criteria-row`
+Les trois grilles qui portaient le défaut de gabarit du § 0 passaient déjà le contrôle : le
+défaut était un problème de lisibilité pédagogique, pas de rendu — c'est pourquoi sa
+réparation par g7 ne change rien à ce tableau. German-84, avec son `criteria-row`
 englobant, atteint elle aussi 100 % sur ses quatre sections — le défaut est cosmétique dans
 le DOM et n'entre pas dans la boucle de calcul.
 
@@ -592,8 +635,9 @@ python3 scripts/amboss/report_redundancy.py        # TOTAL : 147 paire(s)
 Les trois premiers de chaque corpus sortent en erreur si un écart apparaît : ce sont des
 portes. Les deux rapports listent sans juger et sortent toujours 0.
 
-**Le défaut du § 0 se retrouve en une commande**, qui cherche toute flèche située hors de
-l'élément d'examen canonique d'`annexe-dd` :
+**Le défaut du § 0 se retrouvait en une commande**, qui cherche toute flèche située hors de
+l'élément d'examen canonique d'`annexe-dd`. C'est aussi la commande qui atteste sa
+réparation — elle reste le garde-fou du corpus sur ce point :
 
 ```bash
 python3 -c "
@@ -606,10 +650,13 @@ for p in sorted(lib.grids(), key=lib.grid_num):
 "
 ```
 
-Il rend aujourd'hui 25 occurrences : les **21 du défaut** (German-27, 34, 56) et **4
-flèches sémantiques légitimes** (German-65, 66), qui emploient la flèche au sens « ce signe
-oriente vers ce diagnostic » dans des catégories qui listent des signes et non des
-hypothèses. Le motif doit être lu avec la catégorie qui le porte.
+**Il rend 4 occurrences depuis g7** — les seules **flèches sémantiques légitimes** du
+corpus (German-65 ×3, German-66 ×1), qui emploient la flèche au sens « ce signe oriente
+vers ce diagnostic » dans des catégories qui listent des signes et non des hypothèses. Le
+motif doit être lu avec la catégorie qui le porte : **4 est donc la valeur attendue, pas
+zéro**, et toute remontée au-dessus signale un défaut de gabarit nouveau. À `32f8875` la
+commande rendait **25** occurrences : ces 4 plus les **21 du défaut** (German-27, 34, 56),
+depuis réparées.
 
 L'intégrité structurelle, la comparaison du barème avec `4819f53`, l'analyse par motifs du
 rapport de non-perte et le contrôle fonctionnel en navigateur sont menés par des scripts

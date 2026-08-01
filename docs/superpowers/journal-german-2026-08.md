@@ -1151,3 +1151,162 @@ après retrait du `<strong>`, du `<div>` d'examen et du `<div>` d'arguments :
 **zéro caractère** sur les 19 grilles, rien hors `<ul>` que le titre du bloc et
 les intitulés de catégorie. La revue de fond est donc exhaustive et non un
 sondage, sans qu'aucune grille ait été lue en entier.
+
+---
+
+### Tâche g7 — Reliquat du défaut de gabarit d'`annexe-dd` (German-27, 34, 56)
+
+**Départ `7e9285e`. 21 occurrences trouvées, 21 réparées. Le corpus German ne
+porte plus aucune flèche hors du `<div>` d'examen canonique, hors les 4 flèches
+sémantiques légitimes de German-65 et 66.**
+
+**Pourquoi ce reliquat existait — l'ordre des tâches, pas un oubli de
+traitement.** Le motif de recherche juste — *tout `→` situé hors du
+`<div style="… rgb(52, 105, 46);">`* — a été établi par g5a. Les 13 grilles
+riches, dont German-27, 34 et 56, avaient été traitées **avant**, par g3 et g4,
+avec le motif erroné de g4 (`Arguments POUR:` + `→` dans la même puce), qui ne
+rend qu'une variante marginale. g5a/b/c ont ensuite balayé avec le bon motif,
+mais leur périmètre était **les seules grilles à `annexe-dd` seul**. Ces trois
+grilles n'étaient donc dans le périmètre d'aucun lot muni du bon motif. C'est la
+même mécanique que la leçon du rapport g6 : les trois corrections de patron de la
+campagne ont toutes été transmises au lot suivant, aucune n'a été rejouée en
+arrière.
+
+**Modifications — 21 entrées sur les 26 des trois blocs**
+
+- `annexe-dd` German-27 (10 entrées, 9 réparées) · l'examen quitte le `<strong>`
+  du nom et rejoint son `<div>` canonique : Tendinopathie de la coiffe
+  (Échographie ou IRM), Rupture de la coiffe (IRM ou arthro-IRM), Tendinopathie
+  calcifiante (Radiographie standard), Syndrome du défilé thoracique (Tests de
+  provocation, EMG), Myalgie/contracture (Examen clinique), Pathologie
+  acromio-claviculaire (Radiographie ciblée). Névralgie cervico-brachiale :
+  l'entrée portait un `<div>` d'arguments mais **aucun** `<div>` d'examen — il a
+  été créé à la suite des arguments, avec « Radiographie cervicale, IRM
+  cervicale ». Seule « Capsulite rétractile » était déjà saine.
+- `annexe-dd` German-27 · **deux couples compatibles fusionnés** — Arthrose
+  gléno-humérale : « Radiographie standard » (prisonnier) + « Radiographie, IRM
+  si nécessaire » (`<div>`) → « → Radiographie standard, IRM si nécessaire », le
+  prisonnier absorbant le « Radiographie » du `<div>`. Arthrite inflammatoire :
+  « Bilan biologique, radiographie » (prisonnier) + « VS, CRP, facteur
+  rhumatoïde, anti-CCP » (`<div>`) → « → Bilan biologique (VS, CRP, facteur
+  rhumatoïde, anti-CCP), radiographie », le `<div>` détaillant précisément le
+  « bilan biologique » du prisonnier. Rien de supprimé dans les deux cas.
+- `annexe-dd` German-34 (10 entrées, 9 réparées) · sortie de l'examen hors du
+  nom : Sténose peptique (Endoscopie, pH-métrie), Corps étranger (Radiographie,
+  endoscopie), Anneau de Schatzki (Transit baryte, endoscopie), Myasthénie (Test
+  à la néostigmine, anticorps). Seule « Compression extrinsèque » était saine.
+- `annexe-dd` German-34 · **trois couples compatibles** — Achalasie :
+  « Manométrie œsophagienne » (prisonnier) + « Manométrie si l'endoscopie est
+  normale » (`<div>`) → « → Manométrie œsophagienne si l'endoscopie est
+  normale ». Niveaux 1 **et** 2 concordants : `SSP — Dysphagie` porte
+  « Manométrie œsophagienne haute résolution si OGD normale — **après OGD** pour
+  éliminer une pseudo-achalasie tumorale », et `m3` cote « Manométrie
+  œsophagienne (si endoscopie normale) ». AVC/tronc cérébral : le prisonnier
+  « IRM cérébrale » est un **doublon strict** de ce que porte déjà le `<div>`
+  (« CT cérébral, IRM cérébrale ») — le `<div>` est laissé tel quel, seule la
+  flèche sort du nom. Sclérose latérale amyotrophique : « EMG, consultation
+  neurologique » (prisonnier) + « IRM cérébrale et médullaire, ponction
+  lombaire » (`<div>`) → « → EMG, IRM cérébrale et médullaire, ponction lombaire,
+  consultation neurologique », l'EMG — le seul examen qui départage réellement une
+  SLA — passant en tête, le bilan d'exclusion et l'adressage conservés.
+- `annexe-dd` German-34 · **Cancer de l'œsophage — couple incompatible, `<div>`
+  générique retiré.** « Cancer de l'œsophage → **Endoscopie digestive haute avec
+  biopsies** » (prisonnier, juste) contre « → Imagerie (CT/IRM), biopsie,
+  marqueurs tumoraux » (`<div>`). L'examen prisonnier devient le contenu du
+  `<div>`, le générique disparaît.
+  source : niveau 1, `SSP — Dysphagie` — « **OGD (endoscopie haute) = 1ᵉʳ examen**
+  devant une dysphagie œsophagienne, avec **biopsies étagées**… si suspicion de
+  cancer » ; la page contient **0 occurrence** de « marqueur » et **0 occurrence**
+  de « IRM », et range le bilan d'extension sous « CT TAP, écho-endoscopie, TEP ».
+  Niveau 2 concordant : `m3` cote « Endoscopie digestive haute avec biopsies
+  (urgent) » et le corrigé de `m4` écrit « Bilan d'extension : CT TAP,
+  écho-endoscopie, PET-CT » — jamais d'IRM, jamais de marqueur. Aucun élément du
+  `<div>` retiré n'est perdu : « biopsie » est déjà dans le prisonnier, et
+  « Imagerie (CT/IRM) » relève du **bilan d'extension**, pas de l'examen qui
+  départage — rôle du `<div>` — et sa moitié « IRM » est fausse pour l'œsophage.
+- `annexe-dd` German-34 · **Cancer ORL — couple incompatible, `<div>` générique
+  retiré, un élément conservé.** L'examen était prisonnier de la puce
+  d'arguments (variante A) : « • larynx, pharynx → **Laryngoscopie, CT ORL** »,
+  contre le même « → Imagerie (CT/IRM), biopsie, marqueurs tumoraux » dans le
+  `<div>`. La puce est ramenée à « • larynx, pharynx » (sa fonction : préciser la
+  localisation) et le `<div>` devient « → **Laryngoscopie avec biopsies, CT
+  ORL** ».
+  source : niveau 1, `SSP — Dysphonie` — atteinte par le lien « Skills connexes »
+  de `SSP — Dysphagie`, geste que g5c avait établi comme rentable — « Cancer du
+  larynx / pharyngo-laryngé · **Nasofibroscopie** urgente + **scanner
+  cervico-thoracique injecté** + **biopsie sous laryngoscopie directe** + RCP onco
+  ORL » ; **0 occurrence** de « marqueur » sur cette page comme sur
+  `SSP — Dysphagie`. Niveau 2 concordant : `m2` cote « 5. Laryngoscopie
+  indirecte ». **« biopsie » a été conservé** et non supprimé : contrairement à
+  l'entrée œsophage, le prisonnier ne le portait pas, et la biopsie sous
+  laryngoscopie est nommée par la page SSP — c'est la règle « le dédoublonnage ne
+  perd jamais d'information » appliquée à un couple incompatible. « Imagerie
+  (CT/IRM) » n'a pas été conservée : le CT ORL est déjà nommé, et l'IRM est une
+  formule générique qu'aucune des deux pages ne porte.
+- `annexe-dd` German-56 (6 entrées, 3 réparées) · Hypermobilité urétrale (Test à
+  la toux, pad-test), Insuffisance sphinctérienne intrinsèque (Bilan
+  urodynamique), Incontinence par regorgement (Mesure du résidu post-mictionnel).
+  Les 3 autres entrées étaient déjà saines.
+
+**Le « marqueurs tumoraux » n'a pas fait l'objet d'une passe globale**, malgré la
+tentation. g5c a établi qu'il se juge **organe par organe** : le CA-125 d'une
+masse ovarienne (German-18) et l'ACE d'un cancer colorectal (German-12, 13) sont
+d'usage courant et légitimes. Seules les deux occurrences de German-34 ont été
+traitées, parce qu'elles étaient dans le périmètre de cette réparation. Le corpus
+en compte **6** aujourd'hui (German-12, 13, 18, 21 ×2, 29) contre 8 hier. **Les
+deux de German-21 portent exactement les mêmes organes** — œsophage et ORL — que
+celles retirées ici, et g5c les avait déjà jugées fausses : c'est le premier
+candidat d'une passe future, et le seul cas où la réponse est déjà connue.
+
+**Divergences consignées**
+
+- `annexe-dd` German-34 · « Anneau de Schatzki → Transit **baryte**, endoscopie »
+  — coquille d'accent (« baryté »), présente avant cette tâche. Non corrigée :
+  hors du périmètre du défaut de gabarit, et `check_nomenclature.py` ne la voit
+  pas. À traiter par une passe orthographique transverse, pas grille par grille.
+- `annexe-dd` German-34 · « consultation neurologique » conservée dans l'examen
+  de la SLA. C'est à la limite du contrat de rôle (`annexe-dd` ne porte pas de
+  conduite de station), mais la retirer serait une perte d'information dans une
+  fusion, et g5a avait retenu le même arbitrage pour German-11 (« → Révision du
+  traitement »).
+
+**Vérifications** — `check_invariants.py` OK (88), `check_nomenclature.py` OK,
+`check_reachability.py` OK 88/88 à 100 %, `report_redundancy.py` **14**
+(inchangé) et **91** intra-bloc (**inchangé également** : les 21 examens sortis du
+nom n'ont créé aucune paire nouvelle ni détruit aucune ancienne, parce que la
+normalisation d'un `<li>` d'`annexe-dd` concatène déjà ses trois éléments et que
+le déplacement d'un fragment à l'intérieur du même `<li>` ne change pas le texte
+comparé). AMBOSS aux trois verts et redondance **147**. **Aucune modification du
+barème** : `git diff` ne contient aucun `.criteria-text`, aucun `<input>`, aucun
+`<span class="score">`, aucun `maxScores`, aucun `sectionInfo`, aucune
+`patient-response`, aucune `scoring-rule` — vérifié mécaniquement (0 ligne).
+Comptes de `criteria-row`, `<input>`, `<li>`, `<ul>` et `<strong>` **identiques à
+`7e9285e`** sur les trois fichiers. Règle 1 des arbitrages, `baseline.json` non
+régénéré. Le diff est symétrique : **21 insertions pour 21 suppressions**, une
+ligne par entrée réparée. `boundsAnomalies` et `uncoveredContent` vides,
+`<div>`/`</div>` à écart 0 sur les trois fichiers. Aucun `</div>` déplacé dans un
+`criteria-row` — les blocs `redflags` et `therapy` n'ont pas été ouverts, et le
+`<input type="radio">` du `criteria-row` qui héberge `annexe-dd` appartient au
+critère englobant, non touché.
+
+`check_no_loss.py 7e9285e` : **3 items signalés sur 3 grilles**, verdictés un à
+un. Deux sont des **artefacts du déplacement** — « névralgie cervico-brachiale
+radiographie cervicale irm cervicale arguments pour » (German-27) et « achalasie
+manométrie œsophagienne arguments pour » (German-34) sont les chaînes qui
+concaténaient le nom, l'examen avalé et le début des arguments ; l'examen est
+désormais dans son `<div>`, présence littérale vérifiée. Le troisième, « pas
+d'odynophagie franche imagerie ct irm biopsie marqueurs tumoraux » (German-34),
+est la **suppression voulue** du `<div>` générique du Cancer ORL ; « Pas
+d'odynophagie franche » est toujours présent, vérifié littéralement. Aucune perte
+accidentelle. La suppression jumelle sur le Cancer de l'œsophage n'est **pas**
+signalée, parce que la chaîne retirée s'appariait à celle du Cancer ORL, retirée
+dans le même mouvement — même mécanique de silence informatif que German-71 en
+g5c, dans l'autre sens.
+
+**Contrôle de couverture préalable** — résidu des `<li>` après retrait du
+`<strong>`, du `<div>` d'examen et du `<div>` d'arguments : **zéro caractère** sur
+les 26 entrées des trois grilles. Contrôle de gabarit : les trois blocs ne
+portent que **deux** styles de `<div>`, `rgb(52, 105, 46)` (examen, 12
+occurrences) et `rgb(80, 90, 110)` (arguments, 11) — aucune troisième variante ne
+pouvait échapper au motif. Aucune grille n'a été lue en entier, aucun contrôle
+n'a employé un `grep` brut.
