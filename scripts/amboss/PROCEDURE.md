@@ -18,6 +18,37 @@ print('blocs       :', lib.blocks_present(h))
 Lire ensuite la grille avec `Read` en passant `offset` = ligne de début et
 `limit` = (ligne de fin − ligne de début). **Ne jamais lire le fichier entier.**
 
+### 1 bis. Situer le bloc `annexe-dd` — lecture ciblée séparée
+
+`annexe-dd` est le seul bloc pédagogique situé **avant** la zone ci-dessus : il vit
+dans la section Management, à l'intérieur du `criteria-row` du critère m1
+(« Hypothèses diagnostiques »). Des centaines de lignes de section notée l'en
+séparent, c'est pourquoi `peda_bounds()` n'a **pas** été élargi jusqu'à l'englober —
+cela ferait relire tout le barème à chaque fois. Il a ses propres bornes :
+
+```bash
+python3 -c "
+import sys; sys.path.insert(0,'scripts/amboss'); import lib_amboss as lib
+p=[g for g in lib.grids() if 'AMBOSS-N_' in g.name][0]
+h=p.read_text(encoding='utf-8'); s,e=lib.dd_bounds(h)
+print('offset :', h[:s].count(chr(10))+1)
+print('limit  :', h[:e].count(chr(10))-h[:s].count(chr(10))+1)
+"
+```
+
+Deux `Read` ciblés sont donc nécessaires pour voir toute la matière pédagogique
+d'une grille : celui du § 1 et celui-ci. Le second est court — le bloc tient en
+**30 à 40 lignes** (3 961 à 6 571 caractères, 5 253 en moyenne).
+
+**Bornes.** Début `<div class="annexe-item annexe-dd">`, fin : le `criteria-row`
+suivant (celui de m2). Établi par équilibrage des `<div>` sur les 40 grilles : la
+fermeture équilibrée du bloc tombe exactement sur
+`<div class="criteria-row" id="criteria-m2">`, **40 fois sur 40**, et le bloc ne
+contient lui-même aucun `criteria-row`. Le marqueur de fin porte deux alternatives
+de repli (`annexes`, `resume`) qui ne servent jamais aujourd'hui : elles bornent la
+casse si une grille future plaçait le bloc en fin de section, sans `criteria-row`
+derrière lui — sans elles, `block_segment()` avalerait tout le reste du fichier.
+
 ## 2. Lire la page SSP de référence
 
 La page est donnée par `docs/obsidian-mapping.yaml`. Racine du vault :
@@ -32,8 +63,22 @@ Sections utiles : `## 🔬 EXAMENS COMPLÉMENTAIRES`, `## 💊 PRISE EN CHARGE`,
 |---|---|---|
 | `annexe-expert` | Faire tourner la station | Théorie, listes d'apprentissage |
 | `annexe-theorie` | Comprendre le cas | Check-lists actionnables, mnémos, protocoles |
+| `annexe-dd` | **Raisonner le différentiel** | Check-lists actionnables, conduite de station, formulation orale |
 | `resume` | Réviser vite — **source canonique** | Redites de la théorie, formats oraux |
 | `presentation-patient` | Restituer à l'oral | Toute donnée clinique nouvelle |
+
+**Le rôle d'`annexe-dd`** (décision : `docs/superpowers/arbitrages-amboss-2026-08.md`
+§ 1.2). Le bloc porte le **raisonnement différentiel** — quelles hypothèses, quels
+arguments pour et contre chacune, quel examen les départage. C'est l'**extension
+naturelle du rôle d'`annexe-theorie`** (comprendre le cas), appliquée au tri des
+hypothèses ; les deux se lisent ensemble et obéissent aux mêmes interdits. Il ne
+doit donc porter ni check-list actionnable, ni conduite de station (qui est le rôle
+d'`annexe-expert`), ni formulation orale (qui est celui de `presentation`).
+
+Son contenu n'est **pas noté** : il ne contient aucune case à cocher. Le
+`<input type="radio">` du `criteria-row` qui l'héberge appartient au critère m1
+englobant, pas au bloc. Y toucher ne peut donc pas déplacer le barème — mais les
+bornes doivent rester exactes, sous peine d'emporter le critère voisin.
 
 **Règle du format** : une information peut réapparaître si et seulement si elle
 change de format de restitution (liste → narration, liste → SBAR, liste →
@@ -320,6 +365,52 @@ comme en reçoivent les trois autres variantes d'`annexe-item`
 Écart visuel préexistant, distinct du défaut d'outillage corrigé ici et sans
 incidence sur le contenu ni le barème : signalé pour arbitrage éditorial
 séparé, non traité par cette tâche.
+
+**Angle mort corrigé : la double invisibilité d'`annexe-dd`.** Le bloc échappait à
+tout l'outillage pour **deux** raisons cumulées, chacune suffisante à elle seule —
+c'est ce qui l'a fait passer inaperçu si longtemps :
+
+1. *Hors périmètre.* Situé dans la section Management, il est en amont de la zone
+   que délimite `peda_bounds()`. `BLOCKS` ne le connaissait pas, donc
+   `blocks_present()` ne le listait pas et `block_segment()` ne pouvait pas le
+   rendre.
+2. *Hors format.* Ses arguments sont des **puces textuelles `•`** séparées par des
+   `<br>`, pas des `<li>`. Même à l'intérieur du périmètre, `list_items()` — donc
+   `report_redundancy.py` et `check_no_loss.py` — n'aurait rien vu de son contenu :
+   chacun de ses 257 `<li>` porte un diagnostic différentiel **entier**, et n'aurait
+   été rendu que comme un seul bloc de texte indifférencié.
+
+Corrigé sur les deux fronts : `BLOCKS` gagne le bloc et ses bornes ; `list_items()`
+découpe désormais sur `•`. **Un `<li>` qui contient des puces est rendu par ses
+puces seules, jamais aussi par son texte entier** — sinon le même contenu serait
+compté deux fois, une fois groupé et une fois éclaté, et chaque doublon avec un
+autre bloc serait rapporté en double. Hors `<li>`, seules les puces sont retenues,
+le texte précédant la première étant jeté faute de borne gauche.
+
+L'extension est **rétro-compatible au bit près** : l'extraction des quatre blocs
+préexistants est inchangée, vérifiée item par item sur les 40 grilles. Un seul
+d'entre eux contient des puces (le `resume` d'AMBOSS-34, 6 puces) et chacune y ouvre
+son propre `<li>`, si bien que la découpe rend exactement ce que `norm()` — qui
+efface déjà le caractère `•` — rendait auparavant. Conséquence : les **65 paires**
+du périmètre restreint sont toutes conservées, et les **175** que le corpus gagne
+viennent toutes du seul `annexe-dd` (total : **240**).
+
+**Pourquoi la découpe ne porte que sur `•`, et pas sur `→`.** Le bloc écrit son
+examen discriminant `→ US abdominale`, et il aurait été tentant d'en faire un item.
+Mais la flèche est d'usage courant **ailleurs** dans le corpus — 211 occurrences
+dans `presentation`, 67 dans `theorie`, 23 dans `resume`, 5 dans `expert`. Découper
+dessus aurait modifié l'extraction des quatre blocs préexistants et cassé la
+comparabilité avec les mesures antérieures. La flèche reste donc collée à la
+dernière puce du diagnostic : limite assumée, et la raison pour laquelle
+`report_redundancy.py` ne sait pas isoler un examen discriminant.
+
+**Compter les paires, pas les duplications.** `report_redundancy.py` compare les
+items deux à deux : quand un même argument est répété sous plusieurs diagnostics du
+bloc — cas fréquent, « nausées et vomissements » figure sous six hypothèses
+d'AMBOSS-1 — chaque occurrence produit sa propre paire. Les **175** paires
+`annexe-dd` correspondent à **153 duplications distinctes** (15 démultipliées,
+multiplicité maximale 6). Le chiffre du script est le bon pour suivre une tendance ;
+c'est le nombre de duplications distinctes qui mesure le travail à faire.
 
 ## Interdits
 

@@ -10,8 +10,10 @@ Exemples :
 
 Pour chaque grille modifiee entre BASE_REF et le disque (comparaison via
 `git diff`, donc les modifications non commitees comptent aussi), les items
-<li> de la zone pedagogique entiere (lib.peda_bounds — resume/annexes jusqu'a
-annexe-scenario, tous blocs confondus) sont extraits avant et apres, puis
+de la zone pedagogique entiere (lib.peda_bounds — resume/annexes jusqu'a
+annexe-scenario, tous blocs confondus) **et ceux du bloc `annexe-dd`**
+(lib.dd_bounds, situe en amont, dans la section Management) sont extraits
+avant et apres, puis
 compares avec le meme seuil de ressemblance que report_redundancy.py
 (SequenceMatcher(...).ratio() > 0.72) : les deux scripts mesurent la meme
 chose, cote disparition plutot que cote doublon restant — meme langage, memes
@@ -63,11 +65,22 @@ def read_old(base_ref, path):
 
 
 def peda_items(html):
-    """Items <li> normalises de la zone pedagogique entiere (tous blocs confondus)."""
-    start, end = lib.peda_bounds(html)
-    if start < 0:
-        return []
-    return lib.list_items(html[start:end])
+    """Items normalises de la zone pedagogique entiere, plus le bloc `annexe-dd`.
+
+    `annexe-dd` vit dans la section Management, donc hors de `peda_bounds`, et se
+    lit par ses propres bornes (`lib.dd_bounds`). Sans cet ajout, le bloc serait
+    le seul contenu pedagogique du corpus qu'on pourrait reecrire sans qu'aucun
+    controle ne signale une perte. Les deux zones sont disjointes : aucun item
+    n'est compte deux fois. Elles sont fusionnees en une seule liste, et non
+    comparees separement, pour la meme raison que les blocs le sont deja entre
+    eux — un item deplace de `annexe-dd` vers `resume` est un deplacement
+    legitime, pas une disparition.
+    """
+    items = []
+    for start, end in (lib.peda_bounds(html), lib.dd_bounds(html)):
+        if start >= 0:
+            items += lib.list_items(html[start:end])
+    return items
 
 
 def disappeared(before, after):
