@@ -2,6 +2,11 @@
 
 Référence : `docs/superpowers/specs/2026-07-30-amboss-refonte-pedagogique-suisse-design.md`
 
+**Corpus German** : voir `scripts/german/PROCEDURE-german.md`. Ce document-ci reste
+la référence pour tout ce que l'autre ne redit pas — hiérarchie à trois niveaux,
+règle du format, « le dédoublonnage ne perd jamais d'information », interdits. Les
+blocs, eux, diffèrent entièrement d'un corpus à l'autre.
+
 ## 1. Situer la zone pédagogique
 
 ```bash
