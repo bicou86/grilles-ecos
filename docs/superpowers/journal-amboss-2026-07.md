@@ -3946,3 +3946,405 @@ station est un homme de **23 ans**. Chaque ligne reçoit la valeur adulte, la va
 - `git diff --numstat` : 5 fichiers, **22 insertions / 33 suppressions**, toutes dans la zone
   pédagogique. Aucun `.criteria-text` touché, aucun crochet de réponse patient touché, aucun
   sous-item noté ajouté ni retiré, aucun item ICE touché.
+
+## Tâche 14 — cinq grilles allégées (AMBOSS-23, 24, 25, 26, 27)
+
+Comme en tâche 13, ces cinq grilles ne portent que **deux** blocs pédagogiques, `annexe-expert`
+et `annexe-theorie` : ni `resume`, ni `presentation`. Les axes 1 à 6 du contrat ne s'appliquent
+pas ; seul opère le contrat de rôle `expert` (faire tourner la station : résultats à délivrer,
+pièges du candidat) ↔ `theorie` (comprendre le cas : raisonnement, physiopathologie). **Aucun
+bloc n'a été créé** : `blocks` reste `["expert", "theorie"]` sur les cinq, vérifié par
+`check_invariants.py`.
+
+`resume` n'existant pas, il n'y a pas de source canonique. Les contradictions `expert` ↔
+`theorie` ont été arbitrées par la hiérarchie à trois niveaux, et à défaut par le contrat de
+rôle : `theorie` porte le raisonnement, `expert` la conduite.
+
+Redondance mesurée par `report_redundancy.py` : **9 paires → 0** (23 : 4→0 · 24 : 2→0 ·
+25 : 0→0 · 26 : 0→0 · 27 : 3→0).
+
+### AMBOSS-23 — Perte auditive, homme de 65 ans (page SSP : Perte d'Audition)
+
+**Modifications**
+
+*Contrat de rôle — `expert`/Points clés purgé de la théorie (3 des 4 paires détectées)*
+
+- expert · Points clés : « Presbyacousie = 1ère cause surdité > 65 ans » supprimé après
+  **portage** dans `theorie`/Presbyacousie, dont la ligne d'épidémiologie devient « Prévalence :
+  30% > 65 ans, 60% > 75 ans — **1ère cause de surdité après 65 ans** ». Le portage précède la
+  suppression.
+  source : SSP — § DD Top 5 — la `presbyacousie` y est citée en tête des cinq diagnostics.
+- expert · Points clés : « Aspirine ototoxique réversible, cisplatine irréversible » supprimé —
+  `theorie`/Ototoxicité médicamenteuse porte les deux molécules **en plus précis** (« Cisplatine :
+  ototoxicité irréversible dose-dépendante (30-80%) », « Aspirine : ototoxicité réversible à forte
+  dose (> 3g/j) »). Aucune perte.
+- expert · Points clés : « Appareillage bilatéral meilleur que monaural » supprimé après
+  **portage** du comparatif dans `theorie`/Appareillage auditif : « Appareillage bilatéral
+  **préférable au monaural** : meilleure localisation spatiale **et meilleure compréhension en
+  milieu bruyant** ». La gêne en milieu bruyant est le motif de consultation même du patient
+  (réunions familiales, voix aiguë de la petite-fille).
+- expert · Pièges : « Oublier médicaments ototoxiques » → « Oublier de **rechercher** les
+  médicaments ototoxiques **à l'anamnèse** (cisplatine, aspirine à forte dose) ». L'item doublait
+  `theorie`/Rappels « Éviter nouveaux médicaments ototoxiques » alors qu'il vise autre chose : le
+  premier est un geste d'anamnèse (conduite), le second une consigne thérapeutique. Différenciés,
+  rien supprimé. Le patient a reçu du cisplatine il y a 3 ans et prend de l'aspirine quotidienne.
+
+*Contrat de rôle — le résultat à `expert`, le pourquoi à `theorie` (4e paire)*
+
+Les deux dernières paires opposaient le **résultat de station** (`expert`/Rôles : « Audiométrie
+vocale : 60% discrimination à 65 dB ») aux deux descriptions du test dans `theorie`. Le résultat
+reste dans `expert` ; les deux lignes de `theorie` reçoivent chacune leur rôle propre :
+
+- theorie · Évaluation audiométrique : « Audiométrie vocale : discrimination mots dans
+  silence/bruit » → « Audiométrie vocale : **intelligibilité selon l'intensité** — mesure la
+  compréhension et non la seule détection ; **discrimination effondrée au regard des seuils tonals
+  = atteinte rétrocochléaire** ».
+  source : SSP — § Cartes ECOS, neurinome — « la perte porte d'abord sur la **discrimination
+  vocale**, disproportionnée par rapport à l'audiométrie tonale (le patient « entend mais ne
+  comprend pas ») ».
+- theorie · Examens complémentaires (queue) : « Audiométrie vocale : % discrimination selon
+  intensité » → « Audiométrie vocale : **dans le silence et dans le bruit** (gêne réelle en
+  conversation) », formulation reprise de la section notée m4 (« Audiométrie vocale dans le silence
+  et le bruit »). Le « % discrimination selon intensité » supprimé ici est repris mot pour mot par
+  la ligne ci-dessus : rien n'est perdu, les deux lignes cessent de se répéter.
+
+*Suissification — niveau 1*
+
+- theorie · Surdité professionnelle : « Maladie professionnelle indemnisable » → « Maladie
+  professionnelle indemnisable : **annonce SUVA (assurance-accidents LAA)** ».
+  source : SSP — § Skills connexes — « 🇨🇭 Filières & ressources : … **SUVA** (exposition
+  professionnelle au bruit) ». Le patient a travaillé en aciérie avec protection auditive
+  inconstante (section notée).
+
+*Vocabulaire*
+
+- theorie · Évaluation audiométrique : « **Otoacoustic emissions** » → « **Otoémissions
+  acoustiques (OEA)** » et « Potentiels évoqués » → « Potentiels évoqués **auditifs (PEA)** »,
+  sigles employés par la page SSP (« OEA / PEA »). Anglicisme résiduel dans un corpus francophone.
+- theorie · Tests de Rinne et Weber : « - Neurosensoriel : latéralise côté sain » →
+  « - Neurosensoriel **(= surdité de perception)** : latéralise côté sain ». La page SSP raisonne
+  exclusivement en « transmission vs **perception** », la grille en « transmission vs
+  **neurosensoriel** » (terme repris par la section notée, gelée) : l'équivalence est posée une
+  fois, aucun terme n'est remplacé.
+
+**Divergences consignées**
+
+- theorie · Appareillage auditif : « Remboursement : **variable selon pays/assurance** » — la page
+  SSP ne dit rien du remboursement des appareils auditifs. Niveau 3 : laissé inchangé, aucune règle
+  suisse inventée. À arbitrer si le forfait AI/AVS doit être nommé.
+- Les pièges éliminatoires « Manquer surdité brutale unilatérale » et « Manquer un cholestéatome »
+  n'ont **aucune occurrence** dans la grille (recherche sur `strip_base64`) — vérifié, non ajoutés :
+  la vignette est une perte **bilatérale, symétrique et progressive sur 5 ans**, sans otorrhée. Le
+  piège applicable, l'IRM devant une asymétrie, est bien couvert (`expert` « Pas d'indication IRM
+  (symétrique, progressif) » · `theorie`/queue « Si asymétrie > 15 dB : IRM IAC avec gadolinium »).
+
+### AMBOSS-24 — Évaluation après chute, femme de 30 ans (page SSP : Capacité de Discernement & Éthique)
+
+Grille de **violences conjugales** : la patiente déclare une chute dans les escaliers puis révèle,
+si la question est posée directement, que son mari « la bouscule » une à deux fois par semaine.
+Aucun contenu relatif à sa sécurité n'a été supprimé, même redondant entre blocs — le coût d'une
+répétition y est très inférieur au coût d'une omission.
+
+**Modifications**
+
+*Contrat de rôle — les deux paires détectées*
+
+- expert · Points clés : « Documentation photos + schéma corporel » → « **Proposer** la
+  documentation des lésions **avec l'accord de la patiente** (utile si plainte ultérieure) ». La
+  paire (0.78) opposait cet item à `theorie`/Rappels « Documentation : photos datées avec échelle,
+  schéma corporel ». Plutôt que de supprimer un contenu de protection, les deux lignes sont
+  différenciées : `expert` porte le **geste et le consentement**, `theorie` le **protocole
+  technique**. Rien n'est retiré ; le résultat de station reste dans `expert`/Rôles (« Photos
+  lésions : Documentées avec échelle ») et l'exigence de consentement dans `theorie`/Examens
+  (« Photos lésions : médico-légal avec consentement »).
+- expert · Points clés : « Cycle violence : tension → explosion → **lune de miel** » supprimé après
+  **portage** du terme dans `theorie`/Violence conjugale : « Cycle violence : tension → explosion →
+  réconciliation **(« lune de miel »)** → tension ». Le cycle est un contenu explicatif (pourquoi
+  elle ne part pas), il appartient à `theorie` ; le synonyme est conservé.
+
+*Sécurité — niveau 1, la page SSP tranche*
+
+- expert · Points clés : « Confidentialité sauf danger enfants » → « Confidentialité **(secret
+  médical, CP art. 321)** — mais enfants exposés en danger : **signalement APEA/KESB possible
+  (CC art. 314c, CP art. 364)** ».
+  source : SSP — § Secret professionnel — « **CP art. 364** : droit/devoir d'aviser l'autorité en
+  cas de maltraitance d'enfant » ; « **CC art. 314c-314e** : signalement APEA/KESB pour mineur en
+  danger ». Les articles cités sont ceux de la page SSP. La grille énonçait l'exception sans jamais
+  nommer l'autorité ni le fondement légal ; `expert`/Pièges garde « Signalement sans consentement
+  (adulte compétent) », qui reste exact (secret médical envers l'adulte capable).
+- theorie · Approche clinique : « Évaluation sécurité immédiate (elle + enfants) » → même libellé
+  **suivi des facteurs de gravité** : « arme au domicile (y compris arme de service), strangulation
+  antérieure, menaces de mort, escalade en fréquence ou en intensité, grossesse, séparation en
+  cours, alcool/drogues du conjoint ».
+  Justification : la **section notée** fait chercher « Arme à feu à la maison », « Régularité des
+  abus » et « Consommation alcool/drogues du conjoint » — le candidat pose donc les questions sans
+  qu'aucun bloc ne lui dise **pourquoi** ni comment en tirer un niveau de risque, alors
+  qu'`expert`/Rôles conclut « Évaluation sécurité : Risque modéré-élevé » sans critère. La page SSP
+  impose de « vérifier la liberté du choix » sous « **partenaire violent** » (§ Red flags).
+  La **strangulation** n'apparaissait nulle part dans la grille.
+- theorie · Plan de sécurité : « Numéros urgence programmés téléphone » → « Numéros d'urgence
+  programmés dans le téléphone : **117 (police), 144, 143** ».
+  source : SSP — § Réseau éthique/juridique Suisse — « **143** Main Tendue · **144** urgences ·
+  **117** » ; § Cas particuliers — « Maltraitance … **117 si danger imminent** ».
+- theorie · Rappels thérapeutiques : « Ressources : ligne nationale, refuges, aide juridique » →
+  « **Ressources suisses : centre LAVI (0848 800 244 / 0840 110 110)**, maison d'accueil pour
+  femmes, consultation de médecine des violences, aide juridique ; **117 si danger imminent** ».
+  source : SSP — § Secret professionnel — « Cas pratique fréquent : **violences conjugales /
+  domestiques → LAVI**, médecin cantonal, **0840 110 110** (centre de consultation LAVI) » ;
+  § Réseau — « **LAVI 0848 800 244 / 0840 110 110** violences conjugales ». La « ligne nationale »
+  d'origine ne renvoyait à aucun numéro atteignable en Suisse — dans une station dont l'enjeu est
+  d'orienter la patiente, c'était la ressource la plus utile de la grille et elle était vide.
+
+*Précision de pratique*
+
+- theorie · Manifestations : « Mortalité : homicide 1ère cause décès femmes enceintes » →
+  « Mortalité : **la grossesse majore le risque** (l'homicide est la 1ère cause de décès des femmes
+  enceintes **aux États-Unis**) ». La statistique est américaine (Horon & Cheng, MMWR/JAMA) ; en
+  Europe les premières causes de mortalité maternelle sont médicales. Le fait est conservé, son
+  périmètre est nommé.
+- theorie · Violence conjugale : « Prévalence : 25-30% femmes subissent violence physique/sexuelle »
+  → « … **au cours de leur vie** ». Sans cette précision, le chiffre se lit comme une prévalence
+  annuelle ; il s'agit d'une prévalence vie entière (estimation OMS).
+- theorie · Examens complémentaires : « Temps saignement : fonction plaquettaire globale » → « Temps
+  **de** saignement : fonction plaquettaire globale — **test historique, remplacé en pratique par
+  les tests d'occlusion plaquettaire (PFA)** ». Le test est abandonné des laboratoires suisses. La
+  ligne n'est pas supprimée : la section notée m2 évalue « Temps de saignement, TP, TCA » et le
+  barème est gelé — le bloc pédagogique explique donc le décalage au lieu de le contredire.
+
+**Vérification des deux numérations converties en tâche 10c**
+
+- theorie · PTI : « Traitement si plaquettes **< 30 G/L** ou saignements » et theorie · Rappels :
+  « PTI aigu : corticoïdes si plaquettes **< 30 G/L** » — les deux seuils sont cohérents entre eux
+  et avec le seuil thérapeutique usuel du PTI. Cohérents aussi avec leur voisinage : `expert`/Rôles
+  donne « FSC : Plaquettes **180 G/L (normale)** » (norme 150-400 G/L) et la section notée
+  « thrombocytopénie (plaquettes < 150 G/L) », « leucocytose (leucocytes > 10 G/L) ». Aucun
+  qualificatif ne contredit sa valeur. **Lignes non modifiées.**
+
+**Divergences consignées**
+
+- Section notée m5, blocs `therapy-section` (hors zone pédagogique, barème gelé) : « **Services
+  protection enfance** si besoin » et « Conseil juridique gratuit » — l'équivalent suisse est
+  l'**APEA/KESB** et le **centre LAVI**, désormais nommés dans les blocs pédagogiques. Non corrigé
+  (hors périmètre), consigné.
+- La page SSP cite « **CP art. 364** » comme fondement du droit d'aviser ; la citation de la grille
+  reprend celle de la page. Si cet article a été absorbé par les art. 314c-314d CC lors de la
+  révision de 2019, c'est la page SSP qu'il faudrait mettre à jour, pas la grille : signalé.
+
+### AMBOSS-25 — Douleur au genou, femme de 47 ans (page SSP : Douleur de Genou)
+
+Vraie question de la station : une **TVP poplitée** derrière un traumatisme du genou.
+
+**Modifications**
+
+*Contradiction `expert` ↔ section notée — niveau 2, la section notée fait foi*
+
+- expert · Rôles et interventions : « IRM genou : Œdème osseux, **LCL intact** » → « IRM genou :
+  Œdème osseux, **déchirure du ligament collatéral latéral (LCL)** ».
+  La section notée dit l'inverse en deux endroits : critère m3 (« IRM genou droit … **montrerait
+  une rupture du ligament collatéral**, bien que ce ne soit pas typiquement requis pour le
+  diagnostic ») et le bloc thérapeutique « **Si lésion LCL** : attelle articulée ou genouillère,
+  AINS, physiothérapie ». Le bloc `annexe-dd` retient également « Déchirure du ligament collatéral
+  latéral (LCL) » avec arguments POUR (sensibilité de la ligne articulaire latérale, mécanisme
+  direct, limitation d'amplitude), tous présents à l'examen noté. L'expert délivrait donc un
+  résultat qui rendait sans objet un traitement noté. Ni la page SSP ni rien d'autre ne tranche sur
+  cette vignette : niveau 2, `expert` est aligné sur la section notée, barème intact.
+
+*Contrat de rôle — `expert`/Points clés purgé de la théorie*
+
+- expert · Points clés : « Triade Virchow : stase + lésion endothéliale + hypercoagulabilité »
+  supprimé — `theorie`/Physiopathologie développe les trois facteurs **avec leurs exemples**
+  (immobilisation/voyage/obésité, trauma/chirurgie/cathéters, cancer/grossesse/thrombophilie).
+- expert · Points clés : « Écho-Doppler = gold standard diagnostic TVP » supprimé après **portage**
+  dans `theorie`/Diagnostic TVP : « Écho-Doppler compression : **examen de référence actuel**,
+  Se 95%, Sp 98% ». Le portage lève au passage une contradiction interne : `theorie` désignait la
+  phlébographie comme « historique gold standard » sans jamais dire ce qui l'avait remplacée. La
+  section notée porte « test de choix pour diagnostiquer une TVP ».
+- expert · Points clés : « Anticoagulation immédiate si forte suspicion clinique » supprimé — le
+  contenu est porté deux fois ailleurs : `theorie`/Rappels (« TVP proximale : anticoagulation
+  immédiate même avant confirmation ») et `expert`/Pièges (« Retarder anticoagulation si forte
+  suspicion »), qui est sa forme de conduite.
+
+*Sécurité — niveau 1, la page SSP tranche*
+
+- expert · Pièges : ajout de « Devant un genou chaud, gonflé et fébrile : conclure sans avoir
+  écarté une **arthrite septique (ponction articulaire urgente)** ».
+  source : SSP — Douleur de Genou — `pieges_eliminatoires` — « **Manquer arthrite septique
+  (ponction)** » (piège éliminatoire n° 2) ; § Red flags — « Monoarthrite fébrile … → **Arthrite
+  septique** · Ponction articulaire STAT » ; § En Bref — « Mono-arthrite chaude = exclure une
+  arthrite septique **jusqu'à preuve du contraire** ».
+  Vérifié avant ajout : ni « septique » ni « ponction » n'avaient **une seule occurrence** dans la
+  grille (recherche sur `strip_base64`), alors que le bloc `annexe-dd` retient une « température
+  subfébrile (37.8 °C) » et que la jambe est chaude et gonflée. Le piège est formulé
+  conditionnellement : il n'affirme rien sur cette patiente.
+- theorie · Examens complémentaires (queue) : ajout de « **Radiographie du genou : indication posée
+  par les critères d'Ottawa** (âge ≥ 55 ans, sensibilité isolée de la rotule ou de la tête de la
+  fibula, flexion impossible à 90°, appui impossible sur 4 pas) ».
+  source : SSP — `pieges_eliminatoires` — « **Ne pas appliquer Ottawa Knee Rules** » (piège
+  éliminatoire n° 1) ; § Règle d'or — « appliquer les **critères d'Ottawa pour le genou** pour la Rx
+  post-trauma ». La radiographie est un sous-item noté (m3) qu'aucun bloc pédagogique ne justifiait ;
+  la ligne enseigne la règle sans contredire l'indication retenue par la section notée.
+
+*Erreur factuelle interne (correction directe, hors hiérarchie)*
+
+- theorie · Examens complémentaires (queue) : « Radiographie thorax : **éliminer EP** si dyspnée » →
+  « Radiographie thorax : **recherche d'un diagnostic alternatif** si dyspnée — **ne permet jamais
+  d'exclure une EP** ». Une radiographie thoracique normale n'exclut pas une embolie pulmonaire ;
+  telle quelle, la ligne pouvait faire renoncer à l'angio-CT. Aucune autre source de la grille ne
+  porte cet énoncé : rien à arbitrer, un fait faux à corriger.
+
+*Suissification*
+
+- theorie · Traitement TVP : « AVK : **warfarine** INR cible 2-3 (moins utilisé) » → « AVK :
+  **acénocoumarol (Sintrom®) ou phenprocoumone (Marcoumar®)**, INR cible 2-3 (moins utilisés) ».
+  La warfarine (Coumadine®) n'est plus commercialisée en Suisse ; les deux AVK du marché suisse sont
+  le Sintrom® et le Marcoumar®. Unique occurrence de « warfarine » dans les 40 grilles (recherche
+  sur `strip_base64`). Même geste que « Vicodin → Tramal® » et « Tylenol → Dafalgan® » (tâche 2).
+
+**Divergences consignées**
+
+- `annexe-dd` (hors zone pédagogique) retient une « **température subfébrile (37.8 °C)** » alors que
+  la section notée fait répondre « Fièvre/frissons [**Non**] ». Contradiction interne à la zone
+  notée, hors périmètre : non corrigée, consignée.
+
+### AMBOSS-26 — Céphalée, homme de 29 ans (page SSP : Céphalée)
+
+Page SSP partagée avec AMBOSS-33, **non traitée ici** (tâche suivante).
+
+**Modifications**
+
+*Contradiction `expert` ↔ `theorie` — niveau 1, la page SSP tranche*
+
+- expert · Points clés : « Triptans si **échec AINS** dans migraine sévère » → « Triptans si **crise
+  sévère d'emblée ou** échec des AINS (ibuprofène déjà pris sans effet) ».
+  `theorie`/Approche thérapeutique stratifiée disait l'inverse (« sévère → triptans **d'emblée** ») :
+  les deux blocs donnaient deux règles de prescription différentes.
+  source : SSP — § PRISE EN CHARGE, Migraine — « Crise **sévère ou échec d'AINS** : triptan
+  (sumatriptan 50-100 mg PO ou 6 mg SC) ». La section notée va dans le même sens (« Traitement de
+  crise sévère • Triptans »), et le patient a déjà pris de l'ibuprofène sans effet.
+
+*Sécurité — niveau 1, la page SSP tranche*
+
+- theorie · Rappels thérapeutiques : ajout de « **Triptans contre-indiqués si : coronaropathie, AVC,
+  HTA non contrôlée, migraine hémiplégique ou basilaire** ».
+  source : SSP — § PRISE EN CHARGE, Migraine — « triptan … — **CI** : coronaropathie, AVC, HTA non
+  contrôlée, migraine hémiplégique / basilaire ». Aucune contre-indication n'était mentionnée dans
+  la grille, alors qu'`expert` délivre « Si traitement : Sumatriptan 100 mg PO efficace » et que le
+  patient fume **2 paquets/jour depuis l'âge de 15 ans** avec une mère victime d'AVC à 65 ans.
+- theorie · Examens complémentaires (queue) : ajout, en tête de section, de « **Drapeaux rouges
+  SNOOP4** à écarter avant de conclure à une céphalée primaire : Systémiques (fièvre, cancer,
+  immunodépression) · Neurologiques · Onset en coup de tonnerre · Older (> 50 ans) · Pattern
+  nouveau, Positionnelle, Papilledema (œdème papillaire), Progressive ».
+  source : SSP — § Points Clés ECOS, À faire absolument n° 1 — « Rechercher **systématiquement** les
+  red flags **SNOOP4** avant de conclure à une céphalée primaire » ; § Mnémoniques — la liste des
+  huit lettres, reprise à l'identique. La grille disait « Pas d'imagerie sauf drapeaux rouges »
+  (`expert`) sans que les drapeaux systémiques, positionnels et l'œdème papillaire figurent nulle
+  part. Clés d'origine conservées, traduction en valeur (règle des glossaires).
+
+*Précisions posologiques — niveau 1*
+
+- theorie · Rappels : « Crise légère : **ibuprofène 600-800 mg** ou naproxène 500 mg » → « Crise
+  légère : **paracétamol 1 g**, **ibuprofène 400-600 mg** ou naproxène 500 mg ».
+  source : SSP — « Crise légère / modérée : **paracétamol 1 g** ou AINS (**ibuprofène 400-600 mg**,
+  naproxène, aspirine 1 g) ». L'ibuprofène n'est d'ailleurs pas commercialisé en dosage 800 mg en
+  Suisse.
+- theorie · Rappels : « Prophylaxie 1ère ligne : propranolol 80-240 mg/j » → « Prophylaxie **si ≥ 3
+  crises invalidantes/mois** — 1ère ligne : propranolol 80-240 mg/j ».
+  source : SSP — « Prophylaxie (**≥ 3 crises invalidantes/mois**) : bêtabloquant … ».
+  `expert`/Pièges reprochait « Ne pas évaluer fréquence pour prophylaxie » sans qu'aucun seuil ne
+  soit donné : le piège devient vérifiable.
+
+*Contrat de rôle et mnémo*
+
+- expert · Points clés : « POUND : Pulsatile, One day, Unilateral, Nausea, Disabling » **déplacé**
+  vers `theorie`/Critères diagnostiques IHS, avec traduction en valeur : « Mnémo POUND (en faveur
+  d'une migraine) : Pulsatile · durée d'One day (4-72 h) · Unilatérale · Nausées · Disabling
+  (invalidante) ». Un mnémo est un outil d'apprentissage — `expert` ne porte pas de liste
+  d'apprentissage — et sa place naturelle est à côté des critères qu'il résume. Clés d'origine
+  intactes, valeurs traduites (même règle que les glossaires de schéma). Libellé repris de la page
+  SSP, § Mnémoniques.
+- theorie · Migraine : coquille « Céphalée primaire **neurovaculaire** » → « **neurovasculaire** ».
+
+**Divergences consignées**
+
+- Section notée, bloc `therapy-section` : « **Prophylaxie si ≥ 4 crises/mois** » alors que la page
+  SSP retient « **≥ 3 crises invalidantes/mois** ». Le bloc pédagogique est aligné sur la page SSP
+  (niveau 1) ; la section notée est **gelée** et conserve son seuil. Écart consigné.
+- Section notée : « AINS : Ibuprofène **600-800 mg** ou naproxène 500-**1000 mg** » — mêmes bornes
+  hautes que celles corrigées dans le bloc pédagogique. Barème gelé, non corrigé.
+
+### AMBOSS-27 — Fatigue, femme de 28 ans (page SSP : Fatigue)
+
+Syndrome de Sheehan six mois après une hémorragie du post-partum.
+
+**Modifications**
+
+*Contrat de rôle — `expert`/Points clés purgé de la théorie (les 3 paires détectées)*
+
+- expert · Points clés : « Triade classique : agalactie + aménorrhée + hypothyroïdie » supprimé —
+  `theorie`/Diagnostic porte « Clinique : triade agalactie + aménorrhée + hypothyroïdie » et
+  `theorie`/Manifestations en détaille chaque terme (déficit prolactine → agalactie, déficit
+  gonadotrophines → aménorrhée, déficit TSH → hypothyroïdie secondaire).
+- expert · Points clés : « Déficits multiples : ACTH, TSH, FSH/LH, GH, prolactine » supprimé —
+  `theorie`/Physiopathologie porte la même liste (« Hypophyse antérieure : ACTH, TSH, FSH/LH, GH,
+  prolactine »). Le message de conduite reste dans `expert`/Pièges (« Ne pas rechercher déficits
+  hormonaux multiples »).
+- expert · Points clés : « IRM : hypophyse 'vide' ou atrophique » supprimé — le **résultat de
+  station** est dans `expert`/Rôles (« IRM hypophyse : hypophyse atrophique, tige fine ») et le
+  **critère diagnostique** dans `theorie`. L'item répétait le résultat dans son propre bloc.
+- theorie · Diagnostic : « IRM hypophysaire : hypophyse 'vide', atrophie, tige fine » → « IRM
+  hypophysaire : **hypophyse augmentée et non rehaussée en phase aiguë, puis** selle turcique
+  'vide' par atrophie (tige fine), **post-hypophyse conservée** ». La ligne cesse de recopier le
+  résultat de l'expert et porte l'évolution dans le temps, seule information que le résultat ne
+  donne pas.
+
+*Erreur factuelle interne (correction directe, hors hiérarchie)*
+
+- theorie · Syndrome de Sheehan : « Déficits hormonaux : ACTH > TSH > FSH/LH > GH > prolactine » →
+  « Déficits hormonaux, **du plus grave au moins grave** : ACTH > TSH > FSH/LH > GH > prolactine
+  (**l'ordre d'apparition est inverse : GH et prolactine touchées les premières**) ». Lue comme une
+  chronologie, la ligne contredisait `theorie`/Physiopathologie deux sections plus loin
+  (« Hiérarchie déficits : **GH et prolactine premiers touchés** », « ACTH et TSH : déficits **plus
+  tardifs mais plus graves** »). Le sens de la flèche est explicité, la contradiction interne levée,
+  aucune donnée retirée.
+- theorie · Rappels thérapeutiques : « Œstrogènes : **si désir grossesse**, sinon symptomatique » →
+  « Œstroprogestatifs : **substitution jusqu'à l'âge de la ménopause** (symptômes, capital osseux) ;
+  **si désir de grossesse, induction de l'ovulation par gonadotrophines** ». L'énoncé d'origine
+  inversait l'indication : la substitution œstroprogestative traite l'hypogonadisme (symptômes,
+  ostéoporose) et n'induit pas l'ovulation ; un désir de grossesse relève des gonadotrophines.
+
+*Sécurité — niveau 1, la page SSP tranche*
+
+- theorie · Examens complémentaires (queue) : ajout de « **Bilan minimal de toute fatigue : FSC,
+  ferritine, TSH, glycémie, CRP/VS** (ici anémie microcytaire → compléter par un bilan martial) ».
+  source : SSP — Fatigue — `pieges_eliminatoires` — « **Ne pas faire bilan minimal (Hb, TSH,
+  ferritine, glycémie, CRP, VS)** » ; § Mnémoniques — « **Bilan minimal** : Hb, TSH, ferritine,
+  glycémie, CRP/VS ». La section de queue de cette grille ne listait que des dosages hypophysaires,
+  alors que la station elle-même délivre une **FSC avec Hb 85 g/L** et que la section notée évalue
+  « Fer sérique, ferritine, TIBC ».
+
+**Divergences consignées**
+
+- Section notée, bloc `therapy-section` : « Traitement œstro-progestatif **si désir fertilité** » —
+  même inversion que celle corrigée dans `theorie`/Rappels. Barème gelé : non corrigé, consigné.
+- theorie · Anémie ferriprive : « Traitement : fer per os 100-200 mg/j élémentaire » pour une Hb à
+  **85 g/L** du post-partum. Le fer intraveineux se discute à ce niveau d'anémie, mais la page SSP
+  reste générique (« Traitement de la cause identifiée ») et la section notée prescrit « Fer per
+  os … **Fer : IV si intolérance digestive** » : bloc pédagogique et section notée concordent,
+  niveau 3, laissé inchangé.
+
+**Vérifications (tâche 14)**
+
+- `check_invariants.py` → `OK — 40 grilles, tous les invariants preserves` (code 0). `blocks` reste
+  `["expert", "theorie"]` sur les cinq grilles ; `maxScores`, `scoreSpans`, `criteriaCount`,
+  `detailCount`, `radioCount`, `checkboxCount` inchangés : **barème gelé**.
+- `check_nomenclature.py` → `OK — aucun terme non suisse detecte` (code 0). Aucune valeur introduite
+  en `g/dL`, `ng/mL`, `pg/mL`, `/mm³`, en livres ni en unité implicite.
+- `report_redundancy.py` par grille : **9 paires → 0** (23 : 4→0 · 24 : 2→0 · 25 : 0→0 · 26 : 0→0 ·
+  27 : 3→0).
+- `check_no_loss.py dfe2e4f` par grille : 6 + 6 + 6 + 2 + 4 = **24 items signalés**, tous relus un à
+  un — 13 reformulations enrichies (l'item reste, réécrit), 6 suppressions dont le contenu est porté
+  à l'identique ou en plus précis par un autre bloc, 3 portages explicites documentés ci-dessus,
+  1 déplacement (mnémo POUND), 1 correction intentionnelle (œstrogènes). **Aucune perte réelle.**
+- `git diff --numstat` : 5 fichiers, **35 insertions / 40 suppressions**, toutes dans la zone
+  pédagogique (contrôlé ligne à ligne contre `peda_bounds`). Aucun `.criteria-text` touché, aucun
+  crochet de réponse patient touché, aucun sous-item noté ajouté ni retiré, aucun item ICE touché.
