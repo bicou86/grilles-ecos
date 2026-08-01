@@ -2840,3 +2840,134 @@ intervention.
    même titre.
 2. **Latéralité fausse** dans le bloc que l'examinateur lit à voix haute (« hémianopsie homonyme
    gauche » pour une lésion sylvienne gauche), qui inversait le raisonnement de localisation.
+
+**Correctif d'outillage (tâche 11b) — angle mort résolu.** L'anomalie signalée plus haut (bloc
+`presentation` sous la classe `annexe-item annexe-presentation`, invisible à `lib_amboss.BLOCKS`) est
+corrigée à la racine, sans toucher la grille. `BLOCKS` reconnaît désormais les deux classes du bloc
+`presentation` — `presentation-patient` (24 grilles) et `annexe-item annexe-presentation` (AMBOSS-34
+seule) — et le marqueur de fin de `theorie` porte la même alternative. Cette seconde correction était
+nécessaire : sans elle, `theorie` engloutissait tout le bloc de présentation jusqu'à `annexe-scenario`.
+Vérifié avant correctif : c'était bien le cas — le segment `theorie` mesurait 20067 caractères avant,
+6685 après, l'écart (13382) correspondant exactement à la longueur du segment `presentation` désormais
+isolé. Le défaut était donc plus grave qu'une simple absence de détection : `report_redundancy.py`
+comparait un mélange théorie + présentation à `resume` et `expert` sous la seule étiquette « theorie ».
+
+Simulation avant application, sur les 40 grilles : la nouvelle regex ne change `blocks_present()` ni
+les segments extraits que sur AMBOSS-34 — bit à bit identiques aux anciens sur les 39 autres.
+`baseline.json` régénéré (`snapshot_invariants.py`), ancien sauvegardé au préalable et comparé champ à
+champ : **seule** différence sur les 40 grilles, `AMBOSS-34.blocks` passe de
+`["resume", "expert", "theorie"]` à `["resume", "expert", "theorie", "presentation"]`. Aucun
+`maxScores`, `criteriaCount`, `detailCount`, `radioCount` ni `checkboxCount` ne bouge, sur aucune des
+40 grilles. `check_invariants.py` → OK, 40 grilles.
+
+**Première mesure valide de la redondance d'AMBOSS-34** (`report_redundancy.py AMBOSS-34_`) :
+**0 paire**, tous blocs confondus (y compris `presentation`, comparé pour la première fois aux trois
+autres). La ligne d'en-tête de cette entrée (« Redondance : 1 paire → 0 ») avait été mesurée avec
+l'outil encore aveugle à ce bloc : la « 1 paire » initiale, déjà résorbée par la relecture manuelle
+décrite plus haut avant même ce correctif, portait sur du contenu mal étiqueté (théorie ⊃
+présentation), pas sur une vraie paire théorie/présentation. La mesure corrigée confirme
+rétroactivement, par la mesure et non plus seulement par relecture, que le bloc `presentation` ne
+duplique aucun des trois autres.
+
+Effet sur le total du corpus (`report_redundancy.py`, sans filtre) : **aucun** — 123 paires avant
+comme après, vérifié par simulation bit à bit (même ensemble de paires nommées, pas seulement même
+total) entre l'ancienne et la nouvelle regex sur le contenu actuel du disque. L'augmentation attendue
+de ce correctif ne s'est pas produite : le contenu d'AMBOSS-34, une fois enfin mesurable dans son
+intégralité, s'avère déjà propre — la tâche 11 l'avait correctement dédoublonné à l'œil, sans pouvoir
+le vérifier par l'outil.
+
+Voir aussi `PROCEDURE.md` § 6, « Angle mort corrigé : une variante de classe non prévue rend un bloc
+entier invisible à l'outillage ».
+
+### Passe unités impériales — livres vers kilogrammes (tâche 11b)
+
+Angle mort distinct de la passe unités SI (tâches 7 et 10c, qui ne visait que les valeurs de
+laboratoire) : le corpus portait encore des poids en livres dans le texte clinique lui-même —
+réponses patient, scénarios d'examinateur. Deux situations, traitées différemment, sur cinq grilles
+(AMBOSS-28, 31, 36, 37, 38).
+
+**Modifications**
+
+*AMBOSS-28 — livres seules, sans équivalent métrique : converties*
+
+Cinq occurrences, toutes décrivant le même fait clinique (la prise de poids du patient), arrondies
+comme le ferait un patient qui parle plutôt que calculées au gramme près (1 livre = 0,4536 kg :
+7-10 livres ≈ 3,175-4,536 kg arrondi en « 3-4,5 kg » ; 200 livres ≈ 90,7 kg arrondi en « 90 kg ») :
+
+- `criteria-text` `a1` (section notée), réponse patient : « J'ai pris au moins 7-10 livres » →
+  « J'ai pris au moins 3-4,5 kg ». Format `N. Libellé [réponse]` et crochets inchangés, seul le
+  contenu du crochet est modifié.
+- `detail-text` `a2`, réponse patient : « Je pense que je pèse plus de 200 livres maintenant » →
+  « … 90 kg maintenant ».
+- scénario, Motif de consultation : « Plainte principale : J'ai pris au moins 7-10 livres. » →
+  « … 3-4,5 kg. »
+- scénario, Symptôme principal : « Prise de poids 7-10 livres en 2 mois » → « … 3-4,5 kg en 2 mois »
+  et « Poids actuel > 200 livres » → « Poids actuel > 90 kg ».
+
+Cette divergence était **déjà consignée** dans l'entrée d'AMBOSS-28 ci-dessus (« section notée et
+scénario · unités impériales […] deux zones intouchables. Consigné, non corrigé »), écrite avant que
+la conversion d'un poids en unité impériale au sein d'un `criteria-text` ou d'un scénario ne soit
+explicitement demandée. Elle est résolue ici : ni l'une ni l'autre zone n'était réellement intouchable
+pour une substitution de texte qui ne change ni le nombre de sous-items notés, ni le format
+`N. Libellé [réponse]`, ni les crochets — seul le contenu entre crochets change, le barème reste gelé.
+Cohérence interne vérifiée : la « Version longue » de `presentation` mentionne indépendamment (texte
+non touché, déjà en métrique) « une prise de poids d'environ 3 à 5 kilos sur les deux derniers mois » —
+plage proche mais non identique à « 3-4,5 kg », deux estimations orales indépendantes déjà ainsi avant
+cette passe, hors périmètre de cette tâche (aucune des deux n'est en livres).
+
+*AMBOSS-31, 37, 38 — livres en parenthèse explicative, équivalent métrique déjà présent : retirées*
+
+Le nombre en livres est retiré, la valeur métrique déjà présente dans la même phrase reste seule, sans
+recalcul :
+
+- AMBOSS-31, `detail-text` `a3`, Variations pondérales : « J'ai perdu 5 kg (11 livres) au cours des
+  3 derniers mois » → « J'ai perdu 5 kg au cours des 3 derniers mois ».
+- AMBOSS-37 (nouveau-né), `detail-text` `a6`, Poids de naissance : « Elle pesait exactement 7 livres,
+  ou 3 175 g - c'est le nombre que les médecins utilisaient toujours à l'hôpital » → « Elle pesait
+  exactement 3 175 g - … ».
+- AMBOSS-37, `detail-text` `a6`, Poids au dernier contrôle : « Quand nous avons quitté l'hôpital elle
+  pesait 6 livres et 10 onces, ou 3 016 g » → « … elle pesait 3 016 g ». Les deux valeurs métriques du
+  nouveau-né sont distinctes et toutes deux conservées telles quelles (3 175 g à la naissance,
+  3 016 g au dernier contrôle) — aucune n'a été confondue avec l'autre.
+- AMBOSS-38, `detail-text` `a3`, Changements de poids : « […] j'ai perdu 8 livres (3,6 kg) au cours
+  des 4 derniers mois » → « […] j'ai perdu 3,6 kg au cours des 4 derniers mois ».
+
+*AMBOSS-36 — cas mixte, non anticipé par le découpage initial de la tâche*
+
+Le brief de tâche classait AMBOSS-36 entièrement dans la catégorie « parenthèse, métrique déjà
+présent », sur la base de son occurrence en `detail-text` `a3` : « Oui, j'ai perdu environ 10 livres
+(4,5 kg) au cours des 2 derniers mois. […] » → « Oui, j'ai perdu environ 4,5 kg au cours des
+2 derniers mois. […] », traitée comme les trois grilles ci-dessus. Le balayage exhaustif du corpus
+(voir Vérifications) a cependant trouvé une **seconde occurrence**, dans le scénario d'examinateur
+(Symptômes associés), sans aucun équivalent métrique sur la ligne : « Perte poids 10 livres en
+2 mois ». Rien à conserver après un simple retrait : elle relève en réalité de la catégorie
+d'AMBOSS-28, et a été convertie avec la valeur métrique **déjà établie** ailleurs dans le même fichier
+pour ce même fait (10 livres = 4,5 kg, ci-dessus), plutôt que recalculée indépendamment — « Perte
+poids 4,5 kg en 2 mois ». Signalé : le découpage à deux catégories du brief ne couvrait pas ce cas,
+découvert seulement par le balayage de clôture et non par la liste de citations fournie.
+
+**Vérifications**
+
+- Balayage du corpus entier avant cette passe (`strip_base64`, motifs `\blivres?\b`, `\blbs?\b`,
+  `\bpounds?\b`, `\bonces?\b`, `\bpouces?\b`, `\binches\b`, `°F`) : 18 correspondances brutes, dont
+  6 hors sujet — AMBOSS-10, AMBOSS-25 (×2), AMBOSS-39 (×2) : « pouce(s) » anatomique (pouce de la
+  main dans un geste d'examen, sans rapport avec l'unité de longueur) ; AMBOSS-26 : « POUND », le
+  mnémo des critères de céphalée (Pulsatile, One day, Unilateral, Nausea, Disabling), pas l'unité de
+  poids — et 12 réelles (`livres` ×11, `onces` ×1), converties ou retirées en 11 éditions de texte (la
+  phrase d'AMBOSS-37 « 6 livres et 10 onces » relève d'une seule édition pour les deux mots). Après
+  cette passe : les 6 mêmes correspondances hors sujet subsistent, revérifiées une à une, et
+  **aucune** occurrence de `livres?`, `lbs?`, `pounds?`, `onces?`, `pouces?`, `inches` ni `°F` ne
+  reste dans le texte visible des 40 grilles.
+- `check_invariants.py` → OK, 40 grilles. `check_nomenclature.py` → OK. Aucun `maxScores`, compte de
+  critères, radios ou checkboxes modifié : les 11 éditions sont toutes des remplacements de texte
+  1 pour 1, à l'intérieur d'un crochet de réponse patient ou d'un `<li>` de scénario, sans ajout ni
+  retrait de sous-item noté.
+- Format `.criteria-text` (`N. Libellé [réponse]`, requis par `cases/scoring.js:159`) et crochets des
+  réponses patient (colorés en bleu par `cases/scoring.js`, motif `\[([^\]]+)\]`) : vérifiés intacts
+  sur les cinq grilles. Seule l'occurrence d'AMBOSS-28 `a1` est un `.criteria-text` au sens strict du
+  format `N. Libellé [réponse]` ; les dix autres sont des `detail-text` ou des `<li>` de scénario, hors
+  du périmètre de ce format précis mais toujours à l'intérieur de crochets `[...]` de réponse patient
+  là où le texte d'origine en portait déjà, également vérifiés intacts.
+- `report_redundancy.py`, sans filtre : 123 paires, inchangé par cette passe — les zones touchées
+  (`criteria-text`, `detail-text`, scénario) sont hors du périmètre des quatre blocs pédagogiques que
+  compare ce script.

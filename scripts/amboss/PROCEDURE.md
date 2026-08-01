@@ -276,6 +276,51 @@ reconnaît pas les paraphrases) — ne creuser que ceux dont le contenu ne se
 retrouve nulle part ailleurs dans le fichier, y compris hors de la zone
 pédagogique (ex. un critère noté).
 
+**Angle mort corrigé : une variante de classe non prévue rend un bloc entier
+invisible à l'outillage.** `BLOCKS` (`lib_amboss.py`) repérait le bloc
+`presentation` par une seule classe, `presentation-patient`. AMBOSS-34 porte sa
+fiche de présentation orale sous `annexe-item annexe-presentation` — seule
+variante de ce type sur les 40 grilles (24 emploient la classe standard, 15 n'ont
+aucun bloc `presentation`). La conséquence dépassait la simple non-détection :
+faute d'alternative dans le marqueur de fin de `theorie` (qui ne cherchait que
+`presentation-patient` ou `annexe-item annexe-scenario`), le bloc `presentation`
+d'AMBOSS-34 tout entier était englouti dans le segment `theorie` — 13 382
+caractères mesurés avant correctif (segment `theorie` : 20067 → 6685 après ;
+segment `presentation` : 0 → 13382). `blocks_present()` ne listait donc pas
+`presentation` pour cette grille, et `report_redundancy.py` comparait sa
+présentation orale au reste du corpus sous l'étiquette « theorie » : la
+redondance d'AMBOSS-34 n'avait jamais été mesurée sur son contenu réel. L'unique
+paire qu'affichait `report_redundancy.py AMBOSS-34_` avant correctif était un
+artefact de cet étiquetage — après correctif, la mesure réelle donne 0 paire.
+
+Le seul indice disponible, avant toute recherche du défaut, était ce chiffre de
+redondance anormalement bas pour une grille à quatre blocs — sans qu'aucun
+contrôle ne le signale : `check_invariants.py` et `check_nomenclature.py`
+passent tous deux sur `strip_base64(html)` ou sur un compte brut de motifs,
+indifférents au découpage en blocs, et `blocks_present()` ne peut chercher que
+les classes qu'on lui a explicitement dites de reconnaître. Rien n'empêcherait
+une grille future d'introduire une troisième variante de classe pour un bloc
+existant, ou une classe pour un bloc qu'aucune grille ne porte encore : ce
+serait le même défaut, avec le même unique symptôme observable (une redondance
+anormalement basse sur cette grille précise), sans garde-fou automatique
+possible par construction. Corrigé pour ce cas précis — `BLOCKS` accepte
+désormais les deux classes du bloc `presentation`, marqueur de fin de `theorie`
+inclus — mais le principe reste un angle mort à surveiller, du même ordre que
+les numérations en unité implicite et le chevron nu ci-dessus.
+
+La classe n'a **pas** été renommée dans la grille : corriger un outil ne doit
+pas se faire en modifiant les données qu'il lit. Vérifié dans
+`cases/case-styles.css` : `annexe-presentation` ne porte aucune règle CSS
+propre (recherche exhaustive du sélecteur, zéro résultat). Le bloc hérite donc
+du seul style générique `.annexe-item` (fond blanc, bordure grise fine,
+`case-styles.css:591-595`) — ni le fond `#ffecd2` et le bandeau `#fa709a` que
+`.presentation-patient` donne aux 24 autres grilles, ni une couleur dédiée
+comme en reçoivent les trois autres variantes d'`annexe-item`
+(`.annexe-expert`, `.annexe-theorie`, `.annexe-scenario`, chacune stylée).
+Écart visuel préexistant, distinct du défaut d'outillage corrigé ici et sans
+incidence sur le contenu ni le barème : signalé pour arbitrage éditorial
+séparé, non traité par cette tâche.
+
 ## Interdits
 
 - Lire un fichier de grille en entier (jusqu'à 2,77 Mo).

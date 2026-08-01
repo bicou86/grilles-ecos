@@ -6,13 +6,20 @@ from pathlib import Path
 CASES = Path(__file__).resolve().parents[2] / "cases" / "amboss"
 
 # Bornes des quatre blocs pédagogiques. L'ordre reflète leur ordre dans le fichier.
+# Le bloc "presentation" porte deux variantes de classe : la standard
+# `presentation-patient` (24 grilles) et `annexe-item annexe-presentation`
+# (AMBOSS-34 seule) — voir PROCEDURE.md § 6, « Angle mort : variante de classe
+# non prévue ». Les deux alternatives figurent aussi dans le marqueur de fin de
+# "theorie", sans quoi ce bloc engloutirait le contenu de la variante jusqu'à
+# `annexe-scenario`.
 BLOCKS = [
     ("resume", r'<div class="resume">', r'<div class="annexes">'),
     ("expert", r'<div class="annexe-item annexe-expert">',
      r'<div class="annexe-item annexe-theorie">'),
     ("theorie", r'<div class="annexe-item annexe-theorie">',
-     r'<div class="presentation-patient">|<div class="annexe-item annexe-scenario">'),
-    ("presentation", r'<div class="presentation-patient">',
+     r'<div class="presentation-patient">|<div class="annexe-item annexe-presentation">'
+     r'|<div class="annexe-item annexe-scenario">'),
+    ("presentation", r'<div class="presentation-patient">|<div class="annexe-item annexe-presentation">',
      r'<div class="annexe-item annexe-scenario">'),
 ]
 
