@@ -2453,3 +2453,390 @@ trouvé **aucune dose adulte ni dose sans référence au poids** : la seule poso
 grille, le fer, est correctement exprimée en mg/kg/j ; il n'y a **pas de paracétamol** dans cette
 grille. Les quatre posologies sont néanmoins listées ci-dessus comme non arbitrées, faute de page de
 référence.
+
+### AMBOSS-28 — Prise de poids, homme de 45 ans, trouble dépressif majeur avec hypothyroïdie comorbide (page SSP : Syndrome Métabolique)
+
+Redondance : **17 paires → 4** (`report_redundancy.py AMBOSS-28_`). Quatre blocs présents.
+Pas de sous-section `presentation`/Pièges ECOS — vérifié, la grille n'est pas de l'axe 6.
+
+La page SSP est rattachée au **motif** (prise de poids) et non au diagnostic final : elle tranche
+l'exploration d'une prise de poids, pas la prise en charge d'une dépression. L'arbitrage des points
+psychiatriques est donc passé au niveau 2 (section notée), celui des points métaboliques au niveau 1.
+
+**Modifications**
+
+*Correction factuelle (interne au bloc)*
+
+- resume · Points clés : « Prise de poids inexpliquée = penser à un trouble dépressif majeur,
+  **surtout si appétit augmenté** » → « …, que l'appétit soit augmenté (forme atypique) ou diminué —
+  une prise de poids **avec perte d'appétit** oriente d'abord vers une hypothyroïdie ». Le patient de
+  la station a une **perte** d'appétit (`a3` — « Je n'ai pas eu beaucoup d'appétit dernièrement ») et
+  `expert`/Points clés dit « Prise de poids + perte appétit = atypique pour TDM » : le point clé
+  canonique orientait l'étudiant à l'inverse du cas. Même correction portée sur
+  resume · Symptômes typiques (« Hyperphagie ou grignotage émotionnel » complété de l'alternative).
+
+*Alignement des prises en charge*
+
+- theorie · Rappels thérapeutiques · **niveau 2, sécurité** : « Hypothyroïdie : lévothyroxine
+  1.6 μg/kg/j » → ajout de « initiation prudente à 25-50 μg/j puis paliers de 25 μg au-delà de
+  50 ans ou en cas de cardiopathie — une dose pleine d'emblée peut démasquer un angor ou un trouble
+  du rythme ». Le bloc prescrivait la dose pleine sans condition, alors que la section notée
+  conditionne l'initiation à l'âge et au terrain.
+  source : section notée `m6` — « Lévothyroxine: 25-50 μg/j initial si 50 ans · 1.6 μg/kg/j si jeune
+  et sain · Ajustement par paliers de 25 μg »
+- resume · Prise en charge · **niveau 2** : « ISRS (ex. : sertraline, **fluoxétine**) » →
+  « ISRS (**sertraline, citalopram**), dose initiale faible puis augmentation progressive ». La
+  section notée et `theorie` nomment tous deux citalopram ; `resume`, canonique, était seul à
+  proposer la fluoxétine.
+  source : section notée `m6` — « Pharmacothérapie: ISRS (sertraline, citalopram) · Dose initiale
+  faible, augmentation progressive »
+- resume · Surveillance · niveau 2 : « Suivi des effets indésirables des traitements » précisé de
+  « réévaluation à 4-6 semaines ; TSH à 6-8 semaines si lévothyroxine ».
+  source : section notée `m6` — « Surveillance effets secondaires 4-6 semaines · Contrôle TSH à
+  6-8 semaines »
+
+*Renforcement du canonique (niveau 1)*
+
+- resume · Prise en charge : ajout de « Corriger la cause organique associée : **lévothyroxine si
+  hypothyroïdie confirmée** » — le diagnostic de la station est « TDM **avec hypothyroïdie
+  comorbide** » et le bloc canonique ne portait aucun traitement du versant endocrinien.
+- resume · Prise en charge : ajout du **filet de sécurité** — « urgences ou **144** en cas d'idées
+  suicidaires ; **143 (La Main Tendue)** joignable 24 h/24 ». Le 143 n'existait nulle part dans la
+  grille.
+  source : SSP — En Bref — « **Numéros utiles** : **144** urgences · **143** La Main Tendue » ;
+  section notée, Clôture — « venez aux urgences immédiatement […] appelez s'il vous plaît le 144 »
+- resume · Examens diagnostiques : la liste passe de trois à cinq items — **T4 libre**, **FSC**,
+  **ionogramme avec calcium et magnésium**, seuil du **tour de taille ≥ 102 cm**, et une ligne
+  « selon l'orientation » portant la **polysomnographie (STOP-BANG ≥ 3)** et le **cortisol libre
+  urinaire des 24 h / freinage à la dexaméthasone 1 mg**. Aucun n'était dans le bloc canonique alors
+  que tous figurent en section notée et dans `presentation`.
+  source : SSP — EXAMENS COMPLÉMENTAIRES — « Polygraphie ventilatoire / polysomnographie si suspicion
+  SAOS (questionnaire **STOP-BANG ≥ 3**) » ; SSP — Red flags — « Cortisol libre urinaire 24 h ou test
+  à la **dexaméthasone 1 mg overnight** » ; SSP — Critères diagnostiques — « Tour de taille : ≥ 102 cm (H) »
+- theorie · Apnée obstructive du sommeil : « Traitement : CPAP, perte poids, chirurgie » → seuil et
+  alternative ajoutés (« CPAP si **IAH ≥ 15** ou forme symptomatique […] orthèse d'avancée
+  mandibulaire si intolérance »), la chirurgie étant conservée en dernier recours (anti-perte).
+  source : SSP — PRISE EN CHARGE — « SAOS modéré à sévère (IAH ≥ 15) : CPAP nocturne […] orthèse
+  d'avancée mandibulaire en cas d'intolérance CPAP »
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- presentation · mnémo **SIGECAPS** : la `mnemo-box` de la Checklist mentale est **supprimée**, ses
+  gloses françaises reportées au préalable sur la liste de Touches ludiques, qui reste seule
+  porteuse du mnémo — clés anglaises conservées, traduction en valeur. Précédent AMBOSS-1/6F. Axe 5.
+- theorie · Critères diagnostiques DSM-5 : la liste des neuf items SIGECAPS, qui doublait `resume` au
+  même format, devient la **règle de comptage** (≥ 5 sur 9, ≥ 2 semaines, au moins un des deux
+  symptômes cardinaux, retentissement fonctionnel, cause organique exclue, PHQ-9 gradue sans
+  diagnostiquer). Anti-perte : les neuf items subsistent en français dans `resume` et avec leurs clés
+  anglaises dans `presentation`/Touches ludiques ; « Au moins 1 : humeur dépressive OU anhédonie » est
+  conservé et développé. Axe 1.
+- presentation · Q1 « Quels examens », Q2 « Traitement », Q3 « Suivi » : les trois réponses en liste
+  deviennent des **réponses orales**. L'« analyse orale » et l'« astuce révision » attenantes sont
+  conservées. Axes 1 et 2.
+- expert · Points clés : « Évaluation systématique risque suicidaire » → « **L'examinateur attend que
+  le risque suicidaire soit abordé explicitement, par une question directe** : idées actuelles,
+  scénario et moyens, facteurs protecteurs, puis plan de sécurité — l'omettre est éliminatoire ».
+  Axe 7 : `expert` dit ce que l'examinateur observe, `resume` ce que l'étudiant retient.
+  source : section notée `m4` — « Évaluation des idées suicidaires actuelles · Recherche de facteurs
+  de risque · Évaluation des facteurs protecteurs · Plan de sécurité si risque élevé »
+
+**Risque suicidaire — traitement volontairement conservateur.** Aucun item relatif au risque
+suicidaire n'a été supprimé, y compris lorsque la redondance était détectée. Les deux paires
+restantes sur ce thème (`resume`/« S : idées suicidaires » face au mnémo de Touches ludiques et aux
+arguments POUR) sont **acceptées et documentées**, le coût d'une répétition y étant sans commune
+mesure avec celui d'une omission. `theorie`/Évaluation du risque suicidaire est resté intact.
+
+**Divergences consignées**
+
+- **section notée `m6` · lévothyroxine** : « Lévothyroxine: 25-50 μg/j initial **si 50 ans** » — le
+  signe de comparaison manque, la condition d'âge est donc illisible (lire « si > 50 ans »). Même
+  nature que le « IMC 25 kg/m² » d'AMBOSS-9 et le « ou 4cm » d'AMBOSS-6. Consigné, **non corrigé**
+  (barème gelé). La condition a été rendue explicite dans `theorie`, où elle est modifiable.
+- **section notée et scénario · unités impériales** : le poids du patient est exprimé en **livres**
+  (« J'ai pris au moins 7-10 livres », « je pèse plus de 200 livres »), dans un `criteria-text` et
+  dans le scénario du patient standardisé — deux zones intouchables. Consigné, **non corrigé**.
+- **quatre paires de redondance restantes**, toutes acceptées : deux mnémos face à `resume` (règle
+  des mnémos, clé conservée) et deux items de `resume` face à des arguments POUR (liste →
+  argumentaire structuré, précédent AMBOSS-22).
+
+**Signalements de sécurité** — un signalement, corrigé : la **lévothyroxine à pleine dose d'emblée**
+sans réserve d'âge ni de terrain cardiaque dans `theorie` (même famille que la gabapentine
+d'AMBOSS-9). Corrigé par alignement de niveau 2. Le « si 50 ans » de la section notée reste, lui,
+non corrigé et consigné ci-dessus.
+
+### AMBOSS-30 — Mal de gorge, homme de 19 ans, pharyngite à streptocoque du groupe A (page SSP : Mal de Gorge (Angine))
+
+Redondance : **18 paires → 4** (`report_redundancy.py AMBOSS-30_`). Quatre blocs présents.
+Grille de l'**axe 6** : sous-section `presentation`/Pièges traitée avec l'anti-perte.
+
+**Modifications**
+
+*Alignement des prises en charge — niveau 1, sécurité*
+
+- resume · Antibiothérapie : « **Amoxicilline** per os pendant **6 jours** (1ʳᵉ intention) ·
+  Alternative : macrolide si allergie » → « **Pénicilline V (Ospen®) 500 mg × 2-3/j pendant
+  10 jours — 1ʳᵉ ligne en Suisse** · Alternative : amoxicilline 1 g × 2/j × 10 jours · Allergie à la
+  pénicilline : **clarithromycine ou clindamycine** — pas de macrolide en 1ʳᵉ ligne (résistances du
+  SGA) ». Le bloc **canonique** plaçait l'amoxicilline en première intention dans une station dont la
+  mononucléose est le diagnostic différentiel principal, dont la rate est « limite palpable » en
+  `expert`, et dont la page SSP fait de l'ampicilline en MNI son piège éliminatoire n° 2.
+  source : SSP — PRISE EN CHARGE — « **Pénicilline V (Ospen®/Stabicilline®) 10 jours (1ʳᵉ ligne CH)**
+  — éviter les macrolides en 1ʳᵉ ligne (résistance) · Alternative : amoxicilline 50 mg/kg/j × 6-10
+  jours · Allergie pénicilline : clarithromycine ou clindamycine » ; section notée `m5` —
+  « Pénicilline V × 500 mg × 2-3/j × 10 jours »
+- resume · Antibiothérapie : ajout de « ⚠️ **Amoxicilline et ampicilline contre-indiquées si
+  mononucléose suspectée** : éruption maculo-papuleuse dans 90 % des cas ». La contre-indication
+  n'existait que dans `expert`/Points clés, `theorie`/MNI et la Version longue — jamais dans le bloc
+  canonique, c'est-à-dire jamais là où l'étudiant révise la prescription.
+  source : SSP — Règle d'or — « **MNI = contre-indication à l'ampicilline/amoxicilline** (rash) »
+- theorie · Rappels thérapeutiques · **niveau 1, sécurité** : « Paracétamol : **15 mg/kg × 4-6/j**
+  pour fièvre/douleur » → « **1 g × 4/j chez l'adulte, sans dépasser 4 g/j** ; 15 mg/kg toutes les
+  6 h chez l'enfant ». La posologie était **pédiatrique et sans plafond** dans une station de patient
+  de 19 ans : 15 mg/kg six fois par jour représentent 90 mg/kg/j, soit plus de 6 g pour un adulte de
+  70 kg, contre 4 g autorisés. Même famille que l'erreur d'AMBOSS-7.
+  source : SSP — PRISE EN CHARGE — « **Paracétamol (1 g × 4/j adulte ; 15 mg/kg/6 h enfant)** »
+- theorie · Rappels thérapeutiques : « Amoxicilline : 50 mg/kg/j » → forme adulte ajoutée
+  (« 1 g × 2/j × 10 j chez l'adulte ; 50 mg/kg/j en 2 prises chez l'enfant, max 2 g/j »).
+- theorie : « Si allergie : **azithromycine** 500 mg J1 puis 250 mg × 4j » et « Azithromycine :
+  **12 mg/kg/j** × 5j » **supprimés**. Le second était une posologie pédiatrique dans une grille
+  adulte et contredisait le premier au sein du même bloc. La page SSP désigne la clarithromycine ou
+  la clindamycine, désormais portées par `resume`.
+- resume · Traitement symptomatique : posologies adultes explicitées (paracétamol 1 g × 4/j max
+  4 g/j, ibuprofène 400 mg × 3/j) et gargarismes salins ajoutés.
+
+*Renforcement du canonique (niveau 1)*
+
+- resume · Examens diagnostiques : le **score de McIsaac est porté en entier** — les quatre items à
+  +1, le modificateur d'âge (3-14 ans +1 · 15-44 ans 0 · ≥ 45 ans −1) et les trois seuils (≤ 1 rien ·
+  2-3 TDR · ≥ 4 TDR ou antibiothérapie). Le bloc canonique ne portait que « score Centor ≥ 2 », le
+  détail vivant dans `theorie` et dans un mnémo.
+  source : SSP — Score de McIsaac (Centor modifié), tableau et seuils
+- resume · Examen clinique : ajout des **constantes** (T°, FC, FR, SpO₂, hydratation) et surtout de
+  la **palpation de la rate** — la splénomégalie est le pivot du diagnostic différentiel de la
+  station et le bloc canonique n'en portait pas trace.
+  source : SSP — EXAMEN CLINIQUE — « **Splénomégalie** (MNI) » ; `expert` — « Rate : limite palpable »
+- resume · Signes de gravité : ajout du drapeau rouge **épiglottite** — « stridor, hypersialorrhée,
+  position en tripode → **ne pas examiner la gorge**, appeler l'anesthésiste, 144 ». Absent de toute
+  la grille alors que c'est le piège éliminatoire n° 1 de la page SSP.
+  source : SSP — Points Clés ECOS — « Suspicion d'épiglottite → **ne pas examiner la gorge**, appeler
+  l'anesthésiste » ; SSP — Red flags
+- resume · Bilan complémentaire : FSC, frottis sanguin et fiabilité comparée du monospot et de
+  l'anti-VCA IgM ajoutés (ils n'existaient qu'en `theorie`, `presentation` et section notée).
+- resume · Traitement symptomatique et expert · Pièges : **éviction des sports de contact 3-4
+  semaines si MNI** — voir l'anti-perte de l'axe 6 ci-dessous.
+
+*Corrections factuelles (internes aux blocs)*
+
+- presentation · mnémo **CENTOR** : la `mnemo-box` **contredisait le score qu'elle prétendait
+  résumer** — « C = Céphalée » (la céphalée n'est pas un critère), « T = Tonsillar swelling
+  (**adénopathies sensibles**) » (la tuméfaction amygdalienne et les adénopathies sont **deux**
+  critères distincts, confondus en un seul). Le mnémo est **déplacé** vers Touches ludiques et
+  reconstruit sur les critères de la page SSP : C = Cough absent · E = Exsudat ou tuméfaction
+  amygdalienne · N = Nodes · T = Température · OR = âge, puis les seuils. Clés d'origine conservées,
+  traduction en valeur. Axe 5, précédents AMBOSS-2/3.
+- presentation · Touches ludiques : la liste « Critères de Centor (4 points clés) » posait
+  « Exsudat **ou pétéchies palatines** » comme un même critère. Les pétéchies sont hautement
+  évocatrices de SGA mais ne comptent **pas** dans le score : la liste gonflait le score. Fusionnée
+  dans le mnémo corrigé ci-dessus ; les pétéchies restent en `resume`/Examen clinique et
+  `expert`/Points clés.
+- expert · Points clés : « Critères de Centor : fièvre + adénopathies + pas toux + **< 45 ans** » —
+  l'âge n'est pas un critère à +1 mais un modificateur, et il vaut **0** entre 15 et 44 ans, donc
+  0 pour ce patient de 19 ans. Reformulé en énoncé d'examinateur (axe 7) : « L'examinateur attend que
+  le score de McIsaac soit calculé à voix haute avant toute décision de test ou d'antibiotique —
+  chez ce patient de 19 ans l'âge ne rapporte aucun point ».
+- theorie · « Pétéchies palais mou (**pathognomonique**) » → « hautement suggestives de SGA, mais
+  **non pathognomoniques** — on les voit aussi dans la MNI ». `expert` disait déjà « hautement
+  suggestif » : le bloc théorique surclassait le signe.
+
+*Dédoublonnage (contrat de blocs, règle du format)*
+
+- presentation · sous-section « ⚠️ Pièges » **supprimée en entier** (axe 6). **Anti-perte
+  préalable** : « Éviter amoxicilline si suspicion mononucléose (éruption 90 %) » a été porté dans
+  `resume`/Antibiothérapie, où le bloc canonique ne le portait pas ; « Interdiction sport contact
+  **3-4 semaines** si MNI » a été porté à la fois dans `resume`/Traitement symptomatique et dans
+  `expert`/Pièges, dont l'item « Oublier risque rupture rate si MNI (football) » **ne portait aucune
+  durée** — la durée n'existait nulle part ailleurs dans la grille. Reproduction du geste
+  β-hCG d'AMBOSS-3.
+- theorie · « Critères de Centor modifiés » (10 items chiffrés) → « **Pourquoi le score de
+  McIsaac** » : ce que le score mesure, pourquoi la toux et la rhinorrhée le font chuter, pourquoi
+  McIsaac ajoute l'âge, et le fait qu'à 4/4 la probabilité de SGA n'est que d'environ 50 % — le score
+  sélectionne qui tester, il ne remplace pas le TDR. Le barème chiffré vit désormais dans `resume`
+  (canonique) et le mnémo dans `presentation`. Axe 1.
+  source : SSP — Cartes ECOS — « les 4 items de Centor sont les signes d'une infection bactérienne
+  pyogène […] McIsaac y ajoute l'âge, car le SGA est une maladie de l'enfant. **Piège :** même à 4/4,
+  la probabilité de SGA n'est que de ~50 % → le score sélectionne qui tester »
+- theorie · « Traitement antibiotique pharyngite SGA » (liste de molécules) → « **Pourquoi ce
+  traitement antibiotique** » : absence historique de résistance de *S. pyogenes* à la pénicilline,
+  raison des 10 jours (éradication du portage et prévention du RAA, non le confort), mise à l'écart
+  des macrolides, bénéfice symptomatique d'environ 16 heures. Les doses restent dans `resume` et
+  `theorie`/Rappels. Axe 2.
+  source : SSP — Cartes ECOS — « *Streptococcus pyogenes* n'a **jamais développé de résistance à la
+  pénicilline** […] Les **10 jours** ne servent pas à raccourcir les symptômes […] mais à **éradiquer**
+  le portage pharyngé et prévenir le **RAA** » ; « l'antibiotique ne raccourcit l'angine à SGA que de
+  **~16 heures** »
+- theorie · « Présentation clinique pharyngite SGA » → « **Ce qui distingue le SGA du viral** » : la
+  liste de symptômes doublait `resume` (dont une paire à **1.00**, « adénopathies cervicales
+  antérieures douloureuses », identique au caractère près). Ne subsiste que la valeur discriminante,
+  avec la fréquence de l'exsudat (50-70 %) qui n'était portée que là. Anti-perte : l'**halitose**,
+  absente du canonique, a été portée dans `resume`/Symptômes typiques avant réécriture.
+- theorie · « Diagnostic pharyngite streptococcique » **supprimée** : elle doublait la section de
+  queue `theorie-section-examens`, que la procédure fait primer. Anti-perte : la **PCR multiplex**,
+  qu'elle seule portait, a été portée dans la section de queue avant suppression ; l'ASLO y a été
+  fusionné.
+- presentation · Q1 « Quels examens », Q2 « Traitement », Q3 « Suivi » : les trois réponses en liste
+  deviennent des **réponses orales**. L'« astuce révision » 24-48-10 est conservée. Axes 1 et 2.
+- presentation · Version longue et SBAR : « antibiothérapie par **amoxicilline ou pénicilline V** »
+  → « **pénicilline V** pendant dix jours », propagation de l'alignement de niveau 1 (vérification
+  qu'aucun bloc ne porte plus l'ancienne formule).
+
+**Divergences consignées**
+
+- **page SSP · durée d'éviction des sports de contact après MNI** : la page se contredit —
+  PRISE EN CHARGE dit « **Éviter le sport de contact 4-6 semaines** », la carte ECOS dit
+  « interdire les sports de contact **3-4 semaines** ». Aucune ne tranche l'autre : niveau 3. La
+  valeur **3-4 semaines** de la grille, qui est aussi celle de la section notée `m5` et de la carte,
+  a été **portée inchangée** — rien n'a été inventé, l'écart de la page SSP est consigné ici.
+- **résumé antibiotique · durée de l'amoxicilline** : la page SSP admet « amoxicilline 50 mg/kg/j
+  × **6-10 jours** », la section notée et `theorie` disent 10 jours. `resume` a été aligné sur
+  10 jours ; l'option courte de 6 jours n'a pas été conservée, par cohérence avec la section notée.
+- **quatre paires de redondance restantes**, toutes acceptées : la gloses du mnémo CENTOR face à
+  `resume` (règle des mnémos), deux items de `resume` face à des arguments POUR, et
+  `resume`/« adénopathies cervicales antérieures douloureuses » face au **résultat de station**
+  d'`expert` (« bilatérales sensibles »), qui sont deux rôles distincts.
+
+**Signalements de sécurité** — **trois**, tous corrigés :
+1. **Amoxicilline en première intention dans le bloc canonique** d'une station où la mononucléose est
+   le différentiel principal et la rate palpable — la contre-indication existait ailleurs dans la
+   grille mais pas là où la prescription se révise.
+2. **Paracétamol 15 mg/kg × 4-6/j sans plafond** chez un patient de 19 ans (jusqu'à 90 mg/kg/j pour
+   4 g/j autorisés).
+3. **Azithromycine 12 mg/kg/j**, posologie pédiatrique dans une grille adulte, contredisant la
+   posologie adulte donnée deux sections plus haut dans le même bloc.
+
+### AMBOSS-34 — Perte de vision, homme de 66 ans, AVC ischémique sylvien gauche sur sténose carotidienne (page SSP : Amaurose & Baisse d'Acuité Visuelle)
+
+Redondance : **1 paire → 0** (`report_redundancy.py AMBOSS-34_`). **Trois blocs** — `resume`,
+`expert`, `theorie`. Aucun bloc `presentation` n'a été créé ; `blocks` reste
+`["resume", "expert", "theorie"]` dans `baseline.json`, vérifié par `check_invariants.py`.
+Les axes 5 et 6 ne s'appliquent pas ; la grille n'a pas non plus de « Check-list rapide ECOS », donc
+ni axe 3 ni axe 4. Axes 1, 2 et 7 traités.
+
+**Anomalie de structure à signaler.** La grille porte bien une fiche de présentation orale
+(Checklist mentale, Version longue, SBAR, mnémos, questions d'examinateur), mais sous la classe
+`annexe-item annexe-presentation` et non `presentation-patient`. `lib_amboss.BLOCKS` ne reconnaît que
+la seconde : **tout l'outillage est aveugle à ce bloc** — `report_redundancy.py` ne le compare à
+aucun autre (d'où l'unique paire détectée sur cette grille), `blocks_present()` ne le liste pas.
+Seul `check_no_loss.py`, qui travaille sur la zone entière, le voit. Le bloc n'a **pas** été renommé,
+conformément à la consigne. Le contenu a été relu manuellement.
+
+**Modifications**
+
+*Correction factuelle — latéralité (interne au bloc, confirmée par la section notée)*
+
+- expert · Rôles et interventions : « Champ visuel : **hémianopsie homonyme gauche** » → « déficit
+  **monoculaire** gauche, l'œil droit voit normalement — **il ne s'agit pas d'une hémianopsie
+  homonyme**, ce qui situe la lésion en avant du chiasma, dans le territoire de l'ophtalmique
+  gauche ». Une lésion sylvienne **gauche** ne peut pas donner d'hémianopsie **gauche** : elle
+  donnerait une hémianopsie droite. Surtout, l'énoncé détruisait le point d'enseignement central de
+  la station — distinguer une perte monoculaire (pré-chiasmatique, carotide homolatérale) d'une
+  hémianopsie (rétro-chiasmatique, hémisphère controlatéral).
+  source : section notée `m1` — « Sténose carotidienne possible avec thromboembolie →
+  **hypoperfusion artère ophtalmique G (perte vision œil G)** + division supérieure ACM G (faiblesse
+  main D, déficit sensitif, aphasie) » ; SSP — Cartes ECOS — « le patient dit « j'ai perdu la vue à
+  gauche » — faire préciser : un œil (carotide homolatérale) ou une moitié de champ (cortex occipital
+  controlatéral) ? »
+
+*Renforcement du canonique — niveau 1, drapeaux rouges absents*
+
+Le bloc `resume` était un résumé d'**AVC ischémique** et ne portait **aucun** examen
+ophtalmologique ni aucun différentiel oculaire, alors que le motif de consultation est une perte de
+vision et que `expert` distribue une acuité, un champ visuel et une fundoscopie. Recherche sur le
+fichier entier (après `strip_base64`) : **« Horton », « artérite », « cellules géantes », « artère
+temporale », « VS », « CRP », « OACR », « fond d'œil », « DPAR » — zéro occurrence** avant
+intervention.
+
+- resume · Examen clinique : **nouvelle sous-section « Ophtalmologique — devant toute perte de
+  vision »** — acuité visuelle de chaque œil, champ visuel par confrontation avec la règle de
+  localisation monoculaire / hémianopsie, réflexe photomoteur et **DPAR (Marcus-Gunn)**, **fond
+  d'œil** (macula « rouge cerise » de l'OACR, hémorragies en flammèches de l'OVCR, œdème papillaire),
+  **palpation des artères temporales**.
+  source : SSP — EXAMEN CLINIQUE, les six items ; SSP — Points Clés ECOS — « Mesurer l'acuité
+  visuelle et le champ visuel de chaque œil · Rechercher un DPAR · palper les artères temporales si
+  > 50 ans » ; SSP — Pièges à éviter n° 5 — « **Oublier le fond d'œil** »
+- resume · Diagnostic différentiel : ajout de l'**OACR** (« perte monoculaire brutale et indolore,
+  fenêtre < 90 min »), de l'**artérite de Horton** (« obligatoire à éliminer après 50 ans ») et du
+  **décollement de rétine**.
+  source : SSP — DD Top 5 et tableau « urgences par délai »
+- resume · Examens d'urgence : ajout de « **VS + CRP en urgence** : toute perte visuelle après
+  50 ans impose d'éliminer une artérite de Horton ».
+  source : SSP — Règle d'or — « Toute perte visuelle après **50 ans** impose d'éliminer une artérite
+  de Horton → **VS + CRP en urgence** » ; frontmatter `pieges_eliminatoires` n° 1
+- resume · Prise en charge initiale : ajout de « Si artérite de Horton suspectée : **corticothérapie
+  1 mg/kg/j d'emblée, AVANT la biopsie** d'artère temporale — la biopsie reste contributive une
+  quinzaine de jours, la cécité controlatérale s'installe en heures ».
+  source : SSP — PRISE EN CHARGE — « Artérite de Horton : **corticothérapie 1 mg/kg/j d'emblée,
+  AVANT la biopsie** (risque de cécité bilatérale) »
+- theorie · Amaurose fugace : deux items de rationnel ajoutés — la règle des 50 ans (le Horton est la
+  seule cause dont le traitement urgent préserve l'œil controlatéral) et la fenêtre d'environ
+  90 minutes de l'OACR.
+
+*Alignement entre blocs pédagogiques — `resume` canonique*
+
+- theorie · Rappels thérapeutiques : « Antiagrégation : **aspirine 325 mg** J1 » → « aspirine
+  **160-300 mg** dès J1 si pas de thrombolyse, différée de 24 h sinon ». Les deux blocs pédagogiques
+  se contredisaient sur la dose de charge ; le contrat fait de `resume` la source canonique, ce
+  n'est pas un cas de niveau 3.
+- theorie · Thrombolyse : « Surveillance : neuro q15min × 2h, PA < 180/105 » → les **deux** seuils
+  explicités (« PA < 185/110 **avant** la thrombolyse, puis < 180/105 pendant les 24 h qui
+  suivent »), `resume` ne portant que le premier et `theorie` que le second.
+
+*Dédoublonnage (axe 1)*
+
+- theorie · Examens complémentaires : « CT cérébral sans contraste : urgent, exclut hémorragie »,
+  seule paire de redondance de la grille avec `resume`, devient le **pourquoi** : « il ne montre pas
+  l'ischémie précoce, il sert uniquement à écarter l'hémorragie, seule contre-indication absolue à la
+  thrombolyse — c'est sa rapidité, non sa sensibilité, qui le place en premier ».
+
+*Réparations mineures*
+
+- presentation · Touches ludiques : les deux sous-sections « **VITE pour AVC** » et « **Score ABCD²
+  pour AIT** » étaient des **titres sans contenu**. Renseignées à partir de la grille elle-même
+  (`theorie` définit ABCD² et ses critères de haut risque) et du numéro d'urgence du corpus (144).
+- expert · Points clés : « **Crescendo TIA** » → « **AIT en crescendo** », le reste de la grille
+  employant partout « AIT ».
+
+**Divergences consignées**
+
+- **section notée `m5` · aspirine 325 mg** : la section notée prescrit « Aspirine: 325 mg PO/PR dans
+  les 48h ». Le dosage à 325 mg est une forme galénique **américaine, non commercialisée en
+  Suisse** ; la dose de charge y est de 160-300 mg PO (ou 250-500 mg IV). Le pédagogique a été
+  harmonisé sur `resume` (160-300 mg) ; la section notée est consignée, **non corrigée** (barème gelé).
+- **section notée `m1` · absence de Horton et d'OACR du différentiel** : la liste des diagnostics
+  différentiels d'une perte de vision chez un homme de 66 ans ne comporte ni artérite à cellules
+  géantes ni occlusion de l'artère centrale de la rétine, qui sont les deux premiers de la page SSP
+  pour ce motif et cet âge. Le pédagogique a été complété (niveau 1) ; la section notée est
+  consignée, **non corrigée**.
+- **section notée `m5` · seuils tronqués** : « Oxygène si SpO2 94% », « Thrombolyse IV (si 4.5h du
+  début) », « INR 1.7 », « Endartériectomie carotidienne si sténose 70% », « Thrombectomie mécanique
+  (si 6-24h) » — les signes de comparaison manquent, comme pour la lévothyroxine d'AMBOSS-28.
+  Consigné, **non corrigé**. Les valeurs sont correctes et non ambiguës dans `resume` et `theorie`.
+- **page SSP · fenêtre de l'OACR** : le frontmatter et une carte ECOS disent « < 6h », le corps de la
+  page (red flags, tableau des délais, règle d'or, prise en charge, points clés, mnémoniques) dit
+  « **< 90 min** ». La valeur du corps a été retenue, l'écart est consigné.
+- **expert · NIHSS 8 (vision 2, …)** : l'item « champ visuel » du NIHSS cote 2 pour une hémianopsie
+  complète ; une cécité monoculaire se cote habituellement 1. Le détail du score n'a **pas** été
+  retouché — le total 8 est cohérent avec la somme affichée et rien dans la station ne l'arbitre
+  (niveau 3). Consigné.
+- **expert · acuité en notation de Snellen impériale** (« < 20/200 », « 20/20 ») : notation
+  américaine en pieds, là où la Suisse emploie la notation décimale (0,1 · 1,0) ou 6/60 · 6/6.
+  Non corrigée : la notation 20/xx est employée telle quelle dans la source AMBOSS, elle reste
+  lisible, et `check_nomenclature.py` ne la vise pas. Consignée pour arbitrage éditorial.
+
+**Signalements de sécurité** — **deux**, tous deux corrigés côté pédagogique :
+1. **Drapeau rouge absent** : l'**artérite de Horton** n'était nommée nulle part dans une grille de
+   perte de vision chez un patient de **66 ans**, alors que la page SSP en fait sa règle d'or et son
+   piège éliminatoire n° 1 (« corticothérapie AVANT la biopsie, risque de cécité bilatérale »).
+   Même famille que le drapeau rouge d'AMBOSS-9. L'**OACR** et le **fond d'œil** étaient absents au
+   même titre.
+2. **Latéralité fausse** dans le bloc que l'examinateur lit à voix haute (« hémianopsie homonyme
+   gauche » pour une lésion sylvienne gauche), qui inversait le raisonnement de localisation.
