@@ -650,17 +650,84 @@ Redondance : 18 paires → 2 (`report_redundancy.py AMBOSS-13_`).
   traumatique ; la section notée de cette grille ne comporte **aucun critère de prise en charge**.
   **Niveau 3** : laissé inchangé, rien inventé. C'est l'origine de la paire de redondance résiduelle
   n° 2 ci-dessous. À arbitrer par l'utilisateur.
+  **Statut révisé (tâche 16b) : corrigé — voir « Correction post-vérification » ci-dessous.**
 - section notée · absence de critère de prise en charge : la grille n'évalue que l'anamnèse, l'examen,
   les hypothèses, les examens et la communication. Aucun arbitrage de niveau 2 n'était donc possible
   sur cette grille : tout ce que la page SSP ne tranche pas est resté en niveau 3.
+- section notée · critère `m5` (« Conseil et soutien ») · **repéré en tâche 16b** : le bloc
+  `therapy-section` rattaché à `m5` est titré « Pneumothorax > 2cm ou > 15% volume pulmonaire » et
+  n'énumère sous ce titre que « Patient symptomatique: (dyspnée importante) ». Sur une station de
+  pneumothorax **traumatique**, ce titre applique au cas le seuil qui ne vaut que pour le spontané —
+  la même erreur que celle corrigée dans le pédagogique. **Barème gelé : non corrigé.** Ce n'est ni
+  un `.criteria-text` ni un sous-item coché, aucune case ni aucun point n'en dépend ; la correction
+  serait purement textuelle, mais elle touche l'intérieur d'une `criteria-row`. **Point d'arbitrage
+  supplémentaire à porter à l'utilisateur.** Nuance : le bloc **n'écrit jamais le mot « drainage »** —
+  ses titres sont la liste d'indications de drainage telle que la source AMBOSS la présente, sans
+  nommer le geste. La contradiction y est donc implicite, plus faible que celle corrigée dans le
+  pédagogique. Le même bloc est par ailleurs structurellement incohérent (des mesures
+  d'accompagnement — analgésie, repos, radiographie de contrôle — sont énumérées sous le titre
+  « Pneumothorax bilatéral ou sous tension ») : défaut préexistant, même décision éditoriale.
 
-**Paires de redondance restantes (2)**
+**Correction post-vérification (tâche 16b) — la contradiction du seuil de drainage**
+
+*Comment elle a été trouvée.* **Pas par la passe de dédoublonnage**, qui l'avait rangée en divergence
+de niveau 3 et laissée en l'état, mais par la **vérification finale des 40 grilles**
+(`docs/superpowers/rapport-amboss-2026-08.md`, § 3.3), qui l'a isolée comme la **seule** des 66 paires
+de redondance résiduelles du corpus qu'aucun changement de format ne justifiait. La redondance
+résiduelle a donc servi de détecteur de contradiction : deux blocs qui se ressemblent assez pour être
+appariés mais divergent sur un chiffre ne sont pas un doublon, ce sont deux énoncés incompatibles. Le
+classement initial en niveau 3 était l'erreur de méthode : la hiérarchie à trois niveaux n'arbitre
+qu'entre **sources** divergentes, or `theorie` **énonçait déjà la règle** que `expert` et
+`presentation` violaient. Il n'y avait rien à arbitrer, seulement un fait faux à corriger
+(PROCEDURE.md § 4, « La hiérarchie n'arbitre qu'entre sources divergentes »).
+
+*La contradiction.* La grille portait côte à côte la règle et sa violation : `theorie`/Prise en charge
+du pneumothorax — « le seuil des 2 cm et l'abstention **ne valent que pour le spontané** » — contre
+`expert`/Points clés et `presentation` (Checklist mentale, Version longue, SBAR, Q2 « Traitement »),
+qui appliquaient tous ce seuil au **traumatique**. Risque : **sous-drainage d'un pneumothorax
+traumatique** — chez ce patient, 30 % de volume au CT, la brèche reste alimentée et peut passer sous
+tension.
+
+*Autorité retenue.* `resume`, source canonique du contrat de blocs, qui disait juste :
+« Pneumothorax traumatique simple : drainage thoracique en urgence (Bülau, 4e-5e EIC, ligne axillaire
+antérieure) » et « Sinon : drainage thoracique systématique ». `expert` et `presentation` y ont été
+alignés ; `resume` et `theorie` n'ont pas bougé.
+
+- expert · Points clés : « Pneumothorax traumatique = indication drainage si > 2cm ou symptomatique »
+  → « Pneumothorax traumatique = drainage thoracique d'emblée, sans seuil de taille ». Reste une
+  consigne courte et actionnable pour l'examinateur (rôle `annexe-expert` : faire tourner la station),
+  pas un paragraphe explicatif.
+- presentation · Checklist mentale : « … drainage thoracique si >2 cm ou symptomatique … » →
+  « … drainage thoracique d'emblée … ». La trame de présentation garde son registre.
+- presentation · Version longue : « un drainage thoracique en cas de pneumothorax >2 cm ou
+  symptomatique » → « un drainage thoracique d'emblée ».
+- presentation · Version express (SBAR) : « drainage thoracique si symptomatique » → « drainage
+  thoracique d'emblée ». Occurrence non listée dans la divergence d'origine : la formulation y était
+  amputée du seuil mais gardait la condition, donc le même risque de sous-drainage.
+- presentation · Q2 « Traitement » : « Drainage thoracique si >2 cm ou symptomatique » → « Drainage
+  thoracique d'emblée (drain de Bülau) » — sous-ensemble strict de `resume` (axe 2).
+
+*Ce qui n'a pas été touché, et pourquoi.* Le **pourquoi** — la distinction traumatique / spontané —
+reste dans `theorie` seul : `expert` et `presentation` portent la conduite, pas le raisonnement (règle
+du format, § 3). Les deux autres occurrences du seuil dans la zone pédagogique sont légitimes et
+conservées : `theorie`/Pneumothorax « Taille : < 2cm = petit, > 2cm = grand (ou > 15% volume) », qui
+est une **définition de taille** et non une indication de drainage, et `theorie`/Prise en charge, qui
+énonce la règle elle-même. Recherche faite sur le HTML après `strip_base64`, jamais par `grep` brut.
+
+*Vérifications.* `check_invariants.py` OK (40 grilles) · `check_nomenclature.py` OK ·
+`report_redundancy.py AMBOSS-13_` 2 → **1** paire, la paire liée au drainage a disparu ·
+`check_no_loss.py 26d8412 AMBOSS-13_` signale **1 item disparu**, « pneumothorax traumatique
+indication drainage si 2cm ou symptomatique » : c'est la **suppression volontaire** du seuil erroné,
+et non une perte. `git diff --numstat` : 5 insertions / 5 suppressions, cinq hunks tous dans la zone
+pédagogique, aucun `.criteria-text` touché, barème inchangé.
+
+**Paires de redondance restantes (1)**
 
 - « Hypersonorité à la percussion » (`resume`/Signes respiratoires) ↔ idem (`presentation`/Q1) : liste
   de signes → argument POUR d'une argumentation pour/contre par hypothèse — changement de format.
-- « Sinon : drainage thoracique systématique » (`resume`/PEC en 3 points) ↔ « Drainage thoracique si
-  > 2 cm ou symptomatique » (`presentation`/Q2) : ce n'est pas une redondance mais la **divergence de
-  seuil consignée ci-dessus**, laissée en l'état faute d'arbitre de niveau 1 ou 2.
+- *(supprimée en tâche 16b)* « Sinon : drainage thoracique systématique » (`resume`/PEC en 3 points) ↔
+  « Drainage thoracique si > 2 cm ou symptomatique » (`presentation`/Q2) : ce n'était pas une
+  redondance mais la **contradiction de seuil** ci-dessus. Elle disparaît avec sa correction.
 
 ### AMBOSS-14 — Douleur thoracique, homme 45 ans, SCA / angor instable sur amphétamines (page SSP : Douleur Thoracique)
 
