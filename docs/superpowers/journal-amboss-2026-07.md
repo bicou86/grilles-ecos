@@ -5126,3 +5126,203 @@ quoi `check_no_loss.py` signale à tort la disparition de l'item composite (limi
 - `git diff --numstat` : 16 fichiers, **32 insertions / 493 suppressions**. Aucun
   `.criteria-text` touché, aucun crochet de réponse patient touché, aucun sous-item noté
   ajouté ni retiré, aucun item ICE touché.
+
+### Tâche c3b — dédoublonnage du bloc `annexe-dd`, grilles AMBOSS-21 à 40
+
+Même règle qu'en c3a : `annexe-dd` est **canonique** pour le raisonnement différentiel et
+garde l'argumentaire complet ; `presentation`/« 1. Arguments pour et contre chaque
+hypothèse » cède et ne conserve que les deux ou trois arguments décisifs. Tout argument
+absent d'`annexe-dd` y a été **porté avant** d'être retiré ailleurs (`PROCEDURE.md` § 3),
+et la convention d'insertion de c3a est reprise : puce ajoutée **avant** la dernière du
+`<li>`, celle à laquelle l'examen discriminant `→ …` reste collé.
+
+Seules **9** des 20 grilles portent un bloc `presentation` (22, 28, 30, 31, 34, 35, 37, 38,
+39) — l'axe arbitré par le mandat n'existe pas sur les onze autres.
+
+**Modifications**
+
+*AMBOSS-22 — Dysphagie, femme 60 ans*
+- annexe-dd inchangé : tous les items retirés de `presentation` y figuraient déjà.
+- presentation : Q1 (cancer œsophage) 6 POUR → 3 ; Q2 (achalasie) 3 POUR → 1, 2 CONTRE
+  → 1 ; Q3 (sténose peptique/anneau) 3 CONTRE → 1. 16 items → 8.
+
+*AMBOSS-25 — Douleur au genou, femme 47 ans*
+- annexe-dd · Élongation du gastrocnémien — **correction factuelle** : « Habituellement
+  lors saut · Pas chute ; ecchymose absente » → « Mécanisme habituel : impulsion ou saut,
+  pas une chute · Ecchymose absente ». La patiente a bel et bien chuté (chute dans les
+  escaliers au travail) ; « Pas chute » énonçait le contraire du fait et contredisait
+  « Douleur mollet après chute », deux puces plus haut dans le même `<li>`. Erreur interne,
+  corrigée directement (`PROCEDURE.md` § 4, dernier paragraphe).
+- Aucune autre modification : cette grille n'a pas de bloc `presentation`.
+
+*AMBOSS-28 — Prise de poids, homme 45 ans*
+- annexe-dd · Apnée obstructive du sommeil : ajout de « Pas de ronflement rapporté » et
+  « Pas de pauses respiratoires constatées » aux Arguments CONTRE. Ce sont les **deux
+  signes cardinaux** de l'AOS, et leur absence chez ce patient ne vivait que dans
+  `presentation` ; le bloc n'opposait à l'AOS que la prise de poids et l'intolérance au
+  froid, qui plaident pour l'hypothyroïdie plutôt que contre l'apnée.
+- presentation : Q1 (TDM) 6 POUR → 3 ; Q2 (hypothyroïdie) 5 POUR → 3 ; Q3 (apnée du
+  sommeil) supprimée après portage. 18 items → 8.
+- La formulation redondante de la donnée pivot du cas (prise de poids malgré perte
+  d'appétit) figurait **deux fois** dans `presentation` — en POUR de l'hypothyroïdie et en
+  CONTRE du TDM. La seconde seule est conservée.
+
+*AMBOSS-30 — Mal de gorge, homme 19 ans*
+- annexe-dd inchangé.
+- presentation : Q1 (pharyngite streptococcique) 6 POUR → 3, réduits aux critères de
+  Centor présents (fièvre, adénopathies sensibles, absence de toux) ; Q2 (MNI) 4 POUR → 1
+  et 2 CONTRE → 1 ; Q3 (pharyngite virale) déjà minimale, inchangée. 15 items → 8.
+
+*AMBOSS-31 — Toux, homme 58 ans*
+- annexe-dd inchangé.
+- presentation · Q2 (tuberculose) — **suppression d'un énoncé fautif sans portage** :
+  l'argument CONTRE « Retour depuis 6 mois, pas de PPD récent positif » réduit à « Pas de
+  PPD récent positif ». Un retour d'Inde six mois plus tôt n'est pas un argument contre une
+  tuberculose — `annexe-dd` le classe correctement en POUR (« Retour récent (6 mois)
+  d'Inde »). La règle anti-perte protège l'information, pas l'erreur.
+- presentation : Q1 (cancer du poumon) 6 POUR → 3 ; Q2 3 POUR → 1 ; Q3 (BPCO exacerbée)
+  3 POUR → 2 et 2 CONTRE → 1. 16 items → 9.
+
+*AMBOSS-34 — Perte de vision, homme 66 ans*
+- annexe-dd inchangé.
+- presentation : Q AVC 3 POUR → 1 ; Q néoplasie 3 POUR → 1 ; Q migraine 3 CONTRE → 1
+  (« Déficit prolongé chez un patient de 66 ans », fusion des trois). 14 items → 8.
+- **Signalement** : le miroir de cette grille échappe au compteur pour deux raisons
+  cumulées — son balisage est propre (`presentation-answer` / `answer-section` au lieu de
+  `presentation-reponse structured` / `reponse-pour`), et ses items sont trop courts pour
+  le seuil de 18 caractères de `list_items()`. Réduction faite **sur le fond**, sans effet
+  mesurable : la grille affichait 0 paire avant, elle en affiche 0 après.
+
+*AMBOSS-35 — Brûlures d'estomac, femme 54 ans*
+- annexe-dd inchangé.
+- presentation : Q1 (angor/SCA) 4 POUR → 2 ; Q2 (RGO) 2 POUR → 1 et 3 CONTRE → 1 ;
+  Q3 (trouble anxieux) 2 POUR → 1 et 2 CONTRE → 1. 14 items → 7.
+- La réduction lève au passage une contradiction interne à `presentation` : Q2 portait
+  « Amélioration sous IPP » en POUR **et** « Non améliorée par traitement actuel » en
+  CONTRE. Les deux faits survivent ailleurs (`annexe-dd`, `resume`, `theorie`).
+
+*AMBOSS-36 — Fatigue, homme 54 ans*
+- annexe-dd · Hépatite alcoolique — **correction factuelle** : « Ascite ou signes cutanés
+  hépatiques » → « Pas d'ascite ni de signes cutanés hépatiques ». Privé de sa négation,
+  l'énoncé plaidait POUR sous un en-tête CONTRE. `expert` confirme le fait : « pas d'ascite
+  visible », « Matité déclive : négative (pas d'ascite) », « Angiomes stellaires : absents »,
+  « Érythème palmaire : absent » ; le scénario aussi (« Pas d'ascite clinique · Pas de
+  signes cutanés hépatiques »). Même défaut qu'AMBOSS-9 en c3a.
+- Aucune autre modification : cette grille n'a pas de bloc `presentation`.
+
+*AMBOSS-37 — Changements cutanés, nouveau-née 4 jours*
+- annexe-dd · Incompatibilité ABO : ajout de « Pas d'anémie ni d'hémolyse cliniquement
+  apparente » aux Arguments CONTRE.
+- annexe-dd · Sepsis néonatal : « Mais pas de fièvre ni signes infectieux » → « Mais pas de
+  fièvre, pas de léthargie ni de vomissements, état général conservé ». La léthargie et les
+  vomissements — les deux signes qui feraient basculer un ictère néonatal vers l'urgence —
+  n'étaient nommés que dans `presentation`.
+- presentation : Q1 (ictère d'allaitement) 5 POUR → 3 ; Q2 (ictère physiologique) 2 POUR
+  → 1 ; Q3 (incompatibilité ABO) 2 POUR → 1 et 2 CONTRE → 1 ; Q4 (sepsis) 4 CONTRE → 2 ;
+  Q5 (atrésie biliaire) déjà minimale, inchangée. 19 items → 12.
+
+*AMBOSS-38 — Douleur à la cheville, femme 28 ans*
+- annexe-dd · Fracture de cheville — **correction factuelle** : « Œdème ou douleur intense
+  au repos » → « Pas d'œdème majeur ni de douleur intense au repos ». Même défaut de
+  négation manquante qu'en AMBOSS-36. `expert` donne « Œdème : minimal » et `annexe-dd`
+  lui-même « Douleur relativement légère au repos (2/10) ».
+- presentation inchangé : sa section Q/R est déjà **entièrement en registre parlé**
+  (`presentation-reponse text`), sans sous-section « Arguments pour et contre ». C'est le
+  format cible du contrat — rien à réduire.
+
+*AMBOSS-39 — Douleur à l'épaule, homme 52 ans*
+- annexe-dd · Rupture de la coiffe des rotateurs : création d'une section « Arguments
+  CONTRE » qui n'existait pas pour l'hypothèse retenue — « Pas encore d'amyotrophie
+  visible (évolution récente) » et « Pas de traumatisme violent ».
+- annexe-dd · Capsulite adhésive : ajout de « Mobilité passive conservée ». C'est **le**
+  signe qui écarte une épaule gelée (où l'amplitude passive est restreinte autant que
+  l'active) ; il ne vivait que dans `presentation`.
+- presentation : Q1 (rupture de coiffe) 5 POUR → 2 et 2 CONTRE → 1 ; Q2 (conflit
+  sous-acromial) 2 POUR → 1 ; Q3 (capsulite) 2 POUR → 1 et 2 CONTRE → 1. 14 items → 7.
+- Seule grille du lot à tomber à **0 paire**.
+
+**Grilles relues sans modification** — AMBOSS-21, 23, 24, 26, 27, 29, 32, 33, 40. Bloc
+`annexe-dd` lu intégralement sur chacune : conforme au contrat de rôle (raisonnement
+différentiel seul, ni check-list actionnable, ni conduite de station, ni formulation
+orale). Aucune ne porte de bloc `presentation`, donc pas de miroir à réduire.
+
+**Divergences consignées (sans modification)**
+
+- AMBOSS-35 · **statut du traitement par oméprazole, divergence interne à la section
+  notée**. Le critère noté `a6` fait répondre à la patiente « Je prends de
+  l'hydrochlorothiazide et de l'oméprazole », alors que le scénario (« Aggravation depuis
+  3 semaines (arrêt oméprazole) ») et `presentation` (« oméprazole arrêté ») disent qu'elle
+  l'a interrompu. `annexe-dd` porte les deux lectures : « Aggravation depuis arrêt
+  oméprazole » en POUR du RGO, « Nouveaux symptômes d'effort malgré traitement IPP » en
+  POUR de l'angor. Une divergence repérée **dans** une section notée se consigne, elle ne
+  se corrige pas (`PROCEDURE.md` § 4) — et la réponse de la patiente reste plausible d'un
+  patient qui « prend » un traitement qu'il a cessé, ce qui peut être voulu par la station.
+  **Non corrigé.**
+- AMBOSS-28 · `annexe-dd` ↔ `expert` : « Facteur déclenchant clair : divorce récent »,
+  doublon **au mot près** (ratio 1.00). L'énoncé est un argument clinique, donc du ressort
+  d'`annexe-dd` ; `expert` le porte dans sa liste de points clés. Le mandat n'arbitre que
+  l'axe `annexe-dd` ↔ `presentation` et n'autorise à toucher `annexe-dd` que pour porter ou
+  corriger : **non résolu**, même situation que la préoccupation n° 2 de c3a.
+- AMBOSS-21, 23, 26, 33 · paires `annexe-dd` ↔ `theorie` : `theorie` porte le fait général
+  (« Âge : pic 5-12 ans mais possible tout âge », « atteinte symétrique bilatérale
+  progressive », « homme:femme 3:1, pic 20-40 ans », « nausées/vomissements dans 70 % des
+  cas ») et `annexe-dd` son application au patient. Rôles distincts, pas une redite.
+- AMBOSS-25 et 40 · paires `annexe-dd` ↔ `theorie` qui sont des **faux positifs de
+  ressemblance** : les deux énoncés disent le contraire l'un de l'autre — « Immobilisation
+  2 jours (alitement) », facteur de risque subi, contre « mobilisation précoce encouragée,
+  pas d'alitement », principe de traitement ; « Symptômes cochléaires présents » contre
+  « absence de symptômes cochléaires = clé » (de la névrite vestibulaire).
+- AMBOSS-22, 30, 31 · paires `annexe-dd` ↔ `expert` : `expert` rend un résultat d'examen
+  constaté en station (adénopathies cervicales antérieures bilatérales sensibles,
+  hippocratisme) ou une chaîne de risque (RGO 18 ans → Barrett → adénocarcinome),
+  `annexe-dd` l'argument du cas. Hors de l'axe arbitré.
+- AMBOSS-22, 28, 31 · paires `annexe-dd` ↔ `resume` : `resume` porte le mnémo SIGECAPS ou
+  la ligne de synthèse, dont la clé doit rester intacte. Hors de l'axe arbitré.
+- AMBOSS-24 et 32 · **contenus de protection** (violences domestiques, patiente mineure) :
+  délibérément enrichis et jamais dédupliqués. Non touchés, par consigne.
+- AMBOSS-33 · lignes protégées non touchées : « PL (si faite) : GR 50 000 » (compte
+  d'érythrocytes du LCR, jamais rendu en G/L) et les clés anglaises `BMP :` / `CBC :` de la
+  légende de schéma, imprimées dans l'image.
+- AMBOSS-30 · **duplication invisible au compteur** : « Pas d'exsudat amygdalien visible
+  (mais pas obligatoire) » est présent au mot près dans `annexe-dd` et `presentation`, mais
+  c'est la **dernière puce** de son `<li>` et il se trouve donc composité avec l'examen
+  `→ Test rapide streptocoque, culture de gorge`, ce qui abaisse le ratio sous le seuil. Il
+  est conservé des deux côtés à dessein : c'est le quatrième critère de Centor, absent, que
+  le candidat doit savoir énoncer.
+- AMBOSS-35 · la paire résiduelle « Symptômes associés → dyspnée, palpitations, sueurs,
+  nausées, vertiges » oppose `annexe-dd` à la **Checklist mentale**, pas à la sous-section
+  Q/R. La checklist énumère de la même façon dans les autres grilles (AMBOSS-22 par
+  exemple) : c'est un point d'axe 5, laissé intact pour ne pas désaligner une seule grille.
+- AMBOSS-32 · `annexe-dd`, VPH : « IST la plus fréquente **aux États-Unis** » — ancrage
+  épidémiologique non suisse. Ce n'est ni une redondance ni une erreur factuelle : hors des
+  deux motifs qui autorisent à toucher `annexe-dd`, et hors de la passe de nomenclature
+  (aucun terme banni). **Signalé pour arbitrage séparé.**
+
+**Vérifications (tâche c3b)**
+
+- `check_invariants.py` → `OK — 40 grilles, tous les invariants preserves` (code 0).
+  `radioCount` inchangé : le `<input type="radio">` du `criteria-row` m1 qui héberge le
+  bloc n'a pas été touché. `maxScores`, `scoreSpans`, `criteriaCount`, `detailCount`,
+  `checkboxCount` inchangés — **barème gelé**.
+- `check_nomenclature.py` → `OK — aucun terme non suisse detecte` (code 0).
+- Bornes du bloc revérifiées après édition sur les 40 grilles : `<div>` équilibrés,
+  fermeture tombant exactement sur `<div class="criteria-row" id="criteria-m2">`, aucun
+  `criteria-row` ni aucun `<input type="radio">` capturé — **40/40**.
+- `report_redundancy.py` par grille, avant → après (grilles 21 à 40) : **63 → 47 paires**
+  (−25 %), dont paires impliquant `annexe-dd` : **47 → 36** (−23 %). Sous-section
+  « Arguments pour et contre » de `presentation` : **126 → 67 items** (−47 %).
+  Corpus entier : 163 → 147.
+- `check_no_loss.py ecfa5f1` : **27 items signalés sur 11 grilles**, tous relus un à un —
+  aucune perte réelle. Répartition : **22** suppressions dont le contenu est porté à
+  l'identique ou en plus précis par `annexe-dd`, `resume`, `theorie`, `expert` ou le
+  scénario ; **1** correction factuelle reformulée (AMBOSS-25, « habituellement lors
+  saut ») ; **1** item porté dans `annexe-dd` sous une forme plus complète (AMBOSS-37,
+  « pas de vomissements ») ; **2** items composites scindés ou enrichis (AMBOSS-37 sepsis,
+  AMBOSS-39 rupture de coiffe — l'examen `→ …` se rattache à la nouvelle dernière puce,
+  les deux moitiés subsistent) ; **1** énoncé fautif supprimé sans portage (AMBOSS-31, le
+  délai de retour d'Inde donné comme argument contre une tuberculose).
+  Les corrections d'AMBOSS-36 et 38 ne produisent **aucun** signalement : la négation
+  ajoutée laisse le ratio de ressemblance au-dessus du seuil.
+- `git diff --numstat` : 11 fichiers, **10 insertions / 87 suppressions**. Aucun
+  `.criteria-text` touché, aucun crochet de réponse patient touché, aucun sous-item noté
+  ajouté ni retiré, aucun item ICE touché.
