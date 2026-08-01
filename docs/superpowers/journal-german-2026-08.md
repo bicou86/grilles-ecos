@@ -963,3 +963,191 @@ dans le HTML après `strip_base64`, jamais par `grep`. Le contrôle de couvertur
 préalable — résidu des `<li>` après retrait du `<strong>`, du `<div>` d'examen et
 du `<div>` d'arguments — rend **zéro caractère** sur les 20 grilles : aucun
 contenu du bloc n'a échappé à la relecture.
+
+---
+
+### Lot g5c — Dernier lot des grilles à `annexe-dd` seul (German-61 à 88)
+
+Départ `2e21433`. **19 grilles** : German-61 à 88, moins les **3 grilles riches**
+déjà traitées en g4 (69, 72, 88 — un `resume` **et** une `presentation`), moins
+**German-63** qui n'a pas d'`annexe-dd` (5 `therapy-section` seulement, niveau 2 —
+même motif que German-1, 52 et 54), moins les **5 grilles sans aucun bloc**
+(70, 73, 84, 86, 87 : `blocks_present()` rend une liste vide).
+
+> **61, 62, 64, 65, 66, 67, 68, 71, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 85**
+
+German-78 porte **deux** segments `annexe-dd` (DD cardiaques sous `m2`, DD
+pulmonaires sous `m3`) : 20 segments pour 19 grilles. Les 20 hébergent bien un
+critère « Diagnostics différentiels » — contrat de rôle respecté structurellement,
+vérifié un à un.
+
+**5 grilles modifiées** : 71, 75, 77, 79, 85. Les 14 autres ont été balayées sur
+les quatre points sans appeler de modification.
+
+**Modifications**
+
+- `annexe-dd` · **German-71**, Infection urinaire : « → FSC, CRP, hémocultures si
+  fièvre » → « → **Bandelette urinaire, ECBU** »
+  source : niveau 1, `SSP — Pollakiurie` — « **Bandelette urinaire + ECBU** en
+  1ère intention », et point clé n° 2 « bandelette urinaire + bladder scan = duo
+  clé immédiat ». **Troisième et dernier exemplaire** de la chaîne fausse déjà
+  retirée de German-40 et German-51 par g5b ; la recherche corpus n'en laisse
+  aucun autre.
+- `annexe-dd` · **German-71**, Diabète insipide : « → Glycémie à jeun, HbA1c » →
+  « → **Osmolarité plasmatique et urinaire, test de restriction hydrique** »
+  source : niveau 1, `SSP — Polydipsie & Polyurie` — 1re intention
+  « Osmolarité plasmatique et urinaire, densité urinaire » ; 2e intention « Test
+  de restriction hydrique … urines restant diluées → diabète insipide ». La
+  chaîne retirée est **strictement identique** à celle de l'entrée « Diabète
+  sucré » **quatre lignes plus haut dans la même grille**, et la glycémie à jeun
+  est par définition l'examen qui *exclut* un diabète insipide.
+- `annexe-dd` · **German-75**, Néoplasie pulmonaire : « → Imagerie (CT/IRM),
+  biopsie, **marqueurs tumoraux** » → « → **Radiographie thoracique, CT
+  thoracique, bronchoscopie avec biopsies** »
+  source : niveau 1, `SSP — Toux Chronique` — « **CT thoracique ± bronchoscopie**
+  si hémoptysie, anomalie radiologique, suspicion de cancer » et « Rx thorax en
+  urgence, et **CT thoracique même si la radio est normale** ». La page ne
+  contient **0 occurrence** de « marqueur ». L'IRM n'explore pas le parenchyme
+  pulmonaire.
+- `annexe-dd` · **German-77**, Abcès pulmonaire : « → US ou CT selon
+  localisation, ponction » → « → **Radiographie thoracique (niveau
+  hydro-aérique), CT thoracique** »
+  erreur factuelle interne : l'ultrason ne traverse pas le poumon aéré et ne peut
+  pas montrer un abcès intraparenchymateux ; « selon localisation » et
+  « ponction » sont le protocole d'un abcès des parties molles ou abdominal.
+  Niveau 2 concordant : `m3` cote « Radiographie thoracique ».
+- `annexe-dd` · **German-79**, Crise d'asthme : « → Spirométrie avec test de
+  réversibilité, peak flow » → **ligne retirée**, entrée réduite au nom du
+  diagnostic seul
+  la station est une **consultation téléphonique pédiatrique de 21h00** pour une
+  fillette de 5 ans, diagnostic principal « faux-croup (laryngite striduleuse) ».
+  La spirométrie avec test de réversibilité est le test de *diagnostic de
+  l'asthme chronique* — la chaîne est celle de German-78 « Asthme » et de
+  German-36 « Asthme bronchique » —, elle n'est ni faisable au téléphone, ni
+  interprétable en crise, ni praticable en routine à 5 ans. Niveau 2 : la section
+  notée de German-79 ne cote **aucun** examen complémentaire (ses critères sont
+  urgence, conseils, signes d'alarme, rappel à 1 h, vérification de la
+  compréhension). Même geste que la suppression sèche de German-28 en g5a.
+- `annexe-dd` · **German-85** (4 entrées) : réparation du défaut de structure —
+  la flèche « → examen » quitte l'élément qui l'avait avalée et rejoint son
+  propre `<div>` (détail au § défaut de structure ci-dessous). Une **erreur de
+  fond** au passage : « Diabète sucré décompensé » portait **deux** lignes
+  d'examens concurrentes, « → Glycémie, glycosurie » prisonnière du nom et
+  « → Glycémie à jeun, HbA1c » dans le `<div>`. Fusionnées en « → **Glycémie,
+  glycosurie et cétonurie, HbA1c** » : le « à jeun » est retiré (on ne met pas à
+  jeun un patient en décompensation, et c'est la chaîne du *dépistage* du diabète
+  chronique, identique à German-6, 45, 71 et 81), la cétonurie est ajoutée sur
+  niveau 1 — `SSP — Pollakiurie` : « Diabète sucré décompensé (révélation) ·
+  **Glycémie capillaire + veineuse + HbA1c + cétonurie** », et
+  `SSP — Polydipsie & Polyurie` : « Glycémie veineuse ± HbA1c · **glycosurie /
+  cétonurie** ». La coproculture de la gastro-entérite est conservée telle quelle,
+  niveau 1 concordant (`SSP — Diarrhée` : « Coproculture standard si fièvre,
+  sang, voyage… »).
+
+**Divergences consignées**
+
+- `annexe-dd` · **German-75** : la station est une **tuberculose pulmonaire**
+  (infirmière de 34 ans, toux de 6 semaines) et son bloc de différentiels ne
+  porte **pas** la tuberculose, alors que la section notée lui consacre `m1`,
+  `m3`, `m4`, `m6` et `m7`. Enrichissement possible sans invention, **non fait** —
+  hors des quatre points de la consigne, comme German-6 en g5a.
+- `annexe-dd` · **German-61** : « Syncope vasovagale » et « Syncope réflexe » sont
+  deux noms du même tableau, dans la même liste. Doublon d'intitulé, pas erreur
+  factuelle → niveau 3, non corrigé (même arbitrage que German-33 en g5b).
+- `annexe-dd` · **German-80** : « [Syndrome parkinsonien iatrogène] → Examen
+  neurologique, DaTSCAN si doute » — l'anamnèse médicamenteuse serait le premier
+  discriminant, mais le DaTSCAN *est* l'examen qui départage un parkinsonisme
+  iatrogène (normal) d'une maladie de Parkinson (anormal), et `m3` cote
+  « DaTSCAN (si diagnostic incertain) ». Formulation défendable → niveau 3.
+- **Boilerplate « marqueurs tumoraux » — la généralisation de g5b est trop
+  large.** Après le retrait de German-75, il reste **8 occurrences** dans le
+  corpus (German-12, 13, 18, 21 ×2, 29, 34 ×2), toutes hors de ce lot. Elles ne
+  sont **pas** toutes fausses : le CA-125 d'une masse ovarienne (German-18,
+  « US pelvienne, marqueurs tumoraux si suspecte ») et l'ACE d'un cancer
+  colorectal (German-12, 13) sont d'usage courant. Le boilerplate est faux quand
+  l'organe n'a pas de marqueur utile — poumon, cerveau, tissus mous, œsophage —
+  et il faut le juger **organe par organe**, pas le retirer en masse. À arbitrer
+  sur German-21, 29 et 34, hors périmètre ici.
+- « **US si doute** » : 2 occurrences résiduelles dans le corpus (German-15,
+  German-21), **aucune** dans ce lot.
+
+**Le défaut de structure — 8 flèches hors emplacement relevées, 4 réparées, 4
+écartées comme légitimes.** Le motif prescrit — *tout `→` situé hors du `<div>`
+d'examen canonique* — rend 8 occurrences sur 3 grilles. Mais **il a ici une classe
+de faux positifs que les deux lots précédents n'avaient pas rencontrée** :
+
+| Grille | Occ. brutes | Vrai défaut | Nature des autres |
+|---|---:|---:|---|
+| German-65 | 3 | 0 | catégorie « Signes d'alarme à rechercher » : `signe → diagnostic` |
+| German-66 | 1 | 0 | catégorie « Signes d'alerte à exclure » : `signe → diagnostic` |
+| German-85 | 4 | **4** | `diagnostic → examen` (3 en variante B, 1 en variante A) |
+| **Total** | **8** | **4** | |
+
+Les 4 écartées sont « Écoulement fétide → cholestéatome », « Écoulement clair →
+fistule LCR », « Sang pur → traumatisme » (German-65) et « Syncope vraie →
+arythmie grave » (German-66). Ce ne sont pas des examens avalés : la flèche y
+signifie « ce signe oriente vers ce diagnostic », dans des catégories qui listent
+des **signes** et non des hypothèses. German-65 est de surcroît **aligné mot pour
+mot** sur sa section notée, dont `m2` énumère « Otite moyenne chronique avec
+cholestéatome (**écoulement fétide**) » et « Traumatisme avec fracture du rocher
+(**sang**, LCR) ». German-66 porte, dans la même entrée, un `<div>` d'examen
+correct (« → ECG, Holter ECG ») que `m3` confirme. Rien à réparer dans ces deux
+grilles.
+
+**La propriété « tout ou rien » de g5b ne tient pas sur ce lot** : German-85 est
+atteinte sur **4 de ses 5** entrées, pas sur la totalité. Le contrôle de gabarit
+préalable reste valable — les blocs du lot ne portent que deux styles de `<div>`,
+`rgb(52, 105, 46)` (examen, 59 occurrences) et `rgb(80, 90, 110)` (arguments, 39)
+— et après réparation la recherche rend **4**, exactement les 4 flèches
+sémantiques ci-dessus.
+
+**Contrat de rôle — aucune violation.** Balayage des 20 segments sur 29 marqueurs
+de check-list actionnable, de conduite de station et de registre oral
+(« expliquer », « rassurer », « prescrire », « orienter vers », « hospitaliser »,
+« posologie », « organiser le suivi »…) : **0 occurrence**. Troisième
+confirmation consécutive. Aucun remplissage rétabli ; les entrées réduites au nom
+du diagnostic seul (German-62 en totalité, 61, 74, 80, 82, 83…) sont restées
+telles quelles.
+
+**Duplication avec la section notée — aucun cas**, troisième confirmation.
+Comparaison systématique des items d'`annexe-dd` aux `criteria-text`,
+`detail-text`, `redflags-text` et `patient-response` hors bloc, seuil 0.72 :
+**7 appariements**, tous des recoupements légitimes de rôle — un **argument** du
+différentiel face à l'**acte** que cote le critère (German-67/68 « anamnèse
+médicamenteuse », German-68 « évolution progressive sur des années », German-81
+« origine cardiovasculaire » face à « 4. Examen cardiovasculaire »). Rien à
+supprimer.
+
+**Le niveau 1 a tranché quatre points, et l'indicateur de g5b se vérifie une
+troisième fois.** Les pages qui ont tranché desservent **1 et 9** grilles
+(`SSP — Pollakiurie` mono-grille, deux tranchages ; `SSP — Diarrhée`) plus
+`SSP — Polydipsie & Polyurie`, atteinte par le lien « Skills connexes » de la
+première. `SSP — Toux Chronique` en dessert **19** et a pourtant tranché le point
+« marqueurs tumoraux » — par une **absence** mesurable (0 occurrence du terme) et
+non par une prescription. C'est une nuance à ajouter à l'indicateur : une page à
+forte cardinalité reste utile pour **infirmer** un examen, même quand elle ne
+prescrit rien de précis.
+
+**Vérifications** — `check_invariants.py` OK (88), `check_nomenclature.py` OK,
+`check_reachability.py` OK 88/88 à 100 %, `report_redundancy.py` **14**
+(inchangé), AMBOSS aux trois verts et redondance **147**. **Aucune modification
+du barème** : `git diff` ne contient aucun `.criteria-text`, aucun `<input>`,
+aucun `<span class="score">`, aucun `maxScores`, aucun `sectionInfo`, aucune
+`patient-response`, aucune `scoring-rule` — vérifié mécaniquement (0 ligne).
+Règle 1 des arbitrages, `baseline.json` non régénéré. Le diff est symétrique :
+**9 insertions pour 9 suppressions**. `boundsAnomalies` et `uncoveredContent`
+vides sur les 5 fichiers, `<div>`/`</div>` à écart 0. Aucun `</div>` déplacé dans
+un `criteria-row` — les blocs `redflags` et `therapy` n'ont pas été ouverts.
+
+`check_no_loss.py 2e21433` : **4 items signalés sur 5 grilles**, verdictés un à
+un — ce sont **les 4 suppressions voulues** (« FSC, CRP, hémocultures si fièvre »,
+« Imagerie (CT/IRM), biopsie, marqueurs tumoraux », « US ou CT selon
+localisation, ponction », « Spirométrie avec test de réversibilité, peak flow »).
+Aucune perte accidentelle. Le remplacement de German-71/Diabète insipide n'est
+pas signalé parce que l'ancienne chaîne s'apparie encore à celle de « Diabète
+sucré », restée dans la grille — c'est la **preuve mécanique** de la duplication
+qui motivait la correction. Contrôle de couverture préalable — résidu des `<li>`
+après retrait du `<strong>`, du `<div>` d'examen et du `<div>` d'arguments :
+**zéro caractère** sur les 19 grilles, rien hors `<ul>` que le titre du bloc et
+les intitulés de catégorie. La revue de fond est donc exhaustive et non un
+sondage, sans qu'aucune grille ait été lue en entier.
