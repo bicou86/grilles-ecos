@@ -334,3 +334,207 @@ l'effet mécanique des trois conversions liste → narration : `list_items()`
 n'extrait pas le texte d'un `presentation-reponse text`, si bien qu'une réponse
 orale complète y apparaît toujours comme une disparition. Présence contrôlée
 chaîne par chaîne sur le HTML brut après `strip_base64` — jamais par `grep`.
+
+### Tâche g4 — Les 12 grilles riches restantes (15, 19, 22, 27, 34, 42, 43, 48, 56, 69, 72, 88)
+
+Départ `ff4605c`. Ce sont les 12 dernières grilles à porter simultanément
+`resume`, `annexe-dd` et `presentation` — le seul couple pédagogique du corpus.
+Le patron du pilote German-44 a été suivi dans l'ordre : (1) lire la section
+notée en entier, (2) porter les CONTRE dans `annexe-dd`, (3) supprimer de
+`presentation` ce qui double `resume` **au même format**, (4) convertir les
+réponses Q/R en liste vers le registre parlé, (5) déplacer le mnémo, (6)
+vérifier à l'œil qu'aucune réponse ne recopie un `criteria-text`. Les axes 1, 2,
+6 et 7 d'AMBOSS restent sans objet (ni `annexe-expert` ni `annexe-theorie`), et
+`presentation`/Pièges ECOS n'a été supprimé dans **aucune** grille.
+
+**Pages SSP.** Les huit pages consultées (Douleur Abdominale, Douleurs
+Articulaires, Douleur d'Épaule, Dysphagie, Éruption Cutanée, Fièvre du
+Nourrisson, Incontinence Urinaire, Amaurose & BAV, Œil Rouge, Troubles de la
+Croissance) confirment le constat du pilote : elles ne tranchent presque rien.
+**Une seule occurrence de niveau 1** sur les 12 grilles, en German-15. Tout le
+reste s'est arbitré au **niveau 2** (section notée), qui est riche.
+
+**Modifications, par grille**
+
+- **German-15** (diverticulite) · `resume` : « coloscopie à distance **4–6**
+  semaines » → **6–8**, aux deux endroits (Examens diagnostiques et Examens à
+  faire). source : `m7-detail-2` « Coloscopie 6-8 semaines après l'épisode » —
+  **niveau 2** ; `presentation` disait déjà 6–8 en quatre endroits, `resume`
+  était seul à dire 4–6.
+- **German-15** · `resume`/Formes simples : ajout « abstention possible chez le
+  patient sélectionné, immunocompétent et sans signe de gravité (SSMI/SGAIM) ».
+  source : `SSP — Douleur Abdominale` l. 445, « non compliquée → antibiothérapie
+  ambulatoire (voire abstention chez le patient sélectionné, SSMI/SGAIM) » —
+  **niveau 1**, seule occurrence du lot.
+- **German-15** · `annexe-dd` : Colite et Cancer colorectal reçoivent leurs
+  **arguments CONTRE**, portés depuis `presentation` Q2/Q3 ; Q2 et Q3 fusionnent
+  en une réponse orale. `presentation` Q « examens », Q2 « Traitement », Q3
+  « Suivi » : `list` → `text`. Mnémo DIVERTI déplacé vers Touches ludiques.
+- **German-19** (RCUH) · `annexe-dd` : Colite infectieuse et Maladie de Crohn
+  reçoivent POUR **et** CONTRE ; l'examen qui départage la colite infectieuse
+  passe de « Coloscopie, calprotectine fécale » à « Examen bactériologique et
+  parasitologique des selles ; calprotectine et coloscopie si persistance ».
+  source : `m3` « Examen bactériologique des selles » et `a17` « Anamnèse de
+  voyage [Il y a 2 semaines en Égypte] » — **niveau 2**. Correction de fond : ce
+  n'est pas la coloscopie qui tranche une colite infectieuse.
+- **German-19** · `presentation`/Pièges : puce « Ne pas proposer coloscopie avec
+  biopsies » supprimée — même contenu et même format que `resume`/PEC en
+  3 points « Diagnostic par coloscopie avec biopsies », et le point clé n° 2 du
+  `resume`. Les trois autres pièges restent. Mnémo SANG déplacé. Trois réponses
+  `list` → `text` ; Q « examens » reçoit au passage les gamma-GT et phosphatases
+  alcalines de `m3` (dépistage de CSP), qu'aucun bloc pédagogique ne portait.
+- **German-22** (épicondylite) · `annexe-dd` : les **cinq** hypothèses reçoivent
+  POUR/CONTRE case-appliqués, portés depuis `presentation` Q2-Q5 et depuis la
+  sous-section « Diagnostic différentiel rapide » de Touches ludiques ; Q2-Q5
+  fusionnent en une réponse orale.
+- **German-22** · `presentation`/Touches ludiques : « Tests spécifiques Tennis
+  elbow » et « Diagnostic différentiel rapide » supprimées. La première est un
+  sous-ensemble strict de `resume`/Tests spécifiques au même format (Cozen, Mill,
+  chaise, tous présents, `resume` en portant un quatrième) ; la seconde est du
+  **raisonnement différentiel**, que le contrat réserve à `annexe-dd`, et son
+  contenu y a été porté avant suppression. Mnémo ELBOW déplacé. Q « examens »,
+  Q2, Q3 : `list` → `text`. Q3/Suivi recopiait `m4` (« Bon pronostic, durée
+  semaines à mois », « Charge sportive uniquement jusqu'à absence de douleur »).
+- **German-27** (conflit sous-acromial) · `annexe-dd` : entrée « Capsulite
+  rétractile » **réparée** — son « → Diagnostic clinique, IRM si doute » avait
+  été avalé dans la puce d'argument POUR (défaut de structure, pas d'import) —
+  puis dotée du CONTRE décisif « Mobilité passive conservée ». Arthrose
+  gléno-humérale et Névralgie cervico-brachiale reçoivent POUR/CONTRE.
+- **German-27** · `presentation` : les **cinq** `presentation-reponse list`
+  converties en `text` ; « Tests spécifiques » et « Conflit sous-acromial
+  typique » supprimées de Touches ludiques (sous-ensembles stricts de `resume`,
+  même format) ; mnémo ARC déplacé.
+- **German-34** (cancer de l'œsophage) · `annexe-dd` : entrée « Compression
+  extrinsèque » réparée (même défaut de structure qu'en German-27) ; Cancer ORL
+  et Achalasie reçoivent POUR/CONTRE. Touches ludiques : « Signes d'alarme
+  dysphagie », « Principaux diagnostics différentiels » et « Examens clés »
+  supprimées — sous-ensembles stricts de `resume` pour la première et la
+  troisième, d'`annexe-dd` pour la deuxième. Mnémo ALARME déplacé. Q1 examens,
+  Q2, Q3 : `list` → `text` ; Q3/Suivi absorbe `m6` (information du patient).
+- **German-42** (tinea corporis) · `annexe-dd` : Psoriasis — « coudes, genoux,
+  antécédents familiaux » figuraient en **Arguments POUR** alors que la section
+  notée les déclare absents ; **déplacés en CONTRE** sous forme négative, pas
+  dupliqués (le piège signalé par le pilote). Dermatite atopique et Eczéma
+  nummulaire reçoivent POUR/CONTRE. Q2-Q4 fusionnent en une réponse orale.
+- **German-42** · Touches ludiques : « Examens utiles » et « PEC antifongique »
+  supprimées (sous-ensembles stricts de `resume`, même format) ; le mnémo PED et
+  les Pièges restent, RING est déplacé. Q « examens », Q2, Q3 : `list` → `text`.
+  Q3/Suivi recopiait `m7` (contrôle à 2 semaines, guérison mycologique,
+  adaptation) et `m6` (mesures d'hygiène).
+- **German-43** (scarlatine) · `annexe-dd` : Rougeole — sa description (« macules
+  puis papules descendantes, signe de Koplik ») figurait en **POUR** alors que
+  ces signes sont absents ; restructurée en POUR/CONTRE. Varicelle et Rubéole
+  reçoivent POUR/CONTRE. **Ajout de la Maladie de Kawasaki**, présente dans
+  `resume`/Différentiels et dans `presentation` mais absente du bloc dont c'est
+  le rôle. Q2-Q5 fusionnent en une réponse orale.
+- **German-43** · `resume` : l'éruption devient « micropapuleuse, **rugueuse au
+  toucher (« papier de verre »)**, accentuée dans les plis » — porté depuis
+  `presentation` avant la suppression de « Signes typiques scarlatine » (sous-
+  ensemble strict de `resume`/Signes caractéristiques). Traitement symptomatique
+  reformulé pour cesser de recopier le `therapy` de `m4`. Mnémo FAR déplacé.
+  Q « examens », Q2, Q3 : `list` → `text` ; Q3/Suivi recopiait `m5`, `m6` et `m7`.
+- **German-48** (exanthème subit) · `annexe-dd` : la première catégorie ne
+  contenait pas un différentiel mais deux fragments d'arguments du diagnostic
+  principal (« Âge typique / POUR : 6 mois - 2 ans → Diagnostic clinique » et
+  « Fièvre élevée avec bon état général → Surveillance ») ; **refondue en une
+  entrée « Exanthème subit (HHV-6/7) — hypothèse principale »** avec POUR/CONTRE
+  et examen. Rougeole, Rubéole et Érythème infectieux passent d'un descriptif
+  fondu dans le titre à des POUR/CONTRE structurés ; **ajout de la Scarlatine**,
+  présente partout ailleurs dans la grille.
+- **German-48** · Touches ludiques : « Diagnostic typique exanthème subit »
+  (sous-ensemble strict de `resume`), « Différentiels viraux » (rôle
+  d'`annexe-dd`, porté) et « Signes d'alerte pédiatriques » supprimées. La
+  dernière recopiait les cinq `redflags-text` de `m6` **et** ses cinq
+  `detail-text` : duplication pédagogique ↔ section notée, invisible à
+  `report_redundancy`. Mnémo 3-1-R déplacé. `resume` : trois formulations de
+  « convulsions fébriles » précisées pour cesser de recopier `redflags`/`m6`
+  (le pédagogique cède, jamais le corrigé). Q1-Q5 fusionnent en deux réponses
+  orales ; Q « examens », Q2, Q3 : `list` → `text`. Le seuil de réévaluation de
+  Q3 passe de « fièvre > 5 jours » à « 3 à 4 jours si persistance » —
+  source `m5-detail-1`, **niveau 2**.
+- **German-56** (incontinence d'effort) · `annexe-dd` : entrée « Vessie
+  hyperactive secondaire » réparée (même défaut de structure) ; Vessie
+  hyperactive idiopathique et Incontinence mixte reçoivent POUR/CONTRE. Q2/Q3
+  fusionnent en une réponse orale. Mnémo MAPS-U déplacé. Q1 examens, Q2, Q3 :
+  `list` → `text` ; Q3/Suivi recopiait `m5` mot pour mot.
+- **German-69** (cataracte) · `annexe-dd` était déjà **exemplaire** — seul bloc
+  du corpus à porter des CONTRE sur onze hypothèses. Il reçoit seulement les deux
+  arguments POUR que `presentation` portait en plus (halos lumineux, myopie
+  d'induction) et le POUR du glaucome chronique. Q1-Q3 fusionnent en deux
+  réponses orales, Q1 examens, Q2, Q3 : `list` → `text`. Mnémo MAPS déplacé.
+- **German-72** (maladie cœliaque) · `annexe-dd` : quatre des six hypothèses
+  reçoivent POUR/CONTRE et leur examen discriminant (test de la sueur, âge
+  osseux, TSH). Q2-Q5 fusionnent en une réponse orale. Mnémo GROWTH déplacé.
+  Q1 examens, Q2, Q3 : `list` → `text` ; Q1 reçoit l'albumine et le caryotype de
+  `m3`/`m4`, Q3 recopiait `m8` et ignorait `m9`.
+- **German-88** (conjonctivite allergique) · `annexe-dd` : Conjonctivite
+  infectieuse et Kératite/érosion sur lentilles reçoivent POUR/CONTRE et leur
+  examen (prélèvement bactériologique, fluorescéine). `resume` : ajout de
+  « **arrêt temporaire du port de lentilles** » et des compresses froides.
+  source : `m6` « Arrêt temporaire des lentilles » et `m4` « Compresses froides »
+  — **niveau 2** ; le patient porte des lentilles (`a8` « oui habituellement »)
+  et aucun bloc pédagogique ne le disait. Mnémo PRURIT déplacé. Q2/Q3 fusionnent
+  en une réponse orale ; Q1 examens, Q2, Q3 : `list` → `text`, et la dimension
+  IST/Chlamydia de `m3` et `m7` entre enfin dans le pédagogique.
+
+**Divergences consignées**
+
+- **German-56** · le mnémo DAME repose sur « **A = Argenturie** », mot qui
+  n'existe pas — le terme est *urgenturie*. Corriger la coquille casse la clé du
+  mnémo, et la procédure interdit de supprimer le mot d'origine. **Non corrigé**,
+  règle 3 (jugement d'auteur) : à trancher entre garder la coquille et refondre
+  le mnémo.
+- **German-56**, **German-69** et **German-88** · une `mnemo-box` « SBAR » vit
+  dans `section-express`, immédiatement sous la version SBAR dont elle est la
+  **légende**. L'axe 5 vise la Checklist mentale, pas la version express : ces
+  trois mnémos sont **laissés en place**. État du corpus après cette passe :
+  German **13** `mnemo-box` en `section-mnemo`, **3** en `section-express`,
+  **0** en `section-checklist` (mesuré).
+- **German-27** · la section notée `e4` cote le test de Jobe « Gauche : moins de
+  force, douloureux » alors que la version longue dit « pas de perte de force
+  nette » et que `resume` décrit le test comme « souvent douloureux mais non
+  déficitaire ». Ce n'est pas une contradiction stricte (inhibition antalgique),
+  mais la rupture de coiffe ne peut pas être formellement écartée : **aucun
+  argument CONTRE n'a été écrit** pour elle dans `annexe-dd`. Consigné.
+- **German-43**, **German-48** · deux formulations approximatives ont disparu au
+  cours de la restructuration d'`annexe-dd` : « conjonctivite typique absente »
+  pour la rubéole (la conjonctivite n'est pas le signe cardinal de la rubéole ;
+  remplacée par l'adénopathie rétro-auriculaire) et « convulsions non typiques »
+  pour l'érythème infectieux (l'enfant n'en a pas). Remplacements assumés, pas
+  des pertes.
+- `resume`/`therapy` · German-43 portait une paire `resume ↔ therapy` sur les
+  antipyrétiques. Le pédagogique a cédé **par reformulation**, pas par
+  suppression : le contenu doit rester dans `resume`, qui est la fiche de
+  révision, tandis que `therapy` est le corrigé du critère. Aucun `therapy` ni
+  `redflags` n'a été modifié dans les 12 grilles.
+
+**Vérifications** — `check_invariants.py` OK (88), `check_nomenclature.py` OK,
+`check_reachability.py` OK 88/88 à 100 %, AMBOSS aux trois verts et redondance
+**147**. **Aucune modification du barème** : aucun `.criteria-text`, aucun
+`<input>`, aucun `<span class="score">`, aucun `maxScores` n'apparaît dans le
+diff (vérifié) — règle 1 des arbitrages, `baseline.json` non régénéré. Balises
+appariées sur les 12 fichiers (`div`, `ul`, `li`, `span`), `boundsAnomalies` et
+`uncoveredContent` vides.
+
+Redondance : **63 → 10** paires inter-blocs sur les 12 grilles ; corpus German
+**67 → 14** (les 4 autres sont German-44, 2, et German-68, 2 — hors périmètre).
+Les 10 restantes sont **toutes** des clés de mnémo protégées par la règle du
+format : DIVERTI/`I` (15), MICI/`C` ×2 (19), ARC/`A` ×2 et `R` (27),
+ALARME/`E` (34), 4R/`Rééducation` (56), GROWTH/`R` (72), PRURIT/`Rougeur` (88).
+Cinq grilles tombent à **0** : 22, 42, 43, 48 et 69.
+
+`check_no_loss.py ff4605c` : **235 items signalés sur les 12 grilles, verdictés
+un à un, aucune perte réelle**. Répartition : ~150 sont l'effet mécanique des
+conversions liste → narration — **38 réponses Q/R converties** (29
+`presentation-reponse list`, qui tombent ainsi de 29 à **0** sur les 88 grilles,
+et 9 `reponse-section` à `<ul>`) et **30 réponses POUR/CONTRE structurées
+fusionnées en 13 réponses orales** ; `list_items()` n'extrait pas le texte d'un
+`presentation-reponse text` ; ~55 sont des arguments portés dans `annexe-dd`,
+où ils ont été réécrits en forme case-appliquée ; ~25 sont les items des
+**13 sous-sections** supprimées de Touches ludiques (2 en German-22, 2 en
+German-27, 3 en German-34, 2 en German-42, 1 en German-43, 3 en German-48) et de
+la puce de Pièges de German-19, tous retrouvés dans `resume`,
+`annexe-dd`, `therapy` ou la section notée ; les 5 derniers sont des `<li>`
+d'`annexe-dd` dont la normalisation a changé parce que le bloc a été
+restructuré. Présence contrôlée chaîne par chaîne sur le HTML après
+`strip_base64` — jamais par `grep`.
