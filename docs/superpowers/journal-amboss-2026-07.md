@@ -5526,3 +5526,271 @@ jetable (rejeu de `scoring.js`), pas de garde-fou permanent.
   et les contenus de protection d'AMBOSS-24 et 32 sont intacts. Un seul sous-item de
   liste retiré (le fragment `Ma:` d'AMBOSS-39), non noté — `criteriaCount`,
   `detailCount`, `radioCount`, `checkboxCount` inchangés sur les 40 grilles.
+
+### Tâche c5 — erreurs médicales en section notée (arbitrages § « Groupe 3 »)
+
+Le gel du barème est levé pour ce lot, sous les trois règles rappelées au brief :
+correction de texte sans changement de structure (règle 1) ; ajout ou retrait d'un
+sous-item noté (règle 2, qui impose `maxScores`, le `<span class="score">` et
+`sectionInfo[].count` s'il est concerné, puis la régénération de `baseline.json`) ;
+jugement d'auteur non corrigé (règle 3). Treize des quatorze points relèvent de la
+règle 1 ; seul AMBOSS-9 relève de la règle 2.
+
+**Modifications**
+
+- AMBOSS-14 · critère m6, `therapy-section` « Prise en charge thérapeutique immédiate
+  du SCA » : « Bêta-bloquants si pas de contre-indication » → « Bêta-bloquants :
+  déconseillés ici (SCA induit par les amphétamines : risque de vasoconstriction
+  coronaire par effet alpha non opposé) ».
+  source : la grille elle-même — `theorie`/Diagnostic le plus probable dit « Syndrome
+  coronarien aigu (angor instable) **induit par amphétamines** » et `annexe-dd` dit
+  « Consommation amphétamines = risque spasme coronaire ». La page SSP — Douleur
+  Thoracique ne traite que le SCA athérothrombotique (« ± β-bloquant (sauf IC,
+  bradycardie, hypotension) ») et **ne dit rien** du versant sympathomimétique : c'est
+  la lacune déjà consignée au groupe 5, point [6] des arbitrages. Correction directe
+  d'une erreur factuelle interne (PROCEDURE § 4, dernier alinéa), non un arbitrage.
+
+- AMBOSS-8 · critère m6, `therapy-section` « Traitement de la maladie de Crohn
+  légère-modérée » : « 5-ASA (mésalazine) : 3-4g/j PO + suppositoires/lavements » →
+  « Budésonide 9 mg/j PO (forme iléo-caecale) ou prednisone 40-60 mg/j, puis
+  décroissance — le 5-ASA (mésalazine) n'a pas fait la preuve de son efficacité dans le
+  Crohn, son rendement est établi dans la RCH ».
+  source : la grille elle-même — `theorie`/Rappels thérapeutiques dit déjà « Le 5-ASA
+  […] agit dans la lumière, sur une muqueuse : c'est ce qui explique son rendement dans
+  la RCH et sa **place discutée dans le Crohn**, transmural et souvent grêlique ». La
+  page SSP — Diarrhée reste générique (« MICI : 5-ASA (mésalazine), corticoïdes
+  (budésonide), immunomodulateurs… ») et ne distingue pas RCH et Crohn : elle ne fonde
+  donc pas le point, elle ne le contredit pas non plus.
+  Alignement du pédagogique sur la section notée corrigée (PROCEDURE § 4, niveau 2) :
+  `resume`/Traitement des poussées « 5-ASA (mésalazine 3-4 g/j PO ou topique) dans les
+  formes légères à modérées » → « Corticothérapie orale dans les formes légères à
+  modérées : budésonide 9 mg/j (atteinte iléo-caecale) ou prednisone 40-60 mg/j […] » +
+  « Pas de 5-ASA (mésalazine) dans le Crohn : son rendement est établi dans la RCH, non
+  dans le Crohn » ; `presentation` « en réservant le 5-ASA aux formes légères » → « et
+  par budésonide 9 mg par jour si l'atteinte est iléo-caecale et la poussée légère à
+  modérée ».
+
+- AMBOSS-11 · critère m5, `therapy-section` « Traitement de l'hémorragie digestive
+  haute » : « Acide tranexamique : 1g IV si saignement actif » → « Acide tranexamique :
+  pas d'indication dans l'hémorragie digestive (HALT-IT 2020 : aucun bénéfice sur la
+  mortalité, excès d'événements thrombo-emboliques) ».
+  source : HALT-IT (Lancet 2020), essai de 12 009 patients — pas de réduction de la
+  mortalité par hémorragie, augmentation des événements thrombo-emboliques veineux.
+  La page SSP — Nausées, Vomissements & Hématémèse détaille l'algorithme de l'hémorragie
+  digestive haute et **ne mentionne pas** l'acide tranexamique : silence, non
+  contradiction. La ligne est conservée en énoncé négatif plutôt que supprimée, pour que
+  le point reste enseigné.
+
+- AMBOSS-11 · critère m3, sous-item noté `m3-detail-1` : « Test d'anticorps H. pylori »
+  → « Recherche d'H. pylori par antigène fécal ou test respiratoire à l'urée », réponse
+  patient complétée de « Ces tests actifs sont préférés à la sérologie, qui ne distingue
+  pas une infection en cours d'une infection guérie ; les biopsies faites pendant
+  l'endoscopie permettent aussi le diagnostic ».
+  source : SSP — Nausées, Vomissements & Hématémèse — « Après stabilisation : recherche
+  et **éradication d'*H. pylori*** » : la page impose la recherche sans nommer le test.
+  Le choix du test actif relève de la correction factuelle directe (la sérologie reste
+  positive après éradication et ne peut donc pas guider un traitement). Libellé changé,
+  sous-item conservé : `detailCount` inchangé.
+
+- AMBOSS-22 · critère m2, sous-item noté `m2-detail-1` : « Transit baryté [meilleur test
+  initial pour suspicion d'anneau œsophagien et achalasie…] » → « Transit baryté (TOGD)
+  [examen de seconde intention, jamais avant l'endoscopie : toute dysphagie impose
+  d'abord une FOGD. Il se justifie en cas de suspicion de diverticule de Zenker
+  (endoscopie à risque de perforation), de trouble moteur, ou de contre-indication à
+  l'endoscopie. …] » — la description sémiologique d'origine (bec d'oiseau, anneau,
+  trognon de pomme) est conservée mot pour mot.
+  source : SSP — Dysphagie — « **OGD (endoscopie haute) = 1ᵉʳ examen** devant une
+  dysphagie œsophagienne » et « **Transit baryté (TOGD)** si suspicion de diverticule de
+  Zenker (OGD à risque de perforation), de trouble moteur, ou en cas de contre-indication
+  à l'OGD » ; règle d'or : « Toute dysphagie est un signe d'alarme → **OGD**, jamais de
+  test IPP d'épreuve ». La grille se contredisait elle-même : `expert`/Pièges liste
+  « Faire transit baryté avant endoscopie » et `expert`/Points clés « … avant tout
+  transit baryté ». Le sous-item voisin `m2-detail-2` (FOGD avec biopsies) porte déjà
+  « meilleur test initial et de confirmation » : les deux ne se disputent plus le rang.
+
+- AMBOSS-34 · critère m5, `therapy-section` « Si pas de thrombolyse » : « Aspirine :
+  325 mg PO/PR dans les 48h » → « Aspirine : 160-300 mg PO/IV dans les 48h ».
+  source : la grille elle-même — `resume`/Après stabilisation dit « Aspirine 160–300 mg
+  (sauf si thrombolyse → après 24h) » et `theorie`/Rappels thérapeutiques « aspirine
+  160-300 mg dès J1 si pas de thrombolyse, différée de 24 h sinon ». La section notée
+  était la seule à diverger (PROCEDURE § 4, niveau 2). Le dosage 325 mg est la forme
+  américaine, non commercialisée en Suisse. La voie « PR » est également corrigée : le
+  suppositoire d'aspirine n'est pas commercialisé en Suisse, et SSP — Parésie - AVC écrit
+  « Aspirine 250-300 mg **PO/IV** ».
+
+- AMBOSS-35 · critère m5, `therapy-section` « Mesures immédiates » : « Oxygène si
+  SpO2 < 94% » → « Oxygène si SpO2 < 90% ». Le signe `<` avait été posé par la passe
+  « défauts d'import » (volet B), qui avait explicitement renvoyé la **valeur** au
+  groupe 3 ; c'est ce que fait cette entrée. Résultat : un seul seuil, un seul signe.
+  source : SSP — Douleur Thoracique — « 1. ABCDE, monitoring, voie veineuse, **O₂ si
+  SpO₂ < 90 %** » et, dans les pièges, « donner de l'O₂ à un coronarien non hypoxémique :
+  c'est inutile voire délétère (vasoconstriction coronaire) — **pas d'O₂ si SpO₂ ≥ 90 %** ».
+  Le `resume` de la grille (« oxygénothérapie si SaO2 < 90 % ») et son mnémo DOULOURED
+  (« Oxygène si SpO2 < 90% ») disaient déjà 90 : plus aucun `94` ne subsiste dans cette
+  grille.
+
+- AMBOSS-26 · critère m5, `therapy-section` « Traitement de crise légère-modérée » :
+  « Ibuprofène 600-800 mg » → « Ibuprofène 400-600 mg » ; `therapy-section`
+  « Prophylaxie si ≥ 4 crises/mois » → « Prophylaxie si ≥ 3 crises invalidantes/mois ».
+  source : SSP — Céphalée — « Crise légère / modérée : paracétamol 1 g ou AINS
+  (**ibuprofène 400-600 mg**, naproxène, aspirine 1 g) » et « **Prophylaxie (≥ 3 crises
+  invalidantes/mois)** : bêtabloquant (métoprolol, propranolol)… ». Le `theorie` de la
+  grille portait déjà les deux valeurs correctes : la section notée était seule à
+  diverger. Le comprimé d'ibuprofène 800 mg n'est pas commercialisé en Suisse.
+
+- AMBOSS-4 · critère a12, sous-item noté `a12-detail-6` : « Dernières règles [Il y a
+  2 ans] » → « [Il y a 5 ans] », pour concorder avec « Âge de la ménopause [45 ans] »
+  chez une patiente de 50 ans. Quatre autres occurrences de la même durée sont portées
+  à 5 ans, faute de quoi la vignette se contredirait : `a2-detail-5` « [C'est la première
+  fois que j'ai ça en 2 ans] » → « en 5 ans » ; `presentation` « depuis deux ans, date de
+  ses dernières règles » → « depuis cinq ans » et « post-ménopausée depuis 2 ans » →
+  « depuis 5 ans » ; `scenario`/Anamnèse actuelle « Premier épisode en 2 ans » → « en
+  5 ans ». Aucun sous-item ajouté ni retiré.
+  source : SSP — Ménopause — « Saignement génital après **≥ 12 mois d'aménorrhée**
+  (= métrorragie post-ménopausique) » : la ménopause se date des dernières règles, donc
+  45 ans de ménopause + 50 ans d'âge = 5 ans d'aménorrhée. Le diagnostic de la station
+  (saignement post-ménopausique) est inchangé, seule sa durée devient cohérente.
+
+- AMBOSS-13 · critère m5, deux `therapy-section` réordonnées. Titre 1 « Pneumothorax
+  > 2cm ou > 15% volume pulmonaire » → « **Indications au drainage** », dont les puces
+  deviennent : « Pneumothorax traumatique : drainage d'emblée, sans seuil de taille (cas
+  de cette station) » · « Pneumothorax spontané : seulement si > 2cm ou > 15% du volume
+  pulmonaire » · « Patient symptomatique : (dyspnée importante) » (puce d'origine) ·
+  « Pneumothorax bilatéral ou sous tension : exsufflation immédiate puis drain » (le
+  titre 2 d'origine, conservé comme puce pour ne rien perdre). Titre 2 « Pneumothorax
+  bilatéral ou sous tension » → « **Mesures d'accompagnement** », qui est ce que ses
+  trois puces décrivaient déjà (analgésie, repos, radiographie de contrôle).
+  source : la grille elle-même — `theorie`/Prise en charge du pneumothorax : « Le seuil
+  des 2 cm et l'abstention **ne valent que pour le spontané** […] Pourquoi le traumatique
+  se draine largement : la brèche reste alimentée et peut passer sous tension » ; et
+  `expert`/Points clés : « Pneumothorax traumatique = drainage thoracique d'emblée, sans
+  seuil de taille ». Le diagnostic de la station est « Pneumothorax traumatique simple
+  gauche » : restreindre le seuil au spontané sans donner la règle du traumatique aurait
+  laissé la station sans indication applicable, d'où la première puce. Aucune case à
+  cocher dans un `therapy-section` : barème inchangé.
+
+- AMBOSS-17 · critère e7 (MMSE), deux sous-items notés. `e7-detail-0` (orientation
+  temporelle) : « ou répondre avec **président des États-Unis** incorrect » → « ou nommer
+  incorrectement le président de la Confédération ou un membre du **Conseil fédéral** ».
+  `e7-detail-1` (orientation spatiale) : « Répondre avec **l'État** correct » → « Répondre
+  avec **le canton** correct ».
+  source : suissification, arbitrages [28]. SSP — Troubles de la Mémoire & Démences
+  décrit le MMSE par ses domaines (« orientation temps / lieu (10) ») sans fixer le
+  libellé des questions : la page ne s'y oppose pas et ne l'impose pas non plus. Plus
+  aucune occurrence de « président des États-Unis » dans le corpus.
+
+- AMBOSS-16 · critère m3, sous-item noté `m3-detail-0` (MAPA 24 h) : « [Parce que cette
+  patiente présente une pression artérielle élevée (**directives AHA/ACC 2017**), la
+  pression artérielle doit être mesurée à nouveau] » → « [Parce que cette patiente
+  présente une pression artérielle normale-haute au cabinet (135/70 mmHg ; seuils
+  ESC/SSH, HTA à partir de 140/90), la pression artérielle doit être remesurée hors
+  cabinet : une HTA ne se diagnostique jamais sur une seule mesure] ».
+  source : SSP — HTA (Suivi & Crise Hypertensive) — « **HTA** = TA ≥ 140/90 mmHg au
+  cabinet, confirmée par MAPA 24 h ou auto-mesure HBPM » ; « Classification ESC / SSH :
+  […] Normale-haute 130-139/85-89 » ; règle d'or « Ne jamais diagnostiquer une HTA sur
+  une seule mesure au cabinet » ; sociétés : « **SSH** Société Suisse d'Hypertension ».
+  La justification d'origine n'était pas seulement anglo-saxonne dans sa référence, elle
+  l'était dans son **contenu** : 135/70 mmHg n'est une « hypertension de stade 1 » que
+  sous le seuil AHA/ACC de 130/80 ; sous les seuils ESC/SSH la patiente est
+  normale-haute — ce que dit déjà l'`expert` de la grille (« MAPA 24h : Moyenne
+  128/68 mmHg (normale-haute) »). L'indication de la MAPA, elle, tient dans les deux
+  cadres et est conservée.
+
+**Modification — règle 2 (retrait d'un sous-item noté)**
+
+- AMBOSS-9 · critère m6 « Conseil et prévention » : le sous-item **« Conseil sur les
+  pratiques sexuelles sûres »** (`m6-detail-0`) est **retiré**. Il n'a aucun lien avec la
+  vignette — homme de 71 ans consultant aux urgences pour lombalgie avec sciatalgie — ni
+  avec sa prise en charge ; c'est un résidu d'une autre station.
+  source : SSP — Lombalgies ne comporte **aucune** mention de conseil sur les pratiques
+  sexuelles ni de dépistage IST ; les deux autres sous-items du critère (arrêt du tabac,
+  réaction au défi de la dépendance aux antalgiques) sont, eux, dans le sujet.
+  Vérification de non-perte préalable (PROCEDURE § 3) : l'item n'est repris par aucun bloc
+  pédagogique de la grille, il n'y avait donc rien à porter ailleurs avant de le retirer.
+
+  Recalcul synchronisé, tous les points changés d'un coup :
+  - `m6-detail-1` et `m6-detail-2` renumérotés en `m6-detail-0` et `m6-detail-1` (la
+    numérotation reste contiguë comme dans les 39 autres grilles ; `updateDetailScore`
+    utilise un préfixe `id^=` et aurait toléré le trou, mais pas la convention).
+  - `window.caseConfig.maxScores.management` : **17 → 16**.
+  - `<span class="score">Score : <span id="managementScore">0</span>/17</span>` :
+    **/17 → /16**.
+  - `sectionInfo[].count` **non concerné** : le critère m6 existe toujours, seul un de ses
+    sous-items disparaît — la section Management compte toujours 6 critères (m1 à m6).
+    Le travail de la passe précédente sur l'anamnèse (`maxScores.anamnese` 53 → 49,
+    `count` 13 → 12, arbitrages § 2.4) est intact et n'a pas été touché.
+  - `baseline.json` régénéré. Différence justifiée, et **strictement limitée à
+    AMBOSS-9** : `maxScores.management` 17 → 16, `scoreSpans.managementScore` 17 → 16,
+    `detailCount` 59 → 58, `checkboxCount` 59 → 58. Aucune autre grille ne bouge, et
+    `criteriaCount` (24) comme `radioCount` (61) sont inchangés — le retrait porte bien
+    sur un sous-item, pas sur un critère.
+  - Simulation du remplissage complet (rejeu de la logique de `cases/scoring.js`) :
+    anamnèse 49/49, examen 13/13, management **16/16**, communication 20/20 → **100 %**.
+
+**Points vérifiés, sans modification**
+
+- AMBOSS-25 · l'alignement posé par la tâche 14 **tient**. `expert`/Résultats d'examens
+  dit « IRM genou : Œdème osseux, **déchirure du ligament collatéral latéral (LCL)** » ;
+  la section notée dit « IRM genou droit [… montrerait une **rupture du ligament
+  collatéral**, bien que ce ne soit pas typiquement requis pour le diagnostic] » et cote
+  son traitement (`therapy-section` « Si lésion LCL » : attelle articulée, AINS, glace,
+  physiothérapie, chirurgie rarement nécessaire). Plus aucune occurrence de « LCL intact »
+  ni d'énoncé équivalent dans la grille : la contradiction est levée, rien à corriger.
+- AMBOSS-35 · cohérence du seuil vérifiée après coup : une seule valeur (90) et un seul
+  signe (`<`) dans toute la grille, section notée, `resume` et mnémo confondus.
+
+**Divergences consignées**
+
+- AMBOSS-9 · critère `a12b` « 13. Histoire sexuelle » — **défaut préexistant, hors du
+  périmètre de cette tâche, mais mis au jour par la simulation du barème**. Ses 4
+  sous-items sont **injoignables par le calcul** : `calculateScores()` itère
+  `prefix + i` pour `i` de 1 à `count`, ce qui engendre `a1`…`a12` — jamais `a12b`,
+  quelle que soit la valeur de `count`. Les quatre cases se cochent à l'écran mais ne
+  rapportent rien. C'est exactement l'écart de 4 points que la passe précédente a
+  résorbé côté déclaration (53 → 49) conformément aux arbitrages § 2.4 : le barème
+  déclaré correspond désormais au barème atteignable, mais un critère affiché reste non
+  noté. Le réparer supposerait de renommer `a12b` en `a13` et de remonter
+  `maxScores.anamnese` à 53 — ce que l'arbitrage n'a pas retenu. Non corrigé.
+- AMBOSS-34 · dose d'aspirine : la grille et les arbitrages disent **160-300 mg**,
+  SSP — Parésie - AVC dit **250-300 mg**. Les deux excluent le 325 mg américain et
+  l'intervalle de la grille contient celui de la page ; la borne basse diverge seule.
+  Aligné sur la grille (`resume` et `theorie` de la même grille, arbitrages [22]) plutôt
+  que sur une page SSP qui n'est pas celle d'AMBOSS-34 (mappée sur Amaurose & Baisse
+  d'Acuité Visuelle, muette sur l'antiagrégation). Signalé pour arbitrage.
+- AMBOSS-14 · la contre-indication du bêtabloquant en toxicité sympathomimétique n'est
+  fondée sur **aucune** page SSP : ni Douleur Thoracique (qui ne traite que le SCA
+  athérothrombotique), ni Intoxications Aiguës (qui décrit le toxidrome
+  sympathomimétique sans aborder son traitement cardiologique). Correction retenue
+  comme erreur factuelle interne ; à rattacher à la lacune du groupe 5, point [6].
+- AMBOSS-11 · le retrait de l'acide tranexamique et le choix du test H. pylori ne sont
+  fondés par aucune page SSP (silence, non contradiction) : ils reposent sur HALT-IT
+  (2020) et sur la performance connue des tests actifs. Consigné pour que la chaîne de
+  justification reste explicite.
+- AMBOSS-8 · la page SSP — Diarrhée liste « 5-ASA (mésalazine) » sous « MICI », sans
+  distinguer RCH et Crohn : elle ne fonde pas la correction, qui s'appuie sur le
+  `theorie` de la grille et sur l'absence d'efficacité démontrée du 5-ASA dans le Crohn.
+  La page gagnerait à séparer les deux maladies ; relève du vault, non des grilles.
+
+**Contrôles**
+
+- `check_invariants.py` → avant régénération : **4 différences, toutes sur AMBOSS-9**
+  (`maxScores`, `scoreSpans`, `detailCount`, `checkboxCount`), exactement celles
+  qu'impose le retrait d'un sous-item — aucune autre grille ne bouge. Après régénération
+  du snapshot : `OK — 40 grilles, tous les invariants preserves` (code 0).
+- `check_nomenclature.py` → `OK — aucun terme non suisse detecte` (code 0).
+- `report_redundancy.py` → **147** paires, inchangé (147 avant).
+- `check_no_loss.py a35a775` → **1 item signalé sur 12 grilles modifiées** :
+  AMBOSS-8, « 5 asa mesalazine 3 4 g j po ou topique dans les formes legeres a moderees ».
+  Ce n'est pas une perte mais l'énoncé faux lui-même, remplacé par son inverse explicite
+  (« Pas de 5-ASA (mésalazine) dans le Crohn : son rendement est établi dans la RCH,
+  non dans le Crohn »). Aucune autre disparition.
+- Contrôles ciblés : **aucun `.criteria-text` modifié** sur les 12 grilles (267 relevés,
+  0 divergence), **aucun crochet `[…]` de réponse patient perdu** (les 7 réponses
+  modifiées restent entre crochets, tous les comptes stables), **aucun item ICE
+  (`m4-detail-*`) touché**. Équilibre `<div>`/`<span>` conservé fichier par fichier.
+  Les lignes protégées d'AMBOSS-33 et les contenus de protection d'AMBOSS-24 et 32 ne
+  sont pas dans le périmètre modifié.
+- Simulation du barème sur les **40** grilles : toutes atteignent 100 % au remplissage
+  complet, et `maxScores` = `<span class="score">` = total atteignable partout.
+- `git diff --numstat` : 12 grilles + `baseline.json`, **31 insertions / 28
+  suppressions**. Un seul sous-item noté retiré, dans la seule grille prévue.
