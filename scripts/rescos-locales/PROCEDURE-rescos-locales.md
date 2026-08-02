@@ -157,28 +157,63 @@ ferait crier `uncovered_content()` sur 29 grilles saines) mais **dans**
 
 ---
 
-## 3. Les portes — état au moment de l'inventaire
+## 3. Les portes
 
 ```
 python3 scripts/rescos-locales/check_invariants.py     # OK, 165 grilles
-python3 scripts/rescos-locales/check_reachability.py   # ÉCHEC, 1 grille
+python3 scripts/rescos-locales/check_reachability.py   # OK, 156/156 à 100 %
 python3 scripts/rescos-locales/check_nomenclature.py   # ÉCHEC, 368 termes
 ```
 
-`check_invariants` est vert par construction (le baseline vient d'être écrit) ;
-`check_reachability` et `check_nomenclature` sont **rouges, et c'est le
-constat** : rien n'a encore été corrigé dans ce corpus.
+| porte | inventaire (`l2`) | après `l3` |
+|---|---|---|
+| `check_invariants` | OK, 165 | **OK, 165** |
+| `check_reachability` | ÉCHEC, 1 grille | **OK, 156/156 à 100 %** |
+| `check_nomenclature` | ÉCHEC, 368 termes | ÉCHEC, 368 termes |
 
-### Barème défaillant — 1 grille
+`check_nomenclature` reste **rouge, et c'est le constat** : aucune passe de
+nomenclature n'a encore été menée sur ce corpus.
+
+### Barème défaillant — 1 grille — **réparé (lot `l3`)**
 
 **`RESCOS-63 - Toux - Pédiatrie`** : deux sections seulement (`anamnese` 0.25,
-`management` 0.25), **somme des coefficients = 0,5**. Le global plafonne à
+`management` 0.25), **somme des coefficients = 0,5**. Le global plafonnait à
 **50 %** grille parfaitement remplie, sans qu'aucune section ne soit en écart.
 
 C'est un **cinquième mécanisme**, distinct des quatre déjà connus (critère hors
 de la boucle · section vide pondérée · `count` trop grand · `maxScores` divergeant
-du `<span>`). Les quatre contrôles précédents restent muets ; `coef_sum_anomaly()`
-le nomme. Confirmé indépendamment en navigateur : 50 %, note E.
+du `<span>`). Les quatre contrôles précédents restaient muets ;
+`coef_sum_anomaly()` le nomme. Confirmé indépendamment en navigateur : 50 %,
+note E.
+
+**Redistribution retenue : `anamnese` 0.5 · `management` 0.5**, et les deux
+`section-header` passent de « (25%) » à « (50%) ».
+
+Quatre faits l'imposent, et aucun ne dépend d'un jugement de contenu.
+
+1. **La grille ne porte que deux sections réelles** — vérifié : deux
+   `section-header`, deux `<span class="score">` (`anamneseScore` /29,
+   `managementScore` /16), deux `id="…-percentage"`, et les seules entrées de
+   la page sont `a1..a9` et `m1..m6`. Il n'y a pas de section examen ni
+   communication à retrouver ; le défaut est la **somme**, pas un oubli.
+2. **La déclaration exprimait déjà l'égalité** (0.25 = 0.25), et les deux
+   en-têtes annonçaient le même « (25%) ». Mettre les deux à 0.5 est la seule
+   correction qui rétablisse la somme **sans toucher au rapport voulu par
+   l'auteur**.
+3. **C'est la doctrine constante du corpus** : 155 des 156 grilles notées
+   pondèrent à égalité, quel que soit leur nombre de points.
+4. **Le prorata réintroduirait ce que le moteur neutralise.**
+   `cases/scoring.js` calcule `(score / max) * 100` **par section** puis
+   applique `coef` : chaque section est déjà ramenée à un pourcentage. Pondérer
+   29 contre 16 compterait donc le nombre de points **deux fois**.
+
+Le mécanisme d'origine se lit dans le voisinage : le gabarit du corpus est
+`0.25 × 4` (« RESCOS-64 station double 2 » le porte encore, quatre sections
+inédites à 0.25). RESCOS-63 en a supprimé deux sans remettre les coefficients à
+l'échelle.
+
+Après correction : `check_reachability` rend **100 %**, et le navigateur
+confirme **100 %, note A**.
 
 ### Défaut de moteur — 156 grilles — **réparé (lot `l3`)**
 
