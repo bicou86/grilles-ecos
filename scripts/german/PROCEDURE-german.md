@@ -418,8 +418,9 @@ portraits face et profil de patientes mineures, cité par la page « Troubles de
 la Croissance » et passant le test 3 du § 8.3 (red flag imposant le caryotype)
 pour German-72 — écarté à raison malgré cela.
 
-**c) Les références cassées.** **36 des 700 fichiers cités** par les 53 pages
-n'existent nulle part dans le vault — l'essentiel sont des `Résumé-SSP_page-00NN.jpg`.
+**c) Les références cassées.** **29 des 700 fichiers cités** par les 53 pages
+n'existent nulle part dans le vault, dont **28** `Résumé-SSP_page-NNNN.jpg` — la
+mesure remplace le chiffre de 36 publié précédemment (2026-08, vérification p4).
 Une référence introuvable **arrête le traitement de la grille** ; elle ne se
 remplace pas par une image approchante et elle ne s'embarque pas en substituant
 un fichier au nom voisin.
@@ -430,6 +431,9 @@ taille** : les message-clés que le § 8.4 rend obligatoires, et les images
 dans un `patient-response`, un renvoi explicite du corrigé). Ces deux catégories
 sont sourcées par un texte de la grille elle-même, pas par une préférence
 éditoriale — c'est ce qui les distingue de tout le reste, toujours plafonné.
+**Ces deux exemptions valent aussi pour le budget par grille du § 8.6** : une
+règle qui rend une image obligatoire ne peut pas être annulée par un budget qui
+la refuse (arbitrage 2026-08, vérification p4 — voir § 8.6).
 
 **e) Les photographies cliniques et les séries radiologiques** quand la vignette
 ne note pas leur lecture. Elles pèsent le plus lourd du corpus (jusqu'à 13 Mo
@@ -476,7 +480,14 @@ Poids des images citées par les 53 pages (664 fichiers trouvés) :
 
 La queue est très lourde : **une règle sans plafond n'est pas bornée**. Les deux
 garde-fous du § 8.5 d restent en vigueur — **plafond par image 600 Ko**,
-**budget par grille 700 Ko de source**.
+**budget par grille 700 Ko de source**. **Le budget par grille s'entend hors
+images exemptées** — message-clé rendu obligatoire par le § 8.4, et image
+désignée nommément par un critère noté (§ 8.5 d) : les deux mêmes catégories
+que celles qui échappent au plafond par image, et pour la même raison. Une
+règle qui rend une image obligatoire ne peut pas être annulée par un budget qui
+la refuse ; le § 8.5 d ne le disait que pour le plafond par image, ce qui
+ouvrait une contradiction avec le budget par grille — tranché ici (2026-08,
+vérification p4).
 
 **Révision du plafond (2026-08-02) : 400 Ko → 600 Ko, plus deux exemptions.**
 Sa justification d'origine — borner le poids d'un fichier HTML servi en base64

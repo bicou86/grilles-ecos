@@ -4095,3 +4095,199 @@ aucun moment figuré dans une liste de travail. Un contrôle transversal de form
 — du type des deux chiffres ci-dessus, comptés sur les 88 sans référence aux
 lots — aurait levé l'écart plus tôt, et vaudrait d'être rejoué pour les autres
 invariants de gabarit du corpus.
+
+---
+
+### p4-fix — correction des quatre défauts de la vérification finale
+
+Suite de `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p4-report.md`.
+HEAD au démarrage vérifié : `e8bd11e` (la session RESCOS/CasECOS voisine avait
+avancé depuis `cbdff94`, le commit du rapport p4).
+
+## Défaut 1 — huit spans sémantiques imbriqués
+
+Détecteur à pile réécrit indépendamment de celui de p4 (`span.c-*` ouverts et
+fermés, empilés, un `</span>` qui ferme alors qu'un autre `c-*` reste au-dessus
+de la pile est une imbrication) et rejoué sur les 88 grilles **avant toute
+édition** : confirme exactement les huit signalés, aucun autre — German-73 ×6,
+German-27 ×2.
+
+**Modifications**
+
+- German-73 (6 occurrences identiques) · résumé et présentation : «
+  `<span class="c-red"><span class="c-pink">grossesse</span> extra-utérine</span>`
+  » → « `<span class="c-red">grossesse extra-utérine</span>` ».
+  source : « grossesse extra-utérine » est la pathologie, donc `.c-red` ; le
+  corpus emploie `.c-pink` pour l'état physiologique nu « grossesse » seul
+  (occurrence non nestée à la ligne voisine, « grossesse trop précoce ») —
+  l'imbrication mélangeait les deux registres sur le même terme composé.
+- German-27 (2 occurrences, une seule ligne) · annexe théorique : «
+  `<span class="c-blue">→ <span class="c-red">capsulite rétractile</span> ou
+  <span class="c-red">omarthrose</span></span>` » → « `→
+  <span class="c-red">capsulite rétractile</span> ou
+  <span class="c-red">omarthrose</span>` » (flèche non colorée, hors span).
+  source : gardé l'span **intérieur**, pas l'extérieur — German-88 établit la
+  convention du corpus pour ce patron « signe → pathologie(s) » : `Acuité
+  conservée → <span class="c-red">conjonctivite</span> — … — ou
+  <span class="c-red">hyposphagma</span>`, flèche en texte nu, chaque
+  pathologie nommée dans son propre `.c-red`. Le `.c-blue` de German-27
+  enveloppait la flèche **et** les deux pathologies au lieu de rester sur la
+  flèche seule (comparer avec la ligne voisine non affectée du même fichier :
+  `<span class="c-blue">→ atteinte tendino-musculaire</span> : la coiffe ou le
+  <span class="c-red">conflit</span>`, où le bleu et le rouge sont frères, pas
+  imbriqués).
+
+**Balayage des 88** après correction, même détecteur : **0** span imbriqué
+restant, sur les 88 grilles. Les huit étaient bien la totalité du corpus.
+
+**Contrôle visuel** (Chrome `--headless=new`, `file://`, deux thèmes). Piège de
+`cases/theme-sync.js` connu et traité : le `<script src="../theme-sync.js">`
+est substitué par un `<script>` inline figeant `data-theme`, dans une copie
+posée dans `cases/german/` pour que `../img/german/` résolve — copies
+supprimées après coup, absence vérifiée. **Empreinte** : quatre captures
+d'écran (German-73 et German-27 × sombre/clair), quatre MD5 distincts —
+`199ca54f…`/`b9ad4039…` (German-73) et `e774a8bd…`/`6bef32cc…` (German-27) : les
+deux thèmes rendent réellement différemment, pas de faux positif. Sonde
+`getComputedStyle` injectée en fin de page : chaque occurrence de « grossesse
+extra-utérine » rend une **seule** couleur (`rgb(255,99,105)` sombre /
+`rgb(229,72,77)` clair, exactement `.c-red`), chaque occurrence de « capsulite
+rétractile » et « omarthrose » de même, parent direct sans classe sémantique
+concurrente. Plus de terme bicolore.
+
+## Défaut 2 — image partagée German-48 / German-84
+
+Les deux grilles dépendent de `SSP — Fièvre du Nourrisson.md` (`docs/obsidian-mapping.yaml`)
+et portaient toutes deux `pedia-convulsions-febriles-simples-vs-complexes.jpg`,
+hors message-clé — interdit par le corollaire du § 8.3.
+
+**Choix : German-48 garde l'image, German-84 la perd sans remplacement.**
+
+Argument : dans German-48, la convulsion fébrile est nommée « complication
+principale » du résumé, notée **deux fois** au corrigé (anamnèse `a3` et
+signaux d'alarme `m6`/`redflags-section`, « 2. Convulsions fébriles »), et la
+section théorique qui l'accompagne développe **exactement** la distinction
+simple/complexe que l'image tabule (« La distinction qui compte n'est pas
+«convulsion ou non» mais simple ou complexe »). Dans German-84, la convulsion
+n'est qu'un item parmi onze du checklist de reconsultation `m7` — aucune place
+n'y est faite à la distinction simple/complexe que l'image porte, le texte
+voisin (ligne 958) ne fait qu'effleurer le seuil de 6 mois. La justification de
+German-48 est la plus étroite des deux.
+
+Remplacement cherché sur les neuf fichiers distincts que cite la page (§ 8.1) :
+`pedia-fontanelles-sutures.jpg` aurait été le candidat le plus pertinent pour
+German-84 — sa légende de page (« bombée : HTIC/méningite ; déprimée :
+déshydratation ») recoupe **deux** critères notés de German-84 (`a11` « Fontanelle
+bombée (si encore ouverte) », `m7` « Signes de déshydratation ») — mais
+`fetch_image.py --check` le refuse : **en-tête PNG sous extension `.jpg`**
+(vérifié `file` : `PNG image data`), un des onze fichiers à extension
+mensongère du § 4 a du rapport principal. Les deux algorithmes « fièvre sans
+foyer » cités par la page échouent au même contrôle, pour la même raison.
+`Ped-Eruptions cutanées.jpg`, seul fichier restant au bon en-tête, est un
+tableau générique de tout le thème (aucune légende propre, 2 261 Ko, sous une
+vignette Obsidian distincte des autres images de la page) : il échoue les
+trois tests du § 8.3 pour la vignette de German-84 (téléphone, pas d'éruption
+observée — « pas d'éruption cutanée pour l'instant » n'y figure même pas,
+c'est German-70 qui a ce symptôme). **Aucun remplacement viable** : appliqué
+le § 8.5 « mieux vaut une image de moins qu'une image hors sujet », German-84
+passe de 3 à 2 images (plancher du § 8.2 respecté). Le vault n'a pas été
+modifié — les trois fichiers mal étiquetés restent signalés, non réparés.
+
+**Modification**
+
+- German-84 · planche d'images : retrait du triplet titre/description/image
+  « Convulsions fébriles simples et complexes » /
+  `pedia-convulsions-febriles-simples-vs-complexes.jpg`. `annexe-image` reste à
+  1 segment (2 triplets au lieu de 3), `blocks` inchangé.
+
+## Défaut 3 — budget par grille et exemption du message-clé
+
+**Arbitrage reçu, inscrit au § 8.5 d et au § 8.6 de `PROCEDURE-german.md`** :
+le budget de 700 Ko par grille s'entend **hors images exemptées** — message-clé
+obligatoire (§ 8.4) et image désignée nommément par un critère noté (§ 8.5 d) —
+les deux mêmes catégories que celles qui échappaient déjà au plafond par image,
+pour la même raison (sourcées par la grille, pas par une préférence
+éditoriale). Aucune grille n'a été éditée pour ce défaut : c'est une exemption
+déjà prévue au § 8.5 d qu'on étend explicitement à l'unité de mesure « par
+grille » à laquelle elle n'avait jamais été rattachée par écrit.
+
+Recalcul des cinq grilles, poids mesurés sur `cases/img/german/` :
+
+| Grille | Total | Image exemptée retirée du calcul | Reste | Sous 700 Ko ? |
+|---|---|---|---|---|
+| German-42 | 837,8 Ko | `derma-message-cle-infections-cutanees.png` (459,9 Ko, message-clé) | 377,9 Ko | **oui** |
+| German-27 | 832,9 Ko | `epaule-message-cle-epaule-douloureuse.png` (369,6 Ko, message-clé) | 463,4 Ko | **oui** |
+| German-72 | 1 048,9 Ko | `pedia-courbe-de-croissance-pediatrique-couloirs-p3-p97-cassure.png` (442,8 Ko) | 606,1 Ko | **oui** |
+| German-66 | 804,0 Ko | — aucune image exemptée | 804,0 Ko | **non** |
+| German-70 | 723,7 Ko | — aucune image exemptée | 723,7 Ko | **non** |
+
+German-72 n'avait pas de message-clé, mais son critère noté `a3` porte déjà
+« Taille actuelle `[Voir courbe de croissance, P3]` » et « Poids actuel `[Voir
+courbe de croissance, P3]` » en `patient-response` — désignation nommément par
+un critère noté, exactement la seconde catégorie du § 8.5 d, présente dans la
+grille avant ce lot. L'exemption suffit à elle seule à faire rentrer German-72
+dans le budget.
+
+**German-66 et German-70 dépassent toujours**, aucune de leurs images n'étant
+message-clé ni désignée nommément par un critère noté (contrôlé : aucun `[Voir
+…]` en `patient-response`, aucun renvoi explicite de corrigé, sur les deux
+grilles). Non corrigées — proposition sans exécution :
+
+- **German-66** (804,0 Ko = 77,4 + 595,1 + 131,6) : je propose de retirer
+  `cardio-syndrome-de-brugada-aspect-type-1.png` (595,1 Ko, à elle seule 74 %
+  du total). Elle documente une réponse **négative** d'un critère noté
+  (`a15` « Maladies cardiaques familiales `[aucune]` ») — un screening à
+  exclure, pas un signe que la vignette montre — quand les deux images
+  restantes couvrent, elles, le symptôme rapporté (tachycardie régulière que
+  la patiente tape sur la table) et un drapeau rouge dont l'anamnèse est
+  positive (douleur thoracique + cocaïne, bilan ECG/troponines demandé au
+  corrigé). Retrait ramènerait German-66 à 208,9 Ko, loin sous le plafond.
+- **German-70** (723,7 Ko = 182,3 + 491,2 + 50,2) : dépassement marginal, 23,7 Ko
+  au-dessus du seuil (3,4 %). Les trois images sont à peu près également
+  ancrées dans le texte (les trois urgences à ne pas manquer nommées dans la
+  présentation : cheveu tourniquet, otite, invagination), aucune n'est
+  désignée par un critère noté. Si un retrait devait être fait, je proposerais
+  `orl-oma-tympan-bombe-erythemateux.jpg` (491,2 Ko, 68 % du total à elle
+  seule et très au-dessus du p90 du corpus à 460 Ko) plutôt que les deux
+  autres fichiers, nettement plus légers (182 Ko et 50 Ko) pour un
+  gain de budget largement suffisant. **Signalé pour information** : la
+  consigne ne posait la question que pour German-72 et German-66 ; German-70
+  restait dans la même situation et n'a pas été traité plus loin qu'un
+  diagnostic et une proposition.
+
+## Défaut 4 — corrections documentaires
+
+**Modifications**
+
+- `scripts/german/PROCEDURE-german.md` § 8.5 c · références cassées : « 36 des
+  700 fichiers cités » → « 29 des 700 fichiers cités […], dont 28
+  `Résumé-SSP_page-NNNN.jpg` ».
+  source : mesure du rapport p4 (§ 3 « Corrections documentaires tranchées »,
+  point 3), balayage direct des `![[…]]` des 53 pages contre le vault.
+- `scripts/german/PROCEDURE-german.md` § 8.5 d et § 8.6 · budget par grille :
+  ajout de la clause d'exemption (Défaut 3 ci-dessus).
+- `docs/superpowers/rapport-german-sections-2026-08.md` § 4 c · note de bas de
+  section : « la procédure affiche encore le chiffre de 36 » → « la procédure
+  affichait le chiffre de 36 […], corrigé au § 8.5 c ».
+
+**Non touché, vérifié déjà correct** dans `rapport-german-sections-2026-08.md` :
+le chiffre des 29 références (§ 1 point 3, § 4 c), la reformulation des deux
+SVG « trop pauvres » et non vides (§ 4 b), le poids et le facteur de
+`main-test-phalen.png` (§ 1 point 4, § 4 e) — ces trois avaient déjà été
+tranchés par la vérification p4 elle-même. `PROCEDURE-german.md` ne portait ni
+la mention des SVG ni celle de `main-test-phalen.png`.
+
+## Vérifications
+
+`check_invariants` OK 88, `check_nomenclature` OK, `check_reachability` OK
+88/88 à 100 %, `report_redundancy` 16 paires (inchangé), `fetch_image --verify`
+203 = 203 sans lien cassé ni orpheline. amboss OK 40, rescos OK 41.
+
+## Commit
+
+Index construit **chemin par chemin** (7 fichiers : 3 grilles, 2 documents,
+journal, rapport de correctifs), avec vérification explicite que
+`git diff --cached --name-only | grep -E "cases/rescos/|cases/casecos/|scripts/rescos/|scripts/casecos/"`
+rendait zéro ligne. HEAD de départ vérifié (`e8bd11e`, pas celui annoncé par
+l'instantané de tâche). Aucun `git add -A`, aucun `git push`, aucune commande
+réseau, aucun `git gc` ni `git prune`. Aucune section notée touchée, vault
+intact.

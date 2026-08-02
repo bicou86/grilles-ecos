@@ -328,8 +328,9 @@ caractérisation de la douleur, drapeaux rouges, déroulé de l'examen, manœuvr
 ciblées, différentiel par topographie, urgences abdominales. **Les rétablir
 débloquerait d'un coup l'iconographie d'examen de cinq grilles.**
 
-Note : la procédure affiche encore le chiffre de **36** références cassées ; la
-mesure en donne **29**.
+Note : la procédure affichait le chiffre de **36** références cassées ; la
+mesure en donne **29**, corrigé au § 8.5 c de `PROCEDURE-german.md` (2026-08,
+vérification p4).
 
 ### d) Un fichier au contenu faux
 
