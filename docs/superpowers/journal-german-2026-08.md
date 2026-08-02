@@ -3732,3 +3732,227 @@ mes commits. Aucun `git add -A`, aucun `git push`, aucune commande réseau,
 aucun `git gc` ni `git prune`.
 
 Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3d-report.md`
+
+---
+
+# Lot p3d-bis — les huit dernières grilles, German-80 à 87
+
+Corpus german **achevé : 88 grilles sur 88**.
+
+## Périmètre
+
+Huit grilles, toutes sans bloc de fin de page au départ : German-80
+(tremblement — maladie de Parkinson), 81 (troubles de l'érection — marqueur
+cardiovasculaire), 82 (troubles du sommeil — hyperthyroïdie), 83 (troubles
+sensitifs des pieds — polyneuropathie révélant un diabète), 84 (fièvre et
+vomissements d'un nourrisson au téléphone), 85 (déshydratation aiguë — enfant
+de 2 ans ou femme de 85 ans), 86 (voyage au Brésil), 87 (voyage à Madagascar).
+
+Produit par grille : `resume`, `annexe-theorie`, `presentation-patient` et,
+quand la page SSP le permettait, une planche d'images en une seule
+`annexe-item`. Ni `annexe-expert` ni `annexe-scenario`. Dans `presentation`,
+les deux cartes SBAR et SNAPPS en `.commcard-grid` à la place de la
+« Checklist mentale ». **Aucune section notée touchée.**
+
+## Une correction au relevé préparatoire
+
+Le § 8 de `p3d-report.md` donnait German-86 comme « femme 22 ans, retour du
+Brésil ». **C'est inexact** : l'en-tête de la grille dit « se présente pour
+préparer son voyage au Brésil », et le lieu est « Cabinet de médecine générale
+— Consultation de médecine des voyages ». German-86 est donc, comme German-87,
+une consultation **avant** départ. Le relevé signalait le problème pour la
+seule 87 ; il concerne les deux.
+
+Conséquence de sourçage : leur page SSP « Fièvre au Retour de Voyage » traite
+du patient **déjà malade**. Elle ne couvre ni les vaccinations, ni la
+chimioprophylaxie, ni la protection anti-vectorielle, ni la trousse de
+pharmacie, qui sont l'objet des deux stations. La quasi-totalité du contenu de
+ces deux fiches provient donc de la section notée, seule source disponible, et
+l'`annexe-theorie` le dit explicitement dans les deux grilles — même formule
+que German-79.
+
+C'est le **quatrième et le cinquième cas** de page ne couvrant pas sa vignette
+(après German-79 et les deux relevés de p3c-bis).
+
+## Redondance
+
+`report_redundancy.py` avant et après chaque grille. Vingt et une paires
+apparues en cours de rédaction, toutes arbitrées avant commit :
+
+| Grille | Paires apparues | Arbitrage |
+|---|---|---|
+| German-81 | 5 | `presentation` cède 5 fois |
+| German-82 | 2 | `presentation` cède 2 fois |
+| German-86 | 5 | `presentation` cède 5 fois |
+| German-87 | 5 | `presentation` cède 3 fois, `annexe-theorie` 2 fois |
+| 80, 83, 84, 85 | 0 | — |
+
+**Zéro paire de redondance inter-blocs sur les huit grilles** à l'arrivée. Le
+corpus reste à 16 paires, toutes antérieures à ce lot et sur d'autres grilles
+(1, 15, 19, 27, 34, 44, 56, 68, 72, 88).
+
+La règle dégagée au lot précédent a été appliquée **dès la rédaction** : la
+section « Seuils et repères chiffrés » de l'`annexe-theorie` ne porte que des
+chiffres qui **expliquent** — 4-6 Hz contre 6-12 Hz pour opposer deux
+tremblements, 1 mm contre 3 mm pour expliquer pourquoi la verge prévient avant
+le cœur, 60-80 % de neurones perdus avant le premier symptôme, seuil des
+8 semaines qui fait basculer les hypothèses d'une polyneuropathie. Les chiffres
+qui servent à **agir** sont restés au `resume`. Résultat mesurable : **2 paires
+seulement** ont opposé `resume` et `annexe-theorie` sur ce lot, contre 14 sur
+26 au lot précédent.
+
+## Balisage
+
+`mark3.py` (nouvel outil du lot) remplace `mark2.py` : alternation unique
+ordonnée par longueur décroissante, donc appariement **leftmost-longest** et
+**aucun span imbriqué** — `mark2.py` réappliquait ses motifs sur un texte déjà
+balisé et pouvait produire `<span>tremblement de <span>repos</span></span>`.
+Même restriction aux quatre conteneurs prescrits, même refus d'entrer dans un
+`<span class="c-*">` existant, même assertion d'équilibre avant écriture.
+
+Densité mesurée sur les quatre conteneurs prescrits :
+
+| Grille | spans | mots | densité |
+|---|---|---|---|
+| 80 | 291 | 2 750 | 1/9,5 |
+| 81 | 318 | 2 732 | 1/8,6 |
+| 82 | 310 | 2 789 | 1/9,0 |
+| 83 | 389 | 3 251 | 1/8,4 |
+| 84 | 364 | 3 168 | 1/8,7 |
+| 85 | 321 | 2 806 | 1/8,7 |
+| 86 | 354 | 3 038 | 1/8,6 |
+| 87 | 338 | 2 739 | 1/8,1 |
+
+`thin2.py` a déballé les `<li>` homogènes de cinq spans ou plus : 11 `<li>`
+touchés, 44 spans retirés sur l'ensemble du lot. Aucun span dans
+`section-longue` ni `section-express`, vérifié par `dens2.py`.
+
+**Correction d'outillage à consigner** : `thin2.py` teste `sys.argv[1] ==
+'--apply'`. Invoqué `thin2.py 80 --apply`, il n'écrit rien et ne le signale
+pas. La forme correcte est `thin2.py --apply 80`. Le premier appel du lot est
+passé à côté du déballage sans erreur visible.
+
+## Images
+
+**16 fichiers distincts, 1 889 Ko, 13 nouveaux** — les trois autres étaient
+déjà repris par German-6, German-48 et German-13.
+
+| Grille | Images | Poids |
+|---|---|---|
+| 80 | 3 | 216 Ko |
+| 81 | 3 | 474 Ko |
+| 82 | **1** | 370 Ko |
+| 83 | **2** | 86 Ko |
+| 84 | 3 | 220 Ko |
+| 85 | 3 | 353 Ko |
+| 86 | **1** | 171 Ko |
+| 87 | **0** | — |
+
+Quatre grilles sous la cible de 3, dont une à zéro. Chaque écart a une raison
+mesurée, et aucune n'est un renoncement à chercher.
+
+- **German-82** — sa page « Troubles du Sommeil » cite cinq images ; **une
+  seule porte sur la vignette** (hyperthyroïdie). Les quatre autres — mécanisme
+  du SAOS, polysomnographie, échelle d'Epworth, CPAP — relèvent du thème du
+  sommeil, qu'aucun critère noté ni aucun `annexe-dd` de cette grille
+  n'appelle. Le § 8.3 les écarte.
+- **German-83** — sa page « Neuropathie Périphérique » cite dix images, dont
+  **cinq dépassent le plafond de 600 Ko** : pallesthésie (9 954 Ko), réflexe
+  achilléen (9 862 Ko), épreuve de Romberg (6 023 Ko), topographie médullaire
+  (1 026 Ko), anesthésie en selle (1 013 Ko). Les deux premières sont **les
+  gestes mêmes que l'examen de cette station note**. Le SVG de la démarche
+  steppante fait 799 octets et ne contient aucun tracé. Restaient exploitables
+  les territoires nerveux et le mal perforant plantaire — les deux retenues.
+- **German-84** — **trois des images de sa page sont bloquées par une
+  extension mensongère** : les deux algorithmes de fièvre sans foyer et la
+  planche des fontanelles. `fetch_image.py` sort en `ÉCHEC [corrompu]` sur les
+  trois. Signalées, non contournées, vault non touché. La planche des
+  fontanelles est une perte réelle : le critère `a11` fait chercher une
+  fontanelle bombée.
+- **German-86 et 87** — voir plus haut : leur page traite du fébrile au retour.
+  Sur ses quatorze images, **une seule** passe le test de la vignette : le
+  tableau « Exposition et pathologies », dont la dernière section énumère les
+  mesures préventives — vaccinations, prophylaxie antipalustre, antibiotique de
+  séjour — et dont les lignes d'exposition (baignade en eau douce, piqûres de
+  moustiques, contacts sexuels, exposition au sang par tatouage) sont exactement
+  ce que le corrigé de German-86 fait inventorier. Attribuée à German-86, dont
+  les critères notés la recoupent ligne à ligne. **German-87 reste sans image**,
+  le corollaire du § 8.3 interdisant à deux grilles d'une même page de porter la
+  même sélection. Les autres images de la page — critères d'hospitalisation du
+  paludisme, signes d'alarme de la dengue, profils fébriles, frottis, escarre
+  d'inoculation, taches de Koplik, incubations — documentent toutes la prise en
+  charge d'un malade, pas la préparation d'un départ.
+
+### Le message-clé de « Fièvre au Retour de Voyage » — écarté, et pourquoi
+
+La page en cite un, balisé `<!-- compas-message -->`. Il porte cinq énoncés,
+tous relatifs au **patient déjà fébrile** : proportion d'origine tropicale,
+raisonnement probabiliste sur les incubations, place de *P. falciparum* dans
+les hospitalisations, obligation de tester tout fébrile au retour, et
+**indication d'un traitement empirique par doxycycline**.
+
+Le § 8.4 rend un message-clé obligatoire **« quand il porte sur la vignette »**.
+L'entité des deux vignettes est une consultation de médecine du voyage avant
+départ. Posé dans une telle grille, ce panneau serait lu comme un conseil au
+voyageur et affirmerait, avec l'autorité du Compas, une conduite thérapeutique
+qui n'est pas celle de la station. C'est exactement le dommage décrit au
+§ 8.4 point 3, et le précédent est **German-19**. Écarté sur les deux grilles,
+consigné ici.
+
+## Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `check_invariants.py` (german) | **OK — 88 grilles**, après re-snapshot |
+| `baseline_diff.py` avant snapshot | seul champ modifié `blocks` ; grilles 80-87 ; **0 écart hors `blocks`** ; delta **purement additif** |
+| `check_reachability.py` (german) | OK — 88 grilles, 100 % sur chaque section |
+| `check_nomenclature.py` (german) | OK — aucun terme non suisse |
+| `report_redundancy.py` par grille | 0 paire sur les huit |
+| `fetch_image.py --verify` | 203 images présentes, 203 référencées, **aucun lien cassé, aucune orpheline** |
+| AMBOSS (3 contrôles) | OK — 40 grilles, inchangé |
+| RESCOS (3 contrôles) | OK — 41 grilles, inchangé |
+
+Détail du delta de `baseline.json` : `resume`, `annexe-theorie` et
+`presentation` ajoutés sur les **huit** grilles, `annexe-image` sur **sept**
+(German-87 n'en porte pas). Aucun bloc retiré, aucun bloc dont le nombre de
+segments change. `maxScores`, `scoreSpans`, `sectionCounts`, `criteriaCount`,
+`detailCount`, `radioCount` et `checkboxCount` identiques sur les 88.
+
+### Contrôle visuel
+
+Chrome `--headless=new`, rendu local `file://`, aucune requête réseau.
+
+**German-84**, deux thèmes × deux largeurs : `complete === true` et dimensions
+naturelles **égales à celles du vault** pour les douze rendus (1179×999,
+960×720, 957×558) ; rapports largeur/hauteur conservés à moins de 0,3 % ;
+`scrollWidth === innerWidth` à 1200 comme à 500 px ; un seul `annexe-item`
+portant trois `annexe-title` ; couleur des titres `rgb(44,90,160)` en clair et
+`rgb(147,197,253)` en sombre, conformément à la règle CSS du socle. Copie
+temporaire supprimée.
+
+**German-80**, zone pédagogique complète rendue seule avec les deux feuilles de
+style du socle, deux thèmes × deux largeurs : les huit couleurs sémantiques
+sont distinctes et lisibles dans les deux thèmes, y compris sur le fond rose
+des `resume-subsection urgence` en thème clair ; aucun débordement horizontal à
+500 px ; les `<h5>` de sous-section restent lisibles en capitales sur deux
+lignes.
+
+## Commits
+
+| Hash | Contenu |
+|---|---|
+| `30baa6b` | German-80, 81, 82, 83 + 8 images |
+| `28fb11a` | German-84, 85, 86, 87 + 5 images, re-snapshot de `baseline.json` |
+
+Index construit **chemin par chemin** avant chaque commit, avec vérification
+explicite qu'aucun fichier de `cases/rescos/`, `cases/casecos/`,
+`cases/rescos-locales/`, `scripts/rescos/` ou `scripts/casecos/` n'y figurait —
+contrôle passé deux fois sur deux, `git diff --cached --name-only | grep -E
+"rescos|casecos"` rendant zéro ligne. **Quarante-trois fichiers de la session
+voisine** étaient modifiés ou non suivis dans l'arbre de travail ; aucun n'est
+entré dans mes commits, et deux de ses commits se sont intercalés entre les
+miens sans conflit. Aucun `git add -A`, aucun `git push`, aucune commande
+réseau, aucun `git gc` ni `git prune`.
+
+Rapport détaillé :
+`.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3d-bis-report.md`
