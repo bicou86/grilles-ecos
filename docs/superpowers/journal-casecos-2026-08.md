@@ -684,3 +684,290 @@ règle 1 du barème (correction sans changement de structure).
   scripts de `scripts/casecos/` ou de mesures Python explicites (stdlib seule).
 * Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
   aucun `timeout`.
+
+---
+
+## Lot k5a — 25 premières grilles CasECOS par ordre alphabétique
+
+Branche `refonte-amboss-suisse`, base `42aa4e0`. Premier lot de production après
+le pilote k4 : les 25 premières grilles de `cases/casecos/` par ordre
+alphabétique. Le pilote (`AMC-MedInterne-P13 Méningite`) n'y figure pas — il est
+au-delà du rang 25 — le lot est donc exactement `lib.grids()[:25]`.
+
+**24 grilles sur 25 modifiées.** Seule `AMC-Chir3-ECG2 Entorse grave du genou`
+ressort intacte : sa paire mesurée (`annexe-dd ↔ expert`, triade d'O'Donoghue)
+est déjà couverte par `theorie`, et son usage inversé ne signale aucun trou.
+
+### Redondance : 66 → 27 paires inter-blocs (−59 %)
+
+| couple | avant | après |
+|---|---|---|
+| **`expert ↔ theorie`** | **36** | **4** (−89 %) |
+| `theorie ↔ theorie` (intra) | 58 | 57 |
+| `annexe-dd ↔ annexe-dd` (intra) | 16 | 16 |
+| `therapy ↔ theorie` | 10 | 11 |
+| `expert ↔ expert` (intra) | 9 | 8 |
+| autres inter | 20 | 12 |
+| **TOTAL inter** | **66** | **27** |
+| TOTAL intra | 90 | 88 |
+
+`expert ↔ theorie` était bien la cible : 36 des 66 paires du lot, 55 %, contre
+49 % annoncés sur le corpus. Le test du référent — *changez le patient, l'item
+survit-il ?* — la tranche sans ambiguïté sur ce lot, parce que le motif y est
+constant : **`expert`/Points clés est, dans ce corpus, un cours en réduction**.
+Épidémiologie, classifications, posologies détaillées, résultats d'études — tout
+y survit au changement de patient, et `theorie` le porte déjà, presque toujours
+plus richement. `expert`/Rôles et `expert`/Pièges, eux, tiennent leur rôle.
+
+### La règle appliquée, et sa limite volontaire
+
+Un item d'`expert` n'a été **retiré** que si (a) le test du référent l'attribue à
+`theorie`, (b) `theorie` porte déjà son contenu **intégral** — vérifié terme à
+terme avant chaque suppression, en portant d'abord dans `theorie` ce qui lui
+manquait — et (c) `expert` garde le comportement observable correspondant dans
+Rôles ou Pièges. Sinon l'item est **spécialisé** (le générique part dans
+`theorie`, la formulation d'`expert` redevient une action) ou **laissé**.
+
+**Limite assumée** : l'opération n'a porté que sur les paires *mesurées*. Le
+reste des Points clés déclaratifs d'`expert` — largement majoritaire — n'a pas
+été touché. Le convertir serait une réécriture de masse, non mesurable, et
+excède le mandat d'un lot. **C'est une question de style éditorial à trancher
+pour le corpus entier, pas grille par grille.** Voir « Ce qui reste ouvert ».
+
+### Les 4 paires `expert ↔ theorie` laissées, et pourquoi
+
+| grille | paire | raison |
+|---|---|---|
+| Constat de chute | « Prescrire un CT cérébral… » (Points clés) ↔ règle + rationnel (`theorie`) | action ↔ règle : le format change, le contrat protège |
+| TFCC | « Connaissance de l'arthroscopie… » (**Rôles**) ↔ « arthroscopie = référence… » | `Rôles` est la liste de ce que l'évaluateur vérifie : ce n'est pas un énoncé de savoir |
+| Épicondylite | « Indications chirurgicales : échec conservateur 6 mois » (**Rôles**) ↔ idem | idem |
+| Fémur proximal | « Fractures du col chez le sujet jeune… » ↔ « toutes Garden… » | forme avec l'item « sujet âgé » un contraste jeune/âgé dont l'amputation d'une moitié serait une perte pédagogique — **règle 3** |
+
+Supprimer un item de `Rôles` pour satisfaire une comparaison de chaînes
+reviendrait à laisser l'outil dicter le contrat. Sur `AMC-Chir3-Vignette1`, la
+paire à **1,00** entre `Rôles` (« Approche multidisciplinaire (orthogériatrie) »)
+et `theorie` a été résolue autrement : l'item de `Rôles` a été rendu à sa
+fonction — « Évaluer l'inscription du cas dans une filière orthogériatrique et
+l'appel des intervenants utiles ». C'est le geste de spécialisation, pas la
+suppression.
+
+### 3 paires `annexe-dd ↔ theorie` sont un ARTEFACT DE MESURE, pas une redondance
+
+Sur `AMC-Chir2-ARC1`, trois paires (1,00 · 0,75 · 0,73) apparient un item
+d'`annexe-dd` — « migration cholédocienne (arguments POUR) », « pancréatite
+biliaire (arguments POUR) » — à un **sous-titre** de `theorie` porté par un `<li>`
+(« MIGRATION CHOLÉDOCIENNE : », « PANCRÉATITE BILIAIRE : »). Ce sont des
+étiquettes de structure des deux côtés, pas du contenu. **Ne pas les poursuivre**,
+et se souvenir qu'`annexe-dd` ne se nettoie pas (§ 8 de la procédure).
+
+### L'usage inversé : 8 trous du canonique sur 25 grilles
+
+Instrument du pilote rejoué grille par grille — appariement à seuil abaissé
+(0,45) des items de `therapy`/`redflags` contre les blocs de restitution, en
+retenant ceux dont le meilleur appariement est **ailleurs que dans `theorie`** —
+puis confirmation par comptage du terme dans le texte visible, bloc par bloc.
+
+| grille | point | vivait dans | `theorie` |
+|---|---|---|---|
+| Migraine | **fond d'œil** (piège n° 1 de la page SSP) | `redflags` n° 5 seul | 0 occurrence de « œil » |
+| Constat de chute | **station au sol > 1 h** : rhabdomyolyse, hypothermie, escarres, CK | `redflags` n° 6 seul | 0 « rhabdomyolyse », 0 « hypothermie », 0 « escarre », 0 CK |
+| Cancer gastrique | **complications post-gastrectomie** : anémie ~50 %, dumping précoce/tardif, rationnel de la B12 | `redflags` n° 6-8 + `expert`/Pièges | aucune section complications |
+| Hémorragie digestive | **seuil du score de Glasgow-Blatchford** | `expert`/Pièges seul, **et faux** (voir ci-dessous) | scores nommés sans seuil |
+| Épicondylite | **complications de la chirurgie** | `therapy` + `cloture` (paire 0,73) | 0 |
+| Fémur proximal | **mortalité 5-8 % à 1 mois, 20-30 % à 1 an** et **délai < 24-48 h** | `redflags` + `expert` (paire 0,80) | 0 « mortalité », 0 « 48h » |
+| IRC du diabétique | **rationnel de la cible HbA1c** (DCCT, risque d'hypoglycémie ×3) | `therapy` + `expert` | 0 « DCCT », 0 « hypoglycémie » |
+| Coxarthrose | **foyers infectieux pré-op / avis urologique** (sondage → infection prothétique) | `expert` + `therapy` + `defi` + `cloture` | 0 « urolog », 0 « sondage » |
+
+**Deux de ces grilles mesuraient 0 paire inter-blocs** — `AMC-Chir2-Vignette5`
+et `AMC-Chir3-ARC1`. C'est la démonstration directe de l'avertissement du
+pilote : un `report_redundancy.py` vide ne dit rien du travail à faire. **C'est
+le contrat qui le trouve.**
+
+Un trou de plus, non listé parce que le canonique le portait déjà : le TFCC —
+`cloture` et `expert` s'accordaient sur « 70-80 % de bons résultats » sans passer
+par `theorie` ; le pronostic y a été ajouté.
+
+### Niveau 1 — ce que les pages SSP ont donné
+
+16 pages SSP desservent le lot, toutes lues. **L'indicateur du pilote se vérifie
+une seconde fois** : le rendement suit les **cibles chiffrées**, pas la largeur
+de la page.
+
+Rendement (cible chiffrée absente de la grille, portée dans `theorie`) :
+
+* **Céphalée** (22 grilles) — piège n° 1 « Oublier le fond d'œil » ; posologies de
+  crise (paracétamol 1 g, ibuprofène 400-600 mg, sumatriptan 50-100 mg PO / 6 mg
+  SC, ± métoclopramide 10 mg) : **la grille ne portait aucune dose** ; seuil du
+  traitement de fond (≥ 3 crises invalidantes/mois) ; seuils de la céphalée par
+  abus (≥ 15 j/mois antalgiques simples, ≥ 10 j/mois triptans) ; céphalée
+  inaugurale après 50 ans → Horton, **absent de toute la grille**.
+* **Chute & Évaluation gériatrique** (7) — station au sol > 1 h et son bilan.
+* **Hernie inguinale** (1 seule grille, et la plus rentable du lot) — chirurgie
+  **< 6 h**, absent de toute la page ; hernie crurale, risque d'étranglement
+  **15-20 %** ; distinction **incarcération / étranglement**, 0 occurrence de
+  « incarcér- » ; piège de la **réduction en masse**, 0 occurrence.
+* **Douleur de Hanche** (8) — délai opératoire **24-48 h** (SSO/SGO).
+* **Diabète** (10) — individualisation de la cible HbA1c (< 7 %, < 8 % chez
+  l'âgé, jamais < 6,5 % chez le fragile).
+* **Nausées / Hématémèse** (4) — seuil de Glasgow-Blatchford (**correction**).
+* **Capacité de discernement** (10) — ordre de la cascade des représentants
+  (**correction**).
+
+Rendement **nul**, et c'est un résultat : **Lombalgies** (24 grilles) et
+**Douleurs articulaires** (14) — les deux pages les plus larges du lot — ne
+portent **aucun contenu** sur la scoliose idiopathique, la tendinopathie du
+tibial postérieur ni l'épicondylite ; elles ne citent ces entités que par le
+titre de la grille. **Douleur au Poignet** ne porte pas la classification de
+Palmer, **Polytraumatisme** ne porte pas celle de Gustilo. Sur ces cinq points,
+la hiérarchie tombe au **niveau 3** — ni SSP explicite, ni SSP générique
+contradictoire : laisser, consigner. C'est fait ici.
+
+### Deux corrections factuelles
+
+1. **`AMC-Chir2-ECG3`, score de Glasgow-Blatchford.** `expert`/Pièges portait
+   « Score de Glasgow-Blatchford > 0 = nécessite endoscopie hospitalière ». La
+   page SSP est explicite et chiffrée : « GBS = 0-1 → prise en charge ambulatoire
+   envisageable », « identifie les bas risques (0-1) → ambulatoire ». **SSP
+   explicite → elle fait foi** (niveau 1). L'item devient un vrai piège, et le
+   seuil est porté dans `theorie`/Évaluation de la sévérité, qui ne nommait les
+   scores que sans leurs bornes.
+2. **`AMC-Chir1-MedLeg`, cascade des représentants.** `theorie` plaçait le
+   curateur (rang 2) **avant** le mandat pour cause d'inaptitude (rang 3). L'art.
+   378 al. 1 CC met les directives anticipées et le mandat pour cause
+   d'inaptitude au **même chiffre 1**, le curateur au chiffre 2 ; la page SSP dit
+   la même chose. Les rangs 2 et 3 sont inversés, et la référence du curateur
+   passe de l'art. 401 CC aux art. 394-396 CC, graphie de la page SSP.
+
+Un troisième point relevé et **non corrigé** : `expert` de `AMC-Chir2-ECG5`
+portait « score MELD (allocation **graphique** des greffons) », mot sans
+signification ici. L'item ayant été supprimé comme doublon de `theorie` — qui
+écrit correctement « allocation des greffons » — la coquille disparaît par le
+même geste, sans arbitrage à porter.
+
+### ⚠️ Le couple `theorie ↔ therapy` : la mesure est PIRE que ne le disait le pilote
+
+Le pilote annonçait un plafond de 0,64 sur inclusion parfaite. **Sur ce lot il
+est de 0,60**, mesuré : item de `theorie` **70 caractères** en moyenne (n = 1 622),
+item de `therapy` **164** (n = 300), soit `2×70/(70+164) = 0,60`.
+
+Mesure directe de ce que cela cache, par recouvrement de vocabulaire (jetons de
+plus de 2 lettres, mots-outils retirés) :
+
+| mesure | valeur |
+|---|---|
+| items de `theorie` dont **≥ 90 % du vocabulaire** se retrouve dans **un seul** item de `therapy` | **30** |
+| … dont le ratio reste **≤ 0,72**, donc invisibles | **24 (80 %)** |
+| paires `theorie ↔ therapy` effectivement mesurées sur le lot | **11** |
+
+**La mesure voit environ un tiers du recouvrement réel.** Exemples chiffrés,
+tous sous le seuil : `AMC-CasECOS Gériatrie` « surveillance neurologique
+rapprochée » à **0,24** ; `AMC-Chir2-ECG4` « iléostomie de protection » à
+**0,26** ; `AMC-Chir2-ECG5` « radiofréquence pour nodules < 3 cm » à **0,55** ;
+`AMC-Chir2-Vignette1` « réparation pariétale, filet de Lichtenstein » à **0,56**.
+
+Le seuil n'a pas été touché — c'est la mesure publiée du projet, elle garde
+AMBOSS (147), RESCOS (127) et CasECOS comparables.
+
+**La conséquence annoncée au § 3.3 du pilote est confirmée** : la structure
+`Traitement : X` / `Détails : …` invite bien à loger le rationnel dans une
+section notée. Cinq des huit trous du canonique ci-dessus sont exactement cela —
+mortalité du fémur proximal, rationnel de la cible HbA1c, complications de la
+chirurgie de l'épicondylite, complications post-gastrectomie, avis urologique
+avant PTH. **Le repérage ne vient jamais de la mesure de redondance ; il vient
+de l'usage inversé au seuil abaissé, puis d'un comptage bloc par bloc.**
+
+### Portes
+
+| porte | avant | après |
+|---|---|---|
+| `check_invariants.py` | rc 0 | **rc 0 — 198 grilles** |
+| `check_nomenclature.py` | rc 0 | **rc 0** |
+| `check_reachability.py` | 198/198 | **198/198 à 100 %** |
+| `report_redundancy.py` (lot de 25) | **66 inter, 90 intra** | **27 inter, 88 intra** |
+| `check_no_loss.py 42aa4e0` | — | **10 disparitions, 10 verdictées** |
+| `scripts/amboss/report_redundancy.py --quiet` | **147** | **147** |
+| `scripts/rescos/report_redundancy.py --quiet` | **127** | **127** |
+| `scripts/amboss/check_invariants.py` · `scripts/rescos/check_invariants.py` | rc 0 | **rc 0** |
+
+**Contrôle anti-perte indépendant**, parce qu'une disparition appariée reste une
+affirmation. Ensembles d'items normalisés extraits de `git show 42aa4e0:…` et de
+l'arbre de travail, sur les 25 grilles : **3 875 items avant, 3 863 après**,
+soit **53 retirés et 41 ajoutés**, delta net **−12**.
+
+Les 10 disparitions signalées par `check_no_loss` se répartissent en deux
+familles, aucune n'étant une perte :
+
+* **6 reformulations en place** — l'item existe toujours, enrichi : art. 16 CC et
+  les deux rangs de la cascade (`MedLeg`), supplémentation post-gastrectomie
+  (`ECG2`), les deux items du score de Glasgow-Blatchford (`ECG3`), engouement /
+  incarcération (`Vignette1`).
+* **4 suppressions dans `expert`** dont le contenu avait été **porté dans
+  `theorie` au préalable** : art. 16 CC, laparoscopie de stadification et son
+  chiffre de 20-30 %, bornes A/B/C du Child-Pugh.
+
+Les 43 autres suppressions ne sont pas signalées parce que `theorie` en porte
+déjà un appariement au-dessus du seuil — ce qui est précisément la condition
+qu'on s'était donnée pour supprimer.
+
+**Barème intact.** Toutes les modifications sont dans des `<li>` de blocs
+pédagogiques non notés (`expert`, `theorie`). Aucun `maxScores`, aucun `coef`,
+aucun `sectionInfo[].count`, aucun `<span class="score">`, aucun libellé `N.` de
+`.criteria-text` touché ; aucune section notée (`therapy`, `redflags`, `cloture`,
+`exemples`) modifiée. **Règle 1** du barème — pas de régénération du baseline,
+`check_invariants.py` et `check_reachability.py` le confirment. `window.caseConfig`
+et les chargements de `cases/scoring.js` / `cases/persistence.js` intacts.
+
+### Non corrigé, documenté (règle 3)
+
+* **88 paires intra-bloc** conservées. Les 57 paires intra-`theorie` sont
+  massivement des **séries parallèles** dont le parallélisme est la raison d'être
+  (« acidose / alcalose », « Garden I-II / III-IV », « sleeve / bypass », « stade
+  3a / 3b », « fille 11-13 ans / garçon 13-15 ans »). Les 8 paires intra-`expert`
+  sont le **plancher structurel de RESCOS** — polarité Points clés / Pièges.
+  L'intra est une mesure additionnelle, hors du chiffre de référence : le noter,
+  ne pas le poursuivre.
+* **`AMC-CasECOS Migraine`** : `theorie` porte la prise en charge deux fois, en
+  section « Prise en charge de la migraine » (synthèse) et en « Rappels
+  thérapeutiques » (formulaire). Granularités différentes, même bloc : arbitrage
+  d'auteur.
+* **`AMC-Chir1-ECG1`** : `expert` et `theorie` rattachent tous deux l'ASA III à
+  ce patient (« multiples comorbidités cardiopulmonaires » / « cas de
+  M. Asaquatre »). Aucun des deux n'est le générique de l'autre.
+
+### Ce qui reste ouvert
+
+1. **Le style d'`expert`/Points clés, pour les 173 grilles restantes.** Le motif
+   est corpus-large et non local : `Points clés` y est un cours en réduction là
+   où le contrat le veut à l'infinitif. Ce lot n'a traité que les items *mesurés*
+   comme doublons. Trancher globalement — réécriture à l'infinitif, ou
+   assouplissement du contrat pour `Points clés` — est une décision d'auteur qui
+   doit précéder les lots suivants, sous peine de traitements divergents.
+2. **Instrument séparé pour `theorie ↔ therapy`.** Le § 7 du rapport k4 le
+   proposait ; les chiffres ci-dessus le rendent nécessaire. Appariement du seul
+   segment « Traitement : » d'un `therapy-item`, ou recouvrement de vocabulaire
+   comme ici (30 recouvrements dont 24 invisibles). **Publié à part**, jamais en
+   modifiant le seuil de 0,72.
+3. **Sous-titres de `theorie` portés par des `<li>`.** Ils polluent
+   `list_items()` et fabriquent des paires vides de contenu (3 sur ce lot).
+   Un jour, les passer en `<h5>` ou les exclure de `list_items()` — mais cela
+   déplacerait les chiffres publiés.
+4. Les arbitrages k1 restent ouverts : 3 « ECOS Diag » obsolètes, 26
+   `numeration-implicite`, nom de fichier « Surdosage de Coumadin », bug
+   d'équilibrage latent de `lib_german` / `lib_rescos`.
+
+### Contraintes respectées
+
+* Rien écrit hors de `cases/casecos/`, de ce journal et du rapport k5a.
+  **`scripts/casecos/` non modifié** — la procédure n'avait pas à changer, le
+  contrat de blocs de k4 a tenu sur les 25 grilles.
+* **Aucun `git add`** — commit par `git commit -- <chemins>` exclusivement.
+  Rien touché sous `cases/german/`, `cases/rescos-locales/`, `scripts/german/`,
+  `scripts/rescos-locales/`, où l'utilisateur travaillait en parallèle.
+* **Aucune grille lue en entier avec `Read`** : bornes situées par
+  `lib.top_spans()`, lecture par fenêtres `offset`/`limit`, édition par
+  remplacement exact.
+* **Aucun `grep` brut employé comme contrôle** : tous les chiffres viennent des
+  scripts de `scripts/casecos/` ou de mesures Python passant par
+  `lib.visible_text()` / `lib.top_spans()` / `lib.matches()` (stdlib seule).
+* Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
+  aucun `timeout`, aucun `snapshot_invariants.py`.
