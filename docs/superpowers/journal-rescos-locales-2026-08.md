@@ -1617,3 +1617,367 @@ German et casecos n'ont été ni lus ni mesurés.
    qu'aucun outil ne déclenche : PAFA / art. 426 CC / APEA-KESB, risque
    suicidaire, glycémie, 143 · 144 · 147 · 117 · LAVI.
 6. **Le mot `undefined` est à retirer sur les 31 grilles restantes.**
+
+---
+
+## Lot `t2` — 25 grilles thématiques A→D, et les 40 `undefined` restants
+
+Branche `refonte-amboss-suisse`, base `6de0284`. **52 fichiers modifiés**, tous
+sous `cases/rescos-locales/`. Rien touché sous `cases/german/`,
+`scripts/german/`, `cases/casecos/` ni `scripts/casecos/` — ni lu, ni écrit.
+
+### 1. Périmètre
+
+Grilles thématiques (nom ne commençant pas par `RESCOS-<chiffre>`) dont le nom
+commence par A à D, hors les 20 du lot `t1` (« AMC Urgences » ×10, dont les 10
+commencent par A) et hors les 4 feuilles porte de la tranche (BPCO, Dépression
+majeure, Dépression post-partum, Diabète pédiatrique). **32 candidates** ;
+consigne appliquée : les **25 premières par ordre alphabétique** (collation
+française, insensible aux accents), soit d'`Acné vulgaire` à
+`Douleur thoracique - Vignette clinique`.
+
+**Les 7 non traitées, à reprendre :** `Douleurs thoraciques - DRS` ·
+`Dyspnée aigue` · `Dyspnée dans un contexte de polymorbidité` ·
+`Dyspnée dans un contexte infectieux` · `Dyspnée et insuffisance cardiaque` ·
+`Dyspnée et mal au cou` · `Dyspnée post-COVID`.
+
+### 2. Le porteur du rôle canonique — quatre configurations sur 25
+
+| porteur | grilles |
+|---|---:|
+| `theorie` | **24 / 25** |
+| `expert` présent (détecteur, non éditable) | 19 / 25 |
+| `resume` | 13 / 25 |
+| `presentation` | 13 / 25 |
+| **personne** (`annexe-dd` + `cloture` seuls) | **1** — `Diabète - Patient avec hyperglycémie nouvelle` |
+
+`theorie` tient le rôle partout sauf sur `Diabète - Patient avec hyperglycémie
+nouvelle`, qui n'a ni `theorie`, ni `expert`, ni `resume`, ni `presentation` :
+ses seuls blocs mobiles sont `annexe-dd` et `cloture`. Tout y a été porté dans
+`annexe-dd`.
+
+### 3. Le mapping inverse — 25 / 25 desservies
+
+Aucune grille orpheline. Le mapping ne se borne pas à `SSP ECOS/` : les trois
+`BBN` relèvent de `Skills ECOS/Skills — Annonce Mauvaise Nouvelle (SPIKES)`.
+
+| page | grilles de ce lot |
+|---|---|
+| `SSP — Douleur Abdominale` | Diverticulite · Douleur abdo (Vignette) · Douleur abdo (Vignettes) · Douleur abdo et diarrhée fébrile |
+| `SSP — Céphalée` | Céphalées B3 · Céphalées Vignette |
+| `SSP — Contraception & Conseil` | Contraception 28 ans · Contraception adolescente |
+| `SSP — Dépression` | Dépression majeure · Dépression post-partum |
+| `SSP — Diabète (Suivi & Complications)` | Diabète hyperglycémie · Diabète pédiatrique |
+| `Skills — Annonce Mauvaise Nouvelle (SPIKES)` | BBN Cancer du sein · BBN Limitation thérapeutique · BBN Sclérose en plaques |
+| `SSP — Diarrhée` | Diarrhées Vignettes |
+| `SSP — Dyspnée` | BPCO exacerbation |
+| `SSP — Détresse Respiratoire & Anaphylaxie` | Choc anaphylactique |
+| `SSP — États de Choc` | Choc septique pulmonaire |
+| `SSP — Claudication Intermittente & AOMI` | Claudication intermittente |
+| `SSP — Douleur au Mollet & TVP` | Douleur non traumatique du MI |
+| `SSP — Douleur Thoracique` | Douleur thoracique Vignette |
+| `SSP — Malaise & Perte de Connaissance Brève` | Crise convulsive |
+| `SSP — Lombalgies` | Baisse de l'état général (Guillain-Barré) |
+| `SSP — Éruption Cutanée` | Acné vulgaire |
+
+**Deux pages ne portent pas la matière de leur grille.** `SSP — Éruption
+Cutanée` cite « Acné vulgaire » mais **n'a aucune section acné** (ni sévérité,
+ni isotrétinoïne, ni photosensibilité des rétinoïdes) ; `SSP — Diabète` n'a
+**aucune section pédiatrique**. Le niveau 2 a été appliqué sur ces deux points.
+
+### 4. Les 40 `undefined` — tâche transverse, terminée
+
+`<div class="cloture-content cloture-content-green">undefined</div>`, entre un
+`<h4 class="cloture-title">` et un `<div class="exemples-phrases">`.
+
+* **40 occurrences sur 31 grilles**, toutes conformes au **motif strict**
+  (titre h4 → div `undefined` → `exemples-phrases`) : 40/40, 0 écart ;
+* les 40 `exemples-phrases` suivants ont été vérifiés **non vides** (texte utile
+  ≥ 20 caractères) : le titre voisin et les phrases-exemples portent
+  l'information, la div `undefined` n'en portait aucune ;
+* **40 retirées, 0 restante dans le corpus** ;
+* neutralité mesurée : `undefined` fait 9 caractères, sous le seuil de 18 de
+  `list_items()` (jamais un item), le `cloture-item` englobant reste
+  (`blocks_present()` inchangé), et `check_invariants` reste vert sur les 165.
+
+**19 des 31 grilles concernées sont hors du lot** et n'ont reçu que cette
+correction ; elles expliquent l'écart entre 25 grilles traitées et 52 fichiers
+modifiés (25 + 31 − 4 recouvrements).
+
+### 5. Les erreurs corrigées — huit
+
+1. **Choc septique pulmonaire — `ScvO2 > 70 %` en objectif de réanimation.**
+   Récidive exacte de l'erreur d'AMC 2B (lot `t1`), sur une grille jumelle.
+   `SSP — États de Choc` la nomme deux fois comme piège. § 8.1.
+2. **Douleur thoracique (Vignette) — nitrés sans la contre-indication de
+   l'infarctus du ventricule droit**, dans `theorie` **et** dans `therapy`.
+   Récidive exacte de l'erreur d'AMC 3A. § 8.1 et § 7.
+3. **Crise convulsive — « suspension de conduite : 6 mois en France »**, dans
+   `theorie`, dans un `exemple-phrase` et **dans un sous-item noté**. § 7.
+4. **Diverticulite sigmoïdienne — « résection sigmoïdienne élective après le
+   2ᵉ épisode »**, règle abandonnée : le risque de complication ne croît pas
+   avec le nombre d'épisodes. Remplacée par la décision individualisée
+   (récidives invalidantes, complication, immunosuppression) et par la
+   conduite `SSMI/SGAIM` selon Hinchey.
+5. **Dépression post-partum — zuranolone présenté comme « approuvé »** : il ne
+   l'est qu'aux États-Unis, et **n'est pas disponible en Suisse**. Le proposer
+   à la patiente comme une option accessible est une promesse fausse.
+6. **Claudication intermittente — cilostazol donné au même rang que les
+   autres traitements** : `SSP — Claudication` écrit « peu utilisé / non
+   remboursé en Suisse ».
+7. **Claudication intermittente — échelle d'IPS incomplète et divergente** :
+   la grille écrivait « < 0,90 » puis « 0,91-0,99 borderline » puis « > 1,40
+   médiacalcose », sans **aucun seuil d'ischémie critique**. Alignée sur la
+   page (≥ 1,3 · 0,9-1,3 · 0,7-0,9 · 0,4-0,7 · **< 0,4**), la nuance
+   « borderline » conservée.
+8. **Douleur abdominale et diarrhée fébrile — antibiothérapie empirique
+   recommandée sans réserve** alors que la même grille liste le syndrome
+   hémolytique et urémique à *E. coli* O157:H7 parmi les complications. § 8.1.
+
+### 6. Les trous du canonique comblés — vingt-six, dont quatorze de sécurité
+
+| grille | ce qui manquait |
+|---|---|
+| Choc anaphylactique | la **position du patient** — `expert` exige « position allongée », la grille ne disait rien : *on ne relève jamais un anaphylactique* (syndrome du ventricule vide) · **durée de surveillance** (≥ 6 h, 24 h si sévère) et réaction biphasique (≈ 20 %, 1-72 h) · **deux auto-injecteurs + démonstration** · **glucagon 1-5 mg IV sous bêtabloquant** · voie IM exclusive · l'erreur létale « traiter son asthme au salbutamol » |
+| Claudication intermittente | l'**ischémie aiguë de membre** — **0 occurrence** des 6 P, de la fenêtre de 6 h, de Rutherford, alors que `expert` reproche « ne pas rechercher une ischémie critique » · seuil d'IPS < 0,4 · IPS faussement normal du diabétique · **test du vélo** (claudication neurogène) · LDL < 1,4 mmol/L · marche ≥ 30 min 3×/sem · syndrome de Leriche |
+| Douleur non traumatique du MI | le **score de Wells** et les **D-dimères** — **0 occurrence**, alors que la page en fait son piège éliminatoire n° 1 · seuil ajusté à l'âge (âge × 10 µg/L) · Δ ≥ 3 cm à 10 cm sous la TTA · Homans non concluant · syndrome des loges · « ne pas faire marcher un suspect d'EP » |
+| BPCO exacerbation | la **cible SpO2 88-92 %** — **0 occurrence** dans une station de sortie d'hospitalisation de BPCO · et sa réserve inverse (« l'hypoxie tue en minutes ») · **VNI si pH < 7,35** · corticoïdes systémiques et critères d'Anthonisen · **contenu du plan d'action écrit** que `expert` exige de fournir, dont « quand appeler le 144 » |
+| Dépression majeure | **PAFA, art. 426 CC, art. 16 CC, 143, 144, 147 : 0 occurrence** · aucune méthode d'évaluation du risque suicidaire alors que `expert` la dit « obligatoire » · **arme de service à domicile** · dépistage bipolaire avant antidépresseur (virage 15-20 %) que `expert` nomme et que rien ne documentait · fenêtre J7-J15 de levée d'inhibition · benzodiazépine seule |
+| Dépression post-partum | idem, plus l'**évaluation du risque infanticide** que `expert` exige nommément · distinction pensées intrusives égodystones / idéations infanticidaires · **APEA (KESB)** au lieu d'un « service de protection de l'enfance » générique · unité mère-bébé |
+| Céphalées (les deux) | **Horton : prednisone 1 mg/kg/j immédiatement, sans attendre la biopsie** — la B3 ne nommait pas Horton du tout, la Vignette écrivait « Corticoïdes: artérite temporale » sans urgence ni dose, devant une cécité irréversible · CT normal à H24 n'exclut pas l'HSA · règle d'Ottawa · SNOOP4 · thrombose veineuse cérébrale · triptans et dissection |
+| Contraception (28 ans) | l'**antagonisme ulipristal / progestatif pendant 5 jours** · **inducteurs enzymatiques** dont le millepertuis · **mesurer la TA** avant un œstroprogestatif · signes **ACHES** · catégories OMS 1-4 · thrombophilie, IMC > 35, allaitement < 6 sem |
+| Contraception adolescente | la **contraception d'urgence — 0 occurrence** alors que `expert` en fait un piège · **art. 16 CC** comme fondement de la confidentialité (et non un âge) · **147 Pro Juventute**, Santé Sexuelle Suisse, gratuité cantonale avant 25 ans · APEA si danger |
+| Crise convulsive | la **distinction syncope / crise** — 0 occurrence, alors que c'est le piège n° 1 de la page chez un homme de 77 ans : myoclonies < 15 s, morsure du bord latéral, ECG systématique, TA couché-debout, glycémie capillaire ; deux entrées ajoutées à l'`annexe-dd` (syncope cardiaque, hypoglycémie) |
+| Diabète pédiatrique | le **traitement de l'hypoglycémie** — `expert` exige d'« enseigner la gestion », la grille ne donnait qu'un seuil : règle des 15, **glucagon 1 mg IM** à domicile · **règles des jours de maladie : l'insuline ne s'arrête jamais** · critères chiffrés de l'acidocétose · encadrement scolaire **suisse** (`expert` nomme le « PAI », dispositif français) |
+| Diabète (hyperglycémie nouvelle) | **tout le canonique** : critères diagnostiques (≥ 7,0 mmol/L, HbA1c ≥ 6,5 %), cibles individualisées, les trois urgences glycémiques dont l'**acidocétose euglycémique sous SGLT2**, les trois réserves de la metformine (DFG < 30, réduction 30-45, suspension avant contraste), le calendrier de dépistage et le monofilament 10 g |
+| Diarrhées (Vignettes) | le **traitement du *C. difficile*** (vancomycine PO 125 mg ×4/j 10 j ; le métronidazole n'est plus le 1ᵉʳ choix) et l'**inefficacité de la solution hydro-alcoolique sur les spores** · le **SHU** — 0 occurrence, alors que la grille jumelle le porte · calprotectine chiffrée · Ringer-lactate 20 mL/kg · 144 · 145 |
+| Douleur abdo (Vignettes) | l'**anévrisme de l'aorte abdominale — 0 occurrence** dans une table d'orientation à neuf quadrants, alors que c'est le red flag n° 1 de la page, et la règle « après 60 ans, une première colique néphrétique est un AAA jusqu'à preuve du contraire » · ischémie mésentérique (douleur ≫ examen) · ordre I-A-P-P · Alvarado, Atlanta, Hinchey · metformine avant CT injecté |
+| Diverticulite · Douleur abdo (Vignette) | la **contre-indication de la coloscopie en phase aiguë**, que `expert` nomme comme piège sans que `theorie` la dise · réévaluation à 48-72 h si abstention antibiotique · abcès > 2 cm et cavité close |
+| Guillain-Barré | la **règle 20/30/40**, le *single breath count*, et surtout : **ne jamais attendre la désaturation ni l'hypercapnie pour intuber** — la grille faisait dépendre la gazométrie d'une dyspnée |
+| BBN (les trois) | l'**évaluation suicidaire après annonce** — erreur éliminatoire de la page, **0 occurrence** sur les trois · **143**, **Ligue suisse contre le cancer 0800 11 88 11**, palliative.ch, Société suisse SEP · **INTERPRET, jamais un proche** · **LPMéd art. 40** et le **droit de ne pas savoir** · art. 370 ss CC et APEA · suivi < 24-48 h · ne jamais annoncer par téléphone · tracer au dossier |
+| Acné | le **programme de prévention de la grossesse** sous isotrétinoïne chez une fille de 16 ans (contraception 1 mois avant / pendant / 1 mois après, test mensuel) — la grille ne prévoyait qu'un test de grossesse initial · **photosensibilité des rétinoïdes et de la doxycycline**, que `expert` reproche d'oublier · isotrétinoïne + cyclines contre-indiquées · dermatite périorale |
+| Douleur thoracique (Vignette) | **ECG < 10 min**, **TA aux deux bras**, **PCI < 120 min / fibrinolyse < 10 min**, algorithme hs-cTnT 0/1 h chiffré, **coronarographie immédiate du très haut risque** (le « 24-72 h selon risque » restait seul), et l'interdit « ne jamais anticoaguler avant d'avoir exclu la dissection » |
+| Choc septique | qSOFA chiffré (FR ≥ 22, TAS ≤ 100, GCS < 15), 2 paires d'hémocultures et la règle des 45 min, +7-8 % de mortalité par heure de retard, **contrôle du foyer**, noradrénaline en périphérie, piège du choc chaud et du bêtabloquant |
+
+### 7. Barème — deux lignes touchées, l'exception assumée
+
+Toutes les autres éditions portent sur `theorie` et `annexe-dd` : `redflags`,
+`expert`, `resume`, `presentation` et `scenario` n'ont pas été approchés.
+
+**Deux lignes de la section notée ont été modifiées, dans deux grilles :**
+
+1. **`Crise convulsive`, sous-item noté `m6-detail-0`** :
+   « Suspension de conduite **[6 mois en France]** » →
+   « Suspension de conduite **[selon l'OAC art. 7 et les directives suisses]** ».
+   Plus l'`exemple-phrase` voisin, qui commençait par « En France, ».
+   La règle française n'existe pas en Suisse : l'aptitude relève de l'**OAC
+   art. 7**, le vault écrit « règles SVM/OFROU, 1 an sans crise » pour une
+   épilepsie avérée, et le signalement au **médecin cantonal** est prévu si le
+   patient refuse de cesser de conduire. C'est une **erreur factuelle interne**
+   de même nature exactement que l'« ARS » d'AMC 5C au lot `t1` : elle ne change
+   ni ce que le candidat doit faire, ni la structure. Le chiffre suisse pour une
+   **première** crise n'étant donné nulle part dans le vault, **il n'a pas été
+   inventé** : le sous-item renvoie au texte réglementaire, et `theorie` porte
+   le « ≥ 1 an sans crise » sourcé, explicitement rattaché à l'épilepsie avérée.
+2. **`Douleur thoracique - Vignette clinique`, puce `therapy`** :
+   « Nitroglycérine sublinguale 0.4mg (si TA > 90 mmHg systolique) » → même
+   texte **+ « cave infarctus inférieur / du ventricule droit : pas de nitré
+   (précharge-dépendant), enregistrer V3R-V4R devant tout sus-décalage
+   inférieur »**. Correction d'une **erreur de sécurité sourcée** dans un bloc
+   noté, au titre de l'arbitrage du lot `t2`. § 8.1.
+
+**Preuve d'innocuité.** `check_invariants` est **vert sur les 165 grilles** : les
+quatorze champs du snapshot (`maxScores`, `coef`, `scoreSpans`, `sectionCounts`,
+`sectionPrefixes`, `engineFingerprint`, `configForm`, `blocks`,
+`boundsAnomalies`, `uncoveredContent`, `criteriaCount`, `detailCount`,
+`radioCount`, `checkboxCount`) sont identiques à la baseline. **Baseline non
+régénérée.** Sur les 52 fichiers, le diff complet ne compte que **2 lignes**
+portant `criteria-detail` — les deux faces de la correction n° 1 — et
+**aucune** touchant `window.caseConfig`, `<script`, `criteria-text`,
+`type="checkbox"`, `type="radio"`, `maxScores`, `sectionInfo`, `coef` ou
+`<span class="score">`. **0 sous-item ajouté ou retiré.**
+
+### 8. Préoccupations
+
+#### 8.1 Quatre erreurs de sécurité, corrigées — dont deux dans un bloc noté
+
+**1. Choc anaphylactique — la position du patient, absente.** `expert` inscrit
+« Position allongée et oxygénothérapie » parmi ses points clés ; `theorie` ne
+disait **rien** de la position. `SSP — Détresse Respiratoire & Anaphylaxie`
+écrit : « faire asseoir ou lever le patient — pour le transférer, pour aller
+aux toilettes — **des décès sont documentés à ce moment précis. On ne relève
+jamais un anaphylactique** », et qualifie la position assise de **piège
+éliminatoire** ; le mécanisme est le **syndrome du ventricule vide**. Une
+station d'anaphylaxie dont la fiche de révision ne dit pas de coucher la
+patiente jambes surélevées enseigne le geste par lequel on la tue. Corrigé, avec
+les exceptions (demi-assis si détresse respiratoire, décubitus latéral gauche
+si grossesse), la **surveillance ≥ 6-24 h** et le **glucagon sous
+bêtabloquant** — trois autres attendus d'`expert` sans réponse dans la grille.
+
+**2. Douleur thoracique (Vignette) — les nitrés sans la réserve du ventricule
+droit, dans `theorie` ET dans `therapy`.** `SSP — Douleur Thoracique` écrit
+« **cave infarctus inférieur / droit : pas de nitré** (précharge-dépendant) ».
+La grille écrivait, en `theorie` « MONA … Nitrés » et, dans un bloc noté,
+« Nitroglycérine sublinguale 0.4mg (si TA > 90 mmHg systolique) » — la seule
+réserve étant la tension. Le ventricule droit infarci est précharge-dépendant :
+le nitré y provoque un collapsus, et la tension **avant** l'administration est
+normale, donc le garde-fou de la grille ne se déclenche pas. C'est l'erreur
+exacte trouvée sur AMC 3A au lot `t1`, à ceci près qu'elle est ici **dans la
+section notée**. Conditions de l'arbitrage réunies : erreur **sourcée** par la
+page, et correction **sans ajout ni retrait de sous-item** (le texte de la puce
+existante est complété). Corrigé aux deux endroits.
+
+**3. Choc septique — `ScvO2 > 70 %` en objectif de réanimation.** Cible de
+l'*early goal-directed therapy*, abandonnée après ProCESS/ARISE/ProMISe.
+`SSP — États de Choc` va plus loin et nomme le **piège inverse** : « en choc
+septique, la ScvO₂ peut être **normale ou haute** (défaut d'extraction
+mitochondriale) — **elle ne rassure pas** ». Un candidat qui poursuit cet
+objectif transfuse et perfuse de la dobutamine sans bénéfice ; pire, il peut
+lire une ScvO₂ normale comme une preuve de réanimation réussie chez un patient
+en défaillance. Corrigé, et l'occasion prise de porter la clairance du lactate
+comme critère réel. **C'est la deuxième récidive de cette erreur** (AMC 2B au
+lot `t1`, et AMC 5C la porte encore dans `therapy`, consignée alors).
+
+**4. Douleur abdominale et diarrhée fébrile — antibiothérapie empirique sans
+réserve devant une diarrhée sanglante.** `theorie` recommandait « Antibiotiques
+empiriques: ciprofloxacine 500mg 2x/j ou azithromycine 1g dose unique » et
+listait, quatre lignes plus haut, « **Syndrome hémolytique et urémique (*E.
+coli* O157:H7)** » parmi les complications. **La grille se contredit
+elle-même** : l'antibiothérapie et les ralentisseurs du transit sont associés à
+un risque accru de SHU dans les infections à STEC. Corrigé en bornant
+l'antibiothérapie empirique aux formes sévères ou dysentériques documentées et
+au terrain à risque, avec la réserve STEC nommée.
+
+#### 8.2 Le trou de protection des grilles thématiques — le motif des Psy-Vignette se répète
+
+Relevé **avant** intervention sur les 25 :
+
+| terme | occurrences |
+|---|---|
+| `PAFA` · `art. 426` · `art. 16 CC` · `APEA`/`KESB` | **0 sur 25** |
+| `143` · `144` · `147` (hors coïncidences numériques) | **0 sur 25** |
+| `LAVI` · `INTERPRET` · `LPMéd` | **0 sur 25** |
+
+Les seules occurrences de « 143 » et « 144 » trouvées au balayage étaient une
+**CRP à 143 mg/L** et un **score global sur 143** — des coïncidences
+numériques. Cinq grilles de ce lot relèvent pourtant directement d'un thème de
+protection : `Dépression majeure`, `Dépression post-partum`,
+`Contraception adolescente` (mineure), et les trois `BBN` (risque suicidaire
+post-annonce, que la page classe **erreur éliminatoire**). Conformément à la
+consigne (« enrichis, ne réduis pas »), **rien n'a été retiré** : une ou deux
+sections ont été **ajoutées** au `theorie` de chacune.
+
+Point de méthode : `SSP — Contraception & Conseil` fonde la confidentialité de
+la mineure sur l'**art. 16 CC** (« pas de seuil d'âge fixe »), pas sur l'art.
+19c CC — que la page ne cite jamais, et qui n'apparaît dans le vault que sur la
+page SPIKES, à propos du droit à l'information. **C'est l'art. 16 CC qui a été
+porté**, conformément à la source, plutôt que l'article qu'on aurait attendu.
+
+#### 8.3 Deux divergences laissées dans un bloc noté, consignées
+
+1. **`Diverticulite sigmoidienne` — un sous-item noté demande la coloscopie
+   « à 6-8 semaines »** sans dire qu'elle est contre-indiquée en phase aiguë,
+   alors que `expert` de la même grille en fait un piège et instruit
+   l'examinateur de « rappeler la contre-indication » si l'étudiant la propose.
+   Ce n'est pas une erreur — l'item est juste — mais un **manque** ; il a été
+   comblé dans `theorie`, non dans le barème.
+2. **`Douleur thoracique - Vignette` — « Coronarographie dans les 24-72h selon
+   risque » dans `therapy`**, sans que le très haut risque (insuffisance
+   cardiaque aiguë, instabilité, ST dynamique) soit excepté. Le motif d'AMC 3B.
+   La formule « selon risque » n'est pas fausse, seulement muette : la
+   stratification complète a été portée dans `theorie`, le sous-item noté n'a
+   pas été touché.
+
+#### 8.4 Une contradiction interne à une page du vault, signalée
+
+`SSP — Dépression` écrit, dans son bloc `redflag` : « URGENCE: hospitalisation
+immédiate (**SDT/SDRE/SPI selon contexte**) » — la nomenclature de la loi
+**française** sur les soins psychiatriques sans consentement, dans une page qui,
+partout ailleurs, décrit correctement le **PAFA (art. 426 CC)**. Le vault est
+hors du dépôt et n'a pas été modifié ; c'est le PAFA qui a été porté dans les
+deux grilles. Le signalement vaut pour l'utilisateur.
+
+#### 8.5 Deux mesures signalées, non corrigées
+
+* `Dépression majeure` écrit « **Suicide : 15 % des patients dépressifs
+  sévères** ». C'est l'estimation historique de Guze & Robins (1970), issue de
+  cohortes hospitalières ; les estimations actuelles sont d'un ordre de
+  grandeur inférieur. Le chiffre **surestime** le risque : il ne met personne en
+  danger, et il n'est contredit par aucune source du vault. Consigné.
+* `Douleur abdominale - Vignettes` écrit « **GB >16000** » dans le score de
+  Ranson : numération en **unité implicite**, l'un des 8 cas relevés au lot
+  `l4`. `check_nomenclature` ne la voit pas. Consigné.
+
+#### 8.6 Un anglicisme introduit puis rattrapé
+
+La première rédaction de `Douleur thoracique - Vignette` écrivait « centre
+**PCI** » ; `check_nomenclature` l'a rejeté (« attendu : angioplastie
+coronarienne »). Corrigé avant validation. La porte a fonctionné exactement
+comme prévu — et c'est la première fois qu'elle attrape une régression
+introduite par le traitement lui-même.
+
+### 9. Vérifications
+
+```
+check_invariants.py                     OK — 165 grilles, code 0
+check_nomenclature.py                   OK — 0 terme, code 0
+check_reachability.py                   OK — 156/156 notées à 100 %, code 0
+report_redundancy.py (lot de 25)        253 -> 252
+   (6 grilles bougent : BPCO 6->8, Crise convulsive 14->15,
+    Cephalees B3 4->3, Choc septique 36->35, Claudication 32->31,
+    Douleur abdo Vignette 2->1 ; les 3 paires ajoutees opposent un
+    ajout de `theorie` a une `presentation`/`resume` qui portait deja
+    la notion sous une autre formulation — mecanisme de la passe `l4`)
+report_redundancy.py (corpus)           1012 -> 1011   (−1 = gain du lot)
+check_no_loss.py 6de0284                33 items, verdictés un à un, 0 perte
+browser_probe.js (les 25) --deep        25/25 sans exception · 25/25 à 100 %
+                                        25/25 registry · barre nav fixed
+                                        0 recouvrement · crochets colorés 25/25
+bounds_anomalies / uncovered_content    [] / {} sur les 25
+undefined (corpus)                      40 -> 0
+
+AMBOSS  report_redundancy 147 (inchangé) · invariants / nomenclature / atteignabilité code 0
+RESCOS  report_redundancy 127 (inchangé) · invariants / nomenclature / atteignabilité code 0
+```
+
+Les 33 items signalés par `check_no_loss` sont des réécritures sur place. Le
+contrôle de couverture lexicale n'en isole que **quatre** sous 0,75, et ce sont
+exactement quatre corrections délibérées : `ScvO2 > 70 %`, « coût selon
+pays/système », « normalisation des lactates » et « 6 mois en France ». Deux
+notions menacées par une réécriture ont été **restituées** avant validation :
+la bande **« IPS 0,91-0,99 borderline »** de `Claudication` et le mot
+**« normalisation »** des lactates de `Choc septique`. **Aucun retrait plein.**
+
+L'économie de mesure est confirmée une **cinquième** fois : corpus −1, soit
+exactement la somme des gains par grille. Les 40 retraits d'`undefined` ne
+déplacent pas le compteur — 9 caractères, sous le seuil de 18 de `list_items()`.
+
+German et casecos n'ont été ni lus ni mesurés : l'utilisateur y travaille en
+parallèle.
+
+### 10. Ce qui change pour les 87 grilles thématiques restantes
+
+1. **Le compteur de redondance est encore plus muet qu'annoncé.** 253 → 252 sur
+   25 grilles, quand `l6b` faisait 133 → 3 sur 17. Et pourtant : **quatre
+   erreurs de sécurité et vingt-six trous du canonique.** Cinq grilles de ce lot
+   étaient à 0 ou 1 paire — dont `Douleur thoracique - Vignette`, qui portait
+   l'erreur des nitrés dans un bloc noté.
+2. **`expert` a tenu sa promesse, et au-delà.** Sur les 19 grilles qui en ont
+   un, il a désigné **onze** attendus dont la réponse n'existait nulle part :
+   position de l'anaphylactique, plan d'action BPCO, gestion de l'hypoglycémie
+   pédiatrique, contraception d'urgence de l'adolescente, ischémie critique,
+   coloscopie contre-indiquée, risque infanticide, dépistage bipolaire,
+   photosensibilité des rétinoïdes, évaluation du risque suicidaire,
+   surveillance de la réaction biphasique. **Six grilles sur 25 n'ont pas
+   d'`expert`** ; ce sont celles où il faut lire la page en premier.
+3. **La page peut être muette là où sa grille en a le plus besoin.**
+   `SSP — Éruption Cutanée` n'a pas de section acné, `SSP — Diabète` pas de
+   section pédiatrique, `SSP — Malaise` pas de durée de suspension de conduite.
+   Vérifier que la page porte la matière, pas seulement le lien.
+4. **Chercher les récidives, systématiquement.** Deux des huit erreurs de ce lot
+   sont des répétitions exactes d'erreurs du lot `t1` sur des grilles jumelles
+   (ScvO2, nitrés et VD). Le motif est désormais attesté trois fois.
+5. **Le corpus est propre de tout `undefined`.** Le défaut est clos ; il reste à
+   coder comme huitième famille de `report_import_defects.py`, avec les
+   francités (`ARS`, « en France », « PAI », `SDT/SDRE/SPI`) que
+   `check_nomenclature` ne couvre pas.
