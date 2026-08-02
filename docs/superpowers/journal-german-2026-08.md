@@ -1549,3 +1549,197 @@ sont **justes** et doivent rester. Les 4 autres occurrences de « marqueur » du
 corpus (German-11, 51, 76, 77) sont des « marqueurs **inflammatoires** », sans
 rapport. 13 au départ de la campagne → 8 → 6 (g7) → 4 → **3, et plus rien à
 retirer ni à réécrire**.
+
+---
+
+### Tâche p1 — German-1 (Abus d'alcool), grille pilote des sections pédagogiques
+
+**Ce qui change de nature.** Les tâches g1 à g8 corrigeaient du contenu existant
+et n'en créaient aucun. Celle-ci **crée** quatre sections là où la grille n'en
+portait aucune. La garantie qui remplace l'interdiction est le **sourçage
+strict** : chaque énoncé provient soit de la page SSP de la grille, soit d'une
+section notée de German-1 — jamais d'ailleurs. Le présent journal donne, section
+par section, d'où vient sa matière.
+
+**Les deux sources, et rien d'autre.**
+
+| Sigle | Source |
+|---|---|
+| **SSP** | `SSP — Dépendance & Addictions (Alcool, Tabac, Drogues).md` (vault, lue en entier) |
+| **a1…a18 / e1…e8 / m1…m8 / c1…c5** | les quatre sections notées de German-1, `criteria-text`, `detail-text` et `patient-response` |
+| **T1/T2/T3** | les trois `therapy-section` du critère `m5` — corrigé de niveau 2, non modifié |
+
+#### Ce qui a été produit
+
+| Bloc | Volume (hors base64) | Structure |
+|---|---|---|
+| `resume` | 8,5 Ko | 5 `resume-section`, 15 `resume-subsection`, 60 items |
+| `annexe-theorie` | 8,4 Ko | 8 `theorie-section` (dont `-rappels` et `-examens`), 28 items |
+| `presentation-patient` | 18,4 Ko | 5 `presentation-section`, 9 `presentation-qa`, 41 items |
+| `images-wrapper` | 0,8 Ko + 78,7 Ko de base64 | 1 `annexe-item` |
+
+Total de la zone pédagogique hors base64 : **37,1 Ko**. Fichier : 88,0 → 206,3 Ko.
+
+Le gabarit HTML est celui d'AMBOSS-1, repris classe par classe. **Aucune classe
+inventée** : les 40 classes employées dans la zone pédagogique sont toutes
+déclarées dans `cases/case-styles.css` (contrôle automatique, 0 écart). Les
+modificateurs `list` et `text` de `presentation-reponse`, présents dans AMBOSS-1
+mais **absents du CSS**, ont été écartés au profit du `presentation-reponse` nu.
+
+#### Sourçage, section par section
+
+**`resume` — 🔍 Anamnèse.** Quantification et contexte : `a3`, `a4`, `a5` +
+SSP § ANAMNÈSE (« unités/semaine, pattern de consommation »). Paquets-années :
+`a14` + SSP § Mnémoniques. Dépistage : `a7` (CAGE, seuil 2/4) et `a6` (critères
+de dépendance, seuil 3/6), la liste des six critères venant de SSP § Critères de
+dépendance (CIM-11 / DSM-5). AUDIT-C : SSP § Quantification. Parcours de soins :
+`a8` ; « antécédent de sevrage compliqué » : SSP § Comorbidités. Retentissement :
+`a16` + SSP (« familial, professionnel, judiciaire, financier »). Comorbidité
+psychiatrique : SSP. Prochaska : SSP § Préparation au changement. Plaintes
+somatiques : `a9`, `a10`, `a11` mot pour mot.
+
+**`resume` — 👀 Examen clinique.** Signes d'imprégnation chronique : SSP § Signes
+d'alcoolisme chronique, complétés par `e6` (érythrose faciale, télangiectasies,
+haleine alcoolisée) et `e2` (hypertrophie parotidienne), `e7` (état nutritionnel,
+hydratation, hygiène). Examen ciblé : `e1` à `e4` littéralement. Sevrage en
+cours : SSP § Signes de sevrage en cours ; le score est donné sous ses deux noms
+sourcés — **Cushman** (T1) et **CIWA-Ar** (SSP). Status mental : SSP § Status
+mental (Korsakoff → MMSE/MoCA, idéation suicidaire) + `e3`.
+
+**`resume` — 🧪 Examens.** `m3` et `m4` intégralement, fusionnés avec
+SSP § EXAMENS COMPLÉMENTAIRES pour ce que `m3` ne cite pas (γ-GT, VGM, CDT,
+magnésium, phosphate, glycémie, toxicologie urinaire, sérologies, ECG).
+
+**`resume` — 💊 Prise en charge.** Critères de lieu : `m7` (les quatre)
++ SSP § Règle d'or (« le sevrage d'un buveur chronique est une urgence ») et
+SSP § Pièges (ambulatoire proscrit si ATCD de DT, crises ou comorbidités
+sévères) + SSP § PRISE EN CHARGE (« DT = soins intensifs »). Traitement :
+SSP (lorazépam/oxazépam si insuffisance hépatique ; thiamine avant glucose ;
+Mg, K, phosphate). Suivi : `m6` intégralement. Tabac : `a14` + SSP § Sevrage
+tabagique. Posture : SSP § Entretien motivationnel (OARS, Ruler, ambivalence,
+discours-changement, ne jamais confronter) et SSP § Filet de sécurité (**144**).
+
+**`resume` — ✅ Points clés.** SSP § Points Clés ECOS, recoupé par les seuils de
+`a6` et `a7`.
+
+**`annexe-theorie` — premier du corpus German.** Diagnostic : `a6` (seuil 3/6,
+atteint 6/6) et SSP § DD Top 5 (« Trouble de l'usage de l'alcool »). Argumentaire :
+les six réponses patient de `a6` et les quatre de `a7`, citées ; l'explication de
+ce que mesure le CAGE vient de SSP § Cartes ECOS. Physiopathologie GABA-A / NMDA,
+chronologie 6-12 h / 12-24 h / 24-48 h / 48-96 h, mortalité 5-15 % : SSP § Cartes
+ECOS et § Sevrage alcoolique & complications. Benzodiazépines (pourquoi elles,
+pourquoi lorazépam/oxazépam, pourquoi pas les neuroleptiques seuls) : SSP § Cartes
+ECOS, carte « Traitement du sevrage alcoolique ». Thiamine avant glucose et triade
+de Wernicke : SSP § Cartes ECOS + § Encéphalopathie de Wernicke ; le rattachement
+aux réponses de `a11` et `a9` est explicite et prudent. Différentiel : les trois
+hypothèses de `m2`, chacune dotée de son discriminant sourcé — CAGE contre
+AUDIT/AUDIT-C (SSP), voie d'administration et risque VIH/VHC/endocardite (SSP),
+chronologie et comorbidité psychiatrique (SSP). Seuils chiffrés : `a6`, `a7`,
+SSP (AUDIT-C /12, paquets-années, DT 48-96 h et mortalité, thiamine 500 mg IV
+x3/j puis 250 mg/j).
+
+**`presentation-patient` — aucune donnée clinique nouvelle.** Checklist, version
+longue, SBAR, mnémos et Q/R ne font que reformater `resume` et `annexe-theorie`.
+Les mnémos sont ceux de SSP § Mnémoniques (CAGE, OARS, chronologie du sevrage,
+triade de Wernicke). La quatrième question (« le patient refuse le sevrage »)
+répond avec SSP § Entretien motivationnel, § Exploration de l'ambivalence,
+§ Échelle de motivation, § Filet de sécurité et § Clôture — cinq blocs `phrase`
+de la page, restitués à la première personne.
+
+**`images-wrapper`.** Une seule image, `general-signes-et-symptomes-du-syndrome-de-sevrage-d-alcool.png`
+(60 465 octets, 80 620 caractères en base64). Gabarit repris des 9 grilles German
+à image (36, 42, 43, 44, 57, 61, 68, 75, 78) : `annexe-item` > `annexe-title` +
+`annexe-description` + `annexe-image` > `img`, à l'intérieur d'un `images-wrapper`
+frère de `annexes-grid`.
+
+#### Trois décisions à consigner
+
+1. **Le choix de l'image.** La page SSP en propose six ; deux étaient candidates.
+   **AUDIT-C a été écarté** : c'est un questionnaire de dépistage, et la grille ne
+   dépiste pas par l'AUDIT-C mais par le **CAGE** (`a7`) — le score AUDIT-C
+   n'apparaît nulle part dans les quatre sections notées. Le tableau du **syndrome
+   de sevrage** sert au contraire trois critères notés : `a6` (« Syndrome de
+   sevrage »), `m5` (« Sevrage et prévention du syndrome de sevrage ») et `m7`
+   (« Risque de sevrage sévère »).
+
+2. **Divergence de source, signalée et non lissée.** L'image situe le delirium
+   tremens à **48-72 h**, le texte de la page SSP à **48-96 h**. Le corps des
+   fiches emploie le chiffre du texte ; la légende décrit fidèlement l'image et
+   **mentionne l'écart**. Aucune des deux sources n'a été corrigée par l'autre.
+
+3. **`annexe-theorie` est déclaré dans `lib_german.BLOCKS`.** Sans cette entrée,
+   la classe `theorie-section` — qui figure dans `CONTENT_CLASSES` — serait vue
+   **hors de tout bloc** par `uncovered_content()`, et `check_invariants.py`
+   échouerait à juste titre : c'est exactement l'angle mort d'AMBOSS-34. Motif de
+   début et queue attendue sont repris de `lib_amboss.BLOCKS`. L'ajout **ne
+   change rien pour les 87 autres grilles** : `blocks_present()` ne liste que les
+   blocs présents, et aucune n'en porte.
+
+#### Là où la source était muette — et où la section a été écourtée
+
+- **Constantes du patient.** Le panneau `vital-signs` de German-1 est **vide** et
+  la vignette ne donne aucun chiffre. La version longue présente donc l'examen
+  comme ce que l'on **rechercherait**, jamais comme des trouvailles. Aucune
+  constante n'a été inventée.
+- **Sensibilité et spécificité.** Aucune valeur de performance de test (CAGE,
+  AUDIT-C, marqueurs) ne figure dans la page SSP. La section « Seuils et repères
+  chiffrés » ne porte donc que des **seuils** et des **délais**, pas de Se/Sp —
+  là où l'`annexe-theorie` d'AMBOSS-1 en donne pour le signe de Murphy.
+- **Sévérité du trouble.** Ni la grille ni la page ne gradent le trouble de
+  l'usage. Le diagnostic est écrit « trouble de l'usage de l'alcool avec
+  dépendance, évoluant depuis huit ans », **sans qualificatif de sévérité**.
+- **Violence conjugale.** `a7` porte une réponse patient explicite (« je l'ai
+  parfois frappée »). Elle est **restituée** dans la version longue, parce
+  qu'elle est dans la section notée. Mais la page SSP **ne dit rien** de la
+  violence dans le couple : aucune conduite à tenir n'a été rédigée. C'est le
+  point le plus net de silence de la source, et il est laissé tel quel.
+- **Interprétation du bilan hépatique.** La page ne donne que la liste
+  (transaminases ASAT/ALAT > 2, bilirubine, albumine, crase/TP). La phrase
+  « l'albumine et la crase mesurent la fonction de synthèse » a été **écrite puis
+  retirée** : exacte, mais absente des deux sources.
+- **ECG.** La ligne « L'ECG cherche un allongement du QT… » de l'`annexe-theorie`
+  a été **supprimée** : la page ne dit rien de plus que ce que le `resume`
+  énumère déjà, et la garder n'aurait produit qu'une redite (0,79).
+- **Méthadone + BZD + alcool.** Piège majeur de la page SSP, mais **hors sujet
+  ici** : ce patient n'a aucun opioïde. La phrase a été écrite puis retirée.
+
+#### Vérifications
+
+`check_invariants.py` **OK 88** après régénération justifiée du baseline —
+`snapshot_invariants.py` relancé, puis **diff champ par champ des 88 grilles** :
+**une seule grille diffère, German-1, sur un seul champ, `blocks`** :
+`[["therapy",3]]` → `[["therapy",3],["resume",1],["annexe-theorie",1],["presentation",1],["annexe-image",1]]`.
+Les trois `therapy` sont **inchangés en nombre**, et aucun des sept autres champs
+(`maxScores`, `scoreSpans`, `sectionCounts`, `criteriaCount`, `detailCount`,
+`radioCount`, `checkboxCount`) ne bouge nulle part. Preuve que le travail n'a
+fait qu'**ajouter**.
+
+`check_nomenclature.py` **OK**, aucun terme non suisse : `FSC` (jamais « NFS »),
+`g/L`, `G/L`, `144` (jamais « 911 » ni « SAMU »). `check_reachability.py`
+**OK 88/88 à 100 %**. AMBOSS aux trois verts, redondance **147** inchangée.
+
+`report_redundancy.py German-1_` : **2 paires**, contre 7 à la première rédaction.
+Les cinq supprimées l'ont été en rendant le `presentation` réellement oral (le
+`response-list` des examens est passé d'une liste de noms d'analyses à une liste
+groupée par intention, la réponse « traitement » à la première personne) et en
+retirant la ligne ECG redondante de la théorie. Les **deux qui restent sont
+justifiées par un changement de format** :
+
+| Ratio | Paire | Justification |
+|---|---|---|
+| 0,84 | `resume` ↔ `presentation` — chronologie du sevrage | La **page SSP elle-même** porte ce fait deux fois, en deux formats : chronologie en prose (§ Sevrage alcoolique) et mnémonique (§ Mnémoniques). Le `resume` en fait un point clé, le `presentation` la chaîne fléchée à réciter. |
+| 0,77 | `therapy` ↔ `presentation` — hydratation et électrolytes | « Hydratation et correction des troubles électrolytiques » (corrigé du critère `m5`, **non modifié**) contre « Hydratation, et je corrige les électrolytes » — la phrase prononcée. Restituer le corrigé à l'oral **est** le rôle du bloc. |
+
+Total German : **14 → 16 paires**, l'écart étant exactement ces deux-là.
+`check_no_loss.py HEAD German-1_` : **0 item disparu**.
+
+**Intégrité.** `<div>` 891/891, `<li>` 132/132, `<ul>` 37/37, `<p>` 29/29,
+`<h3>` 4/4, `<h4>` 23/23, `<h5>` 23/23, `<span>` 123/123, `<strong>` 10/10,
+`</html>` final présent. `boundsAnomalies` et `uncoveredContent` **vides**.
+Aucun **chevron nu** `<` introduit dans la zone pédagogique. Le diff de la grille
+est **476 insertions, 0 suppression** : le fichier d'avant est **octet pour
+octet** le préfixe du nouveau jusqu'au point d'insertion, et la queue à partir de
+`<!-- COMMENTAIRE GÉNÉRAL -->` est identique. `criteria-text` (34),
+`detail-text` (112), `patient-response` (57), `<input>` (155),
+`communication-text` (5), `communication-desc` (5), `window.caseConfig` et les
+trois `therapy-section` : **tous identiques à HEAD**, comparés chaîne par chaîne.

@@ -21,9 +21,13 @@ modifie, donc les mesures publiees d'AMBOSS sont inchangees par construction.
 
 DIFFERENCES STRUCTURELLES AVEC AMBOSS (mesurees sur les 88 grilles)
 -------------------------------------------------------------------
-* `annexe-expert`, `annexe-theorie`, `annexe-scenario` : 0/88. Ces trois blocs
-  n'existent pas dans ce corpus ; il n'y a donc pas de marqueur de fin
-  `annexe-scenario` sur lequel borner la zone pedagogique.
+* `annexe-expert`, `annexe-theorie`, `annexe-scenario` : 0/88 a l'import. Ces
+  trois blocs n'existaient pas dans ce corpus ; il n'y a donc pas de marqueur de
+  fin `annexe-scenario` sur lequel borner la zone pedagogique. `annexe-theorie`
+  est desormais declare dans BLOCKS : le chantier des sections pedagogiques en
+  cree, et sa classe interne `theorie-section` est une CONTENT_CLASSE — sans
+  declaration, elle serait vue hors bloc. `annexe-expert` et `annexe-scenario`
+  restent absents et non declares.
 * `annexe-dd` : 77/88 grilles, **78 segments** — German-78 en porte deux. Tout
   bloc peut donc apparaitre plusieurs fois dans une meme grille : c'est
   `block_segments()` (pluriel) qui fait foi, et non `block_segment()`.
@@ -110,6 +114,15 @@ BLOCKS = [
      r'<div class="therapy-section">|<div class="criterion-comment-section"'),
     # --- fiches pedagogiques de fin de page (niveau 3) ---------------------
     ("resume", r'<div class="resume">', r'<div class="annexes">'),
+    # `annexe-theorie` : bloc ABSENT du corpus d'origine (0/88), cree par le
+    # chantier des sections pedagogiques. Il est declare ici — et non laisse de
+    # cote — parce que sa classe interne `theorie-section` figure dans
+    # CONTENT_CLASSES : sans cette entree, `uncovered_content()` la verrait hors
+    # de tout bloc et signalerait a juste titre un bloc invisible. Motif de
+    # debut et queue attendue repris de `lib_amboss.BLOCKS`, ou le bloc precede
+    # toujours la fiche de presentation.
+    ("annexe-theorie", r'<div class="annexe-item annexe-theorie">',
+     r'<div class="presentation-patient">'),
     ("presentation", r'<div class="presentation-patient">',
      r'(?:</div>\s*)*(?:<div class="images-wrapper">|' + re.escape(END_MARK) + r')'),
     ("annexe-image", r'<div class="annexe-item"(?=[ >])',
