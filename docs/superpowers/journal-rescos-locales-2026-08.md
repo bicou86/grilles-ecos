@@ -2719,3 +2719,466 @@ lots. Il a néanmoins été lancé avant validation, comme demandé.
 
 German et casecos n'ont été ni lus ni mesurés : l'utilisateur y travaille en
 parallèle.
+
+---
+
+## Lot `t5` — les 28 dernières grilles thématiques, de « Pityriasis versicolor » à « Voyage au Brésil »
+
+Branche `refonte-amboss-suisse`, base `302f0d1`. **28 fichiers modifiés**, tous
+sous `cases/rescos-locales/`. Rien touché sous `cases/german/`,
+`scripts/german/`, `cases/casecos/` ni `scripts/casecos/` — ni lu, ni écrit.
+
+**Ce lot termine les 123 grilles thématiques.** 95 traitées par `t1` à `t4`
+(rangs 1-85 et 89-98), 28 ici (rangs 86-88 et 99-123).
+
+### 1. Le lot, calculé par la règle — et cette fois la liste transmise était juste
+
+La règle : nom ne commençant pas par `RESCOS-<chiffre>`, hors les 9 feuilles
+porte. Elle donne **132 − 9 = 123** grilles thématiques. Le tri est celui de la
+collation `fr_CH.UTF-8` (accents repliés), le même que les rapports précédents —
+c'est lui qui place `Mal à l'épaule` (66) avant `Mal au dos` (67) et `Pédiatrie`
+(73-82) avant `Pemphigoïde` (83).
+
+**Le contrôle a confirmé la liste du mandat, nom pour nom et rang pour rang.**
+La leçon de `t4` (§ 7.1) tient : le calcul par la règle est le contrôle, la
+lecture du rapport précédent ne l'est pas. Ici les deux concordaient.
+
+| # | rang | grille | redondance |
+|---:|---:|---|---:|
+| 1 | 86 | Pityriasis versicolor — Homme de 24 ans | 29 → 29 |
+| 2 | 87 | Polymyalgia Rheumatica — Femme de 72 ans | 15 → 15 |
+| 3 | 88 | Psoriasis — Femme de 42 ans | 15 → 15 |
+| 4 | 99 | RCI-Fièvre et douleurs articulaires — Gonocoque disséminé | 22 → 22 |
+| 5 | 100 | Sclérose en plaques — Femme de 32 ans | 29 → 29 |
+| 6 | 101 | SD — Dépistage cancer colorectal | 1 → 1 |
+| 7 | 102 | SD — Dépistage cancer du sein | 5 → 5 |
+| 8 | 103 | SD — Dépistage cancer prostate | 3 → 3 |
+| 9 | 104 | Sémiologie MSQ — Coxarthrose | 11 → 11 |
+| 10 | 105 | Sémiologie MSQ — Polyarthrite rhumatoïde | 20 → 20 |
+| 11 | 106 | SMIG-1 — Syncope | 0 → 0 |
+| 12 | 107 | SMIG-2 sit. 1 — Crise convulsive, hyponatrémie sur thiazides | 0 → 0 |
+| 13 | 108 | SMIG-2 sit. 2 — Masse pulmonaire, SIADH paranéoplasique | 1 → 1 |
+| 14 | 109 | SMIG-2 sit. 3 — OMI, hyponatrémie sur insuffisance cardiaque | 0 → 0 |
+| 15 | 110 | SMIG-3 — Acidocétose diabétique | 1 → 1 |
+| 16 | 111 | SMIG-4 — Fièvre prolongée, tuberculose | 1 → 1 |
+| 17 | 112 | SMIG-5 — Examen clinique ciblé par hypothèses | 0 → 0 |
+| 18 | 113 | Syndrome de Guillain-Barré — Homme de 42 ans | 25 → 25 |
+| 19 | 114 | Syndrome de Stevens-Johnson — Homme de 32 ans | 22 → 22 |
+| 20 | 115 | Syndrome du canal carpien | 9 → 9 |
+| 21 | 116 | Syphilis secondaire — Homme de 50 ans | 39 → 39 |
+| 22 | 117 | TDAH pédiatrique — Garçon de 9 ans | 18 → 18 |
+| 23 | 118 | Toux et maux de ventre — Pédiatrie | 1 → 1 |
+| 24 | 119 | Transaminases élevées — Homme de 50 ans | 25 → 25 |
+| 25 | 120 | Trouble panique — Femme de 42 ans | 0 → 0 |
+| 26 | 121 | Urticaire allergique aux crevettes — Homme de 27 ans | 20 → 20 |
+| 27 | 122 | Voyage à Madagascar — Père et enfant | 1 → 1 |
+| 28 | 123 | Voyage au Brésil — Femme de 22 ans | 3 → 3 |
+| | | **total** | **316 → 316** |
+
+**Redondance strictement inchangée**, et c'est le résultat attendu : le lot n'a
+fait qu'**ajouter** de la matière absente. Qu'aucune des 28 grilles ne gagne une
+seule paire prouve en outre qu'aucun ajout ne redit ce que la grille portait
+déjà — c'est le contrôle qui manquait aux lots où l'on ne mesurait que le total.
+
+### 2. Le mapping inverse — 27 sur 28, une seule non citée
+
+Dix-huit pages du vault couvrent 27 des 28 grilles, chacune nommée dans le bloc
+« Références PDF » d'une page et d'une seule — à une exception près, citée
+**hors** de `SSP ECOS/` en plus de sa page principale : `Syndrome du canal
+carpien`, qui apparaît aussi dans `CK/CK — Neurologie`.
+
+| page | grilles |
+|---|---|
+| `SSP — Éruption Cutanée` | Pityriasis · Psoriasis · Stevens-Johnson · Syphilis · Urticaire |
+| `SSP — Douleurs Articulaires` | Polymyalgia · Sémiologie MSQ Polyarthrite |
+| `SSP — SD Counselling Dépistages` | les 3 `SD — Dépistage` |
+| `SSP — Fièvre au Retour de Voyage` | Madagascar · Brésil |
+| `SSP — Amaurose & Baisse d'Acuité Visuelle` | Sclérose en plaques |
+| `SSP — Douleur de Hanche` | Sémiologie MSQ Coxarthrose |
+| `SSP — Syncope` | SMIG-1 |
+| `SSP — Malaise & Perte de Connaissance Brève` | SMIG-2 sit. 1 |
+| `SSP — Toux Chronique` | SMIG-2 sit. 2 · Toux et maux de ventre |
+| `SSP — Œdèmes des Membres Inférieurs` | SMIG-2 sit. 3 |
+| `SSP — Polydipsie & Polyurie` | SMIG-3 |
+| `SSP — Fièvre` | SMIG-4 |
+| `SSP — Dyspnée` | SMIG-5 |
+| `SSP — Neuropathie Périphérique` | Guillain-Barré |
+| `SSP — Douleur au Poignet` (+ `CK — Neurologie`) | Canal carpien |
+| `SSP — Troubles du Développement & Croissance` | TDAH |
+| `SSP — Ictère` | Transaminases |
+| `SSP — Trouble Anxieux` | Trouble panique |
+
+**`RCI-Fièvre et douleurs articulaires` n'est citée par aucune page.** Sa jumelle
+sans préfixe l'est, par `SSP — Douleurs Articulaires` ; c'est la matière de cette
+page qui lui a été appliquée, complétée par la section « RCI Infectiologie
+(Jenelten) — Arthrite septique à gonocoque » de `SSP — Fièvre`, qui décrit
+littéralement la vignette. Niveau 2 pour tout ce que ces deux pages ne tranchent
+pas.
+
+### 3. `expert` lu en premier — dix attendus sans réponse
+
+**28 grilles sur 28 ont un `expert`.** Dix fois, il reproche au candidat
+d'oublier une chose dont la réponse n'existe nulle part dans la grille :
+
+| grille | l'`expert` exige… | la grille disait… |
+|---|---|---|
+| SMIG-1 Syncope | le patient « questionne sur la possibilité de conduire » | rien dans le pédagogique — seule la section notée portait « Pas de conduite jusqu'à traitement » |
+| Guillain-Barré | « oublier la prophylaxie thromboembolique » | rien dans `theorie` ; la réponse n'existait que dans un sous-item noté |
+| Guillain-Barré | « évaluer la fonction respiratoire » | la capacité vitale, sans les deux autres seuils ni la mise en garde sur la gazométrie |
+| Syphilis | « ne pas prévenir de la réaction de Jarisch-Herxheimer » | présent ailleurs, mais **rien sur la syphilis oculaire ou neurologique** (`oculaire` : 0 occurrence) |
+| Pityriasis | « oublier d'expliquer le délai de repigmentation » | rien |
+| Pityriasis | « confondre avec un vitiligo débutant » (préoccupation n° 1 du patient) | aucun critère de distinction |
+| Trouble panique | « omettre l'évaluation de la consommation de caféine » | `caféine` absent de `theorie` |
+| Trouble panique | « minimiser l'impact fonctionnel (agoraphobie secondaire) » | `agoraphobie` absent de `theorie` |
+| SMIG-5 | « oublier l'évaluation de la sténose aortique » | 9 mentions, **aucune conséquence thérapeutique** |
+| Toux et maux de ventre | « ne pas se focaliser uniquement sur les douleurs abdominales » | rien sur la douleur projetée d'une pneumonie basale |
+
+**Cinquième confirmation** que `expert` est le meilleur détecteur de trou du
+corpus, et qu'il est gratuit.
+
+### 4. Sept erreurs et omissions de sécurité
+
+1. **`SMIG-5` — la sténose aortique serrée décrite sans sa réserve
+   hémodynamique.** La grille nomme la sténose aortique neuf fois, la met dans
+   ses pièges (« oublier l'évaluation de la sténose aortique »), programme un
+   TAVI — et n'écrit nulle part que c'est un **état précharge-dépendant**. Son
+   `therapy` prescrit « Furosémide 80 mg IVL puis 40 mg IV × 2/j » chez un
+   patient à FEVG 25 % avec sténose aortique. C'est la **cinquième grille du
+   corpus** où un état précharge-dépendant est décrit sans sa réserve, après les
+   trois « nitrés sans contre-indication du ventricule droit » et la tamponnade
+   du lot `t4`. Porté dans `theorie` : nitrés à proscrire, diurétiques titrés,
+   vasodilatateurs lents, ventilation en pression positive surveillée, ne jamais
+   assécher — avec le piège du bas débit / bas gradient, où le souffle faiblit
+   alors que la sténose est serrée.
+2. **`Psoriasis — Femme de 42 ans` — méthotrexate 15-25 mg/semaine prescrit sans
+   un mot de contraception.** `contraception`, `tératogène` et `grossesse` :
+   **0 occurrence** dans toute la grille. **Deuxième occurrence du motif** après
+   le lupus de `t4`, et cette fois le tératogène est prescrit dans le `therapy`.
+   Ajouté dans `theorie` : contraception obligatoire pendant le traitement et
+   6 mois après (hommes compris), alternatives compatibles, et l'acitrétine —
+   dont la contraception court **3 ans** après l'arrêt. Ajouté aussi la règle qui
+   tue quand elle est ignorée : **le méthotrexate est HEBDOMADAIRE**.
+3. **`Sémiologie MSQ — Polyarthrite rhumatoïde` — même défaut, même molécule.**
+   Trouvé par le contrôle de la grille sœur. `theorie` faisait 969 caractères et
+   ne parlait pas du traitement ; le `therapy` prescrit « Méthotrexate 15-25
+   mg/semaine ». `contraception` / `tératogène` / `grossesse` : 0 occurrence.
+   La page `SSP — Douleurs Articulaires` tranche (niveau 1) : « méthotrexate et
+   léflunomide contre-indiqués en grossesse ; hydroxychloroquine et
+   sulfasalazine compatibles ».
+4. **`Polymyalgia Rheumatica` — l'artérite à cellules géantes décrite sans sa
+   conduite d'urgence.** `redflags` écrit « Troubles visuels soudains — urgence
+   absolue, risque de cécité » et la conduite n'existe nulle part.
+   `SSP — Douleurs Articulaires` tranche (niveau 1) : « Horton : corticoïdes
+   systémiques en urgence **dès la suspicion (ne pas attendre la biopsie)** ».
+   Ajouté : méthylprednisolone 500-1000 mg IV devant toute atteinte visuelle,
+   biopsie contributive jusqu'à 2 semaines après le début des corticoïdes, et le
+   fait que **15-20 mg de prednisone pour une PMR ne protègent pas de la
+   cécité** — un tiers des artérites se révèlent sous traitement de PMR.
+5. **`SMIG-2 sit. 2` — tolvaptan prescrit sans la réserve qui le rend sûr.**
+   « Tolvaptan 15-60 mg/j » figure en troisième ligne, juste après « restriction
+   hydrique 500-1000 mL/j ». **Associer les deux fait s'emballer la correction** :
+   la restriction hydrique doit être levée 24-48 h à l'introduction du vaptan.
+   Ajouté avec les autres réserves (introduction hospitalière, natrémie à 6, 12
+   et 24 h, hépatotoxicité, contre-indication si le patient ne peut pas étancher
+   sa soif).
+6. **`Voyage au Brésil — Femme de 22 ans` — la fièvre jaune sans ses
+   contre-indications de vaccin vivant, et le Zika sans la contraception.**
+   `SSP — Fièvre au Retour de Voyage` écrit « **Zika tératogène : risque de
+   microcéphalie** ». La grille écrivait « Zika : risque pour femmes enceintes »
+   et rien d'autre — chez une patiente de 22 ans. Ajouté : différer la conception
+   de 2 mois (femme) / 3 mois (homme), rapports protégés, contraception à
+   vérifier **avant** le départ ; et pour la fièvre jaune, les contre-indications
+   du vaccin vivant (immunodépression, grossesse, allergie à l'œuf, thymome),
+   les effets indésirables de la première dose et après 60 ans.
+7. **`Toux et maux de ventre — Pédiatrie` — ibuprofène prescrit dans une
+   pneumonie, en alternance avec le paracétamol.** Le `therapy` porte
+   « Ibuprofène 10 mg/kg — en alternance si fièvre persistante », et l'`expert`
+   demande de « penser aux complications possibles (pleurésie, empyème) » : les
+   AINS sont précisément associés à une surreprésentation de ces complications
+   suppuratives, et ils masquent l'aggravation. Le `therapy` n'a pas été touché
+   (voir § 7.2) ; la réserve est portée dans `theorie`.
+
+Deux réserves supplémentaires portées dans `theorie`, du même registre :
+
+* **`SMIG-3 Acidocétose` — l'acidocétose euglycémique sous inhibiteur du
+  SGLT2** : `SGLT` avait **0 occurrence**. Une glycémie normale n'écarte rien.
+  Ajoutés aussi le potassium avant l'insuline sous 3,3 mmol/L (déjà dans le
+  `therapy`, absent du pédagogique), l'œdème cérébral et l'absence de bolus
+  d'insuline chez l'enfant.
+* **`SMIG-2 sit. 1` — la vitesse de correction chez le patient à risque.** La
+  grille nommait les populations à risque (alcoolisme, dénutrition,
+  hypokaliémie) **sans leur donner de limite propre** : 4-6 mmol/L/24 h ajoutés,
+  et la même limite portée dans les deux grilles sœurs.
+
+### 5. Deux corrections d'erreur factuelle interne
+
+1. **`Guillain-Barré` — « Score EGDS élevé » parmi les facteurs pronostiques
+   défavorables.** EGDS est l'acronyme d'une œso-gastro-duodénoscopie. Les
+   scores du Guillain-Barré sont le **mEGOS** (modified Erasmus GBS Outcome
+   Score, marche autonome à 6 mois) et l'**EGRIS** (Erasmus GBS Respiratory
+   Insufficiency Score, besoin de ventilation à une semaine). Les deux sont
+   maintenant nommés et explicités.
+2. **`Voyage au Brésil` — « Doxycycline : … interactions contraception ».** La
+   doxycycline ne réduit pas l'efficacité d'une contraception hormonale ; seuls
+   les inducteurs enzymatiques le font, la rifampicine au premier chef. La
+   photosensibilisation est conservée, l'œsophagite ajoutée, et le vrai risque
+   contraceptif du voyage — vomissements et diarrhée compromettant l'absorption
+   — est nommé à la place.
+
+Une troisième ligne est un **alignement de niveau 2**, pas une erreur :
+`SMIG-2 sit. 3` écrivait « restriction sodée modérée **2-3 g/j** » dans
+`theorie` quand son `therapy` fixe « **< 2 g/j** ». La section notée fait foi ;
+`theorie` a été aligné, en conservant la nuance « modérée » et en expliquant
+pourquoi la restriction drastique n'est pas souhaitable.
+
+### 6. Les trous du canonique comblés — trente
+
+`theorie` tient le rôle canonique dans **27 des 28 grilles**. L'exception est
+`Sémiologie MSQ — Coxarthrose`, qui **n'a pas de bloc `theorie`** : le rôle y est
+tenu par `resume`, et c'est lui qui a été enrichi. Le contrat désigne un rôle,
+pas un nom de bloc.
+
+| grille | ce qui manquait |
+|---|---|
+| Pityriasis versicolor | critères de distinction **vitiligo / pityriasis** (lampe de Wood, squame, limites, poils) · **délai de repigmentation** et le fait qu'une tache résiduelle n'est pas un échec · taux de récidive · retrait du kétoconazole **oral** dans cette indication · interactions des azolés |
+| Polymyalgia Rheumatica | conduite de l'artérite (§ 4.4) · **bisphosphonate d'emblée** à 72 ans, Ca+vitD ne suffisant pas · formes sans céphalée (gros vaisseaux, asymétrie tensionnelle) · VS/CRP normales n'excluant pas · méthotrexate d'épargne · le tri infection/myélome/cancer avant de masquer par les corticoïdes |
+| Psoriasis | § 4.2 · **corticoïdes systémiques proscrits** (rebond pustuleux) · dépistage TB latente et hépatites **avant biothérapie** · comorbidités cardio-métaboliques · facteurs déclenchants (streptocoque, lithium, bêtabloquants, sevrage cortisonique, Koebner) |
+| RCI-Gonocoque | **ponction articulaire AVANT la première dose** (niveau 1) · déclaration OFSP, partenaires des 60 jours, abstinence 7 jours · bilan IST complet et PrEP · doxycycline préférée à l'azithromycine pour la chlamydiose · azithromycine 2 g en monothérapie écartée · déficit du complément terminal si récidive |
+| Sclérose en plaques | **NMOSD / MOGAD** et le fait que plusieurs traitements de fond de la SEP les **aggravent** · prednisone orale seule qui **double** le taux de récidive (ONTT) · grossesse, contraception et rebond du post-partum · phénomène d'Uhthoff · définition de la poussée et infection à écarter |
+| SD — Colorectal | **choisir le FIT, c'est accepter la coloscopie** · FIT / 2 ans, coloscopie / 10 ans · complications chiffrées de la coloscopie · antécédent familial qui change la **modalité** · symptômes d'alarme = ce n'est plus du dépistage · remboursement LAMal et quote-part cantonale |
+| SD — Sein | masse palpable à explorer **quelle que soit** la mammographie · symptômes d'alarme · espérance de vie < 10 ans · oncogénétique et IRM annuelle dès 30 ans si BRCA · densité mammaire |
+| SD — Prostate | **la tranche d'âge, absente** (50-70 ans, 45 si risque) · le critère d'espérance de vie · sepsis 1-3 % des biopsies transrectales · IRM avant biopsie · surveillance active · séquelles du traitement radical · le PSA qu'on ne prescrit jamais « au passage » |
+| Sémiologie MSQ Coxarthrose | réserves des AINS · infiltration de hanche sous guidage · pas d'opioïdes au long cours · **différentiel** : ostéonécrose, fracture de contrainte, arthrite septique, métastase, bursite trochantérienne, radiculopathie, dysplasie |
+| Sémiologie MSQ Polyarthrite | § 4.3 · **fenêtre d'opportunité de 3 mois** · séronégativité dans un tiers des cas · érosions = signe tardif · treat-to-target · **instabilité C1-C2 avant toute anesthésie** · pneumopathie interstitielle, risque cardiovasculaire · bilan pré-biothérapie · une monoarthrite intercurrente qui se ponctionne |
+| SMIG-1 Syncope | **aptitude à la conduite (OAC, SSC)** — 0 occurrence dans le pédagogique alors que le patient simulé pose la question · groupe 2 · profession à risque · activités interdites · art. 15d LCR |
+| SMIG-2 sit. 1 | 4-6 mmol/L/24 h chez le patient à risque · **la crise convulsive** : NaCl 3 % est l'antiépileptique, la benzodiazépine ne suffit pas · pas de retard pour une voie centrale · glycémie capillaire · restriction de conduite après la crise |
+| SMIG-2 sit. 2 | **critères de Bartter et Schwartz** · uricémie et urée basses · vitesse de correction · le rebond de la restriction hydrique · le sérum salé isotonique qui **aggrave** un SIADH · réserves du tolvaptan · déméclocycline indisponible en Suisse |
+| SMIG-2 sit. 3 | restriction hydrique ≠ restriction sodée · ne pas perfuser de NaCl · natrémie = marqueur de réponse · **quatre piliers de l'IC à FEVG réduite** · SGLT2 poursuivi en décompensation · 30 % de hausse de créatinine tolérée |
+| SMIG-3 Acidocétose | acidocétose euglycémique sous SGLT2 · potassium avant insuline · œdème cérébral et sa conduite · pas de bolus chez l'enfant · **poursuivre l'insuline** sous 14 mmol/L · chevauchement à la transition sous-cutanée · douleur abdominale produite par l'acidose · omission volontaire d'insuline chez l'adolescente |
+| SMIG-4 Tuberculose | **rifampicine et contraception hormonale** — 0 occurrence de `contraception` dans une grille de 6 mois de traitement · autres interactions (AOD, méthadone, antirétroviraux) · coloration orange · toxicité molécule par molécule et signes d'alerte à faire répéter · aggravation paradoxale · les deux canaux de déclaration |
+| SMIG-5 | § 4.1 · **ARNI et SGLT2 absents** (0 occurrence) à FEVG 25 % · défibrillateur en prévention primaire · bas débit / bas gradient et échocardiographie de stress |
+| Guillain-Barré | **règle 20/30/40** — 0 occurrence · **la gazométrie normale jusqu'à l'arrêt respiratoire** — `gazom` : 0 occurrence · prophylaxie thromboembolique · douleur neuropathique · **succinylcholine contre-indiquée** · dysautonomie et ses pièges tensionnels · déficit en IgA avant IVIg |
+| Stevens-Johnson | **titration lente de la lamotrigine et interaction du valproate** — ce qui aurait évité l'épisode · **réactions croisées entre anticonvulsivants aromatiques** · carte d'allergie, déclaration Swissmedic, information de la famille · classification par surface et Nikolsky · pas d'antibioprophylaxie · pas de sulfadiazine argentique · ophtalmologie **quotidienne** |
+| Canal carpien | **EMG normal n'exclut pas** · le signe qui tranche : sensibilité thénarienne conservée · différentiel C6-C7, Guyon, défilé · atrophie thénarienne = chirurgie d'emblée · **le canal carpien de la grossesse ne s'opère pas** · technique et risques de l'infiltration · attentes post-opératoires |
+| Syphilis | **syphilis oculaire et otologique = neurosyphilis**, pénicilline G IV 10-14 j et non benzathine — `oculaire` : 0 occurrence · indications de la ponction lombaire · calendrier sérologique et critère de division par 4 · abstinence 7 jours · partenaires 6 et 12 mois · déclaration OFSP · dépistage IST complet et PrEP |
+| TDAH pédiatrique | **différentiel** (épilepsie-absences, SAOS, déficit sensoriel, carence martiale, maltraitance) — la grille n'a **ni `annexe-dd`, ni `therapy`, ni `redflags`** · **atomoxétine et idées suicidaires** · bilan cardiaque avant stimulant · contre-indications · effets à surveiller · guanfacine et rebond tensionnel · § 8.1 pour le volet protection |
+| Toux et maux de ventre | **douleur abdominale projetée d'une pneumonie basale** — l'objet même de la station · compter la fréquence respiratoire devant tout enfant fébrile qui a mal au ventre · **épanchement et empyème**, échographie thoracique · pneumonie récidivante et corps étranger · réserve des AINS · filet de sécurité parental |
+| Transaminases | **liste des médicaments, compléments et produits « naturels »** hépatotoxiques — l'`expert` la réclame · **ASAT isolée = doser les CK** · macro-ASAT · seuils de normalité réels (30/20 U/L) · transaminases > 10 N et le fait qu'une **baisse avec un INR qui monte est une aggravation** |
+| Trouble panique | § 8.1 · **caféine et stimulants** · agoraphobie secondaire · phéochromocytome, EP, SCA, sevrage · **IRRS à demi-dose** et aggravation transitoire · surveillance de l'idéation suicidaire à l'introduction · durée ≥ 12 mois · psychoéducation |
+| Urticaire allergique | **0,5 mg IM à la face antérolatérale de la cuisse**, répétable · **ne jamais lever le patient** · aucune contre-indication absolue à l'adrénaline · deux auto-injecteurs, démonstration, plan écrit · **cofacteurs** (effort, AINS, alcool, bêtabloquants) · durée de surveillance selon la gravité · allergènes masqués |
+| Voyage Madagascar | **toute fièvre au retour = paludisme, urgence** (niveau 1) · la prophylaxie qui ne garantit rien · protection antivectorielle et DEET chez l'enfant · **rage : lavage 15 min et le rôle des immunoglobulines** · **autorisation parentale et autorité parentale conjointe** — l'`expert` la réclame deux fois |
+| Voyage Brésil | § 4.6 · **aspirine et AINS proscrits dans la dengue** (piège éliminatoire de la page) · signes d'alarme à la défervescence · **lopéramide contre-indiqué si fièvre ou sang** · fièvre au retour = urgence · P. vivax et ses rechutes tardives |
+
+### 7. Barème — aucune ligne touchée
+
+**Toutes les éditions portent sur `theorie`, sauf une sur `resume`**
+(`Sémiologie MSQ — Coxarthrose`, qui n'a pas de `theorie`). `therapy`,
+`redflags`, `expert`, `annexe-dd` et `cloture` n'ont pas été approchés.
+
+C'est le **premier lot thématique sans aucune exception au barème** : `t1`, `t3`
+et `t4` en comptaient deux chacun.
+
+**Preuve d'innocuité.** `check_invariants` vert sur les 165. Sur les 28 grilles,
+les **quatorze champs** du snapshot sont identiques à la baseline —
+**0 divergence sur 392 comparaisons**, baseline non régénérée. Sur 1071 lignes de
+`diff`, **aucune** ne porte `window.caseConfig`, `<script`, `criteria-text`,
+`criteria-detail`, `type="checkbox"`, `type="radio"`, `maxScores`,
+`sectionInfo`, `coef`, `<span class="score">`, `points-display`,
+`checkbox-group`, `section-header` ni `patient-response`. **0 sous-item ajouté ou
+retiré.** Les 573 `.criteria-text` du lot respectent tous le format
+`N. Libellé` ; les 97 crochets `[…]` de `cloture` sont intacts.
+
+**Le `diff` ne compte que 4 lignes supprimées**, toutes dans `theorie`, toutes
+énumérées aux § 5 : les deux `restriction sodée 2-3 g/j`, le `Score EGDS élevé`
+et la `Doxycycline : … interactions contraception`. Contrôle de couverture
+lexicale sur chacune : `restriction sodée`, `modérée`, `restriction hydrique`,
+`1-1.5 L`, `doxycycline`, `photosensibilisation`, `contraception`, `Erasmus` et
+`pronostic` sont tous présents après. **Aucun retrait plein.**
+
+### 8. Préoccupations
+
+#### 8.1 Le trou de protection — cinquième zéro, et deux terrains où il a rendu
+
+`PAFA`, `art. 426`, `art. 16 CC`, `APEA`/`KESB`, `curatelle`, `discernement`,
+`143`, `147`, `LAVI`, `maltraitance`, `violence` : **0 occurrence sur les 28**
+avant intervention. Les deux occurrences de `147` relevées par le balayage sont
+des **dénominateurs de score** (« Score Global 0/147 »), pas le numéro de Pro
+Juventute. Aucun faux positif `LAVI` cette fois — et donc aucun vrai non plus.
+**Cinq lots, 123 grilles, le même zéro.**
+
+Le mandat annonçait trois terrains prometteurs ; **deux ont rendu**, le
+troisième non.
+
+* **`Trouble panique — Femme de 42 ans` : `suicid*` à 0.** C'est exactement le
+  défaut que `t1` avait trouvé sur la **Psy-Vignette 8**, qui est aussi un
+  trouble panique — le motif se répète donc sur les **deux** grilles de trouble
+  panique du corpus. Le sur-risque suicidaire du trouble panique est établi, y
+  compris sans dépression. `SSP — Trouble Anxieux` tranche (niveau 1) :
+  « Comorbidité dépressive (très fréquente) + **idéation suicidaire** » et
+  « **143** La Main Tendue (crise anxieuse 24/7) · **147** Pro Juventute ».
+  Ajouté : la recherche systématique, les trois numéros, la surveillance de
+  l'idéation à l'introduction d'un IRRS, et — pour le cas du refus de soins avec
+  danger vital — la capacité de discernement (art. 16 CC) et le PAFA
+  (art. 426 CC), avec l'APEA/KESB nommée.
+* **`TDAH pédiatrique — Garçon de 9 ans`.** La page
+  `SSP — Troubles du Développement & Croissance` porte tout ce qui manquait
+  (niveau 1) : « **117** police (maltraitance) · CAN Team CHUV/HUG ·
+  **APEA/KESB** · **Pro Juventute 147** » et « signes de maltraitance/négligence
+  sévère → signalement obligatoire (cellule de protection de l'enfance) ».
+  Ajouté : le statut de **stupéfiant (LStup)** du méthylphénidate et le risque de
+  détournement, le fait qu'un enfant de 9 ans n'a pas la capacité de discernement
+  mais est **entendu** (art. 16 CC), l'accord des **deux** détenteurs de
+  l'autorité parentale conjointe, le signalement APEA/KESB (art. 307 ss CC), les
+  numéros 147 et 143, et le secret médical vis-à-vis de l'école.
+* **`Voyage à Madagascar — Père et enfant`** — terrain non annoncé, qui a rendu
+  autant : l'`expert` réclame **deux fois** l'autorisation parentale
+  (« Documentation légale pour mineur », « Oublier l'autorisation parentale pour
+  voyager ») et la grille n'en portait rien. Ajouté : autorité parentale
+  conjointe, autorisation écrite et pièce d'identité du second parent,
+  autorisation de soins d'urgence, et l'APEA/KESB ou le juge en cas de désaccord.
+* **Les trois `SD — Dépistage` n'ont rien rendu** sur ce balayage : ce sont des
+  stations de décision partagée entre adultes capables de discernement, où le
+  respect du refus est déjà l'objet même de la grille. Le rendement y a été
+  ailleurs (§ 6).
+
+#### 8.2 Cinq divergences laissées dans un bloc noté, consignées
+
+1. **`Toux et maux de ventre`, `therapy`** : « Ibuprofène 10 mg/kg/dose —
+   **en alternance** si fièvre persistante », dans une pneumonie de l'enfant.
+   C'est la divergence la plus sérieuse du lot : les AINS sont associés aux
+   complications suppuratives que l'`expert` de la même grille demande
+   d'anticiper. La page `SSP — Toux Chronique` ne traite pas l'antipyrèse — la
+   condition « sourcée » de l'arbitrage n'était pas remplie, et la correction
+   aurait de toute façon changé la molécule attendue.
+2. **`Urticaire allergique`, `therapy`** : « Antihistaminique H2 — **Ranitidine**
+   si besoin ». La ranitidine a été **retirée du marché mondial en 2020** (NDMA)
+   et n'existe plus en Suisse ; l'équivalent est la famotidine. Corriger aurait
+   changé la molécule nommée dans un attendu de correction.
+3. **`Urticaire allergique`, `therapy`** : « Surveillance **1-2 heures** si
+   première réaction », quand la `theorie` de la même grille écrit « réactions
+   biphasiques possibles (4-6 h) ». La grille se contredit. Les critères de
+   surveillance prolongée ont été portés dans `theorie`.
+4. **`RCI-Gonocoque`, `therapy`** : « Alternative si allergie —
+   **Azithromycine 2 g PO** ». L'azithromycine 2 g en monothérapie n'est plus
+   acceptable pour la gonorrhée. Sa jumelle traitée au lot `t3` porte déjà cette
+   correction ; elle a été portée ici dans `theorie` (voir § 8.3).
+5. **`RCI-Gonocoque`, `therapy`** : « Azithromycine 1 g PO dose unique » pour la
+   chlamydiose présumée, alors que la doxycycline 100 mg × 2/j × 7 j lui est
+   aujourd'hui préférée — le `therapy` la liste d'ailleurs en alternative.
+   Nuance portée dans `theorie`.
+
+#### 8.3 `RCI-Fièvre` — l'inclusion stricte n'est plus vraie, et c'est le lot `t3` qui l'a rompue
+
+L'audit initial (`PROCEDURE-rescos-locales.md` § 6) avait mesuré une **inclusion
+stricte** : `Fièvre et douleurs articulaires` (rang 56) ⊂
+`RCI-Fièvre et douleurs articulaires` (rang 99), **0 item propre** sur 106.
+
+**Ce n'est plus le cas.** Mesure au HEAD de départ `302f0d1` : la version sans
+préfixe porte **4 items propres**, et ce sont exactement les quatre corrections
+que le lot `t3` lui a apportées — l'azithromycine 2 g écartée, la ponction
+articulaire avant la première dose, la déclaration OFSP avec les partenaires des
+60 jours, et la doxycycline préférée à l'azithromycine pour la chlamydiose.
+**Traiter une jumelle a rompu l'inclusion qui justifiait de ne pas traiter
+l'autre.**
+
+Les quatre notions ont été portées dans la `RCI-`, dans `theorie` et sous une
+rédaction propre. Vérification lexicale après intervention : `azithromycine 2`,
+`monothérapie`, `avant la première dose`, `déclaration obligatoire`,
+`60 dernier`, `7 jours après` et `doxycycline 100 mg` sont **tous** présents dans
+la `RCI-`. Le décompte d'items propres reste à 4 parce que la version `t3` les
+porte en items longs et uniques quand la `RCI-` les répartit sur plusieurs
+lignes — c'est une différence de découpage, pas de contenu.
+
+**Ce qu'il faudrait en faire.** La `RCI-` est le sur-ensemble : 213 items contre
+108, 111 propres contre 4 de découpage. C'est elle qu'il faut garder. Mais
+**aucun fichier n'a été supprimé** — arbitrer la suppression d'une grille reste
+un geste éditorial hors mandat, et les deux fichiers ont désormais leur propre
+clé de registre et leur propre lien depuis le vault (`SSP — Douleurs
+Articulaires` cite la version **sans** préfixe). Recommandation, dans cet ordre :
+1. faire pointer `SSP — Douleurs Articulaires` sur la `RCI-` ;
+2. vérifier qu'aucune autre page ni aucun index ne cite la version sans préfixe ;
+3. supprimer alors la version sans préfixe, ou la renommer en variante explicite.
+Tant que le point 1 n'est pas fait, supprimer casserait un lien du vault.
+
+#### 8.4 Deux pièges de mesure, dont un qui aurait faussé le rapport
+
+1. **Collision de nom entre `scripts/amboss/report_redundancy.py` et celui de
+   `rescos-locales`.** Un script de mesure ad hoc qui importait d'abord
+   `scripts/amboss/` puis `scripts/rescos-locales/` a fait résoudre
+   `import report_redundancy` sur **la version AMBOSS**, dont les `BLOCKS` sont
+   différents. Résultat : `Sémiologie MSQ — Coxarthrose` mesurée à **64** paires
+   au lieu de 11, et un total de lot de 359 au lieu de 316 — de façon cohérente
+   avant et après, donc **invisible à la comparaison**. Détecté par
+   confrontation au tableau par grille du passage corpus. Toutes les valeurs
+   publiées ici sont issues du script du bon corpus, module vérifié par
+   `rr.__file__`.
+2. **Le corpus est passé de 1002 à 1003 sans que ce lot y soit pour quelque
+   chose.** L'utilisateur a validé pendant le lot le commit `e8bd11e`
+   « Corrige `norm()` : les ligatures œ et æ n'ont aucune décomposition
+   Unicode », qui modifie une primitive **partagée** (`scripts/amboss/lib_amboss.py`)
+   dont dépend la mesure de redondance des quatre corpus. Démonstration que le
+   lot n'y contribue pas : les 137 grilles hors lot sont **octet pour octet
+   identiques** à `302f0d1` (`git diff --name-only` en rend 28), et les 28
+   grilles du lot mesurent **316 avant et 316 après** avec l'outillage courant.
+   Le corpus valait donc déjà 1003 sous cet outillage avant la première édition.
+   **Les témoins AMBOSS 147 et RESCOS 127 ne bougent pas** malgré ce changement.
+
+#### 8.5 Trois pages qui ne portent pas toute la matière de leur grille
+
+* `SSP — Dyspnée` est citée pour `SMIG-5` et ne dit rien de la sténose aortique ;
+  c'est `SSP — Syncope` qui la traite, et c'est de là que vient la comparaison
+  sténose aortique / CMH obstructive. Croisement fait, rien inventé.
+* `SSP — Toux Chronique` couvre `SMIG-2 sit. 2` (SIADH) par une seule ligne sur
+  le cancer pulmonaire, et `Toux et maux de ventre` (pneumonie de l'enfant) par
+  une page presque entièrement adulte.
+* `SSP — SD Counselling Dépistages` porte l'essentiel dans des **PDF joints et
+  des images légendées** plutôt que dans son texte : les tranches d'âge, les
+  rythmes et les coûts en quote-part viennent des légendes. Niveau 1 appliqué sur
+  ce que les légendes énoncent explicitement, niveau 2 ailleurs.
+
+#### 8.6 Coordination
+
+Aucun `git add`. Validation directe par
+`git commit -F <fichier> -- cases/rescos-locales/ docs/superpowers/journal-…`.
+`core.quotepath=false` sur toutes les commandes de contrôle. Aucun `git push`,
+aucune commande réseau, aucun `git gc` ni `git prune`, aucun `timeout`. Rien lu
+ni écrit sous `cases/german/`, `scripts/german/`, `cases/casecos/` ni
+`scripts/casecos/`. L'utilisateur a validé deux commits pendant le lot
+(`cbdff94`, `e8bd11e`) ; HEAD est passé de `302f0d1` à `e8bd11e` — la base de
+comparaison `302f0d1` a été conservée pour `check_no_loss`.
+
+### 9. Vérifications
+
+```
+check_invariants.py                     OK — 165 grilles, code 0
+check_nomenclature.py                   OK — 0 terme, code 0
+check_reachability.py                   OK — 156/156 notées à 100 %, code 0
+report_redundancy.py (lot de 28)        316 -> 316   (aucune paire créée)
+report_redundancy.py (corpus)           1003 -> 1003 (voir § 8.4.2)
+check_no_loss.py 302f0d1                2 items, verdictés un à un, 0 perte
+browser_probe.js (les 28) --deep        28/28 sans exception · 28/28 à 100 %
+                                        28/28 registry · barre nav fixed
+                                        0 recouvrement · crochets colorés 28/28
+bounds_anomalies / uncovered_content    [] / {} sur les 28
+snapshot champ par champ                0 divergence — 14 champs × 28 grilles
+diff : marqueurs de barème              0 ligne sur 1071
+diff : lignes supprimées                4, toutes dans theorie, toutes au § 5
+format .criteria-text « N. Libellé »    573 contrôlés, 0 écart
+crochets […] de cloture                 97 avant, 97 après
+
+AMBOSS  report_redundancy 147 (inchangé) · invariants / nomenclature / atteignabilité code 0
+RESCOS  report_redundancy 127 (inchangé) · invariants / nomenclature / atteignabilité code 0
+```
+
+Les **2** items signalés par `check_no_loss` sont les deux réécritures du § 5 ;
+la couverture lexicale de chacune est vérifiée au § 7. **Aucun retrait plein.**
+
+`check_nomenclature` a été lancé trois fois — en début de lot, à mi-lot et avant
+validation — et n'a rien rattrapé.
+
+German et casecos n'ont été ni lus ni mesurés : l'utilisateur y travaille en
+parallèle.
+
+**Avec ce lot, les 123 grilles thématiques de `cases/rescos-locales` sont toutes
+traitées.** Restent les 33 grilles numérotées `RESCOS-41` à `69` et les 9
+feuilles porte.
