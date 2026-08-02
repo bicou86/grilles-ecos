@@ -2107,3 +2107,292 @@ distinctes, de 22,3 Mo (biais bas) à 49,9 Mo (biais haut), 29,1 Mo en sélectio
 neutre. La cible de 25,9 Mo tombe dans la fourchette mais n'est pas un plancher.
 
 Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p2b-report.md`
+
+---
+
+## p3a — Les 13 grilles riches : `annexe-theorie`, planche d'images, balisage
+
+**Périmètre** : German-15, 19, 22, 27, 34, 42, 43, 44, 48, 56, 69, 72, 88 — les
+13 grilles qui portaient déjà `resume`, `annexe-dd` et `presentation` sans
+`annexe-theorie` ni image. Rien d'autre.
+
+**HEAD réel au démarrage** : `fde7e04` (« Bascule les images de German-1 en
+fichiers référencés »), et non `383ade6` — la session RESCOS avait commité deux
+fois entre-temps. Vérifié par `git log`, pas supposé. Au moment du commit,
+l'arbre de travail portait 198 fichiers `cases/casecos/` et 5 `scripts/casecos/`
+modifiés par l'autre session : l'index a été construit chemin par chemin.
+
+### 1. Ce qui a été ajouté
+
+| | 13/13 |
+|---|---|
+| `annexe-theorie` créé | 13 |
+| Planches d'images | 13 (34 images distinctes, 2 à 3 par grille) |
+| `resume` balisé | 13 |
+| `presentation` balisé (`section-mnemo` + `section-questions`) | 13 |
+| Section notée touchée | **0** |
+
+`blocks` gagne `annexe-theorie: 1` sur les 13, et `annexe-image: 1` sur 10 —
+German-42, 43 et 44 en portaient déjà un, et leurs triplets ont été **ajoutés
+dans l'`annexe-item` existant** pour que le compte de segments reste à 1 (§ 8.7).
+
+### 2. La source de chaque section, grille par grille
+
+Chaque `annexe-theorie` est bâtie sur la page SSP de la grille (niveau 1) et sur
+sa section notée (niveau 2), et sur rien d'autre. Le tableau donne, pour chaque
+grille, sa page de référence et ce que chaque section tire d'où.
+
+| Grille | Diagnostic retenu | Page SSP | Sections et leur source |
+|---|---|---|---|
+| **German-15** | Diverticulite sigmoïdienne non compliquée | Douleur Abdominale | *Ce qui pose le diagnostic* ← tableau « Orientation par localisation » (FIG = sigmoïde) + détails notés · *Scanner et coloscopie* ← « Imagerie » + résumé · *Classification* ← image Hinchey/Kaiser + « Scores cliniques utiles » · *Ambulatoire* ← algorithme diverticulite + « Conduites ciblées » (abstention SSMI/SGAIM) · *DD* ← « Catégorisation par urgence » + Fireflies (ischémie mésentérique) · *Seuils* ← algorithme |
+| **German-19** | Rectocolite ulcéro-hémorragique | Douleur Abdominale | *Durée* ← critères notés 3 et 7 · *Voyage* ← AMPLE items « P » et « E » de la page · *Examens* ← « Biologie 1ʳᵉ intention » + corrigé du critère 3 · *DD* ← bloc Fireflies « Maladie de Crohn (RCI Jenelten) » + score d'Alvarado · *Conduite* ← résumé + `annexe-dd` |
+| **German-22** | Épicondylite latérale | Douleurs Articulaires | *Cinq critères* ← tableau « Inflammatoire vs Mécanique » de la page, appliqué détail par détail au corrigé · *Anatomie* ← test noté « épicondyle latéral avec extension du poignet contre résistance » + tendon nommé au résumé · *Médicaments* ← « fluoroquinolones (tendinopathies) » de la page + détail noté (pilule) · *Piège* ← « à faire » n° 2 et « à éviter » n° 1 de la page (ponction avant infiltration) |
+| **German-27** | Conflit sous-acromial | Douleur d'Épaule | *Actif/passif* ← « Mobilités » de la page (deux règles citées telles quelles) · *Un test par muscle* ← tableau « Tests spécifiques » · *Trois stades* ← image « Impingement — stades » · *DD* ← « Points Clés ECOS » (capsulite, Spurling, diabète) · *Causes viscérales* ← même bloc + message-clé |
+| **German-34** | Cancer de l'œsophage | Dysphagie | *Deux questions* ← « En Bref » et mnémoniques de la page · *Mécanisme solides→liquides* ← carte ECOS de la page, verbatim du raisonnement · *IPP d'épreuve* ← piège n° 1 · *Ordre OGD/manométrie* ← « à faire » n° 5 (pseudo-achalasie) · *Dysphonie* ← « ORL et cervical » (nerf récurrent) + facteurs de risque · *DD* ← tableau oropharyngée/œsophagienne |
+| **German-42** | Tinea corporis | Éruption Cutanée | *Décrire avant de nommer* ← règle d'or de la page + détails notés · *Grattage* ← « Examens complémentaires » + critère noté 4 (filaments mycéliens) · *Dermocorticoïde* ← « Prise en charge » (eczéma/psoriasis) + résumé (Majocchi) · *DD* ← `annexe-dd` + « Pièges » (gale) · *Piscine* ← critère noté 8 + résumé |
+| **German-43** | Scarlatine | Éruption Cutanée | *Vitropression* ← règle d'or et red flags de la page (purpura fulminans, ceftriaxone) + critère noté 5 · *Texture* ← détails notés (papier de verre, langue framboise) + résumé · *Pourquoi traiter* ← résumé (RAA, GNA) + corrigé (éviction 24 h, pas de prophylaxie) · *TDR* ← corrigé du critère 3 · *DD* ← `annexe-dd` + red flags |
+| **German-44** | Lupus érythémateux cutané | Éruption Cutanée | *Lésion élémentaire* ← « Description de la lésion » de la page + détails notés · *Photosensibilité* ← « Facteurs déclenchants » + détails notés (Italie, aggravation) · *Cutané ou systémique* ← résumé (ANA, anti-SSA, lupus band test) + critère noté 6 · *DD* ← `annexe-dd` + résumé · *Photoprotection* ← résumé |
+| **German-48** | Exanthème subit (HHV-6/7) | Fièvre du Nourrisson | *Âge* ← « En Bref » (< 1 mois / 1-3 mois / > 3 mois) · *Examen sans foyer* ← pièges de la page (otoscopie, stix urinaire, 15 %, 85 %) + red flags · *Convulsions* ← mnémoniques de la page + `redflags` de la grille · *DD* ← `annexe-dd` + tableau DD de la page |
+| **German-56** | Incontinence urinaire d'effort | Incontinence Urinaire | *Quatre types* ← tableau « Types d'incontinence » de la page · *Urgenturie sans fuite* ← détails notés (toilettes à temps, 8 mictions, pas de nycturie) · *Examens* ← « 1ʳᵉ / 2ᵉ intention » de la page · *Rééducation* ← « Mesures conservatrices » + critère noté 19 (internet) · *Terrain* ← « Facteurs de risque » de la page + critères notés 21-27 · *Interdits* ← « à éviter » de la page (queue de cheval, « c'est l'âge ») |
+| **German-69** | Cataracte sénile nucléaire | Amaurose & BAV | *Quatre axes* ← « Caractérisation (les 4 axes) » de la page · *Opacité* ← détails notés + résumé (second sight) · *Examens négatifs* ← « à faire » et « pièges » de la page (DPAR, fond d'œil) · *Après 50 ans* ← règle d'or (Horton, corticoïdes avant biopsie) + critère noté 6 · *DD* ← `annexe-dd` + tableau « Délai / Diagnostic / Clés » |
+| **German-72** | Maladie cœliaque | Troubles de la Croissance | *Courbe* ← règle d'or de la page + critères notés 2 et 3 · *Deux calculs* ← piège n° 1 (80 %, taille cible, âge osseux et ses trois lectures) · *Cassure sans symptôme* ← red flag « douleurs abdo + diarrhée + petite taille » + résumé (manifestations extra-digestives) · *Examens* ← « Bilan de base (toujours) » · *DD* ← `annexe-dd` + red flags (tumeur, maltraitance, Turner) |
+| **German-88** | Conjonctivite allergique | Œil Rouge | *Acuité d'abord* ← règle d'or et « En Bref » de la page · *Tableau des conjonctivites* ← tableau DD de la page · *Deux gestes* ← « à faire » n° 2 et 4, « pièges » n° 5 · *Lentilles* ← red flag « porteur de lentilles » + message-clé · *Corticoïdes* ← règle d'or, pièges et encadré de la page · *DD* ← `annexe-dd` + red flags (Chlamydia, PCR avant traitement) |
+
+**Où la source était muette, la section est courte ou absente.** German-19 n'a
+pas de section « repères chiffrés » développée : la page « Douleur Abdominale »
+ne porte aucun seuil de RCUH. German-22 n'a pas de section sur la conduite
+thérapeutique : la page « Douleurs Articulaires » ne traite que des
+arthropathies, jamais des tendinopathies. Rien n'a été comblé.
+
+### 3. Les images — motif de chaque choix
+
+34 images distinctes, **4 892 Ko**, toutes reprises par `fetch_image.py`, aucune
+recompressée. Aucune n'est citée par deux de mes grilles : la déduplication n'a
+donc rien économisé ici, mais elle jouera à mesure que le corpus se remplira.
+
+| Grille | Image | Test § 8.3 | Motif |
+|---|---|---|---|
+| **15** | classification diverticulite compliquée | 1 | Le critère noté 5 s'intitule « Classification de la diverticulite » |
+| | algorithme diverticulite aiguë | 1 | Le critère noté 6 « Prise en charge » ; l'image porte les quatre conditions de l'ambulatoire |
+| | messages clés — douleurs aiguës | 8.4 | Message-clé obligatoire ; ses deux premiers points portent sur la diverticulite, l'entité de la vignette |
+| **19** | DD par quadrant | 1+2 | Le critère noté 4 est « Localisation » ; l'image range les hypothèses de l'`annexe-dd` par siège |
+| | signe de l'obturateur | 1+2 | Critère noté 4 de l'examen (« Signes péritonéaux ») ; manœuvre de l'appendicite pelvienne, hypothèse de l'`annexe-dd` |
+| | score d'Alvarado | 2 | Cote l'appendicite, nommée à l'`annexe-dd` |
+| **22** | Rx mains — érosions ou nodosités | 2 | La page donne à cette image deux lectures, PR et arthrose : les deux hypothèses de l'`annexe-dd` |
+| | ponction articulaire | 3 | Le piège n° 1 de la page et le premier « piège ECOS » de la grille (arthrite septique) ; l'infiltration est la 2ᵉ ligne du traitement |
+| **27** | quel test de la coiffe pour quel muscle | 1 | Le critère noté 4 s'intitule « Tests spécifiques de la coiffe des rotateurs » |
+| | conflit sous-acromial — stades | 1 | Le diagnostic retenu ; l'image stadifie l'entité que le critère noté 1 nomme |
+| | messages clés — épaule douloureuse | 8.4 | Message-clé obligatoire, sur l'entité de la vignette |
+| **34** | trois phases de la déglutition | 1 | Le critère noté 2 de l'examen est « Examen de la déglutition » ; le découpage fonde la distinction oropharyngée / œsophagienne |
+| | cancer de l'œsophage — trognon de pomme | 1 | Le diagnostic retenu (critère noté 1) |
+| | achalasie — bec d'oiseau | 2 | Hypothèse discutée de l'`annexe-dd`, avec le signe qui la sépare du cancer |
+| **42** | la squame | 1 | Le détail noté « Aspect (squameux…) [Desquamation] » |
+| | psoriasis en plaques du genou | 2 | Première hypothèse de l'`annexe-dd`, avec la squame pleine qui l'oppose à la bordure active |
+| **43** | éruption maculopapuleuse du nourrisson | 2 | Rougeole et roséole, la rougeole étant la première hypothèse de l'`annexe-dd` |
+| | purpura fébrile — méningococcémie | 3 | Le critère noté 5 (« Recherche de signes de gravité ») et la règle d'or de la page |
+| **44** | la plaque | 1 | Le critère noté 3 (« Caractéristiques de l'érythème ») et le détail « Aspect » |
+| | pitting unguéal du psoriasis | 2 | Hypothèse n° 1 de l'`annexe-dd` ; signe à chercher hors de la lésion, comme la page l'exige |
+| **48** | otoscopie — tympan normal | 1+3 | Le critère noté 3 (« Examen ORL ») et le piège de la page (« oublier l'otoscopie ») |
+| | exanthèmes fébriles du nourrisson | 1+2 | Le diagnostic retenu (roséole HHV-6) et le champ du différentiel |
+| | convulsions fébriles simples/complexes | 3 | Red flag n° 2 de la grille, détail noté (« jamais eu de convulsions fébriles »), piège n° 4 de la page |
+| **56** | classification de l'incontinence | 1 | Le critère noté 4 (« Circonstances déclenchantes ») : l'image est la question de tri elle-même |
+| | types d'incontinence | 2 | Le critère noté 2 du management (« Diagnostics différentiels ») ; l'image détaille les quatre mécanismes de l'`annexe-dd` |
+| | messages clés — incontinence urinaire | 8.4 | Message-clé obligatoire, sur l'entité de la vignette |
+| **69** | mesure de l'acuité visuelle | 1 | Le critère noté 1 de l'examen ; « à faire absolument » n° 2 de la page |
+| | fond d'œil normal | 1 | Le critère noté 7 ; c'est le repère auquel la cataracte est comparée, et le piège n° 5 de la page |
+| | algorithme de Horton | 2+3 | L'urgence nommée à l'`annexe-dd` et le critère noté 6 (claudication de la mâchoire, douleurs temporales) |
+| **72** | âge osseux (Greulich-Pyle) | 1 | Le critère noté 3 du management ; l'un des deux calculs que le piège n° 1 de la page impose |
+| | hypothyroïdie — manifestations | 2 | Hypothèse de l'`annexe-dd`, dont le contre-argument est « aucun signe clinique d'hypothyroïdie » — l'image les liste |
+| **88** | démarche diagnostique — œil rouge | 1+2 | Le critère noté 2 (« Diagnostics différentiels ») ; l'arbre porte les délais de recours |
+| | test à la fluorescéine | 1 | Le critère noté 7 de l'examen ; « à faire absolument » n° 4 de la page |
+| | messages clés — œil rouge | 8.4 | Message-clé obligatoire, sur l'entité de la vignette |
+
+**Corollaire du § 8.3 vérifié.** Trois de mes grilles partagent la page
+« Éruption Cutanée » (42, 43, 44) et deux la page « Douleur Abdominale »
+(15, 19) : **aucune image n'est commune à deux d'entre elles**, message-clé
+compris — les deux messages-clés de « Douleur Abdominale » sont distincts et
+German-19 n'en prend aucun (voir plus bas).
+
+### 4. Le balisage
+
+Posé dans les quatre conteneurs prescrits, et **nulle part ailleurs** : sur les
+2 246 `<span class="c-*">` des 13 grilles, 2 246 sont dans un de ces conteneurs,
+0 en dehors.
+
+| | spans | mots | densité |
+|---|---|---|---|
+| Total des 13 grilles | **2 246** | 22 395 | **1 / 10,0 mots** |
+| Grille la plus dense | German-15 et 44 | | 1 / 9,1 |
+| Grille la plus légère | German-88 | | 1 / 11,0 |
+
+Répartition : `c-green` 507 · `c-pink` 459 · `c-red` 355 · `c-amber` 289 ·
+`c-yellow` 228 · `c-purple` 170 · `c-blue` 146 · `c-orange` 92.
+
+La cible était l'ordre de grandeur de German-1 (1 / 9,1), lui-même calibré sur
+les pages SSP de l'utilisateur (1 / 11,3 en moyenne, 1 / 7,6 dans leur région la
+plus dense). **1 / 10,0 tombe entre les deux.** Chaque `resume` a été ramené
+après une première rédaction trop dense : les termes retirés sont des
+répétitions internes (une check-list qui reprend une section antérieure) et des
+intitulés de rubrique, jamais des noms porteurs d'information.
+
+**Aucune dérive de formulation.** Le texte visible de `resume`, `presentation`,
+`annexe-dd`, `redflags` et `therapy` est **identique caractère pour caractère**
+à celui de `fde7e04` sur les 13 grilles (contrôle automatique par
+`visible_text` + `norm`). Une première passe avait introduit 38 micro-réécritures
+— abréviations développées, articles ajoutés — toutes annulées.
+
+### 5. Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `check_invariants.py` avant re-snapshot | 13 écarts, **tous sur `blocks`, tous sur mes 13 grilles** |
+| Diff champ par champ contre `baseline.json` | `blocks` est **le seul champ** qui bouge ; 0 écart hors périmètre ; aucun bloc retiré, aucun compte de segment modifié |
+| `check_invariants.py` après re-snapshot | **OK — 88 grilles** |
+| `check_reachability.py` | **OK — 88/88 à 100 %** |
+| `check_nomenclature.py` | **OK** |
+| AMBOSS — invariants, reachability, nomenclature | **OK — 40 grilles** |
+| RESCOS — invariants, reachability, nomenclature | **OK — 41 grilles** |
+| `check_no_loss.py HEAD` | **0 item disparu** sur les 13 |
+| `fetch_image.py --verify` | **aucun lien cassé, aucune orpheline** ; 37 images, 37 référencées |
+
+### 6. La redondance ne bouge pas d'une paire
+
+| Grille | 15 | 19 | 22 | 27 | 34 | 42 | 43 | 44 | 48 | 56 | 69 | 72 | 88 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Avant | 1 | 2 | 0 | 3 | 1 | 0 | 0 | 2 | 0 | 1 | 0 | 1 | 1 |
+| Après | 1 | 2 | 0 | 3 | 1 | 0 | 0 | 2 | 0 | 1 | 0 | 1 | 1 |
+
+**Zéro paire nouvelle.** L'attente de la consigne était plus faible — « des
+paires vont apparaître, chacune doit être justifiable par un changement de
+format ». Il n'y en a aucune à justifier, et ce n'est pas un hasard de mesure :
+la rédaction a été corrigée cinq fois sur signalement du détecteur.
+
+| Grille | Paire apparue à la première rédaction | Correction |
+|---|---|---|
+| German-27 | `annexe-theorie` ↔ `presentation` et ↔ `resume` à 0,83-0,74 sur « arc douloureux 60-120° » | Ligne retirée des « repères chiffrés » : le `resume` la porte déjà, dans le même format de liste |
+| German-42 | `resume` ↔ `annexe-theorie` à 0,84 sur « retour au sport après 72 h » | Remplacée par le délai exposition→lésions, que le `resume` ne porte pas |
+| German-56 | `annexe-dd` ↔ `annexe-theorie` à **0,89** sur « elle arrive toujours aux toilettes à temps » | Reformulée en énoncé de mécanisme (« c'est l'échec à différer qui définit le type ») ; le *quoi* reste à l'`annexe-dd`, le *pourquoi* passe à `annexe-theorie` |
+| German-69 | `resume` ↔ `annexe-theorie` à 0,75 sur « correction optique à 4-12 semaines » | Ligne remplacée par le terrain de la vignette |
+| German-72 | `resume` ↔ `annexe-theorie` à 0,85 sur la réintroduction des laitages | Ligne remplacée par le rythme de suivi |
+| German-88 | `annexe-dd` ↔ `annexe-theorie` à **0,88** sur « ni douleur, ni photophobie, ni baisse d'acuité » | Reformulée sans reprendre l'énumération de l'`annexe-dd` |
+
+Deux de ces six paires sont les plus instructives : **German-56 et German-88 ont
+recouvert `annexe-dd`**, exactement le risque que la consigne annonçait. Le
+détecteur les a vues à 0,89 et 0,88.
+
+### 7. Contrôle visuel — fait, en navigateur headless
+
+Chrome (`--headless=new`), rendu local sur `file://`, aucune requête réseau.
+Deux grilles — **German-15** (3 images référencées) et **German-44** (base64
+hérité + 2 référencées) —, deux thèmes, deux largeurs, soit **8 rendus**. Copies
+temporaires avec `data-theme` figé placées dans `cases/german/` pour que
+`../img/german/` résolve, supprimées ensuite (`git status` ne montre aucun
+`_tmpvis-*`).
+
+```
+German-15 sombre 1200 : IMG0 nat=521x291  rendu=523x293   IMAGES_CASSEES=0
+                        IMG1 nat=1156x827 rendu=1046x749  SCROLLWIDTH=1200 DEBORDEMENT=non
+                        IMG2 nat=2190x1080 rendu=1046x517  NEUTRALISES=0
+German-15 clair   500 : IMG0 rendu=402x225  IMG1 402x288  IMG2 402x199  DEBORDEMENT=non
+German-44 sombre 1200 : IMG0 (base64) nat=420x224  IMG1 nat=1964x1422 rendu=1046x758
+                        IMG2 nat=797x1000 rendu=799x1002  IMAGES_CASSEES=0  NEUTRALISES=0
+```
+
+- **`naturalWidth`/`naturalHeight` égaux aux dimensions du vault** pour les six
+  images référencées — aucun fichier tronqué, aucun chemin faux.
+- **Rapports conservés** : 1156/827 = 1,398 rendu 1046/749 = 1,397 ;
+  2190/1080 = 2,028 rendu 1046/517 = 2,023 ; 797/1000 = 0,797 rendu
+  402/504 = 0,798.
+- **Aucun débordement horizontal** : `scrollWidth === innerWidth` aux quatre
+  couples (1200 et 500 px, sombre et clair).
+- **Les huit classes rendent une couleur distincte dans les deux thèmes**, et
+  `NEUTRALISES=0` — aucun span dont la couleur calculée égale celle de son
+  parent, donc aucune classe silencieusement écrasée. `c-yellow` rend bien un
+  fond (`rgba(245,200,66,0.18)` en sombre, `0.22` en clair) et non une couleur
+  de texte.
+
+### 8. Préoccupations
+
+**a) Le plafond de 400 Ko a écarté cinq images que la règle de sélection
+retenait**, dont deux que je considère comme des pertes réelles :
+
+| Image | Poids | Grille | Ce qu'elle documentait |
+|---|---|---|---|
+| `pedia-courbe-de-croissance-...-cassure.png` | **443 Ko** | German-72 | Le critère noté 3 dit « Voir courbe de croissance, P3 » : c'est l'image que la grille **désigne** |
+| `derma-message-cle-infections-cutanees.png` | **460 Ko** | German-42 | Message-clé, obligatoire au § 8.4 — la règle de poids et la règle du message-clé se contredisent ici |
+| `derma-psoriasis-capitis.jpg` | 548 Ko | German-44 | Le cuir chevelu, localisation que l'`annexe-dd` nomme explicitement |
+| `Ped-Eruptions cutanées.jpg` | 2 261 Ko | German-43 | Les huit exanthèmes pédiatriques comparés — le différentiel entier sur une planche |
+| `dermato-lesions-maculeuses.png` | 838 Ko | German-42/44 | Les lésions élémentaires maculeuses |
+
+Les trois dernières sont défendables : 548 Ko à 2,2 Mo pour une image, c'est le
+poids que le garde-fou vise. Les deux premières le sont moins : **443 et 460 Ko,
+soit 11 et 15 % au-dessus d'un seuil qui borne aujourd'hui un stock partagé et
+non un fichier HTML** — c'est la préoccupation déjà consignée en p2b, et elle a
+maintenant un coût mesurable. German-72 se retrouve à deux images sans celle que
+sa propre grille désigne ; German-42 est la seule de mes grilles à perdre son
+message-clé pour une raison de poids.
+
+**b) German-19 n'a pas de message-clé, et c'est une application du § 8.4 rule 3.**
+La page « Douleur Abdominale » en cite deux — « douleurs aiguës » et « douleur
+chronique ». Le premier porte sur la diverticulite et l'appendicite, le second
+sur le syndrome de l'intestin irritable et la douleur fonctionnelle. **Aucun ne
+porte sur la rectocolite ulcéro-hémorragique**, l'entité de cette vignette. Le
+second est même activement trompeur ici : il énonce qu'en l'absence de drapeaux
+rouges, chez un patient de moins de 50 ans, aucun examen n'est nécessaire — or
+ce patient a 21 ans **et** des drapeaux rouges. J'ai appliqué la règle
+(« n'en mettre aucun et le consigner ») plutôt que de faire dire au Compas
+quelque chose que la station ne demande pas.
+
+**c) Trois fichiers du vault sont inutilisables et l'outil les a arrêtés.**
+`fetch_image.py` a refusé `pedia-fievre-sans-foyer-2mois-2ans-algorithme.jpg` et
+`ped-algorithme-diagnostique-petite-taille-enfant.jpg` pour en-tête JPEG
+incohérent (`ÉCHEC [corrompu]`). Ce sont deux algorithmes que le § 8.3 retenait
+sans discussion — l'un couvre exactement la vignette de German-48 (fièvre sans
+foyer, 2 mois-2 ans), l'autre exactement celle de German-72 (petite taille
+< −2,5 DS). **À réparer dans le vault**, pas ici.
+
+**d) Un fichier du vault ne contient pas ce que son nom annonce.**
+`nephro-bilan-urodynamique-cystomanometrie-trace-courbe.jpg`, cité par la page
+« Incontinence Urinaire » comme un tracé de cystomanométrie, **est une
+photographie d'avions sur un tarmac d'aéroport**. Écarté après ouverture — c'est
+précisément ce que le § 8.5 a demande de faire (« ouvrir l'image pour trancher,
+ne pas trancher sur le nom de fichier »). Signalé, non corrigé : le vault n'est
+pas modifié.
+
+**e) Une image écartée pour une raison qui n'est pas dans la règle.**
+`general-syndrome-de-turner-stigmates-cliniques.jpg` (113 Ko, sous le plafond)
+passait le test 3 pour German-72 — la page en fait un red flag et impose le
+caryotype chez toute fille de petite taille. C'est **un montage de quinze
+portraits de patientes mineures, face et profil, sans aucune annotation** : la
+légende n'aurait pu décrire que « quinze paires de photographies », et la page
+dit elle-même que les stigmates peuvent être discrets. Je l'ai écartée au titre
+du § 8.5 d (photographies cliniques) et de l'identifiabilité des sujets.
+**C'est un arbitrage que je n'étais pas mandaté pour prendre seul.**
+
+**f) Deux pages SSP sont pauvres pour la vignette qu'elles desservent.**
+« Douleur Abdominale » ne porte **aucune iconographie de rectocolite ou de MICI**
+et deux lignes de texte sur le sujet (bloc Fireflies « Maladie de Crohn ») :
+German-19 a donc trois images qui documentent la localisation, la manœuvre notée
+et le score d'Alvarado, aucune la maladie retenue, et son `annexe-theorie` n'a
+pas de section de repères chiffrés propres. « Douleurs Articulaires » ne traite
+que des arthropathies : **rien sur l'épicondylite**, ni image, ni texte, ni
+message-clé — German-22 est à deux images, et son `annexe-theorie` tire
+l'essentiel du tableau « Inflammatoire vs Mécanique », qui est heureusement le
+bon outil pour cette vignette.
+
+**g) Les grilles German-42, 43 et 44 restent en base64 pour leur première
+image.** Elles portaient déjà une photographie clinique embarquée, à laquelle un
+critère noté renvoie explicitement (« Voir image en annexe »). Mes triplets ont
+été ajoutés **dans le même `annexe-item`** pour ne pas faire varier `blocks`, et
+la photographie a été conservée telle quelle — la retirer aurait cassé la
+référence d'un critère noté. Leur conversion en fichier référencé reste au
+programme des neuf grilles base64 déjà signalées en p2b.
+
+**h) L'observation de p1b sur les fonds teintés se confirme.**
+`.theorie-section-rappels` (fond ambré) et `.theorie-section-examens` (fond
+verdâtre) atténuent en thème sombre les `c-amber` et les `c-green` qu'elles
+contiennent. La sonde le mesure autrement : `NEUTRALISES=0`, donc la couleur
+n'est jamais *écrasée* — elle est seulement moins contrastée. Treize grilles de
+plus emploient ces deux variantes ; l'arbitrage reste ouvert.
+
+Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3a-report.md`
