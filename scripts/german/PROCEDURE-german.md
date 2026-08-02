@@ -355,7 +355,7 @@ portent plusieurs grilles ; si les sélections convergent, c'est que le test de 
 vignette n'a pas été appliqué et qu'on a sélectionné sur le thème. C'est le
 contrôle le plus utile de tout ce paragraphe.
 
-### 8.4 Le message-clé : toujours quand il existe, et **un seul**
+### 8.4 Le message-clé : obligatoire quand il porte sur la vignette, et **un seul**
 
 Le vault porte **49 fichiers `*message-cle*`**, un par dossier thématique.
 **24 des 53 pages german** en citent au moins un, ce qui couvre **52 des 88
@@ -363,8 +363,11 @@ grilles**. Beaucoup de pages les balisent en plus par `<!-- compas-message -->`
 (34 pages, 41 occurrences) — signal secondaire fiable, mais c'est le **nom de
 fichier** qui fait foi.
 
-**Règle : dès que la page en cite un, il est obligatoire**, et il compte dans le
-budget de 2 à 4.
+**Règle : quand la page en cite un qui porte sur la vignette, il est
+obligatoire**, et il compte dans le budget de 2 à 4 — précision au texte
+antérieur (« dès que la page en cite un »), qui omettait la condition et rendait
+obligatoire un message-clé hors sujet. Voir German-19 au point 3 : la page en
+cite deux, aucun ne porte sur la vignette, et aucun n'est embarqué.
 
 Une page peut en citer plusieurs — mesuré : 19 pages en citent 1, **4 en citent
 2**, et **1 en cite 3** (celle de German-1 : tabagisme, alcool, dépendances).
@@ -382,7 +385,11 @@ Dans ce cas :
 3. Si **aucun** ne porte sur l'entité de la vignette, n'en mettre aucun et le
    consigner. Un message-clé hors sujet est pire que pas de message-clé : il
    affirme, avec l'autorité du Compas, quelque chose que la station ne demande
-   pas.
+   pas — cas rencontré sur **German-19** : la page « Douleur Abdominale » cite
+   un message-clé sur le syndrome de l'intestin irritable, quand la vignette est
+   une rectocolite ulcéro-hémorragique avec drapeaux rouges. Poser ce
+   message-clé aurait affirmé, à tort, qu'aucun examen n'est nécessaire chez ce
+   patient. Écarté, et consigné.
 
 ### 8.5 Ce qu'on n'embarque pas
 
@@ -402,15 +409,29 @@ qu'elle ne porte qu'une figure pleine page et rien d'autre — typiquement
 traitée comme un schéma ordinaire et légendée comme tel. Ouvrir l'image pour
 trancher ; ne pas trancher sur le nom de fichier.
 
-**b) Les références cassées.** **36 des 700 fichiers cités** par les 53 pages
+**b) Aucune photographie identifiante de patient — a fortiori mineur.** Même
+quand la page SSP la cite et que le critère de pertinence du § 8.3 est rempli.
+Un montage de portraits sans annotation n'apporte rien qu'un texte descriptif ne
+rende mieux, et le sujet n'a pas consenti à figurer dans une grille pédagogique.
+Cas réel : `general-syndrome-de-turner-stigmates-cliniques.jpg`, quinze
+portraits face et profil de patientes mineures, cité par la page « Troubles de
+la Croissance » et passant le test 3 du § 8.3 (red flag imposant le caryotype)
+pour German-72 — écarté à raison malgré cela.
+
+**c) Les références cassées.** **36 des 700 fichiers cités** par les 53 pages
 n'existent nulle part dans le vault — l'essentiel sont des `Résumé-SSP_page-00NN.jpg`.
 Une référence introuvable **arrête le traitement de la grille** ; elle ne se
 remplace pas par une image approchante et elle ne s'embarque pas en substituant
 un fichier au nom voisin.
 
-**c) Tout fichier de plus de 400 Ko** — § 8.6.
+**d) Tout fichier de plus de 600 Ko** — § 8.6. **Deux exemptions, sans limite de
+taille** : les message-clés que le § 8.4 rend obligatoires, et les images
+**désignées nommément par un critère noté** de la grille (un `[Voir <image>]`
+dans un `patient-response`, un renvoi explicite du corrigé). Ces deux catégories
+sont sourcées par un texte de la grille elle-même, pas par une préférence
+éditoriale — c'est ce qui les distingue de tout le reste, toujours plafonné.
 
-**d) Les photographies cliniques et les séries radiologiques** quand la vignette
+**e) Les photographies cliniques et les séries radiologiques** quand la vignette
 ne note pas leur lecture. Elles pèsent le plus lourd du corpus (jusqu'à 13 Mo
 pour un seul fichier) et le test 1 du § 8.3 les écarte presque toujours.
 
@@ -454,14 +475,28 @@ Poids des images citées par les 53 pages (664 fichiers trouvés) :
 | 110 Ko | 208 Ko | 460 Ko | **3 196 Ko** | 13 008 Ko |
 
 La queue est très lourde : **une règle sans plafond n'est pas bornée**. Les deux
-garde-fous du § 8.5 c restent en vigueur — **plafond par image 400 Ko**,
-**budget par grille 700 Ko de source**. Leur raison d'être a seulement changé de
-nature : ils ne bornent plus le poids d'un fichier HTML mais celui du **stock
-partagé**, et ils continuent d'écarter les séries radiologiques et les scans
-pleine page que le § 8.3 ne retient de toute façon presque jamais.
+garde-fous du § 8.5 d restent en vigueur — **plafond par image 600 Ko**,
+**budget par grille 700 Ko de source**.
 
-Estimation du corpus complet à 88 grilles, modèle « message-clé de la page +
-(k−1) schémas distincts par grille », k=3, plafond 400 Ko — **220 images
+**Révision du plafond (2026-08-02) : 400 Ko → 600 Ko, plus deux exemptions.**
+Sa justification d'origine — borner le poids d'un fichier HTML servi en base64
+— a disparu avec le passage aux images référencées (ci-dessus) : le plafond ne
+borne plus qu'un **stock partagé**, où une image citée par huit grilles ne
+coûte qu'une fois, et il continue d'écarter les séries radiologiques et les
+scans pleine page que le § 8.3 ne retient de toute façon presque jamais. Sa
+valeur de 400 Ko n'avait donc plus de fondement propre ; elle est **portée à
+600 Ko**, pour rester ce qu'il est en réalité — un filtre contre les fichiers
+aberrants d'un vault dont le p95 est à 3,2 Mo et le maximum à 13 Mo (table
+ci-dessus), pas une borne sur un budget de page. Un plafond, quelle que soit sa
+valeur, entrait par ailleurs en contradiction avec le § 8.4 (message-clé rendu
+obligatoire) et avec un critère noté qui désigne une image nommément : le
+§ 8.5 d en exempte désormais ces deux catégories, sans limite de taille, parce
+qu'elles sont sourcées par la grille elle-même et non par une préférence
+éditoriale.
+
+Estimation du corpus complet à 88 grilles, faite au moment de la décision avec
+le plafond alors en vigueur (400 Ko, non révisé depuis) — modèle « message-clé
+de la page + (k−1) schémas distincts par grille », k=3 — **220 images
 distinctes** pour les 88 grilles :
 
 | sélection | images | poids images | corpus german (8,1 Mo de HTML) |
@@ -518,12 +553,12 @@ Il **s'arrête bruyamment** au lieu de livrer quelque chose de faux :
 
 | Cas | Ce qu'il fait |
 |---|---|
-| référence introuvable (§ 8.5 b) | `ÉCHEC [cassee]`, code de sortie 1, rien n'est copié |
+| référence introuvable (§ 8.5 c) | `ÉCHEC [cassee]`, code de sortie 1, rien n'est copié |
 | fichier vide, tronqué, en-tête incohérent | `ÉCHEC [corrompu]` — jamais de fichier vide livré |
 | homonyme ambigu | `ÉCHEC [ambigu]` avec la liste des candidats |
 | nom déjà pris par un contenu différent | `ÉCHEC [collision]` |
 | appariement non exact (NFD/NFC, casse) | copie, mais **avertit** que la page et le disque n'écrivent pas le nom pareil |
-| source > 400 Ko | copie, mais rappelle le plafond du § 8.5 c |
+| source > 600 Ko | copie, mais rappelle le plafond du § 8.5 d — sauf message-clé ou image désignée par un critère noté (exemptés) |
 
 `--check` diagnostique sans rien copier ; `--verify` vérifie que tous les `src`
 des 88 grilles pointent vers un fichier existant, et signale les orphelines.

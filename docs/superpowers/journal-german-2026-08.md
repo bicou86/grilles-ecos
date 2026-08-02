@@ -2396,3 +2396,530 @@ n'est jamais *écrasée* — elle est seulement moins contrastée. Treize grille
 plus emploient ces deux variantes ; l'arbitrage reste ouvert.
 
 Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3a-report.md`
+
+## p3a-fix — Révision du plafond § 8.5, deux images posées
+
+**Périmètre** : `scripts/german/PROCEDURE-german.md` § 8, `scripts/german/fetch_image.py`
+(constante et messages, en lockstep avec la procédure), German-72 et German-42,
+`cases/img/german/` (2 images + manifeste), le journal et le rapport. Rien
+d'autre.
+
+**HEAD réel au démarrage** : `4083025` (« Complète les 13 grilles riches german »,
+commit de p3a). Vérifié par `git log`, pas supposé. L'arbre de travail portait
+**≈370 fichiers `cases/casecos/`** modifiés par la session RESCOS/CasECOS en
+cours : aucun n'entre dans ce commit, index construit chemin par chemin.
+
+### 1. Ce qui a motivé la révision
+
+p3a (concern a) avait mesuré que le plafond de 400 Ko — hérité de l'époque
+base64, où il bornait le poids d'un fichier HTML — écartait cinq images que la
+règle de sélection retenait, dont deux pertes réelles : le message-clé
+obligatoire de German-42 (§ 8.4) et l'image que le corrigé de German-72
+désigne littéralement. Le plafond n'avait plus de justification propre depuis
+le passage aux fichiers référencés (§ 8.6, 2026-08-02) : il ne borne plus qu'un
+stock partagé, et sa valeur n'avait pas été revue en même temps que sa raison
+d'être.
+
+### 2. Révision de `PROCEDURE-german.md` § 8
+
+- **§ 8.5 d (ex-c)** : plafond porté à **600 Ko**, et **deux exemptions sans
+  limite de taille** ajoutées — le message-clé que le § 8.4 rend obligatoire,
+  et l'image désignée nommément par un critère noté de la grille. Les deux sont
+  sourcées par la grille elle-même, pas par une préférence éditoriale.
+- **§ 8.5 b (nouveau)**, placé à côté de l'exclusion des scans PDF : **aucune
+  photographie identifiante de patient, a fortiori mineur**, même citée par la
+  page SSP et même si le critère de pertinence du § 8.3 est rempli. Motif
+  consigné : un montage de portraits sans annotation n'apporte rien qu'un texte
+  descriptif ne rende mieux. Cas réel cité :
+  `general-syndrome-de-turner-stigmates-cliniques.jpg` (quinze portraits de
+  patientes mineures), déjà écarté en p3a (concern e) sur un arbitrage pris
+  seul — la règle formalise maintenant cet arbitrage.
+- Les lettres b/c/d/e de l'ancien c/d ont été décalées ; toutes les
+  cross-références internes (§ 8.6, § 8.7, `fetch_image.py`) ont été mises à
+  jour en conséquence — vérifié par `grep -n "8\.5 [a-e]"` sur les deux
+  fichiers, aucune référence orpheline.
+- **§ 8.4** : « dès que la page en cite un, il est obligatoire » devient
+  « quand la page en cite un **qui porte sur la vignette**, il est
+  obligatoire ». Exemple ajouté au point 3, German-19 : la page « Douleur
+  Abdominale » cite un message-clé sur le syndrome de l'intestin irritable —
+  hors sujet pour une rectocolite ulcéro-hémorragique avec drapeaux rouges, et
+  déjà écarté à raison en p3a (concern b). La règle documente maintenant
+  explicitement ce cas plutôt que de l'implicite par le seul point 3.
+
+`fetch_image.py` mis à jour en lockstep : `SIZE_WARN` 400 → 600 Ko, message
+d'avertissement mentionnant les deux exemptions, et les trois références
+`§ 8.5 b/c` internes corrigées vers `§ 8.5 c/d`.
+
+### 3. Les deux images posées
+
+| Grille | Image | Poids | Exemption |
+|---|---|---|---|
+| German-72 | `pedia-courbe-de-croissance-pediatrique-couloirs-p3-p97-cassure.png` | 443 Ko | 2ᵉ — désignée par le critère noté « Paramètres actuels » : `[Voir courbe de croissance, P3]` |
+| German-42 | `derma-message-cle-infections-cutanees.png` | 460 Ko | 1ʳᵉ — message-clé obligatoire (§ 8.4) |
+
+**German-72** — insérée en tête de planche (chronologie de la station, § 8.8) :
+l'anamnèse (`a3`, « Paramètres actuels ») précède l'examen (`m4`, âge osseux)
+et la discussion différentielle (hypothyroïdie, dans `annexe-theorie`). La
+grille passe de 2 à 3 images, sous le plafond de 4 (§ 8.2).
+
+**German-42** — le diagnostic retenu est un **tinea corporis** (dermatophytie
+cutanée, cf. `annexe-theorie` et `presentation` : « lésion annulaire
+prurigineuse, squameuse, au poignet, évocatrice d'un tinea corporis »). La
+page SSP « Éruption Cutanée » cite **deux** message-clés :
+`derma-message-cle-infections-cutanees.png` et
+`general-message-cle-infections-au-virus-varicella-zoster.png`. Seul le
+premier porte sur l'entité de la vignette (mycose, pas virose) — appliqué :
+« jamais deux » (§ 8.4 point 2). Insérée en fin de planche (synthèse en
+dernier, § 8.8) : la grille passe de 3 à 4 images, **au** plafond de 4, pas
+au-delà — pas de remplacement nécessaire.
+
+Les deux copies par `scripts/german/fetch_image.py` (idempotent, aucun
+avertissement de poids après révision : 443 et 460 Ko sont désormais sous
+600 Ko) ; noms exacts retrouvés dans le vault, plus longs que les formes
+abrégées données en consigne.
+
+### 4. Vérifications
+
+```
+check_invariants.py     OK — 88 grilles, tous les invariants preserves
+                         (blocks INCHANGE : aucun annexe-item de plus créé)
+check_nomenclature.py   OK — aucun terme non suisse détecté
+check_reachability.py   OK — barème atteignable à 100 % sur chaque section
+fetch_image.py --verify OK — aucun lien cassé, aucune orpheline
+report_redundancy.py    TOTAL : 16 paire(s) — inchangé (vérifié par git stash
+                         des deux grilles + comparaison avant/après)
+amboss/check_invariants.py         OK — 40 grilles
+rescos-locales/check_invariants.py OK — 165 grilles
+```
+
+Contrôle visuel en Chrome headless (`--headless=new --dump-dom`), copies
+temporaires dans `cases/german/` supprimées ensuite : German-72 (3 images) et
+German-42 (4 images, dont l'image base64 héritée), deux thèmes, deux largeurs
+(1200/500 px). Les huit images référencées + l'image base64 rendent
+`complete === true`, `naturalWidth`/`naturalHeight` égaux aux dimensions du
+vault (dont **2760×1812** pour le message-clé et **502×837** pour la courbe de
+croissance), rapport largeur/hauteur conservé au redimensionnement, et
+`scrollWidth === innerWidth` aux quatre couples — aucun débordement.
+
+### 5. Préoccupations
+
+**a) L'image de German-72 est un montage, pas une figure simple.** Le PNG
+502×837 empile trois panneaux : la courbe de croissance (le sujet du critère
+noté), un tableau de mesures du carnet de santé, et **deux radiographies**
+(main-poignet, bassin-membres inférieurs) sans lien évident avec la maladie
+cœliaque retenue par German-72. La légende décrit les trois panneaux sans
+prêter aux radiographies une pertinence qu'elles n'ont pas pour cette vignette
+— mais je n'ai pas recadré l'image (§ 8.7 : octets tels quels, jamais
+recompressés), donc la planche affiche deux radiographies hors-sujet à côté de
+la courbe qui, elle, est le sujet exact du critère noté.
+
+**b) German-42 garde sa première image en base64** — pré-existant (p3a
+concern g), hors périmètre de cette tâche : la retirer casserait la référence
+d'un critère noté (« Voir image en annexe »), et sa conversion reste au
+programme des neuf grilles base64 déjà signalées en p2b. Le nouveau
+message-clé référencé cohabite avec elle dans le même `annexe-item`, sans
+incidence sur `blocks`.
+
+**c) La nouvelle exclusion b) (photographies identifiantes) formalise un
+arbitrage déjà pris, pas un nouveau.** Aucune image de ce type n'a été posée
+ni retirée dans cette tâche — German-72 ne portait déjà pas le montage Turner.
+La règle documente donc rétroactivement une décision de p3a plutôt que d'en
+appliquer une nouvelle : à surveiller sur les grilles restantes, si le corpus
+s'étend, pour vérifier qu'elle est bien appliquée en amont et pas seulement
+consignée après coup.
+
+**d) L'estimation du corpus (§ 8.6, « 220 images distinctes »)** a été laissée
+telle quelle avec une note indiquant qu'elle date du plafond à 400 Ko, plutôt
+que recalculée : la refaire proprement suppose de rejouer la sélection sur les
+53 pages, hors périmètre d'une révision de règle.
+
+Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3a-fix-report.md`
+
+---
+
+## p3b — Les 25 grilles German-2 à German-30 : les quatre blocs pédagogiques
+
+**Périmètre** : German-2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 20,
+21, 23, 24, 25, 26, 28, 29, 30 — les grilles numérotées 2 à 30 moins les quatre
+livrées en p3a (15, 19, 22, 27) et moins la pilote German-1. Plus
+`cases/img/german/` (56 images, manifeste), `scripts/german/baseline.json`, le
+journal et le rapport. Rien d'autre.
+
+**HEAD réel au démarrage** : `6cd583f`, puis `32a7e3f`, puis `29271b2` — la
+session voisine a commité **et rebasé** pendant le travail. Vérifié par `git log`
+et `git reflog`, pas supposé. Incident de branche traité au § 0 ci-dessous.
+Au moment de la livraison l'arbre de travail portait 198 fichiers
+`cases/casecos/` modifiés par l'autre session : l'index a été construit
+**chemin par chemin**, aucun de ces fichiers n'y est.
+
+### 0. Incident de branche — trois commits effacés par un reset de la session voisine
+
+`git reflog` porte deux `reset` consécutifs de la session voisine
+(`HEAD@{3}` et `HEAD@{4}`, « moving to 7e13f93 ») qui ont retiré de la branche :
+
+| Commit | Corpus | Contenu |
+|---|---|---|
+| `6cd583f` | **german** | Plafond image 400→600 Ko, deux exemptions, § 8.5 b ; images de German-72 et German-42 |
+| `288894d` | CasECOS | Bascule des 198 grilles sur `cases/scoring.js` |
+| `566f38d` | CasECOS | Journal CasECOS, incident d'index du lot k2 |
+
+`git merge-base --is-ancestor 6cd583f HEAD` échoue : les trois commits existent
+encore comme objets, mais ils ne sont plus atteignables depuis la branche.
+Le reset n'était **pas** `--hard` — le contenu a survécu non indexé dans l'arbre
+de travail.
+
+**Le volet german a été rétabli** avant d'entamer le lot, en un commit dédié : les
+cinq fichiers suivis de `6cd583f` sont byte-identiques (`git diff 6cd583f` vide),
+les deux images reprises telles quelles. C'était un préalable et non un à-côté :
+la sélection d'images des 25 grilles s'appuie sur le plafond de 600 Ko et sur les
+deux exemptions du § 8.5 d, que `fetch_image.py` et la procédure ne portaient
+plus sur la branche.
+
+**Les deux commits CasECOS ne sont pas rétablis** — autre corpus, autre session.
+Leur contenu est encore présent dans l'arbre de travail, donc récupérable, mais
+il ne l'est que là : un `git reset --hard` ou un `git checkout` de la session
+voisine le détruirait définitivement. **À signaler à cette session.**
+
+### 1. Ce qui a été ajouté
+
+| | 25/25 |
+|---|---|
+| `resume` créé | **24** (German-24 en portait déjà un) |
+| `annexe-theorie` créé | **25** |
+| `presentation-patient` créé | **25** |
+| Planche d'images créée | **22** (German-10, 11 et 17 : voir § 5 a) |
+| `resume` préexistant balisé sans réécriture | **1** (German-24) |
+| `annexe-expert` / `annexe-scenario` créés | **0** — décision actée |
+| Section notée touchée | **0** |
+
+Aucune grille du lot ne portait `resume`, `presentation`, `annexe-theorie` ni
+`images-wrapper`, à l'exception de German-24 (`resume` + coquille `annexes` vide,
+héritée de l'import). Les quatre blocs ont donc été insérés en bloc, juste avant
+`<!-- COMMENTAIRE GÉNÉRAL -->`, dans le gabarit de German-1 ; pour German-24,
+`annexe-theorie` et `presentation` sont entrés **dans** l'`annexes-grid` vide et
+l'`images-wrapper` après sa fermeture.
+
+**La « Checklist mentale » n'existe pas dans ce corpus.** À sa place, chaque
+`presentation-patient` s'ouvre sur une `presentation-section section-commcards`
+portant `commcard-sbar.jpg` et `commcard-snapps.jpg` côte à côte dans un
+`.commcard-grid`, servies depuis `../img/`, avec leurs `alt` descriptifs repris
+mot pour mot de German-1.
+
+### 2. La source de chaque section, grille par grille
+
+Chaque section est adossée à la page SSP de la grille (niveau 1) ou à sa section
+notée (niveau 2), et à rien d'autre.
+
+| Grille | Diagnostic retenu | Page SSP | Sections et leur source |
+|---|---|---|---|
+| **German-2** | Acouphène subjectif bilatéral | Acouphènes | *Classer avant de nommer* ← « En Bref » (subjectif/objectif) + tonalité du § Caractérisation · *Examen normal* ← carte ECOS surdité brusque (Weber côté sain/atteint) + critère noté e4 · *Fenêtre de 72 h* ← red flag n° 1 + `therapy` « corticothérapie comme pour surdité brusque » · *DD* ← `annexe-dd` + les six cartes ECOS (mécanismes) · *Ototoxiques* ← carte ECOS (cellules ciliées externes vs strie vasculaire) + critère noté a10 · *Chronique* ← § Prise en charge (TCC, thérapie sonore, TRT) |
+| **German-3** | Difficultés alimentaires du nourrisson, satiété précoce par aérophagie | Prévention Pédiatrique | *Couloir* ← red flag « cassure de la courbe » + critères a10/a11/e8 · *Tétée goulue* ← réponses a4/a5/a6 + intitulé m1 + `therapy` · *DD* ← les 10 entrées d'`annexe-dd` confrontées aux réponses · *Bilan* ← détails de m3 · *La mère* ← piège de la page (dépression du post-partum) + a16 · *Seuils* ← Guthrie J3-J5, vit. D 400 UI/j, diversification 4-6 mois |
+| **German-4** | Agoraphobie avec attaques de panique | Trouble Anxieux | *Objet de l'anxiété* ← carte ECOS « Spectre » (évitement = mécanisme commun) · *Premier accès* ← carte « 1ʳᵉ attaque » (décharge adrénergique, hyperventilation → alcalose) · *ISRS* ← carte « 1ʳᵉ ligne » (SERT, autorécepteurs 5-HT1A, 2-4 sem., ≥ 12 mois) · *Benzodiazépine* ← carte « piège thérapeutique » (GABA-A, habituation sabotée) · *Deuil* ← § Caractérisation + critères a8/a9/a11/e7 |
+| **German-5** | Entorse cervicale post-« coup du lapin » (WAD I-II) | AVP | *Mécanisme* ← § Mécanisme (hyperextension-hyperflexion) · *Classification de Québec 0-IV* ← page · *CCR/NEXUS* ← § Clearance du rachis cervical, in extenso · *Minerve* ← piège n° 4 (> 72 h) · *DD* ← `annexe-dd` + red flags cervicalgies |
+| **German-6** | Périménopause à 47 ans, tableau atypique | Ménopause | *47 ans avec des règles* ← « En Bref » + tableau DD (FSH inutile > 45 ans) · *Cinq kilos* ← red flag « bouffées + amaigrissement + palpitations » · *La tension* ← tableau DD (phéochromocytome) · *Contre-indications* ← carte ECOS « Risques avant un THS » (fenêtre d'opportunité, 1ᵉʳ passage hépatique) · *Anxiété* ← § Autres symptômes + m4 |
+| **German-7** | Bradycardie sur accumulation de bêta-bloquant, insuffisance cardiaque aiguë | Palpitations | *Seuil* ← « En Bref » + red flags < 40/min · *Tolérance d'abord* ← § PEC point 1 + algorithme manuscrit · *Bêta-bloquant* ← piège n° 5 + critères m1/m3 et réponse a8 · *Examens* ← 1ʳᵉ/2ᵉ ligne + carte ECOS · *Ce qui ne vaut pas ce qu'on croit* ← page (mort subite < 40 ans, déficit de pouls) |
+| **German-8** | Céphalée du restaurant chinois, Horton à écarter | Céphalée | *Un bénin en dernier* ← SNOOP4 (O et P) + critères a12/e4/m3 · *D'où vient la douleur* ← carte ECOS (parenchyme insensible, méninges et V1 algogènes) · *Horton* ← carte ECOS (carotide externe) + § Arguments clés ACG · *DD* ← `annexe-dd` + ICHD-3 · *Imagerie* ← § Drapeaux + piège PL/CT + biopsie 7-14 j |
+| **German-9** | Méningite virale | Céphalée | *Trois manœuvres* ← même carte ECOS (méninges algogènes) + e1/e2 · *Ne pas attendre le tableau complet* ← § Arguments clés (triade ~45 %) + couverture *Listeria* > 50 ans · *Ce que le LCR tranche* ← m4 + algorithme méningite · *DD* ← `annexe-dd` + ICHD-3 + HSA · *PL avant CT* ← piège de la page (engagement) |
+| **German-10** | Accident vasculaire cérébral révélé par une chute | Chute & Éval. gériatrique | *La chute n'est que le décor* ← règle d'or (chute = symptôme) + red flags déficit focal / confusion · *Deux fois l'heure* ← critères a2/a3/a5-a10 et m4 (thrombolyse) · *DD* ← `annexe-dd` + e10 + cartes bêtabloquant et syncope · *Examens* ← m3 + § Examens complémentaires |
+| **German-11** | Chute multifactorielle du sujet âgé — aucun diagnostic unique | Chute & Éval. gériatrique | *Pourquoi aucun diagnostic* ← règle d'or + « En Bref » + barème de m1 (six causes exigées) · *Trébucher n'est pas une explication* ← réponse a6 + e2 + m2 · *L'ordonnance d'abord* ← carte ECOS médicaments iatrogènes (polymédication ≥ 4) · *Hématome sous-dural* ← carte ECOS + règle d'or (TC sous antithrombotique) |
+| **German-12** | Constipation récente avec drapeaux rouges, obstacle colique suspecté | Constipation | *Deux mécanismes* et *ampoule vide/pleine* ← cartes ECOS de la page · *Fausse diarrhée du constipé* ← carte ECOS + a14 · *Après 50 ans* ← carte ECOS · *Macrogol* ← carte ECOS · *Rome IV* ← tableau de la page + a4/a5 |
+| **German-13** | Diarrhée chronique de malabsorption, insuffisance pancréatique exocrine | Diarrhée | *Seuil 2/4 semaines* ← carte ECOS · *Stéatorrhée* ← § Caractérisation (mécanisme) · *Sérologie cœliaque* ← piège de la page · *Insuffisance pancréatique* ← § dédié + réponses a4-a17 · *DD* ← `annexe-dd` |
+| **German-14** | TDAH | Troubles du Dévelop. & Croissance | *Configuration* ← découpage du barème (a6 école vs a7 maison ; a8/a9/a10 = trois dimensions) + a4 · *Sensoriel* ← carte ECOS (« un enfant qui n'entend pas paraît distrait, opposant ») + e4 · *Habitudes* ← a5/a12/a14 + m4 · *Ritaline* ← m7 (question de la mère) et m8 (réponse attendue) · *DD* ← `annexe-dd` + signaux d'alarme TSA |
+| **German-16** | Douleurs abdominales non spécifiques de l'adolescente (station de contraception) | Douleur Abdominale | *Le motif réel* ← critères a13/a17 · *Diagnostic d'exclusion* ← § Causes fréquentes non urgentes + causes psychogènes · *Discernement* ← e7 · *Contraception* ← m3-m5 · **`annexe-dd` quasi vide (12 mots) : rien n'a été comblé** |
+| **German-17** | Endométriose pelvienne | Douleur Abdominale | *Hypogastre* ← tableau « Orientation par localisation » de la page · *Douglas* ← bullet « toucher rectal » + e3 · *Laparoscopie* ← m3 (« seule méthode pour confirmer ») · *Suppression œstrogénique vs désir de grossesse* ← m4 · *Séquelles* ← m5 |
+| **German-18** | Infection génitale haute | Douleur Abdominale | *β-hCG d'abord* ← carte ECOS GEU (contraception bien suivie, métrorragies absentes dans un tiers des cas) · *Douglas* ← bullet toucher rectal + e4/e7 · *Traitement du partenaire* ← m4 (« Obligatoire ! ») · *Trois séquelles* ← m5 |
+| **German-20** | Ischémie mésentérique aiguë | Douleur Abdominale | *Douleur disproportionnée* ← carte ECOS (physiopathologie de la discordance ; défense et lactates = nécrose transmurale) · *FA* ← red flag + CHA₂DS₂-VASc · *Metformine avant CT injecté* ← § AMPLE · *IAPA* ← carte ECOS (ausculter avant de palper) · *Ce que la grille ne note pas* ← § Mesures générales de la page |
+| **German-21** | Maladie de reflux gastro-œsophagien | Douleur Abdominale | *Trois horaires* ← a4/a7/a8 · *Antiacides devenus inefficaces* ← a13/a14 · *Examens* ← m3 (gastroscopie, pH-métrie, uréase, gastrine/B12/auto-anticorps) · *Pression du sphincter* ← m4 (six mesures, quatre classes) · *DD* ← `annexe-dd` |
+| **German-23** | Lésion méniscale médiale | Douleur de Genou | *Mécanisme* ← § Mécanisme du trauma · *Délai du gonflement et zone avasculaire* ← carte ECOS hémarthrose · *Valeur du Lachman* ← même carte + tableau des tests · *Ottawa* ← carte « Règle de décision pour l'imagerie » · *Suture vs résection* ← § Prise en charge |
+| **German-24** | Syndrome du canal carpien | Douleur au Poignet | *Tunnel inextensible, flexion nocturne, signe du flick* ← carte ECOS « Symptôme évocateur » · *Épargne du thénar* ← piège de la même carte (branche cutanée palmaire en amont du rétinaculum) · *Phalen/Durkan vs Tinel* ← carte « Tests cliniques » · *Gravité* ← § Drapeaux rouges · *C6/C7 et Guyon* ← carte « Diagnostic à ne pas confondre » + tableau DD |
+| **German-25** | Tendinopathie d'insertion du tendon d'Achille | Douleurs Articulaires | *Inflammatoire vs mécanique* ← tableau de la page, appliqué critère par critère · *Enthèse → SpA* ← carte ECOS (sacro-iliite, talalgies, dactylite) + red flag « homme < 45 ans » · *Fluoroquinolones* ← § Chronologie & contexte · **le reste ← section notée : voir § 5 b** |
+| **German-26** | Occlusion artérielle aiguë fémoro-poplitée | Claudication & AOMI | *Ordre des 6 P* ← carte ECOS (sensibilité décroissante des tissus, nerf avant muscle, fenêtre ~6 h) · *Le pouls fémoral situe l'obstacle* ← § Caractérisation (mollet = fémoro-poplité) + e4 · *Embolie ou thrombose* ← § 6 P + red flag « FA + début brutal » · *L'IPS n'a pas sa place ici* ← § Pièges (ne pas attendre l'écho-Doppler) |
+| **German-28** | Otite moyenne aiguë bilatérale | Otalgie | *Bilatérale change la règle* ← les deux blocs `therapy` confrontés à l'âge et à e3 · *Après le rhume* ← § Contexte (IVRS → OMA ; baignade → otite externe) · *Mastoïdite* ← carte ECOS (aditus ad antrum, trois directions, décollement vers le bas et l'avant) + e8 · *DD* ← les 8 entrées d'`annexe-dd` |
+| **German-29** | Nécrose aseptique de la tête fémorale | Douleur de Hanche | *Physiopathologie* ← carte ECOS « Facteurs de risque de nécrose » (vascularisation terminale, adipocytes médullaires, secteur antéro-supérieur portant) · *Rx normale vs IRM* ← même carte + piège n° 4 · *Irradiation au genou* ← carte « Radiculalgie à ne pas confondre » (L2-L3, Léri) · *Stadification et bilatéralité* ← m6 et m7 |
+| **German-30** | Contusion costale de l'adolescent | Douleur Thoracique | *50 % pariétal en 1ᵉʳ recours vs 54 % cardiovasculaire aux urgences* ← légende de l'épidémiologie comparée · *Ne pas conclure MSQ sans éliminer les cinq urgences* ← avertissement de la page · *Valve unidirectionnelle* ← § pneumothorax sous tension · *Pneumothorax spontané du sujet jeune* ← piège de la page |
+
+**Où la source était muette, la section est courte — rien n'a été comblé.**
+German-7 est la grille la plus courte du lot (4 788 mots) parce que sa page ne
+traite pas la bradycardie ; German-25 n'a pas de section sur la physiopathologie
+de la tendinopathie parce que sa page ne la porte pas ; German-8 ne dit rien du
+mécanisme de la céphalée du restaurant chinois, absent de sa page ; German-14
+tient presque entièrement sur sa section notée. Les passages concernés le disent
+en toutes lettres au lieu de se taire.
+
+### 3. Les images — motif de chaque choix
+
+**56 images distinctes, 6 789 Ko**, toutes reprises par `fetch_image.py`, aucune
+recompressée ni redimensionnée, toutes inscrites au manifeste avec leur sha256 et
+leur chemin dans le vault. **Aucune image n'est citée par deux grilles du lot** —
+le corollaire du § 8.3 est donc vérifié, y compris sur les cinq grilles qui
+partagent la page « Douleur Abdominale » et sur les deux paires qui partagent
+« Céphalée » et « Chute ». `neuro-algorithme-horton.png` est en revanche partagée
+avec German-69 (p3a), qui la tient d'une **autre page** : c'est la déduplication
+du § 8.6 qui joue, pas une collision de sélection.
+
+| Grille | Images | Poids | Message-clé |
+|---|---|---|---|
+| German-2 | 3 | 305 Ko | la page n'en cite aucun |
+| German-3 | 3 | 312 Ko | la page n'en cite aucun |
+| German-4 | 3 | 506 Ko | oui — troubles anxieux |
+| German-5 | 2 | 247 Ko | la page n'en cite aucun |
+| German-6 | 1 | 370 Ko | **non** — ostéoporose, hors sujet |
+| German-7 | 3 | 474 Ko | **non** — fibrillation auriculaire, hors sujet |
+| German-8 | 4 | 635 Ko | oui — céphalée aiguë non traumatique |
+| German-9 | 3 | 368 Ko | non — déjà porté par German-8 |
+| German-10 | **0** | — | la page n'en cite aucun |
+| German-11 | **0** | — | la page n'en cite aucun |
+| German-12 | 4 | 612 Ko | oui — constipation |
+| German-13 | 3 | 325 Ko | **non** — diarrhée aiguë, hors sujet |
+| German-14 | 1 | 24 Ko | la page n'en cite aucun |
+| German-16 | 1 | 291 Ko | oui — douleur abdominale chronique |
+| German-17 | **0** | — | **non** — le même, trompeur ici |
+| German-18 | 1 | 27 Ko | non |
+| German-20 | 2 | 117 Ko | non |
+| German-21 | 1 | 145 Ko | **non** — le même, trompeur ici |
+| German-23 | 4 | 406 Ko | oui — gonalgies |
+| German-24 | 3 | 286 Ko | la page n'en cite aucun |
+| German-25 | 1 | 70 Ko | la page n'en cite aucun |
+| German-26 | 2 | 267 Ko | la page n'en cite aucun |
+| German-28 | 4 | 434 Ko | la page n'en cite aucun |
+| German-29 | 4 | 177 Ko | la page n'en cite aucun |
+| German-30 | 3 | 391 Ko | **non** — coronaropathie, hors sujet |
+
+Chaque image passe au moins un des trois tests du § 8.3 ; le motif est consigné
+image par image dans le rapport p3b. **Le budget de 700 Ko par grille est
+respecté partout** ; German-8 est le plus chargé, à 635 Ko, dont un message-clé
+de 404 Ko exempté de plafond au titre du § 8.5 d.
+
+**Cinq message-clés écartés pour hors-sujet** (§ 8.4 point 3) : ostéoporose
+(German-6), fibrillation auriculaire (German-7), diarrhée aiguë (German-13),
+douleur abdominale chronique (German-17 et German-21). Le cas German-19 de p3a
+n'était donc pas isolé : la condition « qui porte sur la vignette » fait un
+travail réel, et elle a mordu **cinq fois sur vingt-cinq**. Le plus net est celui
+de German-17 et German-21 : le panneau énonce qu'en l'absence de drapeaux rouges,
+chez un patient de moins de 50 ans, aucun examen n'est nécessaire — or German-17
+exige une laparoscopie diagnostique (utérus fixé, Douglas induré) et German-21
+une gastroscopie chez une patiente de 57 ans.
+
+**Une exception du § 8.5 a appliquée, après ouverture du fichier** :
+`anamnese-052-algorithme-tachycardie-bradycardie.jpeg` (German-7) est un scan de
+page manuscrite, retenu parce que la page **est** le schéma — et parce que c'est
+la seule image de toute la page « Palpitations » qui traite la bradycardie.
+
+**Photographies identifiantes écartées** (§ 8.5 b), toutes après ouverture :
+`general-mils-collier-rigide-log-roll-a-4.jpg` (German-5, patient dévêtu sur plan
+dur), `general-signes-de-deshydratation-…jpg` (German-13, nourrisson dénutri),
+`gyneco-atrophie-vulvo-vaginale-…png` (German-6), et **six clichés de mensuration
+d'enfants identifiables** sur la page de German-14 — dont deux du même enfant en
+sous-vêtements, visage entier visible.
+
+### 4. Le balisage sémantique
+
+**16 180 spans / 143 655 mots = 1 pour 8,9 mots**, mesuré sur les quatre
+conteneurs prescrits (`resume`, `annexe-theorie`, `presentation-section
+section-mnemo`, `presentation-section section-questions`). Même métrique
+appliquée à German-1 : **1 / 8,5** ; aux 13 grilles de p3a : **1 / 9,5**. Le lot
+tombe donc entre la pilote validée par l'utilisateur et le lot précédent. Grille
+la plus dense 1 / 8,5 (German-2, 4 et 20), la plus légère 1 / 10,2 (German-24).
+
+Répartition : `c-green` 4 196 · `c-pink` 3 087 · `c-red` 2 407 · `c-yellow` 1 907 ·
+`c-amber` 1 821 · `c-blue` 1 027 · `c-purple` 1 023 · `c-orange` 712.
+
+**0 span hors des quatre conteneurs prescrits** sur les 25 grilles, et **0 span
+dans `section-longue` ni `section-express`** — la restitution orale reste du
+texte nu.
+
+**`annexe-dd` n'a pas été balisé**, contrairement à la lettre de la consigne, et
+c'est un écart assumé : voir § 5 f.
+
+**Aucune dérive de formulation.** Le texte visible d'`annexe-dd`, `redflags`,
+`therapy` et du `resume` préexistant de German-24 est identique à celui de HEAD
+sur les 25 grilles, vérifié par comparaison `visible_text` bloc à bloc. Pour
+German-24 la comparaison a dû se faire **blancs supprimés** : `visible_text()`
+insère un espace à chaque frontière de balise, si bien que poser un `<span>`
+autour d'« annulaire » scinde « l'annulaire) » en deux jetons. Hors blancs, les
+deux textes font **2 585 caractères** et sont identiques.
+
+### 5. Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `check_invariants.py` avant re-snapshot | **25 écarts, tous sur `blocks`, tous sur mes 25 grilles** |
+| Diff champ par champ contre `baseline.json` | `blocks` seul champ modifié · 0 écart hors périmètre · aucun bloc retiré · aucun compte de segment existant modifié |
+| `check_invariants.py` après re-snapshot | **OK — 88 grilles** |
+| `check_reachability.py` | **OK — 88/88 à 100 %** |
+| `check_nomenclature.py` | **OK** |
+| AMBOSS — 3 scripts | **OK — 40 grilles** |
+| RESCOS — 3 scripts | **OK — 41 grilles** |
+| `check_no_loss.py HEAD` | **0 item disparu** sur 27 grilles modifiées |
+| `fetch_image.py --verify` | **0 lien cassé, 0 orpheline** |
+| `report_redundancy.py` | **0 paire sur chacune des 25** |
+
+#### Justification du re-snapshot
+
+Comparaison **champ par champ** de `baseline.json` au nouvel état, sur les
+88 grilles :
+
+```
+Champs qui changent : ['blocks']
+Grilles touchees    : [2,3,4,5,6,7,8,9,10,11,12,13,14,16,17,18,20,21,23,24,25,26,28,29,30] (25)
+Ecarts hors champ 'blocks' : 0
+Delta blocks purement additif : True
+   annexe-image: 1     ajoute sur 22 grille(s)
+   annexe-theorie: 1   ajoute sur 25 grille(s)
+   presentation: 1     ajoute sur 25 grille(s)
+   resume: 1           ajoute sur 24 grille(s)
+```
+
+`annexe-image` n'est ajouté que sur 22 grilles (German-10, 11 et 17 n'ont pas de
+planche) et `resume` que sur 24 (German-24 en portait un). **Aucun bloc retiré,
+aucun compte de segment existant modifié** ; `maxScores`, `scoreSpans`,
+`sectionCounts`, `criteriaCount`, `detailCount`, `radioCount`, `checkboxCount`
+sont identiques sur les 88 grilles ; `boundsAnomalies` et `uncoveredContent`
+restent vides.
+
+#### La redondance
+
+**0 paire inter-blocs avant, 0 paire après, sur chacune des 25 grilles.** Il n'y
+a donc aucune paire à justifier par un changement de format. Ce n'est pas un
+artefact : le détecteur a signalé des paires au fil de la rédaction, toutes
+corrigées avant la fin. Sur la pilote German-2, cinq paires sont apparues à la
+première passe, et c'est le pédagogique qui a cédé dans les cinq cas —
+`therapy` et `redflags` n'ont pas été touchés :
+
+- `therapy ↔ annexe-theorie` à 0,76 sur la posologie de la prednisone. La ligne a
+  été **retirée** d'`annexe-theorie` : la posologie est le *quoi*, elle appartient
+  au corrigé du critère. Divergence relevée au passage et **laissée telle quelle**
+  (niveau 3) : la page SSP écrit « prednisone 1 mg/kg/j PO × 7-14 j », le
+  `therapy` de la grille « Prednisolone 1 mg/kg/j pendant 7-10 jours ».
+- `therapy ↔ presentation` à 0,75 et 0,74 (contrôle de l'HTA ; TCC) — reformulés
+  dans la réponse orale.
+- `resume ↔ presentation` à 0,81 et 0,74 — le mnémo « aigu = cochléaire, grave =
+  Ménière » recopiait le `resume` ; réécrit en « le timbre situe l'étage ».
+
+#### Contrôle visuel
+
+Chrome `--headless=new`, rendu local `file://`, aucune requête réseau. Deux
+grilles × deux thèmes × deux largeurs = **8 rendus**. German-8 (4 images, dont un
+message-clé de 2190×1689) et German-24 (le cas particulier : `resume` préexistant
+balisé + trois blocs neufs).
+
+Copies temporaires à `data-theme` figé placées dans `cases/german/` pour que
+`../img/german/` résolve, **supprimées ensuite** : `git status` ne montre aucun
+`_tmpvis-*`.
+
+- **Chargement** : `complete === true` et `naturalWidth`/`naturalHeight` **égaux
+  aux dimensions du vault** pour les onze images (dont les deux cartes de
+  communication). `cassees=0` aux huit rendus.
+- **Rapports conservés** : 2190/1689 = 1,2966 → rendu 1046/807 = 1,2962 ;
+  846/917 = 0,9226 → 848/919 = 0,9227 ; 614/330 = 1,8606 → 616/332 = 1,8554.
+- **Aucun débordement horizontal** : `scrollWidth === innerWidth` à 1200 comme à
+  500 px, dans les deux thèmes.
+- **Les huit classes rendent une couleur distincte dans chaque thème**, et
+  `neutralises=0`. `c-yellow` rend un **fond** (`rgba(245,200,66,0.18)` en sombre)
+  et non une couleur de texte, conformément au relevé de p3a.
+
+### 6. Préoccupations
+
+**a) Trois grilles sont livrées sans planche d'images, et ce n'est pas un défaut
+de sélection.**
+
+- **German-10 et German-11** partagent `SSP — Chute & Évaluation Gériatrique.md`,
+  qui ne cite que **4 images** — contre une médiane de 12 sur les 53 pages. Deux
+  passent le test 1 (`neuro-epreuve-romberg.png` pour le critère e3,
+  `gals-inspection-marche.png` pour le critère e2) et sont écartées à **5 403 Ko
+  et 3 008 Ko**, soit 9× et 5× le plafond ; les deux autres (fracture du col
+  fémoral, échelle GDS-15) échouent les trois tests. Aucun message-clé.
+- **German-17 (endométriose)** : la page « Douleur Abdominale » ne porte **aucune
+  iconographie gynécologique** — ni annexe, ni GEU, ni torsion, ni kyste, ni
+  endométriose — alors que ces entités sont nommées dans son texte, dans ses red
+  flags et dans deux `annexe-dd`. Son contenu est presque entièrement construit
+  autour de l'abdomen aigu chirurgical.
+
+**b) Sept pages SSP ne couvrent pas la vignette qu'elles desservent.** C'est le
+relevé le plus important de ce lot, et il est plus large que celui de p3a.
+
+| Page | Grille | Ce qui manque |
+|---|---|---|
+| Palpitations | German-7 | Page de **tachycardie**. Sur la bradycardie : la définition, deux drapeaux rouges chiffrés, le BAV en liste, un piège. **Muette** sur l'hypothyroïdie (que l'`annexe-dd` nomme, chez une patiente thyroïdectomisée), la maladie du sinus, les indications du stimulateur (critère m6, 2 points) et l'accumulation médicamenteuse par baisse de filtration — **qui est le diagnostic retenu du corrigé**. Toute la conduite bradycardique ne figure que dans une image |
+| Douleur Thoracique | German-30 | 653 lignes, 47 images, et **deux lignes** sur la traumatologie pariétale de l'adolescent. Rien sur la contusion costale, la fracture de côte isolée, la physiothérapie respiratoire, le certificat. La page la plus riche du corpus, la plus mal appariée à sa vignette |
+| Douleurs Articulaires | German-25 | Confirmation aggravée du signalement de p3a. **Trois lignes** touchent le talon sur 380 ; aucune des six hypothèses de l'`annexe-dd` (tibial postérieur, fasciite plantaire, fracture de fatigue, bursite, Haglund, rupture partielle) n'est documentée ; **aucune** des 15 images ne concerne le pied |
+| Troubles du Dévelop. & Croissance | German-14 | Traite le retard psychomoteur, le TSA et la croissance staturale. Le **TDAH** n'apparaît que dans le « DD Top 5 » et un renvoi. Une page « SSP — TDAH » serait la bonne source |
+| Douleur Abdominale | German-16, 17, 18, 21 | Page d'**abdomen aigu chirurgical**. German-16 est une station de contraception et de discernement ; German-17 et German-18 sont gynécologiques ; German-21 est un reflux traité en une ligne de tableau. Seule German-20 est réellement couverte |
+| Chute & Éval. gériatrique | German-10 | Porte bien le red flag « déficit focal post-chute → AVC », mais est **muette** sur la thrombolyse, la consigne de ne pas trop abaisser la TA, la distinction AIT/DNIR/AVC progressif et la dissection carotidienne — quatre éléments que la grille note |
+| Céphalée | German-8 | « Céphalée du restaurant chinois » — le diagnostic retenu du critère m1 — **n'apparaît nulle part** sur la page |
+| Prévention Pédiatrique | German-3 | Page de consultations systématiques ; la vignette est une difficulté d'allaitement bâtie sur des percentiles, et **la page ne cite aucune courbe de croissance** |
+
+**c) Le plafond de 600 Ko coûte le plus cher au musculo-squelettique, et pour une
+raison technique, pas éditoriale.** Onze images écartées sur ce seul motif
+documentent chacune un **critère explicitement noté** :
+
+| Image | Poids | Grille | Critère noté |
+|---|---|---|---|
+| `cardio-palpation-vasculaire.png` | 5 065 Ko | 26 | e4, les quatre pouls et la comparaison controlatérale |
+| `hanche-genou-test-faber.png` | 10 501 Ko | 29 | e5, tests spécifiques |
+| `main-test-froment.png` | 11 100 Ko | 24 | e-main |
+| `main-manoeuvre-watson.png` | 11 100 Ko | 24 | e-main |
+| `neuro-epreuve-romberg.png` | 5 403 Ko | 10 | e3 |
+| `gals-inspection-marche.png` | 3 008 Ko | 10 | e2 |
+| `abdo-palpation-aorte.png` | 7 722 Ko | 20 | e8, anévrisme de l'aorte |
+| `hanche-genou-test-pivot-shift.png` | 5 500 Ko | 23 | e5 |
+| `test-fadir.png` · `test-gaenslen.png` · `log-roll-test.png` | 7 800 à 9 400 Ko | 29 | e5 |
+
+Ce sont des **PNG non optimisés d'illustrations vectorielles simples** :
+`main-manoeuvre-de-phalen.png` (188 Ko, retenue) et `main-test-phalen.png`
+(12 600 Ko, écartée) portent **le même contenu à un facteur 67**. Une passe de
+recompression **côté vault** — hors périmètre ici, et interdite côté grille par
+le § 8.7 — rendrait accessible une dizaine d'images qui passent le test 1. C'est
+le geste au meilleur rendement de tout ce relevé.
+
+**d) Neuf références cassées, toutes des pages de PDF converties.**
+`Résumé-SSP_page-0023` à `0027` (page « Douleur Abdominale ») et
+`Résumé-SSP_page-0056` à `0059` (page « Céphalée ») : **0 octet** dans le vault.
+Elles étaient de toute façon exclues au § 8.5 a, mais à lire leurs légendes ce
+sont les planches les plus utiles de la page « Douleur Abdominale »
+(caractérisation de la douleur, drapeaux rouges et déroulé de l'examen,
+manœuvres ciblées, DD par topographie, urgences abdominales). Les réparer
+débloquerait d'un coup l'iconographie d'examen de cinq grilles.
+
+**e) Un fichier défectueux du vault confirmé, non contourné.**
+`ped-algorithme-diagnostique-petite-taille-enfant.jpg` → `ÉCHEC [corrompu]`,
+en-tête JPEG incohérent — deuxième relevé après p3a. Aucun troisième rencontré.
+Signalé, **le vault n'a pas été modifié**.
+Doublon relevé par ailleurs : `rachis-dermatomes-mi.png` et `main-dermatomes.png`
+existent en double (`Skills ECOS/img/…` et `Skills ECOS/.backup_transparents/img/…`) ;
+`fetch_image.py` n'a pas signalé `[ambigu]` et a repris la version principale,
+mais c'est une source d'échec futur.
+
+**f) `annexe-dd` n'a pas été balisé — écart assumé à la consigne.**
+La consigne demandait de baliser `resume` **ou** `annexe-dd` quand ils
+préexistent sans balisage. Le `resume` de German-24 l'a été. `annexe-dd` ne l'a
+pas été, sur les 25 grilles, pour trois raisons : les **88 grilles du corpus**
+portent aujourd'hui `annexe-dd` sans un seul span ; le lot p3a l'a laissé tel
+quel sur ses 13 grilles et en a fait un résultat publié (« 0 span hors des quatre
+conteneurs prescrits ») ; et la cible de densité est définie sur ces quatre
+conteneurs, si bien que baliser un cinquième bloc rendrait la mesure non
+comparable. Baliser 25 `annexe-dd` sur 88 aurait créé une hétérogénéité durable
+au moment précis où le corpus s'uniformise. **Arbitrage à confirmer** : si le
+balisage d'`annexe-dd` est voulu, il doit être fait sur les 88 en une passe, pas
+sur 25.
+
+**g) Deux incohérences internes de grille relevées, laissées inchangées
+(niveau 3).** German-13 : l'en-tête annonce « diarrhée évoluant depuis 6 mois »,
+la réponse patient du critère a4 dit « depuis 4 mois » — la restitution orale
+écrit « plusieurs mois ». German-26 : le critère a18 porte « Antécédents
+familiaux positifs [non] » et le critère a25 « [Père : infarctus du myocarde à
+63 ans] » — seule la seconde est utilisée, sans énoncer la négation.
+German-9 ne note **aucune température** alors que la vignette est une méningite
+et que la page fait de la fièvre le pivot du tableau : trou de la grille, pas de
+la page, traité dans l'`annexe-theorie` par la triade incomplète (~45 %).
+
+**h) `annexe-dd` de German-16 est quasi vide** — une seule entrée, « Douleurs
+abdominales non spécifiques », 12 mots. Rien n'a été comblé : l'`annexe-theorie`
+s'adosse à la page et aux critères notés, et pose explicitement le caractère de
+diagnostic d'exclusion. C'est le plus court `annexe-dd` des 88.
+
+**i) Neuf grilles restent en base64**, dont German-42, 43 et 44 dont un critère
+noté renvoie explicitement à l'image (« Voir image en annexe »). Chantier déjà
+signalé en p2b et p3a, hors périmètre ici.
+
+Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3b-report.md`

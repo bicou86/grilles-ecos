@@ -80,9 +80,14 @@ IMG_EXT = {".png", ".jpg", ".jpeg", ".svg", ".gif", ".webp"}
 #: d'images propre au projet ECOS, celui que les pages SSP visent.
 PREFERRED_ROOT = "Skills ECOS/img/"
 
-#: Plafond par image, en octets (§ 8.5 c). Au-delà : avertissement, pas d'arrêt —
-#: c'est la règle de sélection qui tranche, pas l'outil de copie.
-SIZE_WARN = 400 * 1024
+#: Plafond par image, en octets (§ 8.5 d ; révisé 400 -> 600 Ko le 2026-08-02).
+#: Au-delà : avertissement, pas d'arrêt — c'est la règle de sélection qui
+#: tranche, pas l'outil de copie. Les deux exemptions du § 8.5 d (message-clé
+#: obligatoire du § 8.4, image désignée par un critère noté) ne sont pas
+#: détectables depuis le seul nom du fichier : l'avertissement reste posé pour
+#: elles aussi, à charge pour qui l'embarque de vérifier qu'une exemption
+#: s'applique plutôt que de le prendre pour un refus.
+SIZE_WARN = 600 * 1024
 
 # --- Erreurs ---------------------------------------------------------------
 
@@ -174,7 +179,7 @@ def resolve(ref):
     normalisation ne produit aucune collision sur les 664 images citées, et
     l'ambiguïté résiduelle est refusée juste en dessous. Mais il est **signalé**,
     parce qu'une correspondance approchée qui passerait pour exacte est
-    exactement ce que § 8.5 b interdit.
+    exactement ce que § 8.5 c interdit.
 
     Lève `FetchError` si introuvable (référence cassée) ou si l'ambiguïté
     subsiste après préférence pour `Skills ECOS/img/`.
@@ -195,7 +200,7 @@ def resolve(ref):
             raise FetchError(
                 "cassee",
                 "référence introuvable dans le vault : %s" % ref,
-                "RÉFÉRENCE CASSÉE. § 8.5 b : elle arrête le traitement de la "
+                "RÉFÉRENCE CASSÉE. § 8.5 c : elle arrête le traitement de la "
                 "grille. Ne pas lui substituer un fichier au nom voisin.",
             )
     if len(hits) > 1:
@@ -337,8 +342,10 @@ def fetch(raw, dry_run=False):
         )
     if len(data) > SIZE_WARN:
         warnings.append(
-            "%.0f Ko > plafond de 400 Ko (§ 8.5 c) — vérifier que la règle "
-            "de sélection l'autorise" % (len(data) / 1024.0)
+            "%.0f Ko > plafond de 600 Ko (§ 8.5 d) — vérifier que la règle "
+            "de sélection l'autorise, ou qu'une des deux exemptions "
+            "(message-clé du § 8.4, image désignée par un critère noté) "
+            "s'applique" % (len(data) / 1024.0)
         )
 
     status = "simule"
