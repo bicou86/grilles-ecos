@@ -1360,3 +1360,260 @@ de **se faire sweeper**. Tant qu'un travail concurrent est en cours, il ne faut
 **jamais laisser quoi que ce soit dans l'index** : pas de `git add` préalable,
 et la validation directement par `git commit -F msg -- <chemins>`, qui met en
 index et valide dans le même geste.
+
+---
+
+## Lot `t1` — les 10 « AMC Urgences » et les 10 « Psy-Vignette »
+
+Base `626fde7` (HEAD au moment de la mesure : `933dc45`, travail german de
+l'utilisateur). Vingt fichiers modifiés, tous sous `cases/rescos-locales/`.
+Rien lu ni écrit sous `cases/german/`, `scripts/german/`, `cases/casecos/` ni
+`scripts/casecos/`.
+
+**Premier lot des 132 grilles thématiques.** Il calibre les 112 suivantes, et
+leur profil de blocs diffère assez des 33 numérotées pour changer la méthode.
+
+### 1. Le profil des blocs — deux familles, deux régimes
+
+| bloc | AMC Urgences (10) | Psy-Vignette (10) |
+|---|---|---|
+| `annexe-dd` | 10/10 | **10/10** |
+| `therapy` | 7/10 | **10/10** (0 item extrait) |
+| `cloture` | 10/10 | **10/10** |
+| `theorie` | **10/10** | **0/10** |
+| `expert` | 10/10 | **0/10** |
+| `scenario` | 10/10 | **0/10** |
+| `redflags` | 6/10 | 0/10 |
+| `annexe-image` | 9/10 | 2/10 |
+| `resume` · `presentation` | **0/10** | **0/10** |
+
+* Chez les **AMC Urgences**, le rôle canonique est tenu par `theorie`, sans
+  exception. Aucune des dix n'a de `resume` ni de `presentation` : la règle
+  « §1 se fusionne, §2/§3 se convertissent » n'a **aucun point d'application**
+  dans ce lot.
+* Chez les **Psy-Vignette**, **personne ne tient le rôle** : ni `theorie`, ni
+  `expert`, ni `resume`, ni `presentation`, ni même `scenario`. Les seuls blocs
+  mobiles sont `annexe-dd` et `cloture` — `therapy` est un attendu de
+  correction. C'est le profil le plus pauvre rencontré depuis le début du
+  corpus, plus pauvre encore que RESCOS-57.
+
+### 2. La mesure de redondance est structurellement muette sur ce lot
+
+| | avant | après |
+|---|---:|---:|
+| AMC Urgences 1 — Polytraumatisé | 4 | **1** |
+| AMC Urgences 4 — BPCO | 1 | **0** |
+| AMC Urgences 5B — AVC | 1 | **0** |
+| les 7 autres AMC Urgences | 0 | **0** |
+| les 10 Psy-Vignette | **0** | **0** |
+| **total du lot** | **6** | **1** |
+
+Corpus **1017 → 1012** (−5, soit exactement le gain du lot : l'économie de
+mesure se vérifie une **quatrième** fois).
+
+Six paires pour vingt grilles, contre 133 pour dix-sept au lot `l6b`. La raison
+est mécanique : la redondance inter-blocs se nourrit du couple
+`presentation ↔ resume/theorie`, et **aucune des vingt grilles n'a de
+`presentation`**. Les Psy-Vignette, avec trois blocs dont un sans item
+extractible, ne peuvent structurellement produire aucune paire. **Un chiffre de
+redondance nul n'y est pas un signe de qualité : c'est une absence de matière à
+mesurer.**
+
+La paire résiduelle d'AMC Urgences 1 est le plancher structurel :
+`redflags`/« 3. Pneumothorax sous tension » face à `expert`/« Ne pas drainer un
+pneumothorax sous tension ». Les deux blocs sont intouchables.
+
+### 3. Un défaut d'import inédit — le mot `undefined` affiché
+
+`<div class="cloture-content cloture-content-green">undefined</div>` :
+la moulinette d'import a écrit la valeur JavaScript `undefined` là où le champ
+« contenu » était vide, et le lecteur voit littéralement **« undefined »** sous
+un titre comme « Réponse type » ou « Réponses types aux inquiétudes ». Le
+contenu réel est dans le `exemples-phrases` qui suit ; le `div` est vide de
+sens.
+
+* **57 occurrences sur 48 grilles** de `cases/rescos-locales`.
+* **0 dans AMBOSS, German et RESCOS** — c'est une signature propre à ce corpus,
+  absente des sept familles de `report_import_defects.py`.
+* **17 occurrences dans ce lot** (8 AMC Urgences, 9 Psy-Vignette), retirées.
+* **40 occurrences subsistent sur 31 grilles** hors du lot.
+
+Le retrait ne change rien au barème ni aux invariants : `undefined` fait
+9 caractères, sous le seuil de 18 de `list_items()`, il n'a donc jamais été un
+item ; et le `cloture-item` englobant reste, donc `blocks_present()` ne bouge
+pas. **Le contrôle qui aurait dû le voir n'existe pas** : c'est un candidat
+naturel pour une huitième famille de `report_import_defects.py`.
+
+### 4. Les onze corrections d'erreur
+
+Dix dans `theorie`, une dans `annexe-dd`. Les cinq premières sont des erreurs de
+sécurité, développées au rapport `t1-report.md` § 7.
+
+1. **AMC Urgences 1 — hypotension permissive sans la réserve du traumatisme
+   crânien.** `theorie` écrivait « Permissive hypotension : PAS 80-90 mmHg avant
+   contrôle chirurgical ». `SSP — Polytraumatisme` écrit « hypotension
+   permissive (TAS ≈ 80-90 mmHg) … **sauf TC sévère (objectif TAS ≥ 110)** ».
+   Le patient de la station est à **GCS 5, anisocorie, décérébration,
+   TAS 75 mmHg** : c'est exactement l'exception.
+2. **AMC Urgences 3B — coronarographie « dans les 24-72 h » chez une patiente en
+   Killip III.** L'insuffisance cardiaque aiguë est un critère de **très haut
+   risque** qui impose la coronarographie **immédiate**. La page le dit, et
+   `expert` de la même grille écrit « Identification de l'insuffisance cardiaque
+   aiguë (Killip III) ».
+3. **AMC Urgences 3C — « D-dimères < 500 µg/L exclut quasi dissection ».**
+   Chez une patiente à douleur déchirante, asymétrie tensionnelle, pouls fémoral
+   absent et souffle d'insuffisance aortique nouveau.
+4. **Psy-Vignette 4 — « pas de signes neurologiques focaux, pas de fièvre »
+   rangés en arguments CONTRE une cause organique**, devant un premier épisode
+   psychotique à 18 ans. C'est la présentation habituelle de l'encéphalite
+   auto-immune à anticorps anti-NMDA.
+5. **AMC Urgences 3A — dérivés nitrés sans la contre-indication de l'infarctus
+   du ventricule droit.** La page l'écrit : « cave infarctus inférieur / droit :
+   pas de nitré (précharge-dépendant) ».
+6. **AMC Urgences 2A — contre-indications du fibrinolytique fausses.**
+   « AVC < 3 mois » : l'AVC hémorragique est une contre-indication **à vie**, et
+   l'AVC ischémique porte sur **6 mois**. Corrigé, avec la nuance décisive de
+   l'EP à haut risque (les contre-indications absolues y deviennent relatives).
+7. **AMC Urgences 2A — ténectéplase présenté à égalité avec l'altéplase** dans
+   l'EP, alors qu'il n'y a pas d'autorisation et que PEITHO y a montré un excès
+   d'hémorragies majeures.
+8. **AMC Urgences 2B — « ScvO2 : objectif > 70 % ».** Cible de l'*early
+   goal-directed therapy* de Rivers, abandonnée après ProCESS, ARISE et ProMISe ;
+   `SSP — États de Choc` nomme le piège (« en choc septique, la ScvO₂ peut être
+   normale ou haute … elle ne rassure pas »).
+9. **AMC Urgences 5C — « Méningocoque : sérogroupes B, C, W, Y en France »**,
+   dans un corpus suisse. Corrigé, avec le plan vaccinal OFSP/BAG.
+10. **AMC Urgences 4 — « GOLD 3 → indication de trithérapie inhalée ».**
+    Le grade spirométrique ne décide pas du traitement ; ce sont les groupes
+    A/B/E, les exacerbations et les éosinophiles.
+11. **AMC Urgences 5A — « Classification de Fisher modifiée »** dont le contenu
+    est celui de l'échelle de Fisher **d'origine**. Les deux échelles sont
+    données côte à côte, et le grade maximal n'est pas le même.
+
+Une correction s'ajoute dans la **section notée** — la seule du lot, § 6.
+
+### 5. Les trous du canonique comblés
+
+Vingt-trois compléments, dont onze de sécurité. Les plus nets :
+
+| grille | ce qui manquait |
+|---|---|
+| AMC Urgences 1 | la **glycémie capillaire** du D de l'ABCDE (0 occurrence) · le seuil de l'**hémothorax massif** (1500 mL, 200 mL/h) · la **cécité du FAST au rétropéritoine** · la pose de la **ceinture pelvienne aux grands trochanters** et l'interdiction de tester deux fois · la **sonde orogastrique** si fracture de la base · la **majoration de mortalité du TXA au-delà de 3 h** |
+| AMC Urgences 2A | la **durée d'anticoagulation** (3 mois, EP provoquée par la chirurgie) — 0 occurrence, alors qu'`expert` reproche « oublier la prophylaxie anticoagulante ultérieure » · le **dépistage du CTEPH** à 3-6 mois · l'**altéplase 50 mg en bolus** si arrêt cardiaque · le détail du **sPESI** |
+| AMC Urgences 2B | les **3 items du qSOFA** (0 occurrence, chez un patient qui cote 3/3) · le **contrôle du foyer dans les 6-12 h** · les **2 paires d'hémocultures** et la règle des 45 minutes |
+| AMC Urgences 3A | la **stratégie de reperfusion** — angioplastie primaire si ≤ 120 min, sinon fibrinolyse dans les 10 min : 0 occurrence, alors qu'`expert` exige « stratégie de reperfusion claire » · les territoires **postérieur (V7-V9)** et **droit (V3R-V4R)** · l'**oxygène seulement si SpO2 < 90 %** · les critères de **Sgarbossa** |
+| AMC Urgences 3B | les **inhibiteurs calciques non dihydropyridiniques** contre-indiqués dans l'IC à FE réduite, et l'**exception de l'amiodarone** — la grille écrivait « éviter … antiarythmiques classe I et III » · l'**inhibiteur du SGLT2** et l'**ARNI** |
+| AMC Urgences 3C | le seuil de l'**asymétrie tensionnelle (> 20 mmHg)** · la **cible de fréquence < 60/min** · le **score ADD** |
+| AMC Urgences 4 | l'**indication chiffrée de la VNI** (pH < 7,35 et PaCO2 > 6 kPa) — 0 occurrence, alors qu'`expert` exige d'en « contrôler l'indication » · ses **contre-indications**, dont le pneumothorax non drainé, que la station simule à 10 minutes · les **critères d'intubation** · la **thromboprophylaxie** |
+| AMC Urgences 5A | le **délai de sécurisation de l'anévrysme** (< 24 h, au plus tard 72) — 0 occurrence, alors que la grille parle trois fois de l'« avant sécurisation » · la distinction **SIADH / cerebral salt wasting** et l'interdiction de restreindre l'eau · antalgie, laxatifs, arrêt des antithrombotiques |
+| AMC Urgences 5B | la **glycémie capillaire comme mimic n° 1** — `hypoglycémie` à **0 occurrence**, alors que c'est la règle d'or de `SSP — Parésie - AVC` · l'**absence de place des corticoïdes** dans l'œdème ischémique · le **test de déglutition** · la **Stroke Unit** et le seuil féminin du CHA2DS2-VASc |
+| AMC Urgences 5C | la **déclaration au médecin cantonal et à l'OFSP** · le **délai antibiotique** (< 1 h, idéalement 30 min, avant la PL si purpura) · la **dexaméthasone avant ou avec** la première dose · l'**isolement gouttelettes 24 h** · la **ceftriaxone 250 mg IM** chez la femme enceinte |
+
+### 6. Les Psy-Vignette — un trou de protection sur les dix
+
+Relevé sur les dix grilles, **avant** intervention :
+
+| terme | occurrences |
+|---|---|
+| `PAFA` · `art. 426` · `art. 16 CC` · `APEA` / `KESB` | **0 sur 10 grilles** |
+| `glycémie` | **0 sur 10** |
+| `143` (La Main Tendue) | **1**, sur la seule Psy-Vignette 10 |
+| `147` (Pro Juventute) | **0 sur 10** |
+| `suicid*` | 0 sur Psy-Vignette 8 ; 1 sur les vignettes 1, 2, 3, 4 et 9 |
+
+Une série de dix stations de psychiatrie suisse **ne nomme pas une seule fois le
+placement à des fins d'assistance** — alors que la page
+`SSP — Urgences Psychiatriques (Agitation, PAFA)` inscrit « Pas de mise en place
+de PAFA quand critères réunis » parmi ses **pièges éliminatoires**, et que la
+Psy-Vignette 9 fait littéralement dire au patient « je ne suis pas malade,
+pourquoi m'hospitaliser ? » sans que la réponse type mentionne le cadre légal.
+
+Conformément à la consigne (« enrichis, ne réduis pas »), une catégorie a été
+ajoutée à l'`annexe-dd` de **chacune des dix**, et deux phrases à la `cloture`
+des vignettes 5 et 9. Contenus portés : le PAFA avec ses trois conditions
+cumulatives et sa distinction d'avec le traitement sans consentement
+(art. 434 CC) ; la durée de 6 semaines (art. 429 CC), l'APEA/KESB et le recours
+au juge dans les 10 jours (art. 439 CC) ; l'évaluation explicite du risque
+suicidaire dans chaque vignette ; les causes organiques et toxiques à écarter ;
+les numéros 143, 144, 147, 117 et LAVI.
+
+**Un piège de la page elle-même a été évité.** `SSP — Urgences Psychiatriques`
+énonce quatre fois « PAFA = incapacité de discernement + danger + absence
+d'alternative », et **se contredit** dans sa propre carte ECOS, qui écrit
+correctement « l'incapacité de discernement (art. 16 CC) n'est PAS une condition
+du PAFA ». C'est la version de la carte, conforme à l'art. 426 CC, qui a été
+portée dans les grilles — la hiérarchie à trois niveaux ne dit pas quoi faire
+quand la page se contredit, et il a fallu trancher sur le texte légal.
+
+### 7. La seule correction de la section notée
+
+`AMC Urgences 5C`, sous-item noté : **« Déclaration obligatoire urgente à
+l'ARS »**. L'Agence Régionale de Santé est une institution **française** ;
+elle n'existe pas en Suisse. Corrigé en « Déclaration obligatoire urgente au
+médecin cantonal et à l'OFSP ».
+
+C'est une **erreur factuelle interne**, pas un jugement d'auteur ni une
+divergence de conduite : la correction ne change ni ce que le candidat doit
+faire, ni la structure. Vérifié : `detailCount`, `criteriaCount`, `radioCount`,
+`checkboxCount`, `maxScores`, `coef`, `sectionInfo[].count` et les `<span
+class="score">` sont **identiques** avant et après, sur les 20 grilles — les
+douze champs du snapshot sont inchangés et la baseline n'a pas été régénérée.
+
+Occurrence unique dans les 165 grilles. Le balayage a en revanche trouvé une
+autre francité, **hors de ce lot** : `Crise convulsive - Homme de 77 ans` écrit
+deux fois « suspension de conduite … **6 mois en France** », dont une fois dans
+un sous-item noté. Signalé, non corrigé — la grille appartient à un lot suivant.
+
+### 8. Vérifications
+
+```
+check_invariants.py                  OK — 165 grilles, code 0
+check_nomenclature.py                OK — 0 terme, code 0
+check_reachability.py                OK — 156/156 notées à 100 %, code 0
+report_redundancy.py AMC Urgences    6 -> 1
+report_redundancy.py Psy-Vignette    0 -> 0
+report_redundancy.py (corpus)        1017 -> 1012   (−5 = gain du lot)
+check_no_loss.py 626fde7             43 items, verdictés un à un, 0 perte
+browser_probe.js "AMC Urgences" --deep   10/10 sans exception · 10/10 à 100 % · 10/10 registry
+browser_probe.js "Psy-Vignette" --deep   10/10 sans exception · 10/10 à 100 % · 10/10 registry
+                                     barre nav fixed, 0 recouvrement, crochets colorés sur 20/20
+bounds_anomalies / uncovered_content [] / {} sur les 20
+snapshot, champ par champ            0 divergence sur 12 champs × 20 grilles
+
+AMBOSS  report_redundancy 147 (inchangé) · invariants / nomenclature / atteignabilité code 0
+RESCOS  report_redundancy 127 (inchangé) · invariants / nomenclature / atteignabilité code 0
+```
+
+Les 43 items signalés par `check_no_loss` sont des réécritures sur place : le
+contrôle de couverture lexicale n'en isole que **six** sous 0,75, et ce sont
+exactement les six corrections délibérées (ScvO2, ténectéplase, D-dimères,
+« en France », et les deux arguments CONTRE de la Psy-Vignette 4). Deux notions
+avaient été perdues par inadvertance lors d'une réécriture — « risque élevé
+d'exacerbations » (AMC 4) et le chiffre de 95 % du grade 3 de Fisher (AMC 5A) —
+et ont été **restituées** avant validation.
+
+German et casecos n'ont été ni lus ni mesurés.
+
+### 9. Ce qui change pour les 112 grilles thématiques suivantes
+
+1. **Identifier le porteur du rôle canonique grille par grille, et accepter
+   qu'il n'y en ait pas.** `theorie` chez les AMC Urgences, personne chez les
+   Psy-Vignette.
+2. **Ne pas déduire du chiffre de redondance qu'il n'y a rien à faire.**
+   Zéro paire sur 17 grilles du lot, et pourtant onze trous de sécurité. Sur ce
+   sous-corpus, `report_redundancy` mesure surtout la présence de
+   `presentation` — absente des vingt.
+3. **Le rendement est ailleurs : dans le niveau 1 et dans ce qui n'est pas
+   écrit.** Le prédicteur du pilote (compter les cibles chiffrées de la page)
+   reste juste, mais il faut lui adjoindre un second réflexe : **relever à zéro
+   occurrence** les items que la page tient pour capitaux, et surtout ceux que
+   `expert` reproche d'oublier sans que la grille dise jamais quoi.
+4. **`expert` est un révélateur de trous.** Quatre fois sur dix chez les AMC
+   Urgences, il nomme un attendu (« stratégie de reperfusion claire »,
+   « contrôler l'indication de la VNI », « oublier la prophylaxie
+   anticoagulante ») dont la réponse n'existe nulle part dans la grille. Lire
+   `expert` **avant** `theorie` oriente la recherche.
+5. **Les vignettes de psychiatrie demandent un balayage de protection dédié**,
+   qu'aucun outil ne déclenche : PAFA / art. 426 CC / APEA-KESB, risque
+   suicidaire, glycémie, 143 · 144 · 147 · 117 · LAVI.
+6. **Le mot `undefined` est à retirer sur les 31 grilles restantes.**
