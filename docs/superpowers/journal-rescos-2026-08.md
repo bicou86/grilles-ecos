@@ -952,3 +952,252 @@ régénération de baseline**. Strictement **règle 1**.
 | AMBOSS (4 contrôles) | **OK — 147 paires, inchangé** |
 
 German n'a été ni lu ni mesuré.
+
+---
+
+## Lot r4c — RESCOS-31 à RESCOS-40, et la passe acronymes sur les 41 grilles
+
+Base `803d550`. **Le corpus s'arrête à RESCOS-40** : il compte 41 grilles parce
+qu'il porte une RESCOS-9b, pas parce qu'il va jusqu'à 41. Le lot annoncé
+« 31 à 41 » est donc **dix grilles**, et il clôt le corpus (16 + 15 + 10 = 41).
+
+**Redondance inter-blocs du lot : 151 → 46.** Corpus RESCOS : **235 → 131**
+(intra : 254 → 210). AMBOSS reste à **147**. Rien lu ni touché sous
+`cases/german/` ni `scripts/german/`.
+
+### 1. Résultat par grille
+
+| grille | avant | après | ce qui a cédé |
+|---|---|---|---|
+| RESCOS-31 | 2 | **1** | `theorie` — raisonnement de l'hydratation, posologie alpha-bloquant |
+| RESCOS-32 | 10 | **7** | §1 fusionné, §2 en oral ; plancher des signes cardinaux de kératite |
+| RESCOS-33 | 3 | 3 | — (plancher `expert ↔ theorie`, consentement et impact fonctionnel) |
+| RESCOS-34 | 27 | **2** | Critères ≥2/4 et cycle de Holzmann (copies de `theorie`), Pièges, §1-§3, Checklist, `expert` reformulé en conduite |
+| RESCOS-35 | 20 | **8** | Triade EP, Pièges, §1, §2, §3, Checklist |
+| RESCOS-36 | 22 | **2** | Triade angineuse (double le mnémo TRI), Pièges, §1-§3, Checklist |
+| RESCOS-37 | 17 | **6** | Triade angineuse (idem), Pièges, §1-§3, Checklist |
+| RESCOS-38 | 46 | **14** | « Signes distinctifs de PR », mnémo déplacé, Pièges, §1-§4, `expert` reformulé |
+| RESCOS-39 | 0 | 0 | **aucune édition** — 0 paire, et la page SSP ne contredit rien |
+| RESCOS-40 | 4 | **3** | `theorie` — physiopathologie du remplissage sur obstacle fixe, TAVI |
+
+RESCOS-39 est laissée intacte : mesurée à zéro, comparée à `SSP — Dyspnée`, elle
+ne portait ni redondance ni divergence. Ne rien faire est un résultat.
+
+### 2. Ce que ce lot ajoute au patron
+
+**Un sixième gisement : la sous-section de `presentation` qui double le mnémo
+placé trois lignes plus haut.** Quatre grilles du lot (34, 35, 36, 37) portaient,
+sous « Touches ludiques », une « Triade » ou des « Critères » qui redisaient item
+par item ce que la `mnemo-box` de la Checklist venait d'énoncer, ou ce que
+`theorie` porte en propre. Ce n'est pas le geste 1 du pilote (les trois portes)
+ni le geste 2 (les listes de §2-§3) : c'est une **quatrième sous-section
+surnuméraire à l'intérieur du même bloc**, cousine du cinquième gisement de r4b
+(les sections dupliquées de `theorie`). Elle se repère sans lire : un `<h5>`
+« Triade… » ou « Critères… » dans `section-mnemo` alors que la `mnemo-box` ou
+`theorie` dit déjà la même chose. Suppression sèche, zéro perte, 3 à 5 paires par
+grille.
+
+**Le geste « `expert` reformulé en conduite » rend beaucoup plus qu'attendu.**
+r4b l'avait noté sur RESCOS-29 pour une paire. Ici, réécrire les « Points clés »
+de `expert` en *ce que l'examinateur guette* — au lieu de la liste des signes que
+`annexe-dd` et `resume` portent déjà — a fait 21 → 14 sur RESCOS-38 et 8 → 2 sur
+RESCOS-34. Le contrat le prévoyait (« `expert` : conduite de station »), mais
+c'est le premier lot où il paie à ce niveau. Signature : les `<li>` de
+« Points clés » sont des **groupes nominaux** (« Polyarthrite symétrique
+typique ») là où la conduite s'écrit en **verbes** (« Attendre que le candidat
+qualifie la douleur avant de la localiser »).
+
+### 3. Les trous du bloc canonique — six trouvés, six comblés
+
+| grille | ce qui manquait | comment il s'est signalé |
+|---|---|---|
+| **RESCOS-38** | **acide folique** avec le méthotrexate, et sa posologie | `therapy` (noté) ↔ `presentation` **sans `resume`** — signature exacte |
+| **RESCOS-38** | dépistage d'une **tuberculose latente** avant anti-TNF, sérologies B/C et VIH | niveau 1, `SSP — Douleurs Articulaires` (« Pré-DMARDs ») ; absent de la grille entière |
+| **RESCOS-38** | **tératogénicité** du méthotrexate chez une femme de 45 ans | niveau 1, même page ; absent de la grille entière |
+| RESCOS-38 | corticothérapie **< 10 mg/j**, protection gastrique, prévention de l'ostéoporose cortico-induite | `therapy` (noté), pas `resume` |
+| **RESCOS-34** | colchicine **pendant 3 mois** | niveau 1, `SSP — Douleur Thoracique` ; `theorie` donnait la dose sans la durée |
+| **RESCOS-32** | **jamais d'anesthésique local répété** sur un ulcère cornéen | niveau 1, `SSP — Œil Rouge` ; absent de la grille entière |
+| RESCOS-34 | en tamponnade, la **vitesse** prime le volume ; ni diurétique ni nitré | niveau 1, même page |
+| RESCOS-36 | activité physique **30 min/j** | `therapy` (noté) ↔ `resume`, la paire résiduelle portait le chiffre d'un seul côté |
+
+Trois appartiennent à la famille de l'acide tranexamique du lot r4a — celle où
+l'omission conduit à **faire** un geste délétère et non à en oublier un :
+introduire un anti-TNF sans avoir dépisté une tuberculose latente, prescrire du
+méthotrexate à une femme en âge de procréer sans contraception, et délivrer un
+collyre anesthésique à un patient pour calmer son ulcère de cornée.
+
+### 4. Niveau 1 — le prédicteur « chiffres » se vérifie, et il tranche par l'absence
+
+Le déclencheur retenu par r4b (lire la SSP quand la grille porte des **cibles
+chiffrées**, quel que soit le fan-out) tient sur les cinq lectures du lot.
+
+| page SSP | grille(s) | ce qu'elle a tranché |
+|---|---|---|
+| `SSP — Douleurs Articulaires` | 38 | **trois points**, dont deux absents de la grille entière (TB latente, tératogénicité) |
+| `SSP — Douleur Thoracique` | 34, 35, 36, 37 | **deux points** sur RESCOS-34 (durée de colchicine, tamponnade) ; **muette** sur la cible LDL |
+| `SSP — Syndrome Métabolique` | 36, 37 | **la table des cibles LDL par strate de risque** — c'est elle qui a tranché |
+| `SSP — Œil Rouge` | 32 | **un point** absent de la grille entière (anesthésique local) |
+| `SSP — Colique Néphrétique` | 31 | confirme, et corrige le sens : « pas d'hyperhydratation forcée » |
+| `SSP — Dyspnée` | 39, 40 | **rien** — elle ne porte pas les cibles du traitement chronique |
+
+La nuance neuve : **la page qui porte le symptôme ne porte pas toujours le
+chiffre**. `SSP — Douleur Thoracique` est muette sur la cible LDL des quatre
+grilles de douleur thoracique du lot ; c'est `SSP — Syndrome Métabolique`, qui ne
+dessert aucune grille du corpus par son intitulé, qui donne la table complète.
+**Corollaire pratique : quand une grille porte un chiffre, chercher la page qui
+porte ce chiffre, pas celle qui porte son symptôme.**
+
+### 5. RESCOS-36 et 37 — la prédiction du lot précédent est réfutée
+
+r4b annonçait que la cible LDL fautive de RESCOS-26/27 (« 0,55 mmol/L », valeur
+en g/L portant l'unité mmol/L) était « vraisemblablement de corpus » et que
+RESCOS-36 et 37 portaient « la même formule ». Vérification faite, **c'est faux
+dans les deux sens** :
+
+* **RESCOS-36 écrit `0.55 g/L` dans son `therapy` noté — avec la bonne unité.**
+  0,55 g/L = 1,42 mmol/L, exactement la cible du très-haut-risque. Le bloc noté
+  de RESCOS-36 est donc **à jour**, et c'est même le plus à jour de la grille.
+* **RESCOS-37 n'a aucun bloc `therapy`.** L'affirmation « leurs blocs `therapy`
+  notés prescrivent LDL < 0,7 g/L » ne vaut que pour RESCOS-26 et 27.
+
+Le vrai défaut de RESCOS-36/37 est **l'inverse de celui annoncé** : leur `resume`
+(et le `theorie` de 37) prescrivent « LDL < 1,8 mmol/L, voire < 1,4 si haut
+risque ». Or 1,4 est la cible du **très haut risque**, auquel une coronaropathie
+documentée appartient d'emblée ; 1,8 est celle du haut risque. La phrase inverse
+les deux strates et donne comme cible principale une valeur trop haute.
+**Corrigé sur les deux grilles**, sur autorité de la table explicite de
+`SSP — Syndrome Métabolique` (« très haut risque < 1,4 ; haut risque < 1,8 ;
+modéré < 2,6 ; faible < 3,0 ») et du `therapy` noté de RESCOS-36 lui-même.
+
+### 6. Passe acronymes — recensement complet, seize motifs, sept écartés
+
+Recensement exhaustif : tous les tokens majuscules de 2 à 8 caractères du texte
+visible des 41 grilles, triés par fréquence, puis chaque candidat compté sur les
+**trois** corpus avant décision. **56 substitutions sur 26 grilles.**
+
+| motif | occ. RESCOS | remplacement | preuve d'incohérence interne |
+|---|---|---|---|
+| `gold standard` | 15 / 14 gr | examen (ou traitement) de référence | « examen de référence » déjà 7× sur 5 grilles |
+| `BMI` | 16 / 10 gr | IMC | `IMC` déjà 20× sur 6 grilles ; RESCOS-18 écrivait **les deux dans la même ligne d'en-tête** |
+| `DMARD(s)` | 5 | traitement de fond | RESCOS-38 écrivait « Traitement de fond (DMARDs) » |
+| `PCI` | 4 | angioplastie | RESCOS-36 écrivait « PCI (angioplastie avec stent) » |
+| `SCFE` | 3 | épiphysiolyse fémorale supérieure | RESCOS-9b l'écrivait en toutes lettres deux lignes plus bas |
+| `ANA` | 2 | AAN | RESCOS-38 écrivait `AAN` |
+| `CABG` | 2 | pontage coronarien | RESCOS-36 écrivait « pontage coronarien » |
+| `MST` | 2 | IST | RESCOS-14 et 33 écrivaient `IST` |
+| `DM` | 2 | diabète | — |
+| `ESR` | 1 | VS | la parenthèse qui suit disait déjà « VS > 50 mm/h » |
+| `Giant cells` | 1 | cellules géantes | — |
+| `anti-DNA` | 1 | anti-ADN natif | — |
+| `IVDU` | 1 | usage de drogues IV | — |
+| `PRN` | 1 | à la demande | — |
+| `FIT` | 1 | test immunologique fécal | — |
+| `N/V` | 1 | nausées et vomissements | — |
+
+**`gold standard` : tranché, et traité sur les 41 d'un coup**, comme r4b le
+demandait. Le point qui justifiait le refus d'un `sed` : sur les 15 occurrences,
+**une qualifiait un traitement et non un examen** (RESCOS-38, « Méthotrexate =
+gold standard ») — un remplacement uniforme aurait produit « Méthotrexate =
+examen de référence ». Remplacement occurrence par occurrence, avec assertion de
+comptage sur chacune.
+
+**Le bordage a payé deux fois.** `\bVRE\b` est reconfirmé faux positif
+(AMBOSS-19, « volume de réserve expiratoire »). Et **un cas neuf, plus net** :
+`\bQID\b` vaut **quadrant inférieur droit** dans RESCOS-22 (« QSD, QSG, QID,
+QIG ») et **quater in die** dans AMBOSS-13 et 8. Même token, deux sens
+légitimes, un par corpus : dans une porte bloquante, ce motif aurait cassé
+RESCOS-22 pour un usage parfaitement correct. Écartés pour la même raison :
+`\bASA\b` (5-ASA, molécule), `\bRx\b` (« Rx thorax » = graphie suisse de la
+radiographie — faux ami parfait, `Rx` désignant l'ordonnance en anglais),
+`\bAF\b` (anamnèse familiale), `\bAAA\b` (sigle identique en français),
+`\bMI\b` / `\bCT\b` / `\bUS\b` / `\bPR\b` / `borderline` (usages installés).
+
+**Seize motifs ajoutés à `BANNED`** via un dictionnaire `ANGLICISMES` dans
+`scripts/rescos/check_nomenclature.py`, avec la mesure sur les trois corpus et
+les sept exclusions consignées dans le docstring. `check_nomenclature` sort
+**OK, 0 terme** ; les quatre contrôles d'AMBOSS sont inchangés.
+
+**Coût mesuré de l'harmonisation : +2 paires**, sur RESCOS-14 et RESCOS-35, hors
+lot. Deux items qui disaient déjà la même chose en deux mots différents la disent
+maintenant dans les mêmes mots, et le comparateur les apparie. C'est le prix
+exact de la cohérence terminologique ; le refuser reviendrait à préférer un
+chiffre à la lisibilité.
+
+### 7. Barème
+
+**Aucune modification.** Toutes les éditions portent sur `resume`, `expert`,
+`theorie`, `presentation`, plus **six substitutions de nomenclature dans la
+section notée** — RESCOS-1 (`criteria-text` « 5. Facteurs de risque VIH et
+IST », un `detail-text`, une `patient-response`), RESCOS-2 (`scoring-rule`),
+RESCOS-15 et RESCOS-31 (`detail-text`), RESCOS-36 (`detail-text`). Libellés,
+jamais structure ; le format `N. Libellé [réponse]` de `cases/scoring.js:159`
+est intact, les crochets de `patient-response` conservés. Précédent posé par r4a
+(`HIV` → `VIH` dans la section notée de RESCOS-1). Aucun sous-item ajouté ni
+retiré, aucun `maxScores`, `<span class="score">`, `sectionInfo[].count` ni
+`coef` touché, **aucune régénération de baseline**. Strictement **règle 1**.
+
+Les blocs `therapy` et `redflags` n'ont subi **aucune** modification de contenu.
+
+### 8. Vérifications
+
+| contrôle | résultat |
+|---|---|
+| `check_invariants.py` | **OK 41/41** |
+| `check_nomenclature.py` (table + 16 motifs) | **OK — 0 terme** |
+| `check_reachability.py` | **OK 41/41 à 100 %** |
+| `report_redundancy.py` (lot 31→40) | **151 → 46** |
+| `report_redundancy.py` (corpus) | **235 → 131** (intra 254 → 210) |
+| `check_no_loss.py 803d550` | 181 items / 27 grilles — filtrés par mots porteurs : 143 sains, **38 relus un par un**, 2 réductions réelles réparées |
+| `report_import_defects.py` | 0 / 0 / 2 / **96** / 0 / **12** / 0 (chevrons nus 101 → 96) |
+| équilibrage `<div>` · `bounds_anomalies` · `uncovered_content` | 0 · [] · [] sur 41/41 |
+| AMBOSS (4 contrôles + redondance) | **OK — 40/40, 147 paires, inchangé** |
+
+Les deux réductions réelles trouvées par le filtre : RESCOS-35 (« créatinine,
+plaquettes » du suivi, devenu « fonction rénale ») et RESCOS-36 (« consultation
+cardiologique régulière », disparue du suivi). Toutes deux restaurées. Les 36
+autres sont des variantes morphologiques (« amélioration » → « améliore »,
+« cutané » → « cutanée »), des fusions dans la ligne orale correspondante, ou
+la correction voulue de la cible LDL.
+
+German n'a été ni lu ni mesuré.
+
+### 9. Préoccupations
+
+**9.1 — L'écart noté ↔ SSP de RESCOS-26/27 subsiste, et il est isolé.** Leurs
+`therapy` notés prescrivent « LDL < 0,7 g/L », soit 1,8 mmol/L — la cible du
+haut risque, alors qu'une AOMI symptomatique relève du très haut risque. Le
+`resume` corrigé par r4b dit 1,4. La divergence demeure et je ne peux pas la
+réduire. Mais elle **ne concerne que ces deux grilles** : le contrôle mené ici
+montre que RESCOS-36 porte la bonne valeur dans son bloc noté et que RESCOS-37
+n'en a pas. L'arbitrage demandé par r4b (ouvrir le barème à la correction d'une
+valeur chiffrée dans un `therapy` quand une SSP explicite la contredit) porte
+donc sur **deux occurrences**, pas sur un défaut de corpus.
+
+**9.2 — Une grille prescrit un AINS et une restriction hydrique au même
+patient déshydraté.** RESCOS-31 : le `therapy` noté prescrit « kétoprofène
+100 mg IV » et « restriction hydrique pendant la crise (500 mL/24 h) » chez un
+sportif dont la section notée relève « déshydratation relative » et « hydratation
+habituelle insuffisante ». La page SSP dit « pas d'**hyper**hydratation forcée »
+— ce qui n'est pas la même consigne — et contre-indique les AINS sur rein
+hypoperfusé. **Non corrigé** (bloc noté). J'ai porté le raisonnement dans
+`theorie`, seul bloc pédagogique de cette grille, qui n'a pas de `resume`. C'est
+le second cas du chantier où un bloc noté demande un geste potentiellement
+délétère, après les infiltrations de RESCOS-28.
+
+**9.3 — Le prédicteur « chiffres » a besoin d'un second étage.** Il dit *quand*
+lire une SSP, mais pas *laquelle*. Ce lot montre que la page qui porte le
+symptôme peut être muette sur le chiffre tandis qu'une page transversale le
+porte en entier. Proposition : indexer les pages SSP par **cibles chiffrées**
+plutôt que par symptôme, ce qui se mécanise (un motif « valeur + unité + strate »
+sur le vault) et rendrait la lecture de niveau 1 dirigée au lieu d'être devinée.
+
+**9.4 — `annexe-expert` toujours non normalisé.** Quatrième lot consécutif.
+Ce lot ajoute « Criteres Diagnostiques » (RESCOS-38, déjà signalé pour
+RESCOS-26), « Rôles et interventions » (RESCOS-34). Non renommés, même raison.
+
+**9.5 — Le corpus s'arrête à 40, et le nom des lots l'a masqué.** Les trois
+volets ont été annoncés « 1-15 », « 16-30 », « 31-41 », en supposant une
+numérotation continue de 1 à 41. Il n'y a jamais eu de RESCOS-41 : le
+quarante-et-unième fichier est RESCOS-9b. Aucune grille n'a été omise — le tri
+de `lib.grids()` place bien 9b dans le premier lot, et r4a l'avait traitée —
+mais un lot suivant qui se fierait à l'intitulé chercherait un fichier absent.
