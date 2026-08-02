@@ -1738,3 +1738,322 @@ consigne.
 * Vault Obsidian lu en **lecture seule** (29 pages SSP), rien écrit hors du dépôt.
 * Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
   aucun `timeout`, aucun `snapshot_invariants.py`.
+
+---
+
+## k5e — Cinquième lot : grilles 141 à 170, plus les jumelles 179 et 194
+
+Branche `refonte-amboss-suisse`, base `a36576b`. `lib.grids()[140:170]` + les
+rangs **179** (`UIDC-Madame Kopf`) et **194** (`UIDC-Monsieur Paretic`), traités
+en même temps que leurs sœurs `AMC-Neuro-R1` et `AMC-Neuro-R2` comme le
+recommandait k5d — soit **32 grilles**.
+
+**23 des 32 modifiées, plus 1 grille hors lot au titre d'une jumelle
+(`AMC-ECOS1-S1`, rang 52) — 24 fichiers, 42 insertions, 80 suppressions.**
+Redondance inter-blocs du lot **180 → 111 (−38 %)**, dont
+**`expert ↔ theorie` 63 → 1 (−98 %)**. **26 trous du canonique comblés sur
+19 grilles.** Trois rendements de niveau 1.
+
+| porte | avant | après |
+|---|---|---|
+| `check_invariants.py` | rc 0 | **rc 0 — 198 grilles** |
+| `check_nomenclature.py` | rc 0 | **rc 0** |
+| `check_reachability.py` | 198/198 | **198/198 à 100 %** |
+| `bounds_anomalies` + `uncovered_content` | 0 | **0 sur 198** |
+| `report_redundancy.py` (lot de 32) | **180 inter** | **111 inter** |
+| `check_no_loss.py a36576b` | — | **18 disparitions, 18 verdictées** |
+| `report_import_defects.py` (24 fichiers) | — | **delta 0 sur 6 familles, +2 `chevron-nu`** |
+| `scripts/amboss/report_redundancy.py --quiet` | **147** | **147** |
+| `scripts/rescos/report_redundancy.py --quiet` | **127** | **127** |
+| `scripts/amboss/check_invariants.py` · `scripts/rescos/check_invariants.py` | rc 0 | **rc 0** |
+
+### Le lot le plus redondant du corpus, et pourquoi
+
+Le relevé initial de k1 désignait `UIDC-Madame Kopf` (22), `Convulsion fébrile`
+(21), `Fracture vertébrale ostéoporotique` (19) et `HSA avec convulsion` (19)
+parmi les cinq grilles les plus redondantes des 198 : **elles sont toutes dans
+ce lot**. Le lot part donc de **180 paires** contre 86 chez k5d, et de
+**63 `expert ↔ theorie`** contre 35.
+
+La cause est une seule figure, portée à son extrême : dans ces grilles,
+`expert`/Points clés n'est pas un cours *en réduction*, c'est **le cours de
+`theorie` recopié en abrégé, ligne pour ligne**, avec ses posologies. Sur
+`UIDC-Madame Kopf`, 12 des 15 Points clés ont un homologue mesuré dans
+`theorie` ; sur `UIDC-Monsieur Paretic`, 8 sur 16 ; sur `HSA avec convulsion`,
+5 sur 12. Le traitement est celui de k5a, sans amendement : retrait seulement si
+(a) le test du référent attribue l'item à `theorie`, (b) `theorie` en porte le
+contenu **intégral**, vérifié terme à terme, et (c) `expert` garde le
+comportement observable dans `Rôles` ou `Pièges` — ce qui était le cas presque
+partout, ces grilles doublant systématiquement chaque point clé d'un piège.
+**50 retraits secs et 15 spécialisations** dans `expert` (65 items disparus,
+dont 15 réécrits en place pour être observables dans la station).
+
+**Une seule paire `expert ↔ theorie` survit**, sur `Examen physique lombalgie` :
+« Oublier l'examen vasculaire (auscultation abdominale) » ↔ « 8. Examen
+vasculaire (auscultation abdominale, pouls) ». C'est **l'artefact de négation
+de k5d, transposé au couple `expert ↔ theorie`** : sur une station dont le sujet
+*est* la technique d'examen, les Pièges d'`expert` sont la négation, une à une,
+des étapes que `theorie` énumère. Comme les 7 `annexe-dd ↔ redflags` de k5d,
+elle ne se résout pas.
+
+### Vingt-six trous du canonique
+
+Instruments de k5d, employés dans l'ordre qu'il recommandait — trouver le trou
+par l'usage inversé ou le relevé d'éponymes, **puis** lire la page SSP.
+
+| grille | point absent du canonique | vivait dans |
+|---|---|---|
+| `AMC-Pharmaco-S4` | **respiration de Kussmaul** (0 occ. `theorie`) — traduction clinique de la compensation respiratoire | `annexe-dd` + `redflags` + `expert` + `scenario` |
+| `AMC-Psy-P12` | **contre-indications des stimulants** (cardiopathie, psychose, glaucome à angle fermé, hyperthyroïdie, IMAO) : `theorie` parlait deux fois de « contre-indication aux stimulants » sans jamais les nommer | `therapy`/Détails |
+| `AMC-Psy-P3` | **thérapie narrative d'exposition (TNE)** (0 occ. `theorie`) | `therapy` seul |
+| `AMC-Psy-P5` | **Échelle de désespoir de Beck** — `theorie` portait le fait (le désespoir est le premier prédicteur) sans l'instrument qui le mesure | `redflags` seul |
+| `AMC-Psy-P6` | **risque suicidaire de la phobie sociale** — 0 occ. de « suicid » dans `theorie` | `redflags` + `expert` + `annexe-dd` |
+| `AMC-Psy-S4` | **démence rapidement progressive** et **maladie de Creutzfeldt-Jakob** (0 occ. `theorie`) — le tempo qui disqualifie l'Alzheimer | `redflags` seul |
+| `Anorexie boulimie` | **syndrome de Mallory-Weiss**, Boerhaave, pneumomédiastin (0 occ. `theorie`) — complications œsophagiennes des vomissements | `redflags` seul |
+| `Anorexie boulimie` | **signe de Russell** (0 occ. dans **toute** la grille hors `criteria-detail`) | section notée seule |
+| `Céphalées - Homme 30 ans` | œdème papillaire = **signe d'HTIC** imposant IRM + veino-IRM : `theorie` listait la lettre P de SNOOP sans sa conséquence | `redflags` seul |
+| `Convulsion fébrile` | **signes de Kernig et de Brudzinski** (0 occ. `theorie`) | `redflags` seul |
+| `Dyspnée multifactorielle` | **sPESI** (0 occ. `theorie`) — le score qui décide de l'ambulatoire après un Wells qui n'est que diagnostique | `therapy` seul |
+| `Dyspnée multifactorielle` | **CRB-65 / CURB-65** (0 occ. `theorie`) | `redflags` seul |
+| `Examen physique lombalgie` | **sensibilité 91 % / spécificité 26 %** du Lasègue et 29/88 du Lasègue croisé | `expert` seul |
+| `Fracture vertébrale ostéoporotique` | **anti-RANKL** — mécanisme du dénosumab (0 occ. `theorie`) | `therapy` seul |
+| `Fracture vertébrale ostéoporotique` | **SERM** — classe du raloxifène, et les bouffées de chaleur | `therapy` + `expert` |
+| `Fracture vertébrale ostéoporotique` | **Timed Up and Go / Tinetti** (0 occ. `theorie`) | `therapy` seul |
+| `HSA avec convulsion` | **HTIC** (7 occ. `therapy`, 2 `redflags`, **0 `theorie`**) — le rationnel qui explique pourquoi nitroprussiate et nitroglycérine sont proscrits | `therapy`/Détails |
+| `HSA et refus de soins` | **complications neurologiques évolutives** — re-saignement, hydrocéphalie et DVE, HTIC, vasospasme | `therapy` + `redflags` |
+| `HSA et refus de soins` | **SIADH, Cerebral Salt Wasting, Takotsubo, œdème pulmonaire neurogène** (0 occ. `theorie`) | `therapy` + `redflags` |
+| `Méléna sous anticoagulant` | **cirrhose** (0 occ. `theorie`) — le substrat des varices que `theorie` chiffrait pourtant à 10-20 % | `annexe-dd` + `therapy` + `redflags` |
+| `Méléna sous anticoagulant` | **score CAGE / AUDIT-C** (0 occ. `theorie`) | `therapy` seul |
+| `Péritonite par perforation ulcéreuse` | **score de Boey** et **Mannheim Peritonitis Index** (0 occ. `theorie`) | `therapy` (+ `expert` pour le nom seul) |
+| `UIDC-Madame Kopf` | **signes de Kernig et de Brudzinski** — propagation depuis `AMC-Neuro-R1` (k5d) | `scenario` seul |
+| `UIDC-Madame Kopf` | oestroprogestatifs **sans** aura : possibles après évaluation du risque CV | `expert` seul |
+| `UIDC-Monsieur Paretic` | **NIHSS** et **ASPECTS** (0 occ. `theorie`) — les deux scores qui gouvernent la station | `redflags` + `expert` |
+| `AMC-ECOS1-S1` (hors lot) | **syndrome de Mallory-Weiss** — propagation depuis sa jumelle `Anorexie boulimie` | nulle part |
+
+**Aucun n'est venu de `report_redundancy.py`.** Trois viennent d'un
+« Détails : » de `therapy-item` (`AMC-Psy-P12`, `HSA avec convulsion`,
+`Péritonite`) — le motif du § 3.3 de k4, confirmé pour la **sixième** fois.
+
+**Le relevé d'éponymes gagne un cran** : le signe de Russell d'`Anorexie
+boulimie` n'est ni dans `redflags` ni dans `therapy`, il est dans un
+`criteria-detail` de la section notée — la même figure que Kernig et Brudzinski
+sur `AMC-Neuro-R1`, mais que l'instrument de k5d, borné à `redflags`/`therapy`,
+ne voyait pas. **Étendre le relevé aux `criteria-detail` est l'ouverture n° 1 de
+ce lot.**
+
+### Un renvoi qui promettait ce qu'il ne portait pas
+
+`HSA avec convulsion`/`theorie` ouvre sa section de rappel par
+« (Cf. cas HSA + refus de soins pour théorie complète) » — et énumère alors
+hydrocéphalie, vasospasme et « hyponatrémie (SIADH ou CSW) 30 % ». Or la grille
+désignée comme référence, `HSA et refus de soins`, **ne portait aucun de ces
+trois points dans son `theorie`** : ils vivaient dans son `therapy` et son
+`redflags`. Le renvoi pointait vers une fiche moins complète que celle qui
+renvoyait. C'est un défaut qu'aucune mesure de redondance ne peut voir, et il
+n'apparaît qu'en lisant les deux jumelles ensemble.
+
+### Jumelles — le relevé tf-idf complet des 198
+
+Fait, comme k5d le demandait, sur le **texte visible** de toutes les grilles
+(`lib.top_spans` + `lib.visible_text`), tf-idf normalisé, cosinus. Il confirme
+les quatre paires établies et en révèle vingt-sept autres.
+
+Paires du lot, toutes vérifiées :
+
+| lot 5 | jumelle | cos | statut |
+|---|---|---|---|
+| 160 `Convulsion fébrile` | **56** `AMC-ECOS1-S4` | **0,786** — le plus haut du corpus | jumelle traitée (k5b) ; elle porte **déjà** Kernig et Brudzinski : le trou n'était que d'un côté |
+| 179 `UIDC-Madame Kopf` | 127 `AMC-Neuro-R1` | 0,657 | **propagation faite** : Kernig et Brudzinski |
+| 157 `Anorexie boulimie` | 52 `AMC-ECOS1-S1` | 0,586 | **propagation faite** : Mallory-Weiss |
+| 143 `AMC-Psy-P10` | 52 `AMC-ECOS1-S1` | 0,585 | type **restrictif** : ni Russell ni Mallory-Weiss n'y ont lieu d'être — divergence, pas trou |
+| 194 `UIDC-Monsieur Paretic` | 128 `AMC-Neuro-R2` | 0,575 | **propagation faite** : les deux pièges spécialisés de k5d (code stroke, FA sur ECG normal) |
+| 168 `HSA et refus de soins` | 57 `AMC-ECOS1-S5` | 0,557 | 57 porte déjà SIADH dans `theorie` — pas de propagation |
+| 169 `Méléna` | 54 `AMC-ECOS1-S2` | 0,549 | rien à propager |
+| 166 `Fracture vertébrale` | 61 `AMC-ECOS1-S9` | 0,535 | rien à propager |
+| 167 `HSA avec convulsion` | 60 `AMC-ECOS1-S8` | 0,511 | 60 porte déjà SIADH **et** HTIC dans `theorie` |
+| 170 `Péritonite` | 63 `AMC-ECOSDiag2` | 0,511 | rien à propager |
+
+**Résultat de méthode : les jumelles ne sont pas symétriques.** Sur les cinq
+paires où un trou existait d'un côté, il n'existait de l'autre que **deux fois**.
+`AMC-ECOS1-S4`, `AMC-ECOS1-S5` et `AMC-ECOS1-S8` portaient déjà dans leur
+canonique ce qui manquait à leur sœur. **La jumelle n'est pas une copie à
+corriger en double : c'est un témoin, qui dit parfois où est la bonne
+formulation.**
+
+Relevé pour le dernier lot (rangs 171-198 sauf 179 et 194) : **19 des 26 grilles
+ont une jumelle déjà traitée**, dont `198 Vertiges aigus` ↔ `55 AMC-ECOS1-S3`
+(0,730), `171 Prééclampsie` ↔ `77 AMC-GynObs-V5` (0,643), `193 Marcel T.` ↔
+`43 AMC-Chir5-Vignette1` (0,507), `191 H. Toinnes` ↔ `53 AMC-ECOS1-S10` (0,504),
+`189` ↔ `32` (0,489), `187 Arden` ↔ `25` (0,475), `172 STEMI` ↔ `33` (0,452),
+`175 Trauma` ↔ `58` (0,451). Une paire **interne** au dernier lot : `189` ↔ `190`
+(0,402, même patient, deux grilles d'AAA), et `178 Linda` ↔ `196 Thomas`
+(0,392). **Sept grilles sans aucune jumelle ≥ 0,25** : 174, 176, 177, 182, 183,
+185, 188, 197.
+
+### Niveau 1 — 24 pages SSP, trois rendements, huit confirmations
+
+Couverture **28/32** d'après `docs/obsidian-mapping.yaml` (les 3 « ECOS Diag »
+mises à part). **Trois nouveaux trous de couverture** : `AMC-Psy-P12` (TDAH de
+l'adulte), `AMC-Psy-P2` (trouble paraphilique) et `AMC-Psy-P4` (TSA de l'adulte)
+n'ont **aucune** page SSP — ils s'ajoutent à `AMC-MCPR-ARC21` (k5c). Vault lu en
+**lecture seule**.
+
+**Trois rendements**, tous obtenus par lecture ciblée d'une page desservant un
+trou déjà trouvé, jamais par un filtre :
+
+* *Parésie - AVC* → **ASPECTS ≥ 6** au CT, que la page donne en red flag à côté
+  du NIHSS ≥ 6, et qui n'apparaît **nulle part** dans `UIDC-Monsieur Paretic`.
+* *Dyspnée* → la page suisse (SSMI/SGAIM) retient **CURB-65**, la grille
+  **CRB-65** : ce n'est pas une contradiction mais deux versions du même score,
+  et la relation (l'urée > 7 mmol/L) a été écrite dans `theorie`.
+* *TCA* → **pneumomédiastin** et emphysème sous-cutané cervical après
+  vomissements, absents de la grille, portés à côté de Mallory-Weiss et
+  Boerhaave.
+
+**Huit confirmations** — Kernig et Brudzinski (*Céphalée*, 11 et 10
+occurrences, avec vidéo et schéma), signe de Russell (*TCA*, avec photo),
+Mallory-Weiss et Boerhaave (*TCA*), Boey et Mannheim Peritonitis Index
+(*Urgences Abdominales Chirurgicales*, nommés tous deux), Creutzfeldt-Jakob
+(*Troubles de la Mémoire*, en red flag « déclin rapide »), Timed Up & Go et
+Tinetti (*Chute*), Glasgow-Blatchford et cirrhose (*Rectorragies*), comorbidité
+dépressive avec idéation suicidaire (*Trouble Anxieux*).
+
+**Une divergence NON forcée** : la page *Lombalgies* écrit un Lasègue « positif
+entre 40 et 60° », la grille « entre 30 et 60° ». Les deux bornes se lisent dans
+la littérature ; la grille est plus large, pas fausse. Conformément à la règle,
+la hiérarchie n'a pas été forcée. **Rendement nul sur 13 pages.** Beck,
+andexanet alfa, CAGE, AUDIT, sPESI et Jobert ont **0 occurrence** dans les pages
+qui les desserviraient : sur ces points, ce sont les grilles qui sont plus fines
+que le vault.
+
+### ⚠️ Ce que la mesure ne voit pas
+
+Recouvrement de vocabulaire (jetons > 2 lettres, mots-outils retirés), sur les
+32 grilles, avant et après :
+
+| couple | inclusions ≥ 90 % | dont **invisibles** (ratio ≤ 0,72) | paires mesurées |
+|---|---|---|---|
+| `expert → theorie` avant | 31 | 7 (23 %) | 24 |
+| `expert → theorie` après | **3** | **3 (100 %)** | **0** |
+| `theorie → therapy` avant | 94 | 70 (74 %) | 24 |
+| `theorie → therapy` après | 94 | 70 (74 %) | 24 |
+
+**Cinquième reproduction du résultat de k5c** : une fois les paires mesurées
+traitées, **100 % du résiduel `expert → theorie` est invisible au seuil**. Mais
+pour la première fois le résiduel lui-même **baisse** — 7 → 3, là où k5c et k5d
+restaient à 6 : le retrait de sections entières de Points clés emporte aussi
+les inclusions invisibles. `theorie ↔ therapy` est intact, comme toujours.
+Le seuil de 0,72 n'a pas été touché.
+
+### Les 111 paires restantes
+
+| couple | reste | statut |
+|---|---|---|
+| `theorie ↔ therapy` | 56 | barème : le canonique porte le champ, la section notée ne se dédoublonne pas |
+| `annexe-dd ↔ theorie` | 31 | `annexe-dd` ne se nettoie pas — artefact « X — arguments POUR » |
+| `redflags ↔ theorie` | 7 | barème |
+| `annexe-dd ↔ expert` | 5 | script de révélation ↔ argument |
+| `annexe-dd ↔ therapy` · `expert ↔ therapy` · `annexe-dd ↔ redflags` | 3 chacun | barème et artefact de négation |
+| `redflags ↔ therapy` | 2 | barème |
+| `expert ↔ theorie` | **1** | artefact de négation (voir ci-dessus) |
+
+`Convulsion fébrile` rend à elle seule 17 des 111, toutes entre `annexe-dd`,
+`therapy`, `redflags` et `theorie` : sa grille d'arguments est la négation
+littérale de ses drapeaux rouges (« pas de pétéchies » ↔ « 1. Présence de
+pétéchies »). Artefact pur.
+
+### Barème
+
+**Intact.** Mesuré sur le diff complet : **0 ligne** touchant `criteria-text`,
+`criteria-detail`, `detail-text`, `scoring-rule`, `patient-response`,
+`maxScores`, `sectionInfo`, `coef`, `<span class="score">`, `caseConfig`,
+`scoring.js`, `persistence.js`, `therapy-item`, `redflags-text`,
+`redflags-description`, `cloture-detail` ou `exemple-phrase`. Sur les
+122 lignes du diff, **120 sont des `<li>` de `expert` ou de `theorie`** et les
+2 restantes sont **le même `<p>` de `theorie`** (`UIDC-Madame Kopf`, ajout de
+Kernig et Brudzinski). **Règle 1 partout — pas de régénération du baseline.**
+
+`report_import_defects.py` mesuré grille par grille sur les 24 fichiers
+touchés : **delta 0 sur six familles**, et **+2 sur `chevron-nu`** — six
+nouvelles occurrences (« < 1 % », « < 100 mmHg », « < 90 % », « < 2 % » des
+scores sPESI, CRB-65 et Boey) contre quatre disparues avec les items retirés.
+Toutes vérifiées : ce sont des **seuils cliniques légitimes**, la famille dont
+le § 9 de la procédure établit qu'elle est **intégralement** faux positive sur
+ce corpus (2 414 occurrences). Un delta strictement nul est impossible dès qu'on
+écrit un score dans le canonique.
+
+### Anti-perte
+
+`check_no_loss.py a36576b` signale **18 disparitions sur 24 grilles modifiées**,
+toutes verdictées :
+
+* **9 reformulations en place** — l'item de `theorie` existe toujours, allongé
+  pour recevoir le point manquant (`AMC-ECOS1-S1`, `Anorexie boulimie`,
+  `Convulsion fébrile`, `Examen physique lombalgie` ×1, `Fracture vertébrale`
+  ×3, `Méléna`, `UIDC-Madame Kopf` ×1) ;
+* **5 spécialisations** — pièges rendus observables dans la station
+  (`UIDC-Monsieur Paretic` ×2, `UIDC-Madame Kopf` ×1, `HSA et refus de soins`
+  ×1, `Examen physique lombalgie` ×1) ;
+* **4 retraits d'`expert` précédés du portage de leur part propre dans
+  `theorie`** — Se/Sp du Lasègue croisé, bouffées de chaleur du raloxifène,
+  oestroprogestatifs sans aura, contre-indications aux oestroprogestatifs.
+
+Les 50 autres retraits d'`expert` ne sont pas signalés par `check_no_loss`
+parce que `theorie` en porte déjà un appariement au-dessus du seuil — la
+condition même qu'on s'était donnée pour les autoriser.
+
+Contrôle indépendant par ensembles d'items normalisés extraits de
+`git show a36576b:…` et de l'arbre de travail, sur les **198** grilles :
+**36 189 items distincts avant, 36 158 après**, delta net **−31**. Le détail
+bloc par bloc, mesuré par ensembles d'items sur les 24 fichiers touchés :
+`expert` **−65 / +15** (50 retraits secs, 15 spécialisations), `theorie`
+**−15 / +27** (12 items neufs, 15 items allongés). Solde local **−38** contre
+**−31** au corpus : sept formulations retirées ici survivent dans une grille
+jumelle. **Aucune perte.**
+
+### Neuf grilles du lot intactes
+
+`AMC-Psy-P1`, `AMC-Psy-P10`, `AMC-Psy-P13`, `AMC-Psy-P2`, `AMC-Psy-P4` et
+`AMC-Psy-S2` n'ont rien reçu : leurs paires sont toutes entre blocs non
+dédoublonnables, et le relevé d'éponymes n'y rend que des acronymes de
+structures de soins suisses (AVEP, CMS, CIPRET) ou des sigles de sources
+(CANMAT, WFSBP, BAP, AASM), qui ne sont pas des trous de savoir.
+`AMC-Psy-P2` mesure **0 paire, 0 terme distinctif absent du canonique** :
+**huitième grille entièrement intacte du corpus**. Les trois « ECOS Diag »
+n'ont aucun bloc de contenu — elles restent hors périmètre.
+
+### Droit et institutions — un point nouveau, signalé et non corrigé
+
+`AMC-Psy-S4` (démence, rang 156) propose dans ses **Rappels thérapeutiques** —
+donc dans `theorie`, un bloc que ce lot édite — les « associations de patients
+(**France Alzheimer**) » à une patiente suisse. C'est le troisième cas de la
+série après la « garde préventive » québécoise et l'AFM de `AMC-Neuro-P4`, et le
+**premier hors d'une section notée**.
+
+Il reste **non corrigé** : k5c a tranché que le choix d'une ressource
+associative est **éditorial, pas factuel**, et rien ne justifie de traiter
+celui-ci autrement que l'AFM parce qu'il se trouve dans un bloc éditable.
+Les équivalents suisses existent (**Alzheimer Suisse / Alzheimer Schweiz**,
+avec ses antennes cantonales) : c'est un **arbitrage d'auteur** à rendre, en
+même temps que celui de l'AFM. Le balayage des 46 motifs n'a pas été relancé.
+
+**Aucune erreur factuelle interne rencontrée** dans ce lot — le compteur de la
+série reste à sept.
+
+### Contraintes respectées
+
+* Rien écrit hors de `cases/casecos/`, de ce journal et du rapport k5e.
+  **`scripts/casecos/` non modifié** : le contrat de blocs de k4 tient sur
+  32 grilles de plus, y compris sur les quatre plus redondantes du corpus.
+  Les scripts d'analyse de ce lot vivent dans le scratchpad de session.
+* **Aucun `git add`** — commit par `git commit -- <chemins>` exclusivement.
+  Rien touché sous `cases/german/`, `cases/rescos-locales/`, `scripts/german/`,
+  `scripts/rescos/`, où l'utilisateur travaillait en parallèle.
+* **Aucune grille lue en entier avec `Read`** : bornage par `lib.top_spans()`,
+  lecture par fenêtres `offset`/`limit`, édition par remplacement exact.
+* **Aucun `grep` brut employé comme contrôle** : tous les chiffres publiés
+  viennent de `scripts/casecos/` ou de mesures Python passant par
+  `lib.visible_text()`, `lib.top_spans()`, `lib.matches()` (stdlib seule).
+* Vault Obsidian lu en **lecture seule** (24 pages SSP).
+* Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
+  aucun `timeout`, aucun `snapshot_invariants.py`.
