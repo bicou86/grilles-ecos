@@ -920,3 +920,184 @@ RESCOS report_redundancy            127 (inchangé) · 3 portes code 0
 * **Aucune lecture de grille entière avec `Read`** — bornes par `block_spans`,
   puis `Read` avec `offset`/`limit`.
 * **Aucune commande réseau, aucun `git push`, aucun `git gc` ni `git prune`.**
+
+---
+
+## Lot `l6a` — RESCOS-41 à 55, quinze grilles
+
+Base `135dbca`. Quinze grilles de `cases/rescos-locales/` modifiées, rien
+d'autre. **Redondance inter-blocs du lot : 87 → 1.** Corpus **1233 → 1147**
+(−86, exactement le gain du lot — l'enseignement 6 du pilote se confirme à la
+deuxième mesure). Témoins inchangés : AMBOSS **147**, RESCOS **127**.
+
+### Avant / après, grille par grille
+
+| grille | avant | après | gain |
+|---|---:|---:|---:|
+| RESCOS-41 — Dysurie (cervicite à Chlamydia) | 26 | **1** | −25 |
+| RESCOS-42 — Dysurie (cystite simple) | 13 | **0** | −13 |
+| RESCOS-43 — EM tabac | 0 | **0** | 0 |
+| RESCOS-44 — Fatigue (diabète inaugural) | 0 | **0** | 0 |
+| RESCOS-45 — Fatigue (dépression gériatrique) | 0 | **0** | 0 |
+| RESCOS-46 — Fièvre (endocardite) | 15 | **0** | −15 |
+| RESCOS-47 — Ictère (néoplasie pancréato-biliaire) | 16 | **0** | −16 |
+| RESCOS-48 — Lombalgie | 0 | **0** | 0 |
+| RESCOS-49 — Malaise (hypoglycémie) | 1 | **0** | −1 |
+| RESCOS-50 — Malaise (syncope, anémie ferriprive) | 0 | **0** | 0 |
+| RESCOS-51 — Œdèmes des MI (syndrome néphrotique) | 8 | **0** | −8 |
+| RESCOS-52 — Paralysie (AIT) | 1 | **0** | −1 |
+| RESCOS-53 — Parésie facio-brachiale (AVC) | 2 | **0** | −2 |
+| RESCOS-54 — Présentation au CDC | 3 | **0** | −3 |
+| RESCOS-55 — Colloque social | 2 | **0** | −2 |
+| **total** | **87** | **1** | **−86** |
+
+La paire résiduelle de RESCOS-41 est le **plancher structurel** de r3 § 1.4 :
+`resume` liste les complications par sexe, `expert` les nomme comme risque à
+signaler à la station. `expert` ne se touche pas.
+
+### Le mapping inverse a couvert les quinze grilles
+
+L'enseignement 2 du pilote se généralise sans exception. Une recherche
+`RESCOS-(4[1-9]|5[0-5])` dans le vault rend **dix pages**, et chacune nomme ses
+grilles dans son bloc « Références PDF » :
+
+`SSP — Dysurie` (41, 42) · `Skills — Entretien Motivationnel` (43) ·
+`SSP — Fatigue` (44, 45) · `SSP — Fièvre` (46) · `SSP — Ictère` (47) ·
+`SSP — Lombalgies` (48) · `SSP — Malaise & PC brève` (49, 50) ·
+`SSP — Œdèmes des MI` (51) · `SSP — Parésie - AVC` (52, 53) ·
+`Skills — Présentation de Cas` (54, 55).
+
+**Deux grilles relèvent d'une page « Skills » et non d'une page « SSP »** — le
+motif de recherche doit couvrir tout le vault, pas le seul dossier `SSP ECOS/`.
+
+### Le niveau 1 a tranché douze points
+
+Le prédicteur du pilote — densité de seuils chiffrés sur la page — se vérifie :
+les pages les plus chiffrées (`Parésie - AVC`, `Fièvre`, `Ictère`, `Dysurie`)
+ont produit les arbitrages, la page `Entretien Motivationnel` aucun.
+
+**Corrections d'erreur (5).**
+
+1. **RESCOS-42 · `theorie` et `presentation` — nitrofurantoïne 100 mg x2/j.**
+   `SSP — Dysurie` écrit **100 mg 3×/j pendant 5 j**. Le schéma 2×/j est la
+   forme nord-américaine (monohydrate/macrocristaux) ; appliqué à la
+   nitrofurantoïne du Compendium suisse, il **sous-dose**. Corrigé aux deux
+   endroits. La posologie n'apparaît dans **aucun** sous-item noté : règle 1.
+2. **RESCOS-46 · `resume` — « ETO préférable à ETT » et « ETO systématique ».**
+   La page impose **ETT en première intention, ETO si la suspicion persiste**,
+   et nomme le piège : « une ETT normale n'élimine pas l'endocardite
+   (sensibilité ~60-70 %) ». Les deux items disaient l'inverse de la séquence
+   suisse. Corrigés en portant la sensibilité.
+3. **RESCOS-47 · `theorie` — « Seuil de visibilité : bilirubine > 50 µmol/L ».**
+   La page écrit **~35-40 µmol/L**, subictère scléral dès 25-35. Corrigé.
+4. **RESCOS-47 · `theorie` — « Triade classique : ictère + douleur + perte de
+   poids ».** Contradiction interne et contradiction avec la page. `expert` et
+   `presentation` disent tous deux *ictère + perte de poids + anorexie*, la
+   ligne suivante de `theorie` dit « ictère indolore », et la page range la
+   douleur parmi les caractères **absents** du cancer du pancréas. Corrigé en
+   « ictère progressif INDOLORE, amaigrissement et anorexie », avec la mention
+   explicite du piège. Voir « Préoccupations ».
+5. **RESCOS-52 · `theorie` — « Définition moderne : symptômes < 1 heure ».**
+   La définition actuelle de l'AIT est **tissulaire, non temporelle** :
+   régression complète **sans lésion en DWI**. La page l'écrit mot pour mot.
+   Corrigé, la durée reprise comme donnée descriptive (« < 24 h, le plus
+   souvent < 1 h »).
+
+**Précisions chiffrées portées depuis la page (7).** RESCOS-42 posologies de
+`resume` (fosfomycine 3 g, pivmécillinam 400 mg ×3/j, nitrofurantoïne
+100 mg ×3/j) et épargne des fluoroquinolones · RESCOS-46 définition de la fièvre
+(≥ 38,0 °C tympanique / ≥ 38,3 °C rectal) et protocole d'hémocultures
+(3 paires sur 24 h, 8-10 mL/flacon, bactériémie continue) · RESCOS-44 critères
+diagnostiques du diabète (glycémie à jeun ≥ 7,0 mmol/L ×2 ou HbA1c ≥ 6,5 %) et
+seuil d'Epworth > 10 · RESCOS-48 « > 90 % mécaniques, guérison en 4-6 semaines,
+pas d'imagerie sans drapeau rouge » et **décompression < 48 h** dans la queue de
+cheval · RESCOS-53 **TA cible avant thrombolyse < 185/110 mmHg**.
+
+### Les trous du bloc canonique — sept, dont quatre de sécurité
+
+L'enseignement 5 se confirme, et **s'étend au-delà de `resume`** : sur les onze
+grilles de ce lot **sans `resume`** (43, 44, 45, 48, 49, 50, 51, 52, 53, 54,
+55), c'est `theorie` qui joue le rôle de fiche canonique, et le même symptôme
+s'y lit — une information que la page tient pour capitale et qu'aucun bloc de la
+grille ne porte.
+
+| grille | ce qui manquait | où porté |
+|---|---|---|
+| RESCOS-41 | la **ceftriaxone 250 mg IM** du co-traitement gonococcique — pourtant sous-item **noté** (`m4-detail-1`) et présent dans `presentation` | `resume`/Antibiothérapie |
+| RESCOS-42 | toutes les **posologies** : `resume` disait « fosfomycine dose unique », « nitrofurantoïne 5 jours », sans une seule dose | `resume`/Antibiothérapie |
+| RESCOS-46 | l'**évaluation de gravité** : aucun qSOFA, aucun lactate, pour une fièvre à 39,1 °C aux urgences | `resume`/Urgence |
+| RESCOS-47 | l'**antibiothérapie de l'angiocholite** : `resume` nommait l'angiocholite deux fois et ne portait que le drainage. **Ceftriaxone 2 g + métronidazole** ajoutés. Et le **TP/facteur V**, que la page érige en seul marqueur précoce de gravité hépatique | `resume`/Prise en charge et /Biologie |
+| RESCOS-48 | l'**anévrisme de l'aorte abdominale** : zéro occurrence dans toute la grille, pour un homme de 75 ans lombalgique. La page le range parmi les urgences et impose la palpation abdominale au-delà de 60 ans | `theorie`/Drapeaux rouges et /Examen clinique |
+| RESCOS-50 | la **recherche du saignement digestif** : zéro occurrence de ferritine, de source de saignement ou d'endoscopie, pour un homme de 30 ans en anémie ferriprive. Règle du corpus SSP : « anémie ferriprive chez un homme = saignement digestif jusqu'à preuve du contraire » | `theorie`/Syncope et anémie et /Examens |
+| RESCOS-53 | la **glycémie capillaire** : absente de la grille entière, alors que la page en fait la règle d'or (« l'hypoglycémie est le grand mimic », < 3,9 mmol/L) | `theorie`/Évaluation clinique |
+| RESCOS-43 | la **pharmacothérapie** : `theorie` chiffrait « EM + pharmacothérapie : 15-30 % » sans jamais nommer une molécule | `theorie`/Sevrage tabagique |
+| RESCOS-49 | l'**inefficacité du glucagon** quand les réserves hépatiques de glycogène sont épuisées — et l'alcool figure dans les causes listées par la grille elle-même | `theorie`/Rappels |
+| RESCOS-52 | la **glycémie capillaire** et le score **ABCD2**, que la page nomme comme l'outil de stratification de l'AIT | `theorie`/Diagnostic |
+
+### Les gestes de réduction, par famille
+
+* **§2 et §3 convertis en `presentation-reponse text`** — les 4 grilles à
+  `presentation` (41, 42, 46, 47), 8 listes converties. C'est le geste le plus
+  rentable : **26 des 86 paires**.
+* **§3 « Traitement immédiat » fusionné** — la `reponse-section` n'est pas une
+  `presentation-reponse list` ; elle se **fusionne** comme §1, elle ne se
+  convertit pas. 15 paires.
+* **§1 fusionné, forme `structured` conservée** — enseignement 3 appliqué sans
+  exception. 6 paires.
+* **Listes de « Touches ludiques » recopiées** — une seule suppression pleine
+  (RESCOS-41, « Complications possibles », copie 5/5 de `theorie`/Complications,
+  vérifiée item par item) ; ailleurs, **fusion** plutôt que suppression, parce
+  qu'un item propre s'y cachait toujours (« Confondre avec une cystite simple »,
+  « Tabac facteur principal »).
+* **`theorie` allongé face à `therapy`, `redflags` et `expert`** — sur les
+  grilles sans `presentation` (51, 54, 55, 49, 52, 53), l'unique côté mobile est
+  `theorie` et `annexe-dd`. 22 paires, toutes tombées en **enrichissant** le
+  côté mobile, jamais en le tronquant.
+* **`annexe-dd` retouché sur 3 grilles** (51, 53, 54) — enseignement 4 : aucune
+  case à cocher, donc barème hors d'atteinte. Retouches d'enrichissement
+  (œdème péri-orbitaire matinal du syndrome néphrotique, que la page nomme deux
+  fois), pas de correction d'argument mal rangé — **aucun n'était mal rangé
+  dans ce lot**.
+
+### Barème — règle 1, strictement
+
+Toutes les éditions portent sur `resume`, `theorie`, `presentation` et
+`annexe-dd`. **Aucun bloc noté** : `therapy` et `redflags` (RESCOS-51, 54, 55)
+n'ont pas été approchés, et les divergences qu'ils portent sont consignées
+ci-dessous plutôt que corrigées. 0 sous-item ajouté ou retiré ; `maxScores`,
+`<span class="score">`, `sectionInfo[].count` et `coef` intacts ; **baseline non
+régénérée**. Vérifié sur le diff : aucune ligne touchant `window.caseConfig`,
+`<script`, `criteria-text`, `criteria-detail`, `type="checkbox"`,
+`type="radio"`, `maxScores`, `sectionInfo` ou `coef`.
+
+### Vérifications
+
+```
+check_invariants.py                 OK — 165 grilles, code 0
+check_nomenclature.py               OK — 0 terme, code 0
+check_reachability.py               OK — 156/156 notées à 100 %, code 0
+report_redundancy.py 41→55          87 -> 1
+report_redundancy.py (corpus)       1233 -> 1147  (−86 = gain du lot)
+check_no_loss.py 135dbca            67 items, verdictés un à un, 0 perte
+browser_probe.js RESCOS-4x --deep   9/9 sans exception · 9/9 à 100 % · registry
+browser_probe.js RESCOS-5x --deep   12/12 sans exception · 12/12 à 100 % · registry
+                                    barre nav fixed sans recouvrement, crochets colorés
+AMBOSS  report_redundancy 147 (inchangé) · 3 portes code 0
+RESCOS  report_redundancy 127 (inchangé) · 3 portes code 0
+```
+
+Les sondes navigateur couvrent 21 grilles (les préfixes `RESCOS-4` et `RESCOS-5`
+englobent 56 à 59 en plus des quinze du lot) : aucune régression sur les six
+voisines.
+
+### Ce que le lot `l6a` n'a pas fait
+
+* **Rien sous `cases/german/`, `scripts/german/`, `cases/casecos/` ni
+  `scripts/casecos/`** — ni lu, ni écrit. Commit `path`-scopé.
+* **Aucun bloc créé.** Onze des quinze grilles n'ont ni `resume` ni
+  `presentation` ; ils n'ont pas été fabriqués, l'information canonique
+  manquante a été portée dans `theorie`.
+* **Aucune lecture de grille entière avec `Read`** — bornes par `block_spans`,
+  puis `Read` avec `offset`/`limit`.
+* **Aucune modification de `cases/scoring.js`** ni d'aucun fichier partagé.
+* **Aucune commande réseau, aucun `git push`, aucun `git gc` ni `git prune`.**
