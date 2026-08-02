@@ -134,6 +134,62 @@ Les trois couples qui portent 72 % du total :
 `presentation` est impliquée dans 440 des 610 paires : c'est le bloc par
 lequel commencer.
 
+### Ce que le contrat d'AMBOSS ne disait pas, et que RESCOS oblige à trancher
+
+Trois blocs de RESCOS n'existent pas dans le contrat d'AMBOSS. Décidé au
+pilote RESCOS-21, applicable aux 40 grilles suivantes.
+
+| Bloc | Rôle | Ne porte jamais |
+|---|---|---|
+| `cloture` | **Conduire la clôture à l'oral** — explication en langage patient, questions du patient, réponses attendues | Théorie, check-list, raisonnement différentiel |
+| `therapy` | Attendu **noté** du critère qui l'héberge | — (ne se dédoublonne pas : voir ci-dessous) |
+| `redflags` | Attendu **noté** du critère qui l'héberge | — (idem) |
+
+**`cloture` est de la famille de `scenario`, pas de celle des fiches.** Trois
+faits concordants : sa section de page ne porte **aucun critère noté** ; son
+contenu est un **script d'échange** (les questions du patient y sont entre
+crochets, comme les réponses patient du reste de la grille) ; et
+`cases/scoring.js:294` fait entrer `.cloture-content` dans le **même sélecteur**
+que `.criteria-text`, `.redflags-text`, `.therapy-section` et `.detail-text` —
+le moteur le traite déjà comme un porteur de paroles de patient et y colore les
+crochets. **Les crochets y sont donc porteurs de sens : ne jamais les retirer.**
+
+Il **reste compté** par `report_redundancy.py` — il n'est *pas* ajouté à
+`REDUNDANCY_EXCLUDED`. Motifs : il pèse 2 paires sur tout le corpus (le
+retirer ne gagnerait rien et rendrait une mesure publiée incomparable), et il
+porte du contenu unique (durée d'hospitalisation, pronostic annoncé au
+patient) qu'une exclusion mettrait hors de portée de `check_no_loss`.
+
+**`therapy` et `redflags` vivent dans un `criteria-row` de la section notée** :
+ce sont les attendus de correction du critère, pas des fiches pédagogiques. Une
+paire dont un côté est `therapy` ou `redflags` n'est donc **pas une redondance à
+retirer** — c'est l'accord voulu entre l'attendu noté et la fiche de révision.
+La hiérarchie à trois niveaux s'y applique dans ce sens seulement : c'est le
+pédagogique qui s'aligne sur eux, jamais l'inverse.
+
+### Le grain du dédoublonnage : réduire, ne pas supprimer
+
+`presentation`/« 1. Arguments pour et contre chaque hypothèse » est conservée —
+**AMBOSS la garde dans 22 de ses 25 grilles** et tolère les 48 paires
+`annexe-dd ↔ presentation` qui en restent. La supprimer romprait la
+comparabilité entre corpus. Ce qui se traite, c'est son **contenu** : dans
+RESCOS elle est recopiée mot pour mot depuis `annexe-dd` (paires à 1,0), là où
+l'état traité d'AMBOSS n'en garde qu'un ou deux arguments par hypothèse, à
+0,73-0,75. Le geste est donc : **fusionner les arguments en une ou deux lignes
+orales par hypothèse**, `annexe-dd` gardant la grille écrite complète et son
+examen discriminant. Aucune information n'est perdue, et les paires verbatim
+disparaissent.
+
+### Le plancher structurel
+
+Une grille dont le diagnostic tient en une triade (ici coup de poignard /
+ventre de bois / matité hépatique disparue) ne descendra pas sous une dizaine de
+paires : chaque bloc doit nommer les signes cardinaux par fonction —
+`annexe-dd` comme arguments POUR, `resume` comme signes d'examen, `expert`
+comme décodage pour l'examinateur, `presentation` comme mnémo. **Ne pas
+chercher à les faire disparaître** : la justification tient en une ligne et le
+contenu est irréductible.
+
 ---
 
 ## 4. Vérifier

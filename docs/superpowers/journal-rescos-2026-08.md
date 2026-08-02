@@ -432,3 +432,113 @@ n'est dérivé de ses points.
 
 Aucun fichier de `cases/` n'est touché par ce volet : il ne modifie que
 l'outillage et les deux snapshots.
+
+---
+
+## Dédoublonnage — pilote RESCOS-21
+
+### RESCOS-21 — Douleur épigastrique en coup de poignard, perforation d'ulcère (page SSP : Douleur Abdominale)
+
+**Redondance : 55 → 18 paires inter-blocs.** Grille pilote du corpus, la plus
+redondante des trois corpus du projet.
+
+**Niveau 1 non interrogé.** `SSP — Douleur Abdominale` dessert **31 grilles** :
+au-delà de la fourchette où l'indicateur de rendement prédit un arbitrage utile
+(2-6 grilles tranchent, 16-27 presque jamais). Aucun point de cette grille n'a
+eu besoin d'elle — les deux arbitrages rencontrés se sont réglés au niveau 2
+(section notée) ou par correction directe.
+
+**Modifications**
+
+- `theorie`/Rappels thérapeutiques · H. pylori : « Éradication H. pylori
+  systématique » → « Recherche d'H. pylori sur les biopsies, éradication si
+  positive »
+  **niveau 2** — la section notée tranche : `m7-detail-0` porte
+  « Éradication H. pylori si positive », et `presentation`/Suivi disait déjà
+  « si positive ». Le bloc pédagogique contredisait seul l'attendu noté.
+- `theorie`/Rappels thérapeutiques · antibiothérapie : « Antibiothérapie précoce
+  large spectre » → « Antibiothérapie débutée avant l'incision (couverture BGN
+  et anaérobies) »
+  **niveau 2 + rôle du bloc** — reprise de la formulation du `therapy` noté
+  (« Débutée avant le bloc opératoire », « Couverture BGN et anaérobies »).
+  `theorie` porte désormais le *rationnel*, il ne redit plus la liste du
+  `resume`.
+- `resume`/Mesures initiales · ajout : « Antalgie par titration de morphine IV »
+  **règle anti-perte** — l'antalgie figurait dans la section notée
+  (`therapy`/Analgésie, « Morphine IV titrée ») et dans `presentation`
+  (Checklist mentale, Version longue, Traitement), mais **pas dans le bloc
+  canonique**. Une fiche de révision de la perforation d'ulcère sans antalgie
+  est un trou réel ; l'axe 2 exige que `presentation` soit un sous-ensemble
+  strict de `resume`.
+- `expert`/Pièges · précision portée avant suppression : « Ne pas retarder la
+  prise en charge pour examens » → « Ne pas retarder la chirurgie pour des
+  examens inutiles »
+  **règle anti-perte, axe 6** — la formulation d'origine pouvait se lire
+  « ne pas faire d'examens » ; celle de `presentation`/Pièges ECOS était plus
+  juste et a été portée dans le canonique **avant** sa suppression.
+- `expert`/Pièges · « Perforation bouchée peut donner tableau incomplet » →
+  « Perforation bouchée : tableau atténué, ne pas écarter le diagnostic »
+  contrat — `theorie`/Formes cliniques décrit la forme, `expert` en tire la
+  conséquence de station. Le doublon verbatim disparaît, les deux rôles se
+  séparent.
+- `expert`/Points clés · retrait de « Urgence chirurgicale absolue »
+  **axe 7** — `expert` = ce que l'examinateur observe (les quatre équations
+  signe → interprétation restent), `resume`/Points clés ECOS = ce que
+  l'étudiant retient, et il porte déjà « C'est une urgence chirurgicale
+  absolue ».
+- `presentation`/Checklist mentale · suppression de la `mnemo-box`
+  « TRIade perforation »
+  **axe 5 + précédent AMBOSS-1** — elle doublait strictement la « Triade de
+  perforation » de Touches ludiques. Son seul apport, « (ventre de bois) », a
+  été porté dans le mnémo conservé avant la suppression. La Checklist mentale
+  redevient une trame pure.
+- `presentation`/Touches ludiques · « Contracture abdominale généralisée » →
+  « Contracture abdominale généralisée (ventre de bois) » (port ci-dessus ;
+  4 paires → 1).
+- `presentation`/Pièges ECOS · **suppression de la sous-section entière**
+  **axe 6** — les cinq pièges sont couverts par `expert`/Pièges. Le seul
+  signalé par `check_no_loss` (« Toujours biopsier les berges de l'ulcère pour
+  éliminer cancer ») survit à trois endroits : `expert`/Pièges, la section
+  notée `m5-detail-6` et la Version longue.
+- `presentation`/§1 Arguments pour et contre · les cinq hypothèses passent de
+  17 puces recopiées d'`annexe-dd` à 10 lignes fusionnées
+  **règle du format** — dix paires étaient à 0,84-1,0, c'est-à-dire du
+  copier-coller sans changement de format. La sous-section est **conservée**
+  (AMBOSS la garde 22 fois sur 25) ; c'est son contenu qui redevient une
+  restitution orale. Aucun argument n'est perdu : « Antécédent d'ulcère » et
+  « Silence abdominal » sont absorbés dans les deux lignes de Q1, « Nausées /
+  vomissements » dans la ligne POUR de Q2, « Pas d'irradiation transfixiante »
+  dans la ligne CONTRE de Q2, « Âge jeune » ×2 dans « Patient de 35 ans sans
+  antécédent vasculaire » et « À 35 ans, sans masse abdominale pulsatile ».
+
+**Divergences consignées**
+
+- Aucune. Les deux contradictions rencontrées (H. pylori, antibiothérapie) ont
+  été tranchées au niveau 2 par la section notée.
+
+**Non traité, et pourquoi**
+
+- `annexe-expert` de cette grille intitule sa troisième section « Techniques
+  Examen » et non « Rôles et interventions » — un des 18 intitulés distincts
+  du corpus (contre 3 dans AMBOSS). Renommer n'aurait rien changé au contenu ni
+  à la redondance ; la normalisation des intitulés d'`annexe-expert` est une
+  décision de corpus, à arbitrer séparément.
+- `annexe-theorie` n'a pas de section d'ouverture « Diagnostic le plus
+  probable » — écart de gabarit du corpus (5 grilles sur 37 l'ont), pas un
+  défaut de cette grille.
+
+**Barème** — aucune modification. Toutes les éditions portent sur des blocs non
+notés ; `check_invariants` reste vert sans régénération de baseline. Aucun
+sous-item noté ajouté ni retiré (**règle 1** du barème, exclusivement).
+
+**Vérifications**
+
+| contrôle | résultat |
+|---|---|
+| `check_invariants.py` | **OK 41/41** |
+| `check_nomenclature.py` | **OK — 0 terme** |
+| `check_reachability.py` | **OK 41/41 à 100 %** |
+| `report_redundancy.py RESCOS-21_` | **55 → 18** |
+| `check_no_loss.py 6d11c3c RESCOS-21_` | 1 item signalé, retrouvé 3× ailleurs |
+| équilibrage `<div>` / `bounds_anomalies` | 0 / [] |
+| AMBOSS (4 contrôles) | **OK — 147 paires, inchangé** |
