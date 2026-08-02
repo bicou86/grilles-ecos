@@ -1,0 +1,402 @@
+# Journal — `cases/rescos-locales`, août 2026
+
+Branche `refonte-amboss-suisse`. Base `260a903` (l'inventaire du lot `l2`).
+Quatre réparations **techniques** : aucun contenu médical n'a été modifié.
+
+| lot | commit | objet |
+|---|---|---|
+| `l2` | `260a903` | outillage + audit — **aucune** modification de grille |
+| `l3` · défaut 1 | `ec4fd66` | bascule des 156 moteurs embarqués sur `cases/scoring.js` |
+| `l3` · défaut 2 | `7e13f93` | RESCOS-63, somme des coefficients 0,5 → 1 |
+| `l3` · défaut 3 | `73353a1` | RESCOS-69b, deux vignettes sous le même nom |
+| `l3` · défaut 4 | `9c34f34` | 92 références d'image mortes retirées |
+
+Les quatre commits sont `path`-scopés sur `cases/rescos-locales` et
+`scripts/rescos-locales`, et **rien d'autre** — vérifié commit par commit.
+
+### Mesure d'ensemble, avant et après
+
+| | `260a903` | après `l3` |
+|---|---:|---:|
+| exceptions JavaScript, 165 grilles | **13 446** | **0** |
+| grilles sans exception ni erreur | 9 / 165 | **165 / 165** |
+| erreurs 404 (images) | 92 | **0** |
+| grilles écrivant **leur** entrée `ecos_registry` | **0 / 165** | **156 / 165** |
+| grilles à 100 % après remplissage complet | 155 / 156 | **156 / 156** |
+| `check_reachability` | ÉCHEC, 1 grille | **OK, 156/156** |
+| `check_invariants` | OK | **OK** |
+| `report_redundancy` | 1258 | **1258** |
+| `check_no_loss 260a903` | — | **0 item disparu / 156 grilles** |
+| poids hors base64 | 27,1 Mo | **21,9 Mo** |
+| témoin AMBOSS · RESCOS | 147 · 127 | **147 · 127** |
+
+Les 9 grilles qui n'écrivent pas au registre sont **exactement** les 9 feuilles
+porte : elles n'ont pas de score, et c'est correct.
+
+> **Le décompte du registre demande une précaution.** `localStorage` est partagé
+> par toutes les pages de la même origine : compter « `ecos_registry` non vide »
+> rend **165/165** parce que chaque grille voit les entrées des précédentes. Le
+> chiffre juste est celui des grilles qui écrivent **leur propre clé** —
+> `saveToRegistry()` la construit depuis `location.pathname`, donc
+> percent-encodée — à `pct: 100, grade: "A"`. C'est **156/165**.
+
+---
+
+## Défaut 1 — les 156 moteurs de calcul
+
+**Ce qui était mesuré à `260a903`** : 156 grilles notées, chacune sa copie de
+`calculateScores()`, **une seule variante** (empreinte SHA-256
+`c3e2534e…` sur 156), et cette variante est la **même fourche périmée** que
+celle de RESCOS-7 et RESCOS-9, avec les **six mêmes manques** — garde
+`if (missingEl)`, appel **et** définition de `saveToRegistry()`, chargeur de
+`srs.js`, mode circuit avec retour à `exam.html`, `createNavBar()` et
+`createCircuitNav()`.
+
+Le manque n° 1 se réalisait à chaque calcul : le
+`<div class="missing-items" id="missingItems">` que le moteur adresse sans garde
+est **commenté** dans les 156 grilles — vérifié en retirant d'abord les
+commentaires HTML, 156/156, et non au `grep` brut, qui le trouve *dans* le
+commentaire et conclut l'inverse.
+
+### Décision : bascule, pas report
+
+La même que r7, pour les mêmes raisons : l'écart est de **six** points et non de
+deux ; la définition de `saveToRegistry()` manque aussi, donc un report devrait
+recopier la fonction entière ; et reporter six corrections dans 156 copies
+reconduirait le mécanisme de dérive que ce défaut réalise déjà.
+
+`scripts/rescos-locales/apply_shared_engine.py` remplace le premier des deux
+`<script>` en ligne par un `<script>` de configuration et
+`<script src="../scoring.js"></script>`. Le second `<script>` (l'appel final à
+`colorPatientResponses()`) est laissé intact — `cases/scoring.js` le porte
+également en fin de fichier, et RESCOS-7/9 le conservent de même.
+
+### Les trois vérifications que RESCOS-7/9 ne demandaient pas
+
+**1. Chemin relatif.** `cases/rescos-locales/` est à deux niveaux sous la racine,
+comme `cases/rescos/`. `../scoring.js` → `cases/scoring.js` ; le chargeur
+dynamique `(location.pathname.indexOf('/cases/') >= 0 ? '../' : 'cases/') +
+'srs.js'` → `cases/srs.js` ; les `../../index.html` et `../../exam.html` que le
+moteur construit → la racine du dépôt. Confirmé par le harnais : aucun 404 de
+script.
+
+**2. CSS en ligne.** Les 165 grilles ont leur `<style>` et ne chargent pas
+`cases/case-styles.css`. Mesure classe par classe, sur les 156 : `score-0`…
+`score-5`, `score-max`, `score-a`…`score-e`, `lacune-rouge/orange/verte`,
+`note-a`…`note-e`, `note-neutral`, `criteria-zero-points`, `criteria-one-point`,
+`criteria-full-points`, `criteria-not-answered`, `communication-note-*`,
+`communication-not-answered`, `timer-running/warning/critical`,
+`status-running/warning/finished`, `revision-mode`, `exam-mode`, `has-content`,
+`missing-item` — **0 absence**. Le CSS en ligne ne casse rien.
+
+**3. La barre de navigation, elle, était absente — et entrait en collision.**
+`createNavBar()` (manque n° 6) insère une `.case-nav-bar` en
+`position: fixed; top: 20px; left: 20px`. Ses quatre classes n'existaient dans
+aucune des 156 feuilles de style, et `top: 20px; left: 20px` est **exactement**
+la place qu'y occupait `.timer-container` (156/156). `cases/case-styles.css`
+avait déjà résolu la même collision pour les trois autres corpus en déplaçant le
+minuteur à `top: 70px` : le script recopie ce geste et ajoute les règles
+`.case-nav-bar` (lignes 1209-1221 et 3630-3698 du fichier partagé). Ni
+`case-styles.css`, ni `persistence.js`, ni `theme-sync.js` ne sont chargés —
+aucun des six manques ne les concerne.
+
+### Transposition du barème
+
+Vérifiée, pas supposée. Deux formes coexistaient :
+
+* **déclarative** (154 grilles) — les trois membres droits `maxScores = …`,
+  `coef = …`, `sectionInfo = …` sont repris **verbatim**, sans reformatage ;
+* **impérative** (RESCOS-63 et « RESCOS-64 station double 2 », exactement la
+  forme de RESCOS-7 et RESCOS-9) — reconstruite dans l'ordre des
+  `sectionInfo.push({…})`, chaque champ recopié tel quel.
+
+**Contrôle** : pour chacune des 156, `parse_config()` rend le **même
+quadruplet** avant et après — `maxScores`, `coef`, `sectionInfo` (clé, préfixe,
+`count`, `scoreId`, `isComm`) et dénominateurs affichés. **0 divergence.**
+
+**Contrôle de morsure** (le silence du vérificateur ne vaut que s'il mord) :
+`maxScores.anamnese` forcé de 42 à 41 sur une grille → `<<< ECART` ;
+`src="../scoring.js"` remplacé par `../scoringX.js` → `MOTEUR INCONNU`.
+
+### Outillage adapté
+
+* `check_reachability.parse_config()` : branche `window.caseConfig` ajoutée, les
+  deux anciennes conservées (elles décrivent ce que le corpus a porté, et c'est
+  la seule chose qui distinguerait une grille réimportée du vault).
+* `engine_fingerprint()` : rend le marqueur `shared:cases/scoring.js` pour une
+  grille qui charge le moteur partagé. Un **marqueur** et non un SHA : ce qui
+  justifiait une empreinte était l'invisibilité de 35 800 caractères de
+  JavaScript noyés dans 170 000 de HTML ; `cases/scoring.js` est un fichier
+  suivi par `git`, dont toute modification apparaît à son propre `diff`.
+* `snapshot_invariants.config_form()` : nouvelle valeur `caseConfig`.
+* **`check_no_loss.py` : `git diff -z`.** Sans `-z`, `core.quotepath` rendait
+  `"cases/rescos-locales/AMC Urgences 1 - Polytraumatis\303\251 - Grille
+  ECOS.html"` pour tout nom accentué ; le nom ainsi lu ne correspondait à aucun
+  fichier du disque et ces grilles étaient **silencieusement sautées**. 132 des
+  165 noms portent un accent. Symptôme mesuré : 156 grilles modifiées, **57
+  seulement examinées**. Après correction : 156 sur 156, 0 item disparu.
+
+### Baseline régénéré — chaque ligne
+
+| champ | grilles touchées | pourquoi |
+|---|---:|---|
+| `engineFingerprint` | 156 | `c3e2534e…` → `shared:cases/scoring.js` : le moteur embarqué a disparu |
+| `configForm` | 156 | `declarative` (154) / `imperative` (2) → `caseConfig` : la branche de lecture change |
+| *tous les autres* | **0** | — |
+
+`maxScores`, `coef`, `scoreSpans`, `sectionCounts`, `sectionPrefixes`, `blocks`,
+`criteriaCount`, `detailCount`, `radioCount`, `checkboxCount`,
+`boundsAnomalies`, `uncoveredContent` : **identiques sur les 165**. C'est la
+démonstration la plus directe que l'échange a touché le moteur et **rien** du
+contenu ni du barème.
+
+---
+
+## Défaut 2 — RESCOS-63, somme des coefficients = 0,5
+
+`anamnese` 0,25 et `management` 0,25, et rien d'autre. Le global plafonnait à
+**50 %** sur une grille parfaitement remplie, sans qu'aucune section soit en
+écart — confirmé en navigateur : 50 %, note E, seule des 156 à ne pas atteindre
+100 %.
+
+**Redistribution : 0,5 · 0,5**, et les deux `section-header` passent de
+« (25%) » à « (50%) » — le corpus affiche le coefficient dans l'intitulé de
+section, vérifié sur RESCOS-64.
+
+Quatre faits l'imposent, aucun ne dépend d'un jugement de contenu :
+
+1. **La grille ne porte que deux sections réelles.** Deux `section-header`, deux
+   `<span class="score">` (`anamneseScore` /29, `managementScore` /16), deux
+   `id="…-percentage"`, et les seules entrées de la page sont `a1..a9` et
+   `m1..m6`. Il n'y a pas de section à retrouver : le défaut est la **somme**.
+2. **La déclaration exprimait déjà l'égalité** (0,25 = 0,25), et les deux
+   en-têtes annonçaient le même « (25%) ». Doubler les deux est la seule
+   correction qui rétablisse la somme **sans toucher au rapport voulu**.
+3. **C'est la doctrine du corpus** : 155 des 156 grilles notées pondèrent à
+   égalité, quel que soit leur nombre de points.
+4. **Le prorata réintroduirait ce que le moteur neutralise.**
+   `cases/scoring.js` calcule `(score / max) * 100` **par section** avant
+   d'appliquer `coef`. Pondérer 29 contre 16 compterait les points **deux
+   fois**.
+
+Le mécanisme d'origine se lit dans le voisinage : le gabarit du corpus est
+`0,25 × 4` — « RESCOS-64 station double 2 » le porte encore, avec quatre
+sections inédites (`presentation`, `raisonnement`, `examens`, `management`).
+RESCOS-63 en a supprimé deux sans remettre les coefficients à l'échelle.
+
+**Résultat** : `check_reachability` rend 100 % ; navigateur, remplissage
+complet : **100 %, note A**, `ecos_registry` écrit. Baseline : **une seule
+ligne**, le `coef` de RESCOS-63.
+
+---
+
+## Défaut 3 — RESCOS-69, deux vignettes sous le même numéro
+
+Deux fichiers distincts (180 435 et 174 707 octets à l'inventaire), **pas une
+duplication** : 3 items communs, 134 et 106 propres. Même patient (« M/Mme
+Norton, 25 ans »), même thème, mais la seconde développe un volet médico-légal
+absent de la première.
+
+Le problème est **fonctionnel** : `saveToRegistry()` indexe `ecos_registry` sur
+le nom de fichier privé de son `.html`. Une fois le défaut 1 réparé, les deux
+vignettes s'écraseraient l'une l'autre.
+
+**Renommé : `RESCOS-69 - Traumatisme MS - Basketteur 25 ans` → `RESCOS-69b - …`.**
+L'autre garde le numéro nu, sur deux faits :
+
+* il porte la **forme canonique** `RESCOS-NN - Thème - Grille ECOS`, celle de
+  RESCOS-65 à 68 — c'est celui que la numérotation désigne ;
+* le précédent exact du projet est `cases/rescos/` : `RESCOS-9 - Boiterie
+  pédiatrique` contre `RESCOS-9b - Boiterie pédiatrique - Fillette de 2 ans`.
+  Le fichier qui **ajoute un descripteur de patient** prend le suffixe.
+
+Le suffixe est porté aux **trois endroits** où `57b` et `58b` le portent : nom
+de fichier, `<title>`, `<h1>`. Aucune autre occurrence de `RESCOS-69` ne
+subsiste dans le fichier. `git mv` (rename détecté, `R`). Baseline : une clé
+renommée, les **12 champs identiques** sous le nouveau nom. 137 items avant,
+137 après, 0 disparu.
+
+### Signalée, non traitée : une duplication réelle
+
+**`Fièvre et douleurs articulaires - Infection gonococcique disséminée`
+⊂ `RCI-Fièvre et douleurs articulaires - Infection gonococcique disséminée`** —
+inclusion stricte, remesurée : **0 item propre** à la première (106 items, tous
+retrouvés dans la seconde), 85 propres à la seconde (203 items ; 162 548 contre
+197 308 octets). Doublon de **contenu**, pas de nom. Arbitrer la suppression
+d'une grille est un geste éditorial, hors d'un mandat de réparation technique.
+
+---
+
+## Défaut 4 — 92 références d'image mortes
+
+**92 balises `<img>` sur 35 grilles**, dont **75** un chemin absolu du poste de
+l'auteur et **17** un chemin relatif sans racine dans le dépôt. Invisibles au
+`grep` — rien ne distingue un chemin mort d'un chemin vivant — et détectées au
+**404** par le harnais navigateur. Les **11** autres images du corpus sont en
+base64 : elles vivent dans le fichier, elles ne sont pas concernées.
+
+**Aucune n'a pu être re-pointée.** Le dépôt compte 45 fichiers image.
+Confrontation des 92 noms de base par égalité exacte, puis après normalisation
+(accents, casse, ponctuation), puis par ressemblance : **0 correspondance**. La
+meilleure ressemblance vaut 0,62 et porte sur deux sujets différents
+(« algorithme paracetamol » contre `neuro-algorithme-horton.png`, une image du
+corpus German). Aucun répertoire `bbn/`, `decision-partagee/` ni `images/`
+n'existe dans le dépôt.
+
+**La légende porte l'information seule** — vérifié une par une : les 92 balises
+sont dans un `annexe-item` nu portant **un** `annexe-title`, **une**
+`annexe-description` et **une** `<img>`, et la description énonce ce que
+l'examen montre (« Radiographie thoracique montrant des contusions pulmonaires
+bilatérales et un pneumothorax gauche »). Seul le `<div class="annexe-image">`
+est retiré ; titre et description restent.
+
+**Conséquence mesurée** : **0 champ** du snapshot ne bouge sur les 165 grilles —
+le bloc `annexe-image` se compte en `annexe-item` nus, qui sont préservés ;
+`check_no_loss` rend 0 ; la redondance reste à 1258.
+
+**Rien n'est fabriqué.** Inventaire complet ci-dessous, restaurable si les
+fichiers sources refont surface. `prune_dead_images.py --list` le régénère
+depuis n'importe quelle référence git.
+
+### Inventaire des 92 chemins perdus
+
+Préfixe des chemins absolus, omis dans le tableau :
+`/Users/damienfulliquet/Documents/-Medecine/-EXAMEN_FEDERAL/-ECOS_2025/-SSP/Cas cliniques traduits/Traduits/HTML/grilles_generees/html/images/`
+Les chemins qui commencent par `bbn/` ou `decision-partagee/` sont les 17
+chemins **relatifs**, sans racine dans le dépôt.
+
+| grille (` - Grille ECOS.html` omis) | n | fichiers |
+|---|---:|---|
+| `AMC Urgences 1 - Polytraumatisé` | 4 | `1-Radiographie du thorax.jpg` · `2-Radiographie du bassin.jpg` · `3-Echographie E-FAST.jpg` · `4-Echographie E-FAST.jpg` |
+| `AMC Urgences 2A - Embolie pulmonaire massive` | 3 | `A1-ECG.jpg` · `A2-Echocardiographie comparitive normale.jpg` · `A3-Echocardiographie aux urgences.jpg` |
+| `AMC Urgences 2B - Choc septique sur péritonite` | 2 | `B1-Score SOFA.jpg` · `B2-Score qSOFA.jpg` |
+| `AMC Urgences 3A - Douleur thoracique aiguë - STEMI` | 7 | `A1-ECG3.jpg` · `A2-Spectre des SCA.jpg` · `A3-Critères IM type 1.jpg` · `A4-Critères IM type 2.jpg` · `A5-Temps cibles de prise en charge.jpg` · `A6-Contre-indications à la fibrinolyse.jpg` · `A7-Etapes et délais de la prise en charge STEMI.jpg` |
+| `AMC Urgences 3B - Douleur thoracique aiguë - NSTEMI` | 5 | `B1-ECG.jpg` · `B2-Protocole de prise en charge des SCA au service des urgences HUG.jpg` · `B3-Stratégie de stratification du risque dans les NSTEMI:angor instable.jpg` · `B4-…(idem, seconde planche).jpg` · `B5-Causes élévation des troponines.jpg` |
+| `AMC Urgences 3C - Douleur thoracique aiguë - Dissection aortique` | 1 | `C1-Radiographie du thorax.jpg` |
+| `AMC Urgences 4 - Insuffisance respiratoire aiguë sur BPCO` | 2 | `1-Radiographie du thorax4.jpg` · `2-Categories insuffisances respiratoires.jpg` |
+| `AMC Urgences 5A - Hémorragie sous-arachnoïdienne` | 5 | `A1-CT-scan cérébral comparatif normal.jpg` · `A1-CT-scan cérébral en urgence.jpg` · `A2-Angio-CT en urgence.jpg` · `A3-Classification clinique des HSA-WFNS grading system.jpg` · `A4-Classification radiologique des HSA-Fischer grading system.jpg` |
+| `AMC Urgences 5B - AVC ischémique avec transformation maligne` | 8 | `B1-GFAST.jpg` · `B2-Algorithme-Suspicion AVC.jpg` · `B3-CT-scan cérébral en urgence.jpg` · `B4-Stratégie thérapeutique.jpg` · `B5-Critères de revascularisation aiguë post AVC.jpg` · `B6-…(seconde planche).jpg` · `B7-CT-scan cérébral J1.jpg` · `B8-Diagnostic de mort cérébrale.jpg` |
+| `BBN - Cancer du sein` | 3 | `bbn/epices-framework.jpg` · `bbn/reactions-emotionnelles-cancer.jpg` · `bbn/ressources-soutien-oncologie.jpg` |
+| `BBN - Limitation thérapeutique cancer` | 3 | `bbn/evolution-cancer-scanner.jpg` · `bbn/soins-palliatifs-organisation.jpg` · `bbn/accompagnement-fin-de-vie.jpg` |
+| `BBN - Sclérose en plaques` | 3 | `bbn/irm-sep-lesions.jpg` · `bbn/evolution-formes-sep.jpg` · `bbn/ressources-sep-soutien.jpg` |
+| `Douleur abdominale et diarrhée fébrile` | 3 | `ct-abdo-comparaison.jpg` · `endoscopie-colon.jpg` · `histologie-colon.jpg` |
+| `Douleur thoracique - Vignette clinique` | 2 | `VignetteClinique_DRS-ECG1.jpg` · `VignetteClinique_DRS-ECG2.jpg` |
+| `Dyspnée post-COVID` | 2 | `Intermed-Dyspnée-Labo-1.jpg` · `Intermed-Dyspnée-Labo-2.jpg` |
+| `Fatigue TBL` | 4 | `Fatigue TBL-img1.jpg` · `Fatigue TBL-img2.jpg` · `Fatigue TBL-img3.jpg` · `Fatigue TBL-img4-Examens paracliniques.jpg` |
+| `Intoxication - Arrêt cardio-respiratoire … opioïdes` | 2 | `toxidromes-tableau.jpg` · `algorithme-abcde-intox.jpg` |
+| `Intoxication - Syndrome anticholinergique … Belladone` | 2 | `belladone-epinards-comparaison.jpg` · `syndrome-anticholinergique.jpg` |
+| `Intoxication - Syndrome malin des neuroleptiques` | 2 | `effets-neuroleptiques.jpg` · `algorithme-intoxication.jpg` |
+| `Intoxication médicamenteuse - Paracétamol et benzodiazépines` | 2 | `nomogramme-rumack-matthew.jpg` · `algorithme-paracetamol.jpg` |
+| `Psy-Vignette 9 - Un homme qui crie la nuit` | 1 | `Psy-Vignette 9-Critères diagnostics Schizophrénie.jpg` |
+| `Psy-Vignette 10 - Une femme triste` | 1 | `Psy-Vignette 10-Episode dépressif majeur.jpg` |
+| `Pédiatrie - Vomissements et état fébrile - Méningite bactérienne` | 1 | `Méningite-Algorithme.jpg` |
+| `Pédiatrie - État fébrile sans foyer - Bactériémie occulte` | 3 | `FUO-img1 - 0-2 mois.jpg` · `FUO-img2 - 0-2 mois.jpg` · `FUO-img3 - 2 mois-2 ans.jpg` |
+| `RESCOS-68 - Eruption cutanée` | 1 | `rescos-68-zona-thoracique.jpg` |
+| `RESCOS-69 - Traumatisme MS` | 2 | `rescos-69-rx-humerus-face.jpg` · `rescos-69-rx-humerus-profil.jpg` |
+| `SD - Dépistage cancer colorectal` | 2 | `decision-partagee/depistage-colon-tableau-comparatif.jpg` · `decision-partagee/depistage-colon-deroulement.jpg` |
+| `SD - Dépistage cancer du sein` | 3 | `decision-partagee/statistiques-depistage-sein.jpg` · `decision-partagee/balance-depistage-sein.jpg` · `decision-partagee/deroulement-mammographie.jpg` |
+| `SD - Dépistage cancer prostate` | 3 | `decision-partagee/anatomie-prostate.jpg` · `decision-partagee/statistiques-depistage-prostate.jpg` · `decision-partagee/benefices-inconvenients-prostate.jpg` |
+| `SMIG-1 - Syncope` | 2 | `SMIG-1-img1-Physiopathologie de la syncope.jpg` · `SMIG-1-img2-Types de syncopes selon les étiologies.jpg` |
+| `SMIG-2 - Situation 1 - Crise convulsive - Hyponatrémie sur thiazides` | 1 | `SMIG-2-Situation 1-Approche diagnostique dune hyponatrémie.jpg` |
+| `SMIG-2 - Situation 2 - Masse pulmonaire - SIADH sur cancer pulmonaire` | 1 | `SMIG-2-Situation 2-Critères diagnostiques du SIADH.jpg` |
+| `SMIG-2 - Situation 3 - OMI - Hyponatrémie sur insuffisance cardiaque` | 1 | `SMIG-2-Situation 3-Diagnostic différentiel dune hypernatrémie.jpg` |
+| `SMIG-3 - Douleurs abdominales et nausées - Acidocétose diabétique` | 3 | `SMIG-3-img1-Définitions et diagnostic du diabète.jpg` · `SMIG-3-img2-Mécanismes physiopathologiques des décompensations diabétiques.jpg` · `SMIG-3-img3-Tableau comparatif des décompensations acido-cétosique et hyperosmolaire.jpg` |
+| `SMIG-4 - Fièvre prolongée et amaigrissement - Tuberculose` | 2 | `SMIG-4-img1-Radiographie thoracique tuberculose.jpg` · `SMIG-4-img2-Radiographie laterale tuberculose.jpg` |
+
+---
+
+## Le contrôle en navigateur, phase `--deep`
+
+`browser_probe.js` a gagné un mode `--deep` : le mandat demandait de vérifier le
+minuteur et les crochets colorés, que le harnais ne mesurait pas. La phase est
+**isolée** — ses exceptions vont dans `errsTimer` et n'entrent pas dans le
+comptage comparé avant/après, qui reste dans la même unité que la mesure de
+`l2`.
+
+Passage complet, 165 grilles :
+
+| | |
+|---|---|
+| minuteur : 13:00 → autre après `switchMode('exam')` + `startTimer()` | **156 / 165** |
+| `.case-nav-bar` présente **et** `position: fixed` | **156 / 165** |
+| recouvrement barre de navigation / minuteur | **0 / 165** |
+| exceptions de cette phase | **0 / 165** |
+| grilles sans aucun crochet coloré | **10 / 165** |
+
+Les 156 sont les grilles notées ; les 9 feuilles porte n'ont ni minuteur, ni
+`<script>`, ni barre — c'est leur nature. Le **non-recouvrement à 0/165** est la
+vérification directe du déplacement de `.timer-container` à `top: 70px` : sans
+lui, la barre de navigation serait passée sous le minuteur sur les 156.
+
+**Les 10 grilles sans crochet coloré : 9 feuilles porte + « RESCOS-64 Toux -
+Station double 2 », et c'est correct.** Vérifié des deux côtés : hors de ses
+`<script>` et de son `<style>`, cette grille ne porte **aucun** `[…]` — 0 à
+`260a903`, 0 aujourd'hui — quand sa jumelle « Station double 1 » en porte 33.
+C'est exactement le cas de RESCOS-7 dans r7.
+
+---
+
+## Un incident de coordination, et sa réparation
+
+L'utilisateur travaillait en parallèle sur `cases/german/` **et** sur un volet
+`cases/casecos/` menant la même migration de moteur. Deux conséquences :
+
+**1. Un `git reset` parallèle a désindexé un `git mv`.** Le renommage de
+RESCOS-69b avait été mis en index, puis l'index a été remis à plat par le
+commit `6cd583f` de l'utilisateur. Détecté par `git status` avant le commit, et
+re-mis en index.
+
+**2. Un `git commit` sans `pathspec` a emporté le travail d'autrui.** Le commit
+du défaut 3 a été fait par `git add -- <mes chemins>` **puis** `git commit` nu :
+`git commit` sans pathspec valide **tout l'index**, et 205 fichiers de
+`cases/casecos/`, `scripts/casecos/` et `docs/superpowers/` s'y trouvaient déjà,
+mis en index par le volet parallèle.
+
+**Réparé** : branche de secours `l3-avant-reparation` posée, `git reset --soft`
+jusqu'au défaut 2, index remis à plat, puis les défauts 3 et 4 recommis depuis
+le contenu **exact** de leurs commits d'origine
+(`git checkout <commit> -- <mes chemins>` puis `git add -A -- <mes chemins>`).
+Vérifié après coup : les quatre commits ne touchent que `cases/rescos-locales`
+et `scripts/rescos-locales` ; l'arbre final est **identique** à l'arbre d'avant
+la réparation pour ces chemins (`git diff` vide) ; les 205 fichiers du volet
+parallèle sont revenus à l'état de travail non commité, contenu intact.
+
+**Leçon, à porter dans la procédure du projet** : sur une branche partagée,
+`git commit` doit **toujours** porter son `pathspec` —
+`git commit -m … -- cases/<corpus> scripts/<corpus>` — et jamais se fier au
+seul `git add` scopé qui l'a précédé.
+
+---
+
+## Un écart de chiffres qui n'est pas une régression
+
+`report_import_defects.py` fait passer `chevron-nu` de **787 / 156 grilles** à
+**475 / 104**. Les 312 disparus sont des **opérateurs JavaScript** des moteurs
+supprimés (`i <= section.count`, `currentSeconds <= 30`, `currentSeconds <= 0`),
+comptés parce que ce rapport balaye le HTML brut, `<script>` compris. Vérifié :
+le nombre de `chevron-nu` situés **dans un `<script>`** à `260a903` vaut
+**exactement 312**. C'est le même écart que r7 avait relevé sur RESCOS, à
+l'échelle de ce corpus. Aucune autre famille ne bouge.
+
+---
+
+## Ce que ce lot n'a pas fait
+
+* **Rien sous `cases/german/` ni `scripts/german/`** — ni lu, ni écrit, ni
+  exécuté ; l'utilisateur y travaillait en parallèle et a commité `6cd583f`
+  pendant le lot. Les quatre commits sont `path`-scopés sur
+  `cases/rescos-locales` et `scripts/rescos-locales`.
+* **Aucune modification de `cases/casecos/` ni de `scripts/casecos/`** : le
+  volet parallèle qui y travaille a été emporté par erreur dans un commit, puis
+  intégralement restitué — voir « Un incident de coordination ».
+* **`docs/obsidian-mapping.yaml` n'a pas été touché.** Il désigne les deux
+  RESCOS-69 par leur chemin **dans le vault**
+  (`_bibliotheque/ECOS/rescos-grilles-locales/…`), pas dans le dépôt ; il est
+  régénéré par un script en cours d'écriture chez l'utilisateur.
+* **Aucune modification de `cases/scoring.js`**, `srs.js`, `persistence.js`,
+  `case-styles.css` ni d'aucun fichier partagé.
+* **Aucune passe de nomenclature** : 368 termes non suisses restent, et
+  `check_nomenclature` reste rouge — c'est le constat de `l2`, inchangé.
+* **Aucune image fabriquée.**
+* **Aucune lecture de grille entière avec `Read`.**
+* **Aucune commande réseau, aucun `git push`, aucun `git gc` ni `git prune`.**

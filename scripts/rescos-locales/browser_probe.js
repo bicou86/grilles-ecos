@@ -21,6 +21,19 @@
  *     lequel le tableau de bord recupere le score. Ecrit a un seul endroit du
  *     projet, `cases/scoring.js:saveToRegistry()`.
  *
+ * AVEC `--deep`, UNE PHASE SUPPLEMENTAIRE — ce que le corpus a gagne a la
+ * bascule sur `cases/scoring.js`, et ce qu'elle risquait de casser :
+ *   - le MINUTEUR : `switchMode('exam')` puis `startTimer()`, et l'affichage
+ *     relu apres deux secondes (13:00 doit avoir bouge) ;
+ *   - les CROCHETS COLORES : les `[…]` que `colorPatientResponses()` enveloppe
+ *     d'un `<span style="color: rgb(44, 90, 160)…">` ;
+ *   - la BARRE DE NAVIGATION que `createNavBar()` insere — presence, style
+ *     effectif (`position: fixed`, sinon les regles CSS manquent) et
+ *     NON-RECOUVREMENT du minuteur, qui occupait la meme place avant le
+ *     deplacement a `top: 70px`.
+ * Cette phase est isolee : ses exceptions vont dans `errsTimer` et n'entrent
+ * pas dans le comptage compare avant/apres.
+ *
  * STRICTEMENT LOCAL. Serveur statique sur 127.0.0.1, Chrome for Testing lance
  * avec `--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1` : aucune
  * requete ne peut sortir de la boucle locale. Aucun paquet n'est installe — le
@@ -153,10 +166,44 @@ const READ = `(function(){
   });
 })()`;
 
-async function probeOne(cdp, base, name) {
+// Phase `--deep`. `startTimer()` ne fait rien hors du mode examen : le
+// `switchMode('exam')` prealable n'est pas decoratif.
+const TIMER_START = `(function(){
+  var before = document.getElementById('timerDisplay');
+  before = before ? before.textContent.trim() : null;
+  if (window.switchMode) switchMode('exam');
+  if (window.startTimer) startTimer();
+  return before;
+})()`;
+
+const DEEP = `(function(){
+  var d = document.getElementById('timerDisplay');
+  var out = {timerAfter: d ? d.textContent.trim() : null};
+
+  // Crochets colores : colorPatientResponses() enveloppe chaque [..] d'un span.
+  out.brackets = document.querySelectorAll('span[style*="rgb(44, 90, 160)"]').length;
+
+  var nav = document.getElementById('timerContainer');
+  var bar = document.querySelector('.case-nav-bar');
+  out.navBar = !!bar;
+  if (bar) {
+    out.navFixed = getComputedStyle(bar).position === 'fixed';
+    var b = bar.getBoundingClientRect();
+    out.navRect = [Math.round(b.top), Math.round(b.left), Math.round(b.bottom)];
+    if (nav) {
+      var t = nav.getBoundingClientRect();
+      out.timerTop = Math.round(t.top);
+      out.overlap = !(b.bottom <= t.top || t.bottom <= b.top ||
+                      b.right <= t.left || t.right <= b.left);
+    }
+  }
+  return JSON.stringify(out);
+})()`;
+
+async function probeOne(cdp, base, name, deep) {
     const {targetId} = await cdp.send('Target.createTarget', {url: 'about:blank'});
     const {sessionId} = await cdp.send('Target.attachToTarget', {targetId, flatten: true});
-    const errsLoad = [], errsFill = [];
+    const errsLoad = [], errsFill = [], errsTimer = [];
     let phase = errsLoad;
     const handler = msg => {
         if (msg.sessionId !== sessionId) return;
@@ -191,14 +238,31 @@ async function probeOne(cdp, base, name) {
         const r = await cdp.send('Runtime.evaluate', {expression: READ, returnByValue: true}, sessionId);
         read = JSON.parse(r.result.value);
     } catch (e) { read = {error: e.message}; }
+
+    let deepRead = null;
+    if (deep) {
+        phase = errsTimer;
+        try {
+            const b = await cdp.send('Runtime.evaluate',
+                {expression: TIMER_START, returnByValue: true}, sessionId);
+            await new Promise(r => setTimeout(r, 2200));
+            const r = await cdp.send('Runtime.evaluate',
+                {expression: DEEP, returnByValue: true}, sessionId);
+            deepRead = {timerBefore: b.result.value, ...JSON.parse(r.result.value)};
+        } catch (e) { errsTimer.push('DEEP-FAILED ' + e.message); }
+    }
+
     cdp.handlers.splice(cdp.handlers.indexOf(handler), 1);
     await cdp.send('Target.closeTarget', {targetId});
-    return {name, filled, errsLoad, errsFill, ...read};
+    const out = {name, filled, errsLoad, errsFill, ...read};
+    if (deep) { out.errsTimer = errsTimer; out.deep = deepRead; }
+    return out;
 }
 
 async function main() {
     const args = process.argv.slice(2);
     const summary = args.includes('--summary');
+    const deep = args.includes('--deep');
     const filter = args.filter(a => !a.startsWith('--'))[0];
     const srv = await serve();
     const base = 'http://127.0.0.1:' + srv.address().port;
@@ -207,7 +271,7 @@ async function main() {
     const names = fs.readdirSync(DIR).filter(n => n.endsWith('.html'))
                     .filter(n => !filter || n.includes(filter)).sort();
     const out = [];
-    for (const n of names) { out.push(await probeOne(cdp, base, n)); }
+    for (const n of names) { out.push(await probeOne(cdp, base, n, deep)); }
     proc.kill(); srv.close();
     try { fs.rmSync(userDir, {recursive: true, force: true}); } catch (e) {}
     if (summary) {
@@ -224,6 +288,25 @@ async function main() {
         console.log('\n--- grilles a exception / erreur ---');
         nErr.forEach(o => console.log('  ' + o.name + '\n      load: ' + JSON.stringify(o.errsLoad.slice(0, 3))
                                       + '\n      fill: ' + JSON.stringify(o.errsFill.slice(0, 3))));
+        if (deep) {
+            const withDeep = out.filter(o => o.deep);
+            const moved = withDeep.filter(o => o.deep.timerBefore === '13:00'
+                                            && o.deep.timerAfter !== '13:00');
+            const navOk = withDeep.filter(o => o.deep.navBar && o.deep.navFixed);
+            const overlap = withDeep.filter(o => o.deep.overlap);
+            const noBracket = withDeep.filter(o => !o.deep.brackets);
+            const timerErr = out.filter(o => o.errsTimer && o.errsTimer.length);
+            console.log('\n--- phase --deep ---');
+            console.log('minuteur 13:00 -> autre    : ' + moved.length + '/' + withDeep.length);
+            console.log('barre nav presente+fixed   : ' + navOk.length + '/' + withDeep.length);
+            console.log('recouvrement barre/minuteur: ' + overlap.length + '/' + withDeep.length);
+            console.log('sans aucun crochet colore  : ' + noBracket.length + '/' + withDeep.length);
+            console.log('exceptions de cette phase  : ' + timerErr.length + '/' + out.length);
+            noBracket.forEach(o => console.log('    0 crochet : ' + o.name));
+            overlap.forEach(o => console.log('    RECOUVREMENT : ' + o.name
+                                             + ' nav=' + JSON.stringify(o.deep.navRect)
+                                             + ' timerTop=' + o.deep.timerTop));
+        }
     } else {
         console.log(JSON.stringify(out, null, 1));
     }

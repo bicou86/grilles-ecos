@@ -232,8 +232,16 @@ session (préoccupation n° 4 de `r7-report.md`). Il est désormais **versionné
 ```
 node scripts/rescos-locales/browser_probe.js --summary
 node scripts/rescos-locales/browser_probe.js "RESCOS-63" --summary
+node scripts/rescos-locales/browser_probe.js --deep --summary   # minuteur, crochets, barre nav
 node scripts/rescos-locales/browser_probe.js > rapport.json
 ```
+
+`--deep` ajoute une phase isolée — ses exceptions vont dans `errsTimer` et
+n'entrent pas dans le comptage comparé avant/après : `switchMode('exam')` puis
+`startTimer()` et l'affichage relu après deux secondes ; le nombre de crochets
+`[…]` colorés par `colorPatientResponses()` ; la présence de la
+`.case-nav-bar`, son style effectif (`position: fixed`, sinon les règles CSS
+manquent) et son **non-recouvrement** du minuteur.
 
 Strictement local : serveur statique sur `127.0.0.1`, Chrome for Testing lancé
 avec `--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1`, protocole
@@ -243,10 +251,19 @@ DevTools sur le WebSocket natif de Node 22. Aucun paquet installé.
 
 | | avant | après |
 |---|---|---|
-| sans exception ni erreur | **9 / 165** (les 9 feuilles porte) | voir § 6 |
+| sans exception ni erreur | **9 / 165** (les 9 feuilles porte) | **165 / 165** |
 | à 100 % après remplissage | 155 / 156 notées | **156 / 156** |
 | écrivant `ecos_registry` | **0 / 165** | **156 / 165** |
 | exceptions `TypeError` | **13 446** | **0** |
+| erreurs 404 (images) | 92 | **0** |
+
+Les 9 grilles qui n'écrivent pas au registre sont **exactement** les 9 feuilles
+porte : elles n'ont pas de score. Le décompte est fait sur la **clé propre** de
+chaque grille (`saveToRegistry()` la construit depuis `location.pathname`, donc
+percent-encodée), et non sur la simple non-vacuité de `ecos_registry` — le
+`localStorage` est partagé par toutes les pages de la même origine, et un
+comptage naïf rendrait 165/165 en attribuant à chaque grille les entrées des
+précédentes.
 
 **Avant : toutes les grilles notées levaient une exception, à chaque calcul.**
 La cause : le moteur embarqué écrivait
@@ -333,6 +350,11 @@ premiers couples** : c'est là que se concentre la recopie.
 
 Volume pédagogique : 1466 segments de bloc, 132 `annexe-dd`, 398 `cloture`,
 260 `therapy` — la clôture est le bloc le plus fréquent après les fiches.
+
+**Après la bascule du § 4, le corpus pèse 21,9 Mo hors base64** (22,9 Mo brut)
+contre 27,1 Mo à l'inventaire : les 156 copies du moteur en représentaient
+5,2 Mo. La redondance de contenu, elle, **ne bouge pas** — 1258 : le lot `l3`
+n'a touché à aucun contenu.
 
 ---
 
@@ -475,14 +497,21 @@ grille est un geste éditorial, hors du mandat de réparation technique.
 
 ## 7. Ce que ce volet n'a pas fait
 
-- **Aucune modification sous `cases/`.** Le corpus est à `7c77e3e`.
+- **Aucune passe de nomenclature.** 368 termes non suisses restent sur 103
+  grilles ; `check_nomenclature` reste rouge, et c'est le constat.
+- **Aucun contenu médical modifié.** Les quatre réparations du lot `l3` sont
+  techniques : moteur, coefficient, nom de fichier, balise `<img>` morte.
+  `check_no_loss` rend 0 sur 156 grilles, la redondance reste à 1258.
+- **Aucune image fabriquée** : 92 chemins perdus, aucun re-pointable, tous
+  inventoriés.
 - **Rien sous `cases/german/` ni `scripts/german/`** : ni écrit, ni importé.
   C'est la raison pour laquelle les sept familles de `report_import_defects.py`
   sont **reconstruites** ici plutôt qu'importées, et pourquoi les tables
   `EXTRA` / `MICROBIO` / `ANGLICISMES` sont **copiées** de `scripts/rescos/`
   plutôt qu'importées (l'étoile, pas la chaîne). Les grilles de `cases/german/`
   n'ont été que **lues**, pour le bordage des motifs sur quatre corpus.
-- **Aucune correction de nomenclature, de barème ni de moteur.**
+- **Aucune modification de `cases/scoring.js`**, `srs.js`, `persistence.js`,
+  `case-styles.css` ni d'aucun fichier partagé.
 - **Aucune lecture de grille entière avec `Read`** : tout passe par
   `strip_base64` puis `block_spans` / `visible_text` / `list_items`.
 - **Aucune commande réseau, aucun `git push`, aucun `git gc` ni `git prune`.**
