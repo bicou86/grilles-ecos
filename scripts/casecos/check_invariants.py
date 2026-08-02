@@ -21,16 +21,19 @@ BASE = Path(__file__).parent / "baseline.json"
 # aucun autre, et `check_reachability.py` ne rattrape que les valeurs qui
 # CASSENT la somme a 100 %.
 #
-# `engineHash` : PROPRE A CE CORPUS. Les 198 grilles n'appellent pas
-# `cases/scoring.js` — elles embarquent chacune leur copie du moteur. Un
-# changement de moteur ne laisse donc AUCUNE trace dans un fichier partage ;
-# sans ce champ, une grille pourrait voir son calcul de score modifie sans
-# qu'aucun controle ne bronche. Les 198 valeurs sont identiques aujourd'hui.
+# `engineHash` : PROPRE A CE CORPUS. Les 198 grilles n'appelaient pas
+# `cases/scoring.js` — elles embarquaient chacune leur copie du moteur, et un
+# changement de moteur ne laissait AUCUNE trace dans un fichier partage. Depuis
+# la bascule le champ vaut `"shared:scoring.js"` : c'est `git diff` qui couvre
+# le moteur, et le champ garde la charge de signaler toute grille qui en
+# re-embarquerait un.
 #
-# `savesToRegistry` : gele a `false` sur les 198. Ce n'est pas un etat
-# souhaitable — c'est un DEFAUT constate (voir PROCEDURE-casecos.md § Registre).
-# Le geler garantit que sa correction sera un changement vu et voulu, et non un
-# effet de bord.
+# `savesToRegistry` : gele a `false` sur les 198 tant que le moteur etait
+# embarque. Ce n'etait pas un etat souhaitable — c'etait un DEFAUT constate
+# (voir PROCEDURE-casecos.md § Registre) : aucune des 198 ne remontait son score
+# au tableau de bord. Le geler a garanti que sa correction serait un changement
+# vu et voulu, et non un effet de bord. Il vaut `true` depuis la bascule ; le
+# geler a `true` interdit desormais la regression inverse.
 #
 # `blocks` porte ici le NOMBRE de segments par bloc, pas seulement leur nom.
 FROZEN = ["maxScores", "coef", "scoreSpans", "sectionCounts", "configForm",

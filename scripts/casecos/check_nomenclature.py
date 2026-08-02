@@ -36,6 +36,32 @@ Le corpus n'a jamais ete traite : la table sort donc ROUGE, et c'est sa
 fonction — elle est la liste de travail du lot suivant, pas un echec de
 l'outillage.
 
+ETAT APRES LA PASSE k3 : VERTE
+================================
+Les 649 termes du releve k1 ont ete traites, plus 200 que k1 ne voyait pas et
+qu'un releve INDEPENDANT a fait apparaitre — tous les acronymes MAJUSCULES de 2
+a 8 caracteres du texte visible des 198 grilles (script et style retires),
+3563 jetons distincts, juges un par un :
+
+    DOAC 40   ERCP 25   MCV  22   pPCI 20   ARDS 12   MCHC 11   ALT  10
+    AST   8   SNRI  8   LDCT  8   SSRI  7   EUS   7   MCH   2   g%    2
+    NPO   2   MRI   2   WHO   1   TTE   1   TEE   1   OTC   1   HCT   1
+
+plus 9 numerations sanguines en unite implicite hors du vocabulaire de
+`report_import_defects.py` (« leucocytose 18'000 », « hyperleucocytose »,
+« Plq 150 », « GR », « Ht », « Hb 15.8 » sans unite).
+
+`pPCI` est le plus instructif : il etait invisible au releve k1 parce que le
+`p` minuscule de `pPCI` est un caractere de mot et que `\\bPCI\\b` n'y trouve
+donc pas de frontiere gauche. 20 occurrences dans une seule grille, a cote des
+31 `PCI` qui, elles, etaient comptees.
+
+Le releve k3 a aussi ECARTE onze jetons d'apparence anglophone qui sont des
+homographes francais ou suisses — `MI` (membres inferieurs), `IU` (infection
+urinaire), `PTT` (la crase suisse), `OAC` (l'ordonnance federale), `IBS`
+(infection bacterienne serieuse), `HIT` (Head Impulse Test), `EGFR` (le gene)
+— tous consignes dans SANS_MOTIF avec leur chiffre.
+
 DEUX FAUX POSITIFS MESURES QUI ONT FAIT ECARTER UN MOTIF
 ---------------------------------------------------------
   * `\\b112\\b` — **593 occurrences sur les 198 grilles**, toutes dans la
@@ -104,6 +130,12 @@ UNITES = {
     # bordage numerique, indispensable (« livres » = ouvrages).
     r"\blbs?\b": "kg (1 lb = 0,4536 kg)",
     r"\b\d+\s+livres?\b": "kg (1 livre = 0,4536 kg)",
+    # `g%` — gramme pour 100 mL, graphie ARCHAIQUE du g/dL. Deux occurrences
+    # trouvees par le releve k3 (« Hb 16 g% », deux versions du meme cas d'AVC)
+    # qu'aucun motif d'unite existant ne voyait : ni `g/dL` ni `g/dl` n'en est
+    # sous-chaine. 16 g% = 16 g/dL = 160 g/L. Le `\b` de gauche empeche
+    # d'attraper « mg% » ou « µg% », qui appelleraient un autre facteur.
+    r"\bg%": "g/L (1 g% = 1 g/dL = 10 g/L)",
 }
 
 # ---------------------------------------------------------------------------
@@ -159,6 +191,66 @@ ANGLICISMES = {
     #   la Suisse dit « infirmier/ere ». Aucun homographe dans le corpus.
     r"\bEHPAD\b": "EMS (etablissement medico-social)",              #  4 /  1
     r"\bIDE\b": "infirmier/ere",                                    #  4 /  1
+    # --- AJOUTS DU RELEVE k3 -----------------------------------------------
+    # Releve independant : tous les acronymes MAJUSCULES de 2 a 8 caracteres du
+    # TEXTE VISIBLE des 198 grilles (script/style retires), 3563 jetons
+    # distincts, juges un par un. Les huit retenus ci-dessous ont le meme
+    # critere que les marques : CONTRADICTION INTERNE MESUREE — la forme suisse
+    # est deja employee ailleurs dans le meme corpus, parfois dans la meme
+    # grille. Aucun n'a d'homographe francais (voir SANS_MOTIF pour les onze
+    # qui en ont un et qui ont ete ecartes a ce titre).
+    #
+    #   DOAC 36/5   contre AOD 22/8 et ACOD 15/4
+    #   ERCP 25/3   contre CPRE  6/2 — et glose par le corpus lui-meme
+    #   MCV  22/5   contre VGM  16/5
+    #   ARDS 12/5   contre SDRA  2/2 — glose « (Syndrome de Detresse Resp. Aigue) »
+    #   MCHC 11/2   contre CCMH  1/1
+    #   ALT  10/2   contre ALAT 85/33
+    #   AST   8/1   contre ASAT 83/33
+    #   MCH   2/1   contre TCMH  0    (seule sans temoin interne ; suit MCV/MCHC)
+    #
+    # `\bMCH\b` ne peut pas attraper `MCHC` : le `\b` de droite exige une
+    # frontiere apres le « H », que le « C » suivant interdit. Les deux motifs
+    # coexistent donc sans se recouvrir.
+    r"\bDOACs?\b": "AOD (anticoagulant oral direct)",               # 36 /  5
+    r"\bERCP\b": "CPRE (cholangio-pancreatographie retrograde endoscopique)",
+    r"\bMCV\b": "VGM (volume globulaire moyen)",                    # 22 /  5
+    r"\bARDS\b": "SDRA (syndrome de detresse respiratoire aigue)",  # 12 /  5
+    r"\bMCHC\b": "CCMH (concentration corpusculaire moyenne en Hb)", # 11 /  2
+    r"\bALT\b": "ALAT",                                             # 10 /  2
+    r"\bAST\b": "ASAT",                                             #  8 /  1
+    r"\bMCH\b": "TCMH (teneur corpusculaire moyenne en Hb)",        #  2 /  1
+    # `WHO` — une seule occurrence (« definition WHO : Hb <13 g/dl homme »),
+    # dans une grille qui ecrit OMS partout ailleurs. Le corpus emploie `OMS`
+    # 55 fois. Aucun homographe : `WHO` n'est pas un mot francais.
+    r"\bWHO\b": "OMS",                                              #  1 /  1
+    # `pPCI` — angioplastie primaire. N'etait PAS compte dans les 31 `\bPCI\b`
+    # du releve k1 : dans « pPCI » le « p » minuscule est un caractere de mot,
+    # donc `\bPCI\b` n'y trouve pas de frontiere gauche. 20 occurrences dans la
+    # grille STEMI, restees invisibles jusqu'au releve k3. Motif distinct plutot
+    # que `\bp?PCI\b`, pour que le recapitulatif les compte separement.
+    r"pPCI": "angioplastie primaire",                               # 20 /  1
+    # --- second balayage k3 : la QUEUE du releve (moins de 9 occurrences) ---
+    # Le premier balayage s'etait arrete aux jetons frequents. La queue en
+    # portait neuf de plus, tous en contradiction interne mesuree :
+    #   SNRI  8/2  contre IRSN 11/3   — et « ISRS, SNRI » dans la MEME phrase
+    #   SSRI  7/2  contre ISRS 63/17
+    #   EUS   7/2  contre « echo-endoscopie », employe partout ailleurs
+    #   LDCT  8/1  contre « CT thoracique faible dose », glose de la meme ligne
+    #   NPO   2/2  contre « a jeun », 5 fois dans les memes deux grilles
+    #   MRI   2/1  contre IRM 879/115 — c'etait « IRM ... (mp-MRI) »
+    #   TTE   1/1  contre ETT 145/29
+    #   TEE   1/1  contre ETO  23/7
+    #   OTC   1/1  contre « en vente libre »
+    r"\bSSRI\b": "ISRS",                                             #  7 /  2
+    r"\bSNRI\b": "IRSN",                                             #  8 /  2
+    r"\bEUS\b": "echo-endoscopie",                                   #  7 /  2
+    r"\bLDCT\b": "CT thoracique faible dose",                        #  8 /  1
+    r"\bNPO\b": "a jeun",                                            #  2 /  2
+    r"\bMRI\b": "IRM",                                               #  2 /  1
+    r"\bTTE\b": "ETT",                                               #  1 /  1
+    r"\bTEE\b": "ETO",                                               #  1 /  1
+    r"\bOTC\b": "en vente libre",                                    #  1 /  1
     # --- a zero sur les 198 grilles, gardes en prophylaxie ------------------
     r"\bMSSA\b": "SASM",
     r"\bESBL\b": "BLSE",
@@ -218,6 +310,60 @@ SANS_MOTIF = [
                 "en Suisse romande (« Contacter le SMUR ou le 144 »)"),
     ("CHU", 3, "dont « CHU Ste-Justine », nom propre d'un hopital montrealais "
                "cite comme source d'algorithme"),
+    # --- releve k3 : jetons anglophones D'APPARENCE, tous ecartes -----------
+    # Onze homographes francais qu'une table « acronymes anglais » naive aurait
+    # bannis. Chacun a ete lu en contexte avant d'etre ecarte ; c'est la moitie
+    # la plus utile du releve k3.
+    ("MI", 113, "MEMBRES INFERIEURS (« Doppler veineux MI », « œdemes des MI ») "
+                "et non myocardial infarction — le corpus ecrit IDM (107 occ)"),
+    ("IU", 36, "INFECTION URINAIRE (« les IU simples », « ECBU : elimination IU ») "
+               "et non international units — le corpus ecrit UI (84 occ)"),
+    ("PTT", 36, "graphie SUISSE de la crase (« TP 60%, PTT 30s », « TP/PTT/plaquettes ») : "
+                "les laboratoires suisses rendent TP + PTT la ou la France ecrit "
+                "TP + TCA. Ce n'est PAS le purpura thrombotique thrombocytopenique"),
+    ("DAPT", 35, "double antiagregation plaquettaire — sigle des recommandations ESC, "
+                 "installe en francais de cardiologie"),
+    ("NIPT", 34, "test prenatal non invasif : usage suisse installe (OFSP, FMH), "
+                 "et glose par la grille elle-meme « NIPT / DPNI »"),
+    ("EGFR", 21, "RECEPTEUR du facteur de croissance epidermique (« mutations EGFR, "
+                 "ALK, ROS1 ») — un gene, pas le debit de filtration glomerulaire"),
+    ("HIT", 19, "HEAD IMPULSE TEST du protocole HINTS (« HIT pathologique gauche ») "
+                "et non heparin-induced thrombocytopenia"),
+    ("PCC", 19, "concentre de complexe prothrombinique (« vitamine K + PCC "
+                "(Beriplex/Octaplex) ») — sigle installe des protocoles suisses"),
+    ("OAC", 18, "Ordonnance reglant l'Admission a la Circulation routiere, "
+                "ORDONNANCE FEDERALE SUISSE (« OAC art. 27 ») — a conserver"),
+    ("IBS", 16, "INFECTION BACTERIENNE SERIEUSE du nourrisson (« risque d'IBS tres "
+                "eleve ») et non irritable bowel syndrome — le corpus ecrit SII"),
+    ("ADHD", 7, "toutes dans des NOMS PROPRES d'echelles : « Adult ADHD Self-Report "
+                "Scale (ASRS) », « Conners Adult ADHD Rating Scale », « Diagnostic "
+                "Interview for ADHD in adults (DIVA 2.0) ». La grille ecrit TDAH "
+                "(59 occ) pour le trouble lui-meme"),
+    ("PTSD", 3, "meme raison : « PCL-5 (PTSD Checklist for DSM-5) » et « CAPS-5 "
+                "(Clinician-Administered PTSD Scale for DSM-5) ». Le corpus ecrit "
+                "TSPT (49 occ) et ESPT"),
+    ("HCT", 1, "corrigee en `Ht` a la main, mais PAS ajoutee a BANNED : `HCT` est "
+               "aussi l'abreviation courante de l'HYDROCHLOROTHIAZIDE. Un motif "
+               "ici ferait signaler une prescription comme faute d'unite"),
+    ("CD4", 2, "un taux de CD4 se rend en /µL partout, y compris en Suisse ; "
+               "0,014 G/L n'a pas de sens clinique. FAUX POSITIF du motif "
+               "hemogramme+/µL importe d'AMBOSS, evite par reformulation"),
+    # --- releve k3 : anglicismes reels, mesures et NON traites -------------
+    # Ils ne sont pas dans BANNED : chacun demanderait plus qu'une substitution
+    # de nomenclature. Consignes ici pour qu'un lot futur les retrouve.
+    ("HBV / HCV", 57, "VHB (50) et VHC (22) coexistent avec HBV (15) et HCV (42) : "
+                      "contradiction interne REELLE, non traitee parce que « Cirrhose "
+                      "HCV et CHC » est dans le NOM DE FICHIER d'une grille et dans "
+                      "index.html, tous deux hors du perimetre de ce lot"),
+    ("SCLC / NSCLC", 30, "CBPC (5) et CBNPC (7) presents dans la MEME grille : "
+                         "contradiction reelle, mais les sigles y sont gloses en "
+                         "anglais (« SCLC (Small Cell Lung Cancer) ») — la correction "
+                         "est une reecriture, pas une substitution"),
+    ("Gold Standards Framework", 3, "nom propre d'un outil britannique d'identification "
+                                    "des patients palliatifs. C'est pour lui que le motif "
+                                    "`gold standard` doit rester SENSIBLE A LA CASSE"),
+    ("bleuets", 8, "quebecisme pour myrtilles, dans la liste des causes factices de "
+                   "melena — vocabulaire, pas nomenclature medicale"),
 ]
 
 # Copie, jamais la reference : muter la table d'AMBOSS en place ferait dependre

@@ -1,17 +1,14 @@
 """Capture l'etat de reference des 198 grilles CasECOS dans baseline.json.
 
-TROISIEME FORME DE DECLARATION DU BAREME
-----------------------------------------
+DEUX FORMES DE DECLARATION DU BAREME, ET LA BASCULE DE L'UNE A L'AUTRE
+----------------------------------------------------------------------
 AMBOSS, German et RESCOS declarent leur bareme dans un `window.caseConfig`
-(forme DECLARATIVE) que le `cases/scoring.js` partage vient lire. RESCOS-7 et
-RESCOS-9 le construisent ligne a ligne dans une copie locale de
-`calculateScores()` (forme IMPERATIVE).
+(forme DECLARATIVE) que le `cases/scoring.js` partage vient lire.
 
-Les 198 grilles CasECOS emploient une TROISIEME forme, qu'aucun corpus
-precedent ne portait : elles n'ont ni `window.caseConfig` (0/198) ni
-`<script src="../scoring.js">` (0/198). Chacune embarque sa propre copie
-complete du moteur, ou la configuration est un LITTERAL LOCAL au corps de
-`calculateScores()` :
+Les 198 grilles CasECOS employaient a l'origine une forme qu'aucun autre corpus
+ne portait : ni `window.caseConfig` (0/198) ni `<script src="../scoring.js">`
+(0/198). Chacune embarquait sa propre copie complete du moteur, ou la
+configuration etait un LITTERAL LOCAL au corps de `calculateScores()` :
 
     let maxScores = {};                                   <- declaration vide
     ...
@@ -22,23 +19,34 @@ complete du moteur, ou la configuration est un LITTERAL LOCAL au corps de
         ...
     ];
 
-Les lecteurs ci-dessous ignorent donc la PREMIERE affectation (`{}` et `[]`,
+Les lecteurs de cette forme ignorent la PREMIERE affectation (`{}` et `[]`,
 vides) et retiennent la premiere NON VIDE. Un motif `maxScores\\s*=\\s*\\{([^}]*)\\}`
 naif rendrait la declaration vide et le snapshot serait uniformement nul.
 
-LE MOTEUR LUI-MEME EST GELE
----------------------------
-Puisque le bareme n'est pas seulement declare mais aussi CALCULE dans chaque
-fichier, le snapshot capte `engineHash` : l'empreinte du bloc `<script>` qui
-porte `calculateScores()`, NOMBRES ET CHAINES NEUTRALISES. Sans neutralisation
-chaque grille aurait une empreinte unique (elle porte son propre bareme) et le
-champ ne dirait rien ; avec elle, les 198 grilles rendent aujourd'hui UNE SEULE
-valeur — le moteur est structurellement identique partout. Toute divergence
-future, y compris une correction appliquee a une seule grille, sera signalee.
+Les 198 ont depuis bascule vers `window.caseConfig` + `cases/scoring.js`
+(`migrate_to_shared_engine.py`). Les lecteurs essaient donc la forme
+DECLARATIVE d'abord et retombent sur la forme embarquee — celle-ci reste lue,
+et non supprimee, pour que le jour ou une grille reviendrait en arriere le
+snapshot le dise au lieu de rendre un bareme vide.
 
-C'est le pendant, pour un moteur embarque, de ce que `check_invariants.py`
-faisait deja pour un moteur partage : la, un `git diff` sur `cases/scoring.js`
-suffisait a voir un changement de moteur ; ici il n'y a rien a diff.
+LE MOTEUR EST GELE, EMBARQUE OU PARTAGE
+---------------------------------------
+Quand le bareme n'est pas seulement declare mais aussi CALCULE dans le fichier,
+`engineHash` capte l'empreinte du bloc `<script>` qui porte `calculateScores()`,
+NOMBRES ET CHAINES NEUTRALISES. Sans neutralisation chaque grille aurait une
+empreinte unique (elle porte son propre bareme) et le champ ne dirait rien ;
+avec elle, les 198 grilles rendaient UNE SEULE valeur — un moteur unique,
+recopie 198 fois.
+
+Depuis la bascule, le champ vaut `"shared:scoring.js"` : il n'y a plus de moteur
+embarque a geler. Le champ garde sa fonction, et meme sa fonction d'origine —
+c'etait, selon les termes de sa premiere redaction, « le pendant, pour un moteur
+embarque, de ce qu'un `git diff` sur `cases/scoring.js` faisait deja pour un
+moteur partage ». Le moteur etant redevenu partage, c'est `git diff` qui le
+couvre, et `check_reachability.py` qui re-verifie a chaque passage que ce moteur
+partage est calculable contre le DOM de chaque grille. Toute grille qui
+re-embarquerait un moteur rendrait de nouveau une empreinte, et le champ le
+signalerait des le premier passage.
 """
 import hashlib
 import json
@@ -84,8 +92,23 @@ def neutralize(js):
     return re.sub(r"\s+", " ", js).strip()
 
 
+SHARED_ENGINE_TAG = '<script src="../scoring.js"></script>'
+
+
+def loads_shared_engine(html):
+    """La grille delegue-t-elle son calcul au `cases/scoring.js` partage ?"""
+    return SHARED_ENGINE_TAG in html
+
+
 def engine_hash(html):
-    """Empreinte structurelle du moteur embarque, ou None s'il est introuvable."""
+    """Identite du moteur de calcul de la grille.
+
+    `"shared:scoring.js"` quand elle charge le moteur partage ; sinon
+    l'empreinte structurelle du moteur embarque ; `None` s'il n'y en a aucun —
+    cas d'une grille sans moteur du tout, qui est un defaut.
+    """
+    if loads_shared_engine(html):
+        return "shared:scoring.js"
     src = engine_source(html)
     if src is None:
         return None
@@ -100,9 +123,22 @@ def _first_non_empty(html, pattern):
     return ""
 
 
+def _config_blob(html, declaratif, embarque):
+    """Corps du litteral cherche : forme `caseConfig` d'abord, embarquee ensuite.
+
+    Les deux motifs sont essayes dans cet ordre parce que la forme embarquee
+    est celle d'avant la bascule : une grille qui y reviendrait doit rester
+    lisible, plutot que de rendre un bareme vide qui passerait pour « pas de
+    section » au lieu de « regression ».
+    """
+    blob = _first_non_empty(html, declaratif)
+    return blob if blob else _first_non_empty(html, embarque)
+
+
 def max_scores(html):
     """`maxScores` par section."""
-    blob = _first_non_empty(html, r"maxScores\s*=\s*\{([^{}]*)\}")
+    blob = _config_blob(html, r"maxScores:\s*\{([^{}]*)\}",
+                        r"maxScores\s*=\s*\{([^{}]*)\}")
     return {k: int(v) for k, v in re.findall(r"(\w+):\s*(\d+)", blob)}
 
 
@@ -118,7 +154,7 @@ def coefs(html):
     Les valeurs sont des flottants : `json` les serialise et les relit au bit
     pres, l'egalite de `check_invariants.py` est donc exacte.
     """
-    blob = _first_non_empty(html, r"coef\s*=\s*\{([^{}]*)\}")
+    blob = _config_blob(html, r"coef:\s*\{([^{}]*)\}", r"coef\s*=\s*\{([^{}]*)\}")
     return {k: float(v) for k, v in re.findall(r"(\w+):\s*([\d.]+)", blob)}
 
 
@@ -130,7 +166,8 @@ def section_counts(html):
     itere `prefix1..prefixN`, et un `count` trop grand promet des criteres que
     la page ne porte pas.
     """
-    blob = _first_non_empty(html, r"sectionInfo\s*=\s*\[(.*?)\];")
+    blob = _config_blob(html, r"sectionInfo:\s*\[(.*?)\]",
+                        r"sectionInfo\s*=\s*\[(.*?)\];")
     counts = {}
     for chunk in re.findall(r"\{[^{}]*\}", blob):
         key = re.search(r'key:\s*"(\w+)"', chunk)
@@ -151,6 +188,23 @@ def config_form(html):
     return "aucune"
 
 
+def saves_to_registry(html):
+    """La grille alimente-t-elle `ecos_registry`, que le tableau de bord lit ?
+
+    `saveToRegistry()` n'est defini et appele qu'a UN endroit du depot :
+    `cases/scoring.js`. Une grille l'atteint donc de deux facons — en chargeant
+    ce fichier, ou en portant elle-meme une copie du moteur assez recente pour
+    contenir la fonction. Aucune des 198 n'etait dans le second cas, et la
+    bascule les a mises toutes dans le premier.
+
+    Chercher la seule chaine `saveToRegistry` dans le HTML, comme le faisait la
+    premiere redaction, rendait `false` AVANT la bascule (moteur embarque
+    perime) et `false` APRES (la fonction vit dans un fichier separe) : le champ
+    aurait manque le seul changement qu'il existait pour voir.
+    """
+    return "saveToRegistry" in html or loads_shared_engine(html)
+
+
 def snapshot_one(path):
     html = path.read_text(encoding="utf-8")
     spans = dict(re.findall(
@@ -161,17 +215,20 @@ def snapshot_one(path):
         "coef": coefs(html),
         "scoreSpans": {k: int(v) for k, v in spans.items()},
         "sectionCounts": section_counts(html),
-        # Forme de declaration du bareme : "inline-literal" pour les 198.
-        # Gele parce qu'une grille qui basculerait vers `caseConfig` changerait
-        # de moteur de calcul sans qu'aucun autre champ ne bouge.
+        # Forme de declaration du bareme : "caseConfig" pour les 198 depuis la
+        # bascule ("inline-literal" avant). Gele parce qu'une grille qui
+        # reviendrait a la forme embarquee changerait de moteur de calcul sans
+        # qu'aucun autre champ ne bouge.
         "configForm": config_form(html),
-        # Empreinte structurelle du moteur EMBARQUE — propre a ce corpus.
-        # Voir l'entete : il n'y a pas de `cases/scoring.js` a diff ici.
+        # Identite du moteur : "shared:scoring.js" depuis la bascule, une
+        # empreinte structurelle tant qu'il etait embarque. Voir l'entete.
         "engineHash": engine_hash(stripped),
-        # Appel du registre central : c'est ce que le tableau de bord
+        # Alimentation du registre central : c'est ce que le tableau de bord
         # (`index.html`) lit pour afficher la pastille de score. Gele a `false`
-        # pour que le jour ou il sera rebranche, ce soit un changement VU.
-        "savesToRegistry": "saveToRegistry" in html,
+        # avant la bascule — un DEFAUT constate, non un etat souhaitable — pour
+        # que sa correction soit un changement vu et voulu. Il vaut `true`
+        # depuis.
+        "savesToRegistry": saves_to_registry(html),
         # [nom, nombre de segments] : un bloc peut apparaitre plusieurs fois
         # (jusqu'a 14 `therapy-section` et 9 `cloture-item` par grille). Geler
         # le seul nom laisserait disparaitre un segment sans trace.

@@ -13,11 +13,12 @@ importee de `scripts/amboss/check_reachability.py`, sans copie : elle rejoue
 l'enumeration des grilles, la LECTURE DE LA CONFIGURATION et les deux controles
 propres a ce corpus (`empty_weighted_sections`, `engine_defects`) sont ici.
 
-LE BAREME EST EMBARQUE DANS CHAQUE GRILLE
------------------------------------------
-Aucune des 198 grilles n'a de `window.caseConfig`, et aucune ne charge
-`cases/scoring.js`. Chacune embarque sa PROPRE copie complete du moteur, ou la
-configuration est un litteral local au corps de `calculateScores()` :
+LE BAREME A ETE EMBARQUE, IL NE L'EST PLUS
+------------------------------------------
+Les 198 grilles n'avaient a l'origine ni `window.caseConfig` ni
+`<script src="../scoring.js">` : chacune embarquait sa PROPRE copie complete du
+moteur, ou la configuration etait un litteral local au corps de
+`calculateScores()` :
 
     maxScores = {anamnese: 37, examen: 15, management: 14, communication: 20};
     coef = {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25};
@@ -31,27 +32,39 @@ configuration est un litteral local au corps de `calculateScores()` :
 Ces litteraux sont PRECEDES d'une declaration vide (`let maxScores = {};`) que
 `parse_config` doit ignorer — voir `snapshot_invariants._first_non_empty`.
 
-LES 198 COPIES SONT-ELLES SAINES ? OUI, ET IDENTIQUES ENTRE ELLES
------------------------------------------------------------------
-Mesure : les 198 blocs `<script>` porteurs de `calculateScores()`, nombres et
-chaines neutralises, rendent UNE SEULE empreinte. Il n'y a pas 198 moteurs mais
-un seul, recopie 198 fois. Cette empreinte est gelee par `snapshot_invariants.py`
-(champ `engineHash`).
+`migrate_to_shared_engine.py` les a basculees vers `window.caseConfig` +
+`cases/scoring.js`. `parse_config` lit les DEUX formes, la declarative d'abord :
+une grille qui reviendrait a la forme embarquee doit rester lisible.
 
-Ce moteur unique est `cases/scoring.js` AMPUTE de six ajouts posterieurs :
+LES 198 COPIES ETAIENT SAINES, ET IDENTIQUES ENTRE ELLES
+--------------------------------------------------------
+C'est ce qui a rendu la bascule mecaniquement sure. Mesure d'alors : les 198
+blocs `<script>` porteurs de `calculateScores()`, nombres et chaines neutralises,
+rendaient UNE SEULE empreinte. Il n'y avait pas 198 moteurs mais un seul,
+recopie 198 fois.
+
+Ce moteur unique etait `cases/scoring.js` AMPUTE de six ajouts posterieurs :
 chargement de `srs.js`, indirection `window.caseConfig`, gardes de nullite sur
 `#missingItems` / `#missingList`, mode circuit, `createNavBar()` et
 `saveToRegistry()`. Le CALCUL lui-meme — traitement des cases de detail, repli
 sur les radios, table communication A=4..E=0, ponderation par `coef`,
-`max > 0 ? (score/max)*100 : 0` — est identique au caractere pres. Le bareme est
-donc parfaitement calculable, et ce script s'y applique sans reserve.
+`max > 0 ? (score/max)*100 : 0` — etait identique au caractere pres : la bascule
+ne change donc aucune note, elle rebranche ce qui manquait autour du calcul.
 
-Il ne peut pas non plus lever de `TypeError`, contrairement aux copies perimees
-de RESCOS-7 et RESCOS-9 : les trois seuls deferencements DOM non gardes du
-moteur (`#missingItems`, `#missingList`, `#totalScore`) et les six du minuteur
-(`#timerContainer`, `#timerStatus`, `#timerDisplay`, `#startBtn`, `#stopBtn`,
-`#resetBtn`) sont presents dans les 198 grilles. `engine_defects()` le reverifie
-a chaque passage plutot que de s'en remettre a la mesure d'un jour.
+Le moteur partage ne peut pas lever de `TypeError` sur ce corpus : les
+deferencements DOM non gardes qu'il porte encore (`#totalScore` et les six du
+minuteur — `#timerContainer`, `#timerStatus`, `#timerDisplay`, `#startBtn`,
+`#stopBtn`, `#resetBtn`) sont presents dans les 198 grilles. `engine_defects()`
+le reverifie a chaque passage, contre le moteur que chaque grille execute
+REELLEMENT, plutot que de s'en remettre a la mesure d'un jour.
+
+Le moteur EMBARQUE, lui, en levait une — sur les 198, a chaque recalcul. Il
+deferencait `#missingItems` et `#missingList` sans garde, et ces deux
+identifiants n'existent que dans un COMMENTAIRE HTML (« ELEMENTS MANQUANTS
+(MASQUES) »). La premiere redaction de ce controle cherchait `id="..."` dans le
+HTML BRUT : elle les trouvait dans le commentaire et rendait la porte verte.
+Voir `live_dom()`. Le rebranchement sur `cases/scoring.js`, qui garde les deux,
+supprime le defaut ; la neutralisation des commentaires supprime l'angle mort.
 
 POURQUOI CE CONTROLE EST DISTINCT DE check_invariants.py
 --------------------------------------------------------
@@ -85,6 +98,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import lib_casecos as lib
+import snapshot_invariants as snap
 from snapshot_invariants import engine_source
 
 _amboss = lib.amboss_module("check_reachability")
@@ -99,23 +113,33 @@ def _first_non_empty(html, pattern):
     return ""
 
 
-def parse_config(html):
-    """maxScores, coef, sectionInfo et denominateurs affiches — forme embarquee.
+def _config_blob(html, declaratif, embarque):
+    """Corps du litteral cherche : forme `caseConfig` d'abord, embarquee ensuite."""
+    blob = _first_non_empty(html, declaratif)
+    return blob if blob else _first_non_empty(html, embarque)
 
-    Ne tente PAS la forme `window.caseConfig` : aucune grille de ce corpus n'en
-    porte, et une tentative prealable ne ferait qu'ajouter un chemin mort. Si
-    une grille future en portait un, `sections` resterait vide et `check_one`
-    signalerait « sectionInfo introuvable ou illisible » — un echec bruyant,
-    ce qui est le bon comportement.
+
+def parse_config(html):
+    """maxScores, coef, sectionInfo et denominateurs affiches.
+
+    Les deux formes sont lues : `window.caseConfig` (celle des 198 depuis la
+    bascule, et des trois autres corpus) puis le litteral embarque (celle
+    d'avant). L'ordre importe — la forme embarquee est precedee d'une
+    declaration vide (`let maxScores = {};`) que `_first_non_empty` ecarte.
+    Une grille qui reviendrait a la forme embarquee reste donc lue, au lieu de
+    rendre un bareme vide qui se confondrait avec « pas de section ».
     """
     max_scores = {k: int(v) for k, v in re.findall(
-        r"(\w+):\s*(\d+)", _first_non_empty(html, r"maxScores\s*=\s*\{([^{}]*)\}"))}
+        r"(\w+):\s*(\d+)", _config_blob(html, r"maxScores:\s*\{([^{}]*)\}",
+                                        r"maxScores\s*=\s*\{([^{}]*)\}"))}
     coef = {k: float(v) for k, v in re.findall(
-        r"(\w+):\s*([\d.]+)", _first_non_empty(html, r"coef\s*=\s*\{([^{}]*)\}"))}
+        r"(\w+):\s*([\d.]+)", _config_blob(html, r"coef:\s*\{([^{}]*)\}",
+                                           r"coef\s*=\s*\{([^{}]*)\}"))}
 
     sections = []
     for chunk in re.findall(
-            r"\{[^{}]*\}", _first_non_empty(html, r"sectionInfo\s*=\s*\[(.*?)\];")):
+            r"\{[^{}]*\}", _config_blob(html, r"sectionInfo:\s*\[(.*?)\]",
+                                        r"sectionInfo\s*=\s*\[(.*?)\];")):
         key = re.search(r'key:\s*"(\w+)"', chunk)
         prefix = re.search(r'prefix:\s*"(\w+)"', chunk)
         count = re.search(r"count:\s*(\d+)", chunk)
@@ -166,20 +190,62 @@ def empty_weighted_sections(html):
 _UNGUARDED = re.compile(
     r"document\.getElementById\(\s*['\"]([^'\"]+)['\"]\s*\)\s*\.\s*\w+")
 
+# Un `id=` ecrit dans un COMMENTAIRE HTML n'est pas dans le DOM.
+#
+# C'est le piege qui a fait manquer, a la premiere redaction de ce controle, un
+# defaut present sur les 198 grilles : le bloc
+#
+#     <!-- ELEMENTS MANQUANTS (MASQUES) -->
+#     <!-- <div class="missing-items" id="missingItems" ...>
+#              <div id="missingList"></div>
+#          </div> -->
+#
+# porte les deux identifiants QUE le moteur embarque deferencait sans garde. La
+# recherche se faisait sur le HTML brut : elle trouvait `id="missingItems"`,
+# concluait « present dans les 198 » et rendait la porte verte. Le navigateur,
+# lui, levait une `TypeError` a CHAQUE recalcul de score, sur les 198 grilles —
+# exactement le defaut de RESCOS-7 et RESCOS-9 que ce controle existe pour
+# attraper.
+#
+# Les commentaires sont donc neutralises avant toute recherche d'identifiant.
+_HTML_COMMENT = re.compile(r"<!--.*?-->", re.S)
+
+
+def live_dom(html):
+    """HTML prive de ses commentaires — ce que le navigateur construit vraiment."""
+    return _HTML_COMMENT.sub(" ", html)
+
+
+SHARED_ENGINE = Path(__file__).resolve().parents[2] / "cases" / "scoring.js"
+
 
 def engine_defects(html):
-    """Defauts rendant le moteur EMBARQUE incalculable. Liste vide si sain.
+    """Defauts rendant le moteur de la grille incalculable. Liste vide si sain.
 
-    Deux causes possibles :
-      * pas de bloc `<script>` portant `calculateScores()` — la grille n'a
-        aucun moteur ;
-      * un identifiant deference sans garde et absent du DOM de la grille.
+    Le moteur controle est celui que la grille EXECUTE reellement : le
+    `cases/scoring.js` partage si elle le charge, sinon sa copie embarquee. Le
+    controle reste grille par grille dans les deux cas — c'est le DOM de CETTE
+    grille qui decide si un deferencement est sur, et deux grilles chargeant le
+    meme moteur peuvent parfaitement diverger sur ce point.
+
+    Trois causes possibles :
+      * ni balise `../scoring.js`, ni bloc `<script>` portant
+        `calculateScores()` — la grille n'a aucun moteur ;
+      * un identifiant deference sans garde et absent du DOM de la grille ;
+      * la grille charge `../scoring.js` mais le fichier est introuvable.
     """
-    src = engine_source(html)
-    if src is None:
-        return ["moteur introuvable : aucun <script> ne definit calculateScores()"]
+    if snap.loads_shared_engine(html):
+        if not SHARED_ENGINE.exists():
+            return [f"charge {SHARED_ENGINE.name} mais le fichier est introuvable"]
+        src = SHARED_ENGINE.read_text(encoding="utf-8")
+    else:
+        src = engine_source(html)
+        if src is None:
+            return ["moteur introuvable : ni <script src=\"../scoring.js\">, "
+                    "ni <script> definissant calculateScores()"]
+    dom = live_dom(html)
     missing = sorted({i for i in _UNGUARDED.findall(src)
-                      if not re.search(r'id=["\']' + re.escape(i) + r'["\']', html)})
+                      if not re.search(r'id=["\']' + re.escape(i) + r'["\']', dom)})
     return [f"deferencement non garde vers #{i}, absent du DOM — TypeError au "
             f"premier calcul" for i in missing]
 
@@ -217,7 +283,7 @@ def main():
               f"ou incalculable")
         return 1
     print(f"\nOK — {checked} grille(s), bareme atteignable a 100 % sur chaque "
-          f"section et moteur embarque calculable")
+          f"section et moteur calculable")
     return 0
 
 

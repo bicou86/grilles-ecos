@@ -52,10 +52,10 @@ fois.** Les trois corpus précédents ont des noms purement ASCII
 | `cloture-item` | (non couvert) | — | 40 / 13 | **595 / 194** |
 | `exemples-phrases` | — | — | — | **383 / 190** |
 | `annexe-item` nu | 1 (AMBOSS-34) | — | — | **1 (AMC-Psy-P10)** |
-| `caseConfig` | 40/40 | 88/88 | 39/41 | **0/198** |
-| `<script src=".../scoring.js">` | 40/40 | 88/88 | 41/41 | **0/198** |
-| `persistence.js` | 40/40 | 88/88 | 41/41 | **0/198** |
-| appel `saveToRegistry` | via scoring.js | via scoring.js | via scoring.js | **aucun** |
+| `caseConfig` | 40/40 | 88/88 | 39/41 | **198/198** (0/198 avant k2) |
+| `<script src=".../scoring.js">` | 40/40 | 88/88 | 41/41 | **198/198** (0/198 avant k2) |
+| `persistence.js` | 40/40 | 88/88 | 41/41 | **198/198** (0/198 avant k2) |
+| appel `saveToRegistry` | via scoring.js | via scoring.js | via scoring.js | **via scoring.js** (aucun avant k2) |
 | fin de zone pédagogique | `annexe-scenario` | `<!-- COMMENTAIRE GÉNÉRAL -->` | idem | **idem (198/198)** |
 
 Cinq écarts structurants :
@@ -72,9 +72,11 @@ Cinq écarts structurants :
    Management, donc hors de tout autre bloc. Ce sont ces 12 orphelines qui
    imposent de le déclarer comme bloc — c'est `uncovered_content()` qui les a
    fait apparaître.
-4. **Le barème est embarqué dans chaque grille** : ni `caseConfig`, ni
-   `scoring.js`. Voir § 5.
-5. **Aucune grille ne remonte son score au tableau de bord.** Voir § 6.
+4. **Le barème ÉTAIT embarqué dans chaque grille** : ni `caseConfig`, ni
+   `scoring.js`. Corrigé par le lot k2 — les 198 déclarent aujourd'hui un
+   `window.caseConfig` et chargent le moteur partagé. Voir § 5.
+5. **Aucune grille ne remontait son score au tableau de bord.** Corrigé par le
+   même geste. Voir § 6.
 
 ---
 
@@ -205,6 +207,16 @@ python3 scripts/casecos/check_no_loss.py <BASE_REF>           # ~1-2 s / grille 
 `snapshot_invariants.py` ne se relance qu'après une modification **voulue et
 relue**, jamais pour « faire passer » un contrôle rouge.
 
+**Le contrôle navigateur n'est remplacé par aucun de ces scripts.** Aucun ne
+peut dire que la page charge sans exception, que `ecos_registry` est renseigné,
+ni que les réponses survivent au rechargement — ce sont trois faits d'exécution.
+Il doit naviguer **par les URL d'`index.html`** et non par une énumération du
+disque : voir § 6, « Clé du registre et noms accentués ».
+
+`migrate_to_shared_engine.py` est le script du lot k2. Il est idempotent et sans
+effet sur un corpus déjà basculé ; `--dry-run` reste le moyen de vérifier qu'une
+grille nouvellement importée arriverait sous la forme embarquée.
+
 **Toujours relancer les témoins des corpus précédents après une modification de
 l'outillage** — `lib_casecos` importe `lib_amboss` :
 
@@ -216,10 +228,16 @@ python3 scripts/rescos/report_redundancy.py --quiet | tail -1   # doit dire 127
 
 ---
 
-## 5. Le barème est embarqué dans chaque grille
+## 5. Le barème a été embarqué dans chaque grille — il ne l'est plus
 
-Aucune grille n'a de `window.caseConfig` (0/198), aucune ne charge
-`cases/scoring.js` (0/198). **Chacune embarque sa propre copie complète du
+> **État depuis le lot k2 :** les 198 grilles portent un `window.caseConfig` et
+> chargent `cases/scoring.js` + `cases/persistence.js`. Ce paragraphe décrit la
+> forme d'origine, que les lecteurs de `snapshot_invariants.py` et de
+> `check_reachability.py` savent toujours lire — en repli, après la forme
+> déclarative — pour qu'un retour en arrière soit signalé et non silencieux.
+
+Aucune grille n'avait de `window.caseConfig` (0/198), aucune ne chargeait
+`cases/scoring.js` (0/198). **Chacune embarquait sa propre copie complète du
 moteur**, avec la configuration en littéral local :
 
 ```js
@@ -239,18 +257,23 @@ sectionInfo = [
 `snapshot_invariants._first_non_empty()` retient le premier groupe non vide ;
 c'est le seul lecteur à employer.
 
-### Les 198 copies sont saines et identiques entre elles
+### Les 198 copies étaient saines et identiques entre elles
 
-Mesure : les 198 blocs `<script>` porteurs de `calculateScores()`, **nombres et
-chaînes neutralisés**, rendent **une seule empreinte**. Il n'y a pas 198 moteurs
-mais un seul, recopié 198 fois. Sans la neutralisation, chaque grille aurait une
-empreinte unique — elle porte son propre barème — et le champ ne dirait rien.
+C'est ce qui a rendu la bascule mécaniquement sûre. Mesure : les 198 blocs
+`<script>` porteurs de `calculateScores()`, **nombres et chaînes neutralisés**,
+rendaient **une seule empreinte** (`51866a7121a1`). Il n'y avait pas 198 moteurs
+mais un seul, recopié 198 fois. Sans la neutralisation, chaque grille aurait eu
+une empreinte unique — elle porte son propre barème — et le champ n'aurait rien
+dit.
 
-Cette empreinte est gelée par `snapshot_invariants.py` (champ `engineHash`) et
-comparée à chaque passage. **C'est le pendant, pour un moteur embarqué, du
-`git diff` sur `cases/scoring.js`** : ici il n'y a rien à diff.
+Cette empreinte était gelée par `snapshot_invariants.py` (champ `engineHash`) et
+comparée à chaque passage. **C'était le pendant, pour un moteur embarqué, du
+`git diff` sur `cases/scoring.js`** : il n'y avait rien à diff. Le moteur étant
+redevenu partagé, le champ vaut désormais `"shared:scoring.js"` sur les 198 :
+c'est `git diff` qui couvre le moteur, et le champ garde la charge de signaler
+toute grille qui en ré-embarquerait un.
 
-### Ce moteur est `cases/scoring.js` amputé de six ajouts postérieurs
+### Ce moteur était `cases/scoring.js` amputé de six ajouts postérieurs
 
 Diff structurel, ligne à ligne, nombres et chaînes neutralisés :
 
@@ -263,19 +286,24 @@ Diff structurel, ligne à ligne, nombres et chaînes neutralisés :
 | `createNavBar()` | remplacé par un 3ᵉ bloc `<script>` équivalent |
 | **`saveToRegistry()`** | **aucun score ne remonte au tableau de bord** (§ 6) |
 
-**Le CALCUL est identique au caractère près** : traitement des cases de détail,
+**Le CALCUL était identique au caractère près** : traitement des cases de détail,
 repli sur les radios, table communication A=4..E=0, pondération par `coef`,
-`max > 0 ? (score/max)*100 : 0`. Le barème est donc parfaitement calculable.
+`max > 0 ? (score/max)*100 : 0`. **C'est la raison pour laquelle la bascule ne
+change aucune note** : elle rebranche ce qui manquait autour du calcul, pas le
+calcul.
 
 ### Le moteur ne peut pas lever de `TypeError`
 
 C'était le défaut des copies périmées de RESCOS-7 et RESCOS-9 : un
 déréférencement DOM sans garde vers un élément absent, et le score n'était
-jamais calculé. Ici, les neuf identifiants déréférencés sans garde
-(`#missingItems`, `#missingList`, `#totalScore`, `#timerContainer`,
-`#timerStatus`, `#timerDisplay`, `#startBtn`, `#stopBtn`, `#resetBtn`) sont
-présents **dans les 198 grilles**. `check_reachability.engine_defects()` le
-revérifie à chaque passage plutôt que de s'en remettre à la mesure d'un jour.
+jamais calculé. Les neuf identifiants déréférencés sans garde par le moteur
+embarqué (`#missingItems`, `#missingList`, `#totalScore`, `#timerContainer`,
+`#timerStatus`, `#timerDisplay`, `#startBtn`, `#stopBtn`, `#resetBtn`) étaient
+présents **dans les 198 grilles** ; `cases/scoring.js` garde les deux premiers,
+les sept autres restent nus et restent présents partout.
+`check_reachability.engine_defects()` le revérifie à chaque passage — **contre le
+moteur que chaque grille exécute réellement**, le fichier partagé si elle le
+charge — plutôt que de s'en remettre à la mesure d'un jour.
 
 ### Relevé : 198/198 au barème atteignable
 
@@ -291,13 +319,18 @@ coïncident sur chaque section de chaque grille, et le global tombe sur 100 %.
 
 ---
 
-## 6. Le registre des scores : les 198 grilles sont muettes
+## 6. Le registre des scores : les 198 grilles étaient muettes
 
-**Constat.** `saveToRegistry` : 0 occurrence sur 198. Ce n'est **pas** le même
-constat que dans les autres corpus, où le compte est également 0 — là, la
-fonction est **définie et appelée par `cases/scoring.js`**, que les grilles
-chargent. Ici il n'y a pas de `scoring.js`, et la copie embarquée **précède**
-l'ajout de `saveToRegistry` : la chaîne est rompue des deux côtés.
+> **État depuis le lot k2 :** les 198 alimentent `ecos_registry`. Le champ
+> `savesToRegistry` du snapshot vaut `true` sur les 198 et y est gelé : c'est
+> désormais la régression inverse qui est interdite.
+
+**Constat d'origine.** `saveToRegistry` : 0 occurrence sur 198. Ce n'était
+**pas** le même constat que dans les autres corpus, où le compte est également 0
+— là, la fonction est **définie et appelée par `cases/scoring.js`**, que les
+grilles chargent. Ici il n'y avait pas de `scoring.js`, et la copie embarquée
+**précédait** l'ajout de `saveToRegistry` : la chaîne était rompue des deux
+côtés.
 
 **C'est un défaut, pas un choix.** `index.html` :
 
@@ -308,27 +341,42 @@ l'ajout de `saveToRegistry` : la chaîne est rompue des deux côtés.
   `<div class="last-score">42% · C</div>`, la classe `attempted grade-c`, et
   incrémente le compteur « Complétés » de l'en-tête.
 
-Le tableau de bord **attend** donc ces grilles. Aucune ne lui répondra jamais :
-elles ne peuvent ni afficher de score, ni compter comme complétées, ni alimenter
-les statistiques. `exam.html` (mode circuit) lit la même clé et ne verra rien
-non plus.
+Le tableau de bord **attendait** donc ces grilles sans qu'aucune lui réponde :
+elles ne pouvaient ni afficher de score, ni compter comme complétées, ni
+alimenter les statistiques. `exam.html` (mode circuit) lit la même clé et ne
+voyait rien non plus.
 
-Deux manques du même geste :
+Deux manques du même geste, corrigés par le même :
 
-* **`cases/persistence.js` n'est chargé par aucune des 198** (40/40, 88/88,
-  41/41 ailleurs) : les réponses ne sont pas sauvegardées d'une session à
+* **`cases/persistence.js` n'était chargé par aucune des 198** (40/40, 88/88,
+  41/41 ailleurs) : les réponses n'étaient pas sauvegardées d'une session à
   l'autre ;
-* **`srs.js`** n'est jamais chargé : pas de répétition espacée.
+* **`srs.js`** n'était jamais chargé : pas de répétition espacée. Il n'a pas de
+  balise dans les grilles — aucun corpus ne lui en donne — c'est
+  `cases/scoring.js` qui l'injecte lui-même.
 
-`snapshot_invariants.py` gèle `savesToRegistry: false` sur les 198. Ce n'est pas
-un état souhaitable — c'est un défaut **constaté**, gelé pour que sa correction
-soit un changement vu et voulu, et non un effet de bord.
+### La correction, et pourquoi ce n'était pas un `sed`
 
-**La correction n'est pas un `sed`.** Rebrancher `scoring.js` par
-`<script src="../scoring.js">` supprimerait le moteur embarqué mais aussi la
-configuration locale : il faudrait, dans le même geste, convertir les 198
-littéraux en `window.caseConfig`. C'est un lot à part entière, à mener sous
-`check_reachability.py` et `check_invariants.py`.
+Rebrancher `scoring.js` par `<script src="../scoring.js">` supprimait le moteur
+embarqué **mais aussi la configuration locale** : il fallait, dans le même
+geste, convertir les 198 littéraux en `window.caseConfig`.
+`migrate_to_shared_engine.py` le fait, sous huit assertions par grille, et
+supprime en outre les **deux substituts locaux devenus doubles** : le rappel de
+`colorPatientResponses()` (queue exacte de `scoring.js`) et la barre de
+navigation en ligne (substitut de `createNavBar()`, qui aurait affiché **deux**
+barres). Le `<style>` de `.case-nav-bar` est conservé — les grilles CasECOS ne
+chargent pas `cases/case-styles.css`.
+
+**Clé du registre et noms accentués.** `saveToRegistry()` indexe par
+`location.pathname.split("/").pop().replace(/\.html$/, "")` et `index.html` par
+`href.split("/").pop().replace(/\.html$/, "")` : les deux coïncident **quand on
+arrive par le lien du tableau de bord**, dont les `href` sont percent-encodés en
+NFC. Ouvrir le fichier depuis le disque (macOS stocke ces noms en **NFD**)
+produirait une clé `Ce%CC%81phale%CC%81es` au lieu de `C%C3%A9phal%C3%A9es`, et
+la pastille n'apparaîtrait pas. C'est propre à ce corpus — seul corpus aux noms
+accentués — et c'est la raison pour laquelle tout contrôle navigateur doit
+naviguer par les URL d'`index.html`, jamais par une énumération du système de
+fichiers.
 
 ---
 
