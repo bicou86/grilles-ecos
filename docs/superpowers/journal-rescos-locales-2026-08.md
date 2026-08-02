@@ -1335,3 +1335,28 @@ régression.
   puis `Read` avec `offset`/`limit`.
 * **Aucune modification de `cases/scoring.js`** ni d'aucun fichier partagé.
 * **Aucune commande réseau, aucun `git push`, aucun `git gc` ni `git prune`.**
+
+### Un second incident de coordination, et ce qu'il enseigne
+
+Le lot `l6b` a été **absorbé par un commit de l'utilisateur**. Le mécanisme, à
+retenir : un `git add -- <mes chemins>` a été lancé quelques secondes avant la
+validation, pour vérifier le `diff --cached` ; entre les deux, l'utilisateur a
+lancé son propre `git commit`, qui a pris **tout l'index** — donc mes seize
+grilles et ce journal, sous le message
+« Crée les sections pédagogiques de 3 grilles german (53, 54, 55) » (`16a8133`).
+
+**Aucun contenu n'est perdu** : les seize fichiers et le journal sont commités
+à l'identique, `git status` est vide sur `cases/rescos-locales/`, et les trois
+portes restent vertes après coup. Seule la traçabilité est atteinte : le message
+de commit ne décrit pas ce lot.
+
+L'histoire n'a **pas** été réécrite : l'utilisateur commite en parallèle, et un
+`--amend` ou un rebase sous ses pieds coûterait plus cher que le défaut de
+libellé.
+
+**La leçon est plus stricte que la consigne existante.** Commiter avec un
+`path` explicite protège de sweeper les fichiers d'autrui ; cela ne protège pas
+de **se faire sweeper**. Tant qu'un travail concurrent est en cours, il ne faut
+**jamais laisser quoi que ce soit dans l'index** : pas de `git add` préalable,
+et la validation directement par `git commit -F msg -- <chemins>`, qui met en
+index et valide dans le même geste.
