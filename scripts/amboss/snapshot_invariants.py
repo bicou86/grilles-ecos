@@ -31,6 +31,31 @@ def section_counts(html):
     return counts
 
 
+def coefs(html):
+    """`coef` par section — le poids de chaque section dans le total global.
+
+    Ajoute apres coup, pour la meme raison que `sectionCounts` : c'est un champ
+    qui GOUVERNE le bareme sans etre reflete par aucun autre. `scoring.js`
+    calcule `globalPercentage += percentage * coef[key]`, si bien qu'un
+    coefficient faux change la note de toutes les copies sans qu'aucun compte de
+    criteres, de sous-items ou de cases ne bouge.
+
+    Le filet existant est INCOMPLET : `check_reachability.py` verifie que le
+    total tombe sur 100 %, donc il rattrape toute valeur qui casse la SOMME —
+    mais pas une redistribution qui la conserve. `{0.5, 0.25, 0.25}` au lieu de
+    trois quarts egaux passerait sans bruit. C'est le defaut qu'a porte le
+    corpus RESCOS (section vide gardant son coefficient, note plafonnee a 75 %)
+    et la lecon d'AMBOSS-9 rejouee sur un autre champ.
+
+    Les valeurs sont des flottants : `json` les serialise et les relit au bit
+    pres, la comparaison d'egalite de `check_invariants.py` est donc exacte.
+    """
+    m = re.search(r"coef:\s*\{([^}]*)\}", html)
+    if not m:
+        return {}
+    return {k: float(v) for k, v in re.findall(r"(\w+):\s*([\d.]+)", m.group(1))}
+
+
 def snapshot_one(path):
     html = path.read_text(encoding="utf-8")
     m = re.search(r"maxScores:\s*\{([^}]*)\}", html)
@@ -42,6 +67,7 @@ def snapshot_one(path):
         r'<span class="score">Score : <span id="(\w+)">0</span>/(\d+)</span>', html))
     return {
         "maxScores": max_scores,
+        "coef": coefs(html),
         "scoreSpans": {k: int(v) for k, v in spans.items()},
         "sectionCounts": section_counts(html),
         "blocks": lib.blocks_present(html),

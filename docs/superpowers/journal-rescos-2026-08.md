@@ -323,8 +323,10 @@ pondération et sur l'affichage d'une section qui ne notait rien.
 
 **Divergences consignées**
 
-- `scripts/rescos/snapshot_invariants.py` · couverture : **`coef` n'est gelé
-  par aucun snapshot** — non corrigé dans cette passe. C'est pourtant le champ
+- ~~`scripts/rescos/snapshot_invariants.py` · couverture : **`coef` n'est gelé
+  par aucun snapshot**~~ — **tranché et corrigé, voir le volet C ci-dessous.**
+  Consigné tel quel pour la trace. Énoncé d'origine :
+  « `coef` n'est gelé par aucun snapshot ». C'est pourtant le champ
   dont la valeur fausse a produit ce défaut. Le filet actuel est indirect :
   `check_reachability.py` rattrape toute modification de `coef` qui casse la
   somme à 100 %, mais **pas** une redistribution qui la conserve (par exemple
@@ -349,3 +351,84 @@ pondération et sur l'affichage d'une section qui ne notait rien.
 | `check_no_loss.py a82e036` | — | **0 item disparu** sur 30 grilles |
 | balises appariées + `</html>` | 41/41 | **41/41** |
 | AMBOSS · invariants / nomenclature / barème / redondance | OK · 0 · 40/40 · 147 | **OK · 0 · 40/40 · 147** |
+
+### Volet C — `coef` gelé au snapshot, sur les deux corpus
+
+Arbitrage du contrôleur, en réponse à la divergence consignée au volet B.
+Périmètre : **`scripts/rescos/` et `scripts/amboss/` uniquement**.
+`scripts/german/` n'est ni lu ni écrit ni exécuté — l'utilisateur y travaille en
+parallèle ; le même geste y reste à faire et lui sera signalé.
+
+**Le trou.** `coef` gouverne la note globale
+(`globalPercentage += percentage * coef[key]`) sans être reflété par aucun autre
+champ du snapshot. `check_reachability.py` exige que le total tombe sur 100 %,
+donc il rattrape toute valeur qui **casse la somme** — mais pas une
+redistribution qui la **conserve**. C'est la leçon de `sectionInfo[].count` sur
+AMBOSS-9 rejouée sur un autre champ.
+
+**Modifications**
+
+- `scripts/amboss/snapshot_invariants.py` · nouvelle fonction `coefs()`, champ
+  `coef` ajouté à `snapshot_one()` (forme `caseConfig` — les 40 grilles AMBOSS
+  la portent, aucune forme impérative).
+- `scripts/rescos/snapshot_invariants.py` · nouvelle fonction `coefs()`, qui lit
+  **les deux formes** comme `max_scores()` — sans quoi RESCOS-7 et RESCOS-9,
+  qui n'ont pas de `caseConfig`, auraient un `coef` vide et le champ le plus
+  sensible du barème resterait non gelé sur les deux seules grilles à moteur de
+  calcul embarqué.
+- `scripts/amboss/check_invariants.py` et `scripts/rescos/check_invariants.py` ·
+  `"coef"` ajouté à `FROZEN`.
+
+**Preuve que le trou est fermé.** Sur une copie de RESCOS-12, `coef` passé de
+trois tiers égaux à `{0.5, 0.25, 0.25}` — **somme préservée à 1.0** :
+
+    somme des coef falsifiés : 1.0
+    check_reachability       : OK (ne voit RIEN) | global si tout est coché : 100 %
+    check_invariants FROZEN  : ECHEC sur coef
+       attendu : {anamnese: 0.333…, management: 0.333…, communication: 0.333…}
+       obtenu  : {anamnese: 0.5,   management: 0.25,    communication: 0.25}
+
+`check_reachability.py` déclare la grille parfaitement saine ; seul le nouveau
+gel la rattrape. C'est exactement le cas que la divergence du volet B décrivait.
+
+**Baselines régénérés — la seule différence admise, et la seule obtenue.**
+Contrôle exécuté **avant** régénération, champ par champ et grille par grille :
+
+| corpus | champs ajoutés | champs retirés | champs modifiés |
+|---|---|---|---|
+| AMBOSS (40) | `['coef']` | aucun | **0** |
+| RESCOS (41) | `['coef']` | aucun | **0** |
+
+`git diff --numstat` le confirme : **+240 / −0** sur `scripts/amboss/baseline.json`
+(40 grilles × 6 lignes), **+239 / −0** sur `scripts/rescos/baseline.json`
+(37 × 6 + 2 × 5 + 1 × 4 + 1 × 3 — les quatre distributions de sections du
+corpus). **Aucune suppression, aucune modification** : le diff est une addition
+pure.
+
+**Ce que la lecture des `coef` a montré, en passant** — l'argument du volet B
+tient sur les deux corpus :
+
+| distribution | AMBOSS | RESCOS |
+|---|---|---|
+| `0.25` ×4 | **40 / 40** | 37 / 41 |
+| `1/3` ×3 (volet B) | — | 2 |
+| `1` (communication seule, RESCOS-7) | — | 1 |
+| `0.7 / 0.3` (RESCOS-9) | — | 1 |
+
+**80 grilles sur 81** pondèrent leurs sections **à égalité**, quelle que soit
+leur masse de points. La seule exception, RESCOS-9, porte `0.7 / 0.3` pour 41 et
+15 points — et non le `0.732 / 0.268` du prorata. Aucun coefficient du projet
+n'est dérivé de ses points.
+
+**Vérifications après le volet C**
+
+| contrôle | AMBOSS | RESCOS |
+|---|---|---|
+| `check_invariants.py` (avec `coef` gelé) | **OK 40/40** | **OK 41/41** |
+| `check_nomenclature.py` | **0** | **0** |
+| `check_reachability.py` | **40/40** | **41/41** |
+| `report_redundancy.py` | **147** | **610** |
+| `check_no_loss.py a82e036` | 0 item disparu | 0 item disparu |
+
+Aucun fichier de `cases/` n'est touché par ce volet : il ne modifie que
+l'outillage et les deux snapshots.

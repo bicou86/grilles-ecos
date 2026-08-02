@@ -18,8 +18,14 @@ BASE = Path(__file__).parent / "baseline.json"
 # `configForm` : une grille qui passerait de `caseConfig` a la forme imperative
 # (ou l'inverse) changerait de moteur de calcul sans qu'aucun autre champ ne
 # bouge.
-FROZEN = ["maxScores", "scoreSpans", "sectionCounts", "configForm", "blocks",
-          "criteriaCount", "detailCount", "radioCount", "checkboxCount"]
+# `coef` : le champ qui a produit le defaut de RESCOS-12 et RESCOS-13 (section
+# vide gardant son quart). Il gouverne la note globale sans etre reflete par
+# aucun autre, et `check_reachability.py` ne rattrape que les valeurs qui
+# CASSENT la somme a 100 % — une redistribution qui la conserve
+# (`0.5 / 0.25 / 0.25`) passerait sans bruit. Voir snapshot_invariants.coefs().
+FROZEN = ["maxScores", "coef", "scoreSpans", "sectionCounts", "configForm",
+          "blocks", "criteriaCount", "detailCount", "radioCount",
+          "checkboxCount"]
 
 # Champs qui doivent rester VIDES quoi qu'il arrive — ils ne sont pas compares
 # au passe mais a zero. Un bloc dont la fin equilibree ne tombe plus sur la

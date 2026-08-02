@@ -48,6 +48,33 @@ def max_scores(html):
             re.findall(r'maxScores\["(\w+)"\]\s*=\s*(\d+)', html)}
 
 
+def coefs(html):
+    """`coef` par section, forme declarative ou imperative.
+
+    Gele pour la meme raison que `sectionCounts`, et sur le defaut qu'a porte
+    CE corpus : RESCOS-12 et RESCOS-13 laissaient coef 0.25 a une section vide,
+    dont `scoring.js` calcule le pourcentage a 0 (`max > 0 ? ... : 0`) — une
+    copie parfaite plafonnait a 75 % sans qu'aucun compte de criteres, de
+    sous-items ou de cases ne bouge.
+
+    Le filet existant est INCOMPLET : `check_reachability.py` exige que le
+    total tombe sur 100 %, donc il rattrape toute valeur qui casse la SOMME des
+    coefficients — mais pas une redistribution qui la conserve. Passer de trois
+    tiers egaux a `{0.5, 0.25, 0.25}` changerait la note de toutes les copies
+    et resterait vert. Le geler ferme ce trou ; verifier que la valeur est
+    *juste* reste le role de `check_reachability.py`.
+
+    Les valeurs sont des flottants : `json` les serialise et les relit au bit
+    pres, l'egalite de `check_invariants.py` est donc exacte — y compris pour
+    le `0.3333333333333333` de RESCOS-12 et RESCOS-13.
+    """
+    m = re.search(r"coef:\s*\{([^}]*)\}", html)
+    if m:
+        return {k: float(v) for k, v in re.findall(r"(\w+):\s*([\d.]+)", m.group(1))}
+    return {k: float(v) for k, v in
+            re.findall(r'coef\["(\w+)"\]\s*=\s*([\d.]+)', html)}
+
+
 def snapshot_one(path):
     html = path.read_text(encoding="utf-8")
     spans = dict(re.findall(
@@ -55,6 +82,9 @@ def snapshot_one(path):
     stripped = lib.strip_base64(html)
     return {
         "maxScores": max_scores(html),
+        # Le champ qui a produit le defaut de RESCOS-12 et RESCOS-13 : une
+        # section vide gardant son quart de coefficient. Voir `coefs()`.
+        "coef": coefs(html),
         "scoreSpans": {k: int(v) for k, v in spans.items()},
         # `sectionInfo[].count` — le nombre de criteres que le calcul itere.
         # C'est ce champ, longtemps hors snapshot, qui rendait le bareme

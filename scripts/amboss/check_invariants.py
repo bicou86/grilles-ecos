@@ -15,7 +15,12 @@ BASE = Path(__file__).parent / "baseline.json"
 # le voir. Le geler interdit toute derive ; verifier qu'il est *juste* — que le
 # bareme declare est bien atteignable par le calcul — est le role distinct de
 # `check_reachability.py`, qui ne compare a aucun passe.
-FROZEN = ["maxScores", "scoreSpans", "sectionCounts", "blocks",
+# `coef` a ete ajoute pour la meme raison, et sur le meme constat : il gouverne
+# la note globale (`globalPercentage += percentage * coef[key]`) sans etre
+# reflete par aucun autre champ, et `check_reachability.py` ne rattrape que les
+# valeurs qui CASSENT la somme a 100 % — une redistribution qui la conserve
+# (`0.5 / 0.25 / 0.25`) passerait sans bruit. Voir snapshot_invariants.coefs().
+FROZEN = ["maxScores", "coef", "scoreSpans", "sectionCounts", "blocks",
           "criteriaCount", "detailCount", "radioCount", "checkboxCount"]
 
 
