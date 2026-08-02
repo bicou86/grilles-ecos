@@ -101,11 +101,54 @@ EXTRA = {
     _MICROLITRE_ETENDU: "G/L (x0,001)",
 }
 
+# ---------------------------------------------------------------------------
+# MICROBIO — abreviations microbiologiques et infectiologiques anglophones
+# ---------------------------------------------------------------------------
+# Angle mort constate au lot r4a : `MRSA` figurait dans RESCOS-9b et a ete
+# corrige en `SARM` a l'occasion d'un alignement de niveau 1, sans qu'AUCUN
+# controle ne le signale — la table d'AMBOSS porte les unites de laboratoire et
+# les numeros d'urgence, pas la nomenclature microbiologique.
+#
+# BORDAGE (mesure, pas intention) — les onze motifs ci-dessous rendent 0 hit sur
+# les 41 grilles RESCOS apres la passe du lot r4b, et 0 sur les 40 grilles
+# AMBOSS, a une exception mesuree et documentee :
+#
+#   * `\bTB\b` : 0 sur RESCOS (l'unique occurrence, RESCOS-34
+#     « etiologie specifique (TB, purulente, neoplasique) », est devenue
+#     « tuberculeuse »), mais **22 sur AMBOSS-31**, ou le token est employe
+#     systematiquement. La table ne tourne que sur RESCOS, donc l'ajout est sans
+#     effet la-bas ; consigne ici pour qui voudrait un jour la promouvoir.
+#
+# DEUX MOTIFS DELIBEREMENT ECARTES, et pourquoi :
+#
+#   * `\bVRE\b` (enterocoque resistant a la vancomycine) — **faux positif
+#     francais avere** : AMBOSS-19 ecrit « VRE = volume de reserve
+#     expiratoire », abreviation standard de spirometrie. Dans une porte
+#     BLOQUANTE, ce motif casserait toute grille portant des volumes
+#     pulmonaires. C'est la lecon du `\b112\b` d'AMBOSS et du seuil `\d{3,}`
+#     ci-dessus : un token court finit par rencontrer un homographe legitime.
+#   * `\bCRE\b` (enterobacterie resistante aux carbapenemes) — trois lettres,
+#     aucun besoin demontre (0 occurrence sur les deux corpus), meme famille de
+#     risque que `VRE`. On n'ajoute pas un motif court sans besoin mesure.
+MICROBIO = {
+    r"\bMRSA\b": "SARM",
+    r"\bMSSA\b": "SASM",
+    r"\bESBL\b": "BLSE",
+    r"\bMDRO\b": "BMR (bacterie multiresistante)",
+    r"\bHIV\b": "VIH",
+    r"\bPID\b": "salpingite / infection genitale haute",
+    r"\bUTI\b": "IVU (infection des voies urinaires)",
+    r"\bSTD\b": "IST",
+    r"\bSTI\b": "IST",
+    r"\bTB\b": "tuberculose (ou TBC)",
+}
+
 # Copie, jamais la reference : muter la table d'AMBOSS en place ferait
 # dependre son contenu de l'ordre des imports si les deux corpus tournaient
 # dans le meme processus.
 BANNED = dict(lib.amboss_module("check_nomenclature").BANNED)
 BANNED.update(EXTRA)
+BANNED.update(MICROBIO)
 
 
 def main():

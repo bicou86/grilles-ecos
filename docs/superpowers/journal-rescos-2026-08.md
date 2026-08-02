@@ -760,3 +760,195 @@ coefficient de `c5243e1` est intacte.
 | `report_import_defects.py` | inchangé (0 / 0 / 2 / 113 / 0 / 13 / **0**) |
 | équilibrage `<div>` · `bounds_anomalies` · `uncovered_content` | 0 · [] · [] sur 41/41 |
 | AMBOSS (4 contrôles) | **OK — 147 paires, inchangé** |
+
+---
+
+### Dédoublonnage — lot RESCOS-16 à RESCOS-30 (hors RESCOS-21, pilote)
+
+Base `c883906`. **14 grilles traitées, 14 modifiées.** Redondance inter-blocs du
+lot : **277 → 30**. Corpus : **482 → 235** (intra : 299 → 254). AMBOSS
+inchangé à **147**.
+
+| grille | avant | après | ce qui a cédé |
+|---|---|---|---|
+| RESCOS-16 | 18 | **3** | `theorie` doublons de section, §1, §2, §3, mnémo ABCD |
+| RESCOS-17 | 6 | **0** | §1, §2 |
+| RESCOS-18 | 26 | **0** | `theorie` doublons, `expert`, §1, §2, §3, Checklist |
+| RESCOS-19 | 18 | **1** | Pièges ECOS, §1, §2, §3 |
+| RESCOS-20 | 48 | **6** | `theorie` doublons, mnémo déplacé, Triade, Pièges ECOS, §1-3 |
+| RESCOS-22 | 4 | **2** | Pièges ECOS, §1, §2, §3 |
+| RESCOS-23 | 9 | **1** | Pièges ECOS, contraste réduit, §1, §2, §3 |
+| RESCOS-24 | 38 | **4** | `theorie` doublons, mnémo déplacé, Signes typiques, Complications, Pièges ECOS, §1-3 |
+| RESCOS-25 | 29 | **2** | mnémo déplacé, Signes typiques, Prostatite, Pièges ECOS, §1-3 |
+| RESCOS-26 | 17 | **2** | `expert`, §1, §2, §3, Checklist |
+| RESCOS-27 | 18 | **2** | `expert`, `theorie`, les cinq listes de §1-§5 |
+| RESCOS-28 | 44 | **7** | `theorie` contraste, `expert`, Touches ludiques, Pièges ECOS, §1-4 |
+| RESCOS-29 | 1 | **0** | `expert` reformulé en conduite |
+| RESCOS-30 | 1 | **0** | `theorie` reformulé en raisonnement |
+
+**Modifications**
+
+*Geste 3 — trous du bloc canonique (lecture inversée `therapy`/`redflags` ↔
+`presentation` sans `resume`) : sept trouvés, sept comblés.*
+
+- RESCOS-18 · `resume`/Imagerie : « épaississement pariétal » → « épaississement
+  pariétal **> 3 mm**, […] liquide péri-vésiculaire »
+  source : `theorie` de la même grille — le seuil échographique n'existait que là.
+- RESCOS-26 et RESCOS-27 · `resume`/Traitement médical : « Traitement
+  antihypertenseur : cible < 130/80 mmHg » → « […], **IEC ou sartan privilégiés
+  (protection vasculaire au-delà du seul contrôle tensionnel)** »
+  source : `therapy` (noté) « IEC/ARA2 (protection vasculaire) » + `SSP —
+  Claudication Intermittente & AOMI` L264 « IEC / sartan privilégiés ».
+  L'indication de classe, distincte du contrôle tensionnel, était absente du canonique.
+- RESCOS-27 · `resume` : « Rééducation à la marche (programme supervisé
+  recommandé) » → « […] **3 séances de 30 à 60 min par semaine pendant au moins
+  3 mois** » ; « Claudication invalidante malgré traitement médical +
+  rééducation » → « […] malgré **3-6 mois** de traitement médical optimal »
+  source : `therapy` (noté) et `SSP — Claudication Intermittente & AOMI`.
+  Les paramètres de prescription du traitement de première intention, et la durée
+  qui conditionne l'indication chirurgicale, manquaient au canonique.
+- RESCOS-28 · `resume`/Prise en charge, **quatre ports** :
+  « Aides techniques (cannes, semelles) » → « canne portée **du côté opposé** » ;
+  « Infiltrations intra-articulaires (corticoïdes ou acide hyaluronique) » →
+  « corticoïdes, **3 par an au maximum** » ; « Indiqué si échec du traitement
+  conservateur » → « après échec d'un traitement médical bien conduit **pendant au
+  moins 6 mois**, avec douleur invalidante ou limitation fonctionnelle » ;
+  « Excellents résultats » → « […] ; **durée de vie de la prothèse : 15 à 20 ans** »
+  source : `therapy` (noté) de la même grille pour les quatre ;
+  `SSP — Douleur de Hanche` L249 « canne **controlatérale** » confirme le premier.
+
+*Niveau 1 — deux arbitrages, tous deux sur pages SSP à faible fan-out.*
+
+- RESCOS-26 et RESCOS-27 · `resume` : « Statine forte dose (objectifs LDL
+  **< 0,55 mmol/L** si haut risque) » → « Statine de haute intensité (objectif
+  LDL **< 1,4 mmol/L**) »
+  source : `SSP — Douleur au Mollet & TVP` L360 « statine forte intensité
+  (LDL < 1,4 mmol/L) » et `SSP — Claudication Intermittente & AOMI` L263
+  « cible LDL < 1.4 mmol/L (recommandation SSC/ESC) ».
+  **Erreur d'unité** : 0,55 est la valeur en g/L, écrite avec l'unité mmol/L —
+  soit une cible dix fois trop basse. Hiérarchie niveau 1 explicite.
+
+*Contradictions internes réglées par le contrat.*
+
+- RESCOS-20 · `theorie` portait **deux modalités d'imagerie de seconde ligne**
+  incompatibles (« IRM si US non conclusif » et « CT abdomino-pelvien si US non
+  contributif »), là où `resume` et `presentation` disent IRM. Aligné sur IRM,
+  avec la raison portée : « préférée au scanner chez la femme en âge de procréer
+  (pas d'irradiation) ». `resume` est canonique.
+- RESCOS-28 · `theorie` portait **deux seuils de raideur matinale** sans
+  articulation (« < 60 minutes » dans les critères, « > 30 min » dans le
+  différentiel mécanique/inflammatoire). Reformulé : « ≤ 60 min (seuil des
+  critères ACR) — en pratique clinique, c'est un dérouillage > 30 min qui fait
+  basculer vers l'inflammatoire ».
+  source : `SSP — Douleur de Hanche` L110 « dérouillage > 30 min ».
+- RESCOS-16 · `theorie` : « plasmaphorèse » (×3) → « plasmaphérèse » ;
+  « mycophenolate » → « mycophénolate » ; `resume` « IVIg » → « IgIV »
+  (le reste de la grille écrit IgIV) ; `theorie` « Tensilon/néostigmine » →
+  « édrophonium, néostigmine » (Tensilon est une marque américaine).
+- RESCOS-19 · **`ERCP` (×8) → `CPRE`** : la même grille écrivait déjà CPRE
+  huit fois. `EUS` → « écho-endoscopie ». RESCOS-18 · « IRM biliaire (MRCP) » →
+  « Cholangio-IRM » (`theorie` de la même grille écrit déjà Cholangio-IRM).
+  RESCOS-23 · « Mise à jeun (NPO) » → « Mise à jeun ».
+- RESCOS-26 · `presentation`/mnémo 5P : « Paresia » → « Paralysis (paralysie) ».
+  RESCOS-28 · « Impôtence » → supprimé avec la liste, reformulé.
+
+*Geste 4 — réduction des recopies de `therapy` dans `presentation` (arbitrage du
+volet).* Appliqué à RESCOS-26 (§3 Q2 recopiait les trois `therapy-section`),
+RESCOS-28 (§3 Q2 et §4 Q2 : indications chirurgicales et durée de vie
+prothétique mot pour mot), RESCOS-25 (§3 Q2 « Spécifique »). **Les blocs notés
+n'ont subi aucune modification.**
+
+*Gestes 1 et 2 — les trois portes et les listes de §2/§3.* Les listes
+`presentation-reponse list` sont converties en `presentation-reponse text`,
+registre parlé, dans les 12 grilles qui en portaient. « Pièges ECOS » supprimée
+dans 6 grilles (RESCOS-19, 20, 22, 23, 24, 25, 28), après **port explicite vers
+`expert`/Pièges** de tout ce que ce bloc ne portait pas : RESCOS-22 (tolérance
+orale, antibiothérapie systématique), RESCOS-23 (lipase), RESCOS-25 (AINS et
+risque rénal, cystite masculine), RESCOS-28 (irradiation au genou, amplitudes,
+radio avant IRM). Les `mnemo-box` de Checklist mentale déplacées vers Touches
+ludiques dans RESCOS-20, 24, 25 (mnémo signature de la grille, axe 5) ;
+laissées en place ailleurs.
+
+*Sections dupliquées dans `theorie`.* Quatre grilles portaient **deux sections
+de même titre** dans le même bloc (RESCOS-16 et RESCOS-18 : deux « Examens
+complémentaires » ; RESCOS-20 : « Diagnostic » ⊂ « Examens complémentaires » ;
+RESCOS-24 : « Prise en charge » ⊂ Rappels + Examens). Fusionnées en une seule,
+après port item par item de ce que la section supprimée portait en propre
+(« décrément » et « bilan auto-immun » dans RESCOS-16 ; CT et cholangio-IRM dans
+RESCOS-18 ; `target sign` appendiculaire et sédiment urinaire dans RESCOS-20 ;
+durée 10-14 j déjà présente dans `resume` pour RESCOS-24). RESCOS-20 : la
+section « DD » de `theorie`, liste nue de cinq noms tous couverts par
+`annexe-dd`, supprimée.
+
+*Balayage microbiologique (les 41 grilles).*
+
+- `HIV` → **`VIH`** : RESCOS-1 (×4, dont deux dans la section notée — libellé
+  seul, format `N. Libellé` intact) et RESCOS-10 (×1). Le corpus écrivait déjà
+  VIH dans RESCOS-2 et RESCOS-30.
+- `PID` → **salpingite / infection génitale haute** : RESCOS-24 (×4, dont une
+  dans `annexe-dd` : « Salpingite / PID » → « Salpingite (infection génitale
+  haute) »).
+- `TB` → **tuberculeuse** : RESCOS-34 (×1, étiologie de péricardite).
+- `MRSA`, `MSSA`, `ESBL` : **zéro occurrence** restante (le `MRSA` de RESCOS-9b
+  avait été corrigé au lot r4a).
+- Dix motifs ajoutés à `BANNED` via `MICROBIO` dans
+  `scripts/rescos/check_nomenclature.py` : `MRSA`, `MSSA`, `ESBL`, `MDRO`,
+  `HIV`, `PID`, `UTI`, `STD`, `STI`, `TB`.
+
+**Divergences consignées**
+
+- RESCOS-26 et RESCOS-27 · `therapy` (**noté**) prescrit une cible
+  « LDL < 0,7 g/L » (= 1,8 mmol/L), là où les deux pages SSP disent
+  1,4 mmol/L (= 0,55 g/L). C'est l'ancienne cible « haut risque », alors que
+  l'AOMI symptomatique relève du très haut risque. **Non corrigé** : les blocs
+  notés sont intouchables. Le `resume` a été aligné sur la SSP ; l'écart entre
+  le noté et le canonique subsiste et demande un arbitrage du barème.
+- Corpus entier · **`gold standard`** : 17 occurrences sur 16 grilles, dont
+  RESCOS-17. Anglicisme, mais usage établi et homogène du corpus, et large
+  débordement de mon lot. **Non corrigé, non ajouté à `BANNED`** — corriger 2
+  grilles sur 16 créerait l'irrégularité que le pilote reproche à la
+  normalisation grille par grille.
+- Anglicismes non microbiologiques repérés au balayage, **hors de mon lot et non
+  corrigés** : `ESR` et `ANA` (RESCOS-3, → VS et AAN — la grille voisine
+  RESCOS-38 écrit déjà AAN), `Giant cells` (RESCOS-3), `SCFE` (RESCOS-9b, →
+  épiphysiolyse fémorale supérieure, déjà écrit en toutes lettres deux lignes
+  plus bas), `anti-DNA` et `DMARD` (RESCOS-38), `CABG` et `PCI` (RESCOS-36 et
+  37), `FIT` (RESCOS-15), `IVDU` et `MST` (RESCOS-1, → IST, que RESCOS-14 et 33
+  emploient déjà), `PRN` (RESCOS-40). Aucun n'est microbiologique ; le mandat de
+  balayage ne les couvre pas.
+- `\bVRE\b` **écarté de `BANNED`, faux positif avéré** : AMBOSS-19 écrit
+  « VRE = volume de réserve expiratoire ». Dans une porte bloquante, ce motif
+  casserait toute grille portant des volumes pulmonaires. `\bCRE\b` écarté pour
+  la même famille de risque, sans besoin mesuré (0 occurrence sur les deux
+  corpus). `\bTB\b` ajouté : 0 sur RESCOS, mais **22 sur AMBOSS-31** — mesuré et
+  consigné dans le docstring, sans effet puisque la table ne tourne que sur RESCOS.
+- RESCOS-19 et RESCOS-23 · le mnémo **`5F`** (Female, Fat, Forty, Fertile, Fair)
+  est présenté comme facteur de risque alors que le patient de RESCOS-19 est un
+  **homme de 64 ans**. Le mnémo décrit le risque lithiasique en population, pas
+  ce patient. **Non corrigé** — jugement d'auteur, règle 3.
+- `annexe-expert` toujours non normalisé (RESCOS-28 « Techniques Examen »,
+  RESCOS-25 et 22 « Rôles et interventions »). Même arbitrage en attente qu'au
+  pilote et au lot r4a.
+
+**Barème** — **aucune modification.** Les 14 grilles du lot n'ont été éditées que
+dans `resume`, `expert`, `theorie`, `presentation` ; RESCOS-1, RESCOS-10 et
+RESCOS-34 n'ont reçu que la substitution de nomenclature (libellé, pas de
+structure). Aucun sous-item noté ajouté ni retiré, aucun `maxScores`,
+`<span class="score">`, `sectionInfo[].count` ni `coef` touché, **aucune
+régénération de baseline**. Strictement **règle 1**.
+
+**Vérifications**
+
+| contrôle | résultat |
+|---|---|
+| `check_invariants.py` | **OK 41/41** |
+| `check_nomenclature.py` (table élargie) | **OK — 0 terme** |
+| `check_reachability.py` | **OK 41/41 à 100 %** |
+| `report_redundancy.py` (lot 16→30) | **277 → 30** |
+| `report_redundancy.py` (corpus) | **482 → 235** (intra 299 → 254) |
+| `check_no_loss.py c883906` | 223 items / 17 grilles — tous relus, 1 perte réelle trouvée et réparée |
+| `report_import_defects.py` | 0 / 0 / 2 / 101 / 0 / 13 / **0** (chevrons nus : 114 → 101) |
+| équilibrage `<div>` · `bounds_anomalies` · `uncovered_content` | 0 · [] · [] sur 41/41 |
+| AMBOSS (4 contrôles) | **OK — 147 paires, inchangé** |
+
+German n'a été ni lu ni mesuré.
