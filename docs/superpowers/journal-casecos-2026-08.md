@@ -1500,3 +1500,241 @@ qu'on s'était donnée pour les autoriser. **Aucune perte.**
   rien écrit hors du dépôt.
 * Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
   aucun `timeout`, aucun `snapshot_invariants.py`.
+
+---
+
+## k5d — Quatrième lot de production CasECOS : grilles 101 à 140
+
+Base `86f1fc3`. `lib.grids()[100:140]`.
+
+**29 des 40 grilles du lot modifiées, plus 1 grille hors lot (jumelle) — 31
+fichiers, 34 insertions, 38 suppressions.** Redondance inter-blocs du lot
+**86 → 46 (−47 %)**, dont **`expert ↔ theorie` 35 → 0 (−100 %)** et
+`annexe-dd ↔ expert` **7 → 2**. Seize trous du canonique comblés — dix-sept fiches `theorie` enrichies, la
+dix-septième sur une grille jumelle hors lot — et trois rendements de niveau 1
+(SSP).
+
+| porte | avant | après |
+|---|---|---|
+| `check_invariants.py` | rc 0 | **rc 0 — 198 grilles** |
+| `check_nomenclature.py` | rc 0 | **rc 0** |
+| `check_reachability.py` | 198/198 | **198/198 à 100 %** |
+| `bounds_anomalies` + `uncovered_content` | 0 | **0 sur 198** |
+| `report_redundancy.py` (lot de 40) | **86 inter** | **46 inter** |
+| `check_no_loss.py 86f1fc3` | — | **3 disparitions, 3 verdictées** |
+| `scripts/amboss/report_redundancy.py --quiet` | 147 | **147** |
+| `scripts/rescos/report_redundancy.py --quiet` | 127 | **127** |
+| `scripts/amboss/check_invariants.py` · `scripts/rescos/check_invariants.py` | rc 0 | **rc 0** |
+
+### `expert ↔ theorie` : 35 → 0
+
+Le motif de k5a, k5b et k5c se reproduit sans exception : `expert`/Points clés
+est un cours en réduction que `theorie` porte déjà, plus richement, en entier.
+Règle inchangée : retrait seulement si (a) le test du référent attribue l'item à
+`theorie`, (b) `theorie` en porte le contenu **intégral**, (c) `expert` garde le
+comportement observable dans `Rôles` ou `Pièges`.
+
+**16 retraits, 9 spécialisations.** Deux figures dominantes :
+
+* **le piège qui décalque le canonique** (figure de k5c), traité en le rendant
+  observable *dans cette station* : « Prescrire des bêta-lactamines en première
+  intention » → « Prescrire à Isabelle un cefuroxime alors qu'elle n'a aucun
+  facteur de complication » ; « Ne pas activer immédiatement la filière AVC » →
+  « Laisser M. Paretic suivre le circuit d'accueil habituel des urgences » ;
+  « Négliger la recherche d'une FA paroxystique » → « Conclure de l'ECG d'entrée
+  normal qu'il n'y a pas de FA, sans monitoring prolongé ». Chaque reformulation
+  a été **mesurée avant écriture** contre l'ensemble des items de la grille.
+* **le script de révélation à queue théorique** — inédit de ce lot. Un item de
+  `Rôles` qui livre un résultat *et* l'interprète : « Gazométrie artérielle :
+  communiquer l'hypoxémie avec hypocapnie (non indispensable au diagnostic) »,
+  « Cliché de l'ASP demandé : calcifications — pathognomoniques de pancréatite
+  chronique », « CRP si demandée : 3 mg/l (pas de syndrome inflammatoire
+  significatif) ». La queue est du savoir généralisable ou un argument
+  d'`annexe-dd` ; l'amputer rend au candidat le travail d'interprétation, ce qui
+  est précisément la raison d'être du bloc.
+
+Une **erreur factuelle interne** corrigée par le même geste sur `AMC-Neuro-P3` :
+`expert` qualifiait les troubles trophiques de la syringomyélie de
+« pathognomonique », `theorie` de « **quasi** pathognomonique ». Le retrait de
+l'item d'`expert` supprime l'affirmation absolue et laisse la formulation exacte.
+
+### Seize trous du canonique
+
+Instrument de k4/k5a/k5b/k5c : appariement à seuil abaissé (0,45) entre
+`therapy`/`redflags` et les blocs de restitution, en retenant ceux dont le
+meilleur appariement est **ailleurs que dans `theorie`** — complété ici d'un
+**relevé des termes distinctifs** (éponymes, acronymes) présents dans
+`redflags`/`therapy` et de compte nul dans `theorie`, sur texte visible.
+
+| grille | point absent du canonique | vivait dans |
+|---|---|---|
+| `AMC-MCPR-ARC9` | tonus sphinctérien anal au toucher rectal et troubles de l'érection — 2 des 5 signes de la queue de cheval ; délais IRM < 24 h / décompression 24-48 h | `redflags` + `annexe-dd` ; délais nulle part |
+| `AMC-MedInterne-P1` | **substrats électriques de la syncope** : QTc/Bazett, Brugada, WPW, ondes epsilon (DAVD) — `theorie` prescrivait « ECG 12 dérivations » sans dire ce qu'on y cherche ; ATCD familiaux de mort subite | `redflags` seul |
+| `AMC-MedInterne Embolie pulmonaire` | **CTEPH** (0 occ. `theorie`) — la seule complication de l'EP curable chirurgicalement | `redflags` seul |
+| `AMC-MedInterne-P11` | **compression médullaire** (0 occ. `theorie`) — l'urgence neurochirurgicale du myélome, sur une grille mesurant **0 paire et 0 signal** | `redflags` seul |
+| `AMC-MedInterne-P14` | **stratégie treat-to-target** (0 occ. `theorie`) — la cible qui donne son sens au DAS28 que `theorie` prescrivait déjà de mesurer | `expert` seul |
+| `AMC-MedInterne-P2` | **facteurs déclenchants d'une décompensation cardiaque** (0 occ. `theorie`) | `expert` + section notée |
+| `AMC-MedInterne-P3` | **Haemophilus influenzae, S. pneumoniae, Branhamella catarrhalis** (0 occ. `theorie`) — les germes que l'antibiothérapie d'Anthonisen doit couvrir | `therapy`/Détails |
+| `AMC-Neuro-P1` | **NMOSD, MOGAD, ADEM** (0 occ. `theorie`) — les « diagnostics alternatifs » que McDonald 2017 exige d'exclure sans les nommer | `annexe-dd` + `redflags` |
+| `AMC-Neuro-P4` | **crise cholinergique** (0 occ. `theorie`) — l'autre cause d'aggravation aiguë du myasthénique, dont le traitement est inverse | `redflags` + `expert` |
+| `AMC-Neuro-P5` | **SUDEP** (0 occ. `theorie`) — l'argument d'observance | `redflags` seul |
+| `AMC-Neuro-P7` | **signe de Hutchinson** et **réflexe de Cushing** (0 occ. `theorie`) — les deux signes cliniques de l'engagement | `therapy` + `redflags` + `expert` |
+| `AMC-Neuro-R1` | **signes de Kernig et de Brudzinski** (0 occ. `theorie`) — la section notée les fait exécuter, le canonique ne les nomme pas | `redflags` + section notée |
+| `AMC-ORL-P1` | **signe d'Hennebert** et la séquence d'érosion du cholestéatome (enclume → canal semi-circulaire → VII → endocrâne) | `redflags` seul |
+| `AMC-ORL-P2` | **infarctus de l'AICA** (0 occ. `theorie`) — le seul AVC qui imite un vertige périphérique ; **HINTS Plus** | `redflags` seul |
+| `AMC-ORL-P9` | **SAOS** associé à l'hypertrophie adénoïdienne (0 occ. `theorie`) — indication propre à l'adénoïdectomie | `redflags` + `expert` |
+| `AMC-Pharmaco-S3` | **antidote de la digoxine** (fragments Fab, Digifab®) et les signes du surdosage digitalique (0 occ. `theorie`) | `therapy`/Détails + `redflags` |
+
+**Aucun n'est venu de `report_redundancy.py`.** Deux sont sur des grilles
+mesurant **0 paire** (`AMC-MedInterne-P11`, `AMC-ORL-P2`) et une sur une grille
+non modifiée par ailleurs (`AMC-Neuro-R1`). **Deux sont du rationnel logé dans
+un « Détails : » de `therapy-item`** — le motif du § 3.3 de k4, confirmé pour la
+cinquième fois.
+
+### Jumelles
+
+Relevé automatique par similarité cosinus tf-idf du texte visible des 198
+grilles, seuil 0,30 — l'appariement par items normalisés, essayé d'abord, ne
+rend **rien** au-dessus de 0,15 : les stations jumelles sont réécrites, pas
+recopiées.
+
+| lot 4 | jumelle | cos | statut |
+|---|---|---|---|
+| 128 `AMC-Neuro-R2` AVC — M. Paretic | **194** `UIDC-Monsieur Paretic` | 0,49 | même patient, jumelle **hors des lots traités** |
+| 130 `AMC-ORL-P2` Menière | **55** `AMC-ECOS1-S3` Vertiges | 0,43 | jumelle traitée par k5b — **même trou AICA, corrigé des deux côtés** |
+| 127 `AMC-Neuro-R1` — Mme Kopf | **179** `UIDC-Madame Kopf` | 0,41 | même patiente, jumelle hors lots |
+| 130 `AMC-ORL-P2` | **198** `Vertiges aigus - Adulte` | 0,38 | hors lots ; porte déjà l'AICA (4 occ.) |
+| 106 `AMC-MedInterne-P10` | **33** `AMC-Chir4-ECG4` STEMI | 0,32 | jumelle traitée par k5b ; **les 4 points comblés là-bas sont déjà présents ici** — aucune propagation nécessaire |
+
+**Une propagation effectuée** : le trou AICA / HINTS Plus, trouvé sur
+`AMC-ORL-P2`, existait à l'identique sur `AMC-ECOS1-S3` (rang 55, lot k5b) — AICA
+présent dans `redflags`, 0 occurrence dans `theorie`. Comblé des deux côtés dans
+le même geste, conformément au point 4 des ouvertures de k5c. C'est la première
+fois que la propagation se fait **dans le bon sens** (du lot courant vers un lot
+déjà clos) plutôt qu'en redécouvrant deux fois.
+
+### Niveau 1 — 29 pages SSP, trois rendements
+
+Les 40 grilles sont desservies par **29 pages SSP** (couverture 40/40).
+Méthode inchangée : extraction des lignes chiffrées de chaque page, confrontation
+au texte visible complet de la grille desservie, puis lecture des survivants.
+
+**Rendement : trois points, tous confirmatoires d'un trou déjà trouvé par
+l'usage inversé, et tous chiffrés ou nommés.**
+*Vertiges* → **HINTS Plus** (le « + » étant justement la recherche d'une surdité
+aiguë), porté sur les deux grilles de vertige.
+*Lombalgies* → **IRM < 24 h et décompression 24-48 h** pour la queue de cheval,
+absents de **toute** `AMC-MCPR-ARC9`.
+*Syncope* → **QTc (Bazett)**, **Brugada en V1-V2**, **ondes epsilon (DAVD)**,
+qui précisent le trou déjà comblé.
+
+**Rendement nul sur 26 pages.** Le filtre automatique ne rend que trois lignes
+résiduelles, toutes hors sujet : le traitement de la crise de goutte proposé à
+une station de polyarthrite rhumatoïde, et la définition générique de la fièvre
+(≥ 38,0 °C tympanique) proposée à une tuberculose et à une PAV — deux stations
+qui ne tournent pas sur la définition de la fièvre. **Le mapping relie par motif
+de plainte, pas par diagnostic** : constat inchangé depuis k5a. L'indicateur des
+cibles chiffrées tient une cinquième fois — mais ce lot montre aussi sa limite :
+**les trois rendements ont été trouvés par lecture ciblée des pages jumelles du
+trou déjà identifié, pas par le filtre numérique**, qui les avait tous manqués.
+
+### ⚠️ Ce que la mesure ne voit pas
+
+Recouvrement de vocabulaire (jetons > 2 lettres, mots-outils retirés), sur les
+40 grilles, avant et après :
+
+| couple | inclusions ≥ 90 % | dont **invisibles** (ratio ≤ 0,72) | paires mesurées |
+|---|---|---|---|
+| `expert → theorie` avant | 11 | 7 (64 %) | 35 |
+| `expert → theorie` après | **6** | **6 (100 %)** | **0** |
+| `theorie → therapy` avant | 75 | **68 (91 %)** | 15 |
+| `theorie → therapy` après | 75 | **68 (91 %)** | 15 |
+
+**Le résultat de k5c se reproduit au chiffre près** : une fois les paires
+mesurées traitées, **100 % du résiduel `expert → theorie` est invisible au
+seuil**, et le chiffre publié ne décrit plus ce couple. Et
+`theorie ↔ therapy` reste à **91 % d'invisibilité** (94 % chez k5b, 93 % chez
+k5c). Le seuil de 0,72 n'a pas été touché.
+
+### Les 46 paires restantes
+
+| couple | reste | statut |
+|---|---|---|
+| `theorie ↔ therapy` | 15 | barème ; le canonique porte le champ, la section notée ne se dédoublonne pas |
+| `annexe-dd ↔ theorie` | 13 | `annexe-dd` ne se nettoie pas (artefact « X — arguments POUR ») |
+| `redflags ↔ theorie` | 9 | barème |
+| `annexe-dd ↔ redflags` | 7 | artefact de négation |
+| `annexe-dd ↔ expert` | 2 | script de révélation ↔ argument, irréductible |
+| `expert ↔ theorie` | **0** | — |
+
+`AMC-ORL-P7` à elle seule rend 4 des 7 `annexe-dd ↔ redflags` : « absence de
+paralysie faciale » ↔ « 1. Paralysie faciale », « absence de croissance rapide
+récente » ↔ « 4. Croissance rapide récente ». Artefact de négation pur.
+
+### Barème
+
+**Intact.** Mesuré sur le diff complet : **0 ligne** touchant `criteria-text`,
+`criteria-detail`, `detail-text`, `scoring-rule`, `patient-response`,
+`maxScores`, `sectionInfo`, `coef`, `<span class="score">`, `caseConfig`,
+`scoring.js`, `persistence.js`, `therapy-item`, `redflags-text`,
+`redflags-description`, `cloture-detail` ou `exemple-phrase`. Les 70 lignes
+modifiées sont toutes des `<li>` de `expert` ou de `theorie`.
+**Règle 1 partout — pas de régénération du baseline**, et `check_invariants.py`
+le confirme sur les 198. `report_import_defects.py` mesuré grille par grille sur
+les 31 fichiers touchés : **delta 0 sur les sept familles**.
+
+### Anti-perte
+
+`check_no_loss.py 86f1fc3` signale **3 disparitions sur 30 grilles modifiées**,
+toutes verdictées : deux reformulations en place sur `AMC-MCPR-ARC9` (l'item de
+`theorie` existe toujours, allongé pour recevoir les 2 signes manquants et les
+délais ; le piège d'`expert` est devenu observable dans la station) et une
+suppression sur `AMC-ORL-P6` dont `theorie` porte le contenu en deux endroits.
+
+Contrôle indépendant par ensembles d'items normalisés extraits de
+`git show 86f1fc3:…` et de l'arbre de travail, sur les 198 grilles :
+**36 930 items distincts avant, 36 926 après**, delta net **−4** — 20 retraits
+dans `expert`, 17 ajouts dans `theorie`, une reformulation venue coïncider avec
+un item existant. **Aucune perte.**
+
+### Onze grilles du lot intactes
+
+`AMC-MCPR-ARC8` et `AMC-Pharmaco-S2` mesurent **0 paire ET 0 signal d'usage
+inversé ET 0 terme distinctif absent du canonique** : sixième et septième grilles
+entièrement intactes du corpus, après `AMC-Chir3-ECG2` (k5a),
+`AMC-Chir5-Vignette1` (k5b), `AMC-GynObs-V1`, `AMC-MCPR-ARC13` et
+`AMC-MCPR-ARC22` (k5c). Neuf autres n'ont rien reçu parce que toutes leurs
+paires sont entre blocs non dédoublonnables : `AMC-MedInterne-P10`,
+`AMC-MedInterne-P13` (le pilote k4), `AMC-MedInterne-P4`, `AMC-MedInterne-P9`,
+`AMC-ORL-P3`, `AMC-ORL-P7`, `AMC-ORL-P8`, `AMC-Pharmaco-S1`.
+
+### Droit et institutions — rien de neuf, un point consigné
+
+Aucune institution non suisse rencontrée en dehors d'un cas **déjà consigné par
+k5c** : `AMC-Neuro-P4` propose l'**Association Française contre les Myopathies
+(AFM)** à une patiente suisse. Le point tombe maintenant à l'intérieur d'un lot
+traité, ce qui change son statut d'ouverture ; il reste **non corrigé** pour deux
+raisons cumulatives — il vit dans un `criteria-detail`, donc en **section
+notée**, et k5c a tranché que le choix d'une ressource associative est
+**éditorial, pas factuel**. Les équivalents suisses existent (ASRIMM,
+Muskelgesellschaft) : c'est un arbitrage d'auteur à rendre, pas une réécriture
+de lot. Le balayage des 46 motifs n'a pas été relancé, conformément à la
+consigne.
+
+### Contraintes respectées
+
+* Rien écrit hors de `cases/casecos/`, de ce journal et du rapport k5d.
+  **`scripts/casecos/` non modifié** : le contrat de k4 a tenu sur 40 grilles de
+  plus, sans amendement. Les scripts d'analyse de ce lot vivent dans le
+  scratchpad de session, hors du dépôt.
+* **Aucun `git add`** — commit par `git commit -- <chemins>` exclusivement.
+  Rien touché sous `cases/german/`, `cases/rescos-locales/`, `scripts/german/`,
+  `scripts/rescos/`, où l'utilisateur travaillait en parallèle.
+* **Aucune grille lue en entier avec `Read`** : bornage par `lib.top_spans()`,
+  lecture par fenêtres, édition par remplacement exact.
+* **Aucun `grep` brut employé comme contrôle** : tous les chiffres publiés
+  viennent de `scripts/casecos/` ou de mesures Python passant par
+  `lib.visible_text()`, `lib.top_spans()`, `lib.matches()` (stdlib seule).
+* Vault Obsidian lu en **lecture seule** (29 pages SSP), rien écrit hors du dépôt.
+* Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
+  aucun `timeout`, aucun `snapshot_invariants.py`.
