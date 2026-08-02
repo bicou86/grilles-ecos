@@ -165,3 +165,187 @@ cliniques du résultat** — c'est précisément le manque qui avait laissé pas
 | `check_no_loss.py a82e036` | — | **0 item disparu** sur 28 grilles |
 | balises appariées + `</html>` final | 41/41 | **41/41** |
 | AMBOSS · nomenclature / invariants / redondance | 0 · OK · 147 | **0 · OK · 147** |
+
+### Volet B — Le barème de RESCOS-12 et RESCOS-13 (tâche r2)
+
+**Le défaut.** Ces deux grilles (crise de panique, dépression) déclarent une
+section « Examen clinique » **vide** — `count: 0`, `maxScores.examen: 0`,
+« Score : 0/0 », aucun `criteria-row` dans la page — tout en lui laissant son
+**coefficient 0,25**. `cases/scoring.js` calcule
+`const percentage = max > 0 ? (score / max) * 100 : 0` : le pourcentage de
+cette section vaut 0 quoi que fasse le candidat, et
+`globalPercentage += percentage * coef[key]` en perd le quart.
+**Un étudiant qui remplit parfaitement l'une de ces deux grilles plafonnait à
+75 %**, avec la note globale C au lieu de A.
+
+Le défaut passait les trois écarts déjà détectés (`count` trop grand,
+sous-item orphelin, `maxScores` divergeant du `<span>`) sans bruit — pour la
+section vide, 0 == 0 == 0 — et n'était visible que par le total global.
+
+|  | anamnese | examen | management | communication |
+|---|---|---|---|---|
+| RESCOS-12 `maxScores` | 48 | **0** | 8 | 20 |
+| RESCOS-13 `maxScores` | 36 | **0** | 22 | 20 |
+| `coef` avant (les deux) | 0.25 | **0.25** | 0.25 | 0.25 |
+| `coef` après (les deux) | **1/3** | **retiré** | **1/3** | **1/3** |
+
+#### Décision : répartition ÉGALE, et pourquoi
+
+Les deux répartitions proposées étaient défendables ; la mesure du corpus
+tranche.
+
+**1. Le corpus pondère les sections à égalité, indépendamment de leurs
+points.** Sur les 39 grilles à `caseConfig`, **39 portent exactement**
+`{anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25}` — une
+seule distribution, sans exception, alors que les `maxScores` varient du simple
+au sextuple d'une section à l'autre (RESCOS-12 : anamnèse 48 points,
+management 8 — même poids, 25 %). L'égalité des coefficients est donc une
+**décision de barème**, pas un accident.
+
+**2. `scoring.js` est construit pour que le nombre d'items ne pèse pas.** Il
+normalise d'abord chaque section en pourcentage (`score / max * 100`), *puis*
+applique le coefficient. Le nombre de cases à cocher est ainsi neutralisé par
+construction. Une répartition **proportionnelle aux points réintroduirait
+exactement la quantité que le moteur a été écrit pour neutraliser** : la
+pondération d'une grille dépendrait alors du nombre de lignes que son auteur a
+tapées.
+
+**3. Elle rendrait les deux grilles incomparables entre elles.** Au prorata,
+l'anamnèse vaudrait **63 %** de la note dans RESCOS-12 et **46 %** dans
+RESCOS-13, le management **10,5 %** puis **28 %** — deux stations du même
+registre (consultation psychiatrique sans examen physique), notées selon deux
+échelles différentes, pour la seule raison que la seconde a plus de critères
+de management. Rien de pédagogique ne justifie cet écart.
+
+**4. Le précédent du corpus va dans le même sens.** Les deux grilles à barème
+impératif, seules à ne pas avoir quatre sections, portent des coefficients
+**ronds et manifestement choisis à la main** : RESCOS-7 (communication seule)
+`coef 1` ; RESCOS-9 (anamnèse 41 pts, management 15 pts) `0.7 / 0.3` — et non
+`0.732 / 0.268`, valeur qu'aurait donnée le prorata. Le corpus ne dérive jamais
+ses coefficients de ses points.
+
+Retenu : **1/3 sur chacune des trois sections restantes**, écrit
+`0.3333333333333333` (le double le plus proche de 1/3).
+
+#### Ce que `scoring.js` attend, vérifié
+
+- **La somme des coefficients doit valoir 1** : `globalPercentage` est une
+  somme de `pourcentage × coef` où chaque pourcentage plafonne à 100. Mesuré :
+  `0.3333333333333333 × 3 = 1.0` **exactement** en IEEE 754 — la somme est
+  juste au bit près.
+- **Les arrondis absorbent le résidu.** L'accumulation réelle
+  (`globalPercentage += 100 * coef`, trois fois) donne
+  **99.99999999999999**, et non 100 : l'ordre des opérations diffère de la
+  somme des coefficients. Trois consommateurs, trois fois sans conséquence :
+  - `Math.round(globalPercentage)` → **100**, affiché « 100 % » ;
+  - `getClass(globalPercentage)` teste `p >= 90` → **note A** ;
+  - `saveToRegistry` stocke `Math.round(globalPercentage)` → **100**.
+  Aucune comparaison `=== 100` n'existe dans `cases/*.js` — vérifié : le résidu
+  n'a nulle part où faire de dégât.
+- `check_reachability.py` calcule `round(global_pct * 100)` et exige 100 :
+  **100**.
+
+#### Preuve — simulation du remplissage complet
+
+Simulation en Node de la boucle des pourcentages de `cases/scoring.js`,
+recopiée **texte pour texte**, alimentée par les `caseConfig` réellement
+présentes dans les fichiers et par les maxima **lus dans le DOM** (pas les
+maxima déclarés) :
+
+    RESCOS-12 — Crise de panique
+       anamnese       rempli=48  max=48  affiché=/48  -> 100 % x coef 0.3333333333333333
+       management     rempli=8   max=8   affiché=/8   -> 100 % x coef 0.3333333333333333
+       communication  rempli=20  max=20  affiché=/20  -> 100 % x coef 0.3333333333333333
+       somme des coef        = 1
+       globalPercentage brut = 99.99999999999999
+       affiché totalScore    = 100%
+       note globale          = A
+
+    RESCOS-13 — Dépression
+       anamnese       rempli=36  max=36  affiché=/36  -> 100 % x coef 0.3333333333333333
+       management     rempli=22  max=22  affiché=/22  -> 100 % x coef 0.3333333333333333
+       communication  rempli=20  max=20  affiché=/20  -> 100 % x coef 0.3333333333333333
+       somme des coef        = 1
+       globalPercentage brut = 99.99999999999999
+       affiché totalScore    = 100%
+       note globale          = A
+
+`check_reachability.py` confirme indépendamment : **41/41**, dont RESCOS-12 et
+RESCOS-13 à **100 %** (75 % avant).
+
+#### La section vide à l'affichage — elle NE disparaît PAS toute seule
+
+Retirer `examen` de `sectionInfo` la retire du **calcul**, pas de la **page** :
+son `<div class="section">` est du HTML statique et `scoring.js` ne masque
+aucune section. Sans geste supplémentaire, la grille corrigée aurait continué
+d'afficher **« Examen clinique (25%) — Score : 0/0 »** et une tuile
+**« Examen clinique / 0 % »** dans le panneau des pourcentages, désormais
+**morte** : `examen-percentage` n'étant plus mis à jour par personne, elle
+serait restée à 0 % à vie. Un étudiant y aurait lu la perte d'un quart de sa
+note — exactement le malentendu que la correction supprime.
+
+Trois gestes de plus ont donc été faits, sur chacune des deux grilles :
+
+- l'intitulé « Examen clinique (25%) » devient
+  **« Examen clinique — section non cotée »** ;
+- le `<span class="score">Score : <span id="statusScore">0</span>/0</span>` est
+  **retiré** — un dénominateur nul n'est pas un barème ;
+- la tuile de pourcentage « Examen clinique / 0 % » est **retirée** du panneau
+  des totaux ;
+- l'en-tête de tableau orphelin (« Critères / Oui / ± / Non / Points »), qui
+  annonçait des colonnes sans aucune ligne, est retiré.
+
+Ce qui **reste visible, délibérément** : la section elle-même et son
+encadré de commentaire (« Commentaires sur l'examen clinique »). L'examinateur
+peut vouloir consigner l'absence d'examen physique ; la section est signalée
+non cotée, elle n'induit plus en erreur.
+
+Les intitulés des trois sections cotées passent de **« (25%) »** à
+**« (33,3%) »**.
+
+#### Baseline régénéré — chaque ligne de différence
+
+`git diff a82e036 -- scripts/rescos/baseline.json` : **6 lignes retirées, aucune
+ajoutée, aucune modifiée.** Trois par grille, les mêmes dans les deux :
+
+| ligne | grille | justification |
+|---|---|---|
+| `"maxScores": { "examen": 0 }` | 12 et 13 | la clé `examen` est retirée de `maxScores` avec la section ; sa valeur était 0, la somme des maxima (76 et 78) est donc inchangée, et l'affichage statique `0/76` / `0/78` reste juste |
+| `"scoreSpans": { "statusScore": 0 }` | 12 et 13 | le `<span class="score">…/0</span>` de la section vide est supprimé ; il n'y a plus de dénominateur à geler |
+| `"sectionCounts": { "examen": 0 }` | 12 et 13 | `sectionInfo` ne contient plus l'entrée `examen` : la boucle de `calculateScores()` n'itère plus dessus |
+
+**Aucun autre champ ne bouge**, et c'est le contrôle qui compte :
+`criteriaCount`, `detailCount`, `radioCount`, `checkboxCount`, `blocks`,
+`configForm`, `boundsAnomalies`, `uncoveredContent` sont identiques sur les 41
+grilles. Autrement dit : **aucun critère, aucun sous-item, aucune case et aucun
+bloc de contenu n'a été touché** — la correction ne porte que sur la
+pondération et sur l'affichage d'une section qui ne notait rien.
+
+**Divergences consignées**
+
+- `scripts/rescos/snapshot_invariants.py` · couverture : **`coef` n'est gelé
+  par aucun snapshot** — non corrigé dans cette passe. C'est pourtant le champ
+  dont la valeur fausse a produit ce défaut. Le filet actuel est indirect :
+  `check_reachability.py` rattrape toute modification de `coef` qui casse la
+  somme à 100 %, mais **pas** une redistribution qui la conserve (par exemple
+  `0.5 / 0.25 / 0.25`). L'ajouter au snapshot est un geste d'une ligne, mais il
+  change le baseline des 41 grilles et sortait du périmètre annoncé
+  (« `check_invariants.py` OK hors les différences justifiées de RESCOS-12 et
+  13 »). À arbitrer.
+- corpus · balayage : **aucune autre grille ne porte de section vide
+  pondérée.** Mesuré sur les 41 : RESCOS-12 et RESCOS-13 étaient les deux
+  seules à déclarer un `maxScores` nul, et `empty_weighted_sections()` rend
+  désormais la liste vide partout.
+
+**Vérifications après le volet B**
+
+| contrôle | avant (a82e036) | après |
+|---|---|---|
+| `check_reachability.py` | **39/41** (12 et 13 à 75 %) | **41/41**, 12 et 13 à **100 %** |
+| `check_invariants.py` | OK 41/41 | **OK 41/41** (baseline régénéré, 6 lignes) |
+| `check_nomenclature.py` | 111 | **0**, code 0 |
+| `report_redundancy.py` | 610 paires | **610 paires** (323 intra) |
+| `report_import_defects.py` | 1 numération implicite | **0** |
+| `check_no_loss.py a82e036` | — | **0 item disparu** sur 30 grilles |
+| balises appariées + `</html>` | 41/41 | **41/41** |
+| AMBOSS · invariants / nomenclature / barème / redondance | OK · 0 · 40/40 · 147 | **OK · 0 · 40/40 · 147** |

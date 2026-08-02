@@ -48,7 +48,7 @@
         <!-- ANAMNÈSE -->
         <div class="section">
             <div class="section-header">
-                <span>Anamnèse (25%)</span>
+                <span>Anamnèse (33,3%)</span>
                 <span class="score">Score : <span id="anamneseScore">0</span>/48</span>
             </div>
             <div class="section-content">
@@ -329,17 +329,9 @@
         <!-- EXAMEN CLINIQUE -->
         <div class="section">
             <div class="section-header">
-                <span>Examen clinique (25%)</span>
-                <span class="score">Score : <span id="statusScore">0</span>/0</span>
+                <span>Examen clinique — section non cotée</span>
             </div>
             <div class="section-content">
-                <div class="header-row">
-                    <div>Critères</div>
-                    <div>Oui</div>
-                    <div>±</div>
-                    <div>Non</div>
-                    <div>Points</div>
-                </div>
                 <div style="text-align: center; margin: 15px 0;">
                     <button class="section-comment-button" onclick="toggleSectionComment('examen')" title="Commentaire sur cette section">📝 Commentaire sur la section Examen</button>
                 </div>
@@ -352,7 +344,7 @@
         <!-- MANAGEMENT -->
         <div class="section">
             <div class="section-header">
-                <span>Management (25%)</span>
+                <span>Management (33,3%)</span>
                 <span class="score">Score : <span id="managementScore">0</span>/8</span>
             </div>
             <div class="section-content">
@@ -447,7 +439,7 @@
         <!-- COMMUNICATION -->
         <div class="section communication-section-container">
             <div class="section-header">
-                <span>Communication (25%)</span>
+                <span>Communication (33,3%)</span>
                 <span class="score">Score : <span id="communicationScore">0</span>/20</span>
             </div>
             <div class="section-content">
@@ -608,12 +600,6 @@ Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contac
                             <div class="total-section-label">Anamnèse</div>
                             <div class="pourcent-body">
                                 <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
-                            </div>
-                        </div>
-                        <div class="total-pourcent-section">
-                            <div class="total-section-label">Examen clinique</div>
-                            <div class="pourcent-body">
-                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
                             </div>
                         </div>
                         <div class="total-pourcent-section">
@@ -985,12 +971,17 @@ Distance interpersonnelle adéquate, posture adéquate, gestes adéquats, contac
         </div>
     </div>
     <script>
+// La section « Examen clinique » de cette grille est VIDE : aucun critère,
+// count 0, maxScores 0. Elle portait néanmoins coef 0.25, et scoring.js
+// calcule `max > 0 ? (score/max)*100 : 0` : son pourcentage valait 0 quoi que
+// fasse le candidat, et une grille parfaitement remplie plafonnait à 75 %.
+// Elle est retirée des trois tables ; son quart est redistribué à ÉGALITÉ sur
+// les trois sections restantes, comme le faisaient les quatre entre elles.
 window.caseConfig = {
-    maxScores: {anamnese: 48, examen: 0, management: 8, communication: 20},
-    coef: {anamnese: 0.25, examen: 0.25, management: 0.25, communication: 0.25},
+    maxScores: {anamnese: 48, management: 8, communication: 20},
+    coef: {anamnese: 0.3333333333333333, management: 0.3333333333333333, communication: 0.3333333333333333},
     sectionInfo: [
                 {key: "anamnese", prefix: "a", count: 17, label: "Anamnèse"},
-                {key: "examen", prefix: "e", count: 0, label: "Examen clinique", scoreId: "statusScore"},
                 {key: "management", prefix: "m", count: 4, label: "Management"},
                 {key: "communication", prefix: "c", count: 5, label: "Communication", isComm: true}
             ]
