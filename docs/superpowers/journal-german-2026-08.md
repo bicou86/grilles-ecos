@@ -1859,3 +1859,144 @@ faible du jeu** — lisible, mais juste. Consigne suivie : l'ambre a été retir
 partout où une autre classe convenait.
 
 Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p1b-report.md`
+
+---
+
+## p2 — German-1 : trois images, et la règle de sélection pour les 87 suivantes
+
+Deux livrables de poids inégal. German-1 passe de une à trois images. Et surtout,
+la **règle de sélection** est écrite au § 8 de `scripts/german/PROCEDURE-german.md` :
+c'est elle qui gouvernera les 87 grilles restantes.
+
+### L'ordre des trois images : AUDIT-C → sevrage → messages clés
+
+La chronologie de la station, synthèse en dernier. L'AUDIT-C est ce que l'anamnèse
+fait d'abord — quantifier. Le tableau du sevrage est la complication à reconnaître
+si le patient s'arrête. Le panneau Compas synthétise les deux (il parle du sevrage
+et de la carence en B1) : le lire en premier, c'est lire la conclusion avant
+l'énoncé. C'est aussi l'ordre de la page SSP, qui place l'AUDIT-C dans `## ANAMNÈSE`,
+le tableau dans `## Sevrage alcoolique & complications`, et les trois panneaux de
+messages clés en fin de page. Et le message-clé est le plus large — 2040 px contre
+~520 px pour les schémas : en tête il écrase la planche, en pied il la ferme.
+
+L'image en place n'a pas été retirée, elle est passée en position 2, légende
+reprise caractère pour caractère et base64 réutilisé tel quel — relu et comparé au
+fichier du vault avant réécriture, md5 identique.
+
+### La contrainte « `blocks` ne doit pas changer » reposait sur une hypothèse fausse
+
+Ajouter des images dans un `images-wrapper` existant **n'est pas** neutre pour
+`blocks`. `lib_german.BLOCKS` ouvre un segment `annexe-image` sur
+`<div class="annexe-item"`, et la convention d'import du corpus est **une carte
+par image** — German-68 en porte deux. Trois cartes auraient fait passer German-1
+de 1 à 3 segments et obligé à re-snapshoter `baseline.json`.
+
+D'où le gabarit retenu : **une seule `annexe-item` — une « planche » — portant les
+trois triplets titre + légende + image**. `annexe-image` reste à 1 segment,
+`check_invariants.py` sort OK, `baseline.json` n'est pas touché, et chaque image
+garde malgré tout sa légende propre. Ce n'est pas un contournement de convenance :
+sur 88 grilles, la convention d'import aurait neutralisé pendant toute la campagne
+l'invariant qui protège les bornes de blocs — au moment exact où il sert le plus.
+
+`data-image-id` n'a pas été posé : l'attribut déclenche `width: 49% !important`,
+qui aurait écrasé le panneau de 2040 px dans ~380 px de colonne.
+
+### La règle, en cinq points, tous mesurés sur les 53 pages SSP du corpus
+
+**Source.** Rien hors des `![[…]]` de la page SSP. La question « et si la page n'en
+cite aucune ? » ne se pose pas : **les 53 pages en citent toutes au moins trois**
+(min 3, médiane 12, max 57). Tranché par la mesure, pas par une préférence.
+
+**Volume.** Cible 3, plancher 2, plafond 4 — contre 57 images disponibles sur
+« Céphalée », 47 sur « Douleur Thoracique », 36 sur « Dyspnée ».
+
+**Critère.** Trois tests par ordre de préférence : barème (l'image documente un
+critère noté de *cette* grille), différentiel (une hypothèse nommée dans *son*
+`annexe-dd`), piège (le drapeau rouge que la vignette expose). Le test 2 est
+mécanisable : les pages sous-titrent `### Arguments clés — <Diagnostic>`, il suffit
+de croiser avec les diagnostics que `annexe-dd` nomme. Contrôle le plus utile :
+25 des 53 pages portent plusieurs grilles, et deux grilles d'une même page ne
+doivent pas porter la même sélection — message-clé excepté. Si elles convergent,
+on a sélectionné sur le thème.
+
+**Message-clé.** 49 fichiers dans le vault, **24 des 53 pages** en citent au moins
+un, ce qui couvre **52 des 88 grilles**. Obligatoire dès que la page en cite un.
+Et oui, une page peut en citer plusieurs — 19 en citent 1, 4 en citent 2, **1 en
+cite 3** : celle de German-1. On prend alors celui dont le sujet est l'entité de la
+vignette (alcool, pas tabagisme ni dépendances). Jamais deux. Aucun s'il n'y en a
+aucun sur l'entité : un message-clé hors sujet affirme avec l'autorité du Compas
+quelque chose que la station ne demande pas.
+
+**Scans et PDF convertis.** 39 fichiers distincts, 41 occurrences. Écartés — c'est
+une page d'un autre document, avec sa mise en page et ses titres, et elle redit en
+image ce que `resume` porte en texte, sans que le dédoublonnage puisse la voir :
+`list_items()` ne lit pas les pixels. Même forme d'angle mort qu'AMBOSS-34. Une
+exception : quand la page de PDF **est** le schéma (algorithme pleine page). Ouvrir
+l'image pour trancher, jamais le nom de fichier.
+
+Relevé au passage : **36 des 700 fichiers cités n'existent nulle part dans le
+vault**, essentiellement des `Résumé-SSP_page-00NN.jpg`.
+
+### Poids : ~44 Mo, sous le plafond, mais borné par le plafond par image
+
+Le base64 coûte exactement +33,3 %, vérifié : 60 465 octets dans le vault, 80 620
+caractères dans la grille, md5 identique après décodage.
+
+Les images citées ont une queue très lourde — médiane 110 Ko mais **p95 à 3 196 Ko
+et max à 13 Mo**. Une règle sans plafond n'est pas bornée. D'où 400 Ko par image
+(89 % des éligibles passent) et 700 Ko de source par grille.
+
+À k=3 : **+35,8 Mo de base64, corpus german à 44,1 Mo** (8,3 aujourd'hui). k=2 donne
+34,8 Mo, k=4 donne 55,8 Mo. Sans le plafond de 400 Ko, k=3 monte à 84 Mo : c'est le
+plafond par image qui borne, pas le nombre d'images. Variante économe documentée et
+non retenue faute de nécessité : servir les images en fichiers référencés sous
+`cases/img/german/` comme les cartes SBAR/SNAPPS — 25,9 Mo au lieu de 44,1, parce
+que 208 fichiers distincts suffisent aux 88 grilles.
+
+German-1 : **212 621 → 839 389 octets**.
+
+### Vérifications
+
+Les trois vérificateurs german : **OK**, `blocks` inchangé, `baseline.json` non
+touché. AMBOSS aux trois verts. RESCOS vert sur nomenclature et atteignabilité ;
+`check_invariants` échoue sur **RESCOS-7 et RESCOS-9 uniquement**, les deux fichiers
+que la session parallèle a en cours d'édition dans l'arbre de travail — hors
+périmètre, non touchés, non commités, et hors de portée d'un changement de CSS.
+
+`check_no_loss.py` : 0 item disparu. `report_redundancy.py` : 2 paires, inchangé.
+
+### Contrôle visuel — fait, et un défaut corrigé
+
+Chrome headless, `file://`, copies temporaires à `data-theme` figé, supprimées après
+coup. **Aucune image corrompue** : les trois `naturalWidth × naturalHeight` lus au
+navigateur sont ceux du vault — 519×639, 520×368, 2040×1455, `complete === true`,
+rapport conservé. **Aucun débordement** : `scrollWidth` égale la fenêtre à 1200 px
+comme à 500 px. Les deux schémas restent à leur taille native (jamais agrandis, donc
+jamais flous) ; le panneau descend à 1046 px sur grand écran.
+
+**Défaut trouvé : en thème sombre, `.annexe-title` était à 1,8:1 de contraste** —
+#2c5aa0 sur le #273449 de la carte, sous le seuil AA même pour du gros texte.
+Préexistant (la seule légende de German-1 le portait déjà, et 9 autres grilles avec
+elle), mais la campagne le multiplie par 88. Corrigé par une règle restreinte à
+`.images-wrapper`, avec le #93c5fd que `mobile-responsive.css` emploie déjà en
+sombre : **7,0:1**. Vérifié qu'aucune variante `annexe-expert` / `annexe-theorie` /
+`annexe-scenario` ne vit dans un `images-wrapper` sur les six corpus. Seconde règle,
+un filet entre deux légendes de la planche : sans elle, 10 px seulement séparaient
+une image du titre de la suivante.
+
+### Trois préoccupations
+
+**Le poids par grille est le vrai sujet, pas le poids du corpus.** 839 Ko pour un
+seul document HTML, sur réseau mobile, c'est plusieurs secondes d'ouverture contre
+quelques dixièmes. La variante référencée règle ce point ; elle mérite d'être
+retranchée avant la 20ᵉ grille plutôt qu'après la 88ᵉ.
+
+**`.git` pèse 435 Mo et le base64 se delta-compresse mal.** Chaque passe d'édition
+sur une grille chargée d'images restocke le blob entier. Consigne inscrite : poser
+les images en dernier, une fois le texte stabilisé. `git gc` est interdit.
+
+**Le § 8.3 demande un jugement que les scripts ne vérifient pas.** Le seul
+garde-fou automatisable est le corollaire des pages multi-grilles, et il n'est pas
+outillé. C'est là que la règle cédera en premier si elle cède.
+
+Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p2-report.md`

@@ -62,6 +62,11 @@ La page est donnée par `docs/obsidian-mapping.yaml`. Racine du vault :
 Sections utiles : `## 🔬 EXAMENS COMPLÉMENTAIRES`, `## 💊 PRISE EN CHARGE`,
 `## 📌 Points Clés ECOS`.
 
+La page porte aussi des **images**, en `![[nom-de-fichier.png]]`. La règle qui
+décide lesquelles embarquer dans une grille est au **§ 8 de
+`scripts/german/PROCEDURE-german.md`** — c'est le volet german, et il vaut pour
+les deux corpus.
+
 ## 3. Dédoublonner selon le contrat
 
 | Bloc | Rôle exclusif | Ne porte jamais |

@@ -664,6 +664,20 @@ input[type="radio"]:disabled {
   box-sizing: border-box;
 }
 
+/* Planche d'annexes : plusieurs images légendées dans un même `.annexe-item`,
+ * chacune précédée de son couple titre + description. Le sélecteur ne peut
+ * atteindre que la deuxième légende et les suivantes — un `.annexe-title` qui
+ * suit immédiatement un `.annexe-image`. Cet enchaînement n'existait dans
+ * aucune grille des six corpus avant l'ajout des images de page SSP (mesuré,
+ * 0 occurrence) : la règle est sans effet sur l'existant.
+ * Sans elle, `.annexe-image { margin: 10px 0 }` laisse 10px entre une image et
+ * le titre de la suivante, et la légende paraît appartenir à l'image du dessus. */
+.images-wrapper .annexe-image + .annexe-title {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #e0e0e0;
+}
+
 .annexe-document {
   background: #f0f8ff;
   padding: 10px;

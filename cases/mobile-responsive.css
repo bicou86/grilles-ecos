@@ -783,6 +783,26 @@ select {
   color: #cbd5e1 !important;
 }
 
+/* ---------- Planche d'images de page SSP : thème sombre ----------
+ * `.annexe-title` est en #2c5aa0 (case-styles.css). Sur le fond #273449 que
+ * `[data-theme="dark"] .annexe-item` donne à la carte, le contraste tombe à
+ * 1,8:1 — sous le seuil AA même pour du gros texte (3:1), et vérifié au
+ * navigateur : le titre est à la limite du lisible. #93c5fd est le bleu que ce
+ * fichier emploie déjà en sombre pour les titres, le chronomètre et les liens
+ * (lignes .note-neutral, .timer-display, a) ; il remonte le contraste à 7,0:1.
+ * Sélecteur restreint à `.images-wrapper` pour ne PAS écraser le codage couleur
+ * de `.annexe-expert` / `.annexe-theorie` / `.annexe-scenario` : ces trois
+ * variantes ne vivent jamais dans ce conteneur (0 occurrence sur les six
+ * corpus, mesuré). Le défaut préexistait aux images ajoutées ; il ne devenait
+ * visible qu'en portant la légende au premier plan. */
+[data-theme="dark"] .images-wrapper .annexe-title {
+  color: #93c5fd !important;
+}
+
+[data-theme="dark"] .images-wrapper .annexe-image + .annexe-title {
+  border-top-color: #334155 !important;
+}
+
 /* ---------- Cartes de communication : empilement sur écran étroit ----------
  * Même point de rupture que le reste du fichier (767px = grands mobiles) :
  * au-delà les deux cartes restent côte à côte. */

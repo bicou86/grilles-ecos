@@ -270,6 +270,267 @@ donc une information, pas une panne.
 
 ---
 
+## 8. Les images de la page SSP — règle de sélection
+
+Établie sur la grille pilote **German-1 (Abus d'alcool)**, elle vaut pour les 87
+grilles suivantes, et pour AMBOSS et RESCOS si le chantier s'y étend. Tous les
+chiffres ci-dessous sont **mesurés**, sur les 53 pages SSP qui portent au moins
+une des 88 grilles german.
+
+### 8.1 La source : la page SSP, et rien d'autre
+
+**Une image ne se choisit pas dans le vault, elle se prend parmi celles que la
+page SSP de la grille cite en `![[nom-de-fichier.png]]`.** C'est la règle de
+sourçage qui gouverne tout le projet — le niveau 1 de la hiérarchie (§ 3) dit que
+la page SSP fait foi ; elle fait foi aussi pour l'iconographie. Aller chercher
+une image ailleurs dans le vault, c'est décider soi-même de ce qui illustre la
+station, sans source qui l'autorise.
+
+La page de référence est donnée par `docs/obsidian-mapping.yaml`. Pour lister ce
+qu'elle cite, avec la légende que la page pose elle-même sous chaque image :
+
+```bash
+python3 - <<'PY'
+import re
+from pathlib import Path
+V = Path("/Users/damienfulliquet/Documents/Damien/Medecine/Obsidian")
+page = V / "SSP ECOS/SSP — <Titre exact>.md"
+lignes = page.read_text(encoding="utf-8").split("\n")
+for i, l in enumerate(lignes):
+    m = re.search(r"!\[\[([^\]|#]+\.(?:png|jpe?g|svg))", l, re.I)
+    if m:
+        suite = lignes[i+1].strip(" >") if i+1 < len(lignes) else ""
+        print("%-70s %s" % (m.group(1), suite[:90]))
+PY
+```
+
+**Le cas « la page ne référence aucune image » n'existe pas dans ce corpus** :
+les 53 pages en citent toutes au moins 3 (min 3, p25 8, médiane 12, p75 16,
+max 57). La question est donc tranchée par la mesure et non par une préférence :
+on ne va **jamais** chercher ailleurs, parce qu'on n'en a jamais besoin. Si une
+page future n'en citait aucune, la grille reste **sans image** — et on le
+consigne au journal. Une grille sans image n'est pas un défaut ; une image sans
+source en est un.
+
+### 8.2 Combien : 2 à 4, cible 3
+
+| Page | Images citées |
+|---|---|
+| `SSP — Céphalée.md` | 57 |
+| `SSP — Douleur Thoracique.md` | 47 |
+| `SSP — Dyspnée.md` | 36 |
+| médiane des 53 pages | **12** |
+| `SSP — Dépendance & Addictions` (German-1) | 18 |
+
+Tout embarquer est exclu (§ 8.6 : 57 images sur une grille, c'est ~8 Mo pour un
+seul fichier). **Cible : 3 images par grille ; plancher 2 ; plafond 4.** Le
+plafond n'est pas un quota à remplir : une page dont une seule image passe les
+tests du § 8.3 donne une grille à une image, et c'est le bon résultat.
+
+### 8.3 Le critère : la vignette précise, jamais le thème
+
+Une page SSP couvre un **motif de consultation** ; une grille couvre **une
+vignette**. Les 57 images de « Céphalée » servent huit grilles différentes ; les
+retenir toutes pour chacune reviendrait à recopier la page dans la grille.
+
+Une image n'est retenue que si elle passe **au moins un** des trois tests
+suivants, et l'ordre est un ordre de préférence :
+
+| | Test | Ce qui l'ancre |
+|---|---|---|
+| 1 | **Barème** — l'image documente un critère **noté de cette grille-ci** | un score que l'anamnèse demande de calculer, une manœuvre que l'examen note, un traitement que le management note |
+| 2 | **Différentiel** — l'image documente une hypothèse **nommée dans `annexe-dd` de cette grille** | les pages SSP sous-titrent `### Arguments clés — <Diagnostic>` : la sélection devient mécanique, on ne garde que les images logées sous les diagnostics que `annexe-dd` nomme |
+| 3 | **Piège** — l'image documente la complication ou le drapeau rouge que la vignette expose | `redflags`, et les « À éviter ❌ » de la page |
+
+Tout le reste est écarté, **même excellent**. Sur les 57 images de « Céphalée » :
+les six réflexes ostéo-tendineux, Kernig et Brudzinski, les neuf coupes de TDM
+d'hémorragie sous-arachnoïdienne ne sont retenus que par la grille dont
+l'`annexe-dd` nomme l'HSA, ou dont l'examen note le méningisme. Pour les autres,
+ce sont des images du thème, pas de la vignette.
+
+**Corollaire vérifiable — deux grilles d'une même page ne portent pas la même
+sélection**, à l'exception du message-clé (§ 8.4). Vingt-cinq des 53 pages
+portent plusieurs grilles ; si les sélections convergent, c'est que le test de la
+vignette n'a pas été appliqué et qu'on a sélectionné sur le thème. C'est le
+contrôle le plus utile de tout ce paragraphe.
+
+### 8.4 Le message-clé : toujours quand il existe, et **un seul**
+
+Le vault porte **49 fichiers `*message-cle*`**, un par dossier thématique.
+**24 des 53 pages german** en citent au moins un, ce qui couvre **52 des 88
+grilles**. Beaucoup de pages les balisent en plus par `<!-- compas-message -->`
+(34 pages, 41 occurrences) — signal secondaire fiable, mais c'est le **nom de
+fichier** qui fait foi.
+
+**Règle : dès que la page en cite un, il est obligatoire**, et il compte dans le
+budget de 2 à 4.
+
+Une page peut en citer plusieurs — mesuré : 19 pages en citent 1, **4 en citent
+2**, et **1 en cite 3** (celle de German-1 : tabagisme, alcool, dépendances).
+Dans ce cas :
+
+1. Prendre celui dont le sujet est **l'entité de la vignette** — celle que le
+   titre de la grille nomme et que l'hypothèse retenue d'`annexe-dd` confirme.
+   German-1 s'intitule « Abus d'alcool » : c'est
+   `general-message-cle-consommation-d-alcool.png`, pas celui du tabagisme ni
+   celui des dépendances, qui appartiennent aux deux autres vignettes que la même
+   page dessert.
+2. **Jamais deux.** Deux panneaux de messages clés dans une même planche, c'est
+   du texte long en image, non sélectionnable, non traduisible, et qui redit ce
+   que `resume` porte déjà en HTML.
+3. Si **aucun** ne porte sur l'entité de la vignette, n'en mettre aucun et le
+   consigner. Un message-clé hors sujet est pire que pas de message-clé : il
+   affirme, avec l'autorité du Compas, quelque chose que la station ne demande
+   pas.
+
+### 8.5 Ce qu'on n'embarque pas
+
+**a) Les scans et les pages de PDF converties.** `Résumé-SSP_page-0065.jpg`,
+`EM - Résumé-2024_page-0002.jpg`, `Dermato-Résumé.jpg` : **39 fichiers distincts,
+41 occurrences** sur les 53 pages. **Écartés par défaut.** Ce n'est pas une
+figure mais **une page d'un autre document** : elle apporte sa propre mise en
+page, ses propres titres, sa propre hiérarchie, et une résolution calibrée pour
+l'impression. Dans une grille, elle se lit comme une capture d'écran de manuel.
+Surtout, elle **redit en image ce que `resume` porte en texte** — et le
+dédoublonnage ne sait pas la voir : `list_items()` ne lit pas les pixels, donc
+la redondance passerait sous le radar au lieu d'être arbitrée.
+
+**Exception, une seule** : quand la page de PDF **est** le schéma, c'est-à-dire
+qu'elle ne porte qu'une figure pleine page et rien d'autre — typiquement
+`EM_Aide - Algorithme_tabac_1_Cornuz_JacotSadowski_page-0001.jpg`. Elle est alors
+traitée comme un schéma ordinaire et légendée comme tel. Ouvrir l'image pour
+trancher ; ne pas trancher sur le nom de fichier.
+
+**b) Les références cassées.** **36 des 700 fichiers cités** par les 53 pages
+n'existent nulle part dans le vault — l'essentiel sont des `Résumé-SSP_page-00NN.jpg`.
+Une référence introuvable **arrête le traitement de la grille** ; elle ne se
+remplace pas par une image approchante et elle ne s'embarque pas en substituant
+un fichier au nom voisin.
+
+**c) Tout fichier de plus de 400 Ko** — § 8.6.
+
+**d) Les photographies cliniques et les séries radiologiques** quand la vignette
+ne note pas leur lecture. Elles pèsent le plus lourd du corpus (jusqu'à 13 Mo
+pour un seul fichier) et le test 1 du § 8.3 les écarte presque toujours.
+
+### 8.6 Le poids — mesuré, et borné
+
+Le base64 coûte **exactement +33,3 %** (4 octets pour 3). Vérifié sur l'image
+déjà embarquée de German-1 : 60 465 octets dans le vault, 80 620 caractères dans
+la grille, md5 identique après décodage.
+
+Poids des images citées par les 53 pages (664 fichiers trouvés) :
+
+| médiane | p75 | p90 | p95 | max |
+|---|---|---|---|---|
+| 110 Ko | 208 Ko | 460 Ko | **3 196 Ko** | 13 008 Ko |
+
+La queue est très lourde : **une règle sans plafond n'est pas bornée**. D'où
+deux garde-fous :
+
+- **Plafond par image : 400 Ko de source** (89 % des images éligibles passent).
+- **Budget par grille : 700 Ko de source**, soit ~930 Ko de base64.
+
+Estimation du corpus german, modèle « message-clé de la page + (k−1) schémas
+distincts par grille », plafond 400 Ko :
+
+| k | base64 ajouté | corpus german (8,3 Mo aujourd'hui) | variante référencée |
+|---|---|---|---|
+| 2 | 26,5 Mo | **34,8 Mo** | 20,0 Mo |
+| **3 (cible)** | **35,8 Mo** | **44,1 Mo** | **25,9 Mo** |
+| 4 | 47,5 Mo | 55,8 Mo | 31,8 Mo |
+
+**La règle du § 8.2 mène donc à ~44 Mo**, sous le plafond de 60 Mo. Sans le
+plafond de 400 Ko, k=3 monte à 84 Mo et k=4 à 99 Mo : c'est le plafond qui borne,
+pas le nombre d'images.
+
+**Variante économe, si le plafond devait être franchi** : servir les images en
+**fichiers référencés** sous `cases/img/german/`, comme les cartes SBAR/SNAPPS
+(commit `06b189e`), au lieu de les embarquer. La déduplication fait tout :
+208 fichiers distincts suffisent aux 88 grilles à k=3, et le message-clé d'une
+page est stocké une fois au lieu de huit. **25,9 Mo au lieu de 44,1**, et un
+`git diff` de grille redevient lisible.
+
+**Avertissement git.** `.git` pèse déjà 435 Mo. Le base64 se delta-compresse
+mal : chaque passe d'édition sur une grille chargée d'images restocke le blob
+entier (~900 Ko pour German-1, contre 208 Ko avant). **Poser les images en
+dernier**, une fois le texte de la grille stabilisé.
+
+### 8.7 Comment on l'écrit dans la grille
+
+**Une seule `<div class="annexe-item">` par grille — une « planche » — dans
+l'`images-wrapper` existant**, portant N triplets `annexe-title` +
+`annexe-description` + `annexe-image` :
+
+```html
+<div class="images-wrapper">
+<div class="annexe-item">
+    <div class="annexe-title">…</div>
+    <div class="annexe-description">…</div>
+    <div class="annexe-image">
+        <img src="data:image/png;base64,…" alt="…" />
+    </div>
+    <div class="annexe-title">…</div>   <!-- image 2, même item -->
+    …
+</div>
+</div>
+</div>
+```
+
+**Pourquoi une seule et non N.** `BLOCKS` compte les segments `annexe-image` à
+partir de `<div class="annexe-item"` : **N items feraient N segments**, donc
+`blocks` changerait, donc `baseline.json` serait à re-snapshoter — sur les 88
+grilles. L'invariant qui protège les bornes pendant tout le chantier perdrait sa
+valeur au moment précis où on en a le plus besoin. Une planche unique le laisse
+gelé : German-1 passe de 1 à 3 images avec `annexe-image` toujours à **1
+segment**, `check_invariants.py` OK, `baseline.json` non touché. (German-68 porte
+deux `annexe-item` — c'est l'état d'import, pas le gabarit.)
+
+**Ne pas poser `data-image-id`** : l'attribut déclenche `width: 49% !important`
+et écraserait un panneau de texte de 2040 px dans ~380 px, illisible.
+
+**Octets recopiés tels quels du vault, jamais ré-encodés ni recompressés** — le
+md5 de l'image décodée doit être celui du fichier du vault. C'est ce qui rend la
+provenance vérifiable après coup.
+
+**La légende décrit ce que l'image montre, pas le titre du fichier.** Elle nomme
+le contenu : les colonnes du tableau, les items du questionnaire, les
+équivalences de la planche. Elle peut se clore en rattachant l'image à la page
+SSP. Elle **n'invente aucun seuil que l'image ne porte pas** — l'AUDIT-C affiche
+un score sur 12 et aucun cut-off, la légende n'en cite donc aucun. `alt` reprend
+le titre mot pour mot.
+
+**Deux règles CSS posées par le pilote**, dans le socle et non dans la grille :
+`.images-wrapper .annexe-image + .annexe-title` (filet de séparation entre deux
+légendes de la planche) et `[data-theme="dark"] .images-wrapper .annexe-title`
+(le bleu #2c5aa0 tombait à 1,8:1 de contraste sur le fond sombre #273449 ;
+#93c5fd le remonte à 7,0:1). Les deux sélecteurs sont restreints à
+`.images-wrapper` : 0 collision mesurée sur les six corpus.
+
+### 8.8 L'ordre : la chronologie de la station, synthèse en dernier
+
+Dépistage et quantification → complication à reconnaître → **message-clé en
+dernier**. Il est une synthèse, il se lit après ; et c'est le fichier le plus
+large (2040 px contre ~520 px pour les schémas), donc le placer en tête
+déséquilibrerait la planche. German-1 : AUDIT-C → syndrome de sevrage →
+messages clés.
+
+### 8.9 Vérifier
+
+```bash
+python3 scripts/german/check_invariants.py    # blocks INCHANGÉ, pas de re-snapshot
+python3 scripts/german/check_no_loss.py HEAD German-N_
+python3 scripts/german/report_redundancy.py German-N_
+```
+
+Et au navigateur, thèmes sombre et clair, 1200 px et 500 px : chaque `<img>` doit
+avoir `complete === true`, des `naturalWidth`/`naturalHeight` égaux à ceux du
+fichier du vault (une image corrompue à l'encodage rend 0×0), un rapport
+largeur/hauteur conservé, et `document.documentElement.scrollWidth` égal à la
+largeur de la fenêtre — aucun débordement horizontal.
+
+---
+
 ## Interdits
 
 Ceux de `scripts/amboss/PROCEDURE.md`, sans changement :
@@ -283,8 +544,12 @@ Ceux de `scripts/amboss/PROCEDURE.md`, sans changement :
 - Créer un bloc `resume` ou `presentation` absent.
 - Supprimer une section sans l'avoir comparée item par item au bloc canonique.
 
-Et deux propres à ce corpus :
+Et quatre propres à ce corpus :
 
 - **Ne pas modifier `redflags` ni `therapy` pour résoudre un doublon** : ils sont du
   niveau 2, c'est le pédagogique qui cède.
 - **Ne pas déplacer un `</div>` dans un `criteria-row`** — voir German-84.
+- **Ne pas embarquer une image que la page SSP ne cite pas** (§ 8.1), ni
+  recompresser, redimensionner ou renommer celle qu'elle cite (§ 8.7).
+- **Ne pas ouvrir un second `annexe-item` dans l'`images-wrapper`** : `blocks`
+  changerait et `baseline.json` serait à refaire sur les 88 grilles (§ 8.7).
