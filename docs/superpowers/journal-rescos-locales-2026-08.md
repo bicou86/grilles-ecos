@@ -1101,3 +1101,237 @@ voisines.
   puis `Read` avec `offset`/`limit`.
 * **Aucune modification de `cases/scoring.js`** ni d'aucun fichier partagé.
 * **Aucune commande réseau, aucun `git push`, aucun `git gc` ni `git prune`.**
+
+## Lot `l6b` — RESCOS-56 à 69, dix-sept grilles
+
+Base `b646e68`. Dernier lot des 33 grilles numérotées. Seize grilles de
+`cases/rescos-locales/` modifiées (la dix-septième, « RESCOS-64 station double
+2 », ne porte aucun bloc mobile — voir plus bas). **Redondance inter-blocs du
+lot : 133 → 3.** Corpus **1147 → 1017** (−130, exactement le gain du lot ;
+l'enseignement 6 du pilote se vérifie à la troisième mesure). Témoins
+inchangés : AMBOSS **147**, RESCOS **127**.
+
+### Avant / après, grille par grille
+
+| grille | avant | après | gain |
+|---|---:|---:|---:|
+| RESCOS-56 — Prurit (ictère obstructif) | 27 | **1** | −26 |
+| RESCOS-57 — Ralentissement, EMS, téléphonique | 0 | **0** | 0 |
+| RESCOS-57b — Ralentissement, téléphonique | 10 | **0** | −10 |
+| RESCOS-58 — Rectorragies | 2 | **0** | −2 |
+| RESCOS-59 — SD cholestérol | 0 | **0** | 0 |
+| RESCOS-60 — SD iléus palliatif | 0 | **0** | 0 |
+| RESCOS-61 — Suivi de grossesse | 2 | **0** | −2 |
+| RESCOS-62 — Toux (pneumonie communautaire) | 16 | **0** | −16 |
+| RESCOS-63 — Toux pédiatrique (coqueluche) | 19 | **0** | −19 |
+| RESCOS-64 — Toux, station double 1 | 1 | **0** | −1 |
+| RESCOS-64 — Toux, station double 2 | 0 | **0** | 0 |
+| RESCOS-65 — Tremblements | 0 | **0** | 0 |
+| RESCOS-66 — Troubles de l'équilibre | 1 | **0** | −1 |
+| RESCOS-67 — Fatigue (hypothyroïdie) | 10 | **0** | −10 |
+| RESCOS-68 — Éruption cutanée (zona) | 30 | **2** | −28 |
+| RESCOS-69 — Traumatisme MS (médico-légal) | 2 | **0** | −2 |
+| RESCOS-69b — Traumatisme MS, basketteur | 13 | **0** | −13 |
+| **total** | **133** | **3** | **−130** |
+
+Les trois paires résiduelles sont le **plancher structurel** : une clé de mnémo
+JAUNE de RESCOS-56 face à `expert`, et les deux clés « A = Antécédent de
+varicelle » des mnémos ZONA et PAVE de RESCOS-68 face à `expert`. Un mnémo est
+un changement de format, il ne se démonte pas ; `expert` ne se touche pas.
+
+### Le mapping inverse a couvert les dix-sept grilles
+
+Une recherche `RESCOS-(5[6-9]|6[0-9])b?` sur le vault rend **treize pages**,
+chacune nommant ses grilles :
+
+`SSP — Prurit` (56) · `SSP — Confusion` (57, 57b) · `SSP — Rectorragies` (58) ·
+`SSP — SD Counselling Dépistages` (59) · `Skills — Décision Partagée` (60) ·
+`SSP — Grossesse` (61) · `SSP — Toux Chronique` (62, 63) ·
+`SSP — Hémoptysie` **et** `Skills — Présentation de Cas` (64, une page par
+station) · `SSP — Tremblement` (65) · `SSP — Trouble de la Marche` (66) ·
+`SSP — Fatigue` (67) · `SSP — Éruption Cutanée` (68) ·
+`SSP — Douleur d'Épaule` (69, 69b).
+
+**Deux nuances nouvelles.** La station double 64 est desservie par **deux
+pages différentes**, une par volet — la page de contenu pour la station
+clinique, la page de compétence pour la station de présentation. Et
+`SSP — Douleur d'Épaule` référence encore RESCOS-69b sous **son ancien nom**
+(« RESCOS-69 - Traumatisme MS - Basketteur »), antérieur au renommage du lot
+`l3` : le vault n'a pas été mis à jour, le lien local y est mort.
+
+### Le niveau 1 a tranché quatorze points
+
+**Corrections d'erreur (8).** Deux d'entre elles sont de la famille « énoncé
+qui, appliqué, écarte le bon diagnostic » et sont détaillées à la section
+« Préoccupations » du rapport `l6b`.
+
+1. **RESCOS-67 · `theorie` — « TSH abaissée et T4 libre augmentée =
+   hypothyroïdie primaire ».** Exactement l'inverse. Le `resume` de la même
+   grille écrit correctement « TSH élevée + T4L basse ». Corrigé, avec le couple
+   inverse et le cas de l'hypothyroïdie centrale.
+2. **RESCOS-58 · `theorie` — « Hémoglobine < 80 g/L » en critère de gravité
+   d'une hémorragie aiguë.** C'est l'erreur du pilote (RESCOS-58b portait
+   `< 100 g/L`), sur la même page SSP, qui nomme le piège : l'Hb initiale est
+   faussement rassurante. Corrigé.
+3. **RESCOS-61 · `theorie` — « Tocolyse : β2-mimétiques, inhibiteurs calciques,
+   atosiban ».** `SSP — Grossesse` écrit « atosiban, nifédipine — **pas de
+   salbutamol** ». Les β2-mimétiques ne sont plus recommandés dans cette
+   indication. Corrigé dans `theorie` ; la mention subsiste dans un sous-item
+   **noté**, consignée.
+4. **RESCOS-60 · `theorie` — métoclopramide listé sans réserve parmi les
+   antiémétiques de l'iléus malin.** C'est un prokinétique : contre-indiqué dans
+   l'obstruction complète, celle de la vignette (vomissements fécaloïdes, arrêt
+   des matières et des gaz depuis 48 h). Borné à l'obstruction incomplète, avec
+   l'alternative halopéridol + butylscopolamine ± octréotide.
+5. **RESCOS-67 · `theorie` — « Débuter lévothyroxine à faible dose (25-50 µg/j) »
+   sans réserve**, chez une femme de 38 ans. Le `resume` réserve correctement le
+   départ prudent au sujet âgé ou coronarien. Corrigé : substitution complète
+   d'emblée (≈ 1,6 µg/kg/j) chez l'adulte jeune sans cardiopathie.
+6. **RESCOS-68 · `resume` et `theorie` — « vaccin Zostavax ou Shingrix après
+   50 ans ».** `SSP — Éruption Cutanée` écrit « Shingrix > 65 ans ». Zostavax,
+   vaccin vivant, n'est plus disponible en Suisse. Corrigé aux trois endroits,
+   avec l'indication dès 18 ans chez l'immunodéprimé, et la finalité rectifiée
+   (prévention de la névralgie post-zostérienne plutôt que des récidives).
+7. **RESCOS-63 · `resume` et `presentation` — « déclaration obligatoire de la
+   maladie ».** `theorie` de la même grille écrit « déclaration obligatoire
+   (**cas groupés**) ». En Suisse la coqueluche n'est plus à déclaration
+   individuelle ; ce sont les flambées qui se déclarent. Aligné sur `theorie`,
+   la formulation la plus précise.
+8. **RESCOS-56 · `resume` — antihistaminiques donnés au même rang que la
+   cholestyramine** contre le prurit cholestatique, alors que `therapy` de la
+   même grille écrit « antihistaminiques peu efficaces ». Corrigé, avec les
+   posologies et la hiérarchie (cholestyramine 4 g 2-3×/j, rifampicine
+   150-300 mg/j).
+
+**Deux corrections mineures de même nature.** RESCOS-57b · `theorie` écrivait
+« BRAT : Bananes, Riz, **Applesauce**, Toast » là où `therapy` et
+`presentation` écrivent « compote » ; et RESCOS-58 · `theorie` portait
+« Transfusion si Hb < **7g/dl** » — unité non SI **collée au chiffre**, que
+`check_nomenclature` ne voit pas (voir « Un angle mort mesuré » ci-dessous).
+
+**Précisions chiffrées portées depuis la page (6).** RESCOS-62 items et seuils
+du CURB-65 (0-1 ambulatoire, 2 hospitalisation courte, ≥ 3 forme sévère) ·
+RESCOS-61 seuils de l'HGPO 75 g (à jeun ≥ 5,1 · 1 h ≥ 10,0 · 2 h ≥ 8,5 mmol/L)
+et col court < 25 mm · RESCOS-58 scores d'Oakland (≤ 8) et de Glasgow-Blatchford,
+index de choc > 1, coloscopie ≤ 24 h, dépistage FIT/coloscopie 50-69 ans ·
+RESCOS-64 seuil de l'hémoptysie massive (> 200 mL/24 h ou > 100 mL/h) ·
+RESCOS-67 seuil d'Epworth > 10, cohérent avec RESCOS-44 du lot `l6a` ·
+RESCOS-59 seuil de risque cardiovasculaire à 10 ans d'environ 10 % et
+calculateur AGLA/GSLA.
+
+### Les trous du bloc canonique — dix, dont six de sécurité
+
+Le rôle canonique se répartit encore autrement que dans les deux lots
+précédents : **six grilles ont un `resume`** (56, 57b, 62, 63, 64-SD1, 67, 68,
+69b — huit en fait), **sept n'ont que `theorie`** (58, 59, 60, 61, 65, 66, 69),
+**une n'a que `annexe-dd`** (57) et **une n'a rien du tout** (64-SD2).
+
+| grille | ce qui manquait | où porté |
+|---|---|---|
+| RESCOS-57 | la **glycémie capillaire**, l'**hyponatrémie sous thiazidique** et le couple **globe vésical / fécalome** — zéro occurrence, chez un homme de 88 ans sous Cosaar Plus, porteur d'une HBP | `annexe-dd`, trois entrées ajoutées |
+| RESCOS-57b | la **glycémie capillaire** et le **globe vésical** — zéro occurrence ; plus la forme **hypoactive** de l'état confusionnel et la règle « la démence prédispose mais n'explique pas » | `resume` |
+| RESCOS-61 | l'**immunoglobuline anti-D à 28 SA** chez la femme Rh négatif — **zéro occurrence** dans une station de suivi de grossesse ; plus l'**aspirine 100-150 mg dès 12-16 SA** et les **contre-indications absolues** (IEC, sartans, AVK, méthotrexate, isotrétinoïne, statines) | `theorie`/Rappels et /Dépistage |
+| RESCOS-66 | l'**hydrocéphalie à pression normale** et la triade de Hakim-Adams — **zéro occurrence**, chez une femme de 74 ans en trouble de l'équilibre, alors que c'est la seule cause curable de la liste ; plus le canal lombaire étroit et l'hypotension orthostatique | `theorie` |
+| RESCOS-65 | la **TSH** et l'hyperthyroïdie — **zéro occurrence** ; plus les neuroleptiques et le métoclopramide comme causes de parkinsonisme réversible | `theorie` |
+| RESCOS-64 SD1 | la **distinction hémoptysie / hématémèse / épistaxis postérieure déglutie** — zéro occurrence, alors que c'est le premier réflexe de la page ; plus le **décubitus latéral du côté qui saigne** et l'**isolement respiratoire** dès la suspicion de tuberculose | `resume` et `annexe-dd` |
+| RESCOS-69 | le **nom des ressources d'aide aux victimes** : la grille NOTE « informe des offres de soutien à disposition » et ne nomme aucune structure. LAVI (0848 800 244) et 143 ajoutés | `theorie` |
+| RESCOS-58 | le **rapport urée/créatinine** et la **gastroscopie première** devant une rectorragie chez un patient avec antécédent d'ulcère sous aspirine et AINS — zéro occurrence d'OGD dans la grille, alors que le barème lui-même liste l'ulcère gastroduodénal au différentiel | `theorie` |
+| RESCOS-67 | le **β-hCG** chez une femme de 38 ans (zéro occurrence) et le dépistage du **SAHOS** | `theorie`/Examens |
+| RESCOS-68 | la **sérologie VIH devant tout zona avant 50 ans**, et pas seulement devant les formes sévères ou récidivantes, chez un patient de 31 ans | `resume` |
+
+Cinq compléments moindres : RESCOS-56 (TP/INR et CA 19-9 absents de
+`resume`/Biologie, antibiothérapie de l'angiocholite non nommée) · RESCOS-62
+(réévaluation à 48-72 h et **radiographie de contrôle à 4-6 semaines chez le
+fumeur** absentes de `resume`) · RESCOS-63 (**hyperleucocytose > 30 puis
+50 G/L** comme marqueur de la forme maligne, vaccination maternelle en fin de
+grossesse, isolement gouttelettes) · RESCOS-59 (aucune référence suisse :
+AGLA/GSLA, LPMéd art. 40, smarter medicine) · RESCOS-60 (teach-back, test SURE,
+CC art. 16 / 370-373 / 377-378).
+
+### Une grille sans aucun bloc mobile — « RESCOS-64 station double 2 »
+
+`blocks_present()` rend **`[]`** : ni `resume`, ni `theorie`, ni
+`presentation`, ni `expert`, ni `annexe-dd`, ni `scenario`. Le fichier pèse
+108 808 caractères et ne contient que sa section notée. `uncovered_content()`
+rend `{}` — ce n'est donc pas un angle mort de l'outillage, c'est un fait :
+**la grille n'a aucun contenu pédagogique**. Rien n'y a été écrit, la consigne
+« ne crée aucun bloc absent » s'appliquant intégralement. C'est la seule grille
+des 33 numérotées dans ce cas.
+
+### Les gestes de réduction, par famille
+
+* **§2 et §3 convertis en `presentation-reponse text`** — huit grilles à
+  `presentation`, 14 listes converties. Geste le plus rentable du lot.
+* **§1 fusionné, forme `structured` conservée** — sans exception, sur les huit
+  grilles. Deuxième gisement.
+* **§3 « Traitement immédiat » fusionné** — la `reponse-section` se fusionne, elle
+  ne se convertit pas (enseignement 3 du lot `l6a`, reconduit).
+* **`annexe-dd` retouché sur 7 grilles** (56, 57, 57b, 62, 64-SD1, 67, 68) —
+  aucune case à cocher, barème hors d'atteinte. Six fusions d'enrichissement et
+  **deux entrées ajoutées** (fausses hémoptysies et sténose mitrale sur
+  RESCOS-64 SD1, trois entrées sur RESCOS-57).
+* **Listes de « Touches ludiques » fusionnées** — jamais supprimées ; sur
+  RESCOS-56 les quatre sous-sections ont été réécrites en lignes discriminantes
+  après vérification item par item de leur présence ailleurs.
+* **`theorie` allongé face à `expert` et `therapy`** — sur les grilles sans
+  `presentation`, l'unique côté mobile.
+
+### Un angle mort mesuré de `check_nomenclature`
+
+`RESCOS-58`/`theorie` écrivait **`Hb < 7g/dl`** — unité non SI, **collée au
+chiffre**, et `check_nomenclature` rendait 0. Le motif du contrôle attend une
+frontière de mot ou une espace avant l'unité ; `7g/dl` y échappe. Un balayage
+du corpus après correction rend **0 occurrence de `g/dl`** et **11 occurrences
+résiduelles** d'unités en litre minuscule (`mmol/l`, `g/l`, `UI/l`) plus deux
+`40mcg`. Toutes sont hors de ce lot ou dans une **section notée**
+(RESCOS-57/57b, `Pradif T 40mcg`) : consignées, non corrigées. Le correctif de
+motif relève d'une passe dédiée, pas d'une retouche isolée.
+
+### Barème — règle 1, strictement
+
+Toutes les éditions portent sur `resume`, `theorie`, `presentation` et
+`annexe-dd`. **Aucun bloc noté** : `therapy` et `redflags` n'ont pas été
+approchés, `expert` non plus. 0 sous-item ajouté ou retiré ; `maxScores`,
+`<span class="score">`, `sectionInfo[].count` et `coef` intacts ; **baseline non
+régénérée**. Les coefficients 0.5/0.5 de RESCOS-63 réparés au lot `l3` sont
+inchangés. Vérifié sur le diff complet : **0 ligne** touchant
+`window.caseConfig`, `<script`, `criteria-text`, `criteria-detail`,
+`type="checkbox"`, `type="radio"`, `maxScores`, `sectionInfo`, `coef` ou
+`<span class="score">`.
+
+### Vérifications
+
+```
+check_invariants.py                 OK — 165 grilles, code 0
+check_nomenclature.py               OK — 0 terme, code 0
+check_reachability.py               OK — 156/156 notées à 100 %, code 0
+report_redundancy.py 56→69          133 -> 3
+report_redundancy.py (corpus)       1147 -> 1017  (−130 = gain du lot)
+check_no_loss.py b646e68            203 items, verdictés un à un, 0 perte
+browser_probe.js RESCOS-5 --deep    12/12 sans exception · 12/12 à 100 % · registry
+browser_probe.js RESCOS-6 --deep    12/12 sans exception · 12/12 à 100 % · registry
+                                    barre nav fixed sans recouvrement du minuteur
+AMBOSS  report_redundancy 147 (inchangé) · 3 portes code 0
+RESCOS  report_redundancy 127 (inchangé) · 3 portes code 0
+```
+
+Les 203 items signalés par `check_no_loss` sont **tous** des conversions en
+`presentation-reponse text` (que `all_items()` ne voit plus par construction),
+des fusions, ou les huit corrections délibérées ci-dessus. Treize items dont la
+couverture lexicale automatique tombait sous 0,6 ont été relus un à un et
+retrouvés dans leur bloc d'arrivée. **Aucun retrait plein.**
+
+La sonde `--deep` signale une grille sans crochet coloré : « RESCOS-64 station
+double 2 ». Elle n'a **pas** été modifiée (aucune entrée au `git status`) et
+ses critères ne portent aucune `patient-response` — état antérieur, pas une
+régression.
+
+### Ce que le lot `l6b` n'a pas fait
+
+* **Rien sous `cases/german/`, `scripts/german/`, `cases/casecos/` ni
+  `scripts/casecos/`** — ni lu, ni écrit. Commit `path`-scopé.
+* **Aucun bloc créé**, y compris sur la grille qui n'en a aucun.
+* **Aucune lecture de grille entière avec `Read`** — bornes par `block_spans`,
+  puis `Read` avec `offset`/`limit`.
+* **Aucune modification de `cases/scoring.js`** ni d'aucun fichier partagé.
+* **Aucune commande réseau, aucun `git push`, aucun `git gc` ni `git prune`.**
