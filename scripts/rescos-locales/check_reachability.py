@@ -14,8 +14,9 @@ Les trois corpus precedents partageaient `cases/scoring.js`. La simulation
 d'AMBOSS (`section_max`, `orphan_criteria`, `check_one`) rejoue CE fichier, et
 le rejouer suffisait parce qu'il n'y en avait qu'un.
 
-Ici, AUCUNE grille ne charge `cases/scoring.js` (0/165) : les 156 grilles notees
-embarquent chacune leur propre copie du moteur. Deux voies s'offraient :
+A l'inventaire (`l2`), AUCUNE grille ne chargeait `cases/scoring.js` (0/165) :
+les 156 grilles notees embarquaient chacune leur propre copie du moteur. Deux
+voies s'offraient :
 
   (a) simuler le moteur de CHAQUE grille — c'est-a-dire extraire et interpreter
       156 programmes JavaScript en Python ;
@@ -93,6 +94,29 @@ s'applique sans reserve — la simulation porte sur la partie du moteur qui
 s'execute correctement.
 
 
+ETAT DEPUIS LE LOT `l3` : LES 156 MOTEURS ONT ETE REMPLACES PAR LE FICHIER PARTAGE
+===================================================================================
+`apply_shared_engine.py` a bascule les 156 grilles sur
+`<script src="../scoring.js">` avec un bareme transpose en `window.caseConfig`,
+comme r7 l'avait fait sur RESCOS-7 et RESCOS-9. Les six manques disparaissent
+avec la fourche ; mesure en navigateur apres bascule : **0 exception** sur les
+165 grilles, **156/165 ecrivant `ecos_registry`** (les 9 restantes sont les
+feuilles porte, qui n'ont pas de score).
+
+Ce script lit donc DEUX etats du corpus, et c'est deliberement conserve :
+
+  * `window.caseConfig` + `<script src="../scoring.js">` — l'etat courant. Son
+    empreinte de moteur est le marqueur `SHARED_ENGINE`, non un SHA : le
+    fichier partage est suivi par `git` comme n'importe quel autre et toute
+    modification apparait a son `diff`. C'etait precisement l'argument qui
+    justifiait le SHA tant que le moteur etait noye dans 170 000 caracteres de
+    HTML ; il tombe avec la bascule.
+  * le moteur embarque et ses deux formes de declaration — l'etat d'avant.
+    La branche est conservee parce qu'elle DECRIT ce que le corpus a porte et
+    parce qu'elle est la seule chose qui distinguerait une grille future
+    reimportee du vault d'une grille deja basculee.
+
+
 LES 9 GRILLES SANS `calculateScores` : LES FEUILLES PORTE
 ==========================================================
 Ce sont les 9 fichiers « … - Feuille porte.html », la consigne remise au
@@ -142,9 +166,21 @@ section_max = _amboss.section_max
 orphan_criteria = _amboss.orphan_criteria
 
 # Empreinte du moteur embarque, configuration masquee. Les 156 grilles notees
-# la portent, toutes. Une divergence d'un octet fait echouer la grille : le
-# modele simule ci-dessous ne la decrirait plus.
+# la portaient, toutes, jusqu'a la bascule du lot `l3`. Une divergence d'un
+# octet fait echouer la grille : le modele simule ci-dessous ne la decrirait
+# plus. Conservee : c'est ce qui distinguerait une grille reimportee du vault.
 REFERENCE_ENGINE = "c3e2534eefd493b31bb3a8f785daf9c464912a0ce693466e9d5180ab3e7daa77"
+
+# Empreinte des grilles qui chargent le moteur PARTAGE. Un marqueur et non un
+# SHA : `cases/scoring.js` est un fichier suivi par `git`, dont toute
+# modification apparait a son propre `diff` — voir l'entete.
+SHARED_ENGINE = "shared:cases/scoring.js"
+
+# Les 165 grilles vivent dans `cases/rescos-locales/`, soit exactement deux
+# niveaux sous la racine, comme `cases/rescos/` : `../scoring.js` resout donc
+# sur `cases/scoring.js`, et les `../../index.html` / `../../exam.html` que le
+# moteur partage construit resolvent sur la racine du depot.
+SHARED_SRC = re.compile(r'<script[^>]+src="\.\./scoring\.js"')
 
 _SCRIPT = re.compile(r"<script\b[^>]*>(.*?)</script>", re.S)
 _ISNEW = re.compile(r"const isNewFormat = (?:true|false);")
@@ -169,7 +205,12 @@ def engine_fingerprint(html):
     « nouveau format ») jusqu'au commentaire `// Calcul des scores …`, qui les
     suit dans les deux cas. `isNewFormat` est masque a part : c'est un drapeau
     mort, dont la valeur suit la forme de declaration sans rien commander.
+
+    Une grille qui charge le moteur PARTAGE rend le marqueur `SHARED_ENGINE` :
+    elle n'a plus de moteur a elle, et le fichier partage est suivi par `git`.
     """
+    if SHARED_SRC.search(html):
+        return SHARED_ENGINE
     js = engine_source(html)
     if not js:
         return None
@@ -193,12 +234,13 @@ def is_door_sheet(html):
 
 
 def parse_config(html):
-    """maxScores, coef, sectionInfo et denominateurs affiches — les deux formes.
+    """maxScores, coef, sectionInfo et denominateurs affiches — les trois formes.
 
-    Tente d'abord la forme declarative (154 grilles), puis la forme imperative
-    (RESCOS-63 et RESCOS-64 station double 2). Les denominateurs affiches
-    (`<span class="score">`) sont lus de la meme facon dans les deux cas : ce
-    sont des chaines litterales du HTML.
+    Tente d'abord `window.caseConfig` (l'etat courant des 156 grilles notees),
+    puis, sur une grille encore a l'ancien etat, la forme declarative (154
+    grilles) et la forme imperative (RESCOS-63 et RESCOS-64 station double 2).
+    Les denominateurs affiches (`<span class="score">`) sont lus de la meme
+    facon dans les trois cas : ce sont des chaines litterales du HTML.
 
     NOTE — pourquoi `parse_config` d'AMBOSS n'est pas reutilisee ici alors que
     `scripts/rescos/` la reutilisait : elle lit `maxScores: {…}` n'importe ou
@@ -217,6 +259,21 @@ def parse_config(html):
     spans = {k: int(v) for k, v in re.findall(
         r'<span class="score">Score : <span id="(\w+)">0</span>/(\d+)</span>', html)}
 
+    # Forme `window.caseConfig` — bornee au bloc lui-meme, pour la meme raison
+    # que ci-dessous : `let maxScores = {};` traine ailleurs dans le corpus.
+    m = re.search(r"window\.caseConfig\s*=\s*\{(.*?)\n\};", js, re.S)
+    if m:
+        cc = m.group(1)
+        mm = re.search(r"maxScores:\s*\{([^}]*)\}", cc)
+        max_scores = {k: int(v) for k, v in
+                      re.findall(r"(\w+):\s*(\d+)", mm.group(1))} if mm else {}
+        mm = re.search(r"coef:\s*\{([^}]*)\}", cc)
+        coef = {k: float(v) for k, v in
+                re.findall(r"(\w+):\s*([\d.]+)", mm.group(1))} if mm else {}
+        mm = re.search(r"sectionInfo:\s*\[(.*?)\]", cc, re.S)
+        blobs = re.findall(r"\{[^{}]*\}", mm.group(1) if mm else "")
+        return max_scores, coef, _sections(blobs), spans
+
     m = re.search(r"maxScores\s*=\s*\{([^}]*)\}", cfg)
     if m:
         max_scores = {k: int(v) for k, v in re.findall(r"(\w+):\s*(\d+)", m.group(1))}
@@ -231,6 +288,11 @@ def parse_config(html):
                 re.findall(r'coef\["(\w+)"\]\s*=\s*([\d.]+)', cfg)}
         blobs = re.findall(r"sectionInfo\.push\(\{([^}]*)\}\)", cfg)
 
+    return max_scores, coef, _sections(blobs), spans
+
+
+def _sections(blobs):
+    """Les `sectionInfo[]` lus d'une liste de litteraux `{…}`, forme commune."""
     sections = []
     for blob in blobs:
         key = re.search(r'key:\s*"(\w+)"', blob)
@@ -247,7 +309,7 @@ def parse_config(html):
             "scoreId": score_id.group(1) if score_id else key.group(1) + "Score",
             "isComm": re.search(r"isComm:\s*true", blob) is not None,
         })
-    return max_scores, coef, sections, spans
+    return sections
 
 
 def empty_weighted_sections(html):
@@ -287,10 +349,11 @@ def check_one(path):
     fingerprint = engine_fingerprint(html)
     if fingerprint is None:
         return False, ["    aucun <script> : ni moteur embarque, ni feuille porte"]
-    if fingerprint != REFERENCE_ENGINE:
+    if fingerprint not in (SHARED_ENGINE, REFERENCE_ENGINE):
         return False, [
-            "    MOTEUR INCONNU — cette grille n'embarque pas le moteur de reference",
-            f"      empreinte {fingerprint[:16]}… au lieu de {REFERENCE_ENGINE[:16]}…",
+            "    MOTEUR INCONNU — ni le moteur partage, ni la fourche embarquee",
+            f"      empreinte {fingerprint[:16]}… au lieu de {SHARED_ENGINE} "
+            f"ou {REFERENCE_ENGINE[:16]}…",
             "      la simulation ci-dessous ne la decrit plus : relire son <script>"]
 
     max_scores, coef, sections, spans = parse_config(html)

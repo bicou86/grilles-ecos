@@ -11,11 +11,28 @@ grille, d'aucune retouche de contenu.
 
 `engineFingerprint` est le SHA-256 de ce moteur, region de configuration
 masquee. Il gele la LOGIQUE de calcul independamment des chiffres du bareme, qui
-sont geles a part (`maxScores`, `coef`, `sectionCounts`). Les 156 grilles
-portent aujourd'hui la MEME empreinte ; une divergence future, qu'elle vienne
-d'une correction appliquee a une seule grille ou d'un import de gabarit
+sont geles a part (`maxScores`, `coef`, `sectionCounts`). Une divergence, qu'elle
+vienne d'une correction appliquee a une seule grille ou d'un import de gabarit
 different, est signalee par `check_invariants.py` — et separement rejetee par
 `check_reachability.py`, dont c'est une precondition.
+
+DEPUIS LE LOT `l3`, LES 156 MOTEURS EMBARQUES ONT DISPARU
+==========================================================
+`apply_shared_engine.py` a bascule les 156 grilles notees sur
+`<script src="../scoring.js">` avec un bareme transpose en `window.caseConfig`.
+Leur `engineFingerprint` vaut donc le marqueur `shared:cases/scoring.js` et leur
+`configForm` vaut `caseConfig`. Ce sont les DEUX SEULS champs qui ont bouge a la
+bascule : sur les 165 grilles, `maxScores`, `coef`, `scoreSpans`,
+`sectionCounts`, `sectionPrefixes`, `blocks`, `criteriaCount`, `detailCount`,
+`radioCount` et `checkboxCount` sont identiques avant et apres. C'est la
+demonstration la plus directe que l'echange a touche le moteur et RIEN du
+contenu ni du bareme.
+
+Le marqueur remplace le SHA parce que son argument tombe avec la bascule : ce
+qui justifiait une empreinte etait l'invisibilite de 35 800 caracteres de
+JavaScript noyes dans 170 000 caracteres de HTML. `cases/scoring.js` est un
+fichier suivi par `git`, dont toute modification apparait a son propre `diff`,
+comme pour les trois autres corpus qui le partagent.
 """
 import json
 import re
@@ -33,8 +50,13 @@ OUT = Path(__file__).parent / "baseline.json"
 def config_form(html):
     """Forme de declaration du bareme, gelee parce qu'elle designe le lecteur.
 
-    `declarative` : `maxScores = {…}` / `sectionInfo = [{…}]` — 154 grilles.
-    `imperative`  : `maxScores["x"] = …` / `sectionInfo.push({…})` — 2 grilles.
+    `caseConfig` : `window.caseConfig = {…}` lu par `cases/scoring.js` — l'etat
+       courant des 156 grilles notees, depuis la bascule du lot `l3`.
+    `declarative` : `maxScores = {…}` / `sectionInfo = [{…}]` — la forme que
+       154 grilles portaient dans leur moteur embarque.
+    `imperative`  : `maxScores["x"] = …` / `sectionInfo.push({…})` — celle des
+       2 autres (RESCOS-63 et RESCOS-64 station double 2), exactement la forme
+       de RESCOS-7 et RESCOS-9 avant leur propre bascule.
     `feuille-porte` : aucun bareme, par nature.
     `aucune` : ni l'un ni l'autre — anomalie.
 
@@ -50,6 +72,8 @@ def config_form(html):
     if is_door_sheet(html):
         return "feuille-porte"
     js = engine_source(html)
+    if re.search(r"window\.caseConfig\s*=\s*\{", js):
+        return "caseConfig"
     a = js.find(_CFG_START)
     b = js.find(_CFG_END, a) if a >= 0 else -1
     cfg = js[a:b] if a >= 0 and b > 0 else ""

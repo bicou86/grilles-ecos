@@ -51,15 +51,26 @@ THRESHOLD = 0.72  # identique a report_redundancy.py — meme mesure, face oppos
 
 
 def changed_grid_names(base_ref):
-    """Noms des fichiers de grilles modifies entre base_ref et le disque courant."""
+    """Noms des fichiers de grilles modifies entre base_ref et le disque courant.
+
+    `-z` n'est PAS un detail de forme. Sans lui, `git diff --name-only` applique
+    `core.quotepath` et rend `"cases/rescos-locales/AMC Urgences 1 -
+    Polytraumatis\\303\\251 - Grille ECOS.html"` — guillemets et octets echappes —
+    pour tout nom non ASCII. Le nom ainsi lu ne correspondait a aucun fichier du
+    disque, et ces grilles etaient SILENCIEUSEMENT sautees. Sur ce corpus, 132
+    des 165 noms portent un accent : le controle etait aveugle sur les deux
+    tiers du corpus, et son verdict « aucun item disparu » n'en couvrait qu'un
+    tiers. Mesure du symptome : 156 grilles modifiees, 57 seulement examinees.
+    `-z` rend les chemins bruts separes par NUL, sans echappement possible.
+    """
     result = subprocess.run(
-        ["git", "diff", "--name-only", base_ref, "--", "cases/rescos-locales"],
+        ["git", "diff", "-z", "--name-only", base_ref, "--", "cases/rescos-locales"],
         cwd=ROOT, capture_output=True, encoding="utf-8",
     )
     if result.returncode != 0:
         print(f"git diff a echoue pour {base_ref!r} : {result.stderr.strip()}")
         return set()
-    return {Path(line).name for line in result.stdout.splitlines() if line.strip()}
+    return {Path(line).name for line in result.stdout.split("\0") if line.strip()}
 
 
 def read_old(base_ref, path):
