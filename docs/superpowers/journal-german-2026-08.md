@@ -3503,3 +3503,232 @@ et 37 fichiers `cases/casecos/` et `cases/rescos-locales/` de la session voisine
 quatre blocs pédagogiques.**
 
 Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3c-bis-report.md`
+
+---
+
+# Lot p3d — German-61 à 88 : 17 grilles sur 25 livrées
+
+**HEAD réel au démarrage : `6867629`**, et non `383ade6` comme l'annonçait
+l'instantané de la tâche. Vérifié avant la première écriture. La session voisine
+avait commité entre-temps ; elle a de nouveau commité `a36576b` et `6de0284`
+**entre** mes commits, dont la réaccessibilité a été revérifiée après coup.
+
+## Périmètre
+
+German-61 à 88 moins les trois déjà complétées (69, 72, 88) = **25 grilles**.
+Composition mesurée avec `lib_german.py`, non supposée :
+
+- **17 livrées** : 61, 62, 63, 64, 65, 66, 67, 68, 70, 71, 73, 74, 75, 76, 77, 78, 79
+- **8 restantes** : 80, 81, 82, 83, 84, 85, 86, 87 — arrêt sur épuisement du
+  budget de contexte, non sur obstacle technique. Relevé préparatoire au rapport.
+
+Cinq grilles ne portaient **aucun bloc pédagogique** (70, 73, 84, 86, 87) ;
+German-63 n'a **pas d'`annexe-dd`** mais cinq `therapy` ; **German-78 porte deux
+segments `annexe-dd`** — cas unique du corpus, l'un cardiaque et l'autre
+pulmonaire.
+
+## Sourçage — deux pages ne couvrent pas leur vignette
+
+1. **German-65 / Otalgie.** La page est construite pour l'**adulte** : sa règle
+   d'or, ses drapeaux rouges et ses pièges portent sur l'otalgie référée, le
+   cancer pharyngo-laryngé du fumeur de plus de 50 ans, l'otite externe
+   nécrosante du diabétique et le syndrome de Ramsay-Hunt. Elle apporte en
+   revanche exactement le raisonnement dont la vignette a besoin — grille de
+   lecture de l'otorrhée, distinction externe/moyenne, recherche de la
+   mastoïdite, danger du tympan perforé. Elle ne dit rien du **délai de
+   cicatrisation, du rythme des contrôles ni de la prévention pédiatrique**.
+2. **German-70 / Enfant irritable.** La page couvre intégralement le
+   raisonnement (caractérisation des pleurs, causes fréquentes, drapeaux rouges,
+   examen complet, versant parental) et nomme la poussée dentaire parmi les
+   causes bénignes, mais **ne dit rien de son traitement**.
+
+Cas apparenté, moins sévère : **German-79 / Toux Chronique** — la page traite la
+toux de plus de huit semaines et ne couvre pas la laryngite aiguë de l'enfant.
+Les conseils thérapeutiques viennent du corrigé.
+
+**À l'inverse**, la page « Pollakiurie » couvre très bien German-71 malgré son
+titre urologique : elle fait de la distinction pollakiurie / polyurie sa règle
+d'or, inscrit le diabète décompensé parmi ses drapeaux rouges et explique la
+diurèse osmotique. Le mot du titre trompe, pas la page.
+
+Chaque grille concernée porte une section « Ce que la page SSP ne couvre pas
+ici » qui nomme ce qui manque et d'où vient alors le contenu. **Rien n'a été
+comblé.**
+
+## Le cas de la page « Toux Chronique » — cinq grilles, neuf images
+
+C'est la configuration la plus contrainte de tout le corpus, devant les trois
+lombalgies de p3c-bis. La page dessert **German-75, 76, 77, 78 et 79** et cite
+onze fichiers, dont **deux à extension mensongère** et deux références cassées.
+Sélections disjointes obtenues :
+
+| Grille | Images | Test du § 8.3 |
+|---|---|---|
+| 75 (tuberculose) | nodule cavitaire + Rx TB héritée | 1 (critère « cavernes ») |
+| 76 (insuffisance cardiaque) | sémiologie des bruits | 1 (auscultation) |
+| 77 (pneumonie) | hippocratisme + message-clé | 1 (critère explicite) + § 8.4 |
+| 78 (asthme) | 2 courbes débit-volume + score de Genève | 1 (interprétation EFR) + 2 |
+| 79 (faux-croup) | **aucune** | aucune image ne porte sur la vignette |
+
+**German-79 est la première grille du corpus sans image.** La seule illustration
+pédiatrique de la page est un algorithme de **toux chronique** de l'enfant ;
+la vignette est une laryngite **aiguë** évaluée par téléphone. Écartée au titre
+du § 8.3 (« la vignette, pas le thème »), l'image reprise a été supprimée de
+`cases/img/german/` et son entrée retirée du manifeste — `--verify` ne signale
+aucune orpheline.
+
+**German-76 n'a qu'une image**, par pénurie et non par sélection.
+
+## Images
+
+**39 fichiers nouveaux, 4 709 Ko**, médiane 67 Ko, maximum 595 Ko
+(`cardio-syndrome-de-brugada-aspect-type-1.png`, sous le plafond de 600 Ko).
+Aucun dépassement, aucune recompression, toutes au manifeste avec sha256.
+
+**Message-clés : 4 embarqués** (ostéoporose pour German-63, obésité pour 64,
+fibrillation auriculaire pour 74, infection respiratoire basse pour 77),
+**1 écarté** : celui de la page « Syndrome Métabolique » sur la dyslipidémie,
+la vignette de German-64 portant sur le surpoids — la page en cite deux, seul
+celui de l'entité a été retenu (§ 8.4 point 1).
+
+**Une image de « texte long en image » refusée** : `anamnese-299-trouble-de-la-
+miction.jpeg` (page Pollakiurie) est la **photographie d'une page imprimée**
+listant anamnèse, status, examens et diagnostics. Ouverte avant d'être écartée,
+au titre du § 8.5 a et du précédent d'`EM_Aide_page-0002` (p3c).
+
+### Sept fichiers du vault à extension mensongère — le compte double
+
+`fetch_image.py` les arrête tous par `ÉCHEC [corrompu]`, code 1 :
+
+| Fichier | Réel | Page(s) |
+|---|---|---|
+| `pedia-fontanelles-sutures.jpg` | PNG | Enfant Irritable · Fièvre du Nourrisson |
+| `pedia-fievre-sans-foyer-2mois-2ans-algorithme.jpg` | PNG | Fièvre du Nourrisson |
+| `pedia-fievre-sans-foyer-0-2mois-algorithme.jpg` | PNG | Fièvre du Nourrisson |
+| `gyneco-anatomie-pelvienne.png` | JPEG | Saignement Vaginal |
+| `gyneco-myomes-uterins-localisations-schema.jpg` | PNG | Saignement Vaginal |
+| `pulmo-rx-thorax-nodules-bilateraux.jpg` | PNG | Toux Chronique |
+| `pulmo-rx-thorax-opacite-lobe-superieur-droit.jpg` | PNG | Toux Chronique |
+
+S'ajoutent aux trois relevés en p3a, p3c et p3c-bis : **dix occurrences
+connues**. Deux fichiers **vides** (0 octet) également relevés :
+`pedia-gen-triangle-d-evaluation-pediatrique-pat.svg` et
+`neuro-gen-demarche-steppante-deficit-du-nerf-fibulaire.svg` — tous deux passent
+pourtant `fetch_image.py`, qui ne détecte pas un SVG de 800 à 900 octets comme
+vide. Signalés sans être contournés.
+
+## German-68 — retrait de `data-image-id`
+
+Les deux `annexe-item` hérités portaient `data-image-id`, attribut qui déclenche
+`width: 49% !important` (`cases/case-styles.css:661`) et aurait écrasé les
+panneaux de légende de la planche. L'attribut a été retiré des deux items ; le
+**compte de segments `annexe-image` reste à 2**, donc pas de retrait au sens de
+`blocks`. Vérifié au contrôle visuel : les images héritées rendent désormais à
+1046 px de large au lieu de ~380.
+
+**Divergence interne relevée sans être corrigée** : l'en-tête de German-68 donne
+75 ans, son `annexe-dd` argumente sur « 77 ans ». L'`annexe-theorie` le signale
+et retient la donnée de l'en-tête.
+
+## Contrat de rôle
+
+`report_redundancy.py` passé **avant et après chaque grille**. **26 paires
+arbitrées en cours de rédaction**, résultat final **0 paire nouvelle sur les 17**.
+
+| Couple | Paires | Sens de l'arbitrage |
+|---|---|---|
+| `resume` ↔ `annexe-theorie` | 14 | La donnée chiffrée reste au `resume` ; la ligne est retirée des « Seuils et repères » |
+| `resume` ↔ `presentation` | 8 | La `presentation` reformule |
+| `annexe-dd` ↔ `resume` | 3 | Le pédagogique cède, l'`annexe-dd` n'est jamais touché |
+| `annexe-theorie` ↔ `presentation` | 1 | La `theorie` développe, la `presentation` cite |
+
+**Deux paires préexistantes conservées** : German-68, `annexe-dd ↔ therapy`
+(« installation progressive » ↔ « essai et adaptation progressive »), toutes deux
+de niveau 2 et donc intouchables. Vérifié sur l'état commité `6867629` : elles
+préexistaient à mon intervention.
+
+## Balisage
+
+**4 591 spans / 42 289 mots = 1 pour 9,2** sur les quatre conteneurs prescrits.
+0 span hors conteneur ; 0 span dans `section-longue` ou `section-express`.
+`annexe-dd` non balisé (écart assumé, arbitrage ouvert).
+
+Repères : German-1 1/8,5 · p3a 1/9,5 · p3b 1/8,9 · p3c 1/9,5 · p3c-bis 1/8,5.
+
+Plus dense **1/7,6** (German-73) · plus légère **1/12,2** (German-79). Comme
+German-38 et 39 en p3c, German-79 est une **station de pure communication** —
+consultation téléphonique sans examen ni prescription — et offre
+structurellement moins de termes balisables.
+
+**Règle de déballage appliquée** (≥ 5 spans de même classe dans un `<li>`) :
+17 `<li>` concernés, 76 spans déballés. Équilibrage `<span>` vérifié après coup
+sur les 17 grilles.
+
+Répartition : `c-pink` 1 268 · `c-green` 1 153 · `c-red` 894 · `c-yellow` 422 ·
+`c-blue` 322 · `c-amber` 234 · `c-purple` 214 · `c-orange` 84.
+
+## Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `report_redundancy.py`, avant et après, sur chacune des 17 | **0 paire nouvelle** |
+| `check_invariants.py` après re-snapshot | **OK — 88 grilles** |
+| Diff `baseline.json` champ par champ | `blocks` seul champ modifié, 17 grilles, **delta purement additif** |
+| `check_reachability.py` | **OK — 88/88 à 100 %** |
+| `check_nomenclature.py` | **OK** (un `g/dL` introduit puis corrigé en `g/L` sur German-73) |
+| AMBOSS — invariants, reachability, nomenclature | **OK — 40 grilles** |
+| RESCOS — invariants, reachability, nomenclature | **OK — 41 grilles** |
+| `fetch_image.py --verify` | **0 lien cassé, 0 orpheline** |
+| Équilibrage `<div>` / `<span>` / `<li>` | **exact sur les 17** |
+| `bounds_anomalies` / `uncovered_content` | **vides sur les 17** |
+| Contrôle visuel | **8 rendus, 0 image cassée, 0 débordement** |
+
+### Justification du re-snapshot
+
+`snapshot_invariants.py` n'a été relancé qu'après constat et justification :
+
+```
+Champs qui changent : ['blocks']
+Grilles touchees    : [61,62,63,64,65,66,67,68,70,71,73,74,75,76,77,78,79] (17)
+Ecarts hors champ 'blocks' : 0
+Delta blocks purement additif : True
+   annexe-image: 1     ajoute sur 12 grille(s)
+   annexe-theorie: 1   ajoute sur 17 grille(s)
+   presentation: 1     ajoute sur 17 grille(s)
+   resume: 1           ajoute sur 17 grille(s)
+```
+
+Les deux écarts au « 17 » sur `annexe-image` sont attendus et vérifiés :
+**German-61, 68, 75 et 78 en portaient déjà un** (deux pour German-68), leurs
+triplets ayant été ajoutés dans l'`annexe-item` existant ; et **German-79 n'en
+reçoit aucun**. `maxScores`, `scoreSpans`, `sectionCounts`, `criteriaCount`,
+`detailCount`, `radioCount` et `checkboxCount` sont identiques sur les 88.
+
+### Contrôle visuel
+
+Chrome `--headless=new`, rendu local `file://`, aucune requête réseau. Deux
+grilles × deux thèmes × deux largeurs. **German-68** (mélange base64 hérité et
+images référencées, après retrait de `data-image-id`) et **German-74**
+(message-clé de 2670 px). `complete === true` et dimensions naturelles **égales
+à celles du vault** pour les huit rendus ; `cassees=0` ;
+`scrollWidth === innerWidth` à 1200 comme à 500 px dans les deux thèmes ; huit
+couleurs distinctes partout. Copies temporaires supprimées.
+
+## Commits
+
+| Hash | Contenu |
+|---|---|
+| `ad1d805` | German-61, 62, 63, 64, 65 + 14 images |
+| `72e7222` | German-66, 67, 68, 70, 71 + 11 images |
+| `0edde73` | German-73, 74, 75, 76, 77 + 10 images |
+| `bf059eb` | German-78, 79 + 3 images, re-snapshot de `baseline.json` |
+
+Index construit **chemin par chemin** avant chaque commit, avec vérification
+explicite qu'aucun fichier de `cases/rescos/`, `cases/casecos/`,
+`cases/rescos-locales/`, `scripts/rescos/` ou `scripts/casecos/` n'y figurait —
+contrôle passé quatre fois sur quatre. **55 fichiers de la session voisine**
+étaient modifiés dans l'arbre de travail au démarrage ; aucun n'est entré dans
+mes commits. Aucun `git add -A`, aucun `git push`, aucune commande réseau,
+aucun `git gc` ni `git prune`.
+
+Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3d-report.md`
