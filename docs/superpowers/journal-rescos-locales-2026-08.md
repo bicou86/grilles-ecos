@@ -3182,3 +3182,289 @@ parallèle.
 **Avec ce lot, les 123 grilles thématiques de `cases/rescos-locales` sont toutes
 traitées.** Restent les 33 grilles numérotées `RESCOS-41` à `69` et les 9
 feuilles porte.
+
+---
+
+## Lot `t7` — réparation des cinq défauts relevés par la vérification `t6`
+
+Base de départ `abfecf3`. **16 grilles modifiées**, 5 pour le contenu médical et
+11 pour la seule passe d'unités. Aucun fichier touché hors
+`cases/rescos-locales/`, `scripts/rescos-locales/` et `docs/superpowers/`.
+
+Chaque remplacement de contenu passe par un motif **vérifié à exactement une
+occurrence** avant écriture (le script refuse et s'arrête sinon) : c'est le
+garde-fou qui remplace `sed`, et c'est lui qui garantit qu'aucune correction ne
+déborde sur une autre grille ou sur un second passage du même libellé.
+
+### Défaut 1 — `Enfant qui boîte` se contredisait sur la CRP à 20 mg/L
+
+Le lot `t3` avait corrigé **un seul** des six endroits, dans l'`annexe-dd` de
+l'arthrite septique, en y écrivant « elle n'est pas normale (norme < 5-10 mg/L)
+— elle est modérément élevée ». Les cinq autres appelaient toujours cette même
+valeur « normale ». **La version fausse était majoritaire, et l'un des cinq
+endroits était un sous-item noté.**
+
+La page `SSP — Boiterie de l'Enfant` a été lue avant d'écrire. Elle donne les
+critères de Kocher dans leur forme d'origine — T° > 38,5 °C · GB > 12 G/L ·
+VS > 40 · refus d'appui — et non la CRP, qui est le critère ajouté par Caird
+(CRP > 20 mg/L). Le fait qui tranche est ailleurs et il est plus simple : **la
+norme d'un laboratoire suisse est < 5-10 mg/L**, donc 20 n'est pas normal, et la
+page nomme précisément l'enjeu — « le score sert à trancher entre arthrite
+septique et synovite transitoire, cliniquement superposables ; en cas de doute,
+la ponction articulaire reste le seul diagnostic de certitude ».
+
+Les six endroits, alignés sur la formulation de `t3` :
+
+| # | bloc | avant | après |
+|---|---|---|---|
+| 1 | `criteria-detail` **noté** | `CRP [20 mg/l - normale]` | `CRP [20 mg/L - modérément élevée, norme < 5-10 mg/L]` |
+| 2 | `annexe-dd`, Ostéomyélite | `• CRP normale` | `• CRP à 20 mg/L : elle n'est pas normale (norme < 5-10 mg/L), seulement modérément élevée — argument faible` |
+| 3 | `presentation`, récit | `une biologie normale (GB 8 G/L, CRP 20 mg/l, VS normale)` | `une biologie sans hyperleucocytose ni VS élevée mais avec une CRP modérément élevée (…)` |
+| 4 | `presentation`, même phrase | `sans syndrome infectieux biologique` | `sans syndrome inflammatoire franc mais avec une CRP modérément élevée` |
+| 5 | `presentation`, différentiel | `arthrite septique (mais CRP normale, …)` | `arthrite septique (arguments en défaveur : … — mais la CRP à 20 mg/L n'est pas normale)` |
+| 6 | `presentation`, carte SBAR | `(déjà faits : épanchement, CRP normale)` | `(déjà faits : épanchement, CRP à 20 mg/L — modérément élevée, pas normale)` |
+
+**Le n° 4 est un sixième endroit, non listé par `t6`.** Il est dans la *même
+phrase* que le n° 3 : « épanchement échographique, sans syndrome infectieux
+biologique ». Corriger les cinq et laisser celui-là aurait reconstitué la
+contradiction à un mot près.
+
+**Le n° 1 est le sous-item noté**, et il entre dans l'arbitrage en vigueur : une
+erreur de sécurité avérée et sourcée se corrige aussi dans un bloc noté, à
+condition de ne ni ajouter ni retirer de sous-item. Vérifié : `detailCount`,
+`criteriaCount`, `radioCount`, `checkboxCount` identiques, les crochets `[…]`
+sont conservés, seul le texte à l'intérieur change.
+
+### Défaut 2 — `AMC Urgences 3B`, quatrième occurrence des nitrés sans réserve
+
+Deux sous-items **notés** et un `<li>` de `theorie` prescrivaient un dérivé nitré
+avec la seule tension pour garde-fou (« si TA le permet », « si TA > 110 mmHg »,
+« si PAS > 110 mmHg »). **Zéro occurrence** de « ventricule droit », « V3R »,
+« V4R » ou « précharge » dans la grille entière.
+
+La garde tensionnelle est inopérante par construction : dans un infarctus du
+ventricule droit la tension est normale **avant** l'administration — c'est le
+nitré qui l'effondre, le ventricule droit étant précharge-dépendant.
+`SSP — Douleur Thoracique` l'écrit deux fois : « le territoire inférieur
+(D2-D3-aVF, coronaire droite) impose deux réflexes : V3R-V4R à la recherche
+d'une extension au VD, et la prudence avec les dérivés nitrés » et « cave
+infarctus inférieur / droit : pas de nitré (précharge-dépendant) ».
+
+La réserve reprend **mot pour mot** la formulation des trois grilles déjà
+corrigées (`AMC Urgences 3A` par `t1`, `Douleur thoracique - Vignette` par `t2`,
+`Douleurs thoraciques - DRS` par `t3`) : « sauf infarctus inférieur / du
+ventricule droit : pas de nitré (précharge-dépendant, risque de collapsus) ;
+enregistrer V3R-V4R devant tout sus-décalage inférieur AVANT d'administrer ».
+Le troisième endroit (`theorie`) est corrigé aussi — le corriger coûte une ligne
+et le laisser aurait remis un rappel faux face à deux sous-items justes.
+
+Cette grille est un **NSTEMI latéral** (sous-décalage V4-V6, I, aVL) en Killip
+III. La réserve n'y est donc pas déclenchée par la vignette elle-même : elle est
+là parce que le sous-item énonce une **règle de conduite** que le candidat
+appliquera ailleurs, et parce que trois grilles du corpus la portent déjà.
+
+### Défaut 3 — la ranitidine, sur deux grilles
+
+Molécule **retirée du marché mondial en 2020** (nitrosamines / NDMA), inexistante
+en Suisse. `t5` avait consigné celle d'`Urticaire allergique` sans la corriger ;
+celle de `Choc anaphylactique` — **dans un sous-item noté** — n'avait jamais été
+signalée.
+
+`SSP — Détresse Respiratoire & Anaphylaxie` a été lue avant d'écrire la
+posologie. **Elle ne donne aucune dose d'anti-H2** — elle ne mentionne même pas
+la classe : ses adjuvants sont « clémastine / diphénhydramine IV (anti-H1),
+méthylprednisolone 125 mg ou hydrocortisone 200 mg IV ». La recherche dans tout
+le vault ne rend aucune posologie d'anti-H2 non plus. **Aucune dose n'a donc été
+inventée** : la classe est nommée, la voie est conservée, le retrait de marché
+est dit.
+
+* `Choc anaphylactique`, sous-item noté : `Anti-H2 [ranitidine 50mg IV]` →
+  `Anti-H2 [famotidine IV — la ranitidine est retirée du marché depuis 2020]`.
+* `Urticaire allergique`, `therapy` noté : `Détails : Ranitidine si besoin
+  (potentialisation)` → `Détails : Famotidine si besoin (potentialisation) — la
+  ranitidine est retirée du marché depuis 2020`.
+
+Le sous-item n'est **pas retiré**, bien que l'anti-H2 ne figure pas dans les
+adjuvants de la page SSP : retirer un sous-item noté déplacerait le barème, ce
+que l'arbitrage interdit. Corriger la molécule suffit à rendre l'énoncé sûr.
+
+### Défaut 4 — l'angle mort d'unités : 49 litres minuscules, 0 mmHg touché
+
+**Volet corrigé — le litre minuscule.** `check_nomenclature` bornait les
+**analytes**, pas les **unités**, et rendait 0 alors que **49 valeurs** vivaient
+en litre minuscule sur **12 grilles**, la plupart dans des sous-items notés.
+Le relevé de `t6` en annonçait 29 sur 9 : le motif élargi (`G/l` et `T/l` en
+plus des minuscules, `mU/l` et `UI/l` que la frontière de mot manquait) en
+trouve 49.
+
+```
+  15  g/l      7  mmol/l    2  µmol/l    1  ng/l     1  ug/l
+  13  G/l      3  mg/l      2  μmol/l    1  UI/l     1  pmol/l
+                2  mU/l                             1  μg/l
+```
+
+Correction typographique pure — `L` majuscule, notation suisse employée partout
+ailleurs dans les quatre corpus. Un seul écart de plus : `ug/l` est devenu
+`µg/L`, le `u` étant la graphie ASCII du préfixe micro (les deux graphies du
+micro, U+00B5 et U+03BC, sont conservées telles quelles ailleurs : le corpus
+emploie les deux et la porte accepte les deux).
+
+Le motif `_LITRE_MINUSCULE` est **ajouté à la table du volet**, avec son bordage
+mesuré sur six corpus avant activation :
+
+```
+  amboss  0 / 40      rescos          0 / 41      usmle    0 / 44
+  german 10 /  4 gr.  rescos-locales 49 / 12 gr.  casecos 470 / 34 gr.
+```
+
+**Zéro faux positif sur les six** : chacune des 529 correspondances est une
+vraie unité de laboratoire. Les préfixes sont **énumérés** et jamais `/l` nu —
+d'une part un motif trop large finit par rencontrer un total de barème ou un
+fragment de chemin (l'en-tête d'AMBOSS documente le cas « 0/112 »), d'autre part
+la frontière de mot ne joue pas entre une lettre de préfixe et l'unité : dans
+`mU/l` il n'y a pas de `\b` devant le `U`, exactement comme `\bg/dL\b` ne peut
+pas attraper `mg/dL`.
+
+**Le motif reste dans la table du volet et ne monte PAS dans celle d'AMBOSS.**
+`scripts/german/` et `scripts/casecos/` **importent** la table d'AMBOSS : l'y
+promouvoir ferait virer leurs portes au rouge sur 10 et 470 termes du jour au
+lendemain, alors que leur passe n'a pas été faite et que ces deux corpus sont
+hors de mon périmètre. La promotion est le bon geste — elle attend.
+
+**Volet écarté — les gaz du sang en mmHg. L'usage est mixte ; je ne force pas.**
+Mesure, gaz du sang uniquement (`PaO2`/`PaCO2`/`pO2`/`pCO2`), hors tension
+artérielle :
+
+| corpus | mmHg | kPa | forme |
+|---|---:|---:|---|
+| AMBOSS | 11 | 0 | mmHg seul |
+| RESCOS | 1 | 0 | mmHg seul |
+| USMLE | 2 | 0 | mmHg seul |
+| German | 0 | 0 | — |
+| CasECOS | 40 | 40 | **toujours double** : « pO2 150 mmHg (20 kPa) » |
+| `rescos-locales` | 22 | 5 | mmHg seul, sauf 2 grilles en **kPa d'abord** |
+
+**AMBOSS, dont la porte rend 0 depuis sa passe complète, écrit mmHg seul onze
+fois.** Les pages sources disent la même chose : `Skills — Pulmonaire` porte une
+note suisse explicite — « les labos suisses rendent **souvent** PaCO₂ / PaO₂ en
+kPa : 1 kPa ≈ 7,5 mmHg » — et donne sa table de normes en **deux colonnes**,
+mmHg *et* kPa ; `Skills — Références Rapides`, `SSP — AVP`,
+`SSP — Ronflement - SAOS`, `SSP — Détresse Respiratoire Néonatale`,
+`CK — Pneumologie` écrivent mmHg seul. **Aucune page ne rend en kPa seul.**
+
+Deux raisons de plus de ne rien forcer :
+
+1. **Aucun motif ne sait séparer le mmHg d'un gaz du sang de celui d'une
+   tension artérielle.** La tension en mmHg est correcte partout et vingt fois
+   plus fréquente ; une heuristique de voisinage la toucherait. C'est
+   exactement la faute que l'en-tête d'AMBOSS décrit sous « un motif trop
+   large ».
+2. **Rien n'est faux dans « PaO2 52 mmHg ».** Généraliser la forme double —
+   déjà présente sur deux grilles du corpus, « PaCO2 > 6 kPa (45 mmHg) »
+   (AMC Urgences 4) et « PaO2 7,3 kPa (55 mmHg) » (`Dyspnée et mal au cou`) —
+   serait un geste **éditorial**, pas une correction d'unité. Il n'entre pas
+   dans l'arbitrage qui autorise à toucher un bloc noté.
+
+Le raisonnement est consigné en toutes lettres dans
+`scripts/rescos-locales/check_nomenclature.py`, pour qu'un lot futur ne le
+redécouvre pas.
+
+### Défaut 5 — tranché : oui, il faut corriger
+
+`Pédiatrie — État fébrile sans foyer` rangeait « Pas de boiterie » CONTRE
+l'arthrite septique et « Pas de douleur osseuse localisée » CONTRE
+l'ostéomyélite. Le patient est **Thomas, 15 mois**.
+
+**Ce qui a tranché, c'est la grille elle-même.** Son bloc `expert` porte déjà,
+noir sur blanc :
+
+> « une arthrite septique ou une ostéomyélite se traduit chez le tout-petit
+> **non par une boiterie** mais par un refus d'appui, une pseudoparalysie du
+> membre ou des pleurs à la mobilisation, parfois seulement lors du change :
+> mobiliser passivement toutes les articulations, hanches comprises, fait partie
+> de l'examen »
+
+C'est **exactement la situation du défaut 1** : une correction antérieure a
+laissé la grille se contredire avec elle-même, et la version fausse est celle
+qui est rangée dans le raisonnement diagnostique.
+
+Trois faits de plus, tous mesurés :
+
+* **La grille sœur `Nourrisson 6 mois avec fièvre` a été corrigée par `t4`** avec
+  ce geste exact — « À SURVEILLER — les signes méningés classiques manquent à
+  cet âge », « À RECHERCHER ACTIVEMENT — l'absence de signe urinaire ne l'écarte
+  pas ».
+* **La grille l'applique déjà elle-même** deux entrées plus haut : sa
+  pyélonéphrite est étiquetée « Arguments À RECHERCHER: … Pas toujours de signes
+  urinaires à cet âge ». Deux entrées voisines, deux traitements opposés du même
+  raisonnement.
+* **`SSP — Fièvre du Nourrisson`** apparie les deux signes — « Boiterie, **refus
+  d'appui** → ostéo-articulaire » — et ne fait jamais de l'absence de boiterie un
+  argument d'exclusion.
+
+Correction, **à nombre de puces constant** :
+
+* Arthrite septique : label `Arguments CONTRE:` → `À RECHERCHER — à 15 mois le
+  signe n'est pas la boiterie:` ; la puce « Pas de boiterie » devient « Le
+  tout-petit ne boite pas : il refuse l'appui, présente une pseudoparalysie du
+  membre ou pleure à la mobilisation, parfois seulement lors du change — « pas
+  de boiterie » n'est donc PAS un argument contre » ; « Mobilisation normale »
+  devient « Mobilisation passive de toutes les articulations, hanches comprises,
+  normale ». La deuxième puce (« Pas de limitation articulaire ») est un
+  **constat d'examen réel** et reste inchangée.
+* Ostéomyélite : label → `À RECHERCHER — à cet âge la douleur osseuse ne se
+  localise pas:` ; « Pas de douleur osseuse localisée » devient « Un enfant de
+  15 mois ne désigne pas son os douloureux : chercher une pseudoparalysie, un
+  œdème de membre ou des pleurs au change — « pas de douleur osseuse localisée »
+  n'est donc PAS un argument contre » ; « Mobilisation normale » devient
+  « Mobilisation passive normale, pas de tuméfaction ni de chaleur segmentaire ».
+
+Les deux blocs sont dans l'`annexe-dd`, section notée, **mais pas des sous-items
+notés** : ce sont des puces de prose dans un `<li>`. Aucun compteur de barème ne
+bouge — vérifié champ par champ.
+
+### Vérifications du lot
+
+```
+check_invariants.py                     OK — 165 grilles, code 0
+check_nomenclature.py                   OK — 0, AVEC le nouveau motif actif
+check_reachability.py                   OK — 156/156 notées à 100 %, code 0
+report_redundancy.py                    1003 -> 1003 (n'augmente pas)
+check_no_loss.py abfecf3                6 items, verdictés un à un, 0 perte
+browser_probe.js --deep (165)           voir ci-dessous
+snapshot 14 champs × 16 grilles         0 divergence
+appariement de balises, 16 grilles      identique avant/après, </html> 16/16
+crochets patient-response, 16 grilles   identiques (67, 116, 23, 74, 57, 73…)
+crochets […] de cloture                 68 avant, 68 après sur les 16 · 464 / 165
+format .criteria-text « N. Libellé »    369 contrôlés sur les 16, 0 écart
+litre minuscule, 165 grilles            49 -> 0
+```
+
+**Les 6 items de `check_no_loss` ont une couverture lexicale de 1,00** — chaque
+mot de chaque item disparu est encore présent dans le texte courant. Cinq sont
+les réécritures du défaut 5 (le label `arguments contre` et les deux
+« mobilisation normale », enrichies) ; le sixième est le `<li>` de `theorie`
+d'`AMC Urgences 3B`, dont le texte d'origine subsiste **verbatim en préfixe** —
+c'est l'allongement qui a fait passer le ratio sous 0,72.
+
+`report_import_defects` passe de **54/28 à 58/31** sur `comparaison-manquante`,
+et ce n'est pas une régression : les quatre nouvelles occurrences sont
+« leucocytes 8.0 G/L », « créatinine 75 µmol/L - normale », « créatinine
+126 µmol/L - insuffisance rénale aiguë » et la CRP réécrite d'`Enfant qui
+boîte` — des valeurs mesurées **avec unité explicite**, exactement la famille que
+l'en-tête du script documente comme ne produisant que des faux positifs hors
+d'AMBOSS. Elles étaient invisibles à l'heuristique tant que l'unité s'écrivait
+`G/l` ; la normaliser a rendu le signal **plus sévère, pas plus indulgent**.
+C'est le même mécanisme que le `1258 → 1260` du lot `l4`.
+
+Témoins, chacun relevé dans **son propre interpréteur**, avec assertion sur
+`report_redundancy.__file__` avant mesure :
+
+```
+AMBOSS  report_redundancy 147 (inchangé)
+RESCOS  report_redundancy 127 (inchangé)
+```
+
+`cases/german/`, `scripts/german/` et `cases/casecos/` n'ont été ni écrits ni
+modifiés. Ils ont été **lus** — et uniquement lus — pour le bordage du motif
+d'unités sur les six corpus, ce que le mandat impose avant toute activation.

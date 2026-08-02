@@ -20,8 +20,8 @@ feuilles) en chaine. Le bon point de chute a terme est un module partage
 (`scripts/lib_nomenclature.py`) d'ou les quatre corpus tireraient ces tables ;
 ce refactor touche `scripts/rescos/` et n'entrait pas dans le perimetre.
 
-ETAT — passe faite au lot l4 : 0 terme restant
-==============================================
+ETAT — passe l4 puis passe UNITES au lot t7 : 0 terme restant
+==============================================================
                           AMBOSS   German   RESCOS   rescos-locales
                                                      l2        l4
   \\bNFS\\b                  0        0        0     208 / 77     0
@@ -41,6 +41,25 @@ ETAT — passe faite au lot l4 : 0 terme restant
   \\bMST\\b                  0        0        0       1 /  1     0
   numeration-implicite       0        0        0       8 /  6     0
   tous les autres            0        0        0       0
+
+  litre minuscule            0       10        0      49 / 12  -> 0  (lot t7)
+                                    (hors                 |
+                                    perimetre)      angle mort de la porte
+                                                    jusqu'a la verification t6
+
+L'ANGLE MORT D'UNITES, ferme au lot t7
+=======================================
+La porte bornait les ANALYTES, pas les UNITES. Elle rendait 0 alors que 49
+valeurs de laboratoire vivaient en litre MINUSCULE sur 12 grilles, la plupart
+dans des sous-items notes — `g/l`, `G/l`, `mmol/l`, `mg/l`, `µmol/l`, `mU/l`,
+`UI/l`, `ng/l`, `pmol/l`, `ug/l`. Le motif `_LITRE_MINUSCULE` les couvre
+desormais ; son bordage sur les quatre corpus et la raison pour laquelle il ne
+monte PAS dans la table d'AMBOSS sont documentes a son point de definition.
+
+Le second volet du meme signalement — les gaz du sang en `mmHg` — a ete
+MESURE PUIS ECARTE : l'usage est mixte dans les quatre corpus ET dans les pages
+sources, et aucun motif ne sait separer le mmHg d'un gaz du sang de celui d'une
+tension arterielle. Voir le bloc « mmHg des gaz du sang : ECARTE ».
 
 CE QUE LE RELEVE INITIAL NE VOYAIT PAS — 56 TERMES SUR 424
 ===========================================================
@@ -246,12 +265,79 @@ _UNITES_CASSE = {
 # occurrences.
 _CRP_MG_ML = r"CRP(?:[^<]|<[^>]*>){0,60}?\bmg\s?/\s?m[lL]\b"
 
+# --- LITRE MINUSCULE : l'angle mort d'UNITES, chiffre par la verification t6 -
+#
+# La porte bornait les ANALYTES, pas les UNITES : 49 valeurs en litre minuscule
+# (`g/l`, `G/l`, `mmol/l`, `mg/l`, `µmol/l`, `mU/l`, `UI/l`, `ng/l`, `pmol/l`,
+# `ug/l`) vivaient sur 12 grilles, la plupart dans des sous-items notes, et
+# `check_nomenclature` rendait 0. C'est une correction TYPOGRAPHIQUE : la
+# notation suisse est le `L` majuscule, employe partout ailleurs dans les quatre
+# corpus. Passe faite au lot `t7` — 49 remplacements, 12 grilles.
+#
+# LE PREFIXE EST ENUMERE, JAMAIS `/l` NU. Deux raisons, toutes deux mesurees
+# ailleurs dans cette table : (1) un motif trop large finit par rencontrer un
+# total de bareme ou un fragment de chemin (`.../img/logo`), et l'entete
+# d'AMBOSS documente le cas « 0/112 » qu'une regle sur `112` aurait corrompu ;
+# (2) la frontiere de mot ne joue PAS entre une lettre de prefixe et l'unite —
+# dans « mU/l » il n'y a pas de `\b` devant le `U`, exactement comme
+# `\bg/dL\b` ne peut pas attraper `mg/dL`. D'ou l'enumeration explicite de
+# `mU`, `mUI`, `kU`, `kUI` a cote de `U` et `UI`.
+#
+# BORDAGE SUR LES QUATRE CORPUS, avant activation (comptage sur le HTML brut
+# debarrasse des data-URI, comme la porte) :
+#
+#     amboss   0 / 40      rescos          0 / 41     usmle    0 / 44
+#     german  10 /  4 gr.  rescos-locales 49 / 12 gr. casecos 470 / 34 gr.
+#
+# ZERO faux positif sur les six corpus : chacune des 529 correspondances est une
+# vraie unite de laboratoire. Le motif est donc sur : aucune feuille de style
+# en ligne ne le declenche (les 165 `<style>` de ce corpus sont dans le champ du
+# balayage et rendent 0).
+#
+# POURQUOI IL RESTE ICI ET NON DANS `scripts/amboss/check_nomenclature.py` :
+# `scripts/german/` et `scripts/casecos/` IMPORTENT la table d'AMBOSS. L'y
+# promouvoir ferait virer leurs portes au rouge sur 10 et 470 termes du jour au
+# lendemain, sans que leur passe de correction ait ete faite. La promotion est
+# le bon geste — elle attend que ces deux corpus soient passes.
+_LITRE_MINUSCULE = (
+    r"\b(?:[mµμnpu]?g|[mµμnpu]?mol|mol|G|T|U|UI|mU|mUI|kU|kUI|nkat)\s?/\s?l\b"
+)
+
 EXTRA = {
     _NUMERATION_IMPLICITE: "numeration en G/L (unite explicite obligatoire)",
     _MICROLITRE_ETENDU: "G/L (x0,001)",
     _CRP_MG_ML: "CRP en mg/L (coquille : mg/mL vaudrait x1000)",
+    _LITRE_MINUSCULE: "litre en L MAJUSCULE (notation suisse)",
 }
 EXTRA.update(_UNITES_CASSE)
+
+# --- `mmHg` des gaz du sang : ECARTE, l'usage est MIXTE ----------------------
+#
+# La verification t6 signalait 8 gaz du sang en mmHg comme « unites non
+# suisses ». Le balayage de bordage conclut a l'inverse, et le motif n'est PAS
+# ajoute. Trois faits, tous mesures :
+#
+#  1. LES QUATRE CORPUS ECRIVENT mmHg. Gaz du sang uniquement (PaO2/PaCO2/pO2/
+#     pCO2), hors tension arterielle : amboss 11 mmHg / 0 kPa — et AMBOSS est
+#     un corpus dont la porte rend 0 depuis sa passe complete ; rescos 1 / 0 ;
+#     usmle 2 / 0 ; german 0 / 0 ; casecos 40 / 40, mais TOUJOURS en forme
+#     double (« pO2 150 mmHg (20 kPa) »), jamais en kPa seul.
+#  2. LES PAGES SOURCES ECRIVENT mmHg. `Skills — Pulmonaire` porte une note
+#     suisse explicite — « les labos suisses rendent SOUVENT PaCO₂ / PaO₂ en
+#     kPa : 1 kPa ≈ 7,5 mmHg » — et donne sa table de normes en DEUX colonnes,
+#     mmHg ET kPa. `Skills — References Rapides`, `SSP — AVP`,
+#     `SSP — Ronflement - SAOS`, `SSP — Detresse Respiratoire Neonatale`,
+#     `CK — Pneumologie` : mmHg seul. Aucune page ne rend en kPa seul.
+#  3. AUCUN MOTIF NE SAIT SEPARER mmHg DE GAZ ET mmHg DE TENSION. La tension
+#     arterielle en mmHg est correcte partout et est 20 fois plus frequente ;
+#     une heuristique de voisinage la toucherait. C'est la faute que l'entete
+#     d'AMBOSS decrit sous « un motif trop large ».
+#
+# Ce corpus porte deja, sur deux grilles, la forme double qui est le seul point
+# d'accord des quatre corpus : « PaCO2 > 6 kPa (45 mmHg) » (AMC Urgences 4) et
+# « PaO2 7,3 kPa (55 mmHg) » (« Dyspnee et mal au cou »). Generaliser cette
+# forme est un geste EDITORIAL, pas une correction d'unite : rien n'est faux
+# dans « PaO2 52 mmHg ». Consigne, non force.
 
 # --- MICROBIO : abreviations microbiologiques anglophones -------------------
 # `\bTB\b` RETIRE apres mesure (17 occurrences ici, dont « TB-spot ») — voir
