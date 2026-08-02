@@ -3235,3 +3235,271 @@ mes commits ; la réaccessibilité de `8e82399` et `5a7e02c` depuis HEAD a été
 vérifiée après coup.
 
 Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3c-report.md`
+
+---
+
+# Lot p3c-bis — les sept grilles restantes du lot p3c
+
+## Périmètre et point de départ
+
+`German-53, 54, 55, 57, 58, 59, 60` — les sept grilles que le lot p3c avait
+laissées, sur épuisement de budget de contexte et non sur obstacle technique.
+Le relevé préparatoire de p3c (§ « Relevé préparatoire pour la session
+suivante ») a servi de point d'entrée : il a épargné le repérage des pages SSP
+et l'inventaire de composition, tous deux vérifiés et exacts.
+
+**HEAD réel au démarrage** : `9b8c1bd`, et non le HEAD documenté par p3c. La
+session voisine avait commité `741cd86` et `626fde7` entre-temps ; mes trois
+commits sont restés accessibles depuis HEAD, vérifié par
+`git merge-base --is-ancestor` sur chacun.
+
+Composition de départ, mesurée et non supposée :
+
+| Grille | Blocs présents avant |
+|---|---|
+| German-53 | `annexe-dd` ×1, `therapy` ×3 |
+| German-54 | `therapy` ×2 — **aucun `annexe-dd`** |
+| German-55 | `annexe-dd` ×1, `therapy` ×3 |
+| German-57 | `annexe-dd` ×1, `therapy` ×4, `annexe-image` ×1 + coquille `annexes` |
+| German-58 | `annexe-dd` ×1, `therapy` ×4 |
+| German-59 | `annexe-dd` ×1, `therapy` ×3 |
+| German-60 | `annexe-dd` ×1 |
+
+Aucune ne portait de `resume` : le cas « baliser un `resume` préexistant sans
+le réécrire » ne s'est pas présenté dans ce lot non plus.
+
+## Livré
+
+7 grilles sur 7. Chacune reçoit `resume`, `annexe-theorie`,
+`presentation-patient` et **une seule** `annexe-item` d'images.
+
+| | 7/7 |
+|---|---|
+| `resume` créé | 7 |
+| `annexe-theorie` créé | 7 |
+| `presentation-patient` créé | 7 |
+| Planche d'images créée ou complétée | 7 |
+| `annexe-expert` / `annexe-scenario` créés | **0** |
+| Section notée touchée | **0** |
+| `annexe-dd` balisé | **0** (écart assumé, cf. p3b § 6 f) |
+| « Checklist mentale » | **0** — remplacée par `section-commcards` (SBAR + SNAPPS) |
+
+German-57 est le second cas du corpus, après German-36, d'une grille portant
+déjà une coquille `annexes` vide et une image en base64 dans un
+`images-wrapper`. Procédure identique : le `resume` s'insère avant
+`<div class="annexes">`, `annexe-theorie` et `presentation-patient` dans
+l'`annexes-grid` vide, et les deux images nouvelles **encadrent** le triplet
+hérité à l'intérieur de l'unique `annexe-item` — l'ordre du § 8.8 étant
+respecté (signaux d'alarme, puis radiographie, puis message-clé). Aucun second
+`annexe-item` ouvert : `annexe-image` reste à 1 segment.
+
+## Les pages SSP qui ne couvrent pas leur vignette — quatre cas de plus
+
+Le relevé de p3a en comptait huit, celui de p3c quatre. Ce lot en ajoute
+quatre, dont un plus sévère que tout ce qui a été signalé jusqu'ici.
+
+1. **Lombalgies / German-59 (colique néphrétique)** — **le cas le plus net du
+   corpus à ce jour, devant German-39.** La page ne mentionne la colique
+   néphrétique que trois fois, toujours comme *piège* : dans son encadré
+   « Pièges » (« oublier les causes extra-spinales »), dans la colonne
+   « douleurs référées » de son tableau de différentiel, et dans sa
+   catégorisation par mécanisme. Ses « skills connexes » **renvoient
+   explicitement à `[[SSP — Colique Néphrétique]]` avec la mention
+   "DDx référé"** — la page dit elle-même où se trouve le contenu. Rien sur la
+   maladie lithiasique : ni mécanisme de la douleur colique, ni taille du
+   calcul et probabilité d'expulsion, ni antalgie de première intention, ni
+   raison d'éviter la morphine, ni alpha-bloquants, ni filtration des urines,
+   ni bilan métabolique, ni prévention des récidives. Tout cela vient du
+   corrigé. **Ce que la page apporte réellement est le raisonnement d'exclusion
+   du rachis** — et c'est sur lui que l'`annexe-theorie` a été construite, avec
+   une section explicite disant ce qui manque. `SSP — Colique Néphrétique`
+   existe dans le vault : **c'est un défaut de la table d'appariement, pas de
+   la page.**
+2. **HTA / German-54 (HTA non contrôlée avec insuffisance cardiaque
+   débutante)** — la page couvre parfaitement la moitié tensionnelle :
+   observance comme cause n° 1, AINS, pseudo-résistance, définition de l'HTA
+   résistante, effets indésirables par classe, cibles par âge, hypotension
+   orthostatique avant intensification. Elle ne couvre pas la moitié
+   cardiologique : diurétique de l'anse, pesée quotidienne, surveillance de la
+   diurèse, restriction hydrique. Le `NT-proBNP` et la radiographie thoracique
+   n'y figurent qu'au bilan de l'*urgence* hypertensive.
+3. **Ictère / German-55 (hépatite A aiguë)** — la page couvre intégralement le
+   raisonnement diagnostique : classification par la bilirubine, triplet
+   selles-urines-prurit, seuils de transaminases, TP-facteur V comme marqueur
+   de gravité, sérologies, échographie. Elle ne couvre pas la santé publique de
+   l'hépatite A : déclaration obligatoire, éviction d'un professionnel de
+   l'alimentation, vaccination de l'entourage, délai de normalisation.
+4. **Lombalgies / German-57 (fracture vertébrale ostéoporotique)** — la page
+   couvre les drapeaux rouges, l'examen du rachis et la stratégie d'imagerie,
+   et rattache explicitement la fracture vertébrale aux facteurs de risque
+   d'ostéoporose. Elle ne couvre pas l'ostéoporose : interprétation de la
+   densitométrie, seuils de traitement, calcium et vitamine D,
+   bisphosphonates, dénosumab, prévention des chutes. Elle n'en cite que
+   l'outil `FRAX`.
+
+Dans les quatre cas, la section concernée de l'`annexe-theorie` porte un
+paragraphe intitulé « Ce que la page SSP ne couvre pas ici », qui nomme
+précisément ce qui manque et renvoie au corrigé. **On n'a rien comblé.**
+
+## Message-clés — deux embarqués, deux écartés
+
+| Page | Fichier | Décision |
+|---|---|---|
+| HTA | `cardio-message-cle-hypertension-arterielle.png` | **Embarqué** dans German-53 et German-54 |
+| Ictère | `abdo-message-cle-tests-hepatiques-perturbes.png` | **Écarté** (§ 8.4 pt 3) |
+| Lombalgies | `rachis-message-cle-rachialgie-aigue.png` | **Embarqué** dans German-57 et German-58 · **écarté** pour German-59 |
+| Malaise | — | La page n'en cite aucun |
+
+**Le message-clé de la page Ictère** porte sur les *tests hépatiques
+perturbés* dans un cadre de maladie chronique : trois de ses cinq messages
+traitent du dépistage des hépatites B et C, de l'intervention sur les
+habitudes de vie et du suivi conjoint des hépatopathies chroniques. La
+vignette est une **hépatite A aiguë chez un homme de 28 ans, de guérison
+attendue**. Poser ce panneau affirmerait, avec l'autorité du Compas, un cadre
+de chronicité que la station contredit — exactement le cas German-19. Écarté.
+
+**Le message-clé de la page Lombalgies pour German-59** : son deuxième message
+est « en l'absence de ces situations, il n'y a pas d'indication aux
+radiographies standard ou d'autres imageries ». La vignette est une colique
+néphrétique dont le corrigé note **échographie rénale en urgence** et **CT
+abdominal**. Le message serait faux au chevet de cette patiente. Écarté, et
+c'est le troisième relevé de ce type après German-19 et German-55.
+
+Corollaire vérifié : les deux grilles d'une même page **ne partagent que le
+message-clé**. Vérifiable en une ligne — voir le tableau des sélections
+ci-dessous.
+
+## Images — sélection, § 8.3 et défauts du vault
+
+| Grille | Images | Poids source | Test dominant |
+|---|---|---|---|
+| German-53 | classification de l'HTA · critères d'investigation d'une HTA secondaire · diagnostic au cabinet et PEC initiale · **message-clé** | 411 Ko | 1 (grade 2 noté en m1) et 2 (`annexe-dd`) |
+| German-54 | HVG à l'ECG · Rx thorax d'OAP · **message-clé** | 587 Ko | 1 (m3 note ECG et Rx) et 3 |
+| German-55 | métabolisme de la bilirubine · classification par niveau · algorithme diagnostique | 540 Ko | 1 (a5, m3, m5) |
+| German-57 | signaux d'alarme dans les lombalgies · *Rx lombaire (base64 hérité)* · **message-clé** | 467 Ko + hérité | 1 et 2 (ATCD de cancer) |
+| German-58 | dermatomes du membre inférieur · **message-clé** | 345 Ko | 1 (e7 nomme les dermatomes) |
+| German-59 | drapeaux rouges (colonne « origine non rachidienne ») · algorithme (branche « lombalgie non rachidienne ») | 194 Ko | 3 (piège de la page) |
+| German-60 | classification étiologique des syncopes · physiopathologie des voies autonomes · ECG à RR irréguliers | 322 Ko | 2 (`annexe-dd`) et 1 (m5) |
+
+**16 fichiers nouveaux, 2350 Ko au total**, médiane 133 Ko, maximum 310 Ko —
+aucun au-delà du plafond du § 8.5 d, aucune grille au-delà du budget de 700 Ko
+de source. `rachis-dermatomes-mi.png` était déjà présent (reconnu au sha256,
+non réécrit) : l'idempotence de `fetch_image.py` a joué.
+
+**L'arbitrage le plus serré du lot** a porté sur
+`rachis-drapeaux-rouges-pour-les-lombalgies-et-lombosciatalgies-aigues.png`,
+qui convient à German-58 (colonne « atteinte neurologique », ligne
+« radiculopathie irritative ou déficitaire ») **et** à German-59 (colonne
+« origine non rachidienne », ligne « douleur non mécanique : … calculs
+rénaux … »). Le corollaire du § 8.3 interdisant la double attribution, elle est
+allée à German-59, qui n'avait rien d'autre. German-58 reste donc à **deux**
+images — le plancher, et le bon résultat au sens du § 8.2.
+
+### Quatre fichiers du vault écartés, et pourquoi
+
+| Fichier | Défaut | Décision |
+|---|---|---|
+| `rachis-rx-lombaire-profil.jpg` | **PNG 1438×1783 nommé `.jpg`** (`file`), 3 118 Ko | `ÉCHEC [corrompu]`, code 1 — **troisième extension mensongère du corpus** |
+| `rachis-test-lasegue.png` | **7 774 Ko** (4928×3736) | Écarté, § 8.5 d — aucune exemption applicable |
+| `rachis-test-schober.png` | **1 030 Ko** (1190×890) | Écarté, § 8.5 d |
+| `syncope-01-causes-syncopales.jpeg` | **2 472 Ko** (3024×4032) | Écarté, § 8.5 d |
+
+Les deux premiers coûtent cher : la page Lombalgies dessert trois grilles dont
+deux notent explicitement le **test de Lasègue** (German-57 e6, German-58 e8,
+German-59 e3) et une le **test de Schöber** (German-58 e3). Ce sont les seules
+images du corpus qui illustrent des manœuvres nommément notées, et elles sont
+inaccessibles pour une raison de poids sans rapport avec leur contenu. Voir
+§ « Préoccupations ».
+
+Un critère noté qui **nomme une manœuvre** n'est pas un critère qui **désigne
+une image** : l'exemption du § 8.5 d ne s'applique pas. Le point est tranché
+ici pour la première fois et mérite d'être consigné.
+
+## Divergences page / corrigé relevées, barème inchangé (niveau 3)
+
+| Grille | Divergence | Traitement |
+|---|---|---|
+| German-53 | Page SSP : **bithérapie d'emblée** (ESC 2023), monothérapie réservée au sujet âgé fragile et au grade 1 à bas risque · corrigé m7 : « IEC ou ARA2 en première intention », bithérapie si objectif non atteint | Page explicite → niveau 1, le pédagogique suit la page **en la nommant** ; divergence dite dans l'`annexe-theorie` |
+| German-53 | Page SSP : **sel < 5 g/j** · corrigé `therapy` : < 6 g/j | Consigné, non corrigé ; le `resume` cite explicitement « repères de la page SSP » |
+| German-57 | Page SSP : **myorelaxant (tizanidine) courte période** si contracture · corrigé m5 : « éviter les myorelaxants (risque de chute) » | Le corrigé est propre au terrain de la vignette → niveau 2, le pédagogique n'emporte pas le myorelaxant |
+| German-58 | Page SSP : **pas de corticoïde systémique** · corrigé m4 : « corticothérapie orale courte si hyperalgie » | Consigné dans l'`annexe-theorie`, barème inchangé |
+
+## Mesures
+
+| Contrôle | Résultat |
+|---|---|
+| `report_redundancy.py`, avant et après, sur chacune des 7 | **0 paire nouvelle** — 12 paires arbitrées en cours de rédaction |
+| Densité de balisage, 4 conteneurs prescrits | **2 172 spans / 18 475 mots = 1 pour 8,5** |
+| Spans hors conteneur | **0** |
+| Spans dans `section-longue` / `section-express` | **0** |
+| Équilibrage `<div>`, `<span>`, `<li>` sur les 7 | **exact** |
+| `check_invariants.py` après re-snapshot | **OK — 88 grilles** |
+| Diff baseline champ par champ | `blocks` seul champ modifié · 7 grilles · 0 écart hors champ · **delta purement additif** |
+| `check_reachability.py` | **OK — 88/88 à 100 %** |
+| `check_nomenclature.py` | **OK** |
+| AMBOSS — 3 scripts | **OK — 40 grilles** |
+| RESCOS — 3 scripts | **OK — 41 grilles** |
+| `fetch_image.py --verify` | **151 images, 0 lien cassé, 0 orpheline** |
+| Contrôle visuel | **3 grilles × 2 thèmes × 2 largeurs = 12 rendus, 0 image cassée, 0 débordement** |
+
+Densité par grille : plus dense **1/7,3** (German-53), plus légère **1/10,8**
+(German-59). German-59 est la plus légère du lot pour la même raison qu'elle
+est la plus courte : sa page ne couvre pas sa vignette, et une section écourtée
+offre moins de termes à baliser. C'est une propriété du sourçage, non un défaut
+d'application.
+
+Répartition : `c-green` 602 · `c-red` 448 · `c-pink` 404 · `c-blue` 205 ·
+`c-yellow` 187 · `c-purple` 148 · `c-amber` 129 · `c-orange` 49.
+
+### Passe d'allègement du balisage
+
+La première rédaction sortait à **1 pour 8,0**, plus dense que les deux lots
+précédents (8,9 et 9,5) et plus dense que la grille la plus chargée de p3c
+(German-52, 1/8,0). Le motif était identifiable : les longues énumérations
+homogènes — douze substances hypertensives en `c-amber`, onze DCI suisses, huit
+sérologies en `c-green` — où **chaque item portait la même couleur**.
+
+Règle appliquée mécaniquement aux 7 grilles : dans un `<li>` contenant au moins
+cinq spans **tous de la même classe**, seul le premier reste balisé. 25 `<li>`
+concernés, 133 spans déballés, densité portée à **1 pour 8,5**. La couleur y
+était portée par la liste entière et non par chaque item ; un terme balisé sur
+douze d'une même liste n'ajoute aucune information de plus que le premier.
+
+## Contrôle visuel
+
+Chrome `--headless=new`, rendu local `file://`, aucune requête réseau. Trois
+grilles retenues : **German-53** (message-clé de 2400 px, huit couleurs
+présentes), **German-57** (mélange base64 hérité et images référencées) et
+**German-60** (trois JPEG dont un panorama d'ECG de 2121 px).
+
+- Chargement : `complete === true` et `naturalWidth`/`naturalHeight` **égaux aux
+  dimensions du vault** pour les douze rendus ; `cassees=0` partout.
+- Aucun débordement horizontal : `scrollWidth === innerWidth` à 1200 et 500 px,
+  dans les deux thèmes.
+- Rapports largeur/hauteur conservés à toutes les largeurs.
+- Huit couleurs distinctes dans chaque thème pour German-53 et German-60 ; sept
+  pour German-57, qui **ne contient pas de `c-orange`** — absence de contenu, non
+  de rendu.
+- Copies temporaires supprimées : aucun `_tmpvis-*` dans `git status`.
+
+## Commits
+
+| Hash | Contenu |
+|---|---|
+| `16a8133` | German-53, 54, 55 + 10 images |
+| `933dc45` | German-57, 58, 59 + 4 images |
+| `cf04617` | German-60 + 3 images, allègement du balisage des 7, re-snapshot de `baseline.json` |
+
+Index construit **chemin par chemin** avant chaque commit, avec vérification
+explicite qu'aucun fichier de `cases/rescos/`, `cases/casecos/`,
+`cases/rescos-locales/`, `scripts/rescos/` ou `scripts/casecos/` n'y figurait —
+la vérification a mordu : `docs/superpowers/journal-rescos-locales-2026-08.md`
+et 37 fichiers `cases/casecos/` et `cases/rescos-locales/` de la session voisine
+étaient modifiés dans l'arbre de travail au moment du premier commit. Aucun
+`git add -A`. Réaccessibilité des trois commits depuis HEAD vérifiée par
+`git merge-base --is-ancestor`.
+
+**Le lot p3c est clos : les 30 grilles German-31 à 60 portent désormais leurs
+quatre blocs pédagogiques.**
+
+Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3c-bis-report.md`
