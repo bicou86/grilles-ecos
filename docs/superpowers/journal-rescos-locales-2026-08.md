@@ -1981,3 +1981,392 @@ parallèle.
    coder comme huitième famille de `report_import_defects.py`, avec les
    francités (`ARS`, « en France », « PAI », `SDT/SDRE/SPI`) que
    `check_nomenclature` ne couvre pas.
+
+---
+
+## Lot `t3` — 25 grilles thématiques, de « Douleurs thoraciques DRS » à « Intoxication opioïdes »
+
+Branche `refonte-amboss-suisse`, base `74e51e7`. **25 fichiers modifiés**, tous
+sous `cases/rescos-locales/`. Rien touché sous `cases/german/`,
+`scripts/german/`, `cases/casecos/` ni `scripts/casecos/` — ni lu, ni écrit.
+
+**Redondance du lot : 232 → 226.** Corpus **1011 → 1005** (−6, exactement le
+gain du lot — sixième confirmation de l'économie de mesure). Les trois portes
+sont vertes ; AMBOSS reste à **147**, RESCOS à **127**.
+
+### 1. Le lot
+
+123 grilles thématiques (nom ne commençant pas par `RESCOS-<chiffre>`, hors les
+9 feuilles porte). 45 déjà traitées par `t1` et `t2` ; les **25 suivantes par
+ordre alphabétique** (collation française, insensible aux accents) forment ce
+lot, du rang 36 au rang 60.
+
+| # | grille | redondance avant → après |
+|---:|---|---:|
+| 36 | Douleurs thoraciques - DRS | 3 → 3 |
+| 37 | Dyspnée aigue | 1 → 1 |
+| 38 | Dyspnée dans un contexte de polymorbidité | 3 → 3 |
+| 39 | Dyspnée dans un contexte infectieux | 1 → 1 |
+| 40 | Dyspnée et insuffisance cardiaque | 2 → **1** |
+| 41 | Dyspnée et mal au cou | 6 → 6 |
+| 42 | Dyspnée post-COVID | 1 → 1 |
+| 43 | Enfant qui boîte — synovite transitoire | 22 → **21** |
+| 44 | Entretien motivationnel - Activité physique | 1 → 1 |
+| 45 | Entretien motivationnel - Compliance thérapeutique | 2 → 2 |
+| 46 | Entretien motivationnel - Consommation d'alcool | 0 → 0 |
+| 47 | Entretien motivationnel - Sevrage tabagique | 0 → 0 |
+| 48 | Entretien motivationnel - Tabac | 1 → 1 |
+| 49 | Épilepsie absence - Fille de 7 ans | 35 → 35 |
+| 50 | Épisode dépressif majeur - Femme de 35 ans | 0 → 0 |
+| 51 | Épisode maniaque - Homme de 28 ans | 1 → 1 |
+| 52 | Érythème cutané avec douleur - Homme de 56 ans | 10 → 10 |
+| 53 | Fatigue - Vignettes cliniques | 13 → 13 |
+| 54 | Fatigue et maladies chroniques | 0 → 0 |
+| 55 | Fatigue TBL | 2 → **1** |
+| 56 | Fièvre et douleurs articulaires — gonococcie disséminée | 3 → 3 |
+| 57 | Goutte - Accès aigu | 20 → **17** |
+| 58 | Grille ECOS USIT2 - Diarrhée Hématochézie | 61 → 61 |
+| 59 | Grille ECOS USIT2 - Hernie discale - Canal étroit | 43 → 43 |
+| 60 | Intoxication — ACR sur intoxication aux opioïdes | 1 → 1 |
+| | **total** | **232 → 226** |
+
+**Les 53 non traitées** : de `Lésion de la coiffe des rotateurs` à
+`Voyage au Brésil`, moins les 10 `Psy-Vignette` déjà faites au lot `t1`.
+
+### 2. Le mapping inverse — 25 sur 25, dont 5 hors `SSP ECOS/`
+
+Chaque grille du lot est citée nommément par une page, et une seule fois par
+son bloc « Références PDF ». Treize pages couvrent les 25 :
+
+| page | grilles |
+|---|---|
+| `SSP — Dyspnée` | 37, 38, 39, 40, 41, 42 |
+| `Skills — Entretien Motivationnel` | 44, 45, 46, 47, 48 |
+| `SSP — Fatigue` | 53, 54, 55 |
+| `SSP — Douleurs Articulaires` | 56, 57 |
+| `SSP — Douleur Thoracique` | 36 |
+| `SSP — Boiterie de l'Enfant` | 43 |
+| `SSP — Malaise & Perte de Connaissance Brève` | 49 |
+| `SSP — Dépression` | 50 |
+| `SSP — Troubles de l'Humeur` | 51 |
+| `SSP — Éruption Cutanée` | 52 |
+| `SSP — Rectorragies & Hémorragie Digestive Basse` | 58 |
+| `SSP — Lombalgies` | 59 |
+| `SSP — Intoxications Aiguës` | 60 |
+
+**Les cinq grilles d'entretien motivationnel relèvent de `Skills ECOS/`, pas de
+`SSP ECOS/`.** Borner la recherche à `SSP ECOS/` les aurait laissées sans
+source, et c'est la page `Skills` qui porte la totalité des chiffres suisses
+(verre standard, seuils OFSP, AUDIT-C, CIWA-Ar, contre-indications du bupropion,
+numéros d'aide) dont les cinq grilles étaient dépourvues.
+
+### 3. `expert` — le meilleur détecteur, encore
+
+**16 grilles sur 25 ont un `expert`.** Il a désigné **sept** attendus dont la
+réponse n'existait nulle part dans la grille :
+
+| `expert` exige… | la grille disait… |
+|---|---|
+| « Oublier l'évaluation cardiaque (myocardite post-COVID) » | la myocardite en différentiel et en examen, **rien** sur l'arrêt du sport 3-6 mois |
+| « Hospitalisation sous contrainte souvent nécessaire » | « hospitalisation sous contrainte », **0 occurrence** de PAFA, art. 426, APEA/KESB |
+| « Ne pas sécuriser financièrement le patient » (manie) | **0 occurrence** de curatelle, d'art. 390, d'autorité de protection |
+| « Penser à la fasciite nécrosante si progression rapide » | le mot « fasciite nécrosante » en étiquette d'item, **0 signe**, **0 mention de chirurgie** |
+| « Oublier de vérifier la fonction rénale avant AINS » / « Débuter l'allopurinol pendant la crise » | la moitié de la règle : rien sur **ne pas l'arrêter** s'il est déjà pris, rien sur HLA-B*58:01, rien sur les interactions de la colchicine |
+| « Ne pas maintenir une surveillance suffisante après naloxone » | « surveillance : durée minimale 60-90 minutes », chez une patiente sous **méthadone** |
+| « Évaluer systématiquement le risque suicidaire » (dépression) | une ligne d'intention, **aucune méthode** — ni RUD, ni C-SSRS, ni MDQ, ni moyens létaux |
+
+**Neuf grilles sur 25 n'ont pas d'`expert`** : les six `Dyspnée` et les trois
+`Fatigue`. Ce sont exactement celles dont la redondance est la plus basse
+(1 à 13) — et six d'entre elles portaient une erreur ou un trou. Le lot
+confirme pour la troisième fois : **un chiffre bas ne dit rien.**
+
+### 4. Sept erreurs de sécurité — dont deux dans un bloc noté
+
+**1. `Douleurs thoraciques - DRS` — les nitrés sans la réserve du ventricule
+droit, dans `theorie` ET dans `therapy`.** L'attendu noté écrivait « Dérivés
+nitrés **si TA normale** » — le garde-fou tensionnel pour seul frein, alors que
+la tension est précisément normale *avant* l'administration chez l'infarctus du
+ventricule droit. `SSP — Douleur Thoracique` : « **cave infarctus inférieur /
+droit : pas de nitré** (précharge-dépendant) » et « le territoire inférieur
+impose deux réflexes : V3R-V4R … et la prudence avec les dérivés nitrés ». La
+grille nomme elle-même le territoire inférieur dans son item d'ECG et n'a
+**aucune occurrence** de « ventricule droit », « V3R » ni « V4R ». **Troisième
+occurrence de cette erreur** après AMC 3A (`t1`) et
+`Douleur thoracique - Vignette` (`t2`), et deuxième fois dans un bloc noté.
+Conditions de l'arbitrage réunies : sourcée, corrigée **par complément du texte
+de la puce existante**, sans ajout ni retrait de sous-item. Corrigé aux deux
+endroits, plus les dérivations V3R-V4R et V7-V9 portées dans `theorie`.
+
+**2. `Intoxication — ACR sur opioïdes` — 60-90 minutes de surveillance chez une
+patiente sous méthadone, dans `therapy`.** L'attendu noté fixait « Surveillance
+post-naloxone — durée minimale : 60-90 minutes », c'est-à-dire la durée d'action
+de la **naloxone**, chez une patiente en substitution par **méthadone 60 mg/j**
+(demi-vie 15-60 h). `SSP — Intoxications Aiguës` : « ⚠️ méthadone / opioïdes
+longue durée → **surveillance prolongée ≥ 12-24 h, perfusion possible** », et son
+piège n° 3 est nommément « Méthadone / opioïdes longue durée → surveillance
+prolongée après naloxone (récidive) ». **La grille se contredit elle-même** :
+son `expert` écrit « la durée d'action de la naloxone (30-90 min) est plus
+courte que celle de la méthadone » et « ne pas maintenir une surveillance
+suffisante après naloxone » — puis son attendu noté prescrit 90 minutes. **Une
+sortie à 90 minutes après une intoxication à la méthadone est une re-narcose
+mortelle hors de l'hôpital.** Corrigé dans les deux blocs, sans ajout ni retrait
+de sous-item.
+
+**3. `Dyspnée et insuffisance cardiaque` — diltiazem proposé pour ralentir une FA
+« si IC ».** `theorie` écrivait « FA rapide : Diltiazem, bêtabloqueurs, digoxine
+si IC ». Les inhibiteurs calciques non dihydropyridiniques sont **contre-indiqués
+dans l'insuffisance cardiaque à FE réduite** (inotropes négatifs → décompensation)
+— dans une grille dont le titre même est l'insuffisance cardiaque. C'est
+exactement l'erreur relevée sur AMC 3B au lot `t1` (« vérapamil / diltiazem
+contre-indiqués dans l'IC à FE réduite »), **deuxième occurrence**. Corrigé par
+la conduite dépendant de la FEVG.
+
+**4. `Goutte - Accès aigu` — l'absence de fièvre rangée CONTRE l'arthrite
+septique.** `annexe-dd` opposait à l'arthrite septique « **Arguments CONTRE :
+pas de porte d'entrée · pas de fièvre élevée · contexte évocateur de goutte** »,
+et concluait « ponction articulaire **si doute** ».
+`SSP — Douleurs Articulaires` en fait un *piège éliminatoire* — « traiter une
+monoarthrite fébrile comme une crise de goutte sans ponction » — et écrit
+« toute mono-arthrite aiguë est septique jusqu'à preuve du contraire », « goutte
+et chondrocalcinose miment parfaitement l'infection — et les deux peuvent
+coexister : **la présence de cristaux n'exclut PAS le sepsis** », « ponction
+articulaire **AVANT toute** antibiothérapie ou infiltration ». C'est le motif de
+la Psy-Vignette 4 du lot `t1` (l'absence d'un signe rangée contre le diagnostic
+grave), **deuxième occurrence**. Les trois arguments ont été retournés en
+« éléments souvent invoqués à tort comme rassurants », chacun avec sa réfutation.
+
+**5. `Enfant qui boîte` — la grille jumelle portait le même défaut, aggravé d'une
+biologie lue à l'envers.** Le contrôle des sœurs, déclenché par la découverte
+précédente, a trouvé dans `annexe-dd` : « Arthrite septique — **Arguments
+CONTRE : pas de fièvre actuelle · CRP normale (20 mg/l) · pas de signes
+inflammatoires locaux** ». **Une CRP à 20 mg/l n'est pas normale** (norme
+< 5-10 mg/l) : elle est modérément élevée, donc *compatible* avec une infection
+débutante — la biologie est enseignée à l'envers, et sert d'argument rassurant.
+S'y ajoute que la hanche est profonde, donc dépourvue de rougeur et de chaleur
+même infectée. `SSP — Boiterie de l'Enfant` : « Kocher est une aide
+probabiliste, pas un test — **un score bas n'exclut pas** ; en cas de doute la
+ponction articulaire, AVANT antibiotiques, reste le seul diagnostic de
+certitude ». Corrigé, avec les critères de Kocher rappelés en conclusion.
+
+**6. `Érythème cutané avec douleur` — la fasciite nécrosante nommée sans un seul
+signe ni la chirurgie.** La grille cite « Fasciite nécrosante » comme intitulé
+d'un critère d'hospitalisation, et son `expert` en fait un piège — mais elle a
+**0 occurrence** de « crépitation », « douleur disproportionnée », « nécro-
+» hors ce titre, « chirurgical », « porte d'entrée ». `SSP — Éruption Cutanée` :
+« **Érythème + crépitation + douleur disproportionnée** → fasciite nécrosante »
+et « **débridement chirurgical urgent** + antibiothérapie IV ».
+**Une station de dermohypodermite du diabétique qui nomme la fasciite sans dire
+qu'aucun antibiotique ne la traite seul enseigne l'attente.** Section ajoutée,
+avec la porte d'entrée (intertrigo / tinea pedis) dont l'omission fait la
+récidive.
+
+**7. `Entretien motivationnel - Sevrage tabagique` et `- Tabac` — le bupropion
+proposé sans sa contre-indication épileptique.** `theorie` écrivait « Bupropion :
+si contre-indication ou échec substituts », sans réserve.
+`Skills — Entretien Motivationnel` : « **Bupropion LP (Zyban®) 150 → 300 mg/j ;
+CI épilepsie, anorexie/boulimie, sevrage alcool, prise de IMAO** ». Le bupropion
+abaisse le seuil épileptogène ; le prescrire sans nommer l'épilepsie est le type
+d'omission que ce corpus répète. Corrigé sur les deux grilles jumelles, avec la
+contre-indication psychiatrique de la varénicline.
+
+### 5. Les huit autres corrections d'erreur
+
+Toutes dans `theorie`, aucun bloc noté.
+
+1. **`Douleurs thoraciques - DRS`** : « Nouveau BBG = équivalent STEMI ».
+   `SSP — Douleur Thoracique` : « l'ancienne règle "BBG nouveau = STEMI" **n'est
+   plus retenue** » — ce sont les critères de Sgarbossa modifiés qui tranchent.
+   Portés, avec la réserve inverse (ne pas déclarer l'ECG « ininterprétable »).
+2. **`Douleurs thoraciques - DRS`** : « MONA » sans réserve, alors que l'attendu
+   noté de la même grille écrit correctement « Oxygène si SaO2 < 90 % ». Le
+   mnémonique a été désamorcé (O₂ si SpO₂ < 90 % seulement, nitré contre-indiqué
+   au VD, morphine non systématique).
+3. **`Dyspnée dans un contexte infectieux`** : CURB-65, critère tensionnel écrit
+   « Blood pressure **< 90/60 mmHg** » — la règle est TAS < 90 **OU** TAD ≤ 60 ;
+   exiger les deux sous-cote la gravité et sous-triage le patient. Corrigé,
+   qSOFA ajouté.
+4. **`Dyspnée et insuffisance cardiaque`** : CHA₂DS₂-VASc, « Score ≥ 2 :
+   anticoagulation recommandée » sans seuil sexué, alors que la grille compte
+   elle-même 1 point pour le sexe féminin — une femme dont le score ne tient
+   qu'à son sexe se retrouve anticoagulée. Corrigé (≥ 2 homme / ≥ 3 femme).
+5. **`Dyspnée et mal au cou`** : « Groupes **A-D** selon symptômes et
+   exacerbations ». GOLD a fusionné C et D en **E** depuis 2023. Corrigé, avec
+   le rappel que le grade spirométrique ne décide pas du traitement (motif
+   d'AMC 4 au lot `t1`).
+6. **`Dyspnée et mal au cou`** : « pneumocoque **tous les 5 ans** » — schéma de
+   l'ancien polysaccharidique 23-valent, remplacé en Suisse par une dose unique
+   de conjugué chez l'adulte à risque. Corrigé.
+7. **`Grille ECOS USIT2 - Diarrhée Hématochézie`** : « Dépistage systématique :
+   **50-74 ans**, test FIT tous les 2 ans ». C'est la tranche du programme
+   **français**. `SSP — Rectorragies` : « dépistage organisé **en Suisse 50-69
+   ans** : test FIT tous les 2 ans ou coloscopie tous les 10 ans (OFSP /
+   SSG-SGG) ». Troisième francité du corpus après « ARS » (`t1`) et « 6 mois en
+   France » (`t2`). Corrigé.
+8. **`Épisode dépressif majeur`** : « Gravité — Léger (5-6 symptômes), modéré
+   (7-8), **sévère (≥ 9 symptômes)** ». Le DSM-5 ne compte que 9 critères : la
+   règle telle qu'écrite réserve « sévère » au tableau complet, et classe
+   « modéré » un épisode à 7 symptômes avec projet suicidaire précis. La
+   sévérité combine nombre, intensité et retentissement. Corrigé, avec les
+   bandes du **PHQ-9** que la page donne (5-9 / 10-14 / 15-19 / ≥ 20).
+   Corrigé aussi : « antidépresseurs **IRRS** » → ISRS.
+
+### 6. Les trous du canonique comblés — vingt-six
+
+`theorie` tient le rôle canonique sur **25/25**. Aucune grille du lot n'en est
+dépourvue, contrairement aux Psy-Vignette de `t1`.
+
+| grille | ce qui manquait |
+|---|---|
+| 36 DRS | **V3R-V4R** et le ventricule droit — **0 occurrence** · Sgarbossa · dérivations postérieures V7-V9 · répétition de l'ECG à 15-30 min |
+| 37 Dyspnée aigue | les **6 urgences vitales** nommées · le seuil de D-dimères **ajusté à l'âge** · la FR comme meilleur signe précoce · **144** et **145** |
+| 38 Polymorbidité | seuils réels de la metformine (DFGe < 30 CI, 30-45 réduction) et surtout la **suspension aiguë** (sepsis, hypoxie, produit de contraste iodé) · l'ordre de traitement de l'hyperkaliémie (calcium d'abord) |
+| 39 Infectieux | qSOFA · réserve du macrolide en monothérapie · amoxicilline en 1ʳᵉ intention (SSMI/SGAIM) |
+| 40 Insuffisance cardiaque | **ARNI et SGLT2** — **0 occurrence** dans une grille d'IC · HAS-BLED ne justifie pas l'abstention |
+| 41 Mal au cou | groupes GOLD A/B/E · PaO2 en **kPa** · réserve symétrique de l'O₂ chez le BPCO (« l'hypoxie tue en minutes ») |
+| 42 post-COVID | **arrêt du sport 3-6 mois après myocardite** — la grille lançait une réhabilitation sans l'écarter · signes imposant le **144** |
+| 43 Enfant qui boîte | **maltraitance** — **0 occurrence**, alors que la page en fait un red flag · **147 Pro Juventute** · **APEA/KESB** · arthrite septique = **urgence chirurgicale** (lavage) · épiphysiolyse = **interdiction de mise en charge** + **Lauenstein** · leucémie |
+| 44 EM Activité physique | la **cible chiffrée** (150-300 min/sem + 2 renforcements) — une station de négociation d'un plan sans dose · OARS, Ask-Tell-Ask, échelles 0-10 |
+| 45 EM Compliance | **DARN-CAT**, OARS, Ask-Tell-Ask · les traitements qui ne se suspendent pas (bêtabloquant, corticoïde, antiépileptique, antiagrégant post-stent) |
+| 46 EM Alcool | **verre standard suisse**, seuils OFSP, **AUDIT-C** (≥ 4 H / ≥ 3 F), bandes de l'AUDIT · **CIWA-Ar ≥ 15 et delirium tremens** : ne pas faire initier un sevrage seul · **thiamine avant tout glucose** (Wernicke) · **143**, **144**, **0800 104 104**, **LAVI**, **147**, **APEA/KESB** |
+| 47/48 EM Tabac | contre-indications du bupropion et de la varénicline · doses des substituts · **5 R** · ressources suisses (0848 000 181, 0800 11 88 11, CIPRET) |
+| 49 Épilepsie absence | **valproate chez une fille** : tératogénicité, à réserver faute d'alternative · surveillance **FSC** sous éthosuximide · **noyade** : jamais de bain ni de baignade seule · information de l'école et projet d'accueil individualisé |
+| 50 Épisode dépressif | **MDQ** — **0 occurrence** · **RUD / C-SSRS** et l'entonnoir complet · moyens létaux · **levée d'inhibition J7-J15** · **PAFA art. 426 CC**, **art. 16 CC** · **143 / 144 / 147** |
+| 51 Épisode maniaque | **PAFA art. 426 CC** et ses trois conditions · la distinction avec le **traitement sans consentement (art. 434 CC)** · **curatelle art. 390 ss et 394-395 CC** via l'**APEA/KESB** — la réponse exacte au « sécuriser financièrement » de son `expert` · bilan pré-lithium complet · lithémie cible et rebond à l'arrêt |
+| 52 Érythème cutané | tous les signes de la **fasciite nécrosante** et la chirurgie · **porte d'entrée** (intertrigo/tinea pedis) · délimitation de l'érythème au feutre |
+| 53 Fatigue - Vignettes | **rupture splénique** de la MNI et le **rash à l'aminopénicilline** · **hydrocortisone 100 mg IV sans attendre le Synacthen** dans la crise surrénalienne · carence martiale = **cancer colorectal jusqu'à preuve du contraire** · PHQ-2, STOP-BANG, aptitude à la conduite · **143/144/147** |
+| 54 Fatigue chroniques | risque suicidaire et **143** · **STOPP/START** · B-symptômes |
+| 55 Fatigue TBL | magnésium avant de corriger la kaliémie · spironolactone · risque thrombo-embolique de l'hypercortisolisme |
+| 56 Gonococcie | **doxycycline** en 1ʳᵉ ligne pour *Chlamydia* · ponction **avant** la 1ʳᵉ dose · déclaration OFSP et fenêtre de 60 jours détaillées |
+| 57 Goutte | **ne jamais ARRÊTER l'allopurinol en crise** — la moitié manquante de la règle · **HLA-B*58:01 / DRESS-SJS** · interactions de la **colchicine** (macrolides, azolés, ciclosporine, statines) · allopurinol + azathioprine |
+| 58 Diarrhée Hématochézie | **seuil transfusionnel Hb < 70 g/L (< 80 si cardiopathie ischémique)** · **10-15 % des HDB sévères sont des HDA → OGD d'abord** · Oakland, shock index · réversion des anticoagulants |
+| 59 Hernie discale | **queue de cheval : IRM < 24 h, décompression < 24-48 h, 144** — absente de `theorie`, dont la liste d'indications chirurgicales autorisait 3-6 mois de conservateur · *smarter medicine* · STarT Back |
+| 60 Opioïdes | **≥ 12-24 h et perfusion continue** après méthadone · doses de titration de la naloxone · CI complètes du flumazénil · **DON'T** et **thiamine avant glucose** · évaluation psychiatrique et **143** avant la sortie |
+
+### 7. Le balayage de protection — troisième zéro consécutif
+
+Relevé **avant** intervention sur les 25 :
+
+| terme | grilles concernées |
+|---|---|
+| `PAFA` · `art. 426` · `art. 16 CC` · `APEA`/`KESB` · `curatelle` · `discernement` | **0 sur 25** |
+| `143` La Main Tendue · `147` Pro Juventute | **0 sur 25** |
+| `144` | **1** (Douleurs thoraciques - DRS) |
+| `145` Tox Info Suisse | **1** (Intoxication opioïdes) |
+| `LAVI` | **0** — les 3 occurrences du motif étaient « sus-**clavi**culaire » et « médio-**clavi**culaire » |
+| `suicid*` | **1** (Épisode dépressif majeur) |
+
+Les faux positifs valent d'être notés : « 143 » ne se trouvait que dans une
+créatinine à 143, « 145 » que dans une TA à 145/90. Le balayage se fait à la
+main, aucun outil ne le déclenche, et il faut relire chaque occurrence.
+
+Six grilles du lot relèvent d'un thème de protection — les deux psychiatriques,
+les cinq d'entretien motivationnel (alcool, tabac, observance) et la pédiatrique.
+Conformément à la consigne, **rien n'a été retiré** ; une ou deux sections ont
+été ajoutées à `theorie`.
+
+### 8. Barème — deux lignes touchées, l'exception assumée
+
+Les deux corrections dans un attendu de correction sont au § 4, points 1 et 2.
+Toutes les autres éditions portent sur `theorie` et `annexe-dd` ; `redflags`,
+`expert`, `resume`, `presentation` et `scenario` n'ont pas été approchés.
+
+**Preuve d'innocuité.** `check_invariants` est vert sur les 165 : les quatorze
+champs du snapshot sont identiques à la baseline. **Baseline non régénérée.**
+Sur 25 fichiers, le diff complet compte 229 lignes ajoutées ou retirées, dont
+**aucune** ne porte `window.caseConfig`, `<script`, `criteria-text`,
+`criteria-detail`, `type="checkbox"`, `type="radio"`, `maxScores`,
+`sectionInfo`, `coef`, `<span class="score">`, `points-display`,
+`checkbox-group` ni `section-header`. **0 sous-item ajouté ou retiré.** Les deux
+corrections notées sont des compléments de texte à l'intérieur d'une puce de
+`therapy-section`, qui est une annotation du critère et non un sous-item coté.
+
+### 9. `check_nomenclature` attrape une régression pour la deuxième fois
+
+La première rédaction écrivait « éosinophiles ≥ 300/µL » (grille 41) et
+« > 50 000 leucocytes/mm³ » (grille 57) — deux unités bannies, reprises telles
+quelles de la source. La porte les a rejetées ; converties en 0,3 G/L et
+50 G/L avant validation. **Deuxième lot consécutif où la porte rattrape le
+traitement lui-même** : l'argument pour la câbler en CI se renforce.
+
+### 10. Ce qui reste consigné, non corrigé
+
+1. **`Dyspnée aigue`, `therapy`** : « Nitroglycérine (**Isoket**) 2 mg/h IV si
+   TA > 100 mmHg ». Isoket® est du **dinitrate d'isosorbide**, pas de la
+   nitroglycérine — coquille de dénomination dans un attendu noté. Elle ne
+   change ni la conduite ni la classe ; la réserve du ventricule droit et le nom
+   exact ont été portés dans `theorie`. **La page ne pose pas la réserve du VD
+   pour l'OAP** (elle écrit « trinitrine IV si TAS > 100 »), donc la condition
+   « sourcée » de l'arbitrage n'est pas remplie pour toucher l'attendu.
+2. **`Dyspnée et insuffisance cardiaque`** : « Furosémide IV **continue (pas
+   bolus)** ». L'essai DOSE n'a pas montré de supériorité de la perfusion
+   continue ; la formule tranche une question ouverte. Pas une erreur de
+   sécurité.
+3. **`Entretien motivationnel - Sevrage tabagique`** : bandes du Fagerström
+   « 0-2 pas de dépendance · 3-4 faible · 5-6 moyenne · 7-10 forte », contre
+   « 0-2 faible · 3-4 moyenne · 5-7 forte · 8-10 très forte » sur la page. Les
+   deux découpages existent dans la littérature et aucun n'est dangereux ;
+   laissé tel quel plutôt que d'imposer un choix.
+4. **`Fièvre et douleurs articulaires`, `therapy`** : « Alternative si allergie :
+   **Spectinomycine 2 g IM 2×/j ou Azithromycine 2 g PO** ». La spectinomycine
+   n'est pas disponible en Suisse et l'azithromycine 2 g en monothérapie n'est
+   plus recommandée dans la gonorrhée. La réserve a été portée dans `theorie` ;
+   l'attendu noté n'a pas été touché, la page ne traitant pas l'allergie.
+5. **`Dyspnée dans un contexte de polymorbidité`** : « PaCO2 > 45 mmHg »,
+   « PaO2 54 mmHg » — gaz du sang en mmHg dans un corpus suisse. Invisible à
+   `check_nomenclature`, qui ne borne que les analytes. Comme les huit
+   numérations en unité implicite du lot `l4`, c'est une famille à coder.
+
+### 11. Deux préoccupations de fond
+
+**`SSP — Dépression` se contredit toujours.** Son bloc `redflag` écrit
+« hospitalisation immédiate (**SDT/SDRE/SPI selon contexte**) » — la nomenclature
+de la loi **française** — quand les huit autres occurrences de la page disent
+correctement **PAFA (art. 426 CC)**, et que sa carte ECOS ajoute la capacité de
+discernement (art. 16 CC). C'est le même constat qu'au lot `t2` : la page n'a pas
+bougé. C'est le **troisième** cas de page du vault qui se contredit, après
+`SSP — Urgences Psychiatriques` (`t1`) et celle-ci. Le vault est hors du dépôt ;
+c'est la version suisse qui a été portée dans les deux grilles psychiatriques.
+
+**Deux pages ne portent pas la matière de leur grille.**
+`SSP — Éruption Cutanée` cite « Érythème cutané avec douleur » mais n'a **aucune
+section cellulite / érysipèle** (le mot « cellulite » y apparaît une fois, entre
+parenthèses), **aucun score LRINEC**, **aucun délai chirurgical chiffré**,
+**aucune mention du pied diabétique ni de la porte d'entrée**. `SSP — Malaise`
+cite « Épilepsie absence - Fille de 7 ans » mais n'a **aucun contenu sur les
+absences** — ni pointe-onde 3 Hz, ni éthosuximide, ni hyperpnée — et **aucun
+délai chiffré de suspension de conduite** (constat déjà fait au lot `t2`). Le
+niveau 2 a été appliqué dans les deux cas, et rien n'a été inventé : les signes
+de la fasciite portés sont ceux que la page énonce (« crépitation, douleur
+disproportionnée »), le LRINEC n'a **pas** été présenté comme sourcé.
+
+### 12. Vérifications
+
+```
+check_invariants.py                     OK — 165 grilles, code 0
+check_nomenclature.py                   OK — 0 terme, code 0
+check_reachability.py                   OK — 156/156 notées à 100 %, code 0
+report_redundancy.py (lot de 25)        232 -> 226
+report_redundancy.py (corpus)           1011 -> 1005   (−6 = gain du lot)
+check_no_loss.py 74e51e7                40 items, verdictés un à un, 0 perte
+browser_probe.js (les 25) --deep        25/25 sans exception · 25/25 à 100 %
+                                        25/25 registry · barre nav fixed
+                                        0 recouvrement · crochets colorés 25/25
+bounds_anomalies / uncovered_content    [] / {} sur les 25
+format .criteria-text « N. Libellé »    0 écart sur les 25
+crochets […] de cloture                 57, intacts
+
+AMBOSS  report_redundancy 147 (inchangé) · invariants / nomenclature / atteignabilité code 0
+RESCOS  report_redundancy 127 (inchangé) · invariants / nomenclature / atteignabilité code 0
+```
+
+Les 40 items signalés par `check_no_loss` sont des réécritures sur place —
+aucune suppression. Quatre notions menacées par une réécriture ont été
+**restituées** avant validation : la surveillance de la déshydratation sous
+lithium (51), la cocaïne parmi les contre-indications du flumazénil (60), le
+doublement des doses de substituts nicotiniques en cas de forte dépendance (47)
+et le repos de 4-6 semaines de la MNI (53). **Aucun retrait plein.** Les seules
+disparitions assumées sont les huit corrections d'erreur du § 5 et les sept du
+§ 4.
+
+German et casecos n'ont été ni lus ni mesurés : l'utilisateur y travaille en
+parallèle.
