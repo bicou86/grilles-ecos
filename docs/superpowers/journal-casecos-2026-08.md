@@ -1201,3 +1201,302 @@ qu'on s'était donnée pour supprimer. **Aucune perte.**
 * Vault Obsidian lu en **lecture seule** (27 pages SSP), rien écrit hors du dépôt.
 * Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
   aucun `timeout`, aucun `snapshot_invariants.py`.
+
+---
+
+## Lot k5c — grilles 61 à 100, plus la correction transversale de droit
+
+Base `741cd86`, branche `refonte-amboss-suisse`. Troisième lot de production
+CasECOS (`lib.grids()[60:100]`), assorti d'un balayage juridique sur les 198.
+
+**27 des 40 grilles du lot modifiées, plus 7 grilles hors lot au titre du droit.
+Redondance inter-blocs du lot 94 → 41 (−56 %), dont `expert ↔ theorie`
+46 → 0 (−100 %).** Sept trous du canonique comblés, quatre corrections
+factuelles ou institutionnelles, un typo.
+
+| porte | avant | après |
+|---|---|---|
+| `check_invariants.py` | rc 0 | **rc 0 — 198 grilles** |
+| `check_nomenclature.py` | rc 0 | **rc 0** |
+| `check_reachability.py` | 198/198 | **198/198 à 100 %** |
+| `report_redundancy.py` (lot de 40) | **94 inter** | **41 inter** |
+| `check_no_loss.py 741cd86` | — | **11 disparitions, 11 verdictées** |
+| `scripts/amboss/report_redundancy.py --quiet` | **147** | **147** |
+| `scripts/rescos/report_redundancy.py --quiet` | **127** | **127** |
+| `scripts/amboss` · `scripts/rescos` `check_invariants` | rc 0 | **rc 0** |
+
+### Volet A — le droit québécois corrigé, section notée comprise
+
+L'arbitrage rendu par l'utilisateur après k5b : **c'est une erreur factuelle**,
+au même titre que la « tutelle » abolie corrigée sur AMBOSS-17. Un étudiant
+suisse ne doit pas apprendre une procédure qui n'existe pas chez lui.
+
+**Source vérifiée avant écriture** : `SSP — Capacité de Discernement & Éthique`
+et `SSP — Urgences Psychiatriques (Agitation, PAFA)` du vault. Éléments retenus :
+PAFA art. 426-439 CC ; trois conditions cumulatives (trouble psychique,
+déficience mentale ou grave état d'abandon · assistance impossible autrement ·
+nécessité d'un placement en institution adaptée) ; décision par l'**APEA/KESB**
+(art. 428 CC) **ou par un médecin habilité par le canton** en urgence
+(art. 429 CC) ; **6 semaines** au maximum pour le PAFA médical ; **recours au
+tribunal cantonal dans les 10 jours** (art. 439 CC) ; traitement sans
+consentement art. 434 CC ; contention art. 383-385 CC ; cascade des
+représentants art. 377-378 CC ; urgence vitale art. 379 CC ; mineur capable de
+discernement art. 19c CC, **sans âge minimum fixe**.
+
+**Six corrections, sur sept grilles :**
+
+1. **`AMC-ECOS1-S5`** (HSA, 9 occurrences). Les **3 de la section notée** —
+   `criteria-description` de `m5`, `detail-text` de `m5-detail-2`,
+   `scoring-rule` de `m5` — corrigées en PAFA sans toucher à la structure
+   (4 sous-items avant, 4 après) : **règle 1**. Les 6 autres, dans `expert`,
+   `theorie` et `defi`, corrigées de même. Le canonique reçoit en outre la
+   cascade art. 377-378, l'urgence vitale art. 379 et les droits du patient sous
+   PAFA (recours 10 jours) : la grille disait « faire intervenir le représentant
+   légal ou le mandataire désigné », formule qui n'est celle d'aucun droit.
+2. **`AMC-ECOS1-S1`** (anorexie, mineure de 16 ans). « Au Québec, à 14 ans et
+   plus, un mineur peut consentir seul » → art. 19c CC, capacité appréciée au
+   cas par cas et pour chaque décision (présumée absente avant 12 ans, évaluée
+   de 12 à 15, présumée de 16 à 18). Corrigé dans `theorie` et dans `defi`.
+   « Élève de **secondaire 4** » → « 3ᵉ année du gymnase », gloss que la grille
+   jumelle `Anorexie boulimie - Adolescente 16 ans` portait déjà.
+3. **`AMC-ECOS1-S4`** : « vaccins à jour selon le **calendrier québécois** » →
+   « plan de vaccination suisse (OFSP) ».
+4. **`PLAFA` → `PAFA`, 11 occurrences sur 2 grilles**
+   (`AMC-Chir1-MedLeg` 4, `HSA et refus de soins` 7). **PLAFA** =
+   *privation de liberté à des fins d'assistance*, terme de l'ancien droit
+   (art. 397a ss aCC) **abrogé le 1er janvier 2013**. Les deux grilles écrivaient
+   déjà « PLAFA (**Placement** à des fins d'assistance, art. 426-439 CC) » :
+   l'acronyme de l'ancien régime collé au développé et aux articles du nouveau.
+   Univoque.
+5. **`APAE` → `APEA`, 2 grilles** (`AMC-Chir1-MedLeg`, `HSA et refus de soins`).
+   Inversion de lettres ; l'autorité est l'**Autorité de protection de l'enfant
+   et de l'adulte**. Univoque. Une occurrence était dans un `criteria-text`
+   (« 3. Rôle de l'autorité de protection de l'adulte (APAE / KESB) — Genève ») :
+   correction en place, format `N. Libellé` préservé.
+6. **La tutelle de l'adulte, abolie en 2013, subsistait sur 2 grilles.**
+   `AMC-Psy-P1` écrivait « Qui peut décider : médecin habilité (selon canton),
+   tribunal, **tuteur légal** » — doublement faux, puisqu'un curateur n'a pas non
+   plus compétence pour ordonner un PAFA. Remplacé par APEA (art. 428 CC) /
+   médecin habilité (art. 429 CC), avec la mention explicite de l'abolition. La
+   même grille nommait l'instrument « hospitalisation non volontaire (HNV) »
+   sans jamais écrire *PAFA* : le nom suisse a été porté dans le chapeau, et le
+   délai de recours de 10 jours ajouté aux droits du patient. `AMC-Psy-P4`
+   écrivait « le représentant légal (**tuteur ou curateur**) » deux fois, et
+   « [tuteur, curateur ou parents] » dans un `patient-response` de la section
+   notée, alors que la même grille dit ailleurs « curatelle de représentation ou
+   de portée générale selon la législation suisse ». Corrigé.
+
+### Volet A — ce que le balayage a trouvé d'autre, et qui n'est pas corrigé
+
+Balayage des 198 grilles sur 46 motifs (lois cantonales et étrangères, garde
+préventive, P-38, curateur public, majeur protégé, tutelle, sauvegarde de
+justice, directives anticipées, numéros d'urgence, organismes nationaux), par
+`lib.visible_text()` et `lib.top_spans()`.
+
+**Le corpus est très majoritairement conforme.** Les 86 occurrences de
+« directives anticipées » sur 11 grilles sont toutes rattachées aux
+art. 370-373 CC ; les 44 « représentant thérapeutique » à l'art. 378 CC ; les
+80 numéros d'urgence sont **144 / 117 / 143 / 145**, jamais 911, 15, 18 ni SAMU.
+`P-38`, `curateur public`, `majeur protégé`, `sauvegarde de justice`,
+`habilitation familiale`, `CLSC`, `CHSLD`, `RAMQ` : **0 occurrence**. `EHPAD`,
+`SAMU` et `911`, présents au relevé k1, ont disparu avec la passe de
+nomenclature.
+
+**Consigné, non corrigé** (arbitrage d'auteur, hors périmètre du lot) :
+
+* **Associations de patients françaises proposées à des patients suisses**, 4
+  grilles hors lot : *Association Française contre les Myopathies (AFM)*
+  (`AMC-Neuro-P4`), *France Alzheimer* ×2 (`AMC-Psy-S4`), *AFDIAG* (`UIDC-Lea`),
+  *France Lynch* (`UIDC-Monsieur Dupont`). Les équivalents suisses existent
+  (Alzheimer Suisse, ASRIMC, Ligue suisse contre le cancer) mais le choix d'une
+  ressource associative est éditorial, pas factuel.
+* **`HAS` (agence française), 7 occurrences sur 3 grilles.** Deux sont
+  correctement étiquetées comme françaises ou internationales
+  (`Anorexie boulimie` : « critères suisses SSPP / françaises HAS /
+  internationales MARSIPAN » ; `AMC-Psy-P3` : « recommandations HAS, NICE,
+  APA »). La troisième, `AMC-MCPR-ARC20` (dans le lot), écrivait « critères
+  GLIM 2018 / HAS 2021 » sans attribution : **corrigée** en « critères
+  internationaux GLIM 2018, repris par la HAS française en 2021 — la Suisse ne
+  publiant pas de critères propres ». C'est une qualification de source, pas un
+  changement de contenu.
+* **« civière », 2 occurrences** (`AMC-ECOS1-S10`, `HSA avec convulsion`) : mot
+  du français standard, employé aussi en Suisse ; « brancard » y est plus
+  courant sans que « civière » soit fautif. Non corrigé.
+* **`UIDC-Monsieur H. Toinnes`** situe sa vignette « en vacances dans le
+  Sud-Ouest de la France » et cite l'art. 5 al. 3 K 1 30 (loi genevoise sur la
+  santé) : le décor est étranger mais le droit cité est suisse. Incohérence de
+  mise en scène, pas d'enseignement faux.
+* **`Anorexie boulimie - Adolescente 16 ans`** garde « Secondaire 4 » sans gloss
+  dans un `criteria-detail`, alors que son en-tête porte déjà « (3e année du
+  gymnase) ». Hors lot, section notée : laissé.
+
+### Volet B — `expert ↔ theorie` : 46 → 0
+
+Le motif de k5a et k5b se reproduit une troisième fois sans exception :
+`expert`/Points clés est un **cours en réduction** dont `theorie` porte déjà,
+plus richement, la totalité. Règle appliquée, inchangée : un item d'`expert`
+n'est retiré que si (a) le test du référent l'attribue à `theorie`, (b) `theorie`
+porte son contenu **intégral** — vérifié terme à terme, en portant d'abord dans
+`theorie` ce qui lui manquait — et (c) `expert` garde le comportement observable
+correspondant dans `Rôles` ou `Pièges`.
+
+**23 items retirés de `expert`, 15 spécialisés, 2 ports préalables dans
+`theorie`** (« droit de communiquer avec un avocat » sur `AMC-EthiqueLegale-V5`,
+« et le désir de la patiente » sur `AMC-GynObs-V3`).
+
+Une figure de spécialisation s'est imposée ici plus qu'aux lots précédents : le
+**piège qui nie le canonique**. `AMC-GynObs-V5` portait, en Points clés, « La
+corticothérapie fœtale est PRIORITAIRE avant tout accouchement prématuré » et,
+en Pièges, « Oublier la corticothérapie de maturation pulmonaire fœtale » — les
+deux mesurés contre la même ligne de `theorie`/Conclusion. Retirer le premier ne
+suffit pas : le second reste un décalque nié. La sortie est de le rendre
+**observable dans cette station** : « Laisser partir la patiente en salle de
+naissance sans avoir prescrit la bétaméthasone ». Onze pièges ont été traités
+ainsi.
+
+`AMC-EthiqueLegale-V5` est le cas extrême : sa `theorie`/Conclusion recopiait
+**mot pour mot** quatre des huit Points clés d'`expert` (deux paires à **1,00**).
+
+**Les 41 paires restantes n'appartiennent plus qu'à des couples structurels** :
+`annexe-dd ↔ theorie` 17 (le bloc ne se nettoie pas — 97,5 % de formulations
+distinctes au relevé k1), `theorie ↔ therapy` 7 et `redflags ↔ theorie` 5 (le
+barème ne se dédoublonne pas), `annexe-dd ↔ expert` 6,
+`annexe-dd ↔ redflags` 6 (artefact de négation).
+
+### Volet B — sept trous du canonique
+
+Instrument de k4/k5a/k5b : appariement à seuil abaissé (0,45) entre
+`therapy`/`redflags` et les blocs de restitution, en retenant ceux dont le
+meilleur appariement est **ailleurs que dans `theorie`**, puis comptage du terme
+bloc par bloc sur le texte visible.
+
+| grille | point absent du canonique | vivait dans |
+|---|---|---|
+| `AMC-ECOS1-S9` Fracture vertébrale | **syndrome de la queue de cheval** (0 occ. dans `theorie`) et **spondylodiscite** (0 occ.) — les deux drapeaux rouges de la dorsalgie | `redflags` + `expert` / `annexe-dd` |
+| `AMC-MCPR-ARC6` Douleur thoracique | **dissection aortique** (0 occ.) et **score de Wells** (0 occ.) : `theorie` enseignait la probabilité pré-test sans jamais nommer l'urgence à écarter d'abord | `annexe-dd` + `redflags` |
+| `AMC-MCPR-ARC15` Entorse de cheville | **lésion de Maisonneuve** — 0 occurrence dans **toute** la grille | nulle part |
+| `AMC-MCPR-ARC17` Diabète | **pied diabétique** (0 occ. dans `theorie`) et le message « contrôler tous les FRCV compte autant que la glycémie » | `redflags` seul |
+| `AMC-MCPR-ARC14` Claire, 15 ans | **infirmière scolaire** (0 occ. dans `theorie`) : le seul relais que l'adolescente peut atteindre seule | `therapy` + `expert` |
+| `AMC-MCPR-ARC2` Arthrite goutteuse | seuil fébrile **38,5 °C** de la monoarthrite septique (0 occ. dans la grille) | page SSP |
+| `AMC-MCPR-ARC6` Douleur thoracique | épidémiologie **dépendante du lieu** : pariétale 1 fois sur 2 et CV 16 % en premier recours, CV 54 % aux urgences — dans une station intitulée « au cabinet médical » | page SSP |
+
+**Aucun n'est venu de `report_redundancy.py`.** Trois sont sur des grilles qui
+mesuraient **0 paire** (`AMC-ECOS1-S9`, `AMC-MCPR-ARC14`, `AMC-MCPR-ARC17`).
+Deux — le pied diabétique et l'infirmière scolaire — sont **du rationnel logé
+dans un « Détails : »** de `therapy-item` : le motif du § 3.3 de k4 se confirme
+pour la quatrième fois.
+
+**La lésion de Maisonneuve est trouvée pour la deuxième fois.** k5b l'avait
+comblée sur `AMC-Chir3-Vignette3` ; `AMC-MCPR-ARC15` est **la même station
+dupliquée dans la série MCPR** et portait le même trou. La page SSP
+*Entorse de Cheville* lui consacre une image dédiée
+(`pied-cheville-lesion-de-maisonneuve.png`). Les limites d'application des
+critères d'Ottawa (moins de 18 ans, intoxication, polytraumatisme, déficit
+sensitif, traumatisme de plus de 10 jours) étaient absentes de la même grille et
+ont été portées dans le même geste.
+
+### Volet B — la mesure d'inclusion, reconduite
+
+Recouvrement de vocabulaire (jetons > 2 lettres, mots-outils retirés) sur les
+40 grilles, avant et après :
+
+| couple | inclusions ≥ 90 % | dont **invisibles** (ratio ≤ 0,72) | paires mesurées |
+|---|---|---|---|
+| `theorie → therapy` avant | 64 | **60 (93 %)** | 7 |
+| `theorie → therapy` après | 64 | **60 (93 %)** | 7 |
+| `expert → theorie` avant | 10 | 6 (60 %) | 46 |
+| `expert → theorie` après | **6** | **6 (100 %)** | **0** |
+
+Deux lectures. La première confirme k5b au chiffre près : **la mesure ne voit
+qu'une inclusion `theorie ↔ therapy` sur dix** (93 % ici, 94 % chez k5b).
+La seconde est nouvelle : après traitement, **la totalité du résiduel
+`expert → theorie` est invisible**. Le seuil de 0,72 a été poussé jusqu'à son
+plancher sur ce couple ; ce qui reste ne peut plus être atteint que par la mesure
+d'inclusion. Six items, à publier **à part** du chiffre de redondance.
+
+### Niveau 1 — 26 pages SSP, deux rendements
+
+39 des 40 grilles sont desservies par **26 pages SSP** ; `AMC-MCPR-ARC21`
+(bilan préopératoire) n'a **aucune page** — c'est le premier trou de couverture
+rencontré sur ce corpus. Méthode inchangée : extraction des lignes chiffrées,
+comparaison au texte visible complet, lecture des candidats survivants.
+
+**Rendement : deux pages.** *Douleur de Genou* → le seuil de 38,5 °C.
+*Douleur Thoracique* → l'épidémiologie dépendante du lieu (16 % / 54 %).
+*Entorse de Cheville* a confirmé la lésion de Maisonneuve déjà trouvée par
+l'usage inversé.
+
+**Deux quasi-rendements écartés, et c'est le point de méthode.** La page
+*Diarrhée* donne un seuil de calprotectine de **150-250 µg/g** ; la grille
+`AMC-MCPR-ARC16` en donne un autre, articulé (< 50 VPN, 50-200 zone grise,
+> 200 endoscopie), plus fin et non contradictoire. La page
+*Diabète Gestationnel* donne « césarienne si EPF > **4250-4500 g** » ; la grille
+`AMC-GynObs-V12` écrit « > 4 000-4 500 g », intervalle plus large qui contient
+le premier. **Divergence n'est pas contradiction** : rien n'a été forcé.
+
+**Rendement nul sur 23 pages.** Les causes de k5a et k5b se reproduisent :
+pages larges déjà concordantes (*Capacité de Discernement* dessert 3 grilles,
+*Dyspnée* 3, *Grossesse* 3, *Counselling Dépistages* 3), et pages reliées par le
+**motif de plainte et non par le diagnostic** (*Douleur - Masse Pelvienne* pour
+une GEU, *Dyspnée* pour une anémie ferriprive sur AINS). L'indicateur tient une
+quatrième fois : le rendement suit les **cibles chiffrées**, pas la largeur.
+
+### Correction typographique
+
+`AMC-MCPR-ARC12` portait « (risque de rash**))** » — parenthèse fermante
+doublée, dans un `<li>` d'`expert`. Corrigé.
+
+### Barème
+
+**Intact, et cette fois des sections notées ont été touchées.** Cinq grilles ont
+reçu une correction dans leur zone notée — `AMC-ECOS1-S5` (3 sites :
+`criteria-description`, `detail-text`, `scoring-rule`), `AMC-Chir1-MedLeg`
+(1 `criteria-text` + 6 `criteria-detail`), `HSA et refus de soins`
+(`therapy-section`, `criteria-detail`, `scoring-rule`), `AMC-Psy-P4`
+(`patient-response` d'un `criteria-detail` + `therapy`/Détails),
+`AMC-MCPR-ARC20` (une `criteria-description`).
+
+**Aucune n'a changé de structure**, et c'est mécaniquement prouvé :
+`check_invariants.py` compare `criteriaCount`, `detailCount`, `radioCount`,
+`checkboxCount`, `maxScores`, `coef`, `scoreSpans`, `sectionCounts` et `blocks`
+au baseline gelé, et il est **vert sur les 198**. Le format
+`N. Libellé [réponse]` exigé par `cases/scoring.js:159` est préservé sur les
+2 `criteria-text` touchés. **Règle 1 partout — pas de régénération du baseline.**
+Sur 175 lignes de diff : 0 touchant `maxScores`, `sectionInfo`, `coef`,
+`<span class="score">`, `caseConfig`, `scoring.js`, `persistence.js`,
+`therapy-item`, `redflags-text`, `redflags-description`, `cloture-detail` ou
+`exemple-phrase`.
+
+### Anti-perte
+
+`check_no_loss.py 741cd86` signale **11 disparitions sur 34 grilles modifiées**,
+toutes verdictées et **toutes des reformulations en place** : l'item existe
+toujours, corrigé (Québec → PAFA, tuteur → curateur, calendrier québécois → OFSP)
+ou allongé pour recevoir ce qui lui manquait (macro-angiopathie + FRCV, arthrite
+septique + 38,5 °C, droits du patient + 10 jours).
+
+Contrôle indépendant par comptage d'items normalisés extraits de
+`git show 741cd86:…` et de l'arbre de travail : **5 418 items avant, 5 403
+après**, delta net **−15**, qui s'explique exactement : **−23** retraits dans
+`expert`, **+8** ajouts dans `theorie` (7 trous du canonique + les limites
+d'Ottawa). Les 23 retraits ne sont pas signalés par `check_no_loss` parce que
+`theorie` en porte déjà un appariement au-dessus du seuil — la condition même
+qu'on s'était donnée pour les autoriser. **Aucune perte.**
+
+### Contraintes respectées
+
+* Rien écrit hors de `cases/casecos/`, de ce journal et du rapport k5c.
+  **`scripts/casecos/` non modifié** : le contrat de k4 a tenu sur 40 grilles de
+  plus, et sur une correction en section notée, sans amendement.
+* **Aucun `git add`** — commit par `git commit -- <chemins>` exclusivement.
+  Rien touché sous `cases/german/`, `cases/rescos-locales/`, `scripts/german/`,
+  `scripts/rescos/`, où l'utilisateur travaillait en parallèle.
+* **Aucune grille lue en entier avec `Read`** : bornage par `lib.top_spans()`,
+  lecture par fenêtres `offset`/`limit`, édition par remplacement exact.
+* **Aucun `grep` brut employé comme contrôle** : tous les chiffres publiés
+  viennent de `scripts/casecos/` ou de mesures Python passant par
+  `lib.visible_text()`, `lib.top_spans()`, `lib.matches()` (stdlib seule).
+* Vault Obsidian lu en **lecture seule** (26 pages SSP + 2 pages de droit),
+  rien écrit hors du dépôt.
+* Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
+  aucun `timeout`, aucun `snapshot_invariants.py`.
