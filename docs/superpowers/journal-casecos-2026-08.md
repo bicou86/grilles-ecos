@@ -571,3 +571,116 @@ avais touché que 132 et un seul.
 `scripts/casecos/migrate_to_shared_engine.py`, que la réécriture a dé-suivi et
 qui est aujourd'hui **non suivi sur le disque** ; le restaurer demanderait un
 `git add`, interdit sur cet index partagé.
+
+---
+
+## k4 — Grille pilote `AMC-MedInterne-P13 Méningite — Mme S.` et contrat de blocs
+
+Base `b6f83f6`. **Une seule grille modifiée**, trois ajouts, aucune suppression.
+Le livrable principal n'est pas la grille : c'est le **contrat de blocs**, écrit
+au § 2 de `scripts/casecos/PROCEDURE-casecos.md`.
+
+### Le contrat, en une phrase
+
+`theorie` est le canonique ; la frontière `expert ↔ theorie` — 405 des 830
+paires du corpus — se trace sur le **référent** et non sur le caractère
+actionnable : *changez le patient, l'item survit-il ?* Il survit → `theorie`,
+il meurt → `expert`. Deux sections de `theorie` échappent au test (« Diagnostic »
+et « Résumé du cas clinique ») : elles y restent, car elles sont le logement
+CasECOS du `resume` manquant, et aucun autre bloc ne restitue le cas en
+narration synthétique.
+
+Corollaire assumé : **l'interdit d'AMBOSS « `theorie` ne porte jamais de
+protocole » ne se transpose pas.** Chez AMBOSS il avait un bénéficiaire, le
+`resume`. Ici il n'y en a aucun, et la section « Algorithme de prise en charge
+empirique (HUG) » du pilote n'a aucune autre destination licite : la supprimer
+serait une perte, `expert` casserait le référent, `therapy` est une section
+notée.
+
+### Les trois modifications, toutes des ajouts
+
+Trouvées par l'**usage inversé** de la mesure de redondance (une paire notée qui
+s'accorde avec un bloc de restitution sans passer par le canonique = un trou du
+canonique), puis confirmées par comptage du texte visible bloc par bloc.
+
+| # | ajout | où | pourquoi |
+|---|---|---|---|
+| 1 | fond d'œil / évaluation clinique de l'HTIC, risque de cône de pression | `expert`/Pièges | présent dans `redflags` n° 4 et le `detail-text` e4-detail-1, **absent du canonique des pièges** — or « Oublier le fond d'œil » est le **piège n° 1 de la page SSP** (niveau 1) |
+| 2 | « Devant un purpura fulminans, la première dose de 2 g s'administre sans délai, IV ou IM, y compris en préhospitalier » | `theorie`/Rappels, item ceftriaxone | **cible chiffrée de la page SSP** absente de toute la grille (0 occurrence de « préhospitalier ») |
+| 3 | « Rationnel : réduction de la mortalité et des séquelles neurologiques, bénéfice principalement démontré dans les méningites à S. pneumoniae » | `theorie`/Rappels, item dexaméthasone | le *pourquoi* vivait dans `therapy` m3 **et** `redflags` n° 5 — deux sections notées — et nulle part dans le canonique du rationnel thérapeutique. 0 occurrence de « séquelle » dans `theorie` avant |
+
+Page SSP : `SSP ECOS/SSP — Céphalée.md` (elle dessert 22 grilles). **L'indicateur
+se vérifie** : son rendement n'est pas venu de sa largeur mais de ses trois
+cibles chiffrées sur la méningite. Les deux qui portaient un nombre déjà présent
+dans la grille (ceftriaxone 2 g × 2/j, dexaméthasone 10 mg × 4/j) n'ont rien
+donné — la grille était déjà juste ; celle qui portait un nombre **absent**
+(2 g IV/IM en préhospitalier) a donné la modification n° 2.
+
+### Ce qui a été vu et NON corrigé
+
+* **`therapy` m3 (noté) omet la grossesse** parmi les facteurs de risque Listeria
+  (« âge >50 ans, diabète, immunosuppression, néoplasie, contexte
+  épidémiologique »), là où la page SSP et `theorie` la nomment. C'est une
+  **divergence dans une section notée** : elle se consigne, elle ne se corrige
+  pas.
+* **1 paire intra-`expert` à 0,77** (Points clés « Gérer la dimension
+  épidémiologique… » ↔ Pièges « Ne pas penser à la dimension épidémiologique… »).
+  Plancher structurel : la polarité est la raison d'être des trois sections
+  d'`expert`. Jugement d'auteur, documenté, non corrigé.
+* Les 3 grilles « ECOS Diag » et les 12 sans `annexe-dd` restent en l'état
+  (arbitrages k1 toujours ouverts).
+
+### La découverte qui change la méthode des 197 suivantes
+
+**Le pilote mesure 0 paire inter-blocs**, et porte pourtant les cinq mêmes
+molécules aux mêmes posologies dans `therapy` et dans `theorie`/Rappels. Ces cinq
+couples marquent **0,15 à 0,48**. La cause est arithmétique : un `therapy-item`
+empaquette « Traitement : X » et un long « Détails : » (308 caractères en
+moyenne) quand un `<li>` de `theorie` en fait 145 ; `SequenceMatcher.ratio()`
+valant `2M/T`, un item court **entièrement contenu** dans le long plafonne à
+`2×145/453 = 0,64` — **sous le seuil de 0,72**.
+
+Le seuil n'a pas été touché : c'est la mesure publiée du projet, elle garde les
+quatre corpus comparables. Mais sur ce corpus **c'est le contrat qui trouve le
+travail, et la mesure qui le confirme** — jamais l'inverse. Les 135 paires
+`theorie ↔ therapy` du relevé k1 sont un plancher, pas un total. Le couple
+`expert ↔ theorie` (405 paires) n'a pas ce biais : items de longueur voisine
+(121 et 145 caractères au pilote).
+
+### Portes
+
+| porte | avant | après |
+|---|---|---|
+| `check_invariants.py` | rc 0 | **rc 0** |
+| `check_nomenclature.py` | rc 0 | **rc 0** |
+| `check_reachability.py` | 198/198 | **198/198 à 100 %** |
+| `report_redundancy.py "AMC-MedInterne-P13"` | **0 inter, 1 intra** | **0 inter, 1 intra** |
+| `check_no_loss.py b6f83f6 "AMC-MedInterne-P13"` | — | **2 disparitions, 2 verdictées** |
+| `scripts/amboss/report_redundancy.py --quiet` | **147** | **147** |
+| `scripts/rescos/report_redundancy.py --quiet` | **127** | **127** |
+
+**Contrôle anti-perte indépendant**, parce qu'une disparition appariée reste une
+affirmation : **175 items avant, 175 après**. 3 disparus, 3 apparus, appariés un
+à un (0,69 / 0,70 / 0,73) — les trois sont des **allongements** des items
+modifiés, aucun texte retiré. `check_no_loss` n'en signale que 2 : le troisième
+(ceftriaxone) reste au-dessus de son seuil d'appariement.
+
+**Barème intact** : aucun `maxScores`, aucun `coef`, aucun `sectionInfo[].count`,
+aucun `<span class="score">`, aucun libellé `N.` de `.criteria-text` touché.
+Les trois modifications sont dans des `<li>` de blocs pédagogiques non notés —
+règle 1 du barème (correction sans changement de structure).
+
+### Contraintes respectées
+
+* Rien écrit hors de `cases/casecos/`, `scripts/casecos/PROCEDURE-casecos.md` et
+  ce journal (plus le rapport k4).
+* **Aucun `git add`** — commit par `git commit -- <chemins>` exclusivement.
+  Rien touché sous `cases/german/`, `cases/rescos-locales/`, `scripts/german/`,
+  `scripts/rescos-locales/`, où l'utilisateur travaillait en parallèle (109
+  fichiers modifiés dans son arbre au début du lot, aucun chevauchement).
+* **Aucune grille lue en entier avec `Read`** : bornes situées par
+  `lib.top_spans()`, lecture par fenêtres `offset`/`limit`.
+* **Aucun `grep` brut employé comme contrôle** : tous les chiffres viennent des
+  scripts de `scripts/casecos/` ou de mesures Python explicites (stdlib seule).
+* Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
+  aucun `timeout`.

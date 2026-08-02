@@ -61,7 +61,10 @@ fois.** Les trois corpus précédents ont des noms purement ASCII
 Cinq écarts structurants :
 
 1. **Il n'y a ni `resume` ni `presentation-patient`.** La source canonique du
-   contrat des trois corpus précédents n'existe pas ici. Voir § 2.
+   contrat des trois corpus précédents n'existe pas ici. **Le contrat de blocs
+   propre à CasECOS est au § 2** — c'est `theorie` qui est canonique, et la
+   frontière `expert ↔ theorie` se trace sur le **référent** (cette station /
+   la maladie), non sur le caractère actionnable.
 2. **`annexe-defi` est la quatrième fiche** (« Défi pédagogique ») : une
    situation qui dérape — refus de soins, aggravation, question imprévue — puis
    « Type de réponse attendue ». Ce **n'est pas** l'homologue de
@@ -132,32 +135,138 @@ devient ainsi un détecteur direct de fiche inédite. Toute
 `<div class="annexe-item annexe-XYZ">` nouvelle sera signalée dès le premier
 passage de `check_invariants.py`.
 
-### Il n'y a pas de `resume` : sur quoi rebâtir le contrat
+### Il n'y a pas de `resume` : LE CONTRAT DE BLOCS
 
-Les trois corpus précédents ancraient le contrat de rôle sur le `resume`
-(synthèse) et la `presentation-patient` (annonce au patient). Aucun des deux
-n'existe ici. Les éléments mesurés, à verser au dossier — **le contrat n'est pas
-tranché par ce lot** :
+Tranché au pilote `AMC-MedInterne-P13 Méningite — Mme S.` (lot k4), applicable
+aux 197 suivantes. Les trois corpus précédents ancraient le contrat sur le
+`resume` (synthèse) et la `presentation-patient` (annonce au patient). **Aucun
+des deux n'existe ici** : le contrat ne se transpose pas, il se redécoupe.
 
-* **`theorie` porte 29 % du volume pédagogique** (1,27 M caractères sur 4,41 M),
-  et son ossature est **la même qu'AMBOSS** : `Rappels thérapeutiques` (194/195)
-  et `Examens complémentaires` (197/195), une occurrence par fiche, plus des
-  sections libres. Il y ajoute « Résumé du cas clinique » (80 grilles) et
-  « Diagnostic » (49) — c'est là, et nulle part ailleurs, qu'on trouve
-  aujourd'hui l'équivalent d'un `resume`.
-* **`expert` est structurellement IDENTIQUE à AMBOSS** : trois titres, toujours
-  les mêmes — `Points clés` (195), `Pièges` (195), `Rôles et interventions`
-  (191). Aucun autre. C'est le bloc le plus normalisé du corpus, et le meilleur
-  candidat à faire autorité sur « ce que l'évaluateur doit savoir ».
-* **`annexe-dd` porte des arguments réels** (§ 8), pas du remplissage.
-* **`defi` n'a aucun titre** : 390 `<p>` pour 195 fiches, soit deux paragraphes
-  chacune — la situation, puis « Type de réponse attendue ». À comparer aux
-  **six sections** de la `presentation-patient` d'AMBOSS (Version longue, Fiche
-  ECOS, Checklist mentale, Version express SBAR, Touches ludiques, Questions de
-  l'examinateur). **Les deux blocs n'ont pas le même rôle** : `defi` teste une
-  situation difficile, `presentation-patient` outille une annonce.
-* Les blocs notés `therapy` (12,4 % du volume), `redflags` (5,4 %) et `cloture`
-  (10,5 %) sont ici la règle et non l'exception, contrairement à RESCOS.
+| Bloc | Référent | Rôle exclusif | Ne porte jamais |
+|---|---|---|---|
+| `annexe-dd` | **les hypothèses** | Raisonner le différentiel : arguments POUR / CONTRE, et l'examen qui départage | conduite de station, posologies, formulation orale |
+| `expert` | **cette station** | La faire tourner : ce que l'expert joue et livre à la demande, ce que le candidat doit montrer, ce qu'il peut manquer | savoir généralisable, profils d'autres maladies, posologies détaillées |
+| `theorie` | **la maladie** | Le champ — ce qui reste vrai pour un autre patient — **plus** la synthèse du cas, portée par ses deux seules sections indexées sur ce patient : « Diagnostic » et « Résumé du cas clinique » | script de station, valeurs paracliniques à révéler à la demande |
+| `scenario` | **le patient** | Script du patient simulé | — exclu de la mesure de redondance |
+| `defi` | **l'apprenant** | Retourner le cas en exercice : énoncé, puis « Type de réponse attendue » | — **jamais amputé** : reformuler EST son rôle |
+| `therapy`, `redflags` | **le barème** | Attendu de correction du critère hôte | — ne se dédoublonnent pas : c'est le pédagogique qui s'aligne sur eux, jamais l'inverse |
+| `cloture`, `exemples` | **l'oral** | Conduire la clôture en langage patient ; phrases modèles | théorie, check-list, raisonnement différentiel |
+| `annexe-nu` | — | Fiche sans classe de rôle : la traiter selon son titre (aujourd'hui un second `scenario`) | — |
+
+`therapy`, `redflags`, `cloture` et `exemples` gardent le rôle que RESCOS leur a
+donné (`PROCEDURE-rescos.md` § 3) ; ils sont ici la règle et non l'exception.
+
+#### Le test qui tranche `expert ↔ theorie` — 405 des 830 paires du corpus
+
+> **Changez le patient : l'item survit-il ?**
+> Il survit → `theorie`. Il meurt → `expert`.
+
+C'est le **référent** qui sépare les deux blocs, **pas leur caractère
+actionnable**. Appliqué section par section au pilote, le test ne laisse que
+deux exceptions — et ce sont exactement les deux sections que k1 avait repérées :
+
+| section de `theorie` | survit au changement de patient ? |
+|---|---|
+| Triade classique · Interprétation du LCR · Épidémiologie et pathogènes · Algorithme HUG · Comparaison avec le 2ᵉ cas du module · Rappels thérapeutiques · Examens complémentaires | **oui** |
+| **Diagnostic** · **Résumé du cas clinique** | **non** |
+
+**Ces deux-là restent dans `theorie`** : elles sont le logement CasECOS du
+`resume` manquant. Aucun autre bloc ne restitue le cas en **narration
+synthétique** — `expert` le restitue en script de révélation et en critère
+d'observation, `annexe-dd` en grille d'arguments, `scenario` en paroles de
+patient, `defi` en énoncé d'exercice. La règle du format les protège toutes.
+
+**`theorie` est donc le canonique** — non parce qu'il ressemblerait à un
+`resume` (c'est un cours), mais parce qu'il est le seul bloc dont le rôle couvre
+à la fois le champ de la maladie et la synthèse du cas. `expert` fait autorité
+sur un seul point, mais entièrement : **la conduite de la station**.
+
+#### L'interdit d'AMBOSS qui ne se transpose PAS
+
+Le contrat AMBOSS dit : « `annexe-theorie` ne porte jamais de check-lists
+actionnables, mnémos, protocoles ». **Cet interdit ne vaut pas ici.**
+
+Chez AMBOSS il avait un **bénéficiaire** — le `resume`, qui recevait la
+check-list. Ici il n'y en a aucun. Le pilote porte dans `theorie` une section
+« Algorithme de prise en charge empirique (HUG) » : cinq étapes, 30 minutes
+depuis l'arrivée, un protocole actionnable au sens plein. Les trois issues d'une
+transposition naïve sont toutes fausses :
+
+* **le supprimer** → perte sèche, aucun autre bloc ne le porte ;
+* **le porter dans `expert`** → casse le référent : ce n'est pas ce que l'expert
+  fait, c'est ce que l'institution recommande, et cela reste vrai pour tout
+  autre patient ;
+* **le porter dans `therapy`** → écrit dans une section notée, ce qu'interdit la
+  hiérarchie à trois niveaux.
+
+`theorie` garde donc les protocoles ; la frontière se trace sur le référent.
+
+#### `defi` n'a pas d'homologue, et ne s'ampute jamais
+
+390 `<p>` pour 195 fiches, **aucun titre** : un énoncé, puis « Type de réponse
+attendue ». À comparer aux **six sections** de la `presentation-patient`
+d'AMBOSS (Version longue, Fiche ECOS, Checklist mentale, Version express SBAR,
+Touches ludiques, Questions de l'examinateur) : rôles différents, pas de
+correspondance.
+
+Au pilote, `defi` réinterroge les profils de LCR que `theorie` expose déjà —
+mais **en sens inverse** (`theorie` va du diagnostic au profil, `defi` va du
+profil au diagnostic) et il y ajoute quatre entités que `theorie` ne nomme pas
+(méningite fongique à *Cryptococcus*, neurosarcoïdose, méningite carcinomateuse
+ou lymphomateuse, méningite bactérienne partiellement traitée). C'est le cas
+d'école de la **règle du format** : un bloc dont le rôle *est* de reformuler ne
+s'ampute pas.
+
+#### L'usage inversé : une paire notée qui évite le canonique = un TROU
+
+Hérité de rescos, et **le plus rentable des instruments sur ce corpus** : quand
+`therapy` ou `redflags` s'accorde avec un bloc de restitution **sans passer par
+`theorie`**, ce n'est pas une redondance — c'est que le canonique est muet. Au
+pilote, trois points vivaient dans les seules sections notées :
+
+| point | où il vivait | canonique muet |
+|---|---|---|
+| **fond d'œil / cône de pression** | `redflags` n° 4 + `detail-text` e4-detail-1 | `expert`/Pièges — c'est pourtant le **piège n° 1 de la page SSP** |
+| **rationnel de la dexaméthasone** (mortalité, séquelles, surtout pneumocoque) | `therapy` m3 + `redflags` n° 5 | `theorie`/Rappels thérapeutiques, canonique du *pourquoi* |
+| **purpura fulminans** | `redflags` n° 1 + `detail-text` e3-detail-2 | `theorie` — et la page SSP y attache une **cible chiffrée** (2 g IV/IM en préhospitalier) |
+
+Les trois ont été portés dans le canonique, **par ajout, sans rien retirer** ni
+toucher aux sections notées.
+
+#### ⚠️ L'absence de paires ne prouve rien — le seuil est structurellement borgne
+
+**Le pilote mesure 0 paire inter-blocs** (1 intra), et il porte pourtant les
+cinq mêmes molécules aux mêmes posologies dans `therapy` et dans
+`theorie`/Rappels thérapeutiques. Mesuré : ces cinq couples marquent **0,15 à
+0,48**, loin du seuil de 0,72.
+
+La cause est arithmétique, pas éditoriale. Un `therapy-item` empaquette
+« Traitement : X » **et** un long paragraphe « Détails : » — 308 caractères en
+moyenne au pilote, contre 145 pour un `<li>` de `theorie`. Or
+`SequenceMatcher.ratio()` vaut `2M/T` : même si l'item court est **entièrement
+contenu** dans le long, le rapport plafonne à `2×145/(145+308) = 0,64`. **Une
+redondance `theorie ↔ therapy` parfaite est indétectable au seuil du projet.**
+
+Conséquences pour les 197 restantes :
+
+1. **Ne pas conclure d'un `report_redundancy.py` vide qu'il n'y a rien à faire.**
+   Le seuil reste la mesure publiée du projet et ne bouge pas — il garde les
+   quatre corpus comparables — mais sur ce corpus c'est **le contrat qui trouve
+   le travail**, la mesure qui le confirme.
+2. Les **135 paires `theorie ↔ therapy`** du relevé k1 sont donc un plancher,
+   pas un total.
+3. Le couple `expert ↔ theorie` (405 paires) n'a pas ce biais : les deux blocs
+   ont des items de longueur voisine (121 et 145 caractères au pilote).
+
+#### Le plancher structurel de `expert`
+
+Le pilote garde **1 paire intra-`expert` à 0,77** — « Gérer la dimension
+épidémiologique… » dans Points clés, « Ne pas penser à la dimension
+épidémiologique… » dans Pièges. Elle **n'est pas corrigée** : la polarité
+(ce qu'il faut faire / ce qu'on peut manquer) est la raison d'être des trois
+sections d'`expert`, et l'arbitrage entre deux formulations défendables est un
+jugement d'auteur. C'est le « plancher structurel » de RESCOS
+(`PROCEDURE-rescos.md` § 3), transposé tel quel. Le noter, ne pas le poursuivre.
 
 ### `scenario` est borné mais exclu de la redondance
 
