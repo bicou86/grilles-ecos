@@ -3956,3 +3956,142 @@ réseau, aucun `git gc` ni `git prune`.
 
 Rapport détaillé :
 `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3d-bis-report.md`
+
+---
+
+# Lot p3e — les 13 grilles restées avec leur « Checklist mentale »
+
+HEAD au démarrage : `1729159`. Commits : `f908512`, `7397145`, `6de847e`.
+Rapport : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3e-report.md`.
+
+## Périmètre
+
+Le gabarit german retire la section « 🧩 Checklist mentale (présentation
+systématisée) » et met à sa place les deux cartes de méthode, SBAR et SNAPPS,
+côte à côte. Les 75 grilles dont la `presentation-patient` a été **créée** au
+fil de la refonte respectaient la règle. Treize la portaient **déjà** avant la
+refonte : elles n'ont reçu qu'un `annexe-theorie` et une planche d'images, leur
+`presentation` n'a jamais été rouverte, et elles ont donc gardé une section
+supprimée du gabarit sans jamais recevoir les cartes.
+
+German-15, 19, 22, 27, 34, 42, 43, 44, 48, 56, 69, 72, 88 — 132 items de
+checklist au total.
+
+Les treize sections occupaient **toutes le même créneau** : premier enfant de
+`presentation-content`, juste avant `section-longue`, c'est-à-dire la place que
+`section-commcards` occupe dans German-1. Remplacement positionnel, sans
+arbitrage.
+
+## Règle anti-perte — deux passes, rien à porter
+
+**Passe lexicale**, item par item, chaque terme signifiant cherché dans tout le
+reste de la grille. 34 termes absents à la lettre, dont 32 variantes de surface
+(`écho`/`échographie`, `abdo`/`abdominal`, `gynéco`/`gynécologique`). Deux
+candidats de fond instruits à part, tous deux déjà présents et **plus précis
+dans la grille que dans la checklist** : « AINS topiques » de German-22 →
+« anti-inflammatoires locaux [gel de diclofénac] » ; « retards pubertaires »
+des ATCD familiaux de German-72 → « puberté tardive chez les parents [père avec
+puberté très tardive] », doublé d'un différentiel « retard de croissance
+constitutionnel » avec calcul de la taille cible parentale.
+
+Discriminants cliniques vérifiés nommément et tous retrouvés : éruption non
+prurigineuse de German-43 (« prurit [pas de démangeaisons] »), lésions
+fusionnantes et absence de surinfection de German-42, absence de raideur
+méningée de German-48 (rubrique Kernig / Brudzinski complète), premier épisode
+de German-44, selles grasses de German-72 (stéatorrhée ×7), mono/bilatéralité
+de German-69.
+
+**Contre-épreuve `check_no_loss.py 1729159`** : 132 items retirés, 131 signalés
+disparus, **0 signalé hors checklist**. C'est ce zéro qui compte — il établit
+que le retrait n'a emporté aucun contenu autre que les items de checklist
+eux-mêmes. Les 131 ne sont pas des pertes : la checklist était une
+reformulation télégraphique de contenu tenu ailleurs, et passe sous le seuil de
+0,72 précisément parce qu'elle est télégraphique. Le seul item retrouvé
+au-dessus du seuil est « facteurs de risque → tabac, alcool, RGO, ATCD
+familiaux » de German-34, présent tel quel dans le `resume`.
+
+**Aucun élément n'a eu à être porté vers `resume` ni `annexe-theorie`.**
+
+## Balisage
+
+Bloc **extrait de German-1 par programme**, jamais retapé : section délimitée
+par équilibrage des `<div>`, chaîne réinjectée telle quelle. Les treize
+insertions sont byte-identiques entre elles et à la référence (1 885 octets).
+`section-commcards` → `h4.presentation-section-title` → `.commcard-grid` → deux
+`figure.commcard-item` portant `img` + `figcaption.commcard-caption`. Images
+référencées depuis `../img/`, jamais embarquées ; les `alt` longs de la
+référence conservés mot pour mot.
+
+Garde-fous du script, qui échoue plutôt que d'écrire : une seule occurrence de
+« Checklist mentale » par fichier, bornes par équilibrage strict, section
+retirée portant bien `section-checklist` et `presentation-points`, texte hors
+section inchangé octet pour octet de part et d'autre du point de coupe,
+équilibre `<div>`/`</div>` préservé.
+
+**Le champ `blocks` ne bouge pas**, `check_invariants` le confirme sur les 88.
+Le compte brut de `<div>` augmente de un par grille — la section retirée en
+portait un, l'insérée en porte deux, le `.commcard-grid`. C'est la structure de
+German-1, validée ; l'invariant à tenir était l'équilibre, pas le compte. Une
+assertion initiale sur le compte brut a d'ailleurs été corrigée en assertion
+sur l'équilibre après ce constat.
+
+## Vérifications
+
+`check_invariants` OK 88, `check_nomenclature` OK, `check_reachability` OK
+88/88 à 100 %, `fetch_image --verify` 203 = 203 sans lien cassé ni orpheline.
+amboss OK 40, rescos OK 41.
+
+`report_redundancy` avant → après, inchangé sur les treize : 1, 2, 0, 3, 1, 0,
+0, 2, 0, 1, 0, 1, 1. Aucune hausse — la condition posée. Aucune baisse non
+plus, cohérent avec le 131 de `check_no_loss` : les checklists ne franchissaient
+déjà pas le seuil face aux blocs rédigés.
+
+**Contrôle final : 0 grille avec « Checklist mentale », 88 avec
+`commcard-grid`**, une seule occurrence par grille, 88 avec les deux `.jpg`, 0
+`section-checklist` résiduel.
+
+## Contrôle visuel
+
+Chrome `--headless=new`, rendu local `file://`, aucune requête réseau.
+
+**Piège rencontré et documenté** : `cases/theme-sync.js` lit `localStorage` et
+force `data-theme="dark"` par défaut, en **écrasant** tout `data-theme` posé sur
+`<html>`. Un premier jeu de rendus « clair » est donc sorti identique au
+sombre — détecté par empreinte MD5, pas à l'œil. Corrigé en substituant le
+bootstrap de thème dans la copie temporaire. À retenir pour tout contrôle
+visuel ultérieur sur ce socle.
+
+**German-22** et **German-88**, deux thèmes × deux largeurs, huit rendus :
+côte à côte à 1200 px en clair comme en sombre, empilées à 500 px dans les deux
+thèmes, aucun débordement horizontal, légendes lisibles, bordure et fond des
+images bien basculés en `#334155` / `#1e293b` en sombre. Titre de section en
+teal `#009688` : la règle `.section-commcards .presentation-section-title` fait
+son office, pas de trait noir hérité de `currentColor`. Copies temporaires
+supprimées, absence vérifiée.
+
+## Commits
+
+| Hash | Contenu |
+|---|---|
+| `f908512` | German-15, 19, 22, 27, 34 |
+| `7397145` | German-42, 43, 44, 48 |
+| `6de847e` | German-56, 69, 72, 88 |
+
+Index construit **chemin par chemin**, avec vérification explicite que
+`git diff --cached --name-only | grep -E "rescos|casecos"` rendait zéro ligne —
+trois fois sur trois. Vérifié après coup commit par commit : les trois ne
+touchent que `cases/german/`. Vingt-cinq fichiers de `cases/rescos-locales/`
+étaient modifiés dans l'arbre au démarrage et un commit de la session voisine
+(`ea726d1`) s'est intercalé au-dessus des miens sans conflit ; aucun n'est entré
+dans mes commits. Aucun `git add -A`, aucun `git push`, aucune commande réseau,
+aucun `git gc` ni `git prune`. Aucune section notée touchée, vault intact.
+
+## Ce que ce lot apprend
+
+L'écart est né de ce que les lots précédents ont pris pour périmètre « les
+grilles auxquelles il **manque** un bloc », alors que la règle du gabarit
+portait aussi sur **la forme des blocs déjà présents**. Les 13 grilles n'ont à
+aucun moment figuré dans une liste de travail. Un contrôle transversal de forme
+— du type des deux chiffres ci-dessus, comptés sur les 88 sans référence aux
+lots — aurait levé l'écart plus tôt, et vaudrait d'être rejoué pour les autres
+invariants de gabarit du corpus.
