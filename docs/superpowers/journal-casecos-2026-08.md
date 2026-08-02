@@ -2057,3 +2057,270 @@ série reste à sept.
 * Vault Obsidian lu en **lecture seule** (24 pages SSP).
 * Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
   aucun `timeout`, aucun `snapshot_invariants.py`.
+
+---
+
+## k5f — Sixième et dernier lot : grilles 171 à 198 (sauf 179 et 194)
+
+Branche `refonte-amboss-suisse`, base `5df0ea1`, commit `e4d3863`.
+**Les 198 grilles CasECOS sont traitées.**
+
+**26 grilles sur 26 modifiées — 26 fichiers, 31 insertions, 175 suppressions.**
+Redondance inter-blocs du lot **257 → 134 (−48 %)**, dont
+**`expert ↔ theorie` 142 → 25 (−82 %)**. **Vingt-cinq trous du canonique
+comblés sur dix-huit grilles.** Le balayage des renvois inter-grilles des 198,
+demandé par k5e, est fait.
+
+| porte | avant | après |
+|---|---|---|
+| `check_invariants.py` | rc 0 | **rc 0 — 198 grilles** |
+| `check_nomenclature.py` | rc 0 | **rc 0** |
+| `check_reachability.py` | 198/198 | **198/198 à 100 %** |
+| `bounds_anomalies` + `uncovered_content` | 0 | **0 sur 198** |
+| `report_redundancy.py` (lot de 26) | **257 inter** | **134 inter** |
+| `check_no_loss.py 5df0ea1` | — | **66 disparitions, 66 verdictées** |
+| `report_import_defects.py` | 1634 `chevron-nu` | **1623**, delta 0 sur 6 familles |
+| `scripts/amboss/report_redundancy.py --quiet` | **147** | **147** |
+| `scripts/rescos/report_redundancy.py --quiet` | **127** | **127** |
+| `scripts/amboss/check_invariants.py` · `scripts/rescos/…` | rc 0 | **rc 0** |
+
+### `expert ↔ theorie` : 142 → 25, en trois passes
+
+Le lot ouvrait à **142 paires** `expert ↔ theorie` — plus du double du record
+précédent (63 chez k5e) — pour la raison désormais familière :
+`expert`/Points clés n'est pas un cours *en réduction*, c'est **le cours de
+`theorie` recopié en abrégé**. **165 points clés retirés**, en trois passes de
+sévérité décroissante :
+
+1. **Inclusion de vocabulaire — 138 retraits.** Tout point clé dont *chaque*
+   jeton de contenu vit déjà dans `theorie`. C'est l'instrument qui voit les
+   doublons que le seuil de 0,72 ne mesure pas : un item long qui en contient
+   un court plafonne à 0,60 et reste invisible.
+2. **Doublons au caractère près — 10 retraits.** Des lignes `<li>` **identiques
+   au caractère près** dans `expert` et dans `theorie`. La première passe les
+   avait écartées par prudence — sa garde d'unicité refuse toute chaîne
+   présente deux fois dans le fichier. Elles ont été retirées par découpage
+   **borné au segment d'`expert`**, jamais par remplacement global.
+3. **Écarts de pure modalité — 17 retraits.** Des paires *mesurées* dont les
+   seuls jetons absents du canonique sont des mots d'insistance
+   (« obligatoire », « uniquement », « recommandée », « cruciale »). La nuance
+   d'insistance appartient aux Pièges, pas au cours.
+
+La règle de k5a n'a pas bougé : retrait seulement si (a) le test du référent
+attribue l'item à `theorie`, (b) `theorie` en porte le contenu **intégral**,
+vérifié terme à terme, et (c) `expert` garde le comportement observable dans
+`Rôles` ou `Pièges`. **Aucune sous-section « Points clés » n'a été vidée** —
+contrôle posé avant application ; la plus dégarnie (`UIDC-Monsieur H. Toinnes`
+HTA, rang 192) en garde deux.
+
+**Neuf items ont été refusés par la 3ᵉ passe** parce que leur écart portait un
+**contenu** et non une modalité ; trois ont donné lieu à un **portage préalable
+dans `theorie`**, puis au retrait — la séquence « reformulation en place » de
+k5e : les trois anticholinestérasiques de l'Alzheimer (`rivastigmine`,
+`galantamine`, à côté du seul donépézil), le **sens** de la respiration de
+Kussmaul (« signe d'acidose métabolique sévère »), et les antalgiques nommés de
+la coxarthrose.
+
+### Les 25 paires restantes ne se résolvent pas
+
+Classées par sous-section d'`expert` : **10 Pièges, 8 Rôles, 7 Points clés**.
+Les 18 premières sont **l'artefact de négation et de rôle** — un Piège
+(« Oublier l'antibioprophylaxie ») ou un Rôle (« Évaluer la prise en compte des
+aspects éthiques ») s'apparie mécaniquement à l'item de `theorie` qu'il nie ou
+qu'il désigne. Les 7 dernières sont des quasi-doublons à **écart de synonyme**
+que la normalisation ne réduit pas : `AEG` contre « altération de l'état
+général », `EWGSOP` contre `EWGSOP2`, « Œstrogènes » dont `lib.norm` fait
+`strogenes`. **Aucune ne doit être résolue.**
+
+### Vingt-cinq trous du canonique
+
+| grille | point absent du canonique | vivait dans |
+|---|---|---|
+| `Prééclampsie - Femme 36 ans` | **DPPNI**, **oligohydramnios/RCIU**, **hyperréflexie ostéo-tendineuse** (éclampsie imminente) | `redflags` + `therapy` + section notée |
+| `STEMI - Femme 55 ans` | **score CRUSADE**, **clopidogrel** (P2Y12 de 2ᵉ ligne) | `therapy` + `expert` |
+| `Spondylarthrite axiale` | **test de Schober**, **BASFI**, **BASMI** | `annexe-dd` + `therapy` + **`criteria-detail`** |
+| `Tendinite coiffe rotateurs` | **hyperglycémie transitoire post-infiltration** | `therapy`/Détails |
+| `Trauma abdominal pénétrant` | **CRASH-2**, **exsufflation à l'aiguille** du pneumothorax sous tension | `therapy` + `redflags` |
+| `UIDC-Caroline` (acidocétose) | **œdème cérébral**, mortalité 25 % — le *pourquoi* de la réhydratation lente | `expert` ×4 + `therapy` + `redflags` |
+| `UIDC-Madame Ondine` | **ICIQ-UI / IIQ-7** | **`criteria-detail`** seul |
+| `UIDC-Madame Siaulat` | **démence à corps de Lewy** et sa contre-indication aux neuroleptiques ; **test de Grober et Buschke** | `redflags` + `annexe-dd` + **`criteria-detail`** |
+| `UIDC-Mlle Olivia Veyre` | **torsion d'annexe**, **salpingite**, **classification de Hinchey** | `annexe-dd` + **`criteria-detail`** |
+| `UIDC-Mme A. Parino` | **durée de la légionellose (14-21 j)** — `theorie` portait 5-7 j et 7-14 j, pas celle-là | `expert` seul |
+| `UIDC-Mme Victoria` | **index de Charlson** | **`criteria-detail`** seul |
+| `UIDC-Monsieur Dupont` | **CRM** (marge circonférentielle, sigle) ; **échelle de Bristol** | `expert` + **`criteria-detail`** |
+| `UIDC-Monsieur H. Toinnes` (IDM) | **dissection aortique** : douleur déchirante migratrice, **asymétrie tensionnelle**, élargissement médiastinal | `redflags` + `annexe-dd` + `expert` |
+| `UIDC-Monsieur H. Toinnes` (HTA) | **syndrome de Conn**, **syndrome de Cushing** et vergetures, **réglisse** | `annexe-dd` + **`criteria-detail`** |
+| `UIDC-Monsieur Marcel T.` | **classification GOLD** — 8 occurrences dans la section notée, **0** dans `theorie` | `cloture` + **`criteria-detail`** |
+| `UIDC-Thomas` | **purpura fébrile**, **bombement de la fontanelle**, **Kernig/Brudzinski**, **score de Boyer** | `redflags` + `annexe-dd` + **`criteria-detail`** |
+| `Vertiges aigus - Adulte` | **dissection vertébrale** ; **Weber et Rinne** au diapason | `redflags` + `therapy` + `annexe-dd` + **`criteria-detail`** |
+
+**Aucun n'est venu de `report_redundancy.py`** — septième confirmation. Un tiers
+vient encore d'un « Détails : » de `therapy-item` ou d'un `criteria-detail`.
+
+### L'ouverture n° 1 de k5e confirmée : les `criteria-detail` rapportent
+
+k5e recommandait d'étendre le relevé d'éponymes aux `criteria-detail` de la
+section notée, après y avoir trouvé le signe de Russell. **Neuf des
+vingt-cinq trous de ce lot en viennent** — dont la totalité de ceux de
+`UIDC-Madame Ondine`, `UIDC-Mme Victoria` et `UIDC-Monsieur Marcel T.`, que
+l'instrument borné à `redflags`/`therapy` ne pouvait pas voir. La figure est
+toujours la même : **la section notée fait exécuter un geste ou citer un score
+que le canonique ne nomme pas.** `GOLD` en est le cas extrême — huit
+occurrences dans la cotation, zéro dans le cours.
+
+Le relevé a été débruité par le **vocabulaire minuscule des 198 grilles** : le
+corpus écrit « CONTRE-INDICATIONS », « ATTENTION », « CRITIQUE » en capitales
+pour insister, et un détecteur d'acronymes naïf les rapporte tous. Tout jeton
+dont la forme minuscule apparaît ≥ 8 fois en minuscules dans le corpus est un
+mot français d'emphase, pas un sigle.
+
+### Le balayage des renvois inter-grilles — le défaut de k5e est résolu
+
+Demandé par k5e § 12.5, fait sur les **198 grilles**, sur le **texte visible**
+(motifs « Cf. … », « voir cas/grille/station … », « confer », « se référer à »,
+« comme dans le cas … »). **20 occurrences, aucune fausse à ce jour :**
+
+* **2 renvois inter-grilles**, tous deux **vérifiés justes** :
+  `Fracture vertébrale ostéoporotique` → « cf. cas examen dorsalgie pour
+  détails » désigne `AMC-ECOS1-S9 Dorsalgie`, qui porte bien un examen du
+  rachis détaillé (Inspection, Palpation, Mobilité) ; et
+  `HSA avec convulsion` → « Cf. cas HSA + refus de soins pour théorie
+  complète » — **le défaut trouvé par k5e est résolu par ses propres
+  corrections** : `HSA et refus de soins`/`theorie` porte désormais
+  re-saignement (2), vasospasme (4), hydrocéphalie (2), nimodipine, SIADH,
+  Cerebral Salt Wasting, HTIC et Takotsubo.
+* **2 renvois intra-grille codés** : `AMC-Chir1-ECG1` « COMPLICATIONS
+  RESPIRATOIRES (cf. m1) » désigne **Management 1**, « Insuffisance
+  respiratoire post-opératoire » — **juste**. Mais
+  `Céphalées - Homme 30 ans`/`scenario` porte « (cf. cl2) », et **« cl2 » ne
+  désigne rien** : aucune section « CL » dans la grille, aucun critère « CL2 »,
+  aucune grille du corpus ainsi nommée. Le seul référent plausible est
+  Management 2 (« Examens complémentaires — Smarter Medicine »), qui traite
+  bien l'exigence d'IRM du défi. **Renvoi pendant, consigné et NON corrigé** :
+  l'intention de l'auteur ne se déduit pas, et deviner serait pire que
+  signaler. Grille du lot k5e, hors de ce lot.
+* **16 non-renvois** : déictiques internes (« ci-dessus », « plus loin »,
+  « évolution du cas »), sources externes (ESRA/SSAR, NICE, PDF, lois
+  cantonales), un renvoi interne au moyen mnémotechnique CHIMPANZEES
+  (« N : NÉOPLASIE Cf. C »), et un faux positif du motif (`ADNcf fœtal`).
+
+### Niveau 1 — 26 pages SSP, couverture 26/26
+
+**Première couverture complète d'un lot.** L'ordre prescrit a été tenu sans
+exception : trouver le trou par les instruments, **puis** lire la page. Vault lu
+en **lecture seule**.
+
+**Confirmations** : dissection aortique (*Douleur Thoracique*, 33 occurrences,
+avec le piège « anticoaguler pour un SCA sans avoir écarté la dissection —
+c'est l'erreur qui tue »), dissection vertébrale et Weber/Rinne (*Vertiges*,
+avec vidéo), Conn, Cushing, vergetures et réglisse (*HTA*), purpura (21) et
+fontanelle bombée (14) et Kernig (*Fièvre du Nourrisson*, avec vidéo), Schober
+(*Lombalgies*, avec schéma), hallucinations et halopéridol (*Confusion*),
+Hinchey (*Douleur Abdominale*), ICIQ-SF (*Incontinence Urinaire*), Jobe / Neer /
+Hawkins / Yocum / Patte / Gerber (*Douleur d'Épaule*), oligoamnios (*HTA
+Gravidique*), Lynch (*Rectorragies*).
+
+**Et, une fois de plus, la grille est plus fine que le vault.** Ont **zéro**
+occurrence dans la page qui les desservirait : **CRASH-2** et l'acide
+tranexamique (*Urgences Abdominales Chirurgicales*), **CRUSADE** et
+**clopidogrel** (*Douleur Thoracique*), **score de Boyer* (*Fièvre du
+Nourrisson*), **BASFI/BASMI/BASDAI** (*Lombalgies*), **index de Charlson** et
+**EWGSOP** (*Chute*), **CRM** et **échelle de Bristol** (*Rectorragies*),
+**Grober-Buschke** (*Confusion*), **hyperglycémie post-infiltration** (*Douleur
+d'Épaule*), **hyperréflexie** et **décollement placentaire** (*HTA Gravidique*).
+L'**œdème cérébral de l'acidocétose** n'a qu'une occurrence dans *Polydipsie &
+Polyurie*, et dans un tout autre contexte (DDAVP chez un potomane). **Aucune
+grille n'a été dégradée pour s'aligner sur une page plus pauvre.**
+
+### Jumelles — le témoin, jamais la copie
+
+Les 19 paires relevées par k5e ont servi de **témoin** et non de patron.
+L'asymétrie qu'il mesurait se reproduit : `UIDC-Linda` (178) et `UIDC-Thomas`
+(196), paire interne du lot, n'ont **pas** les mêmes trous — 196 manquait
+purpura, fontanelle, Kernig et Boyer là où 178 les portait déjà. De même
+`UIDC-Monsieur H. Toinnes` AAA électif (189) et AAA rompu (190), **même patient,
+deux stations** : leurs canoniques divergent légitimement, l'un sur la décision
+partagée, l'autre sur le choc hémorragique. Aucune propagation aveugle.
+
+### Anti-perte
+
+`check_no_loss.py 5df0ea1` signale **66 disparitions sur 26 grilles**, toutes
+verdictées par recherche du meilleur répondant dans l'état courant, tous blocs
+confondus :
+
+* **63 retraits de points clés** dont `theorie` porte le contenu sous une autre
+  formulation — 57 au-dessus de 0,50 de similarité, 6 en dessous par
+  **éclatement** : l'item d'`expert` concaténait ce que `theorie` énumère en
+  plusieurs `<li>` (critères de Calin, les 9 symptômes du DSM-5, signes
+  provoqués de l'appendicite, « urgency » de grade 3, HTA rénovasculaire,
+  raisonnement probabiliste). **Vérifiés un par un à la sonde** : Blumberg,
+  Rovsing, psoas et obturateur sont dans `theorie` ; « pensées de mort, idées
+  suicidaires » y est le 9ᵉ symptôme ; « critères de Calin (≥ 4/5 requis) » y
+  ouvre sa propre liste.
+* **3 reformulations en place** de `theorie` (causes secondaires d'HTA,
+  pseudo-résistance, Lab score) — l'item existe toujours, allongé pour recevoir
+  le point manquant.
+
+**Aucune perte.**
+
+### Barème — intact
+
+**0 ligne** du diff ne touche `criteria-text`, `criteria-detail`, `detail-text`,
+`scoring-rule`, `patient-response`, `maxScores`, `sectionInfo`, `coef`,
+`<span class="score">`, `caseConfig`, `scoring.js`, `persistence.js`,
+`therapy-item`, `redflags-text`, `redflags-description`, `cloture-detail` ni
+`exemple-phrase`. Sur les **206 lignes** du diff, **206 sont des `<li>`**
+d'`expert` ou de `theorie` — mesuré, pas supposé. **Règle 1 partout**, pas de
+régénération du baseline.
+
+`report_import_defects.py` : **delta 0 sur six familles**, et `chevron-nu`
+**1634 → 1623**. C'est la première fois qu'il **baisse** : les points clés
+retirés portaient des seuils chiffrés (« < 40 % », « < 4 MET », « < 3 mois »)
+que le canonique écrit déjà. Les ajouts en réintroduisent moins qu'ils n'en
+emportent.
+
+### Aucune erreur factuelle interne
+
+Le compteur de la série **reste à sept**. Les deux associations françaises
+(AFM dans une section notée, France Alzheimer dans un `theorie`) n'ont pas été
+touchées : arbitrage éditorial en attente, conformément à la consigne.
+
+### Contraintes respectées
+
+* Rien écrit hors de `cases/casecos/`, de ce journal et du rapport k5f.
+  **`scripts/casecos/` non modifié** : le contrat de blocs de k4 a tenu sur les
+  **198 grilles** sans un amendement. Les instruments de ce lot (relevé
+  d'éponymes débruité, table de décision par inclusion, usage inversé,
+  détecteur direct de trou, balayage des renvois, moteur de remplacement exact)
+  vivent dans le scratchpad de session, hors du dépôt.
+* **Aucun `git add`** — commit unique par `git commit -F <fichier> -- cases/casecos`.
+  Rien touché sous `cases/german/` ni `cases/rescos-locales/`, où l'utilisateur
+  travaillait en parallèle : vérifié fichier par fichier avant et après commit.
+* **Aucune grille lue en entier avec `Read`** : bornage par `lib.block_spans()`
+  et `lib.top_spans()`, lecture par fenêtres, édition par remplacement exact
+  sous garde d'unicité (tout correctif dont la chaîne n'apparaît pas exactement
+  une fois est **refusé**, pas appliqué au hasard).
+* **Aucun `grep` brut employé comme contrôle** : tous les chiffres publiés
+  viennent de `scripts/casecos/` ou de mesures Python passant par
+  `lib.visible_text()`, `lib.top_spans()`, `lib.matches()` (stdlib seule).
+* Vault Obsidian lu en **lecture seule** (26 pages SSP).
+* Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
+  aucun `timeout`, aucun `snapshot_invariants.py`.
+
+### Ce qui reste ouvert au terme des 198
+
+1. **Le renvoi pendant « (cf. cl2) »** de `Céphalées - Homme 30 ans`/`scenario`
+   — arbitrage d'auteur : le corriger en « M2 » ou retirer la parenthèse.
+2. **Instrument séparé pour `theorie ↔ therapy`** — ouvert depuis k4, confirmé
+   pour la **sixième** fois : 34 des 134 paires restantes du lot, jamais
+   entamées, parce que le barème et le cours *doivent* se recouvrir.
+3. **Les 7 quasi-doublons `expert ↔ theorie` à écart de synonyme** : ils
+   demanderaient une normalisation des sigles (`AEG`, `EWGSOP2`) et du caractère
+   « Œ », que `lib.norm` réduit à `strogenes`.
+4. **Quatre grilles sans page SSP** : `AMC-MCPR-ARC21` (k5c), `AMC-Psy-P12`,
+   `AMC-Psy-P2`, `AMC-Psy-P4` (k5e). Le lot k5f est le seul couvert à 26/26.
+5. **AFM et France Alzheimer** — deux arbitrages éditoriaux à rendre ensemble.
+6. Arbitrages k1 toujours ouverts : 3 « ECOS Diag » obsolètes,
+   `numeration-implicite` (11 occurrences / 7 grilles), nom de fichier
+   « Surdosage de Coumadin », bug d'équilibrage latent de `lib_german` /
+   `lib_rescos` (le chevron nu, corrigé dans `lib_casecos` seul).
