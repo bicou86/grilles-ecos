@@ -1201,3 +1201,211 @@ numérotation continue de 1 à 41. Il n'y a jamais eu de RESCOS-41 : le
 quarante-et-unième fichier est RESCOS-9b. Aucune grille n'a été omise — le tri
 de `lib.grids()` place bien 9b dans le premier lot, et r4a l'avait traitée —
 mais un lot suivant qui se fierait à l'intitulé chercherait un fichier absent.
+
+---
+
+## Lot r7 — réparation des trois défauts de la vérification finale
+
+Base `0e82963`. **Quatre grilles modifiées**, plus `scripts/rescos/baseline.json`.
+Rien lu, écrit ni exécuté sous `cases/german/` ni `scripts/german/`. AMBOSS
+témoin : **147, inchangé**.
+
+### 1. RESCOS-7 et RESCOS-9 — le moteur embarqué, remplacé par `cases/scoring.js`
+
+**Modification**
+
+- RESCOS-7 · le bloc `<script>` de 723 lignes qui embarquait une copie de
+  `calculateScores()` → `window.caseConfig = {maxScores: {communication: 30},
+  coef: {communication: 1}, sectionInfo: [{key: "communication", prefix: "c",
+  count: 15, label: "Communication"}]}` puis `<script src="../scoring.js">`.
+- RESCOS-9 · idem, 727 lignes → `caseConfig` à deux sections, `anamnese`
+  (41, coef 0,7, 14 critères) et `management` (15, coef 0,3, 6 critères).
+
+**Le choix, et pourquoi celui-là.** Deux voies étaient ouvertes : reporter les
+deux corrections manquantes dans les copies, ou basculer sur le fichier partagé.
+Le `diff` a tranché.
+
+1. **L'écart n'était pas de deux corrections mais de six.** Manquaient : la
+   garde `if (missingEl)`, l'**appel** de `saveToRegistry()`, la **définition**
+   de `saveToRegistry()`, le chargeur dynamique de `srs.js`, la détection du
+   mode circuit (avec le retour à `exam.html` en fin de minuteur), et les deux
+   constructeurs de barre de navigation `createNavBar()` / `createCircuitNav()`.
+   Reporter deux corrections aurait laissé quatre régressions vivantes — dont
+   une qui casse le mode circuit sur ces deux stations.
+2. **Il n'y avait rien à préserver.** Les deux copies sont identiques entre
+   elles et identiques à `cases/scoring.js` partout ailleurs — vérifié au
+   `diff` ligne à ligne. Les seuls ajouts sont le bloc de configuration et un
+   `isNewFormat = true` mort (déclaré, jamais lu ; `grep` : une occurrence par
+   fichier). Ce n'était pas une variante, c'était une fourche périmée.
+3. **Le report à la main aurait reconduit le mécanisme de dérive**, celui-là
+   même que la préoccupation n° 7 de r2 avait nommé et que ce défaut réalise.
+
+**Ce que la bascule a exigé de vérifier.** Ces deux grilles n'ont pas de
+`caseConfig` — elles déclaraient leur barème par `sectionInfo.push({…})`.
+`cases/scoring.js` lit exactement trois champs, `maxScores`, `coef` et
+`sectionInfo` : la transposition est un pur changement de forme. Les lignes
+`scores["…"] = 0` de la forme impérative sont redondantes (`scoring.js`
+réinitialise puis écrase par section). RESCOS-7 déclare sa section
+`communication` **sans `isComm`** — ses boutons sont numériques et non
+l'échelle A–E ; la forme impérative ne le déclarait pas davantage, le
+comportement est donc identique.
+
+`check_reachability.py` lit désormais ces deux grilles par sa branche
+`caseConfig` et rend 41/41 à 100 %. **Contrôle de morsure** :
+`maxScores.anamnese` de RESCOS-9 forcé à 40 → `ECART · atteignable=41
+maxScores=40 affiché=/41`. Le vérificateur mord, donc il valide.
+
+**`configForm`, et pourquoi le baseline est régénéré.** Le champ passe de
+`inline` à `caseConfig` sur ces deux grilles. `snapshot_invariants.py` rejoué :
+la régénération **ne déplace que ces deux champs sur 41 grilles**.
+`criteriaCount`, `detailCount`, `radioCount`, `checkboxCount`, `sectionCounts`,
+le nombre de segments par bloc, `boundsAnomalies` et `uncoveredContent` sont
+identiques partout — y compris sur RESCOS-15 et RESCOS-35, qui ne bougent pas
+d'un champ. Le gel a fait son travail : il a signalé exactement le changement
+voulu et rien d'autre.
+
+**Effet de bord mesuré, bénin.** `report_import_defects.py` passe de 96 à 88
+`chevron-nu`. Les huit disparus sont des opérateurs JavaScript des moteurs
+supprimés (`i <= section.count`, `currentSeconds <= 30`, `currentSeconds <= 0`),
+comptés parce que ce rapport balaye le HTML brut, `<script>` compris. Aucune
+autre famille ne bouge. Même cause pour les 36 « crochets » que `visible_text()`
+voyait dans RESCOS-7 à `0e82963` : des littéraux de tableau JS. Hors `<script>`,
+RESCOS-7 porte **0 crochet, avant comme après**.
+
+### 2. RESCOS-15 — la recopie de `redflags` dans `presentation`, réduite
+
+**Modification**
+
+- `presentation` / Touches ludiques / « 👉 Signes d'alarme (Red Flags) » ·
+  les cinq `<li>` recopiés mot pour mot du bloc noté (« Méléna », « Modification
+  récente du transit après 50 ans », « Occlusion (arrêt gaz/selles,
+  distension) », « Perte de poids inexpliquée », « Anémie ferriprive ») →
+  trois lignes organisées par mécanisme : « Saigner → visible dans les selles,
+  ou occulte et déjà anémiant », « Boucher → arrêt des matières et des gaz,
+  ventre distendu », « Retentir → amaigrissement que rien n'explique ».
+  source : arbitrage du geste 4 de r4b — les blocs notés restent intouchables,
+  seule leur recopie dans `presentation` se réduit.
+
+L'arbitrage demandé par r4a (§ 8.2) avait bien été rendu, au lot r4b, mais
+**après** le traitement de cette grille : RESCOS-25, 26 et 28 l'ont reçu, pas
+RESCOS-15. Ce lot le lui applique.
+
+**Réduite et non supprimée**, conformément à la lettre de l'arbitrage. Le geste
+est aussi un retour au format : les `presentation-subsection` de « Touches
+ludiques » du corpus sont des **mnémos** (TVC = 3C, 4P, APPUYER, 3F…), et
+RESCOS-15 était la seule des six grilles à `redflags` à y loger une seconde
+copie du bloc noté.
+
+**Intouchés** : `redflags`, `expert`, `annexe-dd`, et la clé `N` du mnémo SANG
+(« Nouvelle modification du transit après 50 ans »), protégée par la règle du
+format.
+
+**Mesure** : RESCOS-15 14 → **10** paires ; corpus 131 → **127** ; paires
+`redflags` du corpus 5 → **3**. Les quatre paires retirées sont exactement les
+quatre prévues (deux `redflags ↔ presentation`, une `expert ↔ presentation`, une
+`annexe-dd ↔ presentation`, toutes issues de la même recopie). **Aucune paire
+nouvelle**, dans cette grille ni ailleurs — vérifié en comparant les listes,
+pas seulement les totaux.
+
+**`check_no_loss.py 0e82963` signale un item, et c'est un faux positif** :
+« occlusion arrêt gaz selles distension ». La ligne de remplacement dit « arrêt
+des matières et des gaz, ventre distendu » — le comparateur ne voit pas le
+voisinage morphologique parce que deux mots sur quatre changent. Et l'énoncé
+subsiste **verbatim dans le bloc noté**, non modifié : « 3. Occlusion
+intestinale — Arrêt matières et gaz = urgence chirurgicale potentielle ».
+
+### 3. RESCOS-35 — « activité physique adaptée » restaurée
+
+**Modification**
+
+- `presentation` / § Questions / Q3 « Suivi » · « … et je reprendrais le tabac
+  avec elle. » → « … et je reprendrais avec elle la prévention secondaire :
+  l'arrêt du tabac, et la reprise d'une activité physique adaptée à son âge et
+  à son état. »
+  source : `a82e036`, même bloc, même question — « Prévention secondaire :
+  arrêt tabac, activité physique adaptée ».
+
+**Le bloc que le contrat désigne est `presentation`** : l'item est la réponse
+orale à la question de l'examinateur, et c'est exactement l'endroit d'où la mise
+au registre oral l'avait fait tomber. RESCOS-35 ne porte ni `therapy`, ni
+`redflags`, ni `annexe-dd` — ses seuls blocs sont `resume`, `expert`, `theorie`,
+`presentation` et `scenario`. La restauration remet aussi « prévention
+secondaire », qui portait la fonction de l'item.
+
+Aucune paire nouvelle : la seule autre occurrence d'« activité physique » de la
+grille est « Activité physique : sédentaire » dans le `scenario`, qui décrit
+l'habitude de la patiente et que `report_redundancy.py` exclut par défaut.
+
+### 4. Vérifications
+
+| Porte | Résultat |
+|---|---|
+| `check_invariants.py` | **OK**, 41 grilles, code 0 (après régénération du baseline, 2 champs `configForm`) |
+| `check_nomenclature.py` | **OK**, code 0 |
+| `check_reachability.py` | **OK**, 41/41 à 100 % |
+| `report_redundancy.py` | **127** (131 avant) |
+| `check_no_loss.py 0e82963` | 1 item, faux positif verdicté (§ 2) |
+| `report_import_defects.py` | `chevron-nu` 96 → 88, tout le reste inchangé (§ 1) |
+| AMBOSS — invariants + redondance | **OK**, **147**, inchangé |
+
+**Navigateur, les 41 grilles.** Chrome for Testing piloté par le protocole
+DevTools, WebSocket natif de Node 22, serveur statique sur `127.0.0.1` —
+aucun paquet installé, aucune connexion hors boucle locale. Remplissage
+**piloté par le DOM** (`checked = true` puis événement `change`, les
+gestionnaires `onchange` en ligne font le reste).
+
+| Contrôle | Avant r7 | Après r7 |
+|---|---|---|
+| Total 100 %, note A | 41/41 | **41/41** |
+| Chargement sans exception ni erreur de console | 39/41 | **41/41** |
+| `ecos_registry` à `pct: 100, grade: "A"` | 39/41 | **41/41** |
+| Minuteur 13:00 → 12:58 (après `switchMode('exam')`) | 41/41 | **41/41** |
+
+Avant/après mesuré sur un **miroir de `0e82963`** servi depuis le scratchpad,
+avec le même harnais : RESCOS-7 **16 exceptions → 0**, RESCOS-9 **51 → 0**, et
+`ecos_registry` **absent → présent** pour les deux. `ecos_registry` n'est écrit
+qu'à un seul endroit du projet, `cases/scoring.js:804` dans `saveToRegistry()` :
+l'apparition de ces deux entrées ne peut venir que du chargement du moteur
+partagé.
+
+Une seule grille rend zéro crochet coloré, **RESCOS-7, et c'est correct** :
+hors de ses `<script>`, elle ne porte aucun `[…]` — station d'annonce de
+mauvaise nouvelle, quinze critères de communication purs.
+
+### 5. Préoccupations
+
+**5.1 — Le mode circuit et la barre de navigation s'activent sur deux stations
+qui ne les avaient jamais eus.** C'est la contrepartie assumée de la bascule :
+RESCOS-7 et RESCOS-9 se comportent désormais comme les 39 autres. Le contrôle
+en navigateur a été mené hors mode circuit (`ecos_circuit` absent du
+`localStorage`), c'est-à-dire dans la branche `else` de `DOMContentLoaded` —
+**le parcours circuit de ces deux grilles n'a pas été exercé de bout en bout.**
+Il devrait maintenant fonctionner, puisqu'il est celui du fichier partagé ;
+il n'est pas mesuré.
+
+**5.2 — `check_reachability.py` garde une branche devenue morte.** Sa fonction
+`parse_config` lisait la forme impérative en repli quand `caseConfig` ne rendait
+aucune section. Plus aucune grille RESCOS n'emprunte ce chemin. Je l'ai
+**laissée en place** : la retirer serait un geste sur l'outillage sans rapport
+avec le mandat, et elle documente une forme que le corpus a portée. À signaler
+si une passe de nettoyage de `scripts/rescos/` est ouverte.
+
+**5.3 — Les figures d'import du § 7 de la procédure sont périmées depuis
+avant ce lot.** `PROCEDURE-rescos.md` et l'en-tête de
+`report_import_defects.py` annoncent 114 `chevron-nu`, 13
+`comparaison-manquante` et 1 `numeration-implicite` : ce sont les valeurs à
+`a82e036`. À `0e82963` le corpus était déjà à 96 / 12 / **0** — la numération
+implicite « plaquettes 422 » a été corrigée en cours de campagne sans que la
+figure de tête soit reprise. Ce lot amène 88 / 12 / 0. **Non corrigé dans la
+procédure** : c'est un fichier de méthode partagé avec les autres volets, et le
+mandat ne l'ouvre pas.
+
+**5.4 — La règle qui protège `therapy` et `redflags` reste ambiguë sur les
+recopies.** Telle qu'écrite au pilote (« une paire dont un côté est `therapy`
+ou `redflags` n'est pas une redondance à retirer »), elle protège aussi bien
+l'accord voulu entre le noté et le pédagogique que la **recopie pure** du noté
+dans le pédagogique. C'est ce qui a laissé RESCOS-15 passer quatre lots. Le
+geste 4 de r4b a tranché en pratique, pour `therapy` ; ce lot l'étend à
+`redflags`. **La règle du § 3 de `PROCEDURE-rescos.md` n'a pas été récrite** —
+même motif qu'en 5.3. Elle gagnerait la précision : *le pédagogique s'aligne
+sur le noté, il ne le recopie pas.*
