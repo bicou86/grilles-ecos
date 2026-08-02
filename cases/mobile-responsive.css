@@ -700,9 +700,14 @@ select {
   background: rgba(255, 234, 167, 0.1) !important;
 }
 
+/*
+ * Couleur de texte PAR DÉFAUT du bloc résumé : #e2e8f0, alignée sur le reste
+ * du thème sombre (cf. .resume-points li, .resume-table td, .resume-category).
+ * L'ambre #fde68a est réservé aux surlignages explicites (.resume-bullet.highlight).
+ */
 [data-theme="dark"] .resume-subsection .subsection-title,
 [data-theme="dark"] .resume-subsection-points li {
-  color: #fde68a !important;
+  color: #e2e8f0 !important;
 }
 
 [data-theme="dark"] .resume-subsection.urgence {
@@ -729,4 +734,61 @@ select {
 /* ---------- Liens dans le contenu ---------- */
 [data-theme="dark"] a {
   color: #93c5fd;
+}
+
+/* ==========================================================================
+ * SECTIONS PÉDAGOGIQUES — surcharges thème SOMBRE + empilement mobile
+ * (pendant du bloc « socle partagé » de case-styles.css, qui porte le clair)
+ * ========================================================================== */
+
+/* ---------- Termes colorés : variantes sombres ----------
+ * Transposé de skills-ecos.css (`.theme-dark` → `[data-theme="dark"]`).
+ * `!important` + classe doublée `.c-red.c-red` : cf. l'explication détaillée
+ * dans case-styles.css (bloc « socle partagé »). En résumé, (0,3,0) est requis
+ * pour passer devant `[data-theme="dark"] .resume-subsection-points li` (0,2,1),
+ * qui pose `color: #e2e8f0 !important` sur les li du résumé.                   */
+[data-theme="dark"] .c-red.c-red {
+  color: var(--ecos-c-red, #ff6369) !important;
+}
+[data-theme="dark"] .c-pink.c-pink {
+  color: var(--ecos-c-pink, #f65cb6) !important;
+}
+[data-theme="dark"] .c-green.c-green {
+  color: var(--ecos-c-green, #4cc38a) !important;
+}
+[data-theme="dark"] .c-blue.c-blue {
+  color: var(--ecos-c-blue, #849dff) !important;
+}
+[data-theme="dark"] .c-amber.c-amber {
+  color: var(--ecos-c-amber, #f5e147) !important;
+}
+[data-theme="dark"] .c-purple.c-purple {
+  color: var(--ecos-c-purple, #bf7af0) !important;
+}
+[data-theme="dark"] .c-orange.c-orange {
+  color: var(--ecos-c-orange, #ff9d4d) !important;
+}
+[data-theme="dark"] .c-yellow.c-yellow {
+  background: var(--ecos-c-yellow-bg, #f5c8422e) !important;
+}
+
+/* ---------- Cartes de communication : thème sombre ---------- */
+[data-theme="dark"] .commcard-grid img {
+  border-color: #334155 !important;
+  background: #1e293b !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .commcard-caption {
+  color: #cbd5e1 !important;
+}
+
+/* ---------- Cartes de communication : empilement sur écran étroit ----------
+ * Même point de rupture que le reste du fichier (767px = grands mobiles) :
+ * au-delà les deux cartes restent côte à côte. */
+@media (max-width: 767px) {
+  .commcard-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }

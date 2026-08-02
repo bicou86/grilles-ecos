@@ -2268,12 +2268,10 @@ input[type="checkbox"]:focus-visible {
   padding: 15px;
   border-radius: 8px;
   margin: 15px 0;
-  border-left: 5px solid #fdcb6e;
 }
 
 .resume-subsection.urgence {
   background: #fab1a0;
-  border-left-color: #d63031;
 }
 
 .subsection-title {
@@ -3342,7 +3340,6 @@ input[type="checkbox"]:focus-visible {
   padding: 12px;
   border-radius: 4px;
   margin: 10px 0;
-  border-left: 4px solid #ffa726;
 }
 
 .resume-subsection h5 {
@@ -3359,7 +3356,15 @@ input[type="checkbox"]:focus-visible {
 }
 
 .resume-subsection-points li {
-  padding: 3px 0;
+  /*
+   * padding-left OBLIGATOIRE : cette règle est la dernière déclaration de
+   * `.resume-subsection-points li` du fichier, donc la shorthand `padding`
+   * écrase le `padding: 6px 0 6px 20px` posé plus haut (~l. 2294). Sans
+   * retrait gauche, le texte démarre à x=0 et recouvre la puce `::before`
+   * positionnée en absolu à `left: 5px` (~l. 2299). 20px laissent la place
+   * à la puce (5px + ~5px de glyphe) avec une marge confortable.
+   */
+  padding: 0 0 0 20px;
   line-height: 1.5;
 }
 
@@ -3704,4 +3709,130 @@ input[type="checkbox"]:focus-visible {
 }
 .btn-simulate:hover {
   background-color: #2ea8e6;
+}
+
+/* ==========================================================================
+ * SECTIONS PÉDAGOGIQUES — socle partagé
+ * Thème CLAIR ici ; les surcharges thème SOMBRE vivent dans
+ * mobile-responsive.css (seul fichier porteur des règles [data-theme="dark"]).
+ * ========================================================================== */
+
+/* ---------- 1. Termes colorés en ligne (grille sémantique 8 couleurs) ------
+ * Transposé de ~/…/Obsidian/.obsidian/snippets/skills-ecos.css
+ * (sélecteur `.theme-dark` remplacé par `[data-theme="dark"]`).
+ *
+ * Sémantique clinique :
+ *   rouge  = pathologie / danger      · rose   = symptôme / signe
+ *   vert   = examen / normal / score  · bleu   = commentaire
+ *   ambre  = traitement / médicament / geste   · violet = facteur de risque
+ *   orange = complication             · jaune  = concept-clé (fond surligné)
+ *
+ * Conteneurs visés : .resume, .annexe-item.annexe-theorie,
+ * .presentation-section.section-mnemo, .presentation-section.section-questions.
+ *
+ * Sélecteurs NON restreints à ces conteneurs À DESSEIN :
+ *   - ces classes sont opt-in (un élément n'est coloré que parce que l'auteur
+ *     a écrit la classe) et le préfixe `c-` n'existe nulle part ailleurs dans
+ *     le dépôt : le risque de colorer du texte par accident est nul ;
+ *   - restreindre échouerait EN SILENCE si le balisage bouge ou si le contenu
+ *     est re-rendu hors conteneur (révision, export, modale) — c'est la même
+ *     raison qui fait que le snippet Obsidian d'origine les laisse globales.
+ * Valeurs clair + sombre explicites ; surchargeables via --ecos-c-*.
+ *
+ * DEUX renforts délibérés, pour que la classe ne puisse pas échouer en silence
+ * quand elle est posée sur la boîte elle-même (<li>, <td>, <h5>) et non sur un
+ * <span> imbriqué :
+ *   1. `!important` — `.resume-subsection-points li` (0,1,1) bat `.c-red`
+ *      (0,1,0), et la couche sombre pose `color: … !important` sur ces li ;
+ *   2. classe doublée `.c-red.c-red` — porte la spécificité à (0,2,0) [clair]
+ *      et (0,3,0) [sombre, avec le préfixe data-theme], ce qui passe devant
+ *      `[data-theme="dark"] .resume-subsection-points li` (0,2,1) et
+ *      `.annexe-theorie .annexe-title` (0,2,0). Idiome volontaire : sans lui,
+ *      `class="c-red"` sur un <li> fonctionnait en clair mais PAS en sombre —
+ *      or le sombre est le thème par défaut (theme-sync.js).
+ * Vérifié au navigateur : les 8 classes tiennent dans les 4 conteneurs visés,
+ * sur <span> comme sur <li>, dans les deux thèmes.                            */
+
+.c-red.c-red {
+  color: var(--ecos-c-red, #e5484d) !important;
+  font-weight: 600;
+}
+.c-pink.c-pink {
+  color: var(--ecos-c-pink, #d6409f) !important;
+  font-weight: 600;
+}
+.c-green.c-green {
+  color: var(--ecos-c-green, #30a46c) !important;
+  font-weight: 600;
+}
+.c-blue.c-blue {
+  color: var(--ecos-c-blue, #3e63dd) !important;
+  font-weight: 600;
+}
+.c-amber.c-amber {
+  color: var(--ecos-c-amber, #9e6c00) !important;
+  font-weight: 600;
+}
+.c-purple.c-purple {
+  color: var(--ecos-c-purple, #8145b5) !important;
+  font-weight: 600;
+}
+.c-orange.c-orange {
+  color: var(--ecos-c-orange, #c44a00) !important;
+  font-weight: 600;
+}
+/* Jaune : FOND de surlignage, pas une couleur de texte. */
+.c-yellow.c-yellow {
+  background: var(--ecos-c-yellow-bg, #f5c84238) !important;
+  border-radius: 3px;
+  padding: 0 0.18em;
+  font-weight: 600;
+}
+
+/* ---------- 2. Cartes de communication partagées (SBAR / SNAPPS) ----------
+ * Deux images identiques pour les 88 grilles → fichiers PARTAGÉS sous
+ * cases/img/, jamais embarquées en base64.
+ *
+ * Balisage attendu :
+ *   <div class="commcard-grid">
+ *     <figure class="commcard-item">
+ *       <img src="../img/commcard-sbar.jpg" alt="Carte de communication SBAR">
+ *       <figcaption class="commcard-caption">SBAR</figcaption>
+ *     </figure>
+ *     … idem commcard-snapps.jpg …
+ *   </div>
+ *
+ * Côte à côte ≥ 768px, empilées ≤ 767px (cf. mobile-responsive.css).          */
+
+.commcard-grid {
+  display: grid;
+  /* minmax(0, 1fr) : sans le 0, le contenu intrinsèque des images empêche
+     les colonnes de se réduire et la grille déborde horizontalement. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+  margin: 16px 0;
+}
+
+.commcard-item {
+  margin: 0;
+  min-width: 0;
+}
+
+.commcard-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.commcard-caption {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  text-align: center;
 }
