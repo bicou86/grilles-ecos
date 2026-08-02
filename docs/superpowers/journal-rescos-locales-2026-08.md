@@ -2370,3 +2370,352 @@ disparitions assumées sont les huit corrections d'erreur du § 5 et les sept du
 
 German et casecos n'ont été ni lus ni mesurés : l'utilisateur y travaille en
 parallèle.
+
+---
+
+## Lot `t4` — 25 grilles thématiques, des trois « Intoxication » à « Pharmacologie clinique 3 »
+
+Branche `refonte-amboss-suisse`, base `fb78039`. **25 fichiers modifiés**, tous
+sous `cases/rescos-locales/`. Rien touché sous `cases/german/`,
+`scripts/german/`, `cases/casecos/` ni `scripts/casecos/` — ni lu, ni écrit.
+
+**Redondance du lot : 193 → 190.** Corpus **1005 → 1002** (−3, exactement le
+gain du lot ; septième confirmation de l'économie de mesure). Les trois portes
+sont vertes ; AMBOSS reste à **147**, RESCOS à **127**.
+
+### 1. Le lot — et une correction de la liste héritée de `t3`
+
+123 grilles thématiques (nom ne commençant pas par `RESCOS-<chiffre>`, hors les
+9 feuilles porte). 70 traitées par `t1` (rangs 2-11 et 89-98), `t2` (rangs 1 et
+12-35) et `t3` (rangs 36-60).
+
+**Le lot `t3` a énuméré 53 grilles restantes mais n'en a nommé que 50.** Les
+trois manquantes sont les rangs 61 à 63, c'est-à-dire les trois `Intoxication`
+autres que celle des opioïdes. Le mandat reçu reprenait cette énumération et
+demandait de repartir à `Lésion de la coiffe des rotateurs` (rang 64) — ce qui
+aurait laissé un trou de trois grilles derrière le front. **La règle a été
+appliquée plutôt que l'ancre** : ce lot prend les **rangs 61 à 85**, ce qui
+reste 25 grilles et ne laisse aucun trou. Vérification faite, les trois
+`Intoxication` n'avaient été touchées par `74e51e7` que pour le retrait d'un
+`undefined` — leur `diff` ne compte qu'une ligne, et aucun contenu pédagogique.
+
+| # | rang | grille | redondance |
+|---:|---:|---|---:|
+| 1 | 61 | Intoxication — Syndrome anticholinergique (Belladone) | 1 → 1 |
+| 2 | 62 | Intoxication — Syndrome malin des neuroleptiques | 1 → 1 |
+| 3 | 63 | Intoxication médicamenteuse — Paracétamol et benzodiazépines | 0 → 0 |
+| 4 | 64 | Lésion de la coiffe des rotateurs | 19 → 19 |
+| 5 | 65 | Lupus érythémateux systémique — Femme de 26 ans | 26 → 26 |
+| 6 | 66 | Mal à l'épaule — Douleur thoracique | 1 → 1 |
+| 7 | 67 | Mal au dos — Syndrome de Guillain-Barré | 30 → **27** |
+| 8 | 68 | Mal au dos — Syndrome de Guillain-Barré (1) | 3 → 3 |
+| 9 | 69 | Mal au dos 2 — Syndrome de Guillain-Barré | 23 → 23 |
+| 10 | 70 | Ménopause — Femme de 53 ans | 14 → 14 |
+| 11 | 71 | Ostéoporose prévention — Femme de 56 ans | 19 → 19 |
+| 12 | 72 | Otosclérose — Femme de 33 ans | 8 → 8 |
+| 13 | 73 | Pédiatrie — Cardiopathie congénitale CIV | 0 → 0 |
+| 14 | 74 | Pédiatrie — Détresse respiratoire bronchiolite et asthme | 1 → 1 |
+| 15 | 75 | Pédiatrie — Enfant 3 ans avec toux | 0 → 0 |
+| 16 | 76 | Pédiatrie — État fébrile sans foyer | 2 → 2 |
+| 17 | 77 | Pédiatrie — Nourrisson 6 mois avec fièvre | 0 → 0 |
+| 18 | 78 | Pédiatrie — Nouveau-né en détresse respiratoire | 0 → 0 |
+| 19 | 79 | Pédiatrie — Nouveau-né normal et suivi | 0 → 0 |
+| 20 | 80 | Pédiatrie — Occlusion sur bride | 0 → 0 |
+| 21 | 81 | Pédiatrie — Torsion testiculaire | 0 → 0 |
+| 22 | 82 | Pédiatrie — Vomissements et état fébrile — Méningite | 1 → 1 |
+| 23 | 83 | Pemphigoïde bulleuse — Femme de 81 ans | 24 → 24 |
+| 24 | 84 | Pharmacologie clinique 1 — Traitement de la douleur | 11 → 11 |
+| 25 | 85 | Pharmacologie clinique 3 — Interactions médicamenteuses | 9 → 9 |
+| | | **total** | **193 → 190** |
+
+Les trois paires gagnées le sont sur `Mal au dos — Guillain-Barré`, par le même
+mécanisme qu'aux lots précédents : allonger un item de `theorie` lui fait
+franchir le seuil de 0,72 en sens inverse face à son jumeau de `presentation`.
+Rien n'a été supprimé.
+
+**Les 28 restantes**, dans l'ordre : `Pityriasis versicolor` ·
+`Polymyalgia Rheumatica` · `Psoriasis - Femme de 42 ans` ·
+`RCI-Fièvre et douleurs articulaires` · `Sclérose en plaques` ·
+les **3 `SD - Dépistage …`** · les **2 `Sémiologie MSQ`** · `SMIG-1 Syncope` ·
+les **3 `SMIG-2`** · `SMIG-3` · `SMIG-4` · `SMIG-5` ·
+`Syndrome de Guillain-Barré - Homme de 42 ans` ·
+`Syndrome de Stevens-Johnson` · `Syndrome du canal carpien` ·
+`Syphilis secondaire` · `TDAH pédiatrique` · `Toux et maux de ventre` ·
+`Transaminases élevées` · `Trouble panique` · `Urticaire allergique` ·
+`Voyage à Madagascar` · `Voyage au Brésil`.
+
+### 2. Le mapping inverse — 24 pages sur 25, dont deux hors de `SSP ECOS/`
+
+Chaque grille du lot est citée nommément dans le bloc « Références PDF » d'une
+page et d'une seule. **Dix-huit pages** les couvrent, dont **une de
+`Skills ECOS/`** — `Skills — Réflexes Médicamenteux & Antidotes`, qui porte à
+elle seule les deux `Pharmacologie clinique`. Une seule page en porte trois,
+`SSP — Fièvre du Nourrisson` ; quatre en portent deux —
+`SSP — Intoxications Aiguës` (plus celle du lot `t3`), `SSP — Ménopause`,
+`SSP — Lombalgies` et `Skills — Réflexes Médicamenteux & Antidotes`.
+
+**Une seule grille n'est citée nulle part** : `Mal au dos - Syndrome de
+Guillain-Barré - Grille ECOS (1)`. C'est le doublon divergent déjà inventorié
+au § 6 de la procédure ; ses deux sœurs sont citées par `SSP — Lombalgies`,
+dont la matière lui a été appliquée à l'identique.
+
+### 3. `expert` — la lecture d'abord, et ce qu'elle a rendu
+
+**23 grilles sur 25 ont un `expert`** ; les deux qui n'en ont pas
+(`Enfant 3 ans avec toux`, `Nourrisson 6 mois avec fièvre`) n'ont **pas non plus
+de `theorie`**, et ce sont précisément les deux qui portaient les défauts les
+plus nets du lot. **Quatrième confirmation** qu'une grille pauvre en blocs n'est
+pas une grille saine.
+
+**Neuf fois**, `expert` reproche au candidat d'oublier une chose dont la réponse
+n'existe nulle part dans la grille :
+
+| la grille exige… | elle disait… |
+|---|---|
+| « Confondre avec un syndrome sérotoninergique » (Belladone) | rien : 0 occurrence de clonus, hyperréflexie, Hunter, cyproheptadine |
+| « Confondre avec un syndrome sérotoninergique » (SMN) | une entrée d'`annexe-dd`, sans un seul discriminant chiffré ni le traitement |
+| « Méconnaître les polymorphismes CYP2D6 » (Pharmaco 1) | `CYP2D6` dans un attendu noté et dans `expert`, **rien** dans `theorie` |
+| « Prescrire des AINS sans considérer les interactions (IEC, diurétiques) » | rien : 0 occurrence de *triple whammy* |
+| « Savoir quand orienter vers la chirurgie » (coiffe) | ni critère, ni délai, ni notion de réparabilité |
+| « Quelle est la différence entre stapédotomie et stapédectomie ? » | **la stapédectomie n'était nommée nulle part** hors de la question |
+| « Ne pas oublier de rechercher les atteintes silencieuses » + patiente de 26 ans (LES) | 0 occurrence de contraception, tératogène, rétinopathie |
+| « Méconnaître un corps étranger inhalé » (bronchiolite) | une ligne d'`annexe-dd`, sans syndrome de pénétration ni bronchoscopie |
+| « Critères de sortie de maternité » (nouveau-né) | 0 occurrence de mort subite, d'atrésie des voies biliaires, de bilirubine conjuguée |
+
+### 4. Sept erreurs de sécurité — dont deux dans un bloc noté
+
+1. **`Nourrisson 6 mois avec fièvre` — deux absences de signe rangées CONTRE les
+   deux diagnostics graves, dans la même `annexe-dd`.**
+   « Méningite — **Arguments CONTRE** : fontanelle normale · pas de raideur »
+   et « Pyélonéphrite — **Arguments CONTRE** : pas de signes urinaires · couches
+   mouillées normalement », chez un nourrisson de 6 mois. Avant 12-18 mois, la
+   raideur de nuque et le bombement de la fontanelle **manquent dans la majorité
+   des méningites**, et l'infection urinaire se manifeste par une **fièvre
+   isolée sans aucun signe urinaire** — c'est l'infection bactérienne sérieuse
+   la plus fréquente à cet âge.
+   **La grille jumelle le dit elle-même** : `État fébrile sans foyer` écrit
+   « Méningite — **peut débuter sans signes méningés** » et « Pyélonéphrite —
+   **pas toujours de signes urinaires à cet âge** », et
+   `Vomissements et état fébrile` écrit « signes méningés **adaptés à l'âge** ».
+   Trouvé par le contrôle des sœurs. Les deux entrées ont été retournées, et le
+   « → Bandelette urinaire **si la fièvre persiste** » corrigé en bandelette
+   d'emblée. **Troisième occurrence** du motif « absence de signe en argument
+   CONTRE un diagnostic grave » (Psy-Vignette 4 au lot `t1`, Goutte et Enfant
+   qui boîte au lot `t3`) — et la première où il frappe **deux fois dans la même
+   grille**.
+2. **`Paracétamol et benzodiazépines` — flumazénil recommandé exactement là où
+   il est le plus dangereux.** `theorie` écrivait « Flumazénil : **uniquement si
+   dépression respiratoire sévère**, risque de convulsions ».
+   `SSP — Intoxications Aiguës` en fait un **piège éliminatoire** :
+   « CONTRE-INDIQUÉ chez l'épileptique connu, en co-ingestion d'ATD tricycliques
+   ou de toxique pro-convulsivant ». La station est une **intoxication volontaire
+   polymédicamenteuse** dont l'inventaire n'est pas certain : c'est la situation
+   type de la contre-indication. La grille **se contredit elle-même**, son
+   `expert` inscrivant « Administrer du flumazénil systématiquement » parmi ses
+   pièges. Corrigé : contre-indication explicite, conduite par soutien
+   ventilatoire, et bicarbonate si QRS > 100 ms.
+3. **`Lupus érythémateux systémique - Femme de 26 ans` — méthotrexate et
+   mycophénolate proposés à une femme de 26 ans sans un mot sur la
+   tératogénicité, dans l'attendu noté.** `SSP — Douleurs Articulaires` écrit
+   « Grossesse / désir : méthotrexate et léflunomide **contre-indiqués** ;
+   hydroxychloroquine et sulfasalazine compatibles » et « adapter le traitement
+   si grossesse ». La grille n'avait **aucune occurrence** de « contraception »
+   ni de « tératogène ». Corrigé dans `theorie` (volet complet : contraception,
+   anti-Ro/SSA et BAV congénital, antiphospholipides et grossesse) **et** dans le
+   `Détails` du `therapy`, sans ajout ni retrait de sous-item.
+4. **`Ostéoporose prévention` — dénosumab sans l'avertissement du rebond.** La
+   grille l'énumérait comme une option parmi d'autres. Son interruption, ou un
+   simple retard d'injection, provoque un **rebond de résorption avec fractures
+   vertébrales multiples** ; tout arrêt exige un relais immédiat par
+   bisphosphonate. S'y ajoutaient l'absence de correction préalable de la
+   carence en vitamine D (hypocalcémie sévère), l'absence des modalités de prise
+   des bisphosphonates oraux et le relais obligatoire après tériparatide.
+5. **`Belladone` — physostigmine sans la contre-indication qui tue.** La liste
+   de `therapy` (« bloc AV, asthme, obstruction mécanique ») omet le **QRS
+   élargi et la suspicion de tricycliques**, association qui a provoqué des
+   asystolies — alors que la `theorie` de la même grille écrit que
+   l'intoxication donne « parfois QRS élargi » et que son `annexe-dd` garde les
+   tricycliques au différentiel. Porté dans `theorie` ; `therapy` non touché
+   (voir § 7.2).
+6. **`Mal à l'épaule — péricardite` — tamponnade décrite sans sa conduite.**
+   `redflags` la nomme et en donne les signes ; rien nulle part sur la
+   **péricardiocentèse en urgence** ni sur le fait que **diurétiques, dérivés
+   nitrés et ventilation en pression positive y sont dangereux** (choc
+   obstructif précharge-dépendant). C'est la **famille physiopathologique de la
+   récidive des nitrés** : quatrième grille du corpus où un état
+   précharge-dépendant est décrit sans sa réserve.
+7. **`Cardiopathie congénitale CIV` — « Vaccination RSV (palivizumab) si < 2
+   ans ».** Le palivizumab n'est **pas un vaccin** mais un anticorps monoclonal
+   à administrer **mensuellement pendant la saison**, et il n'est pas indiqué
+   chez tous les enfants de moins de 2 ans. Présenté comme une vaccination, il
+   laisse croire à une protection acquise en une injection. Corrigé, avec le
+   nirsévimab. Même grille : « Prophylaxie endocardite si indiquée » remplacé par
+   les indications réelles — **une CIV isolée non opérée ne la justifie pas**.
+
+### 5. Neuf autres corrections et compléments majeurs, dans `theorie`
+
+* **Guillain-Barré (les 3)** — la surveillance respiratoire ne se fait ni à la
+  saturation ni à la gazométrie (**l'hypercapnie est un signe tardif**) mais à
+  la capacité vitale, PiMax et PeMax, règle des **20/30/40** ; pas de
+  succinylcholine ; dysautonomie ; **ne pas associer Ig IV et plasmaphérèse** ;
+  fenêtre de deux semaines ; doser les IgA avant les Ig IV. Et, les trois
+  grilles se présentant comme des lombalgies : **0 occurrence de « queue de
+  cheval »** avant intervention, alors que c'est le premier drapeau rouge de
+  `SSP — Lombalgies`. Ajouté avec l'anévrisme fissuré, la spondylodiscite et la
+  métastase.
+* **Pharmacologie 1** — CYP2D6 et codéine : promédicament, métaboliseurs lents
+  et ultra-rapides, **contre-indication avant 12 ans, après amygdalectomie et
+  pendant l'allaitement** ; *triple whammy* ; aspirine et Reye ; AINS et
+  varicelle ; AINS au 3e trimestre.
+* **Pharmacologie 3** — la **désinduction** : l'arrêt d'un inducteur expose à un
+  surdosage retardé de 1 à 3 semaines, à programmer et non à subir ; conduite de
+  la torsade de pointes (**sulfate de magnésium 2 g**, kaliémie ≥ 4,0 mmol/L,
+  jamais d'antiarythmique allongeant le QT) ; millepertuis et P-gp (échec de
+  contraception, rejet de greffe).
+* **SMN** — métoclopramide et arrêt de L-DOPA comme déclencheurs ;
+  rhabdomyolyse au-delà de 1000 U/L, hyperkaliémie, CIVD, myoglobinurie ;
+  soins intensifs ; réintroduction d'un antipsychotique à distance ; tableau
+  différentiel complet avec le syndrome sérotoninergique.
+* **Coiffe des rotateurs** — les trois familles à écarter avant de conclure :
+  rachis cervical et Spurling, causes viscérales projetées (SCA, cholécystite,
+  Pancoast chez cet ancien fumeur de 62 ans), arthrite septique, PPR et Horton,
+  métastase. Puis les critères et le **délai** de l'adressage chirurgical.
+* **Ménopause** — voie **transdermique** préférée si risque thromboembolique ;
+  le traitement hormonal **n'est pas une contraception** (12 mois après 50 ans,
+  24 avant) ; paroxétine et fluoxétine à éviter sous tamoxifène ; métrorragie
+  post-ménopausique = cancer de l'endomètre jusqu'à preuve du contraire ;
+  dépistages suisses, **colorectal 50-69 ans**.
+* **Otosclérose** — la différence stapédotomie / stapédectomie, que l'`expert`
+  demande et que la grille ne portait pas ; l'**oreille unique entendante**
+  comme contre-indication.
+* **Pemphigoïde bulleuse** — clobétasol sur tout le tégument au moins aussi
+  efficace que la voie générale chez le sujet âgé ; **TPMT avant azathioprine** ;
+  bouquet de prévention de la corticothérapie prolongée ; arrêt de la gliptine
+  inductrice.
+* **Pédiatrie** — ce qu'on **ne** fait pas dans la bronchiolite (dont la
+  kinésithérapie respiratoire) ; corps étranger inhalé et syndrome de
+  pénétration (**0 occurrence** dans `Enfant 3 ans avec toux`) ; minute d'or et
+  cibles de saturation préductale du nouveau-né ; les deux ictères jamais
+  physiologiques et l'**atrésie des voies biliaires avant 45-60 jours** ;
+  prévention de la mort subite ; purpura fulminans et antibiotique avant tout ;
+  signes de strangulation dans l'occlusion et fin du dogme de l'antalgie
+  différée ; détorsion manuelle externe d'attente ; déclaration suisse du
+  méningocoque en 2 heures.
+
+### 6. Le balayage de protection — quatrième zéro consécutif
+
+Relevé sur les 25, **avant** intervention :
+
+| terme | occurrences |
+|---|---|
+| `PAFA` · `art. 426` · `art. 16 CC` · `APEA`/`KESB` · `curatelle` · `discernement` | **0 sur 25** |
+| `143` · `147` | **0 sur 25** |
+| `144` | 1, sur la seule grille de méningite |
+| `145` | 4 (les 3 intoxications + Pharmacologie 3) |
+| `LAVI` | 7 occurrences, **toutes** « sus-**clavi**culaire » ou « acromio-**clavi**culaire » |
+
+**Quatre lots, 95 grilles, le même zéro.** Rien n'a été retiré ; deux sections
+ont été ajoutées à `theorie` : le PAFA et ses conditions (art. 426 CC, en
+distinguant l'art. 434 CC pour le traitement sans consentement) avec le filet de
+sécurité 143/147 dans la grille de tentative de suicide, et la **capacité de
+discernement du mineur (art. 16 CC)** dans la grille de torsion testiculaire —
+un adolescent de 13-16 ans consent lui-même à une chirurgie potentiellement
+mutilante, et la station ne le disait pas.
+
+### 7. Préoccupations
+
+#### 7.1 La liste des restantes, transmise fausse d'un lot à l'autre
+
+Voir § 1. L'énumération de `t3` a perdu trois noms sans que son total le
+signale, et le mandat de ce lot a repris l'ancre erronée. **Le contrôle qui
+rattrape est le calcul de la liste par la règle**, pas la lecture du rapport
+précédent. Recommandation : donner le rang numérique dans le rapport, et pas
+seulement les noms.
+
+#### 7.2 Trois divergences laissées dans un bloc noté, consignées
+
+1. **`Belladone`, `therapy`** : « CI : bloc AV, asthme, vessie/intestin
+   mécaniquement obstrués » — la liste est présentée comme complète et omet le
+   QRS large. La page ne traite pas la physostigmine ; la condition « sourcée »
+   de l'arbitrage n'était donc pas remplie, et la réserve a été portée dans
+   `theorie` seule. **C'est la divergence la plus sérieuse du lot.**
+2. **`Paracétamol`, `therapy`** : « Étape 2 : 150 mg/kg dans 1000 ml sur 24 h
+   (**1×/jour pendant 3 jours**) » — la N-acétylcystéine intraveineuse est une
+   perfusion continue de 21 h (schéma en trois poches) ou de 20 h (schéma en
+   deux poches), prolongée en présentation tardive jusqu'à normalisation de
+   l'INR — jamais trois doses journalières. Le schéma correct est porté dans
+   `theorie`.
+3. **`Bronchiolite`, `therapy`** : « Maintien saturation **> 94 %** », quand le
+   `redflags` de la même grille fixe le seuil d'hypoxémie à **92 %**. La grille
+   se contredit ; viser 94 % prolonge l'hospitalisation sans bénéfice. Seuil
+   actuel porté dans `theorie`.
+
+#### 7.3 Une déclaration obligatoire suisse imprécise, dans un sous-item noté
+
+`Vomissements et état fébrile — Méningite` porte, dans un `criteria-text`,
+« Déclaration obligatoire [**NON pour pneumocoque**] ». En Suisse, l'infection
+invasive à pneumocoque **est** soumise à déclaration — par le laboratoire et
+dans le délai ordinaire ; ce qui n'existe pas, c'est la déclaration urgente par
+le clinicien et la chimioprophylaxie de l'entourage, réservées au méningocoque.
+Le sous-item n'a pas été touché (règle 2 du barème) ; `theorie` porte désormais
+la formulation exacte, **complémentaire et non contradictoire** avec l'attendu.
+
+#### 7.4 Une page qui ne porte pas la matière de sa grille
+
+`SSP — Éruption Cutanée` cite `Pemphigoïde bulleuse` mais n'a **aucune section
+sur les dermatoses bulleuses auto-immunes** : le mot « pemphigoïde » n'y figure
+que deux fois, dans un tableau de lésions élémentaires et sa légende. Constat
+identique à celui du lot `t3` sur la même page pour la cellulite et la fasciite.
+Niveau 2 appliqué. De même, `SSP — Troubles de la Croissance` cite
+`Cardiopathie congénitale CIV` sans rien porter sur les cardiopathies, et
+`SSP — Détresse Respiratoire (Adulte-Enfant non-néonatal)` est presque
+entièrement adulte pour une grille de bronchiolite.
+
+#### 7.5 Coordination
+
+Aucun `git add`. Validation directe par
+`git commit -F <fichier> -- cases/rescos-locales/ docs/superpowers/journal-…`.
+`core.quotepath=false` sur toutes les commandes de contrôle. Aucun `git push`,
+aucune commande réseau, aucun `git gc` ni `git prune`. Les fichiers de
+l'utilisateur sous `cases/german/`, `cases/img/german/`, `cases/casecos/` et
+`scripts/casecos/` étaient déjà modifiés au démarrage : ni touchés, ni inclus
+dans le commit. Un `git stash push -- cases/rescos-locales/` a été employé deux
+fois pour mesurer l'état « avant », toujours suivi immédiatement de son `pop`,
+et toujours borné au seul chemin `cases/rescos-locales/`.
+
+### 8. Vérifications
+
+```
+check_invariants.py                     OK — 165 grilles, code 0
+check_nomenclature.py                   OK — 0 terme, code 0
+check_reachability.py                   OK — 156/156 notées à 100 %, code 0
+report_redundancy.py (lot de 25)        193 -> 190
+report_redundancy.py (corpus)           1005 -> 1002   (−3 = gain du lot)
+check_no_loss.py fb78039                25 items, verdictés un à un, 0 perte
+browser_probe.js (les 25) --deep        25/25 sans exception · 25/25 à 100 %
+                                        25/25 registry · barre nav fixed
+                                        0 recouvrement · crochets colorés 25/25
+bounds_anomalies / uncovered_content    [] / {} sur les 25
+snapshot champ par champ                0 divergence — 14 champs × 25 grilles
+diff : marqueurs de barème              0 ligne sur 325
+format .criteria-text « N. Libellé »    0 écart sur les 25
+crochets […] de cloture                 101 avant, 101 après
+
+AMBOSS  report_redundancy 147 (inchangé) · invariants / nomenclature / atteignabilité code 0
+RESCOS  report_redundancy 127 (inchangé) · invariants / nomenclature / atteignabilité code 0
+```
+
+Les 25 items signalés par `check_no_loss` sont des réécritures sur place. Un
+contrôle de couverture lexicale n'en isole que **deux** sous 0,85, et ce sont
+exactement les deux corrections délibérées : « uniquement si dépression
+respiratoire **sévère** » (flumazénil) et « **RSV** » remplacé par « VRS »
+— ce dernier a été rétabli sous la forme « VRS (virus respiratoire syncytial,
+RSV) » avant validation, pour ne pas perdre l'acronyme anglophone à la
+recherche. **Aucun retrait plein.** Les seules disparitions assumées sont les
+corrections d'erreur des § 4 et 5.
+
+`check_nomenclature` n'a **rien** rattrapé cette fois — première fois en trois
+lots. Il a néanmoins été lancé avant validation, comme demandé.
+
+German et casecos n'ont été ni lus ni mesurés : l'utilisateur y travaille en
+parallèle.
