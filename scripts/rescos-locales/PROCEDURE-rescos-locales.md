@@ -66,9 +66,7 @@ Même architecture que `scripts/rescos/` : dossier autonome, qui **importe** de
 | `browser_probe.js` | contrôle en navigateur (Node + Chrome) | 0 |
 | `apply_shared_engine.py` | **transformation** : bascule sur `cases/scoring.js` | 0 |
 | `prune_dead_images.py` | **transformation** : retire les `<img>` mortes ; `--list` inventorie | 0 |
-
-Aucun `apply_lab_nomenclature.py` n'est fourni : une passe de nomenclature devra
-en écrire un.
+| `apply_lab_nomenclature.py` | **transformation** : passe de nomenclature suisse ; `--check` à blanc | 0 |
 
 > **`check_no_loss.py` était aveugle sur les deux tiers du corpus.** Son
 > `git diff --name-only` sans `-z` recevait `"…Polytraumatis\303\251…"` —
@@ -163,17 +161,58 @@ ferait crier `uncovered_content()` sur 29 grilles saines) mais **dans**
 ```
 python3 scripts/rescos-locales/check_invariants.py     # OK, 165 grilles
 python3 scripts/rescos-locales/check_reachability.py   # OK, 156/156 à 100 %
-python3 scripts/rescos-locales/check_nomenclature.py   # ÉCHEC, 368 termes
+python3 scripts/rescos-locales/check_nomenclature.py   # OK, 0 terme
 ```
 
-| porte | inventaire (`l2`) | après `l3` |
-|---|---|---|
-| `check_invariants` | OK, 165 | **OK, 165** |
-| `check_reachability` | ÉCHEC, 1 grille | **OK, 156/156 à 100 %** |
-| `check_nomenclature` | ÉCHEC, 368 termes | ÉCHEC, 368 termes |
+| porte | inventaire (`l2`) | après `l3` | après `l4` |
+|---|---|---|---|
+| `check_invariants` | OK, 165 | OK, 165 | **OK, 165** |
+| `check_reachability` | ÉCHEC, 1 grille | OK, 156/156 à 100 % | **OK, 156/156 à 100 %** |
+| `check_nomenclature` | ÉCHEC, 368 termes | ÉCHEC, 368 termes | **OK, 0** |
 
-`check_nomenclature` reste **rouge, et c'est le constat** : aucune passe de
-nomenclature n'a encore été menée sur ce corpus.
+**Les trois portes sont vertes.** Elles peuvent désormais être câblées en CI sur
+ce corpus — c'était la préoccupation n° 1 de `l2`.
+
+### La passe de nomenclature — `l4`
+
+**424 remplacements sur 108 grilles**, dont **56 que le relevé de `l2` ne
+voyait pas**. Le détail — analytes, facteurs, faux positifs, mnémoniques
+traversés — est dans
+`docs/superpowers/journal-rescos-locales-2026-08.md`, section « Lot `l4` ».
+Trois points de méthode s'appliquent au-delà de ce corpus.
+
+**1. Le motif décide de ce qu'on trouve, pas la famille.** Les 56 termes
+manquants ne formaient aucune famille nouvelle : `Gold standard` capitalisé (8),
+les graphies minuscules `ng/ml` / `pg/ml` / `g/dl` / `mEq/l` (17 — et `ng/ml`
+était **plus fréquent** que `ng/mL`), `Plaquettes` en tête de phrase (3 valeurs,
+`_HEMO` était sensible à la casse). Chaque manque était un défaut de bordage.
+
+**2. L'analyte décide du facteur, jamais l'unité de départ.** Une seule unité de
+départ peut avoir trois unités d'arrivée : les 14 `ng/mL` sont 9 conversions × 1
+vers µg/L (D-dimères, PCT, PSA) et **une seule** × 1000 vers ng/L (troponine).
+Les 6 `mg/dL` sont 1 créatinine (× 88,4), 4 glycémies (÷ 18) et 1 bilirubine
+**déjà en SI** dont il fallait retirer le doublon, pas le convertir.
+
+**3. Le qualificatif voisin est un CONTRÔLE, pas un décor.** « CRP [17 mg/ml -
+légèrement élevée] » : 17 mg/mL vaudrait 17 000 mg/L. C'est « légèrement
+élevée » qui prouve que l'unité voulue était mg/L et que la correction est une
+**coquille à redresser**, pas une conversion à calculer. `mg/mL` reste par
+ailleurs **interdit de bannissement global** — c'est l'unité de la PC20 à la
+méthacholine ; le motif est borné à la CRP.
+
+**Cinq faux positifs français, mesurés dans ce corpus**, s'ajoutent aux cinq de
+`l2` : `HIV` = hémorragie intraventriculaire (Fisher grade 4), `ACE` = antigène
+carcino-embryonnaire, `EMS` = établissement médico-social (34 occurrences, terme
+**suisse**), `HR` = haute résolution / isoniazide-rifampicine, `LP` = libération
+prolongée. Et `Spasfon` a été écarté pour une raison plus forte que l'usage :
+son équivalent suisse est **une autre molécule**.
+
+**Le critère qui tranche une traduction** est mesurable : l'équivalent français
+est-il **déjà employé par le corpus** ? `CPRE` 14 fois, `cholangio-IRM` 6,
+`BPCO` 122, `LES` 16 — les six familles ajoutées le sont sur ce fait. Le même
+critère écarte `PTSD`, `DKA`, `HHS` : ni `TSPT`, ni `ESPT`, ni `SHH` n'existent
+nulle part dans les quatre corpus, et les traduire aurait introduit un terme que
+rien n'atteste.
 
 ### Barème défaillant — 1 grille — **réparé (lot `l3`)**
 
@@ -341,7 +380,7 @@ et dénominateurs affichés. 0 divergence.
 | redondance inter-blocs | 147 | 14 | 127 | **1258** |
 | redondance intra-bloc | — | — | — | **633** |
 | par grille | 3,7 | 0,2 | 3,1 | **7,6** |
-| termes non suisses | 0 | 0 | 0 | **368 / 103 grilles** |
+| termes non suisses | 0 | 0 | 0 | **0** (368 / 103 grilles à l'inventaire) |
 
 Couples de blocs les plus redondants : `presentation ↔ resume` 311,
 `presentation ↔ theorie` 245, `annexe-dd ↔ presentation` 194,
@@ -497,8 +536,14 @@ grille est un geste éditorial, hors du mandat de réparation technique.
 
 ## 7. Ce que ce volet n'a pas fait
 
-- **Aucune passe de nomenclature.** 368 termes non suisses restent sur 103
-  grilles ; `check_nomenclature` reste rouge, et c'est le constat.
+- **Aucune déduplication de contenu.** `report_redundancy` reste au-dessus de
+  1200 ; l'arbitrage d'une recopie est un geste éditorial. La passe `l4` a fait
+  passer ce compteur de 1258 à **1260** — sans dupliquer quoi que ce soit :
+  unifier le vocabulaire fait franchir le seuil de ressemblance (0,72) à des
+  paires que **deux graphies du même énoncé** rendaient invisibles. « Hernie
+  discale » écrivait déjà `irm lombaire examen de reference` dans `theorie` et
+  `irm lombaire gold standard` dans `presentation` : 0,610 avant, 1,000 après.
+  Quatre paires franchissent le seuil vers le haut, quatre vers le bas.
 - **Aucun contenu médical modifié.** Les quatre réparations du lot `l3` sont
   techniques : moteur, coefficient, nom de fichier, balise `<img>` morte.
   `check_no_loss` rend 0 sur 156 grilles, la redondance reste à 1258.

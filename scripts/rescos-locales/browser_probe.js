@@ -276,7 +276,20 @@ async function main() {
     try { fs.rmSync(userDir, {recursive: true, force: true}); } catch (e) {}
     if (summary) {
         const nErr = out.filter(o => o.errsLoad.length || o.errsFill.length);
-        const nReg = out.filter(o => o.registryKeys && o.registryKeys.length);
+        // Le decompte porte sur la CLE PROPRE de chaque grille, jamais sur la
+        // non-vacuite du registre. `localStorage` est partage par toutes les
+        // pages de la meme origine : les 165 sondages se suivent dans le meme
+        // profil, et un `registryKeys.length > 0` rend donc 165/165 en
+        // attribuant a chaque grille les entrees des precedentes — y compris
+        // aux 9 feuilles porte, qui n'ont aucun `<script>` et ne peuvent rien
+        // ecrire. Verifie sur profil neuf : sondees seules, elles rendent 0 cle.
+        // `saveToRegistry()` construit la cle depuis `location.pathname`, donc
+        // percent-encodee ; on decode pour comparer.
+        const ownKey = o => (o.registryKeys || []).some(k => {
+            try { return decodeURIComponent(k) === o.name.replace(/\.html$/, ''); }
+            catch (e) { return false; }
+        });
+        const nReg = out.filter(ownKey);
         const n100 = out.filter(o => o.total === '100%');
         console.log('grilles sondees            : ' + out.length);
         console.log('sans exception ni erreur   : ' + (out.length - nErr.length) + '/' + out.length);

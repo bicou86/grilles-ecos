@@ -10,6 +10,7 @@ Quatre réparations **techniques** : aucun contenu médical n'a été modifié.
 | `l3` · défaut 2 | `7e13f93` | RESCOS-63, somme des coefficients 0,5 → 1 |
 | `l3` · défaut 3 | `73353a1` | RESCOS-69b, deux vignettes sous le même nom |
 | `l3` · défaut 4 | `9c34f34` | 92 références d'image mortes retirées |
+| `l4` | *(ce lot)* | passe de nomenclature suisse — 424 termes sur 108 grilles |
 
 Les quatre commits sont `path`-scopés sur `cases/rescos-locales` et
 `scripts/rescos-locales`, et **rien d'autre** — vérifié commit par commit.
@@ -380,7 +381,283 @@ l'échelle de ce corpus. Aucune autre famille ne bouge.
 
 ---
 
-## Ce que ce lot n'a pas fait
+## Lot `l4` — la passe de nomenclature suisse
+
+Base `29271b2`. **424 remplacements sur 108 grilles**, aucune des 9 feuilles
+porte touchée (elles ne portent pas de biologie). `check_nomenclature` passe de
+**368 / 103 grilles** à **0**.
+
+### Le relevé annoncé n'était pas le relevé réel
+
+368 termes étaient portés au constat de `l2`. La passe en a traité **424**,
+dont **56 que la table ne voyait pas**. Ils ne se répartissent pas au hasard :
+chacun des cinq manques est un défaut de *bordage* du motif, pas un oubli de
+famille.
+
+| ce que le motif ne voyait pas | termes | pourquoi |
+|---|---:|---|
+| `Gold standard` capitalisé | **8** | `gold standard` était borné en minuscules — un cinquième de la famille |
+| `ng/ml` `pg/ml` `g/dl` `mEq/l` minuscules | **17** | la table AMBOSS borne la graphie canonique ; ce corpus écrit surtout la minuscule (9 `ng/ml` contre 5 `ng/mL`) |
+| `ERCP` `MRCP` `COPD` `SLE` `BSA` `QD` | **23** | familles entières absentes de la table |
+| `Plaquettes` / `Leucocytes` en tête de phrase | **3 valeurs** | `_HEMO` était sensible à la casse |
+| `°F`, `Doliprane`, « appeler le 15 », CRP en `mg/mL` | **5** | aucun motif ne les couvrait |
+
+Et **deux occurrences annoncées étaient fausses** — voir « les faux positifs »
+plus bas. Le compte exact de la famille « numération implicite » n'est donc pas
+8 mais **8 lignes portant 9 valeurs**, dont 2 des 8 annoncées étaient à écarter
+et 3 valeurs n'avaient jamais été vues.
+
+### L'analyte décide du facteur — et rien d'autre
+
+C'est le seul endroit du lot où une erreur aurait été **silencieuse et
+grave** : un nombre faux dans une grille se lit comme un nombre vrai.
+
+| unité de départ | occurrences | analytes | facteur | unité d'arrivée |
+|---|---:|---|---|---|
+| `mg/dL` | 6 | créatinine (1) | **× 88,4** | µmol/L |
+| | | glycémie (4) | **÷ 18** | mmol/L |
+| | | bilirubine (1) | — | *déjà en SI, doublon retiré* |
+| `g/dL` + `g/dl` | 7 | hémoglobine | **× 10** | g/L |
+| `ng/mL` + `ng/ml` | 14 | D-dimères (8) | **× 1** | µg/L |
+| | | PCT (4), PSA (1) | **× 1** | µg/L |
+| | | troponine I (1) | **× 1000** | ng/L |
+| `pg/mL` + `pg/ml` | 8 | BNP / NT-proBNP | **× 1** | ng/L |
+| `mEq/L` + `mEq/l` | 4 | lactate, K⁺ (monovalents) | **× 1** | mmol/L |
+| `/mm³` | 17 | LCR (7) | **× 1** | /µL |
+| | | sang, liquide articulaire (10) | **× 0,001** | G/L |
+| numération nue | 9 valeurs | hémogramme | **× 0,001** | G/L |
+
+**Une seule unité de départ, trois unités d'arrivée.** Les 14 `ng/mL` en sont
+la démonstration : la troponine est la seule à changer d'ordre de grandeur, et
+elle partage sa ligne avec un BNP en `pg/mL`, autre analyte, autre facteur.
+
+Deux vérifications ont changé le geste :
+
+* **`mg/dL` de RESCOS-47** — « bilirubine >50 μmol/L (3 mg/dL) ». La valeur SI
+  est *déjà là* ; le `mg/dL` n'est qu'un doublon américain. Converti, il aurait
+  produit une seconde valeur redondante. **Retiré, pas converti.** Contrôle :
+  3 × 17,1 = 51,3 µmol/L, cohérent avec le « >50 » écrit.
+* **`mg/mL` sur la CRP**, 2 occurrences — « CRP [17 mg/ml - légèrement élevée] ».
+  17 mg/mL vaudrait 17 000 mg/L. **C'est le qualificatif voisin qui prouve
+  l'unité voulue** : « légèrement élevée » ne peut désigner que 17 mg/L. Le
+  nombre est juste, l'unité est une coquille — redressée, pas convertie. Et le
+  motif est borné à la CRP : `mg/mL` est l'unité légitime de la PC20 à la
+  méthacholine (2 occurrences sur AMBOSS-18).
+
+### Plusieurs valeurs sur une ligne — quatre lignes concernées
+
+| grille | ligne | ce qu'une conversion partielle aurait laissé |
+|---|---|---|
+| AMC Urgences 1 | `Hb > 7-9 g/dL, plaquettes > 50 000` | un seuil de plaquettes muet à côté d'une Hb corrigée — **deux familles différentes** |
+| AMC Urgences 5C | `Leucocytes < 4000 ou > 20000` | une borne convertie, l'autre non — **même analyte** |
+| AMC Urgences 2A | `Troponine I > 0.4 ng/mL, BNP > 100 pg/mL` | deux analytes, deux facteurs (× 1000 et × 1) |
+| RESCOS-50, RESCOS-58 | `Hb < 7-8 g/dL` | la borne haute laissée à 8 |
+
+### Les faux positifs — cinq motifs évidents écartés sur mesure
+
+Chacun a une **lecture française légitime dans ce corpus même** :
+
+* **`HIV`** — classification de Fisher modifiée, grade 4 : « HSA + hématome
+  intraparenchymateux ou **HIV** ». Ici HIV = **hémorragie
+  intraventriculaire**. Un `sed HIV → VIH` aurait fait du virus une
+  complication de l'hémorragie méningée. 1 occurrence sur 13. *(L'abréviation a
+  été développée : elle se lisait « virus » pour n'importe quel lecteur.)*
+* **`ACE`** — « ACE [métastases hépatiques] », « scanner TAP, ACE » :
+  **antigène carcino-embryonnaire**, pas l'*angiotensin-converting enzyme*. Le
+  corpus écrit d'ailleurs `IEC` 30 fois pour les inhibiteurs.
+* **`EMS`** — 34 occurrences : **établissement médico-social**, terme suisse.
+  Une grille entière s'intitule « Consultation téléphonique EMS ».
+* **`HR`** — « CT thoracique HR » (haute résolution) et « HR bithérapie »
+  (isoniazide + rifampicine). Deux lectures, aucune anglaise.
+* **`LP`** — « Tramadol LP » : libération prolongée.
+
+Et deux faux positifs **du motif de numération implicite**, qui expliquent
+pourquoi 8 occurrences annoncées ne valaient pas 8 corrections :
+
+* **un ratio** — « PL traumatique : 1 GB pour 500-1000 GR ». Le 500 n'a pas
+  d'unité et n'en veut pas ; le convertir aurait inventé une numération.
+* **une borne de norme** — « plaquettes 450 G/L (N: 150-400) ». Le motif
+  s'accrochait au 150 de l'intervalle de référence, dont l'unité est portée par
+  le résultat douze caractères plus tôt.
+
+Trois autres ont été écartés **sans les activer**, sur le même principe :
+`SMUR` (le service existe en Suisse romande), `Augmentin` (enregistré en
+Suisse), **`Spasfon`** — et celui-là pour une raison plus forte que les autres :
+son équivalent suisse, le Buscopan, est **une autre molécule**. Le substituer
+aurait changé le médicament, pas son nom.
+
+### Le critère qui a tranché les traductions
+
+Six familles nouvelles ont été activées, et une règle mesurable a décidé de
+chacune : **l'équivalent français est-il déjà employé par ce corpus ?**
+
+| ajouté | rendu par | déjà présent dans le corpus |
+|---|---|---:|
+| `ERCP` | CPRE | **14** |
+| `MRCP` | cholangio-IRM | **6** |
+| `COPD` | BPCO | **122** |
+| `SLE` | LES | **16** |
+| `BSA` | surface corporelle | **11** |
+| `QD` | 1x/j | `x/j` **37**, `x/jour` **44** |
+
+Le même critère a **écarté** `PTSD` (7 occurrences), `DKA` et `HHS` (5 chacun) :
+ni `TSPT`, ni `ESPT`, ni `SHH` n'apparaissent nulle part dans les quatre corpus.
+Les traduire aurait introduit un terme que rien n'atteste. Ils sont **mesurés et
+signalés**, non corrigés.
+
+Écarté aussi, et pour une raison de précédent : `MCV`, `MCH`, `MCHC`, `CEA`,
+`HBV`, `IGRA`, `DEXA` — ce sont les graphies des **rapports de laboratoire
+suisses**, pas des anglicismes.
+
+### Ce qu'un `sed` uniforme aurait cassé — huit endroits
+
+* **`gold standard` × 1** — « Angioplastie primaire … Gold standard: » désigne
+  un **traitement**. Rendu « traitement de référence ». C'est exactement le
+  « Méthotrexate = gold standard » de la campagne rescos, retrouvé ici.
+* **`gold standard` × 1** — « HAM-D : échelle de Hamilton, gold standard
+  clinique » : ni examen ni traitement, une **échelle**. Rendu « référence
+  clinique ».
+* **`gold standard` × 3** — accords et élisions : « sont **le** gold standard »
+  → « sont **la méthode** de référence » ; « qui est **le** gold standard » →
+  « qui est **l'**examen de référence » ; « gold standard **diagnostique** » →
+  « examen de référence » (le pléonasme retiré).
+* **`DMARDs` × 2** — « Traitement de fond (DMARDs) » serait devenu
+  « Traitement de fond (traitement de fond) ». La parenthèse est retirée.
+* **`SCFE` × 1** — « Épiphysiolyse fémorale supérieure (SCFE) » : même piège,
+  même geste.
+* **`BMI` × 1** — score **BODE** : « B: BMI | O: Obstruction | D: Dyspnée |
+  E: Exercise ». La lettre B du mnémonique *est* l'acronyme. Rendu « B: Body
+  mass index (IMC) » : mnémonique intact, français présent.
+* **`HIV` × 1** — « Sites web [drugs.com, **HIV drug interactions**] » est le
+  nom propre du site de l'université de Liverpool. Rendu sous sa forme d'URL,
+  `hiv-druginteractions.org`, comme le `drugs.com` qui le précède.
+* **`NFS` × 3** — « FSC complète » se lirait « formule sanguine complète
+  complète », et la FSC inclut déjà les plaquettes (« NFS-plaquettes » × 2).
+
+Deux mnémoniques ont en revanche été traversés **sans dommage, et c'est
+vérifié** : `A = ANA` du SOAP BRAIN MD (AAN commence aussi par A), et le `C =
+CSF` du Guillain-Barré, laissé intact — `CSF` n'a pas été activé.
+
+### Les régions intouchables
+
+`apply_lab_nomenclature.py` masque `<style>`, `<script>` et les data-URI avant
+toute substitution. Ce n'est pas une précaution de principe :
+
+* **les 165 grilles portent leur CSS en ligne** (0 `case-styles.css`). Mesure
+  qui l'a imposé : rendre `_HEMO` insensible à la casse ferait matcher le `gb`
+  de `rgba(0,0,0,0.2)`, et le `z-index: 1000` deux lignes plus bas complèterait
+  le motif de numération implicite — **165 grilles rouges sur une feuille de
+  style**. D'où l'alternance lettre par lettre sur les mots (`[Pp]laquettes`) et
+  la casse **stricte** sur les acronymes (`GB`, `PNN`, `PLT`).
+* **156 grilles chargent `cases/scoring.js`** depuis `l3` et portent
+  `window.caseConfig`. Vérifié après la passe, sur les 108 grilles modifiées :
+  régions `<style>` / `<script>` / `data:` **identiques octet pour octet**,
+  `window.caseConfig` présent 108/108, `../scoring.js` présent 108/108.
+
+Contrôle préalable exigé et fait : **une seule** occurrence d'un terme à
+remplacer tombait dans un `data-criteria` **et** dans le `.criteria-text`
+correspondant (`HIV` de RESCOS-68, « Dépistage Immunologique (HIV ou autre) »).
+`cases/scoring.js:159` y applique `.split(". ")[1].split(" [")[0]` : `VIH`
+n'introduit ni `. ` ni ` [`, et les deux porteurs ont été traités ensemble pour
+qu'ils ne divergent pas. 4602 attributs `data-criteria` et 3183 `.criteria-text`
+examinés.
+
+### Vérifications
+
+| | avant | après |
+|---|---|---|
+| `check_nomenclature` | **368 / 103 grilles**, code 1 | **0**, code 0 |
+| `check_invariants` | OK, 165 | **OK, 165**, code 0 |
+| `check_reachability` | 156/156 à 100 % | **156/156 à 100 %**, code 0 |
+| `report_redundancy` | 1258 | **1260** — voir ci-dessous |
+| `check_no_loss 29271b2` | — | 12 signalés, **0 perte** |
+| AMBOSS `report_redundancy` | 147 | **147** |
+| RESCOS `report_redundancy` | 127 | **127** |
+| AMBOSS / RESCOS invariants + nomenclature | code 0 | **code 0** |
+
+**Les 12 items « disparus » ont tous un successeur**, vérifié un par un : ce
+sont des items courts où « gold standard » (13 caractères) devient « examen de
+référence » (19), ce qui fait tomber la ressemblance sous 0,72 —
+`irm lombaire gold standard` → `irm lombaire examen de reference` mesure 0,552.
+Aucun contenu n'a disparu.
+
+### Le seul chiffre qui monte, et pourquoi ce n'est pas une régression
+
+`report_redundancy` passe de **1258 à 1260**. Le décompte est exact, grille par
+grille : +2 Hernie discale, +2 RESCOS-56, +1 Épilepsie absence, +1 RESCOS-63,
+−2 Sémiologie MSQ, −1 Ostéoporose, −1 SMIG-3.
+
+**Aucun contenu n'a été dupliqué.** Ce compteur est un seuil de *ressemblance*
+(0,72), et unifier le vocabulaire déplace mécaniquement des paires des deux
+côtés du seuil — quatre le franchissent vers le haut, quatre vers le bas.
+
+Le cas de « Hernie discale » le montre au caractère près. **Avant la passe, la
+grille écrivait déjà les deux graphies du même énoncé :**
+
+```
+[theorie]      irm lombaire examen de reference        ← déjà en français
+[presentation] irm lombaire gold standard              ← même énoncé, autre graphie
+```
+
+ressemblance 0,610, donc invisible au compteur. Après :
+
+```
+[theorie]      irm lombaire examen de reference
+[presentation] irm lombaire examen de reference        ← ressemblance 1,000
+```
+
+**La redondance était là ; c'étaient les deux graphies qui la cachaient.** La
+passe ne l'a pas créée, elle l'a rendue mesurable. Même mécanisme pour les trois
+autres gains (0,652 → 0,841 ; 0,684 → 0,737 ; 0,710 → 0,746) : dans chaque cas
+les deux items sont **les mêmes avant et après**, seul le ratio bouge.
+
+Une passe de déduplication est un geste éditorial, hors du mandat de ce lot.
+
+### Un faux positif silencieux dans le harnais, corrigé au passage
+
+`browser_probe.js --summary` comptait `ecos_registry` **de la manière que la
+PROCÉDURE interdit explicitement** : `registryKeys.length > 0`, c'est-à-dire la
+**non-vacuité** du registre. Or `localStorage` est partagé par toutes les pages
+de la même origine et les 165 sondages se suivent dans le même profil. Le
+harnais rendait donc **165/165**, en attribuant à chaque grille les entrées des
+précédentes — **y compris aux 9 feuilles porte, qui n'ont aucun `<script>` et ne
+peuvent rien écrire.**
+
+C'est exactement le comptage naïf que le § 4 de la procédure décrivait, sans que
+personne remarque que le script versionné le pratiquait. Vérifié sur profil
+neuf : sondées seules, les 9 feuilles porte rendent **0 clé, 0 entrée**.
+
+Le décompte porte désormais sur la **clé propre** de chaque grille —
+`saveToRegistry()` la construit depuis `location.pathname`, donc
+percent-encodée, et le harnais décode pour comparer. Il rend **156/165**, le
+chiffre documenté par `l3`.
+
+L'enjeu n'est pas cosmétique : `browser_probe.js` est le **seul** contrôle
+capable de voir qu'un score ne remonte pas au tableau de bord — ni
+`check_invariants`, ni `check_reachability`, ni `check_nomenclature` ne le
+peuvent. Un 165/165 permanent aurait masqué exactement le défaut que `l3` avait
+réparé, s'il était réapparu.
+
+### Ce que ce lot n'a pas fait
+
+* **Aucun contenu médical réécrit** hors nomenclature : les 424 remplacements
+  sont des termes, des unités et des nombres convertis à unité constante.
+* **Aucune numération sans unité inventée.** Deux valeurs à unité implicite
+  qu'aucun motif ne couvre restent en l'état et sont signalées :
+  « Hb 13.2, Ht 31%, GB 8 G/L » (« Enfant qui boîte ») et « Bactérien : > 1000
+  GB » (« Pédiatrie — Vomissements »). Choisir leur unité serait une supposition.
+* **Aucune déduplication** — voir ci-dessus.
+* **Rien sous `cases/german/`, `scripts/german/` ni `cases/casecos/`** : lus
+  pour le bordage des motifs sur cinq corpus, jamais écrits. Le commit est
+  `path`-scopé sur `cases/rescos-locales`, `scripts/rescos-locales` et ce
+  journal, et toutes les commandes git de contrôle emploient
+  `core.quotepath=false` — 132 des 165 noms portent un accent.
+* **Aucune lecture de grille entière avec `Read`.**
+* **Aucune commande réseau, aucun `git push`, aucun `git gc` ni `git prune`.**
+
+---
+
+## Ce que le lot `l3` n'a pas n'a pas fait
 
 * **Rien sous `cases/german/` ni `scripts/german/`** — ni lu, ni écrit, ni
   exécuté ; l'utilisateur y travaillait en parallèle et a commité `6cd583f`
