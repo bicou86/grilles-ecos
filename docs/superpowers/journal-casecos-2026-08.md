@@ -971,3 +971,233 @@ et les chargements de `cases/scoring.js` / `cases/persistence.js` intacts.
   `lib.visible_text()` / `lib.top_spans()` / `lib.matches()` (stdlib seule).
 * Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
   aucun `timeout`, aucun `snapshot_invariants.py`.
+
+---
+
+## Lot k5b — grilles 26 à 60 de `lib.grids()`
+
+Branche `refonte-amboss-suisse`, base **`e54b127`**. Deuxième lot de production,
+35 grilles, dans la continuité de k5a.
+
+**28 grilles sur 35 modifiées, 60 ajouts, 106 suppressions de lignes.**
+Redondance inter-blocs du lot **149 → 58 (−61 %)**, dont
+`expert ↔ theorie` **81 → 2 (−97,5 %)**.
+
+| porte | avant | après |
+|---|---|---|
+| `check_invariants.py` | rc 0 | **rc 0 — 198 grilles** |
+| `check_nomenclature.py` | rc 0 | **rc 0** |
+| `check_reachability.py` | 198/198 | **198/198 à 100 %** |
+| `report_redundancy.py` (lot de 35) | **149 inter** | **58 inter** |
+| `check_no_loss.py e54b127` | — | **19 disparitions, 19 verdictées** |
+| `scripts/amboss/report_redundancy.py --quiet` | 147 | **147** |
+| `scripts/rescos/report_redundancy.py --quiet` | 127 | **127** |
+| `scripts/amboss/check_invariants.py` · `scripts/rescos/check_invariants.py` | rc 0 | **rc 0** |
+
+### Le lot
+
+`lib.grids()[25:60]`. Sept grilles ressortent intactes ; **`AMC-Chir5-Vignette1`
+(nodule pulmonaire) est la seule à mesurer 0 paire ET 0 signal d'usage inversé** —
+deuxième cas après `AMC-Chir3-ECG2` du lot k5a.
+
+### Où sont passées les 91 paires
+
+| couple | avant | après | pourquoi |
+|---|---|---|---|
+| `expert ↔ theorie` | 81 | **2** | le test du référent tranche |
+| `annexe-dd ↔ expert` | 9 | **0** | spécialisation de l'item d'`expert` |
+| `expert ↔ redflags` · `expert ↔ therapy` · `cloture ↔ expert` | 1 + 1 + 1 | **0** | idem |
+| `annexe-dd ↔ theorie` | 18 | 18 | `annexe-dd` ne se nettoie pas |
+| `theorie ↔ therapy` | 14 | 14 | le canonique doit porter le champ ; la section notée ne se dédoublonne pas |
+| `redflags ↔ theorie` | 12 | 12 | idem |
+| `annexe-dd ↔ redflags` | 11 | 11 | deux blocs non nettoyables |
+| `cloture ↔ theorie` | 1 | 1 | phrase modèle de « Réponses types du candidat » |
+
+**Les 58 paires restantes sont toutes entre blocs que le contrat interdit de
+dédoublonner**, à deux exceptions assumées (voir plus bas).
+
+### Les deux `expert ↔ theorie` laissées, et pourquoi
+
+Toutes deux sur `AMC-ECOS1-S4 Convulsion fébrile` :
+
+1. `expert`/Rôles, « Question 3 — Indication d'une PL dans ce cas précis : Non… ».
+   C'est le **script de révélation** : l'expert gère cinq questions écrites et
+   livre la réponse attendue. Supprimer là serait laisser la comparaison de
+   chaînes dicter le contrat. Précédent k5a explicite.
+2. `expert`/Pièges, « Prescrire un traitement antiépileptique de fond… — non
+   recommandé » ↔ `theorie` « Ne pas prescrire d'antiépileptique de fond… ».
+   **Action ↔ règle** : le format change, la polarité est la raison d'être de
+   `Pièges`. Précédent k5a explicite.
+
+### Trois artefacts de mesure, mesurés
+
+1. **L'artefact des étiquettes numérotées.** `redflags` titre ses items
+   « 1. », « 2. »… ; `theorie` numérote ses classifications de la même façon.
+   D'où « 2. Retard de consolidation » (redflags) ↔ « C : retard de
+   consolidation » (Herbert, `theorie`) à **0,96** — deux étiquettes, aucun
+   contenu. Trois occurrences sur `AMC-Chir5-ECG4` seule.
+2. **L'artefact « X — arguments POUR » de k5a se confirme**, et il est
+   massif ici : `AMC-Chir5-ECG1` (masse médiastinale) rend **4 paires sur 5**
+   par appariement de « 2. Thymome et autres tumeurs thymiques — arguments POUR »
+   avec « 2. Thymomes et autres tumeurs thymiques (35-50%, le plus fréquent) ».
+3. **L'artefact de négation, inédit.** Sur `AMC-ECOS1-S3` (vertiges), `annexe-dd`
+   écrit ses arguments CONTRE en niant le libellé du `redflags` correspondant :
+   « absence de facteurs de risque cardiovasculaire évidents » ↔ « 5. Facteurs
+   de risque cardiovasculaire élevés » à **0,83**. `SequenceMatcher` ne voit pas
+   la négation. Cinq occurrences sur cette grille, sept sur `AMC-ECOS1-S5`.
+   **Ne jamais résoudre une telle paire : les deux items disent le contraire.**
+
+### Les onze trous du canonique
+
+Instrument de k4/k5a rejoué : appariement à seuil abaissé (0,45) de
+`therapy`/`redflags` contre les blocs de restitution, en retenant ceux dont le
+meilleur appariement est **ailleurs que dans `theorie`**, puis comptage du terme
+bloc par bloc dans le texte visible.
+
+| grille | point absent du canonique | vivait dans |
+|---|---|---|
+| Ostéosarcome | **pronostic 5 ans 60-70 / 20-30 %**, récidive locale, complications de l'allogreffe | `redflags` seul |
+| Entorse de cheville | **5-10 % d'instabilité chronique** : le *pourquoi* de la rééducation proprioceptive | `therapy`/Détails + `redflags` |
+| Scaphoïde | **retard de consolidation**, **3 mois** pour le 1/3 moyen, signal T2 de la nécrose, **humpback deformity** | `therapy`/Détails + `redflags` |
+| Ischémie aiguë MI | **syndrome de revascularisation** : hyperkaliémie, acidose, IRA myoglobinurique, Volkmann | `redflags` seul |
+| AOMI | **75 %/25 % à 5 ans**, 25 %/25 % de l'ischémie critique, −50 % / −25 % / +50-200 % | `expert` + `therapy` |
+| AAA | **fistule aorto-duodénale**, dépistage familial des fratries > 55 ans | `expert` + `redflags` |
+| STEMI | **90 min / 120 min**, cinétique des troponines, complications mécaniques J3-J7 et Dressler | `therapy` + `redflags` + `expert` |
+| Dissection aortique | composants de la **triade de Beck**, fenestration sur malperfusion réfractaire | `annexe-dd` + `therapy` |
+| Sténose aortique | **l'auscultation entière** : aucune section clinique dans `theorie` | `annexe-dd` + `expert` |
+| TVP | **syndrome post-thrombotique** (0 occurrence dans `theorie`), filtre cave | `expert` + `redflags` + `therapy` |
+| Carotide | **syndrome optico-pyramidal**, 10-20 % à 90 j, **syndrome d'hyperperfusion** | `expert` + `redflags` |
+
+Plus quatre points de moindre portée : morbidité propre de la thyroïdectomie et
+récidive du kyste après ponction (goitre), triade céphalées-palpitations-sueurs
+et son caractère paroxystique (phéochromocytome), lung sliding / lung point et
+récidive 30-50 % / 50-70 % (pneumothorax), mortalité la plus élevée des maladies
+psychiatriques (anorexie).
+
+**Aucun de ces quinze points n'est venu de `report_redundancy.py`.** Trois sont
+sur des grilles qui mesuraient 0 ou 1 paire.
+
+### ⚠️ Ce que la mesure ne voit pas — chiffré sur 35 grilles
+
+Recouvrement de vocabulaire (jetons > 2 lettres, mots-outils retirés), état
+`e54b127` :
+
+| couple | items inclus à ≥ 90 % dans **un seul** item cible | dont **invisibles** (ratio ≤ 0,72) | paires effectivement mesurées |
+|---|---|---|---|
+| `theorie → therapy` | **97** | **91 (94 %)** | 14 |
+| `expert → theorie` | **40** | **10 (25 %)** | 81 |
+
+**Sur `theorie ↔ therapy`, la mesure voit environ une inclusion sur dix** — pire
+encore que le tiers annoncé par k5a. Longueurs moyennes du lot : `theorie` 79
+caractères (n = 2 022), `expert` 80 (n = 1 051) — **k4 avait raison sur
+`expert ↔ theorie`**, dont les deux blocs ont le même grain, mais **25 % des
+inclusions intégrales y restent tout de même invisibles** : un item d'`expert`
+peut être un extrait exact d'un item de `theorie` deux fois plus long
+(« IRM = examen de référence pour l'extension », inclusion 1,00, ratio 0,65).
+Ces 10 items n'ont **pas** été traités : la consigne était de ne traiter que les
+doublons mesurés.
+
+### Deux corrections factuelles
+
+1. **Souffle de la sténose aortique** (`AMC-Chir4-ECG6`). La grille écrivait
+   « souffle HOLOSYSTOLIQUE 4/6 au 2e EIC droit » dans `annexe-dd`, `expert` et
+   `defi`. Le souffle du rétrécissement aortique est **mésosystolique
+   éjectionnel** ; « holosystolique » désigne l'insuffisance mitrale, la CIV,
+   l'insuffisance tricuspide — c'est-à-dire exactement les diagnostics dont il
+   fallait le distinguer. Corrigé aux trois endroits (aucun dans une section
+   notée), et l'auscultation complète portée dans `theorie`, qui n'en disait
+   rien du tout.
+2. **Seuil fébrile de la pyélonéphrite obstructive** (`AMC-Chir6-ARC1`). La
+   grille écrivait « fièvre + colique = pyélonéphrite obstructive » sans seuil ;
+   la page SSP est explicite et chiffrée (« > 38,5 °C + frissons »).
+   **SSP explicite → elle fait foi** ; le seuil est porté dans `theorie`.
+
+### Niveau 1 — 27 pages SSP, cinq rendements
+
+Les 35 grilles sont couvertes par **27 pages SSP** (couverture 35/35). Extraction
+automatique des lignes chiffrées de chaque page, comparaison à l'ensemble du
+texte visible de la grille desservie, puis lecture des candidats.
+
+**Rendement.** *Colique néphrétique* : le seuil de 38,5 °C (§ ci-dessus).
+*Entorse de cheville* : la **lésion de Maisonneuve** — 0 occurrence dans toute la
+grille, alors que la page SSP la porte en image dédiée et que les critères
+d'Ottawa ne couvrent pas le péroné proximal. *TCA* : les seuils de gravité
+chiffrés (IMC < 14, bradycardie < 40/min, K⁺ < 2,5 mmol/L, Na⁺ < 125 mmol/L,
+QTc > 500 ms) et le **syndrome de renutrition** (phosphore < 0,3 mmol/L), là où
+la grille n'avait que « hypophosphatémie » ; plus la mortalité **5-10 %**.
+*HBP* : le clampage **par paliers de 500 mL**, absent d'une grille qui ne disait
+que « drainage progressif ». *TVP* : le piège SSP de la dermohypodermite qui ne
+s'améliore pas à **48 h**.
+
+**Rendement nul, et c'est un résultat.** Les 22 autres pages n'ont produit aucun
+ajout. Deux causes distinctes, à ne pas confondre :
+
+* les pages **larges et partagées** (*Douleur Thoracique* dessert 4 de mes
+  grilles, *Dyspnée* 2) sont déjà concordantes sur leurs cibles chiffrées ;
+* les pages **hors sujet de la grille** : *Douleur de Genou* ne traite pas
+  l'ostéosarcome, *Adénopathie* ne traite pas la masse médiastinale,
+  *Toux Chronique* ne traite pas le nodule pulmonaire solitaire. Comme les trois
+  pages du lot k5a, elles ne citent la grille que par son titre. Le mapping les
+  relie par le **motif de plainte**, pas par le diagnostic.
+
+L'indicateur du pilote se vérifie une troisième fois : le rendement suit les
+**cibles chiffrées**, jamais la largeur de la page.
+
+### Non corrigé, documenté (règle 3)
+
+* **Trois grilles de la série `AMC-ECOS1-*` citent le droit québécois.**
+  `AMC-ECOS1-S5` (HSA) construit toute sa section de capacité de discernement sur
+  la **garde préventive** et la *Loi sur la protection des personnes dont l'état
+  mental présente un danger* — 9 occurrences, dont **3 dans la section notée**.
+  `AMC-ECOS1-S1` cite le Québec dans `theorie` et `defi`, `AMC-ECOS1-S4` dans
+  `scenario` ; « civière » apparaît dans `AMC-ECOS1-S10` et dans une grille hors
+  lot. L'équivalent suisse est le **placement à des fins d'assistance
+  (art. 426 ss CC)**. `check_nomenclature.py` ne voit rien : sa table porte sur
+  les unités, les médicaments et les sigles, pas sur les institutions. **Le
+  barème étant concerné, la correction est un arbitrage, pas une réécriture.**
+* **`AMC-Chir5-ECG4`** garde 3 paires `redflags ↔ theorie` qui sont l'artefact
+  d'étiquettes numérotées (§ ci-dessus) et 3 paires `theorie ↔ therapy` où
+  `theorie`/Rappels décalque `therapy`. Le contrat interdit de toucher la section
+  notée et exige que le canonique porte le champ : la paire est irréductible.
+* **`AMC-Chir6-ARC1`** garde une paire `cloture ↔ theorie` à 0,73. Vérification
+  faite, l'item de `cloture` est un `exemple-phrase` de « Réponses types du
+  candidat » : c'est bien de l'oral, à sa place.
+
+### Barème
+
+**Intact.** Vérifié par mesure sur le diff complet : **0 ligne** touchant
+`criteria-text`, `detail-text`, `maxScores`, `sectionInfo`, `coef`,
+`<span class="score">`, `therapy-item`, `redflags-*`, `cloture-detail`,
+`exemple-phrase`, `caseConfig`, `scoring.js` ou `persistence.js`. Sur 166 lignes
+modifiées, **162 sont des `<li>`** de `expert` ou `theorie` ; les 4 autres sont
+les deux corrections « holosystolique » (dans `annexe-dd` et `defi`).
+**Règle 1** — pas de régénération du baseline, et `check_invariants.py` le
+confirme.
+
+### Anti-perte
+
+`check_no_loss.py e54b127` signale **19 disparitions sur 28 grilles**, toutes
+verdictées : **9 reformulations en place** (l'item existe, allongé pour recevoir
+ce qui lui manquait) et **10 suppressions dans `expert` dont le contenu avait été
+porté dans `theorie` au préalable**. Contrôle indépendant par ensembles d'items
+normalisés extraits de `git show e54b127:…` : **6 108 items avant, 6 066 après**,
+delta net **−42**. Les autres suppressions ne sont pas signalées parce que
+`theorie` en porte déjà un appariement au-dessus du seuil — la condition même
+qu'on s'était donnée pour supprimer. **Aucune perte.**
+
+### Contraintes respectées
+
+* Rien écrit hors de `cases/casecos/`, de ce journal et du rapport k5b.
+  **`scripts/casecos/` non modifié** : le contrat de k4 a tenu sur 35 grilles de
+  plus, sans amendement.
+* **Aucun `git add`** — commit par `git commit -- <chemins>` exclusivement.
+  Rien touché sous `cases/german/`, `cases/rescos-locales/`, `scripts/german/`,
+  `scripts/rescos-locales/`, où l'utilisateur travaillait en parallèle.
+* **Aucune grille lue en entier avec `Read`** : bornes par `lib.top_spans()`,
+  lecture par fenêtres `offset`/`limit`, édition par remplacement exact.
+* **Aucun `grep` brut employé comme contrôle** : tous les chiffres publiés
+  viennent des scripts de `scripts/casecos/` ou de mesures Python passant par
+  `lib.visible_text()` / `lib.top_spans()` / `lib.matches()` (stdlib seule).
+* Vault Obsidian lu en **lecture seule** (27 pages SSP), rien écrit hors du dépôt.
+* Aucune commande réseau, aucun `git push`, aucun `git gc`, aucun `git prune`,
+  aucun `timeout`, aucun `snapshot_invariants.py`.
