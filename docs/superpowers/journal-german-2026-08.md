@@ -1743,3 +1743,119 @@ octet** le préfixe du nouveau jusqu'au point d'insertion, et la queue à partir
 `detail-text` (112), `patient-response` (57), `<input>` (155),
 `communication-text` (5), `communication-desc` (5), `window.caseConfig` et les
 trois `therapy-section` : **tous identiques à HEAD**, comparés chaîne par chaîne.
+
+### Tâche p1b — German-1 : cartes de méthode et balisage sémantique
+
+Trois décisions de l'utilisateur appliquées à la grille pilote. HEAD réel au
+démarrage : **`06b189e`**, pas `6d8ee8d` — la session RESCOS avait commité six
+fois entre-temps. Vérifié, pas supposé.
+
+#### 1. La « Checklist mentale » retirée, deux cartes à sa place
+
+La section `section-checklist` et ses **11 items** ne figurent plus dans German-1
+et ne figureront dans aucune grille german. À sa place, `section-commcards` avec
+les deux images **référencées** (`../img/commcard-sbar.jpg`,
+`../img/commcard-snapps.jpg`), jamais embarquées, dans le `.commcard-grid`
+documenté par `case-styles.css` — `figure.commcard-item` + `img` +
+`figcaption.commcard-caption`, la forme exacte de son commentaire d'usage.
+
+Les deux `alt` (534 et 621 car.) ont été rédigés **après ouverture des images** :
+les cinq lignes du tableau SBAR avec leurs items et la mention des exemples
+rédigés, les six étapes de SNAPPS avec leurs consignes et la colonne d'amorces.
+
+**Dix lignes de CSS ajoutées**, en fin du bloc « cartes de communication » :
+`.presentation-section-title` porte `border-bottom: 3px solid` sans couleur, que
+chaque variante `.section-*` fournit. Sans règle, `section-commcards` héritait
+`currentColor` — un trait noir épais. Forme reprise des sept variantes existantes.
+
+#### 2. `annexe-expert` / `annexe-scenario` : rien à faire, rien fait
+
+Contrôlé : aucune occurrence dans German-1.
+
+#### 3. Le balisage sémantique — 260 termes, 0 hors des quatre conteneurs
+
+| Conteneur | red | pink | green | blue | amber | purple | orange | yellow | total | densité |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `resume` | 24 | 32 | 26 | 0 | 10 | 4 | 2 | 5 | **103** | 1 / 7,5 mots |
+| `annexe-theorie` | 22 | 28 | 31 | 6 | 8 | 5 | 2 | 2 | **104** | 1 / 10,4 |
+| `section-mnemo` | 3 | 4 | 1 | 0 | 1 | 0 | 0 | 2 | **11** | 1 / 8,5 |
+| `section-questions` | 6 | 9 | 18 | 0 | 3 | 2 | 2 | 2 | **42** | 1 / 9,9 |
+| **Total** | **55** | **73** | **76** | **6** | **22** | **11** | **6** | **11** | **260** | **1 / 9,1** |
+
+**La dose a été calibrée par la mesure, pas à l'œil.** Densité de la page SSP de
+référence, texte visible : **1 span / 11,3 mots** en moyenne, avec une fourchette
+régionale de **1 / 7,6** (examens et prise en charge, la plus dense) à 1 / 15,1
+(prose de fin de page). Première rédaction : 287 spans, dont un `resume` à
+**1 / 6,0** — plus dense que la plus dense région de l'utilisateur. **27 spans
+retirés du `resume`** pour le ramener à 1 / 7,5. Ce qui a sauté : les répétitions
+internes (`ascite`, `hépatomégalie`, `circulation collatérale` déjà colorés deux
+lignes plus haut ; `delirium tremens` trois fois dans la même sous-section), les
+étiquettes de méthode prises pour du contenu (`Mini-examen neurologique`,
+`Antécédent de sevrage compliqué`), les analyses secondaires (`TSH`,
+`CT abdominal`, `magnésium`, `phosphate`) et trois ambres posés sur des
+électrolytes qui ne sont pas une prescription. Les intitulés de rubrique
+(« Cutanés : », « Foie : ») restent noirs, comme les `**Cutanés**` en gras non
+colorés de la page SSP.
+
+`c-blue` reste à 6 emplois (2,3 %) : la page de référence n'en compte **qu'un**
+sur 301. Marginal à dessein.
+
+**L'idiome `.c-red.c-red` : le balisage en bénéficie, et c'est mesuré.** Les
+classes sont posées sur des `<span>` descendants, jamais sur le `<li>` : la règle
+`[data-theme="dark"] .resume-subsection-points li { color: … !important }` ne
+leur parvient que par héritage, que toute déclaration directe bat. La classe
+doublée verrouille le reste. Contrôle **exhaustif** par sonde JavaScript sur les
+**260 spans**, dans les deux thèmes : couleur calculée relevée pour chaque span
+et pour son parent, **`NEUTRALISES=0`** — aucun span dont la classe soit
+silencieusement écrasée. C'est exactement le mode d'échec que l'idiome existe
+pour empêcher.
+
+#### Vérifications
+
+`check_invariants.py`, `check_nomenclature.py`, `check_reachability.py` :
+**OK, code 0**, 88/88 à 100 %. AMBOSS (40) et RESCOS (41) aux trois verts.
+Aucune section notée touchée : 0 ligne de diff sur `criteria-text`, `<input`,
+`maxScores`, `patient-response` ; `maxScores` md5 identique à HEAD.
+**0 lien d'image cassé** (5 références non-`data:` résolues + `naturalWidth > 0`).
+
+**`report_redundancy.py German-1_` : 2 paires — inchangé, et c'est normal.**
+L'attente était une baisse. Mesuré plutôt que supposé : les 11 items de la
+checklist ont été comparés aux 134 autres items de la grille ; **le meilleur
+ratio obtenu par l'un d'eux est 0,54**, pour un seuil à 0,72. Aucun n'était à
+moins de 0,18 point. La checklist recouvrait bien les mêmes sujets que le reste —
+c'était sa raison d'être — mais sous une forme télégraphique (« Examen →
+imprégnation chronique, abdomen, bouche ») que `SequenceMatcher`, qui compare des
+chaînes et non des sens, ne rapproche pas de la prose. Elle portait une
+redondance **éditoriale** que la mesure du projet ne capte pas. Les 2 paires qui
+restent sont celles de p1, déjà justifiées.
+
+`check_no_loss.py HEAD` : 11 items disparus = exactement les 11 de la checklist.
+
+#### Contrôle visuel — fait
+
+Chrome headless, `file://`, aucune requête réseau. Deux copies temporaires de la
+zone pédagogique à `data-theme` figé (`theme-sync.js` lit `localStorage`,
+impraticable en headless), même chaîne d'ancêtres et mêmes feuilles de style ;
+supprimées après coup.
+
+Les deux images **se chargent réellement** (`naturalWidth` 1577×825 et 3178×1609).
+Point de rupture conforme : **côte à côte à 1400, 1200 et 800 px ; empilées à
+767, 600 et 500 px** — bascule entre 768 et 767. Les huit classes sortent dans
+les deux thèmes, `c-yellow` en fond surligné et non en couleur de texte. Le titre
+`section-commcards` s'affiche en sarcelle avec son filet clair.
+
+#### Deux réserves
+
+**Les fonds teintés de `theorie-section-rappels` (ambre) et
+`theorie-section-examens` (vert) neutralisent partiellement `c-amber` et
+`c-green` en thème sombre** : les molécules du premier bloc s'y lisent surtout
+comme du gras. La sémantique a été privilégiée sur l'effet visuel — la couleur
+dit *ce que la chose est*. Le cas se reproduira sur les 87 autres grilles, ces
+deux variantes étant au gabarit ; arbitrage à rendre.
+
+**En thème clair, `c-amber` (#9e6c00) sur le crème `#fffbf0` du
+`resume-subsection` et le `#fafafa` de `presentation-reponse` reste le plus
+faible du jeu** — lisible, mais juste. Consigne suivie : l'ambre a été retiré
+partout où une autre classe convenait.
+
+Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p1b-report.md`
