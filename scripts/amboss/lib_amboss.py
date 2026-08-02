@@ -121,9 +121,19 @@ def visible_text(html):
     return re.sub(r"\s+", " ", txt).strip()
 
 
+LIGATURES = str.maketrans({"œ": "oe", "Œ": "oe", "æ": "ae", "Æ": "ae"})
+
+
 def norm(s):
-    """Minuscules, sans accents, sans ponctuation — pour comparer du texte."""
-    s = unicodedata.normalize("NFD", s.lower())
+    """Minuscules, sans accents, sans ponctuation — pour comparer du texte.
+
+    Les ligatures œ et æ n'ont AUCUNE décomposition Unicode : ni NFD ni NFKD
+    ne les touchent, ce sont des lettres à part entière et non des ligatures
+    de compatibilité comme ﬁ. Sans translittération explicite, le filtre
+    [^a-z0-9 ] les remplace par une espace et « œdème » se compare comme
+    « deme », « cœur » comme « c ur ». 4045 occurrences dans cases/.
+    """
+    s = unicodedata.normalize("NFD", s.lower().translate(LIGATURES))
     s = "".join(c for c in s if unicodedata.category(c) != "Mn")
     return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", " ", s)).strip()
 
