@@ -86,7 +86,7 @@ German-24 où il est **vide** — coquille sans contenu).
 | `annexe-dd` | 2/3 — commentaire du critère « diagnostics différentiels » | **Raisonner le différentiel** : hypothèses, arguments pour/contre, examen qui départage | Check-list actionnable, conduite de station, formulation orale |
 | `resume` | 3 | Réviser vite — **source canonique** | Redites, formats oraux |
 | `presentation` | 3 | Restituer à l'oral | Toute donnée clinique nouvelle |
-| `annexe-image` | 3 | Légender un schéma (base64, jamais modifié) | Contenu autonome — la légende doit rester lisible **avec** l'image |
+| `annexe-image` | 3 | Légender un schéma (fichier référencé sous `cases/img/german/`, jamais modifié — § 8.6) | Contenu autonome — la légende doit rester lisible **avec** l'image |
 
 **Deux rôles absents d'AMBOSS.** `redflags` et `therapy` sont le corrigé du critère
 qui les héberge : ils font partie du **niveau 2** de la hiérarchie, pas du niveau 3.
@@ -322,8 +322,9 @@ source en est un.
 | médiane des 53 pages | **12** |
 | `SSP — Dépendance & Addictions` (German-1) | 18 |
 
-Tout embarquer est exclu (§ 8.6 : 57 images sur une grille, c'est ~8 Mo pour un
-seul fichier). **Cible : 3 images par grille ; plancher 2 ; plafond 4.** Le
+Tout embarquer est exclu (§ 8.6 : 57 images sur une grille, c'est ~6 Mo à servir
+et une planche que personne ne lit). **Cible : 3 images par grille ; plancher 2 ;
+plafond 4.** Le
 plafond n'est pas un quota à remplir : une page dont une seule image passe les
 tests du § 8.3 donne une grille à une image, et c'est le bon résultat.
 
@@ -413,11 +414,38 @@ un fichier au nom voisin.
 ne note pas leur lecture. Elles pèsent le plus lourd du corpus (jusqu'à 13 Mo
 pour un seul fichier) et le test 1 du § 8.3 les écarte presque toujours.
 
-### 8.6 Le poids — mesuré, et borné
+### 8.6 La livraison : fichiers référencés, jamais base64
 
-Le base64 coûte **exactement +33,3 %** (4 octets pour 3). Vérifié sur l'image
-déjà embarquée de German-1 : 60 465 octets dans le vault, 80 620 caractères dans
-la grille, md5 identique après décodage.
+**Décision arrêtée sur German-1 (2026-08-02) : les images sont servies en
+fichiers, sous `cases/img/german/`, et citées par un chemin relatif.** Le base64
+est abandonné. C'est déjà le mode des cartes SBAR/SNAPPS servies depuis
+`cases/img/` (commit `06b189e`) ; le corpus german s'y aligne.
+
+Mesuré sur German-1, seule grille convertie à ce jour :
+
+| | base64 | référencé |
+|---|---|---|
+| German-1 | 820 Ko | **132 Ko** (−84 %) |
+| les 3 images | dans la grille | 516 Ko dans `cases/img/german/` |
+
+Trois raisons, dans l'ordre où elles ont pesé :
+
+1. **`.git` pèse déjà 435 Mo et `git gc` est interdit sur ce dépôt.** Le base64
+   se delta-compresse mal : chaque réédition d'une grille chargée restocke le
+   blob entier. En référencé, le texte de la grille et ses images sont deux
+   objets distincts — retoucher une formulation ne réécrit plus 700 Ko d'image.
+2. **Une image corrigée profite à toutes les grilles qui la citent.** Le
+   message-clé d'une page desservant huit grilles est stocké **une fois**, pas
+   huit. C'est la déduplication qui fait l'essentiel de l'économie.
+3. **Des grilles qui s'ouvrent vite**, y compris en mobile, et un `git diff` de
+   grille qui redevient lisible.
+
+**La consigne « poser les images en dernier » est abrogée.** Elle existait pour
+ménager `.git` : en base64, retoucher le texte d'une grille imagée réécrivait le
+blob entier, images comprises, à chaque passe. En référencé, l'image est un objet
+git à part, écrit **une fois** ; éditer la grille ne la retouche plus. Les images
+peuvent donc être posées **quand on veut dans le traitement** — au moment où l'on
+tient la sélection, sans attendre que le texte soit figé.
 
 Poids des images citées par les 53 pages (664 fichiers trouvés) :
 
@@ -425,38 +453,80 @@ Poids des images citées par les 53 pages (664 fichiers trouvés) :
 |---|---|---|---|---|
 | 110 Ko | 208 Ko | 460 Ko | **3 196 Ko** | 13 008 Ko |
 
-La queue est très lourde : **une règle sans plafond n'est pas bornée**. D'où
-deux garde-fous :
+La queue est très lourde : **une règle sans plafond n'est pas bornée**. Les deux
+garde-fous du § 8.5 c restent en vigueur — **plafond par image 400 Ko**,
+**budget par grille 700 Ko de source**. Leur raison d'être a seulement changé de
+nature : ils ne bornent plus le poids d'un fichier HTML mais celui du **stock
+partagé**, et ils continuent d'écarter les séries radiologiques et les scans
+pleine page que le § 8.3 ne retient de toute façon presque jamais.
 
-- **Plafond par image : 400 Ko de source** (89 % des images éligibles passent).
-- **Budget par grille : 700 Ko de source**, soit ~930 Ko de base64.
+Estimation du corpus complet à 88 grilles, modèle « message-clé de la page +
+(k−1) schémas distincts par grille », k=3, plafond 400 Ko — **220 images
+distinctes** pour les 88 grilles :
 
-Estimation du corpus german, modèle « message-clé de la page + (k−1) schémas
-distincts par grille », plafond 400 Ko :
-
-| k | base64 ajouté | corpus german (8,3 Mo aujourd'hui) | variante référencée |
+| sélection | images | poids images | corpus german (8,1 Mo de HTML) |
 |---|---|---|---|
-| 2 | 26,5 Mo | **34,8 Mo** | 20,0 Mo |
-| **3 (cible)** | **35,8 Mo** | **44,1 Mo** | **25,9 Mo** |
-| 4 | 47,5 Mo | 55,8 Mo | 31,8 Mo |
+| biais bas | 220 | 14,2 Mo | 22,3 Mo |
+| **neutre** | **220** | **21,0 Mo** | **29,1 Mo** |
+| biais haut | 220 | 41,8 Mo | 49,9 Mo |
 
-**La règle du § 8.2 mène donc à ~44 Mo**, sous le plafond de 60 Mo. Sans le
-plafond de 400 Ko, k=3 monte à 84 Mo et k=4 à 99 Mo : c'est le plafond qui borne,
-pas le nombre d'images.
+**Attendu : ~26 à 29 Mo**, contre ~44 Mo qu'aurait coûtés le base64. La cible de
+25,9 Mo retenue au moment de la décision tombe dans cette fourchette.
 
-**Variante économe, si le plafond devait être franchi** : servir les images en
-**fichiers référencés** sous `cases/img/german/`, comme les cartes SBAR/SNAPPS
-(commit `06b189e`), au lieu de les embarquer. La déduplication fait tout :
-208 fichiers distincts suffisent aux 88 grilles à k=3, et le message-clé d'une
-page est stocké une fois au lieu de huit. **25,9 Mo au lieu de 44,1**, et un
-`git diff` de grille redevient lisible.
+**Convention de nommage : le nom du vault, normalisé ASCII-minuscules-tirets.**
 
-**Avertissement git.** `.git` pèse déjà 435 Mo. Le base64 se delta-compresse
-mal : chaque passe d'édition sur une grille chargée d'images restocke le blob
-entier (~900 Ko pour German-1, contre 208 Ko avant). **Poser les images en
-dernier**, une fois le texte de la grille stabilisé.
+On **ne préfixe pas** et on **ne renomme pas sur le fond**. Deux mesures le
+justifient, sur les 664 images citées par les 53 pages german :
+
+- **Aucun homonyme.** Zéro collision de nom, y compris hors de
+  `Skills ECOS/img/` (75 des 664 viennent de `_bibliotheque/`). Un préfixe de
+  dossier n'écarterait donc aucun risque réel, alors qu'il allongerait des noms
+  qui atteignent déjà 119 caractères — et les noms du vault portent **déjà** leur
+  thème (`general-`, `abdo-`, `neuro-`…).
+- **La normalisation est l'identité pour 573 d'entre elles (86 %)**, et ne
+  produit **aucune collision**. Elle ne réécrit que les 91 noms hérités de
+  `_bibliotheque/`, ceux qui portent espaces, accents et majuscules.
+
+Elle n'est donc pas cosmétique, elle règle deux pannes concrètes : un espace ou
+un accent dans un `src=` impose le percent-encoding (`%20`, `%C3%A9`), illisible
+pour qui édite la grille à la main ; et 7 fichiers sont stockés en NFD par macOS
+alors que la page SSP les cite en NFC — même chaîne à l'œil, octets différents,
+404 sur tout serveur qui ne normalise pas. Passer en ASCII supprime le piège
+définitivement.
+
+Le nom livré et sa provenance sont consignés dans `cases/img/german/MANIFEST.tsv`
+(nom, sha256, octets, dimensions, chemin dans le vault) : le renommage reste donc
+**traçable**, et l'identité des octets vérifiable après coup.
 
 ### 8.7 Comment on l'écrit dans la grille
+
+**L'outil fait la reprise — on ne copie pas une image à la main.**
+
+```bash
+python3 scripts/german/fetch_image.py '![[general-score-audit-c.png]]'
+# ../img/german/general-score-audit-c.png
+#     copie  519x639  Skills ECOS/img/general/13-…/general-score-audit-c.png  112912 octets
+```
+
+Il retrouve le fichier dans le vault, contrôle qu'il n'est ni vide ni tronqué, le
+copie sous `cases/img/german/` au nom normalisé, met à jour le manifeste, et rend
+**le chemin à coller dans la grille**. Il est **idempotent** : une image déjà
+reprise est reconnue au sha256 et n'est pas réécrite — deux grilles citant le même
+message-clé ne la copient qu'une fois, et aucun blob git nouveau n'est créé.
+
+Il **s'arrête bruyamment** au lieu de livrer quelque chose de faux :
+
+| Cas | Ce qu'il fait |
+|---|---|
+| référence introuvable (§ 8.5 b) | `ÉCHEC [cassee]`, code de sortie 1, rien n'est copié |
+| fichier vide, tronqué, en-tête incohérent | `ÉCHEC [corrompu]` — jamais de fichier vide livré |
+| homonyme ambigu | `ÉCHEC [ambigu]` avec la liste des candidats |
+| nom déjà pris par un contenu différent | `ÉCHEC [collision]` |
+| appariement non exact (NFD/NFC, casse) | copie, mais **avertit** que la page et le disque n'écrivent pas le nom pareil |
+| source > 400 Ko | copie, mais rappelle le plafond du § 8.5 c |
+
+`--check` diagnostique sans rien copier ; `--verify` vérifie que tous les `src`
+des 88 grilles pointent vers un fichier existant, et signale les orphelines.
 
 **Une seule `<div class="annexe-item">` par grille — une « planche » — dans
 l'`images-wrapper` existant**, portant N triplets `annexe-title` +
@@ -468,7 +538,7 @@ l'`images-wrapper` existant**, portant N triplets `annexe-title` +
     <div class="annexe-title">…</div>
     <div class="annexe-description">…</div>
     <div class="annexe-image">
-        <img src="data:image/png;base64,…" alt="…" />
+        <img src="../img/german/general-score-audit-c.png" alt="…" />
     </div>
     <div class="annexe-title">…</div>   <!-- image 2, même item -->
     …
@@ -476,6 +546,10 @@ l'`images-wrapper` existant**, portant N triplets `annexe-title` +
 </div>
 </div>
 ```
+
+**Le chemin est `../img/german/<nom>`** — les grilles sont dans `cases/german/`,
+les images dans `cases/img/german/` : un seul niveau à remonter, comme
+`../img/commcard-sbar.jpg` des cartes de communication.
 
 **Pourquoi une seule et non N.** `BLOCKS` compte les segments `annexe-image` à
 partir de `<div class="annexe-item"` : **N items feraient N segments**, donc
@@ -490,8 +564,10 @@ deux `annexe-item` — c'est l'état d'import, pas le gabarit.)
 et écraserait un panneau de texte de 2040 px dans ~380 px, illisible.
 
 **Octets recopiés tels quels du vault, jamais ré-encodés ni recompressés** — le
-md5 de l'image décodée doit être celui du fichier du vault. C'est ce qui rend la
-provenance vérifiable après coup.
+sha256 du fichier livré doit être celui du fichier du vault. C'est ce qui rend la
+provenance vérifiable après coup ; `fetch_image.py` le vérifie après copie et
+l'inscrit au manifeste. Seul le **nom** est normalisé (§ 8.6), et le manifeste
+garde le lien avec le nom d'origine.
 
 **La légende décrit ce que l'image montre, pas le titre du fichier.** Elle nomme
 le contenu : les colonnes du tableau, les items du questionnaire, les
@@ -521,13 +597,25 @@ messages clés.
 python3 scripts/german/check_invariants.py    # blocks INCHANGÉ, pas de re-snapshot
 python3 scripts/german/check_no_loss.py HEAD German-N_
 python3 scripts/german/report_redundancy.py German-N_
+python3 scripts/german/fetch_image.py --verify  # aucun src ne pointe dans le vide
 ```
+
+`--verify` est le contrôle propre au mode référencé : un `src` cassé ne se voit
+pas dans le HTML, seulement à l'affichage. Il signale aussi les images
+**orphelines** — présentes dans `cases/img/german/` mais citées par aucune grille,
+donc du poids mort à retirer — et les grilles restées en base64.
 
 Et au navigateur, thèmes sombre et clair, 1200 px et 500 px : chaque `<img>` doit
 avoir `complete === true`, des `naturalWidth`/`naturalHeight` égaux à ceux du
-fichier du vault (une image corrompue à l'encodage rend 0×0), un rapport
+fichier du vault (un fichier tronqué ou un chemin faux rend 0×0), un rapport
 largeur/hauteur conservé, et `document.documentElement.scrollWidth` égal à la
 largeur de la fenêtre — aucun débordement horizontal.
+
+Chrome sait le faire sans dépendance : injecter une sonde dans une **copie** de la
+grille placée dans `cases/german/` (pour que `../img/german/` résolve pareil),
+puis `--headless=new --dump-dom`, et supprimer la copie. C'est ainsi que German-1
+a été validé : les trois images rendent **au pixel près** ce qu'elles rendaient en
+base64 (519×639, 520×368, 2040×1455), aux deux largeurs et dans les deux thèmes.
 
 ---
 
@@ -550,6 +638,12 @@ Et quatre propres à ce corpus :
   niveau 2, c'est le pédagogique qui cède.
 - **Ne pas déplacer un `</div>` dans un `criteria-row`** — voir German-84.
 - **Ne pas embarquer une image que la page SSP ne cite pas** (§ 8.1), ni
-  recompresser, redimensionner ou renommer celle qu'elle cite (§ 8.7).
+  recompresser ni redimensionner celle qu'elle cite (§ 8.7). Le **nom** est la
+  seule chose qui change, par la normalisation du § 8.6, appliquée
+  mécaniquement par `fetch_image.py` et consignée au manifeste — jamais un nom
+  choisi à la main.
+- **Ne pas livrer une image en base64** : mode référencé exclusivement (§ 8.6).
+- **Ne pas copier une image à la main** dans `cases/img/german/` : passer par
+  `fetch_image.py`, qui seul contrôle l'intégrité et tient le manifeste.
 - **Ne pas ouvrir un second `annexe-item` dans l'`images-wrapper`** : `blocks`
   changerait et `baseline.json` serait à refaire sur les 88 grilles (§ 8.7).

@@ -2000,3 +2000,110 @@ garde-fou automatisable est le corollaire des pages multi-grilles, et il n'est p
 outillé. C'est là que la règle cédera en premier si elle cède.
 
 Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p2-report.md`
+
+---
+
+## 2026-08-02 — Bascule des images en fichiers référencés (German-1) et outillage des 87 suivantes
+
+### Ce qui a été fait
+
+German-1 passait 839 Ko avec ses trois images en base64, et le corpus complet
+visait ~44 Mo. L'utilisateur a tranché pour la **variante référencée** chiffrée
+au § 8.6. German-1 est converti, l'infrastructure est posée pour les 87 grilles
+restantes.
+
+Les trois images sont copiées du vault vers `cases/img/german/` et citées en
+`../img/german/<nom>`. **La planche reste une `annexe-item` unique** : c'est la
+structure qui gèle `blocks` à un seul segment `annexe-image` et protège
+`baseline.json` sur les 88 grilles. Seuls les trois attributs `src` ont changé —
+le diff structurel, base64 masqué, fait **exactement trois lignes**. Titres,
+légendes, `alt` et ordre (AUDIT-C → sevrage → messages clés) sont intacts.
+
+**839 389 o → 135 350 o, soit −83,9 %.** Les trois fichiers pèsent 516 Ko dans
+`cases/img/german/`, mutualisables entre grilles.
+
+### La convention de nommage : le nom du vault, normalisé ASCII-minuscules-tirets
+
+Ni préfixe, ni renommage de fond. Deux mesures sur les 664 images citées par les
+53 pages german :
+
+- **Zéro homonyme**, y compris entre `Skills ECOS/img/` et les 75 fichiers venus
+  de `_bibliotheque/`. Un préfixe de dossier n'écarterait donc aucun risque réel,
+  alors qu'il allongerait des noms déjà à 119 caractères — et les noms du vault
+  portent **déjà** leur thème (`general-`, `abdo-`, `neuro-`…).
+- **La normalisation est l'identité pour 573 d'entre elles (86 %)** et ne produit
+  **aucune collision**. Elle ne touche que les 91 noms hérités de
+  `_bibliotheque/`.
+
+Elle règle deux pannes concrètes, pas une préférence esthétique : un espace ou un
+accent dans un `src=` impose le percent-encoding, illisible à l'édition manuelle ;
+et **7 fichiers sont stockés en NFD par macOS quand la page SSP les cite en NFC** —
+même chaîne à l'œil, octets différents. `cases/img/german/MANIFEST.tsv` garde le
+lien nom livré ↔ nom d'origine, avec sha256 et dimensions.
+
+### L'outil de reprise : `scripts/german/fetch_image.py`
+
+Prend `![[general-score-audit-c.png]]`, résout dans le vault, contrôle, copie,
+rend le chemin à coller. **Idempotent** au sha256 : une image déjà reprise n'est
+pas réécrite, donc aucun blob git nouveau. `--check` diagnostique à blanc,
+`--verify` vérifie les `src` des 88 grilles et signale les orphelines.
+
+Il s'arrête en code 1 plutôt que de livrer du faux : référence cassée, fichier
+vide ou tronqué (contrôle des signatures et des marqueurs de fin PNG/JPEG),
+homonyme ambigu, collision de nom. Il **avertit** sans bloquer sur un appariement
+non exact et sur un dépassement du plafond de 400 Ko.
+
+Deux pièges rencontrés en l'écrivant, et traités :
+
+- **`.backup_transparents`** est une copie de sauvegarde de `Skills ECOS/img/`.
+  Sans l'exclure de la résolution, **46 des 664 images citées deviendraient
+  ambiguës** alors qu'aucune ne l'est.
+- Le premier jet copiait `dermato-resume.jpg`, **2,3 Mo**, sur un simple test de
+  référence cassée. D'où l'avertissement de plafond, et le retrait immédiat.
+
+### Ce que la vérification a appris : les « 36 références cassées » sont 29
+
+Le § 8.5 b relève 36 références introuvables sur 700. En résolvant avec
+réconciliation NFD/NFC, il en reste **29 vraiment introuvables** ; les **7 autres
+existent** et n'étaient manquées que sur la normalisation Unicode
+(`Dermato-Résumé.jpg`, `Kératites.jpg`, `Ped-Eruptions cutanées.jpg`,
+`Dermato-Impétigo.png`, `Dermato-Descritpion des lésions I.jpg`,
+`EM - Résumé-2024_page-0002.jpg`,
+`EM - ECOS fédéral - entretien motivationnel_page-0001.jpg`).
+
+Et **28 des 29 vraiment cassées sont des `Résumé-SSP_page-00NN.jpg`**, que le
+§ 8.5 a écarte déjà comme scans de PDF. Il ne reste donc **qu'une seule référence
+cassée réellement gênante**, `G5rt9XF8OyqqQlfo__MHeJgVB2TIA7ruI.png`.
+
+Le § 8.5 n'a **pas** été modifié — l'utilisateur l'a explicitement gelé. Le
+chiffre de 36 y reste ; il est à corriger par qui rouvrira la règle de sélection.
+
+### Contrôle visuel
+
+Chrome headless, sonde injectée dans une copie temporaire placée dans
+`cases/german/` puis supprimée, quatre combinaisons (clair/sombre × 1200/500 px).
+Les trois images rendent **au pixel près** ce qu'elles rendaient en base64 :
+naturalWidth/Height 519×639, 520×368, 2040×1455, `complete === true`, ratios
+conservés, `scrollWidth === innerWidth` — aucun débordement. Le correctif de
+contraste tient : `.annexe-title` passe de `rgb(44,90,160)` en clair à
+`rgb(147,197,253)` en sombre.
+
+### Préoccupations
+
+**Neuf autres grilles portent encore 1,0 Mo de base64** (German-36, 42, 43, 44,
+57, 61, 68, 75, 78 — 10 images), héritage de l'import. Elles ne sont pas dans le
+périmètre de cette tâche, mais elles sont désormais la seule source de base64 du
+corpus et `fetch_image.py` les convertirait sans peine. German-68 porte deux
+`annexe-item` : sa conversion demandera l'attention du § 8.7.
+
+**Le plafond de 400 Ko a changé de raison d'être sans changer de valeur.** Il
+bornait le poids d'un HTML ; il borne maintenant un stock partagé, où une image
+lourde citée par huit grilles ne coûte qu'une fois. La valeur mérite d'être
+rediscutée quand la règle de sélection sera rouverte — elle écarte aujourd'hui
+11 % des images éligibles pour une raison qui a perdu de sa force.
+
+**L'estimation du corpus dépend fortement du biais de sélection** : à 220 images
+distinctes, de 22,3 Mo (biais bas) à 49,9 Mo (biais haut), 29,1 Mo en sélection
+neutre. La cible de 25,9 Mo tombe dans la fourchette mais n'est pas un plancher.
+
+Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p2b-report.md`
