@@ -2923,3 +2923,315 @@ noté renvoie explicitement à l'image (« Voir image en annexe »). Chantier d�
 signalé en p2b et p3a, hors périmètre ici.
 
 Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3b-report.md`
+
+---
+
+# Lot p3c — sections pédagogiques des grilles German-31 à 60
+
+## Liste établie sur pièces
+
+`German-31` à `German-60`, moins les six déjà complétées (34, 42, 43, 44, 48, 56)
+= **24 grilles**. Composition initiale relevée grille par grille avec
+`lib_german.py`, et non supposée :
+
+| Composition de départ | Grilles |
+|---|---|
+| `annexe-dd` seul, ± `therapy`, ± `redflags` | 31, 32, 33, 35, 37, 40, 41, 45, 46, 47, 49, 50, 51, 53, 55, 57, 58, 59, 60 |
+| `annexe-dd` + `annexe-image` + coquille `annexes` | 36, 57 |
+| `therapy` seul, sans `annexe-dd` | 52, 54 |
+| **aucun bloc pédagogique** | **38, 39** |
+| `resume` préexistant | **aucune** |
+
+Aucune des 24 ne portait de `resume` : le cas « baliser un resume préexistant
+sans le réécrire » ne s'est donc pas présenté dans ce lot.
+
+## Ce qui a été livré — 17 grilles sur 24
+
+**Livrées et commitées** : 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 45, 46, 47,
+49, 50, 51, 52.
+
+**Non traitées, restant à faire** : **53, 54, 55, 57, 58, 59, 60** — sept
+grilles, dont trois lombalgies (57, 58, 59), la paire HTA (53, 54), l'ictère (55)
+et le malaise (60). Le travail s'est arrêté sur épuisement du budget de contexte
+de la session, et non sur un obstacle technique. Le relevé préparatoire de
+German-53 et German-54 figure ci-dessous pour la session suivante.
+
+| | 17/17 |
+|---|---|
+| `resume` créé | 17 |
+| `annexe-theorie` créé | 17 |
+| `presentation-patient` créé | 17 |
+| Planche d'images créée ou complétée | 17 |
+| `annexe-expert` / `annexe-scenario` créés | **0** |
+| Section notée touchée | **0** |
+| `annexe-dd` balisé | **0** (écart assumé, cf. p3b § 6 f) |
+
+Chaque `presentation-patient` s'ouvre sur une `section-commcards` portant
+`commcard-sbar.jpg` et `commcard-snapps.jpg` dans un `.commcard-grid`, servies
+depuis `../img/`, avec les `alt` de German-1 repris mot pour mot. **Aucune
+« Checklist mentale »** dans les 17 grilles.
+
+## Les pages SSP qui ne couvrent pas leur vignette — quatre cas
+
+Le relevé de p3b portait sur huit pages ; celui-ci en ajoute quatre, dont deux
+plus sévères que tout ce qui avait été signalé jusqu'ici.
+
+1. **Skills — Entretien Motivationnel / German-39 (conseil vaccinal)** — le cas
+   le plus net du corpus à ce jour. La page est une page de *méthode* consacrée à
+   l'entretien motivationnel, dont les applications développées sont l'alcool et
+   le tabac. Elle ne mentionne l'hésitation vaccinale **qu'une seule fois, sous
+   forme d'un renvoi vidéo**, dans une liste d'autres applications possibles.
+   Aucun contenu vaccinal n'en provient : calendrier, maladies évitées,
+   complications, létalités, cadre légal suisse, remboursement, carnet de
+   vaccination — tout vient du corrigé. Ce que la page apporte réellement est la
+   moitié communicationnelle : Ask-Tell-Ask, OARS, esprit d'acceptation et
+   d'autonomie, erreurs à éviter. **Une page consacrée au conseil vaccinal
+   pédiatrique serait la source appropriée.**
+2. **Ballonnement (Météorisme) / German-49 (hernie inguinale)** — la page traite
+   les troubles fonctionnels intestinaux, la distension gazeuse, l'ascite et
+   l'occlusion. Elle mentionne les **hernies pariétales une seule fois**, comme
+   une ligne de l'examen abdominal. Sémiologie herniaire, réductibilité,
+   distinction directe/indirecte, techniques opératoires et complications
+   viennent du corrigé seul. La page apporte en revanche le versant occlusif, qui
+   est exactement la complication vers laquelle pointent les cinq signaux
+   d'alarme du `redflags` — d'où le choix des deux images retenues.
+3. **Dysurie / German-37 (urétrite IST)** — la page traite les infections
+   urinaires : cystite, pyélonéphrite, prostatite, bactériurie de la femme
+   enceinte. Elle nomme l'urétrite et le contexte sexuel à risque dans son
+   différentiel, indique la PCR sur premier jet et pose le principe de traiter le
+   partenaire, mais ne développe pas la prise en charge des IST : ni protocole
+   antibiotique, ni modalités de notification, ni calendrier de dépistage
+   sérologique et de test de guérison.
+4. **Douleur Thoracique / German-33 (RGO)** — confirmation du signalement de p3b
+   sur German-30. La page range le RGO parmi les causes fréquentes, oriente vers
+   lui la douleur à type de brûlure, fait palper l'épigastre et met en garde
+   contre le raisonnement par le test aux IPP — mais ne développe ni la
+   physiopathologie du reflux, ni le mécanisme des IPP, ni les indications
+   comparées de la pH-métrie et de l'endoscopie.
+
+Cas apparentés, moins sévères, également consignés dans les `annexe-theorie` :
+**Dyspnée / German-35 et German-36** (la page traite l'asthme aigu et
+l'exacerbation de BPCO, non l'asthme d'effort ni la BPCO stable) et
+**Malaise & PC brève / German-41** (excellente sur le différentiel syncope contre
+épilepsie, muette sur le bilan d'une première crise, les antiépileptiques et les
+métastases cérébrales).
+
+**À l'inverse**, la page « Fatigue » couvre correctement ses trois vignettes
+(SAOS, anémie ferriprive, dépression), et la page « Syndrome Néphrotique » couvre
+la sienne : le problème n'est donc pas général, il est d'appariement.
+
+## Les images
+
+**41 images distinctes ajoutées, 5 410 Ko**, toutes reprises par
+`fetch_image.py`, aucune recompressée ni redimensionnée, toutes au manifeste avec
+sha256 et chemin du vault.
+
+**Corollaire du § 8.3 vérifié.** Trois grilles partagent la page « Douleur
+Thoracique », deux la page « Dyspnée », trois la page « Fatigue », deux la page
+« Skills — Entretien Motivationnel » : **aucune image n'est commune à deux
+grilles du lot**, message-clé excepté. Deux images planifiées pour German-32 ont
+dû être réattribuées après constat que German-30, traitée en p3b sur la même
+page, les portait déjà.
+
+### Message-clé — la condition du § 8.4 a mordu 4 fois sur 17
+
+| Grille | Message-clé | Décision |
+|---|---|---|
+| German-33 (RGO, cabinet) | douleur thoracique | **posé** — porte sur la médecine de premier recours, le score TOPIC et l'angor stable, c'est-à-dire la vignette |
+| German-31 (EP, urgences) | douleur thoracique | **écarté** — parle de premier recours et d'exclusion coronarienne, hors sujet aux urgences pour une EP |
+| German-32 (pneumothorax, urgences) | douleur thoracique | **écarté** — même motif |
+| German-35 (asthme d'effort) | asthme | **posé** — diagnostic par spirométrie réversible, tabac comme facteur de mauvais contrôle |
+| German-36 (BPCO GOLD I) | BPCO | **posé** |
+| German-38 (EM tabac) | arrêt du tabagisme | **posé** |
+| German-37 (urétrite IST) | infection urinaire simple | **écarté** — porte sur la bactériurie asymptomatique et les germes multirésistants, pas sur une IST |
+| German-46 (anémie ferriprive) | fatigue | **posé** — son troisième message nomme explicitement la carence en fer |
+| German-47 (dépression) | fatigue | **posé** — ses deux premiers messages portent sur le lien psychosocial et le bilan organique systématique |
+| German-45 (SAOS) | fatigue | **écarté** — ni psychosocial ni martial |
+
+Chaque message-clé écarté a été **ouvert et lu** avant décision. Quatre écarts sur
+dix-sept : la condition « qui porte sur la vignette » continue de mordre, dans la
+même proportion qu'en p3b (cinq sur vingt-cinq).
+
+### Images écartées pour le poids — § 8.5 d
+
+Trois fichiers documentant un **critère explicitement noté** ont été écartés au
+seul motif du plafond de 600 Ko :
+
+| Fichier | Poids | Critère noté qu'il documentait |
+|---|---|---|
+| `abdo-punch-renal.png` | **10 646 Ko** | Giordano — German-37 (e2) et German-51 (e2) |
+| `abdo-palpation-reins.png` | **8 723 Ko** | palpation des fosses lombaires — German-51 (e2) |
+| `general-fatigue-examens-paracliniques.jpg` | **798 Ko** | bilan de la fatigue ; sa légende porte de surcroît le piège de la ferritine, protéine de la phase aiguë, directement utile à German-46 |
+
+Ces trois-là s'ajoutent aux onze relevés en p3b, et confirment son constat § 6 c :
+ce sont des PNG non optimisés dont une passe de recompression **côté vault**
+rendrait accessible une dizaine d'images qui passent le test 1.
+
+### Exception du § 8.5 a appliquée, et une refusée
+
+- **Retenue** : `EM_Aide_page-0004.jpg` (557 Ko, German-39) — fiche PEPra à
+  figure unique sur l'attitude de base en entretien motivationnel, ouverte et
+  lue avant décision : la page **est** le schéma.
+- **Refusée** : `EM_Aide_page-0002.jpg` (403 Ko) — dix questions évocatrices en
+  liste. C'est du texte long en image, exactement ce que le § 8.5 a proscrit :
+  non sélectionnable, non traduisible, et invisible au dédoublonnage.
+
+### Grilles à moins de trois images
+
+- **German-41** : une seule. Sa page (« Malaise ») cite sept images, dont six
+  portent sur la syncope et le rythme cardiaque ; German-41 n'a **aucun critère
+  ECG** et **aucune cause cardiaque dans son `annexe-dd`**. Seule la morsure
+  latérale de la langue passe le § 8.3.
+- **German-39** : une seule, cf. supra.
+- **German-45, 46, 47** : deux chacune. La page « Fatigue » cite douze fichiers,
+  dont **cinq cassés** et un hors plafond ; il en reste six exploitables pour
+  trois vignettes.
+
+## Fichiers du vault défectueux — signalés, non contournés
+
+1. **`pulmo-ep-algorithme-sans-choc-esc.jpg`** → `ÉCHEC [corrompu]`. Diagnostic
+   posé : le fichier est **un PNG portant une extension `.jpg`**
+   (`file` : *PNG image data, 1669 x 1358*). Ce n'est pas une troncature.
+   `fetch_image.py` a raison de refuser : livrer l'octet tel quel sous un nom
+   mensonger casserait le rendu sur tout serveur qui se fie à l'extension.
+2. **`pulmo-ep-algorithme-avec-choc-esc.jpg`** — **même défaut**, vérifié dans la
+   foulée (*PNG image data, 1854 x 1636*). Les deux algorithmes ESC de l'embolie
+   pulmonaire de la page « Douleur Thoracique » sont donc inutilisables en l'état.
+   German-31 a reçu à la place l'angio-CT, qui documente le critère m3.
+   **Correction souhaitable côté vault : renommer les deux fichiers en `.png`.**
+3. **Six références cassées** (0 octet) découvertes sur deux pages nouvelles :
+   `Résumé-SSP_page-0018` à `0022` (page « Fatigue », cinq fichiers) et
+   `Résumé-SSP_page-0040` (page « Hématurie »). Elles s'ajoutent aux neuf de
+   p3b, portant le total connu à **quinze**, toutes de la même famille
+   `Résumé-SSP_page-00NN.jpg`. Écartées de toute façon au § 8.5 a, mais leurs
+   légendes décrivent des planches utiles — pour la page « Fatigue » :
+   l'anamnèse par hypothèse, la trame ECOS en trois temps, les étiologies
+   endocriniennes, l'opposition insuffisance surrénalienne / hypothyroïdie, et le
+   bilan de laboratoire.
+
+Aucun contournement n'a été tenté et **le vault n'a pas été modifié**.
+
+## Divergences page / corrigé relevées, barème inchangé (niveau 3)
+
+- **German-35** — les messages clés de la page posent qu'un bêta-2 mimétique de
+  courte durée ne doit **jamais** être utilisé seul en monothérapie à la demande,
+  et donnent pour traitement de choix l'association corticoïde inhalé et
+  formotérol ; le corrigé place le bêta-2 mimétique à la demande en traitement
+  aigu et ne réserve le corticoïde inhalé qu'aux symptômes fréquents. Les deux
+  formulations sont rapportées telles quelles dans l'`annexe-theorie`.
+- **German-41** — la page pose l'**ECG 12 dérivations comme systématique devant
+  toute perte de connaissance transitoire**, et fait de son omission un piège
+  explicite. Le corrigé ne le cote pas parmi ses examens complémentaires.
+- **German-38** — la station propose un rendez-vous de suivi « dans 6 mois
+  maximum », les points clés de la page un suivi « à moins de 2 à 4 semaines ».
+  Les deux se comprennent par leur contexte : la page décrit le suivi d'un arrêt
+  engagé, la station celui d'un patient en contemplation à qui l'on laisse la
+  porte ouverte.
+- **German-31** — le corrigé conditionne l'oxygénothérapie à une SpO₂ inférieure
+  à 94 %, la page à 90 % dans sa section SCA. Contextes différents ; le `resume`
+  renvoie au seuil de la station sans le contredire.
+
+## Particularités internes de grille, laissées inchangées
+
+- **German-39** — la section « examen clinique » **ne contient aucun examen
+  physique** : elle est entièrement consacrée à l'explication des vaccins et de
+  leur calendrier. Relevé sans être corrigé, barème inchangé.
+- **German-40** — la fillette a des **fuites diurnes** une à deux fois par
+  semaine, ce qui la place hors du cadre monosymptomatique au sens de la page, et
+  fait entrer l'échographie réno-vésicale dans les indications. Le corrigé
+  formule prudemment « échographie rénale si nécessaire dans le suivi ». La
+  tension est explicitée dans l'`annexe-theorie` sans toucher au barème.
+- **German-41** — céphalées décrites à **gauche** et hémiparésie **gauche**, qui
+  renverrait à une atteinte de l'hémisphère droit. La latéralisation d'une
+  céphalée étant un mauvais localisateur, le fait est relevé sans être présenté
+  comme une erreur.
+- **German-36** — orthopnée à trois oreillers et dyspnée paroxystique nocturne
+  chez une vignette dont le corrigé retient une BPCO GOLD I. La station donne
+  elle-même les moyens d'explorer la tension (critère d'anamnèse sur les
+  symptômes d'IC, critère d'examen sur l'IC droite, NT-proBNP et échocardiographie
+  au différentiel) ; l'`annexe-theorie` la traite sans trancher.
+- **German-46** — grille sans critère de diagnostic principal ni réponses patient
+  chiffrées : elle cote directement les différentiels puis la *reconnaissance*
+  d'une anémie ferriprive et d'une carence vitaminique sur leurs caractéristiques
+  biologiques. C'est la démarche qui est évaluée, non la reconnaissance d'un
+  tableau donné.
+
+## Mesures
+
+| Contrôle | Résultat |
+|---|---|
+| `report_redundancy.py`, avant et après, sur chacune des 17 | **0 paire nouvelle** |
+| Densité de balisage, 4 conteneurs prescrits | **9 571 spans / 90 892 mots = 1 pour 9,5** |
+| Spans hors conteneur | **0** |
+| Spans dans `section-longue` / `section-express` | **0** |
+| `check_invariants.py` après re-snapshot | **OK — 88 grilles** |
+| Diff baseline champ par champ | `blocks` seul champ modifié · 17 grilles · 0 écart hors champ · **delta purement additif** |
+| `check_reachability.py` | **OK — 88/88 à 100 %** |
+| `check_nomenclature.py` | **OK** |
+| AMBOSS — 3 scripts | **OK — 40 grilles** |
+| RESCOS — 3 scripts | **OK — 41 grilles** |
+| `fetch_image.py --verify` | **0 lien cassé, 0 orpheline** |
+| Contrôle visuel | **4 grilles × 2 thèmes × 2 largeurs = 16 rendus, 0 image cassée, 0 débordement** |
+
+Densité par grille : plus dense **1/8,0** (German-52), plus légère **1/12,1**
+(German-38). Les deux grilles les plus légères sont German-38 et German-39, deux
+stations de **pure communication** : elles offrent structurellement moins de
+termes balisables — pas de pathologie, pas d'examen complémentaire, pas de
+traitement à nommer. C'est une propriété du sujet, non un défaut d'application.
+
+Répartition : `c-pink` 2 524 · `c-green` 2 473 · `c-red` 1 682 · `c-yellow` 797 ·
+`c-purple` 772 · `c-blue` 566 · `c-amber` 478 · `c-orange` 279.
+
+## Contrôle visuel
+
+Chrome `--headless=new`, rendu local `file://`, aucune requête réseau. Quatre
+grilles retenues pour leur diversité de format : **German-33** (message-clé de
+2280 px), **German-36** (mélange base64 hérité et images référencées),
+**German-38** (fichier **SVG**, premier du corpus) et **German-51** (trois JPEG).
+
+- Chargement : `complete === true` et `naturalWidth`/`naturalHeight` **égaux aux
+  dimensions du vault** pour les seize images ; `cassees=0` aux seize rendus.
+  Le SVG rend 600×600.
+- Aucun débordement horizontal : `scrollWidth === innerWidth` à 1200 et 500 px,
+  dans les deux thèmes.
+- Huit couleurs distinctes dans chaque thème, `neutralises=0` ; `c-yellow` rend
+  un fond et non une couleur de texte.
+- Copies temporaires supprimées : aucun `_tmpvis-*` dans `git status`.
+
+## Relevé préparatoire pour la session suivante
+
+Les sept grilles restantes ont été partiellement instruites :
+
+- **German-53** (HTA essentielle grade 2, femme 56, découverte à l'automesure) et
+  **German-54** (HTA non contrôlée avec début d'insuffisance cardiaque, femme 67,
+  observance imparfaite et AINS) partagent `SSP — HTA (Suivi & Crise
+  Hypertensive).md`, qui cite 16 images dont un message-clé. German-54 ne porte
+  **aucun `annexe-dd`**. Sélections envisagées, à valider :
+  German-53 — classification de l'HTA, MAPA 24 h, critères d'investigation d'une
+  HTA secondaire ; German-54 — HVG à l'ECG, Rx d'OAP hypertensif, message-clé.
+  **Le message-clé n'a pas encore été ouvert** : la condition du § 8.4 reste à
+  vérifier pour les deux.
+- **German-55** (ictère), **German-57**, **58**, **59** (lombalgies, page
+  commune à trois vignettes — le corollaire du § 8.3 y sera le plus exigeant du
+  corpus), **German-60** (malaise, page partagée avec German-41 déjà traitée :
+  les six images de syncope encore disponibles lui reviennent).
+- **German-57** porte déjà une coquille `annexes` et une image en base64, comme
+  German-36 : même procédure d'insertion.
+
+## Commits
+
+| Hash | Contenu |
+|---|---|
+| `8e82399` | German-31, 32, 33, 35, 36 + 15 images |
+| `5a7e02c` | German-37, 38, 39, 40, 41 + 10 images |
+| `ca2bdc8` | German-45, 46, 47, 49, 50 + 10 images |
+| `6e112f4` | German-51, 52 + 6 images |
+
+Index construit **chemin par chemin** avant chaque commit, avec vérification
+explicite qu'aucun fichier de `cases/rescos/`, `cases/casecos/`,
+`cases/rescos-locales/`, `scripts/rescos/` ou `scripts/casecos/` n'y figurait.
+Aucun `git add -A`. La session voisine a commité `e54b127` et `135dbca` entre
+mes commits ; la réaccessibilité de `8e82399` et `5a7e02c` depuis HEAD a été
+vérifiée après coup.
+
+Rapport détaillé : `.superpowers/sdd/2026-07-30-amboss-refonte-pedagogique-suisse/p3c-report.md`
