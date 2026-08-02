@@ -397,31 +397,52 @@ universelle) ; les thématiques sont **« clôture-lourdes »** (commentaire dan
 section notée). Le barème est en revanche uniforme : 31/33 et 123/132 emploient
 les mêmes quatre sections `anamnese / examen / management / communication`.
 
-### RESCOS-69 — deux fichiers, deux vignettes distinctes
+### RESCOS-69 — deux vignettes distinctes — **suffixé (lot `l3`)**
 
 | | `… - Basketteur 25 ans - …` | `… - Traumatisme MS - …` |
 |---|---:|---:|
-| taille | 180 435 o | 174 707 o |
+| taille à l'inventaire | 180 435 o | 174 707 o |
 | critères | 25 | 26 |
 | items de contenu | 137 | 110 |
 
 **3 items en commun**, 134 propres au premier, 106 au second. Ce ne sont **pas**
 deux versions d'un même fichier : ce sont **deux vignettes cliniques
-différentes** partageant le même thème (traumatisme du membre supérieur). La
-seconde développe un volet médico-légal absent de la première (« documentation
-photographique pour dossier médico-légal », « services d'aide aux victimes »).
+différentes** partageant le même thème (traumatisme du membre supérieur, même
+patient « M/Mme Norton, 25 ans »). La seconde développe un volet médico-légal
+absent de la première.
 
-**Conclusion : deux stations, pas une duplication.** Elles ont besoin d'un
-suffixe distinctif, comme `57b` et `58b` — sinon `saveToRegistry()`, qui
-indexe le registre sur le **nom de fichier**, les distinguera par un libellé que
-rien ne relie à leur contenu.
+Le problème était **fonctionnel** : `saveToRegistry()` indexe le registre sur le
+**nom de fichier**, débarrassé de son `.html`. Deux vignettes différentes sous
+le même nom se seraient écrasées l'une l'autre dès la bascule du § 4.
 
-### Trois autres paires suspectes, mesurées
+**Renommé : `RESCOS-69 - Traumatisme MS - Basketteur 25 ans` →
+`RESCOS-69b - …`.** C'est l'autre fichier qui garde le numéro nu, sur deux
+faits :
 
-* **`Fièvre et douleurs articulaires…` ⊂ `RCI-Fièvre et douleurs articulaires…`**
-  — **inclusion stricte** : 105 items communs, **0 propre** à la première, 96
-  propres à la seconde. La version `RCI-` est un enrichissement de l'autre.
-  **C'est une duplication** ; la première est superflue.
+* il porte la **forme canonique** `RESCOS-NN - Thème - Grille ECOS`, celle de
+  RESCOS-65 à 68 — c'est celui que la numérotation désigne ;
+* le précédent exact du projet est `cases/rescos/` : `RESCOS-9 - Boiterie
+  pédiatrique` et `RESCOS-9b - Boiterie pédiatrique - Fillette de 2 ans`. Le
+  fichier qui **ajoute un descripteur de patient** prend le suffixe.
+
+Le suffixe est porté aux **trois endroits** où le corpus le porte, vérifié sur
+`57b` et `58b` : nom de fichier, `<title>`, `<h1>`. Aucune autre occurrence de
+`RESCOS-69` ne subsiste dans le fichier. Le renommage passe par `git mv`
+(rename détecté, `R`), et les 12 champs du snapshot sont **identiques sous le
+nouveau nom** : seule la clé change. 137 items avant, 137 après, 0 disparu.
+
+### Une duplication réelle, mesurée et **non traitée**
+
+**`Fièvre et douleurs articulaires - Infection gonococcique disséminée`
+⊂ `RCI-Fièvre et douleurs articulaires - Infection gonococcique disséminée`** —
+inclusion stricte : **0 item propre** à la première (106 items, tous retrouvés
+dans la seconde), 85 propres à la seconde (203 items, 197 308 o contre
+162 548 o). Ce n'est pas un doublon de nom mais un doublon de **contenu** : la
+version `RCI-` est un enrichissement de l'autre. Arbitrer une suppression de
+grille est un geste éditorial, hors du mandat de réparation technique.
+
+### Deux autres paires suspectes, mesurées
+
 * **`Mal au dos — Guillain-Barré (1)`** vs sans `(1)` : 18 items communs, 85 et
   178 propres. Deux versions divergentes, pas une copie. À arbitrer.
 * **`Céphalées — Exemple station ECOS B3`** vs **`Céphalées — Vignette clinique`** :
