@@ -677,3 +677,246 @@ réparé, s'il était réapparu.
 * **Aucune image fabriquée.**
 * **Aucune lecture de grille entière avec `Read`.**
 * **Aucune commande réseau, aucun `git push`, aucun `git gc` ni `git prune`.**
+
+---
+
+## Lot `l5` — grille pilote RESCOS-58b, Rectorragies
+
+Base `5d16c20`. **Une seule grille de `cases/` modifiée** :
+`cases/rescos-locales/RESCOS-58b - Rectorragies - Grille ECOS.html`.
+**Redondance inter-blocs : 41 → 14.** Corpus : 1260 → **1233** (−27, soit
+exactement le gain de la grille : aucune paire d'une autre grille n'a bougé).
+
+C'était la grille la plus redondante des 33 numérotées RESCOS-41 à 69.
+
+### La page SSP qui dessert cette grille
+
+`SSP ECOS/SSP — Rectorragies & Hémorragie Digestive Basse.md`, trouvée par
+recherche de motif dans le vault — `docs/obsidian-mapping.yaml` ne couvre que
+`cases/rescos/`. Elle **nomme explicitement RESCOS-58 et RESCOS-58b** dans son
+bloc « Références PDF », avec sept autres grilles des quatre corpus.
+
+**Le prédicteur du volet `rescos` se confirme, et se précise.** Le rendement du
+niveau 1 ne tient pas au nombre de grilles desservies mais aux **cibles
+chiffrées**. Ici la page en porte cinq (Hb < 70 g/L / < 80 g/L si cardiopathie
+ischémique · Oakland ≤ 8 · GBS 0-1 · coloscopie ≤ 24 h · FIT/coloscopie
+50-69 ans) — et le niveau 1 a tranché **trois** points, contre zéro sur
+RESCOS-21. Là où r3 concluait « le niveau 1 ne servira presque jamais », ce
+pilote montre que la conclusion dépend du sujet : une page à seuils tranche.
+
+### Les trois corrections de niveau 1
+
+**1. `theorie`/Causes selon l'âge — « ischémie mésentérique » → « colite
+ischémique ».** La page SSP nomme la **colite ischémique** parmi les causes
+coliques de rectorragies (« douleur abdominale brutale (typiquement flanc
+gauche) + rectorragies, sujet > 60 ans, FRCV »), et sa carte ECOS fait de la
+confusion avec l'ischémie mésentérique le piège du sujet : « ne pas manquer
+l'**ischémie mésentérique aiguë** du grêle (douleur ≫ examen, terrain FA), qui,
+elle, est une urgence vitale ». Le bloc citait la seconde à la place de la
+première.
+
+**2. `theorie`/Évaluation de la gravité — « Anémie aiguë: Hb < 100 g/L avec
+microcytose ».** Deux défauts en un item, et la page SSP tranche les deux :
+
+* elle écrit, au dosage de la FSC, « — la chute d'Hb peut être **tardive** en
+  aigu », et sa carte ECOS en fait un piège : « se fier à l'Hb initiale : elle
+  est faussement normale au début, l'hémodilution prenant plusieurs heures. Ce
+  sont la FC, la PA et les marbrures qui décident. » Ériger `Hb < 100 g/L` en
+  critère de gravité d'une hémorragie **aiguë** est exactement ce que la page
+  interdit ;
+* une microcytose ne peut pas accompagner une anémie aiguë — elle signe une
+  spoliation **chronique**. L'item décrivait en fait le patient de la vignette
+  (Hb 92 g/L, VGM 72 fL, section notée), pas une règle.
+
+Réécrit : « Anémie: Hb < 100 g/L, mais l'Hb initiale est faussement rassurante
+en aigu (hémodilution retardée); une microcytose signe un saignement
+chronique ». Le seuil est conservé, les deux erreurs tombent.
+
+**3. `annexe-dd`/Diverticulose colique — les arguments CONTRE étaient ceux de la
+diverticul*ite*.** Le bloc portait « Absence de douleur abdominale » et « Pas de
+fièvre » **CONTRE** l'hémorragie diverticulaire. Or la page SSP décrit
+l'hémorragie diverticulaire comme « saignement **abondant, indolore**,
+intermittent, > 50 ans ; cause la plus fréquente d'HDB sévère », et sa carte
+ECOS nomme précisément cette confusion : « **Piège :** croire que
+"diverticulite = saignement". Ce sont deux complications distinctes et quasi
+exclusives : la diverticulite fait mal et ne saigne presque jamais. »
+
+L'absence de douleur était donc un argument **POUR**, rangé du mauvais côté.
+Corrigé :
+
+| | avant | après |
+|---|---|---|
+| POUR | Âge > 50 ans · Saignement abondant · Alternance du transit | Âge > 50 ans · **Saignement abondant et indolore** |
+| CONTRE | Absence de douleur abdominale · Pas de fièvre | **Saignement isolé, sans amaigrissement ni masse au TR** |
+
+« Pas de fièvre » disparaît comme **erreur factuelle** (la fièvre ne discrimine
+pas une hémorragie diverticulaire) ; le fait clinique survit trois fois — critère
+noté « 4. Symptômes systémiques → Fièvre [Non] », `scenario`, et
+`presentation`/Version longue. « Alternance du transit » quitte les arguments
+POUR pour la même raison et reste porté par `annexe-dd`/Cancer du rectum,
+`annexe-dd`/Cancer du côlon, `theorie` et `resume`.
+
+**`annexe-dd` est éditable malgré son emplacement.** Il vit ici dans le
+`criteria-row` du critère noté « 2. Hypothèses diagnostiques », mais ne porte
+aucune case à cocher : le `<input>` appartient au critère englobant. Y toucher
+ne peut pas déplacer le barème — c'est la règle du § 3 de
+`scripts/amboss/PROCEDURE.md`, et c'est ce qui distingue `annexe-dd` de
+`therapy` et `redflags`, qui sont, eux, des **attendus de correction**.
+
+### Le trou du bloc canonique, trouvé par la méthode r3 § 6
+
+`resume`/Prise en charge ne portait **que la stratégie oncologique** (RCP,
+stades I à IV, suivi, dépistage, prévention). Aucune mesure immédiate — pour un
+patient qui arrive aux urgences avec un saignement actif et une Hb à 92 g/L.
+
+L'information reliait le noté (`therapy`, et le critère « 4. Propose une
+hospitalisation (suivi hémoglobine et investigations) ») à `presentation`/§3
+**sans passer par `resume`**. C'est exactement le symptôme décrit par r3 § 6, et
+aucun contrôle ne le signale.
+
+**Porté dans le canonique avant toute réduction de `presentation`** — sous-section
+« Mesures immédiates » : hospitalisation avec surveillance rapprochée de
+l'hémoglobine · arrêt de l'aspirine et des AINS · transfusion si Hb < 70 g/L ou
+instabilité hémodynamique, **seuil < 80 g/L si cardiopathie ischémique**.
+
+La nuance des 80 g/L est le **quatrième point de niveau 1** : elle vient de la
+page SSP (« stratégie restrictive : seuil Hb < 70 g/L (< 80 g/L si cardiopathie
+ischémique) ») et elle est pertinente ici — le patient a une aspirine cardio
+« récemment introduite en prévention cardiaque ». Elle est portée dans le
+**pédagogique** ; `therapy`, qui est dans la section notée, n'a pas été touché.
+
+### Les quatre gestes de redondance, et leur rendement
+
+| geste | paires | fondement |
+|---|---:|---|
+| `presentation`/§1 — fusion des puces POUR/CONTRE | −18 | r3 § 1.3, forme `structured` conservée |
+| `presentation`/Touches ludiques — retrait de la liste « Red flags cancer colorectal » | −5 | règle du format : copie six-pour-six de `theorie`/Signes d'alarme |
+| `presentation`/§2 et §3 — `presentation-reponse list` → registre parlé | −4 | « Redire à l'oral, pas en liste » |
+| `annexe-dd`/Diverticulose — correction de niveau 1 | −3 | effet de bord de la correction ci-dessus |
+
+**§1 est resté en forme `structured`.** La tentation était de le convertir en
+`presentation-reponse text` ; le précédent r3 dit le contraire — RESCOS-21 a
+gardé `reponse-pour` / `reponse-contre` et **fusionné les puces** en lignes plus
+longues et plus discriminantes. C'est aussi la forme d'AMBOSS. 17 puces → 8
+lignes ici ; la fusion suffit à faire tomber le ratio sous le seuil sans changer
+la structure que les deux corpus partagent.
+
+**La `mnemo-box` « RED FLAG » a été déplacée, pas supprimée** — de
+`presentation`/Checklist mentale vers `presentation`/Touches ludiques, geste du
+§ 3 de `scripts/amboss/PROCEDURE.md` (précédents AMBOSS-2 et AMBOSS-3). Elle est
+strictement plus riche que la liste supprimée (elle ajoute `D` = dyspnée /
+étourdissements, le symptôme d'appel du patient, et `G` = groupe sanguin) et
+c'est un **changement de format**, donc protégé. La Checklist mentale redevient
+une trame pure — axe 5 satisfait.
+
+Deux mnémos coexistent désormais dans Touches ludiques, RED FLAG et CANCER. Ils
+ne se doublent pas : le premier énumère les signaux d'alarme, le second le
+tableau néoplasique. Leurs deux clés `R = Rectorragies persistantes` produisent
+4 des 14 paires résiduelles — plancher irréductible, et les clés de mnémo ne se
+retouchent pas.
+
+### Les 14 paires résiduelles, justifiées
+
+| # | score | couple | justification |
+|---|---|---|---|
+| 1 | 1,0 | annexe-dd ↔ theorie | « masse palpable au toucher rectal » : signe cardinal, argument POUR ↔ signe d'alarme |
+| 2-3 | 0,96 ×2 | annexe-dd ↔ presentation | clé `R` des deux mnémos ↔ argument POUR — mnémos protégés |
+| 4 | 0,88 | annexe-dd ↔ expert | intitulé d'hypothèse : liste de l'évaluateur ↔ raisonnement |
+| 5 | 0,85 | annexe-dd ↔ theorie | « modification du transit » : plancher structurel |
+| 6 | 0,77 | annexe-dd ↔ resume | « rectorragies persistantes » : plancher |
+| 7 | 0,77 | annexe-dd ↔ theorie | « antécédent familial de cancer » : plancher |
+| 8 | 0,76 | resume ↔ theorie | FSC : `resume` liste le bilan oncologique, `theorie` le bilan de l'hémorragie aiguë — deux listes complémentaires, indications portées (axe 1) |
+| 9-10 | 0,75 ×2 | resume ↔ presentation | clé `R` des deux mnémos |
+| 11 | 0,74 | theorie ↔ presentation | clé `G` du mnémo ↔ « groupe sanguin, RAI si transfusion envisagée » |
+| 12 | 0,74 | annexe-dd ↔ expert | comme #4 |
+| 13 | 0,73 | resume ↔ presentation | « habitudes de vie » : item de trame de la Checklist mentale (axe 5) |
+| 14 | 0,73 | resume ↔ theorie | antécédents familiaux : plancher |
+
+Six paires sur quatorze sont des clés de mnémo, cinq le plancher structurel de
+r3 § 1.4, deux la liste de l'évaluateur, une l'axe 1.
+
+**`expert` n'a pas été touché.** Sa liste de quatre diagnostics différentiels
+double `annexe-dd` (paires #4 et #12), mais c'est la **fiche que l'évaluateur
+tient à la station** : la retirer le priverait de sa référence de correction.
+`expert` porte par ailleurs du contenu strictement unique — la carte de
+laboratoire et le mannequin de toucher rectal.
+
+### `check_no_loss 5d16c20` — 14 items, verdictés un à un
+
+| item disparu | où il survit |
+|---|---|
+| `saignement abondant` | reformulé sur place : « Saignement abondant **et indolore** » |
+| `alternance du transit` (POUR diverticulose) | correction de niveau 1 ; le fait est dans `annexe-dd` ×2, `theorie`, `resume` |
+| `pas de fievre` (CONTRE diverticulose) | correction de niveau 1 ; le fait est dans le critère noté 4, `scenario`, Version longue |
+| `anemie aigue hb 100 g l avec microcytose` | reformulé sur place |
+| `rectorragies nouvelles apres 50 ans` | `theorie`/Signes d'alarme, mot pour mot |
+| `anemie microcytaire` | fusionné dans §1 Q1 ; aussi `annexe-dd`/Cancer du côlon |
+| `saignement possible` | remplacé par un énoncé plus fort (« première cause d'HDB sévère ») |
+| `fsc crase groupe sanguin` | §2, registre parlé ; `resume`/Biologie ; `therapy` |
+| `scanner tap metastases` | §2, registre parlé ; `resume`/Imagerie |
+| `transfusion si hb 70 g l ou instabilite` | **porté dans `resume` avant retrait** ; §3 parlé ; `therapy` |
+| `coloscopie biopsies` | §3 parlé ; `resume`/Imagerie ; `therapy` |
+| `bilan extension irm pelvienne scanner tap` | §2 et §3 parlés ; `resume`/Imagerie |
+| `discussion rcp …` | §3 parlé (« colloque multidisciplinaire (RCP) ») ; `resume`/Stratégie |
+| `suivi oncologique et coloscopique regulier` | §3 parlé, mot pour mot ; `resume`/Suivi |
+
+**Aucune perte.** Deux disparitions sont des **corrections factuelles** assumées,
+les douze autres des reformulations ou des fusions.
+
+### Barème — règle 1, strictement
+
+Toutes les éditions portent sur `annexe-dd`, `resume`, `theorie` et
+`presentation` — **aucun bloc noté**. 0 sous-item noté ajouté ou retiré ;
+`maxScores`, `<span class="score">`, `sectionInfo[].count` et `coef` intacts ;
+**baseline non régénérée**. `criteriaCount` 25, `detailCount` 32, `radioCount`
+73, `checkboxCount` 32 — inchangés, et `check_invariants` le confirme sur les
+165 grilles. Ni `window.caseConfig`, ni les `<script>`, ni un `.criteria-text`
+n'ont été approchés. Les crochets de `cloture` sont intacts — la phase `--deep`
+compte des crochets colorés sur la grille.
+
+### Deux divergences consignées, non corrigées
+
+**1. `therapy` (section notée) : « Coloscopie totale en urgence différée (dans
+les 24-48h) » contre « ≤ 24 h » de la page SSP** (« en urgence (≤ 24 h, après
+préparation) si HDB sévère / persistante »). C'est une divergence **dans une
+section notée** : elle se consigne, elle ne se corrige pas. Aucun bloc
+pédagogique ne porte de délai contradictoire — vérifié : `theorie`, `resume` et
+`presentation` nomment la coloscopie sans délai. Rien à aligner.
+
+**2. `annexe-dd`/Hémorroïdes : « Pas de douleur anale » en argument CONTRE.**
+La page SSP décrit les hémorroïdes comme « sang rouge vif après les selles,
+**indolore** » — l'absence de douleur ne plaide donc pas contre elles. Mais
+l'intitulé du bloc est « Hémorroïdes **ou autre problème proctologique (fissure
+etc)** », et pour une fissure anale (« douleur aiguë à la défécation », SSP)
+l'argument est juste. La page ne tranche pas l'entrée **groupée** : niveau 3,
+laissé en l'état. C'est la même famille d'erreur que celle corrigée sur la
+diverticulose, mais sans l'appui explicite qui autorisait la correction.
+
+### Vérifications
+
+```
+check_invariants.py                 OK — 165 grilles, code 0
+check_nomenclature.py               OK — 0 terme, code 0
+check_reachability.py               OK — 156/156 notées à 100 %, code 0
+report_redundancy.py RESCOS-58b     41 -> 14
+report_redundancy.py (corpus)       1260 -> 1233
+check_no_loss.py 5d16c20            14 items, verdictés, 0 perte
+browser_probe.js RESCOS-58b --deep  0 exception, 100 %, ecos_registry écrit,
+                                    barre nav fixed sans recouvrement,
+                                    crochets colorés présents
+bounds_anomalies / uncovered_content  [] / {}
+AMBOSS report_redundancy            147 (inchangé) · 3 portes code 0
+RESCOS report_redundancy            127 (inchangé) · 3 portes code 0
+```
+
+### Ce que le lot `l5` n'a pas fait
+
+* **Rien sous `cases/german/`, `scripts/german/`, `cases/casecos/` ni
+  `scripts/casecos/`** — ni lu, ni écrit. Le commit est `path`-scopé sur
+  `cases/rescos-locales/` et ce journal ; l'utilisateur travaillait en parallèle
+  sur casecos et a commité `42aa4e0` pendant le lot.
+* **Aucune modification de `cases/scoring.js`** ni d'aucun fichier partagé.
+* **Aucun bloc créé** : `annexe-qr` et `feuille-porte` n'ont pas été approchés.
+* **Aucune lecture de grille entière avec `Read`** — bornes par `block_spans`,
+  puis `Read` avec `offset`/`limit`.
+* **Aucune commande réseau, aucun `git push`, aucun `git gc` ni `git prune`.**
