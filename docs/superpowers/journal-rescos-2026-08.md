@@ -542,3 +542,221 @@ sous-item noté ajouté ni retiré (**règle 1** du barème, exclusivement).
 | `check_no_loss.py 6d11c3c RESCOS-21_` | 1 item signalé, retrouvé 3× ailleurs |
 | équilibrage `<div>` / `bounds_anomalies` | 0 / [] |
 | AMBOSS (4 contrôles) | **OK — 147 paires, inchangé** |
+
+---
+
+### Volet r4a — Grilles RESCOS-1 à RESCOS-15 (dont RESCOS-9b)
+
+Base `66a7049`. **16 grilles du lot, 7 modifiées.** Redondance inter-blocs du
+lot : **127 → 36**. Corpus : **573 → 482**. Aucun fichier de `cases/german/`
+ni de `scripts/german/` lu ou touché. AMBOSS inchangé à **147**.
+
+| grille | avant | après | grille | avant | après |
+|---|---|---|---|---|---|
+| RESCOS-1 | 1 | 1 | RESCOS-9 | 2 | 2 |
+| RESCOS-2 | 1 | 1 | RESCOS-9b | 10 | **2** |
+| RESCOS-3 | 7 | **1** | RESCOS-10 | 16 | **3** |
+| RESCOS-4 | 6 | **4** | RESCOS-11 | 0 | 0 |
+| RESCOS-5 | 0 | 0 | RESCOS-12 | 1 | 1 |
+| RESCOS-6 | 7 | **0** | RESCOS-13 | 0 | 0 |
+| RESCOS-7 | 1 | 1 | RESCOS-14 | 42 | **6** |
+| RESCOS-8 | 0 | 0 | RESCOS-15 | 33 | **14** |
+
+Le patron du pilote se confirme : le gisement est dans `presentation`, et il
+cède par **fusion de puces**. Trois gestes portent l'essentiel — réduction de
+§1 Arguments, sortie de la `mnemo-box` de la Checklist mentale, suppression de
+« Pièges ECOS » après port. S'y ajoute un quatrième, propre à ce lot :
+**les listes recopiées de §2 Examens et §3 Traitement/Suivi deviennent une
+restitution orale** (`presentation-reponse text`) — c'est l'application directe
+de « redire à l'oral, pas en liste » d'AMBOSS § 3, et c'est ce qui a fait
+tomber 14 des 16 paires de RESCOS-10.
+
+`annexe-dd` n'a été modifié **dans aucune grille du lot**, conformément au
+pilote.
+
+#### Trous du bloc canonique — lecture inversée de `report_redundancy`
+
+Cinq trous trouvés, tous portés dans `resume`. **Ce sont des ajouts, pas des
+suppressions.**
+
+**Modifications**
+
+- RESCOS-14 · `resume`/Prise en charge : **ajout** « Mesures associées : arrêt
+  des AINS, réhydratation et correction électrolytique, prophylaxie
+  thromboembolique dès l'hospitalisation (MICI = état prothrombotique) »
+  source : **règle anti-perte** — `theorie`/Rappels et `presentation`/§3 la
+  portaient toutes deux, le canonique non. La MICI en poussée hospitalisée est
+  un état prothrombotique reconnu ; l'omission allait vers le sous-traitement.
+- RESCOS-14 · `resume`/Examens diagnostiques : **ajout** « β-hCG chez toute
+  femme en âge de procréer »
+  source : **niveau 1** — `SSP — Diarrhée.md`, « À faire absolument » n° 5 :
+  « Doser le β-hCG chez la femme en âge de procréer ». Patiente de 37 ans
+  chez qui on va introduire corticoïdes puis immunosuppresseurs.
+- RESCOS-15 · `resume`/Prise en charge : **ajout** d'une sous-section « Forme
+  compliquée, en urgence » (occlusion, anémie ferriprive symptomatique,
+  indication opératoire d'emblée)
+  source : **règle anti-perte** — signalée par la paire `therapy ↔ presentation`
+  « hospitalisation si occlusion complète » ↔ « hospitalisation si
+  occlusion/saignement », qui reliait la section notée à `presentation`
+  **sans passer par `resume`** : signature exacte du trou décrite au pilote.
+- RESCOS-15 · `resume`/Examens diagnostiques : **ajout** « Endoscopie haute si
+  méléna : le sang digéré signe d'abord un saignement au-dessus de l'angle de
+  Treitz »
+  source : **niveau 2** — le bloc noté `redflags` dit « Méléna. Selles noires =
+  hémorragie digestive haute nécessitant endoscopie » ; `presentation`/§2 le
+  portait (« Gastroscopie si doute sur saignement haut »), `resume` non.
+- RESCOS-3 · `resume`/Suivi à long terme : **ajout** « Dépistage de l'anévrisme
+  aortique thoracique (imagerie annuelle) : complication tardive classique de
+  la maladie »
+  source : **règle anti-perte** — `presentation`/§3 Suivi le portait, le
+  canonique non. Complication tardive documentée de l'artérite à cellules
+  géantes.
+- RESCOS-6 · `resume`/Mesures spécifiques : « Acide tranexamique IV si
+  hémorragie active » → « …, **dans les 3 heures suivant le traumatisme
+  (délétère au-delà)** »
+  source : **règle anti-perte** — la fenêtre des 3 h n'existait que dans
+  `presentation`/Touches ludiques. C'est le seul point du lot où l'omission
+  pouvait conduire à une **administration nuisible** et non seulement à une
+  omission.
+
+#### Alignements de fond
+
+**Modifications**
+
+- RESCOS-9b · `resume`/Mesures initiales : « ATB probabiliste IV après
+  ponction/hémocultures : céfotaxime + oxacilline (ou vancomycine si suspicion
+  MRSA) » → « ATB probabiliste IV après ponction/hémocultures,
+  anti-staphylococcique : céfuroxime ou amoxicilline-acide clavulanique IV
+  selon l'âge (vancomycine si suspicion de SARM) »
+  source : **niveau 1** — `SSP — Boiterie de l'Enfant.md`, § PRISE EN CHARGE :
+  « Arthrite septique : lavage chirurgical + antibiothérapie IV empirique
+  anti-Staph (céfuroxime / Co-Amoxi-Mepha® IV) selon l'âge ». La section notée
+  ne nomme aucune molécule (« Antibiothérapie intraveineuse après
+  prélèvements ») : le niveau 2 est muet, le niveau 1 tranche. `MRSA` →
+  `SARM` au passage.
+- RESCOS-9b · `theorie`/Rappels thérapeutiques : « Durée totale
+  d'antibiothérapie: 3-6 semaines » → « 3-4 semaines (IV puis PO), plus longue
+  si ostéomyélite associée » ; `presentation`/§3 Suivi alignée de même
+  source : **contradiction entre deux blocs pédagogiques** — `resume`/Suivi
+  disait « ~3-4 semaines », `theorie` et `presentation` « 3-6 ». Le contrat
+  tranche : `resume` est canonique. La nuance « plus longue si ostéomyélite
+  associée » est portée aux trois endroits pour que l'écart de 6 semaines,
+  qui était réel, garde sa justification.
+- RESCOS-9b · `resume`/tableau comparatif, ligne 0–3 ans : « Arthrite septique,
+  ostéomyélite » → « …, **fracture sur maltraitance** »
+  source : **niveau 1** — `SSP — Boiterie de l'Enfant.md`, « À faire
+  absolument » n° 5 (« Évoquer la maltraitance si récit incohérent ou retard de
+  consultation ») et mnémonique âge ↔ cause (« 0-3 ans : septique,
+  ostéomyélite, maltraitance »). `theorie` de la grille le portait déjà ; le
+  tableau du canonique, qui transcrit précisément cette mnémonique, ne le
+  portait pas. Cas d'espèce : enfant de 2 ans, sept jours de boiterie avant
+  consultation.
+
+#### Ports avant suppression (axe 6 et anti-perte)
+
+- RESCOS-14 · `expert`/Pièges : **ajout** « Ne pas étiqueter "MICI" avant
+  d'avoir éliminé une cause infectieuse (voyage, IST) ou médicamenteuse
+  (AINS) », **puis** suppression de `presentation`/« ⚠️ Pièges ECOS » (axe 6,
+  les trois autres pièges étaient déjà dans `expert`).
+- RESCOS-15 · `expert`/Pièges : **ajout** « Ne pas différer la coloscopie une
+  fois la sub-occlusion levée » et « Ne pas prendre une fausse diarrhée du
+  constipé (fécalome) pour une diarrhée vraie », **puis** suppression de
+  `presentation`/« ⚠️ Pièges ECOS ».
+
+#### Mnémos — trois traitements distincts, décidés par le contenu
+
+Le précédent AMBOSS (« c'est la redondance qui décide, pas le type de bloc »)
+s'applique tel quel, et donne trois issues différentes dans ce lot :
+
+- **Déplacée** vers Touches ludiques — RESCOS-14 (RECTO), RESCOS-15 (SANG),
+  RESCOS-6 (ABCDE + PELVIS) : le mnémo est unique dans sa grille, la Checklist
+  mentale redevient une trame pure (axe 5).
+- **Supprimée** — RESCOS-10 (HEAD) : ses quatre entrées doublent strictement les
+  trois mnémos déjà présents dans Touches ludiques (3C, 4P, MRV = Must).
+  RESCOS-9b (KOCHER) : ses quatre entrées doublent la liste « Critères de
+  Kocher » de Touches ludiques, plus précise (VS > 40 vs « CRP/VS élevées »).
+- **Laissée en place** — RESCOS-3 (3C-3E) : ce mnémo *est* la trame de
+  présentation, il est à sa place dans la Checklist mentale et ne produit
+  aucune paire.
+
+Dans les deux cas de suppression, Touches ludiques conserve au moins un mnémo :
+aucune grille du lot ne se retrouve sans mnémo.
+
+#### Listes recopiées devenues restitution orale
+
+`presentation`/§2 Examens et §3 Traitement/Suivi de RESCOS-3, 9b, 10, 14 et 15,
+et §3 de RESCOS-6. Fondement : AMBOSS § 3, « Une liste recopiée sous un en-tête
+Q/R ne constitue pas un changement de format et tombe sous la règle du format ;
+quand `presentation` doit reprendre `resume`, il le fait en registre parlé ».
+Aucun examen ni traitement n'est perdu — les 80 items signalés par
+`check_no_loss` ont été relus un par un et sont tous soit fusionnés dans la
+ligne orale correspondante, soit portés ailleurs (détail ci-dessus).
+
+#### `cloture` de RESCOS-4 — reformulation, pas suppression
+
+`cloture`/« Points clés à retenir » y porte cinq puces pédagogiques
+(« Approche systématique ABCDE », « Ne jamais négliger l'immobilisation
+rachidienne »…) qui doublent `expert`/Compétences clés et Points critiques —
+contenu hors du rôle que le pilote a fixé à `cloture` (conduite de la clôture à
+l'oral). Les cinq puces ont été **reformulées en registre de clôture**, pas
+supprimées : supprimer le `cloture-item` aurait fait passer le bloc de 4 à 3
+segments et cassé un invariant gelé au snapshot, pour un gain de deux paires à
+0,74-0,77. Les crochets de « Questions de la patiente » n'ont pas été touchés
+(`cases/scoring.js:294`).
+
+**Divergences consignées**
+
+- RESCOS-15 · `annexe-dd`/Cancer colorectal porte « Méléna (selles noires) »
+  comme argument POUR, alors que `redflags` (noté), `expert` et `theorie` de la
+  même grille définissent le méléna comme un saignement **haut**. Défendable
+  pour une tumeur colique droite, mais l'articulation n'est explicitée nulle
+  part. **Non corrigé** — `annexe-dd` est canonique dans ce corpus et le pilote
+  n'y touche pas ; le manque a été comblé par l'autre bout, en portant
+  l'indication d'endoscopie haute dans `resume` (ci-dessus). **Jugement
+  d'auteur, règle 3 du barème par analogie.**
+- RESCOS-4, RESCOS-2 · quatre des six paires résiduelles de RESCOS-4 et l'unique
+  paire de RESCOS-2 ont un côté `therapy` : **non retirées**, c'est l'accord
+  voulu entre l'attendu noté et la fiche (pilote § 1.2).
+- RESCOS-15 · trois paires résiduelles ont un côté `redflags` : la sous-section
+  `presentation`/« Signes d'alarme (Red Flags) » recopie mot pour mot les cinq
+  `redflags-text` du bloc noté. **Non supprimée** pour la même raison. C'est le
+  point du patron que je signalerais pour arbitrage : la règle « une paire
+  `therapy`/`redflags` n'est pas une redondance à retirer » protège aussi les
+  **copies verbatim** logées dans `presentation`, et pose de ce fait un plancher
+  de 3 à 5 paires sur toute grille portant ces blocs.
+
+**Non traité, et pourquoi**
+
+- RESCOS-11 (aucun bloc), RESCOS-5, RESCOS-8, RESCOS-13 (0 paire) : rien à
+  dédoublonner. **Aucun bloc absent n'a été créé.**
+- RESCOS-1, 5, 7, 9, 12, 13 n'ont ni `resume` ni `presentation` : la lecture
+  inversée de `report_redundancy` y est inapplicable, faute de bloc canonique.
+  Leurs paires résiduelles sont toutes `expert ↔ theorie` — le plancher
+  structurel du pilote : `expert` nomme ce que l'examinateur observe,
+  `theorie` la règle qui le fonde (RESCOS-7 : « anévrisme de 9 mm avec
+  indication chirurgicale formelle » ↔ « anévrismes > 7 mm : indication
+  chirurgicale » — cohérents, à conserver tels quels).
+- `annexe-expert` : intitulés non normalisés (RESCOS-4 « Compétences Clés » /
+  « Points Critiques » / « Erreurs Courantes » / « Matériel Nécessaire »,
+  RESCOS-15 « Techniques Examen »). Même arbitrage en attente qu'au pilote.
+
+**Barème** — aucune modification. Les 7 grilles modifiées n'ont subi d'édition
+que dans des blocs non notés (`resume`, `expert`, `theorie`, `presentation`,
+`cloture`). Aucun `maxScores`, `<span class="score">`, `sectionInfo[].count`
+ni `coef` touché ; **aucune régénération de baseline**. Strictement **règle 1**.
+RESCOS-12 et RESCOS-13 n'ont reçu aucune modification : la redistribution de
+coefficient de `c5243e1` est intacte.
+
+**Vérifications**
+
+| contrôle | résultat |
+|---|---|
+| `check_invariants.py` | **OK 41/41** |
+| `check_nomenclature.py` | **OK — 0 terme** |
+| `check_reachability.py` | **OK 41/41 à 100 %** |
+| `report_redundancy.py` (lot RESCOS-1→15) | **127 → 36** |
+| `report_redundancy.py` (corpus) | **573 → 482** |
+| `check_no_loss.py 66a7049` | 80 items sur 7 grilles, tous relus — fusions ou ports |
+| `report_import_defects.py` | inchangé (0 / 0 / 2 / 113 / 0 / 13 / **0**) |
+| équilibrage `<div>` · `bounds_anomalies` · `uncovered_content` | 0 · [] · [] sur 41/41 |
+| AMBOSS (4 contrôles) | **OK — 147 paires, inchangé** |
