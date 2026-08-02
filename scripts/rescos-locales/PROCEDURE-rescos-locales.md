@@ -65,6 +65,7 @@ Même architecture que `scripts/rescos/` : dossier autonome, qui **importe** de
 | `check_no_loss.py` | items disparus depuis une référence | **toujours 0** |
 | `browser_probe.js` | contrôle en navigateur (Node + Chrome) | 0 |
 | `apply_shared_engine.py` | **transformation** : bascule sur `cases/scoring.js` | 0 |
+| `prune_dead_images.py` | **transformation** : retire les `<img>` mortes ; `--list` inventorie | 0 |
 
 Aucun `apply_lab_nomenclature.py` n'est fourni : une passe de nomenclature devra
 en écrire un.
@@ -369,11 +370,33 @@ des **seuils légitimes**, pas un défaut — c'est l'inventaire de ce qu'un
 `re.sub(r'<[^>]+>', …)` naïf détruirait.
 
 **Un défaut d'import propre à ce corpus, non listé par AMBOSS : 92 références
-d'image mortes.** 75 pointent un chemin **absolu du poste de l'auteur**
-(`/Users/…/Documents/-Medecine/…`), 17 un chemin relatif (`bbn/…`,
-`decision-partagee/…`) sans fichier dans le dépôt. Mesuré au 404 dans le
-navigateur, sur 40 grilles. Seules 11 images du corpus sont en base64 — toutes
-dans les grilles numérotées.
+d'image mortes — retirées (lot `l3`).** 75 pointaient un chemin **absolu du
+poste de l'auteur** (`/Users/…/Documents/-Medecine/…`), 17 un chemin relatif
+(`bbn/…` 9, `decision-partagee/…` 8) sans racine dans le dépôt. Sur **35
+grilles**. Invisibles au `grep` — rien ne distingue un chemin mort d'un chemin
+vivant — et détectées au **404** par `browser_probe.js`. Les 11 autres images du
+corpus sont en base64 : elles vivent dans le fichier et ne sont pas concernées.
+
+**Aucune n'a pu être re-pointée.** Le dépôt compte 45 fichiers image ;
+confrontation des 92 noms de base par égalité exacte, puis après normalisation
+(accents, casse, ponctuation), puis par ressemblance : **0 correspondance**. La
+meilleure ressemblance vaut 0,62 et porte sur deux sujets différents. Aucun
+répertoire `bbn/`, `decision-partagee/` ni `images/` n'existe dans le dépôt.
+
+**Ce qui a été retiré, et ce qui reste.** Les 92 balises sont toutes dans la
+même structure — vérifié une par une : un `annexe-item` nu portant **un**
+`annexe-title`, **une** `annexe-description` et **une** `<img>`. La légende
+porte donc l'information seule : elle nomme l'examen et énonce ce qu'il montre
+(« Radiographie thoracique montrant des contusions pulmonaires bilatérales et un
+pneumothorax gauche »). `prune_dead_images.py` retire le seul
+`<div class="annexe-image">` et laisse l'`annexe-item`, son titre et sa
+description. Conséquence mesurée : **0 champ du snapshot ne bouge** sur les 165
+grilles, `check_no_loss` rend 0, la redondance reste à 1258.
+
+**Rien n'est fabriqué.** Les 92 chemins perdus sont inventoriés dans
+`docs/superpowers/journal-rescos-locales-2026-08.md` ; ils sont restaurables si
+les fichiers sources refont surface (`prune_dead_images.py --list` régénère
+l'inventaire depuis n'importe quelle référence git).
 
 ### Les 33 grilles numérotées RESCOS-41 à 69
 
