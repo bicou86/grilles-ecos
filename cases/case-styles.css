@@ -678,6 +678,22 @@ input[type="radio"]:disabled {
   border-top: 1px solid #e0e0e0;
 }
 
+/* Message-clé du Compas ajouté à une planche AMBOSS. Les images propres au
+ * corpus AMBOSS portent `data-image-id`, donc `width: 49% !important` : à cette
+ * largeur, un panneau de 2190 px de texte en image tombe sous 400 px et devient
+ * illisible (même constat que `PROCEDURE-german.md` § 8.7, qui interdit pour
+ * cela d'y poser l'attribut). Le message-clé prend donc toute la largeur de la
+ * planche, et se distingue de ses voisines par cette classe plutôt que par
+ * l'absence d'attribut : `.annexe-item` sans `data-image-id` existe déjà dans
+ * les 88 grilles german, et un sélecteur bâti sur cette absence changerait leur
+ * rendu au lieu de ne toucher que l'ajout. Classe nouvelle, 0 occurrence
+ * préexistante dans les six corpus — sans effet possible sur l'existant. */
+.images-wrapper .annexe-item.annexe-message-cle {
+  flex: 0 0 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .annexe-document {
   background: #f0f8ff;
   padding: 10px;

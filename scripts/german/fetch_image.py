@@ -52,9 +52,25 @@ from pathlib import Path
 # --- Emplacements ----------------------------------------------------------
 
 REPO = Path(__file__).resolve().parents[2]
-DEST = REPO / "cases" / "img" / "german"
-GRIDS = REPO / "cases" / "german"
+
+#: Corpus connus : préfixe de nom de grille, et rien d'autre. Le reste des
+#: chemins s'en déduit — `cases/<corpus>/` pour les grilles, `cases/img/<corpus>/`
+#: pour les images. `--corpus` ne change que ces emplacements ; la résolution
+#: dans le vault, le contrôle d'intégrité, la normalisation et le manifeste sont
+#: identiques d'un corpus à l'autre, parce que la règle du § 8 l'est aussi
+#: (PROCEDURE-german.md § 8 : « elle vaut pour AMBOSS et RESCOS si le chantier
+#: s'y étend »). `german` reste le défaut : aucun appel existant ne change.
+CORPORA = {
+    "german": "German-*.html",
+    "amboss": "AMBOSS-*.html",
+    "rescos": "RESCOS-*.html",
+}
+CORPUS = "german"
+
+DEST = REPO / "cases" / "img" / CORPUS
+GRIDS = REPO / "cases" / CORPUS
 MANIFEST = DEST / "MANIFEST.tsv"
+GRID_GLOB = CORPORA[CORPUS]
 
 #: Racine du vault. `ECOS_VAULT` prend le pas, pour qui travaille ailleurs.
 VAULT = Path(
@@ -64,9 +80,28 @@ VAULT = Path(
     )
 ).expanduser()
 
-#: Chemin écrit dans la grille. Les grilles sont dans `cases/german/`, les
-#: images dans `cases/img/german/` : un seul niveau à remonter.
-HREF_PREFIX = "../img/german/"
+#: Chemin écrit dans la grille. Les grilles sont dans `cases/<corpus>/`, les
+#: images dans `cases/img/<corpus>/` : un seul niveau à remonter.
+HREF_PREFIX = "../img/%s/" % CORPUS
+
+
+def set_corpus(name):
+    """Bascule les emplacements sur un autre corpus. Appelé par `--corpus`.
+
+    Les constantes restent des constantes pour tout appel qui ne dit rien :
+    importer le module donne toujours `german`, comme avant.
+    """
+    global CORPUS, DEST, GRIDS, MANIFEST, GRID_GLOB, HREF_PREFIX, _SRC_RE
+    if name not in CORPORA:
+        raise SystemExit("corpus inconnu : %s (connus : %s)"
+                         % (name, ", ".join(sorted(CORPORA))))
+    CORPUS = name
+    DEST = REPO / "cases" / "img" / name
+    GRIDS = REPO / "cases" / name
+    MANIFEST = DEST / "MANIFEST.tsv"
+    GRID_GLOB = CORPORA[name]
+    HREF_PREFIX = "../img/%s/" % name
+    _SRC_RE = re.compile(r'src\s*=\s*"(\.\./img/%s/[^"]+)"' % name)
 
 #: Répertoires que la résolution ignore. `.backup_transparents` est une copie
 #: de sauvegarde de `Skills ECOS/img/` : sans cette exclusion, 46 des 664 images
@@ -404,7 +439,7 @@ def verify():
     grille — et les grilles restées en base64.
     """
     used, broken, b64 = set(), [], []
-    for grid in sorted(GRIDS.glob("German-*.html")):
+    for grid in sorted(GRIDS.glob(GRID_GLOB)):
         html = grid.read_text(encoding="utf-8", errors="replace")
         if 'src="data:image' in html:
             b64.append(grid.name)
@@ -443,7 +478,11 @@ def main(argv=None):
     ap.add_argument("--verify", action="store_true",
                     help="vérifie les src des grilles et l'absence d'orphelins")
     ap.add_argument("--json", action="store_true", help="sortie machine")
+    ap.add_argument("--corpus", default="german", choices=sorted(CORPORA),
+                    help="corpus de destination (défaut : german)")
     args = ap.parse_args(argv)
+    if args.corpus != CORPUS:
+        set_corpus(args.corpus)
 
     if args.verify:
         rep = verify()
@@ -456,8 +495,15 @@ def main(argv=None):
                 print("LIEN CASSÉ  %s → %s" % (grid, href))
             for name in rep["orphans"]:
                 print("ORPHELINE   %s (aucune grille ne la cite)" % name)
-            for name in rep["base64"]:
-                print("BASE64      %s (encore en base64, § 8.6)" % name)
+            if CORPUS == "german":
+                for name in rep["base64"]:
+                    print("BASE64      %s (encore en base64, § 8.6)" % name)
+            elif rep["base64"]:
+                # AMBOSS porte 225 images en base64 que l'utilisateur a décidé de
+                # laisser en place ; seuls les AJOUTS suivent le mode référencé.
+                # Les lister une à une noierait les vrais défauts.
+                print("base64 hérité     : %d grille(s) (mode référencé exigé "
+                      "des ajouts seulement)" % len(rep["base64"]))
             if not rep["broken"] and not rep["orphans"]:
                 print("OK — aucun lien cassé, aucune orpheline.")
         return 1 if rep["broken"] else 0
