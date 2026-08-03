@@ -6380,3 +6380,110 @@ protégée par construction. Motif testé sur dix chaînes construites (cinq à 
   `sectionCounts` anamnèse 13 → 12, `criteriaCount` 24 → 23, `detailCount` et
   `checkboxCount` 59 → 54). Les 39 autres grilles sont identiques à l'origine sur les
   huit champs gelés.
+
+### Tâche a1 — balisage sémantique et message-clé, grilles AMBOSS-1 à 20
+
+**Modifications**
+
+- Les 20 grilles · balisage sémantique en huit couleurs (`.c-red`, `.c-pink`,
+  `.c-green`, `.c-blue`, `.c-amber`, `.c-purple`, `.c-orange`, `.c-yellow`), déjà
+  définies dans `cases/case-styles.css` et `cases/mobile-responsive.css` et validées
+  sur les 88 grilles german.
+  Périmètre : **quatre conteneurs seulement** — `resume`,
+  `annexe-item annexe-theorie`, `presentation-section section-mnemo`,
+  `presentation-section section-questions`. Rien dans `annexe-dd` (arbitrage laissé
+  ouvert sur german, non rouvert ici), rien dans `annexe-expert`, `annexe-scenario`
+  ni les versions orales longue et express de `presentation`.
+  **2 780 spans pour 24 850 mots visibles, soit 1/8,94** — la métrique lit le corpus
+  german entier à 1/8,72, donc la même bande.
+- AMBOSS-2 · `images-wrapper` : ajout du message-clé
+  `abdo-message-cle-douleurs-abdominales-aigues.png` (2190×1080, 252 Ko), en dernier
+  item, avec titre et légende décrivant les quatre messages.
+  source : SSP — Douleur Abdominale — `![[abdo-message-cle-douleurs-abdominales-aigues.png]]`
+- AMBOSS-9 · `images-wrapper` : ajout du message-clé
+  `rachis-message-cle-rachialgie-aigue.png` (2850×1113, 310 Ko), même mécanique.
+  source : SSP — Lombalgies — `![[rachis-message-cle-rachialgie-aigue.png]]`
+- `scripts/german/fetch_image.py` · ajout d'un `--corpus` (german par défaut, donc
+  aucun appel existant n'est modifié) qui déplace `DEST`, `GRIDS`, `MANIFEST`,
+  `HREF_PREFIX` et le motif de `--verify` sur `cases/img/<corpus>/`. Le § 8 de
+  `PROCEDURE-german.md` annonçait déjà que la règle vaut pour AMBOSS et RESCOS.
+- `cases/case-styles.css` · une règle, `.images-wrapper .annexe-item.annexe-message-cle`
+  (`flex: 0 0 100%`). Les images AMBOSS portent `data-image-id`, donc
+  `width: 49% !important` : à cette largeur un panneau de 2190 px de texte en image
+  tombe sous 400 px. Classe **nouvelle**, 0 occurrence préexistante dans les six
+  corpus — sans effet possible sur l'existant, german compris.
+
+**Divergences consignées**
+
+- **Message-clés écartés — 6 grilles, 3 fichiers.** La règle du § 8.4 les rend
+  obligatoires **quand ils portent sur la vignette**, et pas autrement.
+  - `abdo-message-cle-douleurs-abdominales-aigues.png` (diverticulite et appendicite)
+    écarté pour AMBOSS-1 (cholécystite lithiasique) et AMBOSS-3 (cancer de l'ovaire).
+  - `abdo-message-cle-douleur-abdominale-chronique.png` (SII/CAPS, « des examens
+    diagnostiques ne sont pas nécessaires ») écarté pour AMBOSS-1 et AMBOSS-3 : il
+    aurait affirmé qu'aucun examen n'est requis chez une patiente à drapeaux rouges.
+    C'est exactement le cas German-19.
+  - `abdo-message-cle-diarrhees-aigues.png` (analyse de selles, antibiothérapie
+    empirique d'une diarrhée aiguë) écarté pour AMBOSS-8 : maladie de Crohn, diarrhée
+    **chronique**.
+  - `rachis-message-cle-rachialgie-aigue.png` écarté pour AMBOSS-10 : rachialgie
+    **inflammatoire chronique** de plus de trois mois, et le message dit qu'en l'absence
+    de drapeaux rouges il n'y a pas d'indication à l'imagerie, alors que l'IRM
+    sacro-iliaque est l'examen de la station.
+  - `cardio-message-cle-douleur-thoracique.png` (médecine de premier recours, score
+    TOPIC, angor **stable**, bilan cardiologique ambulatoire) écarté pour AMBOSS-12
+    (embolie pulmonaire), AMBOSS-13 (pneumothorax traumatique) et AMBOSS-14 (angor
+    **instable** avec hospitalisation en USIC et coronarographie précoce).
+  - `pulmo-message-cle-infection-respiratoire-basse.png` (pneumonie) écarté pour
+    AMBOSS-18 (asthme d'effort + bronchite virale) et AMBOSS-19 (BPCO GOLD 3).
+- **Sept pages SSP sur quatorze ne citent aucun message-clé** : Saignement Vaginal
+  Anormal, Nausées/Vomissements, Douleur-Masse Pelvienne, Fièvre du Nourrisson,
+  Rectorragies, Skills — Réflexes Médicamenteux, Troubles du Sommeil, Troubles de la
+  Mémoire, Neuropathie Périphérique. Les grilles correspondantes restent sans ajout.
+- **Douze fichiers du vault à extension mensongère**, dans le périmètre des 171 images
+  citées par les 14 pages de ces grilles — `fetch_image.py` les arrête en
+  `ÉCHEC [corrompu]`, « en-tête incohérent ». Ni contournés ni corrigés (le vault n'est
+  pas touché) : `cardio-schema-idm-type1-criteres.jpg`,
+  `gyneco-anatomie-pelvienne.png`, `gyneco-myomes-uterins-localisations-schema.jpg`,
+  `pedia-fievre-sans-foyer-0-2mois-algorithme.jpg`,
+  `pedia-fievre-sans-foyer-2mois-2ans-algorithme.jpg`, `pedia-fontanelles-sutures.jpg`,
+  `pharmaco-table-equivalence-corticoides-doses-physiologiques.jpg`,
+  `pulmo-ep-algorithme-avec-choc-esc.jpg`, `pulmo-ep-algorithme-sans-choc-esc.jpg`,
+  `pulmo-rx-thorax-nodules-bilateraux.jpg`,
+  `pulmo-rx-thorax-opacite-lobe-superieur-droit.jpg`, `rachis-rx-lombaire-profil.jpg`.
+  Le chiffre de dix annoncé au cadrage vaut pour un autre périmètre ; ici la mesure en
+  donne douze. Aucun n'était un message-clé : les deux images reprises sont passées
+  sans avertissement.
+- **Dix références cassées** dans le même périmètre, toutes `Résumé-SSP_page-NNNN.jpg`
+  (0016, 0017, 0023 à 0027, 0048 à 0050) — catégorie déjà connue du § 8.5 c, et de
+  toute façon écartée par le § 8.5 a (page de PDF).
+- **AMBOSS-10, 16, 17 et 20 ne portent ni `resume` ni `presentation`** (état d'import,
+  `blocks` le reflète) : seul `annexe-theorie` y est balisé, et la densité s'y mesure
+  donc sans dilution — 1/9,1, 1/8,8, 1/8,9 et 1/9,1.
+
+#### Contrôles
+
+- `check_invariants.py` → OK, 40 grilles ; **`blocks` inchangé** sur les 40 (un
+  `annexe-item` de plus dans un `images-wrapper` ne touche aucun des neuf champs gelés).
+- `check_nomenclature.py` → OK. `check_reachability.py` → OK, 40/40 à 100 %.
+- `report_redundancy.py` → **147** paires, inchangé : aucun contenu ajouté.
+- `check_no_loss.py 534e019` → **0 item disparu** sur les 20 grilles modifiées.
+- **Preuve mécanique du « texte inchangé »** : la substitution est refusée si le
+  dépouillement des `<span class="c-…">` du nouveau segment ne redonne pas la chaîne
+  d'origine octet pour octet ; recontrôlée après coup, grille par grille, contre chaque
+  commit précédent. Zéro écart hors les deux blocs de message-clé, qui apparaissent
+  comme une insertion unique de 7 lignes.
+- **Détecteur à pile de spans imbriqués** : cinq interceptions avant écriture
+  (AMBOSS-2, 11, 12, 19 ×2). L'équilibre des balises ne les voyait pas. Zéro imbrication
+  résiduelle sur les 20 grilles.
+- **Contrôle visuel** (Chrome `--headless=new`, bootstrap de `theme-sync.js` substitué —
+  sans quoi `data-theme` est réécrit en `dark` et les deux rendus sortent identiques) :
+  AMBOSS-2, AMBOSS-9 et AMBOSS-19, thèmes sombre et clair, 1200 px et 500 px.
+  Empreintes des huit couleurs calculées **différentes** entre sombre et clair
+  (`54753c4712b738e0` / `3be80a2bbcb6cead`), `scrollWidth == innerWidth` aux quatre
+  combinaisons, message-clés `complete === true` aux dimensions du vault
+  (2190×1080 et 2850×1113), affichés pleine largeur de la planche (1046 px à 1200,
+  402 px à 500).
+- `fetch_image.py --corpus amboss --verify` → aucun lien cassé, aucune orpheline.
+  `fetch_image.py --verify` (german) → inchangé.
+- german et rescos au vert : invariants 88/88 et 41/41, nomenclature, atteignabilité.
