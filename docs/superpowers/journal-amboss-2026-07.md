@@ -6487,3 +6487,139 @@ protégée par construction. Motif testé sur dix chaînes construites (cinq à 
 - `fetch_image.py --corpus amboss --verify` → aucun lien cassé, aucune orpheline.
   `fetch_image.py --verify` (german) → inchangé.
 - german et rescos au vert : invariants 88/88 et 41/41, nomenclature, atteignabilité.
+
+---
+
+## 2026-08-03 — Balisage sémantique et message-clé, AMBOSS-21 à 40 (a2)
+
+Base `856aa5d`. Quatre commits : `2e10907` (21-25), `138fbc7` (26-30),
+`af8de6b` (31-35), `da3f452` (36-40). **Les quarante grilles AMBOSS sont
+balisées.**
+
+### Volet A — le balisage
+
+Mêmes quatre conteneurs qu'au lot a1, et rien d'autre : `resume`,
+`annexe-item annexe-theorie`, `presentation-section section-mnemo`,
+`presentation-section section-questions`. `annexe-dd`, `annexe-expert`,
+`annexe-scenario` et les versions orales de `presentation` restent intacts.
+
+**Densité : 1 918 spans pour 17 119 mots visibles, 1/8,93.** Aucune grille hors
+de 1/8,8–1/9,0. Le lot a1 tenait 1/8,94 sur 24 850 mots ; le corpus german
+entier 1/8,72, même métrique.
+
+Dix des vingt grilles ne portent ni `resume` ni `presentation` (état d'import) —
+21, 23, 24, 25, 26, 27, 29, 32, 33, 36, 40 : seul `annexe-theorie` y est balisé,
+et la densité s'y mesure donc sans dilution possible. AMBOSS-34 porte `resume` et
+`theorie`, sans `presentation`.
+
+**Méthode de calibrage.** Un premier jet spontané sort systématiquement à
+1/6,7–1/7,9 — environ 1,4 fois la cible. Le dégonflage se fait ensuite par retraits
+nommément désignés (couleur + contenu exact du span), avec la même preuve de texte
+inchangé. C'est plus fiable que de viser juste du premier coup : on marque ce qui
+semble mériter de l'être, puis on retire ce qui, mesuré, n'informe plus.
+
+**Rééquilibrage par conteneur.** La moyenne d'une grille peut masquer deux
+conteneurs hors bande. AMBOSS-30 sortait à 1/9,4 en moyenne avec un `resume` à
+1/7,4 et une `theorie` à 1/11,4 ; AMBOSS-37 à 1/8,4 avec une `theorie` à 1/7,5 et
+un `resume` à 1/10,0. Les deux ont été rééquilibrés conteneur par conteneur.
+Un cas résiste : le `questions` d'AMBOSS-38 et 39 reste à 1/11,2–1/11,4, parce que
+c'est de la prose orale pauvre en termes discrets — le densifier serait du
+remplissage, ce que la règle des cinq termes d'une même couleur proscrit par
+ailleurs.
+
+### Ce que la garantie de substitution a réellement attrapé
+
+**Deux morsures sur ce lot**, toutes deux des altérations muettes du texte que
+seule la comparaison octet pour octet voit :
+
+| Grille | Écart | Nature |
+|---|---|---|
+| AMBOSS-31 | `NSCLC` → `CPNPC` | traduction spontanée d'un sigle, dans le `resume` |
+| AMBOSS-38 | `PEACE & LOVE` → `PEACE &amp; LOVE` | échappement HTML d'une esperluette |
+
+Aucune des deux n'aurait été vue par une relecture déclarative ni par
+l'assertion d'équilibre des balises. La première change un terme médical ; la
+seconde change l'affichage. Dans les deux cas l'outil a refusé d'écrire et rendu
+la ligne fautive — le contrôle est mécanique, pas déclaratif.
+
+**Détecteur à pile de spans imbriqués : zéro morsure** sur les vingt grilles
+(cinq sur le lot a1). Zéro imbrication résiduelle.
+
+### Volet B — les message-clés
+
+**Quatorze des dix-sept pages SSP** de ces vingt grilles citent au moins un
+message-clé ; trois n'en citent aucun (« Hématurie », « Dysphagie »,
+« Perte d'Audition », « Capacité de Discernement & Éthique », « Amaurose »,
+« Ictère Néonatal » — six, en fait, sur dix-sept pages).
+
+**Retenus : 6.** Fichiers référencés sous `cases/img/amboss/`, en dernier item de
+l'`images-wrapper` existant, `blocks` inchangé.
+
+| Grille | Fichier | Ce qui l'ancre |
+|---|---|---|
+| AMBOSS-26 | `neuro-message-cle-cephalee-aigue-non-traumatique.png` | vignette = crise migraineuse sans aura ; le message porte le dépistage systématique des drapeaux rouges avant de conclure à une céphalée primaire (la grille note SNOOP4), les céphalées médicamenteuses (« max 2 jours/semaine »), l'approche holistique et le recours au neurologue en cas d'échec symptomatique |
+| AMBOSS-27 | `general-message-cle-fatigue.png` | la grille porte mot pour mot le « bilan minimal de toute fatigue : FSC, ferritine, TSH, glycémie, CRP/VS » que le message prescrit, et une anémie microcytaire |
+| AMBOSS-29 | `general-message-cle-fatigue.png` | idem, avec la même ligne de bilan minimal |
+| AMBOSS-30 | `orl-message-cle-pharyngite.png` | vignette = pharyngite bactérienne à SGA ; le message traite le SGA, les critères cliniques de probabilité, le test rapide et l'indication à l'antibiotique — les critères notés |
+| AMBOSS-32 | `nephro-message-cle-uretrite-et-cervicite-simples.png` | vignette = co-infection VPH + Chlamydia ; le message prescrit la PCR du col ou du 1er jet, la bithérapie ceftriaxone + doxycycline et le dépistage des autres IST |
+| AMBOSS-33 | `neuro-message-cle-cephalee-aigue-non-traumatique.png` | le message nomme l'HSA et impose la PL après imagerie normale : c'est la conduite notée |
+| AMBOSS-38 | `pied-cheville-message-cle-entorse-de-cheville.png` | même entité que la vignette ; règles d'Ottawa, radiographie, IRM hors routine, traitement conservateur fonctionnel |
+| AMBOSS-39 | `epaule-message-cle-epaule-douloureuse.png` | s'ouvre sur « plus de 60 % des scapulalgies sont secondaires à des lésions de la coiffe » et se clôt sur l'indication chirurgicale de la rupture traumatique aiguë |
+
+(Huit lignes pour six fichiers : la céphalée et la fatigue servent deux grilles
+chacune. Le § 8.3 exempte explicitement le message-clé du corollaire de
+non-recouvrement entre grilles d'une même page.)
+
+**Écartés : 7.**
+
+| Grille | Fichier écarté | Motif |
+|---|---|---|
+| AMBOSS-25 | `hanche-genou-message-cle-gonalgies` | vignette = TVP du membre inférieur droit. Le message affirme qu'« en cas de gonalgies non traumatiques, le traitement conservateur est suffisant dans la plupart des cas » et cadre la douleur en problème articulaire (épanchement, IRM, ponction, arthrite septique). Posé là, il recommanderait l'abstention devant une urgence vasculaire dont la station note l'anticoagulation. Le cas le plus net du lot. |
+| AMBOSS-28 | `general-message-cle-dyslipidemie`, `general-message-cle-obesite-et-surpoids` | vignette = trouble dépressif majeur dont la prise de poids est le symptôme. Le message sur l'obésité cadrerait la consultation en prise en charge d'obésité, chirurgie bariatrique comprise, quand la station note le dépistage de la dépression et l'évaluation du risque suicidaire. |
+| AMBOSS-31 | `pulmo-message-cle-infection-respiratoire-basse` | vignette = cancer pulmonaire. Le message traite entièrement de la pneumonie et de son antibiothérapie empirique ambulatoire — le réflexe même qui retarde le diagnostic de cancer chez un fumeur qui tousse. |
+| AMBOSS-35 | `abdo-message-cle-dyspepsie-et-maladie-de-reflux` | hypothèse retenue = angor d'effort sur coronaropathie, le RGO n'étant que concomitant. Le message cadre la brûlure rétrosternale en dyspepsie (IPP d'épreuve, H. pylori, OGD, IPP au long cours) quand le point clé de la station est exactement l'inverse : « une brûlure rétrosternale persistante non soulagée par les IPP = alerte ». Son 4e point mentionne bien l'exclusion d'une origine cardiaque, mais une clause ne fait pas le sujet d'un panneau. |
+| AMBOSS-36 | `general-message-cle-fatigue` | **révision en cours de lot.** Le commit `138fbc7` l'annonçait retenu pour les trois grilles « Fatigue ». Vérification faite sur la grille, la vignette est une hépatite C aiguë sur hépatopathie alcoolique chez un usager de drogues IV, et la station ne note aucun bilan de fatigue : ses examens sont un bilan hépatique, des sérologies virales, une élastométrie. Le 3e point du message — carence en fer, excellente efficacité de la substitution — n'a aucun objet ici. « Ni ne contredit » ne suffit pas : le § 8.4 point 3 écarte le message hors sujet, pas seulement le message faux. |
+| AMBOSS-40 | `neuro-message-cle-vertige` | vignette = zona auriculaire (Ramsay Hunt). Le message affirme que la grande majorité des vertiges sont périphériques « sans gravité » et que Halmagyi, Dix-Hallpike, Pagnini-McClure et l'alternate cover test sont déterminantes dans l'établissement du diagnostic. Ici le diagnostic se fait à l'otoscopie et à l'examen du VII, la fenêtre antivirale est de 72 h et la grille note 30 % de récupération complète de la paralysie faciale. **Arbitrage le plus discutable du lot** : deux des trois points du message recoupent réellement le HINTS de la grille. Écarté sur le sujet, pas sur la contradiction. |
+| AMBOSS-30 | `orl-message-cle-infection-respiratoire-haute` | la page en cite deux ; « jamais deux » (§ 8.4 point 2), et la pharyngite est l'entité exacte. |
+
+### Défauts du vault mesurés, non contournés, non corrigés
+
+**Cinq fichiers à extension mensongère** — des PNG nommés `.jpg` — dans le
+périmètre des 290 images citées par les 17 pages SSP de ces vingt grilles. Le
+script les arrête ; aucun n'est un message-clé, donc aucun n'a bloqué ce lot.
+Le lot a1 en avait mesuré douze sur son propre périmètre ; les deux ensembles se
+recoupent partiellement, le total distinct sur les 31 pages des 40 grilles reste
+à mesurer si un lot futur veut reprendre ces schémas.
+
+| Fichier | Déclare | Est |
+|---|---|---|
+| `general-fatigue-examens-paracliniques.jpg` | JPEG | PNG |
+| `neuro-tableau-hsa-fischer-grades.jpg` | JPEG | PNG |
+| `neuro-tableau-hsa-wfns-grades.jpg` | JPEG | PNG |
+| `pulmo-rx-thorax-nodules-bilateraux.jpg` | JPEG | PNG |
+| `pulmo-rx-thorax-opacite-lobe-superieur-droit.jpg` | JPEG | PNG |
+
+**Dix-neuf références cassées**, toutes `Résumé-SSP_page-NNNN.jpg` — catégorie
+déjà connue (§ 8.5 a), écartée de toute façon. Rien touché dans le vault.
+
+### Contrôles
+
+- `check_invariants.py` → OK, 40 grilles ; **`blocks` inchangé**.
+- `check_nomenclature.py` → OK. `check_reachability.py` → OK, **40/40 à 100 %**.
+- `report_redundancy.py` → **147** paires, inchangé.
+- `check_no_loss.py` contre chaque commit de base → **0 item disparu**.
+- `verify_all.py` contre chaque commit précédent → **0 anomalie** : texte visible
+  identique hors balisage, zéro span imbriqué ; les six ajouts de message-clé
+  apparaissent comme une insertion unique de 7 lignes et rien d'autre.
+- `fetch_image.py --corpus amboss --verify` → 8 images présentes, 8 référencées,
+  **aucun lien cassé, aucune orpheline**.
+- **Contrôle visuel** (Chrome `--headless=new`, bootstrap de `theme-sync.js`
+  substitué) : AMBOSS-39 et AMBOSS-33, sombre et clair, 1200 px et 500 px.
+  Empreintes des couleurs **différentes** entre sombre et clair sur les deux
+  grilles — la substitution du bootstrap est bien effective, sans quoi les deux
+  rendus sortiraient identiques et l'on validerait un faux. `scrollWidth ==
+  innerWidth` aux quatre combinaisons. Message-clés `complete === true` aux
+  dimensions du vault (2400×1485 et 2190×1689), 1046 px à 1200 et 402 px à 500.
+- german : invariants 88/88, nomenclature, atteignabilité, `--verify` au vert
+  (les deux `BASE64` signalés sont German-75 et 78, état antérieur connu).
+- rescos : invariants 41/41, nomenclature, atteignabilité au vert.
