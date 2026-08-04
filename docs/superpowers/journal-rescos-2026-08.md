@@ -1409,3 +1409,166 @@ geste 4 de r4b a tranché en pratique, pour `therapy` ; ce lot l'étend à
 `redflags`. **La règle du § 3 de `PROCEDURE-rescos.md` n'a pas été récrite** —
 même motif qu'en 5.3. Elle gagnerait la précision : *le pédagogique s'aligne
 sur le noté, il ne le recopie pas.*
+
+---
+
+## Lot r8 — balisage sémantique et planches d'images
+
+Campagne demandée après le traitement des 88 grilles german : appliquer aux
+grilles RESCOS déjà refondues le code couleur sémantique en huit classes et une
+planche d'images issue du vault Obsidian. Menée par quatre agents à périmètres
+disjoints, trois d'entre eux ayant été tués en cours de route par des erreurs API
+transitoires — sans perte, le travail committé ayant été audité et les fichiers
+orphelins récupérés.
+
+### 1. Balisage — état d'entrée et cible
+
+Cinq grilles (RESCOS-1 à 5) portaient déjà un balisage partiel non committé
+depuis le 3 août. Audit avant reprise : zéro span imbriqué, solde d'ouverture
+nul, et **retrait des spans redonnant `HEAD` à l'octet près** — balisage pur,
+aucun mot médical altéré. Sécurisées en `abc6062`.
+
+**Densité de référence : 1 span pour 9 mots**, mesurée sur les mots des quatre
+conteneurs prescrits (`resume`, `annexe-theorie`, `section-mnemo`,
+`section-questions`).
+
+| Corpus | Densité |
+|---|---|
+| RESCOS déjà balisées (31) | 1/8,5 à 1/9,4 — moyenne 1/9,0 |
+| RESCOS-36 à 40 (posées en r8) | 1/9,1 à 1/9,6 |
+
+**Divergence de mesure consignée.** Une cible erronée de « 1/20 » a été
+transmise aux agents en cours de campagne, issue d'une extraction de zones
+défectueuse : le motif `\bresume\b` matche aussi `resume-subsection` et
+`resume-subsection-points`, le contenu imbriqué étant alors compté jusqu'à trois
+fois et le dénominateur gonflé d'un facteur ~2,4. L'agent du lot 36-40 a
+contesté la consigne avec ses propres mesures et avait raison ; corrigée par
+message aux agents encore actifs. **Pour isoler une classe CSS en regex, borner
+sur l'espace ou le guillemet, jamais sur `\b`** — le tiret est une frontière de
+mot.
+
+### 2. Deux défauts de l'index grille → page, trouvés par les agents
+
+L'index de travail dérivé de `docs/obsidian-mapping.yaml` portait deux bugs. Le
+mapping du dépôt, lui, était juste dans les deux cas.
+
+- **Préfixe `Skills ECOS/` non reconnu.** L'extraction ne captait que
+  `SSP ECOS/` ; rencontrant une page `Skills`, elle conservait la dernière page
+  SSP vue et lui attribuait les grilles suivantes. **RESCOS-7 et RESCOS-8**,
+  stations *Breaking Bad News* (protocole SPIKES), se sont ainsi retrouvées
+  rattachées à « Œil Rouge ». Elles relèvent de
+  `Skills ECOS/Skills — Annonce Mauvaise Nouvelle (SPIKES).md`. Détecté avant
+  toute pose d'image — aucun dégât.
+- **Extensions `.svg` omises.** 46 références réparties sur 36 pages,
+  invisibles. Un agent l'a découvert en allant lire la page source plutôt qu'en
+  se fiant à l'index, et y a trouvé
+  `cardio-mesure-de-l-ips-abi-au-doppler-de-poche.svg`, seule image du corpus
+  documentant littéralement le critère noté « Mesure de l'IPS/ABI » de
+  RESCOS-26.
+
+**Un parseur à état qui ignore un cas ne saute pas l'entrée : il l'attribue au
+précédent.** Une ligne non reconnue est silencieusement rattachée au dernier
+état valide.
+
+### 3. Divergences de mapping consignées, non corrigées
+
+- **RESCOS-11 · page inadaptée.** La grille est un traumatisme du **coude** chez
+  une femme de 24 ans (réception bras tendu, coude en extension, examen
+  neuro-vasculaire radial-médian-ulnaire, risque de grossesse avant
+  irradiation). Sa page, `SSP — Chute & Évaluation Gériatrique`, traite de la
+  chute du sujet âgé : col fémoral, Romberg, Timed Up & Go, GDS-15. Le seul mot
+  « Chute » du titre a suffi à l'apparier. Aucune de ses images ne sert la
+  station — **aucune planche posée**. Non corrigé : le vault n'a pas de page
+  « coude », et `Pronation Douloureuse` (nourrisson), `Douleurs Articulaires`
+  (arthrites inflammatoires) et `Polytraumatisme` (haute énergie) ne
+  conviennent pas davantage. Niveau 3 de la hiérarchie.
+- RESCOS-11 est par ailleurs la seule grille du corpus **sans aucun bloc
+  pédagogique** : grille notée pure, 792 mots, donc non balisée. RESCOS-29 n'a
+  pas non plus de zone balisable.
+
+### 4. Correctif d'outillage — `lib_rescos.py`
+
+`lib_german.py:127` portait depuis la campagne images de German l'alternative
+`images-wrapper` dans le terminateur du bloc `presentation` ; `lib_rescos.py`
+ne l'avait pas. Poser une planche derrière une section `presentation-patient`
+y rendait le bloc invisible (`boundsAnomalies` non vide).
+
+Le cas ne se présente que sur **RESCOS-6**, seule grille dont `presentation` est
+le dernier bloc — elle n'a pas de `scenario`, qui portait déjà l'alternative.
+Correctif d'une ligne, strictement élargissant, commit `7592885`. Vérifié :
+`boundsAnomalies` et `uncoveredContent` vides sur les 41 grilles.
+
+L'alternative « imbriquer le wrapper dans `presentation-patient` » a été écartée :
+`.presentation-patient` porte `background:#ffecd2` et `overflow:hidden`
+(`cases/case-styles.css:2490`), la planche s'afficherait sur fond pêche et
+risquerait d'être rognée.
+
+**Forme canonique de la planche sur RESCOS** : un `annexe-item` **unique**
+portant tous les triplets `annexe-title` / `annexe-description` /
+`annexe-image`, message-clé compris, enfant de `annexes` — comme RESCOS-24 et
+German-13. La forme AMBOSS (`<div class="annexe-item annexe-message-cle">`
+séparé) laisse `annexe-image` et `annexe-description` hors de tout bloc et
+produit du `uncoveredContent` ; deux agents l'ont vérifié indépendamment.
+
+### 5. Sélection des images — écarts motivés
+
+Le message-clé est obligatoire dès qu'il existe **et porte sur la vignette**.
+Les écarts relevés tiennent tous à ce second critère :
+
+- **RESCOS-26 et 27** — message-clé veineux (MTEV) sur des vignettes d'**AOMI
+  artérielle**.
+- **RESCOS-17 à 23** — les deux message-clés de « Douleur Abdominale » traitent
+  de la diverticulite/appendicite et du syndrome de l'intestin irritable ;
+  aucune des sept vignettes n'en relève.
+- **RESCOS-14** — message-clé « diarrhée aiguë » (« l'analyse de selles n'est
+  utile que dans un nombre limité de situations ») sur une diarrhée
+  muco-sanglante de **quatre semaines** dont l'`annexe-dd` prescrit justement
+  cultures, parasitologie ×3 et coloscopie. Le poser aurait contredit le
+  différentiel de la grille.
+- **RESCOS-24 et 25** — message-clé « lithiase traitable en ambulatoire » sur
+  une **pyélonéphrite obstructive fébrile**.
+- **RESCOS-39** — message-clés asthme et BPCO sur une **décompensation
+  cardiaque**.
+
+**Images écartées pour contenu, après examen visuel** — l'index et le nom de
+fichier décrivaient autre chose que le fichier :
+
+- `psy-stades-du-deuil-de-kubler-ross.svg` : n'est pas le deuil clinique mais un
+  schéma **RH de conduite du changement** (« résistance : inertie,
+  argumentation, révolte, sabotage »). Hors registre pour une annonce médicale.
+- `orl-tuberculose-ganglionnaire-cervicale-ecrouelles.jpg` et
+  `general-signes-de-deshydratation-…jpg` : **patients identifiables** (visage
+  d'enfant de profil ; nourrisson dénutri de corps entier).
+- `general-enmg-axonale-vs-demyelinisante.gif` : tracé ENMG **normal** légendé
+  en allemand, sans rapport avec la comparaison annoncée par son nom.
+- `abdo-mecanismes-physiopathologiques-…png` sur RESCOS-15 : traite des
+  diarrhées infectieuses aiguës, pas des troubles du transit de la vignette.
+
+**Écarts nom/contenu, images conservées avec légende rectifiée** (§ 8.7) :
+`onco-adenopathie-maligne-vs-benigne-consistance-fixation.png` n'est pas un
+tableau comparatif mais une photographie de cou fléchée ;
+`general-ceinture-pelvienne-pelvic-binder-t-pod-sam-sling.jpg` ne montre ni
+T-POD ni SAM-Sling mais une ceinture improvisée ;
+`neuro-glasgow-coma-scale-e-v-m-3-15.png` est **en portugais**.
+
+### 6. `check_invariants.py` — échec attendu sur le seul champ `blocks`
+
+Poser une planche sur une grille dépourvue d'`annexe-item` nu ajoute
+mécaniquement `annexe-image: 1` au relevé gelé. **Le barème est intact** :
+`maxScores`, `coef`, `scoreSpans`, `sectionCounts`, `configForm`,
+`criteriaCount`, `detailCount`, `radioCount`, `checkboxCount` vérifiés
+identiques, `boundsAnomalies` et `uncoveredContent` vides après le correctif du
+§ 4. Un re-snapshot unique du baseline en fin de campagne résout les 41 grilles
+d'un coup.
+
+### 7. Préoccupation — l'index git est partagé entre agents
+
+`.git/index` est commun : un `git add` expose immédiatement les fichiers au
+prochain `git commit` de n'importe quel agent. Deux commits ont ainsi mélangé
+leurs attributions — `7b85f8d` a emporté RESCOS-37 et 38 stagés par un autre
+agent, et symétriquement RESCOS-7/8/9/9b se sont retrouvées dans `bf0ed53`.
+**Rien n'est perdu ni corrompu**, seule l'attribution est trompeuse.
+
+Parade retenue pour la suite : `git commit -m "…" -- <chemins>` avec pathspec
+explicite en fin de commande, ou un index distinct par agent via
+`GIT_INDEX_FILE`.
