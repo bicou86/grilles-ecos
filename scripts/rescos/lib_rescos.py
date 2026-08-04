@@ -174,7 +174,7 @@ BLOCKS = [
      r'<div class="presentation-patient">|<div class="annexe-item annexe-scenario">'),
     ("presentation", r'<div class="presentation-patient">',
      r'<div class="annexe-item annexe-scenario">|<div class="annexe-item annexe-dd">'
-     r'|(?:</div>\s*)*' + re.escape(END_MARK)),
+     r'|(?:</div>\s*)*(?:<div class="images-wrapper">|' + re.escape(END_MARK) + r')'),
     ("scenario", r'<div class="annexe-item annexe-scenario">',
      r'(?:</div>\s*)*(?:<div class="images-wrapper">|' + re.escape(END_MARK) + r')'),
     ("annexe-image", r'<div class="annexe-item"(?=[ >])',
