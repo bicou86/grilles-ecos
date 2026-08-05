@@ -172,6 +172,17 @@ COMM_MARK = "<!-- COMMUNICATION -->"
 #   defi         -> `</div>`* + END_MARK 194,
 #                   `<div class="annexe-item">` 1 (AMC-Psy-P10)
 #   annexe-nu    -> `</div>`* + END_MARK 1/1
+#
+# `<div class="images-wrapper">` figure en alternative de fin sur `defi` et
+# `annexe-nu` — les deux SEULS blocs dont la fin touche l'END_MARK. La planche
+# d'images de la campagne SSP se pose dans `annexes`, apres la fermeture
+# d'`annexes-grid` : c'est le placement des wrappers de RESCOS et de
+# rescos-locales, et le seul qui laisse `uncovered_content()` vide. Sans cette
+# alternative, TOUTE grille recevant une planche signalait
+# `defi@N: fin sur '</div><div class="images-wrapper">'`. Meme correctif, meme
+# cause et meme forme que `lib_rescos.py` (bloc `presentation`, commit 7592885)
+# et que `lib_german.py:127`. Strictement elargissant : une grille sans planche
+# garde des bornes inchangees — verifie, 198/198 avant pose.
 BLOCKS = [
     # --- blocs loges dans la section notee (niveau 2) ----------------------
     ("annexe-dd", r'<div class="annexe-item annexe-dd">',
@@ -202,12 +213,13 @@ BLOCKS = [
     ("scenario", r'<div class="annexe-item annexe-scenario">',
      r'<div class="annexe-item annexe-defi">'),
     ("defi", r'<div class="annexe-item annexe-defi">',
-     r'(?:</div>\s*)*(?:<div class="annexe-item">|' + re.escape(END_MARK) + r')'),
+     r'(?:</div>\s*)*(?:<div class="annexe-item">|<div class="images-wrapper">|'
+     + re.escape(END_MARK) + r')'),
     # Variante de classe non standard — voir l'entete. Le motif exige la
     # fermeture immediate du `class=` : il ne peut pas attraper
     # `annexe-item annexe-dd` ni les quatre autres fiches.
     ("annexe-nu", r'<div class="annexe-item">',
-     r'(?:</div>\s*)*' + re.escape(END_MARK)),
+     r'(?:</div>\s*)*(?:<div class="images-wrapper">|' + re.escape(END_MARK) + r')'),
 ]
 
 # Blocs exclus de la mesure de redondance par defaut — voir report_redundancy.py.
