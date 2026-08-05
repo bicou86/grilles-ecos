@@ -3468,3 +3468,80 @@ RESCOS  report_redundancy 127 (inchangé)
 `cases/german/`, `scripts/german/` et `cases/casecos/` n'ont été ni écrits ni
 modifiés. Ils ont été **lus** — et uniquement lus — pour le bordage du motif
 d'unités sur les six corpus, ce que le mandat impose avant toute activation.
+
+---
+
+## Lot images — balisage sémantique et planches d'images
+
+Campagne demandée après le traitement des corpus german, AMBOSS et RESCOS :
+appliquer le code couleur sémantique en huit classes et une planche d'images
+issue du vault Obsidian. Menée par onze lots (L1 à L11) à périmètres disjoints, sur consigne
+commune unique.
+
+### Résultat
+
+| | |
+|---|---|
+| Grilles | 165 |
+| Balisées | 141, densité **1/9,56** |
+| Illustrées | 145, **426 images** |
+| Spans imbriqués · `<div>` déséquilibrés · spans hors zone | **0 · 0 · 0** |
+
+Zones balisables réellement présentes : `resume` 59/165, `annexe-theorie` 138/165, `section-mnemo` et `section-questions` 57/165.
+
+### Le balisage aurait été invisible sans correctif
+
+Les classes `c-red` … `c-yellow` sont définies dans `cases/case-styles.css`
+(thème clair) et `cases/mobile-responsive.css` (surcharges sombres). Ce corpus
+ne les chargeait pas de la même façon que rescos, german et amboss.
+`scripts/inject_semantic_css.py` a injecté le seul bloc sémantique dans le
+`<style>` en ligne de chaque grille — commit `514ec3d`. Injecter la feuille
+entière aurait risqué la mise en page locale de centaines de pages ; ces
+quarante lignes ne portent que des sélecteurs `.c-*`, absents partout ailleurs.
+
+Rendu vérifié dans Chrome sans interface, couleur calculée par classe.
+
+### Disposition des planches — arbitrage du propriétaire
+
+Les planches adoptent la **pleine largeur** : un seul `annexe-item` par
+`images-wrapper`, sans `data-image-id`, message-clé en dernier.
+
+Le motif est mesuré. `.annexe-item[data-image-id]` vaut `width: 49% !important`
+et `.annexe-image img` vaut `max-width: 100%` — qui **plafonne sans étirer**.
+Un panneau dense de 2190 px s'affiche donc à 496 px en deux colonnes contre
+1078 px en pleine largeur.
+
+### Ce que les six vérifications ont réellement attrapé
+
+Le **strip-back octet pour octet** — retirer les spans et la planche doit
+redonner l'état d'avant — a intercepté une douzaine de réécritures
+involontaires **avant écriture**, réparties sur cinq lots : « œsophagite (5%) »,
+« possibilité de iléostomie », « suspicion de », « 5 à 10 % portage » devenu
+« de portage », « Fer²⁺ » devenu « Fe²⁺ ». Aucune n'aurait été visible à la
+relecture, et toutes portaient sur du contenu médical.
+
+Le **détecteur d'imbrication à pile** est indispensable : un équilibre de
+compteurs ne distingue pas un balisage plat d'un balisage emboîté.
+
+### Deux relevés annexes
+
+La campagne a produit deux documents exploitables indépendamment :
+`docs/superpowers/defauts-vault-2026-08.md` (21 fichiers à l'extension fausse,
+29 dont le contenu ne correspond pas au nom, 17 photographies de patients
+identifiables, 16 images hors plafond) et
+`docs/superpowers/mappings-a-revoir-2026-08.md` (appariements grille ↔ page
+vérifiés à la source).
+
+### Préoccupations consignées
+
+- **L'index git est partagé** entre agents : un `git add` expose les fichiers
+  au `git commit` de n'importe quel autre. La parade — `git commit -m "…" --
+  <chemins>` avec pathspec explicite en fin de commande — a été sollicitée en
+  permanence et a tenu à chaque fois.
+- **Le répertoire d'images est partagé** : « orpheline » y est un état
+  transitoire, pas un défaut. Trois lots ont vu une image disparaître sous eux.
+  Le nettoyage n'est sûr qu'après le dernier écrivain.
+- **Les légendes ont réintroduit 31 termes non suisses** sur 14 grilles, alors
+  qu'une passe antérieure les avait mis à zéro. Corrigés un par un — le terme
+  fautif est souvent celui que porte l'image décrite, ce qui interdit le
+  remplacement mécanique.
