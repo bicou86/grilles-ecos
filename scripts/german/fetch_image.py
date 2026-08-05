@@ -64,6 +64,12 @@ CORPORA = {
     "german": "German-*.html",
     "amboss": "AMBOSS-*.html",
     "rescos": "RESCOS-*.html",
+    # Ces deux corpus n'ont pas de préfixe régulier : leurs grilles portent des
+    # noms libres (« BBN - Cancer du sein - Grille ECOS.html »). Le glob prend
+    # donc tout le répertoire, ce qui reste exact — il ne sert qu'à énumérer
+    # les grilles d'un corpus, et chaque corpus a son propre répertoire.
+    "rescos-locales": "*.html",
+    "casecos": "*.html",
 }
 CORPUS = "german"
 
