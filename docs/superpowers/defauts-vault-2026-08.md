@@ -1,9 +1,13 @@
 # Défauts relevés dans le vault Obsidian — campagne images d'août 2026
 
-Relevé constitué au fil des 25 lots de la campagne de balisage et d'illustration
-des corpus `rescos-locales` et `casecos`. **Chaque entrée a été vérifiée à la
-source**, par contrôle visuel de l'image ou par lecture de l'en-tête du fichier ;
-rien n'est déduit du seul nom.
+Relevé constitué au fil des 31 lots de la campagne de balisage et d'illustration
+des corpus `rescos-locales`, `casecos`, `triage` et `usmle`. **Chaque entrée a
+été vérifiée à la source**, par contrôle visuel de l'image ou par lecture de
+l'en-tête du fichier ; rien n'est déduit du seul nom.
+
+Plusieurs entrées ont été relevées **deux ou trois fois par des lots qui ne se
+connaissaient pas** — la mention figure en regard. C'est la meilleure garantie
+de fiabilité dont dispose ce document.
 
 Ce document ne modifie rien. Il liste ce qui, corrigé côté vault, rendrait
 utilisables des images aujourd'hui perdues — dont plusieurs documentent
@@ -40,6 +44,8 @@ renommage — dans le vault et dans la citation de la page — les rend disponib
 | `Aide-mémoire de la présentation de cas.jpg` | PNG 7038×4193 | — |
 | `neuro-polygone-willis-schema.jpg` | PNG | polygone de Willis |
 | `cardio-schema-idm-type1-criteres.jpg` | PNG | critères de l'IDM de type 1 |
+| `pulmo-rx-thorax-nodules-bilateraux.jpg` | PNG | avec l'entrée précédente, **les deux radiographies de la page Toux Chronique sont perdues** |
+| `gyneco-endometriose-pelvienne.webp` | en-tête incohérent | — |
 
 **Deux algorithmes « fièvre sans foyer » sont exactement les images que
 décrivent les trois légendes orphelines de la grille *État fébrile sans foyer*** :
@@ -83,6 +89,16 @@ les détecter : le nom et le contenu sont tous deux plausibles isolément.
 | `vascu-lymphdeme-signe-de-stemmer.jpg` | manœuvre de Stemmer | lymphœdème constitué, **pas la manœuvre** |
 | `hemato-frottis-…-goutte-epaisse-paludisme.jpg` | goutte épaisse | **frottis mince**, parasites indiscernables |
 | `Réponses_attendues.png` | — | dessin de subluxation mandibulaire |
+| `neuro-morsure-laterale-de-la-langue-syncope-vs-epilepsie.jpg` | morsure **latérale**, comparaison | érosions de la **pointe** — or le siège est ce qui discrimine : bord latéral → épilepsie, pointe → syncope. Légender selon le nom serait un contresens |
+| `nephro-hematurie-caillotee.jpg` | hématurie caillotée | deux vignettes : orifice urétéral en endoscopie, fil-guide en fluoroscopie. Aucun caillotage |
+| `general-obstruction-vas-enfant-epiglottite-croup.jpg` | comparaison épiglottite / croup | **un seul cliché**, radiographie cervicale de profil |
+| `neuro-signes-parkinsoniens-tremblement-de-repos-pill-rolling-rigid.jpg` | tableau de signes | **gravure clinique ancienne** de l'attitude parkinsonienne, sans légende |
+| `gyneco-atrophie-vulvo-vaginale-sgum-inspection-vulvaire.png` | inspection vulvaire | **schéma histologique** comparatif de l'épithélium vaginal |
+| `gyneco-lichen-sclereux-vulvaire.jpg` | photographie clinique | **coupe histologique HE** |
+| `general-hemostase-primaire-vs-secondaire-cascade-de-coagulation.svg` | primaire **et** secondaire | cascade de coagulation seule, étiquetée en anglais, glyphes vectorisés |
+| `ophtalmo-ovcr-hemorragies-retiniennes-en-flammeches.jpg` | occlusion de la veine **centrale** | lésions groupées sur un seul secteur temporal supérieur, papille normale — pas la distribution des quatre quadrants |
+| `cardio-tvp-clinique-mollet-unilateral-dematie-rouge.jpg` | mollet œdématié **rouge** | asymétrie de volume sans érythème franc |
+| `orl-otoscopie-tympan-normal.jpg` | tympan normal de référence | membrane rosée, opaque, convexité pâle ; ni manche du marteau ni triangle lumineux. Normal mal éclairé ou bombé — indéterminable |
 
 **Images en langue étrangère**, retenues avec la mention dans la légende :
 `neuro-glasgow-coma-scale-e-v-m-3-15.png` (portugais) ·
@@ -110,7 +126,13 @@ sous-vêtements) · `ophtalmo-leucocorie-red-reflex.jpg` (yeux d'enfant) ·
 `ophtalmo-champ-visuel-confrontation-doigts.jpg` (examinateur et patiente) ·
 `orl-tamponnement-anterieur-posterieur.jpg` · `orl-kyste-branchial.jpg` ·
 `general-tumeur-de-la-parotide-adenome-pleomorphe.png` ·
-`neuro-epreuve-doigt-nez.png` · `general-syndrome-de-turner-…jpg`.
+`neuro-epreuve-doigt-nez.png` · `general-syndrome-de-turner-…jpg` ·
+`orl-laryngoscopie-indirecte-langue.jpg` (visage frontal) ·
+`msk-epanchement-genou-gonflement-asymetrique.jpg` (bracelet d'identification
+hospitalier visible) · `gyneco-col-visualisation-speculum.jpg` (périnée non
+anonymisé) · `pedia-exanthemes-febriles-du-nourrisson-roseole-hhv-6-etc.jpg`
+(enfant nu de corps entier en intérieur privé — écartée par trois lots
+indépendamment).
 
 **Cas limites, signalés comme jugements et non comme évidences** :
 `rachis-test-schober.png` (modèle de démonstration, visage de profil sur une des
@@ -178,3 +200,17 @@ Toutes signalées dans la légende plutôt que masquées.
   comme contre-exemple explicite.
 - `abdo-algorithme-diarrhee-aigue-chez-l-adulte.png` est **rognée sur son bord
   gauche** dans le fichier source.
+- `cardio-algorithme-tvp.png` est **rognée sur ses bords latéraux** : les
+  encadrés « TVP proximale » et « bas compressif classe II » sont tronqués.
+
+---
+
+## 7. Une méthode pour contrôler les SVG
+
+Les campagnes antérieures écartaient les `.svg` faute de pouvoir les regarder —
+leurs glyphes sont souvent vectorisés, donc invisibles à toute recherche
+textuelle. `qlmanage -t <fichier.svg>` les rend en PNG et permet le contrôle
+visuel. Le rendu est carré et rogné pour les `viewBox` non carrées : utile,
+mais partiel. C'est ainsi qu'a été établi que
+`general-hemostase-primaire-vs-secondaire-…svg` ne porte que l'hémostase
+secondaire.

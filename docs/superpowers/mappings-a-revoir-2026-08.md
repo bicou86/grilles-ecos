@@ -98,3 +98,43 @@ mais son iconographie ne suffit pas.
 - `SSP — Adénopathie` — aucune image du médiastin ; prive `AMC-Chir5-ECG1`.
 - `SSP — Fièvre au Retour de Voyage` — 13 de ses 14 images documentent la prise
   en charge d'un malade ; la quatorzième est allée à German-86.
+
+---
+
+## 6. Ajouts des corpus `triage` et `usmle`
+
+### Un changement de page immédiatement applicable
+
+**`Triage-30`** (masse testiculaire) est mappée à `SSP — Œdème Scrotal`, qui ne
+cite **qu'un PDF et aucune image**. Or `SSP — Douleur Testiculaire` existe dans
+le vault et porte **cinq images utilisables** — palpation testiculaire, canal
+inguinal, transillumination, torsion. C'est le seul cas de tout le relevé où la
+page de remplacement est identifiée et immédiatement disponible.
+
+### Pages dont le contenu ne recouvre pas la vignette
+
+| Grille | Page actuelle | Ce que la page ne contient pas |
+|---|---|---|
+| `Triage-9` coup de chaleur avec IRA sur AINS | SSP — Fièvre | page entièrement consacrée à la fièvre infectieuse (tuberculose, paludisme, MNI, endocardite, Centor) ; aucune image du coup de chaleur |
+| `Triage-14` diabète de type 2 | SSP — Perte de Poids Involontaire | **aucune image du diabète**, qui est pourtant le diagnostic de la vignette |
+| `Triage-17` acidocétose diabétique | SSP — Nausées, Vomissements & Hématémèse | page bâtie sur l'hémorragie digestive haute et la cirrhose ; aucune image d'acidocétose |
+| `Triage-18` cholécystite, Murphy positif | idem | aucune image de vésicule biliaire |
+| `Triage-19` GEU, maladie inflammatoire pelvienne | SSP — Douleur Abdominale | **aucune image gynécologique** |
+| `USMLE-36` visite pré-embauche | page ne citant qu'une image, sur l'exposition au bruit | rien sur le versant respiratoire qui domine la vignette |
+
+### La lacune la plus coûteuse du référentiel
+
+**`SSP — Capacité de Discernement & Éthique` ne cite aucune image**, seulement
+des PDF. Elle prive désormais **sept grilles** réparties sur quatre corpus :
+`EthiqueLegale-V1` (violences conjugales), `-V2` (aptitude à la conduite),
+`-V4` (consentement éclairé), `Arden` (col fémoral et discernement),
+`Triage-39` (maltraitance), `USMLE-34` (violence domestique) et `USMLE-9`
+(agression sexuelle).
+
+Dans chacun de ces cas **l'appariement lui-même est juste** — c'est bien la page
+du sujet. Enrichir cette page d'iconographie débloquerait sept stations d'un
+coup, sans toucher au mapping.
+
+Deux autres pages sont dans le même état : `SSP — Intoxications Aiguës` (prive
+`Triage-40` et les trois grilles d'intoxication de rescos-locales) et
+`SSP — Œdème Scrotal` (voir ci-dessus).
