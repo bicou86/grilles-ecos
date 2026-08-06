@@ -363,16 +363,81 @@ def write_manifest(rows):
 # --- Reprise ---------------------------------------------------------------
 
 
-def fetch(raw, dry_run=False):
+def recompresse(data, ext, plafond=SIZE_WARN):
+    """Rend (octets, extension, dimensions, note) sous le plafond, ou None.
+
+    Le vault stocke ses photographies de manœuvres d'examen en PNG : 205 images
+    citées par les pages y dépassent 600 Ko, jusqu'à 12,7 Mo, alors qu'elles
+    documentent souvent littéralement un critère noté. Le format est le
+    coupable, pas la résolution — un réencodage JPEG rend 80 à 95 % sans perte
+    visible, comme sur German-10 (5403 Ko -> 469 Ko).
+
+    Le vault n'est jamais modifié : le dérivé ne vit que dans le dépôt, et le
+    manifeste le signale.
+
+    Rend None si l'image est déjà sous le plafond, si Pillow est absent, ou si
+    aucun réglage n'y parvient sans descendre sous 900 px de large — en deçà,
+    une planche annotée cesse d'être lisible.
+    """
+    try:
+        from PIL import Image
+    except ImportError:
+        return None
+    import io
+
+    im = Image.open(io.BytesIO(data))
+    im.load()
+    if im.mode in ("RGBA", "LA", "P"):
+        fond = Image.new("RGB", im.size, (255, 255, 255))
+        im = im.convert("RGBA")
+        fond.paste(im, mask=im.split()[-1])
+        im = fond
+    else:
+        im = im.convert("RGB")
+
+    for largeur in (1600, 1400, 1200, 1000, 900):
+        if im.width < largeur:
+            continue
+        h = int(im.height * largeur / im.width)
+        petit = im.resize((largeur, h), Image.LANCZOS)
+        for q in (90, 88, 85, 82):
+            buf = io.BytesIO()
+            petit.save(buf, "JPEG", quality=q, optimize=True, progressive=True)
+            if buf.tell() <= plafond:
+                note = ("dérivé recompressé — source %dx%d, %.0f Ko ; "
+                        "JPEG qualité %d à %d px" %
+                        (im.width, im.height, len(data) / 1024.0, q, largeur))
+                return buf.getvalue(), "jpg", (largeur, h), note
+    # Image déjà étroite : réencoder sans redimensionner.
+    for q in (88, 85, 82, 78):
+        buf = io.BytesIO()
+        im.save(buf, "JPEG", quality=q, optimize=True, progressive=True)
+        if buf.tell() <= plafond:
+            note = ("dérivé recompressé — source %.0f Ko ; JPEG qualité %d, "
+                    "dimensions inchangées" % (len(data) / 1024.0, q))
+            return buf.getvalue(), "jpg", im.size, note
+    return None
+
+
+def fetch(raw, dry_run=False, recompress=False):
     """Reprend une référence. Rend un dict décrivant le résultat.
 
     `status` vaut `copie` (nouvelle), `deja` (déjà en place, octet pour octet)
-    ou `simule` (--check).
+    ou `simule` (--check). Avec `recompress`, une image au-dessus du plafond est
+    reprise sous forme de dérivé JPEG — le vault reste intact.
     """
     ref = parse_ref(raw)
     src, matched = resolve(ref)
     data, digest, dims = inspect(src)
     name = normalize(src.name)
+
+    note_derive = None
+    if recompress and len(data) > SIZE_WARN:
+        red = recompresse(data, src.suffix.lower().lstrip("."))
+        if red is not None:
+            data, ext_neuf, dims, note_derive = red
+            digest = hashlib.sha256(data).hexdigest()
+            name = normalize(src.stem + "." + ext_neuf)
     dest = DEST / name
     rel_vault = os.path.relpath(src, VAULT)
     dim_s = "%dx%d" % dims if dims else "-"
@@ -406,8 +471,11 @@ def fetch(raw, dry_run=False):
             )
     elif not dry_run:
         DEST.mkdir(parents=True, exist_ok=True)
-        # copyfile, pas copy2 : on ne veut pas des mtimes du vault dans le dépôt.
-        shutil.copyfile(src, dest)
+        if note_derive is None:
+            # copyfile, pas copy2 : on ne veut pas des mtimes du vault ici.
+            shutil.copyfile(src, dest)
+        else:
+            dest.write_bytes(data)
         after = hashlib.sha256(dest.read_bytes()).hexdigest()
         if after != digest:
             dest.unlink(missing_ok=True)
@@ -418,7 +486,10 @@ def fetch(raw, dry_run=False):
 
     if not dry_run:
         rows = read_manifest()
-        rows[name] = [digest, str(len(data)), dim_s, rel_vault]
+        # La provenance reste le chemin du vault ; la note dit que le fichier du
+        # dépôt en est un dérivé, donc que son sha256 ne s'y retrouve pas.
+        prov = rel_vault if note_derive is None else rel_vault + "  [" + note_derive + "]"
+        rows[name] = [digest, str(len(data)), dim_s, prov]
         write_manifest(rows)
 
     return {
@@ -486,6 +557,10 @@ def main(argv=None):
     ap.add_argument("--verify", action="store_true",
                     help="vérifie les src des grilles et l'absence d'orphelins")
     ap.add_argument("--json", action="store_true", help="sortie machine")
+    ap.add_argument("--recompress", action="store_true",
+                    help="au-dessus du plafond, reprendre un dérivé JPEG "
+                         "sous 600 Ko au lieu de la copie brute ; le vault "
+                         "n'est jamais modifié")
     ap.add_argument("--corpus", default="german", choices=sorted(CORPORA),
                     help="corpus de destination (défaut : german)")
     args = ap.parse_args(argv)
@@ -523,7 +598,7 @@ def main(argv=None):
     results, failed = [], 0
     for raw in args.refs:
         try:
-            r = fetch(raw, dry_run=args.check)
+            r = fetch(raw, dry_run=args.check, recompress=args.recompress)
             results.append(r)
             if not args.json:
                 print(r["href"])
