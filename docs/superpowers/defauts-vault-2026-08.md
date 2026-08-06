@@ -98,7 +98,6 @@ les détecter : le nom et le contenu sont tous deux plausibles isolément.
 | `general-hemostase-primaire-vs-secondaire-cascade-de-coagulation.svg` | primaire **et** secondaire | cascade de coagulation seule, étiquetée en anglais, glyphes vectorisés |
 | `ophtalmo-ovcr-hemorragies-retiniennes-en-flammeches.jpg` | occlusion de la veine **centrale** | lésions groupées sur un seul secteur temporal supérieur, papille normale — pas la distribution des quatre quadrants |
 | `cardio-tvp-clinique-mollet-unilateral-dematie-rouge.jpg` | mollet œdématié **rouge** | asymétrie de volume sans érythème franc |
-| `general-fatigue-examens-paracliniques.png` | liste d'examens devant une fatigue | **panneau de résultats d'un cas index** — kaliémie 1,7 mmol/L, pH 7,526, HCO3⁻ 28,4, ABE +4,5, soit une **alcalose métabolique**. Posée sur une station au trouble inverse, elle la contredit |
 | `rachis-rx-lombaire-profil.png` | radiographie lombaire de profil | cliché de film photographié, granuleux — **indécidable** entre corps vertébraux normaux et mise au carré. Aucune légende honnête possible |
 | `orl-otoscopie-tympan-normal.jpg` | tympan normal de référence | membrane rosée, opaque, convexité pâle ; ni manche du marteau ni triangle lumineux. Normal mal éclairé ou bombé — indéterminable |
 
@@ -108,6 +107,34 @@ les détecter : le nom et le contenu sont tous deux plausibles isolément.
 `pulmo-spirometrie-syndrome-obstructif-severe.jpg` (allemand) ·
 `psy-voies-dopaminergiques-…svg` (anglais) ·
 `abdo-aspect-endoscopique-varices-…png` (anglais).
+
+---
+
+## 2 bis. Un nom trop générique n'est pas une discordance
+
+`general-fatigue-examens-paracliniques.png` a d'abord été versé au § 2 comme
+« contenu ne correspondant pas au nom ». **C'était faux, et deux lots l'ont
+établi en sens contraire.**
+
+Le panneau porte K⁺ 1,7 mmol/L, pH 7,526, HCO3⁻ 27,8, albumine 33 g/L,
+glycémie 7,1 mmol/L, NT-proBNP 655 ng/L. Ce ne sont pas des valeurs
+d'illustration : ce sont **les résultats du cas index de la grille
+« Fatigue TBL »** — un Cushing avec excès de minéralocorticoïdes — que son
+critère noté « Résultats biologiques et interprétation » énumère un à un. La
+grille portait même une **légende orpheline** qui l'attendait : « Tableau des
+résultats biologiques montrant l'hypokaliémie sévère et l'alcalose
+métabolique ».
+
+Deux lots ont donc eu raison simultanément : X4 en l'écartant de stations dont
+le trouble acido-basique est inverse et dont la kaliémie est normale — où elle
+aurait contredit la grille — et X5 en la posant sur la station dont elle est
+littéralement le bilan.
+
+**La leçon vaut au-delà de ce fichier.** Un nom générique (« examens
+paracliniques ») sur un contenu spécifique (le bilan d'un cas précis) n'est pas
+un défaut du vault : c'est une image qui n'a qu'un seul emploi juste. Le
+distinguer d'une vraie discordance demande de lire les valeurs, pas seulement
+de regarder la planche.
 
 ---
 
