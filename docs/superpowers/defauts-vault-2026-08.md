@@ -98,6 +98,8 @@ les détecter : le nom et le contenu sont tous deux plausibles isolément.
 | `general-hemostase-primaire-vs-secondaire-cascade-de-coagulation.svg` | primaire **et** secondaire | cascade de coagulation seule, étiquetée en anglais, glyphes vectorisés |
 | `ophtalmo-ovcr-hemorragies-retiniennes-en-flammeches.jpg` | occlusion de la veine **centrale** | lésions groupées sur un seul secteur temporal supérieur, papille normale — pas la distribution des quatre quadrants |
 | `cardio-tvp-clinique-mollet-unilateral-dematie-rouge.jpg` | mollet œdématié **rouge** | asymétrie de volume sans érythème franc |
+| `general-fatigue-examens-paracliniques.png` | liste d'examens devant une fatigue | **panneau de résultats d'un cas index** — kaliémie 1,7 mmol/L, pH 7,526, HCO3⁻ 28,4, ABE +4,5, soit une **alcalose métabolique**. Posée sur une station au trouble inverse, elle la contredit |
+| `rachis-rx-lombaire-profil.png` | radiographie lombaire de profil | cliché de film photographié, granuleux — **indécidable** entre corps vertébraux normaux et mise au carré. Aucune légende honnête possible |
 | `orl-otoscopie-tympan-normal.jpg` | tympan normal de référence | membrane rosée, opaque, convexité pâle ; ni manche du marteau ni triangle lumineux. Normal mal éclairé ou bombé — indéterminable |
 
 **Images en langue étrangère**, retenues avec la mention dans la légende :
@@ -126,13 +128,23 @@ sous-vêtements) · `ophtalmo-leucocorie-red-reflex.jpg` (yeux d'enfant) ·
 `ophtalmo-champ-visuel-confrontation-doigts.jpg` (examinateur et patiente) ·
 `orl-tamponnement-anterieur-posterieur.jpg` · `orl-kyste-branchial.jpg` ·
 `general-tumeur-de-la-parotide-adenome-pleomorphe.png` ·
-`neuro-epreuve-doigt-nez.png` · `general-syndrome-de-turner-…jpg` ·
+`general-syndrome-de-turner-…jpg` ·
 `orl-laryngoscopie-indirecte-langue.jpg` (visage frontal) ·
 `msk-epanchement-genou-gonflement-asymetrique.jpg` (bracelet d'identification
 hospitalier visible) · `gyneco-col-visualisation-speculum.jpg` (périnée non
 anonymisé) · `pedia-exanthemes-febriles-du-nourrisson-roseole-hhv-6-etc.jpg`
 (enfant nu de corps entier en intérieur privé — écartée par trois lots
 indépendamment).
+
+**La série d'enseignement « Skills ECOS » n'est pas de la photographie de
+patients.** Kernig, Lasègue, Romberg, Schober, doigt-nez, palpation de l'aorte,
+psoas, obturateur, marche GALS, examen pupillaire, champ visuel par
+confrontation : mêmes salle, même blouse, mêmes modèles, aucun sujet
+pathologique, aucune donnée identifiante. Le propriétaire a arbitré cette
+catégorie sur German-10. Elle est **admise**, y compris quand le visage est net
+— pour l'examen pupillaire ou le champ visuel, le cadrage sur l'œil le rend
+inévitable. `neuro-epreuve-doigt-nez.png` figurait à tort dans la liste
+ci-dessus : il appartient à cette série, non aux photographies de patients.
 
 **Cas limites, signalés comme jugements et non comme évidences** :
 `rachis-test-schober.png` (modèle de démonstration, visage de profil sur une des
