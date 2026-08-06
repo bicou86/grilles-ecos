@@ -99,6 +99,9 @@ les détecter : le nom et le contenu sont tous deux plausibles isolément.
 | `ophtalmo-ovcr-hemorragies-retiniennes-en-flammeches.jpg` | occlusion de la veine **centrale** | lésions groupées sur un seul secteur temporal supérieur, papille normale — pas la distribution des quatre quadrants |
 | `cardio-tvp-clinique-mollet-unilateral-dematie-rouge.jpg` | mollet œdématié **rouge** | asymétrie de volume sans érythème franc |
 | `rachis-rx-lombaire-profil.png` | radiographie lombaire de profil | cliché de film photographié, granuleux — **indécidable** entre corps vertébraux normaux et mise au carré. Aucune légende honnête possible |
+| `onco-adenopathie-maligne-vs-benigne-consistance-fixation.png` | comparaison maligne/bénigne sur consistance et fixation | **une seule photographie rapprochée d'un cou**, deux flèches, aucune comparaison ni consistance légendée (relevé deux fois) |
+| `neuro-anesthesie-en-selle-territoire-dermatomal-perineal-s2-s5.png` | anesthésie en selle S2-S5 | **planche dermatomale générale C2-S5**, annotée en anglais |
+| `epaule-test-hawkins-kennedy.png` | — | le bandeau du cliché porte « Hawkings-Kennedy » — coquille de la source |
 | `orl-otoscopie-tympan-normal.jpg` | tympan normal de référence | membrane rosée, opaque, convexité pâle ; ni manche du marteau ni triangle lumineux. Normal mal éclairé ou bombé — indéterminable |
 
 **Images en langue étrangère**, retenues avec la mention dans la légende :

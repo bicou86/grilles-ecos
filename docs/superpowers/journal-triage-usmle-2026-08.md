@@ -124,3 +124,71 @@ Cinq au total, toutes par absence de source et non par oubli :
 quatre corpus. Dans chacun de ces cas l'appariement est juste : c'est la page
 qui n'a aucune iconographie. Voir
 `docs/superpowers/mappings-a-revoir-2026-08.md` § 6.
+
+---
+
+## 6. Phase de complétion — réparation du vault et recompression
+
+Menée après les six lots, sur autorisation du propriétaire.
+
+### Le vault réparé
+
+**171 fichiers renommés, 358 citations mises à jour.** L'extension contredisait
+le format réel : 118 `ecg-chuv-*.png` qui sont des JPEG, 40 fichiers divers dans
+l'autre sens, 13 `ped-*`. `fetch_image.py` les refusait à juste titre — le
+contrôle de signature était exact, c'est la donnée qui était fausse. Le vault
+n'étant pas sous git, `scripts/fix_vault_extensions.py` écrit un **journal de
+réversibilité** que `--undo` rejoue à l'envers.
+
+**3 conteneurs PNG tronqués réparés** — marqueur IEND absent. Les pixels se
+décodaient intégralement, sans ligne vide en bas : seul le conteneur était
+incomplet. Ré-encodés en PNG, donc sans perte.
+
+### La recompression, intégrée à l'outil plutôt que faite en masse
+
+205 images citées dépassaient 600 Ko, jusqu'à 12,7 Mo, pour 863 Mo cumulés —
+presque toutes des photographies de manœuvres d'examen stockées en PNG. Le
+format était le coupable, pas la résolution.
+
+`--recompress` produit un dérivé JPEG sous le plafond au lieu d'une copie brute :
+Kernig 11,4 Mo → 237 Ko, Yergason 12,7 Mo → 378 Ko, Spurling 6,0 Mo → 312 Ko.
+**Le vault n'est jamais modifié** ; le manifeste porte la mention en regard de la
+provenance, le sha256 du dérivé ne s'y retrouvant pas.
+
+Pré-compresser les 205 aurait été du gâchis : seuls les fichiers réellement
+posés servent, et une orpheline finit supprimée.
+
+### Ce que la réparation a produit — et le risque qu'elle a créé
+
+Les 171 fichiers débloqués **n'avaient jamais subi le contrôle visuel**,
+précisément parce que l'outil les refusait en amont. Réparer l'accès a donc créé
+un lot d'images neuves et non vérifiées. Deux se sont révélées piégeuses, et les
+lots en cours ont dû en être avertis en vol.
+
+### Un cas qui vaut d'être retenu
+
+`general-fatigue-examens-paracliniques` a été **écartée par trois lots et posée
+par un quatrième — les quatre avaient raison.**
+
+C'est le bilan du cas index de la grille « Fatigue TBL » : K⁺ 1,7 mmol/L,
+pH 7,526, HCO3⁻ 27,8, albumine 33 g/L, glycémie 7,1, NT-proBNP 655, que son
+critère noté énumère un à un. Sur toute autre station, elle contredit les
+valeurs attendues — déficit en ACTH attendant hypoglycémie et hyponatrémie
+contre glucose 7,1 et Na 145 ; anémie microcytaire attendue contre Hb 137 et
+VGM 99.
+
+Un lot l'avait posée sur deux grilles AMBOSS puis **l'a retirée lui-même** en
+démontrant l'écart. Elle ne subsiste que là où une **légende orpheline
+l'attendait depuis l'origine**.
+
+**La leçon** : un nom générique sur un contenu spécifique n'est pas un défaut du
+vault. C'est une image qui n'a qu'un seul emploi juste, et le reconnaître demande
+de lire les valeurs, pas seulement de regarder la planche.
+
+### Une erreur de la génération des lots
+
+Le décompte des images ciblait les `src="../img/<corpus>/"` **sans compter les
+base64 hérités**. Quatorze grilles paraissaient sous les trois images alors
+qu'elles y étaient déjà. Trois lots l'ont détecté indépendamment et réduit
+leurs ajouts. L'effet est borné — la fourchette autorise quatre — mais l'erreur
+est du pilote.
