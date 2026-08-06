@@ -70,6 +70,8 @@ CORPORA = {
     # les grilles d'un corpus, et chaque corpus a son propre répertoire.
     "rescos-locales": "*.html",
     "casecos": "*.html",
+    "triage": "*.html",
+    "usmle": "*.html",
 }
 CORPUS = "german"
 
