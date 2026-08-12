@@ -443,14 +443,21 @@ retirer des règles.
 
 - [ ] **Étape 4 : vérifier que le texte visible n'a pas changé**
 
+> **Retirer les balises SANS insérer d'espace.** Un `re.sub(r"<[^>]+>", " ", …)` produit un
+> faux positif systématique : le lexique colorise « céphalée » à l'intérieur du label
+> « DD-céphalée », et remplacer les balises par un espace rend `DD- céphalée`, qui diffère du
+> texte de départ alors que le navigateur, lui, affiche bien `DD-céphalée`. Constaté sur
+> AZYGOS-10 à la tâche 2.
+
 ```bash
 python3 - <<'PY'
 import re, html, subprocess
 from pathlib import Path
 
 def visible(txt):
+    """Ce que le navigateur rend : les balises disparaissent sans laisser d'espace."""
     b = re.sub(r"<script.*?</script>|<style.*?</style>", "", txt, flags=re.S)
-    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", b))).strip()
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", b))).strip()
 
 ecarts = 0
 for f in sorted(Path("cases/azygos").glob("*.html")):
