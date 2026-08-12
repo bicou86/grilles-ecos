@@ -215,6 +215,15 @@ REGLES: list[tuple[str, str]] = [
         r"avolitions?", r"alogies?", r"émoussements?", r"méfiances?",
         r"volubilités?", r"logorrhées?", r"fuite des idées", r"distractibilités?",
         r"perplexités?", r"ambivalences?",
+        # Trauma, panique et personnalité limite : le registre des vignettes
+        # Psy 6 à 9 de rescos-locales.
+        r"reviviscences?", r"flashbacks?", r"cauchemars?", r"hypervigilances?",
+        r"comportements? d[e’']évitement",
+        r"sursauts exagérés", r"dissociations?", r"déréalisations?",
+        r"dépersonnalisations?", r"automutilations?", r"scarifications?",
+        r"impulsivités?", r"paresthésies?",
+        r"écholalies?", r"échopraxies?", r"négativismes?", r"stupeur catatonique",
+        r"idées? de référence", r"voix (?:commentantes?|impératives?)",
     )),
     ("c-pink", _mots(
         r"aigu[ëe]?s?", r"chroniques?", r"brutal(?:e|es|aux)?",
@@ -250,6 +259,9 @@ REGLES: list[tuple[str, str]] = [
     ("c-red", r"\bpersonnalités? (?:narcissique|paranoïaque|borderline|antisociale|évitante|dépendante)\b"),
     ("c-red", r"\btroubles? obsessionnels?(?:[- ]compulsifs?)?\b"),
     ("c-red", r"\bpsychoses? (?:puerpérale|du post-partum)\b"),
+    ("c-red", r"\btroubles? (?:panique|de stress post-traumatique|de la personnalité limite)\b"),
+    ("c-red", r"\b(?:état|syndrome) de stress post-traumatique\b"),
+    ("c-red", r"\battaques? de panique\b"),
     ("c-red", _mots(
         r"suicides?", r"suicidaires?", r"dépressions?", r"dépressi(?:f|ve|fs|ves)",
         r"troubles? bipolaires?", r"bipolarités?", r"manies?", r"hypomanies?",
@@ -258,6 +270,9 @@ REGLES: list[tuple[str, str]] = [
         r"hypothyroïdies?", r"hyperthyroïdies?",
         r"schizophrénies?", r"troubles? schizo-affectifs?", r"TOC",
         r"infanticides?", r"narcissiques?", r"paranoïaques?",
+        r"ESPT", r"PTSD", r"agoraphobies?", r"borderlines?",
+        r"traumas?", r"traumatismes? psychiques?", r"catatonies?",
+        r"tentatives? de suicide",
     )),
     # Éponymes de maladie, puis les génériques de la catégorie.
     ("c-red", r"\bmaladies? (?:de |du |d[e’'])[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ-]{2,}\b"),
