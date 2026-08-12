@@ -348,8 +348,14 @@ def _retire(html: str) -> str:
     if OUVERTURE in html:
         debut = html.find(OUVERTURE)
         if debut >= 0 and SIGNATURE in html[debut:]:
-            # Coquille fabriquée ici : le bloc a été posé d'un tenant.
-            suite = _ancre_annexes(html) or ANCRE
+            # Coquille fabriquée ici : le bloc a été posé d'un tenant, et il
+            # s'arrête devant les images ou devant l'ancre finale. Viser
+            # `_ancre_annexes` serait faux : elle rendrait le `scenario` que
+            # NOUS venons d'injecter, et le retrait s'arrêterait au milieu de
+            # notre propre ouvrage. Le bloc ne contient jamais `images-wrapper`
+            # ni le commentaire final : leur première occurrence après
+            # l'ouverture marque donc exactement sa fin.
+            suite = IMAGES if IMAGES in html[debut:] else ANCRE
             return re.sub(re.escape(OUVERTURE) + r".*?(?=" + re.escape(suite) + r")",
                           "", html, count=1, flags=re.S)
     # Structure préexistante : `resume` devant elle, les trois blocs dedans.
