@@ -74,6 +74,11 @@ REGLES: list[tuple[str, str]] = [
     ("c-yellow", r"\burgence (?:vitale|absolue|chirurgicale|ophtalmologique|médicale)\b"),
     ("c-yellow", r"\bfilet de sécurité\b"),
     ("c-yellow", r"\bprise en charge immédiate\b"),
+    ("c-yellow", r"\bcritères? de gravité\b"),
+    ("c-yellow", r"\bdiagnostic d[e’']exclusion\b"),
+    # Le verbe seul (« à écarter ») est un mouvement de raisonnement, pas un
+    # concept à retenir : gardé uniquement quand il porte l'urgence.
+    ("c-yellow", r"\bà (?:éliminer|écarter|exclure) (?:en priorité|d[e’']emblée)\b"),
 
     # ---- complication ----------------------------------------------------
     ("c-orange", r"\bcomplications? (?:graves?|sévères?|redoutables?|possibles?)\b"),
@@ -94,6 +99,10 @@ REGLES: list[tuple[str, str]] = [
         r"hypertension(?: artérielle)?", r"contraception (?:orale|hormonale)",
         r"grossesse", r"exposition solaire", r"atopie",
     )),
+    # `risque` nu est écarté pour la même raison que `symptôme` : 179
+    # occurrences, et « facteur de risque » — le terme qui porte le sens — a
+    # déjà sa règle, plus longue, donc prioritaire.
+    ("c-purple", _mots(r"antécédents?", r"comorbidités?", r"prédispositions?")),
 
     # ---- traitement / médicament / geste --------------------------------
     ("c-amber", r"\b[a-zà-ÿ]{4,}thérapies?\b"),
@@ -106,6 +115,10 @@ REGLES: list[tuple[str, str]] = [
         r"chirurgie", r"opération", r"drainage", r"immobilisation",
         r"kératolyse", r"lavage nasal", r"inhalation", r"perfusion",
         r"traitement (?:topique|systémique|local|symptomatique|de fond)",
+    )),
+    ("c-amber", _mots(
+        r"traitements?", r"thérapeutiques?", r"thérapies?", r"médicaments?",
+        r"prise en charge", r"posologies?", r"prescriptions?",
     )),
 
     # ---- examen / normal / score ----------------------------------------
@@ -126,6 +139,19 @@ REGLES: list[tuple[str, str]] = [
         r"tonométrie", r"acuité visuelle", r"champ visuel",
         r"status neurovasculaire", r"statut neurovasculaire",
     )),
+    # Le registre de l'ORIENTATION, propre aux justifications d'azygos : ces
+    # bulles disent pourquoi on cherche, avec le vocabulaire de la démarche
+    # plutôt que celui des entités. Il est absent des règles réglées sur du
+    # texte de résumé, d'où la moitié de densité manquante du corpus.
+    ("c-green", r"\bexamens? (?:clinique|physique|neurologique|ophtalmologique"
+                r"|au spéculum|complémentaires?)\b"),
+    ("c-green", r"\b(?:status|statut) (?:neurologique|cardiaque|respiratoire"
+                r"|abdominal|articulaire|cutané|local)\b"),
+    ("c-green", r"\banamnèses?(?: ciblée| systématique| par systèmes?)?\b"),
+    ("c-green", _mots(
+        r"dépistages?", r"bilans?", r"laboratoire", r"paramètres? vitaux?",
+        r"évaluations? clinique", r"examens? de laboratoire",
+    )),
 
     # ---- symptôme / signe ------------------------------------------------
     ("c-pink", _mots(
@@ -136,6 +162,26 @@ REGLES: list[tuple[str, str]] = [
         r"baisse (?:de l[e’'])?(?:acuité visuelle|visus)", r"raideur matinale",
         r"perte de poids", r"sueurs nocturnes", r"palpitations?",
         r"saignements?", r"éruptions? cutanées?",
+    )),
+    # Les termes de la sémiologie et ses descripteurs. « signe de Murphy »
+    # reste vert : l'éponyme est déclaré plus haut et il est plus long, donc
+    # le moteur le retient d'abord.
+    #
+    # `symptôme` et `signe` NUS sont volontairement absents : 546 occurrences
+    # dans le corpus, et les colorer porte la densité à 86,6 — au-dessus du
+    # plafond de 80 — sans rien signaler. « Ces signes sont typiques » ne dit
+    # pas plus en rose qu'en noir. Le mot qui compte est celui qui nomme le
+    # signe, et il a déjà sa règle.
+    ("c-pink", _mots(
+        r"troubles?", r"atteintes?", r"lésions?",
+        r"crises?", r"syncopes?", r"chutes?", r"malaises?",
+        r"perte de (?:connaissance|vision|audition|force|équilibre)",
+    )),
+    ("c-pink", _mots(
+        r"aigu[ëe]?s?", r"chroniques?", r"brutal(?:e|es|aux)?",
+        r"progressi(?:f|ve|ves)", r"unilatéral(?:e|es|aux)?",
+        r"bilatéral(?:e|es|aux)?", r"intermittent(?:e|es|s)?",
+        r"irradiations?", r"prodromes?",
     )),
 
     # ---- pathologie / danger --------------------------------------------
@@ -151,6 +197,12 @@ REGLES: list[tuple[str, str]] = [
         r"carcinomes?", r"mélanomes?", r"lymphomes?", r"tumeurs? maligne[s]?",
         r"fractures?", r"luxations?", r"torsions? (?:testiculaire|ovarienne)",
         r"tinea corporis", r"eczémas?(?: atopique| séborrhéique)?",
+    )),
+    # Éponymes de maladie, puis les génériques de la catégorie.
+    ("c-red", r"\bmaladies? (?:de |du |d[e’'])[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ-]{2,}\b"),
+    ("c-red", _mots(
+        r"pathologies?", r"maladies?", r"infections?", r"traumatismes?",
+        r"atteintes? (?:centrale|organique|systémique)",
     )),
     # Morphologie ensuite, avec garde sur les faux amis.
     ("c-red", r"\b[a-zà-ÿ]{3,}(?:ite|ites)\b"),
