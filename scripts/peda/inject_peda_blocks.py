@@ -299,30 +299,33 @@ def _ancre_annexes(html: str) -> str | None:
     return None
 
 
+#: Signature de la coquille d'annexes que CE script fabrique. Elle permet au
+#: retrait de savoir, sans ambiguïté, s'il doit défaire une structure créée ici
+#: ou seulement le contenu glissé dans une structure préexistante.
+#:
+#: Le besoin est apparu sur trois cas de figure distincts, rencontrés dans les
+#: 19 grilles : Psy-Vignette 10 a `annexes` + `annexes-grid` + `images-wrapper` ;
+#: Psy-Vignette 1 et 7 n'ont rien ; la grille Diabète a un `images-wrapper`
+#: SANS conteneur `annexes`. Déduire la branche de retrait de la seule présence
+#: de `images-wrapper` échouait sur le troisième.
+COQUILLE = ANNEXES + "\n<h3>Annexes</h3>\n" + GRILLE_ANNEXES + "\n"
+
+
 def _retire(html: str) -> str:
-    """Défait une injection.
-
-    Deux branches, qui doivent répondre exactement aux deux branches de
-    `injecte` :
-
-    * la grille avait déjà sa structure d'annexes — le `resume` s'est posé
-      devant elle et les trois blocs à l'intérieur : on retire les deux
-      séparément ;
-    * elle n'en avait pas — tout le bloc, `<div class="annexes">` compris, a
-      été posé d'un tenant devant l'ancre : on retire d'un tenant. Retirer en
-      deux temps laisserait la coquille `annexes` / `annexes-grid` derrière
-      soi, et le contrôle d'inversibilité l'a signalé sur Psy-Vignette 1.
-    """
-    if _ancre_annexes(html):
-        html = re.sub(re.escape(OUVERTURE) + r".*?(?=" + re.escape(ANNEXES) + r")",
-                      "", html, count=1, flags=re.S)
-        suite = _ancre_annexes(html) or ANCRE
-        html = re.sub(re.escape(THEORIE) + r".*?(?=" + re.escape(suite) + r")",
-                      "", html, count=1, flags=re.S)
-    else:
-        html = re.sub(re.escape(OUVERTURE) + r".*?(?=" + re.escape(ANCRE) + r")",
-                      "", html, count=1, flags=re.S)
-    return html
+    """Défait une injection, en miroir exact des deux branches de `injecte`."""
+    if OUVERTURE + "\n" in html or OUVERTURE in html:
+        debut = html.find(OUVERTURE)
+        if debut >= 0 and COQUILLE in html[debut:debut + 200000]:
+            # Coquille fabriquée ici : le bloc a été posé d'un tenant.
+            suite = _ancre_annexes(html) or ANCRE
+            return re.sub(re.escape(OUVERTURE) + r".*?(?=" + re.escape(suite) + r")",
+                          "", html, count=1, flags=re.S)
+    # Structure préexistante : `resume` devant elle, les trois blocs dedans.
+    html = re.sub(re.escape(OUVERTURE) + r".*?(?=" + re.escape(ANNEXES) + r")",
+                  "", html, count=1, flags=re.S)
+    suite = _ancre_annexes(html) or ANCRE
+    return re.sub(re.escape(THEORIE) + r".*?(?=" + re.escape(suite) + r")",
+                  "", html, count=1, flags=re.S)
 
 
 def injecte(html: str, resume: str, annexes: str) -> tuple[str, str]:
@@ -338,7 +341,7 @@ def injecte(html: str, resume: str, annexes: str) -> tuple[str, str]:
             return html, "un bloc subsiste après retrait — grille non prévue pour ce script"
 
     suite = _ancre_annexes(html)
-    if ANNEXES in html and suite:
+    if ANNEXES in html and GRILLE_ANNEXES in html and suite:
         # La grille a déjà sa structure d'annexes : on s'y range plutôt que
         # d'en créer une seconde. Les trois blocs passent devant les images,
         # pour que `scenario` finisse sur `images-wrapper` comme le corpus
@@ -346,10 +349,11 @@ def injecte(html: str, resume: str, annexes: str) -> tuple[str, str]:
         sortie = html.replace(ANNEXES, resume + ANNEXES, 1)
         sortie = sortie.replace(suite, annexes + suite, 1)
     else:
-        # Aucune annexe : on pose la structure complète devant l'ancre.
-        bloc = (resume + ANNEXES + "\n<h3>Annexes</h3>\n" + GRILLE_ANNEXES + "\n"
-                + annexes + "</div>\n</div>\n")
-        sortie = html.replace(ANCRE, bloc + ANCRE, 1)
+        # Pas de conteneur d'annexes : on pose la structure complète, devant
+        # les images si elles existent — sans quoi `scenario` finirait sur un
+        # `images-wrapper` qu'il précéderait — sinon devant l'ancre.
+        bloc = resume + COQUILLE + annexes + "</div>\n</div>\n"
+        sortie = html.replace(suite or ANCRE, bloc + (suite or ANCRE), 1)
 
     # Contrôle d'inversibilité : retirer ce qu'on vient de poser doit redonner
     # l'entrée à l'octet près. C'est ce qui garantit qu'une seconde exécution
