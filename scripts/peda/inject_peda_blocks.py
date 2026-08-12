@@ -279,7 +279,13 @@ def rend(c: dict) -> tuple[str, str]:
     grille, devant les images.
     """
     resume = _equilibre(rend_resume(c) + "\n", "bloc resume")
-    blocs = [rend_theorie(c), rend_presentation(c)]
+    blocs = [rend_theorie(c)]
+    # `presentation` s'omet quand la station EST déjà un exercice de
+    # présentation de cas — RESCOS-64 station 2, où l'examinateur demande au
+    # candidat de présenter la patiente. Une fiche de présentation y ferait
+    # doublon avec l'épreuve elle-même.
+    if c.get("presentation"):
+        blocs.append(rend_presentation(c))
     if not _sans_scenario(c):
         blocs.append(rend_scenario(c))
     annexes = _equilibre("\n".join(blocs) + "\n", "blocs annexes")

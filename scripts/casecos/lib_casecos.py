@@ -206,12 +206,33 @@ BLOCKS = [
      r'<div class="criterion-comment-section"|<div class="scoring-rule">'
      r'|(?:</div>\s*)*(?:<div class="cloture-item">|' + re.escape(COMM_MARK) + r')'),
     # --- fiches pedagogiques de fin de page (niveau 3) ---------------------
+    # `resume` et `presentation` sont ARRIVES avec les blocs pedagogiques poses
+    # par `scripts/peda/inject_peda_blocks.py` sur les grilles qui n'en avaient
+    # aucun. Le corpus ne les portait pas ; sans entree dediee leur contenu
+    # serait invisible a tout l'outillage — c'est la lecon d'AMBOSS-34.
+    #
+    # Les queues de `theorie` et `scenario` sont elargies pour la meme raison :
+    # une grille peut desormais avoir une `theorie` suivie d'une
+    # `presentation`, ou un `scenario` suivi des images plutot que d'un `defi`.
+    # Elargir ne peut pas casser les 198 grilles d'origine — le decoupage
+    # retient la PREMIERE correspondance, et leurs queues restent en tete de
+    # liste. Verifie apres coup, grille par grille, contre le snapshot d'avant.
+    ("resume", r'<div class="resume">', r'<div class="annexes">'),
     ("expert", r'<div class="annexe-item annexe-expert">',
      r'<div class="annexe-item annexe-theorie">'),
     ("theorie", r'<div class="annexe-item annexe-theorie">',
-     r'<div class="annexe-item annexe-scenario">'),
+     r'<div class="annexe-item annexe-scenario">'
+     r'|<div class="presentation-patient">'                       # (blocs peda)
+     r'|(?:</div>\s*)*(?:<div class="images-wrapper">|'           # (blocs peda)
+     + re.escape(END_MARK) + r')'),
+    ("presentation", r'<div class="presentation-patient">',       # (blocs peda)
+     r'<div class="annexe-item annexe-scenario">'
+     r'|(?:</div>\s*)*(?:<div class="images-wrapper">|'
+     + re.escape(END_MARK) + r')'),
     ("scenario", r'<div class="annexe-item annexe-scenario">',
-     r'<div class="annexe-item annexe-defi">'),
+     r'<div class="annexe-item annexe-defi">'
+     r'|(?:</div>\s*)*(?:<div class="images-wrapper">|'           # (blocs peda)
+     + re.escape(END_MARK) + r')'),
     ("defi", r'<div class="annexe-item annexe-defi">',
      r'(?:</div>\s*)*(?:<div class="annexe-item">|<div class="images-wrapper">|'
      + re.escape(END_MARK) + r')'),
