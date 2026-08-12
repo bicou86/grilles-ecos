@@ -49,7 +49,15 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..', '..');
-const DIR = path.join(ROOT, 'cases', 'rescos-locales');
+// Le harnais n'a rien de propre a `rescos-locales` : il charge une page, compte
+// les exceptions, remplit, relit le score. `--corpus NOM` permet de le pointer
+// sur n'importe quel dossier de `cases/` — azygos apres regeneration, par
+// exemple — sans dupliquer 400 lignes de plomberie DevTools.
+const CORPUS = (() => {
+    const i = process.argv.indexOf('--corpus');
+    return i >= 0 && process.argv[i + 1] ? process.argv[i + 1] : 'rescos-locales';
+})();
+const DIR = path.join(ROOT, 'cases', CORPUS);
 const CHROME = findChrome();
 
 function findChrome() {
@@ -263,7 +271,11 @@ async function main() {
     const args = process.argv.slice(2);
     const summary = args.includes('--summary');
     const deep = args.includes('--deep');
-    const filter = args.filter(a => !a.startsWith('--'))[0];
+    // La valeur qui suit `--corpus` est un nom de dossier, pas un filtre de
+    // grille : l'ecarter, sans quoi `--corpus azygos` chercherait des noms de
+    // fichiers contenant « azygos » DANS le dossier azygos.
+    const iCorpus = args.indexOf('--corpus');
+    const filter = args.filter((a, i) => !a.startsWith('--') && i !== iCorpus + 1)[0];
     const srv = await serve();
     const base = 'http://127.0.0.1:' + srv.address().port;
     const {proc, wsUrl, userDir} = await launchChrome();
