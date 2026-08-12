@@ -260,6 +260,15 @@ def _equilibre(bloc: str, quoi: str) -> str:
     return bloc
 
 
+def _sans_scenario(c: dict) -> bool:
+    """Le bloc `scenario` s'omet quand la grille en porte déjà un, ou quand le
+    poste n'a pas de patient simulé — une station de présentation de cas, par
+    exemple. Le contrat de `presentation` reste tenu : dans `rescos`, son motif
+    de fin accepte aussi `images-wrapper` et l'ancre finale.
+    """
+    return not c.get("scenario")
+
+
 def rend(c: dict) -> tuple[str, str]:
     """Renvoie (bloc_resume, bloc_annexes) — ils s'insèrent à deux endroits.
 
@@ -270,11 +279,10 @@ def rend(c: dict) -> tuple[str, str]:
     grille, devant les images.
     """
     resume = _equilibre(rend_resume(c) + "\n", "bloc resume")
-    annexes = _equilibre("\n".join([
-        rend_theorie(c),
-        rend_presentation(c),
-        rend_scenario(c),
-    ]) + "\n", "blocs annexes")
+    blocs = [rend_theorie(c), rend_presentation(c)]
+    if not _sans_scenario(c):
+        blocs.append(rend_scenario(c))
+    annexes = _equilibre("\n".join(blocs) + "\n", "blocs annexes")
     return resume, annexes
 
 
@@ -284,18 +292,28 @@ THEORIE = '<div class="annexe-item annexe-theorie">'
 IMAGES = '<div class="images-wrapper">'
 
 
+SCENARIO = '<div class="annexe-item annexe-scenario">'
+
+
 def _ancre_annexes(html: str) -> str | None:
-    """Ce devant quoi les trois annexes se posent, dans une grille qui en a déjà.
+    """Ce devant quoi les blocs se posent, dans une grille qui a déjà des annexes.
 
     Insertion et retrait DOIVENT viser la même chaîne, sans quoi le retrait
     emporte les espaces d'origine et l'inversibilité tombe — c'est ce que le
     contrôle a signalé à la première version, qui insérait après
     `annexes-grid` mais retirait jusqu'à `images-wrapper`.
+
+    Le `scenario` existant passe AVANT les images : si nos blocs se posaient
+    après lui, sa queue tomberait sur `<div class="annexe-item annexe-theorie">`,
+    que son motif de fin ne reconnaît pas — le `<div class="annexe-item"` du
+    motif porte un guillemet fermant, absent d'une classe composée. Constaté
+    sur RESCOS-57. En nous plaçant devant, l'ordre canonique est rétabli :
+    theorie, presentation, puis le scenario de la grille, puis les images.
     """
+    if SCENARIO in html:
+        return SCENARIO
     if IMAGES in html:
         return IMAGES
-    if GRILLE_ANNEXES in html:
-        return None  # structure d'annexes vide : cas non rencontré, à instruire
     return None
 
 
