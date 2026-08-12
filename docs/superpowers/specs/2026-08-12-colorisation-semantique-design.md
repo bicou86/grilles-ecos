@@ -1,6 +1,9 @@
 # Colorisation sémantique — azygos et les 20 grilles sans pédagogie — Design
 
-Date : 2026-08-12 · Statut : design validé, implémentation à planifier
+Date : 2026-08-12 · Statut : **lot 1 implémenté le 2026-08-12** (azygos 39,1 → 76,6 spans /
+1000 mots) · lot 2 à faire
+
+Plan d'exécution : `docs/superpowers/plans/2026-08-12-colorisation-semantique.md`
 
 ## Problème
 
@@ -218,6 +221,27 @@ Chaque grille traitée reçoit les trois blocs, au gabarit de RESCOS-70 :
 
 La mesure de densité est réalisée par le même script pour les deux passes, afin que le chiffre
 avant et le chiffre après soient comparables.
+
+### Résultat du lot 1 — 2026-08-12
+
+| Contrôle | Résultat |
+|---|---|
+| Densité `theorie` azygos | **39,1 → 76,6** spans / 1000 mots (2 999 → 6 204 spans) |
+| Autres corpus | inchangés, au chiffre près |
+| Texte visible | identique sur les 49 grilles |
+| Spans imbriqués | 0 |
+| `check_invariants.py` azygos | vert |
+| Couleurs rendues en navigateur | 837 spans contrôlés sur 5 grilles de 4 corpus, 100 % conformes |
+
+**Deux constats faits en passant, hors périmètre :**
+
+1. `browser_probe.js` rend `0/49` sur azygos — mais il rendait déjà `0/1` sur la version
+   d'avant la régénération (commit `56c48f5`). Ce n'est pas une régression du lot. La page se
+   charge sans exception ; c'est la lecture du score par le harnais qui échoue sur ce corpus.
+2. **Les 166 grilles de `rescos-locales` ne suivent pas le thème sombre.** Elles portent bien
+   les règles `[data-theme="dark"]` injectées, mais ne chargent ni `theme-sync.js` ni
+   `mobile-responsive.css` : l'attribut n'est jamais posé. Vérifié en navigateur — azygos,
+   german et casecos rendent la palette sombre, `rescos-locales` reste en clair.
 
 ## Séquencement
 
