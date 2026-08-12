@@ -132,6 +132,9 @@ REGLES: list[tuple[str, str]] = [
         r"thérapie interpersonnelle", r"activation comportementale", r"MBCT",
         r"sertraline", r"escitalopram", r"venlafaxine", r"lévothyroxine",
         r"benzodiazépines?", r"luminothérapie", r"arrêts? de travail",
+        r"neuroleptiques?", r"antipsychotiques?", r"lithium",
+        r"électroconvulsivothérapie", r"ECT",
+        r"exposition avec prévention de la réponse", r"thérapie de couple",
     )),
 
     # ---- examen / normal / score ----------------------------------------
@@ -199,11 +202,19 @@ REGLES: list[tuple[str, str]] = [
     # Sémiologie psychiatrique : ce que la patiente décrit et ce qui se voit.
     ("c-pink", r"\bhumeurs? dépressives?\b"),
     ("c-pink", r"\bralentissements? psychomoteurs?\b"),
+    ("c-pink", r"\bsymptômes? (?:positifs?|négatifs?|psychotiques?|maniaques?|cardinaux)\b"),
     ("c-pink", _mots(
         r"anhédonies?", r"dévalorisations?", r"culpabilités?", r"ruminations?",
         r"insomnies?", r"hypersomnies?", r"anxiétés?", r"désespoirs?",
         r"labilités? émotionnelles?", r"retraits? sociaux?", r"apathies?",
         r"psychomoteur(?:s|e|es)?", r"hallucinations?", r"idées? délirantes?",
+        # Sémiologie psychotique, obsessionnelle et de la personnalité :
+        # le registre des dix vignettes « Psy » de rescos-locales.
+        r"obsessions?", r"compulsions?", r"rituels", r"délires?",
+        r"grandioses?", r"grandiosités?", r"désorganisations?",
+        r"avolitions?", r"alogies?", r"émoussements?", r"méfiances?",
+        r"volubilités?", r"logorrhées?", r"fuite des idées", r"distractibilités?",
+        r"perplexités?", r"ambivalences?",
     )),
     ("c-pink", _mots(
         r"aigu[ëe]?s?", r"chroniques?", r"brutal(?:e|es|aux)?",
@@ -235,12 +246,18 @@ REGLES: list[tuple[str, str]] = [
     ("c-red", r"\bidées? de mort\b"),
     ("c-red", r"\bactes? préparatoires?\b"),
     ("c-red", r"\bépisodes? (?:dépressifs? majeurs?|maniaques?|mixtes?)\b"),
+    ("c-red", r"\btroubles? de la personnalité(?: \w+)?\b"),
+    ("c-red", r"\bpersonnalités? (?:narcissique|paranoïaque|borderline|antisociale|évitante|dépendante)\b"),
+    ("c-red", r"\btroubles? obsessionnels?(?:[- ]compulsifs?)?\b"),
+    ("c-red", r"\bpsychoses? (?:puerpérale|du post-partum)\b"),
     ("c-red", _mots(
         r"suicides?", r"suicidaires?", r"dépressions?", r"dépressi(?:f|ve|fs|ves)",
         r"troubles? bipolaires?", r"bipolarités?", r"manies?", r"hypomanies?",
         r"maniaques?", r"états? mixtes?", r"virages? maniaques?",
         r"psychoses?", r"troubles? psychotiques?", r"catatonies?", r"incuries?",
         r"hypothyroïdies?", r"hyperthyroïdies?",
+        r"schizophrénies?", r"troubles? schizo-affectifs?", r"TOC",
+        r"infanticides?", r"narcissiques?", r"paranoïaques?",
     )),
     # Éponymes de maladie, puis les génériques de la catégorie.
     ("c-red", r"\bmaladies? (?:de |du |d[e’'])[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ-]{2,}\b"),

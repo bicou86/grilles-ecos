@@ -300,12 +300,28 @@ def _ancre_annexes(html: str) -> str | None:
 
 
 def _retire(html: str) -> str:
-    """Défait une injection : le `resume`, puis les trois annexes."""
-    html = re.sub(re.escape(OUVERTURE) + r".*?(?=" + re.escape(ANNEXES) + r"|"
-                  + re.escape(ANCRE) + r")", "", html, count=1, flags=re.S)
-    suite = _ancre_annexes(html) or ANCRE
-    html = re.sub(re.escape(THEORIE) + r".*?(?=" + re.escape(suite) + r")",
-                  "", html, count=1, flags=re.S)
+    """Défait une injection.
+
+    Deux branches, qui doivent répondre exactement aux deux branches de
+    `injecte` :
+
+    * la grille avait déjà sa structure d'annexes — le `resume` s'est posé
+      devant elle et les trois blocs à l'intérieur : on retire les deux
+      séparément ;
+    * elle n'en avait pas — tout le bloc, `<div class="annexes">` compris, a
+      été posé d'un tenant devant l'ancre : on retire d'un tenant. Retirer en
+      deux temps laisserait la coquille `annexes` / `annexes-grid` derrière
+      soi, et le contrôle d'inversibilité l'a signalé sur Psy-Vignette 1.
+    """
+    if _ancre_annexes(html):
+        html = re.sub(re.escape(OUVERTURE) + r".*?(?=" + re.escape(ANNEXES) + r")",
+                      "", html, count=1, flags=re.S)
+        suite = _ancre_annexes(html) or ANCRE
+        html = re.sub(re.escape(THEORIE) + r".*?(?=" + re.escape(suite) + r")",
+                      "", html, count=1, flags=re.S)
+    else:
+        html = re.sub(re.escape(OUVERTURE) + r".*?(?=" + re.escape(ANCRE) + r")",
+                      "", html, count=1, flags=re.S)
     return html
 
 
