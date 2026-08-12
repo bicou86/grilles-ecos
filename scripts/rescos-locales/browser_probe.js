@@ -274,8 +274,14 @@ async function main() {
     // La valeur qui suit `--corpus` est un nom de dossier, pas un filtre de
     // grille : l'ecarter, sans quoi `--corpus azygos` chercherait des noms de
     // fichiers contenant « azygos » DANS le dossier azygos.
+    //
+    // Le garde `iCorpus >= 0` n'est pas decoratif : sans lui, `indexOf` rend
+    // -1 quand l'option est absente, et l'index exclu devient 0 — c'est-a-dire
+    // le filtre lui-meme. Symptome mesure : `browser_probe.js "Psy-Vignette 10"`
+    // sondait les 166 grilles du corpus au lieu d'une.
     const iCorpus = args.indexOf('--corpus');
-    const filter = args.filter((a, i) => !a.startsWith('--') && i !== iCorpus + 1)[0];
+    const filter = args.filter(
+        (a, i) => !a.startsWith('--') && !(iCorpus >= 0 && i === iCorpus + 1))[0];
     const srv = await serve();
     const base = 'http://127.0.0.1:' + srv.address().port;
     const {proc, wsUrl, userDir} = await launchChrome();
