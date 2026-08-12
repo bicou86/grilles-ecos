@@ -330,7 +330,7 @@ def rend_theorie(data: dict) -> str:
                 if item.get("info_sous_groupe"):
                     lignes.append(
                         f'<li class="theorie-sous-groupe">'
-                        f"<strong>{lib.echappe(item['label_sous_groupe'])}</strong> — "
+                        f"<strong>{lex.colorise(item['label_sous_groupe'])}</strong> — "
                         f"{lex.colorise(item['info_sous_groupe'])}</li>"
                     )
                 if not item.get("info"):
@@ -341,7 +341,7 @@ def rend_theorie(data: dict) -> str:
                     if g.strip().lower() == d.strip().lower():
                         label = d
                 lignes.append(
-                    f"<li><strong>{lib.echappe(label)}</strong> — "
+                    f"<li><strong>{lex.colorise(label)}</strong> — "
                     f"{lex.colorise(item['info'])}</li>"
                 )
         if lignes:
