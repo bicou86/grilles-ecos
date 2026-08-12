@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-18 - Douleurs cervicales - Mme Dilara Sönmez, 45 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-18 - Douleurs cervicales</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-18" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet de médecine de famille</p>
+            <p style="margin: 5px 0;">👤 Mme Dilara Sönmez, 45 ans</p>
+            <p style="margin: 5px 0;">🏷️ Neurologie · Poste standard · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/21</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Anamnèse d’évolution de la douleur <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question initiale sur l’évolution <span class="patient-response">[« Il y a quatre semaines, j’étais déjà venue ici pour des douleurs cervicales et du bras droit et je viens maintenant pour un contrôle »]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Il est essentiel que le candidat reconnaisse qu’il s’agit d’un contrôle d’évolution et non d’un premier contact, et pose en conséquence une question d’ouverture appropriée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Degré de sévérité de l’évolution de la douleur <span class="patient-response">[Douleurs meilleures qu’il y a 4 semaines]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une diminution de la douleur seule n’est pas un signe d’alarme. Elle devient cliniquement pertinente surtout si, en même temps, les déficits moteurs ou sensitifs augmentent. Une diminution abrupte de la douleur en présence de déficits neurologiques progressifs peut évoquer une « mort radiculaire ». Dans ce cas, la racine nerveuse concernée est tellement lésée par la compression que les fibres de la douleur cessent de fonctionner alors que la perte de fonction continue de s’aggraver. Ce phénomène peut survenir dans une radiculopathie avancée, par exemple en cas de hernie discale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Localisation et irradiation de la douleur <span class="patient-response">[Les douleurs cervicales irradient toujours dans le bras droit]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Qualité de la douleur <span class="patient-response">[Douleur cervicale sourde à tiraillements, avec sensation irradiée, parfois de picotements et de brûlures dans le bras droit]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs déclenchants <span class="patient-response">[Lors des mouvements du cou et lors d’efforts prolongés.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures prises jusqu’ici <span class="patient-response">[Antalgiques partiellement efficaces; depuis 4 semaines AINS, physiothérapie, ménagement et mesures ergonomiques.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pertinent pour l’évaluation de la prise en charge conservatrice menée jusqu’ici.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse d’évolution neurologique <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Progression des symptômes neurologiques<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Il est important que le candidat interroge et évalue séparément la douleur et la symptomatologie neurologique (sensibilité et motricité).</span></span></span> · Trouble de la sensibilité – évolution <span class="patient-response">[Moins de douleurs mais picotements et engourdissement accrus dans le bras droit]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Progression des symptômes neurologiques · Trouble de la sensibilité – localisation <span class="patient-response">[Picotements surtout au niveau du pouce et de l’index ainsi que du bord externe de l’avant-bras]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Répartition radiculaire typique compatible avec C6.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Progression des symptômes neurologiques · Symptômes moteurs <span class="patient-response">[Le bras droit paraît un peu plus faible qu’auparavant.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Indice de symptomatologie neurologique progressive</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Progression des symptômes neurologiques · Limitation fonctionnelle <span class="patient-response">[Dans la vie quotidienne, tu saisis avec moins d’assurance et les symptômes apparaissent plus rapidement à l’effort.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Signes d’alarme neurologiques <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Trouble vésico-sphinctérien <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les troubles végétatifs (dysfonctions vésico-sphinctériennes) suggèrent une compression spinale et nécessitent une évaluation immédiate.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Trouble de la marche <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En particulier, une démarche à base large et ataxique évoque une myélopathie cervicale</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes bilatéraux <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les symptômes bilatéraux évoquent davantage une myélopathie qu’un syndrome purement radiculaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle / médication <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents <span class="patient-response">[Légère hypertension artérielle]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Information déjà tirée de la note de dossier</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Opérations antérieures <span class="patient-response">[Appendicectomie il y a environ dix ans.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Information déjà tirée de la note de dossier</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médication actuelle <span class="patient-response">[Uniquement les antalgiques prescrits]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La médication doit être redemandée explicitement dans ce cas malgré la présence de la note de dossier.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Noxes<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pas pertinent dans une anamnèse d’évolution</span></span></span> · Tabagisme <span class="patient-response">[Non.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Alcool <span class="patient-response">[Seulement occasionnellement.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale et sociale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse familiale <span class="patient-response">[Pas de symptômes similaires connus dans la famille.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">N’a pas une grande pertinence pour ce cas, en particulier pour une anamnèse d’évolution</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession / charge <span class="patient-response">[Tu travailles comme employée administrative et restes longtemps assise à l’ordinateur.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Contexte pertinent pour la charge et l’ergonomie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation de logement et au quotidien <span class="patient-response">[Tu vis avec ton partenaire et es globalement autonome au quotidien.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/20</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Examen du rachis cervical <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection du rachis cervical <span class="patient-response">[Mouvements de la tête légèrement prudents, pas de malposition visible, pas d’atrophie frappante]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mobilité du rachis cervical évaluée <span class="patient-response">[Mobilité réduite, douleur à la rétropulsion et à la rotation]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les symptômes sont mécaniquement provoquables. Provocation typique d’une douleur radiculaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de Spurling <span class="patient-response">[Provocation de douleurs cervicales avec irradiation ou paresthésies dans le bras droit]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Test de provocation en cas de suspicion de radiculopathie cervicale, à haute spécificité mais faible sensibilité. Réalisation: rachis cervical en extension et inclinaison latérale du côté symptomatique, suivies d’une compression axiale</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Motricité du membre supérieur <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Motricité · C5 Abduction de l’épaule, des deux côtés <span class="patient-response">[Conservée de façon symétrique.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Évaluation concomitante des segments adjacents.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Motricité · C6 Flexion du coude, des deux côtés <span class="patient-response">[Légèrement plus faible à droite qu’à gauche (4/5).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">C5–C6, résultat pathologique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Motricité · C6 Extension du poignet, des deux côtés <span class="patient-response">[Légèrement plus faible à droite qu’à gauche (4/5)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Compatible avec une atteinte C6.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Motricité · C7 Extension du coude, des deux côtés <span class="patient-response">[Conservée de façon symétrique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Évaluation concomitante de C7.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Motricité · C8–Th1 Écartement des doigts et abduction de l’auriculaire <span class="patient-response">[Conservée de façon symétrique]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-4" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Sensibilité du membre supérieur <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de sensibilité selon les dermatomes · C5 <span class="patient-response">[Sans particularité]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de sensibilité selon les dermatomes · C6 Sensibilité au niveau de l’avant-bras radial <span class="patient-response">[Légèrement diminuée à droite par rapport au côté gauche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Compatible avec la distribution C6.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de sensibilité selon les dermatomes · C6 Sensibilité au niveau du pouce et du bord radial de l’index <span class="patient-response">[Diminuée à droite par rapport au côté gauche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Résultat sensitif central, compatible avec C6.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de sensibilité selon les dermatomes · C7 <span class="patient-response">[Sans particularité]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de sensibilité selon les dermatomes · C8 <span class="patient-response">[Sans particularité]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-4" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de sensibilité selon les dermatomes · Th1 <span class="patient-response">[Sans particularité]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-5" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Réflexes du membre supérieur <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Réflexe bicipital (BSR) des deux côtés <span class="patient-response">[Légèrement diminué à droite par rapport au côté gauche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">BSR correspondant à C5–C6.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Réflexe brachioradial (BRR) des deux côtés <span class="patient-response">[Légèrement diminué à droite par rapport au côté gauche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">BRR correspondant à C5–C6.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Réflexe tricipital (TSR) des deux côtés <span class="patient-response">[Déclenchable de manière symétrique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Évaluation concomitante de C7.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Exclusion de signes centraux <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes pyramidaux (Babinski) des deux côtés <span class="patient-response">[Pas de signe de Babinski pathologique]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Démarche <span class="patient-response">[Démarche sans particularité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une démarche normale va à l’encontre d’une myélopathie. Serait pathologique p. ex. une démarche raide, des pas incertains ou des trébuchements fréquents.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anomalies bilatérales exclues <span class="patient-response">[Pas de déficits neurologiques bilatéraux.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les symptômes bilatéraux évoquent davantage une myélopathie qu’un syndrome purement radiculaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-2" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/8</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Évaluation clinique <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail <span class="patient-response">[Radiculopathie cervicale C6]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Progression neurologique <span class="patient-response">[Reconnu]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Déficits sensitifs croissants et nouvelle faiblesse motrice avec douleurs simultanément améliorées. Indice décisif pour la suite de la procédure.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Degré d’urgence <span class="patient-response">[Apprécié correctement. Pas de signes d’alarme directs, mais progression neurologique pertinente indiquant une clarification.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Information du patient <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Information sur le diagnostic de travail <span class="patient-response">[Communiquée de manière compréhensible pour la patiente]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Thérapie <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Analgésie de soutien <span class="patient-response">[Poursuivie de manière adaptée aux symptômes]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Poursuivre l’analgésie de manière adaptée aux symptômes, mais pas comme seule mesure; en raison de la progression neurologique, initier une clarification rapide.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Procédure <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">IRM du rachis cervical <span class="patient-response">[Demandée sans délai]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Mesure diagnostique centrale en cas de progression neurologique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Orientation neurochirurgicale <span class="patient-response">[Organisée sans délai]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Filet de sécurité <span class="patient-response">[Instruction de revenir immédiatement en cas de signes d’alarme (paralysies, troubles de la marche, troubles de la miction, etc.)]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des émotions et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les préoccupations, besoins, questions et attentes du/de la patient/e et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible et reste flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée au patient, favorise la compréhension par la reformulation, le reflet, les résumés et les explications, et utilise de manière ciblée la voix, le débit et les pauses.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance de manière ciblée afin de créer une atmosphère d’entretien bienveillante, confiante et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/65</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Question initiale sur l’évolution</strong> — Il est essentiel que <span class="c-blue">le candidat</span> reconnaisse qu’il s’agit d’un contrôle d’évolution et non d’un premier contact, et pose en conséquence une question d’ouverture appropriée.</li><li><strong>Degré de sévérité de l’évolution de la douleur</strong> — Une diminution de la <span class="c-pink">douleur</span> seule n’est pas un <span class="c-yellow">signe d’alarme</span>. Elle devient cliniquement pertinente surtout si, en même temps, les déficits moteurs ou sensitifs augmentent. Une diminution abrupte de la <span class="c-pink">douleur</span> en présence de déficits neurologiques progressifs peut évoquer une « mort radiculaire ». Dans ce cas, la racine nerveuse concernée est tellement lésée par la compression que les fibres de la <span class="c-pink">douleur</span> cessent de fonctionner alors que la perte de fonction continue de s’aggraver. Ce phénomène peut survenir dans une <span class="c-red">radiculopathie</span> avancée, par exemple en cas de hernie discale.</li><li><strong>Mesures prises jusqu’ici</strong> — Pertinent <span class="c-blue">pour l’évaluation</span> de la prise en charge conservatrice menée jusqu’ici.</li><li class="theorie-sous-groupe"><strong>Progression des symptômes neurologiques</strong> — Il est important que <span class="c-blue">le candidat</span> interroge et évalue séparément la <span class="c-pink">douleur</span> et la symptomatologie neurologique (sensibilité et motricité).</li><li><strong>Progression des symptômes neurologiques · Trouble de la sensibilité – localisation</strong> — Répartition radiculaire typique compatible avec C6.</li><li><strong>Progression des symptômes neurologiques · Symptômes moteurs</strong> — Indice de symptomatologie neurologique progressive</li><li><strong>Trouble vésico-sphinctérien</strong> — Les troubles végétatifs (dysfonctions vésico-sphinctériennes) suggèrent une compression spinale et nécessitent une évaluation immédiate.</li><li><strong>Trouble de la marche</strong> — En particulier, une démarche à base large et ataxique évoque une <span class="c-red">myélopathie</span> cervicale</li><li><strong>Symptômes bilatéraux</strong> — Les symptômes bilatéraux évoquent davantage une <span class="c-red">myélopathie</span> qu’un <span class="c-red">syndrome purement</span> radiculaire.</li><li><strong>Antécédents</strong> — Information déjà tirée de la note de dossier</li><li><strong>Opérations antérieures</strong> — Information déjà tirée de la note de dossier</li><li><strong>Médication actuelle</strong> — La médication doit être redemandée explicitement dans ce cas malgré la présence de la note de dossier.</li><li class="theorie-sous-groupe"><strong>Noxes</strong> — Pas pertinent dans une anamnèse d’évolution</li><li><strong>Anamnèse familiale</strong> — N’a pas une grande pertinence pour ce cas, en particulier pour une anamnèse d’évolution</li><li><strong>Profession / charge</strong> — Contexte pertinent pour la charge et l’ergonomie.</li></ul>
+</div><div class="theorie-section">
+    <h4>Statut clinique</h4>
+    <ul><li><strong>Mobilité du rachis cervical évaluée</strong> — Les symptômes sont mécaniquement provoquables. Provocation typique d’une <span class="c-pink">douleur</span> radiculaire.</li><li><strong>Test de Spurling</strong> — Test de provocation en cas de suspicion de <span class="c-red">radiculopathie</span> cervicale, à haute spécificité mais faible sensibilité. Réalisation: rachis cervical en extension et inclinaison latérale du côté symptomatique, suivies d’une compression axiale</li><li><strong>Motricité · C5 Abduction de l’épaule, des deux côtés</strong> — Évaluation concomitante des segments adjacents.</li><li><strong>Motricité · C6 Flexion du coude, des deux côtés</strong> — C5–C6, résultat pathologique.</li><li><strong>Motricité · C6 Extension du poignet, des deux côtés</strong> — Compatible avec une atteinte C6.</li><li><strong>Motricité · C7 Extension du coude, des deux côtés</strong> — Évaluation concomitante de C7.</li><li><strong>Test de sensibilité selon les dermatomes · C6 Sensibilité au niveau de l’avant-bras radial</strong> — Compatible avec la distribution C6.</li><li><strong>Test de sensibilité selon les dermatomes · C6 Sensibilité au niveau du pouce et du bord radial de l’index</strong> — Résultat sensitif central, compatible avec C6.</li><li><strong>Réflexe bicipital (BSR) des deux côtés</strong> — BSR correspondant à C5–C6.</li><li><strong>Réflexe brachioradial (BRR) des deux côtés</strong> — BRR correspondant à C5–C6.</li><li><strong>Réflexe tricipital (TSR) des deux côtés</strong> — Évaluation concomitante de C7.</li><li><strong>Démarche</strong> — Une démarche normale va à l’encontre d’une <span class="c-red">myélopathie</span>. Serait pathologique p. ex. une démarche raide, des pas incertains ou des trébuchements fréquents.</li><li><strong>Anomalies bilatérales exclues</strong> — Les symptômes bilatéraux évoquent davantage une <span class="c-red">myélopathie</span> qu’un <span class="c-red">syndrome purement</span> radiculaire.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Progression neurologique</strong> — Déficits sensitifs croissants et nouvelle faiblesse motrice avec <span class="c-pink">douleurs</span> simultanément améliorées. Indice décisif pour la suite de la procédure.</li><li><strong>Analgésie de soutien</strong> — Poursuivre l’analgésie de manière adaptée aux symptômes, mais pas comme seule mesure; en raison de la progression neurologique, initier une clarification rapide.</li><li><strong>IRM du rachis cervical</strong> — Mesure diagnostique centrale en cas de progression neurologique.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>La note du dossier de la première consultation est à disposition du candidat en salle de préparation et doit être intégrée activement à l’évaluation de l’évolution.</li><li>Réalisation correcte d’un statut du rachis cervical, y compris un statut neurologique du membre supérieur</li><li>Reconnaître la progression neurologique en pondérant correctement la <span class="c-pink">douleur</span> et le déficit neurologique comme indication à une clarification supplémentaire et à une évaluation neurochirurgicale</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Cabinet de médecine de famille, contrôle d’évolution | Mme Dilara Sönmez, 45 ans</p><p>Chez cette patiente de 45 ans, le tableau clinique correspond à une <span class="c-red">radiculopathie</span> cervicale progressive au niveau C6 droit après un traitement conservateur initial.</p><p>La patiente a été évaluée pour la première fois il y a 4 semaines pour des <span class="c-pink">douleurs</span> cervicales irradiant dans le bras droit. À l’époque, il n’y avait pas de déficit moteur, seulement un léger trouble de la sensibilité dans le <span class="c-red">dermatome</span> C6 droit sans <span class="c-yellow">signes d’alarme</span> neurologiques. Une approche conservatrice avec contrôle de l’évolution avait été convenue.</p><p>Actuellement, la patiente rapporte une amélioration des <span class="c-pink">douleurs</span>, mais des symptômes neurologiques en augmentation avec des déficits sensitifs progressifs ainsi que l’apparition récente d’une légère faiblesse motrice.</p><p>Au statut clinique, on met en évidence une nouvelle faiblesse motrice discrète, des réflexes légèrement diminués (BSR et BRR) ainsi qu’un trouble de la sensibilité dans le <span class="c-red">dermatome</span> C6 droit, sans indice de <span class="c-red">myélopathie</span>.</p><p>Malgré l’amélioration des <span class="c-pink">douleurs</span>, on constate une progression cliniquement pertinente de la symptomatologie neurologique. Il n’existe pas de <span class="c-yellow">signes d’alarme</span> aigus tels que des parésies marquées, des signes de <span class="c-red">myélopathie</span> ou des troubles vésico-sphinctériens. En raison de l’apparition d’une faiblesse motrice et de l’augmentation subjective des symptômes sensitifs, une clarification rapide par <span class="c-green">IRM</span> du rachis cervical ainsi qu’une co-évaluation neurochirurgicale sont indiquées.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Aperçu AKDP</div><div class="annexe-expert-content"><p>Anamnèse: <span class="c-pink">Douleurs</span> cervicales avec irradiation dans le bras droit, actuellement améliorées; <span class="c-pink">paresthésies</span>/hypoesthésies croissantes dans le territoire C6 droit, atteignant le pouce, le bord radial de l’index et l’avant-bras radial; faiblesse motrice subjective du bras/de la main droits</p><p>Statut clinique: Mobilité du rachis cervical réduite, <span class="c-pink">douleur</span> à la rétropulsion/rotation avec irradiation à droite; motricité droite légèrement diminuée (4/5), en particulier flexion du coude et extension du poignet; sensibilité diminuée dans le <span class="c-red">dermatome</span> C6 droit; BSR et BRR droits légèrement diminués; pas de signes de <span class="c-red">myélopathie</span></p><p>Diagnostic: Pas d’examens complémentaires réalisés; <span class="c-green">IRM</span> du rachis cervical non disponible au cabinet de médecine de famille</p><p>Procédure: Clarification neurochirurgicale; demander une <span class="c-green">IRM</span> du rachis cervical; la <span class="c-red">poursuite</span> d’un traitement purement conservateur n’est pas recommandée</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 21,
+        "examen": 20,
+        "management": 8,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 5,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 5,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 4,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

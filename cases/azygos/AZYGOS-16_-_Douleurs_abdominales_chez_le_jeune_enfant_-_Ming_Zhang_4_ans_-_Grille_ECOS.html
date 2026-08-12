@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-16 - Douleurs abdominales chez le jeune enfant - Ming Zhang, 4 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-16 - Douleurs abdominales chez le jeune enfant</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-16" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Urgence pédiatrique</p>
+            <p style="margin: 5px 0;">👤 Ming Zhang, 4 ans</p>
+            <p style="margin: 5px 0;">🏷️ Pédiatrie · Poste standard · Difficile · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/34</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Affection actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d’entrée <span class="patient-response">[« Mon fils a de fortes douleurs abdominales depuis hier et je suis très inquiet. »]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[Autour du nombril, maintenant plutôt du côté droit]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[Uniquement dans l’abdomen, ne semble pas aller ailleurs]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence d’irradiation correspond à une douleur abdominale viscérale; une irradiation vers le dos ou l’aine évoquerait plutôt d’autres causes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dynamique temporelle · Évolution <span class="patient-response">[Vient par vagues, s’aggrave]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dynamique temporelle · Début <span class="patient-response">[Hier soir]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Qualité <span class="patient-response">[Crampiforme, comme des crampes abdominales]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des douleurs de type colique correspondent à une atteinte pariétale intestinale due à la vascularite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[Se recroqueville, ne se laisse calmer que brièvement, nettement gêné]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Chez le jeune enfant, l’intensité de la douleur est évaluée par le comportement, pas par une échelle numérique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊕ Facteurs aggravants <span class="patient-response">[Ne sait pas exactement, vient simplement comme ça]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊖ Facteurs soulageants <span class="patient-response">[Bouillotte avec soulagement léger seulement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Retentissement <span class="patient-response">[Ne veut pas jouer, paraît apathique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Évalue le comportement d’activité et de jeu comme mesure de la gravité de la maladie chez l’enfant.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-9" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Il y a encore quelque chose, je n’arrive pas à préciser]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Seul le questionnement actif et ciblé est intentionnellement évalué, car les patients ne se souviennent souvent pas de tous les symptômes pertinents ou ne les mentionnent pas spontanément. La question ouverte sur les symptômes associés reste néanmoins importante pour ne rien manquer.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-10" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée sur le problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Estomac · Vomissements <span class="patient-response">[Oui, il a vomi deux fois aujourd’hui]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les douleurs abdominales et les vomissements sont des symptômes gastro-intestinaux fréquents de la vascularite à IgA et peuvent même précéder les lésions cutanées. Des vomissements répétés parlent en faveur d’une atteinte gastro-intestinale plus marquée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Estomac · Aspect des vomissements <span class="patient-response">[Non bilieux, pas de sang]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des vomissements bilieux font penser à une obstruction intestinale, comme lors de la complication gastro-intestinale la plus redoutée de la vascularite à IgA, l’invagination. Des vomissements sanglants évoqueraient une hémorragie gastro-intestinale significative.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Intestin · Selles <span class="patient-response">[Oui, c’était différent aujourd’hui]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une modification du transit peut traduire l’atteinte gastro-intestinale, due dans la vascularite à IgA à une vascularite de la paroi intestinale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Intestin · Caractéristiques des selles <span class="patient-response">[Plus foncées que d’habitude, pas de sang rouge frais, pas de diarrhée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des selles foncées ou sanglantes sont un signe d’hémorragie gastro-intestinale liée à l’inflammation pariétale intestinale dans la vascularite à IgA et peuvent évoquer une invagination. L’absence de sang rouge frais et de diarrhée oriente vers d’autres causes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Peau · Caractéristiques du résultat cutané <span class="patient-response">[Taches rouge foncé sur les jambes et les fesses, en augmentation]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le purpura palpable, symétrique, prédominant sur les faces d’extension des jambes et les fesses est caractéristique de la vascularite à IgA; l’augmentation correspond à une évolution par poussées.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Peau · Éruption <span class="patient-response">[Oui, remarqué des taches]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le purpura palpable est le symptôme principal obligatoire de la vascularite à IgA et indispensable au diagnostic clinique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Urines · Miction <span class="patient-response">[Va uriner normalement, quantité normale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un volume urinaire normal va contre une altération rénale significative dans le cadre d’une néphrite à IgA.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Urines · Caractéristiques du résultat urinaire <span class="patient-response">[Pas foncé, pas rougeâtre, pas d’œdèmes du visage]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une urine foncée ou rougeâtre évoquerait une macrohématurie et des œdèmes périorbitaires un œdème néphrotique; les deux parleraient pour une atteinte rénale, déterminante pour le pronostic dans la vascularite à IgA.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Comportement d’hydratation <span class="patient-response">[Boit moins que d’habitude, mange à peine]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un apport hydrique et alimentaire réduit chez l’enfant qui vomit évoque un début de déshydratation et est important pour l’évaluation de l’état d’hydratation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-8" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Articulations <span class="patient-response">[Les deux chevilles sont un peu gonflées et douloureuses]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les atteintes douloureuses et tuméfiées des chevilles et des genoux sont des manifestations typiques de la vascularite à IgA et régressent généralement sans séquelles.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-9" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Infection préalable <span class="patient-response">[Il y a env. une semaine, rhume léger, mais bénin]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La vascularite à IgA survient fréquemment une à trois semaines après une infection respiratoire, considérée comme déclencheur de la formation d’immuns complexes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-10" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse systémique / DD <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD hématologiques<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dépiste une cause hématologique du purpura (thrombopénie immune, leucémie): tendance aux saignements, symptômes B, asthénie et douleurs osseuses orientent, en cas d’anomalie, vers une pathologie hématologique et contre une vascularite à IgA.</span></span></span> · Tendance aux saignements <span class="patient-response">[Pas d’épistaxis ni de saignement gingival, pas d’hématomes]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une épistaxis, un saignement gingival et des hématomes spontanés évoquent une thrombopénie ou un trouble de la coagulation; leur absence rend une thrombopénie immune moins probable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD hématologiques · Symptômes B <span class="patient-response">[Pas de fièvre persistante, pas de sueurs nocturnes, pas de perte de poids]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une fièvre persistante ou récurrente, des sueurs nocturnes et une perte de poids sont des symptômes B classiques, qui, s’ils sont présents, font penser à une hémopathie maligne comme une leucémie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD hématologiques · Asthénie <span class="patient-response">[Pas particulièrement fatigué]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une fatigue marquée peut traduire une anémie dans le cadre d’une infiltration médullaire et rendrait une leucémie plus probable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD hématologiques · Douleurs osseuses <span class="patient-response">[Pas de douleurs osseuses]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des douleurs osseuses ou des membres peuvent indiquer une infiltration leucémique de la moelle et constituent un signe d’alarme pour une maladie hématologique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD hématologiques · Fièvre / EG <span class="patient-response">[Pas de fièvre actuellement, mais plus pleurnicheur et plus abattu que d’habitude]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La question sur la fièvre et l’état général est centrale, car une fièvre associée à des lésions purpuriques doit faire penser à une sepsis à méningocoques, le diagnostic différentiel aigu le plus dangereux.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Traumatisme <span class="patient-response">[Pas de chute, rien ne s’est passé]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence de traumatisme va contre une cause traumatique des saignements cutanés; en cas d’anamnèse floue ou contradictoire, il faut aussi évoquer une cause non accidentelle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents <span class="patient-response">[Jusqu’ici en bonne santé]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Aucun]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">De nouveaux médicaments peuvent déclencher une vascularite à IgA et sont pertinents comme diagnostic différentiel.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Aucune]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut vaccinal <span class="patient-response">[Complet selon le plan de vaccination suisse]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une couverture vaccinale complète est pertinente pour le diagnostic différentiel des infections invasives.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse familiale <span class="patient-response">[Aucune maladie familiale connue]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Prise en charge <span class="patient-response">[Gardé à la maison par ses deux parents, va à la crèche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La situation de garde et de logement aide à comprendre l’environnement social de l’enfant.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/15</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. État général <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">État général <span class="patient-response">[éveillé, pleurnicheur, légèrement diminué]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un état général légèrement diminué parle en faveur d’une atteinte clinique significative. Malgré l’apport hydrique réduit, il n’y a actuellement aucun signe de déshydratation manifeste.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Abdomen <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Examen de base · Inspection <span class="patient-response">[souple, non ballonné, pas de cicatrices, respire abdominalement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une respiration strictement thoracique ou des jambes maintenues fléchies de façon antalgique évoquent une irritation péritonéale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Examen de base · Auscultation <span class="patient-response">[bruits intestinaux normaux sur tous les quadrants]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">À réaliser avant la palpation; l’absence de bruits intestinaux évoquerait un iléus.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Examen de base · Percussion <span class="patient-response">[tympanique, pas de matité]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Examen de base · Palpation <span class="patient-response">[nette douleur à la pression et défense à droite, pas de péritonite localisée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Chez l’enfant, mains chaudes, distraction et débuter à distance de la douleur.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes de péritonisme · McBurney <span class="patient-response">[pas de douleur localisée à la pression]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence de douleur localisée à la pression va contre une appendicite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-4" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes de péritonisme · Douleur à la décompression <span class="patient-response">[négatif]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un signe de décompression négatif va contre une péritonite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-5" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes de péritonisme · Douleur à la secousse <span class="patient-response">[négatif]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Évalue une irritation péritonéale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-6" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation du foie <span class="patient-response">[Foie et rate non augmentés de volume]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Évaluation orientative des organes abdominaux.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-7" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Peau / muqueuses <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection cutanée <span class="patient-response">[Purpura palpable, non blanchissable, aux jambes et aux fesses, symétrique, pas d’œdèmes]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le purpura palpable non blanchissable, prédominant aux jambes et aux fesses, est le tableau clinique typique de la vascularite à IgA; l’absence de blanchiment à la pression le distingue d’un simple érythème.</span></span> <span class="criteria-detail-note">(voir iconographie)</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Endobuccal / muqueuses <span class="patient-response">[Pharynx non irrité, muqueuses buccales humides]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Évalue à la fois un foyer infectieux pharyngé et, via les muqueuses, l’état d’hydratation, pertinent chez l’enfant qui vomit et boit moins.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Articulations <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut articulaire <span class="patient-response">[les deux chevilles légèrement tuméfiées, douloureuses à la palpation, mobilité complète]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’atteinte des chevilles et des genoux fait partie des manifestations typiques de la vascularite à IgA.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Reins <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Douleur à la percussion rénale <span class="patient-response">[pas de douleur à la percussion]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Orientatif; l’atteinte rénale se manifeste surtout au laboratoire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Neurologie <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Méningisme <span class="patient-response">[pas de méningisme (test du baiser du genou négatif)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence de méningisme, chez l’enfant avec lésions purpuriques, va contre une irritation méningée comme signe de sepsis.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-0" value="1" onchange="updateDetailScore('e6', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Examen neurologique <span class="patient-response">[Pas d’anomalies neurologiques focales]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-1" value="1" onchange="updateDetailScore('e6', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/13</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Analyses de laboratoire <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire · Créatinine <span class="patient-response">[normale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Valeur initiale de la fonction rénale pour évaluer une atteinte rénale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire · CRP <span class="patient-response">[légèrement élevée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Indique une activité inflammatoire non spécifique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire · Hémogramme <span class="patient-response">[Plaquettes normales, formule différentielle sans particularité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des plaquettes normales et une formule différentielle sans blastes vont contre une thrombopénie immune et une leucémie; avec une hémoglobine et une créatinine normales, cela rend aussi un syndrome hémolytique et urémique improbable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Analyse d’urine <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Urine <span class="patient-response">[Microhématurie avec érythrocytes dysmorphiques, pas de protéinurie significative, pas d’argument pour une infection urinaire]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’examen d’urine évalue l’atteinte rénale, manifestation déterminante pour le pronostic de la vascularite à IgA. Des érythrocytes dysmorphiques évoquent une source glomérulaire au sens d’une néphrite; l’absence de protéinurie significative et des leucocytes et nitrites négatifs rendent une infection urinaire improbable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Imagerie <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Échographie <span class="patient-response">[Aucune invagination, pas de liquide libre, paroi intestinale normale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’échographie abdominale sert à exclure une invagination, la complication gastro-intestinale la plus redoutée de la vascularite à IgA; un résultat sans particularité la rend improbable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Évaluation clinique <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic présumé <span class="patient-response">[Purpura de Schönlein-Henoch (vascularite à IgA)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La vascularite à IgA est diagnostiquée cliniquement. Le purpura palpable est obligatoire, accompagné d’au moins un des éléments suivants: douleurs abdominales, arthrite et atteinte rénale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Atteinte rénale <span class="patient-response">[Atteinte rénale légère]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La sévérité de l’atteinte rénale se juge sur l’hématurie, la protéinurie, la fonction rénale et la tension artérielle. Une microhématurie sans protéinurie significative avec fonction rénale normale évoque une atteinte légère; une protéinurie marquée, une fonction rénale altérée ou une hypertension suggèrent une évolution plus sévère.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Thérapie <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antalgie <span class="patient-response">[Repos, hydratation, paracétamol]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La vascularite à IgA est traitée majoritairement de façon supportive; le paracétamol convient pour l’antalgie. Les AINS peuvent aider en cas de plaintes articulaires, mais sont à utiliser avec prudence en cas d’atteinte rénale ou gastro-intestinale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Instruction <span class="patient-response">[Boire suffisamment, se reposer, surveiller l’évolution]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les parents reçoivent l’information de veiller à un apport hydrique suffisant, au repos physique de l’enfant et à l’observation de l’évolution de l’éruption cutanée et de l’état général.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Glucocorticoïdes <span class="patient-response">[À envisager en milieu hospitalier par un spécialiste]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les glucocorticoïdes systémiques sont envisageables en cas d’atteinte gastro-intestinale ou rénale sévère. L’indication est posée en milieu hospitalier par la pédiatrie et ne fait pas partie de la décision initiale à ce poste.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Procédure <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Surveillance hospitalière <span class="patient-response">[Hospitalisation pour la surveillance de l’abdomen, des selles, des urines et de la tension artérielle]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’atteinte gastro-intestinale avec vomissements et suspicion de saignement GI, ainsi que l’atteinte rénale, justifient une hospitalisation. Sont surveillés l’aggravation des douleurs abdominales et les selles sanglantes, signes d’invagination ou d’hémorragie gastro-intestinale, ainsi que les urines et la tension artérielle pour dépister précocement une néphrite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Contrôle rénal <span class="patient-response">[Contrôle de la tension artérielle et de l’urine]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une atteinte rénale peut apparaître de façon retardée; la plupart des néphrites se manifestent dans les six premiers mois. Des contrôles réguliers de la tension artérielle et de l’urine servent de filet de sécurité pour dépister à temps une néphrite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Avis néphrologique <span class="patient-response">[À demander en cas d’atteinte rénale croissante]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas d’atteinte rénale croissante ou marquée, un avis spécialisé en néphrologie pédiatrique est indiqué.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des émotions et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les inquiétudes, besoins, préoccupations et attentes du/de la patient/e et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible et reste flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée au/à la patient/e, favorise la compréhension par la reformulation, le reflet, le résumé et les explications, et utilise la voix, le débit et les pauses de façon ciblée.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance de manière ciblée pour créer une atmosphère de dialogue bienveillante, confiante et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/78</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Irradiation</strong> — L’absence d’irradiation correspond à une <span class="c-pink">douleur</span> abdominale viscérale; une irradiation vers le dos ou l’aine évoquerait plutôt d’autres causes.</li><li><strong>Qualité</strong> — Des <span class="c-pink">douleurs</span> de type colique correspondent à une atteinte pariétale intestinale due à la <span class="c-red">vascularite</span>.</li><li><strong>Intensité</strong> — Chez le jeune enfant, l’intensité de la <span class="c-pink">douleur</span> est évaluée par le comportement, pas par une échelle numérique.</li><li><strong>Retentissement</strong> — Évalue le comportement d’activité et de jeu comme mesure de la gravité de la maladie chez l’enfant.</li><li><strong>Symptômes associés</strong> — Seul le questionnement actif et ciblé est intentionnellement évalué, car les patients ne se souviennent souvent pas de tous les symptômes pertinents ou ne les mentionnent pas spontanément. La question ouverte sur les symptômes associés reste néanmoins importante pour ne rien manquer.</li><li><strong>Estomac · Vomissements</strong> — Les <span class="c-pink">douleurs</span> abdominales et les <span class="c-pink">vomissements</span> sont des symptômes gastro-intestinaux fréquents de la <span class="c-red">vascularite</span> à IgA et peuvent même précéder les lésions cutanées. Des <span class="c-pink">vomissements</span> répétés parlent en faveur d’une atteinte gastro-intestinale plus marquée.</li><li><strong>Estomac · Aspect des vomissements</strong> — Des <span class="c-pink">vomissements</span> bilieux font penser à une obstruction intestinale, comme lors de la <span class="c-orange">complication</span> gastro-intestinale la plus redoutée de la <span class="c-red">vascularite</span> à IgA, l’invagination. Des <span class="c-pink">vomissements</span> sanglants évoqueraient une <span class="c-orange">hémorragie</span> gastro-intestinale significative.</li><li><strong>Intestin · Selles</strong> — Une modification du transit peut traduire l’atteinte gastro-intestinale, due dans la <span class="c-red">vascularite</span> à IgA à une <span class="c-red">vascularite</span> de la paroi intestinale.</li><li><strong>Intestin · Caractéristiques des selles</strong> — Des selles foncées ou sanglantes sont un signe d’<span class="c-orange">hémorragie</span> gastro-intestinale liée à l’inflammation pariétale intestinale dans la <span class="c-red">vascularite</span> à IgA et peuvent évoquer une invagination. L’absence de sang rouge frais et de diarrhée oriente vers d’autres causes.</li><li><strong>Peau · Caractéristiques du résultat cutané</strong> — Le purpura palpable, symétrique, prédominant sur les faces d’extension des jambes et les fesses est caractéristique de la <span class="c-red">vascularite</span> à IgA; l’augmentation correspond à une évolution par poussées.</li><li><strong>Peau · Éruption</strong> — Le purpura palpable est le symptôme principal obligatoire de la <span class="c-red">vascularite</span> à IgA et indispensable au diagnostic clinique.</li><li><strong>Urines · Miction</strong> — Un volume urinaire normal va contre une altération rénale significative dans le cadre d’une <span class="c-red">néphrite</span> à IgA.</li><li><strong>Urines · Caractéristiques du résultat urinaire</strong> — Une urine foncée ou rougeâtre évoquerait une macrohématurie et des <span class="c-pink">œdèmes</span> périorbitaires un <span class="c-pink">œdème</span> néphrotique; les deux parleraient pour une atteinte rénale, déterminante pour le pronostic dans la <span class="c-red">vascularite</span> à IgA.</li><li><strong>Comportement d’hydratation</strong> — Un apport hydrique et alimentaire réduit chez l’enfant qui vomit évoque un début de déshydratation et est important <span class="c-blue">pour l’évaluation</span> de l’état d’hydratation.</li><li><strong>Articulations</strong> — Les atteintes douloureuses et tuméfiées des chevilles et des genoux sont des manifestations typiques de la <span class="c-red">vascularite</span> à IgA et régressent généralement sans <span class="c-orange">séquelles</span>.</li><li><strong>Infection préalable</strong> — La <span class="c-red">vascularite</span> à IgA survient fréquemment une à trois semaines après une infection respiratoire, considérée comme déclencheur de la formation d’immuns complexes.</li><li class="theorie-sous-groupe"><strong>DD hématologiques</strong> — Dépiste une cause hématologique du purpura (thrombopénie immune, leucémie): tendance aux <span class="c-pink">saignements</span>, symptômes B, <span class="c-pink">asthénie</span> et <span class="c-pink">douleurs</span> osseuses orientent, en cas d’anomalie, vers une pathologie hématologique et contre une <span class="c-red">vascularite</span> à IgA.</li><li><strong>DD hématologiques · Tendance aux saignements</strong> — Une épistaxis, un <span class="c-pink">saignement</span> gingival et des <span class="c-red">hématomes</span> spontanés évoquent une thrombopénie ou un trouble de la coagulation; leur absence rend une thrombopénie immune moins probable.</li><li><strong>DD hématologiques · Symptômes B</strong> — Une <span class="c-pink">fièvre</span> persistante ou récurrente, des <span class="c-pink">sueurs nocturnes</span> et une <span class="c-pink">perte de poids</span> sont des symptômes B classiques, qui, s’ils sont présents, font penser à une hémopathie maligne comme une leucémie.</li><li><strong>DD hématologiques · Asthénie</strong> — Une <span class="c-pink">fatigue</span> marquée peut traduire une anémie dans le cadre d’une infiltration médullaire et rendrait une leucémie plus probable.</li><li><strong>DD hématologiques · Douleurs osseuses</strong> — Des <span class="c-pink">douleurs</span> osseuses ou des membres peuvent indiquer une infiltration leucémique de la moelle et constituent un <span class="c-yellow">signe d’alarme</span> pour une maladie hématologique.</li><li><strong>DD hématologiques · Fièvre / EG</strong> — La question sur la <span class="c-pink">fièvre</span> et l’état général est centrale, car une <span class="c-pink">fièvre</span> associée à des lésions purpuriques doit faire penser à une <span class="c-orange">sepsis</span> à méningocoques, le <span class="c-yellow">diagnostic différentiel</span> aigu le plus dangereux.</li><li><strong>Traumatisme</strong> — L’absence de traumatisme va contre une cause traumatique des <span class="c-pink">saignements</span> cutanés; en cas d’anamnèse floue ou contradictoire, il faut aussi évoquer une cause non accidentelle.</li><li><strong>Médicaments</strong> — De nouveaux médicaments peuvent déclencher une <span class="c-red">vascularite</span> à IgA et sont pertinents comme <span class="c-yellow">diagnostic différentiel</span>.</li><li><strong>Statut vaccinal</strong> — Une couverture vaccinale complète est pertinente pour le <span class="c-yellow">diagnostic différentiel</span> des infections invasives.</li><li><strong>Prise en charge</strong> — La situation de garde et de logement aide à comprendre l’environnement social de l’enfant.</li></ul>
+</div><div class="theorie-section">
+    <h4>Examen clinique</h4>
+    <ul><li><strong>État général</strong> — Un état général légèrement diminué parle en faveur d’une atteinte clinique significative. Malgré l’apport hydrique réduit, il n’y a actuellement aucun signe de déshydratation manifeste.</li><li><strong>Examen de base · Inspection</strong> — Une respiration strictement thoracique ou des jambes maintenues fléchies de façon <span class="c-amber">antalgique</span> évoquent une irritation péritonéale.</li><li><strong>Examen de base · Auscultation</strong> — À réaliser avant la <span class="c-green">palpation</span>; l’absence de bruits intestinaux évoquerait un iléus.</li><li><strong>Examen de base · Palpation</strong> — Chez l’enfant, mains chaudes, distraction et débuter à distance de la <span class="c-pink">douleur</span>.</li><li><strong>Signes de péritonisme · McBurney</strong> — L’absence de <span class="c-pink">douleur</span> localisée à la pression va contre une <span class="c-red">appendicite</span>.</li><li><strong>Signes de péritonisme · Douleur à la décompression</strong> — Un signe de décompression négatif va contre une <span class="c-red">péritonite</span>.</li><li><strong>Signes de péritonisme · Douleur à la secousse</strong> — Évalue une irritation péritonéale.</li><li><strong>Palpation du foie</strong> — Évaluation orientative des organes abdominaux.</li><li><strong>Inspection cutanée</strong> — Le purpura palpable non blanchissable, prédominant aux jambes et aux fesses, est le tableau clinique typique de la <span class="c-red">vascularite</span> à IgA; l’absence de blanchiment à la pression le distingue d’un simple érythème.</li><li><strong>Endobuccal / muqueuses</strong> — Évalue à la fois un foyer infectieux pharyngé et, via les muqueuses, l’état d’hydratation, pertinent chez l’enfant qui vomit et boit moins.</li><li><strong>Statut articulaire</strong> — L’atteinte des chevilles et des genoux fait partie des manifestations typiques de la <span class="c-red">vascularite</span> à IgA.</li><li><strong>Douleur à la percussion rénale</strong> — Orientatif; l’atteinte rénale se manifeste surtout au laboratoire.</li><li><strong>Méningisme</strong> — L’absence de méningisme, chez l’enfant avec lésions purpuriques, va contre une irritation méningée comme signe de <span class="c-orange">sepsis</span>.</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostics</h4>
+    <ul><li><strong>Laboratoire · Créatinine</strong> — Valeur initiale de la fonction rénale pour évaluer une atteinte rénale.</li><li><strong>Laboratoire · CRP</strong> — Indique une activité inflammatoire non spécifique.</li><li><strong>Laboratoire · Hémogramme</strong> — Des plaquettes normales et une formule différentielle sans blastes vont contre une thrombopénie immune et une leucémie; avec une hémoglobine et une créatinine normales, cela rend aussi un <span class="c-red">syndrome hémolytique</span> et urémique improbable.</li><li><strong>Urine</strong> — L’examen d’urine évalue l’atteinte rénale, manifestation déterminante pour le pronostic de la <span class="c-red">vascularite</span> à IgA. Des érythrocytes dysmorphiques évoquent une source glomérulaire au sens d’une <span class="c-red">néphrite</span>; l’absence de protéinurie significative et des leucocytes et nitrites négatifs rendent une infection urinaire improbable.</li><li><strong>Échographie</strong> — L’<span class="c-green">échographie</span> abdominale sert à exclure une invagination, la <span class="c-orange">complication</span> gastro-intestinale la plus redoutée de la <span class="c-red">vascularite</span> à IgA; un résultat sans particularité la rend improbable.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic présumé</strong> — La <span class="c-red">vascularite</span> à IgA est diagnostiquée cliniquement. Le purpura palpable est obligatoire, accompagné d’au moins un des éléments suivants: <span class="c-pink">douleurs</span> abdominales, <span class="c-red">arthrite</span> et atteinte rénale.</li><li><strong>Atteinte rénale</strong> — La sévérité de l’atteinte rénale se juge sur l’<span class="c-pink">hématurie</span>, la protéinurie, la fonction rénale et la tension artérielle. Une microhématurie sans protéinurie significative avec fonction rénale normale évoque une atteinte légère; une protéinurie marquée, une fonction rénale altérée ou une <span class="c-purple">hypertension</span> suggèrent une évolution plus sévère.</li><li><strong>Antalgie</strong> — La <span class="c-red">vascularite</span> à IgA est traitée majoritairement de façon supportive; le paracétamol convient pour l’antalgie. Les <span class="c-amber">AINS</span> peuvent aider en cas de plaintes articulaires, mais sont à utiliser avec prudence en cas d’atteinte rénale ou gastro-intestinale.</li><li><strong>Instruction</strong> — Les parents reçoivent l’information de veiller à un apport hydrique suffisant, au repos physique de l’enfant et à l’observation de l’évolution de l’<span class="c-pink">éruption cutanée</span> et de l’état général.</li><li><strong>Glucocorticoïdes</strong> — Les glucocorticoïdes systémiques sont envisageables en cas d’atteinte gastro-intestinale ou rénale sévère. L’indication est posée en milieu hospitalier par la pédiatrie et ne fait pas partie de la décision initiale à ce poste.</li><li><strong>Surveillance hospitalière</strong> — L’atteinte gastro-intestinale avec <span class="c-pink">vomissements</span> et suspicion de <span class="c-pink">saignement</span> GI, ainsi que l’atteinte rénale, justifient une hospitalisation. Sont surveillés l’aggravation des <span class="c-pink">douleurs</span> abdominales et les selles sanglantes, signes d’invagination ou d’<span class="c-orange">hémorragie</span> gastro-intestinale, ainsi que les urines et la tension artérielle pour dépister précocement une <span class="c-red">néphrite</span>.</li><li><strong>Contrôle rénal</strong> — Une atteinte rénale peut apparaître de façon retardée; la plupart des <span class="c-red">néphrites</span> se manifestent dans les six premiers mois. Des contrôles réguliers de la tension artérielle et de l’urine servent de <span class="c-yellow">filet de sécurité</span> pour dépister à temps une <span class="c-red">néphrite</span>.</li><li><strong>Avis néphrologique</strong> — En cas d’atteinte rénale croissante ou marquée, un avis spécialisé en néphrologie pédiatrique est indiqué.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Traduit automatiquement puis vérifié par une IA face à l&#x27;original allemand.</p><p>Chez Ming, âgé de quatre ans, le tableau clinique correspond à un purpura de Schönlein-Henoch (<span class="c-red">vascularite</span> à IgA) avec <span class="c-pink">douleurs</span> abdominales au premier plan, une atteinte gastro-intestinale marquée et une atteinte rénale légère.</p><p>Dans l’anamnèse hétéroanamnèse avec le père, on note depuis la veille au soir des <span class="c-pink">douleurs</span> abdominales crampiformes croissantes, avec deux <span class="c-pink">vomissements</span> et des selles plus foncées évoquant une <span class="c-orange">hémorragie</span> gastro-intestinale, ainsi qu’une diminution de l’apport hydrique. Sur demande, on observe un purpura palpable non blanchissable aux jambes et aux fesses, de légères plaintes au niveau des chevilles et une infection des voies respiratoires datant d’environ une semaine.</p><p>À l’examen clinique, l’état général est légèrement diminué avec des paramètres vitaux stables adaptés à l’âge et une légère tachycardie, sans <span class="c-pink">fièvre</span> ni méningisme; au niveau abdominal, nette <span class="c-pink">douleur</span> à la pression et défense à droite, sans <span class="c-red">péritonite</span> localisée.</p><p>Les principaux <span class="c-yellow">diagnostics différentiels</span> sont écartés cliniquement et paraclinquement: absence de <span class="c-pink">fièvre</span>, de méningisme et de signes neurologiques focaux contre une <span class="c-orange">sepsis</span> à méningocoques; absence de <span class="c-red">péritonite</span> localisée et McBurney négatif contre une <span class="c-red">appendicite</span>; l’invagination exclue à l’<span class="c-green">échographie</span> écarte la <span class="c-orange">complication</span> gastro-intestinale la plus redoutée de la <span class="c-red">vascularite</span> à IgA.</p><p>Au bilan, les plaquettes sont normales et la formule leucocytaire différentielle est sans particularité, rendant une thrombopénie immune et une leucémie improbables; la CRP est légèrement élevée et la fonction rénale normale. L’urine montre une microhématurie avec érythrocytes dysmorphiques sans protéinurie significative, en faveur d’une atteinte rénale glomérulaire; l’<span class="c-green">échographie</span> n’apporte aucun argument pour une invagination.</p><p>Pour la suite, l’accent est mis sur l’hospitalisation pour surveillance, une thérapie de support avec antalgie, la considération spécialisée de glucocorticoïdes systémiques en cas d’atteinte gastro-intestinale, ainsi que le suivi rapproché de la tension artérielle et des urines sur plusieurs mois.</p><p>Reconnaître le purpura palpable et dépister la tétrade peau, abdomen, articulations et rein</p><p>Exclure activement les DD dangereuses: <span class="c-orange">sepsis</span> à méningocoques (<span class="c-pink">fièvre</span>, méningisme), <span class="c-red">appendicite</span> (péritonisme, McBurney), invagination (<span class="c-green">échographie</span>)</p><p>Identifier l’atteinte rénale, surveiller en milieu hospitalier et organiser un suivi mensuel</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Aperçu AKDP</div><div class="annexe-expert-content"><p>Anamnèse: <span class="c-pink">douleurs</span> abdominales crampiformes croissantes, deux <span class="c-pink">vomissements</span>, selles foncées (suspicion de <span class="c-pink">saignement</span> GI), apport hydrique réduit, purpura palpable aux jambes et aux fesses, plaintes aux chevilles, infection respiratoire il y a une semaine, pas de <span class="c-pink">fièvre</span></p><p>Examen clinique: EG légèrement diminué, paramètres vitaux stables avec légère tachycardie, pas de méningisme, pas de neurologie focale, nette <span class="c-pink">douleur</span> à la pression et défense à droite sans péritonisme, purpura palpable non blanchissable</p><p>Diagnostics: plaquettes normales, formule différentielle sans particularité, CRP légèrement élevée, créatinine normale, urine avec microhématurie et érythrocytes dysmorphiques sans protéinurie significative, <span class="c-green">échographie</span> sans invagination</p><p>Procédure: hospitalisation et surveillance, antalgie de support, envisager des glucocorticoïdes en évaluation spécialisée, contrôles tension artérielle et urines sur plusieurs mois</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+<div class="images-wrapper">
+<div class="annexe-item" data-image-id="img1">
+    <div class="annexe-title">Inspection cutanée</div>
+    <div class="annexe-description">Purpura palpable, non blanchissable, aux jambes et aux fesses, symétrique, pas d’œdèmes</div>
+    <div class="annexe-image">
+        <img src="data:image/jpeg;base64,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" alt="Inspection cutanée" loading="lazy">
+    </div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 34,
+        "examen": 15,
+        "management": 13,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 6,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 6,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

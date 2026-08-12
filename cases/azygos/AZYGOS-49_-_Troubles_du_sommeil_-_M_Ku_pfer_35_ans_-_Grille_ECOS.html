@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-49 - Troubles du sommeil - M. Küpfer, 35 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-49 - Troubles du sommeil</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-49" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet de médecin de famille</p>
+            <p style="margin: 5px 0;">👤 M. Küpfer, 35 ans</p>
+            <p style="margin: 5px 0;">🏷️ Psychiatrie · Poste standard · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/67</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Histoire de la maladie actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d&#x27;entrée <span class="patient-response">[« Je dors mal depuis un certain temps. »]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le trouble du sommeil comme symptôme principal a un large diagnostic différentiel : insomnie primaire, insomnie secondaire à une maladie psychique (surtout dépression, trouble anxieux), trouble respiratoire lié au sommeil, habitudes de sommeil défavorables ou effet de substances.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[D&#x27;augmentation progressive, initialement non perçue comme gênante.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un début progressif sans déclencheur clair est typique des épisodes dépressifs à composante endogène, un début aigu après un événement parle plutôt en faveur d&#x27;un trouble réactionnel.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début / Durée <span class="patient-response">[Depuis plusieurs mois, d&#x27;augmentation progressive.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La durée aide à la délimitation : une réaction aiguë à un facteur de stress s&#x27;estompe en quelques jours à 1 mois maximum, un trouble de l&#x27;adaptation apparaît dans le mois suivant un facteur de stress et régresse généralement en 6 mois. Un épisode dépressif nécessite une durée de symptômes d&#x27;au moins 2 semaines. En cas de symptomatologie apparue progressivement sur des mois, cela parle clairement en faveur d&#x27;un épisode dépressif.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Épisode <span class="patient-response">[Premier épisode]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Anamnèse du sommeil<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Différenciation du pattern de sommeil : les difficultés d&#x27;endormissement, de maintien du sommeil et le réveil précoce ont une valeur diagnostique différente. Le réveil matinal précoce avec humeur dépressive matinale est un pattern de sommeil typique de l&#x27;épisode dépressif.</span></span></span> · Difficulté d&#x27;endormissement <span class="patient-response">[L&#x27;endormissement fonctionne en fait]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les difficultés d&#x27;endormissement sont fréquentes en cas de tension, d&#x27;anxiété, de rumination ou d&#x27;insomnie primaire ; moins spécifiques de la dépression que le réveil précoce.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse du sommeil · Difficulté de maintien du sommeil / Réveil précoce <span class="patient-response">[Se réveille vers 4–5 h et ne peut plus se rendormir.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le réveil matinal précoce (&gt; 2 h avant l&#x27;heure habituelle) est une caractéristique typique d&#x27;un épisode dépressif avec symptomatologie neurovégétative marquée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse du sommeil · Fatigue / Somnolence diurne <span class="patient-response">[Très fatigué et sans énergie pendant la journée, mais ne s&#x27;endort pas simplement comme ça]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une somnolence diurne marquée avec endormissement correspond plutôt à un trouble respiratoire lié au sommeil (apnée obstructive du sommeil). Dans la dépression, la fatigue subjective et le manque d&#x27;énergie prédominent sans endormissement effectif.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Habitudes de sommeil<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dépistage des causes fréquentes et des facteurs d&#x27;entretien des troubles du sommeil. Sert à distinguer une insomnie associée à la dépression d&#x27;un trouble primaire du sommeil ou de mauvaises habitudes de sommeil.</span></span></span> · Rythme veille-sommeil <span class="patient-response">[Oui, la plupart du temps des heures de coucher régulières]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des heures de sommeil irrégulières peuvent aggraver une insomnie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Habitudes de sommeil · Utilisation d&#x27;écrans le soir <span class="patient-response">[Utilise souvent le téléphone ou la télévision le soir]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La lumière bleue et l&#x27;activation cognitive peuvent rendre l&#x27;endormissement plus difficile.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Habitudes de sommeil · Consommation de caféine <span class="patient-response">[2–3 tasses de café par jour, surtout le matin]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une consommation tardive de caféine peut provoquer des difficultés d&#x27;endormissement et de maintien du sommeil.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-9" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Habitudes de sommeil · Alcool comme aide au sommeil <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;alcool favorise certes l&#x27;endormissement, mais détériore la qualité du sommeil.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-10" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Habitudes de sommeil · Déclencheur <span class="patient-response">[Pas de déclencheur concret]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un déclencheur clair oriente plutôt vers un trouble réactionnel : réaction aiguë à un facteur de stress dans les jours à 1 mois suivant un événement exceptionnellement grave, trouble de l&#x27;adaptation dans le mois suivant un facteur de stress psychosocial identifiable (séparation, perte, perte d&#x27;emploi). L&#x27;absence de déclencheur concret avec une évolution progressive étaye un épisode dépressif à composante endogène sur la base d&#x27;un profil vulnérabilité-stress.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-11" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Retentissement dans la vie quotidienne <span class="patient-response">[Le travail et le ménage deviennent difficiles]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;altération fonctionnelle est, avec le nombre de symptômes, déterminante pour la classification de la sévérité : épisode léger encore capable d&#x27;accomplir les activités quotidiennes avec difficulté, moyen limitation nette dans plusieurs domaines, sévère quasiment plus capable d&#x27;accomplir les activités quotidiennes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-12" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Que voulez-vous dire ?]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Chez AZYGOS, le patient ne révèle ici consciemment rien de vraiment pertinent, afin que ce ne soit pas la question ouverte, mais le questionnement ciblé et orienté sur le problème qui soit évalué. La question reste néanmoins importante, car les patients donnent parfois spontanément une indication qu&#x27;on manquerait autrement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-13" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée par problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Affectivité<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;humeur dépressive et la perte d&#x27;intérêt ou de plaisir sont les deux symptômes affectifs centraux de l&#x27;épisode dépressif ; au moins un doit être présent pendant au moins deux semaines. Une humeur constamment dépressive, peu modulable, associée à une anhédonie marquée étaye le diagnostic et le distingue d&#x27;une fluctuation passagère de l&#x27;humeur.</span></span></span> · Humeur dépressive <span class="patient-response">[Oui, je me suis souvent senti abattu ces deux dernières semaines]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Symptôme affectif central de l&#x27;épisode dépressif. Au moins un des deux symptômes affectifs centraux (humeur dépressive ou perte d&#x27;intérêt) doit être présent.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Affectivité · Intérêt / Plaisir <span class="patient-response">[Oui, j&#x27;ai perdu la joie et l&#x27;intérêt pour beaucoup de choses.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;anhédonie comme deuxième symptôme affectif central. La perte d&#x27;activités vécues positivement est en même temps un point de départ important pour l&#x27;activation comportementale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Cognition / Comportement<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Symptômes cognitifs et comportementaux : troubles de la concentration, diminution de l&#x27;estime de soi, sentiments de culpabilité et désespoir. La suicidalité est examinée en profondeur dans un volet séparé.</span></span></span> · Concentration / Capacité de décision <span class="patient-response">[J&#x27;ai plus de mal à me concentrer ; les décisions me sont difficiles.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La concentration et la capacité de décision font partie du cluster cognitif de la dépression. En cas d&#x27;atteinte marquée, différenciation avec la pseudodémence dépressive, chez les patients plus âgés avec un début de démence.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Cognition / Comportement · Estime de soi / Sentiments de culpabilité <span class="patient-response">[Je doute de moi et je me fais des reproches de ne plus fonctionner comme avant.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La diminution de l&#x27;estime de soi et les sentiments de culpabilité dépressifs sont des symptômes cognitifs et comportementaux typiques de la dépression. Il est important de les distinguer du délire de culpabilité (conviction de culpabilité excessive et incorrigible) comme indice d&#x27;une dépression psychotique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Cognition / Comportement · Désespoir <span class="patient-response">[Je vois souvent tout en noir et je ne sais pas comment cela va continuer.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Perspective future négative ; marqueur de risque important de suicidalité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Neurovégétatif<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Cluster neurovégétatif : modifications de l&#x27;appétit, du poids et de l&#x27;énergie. Le sommeil a déjà été recueilli dans l&#x27;histoire de la maladie actuelle. Les modifications psychomotrices sont saisies dans l&#x27;observation clinique.</span></span></span> · Élan vital / Énergie <span class="patient-response">[Ces derniers temps, j&#x27;ai beaucoup de mal à me motiver pour les tâches quotidiennes]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La diminution de l&#x27;énergie ou la fatigabilité accrue fait partie des symptômes neurovégétatifs de la dépression et contribue de manière importante à l&#x27;altération fonctionnelle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Neurovégétatif · Appétit / Poids <span class="patient-response">[Diminution de l&#x27;appétit, perte de poids involontaire d&#x27;environ 3 kg le mois dernier]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La modification de l&#x27;appétit et du poids comme symptôme neurovégétatif de la dépression. La diminution de l&#x27;appétit avec perte de poids correspond à la composante neurovégétative de l&#x27;épisode dépressif.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Suicidalité<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une exploration active et précise est obligatoire en présence d&#x27;une symptomatologie dépressive. On interroge selon le modèle par étapes : lassitude de vivre, idées suicidaires, plan/préparation, tentatives antérieures, capacité de s&#x27;engager à demander de l&#x27;aide et facteurs de protection.</span></span></span> · Lassitude de vivre <span class="patient-response">[Parfois je pense qu&#x27;il vaudrait mieux simplement ne plus me réveiller.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Première étape de la suicidalité : désirs de mort passifs sans intention suicidaire active. Début de l&#x27;exploration du risque.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité · Idées suicidaires <span class="patient-response">[Oui, parfois, quand c&#x27;est difficile.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Idées suicidaires actives sans plans concrets. La fréquence, l&#x27;intensité et la possibilité d&#x27;être influencées caractérisent le risque actuel.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-8" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité · Plan suicidaire / Préparation <span class="patient-response">[Non, pas de plans concrets, pas de préparations.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des plans concrets ou des actes préparatoires augmenteraient de manière décisive le risque aigu et nécessiteraient une action immédiate.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-9" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité · Tentatives de suicide antérieures <span class="patient-response">[Non, jamais de tentative de suicide.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les tentatives antérieures sont le facteur prédictif individuel le plus fort de suicidalité future ; à partir de deux tentatives, il existe un risque chroniquement élevé.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-10" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité · Capacité de s&#x27;engager à demander de l&#x27;aide <span class="patient-response">[Oui, je me manifesterais si cela s&#x27;aggravait de manière aiguë.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La capacité de s&#x27;engager à demander de l&#x27;aide est centrale pour la possibilité de prise en charge ambulatoire et le filet de sécurité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-11" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Symptômes psychotiques<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le délire et les hallucinations modifient fondamentalement le diagnostic (dépression psychotique), la thérapie et le cadre. Contenus délirants thymiques typiques : délire de culpabilité, de péché, de ruine, hypocondriaque et nihiliste (Cotard). Hallucinations le plus souvent acoustiques et accusatrices. Sur le plan thérapeutique, association d&#x27;un antidépresseur et d&#x27;un antipsychotique, souvent en milieu hospitalier. Risque suicidaire nettement augmenté. Chez ce patient, activement exclu.</span></span></span> · Délire <span class="patient-response">[Non, pas de convictions incorrigibles, pas de délire de persécution ou de culpabilité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Lors d&#x27;épisode dépressif, le plus souvent des contenus délirants thymiques (congruents à l&#x27;humeur) : délire de culpabilité, de péché, de ruine, hypocondriaque ou nihiliste (syndrome de Cotard). Exploration active obligatoire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-12" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes psychotiques · Hallucinations <span class="patient-response">[Non, pas de voix, pas d&#x27;hallucinations visuelles ou autres perceptions sensorielles fausses]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Lors de dépression psychotique, typiquement des voix acoustiques, souvent accusatrices ou insultantes. Des hallucinations visuelles ou scéniques doivent faire penser à des causes organiques ou à d&#x27;autres diagnostics différentiels psychiatriques.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-13" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes psychotiques · Troubles du moi <span class="patient-response">[Non, pas de dépersonnalisation, pas de déréalisation, pas d’insertion de pensée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La dépersonnalisation, la déréalisation ou l&#x27;écho de la pensée sont plutôt typiques des troubles schizophréniformes et doivent être activement exclus.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-14" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse différentielle / Screening AMDP <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Anamnèse systémique somatique<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Brève anamnèse systémique de la tête aux pieds comme dépistage des cofacteurs somatiques et des causes organiques de symptômes dépressifs (hypothyroïdie, apnée du sommeil, anémie, maladies néoplasiques). Le ronflement avec pauses respiratoires observées et fatigue diurne serait un indice d&#x27;apnée obstructive du sommeil comme diagnostic différentiel important de l&#x27;insomnie.</span></span></span> · Général / Symptômes B <span class="patient-response">[Pas de plaintes]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des symptômes B (fièvre, sueurs nocturnes, perte de poids &gt; 10%) seraient un indice de maladie néoplasique, infectieuse ou rhumatologique. Ici, seulement une perte de poids liée à la dépression.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse systémique somatique · Tête / SNC <span class="patient-response">[Pas de plaintes]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse systémique somatique · Endocrinologique <span class="patient-response">[Pas de plaintes]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse systémique somatique · Cœur / Poumons / Apnée du sommeil <span class="patient-response">[Pas de plaintes]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;apnée obstructive du sommeil est un diagnostic différentiel important de l&#x27;insomnie avec fatigue diurne ; en cas de suspicion (ronflement, pauses respiratoires observées, IMC élevé), laboratoire du sommeil.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse systémique somatique · Gastro-intestinal / Urogénital <span class="patient-response">[Pas de plaintes]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse systémique somatique · Neurologique <span class="patient-response">[Pas de plaintes]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD Trouble bipolaire (Manie / Hypomanie)<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avant de débuter un traitement antidépresseur, il faut rechercher de manière ciblée d&#x27;éventuels épisodes maniaques ou hypomaniaques antérieurs. Une bipolarité non reconnue peut entraîner un virage maniaque sous antidépresseurs. Dépistage orienté sur les symptômes typiques d&#x27;une hypomanie/manie.</span></span></span> · Fuite des idées / Tachypsychie <span class="patient-response">[Non, jamais vécu de tachypsychie.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Symptôme cognitif typique de la manie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Trouble bipolaire (Manie / Hypomanie) · Besoin de sommeil diminué <span class="patient-response">[Non, jamais été reposé avec peu de sommeil.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Symptôme de dépistage particulièrement parlant pour la bipolarité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Trouble bipolaire (Manie / Hypomanie) · Humeur élevée <span class="patient-response">[Non, jamais été anormalement euphorique ou irritable.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Symptôme central de la manie et de l&#x27;hypomanie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-8" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Trouble bipolaire (Manie / Hypomanie) · Augmentation de l&#x27;élan vital / Activité <span class="patient-response">[Non, jamais été anormalement plein d&#x27;énergie ou actif.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pattern typique d&#x27;activité et d&#x27;élan vital des épisodes hypomaniaques/maniaques.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-9" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Trouble bipolaire (Manie / Hypomanie) · Logorrhée <span class="patient-response">[Non, jamais parlé anormalement beaucoup.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Symptôme fréquent des épisodes maniaques.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-10" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Trouble bipolaire (Manie / Hypomanie) · Comportement à risque <span class="patient-response">[Non, jamais été anormalement impulsif ou enclin au risque.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un comportement impulsif ou enclin au risque (dépenses d&#x27;argent, désinhibition sexuelle, activités risquées) est souvent mieux remémoré rétrospectivement que l&#x27;humeur elle-même.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-11" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD ESPT<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les troubles consécutifs à un traumatisme peuvent se présenter avec des troubles du sommeil, des problèmes de concentration, un retrait social et une symptomatologie dépressive. Dépistage d&#x27;un traumatisme pertinent ainsi que des trois symptômes centraux : reviviscence, évitement et sentiment de menace persistant.</span></span></span> · Événement traumatique <span class="patient-response">[Non, pas de traumatisme pertinent.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;ESPT présuppose la survenue d&#x27;un événement extrêmement menaçant ou effroyable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-12" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD ESPT · Intrusions / Flashbacks / Cauchemars <span class="patient-response">[Non, pas de flashbacks ou de cauchemars.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Symptôme central de l&#x27;ESPT : reviviscence involontaire du traumatisme dans le présent.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-13" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD Anxiété<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Bref dépistage des troubles anxieux et obsessionnels compulsifs comorbides. Les troubles anxieux surviennent fréquemment avec la dépression et influencent le pronostic, le risque suicidaire et la planification thérapeutique.</span></span></span> · Anxiété généralisée / Inquiétudes <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dépistage du trouble anxieux généralisé.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-14" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Anxiété · Attaques de panique <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dépistage du trouble panique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-15" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Anxiété · Phobies <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dépistage des phobies spécifiques et de l&#x27;agoraphobie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-16" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD TOC<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Bref dépistage du trouble obsessionnel compulsif. Comorbidité avec la dépression fréquente ; influence la planification thérapeutique (ISRS à dose plus élevée efficace dans le TOC).</span></span></span> · Obsessions <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pensées récurrentes, vécues comme intrusives (souvent contamination, dommage, symétrie, impulsions agressives), qui déclenchent de l&#x27;anxiété ou un malaise.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-17" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD TOC · Impulsions obsessionnelles <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-18" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD TOC · Compulsions <span class="patient-response">[Non, pas de comportements de vérification, de lavage, d&#x27;ordre ou de répétition.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dépistage de comportements ritualisés à caractère compulsif.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-19" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Pensée formelle<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans la dépression, on trouve typiquement un ralentissement de la pensée, des ruminations et une inhibition de la pensée. Un barrage de la pensée ou une incohérence parlent en revanche plutôt en faveur de troubles schizophréniformes ou psychotiques.</span></span></span> · Rumination / Pensées circulaires <span class="patient-response">[Oui, je rumine beaucoup, surtout quand je me réveille le matin]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pensée répétitive typique de la dépression sans véritable désagrégation de la pensée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-20" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Pensée formelle · Inhibition de la pensée / Ralentissement psychique <span class="patient-response">[Non, pas cela]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Difficulté subjectivement ressentie du déroulement de la pensée, fréquente lors de dépression d&#x27;intensité moyenne ou sévère.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-21" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Pensée formelle · Barrage de la pensée <span class="patient-response">[Non, mes pensées ne s&#x27;interrompent pas brusquement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Exclusion active d&#x27;un trouble de la pensée schizophréniforme ou psychotique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-22" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Antécédents médicaux<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les antécédents somatiques et psychiatriques personnels influencent le choix thérapeutique, le pronostic et la durée du traitement.</span></span></span> · Maladies chroniques / Douleurs <span class="patient-response">[Pas d&#x27;antécédents somatiques pertinents.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les maladies somatiques chroniques ou les douleurs sont à la fois un facteur de risque et une comorbidité de la dépression et influencent le choix thérapeutique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents médicaux · Antécédents psychiatriques <span class="patient-response">[Aucun]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Première manifestation vs récidive influence le pronostic et la durée du traitement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments / Automédication <span class="patient-response">[Aucun]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Différentes substances peuvent provoquer ou aggraver des symptômes dépressifs : stéroïdes, interféron-α, antiépileptiques (topiramate, vigabatrine), médicaments anti-VIH (éfavirenz), méfloquine, phénobarbital, flunarizine. Avant le début du traitement, vérifier aussi les interactions possibles avec l&#x27;antidépresseur prévu.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Consommation de substances<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La consommation de substances peut provoquer ou entretenir des troubles du sommeil et de l&#x27;humeur et influence le choix et l&#x27;efficacité du traitement antidépresseur.</span></span></span> · Alcool <span class="patient-response">[Rarement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;alcool détériore la qualité du sommeil malgré un effet favorisant l&#x27;endormissement et peut aggraver les symptômes dépressifs. En cas de consommation pertinente, le traitement de l&#x27;addiction serait prioritaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Consommation de substances · Drogues <span class="patient-response">[Non, pas de drogues]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le cannabis, l&#x27;alcool et les stimulants peuvent provoquer ou entretenir des symptômes dépressifs et des troubles du sommeil. En cas de consommation pertinente, le traitement de l&#x27;addiction serait prioritaire par rapport au traitement antidépresseur.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Consommation de substances · Tabagisme <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Aucune connue]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Antécédents familiaux<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;anamnèse familiale saisit la composante génétique du modèle vulnérabilité-stress et le risque suicidaire familial.</span></span></span> · Antécédents psychiatriques <span class="patient-response">[Ma mère a eu une dépression pendant mon adolescence et a été en traitement psychiatrique. Pas de suicide connu dans la famille.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un apparenté du premier degré avec dépression augmente le risque propre d&#x27;un facteur 2-3 (prédisposition génétique). Facteur de vulnérabilité biologique central dans le modèle vulnérabilité-stress.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux · Suicide dans la famille <span class="patient-response">[Pas de suicide connu dans la famille]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un suicide accompli dans la famille augmente nettement le risque suicidaire propre et est un signal d&#x27;alarme central dans l&#x27;évaluation du risque.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Employé de commerce, répond de moins en moins bien au travail]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation de logement <span class="patient-response">[Vit seul]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Environnement social<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le soutien social est un facteur de protection central ; le retrait social est à la fois un symptôme et un facteur de vulnérabilité et un point de départ thérapeutique important (activation comportementale).</span></span></span> · Soutien social <span class="patient-response">[Sœur comme personne de confiance, autres contacts familiaux.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des personnes de référence solides sont le facteur de protection psychosocial le plus important et central pour le filet de sécurité en cas de suicidalité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Environnement social · Retrait social <span class="patient-response">[Contacts amicaux de plus en plus réduits]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le retrait social est à la fois un symptôme et un facteur d&#x27;entretien de la dépression. Point de départ thérapeutique pour l&#x27;activation comportementale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs de stress psychosociaux <span class="patient-response">[Pas de facteur de stress concret ; retrait social, abandon de la batterie et des amis.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans le modèle vulnérabilité-stress, le retrait social et la perte d&#x27;activités positives agissent comme facteurs de vulnérabilité psychosociaux. Ils sont en même temps un point de départ thérapeutique : l&#x27;activation comportementale avec reprise d&#x27;activités renforçantes positives et de contacts sociaux est une intervention de base efficace.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-4" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteur de personnalité <span class="patient-response">[Consciencieux, autocritique, axé sur la performance]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une structure de personnalité consciencieuse, autocritique et axée sur la performance est un facteur prédisposant établi pour les épisodes dépressifs. Facteur de personnalité central dans le modèle vulnérabilité-stress, à côté de la composante génétique et psychosociale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-5" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/0</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/11</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Évaluation clinique <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic présumé <span class="patient-response">[Épisode dépressif d&#x27;intensité moyenne]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Diagnostic rempli : au moins 5 des 10 symptômes dépressifs pendant &gt; 2 semaines, dont au moins un du cluster affectif. Important pour la graduation : l&#x27;importance de l&#x27;altération fonctionnelle et de la souffrance.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Évaluation du risque suicidaire <span class="patient-response">[Idées suicidaires passives sans plan, capable de s&#x27;engager à demander de l&#x27;aide, facteurs de protection présents → risque aigu actuellement faible.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;évaluation du risque détermine la conduite ambulatoire vs hospitalière et la fréquence des contrôles.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Thérapie <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Interventions de base<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les interventions de base sont toujours indiquées, indépendamment du degré de sévérité : psychoéducation, hygiène du sommeil, activité physique régulière, activation comportementale, décision partagée et contrôles réguliers de l&#x27;évolution.</span></span></span> · Activation comportementale <span class="patient-response">[Structure de la journée, mouvement, contacts sociaux.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;activation comportementale rompt le retrait dépressif. L&#x27;objectif est la reprise d&#x27;activités renforçantes positives (p. ex. jouer de la batterie, contacts sociaux).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Interventions de base · Psychoéducation <span class="patient-response">[Expliquer la maladie.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Expliquer le lien entre dépression et sommeil, discuter des options thérapeutiques, de la latence d&#x27;action et du pronostic.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Interventions de base · Hygiène du sommeil <span class="patient-response">[Mesures d&#x27;hygiène du sommeil.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Heures fixes de coucher et de lever, pas d&#x27;écran avant de dormir, réduire caféine et alcool, n&#x27;utiliser le lit que pour dormir.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Options thérapeutiques (Décision partagée)<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Lors d&#x27;épisode dépressif d&#x27;intensité moyenne, l&#x27;antidépresseur ou la psychothérapie sont des options de premier choix équivalentes ; une combinaison est surtout recommandée en cas de dépression sévère, mais peut être judicieuse en cas de symptomatologie marquée ou de réponse partielle. La décision est prise de manière participative dans le cadre d&#x27;une décision partagée : présenter les options avec leurs avantages et inconvénients (latence d&#x27;action, effets secondaires, investissement, temps d&#x27;attente, durabilité, coûts), demander les préférences et les craintes du patient, décider ensemble. Le médecin formule une recommandation professionnelle fondée, le patient décide de manière informée. Les interventions de base sont données indépendamment du choix de la thérapie spécifique.</span></span></span> · Antidépresseur <span class="patient-response">[ISRS (sertraline, escitalopram) ; en cas de trouble du sommeil, mirtazapine le soir.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avantages : bonne évidence, large expérience clinique, disponibilité rapide, efficacité équivalente à la psychothérapie dans la dépression d&#x27;intensité moyenne. Inconvénients : latence d&#x27;action de 2-4 semaines, effets secondaires possibles (gastro-intestinaux, sexuels, agitation initiale). En cas de trouble du sommeil prédominant, la mirtazapine en tant que NaSSA est une option (effet sédatif mis à profit, neutralité cardiaque). En cas de comorbidité cardiaque, la sertraline est préférée au citalopram ou à l&#x27;escitalopram ; un ECG avec évaluation du QT avant le début du traitement est judicieux en présence de facteurs de risque (âge avancé, antécédents cardiaques, autres médicaments allongeant le QT, troubles électrolytiques), chez les jeunes patients en bonne santé sans anamnèse correspondante, il n&#x27;est pas impératif.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Options thérapeutiques (Décision partagée) · Psychothérapie <span class="patient-response">[TCC ou TIP ; en cas d&#x27;insomnie, en plus TCC-I.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avantages : effet durable au-delà de la fin de la thérapie, pas d&#x27;effets secondaires pharmacologiques, travail sur les facteurs de vulnérabilité. Inconvénients : temps d&#x27;attente pour une place de thérapie, investissement personnel en temps et en émotion plus important, selon la région question des coûts. Sont efficaces dans la dépression surtout la thérapie cognitivo-comportementale, la thérapie interpersonnelle, la thérapie psychodynamique et la MBCT. En cas d&#x27;insomnie prédominante, en plus TCC pour l&#x27;insomnie (TCC-I) avec contrôle du stimulus et restriction du sommeil. Des programmes en ligne peuvent combler le temps d&#x27;attente.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Options thérapeutiques (Décision partagée) · Thérapie combinée <span class="patient-response">[Antidépresseur plus psychothérapie.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avantages : recommandation standard dans la dépression sévère avec taux de réponse plus élevé ; couvre simultanément le niveau biologique et psychologique. Inconvénients : plus exigeant, charge plus élevée pour le patient, dans les études pas constamment supérieur à la monothérapie dans la dépression d&#x27;intensité moyenne. Dans la dépression d&#x27;intensité moyenne, donc pas impératif, mais une option valable en cas de symptomatologie marquée, de réponse partielle ou de souhait explicite du patient.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-5" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Procédure <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Éventuel arrêt de travail de courte durée <span class="patient-response">[Déterminer dans la discussion commune avec le patient]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de dépression d&#x27;intensité moyenne et sévère, il existe en règle générale une incapacité de travail (totale ou partielle). En cas d&#x27;épisode dépressif léger, maintenir le plus souvent la capacité de travail, sauf en cas de conflits au travail. Fixer la durée et l&#x27;étendue individuellement et réévaluer au cours de l&#x27;évolution.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Contrôle de l&#x27;évolution <span class="patient-response">[Contrôle hebdomadaire ; contrôle de la thérapie après 4 semaines au moyen du PHQ-9.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des contrôles réguliers de l&#x27;évolution servent à évaluer la réponse au traitement et à adapter la thérapie ; au début plus rapprochés, avec une stabilisation croissante à intervalles plus grands. Le PHQ-9 est un bref questionnaire validé de neuf items qui reflète la sévérité et l&#x27;évolution d&#x27;une dépression et rend un effet thérapeutique objectivable. Il est important de réévaluer aussi la suicidalité à chaque consultation, car le risque peut se modifier au cours de l&#x27;évolution.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Filet de sécurité <span class="patient-response">[Filet de sécurité : nouvelle consultation en cas de suicidalité, psychose ou crise ; remettre le numéro d&#x27;urgence.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de suicidalité, un filet de sécurité fait partie intégrante : une instruction claire de nouvelle consultation immédiate au patient et à la personne de confiance, ainsi qu&#x27;un numéro d&#x27;urgence (service d&#x27;urgence psychiatrique). En cas d&#x27;incapacité de s&#x27;engager à demander de l&#x27;aide ou de suicidalité aiguë, une hospitalisation psychiatrique d&#x27;urgence est indiquée, le cas échéant sous forme de placement à des fins d&#x27;assistance.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les inquiétudes, besoins, demandes et attentes du/de la patient/e et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l&#x27;entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation montre une structure claire, un fil rouge compréhensible et reste adaptable avec flexibilité.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée au patient, favorise la compréhension en répétant, reflétant, résumant et expliquant, et utilise la voix, le débit de parole et les pauses de manière ciblée.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance de manière ciblée pour créer une atmosphère d&#x27;entretien bienveillante, confiante et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/94</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Question d&#x27;entrée</strong> — Le trouble du sommeil comme symptôme principal a un large <span class="c-yellow">diagnostic différentiel</span> : insomnie primaire, insomnie secondaire à une maladie psychique (surtout dépression, trouble anxieux), trouble respiratoire lié au sommeil, habitudes de sommeil défavorables ou effet de substances.</li><li><strong>Dimension temporelle · Évolution</strong> — Un début progressif sans déclencheur clair est typique des épisodes dépressifs à composante endogène, un début aigu après un événement parle plutôt en faveur d&#x27;un trouble réactionnel.</li><li><strong>Dimension temporelle · Début / Durée</strong> — La durée aide à la délimitation : une réaction aiguë à un facteur de stress s&#x27;estompe en quelques jours à 1 mois maximum, un trouble de l&#x27;adaptation apparaît dans le mois suivant un facteur de stress et régresse généralement en 6 mois. Un épisode dépressif nécessite une durée de symptômes d&#x27;au moins 2 semaines. En cas de symptomatologie apparue progressivement sur des mois, cela parle clairement en faveur d&#x27;un épisode dépressif.</li><li class="theorie-sous-groupe"><strong>Anamnèse du sommeil</strong> — Différenciation du pattern de sommeil : les difficultés d&#x27;endormissement, de maintien du sommeil et le réveil précoce ont une valeur diagnostique différente. Le réveil matinal précoce avec humeur dépressive matinale est un pattern de sommeil typique de l&#x27;épisode dépressif.</li><li><strong>Anamnèse du sommeil · Difficulté d&#x27;endormissement</strong> — Les difficultés d&#x27;endormissement sont fréquentes en cas de tension, d&#x27;anxiété, de rumination ou d&#x27;insomnie primaire ; moins spécifiques de la dépression que le réveil précoce.</li><li><strong>Anamnèse du sommeil · Difficulté de maintien du sommeil / Réveil précoce</strong> — Le réveil matinal précoce (&gt; 2 h avant l&#x27;heure habituelle) est une caractéristique typique d&#x27;un épisode dépressif avec symptomatologie neurovégétative marquée.</li><li><strong>Anamnèse du sommeil · Fatigue / Somnolence diurne</strong> — Une somnolence diurne marquée avec endormissement correspond plutôt à un trouble respiratoire lié au sommeil (apnée obstructive du sommeil). Dans la dépression, la <span class="c-pink">fatigue</span> subjective et le manque d&#x27;énergie prédominent sans endormissement effectif.</li><li class="theorie-sous-groupe"><strong>Habitudes de sommeil</strong> — Dépistage des causes fréquentes et des facteurs d&#x27;entretien des troubles du sommeil. Sert à distinguer une insomnie associée à la dépression d&#x27;un trouble primaire du sommeil ou de mauvaises habitudes de sommeil.</li><li><strong>Habitudes de sommeil · Rythme veille-sommeil</strong> — Des heures de sommeil irrégulières peuvent aggraver une insomnie.</li><li><strong>Habitudes de sommeil · Utilisation d&#x27;écrans le soir</strong> — La lumière bleue et l&#x27;activation cognitive peuvent rendre l&#x27;endormissement plus difficile.</li><li><strong>Habitudes de sommeil · Consommation de caféine</strong> — Une consommation tardive de caféine peut provoquer des difficultés d&#x27;endormissement et de maintien du sommeil.</li><li><strong>Habitudes de sommeil · Alcool comme aide au sommeil</strong> — L&#x27;<span class="c-purple">alcool</span> favorise certes l&#x27;endormissement, mais détériore la qualité du sommeil.</li><li><strong>Habitudes de sommeil · Déclencheur</strong> — Un déclencheur clair oriente plutôt vers un trouble réactionnel : réaction aiguë à un facteur de stress dans les jours à 1 mois suivant un événement exceptionnellement grave, trouble de l&#x27;adaptation dans le mois suivant un facteur de stress psychosocial identifiable (séparation, perte, perte d&#x27;emploi). L&#x27;absence de déclencheur concret avec une évolution progressive étaye un épisode dépressif à composante endogène sur la base d&#x27;un profil vulnérabilité-stress.</li><li><strong>Retentissement dans la vie quotidienne</strong> — L&#x27;altération fonctionnelle est, avec le nombre de symptômes, déterminante pour la classification de la sévérité : épisode léger encore capable d&#x27;accomplir les activités quotidiennes avec difficulté, moyen limitation nette dans plusieurs domaines, sévère quasiment plus capable d&#x27;accomplir les activités quotidiennes.</li><li><strong>Symptômes associés</strong> — Chez AZYGOS, le patient ne révèle ici consciemment rien de vraiment pertinent, afin que ce ne soit pas la question ouverte, mais le questionnement ciblé et orienté sur le problème qui soit évalué. La question reste néanmoins importante, car les patients donnent parfois spontanément une indication qu&#x27;on manquerait autrement.</li><li class="theorie-sous-groupe"><strong>Affectivité</strong> — L&#x27;humeur dépressive et la perte d&#x27;intérêt ou de plaisir sont les deux symptômes affectifs centraux de l&#x27;épisode dépressif ; au moins un doit être présent pendant au moins deux semaines. Une humeur constamment dépressive, peu modulable, associée à une anhédonie marquée étaye le diagnostic et le distingue d&#x27;une fluctuation passagère de l&#x27;humeur.</li><li><strong>Affectivité · Humeur dépressive</strong> — Symptôme affectif central de l&#x27;épisode dépressif. Au moins un des deux symptômes affectifs centraux (humeur dépressive ou perte d&#x27;intérêt) doit être présent.</li><li><strong>Affectivité · Intérêt / Plaisir</strong> — L&#x27;anhédonie comme deuxième symptôme affectif central. La perte d&#x27;activités vécues positivement est en même temps un point de départ important pour l&#x27;activation comportementale.</li><li class="theorie-sous-groupe"><strong>Cognition / Comportement</strong> — Symptômes cognitifs et comportementaux : troubles de la concentration, diminution de l&#x27;estime de soi, sentiments de culpabilité et désespoir. La suicidalité est examinée en profondeur dans un volet séparé.</li><li><strong>Cognition / Comportement · Concentration / Capacité de décision</strong> — La concentration et la capacité de décision font partie du cluster cognitif de la dépression. En cas d&#x27;atteinte marquée, différenciation avec la pseudodémence dépressive, chez les patients plus âgés avec un début de démence.</li><li><strong>Cognition / Comportement · Estime de soi / Sentiments de culpabilité</strong> — La diminution de l&#x27;estime de soi et les sentiments de culpabilité dépressifs sont des symptômes cognitifs et comportementaux typiques de la dépression. Il est important de les distinguer du délire de culpabilité (conviction de culpabilité excessive et incorrigible) comme indice d&#x27;une dépression psychotique.</li><li><strong>Cognition / Comportement · Désespoir</strong> — Perspective future négative ; marqueur de risque important de suicidalité.</li><li class="theorie-sous-groupe"><strong>Neurovégétatif</strong> — Cluster neurovégétatif : modifications de l&#x27;appétit, du poids et de l&#x27;énergie. Le sommeil a déjà été recueilli dans l&#x27;histoire de la maladie actuelle. Les modifications psychomotrices sont saisies dans l&#x27;observation clinique.</li><li><strong>Neurovégétatif · Élan vital / Énergie</strong> — La diminution de l&#x27;énergie ou la fatigabilité accrue fait partie des symptômes neurovégétatifs de la dépression et contribue de manière importante à l&#x27;altération fonctionnelle.</li><li><strong>Neurovégétatif · Appétit / Poids</strong> — La modification de l&#x27;appétit et du poids comme symptôme neurovégétatif de la dépression. La diminution de l&#x27;appétit avec <span class="c-pink">perte de poids</span> correspond à la composante neurovégétative de l&#x27;épisode dépressif.</li><li class="theorie-sous-groupe"><strong>Suicidalité</strong> — Une exploration active et précise est obligatoire en présence d&#x27;une symptomatologie dépressive. On interroge selon le modèle par étapes : lassitude de vivre, idées suicidaires, plan/préparation, tentatives antérieures, capacité de s&#x27;engager à demander de l&#x27;aide et facteurs de protection.</li><li><strong>Suicidalité · Lassitude de vivre</strong> — Première étape de la suicidalité : désirs de mort passifs sans intention suicidaire active. Début de l&#x27;exploration du risque.</li><li><strong>Suicidalité · Idées suicidaires</strong> — Idées suicidaires actives sans plans concrets. La fréquence, l&#x27;intensité et la possibilité d&#x27;être influencées caractérisent le risque actuel.</li><li><strong>Suicidalité · Plan suicidaire / Préparation</strong> — Des plans concrets ou des actes préparatoires augmenteraient de manière décisive le risque aigu et nécessiteraient une action immédiate.</li><li><strong>Suicidalité · Tentatives de suicide antérieures</strong> — Les tentatives antérieures sont le facteur prédictif individuel le plus fort de suicidalité future ; à partir de deux tentatives, il existe un risque chroniquement élevé.</li><li><strong>Suicidalité · Capacité de s&#x27;engager à demander de l&#x27;aide</strong> — La capacité de s&#x27;engager à demander de l&#x27;aide est centrale pour la possibilité de prise en charge ambulatoire et le <span class="c-yellow">filet de sécurité</span>.</li><li class="theorie-sous-groupe"><strong>Symptômes psychotiques</strong> — Le délire et les hallucinations modifient fondamentalement le diagnostic (dépression psychotique), la thérapie et le cadre. Contenus délirants thymiques typiques : délire de culpabilité, de péché, de ruine, hypocondriaque et nihiliste (Cotard). Hallucinations le plus souvent acoustiques et accusatrices. Sur le plan thérapeutique, association d&#x27;un antidépresseur et d&#x27;un antipsychotique, souvent en milieu hospitalier. Risque suicidaire nettement augmenté. Chez ce patient, activement exclu.</li><li><strong>Symptômes psychotiques · Délire</strong> — Lors d&#x27;épisode dépressif, le plus souvent des contenus délirants thymiques (congruents à l&#x27;humeur) : délire de culpabilité, de péché, de ruine, hypocondriaque ou nihiliste (<span class="c-red">syndrome de Cotard</span>). Exploration active obligatoire.</li><li><strong>Symptômes psychotiques · Hallucinations</strong> — Lors de dépression psychotique, typiquement des voix acoustiques, souvent accusatrices ou insultantes. Des hallucinations visuelles ou scéniques doivent faire penser à des causes organiques ou à d&#x27;autres <span class="c-yellow">diagnostics différentiels</span> psychiatriques.</li><li><strong>Symptômes psychotiques · Troubles du moi</strong> — La dépersonnalisation, la déréalisation ou l&#x27;écho de la pensée sont plutôt typiques des troubles schizophréniformes et doivent être activement exclus.</li><li class="theorie-sous-groupe"><strong>Anamnèse systémique somatique</strong> — Brève anamnèse systémique de la tête aux pieds comme dépistage des cofacteurs somatiques et des causes organiques de symptômes dépressifs (hypothyroïdie, apnée du sommeil, anémie, maladies néoplasiques). Le ronflement avec pauses respiratoires observées et <span class="c-pink">fatigue</span> diurne serait un indice d&#x27;apnée obstructive du sommeil comme <span class="c-yellow">diagnostic différentiel</span> important de l&#x27;insomnie.</li><li><strong>Anamnèse systémique somatique · Général / Symptômes B</strong> — Des symptômes B (<span class="c-pink">fièvre</span>, <span class="c-pink">sueurs nocturnes</span>, <span class="c-pink">perte de poids</span> &gt; 10%) seraient un indice de maladie néoplasique, infectieuse ou rhumatologique. Ici, seulement une <span class="c-pink">perte de poids</span> liée à la dépression.</li><li><strong>Anamnèse systémique somatique · Cœur / Poumons / Apnée du sommeil</strong> — L&#x27;apnée obstructive du sommeil est un <span class="c-yellow">diagnostic différentiel</span> important de l&#x27;insomnie avec <span class="c-pink">fatigue</span> diurne ; en cas de suspicion (ronflement, pauses respiratoires observées, IMC élevé), laboratoire du sommeil.</li><li class="theorie-sous-groupe"><strong>DD Trouble bipolaire (Manie / Hypomanie)</strong> — Avant de débuter un traitement antidépresseur, il faut rechercher de manière ciblée d&#x27;éventuels épisodes maniaques ou hypomaniaques antérieurs. Une bipolarité non reconnue peut entraîner un virage maniaque sous antidépresseurs. Dépistage orienté sur les symptômes typiques d&#x27;une hypomanie/manie.</li><li><strong>DD Trouble bipolaire (Manie / Hypomanie) · Fuite des idées / Tachypsychie</strong> — Symptôme cognitif typique de la manie.</li><li><strong>DD Trouble bipolaire (Manie / Hypomanie) · Besoin de sommeil diminué</strong> — Symptôme de dépistage particulièrement parlant pour la bipolarité.</li><li><strong>DD Trouble bipolaire (Manie / Hypomanie) · Humeur élevée</strong> — Symptôme central de la manie et de l&#x27;hypomanie.</li><li><strong>DD Trouble bipolaire (Manie / Hypomanie) · Augmentation de l&#x27;élan vital / Activité</strong> — Pattern typique d&#x27;activité et d&#x27;élan vital des épisodes hypomaniaques/maniaques.</li><li><strong>DD Trouble bipolaire (Manie / Hypomanie) · Logorrhée</strong> — Symptôme fréquent des épisodes maniaques.</li><li><strong>DD Trouble bipolaire (Manie / Hypomanie) · Comportement à risque</strong> — Un comportement impulsif ou enclin au risque (dépenses d&#x27;argent, désinhibition sexuelle, activités risquées) est souvent mieux remémoré rétrospectivement que l&#x27;humeur elle-même.</li><li class="theorie-sous-groupe"><strong>DD ESPT</strong> — Les troubles consécutifs à un traumatisme peuvent se présenter avec des troubles du sommeil, des problèmes de concentration, un retrait social et une symptomatologie dépressive. Dépistage d&#x27;un traumatisme pertinent ainsi que des trois symptômes centraux : reviviscence, évitement et sentiment de menace persistant.</li><li><strong>DD ESPT · Événement traumatique</strong> — L&#x27;ESPT <span class="c-red">présuppose</span> la survenue d&#x27;un événement extrêmement menaçant ou effroyable.</li><li><strong>DD ESPT · Intrusions / Flashbacks / Cauchemars</strong> — Symptôme central de l&#x27;ESPT : reviviscence involontaire du traumatisme dans le présent.</li><li class="theorie-sous-groupe"><strong>DD Anxiété</strong> — Bref dépistage des troubles anxieux et obsessionnels compulsifs comorbides. Les troubles anxieux surviennent fréquemment avec la dépression et influencent le pronostic, le risque suicidaire et la planification thérapeutique.</li><li><strong>DD Anxiété · Anxiété généralisée / Inquiétudes</strong> — Dépistage du trouble anxieux généralisé.</li><li><strong>DD Anxiété · Attaques de panique</strong> — Dépistage du trouble panique.</li><li><strong>DD Anxiété · Phobies</strong> — Dépistage des phobies spécifiques et de l&#x27;agoraphobie.</li><li class="theorie-sous-groupe"><strong>DD TOC</strong> — Bref dépistage du trouble obsessionnel compulsif. Comorbidité avec la dépression fréquente ; influence la planification thérapeutique (ISRS à dose plus élevée efficace dans le TOC).</li><li><strong>DD TOC · Obsessions</strong> — Pensées récurrentes, vécues comme intrusives (souvent contamination, dommage, symétrie, impulsions agressives), qui déclenchent de l&#x27;anxiété ou un malaise.</li><li><strong>DD TOC · Compulsions</strong> — Dépistage de comportements ritualisés à caractère compulsif.</li><li class="theorie-sous-groupe"><strong>Pensée formelle</strong> — Dans la dépression, on trouve typiquement un ralentissement de la pensée, des ruminations et une inhibition de la pensée. Un barrage de la pensée ou une incohérence parlent en revanche plutôt en faveur de troubles schizophréniformes ou psychotiques.</li><li><strong>Pensée formelle · Rumination / Pensées circulaires</strong> — Pensée répétitive typique de la dépression sans véritable désagrégation de la pensée.</li><li><strong>Pensée formelle · Inhibition de la pensée / Ralentissement psychique</strong> — Difficulté subjectivement ressentie du déroulement de la pensée, fréquente lors de dépression d&#x27;intensité moyenne ou sévère.</li><li><strong>Pensée formelle · Barrage de la pensée</strong> — Exclusion active d&#x27;un trouble de la pensée schizophréniforme ou psychotique.</li><li class="theorie-sous-groupe"><strong>Antécédents médicaux</strong> — Les antécédents somatiques et psychiatriques personnels influencent le choix thérapeutique, le pronostic et la durée du traitement.</li><li><strong>Antécédents médicaux · Maladies chroniques / Douleurs</strong> — Les maladies somatiques chroniques ou les <span class="c-pink">douleurs</span> sont à la fois un <span class="c-purple">facteur de risque</span> et une comorbidité de la dépression et influencent le choix thérapeutique.</li><li><strong>Antécédents médicaux · Antécédents psychiatriques</strong> — Première manifestation vs <span class="c-orange">récidive</span> influence le pronostic et la durée du traitement.</li><li><strong>Médicaments / Automédication</strong> — Différentes substances peuvent provoquer ou aggraver des symptômes dépressifs : stéroïdes, interféron-α, antiépileptiques (topiramate, vigabatrine), médicaments anti-VIH (éfavirenz), méfloquine, phénobarbital, flunarizine. Avant le début du traitement, vérifier aussi les interactions possibles avec l&#x27;antidépresseur prévu.</li><li class="theorie-sous-groupe"><strong>Consommation de substances</strong> — La consommation de substances peut provoquer ou entretenir des troubles du sommeil et de l&#x27;humeur et influence le choix et l&#x27;efficacité du traitement antidépresseur.</li><li><strong>Consommation de substances · Alcool</strong> — L&#x27;<span class="c-purple">alcool</span> détériore la qualité du sommeil malgré un effet favorisant l&#x27;endormissement et peut aggraver les symptômes dépressifs. En cas de consommation pertinente, le traitement de l&#x27;addiction serait prioritaire.</li><li><strong>Consommation de substances · Drogues</strong> — Le cannabis, l&#x27;<span class="c-purple">alcool</span> et les stimulants peuvent provoquer ou entretenir des symptômes dépressifs et des troubles du sommeil. En cas de consommation pertinente, le traitement de l&#x27;addiction serait prioritaire par rapport au traitement antidépresseur.</li><li class="theorie-sous-groupe"><strong>Antécédents familiaux</strong> — L&#x27;anamnèse familiale saisit la composante génétique du modèle vulnérabilité-stress et le risque suicidaire familial.</li><li><strong>Antécédents familiaux · Antécédents psychiatriques</strong> — Un apparenté du premier degré avec dépression augmente le risque propre d&#x27;un facteur 2-3 (prédisposition génétique). Facteur de vulnérabilité biologique central dans le modèle vulnérabilité-stress.</li><li><strong>Antécédents familiaux · Suicide dans la famille</strong> — Un suicide accompli dans la famille augmente nettement le risque suicidaire propre et est un signal d&#x27;alarme central dans l&#x27;évaluation du risque.</li><li class="theorie-sous-groupe"><strong>Environnement social</strong> — Le soutien social est un facteur de protection central ; le retrait social est à la fois un symptôme et un facteur de vulnérabilité et un point de départ thérapeutique important (activation comportementale).</li><li><strong>Environnement social · Soutien social</strong> — Des personnes de référence solides sont le facteur de protection psychosocial le plus important et central pour le <span class="c-yellow">filet de sécurité</span> en cas de suicidalité.</li><li><strong>Environnement social · Retrait social</strong> — Le retrait social est à la fois un symptôme et un facteur d&#x27;entretien de la dépression. Point de départ thérapeutique pour l&#x27;activation comportementale.</li><li><strong>Facteurs de stress psychosociaux</strong> — Dans le modèle vulnérabilité-stress, le retrait social et la perte d&#x27;activités positives agissent comme facteurs de vulnérabilité psychosociaux. Ils sont en même temps un point de départ thérapeutique : l&#x27;activation comportementale avec reprise d&#x27;activités renforçantes positives et de contacts sociaux est une intervention de base efficace.</li><li><strong>Facteur de personnalité</strong> — Une structure de personnalité consciencieuse, autocritique et axée sur la performance est un facteur prédisposant établi pour les épisodes dépressifs. Facteur de personnalité central dans le modèle vulnérabilité-stress, à côté de la composante génétique et psychosociale.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic présumé</strong> — Diagnostic rempli : au moins 5 des 10 symptômes dépressifs pendant &gt; 2 semaines, dont au moins un du cluster affectif. Important pour la graduation : l&#x27;importance de l&#x27;altération fonctionnelle et de la souffrance.</li><li><strong>Évaluation du risque suicidaire</strong> — L&#x27;évaluation du risque détermine la conduite ambulatoire vs hospitalière et la fréquence des contrôles.</li><li class="theorie-sous-groupe"><strong>Interventions de base</strong> — Les interventions de base sont toujours indiquées, indépendamment du degré de sévérité : psychoéducation, hygiène du sommeil, activité physique régulière, activation comportementale, décision partagée et contrôles réguliers de l&#x27;évolution.</li><li><strong>Interventions de base · Activation comportementale</strong> — L&#x27;activation comportementale rompt le retrait dépressif. L&#x27;objectif est la reprise d&#x27;activités renforçantes positives (p. ex. jouer de la batterie, contacts sociaux).</li><li><strong>Interventions de base · Psychoéducation</strong> — Expliquer le lien entre dépression et sommeil, discuter des options thérapeutiques, de la latence d&#x27;action et du pronostic.</li><li><strong>Interventions de base · Hygiène du sommeil</strong> — Heures fixes de coucher et de lever, pas d&#x27;écran avant de dormir, réduire caféine et <span class="c-purple">alcool</span>, n&#x27;utiliser le lit que pour dormir.</li><li class="theorie-sous-groupe"><strong>Options thérapeutiques (Décision partagée)</strong> — Lors d&#x27;épisode dépressif d&#x27;intensité moyenne, l&#x27;antidépresseur ou la <span class="c-amber">psychothérapie</span> sont des options de premier choix équivalentes ; une combinaison est surtout recommandée en cas de dépression sévère, mais peut être judicieuse en cas de symptomatologie marquée ou de réponse partielle. La décision est prise de manière participative dans le cadre d&#x27;une décision partagée : présenter les options avec leurs avantages et inconvénients (latence d&#x27;action, effets secondaires, investissement, temps d&#x27;attente, durabilité, coûts), demander les préférences et les craintes du patient, décider ensemble. Le médecin formule une recommandation professionnelle fondée, le patient décide de manière informée. Les interventions de base sont données indépendamment du choix de la thérapie spécifique.</li><li><strong>Options thérapeutiques (Décision partagée) · Antidépresseur</strong> — Avantages : bonne évidence, large expérience clinique, disponibilité rapide, efficacité équivalente à la <span class="c-amber">psychothérapie</span> dans la dépression d&#x27;intensité moyenne. Inconvénients : latence d&#x27;action de 2-4 semaines, effets secondaires possibles (gastro-intestinaux, sexuels, agitation initiale). En cas de trouble du sommeil prédominant, la mirtazapine en tant que NaSSA est une option (effet sédatif mis à profit, neutralité cardiaque). En cas de comorbidité cardiaque, la sertraline est préférée au citalopram ou à l&#x27;escitalopram ; un <span class="c-green">ECG</span> avec évaluation du QT avant le début du traitement est judicieux en présence de <span class="c-purple">facteurs de risque</span> (<span class="c-purple">âge avancé</span>, antécédents cardiaques, autres médicaments allongeant le QT, troubles électrolytiques), chez les jeunes patients en bonne santé sans anamnèse correspondante, il n&#x27;est pas impératif.</li><li><strong>Options thérapeutiques (Décision partagée) · Psychothérapie</strong> — Avantages : effet durable au-delà de la fin de la thérapie, pas d&#x27;effets secondaires pharmacologiques, travail sur les facteurs de vulnérabilité. Inconvénients : temps d&#x27;attente pour une place de thérapie, investissement personnel en temps et en émotion plus important, selon la région question des coûts. Sont efficaces dans la dépression surtout la thérapie cognitivo-comportementale, la thérapie interpersonnelle, la thérapie psychodynamique et la MBCT. En cas d&#x27;insomnie prédominante, en plus TCC pour l&#x27;insomnie (TCC-I) avec contrôle du stimulus et restriction du sommeil. Des programmes en ligne peuvent combler le temps d&#x27;attente.</li><li><strong>Options thérapeutiques (Décision partagée) · Thérapie combinée</strong> — Avantages : recommandation standard dans la dépression sévère avec taux de réponse plus élevé ; couvre simultanément le niveau biologique et psychologique. Inconvénients : plus exigeant, charge plus élevée pour le patient, dans les études pas constamment supérieur à la <span class="c-amber">monothérapie</span> dans la dépression d&#x27;intensité moyenne. Dans la dépression d&#x27;intensité moyenne, donc pas impératif, mais une option valable en cas de symptomatologie marquée, de réponse partielle ou de souhait <span class="c-red">explicite</span> du patient.</li><li><strong>Éventuel arrêt de travail de courte durée</strong> — En cas de dépression d&#x27;intensité moyenne et sévère, il existe en règle générale une incapacité de travail (totale ou partielle). En cas d&#x27;épisode dépressif léger, maintenir le plus souvent la capacité de travail, sauf en cas de conflits au travail. Fixer la durée et l&#x27;étendue individuellement et réévaluer au cours de l&#x27;évolution.</li><li><strong>Contrôle de l&#x27;évolution</strong> — Des contrôles réguliers de l&#x27;évolution servent à évaluer la réponse au traitement et à adapter la thérapie ; au début plus rapprochés, avec une stabilisation croissante à intervalles plus grands. Le PHQ-9 est un bref questionnaire validé de neuf items qui reflète la sévérité et l&#x27;évolution d&#x27;une dépression et rend un effet thérapeutique objectivable. Il est important de réévaluer aussi la suicidalité à chaque consultation, car le risque peut se modifier au cours de l&#x27;évolution.</li><li><strong>Filet de sécurité</strong> — En cas de suicidalité, un <span class="c-yellow">filet de sécurité</span> fait partie intégrante : une instruction claire de nouvelle consultation immédiate au patient et à la personne de confiance, ainsi qu&#x27;un numéro d&#x27;urgence (service d&#x27;urgence psychiatrique). En cas d&#x27;incapacité de s&#x27;engager à demander de l&#x27;aide ou de suicidalité aiguë, une hospitalisation psychiatrique d&#x27;urgence est indiquée, le cas échéant sous forme de placement à des fins d&#x27;assistance.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Reconnaître les troubles du sommeil comme symptôme principal possible d&#x27;un épisode dépressif.</li><li>Saisir complètement la symptomatologie dépressive et identifier les facteurs prédisposants et déclenchants selon le modèle vulnérabilité-stress.</li><li>Explorer soigneusement la suicidalité, évaluer le risque et planifier la gestion de sécurité ultérieure.</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>M. Küpfer présente un épisode dépressif d&#x27;intensité moyenne, sans cause organique identifiable.</p><p>À l&#x27;anamnèse, on note depuis plusieurs mois des troubles du sommeil d&#x27;installation progressive avec réveil matinal précoce, ainsi qu&#x27;une symptomatologie dépressive centrale avec humeur dépressive, perte d&#x27;intérêt, diminution de l&#x27;élan vital et troubles de la concentration. S&#x27;y ajoutent une diminution de l&#x27;estime de soi, une perte d&#x27;appétit et de poids, ainsi que des idées suicidaires passives sans intention concrète.</p><p>Les plaintes entraînent une altération fonctionnelle professionnelle et sociale significative. Dans l&#x27;ensemble, le tableau clinique remplit les critères d&#x27;un épisode dépressif d&#x27;intensité moyenne. L&#x27;épisode survient pour la première fois, sans épisode dépressif antérieur.</p><p>Selon le modèle vulnérabilité-stress, la symptomatologie peut être comprise comme l&#x27;interaction d&#x27;une vulnérabilité individuelle et de contraintes persistantes. Chez M. Küpfer, une prédisposition familiale (mère ayant présenté un épisode dépressif durant son adolescence) et une personnalité consciencieuse, autocritique et axée sur la performance agissent comme facteurs prédisposants. Un déclencheur aigu unique fait défaut ; une surcharge professionnelle croissante, le retrait social avec abandon de la batterie et des contacts amicaux, ainsi que l&#x27;insomnie chronique agissent probablement comme facteurs déclenchants et d&#x27;entretien.</p><p>Sur le plan du <span class="c-yellow">diagnostic différentiel</span>, on ne trouve aucun indice d&#x27;hypomanie ou de manie antérieure, ni de symptômes psychotiques. Une cause liée à une substance est improbable en raison d&#x27;une consommation d&#x27;<span class="c-purple">alcool</span> rare, sans cannabis ni autres drogues, de même qu&#x27;un trouble de l&#x27;adaptation en l&#x27;absence de lien avec un facteur de stress.</p><p>Statut clinique : Non prévu dans ce poste. Si le/la candidat/e le demande, tu communiqueras un statut corporel sans particularité.</p><p>Diagnostic : Également non prévu dans ce poste. Si le/la candidat/e le demande, tu communiqueras des résultats sans particularité.</p><p>Sur le plan thérapeutique, un traitement ambulatoire est indiqué. De manière participative, un antidépresseur (ISRS, ou mirtazapine le soir en cas de trouble du sommeil prédominant), une <span class="c-amber">psychothérapie</span> (TCC ou TIP) ou une combinaison entrent en ligne de compte, complétés par des interventions de base (psychoéducation, hygiène du sommeil, activation comportementale). Un contrôle hebdomadaire de l&#x27;évolution et une évaluation de l&#x27;efficacité après quatre semaines à l&#x27;aide du PHQ-9 sont prévus, ainsi qu&#x27;un <span class="c-yellow">filet de sécurité</span> avec nouvelle consultation en cas de crise et numéro d&#x27;urgence, et si nécessaire un arrêt de travail de courte durée.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Aperçu AKDP</div><div class="annexe-expert-content"><p>Anamnèse :</p><p>Depuis quelques mois, troubles du sommeil avec réveil matinal précoce, d&#x27;installation progressive et sans déclencheur clair.</p><p>De plus, humeur dépressive, diminution de l&#x27;intérêt, de l&#x27;élan vital et de la concentration, faible estime de soi, perte d&#x27;appétit et de poids, idées suicidaires passives sans intention. Altération fonctionnelle nette.</p><p>Statut/Diagnostic : non prévu, sans particularité sur demande.</p><p>Procédure :</p><p>Ambulatoire. Antidépresseur (ISRS, mirtazapine en cas de trouble du sommeil), <span class="c-amber">psychothérapie</span> (TCC/TIP) ou combinaison ; interventions de base.</p><p>Contrôle de l&#x27;évolution hebdomadaire, PHQ-9 après 4 semaines. <span class="c-yellow">Filet de sécurité</span> avec numéro d&#x27;urgence, si nécessaire arrêt de travail de courte durée.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 67,
+        "examen": 0,
+        "management": 11,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 0,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 3,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

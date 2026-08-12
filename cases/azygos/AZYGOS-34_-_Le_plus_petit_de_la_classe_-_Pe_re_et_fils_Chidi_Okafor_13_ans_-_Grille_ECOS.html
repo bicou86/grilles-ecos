@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-34 - Le plus petit de la classe - Père et fils Chidi Okafor, 13 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-34 - Le plus petit de la classe</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-34" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet de pédiatrie</p>
+            <p style="margin: 5px 0;">👤 Père et fils Chidi Okafor, 13 ans</p>
+            <p style="margin: 5px 0;">🏷️ Pédiatrie · Poste standard · Facile · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/21</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Atteinte actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d’entrée <span class="patient-response">[&quot;Mon fils est bien plus petit que ses camarades de classe et je commence à m’inquiéter.&quot;]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Évolution de la croissance · Début <span class="patient-response">[Depuis l’école enfantine, toujours le plus petit.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Évolution de la croissance · Évolution <span class="patient-response">[Croît de manière continue mais plus lentement que les autres; pas de régression soudaine, pas de poussée de croissance.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une croissance continue le long d’un percentile bas sans cassure plaide pour une variante normale et contre une cause acquise ou systémique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes pubertaires <span class="patient-response">[Pas de mue, pas de poils pubiens, pas de barbe; camarades déjà plus avancés.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence de début pubertaire chez un garçon de 13 ans est le symptôme principal décisif pour le diagnostic et distingue le retard constitutionnel de la simple petite taille familiale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Souffrance ressentie <span class="patient-response">[Lui, il le prend avec légèreté; c’est moi qui m’inquiète davantage.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée sur le problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Alimentation <span class="patient-response">[Mange normalement et bien, bon appétit.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une alimentation sans particularité avec bon appétit rend peu probable un trouble de croissance malnutritif ou gastro-intestinal.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Capacité à l’effort <span class="patient-response">[En forme, unihockey en club, pas de fatigue rapide, pas de baisse de performance.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une pleine capacité physique sans baisse de performance parle contre une affection consomptive ou systémique comme cause de la croissance ralentie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse systématique / DD <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage DD · Symptômes B <span class="patient-response">[Pas de fièvre, pas de sueurs nocturnes, pas de perte de poids involontaire.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des symptômes B orienteraient vers une affection maligne ou inflammatoire chronique comme cause de la croissance ralentie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage DD · Gastro-intestinal <span class="patient-response">[Pas de douleurs abdominales, pas de diarrhée, pas de ballonnements.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des symptômes GI chroniques pourraient évoquer une maladie coeliaque ou une MICI avec cassure staturale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage DD · Céphalées / troubles visuels <span class="patient-response">[Pas de céphalées, pas de troubles visuels, pas de vomissements matinaux.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Céphalées et troubles visuels sont des signes d’alarme d’un processus expansif intracrânien ou hypophysaire, cause rare.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage DD · Symptômes thyroïdiens <span class="patient-response">[Pas de sensibilité au froid, pas de constipation, peau normale.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’hypothyroïdie est une cause traitable d’un retard de croissance et doit être recherchée activement par des symptômes typiques comme sensibilité au froid, constipation, peau sèche et baisse d’entrain.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage DD · Odorat <span class="patient-response">[Odorat normal.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une anosmie ferait penser à un syndrome de Kallmann comme cause d’un hypogonadisme hypogonadotrope permanent.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Naissance et période périnatale <span class="patient-response">[Naissance normale, un peu avant terme; env. 3,1 kg et 49 cm, tout dans la norme.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des mensurations de naissance normales sans retard de croissance intra-utérin parlent contre une petite taille due à un SGA.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Jalons du développement <span class="patient-response">[A appris tôt à marcher et à parler; bons résultats scolaires.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un développement moteur et langagier approprié à l’âge rend peu probable une cause syndromique ou neuromotrice de la petite taille.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents <span class="patient-response">[Jamais gravement malade, aucune opération.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Aucun médicament, pas de cortisone non plus.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un traitement stéroïdien systémique prolongé peut freiner la croissance staturale et doit être exclu activement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Taille des parents <span class="patient-response">[Moi 167 cm, ma femme 160 cm.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les parents se situent dans le bas de la norme (père ~10e–15e percentile, mère ~20e–25e percentile) sans être cliniquement petits. La taille cible génétique est d’env. 170 cm (bas de la norme), ce qui explique une contribution familiale modérée à la petite taille, mais ne suffit pas à justifier le &lt;3e percentile de Chidi. Le vrai critère du RCCP est l’anamnèse familiale de puberté tardive, pas la taille parentale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Puberté des parents <span class="patient-response">[Moi-même retardataire; mue et poussée de croissance seulement à 16–17 ans.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une anamnèse familiale positive pour puberté tardive est un résultat de premier plan du retard constitutionnel de croissance et de la puberté.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Maladies familiales <span class="patient-response">[Pas de maladies thyroïdiennes, intestinales ou osseuses dans la famille.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Environnement social <span class="patient-response">[Bon cercle d’amis, situation familiale stable.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Charge psychique <span class="patient-response">[Il est moqué à cause de sa taille; cela l’affecte peu, moral bon.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La charge psychosociale liée à la petite taille et au retard pubertaire est pertinente pour le conseil et l’accompagnement, même si elle n’est pas décisive pour le diagnostic.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/10</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. État général et organes <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Impression générale et proportions <span class="patient-response">[Garçon éveillé et sociable en bon EG; proportions corporelles harmonieuses, pas de petite taille disproportionnée.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des proportions harmonieuses parlent contre une dysplasie squelettique comme cause de la petite taille.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes de dysmorphie <span class="patient-response">[Pas de signes de dysmorphie.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence de signes de dysmorphie rend improbable un syndrome génétique comme cause.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Thyroïde <span class="patient-response">[Pas de goitre, pas d’indices d’hypothyroïdie.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’hypothyroïdie est un diagnostic différentiel traitable de la petite taille et doit être évaluée cliniquement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">État somatique orientatif <span class="patient-response">[Cœur, poumons, abdomen et statut ganglionnaire sans particularité; paramètres vitaux normaux pour l’âge.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-3" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Statut pubertaire <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection génitale <span class="patient-response">[Stade de Tanner I (prépubère): pas de pilosité pubienne, pas d’hypospadias, organes génitaux par ailleurs sans particularité.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’inspection génitale fournit le stade de Tanner et objective le statut prépubère; l’absence de signes pubertaires chez un garçon de 13 ans est centrale pour le diagnostic.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Volume testiculaire <span class="patient-response">[Testicules descendus des deux côtés, volume env. 3 ml (prépubère, &lt; 4 ml).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un volume testiculaire inférieur à 4 ml correspond au statut prépubère; une augmentation du volume testiculaire serait le premier signe objectif de puberté.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Anthropométrie et percentiles <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Évolution des percentiles <span class="patient-response">[Percentile de taille stable depuis des années juste en dessous du 3e p., parallèle sans cassure.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une évolution parallèle sans chute plaide pour une variante normale; une cassure serait un signe d’alarme d’une cause acquise.</span></span> <span class="criteria-detail-note">(voir iconographie)</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Taille <span class="patient-response">[142 cm (&lt;3e percentile).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une taille inférieure au 3e percentile définit la petite taille et sert de point de départ à la démarche.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Taille cible génétique <span class="patient-response">[Calcul garçon: (167 + 160 + 13) / 2 = 170 cm; intervalle cible +/- 8,5 cm, soit env. 161,5–178,5 cm.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La taille finale prédite se situe dans le bas de la norme et concorde avec un retard constitutionnel avec rattrapage ultérieur.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Poids <span class="patient-response">[33 kg (~10e–25e percentile), IMC normal pour l’âge.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un poids adapté à l’âge avec petite taille plaide contre une malnutrition ou une affection consomptive et correspond à une petite taille harmonieuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/11</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Bilan de laboratoire <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Bilan de base <span class="patient-response">[Tous les paramètres dans les normes: hémogramme normal, pas d’inflammation, axe thyroïdien euthyroïde, sérologie coeliaque négative, IGF-1 en adéquation avec l’âge osseux.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pour une taille inférieure au 3e percentile, un dépistage de base ciblé unique est indiqué, même si l’anamnèse et le statut évoquent une variante normale. Il sert à exclure des causes silencieuses mais traitables (maladie coeliaque, hypothyroïdie) ainsi qu’une affection inflammatoire chronique. Un bilan plus large ou endocrinologique n’est pas indiqué en cas de vitesse de croissance normale sans cassure de percentile et relève du cadre spécialisé.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Imagerie <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Radiographie main gauche (âge osseux) <span class="patient-response">[Âge osseux correspondant à env. 11 ans pour un âge chronologique de 13 ans; cartilages de conjugaison ouverts.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’âge osseux nettement retardé atteste d’un potentiel de croissance non épuisé et constitue un élément clé du retard constitutionnel.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Appréciation clinique <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail <span class="patient-response">[Retard constitutionnel de croissance et de la puberté (RCCP).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le RCCP est une variante normale avec croissance et début pubertaire retardés. Le reconnaître comme variante normale est l’élément diagnostique central et la condition pour un conseil dépathologisant au lieu d’investigations inutiles.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Assessment <span class="patient-response">[Percentile parallèle sans cassure, prépubère (Tanner I, testicules 3 ml), âge osseux retardé, bilan de base sans particularité, anamnèse familiale positive; aucun signe d’alarme.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le percentile parallèle sans cassure parle contre une cause acquise; une cassure de croissance serait typique d’une maladie coeliaque, d’une hypothyroïdie ou d’affections inflammatoires chroniques. L’âge osseux retardé (env. 11 ans pour 13 ans chronologiques) atteste du potentiel de croissance restant et est quasi pathognomonique du RCCP. Tanner I avec volume testiculaire &lt; 4 ml confirme le statut prépubère. L’anamnèse familiale positive (père développement tardif) correspond au phénotype RCCP à transmission autosomique dominante. Un bilan normal exclut hypothyroïdie, maladie coeliaque et affection inflammatoire chronique. L’absence d’anosmie, de céphalées et de troubles visuels rend peu probables un syndrome de Kallmann et un processus hypophysaire expansif.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Thérapie et conseil <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Information du patient / Dépathologisation <span class="patient-response">[Expliquer comme variante normale: poussée de croissance plus tard attendue, similaire au père.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La dépathologisation est le cœur thérapeutique du cas: elle prend au sérieux l’inquiétude parentale, situe le résultat comme variante normale et évite un traitement inutile. Une explication adaptée à l’âge et compréhensible est centrale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Pas d’hormonothérapie <span class="patient-response">[Actuellement, pas d’indication à une thérapie par hormone de croissance ou testostérone.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une hormonothérapie n’est pas indiquée en cas de retard constitutionnel; une induction brève par testostérone reste réservée, dans un cadre spécialisé, à de rares cas avec grande souffrance. L’abstention de traitement inutile fait partie de la prise en charge correcte.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Soutien psychosocial <span class="patient-response">[Proposer un soutien à bas seuil en cas de charge.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’accompagnement psychosocial cible le harcèlement et l’inquiétude parentale. Utile pour la prise en charge globale, mais ni décisif pour le diagnostic ni essentiel pour la sécurité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Procédure <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Suivi évolutif <span class="patient-response">[Contrôle clinique dans 6–12 mois avec documentation de la croissance et de la puberté.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le suivi est central dans le RCCP, le diagnostic se confirmant avec le temps: si la puberté démarre et que la croissance s’accélère, cela confirme la variante normale; si les deux restent absents, un bilan élargi s’impose.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Filet de sécurité / Réévaluation <span class="patient-response">[Expliquer les signes d’alarme: cassure du percentile, symptômes systémiques, puberté toujours absente -&gt; reconsultation.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le filet de sécurité garantit qu’une cause pathologique se révélant plus tard n’est pas manquée et donne aux parents des critères clairs de reconsultation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Orientation Endocrinologie pédiatrique <span class="patient-response">[En cas d’absence de début pubertaire jusqu’à 14 ans ou d’anomalies -&gt; endocrinologie pédiatrique.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le début pubertaire jusqu’aux environs de 14 ans constitue la limite clinique; une absence ou des anomalies exigent une démarche endocrinologique par étapes (p. ex. gonadotrophines, test au GnRH), qui ne relève pas du premier recours.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Recontrôle de l’âge osseux <span class="patient-response">[Nouvelle détermination de l’âge osseux dans 1–2 ans uniquement si besoin.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La répétition de l’évaluation de l’âge osseux n’est nécessaire qu’en cas d’évolution incertaine et ne fait pas partie de la planification initiale de routine.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît l’inquiétude du père concernant la taille et la puberté de son fils, prend aussi Chidi au sérieux et y répond avec empathie et de manière appropriée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible et reste flexible.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Explique la variante normale de manière adaptée au patient et dépathologisante, reformule, résume et gère volontairement le débit de parole et les pauses.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance pour créer une atmosphère d’échange bienveillante et de confiance avec le père et l’enfant.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/58</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Évolution de la croissance · Évolution</strong> — Une croissance continue le long d’un percentile bas sans cassure plaide pour une variante normale et contre une cause acquise ou systémique.</li><li><strong>Signes pubertaires</strong> — L’absence de début pubertaire chez un garçon de 13 ans est le symptôme principal décisif pour le diagnostic et distingue le retard constitutionnel de la simple petite taille familiale.</li><li><strong>Alimentation</strong> — Une alimentation sans particularité avec bon appétit rend peu probable un trouble de croissance malnutritif ou gastro-intestinal.</li><li><strong>Capacité à l’effort</strong> — Une pleine capacité physique sans baisse de performance parle contre une affection consomptive ou systémique comme cause de la croissance ralentie.</li><li><strong>Dépistage DD · Symptômes B</strong> — Des symptômes B orienteraient vers une affection maligne ou inflammatoire chronique comme cause de la croissance ralentie.</li><li><strong>Dépistage DD · Gastro-intestinal</strong> — Des symptômes GI chroniques pourraient évoquer une maladie coeliaque ou une MICI avec cassure staturale.</li><li><strong>Dépistage DD · Céphalées / troubles visuels</strong> — <span class="c-pink">Céphalées</span> et troubles visuels sont des <span class="c-yellow">signes d’alarme</span> d’un processus expansif intracrânien ou hypophysaire, cause rare.</li><li><strong>Dépistage DD · Symptômes thyroïdiens</strong> — L’hypothyroïdie est une cause traitable d’un retard de croissance et doit être recherchée activement par des symptômes typiques comme sensibilité au froid, constipation, peau sèche et baisse d’entrain.</li><li><strong>Dépistage DD · Odorat</strong> — Une anosmie ferait penser à un <span class="c-red">syndrome de Kallmann</span> comme cause d’un hypogonadisme hypogonadotrope permanent.</li><li><strong>Naissance et période périnatale</strong> — Des mensurations de naissance normales sans retard de croissance intra-utérin parlent contre une petite taille due à un SGA.</li><li><strong>Jalons du développement</strong> — Un développement moteur et langagier approprié à l’âge rend peu probable une cause syndromique ou neuromotrice de la petite taille.</li><li><strong>Médicaments</strong> — Un traitement stéroïdien systémique prolongé peut freiner la croissance staturale et doit être exclu activement.</li><li><strong>Taille des parents</strong> — Les parents se situent dans le bas de la norme (père ~10e–15e percentile, mère ~20e–25e percentile) sans être cliniquement petits. La taille cible génétique est d’env. 170 cm (bas de la norme), ce qui explique une contribution familiale modérée à la petite taille, mais ne suffit pas à justifier le &lt;3e percentile de Chidi. Le vrai critère du RCCP est l’anamnèse familiale de puberté tardive, pas la taille parentale.</li><li><strong>Puberté des parents</strong> — Une anamnèse familiale positive pour puberté tardive est un résultat de premier plan du retard constitutionnel de croissance et de la puberté.</li><li><strong>Charge psychique</strong> — La charge psychosociale liée à la petite taille et au retard pubertaire est pertinente pour le conseil et l’accompagnement, même si elle n’est pas décisive pour le diagnostic.</li></ul>
+</div><div class="theorie-section">
+    <h4>Statut clinique</h4>
+    <ul><li><strong>Impression générale et proportions</strong> — Des proportions harmonieuses parlent contre une dysplasie squelettique comme cause de la petite taille.</li><li><strong>Signes de dysmorphie</strong> — L’absence de signes de dysmorphie rend improbable un <span class="c-red">syndrome génétique</span> comme cause.</li><li><strong>Thyroïde</strong> — L’hypothyroïdie est un <span class="c-yellow">diagnostic différentiel</span> traitable de la petite taille et doit être évaluée cliniquement.</li><li><strong>Inspection génitale</strong> — L’<span class="c-green">inspection</span> génitale fournit le stade de Tanner et objective le statut prépubère; l’absence de signes pubertaires chez un garçon de 13 ans est centrale pour le diagnostic.</li><li><strong>Volume testiculaire</strong> — Un volume testiculaire inférieur à 4 ml correspond au statut prépubère; une augmentation du volume testiculaire serait le premier signe objectif de puberté.</li><li><strong>Évolution des percentiles</strong> — Une évolution parallèle sans chute plaide pour une variante normale; une cassure serait un <span class="c-yellow">signe d’alarme</span> d’une cause acquise.</li><li><strong>Taille</strong> — Une taille inférieure au 3e percentile définit la petite taille et sert de point de départ à la démarche.</li><li><strong>Taille cible génétique</strong> — La taille finale prédite se situe dans le bas de la norme et concorde avec un retard constitutionnel avec rattrapage ultérieur.</li><li><strong>Poids</strong> — Un poids adapté à l’âge avec petite taille plaide contre une malnutrition ou une affection consomptive et correspond à une petite taille harmonieuse.</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostic</h4>
+    <ul><li><strong>Bilan de base</strong> — Pour une taille inférieure au 3e percentile, un dépistage de base ciblé unique est indiqué, même si l’anamnèse et le statut évoquent une variante normale. Il sert à exclure des causes silencieuses mais traitables (maladie coeliaque, hypothyroïdie) ainsi qu’une affection inflammatoire chronique. Un bilan plus large ou endocrinologique n’est pas indiqué en cas de vitesse de croissance normale sans cassure de percentile et relève du cadre spécialisé.</li><li><strong>Radiographie main gauche (âge osseux)</strong> — L’âge osseux nettement retardé atteste d’un potentiel de croissance non épuisé et constitue un élément clé du retard constitutionnel.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic de travail</strong> — Le RCCP est une variante normale avec croissance et début pubertaire retardés. Le reconnaître comme variante normale est l’élément diagnostique central et la condition pour un conseil dépathologisant au lieu d’investigations inutiles.</li><li><strong>Assessment</strong> — Le percentile parallèle sans cassure parle contre une cause acquise; une cassure de croissance serait typique d’une maladie coeliaque, d’une hypothyroïdie ou d’affections inflammatoires chroniques. L’âge osseux retardé (env. 11 ans pour 13 ans chronologiques) atteste du potentiel de croissance restant et est quasi pathognomonique du RCCP. Tanner I avec volume testiculaire &lt; 4 ml confirme le statut prépubère. L’anamnèse familiale positive (père développement tardif) correspond au phénotype RCCP à transmission autosomique dominante. Un bilan normal exclut hypothyroïdie, maladie coeliaque et affection inflammatoire chronique. L’absence d’anosmie, de <span class="c-pink">céphalées</span> et de troubles visuels rend peu probables un <span class="c-red">syndrome de Kallmann</span> et un processus hypophysaire expansif.</li><li><strong>Information du patient / Dépathologisation</strong> — La dépathologisation est le cœur thérapeutique du cas: elle prend au sérieux l’inquiétude parentale, situe le résultat comme variante normale et évite un traitement inutile. Une explication adaptée à l’âge et compréhensible est centrale.</li><li><strong>Pas d’hormonothérapie</strong> — Une <span class="c-amber">hormonothérapie</span> n’est pas indiquée en cas de retard constitutionnel; une induction brève par testostérone reste réservée, dans un cadre spécialisé, à de rares cas avec grande souffrance. L’abstention de traitement inutile fait partie de la prise en charge correcte.</li><li><strong>Soutien psychosocial</strong> — L’accompagnement psychosocial cible le harcèlement et l’inquiétude parentale. Utile pour la prise en charge globale, mais ni décisif pour le diagnostic ni essentiel pour la sécurité.</li><li><strong>Suivi évolutif</strong> — Le suivi est central dans le RCCP, le diagnostic se confirmant avec le temps: si la puberté démarre et que la croissance s’accélère, cela confirme la variante normale; si les deux restent absents, un bilan élargi s’impose.</li><li><strong>Filet de sécurité / Réévaluation</strong> — Le <span class="c-yellow">filet de sécurité</span> garantit qu’une cause pathologique se révélant plus tard n’est pas manquée et donne aux parents des critères clairs de reconsultation.</li><li><strong>Orientation Endocrinologie pédiatrique</strong> — Le début pubertaire jusqu’aux environs de 14 ans constitue la limite clinique; une absence ou des anomalies exigent une démarche endocrinologique par étapes (p. ex. gonadotrophines, test au GnRH), qui ne relève pas du premier recours.</li><li><strong>Recontrôle de l’âge osseux</strong> — La répétition de l’évaluation de l’âge osseux n’est nécessaire qu’en cas d’évolution incertaine et ne fait pas partie de la planification initiale de routine.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Reconnaître le retard constitutionnel de croissance et de la puberté comme variante normale</li><li>Exclure de manière structurée les causes pathologiques (<span class="c-yellow">signes d’alarme</span>, bilan de base, âge osseux)</li><li>Conseil dépathologisant sans traitement inutile</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Diagnostic: Retard constitutionnel de croissance et de la puberté (RCCP)</p><p>Chez Chidi Okafor, 13 ans, il s’agit d’un retard constitutionnel de croissance et de la puberté (RCCP), une variante normale avec croissance retardée et début pubertaire différé.</p><p>À l’anamnèse, l’enfant est, depuis l’école enfantine, le plus petit, mais il grandit de manière continue le long de sa courbe; absence complète de signes pubertaires, alors que ses pairs ont déjà la mue. Il est en bonne santé, pleinement capable à l’effort et bien nourri. Dans le dépistage du <span class="c-yellow">diagnostic différentiel</span>, absence de symptômes B (maladie maligne, affection inflammatoire chronique), de plaintes gastro-intestinales (maladie coeliaque, MICI), de <span class="c-pink">céphalées</span> et de troubles visuels (processus expansif intracrânien ou hypophysaire), de sensibilité au froid et de constipation (hypothyroïdie), ainsi que d’anosmie (<span class="c-red">syndrome de Kallmann</span>). L’anamnèse familiale est évocatrice avec un père à développement pubertaire tardif (mue à 16–17 ans).</p><p>Au statut clinique, petite taille harmonieuse (142 cm, &lt;3e percentile) avec poids normal, sans dysmorphie, statut prépubère (Tanner I, volume testiculaire env. 3 ml). La taille cible génétique est d’environ 170 cm.</p><p>Dans la démarche diagnostique, l’âge osseux est nettement retardé, à env. 11 ans, ce qui atteste d’un potentiel de croissance non épuisé et constitue un élément clé du RCCP; le bilan de base, incluant l’axe thyroïdien, l’hémogramme, les paramètres inflammatoires et la sérologie coeliaque, est sans particularité.</p><p>La prise en charge met l’accent sur la dépathologisation, le suivi de l’évolution de la croissance et de la puberté, ainsi qu’un <span class="c-yellow">filet de sécurité</span> clair; une <span class="c-amber">hormonothérapie</span> n’est pas indiquée.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Aperçu AKDP</div><div class="annexe-expert-content"><p>Anamnèse: Petite taille depuis l’école enfantine, percentile parallèle sans cassure, absence de signes pubertaires, garçon sain et performant, père développement tardif</p><p>Statut clinique: 142 cm (&lt;3e percentile), proportions harmonieuses, pas de dysmorphie, Tanner I, volume testiculaire env. 3 ml</p><p>Diagnostic: Âge osseux env. 11 ans (retardé), bilan de base incl. thyroïde et sérologie coeliaque sans particularité</p><p>Procédure: Dépathologisation, suivi évolutif, <span class="c-yellow">filet de sécurité</span>, pas d’<span class="c-amber">hormonothérapie</span></p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+<div class="images-wrapper">
+<div class="annexe-item" data-image-id="img1">
+    <div class="annexe-title">Évolution des percentiles</div>
+    <div class="annexe-description">Percentile de taille stable depuis des années juste en dessous du 3e p., parallèle sans cassure.</div>
+    <div class="annexe-image">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAJ0A4QDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAMEAgUGAQcI/8QAUBAAAQMDAAcCCwQIBQMDAwMFAQACAwQFEQYSExQhMZJRUwciQVJUYXGBk9HhMmORoRUjM0JyorHBQ0RidIIWJDQIF6MlVfBzg9I1N0Vksv/EABoBAQEBAQEBAQAAAAAAAAAAAAABAgMEBQb/xAA0EQEAAQMCAgkEAQQBBQAAAAAAAQIDEQQhEjETQVFhcZGh0fAFFIGxwRUiMjNSJEJDguH/2gAMAwEAAhEDEQA/AP1CiIooiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIi9wew/gg8REQEREBERARYyyMhY6SV7Y2NGXOecAD1krHeYdvu+2i22rr7PXGtq9uOePWgkREQERRiohM5pxNHtg3X2euNbV7cc8etBIiL1B4iLGSWOFuvI9kbcgaznADJOBxKDJFC6spmPlY6oha+JuvI0yAFje0jPAesqSORk0bZI3texwy1zSCCO0EIMkREBERARe4PYfwXiAiIgIiICIiAihq62loIdvV1MNNFrNZtJnhjdZxAaMnhkkgD1lT4PYfwQeIvV4gIvcEeQqKGohqC8QzRylh1X6jw7VPYcckEiIiAiISGgkkADiSfIgIoqSrpq+mjqqSohqaeUa0csLw9jx2gjgQpUBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQejmF+Uq242I3Pwk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xyHMrKiudFchIaOqiqBGdVxjOcH/APAVRZREQEREBeOY1+NZrXYORkZwe1eogIiICIiD0HCLxEBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERB6tPJaa1tbeaqmnhikrKeKOnc4a2zexrxlw7MuC269UHJw6K3I1TqmeaLWfU0UxDp3yuxCXF3jEDJOeGAAoXaEVk1Hu8lRTt/7WWLI1iNd1SJm55HVwAD5exdkiYGntlnkjgrRUww08tWNR7oaiSZxGqWglz+ORk4WmZofWfowUUkdCJYYooI6gTyvL2tkY4+K7gwEMHAZ448i7FeINXHaJN8vUkkgbFcSwMLD4zAItQk+vsVGCy3R1JaaWp3FrLbPC4Oic47RjGObnBHini3hx8vFdEio5+j0dqaaooZC+HFPcKurfjOS2USYA4c/HGfetzHQwxVs9Y3abadjGPzIS3Dc4w3kOZ4jmrC8UGii0eli0lluO2j3PDp4ocHWbUuaGPefJjVb+LnLUzaJXmtiqXVVXBJUS0DqQvMz3BzzI12sBqgMbhp8UDh612aJgc1HovLHcp3PZTzUstW+sbI+eUPjc7jwjHiEgng7s8ioyaI3ept0NHM+3htPbjb2FrnnaePGQ52RwyIzw48TzK7NEGmuVpq57zTV1E6Om1NRsszZXBz42uJMbo8argQSASQW5JVbSixXW97eCnqYm0stOGNY6VzNSQOJJcGjxwRgAEgDB4HK6NEHPO0dqTtcPgy+8MuI4n9mNXhy+14p9XrVKXQ2rmstvtxnp2Pp6GppXvGSNaQDBHDiMjjyXXLxBylZozdblUy11SaKOfNK+OGOaTUJi2mQ54AcMiTgQOBA5ryq0SqqmnmEbaSmfNR1kLmtmkkG0m1MOLnDJ+xxPswF1q8TA5qPRmeK6zzOjpqmmnqmVZdJPK10bgG8NQeK7BaCCcevkrmjtpq7SJ45XsjpSGCClZM6VsOM62q5wBDTww3iBhblFQREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBER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asTq9gkbE/nrNB8VvAdmPUvo9D4KZLrMyr0uv8ldI3lTwSarGeoHyD+EBR8qz9Wq1NP/AEtuZ8doj87+jn7v4R7zd5t0guEj5H8BSWSMjPqMzgXO/wCLQPWttR6Jad6U0UFLdribNbI2ta2DWL5XActbjkn1ud7l9Gs9mstgh2NspqSlb5THjWd7XHifeVe20Xex9QR2+xu3t9TczH/GnaPPnLl9H/Bjo3YNWQUe+1I47erw857Q37I/BdXjAA8g4D1LHbRd7H1BNtF3sfUEy91mxbs08NumIhkix20Xex9QTbRd7H1BHVkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QTbRd7H1BBkix20Xex9QWaDxERUEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERBhMZhE/d9ntceJtM6ufXjiudoNHbpbaagdBVUQq6SB9KS5j3RvjJa4HGQQ4Fuew8QulUNZX0tug29XOyGPIaC7yk8gBzJ9QUHOx6HS0tI+2U1azcKkRbzrxnaksDQ4tIOBrBoznlxxldDcaClutFNRV0DJ6edpbJG7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iICIiAiIgIiICIiAiIgIiICIiAiIgIiICgkpiXF0bg0niQRwU6KCtu83bF+abvN2xfmrKJgVt3m7YvzTd5u2L81ZRMCtu83bF+abvN2xfmrKJgVt3m7YvzTd5u2L81ZRMCtu83bF+abvN2xfmrKJgVt3m7YvzTd5jzfGPWASrKJgYxRtibqjJ8pJ5krJEQRTQbQ6zTqv5ZxkH2qPd5vOi/NWUTArbvN2xfmm7zdsX5qyiYFbd5u2L803ebti/NWUTArbvN2xfmm7zdsX5qyiYFbd5u2L803ebti/NWUTArbvN2xfmm7zdsX5qyiYFbd5u2L803ebti/NWUTArbvN2xfmm7zdsX5qyiYFbd5u2L80FNKT4z2tH+kcfzVlEwPGMaxoa0YAXqIqIZKfWcXxuDSeYPIrDd5u2L81ZRTArbvN2xfmm7zdsX5qyiYFbd5u2L803ebti/NWUTArbvN2xfmm7zdsX5qyiYFbd5u2L803ebti/NWUTArbvN2xfmm7zdsX5qyiYFbd5u2L803ebti/NWUTArbvN2xfmm7zdsX5qyiYFbd5u2L803ebti/NWUTArbvN2xfmm7zdsX5qyiYFbd5u2L803ebti/NWUTArbvN2xfmm7zdsX5qyiYFYU0p+09jR/pGT+asMY2Noa0YAXqJgERFQREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREH/2Q==" alt="Évolution des percentiles" loading="lazy">
+    </div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 21,
+        "examen": 10,
+        "management": 11,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 3,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 5,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-42 - Plaintes musculosquelettiques - Mme Anna Meier, 79 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-42 - Plaintes musculosquelettiques</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-42" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet de médecin de famille</p>
+            <p style="margin: 5px 0;">👤 Mme Anna Meier, 79 ans</p>
+            <p style="margin: 5px 0;">🏷️ Médecine interne · Raisonnement clinique · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/47</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Maladie actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d&#x27;introduction <span class="patient-response">[&quot;J&#x27;ai des douleurs aux épaules et aux hanches. Parfois aussi dans la nuque.&quot;]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Bilatéralité des plaintes <span class="patient-response">[Oui, cela touche les deux épaules et les deux hanches, à peu près aussi fort]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les douleurs bilatérales des épaules sont un critère d&#x27;entrée des critères de classification EULAR/ACR 2012 et une caractéristique clinique centrale de la PMR.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Déclencheur / Traumatisme <span class="patient-response">[Aucun déclencheur ou traumatisme connu]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début / Durée <span class="patient-response">[Depuis 6 semaines]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Survenue <span class="patient-response">[A plutôt commencé progressivement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La PMR commence typiquement de manière progressive.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[nettement aggravée ces dernières semaines.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[Oui, irradie dans la cuisse et aussi dans le bras]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;irradiation dans les bras et les cuisses correspond à la distribution proximale typique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Intensité / Sévérité <span class="patient-response">[Au maximum environ 7 sur 10]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Qualité <span class="patient-response">[Une douleur profonde, sourde]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs aggravants <span class="patient-response">[Quand je reste assise longtemps, je n&#x27;arrive presque plus à me lever.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des plaintes après des périodes de repos plaident pour un caractère inflammatoire et contre une douleur purement mécanique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-9" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs soulageants <span class="patient-response">[Quand je bouge un peu, ça va mieux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une amélioration au mouvement correspond à un tableau inflammatoire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-10" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures prises jusqu&#x27;à présent <span class="patient-response">[J&#x27;ai essayé le paracétamol, mais ça n&#x27;aide que modérément]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-11" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Retentissement des plaintes <span class="patient-response">[C&#x27;est très pesant. Se coiffer et se lever est plus difficile]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La limitation fonctionnelle rend visible la souffrance et l&#x27;impact des plaintes dans la vie quotidienne.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-12" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Qu&#x27;entendez-vous par là ?]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-13" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée par problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Raideur matinale <span class="patient-response">[Le matin, je suis vraiment raide pendant environ une heure]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une raideur matinale de plus de 45 minutes plaide pour une affection rhumatismale inflammatoire et correspond à une PMR.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Faiblesse musculaire <span class="patient-response">[Non, la force est là, mais ça fait mal]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans la PMR, la fonction est souvent limitée par la douleur, sans véritable parésie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Autres articulations touchées <span class="patient-response">[Le poignet droit est douloureux, mais moins que les épaules/hanches]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">De légères plaintes périphériques peuvent survenir dans la PMR, mais une atteinte articulaire périphérique marquée plaide plutôt pour un autre diagnostic différentiel.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Signes d&#x27;arthrite<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;absence de gonflements articulaires plaide contre une arthrite périphérique.</span></span></span> · Gonflement articulaire <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes d&#x27;arthrite · Chaleur <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes d&#x27;arthrite · Rougeur <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Symptômes d&#x27;une artérite à cellules géantes<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Au premier plan se trouvent ici surtout les signes d&#x27;alarme crâniens typiques d&#x27;une artérite à cellules géantes.</span></span></span> · Céphalées <span class="patient-response">[Non, je n&#x27;ai pas de maux de tête.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des céphalées d&#x27;apparition récente peuvent être un signe d&#x27;artérite à cellules géantes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes d&#x27;une artérite à cellules géantes · Claudication de la mâchoire <span class="patient-response">[Non, je n&#x27;ai pas de douleurs en mâchant.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La claudication de la mâchoire est un signe particulièrement important d&#x27;artérite à cellules géantes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes d&#x27;une artérite à cellules géantes · Troubles visuels <span class="patient-response">[Non, je vois bien.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les troubles visuels peuvent indiquer des complications oculaires ischémiques d&#x27;une artérite à cellules géantes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-8" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes d&#x27;une artérite à cellules géantes · Claudication des bras <span class="patient-response">[Pas de douleurs ni de fatigue rapide dans les bras]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Peut indiquer une atteinte des gros vaisseaux dans une artérite à cellules géantes, en particulier en cas d&#x27;atteinte de l&#x27;artère subclavière ou axillaire. Cependant, comme la patiente rapporte une amélioration au mouvement, cette forme d&#x27;ACG est improbable et donc mentionnée ici comme information complémentaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-9" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">État général et capacité fonctionnelle <span class="patient-response">[Nettement plus fatiguée que d&#x27;habitude et pas vraiment en forme]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La fatigue et la baisse de l&#x27;état général peuvent être des symptômes constitutionnels associés à la PMR.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-10" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes B <span class="patient-response">[Pas de perte de poids, pas de sueurs nocturnes et pas de fièvre prolongée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Environ un tiers des patientes et patients atteints de PMR présentent des symptômes constitutionnels tels qu&#x27;une température subfébrile, une légère perte de poids ou des sueurs nocturnes. De tels symptômes B plutôt légers n&#x27;indiquent pas automatiquement une malignité. Une fièvre élevée ou une perte de poids marquée sont en revanche plus atypiques et doivent faire penser à un diagnostic concomitant ou alternatif, par exemple une artérite à cellules géantes, une infection, une malignité ou une autre maladie inflammatoire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-11" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse différentielle / Anamnèse systémique <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD Fibromyalgie<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La distribution proximale claire plaide contre un syndrome douloureux généralisé comme la fibromyalgie.</span></span></span> · Douleurs diffuses <span class="patient-response">[Non, vraiment surtout aux hanches et aux épaules]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Fibromyalgie · Troubles du sommeil <span class="patient-response">[Non, je dors bien]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Fibromyalgie · Stress <span class="patient-response">[Non, pas vraiment]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD Collagénoses<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une éruption cutanée, une dysphagie et une véritable diminution de la force peuvent être des signes d&#x27;une myopathie inflammatoire ou d&#x27;une collagénose.</span></span></span> · Éruption cutanée <span class="patient-response">[Non, pas d&#x27;éruption cutanée]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Collagénoses · Difficultés à avaler <span class="patient-response">[Pas de difficultés à avaler]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Collagénoses · Syndrome de Raynaud <span class="patient-response">[Pas de troubles circulatoires remarqués]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD Hypothyroïdie<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;absence de symptômes d&#x27;hypothyroïdie rend ce diagnostic différentiel moins probable.</span></span></span> · Intolérance au froid <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Hypothyroïdie · Constipation <span class="patient-response">[Non, selles normales]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Hypothyroïdie · Prise de poids <span class="patient-response">[Non, le poids est stable]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-8" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Hypothyroïdie · Chute de cheveux <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-9" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents médicaux <span class="patient-response">[Hypertension artérielle, hyperlipidémie et densité osseuse diminuée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Important en cas de suspicion de PMR, car cela peut d&#x27;une part donner des indices sur des diagnostics différentiels pertinents ou des antécédents rhumatologiques. D&#x27;autre part, c&#x27;est central pour la planification thérapeutique, car le traitement se fait généralement par glucocorticoïdes et les comorbidités comme le diabète ou l&#x27;ostéoporose influencent le risque d&#x27;effets secondaires et la prise en charge ultérieure.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Opérations antérieures <span class="patient-response">[Aucune opération]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Oui, je prends du Ramipril, de l&#x27;Atorvastatine et de la vitamine D.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La statine est particulièrement pertinente, car elle doit être envisagée comme cause de myalgies ou d&#x27;une myopathie médicamenteuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Alcool <span class="patient-response">[Occasionnellement un verre de vin, sinon peu.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pertinence surtout pour les diagnostics différentiels : en cas de consommation d&#x27;alcool élevée, il faut notamment envisager une myopathie alcoolo-toxique ou des carences comme cause alternative des plaintes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Tabac <span class="patient-response">[Non, je ne fume pas.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pertinence surtout pour les diagnostics différentiels : le tabagisme ne plaide pas pour une PMR en soi, mais augmente la plausibilité d&#x27;un diagnostic différentiel malin, surtout en présence de symptômes B supplémentaires ou d&#x27;une dégradation de l&#x27;état général.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Drogues <span class="patient-response">[Non.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pertinence surtout pour les diagnostics différentiels : la consommation de drogues peut indiquer des causes toxiques ou infectieuses des plaintes et rend un tableau clinique systémique ou myopathique non spécifique plus probable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Allergie au pollen]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux <span class="patient-response">[Ma mère souffrait d&#x27;arthrose]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux · Maladies rhumatologiques <span class="patient-response">[Non, pas connues]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une anamnèse familiale positive pour les maladies rhumatologiques augmente la probabilité de diagnostics différentiels correspondants, mais n&#x27;est pas déterminante pour le diagnostic de PMR lui-même.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation sociale <span class="patient-response">[Je vis avec mon mari, tous les deux à la retraite]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;évaluation de la situation de logement et de l&#x27;environnement social aide à estimer l&#x27;autonomie et les besoins de soutien dans la vie quotidienne et est pertinente pour la planification thérapeutique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Niveau fonctionnel antérieur <span class="patient-response">[Normalement assez active, je me promène et je fais le ménage]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Il est important de demander le niveau fonctionnel antérieur, car il montre la baisse fonctionnelle due à la maladie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/17</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Paramètres vitaux <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Paramètres vitaux demandés <span class="patient-response">[Tension artérielle 148/84 mmHg bilatérale, pouls 86/min régulier, SpO2 97 %, température 36.8 °C]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Important pour exclure des causes infectieuses.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Épaule <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Tests globaux <span class="patient-response">[Prise de la nuque et prise du tablier difficiles des deux côtés]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection <span class="patient-response">[Pas d&#x27;atrophie musculaire, pas de rougeur ni de gonflement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Douleur diffuse à la pression bilatérale de la ceinture scapulaire et des bras proximaux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La douleur proximale à la pression est typique de la polymyalgia rheumatica.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mobilité <span class="patient-response">[Mouvements actifs et passifs nettement limités et douloureux des deux côtés]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de force orienté <span class="patient-response">[Force conservée symétriquement, mais le mouvement est douloureux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Important pour la distinction par rapport à une parésie ou une myosite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-4" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Hanche <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Se lever / Analyse de la marche <span class="patient-response">[Se lever ralenti, démarche un peu raide avec mobilité réduite des hanches]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une démarche symétriquement raide plaide pour une limitation douloureuse et contre des causes neurologiques ou structurelles unilatérales.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection <span class="patient-response">[Pas d&#x27;atrophie musculaire, pas de rougeur ni de gonflement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Douleur diffuse à la pression bilatérale de la hanche latérale et de la cuisse proximale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La douleur proximale à la pression est typique de la polymyalgia rheumatica.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mobilité des articulations de la hanche <span class="patient-response">[Limitée des deux côtés en raison de la douleur, surtout en flexion et rotation interne]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de force orienté <span class="patient-response">[Force globale conservée symétriquement, mais le mouvement est douloureux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Important pour la distinction par rapport à une parésie ou une myosite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-4" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Articulations périphériques et mains <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Examen orienté des mains et des poignets · Inspection <span class="patient-response">[Pas de gonflement ni de rougeurs, pas de modifications cutanées]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;inspection des mains est importante dans ce cas, car elle contribue de manière significative à la distinction des diagnostics différentiels importants. Des gonflements ou des rougeurs aux doigts et aux poignets peuvent indiquer une arthrite périphérique et donc plutôt plaider pour une polyarthrite rhumatoïde. Il faut en outre prêter attention aux papules de Gottron comme signe possible d&#x27;une dermatomyosite ainsi qu&#x27;à d&#x27;autres signes cutanés faisant penser à une collagénose systémique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Examen orienté des mains et des poignets · Palpation <span class="patient-response">[Poignet, MCP et PIP non douloureux à la pression]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Vasculaire <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation de l&#x27;artère temporale <span class="patient-response">[Bien palpable des deux côtés, non épaissie et non douloureuse à la pression.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Bref contrôle clinique d&#x27;une éventuelle artérite à cellules géantes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Autre atteinte vasculaire<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de suspicion de PMR, il convient d’exclure une artérite à cellules géantes des gros vaisseaux. Des différences de tension artérielle, des pouls diminués ou des souffles vasculaires peuvent indiquer une atteinte vasculaire. Cependant, la patiente ne présentant pas de symptômes correspondants, les critères sont marqués comme facultatifs.</span></span></span> · Mesure de la tension artérielle bilatérale <span class="patient-response">[Pas de différence de tension artérielle]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Autre atteinte vasculaire · Palpation des artères périphériques <span class="patient-response">[86/min, fort, régulier, symétrique]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-2" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Autre atteinte vasculaire · Auscultation des vaisseaux périphériques <span class="patient-response">[Pas de souffles vasculaires]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-3" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/30</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Question 1 : Quel est votre diagnostic de travail le plus probable et quels sont les indices anamnestiques et cliniques qui le soutiennent ? <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail Polymyalgia rheumatica <span class="patient-response">[Correctement mentionné]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Indices anamnestiques · Âge typique <span class="patient-response">[&gt;50 ans]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Âge typique <span class="patient-response">[&gt;50 ans]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Indices anamnestiques <span class="patient-response">[&gt;50 ans]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-3" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Douleur à la pression des ceintures scapulaire et pelvienne</div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-4" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Question 2 : Quels diagnostics différentiels envisagez-vous ? Justifiez les 4 plus importants avec des arguments pour et contre. <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Polyarthrite rhumatoïde <span class="patient-response">[mentionnée comme DD]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Polyarthrite rhumatoïde · Arguments pour mentionnés <span class="patient-response">[Raideur matinale, âge avancé, possible atteinte articulaire périphérique]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Polyarthrite rhumatoïde · Arguments contre mentionnés <span class="patient-response">[ø synovite périphérique typique, ø petites articulations touchées]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Pathologie dégénérative de l&#x27;épaule ou de la hanche · Maladie dégénérative <span class="patient-response">[mentionnée comme DD]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Pathologie dégénérative de l&#x27;épaule ou de la hanche · Arguments pour mentionnés <span class="patient-response">[Âge avancé, douleurs, limitation de la mobilité]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Pathologie dégénérative de l&#x27;épaule ou de la hanche · Arguments contre mentionnés <span class="patient-response">[Distribution proximale bilatérale, raideur matinale, amélioration par le mouvement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-5" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Myopathie inflammatoire (polymyosite ou dermatomyosite) · Myopathie inflammatoire <span class="patient-response">[mentionnée comme DD]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-6" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Myopathie inflammatoire (polymyosite ou dermatomyosite) · Arguments pour mentionnés <span class="patient-response">[Douleurs et limitation fonctionnelle des ceintures scapulaire et pelvienne]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-7" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Myopathie inflammatoire (polymyosite ou dermatomyosite) · Arguments contre mentionnés <span class="patient-response">[ø faiblesse musculaire, ø signe d&#x27;érythème héliotrope]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-8" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Myopathie associée aux statines · Myopathie aux statines <span class="patient-response">[mentionnée comme DD]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-9" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Myopathie associée aux statines · Arguments pour mentionnés <span class="patient-response">[Prise de statine, douleurs proximales prédominantes]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-10" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Myopathie associée aux statines · Arguments contre mentionnés <span class="patient-response">[Raideur matinale, caractère inflammatoire]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-11" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Myopathie inflammatoire (polymyosite ou dermatomyosite) <span class="patient-response">[mentionnée comme DD — Douleurs et limitation fonctionnelle des ceintures scapulaire et pelvienne — ø faiblesse musculaire, ø signe d&#x27;érythème héliotrope — mentionnée comme DD — Prise de statine, douleurs proximales prédominantes — Raideur matinale, caractère inflammatoire]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-12" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Hypothyroïdie</div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-13" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Question 3 : Par quels examens complémentaires pouvez-vous confirmer votre diagnostic de travail et par lesquels pouvez-vous exclure les diagnostics différentiels pertinents ? <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les paramètres inflammatoires et la formule sanguine font partie du bilan de base initial.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">CRP demandée</div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">CK demandée</div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Échographie épaule / hanche<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Peut être utile en cas de situation incertaine ou atypique. Les résultats typiques de PMR seraient une bursite sous-deltoïdienne, une ténosynovite du biceps ou une synovite de la hanche.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Question 4 : Si votre diagnostic de travail se confirme, quel traitement et quelle suite de procédure mettriez-vous en place ? <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Corticothérapie <span class="patient-response">[Mentionnée comme traitement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les glucocorticoïdes sont le traitement de choix dans la PMR, car ils inhibent rapidement l&#x27;inflammation et améliorent ainsi nettement les douleurs et la raideur matinale en quelques jours. Une amélioration rapide correspond bien au diagnostic, mais ne le prouve pas, car d&#x27;autres maladies inflammatoires et parfois malignes peuvent également y répondre. C&#x27;est pourquoi le diagnostic ne doit pas être posé uniquement sur la base de la réponse thérapeutique. En raison des effets secondaires possibles, surtout chez les patientes et patients âgés, un diagnostic différentiel soigneux et un suivi étroit sont en outre importants.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suivi <span class="patient-response">[Pour le contrôle de l&#x27;évolution clinique et biologique dans 1 semaine]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Après le diagnostic, un suivi clinique et biologique rapproché est nécessaire pour surveiller l&#x27;activité de la maladie, la réponse au traitement, les effets secondaires, les récidives et la durée du traitement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prophylaxie et surveillance des effets secondaires des glucocorticoïdes <span class="patient-response">[Prophylaxie de l&#x27;ostéoporose, contrôles réguliers de la tension artérielle, de la glycémie et de la formule sanguine]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans ce cas, particulièrement important en raison de la densité osseuse déjà diminuée et de l&#x27;hypertension artérielle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Orientation rhumatologique <span class="patient-response">[Mentionnée comme suite de procédure]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une orientation rhumatologique peut être utile pour confirmer le diagnostic, évaluer le risque et décider du traitement. La prise en charge ultérieure sous monothérapie par glucocorticoïdes est toutefois possible en médecine de famille.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Question 5 : À quelles évolutions ou complications potentiellement dangereuses devez-vous penser et pour quels symptômes une consultation immédiate est-elle nécessaire ? <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Artérite à cellules géantes concomitante <span class="patient-response">[Mentionnée comme complication possible]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Artérite à cellules géantes concomitante <span class="patient-response">[Mentionnée comme complication possible]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Céphalées</div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les inquiétudes, les besoins, les préoccupations et les attentes du/de la patient/e et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l&#x27;entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation montre une structure claire, un fil rouge compréhensible et reste adaptable avec flexibilité.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée au patient, favorise la compréhension par la répétition, le reflet, le résumé et les explications, et utilise la voix, le débit et les pauses de manière ciblée.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance de manière ciblée pour créer une atmosphère d&#x27;entretien attentive, confiante et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/110</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Bilatéralité des plaintes</strong> — Les <span class="c-pink">douleurs</span> bilatérales des épaules sont un critère d&#x27;entrée des critères de classification EULAR/ACR 2012 et une caractéristique clinique centrale de la PMR.</li><li><strong>Dimension temporelle · Survenue</strong> — La PMR commence typiquement de manière progressive.</li><li><strong>Irradiation</strong> — L&#x27;irradiation dans les bras et les cuisses correspond à la distribution proximale typique.</li><li><strong>Facteurs aggravants</strong> — Des plaintes après des périodes de repos plaident pour un caractère inflammatoire et contre une <span class="c-pink">douleur</span> purement mécanique.</li><li><strong>Facteurs soulageants</strong> — Une amélioration au mouvement correspond à un tableau inflammatoire.</li><li><strong>Retentissement des plaintes</strong> — La limitation fonctionnelle rend visible la souffrance et l&#x27;impact des plaintes dans la vie quotidienne.</li><li><strong>Raideur matinale</strong> — Une <span class="c-pink">raideur matinale</span> de plus de 45 minutes plaide pour une affection rhumatismale inflammatoire et correspond à une PMR.</li><li><strong>Faiblesse musculaire</strong> — Dans la PMR, la fonction est souvent limitée par la <span class="c-pink">douleur</span>, sans véritable parésie.</li><li><strong>Autres articulations touchées</strong> — De légères plaintes périphériques peuvent survenir dans la PMR, mais une atteinte articulaire périphérique marquée plaide plutôt pour un autre <span class="c-yellow">diagnostic différentiel</span>.</li><li class="theorie-sous-groupe"><strong>Signes d&#x27;arthrite</strong> — L&#x27;absence de gonflements articulaires plaide contre une <span class="c-red">arthrite</span> périphérique.</li><li class="theorie-sous-groupe"><strong>Symptômes d&#x27;une artérite à cellules géantes</strong> — Au premier plan se trouvent ici surtout les <span class="c-yellow">signes d&#x27;alarme</span> crâniens typiques d&#x27;une <span class="c-red">artérite à cellules géantes</span>.</li><li><strong>Symptômes d&#x27;une artérite à cellules géantes · Céphalées</strong> — Des <span class="c-pink">céphalées</span> d&#x27;apparition récente peuvent être un signe d&#x27;<span class="c-red">artérite à cellules géantes</span>.</li><li><strong>Symptômes d&#x27;une artérite à cellules géantes · Claudication de la mâchoire</strong> — La claudication de la mâchoire est un signe particulièrement important d&#x27;<span class="c-red">artérite à cellules géantes</span>.</li><li><strong>Symptômes d&#x27;une artérite à cellules géantes · Troubles visuels</strong> — Les troubles visuels peuvent indiquer des <span class="c-orange">complications</span> oculaires ischémiques d&#x27;une <span class="c-red">artérite à cellules géantes</span>.</li><li><strong>Symptômes d&#x27;une artérite à cellules géantes · Claudication des bras</strong> — Peut indiquer une atteinte des gros vaisseaux dans une <span class="c-red">artérite à cellules géantes</span>, en particulier en cas d&#x27;atteinte de l&#x27;artère subclavière ou axillaire. Cependant, comme la patiente rapporte une amélioration au mouvement, cette forme d&#x27;ACG est improbable et donc mentionnée ici comme information complémentaire.</li><li><strong>État général et capacité fonctionnelle</strong> — La <span class="c-pink">fatigue</span> et la baisse de l&#x27;état général peuvent être des symptômes constitutionnels associés à la PMR.</li><li><strong>Symptômes B</strong> — Environ un tiers des patientes et patients atteints de PMR présentent des symptômes constitutionnels tels qu&#x27;une température subfébrile, une légère <span class="c-pink">perte de poids</span> ou des <span class="c-pink">sueurs nocturnes</span>. De tels symptômes B plutôt légers n&#x27;indiquent pas automatiquement une malignité. Une <span class="c-pink">fièvre</span> élevée ou une <span class="c-pink">perte de poids</span> marquée sont en revanche plus atypiques et doivent faire penser à un diagnostic concomitant ou alternatif, par exemple une <span class="c-red">artérite à cellules géantes</span>, une infection, une malignité ou une autre maladie inflammatoire.</li><li class="theorie-sous-groupe"><strong>DD Fibromyalgie</strong> — La distribution proximale claire plaide contre un <span class="c-red">syndrome douloureux</span> généralisé comme la <span class="c-red">fibromyalgie</span>.</li><li class="theorie-sous-groupe"><strong>DD Collagénoses</strong> — Une <span class="c-pink">éruption cutanée</span>, une dysphagie et une véritable diminution de la force peuvent être des signes d&#x27;une myopathie inflammatoire ou d&#x27;une <span class="c-red">collagénose</span>.</li><li class="theorie-sous-groupe"><strong>DD Hypothyroïdie</strong> — L&#x27;absence de symptômes d&#x27;hypothyroïdie rend ce <span class="c-yellow">diagnostic différentiel</span> moins probable.</li><li><strong>Antécédents médicaux</strong> — Important en cas de suspicion de PMR, car cela peut d&#x27;une part donner des indices sur des <span class="c-yellow">diagnostics différentiels</span> pertinents ou des antécédents rhumatologiques. D&#x27;autre part, c&#x27;est central pour la planification thérapeutique, car le traitement se fait généralement par glucocorticoïdes et les comorbidités comme le <span class="c-purple">diabète</span> ou l&#x27;<span class="c-red">ostéoporose</span> influencent le risque d&#x27;effets secondaires et la prise en charge ultérieure.</li><li><strong>Médicaments</strong> — La statine est particulièrement pertinente, car elle doit être envisagée comme cause de myalgies ou d&#x27;une myopathie médicamenteuse.</li><li><strong>Noxes · Alcool</strong> — Pertinence surtout pour les <span class="c-yellow">diagnostics différentiels</span> : en cas de consommation d&#x27;<span class="c-purple">alcool</span> élevée, il faut notamment envisager une myopathie alcoolo-toxique ou des carences comme cause alternative des plaintes.</li><li><strong>Noxes · Tabac</strong> — Pertinence surtout pour les <span class="c-yellow">diagnostics différentiels</span> : le <span class="c-purple">tabagisme</span> ne plaide pas pour une PMR en soi, mais augmente la plausibilité d&#x27;un <span class="c-yellow">diagnostic différentiel</span> malin, surtout en présence de symptômes B supplémentaires ou d&#x27;une dégradation de l&#x27;état général.</li><li><strong>Noxes · Drogues</strong> — Pertinence surtout pour les <span class="c-yellow">diagnostics différentiels</span> : la consommation de drogues peut indiquer des causes toxiques ou infectieuses des plaintes et rend un tableau clinique systémique ou myopathique non spécifique plus probable.</li><li><strong>Antécédents familiaux · Maladies rhumatologiques</strong> — Une anamnèse familiale positive pour les maladies rhumatologiques augmente la probabilité de <span class="c-yellow">diagnostics différentiels</span> correspondants, mais n&#x27;est pas déterminante pour le diagnostic de PMR lui-même.</li><li><strong>Situation sociale</strong> — L&#x27;évaluation de la situation de logement et de l&#x27;environnement social aide à estimer l&#x27;autonomie et les besoins de soutien dans la vie quotidienne et est pertinente pour la planification thérapeutique.</li><li><strong>Niveau fonctionnel antérieur</strong> — Il est important de demander le niveau fonctionnel antérieur, car il montre la baisse fonctionnelle due à la maladie.</li></ul>
+</div><div class="theorie-section">
+    <h4>Examen clinique</h4>
+    <ul><li><strong>Paramètres vitaux demandés</strong> — Important pour exclure des causes infectieuses.</li><li><strong>Palpation</strong> — La <span class="c-pink">douleur</span> proximale à la pression est typique de la polymyalgia rheumatica.</li><li><strong>Test de force orienté</strong> — Important pour la distinction par rapport à une parésie ou une <span class="c-red">myosite</span>.</li><li><strong>Se lever / Analyse de la marche</strong> — Une démarche symétriquement raide plaide pour une limitation douloureuse et contre des causes neurologiques ou structurelles unilatérales.</li><li><strong>Palpation</strong> — La <span class="c-pink">douleur</span> proximale à la pression est typique de la polymyalgia rheumatica.</li><li><strong>Test de force orienté</strong> — Important pour la distinction par rapport à une parésie ou une <span class="c-red">myosite</span>.</li><li><strong>Examen orienté des mains et des poignets · Inspection</strong> — L&#x27;<span class="c-green">inspection</span> des mains est importante dans ce cas, car elle contribue de manière significative à la distinction des <span class="c-yellow">diagnostics différentiels</span> importants. Des gonflements ou des rougeurs aux doigts et aux poignets peuvent indiquer une <span class="c-red">arthrite</span> périphérique et donc plutôt plaider pour une <span class="c-red">polyarthrite</span> rhumatoïde. Il faut en outre prêter attention aux papules de Gottron comme signe possible d&#x27;une <span class="c-red">dermatomyosite</span> ainsi qu&#x27;à d&#x27;autres signes cutanés faisant penser à une <span class="c-red">collagénose</span> systémique.</li><li><strong>Palpation de l&#x27;artère temporale</strong> — Bref contrôle clinique d&#x27;une éventuelle <span class="c-red">artérite à cellules géantes</span>.</li><li class="theorie-sous-groupe"><strong>Autre atteinte vasculaire</strong> — En cas de suspicion de PMR, il convient d’exclure une <span class="c-red">artérite à cellules géantes</span> des gros vaisseaux. Des différences de tension artérielle, des pouls diminués ou des souffles vasculaires peuvent indiquer une atteinte vasculaire. Cependant, la patiente ne présentant pas de symptômes correspondants, les critères sont marqués comme facultatifs.</li></ul>
+</div><div class="theorie-section">
+    <h4>Clinical Reasoning</h4>
+    <ul><li><strong>Laboratoire</strong> — Les paramètres inflammatoires et la formule sanguine font partie du bilan de base initial.</li><li><strong>Échographie épaule / hanche</strong> — Peut être utile en cas de situation incertaine ou atypique. Les résultats typiques de PMR seraient une <span class="c-red">bursite</span> sous-deltoïdienne, une <span class="c-red">ténosynovite</span> du biceps ou une <span class="c-red">synovite</span> de la hanche.</li><li><strong>Corticothérapie</strong> — Les glucocorticoïdes sont le traitement de choix dans la PMR, car ils inhibent rapidement l&#x27;inflammation et améliorent ainsi nettement les <span class="c-pink">douleurs</span> et la <span class="c-pink">raideur matinale</span> en quelques jours. Une amélioration rapide correspond bien au diagnostic, mais ne le prouve pas, car d&#x27;autres maladies inflammatoires et parfois malignes peuvent également y répondre. C&#x27;est pourquoi le diagnostic ne doit pas être posé uniquement sur la base de la réponse thérapeutique. En raison des effets secondaires possibles, surtout chez les patientes et patients âgés, un <span class="c-yellow">diagnostic différentiel</span> soigneux et un suivi étroit sont en outre importants.</li><li><strong>Suivi</strong> — Après le diagnostic, un suivi clinique et biologique rapproché est nécessaire pour surveiller l&#x27;activité de la maladie, la réponse au traitement, les effets secondaires, les <span class="c-orange">récidives</span> et la durée du traitement.</li><li><strong>Prophylaxie et surveillance des effets secondaires des glucocorticoïdes</strong> — Dans ce cas, particulièrement important en raison de la densité osseuse déjà diminuée et de l&#x27;<span class="c-purple">hypertension artérielle</span>.</li><li><strong>Orientation rhumatologique</strong> — Une orientation rhumatologique peut être utile pour confirmer le diagnostic, évaluer le risque et décider du traitement. La prise en charge ultérieure sous <span class="c-amber">monothérapie</span> par glucocorticoïdes est toutefois possible en médecine de famille.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Anamnèse et examen ciblés en cas de plaintes musculosquelettiques</li><li>Clinical Reasoning sur les <span class="c-yellow">diagnostics différentiels</span>, le diagnostic, le traitement et les <span class="c-orange">complications</span></li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Diagnostic : Polymyalgia rheumatica sans <span class="c-red">artérite à cellules géantes</span></p><p>Chez Mme Anna Meier, 79 ans, le tableau clinique est celui d&#x27;une polymyalgia rheumatica, actuellement sans signe d&#x27;<span class="c-red">artérite à cellules géantes</span> concomitante.</p><p>Le diagnostic repose sur l&#x27;anamnèse avec des <span class="c-pink">douleurs</span> bilatérales progressives depuis 6 semaines au niveau des ceintures scapulaire et pelvienne, parfois aussi dans la nuque, accompagnées d&#x27;une <span class="c-pink">raideur matinale</span> marquée, d&#x27;une aggravation au repos et d&#x27;une amélioration à l&#x27;effort. La patiente rapporte une limitation douloureuse de la mobilité, mais pas de faiblesse musculaire.</p><p>L&#x27;examen clinique montre une <span class="c-pink">douleur</span> diffuse à la pression des ceintures scapulaire et pelvienne ainsi qu&#x27;une limitation douloureuse de la mobilité active et passive, avec une force musculaire globalement conservée. Il n&#x27;y a pas de signe d&#x27;<span class="c-red">arthrite</span> périphérique floride tel que gonflement articulaire, rougeur ou chaleur. Les symptômes d&#x27;une <span class="c-red">artérite à cellules géantes</span> (ACG) concomitante comme des <span class="c-pink">céphalées</span> récentes, une claudication de la mâchoire ou des troubles visuels sont actuellement absents. Pour confirmer le diagnostic présumé et exclure les <span class="c-yellow">diagnostics différentiels</span> importants, un <span class="c-green">bilan biologique</span> ciblé avec des paramètres inflammatoires et des analyses de laboratoire sélectionnées est indiqué.</p><p>Dans ce contexte, l&#x27;instauration d&#x27;une <span class="c-amber">corticothérapie</span> et un suivi clinique et biologique étroit sont au premier plan. La patiente doit être informée des symptômes d&#x27;une <span class="c-red">artérite à cellules géantes</span> qui nécessiteraient une consultation immédiate.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Aperçu AKDP</div><div class="annexe-expert-content"><p>Anamnèse : Plaintes subaiguës bilatérales des épaules et des hanches, caractère inflammatoire, pas de symptômes d&#x27;ACG</p><p>Examen clinique : <span class="c-pink">Douleur</span> à la pression et limitation douloureuse de la mobilité des ceintures scapulaire et pelvienne, pas de signe de parésie</p><p>Diagnostic : CRP, VS, formule sanguine ainsi que bilan d&#x27;exclusion ciblé pour les <span class="c-yellow">diagnostics différentiels</span></p><p>Procédure : Glucocorticoïdes, suivi, <span class="c-yellow">filet de sécurité</span> ACG</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 47,
+        "examen": 17,
+        "management": 30,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 5,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 5,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

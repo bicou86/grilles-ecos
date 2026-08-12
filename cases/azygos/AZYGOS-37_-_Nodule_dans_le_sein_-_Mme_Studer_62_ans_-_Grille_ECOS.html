@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-37 - Nodule dans le sein - Mme Studer, 62 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-37 - Nodule dans le sein</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-37" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Consultation gynécologique</p>
+            <p style="margin: 5px 0;">👤 Mme Studer, 62 ans</p>
+            <p style="margin: 5px 0;">🏷️ Gynécologie &amp; obstétrique · Poste avec mannequin · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/36</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Maladie actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d’entrée <span class="patient-response">[« J’ai trouvé un nodule dans mon sein, cela m’inquiète. »]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Information spontanée de la patiente dans les premières secondes de l’entretien. Énoncée sans demande explicite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Nodule · Découverte <span class="patient-response">[Il y a deux semaines sous la douche. Je l’ai palpé par hasard en me savonnant.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Nodule · Localisation <span class="patient-response">[Du côté droit, en haut à l’extérieur, plutôt vers l’aisselle.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Nodule · Évolution de la taille <span class="patient-response">[Je le contrôle chaque jour. Il me paraît de la même taille qu’au début.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une taille subjectivement stable sur une courte période n’exclut pas une malignité. Tout nodule persistant doit être exploré.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Nodule · Description <span class="patient-response">[Il est dur, comme une petite bille. Environ de la taille d’une cerise. Il ne fait pas mal.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Nodule · Nombre et côté <span class="patient-response">[Uniquement celui-ci. À gauche, j’ai aussi palpé, il n’y a rien.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Douleurs mammaires <span class="patient-response">[Non, le nodule ne fait pas mal. Je ne ressens pas non plus de douleur dans le sein.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Modifications cutanées et des mamelons <span class="patient-response">[Non, je n’ai rien remarqué. Pas de rougeur, pas de capitons, le mamelon a aussi un aspect normal.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Rétraction cutanée, peau d’orange, rétraction mamelonnaire récente ou maladie de Paget sont des signes locaux alarmants de malignité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Sécrétion mamelonnaire <span class="patient-response">[Non, il ne sort rien, ni liquide ni sang.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une sécrétion sanguinolente ou spontanée unilatérale est un signe d’alarme classique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anciens résultats mammaires <span class="patient-response">[Non, je n’ai jamais rien senti. Je ne suis jamais allée chez le médecin pour le sein.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-9" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse gynécologique / reproductive <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Anamnèse reproductive<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Facteurs de risque reproductifs chez cette patiente: ménopause tardive (52 ans), nulliparité, absence d’allaitement. Hormonothérapie négative.</span></span></span> · Ménarche <span class="patient-response">[À douze ans.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse reproductive · Ménopause <span class="patient-response">[À 52 ans, donc plutôt tard, je crois.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une ménopause tardive après 50 ans est considérée comme un facteur de risque en raison d’une exposition prolongée aux œstrogènes endogènes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse reproductive · Grossesses et allaitement <span class="patient-response">[Non, je n’ai pas eu d’enfants, jamais allaité.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La nulliparité et l’absence d’allaitement sont des facteurs de risque établis de carcinome mammaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse reproductive · Hormonothérapie <span class="patient-response">[Non, je n’ai jamais pris d’hormones.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’hormonothérapie post-ménopausique (œstrogène-progestatif combinés) augmente le risque de carcinome mammaire. Ici négative.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prévention et auto-examen · Dernière mammographie <span class="patient-response">[Il y a cinq ans, je crois que tout était sans particularité.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La dernière mammographie date de 5 ans. Recommandation pour les femmes de 50 à 74 ans: tous les deux ans.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prévention et auto-examen · Dernier contrôle gynécologique <span class="patient-response">[Il y a environ trois ans, et il n’y avait rien non plus.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prévention et auto-examen · Auto-examen des seins <span class="patient-response">[Je ne le fais pas vraiment régulièrement. J’ai plutôt senti le nodule par hasard sous la douche.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Questions de dépistage des métastases <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes B <span class="patient-response">[Non, pas de fièvre. Je ne transpire pas plus la nuit qu’avant, et mon poids est stable.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les symptômes B (fièvre, sueurs nocturnes, perte de poids) indiquent une dissémination tumorale systémique ou une paranéoplasie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Dépistage par système d’organes<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Au moins 2 des 4 systèmes d’organes doivent être recherchés activement. Lieux de métastases pertinents pour le carcinome mammaire: os (le plus fréquent), poumon, SNC, foie.</span></span></span> · Douleurs osseuses <span class="patient-response">[Non, pas de douleurs osseuses. Le dos va bien aussi.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les douleurs osseuses sont le symptôme principal des métastases osseuses, la localisation de métastases à distance la plus fréquente dans le carcinome mammaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage par système d’organes · Symptômes pulmonaires <span class="patient-response">[Non, je ne tousse pas et je n’ai pas de dyspnée.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La toux et la dyspnée peuvent indiquer des métastases pulmonaires ou un épanchement pleural.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage par système d’organes · Symptômes neurologiques <span class="patient-response">[Non, pas de maux de tête, tout est normal jusque-là. La vue est bonne aussi.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Indications d’une métastase cérébrale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage par système d’organes · Symptômes abdominaux <span class="patient-response">[Pas de douleurs abdominales, pas de nausées, transit normal.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Signes en faveur de métastases hépatiques: ictère, ascite, satiété précoce, pression dans l’hypocondre droit.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents · Hypertension artérielle <span class="patient-response">[Oui, connue depuis environ dix ans, bien contrôlée.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents · Antécédents oncologiques <span class="patient-response">[Non, je n’ai jamais eu de cancer.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Lisinopril 10 mg par jour. Rien d’autre.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Noxes<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Facteurs de risque liés au mode de vie chez cette patiente: consommation régulière d’alcool et obésité post-ménopausique (BMI 29).</span></span></span> · Alcool <span class="patient-response">[Oui, un verre de vin chaque soir, je me l’accorde.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La consommation régulière d’alcool est un facteur de risque établi de carcinome mammaire, même à dose modérée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Nicotine <span class="patient-response">[Non, je n’ai jamais fumé.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Aucune allergie connue.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Cancers familiaux<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La constellation avec deux parents du premier degré, dont l’un avant 50 ans, remplit clairement les critères pour un conseil génétique.</span></span></span> · Carcinome mammaire <span class="patient-response">[Mère cancer du sein à 52 ans, en rémission. Sœur cancer du sein à 45 ans, actuellement en traitement.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Deux parents du premier degré avec carcinome mammaire, dont un avant 50 ans. Indication claire pour un conseil génétique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Cancers familiaux · Carcinome de l’ovaire <span class="patient-response">[Non.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La présence d’un carcinome ovarien dans la famille renforce le soupçon de prédisposition héréditaire aux cancers du sein et de l’ovaire (BRCA1/2).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Cancers familiaux · Test génétique <span class="patient-response">[Non, pas à notre connaissance.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Information décisive pour l’indication d’un conseil génétique pour la patiente.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Cancers familiaux · Autres maladies <span class="patient-response">[Père cancer de la prostate à 75 ans.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un carcinome de la prostate dans la famille peut également évoquer une mutation BRCA2.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse sociale · Profession <span class="patient-response">[À la retraite, auparavant enseignante primaire.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse sociale · Situation de logement <span class="patient-response">[Mariée, je vis avec mon mari. Les beaux-enfants sont adultes.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse sociale · Soutien <span class="patient-response">[Mon mari est au courant, il m’accompagne si nécessaire.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Charge psychosociale <span class="patient-response">[Oui, je me fais beaucoup de soucis. Je dors mal depuis que je l’ai trouvé.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Aborder activement la charge psychique fait partie d’une consultation centrée sur la patiente.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/12</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Inspection mammaire <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Réalisation<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Réalisation correcte de l’inspection avec au moins deux positions de provocation.</span></span></span> · Bras le long du corps <span class="patient-response">[La patiente est assise, torse dénudé, bras détendus le long du corps.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Réalisation · Mains derrière la tête <span class="patient-response">[Mains croisées derrière la tête, face inférieure du sein et rétractions cutanées subtiles visibles.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La position mains derrière la tête expose la face inférieure du sein et rend visibles des rétractions subtiles.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Résultat de l’inspection <span class="patient-response">[Seins symétriques, pas de nouvelle asymétrie, pas de saillie. Pas de rétraction cutanée, pas de peau d’orange, pas d’érythème, pas d’ulcère. Mamelons sans particularité, pas de rétraction, pas de croûtes, pas d’eczéma.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Description du résultat à l’intention de l’examinateur. Libérer verbalement dès que l’inspection est réalisée de manière structurée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Palpation mammaire <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Technique de palpation<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Systématique de palpation conforme CST: superficielle, profonde, expression des mamelons, côté opposé pour comparaison.</span></span></span> · Palpation superficielle <span class="patient-response">[Palpation superficielle systématique des quatre quadrants à droite.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Technique de palpation · Palpation profonde <span class="patient-response">[Palpation profonde systématique des quatre quadrants à droite.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Technique de palpation · Expression des mamelons <span class="patient-response">[Mamelon exprimé des deux côtés, aucune sécrétion provoquée.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Technique de palpation · Palpation du côté opposé <span class="patient-response">[Palpation systématique des quatre quadrants de la glande mammaire gauche, sans particularité.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Résultat concernant le nodule <span class="patient-response">[Nodule dans le quadrant supéro-externe droit, env. 2 cm dans le plus grand diamètre, ferme, peu mobile, indolore, mal délimité, pas de fixation cutanée ni à la paroi thoracique.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Description du résultat à l’intention de l’examinateur. Libérer verbalement dès que le candidat réalise de façon structurée la palpation de la glande mammaire droite. À relever: localisation, taille, consistance, mobilité, douleur à la pression, délimitation, fixation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-4" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Statut ganglionnaire <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Palpation des ganglions<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Réalisation correcte de la palpation ganglionnaire aux trois stations.</span></span></span> · Axillaires des deux côtés <span class="patient-response">[Aisselles palpées des deux côtés en position assise, l’examinateur guide le bras.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les ganglions axillaires sont la station de métastases régionales la plus importante.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation des ganglions · Sus-claviculaires des deux côtés <span class="patient-response">[Région sus-claviculaire palpée des deux côtés.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les ganglions sus-claviculaires sont une station ganglionnaire régionale pertinente dans le carcinome mammaire. L’atteinte ipsilatérale correspond à N3c et est de pronostic défavorable, mais pas M1.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation des ganglions · Sous-claviculaires des deux côtés <span class="patient-response">[Région sous-claviculaire palpée des deux côtés.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Résultat ganglionnaire <span class="patient-response">[Aucune adénopathie pathologiquement augmentée de taille palpable, ni axillaire ni sus- ou sous-claviculaire.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Description du résultat à l’intention de l’examinateur. Libérer verbalement dès que la palpation ganglionnaire est réalisée. Normal: mobile, indolore, inférieur à 5 mm.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/10</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Imagerie <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Échographie mammaire <span class="patient-response">[Nodule solide suspect de 2 cm dans le quadrant supéro-externe droit. BI-RADS 4c: hautement suspect de malignité, probabilité de malignité 50 à 95%.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Description du résultat à l’intention de l’examinateur. Libérer verbalement dès que le candidat demande l’échographie mammaire. BI-RADS 4c correspond à une probabilité de malignité de 50 à 95%, diagnostic définitif toujours histologique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Évaluation et information du patient <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic présumé <span class="patient-response">[Nodule suspect de malignité dans le sein droit.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Appréciation clinique formulée comme suspicion, sans anticiper le diagnostic. Définitif seulement après histologie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">À clarifier <span class="patient-response">[Le résultat de la palpation et celui de l’échographie sont suspects et doivent être clarifiés rapidement.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Ni minimiser ni dramatiser.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Pas de pré-diagnostic <span class="patient-response">[Sans prélèvement tissulaire, aucun diagnostic définitif de cancer n’est possible.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le diagnostic n’est possible qu’après confirmation histologique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Procédure <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Triple diagnostic <span class="patient-response">[Trois piliers: examen clinique, imagerie (mammographie + échographie), confirmation histologique (biopsie au trocart).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Procédure standard en cas de résultat mammaire suspect. Les trois piliers doivent être cités complètement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Orientation centre du sein <span class="patient-response">[Orientation vers le centre du sein en quelques jours pour mammographie, échographie et biopsie au trocart.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une orientation rapide évite les retards diagnostiques et thérapeutiques.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Conseil génétique <span class="patient-response">[En raison de la mère (52 ans) et de la sœur (45 ans) atteintes d’un cancer du sein: recommander un conseil génétique pour mutation BRCA.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Indiqué en cas de deux parents du premier degré avec cancer du sein, dont un avant 50 ans.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Recommandation et filet de sécurité <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Auto-examen des seins <span class="patient-response">[Auto-examen mensuel des deux seins après la fin du bilan.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prévention <span class="patient-response">[Mammographie régulière tous les deux ans (recommandation suisse de dépistage 50 à 74 ans).]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Reconsultation <span class="patient-response">[En cas de modification cutanée, de sécrétion ou d’augmentation de taille: reconsultation immédiate.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les inquiétudes, besoins, préoccupations et attentes de la patiente et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible et reste flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée à la patiente, favorise la compréhension par la reformulation, le reflet, les synthèses et les explications, et utilise la voix, le débit et les pauses de façon ciblée.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise contact visuel, mimique, gestes, posture et distance de manière ciblée afin de créer une atmosphère d’entretien bienveillante, de confiance et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/74</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Question d’entrée</strong> — Information spontanée de la patiente dans les premières secondes de l’entretien. Énoncée sans demande <span class="c-red">explicite</span>.</li><li><strong>Nodule · Évolution de la taille</strong> — Une taille subjectivement stable sur une courte période n’exclut pas une malignité. Tout nodule persistant doit être exploré.</li><li><strong>Modifications cutanées et des mamelons</strong> — Rétraction cutanée, peau d’orange, rétraction mamelonnaire récente ou maladie de Paget sont des signes locaux alarmants de malignité.</li><li><strong>Sécrétion mamelonnaire</strong> — Une sécrétion sanguinolente ou spontanée unilatérale est un <span class="c-yellow">signe d’alarme</span> classique.</li><li class="theorie-sous-groupe"><strong>Anamnèse reproductive</strong> — <span class="c-purple">Facteurs de risque</span> reproductifs chez cette patiente: ménopause tardive (52 ans), nulliparité, absence d’allaitement. <span class="c-amber">Hormonothérapie</span> négative.</li><li><strong>Anamnèse reproductive · Ménopause</strong> — Une ménopause tardive après 50 ans est considérée comme un <span class="c-purple">facteur de risque</span> en raison d’une exposition prolongée aux œstrogènes endogènes.</li><li><strong>Anamnèse reproductive · Grossesses et allaitement</strong> — La nulliparité et l’absence d’allaitement sont des <span class="c-purple">facteurs de risque</span> établis de <span class="c-red">carcinome</span> mammaire.</li><li><strong>Anamnèse reproductive · Hormonothérapie</strong> — L’<span class="c-amber">hormonothérapie</span> post-ménopausique (œstrogène-progestatif combinés) augmente le risque de <span class="c-red">carcinome</span> mammaire. Ici négative.</li><li><strong>Prévention et auto-examen · Dernière mammographie</strong> — La dernière mammographie date de 5 ans. Recommandation pour les femmes de 50 à 74 ans: tous les deux ans.</li><li><strong>Symptômes B</strong> — Les symptômes B (<span class="c-pink">fièvre</span>, <span class="c-pink">sueurs nocturnes</span>, <span class="c-pink">perte de poids</span>) indiquent une dissémination tumorale systémique ou une paranéoplasie.</li><li class="theorie-sous-groupe"><strong>Dépistage par système d’organes</strong> — Au moins 2 des 4 systèmes d’organes doivent être recherchés activement. Lieux de métastases pertinents pour le <span class="c-red">carcinome</span> mammaire: os (le plus fréquent), poumon, SNC, foie.</li><li><strong>Dépistage par système d’organes · Douleurs osseuses</strong> — Les <span class="c-pink">douleurs</span> osseuses sont le symptôme principal des métastases osseuses, la localisation de métastases à distance la plus fréquente dans le <span class="c-red">carcinome</span> mammaire.</li><li><strong>Dépistage par système d’organes · Symptômes pulmonaires</strong> — La <span class="c-pink">toux</span> et la <span class="c-pink">dyspnée</span> peuvent indiquer des métastases pulmonaires ou un épanchement pleural.</li><li><strong>Dépistage par système d’organes · Symptômes neurologiques</strong> — Indications d’une métastase cérébrale.</li><li><strong>Dépistage par système d’organes · Symptômes abdominaux</strong> — Signes en faveur de métastases hépatiques: <span class="c-pink">ictère</span>, <span class="c-red">ascite</span>, satiété précoce, pression dans l’hypocondre droit.</li><li class="theorie-sous-groupe"><strong>Noxes</strong> — <span class="c-purple">Facteurs de risque</span> liés au mode de vie chez cette patiente: consommation régulière d’<span class="c-purple">alcool</span> et <span class="c-purple">obésité</span> post-ménopausique (BMI 29).</li><li><strong>Noxes · Alcool</strong> — La consommation régulière d’<span class="c-purple">alcool</span> est un <span class="c-purple">facteur de risque</span> établi de <span class="c-red">carcinome</span> mammaire, même à dose modérée.</li><li class="theorie-sous-groupe"><strong>Cancers familiaux</strong> — La constellation avec deux parents du premier degré, dont l’un avant 50 ans, remplit clairement les critères pour un conseil génétique.</li><li><strong>Cancers familiaux · Carcinome mammaire</strong> — Deux parents du premier degré avec <span class="c-red">carcinome</span> mammaire, dont un avant 50 ans. Indication claire pour un conseil génétique.</li><li><strong>Cancers familiaux · Carcinome de l’ovaire</strong> — La présence d’un <span class="c-red">carcinome</span> ovarien dans la famille renforce le soupçon de prédisposition héréditaire aux cancers du sein et de l’ovaire (BRCA1/2).</li><li><strong>Cancers familiaux · Test génétique</strong> — Information décisive pour l’indication d’un conseil génétique pour la patiente.</li><li><strong>Cancers familiaux · Autres maladies</strong> — Un <span class="c-red">carcinome</span> de la prostate dans la famille peut également évoquer une mutation BRCA2.</li><li><strong>Charge psychosociale</strong> — Aborder activement la charge psychique fait partie d’une consultation centrée sur la patiente.</li></ul>
+</div><div class="theorie-section">
+    <h4>Statut clinique</h4>
+    <ul><li class="theorie-sous-groupe"><strong>Réalisation</strong> — Réalisation correcte de l’<span class="c-green">inspection</span> avec au moins deux positions de provocation.</li><li><strong>Réalisation · Mains derrière la tête</strong> — La position mains derrière la tête expose la face inférieure du sein et rend visibles des rétractions subtiles.</li><li><strong>Résultat de l’inspection</strong> — Description du résultat à l’intention de <span class="c-blue">l’examinateur</span>. Libérer verbalement dès que l’<span class="c-green">inspection</span> est réalisée de manière structurée.</li><li class="theorie-sous-groupe"><strong>Technique de palpation</strong> — Systématique de <span class="c-green">palpation</span> conforme CST: superficielle, profonde, expression des mamelons, côté opposé pour comparaison.</li><li><strong>Résultat concernant le nodule</strong> — Description du résultat à l’intention de <span class="c-blue">l’examinateur</span>. Libérer verbalement dès que <span class="c-blue">le candidat</span> réalise de façon structurée la <span class="c-green">palpation</span> de la glande mammaire droite. À relever: localisation, taille, consistance, mobilité, <span class="c-pink">douleur</span> à la pression, délimitation, fixation.</li><li class="theorie-sous-groupe"><strong>Palpation des ganglions</strong> — Réalisation correcte de la <span class="c-green">palpation</span> ganglionnaire aux trois stations.</li><li><strong>Palpation des ganglions · Axillaires des deux côtés</strong> — Les ganglions axillaires sont la station de métastases régionales la plus importante.</li><li><strong>Palpation des ganglions · Sus-claviculaires des deux côtés</strong> — Les ganglions sus-claviculaires sont une station ganglionnaire régionale pertinente dans le <span class="c-red">carcinome</span> mammaire. L’atteinte ipsilatérale correspond à N3c et est de pronostic défavorable, mais pas M1.</li><li><strong>Résultat ganglionnaire</strong> — Description du résultat à l’intention de <span class="c-blue">l’examinateur</span>. Libérer verbalement dès que la <span class="c-green">palpation</span> ganglionnaire est réalisée. Normal: mobile, indolore, inférieur à 5 mm.</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostic</h4>
+    <ul><li><strong>Échographie mammaire</strong> — Description du résultat à l’intention de <span class="c-blue">l’examinateur</span>. Libérer verbalement dès que <span class="c-blue">le candidat</span> demande l’<span class="c-green">échographie</span> mammaire. BI-RADS 4c correspond à une probabilité de malignité de 50 à 95%, diagnostic définitif toujours histologique.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic présumé</strong> — Appréciation clinique formulée comme suspicion, sans anticiper le diagnostic. Définitif seulement après histologie.</li><li><strong>À clarifier</strong> — Ni minimiser ni dramatiser.</li><li><strong>Pas de pré-diagnostic</strong> — Le diagnostic n’est possible qu’après confirmation histologique.</li><li><strong>Triple diagnostic</strong> — Procédure standard en cas de résultat mammaire suspect. Les trois piliers doivent être cités complètement.</li><li><strong>Orientation centre du sein</strong> — Une orientation rapide évite les retards diagnostiques et thérapeutiques.</li><li><strong>Conseil génétique</strong> — Indiqué en cas de deux parents du premier degré avec cancer du sein, dont un avant 50 ans.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Chez cette patiente post-ménopausée de 62 ans, il existe cliniquement et à l’<span class="c-green">échographie</span> un fort soupçon de <span class="c-red">carcinome</span> mammaire droit avec indice évident d’une prédisposition héréditaire (suspicion BRCA1/2). Elle a palpé, il y a deux semaines sous la douche, un nodule indolore dans le sein droit.</p><p>L’anamnèse révèle une importante charge familiale en cancers: mère (<span class="c-red">carcinome</span> mammaire à 52 ans), sœur (<span class="c-red">carcinome</span> mammaire à 45 ans) et père (<span class="c-red">carcinome</span> de la prostate à 75 ans). <span class="c-purple">Facteurs de risque</span> reproductifs: nullipare, ménopause tardive (52 ans), BMI 29, consommation régulière d’<span class="c-purple">alcool</span>. Pas d’indices d’atteinte métastatique à distance (symptômes B, osseuse, pulmonaire, neurologique, abdominale) selon l’anamnèse. La dernière mammographie, il y a cinq ans, était sans particularité.</p><p>Cliniquement, on trouve un nodule d’environ 2 cm, ferme, peu mobile et indolore, dans le quadrant supéro-externe de la glande mammaire droite. <span class="c-green">Inspection</span> et statut ganglionnaire (axillaire, sus- et sous-claviculaire) sans particularité.</p><p>L’<span class="c-green">échographie</span> mammaire disponible sur place fournit un résultat BI-RADS 4c (probabilité de malignité 50 à 95%, hautement suspect de malignité); mammographie et biopsie au trocart suivront au centre du sein.</p><p>La conduite correcte comprend la complétude du triple diagnostic avec une mammographie diagnostique et une confirmation histologique par biopsie au trocart au centre du sein, une orientation rapide vers un centre du sein certifié en quelques jours, un conseil génétique pour mutation BRCA en raison du contexte familial, ainsi qu’un <span class="c-yellow">filet de sécurité</span> clair avec indication de reconsultation en cas de nouveaux symptômes. L’information du patient se fait en tant que suspicion de malignité sans diagnostic définitif de cancer.</p><p>Réaliser de manière structurée l’examen clinique du sein sur le modèle: <span class="c-green">inspection</span>, <span class="c-green">palpation</span> systématique, statut ganglionnaire (si pas de modèle, explication seulement)</p><p>Rechercher l’agrégation familiale et recommander un conseil génétique pour mutation BRCA</p><p>Communiquer une suspicion de malignité sans pré-diagnostic, expliquer le triple diagnostic, orientation vers un centre du sein avec <span class="c-yellow">filet de sécurité</span></p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Aperçu AKDP</div><div class="annexe-expert-content"><p>Anamnèse: Nodule autopalpé depuis 2 semaines, indolore, stable. Agrégation familiale: mère (52 ans) et sœur (45 ans) avec cancer du sein, père cancer de la prostate (75 ans). <span class="c-purple">Facteurs de risque</span> reproductifs: ménopause tardive, nulliparité, BMI 29, <span class="c-purple">alcool</span>. Anamnèse négative pour métastases à distance.</p><p>Statut clinique: Nodule de 2 cm, ferme, peu mobile, indolore, quadrant supéro-externe droit. <span class="c-green">Inspection</span> et statut ganglionnaire sans particularité.</p><p>Diagnostic: <span class="c-green">Échographie</span> mammaire BI-RADS 4c (hautement suspect). Confirmation histologique au centre du sein.</p><p>Procédure: Expliquer le triple diagnostic (clinique, imagerie, histologie), orientation centre du sein, conseil génétique, <span class="c-yellow">filet de sécurité</span> avec indication de reconsultation.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 36,
+        "examen": 12,
+        "management": 10,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 3,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 4,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

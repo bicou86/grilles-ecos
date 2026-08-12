@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-45 - Sensation gênante dans l’œil - Madame Cornelia Stucki, 54 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-45 - Sensation gênante dans l’œil</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-45" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet de médecine de famille</p>
+            <p style="margin: 5px 0;">👤 Madame Cornelia Stucki, 54 ans</p>
+            <p style="margin: 5px 0;">🏷️ Ophtalmologie · Poste standard · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/30</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Affection actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d’entrée <span class="patient-response">[«J’ai l’impression qu’il y a quelque chose dans les yeux. Pourriez-vous y jeter un coup d’œil?»]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début / Durée <span class="patient-response">[Depuis plusieurs mois]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[Aggravation lente]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Dynamique journalière <span class="patient-response">[Pire le soir, mieux le matin]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Localisation / latéralisation <span class="patient-response">[Deux yeux, à peu près d’intensité égale]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs aggravants <span class="patient-response">[Quand je regarde longtemps l’écran]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le travail sur écran, la climatisation et l’air de chauffage sec favorisent l’évaporation du film lacrymal et sont des déclencheurs typiques de la sécheresse oculaire évaporative.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs soulageants <span class="patient-response">[Quand je cligne plusieurs fois, je vois brièvement mieux]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures prises jusqu’ici <span class="patient-response">[J’ai rincé les yeux à plusieurs reprises]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée sur le problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Plaintes des bords palpébraux <span class="patient-response">[Bords palpébraux rouges, le matin légères squames/croûtes sur les cils]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les altérations des bords palpébraux et des glandes de Meibom sont la cause la plus fréquente de la sécheresse oculaire évaporative et soutiennent le diagnostic présumé.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Lentilles de contact <span class="patient-response">[Je porte des lentilles, mais c’est actuellement inconfortable]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les lentilles de contact favorisent l’instabilité du film lacrymal et constituent un facteur contributif à la sécheresse oculaire; une tolérance au port qui diminue est un signe précoce typique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Larmoiement associé <span class="patient-response">[Parfois, les yeux se mettent soudain à larmoyer]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un larmoiement réflexe n’exclut pas une sécheresse oculaire, mais y correspond, car l’instabilité du film lacrymal peut déclencher une hypersécrétion réflexe.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse pour DD / anamnèse systémique <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Baisse d’acuité visuelle <span class="patient-response">[En principe je vois encore tout, mais parfois de façon floue]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une baisse d’acuité visuelle persistante rend improbable une sécheresse oculaire comme seule cause et doit être exclue activement, car elle peut évoquer une kératite, une uvéite ou un glaucome par fermeture de l’angle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Fortes douleurs / photophobie <span class="patient-response">[Pas de fortes douleurs, pas de photophobie]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des douleurs intenses ou une véritable photophobie s’opposent à une simple sécheresse oculaire et peuvent évoquer une uvéite, une kératite ou un glaucome par fermeture de l’angle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Sécrétions / paupières collées <span class="patient-response">[Pas d’écoulement purulent ou collant]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un écoulement purulent avec paupières collées le matin évoque une conjonctivite bactérienne, un écoulement aqueux avec infection des voies respiratoires en amont plutôt une virale; l’absence d’écoulement rend ces deux diagnostics improbables et correspond à une sécheresse oculaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Traumatisme / corps étranger <span class="patient-response">[Pas de blessure, pas de corps étranger]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une blessure ou un corps étranger peut provoquer une érosion cornéenne ou un corps étranger subtarsal, typiquement aigus et unilatéraux; leur exclusion cadre avec une sécheresse oculaire chronique et bilatérale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prurit <span class="patient-response">[Pas de prurit marqué]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un prurit marqué évoque plutôt une conjonctivite allergique, surtout en cas d’atopie connue ou d’apparition saisonnière; dans la sécheresse oculaire, la sensation de sécheresse et de corps étranger prédomine.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Herpès <span class="patient-response">[Pas de vésicules, pas de zona]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Unilatéralité avec vésicules ou antécédent de zona peut évoquer une kératite herpétique; son exclusion est importante pour la sécurité, car elle menace la vision et nécessite un traitement antiviral plutôt qu’un corticoïde topique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Bilan du Sjögren<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des yeux secs associés à une bouche sèche, des glandes salivaires gonflées ou des douleurs articulaires orientent vers un syndrome de Sjögren et justifient un bilan complémentaire, une atteinte systémique pouvant être présente.</span></span></span> · Xérostomie <span class="patient-response">[Non, pas de bouche sèche]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Bilan du Sjögren · Douleurs articulaires <span class="patient-response">[Pas de douleurs articulaires]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Bilan du Sjögren · Autres signes de sicca <span class="patient-response">[Pas de glandes salivaires gonflées, pas d’autres muqueuses sèches]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-8" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents <span class="patient-response">[Hypertension artérielle, rosacée du visage]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une rosacée faciale s’associe fréquemment à une atteinte des bords palpébraux et des glandes de Meibom (rosacée oculaire) et constitue ainsi un indice important sur la cause de la sécheresse oculaire évaporative.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Opérations antérieures <span class="patient-response">[Aucune, en particulier pas d’opérations oculaires]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Antihypertenseur, pendant la saison pollinique antihistaminiques et crème contre la rosacée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les antihistaminiques et certains antihypertenseurs ont un effet asséchant et peuvent aggraver une sécheresse oculaire; c’est pertinent thérapeutiquement, car il s’agit d’un facteur modifiable. Le traitement topique de la rosacée agit uniquement sur le visage et ne traite pas une problématique concomitante des glandes de Meibom.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Rhume des foins aux pollens]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Tabagisme <span class="patient-response">[Non-fumeuse]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Alcool <span class="patient-response">[Rarement un verre de vin]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Drogues <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux <span class="patient-response">[Rien d’essentiel connu]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession et environnement de travail <span class="patient-response">[Employée administrative dans une banque, journée entière sur écran]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation sociale <span class="patient-response">[Mariée, deux enfants adultes]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/11</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Évaluation des fonctions <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Acuité visuelle <span class="patient-response">[Droite: 0.8, Gauche: 0.8]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une acuité visuelle conservée et symétrique rend improbable une atteinte significative de la cornée, du cristallin ou du nerf optique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Fermeture palpébrale <span class="patient-response">[Fermeture palpébrale complète des deux côtés]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une fermeture palpébrale complète s’oppose à une évaporation par exposition, telle qu’elle peut survenir p. ex. dans une paralysie faciale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Inspection <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Œil externe <span class="patient-response">[Bords palpébraux rouges avec fines squames sur les cils des deux côtés, pas de tuméfaction]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des bords palpébraux rouges avec desquamation des cils correspondent à une blépharite chronique et soutiennent une dysfonction des glandes de Meibom.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Palpation <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Pression oculaire <span class="patient-response">[Dépressible souplement des deux côtés]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un bulbe souple des deux côtés s’oppose à une élévation aiguë de la pression intraoculaire et donc à un glaucome aigu par fermeture de l’angle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Lampe à fente <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Glandes de Meibom<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des télangiectasies et des orifices glandulaires obstrués à l’inspection, ainsi qu’un meibum épais et trouble à l’expression, confirment la dysfonction des glandes de Meibom comme cause de la sécheresse oculaire évaporative.</span></span></span> · Inspection <span class="patient-response">[Télangiectasies au bord palpébral, orifices glandulaires obstrués]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Glandes de Meibom · Expression <span class="patient-response">[Meibum épais et trouble à l’expression]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Ménisque lacrymal <span class="patient-response">[Ménisque lacrymal normal au bord palpébral inférieur]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un ménisque lacrymal normal plaide pour une sécrétion aqueuse intacte et donc contre une sécheresse oculaire par déficit aqueux comme dans le syndrome de Sjögren.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Conjonctive <span class="patient-response">[Légère injection, pas de follicules ni de papilles]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence de follicules ou de papilles s’oppose à une conjonctivite virale, allergique ou bactérienne.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-3" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Pupilles et chambre antérieure <span class="patient-response">[Isocores, réactives directement et consensuellement, chambre antérieure calme et de profondeur normale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des pupilles isocores et réactives, et une chambre antérieure calme et de profondeur normale rendent une uvéite et un glaucome aigu par fermeture de l’angle improbables.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-4" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Fluorescéine <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Temps de rupture du film lacrymal <span class="patient-response">[Temps de rupture raccourci, rupture rapide du film lacrymal après un clignement complet]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un temps de rupture du film lacrymal raccourci atteste directement l’instabilité du film lacrymal et soutient la sécheresse oculaire évaporative.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Coloration de la cornée <span class="patient-response">[Cornée calme, pas de coloration significative, pas de figure dendritique, pas d’ulcère.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">À ce stade, la cornée peut être calme; dans une sécheresse oculaire avancée, on observe une fine coloration punctiforme interpalpébrale. L’absence de figure dendritique rend une kératite herpétique improbable; l’absence d’ulcère une kératite bactérienne.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/12</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Analyses de laboratoire <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire uniquement en cas de suspicion systémique <span class="patient-response">[En cas de suspicion de Sjögren: ANA, SS-A/SS-B, paramètres inflammatoires]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le laboratoire n’est indiqué qu’en cas de suspicion supplémentaire d’une cause systémique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Imagerie <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Pas d’imagerie <span class="patient-response">[Aucune imagerie requise]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La sécheresse oculaire est un diagnostic clinique; une imagerie n’est pas indiquée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens spécifiques <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de Schirmer <span class="patient-response">[Dans la norme]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Mesure la quantité de larmes; il est généralement normal dans la forme évaporative.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Évaluation clinique <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail <span class="patient-response">[Sécheresse oculaire évaporative due à une dysfonction des glandes de Meibom, multifactorielle (travail sur écran, lentilles de contact, antihistaminique asséchant, rosacée faciale)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un temps de rupture du film lacrymal court et des glandes de Meibom altérées avec un ménisque lacrymal normal correspondent à une sécheresse oculaire évaporative; l’absence de signes d’alarme et un dépistage du Sjögren négatif écartent des causes dangereuses et aqueuses-déficitaires. Des changements hormonaux à la ménopause peuvent en outre altérer les glandes de Meibom.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Information du patient <span class="patient-response">[Trouble chronique du film lacrymal nécessitant une observance rigoureuse, mais sans danger immédiat.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des attentes réalistes, c’est-à-dire un soulagement sur plusieurs semaines plutôt qu’une guérison immédiate, favorisent l’adhérence thérapeutique aux soins palpébraux au long cours.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Thérapie <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Hygiène des bords palpébraux <span class="patient-response">[Compresses chaudes, massage palpébral et nettoyage des bords palpébraux, réguliers et au long cours]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La chaleur liquéfie le meibum stagnant; le massage et le nettoyage améliorent l’évacuation des sécrétions; c’est le traitement de base de la dysfonction des glandes de Meibom.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Larmes artificielles <span class="patient-response">[Larmes artificielles lipidiques, sans conservateurs]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les substituts lacrymaux lipidiques stabilisent le film lacrymal dans le type évaporatif; sans conservateurs en raison de l’usage fréquent et des lentilles de contact.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Déclencheurs et hygiène de vie <span class="patient-response">[Pauses écran (règle 20-20-20) et clignement conscient, humidification de l’air, réduire le temps de port des lentilles ou passer aux lunettes]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">S’attaquer aux déclencheurs modifiables est central: le travail sur écran renforce la symptomatologie. Porter temporairement des lunettes plutôt que des lentilles soulage la surface oculaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Adapter le traitement de l’allergie <span class="patient-response">[Remplacer l’antihistaminique asséchant par un médicament de deuxième génération moins anticholinergique (p. ex. loratadine, fexofénadine) ou passer à un traitement topique: corticoïde nasal plus antihistaminique ophtalmique topique ou stabilisateur des mastocytes (p. ex. olopatadine)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les antihistaminiques de première génération sont fortement anticholinergiques et asséchants; ceux de deuxième génération le sont nettement moins. Un traitement topique traite l’allergie localement et évite l’assèchement systémique de la surface oculaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Procédure <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Contrôle évolutif <span class="patient-response">[Réévaluation par le médecin de famille après quelques semaines, évaluer la réponse aux soins palpébraux et aux larmes artificielles]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les soins palpébraux n’agissent qu’au bout de plusieurs semaines; un contrôle évolutif assure l’adhérence et permet une escalade en cas d’absence d’amélioration.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Examens complémentaires <span class="patient-response">[En cas de réponse insuffisante, orientation vers l’ophtalmologue. Bilan du Sjögren uniquement en cas de nouveaux signes de sicca]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Examens et procédures spécialisés: meibographie, pulsation thermique, IPL</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Filet de sécurité <span class="patient-response">[Reconsulter immédiatement en cas de baisse soudaine de la vision, fortes douleurs, photophobie marquée ou rougeur augmentant rapidement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Ces signes d’alarme évoquent un diagnostic différentiel dangereux comme une kératite, une uvéite ou un glaucome par fermeture de l’angle et nécessitent une évaluation ophtalmologique immédiate.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des émotions et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Identifie les préoccupations, besoins, attentes et demandes de la patiente et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible tout en restant flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée à la patiente, favorise la compréhension par la reformulation, le reflet, les résumés et les explications, et utilise la voix, le débit et les pauses de façon ciblée.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance de manière ciblée pour créer une atmosphère d’échange bienveillante, confiante et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/69</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Facteurs aggravants</strong> — Le travail sur écran, la climatisation et l’air de chauffage sec favorisent l’évaporation du film lacrymal et sont des déclencheurs typiques de la sécheresse oculaire évaporative.</li><li><strong>Plaintes des bords palpébraux</strong> — Les altérations des bords palpébraux et des glandes de Meibom sont la cause la plus fréquente de la sécheresse oculaire évaporative et soutiennent le diagnostic présumé.</li><li><strong>Lentilles de contact</strong> — Les lentilles de contact favorisent l’instabilité du film lacrymal et constituent un facteur contributif à la sécheresse oculaire; une tolérance au port qui diminue est un signe précoce typique.</li><li><strong>Larmoiement associé</strong> — Un larmoiement réflexe n’exclut pas une sécheresse oculaire, mais y correspond, car l’instabilité du film lacrymal peut déclencher une hypersécrétion réflexe.</li><li><strong>Baisse d’acuité visuelle</strong> — Une baisse d’<span class="c-green">acuité visuelle</span> persistante rend improbable une sécheresse oculaire comme seule cause et doit être exclue activement, car elle peut évoquer une <span class="c-red">kératite</span>, une <span class="c-red">uvéite</span> ou un <span class="c-red">glaucome par fermeture de l’angle</span>.</li><li><strong>Fortes douleurs / photophobie</strong> — Des <span class="c-pink">douleurs</span> intenses ou une véritable <span class="c-pink">photophobie</span> s’opposent à une simple sécheresse oculaire et peuvent évoquer une <span class="c-red">uvéite</span>, une <span class="c-red">kératite</span> ou un <span class="c-red">glaucome par fermeture de l’angle</span>.</li><li><strong>Sécrétions / paupières collées</strong> — Un écoulement purulent avec paupières collées le matin évoque une <span class="c-red">conjonctivite</span> bactérienne, un écoulement aqueux avec infection des voies respiratoires en amont plutôt une virale; l’absence d’écoulement rend ces deux diagnostics improbables et correspond à une sécheresse oculaire.</li><li><strong>Traumatisme / corps étranger</strong> — Une blessure ou un corps étranger peut provoquer une érosion cornéenne ou un corps étranger subtarsal, typiquement aigus et unilatéraux; leur exclusion cadre avec une sécheresse oculaire chronique et bilatérale.</li><li><strong>Prurit</strong> — Un <span class="c-pink">prurit</span> marqué évoque plutôt une <span class="c-red">conjonctivite</span> allergique, surtout en cas d’<span class="c-purple">atopie</span> connue ou d’apparition saisonnière; dans la sécheresse oculaire, la sensation de sécheresse et de corps étranger prédomine.</li><li><strong>Herpès</strong> — Unilatéralité avec vésicules ou antécédent de zona peut évoquer une <span class="c-red">kératite</span> herpétique; son exclusion est importante pour la sécurité, car elle menace la vision et nécessite un traitement antiviral plutôt qu’un <span class="c-amber">corticoïde</span> topique.</li><li class="theorie-sous-groupe"><strong>Bilan du Sjögren</strong> — Des yeux secs associés à une bouche sèche, des glandes salivaires gonflées ou des <span class="c-pink">douleurs</span> articulaires orientent vers un <span class="c-red">syndrome de Sjögren</span> et justifient un bilan complémentaire, une atteinte systémique pouvant être présente.</li><li><strong>Antécédents</strong> — Une rosacée faciale s’associe fréquemment à une atteinte des bords palpébraux et des glandes de Meibom (rosacée oculaire) et constitue ainsi un indice important sur la cause de la sécheresse oculaire évaporative.</li><li><strong>Médicaments</strong> — Les <span class="c-amber">antihistaminiques</span> et certains antihypertenseurs ont un effet asséchant et peuvent aggraver une sécheresse oculaire; c’est pertinent thérapeutiquement, car il s’agit d’un facteur modifiable. Le <span class="c-amber">traitement topique</span> de la rosacée agit uniquement sur le visage et ne traite pas une problématique concomitante des glandes de Meibom.</li></ul>
+</div><div class="theorie-section">
+    <h4>Examen clinique</h4>
+    <ul><li><strong>Acuité visuelle</strong> — Une <span class="c-green">acuité visuelle</span> conservée et symétrique rend improbable une atteinte significative de la cornée, du cristallin ou du nerf optique.</li><li><strong>Fermeture palpébrale</strong> — Une fermeture palpébrale complète s’oppose à une évaporation par exposition, telle qu’elle peut survenir p. ex. dans une paralysie faciale.</li><li><strong>Œil externe</strong> — Des bords palpébraux rouges avec desquamation des cils correspondent à une <span class="c-red">blépharite</span> chronique et soutiennent une dysfonction des glandes de Meibom.</li><li><strong>Pression oculaire</strong> — Un bulbe souple des deux côtés s’oppose à une élévation aiguë de la pression intraoculaire et donc à un <span class="c-red">glaucome aigu</span> par fermeture de l’angle.</li><li class="theorie-sous-groupe"><strong>Glandes de Meibom</strong> — Des télangiectasies et des orifices glandulaires obstrués à l’<span class="c-green">inspection</span>, ainsi qu’un meibum épais et trouble à l’expression, confirment la dysfonction des glandes de Meibom comme cause de la sécheresse oculaire évaporative.</li><li><strong>Ménisque lacrymal</strong> — Un ménisque lacrymal normal plaide pour une sécrétion aqueuse intacte et donc contre une sécheresse oculaire par déficit aqueux comme dans le <span class="c-red">syndrome de Sjögren</span>.</li><li><strong>Conjonctive</strong> — L’absence de follicules ou de papilles s’oppose à une <span class="c-red">conjonctivite</span> virale, allergique ou bactérienne.</li><li><strong>Pupilles et chambre antérieure</strong> — Des pupilles isocores et réactives, et une chambre antérieure calme et de profondeur normale rendent une <span class="c-red">uvéite</span> et un <span class="c-red">glaucome aigu</span> par fermeture de l’angle improbables.</li><li><strong>Temps de rupture du film lacrymal</strong> — Un temps de <span class="c-orange">rupture</span> du film lacrymal raccourci atteste directement l’instabilité du film lacrymal et soutient la sécheresse oculaire évaporative.</li><li><strong>Coloration de la cornée</strong> — À ce stade, la cornée peut être calme; dans une sécheresse oculaire avancée, on observe une fine coloration punctiforme interpalpébrale. L’absence de figure dendritique rend une <span class="c-red">kératite</span> herpétique improbable; l’absence d’ulcère une <span class="c-red">kératite</span> bactérienne.</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostic</h4>
+    <ul><li><strong>Laboratoire uniquement en cas de suspicion systémique</strong> — Le laboratoire n’est indiqué qu’en cas de suspicion supplémentaire d’une cause systémique.</li><li><strong>Pas d’imagerie</strong> — La sécheresse oculaire est un diagnostic clinique; une imagerie n’est pas indiquée.</li><li><strong>Test de Schirmer</strong> — Mesure la quantité de larmes; il est généralement normal dans la forme évaporative.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic de travail</strong> — Un temps de <span class="c-orange">rupture</span> du film lacrymal court et des glandes de Meibom altérées avec un ménisque lacrymal normal correspondent à une sécheresse oculaire évaporative; l’absence de <span class="c-yellow">signes d’alarme</span> et un dépistage du Sjögren négatif écartent des causes dangereuses et aqueuses-déficitaires. Des changements hormonaux à la ménopause peuvent en outre altérer les glandes de Meibom.</li><li><strong>Information du patient</strong> — Des attentes réalistes, c’est-à-dire un soulagement sur plusieurs semaines plutôt qu’une guérison immédiate, favorisent l’adhérence thérapeutique aux soins palpébraux au long cours.</li><li><strong>Hygiène des bords palpébraux</strong> — La chaleur liquéfie le meibum stagnant; le massage et le nettoyage améliorent l’évacuation des sécrétions; c’est le traitement de base de la dysfonction des glandes de Meibom.</li><li><strong>Larmes artificielles</strong> — Les substituts lacrymaux lipidiques stabilisent le film lacrymal dans le type évaporatif; sans conservateurs en raison de l’usage fréquent et des lentilles de contact.</li><li><strong>Déclencheurs et hygiène de vie</strong> — S’attaquer aux déclencheurs modifiables est central: le travail sur écran renforce la symptomatologie. Porter temporairement des lunettes plutôt que des lentilles soulage la surface oculaire.</li><li><strong>Adapter le traitement de l’allergie</strong> — Les <span class="c-amber">antihistaminiques</span> de première génération sont fortement anticholinergiques et asséchants; ceux de deuxième génération le sont nettement moins. Un <span class="c-amber">traitement topique</span> traite l’allergie localement et évite l’assèchement systémique de la surface oculaire.</li><li><strong>Contrôle évolutif</strong> — Les soins palpébraux n’agissent qu’au bout de plusieurs semaines; un contrôle évolutif assure l’adhérence et permet une escalade en cas d’absence d’amélioration.</li><li><strong>Examens complémentaires</strong> — Examens et procédures spécialisés: meibographie, pulsation thermique, IPL</li><li><strong>Filet de sécurité</strong> — Ces <span class="c-yellow">signes d’alarme</span> évoquent un <span class="c-yellow">diagnostic différentiel</span> dangereux comme une <span class="c-red">kératite</span>, une <span class="c-red">uvéite</span> ou un <span class="c-red">glaucome par fermeture de l’angle</span> et nécessitent une évaluation ophtalmologique immédiate.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Cabinet de médecine de famille | Madame Cornelia Stucki, 54 ans</p><p>Traduit automatiquement puis vérifié par une IA face à l&#x27;original allemand.</p><p>Diagnostic: Sécheresse oculaire évaporative due à une dysfonction des glandes de Meibom</p><p>Cabinet de médecine de famille | Madame Cornelia Stucki, 54 ans, employée administrative</p><p>Chez Madame Stucki, 54 ans, le diagnostic le plus probable est une sécheresse oculaire évaporative liée à une dysfonction des glandes de Meibom.</p><p>L’anamnèse est suggestive par des symptômes chroniques, bilatéraux, avec sensation de corps étranger et de sécheresse, s’accentuant surtout le soir et lors d’un travail prolongé sur écran. Madame Stucki porte en outre des lentilles de contact et présente une rosacée faciale, deux <span class="c-purple">facteurs de risque</span> typiques de la sécheresse oculaire.</p><p>À l’examen à la lampe à fente, on observe de manière concordante des bords palpébraux télangiectasiques, des orifices glandulaires de Meibom obstrués et, à la pression, un meibum épais et trouble. Le temps de <span class="c-orange">rupture</span> du film lacrymal est raccourci, alors que le ménisque lacrymal est normal. L’examen clinique oriente ainsi plutôt vers une augmentation de l’évaporation qu’une diminution de la production lacrymale comme cause de la sécheresse oculaire.</p><p>L’<span class="c-green">acuité visuelle</span> est légèrement diminuée à 0.8 aux deux yeux. La réaction pupillaire, la chambre antérieure et la pression oculaire sont sans particularité. La cornée ne montre pas d’irritation significative. Il n’y a donc pas d’indices en faveur d’une <span class="c-red">kératite</span>, d’une <span class="c-red">uvéite</span> ou d’un <span class="c-red">glaucome aigu</span> par fermeture de l’angle. Une sécheresse oculaire par déficit aqueux est moins probable avec un ménisque lacrymal normal, un <span class="c-green">test de Schirmer</span> dans la norme et un dépistage du Sjögren négatif.</p><p>Sur le plan thérapeutique, les mesures conservatrices sont prioritaires. Sont recommandés des compresses chaudes régulières suivies d’une hygiène des bords palpébraux, ainsi que des larmes artificielles lipidiques sans conservateurs. Il convient en plus de réduire les facteurs déclenchants, en particulier les longues phases sur écran sans pauses, les durées prolongées de port de lentilles de contact et, si possible, l’<span class="c-amber">antihistaminique</span> asséchant, pour autant que cela soit acceptable du point de vue du médecin de famille.</p><p>Un suivi en médecine de famille est pertinent. En cas de <span class="c-pink">douleurs</span> croissantes, rougeur marquée, baisse d’<span class="c-green">acuité visuelle</span>, <span class="c-pink">photophobie</span> ou aggravation unilatérale, une évaluation ophtalmologique rapide est indiquée.</p><p>Statut ophtalmologique focalisé avec lampe à fente portative et fluorescéine</p><p>Démarche pertinente avec information du patient compréhensible</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Aperçu AKDP</div><div class="annexe-expert-content"><p>Anamnèse : sensation chronique, bilatérale de corps étranger et de sécheresse, majorée le soir et lors du travail sur écran, plaintes du bord palpébral avec desquamation matinale, lentilles de contact, rosacée faciale, <span class="c-amber">antihistaminique</span> asséchant ; aucun <span class="c-yellow">signe d&#x27;alarme</span>, dépistage du <span class="c-red">syndrome de Sjögren</span> négatif</p><p>Statut clinique : bords palpébraux érythémateux avec desquamation, glandes de Meibom modifiées (télangiectasies, orifices obstrués, meibum visqueux et trouble), temps de <span class="c-orange">rupture</span> du film lacrymal raccourci, ménisque lacrymal normal, cornée sans irritation, <span class="c-green">acuité visuelle</span> et fermeture palpébrale bilatérales dans la norme, pupilles, chambre antérieure et pression intraoculaire sans particularité</p><p>Diagnostics : <span class="c-green">test de Schirmer</span> dans les normes ; analyses de laboratoire uniquement en cas de suspicion systémique (ANA, SS-A/SS-B) ; aucune imagerie nécessaire.</p><p>Procédure : hygiène du bord palpébral, larmes artificielles lipidiques sans conservateur, adapter les facteurs déclenchants et le mode de vie, ajuster le traitement de l’allergie, suivi de l’évolution, <span class="c-yellow">filet de sécurité</span></p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 30,
+        "examen": 11,
+        "management": 12,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 5,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 6,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

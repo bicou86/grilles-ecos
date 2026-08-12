@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-12 - Douleurs à la cheville - Gabriel Santos, 28 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-12 - Douleurs à la cheville</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-12" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet d&#x27;urgences de la ville</p>
+            <p style="margin: 5px 0;">👤 Gabriel Santos, 28 ans</p>
+            <p style="margin: 5px 0;">🏷️ Orthopédie · Poste standard · Facile · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/29</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Trouble actuel <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d’entrée <span class="patient-response">[« Ma cheville me fait mal depuis hier. »]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Déclencheur <span class="patient-response">[Torsion au football (traumatisme en supination)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le traumatisme en supination touche l’appareil ligamentaire latéral; le traumatisme en pronation conduit plus souvent à des fractures.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[Malléole latérale droite]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La localisation latérale est typique d’un traumatisme en supination; des douleurs médiales orientent vers une lésion plus complexe.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Dimension temporelle<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le moment et l’évolution permettent de différencier un traumatisme récent d’une instabilité chronique.</span></span></span> · Début / durée <span class="patient-response">[Depuis hier soir]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[Douleurs et gonflement persistants depuis lors]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[Pas d’irradiation]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’irradiation est atypique lors d’une entorse et évoque une lésion associée ou une irritation nerveuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Qualité <span class="patient-response">[Douleur piquante]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Douleur piquante en cas de lésion ligamentaire, pulsatile en cas d’atteinte osseuse, fulgurante en cas d’irritation nerveuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Intensité / gravité <span class="patient-response">[Modérée (5/10)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’échelle NRS sert au suivi et à l’adaptation de l’analgésie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures <span class="patient-response">[Repos et surélévation aident un peu, pas de froid appliqué]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les mesures initiées par le patient montrent sa compréhension de la maladie et donnent une idée de l’acuité de la situation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Capacité de charge après le traumatisme <span class="patient-response">[A pu poser le pied immédiatement après l’accident]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La capacité de charge immédiate après le traumatisme est un critère central d’Ottawa et s’oppose cliniquement à une fracture.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-9" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Gonflement au niveau de la malléole latérale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Aide à différencier précocement complications et diagnostics alternatifs.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-10" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée sur le problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Douleurs au repos <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La douleur au repos après un traumatisme évoque une fracture ou une lésion associée significative.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents traumatiques du pied <span class="patient-response">[Pas d’antécédents traumatiques pertinents au pied]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les antécédents augmentent le risque d’instabilité chronique et de récidive du traumatisme.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Craquement / bruit <span class="patient-response">[Aucun craquement entendu]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Suggère une rupture ligamentaire ou une fracture; non spécifique mais souvent rapporté par les patients.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">pDMS<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’évaluation anamnestique pDMS dépiste précocement les complications neurovasculaires et complète l’examen clinique.</span></span></span> · Trouble de la perfusion <span class="patient-response">[Mes pieds ont la même chaleur]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">pDMS · Déficits moteurs <span class="patient-response">[Orteils mobiles, pas de diminution de force]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les déficits moteurs indiquent une atteinte neurologique significative et doivent être exclus avant la suite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">pDMS · Trouble de la sensibilité <span class="patient-response">[Pas de fourmillements ni de trouble de la sensibilité]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Capacité de marche <span class="patient-response">[Marche possible mais douloureuse, avec boiterie]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La charge actuelle en consultation complète l’évaluation d’Ottawa et renseigne sur la sévérité de la lésion.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse diagnostique différentielle / systémique <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Événement de chute<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de chute, exclure des lésions associées pertinentes et une syncope primaire comme cause de la chute.</span></span></span> · Impact crânien <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Souvent associé lors des chutes; pertinent pour le triage et l’évaluation d’un TCC.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Événement de chute · Syncope <span class="patient-response">[Aucune perte de connaissance avant ou pendant la chute]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une syncope comme cause de chute doit être exclue, car elle modifie fondamentalement la suite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Maladies préexistantes <span class="patient-response">[Aucune]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des comorbidités pertinentes comme l’ostéoporose ou le diabète modifient la guérison et le risque de complications.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Opérations antérieures, en particulier au pied <span class="patient-response">[Aucune intervention orthopédique, une appendicectomie]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les opérations antérieures peuvent modifier l’anatomie et la capacité de charge.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Aucun]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’anticoagulation et un traitement prolongé par AINS doivent être connus avant la prescription d’analgésie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Noxes<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le tabagisme retarde la consolidation osseuse; l’alcool peut contribuer au mécanisme de l’accident.</span></span></span> · Alcool <span class="patient-response">[Occasionnel (le week-end)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le cas échéant, indice d’une chute sous l’influence de l’alcool comme cause de l’accident.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Tabagisme <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Toujours important à explorer, mais non déterminant dans ce cas.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Aucune]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Question de sécurité avant l’analgésie et un éventuel produit de contraste.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux <span class="patient-response">[Aucun pertinent]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le diagnostic ne dépend pas de facteurs génétiques ou familiaux. L’anamnèse familiale n’apporte pas de valeur clinique dans ce cas.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Ouvrier du bâtiment (construction routière)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La profession aide à estimer l’impact de la lésion sur le quotidien et la nécessité d’un certificat d’incapacité ou d’une adaptation de la charge.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Activité sportive <span class="patient-response">[Footballeur amateur (5e ligue avec des amis)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le niveau de performance influe sur l’intensité du traitement, la rééducation et la planification du retour au sport.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/8</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Tests globaux <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Démarche <span class="patient-response">[Boiteuse, charge possible]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La capacité à supporter la charge sur quatre pas est un critère central d’Ottawa et, associée à l’absence de douleur osseuse à la pression, s’oppose à une indication radiographique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Statut orthopédique <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection cheville droite <span class="patient-response">[Gonflement au niveau du malleolus lateralis, pas de déformation, pas d’hématome]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Documenter gonflement, hématome, axe et déformations visibles.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation de la cheville <span class="patient-response">[Aucune douleur à la pression sur le malleolus lateralis ou medialis]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Tester la douleur à la pression sur le bord postérieur du malleolus lateralis et medialis (Règles d’Ottawa cheville).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation du pied <span class="patient-response">[Aucune douleur à la pression à la base du métatarsien V et sur l’os naviculaire]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Tester la douleur à la pression à la base de l’os métatarsien V et sur l’os naviculaire (Règles d’Ottawa pied).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mobilité passive <span class="patient-response">[Limitée et douloureuse, mais possible]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Mobilité et provocation de la douleur, indication d’une atteinte articulaire et d’une instabilité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. pDMS <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Perfusion <span class="patient-response">[Pied chaud, pouls périphériques palpables]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pouls A. dorsalis pedis et A. tibialis posterior en comparaison latérale, temps de recoloration capillaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Motricité <span class="patient-response">[Mobilité des orteils conservée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Flexion plantaire et dorsale actives, et force des releveurs des orteils en comparaison latérale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Sensibilité <span class="patient-response">[Aucun trouble de la sensibilité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Tester la sensibilité dans le territoire des nerfs péronier superficiel et tibial.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/12</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Pas d’imagerie radiographique <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Règles d’Ottawa cheville et pied <span class="patient-response">[Règles d’Ottawa cheville et pied négatives, pas d’indication à la radiographie dans la situation actuelle]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les Règles d’Ottawa pour la cheville et le pied sont une règle de décision clinique validée pour évaluer l’indication à la radiographie après un traumatisme aigu de la cheville et du médio-pied. Une radiographie est indiquée uniquement en cas de douleur à la pression sur les quatre points définis (bord postérieur ou pointe des malleolus lateralis et medialis, base du métatarsien V, os naviculaire) ou en cas d’impossibilité de faire quatre pas. En l’absence de ces critères, comme dans ce cas, aucun examen d’imagerie n’est nécessaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Appréciation clinique <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic présumé <span class="patient-response">[Entorse de la cheville droite, très probablement lésion ligamentaire latérale, sans signe de fracture]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Cliniquement entorse latérale avec gonflement au niveau du malleolus lateralis. Résultat négatif selon Ottawa: pas d’indication actuelle à la radiographie, filet de sécurité en cas d’aggravation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Information du patient <span class="patient-response">[Lésion ligamentaire sans signe de fracture osseuse, évaluation clinique selon les Règles d’Ottawa suffisante, traitement conservateur indiqué]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une information claire rassure et fixe les attentes pour l’évolution et le traitement conservateur.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Thérapie <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Analgésie <span class="patient-response">[AINS p. ex. ibuprofène, en alternative paracétamol ou traitement local]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les AINS sont le premier choix en cas de lésion ligamentaire aiguë, adaptés à la douleur et pour quelques jours.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Attelle <span class="patient-response">[Attelle semi-rigide (p. ex. Aircast) pendant environ 4 à 6 semaines, charge autorisée selon la douleur]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le traitement fonctionnel par attelle semi-rigide est la norme en cas de lésion ligamentaire latérale et nettement supérieur à un plâtre. L’attelle protège contre une nouvelle torsion tout en permettant une mobilisation fonctionnelle précoce.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Schéma GREC <span class="patient-response">[Repos, glace, compression, élévation. Mobilisation fonctionnelle précoce selon la douleur]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La mobilisation fonctionnelle précoce selon la tolérance à la douleur est la norme et supérieure à une immobilisation prolongée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Procédure <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Contrôle de l’évolution <span class="patient-response">[Contrôle chez le médecin de famille dans 5 à 7 jours en cas de plaintes persistantes]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas d’aggravation ou de nouveaux symptômes, plus tôt; sinon contrôle planifié à 5 à 7 jours.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Incapacité de travail <span class="patient-response">[Certificat d’incapacité pour travail physique sur chantier env. 1 à 2 semaines, puis reprise progressive selon douleur et capacité de charge]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pour les métiers physiquement exigeants comme le travail de chantier, une incapacité de travail jusqu’au retour d’une charge suffisante est pertinente sur le plan organisationnel. La durée dépend des symptômes et de la capacité de charge.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Arrêt du sport <span class="patient-response">[Arrêt du football pendant environ 4 à 6 semaines, reprise progressive après disparition des douleurs et stabilité suffisante]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La charge complète et les mouvements spécifiques au sport ne sont repris qu’après disparition des douleurs et stabilité adéquate afin d’éviter une nouvelle blessure.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Filet de sécurité <span class="patient-response">[Reconsulter en cas d’augmentation des douleurs, d’impossibilité de charger, de troubles sensitifs ou d’augmentation marquée du gonflement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le filet de sécurité garantit que le patient sait à quels signes d’alarme il doit reconsulter afin de reconnaître précocement une aggravation ou une lésion passée inaperçue. Ces symptômes peuvent indiquer une fracture initialement méconnue ou une complication et nécessitent une réévaluation médicale rapide.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Examens complémentaires <span class="patient-response">[En cas de plaintes persistantes ou croissantes, réévaluation; selon le résultat clinique, radiographie ou IRM en cas de suspicion de lésion ligamentaire significative ou de la syndesmose]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de symptomatologie persistante malgré traitement conservateur, une nouvelle évaluation avec tests de stabilité et, le cas échéant, une IRM pour évaluer l’appareil ligamentaire latéral est indiquée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-4" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prévention des récidives <span class="patient-response">[Taping ou bandage lors des charges sportives, entraînement de la proprioception au cours de l’évolution après disparition des douleurs]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Après une lésion ligamentaire latérale, le risque d’instabilité chronique et de nouvelle torsion est augmenté. L’entraînement de la proprioception et le taping ou bandage lors de l’activité sportive réduisent le risque de récidive.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-5" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Identifie les préoccupations, besoins, demandes et attentes du/de la patient·e et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible et reste flexible.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée au patient, favorise la compréhension par la reformulation, le reflet, le résumé et des explications, et utilise la voix, le débit et les pauses de façon ciblée.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance de manière ciblée pour créer une atmosphère d’échange bienveillante, confiante et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/65</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Déclencheur</strong> — Le traumatisme en supination touche l’appareil ligamentaire latéral; le traumatisme en pronation conduit plus souvent à des <span class="c-red">fractures</span>.</li><li><strong>Localisation</strong> — La localisation latérale est typique d’un traumatisme en supination; des <span class="c-pink">douleurs</span> médiales orientent vers une lésion plus complexe.</li><li class="theorie-sous-groupe"><strong>Dimension temporelle</strong> — Le moment et l’évolution permettent de différencier un traumatisme récent d’une instabilité chronique.</li><li><strong>Irradiation</strong> — L’irradiation est atypique lors d’une entorse et évoque une lésion associée ou une irritation nerveuse.</li><li><strong>Qualité</strong> — <span class="c-pink">Douleur</span> piquante en cas de lésion ligamentaire, pulsatile en cas d’atteinte osseuse, fulgurante en cas d’irritation nerveuse.</li><li><strong>Intensité / gravité</strong> — L’échelle NRS sert au suivi et à l’adaptation de l’analgésie.</li><li><strong>Mesures</strong> — Les mesures initiées par le patient montrent sa compréhension de la maladie et donnent une idée de l’acuité de la situation.</li><li><strong>Capacité de charge après le traumatisme</strong> — La capacité de charge immédiate après le traumatisme est un critère central d’Ottawa et s’oppose cliniquement à une <span class="c-red">fracture</span>.</li><li><strong>Symptômes associés</strong> — Aide à différencier précocement <span class="c-orange">complications</span> et diagnostics alternatifs.</li><li><strong>Douleurs au repos</strong> — La <span class="c-pink">douleur</span> au repos après un traumatisme évoque une <span class="c-red">fracture</span> ou une lésion associée significative.</li><li><strong>Antécédents traumatiques du pied</strong> — Les antécédents augmentent le risque d’instabilité chronique et de <span class="c-orange">récidive</span> du traumatisme.</li><li><strong>Craquement / bruit</strong> — Suggère une <span class="c-orange">rupture</span> ligamentaire ou une <span class="c-red">fracture</span>; non spécifique mais souvent rapporté par les patients.</li><li class="theorie-sous-groupe"><strong>pDMS</strong> — L’évaluation anamnestique pDMS dépiste précocement les <span class="c-orange">complications</span> neurovasculaires et complète l’examen clinique.</li><li><strong>pDMS · Déficits moteurs</strong> — Les déficits moteurs indiquent une atteinte neurologique significative et doivent être exclus avant la suite.</li><li><strong>Capacité de marche</strong> — La charge actuelle en consultation complète l’évaluation d’Ottawa et renseigne sur la sévérité de la lésion.</li><li class="theorie-sous-groupe"><strong>Événement de chute</strong> — En cas de chute, exclure des lésions associées pertinentes et une syncope primaire comme cause de la chute.</li><li><strong>Événement de chute · Impact crânien</strong> — Souvent associé lors des chutes; pertinent pour le triage et l’évaluation d’un TCC.</li><li><strong>Événement de chute · Syncope</strong> — Une syncope comme cause de chute doit être exclue, car elle modifie fondamentalement la suite.</li><li><strong>Maladies préexistantes</strong> — Des comorbidités pertinentes comme l’<span class="c-red">ostéoporose</span> ou le <span class="c-purple">diabète</span> modifient la guérison et le risque de <span class="c-orange">complications</span>.</li><li><strong>Opérations antérieures, en particulier au pied</strong> — Les opérations antérieures peuvent modifier l’anatomie et la capacité de charge.</li><li><strong>Médicaments</strong> — L’anticoagulation et un traitement prolongé par <span class="c-amber">AINS</span> doivent être connus avant la prescription d’analgésie.</li><li class="theorie-sous-groupe"><strong>Noxes</strong> — Le <span class="c-purple">tabagisme</span> retarde la consolidation osseuse; l’<span class="c-purple">alcool</span> peut contribuer au mécanisme de l’accident.</li><li><strong>Noxes · Alcool</strong> — Le cas échéant, indice d’une chute sous l’influence de l’<span class="c-purple">alcool</span> comme cause de l’accident.</li><li><strong>Noxes · Tabagisme</strong> — Toujours important à explorer, mais non déterminant dans ce cas.</li><li><strong>Allergies</strong> — Question de sécurité avant l’analgésie et un éventuel produit de contraste.</li><li><strong>Antécédents familiaux</strong> — Le diagnostic ne dépend pas de facteurs génétiques ou familiaux. L’anamnèse familiale n’apporte pas de valeur clinique dans ce cas.</li><li><strong>Profession</strong> — La profession aide à estimer l’impact de la lésion sur le quotidien et la nécessité d’un certificat d’incapacité ou d’une adaptation de la charge.</li><li><strong>Activité sportive</strong> — Le niveau de performance influe sur l’intensité du traitement, la rééducation et la planification du retour au sport.</li></ul>
+</div><div class="theorie-section">
+    <h4>Examen clinique</h4>
+    <ul><li><strong>Démarche</strong> — La capacité à supporter la charge sur quatre pas est un critère central d’Ottawa et, associée à l’absence de <span class="c-pink">douleur</span> osseuse à la pression, s’oppose à une indication radiographique.</li><li><strong>Inspection cheville droite</strong> — Documenter gonflement, <span class="c-red">hématome</span>, axe et déformations visibles.</li><li><strong>Palpation de la cheville</strong> — Tester la <span class="c-pink">douleur</span> à la pression sur le bord postérieur du malleolus lateralis et medialis (Règles d’Ottawa cheville).</li><li><strong>Palpation du pied</strong> — Tester la <span class="c-pink">douleur</span> à la pression à la base de l’os métatarsien V et sur l’os naviculaire (Règles d’Ottawa pied).</li><li><strong>Mobilité passive</strong> — Mobilité et provocation de la <span class="c-pink">douleur</span>, indication d’une atteinte articulaire et d’une instabilité.</li><li><strong>Perfusion</strong> — Pouls A. dorsalis pedis et A. tibialis posterior en comparaison latérale, temps de recoloration capillaire.</li><li><strong>Motricité</strong> — Flexion plantaire et dorsale actives, et force des releveurs des orteils en comparaison latérale.</li><li><strong>Sensibilité</strong> — Tester la sensibilité dans le territoire des nerfs péronier superficiel et tibial.</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostique</h4>
+    <ul><li><strong>Règles d’Ottawa cheville et pied</strong> — Les Règles d’Ottawa pour la cheville et le pied sont une règle de décision clinique validée pour évaluer l’indication à la <span class="c-green">radiographie</span> après un traumatisme aigu de la cheville et du médio-pied. Une <span class="c-green">radiographie</span> est indiquée uniquement en cas de <span class="c-pink">douleur</span> à la pression sur les quatre points définis (bord postérieur ou pointe des malleolus lateralis et medialis, base du métatarsien V, os naviculaire) ou en cas d’impossibilité de faire quatre pas. En l’absence de ces critères, comme dans ce cas, aucun examen d’imagerie n’est nécessaire.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic présumé</strong> — Cliniquement entorse latérale avec gonflement au niveau du malleolus lateralis. Résultat négatif selon Ottawa: pas d’indication actuelle à la <span class="c-green">radiographie</span>, <span class="c-yellow">filet de sécurité</span> en cas d’aggravation.</li><li><strong>Information du patient</strong> — Une information claire rassure et fixe les attentes pour l’évolution et le traitement conservateur.</li><li><strong>Analgésie</strong> — Les <span class="c-amber">AINS</span> sont le premier choix en cas de lésion ligamentaire aiguë, adaptés à la <span class="c-pink">douleur</span> et pour quelques jours.</li><li><strong>Attelle</strong> — Le traitement fonctionnel par attelle semi-rigide est la norme en cas de lésion ligamentaire latérale et nettement supérieur à un plâtre. L’attelle protège contre une nouvelle torsion tout en permettant une mobilisation fonctionnelle précoce.</li><li><strong>Schéma GREC</strong> — La mobilisation fonctionnelle précoce selon la tolérance à la <span class="c-pink">douleur</span> est la norme et supérieure à une <span class="c-amber">immobilisation</span> prolongée.</li><li><strong>Contrôle de l’évolution</strong> — En cas d’aggravation ou de nouveaux symptômes, plus tôt; sinon contrôle planifié à 5 à 7 jours.</li><li><strong>Incapacité de travail</strong> — Pour les métiers physiquement exigeants comme le travail de chantier, une incapacité de travail jusqu’au retour d’une charge suffisante est pertinente sur le plan organisationnel. La durée dépend des symptômes et de la capacité de charge.</li><li><strong>Arrêt du sport</strong> — La charge complète et les mouvements spécifiques au sport ne sont repris qu’après disparition des <span class="c-pink">douleurs</span> et stabilité adéquate afin d’éviter une nouvelle blessure.</li><li><strong>Filet de sécurité</strong> — Le <span class="c-yellow">filet de sécurité</span> garantit que le patient sait à quels <span class="c-yellow">signes d’alarme</span> il doit reconsulter afin de reconnaître précocement une aggravation ou une lésion passée inaperçue. Ces symptômes peuvent indiquer une <span class="c-red">fracture</span> initialement méconnue ou une <span class="c-orange">complication</span> et nécessitent une réévaluation médicale rapide.</li><li><strong>Examens complémentaires</strong> — En cas de symptomatologie persistante malgré traitement conservateur, une nouvelle évaluation avec tests de stabilité et, le cas échéant, une <span class="c-green">IRM</span> pour évaluer l’appareil ligamentaire latéral est indiquée.</li><li><strong>Prévention des récidives</strong> — Après une lésion ligamentaire latérale, le risque d’instabilité chronique et de nouvelle torsion est augmenté. L’entraînement de la proprioception et le taping ou bandage lors de l’activité sportive réduisent le risque de <span class="c-orange">récidive</span>.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Application correcte des Règles d’Ottawa cheville et pied</li><li>Examen orthopédique ciblé avec contrôle pDMS</li><li>Traitement conservateur avec schéma GREC, attelle et <span class="c-yellow">filet de sécurité</span></li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Traduit automatiquement puis vérifié par une IA face à l&#x27;original allemand.</p><p>Chez Gabriel Santos, ouvrier du bâtiment dans la construction routière et footballeur amateur de 28 ans, le tableau clinique correspond à une entorse isolée de la cheville droite après un traumatisme en supination survenu la veille au soir.</p><p>À l’anamnèse, le patient rapporte une torsion de la cheville lors d’un match de football avec apparition immédiate d’une <span class="c-pink">douleur</span> vive et piquante au niveau de la malléole latérale droite. Il a pu poser le pied juste après le traumatisme et est rentré en boitant. <span class="c-pink">Douleur</span> au repos, impact crânien, perte de connaissance ainsi que des indices anamnestiques d’atteinte pDMS sont niés.</p><p>À l’examen clinique, on observe un <span class="c-pink">œdème</span> au niveau du malleolus lateralis sans déformation ni <span class="c-red">hématome</span>. La <span class="c-green">palpation</span> des points pertinents selon Ottawa ne met pas en évidence de <span class="c-pink">douleur</span> provoquée à la pression sur le malleolus lateralis, le malleolus medialis, la base du métatarsien V et l’os naviculaire. La mobilité passive est douloureuse et limitée, la démarche est boiteuse mais la charge reste possible. Le pDMS est cliniquement intact.</p><p>La démarche diagnostique selon les Règles d’Ottawa cheville et pied est négative, ce qui signifie qu’il n’y a actuellement aucun signe clinique de <span class="c-red">fracture</span> et qu’aucune <span class="c-green">radiographie</span> n’est indiquée selon Ottawa.</p><p>La prise en charge se fait de manière conservatrice avec un schéma GREC, une <span class="c-amber">immobilisation</span> par attelle semi-rigide (Aircast) et une analgésie adaptée à la <span class="c-pink">douleur</span> avec <span class="c-amber">AINS</span>. Compte tenu de l’activité physiquement exigeante sur les chantiers routiers, un certificat d’incapacité de travail de 1 à 2 semaines est délivré, complété par un arrêt du sport avec reprise progressive du football après disparition des <span class="c-pink">douleurs</span>. Le patient bénéficie d’un contrôle chez le médecin de famille dans 5 à 7 jours ainsi que d’un <span class="c-yellow">filet de sécurité</span> avec critères de reconsultation clairs.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Aperçu AKDP</div><div class="annexe-expert-content"><p>Anamnèse: traumatisme en supination au football, <span class="c-pink">douleur</span> piquante à la malléole latérale droite, charge possible immédiatement après le traumatisme, pas d’impact crânien, pas de syncope, pDMS sans particularité. Ouvrier du bâtiment dans la construction routière, footballeur amateur</p><p>Statut clinique: <span class="c-pink">œdème</span> au niveau du malleolus lateralis, pas de déformation, pas de <span class="c-pink">douleur</span> à la pression sur les points d’Ottawa, mobilité passive douloureuse et limitée, démarche boiteuse mais charge possible, pDMS intact</p><p>Diagnostique: Règles d’Ottawa cheville et pied négatives, pas d’indication à la <span class="c-green">radiographie</span></p><p>Procédure: schéma GREC, analgésie <span class="c-amber">AINS</span>, attelle semi-rigide (Aircast), certificat d’incapacité pour travail de chantier, arrêt du sport, contrôle de l’évolution à 5 à 7 jours, <span class="c-yellow">filet de sécurité</span></p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 29,
+        "examen": 8,
+        "management": 12,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 3,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 4,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

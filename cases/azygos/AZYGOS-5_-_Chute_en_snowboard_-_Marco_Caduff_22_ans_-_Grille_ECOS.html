@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-5 - Chute en snowboard - Marco Caduff, 22 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-5 - Chute en snowboard</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-5" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet de médecine de famille</p>
+            <p style="margin: 5px 0;">👤 Marco Caduff, 22 ans</p>
+            <p style="margin: 5px 0;">🏷️ Orthopédie · Poste standard · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/27</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Plainte actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question initiale <span class="patient-response">[«Je suis tombé hier en faisant du snowboard sur la main droite et ça n’arrête pas d’empirer.»]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La question d’ouverture doit être ouverte. Le patient livre le mécanisme, la localisation et une auto-évaluation initiale («seulement une entorse»), cette dernière étant un indice typique qui ne doit pas être accepté sans vérification.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début / durée <span class="patient-response">[Hier après-midi lors de la dernière descente]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[Initialement très douloureux à l’impact, puis un peu mieux, ensuite aggravation continue; douleurs très fortes la nuit]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[(montre le côté du pouce du poignet)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Localisation dans la tabatière hautement évocatrice d’une fracture du scaphoïde.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Latéralité dominante <span class="patient-response">[Droitier, la main droite est concernée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Éclaire la conséquence fonctionnelle de la blessure. La main dominante atteinte représente une gêne plus importante au quotidien et au travail et influence la décision thérapeutique vers une clarification rapide et, selon le résultat, un suivi rapproché.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Qualité <span class="patient-response">[Sourde et pulsatile au repos, piquante à l’utilisation]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[En moyenne 6/10]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊕ Facteurs aggravants <span class="patient-response">[Oui, quand j’utilise la main, ça fait mal]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Douleur dépendante de la charge, en faveur d’une lésion structurelle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊖ Facteurs soulageants <span class="patient-response">[Froid]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures jusqu’ici <span class="patient-response">[Poche de glace et ibuprofène 400 mg pour dormir; a un peu aidé]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Documenter l’automédication et l’auto-évaluation déjà réalisées.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-9" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Retentissement au quotidien <span class="patient-response">[Sollicitation de la main douloureuse, utilisation d’outils avec la droite difficile]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La limitation fonctionnelle avec main dominante a une pertinence directe pour l’incapacité de travail et le métier (apprenti menuisier).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-10" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Que voulez-vous dire?]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Chez AZYGOS, les patientes et patients ne mentionnent volontairement aucun symptôme associé pertinent à cette question ouverte. Ce qui est évalué, c’est le questionnement ciblé. En pratique, la question reste importante, car elle peut parfois révéler spontanément des indices décisifs.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-11" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Mécanisme d’appui <span class="patient-response">[Rattrapé sur la main droite tendue, paume en premier]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La chute sur la main tendue avec poignet en dorsiflexion est le mécanisme classique de la fracture du scaphoïde. Doit être recherché spécifiquement, car les patients ne décrivent souvent pas spontanément le mécanisme exact.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Gonflement <span class="patient-response">[Oui, léger gonflement du poignet du côté du pouce]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Gonflement local comme indice de lésion structurelle. La localisation dans la tabatière correspond à la région du scaphoïde.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Hématome <span class="patient-response">[Non, pas de bleu visible]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence d’hématome n’exclut pas une fracture. Dans les fractures du scaphoïde, souvent pas d’hématome visible car protégé dans le carpe.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Sensibilité / perfusion <span class="patient-response">[Pas d’engourdissement, pas de fourmillements, main chaude]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Il faut exclure des lésions neurovasculaires associées. Des signes de lésion nerveuse ou vasculaire seraient des complications dangereuses.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Motricité <span class="patient-response">[Doigts bien mobiles, poignet douloureux aux mouvements]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La mobilité conservée des doigts va contre une lésion nerveuse majeure. La douleur lors des mouvements du poignet est typique d’une atteinte osseuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse pour DD / anamnèse systémique <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Autres lésions associées <span class="patient-response">[Pas de choc à la tête, pas de perte de connaissance, pas d’autres douleurs]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dépistage des lésions associées après une chute. Rechercher spécifiquement un choc à la tête, une brève perte de connaissance et des douleurs dans d’autres régions du corps.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Anciennes blessures / problèmes de la main <span class="patient-response">[Non, jamais eu de problèmes à la main]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Question spécifique au cas sur les antécédents de la main concernée. Recense les blessures antérieures et les plaintes chroniques, pertinent pour des lésions préexistantes structurelles, le diagnostic différentiel de douleurs chroniques et le risque de re-blessure.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Opérations antérieures de la main <span class="patient-response">[Non, jamais opéré à la main]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Question spécifique sur les opérations antérieures. Des interventions passées sur la main concernée peuvent modifier l’examen clinique et l’évaluation radiologique et influencent la suite de la prise en charge.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Hier soir un ibuprofène, sinon rien de régulier]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Non, aucune connue]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Noxes<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La nicotine retarde nettement la consolidation des fractures. Une consommation chronique d’alcool peut également altérer la consolidation osseuse.</span></span></span> · Alcool <span class="patient-response">[Seulement de temps en temps le week-end]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Tabac <span class="patient-response">[Non, je ne fume pas]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La nicotine retarde la consolidation osseuse, pertinent en cas de fractures.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux <span class="patient-response">[Père avec tension artérielle élevée, mère en bonne santé, rien d’autre de connu]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Anamnèse familiale générale en nice-to-ask; dans un cas traumato aigu sans composante héréditaire, ce n’est pas central.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Apprenti menuisier en 3e année d’apprentissage, droitier, beaucoup de travail avec outils]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dextérité droite + profil professionnel pertinents pour l’incapacité de travail, l’assurance (SUVA) et l’évolution de la guérison.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Sport de compétition <span class="patient-response">[Non, snowboard comme hobby en hiver, basket en loisir, pas de sport de compétition]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les sportifs de compétition ont des exigences fonctionnelles plus élevées, d’autres attentes de guérison et des exigences de compliance plus strictes. Influence la décision thérapeutique (p. ex. seuil opératoire plus bas pour un retour rapide).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/22</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Avant-bras / coude <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection avant-bras / coude <span class="patient-response">[Avant-bras et coude sans signe d’irritation, pas de gonflement, pas d’hématome, pas de déformation]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Inspection orientatrice des structures adjacentes, exclusion d’une lésion associée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Palpation<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’examen des structures adjacentes exclut des lésions associées. Douleur sur la diaphyse du radius peut évoquer une fracture de Galeazzi; au coude, une fracture de la tête radiale ou de Monteggia.</span></span></span> · Avant-bras (diaphyse du radius et de l’ulna) <span class="patient-response">[Pas de douleur à la pression sur la diaphyse du radius ou de l’ulna]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Palpation des diaphyses radiale et ulnaire. Une douleur à la pression nécessite une imagerie complémentaire pour suspicion de fracture diaphysaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation · Coude (tête radiale, olécrâne, épicondyles) <span class="patient-response">[Non douloureux à la pression, mobilité libre, pas d’hématome]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Palpation des structures osseuses du coude. Une douleur à la tête radiale, à l’olécrâne ou aux épicondyles évoque une lésion associée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Main / poignet droit <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Tests globaux<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Aperçu fonctionnel initial avec les principaux tests de préhension. Les anomalies guident l’examen ciblé de la main.</span></span></span> · Extension <span class="patient-response">[Extension active des doigts et de la main possible, extension du poignet douloureuse]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Fonction globale des extenseurs et mobilité du poignet.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Tests globaux · Fermeture du poing <span class="patient-response">[Possible, force diminuée, douloureux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Fonction globale des fléchisseurs et force de préhension grossière, main dominante.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Tests globaux · Petit poing <span class="patient-response">[Possible, douloureux dans la région du poignet]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Flexion limitée aux PIP/DIP, teste la fonction intrinsèque vs extrinsèque.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Tests globaux · Prise en clé <span class="patient-response">[Possible, force diminuée et douloureuse]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Prise de force entre le pouce et le bord radial de l’index.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Tests globaux · Pince de précision (stylo) <span class="patient-response">[Possible, motricité fine conservée, douloureux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pince fine de précision, pouce contre pulpe de l’index.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-4" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Tests globaux · Test de ténodèse <span class="patient-response">[À la flexion passive du poignet, extension réflexe des doigts, intégrité tendineuse intacte]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En extension dorsale passive du poignet, les doigts se fléchissent; en flexion palmaire passive, ils s’étendent. L’absence de ces mouvements associés évoque une rupture tendineuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-5" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection de la main <span class="patient-response">[Discret gonflement radio-dorsal sur la tabatière, pas d’hématome, pas de déformation visible, peau intacte]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Inspection visuelle complète de la main droite. La comparaison au côté opposé est essentielle pour reconnaître des asymétries subtiles (gonflement, axe, modifications de contour). Une déformation visible évoque une fracture déplacée ou une luxation; une plaie cutanée une fracture ouverte.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-6" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Triade du scaphoïde (palpation + provocation)<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Triade clinique classique en cas de suspicion de fracture du scaphoïde. Douleur à la pression dans la tabatière anatomique, en palmaire sur le tuberculum scaphoidei, et douleur à la compression axiale du pouce. Les trois tests ensemble augmentent nettement la valeur diagnostique et constituent l’outil clinique central avant toute imagerie supplémentaire.</span></span></span> · Douleur à la pression tabatière <span class="patient-response">[Nettrement douloureux à la pression (positif)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Palpation de la tabatière anatomique entre les tendons du muscle extensor pollicis longus et brevis. Une douleur à la pression ici est un signe classique et sensible de fracture du scaphoïde car l’os y est directement accessible.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-7" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Triade du scaphoïde (palpation + provocation) · Douleur à la pression tuberculum scaphoidei (palmaire) <span class="patient-response">[Douloureux en palmaire à la pression (positif)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Palpation du pôle palmaire du scaphoïde au versant volaire du poignet, dans la gouttière sous l’éminence thénar. Une douleur à cet endroit renforce la suspicion issue de l’examen dorsal et teste le scaphoïde du côté opposé.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-8" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Triade du scaphoïde (palpation + provocation) · Compression axiale D1 <span class="patient-response">[Douleur dans la région du scaphoïde (positif)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La compression longitudinale du pouce vers le poignet transmet la charge via l’articulation trapézo-métacarpienne au scaphoïde. La douleur évoque une atteinte du scaphoïde et constitue le volet dynamique de la triade.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-9" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation des structures adjacentes <span class="patient-response">[Radius distal / ulna, carpe / métacarpiens non douloureux à la pression]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Exclusion de fractures associées ou différentielles sur les os voisins (fracture de Colles, autres fractures du carpe, fractures des métacarpiens).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-10" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Mobilité du poignet<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Amplitude de mouvement du poignet dans les quatre plans principaux plus prono-supination de l’avant-bras. L’extension dorsale et l’abduction radiale sont classiquement douloureuses en cas de fracture du scaphoïde, car ces mouvements sollicitent mécaniquement le scaphoïde.</span></span></span> · Extension dorsale / flexion palmaire <span class="patient-response">[Extension dorsale douloureuse et limitée, flexion palmaire douloureuse en fin d’amplitude]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’extension dorsale correspond au mouvement lors de la chute sur la main tendue et sollicite mécaniquement le scaphoïde. La douleur ici est diagnostiquement évocatrice.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-11" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mobilité du poignet · Abduction radiale / abduction ulnaire <span class="patient-response">[Abduction radiale douloureuse et limitée, abduction ulnaire libre]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’abduction radiale comprime la région du scaphoïde. L’abduction ulnaire (position de Stecher) est généralement tolérée et constitue aussi la position radiologique standard pour la visualisation du scaphoïde.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-12" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mobilité du poignet · Pronation / supination <span class="patient-response">[Mobilité libre, légèrement douloureuse en fin d’amplitude]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Rotation de l’avant-bras. Douleur ou limitation peut évoquer une atteinte radio-ulnaire distale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-13" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Fonction du pouce<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Examen orientatif du pouce. Ouverture de la commissure comme abduction générale, anté-/rétropulsion comme amplitude, opposition comme test de fonction du nerf médian.</span></span></span> · Ouverture de la commissure <span class="patient-response">[Mobilité libre, pas d’anomalie]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Abduction orientative du pouce, pas de test spécifique du scaphoïde.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-14" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Fonction du pouce · Anté-/rétropulsion (90-0-0) <span class="patient-response">[Antépulsion 90°, rétropulsion 0°, douloureux en fin d’amplitude]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Évaluation de l’amplitude du pouce, valeurs normales 90-0-0.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-15" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Fonction du pouce · Opposition vers D2–D5 <span class="patient-response">[Opposition complète possible, sans douleur, sans déficit neurologique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’opposition se fait dans l’articulation en selle et ne sollicite pas directement le scaphoïde. Test de fonction du m. opponens pollicis (nerf médian). Opposition conservée exclut une lésion majeure du médian.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-16" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Sensibilité / perfusion <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Perfusion <span class="patient-response">[A. radialis et ulnaris bien palpables, temps de recoloration capillaire &lt; 2 s, main chaude]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Évaluation orientative de la perfusion périphérique par les pouls, le temps de recoloration capillaire et la température cutanée. Un pouls affaibli, une recoloration retardée ou une main froide peuvent suggérer un trouble de la perfusion.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Sensibilité <span class="patient-response">[Intacte dans les territoires du n. radialis, medianus et ulnaris]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les déficits de sensibilité peuvent évoquer une atteinte nerveuse et doivent être explorés selon le contexte clinique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/12</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Imagerie <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Radiographie poignet droit <span class="patient-response">[Pas de trait fracturaire évident visible, pas de déplacement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les incidences standard sont dorsopalmaire et latérale. L’incidence de Stecher (poing serré en abduction ulnaire) est essentielle pour visualiser le scaphoïde sur toute sa longueur sans superposition. Jusqu’à 30 % des fractures du scaphoïde sont occultes sur la radiographie initiale; un résultat négatif n’exclut pas le diagnostic.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Appréciation clinique <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail: fracture du scaphoïde <span class="patient-response">[Suspicion clinique de fracture du scaphoïde droit, occulte radiologiquement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de fracture occulte radiologiquement, la localisation (taille, pôle proximal ou distal) n’est pas attribuable cliniquement. La localisation précise ne sera visible qu’à l’imagerie en coupes (MRI/CT) ou à la radiographie de contrôle et détermine la prise en charge définitive.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Thérapie <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Immobilisation par attelle/plâtre de scaphoïde <span class="patient-response">[Mettre en place une immobilisation de l’avant-bras avec inclusion du pouce (plâtre de scaphoïde ou attelle de scaphoïde)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Points clés à la pose: base avant-bras jusqu’à la main, inclusion du pouce jusqu’à la phalange distale, poignet en légère extension dorsale (env. 20°), pouce en position fonctionnelle (légèrement abducté, opposé), doigts longs libres, bonne protection, pas de points de pression, contrôle DMS après la pose. Les études montrent des taux de consolidation comparables entre plâtre et attelle préfabriquée en cas de fracture non déplacée. En cabinet de médecine de famille, attelle souvent initialement, prise en charge définitive par le/la chirurgien/ne de la main.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antalgie <span class="patient-response">[Paracétamol et/ou AINS selon besoin]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Antalgie standard en cas de fracture/blessure aiguë. Posologie et choix selon tolérance individuelle et médication concomitante.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Surélévation / refroidissement <span class="patient-response">[Surélever, appliquer du froid les premiers jours]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Mesures traumatologiques générales.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Procédure <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Imagerie complémentaire (Shared Decision Making)<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La suite diagnostique n’est pas définie de manière uniforme dans la littérature. Les trois options listées sont toutes plausibles cliniquement et peuvent être fixées en Shared Decision Making avec le patient, en tenant compte du métier, du niveau d’activité, de la disponibilité de l’imagerie et des préférences du patient. En cas de main dominante et de métier manuel, l’inscription directe au CT est privilégiée.</span></span></span> · Inscription directe au CT <span class="patient-response">[Inscription directe pour CT du poignet (préférée en raison d’un fort soupçon clinique, main dominante et métier manuel)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Clarification rapide en une étape: fracture oui/non plus localisation, degré de déplacement et informations pour la planification opératoire. Pour ce profil (jeune apprenti, main dominante, métier manuel), c’est la voie privilégiée. Évite 6 semaines d’immobilisation inutile en l’absence de fracture et permet une adaptation en temps utile de la thérapie et de l’incapacité de travail.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Imagerie complémentaire (Shared Decision Making) · Contrôle clinique évolutif, puis CT si suspicion <span class="patient-response">[Contrôle clinique dans 10 à 14 jours; en cas de suspicion persistante, inscription pour CT]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Variante pragmatique: plâtre/attelle de scaphoïde, puis réévaluation clinique de la triade à 10–14 jours. En cas d’absence de douleur et de triade négative, la fracture est improbable. Si la suspicion persiste, inscription pour CT. Faible irradiation, économique, mais clarification retardée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Imagerie complémentaire (Shared Decision Making) · Radiographie de contrôle, puis CT si suspicion <span class="patient-response">[Radiographie de contrôle à 10–14 jours; si résultat toujours négatif et suspicion clinique persistante, inscription pour CT]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Variante classique: plâtre/attelle de scaphoïde, radiographie de contrôle après 10–14 jours, car le trait peut devenir visible par résorption osseuse. En cas de suspicion persistante malgré une radiographie de contrôle sans particularité, inscription pour CT. Fréquente en pratique suisse en cabinet, mais sensibilité limitée pour les fractures occultes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">En cas de fracture avérée: orientation chirurgie de la main<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de fracture du scaphoïde confirmée, orientation vers la chirurgie de la main pour planification du traitement définitif et du suivi. Le choix entre traitement conservateur et opératoire dépend du déplacement, de la localisation de la fracture et de facteurs liés au patient. Attention: en cas de persistance des symptômes au-delà de 3 mois après la fin du traitement, refaire une radiographie, car une pseudarthrose tardive est possible.</span></span></span> · Traitement conservateur <span class="patient-response">[En cas de fracture non ou minimalement déplacée, immobilisation par attelle/plâtre de scaphoïde pendant env. 6 semaines]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Indiqué en cas de fracture non déplacée ou minimalement déplacée (jusqu’à env. 1,5 mm). Immobilisation avec inclusion du pouce, contrôle à 6 semaines pour évaluer la consolidation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">En cas de fracture avérée: orientation chirurgie de la main · Traitement opératoire <span class="patient-response">[En cas de fracture déplacée, de pôle proximal ou d’instabilité, prise en charge opératoire (vis de Herbert)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Indiqué en cas de fracture déplacée (dès env. 1,5 mm), pôle proximal (risque accru de nécrose avasculaire), instabilité ou souhaits spécifiques du patient (retour rapide au sport / travail). Ostéosynthèse par vis de Herbert percutanée ou à ciel ouvert.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-4" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Incapacité de travail <span class="patient-response">[Incapacité de travail 100 % jusqu’à clarification et adaptation selon l’évolution]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avec main dominante et activité manuelle, indication claire d’incapacité de travail. La durée dépend du résultat et de l’évolution de la guérison.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-5" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Filet de sécurité <span class="patient-response">[Reconsultation immédiate en cas d’augmentation des douleurs, d’engourdissement, de gonflement sous plâtre ou de lésions cutanées]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Information du patient sur les signes d’alarme sous immobilisation. Reconsultation immédiate en cas d’augmentation des douleurs, engourdissement ou fourmillements, gonflement ou décoloration des doigts, perte de mobilité ou points de pression. Objectif: détection précoce d’une nécrose de pression, d’un syndrome des loges ou d’une compression nerveuse sous plâtre ou attelle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-6" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des émotions et besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Identifie les soucis, besoins, préoccupations et attentes du/de la patient/e et y répond avec empathie et de manière appropriée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des émotions et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des émotions et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des émotions et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des émotions et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des émotions et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil rouge compréhensible, tout en restant flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée au patient, favorise la compréhension par la répétition, le reflet, les résumés et les explications, et utilise de manière ciblée la voix, le débit et les pauses.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance de manière ciblée pour instaurer une atmosphère d’entretien bienveillante, de confiance et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/77</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Question initiale</strong> — La question d’ouverture doit être ouverte. Le patient livre le mécanisme, la localisation et une auto-évaluation initiale («seulement une entorse»), cette dernière étant un indice typique qui ne doit pas être accepté sans vérification.</li><li><strong>Localisation</strong> — Localisation dans la tabatière hautement évocatrice d’une <span class="c-red">fracture</span> du scaphoïde.</li><li><strong>Latéralité dominante</strong> — Éclaire la conséquence fonctionnelle de la blessure. La main dominante atteinte représente une gêne plus importante au quotidien et au travail et influence la décision thérapeutique vers une clarification rapide et, selon le résultat, un suivi rapproché.</li><li><strong>⊕ Facteurs aggravants</strong> — <span class="c-pink">Douleur</span> dépendante de la charge, en faveur d’une lésion structurelle.</li><li><strong>Mesures jusqu’ici</strong> — Documenter l’automédication et l’auto-évaluation déjà réalisées.</li><li><strong>Retentissement au quotidien</strong> — La limitation fonctionnelle avec main dominante a une pertinence directe pour l’incapacité de travail et le métier (apprenti menuisier).</li><li><strong>Symptômes associés</strong> — Chez AZYGOS, les patientes et patients ne mentionnent volontairement aucun symptôme associé pertinent à cette question ouverte. <span class="c-blue">Ce qui est évalué</span>, c’est le questionnement ciblé. En pratique, la question reste importante, car elle peut parfois révéler spontanément des indices décisifs.</li><li><strong>Mécanisme d’appui</strong> — La chute sur la main tendue avec poignet en dorsiflexion est le mécanisme classique de la <span class="c-red">fracture</span> du scaphoïde. Doit être recherché spécifiquement, car les patients ne décrivent souvent pas spontanément le mécanisme exact.</li><li><strong>Gonflement</strong> — Gonflement local comme indice de lésion structurelle. La localisation dans la tabatière correspond à la région du scaphoïde.</li><li><strong>Hématome</strong> — L’absence d’<span class="c-red">hématome</span> n’exclut pas une <span class="c-red">fracture</span>. Dans les <span class="c-red">fractures</span> du scaphoïde, souvent pas d’<span class="c-red">hématome</span> visible car protégé dans le carpe.</li><li><strong>Sensibilité / perfusion</strong> — Il faut exclure des lésions neurovasculaires associées. Des signes de lésion nerveuse ou vasculaire seraient des <span class="c-orange">complications</span> dangereuses.</li><li><strong>Motricité</strong> — La mobilité conservée des doigts va contre une lésion nerveuse majeure. La <span class="c-pink">douleur</span> lors des mouvements du poignet est typique d’une atteinte osseuse.</li><li><strong>Autres lésions associées</strong> — Dépistage des lésions associées après une chute. Rechercher spécifiquement un choc à la tête, une brève perte de connaissance et des <span class="c-pink">douleurs</span> dans d’autres régions du corps.</li><li><strong>Anciennes blessures / problèmes de la main</strong> — Question spécifique au cas sur les antécédents de la main concernée. Recense les blessures antérieures et les plaintes chroniques, pertinent pour des lésions préexistantes structurelles, le <span class="c-yellow">diagnostic différentiel</span> de <span class="c-pink">douleurs</span> chroniques et le risque de re-blessure.</li><li><strong>Opérations antérieures de la main</strong> — Question spécifique sur les opérations antérieures. Des interventions passées sur la main concernée peuvent modifier l’examen clinique et l’évaluation radiologique et influencent la suite de la prise en charge.</li><li class="theorie-sous-groupe"><strong>Noxes</strong> — La nicotine retarde nettement la consolidation des <span class="c-red">fractures</span>. Une consommation chronique d’<span class="c-purple">alcool</span> peut également altérer la consolidation osseuse.</li><li><strong>Noxes · Tabac</strong> — La nicotine retarde la consolidation osseuse, pertinent en cas de <span class="c-red">fractures</span>.</li><li><strong>Antécédents familiaux</strong> — Anamnèse familiale générale en nice-to-ask; dans un cas traumato aigu sans composante héréditaire, ce n’est pas central.</li><li><strong>Profession</strong> — Dextérité droite + profil professionnel pertinents pour l’incapacité de travail, l’assurance (SUVA) et l’évolution de la guérison.</li><li><strong>Sport de compétition</strong> — Les sportifs de compétition ont des exigences fonctionnelles plus élevées, d’autres attentes de guérison et des exigences de compliance plus strictes. Influence la décision thérapeutique (p. ex. seuil opératoire plus bas pour un retour rapide).</li></ul>
+</div><div class="theorie-section">
+    <h4>Examen clinique</h4>
+    <ul><li><strong>Inspection avant-bras / coude</strong> — <span class="c-green">Inspection</span> orientatrice des structures adjacentes, exclusion d’une lésion associée.</li><li class="theorie-sous-groupe"><strong>Palpation</strong> — L’examen des structures adjacentes exclut des lésions associées. <span class="c-pink">Douleur</span> sur la diaphyse du radius peut évoquer une <span class="c-red">fracture</span> de Galeazzi; au coude, une <span class="c-red">fracture</span> de la tête radiale ou de Monteggia.</li><li><strong>Palpation · Avant-bras (diaphyse du radius et de l’ulna)</strong> — <span class="c-green">Palpation</span> des diaphyses radiale et ulnaire. Une <span class="c-pink">douleur</span> à la pression nécessite une imagerie complémentaire pour suspicion de <span class="c-red">fracture</span> diaphysaire.</li><li><strong>Palpation · Coude (tête radiale, olécrâne, épicondyles)</strong> — <span class="c-green">Palpation</span> des structures osseuses du coude. Une <span class="c-pink">douleur</span> à la tête radiale, à l’olécrâne ou aux épicondyles évoque une lésion associée.</li><li class="theorie-sous-groupe"><strong>Tests globaux</strong> — Aperçu fonctionnel initial avec les principaux tests de préhension. Les anomalies guident l’examen ciblé de la main.</li><li><strong>Tests globaux · Extension</strong> — Fonction globale des extenseurs et mobilité du poignet.</li><li><strong>Tests globaux · Fermeture du poing</strong> — Fonction globale des fléchisseurs et force de préhension grossière, main dominante.</li><li><strong>Tests globaux · Petit poing</strong> — Flexion limitée aux PIP/DIP, teste la fonction intrinsèque vs extrinsèque.</li><li><strong>Tests globaux · Prise en clé</strong> — Prise de force entre le pouce et le bord radial de l’index.</li><li><strong>Tests globaux · Pince de précision (stylo)</strong> — Pince fine de précision, pouce contre pulpe de l’index.</li><li><strong>Tests globaux · Test de ténodèse</strong> — En extension dorsale passive du poignet, les doigts se fléchissent; en flexion palmaire passive, ils s’étendent. L’absence de ces mouvements associés évoque une <span class="c-orange">rupture</span> tendineuse.</li><li><strong>Inspection de la main</strong> — <span class="c-green">Inspection</span> visuelle complète de la main droite. La comparaison au côté opposé est essentielle pour reconnaître des asymétries subtiles (gonflement, axe, modifications de contour). Une déformation visible évoque une <span class="c-red">fracture</span> déplacée ou une <span class="c-red">luxation</span>; une plaie cutanée une <span class="c-red">fracture</span> ouverte.</li><li class="theorie-sous-groupe"><strong>Triade du scaphoïde (palpation + provocation)</strong> — Triade clinique classique en cas de suspicion de <span class="c-red">fracture</span> du scaphoïde. <span class="c-pink">Douleur</span> à la pression dans la tabatière anatomique, en palmaire sur le tuberculum scaphoidei, et <span class="c-pink">douleur</span> à la compression axiale du pouce. Les trois tests ensemble augmentent nettement la valeur diagnostique et constituent l’outil clinique central avant toute imagerie supplémentaire.</li><li><strong>Triade du scaphoïde (palpation + provocation) · Douleur à la pression tabatière</strong> — <span class="c-green">Palpation</span> de la tabatière anatomique entre les tendons du muscle extensor pollicis longus et brevis. Une <span class="c-pink">douleur</span> à la pression ici est un signe classique et sensible de <span class="c-red">fracture</span> du scaphoïde car l’os y est directement accessible.</li><li><strong>Triade du scaphoïde (palpation + provocation) · Douleur à la pression tuberculum scaphoidei (palmaire)</strong> — <span class="c-green">Palpation</span> du pôle palmaire du scaphoïde au versant volaire du poignet, dans la gouttière sous l’éminence thénar. Une <span class="c-pink">douleur</span> à cet endroit renforce la suspicion issue de l’examen dorsal et teste le scaphoïde du côté opposé.</li><li><strong>Triade du scaphoïde (palpation + provocation) · Compression axiale D1</strong> — La compression longitudinale du pouce vers le poignet transmet la charge via l’articulation trapézo-métacarpienne au scaphoïde. La <span class="c-pink">douleur</span> évoque une atteinte du scaphoïde et constitue le volet dynamique de la triade.</li><li><strong>Palpation des structures adjacentes</strong> — Exclusion de <span class="c-red">fractures</span> associées ou différentielles sur les os voisins (<span class="c-red">fracture</span> de Colles, autres <span class="c-red">fractures</span> du carpe, <span class="c-red">fractures</span> des métacarpiens).</li><li class="theorie-sous-groupe"><strong>Mobilité du poignet</strong> — Amplitude de mouvement du poignet dans les quatre plans principaux plus prono-supination de l’avant-bras. L’extension dorsale et l’abduction radiale sont classiquement douloureuses en cas de <span class="c-red">fracture</span> du scaphoïde, car ces mouvements sollicitent mécaniquement le scaphoïde.</li><li><strong>Mobilité du poignet · Extension dorsale / flexion palmaire</strong> — L’extension dorsale correspond au mouvement lors de la chute sur la main tendue et <span class="c-red">sollicite</span> mécaniquement le scaphoïde. La <span class="c-pink">douleur</span> ici est diagnostiquement évocatrice.</li><li><strong>Mobilité du poignet · Abduction radiale / abduction ulnaire</strong> — L’abduction radiale comprime la région du scaphoïde. L’abduction ulnaire (position de Stecher) est généralement tolérée et constitue aussi la position radiologique standard pour la visualisation du scaphoïde.</li><li><strong>Mobilité du poignet · Pronation / supination</strong> — Rotation de l’avant-bras. <span class="c-pink">Douleur</span> ou limitation peut évoquer une atteinte radio-ulnaire distale.</li><li class="theorie-sous-groupe"><strong>Fonction du pouce</strong> — Examen orientatif du pouce. Ouverture de la commissure comme abduction générale, anté-/rétropulsion comme amplitude, opposition comme test de fonction du nerf médian.</li><li><strong>Fonction du pouce · Ouverture de la commissure</strong> — Abduction orientative du pouce, pas de test spécifique du scaphoïde.</li><li><strong>Fonction du pouce · Anté-/rétropulsion (90-0-0)</strong> — Évaluation de l’amplitude du pouce, valeurs normales 90-0-0.</li><li><strong>Fonction du pouce · Opposition vers D2–D5</strong> — L’opposition se fait dans l’articulation en selle et ne <span class="c-red">sollicite</span> pas directement le scaphoïde. Test de fonction du m. opponens pollicis (nerf médian). Opposition conservée exclut une lésion majeure du médian.</li><li><strong>Perfusion</strong> — Évaluation orientative de la <span class="c-amber">perfusion</span> périphérique par les pouls, le temps de recoloration capillaire et la température cutanée. Un pouls affaibli, une recoloration retardée ou une main froide peuvent suggérer un trouble de la <span class="c-amber">perfusion</span>.</li><li><strong>Sensibilité</strong> — Les déficits de sensibilité peuvent évoquer une atteinte nerveuse et doivent être explorés selon le contexte clinique.</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostic</h4>
+    <ul><li><strong>Radiographie poignet droit</strong> — Les incidences standard sont dorsopalmaire et latérale. L’incidence de Stecher (poing serré en abduction ulnaire) est essentielle pour visualiser le scaphoïde sur toute sa longueur sans superposition. Jusqu’à 30 % des <span class="c-red">fractures</span> du scaphoïde sont occultes sur la <span class="c-green">radiographie</span> initiale; un résultat négatif n’exclut pas le diagnostic.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic de travail: fracture du scaphoïde</strong> — En cas de <span class="c-red">fracture</span> occulte radiologiquement, la localisation (taille, pôle proximal ou distal) n’est pas attribuable cliniquement. La localisation précise ne sera visible qu’à l’imagerie en coupes (MRI/<span class="c-green">CT</span>) ou à la <span class="c-green">radiographie</span> de contrôle et détermine la prise en charge définitive.</li><li><strong>Immobilisation par attelle/plâtre de scaphoïde</strong> — Points clés à la pose: base avant-bras jusqu’à la main, inclusion du pouce jusqu’à la phalange distale, poignet en légère extension dorsale (env. 20°), pouce en position fonctionnelle (légèrement abducté, opposé), doigts longs libres, bonne protection, pas de points de pression, contrôle DMS après la pose. Les études montrent des taux de consolidation comparables entre plâtre et attelle préfabriquée en cas de <span class="c-red">fracture</span> non déplacée. En cabinet de médecine de famille, attelle souvent initialement, prise en charge définitive par le/la chirurgien/ne de la main.</li><li><strong>Antalgie</strong> — Antalgie standard en cas de <span class="c-red">fracture</span>/blessure aiguë. Posologie et choix selon tolérance individuelle et médication concomitante.</li><li><strong>Surélévation / refroidissement</strong> — Mesures traumatologiques générales.</li><li class="theorie-sous-groupe"><strong>Imagerie complémentaire (Shared Decision Making)</strong> — La suite diagnostique n’est pas définie de manière uniforme dans la littérature. Les trois options listées sont toutes plausibles cliniquement et peuvent être fixées en Shared Decision Making avec le patient, en tenant compte du métier, du niveau d’activité, de la disponibilité de l’imagerie et des préférences du patient. En cas de main dominante et de métier manuel, l’inscription directe au <span class="c-green">CT</span> est privilégiée.</li><li><strong>Imagerie complémentaire (Shared Decision Making) · Inscription directe au CT</strong> — Clarification rapide en une étape: <span class="c-red">fracture</span> oui/non plus localisation, degré de déplacement et informations pour la planification opératoire. Pour ce profil (jeune apprenti, main dominante, métier manuel), c’est la voie privilégiée. Évite 6 semaines d’<span class="c-amber">immobilisation</span> inutile en l’absence de <span class="c-red">fracture</span> et permet une adaptation en temps utile de la thérapie et de l’incapacité de travail.</li><li><strong>Imagerie complémentaire (Shared Decision Making) · Contrôle clinique évolutif, puis CT si suspicion</strong> — Variante pragmatique: plâtre/attelle de scaphoïde, puis réévaluation clinique de la triade à 10–14 jours. En cas d’absence de <span class="c-pink">douleur</span> et de triade négative, la <span class="c-red">fracture</span> est improbable. Si la suspicion persiste, inscription pour <span class="c-green">CT</span>. Faible irradiation, économique, mais clarification retardée.</li><li><strong>Imagerie complémentaire (Shared Decision Making) · Radiographie de contrôle, puis CT si suspicion</strong> — Variante classique: plâtre/attelle de scaphoïde, <span class="c-green">radiographie</span> de contrôle après 10–14 jours, car le trait peut devenir visible par résorption osseuse. En cas de suspicion persistante malgré une <span class="c-green">radiographie</span> de contrôle sans particularité, inscription pour <span class="c-green">CT</span>. Fréquente en pratique suisse en cabinet, mais sensibilité limitée pour les <span class="c-red">fractures</span> occultes.</li><li class="theorie-sous-groupe"><strong>En cas de fracture avérée: orientation chirurgie de la main</strong> — En cas de <span class="c-red">fracture</span> du scaphoïde confirmée, orientation vers la <span class="c-amber">chirurgie</span> de la main pour planification du traitement définitif et du suivi. Le choix entre traitement conservateur et opératoire dépend du déplacement, de la localisation de la <span class="c-red">fracture</span> et de facteurs liés au patient. Attention: en cas de persistance des symptômes au-delà de 3 mois après la fin du traitement, refaire une <span class="c-green">radiographie</span>, car une <span class="c-red">pseudarthrose</span> tardive est possible.</li><li><strong>En cas de fracture avérée: orientation chirurgie de la main · Traitement conservateur</strong> — Indiqué en cas de <span class="c-red">fracture</span> non déplacée ou minimalement déplacée (jusqu’à env. 1,5 mm). <span class="c-amber">Immobilisation</span> avec inclusion du pouce, contrôle à 6 semaines pour évaluer la consolidation.</li><li><strong>En cas de fracture avérée: orientation chirurgie de la main · Traitement opératoire</strong> — Indiqué en cas de <span class="c-red">fracture</span> déplacée (dès env. 1,5 mm), pôle proximal (risque accru de <span class="c-orange">nécrose</span> avasculaire), instabilité ou souhaits spécifiques du patient (retour rapide au sport / travail). Ostéosynthèse par vis de Herbert percutanée ou à ciel ouvert.</li><li><strong>Incapacité de travail</strong> — Avec main dominante et activité manuelle, indication claire d’incapacité de travail. La durée dépend du résultat et de l’évolution de la guérison.</li><li><strong>Filet de sécurité</strong> — Information du patient sur les <span class="c-yellow">signes d’alarme</span> sous <span class="c-amber">immobilisation</span>. Reconsultation immédiate en cas d’augmentation des <span class="c-pink">douleurs</span>, engourdissement ou fourmillements, gonflement ou décoloration des doigts, perte de mobilité ou points de pression. Objectif: détection précoce d’une <span class="c-orange">nécrose</span> de pression, d’un <span class="c-red">syndrome des</span> loges ou d’une compression nerveuse sous plâtre ou attelle.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Reconnaître une anamnèse de chute correcte et la triade clinique du scaphoïde</li><li>Reconnaître de manière adéquate qu’une <span class="c-green">radiographie</span> sans particularité n’exclut pas une <span class="c-red">fracture</span> du scaphoïde</li><li>Prise en charge adéquate avec <span class="c-amber">immobilisation</span> et imagerie complémentaire en Shared Decision Making</li><li>Vue d’ensemble AKDP</li><li>Anamnèse:</li><li>Chute sur le poignet en extension dorsale de la main dominante lors du snowboard; limitation dans le métier manuel d’apprenti menuisier.</li><li>Examen clinique:</li><li>Triade du scaphoïde positive (<span class="c-pink">douleur</span> à la pression tabatière + tuberculum scaphoidei palmaire + compression axiale D1); limitation fonctionnelle douloureuse au poignet; sensibilité et <span class="c-amber">perfusion</span> intactes.</li><li>Diagnostic:</li><li><span class="c-green">Radiographie</span> du poignet en 3 incidences, y compris incidence de Stecher, sans preuve de <span class="c-red">fracture</span>; <span class="c-red">fracture</span> occulte du scaphoïde non exclue.</li><li>Procédure:</li><li><span class="c-amber">Immobilisation</span> par attelle de scaphoïde ou plâtre avec inclusion du pouce; imagerie complémentaire en Shared Decision Making, avec préférence pour un <span class="c-green">CT</span> direct si main dominante et métier manuel.</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Traduit automatiquement puis vérifié par une IA face à l&#x27;original allemand.</p><p>Cabinet de médecine de famille | Marco Caduff, 22 ans, apprenti menuisier</p><p>Chez Marco Caduff, 22 ans, apprenti menuisier, il existe une suspicion clinique de <span class="c-red">fracture</span> du scaphoïde à droite.</p><p>À l’anamnèse, le patient a chuté hier après-midi en faisant du snowboard sur la main dominante en extension, un mécanisme classique de <span class="c-red">fracture</span> du scaphoïde. Depuis, il présente des <span class="c-pink">douleurs</span> à l’effort du côté du pouce du poignet droit avec limitation fonctionnelle induite par la <span class="c-pink">douleur</span>. Un discret gonflement au niveau de la zone du scaphoïde est visible, sans <span class="c-red">hématome</span>, sans choc à la tête ni déficit neurovasculaire. Pas d’antécédents pertinents ni de consommation de nicotine.</p><p>À l’examen clinique, on retrouve la triade classique du scaphoïde avec <span class="c-pink">douleur</span> à la pression dans la tabatière, en palmaire sur le tuberculum scaphoidei et une compression axiale positive du pouce. Les structures adjacentes sont sans particularité à la <span class="c-green">palpation</span>, la sensibilité et la circulation sont intactes.</p><p>La <span class="c-green">radiographie</span> du poignet, y compris l’incidence de Stecher, ne met pas en évidence de <span class="c-red">fracture</span>. Une <span class="c-red">fracture</span> occulte du scaphoïde n’est donc pas exclue.</p><p>La suite consiste en une <span class="c-amber">immobilisation</span> dans une attelle de scaphoïde ou un plâtre de scaphoïde avec inclusion du pouce. L’imagerie complémentaire est déterminée en Shared Decision Making avec le patient; en cas de main dominante et de métier manuel, une inscription directe au <span class="c-green">CT</span> est privilégiée. En cas de <span class="c-red">fracture</span> avérée, l’orientation vers la <span class="c-amber">chirurgie</span> de la main est effectuée. En complément, information du patient sur les <span class="c-yellow">signes d’alarme</span> sous <span class="c-amber">immobilisation</span> et établissement d’une incapacité de travail pour la main dominante.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 27,
+        "examen": 22,
+        "management": 12,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 3,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 4,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

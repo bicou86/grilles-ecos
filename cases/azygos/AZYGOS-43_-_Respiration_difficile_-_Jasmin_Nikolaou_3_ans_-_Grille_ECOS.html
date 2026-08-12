@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-43 - Respiration difficile - Jasmin Nikolaou, 3 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-43 - Respiration difficile</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-43" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Consultation téléphonique</p>
+            <p style="margin: 5px 0;">👤 Jasmin Nikolaou, 3 ans</p>
+            <p style="margin: 5px 0;">🏷️ Pédiatrie · Consultation téléphonique · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/42</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Administration <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Identification du/de la patient·e (nom, âge) <span class="patient-response">[Jasmin Nikolaou, 3 ans]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’identification de la patiente avec nom et âge est importante afin d’attribuer clairement le cas à la bonne personne et d’évaluer l’urgence en fonction de l’âge.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Numéro de rappel <span class="patient-response">[076 496 33 63]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le numéro de rappel est important pour pouvoir reprendre immédiatement contact en cas de coupure de la communication ou pour des questions urgentes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Affection actuelle <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d’entrée <span class="patient-response">[« Ma fille est enrhumée depuis quelques jours, mais ce soir j’ai eu l’impression que sa respiration est un peu plus difficile »]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début / durée <span class="patient-response">[Elle est malade depuis 3 jours et depuis ce soir j’ai l’impression qu’elle respire plus difficilement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Mode d’apparition <span class="patient-response">[Plutôt insidieux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une dyspnée d’apparition brutale, notamment après une quinte de toux, peut évoquer un événement d’aspiration.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[Au cours de la soirée, c’est devenu plus marqué]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans le pseudo-croup, la symptomatologie est typiquement plus prononcée le soir et la nuit. Souvent, les symptômes s’améliorent en journée et peuvent réaugmenter la nuit suivante.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Déclencheur infectieux / anamnèse de l’environnement <span class="patient-response">[Oui, alors mes deux autres filles sont aussi un peu enrhumées, mais moins fortement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs aggravants / contexte de survenue <span class="patient-response">[Quand elle est grognon ou s’agite]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’agitation peut, via un flux respiratoire accru dans des voies déjà rétrécies par l’inflammation, majorer fonctionnellement l’obstruction.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs soulageants <span class="patient-response">[La calmer aide]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures prises / tentatives de traitement <span class="patient-response">[Oui, j’ai donné une fois de l’Algifor aujourd’hui contre la fièvre]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Retentissement des symptômes <span class="patient-response">[Elle est juste un peu moins en forme que d’habitude]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-8" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Que voulez-vous dire exactement ?]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans AZYGOS, les patientes et les patients ne mentionnent délibérément aucun symptôme associé pertinent à cette question ouverte. L’évaluation porte sur le questionnement ciblé. En pratique, la question reste néanmoins importante, car des indices déterminants sont parfois mentionnés spontanément.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-9" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse orientée sur le problème <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">État général · Évaluation de l’état général par la personne de référence <span class="patient-response">[Je n’ai pas vraiment l’impression qu’elle aille très mal]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans le pseudo-croup, des bruits respiratoires marqués et un travail respiratoire augmenté peuvent coexister avec un état général encore relativement bon. Inversement, un état général réduit malgré des signes respiratoires apparemment modérés est un signal d’alarme pour une décompensation imminente.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">État général · Vigilance / capacité d’interaction <span class="patient-response">[Elle est éveillée et interagit avec moi]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une vigilance et une capacité d’interaction normales s’opposent à une décompensation aiguë sévère. Une réactivité diminuée serait un signe d’alarme important pour une épuisement respiratoire menaçant.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">État général · Capacité à boire <span class="patient-response">[Elle boit encore bien]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une capacité à boire préservée est un signe d’état général stable. Le refus de boire peut en revanche indiquer une aggravation pertinente ou une cause plus sérieuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Situation respiratoire<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’évaluation de la situation respiratoire est déterminante pour l’estimation de l’urgence. En l’absence d’examen clinique, les indices d’une obstruction des voies aériennes doivent être recherchés de manière ciblée à l’anamnèse.</span></span></span> · Tachypnée <span class="patient-response">[Oui, elle respire déjà un peu plus vite]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation respiratoire · Tirages / travail respiratoire <span class="patient-response">[Oui, le ventre se creuse un peu à l’inspiration]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les tirages sont un signe d’augmentation du travail respiratoire. Les termes médicaux n’étant pas toujours compréhensibles pour les profanes, il faut les traduire en descriptions de langage courant.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation respiratoire · Stridor / bruit respiratoire <span class="patient-response">[Oui, à l’inspiration j’ai remarqué un bruit respiratoire rauque]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un stridor inspiratoire est un indice d’obstruction des voies respiratoires supérieures</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation respiratoire · Cyanose <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Hypersalivation / trouble de déglutition <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une hypersalivation est un signe classique d’un trouble de la déglutition pertinent et peut évoquer une épiglottite, un abcès péri- ou parapharyngé avec obstruction potentiellement dangereuse des voies respiratoires supérieures</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Fortes douleurs pharyngées / à la déglutition <span class="patient-response">[Non, ce n’est pas l’impression que j’ai eue]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence de fortes douleurs pharyngées ou à la déglutition parle plutôt contre une infection bactérienne sévère telle qu’une épiglottite, un abcès péri- ou parapharyngé</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-8" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Modification de la voix <span class="patient-response">[Oui, un peu enrouée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les modifications de la voix peuvent fournir des indices importants dans ces tableaux cliniques. Dans le pseudo-croup, la voix est généralement enrouée et rauque. En cas d’épiglottite, d’abcès péri- ou parapharyngé, elle paraît plutôt pâteuse, sourde ou imprécise.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-9" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Fièvre <span class="patient-response">[Oui, dernière mesure 38°C]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une forte fièvre &gt;39°C orienterait plutôt vers un diagnostic différentiel bactérien comme une trachéite bactérienne, une épiglottite ou une infection cervicale profonde.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-10" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Toux <span class="patient-response">[Oui, elle tousse et cela sonne d’une manière un peu particulière.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-11" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Toux · Caractère aboyant <span class="patient-response">[Oui exactement, je trouve que ça correspond bien.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La toux aboyante n’est souvent pas décrite spontanément par les parents. Il faut donc demander spécifiquement le caractère aboyant, p. ex. « comme un petit chien » ou « comme un phoque ». Cela aide à distinguer le pseudo-croup d’une toux de rhume habituelle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-12" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Expectoration <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’expectoration ou une augmentation des sécrétions à la toux orientent plutôt vers une trachéite bactérienne.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-13" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Rhinorrhée <span class="patient-response">[Oui, c’est comme ça que ça a commencé]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-14" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse pour le diagnostic différentiel / anamnèse systémique <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Événement d’aspiration <span class="patient-response">[Non, je ne pense pas]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des indices d’aspiration d’un corps étranger peuvent être une dyspnée d’apparition brutale ou une quinte de toux, en particulier si les symptômes ont débuté pendant le repas ou le jeu.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Brûlure chimique / ébouillantement <span class="patient-response">[Non, je ne pense pas, nous ne laissons rien de dangereux à portée]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Réaction allergique / angio-œdème · Éruption cutanée <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Réaction allergique / angio-œdème · Gonflement du visage <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Réaction allergique / angio-œdème · Déclencheur allergique <span class="patient-response">[Non, elle n’a rien mangé d’inhabituel]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Maladies respiratoires connues / symptômes respiratoires <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Fumée passive <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Aucune connue]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Vaccinations <span class="patient-response">[Vaccinée selon le plan de vaccination suisse]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le vrai croup (Corynebacterium diphtheriae) ou une épiglottite (H. influenzae) sont nettement plus rares chez les enfants vaccinés et doivent être davantage envisagés en diagnostic différentiel en cas d’absence de protection vaccinale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-4" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse pédiatrique complémentaire · Grossesse <span class="patient-response">[La grossesse avec Jasmin a été sans complication]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-5" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse pédiatrique complémentaire · Accouchement / période néonatale <span class="patient-response">[Accouchement vaginal à terme sans complications]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-6" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse pédiatrique complémentaire · Développement <span class="patient-response">[Rien de particulier ne m’a frappée et lors des contrôles de prévention chez le pédiatre tout a toujours été en ordre]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-7" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux / maladies respiratoires <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Environnement / circonstances sociales <span class="patient-response">[Mon mari et moi, nous habitons à la campagne et j’ai actuellement deux autres filles enrhumées à la maison, mon mari est encore au travail]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/0</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/8</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Évaluation clinique <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail · Obstruction des voies respiratoires supérieures <span class="patient-response">[Obstruction pertinente des voies aériennes supérieures reconnue]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La reconnaissance d’une obstruction des voies aériennes supérieures est centrale pour l’estimation de l’urgence. En contexte téléphonique, l’appréciation clinique sûre prime sur la précision diagnostique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail · Pseudo-croup <span class="patient-response">[Diagnostic de pseudo-croup reconnu comme cause probable]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La constellation des symptômes est typique d’un pseudo-croup. La mention du diagnostic présumé montre une bonne compréhension clinique, mais elle est moins décisive que le tri correct.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Triage téléphonique <span class="patient-response">[Urgence estimée correctement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Prise en charge <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Instruction <span class="patient-response">[Cite Algifor comme médicament possible et disponible]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les mesures initiales visent à ne pas aggraver l’obstruction des voies respiratoires et à stabiliser l’enfant jusqu’à l’évaluation médicale. L’apaisement est central, car l’agitation peut majorer la symptomatologie. L’enfant doit rester dans une position confortable pour lui. L’air frais peut être utile. Des boissons peuvent être proposées.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Calmer l’enfant, éviter l’agitation<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’agitation peut, via un flux respiratoire accru dans des voies déjà rétrécies par l’inflammation, majorer fonctionnellement l’obstruction.</span></span></span> · Antipyrèse au besoin <span class="patient-response">[Cite Algifor comme médicament possible et disponible]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Organisation <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Faisabilité <span class="patient-response">[Oui, ma sœur peut s’occuper des autres enfants et je vais aux urgences en voiture]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La faisabilité vérifie si l’évaluation médicale recommandée peut être réalisée de manière réaliste et sûre. Cela inclut la prise en charge des autres enfants, la disponibilité d’une personne accompagnante, la possibilité de transport, l’accessibilité d’un point de contact médical approprié et la volonté de la personne de référence de mettre en œuvre la démarche. Ceci est particulièrement important lors d’une consultation téléphonique, car une recommandation médicalement correcte n’est sûre que si elle est aussi pratiquement réalisable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Procédure <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Évaluation médicale <span class="patient-response">[Recommande une évaluation médicale le soir même aux urgences]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Malgré le bon état général, en raison des indices anamnestiques d’une obstruction pertinente des voies aériennes avec stridor, tirages et légère dyspnée, une évaluation médicale le soir même pour appréciation clinique et administration de glucocorticoïdes est indiquée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Filet de sécurité <span class="patient-response">[Alerter les secours (144) en cas d’aggravation (dyspnée croissante, cyanose, réaction diminuée ou refus de boire)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un filet de sécurité clair est un élément essentiel de la sécurité des patient·e·s</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/12</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les préoccupations, besoins, demandes et attentes du/de la patient·e et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible tout en restant flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée aux patient·e·s, favorise la compréhension par la répétition, le reflet, le résumé et les explications, et utilise la voix, le débit et les pauses de manière ciblée.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/62</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Identification du/de la patient·e (nom, âge)</strong> — L’identification de la patiente avec nom et âge est importante afin d’attribuer clairement le cas à la bonne personne et d’évaluer l’urgence en fonction de l’âge.</li><li><strong>Numéro de rappel</strong> — Le numéro de rappel est important pour pouvoir reprendre immédiatement contact en cas de coupure de la communication ou pour des questions urgentes.</li><li><strong>Dimension temporelle · Mode d’apparition</strong> — Une <span class="c-pink">dyspnée</span> d’apparition brutale, notamment après une quinte de <span class="c-pink">toux</span>, peut évoquer un événement d’aspiration.</li><li><strong>Dimension temporelle · Évolution</strong> — Dans le pseudo-croup, la symptomatologie est typiquement plus prononcée le soir et la nuit. Souvent, les symptômes s’améliorent en journée et peuvent réaugmenter la nuit suivante.</li><li><strong>Facteurs aggravants / contexte de survenue</strong> — L’agitation peut, via un flux respiratoire accru dans des voies déjà rétrécies par l’inflammation, majorer fonctionnellement l’obstruction.</li><li><strong>Symptômes associés</strong> — Dans AZYGOS, les patientes et les patients ne mentionnent délibérément aucun symptôme associé pertinent à cette question ouverte. L’évaluation porte sur le questionnement ciblé. En pratique, la question reste néanmoins importante, car des indices déterminants sont parfois mentionnés spontanément.</li><li><strong>État général · Évaluation de l’état général par la personne de référence</strong> — Dans le pseudo-croup, des bruits respiratoires marqués et un travail respiratoire augmenté peuvent coexister avec un état général encore relativement bon. Inversement, un état général réduit malgré des signes respiratoires apparemment modérés est un signal d’alarme pour une décompensation imminente.</li><li><strong>État général · Vigilance / capacité d’interaction</strong> — Une vigilance et une capacité d’interaction normales s’opposent à une décompensation aiguë sévère. Une réactivité diminuée serait un <span class="c-yellow">signe d’alarme</span> important pour une épuisement respiratoire menaçant.</li><li><strong>État général · Capacité à boire</strong> — Une capacité à boire préservée est un signe d’état général stable. Le refus de boire peut en revanche indiquer une aggravation pertinente ou une cause plus sérieuse.</li><li class="theorie-sous-groupe"><strong>Situation respiratoire</strong> — L’évaluation de la situation respiratoire est déterminante pour l’estimation de l’urgence. En l’absence d’examen clinique, les indices d’une obstruction des voies aériennes doivent être recherchés de manière ciblée à l’anamnèse.</li><li><strong>Situation respiratoire · Tirages / travail respiratoire</strong> — Les tirages sont un signe d’augmentation du travail respiratoire. Les termes médicaux n’étant pas toujours compréhensibles pour les profanes, il faut les traduire en descriptions de langage courant.</li><li><strong>Situation respiratoire · Stridor / bruit respiratoire</strong> — Un stridor inspiratoire est un indice d’obstruction des voies respiratoires supérieures</li><li><strong>Hypersalivation / trouble de déglutition</strong> — Une hypersalivation est un signe classique d’un trouble de la déglutition pertinent et peut évoquer une <span class="c-red">épiglottite</span>, un <span class="c-orange">abcès</span> péri- ou parapharyngé avec obstruction potentiellement dangereuse des voies respiratoires supérieures</li><li><strong>Fortes douleurs pharyngées / à la déglutition</strong> — L’absence de fortes <span class="c-pink">douleurs</span> pharyngées ou à la déglutition parle plutôt contre une infection bactérienne sévère telle qu’une <span class="c-red">épiglottite</span>, un <span class="c-orange">abcès</span> péri- ou parapharyngé</li><li><strong>Modification de la voix</strong> — Les modifications de la voix peuvent fournir des indices importants dans ces tableaux cliniques. Dans le pseudo-croup, la voix est généralement enrouée et rauque. En cas d’<span class="c-red">épiglottite</span>, d’<span class="c-orange">abcès</span> péri- ou parapharyngé, elle paraît plutôt pâteuse, sourde ou imprécise.</li><li><strong>Fièvre</strong> — Une forte <span class="c-pink">fièvre</span> &gt;39°C orienterait plutôt vers un <span class="c-yellow">diagnostic différentiel</span> bactérien comme une <span class="c-red">trachéite</span> bactérienne, une <span class="c-red">épiglottite</span> ou une infection cervicale profonde.</li><li><strong>Toux · Caractère aboyant</strong> — La <span class="c-pink">toux</span> aboyante n’est souvent pas décrite spontanément par les parents. Il faut donc demander spécifiquement le caractère aboyant, p. ex. « comme un petit chien » ou « comme un phoque ». Cela aide à distinguer le pseudo-croup d’une <span class="c-pink">toux</span> de rhume habituelle.</li><li><strong>Expectoration</strong> — L’expectoration ou une augmentation des sécrétions à la <span class="c-pink">toux</span> orientent plutôt vers une <span class="c-red">trachéite</span> bactérienne.</li><li><strong>Événement d’aspiration</strong> — Des indices d’aspiration d’un corps étranger peuvent être une <span class="c-pink">dyspnée</span> d’apparition brutale ou une quinte de <span class="c-pink">toux</span>, en particulier si les symptômes ont débuté pendant le repas ou le jeu.</li><li><strong>Vaccinations</strong> — Le vrai croup (Corynebacterium diphtheriae) ou une <span class="c-red">épiglottite</span> (H. influenzae) sont nettement plus rares chez les enfants vaccinés et doivent être davantage envisagés en <span class="c-yellow">diagnostic différentiel</span> en cas d’absence de protection vaccinale.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic de travail · Obstruction des voies respiratoires supérieures</strong> — La reconnaissance d’une obstruction des voies aériennes supérieures est centrale pour l’estimation de l’urgence. En contexte téléphonique, l’appréciation clinique sûre prime sur la précision diagnostique.</li><li><strong>Diagnostic de travail · Pseudo-croup</strong> — La constellation des symptômes est typique d’un pseudo-croup. La mention du diagnostic présumé montre une bonne compréhension clinique, mais elle est moins décisive que le tri correct.</li><li><strong>Instruction</strong> — Les mesures initiales visent à ne pas aggraver l’obstruction des voies respiratoires et à stabiliser l’enfant jusqu’à l’évaluation médicale. L’apaisement est central, car l’agitation peut majorer la symptomatologie. L’enfant doit rester dans une position confortable pour lui. L’air frais peut être utile. Des boissons peuvent être proposées.</li><li class="theorie-sous-groupe"><strong>Calmer l’enfant, éviter l’agitation</strong> — L’agitation peut, via un flux respiratoire accru dans des voies déjà rétrécies par l’inflammation, majorer fonctionnellement l’obstruction.</li><li><strong>Faisabilité</strong> — La faisabilité vérifie si l’évaluation médicale recommandée peut être réalisée de manière réaliste et sûre. Cela inclut la prise en charge des autres enfants, la disponibilité d’une personne accompagnante, la possibilité de transport, l’accessibilité d’un point de contact médical approprié et la volonté de la personne de référence de mettre en œuvre la démarche. Ceci est particulièrement important lors d’une consultation téléphonique, car une recommandation médicalement correcte n’est sûre que si elle est aussi pratiquement réalisable.</li><li><strong>Évaluation médicale</strong> — Malgré le bon état général, en raison des indices anamnestiques d’une obstruction pertinente des voies aériennes avec stridor, tirages et légère <span class="c-pink">dyspnée</span>, une évaluation médicale le soir même pour appréciation clinique et administration de glucocorticoïdes est indiquée.</li><li><strong>Filet de sécurité</strong> — Un <span class="c-yellow">filet de sécurité</span> clair est un élément essentiel de la sécurité des patient·e·s</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Reconnaître une situation potentiellement critique des voies aériennes supérieures</li><li>Interroger de manière ciblée les <span class="c-yellow">diagnostics différentiels</span> pédiatriques en cas de <span class="c-pink">dyspnée</span></li><li>Assurer un tri téléphonique sûr et donner des instructions claires pour la suite du processus</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Traduit automatiquement puis vérifié par une IA face à l&#x27;original allemand.</p><p>Chez Jasmin Nikolaou, 3 ans, il s’agit très probablement d’une obstruction des voies respiratoires supérieures due à un pseudo-croup.</p><p>Le diagnostic de travail s’appuie sur la constellation symptomatique décrite: infection virale depuis 3 jours, <span class="c-pink">toux</span> aboyante, enrouement, stridor inspiratoire ainsi qu’une aggravation des symptômes en soirée.</p><p>Il n’existe actuellement aucun signe de décompensation sévère tels que cyanose, baisse de la vigilance ou diminution de la prise de boisson. L’absence de forte <span class="c-pink">fièvre</span>, de <span class="c-pink">douleurs</span> pharyngées marquées, d’hypersalivation et de troubles de la déglutition plaide pour l’instant contre une infection bactérienne sévère telle qu’une <span class="c-red">épiglottite</span>, une <span class="c-red">trachéite</span> bactérienne ou un <span class="c-orange">abcès</span> péri- ou parapharyngé.</p><p>De plus, l’enfant est vacciné selon le statut vaccinal, ce qui rend moins probables un vrai croup dû à la diphtérie ou une <span class="c-red">épiglottite</span> à H. influenzae.</p><p>Malgré un bon état général, en raison des éléments anamnestiques évoquant une obstruction pertinente des voies respiratoires supérieures, une évaluation médicale le soir même pour appréciation clinique et traitement par glucocorticoïdes est indiquée.</p><p>D’ici là, des mesures de soutien immédiates sont particulièrement importantes: apaiser l’enfant, éviter l’agitation, air frais et boisson si possible. Il est également central de vérifier la faisabilité pratique de la conduite proposée, en particulier compte tenu de la situation rurale et de la prise en charge des autres enfants. Un <span class="c-yellow">filet de sécurité</span> clair avec des critères d’escalade <span class="c-red">explicites</span> demeure essentiel.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Aperçu AKDP</div><div class="annexe-expert-content"><p>Anamnèse: Infection virale, <span class="c-pink">toux</span> aboyante, enrouement et stridor inspiratoire, absence de signes de décompensation aiguë</p><p>Statut clinique: Non possible lors d’une consultation téléphonique</p><p>Diagnostics: Non possible lors d’une consultation téléphonique</p><p>Procédure: Évaluation médicale rapide recommandée pour appréciation clinique et traitement par glucocorticoïdes, vérifier la faisabilité et établir un <span class="c-yellow">filet de sécurité</span></p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 42,
+        "examen": 0,
+        "management": 8,
+        "communication": 12
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 7,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 0,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 4,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 3,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

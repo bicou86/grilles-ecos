@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-19 - Douleurs de hanche - Mme Conti, 58 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-19 - Douleurs de hanche</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-19" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet de médecine de famille</p>
+            <p style="margin: 5px 0;">👤 Mme Conti, 58 ans</p>
+            <p style="margin: 5px 0;">🏷️ Orthopédie · Poste standard · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/38</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Atteinte actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d’introduction <span class="patient-response">[&quot;J’ai régulièrement des douleurs à la hanche droite&quot;]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Dynamique temporelle<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un début insidieux sur plusieurs semaines correspond typiquement à un problème de surcharge des tendons fessiers. Des douleurs aiguës sans traumatisme feraient plutôt penser à une bursite septique.</span></span></span> · Début / Durée <span class="patient-response">[Il y a environ 10 semaines]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dynamique temporelle · Mode d’apparition <span class="patient-response">[Insidieux]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dynamique temporelle · Évolution <span class="patient-response">[Croissante, s’est stabilisée au niveau actuel]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Déclencheurs · Augmentation de la charge <span class="patient-response">[Il y a 4 mois, adhésion à un club de randonnée avec des sorties presque chaque semaine; auparavant, très peu active sportivement.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une augmentation brutale de la charge mécanique sur les tendons fessiers est le déclencheur classique d’une tendinopathie. Chez une personne non entraînée dans la seconde moitié de la vie, les tendons sont moins résistants et réagissent par une réaction d’irritation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Déclencheurs · Traumatisme / Chute <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[Ici – montre la région latérale de la hanche à hauteur du grand trochanter]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La localisation latérale est le signe anamnestique le plus important pour différencier de la coxarthrose et de la nécrose de la tête fémorale, qui causent typiquement des douleurs inguinales. En cas de douleur latérale, la tendinopathie des tendons fessiers avec ou sans bursite trochantérienne est au premier plan.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[Irradiation vers la face externe de la cuisse]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Caractère de la douleur <span class="patient-response">[Sourde et tiraillante]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le caractère sourd et tiraillant est typique d’une tendinopathie et d’une bursite. Des douleurs brûlantes-électrisantes feraient plutôt penser à une cause neurogène.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[Le plus souvent 3/10, parfois absente, parfois plus forte jusqu’à 6 ou 7/10.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un contraste net entre douleur à l’effort et douleur au repos est typique des tendinopathies d’origine mécanique. Une douleur de repos constamment élevée évoque plutôt une cause inflammatoire, infectieuse ou maligne.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-9" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">⊕ Facteurs aggravants / Survenue situationnelle<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le GTPS présente typiquement un profil de charge tendinopathique avec douleur au démarrage, douleurs lors de la compression tendineuse ainsi qu’une majoration des plaintes pendant et après des charges plus intenses.</span></span></span> · Douleur au démarrage <span class="patient-response">[Douleurs au lever après une position assise prolongée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les douleurs au démarrage sont typiques des pathologies tendineuses dégénératives-mécaniques.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-10" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊕ Facteurs aggravants / Survenue situationnelle · Dépendance à la charge <span class="patient-response">[Augmentation pendant et après des charges plus intenses comme marche prolongée, station debout, montée d’escaliers et randonnée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des charges prolongées en traction et en compression provoquent les symptômes dans le GTPS.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-11" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊕ Facteurs aggravants / Survenue situationnelle · Douleur à la compression <span class="patient-response">[Exacerbation de la douleur en décubitus latéral droit la nuit]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La pression directe sur les tendons fessiers au grand trochanter provoque fréquemment des douleurs nocturnes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-12" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊕ Facteurs aggravants / Survenue situationnelle · ⊖ Facteurs soulageants <span class="patient-response">[Repos relatif ou mouvement léger aide; le froid après surcharge]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La réponse aux AINS et au repos correspond à un tableau de tendinopathie/bursite avec chevauchement inflammatoire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-13" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Essais de traitement <span class="patient-response">[Ibuprofène 400 mg aide partiellement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-14" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Retentissement <span class="patient-response">[Qualité du sommeil nettement réduite, a dû annuler la dernière randonnée, monter les escaliers est désagréable]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’évaluation de l’atteinte fonctionnelle et de la qualité du sommeil est particulièrement importante dans le GTPS: la perturbation nocturne en décubitus sur le côté atteint est un symptôme principal et l’ampleur de la perte d’activités quotidiennes fonde l’indication thérapeutique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-15" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Qu’en pensez-vous?]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Chez AZYGOS, les patientes et patients ne mentionnent volontairement pas de symptômes associés pertinents à cette question ouverte. Ce qui est évalué, c’est la recherche ciblée. En pratique, la question reste néanmoins importante car elle apporte parfois spontanément des indices décisifs.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-16" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée par le problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Signes inflammatoires<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une bursite trochantérienne septique est rare mais potentiellement grave. Elle s’accompagne le plus souvent d’une réaction inflammatoire locale, de fièvre et de signes systémiques et nécessite un diagnostic immédiat avec ponction et traitement antibiotique.</span></span></span> · Rougeur <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes inflammatoires · Tuméfaction <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes inflammatoires · Chaleur locale <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes inflammatoires · Fièvre <span class="patient-response">[Pas de fièvre]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse DD / Anamnèse systémique <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Raideur matinale <span class="patient-response">[Oui, mais très brève (environ 5 minutes), ensuite ça va.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans le GTPS, il peut exister brièvement des douleurs au démarrage ou une sensation de raideur le matin; une raideur matinale prolongée au-delà de 30–60 minutes est toutefois atypique et doit faire penser à une cause inflammatoire-rhumatismale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes B <span class="patient-response">[Pas de fièvre prolongée, pas de sueurs nocturnes, pas de perte de poids involontaire]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Douleur inguinale <span class="patient-response">[Aucune douleur dans l’aine ni dans l’articulation de la hanche elle-même]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une douleur inguinale avec ou sans irradiation vers le genou évoque un problème de l’articulation de la hanche elle-même (coxarthrose, nécrose de la tête fémorale, FAI). Une douleur latérale sans composante inguinale évoque une pathologie péri-articulaire des tendons fessiers et de la bourse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Fonction de l’articulation de la hanche<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La question portant sur des mouvements quotidiens de la hanche comme enfiler chaussures et chaussettes, monter en voiture ou croiser les jambes est un dépistage simple et fiable d’une pathologie intra-articulaire de la hanche. Des difficultés à ce niveau évoquent une coxarthrose ou un conflit fémoro-acétabulaire, car ces activités exigent une rotation interne et une flexion. Dans le GTPS, ces mouvements sont possibles sans problème.</span></span></span> · Enfiler chaussures et chaussettes <span class="patient-response">[Possible sans problème]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Fonction de l’articulation de la hanche · Monter en voiture <span class="patient-response">[Possible sans gêne]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Fonction de l’articulation de la hanche · Douleurs lombaires ou irradiation radiculaire <span class="patient-response">[Aucune douleur dorsale, pas d’irradiation dans la jambe en dessous du genou]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une radiculopathie lombaire, en particulier de la racine L4 ou L5, peut causer des douleurs à la face latérale de la cuisse et imiter un GTPS. L’absence de douleurs dorsales et de l’irradiation au-dessous du genou rend une cause radiculaire nettement moins probable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Troubles de la sensibilité <span class="patient-response">[Pas de paresthésies ni d’hypoesthésies]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents <span class="patient-response">[Hypertension artérielle, bien contrôlée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de tendinopathies, il faut rechercher des facteurs de risque susceptibles d’altérer la qualité des tendons et la guérison, notamment diabète sucré, obésité, tabagisme, traitement prolongé par corticostéroïdes ou statines, ainsi que maladies inflammatoires rhumatismales. Le statut postménopausique est également considéré comme un facteur de risque de tendinopathies fessières en raison du déficit oestrogénique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Opérations antérieures <span class="patient-response">[Aucune opération pertinente]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Après des opérations de hanche par voie latérale, des plaintes dans la région du grand trochanter peuvent survenir. Les causes sont souvent des irritations ou lésions des tendons fessiers, des remaniements cicatriciels ou une bursite trochantérienne postopératoire. Les antécédents opératoires sont donc importants pour différencier un GTPS secondaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Lisinopril 10 mg par jour. Ibuprofène 400 mg au besoin depuis quelques semaines]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas d’utilisation prolongée d’AINS, la question de la tolérance gastro-intestinale et de la fonction rénale est pertinente.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Tabagisme <span class="patient-response">[Non-fumeuse.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Alcool <span class="patient-response">[1 à 2 verres de vin par semaine]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Drogues <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Aucune connue]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux <span class="patient-response">[Mère avec prothèse de hanche droite pour arthrose à l’âge de 72 ans. Père avec hypertension artérielle.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Secrétaire dans une étude d’avocats, taux d’activité 80 pour cent, travail principalement assis]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La position assise prolongée avec les jambes croisées ou un report latéral du poids augmente la pression locale sur le grand trochanter et la tension du tractus ilio-tibial et peut entretenir les plaintes en cas de GTPS.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Environnement social <span class="patient-response">[Mariée, deux enfants adultes vivant hors du domicile.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/22</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Hanche - Tests globaux <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Test d’extension et d’accroupissement <span class="patient-response">[Extension possible sur toute l’amplitude; en accroupissement profond, pas de douleur inguinale; douleur latérale droite légère au redressement.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le test d’extension et d’accroupissement est un test global simple du membre inférieur. On vérifie l’extension complète en position debout et l’atteinte de l’accroupissement profond. Des douleurs ou des limitations fonctionnelles orientent vers des pathologies intra-articulaires de la hanche, une coxarthrose ou des déficits musculaires.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Démarche <span class="patient-response">[Légère inclinaison ipsilatérale du tronc en phase d’appui à droite, pas de boiterie de Trendelenburg.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’inclinaison ipsilatérale du tronc correspond à une discrète boiterie de Duchenne comme stratégie antalgique de décharge des abducteurs de hanche. Dans le GTPS, la démarche est souvent peu altérée. Une boiterie de Trendelenburg marquée évoque plutôt une insuffisance des abducteurs, une pathologie tendineuse fessière de haut grade, une rupture des tendons fessiers ou une cause neurologique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Hanche - Inspection et palpation <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection des axes des jambes / position du bassin <span class="patient-response">[Axes des jambes physiologiques, station stable, pas d’inclinaison pelvienne.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des malpositions, des différences fonctionnelles de longueur des jambes ou une inclinaison pelvienne peuvent augmenter la charge tendineuse fessière et favoriser un GTPS.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Appui unipodal <span class="patient-response">[À droite, légèrement incertain en raison de la douleur, pas de signe de Trendelenburg]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection locale <span class="patient-response">[Ø tuméfaction, Ø rougeur, Ø chaleur locale au-dessus du grand trochanter, Ø atrophie musculaire visible]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des signes inflammatoires visibles seraient atypiques et devraient faire penser à une bursite septique ou une autre cause inflammatoire. Une atrophie musculaire peut indiquer une insuffisance chronique des abducteurs ou des causes neurologiques.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Palpation<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La douleur localisée à la pression sur le grand trochanter est le résultat clinique central du GTPS. Des constatations de palpation supplémentaires aident au diagnostic différentiel par rapport aux causes intra-articulaires, sacro-iliaques, dorso-fessières ou osseuses.</span></span></span> · Grand trochanter <span class="patient-response">[Douleur localisée marquée à la pression et à la percussion directement sur le grand trochanter droit]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La douleur ponctuelle à la pression sur le grand trochanter est typique d’un GTPS.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation · Aine <span class="patient-response">[Pas de douleur à la pression]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une douleur inguinale à la pression évoque plutôt une pathologie intra-articulaire de la hanche.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-4" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation · ISG <span class="patient-response">[Pas de douleur à la pression ni à la percussion]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une douleur localisée de l’ISG peut indiquer une genèse douloureuse sacro-iliaque.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-5" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation · Dorso-fessier <span class="patient-response">[Pas de douleur dorso-fessière marquée à la pression]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une douleur dorso-fessière prédominante peut évoquer plutôt un syndrome du piriforme ou des causes lombo-sacrées.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-6" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Hanche - Tests de fonction / provocation (décubitus dorsal) <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Mobilité de la hanche<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une mobilité passive libre parle contre une pathologie intra-articulaire significative de la hanche. La rotation interne en flexion est particulièrement importante pour différencier d’une coxarthrose ou d’un conflit fémoro-acétabulaire.</span></span></span> · Flexion / (Extension en décubitus ventral) <span class="patient-response">[Bilat. indolore, mobilité normale - 120/0/(10)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La flexion se teste en décubitus dorsal, l’extension cliniquement le plus souvent en décubitus ventral.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mobilité de la hanche · Rotation interne / externe en flexion <span class="patient-response">[Bilat. indolore, mobilité normale - 30/0/40]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La rotation interne à 90° de flexion est le marqueur clinique le plus sensible d’une pathologie intra-articulaire de hanche.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mobilité de la hanche · Abduction / Adduction <span class="patient-response">[Légères douleurs lors de l’adduction passive à droite, bilat. mobilité normale - 45/0/30]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Tests de provocation GTPS<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La combinaison de plusieurs tests de provocation augmente nettement la sécurité diagnostique pour une tendinopathie fessière. (Voir vidéo externe sur la démarche clinique du GTPS: https://www.youtube.com/watch?v=8WUEsTfK69g )</span></span></span> · Test FADER-R (Flexion Adduction External Rotation - Resisted) <span class="patient-response">[Positif à droite (douleur sur le grand trochanter)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Réalisation: résistance contre la rotation interne à partir d’une position de hanche fléchie, en adduction et rotation externe. (Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=Q_x3Cv4_Q3Y )</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD Hanche<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Ces tests servent surtout à différencier des pathologies intra-articulaires de la hanche telles que la coxarthrose ou le conflit fémoro-acétabulaire.</span></span></span> · Test d’impingement (test FADDIR) <span class="patient-response">[Pas de douleur]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un test positif évoque un conflit fémoro-acétabulaire ou d’autres pathologies intra-articulaires. (Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=xyJUIhsL4lg)</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-4" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Hanche · Test FABER (Patrick / en 4) <span class="patient-response">[Pas de douleurs inguinales ni de l’ISG.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Selon la localisation de la douleur, le test FABER peut orienter vers des causes articulaires de hanche ou sacro-iliaques.
+(Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=89Qiht82zmg)</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-5" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD lombo-radiculaire · Test de Lasègue <span class="patient-response">[Négatif]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un test de Lasègue positif évoque plutôt une cause lombo-radiculaire des symptômes</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-6" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Hanche - Tests de fonction / provocation (décubitus latéral) <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de force des abducteurs de hanche <span class="patient-response">[Abduction droite douloureuse et légèrement diminuée par rapport à gauche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans le GTPS, on observe typiquement une baisse de force et une atrophie des abducteurs de hanche (GMed/GMin) avec hypertrophie compensatoire du TFL. Faiblesse et tendinopathie s’auto-entretiennent dans un cercle vicieux: l’insuffisance musculaire augmente la compression des tendons fessiers au grand trochanter, la douleur qui en résulte inhibe davantage l’activation musculaire. C’est pourquoi le renforcement progressif des muscles fessiers est l’élément central du traitement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Tests de provocation GTPS<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La combinaison de plusieurs tests de provocation augmente nettement la sécurité diagnostique pour une tendinopathie fessière. (Voir vidéo externe sur la démarche clinique du GTPS: https://www.youtube.com/watch?v=8WUEsTfK69g )</span></span></span> · Resisted Abduction Test (ADD-R-Test) <span class="patient-response">[Positif à droite (douleur sur le grand trochanter)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Réalisation: abduction contre résistance à partir d’une position de hanche en adduction en décubitus latéral (Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=myMISIQQ18A )</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Hanche - Tests de fonction / provocation (décubitus ventral) <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Mobilité de la hanche · Extension de la hanche <span class="patient-response">[Indolore, mobilité normale - (120)/(0)/10]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD Hanche, ISG, lombo-sacré (3 phases de Mennell - test d’hyperextension)<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le test de Mennell en 3 phases (aussi Three-Phase-Hyperextension test) différencie entre pathologie de l’articulation de la hanche, de l’ISG et lombo-sacrée. La patiente est en décubitus ventral, l’examinatrice/teur hyperétend passivement la jambe tendue avec une fixation variable. Dans le GTPS, le test est typiquement sans particularité. (Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=QOM4fKkmurA)</span></span></span> · Phase 1: Articulation de la hanche <span class="patient-response">[Négatif (pas de douleurs inguinales)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avec fixation du tuber ischiadicum, on hyperétend la hanche de manière isolée. Une douleur inguinale évoque une pathologie intra-articulaire de hanche telle que coxarthrose ou impingement antérieur. (Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=QOM4fKkmurA)</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-1" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Hanche, ISG, lombo-sacré (3 phases de Mennell - test d’hyperextension) · Phase 2: ISG (signe classique de Mennell) <span class="patient-response">[Négatif (pas de douleurs de l’ISG)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avec fixation du sacrum, on provoque le mouvement de l’ISG. La reproduction de la douleur au niveau de l’ISG évoque une sacro-iliite ou une dysfonction de l’ISG. C’est le véritable signe de Mennell. (Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=QOM4fKkmurA)</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-2" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Hanche, ISG, lombo-sacré (3 phases de Mennell - test d’hyperextension) · Phase 3: Jonction lombo-sacrée <span class="patient-response">[Négatif (pas de douleurs lombo-sacrées)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avec fixation de TH12 ou L5, on sollicite de manière isolée la jonction lombo-sacrée. La reproduction de la douleur évoque une pathologie de la jonction lombo-sacrée comme une discopathie ou un problème des facettes articulaires.
+(Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=QOM4fKkmurA)</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-3" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/10</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Imagerie <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Renoncement à l’IRM <span class="patient-response">[Actuellement, pas d’indication à l’IRM. Le diagnostic clinique est clair, le traitement conservateur n’est pas épuisé, pas de suspicion de complication]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Échographie <span class="patient-response">[Bourse trochantérienne droite épaissie, signes de tendinopathie du tendon du gluteus medius. Pas d’épanchement articulaire.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le diagnostic de GTPS est d’abord clinique sur la base d’une anamnèse et d’un examen typiques. L’échographie peut montrer des altérations dégénératives des tendons fessiers, des bursites, des ruptures partielles de tendon ou des enthésopathies et est facilement disponible en cabinet de médecine de famille ou chez le/la radiologue, mais n’est pas indispensable pour poser le diagnostic.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Radiographie du bassin de face <span class="patient-response">[Pas de signes d’arthrose, pas de lésions osseuses]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La radiographie sert ici surtout à exclure des diagnostics différentiels comme la coxarthrose, une fracture ou une lésion osseuse. Elle n’est pas nécessaire pour le diagnostic de GTPS lui-même.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Évaluation clinique <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail <span class="patient-response">[Syndrome douloureux du grand trochanter / tendinopathie des tendons fessiers avec bursite trochantérienne associée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le GTPS a une prévalence de 10 à 25 pour cent; environ un quart des femmes de plus de 50 ans sont concernées. Les facteurs de risque sont les modifications hormonales postménopausiques, l’obésité et l’augmentation brutale de la charge.
+Le diagnostic est clinique: douleur latérale du grand trochanter, douleur nocturne en décubitus latéral, appui unipodal positif à 30 secondes et mobilité interne de hanche libre. À distinguer de la coxarthrose (inguinale, rotation interne limitée), de la radiculopathie lombaire et de la sacro-iliite.
+La désignation bursite trochantérienne est obsolète: la pathologie primaire est la tendinopathie des tendons fessiers; une bursite n’est présente qu’à 20 à 30 pour cent à titre secondaire. Par conséquent, le traitement consiste en un renforcement progressif des muscles fessiers, et non en une approche anti-inflammatoire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Thérapie <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Adaptation de la charge <span class="patient-response">[Réduire la fréquence et la distance des randonnées, éviter les escaliers, pas d’arrêt total d’activité.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Repos relatif plutôt qu’immobilisation complète. Les tendons fessiers doivent continuer à être sollicités modérément pour éviter l’atrophie d’inactivité. Il faut d’abord éviter les charges compressives comme la position assise jambes croisées, la station debout prolongée avec report de poids et les mouvements d’adduction excessifs.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Physiothérapie et entraînement à domicile <span class="patient-response">[Renforcement structuré des muscles fessiers avec augmentation progressive de la charge.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le renforcement contrôlé de la musculature pelvi-trochantérienne (en particulier m. gluteus medius et minimus) est le traitement le plus efficace du GTPS et doit être prescrit en première intention. Il réduit l’activité compensatrice du TFL et donc la compression des tendons fessiers au grand trochanter. Les priorités sont les exercices isométriques et excentriques en position d’abduction de hanche.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Analgésie <span class="patient-response">[AINS topique (gel d’ibuprofène), AINS oraux ou paracétamol au besoin.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les AINS topiques ont un profil d’effets indésirables plus favorable et sont efficaces pour les douleurs musculo-squelettiques superficielles. En cas de besoin prolongé d’AINS oraux, il faut considérer la gastroprotection, la fonction rénale et le risque cardiovasculaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Procédure <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Contrôle d’évolution <span class="patient-response">[Contrôle dans 4 à 6 semaines pour évaluer l’efficacité du traitement.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un contrôle planifié permet d’escalader le traitement en temps utile en cas d’échec. Le cas échéant, réalisation d’une IRM pour confirmer le diagnostic et exclure d’autres pathologies ou complications</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Infiltration stéroïdienne <span class="patient-response">[Option de réserve en cas de résistance au traitement après 8 à 12 semaines.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’infiltration locale de stéroïdes offre un soulagement à court terme de 1 à 3 mois, mais elle est à éviter à long terme en raison d’effets négatifs sur le tissu tendineux affaibli et du risque de lésion tendineuse en cas de répétition. Elle constitue une option de réserve après échec du traitement conservateur, et non une mesure de première ligne. Alternative en cas de résistance au traitement: thérapie par ondes de choc extracorporelles (ESWT) avec une bonne évidence à moyen terme.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Filet de sécurité <span class="patient-response">[Revenir en consultation en cas d’augmentation de la douleur, rougeur, tuméfaction, fièvre, nouvelle faiblesse ou après chute]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le filet de sécurité sert à reconnaître précocement des complications nécessitant un traitement comme une bursite septique, une rupture aiguë des tendons fessiers ou une fracture traumatique. La patiente doit connaître les signes d’alarme tels qu’augmentation des douleurs, rougeur, tuméfaction, fièvre ou nouvelle faiblesse musculaire et savoir quand une réévaluation immédiate est nécessaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des émotions et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les préoccupations, besoins, demandes et attentes de la patiente/du patient et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible et reste flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée à la patiente/au patient, favorise la compréhension par la répétition, le reflet, la synthèse et les explications, et utilise intentionnellement la voix, le débit et les pauses.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, les mimiques, la gestuelle, la posture et la distance de manière ciblée pour instaurer une atmosphère d’entretien bienveillante, de confiance et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/86</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li class="theorie-sous-groupe"><strong>Dynamique temporelle</strong> — Un début insidieux sur plusieurs semaines correspond typiquement à un problème de surcharge des tendons fessiers. Des <span class="c-pink">douleurs</span> aiguës sans traumatisme feraient plutôt penser à une <span class="c-red">bursite</span> septique.</li><li><strong>Déclencheurs · Augmentation de la charge</strong> — Une augmentation brutale de la charge mécanique sur les tendons fessiers est le déclencheur classique d’une <span class="c-red">tendinopathie</span>. Chez une personne non entraînée dans la seconde moitié de la vie, les tendons sont moins résistants et réagissent par une réaction d’irritation.</li><li><strong>Localisation</strong> — La localisation latérale est le signe anamnestique le plus important pour différencier de la <span class="c-red">coxarthrose</span> et de la <span class="c-orange">nécrose</span> de la tête fémorale, qui causent typiquement des <span class="c-pink">douleurs</span> inguinales. En cas de <span class="c-pink">douleur</span> latérale, la <span class="c-red">tendinopathie</span> des tendons fessiers avec ou sans <span class="c-red">bursite</span> trochantérienne est au premier plan.</li><li><strong>Caractère de la douleur</strong> — Le caractère sourd et tiraillant est typique d’une <span class="c-red">tendinopathie</span> et d’une <span class="c-red">bursite</span>. Des <span class="c-pink">douleurs</span> brûlantes-électrisantes feraient plutôt penser à une cause neurogène.</li><li><strong>Intensité</strong> — Un contraste net entre <span class="c-pink">douleur</span> à l’effort et <span class="c-pink">douleur</span> au repos est typique des <span class="c-red">tendinopathies</span> d’origine mécanique. Une <span class="c-pink">douleur</span> de repos constamment élevée évoque plutôt une cause inflammatoire, infectieuse ou maligne.</li><li class="theorie-sous-groupe"><strong>⊕ Facteurs aggravants / Survenue situationnelle</strong> — Le GTPS présente typiquement un profil de charge tendinopathique avec <span class="c-pink">douleur</span> au démarrage, <span class="c-pink">douleurs</span> lors de la compression tendineuse ainsi qu’une majoration des plaintes pendant et après des charges plus intenses.</li><li><strong>⊕ Facteurs aggravants / Survenue situationnelle · Douleur au démarrage</strong> — Les <span class="c-pink">douleurs</span> au démarrage sont typiques des pathologies tendineuses dégénératives-mécaniques.</li><li><strong>⊕ Facteurs aggravants / Survenue situationnelle · Dépendance à la charge</strong> — Des charges prolongées en traction et en compression provoquent les symptômes dans le GTPS.</li><li><strong>⊕ Facteurs aggravants / Survenue situationnelle · Douleur à la compression</strong> — La pression directe sur les tendons fessiers au grand trochanter provoque fréquemment des <span class="c-pink">douleurs</span> nocturnes.</li><li><strong>⊕ Facteurs aggravants / Survenue situationnelle · ⊖ Facteurs soulageants</strong> — La réponse aux <span class="c-amber">AINS</span> et au repos correspond à un tableau de <span class="c-red">tendinopathie</span>/<span class="c-red">bursite</span> avec chevauchement inflammatoire.</li><li><strong>Retentissement</strong> — L’évaluation de l’atteinte fonctionnelle et de la qualité du sommeil est particulièrement importante dans le GTPS: la perturbation nocturne en décubitus sur le côté atteint est un symptôme principal et l’ampleur de la perte d’activités quotidiennes fonde l’indication thérapeutique.</li><li><strong>Symptômes associés</strong> — Chez AZYGOS, les patientes et patients ne mentionnent volontairement pas de symptômes associés pertinents à cette question ouverte. <span class="c-blue">Ce qui est évalué</span>, c’est la recherche ciblée. En pratique, la question reste néanmoins importante car elle apporte parfois spontanément des indices décisifs.</li><li class="theorie-sous-groupe"><strong>Signes inflammatoires</strong> — Une <span class="c-red">bursite</span> trochantérienne septique est rare mais potentiellement grave. Elle s’accompagne le plus souvent d’une réaction inflammatoire locale, de <span class="c-pink">fièvre</span> et de signes systémiques et nécessite un diagnostic immédiat avec ponction et traitement <span class="c-amber">antibiotique</span>.</li><li><strong>Raideur matinale</strong> — Dans le GTPS, il peut exister brièvement des <span class="c-pink">douleurs</span> au démarrage ou une sensation de raideur le matin; une <span class="c-pink">raideur matinale</span> prolongée au-delà de 30–60 minutes est toutefois atypique et doit faire penser à une cause inflammatoire-rhumatismale.</li><li><strong>Douleur inguinale</strong> — Une <span class="c-pink">douleur</span> inguinale avec ou sans irradiation vers le genou évoque un problème de l’articulation de la hanche elle-même (<span class="c-red">coxarthrose</span>, <span class="c-orange">nécrose</span> de la tête fémorale, FAI). Une <span class="c-pink">douleur</span> latérale sans composante inguinale évoque une pathologie péri-articulaire des tendons fessiers et de la bourse.</li><li class="theorie-sous-groupe"><strong>Fonction de l’articulation de la hanche</strong> — La question portant sur des mouvements quotidiens de la hanche comme enfiler chaussures et chaussettes, monter en voiture ou croiser les jambes est un dépistage simple et fiable d’une pathologie intra-articulaire de la hanche. Des difficultés à ce niveau évoquent une <span class="c-red">coxarthrose</span> ou un conflit fémoro-acétabulaire, car ces activités exigent une rotation interne et une flexion. Dans le GTPS, ces mouvements sont possibles sans problème.</li><li><strong>Fonction de l’articulation de la hanche · Douleurs lombaires ou irradiation radiculaire</strong> — Une <span class="c-red">radiculopathie</span> lombaire, en particulier de la racine L4 ou L5, peut causer des <span class="c-pink">douleurs</span> à la face latérale de la cuisse et imiter un GTPS. L’absence de <span class="c-pink">douleurs</span> dorsales et de l’irradiation au-dessous du genou rend une cause radiculaire nettement moins probable.</li><li><strong>Antécédents</strong> — En cas de <span class="c-red">tendinopathies</span>, il faut rechercher des <span class="c-purple">facteurs de risque</span> susceptibles d’altérer la qualité des tendons et la guérison, notamment <span class="c-purple">diabète sucré</span>, <span class="c-purple">obésité</span>, <span class="c-purple">tabagisme</span>, traitement prolongé par <span class="c-amber">corticostéroïdes</span> ou statines, ainsi que maladies inflammatoires rhumatismales. Le statut postménopausique est également considéré comme un <span class="c-purple">facteur de risque</span> de <span class="c-red">tendinopathies</span> fessières en raison du déficit oestrogénique.</li><li><strong>Opérations antérieures</strong> — Après des opérations de hanche par voie latérale, des plaintes dans la région du grand trochanter peuvent survenir. Les causes sont souvent des irritations ou lésions des tendons fessiers, des remaniements cicatriciels ou une <span class="c-red">bursite</span> trochantérienne postopératoire. Les antécédents opératoires sont donc importants pour différencier un GTPS secondaire.</li><li><strong>Médicaments</strong> — En cas d’utilisation prolongée d’<span class="c-amber">AINS</span>, la question de la tolérance gastro-intestinale et de la fonction rénale est pertinente.</li><li><strong>Profession</strong> — La position assise prolongée avec les jambes croisées ou un report latéral du poids augmente la pression locale sur le grand trochanter et la tension du tractus ilio-tibial et peut entretenir les plaintes en cas de GTPS.</li></ul>
+</div><div class="theorie-section">
+    <h4>Statut clinique</h4>
+    <ul><li><strong>Test d’extension et d’accroupissement</strong> — Le test d’extension et d’accroupissement est un test global simple du membre inférieur. On vérifie l’extension complète en position debout et l’atteinte de l’accroupissement profond. Des <span class="c-pink">douleurs</span> ou des limitations fonctionnelles orientent vers des pathologies intra-articulaires de la hanche, une <span class="c-red">coxarthrose</span> ou des déficits musculaires.</li><li><strong>Démarche</strong> — L’inclinaison ipsilatérale du tronc correspond à une discrète boiterie de Duchenne comme stratégie <span class="c-amber">antalgique</span> de décharge des abducteurs de hanche. Dans le GTPS, la démarche est souvent peu altérée. Une boiterie de Trendelenburg marquée évoque plutôt une insuffisance des abducteurs, une pathologie tendineuse fessière de haut grade, une <span class="c-orange">rupture</span> des tendons fessiers ou une cause neurologique.</li><li><strong>Inspection des axes des jambes / position du bassin</strong> — Des malpositions, des différences fonctionnelles de longueur des jambes ou une inclinaison pelvienne peuvent augmenter la charge tendineuse fessière et favoriser un GTPS.</li><li><strong>Inspection locale</strong> — Des signes inflammatoires visibles seraient atypiques et devraient faire penser à une <span class="c-red">bursite</span> septique ou une autre cause inflammatoire. Une atrophie musculaire peut indiquer une insuffisance chronique des abducteurs ou des causes neurologiques.</li><li class="theorie-sous-groupe"><strong>Palpation</strong> — La <span class="c-pink">douleur</span> localisée à la pression sur le grand trochanter est le résultat clinique central du GTPS. Des constatations de <span class="c-green">palpation</span> supplémentaires aident au <span class="c-yellow">diagnostic différentiel</span> par rapport aux causes intra-articulaires, sacro-iliaques, dorso-fessières ou osseuses.</li><li><strong>Palpation · Grand trochanter</strong> — La <span class="c-pink">douleur</span> ponctuelle à la pression sur le grand trochanter est typique d’un GTPS.</li><li><strong>Palpation · Aine</strong> — Une <span class="c-pink">douleur</span> inguinale à la pression évoque plutôt une pathologie intra-articulaire de la hanche.</li><li><strong>Palpation · ISG</strong> — Une <span class="c-pink">douleur</span> localisée de l’ISG peut indiquer une genèse douloureuse sacro-iliaque.</li><li><strong>Palpation · Dorso-fessier</strong> — Une <span class="c-pink">douleur</span> dorso-fessière prédominante peut évoquer plutôt un <span class="c-red">syndrome du piriforme</span> ou des causes lombo-sacrées.</li><li class="theorie-sous-groupe"><strong>Mobilité de la hanche</strong> — Une mobilité passive libre parle contre une pathologie intra-articulaire significative de la hanche. La rotation interne en flexion est particulièrement importante pour différencier d’une <span class="c-red">coxarthrose</span> ou d’un conflit fémoro-acétabulaire.</li><li><strong>Mobilité de la hanche · Flexion / (Extension en décubitus ventral)</strong> — La flexion se teste en décubitus dorsal, l’extension cliniquement le plus souvent en décubitus ventral.</li><li><strong>Mobilité de la hanche · Rotation interne / externe en flexion</strong> — La rotation interne à 90° de flexion est le marqueur clinique le plus sensible d’une pathologie intra-articulaire de hanche.</li><li class="theorie-sous-groupe"><strong>Tests de provocation GTPS</strong> — La combinaison de plusieurs tests de provocation augmente nettement la sécurité diagnostique pour une <span class="c-red">tendinopathie</span> fessière. (Voir vidéo externe sur la démarche clinique du GTPS: https://www.youtube.com/watch?v=8WUEsTfK69g )</li><li><strong>Tests de provocation GTPS · Test FADER-R (Flexion Adduction External Rotation - Resisted)</strong> — Réalisation: résistance contre la rotation interne à partir d’une position de hanche fléchie, en adduction et rotation externe. (Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=Q_x3Cv4_Q3Y )</li><li class="theorie-sous-groupe"><strong>DD Hanche</strong> — Ces tests servent surtout à différencier des pathologies intra-articulaires de la hanche telles que la <span class="c-red">coxarthrose</span> ou le conflit fémoro-acétabulaire.</li><li><strong>DD Hanche · Test d’impingement (test FADDIR)</strong> — Un test positif évoque un conflit fémoro-acétabulaire ou d’autres pathologies intra-articulaires. (Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=xyJUIhsL4lg)</li><li><strong>DD Hanche · Test FABER (Patrick / en 4)</strong> — Selon la localisation de la <span class="c-pink">douleur</span>, le test FABER peut orienter vers des causes articulaires de hanche ou sacro-iliaques.
+(Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=89Qiht82zmg)</li><li><strong>DD lombo-radiculaire · Test de Lasègue</strong> — Un <span class="c-green">test de Lasègue</span> positif évoque plutôt une cause lombo-radiculaire des symptômes</li><li><strong>Test de force des abducteurs de hanche</strong> — Dans le GTPS, on observe typiquement une baisse de force et une atrophie des abducteurs de hanche (GMed/GMin) avec hypertrophie compensatoire du TFL. Faiblesse et <span class="c-red">tendinopathie</span> s’auto-entretiennent dans un cercle vicieux: l’insuffisance musculaire augmente la compression des tendons fessiers au grand trochanter, la <span class="c-pink">douleur</span> qui en résulte inhibe davantage l’activation musculaire. C’est pourquoi le renforcement progressif des muscles fessiers est l’élément central du traitement.</li><li class="theorie-sous-groupe"><strong>Tests de provocation GTPS</strong> — La combinaison de plusieurs tests de provocation augmente nettement la sécurité diagnostique pour une <span class="c-red">tendinopathie</span> fessière. (Voir vidéo externe sur la démarche clinique du GTPS: https://www.youtube.com/watch?v=8WUEsTfK69g )</li><li><strong>Tests de provocation GTPS · Resisted Abduction Test (ADD-R-Test)</strong> — Réalisation: abduction contre résistance à partir d’une position de hanche en adduction en décubitus latéral (Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=myMISIQQ18A )</li><li class="theorie-sous-groupe"><strong>DD Hanche, ISG, lombo-sacré (3 phases de Mennell - test d’hyperextension)</strong> — Le <span class="c-green">test de Mennell</span> en 3 phases (aussi Three-Phase-Hyperextension test) différencie entre pathologie de l’articulation de la hanche, de l’ISG et lombo-sacrée. La patiente est en décubitus ventral, l’examinatrice/teur hyperétend passivement la jambe tendue avec une fixation variable. Dans le GTPS, le test est typiquement sans particularité. (Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=QOM4fKkmurA)</li><li><strong>DD Hanche, ISG, lombo-sacré (3 phases de Mennell - test d’hyperextension) · Phase 1: Articulation de la hanche</strong> — Avec fixation du tuber ischiadicum, on hyperétend la hanche de manière isolée. Une <span class="c-pink">douleur</span> inguinale évoque une pathologie intra-articulaire de hanche telle que <span class="c-red">coxarthrose</span> ou impingement antérieur. (Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=QOM4fKkmurA)</li><li><strong>DD Hanche, ISG, lombo-sacré (3 phases de Mennell - test d’hyperextension) · Phase 2: ISG (signe classique de Mennell)</strong> — Avec fixation du sacrum, on provoque le mouvement de l’ISG. La reproduction de la <span class="c-pink">douleur</span> au niveau de l’ISG évoque une sacro-<span class="c-red">iliite</span> ou une dysfonction de l’ISG. C’est le véritable <span class="c-green">signe de Mennell</span>. (Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=QOM4fKkmurA)</li><li><strong>DD Hanche, ISG, lombo-sacré (3 phases de Mennell - test d’hyperextension) · Phase 3: Jonction lombo-sacrée</strong> — Avec fixation de TH12 ou L5, on <span class="c-red">sollicite</span> de manière isolée la jonction lombo-sacrée. La reproduction de la <span class="c-pink">douleur</span> évoque une pathologie de la jonction lombo-sacrée comme une <span class="c-red">discopathie</span> ou un problème des facettes articulaires.
+(Voir vidéo de démonstration externe: https://www.youtube.com/watch?v=QOM4fKkmurA)</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostic</h4>
+    <ul><li><strong>Échographie</strong> — Le diagnostic de GTPS est d’abord clinique sur la base d’une anamnèse et d’un examen typiques. L’<span class="c-green">échographie</span> peut montrer des altérations dégénératives des tendons fessiers, des <span class="c-red">bursites</span>, des <span class="c-orange">ruptures</span> partielles de tendon ou des <span class="c-red">enthésopathies</span> et est facilement disponible en cabinet de médecine de famille ou chez le/la radiologue, mais n’est pas indispensable pour poser le diagnostic.</li><li><strong>Radiographie du bassin de face</strong> — La <span class="c-green">radiographie</span> sert ici surtout à exclure des <span class="c-yellow">diagnostics différentiels</span> comme la <span class="c-red">coxarthrose</span>, une <span class="c-red">fracture</span> ou une lésion osseuse. Elle n’est pas nécessaire pour le diagnostic de GTPS lui-même.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic de travail</strong> — Le GTPS a une prévalence de 10 à 25 pour cent; environ un quart des femmes de plus de 50 ans sont concernées. Les <span class="c-purple">facteurs de risque</span> sont les modifications hormonales postménopausiques, l’<span class="c-purple">obésité</span> et l’augmentation brutale de la charge.
+Le diagnostic est clinique: <span class="c-pink">douleur</span> latérale du grand trochanter, <span class="c-pink">douleur</span> nocturne en décubitus latéral, appui unipodal positif à 30 secondes et mobilité interne de hanche libre. À distinguer de la <span class="c-red">coxarthrose</span> (inguinale, rotation interne limitée), de la <span class="c-red">radiculopathie</span> lombaire et de la sacro-<span class="c-red">iliite</span>.
+La désignation <span class="c-red">bursite</span> trochantérienne est obsolète: la pathologie primaire est la <span class="c-red">tendinopathie</span> des tendons fessiers; une <span class="c-red">bursite</span> n’est présente qu’à 20 à 30 pour cent à titre secondaire. Par conséquent, le traitement consiste en un renforcement progressif des muscles fessiers, et non en une approche anti-inflammatoire.</li><li><strong>Adaptation de la charge</strong> — Repos relatif plutôt qu’<span class="c-amber">immobilisation</span> complète. Les tendons fessiers doivent continuer à être sollicités modérément pour éviter l’atrophie d’inactivité. Il faut d’abord éviter les charges compressives comme la position assise jambes croisées, la station debout prolongée avec report de poids et les mouvements d’adduction excessifs.</li><li><strong>Physiothérapie et entraînement à domicile</strong> — Le renforcement contrôlé de la musculature pelvi-trochantérienne (en particulier m. gluteus medius et minimus) est le traitement le plus efficace du GTPS et doit être prescrit en première intention. Il réduit l’activité compensatrice du TFL et donc la compression des tendons fessiers au grand trochanter. Les priorités sont les exercices isométriques et excentriques en position d’abduction de hanche.</li><li><strong>Analgésie</strong> — Les <span class="c-amber">AINS</span> topiques ont un profil d’effets indésirables plus favorable et sont efficaces pour les <span class="c-pink">douleurs</span> musculo-squelettiques superficielles. En cas de besoin prolongé d’<span class="c-amber">AINS</span> oraux, il faut considérer la gastroprotection, la fonction rénale et le risque cardiovasculaire.</li><li><strong>Contrôle d’évolution</strong> — Un contrôle planifié permet d’escalader le traitement en temps utile en cas d’échec. Le cas échéant, réalisation d’une <span class="c-green">IRM</span> pour confirmer le diagnostic et exclure d’autres pathologies ou <span class="c-orange">complications</span></li><li><strong>Infiltration stéroïdienne</strong> — L’infiltration locale de stéroïdes offre un soulagement à court terme de 1 à 3 mois, mais elle est à éviter à long terme en raison d’effets négatifs sur le tissu tendineux affaibli et du risque de lésion tendineuse en cas de répétition. Elle constitue une option de réserve après échec du traitement conservateur, et non une mesure de première ligne. Alternative en cas de résistance au traitement: thérapie par ondes de choc extracorporelles (ESWT) avec une bonne évidence à moyen terme.</li><li><strong>Filet de sécurité</strong> — Le <span class="c-yellow">filet de sécurité</span> sert à reconnaître précocement des <span class="c-orange">complications</span> nécessitant un traitement comme une <span class="c-red">bursite</span> septique, une <span class="c-orange">rupture</span> aiguë des tendons fessiers ou une <span class="c-red">fracture</span> traumatique. La patiente doit connaître les <span class="c-yellow">signes d’alarme</span> tels qu’augmentation des <span class="c-pink">douleurs</span>, rougeur, tuméfaction, <span class="c-pink">fièvre</span> ou nouvelle faiblesse musculaire et savoir quand une réévaluation immédiate est nécessaire.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Par manque de temps, la/le candidate réalise l’examen clinique uniquement du côté symptomatique.</li><li>Savoir reconnaître et interpréter les symptômes principaux et les tests de provocation du Greater Trochanteric Pain Syndrome (GTPS).</li><li>Savoir différencier le GTPS, sur la base de l’anamnèse et de l’examen clinique, des pathologies intra-articulaires de la hanche, des causes lombo-radiculaires et des syndromes de l’ISG.</li><li>Savoir expliquer les principes de la thérapie conservatrice du GTPS avec gestion de la charge et renforcement ciblé des muscles fessiers.</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Diagnostic: <span class="c-red">Syndrome douloureux</span> du grand trochanter à droite</p><p>Chez Mme Conti, 58 ans, le tableau clinique correspond à un <span class="c-red">Syndrome douloureux</span> du grand trochanter (GTPS) à droite (anciennement: <span class="c-red">bursite</span> trochantérienne) avec <span class="c-red">tendinopathie</span> des tendons des mm. gluteus medius et minimus.</p><p>L’anamnèse est typique: depuis environ dix semaines, <span class="c-pink">douleur</span> latérale au niveau du grand trochanter d’apparition insidieuse après une augmentation brusque des charges due à un nouveau hobby de randonnée, sur un mode de vie jusque-là largement inactif et une activité professionnelle principalement assise. Classiquement, <span class="c-pink">douleurs</span> nocturnes en décubitus latéral droit, <span class="c-pink">douleur</span> en montant les escaliers et au lever après une position assise prolongée, ainsi qu’une majoration retardée des <span class="c-pink">douleurs</span> après des charges plus intenses.</p><p>Cliniquement, les éléments déterminants sont une <span class="c-pink">douleur</span> à la pression et à la <span class="c-green">percussion</span> localisée sur le grand trochanter ainsi que des tests de provocation positifs reproduisant la <span class="c-pink">douleur</span> latérale. Il n’y a pas d’indices cliniques en faveur d’une pathologie de l’articulation de la hanche, d’une pathologie de l’ISG ou d’une genèse lombo-radiculaire.</p><p>Le GTPS est un diagnostic clinique; une <span class="c-green">IRM</span> n’est pas indiquée. Une <span class="c-green">radiographie</span> du bassin de face peut être utile pour exclure des pathologies du <span class="c-yellow">diagnostic différentiel</span>. En cas d’<span class="c-green">échographie</span>, on observe des signes de <span class="c-red">tendinopathie</span> et une <span class="c-red">bursite</span> trochantérienne associée visible.</p><p>Sur le plan thérapeutique, priorité à une <span class="c-amber">physiothérapie</span> structurée et un entraînement à domicile avec renforcement des muscles fessiers, ainsi qu’à une adaptation de la charge. Analgésie par <span class="c-amber">AINS</span> topiques ou oraux au besoin. Contrôle d’évolution dans quatre à six semaines avec un <span class="c-yellow">filet de sécurité</span> clairement communiqué. Infiltration de stéroïdes seulement en option de réserve.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Aperçu AKDP</div><div class="annexe-expert-content"><p>Anamnèse</p><p>Depuis 10 semaines, <span class="c-pink">douleur</span> latérale du grand trochanter à droite augmentant insidieusement; augmentation brusque de la charge due à un nouveau hobby de randonnée avec activité professionnelle assise; <span class="c-pink">douleurs</span> nocturnes en décubitus latéral droit; <span class="c-pink">douleur</span> à la montée des escaliers, au lever après position assise; majoration retardée après charge</p><p>Statut clinique</p><p><span class="c-pink">Douleur</span> à la pression et à la <span class="c-green">percussion</span> sur le grand trochanter droit, tests de provocation positifs avec reproduction de la <span class="c-pink">douleur</span> latérale, pas d’indices pour pathologie de l’articulation de la hanche, de l’ISG ni lombo-radiculaire</p><p>Diagnostics</p><p>Diagnostic clinique, pas d’<span class="c-green">IRM</span> indiquée; <span class="c-green">radiographie</span> optionnelle ou en cas de suspicion pour exclure <span class="c-red">arthrose</span> et lésions osseuses; <span class="c-green">échographie</span> montrant des signes de <span class="c-red">tendinopathie</span> et <span class="c-red">bursite</span> associée</p><p>Procédure</p><p><span class="c-amber">Physiothérapie</span> et entraînement à domicile avec renforcement des muscles fessiers, adaptation de la charge, <span class="c-amber">AINS</span> au besoin, contrôle d’évolution à 4–6 semaines, <span class="c-yellow">filet de sécurité</span>, infiltration stéroïdienne seulement en option de réserve</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 38,
+        "examen": 22,
+        "management": 10,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 5,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 4,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

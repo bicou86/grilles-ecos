@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-6 - Conseil de grossesse - Mme Aydin, 26 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-6 - Conseil de grossesse</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-6" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Consultation gynécologique</p>
+            <p style="margin: 5px 0;">👤 Mme Aydin, 26 ans</p>
+            <p style="margin: 5px 0;">🏷️ Gynécologie &amp; obstétrique · Poste de communication · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/25</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Grossesse actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question initiale <span class="patient-response">[« Mes règles ont cessé et le test de grossesse à domicile était positif. »]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Anamnèse menstruelle<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La date des dernières règles et les caractéristiques du cycle constituent la base de la datation clinique et de la règle de Naegele.</span></span></span> · Dernières règles <span class="patient-response">[Dernières règles il y a six semaines]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La date des dernières règles et le cycle permettent de déterminer la semaine d&#x27;aménorrhée et le terme (règle de Naegele) et constituent la base de la planification ultérieure.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse menstruelle · Cycle <span class="patient-response">[Régulier, environ 28 jours]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de durée de cycle différente, le terme calculé est corrigé selon la règle de Naegele ; un cycle régulier soutient la datation basée sur les dernières règles.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Grossesse planifiée <span class="patient-response">[Oui, désirée, mais survenue plus tôt que prévu]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le fait que la grossesse soit désirée ou non influence l&#x27;attitude et l&#x27;état émotionnel initial : cela façonne le ton du conseil, aide à situer les inquiétudes et les sentiments de culpabilité, et écarte la question d&#x27;un conflit de grossesse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Nausées <span class="patient-response">[Parfois de légères nausées, pas de vomissements]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des signes présomptifs de grossesse comme de légères nausées concordent avec un début de grossesse ; des vomissements marqués feraient suspecter une hyperémèse gravidique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Signes d&#x27;alarme<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Questions ciblées sur les signes d&#x27;alarme du début de grossesse (saignement vaginal, douleur unilatérale du bas-ventre) évoquant une menace d&#x27;avortement ou une grossesse extra-utérine.</span></span></span> · Saignement vaginal <span class="patient-response">[Non, pas de saignement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La question ciblée sur un saignement vaginal permet d&#x27;exclure une menace d&#x27;avortement et une grossesse extra-utérine.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes d&#x27;alarme · Douleurs au bas-ventre <span class="patient-response">[Non, pas de douleurs abdominales]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des douleurs unilatérales au bas-ventre sont un signe d&#x27;alarme évoquant une grossesse extra-utérine.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes d&#x27;accompagnement <span class="patient-response">[Sinon, je vais bien]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans le cadre d&#x27;AZYGOS, la patiente ne révèle délibérément rien de vraiment pertinent ici, afin que ce ne soit pas la question ouverte mais la recherche ciblée et orientée sur le problème qui soit évaluée. La question reste néanmoins importante, car les patientes donnent parfois d&#x27;elles-mêmes un indice que l&#x27;on pourrait sinon manquer.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Attentes <span class="patient-response">[Savoir si tout va bien et ce que je peux faire pour avoir un bébé en bonne santé]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;identification précoce des attentes et des préoccupations structure le conseil et permet de déceler les représentations erronées et les sentiments de culpabilité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse gynécologique <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Contraception <span class="patient-response">[Arrêt de la pilule il y a trois mois]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La dernière méthode de contraception utilisée et le moment de l&#x27;arrêt aident à cerner le moment de la conception et soutiennent ainsi la datation en association avec les dernières règles.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Cytologie cervicale <span class="patient-response">[Dernier frottis il y a un an, était normal]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le statut de la cytologie cervicale est enregistré ; en l&#x27;absence de résultat récent, le frottis est effectué dans le cadre du suivi de grossesse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents gynécologiques <span class="patient-response">[Non, jamais rien eu sur le plan gynécologique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des antécédents gynécologiques ou des infections pertinents pourraient influencer le déroulement de la grossesse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse obstétricale <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Grossesses antérieures <span class="patient-response">[Ma première grossesse]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La gestité et la parité sont enregistrées (ici G1 P0) ; des complications antérieures telles qu&#x27;une prééclampsie, un diabète gestationnel ou un accouchement prématuré augmenteraient le risque.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents médicaux <span class="patient-response">[En bonne santé jusqu&#x27;à présent]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des antécédents médicaux pertinents pour la grossesse, tels que l&#x27;hypertension, le diabète, les troubles thyroïdiens ou de la coagulation, déterminent la prise en charge et le risque.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Rien de régulier ; une fois de l&#x27;ibuprofène contre les maux de tête avant de le savoir, j&#x27;espère que cela n&#x27;a pas nui]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le traitement de fond est évalué quant à sa tératogénicité ; la prise unique d&#x27;ibuprofène est pertinente pour les conseils ultérieurs sur l&#x27;analgésie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Suppléments<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La question ciblée sur l&#x27;acide folique et l&#x27;iode révèle le statut de supplémentation préconceptionnelle, souvent incomplet.</span></span></span> · Acide folique <span class="patient-response">[Non, pas d&#x27;acide folique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;acide folique devrait idéalement être débuté avant la conception ; son absence lors de la première consultation constitue la recommandation de supplémentation immédiate la plus importante.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suppléments · Iode <span class="patient-response">[Non, pas d&#x27;iode]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La supplémentation en iode est recommandée pendant la grossesse et constitue, avec l&#x27;acide folique, la deuxième supplémentation standard.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Non, pas d&#x27;allergies]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les allergies font partie de l&#x27;anamnèse personnelle complète et sont pertinentes pour les prescriptions ultérieures.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut vaccinal <span class="patient-response">[Immunisation de base présente, détails inconnus]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le statut vaccinal (rubéole, varicelle, coqueluche) est pertinent pour l&#x27;immunité et pour les recommandations vaccinales ultérieures pendant la grossesse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Toxiques <span class="patient-response">[Ne fume pas, alcool rare ; deux verres de vin lors d&#x27;une fête avant de le savoir, cela m&#x27;inquiète]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La consommation de nicotine et d&#x27;alcool est enregistrée ; l&#x27;exposition avant la connaissance de la grossesse constitue la base du conseil proportionné ultérieur.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Risques familiaux <span class="patient-response">[Non, rien de connu dans la famille, pas de maladies héréditaires ou de malformations, pas de thromboses ni de diabète]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Sont pertinents non seulement les maladies héréditaires, les anomalies chromosomiques et les malformations qui pourraient suggérer un conseil génétique, mais aussi la thrombophilie familiale, le diabète et la prééclampsie, qui contribuent à déterminer le risque lié à la grossesse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse sociale et mode de vie <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Mode de vie · Alimentation <span class="patient-response">[Mange normalement, aime les sushis et le fromage à pâte molle, deux à trois cafés par jour]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les habitudes alimentaires, y compris les produits crus et la caféine, concernent le risque de listériose et de toxoplasmose ainsi que les conseils sur la caféine.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mode de vie · Activité physique <span class="patient-response">[Faisais du jogging auparavant, arrêté par peur pour l&#x27;enfant]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une activité physique modérée est recommandée lors d&#x27;une grossesse non compliquée ; l&#x27;arrêt par inquiétude est une représentation erronée fréquente et corrigeable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation sociale <span class="patient-response">[Mariée, mon mari me soutient, travaille dans un bureau]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le soutien social et du partenaire ainsi que la charge professionnelle influencent le déroulement de la grossesse et les besoins en matière de conseil.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">État psychique <span class="patient-response">[Heureuse, mais nerveuse et peu sûre de moi]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;état émotionnel est évalué avec empathie ; les inquiétudes et les sentiments de culpabilité caractérisent le besoin de conseil dans ce cas.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/0</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/24</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Imagerie <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Échographie <span class="patient-response">[Grossesse monofœtale intra-utérine intacte, correspondant au terme, activité cardiaque positive]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;échographie transvaginale confirme la localisation intra-utérine (exclut une grossesse extra-utérine), la vitalité et sert à la datation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Examens de laboratoire <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Hémoglobine et groupe sanguin <span class="patient-response">[Sans particularité, Rh positif, RAI négative]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le groupe sanguin, le statut Rhésus et la RAI constituent la base d&#x27;une éventuelle prophylaxie anti-D ; le taux d&#x27;hémoglobine exclut une anémie significative.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Sérologies immunitaires <span class="patient-response">[Immunisée contre la rubéole et la varicelle]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une absence d&#x27;immunité contre la rubéole signifierait un risque élevé de syndrome de rubéole congénitale pour le fœtus. Un dépistage général de la toxoplasmose ne fait pas partie du suivi de routine en Suisse, car l&#x27;accent est mis sur la prévention primaire par le conseil.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Sérologies infectieuses <span class="patient-response">[Toutes les sérologies infectieuses sont négatives]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une positivité de l&#x27;HBsAg nécessiterait une séro-vaccination néonatale ; une sérologie de la syphilis positive nécessiterait un traitement immédiat.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Autres examens diagnostiques <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">VIH <span class="patient-response">[D&#x27;accord après information, négatif]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le dépistage du VIH est de routine, s&#x27;effectue après information et peut être refusé (opt-out) ; un diagnostic précoce réduit considérablement la transmission verticale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut urinaire <span class="patient-response">[Sans particularité, pas de signes de bactériurie]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La bactériurie asymptomatique doit être traitée pendant la grossesse (risque accru de pyélonéphrite et d&#x27;accouchement prématuré) et fait donc l&#x27;objet d&#x27;un dépistage même en l&#x27;absence de symptômes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Évaluation clinique <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Confirmation de la grossesse <span class="patient-response">[Grossesse monofœtale intra-utérine intacte, évolutive]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La confirmation d&#x27;une grossesse intra-utérine intacte et évolutive exclut une grossesse extra-utérine et un avortement précoce, et constitue la base de la prise en charge ultérieure.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Évaluation des risques <span class="patient-response">[Grossesse physiologique non compliquée, sans facteurs de risque]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La classification en grossesse physiologique versus à risque détermine l&#x27;intensité du suivi ; les facteurs de risque seraient par exemple des antécédents médicaux pertinents, des complications lors de grossesses antérieures, l&#x27;âge ou une anamnèse familiale chargée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Datation <span class="patient-response">[Environ 6 SA ; le terme de la grossesse sera précisé par échographie]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La datation basée sur la DDR (règle de Naegele) donne une estimation de l&#x27;âge gestationnel et du terme ; l&#x27;échographie transvaginale est la référence pour la précision. En cas de cycle régulier, la datation par la DDR correspond généralement aux résultats de l&#x27;échographie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Conseils sur le mode de vie <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Mode de vie<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les conseils sur le mode de vie en début de grossesse couvrent les questions essentielles du quotidien tout en corrigeant les représentations erronées et anxieuses.</span></span></span> · Voyages <span class="patient-response">[Voyages possibles, idéalement durant le deuxième trimestre]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les voyages sont en principe possibles, idéalement au 2e trimestre ; lors de longs trajets, il convient de penser à une prophylaxie de la thrombose.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mode de vie · Activité physique <span class="patient-response">[Activité physique modérée autorisée, elle peut continuer le jogging]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une activité aérobie modérée est recommandée, les sports de contact ou à risque de chute sont à éviter ; cela dissipe la représentation erronée selon laquelle il faudrait arrêter complètement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mode de vie · Alimentation <span class="patient-response">[Manger équilibré, prise de poids modérée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une alimentation équilibrée et une prise de poids adaptée à l&#x27;IMC favorisent un déroulement sans complication.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mode de vie · Caféine <span class="patient-response">[Consommation modérée sans danger, environ 2 tasses par jour]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une consommation modérée de caféine est considérée comme acceptable pendant la grossesse ; une consommation nettement élevée devrait plutôt être réduite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mode de vie · Sexualité <span class="patient-response">[Les rapports sexuels sont sans danger]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En l&#x27;absence de complication, la sexualité est en principe sans danger ; cela dissipe une inquiétude fréquente.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mode de vie · Toxiques <span class="patient-response">[Pas d&#x27;alcool, pas de tabac et pas de drogues pendant la grossesse]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Aucune quantité d&#x27;alcool n&#x27;est considérée comme sûre ; la consommation de tabac et de drogues est également contre-indiquée et doit être totalement évitée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-5" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Conseils sur la sécurité <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Sécurité des médicaments <span class="patient-response">[Consulter avant toute prise de médicament (même sans ordonnance ou phytothérapie) ; en cas de douleur, privilégier le paracétamol plutôt que les AINS]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">De nombreuses substances actives sont contre-indiquées ou d&#x27;utilisation limitée pendant la grossesse, le principe de base étant de consulter avant toute prise. Le paracétamol est l&#x27;analgésique de choix, les AINS sont à éviter (particulièrement au 3e trimestre).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prévention des infections <span class="patient-response">[Pas de viande crue, pas de produits au lait cru, pas de poisson cru, laver les légumes ; porter des gants de jardinage, éviter les excréments de chat, hygiène des mains]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les mesures alimentaires et environnementales réduisent le risque d&#x27;infections d&#x27;origine alimentaire pendant la grossesse (en premier lieu la listériose et la toxoplasmose, mais aussi la salmonellose et la campylobactériose). Comme aucun dépistage général de la toxoplasmose n&#x27;est effectué en Suisse, la prévention est recommandée à toutes les femmes enceintes, quel que soit leur statut sérologique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Rassurance et risque <span class="patient-response">[Une exposition précoce unique (vin, ibuprofène, sport) ne plaide pas en faveur d&#x27;un préjudice, apaiser les sentiments de culpabilité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une évaluation proportionnée et honnête aborde les sentiments de culpabilité sans les banaliser ni les dramatiser.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Vaccinations <span class="patient-response">[Coqueluche au 2e trimestre, grippe saisonnière, COVID-19 (ARNm, dès le 2e trimestre), pas de vaccins vivants]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La vaccination contre la coqueluche (dTpa) est recommandée lors de chaque grossesse au 2e trimestre (13e à 26e SA) (SSGO), la grippe de manière saisonnière ; la vaccination contre le COVID-19 (ARNm) est recommandée dès le 2e trimestre ; les vaccins vivants sont contre-indiqués.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+<div class="criteria-row" id="criteria-m7">
+    <div>
+        <div class="criteria-text">7. Prise en charge <button class="comment-button" onclick="toggleComment('m7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Plan de suivi <span class="patient-response">[Contrôles réguliers, deux échographies (11e à 14e et 20e à 23e SA), dépistage du diabète gestationnel (DG) entre la 24e et la 28e SA]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le suivi structuré avec échographies de routine et dépistage du diabète gestationnel permet de détecter précocement les complications et correspond aux standards suisses.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-0" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage prénatal <span class="patient-response">[Aborder la possibilité, proposer un conseil sans parti pris, planifier le rendez-vous entre la 11e et la 14e SA]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le dépistage prénatal (test du premier trimestre, DPNI) est proposé, non imposé : la patiente décide elle-même. L&#x27;examen a lieu au 1er trimestre.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-1" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Acide folique et iode <span class="patient-response">[Acide folique dès maintenant, ainsi que de l&#x27;iode]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;acide folique réduit le risque d&#x27;anomalies de fermeture du tube neural et devrait être débuté précocement (idéalement avant la conception) ; de plus, une supplémentation en iode est recommandée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-2" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Filet de sécurité <span class="patient-response">[Consulter immédiatement en cas de saignement ou de douleurs abdominales unilatérales intenses]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un saignement vaginal et des douleurs intenses et unilatérales au bas-ventre sont des signes d&#x27;alarme d&#x27;une grossesse extra-utérine ou d&#x27;un avortement ; dans la prise en charge ambulatoire, des instructions claires de reconsultation sont centrales.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-3" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Matériel d&#x27;information <span class="patient-response">[Remettre des brochures d&#x27;information sur la grossesse et orienter vers des sources fiables]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les informations écrites et les brochures soutiennent la compréhension et l&#x27;observance, et fournissent à la patiente des sources fiables pour ses questions en suspens.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-4" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m7">
+            <textarea class="comment-textarea" id="comment-m7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m7">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les inquiétudes, les besoins, les attentes et les préoccupations de la patiente et y répond de manière empathique et adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l&#x27;entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible, tout en restant adaptable avec flexibilité.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée à la patiente, favorise la compréhension par la répétition, la reformulation, la synthèse et les explications, et utilise de manière ciblée la voix, le débit de parole et les pauses.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise de manière ciblée le contact visuel, les expressions faciales, les gestes, la posture et la distance pour créer une atmosphère d&#x27;entretien bienveillante, de confiance et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/65</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li class="theorie-sous-groupe"><strong>Anamnèse menstruelle</strong> — La date des dernières règles et les caractéristiques du cycle constituent la base de la datation clinique et de la règle de Naegele.</li><li><strong>Anamnèse menstruelle · Dernières règles</strong> — La date des dernières règles et le cycle permettent de déterminer la semaine d&#x27;aménorrhée et le terme (règle de Naegele) et constituent la base de la planification ultérieure.</li><li><strong>Anamnèse menstruelle · Cycle</strong> — En cas de durée de cycle différente, le terme calculé est corrigé selon la règle de Naegele ; un cycle régulier soutient la datation basée sur les dernières règles.</li><li><strong>Grossesse planifiée</strong> — Le fait que la <span class="c-purple">grossesse</span> soit désirée ou non influence l&#x27;attitude et l&#x27;état émotionnel initial : cela façonne le ton du conseil, aide à situer les inquiétudes et les sentiments de culpabilité, et écarte la question d&#x27;un conflit de <span class="c-purple">grossesse</span>.</li><li><strong>Nausées</strong> — Des signes présomptifs de <span class="c-purple">grossesse</span> comme de légères <span class="c-pink">nausées</span> concordent avec un début de <span class="c-purple">grossesse</span> ; des <span class="c-pink">vomissements</span> marqués feraient suspecter une hyperémèse gravidique.</li><li class="theorie-sous-groupe"><strong>Signes d&#x27;alarme</strong> — Questions ciblées sur les <span class="c-yellow">signes d&#x27;alarme</span> du début de <span class="c-purple">grossesse</span> (<span class="c-pink">saignement</span> vaginal, <span class="c-pink">douleur</span> unilatérale du bas-ventre) évoquant une menace d&#x27;avortement ou une <span class="c-purple">grossesse</span> extra-utérine.</li><li><strong>Signes d&#x27;alarme · Saignement vaginal</strong> — La question ciblée sur un <span class="c-pink">saignement</span> vaginal permet d&#x27;exclure une menace d&#x27;avortement et une <span class="c-purple">grossesse</span> extra-utérine.</li><li><strong>Signes d&#x27;alarme · Douleurs au bas-ventre</strong> — Des <span class="c-pink">douleurs</span> unilatérales au bas-ventre sont un <span class="c-yellow">signe d&#x27;alarme</span> évoquant une <span class="c-purple">grossesse</span> extra-utérine.</li><li><strong>Symptômes d&#x27;accompagnement</strong> — Dans le cadre d&#x27;AZYGOS, la patiente ne révèle délibérément rien de vraiment pertinent ici, afin que ce ne soit pas la question ouverte mais la recherche ciblée et orientée sur le problème qui soit évaluée. La question reste néanmoins importante, car les patientes donnent parfois d&#x27;elles-mêmes un indice que l&#x27;on pourrait sinon manquer.</li><li><strong>Attentes</strong> — L&#x27;identification précoce des attentes et des préoccupations structure le conseil et permet de déceler les représentations erronées et les sentiments de culpabilité.</li><li><strong>Contraception</strong> — La dernière méthode de contraception utilisée et le moment de l&#x27;arrêt aident à cerner le moment de la conception et soutiennent ainsi la datation en association avec les dernières règles.</li><li><strong>Cytologie cervicale</strong> — Le statut de la cytologie cervicale est enregistré ; en l&#x27;absence de résultat récent, le frottis est effectué dans le cadre du suivi de <span class="c-purple">grossesse</span>.</li><li><strong>Antécédents gynécologiques</strong> — Des antécédents gynécologiques ou des infections pertinents pourraient influencer le déroulement de la <span class="c-purple">grossesse</span>.</li><li><strong>Grossesses antérieures</strong> — La gestité et la parité sont enregistrées (ici G1 P0) ; des <span class="c-orange">complications</span> antérieures telles qu&#x27;une prééclampsie, un <span class="c-purple">diabète</span> gestationnel ou un accouchement prématuré augmenteraient le risque.</li><li><strong>Antécédents médicaux</strong> — Des antécédents médicaux pertinents pour la <span class="c-purple">grossesse</span>, tels que l&#x27;<span class="c-purple">hypertension</span>, le <span class="c-purple">diabète</span>, les troubles thyroïdiens ou de la coagulation, déterminent la prise en charge et le risque.</li><li><strong>Médicaments</strong> — Le <span class="c-amber">traitement de fond</span> est évalué quant à sa tératogénicité ; la prise unique d&#x27;ibuprofène est pertinente pour les conseils ultérieurs sur l&#x27;analgésie.</li><li class="theorie-sous-groupe"><strong>Suppléments</strong> — La question ciblée sur l&#x27;acide folique et l&#x27;iode révèle le statut de supplémentation préconceptionnelle, souvent incomplet.</li><li><strong>Suppléments · Acide folique</strong> — L&#x27;acide folique devrait idéalement être débuté avant la conception ; son absence lors de la première consultation constitue la recommandation de supplémentation immédiate la plus importante.</li><li><strong>Suppléments · Iode</strong> — La supplémentation en iode est recommandée pendant la <span class="c-purple">grossesse</span> et constitue, avec l&#x27;acide folique, la deuxième supplémentation standard.</li><li><strong>Allergies</strong> — Les allergies font partie de l&#x27;anamnèse personnelle complète et sont pertinentes pour les prescriptions ultérieures.</li><li><strong>Statut vaccinal</strong> — Le statut vaccinal (rubéole, varicelle, coqueluche) est pertinent pour l&#x27;immunité et pour les recommandations vaccinales ultérieures pendant la <span class="c-purple">grossesse</span>.</li><li><strong>Toxiques</strong> — La consommation de nicotine et d&#x27;<span class="c-purple">alcool</span> est enregistrée ; l&#x27;exposition avant la connaissance de la <span class="c-purple">grossesse</span> constitue la base du conseil proportionné ultérieur.</li><li><strong>Risques familiaux</strong> — Sont pertinents non seulement les maladies héréditaires, les anomalies chromosomiques et les malformations qui pourraient suggérer un conseil génétique, mais aussi la thrombophilie familiale, le <span class="c-purple">diabète</span> et la prééclampsie, qui contribuent à déterminer le risque lié à la <span class="c-purple">grossesse</span>.</li><li><strong>Mode de vie · Alimentation</strong> — Les habitudes alimentaires, y compris les produits crus et la caféine, concernent le risque de <span class="c-red">listériose</span> et de <span class="c-red">toxoplasmose</span> ainsi que les conseils sur la caféine.</li><li><strong>Mode de vie · Activité physique</strong> — Une activité physique modérée est recommandée lors d&#x27;une <span class="c-purple">grossesse</span> non compliquée ; l&#x27;arrêt par inquiétude est une représentation erronée fréquente et corrigeable.</li><li><strong>Situation sociale</strong> — Le soutien social et du partenaire ainsi que la charge professionnelle influencent le déroulement de la <span class="c-purple">grossesse</span> et les besoins en matière de conseil.</li><li><strong>État psychique</strong> — L&#x27;état émotionnel est évalué avec empathie ; les inquiétudes et les sentiments de culpabilité caractérisent le besoin de conseil dans ce cas.</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostic</h4>
+    <ul><li><strong>Échographie</strong> — L&#x27;<span class="c-green">échographie</span> transvaginale confirme la localisation intra-utérine (exclut une <span class="c-purple">grossesse</span> extra-utérine), la vitalité et sert à la datation.</li><li><strong>Hémoglobine et groupe sanguin</strong> — Le groupe sanguin, le statut Rhésus et la RAI constituent la base d&#x27;une éventuelle prophylaxie anti-D ; le taux d&#x27;hémoglobine exclut une anémie significative.</li><li><strong>Sérologies immunitaires</strong> — Une absence d&#x27;immunité contre la rubéole signifierait un risque élevé de <span class="c-red">syndrome de rubéole</span> congénitale pour le fœtus. Un dépistage général de la <span class="c-red">toxoplasmose</span> ne fait pas partie du suivi de routine en Suisse, car l&#x27;accent est mis sur la prévention primaire par le conseil.</li><li><strong>Sérologies infectieuses</strong> — Une positivité de l&#x27;HBsAg nécessiterait une séro-<span class="c-amber">vaccination</span> néonatale ; une sérologie de la syphilis positive nécessiterait un traitement immédiat.</li><li><strong>VIH</strong> — Le dépistage du VIH est de routine, s&#x27;effectue après information et peut être refusé (opt-out) ; un diagnostic précoce réduit considérablement la transmission verticale.</li><li><strong>Statut urinaire</strong> — La bactériurie asymptomatique doit être traitée pendant la <span class="c-purple">grossesse</span> (risque accru de <span class="c-red">pyélonéphrite</span> et d&#x27;accouchement prématuré) et fait donc l&#x27;objet d&#x27;un dépistage même en l&#x27;absence de symptômes.</li></ul>
+</div><div class="theorie-section">
+    <h4>Prise en charge</h4>
+    <ul><li><strong>Confirmation de la grossesse</strong> — La confirmation d&#x27;une <span class="c-purple">grossesse</span> intra-utérine intacte et évolutive exclut une <span class="c-purple">grossesse</span> extra-utérine et un avortement précoce, et constitue la base de la prise en charge ultérieure.</li><li><strong>Évaluation des risques</strong> — La classification en <span class="c-purple">grossesse</span> physiologique versus à risque détermine l&#x27;intensité du suivi ; les <span class="c-purple">facteurs de risque</span> seraient par exemple des antécédents médicaux pertinents, des <span class="c-orange">complications</span> lors de grossesses antérieures, l&#x27;âge ou une anamnèse familiale chargée.</li><li><strong>Datation</strong> — La datation basée sur la DDR (règle de Naegele) donne une estimation de l&#x27;âge gestationnel et du terme ; l&#x27;<span class="c-green">échographie</span> transvaginale est la référence pour la précision. En cas de cycle régulier, la datation par la DDR correspond généralement aux résultats de l&#x27;<span class="c-green">échographie</span>.</li><li class="theorie-sous-groupe"><strong>Mode de vie</strong> — Les conseils sur le mode de vie en début de <span class="c-purple">grossesse</span> couvrent les questions essentielles du quotidien tout en corrigeant les représentations erronées et anxieuses.</li><li><strong>Mode de vie · Voyages</strong> — Les voyages sont en principe possibles, idéalement au 2e trimestre ; lors de longs trajets, il convient de penser à une prophylaxie de la <span class="c-red">thrombose</span>.</li><li><strong>Mode de vie · Activité physique</strong> — Une activité aérobie modérée est recommandée, les sports de contact ou à risque de chute sont à éviter ; cela dissipe la représentation erronée selon laquelle il faudrait arrêter complètement.</li><li><strong>Mode de vie · Alimentation</strong> — Une alimentation équilibrée et une prise de poids adaptée à l&#x27;IMC favorisent un déroulement sans <span class="c-orange">complication</span>.</li><li><strong>Mode de vie · Caféine</strong> — Une consommation modérée de caféine est considérée comme acceptable pendant la <span class="c-purple">grossesse</span> ; une consommation nettement élevée devrait plutôt être réduite.</li><li><strong>Mode de vie · Sexualité</strong> — En l&#x27;absence de <span class="c-orange">complication</span>, la sexualité est en principe sans danger ; cela dissipe une inquiétude fréquente.</li><li><strong>Mode de vie · Toxiques</strong> — Aucune quantité d&#x27;<span class="c-purple">alcool</span> n&#x27;est considérée comme sûre ; la consommation de <span class="c-purple">tabac</span> et de drogues est également contre-indiquée et doit être totalement évitée.</li><li><strong>Sécurité des médicaments</strong> — De nombreuses substances actives sont contre-indiquées ou d&#x27;utilisation limitée pendant la <span class="c-purple">grossesse</span>, le principe de base étant de consulter avant toute prise. Le paracétamol est l&#x27;<span class="c-amber">analgésique</span> de choix, les <span class="c-amber">AINS</span> sont à éviter (particulièrement au 3e trimestre).</li><li><strong>Prévention des infections</strong> — Les mesures alimentaires et environnementales réduisent le risque d&#x27;infections d&#x27;origine alimentaire pendant la <span class="c-purple">grossesse</span> (en premier lieu la <span class="c-red">listériose</span> et la <span class="c-red">toxoplasmose</span>, mais aussi la <span class="c-red">salmonellose</span> et la <span class="c-red">campylobactériose</span>). Comme aucun dépistage général de la <span class="c-red">toxoplasmose</span> n&#x27;est effectué en Suisse, la prévention est recommandée à toutes les femmes enceintes, quel que soit leur statut sérologique.</li><li><strong>Rassurance et risque</strong> — Une évaluation proportionnée et honnête aborde les sentiments de culpabilité sans les banaliser ni les dramatiser.</li><li><strong>Vaccinations</strong> — La <span class="c-amber">vaccination</span> contre la coqueluche (dTpa) est recommandée lors de chaque <span class="c-purple">grossesse</span> au 2e trimestre (13e à 26e SA) (SSGO), la grippe de manière saisonnière ; la <span class="c-amber">vaccination</span> contre le COVID-19 (ARNm) est recommandée dès le 2e trimestre ; les <span class="c-amber">vaccins</span> vivants sont contre-indiqués.</li><li><strong>Plan de suivi</strong> — Le suivi structuré avec <span class="c-green">échographies</span> de routine et dépistage du <span class="c-purple">diabète</span> gestationnel permet de détecter précocement les <span class="c-orange">complications</span> et correspond aux standards suisses.</li><li><strong>Dépistage prénatal</strong> — Le dépistage prénatal (test du premier trimestre, DPNI) est proposé, non imposé : la patiente décide elle-même. L&#x27;examen a lieu au 1er trimestre.</li><li><strong>Acide folique et iode</strong> — L&#x27;acide folique réduit le risque d&#x27;anomalies de fermeture du tube neural et devrait être débuté précocement (idéalement avant la conception) ; de plus, une supplémentation en iode est recommandée.</li><li><strong>Filet de sécurité</strong> — Un <span class="c-pink">saignement</span> vaginal et des <span class="c-pink">douleurs</span> intenses et unilatérales au bas-ventre sont des <span class="c-yellow">signes d&#x27;alarme</span> d&#x27;une <span class="c-purple">grossesse</span> extra-utérine ou d&#x27;un avortement ; dans la prise en charge ambulatoire, des instructions claires de reconsultation sont centrales.</li><li><strong>Matériel d&#x27;information</strong> — Les informations écrites et les brochures soutiennent la compréhension et l&#x27;observance, et fournissent à la patiente des sources fiables pour ses questions en suspens.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Anamnèse de <span class="c-purple">grossesse</span> orientée sur le problème, y compris les <span class="c-yellow">signes d&#x27;alarme</span></li><li>Examens diagnostiques de routine judicieux et interprétation</li><li>Conseils factuels et empathiques sur le mode de vie et la sécurité</li><li>Aperçu ASDP</li><li>Anamnèse : DDR il y a 6 semaines, cycle régulier ; <span class="c-purple">grossesse</span> désirée, plus tôt que prévu ; <span class="c-pink">nausées</span>, pas de <span class="c-pink">saignement</span>/<span class="c-pink">douleur</span> ; expositions avant la connaissance de la <span class="c-purple">grossesse</span> (vin, ibuprofène, jogging) ; pas d&#x27;acide folique/iode ; non-fumeuse, anamnèse familiale sans particularité.</li><li>Statut clinique (non évalué) : bon état général, paramètres vitaux normaux, examen de l&#x27;abdomen/gynécologique sans particularité.</li><li>Diagnostic : <span class="c-green">échographie</span> transvaginale (à transmettre : GIU intacte, correspondant au terme, activité cardiaque positive). Laboratoire : groupe sanguin A, Rh+, RAI nég., Hb normale ; immunisée contre rubéole/varicelle ; HBsAg/syphilis nég. Autres : VIH nég. (après information) ; statut urinaire sans particularité.</li><li>Prise en charge : <span class="c-purple">grossesse</span> précoce intacte, env. 6 SA, non compliquée ; acide folique/iode, plan de suivi, dépistage prénatal (sans parti pris), conseils sur le mode de vie/la sécurité y compris prévention des infections, <span class="c-yellow">filet de sécurité</span>.</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Traduit automatiquement puis vérifié par une IA face à l&#x27;original allemand.</p><p>Consultation gynécologique | Mme Aydin, 26 ans, employée de commerce</p><p>Chez Mme Aydin, 26 ans, il s&#x27;agit d&#x27;une <span class="c-purple">grossesse</span> monofœtale intra-utérine intacte à environ 6 semaines d&#x27;aménorrhée (SA) lors d&#x27;une première <span class="c-purple">grossesse</span>, désirée.</p><p>Dans l&#x27;anamnèse, on note une absence de règles depuis six semaines avec un cycle régulier et un test de <span class="c-purple">grossesse</span> positif, accompagnés de légères <span class="c-pink">nausées</span> sans <span class="c-pink">saignement</span> vaginal ni <span class="c-pink">douleurs</span> au bas-ventre. La patiente est en bonne santé, sans antécédents médicaux, <span class="c-amber">traitement de fond</span> ou allergies, non-fumeuse avec une anamnèse familiale sans particularité, et ne prend pour l&#x27;instant ni acide folique ni iode. La <span class="c-purple">grossesse</span> désirée est survenue plus tôt que prévu après l&#x27;arrêt de la pilule, c&#x27;est pourquoi elle a continué à vivre normalement sans préparation particulière jusqu&#x27;au test positif. Elle s&#x27;inquiète d&#x27;avoir nui à l&#x27;enfant parce qu&#x27;elle a bu deux verres de vin, pris une fois de l&#x27;ibuprofène et fait du sport avant de savoir qu&#x27;elle était enceinte.</p><p>Le statut clinique a été établi à l&#x27;admission par l&#x27;étudiante en année à option expérimentée et est sans particularité (bon état général, paramètres vitaux normaux, examen de l&#x27;abdomen et gynécologique sans particularité). Il est déjà à la disposition du candidat / de <span class="c-blue">la candidate</span> dans la salle de préparation, un nouvel examen clinique n&#x27;est pas prévu.</p><p>Au niveau des examens diagnostiques, l&#x27;<span class="c-green">échographie</span> transvaginale confirme une <span class="c-purple">grossesse</span> monofœtale intra-utérine évolutive, correspondant au terme, avec une activité cardiaque positive. Le <span class="c-green">bilan biologique</span> de routine est globalement sans particularité (groupe sanguin A, Rh positif, recherche d&#x27;anticorps irréguliers négative, hémoglobine normale, sérologies infectieuses et VIH négatives, statut urinaire sans particularité) ; elle est immunisée contre la rubéole et la varicelle. Un dépistage général de la <span class="c-red">toxoplasmose</span> ne fait pas partie des examens de routine en Suisse.</p><p>Il s&#x27;agit d&#x27;une <span class="c-purple">grossesse</span> précoce physiologique sans <span class="c-purple">facteurs de risque</span>. Pour la suite de la prise en charge, l&#x27;accent est mis sur la datation (environ 6 SA, terme de la <span class="c-purple">grossesse</span> par <span class="c-green">échographie</span>), l&#x27;initiation du suivi de <span class="c-purple">grossesse</span> avec supplémentation en acide folique et en iode, ainsi que la proposition d&#x27;un dépistage prénatal. Un conseil factuel et empathique est central : situer correctement les expositions survenues avant la connaissance de la <span class="c-purple">grossesse</span> et dissiper les représentations erronées et anxieuses concernant le sport, la sexualité et les voyages. Des mesures alimentaires et environnementales pour la prévention des infections (viande crue, excréments de chat, terre de jardin) sont recommandées à toutes les femmes enceintes, quel que soit leur statut sérologique ; la prise en charge est complétée par un <span class="c-yellow">filet de sécurité</span> avec les <span class="c-yellow">signes d&#x27;alarme</span>.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 25,
+        "examen": 0,
+        "management": 24,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 0,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 7,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

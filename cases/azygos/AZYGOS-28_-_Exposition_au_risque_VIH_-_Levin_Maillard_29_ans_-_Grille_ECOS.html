@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-28 - Exposition au risque VIH - Levin Maillard, 29 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-28 - Exposition au risque VIH</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-28" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Téléconsultation</p>
+            <p style="margin: 5px 0;">👤 Levin Maillard, 29 ans</p>
+            <p style="margin: 5px 0;">🏷️ Médecine interne · Consultation téléphonique · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/29</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Administration <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Identification du patient <span class="patient-response">[Levin Maillard, 29 ans]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Numéro de rappel <span class="patient-response">[078 421 63 18]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Plainte actuelle <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d’entrée <span class="patient-response">[« J’étais à une fête la nuit dernière et maintenant je m’inquiète pour le VIH »]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Moment <span class="patient-response">[La nuit dernière, il y a environ 7 heures]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le moment exact de l’exposition est central pour le triage, car une PEP VIH doit être commencée aussi vite que possible, idéalement dans les 6 à 8 heures et au plus tard dans les 48 heures.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Exposition · Description <span class="patient-response">[Rapport sexuel non protégé]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Exposition · Type de contact sexuel <span class="patient-response">[Avec partenaire masculin, rapport anal réceptif]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le type de contact sexuel détermine largement le risque VIH. Le rapport anal réceptif sans préservatif fait partie des expositions sexuelles au risque de transmission le plus élevé. Dans le cas présent, le contexte MSM (hommes ayant des rapports sexuels avec des hommes) augmente en plus la probabilité prétest.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Exposition · Préservatif <span class="patient-response">[Pas de préservatif]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les préservatifs réduisent clairement le risque d’infection par le VIH, avec une réduction d’environ 80 à 95 pour cent selon la directive mediX.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Exposition · Éjaculation <span class="patient-response">[incertain]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’éjaculation augmente encore le risque de transmission, mais n’est pas une condition préalable à une transmission du VIH. Le risque dépend en outre fortement de la charge virale, de l’état des muqueuses et de facteurs associés.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Exposition · Lésion ou sang <span class="patient-response">[Légères douleurs rectales, pas de sang remarqué]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les lésions muqueuses ou le sang visible peuvent augmenter le risque de transmission, car le VIH peut pénétrer plus facilement via des muqueuses lésées. De plus, une douleur locale peut évoquer une irritation muqueuse, un traumatisme ou une IST associée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Exposition · Influence de substances <span class="patient-response">[Alcool, éventuellement GHB, souvenirs lacunaires]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’influence de substances est ici cliniquement et communicationnellement pertinente, car les lacunes mnésiques compliquent l’évaluation de l’exposition et un éventuel manque de consentement doit être pris en compte.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures déjà prises <span class="patient-response">[Simplement pris une douche, pas encore de prophylaxie post‑exposition]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-8" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse orientée problème <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Personne contact · Statut VIH <span class="patient-response">[Statut incertain]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le statut VIH de la personne contact est central pour l’évaluation du risque. En cas de statut incertain, la décision repose sur l’exposition et le contexte de risque.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Personne contact · Contexte de risque <span class="patient-response">[Partenaire masculin, peu d’autres informations]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pour l’évaluation du risque de la personne contact, sont notamment pertinents, si connus, le statut VIH et la charge virale ainsi que des indices d’une prévalence VIH accrue. Selon les recommandations suisses actuelles, cela inclut surtout le contexte MSM, les personnes originaires de pays à haute prévalence VIH, l’usage de drogues injectables et le travail du sexe. Dans le cas présent, hormis le partenaire masculin, on sait peu de choses.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Autres expositions · Autres contacts sexuels <span class="patient-response">[Non, avec une seule personne]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Plusieurs expositions augmentent certes la probabilité cumulative d’infection. Pour le triage aigu, cela change toutefois peu ici, car l’exposition unique décrite suffit déjà à justifier une présentation médicale immédiate.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Autres expositions · Sang ou aiguilles <span class="patient-response">[Non, pas de contact avec du sang ni des aiguilles]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pour la décision d’aujourd’hui, d’autres voies de transmission ne sont pas centrales, l’exposition sexuelle justifiant déjà une clarification en présence immédiate.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Protection PrEP <span class="patient-response">[Actuellement pas de PrEP, anciennement irrégulière]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pour l’évaluation actuelle du risque, il est surtout pertinent de savoir si une PrEP efficace était présente au moment de l’exposition. Une PrEP prise seulement par le passé ou de manière irrégulière ne protège pas de manière fiable le contact actuel.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dernier test VIH <span class="patient-response">[Négatif il y a 5 mois]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un test négatif il y a 5 mois n’exclut pas l’exposition actuelle. Les tests VIH de 4e génération modernes ont une fenêtre diagnostique de 6 semaines.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">IST antérieures <span class="patient-response">[Gonorrhée en 2024, sinon aucune]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des IST bactériennes antérieures sont un marqueur d’un risque d’exposition sexuelle accru et d’un besoin de prévention.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Consentement <span class="patient-response">[Incertain, était somnolent, manque de contrôle]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de lacunes mnésiques, somnolence et possible influence de substances, un consentement manquant doit être activement envisagé. Cela influence la communication, la suite de la prise en charge et la question des offres de soutien concrètes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents <span class="patient-response">[TDAH, parfois phases dépressives]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Méthylphénidate au besoin, sertraline par phases]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Tabagisme <span class="patient-response">[Oui, mais seulement en sortie]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le tabagisme fait certes partie de l’anamnèse des noxes complète, mais il est à peine pertinent pour la prise en charge de l’évaluation aiguë du risque VIH dans ce cas.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Alcool <span class="patient-response">[Oui, je bois occasionnellement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une consommation régulière d’alcool peut aider à mieux situer les situations à risque répétées et le besoin de conseil. L’influence aiguë de substances est demandée séparément, en particulier en lien avec la situation actuelle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Drogues <span class="patient-response">[Parfois cannabis, parfois GHB]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Pénicilline, a provoqué une éruption cutanée]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut vaccinal <span class="patient-response">[Oui, je suis vacciné contre tout, y compris contre l’hépatite B]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le statut vaccinal VHB est pertinent pour la prise en charge après exposition sexuelle, car selon la situation, une prophylaxie post‑exposition contre l’hépatite B doit être envisagée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Doctorant en droit]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation de logement <span class="patient-response">[J’habite en colocation]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Charge psychosociale <span class="patient-response">[Oui, cela me stresse, je ne me souviens plus exactement comment cela a pu arriver]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/0</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/10</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Évaluation clinique <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic présumé <span class="patient-response">[Exposition pertinente au risque VIH avec indication possible de PEP]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Urgence <span class="patient-response">[Présentation médicale immédiate recommandée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La PEP VIH est critique dans le temps. La directive mediX actuelle recommande de débuter aussi rapidement que possible, idéalement dans les 6 à 8 heures et au plus tard dans les 48 heures. D’anciennes recommandations de l’OFSP mentionnent 72 heures comme limite extrême.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Consentement <span class="patient-response">[Manque de consentement abordé avec sensibilité]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Procédure <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Structure médicale de référence <span class="patient-response">[Urgence ou centre IST recommandé]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Traitement médicamenteux <span class="patient-response">[Prophylaxie post‑exposition (PEP) mentionnée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avant de débuter une PEP, une infection préexistante doit être exclue par un test VIH</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Bilan IST <span class="patient-response">[Tests IST et bilan hépatites évoqués]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Après une exposition sexuelle au risque, il faut penser non seulement au VIH, mais aussi aux autres IST et, selon la situation, aux hépatites B et C. Comme cela sera discuté plus en détail avec le patient dans les structures de référence, ce n’est pas l’aspect central de ce cas et constitue donc seulement un critère « Nice‑To‑Ask ».</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Offre de soutien <span class="patient-response">[Aide aux victimes comme soutien juridique et psychosocial]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de consentement possiblement manquant, outre la prise en charge médicale aiguë, des offres de soutien concrètes en Suisse doivent être évoquées, en particulier l’Aide aux victimes. Elle est accessible à toutes les personnes concernées, indépendamment du genre ou d’une plainte pénale, gratuite, confidentielle et anonyme sur demande. Elle peut offrir une aide juridique, psychologique et médicale et organiser si besoin un lieu protégé.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Organisation <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Personne accompagnante <span class="patient-response">[Oui, une amie peut m’accompagner]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Faisabilité <span class="patient-response">[Oui, je ne travaille pas aujourd’hui et je peux y aller]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Compréhension vérifiée <span class="patient-response">[Je dois me rendre rapidement dans une structure médicale de référence]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/12</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les préoccupations, besoins, questions et attentes du/de la patient/e et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation montre une structure claire, un fil rouge compréhensible tout en restant flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée aux patient/es, favorise la compréhension par la répétition, le reflet, la synthèse et les explications, et utilise de manière ciblée la voix, le débit et les pauses.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/51</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Moment</strong> — Le moment exact de l’exposition est central pour le triage, car une PEP VIH doit être commencée aussi vite que possible, idéalement dans les 6 à 8 heures et au plus tard dans les 48 heures.</li><li><strong>Exposition · Type de contact sexuel</strong> — Le type de contact sexuel détermine largement le risque VIH. Le rapport anal réceptif sans préservatif fait partie des expositions sexuelles au risque de transmission le plus élevé. Dans le cas présent, le contexte MSM (hommes ayant des rapports sexuels avec des hommes) augmente en plus la probabilité prétest.</li><li><strong>Exposition · Préservatif</strong> — Les préservatifs réduisent clairement le risque d’infection par le VIH, avec une réduction d’environ 80 à 95 pour cent selon la directive mediX.</li><li><strong>Exposition · Éjaculation</strong> — L’éjaculation augmente encore le risque de transmission, mais n’est pas une condition préalable à une transmission du VIH. Le risque dépend en outre fortement de la charge virale, de l’état des muqueuses et de facteurs associés.</li><li><strong>Exposition · Lésion ou sang</strong> — Les lésions muqueuses ou le sang visible peuvent augmenter le risque de transmission, car le VIH peut pénétrer plus facilement via des muqueuses lésées. De plus, une <span class="c-pink">douleur</span> locale peut évoquer une irritation muqueuse, un traumatisme ou une IST associée.</li><li><strong>Exposition · Influence de substances</strong> — L’influence de substances est ici cliniquement et communicationnellement pertinente, car les lacunes mnésiques compliquent l’évaluation de l’exposition et un éventuel manque de consentement doit être pris en compte.</li><li><strong>Personne contact · Statut VIH</strong> — Le statut VIH de la personne contact est central <span class="c-blue">pour l’évaluation</span> du risque. En cas de statut incertain, la décision repose sur l’exposition et le contexte de risque.</li><li><strong>Personne contact · Contexte de risque</strong> — <span class="c-blue">Pour l’évaluation</span> du risque de la personne contact, sont notamment pertinents, si connus, le statut VIH et la charge virale ainsi que des indices d’une prévalence VIH accrue. Selon les recommandations suisses actuelles, cela inclut surtout le contexte MSM, les personnes originaires de pays à haute prévalence VIH, l’usage de drogues injectables et le travail du sexe. Dans le cas présent, hormis le partenaire masculin, on sait peu de choses.</li><li><strong>Autres expositions · Autres contacts sexuels</strong> — Plusieurs expositions augmentent certes la probabilité cumulative d’infection. Pour le triage aigu, cela change toutefois peu ici, car l’exposition unique décrite suffit déjà à justifier une présentation médicale immédiate.</li><li><strong>Autres expositions · Sang ou aiguilles</strong> — Pour la décision d’aujourd’hui, d’autres voies de transmission ne sont pas centrales, l’exposition sexuelle justifiant déjà une clarification en présence immédiate.</li><li><strong>Protection PrEP</strong> — <span class="c-blue">Pour l’évaluation</span> actuelle du risque, il est surtout pertinent de savoir si une PrEP efficace était présente au moment de l’exposition. Une PrEP prise seulement par le passé ou de manière irrégulière ne protège pas de manière fiable le contact actuel.</li><li><strong>Dernier test VIH</strong> — Un test négatif il y a 5 mois n’exclut pas l’exposition actuelle. Les tests VIH de 4e génération modernes ont une fenêtre diagnostique de 6 semaines.</li><li><strong>IST antérieures</strong> — Des IST bactériennes antérieures sont un marqueur d’un risque d’exposition sexuelle accru et d’un besoin de prévention.</li><li><strong>Consentement</strong> — En cas de lacunes mnésiques, somnolence et possible influence de substances, un consentement manquant doit être activement envisagé. Cela influence la communication, la suite de la prise en charge et la question des offres de soutien concrètes.</li><li><strong>Noxes · Tabagisme</strong> — Le <span class="c-purple">tabagisme</span> fait certes partie de l’anamnèse des noxes complète, mais il est à peine pertinent pour la prise en charge de l’évaluation aiguë du risque VIH dans ce cas.</li><li><strong>Noxes · Alcool</strong> — Une consommation régulière d’<span class="c-purple">alcool</span> peut aider à mieux situer les situations à risque répétées et le besoin de conseil. L’influence aiguë de substances est demandée séparément, en particulier en lien avec la situation actuelle.</li><li><strong>Statut vaccinal</strong> — Le statut vaccinal VHB est pertinent pour la prise en charge après exposition sexuelle, car selon la situation, une prophylaxie post‑exposition contre l’<span class="c-red">hépatite</span> B doit être envisagée.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Urgence</strong> — La PEP VIH est critique dans le temps. La directive mediX actuelle recommande de débuter aussi rapidement que possible, idéalement dans les 6 à 8 heures et au plus tard dans les 48 heures. D’anciennes recommandations de l’OFSP mentionnent 72 heures comme limite extrême.</li><li><strong>Traitement médicamenteux</strong> — Avant de débuter une PEP, une infection préexistante doit être exclue par un test VIH</li><li><strong>Bilan IST</strong> — Après une exposition sexuelle au risque, il faut penser non seulement au VIH, mais aussi aux autres IST et, selon la situation, aux <span class="c-red">hépatites</span> B et C. Comme cela sera discuté plus en détail avec le patient dans les structures de référence, ce n’est pas l’aspect central de ce cas et constitue donc seulement un critère « Nice‑To‑Ask ».</li><li><strong>Offre de soutien</strong> — En cas de consentement possiblement manquant, outre la prise en charge médicale aiguë, des offres de soutien concrètes en Suisse doivent être évoquées, en particulier l’Aide aux victimes. Elle est accessible à toutes les personnes concernées, indépendamment du genre ou d’une plainte pénale, gratuite, confidentielle et anonyme sur demande. Elle peut offrir une aide juridique, psychologique et médicale et organiser si besoin un lieu protégé.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Anamnèse de l’exposition et stratification du risque VIH</li><li>Triage téléphonique correct en cas d’indication possible de PEP VIH</li><li>Conduite d’entretien avec sensibilité</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Diagnostic: exposition au risque VIH avec indication possible de PEP</p><p>Chez Levin Maillard, il s’agit d’une exposition sexuelle au risque VIH avec indication possible d’une prophylaxie post‑exposition au VIH (PEP).</p><p>Plusieurs <span class="c-purple">facteurs de risque</span> pertinents sont mis en évidence à l’anamnèse pour une transmission du VIH, en particulier un rapport anal réceptif non protégé, un partenaire masculin au statut VIH inconnu, ainsi que l’absence d’une protection PrEP récente et fiable.</p><p>L’anamnèse est par ailleurs seulement partiellement fiable en raison de l’<span class="c-purple">alcool</span> et d’un possible GHB. Vu les lacunes mnésiques et le sentiment subjectif de perte de contrôle, un éventuel manque de consentement doit donc également être envisagé avec sensibilité.</p><p>L’exposition remonte à environ 7 heures, de sorte qu’une présentation médicale aussi rapide que possible est nécessaire afin d’évaluer si une PEP VIH est indiquée. Dans ce contexte, il est important d’effectuer une évaluation correcte du risque, de recommander clairement une consultation immédiate dans une structure adaptée et de vérifier que le patient a compris la conduite à tenir et peut la mettre en œuvre sans délai.</p><p>Anamnèse: Exposition sexuelle pertinente au risque VIH il y a env. 7 h après rapport anal réceptif non protégé avec partenaire masculin sans PrEP, souvenirs lacunaires liés aux substances</p><p>Procédure: Présentation médicale immédiate avec évaluation d’une PEP VIH, abord sensible d’un consentement possiblement absent et vérification de la compréhension et de la faisabilité</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 29,
+        "examen": 0,
+        "management": 10,
+        "communication": 12
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 5,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 0,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 3,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 3,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

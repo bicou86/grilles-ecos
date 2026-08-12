@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-31 - Fièvre - Sofia Ferrari, 16 mois - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-31 - Fièvre</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-31" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Urgence pédiatrique</p>
+            <p style="margin: 5px 0;">👤 Sofia Ferrari, 16 mois</p>
+            <p style="margin: 5px 0;">🏷️ Pédiatrie · Poste standard · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/27</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Maladie actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d&#x27;ouverture <span class="patient-response">[« Elle a une forte fièvre et elle est complètement différente que d&#x27;habitude. »]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début / Durée <span class="patient-response">[Depuis environ deux jours]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[Élevée persistante depuis le début]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Épisode antérieur <span class="patient-response">[Il y a environ quatre mois, cystite, traitée par antibiotique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une récidive d&#x27;une infection urinaire fébrile augmente la probabilité d&#x27;une anomalie sous-jacente (reflux vésico-urétéral ou trouble de l&#x27;écoulement) et justifie un bilan complémentaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Intensité / Sévérité <span class="patient-response">[Jusqu&#x27;à environ 39,5 °C, mesurée dans l&#x27;oreille]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une fièvre élevée chez le petit enfant augmente la probabilité d&#x27;une infection bactérienne.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊖ Facteurs atténuants <span class="patient-response">[Suppositoire contre la fièvre donné, n&#x27;aide que brièvement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les antipyrétiques déjà administrés et leur effet aident à évaluer le niveau de fièvre et la réponse au traitement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Que voulez-vous dire exactement ?]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le fait de demander les symptômes associés est évalué. À une question ouverte, le père ne donne volontairement rien d&#x27;indicatif, le questionnement ciblé et orienté sur le problème est décisif.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée sur le problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Vigilance <span class="patient-response">[Dort plus que d&#x27;habitude, mais réveillable]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une diminution de la vigilance serait un signe d&#x27;alarme d&#x27;une infection sévère ou d&#x27;un sepsis et doit être recherchée activement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Comportement de boisson <span class="patient-response">[Ne boit qu&#x27;environ la moitié de la quantité habituelle]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une quantité de boisson réduite augmente le risque de déshydratation et influence la décision de prise en charge.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Miction <span class="patient-response">[L&#x27;urine a une odeur forte, pleure en urinant]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une urine à odeur forte et des douleurs à la miction sont des signes locaux d&#x27;une infection urinaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Couches <span class="patient-response">[Depuis hier, presque pas de couches mouillées]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une diminution de la diurèse est un signe de déshydratation et d&#x27;hypoperfusion.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse différentielle / par systèmes <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Voies respiratoires <span class="patient-response">[Pas de toux, pas de rhume]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Oreilles <span class="patient-response">[Ne sait pas exactement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Gastro-intestinal <span class="patient-response">[Pas de vomissements, pas de diarrhée]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Peau <span class="patient-response">[Pas d&#x27;éruption cutanée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des pétéchies ou un exanthème pourraient indiquer une infection à méningocoque ou une infection sévère.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Convulsion <span class="patient-response">[Pas de convulsions]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une convulsion fébrile ou une méningite sont des diagnostics différentiels dangereux en cas de fièvre chez le petit enfant.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents médicaux <span class="patient-response">[Aucun]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents chirurgicaux <span class="patient-response">[Aucune]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Pas de médication au long cours]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Aucune connue]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Naissance et développement · Grossesse / Accouchement <span class="patient-response">[À terme, sans particularité (père incertain)]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Naissance et développement · Développement <span class="patient-response">[Adapté à l&#x27;âge, marche, premiers mots]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un développement normal plaide contre une maladie chronique sous-jacente.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Vaccinations <span class="patient-response">[Selon le plan de vaccination suisse]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Alimentation <span class="patient-response">[Alimentation familiale, boit au gobelet]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pas déterminant pour ce symptôme principal, mais fournit un contexte.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-7" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux · Général <span class="patient-response">[Aucun pertinent]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux · Reins et voies urinaires <span class="patient-response">[Aucune maladie rénale ou urinaire connue]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une anamnèse rénale et urinaire familiale sans particularité rend une composante héréditaire moins probable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation sociale <span class="patient-response">[Vit avec ses parents et un frère ou une sœur aîné(e), le père est seul aujourd&#x27;hui, la mère travaille]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pertinent pour la prise en charge à domicile et pour la décision de disposition.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/18</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Général <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">État général <span class="patient-response">[Diminué, geignard, consolable]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Temps de recoloration capillaire <span class="patient-response">[2 à 3 secondes, limite allongé]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un temps de recoloration capillaire limite est un signe précoce d&#x27;hypoperfusion et de déshydratation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Coloration cutanée <span class="patient-response">[Chaude, rougeur fébrile, pas de pétéchies, pas d&#x27;exanthème, pas de marbrures]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des pétéchies ou une coloration marbrée seraient des signes critiques d&#x27;une infection sévère.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Hydratation<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;hydratation est évaluée chez le petit enfant par les muqueuses, la turgescence cutanée et les larmes, car la fontanelle est fermée à cet âge.</span></span></span> · Muqueuses <span class="patient-response">[Légèrement sèches]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-3" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Hydratation · Turgescence cutanée <span class="patient-response">[Légèrement diminuée]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-4" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Hydratation · Larmes <span class="patient-response">[Diminuées]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-5" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Abdomen <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection <span class="patient-response">[Sans particularité, pas de météorisme]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Bruits intestinaux normaux]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Paroi abdominale souple, pleure et ramène les jambes à la pression sus-pubienne, pas de défense, pas de résistance]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La douleur sus-pubienne correspond à une atteinte vésicale, un abdomen souple sans défense rend un abdomen aigu improbable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Fosses lombaires <span class="patient-response">[Gêne à la percussion à droite, pas de réaction à gauche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une douleur à la percussion de la fosse lombaire étaye la pyélonéphrite, mais elle n&#x27;est que partiellement évaluable chez le petit enfant.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Organes génitaux <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection <span class="patient-response">[Vulve non irritée, pas de rougeur, pas de pertes, pas de synéchie]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pertinent chez la fille avec suspicion d&#x27;infection urinaire. Rend une vulvovaginite comme cause locale improbable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. ORL <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Statut ORL<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;ORL est le foyer fébrile le plus fréquent chez l&#x27;enfant et doit toujours être examiné.</span></span></span> · Oreilles <span class="patient-response">[Tympans non irrités des deux côtés]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut ORL · Nez <span class="patient-response">[Libre, pas de sécrétion]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut ORL · Pharynx <span class="patient-response">[Non irrité, pas d&#x27;enduits]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+<div class="criteria-row" id="criteria-e5">
+    <div>
+        <div class="criteria-text">5. Poumons <button class="comment-button" onclick="toggleComment('e5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Vésiculaire bilatéral, pas de râles, pas de sibilances, pas de stridor]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un résultat sans particularité éloigne le focus d&#x27;une cause pulmonaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e5-detail-0" value="1" onchange="updateDetailScore('e5', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e5">
+            <textarea class="comment-textarea" id="comment-e5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e5">0</div>
+</div>
+<div class="criteria-row" id="criteria-e6">
+    <div>
+        <div class="criteria-text">6. Cœur <button class="comment-button" onclick="toggleComment('e6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Pur, rythmique, tachycarde, pas de bruits surajoutés]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La tachycardie est en accord avec la fièvre.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e6-detail-0" value="1" onchange="updateDetailScore('e6', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e6">
+            <textarea class="comment-textarea" id="comment-e6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e6">0</div>
+</div>
+<div class="criteria-row" id="criteria-e7">
+    <div>
+        <div class="criteria-text">7. Neurologie <button class="comment-button" onclick="toggleComment('e7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Méningisme <span class="patient-response">[Pas de raideur de nuque, pas de méningisme]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Exclut en grande partie une méningite comme diagnostic différentiel dangereux.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e7-detail-0" value="1" onchange="updateDetailScore('e7', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Motricité spontanée <span class="patient-response">[Éveillée, réveillable, mouvements symétriques adaptés à l&#x27;âge]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une motricité spontanée symétrique conservée plaide contre un événement neurologique focal.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e7-detail-1" value="1" onchange="updateDetailScore('e7', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e7">
+            <textarea class="comment-textarea" id="comment-e7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e7">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Diagnostic de laboratoire <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut urinaire <span class="patient-response">[Leucocytes +++, nitrites positifs, érythrocytes +, protéines +]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de fièvre sans foyer identifiable, le diagnostic urinaire est obligatoire chez le petit enfant. Une leucocyturie associée à des nitrites positifs est très suspecte d&#x27;infection urinaire. La valeur informative du résultat dépend essentiellement du mode de recueil des urines. L&#x27;urine sur poche est souvent contaminée. On préfère une urine spontanée proprement recueillie (urine par clean-catch). La plus grande sécurité diagnostique est offerte par l&#x27;urine sur cathéter ou la ponction vésicale sus-pubienne, en particulier lorsqu&#x27;une uroculture est nécessaire avant le début d&#x27;une antibiothérapie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire <span class="patient-response">[Signes inflammatoires élevés]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des paramètres inflammatoires élevés étayent une infection bactérienne, la fonction rénale est évaluée en même temps en cas de déshydratation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">CRP <span class="patient-response">[Demandé]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Formule sanguine <span class="patient-response">[Demandé]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-3" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Imagerie <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Échographie <span class="patient-response">[Légère dilatation du bassinet rénal droit, parenchyme normal, vessie sans particularité, pas de résidu post-mictionnel]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Échographie des reins et des voies urinaires excrétrices en cas d&#x27;infection urinaire fébrile ou récidivante, recherche des causes structurelles comme un trouble de l&#x27;écoulement urinaire.</span></span> <span class="criteria-detail-note">(voir iconographie)</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Diagnostic spécialisé <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Uroculture <span class="patient-response">[Prélevée avant antibiothérapie, résultat en attente]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;uroculture avant le début de l&#x27;antibiothérapie permet l&#x27;identification du germe et une adaptation ciblée du traitement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Hémoculture <span class="patient-response">[Prélevée avant antibiothérapie, résultat en attente]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Chez les nourrissons et les petits enfants, une infection urinaire fébrile peut s&#x27;accompagner d&#x27;une bactériémie, l&#x27;hémoculture met en évidence une telle dissémination dans la circulation sanguine. Elle doit être prélevée avant le début de l&#x27;antibiothérapie empirique, car le germe ne serait sinon plus cultivable de manière fiable. Un résultat positif permet un traitement ciblé, adapté à la résistance, et influence la durée du traitement et la surveillance.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Évaluation clinique <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail <span class="patient-response">[Infection urinaire fébrile de type pyélonéphrite]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas d&#x27;infection urinaire fébrile chez le nourrisson et le petit enfant, il faut généralement partir d&#x27;une infection urinaire haute de type pyélonéphrite, car une distinction sûre entre cystite et pyélonéphrite n&#x27;est le plus souvent pas possible dans ce groupe d&#x27;âge.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Classification <span class="patient-response">[Infection urinaire fébrile récidivante, suspicion d&#x27;anomalie des voies urinaires ou de trouble de l&#x27;écoulement urinaire]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avec deux infections urinaires en l&#x27;espace de 4 mois, Sofia remplit les critères d&#x27;une infection urinaire récidivante. La légère dilatation du bassinet rénal droit mise en évidence à l&#x27;échographie fonde la suspicion d&#x27;une anomalie anatomique ou fonctionnelle sous-jacente des voies urinaires et nécessite un bilan complémentaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Traitement <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antibiothérapie <span class="patient-response">[Antibiothérapie intraveineuse, par ex. céphalosporine de 3e génération]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de pyélonéphrite chez le petit enfant avec un état général diminué, une antibiothérapie intraveineuse est indiquée, le début se fait après prélèvement des cultures.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Substitution liquidienne <span class="patient-response">[Réhydratation, par voie intraveineuse en cas de déshydratation significative]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Compensation du déficit hydrique, une répercussion circulatoire rapide est possible chez le petit enfant.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antipyrèse <span class="patient-response">[Antipyrétique, par ex. paracétamol]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Baisse symptomatique de la fièvre et soulagement de la douleur.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Procédure <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Hospitalisation <span class="patient-response">[Indiquée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;âge, l&#x27;état général diminué, la faiblesse de la prise de boisson et l&#x27;indication à une antibiothérapie i.v. justifient l&#x27;hospitalisation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Liaison néphrologique <span class="patient-response">[Liaison avec la néphrologie pédiatrique pour un bilan complémentaire]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Prise en charge structurée et coordination du bilan complémentaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Bilan complémentaire<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas d&#x27;infection urinaire fébrile récidivante avec indication d&#x27;une anomalie, un bilan d&#x27;imagerie du reflux et de l&#x27;écoulement urinaire est indiqué par la suite.</span></span></span> · MCUG <span class="patient-response">[Prévue pour le bilan d&#x27;un reflux vésico-urétéral]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La cysto-urétrographie mictionnelle recherche un reflux vésico-urétéral, qui est plus probable en cas d&#x27;infection urinaire fébrile récidivante et de signe de reflux à l&#x27;échographie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Bilan complémentaire · Scintigraphie fonctionnelle <span class="patient-response">[Prévue pour exclure une obstruction des voies urinaires supérieures]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une scintigraphie fonctionnelle dynamique des reins (par ex. scintigraphie au MAG3 ou diurétique) évalue l&#x27;écoulement urinaire et la fonction rénale séparée et sert à exclure une obstruction des voies urinaires excrétrices supérieures.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les inquiétudes, les besoins, les préoccupations et les attentes du/de la patient/e et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l&#x27;entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation montre une structure claire, un fil rouge compréhensible et reste adaptable avec flexibilité.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée au patient, favorise la compréhension par la répétition, le reflet, le résumé et les explications, et utilise la voix, le débit de parole et les pauses de manière ciblée.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance de manière ciblée pour créer une atmosphère d&#x27;entretien attentive, confiante et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/77</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Dimension temporelle · Épisode antérieur</strong> — Une <span class="c-orange">récidive</span> d&#x27;une infection urinaire fébrile augmente la probabilité d&#x27;une anomalie sous-jacente (reflux vésico-urétéral ou trouble de l&#x27;écoulement) et justifie un bilan complémentaire.</li><li><strong>Intensité / Sévérité</strong> — Une <span class="c-pink">fièvre</span> élevée chez le petit enfant augmente la probabilité d&#x27;une infection bactérienne.</li><li><strong>⊖ Facteurs atténuants</strong> — Les antipyrétiques déjà administrés et leur effet aident à évaluer le niveau de <span class="c-pink">fièvre</span> et la réponse au traitement.</li><li><strong>Symptômes associés</strong> — Le fait de demander les symptômes associés est évalué. À une question ouverte, le père ne donne volontairement rien d&#x27;indicatif, le questionnement ciblé et orienté sur le problème est décisif.</li><li><strong>Vigilance</strong> — Une diminution de la vigilance serait un <span class="c-yellow">signe d&#x27;alarme</span> d&#x27;une infection sévère ou d&#x27;un <span class="c-orange">sepsis</span> et doit être recherchée activement.</li><li><strong>Comportement de boisson</strong> — Une quantité de boisson réduite augmente le risque de déshydratation et influence la décision de prise en charge.</li><li><strong>Miction</strong> — Une urine à odeur forte et des <span class="c-pink">douleurs</span> à la miction sont des signes locaux d&#x27;une infection urinaire.</li><li><strong>Couches</strong> — Une diminution de la diurèse est un signe de déshydratation et d&#x27;hypoperfusion.</li><li><strong>Peau</strong> — Des pétéchies ou un exanthème pourraient indiquer une infection à méningocoque ou une infection sévère.</li><li><strong>Convulsion</strong> — Une convulsion fébrile ou une <span class="c-red">méningite</span> sont des <span class="c-yellow">diagnostics différentiels</span> dangereux en cas de <span class="c-pink">fièvre</span> chez le petit enfant.</li><li><strong>Naissance et développement · Développement</strong> — Un développement normal plaide contre une maladie chronique sous-jacente.</li><li><strong>Alimentation</strong> — Pas déterminant pour ce symptôme principal, mais fournit un contexte.</li><li><strong>Antécédents familiaux · Reins et voies urinaires</strong> — Une anamnèse rénale et urinaire familiale sans particularité rend une composante héréditaire moins probable.</li><li><strong>Situation sociale</strong> — Pertinent pour la prise en charge à domicile et pour la décision de disposition.</li></ul>
+</div><div class="theorie-section">
+    <h4>Examen clinique</h4>
+    <ul><li><strong>Temps de recoloration capillaire</strong> — Un temps de recoloration capillaire limite est un signe précoce d&#x27;hypoperfusion et de déshydratation.</li><li><strong>Coloration cutanée</strong> — Des pétéchies ou une coloration marbrée seraient des signes critiques d&#x27;une infection sévère.</li><li class="theorie-sous-groupe"><strong>Hydratation</strong> — L&#x27;hydratation est évaluée chez le petit enfant par les muqueuses, la turgescence cutanée et les larmes, car la fontanelle est fermée à cet âge.</li><li><strong>Palpation</strong> — La <span class="c-pink">douleur</span> sus-pubienne correspond à une atteinte vésicale, un abdomen souple sans défense rend un abdomen aigu improbable.</li><li><strong>Fosses lombaires</strong> — Une <span class="c-pink">douleur</span> à la <span class="c-green">percussion</span> de la fosse lombaire étaye la <span class="c-red">pyélonéphrite</span>, mais elle n&#x27;est que partiellement évaluable chez le petit enfant.</li><li><strong>Inspection</strong> — Pertinent chez la fille avec suspicion d&#x27;infection urinaire. Rend une <span class="c-red">vulvovaginite</span> comme cause locale improbable.</li><li class="theorie-sous-groupe"><strong>Statut ORL</strong> — L&#x27;ORL est le foyer fébrile le plus fréquent chez l&#x27;enfant et doit toujours être examiné.</li><li><strong>Auscultation</strong> — Un résultat sans particularité éloigne le focus d&#x27;une cause pulmonaire.</li><li><strong>Auscultation</strong> — La tachycardie est en accord avec la <span class="c-pink">fièvre</span>.</li><li><strong>Méningisme</strong> — Exclut en grande partie une <span class="c-red">méningite</span> comme <span class="c-yellow">diagnostic différentiel</span> dangereux.</li><li><strong>Motricité spontanée</strong> — Une motricité spontanée symétrique conservée plaide contre un événement neurologique focal.</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostic</h4>
+    <ul><li><strong>Statut urinaire</strong> — En cas de <span class="c-pink">fièvre</span> sans foyer identifiable, le diagnostic urinaire est obligatoire chez le petit enfant. Une leucocyturie associée à des nitrites positifs est très suspecte d&#x27;infection urinaire. La valeur informative du résultat dépend essentiellement du mode de recueil des urines. L&#x27;urine sur poche est souvent contaminée. On préfère une urine spontanée proprement recueillie (urine par clean-catch). La plus grande sécurité diagnostique est offerte par l&#x27;urine sur cathéter ou la ponction vésicale sus-pubienne, en particulier lorsqu&#x27;une uroculture est nécessaire avant le début d&#x27;une <span class="c-amber">antibiothérapie</span>.</li><li><strong>Laboratoire</strong> — Des paramètres inflammatoires élevés étayent une infection bactérienne, la fonction rénale est évaluée en même temps en cas de déshydratation.</li><li><strong>Échographie</strong> — <span class="c-green">Échographie</span> des reins et des voies urinaires excrétrices en cas d&#x27;infection urinaire fébrile ou récidivante, recherche des causes structurelles comme un trouble de l&#x27;écoulement urinaire.</li><li><strong>Uroculture</strong> — L&#x27;uroculture avant le début de l&#x27;<span class="c-amber">antibiothérapie</span> permet l&#x27;identification du germe et une adaptation ciblée du traitement.</li><li><strong>Hémoculture</strong> — Chez les nourrissons et les petits enfants, une infection urinaire fébrile peut s&#x27;accompagner d&#x27;une <span class="c-red">bactériémie</span>, l&#x27;hémoculture met en évidence une telle dissémination dans la circulation sanguine. Elle doit être prélevée avant le début de l&#x27;<span class="c-amber">antibiothérapie</span> empirique, car le germe ne serait sinon plus cultivable de manière fiable. Un résultat positif permet un traitement ciblé, adapté à la résistance, et influence la durée du traitement et la surveillance.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic de travail</strong> — En cas d&#x27;infection urinaire fébrile chez le nourrisson et le petit enfant, il faut généralement partir d&#x27;une infection urinaire haute de type <span class="c-red">pyélonéphrite</span>, car une distinction sûre entre <span class="c-red">cystite</span> et <span class="c-red">pyélonéphrite</span> n&#x27;est le plus souvent pas possible dans ce groupe d&#x27;âge.</li><li><strong>Classification</strong> — Avec deux infections urinaires en l&#x27;espace de 4 mois, Sofia remplit les critères d&#x27;une infection urinaire récidivante. La légère dilatation du bassinet rénal droit mise en évidence à l&#x27;<span class="c-green">échographie</span> fonde la suspicion d&#x27;une anomalie anatomique ou fonctionnelle sous-jacente des voies urinaires et nécessite un bilan complémentaire.</li><li><strong>Antibiothérapie</strong> — En cas de <span class="c-red">pyélonéphrite</span> chez le petit enfant avec un état général diminué, une <span class="c-amber">antibiothérapie</span> intraveineuse est indiquée, le début se fait après prélèvement des cultures.</li><li><strong>Substitution liquidienne</strong> — Compensation du déficit hydrique, une répercussion circulatoire rapide est possible chez le petit enfant.</li><li><strong>Antipyrèse</strong> — Baisse symptomatique de la <span class="c-pink">fièvre</span> et soulagement de la <span class="c-pink">douleur</span>.</li><li><strong>Hospitalisation</strong> — L&#x27;âge, l&#x27;état général diminué, la faiblesse de la prise de boisson et l&#x27;indication à une <span class="c-amber">antibiothérapie</span> i.v. justifient l&#x27;hospitalisation.</li><li><strong>Liaison néphrologique</strong> — Prise en charge structurée et coordination du bilan complémentaire.</li><li class="theorie-sous-groupe"><strong>Bilan complémentaire</strong> — En cas d&#x27;infection urinaire fébrile récidivante avec indication d&#x27;une anomalie, un bilan d&#x27;imagerie du reflux et de l&#x27;écoulement urinaire est indiqué par la suite.</li><li><strong>Bilan complémentaire · MCUG</strong> — La cysto-urétrographie mictionnelle recherche un reflux vésico-urétéral, qui est plus probable en cas d&#x27;infection urinaire fébrile récidivante et de signe de reflux à l&#x27;<span class="c-green">échographie</span>.</li><li><strong>Bilan complémentaire · Scintigraphie fonctionnelle</strong> — Une scintigraphie fonctionnelle dynamique des reins (par ex. scintigraphie au MAG3 ou diurétique) évalue l&#x27;écoulement urinaire et la fonction rénale séparée et sert à exclure une obstruction des voies urinaires excrétrices supérieures.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Clarifier de manière structurée une <span class="c-pink">fièvre</span> sans foyer chez le petit enfant et penser à l&#x27;infection urinaire</li><li>Classification comme infection urinaire récidivante (<span class="c-red">pyélonéphrite</span>) avec suspicion d&#x27;anomalie des voies urinaires, plus évaluation de l&#x27;hydratation et des <span class="c-yellow">signes d&#x27;alarme</span></li><li>Conduite structurée et compréhensible du père dépassé</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Traduit automatiquement puis vérifié par une IA face à l&#x27;original allemand.</p><p>Diagnostic : infection urinaire haute (<span class="c-red">pyélonéphrite</span>), récidivante, suspicion de trouble de l&#x27;écoulement urinaire</p><p>Chez Sofia Ferrari, âgée de 16 mois, il s&#x27;agit du tableau clinique d&#x27;une infection urinaire fébrile de type <span class="c-red">pyélonéphrite</span>, récidivante et avec suspicion d&#x27;une anomalie sous-jacente des voies urinaires ou d&#x27;un trouble de l&#x27;écoulement urinaire.</p><p>À l&#x27;anamnèse, on note depuis deux jours une <span class="c-pink">fièvre</span> élevée jusqu&#x27;à 39,5 °C sans foyer respiratoire ou gastro-intestinal identifiable. On remarque une faiblesse de la prise de boisson, depuis hier nettement moins de couches mouillées, ainsi qu&#x27;une urine à odeur forte et des pleurs lors de la miction. Il y a environ quatre mois, une infection urinaire avait déjà été traitée par <span class="c-amber">antibiotiques</span>.</p><p>À l&#x27;examen clinique, on constate un état général diminué avec des signes de déshydratation débutante : muqueuses légèrement sèches, turgescence cutanée réduite et temps de recoloration capillaire limite, ainsi qu&#x27;une tachycardie liée à la <span class="c-pink">fièvre</span>. Au niveau abdominal, on note une <span class="c-pink">douleur</span> à la pression sus-pubienne et une gêne à la <span class="c-green">percussion</span> de la fosse lombaire droite. L&#x27;examen ORL, pulmonaire, cardiaque, cutané et neurologique, y compris la recherche de méningisme, est sans particularité, les organes génitaux externes sont non irrités.</p><p>Au laboratoire, on trouve des signes inflammatoires élevés avec une augmentation de la CRP et une <span class="c-red">leucocytose</span>, la fonction rénale étant normale. Le statut urinaire montre une leucocyturie avec nitrites positifs. L&#x27;<span class="c-green">échographie</span> des reins et des voies urinaires excrétrices révèle une légère dilatation du bassinet rénal droit, pouvant indiquer une prédisposition structurelle. Des hémocultures et une uroculture ont été prélevées avant le début de l&#x27;<span class="c-amber">antibiothérapie</span>.</p><p>En raison de l&#x27;âge, de l&#x27;état général diminué et de l&#x27;évolution récidivante, une hospitalisation est indiquée avec une <span class="c-amber">antibiothérapie</span> intraveineuse, une réhydratation et une surveillance <span class="c-red">étroite</span>. En raison de l&#x27;évolution récidivante, un bilan néphrologique complémentaire est prévu par la suite.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Aperçu AKDP</div><div class="annexe-expert-content"><p>Anamnèse : <span class="c-pink">fièvre</span> depuis 2 jours jusqu&#x27;à 39,5 °C, faiblesse de la prise de boisson, moins de couches mouillées, urine à odeur forte, pleurs lors de la miction, antécédent d&#x27;infection urinaire</p><p>Examen clinique : état général diminué, déshydratation débutante, temps de recoloration capillaire limite, <span class="c-pink">douleur</span> à la pression sus-pubienne, gêne à la <span class="c-green">percussion</span> de la fosse lombaire droite, le reste de l&#x27;examen est sans particularité</p><p>Diagnostic : CRP élevée, <span class="c-red">leucocytose</span>, statut urinaire avec leucocyturie et nitrites positifs, <span class="c-green">échographie</span> montrant une légère dilatation du bassinet rénal droit, hémocultures et uroculture prélevées</p><p>Procédure : hospitalisation, <span class="c-amber">antibiothérapie</span> i.v. après prélèvement des cultures, réhydratation, antipyrèse, bilan néphrologique complémentaire</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+<div class="images-wrapper">
+<div class="annexe-item" data-image-id="img1">
+    <div class="annexe-title">Échographie</div>
+    <div class="annexe-description">Légère dilatation du bassinet rénal droit, parenchyme normal, vessie sans particularité, pas de résidu post-mictionnel</div>
+    <div class="annexe-image">
+        <img src="data:image/jpeg;base64,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" alt="Échographie" loading="lazy">
+    </div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 27,
+        "examen": 18,
+        "management": 16,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 7,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 6,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

@@ -3876,3 +3876,98 @@ input[type="checkbox"]:focus-visible {
   color: #009688;
   border-color: #e0f2f1;
 }
+
+/* ==========================================================================
+ * VIGNETTE D'INFORMATION CLINIQUE (corpus azygos)
+ * Thème CLAIR ici ; surcharges SOMBRE dans mobile-responsive.css, conformément
+ * à la règle du socle pédagogique ci-dessus.
+ *
+ * Aucun JavaScript : `:hover` couvre le pointeur, `:focus-within` couvre le
+ * tactile et le clavier. L'élément est focusable (tabindex=0), donc une tape
+ * sur mobile suffit à ouvrir la bulle — un `:hover` seul y serait inopérant.
+ * ========================================================================== */
+.info-vignette {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background: #ede9fe;
+  color: #6d28d9;
+  border: 1px solid #c4b5fd;
+  font-size: 10px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1;
+  cursor: help;
+  vertical-align: middle;
+  user-select: none;
+}
+.info-vignette:focus {
+  outline: 2px solid #7c3aed;
+  outline-offset: 1px;
+}
+.info-vignette-marque {
+  pointer-events: none;
+  /* Sérif seulement sur le glyphe : posé sur le parent, il serait hérité par
+   * la bulle, dont le texte doit rester dans la police de la grille. */
+  font-family: Georgia, "Times New Roman", serif;
+}
+.info-vignette-bulle {
+  position: absolute;
+  bottom: calc(100% + 7px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  width: max-content;
+  max-width: min(380px, 70vw);
+  padding: 9px 12px;
+  border-radius: 7px;
+  background: #312e81;
+  color: #f5f3ff;
+  border: 1px solid #4c1d95;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  font-size: 12.5px;
+  font-weight: 400;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.12s ease;
+}
+.info-vignette:hover .info-vignette-bulle,
+.info-vignette:focus-within .info-vignette-bulle {
+  opacity: 1;
+  visibility: visible;
+}
+/* Près du bord gauche, la bulle centrée déborderait hors de l'écran. */
+.detail-row:first-child .info-vignette-bulle {
+  bottom: auto;
+  top: calc(100% + 7px);
+}
+@media print {
+  .info-vignette {
+    display: none;
+  }
+}
+
+/* Préfixe de sous-chapitre dans un détail (corpus azygos). Il porte sa propre
+ * vignette : le regrouper visuellement évite de le confondre avec le critère
+ * lui-même, qui suit après le séparateur. */
+.detail-sous-groupe {
+  font-weight: 600;
+  color: #4c1d95;
+}
+/* Dans l'annexe, la justification du sous-chapitre encadre celles de ses
+ * items : un filet à gauche marque cette subordination. */
+.annexe-theorie li.theorie-sous-groupe {
+  margin-top: 10px;
+  padding-left: 8px;
+  border-left: 3px solid #c4b5fd;
+  list-style: none;
+}

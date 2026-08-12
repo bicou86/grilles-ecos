@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-2 - Anxiété - Madame Rohr, 24 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-2 - Anxiété</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-2" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet de psychiatrie</p>
+            <p style="margin: 5px 0;">👤 Madame Rohr, 24 ans</p>
+            <p style="margin: 5px 0;">🏷️ Psychiatrie · Poste standard · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/50</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Affection actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d’ouverture <span class="patient-response">[« Mon médecin de famille m’a envoyée ici. J’ai de nouveau peur chaque fois que je sors. »]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’anxiété et l’évitement comme symptôme principal ouvrent une large fenêtre de diagnostics différentiels: agoraphobie, trouble panique, phobie sociale, phobie spécifique, TAG, ESPT, épisode dépressif avec retrait, ainsi que des causes somatiques déjà exclues par le médecin de famille.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début / durée <span class="patient-response">[Depuis environ 6 mois, en augmentation]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La durée des symptômes aide à situer le trouble dans le spectre des affections liées au stress et à l’anxiété: une réaction aiguë au stress s’estompe en quelques jours à un mois au maximum, un trouble de l’adaptation en général dans les 6 mois suivant le stresseur. L’agoraphobie selon l’ICD-11 requiert une symptomatologie persistante pendant plusieurs mois, typiquement au moins 6 mois.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[Auparavant déjà légèrement anxieuse sur les grandes places, nettement pire depuis 6 mois]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une disposition anxieuse-évitante subclinique qui se décompense en maladie avérée après un stresseur est une dynamique évolutive typique du modèle vulnérabilité–stress: vulnérabilité préexistante comme terrain, stresseur aigu (ici décès de la sœur) comme déclencheur, comportement d’évitement comme facteur de maintien.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Survenue (permanente vs. par accès) <span class="patient-response">[Pas permanente, mais par accès dans certaines situations]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le profil de l’anxiété aide au niveau phénoménologique: épisodes par accès, liés aux situations, avec intervalles libres évoquent une agoraphobie ou un trouble panique. Une anxiété de fond constante et diffuse sur des semaines irait plutôt avec un trouble anxieux généralisé.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Déroulement d’une attaque <span class="patient-response">[Monte en quelques minutes, environ 20–30 min, disparaît quand je sors]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le déroulement typique d’une attaque de panique est phasique: montée sympathique rapide en quelques minutes, court plateau à intensité maximale, suivi d’une décroissance lente, au total rarement &gt;30 minutes. Une anxiété élevée durant des heures irait contre une panique et plutôt pour un TAG ou une composante somatoforme.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Survenue situationnelle · Situations déclenchantes <span class="patient-response">[Surtout foules, grandes places, transports publics, centres commerciaux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’agoraphobie n’est pas définie par un seul objet mais par un motif commun: des situations d’où la fuite serait difficile ou l’aide difficilement accessible. Cette logique explique le caractère trans-situationnel de la peur. S’il ne s’agissait que d’objets ou de situations circonscrits (araignées, hauteur), on penserait plutôt à une phobie spécifique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Survenue situationnelle · Espaces exigus (DD claustrophobie) <span class="patient-response">[Pas de problème avec les espaces exigus]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Si la patiente évitait aussi les espaces exigus, on envisagerait en plus, ou en diagnostic différentiel, une phobie spécifique (claustrophobie). L’anamnèse négative soutient la logique d’une agoraphobie pure: la peur ne naît pas de l’espace comme objet, mais de l’idée de ne pas pouvoir s’échapper.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Souffrance subjective <span class="patient-response">[Oui, élevée, je veux juste revivre normalement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La souffrance subjective et la recherche active d’aide sont nécessaires au diagnostic et en même temps de bon pronostic. La patiente veut changer, c’est une ressource motivationnelle importante pour le travail d’exposition exigeant.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée sur le problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Contenu central de la peur <span class="patient-response">[Ne pas pouvoir s’échapper, être impuissante, paniquer, faire un infarctus]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans l’agoraphobie, la préoccupation porte typiquement sur une conséquence aversive, le plus souvent des attaques de panique et leurs symptômes corporels (palpitations, vertiges, dyspnée), des symptômes incapacitants comme des chutes ou une incontinence, ou des situations embarrassantes avec retentissement social. La prédominance de l’une ou l’autre crainte oriente la thérapie: si le focus est sur les symptômes de panique, l’exposition interoceptive prend du poids; si le focus est la honte, la restructuration cognitive et l’exposition in vivo avec maintien dans la situation sont prioritaires.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Limitation <span class="patient-response">[Reste souvent à la maison; a perdu son poste en raison de retards (évitait les transports publics et prenait des détours)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’atteinte fonctionnelle significative est un des critères centraux ICD-11; sans elle, on parle plutôt de disposition anxieuse subclinique que d’agoraphobie. La perte d’emploi illustre le cercle vicieux: l’évitement soulage à court terme, nuit fonctionnellement, et la perte fonctionnelle devient un nouveau stresseur.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Comportement d’évitement <span class="patient-response">[J’évite les transports publics, les courses seule, les grandes places et les foules]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’évitement est un critère diagnostique central de l’agoraphobie et une cible thérapeutique. Il réduit l’anxiété à court terme, mais maintient le trouble à long terme faute d’expériences correctrices.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Comportements de sécurité <span class="patient-response">[Mon partenaire m’accompagne souvent, téléphone toujours sur moi, je repère les sorties, je prends des détours calmes]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les comportements de sécurité regroupent toutes les actions par lesquelles les patientes tentent d’écarter la conséquence redoutée. Ils réduisent l’anxiété aiguë, mais attribuent le succès aux aides et empêchent l’expérience correctrice « l’anxiété baisse aussi sans ». En thérapie par exposition, ces stratégies sont retirées progressivement des exercices.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes de panique <span class="patient-response">[Palpitations, oppression thoracique, sensation d’être comme détachée du corps]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les symptômes d’attaque de panique résultent d’une activation sympathique aiguë avec libération d’adrénaline. L’ICD-11 répertorie 13 symptômes caractéristiques, dont typiquement ≥4 apparaissent simultanément et montent rapidement: cardiovasculaires (palpitations, oppression, douleur thoracique), respiratoires (dyspnée, sensation d’étouffement), végétatifs (sueurs, tremblements, bouffées de chaleur, frissons), gastro-intestinaux (nausées, inconfort abdominal), neurologiques (vertiges, étourdissements, paresthésies), et psychiques (déréalisation/dépersonnalisation, crainte de perdre le contrôle, peur de mourir). Cliniquement, l’erreur d’attribution cognitive est décisive: les sensations cardiaques sont souvent interprétées à tort comme un infarctus, ce qui alimente le cercle de l’anxiété. C’est précisément là qu’intervient la restructuration cognitive. Une brève déréalisation/dépersonnalisation pendant l’attaque est réactive à la suractivation et n’indique pas un trouble psychotique; seules des perturbations du moi persistantes ou isolées seraient suspectes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Suicidalité<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La suicidalité fait partie de toute anamnèse psychiatrique initiale structurée, indépendamment de l’impression clinique. Dans l’agoraphobie, le risque suicidaire n’est pas en soi augmenté, mais il l’est avec la durée de la maladie et la dépression comorbide. L’exploration graduée (dégoût de la vie, idées concrètes, plans, capacité d’engagement) correspond au standard clinique.</span></span></span> · Dégoût de la vie <span class="patient-response">[Non, je veux simplement retrouver une vie normale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le dégoût de la vie (« je ne veux plus me réveiller », « ce serait mieux si je n’étais pas là ») est l’entrée à bas seuil de l’exploration du suicide. Une réponse positive n’est pas une suicidalité aiguë, mais signale l’intensité de la souffrance et requiert les étapes suivantes de l’exploration.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité · Idées suicidaires actuelles <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité · Plans / actes suicidaires <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité · Capacité d’engagement <span class="patient-response">[Oui, je me manifesterais en cas d’aggravation]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La capacité d’engagement est un ancrage clinique central à la fin de l’exploration du suicide: si la patiente peut s’engager de manière crédible à se manifester en cas d’aggravation, le traitement peut se poursuivre en ambulatoire; si elle le nie ou semble peu fiable, une intervention de crise en hospitalier doit être envisagée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-8" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse DD / dépistage AMDP <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD trouble panique<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La démarcation par rapport au trouble panique (6B01) est le principal diagnostic différentiel en agoraphobie. Si des attaques surviennent aussi de manière inattendue dans des situations sûres, il faut coder un trouble panique additionnel; si les attaques sont exclusivement liées aux situations, on reste sur l’agoraphobie pure avec le spécificateur with panic attacks (MB23.H).</span></span></span> · Attaques inattendues en situations sûres <span class="patient-response">[Non, seulement dans ces situations; jamais à la maison ni en contexte neutre]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD trouble anxieux généralisé<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le TAG (6B00) se caractérise par des soucis flottants touchant de nombreux domaines (famille, travail, santé, finances) et une tension chronique. L’anxiété est diffuse plutôt que situationnelle; l’impression se distingue nettement de l’agoraphobie.</span></span></span> · Soucis généralisés sur plusieurs domaines de vie <span class="patient-response">[Non, je ne me fais pas constamment du souci pour tout]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD ESPT<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’ESPT (6B40) exige premièrement un événement traumatique directement vécu ou observé et deuxièmement la triade reviviscences, évitement des stimuli associés au trauma et perception persistante de menace. En agoraphobie pure, l’évitement est large et porte sur de multiples situations, non spécifiquement sur des déclencheurs du trauma.</span></span></span> · Événement traumatique <span class="patient-response">[Non; j’ai perdu ma sœur dans un accident de voiture, mais je n’étais pas présente]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avant l’exploration des symptômes d’ESPT, se pose la question d’un traumatisme qualifiant. La perte d’un proche est éprouvante, mais ne remplit le critère de trauma ICD-11 que si elle a été directement vécue ou apprise dans des circonstances particulièrement violentes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD ESPT · Intrusions / flashbacks / cauchemars <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les intrusions sont le symptôme principal de l’ESPT: souvenirs vifs et involontaires, flashbacks ou images.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD ESPT · Hyperéveil / sursaut <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’hyperéveil décrit une excitabilité nerveuse durable après un traumatisme, cliniquement visible par une réactivité de sursaut accrue, une tension interne persistante, des troubles du sommeil et de la concentration. Avec les intrusions et l’évitement, cela forme la triade de l’ESPT.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD dépression<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’exploration de l’affectivité selon AMDP saisit l’humeur, la qualité de l’affect et les symptômes végétatifs. Elle sert au diagnostic différentiel contre un épisode dépressif et au suivi évolutif, car une dépression se développe souvent secondairement dans l’agoraphobie.</span></span></span> · Humeur dépressive <span class="patient-response">[Parfois basse, globalement positive]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD dépression · Anhédonie / perte d’intérêt <span class="patient-response">[Plutôt à cause de l’évitement, pas parce que rien ne me fait plaisir]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD dépression · Désespoir <span class="patient-response">[Non, j’espère une amélioration]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD dépression · Élan / énergie <span class="patient-response">[En fait assez d’élan, mais je n’ose pas faire beaucoup de choses]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-8" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD dépression · Estime de soi <span class="patient-response">[Globalement préservée]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-9" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD dépression · Sentiments de culpabilité <span class="patient-response">[Oui, occasionnellement (dispute avec ma sœur peu avant l’accident)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des sentiments de culpabilité issus de conflits non résolus juste avant la perte sont un facteur de risque bien documenté de trouble de deuil prolongé. Sur le plan thérapeutique, on peut l’aborder de manière ciblée; ce travail (« qu’aurais-je pu faire ? », « qui était ma sœur pour moi ? ») fait partie d’une TCC centrée sur le deuil.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-10" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD dépression · Attention / concentration <span class="patient-response">[Sans particularité]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-11" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD trouble obsessionnel-compulsif<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le trouble obsessionnel-compulsif a été séparé des troubles anxieux dans l’ICD-11 et forme un chapitre propre (obsessive-compulsive and related disorders, 6B2x). Les phénomènes obsessionnels sont vécus le plus souvent comme absurdes ou excessifs, mais impossibles à réprimer.</span></span></span> · Pensées obsessionnelles <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-12" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD trouble obsessionnel-compulsif · Impulsions obsessionnelles <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-13" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD trouble obsessionnel-compulsif · Actes compulsifs <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-14" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD idées délirantes<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Selon l’ICD-11-CDDR, la démarcation avec les troubles psychotiques: dans un délire, l’espace public est évité pour des idées de persécution ou de référence, et non par peur de panique ou d’impuissance. Une conscience de maladie préservée va contre un délire.</span></span></span> · Insight <span class="patient-response">[Oui, je sais que c’est excessif]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une insight préservée sur le caractère excessif de sa réaction est un critère différentiel important: dans les troubles psychotiques, l’épreuve de réalité est altérée, les craintes sont tenues pour factuelles.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-15" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD idées délirantes · Humeur / perception délirante <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-16" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD idées délirantes · Idées de référence / persécution <span class="patient-response">[Non, personne ne me poursuit ni ne m’observe]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-17" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Pensée formelle<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans la dépression, on trouve typiquement un ralentissement de la pensée, des ruminations et une inhibition de la pensée. Un arrêt de la pensée ou une pensée diffluente évoquent plutôt des troubles schizophréniformes ou psychotiques et doivent être exclus activement.</span></span></span> · Ruminations / ressassement <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pensée répétitive typique de la dépression sans véritable désorganisation de la pensée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-18" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Pensée formelle · Inhibition / ralentissement de la pensée <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Ralentissement subjectif du cours de la pensée, fréquent dans les dépressions modérées à sévères.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-19" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Pensée formelle · Arrêt de la pensée <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Exclusion active d’un trouble de la pensée schizophréniforme ou psychotique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-20" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents psychiatriques / traitements préalables <span class="patient-response">[Non, première fois]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les traitements antérieurs donnent des indices sur les diagnostics déjà posés, la réponse thérapeutique et les expériences médicamenteuses (tolérance, adhérence). Chez Madame Winkelreid, il s’agit d’une première présentation thérapeutique, ce qui simplifie la planification, car il n’y a pas d’a priori contre certaines formes de thérapie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments / automédication <span class="patient-response">[Je ne prends rien, pas d’automédication non plus]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Certains médicaments peuvent majorer ou imiter des symptômes anxieux: hormones thyroïdiennes, bêta-sympathomimétiques (inhalateurs pour l’asthme), stimulants (médicaments pour le TDAH, coupe-faim), corticoïdes. Les phytothérapies OTC (valériane, huile de lavande/Silexan) sont fréquentes en automédication; la question vaut toujours la peine, des benzodiazépines prescrites dans l’entourage peuvent masquer et à l’arrêt exacerber les symptômes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Consommation de substances · Alcool <span class="patient-response">[Je bois rarement de l’alcool]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’alcool agit de manière anxiolytique aiguë via les récepteurs GABA-A et est donc souvent utilisé comme automédication dans les troubles anxieux. À long terme, il aggrave la symptomatologie par des phénomènes de sevrage et peut amorcer une dépendance secondaire à l’alcool.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Consommation de substances · Drogues / cannabis <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le cannabis peut déclencher ou aggraver des symptômes de panique de façon aiguë (tachycardie, dépersonnalisation). Les stimulants comme la cocaïne ou les amphétamines produisent des états proches de la panique et imitent cliniquement la symptomatologie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Consommation de substances · Tabac <span class="patient-response">[Je ne fume pas]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La nicotine a un effet sympathomimétique et peut déclencher ou renforcer des symptômes de panique/anxiété. Une forte consommation ou un sevrage sont des cofacteurs somatiques pertinents dans les troubles anxieux.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Aucune connue]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse psychiatrique familiale <span class="patient-response">[Ma mère est dépressive depuis la mort de ma sœur, sinon personne]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un parent du premier degré atteint d’un trouble affectif augmente le risque personnel via des mécanismes génétiques et environnementaux/de lien; ces deux facteurs sont compris dans le modèle vulnérabilité–stress comme partie de la diathèse biopsychosociale. Pour le suivi, c’est pertinent: les patientes avec agoraphobie et charge familiale dépressive développent plus fréquemment un épisode dépressif secondaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Éducatrice, au chômage depuis 3 mois à cause de l’anxiété]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La perte d’emploi est la conséquence de l’évitement (retards dus à l’évitement des transports publics) et en même temps un nouveau stresseur; c’est un exemple classique de bascule vers des conséquences psychosociales qui renforcent à leur tour le trouble. La dimension sociale et professionnelle fait donc partie de la planification thérapeutique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Décès de la sœur<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le décès de la sœur est le stresseur aigu central dans le modèle vulnérabilité–stress et le principal point d’ancrage pour la comorbidité de deuil. La profondeur avec laquelle la perte et la dispute non résolue façonnent l’affection actuelle n’apparaît que si on questionne activement; la patiente en parle peu d’elle-même.</span></span></span> · Circonstances du décès <span class="patient-response">[Accident de voiture il y a un an]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les pertes soudaines et violentes présentent un risque plus élevé de trajectoires de deuil compliquées que les pertes lentes et prévisibles. L’accident de voiture de la sœur appartient à cette catégorie de risque.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Décès de la sœur · Élaboration <span class="patient-response">[Pas vraiment, c’est toujours en arrière-plan]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Éviter activement le travail de deuil est compréhensible mais maintient le deuil inachevé. Le parallèle avec l’évitement anxieux est exploitable en thérapie: dans les deux cas, l’évitement, qui soulage à court terme, empêche le processus d’élaboration à long terme, et dans les deux cas, une confrontation prudente est la voie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Décès de la sœur · Ressources sociales / partenaire <span class="patient-response">[J’ai un partenaire depuis 3 ans, très soutenant; sinon, social réduit]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le partenaire est une ressource et en même temps un piège potentiel: il la maintient socialement connectée, mais en accompagnant et en prenant en charge, il devient partie du comportement de sécurité. La relation et le traitement doivent être abordés en parallèle; le partenaire passe d’ancre de sécurité à co-thérapeute.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation de logement <span class="patient-response">[Propre appartement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-4" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/0</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/12</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Appréciation clinique <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic présumé <span class="patient-response">[Agoraphobie avec attaques de panique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’ICD-11 distingue l’agoraphobie pure du trouble panique par le profil des attaques: liées aux situations ou inattendues. Si des symptômes de panique surviennent, mais exclusivement dans des situations agoraphobogènes, on utilise le spécificateur with panic attacks (MB23.H) plutôt qu’un diagnostic additionnel de trouble panique. Cette distinction fine a des conséquences cliniques pour l’orientation thérapeutique (accent sur l’exposition interoceptive).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Thérapie <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Psychoéducation et implication du partenaire <span class="patient-response">[Mesure de base et déjà thérapeutique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La psychoéducation consiste à expliquer à la patiente de manière compréhensible que l’anxiété fonctionne souvent comme une fausse alarme. L’évitement apaise à court terme, mais confirme au cerveau que la situation est dangereuse. Ainsi, l’anxiété persiste à long terme. Le partenaire doit comprendre ce mécanisme et soutenir la patiente pour qu’elle réaffronte progressivement les situations anxiogènes, au lieu de renforcer l’évitement par réflexe de protection.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Thérapie cognitivo-comportementale (TCC) <span class="patient-response">[Premier choix pour de nombreux troubles anxieux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La TCC est le traitement psychothérapeutique avec l’évidence la plus large et la plus élevée pour l’agoraphobie, fondé sur des ECR, avec le plus haut grade de recommandation (Ia/A+) selon la SGAD/SGPP et la directive S3. Son mécanisme repose sur un nouvel apprentissage par des expériences correctrices répétées dans les situations redoutées; les éléments suivants en forment l’ossature.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Axes thérapeutiques de la TCC · Exposition in vivo <span class="patient-response">[Confrontation graduée ou massée aux situations, sans comportements de sécurité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’exposition in vivo est le composant TCC le plus efficace en agoraphobie. L’effet d’apprentissage se produit par habituation: l’anxiété diminue d’elle-même, la catastrophe redoutée ne se produit pas. L’exposition accompagnée par le/la thérapeute (le/la thérapeute accompagne pendant l’exercice) est plus efficace que les seuls devoirs à domicile.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Axes thérapeutiques de la TCC · Exposition interoceptive <span class="patient-response">[Provocation de symptômes corporels (hyperventilation, rotations, escaliers)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’exposition interoceptive vise non pas la situation externe, mais les sensations corporelles elles-mêmes; palpitations, vertiges, dyspnée sont provoqués de manière ciblée. Les patientes apprennent ainsi que ces sensations sont supportables et régressent d’elles-mêmes. L’OMS recommande explicitement ce composant dans l’ICD-11 CDDR même sans diagnostic de trouble panique, lorsque, comme chez Madame Winkelreid, les symptômes corporels sont au centre de la crainte.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Axes thérapeutiques de la TCC · Travail de deuil / traitement de la culpabilité <span class="patient-response">[Éléments centrés sur le deuil: travailler en parallèle la culpabilité et le deuil non résolu]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un deuil non élaboré agit comme stresseur chronique au sens du modèle vulnérabilité–stress et peut augmenter le risque de rechute si seule la composante anxieuse est traitée. Le parallèle avec l’évitement anxieux est exploitable en thérapie: dans les deux cas, l’évitement qui soulage à court terme empêche le processus d’élaboration à long terme, et dans les deux cas, une confrontation prudente est la voie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Pharmacothérapie<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La pharmacothérapie n’est pas obligatoire en cas d’agoraphobie. Si elle est utilisée, les SSRI sont considérés comme traitement de première intention en maintenance; les benzodiazépines seulement à court terme en cas de crise aiguë ou pour couvrir la latence d’action des SSRI.</span></span></span> · SSRI en traitement de maintenance <span class="patient-response">[À envisager comme complément en cas de symptomatologie modérée ou de comorbidité; SSRI en 1er choix]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les SSRI sont efficaces dans les troubles anxieux et sont considérés comme le 1er choix en traitement de maintenance. À savoir: une latence d’action plus longue (plusieurs semaines) et le risque d’une majoration anxieuse initiale paradoxale. Le choix précis de la substance et de la dose revient au/à la spécialiste en psychiatrie adresseur·e.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-5" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Pharmacothérapie · Benzodiazépines lors d’attaques aiguës <span class="patient-response">[Uniquement à court terme en crise aiguë ou pour couvrir la latence des SSRI; pas comme traitement au long cours]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les benzodiazépines ont un effet anxiolytique rapide via l’agonisme du récepteur GABA-A, mais en raison du développement de tolérance et de dépendance, elles ne constituent pas une solution durable. Elles peuvent être utilisées à court terme (quelques jours à quelques semaines) pour couvrir la latence d’action des SSRI ou lors d’une crise aiguë. Le NICE déconseille même en général les benzodiazépines dans le trouble panique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-6" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Procédure <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Orientation psychothérapie <span class="patient-response">[Orientation vers un·e psychothérapeute expérimenté·e en exposition]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’efficacité de la TCC en agoraphobie dépend fortement de la mise en œuvre concrète de l’exposition. L’exposition in vivo accompagnée par le/la thérapeute (le/la thérapeute participe à l’exercice) est, selon la SGAD/SGPP, plus efficace que la TCC purement conversationnelle. Toutes les formations en psychothérapie n’incluent pas l’exposition; il faut donc demander explicitement cette expérience.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Rendez-vous de suivi <span class="patient-response">[Nouvelle consultation dans 1–2 semaines, évaluation de l’évolution après 4–6 semaines]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des contrôles initiaux rapprochés permettent un ajustement précoce (nervosité initiale sous SSRI, acceptation de l’exposition, travail de deuil). Une mesure structurée de l’évolution (p. ex. PAS, HAM-A ou GAD-7) rend visible le succès thérapeutique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Conseil social / réinsertion professionnelle <span class="patient-response">[Proposer un accompagnement sociojuridique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La perte d’emploi est à la fois conséquence du trouble et stresseur additionnel. Un accompagnement sociojuridique soulage financièrement et réduit la charge secondaire, avec un effet indirect sur la symptomatologie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Filet de sécurité / intervention de crise <span class="patient-response">[Fournir des numéros d’urgence, reconsulter en cas d’aggravation / suicidalité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un filet de sécurité clairement convenu apporte du soutien, même si la suicidalité est actuellement niée. L’évolution de l’agoraphobie est chronique-récidivante, et avec la durée de la maladie, le risque d’une dépression comorbide avec suicidalité augmente. Convenir concrètement (quel numéro, qui est joignable, à partir de quand se manifester) est cliniquement plus efficace qu’une injonction générale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les soucis, besoins, préoccupations et attentes de la patiente et y répond avec empathie et de manière appropriée à la situation. Dans ce cas en particulier: ne pas minimiser la culpabilité liée au décès de la sœur, valoriser l’insight de la patiente, transmettre de l’espoir sans banaliser.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible et reste flexible. Pour l’anamnèse psychiatrique: ouverture prudente, exploration structurée des symptômes, dépistage des DD, exploration sensible du deuil/suicide, synthèse, planification commune.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communication adaptée à la patiente, favorise la compréhension par la reformulation, le reflet, la synthèse et les explications, et utilise voix, débit et pauses de façon ciblée. Expliquer clairement des concepts complexes comme le modèle vulnérabilité–stress et l’exposition.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, les mimiques, les gestes, la posture et la distance pour instaurer une atmosphère de confiance et agréable. Chez une patiente anxieuse, particulièrement important: posture calme, pas de pression, pauses suffisantes.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/78</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Question d’ouverture</strong> — L’anxiété et l’évitement comme symptôme principal ouvrent une large fenêtre de <span class="c-yellow">diagnostics différentiels</span>: agoraphobie, trouble panique, phobie sociale, phobie spécifique, TAG, ESPT, épisode dépressif avec retrait, ainsi que des causes somatiques déjà exclues par le médecin de famille.</li><li><strong>Dimension temporelle · Début / durée</strong> — La durée des symptômes aide à situer le trouble dans le spectre des affections liées au stress et à l’anxiété: une réaction aiguë au stress s’estompe en quelques jours à un mois au maximum, un trouble de l’adaptation en général dans les 6 mois suivant le stresseur. L’agoraphobie selon l’ICD-11 requiert une symptomatologie persistante pendant plusieurs mois, typiquement au moins 6 mois.</li><li><strong>Dimension temporelle · Évolution</strong> — Une disposition anxieuse-évitante subclinique qui se décompense en maladie avérée après un stresseur est une dynamique évolutive typique du modèle vulnérabilité–stress: vulnérabilité préexistante comme terrain, stresseur aigu (ici décès de la sœur) comme déclencheur, comportement d’évitement comme facteur de maintien.</li><li><strong>Survenue (permanente vs. par accès)</strong> — Le profil de l’anxiété aide au niveau phénoménologique: épisodes par accès, liés aux situations, avec intervalles libres évoquent une agoraphobie ou un trouble panique. Une anxiété de fond constante et diffuse sur des semaines irait plutôt avec un trouble anxieux généralisé.</li><li><strong>Déroulement d’une attaque</strong> — Le déroulement typique d’une attaque de panique est phasique: montée sympathique rapide en quelques minutes, court plateau à intensité maximale, suivi d’une décroissance lente, au total rarement &gt;30 minutes. Une anxiété élevée durant des heures irait contre une panique et plutôt pour un TAG ou une composante somatoforme.</li><li><strong>Survenue situationnelle · Situations déclenchantes</strong> — L’agoraphobie n’est pas définie par un seul objet mais par un motif commun: des situations d’où la fuite serait difficile ou l’aide difficilement accessible. Cette logique explique le caractère trans-situationnel de la peur. S’il ne s’agissait que d’objets ou de situations circonscrits (araignées, hauteur), on penserait plutôt à une phobie spécifique.</li><li><strong>Survenue situationnelle · Espaces exigus (DD claustrophobie)</strong> — Si la patiente évitait aussi les espaces exigus, on envisagerait en plus, ou en <span class="c-yellow">diagnostic différentiel</span>, une phobie spécifique (claustrophobie). L’anamnèse négative soutient la logique d’une agoraphobie pure: la peur ne naît pas de l’espace comme objet, mais de l’idée de ne pas pouvoir s’échapper.</li><li><strong>Souffrance subjective</strong> — La souffrance subjective et la recherche active d’aide sont nécessaires au diagnostic et en même temps de bon pronostic. La patiente veut changer, c’est une ressource motivationnelle importante pour le travail d’exposition exigeant.</li><li><strong>Contenu central de la peur</strong> — Dans l’agoraphobie, la préoccupation porte typiquement sur une conséquence aversive, le plus souvent des attaques de panique et leurs symptômes corporels (<span class="c-pink">palpitations</span>, <span class="c-pink">vertiges</span>, <span class="c-pink">dyspnée</span>), des symptômes incapacitants comme des chutes ou une incontinence, ou des situations embarrassantes avec retentissement social. La prédominance de l’une ou l’autre crainte oriente la thérapie: si le focus est sur les symptômes de panique, l’exposition interoceptive prend du poids; si le focus est la honte, la restructuration cognitive et l’exposition in vivo avec maintien dans la situation sont prioritaires.</li><li><strong>Limitation</strong> — L’atteinte fonctionnelle significative est un des critères centraux ICD-11; sans elle, on parle plutôt de disposition anxieuse subclinique que d’agoraphobie. La perte d’emploi illustre le cercle vicieux: l’évitement soulage à court terme, nuit fonctionnellement, et la perte fonctionnelle devient un nouveau stresseur.</li><li><strong>Comportement d’évitement</strong> — L’évitement est un critère diagnostique central de l’agoraphobie et une cible thérapeutique. Il réduit l’anxiété à court terme, mais maintient le trouble à long terme faute d’expériences correctrices.</li><li><strong>Comportements de sécurité</strong> — Les comportements de sécurité regroupent toutes les actions par lesquelles les patientes tentent d’écarter la conséquence redoutée. Ils réduisent l’anxiété aiguë, mais attribuent le succès aux aides et empêchent l’expérience correctrice « l’anxiété baisse aussi sans ». En thérapie par exposition, ces stratégies sont retirées progressivement des exercices.</li><li><strong>Symptômes de panique</strong> — Les symptômes d’attaque de panique résultent d’une activation sympathique aiguë avec libération d’adrénaline. L’ICD-11 répertorie 13 symptômes caractéristiques, dont typiquement ≥4 apparaissent simultanément et montent rapidement: cardiovasculaires (<span class="c-pink">palpitations</span>, oppression, <span class="c-pink">douleur</span> thoracique), respiratoires (<span class="c-pink">dyspnée</span>, sensation d’étouffement), végétatifs (sueurs, tremblements, bouffées de chaleur, frissons), gastro-intestinaux (<span class="c-pink">nausées</span>, inconfort abdominal), neurologiques (<span class="c-pink">vertiges</span>, étourdissements, <span class="c-pink">paresthésies</span>), et psychiques (déréalisation/dépersonnalisation, crainte de perdre le contrôle, peur de mourir). Cliniquement, l’erreur d’attribution cognitive est décisive: les sensations cardiaques sont souvent interprétées à tort comme un <span class="c-red">infarctus</span>, ce qui alimente le cercle de l’anxiété. C’est précisément là qu’intervient la restructuration cognitive. Une brève déréalisation/dépersonnalisation pendant l’attaque est réactive à la suractivation et n’indique pas un trouble psychotique; seules des perturbations du moi persistantes ou isolées seraient suspectes.</li><li class="theorie-sous-groupe"><strong>Suicidalité</strong> — La suicidalité fait partie de toute anamnèse psychiatrique initiale structurée, indépendamment de l’impression clinique. Dans l’agoraphobie, le risque suicidaire n’est pas en soi augmenté, mais il l’est avec la durée de la maladie et la dépression comorbide. L’exploration graduée (dégoût de la vie, idées concrètes, plans, capacité d’engagement) correspond au standard clinique.</li><li><strong>Suicidalité · Dégoût de la vie</strong> — Le dégoût de la vie (« je ne veux plus me réveiller », « ce serait mieux si je n’étais pas là ») est l’entrée à bas seuil de l’exploration du suicide. Une réponse positive n’est pas une suicidalité aiguë, mais signale l’intensité de la souffrance et requiert les étapes suivantes de l’exploration.</li><li><strong>Suicidalité · Capacité d’engagement</strong> — La capacité d’engagement est un ancrage clinique central à la fin de l’exploration du suicide: si la patiente peut s’engager de manière crédible à se manifester en cas d’aggravation, le traitement peut se poursuivre en ambulatoire; si elle le nie ou semble peu fiable, une intervention de crise en hospitalier doit être envisagée.</li><li class="theorie-sous-groupe"><strong>DD trouble panique</strong> — La démarcation par rapport au trouble panique (6B01) est le principal <span class="c-yellow">diagnostic différentiel</span> en agoraphobie. Si des attaques surviennent aussi de manière inattendue dans des situations sûres, il faut coder un trouble panique additionnel; si les attaques sont exclusivement liées aux situations, on reste sur l’agoraphobie pure avec le spécificateur with panic attacks (MB23.H).</li><li class="theorie-sous-groupe"><strong>DD trouble anxieux généralisé</strong> — Le TAG (6B00) se caractérise par des soucis flottants touchant de nombreux domaines (famille, travail, santé, finances) et une tension chronique. L’anxiété est diffuse plutôt que situationnelle; l’impression se distingue nettement de l’agoraphobie.</li><li class="theorie-sous-groupe"><strong>DD ESPT</strong> — L’ESPT (6B40) exige premièrement un événement traumatique directement vécu ou observé et deuxièmement la triade reviviscences, évitement des stimuli associés au trauma et perception persistante de menace. En agoraphobie pure, l’évitement est large et porte sur de multiples situations, non spécifiquement sur des déclencheurs du trauma.</li><li><strong>DD ESPT · Événement traumatique</strong> — Avant l’exploration des symptômes d’ESPT, se pose la question d’un traumatisme qualifiant. La perte d’un proche est éprouvante, mais ne remplit le critère de trauma ICD-11 que si elle a été directement vécue ou apprise dans des circonstances particulièrement violentes.</li><li><strong>DD ESPT · Intrusions / flashbacks / cauchemars</strong> — Les intrusions sont le symptôme principal de l’ESPT: souvenirs vifs et involontaires, flashbacks ou images.</li><li><strong>DD ESPT · Hyperéveil / sursaut</strong> — L’hyperéveil décrit une excitabilité nerveuse durable après un traumatisme, cliniquement visible par une réactivité de sursaut accrue, une tension interne persistante, des troubles du sommeil et de la concentration. Avec les intrusions et l’évitement, cela forme la triade de l’ESPT.</li><li class="theorie-sous-groupe"><strong>DD dépression</strong> — L’exploration de l’affectivité selon AMDP saisit l’humeur, la qualité de l’affect et les symptômes végétatifs. Elle sert au <span class="c-yellow">diagnostic différentiel</span> contre un épisode dépressif et au suivi évolutif, car une dépression se développe souvent secondairement dans l’agoraphobie.</li><li><strong>DD dépression · Sentiments de culpabilité</strong> — Des sentiments de culpabilité issus de conflits non résolus juste avant la perte sont un <span class="c-purple">facteur de risque</span> bien documenté de trouble de deuil prolongé. Sur le plan thérapeutique, on peut l’aborder de manière ciblée; ce travail (« qu’aurais-je pu faire ? », « qui était ma sœur pour moi ? ») fait partie d’une TCC centrée sur le deuil.</li><li class="theorie-sous-groupe"><strong>DD trouble obsessionnel-compulsif</strong> — Le trouble obsessionnel-compulsif a été séparé des troubles anxieux dans l’ICD-11 et forme un chapitre propre (obsessive-compulsive and related disorders, 6B2x). Les phénomènes obsessionnels sont vécus le plus souvent comme absurdes ou excessifs, mais impossibles à réprimer.</li><li class="theorie-sous-groupe"><strong>DD idées délirantes</strong> — Selon l’ICD-11-CDDR, la démarcation avec les troubles psychotiques: dans un délire, l’espace public est évité pour des idées de persécution ou de référence, et non par peur de panique ou d’impuissance. Une conscience de maladie préservée va contre un délire.</li><li><strong>DD idées délirantes · Insight</strong> — Une insight préservée sur le caractère excessif de sa réaction est un critère différentiel important: dans les troubles psychotiques, l’épreuve de réalité est altérée, les craintes sont tenues pour factuelles.</li><li class="theorie-sous-groupe"><strong>Pensée formelle</strong> — Dans la dépression, on trouve typiquement un ralentissement de la pensée, des ruminations et une inhibition de la pensée. Un arrêt de la pensée ou une pensée diffluente évoquent plutôt des troubles schizophréniformes ou psychotiques et doivent être exclus activement.</li><li><strong>Pensée formelle · Ruminations / ressassement</strong> — Pensée répétitive typique de la dépression sans véritable désorganisation de la pensée.</li><li><strong>Pensée formelle · Inhibition / ralentissement de la pensée</strong> — Ralentissement subjectif du cours de la pensée, fréquent dans les dépressions modérées à sévères.</li><li><strong>Pensée formelle · Arrêt de la pensée</strong> — Exclusion active d’un trouble de la pensée schizophréniforme ou psychotique.</li><li><strong>Antécédents psychiatriques / traitements préalables</strong> — Les traitements antérieurs donnent des indices sur les diagnostics déjà posés, la réponse thérapeutique et les expériences médicamenteuses (tolérance, adhérence). Chez Madame Winkelreid, il s’agit d’une première présentation thérapeutique, ce qui simplifie la planification, car il n’y a pas d’a priori contre certaines formes de thérapie.</li><li><strong>Médicaments / automédication</strong> — Certains médicaments peuvent majorer ou imiter des symptômes anxieux: hormones thyroïdiennes, bêta-sympathomimétiques (inhalateurs pour l’asthme), stimulants (médicaments pour le TDAH, coupe-faim), <span class="c-amber">corticoïdes</span>. Les <span class="c-amber">phytothérapies</span> OTC (valériane, huile de lavande/Silexan) sont fréquentes en automédication; la question vaut toujours la peine, des benzodiazépines <span class="c-red">prescrites</span> dans l’entourage peuvent masquer et à l’arrêt exacerber les symptômes.</li><li><strong>Consommation de substances · Alcool</strong> — L’<span class="c-purple">alcool</span> agit de manière anxiolytique aiguë via les récepteurs GABA-A et est donc souvent utilisé comme automédication dans les troubles anxieux. À long terme, il aggrave la symptomatologie par des phénomènes de sevrage et peut amorcer une dépendance secondaire à l’<span class="c-purple">alcool</span>.</li><li><strong>Consommation de substances · Drogues / cannabis</strong> — Le cannabis peut déclencher ou aggraver des symptômes de panique de façon aiguë (tachycardie, dépersonnalisation). Les stimulants comme la cocaïne ou les amphétamines produisent des états proches de la panique et imitent cliniquement la symptomatologie.</li><li><strong>Consommation de substances · Tabac</strong> — La nicotine a un effet sympathomimétique et peut déclencher ou renforcer des symptômes de panique/anxiété. Une forte consommation ou un sevrage sont des cofacteurs somatiques pertinents dans les troubles anxieux.</li><li><strong>Anamnèse psychiatrique familiale</strong> — Un parent du premier degré atteint d’un trouble affectif augmente le risque personnel via des mécanismes génétiques et environnementaux/de lien; ces deux facteurs sont compris dans le modèle vulnérabilité–stress comme partie de la diathèse biopsychosociale. Pour le suivi, c’est pertinent: les patientes avec agoraphobie et charge familiale dépressive développent plus fréquemment un épisode dépressif secondaire.</li><li><strong>Profession</strong> — La perte d’emploi est la conséquence de l’évitement (retards dus à l’évitement des transports publics) et en même temps un nouveau stresseur; c’est un exemple classique de bascule vers des conséquences psychosociales qui renforcent à leur tour le trouble. La dimension sociale et professionnelle fait donc partie de la planification thérapeutique.</li><li class="theorie-sous-groupe"><strong>Décès de la sœur</strong> — Le décès de la sœur est le stresseur aigu central dans le modèle vulnérabilité–stress et le principal point d’ancrage pour la comorbidité de deuil. La profondeur avec laquelle la perte et la dispute non résolue façonnent l’affection actuelle n’apparaît que si on questionne activement; la patiente en parle peu d’elle-même.</li><li><strong>Décès de la sœur · Circonstances du décès</strong> — Les pertes soudaines et violentes présentent un risque plus élevé de trajectoires de deuil compliquées que les pertes lentes et prévisibles. L’accident de voiture de la sœur appartient à cette catégorie de risque.</li><li><strong>Décès de la sœur · Élaboration</strong> — Éviter activement le travail de deuil est compréhensible mais maintient le deuil inachevé. Le parallèle avec l’évitement anxieux est exploitable en thérapie: dans les deux cas, l’évitement, qui soulage à court terme, empêche le processus d’élaboration à long terme, et dans les deux cas, une confrontation prudente est la voie.</li><li><strong>Décès de la sœur · Ressources sociales / partenaire</strong> — Le partenaire est une ressource et en même temps un piège potentiel: il la maintient socialement connectée, mais en accompagnant et en prenant en charge, il devient partie du comportement de sécurité. La relation et le traitement doivent être abordés en parallèle; le partenaire passe d’ancre de sécurité à co-thérapeute.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic présumé</strong> — L’ICD-11 distingue l’agoraphobie pure du trouble panique par le profil des attaques: liées aux situations ou inattendues. Si des symptômes de panique surviennent, mais exclusivement dans des situations agoraphobogènes, on utilise le spécificateur with panic attacks (MB23.H) plutôt qu’un diagnostic additionnel de trouble panique. Cette distinction fine a des conséquences cliniques pour l’orientation thérapeutique (accent sur l’exposition interoceptive).</li><li><strong>Psychoéducation et implication du partenaire</strong> — La psychoéducation consiste à expliquer à la patiente de manière compréhensible que l’anxiété fonctionne souvent comme une fausse alarme. L’évitement apaise à court terme, mais confirme au cerveau que la situation est dangereuse. Ainsi, l’anxiété persiste à long terme. Le partenaire doit comprendre ce mécanisme et soutenir la patiente pour qu’elle réaffronte progressivement les situations anxiogènes, au lieu de renforcer l’évitement par réflexe de protection.</li><li><strong>Thérapie cognitivo-comportementale (TCC)</strong> — La TCC est le traitement psychothérapeutique avec l’évidence la plus large et la plus élevée pour l’agoraphobie, fondé sur des ECR, avec le plus haut grade de recommandation (Ia/A+) selon la SGAD/SGPP et la directive S3. Son mécanisme repose sur un nouvel apprentissage par des expériences correctrices répétées dans les situations redoutées; les éléments suivants en forment l’ossature.</li><li><strong>Axes thérapeutiques de la TCC · Exposition in vivo</strong> — L’exposition in vivo est le composant TCC le plus efficace en agoraphobie. L’effet d’apprentissage se produit par habituation: l’anxiété diminue d’elle-même, la catastrophe redoutée ne se produit pas. L’exposition accompagnée par le/la thérapeute (le/la thérapeute accompagne pendant l’exercice) est plus efficace que les seuls devoirs à domicile.</li><li><strong>Axes thérapeutiques de la TCC · Exposition interoceptive</strong> — L’exposition interoceptive vise non pas la situation externe, mais les sensations corporelles elles-mêmes; <span class="c-pink">palpitations</span>, <span class="c-pink">vertiges</span>, <span class="c-pink">dyspnée</span> sont provoqués de manière ciblée. Les patientes apprennent ainsi que ces sensations sont supportables et régressent d’elles-mêmes. L’OMS recommande explicitement ce composant dans l’ICD-11 CDDR même sans diagnostic de trouble panique, lorsque, comme chez Madame Winkelreid, les symptômes corporels sont au centre de la crainte.</li><li><strong>Axes thérapeutiques de la TCC · Travail de deuil / traitement de la culpabilité</strong> — Un deuil non élaboré agit comme stresseur chronique au sens du modèle vulnérabilité–stress et peut augmenter le risque de rechute si seule la composante anxieuse est traitée. Le parallèle avec l’évitement anxieux est exploitable en thérapie: dans les deux cas, l’évitement qui soulage à court terme empêche le processus d’élaboration à long terme, et dans les deux cas, une confrontation prudente est la voie.</li><li class="theorie-sous-groupe"><strong>Pharmacothérapie</strong> — La <span class="c-amber">pharmacothérapie</span> n’est pas obligatoire en cas d’agoraphobie. Si elle est utilisée, les SSRI sont considérés comme traitement de première intention en maintenance; les benzodiazépines seulement à court terme en cas de crise aiguë ou pour couvrir la latence d’action des SSRI.</li><li><strong>Pharmacothérapie · SSRI en traitement de maintenance</strong> — Les SSRI sont efficaces dans les troubles anxieux et sont considérés comme le 1er choix en traitement de maintenance. À savoir: une latence d’action plus longue (plusieurs semaines) et le risque d’une majoration anxieuse initiale paradoxale. Le choix précis de la substance et de la dose revient au/à la spécialiste en psychiatrie adresseur·e.</li><li><strong>Pharmacothérapie · Benzodiazépines lors d’attaques aiguës</strong> — Les benzodiazépines ont un effet anxiolytique rapide via l’agonisme du récepteur GABA-A, mais en raison du développement de tolérance et de dépendance, elles ne constituent pas une solution durable. Elles peuvent être utilisées à court terme (quelques jours à quelques semaines) pour couvrir la latence d’action des SSRI ou lors d’une crise aiguë. Le NICE déconseille même en général les benzodiazépines dans le trouble panique.</li><li><strong>Orientation psychothérapie</strong> — L’efficacité de la TCC en agoraphobie dépend fortement de la mise en œuvre concrète de l’exposition. L’exposition in vivo accompagnée par le/la thérapeute (le/la thérapeute participe à l’exercice) est, selon la SGAD/SGPP, plus efficace que la TCC purement conversationnelle. Toutes les formations en <span class="c-amber">psychothérapie</span> n’incluent pas l’exposition; il faut donc demander explicitement cette expérience.</li><li><strong>Rendez-vous de suivi</strong> — Des contrôles initiaux rapprochés permettent un ajustement précoce (nervosité initiale sous SSRI, acceptation de l’exposition, travail de deuil). Une mesure structurée de l’évolution (p. ex. PAS, HAM-A ou GAD-7) rend visible le succès thérapeutique.</li><li><strong>Conseil social / réinsertion professionnelle</strong> — La perte d’emploi est à la fois conséquence du trouble et stresseur additionnel. Un accompagnement sociojuridique soulage financièrement et réduit la charge secondaire, avec un effet indirect sur la symptomatologie.</li><li><strong>Filet de sécurité / intervention de crise</strong> — Un <span class="c-yellow">filet de sécurité</span> clairement convenu apporte du soutien, même si la suicidalité est actuellement niée. L’évolution de l’agoraphobie est chronique-récidivante, et avec la durée de la maladie, le risque d’une dépression comorbide avec suicidalité augmente. Convenir concrètement (quel numéro, qui est joignable, à partir de quand se manifester) est cliniquement plus efficace qu’une injonction générale.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Situation initiale: La patiente a été orientée par son médecin de famille après un bilan somatique de base sans particularité; l’évaluation se poursuit ici en consultation psychiatrique.</p><p>Chez Madame Winkelried, il s’agit d’une agoraphobie avec attaques de panique, sans trouble panique <span class="c-red">autonome</span>.</p><p>À l’anamnèse, depuis 6 mois, des peurs de plus en plus marquées, liées aux situations, surviennent dans les foules, sur les grandes places, dans les transports publics, les centres commerciaux et lorsqu’elle est seule loin de la maison, avec la crainte d’avoir une attaque de panique, de s’évanouir ou de perdre le contrôle, et de ne pas pouvoir s’échapper ou obtenir de l’aide dans la situation. Sur le plan corporel, prédominent des <span class="c-pink">palpitations</span> et une constriction thoracique, avec de brefs phénomènes de dépersonnalisation et de déréalisation limités à l’attaque. La patiente évite activement et recourt à des comportements de sécurité (accompagnement par le partenaire, téléphone portable, repérage des sorties, détours); elle nie des attaques inattendues en environnements sûrs; la conscience de la maladie est préservée. Atteinte fonctionnelle marquée: perte de son poste d’éducatrice il y a 3 mois en raison de l’évitement des transports publics, ainsi qu’un retrait social.</p><p>En <span class="c-yellow">diagnostic différentiel</span>, contre un trouble panique additionnel plaident les attaques exclusivement liées aux situations; contre un trouble anxieux généralisé, l’absence de chaîne de soucis persistants; contre un ESPT, l’absence de la triade intrusions, cauchemars et hyperéveil. Les comorbidités pertinentes sont une réaction de deuil non résolue avec culpabilité (dispute peu avant l’accident de la sœur) et une comorbidité dépressive naissante (tristesse occasionnelle) sans tableau complet, toutes deux cliniquement à prendre au sérieux.</p><p>Dans le sens du modèle vulnérabilité–stress, agissent de façon prédisposante une disposition anxieuse-évitante subclinique et une charge familiale (mère dépressive après le décès de la sœur), comme facteur déclenchant le décès de la sœur il y a un an avec des sentiments de culpabilité non résolus, et comme facteurs de maintien la spirale d’évitement et la perte d’emploi subséquente.</p><p>Sur le plan thérapeutique, une TCC ambulatoire avec exposition est prioritaire comme premier choix, avec psychoéducation et implication du partenaire; au centre: exposition in vivo avec réduction des comportements de sécurité, exposition interoceptive et travail parallèle du deuil et de la culpabilité. Une <span class="c-amber">pharmacothérapie</span> par SSRI est optionnelle. Sont prévus une orientation vers une personne spécialisée expérimentée en exposition, un conseil social, un rendez-vous de suivi et un <span class="c-yellow">filet de sécurité</span>.</p><p>Reconnaître l’agoraphobie comme trouble anxieux lié aux situations: peur dans des situations typiques, symptômes de panique, évitement, comportements de sécurité et démarcation claire d’un trouble panique <span class="c-red">autonome</span>.</p><p>Examiner de manière ciblée le <span class="c-yellow">diagnostic différentiel</span> psychiatrique: trouble anxieux généralisé, comorbidité dépressive, ESPT/réaction de deuil, symptômes psychotiques et suicidalité.</p><p>Déduire un traitement adapté à la patiente: TCC avec exposition comme élément central, SSRI en option, implication du partenaire ainsi que planification du <span class="c-yellow">filet de sécurité</span> et du suivi.</p><p>Depuis 6 mois, anxiété liée aux situations dans les foules, transports publics, places, centres commerciaux et lorsqu’elle est seule loin; crainte d’une attaque de panique, d’un évanouissement, d’une perte de contrôle; symptômes de panique; évitement actif et comportements de sécurité; pas d’attaques inattendues à la maison; perte d’emploi, retrait social.</p><p>Trouble panique (attaques liées aux situations), TAG (pas de chaîne de soucis) et ESPT (pas de triade essentielle) exclus; comorbidité: réaction de deuil non résolue avec culpabilité et comorbidité dépressive naissante.</p><p>Prédisposants: disposition anxieuse-évitante et mère dépressive; déclenchant: décès de la sœur avec culpabilité; maintenants: spirale d’évitement et perte de l’emploi.</p><p>TCC ambulatoire avec exposition (in vivo, interoceptive, travail de deuil en parallèle); SSRI optionnels; orientation vers un/une thérapeute expérimenté·e en exposition, conseil social, rendez-vous de suivi, <span class="c-yellow">filet de sécurité</span>.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 50,
+        "examen": 0,
+        "management": 12,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 0,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 3,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

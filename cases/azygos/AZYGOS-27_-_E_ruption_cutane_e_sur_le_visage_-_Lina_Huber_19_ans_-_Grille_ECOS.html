@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-27 - Éruption cutanée sur le visage - Lina Huber, 19 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-27 - Éruption cutanée sur le visage</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-27" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet de dermatologie</p>
+            <p style="margin: 5px 0;">👤 Lina Huber, 19 ans</p>
+            <p style="margin: 5px 0;">🏷️ Dermatologie · Raisonnement clinique · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/27</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Anamnèse actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question initiale <span class="patient-response">[&quot;J&#x27;ai une éruption cutanée avec de petits boutons rouges sur le visage depuis environ six semaines&quot;]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[Autour de la bouche, en partie à côté du nez]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La localisation périorale et périnasale est hautement caractéristique de la dermatite périorale. Le respect du rouge des lèvres est le signe clinique distinctif.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début <span class="patient-response">[Plutôt insidieux.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Épisode <span class="patient-response">[Première fois pour ce type d&#x27;éruption]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[Pas d&#x27;amélioration, plutôt une aggravation.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteur déclenchant <span class="patient-response">[Pas à ma connaissance]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊕ Facteurs aggravants <span class="patient-response">[Au soleil, la peau devient plus sèche et brûle]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊖ Facteurs soulageants <span class="patient-response">[Produits contre l&#x27;acné de la maison sans effet]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;automédication infructueuse avec des produits contre l&#x27;acné est un indice important : les produits contre l&#x27;acné contenant de l&#x27;acide salicylique ou du peroxyde de benzoyle n&#x27;ont pas d&#x27;effet sur la dermatite périorale et peuvent irriter davantage la barrière cutanée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Gravité <span class="patient-response">[Plutôt légère, mais dérangeante sur le plan esthétique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La gravité n&#x27;est pas un critère diagnostique décisif pour la dermatite périorale, car le diagnostic repose principalement sur la localisation, la morphologie et l&#x27;anamnèse. L&#x27;impact de la gêne subjective sur la patiente est plus important.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes d&#x27;accompagnement <span class="patient-response">[Non, rien d&#x27;autre]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans AZYGOS, les patientes et les patients ne mentionnent délibérément pas de symptômes d&#x27;accompagnement pertinents à cette question ouverte. Ce qui est évalué, c&#x27;est le fait de poser des questions ciblées. Dans la réalité, cette question reste toutefois importante, car des indices déterminants sont parfois mentionnés spontanément.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-9" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée sur le problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Traitement médical préalable <span class="patient-response">[Médecin de famille il y a 2 semaines : suspicion d&#x27;eczéma inflammatoire, produits correspondants reçus.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un traitement médical préalable par crème stéroïdienne sous suspicion d&#x27;eczéma, sans amélioration durable, est un indice important d&#x27;une erreur de diagnostic et oriente vers une dermatite périorale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Stéroïdes topiques <span class="patient-response">[Crème de cortisone (médecin de famille) : amélioration initiale, puis nette aggravation]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les glucocorticoïdes topiques entraînent généralement une amélioration initiale dans la dermatite périorale grâce à leur effet anti-inflammatoire, suivie d&#x27;une aggravation due à l&#x27;irritation cutanée induite par les stéroïdes et au maintien de la maladie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Cosmétiques <span class="patient-response">[J&#x27;aime me maquiller, beaucoup de crèmes et de produits de soin]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;utilisation excessive de cosmétiques et de produits de soin occlusifs perturbe la barrière cutanée et est considérée comme un facteur déclenchant important de la dermatite périorale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prurit <span class="patient-response">[Pratiquement pas de prurit]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le prurit est atypique ou peu prononcé dans la dermatite périorale. Un prurit prononcé oriente plutôt vers un eczéma atopique ou de contact.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Douleurs / Brûlures <span class="patient-response">[Brûle parfois légèrement, pas de douleurs]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une légère sensation de brûlure est typique de la dermatite périorale. Les douleurs sont atypiques et doivent faire suspecter une infection secondaire ou un autre diagnostic.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse par système <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Peau<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;anamnèse dermatologique par système sert à la différenciation diagnostique. L&#x27;absence de comédons est le critère négatif le plus important contre l&#x27;acné vulgaire.</span></span></span> · Comédons <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Différenciation importante par rapport à l&#x27;acné vulgaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Peau · Autres plaintes cutanées <span class="patient-response">[Pas d&#x27;autres problèmes de peau]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes généraux <span class="patient-response">[Pas de fièvre, sinon je me sens bien]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les symptômes systémiques comme la fièvre sont atypiques dans la dermatite périorale et doivent faire envisager d&#x27;autres diagnostics.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents médicaux <span class="patient-response">[Acné légère par le passé]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Aucun, sauf la crème de cortisone du médecin de famille]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Toxiques<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La consommation d&#x27;alcool, de tabac et de drogues est recherchée par souci d&#x27;exhaustivité, mais ne constitue pas un facteur déclenchant central de la dermatite périorale.</span></span></span> · Alcool <span class="patient-response">[Occasionnellement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Toxiques · Tabac <span class="patient-response">[2-3 cigarettes/semaine]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Toxiques · Drogues <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Aucune connue]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des allergies connues peuvent indiquer une prédisposition atopique, qui peut être un facteur prédisposant à la dermatite périorale. Chez cette patiente, aucune allergie n&#x27;est connue et cela n&#x27;est pas décisif pour le diagnostic.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents médicaux <span class="patient-response">[La mère a eu de l&#x27;acné par le passé]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Commerce de détail]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La profession peut donner des indices sur d&#x27;éventuels facteurs déclenchants cutanés, tels que des substances irritantes, l&#x27;humidité ou des conditions occlusives. Dans le commerce de détail, ces facteurs sont d&#x27;une importance secondaire dans ce cas.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Charge psychosociale <span class="patient-response">[Peu sûre de moi, je m&#x27;isole de mes amis]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les patientes atteintes de dermatite périorale souffrent souvent de stigmatisation et d&#x27;une altération de l&#x27;image corporelle. S&#x27;enquérir de la honte, du retrait social ou des problèmes d&#x27;estime de soi est important pour une prise en charge globale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/7</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. État général <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">État général <span class="patient-response">[Cliniquement sans particularité, aucun signe de maladie systémique.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;état général est évalué par inspection. Un état général sans particularité s&#x27;oppose à un processus pathologique systémique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Statut dermatologique du visage <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Observation cutanée du visage <span class="patient-response">[Périoral/périnasal : papules érythémateuses et papulopustules, rouge des lèvres respecté, pas de comédons. Compatible avec une dermatite périorale.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La répartition périorale symétrique respectant le rouge des lèvres et l&#x27;absence de comédons constituent la signature clinique de la dermatite périorale et la distinguent clairement de l&#x27;acné vulgaire et de la rosacée.</span></span> <span class="criteria-detail-note">(voir iconographie)</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Reste de la peau <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Tronc et membres <span class="patient-response">[Sans particularité, pas d&#x27;autres efflorescences]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;inspection du tronc et des membres sert à l&#x27;exclusion diagnostique différentielle. Dans l&#x27;acné vulgaire, le tronc et les épaules seraient typiquement touchés, dans l&#x27;eczéma atopique, les plis de flexion.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Cuir chevelu <span class="patient-response">[Sans particularité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le cuir chevelu reste généralement épargné dans la dermatite périorale. Une atteinte ferait suspecter un eczéma séborrhéique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Ongles <span class="patient-response">[Statut normal]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Muqueuses <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Conjonctives <span class="patient-response">[Conjonctives et sclères sans particularité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Examen des conjonctives pour exclure une atteinte oculaire de la dermatite périorificielle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Muqueuse buccale <span class="patient-response">[Sans particularité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La muqueuse buccale reste généralement épargnée dans la dermatite périorale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/29</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Question 1 : Quel est votre diagnostic de travail le plus probable et quelles observations anamnestiques et cliniques plaident en sa faveur ? <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail : dermatite périorale <span class="patient-response">[Dermatite périorale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La formulation correcte du diagnostic de travail est une condition préalable à la justification structurée lors des étapes suivantes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Indices anamnestiques · Cosmétiques <span class="patient-response">[Soin excessif, cosmétiques multiples]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les cosmétiques et les produits de soin occlusifs perturbent la barrière cutanée et sont considérés comme un facteur déclenchant important de la dermatite périorale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Indices anamnestiques · Profil de rebond stéroïdien <span class="patient-response">[Amélioration initiale, puis aggravation par effet rebond]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les stéroïdes topiques ont un effet anti-inflammatoire à court terme, mais entretiennent la maladie à long terme. Le profil de rebond après l&#x27;arrêt oriente nettement la probabilité vers une dermatite périorale et s&#x27;oppose à un simple eczéma.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Indices anamnestiques · Caractère des symptômes <span class="patient-response">[Brûlures, pratiquement pas de prurit]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une légère sensation de brûlure en l&#x27;absence de prurit ou avec un prurit minime est typique de la dermatite périorale. Un prurit prononcé orienterait plutôt vers un eczéma de contact ou un eczéma atopique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-3" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Résultats cliniques · Localisation périorale <span class="patient-response">[Périorale, périnasale, symétrique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La prédominance périorale et périnasale est caractéristique de la dermatite périorale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-4" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Résultats cliniques · Lisière des lèvres respectée <span class="patient-response">[Bordure libre autour du rouge des lèvres]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La zone exempte de symptômes autour du rouge des lèvres est le signe clinique distinctif de la dermatite périorale et la différencie de l&#x27;acné et de la rosacée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-5" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Résultats cliniques · Papules érythémateuses monomorphes <span class="patient-response">[Papules monomorphes, pas de comédons]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;aspect monomorphe sans comédons s&#x27;oppose à l&#x27;acné vulgaire et est typique de la dermatite périorale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-6" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Question 2 : Quels diagnostics différentiels envisagez-vous ? Justifiez les plus importants avec, pour chacun, des arguments pour et contre. <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Acné vulgaire <span class="patient-response">[Acné vulgaire]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Acné vulgaire · ⊕ Pour <span class="patient-response">[Âge 19 ans, papulopustules, visage]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Chez une patiente de 19 ans présentant des lésions papulopustuleuses sur le visage, l&#x27;acné vulgaire est le diagnostic différentiel le plus fréquent et le plus adapté à l&#x27;âge.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Acné vulgaire · ⊖ Contre <span class="patient-response">[Pas de comédons, prédominance périorale, rebond stéroïdien]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;absence de comédons est l&#x27;argument le plus fort contre l&#x27;acné vulgaire. De plus, la prédominance périorale avec respect du rouge des lèvres ainsi que le profil de rebond stéroïdien s&#x27;opposent clairement à ce diagnostic.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Eczéma de contact<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Diagnostic différentiel cliniquement très pertinent en raison de l&#x27;anamnèse cosmétique importante. Le diagnostic préalable du médecin de famille (eczéma inflammatoire) allait dans ce sens sur le plan physiopathologique.</span></span> <span class="patient-response">[Eczéma de contact allergique ou irritatif]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Eczéma de contact · ⊕ Pour <span class="patient-response">[Cosmétiques multiples, brûlures, localisation faciale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;anamnèse cosmétique importante rend un eczéma de contact plausible. Le médecin de famille a également pensé initialement à cette possibilité, ce qui souligne la similitude clinique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-4" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Eczéma de contact · ⊖ Contre <span class="patient-response">[Pratiquement pas de prurit, pas de desquamation, répartition périorale typique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans l&#x27;eczéma de contact, le prurit est au premier plan, et la morphologie est plutôt eczémateuse et desquamative. La répartition périorale classique respectant le rouge des lèvres et le profil de rebond stéroïdien s&#x27;opposent à un eczéma de contact.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-5" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Rosacée<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La rosacée est le diagnostic différentiel classique des dermatoses faciales papulopustuleuses. Cliniquement, elle est nettement moins probable dans ce cas que l&#x27;acné ou l&#x27;eczéma de contact.</span></span> <span class="patient-response">[Rosacée (forme papulopustuleuse)]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-6" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Rosacée · ⊕ Pour <span class="patient-response">[Papules, pustules, érythème, localisation faciale centrale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La rosacée papulopustuleuse peut présenter des lésions cliniquement similaires et touche également la région centrale du visage.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-7" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Rosacée · ⊖ Contre <span class="patient-response">[Âge 19 ans, pas de télangiectasies, pas de flush, rouge des lèvres respecté]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La rosacée commence généralement à partir de 30 ans. L&#x27;absence de télangiectasies, l&#x27;absence de flush, la répartition périorale plutôt que centrofaciale ainsi que le respect du rouge des lèvres s&#x27;opposent nettement à ce diagnostic.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-8" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Question 3 : Quelles investigations complémentaires sont nécessaires pour confirmer votre diagnostic de travail ? <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic clinique <span class="patient-response">[Diagnostic clinique, pas d&#x27;examens complémentaires]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La dermatite périorale est diagnostiquée sur la base du tableau clinique typique. Les examens de laboratoire, la biopsie ou l&#x27;imagerie ne sont pas indiqués en présence de résultats clairs.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Absence d&#x27;examens complémentaires <span class="patient-response">[Aucun examen complémentaire nécessaire]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En présence d&#x27;une morphologie typique et d&#x27;une anamnèse concordante, renoncer à des examens complémentaires est la bonne décision. Une biopsie ou un bilan allergologique ne sont indiqués qu&#x27;en cas d&#x27;évolution atypique ou d&#x27;échec thérapeutique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Question 4 : Si votre diagnostic de travail se confirme, quelle serait votre procédure ultérieure ? <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Prise en charge de base : thérapie zéro correcte · Arrêt des stéroïdes <span class="patient-response">[Arrêter immédiatement les stéroïdes topiques]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les glucocorticoïdes topiques entretiennent la dermatite périorale à long terme et entraînent une aggravation typique par effet rebond après l&#x27;arrêt. L&#x27;arrêt est la mesure thérapeutique individuelle la plus importante.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prise en charge de base : thérapie zéro correcte · Réduction des soins <span class="patient-response">[Réduire tous les cosmétiques et produits de soin, nettoyage doux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La réduction rigoureuse de tous les cosmétiques et produits de soin soulage la barrière cutanée altérée. Le nettoyage doit se faire uniquement à l&#x27;eau ou avec un syndet doux.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Éducation de la patiente · Cause <span class="patient-response">[Les soins excessifs et les stéroïdes perturbent la barrière cutanée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;utilisation excessive de cosmétiques et de stéroïdes topiques entraîne une altération de la barrière cutanée avec inflammation chronique. La compréhension de cette physiopathologie est une condition préalable à l&#x27;observance de la patiente.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Éducation de la patiente · Évolution et gestion des attentes <span class="patient-response">[Aggravation initiale possible, guérison en 1-3 mois]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Après l&#x27;arrêt des stéroïdes, une aggravation temporaire par effet rebond est typique et normale. La guérison complète prend généralement un à trois mois. Cette information est cruciale pour l&#x27;observance de la patiente.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Contrôle d&#x27;évolution <span class="patient-response">[Contrôle dans 4-8 semaines]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-4" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Traitement élargi · Traitement topique anti-inflammatoire <span class="patient-response">[Antibiotique topique, inhibiteur de la calcineurine topique ou acide azélaïque]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les antibiotiques topiques et les immunomodulateurs ont un effet principalement anti-inflammatoire dans la dermatite périorale. Ils sont indiqués en complément de la thérapie zéro si celle-ci ne suffit pas.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-5" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Traitement élargi · Escalade systémique en cas d&#x27;échec thérapeutique <span class="patient-response">[Tétracycline orale pendant plusieurs semaines]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les tétracyclines systémiques sont réservées comme traitement de recours pour les formes graves ou résistantes au traitement. Compte tenu de la forme légère présente ici, cette escalade n&#x27;est pas indiquée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-6" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Question 5 : Quelles complications devez-vous identifier et pour quels symptômes la patiente doit-elle se représenter immédiatement ? <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Complications / Signes d&#x27;alarme · Atteinte oculaire <span class="patient-response">[Rougeur oculaire, brûlures, troubles visuels → consultation ophtalmologique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La dermatite périorale peut, sous forme de dermatite périorificielle, toucher également la région périoculaire. Les symptômes oculaires sont le signe d&#x27;alarme le plus important et doivent faire l&#x27;objet d&#x27;une évaluation ophtalmologique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Complications / Signes d&#x27;alarme · Résistance au traitement <span class="patient-response">[Persistance malgré la thérapie zéro pendant 4-8 semaines → réévaluer le diagnostic]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En l&#x27;absence d&#x27;amélioration après une thérapie zéro rigoureuse, le diagnostic doit être remis en question. Des diagnostics différentiels tels que la démodécose, la dermatite périorale granulomateuse ou le lupus érythémateux doivent alors être spécifiquement exclus.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Complications / Signes d&#x27;alarme · Infection secondaire <span class="patient-response">[Croûtes mélicériques (jaune miel), augmentation des pustules, douleurs → traitement antibiotique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une surinfection bactérienne (généralement par Staphylococcus aureus) peut survenir sur des lésions excoriées ou fortement enflammées et nécessite, selon l&#x27;intensité, un traitement antibiotique topique ou systémique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Complications / Signes d&#x27;alarme · Symptômes généraux <span class="patient-response">[Fièvre, sensation de maladie → envisager un autre diagnostic]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les symptômes systémiques comme la fièvre sont atypiques dans la dermatite périorale et doivent faire suspecter un autre diagnostic.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les inquiétudes, les besoins, les préoccupations et les attentes de la patiente et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l&#x27;entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur logique tout en restant flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée à la patiente, favorise la compréhension par la répétition, la reformulation, la synthèse et les explications, et utilise de manière ciblée la voix, le débit de parole et les pauses.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise de manière ciblée le contact visuel, les expressions faciales, les gestes, la posture et la distance pour créer une atmosphère d&#x27;entretien bienveillante, de confiance et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/79</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Localisation</strong> — La localisation périorale et périnasale est hautement caractéristique de la <span class="c-red">dermatite</span> périorale. Le respect du rouge des lèvres est le signe clinique distinctif.</li><li><strong>⊖ Facteurs soulageants</strong> — L&#x27;automédication infructueuse avec des produits contre l&#x27;acné est un indice important : les produits contre l&#x27;acné contenant de l&#x27;acide salicylique ou du peroxyde de benzoyle n&#x27;ont pas d&#x27;effet sur la <span class="c-red">dermatite</span> périorale et peuvent irriter davantage la barrière cutanée.</li><li><strong>Gravité</strong> — La gravité n&#x27;est pas un critère diagnostique décisif pour la <span class="c-red">dermatite</span> périorale, car le diagnostic repose principalement sur la localisation, la morphologie et l&#x27;anamnèse. L&#x27;impact de la gêne subjective sur la patiente est plus important.</li><li><strong>Symptômes d&#x27;accompagnement</strong> — Dans AZYGOS, les patientes et les patients ne mentionnent délibérément pas de symptômes d&#x27;accompagnement pertinents à cette question ouverte. <span class="c-blue">Ce qui est évalué</span>, c&#x27;est le fait de poser des questions ciblées. Dans la réalité, cette question reste toutefois importante, car des indices déterminants sont parfois mentionnés spontanément.</li><li><strong>Traitement médical préalable</strong> — Un traitement médical préalable par crème stéroïdienne sous suspicion d&#x27;<span class="c-red">eczéma</span>, sans amélioration durable, est un indice important d&#x27;une erreur de diagnostic et oriente vers une <span class="c-red">dermatite</span> périorale.</li><li><strong>Stéroïdes topiques</strong> — Les glucocorticoïdes topiques entraînent généralement une amélioration initiale dans la <span class="c-red">dermatite</span> périorale grâce à leur effet anti-inflammatoire, suivie d&#x27;une aggravation due à l&#x27;irritation cutanée induite par les stéroïdes et au maintien de la maladie.</li><li><strong>Cosmétiques</strong> — L&#x27;utilisation excessive de cosmétiques et de produits de soin occlusifs perturbe la barrière cutanée et est considérée comme un facteur déclenchant important de la <span class="c-red">dermatite</span> périorale.</li><li><strong>Prurit</strong> — Le <span class="c-pink">prurit</span> est atypique ou peu prononcé dans la <span class="c-red">dermatite</span> périorale. Un <span class="c-pink">prurit</span> prononcé oriente plutôt vers un <span class="c-red">eczéma atopique</span> ou de contact.</li><li><strong>Douleurs / Brûlures</strong> — Une légère sensation de brûlure est typique de la <span class="c-red">dermatite</span> périorale. Les <span class="c-pink">douleurs</span> sont atypiques et doivent faire suspecter une infection secondaire ou un autre diagnostic.</li><li class="theorie-sous-groupe"><strong>Peau</strong> — L&#x27;anamnèse dermatologique par système sert à la différenciation diagnostique. L&#x27;absence de comédons est le critère négatif le plus important contre l&#x27;acné vulgaire.</li><li><strong>Peau · Comédons</strong> — Différenciation importante par rapport à l&#x27;acné vulgaire.</li><li><strong>Symptômes généraux</strong> — Les symptômes systémiques comme la <span class="c-pink">fièvre</span> sont atypiques dans la <span class="c-red">dermatite</span> périorale et doivent faire envisager d&#x27;autres diagnostics.</li><li class="theorie-sous-groupe"><strong>Toxiques</strong> — La consommation d&#x27;<span class="c-purple">alcool</span>, de <span class="c-purple">tabac</span> et de drogues est recherchée par souci d&#x27;exhaustivité, mais ne constitue pas un facteur déclenchant central de la <span class="c-red">dermatite</span> périorale.</li><li><strong>Allergies</strong> — Des allergies connues peuvent indiquer une prédisposition atopique, qui peut être un facteur prédisposant à la <span class="c-red">dermatite</span> périorale. Chez cette patiente, aucune allergie n&#x27;est connue et cela n&#x27;est pas décisif pour le diagnostic.</li><li><strong>Profession</strong> — La profession peut donner des indices sur d&#x27;éventuels facteurs déclenchants cutanés, tels que des substances irritantes, l&#x27;humidité ou des conditions occlusives. Dans le commerce de détail, ces facteurs sont d&#x27;une importance secondaire dans ce cas.</li><li><strong>Charge psychosociale</strong> — Les patientes atteintes de <span class="c-red">dermatite</span> périorale souffrent souvent de stigmatisation et d&#x27;une altération de l&#x27;image corporelle. S&#x27;enquérir de la honte, du retrait social ou des problèmes d&#x27;estime de soi est important pour une prise en charge globale.</li></ul>
+</div><div class="theorie-section">
+    <h4>État clinique</h4>
+    <ul><li><strong>État général</strong> — L&#x27;état général est évalué par <span class="c-green">inspection</span>. Un état général sans particularité s&#x27;oppose à un processus pathologique systémique.</li><li><strong>Observation cutanée du visage</strong> — La répartition périorale symétrique respectant le rouge des lèvres et l&#x27;absence de comédons constituent la signature clinique de la <span class="c-red">dermatite</span> périorale et la distinguent clairement de l&#x27;acné vulgaire et de la rosacée.</li><li><strong>Tronc et membres</strong> — L&#x27;<span class="c-green">inspection</span> du tronc et des membres sert à l&#x27;exclusion diagnostique différentielle. Dans l&#x27;acné vulgaire, le tronc et les épaules seraient typiquement touchés, dans l&#x27;<span class="c-red">eczéma atopique</span>, les plis de flexion.</li><li><strong>Cuir chevelu</strong> — Le cuir chevelu reste généralement épargné dans la <span class="c-red">dermatite</span> périorale. Une atteinte ferait suspecter un <span class="c-red">eczéma séborrhéique</span>.</li><li><strong>Conjonctives</strong> — Examen des conjonctives pour exclure une atteinte oculaire de la <span class="c-red">dermatite</span> périorificielle.</li><li><strong>Muqueuse buccale</strong> — La muqueuse buccale reste généralement épargnée dans la <span class="c-red">dermatite</span> périorale.</li></ul>
+</div><div class="theorie-section">
+    <h4>Raisonnement clinique</h4>
+    <ul><li><strong>Diagnostic de travail : dermatite périorale</strong> — La formulation correcte du diagnostic de travail est une condition préalable à la justification structurée lors des étapes suivantes.</li><li><strong>Indices anamnestiques · Cosmétiques</strong> — Les cosmétiques et les produits de soin occlusifs perturbent la barrière cutanée et sont considérés comme un facteur déclenchant important de la <span class="c-red">dermatite</span> périorale.</li><li><strong>Indices anamnestiques · Profil de rebond stéroïdien</strong> — Les stéroïdes topiques ont un effet anti-inflammatoire à court terme, mais entretiennent la maladie à long terme. Le profil de rebond après l&#x27;arrêt oriente nettement la probabilité vers une <span class="c-red">dermatite</span> périorale et s&#x27;oppose à un simple <span class="c-red">eczéma</span>.</li><li><strong>Indices anamnestiques · Caractère des symptômes</strong> — Une légère sensation de brûlure en l&#x27;absence de <span class="c-pink">prurit</span> ou avec un <span class="c-pink">prurit</span> minime est typique de la <span class="c-red">dermatite</span> périorale. Un <span class="c-pink">prurit</span> prononcé orienterait plutôt vers un <span class="c-red">eczéma</span> de contact ou un <span class="c-red">eczéma atopique</span>.</li><li><strong>Résultats cliniques · Localisation périorale</strong> — La prédominance périorale et périnasale est caractéristique de la <span class="c-red">dermatite</span> périorale.</li><li><strong>Résultats cliniques · Lisière des lèvres respectée</strong> — La zone exempte de symptômes autour du rouge des lèvres est le signe clinique distinctif de la <span class="c-red">dermatite</span> périorale et la différencie de l&#x27;acné et de la rosacée.</li><li><strong>Résultats cliniques · Papules érythémateuses monomorphes</strong> — L&#x27;aspect monomorphe sans comédons s&#x27;oppose à l&#x27;acné vulgaire et est typique de la <span class="c-red">dermatite</span> périorale.</li><li><strong>DD Acné vulgaire · ⊕ Pour</strong> — Chez une patiente de 19 ans présentant des lésions papulopustuleuses sur le visage, l&#x27;acné vulgaire est le <span class="c-yellow">diagnostic différentiel</span> le plus fréquent et le plus adapté à l&#x27;âge.</li><li><strong>DD Acné vulgaire · ⊖ Contre</strong> — L&#x27;absence de comédons est l&#x27;argument le plus fort contre l&#x27;acné vulgaire. De plus, la prédominance périorale avec respect du rouge des lèvres ainsi que le profil de rebond stéroïdien s&#x27;opposent clairement à ce diagnostic.</li><li class="theorie-sous-groupe"><strong>DD Eczéma de contact</strong> — <span class="c-yellow">Diagnostic différentiel</span> cliniquement très pertinent en raison de l&#x27;anamnèse cosmétique importante. Le diagnostic préalable du médecin de famille (<span class="c-red">eczéma</span> inflammatoire) allait dans ce sens sur le plan physiopathologique.</li><li><strong>DD Eczéma de contact · ⊕ Pour</strong> — L&#x27;anamnèse cosmétique importante rend un <span class="c-red">eczéma</span> de contact plausible. Le médecin de famille a également pensé initialement à cette possibilité, ce qui souligne la similitude clinique.</li><li><strong>DD Eczéma de contact · ⊖ Contre</strong> — Dans l&#x27;<span class="c-red">eczéma</span> de contact, le <span class="c-pink">prurit</span> est au premier plan, et la morphologie est plutôt eczémateuse et desquamative. La répartition périorale classique respectant le rouge des lèvres et le profil de rebond stéroïdien s&#x27;opposent à un <span class="c-red">eczéma</span> de contact.</li><li class="theorie-sous-groupe"><strong>DD Rosacée</strong> — La rosacée est le <span class="c-yellow">diagnostic différentiel</span> classique des <span class="c-red">dermatoses</span> faciales papulopustuleuses. Cliniquement, elle est nettement moins probable dans ce cas que l&#x27;acné ou l&#x27;<span class="c-red">eczéma</span> de contact.</li><li><strong>DD Rosacée · ⊕ Pour</strong> — La rosacée papulopustuleuse peut présenter des lésions cliniquement similaires et touche également la région centrale du visage.</li><li><strong>DD Rosacée · ⊖ Contre</strong> — La rosacée commence généralement à partir de 30 ans. L&#x27;absence de télangiectasies, l&#x27;absence de flush, la répartition périorale plutôt que centrofaciale ainsi que le respect du rouge des lèvres s&#x27;opposent nettement à ce diagnostic.</li><li><strong>Diagnostic clinique</strong> — La <span class="c-red">dermatite</span> périorale est diagnostiquée sur la base du tableau clinique typique. Les examens de laboratoire, la biopsie ou l&#x27;imagerie ne sont pas indiqués en présence de résultats clairs.</li><li><strong>Absence d&#x27;examens complémentaires</strong> — En présence d&#x27;une morphologie typique et d&#x27;une anamnèse concordante, renoncer à des examens complémentaires est la bonne décision. Une biopsie ou un bilan allergologique ne sont indiqués qu&#x27;en cas d&#x27;évolution atypique ou d&#x27;échec thérapeutique.</li><li><strong>Prise en charge de base : thérapie zéro correcte · Arrêt des stéroïdes</strong> — Les glucocorticoïdes topiques entretiennent la <span class="c-red">dermatite</span> périorale à long terme et entraînent une aggravation typique par effet rebond après l&#x27;arrêt. L&#x27;arrêt est la mesure thérapeutique individuelle la plus importante.</li><li><strong>Prise en charge de base : thérapie zéro correcte · Réduction des soins</strong> — La réduction rigoureuse de tous les cosmétiques et produits de soin soulage la barrière cutanée altérée. Le nettoyage doit se faire uniquement à l&#x27;eau ou avec un syndet doux.</li><li><strong>Éducation de la patiente · Cause</strong> — L&#x27;utilisation excessive de cosmétiques et de stéroïdes topiques entraîne une altération de la barrière cutanée avec inflammation chronique. La compréhension de cette physiopathologie est une condition préalable à l&#x27;observance de la patiente.</li><li><strong>Éducation de la patiente · Évolution et gestion des attentes</strong> — Après l&#x27;arrêt des stéroïdes, une aggravation temporaire par effet rebond est typique et normale. La guérison complète prend généralement un à trois mois. Cette information est cruciale pour l&#x27;observance de la patiente.</li><li><strong>Traitement élargi · Traitement topique anti-inflammatoire</strong> — Les <span class="c-amber">antibiotiques</span> topiques et les immunomodulateurs ont un effet principalement anti-inflammatoire dans la <span class="c-red">dermatite</span> périorale. Ils sont indiqués en complément de la thérapie zéro si celle-ci ne suffit pas.</li><li><strong>Traitement élargi · Escalade systémique en cas d&#x27;échec thérapeutique</strong> — Les tétracyclines systémiques sont réservées comme traitement de recours pour les formes graves ou résistantes au traitement. Compte tenu de la forme légère présente ici, cette escalade n&#x27;est pas indiquée.</li><li><strong>Complications / Signes d&#x27;alarme · Atteinte oculaire</strong> — La <span class="c-red">dermatite</span> périorale peut, sous forme de <span class="c-red">dermatite</span> périorificielle, toucher également la région périoculaire. Les symptômes oculaires sont le <span class="c-yellow">signe d&#x27;alarme</span> le plus important et doivent faire l&#x27;objet d&#x27;une évaluation ophtalmologique.</li><li><strong>Complications / Signes d&#x27;alarme · Résistance au traitement</strong> — En l&#x27;absence d&#x27;amélioration après une thérapie zéro rigoureuse, le diagnostic doit être remis en question. Des <span class="c-yellow">diagnostics différentiels</span> tels que la <span class="c-red">démodécose</span>, la <span class="c-red">dermatite</span> périorale granulomateuse ou le lupus érythémateux doivent alors être spécifiquement exclus.</li><li><strong>Complications / Signes d&#x27;alarme · Infection secondaire</strong> — Une surinfection bactérienne (généralement par Staphylococcus aureus) peut survenir sur des lésions excoriées ou fortement enflammées et nécessite, selon l&#x27;intensité, un traitement <span class="c-amber">antibiotique</span> topique ou systémique.</li><li><strong>Complications / Signes d&#x27;alarme · Symptômes généraux</strong> — Les symptômes systémiques comme la <span class="c-pink">fièvre</span> sont atypiques dans la <span class="c-red">dermatite</span> périorale et doivent faire suspecter un autre diagnostic.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Poste de raisonnement clinique :</li><li>Déduction et justification structurées du diagnostic et de la prise en charge à partir de l&#x27;anamnèse et des résultats d&#x27;examens</li><li>Reconnaissance de la constellation typique des résultats périoraux ainsi que de l&#x27;anamnèse typique avec absence de comédons et utilisation de stéroïdes</li><li>Différenciation active par rapport à l&#x27;acné vulgaire, à l&#x27;<span class="c-red">eczéma</span> de contact et à la rosacée</li><li>Prise en charge rigoureuse axée sur la thérapie zéro et l&#x27;évitement de la surthérapie</li><li>Aperçu AEDP</li><li>Anamnèse : éruption périorale, en partie périnasale, progressive depuis 6 semaines ; amélioration initiale sous crème de cortisone topique, puis aggravation ; multiples produits de soin ; pratiquement pas de <span class="c-pink">prurit</span>, légères brûlures ; pas de symptômes généraux</li><li>Statut clinique : papules/papulopustules érythémateuses périorales symétriques ; rouge des lèvres respecté ; pas de comédons ; le reste de l&#x27;examen est sans particularité</li><li>Diagnostic : diagnostic clinique ; aucun examen complémentaire nécessaire ; DD acné vulgaire, <span class="c-red">eczéma</span> de contact, rosacée ; l&#x27;absence de comédons, la localisation périorale, l&#x27;absence de télangiectasies et l&#x27;anamnèse d&#x27;utilisation de stéroïdes s&#x27;y opposent</li><li>Procédure : thérapie zéro avec arrêt des stéroïdes topiques et réduction des soins de la peau ; si nécessaire, <span class="c-amber">antibiotique</span> topique ou inhibiteur de la calcineurine ; information sur l&#x27;aggravation initiale ; contrôle dans 4 à 8 semaines</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Traduit automatiquement puis vérifié par une IA face à l&#x27;original allemand.</p><p>Cabinet de dermatologie | Lina Huber, 19 ans | <span class="c-pink">Éruption cutanée</span> sur le visage</p><p>La patiente de 19 ans se présente dans un cabinet de dermatologie <span class="c-blue">pour l&#x27;évaluation</span> d&#x27;une <span class="c-pink">éruption cutanée</span> sur le visage, progressive depuis environ 6 semaines. Deux semaines auparavant, une évaluation par le médecin de famille a été réalisée pour une <span class="c-pink">éruption cutanée</span> inflammatoire du visage (suspicion d&#x27;<span class="c-red">eczéma</span>) avec un <span class="c-amber">traitement topique</span> correspondant, mais sans amélioration durable. Sous la crème de cortisone topique <span class="c-red">prescrite</span>, une brève amélioration initiale est apparue, suivie d&#x27;une nette aggravation. De plus, la patiente utilise régulièrement plusieurs cosmétiques et produits de soin sur le visage et aime se maquiller.</p><p>Cliniquement, on observe une atteinte cutanée symétrique à prédominance périorale, en partie périnasale, avec des papules érythémateuses et quelques papulopustules isolées, respectant le rouge des lèvres et sans comédons. Il n&#x27;y a pratiquement pas de <span class="c-pink">prurit</span>, parfois de légères brûlures, pour un bon état général sans <span class="c-pink">fièvre</span> ni autres symptômes généraux.</p><p>Cette constellation de résultats est typique d&#x27;une <span class="c-red">dermatite</span> périorale et permet de poser un diagnostic clinique sans examens complémentaires. Les <span class="c-yellow">diagnostics différentiels</span> incluent l&#x27;acné vulgaire, l&#x27;<span class="c-red">eczéma</span> de contact et la rosacée. Ils sont moins probables en raison de l&#x27;absence de comédons, de la localisation périorale respectant le rouge des lèvres, de l&#x27;absence de télangiectasies et de l&#x27;anamnèse caractéristique d&#x27;utilisation de stéroïdes.</p><p>Sur le plan thérapeutique, la priorité est accordée à une thérapie zéro stricte avec arrêt des stéroïdes topiques et réduction des soins de la peau, complétée si nécessaire par un <span class="c-amber">antibiotique</span> topique ou un inhibiteur de la calcineurine. La patiente est informée de la cause et de l&#x27;évolution, avec une possible aggravation initiale après l&#x27;arrêt des stéroïdes et une amélioration lente. Un contrôle d&#x27;évolution est prévu dans 4 à 8 semaines.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+<div class="images-wrapper">
+<div class="annexe-item" data-image-id="img1">
+    <div class="annexe-title">Observation cutanée du visage</div>
+    <div class="annexe-description">Périoral/périnasal : papules érythémateuses et papulopustules, rouge des lèvres respecté, pas de comédons. Compatible avec une dermatite périorale.</div>
+    <div class="annexe-image">
+        <img src="data:image/jpeg;base64,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" alt="Observation cutanée du visage" loading="lazy">
+    </div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 27,
+        "examen": 7,
+        "management": 29,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 4,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 5,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

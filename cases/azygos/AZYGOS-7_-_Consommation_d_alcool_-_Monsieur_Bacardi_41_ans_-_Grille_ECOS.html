@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-7 - Consommation d&#x27;alcool - Monsieur Bacardi, 41 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-7 - Consommation d&#x27;alcool</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-7" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet du médecin de famille</p>
+            <p style="margin: 5px 0;">👤 Monsieur Bacardi, 41 ans</p>
+            <p style="margin: 5px 0;">🏷️ Psychiatrie · Poste de communication · Difficile · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/41</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Anamnèse d’addiction <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d’ouverture <span class="patient-response">[J’ai besoin de votre aide. Ma consommation d’alcool m’a échappé des mains, je veux enfin y faire quelque chose.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Formulation du/de la patient·e à la question d’ouverture. Important: la démarche active de recherche d’aide et la volonté de changement sont visibles ici, ancrage pertinent pour l’entretien motivationnel ultérieur.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dynamique temporelle · Début <span class="patient-response">[Il y a 8 ans]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dynamique temporelle · Évolution <span class="patient-response">[D’abord en augmentation, puis stable à un niveau élevé depuis quelques années.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Déclencheur <span class="patient-response">[L’épouse est décédée il y a 8 ans. Depuis, la consommation a commencé.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Schéma de consommation · Quantité/fréquence <span class="patient-response">[Quotidiennement env. 2 L de bière et une bouteille de vin, occasionnellement du rhum en plus]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Schéma de consommation · Circonstances de la consommation <span class="patient-response">[Autrefois en société, actuellement seul à la maison.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Schéma de consommation · Effet recherché <span class="patient-response">[Oublier. Se détendre. Diminuer l’angoisse.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Traitements de sevrage antérieurs <span class="patient-response">[Aucun]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Complications de sevrage <span class="patient-response">[Non, pas de crises convulsives, d’hallucinations ni de delirium connus jusqu’ici.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des antécédents de crises de sevrage ou de delirium tremens augmentent nettement le risque d’un sevrage compliqué et influencent le choix du cadre (surveillance plus intensive, éventuellement benzodiazépines à dose plus élevée).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Dépistage d’addiction <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">CAGE<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Score CAGE: ≥2 réponses positives suggèrent une dépendance à l’alcool. Sensibilité ~85%, spécificité ~89% pour la dépendance à l’alcool en médecine de famille.</span></span></span> · Cutting down <span class="patient-response">[Oui, mais cela n’a pas fonctionné.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Question: Avez-vous déjà essayé de boire moins?</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">CAGE · Annoyed <span class="patient-response">[Oui, je me dispute beaucoup avec ma fille. Elle me critique souvent.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Question: Vous êtes-vous déjà senti·e agacé·e lorsque d’autres ont évoqué votre façon de boire?</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">CAGE · Guilty <span class="patient-response">[Oui]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Question: Avez-vous déjà ressenti de la culpabilité à propos de votre consommation d’alcool?</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">CAGE · Eye-opener <span class="patient-response">[Parfois.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Question: Vous est-il déjà arrivé de boire dès le réveil pour vous calmer ou pour commencer la journée?</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Critères diagnostiques de la dépendance aux substances (CIM-11) <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Perte de contrôle / Craving<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">CIM-11 (6C40.2): diagnostic de dépendance aux substances si au moins 2 des 3 domaines de critères (perte de contrôle/craving, tolérance/sevrage, priorisation malgré dommages) sont remplis, persistant pendant au moins 12 mois ou au moins 1 mois quotidiennement/presque quotidiennement.</span></span></span> · Craving <span class="patient-response">[Oui, l’envie s’est intensifiée au fil des ans.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Perte de contrôle / Craving · Perte de contrôle <span class="patient-response">[Quand je commence à boire, je ne peux plus m’arrêter.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Tolérance / Sevrage · Développement de tolérance <span class="patient-response">[Je supporte nettement plus que les autres.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Tolérance / Sevrage · Symptômes de sevrage <span class="patient-response">[Léger tremblement le matin si je n’ai pas bu.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Priorisation malgré dommages · Perte d’intérêts <span class="patient-response">[Plus de loisirs, tout tourne autour de l’alcool.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Priorisation malgré dommages · Conséquences sociales <span class="patient-response">[Disputes fréquentes avec la fille à cause de l’alcool.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Priorisation malgré dommages · Conséquences professionnelles <span class="patient-response">[Perte d’emploi il y a trois mois pour manque de fiabilité.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Conséquences somatiques <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Dépistage<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Recueil large des possibles conséquences liées à l’alcool. Critère de seuil: une couverture suffisante du thème (au moins 2 sur 5 aspects) est pertinente, chaque détail n’est pas requis.</span></span></span> · Sommeil <span class="patient-response">[Je dors mal, je ne m’endors souvent qu’après avoir bu de l’alcool.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage · Poids/Appétit <span class="patient-response">[Appétit faible, légère perte de poids récemment.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage · Estomac <span class="patient-response">[Parfois pyrosis, sinon pas de plaintes gastriques.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage · Sensibilité <span class="patient-response">[Pas d’engourdissement ni de picotements aux mains ou aux pieds.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dépistage · Chutes <span class="patient-response">[Aucune chute.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Dépistage psychiatrique <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Humeur / Affect <span class="patient-response">[Abattu, souvent des sentiments de culpabilité, je me sens dépassé.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Actuellement, indices de symptomatologie dépressive. Dans le cadre d’une dépendance active à l’alcool, difficile à distinguer d’une symptomatologie induite par substances. Nouvelle évaluation indiquée après sevrage.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Cognition <span class="patient-response">[Pas de troubles persistants de la mémoire ou de la pensée au quotidien. Amnésies alcooliques lors de fêtes.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité · Dégoût de la vie <span class="patient-response">[Oui, parfois, quand c’est particulièrement difficile]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité · Idées suicidaires <span class="patient-response">[Rarement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-3" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité · Plan/tentative de suicide <span class="patient-response">[Non, aucun plan concret ni tentative]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-4" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité · Auto-agression <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-5" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité · Capacité d’accord <span class="patient-response">[Oui, je peux promettre que je me manifesterais si j’étais en suicidalité aiguë]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-6" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents <span class="patient-response">[pas d’antécédents.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[aucun]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Tabagisme <span class="patient-response">[Oui, 1/2 paquet par jour]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Drogues <span class="patient-response">[Aucune]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Chez les patients souffrant d’addiction, la consommation mixte est fréquente. La consommation concomitante d’alcool et d’autres substances augmente considérablement le risque d’un sevrage compliqué.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-3" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+<div class="criteria-row" id="criteria-a7">
+    <div>
+        <div class="criteria-text">7. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Maladies addictives familiales <span class="patient-response">[Père et oncle paternel avec un problème d’alcool marqué. Le père a travaillé dans les vignobles valaisans.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a7-detail-0" value="1" onchange="updateDetailScore('a7', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a7">
+            <textarea class="comment-textarea" id="comment-a7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a7">0</div>
+</div>
+<div class="criteria-row" id="criteria-a8">
+    <div>
+        <div class="criteria-text">8. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a8')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation de logement <span class="patient-response">[Vit seul dans la maison parentale d’un petit village valaisan.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-0" value="1" onchange="updateDetailScore('a8', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Actuellement au chômage. Auparavant, de longue date informaticien à Sion.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Contexte professionnel et structure quotidienne. Attention: la perte d’emploi en tant que conséquence de la consommation est évaluée séparément dans la section CIM-11 sous « Conséquences professionnelles ».</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-1" value="1" onchange="updateDetailScore('a8', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Famille <span class="patient-response">[Deux enfants adultes. Fille dans le village voisin, fils plus éloigné.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-2" value="1" onchange="updateDetailScore('a8', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs de protection <span class="patient-response">[Relation avec les enfants, forte volonté de changement, attache de longue date au cabinet de médecine de famille.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La recherche active de facteurs de protection est cliniquement centrale pour l’évaluation du risque (en particulier suicidalité) ainsi que pour le pronostic et la planification thérapeutique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a8-detail-3" value="1" onchange="updateDetailScore('a8', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a8">
+            <textarea class="comment-textarea" id="comment-a8" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a8'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a8">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/0</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/14</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Diagnostic &amp; Reconnaissance <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Annoncer le diagnostic <span class="patient-response">[Dépendance à l’alcool, une maladie traitable.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Phase de focusing dans l’entretien motivationnel. Communiquer le diagnostic de manière compréhensible, sans étiquetage stigmatisant. Présenter cela comme une maladie plutôt qu’un défaut de caractère.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Reconnaître la recherche d’aide <span class="patient-response">[C’est une étape importante que vous avez franchie aujourd’hui.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Phase d’engaging dans l’entretien motivationnel. Essentiel pour établir la relation et réduire la honte dans les maladies stigmatisées comme la dépendance à l’alcool.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Valoriser les ressources <span class="patient-response">[Vos enfants sont une ressource importante sur ce chemin.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Nommer explicitement les facteurs de protection les renforce et soutient la motivation au changement. Lien avec l’anamnèse (facteurs de protection).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Entretien motivationnel <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Change Talk<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Phase d’evoking dans l’entretien motivationnel: explorer l’ambivalence, susciter et renforcer les propres arguments du patient pour le changement.</span></span></span> · Volonté de changement <span class="patient-response">[Oui.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Phase d’evoking: aborder directement la volonté du patient.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Change Talk · Arguments en faveur du changement <span class="patient-response">[Relation avec les enfants. Reprendre sa vie en main.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Change Talk: rendre explicites et renforcer les propres arguments du patient en faveur du changement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Change Talk · Ambivalence / Craintes <span class="patient-response">[Peur des émotions négatives, du vide sans alcool, du sevrage lui-même.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le travail de l’ambivalence est au cœur de l’entretien motivationnel. Aborder activement craintes et inconvénients; le patient se sent pris au sérieux plutôt que seulement poussé vers le changement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Fixer l’objectif thérapeutique <span class="patient-response">[Objectif: traitement hospitalier, puis accompagnement ambulatoire.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Phase de focusing dans l’entretien motivationnel. Un objectif commun et explicite renforce l’engagement et l’observance.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-3" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Thérapie <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Initier le sevrage <span class="patient-response">[Initier l’orientation pour un sevrage hospitalier.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le médecin de famille initie l’orientation (lettre d’adressage). Sevrage hospitalier avec traitement par benzodiazépines pour la prophylaxie des crises convulsives et du delirium tremens. Après sevrage, envisager un traitement anti-craving (acamprosate/naltrexone).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Information sur les risques du sevrage <span class="patient-response">[Un sevrage non contrôlé peut être mortel (crises convulsives, delirium).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le patient doit comprendre pourquoi une tentative en autonomie non contrôlée est dangereuse. Justification de la recommandation d’hospitalisation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Assurer la thiamine <span class="patient-response">[S’assurer que la clinique substitue la thiamine avant toute administration de glucose.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Obligatoire lors d’un sevrage alcoolique. L’encéphalopathie de Wernicke est potentiellement irréversible. Le médecin de famille veille à ce que la clinique d’admission en tienne compte (mention dans la lettre d’adressage).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Réseau &amp; Suivi <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Conseil en addictologie <span class="patient-response">[Connexion à Sucht Valais + groupes d’entraide (p. ex. Alcooliques anonymes).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La mise en réseau avec les services d’addictologie et les groupes d’entraide est un standard de la prise en charge en médecine de famille des troubles addictifs.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Rendez-vous de suivi <span class="patient-response">[Après le sevrage hospitalier: convenir d’un rendez-vous de suivi pour l’aftercare.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Communiquer clairement la séquence temporelle: d’abord sevrage hospitalier, puis suivi en médecine de famille. La continuité du suivi par le médecin de famille est déterminante pour la prévention des rechutes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prise en charge à long terme · Impliquer les proches <span class="patient-response">[Discuter l’implication de la fille, si souhaitée.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le travail avec les proches est pertinent en addictologie, la fille ayant été un déclencheur de la démarche d’aujourd’hui. Respecter l’autonomie du patient.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prise en charge à long terme · Thérapie cognitivo-comportementale <span class="patient-response">[Orientation vers une TCC ambulatoire après sevrage.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Thérapie standard fondée sur les preuves pour la prévention des rechutes. L’orientation est organisée par le médecin de famille après la sortie de clinique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les inquiétudes, besoins, préoccupations et attentes du/de la patient·e et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil rouge compréhensible et reste flexible.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de façon adaptée au/à la patient·e, favorise la compréhension par la répétition, le reflet, les résumés et les explications, et utilise de manière ciblée la voix, le débit et les pauses.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance pour créer une atmosphère d’entretien bienveillante, confiante et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/71</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Question d’ouverture</strong> — Formulation du/de la patient·e à la question d’ouverture. Important: la démarche active de recherche d’aide et la volonté de changement sont visibles ici, ancrage pertinent pour l’entretien motivationnel ultérieur.</li><li><strong>Complications de sevrage</strong> — Des antécédents de crises de sevrage ou de delirium tremens augmentent nettement le risque d’un sevrage compliqué et influencent le choix du cadre (surveillance plus intensive, éventuellement benzodiazépines à dose plus élevée).</li><li class="theorie-sous-groupe"><strong>CAGE</strong> — Score CAGE: ≥2 réponses positives suggèrent une dépendance à l’<span class="c-purple">alcool</span>. Sensibilité ~85%, spécificité ~89% pour la dépendance à l’<span class="c-purple">alcool</span> en médecine de famille.</li><li><strong>CAGE · Cutting down</strong> — Question: Avez-vous déjà essayé de boire moins?</li><li><strong>CAGE · Annoyed</strong> — Question: Vous êtes-vous déjà senti·e agacé·e lorsque d’autres ont évoqué votre façon de boire?</li><li><strong>CAGE · Guilty</strong> — Question: Avez-vous déjà ressenti de la culpabilité à propos de votre consommation d’<span class="c-purple">alcool</span>?</li><li><strong>CAGE · Eye-opener</strong> — Question: Vous est-il déjà arrivé de boire dès le réveil pour vous calmer ou pour commencer la journée?</li><li class="theorie-sous-groupe"><strong>Perte de contrôle / Craving</strong> — CIM-11 (6C40.2): diagnostic de dépendance aux substances si au moins 2 des 3 domaines de critères (perte de contrôle/craving, tolérance/sevrage, priorisation malgré dommages) sont remplis, persistant pendant au moins 12 mois ou au moins 1 mois quotidiennement/presque quotidiennement.</li><li class="theorie-sous-groupe"><strong>Dépistage</strong> — Recueil large des possibles conséquences liées à l’<span class="c-purple">alcool</span>. Critère de seuil: une couverture suffisante du thème (au moins 2 sur 5 aspects) est pertinente, chaque détail n’est pas requis.</li><li><strong>Humeur / Affect</strong> — Actuellement, indices de symptomatologie dépressive. Dans le cadre d’une dépendance active à l’<span class="c-purple">alcool</span>, difficile à distinguer d’une symptomatologie induite par substances. Nouvelle évaluation indiquée après sevrage.</li><li><strong>Noxes · Drogues</strong> — Chez les patients souffrant d’addiction, la consommation mixte est fréquente. La consommation concomitante d’<span class="c-purple">alcool</span> et d’autres substances augmente considérablement le risque d’un sevrage compliqué.</li><li><strong>Profession</strong> — Contexte professionnel et structure quotidienne. Attention: la perte d’emploi en tant que conséquence de la consommation est évaluée séparément dans la section CIM-11 sous « Conséquences professionnelles ».</li><li><strong>Facteurs de protection</strong> — La recherche active de facteurs de protection est cliniquement centrale <span class="c-blue">pour l’évaluation</span> du risque (en particulier suicidalité) ainsi que pour le pronostic et la planification thérapeutique.</li></ul>
+</div><div class="theorie-section">
+    <h4>Conseil &amp; Procédure</h4>
+    <ul><li><strong>Annoncer le diagnostic</strong> — Phase de focusing dans l’entretien motivationnel. Communiquer le diagnostic de manière compréhensible, sans étiquetage stigmatisant. Présenter cela comme une maladie plutôt qu’un défaut de caractère.</li><li><strong>Reconnaître la recherche d’aide</strong> — Phase d’engaging dans l’entretien motivationnel. Essentiel pour établir la relation et réduire la honte dans les maladies stigmatisées comme la dépendance à l’<span class="c-purple">alcool</span>.</li><li><strong>Valoriser les ressources</strong> — Nommer explicitement les facteurs de protection les renforce et soutient la motivation au changement. Lien avec l’anamnèse (facteurs de protection).</li><li class="theorie-sous-groupe"><strong>Change Talk</strong> — Phase d’evoking dans l’entretien motivationnel: explorer l’ambivalence, susciter et renforcer les propres arguments du patient pour le changement.</li><li><strong>Change Talk · Volonté de changement</strong> — Phase d’evoking: aborder directement la volonté du patient.</li><li><strong>Change Talk · Arguments en faveur du changement</strong> — Change Talk: rendre <span class="c-red">explicites</span> et renforcer les propres arguments du patient en faveur du changement.</li><li><strong>Change Talk · Ambivalence / Craintes</strong> — Le travail de l’ambivalence est au cœur de l’entretien motivationnel. Aborder activement craintes et inconvénients; le patient se sent pris au sérieux plutôt que seulement poussé vers le changement.</li><li><strong>Fixer l’objectif thérapeutique</strong> — Phase de focusing dans l’entretien motivationnel. Un objectif commun et <span class="c-red">explicite</span> renforce l’engagement et l’observance.</li><li><strong>Initier le sevrage</strong> — Le médecin de famille initie l’orientation (lettre d’adressage). Sevrage hospitalier avec traitement par benzodiazépines pour la prophylaxie des crises convulsives et du delirium tremens. Après sevrage, envisager un traitement anti-craving (acamprosate/naltrexone).</li><li><strong>Information sur les risques du sevrage</strong> — Le patient doit comprendre pourquoi une tentative en autonomie non contrôlée est dangereuse. Justification de la recommandation d’hospitalisation.</li><li><strong>Assurer la thiamine</strong> — Obligatoire lors d’un sevrage alcoolique. L’<span class="c-red">encéphalopathie</span> de Wernicke est potentiellement irréversible. Le médecin de famille veille à ce que la clinique d’admission en tienne compte (mention dans la lettre d’adressage).</li><li><strong>Conseil en addictologie</strong> — La mise en réseau avec les services d’addictologie et les groupes d’entraide est un standard de la prise en charge en médecine de famille des troubles addictifs.</li><li><strong>Rendez-vous de suivi</strong> — Communiquer clairement la séquence temporelle: d’abord sevrage hospitalier, puis suivi en médecine de famille. La continuité du suivi par le médecin de famille est déterminante pour la prévention des rechutes.</li><li><strong>Prise en charge à long terme · Impliquer les proches</strong> — Le travail avec les proches est pertinent en addictologie, la fille ayant été un déclencheur de la démarche d’aujourd’hui. Respecter l’autonomie du patient.</li><li><strong>Prise en charge à long terme · Thérapie cognitivo-comportementale</strong> — Thérapie standard fondée sur les preuves pour la prévention des rechutes. L’orientation est organisée par le médecin de famille après la sortie de clinique.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Classification diagnostique comme dépendance à l’<span class="c-purple">alcool</span> à l’aide du CAGE et des critères de la CIM-11</li><li>Évaluation de la suicidabilité et de la comorbidité dépressive</li><li>Entretien motivationnel et initiation du sevrage hospitalier</li><li>Aperçu du cas</li><li>Anamnèse et présentation</li><li>41 ans, patient de longue date, veuf, au chômage depuis 3 mois</li><li>Consommation d’<span class="c-purple">alcool</span> depuis 8 ans (env. 2 L de bière, 1 btle de vin, occasionnellement rhum)</li><li>Déclencheur: décès de l’épouse</li><li>CAGE 4/4, les trois clusters de la CIM-11 sont remplis</li><li>Humeur dépressive, pas de risque suicidaire aigu</li><li>Observation initiale: tremblement et foetor alcoholicus</li><li>Procédure</li><li>Parcourir les quatre phases de l’entretien motivationnel (Engaging, Focusing, Evoking, Planning)</li><li>Initier le sevrage hospitalier</li><li>Information du patient sur les risques du sevrage et assurer la thiamine</li><li>Addictologie, rendez-vous de suivi, TCC après sevrage, implication de la fille si souhaitée</li><li>Indications de simulation</li><li>Foetor non simulable (information préalable au/à la candidat·e), tremblement simulé</li><li>Pas d’examen clinique, pas de laboratoire</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Cabinet du médecin de famille | Monsieur Bacardi, 41 ans, ancien informaticien</p><p>Chez Monsieur Bacardi, 41 ans, il s’agit d’une dépendance à l’<span class="c-purple">alcool</span> avancée selon la CIM-11, évoluant depuis environ huit ans, sur fond d’une situation de charge psychosociale marquée. Dès le premier contact, on observe un tremblement fin des mains et un foetor alcoholicus discret, signes d’une consommation persistante élevée et d’une dépendance physique.</p><p>Sur le plan anamnestique, le patient rapporte une consommation quotidienne d’environ deux litres de bière, une bouteille de vin et occasionnellement du rhum. La consommation a débuté après le décès de son épouse il y a huit ans et s’est depuis stabilisée à un niveau élevé. Actuellement, le chômage existant depuis trois mois ainsi que le conflit croissant avec sa fille aggravent la situation. On note en parallèle un abaissement de l’humeur de type dépressif réactif et un dégoût de la vie épisodique, sans suicidabilité aiguë, avec des facteurs de protection préservés grâce à la relation avec ses deux enfants adultes. Sur le plan somatique, on retrouve des troubles du sommeil et une légère <span class="c-pink">perte de poids</span>; d’autres conséquences liées à l’<span class="c-purple">alcool</span> sont, sur le plan anamnestique, sans particularité.</p><p>Sur le plan diagnostique, quatre réponses positives au CAGE ainsi que les trois clusters centraux de la CIM-11 (contrôle perturbé avec craving et perte de contrôle, caractéristiques physiologiques avec développement de tolérance et tremblement de sevrage matinal, et priorisation avec perte d’intérêts et conséquences sociales et professionnelles) confirment le diagnostic. Il convient de souligner la forte volonté de changement que le patient exprime spontanément.</p><p>Il est attendu du/de la candidat·e qu’il/elle communique le diagnostic de manière compréhensible, reconnaisse la démarche de recherche d’aide et valorise les ressources existantes. Au fil de l’entretien, les quatre phases de l’entretien motivationnel doivent être parcourues (Engaging, Focusing, Evoking, Planning): écoute active, fixation d’objectifs communs, élaboration du Change Talk incluant l’ambivalence, et planification concrète des prochaines étapes.</p><p>Sur le plan thérapeutique, il existe une indication claire à initier un sevrage hospitalier avec un traitement par benzodiazépines, accompagné d’une information du patient sur les risques d’un sevrage non contrôlé (crises convulsives, delirium) ainsi que de l’assurance d’une substitution en thiamine par la clinique d’admission (prophylaxie de Wernicke). Par la suite, sont prévus la connexion avec un service d’addictologie (p. ex. Sucht Valais et des groupes d’entraide), un rendez-vous de suivi au cabinet du médecin de famille ainsi que l’orientation vers une thérapie cognitivo-comportementale ambulatoire pour la prévention des rechutes et, si le patient le <span class="c-red">souhaite</span>, l’implication de la fille en tant que personne de référence importante. Le pronostic est considéré comme favorable en raison de la forte volonté de changement et des facteurs de protection sociaux présents.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 41,
+        "examen": 0,
+        "management": 14,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 8,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 0,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 4,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

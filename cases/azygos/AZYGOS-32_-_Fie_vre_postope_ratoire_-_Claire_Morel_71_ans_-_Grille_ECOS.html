@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-32 - Fièvre postopératoire - Claire Morel, 71 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">28:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-32 - Fièvre postopératoire</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-32" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Unité d&#x27;hospitalisation chirurgicale</p>
+            <p style="margin: 5px 0;">👤 Claire Morel, 71 ans</p>
+            <p style="margin: 5px 0;">🏷️ Chirurgie · Présentation de cas · Difficile · 28 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/23</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Affection actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question ouverte d’entrée <span class="patient-response">[« Je ne me sens pas bien et mon ventre me fait plus mal »]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début / durée <span class="patient-response">[Depuis hier]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Mode d’apparition <span class="patient-response">[Plutôt insidieux. D’abord je me sentais mal, puis sont venues les nausées et des douleurs abdominales plus fortes]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[D’abord simplement malaise, puis nausées et douleurs abdominales plus fortes, depuis cette nuit assez intenses]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Localisation de la douleur <span class="patient-response">[Surtout au bas-ventre, à gauche et un peu au milieu]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Type de douleur <span class="patient-response">[C’est une douleur sourde et oppressante]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Intensité de la douleur <span class="patient-response">[En ce moment environ 7 sur 10.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs soulageants <span class="patient-response">[Quand je reste allongée au calme, c’est un peu mieux]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures déjà prises <span class="patient-response">[Antalgiques supplémentaires reçus, ont peu aidé; j’ai aussi reçu quelque chose contre les nausées, avec légère amélioration]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs aggravants <span class="patient-response">[À la mobilisation et à la pression sur le ventre]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-9" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée-problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Frissons / sensation de fièvre <span class="patient-response">[Pas de frissons, mais je me sens un peu fiévreuse]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes abdominaux associés · Nausées / vomissements <span class="patient-response">[J’ai des nausées, mais je n’ai pas vomi]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes abdominaux associés · Sensation de tension / ballonnement <span class="patient-response">[Oui, j’ai l’impression que mon ventre est plus tendu qu’avant]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes abdominaux associés · Selles <span class="patient-response">[Depuis hier midi, je n’ai pas eu de selles]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Indication importante d’une complication intra-abdominale postopératoire ou d’un iléus</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes abdominaux associés · Flatulences <span class="patient-response">[J’ai à peine encore des gaz depuis hier]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse DD / anamnèse systémique <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD Wind | Poumon<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">DD pneumonie, pneumonie d’aspiration, atélectasies</span></span></span> · Toux <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Plaide contre un foyer pulmonaire</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Wind | Poumon · Dyspnée <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Plaide contre un foyer pulmonaire ou thromboembolique</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD Water | Voies urinaires<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Infection urinaire, infection liée au cathéter</span></span></span> · Troubles mictionnels <span class="patient-response">[Non]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Question de DD importante en cas de fièvre postopératoire</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Walking | Thrombose / embolie · Symptômes des membres / œdème de jambe <span class="patient-response">[Non, pas de douleurs ni de gonflements aux jambes.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Walking | Thrombose / embolie · Douleurs thoraciques <span class="patient-response">[Non, rien remarqué]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD Wound | Plaie · Anomalies plaie OP (douleur, rougeur, écoulement) <span class="patient-response">[Non, rien remarqué]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Rend une infection superficielle de la plaie plutôt improbable, mais n’exclut pas une insuffisance d’anastomose profonde.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD « What did we do? » | Dispositifs, médicaments, etc. · Douleur / rougeur à la voie veineuse <span class="patient-response">[Non]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Niveau fonctionnel antérieur <span class="patient-response">[Jusqu’à présent, j’étais autonome et mobile dans la vie quotidienne]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En milieu hospitalier, le niveau fonctionnel antérieur peut aider à mieux situer la dégradation clinique actuelle et à reconnaître si la patiente s’écarte nettement de son niveau habituel d’état général et d’activité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/17</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Paramètres vitaux – circulation <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Paramètres vitaux <span class="patient-response">[Température 38,8 °C, tension artérielle 96/64 mmHg, fréquence cardiaque 117/min, fréquence respiratoire 24/min, saturation en oxygène 96 % à l&#x27;air ambiant]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des paramètres vitaux pathologiques sont essentiels pour évaluer la dégradation clinique et le risque de sepsis.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation circulatoire · Recoloration capillaire <span class="patient-response">[&lt; 3 secondes]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation circulatoire · Température des extrémités <span class="patient-response">[Chaudes]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Site opératoire / foyer postopératoire <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection des plaies opératoires <span class="patient-response">[Plaies de laparoscopie extérieurement calmes, sèches et non érythémateuses]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">DD Wound: Une infection superficielle de la plaie est une cause possible de fièvre postopératoire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection du drain de Douglas <span class="patient-response">[Drain de Douglas en place avec 50 ml de drainage trouble]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">DD « Wound »: L’apparition ou l’augmentation d’un drainage trouble-séreux est un signe important d’un foyer intra-abdominal au sens d’une complication profonde de plaie comme cause de la fièvre postopératoire</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection / palpation VVP <span class="patient-response">[VVP à l’avant-bras gauche sans signe d’irritation, pas de douleur à la pression]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">DD « What did we do »: Une voie veineuse périphérique peut être une source d’infection iatrogène lors de fièvre postopératoire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Abdomen <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection de l’abdomen <span class="patient-response">[Abdomen légèrement ballonné]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Auscultation des bruits intestinaux <span class="patient-response">[Bruits intestinaux clairsemés]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Percussion de l’abdomen <span class="patient-response">[Son de percussion tympanique, douleur à la percussion en fosse iliaque gauche / sus-pubien]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La douleur locale à la percussion au bas-ventre peut indiquer une irritation péritonéale locale ou un foyer intra-abdominal.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation douce · Palpation <span class="patient-response">[Nette douleur à la pression en fosse iliaque gauche et sus-pubien avec défense]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation douce · Douleur au relâchement direct <span class="patient-response">[Douleur au relâchement directe positive en quadrant inférieur gauche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une douleur au relâchement positive plaide pour une irritation péritonéale et soutient la suspicion d’un foyer intra-abdominal.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-4" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation douce · Douleur au relâchement croisée <span class="patient-response">[Douleur au relâchement croisée positive]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une douleur au relâchement croisée positive est un autre signe d’irritation péritonéale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-5" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation douce · Douleur à la secousse / à l’ébranlement <span class="patient-response">[Augmentation locale de la douleur en quadrant inférieur gauche lors de secousses]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La douleur à la secousse ou à l’ébranlement peut indiquer une irritation péritonéale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-6" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Toucher rectal <span class="patient-response">[Sans particularité]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-7" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Statut orienté différentiel <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Auscultation pulmonaire <span class="patient-response">[Murmure vésiculaire bilatéral, pas de râles]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">DD « Wind »: Des causes pulmonaires telles qu’atélectasies, pneumonie ou pneumonie d’aspiration peuvent provoquer une fièvre postopératoire et doivent être évaluées cliniquement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Douleur à la percussion des fosses rénales <span class="patient-response">[Pas de douleur à la percussion des aires rénales]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">DD « Water »: Une infection urinaire ou une pyélonéphrite peuvent être des causes de fièvre postopératoire, en particulier après une sonde vésicale périopératoire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Examen des jambes <span class="patient-response">[Pas d’œdème des jambes, pas de douleur à la pression des mollets]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">DD « Walking »: Une thrombose veineuse profonde ou une embolie pulmonaire peuvent entraîner fièvre postopératoire et dégradation clinique et doivent être envisagées en différentiel.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/43</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. I-Identify / Introduction <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Identify / Introduction · Présentation du/de la candidat·e <span class="patient-response">[Nom propre + médecin assistant·e en chirurgie viscérale]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Identify / Introduction · Identification de la patiente <span class="patient-response">[Madame Claire Morel, 71 ans]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Identify / Introduction · Setting <span class="patient-response">[Hospitalisation en unité de chirurgie viscérale]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. S-Situation <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation actuelle · Problème principal / symptomatologie Leit <span class="patient-response">[Aggravation de l’EG, fièvre, nausées et douleurs abdominales ainsi qu’absence de selles et de gaz]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation actuelle · Dimension temporelle <span class="patient-response">[Depuis hier, progressive]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. B-Background <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation de départ / contexte · Indication opératoire <span class="patient-response">[Diverticulite sigmoïdienne chronique récidivante]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation de départ / contexte · Opération <span class="patient-response">[Sans complication, sigmoidectomie laparoscopique avec anastomose colorectale primaire]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation de départ / contexte · Jour postopératoire <span class="patient-response">[5e jour postopératoire]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation de départ / contexte · Évolution postopératoire <span class="patient-response">[Réalimentation retardée en raison d’une anorexie avec activité intestinale paresseuse au sens d’un iléus postopératoire prolongé.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse personnelle · Antécédents / diagnostics <span class="patient-response">[Pas d’antécédents pertinents, hypertension artérielle connue, obésité]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-4" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse personnelle · Antécédents de chirurgie viscérale <span class="patient-response">[Aucun]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-5" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse personnelle · Médication <span class="patient-response">[Depuis hier, médication à la demande: oxycodone contre la douleur et ondansétron contre les nausées]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-6" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Informations supplémentaires · Accès / dispositifs <span class="patient-response">[VVP au bras gauche, sonde vésicale retirée au 2e jour postopératoire, drain de Douglas]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-7" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. A-Assessment partie 1 | Résultats <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">État général et paramètres vitaux <span class="patient-response">[EG réduit, fébrile (38,8 °C), tachycarde (117/min), légèrement hypotendue (96/64 mmHg), tachypnéique (24/min), saturation normale (SpO2 96%)]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Pas de péritonite généralisée <span class="patient-response">[Paroi abdominale globalement souple]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes d’iléus / subiléus · Inspection <span class="patient-response">[Abdomen ballonné]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes d’iléus / subiléus · Auscultation <span class="patient-response">[Bruits intestinaux clairsemés]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Signes de péritonite locale<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">DD « Wound »: Des signes de péritonite plaident fortement pour un foyer intra-abdominal au sens d’une complication profonde de plaie comme cause de la fièvre postopératoire.</span></span></span> · Percussion de l’abdomen <span class="patient-response">[Son de percussion normalement tympanique. Douleur à la percussion en fosse iliaque gauche / sus-pubien]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La douleur locale à la percussion au bas-ventre peut indiquer une irritation péritonéale locale ou un foyer intra-abdominal.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-4" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes de péritonite locale · Palpation <span class="patient-response">[Nette douleur à la pression en fosse iliaque gauche / sus-pubien avec défense]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’association de douleur localisée à la pression et de défense locale plaide pour une irritation péritonéale locale et constitue un signe d’alarme hautement pertinent en cas de suspicion d’insuffisance d’anastomose.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-5" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes de péritonite locale · Douleur au relâchement directe <span class="patient-response">[Douleur au relâchement positive en quadrant inférieur gauche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une douleur au relâchement positive plaide pour une irritation péritonéale et soutient la suspicion d’un foyer intra-abdominal.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-6" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes de péritonite locale · Douleur au relâchement croisée <span class="patient-response">[Douleur au relâchement croisée positive]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une douleur au relâchement croisée positive est un autre signe d’irritation péritonéale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-7" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes de péritonite locale · Douleur à la secousse / à l’ébranlement <span class="patient-response">[Augmentation locale de la douleur en quadrant inférieur gauche lors de secousses]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La douleur à la secousse ou à l’ébranlement peut indiquer une irritation péritonéale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-8" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Résultat du drainage <span class="patient-response">[Drain de Douglas: env. 50 ml trouble depuis la vidange il y a 10 h; auparavant 20–30 ml/24 h séreux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La nouvelle qualité trouble-séreuse et l’augmentation marquée de la quantité en peu de temps sont des signes d’alarme en faveur d’une insuffisance d’anastomose ou d’un foyer intra-abdominal.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-9" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. A-Assessment partie 2 | Diagnostic de travail <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail insuffisance d’anastomose | Wound · Suspicion d’insuffisance d’anastomose <span class="patient-response">[mentionné]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail insuffisance d’anastomose | Wound · Arguments pour <span class="patient-response">[Fièvre postopératoire, douleurs abdominales progressives, iléus/subiléus, signes de péritonite locale, drainage anormal, autres DD peu plausibles]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Appréciation clinique de la situation <span class="patient-response">[Suspicion de sepsis, besoin d’agir en urgence]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. A-Assessment partie 3 | Diagnostics différentiels <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Diagnostics différentiels intra-abdominaux<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le foyer intra-abdominal est très probable cliniquement, mais l’entité précise ne l’est pas. Outre la fuite (= diagnostic de travail), d’autres causes intra-abdominales sont possibles et ne peuvent pas être distinguées avec certitude avant le CT abdomen/bassin avec PC.</span></span></span> · DD abcès intra-abdominal / du Douglas <span class="patient-response">[mentionné]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostics différentiels intra-abdominaux · DD péritonite secondaire d’une autre genèse <span class="patient-response">[mentionné]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">p. ex. perforation libre ailleurs, lésion iatrogène d’un organe creux, hémorragie secondaire avec surinfection</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Autres causes de fièvre postopératoire (5 W) · Wind | atélectasie / pneumonie <span class="patient-response">[mentionné]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Contre: pas de toux, pas de dyspnée, auscultation sans particularité</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Autres causes de fièvre postopératoire (5 W) · Water | infection urinaire <span class="patient-response">[mentionné]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Contre: pas de troubles mictionnels, sonde vésicale retirée au POD 2</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Autres causes de fièvre postopératoire (5 W) · Walking | TVP / embolie pulmonaire <span class="patient-response">[mentionné]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">pas d’œdème/douleur de jambe, pas de dyspnée/douleur thoracique, prophylaxie par énoxaparine</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-4" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Autres causes de fièvre postopératoire (5 W) · Wound | infection superficielle de la plaie OP <span class="patient-response">[mentionné]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Contre: plaies opératoires extérieurement calmes</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-5" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Autres causes de fièvre postopératoire (5 W) · What did we do | infection liée à la VVP/cathéter, fièvre médicamenteuse <span class="patient-response">[mentionné]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Contre: VVP calme, pas de déclencheur médicamenteux, pas de diarrhée (C. difficile)</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-6" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+<div class="criteria-row" id="criteria-m7">
+    <div>
+        <div class="criteria-text">7. R-Recommendation <button class="comment-button" onclick="toggleComment('m7')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic · Hémocultures <span class="patient-response">[2 paires d’hémocultures avant l’antibiothérapie]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Hémocultures avant antibiothérapie, pour autant que cela n’entraîne pas de retard thérapeutique pertinent.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-0" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic · Laboratoire incl. lactate <span class="patient-response">[Dosage du lactate; suivi en cas de valeur élevée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le dosage du lactate fait partie du One-Hour-Sepsis-Bundle de la Surviving Sepsis Campaign et doit être initié dans la première heure en cas de suspicion de sepsis ou de choc septique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-1" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic · CT abdomen/bassin avec PC <span class="patient-response">[À la recherche d’une fuite anastomotique, d’un abcès, d’air libre, de liquide libre]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de suspicion d’insuffisance d’anastomose, CT abdomen/bassin avec produit de contraste i.v.; selon la pratique locale, contraste rectal/oral hydrosoluble supplémentaire pour la recherche de fuite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-2" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic · Analyse d’urines / uroculture <span class="patient-response">[Exclure un foyer urogénital]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Bien que l’anamnèse et l’examen clinique n’orientent pas principalement vers une infection urinaire, la DD « Water » doit être exclue par analyse d’urines ± uroculture pour ne pas manquer ce foyer.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-3" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Thérapie · Perfusion i.v. <span class="patient-response">[En cas d’hypotension ou de lactate élevé]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Cette mesure fait partie du One-Hour-Sepsis-Bundle de la Surviving Sepsis Campaign et doit être initiée dans la première heure en cas de suspicion de sepsis ou de choc septique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-4" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Thérapie · Antibiothérapie i.v. <span class="patient-response">[Antibiotiques à large spectre couvrant notamment les germes à Gram négatif et les anaérobies]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Cette mesure fait partie du One-Hour-Sepsis-Bundle de la Surviving Sepsis Campaign et doit être initiée dans la première heure en cas de suspicion de sepsis ou de choc septique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-5" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Thérapie · Analgésie et antiémèse <span class="patient-response">[Contrôle symptomatique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Poursuivre le contrôle symptomatique; titrer avec prudence les opioïdes en raison des signes d’iléus.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-6" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Procédure · Monitorage rapproché <span class="patient-response">[Paramètres vitaux, conscience, diurèse, etc.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-7" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Procédure · Laisser à jeun <span class="patient-response">[En raison d’une intervention possible]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-8" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Procédure · Informer l’opérateur/trice <span class="patient-response">[Réévaluation et, si nécessaire, intervention chirurgicale]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m7-detail-9" value="1" onchange="updateDetailScore('m7', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m7">
+            <textarea class="comment-textarea" id="comment-m7" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m7'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m7">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/24</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Identifie les préoccupations, besoins, demandes et attentes de la patiente et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible et reste flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée à la patiente, favorise la compréhension par la répétition, le miroir, les résumés et les explications, et utilise la voix, le débit et les pauses de manière ciblée.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, les mimiques, les gestes, la posture et la distance de manière ciblée pour créer une atmosphère de dialogue bienveillante, de confiance et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c5">
+                    <div>
+                        <div class="communication-text">5. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c5')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible et reste flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c5">
+                            <textarea class="comment-textarea" id="comment-c5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c5'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c5" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c6">
+                    <div>
+                        <div class="communication-text">6. Expression verbale <button class="comment-button" onclick="toggleComment('c6')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée à la patiente, favorise la compréhension par la répétition, le miroir, les résumés et les explications, et utilise la voix, le débit et les pauses de manière ciblée.</div>
+                        <div class="criterion-comment-section" id="comment-section-c6">
+                            <textarea class="comment-textarea" id="comment-c6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c6'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c6" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c6" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c6" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c6" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c6" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/107</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Partie 1 · Anamnèse</h4>
+    <ul><li><strong>Symptômes abdominaux associés · Selles</strong> — Indication importante d’une <span class="c-orange">complication</span> intra-abdominale postopératoire ou d’un iléus</li><li class="theorie-sous-groupe"><strong>DD Wind | Poumon</strong> — DD <span class="c-red">pneumonie</span>, <span class="c-red">pneumonie</span> d’aspiration, atélectasies</li><li><strong>DD Wind | Poumon · Toux</strong> — Plaide contre un foyer pulmonaire</li><li><strong>DD Wind | Poumon · Dyspnée</strong> — Plaide contre un foyer pulmonaire ou thromboembolique</li><li class="theorie-sous-groupe"><strong>DD Water | Voies urinaires</strong> — Infection urinaire, infection liée au cathéter</li><li><strong>DD Water | Voies urinaires · Troubles mictionnels</strong> — Question de DD importante en cas de <span class="c-pink">fièvre</span> postopératoire</li><li><strong>DD Wound | Plaie · Anomalies plaie OP (douleur, rougeur, écoulement)</strong> — Rend une infection superficielle de la plaie plutôt improbable, mais n’exclut pas une insuffisance d’<span class="c-red">anastomose</span> profonde.</li><li><strong>Niveau fonctionnel antérieur</strong> — En milieu hospitalier, le niveau fonctionnel antérieur peut aider à mieux situer la dégradation clinique actuelle et à reconnaître si la patiente s’écarte nettement de son niveau habituel d’état général et d’activité.</li></ul>
+</div><div class="theorie-section">
+    <h4>Partie 1 · Examen clinique</h4>
+    <ul><li><strong>Paramètres vitaux</strong> — Des paramètres vitaux pathologiques sont essentiels pour évaluer la dégradation clinique et le risque de <span class="c-orange">sepsis</span>.</li><li><strong>Inspection des plaies opératoires</strong> — DD Wound: Une infection superficielle de la plaie est une cause possible de <span class="c-pink">fièvre</span> postopératoire.</li><li><strong>Inspection du drain de Douglas</strong> — DD « Wound »: L’apparition ou l’augmentation d’un <span class="c-amber">drainage</span> trouble-séreux est un signe important d’un foyer intra-abdominal au sens d’une <span class="c-orange">complication</span> profonde de plaie comme cause de la <span class="c-pink">fièvre</span> postopératoire</li><li><strong>Inspection / palpation VVP</strong> — DD « What did we do »: Une voie veineuse périphérique peut être une source d’infection iatrogène lors de <span class="c-pink">fièvre</span> postopératoire.</li><li><strong>Percussion de l’abdomen</strong> — La <span class="c-pink">douleur</span> locale à la <span class="c-green">percussion</span> au bas-ventre peut indiquer une irritation péritonéale locale ou un foyer intra-abdominal.</li><li><strong>Palpation douce · Douleur au relâchement direct</strong> — Une <span class="c-pink">douleur</span> au relâchement positive plaide pour une irritation péritonéale et soutient la suspicion d’un foyer intra-abdominal.</li><li><strong>Palpation douce · Douleur au relâchement croisée</strong> — Une <span class="c-pink">douleur</span> au relâchement croisée positive est un autre signe d’irritation péritonéale.</li><li><strong>Palpation douce · Douleur à la secousse / à l’ébranlement</strong> — La <span class="c-pink">douleur</span> à la secousse ou à l’ébranlement peut indiquer une irritation péritonéale.</li><li><strong>Auscultation pulmonaire</strong> — DD « Wind »: Des causes pulmonaires telles qu’atélectasies, <span class="c-red">pneumonie</span> ou <span class="c-red">pneumonie</span> d’aspiration peuvent provoquer une <span class="c-pink">fièvre</span> postopératoire et doivent être évaluées cliniquement.</li><li><strong>Douleur à la percussion des fosses rénales</strong> — DD « Water »: Une infection urinaire ou une <span class="c-red">pyélonéphrite</span> peuvent être des causes de <span class="c-pink">fièvre</span> postopératoire, en particulier après une sonde vésicale périopératoire.</li><li><strong>Examen des jambes</strong> — DD « Walking »: Une <span class="c-red">thrombose</span> veineuse profonde ou une <span class="c-red">embolie pulmonaire</span> peuvent entraîner <span class="c-pink">fièvre</span> postopératoire et dégradation clinique et doivent être envisagées en différentiel.</li></ul>
+</div><div class="theorie-section">
+    <h4>Partie 2 · Présentation de cas</h4>
+    <ul><li class="theorie-sous-groupe"><strong>Signes de péritonite locale</strong> — DD « Wound »: Des signes de <span class="c-red">péritonite</span> plaident fortement pour un foyer intra-abdominal au sens d’une <span class="c-orange">complication</span> profonde de plaie comme cause de la <span class="c-pink">fièvre</span> postopératoire.</li><li><strong>Signes de péritonite locale · Percussion de l’abdomen</strong> — La <span class="c-pink">douleur</span> locale à la <span class="c-green">percussion</span> au bas-ventre peut indiquer une irritation péritonéale locale ou un foyer intra-abdominal.</li><li><strong>Signes de péritonite locale · Palpation</strong> — L’association de <span class="c-pink">douleur</span> localisée à la pression et de défense locale plaide pour une irritation péritonéale locale et constitue un <span class="c-yellow">signe d’alarme</span> hautement pertinent en cas de suspicion d’insuffisance d’<span class="c-red">anastomose</span>.</li><li><strong>Signes de péritonite locale · Douleur au relâchement directe</strong> — Une <span class="c-pink">douleur</span> au relâchement positive plaide pour une irritation péritonéale et soutient la suspicion d’un foyer intra-abdominal.</li><li><strong>Signes de péritonite locale · Douleur au relâchement croisée</strong> — Une <span class="c-pink">douleur</span> au relâchement croisée positive est un autre signe d’irritation péritonéale.</li><li><strong>Signes de péritonite locale · Douleur à la secousse / à l’ébranlement</strong> — La <span class="c-pink">douleur</span> à la secousse ou à l’ébranlement peut indiquer une irritation péritonéale.</li><li><strong>Résultat du drainage</strong> — La nouvelle qualité trouble-séreuse et l’augmentation marquée de la quantité en peu de temps sont des <span class="c-yellow">signes d’alarme</span> en faveur d’une insuffisance d’<span class="c-red">anastomose</span> ou d’un foyer intra-abdominal.</li><li class="theorie-sous-groupe"><strong>Diagnostics différentiels intra-abdominaux</strong> — Le foyer intra-abdominal est très probable cliniquement, mais l’entité précise ne l’est pas. Outre la fuite (= diagnostic de travail), d’autres causes intra-abdominales sont possibles et ne peuvent pas être distinguées avec certitude avant le <span class="c-green">CT</span> abdomen/bassin avec PC.</li><li><strong>Diagnostics différentiels intra-abdominaux · DD péritonite secondaire d’une autre genèse</strong> — p. ex. <span class="c-orange">perforation</span> libre ailleurs, lésion iatrogène d’un organe creux, <span class="c-orange">hémorragie</span> secondaire avec surinfection</li><li><strong>Autres causes de fièvre postopératoire (5 W) · Wind | atélectasie / pneumonie</strong> — Contre: pas de <span class="c-pink">toux</span>, pas de <span class="c-pink">dyspnée</span>, <span class="c-green">auscultation</span> sans particularité</li><li><strong>Autres causes de fièvre postopératoire (5 W) · Water | infection urinaire</strong> — Contre: pas de troubles mictionnels, sonde vésicale retirée au POD 2</li><li><strong>Autres causes de fièvre postopératoire (5 W) · Walking | TVP / embolie pulmonaire</strong> — pas d’<span class="c-pink">œdème</span>/<span class="c-pink">douleur</span> de jambe, pas de <span class="c-pink">dyspnée</span>/<span class="c-pink">douleur</span> thoracique, prophylaxie par énoxaparine</li><li><strong>Autres causes de fièvre postopératoire (5 W) · Wound | infection superficielle de la plaie OP</strong> — Contre: plaies opératoires extérieurement calmes</li><li><strong>Autres causes de fièvre postopératoire (5 W) · What did we do | infection liée à la VVP/cathéter, fièvre médicamenteuse</strong> — Contre: VVP calme, pas de déclencheur médicamenteux, pas de diarrhée (C. difficile)</li><li><strong>Diagnostic · Hémocultures</strong> — Hémocultures avant <span class="c-amber">antibiothérapie</span>, pour autant que cela n’entraîne pas de retard thérapeutique pertinent.</li><li><strong>Diagnostic · Laboratoire incl. lactate</strong> — Le dosage du lactate fait partie du One-Hour-<span class="c-orange">Sepsis</span>-Bundle de la Surviving <span class="c-orange">Sepsis</span> Campaign et doit être initié dans la première heure en cas de suspicion de <span class="c-orange">sepsis</span> ou de <span class="c-orange">choc septique</span>.</li><li><strong>Diagnostic · CT abdomen/bassin avec PC</strong> — En cas de suspicion d’insuffisance d’<span class="c-red">anastomose</span>, <span class="c-green">CT</span> abdomen/bassin avec produit de contraste i.v.; selon la pratique locale, contraste rectal/oral hydrosoluble supplémentaire pour la recherche de fuite.</li><li><strong>Diagnostic · Analyse d’urines / uroculture</strong> — Bien que l’anamnèse et l’examen clinique n’orientent pas principalement vers une infection urinaire, la DD « Water » doit être exclue par analyse d’urines ± uroculture pour ne pas manquer ce foyer.</li><li><strong>Thérapie · Perfusion i.v.</strong> — Cette mesure fait partie du One-Hour-<span class="c-orange">Sepsis</span>-Bundle de la Surviving <span class="c-orange">Sepsis</span> Campaign et doit être initiée dans la première heure en cas de suspicion de <span class="c-orange">sepsis</span> ou de <span class="c-orange">choc septique</span>.</li><li><strong>Thérapie · Antibiothérapie i.v.</strong> — Cette mesure fait partie du One-Hour-<span class="c-orange">Sepsis</span>-Bundle de la Surviving <span class="c-orange">Sepsis</span> Campaign et doit être initiée dans la première heure en cas de suspicion de <span class="c-orange">sepsis</span> ou de <span class="c-orange">choc septique</span>.</li><li><strong>Thérapie · Analgésie et antiémèse</strong> — Poursuivre le contrôle symptomatique; titrer avec prudence les <span class="c-amber">opioïdes</span> en raison des signes d’iléus.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Traduit automatiquement puis vérifié par une IA face à l&#x27;original allemand.</p><p>Diagnostic: <span class="c-pink">fièvre</span> postopératoire avec suspicion d’insuffisance d’<span class="c-red">anastomose</span></p><p>Chez la patiente de 71 ans Claire Morel, il existe un soupçon clinique d’insuffisance d’<span class="c-red">anastomose</span> en lien avec une <span class="c-pink">fièvre</span> postopératoire au 5e jour postopératoire après une sigmectomie laparoscopique élective avec <span class="c-red">anastomose</span> colorectale primaire pour <span class="c-red">diverticulite</span> sigmoïdienne chronique récidivante.</p><p>L’intervention s’est déroulée sans <span class="c-orange">complication</span>. En postopératoire, on a toutefois observé une reprise alimentaire retardée en raison d’une anorexie liée à un transit intestinal paresseux avec absence de selles régulières, évoquant un iléus postopératoire prolongé, raison pour laquelle la patiente reste hospitalisée.</p><p>Dans l’anamnèse sont au premier plan la <span class="c-pink">fièvre</span> d’apparition récente et la détérioration clinique depuis la veille. La patiente rapporte en outre un malaise croissant, des <span class="c-pink">nausées</span> et des <span class="c-pink">douleurs</span> abdominales progressives. Sont évocateurs l’aggravation des symptômes par rapport aux premiers jours postopératoires, une sensation de tension abdominale ainsi que l’absence de selles et l’absence d’émission de gaz depuis hier.</p><p>À l’examen clinique on constate une patiente fébrile, tachycarde et globalement altérée, avec un abdomen distendu, une <span class="c-pink">douleur</span> marquée à la <span class="c-green">palpation</span> notamment en fosse iliaque gauche et en sus-pubien, ainsi qu’une défense locale. Les plaies opératoires sont extérieurement sans signes d’irritation. À l’<span class="c-green">inspection</span> du drain de Douglas, on observe un liquide de <span class="c-amber">drainage</span> nouvellement trouble avec augmentation du débit: env. 50 ml depuis la vidange il y a 10 heures, auparavant 20–30 ml/24 h.</p><p>Le moment au 5e jour postopératoire ainsi que l’association de signes inflammatoires systémiques (<span class="c-pink">fièvre</span>), de <span class="c-pink">douleurs</span> abdominales croissantes, de signes d’iléus et d’un résultat de <span class="c-amber">drainage</span> anormal sont hautement évocateurs d’une insuffisance d’<span class="c-red">anastomose</span>.</p><p>Sur le plan du <span class="c-yellow">diagnostic différentiel</span>, les causes typiques de la <span class="c-pink">fièvre</span> postopératoire peuvent être brièvement classées selon le schéma des 5W:</p><p>Wound: Une infection superficielle de plaie est improbable en présence de plaies opératoires sans signes d’irritation. Au premier plan se trouve un foyer profond intra-abdominal, très probablement une insuffisance d’<span class="c-red">anastomose</span>. Au sein de ce foyer, un <span class="c-orange">abcès</span> intra-abdominal respectivement du Douglas ainsi qu’une <span class="c-red">péritonite</span> secondaire d’une autre genèse ne peuvent pas être distingués cliniquement avec certitude; la différenciation se fait par <span class="c-green">CT</span> abdomen/bassin avec produit de contraste.</p><p>Wind: foyer pulmonaire improbable en l’absence de <span class="c-pink">toux</span>, de <span class="c-pink">dyspnée</span> et avec une <span class="c-green">auscultation</span> sans particularité.</p><p>Water: infection des voies urinaires moins probable en l’absence de troubles mictionnels.</p><p>Walking: étiologie thromboembolique improbable en l’absence d’<span class="c-pink">œdème</span> de jambe et de symptomatologie respiratoire.</p><p>What did we do: des causes iatrogènes ou médicamenteuses sont possibles, mais n’expliquent pas suffisamment la symptomatologie abdominale.</p><p>La suite comprend un monitoring rapproché, des analyses de laboratoire incluant les paramètres inflammatoires, la numération formule sanguine, les électrolytes, la fonction rénale et le lactate, ainsi que des hémocultures. Sur le plan thérapeutique, il convient d’instaurer une <span class="c-amber">fluidothérapie</span> intraveineuse et une <span class="c-amber">antibiothérapie</span> probabiliste intraveineuse précoce. Une <span class="c-green">CT</span> de l’abdomen et du bassin avec produit de contraste est en outre indiquée. De plus, la chirurgienne / le chirurgien responsable doit être sollicité·e sans délai pour une réévaluation chirurgicale afin de définir la suite de la prise en charge, y compris une éventuelle ré-intervention. La patiente doit donc rester à jeun.</p><p>Reconnaître et justifier une insuffisance d’<span class="c-red">anastomose</span> comme cause la plus probable de la <span class="c-pink">fièvre</span> postopératoire.</p><p>Présentation de cas structurée et percutante selon le schéma ISBAR, avec focalisation sur la dégradation clinique.</p><p>Classer la situation comme urgente et déduire une conduite à tenir adéquate.</p><p>Anamnèse: Détérioration clinique depuis hier avec <span class="c-pink">fièvre</span>, <span class="c-pink">nausées</span>, <span class="c-pink">douleurs</span> croissantes du bas-ventre, abdomen tendu ainsi qu’absence d’émission de selles et de gaz.</p><p>Statut clinique: État général réduit, constantes vitales anormales, abdomen météorisé, bruits intestinaux rares, <span class="c-pink">douleur</span> à la <span class="c-green">palpation</span> en fosse iliaque gauche / sus-pubienne, défense locale, plaies opératoires sans inflammation apparente et écoulement nettement trouble au drain de Douglas.</p><p>I – Identifier / Introduction: Le/la candidat-e se présente, identification de la patiente Madame Claire Morel, 71 ans, contexte hospitalier de <span class="c-amber">chirurgie</span> viscérale.</p><p>S – Situation: Détérioration clinique aiguë au 5e jour postopératoire avec <span class="c-pink">fièvre</span>, <span class="c-pink">nausées</span>, <span class="c-pink">douleurs</span> abdominales croissantes.</p><p>B – Contexte: Statut après résection sigmoïdienne laparoscopique avec <span class="c-red">anastomose</span> primaire pour <span class="c-red">diverticulite</span> sigmoïdienne chronique récidivante, reprise alimentaire retardée, <span class="c-purple">hypertension artérielle</span>, <span class="c-purple">obésité</span>, CVP, drain de Douglas, sonde vésicale retirée au jour 2.</p><p>A – Évaluation: Suspicion clinique d’insuffisance anastomotique sur foyer infectieux intra-abdominal avec début de <span class="c-orange">sepsis</span>. <span class="c-yellow">Diagnostics différentiels</span> intra-abdominaux (<span class="c-orange">abcès</span> du Douglas / intra-abdominal, <span class="c-red">péritonite</span> secondaire d’autre origine) non distinguables de façon certaine avant le <span class="c-green">CT</span>. Pas d’indices en faveur d’une cause fébrile pulmonaire, urogénitale, thromboembolique ou iatrogène.</p><p>R – Recommandation: Surveillance rapprochée, analyses de laboratoire y compris lactate, hémocultures, <span class="c-amber">antibiothérapie</span> i.v. probabiliste et traitement liquidien i.v., <span class="c-green">CT</span> abdomen / bassin avec produit de contraste, laisser à jeun, informer l’opérateur/trice pour réévaluation et éventuelle intervention chirurgicale</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 23,
+        "examen": 17,
+        "management": 43,
+        "communication": 24
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 4,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 4,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 7,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 6,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

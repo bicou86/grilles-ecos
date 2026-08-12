@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-10 - Douleur oculaire aiguë - Venus von Bümpliz, 70 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-10 - Douleur oculaire aiguë</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-10" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Service des urgences</p>
+            <p style="margin: 5px 0;">👤 Venus von Bümpliz, 70 ans</p>
+            <p style="margin: 5px 0;">🏷️ Ophtalmologie · Poste standard · Moyen · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/48</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Affection actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d’entrée <span class="patient-response">[« J’ai de très fortes douleurs aux yeux. »]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début / durée <span class="patient-response">[Commencé hier soir, depuis environ 12 heures]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un début il y a moins de 24 heures avec aggravation rapide correspond au blocage angulaire aigu. Une symptomatologie augmentant sur plusieurs jours serait atypique et ferait penser à d’autres causes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Mode d’apparition <span class="patient-response">[Devenu très intense en quelques heures]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une douleur oculaire aiguë survenant en quelques heures est typique du blocage angulaire. Une apparition insidieuse orienterait plutôt vers des maladies chroniques ou des prodromes subaigus.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[S’aggrave depuis lors, ne passe pas]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une évolution progressive sans amélioration spontanée soutient l’augmentation aiguë de la pression et se distingue des symptômes intermittents d’un blocage subaigu ou d’une migraine.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Déclencheurs <span class="patient-response">[Heures de lecture le soir sous un lampadaire dans un salon crépusculaire]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’obscurité ou la pénombre induit une mydriase physiologique, qui peut bloquer l’écoulement de l’humeur aqueuse en cas d’angle irido-cornéen anatomiquement étroit. Les déclencheurs classiques sont les séjours dans des pièces sombres comme le cinéma, la lecture prolongée dans de mauvaises conditions d’éclairage, le stress ou une médication anticholinergique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Traumatisme oculaire <span class="patient-response">[Aucun traumatisme, rien heurté contre l’œil]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un traumatisme oculaire doit toujours être recherché activement en cas de douleur oculaire aiguë. Même des traumatismes minimes comme une branche ou un ongle peuvent entraîner une érosion cornéenne, un ulcère cornéen ou une lésion du globe. Chez cette patiente, il n’y a pas de traumatisme, la douleur est apparue spontanément.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[En profondeur dans l’œil droit]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des douleurs profondément intraoculaires évoquent des processus intraoculaires avec élévation de pression, comme le blocage angulaire aigu. Des douleurs superficielles conjonctivales orientent vers une conjonctivite ou une kératite. Des douleurs rétrobulbaires sont classiques pour une névrite optique ou des processus orbitaires.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[Irradie vers le front droit et le côté droit de la tête]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Lors d’une crise glaucomateuse, la douleur irradie fréquemment vers le front ou la tempe ipsilatérale, véhiculée par le nerf ophtalmique (V1) du nerf trijumeau. Une céphalée temporale avec douleur à la pression ferait suspecter une artérite à cellules géantes, des douleurs rétrobulbaires aggravées aux mouvements oculaires évoquent une névrite optique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Qualité <span class="patient-response">[Sourde et oppressive]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un caractère douloureux sourd et compressif est typique du blocage angulaire et résulte de l’augmentation aiguë de la pression intraoculaire avec irritation des nerfs ciliaires. Des douleurs brûlantes ou piquantes superficielles évoquent plutôt une conjonctivite ou une kératite. Des douleurs pulsatiles seraient typiques des céphalées migraineuses.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Intensité <span class="patient-response">[9 sur 10]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des douleurs très intenses sont typiques du blocage angulaire aigu. Une faible intensité douloureuse parlerait contre une crise glaucomateuse et ferait plutôt penser à une conjonctivite ou une pathologie cornéenne superficielle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-9" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊕ Facteurs aggravants <span class="patient-response">[Pire dans l’obscurité, majoré par le stress]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les symptômes de la crise glaucomateuse s’aggravent typiquement dans l’obscurité par la mydriase physiologique et lors de stress par l’activation sympathique. Les deux mécanismes favorisent le blocage de l’écoulement de l’humeur aqueuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-10" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊖ Facteurs soulageants <span class="patient-response">[Rien n’aide vraiment]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans le blocage angulaire aigu, aucune mesure conservatrice n’apporte de soulagement notable. Cette absence d’influence est précieuse pour le diagnostic et souligne l’indication d’urgence.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-11" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Que voulez-vous dire exactement ?]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Sur AZYGOS, les patientes et patients ne mentionnent volontairement pas de symptômes associés pertinents à cette question ouverte. Ce qui est évalué, c’est la recherche ciblée. En réalité, la question reste importante, car elle amène parfois des indices décisifs spontanés.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-12" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée sur le problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Acuité visuelle · Baisse du visus unilatérale <span class="patient-response">[Je vois beaucoup moins bien avec l’œil droit, à gauche c’est normal]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une baisse aiguë unilatérale de l’acuité visuelle avec œil rouge et douloureux est un signe d’alarme central pour une crise glaucomateuse. Elle résulte principalement de l’œdème cornéen lors d’une pression intraoculaire aiguë élevée et souligne le risque de cécité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Acuité visuelle · Caractère de la baisse de vision <span class="patient-response">[Comme à travers du brouillard ou du verre dépoli, tout est flou]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le type de baisse de vision affine le diagnostic. Une vision brumeuse comme à travers du verre dépoli correspond à l’œdème cornéen lors d’une crise glaucomateuse. Un rideau noir soudain évoque plutôt un décollement de rétine, une perte localisée ou centrale une pathologie rétinienne ou du nerf optique comme une occlusion de l’artère centrale ou une neuropathie optique ischémique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Halos / couronnes lumineuses <span class="patient-response">[Anneaux colorés autour des lumières, surtout le soir]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les halos autour des sources lumineuses sont classiques pour une pression intraoculaire élevée avec œdème cornéen. Ils résultent de la diffusion de la lumière au niveau du stroma cornéen engorgé. La patiente les perçoit typiquement le soir ou au crépuscule.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Céphalée <span class="patient-response">[Également une céphalée sourde et oppressive sur tout le côté droit de la tête, non pulsatile]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une céphalée hémicrânienne associée, dépassant l’irradiation douloureuse directe, est un symptôme fréquent lors d’une crise glaucomateuse. Elle résulte d’une activation trigéminale et sympathique généralisée et conduit non rarement à une confusion avec migraine ou algie vasculaire de la face.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Nausées / vomissements <span class="patient-response">[Nausées, vomi une fois]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les nausées et vomissements sont transmis par la connexion trigémino-vagale et surviennent classiquement dans la crise glaucomateuse. Ils peuvent masquer le problème oculaire et mener à une erreur diagnostique de gastro-entérite ou de migraine.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Segment antérieur de l’œil · Rougeur <span class="patient-response">[L’œil droit est nettement rouge]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une injection conjonctivale ou ciliaire dans la crise glaucomateuse est due à la stase des vaisseaux épiscléraux. Elle est toutefois non spécifique et survient aussi dans la conjonctivite, l’uvéite et la kératite.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Segment antérieur de l’œil · Photophobie <span class="patient-response">[La lumière vive est désagréable et douloureuse]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La photophobie est fréquente dans la crise glaucomateuse, mais non spécifique. Elle est également marquée dans l’uvéite antérieure, la kératite et les érosions cornéennes. La réaction via le trijumeau ne permet pas une attribution univoque.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Segment antérieur de l’œil · Sécrétions / larmoiement <span class="patient-response">[Larmoie un peu, pas de pus]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un écoulement purulent ou muqueux parle contre une crise glaucomateuse et pour une conjonctivite. Un larmoiement clair survient de manière réflexe comme symptôme associé dans la crise glaucomateuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Segment antérieur de l’œil · Sensation de corps étranger <span class="patient-response">[Pas de sensation de corps étranger]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une sensation de corps étranger, souvent décrite comme un « grain de sable dans l’œil », évoque des pathologies cornéennes superficielles comme la kératite, l’érosion cornéenne ou un corps étranger cornéen ou conjonctival. Dans la crise glaucomateuse, elle est absente car la douleur est profonde et oppressive.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-8" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Segment antérieur de l’œil · Prurit <span class="patient-response">[Pas de démangeaisons]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le prurit est le symptôme principal de la conjonctivite allergique et un critère négatif important pour d’autres affections oculaires. Il manque lors d’une crise glaucomateuse et distingue clairement ce tableau d’une réaction allergique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-9" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Segment postérieur de l’œil · Mouches volantes / éclairs lumineux <span class="patient-response">[Pas de mouches noires, pas d’éclairs]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les mouches volantes et photopsies indiquent un décollement du vitré ou une déchirure rétinienne et sont importants pour l’exclusion différentielle. Dans la crise glaucomateuse, ils manquent typiquement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-10" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Segment postérieur de l’œil · Scotomes / déficits du champ visuel <span class="patient-response">[Pas de tache sombre, tout est uniformément flou]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des déficits localisés du champ visuel parlent pour une pathologie rétinienne ou du nerf optique comme une occlusion de l’artère centrale ou une névrite optique. Dans la crise glaucomateuse, la vision est diffusément réduite par l’œdème cornéen.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-11" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Segment postérieur de l’œil · Métamorphopsies <span class="patient-response">[Rien n’est déformé]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une vision déformée avec lignes courbées indique une pathologie maculaire, le plus souvent une DMLA exsudative. Dans la crise glaucomateuse, les métamorphopsies sont absentes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-12" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Neuro-ophtalmologie / orbite · Diplopie <span class="patient-response">[Pas de vision double]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La diplopie indique une pathologie des nerfs crâniens ou des muscles oculaires, par exemple en cas de paralysie d’un nerf crânien, de myasthénie ou de processus orbitaire. Dans la crise glaucomateuse, elle est absente.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-13" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Neuro-ophtalmologie / orbite · Dyschromatopsie <span class="patient-response">[Difficile à juger, tout est flou à droite]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un trouble isolé de la vision des couleurs sans baisse d’acuité serait un signe précoce de névrite optique. Dans la crise glaucomateuse, la perception des couleurs est secondairement affectée par l’œdème cornéen, sans valeur spécifique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-14" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse DD / anamnèse systémique <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">DD-céphalée · Céphalée « coup de tonnerre » <span class="patient-response">[La douleur n’est pas apparue soudainement comme un coup de tonnerre]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une céphalée hyperaiguë, en quelques secondes, du type destructrice ou « coup de tonnerre » est hautement suspecte d’hémorragie sous-arachnoïdienne. En cas de douleur oculaire aiguë avec nausées et vomissements, ce diagnostic différentiel dangereux doit être recherché activement et écarté.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD-céphalée · Migraine / algie vasculaire de la face <span class="patient-response">[Jamais eu de tels symptômes, pas de migraine ni d’AVF connues, pas d’aura, pas de larmoiement ni de rhinorrhée avec les céphalées]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une anamnèse d’épisodes céphalalgiques stéréotypés récurrents évoque une céphalée primaire comme la migraine ou l’algie vasculaire de la face. Une première manifestation à un âge avancé parle fortement contre ces syndromes. Les crises de migraine durent typiquement 4 à 72 heures, celles d’AVF 15 à 180 minutes avec symptômes autonomes associés comme larmoiement ou rhinorrhée ipsilatérale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Déficits neurologiques focaux <span class="patient-response">[Pas de faiblesse, pas d’engourdissement, pas de troubles du langage, marche normale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des déficits neurologiques focaux tels qu’hémiparésie, aphasie ou instabilité de la marche orientent vers un AVC ou un AIT. Un infarctus postérieur peut entraîner une hémianopsie homonyme perçue comme un trouble visuel unilatéral. L’absence de déficits focaux parle contre une pathologie cérébrale comme cause des symptômes oculaires.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Artérite à cellules géantes<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Chez la personne âgée, crise glaucomateuse et artérite à cellules géantes se recoupent en trois points: âge &gt; 50 ans, baisse unilatérale du visus et céphalées. Cliniquement, on distingue l’œil rouge douloureux avec globe dur et pupille irrégulière dans la crise glaucomateuse, versus œil blanc avec baisse de vision indolore, A. temporalis douloureuse à la pression et douleurs à la mastication dans l’artérite à cellules géantes. Une ACG manquée conduit à la cécité secondaire de l’œil controlatéral, d’où VS et CRP en dépistage et, en cas de suspicion, stéroïdes immédiats.</span></span></span> · A. temporalis <span class="patient-response">[Les tempes ne font pas mal, rien de dur palpable; se coiffer ne fait pas mal]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une A. temporalis douloureuse, proéminente ou indurée ainsi qu’une douleur du cuir chevelu (à la coiffure ou en appui) sont des observations très spécifiques pour l’ACG, non pas la seule douleur hémicrânienne.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Artérite à cellules géantes · Douleurs à la mastication <span class="patient-response">[Tout est normal à la mastication]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La claudication masticatoire est hautement spécifique de l’artérite à cellules géantes et résulte d’une ischémie d’effort des muscles masticateurs par atteinte vasculitique de leurs vaisseaux nourriciers.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Artérite à cellules géantes · Amaurosis fugax <span class="patient-response">[Pas de pertes visuelles brèves antérieures]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des pertes visuelles monoculaires brèves antérieures sont un signal d’alarme pour une neuropathie optique ischémique imminente en cas d’artérite à cellules géantes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Artérite à cellules géantes · Symptômes B <span class="patient-response">[Pas de fatigue, pas de perte de poids, pas de sueurs nocturnes, pas de fièvre]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Fatigue, perte de poids, sueurs nocturnes et subfébrilité indiquent une vascularite systémique et renforcent la suspicion d’ACG.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents · Antécédents généraux <span class="patient-response">[Hypertension artérielle, rien d’autre]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une anamnèse cardiovasculaire pertinente doit être prise en compte dans la crise glaucomateuse, en particulier concernant les collyres bêta-bloquants en cas d’asthme ou de bloc AV et la baisse systémique de la pression oculaire par acétazolamide.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents · Antécédents ophtalmologiques <span class="patient-response">[Hypermétrope depuis l’enfance, rien d’autre de connu aux yeux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’hypermétropie est le principal facteur de risque anatomique d’un blocage angulaire aigu, l’œil étant plus court et l’angle plus étroit que chez l’émmétrope. Des épisodes antérieurs de blocage angulaire, une uvéite connue ou des antécédents de kératite seraient aussi des indices pertinents.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents chirurgicaux oculaires <span class="patient-response">[Jamais opérée des yeux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une iridotomie YAG antérieure rend pratiquement impossible un blocage angulaire aigu sur l’œil opéré, un chemin alternatif d’écoulement ayant été créé. Une chirurgie de la cataracte modifie l’anatomie de la chambre antérieure et réduit nettement le risque de blocage angulaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Aides visuelles <span class="patient-response">[Lunettes d’environ +3.5 dioptries, pas de lentilles de contact]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La correction des lunettes renseigne sur la réfraction: les valeurs positives indiquent une hypermétropie, facteur de risque anatomique du blocage angulaire. Les porteurs de lentilles ont un risque accru de kératite et d’ulcères cornéens, à considérer au diagnostic différentiel d’un œil rouge et douloureux.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments · Médicaments généraux <span class="patient-response">[Amlodipine quotidienne contre l’hypertension, rien d’autre]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La liste complète des médicaments est pertinente pour les interactions et contre-indications du traitement aigu, en particulier pour l’acétazolamide (parenté avec les sulfamides) et les collyres bêta-bloquants en cas d’asthme connu ou de bloc AV.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments · Médicaments à risque de glaucome <span class="patient-response">[Pas d’antihistaminiques, pas d’antidépresseurs ni de médicaments contre une vessie hyperactive]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les anticholinergiques systémiques peuvent déclencher un blocage angulaire aigu, car ils induisent une mydriase. Groupes pertinents: antihistaminiques, antidépresseurs tricycliques, spasmolytiques urologiques et anticholinergiques inhalés dans la BPCO. Les sympathomimétiques peuvent aussi être déclencheurs.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments · Collyres <span class="patient-response">[Aucun collyre, jamais utilisés régulièrement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des collyres hypotenseurs indiqueraient un glaucome déjà diagnostiqué. Des collyres stéroïdiens topiques peuvent, après usage prolongé, déclencher un glaucome secondaire à angle ouvert. La question distingue le tableau actuel d’un premier blocage angulaire aigu d’un glaucome chronique décompensé.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Aucune allergie connue]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Important en raison d’un éventuel traitement par acétazolamide en cas d’allergie aux sulfamides et à cause des conservateurs dans les collyres.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-7" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Alcool <span class="patient-response">[Occasionnellement un verre de vin le week-end]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-8" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Tabagisme <span class="patient-response">[Non-fumeuse]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-9" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse familiale de glaucome <span class="patient-response">[La mère avait un glaucome et une cataracte, rien d’autre]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une anamnèse familiale positive augmente nettement le risque de glaucome primaire à angle étroit ou ouvert. La recherche d’une disposition héréditaire fait partie de l’anamnèse standard en cas de suspicion de crise glaucomateuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Guide de montagne à la retraite]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation sociale <span class="patient-response">[Veuve, vit seule à Bümpliz, fille habitant à proximité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La situation sociale est pertinente pour la planification de la sortie après transfert en clinique ophtalmologique. Une patiente vivant seule avec un visus réduit nécessite un soutien au quotidien après la sortie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/22</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Évaluation de l’acuité visuelle avec échelle <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Évaluation du visus · Visus droit <span class="patient-response">[Ne reconnaît que les mouvements de la main à 30 cm]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une réduction massive unilatérale du visus confirme la menace aiguë sur la vision. Dans la crise glaucomateuse, la baisse du visus est due à l’œdème cornéen lors d’une pression intraoculaire aiguë élevée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Évaluation du visus · Visus gauche <span class="patient-response">[1.0 avec lunettes (échelle de lecture)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’évaluation du visus de l’œil controlatéral sert à la comparaison latérale et à l’appréciation de la vision générale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Évaluation du visus · Aide visuelle utilisée <span class="patient-response">[Lunettes +3.5 dpt, port bilatéral]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le test du visus se fait avec l’aide visuelle, sauf s’il sert à la détermination de la réfraction. La puissance des lunettes confirme l’hypermétropie comme facteur de risque anatomique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Examens manuels chez le patient <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection <span class="patient-response">[Droite: injection conjonctivale et ciliaire avec hyperémie sclérale, opacification terne de la cornée, pupille semi-dilatée irrégulière (anisocorie); gauche: sans irritation, cornée claire, pupille ronde]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans la crise glaucomateuse aiguë, l’association injection ciliaire, cornée terne et pupille semi-dilatée irrégulière est déjà suggestive à l’inspection. L’anisocorie avec pupille irrégulière évoque une parésie ischémique du sphincter en cas de pression intraoculaire très élevée.</span></span> <span class="criteria-detail-note">(voir iconographie)</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Évaluation des pupilles · Réaction directe à la lumière <span class="patient-response">[Droite abolie, gauche prompte]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’abolition de la réaction directe à la lumière à l’œil atteint soutient la suspicion et correspond à une paralysie ischémique du sphincter sous pression intraoculaire fortement élevée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Évaluation des pupilles · Réaction consensuelle à la lumière <span class="patient-response">[Consensuelle gauche prompte (myosis) à l’éclairage droit; droite consensuelle abolie à l’éclairage gauche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans la crise glaucomateuse, la réaction consensuelle est abolie à l’œil atteint, car le sphincter est parétique par ischémie (déficit efférent). La pupille controlatérale réagit normalement à l’éclairage de l’œil malade, montrant une afférence intacte et allant contre une pathologie primaire du nerf optique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Évaluation des pupilles · Test au faisceau lumineux oscillant <span class="patient-response">[Droite reste fixe, gauche myosis prompt à chaque oscillation, pas de RAPD]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le test au faisceau lumineux oscillant évalue le défaut pupillaire relatif afférent (RAPD). En cas de pupille fixe unilatérale, on juge le test sur la pupille saine: lors du balancement vers l’œil malade, la pupille controlatérale montre un myosis consensuel prompt, ce qui plaide pour une afférence intacte (typique de la crise glaucomateuse aiguë). Un mydriasis paradoxal de la pupille controlatérale évoquerait une lésion glaucomateuse supplémentaire du nerf optique, de mauvais pronostic.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Évaluation des pupilles · Réaction de convergence <span class="patient-response">[Gauche préservée (myosis en vision de près); droite abolie (sphincter pupillae parétique)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La réaction de convergence avec myosis passe par les fibres parasympathiques vers le sphincter pupillae, donc le même effecteur que la réaction à la lumière. Dans la crise glaucomateuse, elle est également abolie à l’œil atteint, le sphincter ischémique ne réagissant ni à la lumière ni à l’accommodation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-4" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Motilité oculaire <span class="patient-response">[Test en H dans 9 directions du regard libre et indolore des deux côtés, pas de diplopie]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La motilité oculaire est testée en H dans 9 directions du regard. Une douleur aux mouvements oculaires ferait penser à une névrite optique ou à une phlegmon de l’orbite, une diplopie à une paralysie d’un nerf crânien.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-5" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Champ visuel par confrontation · Central <span class="patient-response">[Gauche central préservé (visage reconnu symétriquement); droite non testable de manière fiable en raison de la baisse du visus]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Teste le champ visuel central en demandant la symétrie du visage (nez, oreilles, yeux, bouche). Des scotomes centraux évoqueraient une névrite optique ou une pathologie maculaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-6" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Champ visuel par confrontation · Médio-périphérique <span class="patient-response">[Gauche comptage des doigts correct dans les quatre quadrants; droite non testable de manière fiable en raison de la baisse du visus]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Teste le champ visuel médio-périphérique par comptage des doigts dans les quatre quadrants. Une quadrantanopsie ferait penser à une pathologie chiasmale ou rétrochiasmale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-7" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Champ visuel par confrontation · Périphérique <span class="patient-response">[Droite non testable de manière fiable en raison de la baisse du visus; gauche: pas de déficit périphérique du champ visuel]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Teste le champ visuel périphérique par agitation de doigts de l’extérieur vers l’intérieur. Des pertes périphériques du champ visuel évoqueraient un glaucome à un stade avancé ou des pathologies rétiniennes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-8" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Champ visuel par confrontation · Examen monoculaire <span class="patient-response">[Correctement réalisé, deuxième œil couvert avec la paume en coquille]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Auto-contrôle méthodologique: condition préalable pour une évaluation latéralisée. L’œil non examiné est couvert avec la paume en coquille, et non comprimé avec le poing contre le globe.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-9" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Champ visuel par confrontation · Test des quadrants <span class="patient-response">[Quatre quadrants vérifiés (ligne en X, pas en +)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Auto-contrôle méthodologique: examen complet selon une ligne en X (supéro-temporal, supéro-nasal, inféro-temporal, inféro-nasal) plutôt que selon un motif +, pour éviter de manquer des quadrantanopsies obliques.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-10" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation du globe <span class="patient-response">[Droite dure comme de la pierre, gauche molle à la palpation en comparaison latérale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La palpation digitale du globe est le test au lit du patient le plus important pour la crise glaucomateuse, en particulier à l’hôpital régional sans lampe à fente. Un globe «dur comme de la pierre» par rapport au côté opposé évoque une pression intraoculaire nettement &gt; 40 mmHg et confirme cliniquement la suspicion.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-11" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Examens à l’ophthalmoscope manuel <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Ophthalmoscope manuel · Réflexe du fond (lumière rétrodiffusée) <span class="patient-response">[Droite: nettement diminué par l’opacification cornéenne; gauche: rouge soutenu normal]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">À 1 à 2 mètres à travers l’ophthalmoscope, le réflexe du fond donne un aperçu rapide de la clarté des milieux réfractifs. Dans la crise glaucomateuse, il est unilatéralement diminué par l’œdème cornéen; au différentiel, une cataracte dense ou une hémorragie du vitré entrent en ligne de compte.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Ophthalmoscope manuel · Lumière incidente (éclairage direct) <span class="patient-response">[Droite: surface cornéenne mate et terne au lieu d’être lisse et réfléchissante; gauche: cornée réfléchissante]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Près de l’œil, le faisceau lumineux rond permet d’inspecter la surface des structures antérieures (cornée, conjonctive, sclère, iris). Une surface cornéenne mate plutôt que lisse et réfléchissante correspond, en cas d’œil rouge aigu, à une décompensation cornéenne lors de crise glaucomateuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Ophthalmoscope manuel · Cornée (fente focalisée) <span class="patient-response">[Droite: œdème endothélial avec épaississement stromal en coupe; gauche: claire et régulière]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avec la fente focalisée à 45 degrés, on obtient une coupe des couches cornéennes. En crise glaucomateuse, la forte pression dépasse la capacité de pompe endothéliale et de l’eau s’accumule dans le stroma: l’aspect typique est l’œdème endothélial avec épaississement stromal.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-2" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Ophthalmoscope manuel · Profondeur de la chambre antérieure (fente focalisée) <span class="patient-response">[Droite: plate avec chambre antérieure périphérique peu profonde, iris bombé; gauche: profondeur normale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">À la fente focalisée, la profondeur de la chambre antérieure correspond à la distance entre les reflets sur la cornée et l’iris. Une chambre antérieure plate avec bombement de l’iris est l’indicateur anatomique classique du blocage angulaire. Attention: en cas de chambre antérieure plate, ne pas instiller de mydriatiques, qui peuvent déclencher ou aggraver une crise glaucomateuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-3" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Ophthalmoscope manuel · Fond d’œil <span class="patient-response">[Droite: vue impossible à travers l’œdème cornéen; gauche: papille à bords nets, cup-to-disc ratio normal, vaisseaux et macula sans particularité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans la crise glaucomateuse, l’accès au fond d’œil droit est en général impossible en raison de l’œdème cornéen. Attention: les mydriatiques sont contre-indiqués. Après réduction réussie de la pression, répéter le fond d’œil pour évaluer l’excavation papillaire glaucomateuse (cup-to-disc ratio).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-4" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Orientation neurologique <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Méningisme <span class="patient-response">[Négatif]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une raideur de nuque avec signe de Brudzinski ou de Kernig positif serait un signal d’alarme pour une hémorragie sous-arachnoïdienne ou une méningite. En cas d’œil rouge aigu douloureux avec nausées et vomissements, la recherche orientante d’un méningisme est obligatoire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Examen neurologique orientant <span class="patient-response">[Motricité symétrique M5, sensibilité préservée, marche sans particularité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Examen neurologique orientant comme dépistage en DD d’AVC. Une hémiparésie, un déficit sensitif ou une ataxie de la marche orienteraient vers une pathologie cérébrale comme cause de la perte visuelle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/13</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Diagnostic en cas de glaucome aigu <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire de routine <span class="patient-response">[Hémogramme normal, électrolytes et créatinine normaux, VS et CRP normaux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Avant l’administration systémique d’acétazolamide, évaluer la fonction rénale et les électrolytes. VS et CRP servent de filet de sécurité pour une artérite à cellules géantes, DD importante chez les patientes &gt; 50 ans avec douleur oculaire unilatérale et baisse de vision.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Évaluation clinique <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail <span class="patient-response">[Blocage angulaire aigu primaire (crise glaucomateuse) à droite]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Constellation classique d’observations du blocage angulaire aigu avec risque de cécité imminent. Le diagnostic présumé clinique permet de débuter le traitement sans délai.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Thérapie <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Baisse médicamenteuse de la pression intraoculaire <span class="patient-response">[Inhibiteur de l’anhydrase carbonique systémique, p. ex. acétazolamide intraveineux ou oral]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’acétazolamide (inhibiteur de l’anhydrase carbonique) réduit la production d’humeur aqueuse et constitue le traitement systémique de première ligne. En cas de nausées ou de vomissements, voie intraveineuse privilégiée. Attention en cas d’allergie aux sulfamides. En cas d’évolution réfractaire, mannitol intraveineux comme agent osmothérapeutique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Analgésie <span class="patient-response">[Analgésique intraveineux, p. ex. paracétamol ou opioïde]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La douleur augmente la pression intraoculaire via l’activation sympathique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antiemèse <span class="patient-response">[Antiemétique intraveineux, p. ex. ondansétron]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Nausées d’origine vagale lors de crise glaucomateuse. Les vomissements augmentent la pression intraoculaire via un mécanisme de Valsalva.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Procédure <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Avis d’ophtalmologue <span class="patient-response">[Avis téléphonique immédiat auprès de l’ophtalmologue de la clinique ophtalmologique la plus proche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Indispensable à l’hôpital régional sans clinique ophtalmologique pour la conduite thérapeutique et l’organisation de la reprise en charge.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Transfert en clinique ophtalmologique <span class="patient-response">[Transfert immédiat vers la clinique ophtalmologique la plus proche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La prise en charge définitive n’est possible qu’en clinique ophtalmologique; sortie ambulatoire exclue.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Information sur le risque de cécité <span class="patient-response">[Information du patient sur le risque de cécité en cas de traitement retardé]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Nommer ouvertement le risque de cécité, tout en soulignant qu’un traitement en temps utile préserve le plus souvent la vision.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Clinique ophtalmologique<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Mesures ultérieures en clinique ophtalmologique après reprise; à connaître par le candidat, mais à ne pas réaliser lui-même.</span></span></span> · Collyres locaux <span class="patient-response">[Bêta-bloquant, alpha-agoniste et inhibiteur local de l’anhydrase carbonique pour une baisse combinée de la pression; par l’ophtalmologue en clinique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La thérapie locale combinée réduit la production d’humeur aqueuse et complète la baisse systémique de la pression.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Clinique ophtalmologique · Tonométrie de Goldmann <span class="patient-response">[Mesure objective de la pression intraoculaire et contrôle évolutif en clinique ophtalmologique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Référence pour la mesure objective de la pression intraoculaire et le suivi sous thérapie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-4" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Clinique ophtalmologique · Répéter le fond d’œil <span class="patient-response">[Après baisse de pression réussie en clinique pour évaluer l’excavation papillaire glaucomateuse]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Après baisse de pression, évaluer le cup-to-disc ratio; un diagnostic de glaucome manifeste requiert la mise en évidence d’une atteinte papillaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-5" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Clinique ophtalmologique · Gonioscopie <span class="patient-response">[En clinique après stabilisation pour évaluer directement l’angle irido-cornéen]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Examen spécialisé pour l’évaluation directe de l’angle de la chambre antérieure.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-6" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Clinique ophtalmologique · Iridotomie au laser <span class="patient-response">[Traitement définitif après baisse de pression; prophylactique aussi à l’œil controlatéral]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Traitement définitif: crée une voie alternative d’écoulement entre chambre postérieure et chambre antérieure. Prophylaxie à l’œil controlatéral en raison d’une disposition similaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-7" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des émotions et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les préoccupations, besoins, demandes et attentes du/de la patient·e et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structuration de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible et demeure flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structuration de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structuration de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structuration de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structuration de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structuration de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée au/à la patient·e, favorise la compréhension par la répétition, le reflet, la synthèse et les explications, et utilise la voix, le débit et les pauses de manière ciblée.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance de manière ciblée pour créer une atmosphère d’échange bienveillante, confiante et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/99</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Dimension temporelle · Début / durée</strong> — Un début il y a moins de 24 heures avec aggravation rapide correspond au <span class="c-red">blocage angulaire aigu</span>. Une symptomatologie augmentant sur plusieurs jours serait atypique et ferait penser à d’autres causes.</li><li><strong>Dimension temporelle · Mode d’apparition</strong> — Une <span class="c-pink">douleur</span> oculaire aiguë survenant en quelques heures est typique du <span class="c-red">blocage angulaire</span>. Une apparition insidieuse orienterait plutôt vers des maladies chroniques ou des <span class="c-red">prodromes</span> subaigus.</li><li><strong>Dimension temporelle · Évolution</strong> — Une évolution progressive sans amélioration spontanée soutient l’augmentation aiguë de la pression et se distingue des symptômes intermittents d’un blocage subaigu ou d’une migraine.</li><li><strong>Déclencheurs</strong> — L’obscurité ou la pénombre induit une mydriase physiologique, qui peut bloquer l’écoulement de l’humeur aqueuse en cas d’angle irido-cornéen anatomiquement étroit. Les déclencheurs classiques sont les séjours dans des pièces sombres comme le cinéma, la lecture prolongée dans de mauvaises conditions d’éclairage, le stress ou une médication anticholinergique.</li><li><strong>Traumatisme oculaire</strong> — Un traumatisme oculaire doit toujours être recherché activement en cas de <span class="c-pink">douleur</span> oculaire aiguë. Même des traumatismes minimes comme une branche ou un ongle peuvent entraîner une érosion cornéenne, un ulcère cornéen ou une lésion du globe. Chez cette patiente, il n’y a pas de traumatisme, la <span class="c-pink">douleur</span> est apparue spontanément.</li><li><strong>Localisation</strong> — Des <span class="c-pink">douleurs</span> profondément intraoculaires évoquent des processus intraoculaires avec élévation de pression, comme le <span class="c-red">blocage angulaire aigu</span>. Des <span class="c-pink">douleurs</span> superficielles conjonctivales orientent vers une <span class="c-red">conjonctivite</span> ou une <span class="c-red">kératite</span>. Des <span class="c-pink">douleurs</span> rétrobulbaires sont classiques pour une <span class="c-red">névrite</span> optique ou des processus orbitaires.</li><li><strong>Irradiation</strong> — Lors d’une crise glaucomateuse, la <span class="c-pink">douleur</span> irradie fréquemment vers le front ou la tempe ipsilatérale, véhiculée par le nerf ophtalmique (V1) du nerf trijumeau. Une <span class="c-pink">céphalée</span> temporale avec <span class="c-pink">douleur</span> à la pression ferait suspecter une <span class="c-red">artérite à cellules géantes</span>, des <span class="c-pink">douleurs</span> rétrobulbaires aggravées aux mouvements oculaires évoquent une <span class="c-red">névrite</span> optique.</li><li><strong>Qualité</strong> — Un caractère douloureux sourd et compressif est typique du <span class="c-red">blocage angulaire</span> et résulte de l’augmentation aiguë de la pression intraoculaire avec irritation des nerfs ciliaires. Des <span class="c-pink">douleurs</span> brûlantes ou piquantes superficielles évoquent plutôt une <span class="c-red">conjonctivite</span> ou une <span class="c-red">kératite</span>. Des <span class="c-pink">douleurs</span> pulsatiles seraient typiques des <span class="c-pink">céphalées</span> migraineuses.</li><li><strong>Intensité</strong> — Des <span class="c-pink">douleurs</span> très intenses sont typiques du <span class="c-red">blocage angulaire aigu</span>. Une faible intensité douloureuse parlerait contre une crise glaucomateuse et ferait plutôt penser à une <span class="c-red">conjonctivite</span> ou une pathologie cornéenne superficielle.</li><li><strong>⊕ Facteurs aggravants</strong> — Les symptômes de la crise glaucomateuse s’aggravent typiquement dans l’obscurité par la mydriase physiologique et lors de stress par l’activation sympathique. Les deux mécanismes favorisent le blocage de l’écoulement de l’humeur aqueuse.</li><li><strong>⊖ Facteurs soulageants</strong> — Dans le <span class="c-red">blocage angulaire aigu</span>, aucune mesure conservatrice n’apporte de soulagement notable. Cette absence d’influence est précieuse pour le diagnostic et souligne l’indication d’urgence.</li><li><strong>Symptômes associés</strong> — <span class="c-blue">Sur AZYGOS, les patientes et patients ne mentionnent volontairement pas de symptômes associés pertinents à cette question ouverte.</span> <span class="c-blue">Ce qui est évalué</span>, c’est la recherche ciblée. En réalité, la question reste importante, car elle amène parfois des indices décisifs spontanés.</li><li><strong>Acuité visuelle · Baisse du visus unilatérale</strong> — Une baisse aiguë unilatérale de l’<span class="c-green">acuité visuelle</span> avec œil rouge et douloureux est un <span class="c-yellow">signe d’alarme</span> central pour une crise glaucomateuse. Elle résulte principalement de l’<span class="c-pink">œdème</span> cornéen lors d’une pression intraoculaire aiguë élevée et souligne le risque de <span class="c-orange">cécité</span>.</li><li><strong>Acuité visuelle · Caractère de la baisse de vision</strong> — Le type de baisse de vision affine le diagnostic. Une vision brumeuse comme à travers du verre dépoli correspond à l’<span class="c-pink">œdème</span> cornéen lors d’une crise glaucomateuse. Un rideau noir soudain évoque plutôt un décollement de rétine, une perte localisée ou centrale une pathologie rétinienne ou du nerf optique comme une occlusion de l’artère centrale ou une <span class="c-red">neuropathie</span> optique ischémique.</li><li><strong>Halos / couronnes lumineuses</strong> — Les halos autour des sources lumineuses sont classiques pour une pression intraoculaire élevée avec <span class="c-pink">œdème</span> cornéen. Ils résultent de la diffusion de la lumière au niveau du stroma cornéen engorgé. La patiente les perçoit typiquement le soir ou au crépuscule.</li><li><strong>Céphalée</strong> — Une <span class="c-pink">céphalée</span> hémicrânienne associée, dépassant l’irradiation douloureuse directe, est un symptôme fréquent lors d’une crise glaucomateuse. Elle résulte d’une activation trigéminale et sympathique généralisée et conduit non rarement à une confusion avec migraine ou algie vasculaire de la face.</li><li><strong>Nausées / vomissements</strong> — Les <span class="c-pink">nausées</span> et <span class="c-pink">vomissements</span> sont transmis par la connexion trigémino-vagale et surviennent classiquement dans la crise glaucomateuse. Ils peuvent masquer le problème oculaire et mener à une erreur diagnostique de gastro-<span class="c-red">entérite</span> ou de migraine.</li><li><strong>Segment antérieur de l’œil · Rougeur</strong> — Une injection conjonctivale ou ciliaire dans la crise glaucomateuse est due à la stase des vaisseaux épiscléraux. Elle est toutefois non spécifique et survient aussi dans la <span class="c-red">conjonctivite</span>, l’<span class="c-red">uvéite</span> et la <span class="c-red">kératite</span>.</li><li><strong>Segment antérieur de l’œil · Photophobie</strong> — La <span class="c-pink">photophobie</span> est fréquente dans la crise glaucomateuse, mais non spécifique. Elle est également marquée dans l’<span class="c-red">uvéite</span> antérieure, la <span class="c-red">kératite</span> et les érosions cornéennes. La réaction via le trijumeau ne permet pas une attribution univoque.</li><li><strong>Segment antérieur de l’œil · Sécrétions / larmoiement</strong> — Un écoulement purulent ou muqueux parle contre une crise glaucomateuse et pour une <span class="c-red">conjonctivite</span>. Un larmoiement clair survient de manière réflexe comme symptôme associé dans la crise glaucomateuse.</li><li><strong>Segment antérieur de l’œil · Sensation de corps étranger</strong> — Une sensation de corps étranger, souvent décrite comme un « grain de sable dans l’œil », évoque des pathologies cornéennes superficielles comme la <span class="c-red">kératite</span>, l’érosion cornéenne ou un corps étranger cornéen ou conjonctival. Dans la crise glaucomateuse, elle est absente car la <span class="c-pink">douleur</span> est profonde et oppressive.</li><li><strong>Segment antérieur de l’œil · Prurit</strong> — Le <span class="c-pink">prurit</span> est le symptôme principal de la <span class="c-red">conjonctivite</span> allergique et un critère négatif important pour d’autres affections oculaires. Il manque lors d’une crise glaucomateuse et distingue clairement ce tableau d’une réaction allergique.</li><li><strong>Segment postérieur de l’œil · Mouches volantes / éclairs lumineux</strong> — Les mouches volantes et photopsies indiquent un décollement du vitré ou une déchirure rétinienne et sont importants pour l’exclusion différentielle. Dans la crise glaucomateuse, ils manquent typiquement.</li><li><strong>Segment postérieur de l’œil · Scotomes / déficits du champ visuel</strong> — Des déficits localisés du <span class="c-green">champ visuel</span> parlent pour une pathologie rétinienne ou du nerf optique comme une occlusion de l’artère centrale ou une <span class="c-red">névrite</span> optique. Dans la crise glaucomateuse, la vision est diffusément réduite par l’<span class="c-pink">œdème</span> cornéen.</li><li><strong>Segment postérieur de l’œil · Métamorphopsies</strong> — Une vision déformée avec lignes courbées indique une pathologie maculaire, le plus souvent une DMLA exsudative. Dans la crise glaucomateuse, les métamorphopsies sont absentes.</li><li><strong>Neuro-ophtalmologie / orbite · Diplopie</strong> — La diplopie indique une pathologie des nerfs crâniens ou des muscles oculaires, par exemple en cas de paralysie d’un nerf crânien, de myasthénie ou de processus orbitaire. Dans la crise glaucomateuse, elle est absente.</li><li><strong>Neuro-ophtalmologie / orbite · Dyschromatopsie</strong> — Un trouble isolé de la vision des couleurs sans baisse d’acuité serait un signe précoce de <span class="c-red">névrite</span> optique. Dans la crise glaucomateuse, la perception des couleurs est secondairement affectée par l’<span class="c-pink">œdème</span> cornéen, sans valeur spécifique.</li><li><strong>DD-céphalée · Céphalée « coup de tonnerre »</strong> — Une <span class="c-pink">céphalée</span> hyperaiguë, en quelques secondes, du type destructrice ou « coup de tonnerre » est hautement suspecte d’<span class="c-orange">hémorragie</span> sous-arachnoïdienne. En cas de <span class="c-pink">douleur</span> oculaire aiguë avec <span class="c-pink">nausées</span> et <span class="c-pink">vomissements</span>, ce <span class="c-yellow">diagnostic différentiel</span> dangereux doit être recherché activement et écarté.</li><li><strong>DD-céphalée · Migraine / algie vasculaire de la face</strong> — Une anamnèse d’épisodes céphalalgiques stéréotypés récurrents évoque une <span class="c-pink">céphalée</span> primaire comme la migraine ou l’algie vasculaire de la face. Une première manifestation à un <span class="c-purple">âge avancé</span> parle fortement contre ces syndromes. Les crises de migraine durent typiquement 4 à 72 heures, celles d’AVF 15 à 180 minutes avec symptômes <span class="c-red">autonomes</span> associés comme larmoiement ou rhinorrhée ipsilatérale.</li><li><strong>Déficits neurologiques focaux</strong> — Des déficits neurologiques focaux tels qu’hémiparésie, aphasie ou instabilité de la marche orientent vers un <span class="c-red">AVC</span> ou un AIT. Un <span class="c-red">infarctus</span> postérieur peut entraîner une hémianopsie homonyme perçue comme un trouble visuel unilatéral. L’absence de déficits focaux parle contre une pathologie cérébrale comme cause des symptômes oculaires.</li><li class="theorie-sous-groupe"><strong>Artérite à cellules géantes</strong> — Chez la personne âgée, crise glaucomateuse et <span class="c-red">artérite à cellules géantes</span> se recoupent en trois points: âge &gt; 50 ans, baisse unilatérale du visus et <span class="c-pink">céphalées</span>. Cliniquement, on distingue l’œil rouge douloureux avec globe dur et pupille irrégulière dans la crise glaucomateuse, versus œil blanc avec baisse de vision indolore, A. temporalis douloureuse à la pression et <span class="c-pink">douleurs</span> à la mastication dans l’<span class="c-red">artérite à cellules géantes</span>. Une ACG manquée conduit à la <span class="c-orange">cécité</span> secondaire de l’œil controlatéral, d’où VS et CRP en dépistage et, en cas de suspicion, stéroïdes immédiats.</li><li><strong>Artérite à cellules géantes · A. temporalis</strong> — Une A. temporalis douloureuse, proéminente ou indurée ainsi qu’une <span class="c-pink">douleur</span> du cuir chevelu (à la coiffure ou en appui) sont des observations très spécifiques pour l’ACG, non pas la seule <span class="c-pink">douleur</span> hémicrânienne.</li><li><strong>Artérite à cellules géantes · Douleurs à la mastication</strong> — La claudication masticatoire est hautement spécifique de l’<span class="c-red">artérite à cellules géantes</span> et résulte d’une ischémie d’effort des muscles masticateurs par atteinte vasculitique de leurs vaisseaux nourriciers.</li><li><strong>Artérite à cellules géantes · Amaurosis fugax</strong> — Des pertes visuelles monoculaires brèves antérieures sont un signal d’alarme pour une <span class="c-red">neuropathie</span> optique ischémique imminente en cas d’<span class="c-red">artérite à cellules géantes</span>.</li><li><strong>Artérite à cellules géantes · Symptômes B</strong> — <span class="c-pink">Fatigue</span>, <span class="c-pink">perte de poids</span>, <span class="c-pink">sueurs nocturnes</span> et subfébrilité indiquent une <span class="c-red">vascularite</span> systémique et renforcent la suspicion d’ACG.</li><li><strong>Antécédents · Antécédents généraux</strong> — Une anamnèse cardiovasculaire pertinente doit être prise en compte dans la crise glaucomateuse, en particulier concernant les collyres bêta-bloquants en cas d’asthme ou de bloc AV et la baisse systémique de la pression oculaire par acétazolamide.</li><li><strong>Antécédents · Antécédents ophtalmologiques</strong> — L’hypermétropie est le principal <span class="c-purple">facteur de risque</span> anatomique d’un <span class="c-red">blocage angulaire aigu</span>, l’œil étant plus court et l’angle plus étroit que chez l’émmétrope. Des épisodes antérieurs de <span class="c-red">blocage angulaire</span>, une <span class="c-red">uvéite</span> connue ou des antécédents de <span class="c-red">kératite</span> seraient aussi des indices pertinents.</li><li><strong>Antécédents chirurgicaux oculaires</strong> — Une iridotomie YAG antérieure rend pratiquement impossible un <span class="c-red">blocage angulaire aigu</span> sur l’œil opéré, un chemin alternatif d’écoulement ayant été créé. Une <span class="c-amber">chirurgie</span> de la cataracte modifie l’anatomie de la chambre antérieure et réduit nettement le risque de <span class="c-red">blocage angulaire</span>.</li><li><strong>Aides visuelles</strong> — La correction des lunettes renseigne sur la réfraction: les valeurs positives indiquent une hypermétropie, <span class="c-purple">facteur de risque</span> anatomique du <span class="c-red">blocage angulaire</span>. Les porteurs de lentilles ont un risque accru de <span class="c-red">kératite</span> et d’ulcères cornéens, à considérer au <span class="c-yellow">diagnostic différentiel</span> d’un œil rouge et douloureux.</li><li><strong>Médicaments · Médicaments généraux</strong> — La liste complète des médicaments est pertinente pour les interactions et contre-indications du traitement aigu, en particulier pour l’acétazolamide (parenté avec les sulfamides) et les collyres bêta-bloquants en cas d’asthme connu ou de bloc AV.</li><li><strong>Médicaments · Médicaments à risque de glaucome</strong> — Les anticholinergiques systémiques peuvent déclencher un <span class="c-red">blocage angulaire aigu</span>, car ils induisent une mydriase. Groupes pertinents: <span class="c-amber">antihistaminiques</span>, antidépresseurs tricycliques, spasmolytiques urologiques et anticholinergiques inhalés dans la BPCO. Les sympathomimétiques peuvent aussi être déclencheurs.</li><li><strong>Médicaments · Collyres</strong> — Des collyres hypotenseurs indiqueraient un <span class="c-red">glaucome</span> déjà diagnostiqué. Des collyres stéroïdiens topiques peuvent, après usage prolongé, déclencher un <span class="c-red">glaucome</span> secondaire à angle ouvert. La question distingue le tableau actuel d’un premier <span class="c-red">blocage angulaire aigu</span> d’un <span class="c-red">glaucome</span> chronique décompensé.</li><li><strong>Allergies</strong> — Important en raison d’un éventuel traitement par acétazolamide en cas d’allergie aux sulfamides et à cause des conservateurs dans les collyres.</li><li><strong>Anamnèse familiale de glaucome</strong> — Une anamnèse familiale positive augmente nettement le risque de <span class="c-red">glaucome</span> primaire à angle étroit ou ouvert. La recherche d’une disposition héréditaire fait partie de l’anamnèse standard en cas de suspicion de crise glaucomateuse.</li><li><strong>Situation sociale</strong> — La situation sociale est pertinente pour la planification de la sortie après transfert en clinique ophtalmologique. Une patiente vivant seule avec un visus réduit nécessite un soutien au quotidien après la sortie.</li></ul>
+</div><div class="theorie-section">
+    <h4>Examen clinique</h4>
+    <ul><li><strong>Évaluation du visus · Visus droit</strong> — Une réduction massive unilatérale du visus confirme la menace aiguë sur la vision. Dans la crise glaucomateuse, la baisse du visus est due à l’<span class="c-pink">œdème</span> cornéen lors d’une pression intraoculaire aiguë élevée.</li><li><strong>Évaluation du visus · Visus gauche</strong> — L’évaluation du visus de l’œil controlatéral sert à la comparaison latérale et à l’appréciation de la vision générale.</li><li><strong>Évaluation du visus · Aide visuelle utilisée</strong> — Le test du visus se fait avec l’aide visuelle, sauf s’il sert à la détermination de la réfraction. La puissance des lunettes confirme l’hypermétropie comme <span class="c-purple">facteur de risque</span> anatomique.</li><li><strong>Inspection</strong> — Dans la crise glaucomateuse aiguë, l’association injection ciliaire, cornée terne et pupille semi-dilatée irrégulière est déjà suggestive à l’<span class="c-green">inspection</span>. L’anisocorie avec pupille irrégulière évoque une parésie ischémique du sphincter en cas de pression intraoculaire très élevée.</li><li><strong>Évaluation des pupilles · Réaction directe à la lumière</strong> — L’abolition de la réaction directe à la lumière à l’œil atteint soutient la suspicion et correspond à une paralysie ischémique du sphincter sous pression intraoculaire fortement élevée.</li><li><strong>Évaluation des pupilles · Réaction consensuelle à la lumière</strong> — Dans la crise glaucomateuse, la réaction consensuelle est abolie à l’œil atteint, car le sphincter est parétique par ischémie (déficit efférent). La pupille controlatérale réagit normalement à l’éclairage de l’œil malade, montrant une afférence intacte et allant contre une pathologie primaire du nerf optique.</li><li><strong>Évaluation des pupilles · Test au faisceau lumineux oscillant</strong> — Le test au faisceau lumineux oscillant évalue le défaut pupillaire relatif afférent (RAPD). En cas de pupille fixe unilatérale, on juge le test sur la pupille saine: lors du balancement vers l’œil malade, la pupille controlatérale montre un myosis consensuel prompt, ce qui plaide pour une afférence intacte (typique de la crise glaucomateuse aiguë). Un mydriasis paradoxal de la pupille controlatérale évoquerait une lésion glaucomateuse supplémentaire du nerf optique, de mauvais pronostic.</li><li><strong>Évaluation des pupilles · Réaction de convergence</strong> — La réaction de convergence avec myosis passe par les fibres parasympathiques vers le sphincter pupillae, donc le même effecteur que la réaction à la lumière. Dans la crise glaucomateuse, elle est également abolie à l’œil atteint, le sphincter ischémique ne réagissant ni à la lumière ni à l’accommodation.</li><li><strong>Motilité oculaire</strong> — La motilité oculaire est testée en H dans 9 directions du regard. Une <span class="c-pink">douleur</span> aux mouvements oculaires ferait penser à une <span class="c-red">névrite</span> optique ou à une phlegmon de l’orbite, une diplopie à une paralysie d’un nerf crânien.</li><li><strong>Champ visuel par confrontation · Central</strong> — Teste le <span class="c-green">champ visuel</span> central en demandant la symétrie du visage (nez, oreilles, yeux, bouche). Des scotomes centraux évoqueraient une <span class="c-red">névrite</span> optique ou une pathologie maculaire.</li><li><strong>Champ visuel par confrontation · Médio-périphérique</strong> — Teste le <span class="c-green">champ visuel</span> médio-périphérique par comptage des doigts dans les quatre quadrants. Une quadrantanopsie ferait penser à une pathologie chiasmale ou rétrochiasmale.</li><li><strong>Champ visuel par confrontation · Périphérique</strong> — Teste le <span class="c-green">champ visuel</span> périphérique par agitation de doigts de l’extérieur vers l’intérieur. Des pertes périphériques du <span class="c-green">champ visuel</span> évoqueraient un <span class="c-red">glaucome</span> à un stade avancé ou des pathologies rétiniennes.</li><li><strong>Champ visuel par confrontation · Examen monoculaire</strong> — Auto-contrôle méthodologique: condition préalable pour une évaluation latéralisée. L’œil non examiné est couvert avec la paume en coquille, et non comprimé avec le poing contre le globe.</li><li><strong>Champ visuel par confrontation · Test des quadrants</strong> — Auto-contrôle méthodologique: examen complet selon une ligne en X (supéro-temporal, supéro-nasal, inféro-temporal, inféro-nasal) plutôt que selon un motif +, pour éviter de manquer des quadrantanopsies obliques.</li><li><strong>Palpation du globe</strong> — La <span class="c-green">palpation</span> digitale du globe est le test au lit du patient le plus important pour la crise glaucomateuse, en particulier à l’hôpital régional sans lampe à fente. Un globe «dur comme de la pierre» par rapport au côté opposé évoque une pression intraoculaire nettement &gt; 40 mmHg et confirme cliniquement la suspicion.</li><li><strong>Ophthalmoscope manuel · Réflexe du fond (lumière rétrodiffusée)</strong> — À 1 à 2 mètres à travers l’ophthalmoscope, le réflexe du fond donne un aperçu rapide de la clarté des milieux réfractifs. Dans la crise glaucomateuse, il est unilatéralement diminué par l’<span class="c-pink">œdème</span> cornéen; au différentiel, une cataracte dense ou une <span class="c-orange">hémorragie</span> du vitré entrent en ligne de compte.</li><li><strong>Ophthalmoscope manuel · Lumière incidente (éclairage direct)</strong> — Près de l’œil, le faisceau lumineux rond permet d’inspecter la surface des structures antérieures (cornée, conjonctive, sclère, iris). Une surface cornéenne mate plutôt que lisse et réfléchissante correspond, en cas d’œil rouge aigu, à une décompensation cornéenne lors de crise glaucomateuse.</li><li><strong>Ophthalmoscope manuel · Cornée (fente focalisée)</strong> — Avec la fente focalisée à 45 degrés, on obtient une coupe des couches cornéennes. En crise glaucomateuse, la forte pression dépasse la capacité de pompe endothéliale et de l’eau s’accumule dans le stroma: l’aspect typique est l’<span class="c-pink">œdème</span> endothélial avec épaississement stromal.</li><li><strong>Ophthalmoscope manuel · Profondeur de la chambre antérieure (fente focalisée)</strong> — À la fente focalisée, la profondeur de la chambre antérieure correspond à la distance entre les reflets sur la cornée et l’iris. Une chambre antérieure plate avec bombement de l’iris est l’indicateur anatomique classique du <span class="c-red">blocage angulaire</span>. Attention: en cas de chambre antérieure plate, ne pas instiller de mydriatiques, qui peuvent déclencher ou aggraver une crise glaucomateuse.</li><li><strong>Ophthalmoscope manuel · Fond d’œil</strong> — Dans la crise glaucomateuse, l’accès au fond d’œil droit est en général impossible en raison de l’<span class="c-pink">œdème</span> cornéen. Attention: les mydriatiques sont contre-indiqués. Après réduction réussie de la pression, répéter le fond d’œil pour évaluer l’excavation papillaire glaucomateuse (cup-to-disc ratio).</li><li><strong>Méningisme</strong> — Une raideur de nuque avec <span class="c-green">signe de Brudzinski</span> ou de Kernig positif serait un signal d’alarme pour une <span class="c-orange">hémorragie</span> sous-arachnoïdienne ou une <span class="c-red">méningite</span>. En cas d’œil rouge aigu douloureux avec <span class="c-pink">nausées</span> et <span class="c-pink">vomissements</span>, la recherche orientante d’un méningisme est obligatoire.</li><li><strong>Examen neurologique orientant</strong> — Examen neurologique orientant comme dépistage en DD d’<span class="c-red">AVC</span>. Une hémiparésie, un déficit sensitif ou une ataxie de la marche orienteraient vers une pathologie cérébrale comme cause de la perte visuelle.</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostic</h4>
+    <ul><li><strong>Laboratoire de routine</strong> — Avant l’administration systémique d’acétazolamide, évaluer la fonction rénale et les électrolytes. VS et CRP servent de <span class="c-yellow">filet de sécurité</span> pour une <span class="c-red">artérite à cellules géantes</span>, DD importante chez les patientes &gt; 50 ans avec <span class="c-pink">douleur</span> oculaire unilatérale et baisse de vision.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic de travail</strong> — Constellation classique d’observations du <span class="c-red">blocage angulaire aigu</span> avec risque de <span class="c-orange">cécité</span> imminent. Le diagnostic présumé clinique permet de débuter le traitement sans délai.</li><li><strong>Baisse médicamenteuse de la pression intraoculaire</strong> — L’acétazolamide (<span class="c-amber">inhibiteur de l’anhydrase carbonique</span>) réduit la production d’humeur aqueuse et constitue le <span class="c-amber">traitement systémique</span> de première ligne. En cas de <span class="c-pink">nausées</span> ou de <span class="c-pink">vomissements</span>, voie intraveineuse privilégiée. Attention en cas d’allergie aux sulfamides. En cas d’évolution réfractaire, mannitol intraveineux comme agent osmothérapeutique.</li><li><strong>Analgésie</strong> — La <span class="c-pink">douleur</span> augmente la pression intraoculaire via l’activation sympathique.</li><li><strong>Antiemèse</strong> — <span class="c-pink">Nausées</span> d’origine vagale lors de crise glaucomateuse. Les <span class="c-pink">vomissements</span> augmentent la pression intraoculaire via un mécanisme de Valsalva.</li><li><strong>Avis d’ophtalmologue</strong> — Indispensable à l’hôpital régional sans clinique ophtalmologique pour la conduite thérapeutique et l’organisation de la reprise en charge.</li><li><strong>Transfert en clinique ophtalmologique</strong> — La prise en charge définitive n’est possible qu’en clinique ophtalmologique; sortie ambulatoire exclue.</li><li><strong>Information sur le risque de cécité</strong> — Nommer ouvertement le risque de <span class="c-orange">cécité</span>, tout en soulignant qu’un traitement en temps utile préserve le plus souvent la vision.</li><li class="theorie-sous-groupe"><strong>Clinique ophtalmologique</strong> — Mesures ultérieures en clinique ophtalmologique après reprise; à connaître par <span class="c-blue">le candidat</span>, mais à ne pas réaliser lui-même.</li><li><strong>Clinique ophtalmologique · Collyres locaux</strong> — La thérapie locale combinée réduit la production d’humeur aqueuse et complète la baisse systémique de la pression.</li><li><strong>Clinique ophtalmologique · Tonométrie de Goldmann</strong> — Référence pour la mesure objective de la pression intraoculaire et le suivi sous thérapie.</li><li><strong>Clinique ophtalmologique · Répéter le fond d’œil</strong> — Après baisse de pression, évaluer le cup-to-disc ratio; un diagnostic de <span class="c-red">glaucome</span> manifeste requiert la mise en évidence d’une atteinte papillaire.</li><li><strong>Clinique ophtalmologique · Gonioscopie</strong> — Examen spécialisé <span class="c-blue">pour l’évaluation</span> directe de l’angle de la chambre antérieure.</li><li><strong>Clinique ophtalmologique · Iridotomie au laser</strong> — Traitement définitif: crée une voie alternative d’écoulement entre chambre postérieure et chambre antérieure. Prophylaxie à l’œil controlatéral en raison d’une disposition similaire.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Anamnèse ophtalmologique ciblée avec exploration active des <span class="c-yellow">diagnostics différentiels</span></li><li>Examen ophtalmologique complet avec <span class="c-green">palpation</span> du globe comme observation clé</li><li>Reconnaître la crise glaucomateuse comme une urgence nécessitant une baisse de pression et un transfert immédiat</li><li>Vue d’ensemble AKDP</li><li>Anamnèse: <span class="c-pink">Douleurs</span> oculaires aiguës unilatérales à droite (9/10), baisse du visus avec halos, <span class="c-pink">céphalée</span> hémicrânienne, <span class="c-pink">nausées</span>/<span class="c-pink">vomissement</span>. <span class="c-purple">Facteurs de risque</span> hypermétropie, anamnèse familiale positive de <span class="c-red">glaucome</span>. DD (<span class="c-orange">hémorragie</span> sous-arachnoïdienne, migraine/algie vasculaire de la face, déficit neurologique focal, <span class="c-red">artérite à cellules géantes</span>) non étayées à l’anamnèse.</li><li>Examen clinique: Œil rouge droit avec injection ciliaire, opacification cornéenne, anisocorie avec pupille aréactive; visus mouvements de la main à 30 cm; globe droit dur comme de la pierre; chambre antérieure plate. Œil gauche sans particularité, pas de méningisme, examen neuro sans particularité. TA 158/92 mmHg, autres paramètres vitaux normaux.</li><li>Diagnostic: Diagnostic de travail clinique. Laboratoire de routine (NFS, électrolytes, créatinine, VS, CRP) sans particularité; <span class="c-green">tonométrie</span>, lampe à fente et gonioscopie après transfert.</li><li>Procédure: Diminution médicamenteuse de la pression intraoculaire, analgésie, au besoin antiémétique; avis de l’ophtalmologue et transfert en clinique ophtalmologique pour iridotomie au laser après baisse de pression. Information du patient sur le risque de <span class="c-orange">cécité</span>.</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Traduit automatiquement puis vérifié par une IA face à l&#x27;original allemand.</p><p>Diagnostic: crise aiguë de <span class="c-red">glaucome</span> (<span class="c-red">blocage angulaire</span>) à droite</p><p>Service des urgences | Venus von Bümpliz, 70 ans, guide de montagne à la <span class="c-red">retraite</span></p><p>Chez Mme Venus von Bümpliz, 70 ans, guide de montagne à la <span class="c-red">retraite</span>, le tableau clinique évoque une crise aiguë de <span class="c-red">glaucome</span> (<span class="c-red">blocage angulaire</span>) à l’œil droit.</p><p>Les symptômes ont débuté hier soir après plusieurs heures de lecture dans un salon faiblement éclairé et se sont aggravés progressivement durant la nuit. Au premier plan: une <span class="c-pink">douleur</span> oculaire droite profonde et compressive d’intensité 9 sur 10, une baisse marquée de l’<span class="c-green">acuité visuelle</span> avec vision floue comme à travers du verre dépoli et des <span class="c-pink">halos colorés</span> autour des sources lumineuses, ainsi que des <span class="c-pink">nausées</span> avec un seul épisode de <span class="c-pink">vomissement</span>. S’y associe une <span class="c-pink">céphalée</span> hémicrânienne droite sourde et oppressive. Les <span class="c-purple">facteurs de risque</span> comprennent une hypermétropie connue depuis l’enfance de +3.5 dioptries et une anamnèse familiale positive de <span class="c-red">glaucome</span> (mère). Comme comorbidité, une <span class="c-purple">hypertension artérielle</span> traitée par amlodipine. Au <span class="c-yellow">diagnostic différentiel</span>, chez une patiente de 70 ans présentant une <span class="c-pink">céphalée</span> aiguë, des <span class="c-pink">nausées</span> et une baisse unilatérale de la vision, outre une crise aiguë de <span class="c-red">glaucome</span>, ont été envisagées en particulier une <span class="c-red">artérite à cellules géantes</span>, une <span class="c-orange">hémorragie</span> sous-arachnoïdienne ainsi que des <span class="c-pink">céphalées</span> primaires telles que migraine et algie vasculaire de la face. L’anamnèse et l’examen clinique n’ont fourni aucun indice orientant en ce sens; aucun déficit neurologique focal n’a été objectivé.</p><p>À l’examen clinique, on observe à droite un œil rouge avec injection ciliaire, <span class="c-red">hyperémie</span> sclérale, opacification terne de la cornée et une pupille semi-dilatée, irrégulière et aréactive à la lumière (anisocorie). La réaction directe à la lumière est abolie à droite, promptement présente à gauche. L’<span class="c-green">acuité visuelle</span> droite est réduite à la perception des mouvements de la main à 30 cm. La <span class="c-green">palpation</span> du globe montre à droite un œil «dur comme de la pierre» par comparaison au côté gauche mou. À l’ophthalmoscope manuel, on note une chambre antérieure plate avec bombement de l’iris et un <span class="c-pink">œdème</span> endothélial avec épaississement du stroma; le fond d’œil droit n’est pas évaluable en raison de l’opacification cornéenne. À gauche, l’observation ophtalmologique est sans particularité. Sur le plan neurologique, pas de méningisme, examen neurologique orientant sans particularité. Les paramètres vitaux sont dans la norme à l’exception d’une tension artérielle légèrement élevée sur fond d’<span class="c-purple">hypertension</span> connue et de réaction aiguë à la <span class="c-pink">douleur</span> et au stress (TA 158/92 mmHg, FC 92/min, FR 16/min, T 36.8 °C, SpO2 98% à l’air ambiant).</p><p>Le diagnostic de travail est posé cliniquement sur la base de la symptomatologie caractéristique et des résultats d’examen. Le laboratoire de routine (hémogramme, électrolytes, créatinine, VS, CRP) est sans particularité; des paramètres inflammatoires normaux rendent en outre peu probable une <span class="c-red">artérite à cellules géantes</span> associée. Les examens ophtalmologiques spécialisés tels que la <span class="c-green">tonométrie</span> de Goldmann, la lampe à fente et la gonioscopie ne sont pas disponibles dans l’hôpital régional sans clinique ophtalmologique sur place et ne seront réalisés qu’après transfert.</p><p>La suite de la prise en charge comprend une baisse immédiate médicamenteuse de la pression intraoculaire par acétazolamide intraveineux, une analgésie et, si nécessaire, un antiémétique. En parallèle, un avis téléphonique est pris auprès de l’ophtalmologue de garde de la clinique ophtalmologique la plus proche et l’organisation du transfert pour la prise en charge définitive (iridotomie au laser après réduction de la pression). La patiente, anxieuse, est informée de manière compréhensible et empathique du diagnostic et du risque de <span class="c-orange">cécité</span> en cas de traitement retardé.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+<div class="images-wrapper">
+<div class="annexe-item" data-image-id="img1">
+    <div class="annexe-title">Inspection</div>
+    <div class="annexe-description">Droite: injection conjonctivale et ciliaire avec hyperémie sclérale, opacification terne de la cornée, pupille semi-dilatée irrégulière (anisocorie); gauche: sans irritation, cornée claire, pupille ronde</div>
+    <div class="annexe-image">
+        <img src="data:image/jpeg;base64,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" alt="Inspection" loading="lazy">
+    </div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 48,
+        "examen": 22,
+        "management": 13,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 4,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 4,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

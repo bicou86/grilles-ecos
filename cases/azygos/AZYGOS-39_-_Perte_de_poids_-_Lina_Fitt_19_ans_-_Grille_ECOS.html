@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-39 - Perte de poids - Lina Fitt, 19 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-39 - Perte de poids</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-39" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet de médecin de famille</p>
+            <p style="margin: 5px 0;">👤 Lina Fitt, 19 ans</p>
+            <p style="margin: 5px 0;">🏷️ Psychiatrie · Poste standard · Difficile · 13 min</p>
+            <div class="vital-signs" style="grid-template-columns: repeat(5, 1fr);">
+                <div class="vital-sign">
+                    <div class="vital-sign-label">TA</div>
+                    <div class="vital-sign-value">95/60 mmHg</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FC</div>
+                    <div class="vital-sign-value">50 bpm</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">FR</div>
+                    <div class="vital-sign-value">12/min</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">SpO₂</div>
+                    <div class="vital-sign-value">98%</div>
+                </div>
+                <div class="vital-sign">
+                    <div class="vital-sign-label">T°</div>
+                    <div class="vital-sign-value">36.0°C</div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/41</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Trouble actuel <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question initiale <span class="patient-response">[&quot;J’ai des problèmes avec l’alimentation depuis quelque temps et je perds du poids.&quot;]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début / durée <span class="patient-response">[Depuis environ 12 mois.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution / dynamique du trouble alimentaire <span class="patient-response">[Progressif, de plus en plus restrictif.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Déclencheurs<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Aucun déclencheur concret mentionné spontanément. Nécessité d’une recherche active de déclencheurs typiques des troubles alimentaires.</span></span></span> · Changement de vie <span class="patient-response">[Il y a un an, j’ai commencé mes études et j’ai déménagé dans une nouvelle ville; j’ai dû pour la première fois m’occuper seule de mon alimentation.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les changements de vie (début des études, départ du domicile, phases de transition) sont des déclencheurs initiaux classiques des troubles alimentaires.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Déclencheurs · Réseaux sociaux <span class="patient-response">[À ce moment-là, j’ai commencé à suivre des influenceurs fitness et diète. Une amie a maigri au même moment.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Consommation de thinspiration et comportement-modèle dans l’entourage comme co-déclencheurs du début des symptômes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures antérieures <span class="patient-response">[Pas d’évaluation médicale jusque-là, rendez-vous à la demande de la mère.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Indique une absence d’insight; pertinent pour la planification thérapeutique et l’implication familiale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Qu’entendez-vous exactement ?]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Chez AZYGOS, les patientes et les patients ne mentionnent volontairement aucun symptôme associé pertinent à cette question ouverte. Ce qui est évalué, c’est la relance ciblée. En pratique, la question reste toutefois importante, car des indices déterminants sont parfois donnés spontanément à cette occasion.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée sur le problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Comportement alimentaire <span class="patient-response">[Très restrictif: principalement légumes/yaourt, évite glucides et graisses, compte les calories, tient un journal des apports.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le recueil détaillé du comportement alimentaire (quoi, combien, quand, rituels, aliments « sûrs ») est central pour le diagnostic d’un trouble alimentaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Évolution pondérale<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La quantification de la perte pondérale et la clarification du caractère volontaire ou non sont essentielles pour l’évaluation de la sévérité et l’orientation différentielle. Une perte non intentionnelle &gt; 5 % en 6 mois ou &gt; 10 % en 12 mois est cliniquement pertinente.</span></span></span> · Ampleur / dynamique <span class="patient-response">[Env. 12 kg de perte pondérale au cours des 12 derniers mois]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Évolution pondérale · Volontaire vs. involontaire <span class="patient-response">[Oui, je voulais maigrir. En fait, encore plus serait mieux.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La distinction volontaire vs. involontaire est diagnostiquement décisive: une perte de poids activement provoquée plaide pour un trouble alimentaire; une perte involontaire exige la recherche de causes somatiques.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Image corporelle / dysmorphophobie corporelle<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La dysmorphophobie corporelle et la peur marquée de la prise de poids sont des critères centraux DSM-5/ICD-11 de l’anorexie mentale et doivent être explicitement recherchés.</span></span></span> · Dysmorphophobie corporelle <span class="patient-response">[Se sent encore trop grosse malgré l’insuffisance pondérale.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Image corporelle / dysmorphophobie corporelle · Peur de prendre du poids <span class="patient-response">[Peur marquée de prendre du poids.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Pathognomonique pour l’anorexie mentale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Image corporelle / dysmorphophobie corporelle · Estime de soi dépendante du poids <span class="patient-response">[Estime de soi fortement dépendante du poids et de la silhouette.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Critère C du DSM-5 (relation perturbée au corps) déjà rempli par la dysmorphophobie corporelle. Le couplage de l’estime de soi au poids/à la silhouette est une autre manifestation du C, optionnelle pour le diagnostic, utile pour la planification thérapeutique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Insight de la maladie / motivation thérapeutique <span class="patient-response">[Aucune conscience de maladie; mon comportement alimentaire fait partie de mon mode de vie sain et discipliné.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence d’insight est pronostiquement pertinente et influence la planification thérapeutique ainsi que la nécessité d’impliquer la famille.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse menstruelle <span class="patient-response">[Aménorrhée secondaire depuis 6 mois; auparavant régulière.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’aménorrhée secondaire, avec IMC bas, résulte d’un hypogonadisme hypogonadotrope et constitue un marqueur important de la sévérité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Instabilité circulatoire (vertiges / syncope) <span class="patient-response">[Vertiges au lever, syncope unique il y a une semaine.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Complication aiguë la plus fréquente mettant en jeu le pronostic vital. Syncope = indication à l’hospitalisation avec monitoring (bradycardie, allongement du QT).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-8" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse DD / anamnèse systémique <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Accès hyperphagiques (binge-eating) <span class="patient-response">[Nié; aucun épisode de perte de contrôle alimentaire.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Distinction avec boulimie nerveuse, BED et anorexie mentale type accès hyperphagiques-purge. À rechercher activement. Rarement rapporté spontanément en raison de la honte.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Mesures compensatoires / purge<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Différenciation type restrictif vs. type accès hyperphagiques-purge et distinction de la boulimie nerveuse. Les 3 sous-items doivent être recherchés activement.</span></span></span> · Vomissements auto-induits <span class="patient-response">[Aucun vomissement auto-induit.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Complications: alcalose hypokaliémique, signe de Russell, érosion de l’émail, sialadénose.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures compensatoires / purge · Abus de laxatifs / diurétiques <span class="patient-response">[Aucune prise de laxatifs ou de diurétiques.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Demander aussi les laxatifs à base de plantes. Laxatifs → acidose hypokaliémique; diurétiques → syndrome de pseudo-Bartter à l’arrêt.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures compensatoires / purge · Sport excessif / besoin de bouger <span class="patient-response">[Entraînement quotidien de plusieurs heures, agitation et culpabilité en cas d’empêchement.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Symptôme central de l’anorexie restrictive. Souvent rationalisé comme « mode de vie sain » — rechercher activement le caractère compulsif.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD somatiques de la perte pondérale<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dépistage guidé par hypothèses: chaque sous-item cible un DD spécifique. L’anorexie est un diagnostic d’exclusion dès que des causes somatiques sont plausibles.</span></span></span> · Hyperthyroïdie <span class="patient-response">[Pas d’intolérance à la chaleur, pas de tremblements, pas de palpitations au repos.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">DD endocrinienne la plus importante. Dans l’anorexie, tableau typiquement opposé (bradycardie, frilosité).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD somatiques de la perte pondérale · Diabète sucré <span class="patient-response">[Pas de polyurie, pas de polydipsie.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Diabète de type 1 avec perte pondérale malgré l’appétit. Forme particulière: diabulimie (omission d’insuline pour perdre du poids).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD somatiques de la perte pondérale · Maladie inflammatoire chronique de l’intestin / malabsorption <span class="patient-response">[Pas de diarrhée chronique, pas de selles sanglantes, pas de douleurs abdominales postprandiales.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Maladie de Crohn, rectocolite hémorragique, maladie coeliaque. Symptômes principaux: diarrhée chronique &gt; 4 sem., selles sanglantes-muqueuses, manifestations extra-intestinales.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD somatiques de la perte pondérale · Malignité / infection chronique <span class="patient-response">[Pas de fièvre, pas de sueurs nocturnes, pas d’adénopathies.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Symptomatologie B dans le lymphome; toux persistante &gt; 3 sem. en cas de TB. Rechercher l’anamnèse de risque (VIH, voyage, migration).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Complications / conséquences de la dénutrition<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Évaluation de la sévérité et dépistage des complications aiguës menaçantes (circulation, électrolytes, risque de refeeding). Détermine aussi l’indication à l’hospitalisation.</span></span></span> · Frilosité / sensation de froid <span class="patient-response">[J’ai souvent froid, même en environnement chaud.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Conséquence du syndrome Low-T3 et de la perte de l’isolation thermique sous-cutanée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-8" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Complications / conséquences de la dénutrition · Fatigue / capacité réduite à l’effort <span class="patient-response">[Fatigue marquée, capacité réduite à l’effort malgré la poursuite de l’entraînement.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Caractéristique: la patiente continue l’entraînement de façon excessive malgré l’épuisement prononcé. Cette discordance exprime la symptomatologie compulsive.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-9" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Complications / conséquences de la dénutrition · Altérations cutanées trophiques <span class="patient-response">[Peau sèche, lanugo, chute de cheveux, ongles cassants.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Signe classique de dénutrition sévère (lanugo, xérose, effluvium); recueil détaillé à l’examen clinique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-10" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Complications / conséquences de la dénutrition · Constipation <span class="patient-response">[Tendance à la constipation, pas d’usage de laxatifs.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Toujours coupler la question à l’usage de laxatifs — souvent dissimulé sinon.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-11" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Complications / conséquences de la dénutrition · Plaintes cognitives <span class="patient-response">[Problèmes de concentration et d’attention dans les études.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Conséquence fréquente de la dénutrition avec impact sur le quotidien et les études.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-12" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents · Antécédents somatiques <span class="patient-response">[Aucun antécédent somatique pertinent.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents · Antécédents psychiatriques <span class="patient-response">[Pas de dépression, trouble anxieux ou trouble obsessionnel connus.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans les troubles alimentaires, le dépistage explicite des comorbidités psychiatriques est essentiel.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Aucun traitement au long cours, pas de préparations hormonales.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Alcool <span class="patient-response">[Rare, pas de consommation régulière.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Tabagisme <span class="patient-response">[Non-fumeuse.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Drogues <span class="patient-response">[Aucune.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Antécédents familiaux<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Anamnèse familiale axée sur les troubles alimentaires (composante génétique) et les maladies psychiatriques. Seuil: au moins 50 % des items abordés.</span></span></span> · Troubles alimentaires dans la famille <span class="patient-response">[Aucun trouble alimentaire connu dans la famille.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’anorexie mentale a une forte composante génétique; une anamnèse familiale positive augmente nettement le risque.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux · Maladies psychiatriques dans la famille <span class="patient-response">[Mère avec dépression épisodique par le passé.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux · Maladies somatiques dans la famille <span class="patient-response">[Aucune maladie oncologique ou endocrinologique connue.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-2" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Étudiante à l’université.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation sociale <span class="patient-response">[Je vis dans mon propre appartement / en colocation]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs de maintien <span class="patient-response">[Perfectionnisme marqué et besoin de contrôle. Loisirs presque uniquement sport et planification des repas.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Facteurs chroniques de personnalité et contextuels maintenant la maladie. Pertinents pour le focus psychothérapeutique et la prévention des rechutes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/11</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Statut psychique focalisé AMDP <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Énergie / psychomotricité <span class="patient-response">[Réponses brèves, avec latence; paraît ralentie. À la question: « Je suis souvent fatiguée, je dois me forcer pour tout. »]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La réduction de l’énergie dans l’anorexie peut être liée à la dénutrition ou exprimer une dépression comorbide. Le recueil actif est pertinent pour la thérapie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Affect / humeur <span class="patient-response">[Mimique pauvre en affect, voix monotone. À la question: « Je vais en fait bien. Je me réjouis cependant rarement de quelque chose. »]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La comorbidité dépressive est fréquente dans l’anorexie mentale. L’observation de l’affect influence la planification thérapeutique (traitement antidépresseur adjuvant, intervention de crise).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes obsessionnels <span class="patient-response">[À la question sur les rituels: « Je compte chaque calorie et je note tout. Si je ne fais pas mon entraînement, je deviens vraiment agitée. »]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les symptômes obsessionnels sont souvent comorbides dans l’anorexie mentale, surtout dans le type restrictif. Pertinents pour une planification thérapeutique avec éléments d’exposition en TCC.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suicidalité / automutilation <span class="patient-response">[À la question directe: « Non, je ne pense pas à me faire du mal. Je ne me mutile pas non plus. »]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’anorexie mentale présente la mortalité la plus élevée de toutes les maladies psychiatriques, avec un taux de suicide accru. Le dépistage actif de la suicidalité et de l’automutilation est obligatoire à chaque consultation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-3" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Paramètres vitaux <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Paramètres vitaux <span class="patient-response">[Tension artérielle 95/60 mmHg, fréquence cardiaque 50/min régulière (bradycardie), SpO2 98%, température 36.0 °C, FR 12/min.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’hypotension et la bradycardie sont des signes d’alarme en cas de dénutrition et des indicateurs d’instabilité circulatoire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. État général &amp; inspection <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">IMC / morphotype <span class="patient-response">[42 kg pour 1.70 m → IMC 14.5 (insuffisance pondérale sévère).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">IMC &lt; 15 correspond à une anorexie mentale sévère et constitue une indication à l’hospitalisation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection peau &amp; cheveux <span class="patient-response">[Pâleur, peau sèche, fin duvet (lanugo) aux bras et au visage; acrocyanose légère.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le lanugo est un fin duvet pileux au dos, aux bras ou au visage. Il apparaît en cas d’insuffisance pondérale sévère pour conserver la chaleur et indique une dénutrition importante.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+<div class="criteria-row" id="criteria-e4">
+    <div>
+        <div class="criteria-text">4. Statut interniste <button class="comment-button" onclick="toggleComment('e4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Statut interniste<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Examen général d’orientation. En cas d’annonce par le candidat, le résultat peut être communiqué directement.</span></span></span> · Cardiaque <span class="patient-response">[Bruits du cœur purs, réguliers, bradycardes; pas de bruits pathologiques.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-0" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut interniste · Pulmonaire <span class="patient-response">[Murmure vésiculaire bilatéral, pas de bruits ajoutés.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-1" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut interniste · Abdomen <span class="patient-response">[Souple, creusé, bruits intestinaux normaux, pas de douleur à la palpation, pas de masses.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-2" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut interniste · Neurologique orientant <span class="patient-response">[Aucun déficit neurologique focal, nerfs crâniens sans particularité.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e4-detail-3" value="1" onchange="updateDetailScore('e4', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e4">
+            <textarea class="comment-textarea" id="comment-e4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/18</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Bilan de laboratoire de base <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire de base · Hémogramme <span class="patient-response">[Demandé; anémie légère, leucocytes bas-normaux, thrombocytes normaux.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En lien avec la dénutrition: anémie légère et leucopénie fréquentes; dans les cas sévères, pancytopénie par dégénérescence gélatineuse de la moelle osseuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire de base · Électrolytes (incl. phosphate, magnésium) <span class="patient-response">[Demandé; potassium légèrement abaissé, phosphate et magnésium en bas de la norme.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le phosphate et le magnésium sont essentiels pour l’évaluation du risque de refeeding.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire de base · Glycémie <span class="patient-response">[Demandé; glycémie à jeun bas-normale.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Risque d’hypoglycémie en cas de dénutrition sévère. À documenter obligatoirement si IMC &lt; 15.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire de base · Fonctions hépatiques (ALT, AST) <span class="patient-response">[Demandé; ALT et AST augmentées (hépatite liée à l’anorexie).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Transaminases augmentées en cas de dénutrition sévère comme expression d’une hépatite liée à l’anorexie. Influence la décision d’hospitalisation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-3" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Bilan de laboratoire étendu <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Endocrinologie · Bilan thyroïdien (TSH, fT3) <span class="patient-response">[Demandé; TSH normale, fT3 abaissé (syndrome Low-T3).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">TSH pour la DD d’hyperthyroïdie. fT3 abaissé avec TSH normal correspond au syndrome Low-T3, adaptation centrale au déficit énergétique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Endocrinologie · Bilan hormonal (LH, FSH, œstradiol) <span class="patient-response">[Demandé; hypogonadisme hypogonadotrope (LH, FSH, E2 abaissés).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Résultat classique dans l’anorexie mentale, explique l’aménorrhée secondaire et la perte osseuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de grossesse · β-hCG <span class="patient-response">[Demandé; négatif.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas d’aménorrhée secondaire, l’exclusion d’une grossesse est obligatoire — principal diagnostic différentiel avant d’autres dosages hormonaux.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-2" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Examens spécifiques <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">ECG <span class="patient-response">[Bradycardie sinusale 50/min, sinon sans particularité (en particulier pas d’allongement du QT).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Obligatoire en cas d’anorexie mentale. Détecte bradycardie, allongement du QT et arythmies. L’allongement du QT est une indication à l’hospitalisation avec monitoring.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Test de Schellong <span class="patient-response">[Pathologique: couché 95/60 mmHg, pouls 50/min — après 3 min debout 72/55 mmHg, pouls 70/min. La patiente se plaint de vertiges.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Indiqué d’emblée en cas d’anamnèse de syncope. Pathologique si baisse de la TA systolique &gt; 20 mmHg ou augmentation du pouls &gt; 30/min. Dans l’anorexie, la réponse du pouls est souvent atténuée (réserve sympathique limitée), une augmentation modérée du pouls est alors déjà remarquable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Évaluation clinique <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic présumé <span class="patient-response">[Anorexie mentale, type restrictif (DSM-5 / CIM-11).]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Critères diagnostiques: restriction des apports énergétiques, insuffisance pondérale significative, dysmorphophobie corporelle, peur intense de prendre du poids.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Raisonnement clinique <span class="patient-response">[Critères DSM remplis (restriction, insuffisance pondérale, dysmorphophobie corporelle, peur de la prise de poids). Boulimie/BED et DD somatiques exclues.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Thérapie <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Consignes / information du patient <span class="patient-response">[Information de la patiente et de la mère sur le diagnostic et la thérapie; attitude empathique face à l’absence d’insight.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Thérapie multimodale <span class="patient-response">[Thérapie nutritionnelle avec réalimentation progressive, psychothérapie (TCC / basée sur la famille), implication de la famille.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Gold standard dans l’anorexie mentale: association stabilisation somatique, thérapie nutritionnelle et psychothérapie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Prophylaxie du refeeding <span class="patient-response">[Substitution de phosphate, potassium, magnésium; contrôles électrolytiques rapprochés.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le syndrome de refeeding est une complication redoutée en cas d’apports trop rapides. Cliniquement pertinent dès IMC &lt; 16. Prophylaxie: réalimentation progressive, contrôle rapproché du phosphate, potassium, magnésium.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+<div class="criteria-row" id="criteria-m6">
+    <div>
+        <div class="criteria-text">6. Procédure <button class="comment-button" onclick="toggleComment('m6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Hospitalisation <span class="patient-response">[Indication: IMC &lt; 15, bradycardie, syncope, aménorrhée, absence d’insight.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Critères d’hospitalisation: IMC &lt; 15, instabilité cardiovasculaire (bradycardie, hypotension, syncope), déséquilibre électrolytique, comorbidités sévères, résistance au traitement ambulatoire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-0" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Orientation vers un spécialiste <span class="patient-response">[Orientation vers un centre spécialisé des troubles alimentaires.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-1" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Filet de sécurité <span class="patient-response">[Information sur les signes d’alarme (syncope, palpitations, symptômes de refeeding) avec reconsultation immédiate; parents impliqués.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le filet de sécurité signifie expliquer au patient des signes d’alarme concrets et définir clairement quoi faire en cas d’apparition et quand reconsulter.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-2" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Suivi <span class="patient-response">[Surveillance somatique rapprochée: paramètres vitaux, électrolytes, ECG durant la réalimentation.]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m6-detail-3" value="1" onchange="updateDetailScore('m6', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m6">
+            <textarea class="comment-textarea" id="comment-m6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les préoccupations, besoins, demandes et attentes du/de la patient·e et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible et reste flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée au patient, favorise la compréhension par la répétition, le reflet, les résumés et les explications, et utilise de manière ciblée la voix, le débit et les pauses.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance de manière ciblée pour créer une atmosphère d’entretien bienveillante, confiante et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/86</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li class="theorie-sous-groupe"><strong>Déclencheurs</strong> — Aucun déclencheur concret mentionné spontanément. Nécessité d’une recherche active de déclencheurs typiques des troubles alimentaires.</li><li><strong>Déclencheurs · Changement de vie</strong> — Les changements de vie (début des études, départ du domicile, phases de transition) sont des déclencheurs initiaux classiques des troubles alimentaires.</li><li><strong>Déclencheurs · Réseaux sociaux</strong> — Consommation de thinspiration et comportement-modèle dans l’entourage comme co-déclencheurs du début des symptômes.</li><li><strong>Mesures antérieures</strong> — Indique une absence d’insight; pertinent pour la planification thérapeutique et l’implication familiale.</li><li><strong>Symptômes associés</strong> — Chez AZYGOS, les patientes et les patients ne mentionnent volontairement aucun symptôme associé pertinent à cette question ouverte. <span class="c-blue">Ce qui est évalué</span>, c’est la relance ciblée. En pratique, la question reste toutefois importante, car des indices déterminants sont parfois donnés spontanément à cette occasion.</li><li><strong>Comportement alimentaire</strong> — Le recueil détaillé du comportement alimentaire (quoi, combien, quand, rituels, aliments « sûrs ») est central pour le diagnostic d’un trouble alimentaire.</li><li class="theorie-sous-groupe"><strong>Évolution pondérale</strong> — La quantification de la perte pondérale et la clarification du caractère volontaire ou non sont essentielles <span class="c-blue">pour l’évaluation</span> de la sévérité et l’orientation différentielle. Une perte non intentionnelle &gt; 5 % en 6 mois ou &gt; 10 % en 12 mois est cliniquement pertinente.</li><li><strong>Évolution pondérale · Volontaire vs. involontaire</strong> — La distinction volontaire vs. involontaire est diagnostiquement décisive: une <span class="c-pink">perte de poids</span> activement provoquée plaide pour un trouble alimentaire; une perte involontaire exige la recherche de causes somatiques.</li><li class="theorie-sous-groupe"><strong>Image corporelle / dysmorphophobie corporelle</strong> — La dysmorphophobie corporelle et la peur marquée de la prise de poids sont des critères centraux DSM-5/ICD-11 de l’anorexie mentale et doivent être explicitement recherchés.</li><li><strong>Image corporelle / dysmorphophobie corporelle · Peur de prendre du poids</strong> — Pathognomonique pour l’anorexie mentale.</li><li><strong>Image corporelle / dysmorphophobie corporelle · Estime de soi dépendante du poids</strong> — Critère C du DSM-5 (relation perturbée au corps) déjà rempli par la dysmorphophobie corporelle. Le couplage de l’estime de soi au poids/à la silhouette est une autre manifestation du C, optionnelle pour le diagnostic, utile pour la planification thérapeutique.</li><li><strong>Insight de la maladie / motivation thérapeutique</strong> — L’absence d’insight est pronostiquement pertinente et influence la planification thérapeutique ainsi que la nécessité d’impliquer la famille.</li><li><strong>Anamnèse menstruelle</strong> — L’aménorrhée secondaire, avec IMC bas, résulte d’un hypogonadisme hypogonadotrope et constitue un marqueur important de la sévérité.</li><li><strong>Instabilité circulatoire (vertiges / syncope)</strong> — <span class="c-orange">Complication</span> aiguë la plus fréquente mettant en jeu le pronostic vital. Syncope = indication à l’hospitalisation avec monitoring (bradycardie, allongement du QT).</li><li><strong>Accès hyperphagiques (binge-eating)</strong> — Distinction avec boulimie nerveuse, BED et anorexie mentale type accès hyperphagiques-purge. À rechercher activement. Rarement rapporté spontanément en raison de la honte.</li><li class="theorie-sous-groupe"><strong>Mesures compensatoires / purge</strong> — Différenciation type restrictif vs. type accès hyperphagiques-purge et distinction de la boulimie nerveuse. Les 3 sous-items doivent être recherchés activement.</li><li><strong>Mesures compensatoires / purge · Vomissements auto-induits</strong> — <span class="c-orange">Complications</span>: <span class="c-red">alcalose</span> hypokaliémique, <span class="c-green">signe de Russell</span>, érosion de l’émail, <span class="c-red">sialadénose</span>.</li><li><strong>Mesures compensatoires / purge · Abus de laxatifs / diurétiques</strong> — Demander aussi les laxatifs à base de plantes. Laxatifs → acidose hypokaliémique; diurétiques → <span class="c-red">syndrome de pseudo-Bartter</span> à l’arrêt.</li><li><strong>Mesures compensatoires / purge · Sport excessif / besoin de bouger</strong> — Symptôme central de l’anorexie restrictive. Souvent rationalisé comme « mode de vie sain » — rechercher activement le caractère compulsif.</li><li class="theorie-sous-groupe"><strong>DD somatiques de la perte pondérale</strong> — Dépistage guidé par hypothèses: chaque sous-item cible un DD spécifique. L’anorexie est un diagnostic d’exclusion dès que des causes somatiques sont plausibles.</li><li><strong>DD somatiques de la perte pondérale · Hyperthyroïdie</strong> — DD endocrinienne la plus importante. Dans l’anorexie, tableau typiquement opposé (bradycardie, frilosité).</li><li><strong>DD somatiques de la perte pondérale · Diabète sucré</strong> — <span class="c-purple">Diabète</span> de type 1 avec perte pondérale malgré l’appétit. Forme particulière: diabulimie (omission d’insuline pour perdre du poids).</li><li><strong>DD somatiques de la perte pondérale · Maladie inflammatoire chronique de l’intestin / malabsorption</strong> — Maladie de Crohn, <span class="c-red">rectocolite</span> hémorragique, maladie coeliaque. Symptômes principaux: diarrhée chronique &gt; 4 sem., selles sanglantes-muqueuses, manifestations extra-intestinales.</li><li><strong>DD somatiques de la perte pondérale · Malignité / infection chronique</strong> — Symptomatologie B dans le <span class="c-red">lymphome</span>; <span class="c-pink">toux</span> persistante &gt; 3 sem. en cas de TB. Rechercher l’anamnèse de risque (VIH, voyage, migration).</li><li class="theorie-sous-groupe"><strong>Complications / conséquences de la dénutrition</strong> — Évaluation de la sévérité et dépistage des <span class="c-orange">complications</span> aiguës menaçantes (circulation, électrolytes, risque de refeeding). Détermine aussi l’indication à l’hospitalisation.</li><li><strong>Complications / conséquences de la dénutrition · Frilosité / sensation de froid</strong> — Conséquence du <span class="c-red">syndrome Low-</span>T3 et de la perte de l’isolation thermique sous-cutanée.</li><li><strong>Complications / conséquences de la dénutrition · Fatigue / capacité réduite à l’effort</strong> — Caractéristique: la patiente continue l’entraînement de façon excessive malgré l’épuisement prononcé. Cette discordance exprime la symptomatologie compulsive.</li><li><strong>Complications / conséquences de la dénutrition · Altérations cutanées trophiques</strong> — Signe classique de dénutrition sévère (lanugo, xérose, effluvium); recueil détaillé à l’examen clinique.</li><li><strong>Complications / conséquences de la dénutrition · Constipation</strong> — Toujours coupler la question à l’usage de laxatifs — souvent dissimulé sinon.</li><li><strong>Complications / conséquences de la dénutrition · Plaintes cognitives</strong> — Conséquence fréquente de la dénutrition avec impact sur le quotidien et les études.</li><li><strong>Antécédents · Antécédents psychiatriques</strong> — Dans les troubles alimentaires, le dépistage <span class="c-red">explicite</span> des comorbidités psychiatriques est essentiel.</li><li class="theorie-sous-groupe"><strong>Antécédents familiaux</strong> — Anamnèse familiale axée sur les troubles alimentaires (composante génétique) et les maladies psychiatriques. Seuil: au moins 50 % des items abordés.</li><li><strong>Antécédents familiaux · Troubles alimentaires dans la famille</strong> — L’anorexie mentale a une forte composante génétique; une anamnèse familiale positive augmente nettement le risque.</li><li><strong>Facteurs de maintien</strong> — Facteurs chroniques de personnalité et contextuels maintenant la maladie. Pertinents pour le focus psychothérapeutique et la prévention des rechutes.</li></ul>
+</div><div class="theorie-section">
+    <h4>Statut clinique</h4>
+    <ul><li><strong>Énergie / psychomotricité</strong> — La réduction de l’énergie dans l’anorexie peut être liée à la dénutrition ou exprimer une dépression comorbide. Le recueil actif est pertinent pour la thérapie.</li><li><strong>Affect / humeur</strong> — La comorbidité dépressive est fréquente dans l’anorexie mentale. L’observation de l’affect influence la planification thérapeutique (traitement antidépresseur adjuvant, intervention de crise).</li><li><strong>Symptômes obsessionnels</strong> — Les symptômes obsessionnels sont souvent comorbides dans l’anorexie mentale, surtout dans le type restrictif. Pertinents pour une planification thérapeutique avec éléments d’exposition en TCC.</li><li><strong>Suicidalité / automutilation</strong> — L’anorexie mentale présente la mortalité la plus élevée de toutes les maladies psychiatriques, avec un taux de suicide accru. Le dépistage actif de la suicidalité et de l’automutilation est obligatoire à chaque consultation.</li><li><strong>Paramètres vitaux</strong> — L’hypotension et la bradycardie sont des <span class="c-yellow">signes d’alarme</span> en cas de dénutrition et des indicateurs d’instabilité circulatoire.</li><li><strong>IMC / morphotype</strong> — IMC &lt; 15 correspond à une anorexie mentale sévère et constitue une indication à l’hospitalisation.</li><li><strong>Inspection peau &amp; cheveux</strong> — Le lanugo est un fin duvet pileux au dos, aux bras ou au visage. Il apparaît en cas d’insuffisance pondérale sévère pour conserver la chaleur et indique une dénutrition importante.</li><li class="theorie-sous-groupe"><strong>Statut interniste</strong> — Examen général d’orientation. En cas d’annonce par <span class="c-blue">le candidat</span>, le résultat peut être communiqué directement.</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostic</h4>
+    <ul><li><strong>Laboratoire de base · Hémogramme</strong> — En lien avec la dénutrition: anémie légère et leucopénie fréquentes; dans les cas sévères, pancytopénie par dégénérescence gélatineuse de la moelle osseuse.</li><li><strong>Laboratoire de base · Électrolytes (incl. phosphate, magnésium)</strong> — Le phosphate et le magnésium sont essentiels <span class="c-blue">pour l’évaluation</span> du risque de refeeding.</li><li><strong>Laboratoire de base · Glycémie</strong> — Risque d’<span class="c-red">hypoglycémie</span> en cas de dénutrition sévère. À documenter obligatoirement si IMC &lt; 15.</li><li><strong>Laboratoire de base · Fonctions hépatiques (ALT, AST)</strong> — Transaminases augmentées en cas de dénutrition sévère comme expression d’une <span class="c-red">hépatite</span> liée à l’anorexie. Influence la décision d’hospitalisation.</li><li><strong>Endocrinologie · Bilan thyroïdien (TSH, fT3)</strong> — TSH pour la DD d’hyperthyroïdie. fT3 abaissé avec TSH normal correspond au <span class="c-red">syndrome Low-</span>T3, adaptation centrale au déficit énergétique.</li><li><strong>Endocrinologie · Bilan hormonal (LH, FSH, œstradiol)</strong> — Résultat classique dans l’anorexie mentale, explique l’aménorrhée secondaire et la perte osseuse.</li><li><strong>Test de grossesse · β-hCG</strong> — En cas d’aménorrhée secondaire, l’exclusion d’une <span class="c-purple">grossesse</span> est obligatoire — principal <span class="c-yellow">diagnostic différentiel</span> avant d’autres dosages hormonaux.</li><li><strong>ECG</strong> — Obligatoire en cas d’anorexie mentale. Détecte bradycardie, allongement du QT et arythmies. L’allongement du QT est une indication à l’hospitalisation avec monitoring.</li><li><strong>Test de Schellong</strong> — Indiqué d’emblée en cas d’anamnèse de syncope. Pathologique si baisse de la TA systolique &gt; 20 mmHg ou augmentation du pouls &gt; 30/min. Dans l’anorexie, la réponse du pouls est souvent atténuée (réserve sympathique limitée), une augmentation modérée du pouls est alors déjà remarquable.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic présumé</strong> — Critères diagnostiques: restriction des apports énergétiques, insuffisance pondérale significative, dysmorphophobie corporelle, peur intense de prendre du poids.</li><li><strong>Thérapie multimodale</strong> — Gold standard dans l’anorexie mentale: association stabilisation somatique, thérapie nutritionnelle et <span class="c-amber">psychothérapie</span>.</li><li><strong>Prophylaxie du refeeding</strong> — Le <span class="c-red">syndrome de refeeding</span> est une <span class="c-orange">complication</span> redoutée en cas d’apports trop rapides. Cliniquement pertinent dès IMC &lt; 16. Prophylaxie: réalimentation progressive, contrôle rapproché du phosphate, potassium, magnésium.</li><li><strong>Hospitalisation</strong> — Critères d’hospitalisation: IMC &lt; 15, instabilité cardiovasculaire (bradycardie, hypotension, syncope), déséquilibre électrolytique, comorbidités sévères, résistance au traitement ambulatoire.</li><li><strong>Filet de sécurité</strong> — Le <span class="c-yellow">filet de sécurité</span> signifie expliquer au patient des <span class="c-yellow">signes d’alarme</span> concrets et définir clairement quoi faire en cas d’apparition et quand reconsulter.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Classification clinique de l’anorexie mentale, type restrictif (distinction d’autres troubles des <span class="c-red">conduites</span> alimentaires et des DD somatiques)</li><li>Reconnaître les <span class="c-yellow">signes d’alarme</span> somatiques (IMC &lt; 15, bradycardie, syncope, aménorrhée) et dépister activement la comorbidité psychiatrique ainsi que la suicidalité</li><li>Indication à l’hospitalisation et thérapie multimodale incl. prophylaxie du refeeding et implication de la famille</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Traduit automatiquement puis vérifié par une IA face à l&#x27;original allemand.</p><p>Chez la jeune étudiante de 19 ans, Lina Fitt, le tableau clinique correspond à une anorexie mentale de type restrictif.</p><p>À l’anamnèse, on retrouve une <span class="c-pink">perte de poids</span> activement provoquée de 12 kg en un an, avec une importante dysmorphophobie corporelle, une peur intense de prendre du poids et une absence d’insight de la maladie. Les critères A, B et C du DSM-5 sont ainsi remplis. Les déclencheurs étaient le début des études et des contenus de réseaux sociaux axés sur la minceur; le perfectionnisme et le besoin de contrôle entretiennent le trouble. Les accès hyperphagiques et les comportements de purge sont niés, ce qui exclut la boulimie nerveuse et le type accès hyperphagiques-purge.</p><p>Cliniquement, il s’agit d’une patiente sévèrement dénutrie avec un IMC de 14.5, une bradycardie et une hypotension témoignant d’une instabilité cardiovasculaire, ainsi que des stigmates cutanés typiques (lanugo, <span class="c-red">acrocyanose</span>). Au statut psychique, des indices suggèrent une comorbidité dépressive et proche du spectre obsessionnel, pertinente pour la planification thérapeutique; la suicidalité est niée.</p><p>Les investigations confirment le tableau clinique: instabilité cardiovasculaire (bradycardie sans allongement du QT, <span class="c-green">test de Schellong</span> pathologique expliquant la syncope), adaptation endocrinienne au déficit énergétique (<span class="c-red">syndrome Low-</span>T3, hypogonadisme hypogonadotrope expliquant l’aménorrhée) et modifications liées à la dénutrition (anémie légère, <span class="c-red">hépatite</span> liée à l’anorexie). Phosphate et magnésium en bas de la norme indiquent un risque accru de refeeding. β-hCG négatif exclut une <span class="c-purple">grossesse</span> comme <span class="c-yellow">diagnostic différentiel</span> de l’aménorrhée.</p><p>En raison d’un IMC &lt; 15, de bradycardie, de syncope et de l’absence d’insight, l’indication à une hospitalisation dans un centre spécialisé des troubles du comportement alimentaire est claire. Sur le plan thérapeutique, une approche multimodale est indiquée comme gold standard, associant une thérapie nutritionnelle, une <span class="c-amber">psychothérapie</span> (TCC ou familiale) et l’implication de la famille, complétée par une prophylaxie du refeeding avec contrôles électrolytiques rapprochés, un <span class="c-yellow">filet de sécurité</span> avec <span class="c-yellow">signes d’alarme</span> définis ainsi qu’un suivi somatique étroit.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Aperçu AKDP</div><div class="annexe-expert-content"><p>Anamnèse: 12 kg de perte pondérale en 1 an (volontaire), conduite alimentaire restrictive, dysmorphophobie corporelle, peur de la prise de poids, absence d’insight; aménorrhée secondaire, syncope; pas de purge</p><p>Statut clinique: IMC 14.5, bradycardie, hypotension (instabilité cardiovasculaire), lanugo, <span class="c-red">acrocyanose</span>; statut psychique: énergie ↓, affect déprimé (comorbidité dépressive); suicidalité niée</p><p>Diagnostic: Conséquences de la dénutrition (anémie, <span class="c-red">hépatite</span> liée à l’anorexie), phosphate/Mg ↓ (risque de refeeding), <span class="c-red">syndrome Low-</span>T3, hypogonadisme hypogonadotrope (explique l’aménorrhée), β-hCG négatif; <span class="c-green">ECG</span> bradycardie sinusale; Schellong pathologique (explique la syncope)</p><p>Procédure: Hospitalisation, thérapie multimodale (nutrition et <span class="c-amber">psychothérapie</span>, implication familiale), prophylaxie du refeeding, <span class="c-yellow">filet de sécurité</span>, suivi</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 41,
+        "examen": 11,
+        "management": 18,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 4,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 6,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

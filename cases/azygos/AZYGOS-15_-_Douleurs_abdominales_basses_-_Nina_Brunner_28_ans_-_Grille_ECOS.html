@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-15 - Douleurs abdominales basses - Nina Brunner, 28 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-15 - Douleurs abdominales basses</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-15" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Ambulatoire de gynécologie</p>
+            <p style="margin: 5px 0;">👤 Nina Brunner, 28 ans</p>
+            <p style="margin: 5px 0;">🏷️ Gynécologie &amp; obstétrique · Poste avec mannequin · Facile · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/44</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Histoire de la maladie <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question initiale <span class="patient-response">[« J&#x27;ai régulièrement des douleurs dans le bas-ventre depuis un certain temps. »]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début / Durée <span class="patient-response">[Depuis plusieurs années, à commencer par le début de la vingtaine]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Apparition <span class="patient-response">[Insidieuse, pas de début soudain]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un début insidieux correspond à une maladie chronique comme l&#x27;endométriose. Un début soudain de la douleur ferait plutôt penser à une pathologie aiguë (torsion d&#x27;annexe, rupture de kyste, grossesse extra-utérine).</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[Nette augmentation au cours des 6 à 12 derniers mois]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une évolution lentement progressive sur plusieurs années correspond bien à une maladie chronique comme l&#x27;endométriose et va à l&#x27;encontre d&#x27;un événement aigu.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Localisation <span class="patient-response">[Bas-ventre, diffuse, parfois bilatérale]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Irradiation <span class="patient-response">[Parfois de type tiraillement dans le bas du dos, surtout autour des règles]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Type de douleur <span class="patient-response">[Tiraillement et crampe]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-6" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Intensité / Sévérité <span class="patient-response">[Variable, jusqu&#x27;à 8 sur 10 lors des phases les plus intenses, sinon 2 à 3]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-7" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊕ Facteurs d&#x27;aggravation <span class="patient-response">[Pire 1 à 2 jours avant les règles, maximale le premier ou le deuxième jour des saignements, puis amélioration]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le lien clair avec le cycle, avec un maximum au début des saignements, est la caractéristique anamnestique la plus importante et oriente fortement vers une dysménorrhée secondaire dans le cadre d&#x27;une endométriose. Une symptomatologie douloureuse continue indépendante du cycle suggérerait plutôt d&#x27;autres causes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-8" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">⊖ Facteurs de soulagement <span class="patient-response">[La chaleur et le paracétamol ne soulagent que brièvement, les anti-inflammatoires n&#x27;ont jamais été vraiment essayés]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-9" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Retentissement des symptômes <span class="patient-response">[Absences professionnelles les jours difficiles, repli sur soi, sexualité limitée]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le degré de limitation de la vie quotidienne et de la qualité de vie est un facteur important dans la douleur chronique pour déterminer l&#x27;urgence et le choix du traitement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-10" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes d&#x27;accompagnement <span class="patient-response">[Non, rien d&#x27;autre de particulier]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Dans le cas d&#x27;AZYGOS, la patiente ne révèle délibérément rien de vraiment pertinent ici, afin que ce ne soit pas la question ouverte mais la question ciblée et orientée sur le problème qui soit évaluée. La question reste néanmoins importante, car les patientes donnent parfois d&#x27;elles-mêmes un indice que l&#x27;on pourrait sinon manquer.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-11" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée sur le problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse menstruelle · Abondance des saignements <span class="patient-response">[Nettement plus abondants au fil des ans, changement de protection presque toutes les heures les jours les plus difficiles et présence de caillots de sang]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une hyperménorrhée croissante correspond bien à une adénomyose associée et soutient l&#x27;origine gynécologique des symptômes.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse menstruelle · Durée du cycle <span class="patient-response">[Régulier, environ tous les 29 jours]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse menstruelle · Durée des saignements <span class="patient-response">[Les saignements durent environ 5 jours]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dyspareunie <span class="patient-response">[Douleur profonde lors des rapports sexuels]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une dyspareunie profonde est en faveur d&#x27;une endométriose profonde infiltrante dans la région du cul-de-sac de Douglas ou des ligaments utéro-sacrés.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dyschésie <span class="patient-response">[Douleurs à la défécation, surtout autour des règles]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une dyschésie dépendante du cycle rend une atteinte du compartiment postérieur (recto-vaginal) plus probable et suggère la présence de foyers profonds infiltrants.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse obstétricale / Geste et Parité <span class="patient-response">[Jamais été enceinte, pas de fausse couche]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’anamnèse obstétricale est particulièrement pertinente chez une jeune femme avec endométriose et désir d’enfant. L’absence de grossesse antérieure malgré des rapports sexuels non protégés pourrait indiquer une atteinte de la fertilité déjà existante. Il serait également important de connaître d’éventuelles grossesses extra-utérines antérieures, car elles augmenteraient le risque d’une nouvelle grossesse tubaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Contraception <span class="patient-response">[Actuellement préservatif, auparavant stérilet en cuivre, avec lequel les douleurs étaient pires]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un stérilet en cuivre peut aggraver une dysménorrhée. La situation contraceptive est également pertinente pour le choix du traitement et l&#x27;évaluation d&#x27;une éventuelle grossesse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-6" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Désir de grossesse <span class="patient-response">[J&#x27;aimerais tomber enceinte d&#x27;ici 1 à 2 ans et je m&#x27;inquiète de savoir si cela fonctionnera encore]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le désir de grossesse est central ici car il oriente la décision thérapeutique : un traitement hormonal soulage les douleurs mais n&#x27;améliore pas la fertilité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-7" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dernier contrôle <span class="patient-response">[Dernier contrôle gynécologique il y a environ 4 ans]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-8" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse DD / Revue des systèmes <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Possibilité de grossesse <span class="patient-response">[Dernières règles il y a un peu plus de 2 semaines, contraception par préservatif]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Chez toute femme en âge de procréer présentant des douleurs abdominales basses, une grossesse, en particulier une grossesse extra-utérine, doit être envisagée et exclue par un test de grossesse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Infection / IST<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Sert à exclure une maladie inflammatoire pelvienne. L&#x27;absence de fièvre, des pertes sans particularité et un partenariat stable rendent une annexite ou une IST moins probables comme cause.</span></span></span> · Partenaires sexuels multiples <span class="patient-response">[Partenaire stable depuis des années, pas de rapports occasionnels]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Infection / IST · Fièvre aiguë <span class="patient-response">[Pas de fièvre]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Infection / IST · Pertes vaginales <span class="patient-response">[Pertes normales, pas de mauvaise odeur, pas de démangeaison]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des pertes normales sans odeur ni démangeaison vont à l&#x27;encontre d&#x27;une infection vaginale ou d&#x27;une maladie sexuellement transmissible.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Urogénital<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Permet d&#x27;exclure une infection urinaire ou un calcul. Une dysurie ou une hématurie dépendante du cycle ferait penser à une atteinte vésicale de l&#x27;endométriose.</span></span></span> · Dysurie <span class="patient-response">[Pas de brûlure en urinant]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Urogénital · Hématurie <span class="patient-response">[Pas de sang remarqué dans les urines]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Gastro-intestinal<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Permet d&#x27;exclure une cause gastro-intestinale. Les ballonnements et la constipation peuvent coexister dans l&#x27;endométriose et le syndrome de l&#x27;intestin irritable ; du sang dans les selles suggérerait une atteinte intestinale.</span></span></span> · Sang dans les selles <span class="patient-response">[Pas de sang remarqué dans les selles]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;absence de sang dans les selles rend une atteinte intestinale de l&#x27;endométriose ou une autre pathologie intestinale structurelle moins probable. Des saignements rectaux dépendants du cycle seraient un indice de foyers profonds infiltrants au niveau de l&#x27;intestin.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Gastro-intestinal · Transit intestinal <span class="patient-response">[Plutôt constipée, ventre souvent ballonné]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-7" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Gastro-intestinal · Symptômes B <span class="patient-response">[Pas de fièvre, pas de sueurs nocturnes, pas de perte de poids involontaire]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les symptômes B permettent de dépister une cause systémique ou maligne. Dans le cas d&#x27;un tableau clinique clairement cyclique et bénin, une telle cause est peu probable ici, c&#x27;est pourquoi la question reste plutôt complémentaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-8" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents médicaux · Antécédents généraux <span class="patient-response">[Pas d&#x27;antécédents médicaux significatifs]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents médicaux · Antécédents gynécologiques <span class="patient-response">[Pas d&#x27;affections gynécologiques connues]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents chirurgicaux <span class="patient-response">[Pas de chirurgie, appendice présent]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments <span class="patient-response">[Uniquement des analgésiques occasionnels, sinon aucun]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Allergies <span class="patient-response">[Rhume des foins]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Toxiques · Alcool <span class="patient-response">[Rarement, lors de sorties]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Toxiques · Drogues <span class="patient-response">[Aucune]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Toxiques · Tabagisme <span class="patient-response">[Non-fumeuse]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-7" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Vaccinations <span class="patient-response">[Vaccinée selon le plan de vaccination suisse, y compris HPV]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-8" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux · Généraux <span class="patient-response">[Rien de particulier de connu]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents familiaux · Endométriose / règles très douloureuses <span class="patient-response">[La mère avait également toujours des règles abondantes et douloureuses]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une agrégation familiale d&#x27;endométriose ou de dysménorrhée prononcée augmente la probabilité du diagnostic.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-1" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Profession <span class="patient-response">[Cheffe de projet, jours d&#x27;absence lors des moments difficiles]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Situation sociale <span class="patient-response">[Vit avec un partenaire stable en ville]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-1" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Facteurs de stress psychosociaux <span class="patient-response">[Affectée par les douleurs chroniques et l&#x27;inquiétude de ne pas pouvoir tomber enceinte]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les douleurs chroniques et une planification familiale incertaine constituent une charge psychosociale importante et doivent être prises en compte dans le suivi.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-2" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/11</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. Abdomen <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection <span class="patient-response">[Abdomen sans particularité, pas de cicatrice, pas de ballonnement]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Bruits hydro-aériques normaux]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Percussion <span class="patient-response">[Tympanisme à la percussion, pas de matité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un tympanisme sans matité va à l&#x27;encontre de la présence de liquide libre ou d&#x27;une masse importante dans l&#x27;abdomen.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation <span class="patient-response">[Abdomen souple, sensibilité diffuse à la pression en région sus-pubienne et dans le bas-ventre, pas de défense]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un abdomen souple sans défense correspond à un processus chronique et va à l&#x27;encontre d&#x27;un abdomen aigu.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-3" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Douleur à la décompression <span class="patient-response">[Pas de douleur à la décompression]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;absence de douleur à la décompression rend une péritonite ou une appendicite moins probable et soutient la classification comme tableau clinique stable et chronique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-4" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Fosses lombaires <span class="patient-response">[Fosses lombaires indolores à la percussion bilatéralement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des fosses lombaires indolores à la percussion vont à l&#x27;encontre d&#x27;une pyélonéphrite ou d&#x27;un calcul urétéral.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-5" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Status gynécologique sur mannequin <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Ganglions lymphatiques inguinaux <span class="patient-response">[Pas d&#x27;adénopathie inguinale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des ganglions inguinaux sans particularité rendent un processus infectieux ou malin dans la zone de drainage moins probable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection de la vulve <span class="patient-response">[Vulve et introït sans particularité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une inspection externe sans particularité rend une cause locale ou infectieuse moins probable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Examen au spéculum <span class="patient-response">[Col et vagin calmes, pas de pertes suspectes, pas de saignement de contact]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un aspect calme va à l&#x27;encontre d&#x27;une cervicite ou d&#x27;une pathologie locale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation bimanuelle <span class="patient-response">[Utérus peu mobile, sensibilité à la palpation du cul-de-sac de Douglas, masse annexielle gauche, pas de douleur significative à la mobilisation du col]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un utérus peu mobile, une masse annexielle et une sensibilité à la palpation du cul-de-sac de Douglas correspondent bien à une endométriose avec endométriome. L&#x27;absence de douleur significative à la mobilisation du col va à l&#x27;encontre d&#x27;une annexite aiguë.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Toucher rectal <span class="patient-response">[Induration douloureuse à la palpation au niveau de la cloison recto-vaginale et des ligaments utéro-sacrés, pas de sang sur le doigtier]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En cas de dyschésie, le toucher recto-vaginal est spécifiquement indiqué car les foyers au niveau des ligaments utéro-sacrés et de la cloison recto-vaginale y sont plus facilement palpables que par voie bimanuelle. Une induration douloureuse à la palpation soutient l&#x27;hypothèse d&#x27;une endométriose profonde infiltrante.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-4" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/14</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Analyses de laboratoire <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Laboratoire<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le laboratoire sert ici principalement à exclure des diagnostics différentiels. Il n&#x27;existe pas de valeur de laboratoire confirmant une endométriose ; le diagnostic repose sur la clinique et l&#x27;imagerie.</span></span></span> · Test de grossesse (bêta-hCG) <span class="patient-response">[Négatif, non enceinte]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La première étape la plus importante. Un bêta-hCG négatif exclut largement une grossesse et donc une grossesse extra-utérine comme cause des douleurs abdominales basses.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire · Paramètres inflammatoires <span class="patient-response">[CRP normale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une CRP normale rend une annexite aiguë ou un autre processus inflammatoire peu probable.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire · Formule sanguine <span class="patient-response">[Sans particularité, pas de signe d&#x27;anémie]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une formule sanguine sans particularité va à l&#x27;encontre d&#x27;une anémie par saignement significative malgré l&#x27;augmentation des saignements menstruels.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire · Status urinaire <span class="patient-response">[Sans particularité, pas de signe d&#x27;infection urinaire]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un status urinaire sans particularité va à l&#x27;encontre d&#x27;une infection urinaire comme cause de la douleur.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-3" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Imagerie <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Échographie transvaginale <span class="patient-response">[Ovaire gauche : kyste uniloculaire avec des échos internes régulièrement de faible réflectivité, compatible avec un endométriome. Myomètre hétérogène avec des kystes focaux et une limite endomètre-myomètre floue, compatible avec une adénomyose. L&#x27;image échographique fournie montre les signes d&#x27;adénomyose ; l&#x27;endométriome n&#x27;est pas visible dans ce champ d&#x27;image.]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">De fins échos internes homogènes dans un kyste ovarien correspondent à l&#x27;aspect classique d&#x27;un endométriome, causé par du vieux sang épaissi. Un myomètre hétérogène avec une limite endomètre-myomètre floue correspond à une adénomyose. Associé au tableau clinique, ce résultat soutient le diagnostic présumé.</span></span> <span class="criteria-detail-note">(voir iconographie)</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Évaluation clinique <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail <span class="patient-response">[Endométriose avec adénomyose et endométriome ovarien]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le diagnostic présumé découle de la douleur dépendante du cycle, de la dyspareunie et de la dyschésie, des résultats de la palpation et de l&#x27;échographie montrant un endométriome et des signes d&#x27;adénomyose.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Traitement <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Traitement hormonal <span class="patient-response">[Essai de traitement hormonal (contraceptifs combinés ou progestatif), pour autant qu&#x27;il n&#x27;y ait pas de désir de grossesse immédiat]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En l&#x27;absence de désir de grossesse immédiat, un traitement hormonal est le premier choix pour le contrôle de la douleur. Cependant, il a un effet contraceptif et n&#x27;est donc pas indiqué en cas de désir de grossesse actif.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Analgésie <span class="patient-response">[Traitement de la douleur par un anti-inflammatoire (AINS)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les AINS sont le traitement de premier choix en cas de dysménorrhée, en l&#x27;absence de contre-indications.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+<div class="criteria-row" id="criteria-m5">
+    <div>
+        <div class="criteria-text">5. Prise en charge <button class="comment-button" onclick="toggleComment('m5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Orientation vers un centre de l&#x27;endométriose <span class="patient-response">[Orientation vers la consultation gynécologique spécialisée ou un centre de l&#x27;endométriose]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">En présence d&#x27;un endométriome, d&#x27;une suspicion d&#x27;endométriose profonde infiltrante, d&#x27;un échec thérapeutique ou d&#x27;un désir de grossesse, une prise en charge spécialisée est judicieuse.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-0" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Conseil en fertilité <span class="patient-response">[Conseil sur la fertilité et la planification familiale, bilan précoce en cas de désir de grossesse]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Compte tenu du désir de grossesse prochain, le conseil en fertilité est important : un traitement hormonal soulage les symptômes mais n&#x27;améliore pas la fertilité, et l&#x27;endométriose elle-même peut altérer la fertilité, d&#x27;où l&#x27;intérêt d&#x27;un bilan précoce.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-1" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Contrôle d&#x27;évolution <span class="patient-response">[Contrôle d&#x27;évolution dans environ 3 mois pour évaluer la réponse au traitement]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le contrôle d&#x27;évolution permet d&#x27;évaluer la réponse au traitement initial et d&#x27;ajuster la prise en charge si les symptômes persistent.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-2" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Filet de sécurité <span class="patient-response">[Consultation immédiate en cas de douleurs aiguës intenses, de fièvre, de troubles circulatoires, de saignements abondants ou de suspicion de grossesse]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des douleurs aiguës intenses, de la fièvre ou une instabilité circulatoire peuvent indiquer une complication telle qu&#x27;une torsion ovarienne, une rupture de kyste ou une infection, et nécessitent une consultation immédiate.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-3" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Examens diagnostiques complémentaires<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Ces examens ne font pas partie de la prise en charge immédiate, mais sont utilisés en cas d&#x27;échec thérapeutique, d&#x27;imagerie incertaine ou avant une intervention chirurgicale.</span></span></span> · IRM pelvienne <span class="patient-response">[IRM du bassin pour évaluer l&#x27;endométriose profonde et planifier l&#x27;intervention chirurgicale]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L&#x27;IRM pelvienne cartographie les foyers profonds infiltrants de manière plus précise que l&#x27;échographie et sert principalement à la planification chirurgicale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-4" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Examens diagnostiques complémentaires · Laparoscopie diagnostique <span class="patient-response">[Laparoscopie avec histologie en cas d&#x27;échec thérapeutique, d&#x27;imagerie incertaine ou d&#x27;indication opératoire]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La laparoscopie n&#x27;est plus le standard d&#x27;or obligatoire pour le diagnostic. Elle est envisagée en cas d&#x27;imagerie incertaine, d&#x27;échec thérapeutique ou d&#x27;indication opératoire, et a alors également une visée thérapeutique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m5-detail-5" value="1" onchange="updateDetailScore('m5', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m5">
+            <textarea class="comment-textarea" id="comment-m5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m5">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des sentiments et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Reconnaît les inquiétudes, les besoins, les préoccupations et les attentes de la patiente et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des sentiments et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l&#x27;entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur logique et reste flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l&#x27;entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée à la patiente, favorise la compréhension par la répétition, la reformulation, la synthèse et les explications, et utilise de manière ciblée la voix, le débit de parole et les pauses.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise de manière ciblée le contact visuel, les expressions faciales, les gestes, la posture et la distance pour créer une atmosphère d&#x27;entretien bienveillante, de confiance et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/85</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Dimension temporelle · Apparition</strong> — Un début insidieux correspond à une maladie chronique comme l&#x27;<span class="c-red">endométriose</span>. Un début soudain de la <span class="c-pink">douleur</span> ferait plutôt penser à une pathologie aiguë (torsion d&#x27;annexe, <span class="c-orange">rupture</span> de kyste, <span class="c-purple">grossesse</span> extra-utérine).</li><li><strong>Dimension temporelle · Évolution</strong> — Une évolution lentement progressive sur plusieurs années correspond bien à une maladie chronique comme l&#x27;<span class="c-red">endométriose</span> et va à l&#x27;encontre d&#x27;un événement aigu.</li><li><strong>⊕ Facteurs d&#x27;aggravation</strong> — Le lien clair avec le cycle, avec un maximum au début des <span class="c-pink">saignements</span>, est la caractéristique anamnestique la plus importante et oriente fortement vers une dysménorrhée secondaire dans le cadre d&#x27;une <span class="c-red">endométriose</span>. Une symptomatologie douloureuse continue indépendante du cycle suggérerait plutôt d&#x27;autres causes.</li><li><strong>Retentissement des symptômes</strong> — Le degré de limitation de la vie quotidienne et de la qualité de vie est un facteur important dans la <span class="c-pink">douleur</span> chronique pour déterminer l&#x27;urgence et le choix du traitement.</li><li><strong>Symptômes d&#x27;accompagnement</strong> — Dans le cas d&#x27;AZYGOS, la patiente ne révèle délibérément rien de vraiment pertinent ici, afin que ce ne soit pas la question ouverte mais la question ciblée et orientée sur le problème qui soit évaluée. La question reste néanmoins importante, car les patientes donnent parfois d&#x27;elles-mêmes un indice que l&#x27;on pourrait sinon manquer.</li><li><strong>Anamnèse menstruelle · Abondance des saignements</strong> — Une hyperménorrhée croissante correspond bien à une <span class="c-red">adénomyose</span> associée et soutient l&#x27;origine gynécologique des symptômes.</li><li><strong>Dyspareunie</strong> — Une dyspareunie profonde est en faveur d&#x27;une <span class="c-red">endométriose</span> profonde infiltrante dans la région du cul-de-sac de Douglas ou des ligaments utéro-sacrés.</li><li><strong>Dyschésie</strong> — Une dyschésie dépendante du cycle rend une atteinte du compartiment postérieur (recto-vaginal) plus probable et suggère la présence de foyers profonds infiltrants.</li><li><strong>Anamnèse obstétricale / Geste et Parité</strong> — L’anamnèse obstétricale est particulièrement pertinente chez une jeune femme avec <span class="c-red">endométriose</span> et désir d’enfant. L’absence de <span class="c-purple">grossesse</span> antérieure malgré des rapports sexuels non protégés pourrait indiquer une atteinte de la fertilité déjà existante. Il serait également important de connaître d’éventuelles grossesses extra-utérines antérieures, car elles augmenteraient le risque d’une nouvelle <span class="c-purple">grossesse</span> tubaire.</li><li><strong>Contraception</strong> — Un stérilet en cuivre peut aggraver une dysménorrhée. La situation contraceptive est également pertinente pour le choix du traitement et l&#x27;évaluation d&#x27;une éventuelle <span class="c-purple">grossesse</span>.</li><li><strong>Désir de grossesse</strong> — Le désir de <span class="c-purple">grossesse</span> est central ici car il oriente la décision thérapeutique : un traitement hormonal soulage les <span class="c-pink">douleurs</span> mais n&#x27;améliore pas la fertilité.</li><li><strong>Possibilité de grossesse</strong> — Chez toute femme en âge de procréer présentant des <span class="c-pink">douleurs</span> abdominales basses, une <span class="c-purple">grossesse</span>, en particulier une <span class="c-purple">grossesse</span> extra-utérine, doit être envisagée et exclue par un test de <span class="c-purple">grossesse</span>.</li><li class="theorie-sous-groupe"><strong>Infection / IST</strong> — Sert à exclure une maladie inflammatoire pelvienne. L&#x27;absence de <span class="c-pink">fièvre</span>, des pertes sans particularité et un partenariat stable rendent une <span class="c-red">annexite</span> ou une IST moins probables comme cause.</li><li><strong>Infection / IST · Pertes vaginales</strong> — Des pertes normales sans odeur ni démangeaison vont à l&#x27;encontre d&#x27;une infection vaginale ou d&#x27;une maladie sexuellement transmissible.</li><li class="theorie-sous-groupe"><strong>Urogénital</strong> — Permet d&#x27;exclure une infection urinaire ou un calcul. Une <span class="c-pink">dysurie</span> ou une <span class="c-pink">hématurie</span> dépendante du cycle ferait penser à une atteinte vésicale de l&#x27;<span class="c-red">endométriose</span>.</li><li class="theorie-sous-groupe"><strong>Gastro-intestinal</strong> — Permet d&#x27;exclure une cause gastro-intestinale. Les ballonnements et la constipation peuvent coexister dans l&#x27;<span class="c-red">endométriose</span> et le syndrome de l&#x27;intestin irritable ; du sang dans les selles suggérerait une atteinte intestinale.</li><li><strong>Gastro-intestinal · Sang dans les selles</strong> — L&#x27;absence de sang dans les selles rend une atteinte intestinale de l&#x27;<span class="c-red">endométriose</span> ou une autre pathologie intestinale structurelle moins probable. Des <span class="c-pink">saignements</span> rectaux dépendants du cycle seraient un indice de foyers profonds infiltrants au niveau de l&#x27;intestin.</li><li><strong>Gastro-intestinal · Symptômes B</strong> — Les symptômes B permettent de dépister une cause systémique ou maligne. Dans le cas d&#x27;un tableau clinique clairement cyclique et bénin, une telle cause est peu probable ici, c&#x27;est pourquoi la question reste plutôt complémentaire.</li><li><strong>Antécédents familiaux · Endométriose / règles très douloureuses</strong> — Une agrégation familiale d&#x27;<span class="c-red">endométriose</span> ou de dysménorrhée prononcée augmente la probabilité du diagnostic.</li><li><strong>Facteurs de stress psychosociaux</strong> — Les <span class="c-pink">douleurs</span> chroniques et une planification familiale incertaine constituent une charge psychosociale importante et doivent être prises en compte dans le suivi.</li></ul>
+</div><div class="theorie-section">
+    <h4>Examen clinique</h4>
+    <ul><li><strong>Percussion</strong> — Un tympanisme sans matité va à l&#x27;encontre de la présence de liquide libre ou d&#x27;une masse importante dans l&#x27;abdomen.</li><li><strong>Palpation</strong> — Un abdomen souple sans défense correspond à un processus chronique et va à l&#x27;encontre d&#x27;un abdomen aigu.</li><li><strong>Douleur à la décompression</strong> — L&#x27;absence de <span class="c-pink">douleur</span> à la décompression rend une <span class="c-red">péritonite</span> ou une <span class="c-red">appendicite</span> moins probable et soutient la classification comme tableau clinique stable et chronique.</li><li><strong>Fosses lombaires</strong> — Des fosses lombaires indolores à la <span class="c-green">percussion</span> vont à l&#x27;encontre d&#x27;une <span class="c-red">pyélonéphrite</span> ou d&#x27;un calcul urétéral.</li><li><strong>Ganglions lymphatiques inguinaux</strong> — Des ganglions inguinaux sans particularité rendent un processus infectieux ou malin dans la zone de <span class="c-amber">drainage</span> moins probable.</li><li><strong>Inspection de la vulve</strong> — Une <span class="c-green">inspection</span> externe sans particularité rend une cause locale ou infectieuse moins probable.</li><li><strong>Examen au spéculum</strong> — Un aspect calme va à l&#x27;encontre d&#x27;une <span class="c-red">cervicite</span> ou d&#x27;une pathologie locale.</li><li><strong>Palpation bimanuelle</strong> — Un utérus peu mobile, une masse annexielle et une sensibilité à la <span class="c-green">palpation</span> du cul-de-sac de Douglas correspondent bien à une <span class="c-red">endométriose</span> avec <span class="c-red">endométriome</span>. L&#x27;absence de <span class="c-pink">douleur</span> significative à la mobilisation du col va à l&#x27;encontre d&#x27;une <span class="c-red">annexite</span> aiguë.</li><li><strong>Toucher rectal</strong> — En cas de dyschésie, le toucher recto-vaginal est spécifiquement indiqué car les foyers au niveau des ligaments utéro-sacrés et de la cloison recto-vaginale y sont plus facilement palpables que par voie bimanuelle. Une induration douloureuse à la <span class="c-green">palpation</span> soutient l&#x27;hypothèse d&#x27;une <span class="c-red">endométriose</span> profonde infiltrante.</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostic</h4>
+    <ul><li class="theorie-sous-groupe"><strong>Laboratoire</strong> — Le laboratoire sert ici principalement à exclure des <span class="c-yellow">diagnostics différentiels</span>. Il n&#x27;existe pas de valeur de laboratoire confirmant une <span class="c-red">endométriose</span> ; le diagnostic repose sur la clinique et l&#x27;imagerie.</li><li><strong>Laboratoire · Test de grossesse (bêta-hCG)</strong> — La première étape la plus importante. Un bêta-hCG négatif exclut largement une <span class="c-purple">grossesse</span> et donc une <span class="c-purple">grossesse</span> extra-utérine comme cause des <span class="c-pink">douleurs</span> abdominales basses.</li><li><strong>Laboratoire · Paramètres inflammatoires</strong> — Une CRP normale rend une <span class="c-red">annexite</span> aiguë ou un autre processus inflammatoire peu probable.</li><li><strong>Laboratoire · Formule sanguine</strong> — Une formule sanguine sans particularité va à l&#x27;encontre d&#x27;une anémie par <span class="c-pink">saignement</span> significative malgré l&#x27;augmentation des <span class="c-pink">saignements</span> menstruels.</li><li><strong>Laboratoire · Status urinaire</strong> — Un status urinaire sans particularité va à l&#x27;encontre d&#x27;une infection urinaire comme cause de la <span class="c-pink">douleur</span>.</li><li><strong>Échographie transvaginale</strong> — De fins échos internes homogènes dans un kyste ovarien correspondent à l&#x27;aspect classique d&#x27;un <span class="c-red">endométriome</span>, causé par du vieux sang épaissi. Un myomètre hétérogène avec une limite endomètre-myomètre floue correspond à une <span class="c-red">adénomyose</span>. Associé au tableau clinique, ce résultat soutient le diagnostic présumé.</li></ul>
+</div><div class="theorie-section">
+    <h4>Prise en charge</h4>
+    <ul><li><strong>Diagnostic de travail</strong> — Le diagnostic présumé découle de la <span class="c-pink">douleur</span> dépendante du cycle, de la dyspareunie et de la dyschésie, des résultats de la <span class="c-green">palpation</span> et de l&#x27;<span class="c-green">échographie</span> montrant un <span class="c-red">endométriome</span> et des signes d&#x27;<span class="c-red">adénomyose</span>.</li><li><strong>Traitement hormonal</strong> — En l&#x27;absence de désir de <span class="c-purple">grossesse</span> immédiat, un traitement hormonal est le premier choix pour le contrôle de la <span class="c-pink">douleur</span>. Cependant, il a un effet contraceptif et n&#x27;est donc pas indiqué en cas de désir de <span class="c-purple">grossesse</span> actif.</li><li><strong>Analgésie</strong> — Les <span class="c-amber">AINS</span> sont le traitement de premier choix en cas de dysménorrhée, en l&#x27;absence de contre-indications.</li><li><strong>Orientation vers un centre de l&#x27;endométriose</strong> — En présence d&#x27;un <span class="c-red">endométriome</span>, d&#x27;une suspicion d&#x27;<span class="c-red">endométriose</span> profonde infiltrante, d&#x27;un échec thérapeutique ou d&#x27;un désir de <span class="c-purple">grossesse</span>, une prise en charge spécialisée est judicieuse.</li><li><strong>Conseil en fertilité</strong> — Compte tenu du désir de <span class="c-purple">grossesse</span> prochain, le conseil en fertilité est important : un traitement hormonal soulage les symptômes mais n&#x27;améliore pas la fertilité, et l&#x27;<span class="c-red">endométriose</span> elle-même peut altérer la fertilité, d&#x27;où l&#x27;intérêt d&#x27;un bilan précoce.</li><li><strong>Contrôle d&#x27;évolution</strong> — Le contrôle d&#x27;évolution permet d&#x27;évaluer la réponse au traitement initial et d&#x27;ajuster la prise en charge si les symptômes persistent.</li><li><strong>Filet de sécurité</strong> — Des <span class="c-pink">douleurs</span> aiguës intenses, de la <span class="c-pink">fièvre</span> ou une instabilité circulatoire peuvent indiquer une <span class="c-orange">complication</span> telle qu&#x27;une <span class="c-red">torsion ovarienne</span>, une <span class="c-orange">rupture</span> de kyste ou une infection, et nécessitent une consultation immédiate.</li><li class="theorie-sous-groupe"><strong>Examens diagnostiques complémentaires</strong> — Ces examens ne font pas partie de la <span class="c-yellow">prise en charge immédiate</span>, mais sont utilisés en cas d&#x27;échec thérapeutique, d&#x27;imagerie incertaine ou avant une intervention chirurgicale.</li><li><strong>Examens diagnostiques complémentaires · IRM pelvienne</strong> — L&#x27;<span class="c-green">IRM</span> pelvienne cartographie les foyers profonds infiltrants de manière plus précise que l&#x27;<span class="c-green">échographie</span> et sert principalement à la planification chirurgicale.</li><li><strong>Examens diagnostiques complémentaires · Laparoscopie diagnostique</strong> — La laparoscopie n&#x27;est plus le standard d&#x27;or obligatoire pour le diagnostic. Elle est envisagée en cas d&#x27;imagerie incertaine, d&#x27;échec thérapeutique ou d&#x27;indication opératoire, et a alors également une visée thérapeutique.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-expert"><div class="annexe-title">Focus du cas</div><div class="annexe-expert-content"><ul><li>Effectuer l&#x27;examen gynécologique et la <span class="c-green">palpation</span> recto-vaginale de manière structurée sur le mannequin et les expliquer de façon adaptée à la patiente.</li><li>Classer le profil de <span class="c-pink">douleur</span> dépendant du cycle et les symptômes principaux comme une <span class="c-red">endométriose</span> avec <span class="c-red">adénomyose</span> et <span class="c-red">endométriome</span>.</li><li>Prise en charge respectueuse de la fertilité : le traitement hormonal a un effet contraceptif, tenir compte du désir de <span class="c-purple">grossesse</span>.</li><li>Aperçu ACDP</li><li>Anamnèse : <span class="c-pink">douleurs</span> abdominales basses dépendantes du cycle avec un maximum au début des <span class="c-pink">saignements</span>, hyperménorrhée croissante, dyspareunie profonde, dyschésie cyclique, nulligeste, désir de <span class="c-purple">grossesse</span> d&#x27;ici un à deux ans</li><li>Examen clinique : abdomen souple sans <span class="c-pink">douleur</span> à la décompression, sur le mannequin : sensibilité à la <span class="c-green">palpation</span> du cul-de-sac de Douglas, utérus peu mobile, masse annexielle gauche, au toucher recto-vaginal : induration douloureuse à la <span class="c-green">palpation</span> au niveau des ligaments utéro-sacrés</li><li>Diagnostic : bêta-hCG négatif, paramètres inflammatoires et formule sanguine sans particularité, status urinaire sans particularité, <span class="c-green">échographie</span> transvaginale montrant un <span class="c-red">endométriome</span> et des signes d&#x27;<span class="c-red">adénomyose</span></li><li>Prise en charge : analgésie par <span class="c-amber">AINS</span>, essai de traitement hormonal en l&#x27;absence de désir de <span class="c-purple">grossesse</span> immédiat, conseil en fertilité, orientation vers un centre de l&#x27;<span class="c-red">endométriose</span>, contrôle d&#x27;évolution, <span class="c-yellow">filet de sécurité</span>, examens diagnostiques complémentaires (<span class="c-green">IRM</span> pelvienne, laparoscopie) uniquement en cas d&#x27;escalade</li></ul></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Traduit automatiquement puis vérifié par une IA face à l&#x27;original allemand.</p><p>Diagnostic : <span class="c-red">endométriose</span> (avec <span class="c-red">adénomyose</span> et <span class="c-red">endométriome</span> ovarien)</p><p>Chez Mme Brunner, 28 ans, le tableau clinique est celui d&#x27;une <span class="c-red">endométriose</span> avec <span class="c-red">adénomyose</span> et <span class="c-red">endométriome</span> ovarien.</p><p>À l&#x27;anamnèse, on note depuis plusieurs années des <span class="c-pink">douleurs</span> abdominales basses dépendantes du cycle avec un maximum au début des <span class="c-pink">saignements</span>, associées à une hyperménorrhée augmentant au fil des ans, une dyspareunie profonde et une dyschésie cyclique. La patiente est nulligeste et exprime un désir de <span class="c-purple">grossesse</span> d&#x27;ici un à deux ans. Les <span class="c-yellow">diagnostics différentiels</span> importants tels que la <span class="c-purple">grossesse</span>, l&#x27;infection urinaire et l&#x27;atteinte inflammatoire pelvienne doivent être écartés par l&#x27;anamnèse et les analyses de laboratoire.</p><p>L&#x27;examen clinique montre un abdomen souple, sans <span class="c-pink">douleur</span> à la décompression. Lors de l&#x27;examen gynécologique sur mannequin, on retrouve une sensibilité à la <span class="c-green">palpation</span> du cul-de-sac de Douglas, un utérus peu mobile et une masse annexielle gauche ; au toucher recto-vaginal, une induration douloureuse à la <span class="c-green">palpation</span> au niveau des ligaments utéro-sacrés et de la cloison recto-vaginale.</p><p>Les examens diagnostiques montrent un test de <span class="c-purple">grossesse</span> négatif, des paramètres inflammatoires sans particularité, une formule sanguine complète sans particularité, un status urinaire sans particularité, ainsi qu&#x27;un <span class="c-red">endométriome</span> et des signes d&#x27;<span class="c-red">adénomyose</span> à l&#x27;<span class="c-green">échographie</span> transvaginale.</p><p>La prise en charge ultérieure comprend une analgésie par <span class="c-amber">AINS</span>, un essai de traitement hormonal en l&#x27;absence de désir de <span class="c-purple">grossesse</span> immédiat, un conseil en fertilité, l&#x27;orientation vers un centre de l&#x27;<span class="c-red">endométriose</span>, un contrôle d&#x27;évolution et un <span class="c-yellow">filet de sécurité</span>. Des examens diagnostiques complémentaires par <span class="c-green">IRM</span> pelvienne ou laparoscopie diagnostique ne sont nécessaires qu&#x27;en cas d&#x27;échec thérapeutique ou d&#x27;indication opératoire.</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+<div class="images-wrapper">
+<div class="annexe-item" data-image-id="img1">
+    <div class="annexe-title">Échographie transvaginale</div>
+    <div class="annexe-description">Ovaire gauche : kyste uniloculaire avec des échos internes régulièrement de faible réflectivité, compatible avec un endométriome. Myomètre hétérogène avec des kystes focaux et une limite endomètre-myomètre floue, compatible avec une adénomyose. L&#x27;image échographique fournie montre les signes d&#x27;adénomyose ; l&#x27;endométriome n&#x27;est pas visible dans ce champ d&#x27;image.</div>
+    <div class="annexe-image">
+        <img src="data:image/jpeg;base64,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" alt="Échographie transvaginale" loading="lazy">
+    </div>
+</div>
+</div>
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 44,
+        "examen": 11,
+        "management": 14,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 2,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 5,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>

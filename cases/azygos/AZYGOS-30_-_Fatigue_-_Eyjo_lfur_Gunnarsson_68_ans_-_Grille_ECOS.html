@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AZYGOS-30 - Fatigue - Eyjólfur Gunnarsson, 68 ans - Grille ECOS</title>
+    <link rel="stylesheet" href="../case-styles.css">
+    <script src="../theme-sync.js"></script>
+    <link rel="stylesheet" href="../mobile-responsive.css">
+</head>
+<body class="revision-mode">
+    <!-- MODE SELECTOR -->
+    <div class="mode-selector">
+        <button class="mode-button active" onclick="switchMode('revision')">🔍 Révision</button>
+        <button class="mode-button" onclick="switchMode('exam')">📝 Examen</button>
+    </div>
+
+    <!-- BOUTONS RÉVISION (Mode Révision uniquement) -->
+    <div class="revision-controls">
+        <button class="lacune-button" onclick="identifyLacunes()">🎯 Identifier les lacunes</button>
+        <button class="reset-revision-button" onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+    <!-- MINUTEUR ECOS -->
+    <div class="timer-container" id="timerContainer">
+        <div class="timer-display" id="timerDisplay">13:00</div>
+        <div class="timer-controls">
+            <button id="startBtn" class="timer-btn start-btn" onclick="startTimer()">▶ Démarrer</button>
+            <button id="stopBtn" class="timer-btn stop-btn" onclick="stopTimer()" style="display: none;">⏸ Arrêter</button>
+            <button id="resetBtn" class="timer-btn reset-btn" onclick="resetTimer()">↻ Reset</button>
+        </div>
+        <div class="timer-status" id="timerStatus" style="display: none;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Grille d'évaluation ECOS - AZYGOS-30 - Fatigue</h1>
+    <div class="simulation-bar">
+      <a href="https://ecos-sim.replit.app/simulation?station=AZYGOS-30" class="btn-simulate" target="_blank" rel="noopener">
+        &#x1FA7A; Simuler cette station avec Patient ECOS
+      </a>
+    </div>
+            <p style="margin: 5px 0;">📍 Cabinet de médecine de famille</p>
+            <p style="margin: 5px 0;">👤 Eyjólfur Gunnarsson, 68 ans</p>
+            <p style="margin: 5px 0;">🏷️ Médecine interne · Poste standard · Difficile · 13 min</p>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Anamnèse (25%)</span>
+                <span class="score">Score : <span id="anamneseScore">0</span>/29</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-a1">
+    <div>
+        <div class="criteria-text">1. Affection actuelle <button class="comment-button" onclick="toggleComment('a1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Question d’entrée <span class="patient-response">[« Je suis constamment fatigué et sans énergie ces derniers temps. En fait, je ne voulais pas venir, mais ma femme a insisté. »]</span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-0" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Début <span class="patient-response">[Depuis deux à trois semaines]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un début sur deux à trois semaines correspond à une perte sanguine chronique avec développement progressif d’une anémie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-1" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dimension temporelle · Évolution <span class="patient-response">[Augmentation insidieuse]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une évolution insidieuse plaide pour une source hémorragique chronique et contre un événement aigu.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-2" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Vertiges <span class="patient-response">[Vertiges surtout au lever]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le vertige orthostatique correspond à une anémie significative due à une perte sanguine chronique et sert de marqueur de sévérité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-3" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Dyspnée d’effort <span class="patient-response">[Vite essoufflé en montant les escaliers]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La dyspnée d’effort correspond au degré de sévérité clinique de l’anémie: la capacité de transport d’oxygène réduite se manifeste d’abord à l’effort. En présence d’une coronaropathie connue et d’une fibrillation auriculaire, une cause cardiaque concomitante doit aussi être envisagée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-4" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Symptômes associés <span class="patient-response">[Rien d’autre de particulier]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Chez AZYGOS, le patient ne livre volontairement rien de vraiment pertinent ici, afin d’évaluer le questionnement ciblé et orienté-problème plutôt que la question ouverte. La question reste importante, car les patients donnent parfois d’eux-mêmes un indice qui serait sinon manqué.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a1-detail-5" value="1" onchange="updateDetailScore('a1', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a1">
+            <textarea class="comment-textarea" id="comment-a1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a1">0</div>
+</div>
+<div class="criteria-row" id="criteria-a2">
+    <div>
+        <div class="criteria-text">2. Anamnèse orientée problème <button class="comment-button" onclick="toggleComment('a2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Douleurs abdominales <span class="patient-response">[Parfois pression dans le haut de l’abdomen, aussi à jeun, pas de douleur soudaine ou intense]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des plaintes épigastriques survenant aussi à jeun sont classiques pour un ulcère duodénal: la prise alimentaire tamponne l’acidité et soulage les symptômes. Ce profil douloureux soutient une localisation duodénale de la source hémorragique et se distingue de la douleur postprandiale d’un ulcère gastrique. L’absence de douleur soudaine ou intense plaide contre une perforation d’ulcère, qui se manifeste par une douleur fulgurante et un péritonisme.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-0" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Nausées / vomissements <span class="patient-response">[Parfois légèrement nauséeux, pas de vomissements, pas de sang ni de vomissements en «marc de café»]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">De légères nausées sans vomissements sont fréquentes dans la maladie ulcéreuse peptique et compatibles avec le diagnostic de travail. L’absence d’hématémèse ou de vomissements en «marc de café» montre que l’hémorragie se manifeste exclusivement par un méléna. Pas de vomissements violents ou de haut-le-cœur préalables, ce qui va contre une déchirure de Mallory-Weiss.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-1" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse des selles · Modification des selles <span class="patient-response">[Depuis longtemps discrètement différente, nette aggravation depuis trois à quatre jours, actuellement plusieurs selles par jour]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un schéma aigu sur chronique avec antécédents insidieux et aggravation aiguë ces derniers jours correspond à un ulcère suintant chronique sous prise continue d’AINS, avec décompensation aiguë actuelle. Cela explique la carence martiale existante ainsi que la symptomatologie hémodynamique aiguë.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-2" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse des selles · Consistance <span class="patient-response">[Molle et poisseuse, pas de diarrhée aqueuse, pas de selles dures, adhère au papier toilette]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des selles molles et poisseuses adhérant au papier toilette sont typiques du méléna et évoquent une localisation digestive haute. L’absence de diarrhée aqueuse ou de selles dures écarte une genèse inflammatoire ou fonctionnelle.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-3" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse des selles · Couleur <span class="patient-response">[Déjà plus foncée auparavant, maintenant noir ébène]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une couleur de selles noir ébène est hautement évocatrice d’une hémorragie du tractus gastro-intestinal supérieur. Un noir mat sans brillance serait plutôt compatible avec du fer, du charbon ou la consommation de betteraves rouges.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-4" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse des selles · Mélange de sang <span class="patient-response">[Pas de sang rouge vif, rien sur le papier toilette]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence de sang rouge vif et de rectorragies plaide contre une hémorragie digestive basse et, avec la couleur noire des selles, soutient la localisation haute.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a2-detail-5" value="1" onchange="updateDetailScore('a2', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a2">
+            <textarea class="comment-textarea" id="comment-a2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a2">0</div>
+</div>
+<div class="criteria-row" id="criteria-a3">
+    <div>
+        <div class="criteria-text">3. Anamnèse systématique / diagnostic différentiel <button class="comment-button" onclick="toggleComment('a3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD malignité<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un dépistage ciblé d’indices de malignité (symptômes B, appétit, dysphagie) vérifie si une tumeur gastro-intestinale est envisagée comme cause de saignement et d’anémie. Une tumeur gastro-intestinale méconnue serait l’alternative étiologique la plus dangereuse. Deux domaines couverts suffisent, car c’est la structuration de l’évaluation qui prime, pas l’exhaustivité.</span></span></span> · Symptômes B <span class="patient-response">[Poids stable, pas de fièvre, pas de sueurs nocturnes]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un poids stable sans fièvre ni sueurs nocturnes plaide contre une malignité ou une maladie consomptive comme cause.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-0" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD malignité · Appétit <span class="patient-response">[Appétit normal]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un appétit conservé plaide contre une maladie consomptive ou maligne sous-jacente.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-1" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD malignité · Dysphagie <span class="patient-response">[Déglutition sans problème]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence de dysphagie rend moins probable une tumeur sténosante haute.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-2" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">DD fatigue<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un dépistage ciblé des principales autres causes de fatigue vérifie la démarche différentielle structurée avant de se fixer sur l’hémorragie. Deux domaines couverts suffisent ici, l’important étant l’ouverture du raisonnement, non l’exhaustivité.</span></span></span> · Thyroïde <span class="patient-response">[Je n’ai pas plus froid que d’habitude, pas de constipation]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence d’intolérance au froid et de constipation chronique va contre une hypothyroïdie comme cause de fatigue.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-3" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD fatigue · Humeur <span class="patient-response">[Humeur bonne, pas abattu]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un état d’humeur sans particularité rend moins probable un épisode dépressif comme cause principale de la fatigue.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-4" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD fatigue · Sommeil <span class="patient-response">[Je dors bien, ma femme dit que je ne ronfle pas]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un bon sommeil sans indice de ronflement ni hypersomnolence diurne marquée va contre un syndrome d’apnées du sommeil.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-5" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">DD fatigue · Polyurie / polydipsie <span class="patient-response">[Pas très soif, mictions normales]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence de polyurie et de polydipsie rend improbable un diabète déséquilibré comme cause de fatigue.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a3-detail-6" value="1" onchange="updateDetailScore('a3', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a3">
+            <textarea class="comment-textarea" id="comment-a3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a3">0</div>
+</div>
+<div class="criteria-row" id="criteria-a4">
+    <div>
+        <div class="criteria-text">4. Anamnèse personnelle <button class="comment-button" onclick="toggleComment('a4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents <span class="patient-response">[Infarctus il y a des années (stable), hypertension artérielle, fibrillation auriculaire diagnostiquée récemment]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La fibrillation auriculaire récemment diagnostiquée explique le nouvel anticoagulant oral et l’augmentation du risque hémorragique. La coronaropathie stable justifie l’ASA à faible dose.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-0" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Antécédents opératoires <span class="patient-response">[Non, jamais opéré]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des interventions digestives antérieures peuvent modifier l’anatomie lors de l’endoscopie. Des opérations cardiaques antérieures seraient pertinentes dans le contexte de l’anticoagulation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-1" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments · Automédication par AINS <span class="patient-response">[Ibuprofène pour douleurs dorsales, presque quotidien, sans ordonnance]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’automédication par AINS en vente libre est souvent perçue par le patient comme n’étant pas un vrai médicament. Elle est une cause majeure d’hémorragie par ulcère peptique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-2" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments · Anticoagulants <span class="patient-response">[Aspirine pour le cœur (ASA), en plus récemment un nouvel anticoagulant prescrit par le cardiologue pour fibrillation auriculaire (AOD)]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’ASA faiblement dosé et le nouvel anticoagulant oral constituent, avec les AINS, le principal profil de risque de cette hémorragie. L’anticoagulant est le facteur le plus dangereux en cas de saignement actif; l’association avec l’ASA et les AINS multiplie le risque hémorragique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-3" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Médicaments · Antihypertenseur <span class="patient-response">[Un comprimé contre l’hypertension]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le traitement antihypertenseur chronique confirme la prise en charge de l’hypertension connue. Il est important pour interpréter les paramètres vitaux, la tension actuelle étant relativement basse chez un hypertendu traité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-4" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Coloscopie de dépistage <span class="patient-response">[Une coloscopie de dépistage sans particularité il y a deux ans]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une coloscopie de dépistage sans particularité il y a deux ans rend peu probable une source hémorragique ou maligne colorectale et permet de focaliser le bilan sur la source digestive haute.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-5" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Alcool <span class="patient-response">[De temps en temps un verre de vin, pas beaucoup]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une consommation modérée d’alcool rend une hémorragie par varices moins probable, sans l’exclure.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-6" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Noxes · Tabac <span class="patient-response">[A fumé autrefois, arrêté il y a des années]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un antécédent de tabagisme augmente le risque d’ulcères peptiques et fait partie du profil de risque.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a4-detail-7" value="1" onchange="updateDetailScore('a4', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a4">
+            <textarea class="comment-textarea" id="comment-a4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a4">0</div>
+</div>
+<div class="criteria-row" id="criteria-a5">
+    <div>
+        <div class="criteria-text">5. Anamnèse familiale <button class="comment-button" onclick="toggleComment('a5')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse familiale <span class="patient-response">[Père atteint d’un cancer colorectal à un âge avancé, sinon rien de particulier connu]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un apparenté du premier degré avec un carcinome colorectal augmente le risque personnel et a motivé le dépistage précoce. Associé à la coloscopie de dépistage sans particularité, cela rend improbable une source colorectale.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a5-detail-0" value="1" onchange="updateDetailScore('a5', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a5">
+            <textarea class="comment-textarea" id="comment-a5" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a5'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a5">0</div>
+</div>
+<div class="criteria-row" id="criteria-a6">
+    <div>
+        <div class="criteria-text">6. Anamnèse psychosociale <button class="comment-button" onclick="toggleComment('a6')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Anamnèse sociale <span class="patient-response">[Retraité, vit avec son épouse]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La situation de vie avec l’épouse est pertinente pour organiser l’orientation urgente.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="a6-detail-0" value="1" onchange="updateDetailScore('a6', 'a')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-a6">
+            <textarea class="comment-textarea" id="comment-a6" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('a6'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-a6">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Examen clinique (25%)</span>
+                <span class="score">Score : <span id="statusScore">0</span>/15</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-e1">
+    <div>
+        <div class="criteria-text">1. État général <button class="comment-button" onclick="toggleComment('e1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">État général <span class="patient-response">[Éveillé, orienté, état général légèrement diminué]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un patient éveillé et orienté, avec seulement une légère altération de l’état général, confirme la stabilité hémodynamique malgré la perte sanguine significative.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-0" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Paramètres vitaux <span class="patient-response">[Tension artérielle 105/65 mmHg, fréquence cardiaque 110/min irrégulière, fréquence respiratoire 20/min, saturation en oxygène 96 % à l’air ambiant, température 36.7 °C]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La tachycardie, la tension basse et un index de choc au seuil de la pathologie évoquent un début d’hypovolémie. Chez un hypertendu traité, la tension actuelle est nettement inférieure à son niveau habituel. La fréquence respiratoire légèrement augmentée et la saturation encore normale correspondent à l’anémie avec drive ventilatoire compensatoire accru. Le pouls irrégulier correspond à la fibrillation auriculaire connue.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-1" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut volémique <span class="patient-response">[Veines jugulaires plates en décubitus, muqueuses sèches, turgor cutané diminué]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des jugulaires plates en décubitus, des muqueuses sèches et un turgor cutané diminué étayent l’hypovolémie significative due à l’hémorragie digestive.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-2" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Signes d’anémie<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La pâleur cutanée et conjonctivale étaye cliniquement l’anémie par perte sanguine chronique. Un seul signe suffit.</span></span></span> · Coloration cutanée <span class="patient-response">[Peau pâle]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La pâleur cutanée correspond à l’anémie par perte sanguine chronique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-3" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Signes d’anémie · Conjonctives <span class="patient-response">[Conjonctives pâles]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des conjonctives pâles sont un signe clinique sensible d’anémie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e1-detail-4" value="1" onchange="updateDetailScore('e1', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e1">
+            <textarea class="comment-textarea" id="comment-e1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e1">0</div>
+</div>
+<div class="criteria-row" id="criteria-e2">
+    <div>
+        <div class="criteria-text">2. Abdomen <button class="comment-button" onclick="toggleComment('e2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Inspection <span class="patient-response">[Abdomen sans particularité, pas d’angiomes stellaires, pas d’ascite, pas de cicatrices]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’absence d’angiomes stellaires et d’ascite plaide contre une hépatopathie avancée avec varices.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-0" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Auscultation <span class="patient-response">[Bruits intestinaux normaux]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des bruits intestinaux normaux vont contre un iléus ou un abdomen aigu.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-1" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Percussion <span class="patient-response">[Son de percussion sonore sur tous les quadrants, pas de matité]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un son uniformément sonore sans matité va contre une ascite ou des masses intra-abdominales volumineuses.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-2" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation · Palpation abdominale <span class="patient-response">[Souple, légère douleur diffuse à la pression en épigastre, pas de masses]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un abdomen souple sans défense correspond à une situation stable, non chirurgicale aiguë. La légère douleur épigastrique à la pression est compatible avec la maladie ulcéreuse peptique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-3" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation · Signes de péritonisme <span class="patient-response">[Douleur au lâcher négative, pas de douleur à la secousse, pas de défense]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Des signes de péritonisme négatifs vont contre une perforation d’ulcère ou un abdomen aigu. En cas d’hémorragie digestive haute, ils sont centraux pour exclure une forme compliquée indiquant la chirurgie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-4" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation · Foie et rate <span class="patient-response">[Foie et rate non palpés augmentés de taille, pas de masses]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une taille normale du foie et de la rate va contre une hypertension portale avec varices œsophagiennes et contre une cause hématologique avec splénomégalie, et soutient ainsi la localisation haute de l’hémorragie au niveau d’un ulcère peptique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-5" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Palpation · Vésicule biliaire <span class="patient-response">[Signe de Murphy négatif, pas de douleur au quadrant supérieur droit]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Un signe de Murphy négatif sans douleur au quadrant supérieur droit va contre une cholécystite aiguë comme cause de douleur.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-6" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">TR <span class="patient-response">[Méléna noir poisseux sur le doigtier, pas de sang frais, pas de tumeur palpable]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’examen digito-rectal confirme objectivement le méléna. L’absence de sang frais et de tumeur palpable affine la localisation de la source hémorragique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e2-detail-7" value="1" onchange="updateDetailScore('e2', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e2">
+            <textarea class="comment-textarea" id="comment-e2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e2">0</div>
+</div>
+<div class="criteria-row" id="criteria-e3">
+    <div>
+        <div class="criteria-text">3. Cœur et poumons <button class="comment-button" onclick="toggleComment('e3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Auscultation cardiopulmonaire <span class="patient-response">[Action cardiaque arythmique, pas de bruits pathologiques, poumons libres des deux côtés]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’auscultation cardiopulmonaire d’orientation confirme l’arythmie chez un patient en fibrillation auriculaire et rend peu probables une cause cardiaque ou pulmonaire de la dyspnée d’effort, telle qu’une insuffisance cardiaque ou une pneumonie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-0" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Perfusion périphérique <span class="patient-response">[Périphérie chaude, temps de recoloration normal]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une périphérie chaude et un temps de recoloration normal vont contre une centralisation circulatoire ou un choc hémorragique.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="e3-detail-1" value="1" onchange="updateDetailScore('e3', 'e')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-e3">
+            <textarea class="comment-textarea" id="comment-e3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('e3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-e3">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Management (25%)</span>
+                <span class="score">Score : <span id="managementScore">0</span>/14</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row">
+                    <div>Critères</div>
+                    <div>Oui</div>
+                    <div>±</div>
+                    <div>Non</div>
+                    <div>Points</div>
+                </div>
+<div class="criteria-row" id="criteria-m1">
+    <div>
+        <div class="criteria-text">1. Analyses de laboratoire <button class="comment-button" onclick="toggleComment('m1')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail"><span class="detail-sous-groupe">Laboratoire<span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">La coagulation est sans particularité malgré l’anticoagulation orale et l’ASA, car l’ASA n’inhibe que la fonction plaquettaire et l’AOD n’est pas correctement capté par le Quick, l’INR et l’aPTT. L’urée légèrement élevée avec créatinine normale correspond au sang résorbé depuis le tube digestif supérieur. Des tests hépatiques sans particularité vont contre une hépatopathie avec varices comme source hémorragique.</span></span></span> · Hb et hémogramme <span class="patient-response">[Anémie microcytaire hypochrome]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’anémie microcytaire hypochrome traduit une carence martiale due à une perte sanguine chronique: un saignement de faible intensité mais prolongé sur plusieurs semaines au niveau digestif haut épuise les réserves en fer. Des plaquettes normales vont contre une cause hémorragique d’origine plaquettaire associée.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-0" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Laboratoire · CRP <span class="patient-response">[CRP dans les normes]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une CRP normale rend moins probable une anémie de maladie chronique et rend la ferritine abaissée interprétable comme marqueur de carence martiale, la ferritine pouvant être faussement élevée comme protéine de phase aiguë en cas d’inflammation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-1" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Statut martial · Ferritine <span class="patient-response">[Ferritine et saturation de la transferrine abaissées, compatibles avec une carence en fer]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Une ferritine nettement abaissée et une saturation de la transferrine diminuée confirment la carence martiale comme cause de l’anémie microcytaire, en adéquation avec la perte sanguine chronique par voie digestive haute.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m1-detail-2" value="1" onchange="updateDetailScore('m1', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m1">
+            <textarea class="comment-textarea" id="comment-m1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m1'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m1">0</div>
+</div>
+<div class="criteria-row" id="criteria-m2">
+    <div>
+        <div class="criteria-text">2. Évaluation clinique <button class="comment-button" onclick="toggleComment('m2')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Diagnostic de travail <span class="patient-response">[Hémorragie digestive haute, très probablement ulcère peptique sous AINS/ASA, aggravée par l’anticoagulation]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’hémorragie digestive haute due à un ulcère peptique sous AINS et ASA, aggravée par le nouvel anticoagulant, explique l’anémie microcytaire, le méléna et les plaintes épigastriques.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-0" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Évaluation du risque <span class="patient-response">[Hémorragie significative avec anémie, non gérable en ambulatoire]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le méléna, une anémie symptomatique et la réaction orthostatique témoignent d’une perte sanguine significative et persistante, ne permettant pas une prise en charge ambulatoire en sécurité.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m2-detail-1" value="1" onchange="updateDetailScore('m2', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m2">
+            <textarea class="comment-textarea" id="comment-m2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m2'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m2">0</div>
+</div>
+<div class="criteria-row" id="criteria-m3">
+    <div>
+        <div class="criteria-text">3. Thérapie <button class="comment-button" onclick="toggleComment('m3')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Adapter la médication · Arrêt des AINS <span class="patient-response">[Arrêter les AINS]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Les AINS sont co-responsables et doivent être arrêtés, si possible de façon définitive.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-0" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Adapter la médication · Pause de l’ASA <span class="patient-response">[Mettre l’ASA en pause]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’ASA est mis en pause en cas de saignement actif. Après hémostase assurée, il sera repris à l’hôpital si indiqué pour la prévention secondaire cardiovasculaire; une éventuelle cessation définitive sous anticoagulation orale en cours sera décidée par la cardiologie.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-1" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Adapter la médication · Pause de l’anticoagulation <span class="patient-response">[Mettre l’anticoagulation en pause]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’anticoagulation orale est suspendue en cas de saignement actif et reprise après hémostase assurée. La décision d’antagoniser revient à l’hôpital.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-2" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Laisser à jeun <span class="patient-response">[Patient à jeun]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le jeûne est une condition préalable à une endoscopie rapide.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m3-detail-3" value="1" onchange="updateDetailScore('m3', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m3">
+            <textarea class="comment-textarea" id="comment-m3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m3'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m3">0</div>
+</div>
+<div class="criteria-row" id="criteria-m4">
+    <div>
+        <div class="criteria-text">4. Procédure <button class="comment-button" onclick="toggleComment('m4')" title="Ajouter un commentaire">📝</button></div>
+<div class="details-with-checkboxes"><div class="detail-row">
+    <div class="detail-text criteria-detail">Orientation hospitalière <span class="patient-response">[Orientation urgente, en mode d’urgence, à l’hôpital]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’orientation immédiate vers un hôpital avec disponibilité endoscopique est la mesure critique de sécurité en cas de saignement actif; le transport est organisé médicalement.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-0" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures hospitalières · IPP i.v. <span class="patient-response">[Traitement par IPP intraveineux à forte dose à l’hôpital]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">À l’hôpital, on débute empiriquement un IPP intraveineux à forte dose, typiquement en bolus suivi d’une perfusion continue. L’inhibition acide stabilise le caillot au niveau de l’ulcère et réduit le risque de resaignement. Le médecin de famille ne l’initie pas lui-même, mais doit pouvoir la mentionner comme prochaine étape.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-1" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures hospitalières · Remplissage i.v. <span class="patient-response">[Voie veineuse et perfusion de cristalloïdes pour stabilisation hémodynamique]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Même sans choc manifeste, le patient présente, avec orthostatisme symptomatique et tachycardie, une hypovolémie significative. À l’hôpital, une voie veineuse est posée et des cristalloïdes perfusés pour compenser les pertes et stabiliser la circulation.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-2" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures hospitalières · Bilan H. pylori <span class="patient-response">[Test H. pylori et, en cas de positivité, traitement d’éradication]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">Le diagnostic d’H. pylori fait partie du bilan standard de toute hémorragie par ulcère. En cas de positivité, l’éradication réduit nettement le risque de récidive. Le test et la thérapie ont lieu à l’hôpital après hémostase assurée. Le médecin de famille mentionne cette mesure comme prochaine étape de prévention secondaire.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-3" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div><div class="detail-row">
+    <div class="detail-text criteria-detail">Mesures hospitalières · Œsophagogastroduodénoscopie <span class="patient-response">[OGD urgente à l’hôpital dans les 24 heures]</span><span class="info-vignette" tabindex="0" role="button" aria-label="Information complémentaire"><span class="info-vignette-marque" aria-hidden="true">i</span><span class="info-vignette-bulle" role="tooltip">L’œsophagogastroduodénoscopie (OGD) est centrale, diagnostique et thérapeutique, dans l’hémorragie digestive haute; elle localise la source de saignement et permet l’hémostase endoscopique. Après stabilisation hémodynamique, elle est visée dans les 24 heures.</span></span></div>
+    <div class="detail-checkboxes">
+        <label class="detail-checkbox"><input type="checkbox" id="m4-detail-4" value="1" onchange="updateDetailScore('m4', 'm')" /></label>
+    </div>
+</div></div>        <div class="criterion-comment-section" id="comment-section-m4">
+            <textarea class="comment-textarea" id="comment-m4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('m4'); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="checkbox-group"></div>
+    <div class="points-display" id="points-m4">0</div>
+</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <span>Communication (25%)</span>
+                <span class="score">Score : <span id="communicationScore">0</span>/16</span>
+            </div>
+            <div class="section-content">
+                <div class="header-row communication-header">
+                    <div>Critères</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    <div>E</div>
+                </div>
+                <div class="communication-section" id="criteria-c1">
+                    <div>
+                        <div class="communication-text">1. Prise en compte des émotions et des besoins <button class="comment-button" onclick="toggleComment('c1')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Identifie les préoccupations, besoins, demandes et attentes du/de la patient/e et y répond avec empathie et de manière adaptée à la situation.</div>
+                        <div class="criterion-comment-section" id="comment-section-c1">
+                            <textarea class="comment-textarea" id="comment-c1" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c1'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="A" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="B" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="C" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="D" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c1" value="E" data-criteria="Prise en compte des émotions et des besoins" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c2">
+                    <div>
+                        <div class="communication-text">2. Structure de l’entretien <button class="comment-button" onclick="toggleComment('c2')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">La consultation présente une structure claire, un fil conducteur compréhensible et reste flexible et adaptable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c2">
+                            <textarea class="comment-textarea" id="comment-c2" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c2'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="A" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="B" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="C" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="D" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c2" value="E" data-criteria="Structure de l’entretien" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c3">
+                    <div>
+                        <div class="communication-text">3. Expression verbale <button class="comment-button" onclick="toggleComment('c3')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Communique de manière adaptée au patient, favorise la compréhension par la reformulation, le reflet, le résumé et les explications, et module intentionnellement la voix, le débit et les pauses.</div>
+                        <div class="criterion-comment-section" id="comment-section-c3">
+                            <textarea class="comment-textarea" id="comment-c3" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c3'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="A" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="B" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="C" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="D" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c3" value="E" data-criteria="Expression verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+                <div class="communication-section" id="criteria-c4">
+                    <div>
+                        <div class="communication-text">4. Expression non verbale <button class="comment-button" onclick="toggleComment('c4')" title="Ajouter un commentaire">📝</button></div>
+                        <div class="communication-desc">Utilise le contact visuel, la mimique, la gestuelle, la posture et la distance de manière ciblée pour créer une atmosphère de dialogue bienveillante, de confiance et agréable.</div>
+                        <div class="criterion-comment-section" id="comment-section-c4">
+                            <textarea class="comment-textarea" id="comment-c4" placeholder="Commentaire sur ce critère..." oninput="updateCommentButton('c4'); autoResizeTextarea(this);"></textarea>
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="A" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="B" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="C" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="D" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" name="c4" value="E" data-criteria="Expression non verbale" onchange="updateScore('communication', this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOTAUX -->
+        <div class="total-sections">
+            <div class="total-section">
+                <div class="total-label">Score Global</div>
+                <div class="total-body">
+                    <div class="total-score" id="totalScore">0/74</div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">% par Section</div>
+                <div class="total-pourcent-body">
+                    <div class="total-pourcent-sections">
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Anamnèse</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="anamnese-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Examen clinique</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="examen-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Management</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="management-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                        <div class="total-pourcent-section">
+                            <div class="total-section-label">Communication</div>
+                            <div class="pourcent-body">
+                                <div class="total-pourcent-value"><span id="communication-percentage">0</span>%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-section">
+                <div class="total-label">Note Globale</div>
+                <div class="total-body">
+                    <div class="total-note-globale" id="globalGrade">E</div>
+                </div>
+            </div>
+        </div>
+<div class="annexes">
+<h3>Annexes</h3>
+<div class="annexes-grid">
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Raisonnement clinique — pourquoi chaque item compte</div><div class="annexe-theorie-content"><div class="theorie-section">
+    <h4>Anamnèse</h4>
+    <ul><li><strong>Dimension temporelle · Début</strong> — Un début sur deux à trois semaines correspond à une perte sanguine chronique avec développement progressif d’une anémie.</li><li><strong>Dimension temporelle · Évolution</strong> — Une évolution insidieuse plaide pour une source hémorragique chronique et contre un événement aigu.</li><li><strong>Vertiges</strong> — Le <span class="c-pink">vertige</span> orthostatique correspond à une anémie significative due à une perte sanguine chronique et sert de marqueur de sévérité.</li><li><strong>Dyspnée d’effort</strong> — La <span class="c-pink">dyspnée</span> d’effort correspond au degré de sévérité clinique de l’anémie: la capacité de transport d’oxygène réduite se manifeste d’abord à l’effort. En présence d’une <span class="c-red">coronaropathie</span> connue et d’une fibrillation auriculaire, une cause cardiaque concomitante doit aussi être envisagée.</li><li><strong>Symptômes associés</strong> — Chez AZYGOS, le patient ne livre volontairement rien de vraiment pertinent ici, afin d’évaluer le questionnement ciblé et orienté-problème plutôt que la question ouverte. La question reste importante, car les patients donnent parfois d’eux-mêmes un indice qui serait sinon manqué.</li><li><strong>Douleurs abdominales</strong> — Des plaintes épigastriques survenant aussi à jeun sont classiques pour un ulcère duodénal: la prise alimentaire tamponne l’acidité et soulage les symptômes. Ce profil douloureux soutient une localisation duodénale de la source hémorragique et se distingue de la <span class="c-pink">douleur</span> postprandiale d’un ulcère gastrique. L’absence de <span class="c-pink">douleur</span> soudaine ou intense plaide contre une <span class="c-orange">perforation</span> d’ulcère, qui se manifeste par une <span class="c-pink">douleur</span> fulgurante et un péritonisme.</li><li><strong>Nausées / vomissements</strong> — De légères <span class="c-pink">nausées</span> sans <span class="c-pink">vomissements</span> sont fréquentes dans la maladie ulcéreuse peptique et compatibles avec le diagnostic de travail. L’absence d’hématémèse ou de <span class="c-pink">vomissements</span> en «marc de café» montre que l’<span class="c-orange">hémorragie</span> se manifeste exclusivement par un méléna. Pas de <span class="c-pink">vomissements</span> violents ou de haut-le-cœur préalables, ce qui va contre une déchirure de Mallory-Weiss.</li><li><strong>Anamnèse des selles · Modification des selles</strong> — Un schéma aigu sur chronique avec antécédents insidieux et aggravation aiguë ces derniers jours correspond à un ulcère suintant chronique sous prise continue d’<span class="c-amber">AINS</span>, avec décompensation aiguë actuelle. Cela explique la carence martiale existante ainsi que la symptomatologie hémodynamique aiguë.</li><li><strong>Anamnèse des selles · Consistance</strong> — Des selles molles et poisseuses adhérant au papier toilette sont typiques du méléna et évoquent une localisation digestive haute. L’absence de diarrhée aqueuse ou de selles dures écarte une genèse inflammatoire ou fonctionnelle.</li><li><strong>Anamnèse des selles · Couleur</strong> — Une couleur de selles noir ébène est hautement évocatrice d’une <span class="c-orange">hémorragie</span> du tractus gastro-intestinal supérieur. Un noir mat sans brillance serait plutôt compatible avec du fer, du charbon ou la consommation de betteraves rouges.</li><li><strong>Anamnèse des selles · Mélange de sang</strong> — L’absence de sang rouge vif et de rectorragies plaide contre une <span class="c-orange">hémorragie</span> digestive basse et, avec la couleur noire des selles, soutient la localisation haute.</li><li class="theorie-sous-groupe"><strong>DD malignité</strong> — Un dépistage ciblé d’indices de malignité (symptômes B, appétit, dysphagie) vérifie si une tumeur gastro-intestinale est envisagée comme cause de <span class="c-pink">saignement</span> et d’anémie. Une tumeur gastro-intestinale méconnue serait l’alternative étiologique la plus dangereuse. Deux domaines couverts suffisent, car c’est la structuration de l’évaluation qui prime, pas l’exhaustivité.</li><li><strong>DD malignité · Symptômes B</strong> — Un poids stable sans <span class="c-pink">fièvre</span> ni <span class="c-pink">sueurs nocturnes</span> plaide contre une malignité ou une maladie consomptive comme cause.</li><li><strong>DD malignité · Appétit</strong> — Un appétit conservé plaide contre une maladie consomptive ou maligne sous-jacente.</li><li><strong>DD malignité · Dysphagie</strong> — L’absence de dysphagie rend moins probable une tumeur sténosante haute.</li><li class="theorie-sous-groupe"><strong>DD fatigue</strong> — Un dépistage ciblé des principales autres causes de <span class="c-pink">fatigue</span> vérifie la démarche différentielle structurée avant de se fixer sur l’<span class="c-orange">hémorragie</span>. Deux domaines couverts suffisent ici, l’important étant l’ouverture du raisonnement, non l’exhaustivité.</li><li><strong>DD fatigue · Thyroïde</strong> — L’absence d’intolérance au froid et de constipation chronique va contre une hypothyroïdie comme cause de <span class="c-pink">fatigue</span>.</li><li><strong>DD fatigue · Humeur</strong> — Un état d’humeur sans particularité rend moins probable un épisode dépressif comme cause principale de la <span class="c-pink">fatigue</span>.</li><li><strong>DD fatigue · Sommeil</strong> — Un bon sommeil sans indice de ronflement ni hypersomnolence diurne marquée va contre un syndrome d’apnées du sommeil.</li><li><strong>DD fatigue · Polyurie / polydipsie</strong> — L’absence de polyurie et de polydipsie rend improbable un <span class="c-purple">diabète</span> déséquilibré comme cause de <span class="c-pink">fatigue</span>.</li><li><strong>Antécédents</strong> — La fibrillation auriculaire récemment diagnostiquée explique le nouvel <span class="c-amber">anticoagulant</span> oral et l’augmentation du risque hémorragique. La <span class="c-red">coronaropathie</span> stable justifie l’ASA à faible dose.</li><li><strong>Antécédents opératoires</strong> — Des interventions digestives antérieures peuvent modifier l’anatomie lors de l’endoscopie. Des opérations cardiaques antérieures seraient pertinentes dans le contexte de l’anticoagulation.</li><li><strong>Médicaments · Automédication par AINS</strong> — L’automédication par <span class="c-amber">AINS</span> en vente libre est souvent perçue par le patient comme n’étant pas un vrai médicament. Elle est une cause majeure d’<span class="c-orange">hémorragie</span> par ulcère peptique.</li><li><strong>Médicaments · Anticoagulants</strong> — L’ASA faiblement dosé et le nouvel <span class="c-amber">anticoagulant</span> oral constituent, avec les <span class="c-amber">AINS</span>, le principal profil de risque de cette <span class="c-orange">hémorragie</span>. L’<span class="c-amber">anticoagulant</span> est le facteur le plus dangereux en cas de <span class="c-pink">saignement</span> actif; l’association avec l’ASA et les <span class="c-amber">AINS</span> multiplie le risque hémorragique.</li><li><strong>Médicaments · Antihypertenseur</strong> — Le traitement antihypertenseur chronique confirme la prise en charge de l’<span class="c-purple">hypertension</span> connue. Il est important pour interpréter les paramètres vitaux, la tension actuelle étant relativement basse chez un hypertendu traité.</li><li><strong>Coloscopie de dépistage</strong> — Une coloscopie de dépistage sans particularité il y a deux ans rend peu probable une source hémorragique ou maligne colorectale et permet de focaliser le bilan sur la source digestive haute.</li><li><strong>Noxes · Alcool</strong> — Une consommation modérée d’<span class="c-purple">alcool</span> rend une <span class="c-orange">hémorragie</span> par varices moins probable, sans l’exclure.</li><li><strong>Noxes · Tabac</strong> — Un antécédent de <span class="c-purple">tabagisme</span> augmente le risque d’ulcères peptiques et fait partie du profil de risque.</li><li><strong>Anamnèse familiale</strong> — Un apparenté du premier degré avec un <span class="c-red">carcinome</span> colorectal augmente le risque personnel et a motivé le dépistage précoce. Associé à la coloscopie de dépistage sans particularité, cela rend improbable une source colorectale.</li><li><strong>Anamnèse sociale</strong> — La situation de vie avec l’épouse est pertinente pour organiser l’orientation urgente.</li></ul>
+</div><div class="theorie-section">
+    <h4>Examen clinique</h4>
+    <ul><li><strong>État général</strong> — Un patient éveillé et orienté, avec seulement une légère altération de l’état général, confirme la stabilité hémodynamique malgré la perte sanguine significative.</li><li><strong>Paramètres vitaux</strong> — La tachycardie, la tension basse et un index de choc au seuil de la pathologie évoquent un début d’<span class="c-red">hypovolémie</span>. Chez un hypertendu traité, la tension actuelle est nettement inférieure à son niveau habituel. La fréquence respiratoire légèrement augmentée et la saturation encore normale correspondent à l’anémie avec drive ventilatoire compensatoire accru. Le pouls irrégulier correspond à la fibrillation auriculaire connue.</li><li><strong>Statut volémique</strong> — Des jugulaires plates en décubitus, des muqueuses sèches et un turgor cutané diminué étayent l’<span class="c-red">hypovolémie</span> significative due à l’<span class="c-orange">hémorragie</span> digestive.</li><li class="theorie-sous-groupe"><strong>Signes d’anémie</strong> — La pâleur cutanée et conjonctivale étaye cliniquement l’anémie par perte sanguine chronique. Un seul signe suffit.</li><li><strong>Signes d’anémie · Coloration cutanée</strong> — La pâleur cutanée correspond à l’anémie par perte sanguine chronique.</li><li><strong>Signes d’anémie · Conjonctives</strong> — Des conjonctives pâles sont un signe clinique sensible d’anémie.</li><li><strong>Inspection</strong> — L’absence d’angiomes stellaires et d’<span class="c-red">ascite</span> plaide contre une <span class="c-red">hépatopathie</span> avancée avec varices.</li><li><strong>Auscultation</strong> — Des bruits intestinaux normaux vont contre un iléus ou un abdomen aigu.</li><li><strong>Percussion</strong> — Un son uniformément sonore sans matité va contre une <span class="c-red">ascite</span> ou des masses intra-abdominales volumineuses.</li><li><strong>Palpation · Palpation abdominale</strong> — Un abdomen souple sans défense correspond à une situation stable, non chirurgicale aiguë. La légère <span class="c-pink">douleur</span> épigastrique à la pression est compatible avec la maladie ulcéreuse peptique.</li><li><strong>Palpation · Signes de péritonisme</strong> — Des signes de péritonisme négatifs vont contre une <span class="c-orange">perforation</span> d’ulcère ou un abdomen aigu. En cas d’<span class="c-orange">hémorragie</span> digestive haute, ils sont centraux pour exclure une forme compliquée indiquant la <span class="c-amber">chirurgie</span>.</li><li><strong>Palpation · Foie et rate</strong> — Une taille normale du foie et de la rate va contre une <span class="c-purple">hypertension</span> portale avec varices œsophagiennes et contre une cause hématologique avec splénomégalie, et soutient ainsi la localisation haute de l’<span class="c-orange">hémorragie</span> au niveau d’un ulcère peptique.</li><li><strong>Palpation · Vésicule biliaire</strong> — Un <span class="c-green">signe de Murphy</span> négatif sans <span class="c-pink">douleur</span> au quadrant supérieur droit va contre une <span class="c-red">cholécystite</span> aiguë comme cause de <span class="c-pink">douleur</span>.</li><li><strong>TR</strong> — L’examen digito-rectal confirme objectivement le méléna. L’absence de sang frais et de tumeur palpable affine la localisation de la source hémorragique.</li><li><strong>Auscultation cardiopulmonaire</strong> — L’<span class="c-green">auscultation</span> cardiopulmonaire d’orientation confirme l’arythmie chez un patient en fibrillation auriculaire et rend peu probables une cause cardiaque ou pulmonaire de la <span class="c-pink">dyspnée</span> d’effort, telle qu’une insuffisance cardiaque ou une <span class="c-red">pneumonie</span>.</li><li><strong>Perfusion périphérique</strong> — Une périphérie chaude et un temps de recoloration normal vont contre une centralisation circulatoire ou un choc hémorragique.</li></ul>
+</div><div class="theorie-section">
+    <h4>Diagnostic</h4>
+    <ul><li class="theorie-sous-groupe"><strong>Laboratoire</strong> — La coagulation est sans particularité malgré l’anticoagulation orale et l’ASA, car l’ASA n’inhibe que la fonction plaquettaire et l’AOD n’est pas correctement capté par le Quick, l’INR et l’aPTT. L’urée légèrement élevée avec créatinine normale correspond au sang résorbé depuis le tube digestif supérieur. Des tests hépatiques sans particularité vont contre une <span class="c-red">hépatopathie</span> avec varices comme source hémorragique.</li><li><strong>Laboratoire · Hb et hémogramme</strong> — L’anémie microcytaire <span class="c-red">hypochrome</span> traduit une carence martiale due à une perte sanguine chronique: un <span class="c-pink">saignement</span> de faible intensité mais prolongé sur plusieurs semaines au niveau digestif haut épuise les réserves en fer. Des plaquettes normales vont contre une cause hémorragique d’origine plaquettaire associée.</li><li><strong>Laboratoire · CRP</strong> — Une CRP normale rend moins probable une anémie de maladie chronique et rend la ferritine abaissée interprétable comme marqueur de carence martiale, la ferritine pouvant être faussement élevée comme protéine de phase aiguë en cas d’inflammation.</li><li><strong>Statut martial · Ferritine</strong> — Une ferritine nettement abaissée et une saturation de la transferrine diminuée confirment la carence martiale comme cause de l’anémie microcytaire, en adéquation avec la perte sanguine chronique par voie digestive haute.</li></ul>
+</div><div class="theorie-section">
+    <h4>Procédure</h4>
+    <ul><li><strong>Diagnostic de travail</strong> — L’<span class="c-orange">hémorragie</span> digestive haute due à un ulcère peptique sous <span class="c-amber">AINS</span> et ASA, aggravée par le nouvel <span class="c-amber">anticoagulant</span>, explique l’anémie microcytaire, le méléna et les plaintes épigastriques.</li><li><strong>Évaluation du risque</strong> — Le méléna, une anémie symptomatique et la réaction orthostatique témoignent d’une perte sanguine significative et persistante, ne permettant pas une prise en charge ambulatoire en sécurité.</li><li><strong>Adapter la médication · Arrêt des AINS</strong> — Les <span class="c-amber">AINS</span> sont co-responsables et doivent être arrêtés, si possible de façon définitive.</li><li><strong>Adapter la médication · Pause de l’ASA</strong> — L’ASA est mis en pause en cas de <span class="c-pink">saignement</span> actif. Après hémostase assurée, il sera repris à l’hôpital si indiqué pour la prévention secondaire cardiovasculaire; une éventuelle cessation définitive sous anticoagulation orale en cours sera décidée par la cardiologie.</li><li><strong>Adapter la médication · Pause de l’anticoagulation</strong> — L’anticoagulation orale est suspendue en cas de <span class="c-pink">saignement</span> actif et reprise après hémostase assurée. La décision d’antagoniser revient à l’hôpital.</li><li><strong>Laisser à jeun</strong> — Le jeûne est une condition préalable à une endoscopie rapide.</li><li><strong>Orientation hospitalière</strong> — L’orientation immédiate vers un hôpital avec disponibilité endoscopique est la mesure critique de sécurité en cas de <span class="c-pink">saignement</span> actif; le transport est organisé médicalement.</li><li><strong>Mesures hospitalières · IPP i.v.</strong> — À l’hôpital, on débute empiriquement un IPP intraveineux à forte dose, typiquement en bolus suivi d’une <span class="c-amber">perfusion</span> continue. L’inhibition acide stabilise le caillot au niveau de l’ulcère et réduit le risque de resaignement. Le médecin de famille ne l’initie pas lui-même, mais doit pouvoir la mentionner comme prochaine étape.</li><li><strong>Mesures hospitalières · Remplissage i.v.</strong> — Même sans choc manifeste, le patient présente, avec orthostatisme symptomatique et tachycardie, une <span class="c-red">hypovolémie</span> significative. À l’hôpital, une voie veineuse est posée et des cristalloïdes perfusés pour compenser les pertes et stabiliser la circulation.</li><li><strong>Mesures hospitalières · Bilan H. pylori</strong> — Le diagnostic d’H. pylori fait partie du bilan standard de toute <span class="c-orange">hémorragie</span> par ulcère. En cas de positivité, l’éradication réduit nettement le risque de <span class="c-orange">récidive</span>. Le test et la thérapie ont lieu à l’hôpital après hémostase assurée. Le médecin de famille mentionne cette mesure comme prochaine étape de prévention secondaire.</li><li><strong>Mesures hospitalières · Œsophagogastroduodénoscopie</strong> — L’œsophagogastroduodénoscopie (OGD) est centrale, diagnostique et thérapeutique, dans l’<span class="c-orange">hémorragie</span> digestive haute; elle localise la source de <span class="c-pink">saignement</span> et permet l’hémostase endoscopique. Après stabilisation hémodynamique, elle est visée dans les 24 heures.</li></ul>
+</div></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Synthèse du cas</div><div class="annexe-expert-content"><p>Cabinet de médecine de famille | Eyjólfur Gunnarsson, 68 ans</p><p>Cabinet de médecine de famille | Eyjólfur Gunnarsson, 68 ans, retraité</p><p>Eyjólfur Gunnarsson, 68 ans, se présente au cabinet de médecine de famille à l’insistance de son épouse pour une <span class="c-pink">fatigue</span> croissante. La tâche clinique consiste à reconnaître, derrière ce symptôme principal non spécifique, une <span class="c-orange">hémorragie</span> digestive haute aiguë sur chronique due à un ulcère peptique à <span class="c-pink">saignement</span> chronique et à initier une orientation urgente à l’hôpital. L’<span class="c-orange">hémorragie</span> s’inscrit dans le contexte d’une automédication par <span class="c-amber">AINS</span>, d’un ASA faiblement dosé et d’un <span class="c-amber">anticoagulant</span> oral direct récemment débuté pour fibrillation auriculaire.</p><p>À l’anamnèse, on note depuis deux à trois semaines une <span class="c-pink">fatigue</span> croissante, des <span class="c-pink">vertiges</span> orthostatiques et une <span class="c-pink">dyspnée</span> d’effort. Les selles sont progressivement devenues plus foncées depuis un certain temps et, ces trois à quatre derniers jours, se sont transformées en selles noir ébène, poisseuses, avec une fréquence pluriquotidienne. Du sang rouge vif est nié. De légères plaintes épigastriques, y compris à jeun, sont compatibles avec une maladie ulcéreuse peptique. L’anamnèse médicamenteuse révèle de l’ibuprofène en vente libre contre les lombalgies, de l’ASA à faible dose pour une <span class="c-red">cardiopathie</span> ischémique stable et un nouvel <span class="c-amber">anticoagulant</span> oral direct pour fibrillation auriculaire. L’<span class="c-purple">hypertension artérielle</span> traitée et les antécédents d’<span class="c-red">infarctus</span> complètent le tableau cardiovasculaire.</p><p>Cliniquement, le patient est éveillé, orienté, en état général légèrement diminué, avec pâleur cutanée et conjonctivale. Les paramètres vitaux montrent une tension artérielle à 105/65 mmHg, une fréquence cardiaque irrégulière à 110/min, une fréquence respiratoire à 20/min et une saturation en oxygène à 96 pour cent à l’air ambiant, pour 36.7 °C. L’index de choc frôle le seuil pathologique et correspond, chez un hypertendu traité, à un début d’<span class="c-red">hypovolémie</span>. Des veines jugulaires plates en décubitus, des muqueuses sèches et un turgor cutané diminué étayent ce tableau. L’abdomen est souple, avec une légère <span class="c-pink">douleur</span> à la pression en épigastre, sans contracture ni signes de péritonisme. L’examen digito-rectal retrouve un méléna noir poisseux sur le doigtier, sans sang frais ni tumeur palpable.</p><p>Au laboratoire, on observe une anémie microcytaire <span class="c-red">hypochrome</span> avec Hb 7.8 g/dL, traduisant la perte sanguine aiguë sur chronique. La ferritine et la saturation de la transferrine sont abaissées, en faveur d’une carence martiale. L’urée légèrement élevée avec créatinine normale évoque une localisation haute. Les valeurs de coagulation sont dans les normes; l’<span class="c-amber">anticoagulant</span> oral direct n’est pas capté par le Quick et l’INR. Les paramètres inflammatoires, les électrolytes et les tests hépatiques sont sans particularité.</p><p>Au cabinet de médecine de famille, on met d’abord en place les mesures thérapeutiques immédiates: arrêt définitif des <span class="c-amber">AINS</span>, pause de l’ASA et de l’anticoagulation orale jusqu’à hémostase assurée, patient à jeun. Ensuite, orientation urgente à l’hôpital. À l’hôpital suivent la stabilisation hémodynamique par remplissage intraveineux et le début d’un traitement par IPP intraveineux à forte dose. Dans les 24 heures, une œsophagogastroduodénoscopie avec hémostase endoscopique est réalisée. Un dépistage d’H. pylori avec éventuelle thérapie d’éradication complète la prévention secondaire.</p><p>Reconnaître une <span class="c-orange">hémorragie</span> digestive haute aiguë sur chronique derrière le symptôme principal non spécifique de <span class="c-pink">fatigue</span></p><p>Anamnèse médicamenteuse ciblée comme clé d’identification de la cause (<span class="c-amber">AINS</span>, ASA, <span class="c-amber">anticoagulant</span> oral)</p><p>Orientation urgente à l’hôpital avec justification claire plutôt qu’un bilan ambulatoire</p><p>Anamnèse: <span class="c-pink">fatigue</span>, <span class="c-pink">vertiges</span> orthostatiques, <span class="c-pink">dyspnée</span> d’effort; évolution des selles aiguë sur chronique avec actuellement des selles noir ébène, poisseuses, plusieurs fois par jour; plaintes épigastriques; automédication par <span class="c-amber">AINS</span>, ASA, nouvel <span class="c-amber">anticoagulant</span> oral pour fibrillation auriculaire; <span class="c-purple">hypertension</span> traitée; antécédents d’<span class="c-red">infarctus</span></p><p>Statut clinique: état général légèrement diminué, peau et conjonctives pâles; TA 105/65 mmHg, pouls 110/min irrégulier, FR 20/min, SpO2 96 % à l’air ambiant; veines jugulaires plates, muqueuses sèches, turgor cutané diminué; abdomen souple avec légère <span class="c-pink">douleur</span> à la pression épigastrique sans signes de péritonisme; méléna noir poisseux à l’examen digito-rectal</p><p>Diagnostic: anémie microcytaire <span class="c-red">hypochrome</span> (Hb 7.8 g/dL); carence en fer avec ferritine abaissée et saturation de la transferrine basse; urée légèrement élevée avec créatinine normale; valeurs de coagulation, paramètres inflammatoires, électrolytes et tests hépatiques sans particularité</p><p>Procédure: chez le médecin de famille, arrêt des <span class="c-amber">AINS</span>, pause de l’ASA et de l’anticoagulation orale, laisser à jeun; orientation urgente à l’hôpital; à l’hôpital, remplissage intraveineux, traitement par IPP intraveineux à forte dose, OGD dans les 24 heures avec hémostase endoscopique, dépistage d’H. pylori avec éventuelle éradication</p></div></div>
+<div class="annexe-item annexe-theorie"><div class="annexe-title">Modalités de la station</div><div class="annexe-expert-content"><p>Les résultats marqués de l&#x27;éclair sont libérés dès que l&#x27;inspection / l&#x27;examen est clairement annoncé ou entrepris.</p></div></div>
+</div>
+</div>
+
+        <!-- COMMENTAIRE GÉNÉRAL -->
+        <div class="section-comment-section global">
+            <h4 style="margin: 0 0 10px 0; color: #2c5aa0; font-size: 18px;">Commentaire général</h4>
+            <textarea class="comment-textarea" id="comment-general" placeholder="Commentaire général sur l'évaluation..." oninput="updateGeneralComment(); autoResizeTextarea(this);"></textarea>
+        </div>
+    </div>
+    <script>
+window.caseConfig = {
+    "maxScores": {
+        "anamnese": 29,
+        "examen": 15,
+        "management": 14,
+        "communication": 16
+    },
+    "coef": {
+        "anamnese": 0.25,
+        "examen": 0.25,
+        "management": 0.25,
+        "communication": 0.25
+    },
+    "sectionInfo": [
+        {
+            "key": "anamnese",
+            "prefix": "a",
+            "count": 6,
+            "label": "Anamnèse"
+        },
+        {
+            "key": "examen",
+            "prefix": "e",
+            "count": 3,
+            "label": "Examen clinique",
+            "scoreId": "statusScore"
+        },
+        {
+            "key": "management",
+            "prefix": "m",
+            "count": 4,
+            "label": "Management"
+        },
+        {
+            "key": "communication",
+            "prefix": "c",
+            "count": 4,
+            "label": "Communication",
+            "isComm": true
+        }
+    ]
+};
+</script>
+<script src="../scoring.js"></script>
+    <!-- BOUTON IMPRIMER EN PDF -->
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer en PDF</button>
+
+<script src="../persistence.js"></script>
+</body>
+</html>
