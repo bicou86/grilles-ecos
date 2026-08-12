@@ -310,12 +310,20 @@ def _ancre_annexes(html: str) -> str | None:
 #: de `images-wrapper` échouait sur le troisième.
 COQUILLE = ANNEXES + "\n<h3>Annexes</h3>\n" + GRILLE_ANNEXES + "\n"
 
+#: La coquille seule ne suffit PAS à reconnaître notre ouvrage : les grilles du
+#: corpus portent exactement la même séquence `annexes` / `<h3>Annexes</h3>` /
+#: `annexes-grid`. Ce qui nous distingue, c'est que nous la faisons suivre
+#: IMMÉDIATEMENT du bloc `theorie`, là où une structure préexistante enchaîne
+#: sur ses images ou sur un autre `annexe-item`. Sans cette précision, le
+#: retrait choisissait la mauvaise branche sur « Pédiatrie - Nourrisson 6 mois ».
+SIGNATURE = COQUILLE + THEORIE
+
 
 def _retire(html: str) -> str:
     """Défait une injection, en miroir exact des deux branches de `injecte`."""
-    if OUVERTURE + "\n" in html or OUVERTURE in html:
+    if OUVERTURE in html:
         debut = html.find(OUVERTURE)
-        if debut >= 0 and COQUILLE in html[debut:debut + 200000]:
+        if debut >= 0 and SIGNATURE in html[debut:]:
             # Coquille fabriquée ici : le bloc a été posé d'un tenant.
             suite = _ancre_annexes(html) or ANCRE
             return re.sub(re.escape(OUVERTURE) + r".*?(?=" + re.escape(suite) + r")",
@@ -360,6 +368,16 @@ def injecte(html: str, resume: str, annexes: str) -> tuple[str, str]:
     # ne dérive pas, et que rien d'autre n'a bougé dans le fichier.
     if _retire(sortie) != html:
         return html, "strip-back non inversible"
+
+    # Contrôle d'équilibre du fichier ENTIER, et pas seulement des blocs posés.
+    # L'inversibilité ne suffit pas : elle compare le retrait à l'entrée, or
+    # l'entrée peut déjà porter les restes d'une injection faite par une
+    # version antérieure du script. C'est exactement ce qui est arrivé sur
+    # « Pédiatrie - Nourrisson 6 mois » — un `</div>` orphelin, invisible aux
+    # deux autres contrôles, et passé jusqu'au commit.
+    ouv, ferm = len(re.findall(r"<div\b", sortie)), len(re.findall(r"</div>", sortie))
+    if ouv != ferm:
+        return html, f"fichier déséquilibré après injection : {ouv} <div> pour {ferm} </div>"
     return sortie, etat
 
 
