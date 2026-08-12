@@ -40,12 +40,12 @@ grilles-ecos/
 │   ├── srs.js                     # Répétition espacée (SM-2)
 │   ├── amboss/                    # 40 cas AMBOSS
 │   ├── german/                    # 88 cas German
-│   ├── rescos/                    # 41 cas RESCOS
+│   ├── rescos/                    # 75 cas RESCOS (dont 41 à 70 rapatriés)
 │   ├── usmle/                     # 44 cas USMLE
 │   ├── triage/                    # 40 cas Triage
 │   ├── casecos/                   # 198 cas CasECOS
 │   ├── azygos/                    # 49 cas Azygos (suisses, OFSP)
-│   └── rescos-locales/            # 166 cas locaux (dont 9 feuilles porte)
+│   └── rescos-locales/            # 132 cas locaux (dont 9 feuilles porte)
 ├── manifest.json                  # Manifeste PWA
 └── sw.js                          # Service Worker PWA
 ```
@@ -65,9 +65,22 @@ Les corpus disponibles sont : `amboss`, `german`, `rescos`, `usmle`, `triage`,
 
 Le corpus `rescos-locales` ne suit pas cette convention de nommage : ses grilles
 ont été importées avec leur nom d'origine, en clair et accentué (`Céphalées -
-Vignette clinique - Grille ECOS.html`). Seules 33 d'entre elles portent un
-préfixe `RESCOS-41` à `RESCOS-70`. Son injection dans `index.html` est
+Vignette clinique - Grille ECOS.html`). Son injection dans `index.html` est
 reproductible par `python3 scripts/rescos-locales/inject_index.py`.
+
+**`cases/rescos/` mélange désormais deux conventions.** Les grilles RESCOS-1 à
+40 portent le nommage historique à underscores et accents translittérés
+(`RESCOS-12_-_Crise_de_panique_-_Grille_ECOS.html`) ; les 34 grilles RESCOS-41 à
+70, rapatriées depuis `rescos-locales`, gardent leur nom en clair
+(`RESCOS-58b - Rectorragies - Grille ECOS.html`). Les renommer casserait les
+liens déjà partagés, et rien n'en dépend : `lib_rescos.grid_num()` lit le numéro
+par expression régulière, et l'identifiant du simulateur est écrit en dur dans
+chaque page. Même remarque pour la mise en page — les 34 gardent leur `<style>`
+en ligne là où les 41 chargent `case-styles.css`.
+
+L'injection de la section `rescos` dans `index.html` est reproductible par
+`python3 scripts/rescos/inject_index.py`, qui **relit** les cartes déjà
+présentes pour conserver leur classement par système.
 
 ## Structure localStorage
 

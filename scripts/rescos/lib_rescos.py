@@ -154,14 +154,28 @@ COMM_MARK = "<!-- COMMUNICATION -->"
 #                   `</div>`* + END_MARK 1 (RESCOS-6, sans scenario)
 #   scenario     -> `</div>`* + END_MARK 27, sinon `<div class="images-wrapper">` 12
 #   annexe-image -> item d'image suivant 21, sinon `</div>`* + END_MARK 12
+# Les queues marquees « (rescos-locales) » ont ete ajoutees quand les 34 grilles
+# RESCOS-41 a 70 ont rejoint ce corpus depuis `cases/rescos-locales`. Elles
+# viennent d'un import different et terminent leurs blocs autrement ; sans ces
+# alternatives, cinq d'entre elles rendaient un `boundsAnomalies` non vide,
+# c'est-a-dire des blocs devenus invisibles a tout l'outillage.
+#
+# Elargir une queue ne peut pas casser les 41 grilles d'origine : le decoupage
+# retient la PREMIERE correspondance, et leurs queues restent en tete de liste.
+# Verifie apres coup — leurs valeurs `blocks` sont identiques au snapshot
+# d'avant deplacement, grille par grille.
 BLOCKS = [
     # --- blocs loges dans la section notee (niveau 2) ----------------------
     ("annexe-dd", r'<div class="annexe-item annexe-dd">',
-     r'<div class="criteria-row"|<div class="annexe-item annexe-scenario">'),
+     r'<div class="criteria-row"|<div class="annexe-item annexe-scenario">'
+     r'|<div class="criteria-description"|<div style=|<h4'          # (rescos-locales)
+     r'|(?:</div>\s*)*<!\-\-\ CLÔTURE\ \-\->'),                     # (rescos-locales)
     ("redflags", r'<div class="redflags-section">',
-     r'<div class="criterion-comment-section"'),
+     r'<div class="criterion-comment-section"'
+     r'|<div class="checkbox-group"'),                              # (rescos-locales)
     ("therapy", r'<div class="therapy-section">',
-     r'<div class="therapy-section">|<div class="criterion-comment-section"'),
+     r'<div class="therapy-section">|<div class="criterion-comment-section"'
+     r'|<div class="checkbox-group"'),                              # (rescos-locales)
     # --- section « Cloture de consultation », non notee (niveau 2) ---------
     ("cloture", r'<div class="cloture-item">',
      r'<div class="cloture-item">|(?:</div>\s*)*' + re.escape(COMM_MARK)),
@@ -171,14 +185,20 @@ BLOCKS = [
      r'<div class="annexe-item annexe-theorie">|<div class="presentation-patient">'
      r'|<div class="annexe-item annexe-scenario">'),
     ("theorie", r'<div class="annexe-item annexe-theorie">',
-     r'<div class="presentation-patient">|<div class="annexe-item annexe-scenario">'),
+     r'<div class="presentation-patient">|<div class="annexe-item annexe-scenario">'
+     r'|<div class="annexe-item annexe-dd">'                        # (rescos-locales)
+     r'|(?:</div>\s*)*(?:<div class="images-wrapper">|'             # (rescos-locales)
+     + re.escape(END_MARK) + r')'),
     ("presentation", r'<div class="presentation-patient">',
      r'<div class="annexe-item annexe-scenario">|<div class="annexe-item annexe-dd">'
      r'|(?:</div>\s*)*(?:<div class="images-wrapper">|' + re.escape(END_MARK) + r')'),
     ("scenario", r'<div class="annexe-item annexe-scenario">',
-     r'(?:</div>\s*)*(?:<div class="images-wrapper">|' + re.escape(END_MARK) + r')'),
+     r'<div class="annexe-item"(?=[ >])'                            # (rescos-locales)
+     r'|<div class="annexe-item annexe-qr">'                        # (rescos-locales)
+     r'|(?:</div>\s*)*(?:<div class="images-wrapper">|' + re.escape(END_MARK) + r')'),
     ("annexe-image", r'<div class="annexe-item"(?=[ >])',
-     r'(?:</div>\s*)*(?:<div class="annexe-item"(?=[ >])|'
+     r'(?:</div>\s*)*(?:<div class="annexe-item"(?=[ >])'
+     r'|<div class="images-wrapper">|'                              # (rescos-locales)
      + re.escape(END_MARK) + r')'),
 ]
 
