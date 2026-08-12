@@ -76,6 +76,11 @@ REGLES: list[tuple[str, str]] = [
     ("c-yellow", r"\bprise en charge immédiate\b"),
     ("c-yellow", r"\bcritères? de gravité\b"),
     ("c-yellow", r"\bdiagnostic d[e’']exclusion\b"),
+    ("c-yellow", r"\blevée d[e’']inhibition\b"),
+    ("c-yellow", r"\bplans? de sécurité\b"),
+    ("c-yellow", r"\bcritères? (?:du )?DSM(?:-5)?\b"),
+    ("c-yellow", r"\bplacement à des fins d[e’']assistance\b"),
+    ("c-yellow", r"\bPAFA\b"),
     # Le verbe seul (« à écarter ») est un mouvement de raisonnement, pas un
     # concept à retenir : gardé uniquement quand il porte l'urgence.
     ("c-yellow", r"\bà (?:éliminer|écarter|exclure) (?:en priorité|d[e’']emblée)\b"),
@@ -120,6 +125,14 @@ REGLES: list[tuple[str, str]] = [
         r"traitements?", r"thérapeutiques?", r"thérapies?", r"médicaments?",
         r"prise en charge", r"posologies?", r"prescriptions?",
     )),
+    # Psychotropes et psychothérapies.
+    ("c-amber", _mots(
+        r"antidépresseurs?", r"ISRS", r"IRSN", r"thymorégulateurs?",
+        r"psychothérapies?", r"TCC", r"thérapie cognitivo-comportementale",
+        r"thérapie interpersonnelle", r"activation comportementale", r"MBCT",
+        r"sertraline", r"escitalopram", r"venlafaxine", r"lévothyroxine",
+        r"benzodiazépines?", r"luminothérapie", r"arrêts? de travail",
+    )),
 
     # ---- examen / normal / score ----------------------------------------
     # Éponymes : « signe de Murphy », « test de Lachman ». L'initiale majuscule
@@ -152,6 +165,12 @@ REGLES: list[tuple[str, str]] = [
         r"dépistages?", r"bilans?", r"laboratoire", r"paramètres? vitaux?",
         r"évaluations? clinique", r"examens? de laboratoire",
     )),
+    # Échelles et instruments — l'équivalent psychiatrique d'un examen.
+    ("c-green", _mots(
+        r"PHQ-9", r"Hamilton", r"MDQ", r"échelles?", r"questionnaires?",
+        r"TSH", r"FSC", r"ionogrammes?", r"entretiens? cliniques?",
+        r"folates?", r"vitamines? [BD]\d*",
+    )),
 
     # ---- symptôme / signe ------------------------------------------------
     ("c-pink", _mots(
@@ -177,6 +196,15 @@ REGLES: list[tuple[str, str]] = [
         r"crises?", r"syncopes?", r"chutes?", r"malaises?",
         r"perte de (?:connaissance|vision|audition|force|équilibre)",
     )),
+    # Sémiologie psychiatrique : ce que la patiente décrit et ce qui se voit.
+    ("c-pink", r"\bhumeurs? dépressives?\b"),
+    ("c-pink", r"\bralentissements? psychomoteurs?\b"),
+    ("c-pink", _mots(
+        r"anhédonies?", r"dévalorisations?", r"culpabilités?", r"ruminations?",
+        r"insomnies?", r"hypersomnies?", r"anxiétés?", r"désespoirs?",
+        r"labilités? émotionnelles?", r"retraits? sociaux?", r"apathies?",
+        r"psychomoteur(?:s|e|es)?", r"hallucinations?", r"idées? délirantes?",
+    )),
     ("c-pink", _mots(
         r"aigu[ëe]?s?", r"chroniques?", r"brutal(?:e|es|aux)?",
         r"progressi(?:f|ve|ves)", r"unilatéral(?:e|es|aux)?",
@@ -197,6 +225,22 @@ REGLES: list[tuple[str, str]] = [
         r"carcinomes?", r"mélanomes?", r"lymphomes?", r"tumeurs? maligne[s]?",
         r"fractures?", r"luxations?", r"torsions? (?:testiculaire|ovarienne)",
         r"tinea corporis", r"eczémas?(?: atopique| séborrhéique)?",
+    )),
+    # PSYCHIATRIE. Le lexique a été réglé sur azygos, corpus somatique : rien
+    # n'y couvrait le registre psychiatrique, et les dix vignettes « Psy » de
+    # `rescos-locales` rendaient 31 spans pour 1000 mots contre 107 pour leur
+    # corpus. Le danger vient en premier — c'est ce qui se cherche et se cote.
+    ("c-red", r"\brisques? suicidaires?\b"),
+    ("c-red", r"\bidéations? suicidaires?\b"),
+    ("c-red", r"\bidées? de mort\b"),
+    ("c-red", r"\bactes? préparatoires?\b"),
+    ("c-red", r"\bépisodes? (?:dépressifs? majeurs?|maniaques?|mixtes?)\b"),
+    ("c-red", _mots(
+        r"suicides?", r"suicidaires?", r"dépressions?", r"dépressi(?:f|ve|fs|ves)",
+        r"troubles? bipolaires?", r"bipolarités?", r"manies?", r"hypomanies?",
+        r"maniaques?", r"états? mixtes?", r"virages? maniaques?",
+        r"psychoses?", r"troubles? psychotiques?", r"catatonies?", r"incuries?",
+        r"hypothyroïdies?", r"hyperthyroïdies?",
     )),
     # Éponymes de maladie, puis les génériques de la catégorie.
     ("c-red", r"\bmaladies? (?:de |du |d[e’'])[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ-]{2,}\b"),
