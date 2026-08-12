@@ -1,9 +1,29 @@
 # Colorisation sémantique — azygos et les 20 grilles sans pédagogie — Design
 
-Date : 2026-08-12 · Statut : **lot 1 implémenté le 2026-08-12** (azygos 39,1 → 76,6 spans /
-1000 mots) · lot 2 à faire
+Date : 2026-08-12 · Statut : **implémenté le 2026-08-12** — lot 1 (azygos 39,1 → 79,6) et
+lot 2 (20 grilles sur 20) terminés
 
 Plan d'exécution : `docs/superpowers/plans/2026-08-12-colorisation-semantique.md`
+
+## Résultat final
+
+**Plus aucune grille du dépôt n'est sans contenu pédagogique** (hors les 9 feuilles porte, qui
+n'en ont pas par nature). Densité par corpus après travaux :
+
+| corpus | spans / 1000 mots |
+|---|---:|
+| usmle | 112,8 |
+| rescos | 107,8 |
+| rescos-locales | 107,3 |
+| casecos | 106,9 |
+| triage | 106,3 |
+| amboss | 97,2 |
+| german | 82,8 |
+| azygos | **79,6** (était 39,1) |
+
+Deux chantiers non prévus s'y sont ajoutés à la demande : la bascule des 166 grilles de
+`rescos-locales` en thème sombre, et le rapatriement des 34 grilles RESCOS-41 à 70 depuis
+`rescos-locales` vers `rescos`.
 
 ## Problème
 
