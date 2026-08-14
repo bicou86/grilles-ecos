@@ -1,4 +1,14 @@
-var CACHE_NAME = "ecos-v15";
+// ⚠️ INCRÉMENTER CE NUMÉRO À CHAQUE MODIFICATION D'UN FICHIER DE L'APP_SHELL,
+// et en particulier des deux feuilles de style. Les fichiers de `cases/` sont
+// servis en CACHE-FIRST PUR (voir le gestionnaire `fetch` plus bas) : tant
+// qu'une version est en cache, elle est renvoyée sans que le réseau soit
+// jamais interrogé. Le seul mécanisme qui libère une nouvelle version est la
+// purge des caches dont le nom diffère, à l'`activate`.
+//
+// Symptôme quand on l'oublie : la correction est visible en ouvrant le fichier
+// en local, et invisible sur le site déployé après un `git pull` — c'est ce qui
+// est arrivé à la correction des bulles d'information (v15 → v16).
+var CACHE_NAME = "ecos-v16";
 var APP_SHELL = [
   "/",
   "/index.html",
