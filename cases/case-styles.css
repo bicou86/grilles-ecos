@@ -33,8 +33,17 @@ body {
   margin-bottom: 30px;
   border: 2px solid #ddd;
   border-radius: 8px;
-  overflow: hidden;
+  /* PAS d'`overflow: hidden` ici. Il ne servait qu'à faire respecter l'arrondi
+   * par l'en-tête, ce que fait aussi bien un `border-radius` posé sur l'en-tête
+   * lui-même — et il coupait la bulle d'information des grilles azygos dès
+   * qu'elle dépassait d'un bord, ce qui arrivait sur les 47 bulles d'AZYGOS-1.
+   * Le clipping vertical persistait même après avoir corrigé le débordement
+   * horizontal : sur mobile, une bulle haute sort par le haut de la section. */
   background-color: #ffffff;
+}
+/* L'arrondi que l'`overflow` assurait auparavant. */
+.section > .section-header:first-child {
+  border-radius: 6px 6px 0 0;
 }
 
 .section-header {
@@ -3916,14 +3925,33 @@ input[type="checkbox"]:focus-visible {
    * la bulle, dont le texte doit rester dans la police de la grille. */
   font-family: Georgia, "Times New Roman", serif;
 }
+/* La bulle s'ancre sur la LIGNE, pas sur la pastille.
+ *
+ * Ancrée sur la pastille et centrée (`left: 50%; translateX(-50%)`), elle
+ * débordait dès que la pastille approchait d'un bord : mesuré sur AZYGOS-1, 46
+ * bulles sur 47 sortaient du viewport en fenêtre de 1000 px, jusqu'à 102 px à
+ * gauche. Et les 47 étaient clippées par `.section`, qui porte un
+ * `overflow: hidden` pour son arrondi.
+ *
+ * Ancrée sur `.detail-row` ou `.criteria-row` — larges, alignées à gauche de la
+ * colonne des critères — avec `left: 0` et une largeur bornée à celle de la
+ * ligne, elle ne peut plus dépasser d'aucun côté. Aucun JavaScript, donc aucune
+ * dépendance au moteur de rendu. */
+.criteria-row,
+.detail-row {
+  position: relative;
+}
+.info-vignette {
+  /* Ne plus servir d'ancre : c'est la ligne qui positionne la bulle. */
+  position: static;
+}
 .info-vignette-bulle {
   position: absolute;
   bottom: calc(100% + 7px);
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   z-index: 60;
   width: max-content;
-  max-width: min(380px, 70vw);
+  max-width: min(380px, 100%);
   padding: 9px 12px;
   border-radius: 7px;
   background: #312e81;
@@ -3945,8 +3973,10 @@ input[type="checkbox"]:focus-visible {
   opacity: 1;
   visibility: visible;
 }
-/* Près du bord gauche, la bulle centrée déborderait hors de l'écran. */
-.detail-row:first-child .info-vignette-bulle {
+/* Sur la première ligne, la bulle posée au-dessus sortirait par le haut de la
+ * page dès que la section est en tête d'écran. On la bascule dessous. */
+.detail-row:first-child .info-vignette-bulle,
+.criteria-row:first-of-type .info-vignette-bulle {
   bottom: auto;
   top: calc(100% + 7px);
 }
