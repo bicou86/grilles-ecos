@@ -119,16 +119,16 @@ cssclasses:
 > 	- [ ] Vertiges
 > 	- [ ] Chaleur du membre inférieur
 > 	- [ ] Faiblesse/engourdissement/picotements
-> - [ ] **4. Antécédents médicaux *(2 grilles sur 3)***
+> - [ ] **4. Antécédents médicaux**
 > 	- [ ] Antécédents médicaux *(Thrombose veineuse profonde (TVP))*
 > 	- [ ] Thrombose dans le passé *(Thrombose veineuse profonde (TVP))*
 > - [ ] **5. Allergies *(2 grilles sur 3)***
-> - [ ] **6. Médicaments *(2 grilles sur 3)***
+> - [ ] **6. Médicaments actuels**
 > - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Thrombose veineuse profonde (TVP))***
 > 	- [ ] Hospitalisations
 > 	- [ ] Grossesses antérieures/fausses couches
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **8. Antécédents familiaux *(2 grilles sur 3)***
+> - [ ] **8. Antécédents familiaux**
 > - [ ] **9. Habitudes et mode de vie *(2 grilles sur 3)***
 > 	- [ ] Travail *(Thrombose veineuse profonde (TVP))*
 > 	- [ ] Domicile *(Thrombose veineuse profonde (TVP))*
@@ -193,10 +193,7 @@ cssclasses:
 > - [ ] **63. Morsure de tique *(1 grille sur 3)***
 > - [ ] **64. Douleurs dans d'autres articulations *(1 grille sur 3)***
 > - [ ] **65. Antécédents de pathologie du genou *(1 grille sur 3)***
-> - [ ] **66. Antécédents personnels *(1 grille sur 3)***
-> - [ ] **67. Médicaments actuels *(1 grille sur 3)***
-> - [ ] **68. Anamnèse familiale *(1 grille sur 3)***
-> - [ ] **69. Anamnèse sociale et professionnelle *(1 grille sur 3)***
+> - [ ] **66. Anamnèse sociale et professionnelle *(1 grille sur 3)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Thrombose veineuse profonde (TVP))***

@@ -135,19 +135,36 @@ cssclasses:
 > - [ ] **32. Antécédents *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **33. Antécédents généraux *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **34. Antécédents neurologiques *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **35. Opérations antérieures *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **36. Médicaments *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **35. Antécédents chirurgicaux *(BAV · Première crise épileptique focale bilatéralisée)***
+> 	- [ ] Interventions antérieures *(BAV)*
+> 	- [ ] Complications post-opératoires *(BAV)*
+> 	- [ ] Anesthésies antérieures *(BAV)*
+> - [ ] **36. Médicaments actuels *(BAV · Première crise convulsive tonico-clonique · Première crise épileptique focale bilatéralisée)***
+> 	- [ ] Attention : antidépresseurs, neuroleptiques, tramadol abaissent le seuil épileptogène *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Antihypertenseurs *(BAV)*
+> 	- [ ] Antidiabétiques *(BAV)*
+> 	- [ ] Autres traitements *(BAV)*
+> 	- [ ] Observance thérapeutique *(BAV)*
 > - [ ] **37. Noxes *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **38. Alcool *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **39. Tabagisme *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **40. Drogues *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **41. Allergies *(Première crise convulsive tonico-clonique · Première crise épileptique focale bilatéralisée)***
-> - [ ] **42. Anamnèse familiale *(Première crise convulsive tonico-clonique · Première crise épileptique focale bilatéralisée)***
+> - [ ] **42. Antécédents familiaux *(4 diagnostics)***
 > 	- [ ] Père *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Mère *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Fratrie *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Épilepsie familiale *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Tumeur cérébrale familiale *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Maladies cardiovasculaires familiales *(1 grille sur 6)*
+> 	- [ ] Hypotension familiale *(1 grille sur 6)*
+> 	- [ ] Autres pathologies héréditaires *(1 grille sur 6)*
+> 	- [ ] Causes de décès *(1 grille sur 6)*
+> 	- [ ] Mort subite familiale *(BAV)*
+> 	- [ ] Maladies cardiaques *(BAV)*
+> 	- [ ] Troubles du rythme familiaux *(BAV)*
+> 	- [ ] État de santé de la mère *(BAV)*
+> 	- [ ] Pas d'antécédents familiaux de syncope, épilepsie ou pathologie cardiaque *(1 grille sur 6)*
 > - [ ] **43. Épilepsie familiale *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **44. Cancers familiaux *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **45. Situation de vie *(Première crise épileptique focale bilatéralisée)***
@@ -203,76 +220,70 @@ cssclasses:
 > 	- [ ] Maladies cardiovasculaires *(BAV)*
 > 	- [ ] Maladies respiratoires *(BAV)*
 > 	- [ ] Autres pathologies chroniques *(BAV)*
-> - [ ] **60. Médicaments actuels *(BAV · Première crise convulsive tonico-clonique)***
-> 	- [ ] Attention : antidépresseurs, neuroleptiques, tramadol abaissent le seuil épileptogène *(Première crise convulsive tonico-clonique)*
-> 	- [ ] Antihypertenseurs *(BAV)*
-> 	- [ ] Antidiabétiques *(BAV)*
-> 	- [ ] Autres traitements *(BAV)*
-> 	- [ ] Observance thérapeutique *(BAV)*
-> - [ ] **61. Habitudes de vie *(Première crise convulsive tonico-clonique)***
+> - [ ] **60. Habitudes de vie *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **62. Anamnèse sociale *(Première crise convulsive tonico-clonique)***
+> - [ ] **61. Anamnèse sociale *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Formation
 > 	- [ ] Famille
 > 	- [ ] Profession
 > 	- [ ] Domicile
 > 	- [ ] Loisirs
-> - [ ] **63. Revue des systèmes *(Première crise convulsive tonico-clonique)***
-> - [ ] **64. Question d'entrée ouverte - Motif de consultation *(1 grille sur 6)***
-> - [ ] **65. Caractérisation des symptômes principaux *(1 grille sur 6)***
+> - [ ] **62. Revue des systèmes *(Première crise convulsive tonico-clonique)***
+> - [ ] **63. Question d'entrée ouverte - Motif de consultation *(1 grille sur 6)***
+> - [ ] **64. Caractérisation des symptômes principaux *(1 grille sur 6)***
 > 	- [ ] Déclenchement par changements de position
 > 	- [ ] Amélioration en position allongée
 > 	- [ ] Prédominance horaire
 > 	- [ ] Durée des symptômes
-> - [ ] **66. Symptômes neurovégétatifs associés *(1 grille sur 6)***
+> - [ ] **65. Symptômes neurovégétatifs associés *(1 grille sur 6)***
 > 	- [ ] Vertiges
 > 	- [ ] Tachycardie
 > 	- [ ] Sueurs
 > 	- [ ] Pâleur
-> - [ ] **67. Épisodes syncopaux et chutes *(1 grille sur 6)***
+> - [ ] **66. Épisodes syncopaux et chutes *(1 grille sur 6)***
 > 	- [ ] Nombre de chutes
 > 	- [ ] Perte de connaissance complète
 > 	- [ ] Gravité des chutes
 > 	- [ ] Traumatismes associés
-> - [ ] **68. Symptômes cognitifs et généraux *(1 grille sur 6)***
+> - [ ] **67. Symptômes cognitifs et généraux *(1 grille sur 6)***
 > 	- [ ] Problèmes de concentration
 > 	- [ ] Fatigue inhabituelle
 > 	- [ ] Céphalées
 > 	- [ ] Modifications récentes
-> - [ ] **69. Symptômes cardiovasculaires *(1 grille sur 6)***
+> - [ ] **68. Symptômes cardiovasculaires *(1 grille sur 6)***
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Dyspnée
 > 	- [ ] Palpitations
 > 	- [ ] Œdèmes des membres inférieurs
-> - [ ] **70. Symptômes évocateurs d'autres causes *(1 grille sur 6)***
+> - [ ] **69. Symptômes évocateurs d'autres causes *(1 grille sur 6)***
 > 	- [ ] Intolérance au froid
 > 	- [ ] Acrocyanose
 > 	- [ ] Signes d'hypothyroïdie
 > 	- [ ] Signes d'insuffisance surrénalienne
-> - [ ] **71. Antécédents cardiovasculaires *(1 grille sur 6)***
+> - [ ] **70. Antécédents cardiovasculaires *(1 grille sur 6)***
 > 	- [ ] Maladies cardiaques connues
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Insuffisance cardiaque
 > 	- [ ] Troubles du rythme
-> - [ ] **72. Antécédents médicaux autres *(1 grille sur 6)***
+> - [ ] **71. Antécédents médicaux autres *(1 grille sur 6)***
 > 	- [ ] Maladies rénales
 > 	- [ ] Diabète
 > 	- [ ] Maladies neurologiques
 > 	- [ ] Autres pathologies chroniques
-> - [ ] **73. Traitements médicamenteux *(1 grille sur 6)***
+> - [ ] **72. Traitements médicamenteux *(1 grille sur 6)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Antihypertenseurs
 > 	- [ ] Diurétiques
 > 	- [ ] Psychotropes
 > 	- [ ] Observance thérapeutique
-> - [ ] **74. Habitudes de vie et hydratation *(1 grille sur 6)***
+> - [ ] **73. Habitudes de vie et hydratation *(1 grille sur 6)***
 > 	- [ ] Apports alimentaires
 > 	- [ ] Hydratation quotidienne
 > 	- [ ] Consommation de sel
 > 	- [ ] Modifications récentes
-> - [ ] **75. Substances et habitudes *(2 grilles sur 6)***
+> - [ ] **74. Substances et habitudes *(2 grilles sur 6)***
 > 	- [ ] Tabagisme *(1 grille sur 6)*
 > 	- [ ] Alcool
 > 	- [ ] Café/thé *(1 grille sur 6)*
@@ -280,118 +291,104 @@ cssclasses:
 > 	- [ ] Tabac actuel *(BAV)*
 > 	- [ ] Café *(BAV)*
 > 	- [ ] Drogues illicites *(BAV)*
-> - [ ] **76. Activités physiques et mode de vie *(1 grille sur 6)***
+> - [ ] **75. Activités physiques et mode de vie *(1 grille sur 6)***
 > 	- [ ] Activités sportives
 > 	- [ ] Loisirs
 > 	- [ ] Niveau d'autonomie
 > 	- [ ] Mobilité générale
-> - [ ] **77. Antécédents familiaux *(BAV · HypoTA orthostatique)***
-> 	- [ ] Maladies cardiovasculaires familiales *(1 grille sur 6)*
-> 	- [ ] Hypotension familiale *(1 grille sur 6)*
-> 	- [ ] Autres pathologies héréditaires *(1 grille sur 6)*
-> 	- [ ] Causes de décès *(1 grille sur 6)*
-> 	- [ ] Mort subite familiale *(BAV)*
-> 	- [ ] Maladies cardiaques *(BAV)*
-> 	- [ ] Troubles du rythme familiaux *(BAV)*
-> 	- [ ] État de santé de la mère *(BAV)*
-> 	- [ ] Pas d'antécédents familiaux de syncope, épilepsie ou pathologie cardiaque *(1 grille sur 6)*
-> - [ ] **78. Contexte social *(1 grille sur 6)***
+> - [ ] **76. Contexte social *(1 grille sur 6)***
 > 	- [ ] Situation familiale
 > 	- [ ] Enfants
 > 	- [ ] Profession antérieure
 > 	- [ ] Conditions de vie actuelles
-> - [ ] **79. Question d'entrée ouverte - Symptôme principal *(BAV)***
-> - [ ] **80. Caractérisation de l'épisode syncopal *(BAV)***
+> - [ ] **77. Question d'entrée ouverte - Symptôme principal *(BAV)***
+> - [ ] **78. Caractérisation de l'épisode syncopal *(BAV)***
 > 	- [ ] Prodromes
 > 	- [ ] Durée de la perte de connaissance
 > 	- [ ] Récupération (rapide ou progressive)
 > 	- [ ] Confusion post-critique
-> - [ ] **81. Fréquence et récurrence *(BAV)***
+> - [ ] **79. Fréquence et récurrence *(BAV)***
 > 	- [ ] Nombre d'épisodes
 > 	- [ ] Premier épisode (date)
 > 	- [ ] Augmentation de la fréquence
 > 	- [ ] Circonstances similaires
-> - [ ] **82. Symptômes cardiovasculaires associés *(BAV)***
+> - [ ] **80. Symptômes cardiovasculaires associés *(BAV)***
 > 	- [ ] Palpitations avant/après
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Sensation de battements irréguliers
 > 	- [ ] Pause cardiaque ressentie
-> - [ ] **83. Symptômes généraux récents *(BAV)***
+> - [ ] **81. Symptômes généraux récents *(BAV)***
 > 	- [ ] Fatigue inhabituelle
 > 	- [ ] Faiblesse générale
 > 	- [ ] Diminution de la tolérance à l'effort
 > 	- [ ] Modifications récentes
-> - [ ] **84. Symptômes respiratoires *(BAV)***
+> - [ ] **82. Symptômes respiratoires *(BAV)***
 > 	- [ ] Dyspnée d'effort
 > 	- [ ] Dyspnée de repos
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
-> - [ ] **85. Symptômes neurologiques *(BAV)***
+> - [ ] **83. Symptômes neurologiques *(BAV)***
 > 	- [ ] Vertiges
 > 	- [ ] Troubles visuels avant la syncope
 > 	- [ ] Céphalées
 > 	- [ ] Déficit neurologique focal
-> - [ ] **86. Circonstances déclenchantes *(BAV)***
+> - [ ] **84. Circonstances déclenchantes *(BAV)***
 > 	- [ ] Position lors de la syncope
 > 	- [ ] Effort physique
 > 	- [ ] Émotion forte
 > 	- [ ] Miction, défécation, toux
-> - [ ] **87. Facteurs de risque cardiovasculaire *(BAV)***
+> - [ ] **85. Facteurs de risque cardiovasculaire *(BAV)***
 > 	- [ ] Diabète
 > 	- [ ] Hypertension
 > 	- [ ] Dyslipidémie
 > 	- [ ] Tabagisme
 > 	- [ ] Obésité
-> - [ ] **88. Allergies médicamenteuses *(BAV)***
+> - [ ] **86. Allergies médicamenteuses *(BAV)***
 > 	- [ ] Allergies connues
 > 	- [ ] Intolérances
 > 	- [ ] Réactions antérieures
-> - [ ] **89. Antécédents chirurgicaux *(BAV)***
-> 	- [ ] Interventions antérieures
-> 	- [ ] Complications post-opératoires
-> 	- [ ] Anesthésies antérieures
-> - [ ] **90. Contexte social et professionnel *(BAV)***
+> - [ ] **87. Contexte social et professionnel *(BAV)***
 > 	- [ ] Profession
 > 	- [ ] Niveau d'activité actuel
 > 	- [ ] Stress récent
 > 	- [ ] Support social
-> - [ ] **91. Orientation du patient *(Hypoglycémie)***
+> - [ ] **88. Orientation du patient *(Hypoglycémie)***
 > 	- [ ] Personne
 > 	- [ ] Temporalité
 > 	- [ ] Espace
-> - [ ] **92. Présence de douleur *(Hypoglycémie)***
-> - [ ] **93. Notion d'intoxication aiguë ("avez-vous pris ?") *(Hypoglycémie)***
+> - [ ] **89. Présence de douleur *(Hypoglycémie)***
+> - [ ] **90. Notion d'intoxication aiguë ("avez-vous pris ?") *(Hypoglycémie)***
 > 	- [ ] Drogue
 > 	- [ ] Alcool
-> - [ ] **94. Hétéro-anamnèse avec infirmier/-ère - anamnèse actuelle *(Hypoglycémie)***
+> - [ ] **91. Hétéro-anamnèse avec infirmier/-ère - anamnèse actuelle *(Hypoglycémie)***
 > 	- [ ] Circonstances du début du malaise
 > 	- [ ] Notion de perte de connaissance / syncope
 > 	- [ ] Notion de traumatisme crânien
-> - [ ] **95. Hétéroanamnèse avec infirmier/-ère - infos sur le/la patient·e *(Hypoglycémie)***
+> - [ ] **92. Hétéroanamnèse avec infirmier/-ère - infos sur le/la patient·e *(Hypoglycémie)***
 > 	- [ ] Médicaments habituels
 > 	- [ ] Antécédents / comorbidités
-> - [ ] **96. Anamnèse avec patient·e (post resucrage efficace) *(Hypoglycémie)***
+> - [ ] **93. Anamnèse avec patient·e (post resucrage efficace) *(Hypoglycémie)***
 > 	- [ ] Circonstance du malaise
 > 	- [ ] Compliance / modalité du traitement anti-diabétique
-> - [ ] **97. Caractérisation de la perte de connaissance *(1 grille sur 6)***
+> - [ ] **94. Caractérisation de la perte de connaissance *(1 grille sur 6)***
 > 	- [ ] Chronologie/durée
 > 	- [ ] Développement
 > 	- [ ] Circonstances de survenue
 > 	- [ ] Fréquence
-> - [ ] **98. État post-critique *(1 grille sur 6)***
+> - [ ] **95. État post-critique *(1 grille sur 6)***
 > 	- [ ] Réveil avec famille autour de lui
 > 	- [ ] Orientation conservée (sait où il est, reconnaît ses parents)
 > 	- [ ] Récupération rapide et complète
-> - [ ] **99. Recherche de signes d'hypotension orthostatique *(1 grille sur 6)***
+> - [ ] **96. Recherche de signes d'hypotension orthostatique *(1 grille sur 6)***
 > 	- [ ] Épisode en se levant (changement de position)
 > 	- [ ] Vertiges et voile devant les yeux
-> - [ ] **100. Antécédents médicaux et facteurs prédisposants *(1 grille sur 6)***
+> - [ ] **97. Antécédents médicaux et facteurs prédisposants *(1 grille sur 6)***
 > 	- [ ] Anémie ferriprive en traitement (fer per os et IV)
 > 	- [ ] Jamais hospitalisé ni opéré
 > 	- [ ] Allergie au pollen
 > 	- [ ] Vaccins à jour
-> - [ ] **101. Habitudes et facteurs de risque *(1 grille sur 6)***
-> 	- [ ] Médicaments
+> - [ ] **98. Habitudes et facteurs de risque *(1 grille sur 6)***
+> 	- [ ] Médicaments actuels
 > 	- [ ] Alimentation
 > 	- [ ] Activité physique
 > 	- [ ] Tabac/alcool/drogues
@@ -558,7 +555,7 @@ cssclasses:
 > 	- [ ] Recherche de pâleur cutanée
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Diagnostics différentiels *(3 grilles sur 6)* — *BAV · HypoTA orthostatique · Première crise épileptique focale bilatéralisée***
+> - [ ] **1. Diagnostics différentiels *(4 grilles sur 6)* — 4 diagnostics : *BAV · HypoTA orthostatique · Première crise convulsive tonico-clonique · Première crise épileptique focale bilatéralisée***
 
 > [!success] 💊 Management — si BAV
 > - [ ] **1. Diagnostic principal**
@@ -692,25 +689,24 @@ cssclasses:
 
 > [!success] 💊 Management — si Première crise convulsive tonico-clonique
 > - [ ] **1. Diagnostic principal évoqué**
-> - [ ] **2. Diagnostics différentiels (au moins 2-3)**
-> - [ ] **3. Examens complémentaires proposés**
+> - [ ] **2. Examens complémentaires proposés**
 > 	- [ ] Biologie : ionogramme, calcium, TSH, CK
 > 	- [ ] Bilan hépatique : transaminases, Gamma-GT, phosphatases alcalines, albumine, Quick/aPTT
 > 	- [ ] Toxicologie : dépistage drogues, alcoolémie, glycémie
 > 	- [ ] Imagerie : échographie carotides, CT/IRM cérébral
-> - [ ] **4. Traitement d'urgence du status epilepticus**
+> - [ ] **3. Traitement d'urgence du status epilepticus**
 > 	- [ ] Lorazépam (Temesta®) 0.1 mg/kg IV
 > 	- [ ] Si persistance : Propofol/Thiopental/Phénytoïne
-> - [ ] **5. Traitement antiépileptique de fond**
+> - [ ] **4. Traitement antiépileptique de fond**
 > 	- [ ] Épilepsie focale : Lamotrigine (aussi pendant grossesse)
 > 	- [ ] Épilepsie généralisée : Valproate
 > 	- [ ] Alternatives : Carbamazépine/Oxcarbazépine
 > 	- [ ] Autres : Prégabaline, Gabapentine, Tiagabine/Vigabatrine
-> - [ ] **6. Traitements spécifiques selon étiologie**
+> - [ ] **5. Traitements spécifiques selon étiologie**
 > 	- [ ] Chirurgie si tumeur
 > 	- [ ] Shunt si hydrocéphalie
 > 	- [ ] Antibiothérapie/antiviraux si méningite
-> - [ ] **7. Orientation et suivi**
+> - [ ] **6. Orientation et suivi**
 
 > [!success] 💊 Management — si Première crise épileptique focale bilatéralisée
 > - [ ] **1. Glycémie capillaire**

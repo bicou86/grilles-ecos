@@ -100,7 +100,11 @@ cssclasses:
 > - [ ] **6. Facteurs soulageants *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **7. Facteurs aggravants *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **8. Retentissement des symptômes *(Suspicion d'hyperplasie bénigne de la prostate)***
-> - [ ] **9. Symptômes d'accompagnement *(Suspicion d'hyperplasie bénigne de la prostate)***
+> - [ ] **9. Symptômes associés *(Infection à Chlamydia trachomatis · Suspicion d'hyperplasie bénigne de la prostate)***
+> 	- [ ] Spotting/métrorragies *(Infection à Chlamydia trachomatis)*
+> 	- [ ] Dyspareunie *(Infection à Chlamydia trachomatis)*
+> 	- [ ] Écoulements vaginaux *(Infection à Chlamydia trachomatis)*
+> 	- [ ] Prurit vulvaire *(Infection à Chlamydia trachomatis)*
 > - [ ] **10. Symptômes obstructifs *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **11. Difficultés à démarrer *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **12. Jet urinaire affaibli *(Suspicion d'hyperplasie bénigne de la prostate)***
@@ -122,7 +126,11 @@ cssclasses:
 > - [ ] **28. Troubles de l'érection *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **29. Transit / Constipation *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **30. Symptômes neurologiques *(Suspicion d'hyperplasie bénigne de la prostate)***
-> - [ ] **31. Antécédents médicaux *(Suspicion d'hyperplasie bénigne de la prostate · Urétrite sexuellement transmissible)***
+> - [ ] **31. Antécédents médicaux *(Infection urinaire (cystite) · Suspicion d'hyperplasie bénigne de la prostate · Urétrite sexuellement transmissible)***
+> 	- [ ] Maladies/comorbidités *(Infection urinaire (cystite))*
+> 	- [ ] Interventions ou hospitalisations *(Infection urinaire (cystite))*
+> 	- [ ] Allergies *(Infection urinaire (cystite))*
+> 	- [ ] Médicaments *(Infection urinaire (cystite))*
 > - [ ] **32. Antécédents chirurgicaux *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **33. Anamnèse médicamenteuse *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **34. Toxiques *(Suspicion d'hyperplasie bénigne de la prostate)***
@@ -130,9 +138,9 @@ cssclasses:
 > - [ ] **36. Tabac *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **37. Drogues *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **38. Allergies *(Suspicion d'hyperplasie bénigne de la prostate · Urétrite sexuellement transmissible)***
-> - [ ] **39. Antécédents familiaux *(Suspicion d'hyperplasie bénigne de la prostate)***
+> - [ ] **39. Antécédents familiaux *(Suspicion d'hyperplasie bénigne de la prostate · Urétrite sexuellement transmissible)***
 > - [ ] **40. Profession *(Suspicion d'hyperplasie bénigne de la prostate)***
-> - [ ] **41. Situation sociale *(Suspicion d'hyperplasie bénigne de la prostate)***
+> - [ ] **41. Anamnèse sociale *(Suspicion d'hyperplasie bénigne de la prostate · Urétrite sexuellement transmissible)***
 > - [ ] **42. Présentation avec nom, fonction et tâche *(Urétrite sexuellement transmissible)***
 > - [ ] **43. Question ouverte d'entrée - Symptôme principal *(Urétrite sexuellement transmissible)***
 > - [ ] **44. Caractérisation de la dysurie *(Urétrite sexuellement transmissible)***
@@ -174,19 +182,12 @@ cssclasses:
 > 	- [ ] Tabac
 > 	- [ ] Drogues
 > 	- [ ] Activité physique *(Infection à Chlamydia trachomatis)*
-> - [ ] **54. Anamnèse familiale *(Urétrite sexuellement transmissible)***
-> - [ ] **55. Anamnèse sociale *(Urétrite sexuellement transmissible)***
-> - [ ] **56. Caractérisation du symptôme principal *(Infection à Chlamydia trachomatis)***
+> - [ ] **54. Caractérisation du symptôme principal *(Infection à Chlamydia trachomatis)***
 > 	- [ ] Douleurs à la miction
 > 	- [ ] Intensité
 > 	- [ ] Évolution
 > 	- [ ] Développement
-> - [ ] **57. Symptômes associés *(Infection à Chlamydia trachomatis)***
-> 	- [ ] Spotting/métrorragies
-> 	- [ ] Dyspareunie
-> 	- [ ] Écoulements vaginaux
-> 	- [ ] Prurit vulvaire
-> - [ ] **58. Anamnèse sexuelle *(Infection urinaire (cystite) · Infection à Chlamydia trachomatis)***
+> - [ ] **55. Anamnèse sexuelle *(Infection urinaire (cystite) · Infection à Chlamydia trachomatis)***
 > 	- [ ] Nouveau partenaire *(Infection à Chlamydia trachomatis)*
 > 	- [ ] Fréquence des rapports *(Infection à Chlamydia trachomatis)*
 > 	- [ ] Protection *(Infection à Chlamydia trachomatis)*
@@ -197,50 +198,45 @@ cssclasses:
 > 	- [ ] Type de protection *(Infection urinaire (cystite))*
 > 	- [ ] Antécédents d'IST *(Infection urinaire (cystite))*
 > 	- [ ] Moyens contraceptifs *(Infection urinaire (cystite))*
-> - [ ] **59. Anamnèse gynécologique *(Infection à Chlamydia trachomatis)***
+> - [ ] **56. Anamnèse gynécologique *(Infection à Chlamydia trachomatis)***
 > 	- [ ] Dernières règles
 > 	- [ ] Contraception
 > 	- [ ] Antécédents d'IST
 > 	- [ ] Grossesses antérieures
-> - [ ] **60. Symptômes urinaires *(Infection à Chlamydia trachomatis)***
+> - [ ] **57. Symptômes urinaires *(Infection à Chlamydia trachomatis)***
 > 	- [ ] Pollakiurie
 > 	- [ ] Urgenturie
 > 	- [ ] Hématurie
 > 	- [ ] Douleurs lombaires
-> - [ ] **61. Réponse aux symptômes *(Infection à Chlamydia trachomatis)***
+> - [ ] **58. Réponse aux symptômes *(Infection à Chlamydia trachomatis)***
 > 	- [ ] Automédication
 > 	- [ ] Consultation médicale antérieure
-> - [ ] **62. Allergies et médicaments *(Infection à Chlamydia trachomatis)***
+> - [ ] **59. Allergies et médicaments *(Infection à Chlamydia trachomatis)***
 > 	- [ ] Allergies
 > 	- [ ] Médicaments actuels
-> - [ ] **63. Caractérisation de la douleur mictionnelle *(Infection urinaire (cystite))***
+> - [ ] **60. Caractérisation de la douleur mictionnelle *(Infection urinaire (cystite))***
 > 	- [ ] Qualité
 > 	- [ ] Intensité
 > 	- [ ] Irradiation
 > 	- [ ] Facteurs aggravants ET soulageants
 > 	- [ ] Symptômes associés
-> - [ ] **64. Chronologie de la douleur *(Infection urinaire (cystite))***
+> - [ ] **61. Chronologie de la douleur *(Infection urinaire (cystite))***
 > 	- [ ] Début
 > 	- [ ] Circonstance de survenue
 > 	- [ ] Évolution
-> - [ ] **65. Anamnèse urologique *(Infection urinaire (cystite))***
+> - [ ] **62. Anamnèse urologique *(Infection urinaire (cystite))***
 > 	- [ ] Fréquence mictionnelle
 > 	- [ ] Quantité d'urine
 > 	- [ ] Couleur des urines
 > 	- [ ] Présence de sang
-> - [ ] **66. Anamnèse génitale *(Infection urinaire (cystite))***
+> - [ ] **63. Anamnèse génitale *(Infection urinaire (cystite))***
 > 	- [ ] Pertes vaginales
 > 	- [ ] Prurit vaginal
 > 	- [ ] Dates des dernières règles
-> - [ ] **67. Anamnèse générale, présence de *(Infection urinaire (cystite))***
+> - [ ] **64. Anamnèse générale, présence de *(Infection urinaire (cystite))***
 > 	- [ ] Fièvre
 > 	- [ ] Transpiration
 > 	- [ ] Perte de poids involontaire
-> - [ ] **68. Antécédents personnels *(Infection urinaire (cystite))***
-> 	- [ ] Maladies/comorbidités
-> 	- [ ] Interventions ou hospitalisations
-> 	- [ ] Allergies
-> 	- [ ] Médicaments
 
 > [!tip] 🩺 Status
 > - [ ] **1. Paramètres vitaux *(Suspicion d'hyperplasie bénigne de la prostate)***

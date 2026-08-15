@@ -367,7 +367,11 @@ cssclasses:
 > - [ ] **4. Inspection du thorax *(1 grille sur 5)***
 > - [ ] **5. Vibrations vocales *(1 grille sur 5)***
 > - [ ] **6. Percussion du thorax *(1 grille sur 5)***
-> - [ ] **7. Auscultation pulmonaire *(2 grilles sur 5)***
+> - [ ] **7. Auscultation pulmonaire *(3 grilles sur 5)***
+> 	- [ ] Auscultation antérieure systématique *(Asthme)*
+> 	- [ ] Auscultation postérieure systématique *(Asthme)*
+> 	- [ ] Identification de sibilants *(Asthme)*
+> 	- [ ] Bronchophonie *(Asthme)*
 > 	- [ ] Râles crépitants bilatéraux *(1 grille sur 5)*
 > 	- [ ] Diminution du murmure vésiculaire *(1 grille sur 5)*
 > 	- [ ] Matité des bases *(1 grille sur 5)*
@@ -402,127 +406,122 @@ cssclasses:
 > 	- [ ] Détermination des bases pulmonaires
 > 	- [ ] Recherche de matité
 > 	- [ ] Comparaison bilatérale
-> - [ ] **18. Examen pulmonaire - Auscultation *(Asthme)***
-> 	- [ ] Auscultation antérieure systématique
-> 	- [ ] Auscultation postérieure systématique
-> 	- [ ] Identification de sibilants
-> 	- [ ] Bronchophonie
-> - [ ] **19. Examen des extrémités *(Asthme)***
+> - [ ] **18. Examen des extrémités *(Asthme)***
 > 	- [ ] Recherche d'hippocratisme digital
 > 	- [ ] Recherche de cyanose
 > 	- [ ] État des ongles
 > 	- [ ] Temps de recoloration capillaire
-> - [ ] **20. Examen ORL succinct *(Asthme)***
+> - [ ] **19. Examen ORL succinct *(Asthme)***
 > 	- [ ] Inspection de la gorge
 > 	- [ ] Examen des oreilles
 > 	- [ ] Examen du nez
 > 	- [ ] État de la muqueuse
-> - [ ] **21. Palpation des aires ganglionnaires *(Asthme)***
+> - [ ] **20. Palpation des aires ganglionnaires *(Asthme)***
 > 	- [ ] Ganglions cervicaux
 > 	- [ ] Ganglions sous-mandibulaires
 > 	- [ ] Ganglions sus-claviculaires
 > 	- [ ] Ganglions axillaires
-> - [ ] **22. Inspection générale et pulmonaire *(BPCO)***
+> - [ ] **21. Inspection générale et pulmonaire *(BPCO)***
 > 	- [ ] État général du patient
 > 	- [ ] Coloration cutanée
 > 	- [ ] Morphologie thoracique
 > 	- [ ] Type de respiration
 > 	- [ ] Fréquence respiratoire
-> - [ ] **23. Palpation thoracique *(BPCO)***
+> - [ ] **22. Palpation thoracique *(BPCO)***
 > 	- [ ] Vibrations vocales
 > 	- [ ] Ampliation thoracique
 > 	- [ ] Points douloureux
 > 	- [ ] Déformations
-> - [ ] **24. Auscultation pulmonaire systématique *(BPCO)***
+> - [ ] **23. Auscultation pulmonaire systématique *(BPCO)***
 > 	- [ ] Auscultation antérieure complète
 > 	- [ ] Auscultation postérieure complète
 > 	- [ ] Bruits surajoutés
 > 	- [ ] Murmure vésiculaire
-> - [ ] **25. Évaluation des muscles respiratoires accessoires *(BPCO)***
+> - [ ] **24. Évaluation des muscles respiratoires accessoires *(BPCO)***
 > 	- [ ] Utilisation des scalènes
 > 	- [ ] Utilisation des sterno-cléido-mastoïdiens
 > 	- [ ] Respiration abdominale paradoxale
 > 	- [ ] Tirage
-> - [ ] **26. Recherche de signes d'insuffisance cardiaque droite *(BPCO)***
+> - [ ] **25. Recherche de signes d'insuffisance cardiaque droite *(BPCO)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Turgescence jugulaire
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Hépatomégalie
-> - [ ] **27. Recherche de cyanose et modifications des extrémités *(BPCO)***
+> - [ ] **26. Recherche de cyanose et modifications des extrémités *(BPCO)***
 > 	- [ ] Cyanose péribuccale
 > 	- [ ] Cyanose des extrémités
 > 	- [ ] Hippocratisme digital
 > 	- [ ] Température des extrémités
-> - [ ] **28. Examen cardiovasculaire *(BPCO)***
+> - [ ] **27. Examen cardiovasculaire *(BPCO)***
 > 	- [ ] Auscultation cardiaque
 > 	- [ ] Recherche de signes d'HTAP
 > 	- [ ] Pouls périphériques
 > 	- [ ] Pression artérielle
-> - [ ] **29. Signes vitaux *(1 grille sur 5)***
+> - [ ] **28. Signes vitaux *(1 grille sur 5)***
 > 	- [ ] SpO2 94% en air ambiant
-> - [ ] **30. Inspection générale *(1 grille sur 5)***
+> - [ ] **29. Inspection générale *(1 grille sur 5)***
 > 	- [ ] Patient en position semi-assise
 > 	- [ ] Dyspnée de repos modérée
 > 	- [ ] Cyanose légère des extrémités
 > 	- [ ] Turgescence jugulaire
 > 	- [ ] Reflux hépato-jugulaire
-> - [ ] **31. Examen abdominal *(1 grille sur 5)***
+> - [ ] **30. Examen abdominal *(1 grille sur 5)***
 > 	- [ ] Hépatomégalie
 > 	- [ ] Sensibilité hépatique
 > 	- [ ] Ascite modérée
 > 	- [ ] Pas de splénomégalie
-> - [ ] **32. Examen des membres inférieurs *(1 grille sur 5)***
+> - [ ] **31. Examen des membres inférieurs *(1 grille sur 5)***
 > 	- [ ] Œdèmes bilatéraux prenant le godet
 > 	- [ ] Symétriques et blancs
 > 	- [ ] Mous et indolores
 > 	- [ ] Pouls périphériques présents
 > 	- [ ] Pas de signes de phlébite
-> - [ ] **33. Inspection générale intégrée *(1 grille sur 5)***
+> - [ ] **32. Inspection générale intégrée *(1 grille sur 5)***
 > 	- [ ] État général
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Coloration cutanée
 > 	- [ ] Pouls jugulaire
 > 	- [ ] Tirage sus-sternal
 > 	- [ ] Extrémités
-> - [ ] **34. Examen cardiovasculaire - position couchée 45° *(1 grille sur 5)***
+> - [ ] **33. Examen cardiovasculaire - position couchée 45° *(1 grille sur 5)***
 > 	- [ ] Inspection aire cardiaque et pouls jugulaire
 > 	- [ ] Palpation précordiale et choc de pointe
 > 	- [ ] Palpation pouls carotidien
 > 	- [ ] Auscultation 4 foyers en décubitus dorsal
 > 	- [ ] Recherche B3/B4 en décubitus latéral gauche
-> - [ ] **35. Auscultation cardiaque - bruits pathologiques *(1 grille sur 5)***
+> - [ ] **34. Auscultation cardiaque - bruits pathologiques *(1 grille sur 5)***
 > 	- [ ] B1 et B2
 > 	- [ ] Souffle systolique aortique
 > 	- [ ] Souffle systolique mitral
 > 	- [ ] Galop B3 ou B4
 > 	- [ ] Frottement péricardique
-> - [ ] **36. Examen respiratoire - position assise *(1 grille sur 5)***
+> - [ ] **35. Examen respiratoire - position assise *(1 grille sur 5)***
 > 	- [ ] Inspection mouvements respiratoires
 > 	- [ ] Inspection forme thorax
 > 	- [ ] Palpation ampliation thoracique
 > 	- [ ] Palpation vibrations vocales
 > 	- [ ] Percussion postérieure et antérieure
-> - [ ] **37. Auscultation pulmonaire - bruits pathologiques *(1 grille sur 5)***
+> - [ ] **36. Auscultation pulmonaire - bruits pathologiques *(1 grille sur 5)***
 > 	- [ ] Murmure vésiculaire
 > 	- [ ] Sibilances expiratoires
 > 	- [ ] Râles crépitants
 > 	- [ ] Ronchi
 > 	- [ ] Expiration prolongée
-> - [ ] **38. Signes périphériques d'insuffisance cardiaque *(1 grille sur 5)***
+> - [ ] **37. Signes périphériques d'insuffisance cardiaque *(1 grille sur 5)***
 > 	- [ ] Œdèmes membres inférieurs
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Hépatomégalie
 > 	- [ ] Ascite
 > 	- [ ] Pouls périphériques
-> - [ ] **39. Intégration de l'examen physique *(1 grille sur 5)***
+> - [ ] **38. Intégration de l'examen physique *(1 grille sur 5)***
 > 	- [ ] Séquence optimale pour confort patient
 > 	- [ ] Passage fluide entre positions
 > 	- [ ] Examen complet sans répétitions inutiles
 > 	- [ ] Éléments prioritaires selon contexte
-> - [ ] **40. Technique d'examen intégré cardio-respiratoire *(1 grille sur 5)***
+> - [ ] **39. Technique d'examen intégré cardio-respiratoire *(1 grille sur 5)***
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Diagnostics différentiels (au moins 2-3) *(2 grilles sur 5)* — *Asthme · BPCO***
+> - [ ] **1. Diagnostics différentiels *(3 grilles sur 5)* — *Asthme · BPCO · Insuffisance cardiaque (décompensée)***
 
 > [!success] 💊 Management — si Asthme
 > - [ ] **1. Diagnostic principal évoqué**
@@ -624,8 +623,7 @@ cssclasses:
 > - [ ] **12. Réévaluation *(1 grille sur 3)***
 > - [ ] **13. Contrôle biologique *(1 grille sur 3)***
 > - [ ] **14. Relais *(1 grille sur 3)***
-> - [ ] **15. Diagnostics différentiels *(1 grille sur 3)***
-> - [ ] **16. Examens complémentaires urgents *(1 grille sur 3)***
+> - [ ] **15. Examens complémentaires urgents *(1 grille sur 3)***
 > 	- [ ] ECG 12 dérivations
 > 	- [ ] Radiographie thoracique
 > 	- [ ] BNP ou NT-proBNP
@@ -633,7 +631,7 @@ cssclasses:
 > 	- [ ] Bilan biologique: FSC, ionogramme, créatinine, BNP
 > 	- [ ] Troponines si suspicion de SCA
 > 	- [ ] Gazométrie artérielle si dyspnée sévère
-> - [ ] **17. Critères diagnostiques d'insuffisance cardiaque *(1 grille sur 3)***
+> - [ ] **16. Critères diagnostiques d'insuffisance cardiaque *(1 grille sur 3)***
 > 	- [ ] Critères de Framingham majeurs
 > 	- [ ] Dyspnée paroxystique nocturne
 > 	- [ ] Turgescence jugulaire
@@ -642,54 +640,54 @@ cssclasses:
 > 	- [ ] Œdème aigu du poumon
 > 	- [ ] Galop B3
 > 	- [ ] Reflux hépato-jugulaire
-> - [ ] **18. Traitement de l'insuffisance cardiaque *(1 grille sur 3)***
-> - [ ] **19. Signes d'alarme (red flags) *(1 grille sur 3)***
-> - [ ] **20. Éducation thérapeutique *(1 grille sur 3)***
+> - [ ] **17. Traitement de l'insuffisance cardiaque *(1 grille sur 3)***
+> - [ ] **18. Signes d'alarme (red flags) *(1 grille sur 3)***
+> - [ ] **19. Éducation thérapeutique *(1 grille sur 3)***
 > 	- [ ] Reconnaissance des signes d'alarme
 > 	- [ ] Importance de l'observance thérapeutique
 > 	- [ ] Auto-surveillance du poids
 > 	- [ ] Régime pauvre en sel
 > 	- [ ] Limitation des apports hydriques
 > 	- [ ] Activité physique régulière adaptée
-> - [ ] **21. Synthèse diagnostique principale *(1 grille sur 3)***
+> - [ ] **20. Synthèse diagnostique principale *(1 grille sur 3)***
 > 	- [ ] Insuffisance cardiaque décompensée
 > 	- [ ] Sténose aortique sévère
 > 	- [ ] Insuffisance mitrale modérée
 > 	- [ ] Dysfonction VG sévère
 > 	- [ ] Possible syndrome obstructif associé
-> - [ ] **22. Diagnostic différentiel dyspnée cardio-pulmonaire *(1 grille sur 3)***
-> - [ ] **23. Examens complémentaires cardiaques *(1 grille sur 3)***
+> - [ ] **21. Diagnostic différentiel dyspnée cardio-pulmonaire *(1 grille sur 3)***
+> - [ ] **22. Examens complémentaires cardiaques *(1 grille sur 3)***
 > 	- [ ] ECG
 > 	- [ ] Radiographie thorax
 > 	- [ ] Échocardiographie
 > 	- [ ] BNP ou NT-proBNP
 > 	- [ ] Coronarographie si chirurgie envisagée
-> - [ ] **24. Examens complémentaires respiratoires *(1 grille sur 3)***
+> - [ ] **23. Examens complémentaires respiratoires *(1 grille sur 3)***
 > 	- [ ] Spirométrie
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] Test de marche 6 minutes
 > 	- [ ] Scanner thoracique si indication
 > 	- [ ] Polysomnographie si suspicion SAOS
-> - [ ] **25. Prise en charge de l'insuffisance cardiaque *(1 grille sur 3)***
-> - [ ] **26. Prise en charge respiratoire *(1 grille sur 3)***
+> - [ ] **24. Prise en charge de l'insuffisance cardiaque *(1 grille sur 3)***
+> - [ ] **25. Prise en charge respiratoire *(1 grille sur 3)***
 > 	- [ ] Oxygénothérapie si hypoxémie
 > 	- [ ] Bronchodilatateurs si obstruction
 > 	- [ ] Sevrage tabagique impératif
 > 	- [ ] Kinésithérapie respiratoire
 > 	- [ ] Vaccination grippe/pneumocoque
-> - [ ] **27. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
+> - [ ] **26. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
 > 	- [ ] Hospitalisation pour décompensation aiguë
 > 	- [ ] Monitoring poids quotidien
 > 	- [ ] Surveillance diurèse et ionogramme
 > 	- [ ] Évaluation pré-opératoire si chirurgie
 > 	- [ ] Suivi multidisciplinaire cardio-pneumo
-> - [ ] **28. Aspects psychosociaux et éducation *(1 grille sur 3)***
+> - [ ] **27. Aspects psychosociaux et éducation *(1 grille sur 3)***
 > 	- [ ] Soutien psychologique
 > 	- [ ] Aide sociale
 > 	- [ ] Éducation thérapeutique
 > 	- [ ] Aménagement domicile si besoin
 > 	- [ ] Coordination avec médecin traitant
-> - [ ] **29. Management intégré cardio-respiratoire *(1 grille sur 3)***
+> - [ ] **28. Management intégré cardio-respiratoire *(1 grille sur 3)***
 
 > [!success] 💊 Management — si Tachycardie supraventriculaire (TSV/WPW)
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

@@ -126,7 +126,9 @@ cssclasses:
 > 	- [ ] Congestion nasale/nez qui coule
 > 	- [ ] Agitation
 > 	- [ ] Transpiration
-> - [ ] **4. Antécédents médicaux *(Hémorragie sous-arachnoïdienne · Migraine · Méningite)***
+> - [ ] **4. Antécédents médicaux *(4 diagnostics)***
+> 	- [ ] Néoplasie *(Céphalée du restaurant chinois)*
+> 	- [ ] Hypertension *(Céphalée du restaurant chinois)*
 > - [ ] **5. Allergies *(4 diagnostics)***
 > 	- [ ] Allergies *(1 grille sur 6)*
 > 	- [ ] Type de réaction *(1 grille sur 6)*
@@ -136,7 +138,7 @@ cssclasses:
 > - [ ] **7. Hospitalisations et antécédents chirurgicaux *(2 grilles sur 6)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **8. Antécédents familiaux *(Céphalée du restaurant chinois · Migraine)***
+> - [ ] **8. Antécédents familiaux *(Céphalée du restaurant chinois · Migraine · Méningite)***
 > - [ ] **9. Habitudes et mode de vie *(2 grilles sur 6)***
 > 	- [ ] Travail
 > 	- [ ] Domicile
@@ -176,7 +178,16 @@ cssclasses:
 > - [ ] **23. Facteurs soulageants *(1 grille sur 6)***
 > - [ ] **24. Bilans neurologiques antérieurs *(1 grille sur 6)***
 > - [ ] **25. Retentissement des symptômes *(1 grille sur 6)***
-> - [ ] **26. Symptômes associés *(2 grilles sur 6)***
+> - [ ] **26. Symptômes associés *(4 grilles sur 6)***
+> 	- [ ] Nausées *(Céphalée du restaurant chinois)*
+> 	- [ ] Vomissements *(Céphalée du restaurant chinois)*
+> 	- [ ] Photophobie *(Céphalée du restaurant chinois · Méningite)*
+> 	- [ ] Larmoiement *(Céphalée du restaurant chinois)*
+> 	- [ ] Douleurs à la mastication *(Céphalée du restaurant chinois)*
+> 	- [ ] Troubles visuels *(Céphalée du restaurant chinois)*
+> 	- [ ] Transpiration *(Méningite)*
+> 	- [ ] Faiblesse générale *(Méningite)*
+> 	- [ ] Confusion légère *(Méningite)*
 > 	- [ ] Nausées/vomissements *(Thrombose veineuse cérébrale)*
 > 	- [ ] Photophobie/phonophobie *(Thrombose veineuse cérébrale)*
 > 	- [ ] Symptômes neurologiques *(Thrombose veineuse cérébrale)*
@@ -212,7 +223,9 @@ cssclasses:
 > - [ ] **54. Migraine dans la famille *(1 grille sur 6)***
 > - [ ] **55. Profession *(1 grille sur 6)***
 > - [ ] **56. Facteurs de stress psychosociaux *(1 grille sur 6)***
-> - [ ] **57. Situation sociale *(1 grille sur 6)***
+> - [ ] **57. Anamnèse sociale *(2 grilles sur 6)***
+> 	- [ ] Vit avec sa femme *(Méningite)*
+> 	- [ ] Visite récente chez les petits-enfants il y a 2 semaines *(Méningite)*
 > - [ ] **58. Présentation avec nom, fonction et tâche *(Céphalée du restaurant chinois · Méningite)***
 > - [ ] **59. Question ouverte d'introduction → Symptôme principal *(Céphalée du restaurant chinois)***
 > - [ ] **60. Localisation des douleurs *(Céphalée du restaurant chinois)***
@@ -225,71 +238,54 @@ cssclasses:
 > - [ ] **62. Variation dans la journée *(Céphalée du restaurant chinois)***
 > - [ ] **63. Caractère de la douleur *(Céphalée du restaurant chinois)***
 > - [ ] **64. Facteurs de soulagement *(Céphalée du restaurant chinois)***
-> - [ ] **65. Symptômes d'accompagnement *(Céphalée du restaurant chinois · Méningite)***
-> 	- [ ] Nausées *(Céphalée du restaurant chinois)*
-> 	- [ ] Vomissements *(Céphalée du restaurant chinois)*
-> 	- [ ] Photophobie
-> 	- [ ] Larmoiement *(Céphalée du restaurant chinois)*
-> 	- [ ] Douleurs à la mastication *(Céphalée du restaurant chinois)*
-> 	- [ ] Troubles visuels *(Céphalée du restaurant chinois)*
-> 	- [ ] Transpiration *(Méningite)*
-> 	- [ ] Faiblesse générale *(Méningite)*
-> 	- [ ] Confusion légère *(Méningite)*
-> - [ ] **66. Première fois ou connu *(Céphalée du restaurant chinois)***
-> - [ ] **67. Maladies récentes *(Céphalée du restaurant chinois)***
-> - [ ] **68. Crises convulsives *(Céphalée du restaurant chinois)***
-> - [ ] **69. Douleurs aux épaules et muscles *(Céphalée du restaurant chinois)***
-> - [ ] **70. Stress, consommation de caféine *(Céphalée du restaurant chinois)***
-> - [ ] **71. Alimentation *(Céphalée du restaurant chinois)***
-> - [ ] **72. Piqûre de tique *(Céphalée du restaurant chinois)***
-> - [ ] **73. Antécédents personnels *(Céphalée du restaurant chinois)***
-> 	- [ ] Néoplasie
-> 	- [ ] Hypertension
-> - [ ] **74. Contraceptifs oraux (chez la femme) *(Céphalée du restaurant chinois)***
-> - [ ] **75. Toxiques *(Céphalée du restaurant chinois)***
-> - [ ] **76. Anamnèse sociale, profession *(Céphalée du restaurant chinois)***
-> - [ ] **77. Question d'entrée ouverte → Symptôme principal *(Méningite)***
-> - [ ] **78. Caractéristiques des céphalées *(Méningite)***
+> - [ ] **65. Première fois ou connu *(Céphalée du restaurant chinois)***
+> - [ ] **66. Maladies récentes *(Céphalée du restaurant chinois)***
+> - [ ] **67. Crises convulsives *(Céphalée du restaurant chinois)***
+> - [ ] **68. Douleurs aux épaules et muscles *(Céphalée du restaurant chinois)***
+> - [ ] **69. Stress, consommation de caféine *(Céphalée du restaurant chinois)***
+> - [ ] **70. Alimentation *(Céphalée du restaurant chinois)***
+> - [ ] **71. Piqûre de tique *(Céphalée du restaurant chinois)***
+> - [ ] **72. Contraceptifs oraux (chez la femme) *(Céphalée du restaurant chinois)***
+> - [ ] **73. Toxiques *(Céphalée du restaurant chinois)***
+> - [ ] **74. Anamnèse sociale, profession *(Céphalée du restaurant chinois)***
+> - [ ] **75. Question d'entrée ouverte → Symptôme principal *(Méningite)***
+> - [ ] **76. Caractéristiques des céphalées *(Méningite)***
 > 	- [ ] Temporalité
 > 	- [ ] Caractère
 > 	- [ ] Intensité EVA
 > 	- [ ] Facteurs aggravants
 > 	- [ ] Facteurs améliorants
-> - [ ] **79. Anamnèse personnelle *(Méningite)***
+> - [ ] **77. Anamnèse personnelle *(Méningite)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **80. Symptômes B *(Méningite)***
-> - [ ] **81. Questions sur infections herpétiques *(Méningite)***
+> - [ ] **78. Symptômes B *(Méningite)***
+> - [ ] **79. Questions sur infections herpétiques *(Méningite)***
 > 	- [ ] Herpès
 > 	- [ ] Varicelle-zona (VZV)
-> - [ ] **82. Anamnèse familiale *(Méningite)***
-> - [ ] **83. Anamnèse sociale *(Méningite)***
-> 	- [ ] Vit avec sa femme
-> 	- [ ] Visite récente chez les petits-enfants il y a 2 semaines
-> - [ ] **84. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
+> - [ ] **80. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
 > 	- [ ] Céphalée nouvelle/différente
 > 	- [ ] Céphalée décrite comme la pire
 > 	- [ ] Céphalée en coup de tonnerre
 > 	- [ ] Céphalée déclenchée par effort/exercice/activité sexuelle
 > 	- [ ] Céphalée déclenchée/aggravée par Valsalva ou position
-> - [ ] **85. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
+> - [ ] **81. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
 > 	- [ ] Migraines chroniques
 > 	- [ ] Caractéristiques des migraines habituelles
 > 	- [ ] Traitement habituel
 > 	- [ ] Efficacité du traitement actuel
-> - [ ] **86. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
+> - [ ] **82. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
 > 	- [ ] Contraception orale
 > 	- [ ] Tabagisme
 > 	- [ ] Antécédents familiaux vasculaires
 > 	- [ ] HTA/diabète/dyslipidémie
-> - [ ] **87. Contexte *(Thrombose veineuse cérébrale)***
+> - [ ] **83. Contexte *(Thrombose veineuse cérébrale)***
 > 	- [ ] Grossesse/post-partum
 > 	- [ ] Immunosuppression/cancer
 > 	- [ ] Traumatisme crânien récent
 > 	- [ ] Voyage/contage
 > 	- [ ] Vaccins
-> - [ ] **88. Anamnèse par système *(Thrombose veineuse cérébrale)***
+> - [ ] **84. Anamnèse par système *(Thrombose veineuse cérébrale)***
 > 	- [ ] État général
 > 	- [ ] Système digestif
 > 	- [ ] Système gynécologique

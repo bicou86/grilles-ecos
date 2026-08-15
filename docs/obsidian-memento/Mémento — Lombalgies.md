@@ -96,7 +96,7 @@ cssclasses:
 > - **RESCOS-48** — Cancer prostatique métastatique `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-48%20-%20Lombalgie%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(2 grilles sur 8)***
+> - [ ] **1. Motif de consultation principal *(4 grilles sur 8)***
 > - [ ] **2. Caractérisation de la douleur dorsale *(2 grilles sur 8)***
 > 	- [ ] Localisation
 > 	- [ ] Intensité (échelle 0-10)
@@ -127,14 +127,26 @@ cssclasses:
 > 	- [ ] Faiblesse musculaire
 > 	- [ ] Engourdissement (particulièrement membres inférieurs)
 > 	- [ ] Dysfonction érectile
-> - [ ] **6. Antécédents médicaux *(3 grilles sur 8)***
+> - [ ] **6. Antécédents médicaux personnels *(6 grilles sur 8)***
+> 	- [ ] Néoplasie *(Fracture vertébrale)*
+> 	- [ ] Autres pathologies *(Fracture vertébrale)*
+> 	- [ ] Pathologies connues *(2 grilles sur 8)*
+> 	- [ ] Immunosuppression *(1 grille sur 8)*
+> 	- [ ] Cancer *(1 grille sur 8)*
+> 	- [ ] Antécédents de lombalgies *(1 grille sur 8)*
 > - [ ] **7. Antécédents chirurgicaux *(5 grilles sur 8)***
 > - [ ] **8. Allergies *(6 grilles sur 8)***
 > - [ ] **9. Médicaments *(3 grilles sur 8)***
 > 	- [ ] Médicaments actuels *(1 grille sur 8)*
 > 	- [ ] Quantité de Dafalgan® *(1 grille sur 8)*
 > - [ ] **10. Hospitalisations *(2 grilles sur 8)***
-> - [ ] **11. Antécédents familiaux *(3 grilles sur 8)***
+> - [ ] **11. Antécédents familiaux *(6 grilles sur 8)***
+> 	- [ ] Ostéoporose familiale *(Fracture vertébrale)*
+> 	- [ ] Fractures familiales *(Fracture vertébrale)*
+> 	- [ ] Néoplasies familiales *(Fracture vertébrale)*
+> 	- [ ] Ostéoporose *(1 grille sur 8)*
+> 	- [ ] Pathologies cardiovasculaires *(1 grille sur 8)*
+> 	- [ ] Autres pathologies pertinentes *(1 grille sur 8)*
 > - [ ] **12. Habitudes et mode de vie *(2 grilles sur 8)***
 > 	- [ ] Occupation
 > 	- [ ] Domicile
@@ -222,105 +234,89 @@ cssclasses:
 > - [ ] **60. Drogues i.v. *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **61. Maladies tumorales *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **62. Profession *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **63. Situation sociale *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **63. Anamnèse sociale *(3 grilles sur 8)***
+> 	- [ ] Profession *(2 grilles sur 8)*
+> 	- [ ] Activité physique *(2 grilles sur 8)*
+> 	- [ ] Autonomie *(Fracture vertébrale)*
+> 	- [ ] Situation familiale *(1 grille sur 8)*
 > - [ ] **64. Présentation avec nom, fonction et tâche *(3 grilles sur 8)***
-> - [ ] **65. Motif de consultation principal *(Fracture vertébrale)***
-> - [ ] **66. Caractéristiques temporelles *(3 grilles sur 8)***
+> - [ ] **65. Caractéristiques temporelles *(3 grilles sur 8)***
 > 	- [ ] Début
 > 	- [ ] Facteur déclenchant *(Fracture vertébrale)*
 > 	- [ ] Durée *(2 grilles sur 8)*
 > 	- [ ] Évolution *(1 grille sur 8)*
-> - [ ] **67. Localisation précise *(2 grilles sur 8)***
+> - [ ] **66. Localisation précise *(2 grilles sur 8)***
 > 	- [ ] Localisation *(Fracture vertébrale)*
 > 	- [ ] Irradiation *(Fracture vertébrale)*
-> - [ ] **68. Type et intensité de la douleur *(Fracture vertébrale)***
+> - [ ] **67. Type et intensité de la douleur *(Fracture vertébrale)***
 > 	- [ ] Type
 > 	- [ ] Intensité
-> - [ ] **69. Facteurs modulants *(3 grilles sur 8)***
+> - [ ] **68. Facteurs modulants *(3 grilles sur 8)***
 > 	- [ ] Amélioration *(2 grilles sur 8)*
 > 	- [ ] Aggravation *(2 grilles sur 8)*
-> - [ ] **70. Recherche des drapeaux rouges (red flags) *(Fracture vertébrale)***
+> - [ ] **69. Recherche des drapeaux rouges (red flags) *(Fracture vertébrale)***
 > 	- [ ] Signes infectieux
 > 	- [ ] Syndrome de la queue de cheval
 > 	- [ ] Déficits neurologiques
 > 	- [ ] Incontinence urinaire ou fécale
 > 	- [ ] Anesthésie en selle
-> - [ ] **71. Symptômes généraux (symptômes B) *(2 grilles sur 8)***
+> - [ ] **70. Symptômes généraux (symptômes B) *(2 grilles sur 8)***
 > 	- [ ] Fièvre
 > 	- [ ] Perte de poids non intentionnelle *(Fracture vertébrale)*
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Asthénie *(Fracture vertébrale)*
 > 	- [ ] Perte de poids *(1 grille sur 8)*
-> - [ ] **72. Autres symptômes associés *(Fracture vertébrale)***
-> - [ ] **73. Antécédents personnels médicaux *(3 grilles sur 8)***
-> 	- [ ] Néoplasie *(Fracture vertébrale)*
-> 	- [ ] Autres pathologies *(Fracture vertébrale)*
-> 	- [ ] Pathologies connues *(2 grilles sur 8)*
-> 	- [ ] Immunosuppression *(1 grille sur 8)*
-> 	- [ ] Cancer *(1 grille sur 8)*
-> 	- [ ] Antécédents de lombalgies *(1 grille sur 8)*
-> - [ ] **74. Traitements actuels *(3 grilles sur 8)***
+> - [ ] **71. Autres symptômes associés *(Fracture vertébrale)***
+> - [ ] **72. Traitements actuels *(3 grilles sur 8)***
 > 	- [ ] Médicaments réguliers *(1 grille sur 8)*
 > 	- [ ] Antalgiques à la demande *(1 grille sur 8)*
-> - [ ] **75. Habitudes de vie et toxiques *(3 grilles sur 8)***
+> - [ ] **73. Habitudes de vie et toxiques *(3 grilles sur 8)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
-> - [ ] **76. Statut hormonal *(2 grilles sur 8)***
-> - [ ] **77. Facteurs de risque d'ostéoporose *(Fracture vertébrale)***
+> - [ ] **74. Statut hormonal *(2 grilles sur 8)***
+> - [ ] **75. Facteurs de risque d'ostéoporose *(Fracture vertébrale)***
 > 	- [ ] Ménopause précoce
 > 	- [ ] Tabagisme important
 > 	- [ ] Antécédent de fracture
 > 	- [ ] Corticothérapie prolongée
 > 	- [ ] Faible poids corporel
-> - [ ] **78. Anamnèse familiale *(3 grilles sur 8)***
-> 	- [ ] Ostéoporose familiale *(Fracture vertébrale)*
-> 	- [ ] Fractures familiales *(Fracture vertébrale)*
-> 	- [ ] Néoplasies familiales *(Fracture vertébrale)*
-> 	- [ ] Ostéoporose *(1 grille sur 8)*
-> 	- [ ] Pathologies cardiovasculaires *(1 grille sur 8)*
-> 	- [ ] Autres pathologies pertinentes *(1 grille sur 8)*
-> - [ ] **79. Anamnèse sociale *(2 grilles sur 8)***
-> 	- [ ] Profession
-> 	- [ ] Activité physique
-> 	- [ ] Autonomie *(Fracture vertébrale)*
-> 	- [ ] Situation familiale *(1 grille sur 8)*
-> - [ ] **80. Questions de clôture *(3 grilles sur 8)***
+> - [ ] **76. Questions de clôture *(3 grilles sur 8)***
 > 	- [ ] Avez-vous quelque chose à ajouter ?
 > 	- [ ] Avez-vous des questions ?
-> - [ ] **81. Question ouverte d'introduction *(2 grilles sur 8)***
-> - [ ] **82. Localisation précise de la douleur *(1 grille sur 8)***
-> - [ ] **83. Pattern de la douleur *(1 grille sur 8)***
+> - [ ] **77. Question ouverte d'introduction *(2 grilles sur 8)***
+> - [ ] **78. Localisation précise de la douleur *(1 grille sur 8)***
+> - [ ] **79. Pattern de la douleur *(1 grille sur 8)***
 > 	- [ ] Type
 > 	- [ ] Épisodes antérieurs
 > 	- [ ] Douleurs nocturnes
-> - [ ] **84. Qualité de la douleur *(2 grilles sur 8)***
-> - [ ] **85. Intensité de la douleur *(2 grilles sur 8)***
-> - [ ] **86. Événement déclenchant *(1 grille sur 8)***
+> - [ ] **80. Qualité de la douleur *(2 grilles sur 8)***
+> - [ ] **81. Intensité de la douleur *(2 grilles sur 8)***
+> - [ ] **82. Événement déclenchant *(1 grille sur 8)***
 > 	- [ ] Circonstances
 > 	- [ ] Port de charge lourde
 > 	- [ ] Traumatisme
-> - [ ] **87. Symptômes neurologiques - Force *(1 grille sur 8)***
+> - [ ] **83. Symptômes neurologiques - Force *(1 grille sur 8)***
 > 	- [ ] Faiblesse musculaire
 > 	- [ ] Localisation
-> - [ ] **88. Symptômes neurologiques - Sensibilité *(1 grille sur 8)***
-> - [ ] **89. Recherche syndrome de la queue de cheval *(1 grille sur 8)***
+> - [ ] **84. Symptômes neurologiques - Sensibilité *(1 grille sur 8)***
+> - [ ] **85. Recherche syndrome de la queue de cheval *(1 grille sur 8)***
 > 	- [ ] Incontinence urinaire
 > 	- [ ] Rétention urinaire
 > 	- [ ] Incontinence fécale
 > 	- [ ] Anesthésie en selle
-> - [ ] **90. Antécédents de fractures *(1 grille sur 8)***
-> - [ ] **91. Antécédents de lombalgies *(1 grille sur 8)***
-> - [ ] **92. Anamnèse sociale et professionnelle *(1 grille sur 8)***
+> - [ ] **86. Antécédents de fractures *(1 grille sur 8)***
+> - [ ] **87. Antécédents de lombalgies *(1 grille sur 8)***
+> - [ ] **88. Anamnèse sociale et professionnelle *(1 grille sur 8)***
 > 	- [ ] Profession
 > 	- [ ] Stress, situation de charge
 > 	- [ ] Capacité de travail actuelle
-> - [ ] **93. Pattern et évolution *(1 grille sur 8)***
+> - [ ] **89. Pattern et évolution *(1 grille sur 8)***
 > 	- [ ] Type
 > 	- [ ] Au repos et en mouvement
 > 	- [ ] Épisodes antérieurs
-> - [ ] **94. Événement déclenchant ou traumatisme *(1 grille sur 8)***
-> - [ ] **95. Symptômes urinaires associés *(Colique néphrétique sur lithiase)***
+> - [ ] **90. Événement déclenchant ou traumatisme *(1 grille sur 8)***
+> - [ ] **91. Symptômes urinaires associés *(Colique néphrétique sur lithiase)***
 > 	- [ ] Hématurie macroscopique *(1 grille sur 8)*
 > 	- [ ] Dysurie *(1 grille sur 8)*
 > 	- [ ] Incontinence *(1 grille sur 8)*
@@ -331,10 +327,10 @@ cssclasses:
 > 	- [ ] Urines troubles ou hématuriques *(1 grille sur 8)*
 > 	- [ ] Sensation de vidange incomplète *(1 grille sur 8)*
 > 	- [ ] Brûlures mictionnelles possibles *(1 grille sur 8)*
-> - [ ] **96. Symptômes digestifs *(1 grille sur 8)***
+> - [ ] **92. Symptômes digestifs *(1 grille sur 8)***
 > 	- [ ] Transit intestinal
 > 	- [ ] Nausées/vomissements
-> - [ ] **97. Symptômes généraux *(Colique néphrétique sur lithiase)***
+> - [ ] **93. Symptômes généraux *(Colique néphrétique sur lithiase)***
 > 	- [ ] Fièvre *(1 grille sur 8)*
 > 	- [ ] Frissons *(1 grille sur 8)*
 > 	- [ ] Perte de poids *(1 grille sur 8)*
@@ -343,16 +339,15 @@ cssclasses:
 > 	- [ ] Nausées *(1 grille sur 8)*
 > 	- [ ] Vomissements *(1 grille sur 8)*
 > 	- [ ] Sueurs froides *(1 grille sur 8)*
-> - [ ] **98. Antécédents de lithiase *(1 grille sur 8)***
+> - [ ] **94. Antécédents de lithiase *(1 grille sur 8)***
 > 	- [ ] Dépistage pour ostéoporose
 > 	- [ ] Fractures antérieures
 > 	- [ ] Calculs rénaux antérieurs
-> - [ ] **99. Hydratation et habitudes alimentaires *(1 grille sur 8)***
+> - [ ] **95. Hydratation et habitudes alimentaires *(1 grille sur 8)***
 > 	- [ ] Apports hydriques quotidiens
 > 	- [ ] Alimentation riche en oxalates
 > 	- [ ] Consommation de sel
-> - [ ] **100. Motif de consultation *(1 grille sur 8)***
-> - [ ] **101. Caractérisation de la douleur *(2 grilles sur 8)***
+> - [ ] **96. Caractérisation de la douleur *(2 grilles sur 8)***
 > 	- [ ] Début *(1 grille sur 8)*
 > 	- [ ] Localisation
 > 	- [ ] Irradiation
@@ -362,37 +357,37 @@ cssclasses:
 > 	- [ ] Qualité *(Cancer prostatique métastatique)*
 > 	- [ ] Chronologie *(Cancer prostatique métastatique)*
 > 	- [ ] Facteurs atténuants/aggravants *(Cancer prostatique métastatique)*
-> - [ ] **102. Facteurs déclenchants et contexte *(1 grille sur 8)***
+> - [ ] **97. Facteurs déclenchants et contexte *(1 grille sur 8)***
 > 	- [ ] Activité sportive récente
 > 	- [ ] Déshydratation relative
 > 	- [ ] Consommation de bière
-> - [ ] **103. Antécédents urologiques *(1 grille sur 8)***
+> - [ ] **98. Antécédents urologiques *(1 grille sur 8)***
 > 	- [ ] Épisodes similaires antérieurs
 > 	- [ ] Antécédents de lithiase urinaire
 > 	- [ ] Infections urinaires récurrentes
 > 	- [ ] Malformations urologiques connues
 > 	- [ ] Antécédents familiaux de lithiase
-> - [ ] **104. Facteurs de risque lithiasique *(1 grille sur 8)***
+> - [ ] **99. Facteurs de risque lithiasique *(1 grille sur 8)***
 > 	- [ ] Hydratation habituelle insuffisante
 > 	- [ ] Alimentation riche en protéines
 > 	- [ ] Consommation de sel importante
 > 	- [ ] Supplémentation vitaminique
 > 	- [ ] Climat chaud, transpiration importante
 > 	- [ ] Sédentarité alternant avec sport intense
-> - [ ] **105. Médicaments et habitudes *(1 grille sur 8)***
+> - [ ] **100. Médicaments et habitudes *(1 grille sur 8)***
 > 	- [ ] Prise d'antalgiques
 > 	- [ ] Suppléments protéinés
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Tabagisme
 > 	- [ ] Allergies médicamenteuses
-> - [ ] **106. Recherche des drapeaux rouges *(Cancer prostatique métastatique)***
+> - [ ] **101. Recherche des drapeaux rouges *(Cancer prostatique métastatique)***
 > 	- [ ] Âge
 > 	- [ ] Traumatisme
 > 	- [ ] Perte de poids
 > 	- [ ] Sudations nocturnes
 > 	- [ ] Fièvre
 > 	- [ ] Antécédents néoplasiques
-> - [ ] **107. Anamnèse uro-génitale *(Cancer prostatique métastatique)***
+> - [ ] **102. Anamnèse uro-génitale *(Cancer prostatique métastatique)***
 > 	- [ ] Troubles de la vidange
 > 	- [ ] Temps de latence
 > 	- [ ] Jet faible
@@ -401,16 +396,16 @@ cssclasses:
 > 	- [ ] Brûlures mictionnelles
 > 	- [ ] Hématurie
 > 	- [ ] Urgences/incontinence
-> - [ ] **108. Impact fonctionnel *(Cancer prostatique métastatique)***
+> - [ ] **103. Impact fonctionnel *(Cancer prostatique métastatique)***
 > 	- [ ] Mobilité réduite
 > 	- [ ] Autonomie affectée
 > 	- [ ] Qualité du sommeil
-> - [ ] **109. Habitudes et antécédents *(Cancer prostatique métastatique)***
+> - [ ] **104. Habitudes et antécédents *(Cancer prostatique métastatique)***
 > 	- [ ] Médicaments
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
-> 	- [ ] Antécédents médicaux
+> 	- [ ] Antécédents médicaux personnels
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(2 grilles sur 8)***

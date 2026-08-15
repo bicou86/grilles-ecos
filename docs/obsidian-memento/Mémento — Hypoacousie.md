@@ -91,7 +91,9 @@ cssclasses:
 > - **German-68** — Presbyacousie `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-68_-_Perte_auditive_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(1 grille sur 4)***
+> - [ ] **1. Motif de consultation *(2 grilles sur 4)***
+> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ? *(1 grille sur 4)*
+> 	- [ ] Avez-vous des problèmes particuliers ? *(1 grille sur 4)*
 > - [ ] **2. Caractérisation de la perte auditive *(3 grilles sur 4)***
 > 	- [ ] Oreilles affectées *(1 grille sur 4)*
 > 	- [ ] Tous les sons/sons spécifiques *(1 grille sur 4)*
@@ -213,23 +215,20 @@ cssclasses:
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Stress professionnel
-> - [ ] **49. Motif de consultation *(1 grille sur 4)***
-> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ?
-> 	- [ ] Avez-vous des problèmes particuliers ?
-> - [ ] **50. Antécédents médicaux et ORL *(1 grille sur 4)***
+> - [ ] **49. Antécédents médicaux et ORL *(1 grille sur 4)***
 > 	- [ ] Otite moyenne dans l'enfance
 > 	- [ ] Méningite
 > 	- [ ] Cardiopathie ischémique
 > 	- [ ] Autres antécédents ORL
-> - [ ] **51. Impact fonctionnel sur la communication *(1 grille sur 4)***
+> - [ ] **50. Impact fonctionnel sur la communication *(1 grille sur 4)***
 > 	- [ ] Capacité à téléphoner
 > 	- [ ] Volume de la télévision/radio
 > 	- [ ] Compréhension en groupe
-> - [ ] **52. Anamnèse sociale et impact psychosocial *(1 grille sur 4)***
+> - [ ] **51. Anamnèse sociale et impact psychosocial *(1 grille sur 4)***
 > 	- [ ] Situation de vie
 > 	- [ ] Animaux de compagnie
 > 	- [ ] Condition physique
-> - [ ] **53. Activités sociales et loisirs *(1 grille sur 4)***
+> - [ ] **52. Activités sociales et loisirs *(1 grille sur 4)***
 > 	- [ ] Participation sociale actuelle
 > 	- [ ] Activités abandonnées
 > 	- [ ] Isolement social

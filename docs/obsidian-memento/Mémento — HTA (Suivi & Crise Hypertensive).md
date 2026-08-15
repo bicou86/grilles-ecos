@@ -91,22 +91,24 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Présentation avec nom, fonction et objectif**
-> - [ ] **2. Motif de consultation principal *(1 grille sur 2)***
+> - [ ] **2. Motif de consultation principal**
 > - [ ] **3. Circonstances de découverte *(1 grille sur 2)***
 > 	- [ ] Contexte de la mesure
 > 	- [ ] Appareil utilisé
 > 	- [ ] Valeurs relevées
 > 	- [ ] Fréquence des mesures
 > 	- [ ] Depuis quand
-> - [ ] **4. Symptômes associés *(1 grille sur 2)***
+> - [ ] **4. Symptômes associés**
 > 	- [ ] Céphalées
-> 	- [ ] Acouphènes
+> 	- [ ] Acouphènes *(1 grille sur 2)*
 > 	- [ ] Vertiges
-> 	- [ ] Épistaxis
+> 	- [ ] Épistaxis *(1 grille sur 2)*
 > 	- [ ] Douleurs thoraciques
-> 	- [ ] Dyspnée
+> 	- [ ] Dyspnée *(1 grille sur 2)*
 > 	- [ ] Palpitations
 > 	- [ ] Troubles visuels
+> 	- [ ] Dyspnée d'effort *(1 grille sur 2)*
+> 	- [ ] Œdèmes *(1 grille sur 2)*
 > - [ ] **5. Antécédents cardiovasculaires *(1 grille sur 2)***
 > 	- [ ] Maladies cardiaques
 > 	- [ ] Angine de poitrine
@@ -123,10 +125,9 @@ cssclasses:
 > 	- [ ] Traitement hormonal substitutif
 > 	- [ ] Contraception antérieure
 > - [ ] **8. Médicaments actuels**
-> 	- [ ] Antihypertenseurs *(1 grille sur 2)*
+> 	- [ ] Antihypertenseurs prescrits
 > 	- [ ] Autres médicaments réguliers *(1 grille sur 2)*
 > 	- [ ] Médicaments pouvant augmenter la TA *(1 grille sur 2)*
-> 	- [ ] Antihypertenseurs prescrits *(1 grille sur 2)*
 > 	- [ ] Posologie *(1 grille sur 2)*
 > 	- [ ] Observance thérapeutique *(1 grille sur 2)*
 > 	- [ ] Effets secondaires *(1 grille sur 2)*
@@ -136,54 +137,41 @@ cssclasses:
 > 	- [ ] Tabagisme
 > 	- [ ] Activité physique
 > 	- [ ] Gestion du stress *(1 grille sur 2)*
-> - [ ] **10. Antécédents familiaux *(1 grille sur 2)***
+> - [ ] **10. Antécédents familiaux cardiovasculaires**
 > 	- [ ] Hypertension familiale
-> 	- [ ] Maladies cardiovasculaires
+> 	- [ ] Maladies cardiovasculaires *(1 grille sur 2)*
 > 	- [ ] Diabète
-> 	- [ ] Maladies rénales
+> 	- [ ] Maladies rénales *(1 grille sur 2)*
 > 	- [ ] AVC
+> 	- [ ] Infarctus du myocarde *(1 grille sur 2)*
+> 	- [ ] Néphropathie *(1 grille sur 2)*
 > - [ ] **11. Anamnèse sociale**
 > 	- [ ] Profession *(1 grille sur 2)*
 > 	- [ ] Situation familiale *(1 grille sur 2)*
 > 	- [ ] Niveau de stress *(1 grille sur 2)*
-> - [ ] **12. Motif de consultation *(1 grille sur 2)***
-> - [ ] **13. Évolution de l'hypertension *(1 grille sur 2)***
+> - [ ] **12. Évolution de l'hypertension *(1 grille sur 2)***
 > 	- [ ] Hypertension connue depuis quand
 > 	- [ ] Valeurs tensionnelles habituelles
 > 	- [ ] Contrôle régulier
 > 	- [ ] Compliance au traitement
-> - [ ] **14. Symptômes actuels *(1 grille sur 2)***
-> 	- [ ] Céphalées
-> 	- [ ] Vertiges
-> 	- [ ] Dyspnée d'effort
-> 	- [ ] Douleurs thoraciques
-> 	- [ ] Palpitations
-> 	- [ ] Œdèmes
-> 	- [ ] Troubles visuels
-> - [ ] **15. Facteurs d'aggravation *(1 grille sur 2)***
+> - [ ] **13. Facteurs d'aggravation *(1 grille sur 2)***
 > 	- [ ] Stress récent
 > 	- [ ] Modification du régime alimentaire
 > 	- [ ] Prise de poids
 > 	- [ ] Consommation de sel
 > 	- [ ] Autres médicaments
-> - [ ] **16. Complications cardiovasculaires *(1 grille sur 2)***
+> - [ ] **14. Complications cardiovasculaires *(1 grille sur 2)***
 > 	- [ ] Antécédents d'AVC/AIT
 > 	- [ ] Cardiopathie ischémique
 > 	- [ ] Insuffisance cardiaque
 > 	- [ ] Artériopathie périphérique
 > 	- [ ] Néphropathie
-> - [ ] **17. Comorbidités *(1 grille sur 2)***
+> - [ ] **15. Comorbidités *(1 grille sur 2)***
 > 	- [ ] Diabète
 > 	- [ ] Dyslipidémie
 > 	- [ ] Obésité
 > 	- [ ] Syndrome d'apnée du sommeil
 > 	- [ ] Insuffisance rénale
-> - [ ] **18. Antécédents familiaux cardiovasculaires *(1 grille sur 2)***
-> 	- [ ] Hypertension familiale
-> 	- [ ] Infarctus du myocarde
-> 	- [ ] AVC
-> 	- [ ] Diabète
-> 	- [ ] Néphropathie
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesure correcte de la tension artérielle**
@@ -191,19 +179,16 @@ cssclasses:
 > 	- [ ] Bras à hauteur du cœur *(1 grille sur 2)*
 > 	- [ ] Brassard adapté
 > 	- [ ] Mesure aux deux bras
-> 	- [ ] Plusieurs mesures *(1 grille sur 2)*
+> 	- [ ] Au moins 2 mesures
 > 	- [ ] Repos 5 minutes avant mesure *(1 grille sur 2)*
 > 	- [ ] Position assise correcte *(1 grille sur 2)*
-> 	- [ ] Au moins 2 mesures *(1 grille sur 2)*
 > - [ ] **2. Examen cardiovasculaire**
-> 	- [ ] Auscultation cardiaque (rythme, souffles) *(1 grille sur 2)*
+> 	- [ ] Auscultation cardiaque (rythme, souffles)
 > 	- [ ] Recherche de souffles vasculaires (carotides, abdomen) *(1 grille sur 2)*
-> 	- [ ] Palpation des pouls périphériques *(1 grille sur 2)*
+> 	- [ ] Palpation des pouls périphériques
 > 	- [ ] Recherche d'œdèmes des membres inférieurs *(1 grille sur 2)*
-> 	- [ ] Auscultation cardiaque *(1 grille sur 2)*
 > 	- [ ] Recherche de souffle *(1 grille sur 2)*
 > 	- [ ] Recherche de B3/B4 *(1 grille sur 2)*
-> 	- [ ] Pouls périphériques *(1 grille sur 2)*
 > - [ ] **3. Recherche de signes d'HTA secondaire *(1 grille sur 2)***
 > 	- [ ] Inspection (faciès cushingoïde)
 > 	- [ ] Palpation abdominale (masses, souffle rénal)
@@ -245,7 +230,7 @@ cssclasses:
 > - [ ] **2. Diagnostics différentiels d'HTA secondaire *(1 grille sur 2)***
 > - [ ] **3. Facteurs de risque cardiovasculaire identifiés *(1 grille sur 2)***
 > 	- [ ] Âge (femme > 55 ans)
-> 	- [ ] Antécédents familiaux
+> 	- [ ] Antécédents familiaux cardiovasculaires
 > 	- [ ] Surpoids
 > 	- [ ] Sédentarité
 > 	- [ ] Consommation de sel élevée

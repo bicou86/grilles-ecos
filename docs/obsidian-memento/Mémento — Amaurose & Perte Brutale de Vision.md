@@ -136,7 +136,10 @@ cssclasses:
 > 	- [ ] Picotements
 > 	- [ ] Convulsion
 > 	- [ ] Problèmes d'élocution
-> - [ ] **5. Antécédents médicaux *(AVC · Décollement de rétine)***
+> - [ ] **5. Antécédents médicaux personnels *(AVC · Cataracte · Décollement de rétine)***
+> 	- [ ] Diabète *(Cataracte)*
+> 	- [ ] Pathologies systémiques *(Cataracte)*
+> 	- [ ] Chirurgies antérieures *(Cataracte)*
 > - [ ] **6. Allergies *(4 diagnostics)***
 > 	- [ ] Allergies médicamenteuses *(Cataracte)*
 > 	- [ ] Autres allergies *(Cataracte)*
@@ -147,14 +150,16 @@ cssclasses:
 > - [ ] **9. Contacts malades et antécédents familiaux *(AVC)***
 > 	- [ ] Contacts malades
 > 	- [ ] Antécédents familiaux
-> - [ ] **10. Habitudes et mode de vie *(AVC)***
-> 	- [ ] Travail
-> 	- [ ] Domicile
-> 	- [ ] Alcool
-> 	- [ ] Drogues récréatives
-> 	- [ ] Tabac
-> 	- [ ] Exercice
-> 	- [ ] Alimentation
+> - [ ] **10. Habitudes et mode de vie *(AVC · Horton (artérite à cellules géantes))***
+> 	- [ ] Travail *(AVC)*
+> 	- [ ] Domicile *(AVC)*
+> 	- [ ] Alcool *(AVC)*
+> 	- [ ] Drogues récréatives *(AVC)*
+> 	- [ ] Tabagisme
+> 	- [ ] Exercice *(AVC)*
+> 	- [ ] Alimentation *(AVC)*
+> 	- [ ] Drogues *(Horton (artérite à cellules géantes))*
+> 	- [ ] Médicaments *(Horton (artérite à cellules géantes))*
 > - [ ] **11. Question d’entrée *(OACR / Occlusion rétinienne)***
 > - [ ] **12. Dimension temporelle *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **13. Début / Durée *(Décollement de rétine · OACR / Occlusion rétinienne)***
@@ -166,7 +171,7 @@ cssclasses:
 > - [ ] **19. Intensité / Sévérité *(OACR / Occlusion rétinienne)***
 > - [ ] **20. Qualité *(OACR / Occlusion rétinienne)***
 > - [ ] **21. Mesures déjà prises *(OACR / Occlusion rétinienne)***
-> - [ ] **22. Symptômes associés *(OACR / Occlusion rétinienne)***
+> - [ ] **22. Symptômes associés *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **23. Douleur *(OACR / Occlusion rétinienne)***
 > - [ ] **24. Lunettes / Lentilles de contact *(OACR / Occlusion rétinienne)***
 > - [ ] **25. Segments antérieurs *(OACR / Occlusion rétinienne)***
@@ -190,10 +195,10 @@ cssclasses:
 > - [ ] **43. Vertiges *(OACR / Occlusion rétinienne)***
 > - [ ] **44. Antécédents *(OACR / Occlusion rétinienne)***
 > - [ ] **45. Yeux / Cœur *(OACR / Occlusion rétinienne)***
-> - [ ] **46. Opérations antérieures *(OACR / Occlusion rétinienne)***
+> - [ ] **46. Antécédents chirurgicaux *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **47. Noxes *(OACR / Occlusion rétinienne)***
 > - [ ] **48. Alcool *(Décollement de rétine · OACR / Occlusion rétinienne)***
-> - [ ] **49. Tabac *(OACR / Occlusion rétinienne)***
+> - [ ] **49. Tabagisme *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **50. Drogues *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **51. Antécédents familiaux *(Cataracte · Décollement de rétine · OACR / Occlusion rétinienne)***
 > 	- [ ] Pathologies oculaires familiales *(Cataracte)*
@@ -205,101 +210,90 @@ cssclasses:
 > - [ ] **55. Apparition *(Décollement de rétine)***
 > - [ ] **56. Facteur déclenchant / Traumatisme *(Décollement de rétine)***
 > - [ ] **57. Retentissement des symptômes *(Décollement de rétine)***
-> - [ ] **58. Symptômes d'accompagnement *(Décollement de rétine)***
-> - [ ] **59. Symptômes de décollement de rétine *(Décollement de rétine)***
-> - [ ] **60. Corps flottants / Pluie de suie *(Décollement de rétine)***
-> - [ ] **61. Déficit du champ visuel *(Décollement de rétine)***
-> - [ ] **62. Vision centrale *(Décollement de rétine)***
-> - [ ] **63. Douleurs / Signes d'inflammation *(Décollement de rétine)***
-> - [ ] **64. Symptômes neurologiques *(Décollement de rétine)***
-> - [ ] **65. Trouble de la parole *(Décollement de rétine)***
-> - [ ] **66. Déficits moteurs *(Décollement de rétine)***
-> - [ ] **67. Maux de tête / Vertiges *(Décollement de rétine)***
-> - [ ] **68. Ophtalmologiques *(Décollement de rétine)***
-> - [ ] **69. Non ophtalmologiques *(Décollement de rétine)***
-> - [ ] **70. Antécédents chirurgicaux *(Décollement de rétine)***
-> - [ ] **71. Correction visuelle *(Décollement de rétine)***
-> - [ ] **72. Toxiques *(Décollement de rétine)***
-> - [ ] **73. Tabagisme *(Décollement de rétine)***
-> - [ ] **74. Facteurs de stress psychosociaux *(Décollement de rétine)***
-> - [ ] **75. Présentation avec nom, fonction et tâche *(Cataracte)***
-> - [ ] **76. Question d'entrée ouverte *(Cataracte)***
+> - [ ] **58. Symptômes de décollement de rétine *(Décollement de rétine)***
+> - [ ] **59. Corps flottants / Pluie de suie *(Décollement de rétine)***
+> - [ ] **60. Déficit du champ visuel *(Décollement de rétine)***
+> - [ ] **61. Vision centrale *(Décollement de rétine)***
+> - [ ] **62. Douleurs / Signes d'inflammation *(Décollement de rétine)***
+> - [ ] **63. Symptômes neurologiques *(Décollement de rétine)***
+> - [ ] **64. Trouble de la parole *(Décollement de rétine)***
+> - [ ] **65. Déficits moteurs *(Décollement de rétine)***
+> - [ ] **66. Maux de tête / Vertiges *(Décollement de rétine)***
+> - [ ] **67. Ophtalmologiques *(Décollement de rétine)***
+> - [ ] **68. Non ophtalmologiques *(Décollement de rétine)***
+> - [ ] **69. Correction visuelle *(Décollement de rétine)***
+> - [ ] **70. Toxiques *(Décollement de rétine)***
+> - [ ] **71. Facteurs de stress psychosociaux *(Décollement de rétine)***
+> - [ ] **72. Présentation avec nom, fonction et tâche *(Cataracte)***
+> - [ ] **73. Question d'entrée ouverte *(Cataracte)***
 > 	- [ ] Qu'est-ce qui vous amène aujourd'hui ?
-> - [ ] **77. Caractérisation de la baisse de vision *(Cataracte)***
+> - [ ] **74. Caractérisation de la baisse de vision *(Cataracte)***
 > 	- [ ] Apparition
 > 	- [ ] Évolution
 > 	- [ ] Unilatérale ou bilatérale
 > 	- [ ] Prédominance vision de loin ou de près
-> - [ ] **78. Symptômes visuels associés *(Cataracte)***
+> - [ ] **75. Symptômes visuels associés *(Cataracte)***
 > 	- [ ] Photosensibilité
 > 	- [ ] Amélioration paradoxale vision de près
 > 	- [ ] Vision des couleurs
 > 	- [ ] Halos lumineux
 > 	- [ ] Vision double
 > 	- [ ] Vision trouble/voilée
-> - [ ] **79. Symptômes oculaires associés *(Cataracte)***
+> - [ ] **76. Symptômes oculaires associés *(Cataracte)***
 > 	- [ ] Douleurs oculaires
 > 	- [ ] Rougeur oculaire
 > 	- [ ] Larmoiement
 > 	- [ ] Sécrétions
 > 	- [ ] Sensation de corps étranger
-> - [ ] **80. Symptômes généraux et drapeaux rouges *(Cataracte)***
+> - [ ] **77. Symptômes généraux et drapeaux rouges *(Cataracte)***
 > 	- [ ] Céphalées
 > 	- [ ] Claudication de la mâchoire
 > 	- [ ] Douleurs temporales
 > 	- [ ] Symptômes B (fièvre, sueurs nocturnes, perte de poids)
-> - [ ] **81. Facteurs de risque cardiovasculaire *(Cataracte)***
+> - [ ] **78. Facteurs de risque cardiovasculaire *(Cataracte)***
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Diabète
 > 	- [ ] Dyslipidémie
 > 	- [ ] Tabagisme
 > 	- [ ] Consommation d'alcool
-> - [ ] **82. Anamnèse médicamenteuse *(Cataracte)***
+> - [ ] **79. Anamnèse médicamenteuse *(Cataracte)***
 > 	- [ ] Corticothérapie systémique
 > 	- [ ] Collyre myotique
 > 	- [ ] Autres médicaments
-> - [ ] **83. Antécédents ophtalmologiques *(Cataracte)***
+> - [ ] **80. Antécédents ophtalmologiques *(Cataracte)***
 > 	- [ ] Chirurgie oculaire antérieure
 > 	- [ ] Traumatisme oculaire
 > 	- [ ] Glaucome
 > 	- [ ] Myopie/hypermétropie
-> - [ ] **84. Antécédents médicaux personnels *(Cataracte)***
-> 	- [ ] Diabète
-> 	- [ ] Pathologies systémiques
-> 	- [ ] Chirurgies antérieures
-> - [ ] **85. Anamnèse sociale et impact fonctionnel *(Cataracte)***
+> - [ ] **81. Anamnèse sociale et impact fonctionnel *(Cataracte)***
 > 	- [ ] Situation de vie
 > 	- [ ] Autonomie
 > 	- [ ] Activités quotidiennes
 > 	- [ ] Conduite automobile
-> - [ ] **86. Caractérisation cécité *(Horton (artérite à cellules géantes))***
+> - [ ] **82. Caractérisation cécité *(Horton (artérite à cellules géantes))***
 > 	- [ ] Localisation
 > 	- [ ] Chronologie
 > 	- [ ] Développement (subit / progressif)
 > 	- [ ] Circonstance de survenue
 > 	- [ ] Perte de connaissance associée
-> - [ ] **87. Caractérisation céphalées *(Horton (artérite à cellules géantes))***
+> - [ ] **83. Caractérisation céphalées *(Horton (artérite à cellules géantes))***
 > 	- [ ] Localisation
 > 	- [ ] Irradiation
 > 	- [ ] Qualité
 > 	- [ ] Quantité
 > 	- [ ] Chronologie
 > 	- [ ] Développement
-> - [ ] **88. Anamnèse par système - générale *(Horton (artérite à cellules géantes))***
+> - [ ] **84. Anamnèse par système - générale *(Horton (artérite à cellules géantes))***
 > 	- [ ] Fièvre
 > 	- [ ] Sudation nocturne
 > 	- [ ] Perte de poids
-> - [ ] **89. Anamnèse par système - neurologique *(Horton (artérite à cellules géantes))***
+> - [ ] **85. Anamnèse par système - neurologique *(Horton (artérite à cellules géantes))***
 > 	- [ ] Diplopie
 > 	- [ ] Perte de force
 > 	- [ ] Perte de sensibilité
 > 	- [ ] Paresthésies
 > 	- [ ] Vertiges
-> - [ ] **90. Habitudes *(Horton (artérite à cellules géantes))***
-> 	- [ ] Tabagisme
-> 	- [ ] Drogues
-> 	- [ ] Médicaments
-> - [ ] **91. Antécédents et comorbidités *(Horton (artérite à cellules géantes))***
+> - [ ] **86. Antécédents et comorbidités *(Horton (artérite à cellules géantes))***
 > 	- [ ] Maladies actuelles
 > 	- [ ] Antécédents médico-chirurgicaux
 > 	- [ ] Allergies

@@ -93,7 +93,7 @@ cssclasses:
 > - **RESCOS-15** — Cancer colorectal `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-15_-_Diarrhe_es_et_constipation_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(1 grille sur 5)***
+> - [ ] **1. Motif de consultation *(2 grilles sur 5)***
 > - [ ] **2. Caractérisation des troubles du transit *(1 grille sur 5)***
 > 	- [ ] Début
 > 	- [ ] Constant/intermittent
@@ -138,7 +138,10 @@ cssclasses:
 > 	- [ ] Variations pondérales
 > 	- [ ] Infection récente
 > 	- [ ] Vision floue
-> - [ ] **6. Antécédents médicaux *(1 grille sur 5)***
+> - [ ] **6. Antécédents médicaux *(2 grilles sur 5)***
+> 	- [ ] Maladies rénales *(Déshydratation)*
+> 	- [ ] Maladies digestives chroniques *(Déshydratation)*
+> 	- [ ] Hospitalisations récentes *(Déshydratation)*
 > - [ ] **7. Antécédents chirurgicaux *(1 grille sur 5)***
 > - [ ] **8. Allergies *(1 grille sur 5)***
 > - [ ] **9. Médicaments *(1 grille sur 5)***
@@ -146,14 +149,15 @@ cssclasses:
 > 	- [ ] Hospitalisations
 > 	- [ ] Contacts malades
 > - [ ] **11. Antécédents familiaux *(1 grille sur 5)***
-> - [ ] **12. Habitudes et mode de vie *(1 grille sur 5)***
-> 	- [ ] Occupation
-> 	- [ ] Domicile
+> - [ ] **12. Habitudes et mode de vie *(2 grilles sur 5)***
+> 	- [ ] Occupation *(1 grille sur 5)*
+> 	- [ ] Domicile *(1 grille sur 5)*
 > 	- [ ] Alcool
-> 	- [ ] Drogues illicites
+> 	- [ ] Drogues illicites *(1 grille sur 5)*
 > 	- [ ] Tabac
-> 	- [ ] Exercice
-> 	- [ ] Alimentation
+> 	- [ ] Exercice *(1 grille sur 5)*
+> 	- [ ] Alimentation *(1 grille sur 5)*
+> 	- [ ] Drogues *(Diarrhée chronique par malabsorption)*
 > - [ ] **13. Présentation avec nom, fonction et objectif de la consultation *(Diarrhée chronique par malabsorption · Déshydratation)***
 > - [ ] **14. Question ouverte pour identifier le symptôme principal *(Diarrhée chronique par malabsorption)***
 > - [ ] **15. Question de clarification : "Que comprenez-vous par diarrhée ?" *(Diarrhée chronique par malabsorption)***
@@ -199,114 +203,105 @@ cssclasses:
 > 	- [ ] Laxatifs
 > 	- [ ] Autres médicaments pertinents
 > 	- [ ] Allergies
-> - [ ] **25. Habitudes de vie *(Diarrhée chronique par malabsorption)***
-> 	- [ ] Alcool
-> 	- [ ] Tabac
-> 	- [ ] Drogues
-> - [ ] **26. Antécédents familiaux digestifs *(Diarrhée chronique par malabsorption)***
+> - [ ] **25. Antécédents familiaux digestifs *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Cancer colorectal
 > 	- [ ] Maladie cœliaque
 > 	- [ ] Maladies inflammatoires intestinales (MICI)
-> - [ ] **27. Contexte épidémiologique *(Diarrhée chronique par malabsorption)***
+> - [ ] **26. Contexte épidémiologique *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Restauration collective
 > 	- [ ] Consommation de viande crue
 > 	- [ ] Eau non potable
 > 	- [ ] Entourage affecté
 > 	- [ ] Voyages récents
-> - [ ] **28. Contexte social et professionnel *(Diarrhée chronique par malabsorption)***
-> - [ ] **29. Question ouverte pour identifier le motif de consultation *(Déshydratation)***
-> - [ ] **30. Signes cliniques de déshydratation *(Déshydratation)***
+> - [ ] **27. Contexte social et professionnel *(Diarrhée chronique par malabsorption)***
+> - [ ] **28. Question ouverte pour identifier le motif de consultation *(Déshydratation)***
+> - [ ] **29. Signes cliniques de déshydratation *(Déshydratation)***
 > 	- [ ] Pli cutané persistant
 > 	- [ ] Muqueuses sèches
 > 	- [ ] Oligurie
-> - [ ] **31. Symptômes digestifs *(Déshydratation)***
+> - [ ] **30. Symptômes digestifs *(Déshydratation)***
 > 	- [ ] Vomissements (fréquence, aspect)
 > 	- [ ] Diarrhée (fréquence, consistance)
-> - [ ] **32. Bilan des entrées et sorties *(Déshydratation)***
+> - [ ] **31. Bilan des entrées et sorties *(Déshydratation)***
 > 	- [ ] Quantité de boissons ingérées
 > 	- [ ] Fréquence et volume des urines
 > 	- [ ] Présence de larmes lors des pleurs
-> - [ ] **33. État neurologique *(Déshydratation)***
+> - [ ] **32. État neurologique *(Déshydratation)***
 > 	- [ ] Confusion
 > 	- [ ] Somnolence
 > 	- [ ] Sopor
-> - [ ] **34. Recherche de causes infectieuses *(Déshydratation)***
+> - [ ] **33. Recherche de causes infectieuses *(Déshydratation)***
 > 	- [ ] Signes d'infection urinaire
 > 	- [ ] Fièvre associée
 > 	- [ ] Environnement épidémique
-> - [ ] **35. Recherche de causes métaboliques - Diabète sucré *(Déshydratation)***
+> - [ ] **34. Recherche de causes métaboliques - Diabète sucré *(Déshydratation)***
 > 	- [ ] Polyurie-polydipsie
 > 	- [ ] Perte de poids récente
 > 	- [ ] Antécédents familiaux de diabète
-> - [ ] **36. Recherche de causes endocriniennes - Insuffisance surrénalienne *(Déshydratation)***
+> - [ ] **35. Recherche de causes endocriniennes - Insuffisance surrénalienne *(Déshydratation)***
 > 	- [ ] Asthénie chronique
 > 	- [ ] Hypotension
 > 	- [ ] Hyperpigmentation cutanée
-> - [ ] **37. Antécédents personnels *(Déshydratation)***
-> 	- [ ] Maladies rénales
-> 	- [ ] Maladies digestives chroniques
-> 	- [ ] Hospitalisations récentes
-> - [ ] **38. Habitudes alimentaires et hydratation habituelle *(Déshydratation)***
-> - [ ] **39. Toxiques et médicaments *(Déshydratation)***
+> - [ ] **36. Habitudes alimentaires et hydratation habituelle *(Déshydratation)***
+> - [ ] **37. Toxiques et médicaments *(Déshydratation)***
 > 	- [ ] Diurétiques
 > 	- [ ] Laxatifs
 > 	- [ ] Autres médicaments
-> - [ ] **40. Anamnèse de l'entourage *(Déshydratation)***
+> - [ ] **38. Anamnèse de l'entourage *(Déshydratation)***
 > 	- [ ] Cas similaires dans l'entourage
 > 	- [ ] Voyage récent
 > 	- [ ] Consommation d'aliments suspects
-> - [ ] **41. Antécédents familiaux pertinents *(Déshydratation)***
-> - [ ] **42. Anamnèse sociale *(Déshydratation)***
+> - [ ] **39. Antécédents familiaux pertinents *(Déshydratation)***
+> - [ ] **40. Anamnèse sociale *(Déshydratation)***
 > 	- [ ] Conditions de vie
 > 	- [ ] Autonomie (personne âgée)
 > 	- [ ] Garde d'enfant/crèche
-> - [ ] **43. Caractérisation de la plainte principale *(1 grille sur 5)***
+> - [ ] **41. Caractérisation de la plainte principale *(1 grille sur 5)***
 > 	- [ ] Localisation de la douleur
 > 	- [ ] Type de douleur
 > 	- [ ] Intensité
 > 	- [ ] Durée et fréquence
 > 	- [ ] Facteurs aggravants
-> - [ ] **44. Caractérisation des rectorragies *(1 grille sur 5)***
+> - [ ] **42. Caractérisation des rectorragies *(1 grille sur 5)***
 > 	- [ ] Présence de sang frais
 > 	- [ ] Quantité et fréquence
 > 	- [ ] Glaires
 > 	- [ ] Diarrhées nocturnes
 > 	- [ ] Ténesmes et urgences fécales
-> - [ ] **45. Symptômes associés *(1 grille sur 5)***
+> - [ ] **43. Symptômes associés *(1 grille sur 5)***
 > 	- [ ] Perte de poids
 > 	- [ ] Inappétence
 > 	- [ ] Nausées et vomissements
 > 	- [ ] Fatigue
 > 	- [ ] Palpitations
-> - [ ] **46. Retentissement fonctionnel *(1 grille sur 5)***
+> - [ ] **44. Retentissement fonctionnel *(1 grille sur 5)***
 > 	- [ ] Impact socioprofessionnel
 > 	- [ ] Isolement social
 > 	- [ ] Adaptation comportementale
-> - [ ] **47. Antécédents et facteurs de risque *(1 grille sur 5)***
+> - [ ] **45. Antécédents et facteurs de risque *(1 grille sur 5)***
 > 	- [ ] Voyage récent
 > 	- [ ] Relations sexuelles non protégées
 > 	- [ ] Consommation d'aliments à risque
 > 	- [ ] Tabagisme
 > 	- [ ] Médicaments gastrotoxiques
-> - [ ] **48. Anamnèse systémique *(1 grille sur 5)***
+> - [ ] **46. Anamnèse systémique *(1 grille sur 5)***
 > 	- [ ] Pas de symptômes urinaires
 > 	- [ ] Pas de douleurs articulaires
 > 	- [ ] Pas d'atteinte cutanée
 > 	- [ ] Pas d'atteinte oculaire
 > 	- [ ] Pas de notion de contage
-> - [ ] **49. Anamnèse médicale et chirurgicale *(1 grille sur 5)***
+> - [ ] **47. Anamnèse médicale et chirurgicale *(1 grille sur 5)***
 > 	- [ ] Reflux gastro-œsophagien
 > 	- [ ] Lombalgies chroniques
 > 	- [ ] Appendicectomie
 > 	- [ ] Cure de tunnel carpien
-> - [ ] **50. Motif de consultation *(Cancer colorectal)***
-> - [ ] **51. Caractérisation de la modification du transit *(Cancer colorectal)***
+> - [ ] **48. Caractérisation de la modification du transit *(Cancer colorectal)***
 > 	- [ ] Évolution générale
 > 	- [ ] Nombre de selles par 24h
 > 	- [ ] Modification récente du transit
 > 	- [ ] Selles noires déféquées
 > 	- [ ] Selles nauséabondes
-> - [ ] **52. Caractéristiques des selles - Aspect anormal *(Cancer colorectal)***
+> - [ ] **49. Caractéristiques des selles - Aspect anormal *(Cancer colorectal)***
 > 	- [ ] Selles de couleur habituelle mélée à du sang rouge
 > 	- [ ] Selles rouges avec caillots
 > 	- [ ] Selles noires luisantes
@@ -314,7 +309,7 @@ cssclasses:
 > 	- [ ] Selles jaunes-grisâtres, pâteuses
 > 	- [ ] Selles en pétoles, dures
 > 	- [ ] Selles rubanées de calibre diminué
-> - [ ] **53. Symptômes digestifs associés *(Cancer colorectal)***
+> - [ ] **50. Symptômes digestifs associés *(Cancer colorectal)***
 > 	- [ ] Distension abdominale douloureuse
 > 	- [ ] Difficultés à s'alimenter
 > 	- [ ] Ténesme
@@ -322,28 +317,28 @@ cssclasses:
 > 	- [ ] Douleurs abdominales
 > 	- [ ] Ballonnements
 > 	- [ ] Flatulences
-> - [ ] **54. Éléments anormaux dans les selles *(Cancer colorectal)***
+> - [ ] **51. Éléments anormaux dans les selles *(Cancer colorectal)***
 > 	- [ ] Glaires
 > 	- [ ] Pus
 > 	- [ ] Sang noir
 > 	- [ ] Sang rouge
 > 	- [ ] Graisses
 > 	- [ ] Aliments non digérés
-> - [ ] **55. Retentissement général *(Cancer colorectal)***
+> - [ ] **52. Retentissement général *(Cancer colorectal)***
 > 	- [ ] Asthénie
 > 	- [ ] Perte de poids
 > 	- [ ] Anorexie
 > 	- [ ] Fièvre
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Altération de l'état général
-> - [ ] **56. Définitions des troubles du transit *(Cancer colorectal)***
+> - [ ] **53. Définitions des troubles du transit *(Cancer colorectal)***
 > 	- [ ] Diarrhée aiguë
 > 	- [ ] Diarrhée chronique
 > 	- [ ] Diarrhée
 > 	- [ ] Constipation
 > 	- [ ] Syndrome dysentérique
 > 	- [ ] Syndrome cholérique
-> - [ ] **57. Facteurs favorisants et antécédents *(Cancer colorectal)***
+> - [ ] **54. Facteurs favorisants et antécédents *(Cancer colorectal)***
 > 	- [ ] Alimentation récente
 > 	- [ ] Voyage récent
 > 	- [ ] Prise médicamenteuse

@@ -125,7 +125,9 @@ cssclasses:
 > 	- [ ] Saignements de nez
 > 	- [ ] Saignements des gencives après brossage
 > 	- [ ] Saignements dans muscles, articulations ou tissus profonds
-> - [ ] **5. Antécédents médicaux *(Chute multifactorielle · Fracture du membre supérieur (humérus, tête radiale) · Violence domestique)***
+> - [ ] **5. Antécédents médicaux *(4 diagnostics)***
+> 	- [ ] AVC antérieurs *(Accident vasculaire cérébral)*
+> 	- [ ] Autres pathologies *(Accident vasculaire cérébral)*
 > 	- [ ] Diabète *(Chute multifactorielle)*
 > 	- [ ] Gonarthrose bilatérale *(Chute multifactorielle)*
 > 	- [ ] Hypertension artérielle *(Chute multifactorielle)*
@@ -135,7 +137,11 @@ cssclasses:
 > - [ ] **8. Hospitalisations et antécédents chirurgicaux *(Violence domestique)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **9. Antécédents familiaux *(Violence domestique)***
+> - [ ] **9. Antécédents familiaux *(Accident vasculaire cérébral · Chute multifactorielle · Violence domestique)***
+> 	- [ ] AVC *(Accident vasculaire cérébral)*
+> 	- [ ] Maladies cardiaques *(Accident vasculaire cérébral)*
+> 	- [ ] Hypertension *(Accident vasculaire cérébral)*
+> 	- [ ] Diabète *(Accident vasculaire cérébral)*
 > - [ ] **10. Habitudes et mode de vie *(Violence domestique)***
 > 	- [ ] Travail
 > 	- [ ] Domicile
@@ -206,61 +212,53 @@ cssclasses:
 > - [ ] **64. Sensibilité *(Accident vasculaire cérébral)***
 > - [ ] **65. Motricité fine *(Accident vasculaire cérébral)***
 > - [ ] **66. Langage *(Accident vasculaire cérébral)***
-> - [ ] **67. Antécédents personnels *(Accident vasculaire cérébral)***
-> 	- [ ] AVC antérieurs
-> 	- [ ] Autres pathologies
-> - [ ] **68. Toxiques *(Accident vasculaire cérébral · Chute multifactorielle)***
-> - [ ] **69. Facteurs de risque cardiovasculaire *(Accident vasculaire cérébral)***
+> - [ ] **67. Toxiques *(Accident vasculaire cérébral · Chute multifactorielle)***
+> - [ ] **68. Facteurs de risque cardiovasculaire *(Accident vasculaire cérébral)***
 > 	- [ ] Hypertension
 > 	- [ ] Hyperlipidémie
-> - [ ] **70. Activités sportives, loisirs *(Accident vasculaire cérébral)***
-> - [ ] **71. Anamnèse familiale *(Accident vasculaire cérébral · Chute multifactorielle)***
-> 	- [ ] AVC *(Accident vasculaire cérébral)*
-> 	- [ ] Maladies cardiaques *(Accident vasculaire cérébral)*
-> 	- [ ] Hypertension *(Accident vasculaire cérébral)*
-> 	- [ ] Diabète *(Accident vasculaire cérébral)*
-> - [ ] **72. Événement *(Chute multifactorielle)***
-> - [ ] **73. Temporalité *(Chute multifactorielle)***
-> - [ ] **74. Premier épisode *(Chute multifactorielle)***
-> - [ ] **75. Douleurs *(Chute multifactorielle)***
-> - [ ] **76. Fièvre *(Chute multifactorielle)***
-> - [ ] **77. Sensation de malaise *(Chute multifactorielle)***
-> - [ ] **78. Autres symptômes *(Chute multifactorielle)***
+> - [ ] **69. Activités sportives, loisirs *(Accident vasculaire cérébral)***
+> - [ ] **70. Événement *(Chute multifactorielle)***
+> - [ ] **71. Temporalité *(Chute multifactorielle)***
+> - [ ] **72. Premier épisode *(Chute multifactorielle)***
+> - [ ] **73. Douleurs *(Chute multifactorielle)***
+> - [ ] **74. Fièvre *(Chute multifactorielle)***
+> - [ ] **75. Sensation de malaise *(Chute multifactorielle)***
+> - [ ] **76. Autres symptômes *(Chute multifactorielle)***
 > 	- [ ] Faiblesse
 > 	- [ ] Troubles sensitifs
 > 	- [ ] Céphalées
 > 	- [ ] Vertiges
 > 	- [ ] Palpitations
 > 	- [ ] Dyspnée
-> - [ ] **79. Médicaments actuels *(Chute multifactorielle)***
+> - [ ] **77. Médicaments actuels *(Chute multifactorielle)***
 > 	- [ ] Tramadol
 > 	- [ ] Somnifère
 > 	- [ ] Sulfonylurée
 > 	- [ ] Aspirine
-> - [ ] **80. Maladies récentes/Hospitalisations *(Chute multifactorielle)***
-> - [ ] **81. Habitudes alimentaires *(Chute multifactorielle)***
-> - [ ] **82. Condition physique *(Chute multifactorielle)***
-> - [ ] **83. Mécanisme du traumatisme *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **78. Maladies récentes/Hospitalisations *(Chute multifactorielle)***
+> - [ ] **79. Habitudes alimentaires *(Chute multifactorielle)***
+> - [ ] **80. Condition physique *(Chute multifactorielle)***
+> - [ ] **81. Mécanisme du traumatisme *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Circonstance
 > 	- [ ] Énergie
 > 	- [ ] Position lors de la réception
 > 	- [ ] Autres blessures que coude
-> - [ ] **84. Caractérisation de la douleur *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **82. Caractérisation de la douleur *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Localisation
 > 	- [ ] Intensité
 > 	- [ ] Qualité
 > 	- [ ] Évolution
 > 	- [ ] Irradiation
 > 	- [ ] Facteurs atténuants/aggravants
-> - [ ] **85. Présence de symptômes neuro-vasculaires associés au trauma *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **83. Présence de symptômes neuro-vasculaires associés au trauma *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Impotence
 > 	- [ ] Symptômes neuro-vasculaires
-> - [ ] **86. Antécédents chirurgicaux *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **87. Santé actuelle *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **84. Antécédents chirurgicaux *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **85. Santé actuelle *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Maladies actuelles
 > 	- [ ] Médicaments
 > 	- [ ] Allergies
-> - [ ] **88. Impact du traumatisme sur le quotidien de la patiente *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **86. Impact du traumatisme sur le quotidien de la patiente *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Membre dominant
 > 	- [ ] Activités quotidiennes affectées
 

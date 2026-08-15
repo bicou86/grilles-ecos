@@ -210,7 +210,10 @@ cssclasses:
 > - [ ] **75. Rumination / Pensées circulaires *(Dépression)***
 > - [ ] **76. Inhibition de la pensée / Ralentissement psychique *(Dépression)***
 > - [ ] **77. Barrage de la pensée *(Dépression)***
-> - [ ] **78. Antécédents médicaux *(Dépression)***
+> - [ ] **78. Antécédents médicaux *(Dépression · Hyperthyroïdie)***
+> 	- [ ] Maladies antérieures *(Hyperthyroïdie)*
+> 	- [ ] Hospitalisations *(Hyperthyroïdie)*
+> 	- [ ] Allergies *(Hyperthyroïdie)*
 > - [ ] **79. Maladies chroniques / Douleurs *(Dépression)***
 > - [ ] **80. Antécédents psychiatriques *(Dépression)***
 > - [ ] **81. Médicaments / Automédication *(Dépression)***
@@ -264,16 +267,12 @@ cssclasses:
 > 	- [ ] Tabac
 > 	- [ ] Drogues
 > 	- [ ] Caféine
-> - [ ] **104. Antécédents personnels *(Hyperthyroïdie)***
-> 	- [ ] Maladies antérieures
-> 	- [ ] Hospitalisations
-> 	- [ ] Allergies
-> - [ ] **105. Antécédents chirurgicaux *(Hyperthyroïdie)***
-> - [ ] **106. Anamnèse sociale et professionnelle *(Hyperthyroïdie)***
+> - [ ] **104. Antécédents chirurgicaux *(Hyperthyroïdie)***
+> - [ ] **105. Anamnèse sociale et professionnelle *(Hyperthyroïdie)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Stress professionnel ou familial
-> - [ ] **107. Anamnèse gynécologique *(Hyperthyroïdie)***
+> - [ ] **106. Anamnèse gynécologique *(Hyperthyroïdie)***
 > 	- [ ] Cycles menstruels réguliers
 > 	- [ ] Contraception
 > 	- [ ] Possibilité de grossesse

@@ -100,7 +100,7 @@ cssclasses:
 > - **RESCOS-37** — Angor stable / Maladie coronarienne `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-37_-_Douleur_thoracique_-_ECC_Cardiologie_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(3 grilles sur 12)***
+> - [ ] **1. Motif de consultation *(4 grilles sur 12)***
 > - [ ] **2. Caractérisation de la douleur thoracique *(7 grilles sur 12)***
 > 	- [ ] Localisation *(6 grilles sur 12)*
 > 	- [ ] Intensité (échelle 0-10) *(3 grilles sur 12)*
@@ -156,23 +156,25 @@ cssclasses:
 > 	- [ ] Infections récentes
 > 	- [ ] Vertiges
 > 	- [ ] Douleur aux jambes *(1 grille sur 12)*
-> - [ ] **5. Antécédents médicaux *(5 grilles sur 12)***
+> - [ ] **5. Antécédents médicaux *(8 grilles sur 12)***
 > - [ ] **6. Antécédents chirurgicaux *(4 grilles sur 12)***
 > - [ ] **7. Allergies *(8 grilles sur 12)***
-> - [ ] **8. Médicaments *(4 grilles sur 12)***
+> - [ ] **8. Médicaments actuels *(8 grilles sur 12)***
 > - [ ] **9. Hospitalisations et contacts malades *(1 grille sur 12)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Contacts malades
-> - [ ] **10. Antécédents familiaux *(4 grilles sur 12)***
-> - [ ] **11. Habitudes et mode de vie *(3 grilles sur 12)***
-> 	- [ ] Occupation
-> 	- [ ] Domicile
-> 	- [ ] Alcool
-> 	- [ ] Drogues illicites
-> 	- [ ] Tabac
+> - [ ] **10. Antécédents familiaux *(8 grilles sur 12)***
+> - [ ] **11. Habitudes et mode de vie *(7 grilles sur 12)***
+> 	- [ ] Occupation *(3 grilles sur 12)*
+> 	- [ ] Domicile *(3 grilles sur 12)*
+> 	- [ ] Alcool *(4 grilles sur 12)*
+> 	- [ ] Drogues illicites *(3 grilles sur 12)*
+> 	- [ ] Tabac *(4 grilles sur 12)*
 > 	- [ ] Exercice *(2 grilles sur 12)*
 > 	- [ ] Alimentation *(1 grille sur 12)*
 > 	- [ ] Consommation d'amphétamines (durée, fréquence, dernière prise) *(Infarctus du myocarde / SCA)*
+> 	- [ ] Médicaments actuels *(Péricardite / Myopéricardite)*
+> 	- [ ] Cannabis *(Péricardite / Myopéricardite)*
 > - [ ] **12. Recherche de symptômes spécifiques post-traumatiques *(1 grille sur 12)***
 > 	- [ ] Céphalées
 > 	- [ ] Nausées/vomissements
@@ -243,21 +245,19 @@ cssclasses:
 > - [ ] **58. Autres douleurs (jambes, bras, tête...) *(Contusion costale)***
 > - [ ] **59. Circonstances de la chute *(Contusion costale)***
 > - [ ] **60. Perte de connaissance, vertiges, céphalées *(Contusion costale)***
-> - [ ] **61. Médicaments actuels *(4 grilles sur 12)***
-> - [ ] **62. Activités sportives, loisirs *(Contusion costale)***
-> - [ ] **63. Anamnèse familiale *(4 grilles sur 12)***
-> - [ ] **64. Anamnèse sociale *(4 grilles sur 12)***
-> - [ ] **65. Identification des symptômes *(3 grilles sur 12)***
-> - [ ] **66. Début et évolution des symptômes *(1 grille sur 12)***
-> - [ ] **67. Intensité de la douleur *(3 grilles sur 12)***
-> - [ ] **68. Caractère de la douleur *(3 grilles sur 12)***
-> - [ ] **69. Douleur liée à la respiration *(3 grilles sur 12)***
-> - [ ] **70. Irradiation de la douleur *(3 grilles sur 12)***
-> - [ ] **71. Facteurs modulateurs *(3 grilles sur 12)***
+> - [ ] **61. Activités sportives, loisirs *(Contusion costale)***
+> - [ ] **62. Anamnèse sociale *(4 grilles sur 12)***
+> - [ ] **63. Identification des symptômes *(3 grilles sur 12)***
+> - [ ] **64. Début et évolution des symptômes *(1 grille sur 12)***
+> - [ ] **65. Intensité de la douleur *(3 grilles sur 12)***
+> - [ ] **66. Caractère de la douleur *(3 grilles sur 12)***
+> - [ ] **67. Douleur liée à la respiration *(3 grilles sur 12)***
+> - [ ] **68. Irradiation de la douleur *(3 grilles sur 12)***
+> - [ ] **69. Facteurs modulateurs *(3 grilles sur 12)***
 > 	- [ ] Facteur atténuant *(Péricardite / Myopéricardite)*
 > 	- [ ] Facteur aggravant *(Péricardite / Myopéricardite)*
-> - [ ] **72. Traumatisme thoracique *(3 grilles sur 12)***
-> - [ ] **73. Facteurs de risque cardiovasculaire *(4 grilles sur 12)***
+> - [ ] **70. Traumatisme thoracique *(3 grilles sur 12)***
+> - [ ] **71. Facteurs de risque cardiovasculaire *(4 grilles sur 12)***
 > 	- [ ] Hypertension *(2 grilles sur 12)*
 > 	- [ ] Diabète *(2 grilles sur 12)*
 > 	- [ ] Dyslipidémie *(3 grilles sur 12)*
@@ -269,9 +269,9 @@ cssclasses:
 > 	- [ ] Antécédents familiaux *(1 grille sur 12)*
 > 	- [ ] Activité physique *(1 grille sur 12)*
 > 	- [ ] Poids/IMC *(1 grille sur 12)*
-> 	- [ ] Médicaments *(1 grille sur 12)*
+> 	- [ ] Médicaments actuels *(1 grille sur 12)*
 > 	- [ ] Alcool *(1 grille sur 12)*
-> - [ ] **74. Facteurs de risque d'embolie pulmonaire (Score de Wells) *(2 grilles sur 12)***
+> - [ ] **72. Facteurs de risque d'embolie pulmonaire (Score de Wells) *(2 grilles sur 12)***
 > 	- [ ] Œdème/douleur du mollet
 > 	- [ ] Voyage récent
 > 	- [ ] Chirurgie récente
@@ -279,98 +279,91 @@ cssclasses:
 > 	- [ ] Antécédents familiaux de thrombophilie
 > 	- [ ] Contraceptifs oraux *(1 grille sur 12)*
 > 	- [ ] Grossesse *(1 grille sur 12)*
-> - [ ] **75. Signes généraux *(3 grilles sur 12)***
-> - [ ] **76. Antécédents personnels *(3 grilles sur 12)***
-> - [ ] **77. Habitudes de vie *(4 grilles sur 12)***
-> 	- [ ] Médicaments *(Péricardite / Myopéricardite)*
-> 	- [ ] Tabac *(Péricardite / Myopéricardite)*
-> 	- [ ] Cannabis *(Péricardite / Myopéricardite)*
-> 	- [ ] Alcool *(Péricardite / Myopéricardite)*
-> - [ ] **78. Début et évolution *(1 grille sur 12)***
-> - [ ] **79. Événement déclenchant *(1 grille sur 12)***
-> - [ ] **80. Antécédents cardiaques *(1 grille sur 12)***
-> - [ ] **81. Asthme *(1 grille sur 12)***
-> - [ ] **82. Antécédents de TVP/EP *(1 grille sur 12)***
-> - [ ] **83. Durée des symptômes *(Reflux gastro-œsophagien)***
-> - [ ] **84. Facteurs déclenchants et modulateurs *(Reflux gastro-œsophagien)***
-> - [ ] **85. Lien avec l'effort physique *(Reflux gastro-œsophagien)***
-> - [ ] **86. Raison de la visite *(Péricardite / Myopéricardite)***
+> - [ ] **73. Signes généraux *(3 grilles sur 12)***
+> - [ ] **74. Début et évolution *(1 grille sur 12)***
+> - [ ] **75. Événement déclenchant *(1 grille sur 12)***
+> - [ ] **76. Antécédents cardiaques *(1 grille sur 12)***
+> - [ ] **77. Asthme *(1 grille sur 12)***
+> - [ ] **78. Antécédents de TVP/EP *(1 grille sur 12)***
+> - [ ] **79. Durée des symptômes *(Reflux gastro-œsophagien)***
+> - [ ] **80. Facteurs déclenchants et modulateurs *(Reflux gastro-œsophagien)***
+> - [ ] **81. Lien avec l'effort physique *(Reflux gastro-œsophagien)***
+> - [ ] **82. Raison de la visite *(Péricardite / Myopéricardite)***
 > 	- [ ] Douleur à la poitrine
-> - [ ] **87. Circonstances de survenue *(Péricardite / Myopéricardite)***
+> - [ ] **83. Circonstances de survenue *(Péricardite / Myopéricardite)***
 > 	- [ ] Circonstances
-> - [ ] **88. Antécédents médicaux récents *(Péricardite / Myopéricardite)***
+> - [ ] **84. Antécédents médicaux récents *(Péricardite / Myopéricardite)***
 > 	- [ ] État grippal
 > 	- [ ] Pneumonie
-> - [ ] **89. Voyages récents *(Péricardite / Myopéricardite)***
+> - [ ] **85. Voyages récents *(Péricardite / Myopéricardite)***
 > 	- [ ] Voyages récents
-> - [ ] **90. Douleur thoracique - évolution temporelle *(1 grille sur 12)***
+> - [ ] **86. Douleur thoracique - évolution temporelle *(1 grille sur 12)***
 > 	- [ ] Chronologie
 > 	- [ ] Évolution
-> - [ ] **91. Antécédents et comorbidités *(1 grille sur 12)***
+> - [ ] **87. Antécédents et comorbidités *(1 grille sur 12)***
 > 	- [ ] Maladies
 > 	- [ ] Hospitalisations
-> 	- [ ] Médicaments
+> 	- [ ] Médicaments actuels
 > 	- [ ] Allergies
-> - [ ] **92. Facteurs de risque *(1 grille sur 12)***
+> - [ ] **88. Facteurs de risque *(1 grille sur 12)***
 > 	- [ ] Tabagisme
 > 	- [ ] Voyages récents
 > 	- [ ] Chirurgie/immobilisation récente
-> 	- [ ] Médicaments
+> 	- [ ] Médicaments actuels
 > 	- [ ] Antécédents d'embolie pulmonaire/angine de poitrine/AVC
-> - [ ] **93. Représentation de la maladie *(1 grille sur 12)***
+> - [ ] **89. Représentation de la maladie *(1 grille sur 12)***
 > 	- [ ] Peur d'un cancer pulmonaire comme son mari
-> - [ ] **94. Motif de consultation *(1 grille sur 12)***
-> - [ ] **95. Circonstances déclenchantes *(1 grille sur 12)***
+> - [ ] **90. Circonstances déclenchantes *(1 grille sur 12)***
 > 	- [ ] Effort physique
 > 	- [ ] Stress émotionnel
 > 	- [ ] Froid
 > 	- [ ] Repas copieux
 > 	- [ ] Jamais au repos
 > 	- [ ] Pas la nuit
-> - [ ] **96. Évolution dans le temps *(1 grille sur 12)***
+> - [ ] **91. Évolution dans le temps *(1 grille sur 12)***
 > 	- [ ] Début
 > 	- [ ] Fréquence croissante
 > 	- [ ] Seuil d'effort diminué
 > 	- [ ] Caractéristiques stables
-> - [ ] **97. Classification CCS de l'angor *(1 grille sur 12)***
+> - [ ] **92. Classification CCS de l'angor *(1 grille sur 12)***
 > 	- [ ] Classe I: Activités quotidiennes normales
 > 	- [ ] Classe II: Limitation légère
 > 	- [ ] Classe III: Limitation marquée
 > 	- [ ] Classe IV: Angor au moindre effort ou repos
-> - [ ] **98. Antécédents et traitements *(1 grille sur 12)***
+> - [ ] **93. Antécédents et traitements *(1 grille sur 12)***
 > 	- [ ] Cholestérol élevé
 > 	- [ ] Automédication aspirine
-> - [ ] **99. Facteurs déclenchants et circonstances d'apparition *(1 grille sur 12)***
+> - [ ] **94. Facteurs déclenchants et circonstances d'apparition *(1 grille sur 12)***
 > 	- [ ] Facteur déclenchant 1er épisode
 > 	- [ ] Facteur déclenchant 2ème épisode
 > 	- [ ] Relation à l'effort
 > 	- [ ] Facteurs soulageants
 > 	- [ ] Évolution des crises
-> - [ ] **100. Symptômes associés et recherche d'insuffisance cardiaque *(1 grille sur 12)***
+> - [ ] **95. Symptômes associés et recherche d'insuffisance cardiaque *(1 grille sur 12)***
 > 	- [ ] Dyspnée d'effort
 > 	- [ ] Dyspnée à la fin des escaliers
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
 > 	- [ ] Œdèmes membres inférieurs
 > 	- [ ] Palpitations
-> - [ ] **101. Classification de la sévérité (classes d'angine) *(1 grille sur 12)***
+> - [ ] **96. Classification de la sévérité (classes d'angine) *(1 grille sur 12)***
 > 	- [ ] Impact fonctionnel
 > 	- [ ] Limitation des activités
 > 	- [ ] Angor au repos
 > 	- [ ] Classification probable
-> - [ ] **102. Antécédents personnels cardiovasculaires *(1 grille sur 12)***
+> - [ ] **97. Antécédents personnels cardiovasculaires *(1 grille sur 12)***
 > 	- [ ] Diabète
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Hypercholestérolémie
 > 	- [ ] Affections cardiaques
 > 	- [ ] Hospitalisations
-> - [ ] **103. Antécédents familiaux cardiovasculaires *(1 grille sur 12)***
+> - [ ] **98. Antécédents familiaux cardiovasculaires *(1 grille sur 12)***
 > 	- [ ] Mère
 > 	- [ ] Père
 > 	- [ ] Frère
 > 	- [ ] Oncle maternel
 > 	- [ ] Recherche mort subite
-> - [ ] **104. Anamnèse socioprofessionnelle et impact *(1 grille sur 12)***
+> - [ ] **99. Anamnèse socioprofessionnelle et impact *(1 grille sur 12)***
 > 	- [ ] Profession
 > 	- [ ] Entourage familial
 > 	- [ ] Impact sur activités
@@ -440,7 +433,12 @@ cssclasses:
 > 	- [ ] Pas de souffle audible *(1 grille sur 12)*
 > 	- [ ] Pas de galop *(1 grille sur 12)*
 > 	- [ ] Pas de frottement péricardique *(1 grille sur 12)*
-> - [ ] **23. Pouls périphériques *(1 grille sur 12)***
+> - [ ] **23. Palpation des pouls périphériques *(2 grilles sur 12)***
+> 	- [ ] Pouls carotidiens symétriques *(1 grille sur 12)*
+> 	- [ ] Pouls fémoraux présents *(1 grille sur 12)*
+> 	- [ ] Pouls pédieux présents *(1 grille sur 12)*
+> 	- [ ] Pouls tibiaux postérieurs présents *(1 grille sur 12)*
+> 	- [ ] Pas de souffle abdominal *(1 grille sur 12)*
 > - [ ] **24. Palpation *(Contusion costale)***
 > - [ ] **25. Poumons *(Contusion costale)***
 > - [ ] **26. Cœur *(Contusion costale)***
@@ -515,41 +513,35 @@ cssclasses:
 > 	- [ ] Pas de râles
 > 	- [ ] Pas de sibilants
 > 	- [ ] Symétrique bilatéralement
-> - [ ] **48. Palpation des pouls périphériques *(1 grille sur 12)***
-> 	- [ ] Pouls carotidiens symétriques
-> 	- [ ] Pouls fémoraux présents
-> 	- [ ] Pouls pédieux présents
-> 	- [ ] Pouls tibiaux postérieurs présents
-> 	- [ ] Pas de souffle abdominal
-> - [ ] **49. Signes vitaux et mesures anthropométriques *(1 grille sur 12)***
+> - [ ] **48. Signes vitaux et mesures anthropométriques *(1 grille sur 12)***
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Poids et taille
-> - [ ] **50. Inspection générale et recherche de signes cardiovasculaires *(1 grille sur 12)***
+> - [ ] **49. Inspection générale et recherche de signes cardiovasculaires *(1 grille sur 12)***
 > 	- [ ] Cyanose centrale
 > 	- [ ] Cyanose périphérique
 > 	- [ ] Signes cutanés
 > 	- [ ] Inspection thoracique
 > 	- [ ] Température des extrémités
-> - [ ] **51. Évaluation du pouls veineux jugulaire *(1 grille sur 12)***
+> - [ ] **50. Évaluation du pouls veineux jugulaire *(1 grille sur 12)***
 > 	- [ ] Positionnement du patient
 > 	- [ ] Respiration par la bouche
 > 	- [ ] Niveau du collapsus veineux
 > 	- [ ] Réflux hépato-jugulaire
-> - [ ] **52. Palpation cardiovasculaire *(1 grille sur 12)***
+> - [ ] **51. Palpation cardiovasculaire *(1 grille sur 12)***
 > 	- [ ] Pouls artériels
 > 	- [ ] Choc de pointe
 > 	- [ ] Aire précordiale
 > 	- [ ] 2ème espace intercostal droit
 > 	- [ ] Creux épigastrique
-> - [ ] **53. Auscultation cardiaque systématique *(1 grille sur 12)***
+> - [ ] **52. Auscultation cardiaque systématique *(1 grille sur 12)***
 > 	- [ ] 5 foyers d'auscultation
 > 	- [ ] Identification B1 et B2
 > 	- [ ] Utilisation cloche et membrane
 > 	- [ ] Position du patient
 > 	- [ ] Recherche de souffles et bruits surajoutés
-> - [ ] **54. Auscultation des carotides *(1 grille sur 12)***
+> - [ ] **53. Auscultation des carotides *(1 grille sur 12)***
 > 	- [ ] Auscultation bilatérale des carotides
 > 	- [ ] Recherche de souffles carotidiens
 > 	- [ ] Corrélation avec examen cardiaque

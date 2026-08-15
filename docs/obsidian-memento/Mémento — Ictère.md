@@ -97,22 +97,29 @@ cssclasses:
 > 	- [ ] Localisation
 > 	- [ ] Progression
 > 	- [ ] Coloration des sclérotiques
-> - [ ] **4. Symptômes digestifs *(Hépatite (virale/alcoolique))***
+> - [ ] **4. Symptômes digestifs**
 > 	- [ ] Douleurs abdominales
 > 	- [ ] Nausées/vomissements
-> 	- [ ] Troubles du transit
-> 	- [ ] Ballonnements
+> 	- [ ] Troubles du transit *(Hépatite (virale/alcoolique))*
+> 	- [ ] Ballonnements *(Hépatite (virale/alcoolique))*
+> 	- [ ] Fréquence des selles *(Néoplasie des voies biliaires/pancréatique)*
+> 	- [ ] Sang dans les selles *(Néoplasie des voies biliaires/pancréatique)*
+> 	- [ ] Couleur des selles *(Néoplasie des voies biliaires/pancréatique)*
+> 	- [ ] Dysphagie *(Néoplasie des voies biliaires/pancréatique)*
 > - [ ] **5. Caractéristiques des selles et urines *(Hépatite (virale/alcoolique))***
 > 	- [ ] Couleur des selles
 > 	- [ ] Consistance des selles
 > 	- [ ] Couleur des urines
 > 	- [ ] Fréquence urinaire
-> - [ ] **6. Symptômes généraux *(Hépatite (virale/alcoolique))***
-> 	- [ ] Fièvre/frissons
-> 	- [ ] Asthénie
+> - [ ] **6. Symptômes généraux**
+> 	- [ ] Fièvre/frissons *(Hépatite (virale/alcoolique))*
+> 	- [ ] Asthénie *(Hépatite (virale/alcoolique))*
 > 	- [ ] Perte de poids
-> 	- [ ] Sueurs nocturnes
-> 	- [ ] Anorexie
+> 	- [ ] Sueurs nocturnes *(Hépatite (virale/alcoolique))*
+> 	- [ ] Anorexie *(Hépatite (virale/alcoolique))*
+> 	- [ ] Fièvre *(Néoplasie des voies biliaires/pancréatique)*
+> 	- [ ] Sudations nocturnes *(Néoplasie des voies biliaires/pancréatique)*
+> 	- [ ] Frissons *(Néoplasie des voies biliaires/pancréatique)*
 > - [ ] **7. Événements récents *(Hépatite (virale/alcoolique))***
 > 	- [ ] Maladie récente
 > 	- [ ] Prise médicamenteuse
@@ -130,11 +137,14 @@ cssclasses:
 > 	- [ ] Tatouages/piercings
 > 	- [ ] Transfusions
 > 	- [ ] Rapports sexuels à risque
-> - [ ] **11. Antécédents médicaux *(Hépatite (virale/alcoolique))***
-> 	- [ ] Diabète
-> 	- [ ] Maladies hépatiques
-> 	- [ ] Chirurgies abdominales
-> 	- [ ] Lithiase biliaire
+> - [ ] **11. Antécédents médicaux**
+> 	- [ ] Diabète *(Hépatite (virale/alcoolique))*
+> 	- [ ] Maladies hépatiques *(Hépatite (virale/alcoolique))*
+> 	- [ ] Chirurgies abdominales *(Hépatite (virale/alcoolique))*
+> 	- [ ] Lithiase biliaire *(Hépatite (virale/alcoolique))*
+> 	- [ ] Médicaux *(Néoplasie des voies biliaires/pancréatique)*
+> 	- [ ] Chirurgicaux *(Néoplasie des voies biliaires/pancréatique)*
+> 	- [ ] Allergies *(Néoplasie des voies biliaires/pancréatique)*
 > - [ ] **12. Médicaments et allergies *(Hépatite (virale/alcoolique))***
 > 	- [ ] Traitements en cours
 > 	- [ ] Allergies médicamenteuses
@@ -168,32 +178,16 @@ cssclasses:
 > - [ ] **18. Ictère - précisions *(Néoplasie des voies biliaires/pancréatique)***
 > 	- [ ] Symptômes associés
 > 	- [ ] Premier épisode vs récurrent
-> - [ ] **19. Anamnèse générale *(Néoplasie des voies biliaires/pancréatique)***
-> 	- [ ] Perte de poids
-> 	- [ ] Fièvre
-> 	- [ ] Sudations nocturnes
-> 	- [ ] Frissons
-> - [ ] **20. Anamnèse digestive *(Néoplasie des voies biliaires/pancréatique)***
-> 	- [ ] Douleur abdominale
-> 	- [ ] Nausées et vomissements
-> 	- [ ] Fréquence des selles
-> 	- [ ] Sang dans les selles
-> 	- [ ] Couleur des selles
-> 	- [ ] Dysphagie
-> - [ ] **21. Anamnèse uro-génitale *(Néoplasie des voies biliaires/pancréatique)***
+> - [ ] **19. Anamnèse uro-génitale *(Néoplasie des voies biliaires/pancréatique)***
 > 	- [ ] Couleur des urines
 > 	- [ ] Sang dans les urines
 > 	- [ ] Dernières règles
-> - [ ] **22. Antécédents personnels *(Néoplasie des voies biliaires/pancréatique)***
-> 	- [ ] Médicaux
-> 	- [ ] Chirurgicaux
-> 	- [ ] Allergies
-> - [ ] **23. DD : hépatites *(Néoplasie des voies biliaires/pancréatique)***
+> - [ ] **20. DD : hépatites *(Néoplasie des voies biliaires/pancréatique)***
 > 	- [ ] Vaccins hépatites A et B
 > 	- [ ] Drogues IV
 > 	- [ ] Rapports sexuels à risque
 > 	- [ ] Voyages dans des zones endémiques
-> - [ ] **24. Habitudes *(Néoplasie des voies biliaires/pancréatique)***
+> - [ ] **21. Habitudes *(Néoplasie des voies biliaires/pancréatique)***
 > 	- [ ] Alimentaires
 > 	- [ ] Médicaments
 
