@@ -6,6 +6,7 @@ grilles officielles. Elles sont deplacees ici sans modification : le memento
 officiel doit rester identique a l'octet pres.
 """
 import html as H
+import json
 import re
 import unicodedata
 from pathlib import Path
@@ -140,4 +141,72 @@ def lire_html(chemin):
         "diagnostic": None,
         "confiance": "absent",
         "sections": {p: items(b) for p, b in sections(corps).items()},
+    }
+
+
+# Les onglets AZYGOS, ramenes aux trois sections du memento. « Diagnostic »
+# porte les examens complementaires, « Procedure » le raisonnement et le
+# traitement : les deux alimentent le management. Certains cas sont des
+# stations en deux parties dont les onglets portent un prefixe
+# "Partie 1\n"/"Partie 2\n" et nomment l'examen clinique autrement
+# ("Statut clinique", "Status clinique") : on normalise avant de chercher.
+ONGLETS_AZYGOS = {"Anamnèse": "a", "Examen clinique": "e",
+                  "Statut clinique": "e", "Status clinique": "e",
+                  "Diagnostic": "m", "Procédure": "m"}
+_PREFIXE_PARTIE = re.compile(r"^Partie \d+\n")
+
+_FICHIERS_AZYGOS = None
+
+
+def _numero_azygos(nom_fichier):
+    """Identifiant AZYGOS d'un JSON, depuis la table docs/azygos-fichiers.yaml.
+
+    Les JSON sont nommes par UUID ; `meta` ne porte pas le numero de grille.
+    La table a ete construite une fois pour toutes en appariant les titres.
+    """
+    global _FICHIERS_AZYGOS
+    if _FICHIERS_AZYGOS is None:
+        import lib_yaml
+        _FICHIERS_AZYGOS = lib_yaml.lire_plat(REPO / "docs" / "azygos-fichiers.yaml")
+    return _FICHIERS_AZYGOS.get(nom_fichier)
+
+
+def lire_azygos(chemin):
+    """Extraction JSON AZYGOS -> structure de cas pivot.
+
+    Le HTML d'AZYGOS fond le libelle court et le paragraphe didactique dans un
+    meme `detail-text` de 100 a 250 mots. Le JSON garde la separation : les
+    `label` sont les items, les paragraphes vivent a part dans `infos` et ne
+    sont pas repris.
+    """
+    chemin = Path(chemin)
+    donnees = json.loads(chemin.read_text(encoding="utf8"))
+    identifiant = _numero_azygos(chemin.name) or donnees["meta"]["id"][:8]
+    sections_out = {}
+    for onglet, groupes in donnees["onglets"].items():
+        prefixe = ONGLETS_AZYGOS.get(_PREFIXE_PARTIE.sub("", onglet))
+        if prefixe is None:
+            continue
+        lignes = sections_out.setdefault(prefixe, [])
+        for groupe in groupes:
+            if not isinstance(groupe, dict):
+                continue
+            nom = (groupe.get("groupe") or "").strip()
+            if nom:
+                lignes.append(("titre", None, nom, None))
+            for rang, item in enumerate(groupe.get("items", [])):
+                titre = (item.get("label") or "").strip()
+                if not titre:
+                    continue
+                cid = f"{prefixe}{len(lignes) + 1}"
+                sous = [v.strip() for v in item.get("valeurs", []) if v and v.strip()]
+                lignes.append(("item", cid, titre, harmonise(sous)))
+    return {
+        "id": identifiant,
+        "corpus": "azygos",
+        "fichier": str(chemin.relative_to(REPO)),
+        "ssp": None,
+        "diagnostic": None,
+        "confiance": "absent",
+        "sections": {k: v for k, v in sections_out.items() if v},
     }
