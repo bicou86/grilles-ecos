@@ -6,7 +6,6 @@ pour qu'une relecture decide. Sortie 0 toujours : ce n'est pas une barriere.
 """
 import glob
 import sys
-import unicodedata
 from collections import Counter
 from pathlib import Path
 
@@ -14,17 +13,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 import lib_extraction as L
 import lib_ssp
 from check_couverture import HORS_PERIMETRE
+from lib_cle import cle
 
 REPO = Path(__file__).resolve().parents[2]
 SORTIE = REPO / "docs" / "superpowers" / "rapport-referentiel-memento.md"
 OFFICIELLES = {"RESCOS-9b", "RESCOS-12b", "RESCOS-57b", "RESCOS-58b", "RESCOS-63b",
                "RESCOS-67b", "RESCOS-68b", "RESCOS-69b", "RESCOS-70b"}
-
-
-def cle(t):
-    t = unicodedata.normalize("NFD", t.lower())
-    t = "".join(c for c in t if unicodedata.category(c) != "Mn")
-    return " ".join(sorted(m for m in t.replace("'", " ").split() if len(m) > 3))
 
 
 def tous_les_cas():
