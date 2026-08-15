@@ -28,17 +28,21 @@ cssclasses:
 > AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Musculo-Squelettique
+# Lombalgies ⭐️
 
-## Lombalgies ⭐️
-
-*8 grilles · 7 diagnostics distincts* — [[SSP — Lombalgies]]
+*Musculo-Squelettique · 8 grilles · 7 diagnostics distincts* — [[SSP — Lombalgies]]
 
 > [!abstract] Les 8 grilles fusionnées
 > - **AMBOSS-9** — Hernie discale `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-9_-_Douleurs_dorsales_-_Homme_71_ans_-_Grille_ECOS.html>)
@@ -51,8 +55,8 @@ cssclasses:
 > - **RESCOS-48** — Cancer prostatique métastatique `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-48%20-%20Lombalgie%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(Hernie discale, Spondylarthrite ankylosante)***
-> - [ ] **2. Caractérisation de la douleur dorsale *(Hernie discale, Spondylarthrite ankylosante)***
+> - [ ] **1. Motif principal *(2 grilles sur 8)***
+> - [ ] **2. Caractérisation de la douleur dorsale *(2 grilles sur 8)***
 > 	- [ ] Localisation
 > 	- [ ] Intensité (échelle 0-10)
 > 	- [ ] Qualité
@@ -63,8 +67,8 @@ cssclasses:
 > 	- [ ] Irradiation
 > 	- [ ] Facteurs améliorants
 > 	- [ ] Facteurs aggravants
-> - [ ] **3. Symptômes associés *(Hernie discale, Spondylarthrite ankylosante, Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **4. Recherche de symptômes spécifiques - Drapeaux rouges *(Hernie discale)***
+> - [ ] **3. Symptômes associés *(3 grilles sur 8)***
+> - [ ] **4. Recherche de symptômes spécifiques - Drapeaux rouges *(1 grille sur 8)***
 > 	- [ ] Traumatisme
 > 	- [ ] Fièvre/frissons
 > 	- [ ] Sueurs nocturnes
@@ -77,27 +81,27 @@ cssclasses:
 > 	- [ ] Appétit
 > 	- [ ] Variations pondérales
 > 	- [ ] Infections récentes
-> - [ ] **5. Recherche de symptômes neurologiques *(Hernie discale)***
+> - [ ] **5. Recherche de symptômes neurologiques *(1 grille sur 8)***
 > 	- [ ] Sensation de picotements
 > 	- [ ] Faiblesse musculaire
 > 	- [ ] Engourdissement (particulièrement membres inférieurs)
 > 	- [ ] Dysfonction érectile
-> - [ ] **6. Antécédents médicaux *(Hernie discale, Spondylarthrite ankylosante, Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **6. Antécédents médicaux *(3 grilles sur 8)***
 > - [ ] **7. Antécédents chirurgicaux *(4 diagnostics)***
 > - [ ] **8. Allergies *(5 diagnostics)***
-> - [ ] **9. Médicaments *(Hernie discale, Spondylarthrite ankylosante, Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> 	- [ ] Médicaments actuels *(Hernie discale)*
-> 	- [ ] Quantité de Dafalgan® *(Hernie discale)*
-> - [ ] **10. Hospitalisations *(Hernie discale, Spondylarthrite ankylosante)***
-> - [ ] **11. Antécédents familiaux *(Hernie discale, Spondylarthrite ankylosante, Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **12. Habitudes et mode de vie *(Hernie discale, Spondylarthrite ankylosante)***
+> - [ ] **9. Médicaments *(3 grilles sur 8)***
+> 	- [ ] Médicaments actuels *(1 grille sur 8)*
+> 	- [ ] Quantité de Dafalgan® *(1 grille sur 8)*
+> - [ ] **10. Hospitalisations *(2 grilles sur 8)***
+> - [ ] **11. Antécédents familiaux *(3 grilles sur 8)***
+> - [ ] **12. Habitudes et mode de vie *(2 grilles sur 8)***
 > 	- [ ] Occupation
 > 	- [ ] Domicile
 > 	- [ ] Alcool
 > 	- [ ] Drogues illicites
 > 	- [ ] Tabac
 > 	- [ ] Exercice
-> 	- [ ] Alimentation *(Hernie discale)*
+> 	- [ ] Alimentation *(1 grille sur 8)*
 > 	- [ ] Consommation de marijuana (durée, fréquence, dernière utilisation) *(Spondylarthrite ankylosante)*
 > - [ ] **13. Recherche de symptômes spécifiques *(Spondylarthrite ankylosante)***
 > 	- [ ] Traumatisme
@@ -128,11 +132,11 @@ cssclasses:
 > - [ ] **18. Évolution *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **19. Déclencheur / traumatisme *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **20. Localisation *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **21. Irradiation *(Colique néphrétique gauche, Hernie discale, Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **21. Irradiation *(3 grilles sur 8)***
 > - [ ] **22. Qualité *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **23. Intensité / gravité *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **24. ⊕ Facteurs aggravants *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **25. ⊖ Facteurs soulageants *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **24. Facteurs aggravants *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **25. Facteurs soulageants *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **26. Mesures déjà entreprises *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **27. Retentissement des symptômes *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **28. Douleur nocturne *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
@@ -178,46 +182,46 @@ cssclasses:
 > - [ ] **61. Maladies tumorales *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **62. Profession *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **63. Situation sociale *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **64. Présentation avec nom, fonction et tâche *(Colique néphrétique gauche, Fracture vertébrale, Hernie discale)***
+> - [ ] **64. Présentation avec nom, fonction et tâche *(3 grilles sur 8)***
 > - [ ] **65. Motif de consultation principal *(Fracture vertébrale)***
-> - [ ] **66. Caractéristiques temporelles *(Colique néphrétique gauche, Fracture vertébrale, Hernie discale)***
+> - [ ] **66. Caractéristiques temporelles *(3 grilles sur 8)***
 > 	- [ ] Début
 > 	- [ ] Facteur déclenchant *(Fracture vertébrale)*
-> 	- [ ] Durée *(Colique néphrétique gauche, Hernie discale)*
-> 	- [ ] Évolution *(Hernie discale)*
+> 	- [ ] Durée *(2 grilles sur 8)*
+> 	- [ ] Évolution *(1 grille sur 8)*
 > - [ ] **67. Localisation précise *(Colique néphrétique gauche, Fracture vertébrale)***
 > 	- [ ] Localisation *(Fracture vertébrale)*
 > 	- [ ] Irradiation *(Fracture vertébrale)*
 > - [ ] **68. Type et intensité de la douleur *(Fracture vertébrale)***
 > 	- [ ] Type
 > 	- [ ] Intensité
-> - [ ] **69. Facteurs modulants *(Colique néphrétique gauche, Fracture vertébrale, Hernie discale)***
-> 	- [ ] Amélioration *(Fracture vertébrale, Hernie discale)*
-> 	- [ ] Aggravation *(Fracture vertébrale, Hernie discale)*
+> - [ ] **69. Facteurs modulants *(3 grilles sur 8)***
+> 	- [ ] Amélioration *(2 grilles sur 8)*
+> 	- [ ] Aggravation *(2 grilles sur 8)*
 > - [ ] **70. Recherche des drapeaux rouges (red flags) *(Fracture vertébrale)***
 > 	- [ ] Signes infectieux
 > 	- [ ] Syndrome de la queue de cheval
 > 	- [ ] Déficits neurologiques
 > 	- [ ] Incontinence urinaire ou fécale
 > 	- [ ] Anesthésie en selle
-> - [ ] **71. Symptômes généraux (symptômes B) *(Fracture vertébrale, Hernie discale)***
+> - [ ] **71. Symptômes généraux (symptômes B) *(2 grilles sur 8)***
 > 	- [ ] Fièvre
 > 	- [ ] Perte de poids non intentionnelle *(Fracture vertébrale)*
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Asthénie *(Fracture vertébrale)*
-> 	- [ ] Perte de poids *(Hernie discale)*
+> 	- [ ] Perte de poids *(1 grille sur 8)*
 > - [ ] **72. Autres symptômes associés *(Fracture vertébrale)***
-> - [ ] **73. Antécédents personnels médicaux *(Colique néphrétique gauche, Fracture vertébrale, Hernie discale)***
+> - [ ] **73. Antécédents personnels médicaux *(3 grilles sur 8)***
 > 	- [ ] Néoplasie *(Fracture vertébrale)*
 > 	- [ ] Autres pathologies *(Fracture vertébrale)*
-> 	- [ ] Pathologies connues *(Colique néphrétique gauche, Hernie discale)*
-> 	- [ ] Immunosuppression *(Hernie discale)*
-> 	- [ ] Cancer *(Hernie discale)*
+> 	- [ ] Pathologies connues *(2 grilles sur 8)*
+> 	- [ ] Immunosuppression *(1 grille sur 8)*
+> 	- [ ] Cancer *(1 grille sur 8)*
 > 	- [ ] Antécédents de lombalgies *(Colique néphrétique gauche)*
-> - [ ] **74. Traitements actuels *(Colique néphrétique gauche, Fracture vertébrale, Hernie discale)***
-> 	- [ ] Médicaments réguliers *(Hernie discale)*
-> 	- [ ] Antalgiques à la demande *(Hernie discale)*
-> - [ ] **75. Habitudes de vie et toxiques *(Colique néphrétique gauche, Fracture vertébrale, Hernie discale)***
+> - [ ] **74. Traitements actuels *(3 grilles sur 8)***
+> 	- [ ] Médicaments réguliers *(1 grille sur 8)*
+> 	- [ ] Antalgiques à la demande *(1 grille sur 8)*
+> - [ ] **75. Habitudes de vie et toxiques *(3 grilles sur 8)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
@@ -228,45 +232,45 @@ cssclasses:
 > 	- [ ] Antécédent de fracture
 > 	- [ ] Corticothérapie prolongée
 > 	- [ ] Faible poids corporel
-> - [ ] **78. Anamnèse familiale *(Colique néphrétique gauche, Fracture vertébrale, Hernie discale)***
+> - [ ] **78. Anamnèse familiale *(3 grilles sur 8)***
 > 	- [ ] Ostéoporose familiale *(Fracture vertébrale)*
 > 	- [ ] Fractures familiales *(Fracture vertébrale)*
 > 	- [ ] Néoplasies familiales *(Fracture vertébrale)*
-> 	- [ ] Ostéoporose *(Hernie discale)*
-> 	- [ ] Pathologies cardiovasculaires *(Hernie discale)*
-> 	- [ ] Autres pathologies pertinentes *(Hernie discale)*
+> 	- [ ] Ostéoporose *(1 grille sur 8)*
+> 	- [ ] Pathologies cardiovasculaires *(1 grille sur 8)*
+> 	- [ ] Autres pathologies pertinentes *(1 grille sur 8)*
 > - [ ] **79. Anamnèse sociale *(Colique néphrétique gauche, Fracture vertébrale)***
 > 	- [ ] Profession
 > 	- [ ] Activité physique
 > 	- [ ] Autonomie *(Fracture vertébrale)*
 > 	- [ ] Situation familiale *(Colique néphrétique gauche)*
-> - [ ] **80. Questions de clôture *(Colique néphrétique gauche, Fracture vertébrale, Hernie discale)***
+> - [ ] **80. Questions de clôture *(3 grilles sur 8)***
 > 	- [ ] Avez-vous quelque chose à ajouter ?
 > 	- [ ] Avez-vous des questions ?
-> - [ ] **81. Question ouverte d'introduction *(Colique néphrétique gauche, Hernie discale)***
-> - [ ] **82. Localisation précise de la douleur *(Hernie discale)***
-> - [ ] **83. Pattern de la douleur *(Hernie discale)***
+> - [ ] **81. Question ouverte d'introduction *(2 grilles sur 8)***
+> - [ ] **82. Localisation précise de la douleur *(1 grille sur 8)***
+> - [ ] **83. Pattern de la douleur *(1 grille sur 8)***
 > 	- [ ] Type
 > 	- [ ] Épisodes antérieurs
 > 	- [ ] Douleurs nocturnes
-> - [ ] **84. Qualité de la douleur *(Colique néphrétique gauche, Hernie discale)***
-> - [ ] **85. Intensité de la douleur *(Colique néphrétique gauche, Hernie discale)***
-> - [ ] **86. Événement déclenchant *(Hernie discale)***
+> - [ ] **84. Qualité de la douleur *(2 grilles sur 8)***
+> - [ ] **85. Intensité de la douleur *(2 grilles sur 8)***
+> - [ ] **86. Événement déclenchant *(1 grille sur 8)***
 > 	- [ ] Circonstances
 > 	- [ ] Port de charge lourde
 > 	- [ ] Traumatisme
-> - [ ] **87. Symptômes neurologiques - Force *(Hernie discale)***
+> - [ ] **87. Symptômes neurologiques - Force *(1 grille sur 8)***
 > 	- [ ] Faiblesse musculaire
 > 	- [ ] Localisation
-> - [ ] **88. Symptômes neurologiques - Sensibilité *(Hernie discale)***
-> - [ ] **89. Recherche syndrome de la queue de cheval *(Hernie discale)***
+> - [ ] **88. Symptômes neurologiques - Sensibilité *(1 grille sur 8)***
+> - [ ] **89. Recherche syndrome de la queue de cheval *(1 grille sur 8)***
 > 	- [ ] Incontinence urinaire
 > 	- [ ] Rétention urinaire
 > 	- [ ] Incontinence fécale
 > 	- [ ] Anesthésie en selle
-> - [ ] **90. Antécédents de fractures *(Hernie discale)***
-> - [ ] **91. Antécédents de lombalgies *(Hernie discale)***
-> - [ ] **92. Anamnèse sociale et professionnelle *(Hernie discale)***
+> - [ ] **90. Antécédents de fractures *(1 grille sur 8)***
+> - [ ] **91. Antécédents de lombalgies *(1 grille sur 8)***
+> - [ ] **92. Anamnèse sociale et professionnelle *(1 grille sur 8)***
 > 	- [ ] Profession
 > 	- [ ] Stress, situation de charge
 > 	- [ ] Capacité de travail actuelle
@@ -298,7 +302,6 @@ cssclasses:
 > 	- [ ] Nausées *(Colique néphrétique sur lithiase)*
 > 	- [ ] Vomissements *(Colique néphrétique sur lithiase)*
 > 	- [ ] Sueurs froides *(Colique néphrétique sur lithiase)*
-> 	- [ ] Pas de fièvre initialement *(Colique néphrétique sur lithiase)*
 > - [ ] **98. Antécédents de lithiase *(Colique néphrétique gauche)***
 > 	- [ ] Dépistage pour ostéoporose
 > 	- [ ] Fractures antérieures
@@ -322,8 +325,6 @@ cssclasses:
 > 	- [ ] Activité sportive récente
 > 	- [ ] Déshydratation relative
 > 	- [ ] Consommation de bière
-> 	- [ ] Pas de traumatisme direct
-> 	- [ ] Pas de position antalgique efficace
 > - [ ] **103. Antécédents urologiques *(Colique néphrétique sur lithiase)***
 > 	- [ ] Épisodes similaires antérieurs
 > 	- [ ] Antécédents de lithiase urinaire
@@ -371,27 +372,27 @@ cssclasses:
 > 	- [ ] Antécédents médicaux
 
 > [!tip] 🩺 Status
-> - [ ] **1. Mesures d'hygiène *(Hernie discale, Spondylarthrite ankylosante)***
+> - [ ] **1. Mesures d'hygiène *(2 grilles sur 8)***
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
-> - [ ] **2. Examen du dos *(Hernie discale, Spondylarthrite ankylosante)***
+> - [ ] **2. Examen du dos *(2 grilles sur 8)***
 > 	- [ ] Inspection du dos
 > 	- [ ] Examen de la colonne vertébrale
 > 	- [ ] Test d'élévation jambe tendue (signe de Lasègue) *(Spondylarthrite ankylosante)*
 > 	- [ ] Signe de Mennell *(Spondylarthrite ankylosante)*
-> - [ ] **3. Test de Lasègue (élévation jambe tendue) *(Hernie discale)***
-> - [ ] **4. Examen des extrémités *(Hernie discale, Spondylarthrite ankylosante)***
+> - [ ] **3. Test de Lasègue (élévation jambe tendue) *(1 grille sur 8)***
+> - [ ] **4. Examen des extrémités *(2 grilles sur 8)***
 > 	- [ ] Inspection des membres inférieurs
 > 	- [ ] Inspection des membres supérieurs *(Spondylarthrite ankylosante)*
 > 	- [ ] Inspection des mains *(Spondylarthrite ankylosante)*
 > 	- [ ] Examen du genou *(Spondylarthrite ankylosante)*
 > 	- [ ] Examen de la cheville *(Spondylarthrite ankylosante)*
-> - [ ] **5. Examen neurologique *(Hernie discale, Spondylarthrite ankylosante)***
+> - [ ] **5. Examen neurologique *(2 grilles sur 8)***
 > 	- [ ] Examen ciblé des mouvements passifs et actifs
-> 	- [ ] Examen ciblé de la sensibilité *(Hernie discale)*
-> 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(Hernie discale)*
+> 	- [ ] Examen ciblé de la sensibilité *(1 grille sur 8)*
+> 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(1 grille sur 8)*
 > 	- [ ] Examen ciblé de la marche
-> 	- [ ] Signe de Babinski *(Hernie discale)*
+> 	- [ ] Signe de Babinski *(1 grille sur 8)*
 > - [ ] **6. Examen tête et cou *(Spondylarthrite ankylosante)***
 > 	- [ ] Inspection des conjonctives
 > 	- [ ] Inspection de l'oropharynx
@@ -446,53 +447,53 @@ cssclasses:
 > 	- [ ] Test de Lasègue
 > 	- [ ] Test de Lasègue controlatéral
 > 	- [ ] Test de Bragard
-> - [ ] **39. Examen des hanches *(Fracture vertébrale, Hernie discale)***
+> - [ ] **39. Examen des hanches *(2 grilles sur 8)***
 > 	- [ ] Mobilité passive
 > 	- [ ] Douleur à la mobilisation *(Fracture vertébrale)*
-> 	- [ ] Recherche de douleur *(Hernie discale)*
+> 	- [ ] Recherche de douleur *(1 grille sur 8)*
 > - [ ] **40. Pouls périphériques *(Fracture vertébrale)***
 > 	- [ ] Pouls fémoraux
 > 	- [ ] Pouls poplités
 > 	- [ ] Pouls pédieux
-> - [ ] **41. Observation de la marche *(Hernie discale)***
+> - [ ] **41. Observation de la marche *(1 grille sur 8)***
 > 	- [ ] Schéma de marche
 > 	- [ ] Marche sur la pointe des pieds
 > 	- [ ] Marche sur les talons
-> - [ ] **42. Examen en position debout *(Hernie discale)***
+> - [ ] **42. Examen en position debout *(1 grille sur 8)***
 > 	- [ ] Statique (alignement, symétrie)
 > 	- [ ] Dynamique (mouvements actifs)
 > 	- [ ] Recherche de scoliose
 > 	- [ ] Recherche de déformation étagée
-> - [ ] **43. Tests de mobilité rachidienne *(Hernie discale)***
+> - [ ] **43. Tests de mobilité rachidienne *(1 grille sur 8)***
 > 	- [ ] Test de Schober
 > 	- [ ] Test d'Ott
 > 	- [ ] Distance doigts-sol
-> - [ ] **44. Examen en position assise *(Hernie discale)***
+> - [ ] **44. Examen en position assise *(1 grille sur 8)***
 > 	- [ ] Palpation des processus épineux
 > 	- [ ] Percussion vertébrale
 > 	- [ ] Recherche de points douloureux
-> - [ ] **45. Testing des réflexes *(Hernie discale)***
+> - [ ] **45. Testing des réflexes *(1 grille sur 8)***
 > 	- [ ] Réflexe rotulien (L3-L4)
 > 	- [ ] Réflexe achilléen (S1)
-> - [ ] **46. Testing musculaire segmentaire *(Hernie discale)***
+> - [ ] **46. Testing musculaire segmentaire *(1 grille sur 8)***
 > 	- [ ] L3/L4 : Quadriceps fémoral
 > 	- [ ] L5 : Extenseur propre du gros orteil
 > 	- [ ] S1 : Triceps sural
-> - [ ] **47. Testing sensitif par dermatomes *(Hernie discale)***
+> - [ ] **47. Testing sensitif par dermatomes *(1 grille sur 8)***
 > 	- [ ] L3 : Face interne de la cuisse
 > 	- [ ] L4 : Face interne du mollet
 > 	- [ ] L5 : Face dorsale du pied
 > 	- [ ] S1 : Face latérale du pied
-> - [ ] **48. Examen en décubitus *(Hernie discale)***
+> - [ ] **48. Examen en décubitus *(1 grille sur 8)***
 > 	- [ ] Recherche de contracture musculaire
 > 	- [ ] Test de Lasègue
 > 	- [ ] Test de Lasègue controlatéral
 > 	- [ ] Test de Bragard
-> - [ ] **49. Examen vasculaire périphérique *(Hernie discale)***
+> - [ ] **49. Examen vasculaire périphérique *(1 grille sur 8)***
 > 	- [ ] Palpation des pouls périphériques (si irradiation dans les jambes)
-> - [ ] **50. Toucher rectal si indiqué *(Colique néphrétique gauche, Hernie discale)***
-> 	- [ ] Tonus sphinctérien *(Hernie discale)*
-> 	- [ ] Sensibilité péri-anale *(Hernie discale)*
+> - [ ] **50. Toucher rectal si indiqué *(2 grilles sur 8)***
+> 	- [ ] Tonus sphinctérien *(1 grille sur 8)*
+> 	- [ ] Sensibilité péri-anale *(1 grille sur 8)*
 > - [ ] **51. Inspection générale *(Colique néphrétique gauche)***
 > 	- [ ] État général
 > 	- [ ] Faciès douloureux
@@ -513,9 +514,7 @@ cssclasses:
 > 	- [ ] Inspection: pas de distension *(Colique néphrétique sur lithiase)*
 > 	- [ ] Palpation: sensibilité flanc gauche *(Colique néphrétique sur lithiase)*
 > 	- [ ] Défense absente *(Colique néphrétique sur lithiase)*
-> 	- [ ] Pas de masse palpable *(Colique néphrétique sur lithiase)*
 > 	- [ ] Bruits hydroaériques présents *(Colique néphrétique sur lithiase)*
-> 	- [ ] Pas de globe vésical *(Colique néphrétique sur lithiase)*
 > - [ ] **56. Palpation des points urétéraux *(Colique néphrétique gauche, Colique néphrétique sur lithiase)***
 > 	- [ ] Point urétéral supérieur
 > 	- [ ] Point urétéral moyen
@@ -527,7 +526,6 @@ cssclasses:
 > 	- [ ] Recherche d'écoulement *(Colique néphrétique gauche)*
 > 	- [ ] Inspection: testicules symétriques *(Colique néphrétique sur lithiase)*
 > 	- [ ] Palpation testiculaire: indolore, pas de masse *(Colique néphrétique sur lithiase)*
-> 	- [ ] Épididymes normaux *(Colique néphrétique sur lithiase)*
 > 	- [ ] Cordons spermatiques sans anomalie *(Colique néphrétique sur lithiase)*
 > 	- [ ] Réflexe crémastérien présent *(Colique néphrétique sur lithiase)*
 > - [ ] **58. Signes vitaux complémentaires *(Colique néphrétique gauche)***
@@ -544,7 +542,6 @@ cssclasses:
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Température
 > 	- [ ] Fréquence respiratoire
-> 	- [ ] Saturation O2 normale
 > - [ ] **61. Examen des fosses lombaires *(Colique néphrétique sur lithiase)***
 > 	- [ ] Inspection: pas d'ecchymose, pas de tuméfaction
 > 	- [ ] Palpation douce: sensibilité

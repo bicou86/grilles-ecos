@@ -28,17 +28,21 @@ cssclasses:
 > AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Gastro-Hépatologie
+# Diarrhée ⭐️
 
-## Diarrhée ⭐️
-
-*5 grilles · 5 diagnostics distincts* — [[SSP — Diarrhée]]
+*Gastro-Hépatologie · 5 grilles · 5 diagnostics distincts* — [[SSP — Diarrhée]]
 
 > [!abstract] Les 5 grilles fusionnées
 > - **AMBOSS-8** — MICI (Crohn / RCUH) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-8_-_Troubles_du_transit_-_Homme_32_ans_-_Grille_ECOS.html>)
@@ -244,11 +248,6 @@ cssclasses:
 > 	- [ ] Tabagisme
 > 	- [ ] Médicaments gastrotoxiques
 > - [ ] **48. Anamnèse systémique *(Rectocolite ulcéro-hémorragique (RCUH))***
-> 	- [ ] Pas de symptômes urinaires
-> 	- [ ] Pas de douleurs articulaires
-> 	- [ ] Pas d'atteinte cutanée
-> 	- [ ] Pas d'atteinte oculaire
-> 	- [ ] Pas de notion de contage
 > - [ ] **49. Anamnèse médicale et chirurgicale *(Rectocolite ulcéro-hémorragique (RCUH))***
 > 	- [ ] Reflux gastro-œsophagien
 > 	- [ ] Lombalgies chroniques
@@ -261,7 +260,6 @@ cssclasses:
 > 	- [ ] Modification récente du transit
 > 	- [ ] Selles noires déféquées
 > 	- [ ] Selles nauséabondes
-> 	- [ ] Absence de selles depuis
 > - [ ] **52. Caractéristiques des selles - Aspect anormal *(Cancer colorectal)***
 > 	- [ ] Selles de couleur habituelle mélée à du sang rouge
 > 	- [ ] Selles rouges avec caillots
@@ -408,7 +406,6 @@ cssclasses:
 > 	- [ ] Mouvements respiratoires
 > - [ ] **24. Auscultation abdominale *(Cancer colorectal)***
 > 	- [ ] Patience
-> 	- [ ] Bruits intestinaux normaux
 > 	- [ ] Fréquence des bruits
 > 	- [ ] Tonalité
 > 	- [ ] Silence abdominal
@@ -416,7 +413,6 @@ cssclasses:
 > - [ ] **25. Percussion abdominale *(Cancer colorectal)***
 > 	- [ ] Patient allongé
 > 	- [ ] Tympanisme
-> 	- [ ] Normal à l'épigastre
 > 	- [ ] Distension gazeuse
 > 	- [ ] Matité
 > 	- [ ] Mesure de la taille du foie, de la rate

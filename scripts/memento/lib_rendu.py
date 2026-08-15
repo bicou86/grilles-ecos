@@ -4,10 +4,16 @@ La charte est celle du memento des neuf grilles officielles : legende, titre de
 specialite, encadres 📋 / 🩺 / 🔬 / 💊, numerotation repartant a 1 dans chaque
 encadre.
 
-MARQUAGE DU SPECIFIQUE. Un item porte par tous les diagnostics de la SSP reste
-nu ; un item partiel est suffixe des diagnostics qui le portent. Le surlignage
-==…== d'Obsidian a ete ecarte : il colore sans dire pourquoi, depend du theme
-et ne survit pas a l'export. Le suffixe est greppable et lisible en clair.
+MARQUAGE DU SPECIFIQUE. Un item porte par TOUTES LES GRILLES de la SSP reste
+nu ; sinon il est suffixe de ce qui le porte — les diagnostics quand ils
+discriminent exactement, le compte de grilles sinon. La regle porte sur les
+grilles et non sur les diagnostics : deux grilles peuvent partager un
+diagnostic, et un item present dans une seule des deux n'est pas pour autant
+un item de ce diagnostic. Voir `marque()` pour l'invariant complet.
+
+Le surlignage ==…== d'Obsidian a ete ecarte : il colore sans dire pourquoi,
+depend du theme et ne survit pas a l'export. Le suffixe est greppable et
+lisible en clair.
 
 DETERMINISME. `lib_fusion.apparier()` rend des groupes dont le champ `cas` est
 un `set` : son ordre d'iteration depend de PYTHONHASHSEED. Tout parcours d'un
@@ -15,6 +21,8 @@ un `set` : son ordre d'iteration depend de PYTHONHASHSEED. Tout parcours d'un
 produiraient des suffixes dans deux ordres differents, et les fichiers
 cesseraient d'etre idempotents.
 """
+
+import re
 
 LEGENDE = """> [!info] Légende
 >
@@ -28,15 +36,67 @@ LEGENDE = """> [!info] Légende
 
 SEUIL_ABREGE = 3   # au-dela, on compte au lieu d'enumerer
 
+# Glyphes decoratifs herites des grilles (⊕ = aggravant, ⊖ = soulageant) : ils
+# doublent un libelle qui dit deja la meme chose (« ⊕ Facteurs aggravants »).
+_GLYPHES = re.compile(r"[⊕⊖⊗⊘]")
 
-def marque(item, diagnostics_total, diag_par_cas):
-    """Suffixe un item des diagnostics qui le portent, s'il n'est pas universel."""
-    diags = sorted({diag_par_cas[c] for c in item["cas"] if c in diag_par_cas})
-    if not diags or len(diags) >= diagnostics_total:
+# Libelle redige a la troisieme personne, adresse a l'examinateur·rice plutot
+# qu'au candidat·e (« L'étudiant évoque le toucher rectal »). Un memento
+# s'adresse a celui qui revise : on retire l'apostrophe de l'enonciateur.
+_TIERS = re.compile(r"^L[e’']\s*(?:étudiant|candidat|examinateur)[e·s]*\s+", re.I)
+
+
+def nettoie_libelle(titre):
+    """Libelle d'affichage : sans glyphe decoratif ni enonciateur a la 3e personne."""
+    titre = _GLYPHES.sub(" ", titre)
+    titre = _TIERS.sub("", titre)
+    titre = re.sub(r"\s+", " ", titre).strip(" -–—/")
+    return titre[:1].upper() + titre[1:] if titre else titre
+
+
+def _porteurs_attendus(diags, diag_par_cas):
+    """Tous les cas dont le diagnostic figure dans `diags`."""
+    return {c for c, d in diag_par_cas.items() if d in diags}
+
+
+def marque(item, cas_ssp, diag_par_cas):
+    """Suffixe un item de ce qui le porte, si toutes les grilles ne le portent pas.
+
+    L'INVARIANT : la marque ne doit jamais permettre de conclure quelque chose
+    de faux sur les grilles qui portent l'item. Trois formes, dans cet ordre :
+
+      - NU              toutes les grilles de la SSP portent l'item. Pas
+                        « tous les diagnostics » : une SSP peut compter trois
+                        grilles de pneumonie, et un item porte par une seule
+                        d'entre elles n'est pas un item de la pneumonie.
+      - *(Diagnostic…)* les porteurs sont EXACTEMENT toutes les grilles de ces
+                        diagnostics-la. Le lecteur peut donc conclure « propre
+                        a ce diagnostic » sans se tromper. Au-dela de trois
+                        diagnostics, on compte au lieu d'enumerer.
+      - *(n grilles sur m)*  les diagnostics ne discriminent pas : les
+                        porteurs sont un sous-ensemble strict des grilles d'un
+                        diagnostic, ou l'une d'elles n'a pas de diagnostic
+                        resolu. Nommer le diagnostic mentirait ; le compte,
+                        lui, est vrai et dit au lecteur que la couverture est
+                        partielle. C'est la forme qui rend le marquage utile
+                        sur une SSP a diagnostic unique, ou l'ancienne regle
+                        se taisait completement.
+
+    `cas_ssp` est l'ensemble des identifiants de grille de la SSP.
+    """
+    porteurs = set(item["cas"])
+    if porteurs >= set(cas_ssp):
         return item["titre"]
-    if len(diags) > SEUIL_ABREGE:
-        return f"{item['titre']} *({len(diags)} diagnostics)*"
-    return f"{item['titre']} *({', '.join(diags)})*"
+    diags = {diag_par_cas[c] for c in porteurs if c in diag_par_cas}
+    fidele = (len(diags) > 0
+              and all(c in diag_par_cas for c in porteurs)
+              and _porteurs_attendus(diags, diag_par_cas) & set(cas_ssp) == porteurs)
+    if fidele:
+        if len(diags) > SEUIL_ABREGE:
+            return f"{item['titre']} *({len(diags)} diagnostics)*"
+        return f"{item['titre']} *({', '.join(sorted(diags))})*"
+    pluriel = "s" if len(porteurs) > 1 else ""
+    return f"{item['titre']} *({len(porteurs)} grille{pluriel} sur {len(cas_ssp)})*"
 
 
 def _suffixe(item, rendu):
@@ -49,7 +109,7 @@ def _suffixe(item, rendu):
     return rendu[len(item["titre"]):]
 
 
-def encadre(genre, entete, items, diagnostics_total, diag_par_cas):
+def encadre(genre, entete, items, cas_ssp, diag_par_cas):
     """Un callout dont la liste est numerotee a partir de 1.
 
     UN SOUS-ITEM HERITE DE LA PORTEE DE SON PARENT et ne la repete pas : son
@@ -64,11 +124,11 @@ def encadre(genre, entete, items, diagnostics_total, diag_par_cas):
         return None
     out = [f"> [!{genre}] {entete}"]
     for numero, item in enumerate(items, 1):
-        rendu = marque(item, diagnostics_total, diag_par_cas)
+        rendu = marque(item, cas_ssp, diag_par_cas)
         out.append(f"> - [ ] **{numero}. {rendu}**")
         herite = _suffixe(item, rendu)
         for sous in item["sous"]:
-            rendu_sous = marque(sous, diagnostics_total, diag_par_cas)
+            rendu_sous = marque(sous, cas_ssp, diag_par_cas)
             if _suffixe(sous, rendu_sous) == herite:
                 rendu_sous = sous["titre"]
             out.append(f"> \t- [ ] {rendu_sous}")

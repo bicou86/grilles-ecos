@@ -8,6 +8,7 @@ cas: 4
 diagnostics: 3
 tags:
   - ecos/memento
+  - ecos/grille-officielle
   - ecos/grille-non-officielle
 cssclasses:
   - skill-ecos
@@ -23,28 +24,33 @@ cssclasses:
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
 
-> [!warning] Mémento dérivé de grilles NON officielles
-> Ces items viennent de grilles d'entraînement (RESCOS, AMBOSS, GERMAN,
-> AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
-> officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
+> [!warning] Mémento mixte — 1 grille officielle, 3 non officielles
+> **RESCOS-70b** fait partie des **neuf grilles officielles** et fait donc
+> autorité ; elle est signalée ⭐️ dans l'encadré ci-dessous. Les 3
+> autres sont des grilles d'entraînement (RESCOS, AMBOSS, GERMAN, AZYGOS)
+> qu'aucun jury n'a validées.
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Neurologie
+# Parésie - AVC ⭐️
 
-## Parésie - AVC ⭐️
-
-*4 grilles · 3 diagnostics distincts* — [[SSP — Parésie - AVC]]
+*Neurologie · 4 grilles · 3 diagnostics distincts* — [[SSP — Parésie - AVC]]
 
 > [!abstract] Les 4 grilles fusionnées
 > - **RESCOS-52** — AIT `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-52%20-%20Paralysie%20-%20Grille%20ECOS.html>)
 > - **RESCOS-53** — Infarctus sylvien superficiel `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-53%20-%20Parésie%20facio-brachiale%20-%20ECC%20Neurologie%20-%20Grille%20ECOS.html>)
 > - **RESCOS-70** — Paralysie de Bell `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-70%20-%20Paralysie%20faciale%20-%20Grille%20ECOS.html>)
-> - **RESCOS-70b** — Paralysie de Bell `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-70b%20-%20Paralysie%20faciale%20-%20Grille%20ECOS.html>)
+> - **RESCOS-70b** ⭐️ **officielle** — Paralysie de Bell `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-70b%20-%20Paralysie%20faciale%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Paralysie *(AIT)***
@@ -60,7 +66,6 @@ cssclasses:
 > 	- [ ] Troubles visuels
 > 	- [ ] Troubles auditifs
 > - [ ] **3. Présence de douleurs *(AIT)***
-> 	- [ ] Pas de douleur associée aux symptômes neurologiques
 > - [ ] **4. Symptômes similaires par le passé *(AIT)***
 > 	- [ ] Premier épisode, jamais eu de symptômes similaires
 > - [ ] **5. Antécédents médicaux et comorbidités *(AIT)***
@@ -68,8 +73,6 @@ cssclasses:
 > 	- [ ] Hospitalisations
 > 	- [ ] Opérations
 > - [ ] **6. Médicaments *(AIT)***
-> 	- [ ] Amlodipine 5mg 1x/jour pour hypertension
-> 	- [ ] Pas d'autre médicament, pas d'allergie
 > - [ ] **7. Habitudes *(AIT)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
@@ -113,71 +116,71 @@ cssclasses:
 > 	- [ ] Troubles de la conscience
 > 	- [ ] État fonctionnel antérieur
 > 	- [ ] Qualité de vie et projet thérapeutique
-> - [ ] **15. Caractérisation du déficit facial *(Paralysie de Bell)***
+> - [ ] **15. Caractérisation du déficit facial *(1 grille sur 4)***
 > 	- [ ] Début
 > 	- [ ] Mode d'installation
 > 	- [ ] Évolution depuis le début
 > 	- [ ] Latéralité
 > 	- [ ] Territoires atteints (front, œil, bouche)
-> - [ ] **16. Douleur rétro-auriculaire *(Paralysie de Bell)***
+> - [ ] **16. Douleur rétro-auriculaire *(1 grille sur 4)***
 > 	- [ ] Présence de la douleur
 > 	- [ ] Antériorité par rapport au déficit
-> - [ ] **17. Symptômes oculaires *(Paralysie de Bell)***
+> - [ ] **17. Symptômes oculaires *(1 grille sur 4)***
 > 	- [ ] Occlusion palpébrale incomplète
 > 	- [ ] Sécheresse / sensation de grain de sable
 > 	- [ ] Larmoiement
 > 	- [ ] Acuité visuelle et douleur oculaire
-> - [ ] **18. Signes d'atteinte du nerf facial en amont *(Paralysie de Bell)***
+> - [ ] **18. Signes d'atteinte du nerf facial en amont *(1 grille sur 4)***
 > 	- [ ] Hyperacousie
 > 	- [ ] Trouble du goût
-> - [ ] **19. Dépistage des signes d'atteinte centrale *(Paralysie de Bell)***
+> - [ ] **19. Dépistage des signes d'atteinte centrale *(1 grille sur 4)***
 > 	- [ ] Déficit moteur ou sensitif d'un membre
 > 	- [ ] Trouble du langage
 > 	- [ ] Diplopie
 > 	- [ ] Trouble de l'équilibre ou de la marche
 > 	- [ ] Céphalée inhabituelle ou perte de connaissance
-> - [ ] **20. Dépistage d'un syndrome de Ramsay-Hunt *(Paralysie de Bell)***
+> - [ ] **20. Dépistage d'un syndrome de Ramsay-Hunt *(1 grille sur 4)***
 > 	- [ ] Vésicules du pavillon ou du conduit auditif
 > 	- [ ] Otalgie ou otorrhée
 > 	- [ ] Baisse d'audition
 > 	- [ ] Vertige rotatoire
-> - [ ] **21. Dépistage d'une borréliose de Lyme *(Paralysie de Bell)***
+> - [ ] **21. Dépistage d'une borréliose de Lyme *(1 grille sur 4)***
 > 	- [ ] Morsure de tique
 > 	- [ ] Érythème migrant
 > 	- [ ] Exposition (forêt, randonnée)
-> - [ ] **22. Terrain et facteurs de risque *(Paralysie de Bell)***
+> - [ ] **22. Terrain et facteurs de risque *(1 grille sur 4)***
 > 	- [ ] Diabète ou hypertension artérielle
 > 	- [ ] Immunosuppression, VIH, IST
 > 	- [ ] Épisode similaire antérieur
-> - [ ] **23. Anamnèse générale, antécédents et habitudes *(Paralysie de Bell)***
+> - [ ] **23. Anamnèse générale, antécédents et habitudes *(1 grille sur 4)***
 > 	- [ ] État fébrile récent · Traitements et allergies · Alcool, tabac, drogues · Antécédents familiaux
-> - [ ] **24. Explore les préoccupations et représentations *(Paralysie de Bell)***
-> - [ ] **25. Caractérisation de l'épisode *(Paralysie de Bell)***
+> - [ ] **24. Explore les préoccupations et représentations *(1 grille sur 4)***
+> - [ ] **25. Caractérisation de l'épisode *(1 grille sur 4)***
 > 	- [ ] Circonstances de survenue
 > 	- [ ] Localisation
 > 	- [ ] Type de symptômes
 > 	- [ ] Symptômes associés
-> - [ ] **26. Précise si les symptômes touchent TOUTE l'hémiface (front compris) ou seulement une partie *(Paralysie de Bell)***
-> - [ ] **27. Chronologie *(Paralysie de Bell)***
+> - [ ] **26. Précise si les symptômes touchent TOUTE l'hémiface (front compris) ou seulement une partie *(1 grille sur 4)***
+> - [ ] **27. Chronologie *(1 grille sur 4)***
 > 	- [ ] Cinétique d'installation
 > 	- [ ] Durée / évolution
 > 	- [ ] Réponse aux symptômes (ce qui a été fait)
-> - [ ] **28. Recherche d'un état fébrile avant ou après l'épisode *(Paralysie de Bell)***
-> - [ ] **29. Épisodes similaires par le passé *(Paralysie de Bell)***
-> - [ ] **30. Recherche des signes d'alerte neurologiques (exclusion atteinte centrale) *(Paralysie de Bell)***
+> - [ ] **28. Recherche d'un état fébrile avant ou après l'épisode *(1 grille sur 4)***
+> - [ ] **29. Épisodes similaires par le passé *(1 grille sur 4)***
+> - [ ] **30. Recherche des signes d'alerte neurologiques (exclusion atteinte centrale) *(1 grille sur 4)***
 > 	- [ ] Déficit d'un membre
 > 	- [ ] Trouble du langage
 > 	- [ ] Diplopie
 > 	- [ ] Trouble de la marche / équilibre
 > 	- [ ] Céphalée inhabituelle
-> - [ ] **31. Évalue le risque de complication oculaire par défaut de fermeture palpébrale *(Paralysie de Bell)***
+> - [ ] **31. Évalue le risque de complication oculaire par défaut de fermeture palpébrale *(1 grille sur 4)***
 > 	- [ ] Recherche de symptômes oculaires (larmoiement, sécheresse, rougeur, douleur)
 > 	- [ ] Intention de protéger l'œil
-> - [ ] **32. État de santé *(Paralysie de Bell)***
+> - [ ] **32. État de santé *(1 grille sur 4)***
 > 	- [ ] Maladies actuelles
 > 	- [ ] Antécédents médico-chirurgicaux
 > 	- [ ] Médicaments
-> - [ ] **33. Investigue les facteurs de risque / causes possibles *(Paralysie de Bell)***
+> - [ ] **33. Investigue les facteurs de risque / causes possibles *(1 grille sur 4)***
 > 	- [ ] Herpès Zoster
 > 	- [ ] Maladie de Lyme
 > 	- [ ] IST (VIH, syphilis)
@@ -248,56 +251,56 @@ cssclasses:
 > 	- [ ] Auscultation carotidienne
 > 	- [ ] Pouls périphériques
 > 	- [ ] Signes d'insuffisance cardiaque
-> - [ ] **16. Inspection du visage au repos *(Paralysie de Bell)***
-> - [ ] **17. Testing du territoire facial supérieur *(Paralysie de Bell)***
+> - [ ] **16. Inspection du visage au repos *(1 grille sur 4)***
+> - [ ] **17. Testing du territoire facial supérieur *(1 grille sur 4)***
 > 	- [ ] Plisser le front · Lever les sourcils · Fermer les yeux avec force
-> - [ ] **18. Occlusion palpébrale et signe de Charles Bell *(Paralysie de Bell)***
-> - [ ] **19. Testing du territoire facial inférieur *(Paralysie de Bell)***
+> - [ ] **18. Occlusion palpébrale et signe de Charles Bell *(1 grille sur 4)***
+> - [ ] **19. Testing du territoire facial inférieur *(1 grille sur 4)***
 > 	- [ ] Sourire / montrer les dents
 > 	- [ ] Gonfler les joues
 > 	- [ ] Plisser les lèvres (siffler)
-> - [ ] **20. Examen des autres paires crâniennes *(Paralysie de Bell)***
+> - [ ] **20. Examen des autres paires crâniennes *(1 grille sur 4)***
 > 	- [ ] II — acuité visuelle et champ visuel par confrontation
 > 	- [ ] III, IV, VI — oculomotricité et réflexe photomoteur
 > 	- [ ] V — sensibilité faciale et masséters
 > 	- [ ] VIII à XII — audition, voile, déglutition, langue
-> - [ ] **21. Examen ophtalmologique ciblé *(Paralysie de Bell)***
+> - [ ] **21. Examen ophtalmologique ciblé *(1 grille sur 4)***
 > 	- [ ] Acuité visuelle
 > 	- [ ] Inspection de la cornée et de la conjonctive
 > 	- [ ] Réflexe cornéen
 > 	- [ ] Recherche de kératite (fluorescéine)
-> - [ ] **22. Otoscopie et inspection du pavillon *(Paralysie de Bell)***
-> - [ ] **23. Palpation de la loge parotidienne et des aires ganglionnaires *(Paralysie de Bell)***
-> - [ ] **24. Examen neurologique des membres et de la coordination *(Paralysie de Bell)***
+> - [ ] **22. Otoscopie et inspection du pavillon *(1 grille sur 4)***
+> - [ ] **23. Palpation de la loge parotidienne et des aires ganglionnaires *(1 grille sur 4)***
+> - [ ] **24. Examen neurologique des membres et de la coordination *(1 grille sur 4)***
 > 	- [ ] Force segmentaire des quatre membres
 > 	- [ ] Sensibilité
 > 	- [ ] Coordination et marche
-> - [ ] **25. Paramètres vitaux et état général *(Paralysie de Bell)***
-> - [ ] **26. Envisage examen de l'acuité visuelle *(Paralysie de Bell)***
-> - [ ] **27. Inspection des paupières et de la fermeture palpébrale (lagophtalmie, signe de Charles Bell) *(Paralysie de Bell)***
-> - [ ] **28. Inspection de la conjonctive et de la cornée (signes d'exposition : rougeur, sécheresse) et évaluation du larmoiement *(Paralysie de Bell)***
+> - [ ] **25. Paramètres vitaux et état général *(1 grille sur 4)***
+> - [ ] **26. Envisage examen de l'acuité visuelle *(1 grille sur 4)***
+> - [ ] **27. Inspection des paupières et de la fermeture palpébrale (lagophtalmie, signe de Charles Bell) *(1 grille sur 4)***
+> - [ ] **28. Inspection de la conjonctive et de la cornée (signes d'exposition : rougeur, sécheresse) et évaluation du larmoiement *(1 grille sur 4)***
 > 	- [ ] Inspection de la conjonctive et de la cornée
 > 	- [ ] Évaluation du larmoiement
-> - [ ] **29. Réaction pupillaire *(Paralysie de Bell)***
-> - [ ] **30. Champs visuels par confrontation *(Paralysie de Bell)***
-> - [ ] **31. Motilité oculaire (6 directions) *(Paralysie de Bell)***
+> - [ ] **29. Réaction pupillaire *(1 grille sur 4)***
+> - [ ] **30. Champs visuels par confrontation *(1 grille sur 4)***
+> - [ ] **31. Motilité oculaire (6 directions) *(1 grille sur 4)***
 > 	- [ ] Horizontal
 > 	- [ ] Vertical
-> - [ ] **32. Fond d'œil à l'ophtalmoscope (intention) *(Paralysie de Bell)***
-> - [ ] **33. Réflexe cornéen (intention) *(Paralysie de Bell)***
-> - [ ] **34. Sensibilité des territoires du V DES DEUX CÔTÉS *(Paralysie de Bell)***
+> - [ ] **32. Fond d'œil à l'ophtalmoscope (intention) *(1 grille sur 4)***
+> - [ ] **33. Réflexe cornéen (intention) *(1 grille sur 4)***
+> - [ ] **34. Sensibilité des territoires du V DES DEUX CÔTÉS *(1 grille sur 4)***
 > 	- [ ] Front
 > 	- [ ] Joues
 > 	- [ ] Mandibules
-> - [ ] **35. NC VII — inspection du visage (recherche d'asymétrie) *(Paralysie de Bell)***
-> - [ ] **36. NC VII — motilité des sourcils *(Paralysie de Bell)***
+> - [ ] **35. NC VII — inspection du visage (recherche d'asymétrie) *(1 grille sur 4)***
+> - [ ] **36. NC VII — motilité des sourcils *(1 grille sur 4)***
 > 	- [ ] Lever les sourcils
 > 	- [ ] Froncer les sourcils
-> - [ ] **37. NC VII — yeux *(Paralysie de Bell)***
+> - [ ] **37. NC VII — yeux *(1 grille sur 4)***
 > 	- [ ] Fermer fortement
 > 	- [ ] Ouverture contre résistance
-> - [ ] **38. NC VII — bouche *(Paralysie de Bell)***
+> - [ ] **38. NC VII — bouche *(1 grille sur 4)***
 > 	- [ ] Découvrir les dents / sourire
 > 	- [ ] Gonfler les joues
-> - [ ] **39. Envisage de tester la force ou les réflexes aux extrémités (exclusion atteinte centrale) *(Paralysie de Bell)***
-> - [ ] **40. Envisage de tester la sensibilité aux extrémités *(Paralysie de Bell)***
+> - [ ] **39. Envisage de tester la force ou les réflexes aux extrémités (exclusion atteinte centrale) *(1 grille sur 4)***
+> - [ ] **40. Envisage de tester la sensibilité aux extrémités *(1 grille sur 4)***

@@ -17,8 +17,7 @@ from lib_cle import cle
 
 REPO = Path(__file__).resolve().parents[2]
 SORTIE = REPO / "docs" / "superpowers" / "rapport-referentiel-memento.md"
-OFFICIELLES = {"RESCOS-9b", "RESCOS-12b", "RESCOS-57b", "RESCOS-58b", "RESCOS-63b",
-               "RESCOS-67b", "RESCOS-68b", "RESCOS-69b", "RESCOS-70b"}
+OFFICIELLES = lib_ssp.OFFICIELLES
 
 
 def tous_les_cas():

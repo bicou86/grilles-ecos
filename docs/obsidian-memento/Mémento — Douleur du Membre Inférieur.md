@@ -3,7 +3,6 @@ aliases:
   - "Mémento Douleur du Membre Inférieur"
 type: memento-ecos-ssp
 ssp: "Douleur du Membre Inférieur"
-specialite: "Non classé"
 cas: 3
 diagnostics: 2
 tags:
@@ -28,15 +27,19 @@ cssclasses:
 > AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Non classé
-
-## Douleur du Membre Inférieur
+# Douleur du Membre Inférieur
 
 *3 grilles · 2 diagnostics distincts* — [[SSP — Douleur du Membre Inférieur]]
 
@@ -46,15 +49,15 @@ cssclasses:
 > - **RESCOS-29** — Embolie pulmonaire `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-29_-_Douleur_a__la_jambe_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif de consultation**
-> - [ ] **2. Caractérisation de la claudication intermittente *(AOMI)***
+> - [ ] **1. Motif de consultation *(2 grilles sur 3)***
+> - [ ] **2. Caractérisation de la claudication intermittente *(1 grille sur 3)***
 > 	- [ ] Début
 > 	- [ ] Caractère répétitif des symptômes
 > 	- [ ] Accentuation à la marche rapide ou montée
 > 	- [ ] Disparition rapide à l'arrêt
 > 	- [ ] Apparition après environ 50 mètres de marche
 > 	- [ ] Crampe qui s'estompe en moins d'une minute à l'arrêt
-> - [ ] **3. Recherche de symptômes associés *(AOMI)***
+> - [ ] **3. Recherche de symptômes associés *(1 grille sur 3)***
 > 	- [ ] Douleurs de repos
 > 	- [ ] Douleurs nocturnes en position couchée
 > 	- [ ] Troubles trophiques des extrémités
@@ -65,26 +68,26 @@ cssclasses:
 > 	- [ ] Diabète
 > 	- [ ] HTA
 > 	- [ ] Dyslipidémie
-> 	- [ ] Antécédents familiaux
-> 	- [ ] Surpoids/obésité
-> 	- [ ] Sédentarité
-> - [ ] **5. Antécédents médicaux**
-> 	- [ ] Arthrose genou gauche *(AOMI)*
-> 	- [ ] Affection PTT *(AOMI)*
-> 	- [ ] Traumatisme *(AOMI)*
+> 	- [ ] Antécédents familiaux *(1 grille sur 3)*
+> 	- [ ] Surpoids/obésité *(1 grille sur 3)*
+> 	- [ ] Sédentarité *(1 grille sur 3)*
+> - [ ] **5. Antécédents médicaux *(2 grilles sur 3)***
+> 	- [ ] Arthrose genou gauche *(1 grille sur 3)*
+> 	- [ ] Affection PTT *(1 grille sur 3)*
+> 	- [ ] Traumatisme *(1 grille sur 3)*
 > 	- [ ] Cancer du sein droit *(Embolie pulmonaire)*
 > 	- [ ] Chimiothérapie *(Embolie pulmonaire)*
 > 	- [ ] Récidive locale avec envahissement ganglionnaire *(Embolie pulmonaire)*
 > 	- [ ] Embolie pulmonaire mère *(Embolie pulmonaire)*
 > 	- [ ] Ménopause *(Embolie pulmonaire)*
-> - [ ] **6. Contexte professionnel et social *(AOMI)***
-> - [ ] **7. Recherche d'ischémie aiguë (5 P) *(AOMI)***
+> - [ ] **6. Contexte professionnel et social *(1 grille sur 3)***
+> - [ ] **7. Recherche d'ischémie aiguë (5 P) *(1 grille sur 3)***
 > 	- [ ] Pain (douleur)
 > 	- [ ] Pulselessness (absence de pouls)
 > 	- [ ] Pallor (pâleur)
 > 	- [ ] Paresthesia (paresthésies)
 > 	- [ ] Paresia (parésie)
-> - [ ] **8. Caractérisation de la douleur du mollet *(AOMI)***
+> - [ ] **8. Caractérisation de la douleur du mollet *(1 grille sur 3)***
 > 	- [ ] Localisation
 > 	- [ ] Irradiation
 > 	- [ ] Intensité
@@ -93,42 +96,42 @@ cssclasses:
 > 	- [ ] Facteur aggravant
 > 	- [ ] Facteur soulageant
 > 	- [ ] Décours temporel
-> - [ ] **9. Évolution et périmètre de marche *(AOMI)***
+> - [ ] **9. Évolution et périmètre de marche *(1 grille sur 3)***
 > 	- [ ] Début des symptômes
 > 	- [ ] Évolution
 > 	- [ ] Périmètre de marche
 > 	- [ ] Caractère répétitif
 > 	- [ ] Symptômes bilatéraux
 > 	- [ ] Impact fonctionnel
-> - [ ] **10. Symptômes associés et sévérité *(AOMI)***
+> - [ ] **10. Symptômes associés et sévérité *(1 grille sur 3)***
 > 	- [ ] Douleurs de repos
 > 	- [ ] Douleurs nocturnes
 > 	- [ ] Position couchée/membre surélevé
 > 	- [ ] Sensation de froid
 > 	- [ ] Troubles trophiques
 > 	- [ ] Pâleur des extrémités
-> - [ ] **11. Antécédents personnels cardiovasculaires *(AOMI)***
+> - [ ] **11. Antécédents personnels cardiovasculaires *(1 grille sur 3)***
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] AVC/AIT
 > 	- [ ] Angor
 > 	- [ ] Interventions vasculaires
 > 	- [ ] Thromboses veineuses
 > 	- [ ] Autres pathologies cardiovasculaires
-> - [ ] **12. Antécédents familiaux cardiovasculaires *(AOMI)***
+> - [ ] **12. Antécédents familiaux cardiovasculaires *(1 grille sur 3)***
 > 	- [ ] Père
 > 	- [ ] Mère
 > 	- [ ] Fratrie
 > 	- [ ] Mort subite familiale
 > 	- [ ] AVC familiaux
 > 	- [ ] Artériopathie familiale
-> - [ ] **13. Médicaments et allergies *(AOMI)***
+> - [ ] **13. Médicaments et allergies *(1 grille sur 3)***
 > 	- [ ] Antihypertenseurs
 > 	- [ ] Antiagrégants plaquettaires
 > 	- [ ] Statines
 > 	- [ ] Antidiabétiques
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Observance thérapeutique
-> - [ ] **14. Habitudes de vie *(AOMI)***
+> - [ ] **14. Habitudes de vie *(1 grille sur 3)***
 > 	- [ ] Alcool
 > 	- [ ] Alimentation
 > 	- [ ] Activité physique
@@ -150,8 +153,6 @@ cssclasses:
 > 	- [ ] Dyspnée d'effort
 > 	- [ ] Excès de poids
 > 	- [ ] Tachypnée
-> 	- [ ] Pas de douleur thoracique
-> 	- [ ] Pas d'hémoptysie
 > - [ ] **18. Facteurs de risque thromboembolique *(Embolie pulmonaire)***
 > 	- [ ] Voyage prolongé en position assise
 > 	- [ ] Obésité
@@ -172,56 +173,54 @@ cssclasses:
 > 	- [ ] Diagnostic alternatif moins probable (+2)
 
 > [!tip] 🩺 Status
-> - [ ] **1. Signes vitaux *(AOMI)***
-> 	- [ ] TA droite 152/88 mmHg
-> 	- [ ] TA gauche 150/86 mmHg
-> - [ ] **2. Inspection des membres inférieurs *(AOMI)***
+> - [ ] **1. Signes vitaux *(1 grille sur 3)***
+> - [ ] **2. Inspection des membres inférieurs *(1 grille sur 3)***
 > 	- [ ] Téguments, ongles et pilosité
 > 	- [ ] Symétrie
 > 	- [ ] Coloration cutanée
 > 	- [ ] Température
-> - [ ] **3. Palpation des pouls périphériques *(AOMI)***
+> - [ ] **3. Palpation des pouls périphériques *(1 grille sur 3)***
 > 	- [ ] Artères fémorales
 > 	- [ ] Artères poplitées
 > 	- [ ] Artères tibiales postérieures
 > 	- [ ] Artères pédieuses
 > - [ ] **4. Auscultation vasculaire *(AOMI)***
-> 	- [ ] Souffle inguinal gauche
-> 	- [ ] Râpeux et irradiant jusqu'à mi-cuisse
+> 	- [ ] Souffle inguinal gauche *(1 grille sur 3)*
+> 	- [ ] Râpeux et irradiant jusqu'à mi-cuisse *(1 grille sur 3)*
 > 	- [ ] Artères carotides
 > 	- [ ] Aorte abdominale
-> 	- [ ] Artères fémorales
-> 	- [ ] Artères rénales
-> 	- [ ] Artères sous-clavières
-> 	- [ ] Comparaison bilatérale
-> - [ ] **5. Test d'Allen (perméabilité artères radiale, cubitale, arcade palmaire) *(AOMI)***
-> - [ ] **6. Mesure de l'index de pression systolique (IPS/ABI) *(AOMI)***
+> 	- [ ] Artères fémorales *(1 grille sur 3)*
+> 	- [ ] Artères rénales *(1 grille sur 3)*
+> 	- [ ] Artères sous-clavières *(1 grille sur 3)*
+> 	- [ ] Comparaison bilatérale *(1 grille sur 3)*
+> - [ ] **5. Test d'Allen (perméabilité artères radiale, cubitale, arcade palmaire) *(1 grille sur 3)***
+> - [ ] **6. Mesure de l'index de pression systolique (IPS/ABI) *(1 grille sur 3)***
 > 	- [ ] Rapport pression cheville/bras
 > 	- [ ] Normal: 0.9-1.3
 > 	- [ ] < 0.9: artériopathie
 > 	- [ ] < 0.4: ischémie critique
-> - [ ] **7. Inspection générale et des membres *(AOMI)***
+> - [ ] **7. Inspection générale et des membres *(1 grille sur 3)***
 > 	- [ ] État général du patient
 > 	- [ ] Téguments
 > 	- [ ] Ongles
 > 	- [ ] Plante des pieds/talons
 > 	- [ ] Xanthélasma
 > 	- [ ] Coloration jaune des doigts
-> - [ ] **8. Palpation des pouls périphériques - membres supérieurs *(AOMI)***
+> - [ ] **8. Palpation des pouls périphériques - membres supérieurs *(1 grille sur 3)***
 > 	- [ ] Température des extrémités
 > 	- [ ] Pouls carotidien
 > 	- [ ] Pouls brachial
 > 	- [ ] Pouls radial
 > 	- [ ] Pouls ulnaire
 > 	- [ ] Test d'Allen
-> - [ ] **9. Palpation des pouls périphériques - membres inférieurs *(AOMI)***
+> - [ ] **9. Palpation des pouls périphériques - membres inférieurs *(1 grille sur 3)***
 > 	- [ ] Aorte abdominale
 > 	- [ ] Pouls fémoral
 > 	- [ ] Pouls poplité
 > 	- [ ] Pouls pédieux
 > 	- [ ] Pouls tibial postérieur
 > 	- [ ] Comparaison droite/gauche systématique
-> - [ ] **10. Prise de tension artérielle selon recommandations OMS *(AOMI)***
+> - [ ] **10. Prise de tension artérielle selon recommandations OMS *(1 grille sur 3)***
 > 	- [ ] Position assise, bras horizontal
 > 	- [ ] Palpation pouls brachial
 > 	- [ ] Placement brassard
@@ -229,13 +228,13 @@ cssclasses:
 > 	- [ ] Dégonflage lent
 > 	- [ ] Mesure systolique/diastolique
 > 	- [ ] Mesure aux deux bras
-> - [ ] **11. Évaluation de la sévérité - Classification Leriche-Fontaine *(AOMI)***
+> - [ ] **11. Évaluation de la sévérité - Classification Leriche-Fontaine *(1 grille sur 3)***
 > 	- [ ] Stade 1
 > 	- [ ] Stade 2
 > 	- [ ] Stade 3
 > 	- [ ] Stade 4
 > 	- [ ] Classification correcte du patient
-> - [ ] **12. Recherche des 5P de l'insuffisance artérielle aiguë *(AOMI)***
+> - [ ] **12. Recherche des 5P de l'insuffisance artérielle aiguë *(1 grille sur 3)***
 > 	- [ ] Pain
 > 	- [ ] Pulselessness
 > 	- [ ] Pallor
@@ -243,9 +242,7 @@ cssclasses:
 > 	- [ ] Paresis
 > - [ ] **13. Examen physique général *(Embolie pulmonaire)***
 > 	- [ ] État général conservé
-> 	- [ ] Pas de cyanose
 > 	- [ ] Dyspnée modérée en parlant
-> 	- [ ] Tachypnée 22/min
 > - [ ] **14. Mesure des périmètres des membres inférieurs *(Embolie pulmonaire)***
 > 	- [ ] Cheville gauche > droite
 > 	- [ ] Mollet gauche > droit
@@ -265,9 +262,7 @@ cssclasses:
 > 	- [ ] Frottement pleural
 > 	- [ ] Épanchement pleural
 > 	- [ ] Fréquence respiratoire
-> 	- [ ] Pas de râles
 > - [ ] **18. Examen cardiovasculaire *(Embolie pulmonaire)***
 > 	- [ ] Tachycardie
 > 	- [ ] Tachyarythmie
 > 	- [ ] Éclat B2 pulmonaire
-> 	- [ ] Pas de signes d'insuffisance cardiaque droite

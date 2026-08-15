@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+import lib_extraction
 import lib_fusion
 import lib_rendu
 
@@ -14,36 +15,63 @@ C = {"id": "C", "sections": {"a": [("item", "a1", "Anamnèse familiale", [])]}}
 
 
 def verifier_marquage():
+    """L'invariant : la marque ne doit rien laisser conclure de faux.
+
+    Ce bloc REMPLACE la version du brief, qui raisonnait en nombre de
+    diagnostics (`marque(item, diagnostics_total, diag)`). Cette regle-la
+    rendait nu un item qu'une partie seulement des grilles portait des lors
+    que tous les diagnostics etaient representes, et se taisait completement
+    sur une SSP a diagnostic unique. Le parametre est desormais l'ensemble des
+    GRILLES de la SSP.
+    """
     ecarts = []
-    diag = {"A": "STEMI", "B": "Péricardite", "C": "Embolie"}
-    partout = {"titre": "Localisation", "cas": {"A", "B", "C"}}
-    partiel = {"titre": "Soulagement en antéflexion", "cas": {"B"}}
-    deux = {"titre": "Facteurs déclenchants", "cas": {"A", "B"}}
+    # 4 grilles, 3 diagnostics : B et C portent tous deux la pericardite.
+    cas = ["A", "B", "C", "D"]
+    diag = {"A": "STEMI", "B": "Péricardite", "C": "Péricardite", "D": "Embolie"}
 
-    if lib_rendu.marque(partout, 3, diag) != "Localisation":
-        ecarts.append("un item porte par tous les cas ne doit pas etre suffixe")
-    if lib_rendu.marque(partiel, 3, diag) != "Soulagement en antéflexion *(Péricardite)*":
-        ecarts.append(f"suffixe simple errone : {lib_rendu.marque(partiel, 3, diag)}")
+    def rendu(titre, porteurs, tous=cas, d=diag):
+        return lib_rendu.marque({"titre": titre, "cas": set(porteurs)}, tous, d)
+
+    if rendu("Localisation", "ABCD") != "Localisation":
+        ecarts.append("un item porte par toutes les grilles doit rester nu")
+
+    # exactement les deux grilles de pericardite -> le diagnostic est fidele
+    attendu = "Soulagement en antéflexion *(Péricardite)*"
+    if rendu("Soulagement en antéflexion", "BC") != attendu:
+        ecarts.append(f"suffixe simple errone : {rendu('Soulagement en antéflexion', 'BC')}")
+
+    # UNE SEULE des deux grilles de pericardite : nommer le diagnostic
+    # laisserait croire que l'item est propre a la pericardite. Il ne l'est pas.
+    if rendu("Frottement", "B") != "Frottement *(1 grille sur 4)*":
+        ecarts.append(f"couverture partielle mal dite : {rendu('Frottement', 'B')}")
+
     attendu = "Facteurs déclenchants *(Péricardite, STEMI)*"
-    if lib_rendu.marque(deux, 3, diag) != attendu:
-        ecarts.append(f"suffixe multiple errone : {lib_rendu.marque(deux, 3, diag)}")
+    if rendu("Facteurs déclenchants", "ABC") != attendu:
+        ecarts.append(f"suffixe multiple errone : {rendu('Facteurs déclenchants', 'ABC')}")
 
-    quatre = {"titre": "Dyspnée", "cas": {"A", "B", "C", "D"}}
-    d4 = dict(diag, D="Pneumothorax", E="Angor")
-    if lib_rendu.marque(quatre, 5, d4) != "Dyspnée *(4 diagnostics)*":
-        ecarts.append(f"abreviation au-dela de 3 non appliquee : {lib_rendu.marque(quatre, 5, d4)}")
+    # au-dela de trois diagnostics fideles, on compte
+    cas5 = ["A", "B", "C", "D", "E"]
+    d5 = {"A": "STEMI", "B": "Péricardite", "C": "Embolie",
+          "D": "Pneumothorax", "E": "Angor"}
+    if rendu("Dyspnée", "ABCD", cas5, d5) != "Dyspnée *(4 diagnostics)*":
+        ecarts.append(f"abreviation au-dela de 3 non appliquee : {rendu('Dyspnée', 'ABCD', cas5, d5)}")
+
+    # SSP a diagnostic unique : le marquage doit rester parlant
+    d1 = {"A": "HTA", "B": "HTA"}
+    if rendu("Fond d'œil", "A", ["A", "B"], d1) != "Fond d'œil *(1 grille sur 2)*":
+        ecarts.append(f"SSP a diagnostic unique muette : {rendu(chr(34)+chr(34), 'A', ['A','B'], d1)}")
+
+    # grille sans diagnostic resolu : aucune conclusion par diagnostic
+    d0 = {"A": "STEMI"}
+    if rendu("Anamnèse familiale", "B", ["A", "B"], d0) != "Anamnèse familiale *(1 grille sur 2)*":
+        ecarts.append("un porteur sans diagnostic ne doit pas etre nomme")
     return ecarts
 
 
 def verifier_elision():
-    """Un sous-item herite de la portee de son parent : il ne la repete pas.
-
-    Le suffixe n'est reaffiche sur un sous-item que s'il DIFFERE de celui du
-    parent — c'est le seul cas ou il apprend quelque chose. Les deux items
-    ci-dessous couvrent les deux sens : portee identique (elidee) et portee
-    plus etroite que celle du parent (conservee).
-    """
+    """Un sous-item herite de la portee de son parent : il ne la repete pas."""
     ecarts = []
+    cas = ["A", "B", "C"]
     diag = {"A": "STEMI", "B": "Péricardite", "C": "Embolie"}
     items = [
         {"titre": "Frottement péricardique", "cas": {"B"},
@@ -58,9 +86,42 @@ def verifier_elision():
         "> - [ ] **2. Caractérisation de la douleur *(Péricardite, STEMI)***",
         "> \t- [ ] Irradiation *(STEMI)*",
     ])
-    rendu = lib_rendu.encadre("note", "📋 Anamnèse", items, 3, diag)
+    rendu = lib_rendu.encadre("note", "📋 Anamnèse", items, cas, diag)
     if rendu != attendu:
         ecarts.append("suffixe herite mal elide — obtenu :\n" + str(rendu))
+    return ecarts
+
+
+def verifier_nettoyage():
+    """Glyphes decoratifs et enonciateur a la 3e personne sont retires."""
+    ecarts = []
+    for brut, attendu in (("⊕ Facteurs aggravants", "Facteurs aggravants"),
+                          ("Facteurs soulageants ⊖", "Facteurs soulageants"),
+                          ("L'étudiant évoque le toucher rectal",
+                           "Évoque le toucher rectal"),
+                          ("Localisation", "Localisation")):
+        obtenu = lib_rendu.nettoie_libelle(brut)
+        if obtenu != attendu:
+            ecarts.append(f"nettoyage errone : {brut!r} -> {obtenu!r}")
+    return ecarts
+
+
+def verifier_reponses_patient():
+    """Les reponses du·de la patient·e ne sont pas des sous-criteres a cocher."""
+    ecarts = []
+    for libelle in ("TA 138/85 mmHg", "Pas de turgescence jugulaire",
+                    "Murmure vésiculaire normal", "Absence de fièvre",
+                    "Température 36.5°C"):
+        if not lib_extraction.reponse_patient(libelle):
+            ecarts.append(f"reponse non reconnue : {libelle!r}")
+    # epargnes : seuil entre parentheses, echelle introduite par « : », et
+    # « Sans… », volontairement hors du motif
+    for libelle in ("Interprétation du test (chute ≥20/10 mmHg)",
+                    "Normal: 0.9-1.3", "Classe I: Activités quotidiennes normales",
+                    "Sans correction", "Bêtabloquant (bisoprolol 5mg/j)",
+                    "Localisation"):
+        if lib_extraction.reponse_patient(libelle):
+            ecarts.append(f"libelle legitime ecarte a tort : {libelle!r}")
     return ecarts
 
 
@@ -104,6 +165,8 @@ def main():
 
     ecarts += verifier_marquage()
     ecarts += verifier_elision()
+    ecarts += verifier_nettoyage()
+    ecarts += verifier_reponses_patient()
 
     if ecarts:
         print("ECHEC —", len(ecarts), "ecart(s) :")

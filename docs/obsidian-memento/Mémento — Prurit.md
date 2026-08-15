@@ -28,17 +28,21 @@ cssclasses:
 > AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Médecine Interne
+# Prurit
 
-## Prurit
-
-*1 grille · 1 diagnostic distinct* — [[SSP — Prurit]]
+*Médecine Interne · 1 grille · 1 diagnostic distinct* — [[SSP — Prurit]]
 
 > [!abstract] La seule grille de cette SSP
 > - **RESCOS-56** — Ictère obstructif `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-56%20-%20Prurit%20-%20Grille%20ECOS.html>)
@@ -57,15 +61,9 @@ cssclasses:
 > 	- [ ] Perte pondérale
 > 	- [ ] Anorexie
 > 	- [ ] Vagues douleurs épigastriques
-> 	- [ ] Pas de fièvre
-> 	- [ ] Pas de frissons
 > - [ ] **4. Antécédents personnels**
 > 	- [ ] Cholécystectomie
 > 	- [ ] Calculs biliaires antérieurs
-> 	- [ ] Pas d'hépatite connue
-> 	- [ ] Pas de transfusion sanguine
-> 	- [ ] Pas de voyage récent
-> 	- [ ] Pas d'exposition à des toxiques
 > - [ ] **5. Habitudes et toxiques**
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Tabagisme
@@ -77,12 +75,6 @@ cssclasses:
 > 	- [ ] Pathologies hépatiques héréditaires
 > 	- [ ] Maladies auto-immunes
 > - [ ] **7. Revue des systèmes**
-> 	- [ ] Pas de méléna
-> 	- [ ] Pas d'hématémèse
-> 	- [ ] Pas de rectorragies
-> 	- [ ] Transit intestinal normal
-> 	- [ ] Pas de troubles urinaires
-> 	- [ ] Pas de dyspnée
 
 > [!tip] 🩺 Status
 > - [ ] **1. Inspection générale**
@@ -90,8 +82,6 @@ cssclasses:
 > 	- [ ] Sclérotiques ictériques
 > 	- [ ] Excoriations cutanées
 > 	- [ ] État général
-> 	- [ ] Pas d'angiomes stellaires
-> 	- [ ] Pas d'érythrose palmaire
 > - [ ] **2. Signes vitaux**
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence cardiaque
@@ -112,7 +102,6 @@ cssclasses:
 > 	- [ ] Tonalité
 > 	- [ ] Souffle vasculaire
 > - [ ] **5. Percussion abdominale**
-> 	- [ ] Tympanisme normal
 > 	- [ ] Matité hépatique
 > 	- [ ] Flèche hépatique
 > 	- [ ] Recherche d'ascite
@@ -128,7 +117,6 @@ cssclasses:
 > 	- [ ] Position décubitus dorsal
 > 	- [ ] Technique main postérieure loge rénale, main antérieure sous rebord costal
 > 	- [ ] Inspiration profonde pour faire descendre le foie
-> 	- [ ] Foie de taille normale
 > 	- [ ] Consistance
 > 	- [ ] Surface
 > 	- [ ] Bord inférieur
@@ -139,15 +127,4 @@ cssclasses:
 > 	- [ ] Vésicule biliaire
 > 	- [ ] Points douloureux épigastriques
 > - [ ] **9. Recherche de signes d'insuffisance hépatocellulaire**
-> 	- [ ] Absence d'ascite
-> 	- [ ] Pas d'angiomes stellaires
-> 	- [ ] Pas d'érythrose palmaire
-> 	- [ ] Pas d'ongles blancs
-> 	- [ ] Pas de foetor hépatique
-> 	- [ ] Pas d'encéphalopathie
 > - [ ] **10. Recherche de signes d'hypertension portale**
-> 	- [ ] Pas de splénomégalie
-> 	- [ ] Pas de circulation collatérale abdominale
-> 	- [ ] Pas d'ascite
-> 	- [ ] Pas de gynécomastie
-> 	- [ ] Pas d'atrophie testiculaire

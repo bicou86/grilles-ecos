@@ -3,11 +3,11 @@ aliases:
   - "Mémento Toux"
 type: memento-ecos-ssp
 ssp: "Toux"
-specialite: "Non classé"
 cas: 13
 diagnostics: 9
 tags:
   - ecos/memento
+  - ecos/grille-officielle
   - ecos/grille-non-officielle
 cssclasses:
   - skill-ecos
@@ -23,20 +23,25 @@ cssclasses:
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
 
-> [!warning] Mémento dérivé de grilles NON officielles
-> Ces items viennent de grilles d'entraînement (RESCOS, AMBOSS, GERMAN,
-> AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
-> officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
+> [!warning] Mémento mixte — 1 grille officielle, 12 non officielles
+> **RESCOS-63b** fait partie des **neuf grilles officielles** et fait donc
+> autorité ; elle est signalée ⭐️ dans l'encadré ci-dessous. Les 12
+> autres sont des grilles d'entraînement (RESCOS, AMBOSS, GERMAN, AZYGOS)
+> qu'aucun jury n'a validées.
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Non classé
-
-## Toux
+# Toux
 
 *13 grilles · 9 diagnostics distincts* — [[SSP — Toux]]
 
@@ -52,38 +57,38 @@ cssclasses:
 > - **German-79** — Faux-croup `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-79_-_Toux_-_Consultation_te_le_phonique_-_Pe_diatrie_-_Grille_ECOS.html>)
 > - **RESCOS-62** — Pneumonie `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-62%20-%20Toux%20-%20ECC%20Poumon%20-%20Grille%20ECOS.html>)
 > - **RESCOS-63** — Coqueluche `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-63%20-%20Toux%20-%20Pédiatrie%20-%20Grille%20ECOS.html>)
-> - **RESCOS-63b** — Coqueluche `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-63b%20-%20Toux%20-%20Pédiatrie%20-%20Grille%20ECOS.html>)
+> - **RESCOS-63b** ⭐️ **officielle** — Coqueluche `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-63b%20-%20Toux%20-%20Pédiatrie%20-%20Grille%20ECOS.html>)
 > - **RESCOS-64-1** — Cancer pulmonaire `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-64%20-%20Toux%20-%20Station%20double%201%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(Asthme, BPCO, Cancer du poumon)***
-> - [ ] **2. Caractérisation de la toux *(Asthme, BPCO, Pneumonie)***
-> 	- [ ] Toux productive d'expectorations *(Asthme)*
-> 	- [ ] Couleur des expectorations *(Asthme, BPCO)*
-> 	- [ ] Volume des expectorations *(Asthme, BPCO)*
-> 	- [ ] Sang dans les expectorations *(Asthme, BPCO)*
-> 	- [ ] Début *(Asthme, BPCO)*
-> 	- [ ] Constant/intermittent *(Asthme, BPCO)*
-> 	- [ ] Événements précipitants *(Asthme, BPCO)*
-> 	- [ ] Progression *(Asthme, BPCO)*
-> 	- [ ] Épisodes antérieurs *(Asthme, BPCO)*
-> 	- [ ] Fréquence *(Asthme, BPCO)*
-> 	- [ ] Facteurs améliorants *(Asthme, BPCO)*
-> 	- [ ] Facteurs aggravants *(Asthme, BPCO)*
+> - [ ] **1. Motif principal *(3 grilles sur 13)***
+> - [ ] **2. Caractérisation de la toux *(3 grilles sur 13)***
+> 	- [ ] Toux productive d'expectorations *(1 grille sur 13)*
+> 	- [ ] Couleur des expectorations *(2 grilles sur 13)*
+> 	- [ ] Volume des expectorations *(2 grilles sur 13)*
+> 	- [ ] Sang dans les expectorations *(2 grilles sur 13)*
+> 	- [ ] Début *(2 grilles sur 13)*
+> 	- [ ] Constant/intermittent *(2 grilles sur 13)*
+> 	- [ ] Événements précipitants *(2 grilles sur 13)*
+> 	- [ ] Progression *(2 grilles sur 13)*
+> 	- [ ] Épisodes antérieurs *(2 grilles sur 13)*
+> 	- [ ] Fréquence *(2 grilles sur 13)*
+> 	- [ ] Facteurs améliorants *(2 grilles sur 13)*
+> 	- [ ] Facteurs aggravants *(2 grilles sur 13)*
 > 	- [ ] Toux productive *(BPCO)*
-> 	- [ ] Type de toux *(Pneumonie)*
-> 	- [ ] Horaire *(Pneumonie)*
-> 	- [ ] Facteurs déclenchants *(Pneumonie)*
-> 	- [ ] Durée et évolution *(Pneumonie)*
-> 	- [ ] Efficacité de la toux *(Pneumonie)*
-> - [ ] **3. Symptômes associés *(Asthme, BPCO, Pneumonie)***
-> 	- [ ] Anxiété *(Asthme)*
-> 	- [ ] Nervosité *(Asthme)*
-> 	- [ ] Sueurs *(Asthme)*
-> - [ ] **4. Recherche de symptômes spécifiques *(Asthme, BPCO)***
+> 	- [ ] Type de toux *(1 grille sur 13)*
+> 	- [ ] Horaire *(1 grille sur 13)*
+> 	- [ ] Facteurs déclenchants *(1 grille sur 13)*
+> 	- [ ] Durée et évolution *(1 grille sur 13)*
+> 	- [ ] Efficacité de la toux *(1 grille sur 13)*
+> - [ ] **3. Symptômes associés *(4 grilles sur 13)***
+> 	- [ ] Anxiété *(1 grille sur 13)*
+> 	- [ ] Nervosité *(1 grille sur 13)*
+> 	- [ ] Sueurs *(1 grille sur 13)*
+> - [ ] **4. Recherche de symptômes spécifiques *(2 grilles sur 13)***
 > 	- [ ] Voyage récent
-> 	- [ ] Céphalées *(Asthme)*
-> 	- [ ] Nausées/vomissements *(Asthme)*
+> 	- [ ] Céphalées *(1 grille sur 13)*
+> 	- [ ] Nausées/vomissements *(1 grille sur 13)*
 > 	- [ ] Fièvre/frissons
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Fatigue
@@ -91,53 +96,53 @@ cssclasses:
 > 	- [ ] Douleur thoracique
 > 	- [ ] Problèmes urinaires
 > 	- [ ] Problèmes intestinaux
-> 	- [ ] Problèmes de sommeil *(Asthme)*
+> 	- [ ] Problèmes de sommeil *(1 grille sur 13)*
 > 	- [ ] Appétit
 > 	- [ ] Variations pondérales
 > 	- [ ] Infections récentes
 > 	- [ ] Symptômes d'infection respiratoire haute
-> 	- [ ] Exposition à la tuberculose *(Asthme)*
-> 	- [ ] Exposition aux fumées/poussières *(Asthme)*
-> 	- [ ] Exposition aux animaux/animaux domestiques *(Asthme)*
+> 	- [ ] Exposition à la tuberculose *(1 grille sur 13)*
+> 	- [ ] Exposition aux fumées/poussières *(1 grille sur 13)*
+> 	- [ ] Exposition aux animaux/animaux domestiques *(1 grille sur 13)*
 > 	- [ ] Œdème des chevilles *(BPCO)*
 > 	- [ ] Essoufflement *(BPCO)*
 > 	- [ ] Problèmes de sommeil, plusieurs oreillers *(BPCO)*
 > 	- [ ] Exposition à la tuberculose, dernier test cutané *(BPCO)*
-> - [ ] **5. Antécédents médicaux *(4 diagnostics)***
-> 	- [ ] Hypertension artérielle *(Pneumonie)*
-> 	- [ ] Toux chronique *(Pneumonie)*
-> - [ ] **6. Allergies *(5 diagnostics)***
+> - [ ] **5. Antécédents médicaux *(5 grilles sur 13)***
+> 	- [ ] Hypertension artérielle *(1 grille sur 13)*
+> 	- [ ] Toux chronique *(1 grille sur 13)*
+> - [ ] **6. Allergies *(6 grilles sur 13)***
 > 	- [ ] Allergies connues *(Tuberculose)*
 > 	- [ ] Manifestations allergiques *(Tuberculose)*
 > 	- [ ] Traitements antiallergiques *(Tuberculose)*
 > 	- [ ] Tests allergologiques antérieurs *(Tuberculose)*
-> - [ ] **7. Médicaments *(4 diagnostics)***
+> - [ ] **7. Médicaments *(4 grilles sur 13)***
 > 	- [ ] Médicaments actuels *(Cancer du poumon)*
 > 	- [ ] Efficacité contre symptômes actuels *(Cancer du poumon)*
-> - [ ] **8. Hospitalisations et antécédents chirurgicaux *(Asthme, BPCO, Cancer du poumon)***
+> - [ ] **8. Hospitalisations et antécédents chirurgicaux *(3 grilles sur 13)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **9. Contacts malades *(Asthme, BPCO)***
-> - [ ] **10. Antécédents familiaux *(5 diagnostics)***
+> - [ ] **9. Contacts malades *(2 grilles sur 13)***
+> - [ ] **10. Antécédents familiaux *(6 grilles sur 13)***
 > 	- [ ] Maladies pulmonaires familiales *(Tuberculose)*
 > 	- [ ] Tuberculose familiale *(Tuberculose)*
-> 	- [ ] Allergies familiales *(Pneumonie, Tuberculose)*
+> 	- [ ] Allergies familiales *(2 grilles sur 13)*
 > 	- [ ] Maladies génétiques *(Tuberculose)*
 > 	- [ ] Maladies cardiovasculaires *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Diabète *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Hypertension *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Mort subite *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Pathologies pulmonaires *(Pneumonie)*
-> 	- [ ] Pathologies cardiovasculaires *(Pneumonie)*
-> 	- [ ] Cancers *(Pneumonie)*
-> 	- [ ] Maladies héréditaires *(Pneumonie)*
-> - [ ] **11. Habitudes et mode de vie *(Asthme, BPCO, Cancer du poumon)***
-> 	- [ ] Occupation *(Asthme)*
+> 	- [ ] Pathologies pulmonaires *(1 grille sur 13)*
+> 	- [ ] Pathologies cardiovasculaires *(1 grille sur 13)*
+> 	- [ ] Cancers *(1 grille sur 13)*
+> 	- [ ] Maladies héréditaires *(1 grille sur 13)*
+> - [ ] **11. Habitudes et mode de vie *(3 grilles sur 13)***
+> 	- [ ] Occupation *(1 grille sur 13)*
 > 	- [ ] Domicile
 > 	- [ ] Alcool
-> 	- [ ] Drogues illicites *(Asthme)*
+> 	- [ ] Drogues illicites *(1 grille sur 13)*
 > 	- [ ] Tabac
-> 	- [ ] Exercice *(Asthme, BPCO)*
+> 	- [ ] Exercice *(2 grilles sur 13)*
 > 	- [ ] Travail *(BPCO, Cancer du poumon)*
 > 	- [ ] Drogues récréatives *(BPCO, Cancer du poumon)*
 > - [ ] **12. Caractérisation de la toux et des expectorations *(Cancer du poumon)***
@@ -180,54 +185,54 @@ cssclasses:
 > - [ ] **16. Contacts malades et antécédents familiaux *(Cancer du poumon)***
 > 	- [ ] Contacts malades
 > 	- [ ] Antécédents familiaux
-> - [ ] **17. Question d’introduction *(Pneumonie)***
-> - [ ] **18. Dimension temporelle *(Pneumonie)***
-> - [ ] **19. Début / durée *(Pneumonie)***
-> - [ ] **20. Apparition *(Pneumonie)***
-> - [ ] **21. Évolution *(Pneumonie)***
-> - [ ] **22. Déclencheurs *(Pneumonie)***
-> - [ ] **23. ⊕ Facteurs aggravants / survenue situationnelle *(Pneumonie)***
-> - [ ] **24. ⊖ Facteurs soulageants / mesures prises jusqu’ici *(Pneumonie)***
-> - [ ] **25. Retentissement des symptômes *(Pneumonie)***
-> - [ ] **26. Dyspnée *(Pneumonie)***
-> 	- [ ] Présence
-> 	- [ ] Circonstances
-> - [ ] **27. Survenue situationnelle *(Pneumonie)***
-> - [ ] **28. Expectoration *(Asthme, Pneumonie)***
-> - [ ] **29. Aspect / couleur / hémoptysie *(Pneumonie)***
-> - [ ] **30. Signes d’infection *(Pneumonie)***
-> - [ ] **31. Fièvre *(Coqueluche, Pneumonie)***
+> - [ ] **17. Question d’introduction *(1 grille sur 13)***
+> - [ ] **18. Dimension temporelle *(1 grille sur 13)***
+> - [ ] **19. Début / durée *(1 grille sur 13)***
+> - [ ] **20. Apparition *(1 grille sur 13)***
+> - [ ] **21. Évolution *(1 grille sur 13)***
+> - [ ] **22. Déclencheurs *(1 grille sur 13)***
+> - [ ] **23. Facteurs aggravants / survenue situationnelle *(1 grille sur 13)***
+> - [ ] **24. Facteurs soulageants / mesures prises jusqu’ici *(1 grille sur 13)***
+> - [ ] **25. Retentissement des symptômes *(1 grille sur 13)***
+> - [ ] **26. Dyspnée *(2 grilles sur 13)***
+> 	- [ ] Présence *(1 grille sur 13)*
+> 	- [ ] Circonstances *(1 grille sur 13)*
+> - [ ] **27. Survenue situationnelle *(1 grille sur 13)***
+> - [ ] **28. Expectoration *(2 grilles sur 13)***
+> - [ ] **29. Aspect / couleur / hémoptysie *(1 grille sur 13)***
+> - [ ] **30. Signes d’infection *(1 grille sur 13)***
+> - [ ] **31. Fièvre *(3 grilles sur 13)***
 > 	- [ ] Début *(Coqueluche)*
 > 	- [ ] Évolution *(Coqueluche)*
 > 	- [ ] Température précisée *(Coqueluche)*
 > 	- [ ] Réponse aux fébrifuges *(Coqueluche)*
 > 	- [ ] Frissons/marbrures *(Coqueluche)*
-> - [ ] **32. Frissons *(Pneumonie)***
-> - [ ] **33. Anamnèse d’exposition / contacts *(Pneumonie)***
-> - [ ] **34. Infections passées *(Pneumonie)***
-> - [ ] **35. Symptômes B *(Pneumonie)***
-> 	- [ ] Perte de poids
-> 	- [ ] Fièvre
-> 	- [ ] Sueurs nocturnes
-> - [ ] **36. Diagnostic différentiel douleur thoracique *(Pneumonie)***
-> - [ ] **37. Douleur thoracique *(Pneumonie)***
-> - [ ] **38. Dépendance respiratoire *(Pneumonie)***
-> - [ ] **39. Irradiation *(Pneumonie)***
-> - [ ] **40. Caractère de pression/serrements *(Pneumonie)***
-> - [ ] **41. Symptômes végétatifs associés *(Pneumonie)***
-> - [ ] **42. Diagnostic différentiel facteurs de risque de thrombo-embolie *(Pneumonie)***
-> - [ ] **43. ATCD de MTEV *(Pneumonie)***
-> - [ ] **44. Immobilisation / opération *(Pneumonie)***
-> - [ ] **45. Voyage longue distance *(Pneumonie)***
-> - [ ] **46. Gonflement/douleur unilatéral(e) de jambe *(Pneumonie)***
-> - [ ] **47. Opérations antérieures *(Pneumonie)***
-> - [ ] **48. Noxes *(Pneumonie)***
-> - [ ] **49. Alcool *(Pneumonie)***
-> - [ ] **50. Tabac *(Pneumonie)***
-> - [ ] **51. Drogues *(Pneumonie)***
-> - [ ] **52. Ancienne profession *(Pneumonie)***
-> - [ ] **53. Environnement / contexte social *(Pneumonie)***
-> - [ ] **54. Présentation avec nom, fonction et tâche *(4 diagnostics)***
+> - [ ] **32. Frissons *(1 grille sur 13)***
+> - [ ] **33. Anamnèse d’exposition / contacts *(1 grille sur 13)***
+> - [ ] **34. Infections passées *(1 grille sur 13)***
+> - [ ] **35. Symptômes B *(2 grilles sur 13)***
+> 	- [ ] Perte de poids *(1 grille sur 13)*
+> 	- [ ] Fièvre *(1 grille sur 13)*
+> 	- [ ] Sueurs nocturnes *(1 grille sur 13)*
+> - [ ] **36. Diagnostic différentiel douleur thoracique *(1 grille sur 13)***
+> - [ ] **37. Douleur thoracique *(1 grille sur 13)***
+> - [ ] **38. Dépendance respiratoire *(1 grille sur 13)***
+> - [ ] **39. Irradiation *(1 grille sur 13)***
+> - [ ] **40. Caractère de pression/serrements *(1 grille sur 13)***
+> - [ ] **41. Symptômes végétatifs associés *(1 grille sur 13)***
+> - [ ] **42. Diagnostic différentiel facteurs de risque de thrombo-embolie *(1 grille sur 13)***
+> - [ ] **43. ATCD de MTEV *(1 grille sur 13)***
+> - [ ] **44. Immobilisation / opération *(1 grille sur 13)***
+> - [ ] **45. Voyage longue distance *(1 grille sur 13)***
+> - [ ] **46. Gonflement/douleur unilatéral(e) de jambe *(1 grille sur 13)***
+> - [ ] **47. Opérations antérieures *(1 grille sur 13)***
+> - [ ] **48. Noxes *(1 grille sur 13)***
+> - [ ] **49. Alcool *(1 grille sur 13)***
+> - [ ] **50. Tabac *(1 grille sur 13)***
+> - [ ] **51. Drogues *(1 grille sur 13)***
+> - [ ] **52. Ancienne profession *(1 grille sur 13)***
+> - [ ] **53. Environnement / contexte social *(1 grille sur 13)***
+> - [ ] **54. Présentation avec nom, fonction et tâche *(4 grilles sur 13)***
 > - [ ] **55. Question d'entrée ouverte - Symptôme principal *(Tuberculose)***
 > - [ ] **56. Épisodes antérieurs de toux ou problèmes respiratoires *(Tuberculose)***
 > 	- [ ] Bronchites récurrentes
@@ -246,7 +251,7 @@ cssclasses:
 > 	- [ ] Odeur *(Tuberculose)*
 > 	- [ ] Couleur des expectorations *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Aspect (mousseux, rosé) *(Insuffisance cardiaque (décompensée))*
-> - [ ] **59. Hémoptysie *(Insuffisance cardiaque (décompensée), Pneumonie, Tuberculose)***
+> - [ ] **59. Hémoptysie *(3 grilles sur 13)***
 > 	- [ ] Présence de sang *(Tuberculose)*
 > 	- [ ] Quantité si présente *(Tuberculose)*
 > 	- [ ] Aspect (strié, franc) *(Tuberculose)*
@@ -401,7 +406,6 @@ cssclasses:
 > 	- [ ] Tabagisme actif *(Cancer pulmonaire)*
 > 	- [ ] Profession *(Cancer pulmonaire)*
 > 	- [ ] Consommation d'alcool *(Cancer pulmonaire)*
-> 	- [ ] Absence de toxiques *(Cancer pulmonaire)*
 > - [ ] **88. Allergies et intolérances *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Allergies environnementales
@@ -411,63 +415,63 @@ cssclasses:
 > 	- [ ] Vit avec
 > 	- [ ] Aide à domicile
 > 	- [ ] Autonomie pour les AVQ
-> - [ ] **90. Symptômes principaux *(Asthme, Pneumonie)***
-> - [ ] **91. Épisodes antérieurs de symptômes similaires *(Pneumonie)***
-> - [ ] **92. Début et mode d'apparition *(Pneumonie)***
+> - [ ] **90. Symptômes principaux *(2 grilles sur 13)***
+> - [ ] **91. Épisodes antérieurs de symptômes similaires *(1 grille sur 13)***
+> - [ ] **92. Début et mode d'apparition *(1 grille sur 13)***
 > 	- [ ] Quand
 > 	- [ ] Comment
-> - [ ] **93. Caractéristiques de la toux *(Asthme, Faux-croup, Pneumonie)***
-> 	- [ ] Productive ou sèche *(Pneumonie)*
-> 	- [ ] Couleur des expectorations *(Pneumonie)*
-> 	- [ ] Début et fréquence *(Asthme)*
-> 	- [ ] Antécédents similaires *(Asthme)*
+> - [ ] **93. Caractéristiques de la toux *(3 grilles sur 13)***
+> 	- [ ] Productive ou sèche *(1 grille sur 13)*
+> 	- [ ] Couleur des expectorations *(1 grille sur 13)*
+> 	- [ ] Début et fréquence *(1 grille sur 13)*
+> 	- [ ] Antécédents similaires *(1 grille sur 13)*
 > 	- [ ] Son *(Faux-croup)*
 > 	- [ ] Type *(Faux-croup)*
 > 	- [ ] Productive ou non *(Faux-croup)*
-> - [ ] **94. Facteurs aggravants *(Pneumonie)***
-> - [ ] **95. Facteurs améliorants *(Pneumonie)***
-> - [ ] **96. Anamnèse de l'entourage (contagion) *(Pneumonie)***
-> - [ ] **97. Symptômes associés - Infection ORL *(Pneumonie)***
+> - [ ] **94. Facteurs aggravants *(1 grille sur 13)***
+> - [ ] **95. Facteurs améliorants *(1 grille sur 13)***
+> - [ ] **96. Anamnèse de l'entourage (contagion) *(1 grille sur 13)***
+> - [ ] **97. Symptômes associés - Infection ORL *(1 grille sur 13)***
 > 	- [ ] Rhinorrhée
 > 	- [ ] Mal de gorge
-> - [ ] **98. Symptômes associés - Baisse de performance *(Pneumonie)***
-> - [ ] **99. Symptômes associés - Écoulement postnasal *(Pneumonie)***
-> - [ ] **100. Symptômes associés - Douleurs thoraciques *(Pneumonie)***
+> - [ ] **98. Symptômes associés - Baisse de performance *(1 grille sur 13)***
+> - [ ] **99. Symptômes associés - Écoulement postnasal *(1 grille sur 13)***
+> - [ ] **100. Symptômes associés - Douleurs thoraciques *(1 grille sur 13)***
 > 	- [ ] Présence
 > 	- [ ] Caractéristiques
-> - [ ] **101. Symptômes associés - Symptômes cardiaques *(Pneumonie)***
-> - [ ] **102. Symptômes associés - Sibilances *(Pneumonie)***
-> - [ ] **103. Symptômes associés - Reflux gastro-œsophagien *(Pneumonie)***
-> - [ ] **104. Symptômes associés - Œdèmes des membres inférieurs *(Pneumonie)***
-> - [ ] **105. Exposition (professionnelle, environnementale) *(Pneumonie)***
-> - [ ] **106. Médicaments actuels *(Asthme, Pneumonie)***
-> - [ ] **107. Habitudes de vie *(Asthme, Pneumonie)***
+> - [ ] **101. Symptômes associés - Symptômes cardiaques *(1 grille sur 13)***
+> - [ ] **102. Symptômes associés - Sibilances *(1 grille sur 13)***
+> - [ ] **103. Symptômes associés - Reflux gastro-œsophagien *(1 grille sur 13)***
+> - [ ] **104. Symptômes associés - Œdèmes des membres inférieurs *(1 grille sur 13)***
+> - [ ] **105. Exposition (professionnelle, environnementale) *(1 grille sur 13)***
+> - [ ] **106. Médicaments actuels *(2 grilles sur 13)***
+> - [ ] **107. Habitudes de vie *(2 grilles sur 13)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
-> - [ ] **108. Anamnèse familiale *(Asthme, Pneumonie)***
-> 	- [ ] Mère *(Asthme)*
-> 	- [ ] Père *(Asthme)*
-> - [ ] **109. Anamnèse sociale *(Asthme, Pneumonie)***
+> - [ ] **108. Anamnèse familiale *(2 grilles sur 13)***
+> 	- [ ] Mère *(1 grille sur 13)*
+> 	- [ ] Père *(1 grille sur 13)*
+> - [ ] **109. Anamnèse sociale *(2 grilles sur 13)***
 > 	- [ ] État civil
 > 	- [ ] Enfants
-> 	- [ ] Situation professionnelle *(Pneumonie)*
-> 	- [ ] Profession *(Asthme)*
-> - [ ] **110. État actuel *(Asthme)***
-> - [ ] **111. Type de dyspnée *(Asthme)***
+> 	- [ ] Situation professionnelle *(1 grille sur 13)*
+> 	- [ ] Profession *(1 grille sur 13)*
+> - [ ] **110. État actuel *(1 grille sur 13)***
+> - [ ] **111. Type de dyspnée *(1 grille sur 13)***
 > 	- [ ] Repos ou effort
 > 	- [ ] Circonstances de début
-> - [ ] **112. Douleurs *(Asthme)***
+> - [ ] **112. Douleurs *(1 grille sur 13)***
 > 	- [ ] Douleurs à la toux
 > 	- [ ] Autres douleurs
-> - [ ] **113. Infection préalable ou concomitante *(Asthme)***
-> - [ ] **114. Symptômes infectieux *(Asthme)***
+> - [ ] **113. Infection préalable ou concomitante *(1 grille sur 13)***
+> - [ ] **114. Symptômes infectieux *(1 grille sur 13)***
 > 	- [ ] Fièvre
 > 	- [ ] Rhinorrhée
-> - [ ] **115. Allergies connues *(Asthme)***
-> - [ ] **116. Antécédents cardiaques *(Asthme)***
-> - [ ] **117. Autres antécédents médicaux *(Asthme)***
-> - [ ] **118. Activités sportives et loisirs *(Asthme)***
+> - [ ] **115. Allergies connues *(1 grille sur 13)***
+> - [ ] **116. Antécédents cardiaques *(1 grille sur 13)***
+> - [ ] **117. Autres antécédents médicaux *(1 grille sur 13)***
+> - [ ] **118. Activités sportives et loisirs *(1 grille sur 13)***
 > - [ ] **119. Présentation avec nom et fonction *(Faux-croup)***
 > - [ ] **120. Identification complète *(Faux-croup)***
 > 	- [ ] Nom, âge et sexe de l'enfant
@@ -512,39 +516,39 @@ cssclasses:
 > - [ ] **137. Résumé et confirmation *(Faux-croup)***
 > 	- [ ] Fait un bref résumé de la situation
 > 	- [ ] Demande confirmation de l'exactitude
-> - [ ] **138. Caractérisation des expectorations *(Pneumonie)***
+> - [ ] **138. Caractérisation des expectorations *(1 grille sur 13)***
 > 	- [ ] Couleur des crachats
 > 	- [ ] Quantité
 > 	- [ ] Odeur
 > 	- [ ] Présence de sang
 > 	- [ ] Évolution dans le temps
-> - [ ] **139. Caractérisation de la douleur thoracique *(Pneumonie)***
+> - [ ] **139. Caractérisation de la douleur thoracique *(1 grille sur 13)***
 > 	- [ ] Localisation
 > 	- [ ] Reproductible à la palpation
 > 	- [ ] Variation avec la respiration
 > 	- [ ] Irradiation
 > 	- [ ] Intensité
 > 	- [ ] Durée et circonstances
-> - [ ] **140. Évaluation de la dyspnée *(Pneumonie)***
+> - [ ] **140. Évaluation de la dyspnée *(1 grille sur 13)***
 > 	- [ ] Circonstances
 > 	- [ ] Classification NYHA ou mMRC
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
 > 	- [ ] Évolution dans le temps
 > 	- [ ] Sifflements ou bruits associés
-> - [ ] **141. Signes généraux et symptômes associés *(Pneumonie)***
+> - [ ] **141. Signes généraux et symptômes associés *(1 grille sur 13)***
 > 	- [ ] Fièvre
 > 	- [ ] Asthénie et perte de poids
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Signes d'insuffisance cardiaque
 > 	- [ ] Autres symptômes respiratoires
-> - [ ] **142. Antécédents personnels et facteurs de risque *(Pneumonie)***
+> - [ ] **142. Antécédents personnels et facteurs de risque *(1 grille sur 13)***
 > 	- [ ] Pathologies chroniques
 > 	- [ ] Antécédents pulmonaires
 > 	- [ ] Hospitalisations antérieures
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Vaccinations
-> - [ ] **143. Habitudes et expositions *(Pneumonie)***
+> - [ ] **143. Habitudes et expositions *(1 grille sur 13)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
@@ -589,22 +593,12 @@ cssclasses:
 > - [ ] **153. Antécédents respiratoires *(Cancer pulmonaire)***
 > 	- [ ] BPCO suspectée par médecin traitant
 > 	- [ ] Épisodes de bronchite
-> 	- [ ] Absence de tuberculose connue
 > 	- [ ] Participation aux campagnes de dépistage
 > - [ ] **154. Symptômes généraux et signes d'alarme *(Cancer pulmonaire)***
 > 	- [ ] Perte de poids
-> 	- [ ] Absence de fièvre
-> 	- [ ] Absence de sudations nocturnes
-> 	- [ ] Absence de fatigue anormale
 > - [ ] **155. Signes négatifs importants *(Cancer pulmonaire)***
-> 	- [ ] Pas d'œdèmes des membres inférieurs
-> 	- [ ] Pas de troubles du sommeil respiratoires
-> 	- [ ] Pas de voyage récent
-> 	- [ ] Pas d'immobilisation ou antécédent thromboembolique
 > - [ ] **156. Antécédents personnels et familiaux *(Cancer pulmonaire)***
-> 	- [ ] Absence de maladie cardiaque
 > 	- [ ] Antécédents familiaux
-> 	- [ ] Absence d'antécédent familial de tuberculose ou embolie
 > 	- [ ] Suivi gynécologique régulier
 > - [ ] **157. Contexte social et professionnel *(Cancer pulmonaire)***
 > 	- [ ] Situation familiale
@@ -612,16 +606,16 @@ cssclasses:
 > 	- [ ] Impact sur la qualité de vie
 
 > [!tip] 🩺 Status
-> - [ ] **1. Mesures d'hygiène *(Asthme, BPCO, Cancer du poumon)***
+> - [ ] **1. Mesures d'hygiène *(3 grilles sur 13)***
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
-> - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(Asthme, Cancer du poumon)***
+> - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(2 grilles sur 13)***
 > 	- [ ] Inspection de l'oropharynx
-> - [ ] **3. Examen du cou *(Asthme, BPCO, Cancer du poumon)***
+> - [ ] **3. Examen du cou *(3 grilles sur 13)***
 > 	- [ ] Palpation des ganglions lymphatiques de la tête et du cou
 > 	- [ ] Évaluation de la distension veineuse jugulaire *(BPCO)*
-> - [ ] **4. Examen cardiovasculaire *(4 diagnostics)***
-> 	- [ ] Auscultation cardiaque *(Asthme, BPCO, Cancer du poumon)*
+> - [ ] **4. Examen cardiovasculaire *(4 grilles sur 13)***
+> 	- [ ] Auscultation cardiaque *(3 grilles sur 13)*
 > 	- [ ] Palpation du pouls radial *(BPCO)*
 > 	- [ ] Palpation du choc apexien *(BPCO)*
 > 	- [ ] Recherche du reflux hépato-jugulaire *(BPCO)*
@@ -629,20 +623,20 @@ cssclasses:
 > 	- [ ] Recherche de signes d'insuffisance cardiaque droite *(Cancer pulmonaire)*
 > 	- [ ] Évaluation des pouls périphériques *(Cancer pulmonaire)*
 > 	- [ ] Recherche d'œdèmes des membres inférieurs *(Cancer pulmonaire)*
-> - [ ] **5. Examen thoracique *(Asthme, BPCO, Cancer du poumon)***
+> - [ ] **5. Examen thoracique *(3 grilles sur 13)***
 > 	- [ ] Inspection du thorax
 > 	- [ ] Palpation du thorax
 > 	- [ ] Percussion des champs pulmonaires
 > 	- [ ] Auscultation pulmonaire
-> 	- [ ] Recherche de frémitus *(Asthme)*
+> 	- [ ] Recherche de frémitus *(1 grille sur 13)*
 > 	- [ ] Recherche de frémitus vocal *(BPCO)*
 > 	- [ ] Examen du frémissement *(Cancer du poumon)*
 > 	- [ ] Inspection du mouchoir du patient *(Cancer du poumon)*
-> - [ ] **6. Examen des extrémités *(6 diagnostics)***
-> 	- [ ] Inspection des mains *(Asthme, BPCO, Cancer du poumon)*
+> - [ ] **6. Examen des extrémités *(6 grilles sur 13)***
+> 	- [ ] Inspection des mains *(3 grilles sur 13)*
 > 	- [ ] Recherche d'œdème déclive *(BPCO)*
-> 	- [ ] Recherche d'hippocratisme digital *(Pneumonie, Tuberculose)*
-> 	- [ ] Recherche de cyanose *(Pneumonie, Tuberculose)*
+> 	- [ ] Recherche d'hippocratisme digital *(2 grilles sur 13)*
+> 	- [ ] Recherche de cyanose *(2 grilles sur 13)*
 > 	- [ ] État des ongles *(Tuberculose)*
 > 	- [ ] Température des extrémités *(Tuberculose)*
 > 	- [ ] Hippocratisme digital *(Insuffisance cardiaque (décompensée))*
@@ -651,33 +645,33 @@ cssclasses:
 > 	- [ ] Temps de recoloration capillaire *(Insuffisance cardiaque (décompensée))*
 > - [ ] **7. Examen du dos *(Cancer du poumon)***
 > 	- [ ] Examen de la colonne vertébrale
-> - [ ] **8. Paramètres vitaux *(Pneumonie)***
-> - [ ] **9. Orientation *(Pneumonie)***
-> - [ ] **10. Inspection *(Pneumonie)***
-> - [ ] **11. Pattern respiratoire *(Pneumonie)***
-> - [ ] **12. Forme du thorax *(Pneumonie)***
-> - [ ] **13. Signes de cyanose *(Pneumonie)***
-> - [ ] **14. Palpation *(Pneumonie)***
-> - [ ] **15. Percussion *(Pneumonie)***
-> - [ ] **16. Fremitus vocal augmenté *(Pneumonie)***
-> - [ ] **17. Bronchophonie *(Pneumonie)***
-> - [ ] **18. Auscultation *(Pneumonie)***
-> - [ ] **19. Auscultation cardiaque *(Pneumonie)***
-> - [ ] **20. Veines jugulaires *(Pneumonie)***
-> - [ ] **21. Inspection et palpation périphérie *(Pneumonie)***
+> - [ ] **8. Paramètres vitaux *(1 grille sur 13)***
+> - [ ] **9. Orientation *(1 grille sur 13)***
+> - [ ] **10. Inspection *(1 grille sur 13)***
+> - [ ] **11. Pattern respiratoire *(1 grille sur 13)***
+> - [ ] **12. Forme du thorax *(1 grille sur 13)***
+> - [ ] **13. Signes de cyanose *(1 grille sur 13)***
+> - [ ] **14. Palpation *(1 grille sur 13)***
+> - [ ] **15. Percussion *(1 grille sur 13)***
+> - [ ] **16. Fremitus vocal augmenté *(1 grille sur 13)***
+> - [ ] **17. Bronchophonie *(1 grille sur 13)***
+> - [ ] **18. Auscultation *(1 grille sur 13)***
+> - [ ] **19. Auscultation cardiaque *(1 grille sur 13)***
+> - [ ] **20. Veines jugulaires *(1 grille sur 13)***
+> - [ ] **21. Inspection et palpation périphérie *(1 grille sur 13)***
 > - [ ] **22. Signes vitaux *(Insuffisance cardiaque (décompensée), Tuberculose)***
 > 	- [ ] Pression artérielle
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Température
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Saturation en oxygène *(Insuffisance cardiaque (décompensée))*
-> - [ ] **23. Examen cardiaque *(Asthme, Pneumonie, Tuberculose)***
-> 	- [ ] Palpation du précordium *(Pneumonie, Tuberculose)*
-> 	- [ ] Auscultation cardiaque *(Pneumonie, Tuberculose)*
+> - [ ] **23. Examen cardiaque *(3 grilles sur 13)***
+> 	- [ ] Palpation du précordium *(2 grilles sur 13)*
+> 	- [ ] Auscultation cardiaque *(2 grilles sur 13)*
 > 	- [ ] Recherche de signes d'insuffisance cardiaque droite *(Tuberculose)*
 > 	- [ ] Pouls périphériques *(Tuberculose)*
-> 	- [ ] Auscultation *(Asthme)*
-> 	- [ ] Pouls *(Asthme)*
+> 	- [ ] Auscultation *(1 grille sur 13)*
+> 	- [ ] Pouls *(1 grille sur 13)*
 > - [ ] **24. Examen pulmonaire - Inspection *(Insuffisance cardiaque (décompensée), Tuberculose)***
 > 	- [ ] Symétrie thoracique
 > 	- [ ] Utilisation des muscles accessoires *(Tuberculose)*
@@ -715,20 +709,20 @@ cssclasses:
 > 	- [ ] Ascension *(Tuberculose)*
 > 	- [ ] Bilatéralité et symétrie *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Œdème sacré *(Insuffisance cardiaque (décompensée))*
-> - [ ] **30. Examen ORL *(Pneumonie, Tuberculose)***
+> - [ ] **30. Examen ORL *(2 grilles sur 13)***
 > 	- [ ] Inspection de la gorge *(Tuberculose)*
 > 	- [ ] Otoscopie *(Tuberculose)*
 > 	- [ ] Rhinoscopie antérieure *(Tuberculose)*
 > 	- [ ] Palpation sinusienne *(Tuberculose)*
-> 	- [ ] Gorge *(Pneumonie)*
-> 	- [ ] Oreilles *(Pneumonie)*
-> 	- [ ] Nez *(Pneumonie)*
+> 	- [ ] Gorge *(1 grille sur 13)*
+> 	- [ ] Oreilles *(1 grille sur 13)*
+> 	- [ ] Nez *(1 grille sur 13)*
 > - [ ] **31. Palpation des aires ganglionnaires *(Tuberculose)***
 > 	- [ ] Ganglions cervicaux
 > 	- [ ] Ganglions sus-claviculaires
 > 	- [ ] Ganglions axillaires
 > 	- [ ] Autres territoires
-> - [ ] **32. Examen abdominal *(Insuffisance cardiaque (décompensée), Pneumonie, Tuberculose)***
+> - [ ] **32. Examen abdominal *(3 grilles sur 13)***
 > 	- [ ] Inspection *(Tuberculose)*
 > 	- [ ] Auscultation *(Tuberculose)*
 > 	- [ ] Palpation (hépatomégalie, splénomégalie) *(Tuberculose)*
@@ -761,79 +755,78 @@ cssclasses:
 > 	- [ ] Gorge
 > 	- [ ] Oreilles
 > 	- [ ] Nez
-> 	- [ ] Absence de foyer infectieux
 > - [ ] **38. Palpation ganglionnaire *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Aires cervicales
 > 	- [ ] Aires axillaires
 > 	- [ ] Autres territoires
-> - [ ] **39. Signes vitaux mesurés *(Pneumonie)***
-> - [ ] **40. Examen pulmonaire *(Pneumonie)***
+> - [ ] **39. Signes vitaux mesurés *(1 grille sur 13)***
+> - [ ] **40. Examen pulmonaire *(1 grille sur 13)***
 > 	- [ ] Palpation (frémissement vocal)
 > 	- [ ] Percussion thoracique
 > 	- [ ] Auscultation systématique antérieure et postérieure
-> - [ ] **41. Inspection des veines jugulaires *(Pneumonie)***
-> - [ ] **42. Recherche d'œdèmes des membres inférieurs *(Pneumonie)***
-> - [ ] **43. Palpation des ganglions lymphatiques *(Pneumonie)***
-> - [ ] **44. Hygiène des mains *(Asthme)***
-> - [ ] **45. Inspection thoracique *(Asthme, Cancer pulmonaire)***
+> - [ ] **41. Inspection des veines jugulaires *(1 grille sur 13)***
+> - [ ] **42. Recherche d'œdèmes des membres inférieurs *(1 grille sur 13)***
+> - [ ] **43. Palpation des ganglions lymphatiques *(1 grille sur 13)***
+> - [ ] **44. Hygiène des mains *(1 grille sur 13)***
+> - [ ] **45. Inspection thoracique *(2 grilles sur 13)***
 > 	- [ ] Inspection statique du thorax *(Cancer pulmonaire)*
 > 	- [ ] Évaluation de la symétrie respiratoire *(Cancer pulmonaire)*
 > 	- [ ] Recherche de déformation thoracique *(Cancer pulmonaire)*
 > 	- [ ] Évaluation du tirage et de l'ampliation *(Cancer pulmonaire)*
-> - [ ] **46. Auscultation pulmonaire *(Asthme, Cancer pulmonaire, Pneumonie)***
-> 	- [ ] Demande respiration bouche ouverte *(Pneumonie)*
-> 	- [ ] Points d'auscultation *(Pneumonie)*
-> 	- [ ] Comparaison symétrique G/D systématique *(Pneumonie)*
-> 	- [ ] Murmure vésiculaire *(Pneumonie)*
-> 	- [ ] Souffle tubaire *(Pneumonie)*
+> - [ ] **46. Auscultation pulmonaire *(3 grilles sur 13)***
+> 	- [ ] Demande respiration bouche ouverte *(1 grille sur 13)*
+> 	- [ ] Points d'auscultation *(1 grille sur 13)*
+> 	- [ ] Comparaison symétrique G/D systématique *(1 grille sur 13)*
+> 	- [ ] Murmure vésiculaire *(1 grille sur 13)*
+> 	- [ ] Souffle tubaire *(1 grille sur 13)*
 > 	- [ ] Auscultation systématique des deux champs pulmonaires *(Cancer pulmonaire)*
 > 	- [ ] Identification des sibilances *(Cancer pulmonaire)*
 > 	- [ ] Recherche de râles crépitants ou sous-crépitants *(Cancer pulmonaire)*
 > 	- [ ] Évaluation du murmure vésiculaire *(Cancer pulmonaire)*
-> - [ ] **47. Examen des extrémités (recherche d'embolie pulmonaire) *(Asthme)***
-> - [ ] **48. Examens complémentaires si pertinents *(Asthme)***
+> - [ ] **47. Examen des extrémités (recherche d'embolie pulmonaire) *(1 grille sur 13)***
+> - [ ] **48. Examens complémentaires si pertinents *(1 grille sur 13)***
 > 	- [ ] Peau
 > 	- [ ] Gorge
 > 	- [ ] Ganglions lymphatiques
 > - [ ] **49. Note: Examen clinique non réalisable par téléphone *(Faux-croup)***
 > 	- [ ] Évaluation indirecte basée sur les observations parentales
-> - [ ] **50. Inspection générale - patient couché *(Pneumonie)***
+> - [ ] **50. Inspection générale - patient couché *(1 grille sur 13)***
 > 	- [ ] Aspect général
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Cycle respiratoire
 > 	- [ ] Détresse respiratoire
 > 	- [ ] Cyanose centrale et périphérique
 > 	- [ ] Hippocratisme digital
-> - [ ] **51. Inspection thoracique - patient assis *(Pneumonie)***
+> - [ ] **51. Inspection thoracique - patient assis *(1 grille sur 13)***
 > 	- [ ] Forme du thorax
 > 	- [ ] Asymétrie thoracique
 > 	- [ ] Déformations rachidiennes
 > 	- [ ] Cicatrices
 > 	- [ ] Respiration paradoxale
-> - [ ] **52. Palpation thoracique *(Cancer pulmonaire, Pneumonie)***
-> 	- [ ] Ampliation thoracique *(Pneumonie)*
-> 	- [ ] Localisation précise de la douleur *(Pneumonie)*
-> 	- [ ] Vibrations vocales *(Pneumonie)*
-> 	- [ ] Technique correcte *(Pneumonie)*
-> 	- [ ] Recherche d'emphysème sous-cutané *(Pneumonie)*
+> - [ ] **52. Palpation thoracique *(2 grilles sur 13)***
+> 	- [ ] Ampliation thoracique *(1 grille sur 13)*
+> 	- [ ] Localisation précise de la douleur *(1 grille sur 13)*
+> 	- [ ] Vibrations vocales *(1 grille sur 13)*
+> 	- [ ] Technique correcte *(1 grille sur 13)*
+> 	- [ ] Recherche d'emphysème sous-cutané *(1 grille sur 13)*
 > 	- [ ] Palpation des vibrations vocales *(Cancer pulmonaire)*
 > 	- [ ] Recherche de douleur à la palpation *(Cancer pulmonaire)*
 > 	- [ ] Évaluation de l'ampliation thoracique *(Cancer pulmonaire)*
 > 	- [ ] Palpation des aires ganglionnaires (sus-claviculaires, axillaires) *(Cancer pulmonaire)*
-> - [ ] **53. Percussion thoracique *(Pneumonie)***
+> - [ ] **53. Percussion thoracique *(1 grille sur 13)***
 > 	- [ ] Limite inférieure poumons
 > 	- [ ] Comparaison sonorité G/D
 > 	- [ ] Reconnaissance des sons
 > 	- [ ] Technique correcte
 > 	- [ ] Interprétation
-> - [ ] **54. Identification des bruits pathologiques *(Pneumonie)***
+> - [ ] **54. Identification des bruits pathologiques *(1 grille sur 13)***
 > 	- [ ] Sibilances
 > 	- [ ] Ronchi
 > 	- [ ] Râles fins
 > 	- [ ] Râles grossiers
 > 	- [ ] Frottement pleural
 > 	- [ ] Stridor
-> - [ ] **55. Examen cardiovasculaire complémentaire *(Pneumonie)***
+> - [ ] **55. Examen cardiovasculaire complémentaire *(1 grille sur 13)***
 > 	- [ ] Palpation choc de pointe
 > 	- [ ] Auscultation cardiaque
 > 	- [ ] Œdèmes membres inférieurs

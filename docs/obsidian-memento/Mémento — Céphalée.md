@@ -28,17 +28,21 @@ cssclasses:
 > AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Neurologie
+# Céphalée ⭐️
 
-## Céphalée ⭐️
-
-*6 grilles · 6 diagnostics distincts* — [[SSP — Céphalée]]
+*Neurologie · 6 grilles · 6 diagnostics distincts* — [[SSP — Céphalée]]
 
 > [!abstract] Les 6 grilles fusionnées
 > - **AMBOSS-26** — Crise migraineuse `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-26_-_Ce_phale_e_-_Homme_29_ans_-_Grille_ECOS.html>)

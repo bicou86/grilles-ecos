@@ -28,17 +28,21 @@ cssclasses:
 > AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Pneumologie
+# Dyspnée ⭐️
 
-## Dyspnée ⭐️
-
-*5 grilles · 3 diagnostics distincts* — [[SSP — Dyspnée]]
+*Pneumologie · 5 grilles · 3 diagnostics distincts* — [[SSP — Dyspnée]]
 
 > [!abstract] Les 5 grilles fusionnées
 > - **AZYGOS-23** — Insuffisance cardiaque (décompensée) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/60e62ee5-98b7-4679-91e1-6f82bb0678fe.json>)
@@ -48,29 +52,29 @@ cssclasses:
 > - **RESCOS-40** — Insuffisance cardiaque (décompensée) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-40_-_Dyspne_e_-_ECC_Cardio-pulmonaire_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Stable / Instable *(Insuffisance cardiaque (décompensée))***
-> - [ ] **2. Question d'introduction *(Insuffisance cardiaque (décompensée))***
-> - [ ] **3. Dynamique temporelle *(Insuffisance cardiaque (décompensée))***
-> - [ ] **4. Début *(Insuffisance cardiaque (décompensée))***
-> - [ ] **5. Évolution *(Insuffisance cardiaque (décompensée))***
-> - [ ] **6. Gravité *(Insuffisance cardiaque (décompensée))***
-> - [ ] **7. Influence de la position *(Insuffisance cardiaque (décompensée))***
-> - [ ] **8. Toux *(Insuffisance cardiaque (décompensée))***
-> - [ ] **9. Expectoration *(Insuffisance cardiaque (décompensée))***
-> - [ ] **10. Gonflement des jambes *(Insuffisance cardiaque (décompensée))***
-> - [ ] **11. Nycturie *(Insuffisance cardiaque (décompensée))***
-> - [ ] **12. DD Embolie pulmonaire *(Insuffisance cardiaque (décompensée))***
-> - [ ] **13. Douleurs dépendantes de la respiration *(Insuffisance cardiaque (décompensée))***
-> - [ ] **14. Syncope *(Insuffisance cardiaque (décompensée))***
-> - [ ] **15. Anamnèse de thrombose *(Insuffisance cardiaque (décompensée))***
-> - [ ] **16. DD SCA *(Insuffisance cardiaque (décompensée))***
-> - [ ] **17. Douleurs thoraciques *(Insuffisance cardiaque (décompensée))***
-> - [ ] **18. Irradiation bras/mâchoire/dos *(Insuffisance cardiaque (décompensée))***
-> - [ ] **19. Palpitations *(Insuffisance cardiaque (décompensée))***
-> - [ ] **20. DD Pneumonie *(Insuffisance cardiaque (décompensée))***
-> - [ ] **21. Événement d'aspiration (fausse route) *(Insuffisance cardiaque (décompensée))***
-> - [ ] **22. Fièvre *(Insuffisance cardiaque (décompensée))***
-> - [ ] **23. Expectoration purulente *(Insuffisance cardiaque (décompensée))***
+> - [ ] **1. Stable / Instable *(1 grille sur 5)***
+> - [ ] **2. Question d'introduction *(1 grille sur 5)***
+> - [ ] **3. Dynamique temporelle *(1 grille sur 5)***
+> - [ ] **4. Début *(1 grille sur 5)***
+> - [ ] **5. Évolution *(1 grille sur 5)***
+> - [ ] **6. Gravité *(1 grille sur 5)***
+> - [ ] **7. Influence de la position *(1 grille sur 5)***
+> - [ ] **8. Toux *(1 grille sur 5)***
+> - [ ] **9. Expectoration *(1 grille sur 5)***
+> - [ ] **10. Gonflement des jambes *(1 grille sur 5)***
+> - [ ] **11. Nycturie *(1 grille sur 5)***
+> - [ ] **12. DD Embolie pulmonaire *(1 grille sur 5)***
+> - [ ] **13. Douleurs dépendantes de la respiration *(1 grille sur 5)***
+> - [ ] **14. Syncope *(1 grille sur 5)***
+> - [ ] **15. Anamnèse de thrombose *(1 grille sur 5)***
+> - [ ] **16. DD SCA *(1 grille sur 5)***
+> - [ ] **17. Douleurs thoraciques *(1 grille sur 5)***
+> - [ ] **18. Irradiation bras/mâchoire/dos *(1 grille sur 5)***
+> - [ ] **19. Palpitations *(1 grille sur 5)***
+> - [ ] **20. DD Pneumonie *(1 grille sur 5)***
+> - [ ] **21. Événement d'aspiration (fausse route) *(1 grille sur 5)***
+> - [ ] **22. Fièvre *(1 grille sur 5)***
+> - [ ] **23. Expectoration purulente *(1 grille sur 5)***
 > - [ ] **24. Présentation avec nom, fonction et tâche *(Asthme, BPCO)***
 > - [ ] **25. Question d'entrée ouverte - Symptômes principaux *(Asthme)***
 > - [ ] **26. Circonstances de survenue et facteurs déclenchants *(Asthme)***
@@ -171,18 +175,18 @@ cssclasses:
 > 	- [ ] Questions du patient
 > 	- [ ] Résumé de l'anamnèse
 > - [ ] **43. Question d'entrée ouverte - Motif de consultation *(BPCO)***
-> - [ ] **44. Caractérisation de la dyspnée *(BPCO, Insuffisance cardiaque (décompensée))***
+> - [ ] **44. Caractérisation de la dyspnée *(3 grilles sur 5)***
 > 	- [ ] Effort déclenchant *(BPCO)*
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
 > 	- [ ] Évolution dans le temps *(BPCO)*
-> 	- [ ] Début progressif *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Dyspnée d'effort initialement *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Aggravation progressive *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Amélioration en position assise *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Évolution temporelle *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Circonstances *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Quantification *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Début progressif *(1 grille sur 5)*
+> 	- [ ] Dyspnée d'effort initialement *(1 grille sur 5)*
+> 	- [ ] Aggravation progressive *(1 grille sur 5)*
+> 	- [ ] Amélioration en position assise *(1 grille sur 5)*
+> 	- [ ] Évolution temporelle *(1 grille sur 5)*
+> 	- [ ] Circonstances *(1 grille sur 5)*
+> 	- [ ] Quantification *(1 grille sur 5)*
 > - [ ] **45. Symptômes respiratoires associés - Toux *(BPCO)***
 > 	- [ ] Type de toux
 > 	- [ ] Caractère
@@ -234,113 +238,107 @@ cssclasses:
 > 	- [ ] Activité professionnelle actuelle
 > 	- [ ] Conditions de vie
 > 	- [ ] Antécédents judiciaires
-> - [ ] **55. Facteurs de risque cardiovasculaire *(BPCO, Insuffisance cardiaque (décompensée))***
-> 	- [ ] Hypertension artérielle
-> 	- [ ] Diabète
-> 	- [ ] Dyslipidémie
-> 	- [ ] Antécédents familiaux cardiovasculaires
-> 	- [ ] Tabagisme *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Sédentarité *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Surpoids *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Stress professionnel *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Antécédents familiaux *(Insuffisance cardiaque (décompensée))*
+> - [ ] **55. Facteurs de risque cardiovasculaire *(3 grilles sur 5)***
+> 	- [ ] Hypertension artérielle *(2 grilles sur 5)*
+> 	- [ ] Diabète *(2 grilles sur 5)*
+> 	- [ ] Dyslipidémie *(2 grilles sur 5)*
+> 	- [ ] Antécédents familiaux cardiovasculaires *(2 grilles sur 5)*
+> 	- [ ] Tabagisme *(2 grilles sur 5)*
+> 	- [ ] Sédentarité *(1 grille sur 5)*
+> 	- [ ] Surpoids *(1 grille sur 5)*
+> 	- [ ] Stress professionnel *(1 grille sur 5)*
+> 	- [ ] Antécédents familiaux *(1 grille sur 5)*
 > - [ ] **56. Symptômes d'insuffisance cardiaque *(BPCO)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Prise de poids récente
 > 	- [ ] Nycturie
 > 	- [ ] Fatigue inhabituelle
-> - [ ] **57. Motif de consultation *(Insuffisance cardiaque (décompensée))***
-> - [ ] **58. Œdèmes des membres inférieurs *(Insuffisance cardiaque (décompensée))***
+> - [ ] **57. Motif de consultation *(1 grille sur 5)***
+> - [ ] **58. Œdèmes des membres inférieurs *(1 grille sur 5)***
 > 	- [ ] Apparition progressive
 > 	- [ ] Bilatéraux et symétriques
 > 	- [ ] Prennent le godet
 > 	- [ ] Plus importants le soir
 > 	- [ ] Diminution le matin
 > 	- [ ] Prise de poids
-> - [ ] **59. Symptômes associés *(Insuffisance cardiaque (décompensée))***
+> - [ ] **59. Symptômes associés *(1 grille sur 5)***
 > 	- [ ] Fatigue importante
 > 	- [ ] Toux sèche nocturne
 > 	- [ ] Palpitations
-> 	- [ ] Pas de douleur thoracique
-> 	- [ ] Pas d'hémoptysie
 > 	- [ ] Nycturie
-> - [ ] **60. Classification NYHA *(Insuffisance cardiaque (décompensée))***
+> - [ ] **60. Classification NYHA *(1 grille sur 5)***
 > 	- [ ] Classe I: Pas de limitation
 > 	- [ ] Classe II: Limitation légère
 > 	- [ ] Classe III: Limitation marquée
 > 	- [ ] Classe IV: Symptômes au repos
-> - [ ] **61. Antécédents cardiovasculaires *(Insuffisance cardiaque (décompensée))***
+> - [ ] **61. Antécédents cardiovasculaires *(1 grille sur 5)***
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] Angioplastie coronaire
 > 	- [ ] Dyslipidémie
 > 	- [ ] Diabète type 2
-> - [ ] **62. Traitement actuel *(Insuffisance cardiaque (décompensée))***
+> - [ ] **62. Traitement actuel *(1 grille sur 5)***
 > 	- [ ] IEC (ramipril 5mg/j)
 > 	- [ ] Bêtabloquant (bisoprolol 5mg/j)
-> 	- [ ] Aspirine 100mg/j
 > 	- [ ] Statine (atorvastatine 40mg/j)
-> 	- [ ] Metformine 1000mg x2/j
-> - [ ] **63. Recherche d'éléments discriminants cardiaques vs respiratoires *(Insuffisance cardiaque (décompensée))***
+> - [ ] **63. Recherche d'éléments discriminants cardiaques vs respiratoires *(1 grille sur 5)***
 > 	- [ ] Éléments cardiaques
 > 	- [ ] Éléments respiratoires
 > 	- [ ] Prise de poids récente
 > 	- [ ] Position de sommeil
 > 	- [ ] Tolérance à l'effort antérieure
-> - [ ] **64. Symptômes associés cardiovasculaires *(Insuffisance cardiaque (décompensée))***
+> - [ ] **64. Symptômes associés cardiovasculaires *(1 grille sur 5)***
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Palpitations
 > 	- [ ] Syncopes ou lipothymies
 > 	- [ ] Claudication intermittente
 > 	- [ ] Œdèmes membres inférieurs
-> - [ ] **65. Symptômes associés respiratoires *(Insuffisance cardiaque (décompensée))***
+> - [ ] **65. Symptômes associés respiratoires *(1 grille sur 5)***
 > 	- [ ] Toux chronique
 > 	- [ ] Expectorations
 > 	- [ ] Hémoptysie
 > 	- [ ] Sifflements respiratoires
 > 	- [ ] Infections respiratoires récurrentes
-> - [ ] **66. Antécédents médicaux pertinents *(Insuffisance cardiaque (décompensée))***
+> - [ ] **66. Antécédents médicaux pertinents *(1 grille sur 5)***
 > 	- [ ] Pathologies cardiaques préexistantes
 > 	- [ ] Pathologies respiratoires
 > 	- [ ] Hospitalisations antérieures
 > 	- [ ] Interventions chirurgicales
 > 	- [ ] Allergies médicamenteuses
-> - [ ] **67. Habitudes et mode de vie *(Insuffisance cardiaque (décompensée))***
+> - [ ] **67. Habitudes et mode de vie *(1 grille sur 5)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
 > 	- [ ] Médicaments actuels
 > 	- [ ] Expositions professionnelles
-> - [ ] **68. Contexte psychosocial *(Insuffisance cardiaque (décompensée))***
+> - [ ] **68. Contexte psychosocial *(1 grille sur 5)***
 > 	- [ ] Situation professionnelle
 > 	- [ ] Situation financière
 > 	- [ ] Isolement social
 > 	- [ ] Stress et anxiété
 > 	- [ ] Observance thérapeutique potentielle
-> - [ ] **69. Intégration anamnèse cardio-respiratoire *(Insuffisance cardiaque (décompensée))***
+> - [ ] **69. Intégration anamnèse cardio-respiratoire *(1 grille sur 5)***
 
 > [!tip] 🩺 Status
-> - [ ] **1. Palpation *(Insuffisance cardiaque (décompensée))***
-> - [ ] **2. Inspection *(Insuffisance cardiaque (décompensée))***
-> - [ ] **3. Comparaison de la circonférence *(Insuffisance cardiaque (décompensée))***
-> - [ ] **4. Inspection du thorax *(Insuffisance cardiaque (décompensée))***
-> - [ ] **5. Vibrations vocales *(Insuffisance cardiaque (décompensée))***
-> - [ ] **6. Percussion du thorax *(Insuffisance cardiaque (décompensée))***
-> - [ ] **7. Auscultation pulmonaire *(Insuffisance cardiaque (décompensée))***
-> 	- [ ] Râles crépitants bilatéraux
-> 	- [ ] Diminution du murmure vésiculaire
-> 	- [ ] Matité des bases
-> 	- [ ] Pas de sibilants
-> - [ ] **8. Auscultation cardiaque *(Insuffisance cardiaque (décompensée))***
-> 	- [ ] Bruits du cœur assourdis
-> 	- [ ] Galop (B3)
-> 	- [ ] Souffle systolique d'insuffisance mitrale
-> 	- [ ] Pas de frottement péricardique
-> - [ ] **9. Palpation du pouls *(Insuffisance cardiaque (décompensée))***
-> - [ ] **10. Veines jugulaires *(Insuffisance cardiaque (décompensée))***
-> - [ ] **11. Reflux hépato-jugulaire *(Insuffisance cardiaque (décompensée))***
-> - [ ] **12. Contrôle de la plaie *(Insuffisance cardiaque (décompensée))***
-> - [ ] **13. Contrôle d'hématome *(Insuffisance cardiaque (décompensée))***
+> - [ ] **1. Palpation *(1 grille sur 5)***
+> - [ ] **2. Inspection *(1 grille sur 5)***
+> - [ ] **3. Comparaison de la circonférence *(1 grille sur 5)***
+> - [ ] **4. Inspection du thorax *(1 grille sur 5)***
+> - [ ] **5. Vibrations vocales *(1 grille sur 5)***
+> - [ ] **6. Percussion du thorax *(1 grille sur 5)***
+> - [ ] **7. Auscultation pulmonaire *(2 grilles sur 5)***
+> 	- [ ] Râles crépitants bilatéraux *(1 grille sur 5)*
+> 	- [ ] Diminution du murmure vésiculaire *(1 grille sur 5)*
+> 	- [ ] Matité des bases *(1 grille sur 5)*
+> - [ ] **8. Auscultation cardiaque *(2 grilles sur 5)***
+> 	- [ ] Bruits du cœur assourdis *(1 grille sur 5)*
+> 	- [ ] Galop (B3) *(1 grille sur 5)*
+> 	- [ ] Souffle systolique d'insuffisance mitrale *(1 grille sur 5)*
+> - [ ] **9. Palpation du pouls *(1 grille sur 5)***
+> - [ ] **10. Veines jugulaires *(1 grille sur 5)***
+> - [ ] **11. Reflux hépato-jugulaire *(1 grille sur 5)***
+> - [ ] **12. Contrôle de la plaie *(1 grille sur 5)***
+> - [ ] **13. Contrôle d'hématome *(1 grille sur 5)***
 > - [ ] **14. Examen cardiaque *(Asthme)***
 > 	- [ ] Palpation du choc de pointe
 > 	- [ ] Auscultation cardiaque systématique
@@ -417,69 +415,63 @@ cssclasses:
 > 	- [ ] Recherche de signes d'HTAP
 > 	- [ ] Pouls périphériques
 > 	- [ ] Pression artérielle
-> - [ ] **29. Signes vitaux *(Insuffisance cardiaque (décompensée))***
-> 	- [ ] TA 145/90 mmHg
-> 	- [ ] FC 92 bpm, régulier
-> 	- [ ] FR 24/min
+> - [ ] **29. Signes vitaux *(1 grille sur 5)***
 > 	- [ ] SpO2 94% en air ambiant
-> 	- [ ] Température 36.8°C
-> - [ ] **30. Inspection générale *(Insuffisance cardiaque (décompensée))***
+> - [ ] **30. Inspection générale *(1 grille sur 5)***
 > 	- [ ] Patient en position semi-assise
 > 	- [ ] Dyspnée de repos modérée
 > 	- [ ] Cyanose légère des extrémités
 > 	- [ ] Turgescence jugulaire
 > 	- [ ] Reflux hépato-jugulaire
-> - [ ] **31. Examen abdominal *(Insuffisance cardiaque (décompensée))***
+> - [ ] **31. Examen abdominal *(1 grille sur 5)***
 > 	- [ ] Hépatomégalie
 > 	- [ ] Sensibilité hépatique
 > 	- [ ] Ascite modérée
-> 	- [ ] Pas de splénomégalie
-> - [ ] **32. Examen des membres inférieurs *(Insuffisance cardiaque (décompensée))***
+> - [ ] **32. Examen des membres inférieurs *(1 grille sur 5)***
 > 	- [ ] Œdèmes bilatéraux prenant le godet
 > 	- [ ] Symétriques et blancs
 > 	- [ ] Mous et indolores
 > 	- [ ] Pouls périphériques présents
-> 	- [ ] Pas de signes de phlébite
-> - [ ] **33. Inspection générale intégrée *(Insuffisance cardiaque (décompensée))***
+> - [ ] **33. Inspection générale intégrée *(1 grille sur 5)***
 > 	- [ ] État général
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Coloration cutanée
 > 	- [ ] Pouls jugulaire
 > 	- [ ] Tirage sus-sternal
 > 	- [ ] Extrémités
-> - [ ] **34. Examen cardiovasculaire - position couchée 45° *(Insuffisance cardiaque (décompensée))***
+> - [ ] **34. Examen cardiovasculaire - position couchée 45° *(1 grille sur 5)***
 > 	- [ ] Inspection aire cardiaque et pouls jugulaire
 > 	- [ ] Palpation précordiale et choc de pointe
 > 	- [ ] Palpation pouls carotidien
 > 	- [ ] Auscultation 4 foyers en décubitus dorsal
 > 	- [ ] Recherche B3/B4 en décubitus latéral gauche
-> - [ ] **35. Auscultation cardiaque - bruits pathologiques *(Insuffisance cardiaque (décompensée))***
+> - [ ] **35. Auscultation cardiaque - bruits pathologiques *(1 grille sur 5)***
 > 	- [ ] B1 et B2
 > 	- [ ] Souffle systolique aortique
 > 	- [ ] Souffle systolique mitral
 > 	- [ ] Galop B3 ou B4
 > 	- [ ] Frottement péricardique
-> - [ ] **36. Examen respiratoire - position assise *(Insuffisance cardiaque (décompensée))***
+> - [ ] **36. Examen respiratoire - position assise *(1 grille sur 5)***
 > 	- [ ] Inspection mouvements respiratoires
 > 	- [ ] Inspection forme thorax
 > 	- [ ] Palpation ampliation thoracique
 > 	- [ ] Palpation vibrations vocales
 > 	- [ ] Percussion postérieure et antérieure
-> - [ ] **37. Auscultation pulmonaire - bruits pathologiques *(Insuffisance cardiaque (décompensée))***
+> - [ ] **37. Auscultation pulmonaire - bruits pathologiques *(1 grille sur 5)***
 > 	- [ ] Murmure vésiculaire
 > 	- [ ] Sibilances expiratoires
 > 	- [ ] Râles crépitants
 > 	- [ ] Ronchi
 > 	- [ ] Expiration prolongée
-> - [ ] **38. Signes périphériques d'insuffisance cardiaque *(Insuffisance cardiaque (décompensée))***
+> - [ ] **38. Signes périphériques d'insuffisance cardiaque *(1 grille sur 5)***
 > 	- [ ] Œdèmes membres inférieurs
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Hépatomégalie
 > 	- [ ] Ascite
 > 	- [ ] Pouls périphériques
-> - [ ] **39. Intégration de l'examen physique *(Insuffisance cardiaque (décompensée))***
+> - [ ] **39. Intégration de l'examen physique *(1 grille sur 5)***
 > 	- [ ] Séquence optimale pour confort patient
 > 	- [ ] Passage fluide entre positions
 > 	- [ ] Examen complet sans répétitions inutiles
 > 	- [ ] Éléments prioritaires selon contexte
-> - [ ] **40. Technique d'examen intégré cardio-respiratoire *(Insuffisance cardiaque (décompensée))***
+> - [ ] **40. Technique d'examen intégré cardio-respiratoire *(1 grille sur 5)***

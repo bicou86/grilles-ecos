@@ -5,7 +5,7 @@ type: memento-ecos-ssp
 ssp: "Douleur Abdominale"
 specialite: "Gastro-Hépatologie"
 cas: 20
-diagnostics: 19
+diagnostics: 18
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -28,24 +28,28 @@ cssclasses:
 > AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Gastro-Hépatologie
+# Douleur Abdominale ⭐️
 
-## Douleur Abdominale ⭐️
-
-*20 grilles · 19 diagnostics distincts* — [[SSP — Douleur Abdominale]]
+*Gastro-Hépatologie · 20 grilles · 18 diagnostics distincts* — [[SSP — Douleur Abdominale]]
 
 > [!abstract] Les 20 grilles fusionnées
 > - **AMBOSS-1** — Cholécystite aiguë `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-1_-_Douleurs_abdominales_-_Femme_47_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-2** — Appendicite aiguë `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-2_-_Douleurs_abdominales_-_Femme_23_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-3** — Cancer de l'ovaire `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-3_-_Douleurs_abdominales_-_Femme_34_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-15** — Maladie cœliaque `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-15_-_Douleur_abdominale_chronique_-_Garc_on_6_ans_-_Grille_ECOS.html>)
-> - **AZYGOS-14** — Cholecystite aiguë `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/85052041-2d60-4b4f-b865-642bec286e27.json>)
+> - **AZYGOS-14** — Cholécystite aiguë `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/85052041-2d60-4b4f-b865-642bec286e27.json>)
 > - **AZYGOS-16** — Purpura de Schönlein-Henoch (vascularite à IgA) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/e9e0065d-8071-4a0c-bf41-f041635274fa.json>)
 > - **German-15** — Diverticulite sigmoïdienne non compliquée `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-15_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **German-16** — Douleurs abdominales non spécifiques `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-16_-_Douleur_abdominale_-_Grille_ECOS.html>)
@@ -63,28 +67,28 @@ cssclasses:
 > - **RESCOS-23** — Cholécystite `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-23_-_Douleur_abdominale_-_ECC_Digestion_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(4 diagnostics)***
-> - [ ] **2. Caractérisation de la douleur *(7 diagnostics)***
-> 	- [ ] Localisation *(6 diagnostics)*
-> 	- [ ] Intensité *(6 diagnostics)*
+> - [ ] **1. Motif principal *(4 grilles sur 20)***
+> - [ ] **2. Caractérisation de la douleur *(7 grilles sur 20)***
+> 	- [ ] Localisation *(6 grilles sur 20)*
+> 	- [ ] Intensité *(6 grilles sur 20)*
 > 	- [ ] Qualité
-> 	- [ ] Début *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)*
-> 	- [ ] Évolution temporelle *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)*
+> 	- [ ] Début *(3 grilles sur 20)*
+> 	- [ ] Évolution temporelle *(3 grilles sur 20)*
 > 	- [ ] Irradiation
-> 	- [ ] Facteurs améliorants *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)*
-> 	- [ ] Facteurs aggravants *(5 diagnostics)*
-> 	- [ ] Épisodes antérieurs similaires *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)*
+> 	- [ ] Facteurs améliorants *(3 grilles sur 20)*
+> 	- [ ] Facteurs aggravants *(5 grilles sur 20)*
+> 	- [ ] Épisodes antérieurs similaires *(3 grilles sur 20)*
 > 	- [ ] Événements précipitants *(Appendicite aiguë, Cancer de l'ovaire)*
 > 	- [ ] Facteurs aggravant/soulageant *(Cholangite, Pyélonéphrite)*
 > 	- [ ] Quantité *(Cholangite)*
 > 	- [ ] Chronologie *(Cholangite)*
-> 	- [ ] Facteurs soulageants *(Cholécystite, Torsion ovarienne)*
+> 	- [ ] Facteurs soulageants *(2 grilles sur 20)*
 > 	- [ ] Localisation précise *(Torsion ovarienne)*
-> - [ ] **3. Symptômes associés *(7 diagnostics)***
-> 	- [ ] Nausées *(4 diagnostics)*
-> 	- [ ] Vomissements *(5 diagnostics)*
-> 	- [ ] Caractéristiques des vomissements *(Cholécystite aiguë)*
-> 	- [ ] Fièvre *(Cholécystite aiguë, Douleurs abdominales non spécifiques, Perforation d'ulcère gastro-duodénal)*
+> - [ ] **3. Symptômes associés *(7 grilles sur 20)***
+> 	- [ ] Nausées *(4 grilles sur 20)*
+> 	- [ ] Vomissements *(5 grilles sur 20)*
+> 	- [ ] Caractéristiques des vomissements *(1 grille sur 20)*
+> 	- [ ] Fièvre *(3 grilles sur 20)*
 > 	- [ ] Fièvre/frissons *(Appendicite aiguë)*
 > 	- [ ] Appétit *(Appendicite aiguë, Cancer de l'ovaire)*
 > 	- [ ] Ballonnements *(Cancer de l'ovaire)*
@@ -93,49 +97,49 @@ cssclasses:
 > 	- [ ] Troubles du transit *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Frissons *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Arrêt des matières et des gaz *(Perforation d'ulcère gastro-duodénal)*
-> - [ ] **4. Recherche de symptômes spécifiques *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)***
+> - [ ] **4. Recherche de symptômes spécifiques *(3 grilles sur 20)***
 > 	- [ ] Voyage récent
-> 	- [ ] Fatigue *(Cancer de l'ovaire, Cholécystite aiguë)*
-> 	- [ ] Éruption cutanée *(Appendicite aiguë, Cholécystite aiguë)*
-> 	- [ ] Ictère *(Cholécystite aiguë)*
+> 	- [ ] Fatigue *(2 grilles sur 20)*
+> 	- [ ] Éruption cutanée *(2 grilles sur 20)*
+> 	- [ ] Ictère *(1 grille sur 20)*
 > 	- [ ] Troubles urinaires
-> 	- [ ] Modifications de la couleur des urines *(Cholécystite aiguë)*
+> 	- [ ] Modifications de la couleur des urines *(1 grille sur 20)*
 > 	- [ ] Troubles du transit
-> 	- [ ] Modifications de la couleur des selles *(Cholécystite aiguë)*
-> 	- [ ] Sang dans les selles *(Cholécystite aiguë)*
-> 	- [ ] Appétit *(Cholécystite aiguë)*
-> 	- [ ] Variations pondérales *(Appendicite aiguë, Cholécystite aiguë)*
+> 	- [ ] Modifications de la couleur des selles *(1 grille sur 20)*
+> 	- [ ] Sang dans les selles *(1 grille sur 20)*
+> 	- [ ] Appétit *(1 grille sur 20)*
+> 	- [ ] Variations pondérales *(2 grilles sur 20)*
 > 	- [ ] Infections récentes
 > 	- [ ] Douleurs articulaires *(Appendicite aiguë)*
 > 	- [ ] Traumatisme *(Cancer de l'ovaire)*
 > 	- [ ] Fièvre/frissons *(Cancer de l'ovaire)*
 > 	- [ ] Sueurs nocturnes *(Cancer de l'ovaire)*
 > 	- [ ] Dyspnée *(Cancer de l'ovaire)*
-> - [ ] **5. Antécédents médicaux *(4 diagnostics)***
-> - [ ] **6. Antécédents chirurgicaux *(4 diagnostics)***
-> - [ ] **7. Allergies *(10 diagnostics)***
-> - [ ] **8. Médicaments *(6 diagnostics)***
-> 	- [ ] Antiacides *(Cholécystite aiguë)*
-> 	- [ ] Fréquence *(Cholécystite aiguë)*
-> - [ ] **9. Hospitalisations *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)***
-> - [ ] **10. Contacts malades *(Appendicite aiguë, Cholécystite aiguë, Maladie cœliaque)***
-> - [ ] **11. Antécédents familiaux *(5 diagnostics)***
-> 	- [ ] Père *(Cancer de l'ovaire, Cholécystite aiguë)*
-> 	- [ ] Mère *(Cancer de l'ovaire, Cholécystite aiguë)*
+> - [ ] **5. Antécédents médicaux *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)***
+> - [ ] **6. Antécédents chirurgicaux *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)***
+> - [ ] **7. Allergies *(9 diagnostics)***
+> - [ ] **8. Médicaments *(5 diagnostics)***
+> 	- [ ] Antiacides *(1 grille sur 20)*
+> 	- [ ] Fréquence *(1 grille sur 20)*
+> - [ ] **9. Hospitalisations *(3 grilles sur 20)***
+> - [ ] **10. Contacts malades *(3 grilles sur 20)***
+> - [ ] **11. Antécédents familiaux *(4 diagnostics)***
+> 	- [ ] Père *(2 grilles sur 20)*
+> 	- [ ] Mère *(2 grilles sur 20)*
 > 	- [ ] Sœur *(Cancer de l'ovaire)*
 > 	- [ ] Grand-mère *(Cancer de l'ovaire)*
-> - [ ] **12. Habitudes et mode de vie *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)***
+> - [ ] **12. Habitudes et mode de vie *(3 grilles sur 20)***
 > 	- [ ] Occupation
 > 	- [ ] Domicile
 > 	- [ ] Tabac
 > 	- [ ] Alcool
-> 	- [ ] Questions CAGE - Besoin de réduire *(Cholécystite aiguë)*
-> 	- [ ] Questions CAGE - Agacée par les critiques *(Cholécystite aiguë)*
-> 	- [ ] Questions CAGE - Culpabilité *(Cholécystite aiguë)*
-> 	- [ ] Questions CAGE - Besoin de boire le matin *(Cholécystite aiguë)*
+> 	- [ ] Questions CAGE - Besoin de réduire *(1 grille sur 20)*
+> 	- [ ] Questions CAGE - Agacée par les critiques *(1 grille sur 20)*
+> 	- [ ] Questions CAGE - Culpabilité *(1 grille sur 20)*
+> 	- [ ] Questions CAGE - Besoin de boire le matin *(1 grille sur 20)*
 > 	- [ ] Drogues illicites
-> 	- [ ] Exercice physique *(Cholécystite aiguë)*
-> 	- [ ] Régime alimentaire *(Appendicite aiguë, Cholécystite aiguë)*
+> 	- [ ] Exercice physique *(1 grille sur 20)*
+> 	- [ ] Régime alimentaire *(2 grilles sur 20)*
 > - [ ] **13. Histoire sexuelle et gynécologique *(Appendicite aiguë, Cancer de l'ovaire)***
 > 	- [ ] Activité sexuelle
 > 	- [ ] Partenaire *(Appendicite aiguë)*
@@ -206,56 +210,56 @@ cssclasses:
 > 	- [ ] Habitudes alimentaires *(Maladie cœliaque)*
 > 	- [ ] Appétit *(Maladie cœliaque)*
 > 	- [ ] Dernier contrôle *(Maladie cœliaque)*
-> - [ ] **22. Question initiale *(Cholecystite aiguë)***
-> - [ ] **23. Dimension temporelle *(Cholecystite aiguë)***
-> - [ ] **24. Début / Durée *(Cholecystite aiguë)***
-> - [ ] **25. Évolution *(Cholecystite aiguë, Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **26. Épisode *(Cholecystite aiguë)***
-> - [ ] **27. Facteur déclenchant *(Cholecystite aiguë)***
-> - [ ] **28. Localisation *(6 diagnostics)***
-> - [ ] **29. Qualité *(Cholecystite aiguë, Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **30. Irradiation *(7 diagnostics)***
-> - [ ] **31. Intensité / Sévérité *(Cholecystite aiguë)***
-> - [ ] **32. Factors aggravants ⊕ *(Cholecystite aiguë)***
-> - [ ] **33. Facteurs soulageants ⊖ *(Cholecystite aiguë, Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **34. Retentissement des symptômes *(Cholecystite aiguë)***
-> - [ ] **35. Mesures déjà prises *(Cholecystite aiguë)***
-> - [ ] **36. Fièvre aiguë *(Cholecystite aiguë)***
-> - [ ] **37. Anamnèse de l'entourage *(5 diagnostics)***
-> - [ ] **38. Nausées *(Cholecystite aiguë)***
-> - [ ] **39. Vomissements *(Cholecystite aiguë, Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **40. Qualité (bilieux/sanglant/en marc de café) *(Cholecystite aiguë)***
-> - [ ] **41. Selles *(Cholecystite aiguë, Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **42. Dernières selles *(Cholecystite aiguë)***
-> - [ ] **43. Qualité (sang/méléna/acholique) *(Cholecystite aiguë)***
-> - [ ] **44. Symptômes B *(Cholecystite aiguë, Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **45. Troubles de la miction *(Cholecystite aiguë)***
-> - [ ] **46. Dysurie *(Cholecystite aiguë, Douleurs abdominales non spécifiques)***
-> - [ ] **47. Pollakiurie *(Cholecystite aiguë)***
-> - [ ] **48. Gynécologique *(Cholecystite aiguë)***
-> - [ ] **49. Dernier contrôle *(Cholecystite aiguë)***
-> - [ ] **50. Anamnèse du cycle / des saignements *(Cholecystite aiguë)***
-> - [ ] **51. Symptômes vaginaux *(Cholecystite aiguë)***
-> - [ ] **52. Grossesse possible *(Cholecystite aiguë)***
-> - [ ] **53. Thorax *(Cholecystite aiguë)***
-> - [ ] **54. Douleurs *(Cholecystite aiguë)***
-> - [ ] **55. Dyspnée *(Cholecystite aiguë)***
-> - [ ] **56. Toux *(Cholecystite aiguë)***
-> - [ ] **57. Dernier repas *(Cholecystite aiguë)***
-> - [ ] **58. Toxiques *(Cholecystite aiguë)***
-> - [ ] **59. Alcool *(Cholecystite aiguë)***
-> - [ ] **60. Tabagisme *(Cholecystite aiguë)***
-> - [ ] **61. Drogues *(Cholecystite aiguë)***
-> - [ ] **62. Anamnèse de voyage *(5 diagnostics)***
+> - [ ] **22. Question initiale *(1 grille sur 20)***
+> - [ ] **23. Dimension temporelle *(1 grille sur 20)***
+> - [ ] **24. Début / Durée *(1 grille sur 20)***
+> - [ ] **25. Évolution *(2 grilles sur 20)***
+> - [ ] **26. Épisode *(1 grille sur 20)***
+> - [ ] **27. Facteur déclenchant *(1 grille sur 20)***
+> - [ ] **28. Localisation *(6 grilles sur 20)***
+> - [ ] **29. Qualité *(2 grilles sur 20)***
+> - [ ] **30. Irradiation *(7 grilles sur 20)***
+> - [ ] **31. Intensité / Sévérité *(1 grille sur 20)***
+> - [ ] **32. Factors aggravants *(1 grille sur 20)***
+> - [ ] **33. Facteurs soulageants *(2 grilles sur 20)***
+> - [ ] **34. Retentissement des symptômes *(1 grille sur 20)***
+> - [ ] **35. Mesures déjà prises *(1 grille sur 20)***
+> - [ ] **36. Fièvre aiguë *(1 grille sur 20)***
+> - [ ] **37. Anamnèse de l'entourage *(5 grilles sur 20)***
+> - [ ] **38. Nausées *(1 grille sur 20)***
+> - [ ] **39. Vomissements *(2 grilles sur 20)***
+> - [ ] **40. Qualité (bilieux/sanglant/en marc de café) *(1 grille sur 20)***
+> - [ ] **41. Selles *(2 grilles sur 20)***
+> - [ ] **42. Dernières selles *(1 grille sur 20)***
+> - [ ] **43. Qualité (sang/méléna/acholique) *(1 grille sur 20)***
+> - [ ] **44. Symptômes B *(2 grilles sur 20)***
+> - [ ] **45. Troubles de la miction *(1 grille sur 20)***
+> - [ ] **46. Dysurie *(2 grilles sur 20)***
+> - [ ] **47. Pollakiurie *(1 grille sur 20)***
+> - [ ] **48. Gynécologique *(1 grille sur 20)***
+> - [ ] **49. Dernier contrôle *(1 grille sur 20)***
+> - [ ] **50. Anamnèse du cycle / des saignements *(1 grille sur 20)***
+> - [ ] **51. Symptômes vaginaux *(1 grille sur 20)***
+> - [ ] **52. Grossesse possible *(1 grille sur 20)***
+> - [ ] **53. Thorax *(1 grille sur 20)***
+> - [ ] **54. Douleurs *(1 grille sur 20)***
+> - [ ] **55. Dyspnée *(1 grille sur 20)***
+> - [ ] **56. Toux *(1 grille sur 20)***
+> - [ ] **57. Dernier repas *(1 grille sur 20)***
+> - [ ] **58. Toxiques *(1 grille sur 20)***
+> - [ ] **59. Alcool *(1 grille sur 20)***
+> - [ ] **60. Tabagisme *(1 grille sur 20)***
+> - [ ] **61. Drogues *(1 grille sur 20)***
+> - [ ] **62. Anamnèse de voyage *(5 grilles sur 20)***
 > 	- [ ] Voyage récent *(Infection génitale haute)*
-> - [ ] **63. Profession *(Cholecystite aiguë)***
-> - [ ] **64. Situation sociale *(Cholecystite aiguë)***
-> - [ ] **65. Facteurs de stress psychosociaux *(Cholecystite aiguë)***
+> - [ ] **63. Profession *(1 grille sur 20)***
+> - [ ] **64. Situation sociale *(1 grille sur 20)***
+> - [ ] **65. Facteurs de stress psychosociaux *(1 grille sur 20)***
 > - [ ] **66. Question d’entrée *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **67. Dynamique temporelle *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **68. Début *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **69. Intensité *(5 diagnostics)***
-> - [ ] **70. ⊕ Facteurs aggravants *(Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **70. Facteurs aggravants *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **71. Retentissement *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **72. Estomac *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **73. Aspect des vomissements *(Purpura de Schönlein-Henoch (vascularite à IgA))***
@@ -311,19 +315,18 @@ cssclasses:
 > 	- [ ] Facteurs améliorants
 > 	- [ ] Position antalgique
 > 	- [ ] Relation avec l'alimentation
-> - [ ] **100. Symptômes digestifs associés *(4 diagnostics)***
-> 	- [ ] Nausées *(Cholécystite, Diverticulite sigmoïdienne non compliquée, Reflux gastro-œsophagien (RGO))*
+> - [ ] **100. Symptômes digestifs associés *(4 grilles sur 20)***
+> 	- [ ] Nausées *(3 grilles sur 20)*
 > 	- [ ] Vomissements
 > 	- [ ] Transit intestinal - diarrhée *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Flatulences *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Constipation *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Habitudes intestinales *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Ictère *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Perte d'appétit *(Cholécystite, Gastroentérite)*
+> 	- [ ] Perte d'appétit *(2 grilles sur 20)*
 > 	- [ ] Perte de poids *(Gastroentérite)*
-> 	- [ ] Hoquet, éructations *(Cholécystite, Gastroentérite)*
-> 	- [ ] Dernières selles normales *(Gastroentérite)*
-> 	- [ ] Dégoût pour la nourriture *(Cholécystite)*
+> 	- [ ] Hoquet, éructations *(2 grilles sur 20)*
+> 	- [ ] Dégoût pour la nourriture *(1 grille sur 20)*
 > - [ ] **101. Recherche de signes d'alarme *(Diverticulite sigmoïdienne non compliquée)***
 > 	- [ ] Fièvre
 > 	- [ ] Perte de poids inexpliquée
@@ -463,43 +466,43 @@ cssclasses:
 > - [ ] **148. Changements de poids et symptômes B *(Reflux gastro-œsophagien (RGO))***
 > - [ ] **149. Anamnèse systémique *(Reflux gastro-œsophagien (RGO))***
 > 	- [ ] De la tête aux pieds incluant fièvre et symptômes B
-> - [ ] **150. Chronologie de la douleur *(Cholécystite, Pyélonéphrite, Torsion ovarienne)***
+> - [ ] **150. Chronologie de la douleur *(3 grilles sur 20)***
 > 	- [ ] Début/durée *(Pyélonéphrite)*
 > 	- [ ] Fluctuation *(Pyélonéphrite)*
 > 	- [ ] Circonstances de survenue
-> 	- [ ] Début *(Cholécystite, Torsion ovarienne)*
-> 	- [ ] Progression *(Cholécystite, Torsion ovarienne)*
+> 	- [ ] Début *(2 grilles sur 20)*
+> 	- [ ] Progression *(2 grilles sur 20)*
 > - [ ] **151. Anamnèse actuelle - présence de *(Pyélonéphrite)***
 > 	- [ ] Fièvre
 > 	- [ ] Frissons
-> - [ ] **152. Par système - urinaire *(Cholécystite, Pyélonéphrite)***
+> - [ ] **152. Par système - urinaire *(2 grilles sur 20)***
 > 	- [ ] Quantité d'urine
 > 	- [ ] Fréquence mictionnelle *(Pyélonéphrite)*
 > 	- [ ] Couleur de l'urine
 > 	- [ ] Présence de sang *(Pyélonéphrite)*
 > 	- [ ] Douleur à la miction *(Pyélonéphrite)*
-> 	- [ ] Hématurie *(Cholécystite)*
-> 	- [ ] Dysurie *(Cholécystite)*
-> 	- [ ] Algurie *(Cholécystite)*
-> 	- [ ] Pollakiurie *(Cholécystite)*
-> - [ ] **153. Par système - digestif *(Cholécystite, Pyélonéphrite)***
+> 	- [ ] Hématurie *(1 grille sur 20)*
+> 	- [ ] Dysurie *(1 grille sur 20)*
+> 	- [ ] Algurie *(1 grille sur 20)*
+> 	- [ ] Pollakiurie *(1 grille sur 20)*
+> - [ ] **153. Par système - digestif *(2 grilles sur 20)***
 > 	- [ ] Nausées
 > 	- [ ] Vomissements
 > 	- [ ] Consistance des selles
 > 	- [ ] Fréquence du transit *(Pyélonéphrite)*
 > 	- [ ] Couleur des selles
 > 	- [ ] Présence de sang dans les selles *(Pyélonéphrite)*
-> 	- [ ] Dernier transit *(Cholécystite)*
-> 	- [ ] Sang dans les selles *(Cholécystite)*
-> - [ ] **154. Antécédents personnels *(Cholécystite, Pyélonéphrite)***
+> 	- [ ] Dernier transit *(1 grille sur 20)*
+> 	- [ ] Sang dans les selles *(1 grille sur 20)*
+> - [ ] **154. Antécédents personnels *(2 grilles sur 20)***
 > 	- [ ] Maladies / comorbidités *(Pyélonéphrite)*
 > 	- [ ] Hospitalisations / opérations
-> 	- [ ] Diète *(Cholécystite)*
-> 	- [ ] Médicaments *(Cholécystite)*
-> 	- [ ] Alcool *(Cholécystite)*
-> 	- [ ] Tabac *(Cholécystite)*
-> 	- [ ] Drogues *(Cholécystite)*
-> 	- [ ] Comorbidités *(Cholécystite)*
+> 	- [ ] Diète *(1 grille sur 20)*
+> 	- [ ] Médicaments *(1 grille sur 20)*
+> 	- [ ] Alcool *(1 grille sur 20)*
+> 	- [ ] Tabac *(1 grille sur 20)*
+> 	- [ ] Drogues *(1 grille sur 20)*
+> 	- [ ] Comorbidités *(1 grille sur 20)*
 > - [ ] **155. Habitudes *(Pyélonéphrite)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
@@ -527,10 +530,10 @@ cssclasses:
 > 	- [ ] Contenu du dernier repas
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Allergies
-> - [ ] **161. État général *(Cholécystite, Torsion ovarienne)***
-> 	- [ ] Fièvre et frissons *(Cholécystite)*
+> - [ ] **161. État général *(2 grilles sur 20)***
+> 	- [ ] Fièvre et frissons *(1 grille sur 20)*
 > 	- [ ] Fatigue
-> 	- [ ] Forme (perte de poids) *(Cholécystite)*
+> 	- [ ] Forme (perte de poids) *(1 grille sur 20)*
 > 	- [ ] Fièvre *(Torsion ovarienne)*
 > 	- [ ] Perte/prise de poids récente *(Torsion ovarienne)*
 > - [ ] **162. Système reproducteur (DD: grossesse extra-utérine, torsion ovarienne) *(Torsion ovarienne)***
@@ -626,104 +629,103 @@ cssclasses:
 > 	- [ ] Dernières règles
 > 	- [ ] Contraception
 > 	- [ ] Risque de grossesse
-> - [ ] **178. Caractérisation de la douleur biliaire *(Cholécystite)***
+> - [ ] **178. Caractérisation de la douleur biliaire *(1 grille sur 20)***
 > 	- [ ] Localisation
 > 	- [ ] Irradiation
 > 	- [ ] Début et progression
 > 	- [ ] Caractère
 > 	- [ ] Intensité
-> - [ ] **179. Facteurs aggravants et déclenchants *(Cholécystite)***
+> - [ ] **179. Facteurs aggravants et déclenchants *(1 grille sur 20)***
 > 	- [ ] Facteurs aggravants
 > 	- [ ] Facteurs déclenchants
 > 	- [ ] Position antalgique
 > 	- [ ] Effet du traitement
 > 	- [ ] Évolution temporelle
-> - [ ] **180. Symptômes généraux et signes d'alarme *(Cholécystite)***
+> - [ ] **180. Symptômes généraux et signes d'alarme *(1 grille sur 20)***
 > 	- [ ] Fièvre
 > 	- [ ] Frissons
 > 	- [ ] Impact fonctionnel
 > 	- [ ] Ictère
 > 	- [ ] Altération état général
-> - [ ] **181. Transit et fonction digestive *(Cholécystite)***
+> - [ ] **181. Transit et fonction digestive *(1 grille sur 20)***
 > 	- [ ] Transit conservé
 > 	- [ ] Aspect des selles
 > 	- [ ] Troubles urinaires
 > 	- [ ] Dernière prise alimentaire
-> - [ ] **182. Antécédents personnels et facteurs de risque *(Cholécystite)***
+> - [ ] **182. Antécédents personnels et facteurs de risque *(1 grille sur 20)***
 > 	- [ ] Épisodes similaires antérieurs
 > 	- [ ] Surpoids
 > 	- [ ] Régime en cours
 > 	- [ ] Bonne santé habituelle
-> 	- [ ] Pas de médicaments réguliers
-> - [ ] **183. Antécédents familiaux et habitudes *(Cholécystite)***
+> - [ ] **183. Antécédents familiaux et habitudes *(1 grille sur 20)***
 > 	- [ ] Antécédents familiaux
 > 	- [ ] Père avec cholestérol élevé
 > 	- [ ] Tabagisme
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
-> - [ ] **184. Anamnèse socioprofessionnelle et impact *(Cholécystite)***
+> - [ ] **184. Anamnèse socioprofessionnelle et impact *(1 grille sur 20)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Impact professionnel
 > 	- [ ] Contexte psychosocial
 
 > [!tip] 🩺 Status
-> - [ ] **1. Mesures d'hygiène *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)***
+> - [ ] **1. Mesures d'hygiène *(3 grilles sur 20)***
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
-> - [ ] **2. Examen de la tête et du cou *(Cancer de l'ovaire, Cholécystite aiguë)***
-> 	- [ ] Inspection des sclérotiques *(Cholécystite aiguë)*
+> - [ ] **2. Examen de la tête et du cou *(2 grilles sur 20)***
+> 	- [ ] Inspection des sclérotiques *(1 grille sur 20)*
 > 	- [ ] Inspection des conjonctives *(Cancer de l'ovaire)*
-> - [ ] **3. Examen cardiovasculaire *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)***
-> - [ ] **4. Examen pulmonaire *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)***
+> - [ ] **3. Examen cardiovasculaire *(3 grilles sur 20)***
+> - [ ] **4. Examen pulmonaire *(3 grilles sur 20)***
 > 	- [ ] Percussion des champs pulmonaires *(Cancer de l'ovaire)*
 > 	- [ ] Auscultation pulmonaire *(Cancer de l'ovaire)*
-> - [ ] **5. Examen abdominal *(5 diagnostics)***
-> 	- [ ] Inspection de l'abdomen *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)*
-> 	- [ ] Auscultation de l'abdomen *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)*
-> 	- [ ] Percussion de l'abdomen *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)*
-> 	- [ ] Palpation de l'abdomen *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)*
-> - [ ] **6. Signe de Murphy *(Cholecystite aiguë, Cholécystite, Cholécystite aiguë)***
-> - [ ] **7. Examen cutané *(Cholécystite aiguë)***
+> - [ ] **5. Examen abdominal *(5 grilles sur 20)***
+> 	- [ ] Inspection de l'abdomen *(3 grilles sur 20)*
+> 	- [ ] Auscultation de l'abdomen *(3 grilles sur 20)*
+> 	- [ ] Percussion de l'abdomen *(3 grilles sur 20)*
+> 	- [ ] Palpation de l'abdomen *(3 grilles sur 20)*
+> - [ ] **6. Signe de Murphy *(3 grilles sur 20)***
+> - [ ] **7. Examen cutané *(1 grille sur 20)***
 > - [ ] **8. Signe de McBurney *(Appendicite aiguë)***
 > - [ ] **9. Signe de Blumberg *(Appendicite aiguë)***
 > - [ ] **10. Signe du psoas *(Appendicite aiguë)***
 > - [ ] **11. Signe de Rovsing *(Appendicite aiguë)***
 > - [ ] **12. Éviter de répéter les manœuvres douloureuses *(Cancer de l'ovaire)***
 > - [ ] **13. Non disponible dans les cas téléphoniques *(Maladie cœliaque)***
-> - [ ] **14. Paramètres vitaux *(Cholecystite aiguë)***
-> - [ ] **15. Inspection *(5 diagnostics)***
+> - [ ] **14. Paramètres vitaux *(1 grille sur 20)***
+> - [ ] **15. Inspection *(5 grilles sur 20)***
 > 	- [ ] Teint *(Infection génitale haute, Rectocolite ulcéro-hémorragique)*
 > 	- [ ] État général *(Infection génitale haute, Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Abdomen *(Infection génitale haute)*
 > 	- [ ] Cavité buccale *(Rectocolite ulcéro-hémorragique)*
 > 	- [ ] Peau *(Rectocolite ulcéro-hémorragique)*
 > 	- [ ] Recherche de signes d'alarme *(Reflux gastro-œsophagien (RGO))*
-> - [ ] **16. Sclérotiques *(Cholecystite aiguë)***
-> - [ ] **17. Peau / Abdomen *(Cholecystite aiguë)***
-> - [ ] **18. Auscultation *(4 diagnostics)***
+> - [ ] **16. Sclérotiques *(1 grille sur 20)***
+> - [ ] **17. Peau / Abdomen *(1 grille sur 20)***
+> - [ ] **18. Auscultation *(4 grilles sur 20)***
 > 	- [ ] Auscultation abdominale *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Auscultation cardio-pulmonaire *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Les 4 quadrants *(Cholécystite)*
-> 	- [ ] Auscultation avant toute autre partie du status *(Cholécystite)*
-> - [ ] **19. Percussion *(5 diagnostics)***
+> 	- [ ] Les 4 quadrants *(1 grille sur 20)*
+> 	- [ ] Auscultation avant toute autre partie du status *(1 grille sur 20)*
+> - [ ] **19. Percussion *(5 grilles sur 20)***
 > 	- [ ] Percussion abdominale *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Des 4 quadrants *(Cholangite, Cholécystite)*
+> 	- [ ] Des 4 quadrants *(2 grilles sur 20)*
 > 	- [ ] Délimitation de la taille du foie à la percussion (ou autre technique appropriée) *(Cholangite)*
-> 	- [ ] Délimite la taille du foie en percutant (ou autre technique appropriée) *(Cholécystite)*
-> - [ ] **20. Palpation *(4 diagnostics)***
-> 	- [ ] Superficielle *(Cholangite, Cholécystite)*
+> 	- [ ] Délimite la taille du foie en percutant (ou autre technique appropriée) *(1 grille sur 20)*
+> - [ ] **20. Palpation *(4 grilles sur 20)***
+> 	- [ ] Superficielle *(2 grilles sur 20)*
 > 	- [ ] Profonde (à deux mains) *(Cholangite)*
 > 	- [ ] Teste la détente *(Cholangite)*
 > 	- [ ] Commence par le côté non douloureux *(Cholangite)*
-> 	- [ ] Profonde *(Cholécystite)*
-> 	- [ ] Détente *(Cholécystite)*
-> - [ ] **21. Douleur directe à la décompression *(Cholecystite aiguë)***
-> - [ ] **22. Douleur à la décompression controlatérale *(Cholecystite aiguë)***
-> - [ ] **23. Douleur à l'ébranlement *(Cholecystite aiguë)***
-> - [ ] **24. Loges rénales *(Cholecystite aiguë, Cholécystite, Pyélonéphrite)***
-> 	- [ ] Palpation *(Cholécystite, Pyélonéphrite)*
-> 	- [ ] Percussion *(Cholécystite, Pyélonéphrite)*
+> 	- [ ] Profonde *(1 grille sur 20)*
+> 	- [ ] Détente *(1 grille sur 20)*
+> - [ ] **21. Douleur directe à la décompression *(1 grille sur 20)***
+> - [ ] **22. Douleur à la décompression controlatérale *(1 grille sur 20)***
+> - [ ] **23. Douleur à l'ébranlement *(1 grille sur 20)***
+> - [ ] **24. Loges rénales *(3 grilles sur 20)***
+> 	- [ ] Palpation *(2 grilles sur 20)*
+> 	- [ ] Percussion *(2 grilles sur 20)*
 > - [ ] **25. État général *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **26. Examen de base *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **27. Signes de péritonisme *(Purpura de Schönlein-Henoch (vascularite à IgA))***
@@ -840,22 +842,22 @@ cssclasses:
 > - [ ] **63. Status vasculaire *(Ischémie mésentérique aiguë)***
 > 	- [ ] Recherche de pouls périphériques
 > 	- [ ] Recherche d'anévrisme de l'aorte abdominale
-> - [ ] **64. Palpation de la rate *(Cholécystite, Reflux gastro-œsophagien (RGO))***
+> - [ ] **64. Palpation de la rate *(2 grilles sur 20)***
 > 	- [ ] Recherche de splénomégalie *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Décubitus dorsal *(Cholécystite)*
-> 	- [ ] Décubitus latéral droit *(Cholécystite)*
-> 	- [ ] Technique bimanuelle correcte *(Cholécystite)*
-> 	- [ ] Évaluation taille et consistance si palpable *(Cholécystite)*
-> - [ ] **65. Palpation des reins *(Cholécystite, Reflux gastro-œsophagien (RGO))***
+> 	- [ ] Décubitus dorsal *(1 grille sur 20)*
+> 	- [ ] Décubitus latéral droit *(1 grille sur 20)*
+> 	- [ ] Technique bimanuelle correcte *(1 grille sur 20)*
+> 	- [ ] Évaluation taille et consistance si palpable *(1 grille sur 20)*
+> - [ ] **65. Palpation des reins *(2 grilles sur 20)***
 > 	- [ ] Recherche de douleur rénale *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Palpation bimanuelle *(Cholécystite)*
-> 	- [ ] Main antérieure sous rebord costal *(Cholécystite)*
-> 	- [ ] Palpation lors inspiration profonde *(Cholécystite)*
-> 	- [ ] Évaluation pôle inférieur rein droit *(Cholécystite)*
+> 	- [ ] Palpation bimanuelle *(1 grille sur 20)*
+> 	- [ ] Main antérieure sous rebord costal *(1 grille sur 20)*
+> 	- [ ] Palpation lors inspiration profonde *(1 grille sur 20)*
+> 	- [ ] Évaluation pôle inférieur rein droit *(1 grille sur 20)*
 > - [ ] **66. Inspection buccale *(Reflux gastro-œsophagien (RGO))***
 > 	- [ ] Recherche de signes d'œsophagite
 > 	- [ ] État dentaire
-> - [ ] **67. Status abdominal - installation *(Cholécystite, Pyélonéphrite)***
+> - [ ] **67. Status abdominal - installation *(2 grilles sur 20)***
 > 	- [ ] Bras & jambes décroisées
 > 	- [ ] Tête légèrement surélevée
 > 	- [ ] Abdomen entièrement visible (premier bouton du pantalon déboutonné ou patient en sous-vêtements)
@@ -874,7 +876,7 @@ cssclasses:
 > 	- [ ] Palpation du point de McBurney
 > 	- [ ] Signe du Psoas
 > 	- [ ] Signe de Murphy
-> - [ ] **72. Evoque un toucher rectal *(Cholangite, Cholécystite, Pyélonéphrite)***
+> - [ ] **72. Evoque un toucher rectal *(3 grilles sur 20)***
 > - [ ] **73. Installation du patient *(Cholangite)***
 > 	- [ ] Jambes décroisées
 > 	- [ ] Bras le long du corps
@@ -885,7 +887,7 @@ cssclasses:
 > 	- [ ] Signe de Murphy
 > 	- [ ] Palpation du point de McBurney
 > 	- [ ] Signe du Psoas
-> - [ ] **75. DD : appendicite *(Cholécystite)***
+> - [ ] **75. DD : appendicite *(1 grille sur 20)***
 > 	- [ ] Palpation du point de McBurney
 > 	- [ ] Signe du Psoas
 > - [ ] **76. S'assure du confort d'installation de la patiente *(Torsion ovarienne)***
@@ -969,36 +971,36 @@ cssclasses:
 > 	- [ ] Palpation de la rate
 > 	- [ ] Palpation bimanuelle des loges rénales
 > 	- [ ] Mention du toucher rectal si indiqué
-> - [ ] **92. Inspection générale et recherche d'ictère *(Cholécystite)***
+> - [ ] **92. Inspection générale et recherche d'ictère *(1 grille sur 20)***
 > 	- [ ] Inspection de la peau
 > 	- [ ] Examen des sclères
 > 	- [ ] État général
 > 	- [ ] Signes vitaux complets
-> - [ ] **93. Recherche des signes d'insuffisance hépatocellulaire *(Cholécystite)***
+> - [ ] **93. Recherche des signes d'insuffisance hépatocellulaire *(1 grille sur 20)***
 > 	- [ ] Angiomes stellaires
 > 	- [ ] Erythrose palmaire
 > 	- [ ] Gynécomastie
 > 	- [ ] Ongles blancs
 > 	- [ ] Ecchymoses
-> - [ ] **94. Recherche des signes d'hypertension portale *(Cholécystite)***
+> - [ ] **94. Recherche des signes d'hypertension portale *(1 grille sur 20)***
 > 	- [ ] Collatérales porto-systémiques
 > 	- [ ] Splénomégalie
 > 	- [ ] Ascite
-> - [ ] **95. Recherche des signes de cholestase chronique *(Cholécystite)***
+> - [ ] **95. Recherche des signes de cholestase chronique *(1 grille sur 20)***
 > 	- [ ] Lésions de grattage
 > 	- [ ] Xanthélasma
 > 	- [ ] Hyperpigmentation cutanée
-> - [ ] **96. Examen spécialisé du foie *(Cholécystite)***
+> - [ ] **96. Examen spécialisé du foie *(1 grille sur 20)***
 > 	- [ ] Flèche hépatique
 > 	- [ ] Palpation du bord inférieur du foie
 > 	- [ ] Signe de Murphy
 > 	- [ ] Caractéristiques du foie palpé
-> - [ ] **97. Recherche d'ascite *(Cholécystite)***
+> - [ ] **97. Recherche d'ascite *(1 grille sur 20)***
 > 	- [ ] Matité déclive à la percussion
 > 	- [ ] Patient couché : percussion ligne horizontale ombilic
 > 	- [ ] Patient tourné 30-45° : recherche déplacement limite
 > 	- [ ] Technique de matité déclive correcte
-> - [ ] **98. Examen abdominal général *(Cholécystite)***
+> - [ ] **98. Examen abdominal général *(1 grille sur 20)***
 > 	- [ ] Séquence inspection-auscultation-percussion-palpation
 > 	- [ ] 4 quadrants et 9 régions de l'abdomen
 > 	- [ ] Technique de percussion et palpation correcte

@@ -5,9 +5,10 @@ type: memento-ecos-ssp
 ssp: "Éruption Cutanée"
 specialite: "Dermatologie"
 cas: 8
-diagnostics: 8
+diagnostics: 7
 tags:
   - ecos/memento
+  - ecos/grille-officielle
   - ecos/grille-non-officielle
 cssclasses:
   - skill-ecos
@@ -23,22 +24,27 @@ cssclasses:
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
 
-> [!warning] Mémento dérivé de grilles NON officielles
-> Ces items viennent de grilles d'entraînement (RESCOS, AMBOSS, GERMAN,
-> AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
-> officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
+> [!warning] Mémento mixte — 1 grille officielle, 7 non officielles
+> **RESCOS-68b** fait partie des **neuf grilles officielles** et fait donc
+> autorité ; elle est signalée ⭐️ dans l'encadré ci-dessous. Les 7
+> autres sont des grilles d'entraînement (RESCOS, AMBOSS, GERMAN, AZYGOS)
+> qu'aucun jury n'a validées.
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Dermatologie
+# Éruption Cutanée ⭐️
 
-## Éruption Cutanée ⭐️
-
-*8 grilles · 8 diagnostics distincts* — [[SSP — Éruption Cutanée]]
+*Dermatologie · 8 grilles · 7 diagnostics distincts* — [[SSP — Éruption Cutanée]]
 
 > [!abstract] Les 8 grilles fusionnées
 > - **AZYGOS-1** — Psoriasis `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/79a2e44d-a59f-4244-8729-c5a64fedbef0.json>)
@@ -48,7 +54,7 @@ cssclasses:
 > - **German-43** — Scarlatine / Angine streptococcique `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-43_-_Eruption_cutane_e_-_Grille_ECOS.html>)
 > - **German-44** — Lupus érythémateux cutané `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-44_-_Erythe_me_-_Grille_ECOS.html>)
 > - **RESCOS-68** — Zona `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-68%20-%20Eruption%20cutanée%20-%20Grille%20ECOS.html>)
-> - **RESCOS-68b** — ZONA `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-68b%20-%20Eruption%20cutanée%20-%20Grille%20ECOS.html>)
+> - **RESCOS-68b** ⭐️ **officielle** — Zona `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-68b%20-%20Eruption%20cutanée%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Question d’entrée *(Psoriasis, Syphilis)***
@@ -57,31 +63,31 @@ cssclasses:
 > - [ ] **4. Évolution *(Dermatite périorale, Psoriasis, Syphilis)***
 > - [ ] **5. Épisodes *(Dermatite périorale, Psoriasis, Syphilis)***
 > - [ ] **6. Localisation *(Dermatite périorale, Psoriasis, Syphilis)***
-> - [ ] **7. ⊕ Facteurs aggravants *(Dermatite périorale, Psoriasis, Syphilis)***
-> - [ ] **8. ⊖ Facteurs soulageants *(Dermatite périorale, Psoriasis, Syphilis)***
+> - [ ] **7. Facteurs aggravants *(Dermatite périorale, Psoriasis, Syphilis)***
+> - [ ] **8. Facteurs soulageants *(Dermatite périorale, Psoriasis, Syphilis)***
 > - [ ] **9. Mesures déjà prises *(Psoriasis, Syphilis)***
-> - [ ] **10. Symptômes associés *(5 diagnostics)***
+> - [ ] **10. Symptômes associés *(5 grilles sur 8)***
 > 	- [ ] Fièvre et frissons *(Scarlatine / Angine streptococcique)*
 > 	- [ ] Mal de gorge *(Scarlatine / Angine streptococcique)*
 > 	- [ ] Changements linguaux *(Scarlatine / Angine streptococcique)*
 > 	- [ ] Fatigue/asthénie *(Lupus érythémateux cutané)*
 > 	- [ ] Arthralgies *(Lupus érythémateux cutané)*
-> 	- [ ] Céphalées *(Lupus érythémateux cutané, ZONA)*
+> 	- [ ] Céphalées *(2 grilles sur 8)*
 > 	- [ ] Perte de poids *(Lupus érythémateux cutané)*
-> 	- [ ] Fièvre *(ZONA)*
-> 	- [ ] Fatigue *(ZONA)*
-> 	- [ ] Toux *(ZONA)*
-> - [ ] **11. Prurit *(4 diagnostics)***
-> 	- [ ] Début & Évolution *(Zona)*
-> - [ ] **12. Douleurs *(4 diagnostics)***
-> 	- [ ] Début *(ZONA, Zona)*
-> 	- [ ] Précise moment par rapport aux lésions *(ZONA, Zona)*
-> 	- [ ] Caractère *(ZONA, Zona)*
-> 	- [ ] Intensité *(ZONA, Zona)*
-> 	- [ ] Facteurs atténuants/Facteurs aggravants *(Zona)*
-> 	- [ ] Médicaments pris *(ZONA, Zona)*
-> 	- [ ] Facteurs atténuants *(ZONA)*
-> 	- [ ] Facteurs aggravants *(ZONA)*
+> 	- [ ] Fièvre *(1 grille sur 8)*
+> 	- [ ] Fatigue *(1 grille sur 8)*
+> 	- [ ] Toux *(1 grille sur 8)*
+> - [ ] **11. Prurit *(4 grilles sur 8)***
+> 	- [ ] Début & Évolution *(1 grille sur 8)*
+> - [ ] **12. Douleurs *(Psoriasis, Syphilis, Zona)***
+> 	- [ ] Début *(Zona)*
+> 	- [ ] Précise moment par rapport aux lésions *(Zona)*
+> 	- [ ] Caractère *(Zona)*
+> 	- [ ] Intensité *(Zona)*
+> 	- [ ] Facteurs atténuants/Facteurs aggravants *(1 grille sur 8)*
+> 	- [ ] Médicaments pris *(Zona)*
+> 	- [ ] Facteurs atténuants *(1 grille sur 8)*
+> 	- [ ] Facteurs aggravants *(1 grille sur 8)*
 > - [ ] **13. Ongles *(Psoriasis)***
 > - [ ] **14. Phénomène de Köbner *(Psoriasis)***
 > - [ ] **15. Plaintes articulaires *(Psoriasis)***
@@ -201,30 +207,30 @@ cssclasses:
 > 	- [ ] Évolution pendant le voyage
 > 	- [ ] Fièvre au retour
 > 	- [ ] Exposition solaire
-> - [ ] **104. Lésions *(ZONA, Zona)***
+> - [ ] **104. Lésions *(Zona)***
 > 	- [ ] Début
 > 	- [ ] Évolution en nombre
 > 	- [ ] Évolution en caractère
 > 	- [ ] Localisation
-> - [ ] **105. Premier épisode *(ZONA, Zona)***
-> 	- [ ] A demandé si ATCD similaire *(Zona)*
-> - [ ] **106. Symptômes associés : Fièvre/fatigue/toux/céphalées *(Zona)***
-> - [ ] **107. Facteurs de risque *(ZONA, Zona)***
-> 	- [ ] Trauma/stress *(Zona)*
-> 	- [ ] Traitement immunosuppresseur/infection récente/maladie (cancer, VIH, Immuno) *(Zona)*
+> - [ ] **105. Premier épisode *(Zona)***
+> 	- [ ] A demandé si ATCD similaire *(1 grille sur 8)*
+> - [ ] **106. Symptômes associés : Fièvre/fatigue/toux/céphalées *(1 grille sur 8)***
+> - [ ] **107. Facteurs de risque *(Zona)***
+> 	- [ ] Trauma/stress *(1 grille sur 8)*
+> 	- [ ] Traitement immunosuppresseur/infection récente/maladie (cancer, VIH, Immuno) *(1 grille sur 8)*
 > 	- [ ] Fatigue importante
-> 	- [ ] Trauma *(ZONA)*
-> 	- [ ] Stress *(ZONA)*
-> 	- [ ] Traitement immunosuppresseur *(ZONA)*
-> 	- [ ] Infection récente *(ZONA)*
-> 	- [ ] Maladie (cancer, VIH, immunosuppression) *(ZONA)*
-> - [ ] **108. Anamnèse personnelle *(ZONA, Zona)***
+> 	- [ ] Trauma *(1 grille sur 8)*
+> 	- [ ] Stress *(1 grille sur 8)*
+> 	- [ ] Traitement immunosuppresseur *(1 grille sur 8)*
+> 	- [ ] Infection récente *(1 grille sur 8)*
+> 	- [ ] Maladie (cancer, VIH, immunosuppression) *(1 grille sur 8)*
+> - [ ] **108. Anamnèse personnelle *(Zona)***
 > 	- [ ] Allergie
 > 	- [ ] Vaccins
-> - [ ] **109. Anamnèse de varicelle *(ZONA, Zona)***
-> - [ ] **110. Contage *(ZONA, Zona)***
-> - [ ] **111. Douleurs soulagées par cannabis *(ZONA)***
-> - [ ] **112. Prurit — début ET évolution *(ZONA)***
+> - [ ] **109. Anamnèse de varicelle *(Zona)***
+> - [ ] **110. Contage *(Zona)***
+> - [ ] **111. Douleurs soulagées par cannabis *(1 grille sur 8)***
+> - [ ] **112. Prurit — début ET évolution *(1 grille sur 8)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Paramètres vitaux *(Psoriasis, Syphilis)***
@@ -293,23 +299,23 @@ cssclasses:
 > 	- [ ] Ulcérations buccales
 > 	- [ ] Alopécie
 > 	- [ ] Phénomène de Raynaud
-> - [ ] **39. Inspection des lésions *(ZONA, Zona)***
-> - [ ] **40. Inspection des paumes des mains/plantes des pieds *(ZONA, Zona)***
-> 	- [ ] Paumes des mains *(ZONA)*
-> 	- [ ] Plantes des pieds *(ZONA)*
-> - [ ] **41. Examen des aires ganglionnaires : Axillaires/Inguinales/Cervicales *(Zona)***
-> - [ ] **42. Palpation du thorax pour reproduire les douleurs *(ZONA, Zona)***
-> - [ ] **43. Examen des muqueuses : Bouche/Nez/OGE (intention) *(Zona)***
-> - [ ] **44. Intention de faire status ORL, pulmonaire ou cardio *(Zona)***
-> - [ ] **45. Examen des aires ganglionnaires *(ZONA)***
+> - [ ] **39. Inspection des lésions *(Zona)***
+> - [ ] **40. Inspection des paumes des mains/plantes des pieds *(Zona)***
+> 	- [ ] Paumes des mains *(1 grille sur 8)*
+> 	- [ ] Plantes des pieds *(1 grille sur 8)*
+> - [ ] **41. Examen des aires ganglionnaires : Axillaires/Inguinales/Cervicales *(1 grille sur 8)***
+> - [ ] **42. Palpation du thorax pour reproduire les douleurs *(Zona)***
+> - [ ] **43. Examen des muqueuses : Bouche/Nez/OGE (intention) *(1 grille sur 8)***
+> - [ ] **44. Intention de faire status ORL, pulmonaire ou cardio *(1 grille sur 8)***
+> - [ ] **45. Examen des aires ganglionnaires *(1 grille sur 8)***
 > 	- [ ] Axillaires
 > 	- [ ] Inguinales
 > 	- [ ] Cervicales
-> - [ ] **46. Examen des muqueuses (intention) *(ZONA)***
+> - [ ] **46. Examen des muqueuses (intention) *(1 grille sur 8)***
 > 	- [ ] Bouche
 > 	- [ ] Nez
 > 	- [ ] OGE
-> - [ ] **47. Intention de faire un status ORL, pulmonaire ou cardiaque *(ZONA)***
+> - [ ] **47. Intention de faire un status ORL, pulmonaire ou cardiaque *(1 grille sur 8)***
 > 	- [ ] ORL
 > 	- [ ] Pulmonaire
 > 	- [ ] Cardiaque

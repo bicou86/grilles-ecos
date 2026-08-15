@@ -3,7 +3,6 @@ aliases:
   - "Mémento Syncope & Perte de Connaissance"
 type: memento-ecos-ssp
 ssp: "Syncope & Perte de Connaissance"
-specialite: "Non classé"
 cas: 6
 diagnostics: 5
 tags:
@@ -28,15 +27,19 @@ cssclasses:
 > AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Non classé
-
-## Syncope & Perte de Connaissance
+# Syncope & Perte de Connaissance
 
 *6 grilles · 5 diagnostics distincts* — [[SSP — Syncope & Perte de Connaissance]]
 
@@ -57,11 +60,11 @@ cssclasses:
 > - [ ] **6. Premier événement *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **7. Répétition *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **8. Déclencheurs *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **9. Symptômes associés *(HypoTA orthostatique, Première crise épileptique focale bilatéralisée)***
-> 	- [ ] Sensations vertigineuses avant la perte de connaissance *(HypoTA orthostatique)*
-> 	- [ ] Voile noir et étoiles avant l'épisode *(HypoTA orthostatique)*
-> 	- [ ] Tremblements pendant l'épisode selon les parents *(HypoTA orthostatique)*
-> 	- [ ] Symptômes disparus au réveil *(HypoTA orthostatique)*
+> - [ ] **9. Symptômes associés *(2 grilles sur 6)***
+> 	- [ ] Sensations vertigineuses avant la perte de connaissance *(1 grille sur 6)*
+> 	- [ ] Voile noir et étoiles avant l'épisode *(1 grille sur 6)*
+> 	- [ ] Tremblements pendant l'épisode selon les parents *(1 grille sur 6)*
+> 	- [ ] Symptômes disparus au réveil *(1 grille sur 6)*
 > - [ ] **10. Aura *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **11. Sémiologie de la crise *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **12. Secousses *(Première crise épileptique focale bilatéralisée)***
@@ -108,7 +111,7 @@ cssclasses:
 > - [ ] **44. Cancers familiaux *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **45. Situation de vie *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **46. Réseau social *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **47. Présentation avec nom, fonction et tâche *(BAV, HypoTA orthostatique, Première crise convulsive tonico-clonique)***
+> - [ ] **47. Présentation avec nom, fonction et tâche *(3 grilles sur 6)***
 > - [ ] **48. Question ouverte initiale → symptôme principal *(Première crise convulsive tonico-clonique)***
 > - [ ] **49. Évolution temporelle de la crise *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Début
@@ -176,82 +179,81 @@ cssclasses:
 > 	- [ ] Domicile
 > 	- [ ] Loisirs
 > - [ ] **63. Revue des systèmes *(Première crise convulsive tonico-clonique)***
-> - [ ] **64. Question d'entrée ouverte - Motif de consultation *(HypoTA orthostatique)***
-> - [ ] **65. Caractérisation des symptômes principaux *(HypoTA orthostatique)***
+> - [ ] **64. Question d'entrée ouverte - Motif de consultation *(1 grille sur 6)***
+> - [ ] **65. Caractérisation des symptômes principaux *(1 grille sur 6)***
 > 	- [ ] Déclenchement par changements de position
 > 	- [ ] Amélioration en position allongée
 > 	- [ ] Prédominance horaire
 > 	- [ ] Durée des symptômes
-> - [ ] **66. Symptômes neurovégétatifs associés *(HypoTA orthostatique)***
+> - [ ] **66. Symptômes neurovégétatifs associés *(1 grille sur 6)***
 > 	- [ ] Vertiges
 > 	- [ ] Tachycardie
 > 	- [ ] Sueurs
 > 	- [ ] Pâleur
-> - [ ] **67. Épisodes syncopaux et chutes *(HypoTA orthostatique)***
+> - [ ] **67. Épisodes syncopaux et chutes *(1 grille sur 6)***
 > 	- [ ] Nombre de chutes
 > 	- [ ] Perte de connaissance complète
 > 	- [ ] Gravité des chutes
 > 	- [ ] Traumatismes associés
-> - [ ] **68. Symptômes cognitifs et généraux *(HypoTA orthostatique)***
+> - [ ] **68. Symptômes cognitifs et généraux *(1 grille sur 6)***
 > 	- [ ] Problèmes de concentration
 > 	- [ ] Fatigue inhabituelle
 > 	- [ ] Céphalées
 > 	- [ ] Modifications récentes
-> - [ ] **69. Symptômes cardiovasculaires *(HypoTA orthostatique)***
+> - [ ] **69. Symptômes cardiovasculaires *(1 grille sur 6)***
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Dyspnée
 > 	- [ ] Palpitations
 > 	- [ ] Œdèmes des membres inférieurs
-> - [ ] **70. Symptômes évocateurs d'autres causes *(HypoTA orthostatique)***
+> - [ ] **70. Symptômes évocateurs d'autres causes *(1 grille sur 6)***
 > 	- [ ] Intolérance au froid
 > 	- [ ] Acrocyanose
 > 	- [ ] Signes d'hypothyroïdie
 > 	- [ ] Signes d'insuffisance surrénalienne
-> - [ ] **71. Antécédents cardiovasculaires *(HypoTA orthostatique)***
+> - [ ] **71. Antécédents cardiovasculaires *(1 grille sur 6)***
 > 	- [ ] Maladies cardiaques connues
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Insuffisance cardiaque
 > 	- [ ] Troubles du rythme
-> - [ ] **72. Antécédents médicaux autres *(HypoTA orthostatique)***
+> - [ ] **72. Antécédents médicaux autres *(1 grille sur 6)***
 > 	- [ ] Maladies rénales
 > 	- [ ] Diabète
 > 	- [ ] Maladies neurologiques
 > 	- [ ] Autres pathologies chroniques
-> - [ ] **73. Traitements médicamenteux *(HypoTA orthostatique)***
+> - [ ] **73. Traitements médicamenteux *(1 grille sur 6)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Antihypertenseurs
 > 	- [ ] Diurétiques
 > 	- [ ] Psychotropes
 > 	- [ ] Observance thérapeutique
-> - [ ] **74. Habitudes de vie et hydratation *(HypoTA orthostatique)***
+> - [ ] **74. Habitudes de vie et hydratation *(1 grille sur 6)***
 > 	- [ ] Apports alimentaires
 > 	- [ ] Hydratation quotidienne
 > 	- [ ] Consommation de sel
 > 	- [ ] Modifications récentes
-> - [ ] **75. Substances et habitudes *(BAV, HypoTA orthostatique)***
-> 	- [ ] Tabagisme *(HypoTA orthostatique)*
+> - [ ] **75. Substances et habitudes *(2 grilles sur 6)***
+> 	- [ ] Tabagisme *(1 grille sur 6)*
 > 	- [ ] Alcool
-> 	- [ ] Café/thé *(HypoTA orthostatique)*
-> 	- [ ] Autres substances *(HypoTA orthostatique)*
+> 	- [ ] Café/thé *(1 grille sur 6)*
+> 	- [ ] Autres substances *(1 grille sur 6)*
 > 	- [ ] Tabac actuel *(BAV)*
 > 	- [ ] Café *(BAV)*
 > 	- [ ] Drogues illicites *(BAV)*
-> - [ ] **76. Activités physiques et mode de vie *(HypoTA orthostatique)***
+> - [ ] **76. Activités physiques et mode de vie *(1 grille sur 6)***
 > 	- [ ] Activités sportives
 > 	- [ ] Loisirs
 > 	- [ ] Niveau d'autonomie
 > 	- [ ] Mobilité générale
 > - [ ] **77. Antécédents familiaux *(BAV, HypoTA orthostatique)***
-> 	- [ ] Maladies cardiovasculaires familiales *(HypoTA orthostatique)*
-> 	- [ ] Hypotension familiale *(HypoTA orthostatique)*
-> 	- [ ] Autres pathologies héréditaires *(HypoTA orthostatique)*
-> 	- [ ] Causes de décès *(HypoTA orthostatique)*
+> 	- [ ] Maladies cardiovasculaires familiales *(1 grille sur 6)*
+> 	- [ ] Hypotension familiale *(1 grille sur 6)*
+> 	- [ ] Autres pathologies héréditaires *(1 grille sur 6)*
+> 	- [ ] Causes de décès *(1 grille sur 6)*
 > 	- [ ] Mort subite familiale *(BAV)*
 > 	- [ ] Maladies cardiaques *(BAV)*
 > 	- [ ] Troubles du rythme familiaux *(BAV)*
 > 	- [ ] État de santé de la mère *(BAV)*
-> 	- [ ] Pas d'antécédents familiaux de syncope, épilepsie ou pathologie cardiaque *(HypoTA orthostatique)*
-> - [ ] **78. Contexte social *(HypoTA orthostatique)***
+> - [ ] **78. Contexte social *(1 grille sur 6)***
 > 	- [ ] Situation familiale
 > 	- [ ] Enfants
 > 	- [ ] Profession antérieure
@@ -329,26 +331,24 @@ cssclasses:
 > - [ ] **96. Anamnèse avec patient·e (post resucrage efficace) *(Hypoglycémie)***
 > 	- [ ] Circonstance du malaise
 > 	- [ ] Compliance / modalité du traitement anti-diabétique
-> - [ ] **97. Caractérisation de la perte de connaissance *(HypoTA orthostatique)***
+> - [ ] **97. Caractérisation de la perte de connaissance *(1 grille sur 6)***
 > 	- [ ] Chronologie/durée
 > 	- [ ] Développement
 > 	- [ ] Circonstances de survenue
 > 	- [ ] Fréquence
-> - [ ] **98. État post-critique *(HypoTA orthostatique)***
+> - [ ] **98. État post-critique *(1 grille sur 6)***
 > 	- [ ] Réveil avec famille autour de lui
 > 	- [ ] Orientation conservée (sait où il est, reconnaît ses parents)
-> 	- [ ] Pas de confusion post-critique
 > 	- [ ] Récupération rapide et complète
-> - [ ] **99. Recherche de signes d'hypotension orthostatique *(HypoTA orthostatique)***
+> - [ ] **99. Recherche de signes d'hypotension orthostatique *(1 grille sur 6)***
 > 	- [ ] Épisode en se levant (changement de position)
 > 	- [ ] Vertiges et voile devant les yeux
-> 	- [ ] Pas de symptômes en position allongée/assise
-> - [ ] **100. Antécédents médicaux et facteurs prédisposants *(HypoTA orthostatique)***
+> - [ ] **100. Antécédents médicaux et facteurs prédisposants *(1 grille sur 6)***
 > 	- [ ] Anémie ferriprive en traitement (fer per os et IV)
 > 	- [ ] Jamais hospitalisé ni opéré
 > 	- [ ] Allergie au pollen
 > 	- [ ] Vaccins à jour
-> - [ ] **101. Habitudes et facteurs de risque *(HypoTA orthostatique)***
+> - [ ] **101. Habitudes et facteurs de risque *(1 grille sur 6)***
 > 	- [ ] Médicaments
 > 	- [ ] Alimentation
 > 	- [ ] Activité physique
@@ -391,49 +391,49 @@ cssclasses:
 > 	- [ ] Tonus
 > 	- [ ] Réflexes ostéo-tendineux
 > - [ ] **30. Auscultation carotidienne *(Première crise convulsive tonico-clonique)***
-> - [ ] **31. Hygiène des mains *(HypoTA orthostatique)***
+> - [ ] **31. Hygiène des mains *(1 grille sur 6)***
 > 	- [ ] Désinfection des mains avant l'examen
-> - [ ] **32. Mesure de la pression artérielle orthostatique *(HypoTA orthostatique)***
+> - [ ] **32. Mesure de la pression artérielle orthostatique *(1 grille sur 6)***
 > 	- [ ] Mesure en position couchée (après 5 min de repos)
 > 	- [ ] Mesure en position debout (immédiatement)
 > 	- [ ] Mesure en position debout (après 3 min)
 > 	- [ ] Calcul de la différence
-> - [ ] **33. Test de Schellong complet *(HypoTA orthostatique)***
+> - [ ] **33. Test de Schellong complet *(1 grille sur 6)***
 > 	- [ ] Position couchée 10 minutes
 > 	- [ ] Mesures répétées en orthostatisme
 > 	- [ ] Documentation des symptômes
 > 	- [ ] Interprétation correcte
 > - [ ] **34. Examen cardiovasculaire *(HypoTA orthostatique)***
 > 	- [ ] Auscultation cardiaque (4 foyers)
-> 	- [ ] Palpation du pouls (fréquence et régularité)
-> 	- [ ] Recherche de souffles
-> 	- [ ] Signes d'insuffisance cardiaque
-> 	- [ ] Recherche de souffle ou trouble du rythme
-> 	- [ ] Palpation des pouls périphériques
-> 	- [ ] Recherche de signes d'insuffisance cardiaque
-> - [ ] **35. Examen pulmonaire *(BAV, HypoTA orthostatique)***
-> 	- [ ] Inspection thoracique *(HypoTA orthostatique)*
-> 	- [ ] Auscultation pulmonaire bilatérale *(HypoTA orthostatique)*
-> 	- [ ] Recherche de râles *(HypoTA orthostatique)*
-> 	- [ ] Évaluation de la symétrie *(HypoTA orthostatique)*
+> 	- [ ] Palpation du pouls (fréquence et régularité) *(1 grille sur 6)*
+> 	- [ ] Recherche de souffles *(1 grille sur 6)*
+> 	- [ ] Signes d'insuffisance cardiaque *(1 grille sur 6)*
+> 	- [ ] Recherche de souffle ou trouble du rythme *(1 grille sur 6)*
+> 	- [ ] Palpation des pouls périphériques *(1 grille sur 6)*
+> 	- [ ] Recherche de signes d'insuffisance cardiaque *(1 grille sur 6)*
+> - [ ] **35. Examen pulmonaire *(2 grilles sur 6)***
+> 	- [ ] Inspection thoracique *(1 grille sur 6)*
+> 	- [ ] Auscultation pulmonaire bilatérale *(1 grille sur 6)*
+> 	- [ ] Recherche de râles *(1 grille sur 6)*
+> 	- [ ] Évaluation de la symétrie *(1 grille sur 6)*
 > 	- [ ] Auscultation bilatérale *(BAV)*
 > 	- [ ] Recherche de râles crépitants *(BAV)*
 > 	- [ ] Signes de congestion *(BAV)*
 > 	- [ ] Épanchement pleural *(BAV)*
-> - [ ] **36. Inspection cutanée et vasculaire *(HypoTA orthostatique)***
+> - [ ] **36. Inspection cutanée et vasculaire *(1 grille sur 6)***
 > 	- [ ] Recherche de pâleur
 > 	- [ ] Présence de varices
 > 	- [ ] État d'hydratation cutanée
 > 	- [ ] Temps de recoloration capillaire
-> - [ ] **37. Examen neurologique de dépistage *(BAV, HypoTA orthostatique)***
-> 	- [ ] Orientation temporo-spatiale *(HypoTA orthostatique)*
-> 	- [ ] Équilibre et coordination *(HypoTA orthostatique)*
+> - [ ] **37. Examen neurologique de dépistage *(2 grilles sur 6)***
+> 	- [ ] Orientation temporo-spatiale *(1 grille sur 6)*
+> 	- [ ] Équilibre et coordination *(1 grille sur 6)*
 > 	- [ ] Réflexes ostéo-tendineux
-> 	- [ ] Force musculaire globale *(HypoTA orthostatique)*
+> 	- [ ] Force musculaire globale *(1 grille sur 6)*
 > 	- [ ] État de conscience (score de Glasgow) *(BAV)*
 > 	- [ ] Déficit focal *(BAV)*
 > 	- [ ] Signes méningés *(BAV)*
-> - [ ] **38. Recherche de signes d'hypovolémie *(HypoTA orthostatique)***
+> - [ ] **38. Recherche de signes d'hypovolémie *(1 grille sur 6)***
 > 	- [ ] Pli cutané
 > 	- [ ] Sécheresse des muqueuses
 > 	- [ ] Yeux enfoncés
@@ -496,21 +496,21 @@ cssclasses:
 > - [ ] **51. E - Exposure *(Hypoglycémie)***
 > 	- [ ] Demande mesure T°
 > 	- [ ] Examen sommaire "tête aux pieds"
-> - [ ] **52. Constantes vitales et état général *(HypoTA orthostatique)***
+> - [ ] **52. Constantes vitales et état général *(1 grille sur 6)***
 > 	- [ ] Mesure de la tension artérielle
 > 	- [ ] Fréquence cardiaque et pouls
 > 	- [ ] État d'hydratation
 > 	- [ ] Évaluation générale
-> - [ ] **53. Test d'hypotension orthostatique *(HypoTA orthostatique)***
+> - [ ] **53. Test d'hypotension orthostatique *(1 grille sur 6)***
 > 	- [ ] Mesure TA en position couchée
 > 	- [ ] Mesure TA après 3 minutes debout
 > 	- [ ] Recherche de symptômes au lever
 > 	- [ ] Interprétation du test (chute ≥20/10 mmHg)
-> - [ ] **54. Examen neurologique de base *(HypoTA orthostatique)***
+> - [ ] **54. Examen neurologique de base *(1 grille sur 6)***
 > 	- [ ] État de conscience et orientation
 > 	- [ ] Recherche de déficit neurologique focal
 > 	- [ ] Reflexes pupillaires
-> - [ ] **55. Recherche de signes d'anémie *(HypoTA orthostatique)***
+> - [ ] **55. Recherche de signes d'anémie *(1 grille sur 6)***
 > 	- [ ] Coloration des conjonctives
 > 	- [ ] Coloration des muqueuses
 > 	- [ ] Recherche de pâleur cutanée

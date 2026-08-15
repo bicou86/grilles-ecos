@@ -3,7 +3,6 @@ aliases:
   - "Mémento Hypoacousie"
 type: memento-ecos-ssp
 ssp: "Hypoacousie"
-specialite: "Non classé"
 cas: 4
 diagnostics: 3
 tags:
@@ -28,15 +27,19 @@ cssclasses:
 > AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Non classé
-
-## Hypoacousie
+# Hypoacousie
 
 *4 grilles · 3 diagnostics distincts* — [[SSP — Hypoacousie]]
 
@@ -47,25 +50,25 @@ cssclasses:
 > - **German-68** — Presbyacousie bilatérale `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-68_-_Perte_auditive_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(Presbyacousie)***
-> - [ ] **2. Caractérisation de la perte auditive**
-> 	- [ ] Oreilles affectées *(Presbyacousie)*
-> 	- [ ] Tous les sons/sons spécifiques *(Presbyacousie)*
-> 	- [ ] Début *(Presbyacousie)*
-> 	- [ ] Constant/intermittent *(Presbyacousie)*
-> 	- [ ] Événements précipitants *(Presbyacousie)*
-> 	- [ ] Progression *(Presbyacousie)*
-> 	- [ ] Épisodes antérieurs *(Presbyacousie)*
-> 	- [ ] Facteurs améliorants *(Presbyacousie)*
-> 	- [ ] Facteurs aggravants *(Presbyacousie)*
-> 	- [ ] Symptômes associés *(Presbyacousie)*
+> - [ ] **1. Motif principal *(1 grille sur 4)***
+> - [ ] **2. Caractérisation de la perte auditive *(3 grilles sur 4)***
+> 	- [ ] Oreilles affectées *(1 grille sur 4)*
+> 	- [ ] Tous les sons/sons spécifiques *(1 grille sur 4)*
+> 	- [ ] Début *(1 grille sur 4)*
+> 	- [ ] Constant/intermittent *(1 grille sur 4)*
+> 	- [ ] Événements précipitants *(1 grille sur 4)*
+> 	- [ ] Progression *(1 grille sur 4)*
+> 	- [ ] Épisodes antérieurs *(1 grille sur 4)*
+> 	- [ ] Facteurs améliorants *(1 grille sur 4)*
+> 	- [ ] Facteurs aggravants *(1 grille sur 4)*
+> 	- [ ] Symptômes associés *(1 grille sur 4)*
 > 	- [ ] Apparition temporelle *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
 > 	- [ ] Évolution temporelle *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Latéralisation *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
 > 	- [ ] Intensité de la perte auditive *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Évolution *(Presbyacousie bilatérale)*
 > 	- [ ] Sévérité *(Presbyacousie bilatérale)*
-> - [ ] **3. Recherche de symptômes spécifiques *(Presbyacousie)***
+> - [ ] **3. Recherche de symptômes spécifiques *(1 grille sur 4)***
 > 	- [ ] Traumatisme
 > 	- [ ] Céphalées
 > 	- [ ] Nausées/vomissements
@@ -79,60 +82,60 @@ cssclasses:
 > 	- [ ] Faiblesse
 > 	- [ ] Engourdissement
 > 	- [ ] Picotements
-> - [ ] **4. Antécédents médicaux *(Presbyacousie)***
+> - [ ] **4. Antécédents médicaux *(1 grille sur 4)***
 > 	- [ ] Antécédents médicaux
 > 	- [ ] Type de chimiothérapie
 > - [ ] **5. Allergies *(Presbyacousie, Surdité brusque idiopathique gauche)***
-> 	- [ ] Allergies *(Presbyacousie)*
-> 	- [ ] Description de la réaction allergique *(Presbyacousie)*
+> 	- [ ] Allergies *(1 grille sur 4)*
+> 	- [ ] Description de la réaction allergique *(1 grille sur 4)*
 > 	- [ ] Allergies connues *(Surdité brusque idiopathique gauche)*
 > - [ ] **6. Médicaments *(Presbyacousie)***
-> - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Presbyacousie)***
+> - [ ] **7. Hospitalisations et antécédents chirurgicaux *(1 grille sur 4)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **8. Antécédents familiaux *(Presbyacousie, Surdité brusque idiopathique gauche)***
+> - [ ] **8. Antécédents familiaux *(2 grilles sur 4)***
 > 	- [ ] Surdité familiale *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Autres pathologies ORL familiales *(Surdité brusque idiopathique gauche)*
-> - [ ] **9. Habitudes et mode de vie *(Presbyacousie)***
+> - [ ] **9. Habitudes et mode de vie *(1 grille sur 4)***
 > 	- [ ] Travail
 > 	- [ ] Niveau sonore au travail, protection auditive
 > 	- [ ] Domicile
 > 	- [ ] Alcool
 > 	- [ ] Drogues récréatives
 > 	- [ ] Tabac
-> - [ ] **10. Question d’entrée *(Presbyacousie)***
-> - [ ] **11. Localisation (unilatérale / bilatérale) *(Presbyacousie)***
-> - [ ] **12. Dimension temporelle *(Presbyacousie)***
-> - [ ] **13. Durée (depuis quand ?) *(Presbyacousie)***
-> - [ ] **14. Début (soudain / insidieux) *(Presbyacousie)***
-> - [ ] **15. Évolution (stable / progressive / intermittente) *(Presbyacousie)***
-> - [ ] **16. Déclencheurs *(Presbyacousie)***
-> - [ ] **17. Qualité de l’hypoacousie *(Presbyacousie)***
-> - [ ] **18. Intensité / retentissement de l’hypoacousie *(Presbyacousie)***
-> - [ ] **19. Facteurs améliorants *(Presbyacousie)***
-> - [ ] **20. Facteurs aggravants *(Presbyacousie)***
-> - [ ] **21. Symptômes associés *(Presbyacousie)***
-> - [ ] **22. Otalgies *(Presbyacousie)***
-> - [ ] **23. Otorrhée *(Presbyacousie)***
-> - [ ] **24. Vertiges *(Presbyacousie)***
-> - [ ] **25. Acouphènes / bourdonnements *(Presbyacousie)***
-> - [ ] **26. Exposition au bruit *(Presbyacousie, Presbyacousie bilatérale)***
+> - [ ] **10. Question d’entrée *(1 grille sur 4)***
+> - [ ] **11. Localisation (unilatérale / bilatérale) *(1 grille sur 4)***
+> - [ ] **12. Dimension temporelle *(1 grille sur 4)***
+> - [ ] **13. Durée (depuis quand ?) *(1 grille sur 4)***
+> - [ ] **14. Début (soudain / insidieux) *(1 grille sur 4)***
+> - [ ] **15. Évolution (stable / progressive / intermittente) *(1 grille sur 4)***
+> - [ ] **16. Déclencheurs *(1 grille sur 4)***
+> - [ ] **17. Qualité de l’hypoacousie *(1 grille sur 4)***
+> - [ ] **18. Intensité / retentissement de l’hypoacousie *(1 grille sur 4)***
+> - [ ] **19. Facteurs améliorants *(1 grille sur 4)***
+> - [ ] **20. Facteurs aggravants *(1 grille sur 4)***
+> - [ ] **21. Symptômes associés *(1 grille sur 4)***
+> - [ ] **22. Otalgies *(1 grille sur 4)***
+> - [ ] **23. Otorrhée *(1 grille sur 4)***
+> - [ ] **24. Vertiges *(1 grille sur 4)***
+> - [ ] **25. Acouphènes / bourdonnements *(1 grille sur 4)***
+> - [ ] **26. Exposition au bruit *(2 grilles sur 4)***
 > 	- [ ] Exposition professionnelle antérieure *(Presbyacousie bilatérale)*
 > 	- [ ] Loisirs bruyants *(Presbyacousie bilatérale)*
 > 	- [ ] Traumatismes acoustiques *(Presbyacousie bilatérale)*
-> - [ ] **27. Céphalées *(Presbyacousie)***
-> - [ ] **28. Symptômes neurologiques focaux *(Presbyacousie)***
-> - [ ] **29. Infections passées *(Presbyacousie)***
-> - [ ] **30. Antécédents *(Presbyacousie)***
-> - [ ] **31. Problèmes auditifs/oreilles antérieurs, appareils auditifs *(Presbyacousie)***
-> - [ ] **32. Opérations ORL antérieures *(Presbyacousie)***
-> - [ ] **33. Noxes *(Presbyacousie)***
-> - [ ] **34. Alcool *(Presbyacousie)***
-> - [ ] **35. Tabac *(Presbyacousie)***
-> - [ ] **36. Drogues *(Presbyacousie)***
-> - [ ] **37. Hypoacousie familiale *(Presbyacousie)***
-> - [ ] **38. Profession *(Presbyacousie)***
-> - [ ] **39. Situation sociale *(Presbyacousie)***
+> - [ ] **27. Céphalées *(1 grille sur 4)***
+> - [ ] **28. Symptômes neurologiques focaux *(1 grille sur 4)***
+> - [ ] **29. Infections passées *(1 grille sur 4)***
+> - [ ] **30. Antécédents *(1 grille sur 4)***
+> - [ ] **31. Problèmes auditifs/oreilles antérieurs, appareils auditifs *(1 grille sur 4)***
+> - [ ] **32. Opérations ORL antérieures *(1 grille sur 4)***
+> - [ ] **33. Noxes *(1 grille sur 4)***
+> - [ ] **34. Alcool *(1 grille sur 4)***
+> - [ ] **35. Tabac *(1 grille sur 4)***
+> - [ ] **36. Drogues *(1 grille sur 4)***
+> - [ ] **37. Hypoacousie familiale *(1 grille sur 4)***
+> - [ ] **38. Profession *(1 grille sur 4)***
+> - [ ] **39. Situation sociale *(1 grille sur 4)***
 > - [ ] **40. Présentation avec nom, fonction et tâche *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
 > - [ ] **41. Question d'entrée ouverte *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Qu'est-ce qui vous amène aujourd'hui ?
@@ -191,30 +194,30 @@ cssclasses:
 > 	- [ ] Isolement social
 
 > [!tip] 🩺 Status
-> - [ ] **1. Mesures d'hygiène *(Presbyacousie)***
+> - [ ] **1. Mesures d'hygiène *(1 grille sur 4)***
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
-> - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(Presbyacousie)***
+> - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(1 grille sur 4)***
 > 	- [ ] Palpation de la tête
 > 	- [ ] Inspection des oreilles
 > 	- [ ] Palpation des oreilles
 > 	- [ ] Otoscopie
 > 	- [ ] Tests de Rinne et Weber
-> - [ ] **3. Examen neurologique *(Presbyacousie)***
+> - [ ] **3. Examen neurologique *(1 grille sur 4)***
 > 	- [ ] Examen ciblé des nerfs crâniens
 > 	- [ ] Examen ciblé de l'audition
-> - [ ] **4. Tension artérielle *(Presbyacousie)***
-> - [ ] **5. Inspection *(Presbyacousie)***
-> - [ ] **6. Palpation (tragus / helix) *(Presbyacousie)***
-> - [ ] **7. Otoscopie incl. manœuvre de Valsalva *(Presbyacousie)***
-> - [ ] **8. Tests auditifs *(Presbyacousie)***
-> - [ ] **9. Épreuve d’orientation auditive (test des nombres chuchotés) *(Presbyacousie)***
-> - [ ] **10. Test de Weber *(Presbyacousie)***
-> - [ ] **11. Test de Rinne *(Presbyacousie)***
-> - [ ] **12. Status neurologique orientant *(Presbyacousie)***
-> - [ ] **13. Examen du facial *(Presbyacousie)***
-> - [ ] **14. Status complet des nerfs crâniens *(Presbyacousie)***
-> - [ ] **15. Motricité / sensibilité / coordination *(Presbyacousie)***
+> - [ ] **4. Tension artérielle *(1 grille sur 4)***
+> - [ ] **5. Inspection *(1 grille sur 4)***
+> - [ ] **6. Palpation (tragus / helix) *(1 grille sur 4)***
+> - [ ] **7. Otoscopie incl. manœuvre de Valsalva *(1 grille sur 4)***
+> - [ ] **8. Tests auditifs *(1 grille sur 4)***
+> - [ ] **9. Épreuve d’orientation auditive (test des nombres chuchotés) *(1 grille sur 4)***
+> - [ ] **10. Test de Weber *(1 grille sur 4)***
+> - [ ] **11. Test de Rinne *(1 grille sur 4)***
+> - [ ] **12. Status neurologique orientant *(1 grille sur 4)***
+> - [ ] **13. Examen du facial *(1 grille sur 4)***
+> - [ ] **14. Status complet des nerfs crâniens *(1 grille sur 4)***
+> - [ ] **15. Motricité / sensibilité / coordination *(1 grille sur 4)***
 > - [ ] **16. Inspection de l'oreille *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
 > 	- [ ] Inspection du pavillon auriculaire *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Inspection du conduit auditif externe visible *(Surdité brusque idiopathique gauche)*

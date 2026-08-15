@@ -8,18 +8,17 @@
 Un fichier « Mémento — <SSP>.md » par SSP dans docs/obsidian-memento/, a cote
 du memento des neuf grilles officielles, qui reste la reference de forme et le
 test de non-regression de la chaine (check_fusion.py l'epingle par md5).
+check_mementos.py, lui, garde ces fichiers-ci : il les regenere et compare.
 
 CE QUE CE GENERATEUR PRODUIT AUJOURD'HUI : les encadres 📋 anamnese et 🩺
 status, fusionnes entre tous les cas de la SSP. Le management (🔬 / 💊) suivra,
 avec ses sous-blocs par diagnostic ; `encadre()` et `marque()` sont deja
 partages avec lui via lib_rendu.
 
-LE MARQUAGE DU SPECIFIQUE repose sur le diagnostic de chaque cas, lu dans
-docs/ecos-diagnostics.yaml puis ramene a la categorie de la table des
-priorites par docs/ecos-diagnostics-alias.yaml. Sans cet alias, « Fracture de
-l'humerus » et « Fracture de la tete radiale » resteraient deux diagnostics
-distincts la ou la table des priorites n'en voit qu'un, et un item commun aux
-deux serait marque comme specifique a tort.
+LE MARQUAGE porte sur les GRILLES et non sur les diagnostics — voir
+lib_rendu.marque() pour l'invariant. Deux grilles portent le meme diagnostic
+apres passage par docs/ecos-diagnostics-alias.yaml, puis apres reconciliation
+des variantes de casse et d'accent (`ZONA` et `Zona` sont un seul diagnostic).
 
 DETERMINISME : aucune date, aucun aleatoire, et tout ensemble est trie avant
 d'etre ecrit (le champ `cas` rendu par lib_fusion.apparier() est un `set`,
@@ -29,6 +28,7 @@ import glob
 import re
 import sys
 import unicodedata
+from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -39,26 +39,47 @@ import lib_rendu                                         # noqa: E402
 import lib_ssp                                           # noqa: E402
 import lib_yaml                                          # noqa: E402
 from check_couverture import HORS_PERIMETRE              # noqa: E402
+from lib_extraction import sans_accent                   # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
 SORTIE = REPO / "docs" / "obsidian-memento"
 ALIAS = REPO / "docs" / "ecos-diagnostics-alias.yaml"
-PREFIXE = "Mémento — "        # nomme les fichiers de CE generateur, eux seuls
+PREFIXE = "Mémento — "
+TYPE = "memento-ecos-ssp"     # marque d'appartenance, dans le frontmatter
 
 # « AMBOSS-1 » < « AMBOSS-10 » : le numero se compare en entier, pas en
 # chaine. Le reste (« b », « -2 ») departage les grilles de meme numero.
 _RANG = re.compile(r"^([A-Za-z]+)-(\d+)(.*)$")
 
-ENTETE = """> [!warning] Mémento dérivé de grilles NON officielles
+# Le frontmatter d'un memento produit ici. Sert de marque d'appartenance a
+# `nettoyer()` : le NOM d'un fichier ne prouve rien (« Mémento — Toux (mes
+# notes).md » est exactement le nom qu'un humain choisirait), le type declare,
+# lui, n'est ecrit que par ce generateur.
+_TYPE_DECLARE = re.compile(rf"^type:\s*{TYPE}\s*$", re.M)
+
+ENTETE_NON_OFFICIEL = """> [!warning] Mémento dérivé de grilles NON officielles
 > Ces items viennent de grilles d'entraînement (RESCOS, AMBOSS, GERMAN,
 > AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
-> officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
+> officielles fait autorité — [[Mémento ECOS — Grilles officielles]]."""
+
+ENTETE_MIXTE = """> [!warning] Mémento mixte — {n} grille{s} officielle{s}, {autres} non officielles
+> **{officielles}** fait partie des **neuf grilles officielles** et fait donc
+> autorité ; elle est signalée ⭐️ dans l'encadré ci-dessous. Les {autres}
+> autres sont des grilles d'entraînement (RESCOS, AMBOSS, GERMAN, AZYGOS)
+> qu'aucun jury n'a validées."""
+
+CONVENTION = """>
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item."""
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un."""
 
 
 def rang(cid):
@@ -68,23 +89,7 @@ def rang(cid):
 
 
 def canonique_diagnostic(nom, alias):
-    """Le libelle sous lequel DEUX cas portent le meme diagnostic.
-
-    L'alias reconcilie le libelle precis d'une grille (« AOMI stade IIb »)
-    avec la categorie de la table des priorites (« AOMI ») : sans lui, le
-    marquage produirait des variantes qui devraient se rejoindre. La cible
-    d'un alias est reprise telle quelle, c'est un libelle cure.
-
-    A defaut d'alias, l'initiale est mise en majuscule. Ce n'est pas une
-    coquetterie : la table des diagnostics porte vingt libelles a initiale
-    minuscule, dont « embolie pulmonaire » (RESCOS-35), qui resterait sinon un
-    huitieme diagnostic de Douleur Thoracique a cote de l'« Embolie
-    pulmonaire » d'AMBOSS-12 et de German-31 — et tout item commun aux trois
-    serait marque comme specifique. Verifie sur les 234 libelles de la table :
-    c'est le SEUL rapprochement que cette regle provoque. L'alias est retente
-    sur la forme majusculee, pour qu'une entree ecrite dans un sens ou dans
-    l'autre porte de la meme facon.
-    """
+    """Alias cure d'abord, initiale en majuscule a defaut."""
     nom = nom.strip()
     if nom in alias:
         return alias[nom]
@@ -92,26 +97,55 @@ def canonique_diagnostic(nom, alias):
     return alias.get(hausse, hausse)
 
 
+def reconcilie_orthographe(formes, alias):
+    """forme -> forme retenue, quand plusieurs ne different que par la graphie.
+
+    Deux libelles qui ne different que par la CASSE ou les ACCENTS nomment le
+    meme diagnostic : aucun couple de diagnostics distincts ne se distingue par
+    cela seul, si bien que le rapprochement ne peut pas se tromper. C'est ce
+    que la seule mise en majuscule de l'initiale ratait — « ZONA » (RESCOS-68b)
+    restait un diagnostic separe de « Zona » (RESCOS-68, AMBOSS-40) et
+    Éruption Cutanée annoncait huit diagnostics au lieu de sept.
+
+    La forme retenue est, dans l'ordre : une cible d'alias (libelle cure), sinon
+    la graphie majoritaire, sinon la plus accentuee (une variante desaccentuee
+    est une degradation), sinon la premiere par ordre alphabetique.
+    """
+    cibles = set(alias.values())
+    groupes = {}
+    for forme in formes:
+        groupes.setdefault(sans_accent(forme), set()).add(forme)
+
+    def accents(f):
+        return sum(1 for c in f if sans_accent(c) != c.lower())
+
+    out = {}
+    for variantes in groupes.values():
+        curees = sorted(f for f in variantes if f in cibles)
+        retenue = curees[0] if curees else sorted(
+            variantes, key=lambda f: (-formes[f], -accents(f), f))[0]
+        for f in variantes:
+            out[f] = retenue
+    return out
+
+
 def _table_diagnostics():
     """id de cas -> (diagnostic canonique ou None, confiance).
 
     Un cas dont la table ne nomme aucun diagnostic rend None : `marque()` le
-    traite alors comme n'apportant aucun diagnostic, ce qui laisse nu un item
-    qu'il est seul a porter. C'est le comportement voulu — un suffixe vide
-    serait pire qu'une absence de suffixe.
-
-    Une seule lecture pour les deux champs : les separer en deux fonctions
-    relirait la table deux fois et ouvrirait la porte a deux lectures
-    divergentes de la meme ligne.
+    traite alors comme n'apportant aucun diagnostic, ce qui empeche toute
+    conclusion par diagnostic sur un item qu'il porte.
     """
     alias = lib_yaml.lire_plat(ALIAS)
-    out = {}
+    brut = {}
     for cid, valeur in lib_diagnostic.charger_table().items():
         nom, _, confiance = valeur.rpartition(" | ")
         nom = nom.strip()
-        out[cid] = (canonique_diagnostic(nom, alias) if nom else None,
-                    confiance.strip() or "absent")
-    return out
+        brut[cid] = (canonique_diagnostic(nom, alias) if nom else None,
+                     confiance.strip() or "absent")
+    formes = Counter(d for d, _ in brut.values() if d)
+    graphie = reconcilie_orthographe(formes, alias)
+    return {cid: (graphie.get(d, d), c) for cid, (d, c) in brut.items()}
 
 
 def tous_les_cas():
@@ -154,103 +188,132 @@ def lien(cas):
     return f"file://{REPO / cas['fichier']}".replace(" ", "%20")
 
 
+def entete(cas_list):
+    """L'avertissement de tete, selon que la SSP fusionne ou non une officielle.
+
+    « Aucun jury n'a valide ces grilles » est FAUX des qu'une des neuf
+    officielles est fusionnee — quatre mementos du lot prioritaire sont dans
+    ce cas (Toux, Fatigue, Éruption Cutanée, Parésie - AVC), neuf en lot
+    complet. Le lecteur y ecarterait comme non valide un item qui vient
+    precisement du referentiel.
+    """
+    off = [c for c in cas_list if c["id"] in lib_ssp.OFFICIELLES]
+    if not off:
+        return ENTETE_NON_OFFICIEL + "\n" + CONVENTION
+    bloc = ENTETE_MIXTE.format(
+        officielles=", ".join(c["id"] for c in off),
+        n=len(off), s="s" if len(off) > 1 else "",
+        autres=len(cas_list) - len(off))
+    return bloc + "\n" + CONVENTION
+
+
 def inventaire(cas_list):
     """L'encadre qui nomme les grilles fusionnees et leur diagnostic."""
-    entete = ("La seule grille de cette SSP" if len(cas_list) == 1
-              else f"Les {len(cas_list)} grilles fusionnées")
-    out = [f"> [!abstract] {entete}"]
+    titre = ("La seule grille de cette SSP" if len(cas_list) == 1
+             else f"Les {len(cas_list)} grilles fusionnées")
+    out = [f"> [!abstract] {titre}"]
     for cas in cas_list:
+        officielle = " ⭐️ **officielle**" if cas["id"] in lib_ssp.OFFICIELLES else ""
         diag = cas["diagnostic"] or "diagnostic non résolu"
-        out.append(f"> - **{cas['id']}** — {diag} `{cas['confiance']}` · "
+        out.append(f"> - **{cas['id']}**{officielle} — {diag} `{cas['confiance']}` · "
                    f"[grille](<{lien(cas)}>)")
     return "\n".join(out)
 
 
+def _nettoie(groupe):
+    """Applique le nettoyage des libelles a un groupe apparie et a ses sous-items."""
+    groupe["titre"] = lib_rendu.nettoie_libelle(groupe["titre"])
+    for sous in groupe["sous"]:
+        sous["titre"] = lib_rendu.nettoie_libelle(sous["titre"])
+    return groupe
+
+
 def memento(ssp, cas_list):
     """Le document Markdown complet d'une SSP."""
+    cas_ssp = sorted(c["id"] for c in cas_list)
     diag_par_cas = {c["id"]: c["diagnostic"] for c in cas_list if c["diagnostic"]}
     total = len(set(diag_par_cas.values()))
     specialite = lib_ssp.specialite(ssp)
     etoile = " ⭐️" if lib_ssp.priorite(ssp) in ("Top 18", "Haut rendement") else ""
 
-    anamnese = lib_rendu.encadre("note", "📋 Anamnèse",
-                                 lib_fusion.apparier(cas_list, "a", ssp), total, diag_par_cas)
-    status = lib_rendu.encadre("tip", "🩺 Status",
-                               lib_fusion.apparier(cas_list, "e", ssp), total, diag_par_cas)
-
-    corps = [f"# {specialite}", "",
-             f"## {ssp}{etoile}", "",
-             f"*{len(cas_list)} grille{'s' if len(cas_list) > 1 else ''} · "
-             f"{total} diagnostic{'s' if total > 1 else ''} distinct"
-             f"{'s' if total > 1 else ''}* — [[SSP — {ssp}]]", "",
-             inventaire(cas_list), ""]
-    for bloc in (anamnese, status):
+    blocs = []
+    for genre, titre, prefixe in (("note", "📋 Anamnèse", "a"), ("tip", "🩺 Status", "e")):
+        groupes = [_nettoie(g) for g in lib_fusion.apparier(cas_list, prefixe, ssp)]
+        bloc = lib_rendu.encadre(genre, titre, groupes, cas_ssp, diag_par_cas)
         if bloc:
-            corps += [bloc, ""]
+            blocs += [bloc, ""]
 
-    return f"""---
-aliases:
-  - "Mémento {ssp}"
-type: memento-ecos-ssp
-ssp: "{ssp}"
-specialite: "{specialite}"
-cas: {len(cas_list)}
-diagnostics: {total}
-tags:
-  - ecos/memento
-  - ecos/grille-non-officielle
-cssclasses:
-  - skill-ecos
----
+    # LE TITRE DE NIVEAU 1 EST LA SSP, pas la specialite : un fichier ne porte
+    # qu'une SSP, la specialite n'y groupe rien, et 11 des 33 SSP n'ont pas
+    # encore de page dans le coffre — elles affichaient « # Non classé ».
+    ligne = [f"{len(cas_list)} grille{'s' if len(cas_list) > 1 else ''}",
+             f"{total} diagnostic{'s' if total > 1 else ''} distinct{'s' if total > 1 else ''}"]
+    if specialite != "Non classé":
+        ligne.insert(0, specialite)
+    corps = [f"# {ssp}{etoile}", "", "*" + " · ".join(ligne) + f"* — [[SSP — {ssp}]]", "",
+             inventaire(cas_list), ""] + blocs
 
-{lib_rendu.LEGENDE}
+    champs = [f'aliases:\n  - "Mémento {ssp}"', f"type: {TYPE}", f'ssp: "{ssp}"']
+    if specialite != "Non classé":
+        champs.append(f'specialite: "{specialite}"')
+    champs.append(f"cas: {len(cas_list)}")
+    champs.append(f"diagnostics: {total}")
+    tags = ["  - ecos/memento"]
+    if any(c["id"] in lib_ssp.OFFICIELLES for c in cas_list):
+        tags.append("  - ecos/grille-officielle")
+    tags.append("  - ecos/grille-non-officielle")
+    champs.append("tags:\n" + "\n".join(tags))
+    champs.append("cssclasses:\n  - skill-ecos")
 
-{ENTETE}
-
-{chr(10).join(corps).rstrip()}
-"""
+    return (f"---\n{chr(10).join(champs)}\n---\n\n{lib_rendu.LEGENDE}\n\n"
+            f"{entete(cas_list)}\n\n{chr(10).join(corps).rstrip()}\n")
 
 
 def nettoyer():
-    """Efface les mementos par SSP de la passe precedente, ceux-la seuls.
+    """Efface les mementos produits par CE generateur, eux seuls.
 
-    La comparaison se fait sur le nom normalise en NFC : le nom d'un fichier
-    ecrit ici porte des accents composes, et un glob litteral echouerait sur un
-    nom que le systeme de fichiers aurait rendu decompose. Le memento des neuf
-    grilles officielles (« Mémento ECOS — … ») ne porte pas ce prefixe et n'est
-    jamais touche.
+    L'appartenance se lit dans le frontmatter (`type: memento-ecos-ssp`), pas
+    dans le nom : « Mémento — Toux (mes notes).md » est precisement le nom
+    qu'une note ecrite a la main porterait, et un glob l'emporterait.
     """
     for vieux in SORTIE.glob("*.md"):
-        if unicodedata.normalize("NFC", vieux.name).startswith(PREFIXE):
+        if _TYPE_DECLARE.search(vieux.read_text(encoding="utf8")):
             vieux.unlink()
 
 
 def main():
-    tout = "--lot" in sys.argv and "tout" in sys.argv
-    lot = None if tout else lib_ssp.lot_prioritaire()
+    argv = sys.argv[1:]
+    if argv and argv != ["--lot", "tout"]:
+        print(f"Argument non reconnu : {' '.join(argv)}\n"
+              "Usage : build_memento.py [--lot tout]")
+        return 2
+    lot = None if argv else lib_ssp.lot_prioritaire()
     groupes = par_ssp(lot)
+
+    # TOUT EST CONSTRUIT AVANT D'EFFACER QUOI QUE CE SOIT : une exception a la
+    # vingtieme SSP laissait sinon 33 fichiers effaces et 19 reecrits.
+    docs, ignorees = {}, []
+    for ssp in sorted(groupes):
+        # Une barre oblique ferait un sous-dossier ; un guillemet double
+        # casserait le frontmatter, ou les valeurs sont quotees.
+        if "/" in ssp or '"' in ssp:
+            ignorees.append(ssp)
+            continue
+        docs[SORTIE / unicodedata.normalize("NFC", f"{PREFIXE}{ssp}.md")] = memento(
+            ssp, groupes[ssp])
 
     SORTIE.mkdir(parents=True, exist_ok=True)
     nettoyer()
-    items = sous_items = ecrits = 0
-    for ssp in sorted(groupes):
-        # Une barre oblique ferait un sous-dossier au lieu d'un fichier ; un
-        # guillemet double casserait le frontmatter, ou les valeurs sont
-        # quotees. Aucune SSP n'en porte aujourd'hui — le jour ou l'une en
-        # portera, elle doit etre nommee, pas ecrite de travers en silence.
-        if "/" in ssp or '"' in ssp:
-            print(f"IGNORÉE — le nom de SSP « {ssp} » contient / ou \"")
-            continue
-        doc = memento(ssp, groupes[ssp])
-        items += doc.count("> - [ ] **")
-        sous_items += doc.count("> \t- [ ] ")
-        cible = SORTIE / unicodedata.normalize("NFC", f"{PREFIXE}{ssp}.md")
+    for cible, doc in docs.items():
         cible.write_text(doc, encoding="utf8")
-        ecrits += 1
 
+    for ssp in ignorees:
+        print(f"IGNORÉE — le nom de SSP « {ssp} » contient / ou \"")
+    items = sum(d.count("> - [ ] **") for d in docs.values())
+    sous = sum(d.count("> \t- [ ] ") for d in docs.values())
     cas = sum(len(v) for v in groupes.values())
     print(f"lot {'complet' if lot is None else 'prioritaire'} · "
-          f"{ecrits} SSP · {cas} grilles · {items} items · {sous_items} sous-items "
+          f"{len(docs)} SSP · {cas} grilles · {items} items · {sous} sous-items "
           f"→ {SORTIE.relative_to(REPO)}/{PREFIXE}*.md")
     return 0
 

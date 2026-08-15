@@ -58,6 +58,48 @@ FUSIONS = [(["CRP", "VS"], "VS / CRP"), (["VS", "CRP"], "VS / CRP")]
 # Un sous-titre qui repete le nom de son encadre n'apporte rien.
 REDONDANTS = {"anamnese", "status", "management", "examen clinique"}
 
+# REPONSES DU·DE LA PATIENT·E RENDUES EN SOUS-CRITERE. Le corpus AZYGOS separe
+# les libelles des reponses par la structure de son JSON ; le HTML, lui, n'a
+# pas de champ dedie hors du `patient-response` deja retire par `propre()`.
+# Des reponses s'y glissent donc parmi les sous-criteres : « TA 138/85 mmHg »,
+# « Pas de turgescence jugulaire », « Murmure vesiculaire normal ».
+#
+# LE CRITERE EST ADOSSE AU REFERENTIEL, pas invente : les neuf grilles
+# officielles ne portent AUCUNE valeur chiffree avec unite et AUCUN « normal »,
+# et leurs quatre negations sont soit des items de TETE (« Absence de
+# symptomes entre les crises »), soit une ligne didactique qui ne COMMENCE pas
+# par la negation (« Pour le zona : pas de contage… »). Trois consequences,
+# toutes verifiees sur les neuf grilles — le memento officiel est inchange a
+# l'octet pres :
+#
+#   1. la regle ne s'applique qu'aux SOUS-criteres, jamais aux items de tete ;
+#   2. la negation doit etre EN DEBUT de libelle ;
+#   3. un libelle qui porte un « : » est epargne — le deux-points introduit une
+#      echelle, une plage ou un seuil (« Classe I: Activites quotidiennes
+#      normales », « Normal: 0.9-1.3 », « Odeur : normale - tres malodorante »),
+#      jamais un constat nu.
+#
+# La valeur chiffree n'est retenue que HORS PARENTHESES : entre parentheses,
+# elle precise un libelle legitime (« Interpretation du test (chute ≥20/10
+# mmHg) », « Betabloquant (bisoprolol 5mg/j) ») au lieu d'etre le constat.
+#
+# « Sans… » a ete ecarte du motif a dessein : il aurait emporte « Sans
+# correction » (une modalite d'examen visuel) pour ne gagner qu'une reponse.
+_REPONSE_NEGATION = re.compile(r"^(?:pas d[e’']|absence d[e’']|aucune?\b)", re.I)
+_REPONSE_NORMAL = re.compile(r"\b(?:normale?s?|normaux)\b", re.I)
+_REPONSE_VALEUR = re.compile(
+    r"\d\s*(?:mmHg|kg/m²|kg|cm|mm|°C|bpm|mg|ml|mL|mmol|µmol|%|/min|/mn)\b")
+_PARENTHESES = re.compile(r"\([^)]*\)")
+
+
+def reponse_patient(libelle):
+    """Vrai si ce SOUS-critere enonce une reponse et non un geste a couvrir."""
+    if ":" in libelle:
+        return False
+    if _REPONSE_NEGATION.match(libelle) or _REPONSE_NORMAL.search(libelle):
+        return True
+    return bool(_REPONSE_VALEUR.search(_PARENTHESES.sub(" ", libelle)))
+
 
 def sans_accent(t):
     t = unicodedata.normalize("NFD", t.lower())
@@ -140,7 +182,19 @@ def items(bloc):
         sous += [propre(d) for d in
                  re.findall(r'class="detail-text criteria-detail">(.*?)</div>', corps, re.S)]
         titre = harmonise([titre])[0]
-        lignes.append(("item", m.group(2), titre, harmonise([x for x in sous if x])))
+        cid = m.group(2)
+        # Le filtre des reponses ne vaut QUE pour l'anamnese et le status. La
+        # section management dit la meme chose avec les memes mots sans que ce
+        # soit une reponse : « Ceftriaxone 500mg IM » est une prescription,
+        # « U - Uree > 7 mmol/L » un critere de CURB-65, « Pas d'indication
+        # antibiotique » et « Pas d'imagerie en urgence si le tableau est
+        # typique » des decisions — cette derniere figure d'ailleurs, presque
+        # mot pour mot, en item de TETE du memento officiel (RESCOS-70b).
+        # Mesure a l'appui : le filtre non restreint coutait 25 libelles
+        # legitimes, dont 24 en management.
+        sous = [x for x in sous
+                if x and not (cid[:1] in "ae" and reponse_patient(x))]
+        lignes.append(("item", cid, titre, harmonise(sous)))
     return lignes
 
 

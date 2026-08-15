@@ -28,17 +28,21 @@ cssclasses:
 > AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Cardiologie & Vasculaire
+# Douleur Thoracique ⭐️
 
-## Douleur Thoracique ⭐️
-
-*12 grilles · 7 diagnostics distincts* — [[SSP — Douleur Thoracique]]
+*Cardiologie & Vasculaire · 12 grilles · 7 diagnostics distincts* — [[SSP — Douleur Thoracique]]
 
 > [!abstract] Les 12 grilles fusionnées
 > - **AMBOSS-12** — Embolie pulmonaire `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-12_-_Douleur_thoracique_-_Femme_35_ans_-_Grille_ECOS.html>)
@@ -55,51 +59,48 @@ cssclasses:
 > - **RESCOS-37** — Angor stable / Maladie coronarienne `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-37_-_Douleur_thoracique_-_ECC_Cardiologie_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)***
-> - [ ] **2. Caractérisation de la douleur thoracique *(5 diagnostics)***
-> 	- [ ] Localisation
-> 	- [ ] Intensité (échelle 0-10) *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)*
-> 	- [ ] Qualité
-> 	- [ ] Début *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)*
-> 	- [ ] Événements précipitants *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)*
-> 	- [ ] Progression/constant/intermittent *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)*
-> 	- [ ] Épisodes antérieurs *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)*
+> - [ ] **1. Motif principal *(3 grilles sur 12)***
+> - [ ] **2. Caractérisation de la douleur thoracique *(7 grilles sur 12)***
+> 	- [ ] Localisation *(6 grilles sur 12)*
+> 	- [ ] Intensité (échelle 0-10) *(3 grilles sur 12)*
+> 	- [ ] Qualité *(6 grilles sur 12)*
+> 	- [ ] Début *(3 grilles sur 12)*
+> 	- [ ] Événements précipitants *(3 grilles sur 12)*
+> 	- [ ] Progression/constant/intermittent *(3 grilles sur 12)*
+> 	- [ ] Épisodes antérieurs *(3 grilles sur 12)*
 > 	- [ ] Irradiation
-> 	- [ ] Facteurs améliorants *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)*
-> 	- [ ] Facteurs aggravants *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)*
-> 	- [ ] Intensité *(Angor stable / Maladie coronarienne, Péricardite / Myopéricardite)*
+> 	- [ ] Facteurs améliorants *(3 grilles sur 12)*
+> 	- [ ] Facteurs aggravants *(4 grilles sur 12)*
+> 	- [ ] Intensité *(2 grilles sur 12)*
 > 	- [ ] Chronologie *(Péricardite / Myopéricardite)*
 > 	- [ ] Développement *(Péricardite / Myopéricardite)*
-> 	- [ ] Quantité *(Embolie pulmonaire)*
-> 	- [ ] Facteurs atténuants *(Embolie pulmonaire)*
-> 	- [ ] Localisation rétrosternale *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Type constrictif *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Début à l'effort *(Angor stable / Maladie coronarienne)*
+> 	- [ ] Quantité *(1 grille sur 12)*
+> 	- [ ] Facteurs atténuants *(1 grille sur 12)*
+> 	- [ ] Localisation rétrosternale *(1 grille sur 12)*
+> 	- [ ] Type constrictif *(1 grille sur 12)*
+> 	- [ ] Début à l'effort *(1 grille sur 12)*
 > 	- [ ] Durée *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Cède au repos *(Angor stable / Maladie coronarienne)*
-> - [ ] **3. Symptômes associés *(6 diagnostics)***
-> 	- [ ] Dyspnée *(Embolie pulmonaire, Pneumothorax, Reflux gastro-œsophagien)*
-> 	- [ ] Nausées *(Embolie pulmonaire, Reflux gastro-œsophagien)*
-> 	- [ ] Transpiration *(Embolie pulmonaire)*
-> 	- [ ] Palpitations *(4 diagnostics)*
-> 	- [ ] Vertiges, syncope *(Embolie pulmonaire, Reflux gastro-œsophagien)*
-> 	- [ ] Toux/expectoration *(Embolie pulmonaire, Reflux gastro-œsophagien)*
-> 	- [ ] Fièvre *(Embolie pulmonaire)*
-> 	- [ ] Douleurs abdominales *(Embolie pulmonaire, Reflux gastro-œsophagien)*
-> 	- [ ] Pyrosis *(Embolie pulmonaire, Reflux gastro-œsophagien)*
-> 	- [ ] Perte de connaissance *(Pneumothorax)*
-> 	- [ ] Toux *(Embolie pulmonaire, Pneumothorax)*
-> 	- [ ] Infection récente *(Pneumothorax)*
-> 	- [ ] Douleurs ou œdèmes des membres inférieurs *(Embolie pulmonaire)*
-> 	- [ ] Crachats *(Embolie pulmonaire)*
-> 	- [ ] Hémoptysie *(Embolie pulmonaire)*
-> 	- [ ] Orthopnée *(Embolie pulmonaire)*
-> 	- [ ] Dyspnée d'effort *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Fatigue *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas de syncope *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas d'œdèmes *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas de claudication *(Angor stable / Maladie coronarienne)*
-> - [ ] **4. Recherche de symptômes spécifiques *(Embolie pulmonaire, Infarctus du myocarde / SCA)***
+> 	- [ ] Cède au repos *(1 grille sur 12)*
+> - [ ] **3. Symptômes associés *(9 grilles sur 12)***
+> 	- [ ] Dyspnée *(3 grilles sur 12)*
+> 	- [ ] Nausées *(2 grilles sur 12)*
+> 	- [ ] Transpiration *(1 grille sur 12)*
+> 	- [ ] Palpitations *(5 grilles sur 12)*
+> 	- [ ] Vertiges, syncope *(2 grilles sur 12)*
+> 	- [ ] Toux/expectoration *(2 grilles sur 12)*
+> 	- [ ] Fièvre *(1 grille sur 12)*
+> 	- [ ] Douleurs abdominales *(2 grilles sur 12)*
+> 	- [ ] Pyrosis *(2 grilles sur 12)*
+> 	- [ ] Perte de connaissance *(1 grille sur 12)*
+> 	- [ ] Toux *(2 grilles sur 12)*
+> 	- [ ] Infection récente *(1 grille sur 12)*
+> 	- [ ] Douleurs ou œdèmes des membres inférieurs *(1 grille sur 12)*
+> 	- [ ] Crachats *(1 grille sur 12)*
+> 	- [ ] Hémoptysie *(1 grille sur 12)*
+> 	- [ ] Orthopnée *(1 grille sur 12)*
+> 	- [ ] Dyspnée d'effort *(1 grille sur 12)*
+> 	- [ ] Fatigue *(1 grille sur 12)*
+> - [ ] **4. Recherche de symptômes spécifiques *(2 grilles sur 12)***
 > 	- [ ] Traumatisme
 > 	- [ ] Voyage récent
 > 	- [ ] Gonflement des chevilles
@@ -109,29 +110,29 @@ cssclasses:
 > 	- [ ] Palpitations
 > 	- [ ] Éruption/changements cutanés
 > 	- [ ] Toux
-> 	- [ ] Toux productive *(Embolie pulmonaire)*
-> 	- [ ] Sang dans les crachats *(Embolie pulmonaire)*
+> 	- [ ] Toux productive *(1 grille sur 12)*
+> 	- [ ] Sang dans les crachats *(1 grille sur 12)*
 > 	- [ ] Infections récentes
 > 	- [ ] Vertiges
-> 	- [ ] Douleur aux jambes *(Embolie pulmonaire)*
-> - [ ] **5. Antécédents médicaux *(4 diagnostics)***
-> - [ ] **6. Antécédents chirurgicaux *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)***
-> - [ ] **7. Allergies *(5 diagnostics)***
-> - [ ] **8. Médicaments *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)***
-> - [ ] **9. Hospitalisations et contacts malades *(Embolie pulmonaire)***
+> 	- [ ] Douleur aux jambes *(1 grille sur 12)*
+> - [ ] **5. Antécédents médicaux *(5 grilles sur 12)***
+> - [ ] **6. Antécédents chirurgicaux *(4 grilles sur 12)***
+> - [ ] **7. Allergies *(8 grilles sur 12)***
+> - [ ] **8. Médicaments *(4 grilles sur 12)***
+> - [ ] **9. Hospitalisations et contacts malades *(1 grille sur 12)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Contacts malades
-> - [ ] **10. Antécédents familiaux *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)***
-> - [ ] **11. Habitudes et mode de vie *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)***
+> - [ ] **10. Antécédents familiaux *(4 grilles sur 12)***
+> - [ ] **11. Habitudes et mode de vie *(3 grilles sur 12)***
 > 	- [ ] Occupation
 > 	- [ ] Domicile
 > 	- [ ] Alcool
 > 	- [ ] Drogues illicites
 > 	- [ ] Tabac
-> 	- [ ] Exercice *(Embolie pulmonaire, Infarctus du myocarde / SCA)*
-> 	- [ ] Alimentation *(Embolie pulmonaire)*
+> 	- [ ] Exercice *(2 grilles sur 12)*
+> 	- [ ] Alimentation *(1 grille sur 12)*
 > 	- [ ] Consommation d'amphétamines (durée, fréquence, dernière prise) *(Infarctus du myocarde / SCA)*
-> - [ ] **12. Recherche de symptômes spécifiques post-traumatiques *(Pneumothorax)***
+> - [ ] **12. Recherche de symptômes spécifiques post-traumatiques *(1 grille sur 12)***
 > 	- [ ] Céphalées
 > 	- [ ] Nausées/vomissements
 > 	- [ ] Fièvre/frissons
@@ -145,55 +146,55 @@ cssclasses:
 > 	- [ ] Consommation d'alcool ou de drogues avant le traumatisme
 > 	- [ ] Faiblesse ou engourdissement
 > 	- [ ] Dernier repas/boisson
-> - [ ] **13. Hospitalisations *(Infarctus du myocarde / SCA, Pneumothorax)***
-> - [ ] **14. Question d'ouverture *(Pneumothorax)***
-> - [ ] **15. Dimension temporelle *(Pneumothorax)***
-> - [ ] **16. Début / Durée *(Pneumothorax)***
-> - [ ] **17. Évolution *(Pneumothorax)***
-> - [ ] **18. Épisode *(Pneumothorax)***
-> - [ ] **19. Déclencheur *(Pneumothorax)***
-> - [ ] **20. Traumatisme *(Pneumothorax)***
-> - [ ] **21. Toux / Éternuement *(Pneumothorax)***
-> - [ ] **22. Intervention *(Pneumothorax)***
-> - [ ] **23. Sport / Effort *(Pneumothorax)***
-> - [ ] **24. Localisation *(Pneumothorax)***
-> - [ ] **25. Irradiation *(Contusion costale, Pneumothorax)***
-> - [ ] **26. Qualité *(Pneumothorax)***
-> - [ ] **27. Intensité / Sévérité *(Pneumothorax)***
-> - [ ] **28. ⊕ Facteurs aggravants *(Contusion costale, Pneumothorax)***
-> - [ ] **29. ⊖ Facteurs soulageants *(Pneumothorax)***
-> - [ ] **30. Dyspnée *(Contusion costale, Embolie pulmonaire, Pneumothorax)***
-> 	- [ ] Condition de survenue *(Embolie pulmonaire)*
-> 	- [ ] Classification *(Embolie pulmonaire)*
-> 	- [ ] Chronologie *(Embolie pulmonaire)*
-> - [ ] **31. Survenue situationnelle *(Pneumothorax)***
-> - [ ] **32. Symptômes pulmonaires associés *(Pneumothorax)***
-> - [ ] **33. Toux *(Pneumothorax)***
-> - [ ] **34. Expectoration *(Pneumothorax)***
-> - [ ] **35. Hémoptysie *(Embolie pulmonaire, Pneumothorax)***
-> - [ ] **36. Signes infectieux *(Pneumothorax)***
-> - [ ] **37. Fièvre *(Pneumothorax)***
-> - [ ] **38. Frissons *(Pneumothorax)***
-> - [ ] **39. Symptômes circulatoires *(Pneumothorax)***
-> - [ ] **40. Vertiges *(Pneumothorax)***
-> - [ ] **41. Syncope *(Pneumothorax)***
-> - [ ] **42. Clarification diagnostique différentielle de la douleur thoracique *(Pneumothorax)***
-> - [ ] **43. Facteurs de risque d'embolie pulmonaire *(Pneumothorax, Reflux gastro-œsophagien)***
+> - [ ] **13. Hospitalisations *(2 grilles sur 12)***
+> - [ ] **14. Question d'ouverture *(1 grille sur 12)***
+> - [ ] **15. Dimension temporelle *(1 grille sur 12)***
+> - [ ] **16. Début / Durée *(1 grille sur 12)***
+> - [ ] **17. Évolution *(1 grille sur 12)***
+> - [ ] **18. Épisode *(1 grille sur 12)***
+> - [ ] **19. Déclencheur *(1 grille sur 12)***
+> - [ ] **20. Traumatisme *(1 grille sur 12)***
+> - [ ] **21. Toux / Éternuement *(1 grille sur 12)***
+> - [ ] **22. Intervention *(1 grille sur 12)***
+> - [ ] **23. Sport / Effort *(1 grille sur 12)***
+> - [ ] **24. Localisation *(1 grille sur 12)***
+> - [ ] **25. Irradiation *(2 grilles sur 12)***
+> - [ ] **26. Qualité *(1 grille sur 12)***
+> - [ ] **27. Intensité / Sévérité *(1 grille sur 12)***
+> - [ ] **28. Facteurs aggravants *(2 grilles sur 12)***
+> - [ ] **29. Facteurs soulageants *(1 grille sur 12)***
+> - [ ] **30. Dyspnée *(3 grilles sur 12)***
+> 	- [ ] Condition de survenue *(1 grille sur 12)*
+> 	- [ ] Classification *(1 grille sur 12)*
+> 	- [ ] Chronologie *(1 grille sur 12)*
+> - [ ] **31. Survenue situationnelle *(1 grille sur 12)***
+> - [ ] **32. Symptômes pulmonaires associés *(1 grille sur 12)***
+> - [ ] **33. Toux *(1 grille sur 12)***
+> - [ ] **34. Expectoration *(1 grille sur 12)***
+> - [ ] **35. Hémoptysie *(2 grilles sur 12)***
+> - [ ] **36. Signes infectieux *(1 grille sur 12)***
+> - [ ] **37. Fièvre *(1 grille sur 12)***
+> - [ ] **38. Frissons *(1 grille sur 12)***
+> - [ ] **39. Symptômes circulatoires *(1 grille sur 12)***
+> - [ ] **40. Vertiges *(1 grille sur 12)***
+> - [ ] **41. Syncope *(1 grille sur 12)***
+> - [ ] **42. Clarification diagnostique différentielle de la douleur thoracique *(1 grille sur 12)***
+> - [ ] **43. Facteurs de risque d'embolie pulmonaire *(2 grilles sur 12)***
 > 	- [ ] Œdème/douleur du mollet *(Reflux gastro-œsophagien)*
 > 	- [ ] Voyage récent *(Reflux gastro-œsophagien)*
 > 	- [ ] Chirurgie récente *(Reflux gastro-œsophagien)*
 > 	- [ ] Cancer actif *(Reflux gastro-œsophagien)*
 > 	- [ ] Antécédents familiaux de thrombophilie *(Reflux gastro-œsophagien)*
-> - [ ] **44. SCA / Symptômes végétatifs associés *(Pneumothorax)***
-> - [ ] **45. Reflux / Brûlures d'estomac *(Pneumothorax)***
-> - [ ] **46. Toxiques *(Contusion costale, Pneumothorax)***
-> - [ ] **47. Tabagisme *(Pneumothorax)***
-> - [ ] **48. Alcool *(Pneumothorax)***
-> - [ ] **49. Drogues *(Pneumothorax)***
-> - [ ] **50. Profession *(Pneumothorax)***
-> - [ ] **51. Environnement social / Circonstances *(Pneumothorax)***
-> - [ ] **52. Présentation avec nom, fonction et tâche *(4 diagnostics)***
-> - [ ] **53. Localisation de la douleur *(4 diagnostics)***
+> - [ ] **44. SCA / Symptômes végétatifs associés *(1 grille sur 12)***
+> - [ ] **45. Reflux / Brûlures d'estomac *(1 grille sur 12)***
+> - [ ] **46. Toxiques *(2 grilles sur 12)***
+> - [ ] **47. Tabagisme *(1 grille sur 12)***
+> - [ ] **48. Alcool *(1 grille sur 12)***
+> - [ ] **49. Drogues *(1 grille sur 12)***
+> - [ ] **50. Profession *(1 grille sur 12)***
+> - [ ] **51. Environnement social / Circonstances *(1 grille sur 12)***
+> - [ ] **52. Présentation avec nom, fonction et tâche *(4 grilles sur 12)***
+> - [ ] **53. Localisation de la douleur *(4 grilles sur 12)***
 > - [ ] **54. Qualité de la douleur *(Contusion costale)***
 > - [ ] **55. Début de la douleur *(Contusion costale)***
 > - [ ] **56. Intensité sur une échelle de 1 à 10 *(Contusion costale)***
@@ -201,54 +202,54 @@ cssclasses:
 > - [ ] **58. Autres douleurs (jambes, bras, tête...) *(Contusion costale)***
 > - [ ] **59. Circonstances de la chute *(Contusion costale)***
 > - [ ] **60. Perte de connaissance, vertiges, céphalées *(Contusion costale)***
-> - [ ] **61. Médicaments actuels *(4 diagnostics)***
+> - [ ] **61. Médicaments actuels *(4 grilles sur 12)***
 > - [ ] **62. Activités sportives, loisirs *(Contusion costale)***
-> - [ ] **63. Anamnèse familiale *(4 diagnostics)***
-> - [ ] **64. Anamnèse sociale *(4 diagnostics)***
-> - [ ] **65. Identification des symptômes *(Embolie pulmonaire, Pneumothorax, Reflux gastro-œsophagien)***
-> - [ ] **66. Début et évolution des symptômes *(Embolie pulmonaire)***
-> - [ ] **67. Intensité de la douleur *(Embolie pulmonaire, Pneumothorax, Reflux gastro-œsophagien)***
-> - [ ] **68. Caractère de la douleur *(Embolie pulmonaire, Pneumothorax, Reflux gastro-œsophagien)***
-> - [ ] **69. Douleur liée à la respiration *(Embolie pulmonaire, Pneumothorax, Reflux gastro-œsophagien)***
-> - [ ] **70. Irradiation de la douleur *(Embolie pulmonaire, Pneumothorax, Reflux gastro-œsophagien)***
-> - [ ] **71. Facteurs modulateurs *(Embolie pulmonaire, Pneumothorax, Péricardite / Myopéricardite)***
+> - [ ] **63. Anamnèse familiale *(4 grilles sur 12)***
+> - [ ] **64. Anamnèse sociale *(4 grilles sur 12)***
+> - [ ] **65. Identification des symptômes *(3 grilles sur 12)***
+> - [ ] **66. Début et évolution des symptômes *(1 grille sur 12)***
+> - [ ] **67. Intensité de la douleur *(3 grilles sur 12)***
+> - [ ] **68. Caractère de la douleur *(3 grilles sur 12)***
+> - [ ] **69. Douleur liée à la respiration *(3 grilles sur 12)***
+> - [ ] **70. Irradiation de la douleur *(3 grilles sur 12)***
+> - [ ] **71. Facteurs modulateurs *(3 grilles sur 12)***
 > 	- [ ] Facteur atténuant *(Péricardite / Myopéricardite)*
 > 	- [ ] Facteur aggravant *(Péricardite / Myopéricardite)*
-> - [ ] **72. Traumatisme thoracique *(Embolie pulmonaire, Pneumothorax, Reflux gastro-œsophagien)***
-> - [ ] **73. Facteurs de risque cardiovasculaire *(Angor stable / Maladie coronarienne, Embolie pulmonaire, Reflux gastro-œsophagien)***
-> 	- [ ] Hypertension *(Embolie pulmonaire, Reflux gastro-œsophagien)*
-> 	- [ ] Diabète *(Embolie pulmonaire, Reflux gastro-œsophagien)*
-> 	- [ ] Dyslipidémie
-> 	- [ ] Antécédents familiaux d'infarctus *(Embolie pulmonaire, Reflux gastro-œsophagien)*
+> - [ ] **72. Traumatisme thoracique *(3 grilles sur 12)***
+> - [ ] **73. Facteurs de risque cardiovasculaire *(4 grilles sur 12)***
+> 	- [ ] Hypertension *(2 grilles sur 12)*
+> 	- [ ] Diabète *(2 grilles sur 12)*
+> 	- [ ] Dyslipidémie *(3 grilles sur 12)*
+> 	- [ ] Antécédents familiaux d'infarctus *(2 grilles sur 12)*
 > 	- [ ] Tabagisme
-> 	- [ ] Stress professionnel *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Sédentarité *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Surpoids *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Antécédents familiaux *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Activité physique *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Poids/IMC *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Médicaments *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Alcool *(Angor stable / Maladie coronarienne)*
-> - [ ] **74. Facteurs de risque d'embolie pulmonaire (Score de Wells) *(Embolie pulmonaire, Pneumothorax)***
+> 	- [ ] Stress professionnel *(1 grille sur 12)*
+> 	- [ ] Sédentarité *(1 grille sur 12)*
+> 	- [ ] Surpoids *(1 grille sur 12)*
+> 	- [ ] Antécédents familiaux *(1 grille sur 12)*
+> 	- [ ] Activité physique *(1 grille sur 12)*
+> 	- [ ] Poids/IMC *(1 grille sur 12)*
+> 	- [ ] Médicaments *(1 grille sur 12)*
+> 	- [ ] Alcool *(1 grille sur 12)*
+> - [ ] **74. Facteurs de risque d'embolie pulmonaire (Score de Wells) *(2 grilles sur 12)***
 > 	- [ ] Œdème/douleur du mollet
 > 	- [ ] Voyage récent
 > 	- [ ] Chirurgie récente
 > 	- [ ] Cancer actif
 > 	- [ ] Antécédents familiaux de thrombophilie
-> 	- [ ] Contraceptifs oraux *(Embolie pulmonaire)*
-> 	- [ ] Grossesse *(Embolie pulmonaire)*
-> - [ ] **75. Signes généraux *(Embolie pulmonaire, Pneumothorax, Reflux gastro-œsophagien)***
-> - [ ] **76. Antécédents personnels *(Embolie pulmonaire, Pneumothorax, Reflux gastro-œsophagien)***
-> - [ ] **77. Habitudes de vie *(4 diagnostics)***
+> 	- [ ] Contraceptifs oraux *(1 grille sur 12)*
+> 	- [ ] Grossesse *(1 grille sur 12)*
+> - [ ] **75. Signes généraux *(3 grilles sur 12)***
+> - [ ] **76. Antécédents personnels *(3 grilles sur 12)***
+> - [ ] **77. Habitudes de vie *(4 grilles sur 12)***
 > 	- [ ] Médicaments *(Péricardite / Myopéricardite)*
 > 	- [ ] Tabac *(Péricardite / Myopéricardite)*
 > 	- [ ] Cannabis *(Péricardite / Myopéricardite)*
 > 	- [ ] Alcool *(Péricardite / Myopéricardite)*
-> - [ ] **78. Début et évolution *(Pneumothorax)***
-> - [ ] **79. Événement déclenchant *(Pneumothorax)***
-> - [ ] **80. Antécédents cardiaques *(Pneumothorax)***
-> - [ ] **81. Asthme *(Pneumothorax)***
-> - [ ] **82. Antécédents de TVP/EP *(Pneumothorax)***
+> - [ ] **78. Début et évolution *(1 grille sur 12)***
+> - [ ] **79. Événement déclenchant *(1 grille sur 12)***
+> - [ ] **80. Antécédents cardiaques *(1 grille sur 12)***
+> - [ ] **81. Asthme *(1 grille sur 12)***
+> - [ ] **82. Antécédents de TVP/EP *(1 grille sur 12)***
 > - [ ] **83. Durée des symptômes *(Reflux gastro-œsophagien)***
 > - [ ] **84. Facteurs déclenchants et modulateurs *(Reflux gastro-œsophagien)***
 > - [ ] **85. Lien avec l'effort physique *(Reflux gastro-œsophagien)***
@@ -261,93 +262,89 @@ cssclasses:
 > 	- [ ] Pneumonie
 > - [ ] **89. Voyages récents *(Péricardite / Myopéricardite)***
 > 	- [ ] Voyages récents
-> - [ ] **90. Douleur thoracique - évolution temporelle *(Embolie pulmonaire)***
+> - [ ] **90. Douleur thoracique - évolution temporelle *(1 grille sur 12)***
 > 	- [ ] Chronologie
 > 	- [ ] Évolution
-> - [ ] **91. Antécédents et comorbidités *(Embolie pulmonaire)***
+> - [ ] **91. Antécédents et comorbidités *(1 grille sur 12)***
 > 	- [ ] Maladies
 > 	- [ ] Hospitalisations
 > 	- [ ] Médicaments
 > 	- [ ] Allergies
-> - [ ] **92. Facteurs de risque *(Embolie pulmonaire)***
+> - [ ] **92. Facteurs de risque *(1 grille sur 12)***
 > 	- [ ] Tabagisme
 > 	- [ ] Voyages récents
 > 	- [ ] Chirurgie/immobilisation récente
 > 	- [ ] Médicaments
 > 	- [ ] Antécédents d'embolie pulmonaire/angine de poitrine/AVC
-> - [ ] **93. Représentation de la maladie *(Embolie pulmonaire)***
+> - [ ] **93. Représentation de la maladie *(1 grille sur 12)***
 > 	- [ ] Peur d'un cancer pulmonaire comme son mari
-> - [ ] **94. Motif de consultation *(Angor stable / Maladie coronarienne)***
-> - [ ] **95. Circonstances déclenchantes *(Angor stable / Maladie coronarienne)***
+> - [ ] **94. Motif de consultation *(1 grille sur 12)***
+> - [ ] **95. Circonstances déclenchantes *(1 grille sur 12)***
 > 	- [ ] Effort physique
 > 	- [ ] Stress émotionnel
 > 	- [ ] Froid
 > 	- [ ] Repas copieux
 > 	- [ ] Jamais au repos
 > 	- [ ] Pas la nuit
-> - [ ] **96. Évolution dans le temps *(Angor stable / Maladie coronarienne)***
+> - [ ] **96. Évolution dans le temps *(1 grille sur 12)***
 > 	- [ ] Début
 > 	- [ ] Fréquence croissante
 > 	- [ ] Seuil d'effort diminué
 > 	- [ ] Caractéristiques stables
-> 	- [ ] Pas de douleur de repos
-> - [ ] **97. Classification CCS de l'angor *(Angor stable / Maladie coronarienne)***
+> - [ ] **97. Classification CCS de l'angor *(1 grille sur 12)***
 > 	- [ ] Classe I: Activités quotidiennes normales
 > 	- [ ] Classe II: Limitation légère
 > 	- [ ] Classe III: Limitation marquée
 > 	- [ ] Classe IV: Angor au moindre effort ou repos
-> - [ ] **98. Antécédents et traitements *(Angor stable / Maladie coronarienne)***
-> 	- [ ] Pas d'antécédents cardiovasculaires
-> 	- [ ] Pas de diabète connu
+> - [ ] **98. Antécédents et traitements *(1 grille sur 12)***
 > 	- [ ] Cholestérol élevé
-> 	- [ ] Pas de traitement régulier
 > 	- [ ] Automédication aspirine
-> - [ ] **99. Facteurs déclenchants et circonstances d'apparition *(Angor stable / Maladie coronarienne)***
+> - [ ] **99. Facteurs déclenchants et circonstances d'apparition *(1 grille sur 12)***
 > 	- [ ] Facteur déclenchant 1er épisode
 > 	- [ ] Facteur déclenchant 2ème épisode
 > 	- [ ] Relation à l'effort
 > 	- [ ] Facteurs soulageants
 > 	- [ ] Évolution des crises
-> - [ ] **100. Symptômes associés et recherche d'insuffisance cardiaque *(Angor stable / Maladie coronarienne)***
+> - [ ] **100. Symptômes associés et recherche d'insuffisance cardiaque *(1 grille sur 12)***
 > 	- [ ] Dyspnée d'effort
 > 	- [ ] Dyspnée à la fin des escaliers
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
 > 	- [ ] Œdèmes membres inférieurs
 > 	- [ ] Palpitations
-> - [ ] **101. Classification de la sévérité (classes d'angine) *(Angor stable / Maladie coronarienne)***
+> - [ ] **101. Classification de la sévérité (classes d'angine) *(1 grille sur 12)***
 > 	- [ ] Impact fonctionnel
 > 	- [ ] Limitation des activités
 > 	- [ ] Angor au repos
 > 	- [ ] Classification probable
-> - [ ] **102. Antécédents personnels cardiovasculaires *(Angor stable / Maladie coronarienne)***
+> - [ ] **102. Antécédents personnels cardiovasculaires *(1 grille sur 12)***
 > 	- [ ] Diabète
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Hypercholestérolémie
 > 	- [ ] Affections cardiaques
 > 	- [ ] Hospitalisations
-> - [ ] **103. Antécédents familiaux cardiovasculaires *(Angor stable / Maladie coronarienne)***
+> - [ ] **103. Antécédents familiaux cardiovasculaires *(1 grille sur 12)***
 > 	- [ ] Mère
 > 	- [ ] Père
 > 	- [ ] Frère
 > 	- [ ] Oncle maternel
 > 	- [ ] Recherche mort subite
-> - [ ] **104. Anamnèse socioprofessionnelle et impact *(Angor stable / Maladie coronarienne)***
+> - [ ] **104. Anamnèse socioprofessionnelle et impact *(1 grille sur 12)***
 > 	- [ ] Profession
 > 	- [ ] Entourage familial
 > 	- [ ] Impact sur activités
 > 	- [ ] Préoccupations
 
 > [!tip] 🩺 Status
-> - [ ] **1. Mesures d'hygiène *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)***
+> - [ ] **1. Mesures d'hygiène *(3 grilles sur 12)***
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
-> - [ ] **2. Examen du cou *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)***
+> - [ ] **2. Examen du cou *(3 grilles sur 12)***
 > 	- [ ] Évaluation de la distension jugulaire
 > 	- [ ] Auscultation des artères carotides *(Infarctus du myocarde / SCA)*
-> - [ ] **3. Examen cardiovasculaire *(4 diagnostics)***
-> 	- [ ] Palpation du pouls radial *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)*
-> 	- [ ] Auscultation cardiaque *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)*
+> - [ ] **3. Examen cardiovasculaire *(4 grilles sur 12)***
+> 	- [ ] Palpation du pouls radial *(3 grilles sur 12)*
+> 	- [ ] Auscultation cardiaque *(3 grilles sur 12)*
 > 	- [ ] Inspection du thorax *(Infarctus du myocarde / SCA)*
 > 	- [ ] Palpation du thorax *(Infarctus du myocarde / SCA)*
 > 	- [ ] Palpation du choc de pointe *(Infarctus du myocarde / SCA, Péricardite / Myopéricardite)*
@@ -359,75 +356,68 @@ cssclasses:
 > 	- [ ] Observation d'une turgescence jugulaire *(Péricardite / Myopéricardite)*
 > 	- [ ] Recherche d'œdème *(Péricardite / Myopéricardite)*
 > 	- [ ] Recherche d'un reflux hépato-jugulaire *(Péricardite / Myopéricardite)*
-> - [ ] **4. Examen thoracique *(Embolie pulmonaire, Infarctus du myocarde / SCA, Pneumothorax)***
-> 	- [ ] Inspection du thorax *(Embolie pulmonaire, Pneumothorax)*
-> 	- [ ] Palpation du thorax *(Embolie pulmonaire, Pneumothorax)*
-> 	- [ ] Percussion des champs pulmonaires *(Embolie pulmonaire, Pneumothorax)*
+> - [ ] **4. Examen thoracique *(3 grilles sur 12)***
+> 	- [ ] Inspection du thorax *(2 grilles sur 12)*
+> 	- [ ] Palpation du thorax *(2 grilles sur 12)*
+> 	- [ ] Percussion des champs pulmonaires *(2 grilles sur 12)*
 > 	- [ ] Auscultation pulmonaire
-> 	- [ ] Recherche de frémitus *(Embolie pulmonaire, Pneumothorax)*
-> - [ ] **5. Examen des extrémités *(Embolie pulmonaire, Infarctus du myocarde / SCA)***
-> 	- [ ] Inspection des membres inférieurs *(Embolie pulmonaire)*
-> 	- [ ] Palpation des membres inférieurs *(Embolie pulmonaire)*
-> 	- [ ] Signe de Homans *(Embolie pulmonaire)*
+> 	- [ ] Recherche de frémitus *(2 grilles sur 12)*
+> - [ ] **5. Examen des extrémités *(2 grilles sur 12)***
+> 	- [ ] Inspection des membres inférieurs *(1 grille sur 12)*
+> 	- [ ] Palpation des membres inférieurs *(1 grille sur 12)*
+> 	- [ ] Signe de Homans *(1 grille sur 12)*
 > 	- [ ] Recherche d'œdème prenant le godet
-> 	- [ ] Palpation des pouls pédieux *(Embolie pulmonaire)*
-> - [ ] **6. Examen corporel général *(Pneumothorax)***
-> - [ ] **7. Examen de la tête, yeux, oreilles, nez et gorge *(Pneumothorax)***
+> 	- [ ] Palpation des pouls pédieux *(1 grille sur 12)*
+> - [ ] **6. Examen corporel général *(1 grille sur 12)***
+> - [ ] **7. Examen de la tête, yeux, oreilles, nez et gorge *(1 grille sur 12)***
 > 	- [ ] Examen des pupilles
 > 	- [ ] Examen des muscles oculomoteurs
-> - [ ] **8. Examen neurologique *(Pneumothorax)***
+> - [ ] **8. Examen neurologique *(1 grille sur 12)***
 > 	- [ ] Examen de l'orientation dans le temps, l'espace et envers les personnes
-> - [ ] **9. Paramètres vitaux *(Pneumothorax)***
-> - [ ] **10. Inspection de l'état général *(Pneumothorax)***
-> - [ ] **11. Inspection du thorax *(Contusion costale, Pneumothorax)***
-> - [ ] **12. Excursion thoracique *(Pneumothorax)***
-> - [ ] **13. Muscles respiratoires accessoires *(Pneumothorax)***
-> - [ ] **14. Signes de traumatisme *(Pneumothorax)***
-> - [ ] **15. Palpation du thorax *(Pneumothorax)***
-> - [ ] **16. Douleur à la pression *(Pneumothorax)***
-> - [ ] **17. Frémissement vocal *(Pneumothorax)***
-> - [ ] **18. Emphysème sous-cutané *(Pneumothorax)***
-> - [ ] **19. Percussion *(Pneumothorax)***
-> - [ ] **20. Auscultation *(Pneumothorax)***
-> - [ ] **21. Veines jugulaires *(Pneumothorax)***
-> - [ ] **22. Auscultation cardiaque *(Angor stable / Maladie coronarienne, Embolie pulmonaire, Pneumothorax)***
-> 	- [ ] Recherche de souffle *(Embolie pulmonaire)*
-> 	- [ ] Rythme régulier *(Embolie pulmonaire)*
-> 	- [ ] B3/B4 *(Embolie pulmonaire)*
-> 	- [ ] Aortique *(Embolie pulmonaire)*
-> 	- [ ] Pulmonaire *(Embolie pulmonaire)*
-> 	- [ ] Mitral *(Embolie pulmonaire)*
-> 	- [ ] Tricuspide *(Embolie pulmonaire)*
-> 	- [ ] Bruits du cœur réguliers *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas de souffle audible *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas de galop *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas de frottement péricardique *(Angor stable / Maladie coronarienne)*
-> 	- [ ] B2 normal *(Angor stable / Maladie coronarienne)*
-> - [ ] **23. Pouls périphériques *(Pneumothorax)***
+> - [ ] **9. Paramètres vitaux *(1 grille sur 12)***
+> - [ ] **10. Inspection de l'état général *(1 grille sur 12)***
+> - [ ] **11. Inspection du thorax *(2 grilles sur 12)***
+> - [ ] **12. Excursion thoracique *(1 grille sur 12)***
+> - [ ] **13. Muscles respiratoires accessoires *(1 grille sur 12)***
+> - [ ] **14. Signes de traumatisme *(1 grille sur 12)***
+> - [ ] **15. Palpation du thorax *(1 grille sur 12)***
+> - [ ] **16. Douleur à la pression *(1 grille sur 12)***
+> - [ ] **17. Frémissement vocal *(1 grille sur 12)***
+> - [ ] **18. Emphysème sous-cutané *(1 grille sur 12)***
+> - [ ] **19. Percussion *(1 grille sur 12)***
+> - [ ] **20. Auscultation *(1 grille sur 12)***
+> - [ ] **21. Veines jugulaires *(1 grille sur 12)***
+> - [ ] **22. Auscultation cardiaque *(4 grilles sur 12)***
+> 	- [ ] Recherche de souffle *(1 grille sur 12)*
+> 	- [ ] Rythme régulier *(1 grille sur 12)*
+> 	- [ ] B3/B4 *(1 grille sur 12)*
+> 	- [ ] Aortique *(1 grille sur 12)*
+> 	- [ ] Pulmonaire *(1 grille sur 12)*
+> 	- [ ] Mitral *(1 grille sur 12)*
+> 	- [ ] Tricuspide *(1 grille sur 12)*
+> 	- [ ] Bruits du cœur réguliers *(1 grille sur 12)*
+> - [ ] **23. Pouls périphériques *(1 grille sur 12)***
 > - [ ] **24. Palpation *(Contusion costale)***
 > - [ ] **25. Poumons *(Contusion costale)***
 > - [ ] **26. Cœur *(Contusion costale)***
 > - [ ] **27. Examen sommaire du rachis et des extrémités *(Contusion costale)***
 > - [ ] **28. Bref examen neurologique *(Contusion costale)***
-> - [ ] **29. Inspection générale *(4 diagnostics)***
-> 	- [ ] Couleur de la peau (cyanose ?) *(Embolie pulmonaire)*
-> 	- [ ] Excursions thoraciques symétriques et régulières *(Embolie pulmonaire)*
-> 	- [ ] Fréquence respiratoire *(Embolie pulmonaire)*
-> 	- [ ] Patient en bon état général *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas de détresse respiratoire *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas de cyanose *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas de xanthélasmas *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Arc cornéen *(Angor stable / Maladie coronarienne)*
-> - [ ] **30. État cardiopulmonaire *(Embolie pulmonaire, Pneumothorax, Reflux gastro-œsophagien)***
-> - [ ] **31. Inspection des membres inférieurs *(Embolie pulmonaire)***
+> - [ ] **29. Inspection générale *(4 grilles sur 12)***
+> 	- [ ] Couleur de la peau (cyanose ?) *(1 grille sur 12)*
+> 	- [ ] Excursions thoraciques symétriques et régulières *(1 grille sur 12)*
+> 	- [ ] Fréquence respiratoire *(1 grille sur 12)*
+> 	- [ ] Patient en bon état général *(1 grille sur 12)*
+> 	- [ ] Arc cornéen *(1 grille sur 12)*
+> - [ ] **30. État cardiopulmonaire *(3 grilles sur 12)***
+> - [ ] **31. Inspection des membres inférieurs *(1 grille sur 12)***
 > 	- [ ] Recherche de signes de TVP
 > 	- [ ] Œdème, chaleur, rougeur
 > 	- [ ] Signe de Homans
-> - [ ] **32. Palpation abdominale *(Embolie pulmonaire)***
+> - [ ] **32. Palpation abdominale *(1 grille sur 12)***
 > 	- [ ] Recherche d'organomégalie
 > 	- [ ] Douleur épigastrique
-> - [ ] **33. Inspection des jambes *(Pneumothorax)***
-> - [ ] **34. Signes spécifiques du pneumothorax *(Pneumothorax)***
+> - [ ] **33. Inspection des jambes *(1 grille sur 12)***
+> - [ ] **34. Signes spécifiques du pneumothorax *(1 grille sur 12)***
 > 	- [ ] Asymétrie thoracique
 > 	- [ ] Diminution de l'ampliation thoracique du côté atteint
 > 	- [ ] Déviation trachéale (si pneumothorax sous tension)
@@ -444,81 +434,67 @@ cssclasses:
 > 	- [ ] Percussion
 > - [ ] **40. Position du patient pendant l'examen *(Péricardite / Myopéricardite)***
 > 	- [ ] A fait coucher le patient à un moment du status
-> - [ ] **41. Examen pulmonaire - inspection et percussion *(Embolie pulmonaire)***
+> - [ ] **41. Examen pulmonaire - inspection et percussion *(1 grille sur 12)***
 > 	- [ ] Percussion
 > 	- [ ] Ampliation thoracique
-> - [ ] **42. Examen pulmonaire - auscultation *(Embolie pulmonaire)***
+> - [ ] **42. Examen pulmonaire - auscultation *(1 grille sur 12)***
 > 	- [ ] Plages postérieures (min 4)
 > 	- [ ] Plages latérales des deux côtés
 > 	- [ ] Réalise l'examen en comparant systématiquement les deux côtés
-> - [ ] **43. Examen général *(Embolie pulmonaire)***
+> - [ ] **43. Examen général *(1 grille sur 12)***
 > 	- [ ] Extrémités dont les ongles
 > 	- [ ] Langue
-> - [ ] **44. Examen vasculaire périphérique *(Embolie pulmonaire)***
+> - [ ] **44. Examen vasculaire périphérique *(1 grille sur 12)***
 > 	- [ ] Pouls périphériques aux 4 extrémités
 > 	- [ ] Temps de recoloration des extrémités
 > 	- [ ] Recherche de souffle carotidien
 > 	- [ ] Recherche de souffles fémoraux
 > 	- [ ] Recherche de souffle abdominal
-> - [ ] **45. Recherche de signes d'insuffisance cardiaque *(Angor stable / Maladie coronarienne, Embolie pulmonaire)***
-> 	- [ ] Œdèmes des membres inférieurs (signe du godet) *(Embolie pulmonaire)*
-> 	- [ ] Turgescence jugulaire *(Embolie pulmonaire)*
-> 	- [ ] Reflux hépato-jugulaire
-> 	- [ ] Pas de turgescence jugulaire *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas de reflux hépato-jugulaire *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas d'hépatomégalie *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas d'œdèmes des membres inférieurs *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Pas d'ascite *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Œdèmes prétibiaux *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Hépatomégalie *(Angor stable / Maladie coronarienne)*
-> 	- [ ] Auscultation pulmonaire *(Angor stable / Maladie coronarienne)*
-> - [ ] **46. Signes vitaux *(Angor stable / Maladie coronarienne)***
-> 	- [ ] TA 138/85 mmHg
-> 	- [ ] FC 78 bpm, régulier
-> 	- [ ] FR 16/min
+> - [ ] **45. Recherche de signes d'insuffisance cardiaque *(3 grilles sur 12)***
+> 	- [ ] Œdèmes des membres inférieurs (signe du godet) *(1 grille sur 12)*
+> 	- [ ] Turgescence jugulaire *(1 grille sur 12)*
+> 	- [ ] Reflux hépato-jugulaire *(2 grilles sur 12)*
+> 	- [ ] Œdèmes prétibiaux *(1 grille sur 12)*
+> 	- [ ] Hépatomégalie *(1 grille sur 12)*
+> 	- [ ] Auscultation pulmonaire *(1 grille sur 12)*
+> - [ ] **46. Signes vitaux *(1 grille sur 12)***
 > 	- [ ] SpO2 98% en air ambiant
-> 	- [ ] Température 36.5°C
-> 	- [ ] IMC 27 kg/m²
-> - [ ] **47. Auscultation pulmonaire *(Angor stable / Maladie coronarienne)***
-> 	- [ ] Murmure vésiculaire normal
-> 	- [ ] Pas de râles
-> 	- [ ] Pas de sibilants
+> - [ ] **47. Auscultation pulmonaire *(1 grille sur 12)***
 > 	- [ ] Symétrique bilatéralement
-> - [ ] **48. Palpation des pouls périphériques *(Angor stable / Maladie coronarienne)***
+> - [ ] **48. Palpation des pouls périphériques *(1 grille sur 12)***
 > 	- [ ] Pouls carotidiens symétriques
 > 	- [ ] Pouls fémoraux présents
 > 	- [ ] Pouls pédieux présents
 > 	- [ ] Pouls tibiaux postérieurs présents
-> 	- [ ] Pas de souffle abdominal
-> - [ ] **49. Signes vitaux et mesures anthropométriques *(Angor stable / Maladie coronarienne)***
+> - [ ] **49. Signes vitaux et mesures anthropométriques *(1 grille sur 12)***
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Poids et taille
-> - [ ] **50. Inspection générale et recherche de signes cardiovasculaires *(Angor stable / Maladie coronarienne)***
+> - [ ] **50. Inspection générale et recherche de signes cardiovasculaires *(1 grille sur 12)***
 > 	- [ ] Cyanose centrale
 > 	- [ ] Cyanose périphérique
 > 	- [ ] Signes cutanés
 > 	- [ ] Inspection thoracique
 > 	- [ ] Température des extrémités
-> - [ ] **51. Évaluation du pouls veineux jugulaire *(Angor stable / Maladie coronarienne)***
+> - [ ] **51. Évaluation du pouls veineux jugulaire *(1 grille sur 12)***
 > 	- [ ] Positionnement du patient
 > 	- [ ] Respiration par la bouche
 > 	- [ ] Niveau du collapsus veineux
 > 	- [ ] Réflux hépato-jugulaire
-> - [ ] **52. Palpation cardiovasculaire *(Angor stable / Maladie coronarienne)***
+> - [ ] **52. Palpation cardiovasculaire *(1 grille sur 12)***
 > 	- [ ] Pouls artériels
 > 	- [ ] Choc de pointe
 > 	- [ ] Aire précordiale
 > 	- [ ] 2ème espace intercostal droit
 > 	- [ ] Creux épigastrique
-> - [ ] **53. Auscultation cardiaque systématique *(Angor stable / Maladie coronarienne)***
+> - [ ] **53. Auscultation cardiaque systématique *(1 grille sur 12)***
 > 	- [ ] 5 foyers d'auscultation
 > 	- [ ] Identification B1 et B2
 > 	- [ ] Utilisation cloche et membrane
 > 	- [ ] Position du patient
 > 	- [ ] Recherche de souffles et bruits surajoutés
-> - [ ] **54. Auscultation des carotides *(Angor stable / Maladie coronarienne)***
+> - [ ] **54. Auscultation des carotides *(1 grille sur 12)***
 > 	- [ ] Auscultation bilatérale des carotides
 > 	- [ ] Recherche de souffles carotidiens
 > 	- [ ] Corrélation avec examen cardiaque

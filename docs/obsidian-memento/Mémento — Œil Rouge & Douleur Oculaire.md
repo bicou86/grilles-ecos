@@ -3,7 +3,6 @@ aliases:
   - "Mémento Œil Rouge & Douleur Oculaire"
 type: memento-ecos-ssp
 ssp: "Œil Rouge & Douleur Oculaire"
-specialite: "Non classé"
 cas: 4
 diagnostics: 4
 tags:
@@ -28,15 +27,19 @@ cssclasses:
 > AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Non classé
-
-## Œil Rouge & Douleur Oculaire
+# Œil Rouge & Douleur Oculaire
 
 *4 grilles · 4 diagnostics distincts* — [[SSP — Œil Rouge & Douleur Oculaire]]
 
@@ -58,8 +61,8 @@ cssclasses:
 > - [ ] **9. Irradiation *(Glaucome aigu)***
 > - [ ] **10. Qualité *(Glaucome aigu)***
 > - [ ] **11. Intensité *(Glaucome aigu)***
-> - [ ] **12. ⊕ Facteurs aggravants *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
-> - [ ] **13. ⊖ Facteurs soulageants *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **12. Facteurs aggravants *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **13. Facteurs soulageants *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **14. Symptômes associés *(Glaucome aigu)***
 > - [ ] **15. Acuité visuelle *(Glaucome aigu)***
 > - [ ] **16. Baisse du visus unilatérale *(Glaucome aigu)***

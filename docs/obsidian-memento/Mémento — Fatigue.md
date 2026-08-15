@@ -8,6 +8,7 @@ cas: 11
 diagnostics: 10
 tags:
   - ecos/memento
+  - ecos/grille-officielle
   - ecos/grille-non-officielle
 cssclasses:
   - skill-ecos
@@ -23,22 +24,27 @@ cssclasses:
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
 
-> [!warning] Mémento dérivé de grilles NON officielles
-> Ces items viennent de grilles d'entraînement (RESCOS, AMBOSS, GERMAN,
-> AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
-> officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
+> [!warning] Mémento mixte — 1 grille officielle, 10 non officielles
+> **RESCOS-67b** fait partie des **neuf grilles officielles** et fait donc
+> autorité ; elle est signalée ⭐️ dans l'encadré ci-dessous. Les 10
+> autres sont des grilles d'entraînement (RESCOS, AMBOSS, GERMAN, AZYGOS)
+> qu'aucun jury n'a validées.
 >
-> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
-> porté par tous les diagnostics reste nu ; un item porté par une partie
-> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
-> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
-> pas une consigne : c'est la trace du cas qui apporte l'item.
+> **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
+> toutes les grilles de la SSP.
+>
+> - un item **nu** est porté par **toutes** les grilles de la SSP ;
+> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
+>   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+>   diagnostics ne suffisent pas à désigner sans mentir ;
+> - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
+>   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
+>   porte un.
 
-# Médecine Interne
+# Fatigue
 
-## Fatigue
-
-*11 grilles · 10 diagnostics distincts* — [[SSP — Fatigue]]
+*Médecine Interne · 11 grilles · 10 diagnostics distincts* — [[SSP — Fatigue]]
 
 > [!abstract] Les 11 grilles fusionnées
 > - **AMBOSS-27** — Syndrome de Sheehan (hypopituitarisme post-partum) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-27_-_Fatigue_-_Femme_28_ans_-_Grille_ECOS.html>)
@@ -51,7 +57,7 @@ cssclasses:
 > - **RESCOS-44** — Diabète de type 2 `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-44%20-%20Fatigue%20-%20Grille%20ECOS.html>)
 > - **RESCOS-45** — Dépression gériatrique `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-45%20-%20Fatigue%20-%20Grille%20ECOS.html>)
 > - **RESCOS-67** — Hypothyroïdie `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-67%20-%20Fatigue%20-%20Grille%20ECOS.html>)
-> - **RESCOS-67b** — Hypothyroïdie `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-67b%20-%20Fatigue%20-%20Grille%20ECOS.html>)
+> - **RESCOS-67b** ⭐️ **officielle** — Hypothyroïdie `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-67b%20-%20Fatigue%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(Hépatite B et/ou C aiguë, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))***
@@ -447,13 +453,13 @@ cssclasses:
 > 	- [ ] Perte d'intérêt
 > 	- [ ] Troubles de la concentration
 > 	- [ ] Anxiété
-> - [ ] **126. Alimentation *(Hypothyroïdie)***
+> - [ ] **126. Alimentation *(1 grille sur 11)***
 > 	- [ ] Activité physique
 > - [ ] **127. Consommations *(Hypothyroïdie)***
 > 	- [ ] Tabac
 > 	- [ ] OH
 > 	- [ ] Drogues
-> - [ ] **128. Alimentation – activité physique *(Hypothyroïdie)***
+> - [ ] **128. Alimentation – activité physique *(1 grille sur 11)***
 > 	- [ ] Alimentation
 > 	- [ ] Activité physique
 
@@ -589,21 +595,21 @@ cssclasses:
 > - [ ] **50. Palpation thyroïde (médecin derrière le patient) *(Dépression gériatrique)***
 > - [ ] **51. Palpation ganglions cervicaux & axillaires *(Dépression gériatrique)***
 > - [ ] **52. Général : examen rapide de la peau - examen des sclères *(Hypothyroïdie)***
-> 	- [ ] Si réalisé, dire
-> 	- [ ] Examen rapide de la peau
-> 	- [ ] Examen des sclères
+> 	- [ ] Si réalisé, dire *(1 grille sur 11)*
+> 	- [ ] Examen rapide de la peau *(1 grille sur 11)*
+> 	- [ ] Examen des sclères *(1 grille sur 11)*
 > - [ ] **53. Recherche d'adénopathies cervicales - sus-claviculaires *(Hypothyroïdie)***
-> 	- [ ] Cervicales
-> 	- [ ] Sus-claviculaires
+> 	- [ ] Cervicales *(1 grille sur 11)*
+> 	- [ ] Sus-claviculaires *(1 grille sur 11)*
 > - [ ] **54. Palpation de la glande thyroïde *(Hypothyroïdie)***
 > - [ ] **55. Auscultation cardiaque correctement réalisé *(Hypothyroïdie)***
-> 	- [ ] 4 foyers
-> 	- [ ] NON = incomplet ou non réalisé
-> 	- [ ] ET postérieur
-> 	- [ ] Auscultation des 4 foyers
+> 	- [ ] 4 foyers *(1 grille sur 11)*
+> 	- [ ] NON = incomplet ou non réalisé *(1 grille sur 11)*
+> 	- [ ] ET postérieur *(1 grille sur 11)*
+> 	- [ ] Auscultation des 4 foyers *(1 grille sur 11)*
 > - [ ] **56. Auscultation pulmonaire (antérieure et postérieure) *(Hypothyroïdie)***
 > - [ ] **57. Examen abdominal : palpation 4 quadrants - recherche d'hépatosplénomégalie *(Hypothyroïdie)***
-> 	- [ ] Palpation des 4 quadrants
-> 	- [ ] Recherche d'hépatosplénomégalie
+> 	- [ ] Palpation des 4 quadrants *(1 grille sur 11)*
+> 	- [ ] Recherche d'hépatosplénomégalie *(1 grille sur 11)*
 > - [ ] **58. Examen des ROT au niveau du genou ou de la cheville ou au moins sur 1 site *(Hypothyroïdie)***
 > 	- [ ] Ralentissement de la phase de relaxation des ROT
