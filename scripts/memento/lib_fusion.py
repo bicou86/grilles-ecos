@@ -201,13 +201,17 @@ def restreindre(items, cas_cible):
     sur 2 » : un numerateur compte sur la SSP, un denominateur compte sur le
     seul diagnostic. La vue restreinte rend les deux comparables.
 
-    DEPUIS LE SEUIL A DEUX, cette restriction ne mord plus que dans un cas :
-    un item porte a la fois par une grille du diagnostic et par une grille
-    SANS diagnostic resolu. `scinder_management` n'envoie en effet dans un
-    sous-bloc que les items dont tous les porteurs diagnostiques valent ce
-    diagnostic-la — les porteurs sans diagnostic, eux, y restent. Le corpus
-    n'en compte aucun aujourd'hui ; la fonction reste, parce qu'un seul cas
-    suffirait a imprimer « 2 grilles sur 2 » la ou une seule porte l'item.
+    LE SEUIL RESTREINT AU CONTENU l'a rendue de nouveau active : un item dont
+    les sous-items ne sont pas tous partages RESTE duplique dans les sous-blocs
+    de chacun de ses diagnostics, et c'est la que la restriction mord — 63 fois
+    sur le corpus complet. (Une redaction anterieure de cette docstring, ecrite
+    sous le seuil « des deux diagnostics », affirmait le contraire : « aucun cas
+    aujourd'hui ». Elle sous-estimait la fonction d'un facteur soixante.)
+
+    Elle mord aussi, plus rarement, sur un item porte a la fois par une grille
+    du diagnostic et par une grille SANS diagnostic resolu — le corpus n'en
+    compte aucun, mais check_diagnostic plafonne a 90 % de resolution, donc le
+    contrat du projet l'autorise.
 
     Un item qu'aucune grille cible ne porte disparait de la vue, et un
     sous-item non plus porte — « 0 grille sur 2 » ne dit rien. Les originaux

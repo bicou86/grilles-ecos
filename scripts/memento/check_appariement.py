@@ -295,6 +295,13 @@ def verifier_marque_partage():
     if rendu("Antalgie", "ABCDE") != "Antalgie":
         ecarts.append("un item porte par toutes les grilles doit rester nu")
 
+    # BORNE de SEUIL_ABREGE : a EXACTEMENT trois diagnostics, la liste se
+    # deroule SANS s'annoncer — « au-dela de trois » veut dire quatre. Un
+    # « >= » a la place du « > » passait les onze verificateurs.
+    attendu3 = "Aspirine *(3 grilles sur 5)* — *Embolie · Péricardite · STEMI*"
+    if rendu("Aspirine", "ABC") != attendu3:
+        ecarts.append(f"borne de SEUIL_ABREGE franchie a trois : {rendu('Aspirine', 'ABC')}")
+
     # quatre diagnostics : `marque()` aurait ecrit « *(4 diagnostics)* »
     attendu = ("Oxygène *(4 grilles sur 5)* — 4 diagnostics : "
                "*Embolie · Pneumothorax · Péricardite · STEMI*")
