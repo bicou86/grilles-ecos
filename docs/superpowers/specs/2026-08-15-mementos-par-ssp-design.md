@@ -96,8 +96,14 @@ la chaîne aura fait ses preuves.
 dans le mapping ; les 39 autres — dont les 9 officielles, ajoutées après la curation —
 devront l'être à l'étape 1, sans quoi elles n'apparaîtront dans aucun mémento.
 
-**Non tranché** : `usmle` (44) et `triage` (40), que la demande initiale ne mentionne pas
-et qui figurent pourtant au mapping. À décider avant l'étape 5.
+`usmle` (44) et `triage` (40) sont **reportés de la même façon** : ils figurent au mapping
+SSP mais hors de la demande initiale. Décision prise le 2026-08-15.
+
+**Livraison en deux lots.** Le lot 1 ne traite que les SSP portant un diagnostic
+« incontournable » ou « probable » de l'analyse de récurrence 2011-2025
+(`ECOS_Priorites_2026.html`, hors dépôt) — 16 + 19 diagnostics pour 25 plaintes d'entrée
+distinctes. Le lot 2 étend aux SSP restantes, puis à AZYGOS. Cette priorisation ne change
+ni le format ni la chaîne : elle ordonne seulement le travail.
 
 ## État des lieux mesuré
 

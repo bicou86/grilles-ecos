@@ -10,9 +10,18 @@
 
 **Spec:** `docs/superpowers/specs/2026-08-15-mementos-par-ssp-design.md`
 
+**Exécution :** subagent-driven — un sous-agent neuf par tâche, relecture entre chaque.
+
+**Livraison en deux lots.** Le **lot 1** ne traite que les SSP portant un diagnostic
+« incontournable » ou « probable » de `ECOS_Priorites_2026.html` : ce sont les cas à
+réviser en priorité pour 2026. Le **lot 2** étend aux SSP restantes, puis à AZYGOS. Les
+tâches 4 à 10 tournent d'abord sur le lot 1 ; la tâche 11 ouvre le lot 2.
+
 ## Global Constraints
 
 - **Bibliothèque standard seule.** `import yaml` échoue, `import pytest` échoue. Aucune dépendance à installer.
+- **Périmètre du lot 1** — les SSP nommées par `docs/ecos-priorites-2026.yaml` (tâche 0), tirées des 16 diagnostics « incontournables » et 19 « probables » de l'analyse de récurrence 2011-2025. Tout générateur et tout vérificateur accepte `--lot prioritaire` (défaut) ou `--lot tout`.
+- **Source de priorité** — `/Users/damienfulliquet/Documents/Damien/Medecine/ECOS_Priorites_2026.html`, hors dépôt. Ses données vivent dans un `const DATA` JavaScript : 212 diagnostics, champs `nom`, `plainte`, `tier`, `na` (éditions d'apparition), `pct` (P·2026).
 - **Vérification par `check_*.py`.** Convention du dépôt : un script qui imprime un rapport lisible et sort en `0` si tout va bien, `1` sinon. Pas de framework de test. Le cycle est : écrire le checker qui échoue → implémenter → le checker passe → commit.
 - **Idempotence.** Deux exécutions consécutives d'un générateur produisent des fichiers identiques à l'octet près.
 - **Non-régression absolue.** `docs/obsidian-memento/Mémento ECOS — Grilles officielles.md` doit rester identique à l'octet près jusqu'à la tâche 8 incluse. Son empreinte de référence est figée en tâche 2.
@@ -58,6 +67,196 @@
 | `docs/ecos-vocabulaire.yaml` | Table curée : libellé brut → forme canonique, par SSP |
 
 `scripts/build_obsidian_memento.py` reste en place et fonctionnel jusqu'à la tâche 8, où `build_memento.py` le remplace.
+
+---
+
+## ÉTAPE 0 — Cadrer le lot prioritaire 2026
+
+### Task 0: Table des priorités 2026
+
+**Files:**
+- Create: `scripts/memento/build_priorites.py`
+- Create: `docs/ecos-priorites-2026.yaml`
+- Create: `scripts/memento/check_priorites.py`
+
+**Interfaces:**
+- Consumes: `lib_yaml` (tâche 1)
+- Produits: `docs/ecos-priorites-2026.yaml`, forme `plainte → {ssp, tier, pct, diagnostics}`
+
+- [ ] **Step 1: Écrire le checker qui échoue**
+
+Créer `scripts/memento/check_priorites.py` :
+
+```python
+"""La table de priorites est complete et pointe des pages SSP reelles. Sortie 1 si ecart."""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+import lib_ssp
+import lib_yaml
+
+REPO = Path(__file__).resolve().parents[2]
+TABLE = REPO / "docs" / "ecos-priorites-2026.yaml"
+
+
+def main():
+    table = lib_yaml.lire_groupe(TABLE)
+    if not table:
+        print("ECHEC — docs/ecos-priorites-2026.yaml est vide ou absent")
+        return 1
+
+    ecarts, sans_ssp, ssp_inconnues = [], [], []
+    for plainte, champs in table.items():
+        ssp = champs.get("ssp", "").strip()
+        if not ssp or ssp == "?":
+            sans_ssp.append(plainte)
+        elif not (lib_ssp.COFFRE / f"SSP — {ssp}.md").exists():
+            ssp_inconnues.append(f"{plainte} → {ssp}")
+        if champs.get("tier") not in ("incontournable", "probable"):
+            ecarts.append(f"{plainte}: tier inattendu {champs.get('tier')!r}")
+
+    if sans_ssp:
+        ecarts.append(f"{len(sans_ssp)} plainte(s) sans SSP : {sans_ssp}")
+    if ssp_inconnues:
+        ecarts.append(f"{len(ssp_inconnues)} SSP inexistante(s) dans le coffre : {ssp_inconnues}")
+
+    print(f"{len(table)} plaintes prioritaires · {len({c.get('ssp') for c in table.values()})} SSP visees")
+    if ecarts:
+        print("\nECHEC —", len(ecarts), "ecart(s) :")
+        for e in ecarts:
+            print("  ", e)
+        return 1
+    print("OK — table de priorites complete")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+```
+
+- [ ] **Step 2: Lancer le checker pour vérifier qu'il échoue**
+
+Run: `python3 scripts/memento/check_priorites.py`
+Expected: `ECHEC — docs/ecos-priorites-2026.yaml est vide ou absent`
+
+- [ ] **Step 3: Écrire l'extracteur**
+
+Créer `scripts/memento/build_priorites.py` :
+
+```python
+"""Extrait les priorites 2026 vers une table curee.
+
+La source est hors depot : ECOS_Priorites_2026.html, une analyse de recurrence
+sur 374 cas et 12 editions. Ses donnees vivent dans un `const DATA` JavaScript.
+On ne retient que les diagnostics « incontournable » et « probable ».
+
+La correspondance plainte -> page SSP du coffre est CUREE : douze plaintes
+tombent sur un homonyme, treize non (« Bilan », « Psychose », « Vertige »…).
+Une valeur deja presente n'est jamais ecrasee.
+"""
+import json
+import re
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+import lib_yaml
+
+REPO = Path(__file__).resolve().parents[2]
+SOURCE = Path.home() / "Documents/Damien/Medecine/ECOS_Priorites_2026.html"
+TABLE = REPO / "docs" / "ecos-priorites-2026.yaml"
+
+
+def donnees():
+    texte = SOURCE.read_text(encoding="utf8", errors="replace")
+    depart = texte.index("=", texte.index("const DATA")) + 1
+    profondeur = 0
+    for i in range(depart, len(texte)):
+        if texte[i] == "{":
+            if profondeur == 0:
+                debut = i
+            profondeur += 1
+        elif texte[i] == "}":
+            profondeur -= 1
+            if profondeur == 0:
+                return json.loads(texte[debut:i + 1])
+    raise ValueError("bloc DATA introuvable")
+
+
+def main():
+    existant = lib_yaml.lire_groupe(TABLE)
+    par_plainte = {}
+    for diag in donnees()["diags"]:
+        if diag.get("tier") not in ("incontournable", "probable"):
+            continue
+        p = diag.get("plainte", "").strip() or "(sans plainte)"
+        entree = par_plainte.setdefault(p, {"tier": diag["tier"], "pct": 0, "diagnostics": []})
+        entree["diagnostics"].append(diag["nom"])
+        entree["pct"] = max(entree["pct"], diag.get("pct", 0))
+        if diag["tier"] == "incontournable":
+            entree["tier"] = "incontournable"
+
+    lignes = ["# Priorites de revision ECOS 2026 — TABLE CUREE.",
+              "# Source : ECOS_Priorites_2026.html (recurrence 2011-2025, hors depot).",
+              "# `ssp` doit nommer EXACTEMENT une page « SSP — <nom>.md » du coffre ;",
+              "# mettre ? pour les plaintes sans page evidente, puis trancher a la main.",
+              "# Une valeur deja presente n'est jamais ecrasee.",
+              ""]
+    for plainte in sorted(par_plainte):
+        e = par_plainte[plainte]
+        ancien = existant.get(plainte, {})
+        lignes += [f'"{plainte}":',
+                   f'  ssp: {ancien.get("ssp", "?")}',
+                   f'  tier: {e["tier"]}',
+                   f'  pct: {e["pct"]}',
+                   f'  diagnostics: {" · ".join(sorted(e["diagnostics"]))}']
+    TABLE.write_text("\n".join(lignes) + "\n", encoding="utf8")
+    print(f"{len(par_plainte)} plaintes prioritaires -> {TABLE.relative_to(REPO)}")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+- [ ] **Step 4: Produire la table**
+
+Run: `python3 scripts/memento/build_priorites.py`
+Expected: `25 plaintes prioritaires -> docs/ecos-priorites-2026.yaml`
+
+- [ ] **Step 5: Curer les correspondances**
+
+Run: `python3 scripts/memento/check_priorites.py`
+Expected: `ECHEC` listant les plaintes à `?`.
+
+Renseigner chaque `ssp:` avec le nom **exact** d'une page du coffre. Douze tombent d'évidence (Céphalée, Diarrhée, Douleur Abdominale, Douleur Thoracique, Dyspnée, Fatigue, Palpitations, Parésie - AVC, Éruption Cutanée, Toux Chronique, Incontinence Urinaire, Brûlures mictionnelles → Dysurie). Les treize autres demandent un arbitrage — « Abus d'alcool » → *Dépendance & Addictions*, « Trouble de l'humeur » → *Dépression* ou *Troubles de l'Humeur*, « Psychose » → *Troubles Psychotiques & Schizophrénie*, « Vertige » → *Vertiges*, « Douleur dorsale » → *Lombalgies*, « Trouble de la vision » → *Amaurose & Baisse d'Acuité Visuelle*, « Chute / traumatisme » → *Chute & Évaluation Gériatrique*… Vérifier la liste réelle avec :
+
+```bash
+ls "$HOME/Documents/Damien/Medecine/Obsidian/SSP ECOS/" | sed 's/^SSP — //;s/\.md$//'
+```
+
+Une plainte sans page SSP pertinente — « Bilan » recouvre diabète inaugural et capacité de discernement — se laisse à `?` **seulement si** on accepte qu'elle sorte du lot 1 ; le checker refusera. Créer plutôt la page SSP manquante dans le coffre, ou rattacher à la page la plus proche.
+
+- [ ] **Step 6: Lancer le checker pour vérifier qu'il passe**
+
+Run: `python3 scripts/memento/check_priorites.py`
+Expected: `OK — table de priorites complete`
+
+- [ ] **Step 7: Commit**
+
+```bash
+git add scripts/memento/build_priorites.py scripts/memento/check_priorites.py docs/ecos-priorites-2026.yaml
+git commit -m "Cadre le lot prioritaire 2026
+
+L'analyse de recurrence 2011-2025 classe 212 diagnostics ; 16 sont
+incontournables et 19 probables, pour 25 plaintes d'entree distinctes. Ce sont
+les SSP du premier lot.
+
+Douze plaintes tombent sur un homonyme dans le coffre, treize non — « Bilan »,
+« Psychose », « Vertige », « Abus d'alcool » n'ont pas de page du meme nom. La
+correspondance est donc curee, et le checker refuse toute SSP qui ne designe pas
+une page reelle."
+```
 
 ---
 
@@ -615,7 +814,7 @@ a de nouveau ete pris pour un item."
 
 **Interfaces:**
 - Consumes: structure pivot
-- Produces: `rattachements() -> dict[str, str]` (id de cas → nom de SSP), `specialite(ssp) -> str`, `priorite(ssp) -> str`, `CORPUS = ("rescos", "amboss", "german", "azygos")`
+- Produces: `rattachements() -> dict[str, str]` (id de cas → nom de SSP), `specialite(ssp) -> str`, `priorite(ssp) -> str`, `lot_prioritaire() -> set[str]`, `CORPUS = ("rescos", "amboss", "german", "azygos")`, `COFFRE`
 
 - [ ] **Step 1: Écrire le checker qui échoue**
 
@@ -635,6 +834,8 @@ REPO = Path(__file__).resolve().parents[2]
 
 
 def main():
+    tout = "--lot" in sys.argv and "tout" in sys.argv
+    lot = None if tout else lib_ssp.lot_prioritaire()
     rattache = lib_ssp.rattachements()
     total, sans_ssp, sans_items = 0, [], []
     for corpus in lib_ssp.CORPUS:
@@ -643,12 +844,15 @@ def main():
         for f in sorted(glob.glob(motif)):
             cas = L.lire_azygos(f) if corpus == "azygos" else L.lire_html(f)
             total += 1
+            if lot is not None and rattache.get(cas["id"]) not in lot:
+                continue          # hors lot 1 : reporte au lot 2
             if cas["id"] not in rattache:
                 sans_ssp.append(f"{cas['id']} ({corpus})")
             if not sum(len(v) for v in cas["sections"].values()):
                 sans_items.append(f"{cas['id']} ({corpus})")
 
-    print(f"{total} grilles lues · {total - len(sans_ssp)} rattachees a une SSP")
+    print(f"lot {'complet' if lot is None else 'prioritaire'} · "
+          f"{total} grilles lues · {total - len(sans_ssp)} rattachees a une SSP")
     if sans_items:
         print(f"\nECHEC — {len(sans_items)} grille(s) sans aucun item extrait :")
         for x in sans_items:
@@ -735,6 +939,12 @@ def specialite(ssp):
 
 def priorite(ssp):
     return _champ(ssp, "priorite", "Standard")
+
+
+def lot_prioritaire():
+    """Les SSP du lot 1 — celles que la table de priorites 2026 designe."""
+    table = lib_yaml.lire_groupe(REPO / "docs" / "ecos-priorites-2026.yaml")
+    return {champs["ssp"] for champs in table.values() if champs.get("ssp", "?") != "?"}
 ```
 
 - [ ] **Step 4: Créer la table de compléments, vide**
@@ -1495,7 +1705,7 @@ est le comportement voulu."
 
 ## ÉTAPE 4 — Curer
 
-### Task 10: Vocabulaire canonique des dix grosses SSP
+### Task 10: Vocabulaire canonique des SSP prioritaires
 
 **Files:**
 - Modify: `docs/ecos-vocabulaire.yaml`
@@ -1581,9 +1791,9 @@ doublons expose les paires qu'il rate ; le vocabulaire canonique les rabat sur
 une forme unique, celle des grilles officielles quand elle existe."
 ```
 
-- [ ] **Step 6: Répéter pour les neuf autres SSP à 4 cas et plus**
+- [ ] **Step 6: Répéter pour les autres SSP du lot 1**
 
-Douleur Thoracique (11), Toux Chronique (8), Œil Rouge (7), Fatigue (6), Lombalgies (6), Céphalée (5), Diarrhée (5), et les deux à 4 cas. Un commit par SSP, même forme de message.
+Prendre les SSP de `docs/ecos-priorites-2026.yaml` par nombre de cas décroissant — Douleur Thoracique, Toux Chronique, Fatigue, Céphalée, Diarrhée, Dyspnée, Éruption Cutanée… Un commit par SSP, même forme de message. **Les SSP hors lot 1 attendent la tâche 11.**
 
 Le critère d'arrêt est fonctionnel : on cure tant que le mémento d'une SSP contient des doublons **visibles à la lecture**, pas au-delà.
 
@@ -1591,7 +1801,7 @@ Le critère d'arrêt est fonctionnel : on cure tant que le mémento d'une SSP co
 
 ## ÉTAPE 5 — Étendre
 
-### Task 11: AZYGOS dans les mémentos, et décision sur usmle / triage
+### Task 11: Ouvrir le lot 2 — SSP restantes puis AZYGOS
 
 **Files:**
 - Modify: `docs/ecos-ssp-complements.yaml`
@@ -1622,9 +1832,15 @@ Expected: les trois `OK`.
 
 Ouvrir le mémento d'une SSP portant à la fois un AZYGOS et un RESCOS ou GERMAN. Vérifier que leurs items ont fusionné plutôt que de se juxtaposer ; sinon, c'est du vocabulaire à curer (tâche 10).
 
-- [ ] **Step 5: Trancher le sort d'usmle et triage**
+- [ ] **Step 5: Générer le lot 2**
 
-Les deux corpus (44 + 40 grilles) figurent au mapping SSP mais hors périmètre initial. Décider avec l'utilisateur, puis **consigner la décision** dans la section « Périmètre » de la spec.
+Run: `python3 scripts/memento/build_memento.py --lot tout && python3 scripts/memento/check_couverture.py --lot tout`
+Expected: les SSP hors priorités rejoignent `docs/obsidian-memento/`, checker vert.
+
+Reprendre la tâche 10 sur celles qui montrent des doublons visibles.
+
+`usmle` (44 grilles) et `triage` (40) restent **hors périmètre**, reportés comme
+`rescos-locales` et `casecos` — décision consignée dans la spec.
 
 - [ ] **Step 6: Commit**
 
@@ -1645,5 +1861,7 @@ La spec consigne la decision prise sur usmle et triage."
 **Couverture de la spec.** Chaque section a sa tâche : le référentiel officiel → tâches 2 et 5 ; le périmètre et le trou des 39 RESCOS → tâche 4 ; la cascade de diagnostic → tâche 6 ; socle A et couche B → tâches 7 et 10 ; le marquage par suffixe → tâche 8 ; le management scindé → tâche 9 ; AZYGOS depuis le JSON → tâche 3 ; les quatre critères de vérification → `check_fusion` (idempotence, non-régression), `check_couverture` (couverture), `check_referentiel` (conformité) ; le risque du dossier non versionné → tâche 11 step 1.
 
 **Cohérence des signatures.** `lire_html` et `lire_azygos` rendent la même structure pivot. `apparier(cas_list, prefixe, ssp)` est appelée avec trois arguments partout après la tâche 7 ; le checker de la tâche 7 l'appelle avec deux, `ssp` valant `None` par défaut. `marque(item, diagnostics_total, diag_par_cas)` garde ses trois paramètres des tâches 8 et 9.
+
+**Découpage en lots.** La tâche 0 fixe le lot 1 depuis l'analyse de récurrence 2011-2025 ; les tâches 4 à 10 s'y restreignent via `lib_ssp.lot_prioritaire()` ; la tâche 11 ouvre le lot 2 avec `--lot tout`.
 
 **Ce que le plan ne fait pas** et qui reste à décider en cours de route : le seuil d'abréviation du suffixe est posé à trois sans mesure ; le seuil de similarité des doublons à 0,72 sans mesure. Les deux se règlent à la lecture du premier rendu réel, tâches 8 et 10.
