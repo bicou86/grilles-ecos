@@ -6,6 +6,7 @@ ssp: "Dépendance & Addictions (Alcool, Tabac, Drogues)"
 specialite: "Psychiatrie"
 cas: 2
 diagnostics: 2
+attendus_sans_grille: 0
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -42,16 +43,27 @@ cssclasses:
 >   porte un.
 >
 > **Le management, lui, ne fusionne pas.** La prise en charge dépend du
-> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
-> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
-> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
-> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
-> ce diagnostic-là**, pas celles de la SSP.
+> diagnostic : l'encadré 💊 se découpe en **un sous-bloc par diagnostic**,
+> `💊 Management — si <diagnostic>`. À l'intérieur d'un sous-bloc,
+> `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
+> de la SSP.
+>
+> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
+> recopié dans chaque sous-bloc : il remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
+> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
+> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
+> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
+> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
+> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
+> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
+> se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
-> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
-> ne documente : ce sous-bloc vide est un **trou de révision** à combler
-> ailleurs, pas un défaut du mémento.
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
+> ne documente. Ce sous-bloc vide dit alors laquelle des deux situations
+> s'applique : soit une **autre SSP** documente ce diagnostic, et il y renvoie ;
+> soit le corpus l'ignore, et c'est un **trou de révision** à combler ailleurs.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -64,7 +76,7 @@ cssclasses:
 
 # Dépendance & Addictions (Alcool, Tabac, Drogues) ⭐️
 
-*Psychiatrie · 2 grilles · 2 diagnostics distincts* — [[SSP — Dépendance & Addictions (Alcool, Tabac, Drogues)]]
+*Psychiatrie · 2 grilles · 2 diagnostics documentés* — [[SSP — Dépendance & Addictions (Alcool, Tabac, Drogues)]]
 
 > [!abstract] Les 2 grilles fusionnées
 > - **AZYGOS-7** — Dépendance à l'alcool `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/fe897a6f-db49-4b0b-9302-fdb57a1e0dc4.json>)

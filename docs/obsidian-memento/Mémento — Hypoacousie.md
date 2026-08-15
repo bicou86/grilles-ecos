@@ -5,6 +5,7 @@ type: memento-ecos-ssp
 ssp: "Hypoacousie"
 cas: 4
 diagnostics: 2
+attendus_sans_grille: 1
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -41,16 +42,27 @@ cssclasses:
 >   porte un.
 >
 > **Le management, lui, ne fusionne pas.** La prise en charge dépend du
-> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
-> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
-> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
-> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
-> ce diagnostic-là**, pas celles de la SSP.
+> diagnostic : l'encadré 💊 se découpe en **un sous-bloc par diagnostic**,
+> `💊 Management — si <diagnostic>`. À l'intérieur d'un sous-bloc,
+> `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
+> de la SSP.
+>
+> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
+> recopié dans chaque sous-bloc : il remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
+> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
+> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
+> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
+> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
+> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
+> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
+> se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
-> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
-> ne documente : ce sous-bloc vide est un **trou de révision** à combler
-> ailleurs, pas un défaut du mémento.
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
+> ne documente. Ce sous-bloc vide dit alors laquelle des deux situations
+> s'applique : soit une **autre SSP** documente ce diagnostic, et il y renvoie ;
+> soit le corpus l'ignore, et c'est un **trou de révision** à combler ailleurs.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -63,7 +75,7 @@ cssclasses:
 
 # Hypoacousie
 
-*4 grilles · 2 diagnostics distincts* — [[SSP — Hypoacousie]]
+*4 grilles · 2 diagnostics documentés · 1 attendu sans grille* — [[SSP — Hypoacousie]]
 
 > [!abstract] Les 4 grilles fusionnées
 > - **AMBOSS-23** — Presbyacousie `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-23_-_Perte_auditive_-_Homme_65_ans_-_Grille_ECOS.html>)
@@ -280,25 +292,25 @@ cssclasses:
 > 	- [ ] Équilibre
 > 	- [ ] Coordination
 
-> [!success] 💊 Management — commun aux diagnostics
-> - [ ] **1. Examens complémentaires *(3 grilles sur 4)***
-> 	- [ ] Audiométrie *(1 grille sur 4)*
-> 	- [ ] Audiométrie tonale en urgence *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Audiométrie vocale *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Tympanométrie *(2 grilles sur 4)*
-> 	- [ ] Diagnostic vestibulaire (nystagmus, épreuve calorique) *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Bilan biologique (FSC, CRP, VS, glycémie) *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Recherche d'hypertension artérielle *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Recherche d'hyperlipidémie *(Surdité brusque idiopathique gauche)*
-> 	- [ ] IRM cérébrale et du conduit auditif interne si pas d'amélioration *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Audiométrie tonale (courbe typique avec chute dans les aigus) *(1 grille sur 4)*
-> 	- [ ] Audiométrie vocale (mauvaise discrimination) *(1 grille sur 4)*
-> 	- [ ] Potentiels évoqués auditifs si doute diagnostique *(1 grille sur 4)*
-> - [ ] **2. Diagnostic principal *(2 grilles sur 4)***
-> 	- [ ] Surdité brusque idiopathique gauche *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Surdité de perception unilatérale gauche *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Presbyacousie bilatérale *(1 grille sur 4)*
-> - [ ] **3. Diagnostics différentiels *(2 grilles sur 4)***
+> [!success] 💊 Management — partagé par plusieurs diagnostics
+> - [ ] **1. Examens complémentaires *(Presbyacousie · Surdité brusque idiopathique gauche — 3 grilles sur 4)***
+> 	- [ ] Audiométrie *(Presbyacousie — 1 grille sur 4)*
+> 	- [ ] Audiométrie tonale en urgence *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
+> 	- [ ] Audiométrie vocale *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
+> 	- [ ] Tympanométrie *(Presbyacousie · Surdité brusque idiopathique gauche — 2 grilles sur 4)*
+> 	- [ ] Diagnostic vestibulaire (nystagmus, épreuve calorique) *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
+> 	- [ ] Bilan biologique (FSC, CRP, VS, glycémie) *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
+> 	- [ ] Recherche d'hypertension artérielle *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
+> 	- [ ] Recherche d'hyperlipidémie *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
+> 	- [ ] IRM cérébrale et du conduit auditif interne si pas d'amélioration *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
+> 	- [ ] Audiométrie tonale (courbe typique avec chute dans les aigus) *(Presbyacousie — 1 grille sur 4)*
+> 	- [ ] Audiométrie vocale (mauvaise discrimination) *(Presbyacousie — 1 grille sur 4)*
+> 	- [ ] Potentiels évoqués auditifs si doute diagnostique *(Presbyacousie — 1 grille sur 4)*
+> - [ ] **2. Diagnostic principal *(Presbyacousie · Surdité brusque idiopathique gauche — 2 grilles sur 4)***
+> 	- [ ] Surdité brusque idiopathique gauche *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
+> 	- [ ] Surdité de perception unilatérale gauche *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
+> 	- [ ] Presbyacousie bilatérale *(Presbyacousie — 1 grille sur 4)*
+> - [ ] **3. Diagnostics différentiels *(Presbyacousie · Surdité brusque idiopathique gauche — 2 grilles sur 4)***
 
 > [!success] 💊 Management — si Otosclérose
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

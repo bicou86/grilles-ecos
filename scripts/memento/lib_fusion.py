@@ -106,46 +106,54 @@ def apparier(cas_list, prefixe, ssp=None):
 
 
 def scinder_management(cas_list, diag_par_cas, ssp=None, attendus=()):
-    """Management -> (items communs a tous les diagnostics, {diagnostic: items propres}).
+    """Management -> (items partages par plusieurs diagnostics, {diagnostic: items propres}).
 
     L'anamnese d'une SSP est presque superposable d'un cas a l'autre ; son
-    management ne l'est pas — il depend du diagnostic. Un item porte par TOUS
-    les diagnostics de la SSP est commun. Les autres vont dans le sous-bloc de
-    chaque diagnostic qui les porte : un item partage par deux diagnostics sur
-    cinq apparait donc dans deux sous-blocs, ce qui est voulu.
+    management ne l'est pas — il depend du diagnostic. Un item PROPRE a un
+    diagnostic va dans son sous-bloc ; un item porte par DEUX diagnostics OU
+    PLUS part dans un encadre partage, en tete, ou il n'est ecrit qu'une fois.
+
+    LE SEUIL EST « DEUX », PAS « TOUS » (decision de l'auteur, ronde 1 de la
+    tache 9). La regle initiale — commun = porte par TOUS les diagnostics —
+    ne se declenchait que sur 2 des 23 SSP a plusieurs diagnostics : au-dela
+    de trois diagnostics, aucun item lexicalement identique ne les couvre
+    tous, si bien que « Diagnostics differentiels » etait recopie dans huit
+    sous-blocs de « Douleur Abdominale ». Le seuil a deux retire 31 % des
+    lignes de ce memento, et ce sont les lignes creuses qui partent.
+
+    LA CONTREPARTIE, et elle est reelle : l'encadre partage se lit AVEC le
+    sous-bloc de son diagnostic, plus a sa place. C'est pourquoi chaque item
+    partage NOMME ses diagnostics au rendu (`lib_rendu.marque_partage`) —
+    sans quoi le seuil echangerait de la redondance contre de l'imprecision.
 
     `attendus` — decision de l'auteur du 2026-08-15 — est la liste des
     diagnostics que la SSP DEVRAIT couvrir (champ `diagnostics` de
     docs/ecos-priorites-2026.yaml). Chacun recoit une entree, meme si aucune
     grille du corpus ne le documente : le memento doit dire a l'etudiant ce
-    qu'il devrait savoir, pas seulement ce que le corpus contient. Les
-    attendus n'entrent PAS dans le calcul du commun — les y faire entrer
-    viderait celui-ci entierement, puisqu'aucune grille ne porte un diagnostic
-    que le corpus ignore.
+    qu'il devrait savoir, pas seulement ce que le corpus contient.
 
-    Une entree vide est donc ambigue ici : elle dit « aucun item PROPRE », que
-    ce soit faute de grille ou parce que tout le management de ce diagnostic
-    est commun. Les deux se distinguent en lisant `diag_par_cas`, ce que fait
-    le rendu — plutot que de rendre deux structures que l'appariement n'a
-    aucun moyen d'interpreter.
+    Une entree vide est ambigue ici : elle dit « aucun item PROPRE », que ce
+    soit faute de grille ou parce que tout le management de ce diagnostic est
+    partage. Les deux se distinguent en lisant `diag_par_cas` et les sections,
+    ce que fait le rendu — plutot que de rendre deux structures que
+    l'appariement n'a aucun moyen d'interpreter.
 
     UN ITEM DONT AUCUNE GRILLE PORTEUSE N'A DE DIAGNOSTIC RESOLU part dans le
-    commun : le renvoyer vers un sous-bloc est impossible (il n'y en a aucun a
-    nommer) et l'ecarter le supprimerait du memento. Meme traitement quand la
-    SSP entiere n'a aucun diagnostic resolu.
+    partage : le renvoyer vers un sous-bloc est impossible (il n'y en a aucun
+    a nommer) et l'ecarter le supprimerait du memento. C'est la seule raison
+    pour laquelle le test porte sur `len(porteurs) != 1` et non `>= 2`.
     """
     apparies = apparier(cas_list, "m", ssp)
     diagnostics = {diag_par_cas[c["id"]] for c in cas_list if c["id"] in diag_par_cas}
 
-    commun, propres = [], {d: [] for d in diagnostics | set(attendus)}
+    partage, propres = [], {d: [] for d in diagnostics | set(attendus)}
     for item in apparies:
         porteurs = {diag_par_cas[c] for c in item["cas"] if c in diag_par_cas}
-        if not porteurs or porteurs == diagnostics:
-            commun.append(item)
+        if len(porteurs) != 1:
+            partage.append(item)
         else:
-            for d in porteurs:
-                propres[d].append(item)
-    return commun, propres
+            propres[porteurs.pop()].append(item)
+    return partage, propres
 
 
 def restreindre(items, cas_cible):
@@ -155,6 +163,14 @@ def restreindre(items, cas_cible):
     diagnostic, le lire tel quel ferait dire a `lib_rendu.marque()` « 3 grilles
     sur 2 » : un numerateur compte sur la SSP, un denominateur compte sur le
     seul diagnostic. La vue restreinte rend les deux comparables.
+
+    DEPUIS LE SEUIL A DEUX, cette restriction ne mord plus que dans un cas :
+    un item porte a la fois par une grille du diagnostic et par une grille
+    SANS diagnostic resolu. `scinder_management` n'envoie en effet dans un
+    sous-bloc que les items dont tous les porteurs diagnostiques valent ce
+    diagnostic-la — les porteurs sans diagnostic, eux, y restent. Le corpus
+    n'en compte aucun aujourd'hui ; la fonction reste, parce qu'un seul cas
+    suffirait a imprimer « 2 grilles sur 2 » la ou une seule porte l'item.
 
     Un item qu'aucune grille cible ne porte disparait de la vue, et un
     sous-item non plus porte — « 0 grille sur 2 » ne dit rien. Les originaux

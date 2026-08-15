@@ -6,6 +6,7 @@ ssp: "Palpitations"
 specialite: "Cardiologie & Vasculaire"
 cas: 3
 diagnostics: 3
+attendus_sans_grille: 2
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -42,16 +43,27 @@ cssclasses:
 >   porte un.
 >
 > **Le management, lui, ne fusionne pas.** La prise en charge dépend du
-> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
-> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
-> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
-> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
-> ce diagnostic-là**, pas celles de la SSP.
+> diagnostic : l'encadré 💊 se découpe en **un sous-bloc par diagnostic**,
+> `💊 Management — si <diagnostic>`. À l'intérieur d'un sous-bloc,
+> `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
+> de la SSP.
+>
+> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
+> recopié dans chaque sous-bloc : il remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
+> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
+> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
+> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
+> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
+> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
+> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
+> se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
-> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
-> ne documente : ce sous-bloc vide est un **trou de révision** à combler
-> ailleurs, pas un défaut du mémento.
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
+> ne documente. Ce sous-bloc vide dit alors laquelle des deux situations
+> s'applique : soit une **autre SSP** documente ce diagnostic, et il y renvoie ;
+> soit le corpus l'ignore, et c'est un **trou de révision** à combler ailleurs.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -64,7 +76,7 @@ cssclasses:
 
 # Palpitations ⭐️
 
-*Cardiologie & Vasculaire · 3 grilles · 3 diagnostics distincts* — [[SSP — Palpitations]]
+*Cardiologie & Vasculaire · 3 grilles · 3 diagnostics documentés · 2 attendus sans grille* — [[SSP — Palpitations]]
 
 > [!abstract] Les 3 grilles fusionnées
 > - **German-7** — Insuffisance cardiaque (décompensée) `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-7_-_Bradycardie_-_Grille_ECOS.html>)
@@ -390,6 +402,21 @@ cssclasses:
 > 	- [ ] Ascite
 > 	- [ ] Râles pulmonaires
 
+> [!success] 💊 Management — partagé par plusieurs diagnostics
+> - [ ] **1. Diagnostics différentiels *(Insuffisance cardiaque (décompensée) · Palpitations liées au stress et aux stimulants — 2 grilles sur 3)***
+> 	- [ ] Tachycardie supraventriculaire paroxystique *(Palpitations liées au stress et aux stimulants — 1 grille sur 3)*
+> 	- [ ] Hyperthyroïdie *(Palpitations liées au stress et aux stimulants — 1 grille sur 3)*
+> 	- [ ] Trouble anxieux/attaque de panique *(Palpitations liées au stress et aux stimulants — 1 grille sur 3)*
+> 	- [ ] Arythmie induite par la cocaïne *(Palpitations liées au stress et aux stimulants — 1 grille sur 3)*
+> 	- [ ] Anémie *(Palpitations liées au stress et aux stimulants — 1 grille sur 3)*
+> 	- [ ] Phéochromocytome (rare) *(Palpitations liées au stress et aux stimulants — 1 grille sur 3)*
+> - [ ] **2. Traitement médicamenteux *(Insuffisance cardiaque (décompensée) · Palpitations liées au stress et aux stimulants — 2 grilles sur 3)***
+> 	- [ ] Parasympatholytiques : Atropine 0,5-1 mg IV *(Insuffisance cardiaque (décompensée) — 1 grille sur 3)*
+> 	- [ ] Sympathomimétiques : Adrénaline 0,1 mg IV *(Insuffisance cardiaque (décompensée) — 1 grille sur 3)*
+> 	- [ ] Bêta-bloquants si échec des mesures hygiéno-diététiques *(Palpitations liées au stress et aux stimulants — 1 grille sur 3)*
+> 	- [ ] Anxiolytiques ponctuels si composante anxieuse marquée *(Palpitations liées au stress et aux stimulants — 1 grille sur 3)*
+> 	- [ ] Traitement spécifique selon résultats (fer si anémie, etc.) *(Palpitations liées au stress et aux stimulants — 1 grille sur 3)*
+
 > [!success] 💊 Management — si Fibrillation auriculaire
 > - [ ] **1. Diagnostic principal suspecté**
 > 	- [ ] Fibrillation auriculaire paroxystique
@@ -441,54 +468,39 @@ cssclasses:
 
 > [!success] 💊 Management — si Insuffisance cardiaque (décompensée)
 > - [ ] **1. Diagnostic de suspicion**
-> - [ ] **2. Diagnostics différentiels**
-> - [ ] **3. Examens diagnostiques**
+> - [ ] **2. Examens diagnostiques**
 > 	- [ ] Laboratoire : FSC, CRP, Ferritine, Troponine I, CK-MB, LDH
 > 	- [ ] Créatinine, électrolytes (Na, K, Ca), TSH, Glucose
 > 	- [ ] Transaminases, Gamma-GT, phosphatases alcalines (PAL), Albumine, Quick/aPTT
 > 	- [ ] Radiographie thoracique / ECG (24h) / Échocardiographie
 > 	- [ ] Éventuellement angio-CT (si suspicion d'embolie pulmonaire)
 > 	- [ ] Éventuellement dosage médicamenteux (bêta-bloquants)
-> - [ ] **4. Reconnaissance de pathologie**
-> - [ ] **5. Traitement médicamenteux**
-> 	- [ ] Parasympatholytiques : Atropine 0,5-1 mg IV
-> 	- [ ] Sympathomimétiques : Adrénaline 0,1 mg IV
-> - [ ] **6. Traitement par stimulateur cardiaque**
+> - [ ] **3. Reconnaissance de pathologie**
+> - [ ] **4. Traitement par stimulateur cardiaque**
 > 	- [ ] Indications absolues : Fibrillation auriculaire, Bloc AV II°/III°
 > 	- [ ] Indications relatives : Bradycardie symptomatique
-> - [ ] **7. Hospitalisation si nécessaire**
+> - [ ] **5. Hospitalisation si nécessaire**
 
 > [!success] 💊 Management — si Palpitations liées au stress et aux stimulants
-> - [ ] **1. Diagnostics différentiels**
-> 	- [ ] Tachycardie supraventriculaire paroxystique
-> 	- [ ] Hyperthyroïdie
-> 	- [ ] Trouble anxieux/attaque de panique
-> 	- [ ] Arythmie induite par la cocaïne
-> 	- [ ] Anémie
-> 	- [ ] Phéochromocytome (rare)
-> - [ ] **2. Traitement médicamenteux**
-> 	- [ ] Bêta-bloquants si échec des mesures hygiéno-diététiques
-> 	- [ ] Anxiolytiques ponctuels si composante anxieuse marquée
-> 	- [ ] Traitement spécifique selon résultats (fer si anémie, etc.)
-> - [ ] **3. Diagnostic principal**
-> - [ ] **4. Examens complémentaires**
+> - [ ] **1. Diagnostic principal**
+> - [ ] **2. Examens complémentaires**
 > 	- [ ] Biologie : FSC (anémie), TSH (hyperthyroïdie), ionogramme
 > 	- [ ] ECG de repos
 > 	- [ ] Holter ECG 24h si récidive
 > 	- [ ] Échocardiographie si anomalie ECG
 > 	- [ ] Test toxicologique urinaire si besoin
-> - [ ] **5. Prise en charge non médicamenteuse**
-> - [ ] **6. Conseils spécifiques sur les substances**
+> - [ ] **3. Prise en charge non médicamenteuse**
+> - [ ] **4. Conseils spécifiques sur les substances**
 > 	- [ ] Information sur les risques cardiaques de la cocaïne
 > 	- [ ] Orientation vers consultation d'addictologie si besoin
 > 	- [ ] Aide au sevrage tabagique
 > 	- [ ] Alternatives au café (tisanes, décaféiné)
-> - [ ] **7. Suivi**
+> - [ ] **5. Suivi**
 > 	- [ ] Contrôle à 2-4 semaines
 > 	- [ ] Journal des palpitations
 > 	- [ ] Réévaluation après modifications du mode de vie
 > 	- [ ] ECG de contrôle si persistance
-> - [ ] **8. Éducation et prévention**
+> - [ ] **6. Éducation et prévention**
 > 	- [ ] Explication du cercle vicieux stress-palpitations
 > 	- [ ] Techniques d'autogestion
 > 	- [ ] Signes d'alerte nécessitant une consultation
@@ -498,4 +510,4 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Trouble anxieux
-> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : « Trouble Anxieux » (4 grilles, hors lot) · [[Mémento — Troubles du Sommeil]] (1 grille).

@@ -5,6 +5,7 @@ type: memento-ecos-ssp
 ssp: "Œil Rouge & Douleur Oculaire"
 cas: 4
 diagnostics: 4
+attendus_sans_grille: 2
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -41,16 +42,27 @@ cssclasses:
 >   porte un.
 >
 > **Le management, lui, ne fusionne pas.** La prise en charge dépend du
-> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
-> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
-> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
-> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
-> ce diagnostic-là**, pas celles de la SSP.
+> diagnostic : l'encadré 💊 se découpe en **un sous-bloc par diagnostic**,
+> `💊 Management — si <diagnostic>`. À l'intérieur d'un sous-bloc,
+> `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
+> de la SSP.
+>
+> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
+> recopié dans chaque sous-bloc : il remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
+> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
+> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
+> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
+> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
+> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
+> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
+> se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
-> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
-> ne documente : ce sous-bloc vide est un **trou de révision** à combler
-> ailleurs, pas un défaut du mémento.
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
+> ne documente. Ce sous-bloc vide dit alors laquelle des deux situations
+> s'applique : soit une **autre SSP** documente ce diagnostic, et il y renvoie ;
+> soit le corpus l'ignore, et c'est un **trou de révision** à combler ailleurs.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -63,7 +75,7 @@ cssclasses:
 
 # Œil Rouge & Douleur Oculaire
 
-*4 grilles · 4 diagnostics distincts* — [[SSP — Œil Rouge & Douleur Oculaire]]
+*4 grilles · 4 diagnostics documentés · 2 attendus sans grille* — [[SSP — Œil Rouge & Douleur Oculaire]]
 
 > [!abstract] Les 4 grilles fusionnées
 > - **AZYGOS-10** — Glaucome aigu `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/8d674409-0b72-4e3f-bcd2-4507b3d27a1e.json>)
@@ -369,6 +381,9 @@ cssclasses:
 > - [ ] **56. Propose une ophtalmoscopie directe *(Kératite herpétique)***
 > - [ ] **57. Propose un examen à la lampe à fente *(Kératite herpétique)***
 
+> [!success] 💊 Management — partagé par plusieurs diagnostics
+> - [ ] **1. Diagnostic de travail *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom) — 2 grilles sur 4)***
+
 > [!success] 💊 Management — si Conjonctivite allergique
 > - [ ] **1. Diagnostic principal évoqué**
 > 	- [ ] Conjonctivite allergique saisonnière
@@ -419,19 +434,18 @@ cssclasses:
 
 > [!success] 💊 Management — si Glaucome aigu
 > - [ ] **1. Laboratoire de routine**
-> - [ ] **2. Diagnostic de travail**
-> - [ ] **3. Baisse médicamenteuse de la pression intraoculaire**
-> - [ ] **4. Analgésie**
-> - [ ] **5. Antiemèse**
-> - [ ] **6. Avis d’ophtalmologue**
-> - [ ] **7. Transfert en clinique ophtalmologique**
-> - [ ] **8. Information sur le risque de cécité**
-> - [ ] **9. Clinique ophtalmologique**
-> - [ ] **10. Collyres locaux**
-> - [ ] **11. Tonométrie de Goldmann**
-> - [ ] **12. Répéter le fond d’œil**
-> - [ ] **13. Gonioscopie**
-> - [ ] **14. Iridotomie au laser**
+> - [ ] **2. Baisse médicamenteuse de la pression intraoculaire**
+> - [ ] **3. Analgésie**
+> - [ ] **4. Antiemèse**
+> - [ ] **5. Avis d’ophtalmologue**
+> - [ ] **6. Transfert en clinique ophtalmologique**
+> - [ ] **7. Information sur le risque de cécité**
+> - [ ] **8. Clinique ophtalmologique**
+> - [ ] **9. Collyres locaux**
+> - [ ] **10. Tonométrie de Goldmann**
+> - [ ] **11. Répéter le fond d’œil**
+> - [ ] **12. Gonioscopie**
+> - [ ] **13. Iridotomie au laser**
 
 > [!success] 💊 Management — si Kératite herpétique
 > - [ ] **1. Diagnostic de suspicion**
@@ -443,18 +457,17 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Sécheresse oculaire évaporative (dysfonction des glandes de Meibom)
-> - [ ] **1. Diagnostic de travail**
-> - [ ] **2. Laboratoire uniquement en cas de suspicion systémique**
-> - [ ] **3. Pas d’imagerie**
-> - [ ] **4. Test de Schirmer**
-> - [ ] **5. Information du patient**
-> - [ ] **6. Hygiène des bords palpébraux**
-> - [ ] **7. Larmes artificielles**
-> - [ ] **8. Déclencheurs et hygiène de vie**
-> - [ ] **9. Adapter le traitement de l’allergie**
-> - [ ] **10. Contrôle évolutif**
-> - [ ] **11. Examens complémentaires**
-> - [ ] **12. Filet de sécurité**
+> - [ ] **1. Laboratoire uniquement en cas de suspicion systémique**
+> - [ ] **2. Pas d’imagerie**
+> - [ ] **3. Test de Schirmer**
+> - [ ] **4. Information du patient**
+> - [ ] **5. Hygiène des bords palpébraux**
+> - [ ] **6. Larmes artificielles**
+> - [ ] **7. Déclencheurs et hygiène de vie**
+> - [ ] **8. Adapter le traitement de l’allergie**
+> - [ ] **9. Contrôle évolutif**
+> - [ ] **10. Examens complémentaires**
+> - [ ] **11. Filet de sécurité**
 
 > [!success] 💊 Management — si Zona
-> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Éruption Cutanée]] (2 grilles).

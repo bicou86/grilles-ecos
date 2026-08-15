@@ -6,6 +6,7 @@ ssp: "Éruption Cutanée"
 specialite: "Dermatologie"
 cas: 8
 diagnostics: 7
+attendus_sans_grille: 4
 tags:
   - ecos/memento
   - ecos/grille-officielle
@@ -44,16 +45,27 @@ cssclasses:
 >   porte un.
 >
 > **Le management, lui, ne fusionne pas.** La prise en charge dépend du
-> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
-> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
-> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
-> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
-> ce diagnostic-là**, pas celles de la SSP.
+> diagnostic : l'encadré 💊 se découpe en **un sous-bloc par diagnostic**,
+> `💊 Management — si <diagnostic>`. À l'intérieur d'un sous-bloc,
+> `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
+> de la SSP.
+>
+> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
+> recopié dans chaque sous-bloc : il remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
+> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
+> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
+> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
+> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
+> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
+> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
+> se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
-> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
-> ne documente : ce sous-bloc vide est un **trou de révision** à combler
-> ailleurs, pas un défaut du mémento.
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
+> ne documente. Ce sous-bloc vide dit alors laquelle des deux situations
+> s'applique : soit une **autre SSP** documente ce diagnostic, et il y renvoie ;
+> soit le corpus l'ignore, et c'est un **trou de révision** à combler ailleurs.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -66,7 +78,7 @@ cssclasses:
 
 # Éruption Cutanée ⭐️
 
-*Dermatologie · 8 grilles · 7 diagnostics distincts* — [[SSP — Éruption Cutanée]]
+*Dermatologie · 8 grilles · 7 diagnostics documentés · 4 attendus sans grille* — [[SSP — Éruption Cutanée]]
 
 > [!abstract] Les 8 grilles fusionnées
 > - **AZYGOS-1** — Psoriasis `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/79a2e44d-a59f-4244-8729-c5a64fedbef0.json>)
@@ -342,38 +354,65 @@ cssclasses:
 > 	- [ ] Pulmonaire
 > 	- [ ] Cardiaque
 
+> [!success] 💊 Management — partagé par plusieurs diagnostics
+> - [ ] **1. Diagnostic clinique *(Dermatite périorale · Psoriasis — 2 grilles sur 8)***
+> - [ ] **2. Diagnostic de travail *(Psoriasis · Syphilis — 2 grilles sur 8)***
+> - [ ] **3. Diagnostics différentiels *(Psoriasis · Zona — 2 grilles sur 8)***
+> 	- [ ] Eczéma *(Zona — 1 grille sur 8)*
+> 	- [ ] Impétigo *(Zona — 1 grille sur 8)*
+> 	- [ ] Varicelle *(Zona — 1 grille sur 8)*
+> 	- [ ] Dermatite de contact *(Zona — 1 grille sur 8)*
+> - [ ] **4. Filet de sécurité *(Psoriasis · Syphilis — 2 grilles sur 8)***
+> - [ ] **5. Diagnostic de suspicion principal *(Lupus érythémateux cutané · Scarlatine / Angine streptococcique · Tinea corporis — 3 grilles sur 8)***
+> - [ ] **6. Diagnostics différentiels évoqués *(Lupus érythémateux cutané · Scarlatine / Angine streptococcique · Tinea corporis — 3 grilles sur 8)***
+> - [ ] **7. Examens complémentaires proposés *(Lupus érythémateux cutané · Scarlatine / Angine streptococcique · Tinea corporis — 3 grilles sur 8)***
+> 	- [ ] Prélèvement mycologique *(Tinea corporis — 1 grille sur 8)*
+> 	- [ ] Culture mycologique *(Tinea corporis — 1 grille sur 8)*
+> 	- [ ] Test rapide streptocoque *(Scarlatine / Angine streptococcique — 1 grille sur 8)*
+> 	- [ ] Culture bactériologique *(Scarlatine / Angine streptococcique — 1 grille sur 8)*
+> 	- [ ] Biologie sanguine *(Lupus érythémateux cutané — 1 grille sur 8)*
+> 	- [ ] Analyse d'urine *(Lupus érythémateux cutané — 1 grille sur 8)*
+> 	- [ ] Fonction rénale *(Lupus érythémateux cutané — 1 grille sur 8)*
+> - [ ] **8. Traitement proposé *(Lupus érythémateux cutané · Scarlatine / Angine streptococcique · Tinea corporis — 3 grilles sur 8)***
+> - [ ] **9. Planification du suivi *(Scarlatine / Angine streptococcique · Tinea corporis — 2 grilles sur 8)***
+> 	- [ ] Contrôle après 2 semaines de traitement *(Tinea corporis — 1 grille sur 8)*
+> 	- [ ] Vérification de la guérison mycologique *(Tinea corporis — 1 grille sur 8)*
+> 	- [ ] Adaptation du traitement si nécessaire *(Tinea corporis — 1 grille sur 8)*
+> 	- [ ] Surveillance de l'efficacité du traitement *(Scarlatine / Angine streptococcique — 1 grille sur 8)*
+> 	- [ ] Vérification de la disparition des symptômes *(Scarlatine / Angine streptococcique — 1 grille sur 8)*
+> 	- [ ] Dépistage des complications tardives (glomérulonéphrite, RAA) *(Scarlatine / Angine streptococcique — 1 grille sur 8)*
+
 > [!success] 💊 Management — si Dermatite périorale
-> - [ ] **1. Diagnostic clinique**
-> - [ ] **2. Diagnostic de travail : dermatite périorale**
-> - [ ] **3. Indices anamnestiques**
-> - [ ] **4. Cosmétiques**
-> - [ ] **5. Profil de rebond stéroïdien**
-> - [ ] **6. Caractère des symptômes**
-> - [ ] **7. Résultats cliniques**
-> - [ ] **8. Localisation périorale**
-> - [ ] **9. Lisière des lèvres respectée**
-> - [ ] **10. Papules érythémateuses monomorphes**
-> - [ ] **11. DD Acné vulgaire**
-> - [ ] **12. Pour**
-> - [ ] **13. Contre**
-> - [ ] **14. DD Eczéma de contact**
-> - [ ] **15. DD Rosacée**
-> - [ ] **16. Absence d'examens complémentaires**
-> - [ ] **17. Prise en charge de base : thérapie zéro correcte**
-> - [ ] **18. Arrêt des stéroïdes**
-> - [ ] **19. Réduction des soins**
-> - [ ] **20. Éducation de la patiente**
-> - [ ] **21. Cause**
-> - [ ] **22. Évolution et gestion des attentes**
-> - [ ] **23. Contrôle d'évolution**
-> - [ ] **24. Traitement élargi**
-> - [ ] **25. Traitement topique anti-inflammatoire**
-> - [ ] **26. Escalade systémique en cas d'échec thérapeutique**
-> - [ ] **27. Complications / Signes d'alarme**
-> - [ ] **28. Atteinte oculaire**
-> - [ ] **29. Résistance au traitement**
-> - [ ] **30. Infection secondaire**
-> - [ ] **31. Symptômes généraux**
+> - [ ] **1. Diagnostic de travail : dermatite périorale**
+> - [ ] **2. Indices anamnestiques**
+> - [ ] **3. Cosmétiques**
+> - [ ] **4. Profil de rebond stéroïdien**
+> - [ ] **5. Caractère des symptômes**
+> - [ ] **6. Résultats cliniques**
+> - [ ] **7. Localisation périorale**
+> - [ ] **8. Lisière des lèvres respectée**
+> - [ ] **9. Papules érythémateuses monomorphes**
+> - [ ] **10. DD Acné vulgaire**
+> - [ ] **11. Pour**
+> - [ ] **12. Contre**
+> - [ ] **13. DD Eczéma de contact**
+> - [ ] **14. DD Rosacée**
+> - [ ] **15. Absence d'examens complémentaires**
+> - [ ] **16. Prise en charge de base : thérapie zéro correcte**
+> - [ ] **17. Arrêt des stéroïdes**
+> - [ ] **18. Réduction des soins**
+> - [ ] **19. Éducation de la patiente**
+> - [ ] **20. Cause**
+> - [ ] **21. Évolution et gestion des attentes**
+> - [ ] **22. Contrôle d'évolution**
+> - [ ] **23. Traitement élargi**
+> - [ ] **24. Traitement topique anti-inflammatoire**
+> - [ ] **25. Escalade systémique en cas d'échec thérapeutique**
+> - [ ] **26. Complications / Signes d'alarme**
+> - [ ] **27. Atteinte oculaire**
+> - [ ] **28. Résistance au traitement**
+> - [ ] **29. Infection secondaire**
+> - [ ] **30. Symptômes généraux**
 
 > [!success] 💊 Management — si Eczéma / Dermatite
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
@@ -382,19 +421,12 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Lupus érythémateux cutané
-> - [ ] **1. Diagnostic de suspicion principal**
-> - [ ] **2. Diagnostics différentiels évoqués**
-> - [ ] **3. Examens complémentaires proposés**
-> 	- [ ] Biologie sanguine
-> 	- [ ] Analyse d'urine
-> 	- [ ] Fonction rénale
-> - [ ] **4. Traitement proposé**
-> - [ ] **5. Justification des examens**
+> - [ ] **1. Justification des examens**
 > 	- [ ] Recherche de signes de lupus systémique
 > 	- [ ] Évaluation de l'inflammation
 > 	- [ ] Dépistage d'atteinte rénale (néphrite lupique)
-> - [ ] **6. Information sur l'évolution possible**
-> - [ ] **7. Surveillance et suivi recommandés**
+> - [ ] **2. Information sur l'évolution possible**
+> - [ ] **3. Surveillance et suivi recommandés**
 > 	- [ ] Contrôle dans 4-6 semaines avec résultats
 > 	- [ ] Surveillance biologique régulière si ANA positifs
 > 	- [ ] Examen des autres systèmes à chaque consultation
@@ -404,38 +436,24 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Psoriasis
-> - [ ] **1. Diagnostic clinique**
-> - [ ] **2. Examen à l’état frais**
-> - [ ] **3. Dermatoscopie**
-> - [ ] **4. Diagnostic de travail**
-> - [ ] **5. Diagnostics différentiels**
-> - [ ] **6. Traitement de base**
-> - [ ] **7. Soins cutanés**
-> - [ ] **8. Kératolyse**
-> - [ ] **9. Éviter les déclencheurs**
-> - [ ] **10. Thérapie topique**
-> - [ ] **11. Information**
-> - [ ] **12. Suivi de l’évolution**
-> - [ ] **13. Orientation en dermatologie**
-> - [ ] **14. Revue médicamenteuse**
-> - [ ] **15. Filet de sécurité**
+> - [ ] **1. Examen à l’état frais**
+> - [ ] **2. Dermatoscopie**
+> - [ ] **3. Traitement de base**
+> - [ ] **4. Soins cutanés**
+> - [ ] **5. Kératolyse**
+> - [ ] **6. Éviter les déclencheurs**
+> - [ ] **7. Thérapie topique**
+> - [ ] **8. Information**
+> - [ ] **9. Suivi de l’évolution**
+> - [ ] **10. Orientation en dermatologie**
+> - [ ] **11. Revue médicamenteuse**
 
 > [!success] 💊 Management — si Scarlatine / Angine streptococcique
-> - [ ] **1. Diagnostic de suspicion principal**
-> - [ ] **2. Diagnostics différentiels évoqués**
-> - [ ] **3. Examens complémentaires proposés**
-> 	- [ ] Test rapide streptocoque
-> 	- [ ] Culture bactériologique
-> - [ ] **4. Traitement proposé**
-> - [ ] **5. Planification du suivi**
-> 	- [ ] Surveillance de l'efficacité du traitement
-> 	- [ ] Vérification de la disparition des symptômes
-> 	- [ ] Dépistage des complications tardives (glomérulonéphrite, RAA)
-> - [ ] **6. Mesures préventives et prophylaxie**
+> - [ ] **1. Mesures préventives et prophylaxie**
 > 	- [ ] Prophylaxie de l'entourage
 > 	- [ ] Éviction scolaire
 > 	- [ ] Mesures d'hygiène
-> - [ ] **7. Information aux parents et surveillance**
+> - [ ] **2. Information aux parents et surveillance**
 > 	- [ ] Explication de la maladie
 > 	- [ ] Importance de l'observance du traitement
 > 	- [ ] Signes d'alerte (complications)
@@ -445,56 +463,39 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Syphilis
-> - [ ] **1. Diagnostic de travail**
-> - [ ] **2. Filet de sécurité**
-> - [ ] **3. Bilan de base étendu**
-> - [ ] **4. Dépistage IST**
-> - [ ] **5. Sérologie syphilis**
-> - [ ] **6. TPPA / TPHA comme test de dépistage**
-> - [ ] **7. FTA-ABS comme test de confirmation**
-> - [ ] **8. VDRL ou RPR pour évaluer l’activité**
-> - [ ] **9. Anticorps IgM comme indice d’infection récente**
-> - [ ] **10. Pénicilline G i.m.**
-> - [ ] **11. Recueillir l’anamnèse des partenaires et recommander un traitement des partenaires**
-> - [ ] **12. Information sur la contagion et les mesures de protection**
-> - [ ] **13. Planifier des contrôles sérologiques de suivi**
-> - [ ] **14. Informer sur une possible réaction de Jarisch-Herxheimer**
-> - [ ] **15. Reconsultation immédiate en cas de signes d’alarme**
+> - [ ] **1. Bilan de base étendu**
+> - [ ] **2. Dépistage IST**
+> - [ ] **3. Sérologie syphilis**
+> - [ ] **4. TPPA / TPHA comme test de dépistage**
+> - [ ] **5. FTA-ABS comme test de confirmation**
+> - [ ] **6. VDRL ou RPR pour évaluer l’activité**
+> - [ ] **7. Anticorps IgM comme indice d’infection récente**
+> - [ ] **8. Pénicilline G i.m.**
+> - [ ] **9. Recueillir l’anamnèse des partenaires et recommander un traitement des partenaires**
+> - [ ] **10. Information sur la contagion et les mesures de protection**
+> - [ ] **11. Planifier des contrôles sérologiques de suivi**
+> - [ ] **12. Informer sur une possible réaction de Jarisch-Herxheimer**
+> - [ ] **13. Reconsultation immédiate en cas de signes d’alarme**
 
 > [!success] 💊 Management — si Tinea corporis
-> - [ ] **1. Diagnostic de suspicion principal**
-> - [ ] **2. Diagnostics différentiels évoqués**
-> - [ ] **3. Examens complémentaires proposés**
-> 	- [ ] Prélèvement mycologique
-> 	- [ ] Culture mycologique
-> - [ ] **4. Interprétation des examens**
-> - [ ] **5. Traitement proposé**
-> - [ ] **6. Mesures préventives et conseils**
+> - [ ] **1. Interprétation des examens**
+> - [ ] **2. Mesures préventives et conseils**
 > 	- [ ] Éviter les environnements humides
 > 	- [ ] Sécher soigneusement la peau
 > 	- [ ] Éviter le partage de serviettes
 > 	- [ ] Traiter les contacts si nécessaire
-> - [ ] **7. Planification du suivi**
-> 	- [ ] Contrôle après 2 semaines de traitement
-> 	- [ ] Vérification de la guérison mycologique
-> 	- [ ] Adaptation du traitement si nécessaire
 
 > [!success] 💊 Management — si Zona
-> - [ ] **1. Diagnostics différentiels *(1 grille sur 2)***
-> 	- [ ] Eczéma
-> 	- [ ] Impétigo
-> 	- [ ] Varicelle
-> 	- [ ] Dermatite de contact
-> - [ ] **2. Présentation du cas**
+> - [ ] **1. Présentation du cas**
 > 	- [ ] Synthétique
 > 	- [ ] Éléments pertinent de l'anamnèse et du status *(1 grille sur 2)*
 > 	- [ ] Avec les éléments pertinents de l'anamnèse et du status *(1 grille sur 2)*
-> - [ ] **3. Hypothèse Diagnostique *(1 grille sur 2)***
-> - [ ] **4. Diagnostic principal et diagnostics différentiels *(1 grille sur 2)***
-> - [ ] **5. Argumentation pour les DD *(1 grille sur 2)***
-> - [ ] **6. Examens complémentaires indiqués**
+> - [ ] **2. Hypothèse Diagnostique *(1 grille sur 2)***
+> - [ ] **3. Diagnostic principal et diagnostics différentiels *(1 grille sur 2)***
+> - [ ] **4. Argumentation pour les DD *(1 grille sur 2)***
+> - [ ] **5. Examens complémentaires indiqués**
 > 	- [ ] Frottis des lésions *(1 grille sur 2)*
-> - [ ] **7. Dépistage Immunologique (VIH ou autre)**
-> - [ ] **8. Hypothèse diagnostique : ZONA *(1 grille sur 2)***
-> - [ ] **9. Argumentation *(1 grille sur 2)***
+> - [ ] **6. Dépistage Immunologique (VIH ou autre)**
+> - [ ] **7. Hypothèse diagnostique : ZONA *(1 grille sur 2)***
+> - [ ] **8. Argumentation *(1 grille sur 2)***
 > 	- [ ] Pour le zona : pas de contage, douleurs intenses antérieures aux lésions, antécédent de varicelle, lésions vésiculo-papuleuses limitées à un dermatome ne dépassant pas la ligne médiane. Contre : jeune âge, pas de traitement immunosuppresseur ni de maladie immunologique connue, lésions très croûteuses, pas d'adénopathie.

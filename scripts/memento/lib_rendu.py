@@ -28,16 +28,19 @@ import re
 # ne porte qu'un 💊, la ou l'officiel partage le management en 🔬 (examens) et
 # 💊 (prise en charge). Ce partage n'existe pas dans les grilles ; le memento
 # officiel le declare A LA MAIN, critere par critere (table EXAMENS de
-# scripts/build_obsidian_memento.py, 55 lignes pour 9 grilles). A 252 grilles
-# et 1 988 items de management, il faudrait le deviner — et un motif lexical
-# eprouve sur le seul echantillon etiquete qui existe (ces 9 grilles) se
-# trompe sur 5 lignes de 55, dans les deux sens : « Propose un dosage des
-# anticorps anti-TPO » (un examen) tomberait en 💊, « Suivi : prevoir un
-# controle biologique dans 6-8 semaines » (un suivi) en 🔬. Une erreur de
-# rangement ne se voit pas a la lecture, contrairement a un suffixe faux.
-# Annoncer un 🔬 qui se trompe une fois sur onze vaut moins qu'un 💊 qui ne
-# promet rien. Le cout est reel et assume : le lecteur d'un memento par SSP
-# doit trier lui-meme examens et traitement dans l'encadre 💊.
+# scripts/build_obsidian_memento.py, pour 57 lignes de management sur
+# 9 grilles). A 252 grilles et 1 988 items de management, il faudrait le
+# deviner — et un motif lexical essaye sur le seul echantillon etiquete qui
+# existe (ces 9 grilles) laisse AU MOINS 5 erreurs SEMANTIQUES sur 57 lignes,
+# dans les deux sens : « Propose un dosage des anticorps anti-TPO » (un
+# examen) tombe en 💊, « Suivi : prevoir un controle biologique dans
+# 6-8 semaines » (un suivi) en 🔬. Motif non optimise — un motif plus soigne
+# corrigerait des erreurs de frontiere de mot, pas celles-la, qui tiennent au
+# SENS de la ligne et qu'aucune liste de mots-cles ne tranche.
+# Une erreur de rangement ne se voit pas a la lecture, contrairement a un
+# suffixe faux : le lecteur croit l'encadre 🔬 exhaustif et ne cherche pas
+# l'examen ailleurs. Le cout est reel et assume : le lecteur d'un memento par
+# SSP trie lui-meme examens et traitement dans l'encadre 💊.
 LEGENDE = """> [!info] Légende
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
@@ -121,6 +124,42 @@ def marque(item, cas_ssp, diag_par_cas):
     return f"{item['titre']} *({len(porteurs)} grille{pluriel} sur {len(cas_ssp)})*"
 
 
+def marque_partage(item, cas_ssp, diag_par_cas):
+    """Suffixe de l'encadre 💊 partage : les diagnostics SOUS LESQUELS l'item apparait.
+
+    POURQUOI UNE SECONDE REGLE plutot que `marque()`. L'encadre partage
+    remplace la recopie d'un meme item dans plusieurs sous-blocs ; ce qu'il
+    doit rendre au lecteur, c'est precisement la liste que ces sous-blocs
+    portaient. Or `marque()` ne la donne pas :
+
+      - au-dela de SEUIL_ABREGE elle compte (« *(8 diagnostics)* »), ce qui
+        efface l'information meme que le regroupement devait preserver ;
+      - quand les porteurs ne sont pas EXACTEMENT toutes les grilles des
+        diagnostics concernes — la moitie des items partages du corpus — elle
+        se rabat sur « n grilles sur m » et ne nomme plus rien.
+
+    CE QUE LE SUFFIXE AFFIRME ICI, et rien de plus : au moins une grille de
+    chacun des diagnostics nommes porte cet item. Il n'affirme PAS que toutes
+    les grilles de ces diagnostics le portent — c'est la difference avec
+    `marque()`, et c'est pourquoi le compte de grilles est imprime dans le
+    meme suffixe : « *(Angor · STEMI — 3 grilles sur 12)* » ne peut pas se
+    lire comme « les grilles d'Angor et de STEMI, toutes ».
+
+    Un item porte par TOUTES les grilles de la SSP reste nu, comme partout
+    ailleurs. Un item qu'aucun diagnostic ne porte (aucune grille porteuse
+    n'a de diagnostic resolu) retombe sur `marque()` : il n'y a rien a nommer.
+    """
+    porteurs = set(item["cas"])
+    if porteurs >= set(cas_ssp):
+        return item["titre"]
+    diags = sorted({diag_par_cas[c] for c in porteurs if c in diag_par_cas})
+    if not diags:
+        return marque(item, cas_ssp, diag_par_cas)
+    pluriel = "s" if len(porteurs) > 1 else ""
+    return (f"{item['titre']} *({SEPARATEUR.join(diags)} — "
+            f"{len(porteurs)} grille{pluriel} sur {len(cas_ssp)})*")
+
+
 def _suffixe(item, rendu):
     """La part de suffixe d'un libelle rendu — vide si l'item est nu.
 
@@ -131,7 +170,7 @@ def _suffixe(item, rendu):
     return rendu[len(item["titre"]):]
 
 
-def encadre(genre, entete, items, cas_ssp, diag_par_cas, mention=None):
+def encadre(genre, entete, items, cas_ssp, diag_par_cas, mention=None, marquage=None):
     """Un callout dont la liste est numerotee a partir de 1.
 
     UN SOUS-ITEM HERITE DE LA PORTEE DE SON PARENT et ne la repete pas : son
@@ -146,16 +185,22 @@ def encadre(genre, entete, items, cas_ssp, diag_par_cas, mention=None):
     encadre vide reste absent, comme avant ; avec elle, il subsiste pour dire
     pourquoi il est vide — c'est ce qui permet au sous-bloc d'un diagnostic
     qu'aucune grille ne documente d'exister quand meme.
+
+    `marquage` remplace `marque()` — c'est `marque_partage()` dans l'encadre
+    💊 partage, et rien d'autre. L'elision du suffixe herite, elle, ne change
+    pas : elle compare deux suffixes produits par LA MEME regle, quelle
+    qu'elle soit.
     """
+    marquage = marquage or marque
     if not items:
         return f"> [!{genre}] {entete}\n> {mention}" if mention else None
     out = [f"> [!{genre}] {entete}"]
     for numero, item in enumerate(items, 1):
-        rendu = marque(item, cas_ssp, diag_par_cas)
+        rendu = marquage(item, cas_ssp, diag_par_cas)
         out.append(f"> - [ ] **{numero}. {rendu}**")
         herite = _suffixe(item, rendu)
         for sous in item["sous"]:
-            rendu_sous = marque(sous, cas_ssp, diag_par_cas)
+            rendu_sous = marquage(sous, cas_ssp, diag_par_cas)
             if _suffixe(sous, rendu_sous) == herite:
                 rendu_sous = sous["titre"]
             out.append(f"> \t- [ ] {rendu_sous}")

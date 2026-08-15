@@ -5,6 +5,7 @@ type: memento-ecos-ssp
 ssp: "Amaurose & Perte Brutale de Vision"
 cas: 5
 diagnostics: 5
+attendus_sans_grille: 1
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -41,16 +42,27 @@ cssclasses:
 >   porte un.
 >
 > **Le management, lui, ne fusionne pas.** La prise en charge dépend du
-> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
-> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
-> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
-> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
-> ce diagnostic-là**, pas celles de la SSP.
+> diagnostic : l'encadré 💊 se découpe en **un sous-bloc par diagnostic**,
+> `💊 Management — si <diagnostic>`. À l'intérieur d'un sous-bloc,
+> `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
+> de la SSP.
+>
+> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
+> recopié dans chaque sous-bloc : il remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
+> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
+> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
+> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
+> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
+> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
+> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
+> se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
-> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
-> ne documente : ce sous-bloc vide est un **trou de révision** à combler
-> ailleurs, pas un défaut du mémento.
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
+> ne documente. Ce sous-bloc vide dit alors laquelle des deux situations
+> s'applique : soit une **autre SSP** documente ce diagnostic, et il y renvoie ;
+> soit le corpus l'ignore, et c'est un **trou de révision** à combler ailleurs.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -63,7 +75,7 @@ cssclasses:
 
 # Amaurose & Perte Brutale de Vision
 
-*5 grilles · 5 diagnostics distincts* — [[SSP — Amaurose & Perte Brutale de Vision]]
+*5 grilles · 5 diagnostics documentés · 1 attendu sans grille* — [[SSP — Amaurose & Perte Brutale de Vision]]
 
 > [!abstract] Les 5 grilles fusionnées
 > - **AMBOSS-34** — AVC `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-34_-_Perte_de_vision_-_Homme_66_ans_-_Grille_ECOS.html>)
@@ -410,6 +422,12 @@ cssclasses:
 > 	- [ ] Auscultation des 4 foyers
 > 	- [ ] Auscultation des carotides des deux côtés
 
+> [!success] 💊 Management — partagé par plusieurs diagnostics
+> - [ ] **1. Imagerie cérébrale *(AVC · OACR / Occlusion rétinienne — 2 grilles sur 5)***
+> 	- [ ] CT cérébral sans contraste *(AVC — 1 grille sur 5)*
+> 	- [ ] IRM cérébrale *(AVC — 1 grille sur 5)*
+> - [ ] **2. Diagnostic de travail *(Décollement de rétine · OACR / Occlusion rétinienne — 2 grilles sur 5)***
+
 > [!success] 💊 Management — si AVC
 > - [ ] **1. Hypothèses diagnostiques**
 > - [ ] **2. Examens complémentaires urgents**
@@ -419,16 +437,13 @@ cssclasses:
 > 	- [ ] TP, TCA
 > 	- [ ] Électrolytes, glucose sérique
 > 	- [ ] Troponine
-> - [ ] **3. Imagerie cérébrale**
-> 	- [ ] CT cérébral sans contraste
-> 	- [ ] IRM cérébrale
-> - [ ] **4. Communication avec le patient**
+> - [ ] **3. Communication avec le patient**
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **5. Conseil et soutien**
+> - [ ] **4. Conseil et soutien**
 > 	- [ ] Réaction appropriée au défi concernant la peur de mourir
 
 > [!success] 💊 Management — si Cataracte
@@ -455,17 +470,16 @@ cssclasses:
 > 	- [ ] Surveillance de la progression
 > 	- [ ] Contrôle postopératoire après chirurgie
 
+> [!success] 💊 Management — si Décollement de rétine
+> - [ ] **1. OCT**
+> - [ ] **2. Échographie oculaire**
+> - [ ] **3. Information sur le diagnostic de travail**
+> - [ ] **4. Contacter la chirurgie vitréo-rétinienne**
+> - [ ] **5. Examens diagnostiques complémentaires**
+> - [ ] **6. Consignes préopératoires**
+
 > [!success] 💊 Management — si DMLA
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
-
-> [!success] 💊 Management — si Décollement de rétine
-> - [ ] **1. Diagnostic de travail**
-> - [ ] **2. OCT**
-> - [ ] **3. Échographie oculaire**
-> - [ ] **4. Information sur le diagnostic de travail**
-> - [ ] **5. Contacter la chirurgie vitréo-rétinienne**
-> - [ ] **6. Examens diagnostiques complémentaires**
-> - [ ] **7. Consignes préopératoires**
 
 > [!success] 💊 Management — si Horton (artérite à cellules géantes)
 > - [ ] **1. Demande de laboratoire**
@@ -484,20 +498,18 @@ cssclasses:
 > - [ ] **7. Propose une hospitalisation**
 
 > [!success] 💊 Management — si OACR / Occlusion rétinienne
-> - [ ] **1. Imagerie cérébrale**
-> - [ ] **2. Laboratoire**
-> - [ ] **3. Hémogramme**
-> - [ ] **4. Paramètres inflammatoires**
-> - [ ] **5. ECG**
-> - [ ] **6. Diagnostic de travail**
-> - [ ] **7. Pas de thérapie fondée sur des preuves**
-> - [ ] **8. Adressage Stroke Center**
-> - [ ] **9. Investigations complémentaires**
-> - [ ] **10. Échocardiographie**
-> - [ ] **11. Doppler des carotides**
-> - [ ] **12. ECG de longue durée**
-> - [ ] **13. Prévention secondaire**
-> - [ ] **14. Anticoagulation orale**
-> - [ ] **15. Statine**
-> - [ ] **16. Contrôle de la tension artérielle**
-> - [ ] **17. Arrêt du tabac**
+> - [ ] **1. Laboratoire**
+> - [ ] **2. Hémogramme**
+> - [ ] **3. Paramètres inflammatoires**
+> - [ ] **4. ECG**
+> - [ ] **5. Pas de thérapie fondée sur des preuves**
+> - [ ] **6. Adressage Stroke Center**
+> - [ ] **7. Investigations complémentaires**
+> - [ ] **8. Échocardiographie**
+> - [ ] **9. Doppler des carotides**
+> - [ ] **10. ECG de longue durée**
+> - [ ] **11. Prévention secondaire**
+> - [ ] **12. Anticoagulation orale**
+> - [ ] **13. Statine**
+> - [ ] **14. Contrôle de la tension artérielle**
+> - [ ] **15. Arrêt du tabac**

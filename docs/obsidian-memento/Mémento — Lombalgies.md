@@ -6,6 +6,7 @@ ssp: "Lombalgies"
 specialite: "Musculo-Squelettique"
 cas: 8
 diagnostics: 6
+attendus_sans_grille: 2
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -42,16 +43,27 @@ cssclasses:
 >   porte un.
 >
 > **Le management, lui, ne fusionne pas.** La prise en charge dépend du
-> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
-> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
-> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
-> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
-> ce diagnostic-là**, pas celles de la SSP.
+> diagnostic : l'encadré 💊 se découpe en **un sous-bloc par diagnostic**,
+> `💊 Management — si <diagnostic>`. À l'intérieur d'un sous-bloc,
+> `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
+> de la SSP.
+>
+> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
+> recopié dans chaque sous-bloc : il remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
+> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
+> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
+> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
+> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
+> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
+> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
+> se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
-> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
-> ne documente : ce sous-bloc vide est un **trou de révision** à combler
-> ailleurs, pas un défaut du mémento.
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
+> ne documente. Ce sous-bloc vide dit alors laquelle des deux situations
+> s'applique : soit une **autre SSP** documente ce diagnostic, et il y renvoie ;
+> soit le corpus l'ignore, et c'est un **trou de révision** à combler ailleurs.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -64,7 +76,7 @@ cssclasses:
 
 # Lombalgies ⭐️
 
-*Musculo-Squelettique · 8 grilles · 6 diagnostics distincts* — [[SSP — Lombalgies]]
+*Musculo-Squelettique · 8 grilles · 6 diagnostics documentés · 2 attendus sans grille* — [[SSP — Lombalgies]]
 
 > [!abstract] Les 8 grilles fusionnées
 > - **AMBOSS-9** — Hernie discale `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-9_-_Douleurs_dorsales_-_Homme_71_ans_-_Grille_ECOS.html>)
@@ -601,92 +613,137 @@ cssclasses:
 > 	- [ ] Palpation de la prostate
 > 	- [ ] Recherche de sang
 
+> [!success] 💊 Management — partagé par plusieurs diagnostics
+> - [ ] **1. Hypothèses diagnostiques *(Hernie discale · Spondylarthrite ankylosante — 2 grilles sur 8)***
+> - [ ] **2. Examens complémentaires urgents *(Colique néphrétique sur lithiase · Hernie discale · Spondylarthrite ankylosante — 3 grilles sur 8)***
+> 	- [ ] Examen rectal *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Examen génital *(Spondylarthrite ankylosante — 1 grille sur 8)*
+> 	- [ ] FSC, VS *(Spondylarthrite ankylosante — 1 grille sur 8)*
+> 	- [ ] Bandelette urinaire (confirmer hématurie) *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] ECBU avec recherche de cristaux *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Créatinine, urée (fonction rénale) *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Ionogramme sanguin *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] FSC, CRP (éliminer infection) *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Échographie rénale et vésicale en urgence *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] CT abdomen sans contraste (gold standard) si doute *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> - [ ] **3. Examens d'imagerie *(Cancer prostatique métastatique · Fracture vertébrale · Hernie discale · Spondylarthrite ankylosante — 4 grilles sur 8)***
+> 	- [ ] IRM du rachis *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Radiographie du rachis *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] CT du rachis *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Radiographie du rachis et des articulations sacro-iliaques *(Spondylarthrite ankylosante — 1 grille sur 8)*
+> 	- [ ] Radiographie des mains et du genou droit *(Spondylarthrite ankylosante — 1 grille sur 8)*
+> 	- [ ] Radiographie du rachis lombaire (face et profil) *(Fracture vertébrale — 1 grille sur 8)*
+> 	- [ ] Densitométrie osseuse (DMO) *(Fracture vertébrale — 1 grille sur 8)*
+> 	- [ ] IRM rachidienne si doute diagnostique *(Fracture vertébrale — 1 grille sur 8)*
+> 	- [ ] Scintigraphie osseuse si suspicion métastases multiples *(Fracture vertébrale — 1 grille sur 8)*
+> 	- [ ] Échographie résidu post-mictionnel *(Cancer prostatique métastatique — 1 grille sur 8)*
+> 	- [ ] Échographie rénale *(Cancer prostatique métastatique — 1 grille sur 8)*
+> 	- [ ] Imagerie selon PSA (CT TAP, scintigraphie osseuse, PET-PSMA) *(Cancer prostatique métastatique — 1 grille sur 8)*
+> - [ ] **4. Communication avec le patient *(Hernie discale · Spondylarthrite ankylosante — 2 grilles sur 8)***
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **5. Conseil et prévention *(Hernie discale · Spondylarthrite ankylosante — 2 grilles sur 8)***
+> 	- [ ] Conseil sur l'arrêt du tabac *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Réaction appropriée au défi concernant la dépendance aux antalgiques *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Conseil sur les drogues récréatives *(Spondylarthrite ankylosante — 1 grille sur 8)*
+> 	- [ ] Conseil sur les pratiques sexuelles sûres *(Spondylarthrite ankylosante — 1 grille sur 8)*
+> 	- [ ] Réaction appropriée au défi concernant le manque d'exercice *(Spondylarthrite ankylosante — 1 grille sur 8)*
+> - [ ] **6. Diagnostic principal *(Colique néphrétique sur lithiase · Fracture vertébrale · Hernie discale — 3 grilles sur 8)***
+> - [ ] **7. Diagnostics différentiels *(Colique néphrétique sur lithiase · Fracture vertébrale · Hernie discale — 3 grilles sur 8)***
+> 	- [ ] Fracture vertébrale traumatique *(Fracture vertébrale — 1 grille sur 8)*
+> 	- [ ] Métastase vertébrale (antécédent de cancer du sein) *(Fracture vertébrale — 1 grille sur 8)*
+> 	- [ ] Fracture pathologique sur autre cause (myélome, hyperparathyroïdie) *(Fracture vertébrale — 1 grille sur 8)*
+> 	- [ ] Spondylodiscite infectieuse *(Fracture vertébrale — 1 grille sur 8)*
+> 	- [ ] Lombalgie mécanique commune *(Fracture vertébrale — 1 grille sur 8)*
+> 	- [ ] Protrusion discale sans hernie franche *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Canal lombaire étroit *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Spondylolisthésis *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Fracture vertébrale *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Contracture musculaire paravertébrale *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Processus inflammatoire/infectieux (spondylodiscite) *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Processus tumoral (métastase, tumeur primitive) *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Pyélonéphrite aiguë *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Fracture vertébrale ostéoporotique *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Lombalgie musculaire *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Pathologie gynécologique (kyste ovarien tordu) *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Anévrisme de l'aorte abdominale *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Appendicite rétrocæcale (si à droite) *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Diverticulite sigmoïdienne *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> - [ ] **8. Prise en charge thérapeutique *(Fracture vertébrale · Hernie discale — 2 grilles sur 8)***
+> - [ ] **9. Prévention des récidives *(Colique néphrétique sur lithiase · Hernie discale — 3 grilles sur 8)***
+> 	- [ ] École du dos *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Renforcement musculaire après phase aiguë *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Ergonomie au travail *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Perte de poids si surcharge pondérale *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Activité physique régulière *(Hernie discale — 1 grille sur 8)*
+> 	- [ ] Hydratation abondante (> 2L/jour) *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Régime adapté selon type de calcul *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Réduction apports sodés *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Normalisation apports calciques *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Traitement spécifique selon lithiase *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Analyse spectrophotométrique du calcul expulsé *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Bilan métabolique à distance (calcémie, uricémie, oxalurie) *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Hyperhydratation: 2-3L/jour à vie *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Régime adapté selon composition du calcul *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Oxalate de calcium: limiter oxalates (chocolat, thé) *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Acide urique: alcalinisation urines, allopurinol *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Phosphate de calcium: acidification urines *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+> 	- [ ] Surveillance régulière: échographie annuelle *(Colique néphrétique sur lithiase — 1 grille sur 8)*
+
 > [!success] 💊 Management — si Cancer prostatique métastatique
-> - [ ] **1. Examens d'imagerie**
-> 	- [ ] Échographie résidu post-mictionnel
-> 	- [ ] Échographie rénale
-> 	- [ ] Imagerie selon PSA (CT TAP, scintigraphie osseuse, PET-PSMA)
-> - [ ] **2. Examens de laboratoire**
+> - [ ] **1. Examens de laboratoire**
 > 	- [ ] FSC
 > 	- [ ] Fonction rénale
 > 	- [ ] PSA
 > 	- [ ] Phosphatases alcalines
 > 	- [ ] Calcium
-> - [ ] **3. Hypothèse diagnostique principale**
+> - [ ] **2. Hypothèse diagnostique principale**
 > 	- [ ] Cancer prostatique métastatique
 > 	- [ ] Justification basée sur l'anamnèse et l'examen
-> - [ ] **4. Diagnostics différentiels évoqués**
+> - [ ] **3. Diagnostics différentiels évoqués**
 > 	- [ ] Syndrome de la queue de cheval
 > 	- [ ] Métastases osseuses d'autre origine
 > 	- [ ] Myélome multiple
 > 	- [ ] Sténose spinale
 > 	- [ ] Infection (ostéomyélite, abcès épidural)
-> - [ ] **5. Prise en charge proposée**
+> - [ ] **4. Prise en charge proposée**
 > 	- [ ] Référer à l'urologue
 > 	- [ ] Antalgie adaptée
 > 	- [ ] Évaluation urgence relative
 
 > [!success] 💊 Management — si Colique néphrétique sur lithiase
-> - [ ] **1. Examens complémentaires urgents *(1 grille sur 2)***
-> 	- [ ] Bandelette urinaire (confirmer hématurie)
-> 	- [ ] ECBU avec recherche de cristaux
-> 	- [ ] Créatinine, urée (fonction rénale)
-> 	- [ ] Ionogramme sanguin
-> 	- [ ] FSC, CRP (éliminer infection)
-> 	- [ ] Échographie rénale et vésicale en urgence
-> 	- [ ] CT abdomen sans contraste (gold standard) si doute
-> - [ ] **2. Diagnostic principal *(1 grille sur 2)***
-> - [ ] **3. Diagnostics différentiels *(1 grille sur 2)***
-> 	- [ ] Pyélonéphrite aiguë
-> 	- [ ] Fracture vertébrale ostéoporotique
-> 	- [ ] Lombalgie musculaire
-> 	- [ ] Pathologie gynécologique (kyste ovarien tordu)
-> 	- [ ] Anévrisme de l'aorte abdominale
-> 	- [ ] Appendicite rétrocæcale (si à droite)
-> 	- [ ] Diverticulite sigmoïdienne
-> - [ ] **4. Prévention des récidives**
-> 	- [ ] Hydratation abondante (> 2L/jour) *(1 grille sur 2)*
-> 	- [ ] Régime adapté selon type de calcul *(1 grille sur 2)*
-> 	- [ ] Réduction apports sodés *(1 grille sur 2)*
-> 	- [ ] Normalisation apports calciques *(1 grille sur 2)*
-> 	- [ ] Traitement spécifique selon lithiase *(1 grille sur 2)*
-> 	- [ ] Analyse spectrophotométrique du calcul expulsé *(1 grille sur 2)*
-> 	- [ ] Bilan métabolique à distance (calcémie, uricémie, oxalurie) *(1 grille sur 2)*
-> 	- [ ] Hyperhydratation: 2-3L/jour à vie *(1 grille sur 2)*
-> 	- [ ] Régime adapté selon composition du calcul *(1 grille sur 2)*
-> 	- [ ] Oxalate de calcium: limiter oxalates (chocolat, thé) *(1 grille sur 2)*
-> 	- [ ] Acide urique: alcalinisation urines, allopurinol *(1 grille sur 2)*
-> 	- [ ] Phosphate de calcium: acidification urines *(1 grille sur 2)*
-> 	- [ ] Surveillance régulière: échographie annuelle *(1 grille sur 2)*
-> - [ ] **5. Critères d'hospitalisation *(1 grille sur 2)***
+> - [ ] **1. Critères d'hospitalisation *(1 grille sur 2)***
 > 	- [ ] Signes infectieux associés (urgence)
 > 	- [ ] Rein unique fonctionnel
 > 	- [ ] Insuffisance rénale aiguë
 > 	- [ ] Douleur réfractaire au traitement
 > 	- [ ] Calcul > 10 mm
 > 	- [ ] Obstruction bilatérale
-> - [ ] **6. Prise en charge thérapeutique ambulatoire *(1 grille sur 2)***
-> - [ ] **7. Prise en charge à distance *(1 grille sur 2)***
+> - [ ] **2. Prise en charge thérapeutique ambulatoire *(1 grille sur 2)***
+> - [ ] **3. Prise en charge à distance *(1 grille sur 2)***
 > 	- [ ] Analyse du calcul si récupéré
 > 	- [ ] Bilan métabolique à 6 semaines
 > 	- [ ] Calcium, phosphate, acide urique sanguins
 > 	- [ ] Calciurie, phosphaturie, uraturie des 24h
 > 	- [ ] PH urinaire, densité urinaire
-> - [ ] **8. Information et éducation *(1 grille sur 2)***
+> - [ ] **4. Information et éducation *(1 grille sur 2)***
 > 	- [ ] Expliquer l'évolution naturelle
 > 	- [ ] Calcul 90%
 > 	- [ ] Importance de filtrer les urines
 > 	- [ ] Signes d'alerte nécessitant reconsultation
 > 	- [ ] Remise de documentation écrite
-> - [ ] **9. Diagnostics différentiels de la colique néphrétique *(1 grille sur 2)***
-> - [ ] **10. Examens complémentaires en urgence *(1 grille sur 2)***
+> - [ ] **5. Diagnostics différentiels de la colique néphrétique *(1 grille sur 2)***
+> - [ ] **6. Examens complémentaires en urgence *(1 grille sur 2)***
 > 	- [ ] Bandelette urinaire: hématurie dans 90% des cas
 > 	- [ ] ECBU: hématurie microscopique, cristallurie, pH urinaire
 > 	- [ ] Créatinine, urée: fonction rénale
 > 	- [ ] Ionogramme sanguin, calcémie
 > 	- [ ] FSC, CRP: syndrome inflammatoire si complication
 > 	- [ ] Échographie rénale et vésicale: dilatation des cavités pyélocalicielles
-> - [ ] **11. Imagerie pour confirmation diagnostique *(1 grille sur 2)***
+> - [ ] **7. Imagerie pour confirmation diagnostique *(1 grille sur 2)***
 > 	- [ ] TDM abdomino-pelvien sans injection (examen de référence)
 > 	- [ ] Visualise 95% des calculs radio-opaques et radio-transparents
 > 	- [ ] Localise précisément le calcul
@@ -694,37 +751,25 @@ cssclasses:
 > 	- [ ] Mesure la taille du calcul
 > 	- [ ] ASP (Abdomen Sans Préparation): calculs radio-opaques seulement (80%)
 > 	- [ ] Échographie: alternative si contre-indication TDM (grossesse)
-> - [ ] **12. Traitement symptomatique de la crise *(1 grille sur 2)***
-> - [ ] **13. Indications d'hospitalisation *(1 grille sur 2)***
+> - [ ] **8. Traitement symptomatique de la crise *(1 grille sur 2)***
+> - [ ] **9. Indications d'hospitalisation *(1 grille sur 2)***
 > 	- [ ] Colique néphrétique fébrile (urgence urologique)
 > 	- [ ] Anurie (obstruction bilatérale ou rein unique)
 > 	- [ ] Colique néphrétique hyperalgique résistante
 > 	- [ ] Insuffisance rénale aiguë obstructive
 > 	- [ ] Terrain particulier: grossesse, rein unique, transplanté
 > 	- [ ] Impossibilité de prise en charge ambulatoire
-> - [ ] **14. Traitement urologique spécifique *(1 grille sur 2)***
+> - [ ] **10. Traitement urologique spécifique *(1 grille sur 2)***
 > 	- [ ] Calculs < 5mm: expulsion spontanée dans 70% des cas
 > 	- [ ] Calculs 5-10mm: expulsion dans 50% des cas
 > 	- [ ] Lithotripsie extracorporelle (LEC) si calcul < 20mm
 > 	- [ ] Urétéroscopie avec extraction ou fragmentation laser
 > 	- [ ] Néphrostomie percutanée si infection + obstruction
 > 	- [ ] Chirurgie ouverte exceptionnelle
-> - [ ] **15. Complications à rechercher *(1 grille sur 2)***
+> - [ ] **11. Complications à rechercher *(1 grille sur 2)***
 
 > [!success] 💊 Management — si Fracture vertébrale
-> - [ ] **1. Examens d'imagerie**
-> 	- [ ] Radiographie du rachis lombaire (face et profil)
-> 	- [ ] Densitométrie osseuse (DMO)
-> 	- [ ] IRM rachidienne si doute diagnostique
-> 	- [ ] Scintigraphie osseuse si suspicion métastases multiples
-> - [ ] **2. Diagnostic principal**
-> - [ ] **3. Diagnostics différentiels**
-> 	- [ ] Fracture vertébrale traumatique
-> 	- [ ] Métastase vertébrale (antécédent de cancer du sein)
-> 	- [ ] Fracture pathologique sur autre cause (myélome, hyperparathyroïdie)
-> 	- [ ] Spondylodiscite infectieuse
-> 	- [ ] Lombalgie mécanique commune
-> - [ ] **4. Examens complémentaires biologiques**
+> - [ ] **1. Examens complémentaires biologiques**
 > 	- [ ] FSC, CRP, VS (exclusion processus inflammatoire)
 > 	- [ ] Phosphatases alcalines (PAL), Gamma-GT (si PAL élevées)
 > 	- [ ] Calcémie, phosphatémie
@@ -732,8 +777,7 @@ cssclasses:
 > 	- [ ] TSH
 > 	- [ ] Créatinine (fonction rénale, ostéopathie rénale)
 > 	- [ ] Électrophorèse des protéines sériques (si suspicion myélome)
-> - [ ] **5. Prise en charge thérapeutique**
-> - [ ] **6. Suivi et surveillance**
+> - [ ] **2. Suivi et surveillance**
 > 	- [ ] Contrôle clinique à 4-6 semaines
 > 	- [ ] Contrôle radiologique si aggravation
 > 	- [ ] DMO de contrôle à 2 ans
@@ -741,51 +785,19 @@ cssclasses:
 > 	- [ ] Dépistage nouvelles fractures
 
 > [!success] 💊 Management — si Hernie discale
-> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 2)***
-> - [ ] **2. Examens complémentaires urgents *(1 grille sur 2)***
-> 	- [ ] Examen rectal
-> - [ ] **3. Examens d'imagerie *(1 grille sur 2)***
-> 	- [ ] IRM du rachis
-> 	- [ ] Radiographie du rachis
-> 	- [ ] CT du rachis
-> - [ ] **4. Examens spécialisés *(1 grille sur 2)***
+> - [ ] **1. Examens spécialisés *(1 grille sur 2)***
 > 	- [ ] Absorptiométrie biphotonique (DEXA)
-> - [ ] **5. Communication avec le patient *(1 grille sur 2)***
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **6. Conseil et prévention *(1 grille sur 2)***
-> 	- [ ] Conseil sur l'arrêt du tabac
-> 	- [ ] Réaction appropriée au défi concernant la dépendance aux antalgiques
-> - [ ] **7. Diagnostic principal *(1 grille sur 2)***
-> - [ ] **8. Diagnostics différentiels *(1 grille sur 2)***
-> 	- [ ] Protrusion discale sans hernie franche
-> 	- [ ] Canal lombaire étroit
-> 	- [ ] Spondylolisthésis
-> 	- [ ] Fracture vertébrale
-> 	- [ ] Contracture musculaire paravertébrale
-> 	- [ ] Processus inflammatoire/infectieux (spondylodiscite)
-> 	- [ ] Processus tumoral (métastase, tumeur primitive)
-> - [ ] **9. Prise en charge thérapeutique *(1 grille sur 2)***
-> - [ ] **10. Examens complémentaires *(1 grille sur 2)***
+> - [ ] **2. Examens complémentaires *(1 grille sur 2)***
 > 	- [ ] Examens biologiques pour exclure processus inflammatoire (FSC, CRP, VS)
 > 	- [ ] IRM lombaire selon évolution clinique et déficit neurologique
 > 	- [ ] Radiographie lombaire si suspicion de spondylolisthésis
 > 	- [ ] EMG si doute diagnostique après 6 semaines
-> - [ ] **11. Orientation et suivi *(1 grille sur 2)***
+> - [ ] **3. Orientation et suivi *(1 grille sur 2)***
 > 	- [ ] Orientation orthopédie/neurochirurgie selon évolution
 > 	- [ ] Contrôle à 2 semaines
 > 	- [ ] IRM si pas d'amélioration à 4-6 semaines
 > 	- [ ] Arrêt de travail selon profession
 > 	- [ ] Éducation sur l'évolution naturelle favorable (90% à 6 semaines)
-> - [ ] **12. Prévention des récidives *(1 grille sur 2)***
-> 	- [ ] École du dos
-> 	- [ ] Renforcement musculaire après phase aiguë
-> 	- [ ] Ergonomie au travail
-> 	- [ ] Perte de poids si surcharge pondérale
-> 	- [ ] Activité physique régulière
 
 > [!success] 💊 Management — si Métastases osseuses
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
@@ -794,26 +806,9 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Spondylarthrite ankylosante
-> - [ ] **1. Hypothèses diagnostiques**
-> - [ ] **2. Examens complémentaires urgents**
-> 	- [ ] Examen génital
-> 	- [ ] FSC, VS
-> - [ ] **3. Examens d'imagerie**
-> 	- [ ] Radiographie du rachis et des articulations sacro-iliaques
-> 	- [ ] Radiographie des mains et du genou droit
-> - [ ] **4. Communication avec le patient**
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **5. Conseil et prévention**
-> 	- [ ] Conseil sur les drogues récréatives
-> 	- [ ] Conseil sur les pratiques sexuelles sûres
-> 	- [ ] Réaction appropriée au défi concernant le manque d'exercice
-> - [ ] **6. Examens immunologiques**
+> - [ ] **1. Examens immunologiques**
 > 	- [ ] Facteur rhumatoïde, anticorps anti-nucléaires, HLA-B27
-> - [ ] **7. Examens microbiologiques**
+> - [ ] **2. Examens microbiologiques**
 > 	- [ ] Tests d'amplification des acides nucléiques pour chlamydia et gonocoque
 > 	- [ ] Cultures de selles et d'urine
 > 	- [ ] Test VIH
