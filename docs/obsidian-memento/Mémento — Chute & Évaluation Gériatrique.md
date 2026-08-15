@@ -1,0 +1,244 @@
+---
+aliases:
+  - "Mémento Chute & Évaluation Gériatrique"
+type: memento-ecos-ssp
+ssp: "Chute & Évaluation Gériatrique"
+specialite: "Musculo-Squelettique"
+cas: 4
+diagnostics: 4
+tags:
+  - ecos/memento
+  - ecos/grille-non-officielle
+cssclasses:
+  - skill-ecos
+---
+
+> [!info] Légende
+>
+> - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
+> - 🩺 = Status — le geste ou le signe qui fait la différence
+> - 🔬 = Management : examens complémentaires
+> - 💊 = Management : prise en charge attendue
+> - 🚨 = urgence
+> - 🚩 = red flag à ne jamais rater
+> - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
+
+> [!warning] Mémento dérivé de grilles NON officielles
+> Ces items viennent de grilles d'entraînement (RESCOS, AMBOSS, GERMAN,
+> AZYGOS) qu'aucun jury n'a validées. Seul le mémento des neuf grilles
+> officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
+>
+> **Anamnèse et status sont fusionnés entre tous les cas de la SSP.** Un item
+> porté par tous les diagnostics reste nu ; un item porté par une partie
+> d'entre eux est suffixé des diagnostics concernés — au-delà de trois, ils
+> sont comptés plutôt qu'énumérés. Un diagnostic entre parenthèses n'est donc
+> pas une consigne : c'est la trace du cas qui apporte l'item.
+
+# Musculo-Squelettique
+
+## Chute & Évaluation Gériatrique ⭐️
+
+*4 grilles · 4 diagnostics distincts* — [[SSP — Chute & Évaluation Gériatrique]]
+
+> [!abstract] Les 4 grilles fusionnées
+> - **AZYGOS-4** — HypoTA orthostatique `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/a8012490-bf2d-48f1-85c0-35662fd010b5.json>)
+> - **German-10** — Accident vasculaire cérébral `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-10_-_Chute_-_Grille_ECOS.html>)
+> - **German-11** — Chute multifactorielle `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-11_-_Chute_-_Grille_ECOS.html>)
+> - **RESCOS-11** — Fracture du membre supérieur (humérus, tête radiale) `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-11_-_Chute_-_Grille_ECOS.html>)
+
+> [!note] 📋 Anamnèse
+> - [ ] **1. Déroulement de la chute *(HypoTA orthostatique)***
+> - [ ] **2. Vertiges *(HypoTA orthostatique)***
+> - [ ] **3. Perte de connaissance *(Chute multifactorielle, HypoTA orthostatique)***
+> - [ ] **4. Symptômes cardiaques *(HypoTA orthostatique)***
+> - [ ] **5. Impact crânien *(HypoTA orthostatique)***
+> - [ ] **6. Aide après la chute *(HypoTA orthostatique)***
+> - [ ] **7. Chutes antérieures *(HypoTA orthostatique)***
+> - [ ] **8. Peur de chuter *(HypoTA orthostatique)***
+> - [ ] **9. Mobilité et habitat *(HypoTA orthostatique)***
+> - [ ] **10. Aides techniques *(HypoTA orthostatique)***
+> - [ ] **11. Distance de marche *(HypoTA orthostatique)***
+> - [ ] **12. Situation de logement *(HypoTA orthostatique)***
+> - [ ] **13. Escaliers *(HypoTA orthostatique)***
+> - [ ] **14. Seuils *(HypoTA orthostatique)***
+> - [ ] **15. BADL *(HypoTA orthostatique)***
+> - [ ] **16. Transferts *(HypoTA orthostatique)***
+> - [ ] **17. Toilette et douche *(HypoTA orthostatique)***
+> - [ ] **18. Habillage *(HypoTA orthostatique)***
+> - [ ] **19. Aller aux toilettes *(HypoTA orthostatique)***
+> - [ ] **20. Alimentation *(HypoTA orthostatique)***
+> - [ ] **21. IADL *(HypoTA orthostatique)***
+> - [ ] **22. Courses *(HypoTA orthostatique)***
+> - [ ] **23. Cuisine *(HypoTA orthostatique)***
+> - [ ] **24. Ménage *(HypoTA orthostatique)***
+> - [ ] **25. Médicaments *(Accident vasculaire cérébral, Chute multifactorielle, HypoTA orthostatique)***
+> - [ ] **26. Finances *(HypoTA orthostatique)***
+> - [ ] **27. Transports *(HypoTA orthostatique)***
+> - [ ] **28. Rendez-vous *(HypoTA orthostatique)***
+> - [ ] **29. Anamnèse sociale *(Accident vasculaire cérébral, Chute multifactorielle, HypoTA orthostatique)***
+> - [ ] **30. État civil *(HypoTA orthostatique)***
+> - [ ] **31. Profession *(HypoTA orthostatique)***
+> - [ ] **32. Loisirs *(HypoTA orthostatique)***
+> - [ ] **33. Proches *(HypoTA orthostatique)***
+> - [ ] **34. Cognition, psychisme et sommeil *(HypoTA orthostatique)***
+> - [ ] **35. Cognition *(HypoTA orthostatique)***
+> - [ ] **36. Humeur *(HypoTA orthostatique)***
+> - [ ] **37. Sommeil *(HypoTA orthostatique)***
+> - [ ] **38. Nutrition, poids et appareil locomoteur *(HypoTA orthostatique)***
+> - [ ] **39. Nutrition *(HypoTA orthostatique)***
+> - [ ] **40. Évolution pondérale *(HypoTA orthostatique)***
+> - [ ] **41. Douleurs articulaires et squelettiques *(HypoTA orthostatique)***
+> - [ ] **42. Élimination et continence *(HypoTA orthostatique)***
+> - [ ] **43. Selles *(HypoTA orthostatique)***
+> - [ ] **44. Miction *(HypoTA orthostatique)***
+> - [ ] **45. Continence *(HypoTA orthostatique)***
+> - [ ] **46. Vertiges et sensorialité *(HypoTA orthostatique)***
+> - [ ] **47. Vision *(Accident vasculaire cérébral, Chute multifactorielle, HypoTA orthostatique)***
+> - [ ] **48. Audition *(Accident vasculaire cérébral, HypoTA orthostatique)***
+> - [ ] **49. Présentation avec nom, fonction et tâche *(Accident vasculaire cérébral, Chute multifactorielle)***
+> - [ ] **50. Moment de l'événement *(Accident vasculaire cérébral)***
+> - [ ] **51. Dernier moment où la patiente était normale *(Accident vasculaire cérébral)***
+> - [ ] **52. Circonstances de la chute *(Accident vasculaire cérébral)***
+> - [ ] **53. Force musculaire *(Accident vasculaire cérébral)***
+> - [ ] **54. Sensibilité *(Accident vasculaire cérébral)***
+> - [ ] **55. Motricité fine *(Accident vasculaire cérébral)***
+> - [ ] **56. Langage *(Accident vasculaire cérébral)***
+> - [ ] **57. Antécédents personnels *(Accident vasculaire cérébral)***
+> 	- [ ] AVC antérieurs *(Accident vasculaire cérébral)*
+> 	- [ ] Autres pathologies *(Accident vasculaire cérébral)*
+> - [ ] **58. Toxiques *(Accident vasculaire cérébral, Chute multifactorielle)***
+> - [ ] **59. Facteurs de risque cardiovasculaire *(Accident vasculaire cérébral)***
+> 	- [ ] Hypertension *(Accident vasculaire cérébral)*
+> 	- [ ] Hyperlipidémie *(Accident vasculaire cérébral)*
+> - [ ] **60. Activités sportives, loisirs *(Accident vasculaire cérébral)***
+> - [ ] **61. Anamnèse familiale *(Accident vasculaire cérébral, Chute multifactorielle)***
+> 	- [ ] AVC *(Accident vasculaire cérébral)*
+> 	- [ ] Maladies cardiaques *(Accident vasculaire cérébral)*
+> 	- [ ] Hypertension *(Accident vasculaire cérébral)*
+> 	- [ ] Diabète *(Accident vasculaire cérébral)*
+> - [ ] **62. Évaluation globale de la qualité de l'anamnèse *(Accident vasculaire cérébral, Chute multifactorielle)***
+> 	- [ ] Anamnèse ciblée et bien conduite *(Accident vasculaire cérébral, Chute multifactorielle)*
+> - [ ] **63. Événement *(Chute multifactorielle)***
+> - [ ] **64. Temporalité *(Chute multifactorielle)***
+> - [ ] **65. Premier épisode *(Chute multifactorielle)***
+> - [ ] **66. Douleurs *(Chute multifactorielle)***
+> - [ ] **67. Fièvre *(Chute multifactorielle)***
+> - [ ] **68. Sensation de malaise *(Chute multifactorielle)***
+> - [ ] **69. Autres symptômes *(Chute multifactorielle)***
+> 	- [ ] Faiblesse *(Chute multifactorielle)*
+> 	- [ ] Troubles sensitifs *(Chute multifactorielle)*
+> 	- [ ] Céphalées *(Chute multifactorielle)*
+> 	- [ ] Vertiges *(Chute multifactorielle)*
+> 	- [ ] Palpitations *(Chute multifactorielle)*
+> 	- [ ] Dyspnée *(Chute multifactorielle)*
+> - [ ] **70. Antécédents médicaux *(Chute multifactorielle, Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Diabète *(Chute multifactorielle)*
+> 	- [ ] Gonarthrose bilatérale *(Chute multifactorielle)*
+> 	- [ ] Hypertension artérielle *(Chute multifactorielle)*
+> 	- [ ] Problème cardiaque *(Chute multifactorielle)*
+> - [ ] **71. Médicaments actuels *(Chute multifactorielle)***
+> 	- [ ] Tramadol *(Chute multifactorielle)*
+> 	- [ ] Somnifère *(Chute multifactorielle)*
+> 	- [ ] Sulfonylurée *(Chute multifactorielle)*
+> 	- [ ] Aspirine *(Chute multifactorielle)*
+> - [ ] **72. Maladies récentes/Hospitalisations *(Chute multifactorielle)***
+> - [ ] **73. Habitudes alimentaires *(Chute multifactorielle)***
+> - [ ] **74. Condition physique *(Chute multifactorielle)***
+> - [ ] **75. Allergies *(Chute multifactorielle)***
+> - [ ] **76. Motif principal *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **77. Mécanisme du traumatisme *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Circonstance *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Énergie *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Position lors de la réception *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Autres blessures que coude *(Fracture du membre supérieur (humérus, tête radiale))*
+> - [ ] **78. Caractérisation de la douleur *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Localisation *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Intensité *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Qualité *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Évolution *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Irradiation *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Facteurs atténuants/aggravants *(Fracture du membre supérieur (humérus, tête radiale))*
+> - [ ] **79. Présence de symptômes neuro-vasculaires associés au trauma *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Impotence *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Symptômes neuro-vasculaires *(Fracture du membre supérieur (humérus, tête radiale))*
+> - [ ] **80. Antécédents chirurgicaux *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **81. Santé actuelle *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Maladies actuelles *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Médicaments *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Allergies *(Fracture du membre supérieur (humérus, tête radiale))*
+> - [ ] **82. Impact du traumatisme sur le quotidien de la patiente *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Membre dominant *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Activités quotidiennes affectées *(Fracture du membre supérieur (humérus, tête radiale))*
+
+> [!tip] 🩺 Status
+> - [ ] **1. MMS *(HypoTA orthostatique)***
+> - [ ] **2. Nerfs crâniens *(Accident vasculaire cérébral, HypoTA orthostatique)***
+> - [ ] **3. Acuité visuelle *(HypoTA orthostatique)***
+> - [ ] **4. Audition *(HypoTA orthostatique)***
+> - [ ] **5. Motricité *(HypoTA orthostatique)***
+> - [ ] **6. Sensibilité *(HypoTA orthostatique)***
+> - [ ] **7. Épreuve des bras tendus *(HypoTA orthostatique)***
+> - [ ] **8. Doigt-nez *(HypoTA orthostatique)***
+> - [ ] **9. Diadococinésie *(HypoTA orthostatique)***
+> - [ ] **10. Vibrations *(HypoTA orthostatique)***
+> - [ ] **11. Auscultation cardiaque *(HypoTA orthostatique)***
+> - [ ] **12. Auscultation pulmonaire *(HypoTA orthostatique)***
+> - [ ] **13. Veines jugulaires *(HypoTA orthostatique)***
+> - [ ] **14. Recherche d’œdèmes *(HypoTA orthostatique)***
+> - [ ] **15. TA couché-debout (Schellong) *(HypoTA orthostatique)***
+> - [ ] **16. Pouls radial *(HypoTA orthostatique)***
+> - [ ] **17. Pouls des pieds *(HypoTA orthostatique)***
+> - [ ] **18. Voie orale *(HypoTA orthostatique)***
+> - [ ] **19. Inspection *(HypoTA orthostatique)***
+> - [ ] **20. Auscultation *(Accident vasculaire cérébral, HypoTA orthostatique)***
+> 	- [ ] Auscultation cardiaque *(Accident vasculaire cérébral)*
+> 	- [ ] Auscultation des carotides *(Accident vasculaire cérébral)*
+> - [ ] **21. Palpation *(HypoTA orthostatique)***
+> - [ ] **22. Redressement *(HypoTA orthostatique)***
+> - [ ] **23. Transfert *(HypoTA orthostatique)***
+> - [ ] **24. Station debout *(HypoTA orthostatique)***
+> - [ ] **25. Analyse de la marche *(HypoTA orthostatique)***
+> - [ ] **26. Orientation et état de conscience *(Accident vasculaire cérébral)***
+> - [ ] **27. Examen de la marche *(Accident vasculaire cérébral)***
+> 	- [ ] Marche normale *(Accident vasculaire cérébral)*
+> 	- [ ] Marche en tandem *(Accident vasculaire cérébral)*
+> - [ ] **28. Tests de coordination *(Accident vasculaire cérébral)***
+> 	- [ ] Test de Romberg *(Accident vasculaire cérébral)*
+> 	- [ ] Test d'Unterberger *(Accident vasculaire cérébral)*
+> 	- [ ] Diadococinésie *(Accident vasculaire cérébral)*
+> 	- [ ] Test de préhension des bras *(Accident vasculaire cérébral)*
+> 	- [ ] Épreuve doigt-nez *(Accident vasculaire cérébral)*
+> 	- [ ] Épreuve talon-genou *(Accident vasculaire cérébral)*
+> - [ ] **29. Examen moteur *(Accident vasculaire cérébral)***
+> - [ ] **30. Examen sensitif *(Accident vasculaire cérébral)***
+> - [ ] **31. Recherche d'apraxie *(Accident vasculaire cérébral)***
+> - [ ] **32. Réflexes *(Accident vasculaire cérébral)***
+> 	- [ ] Réflexes ostéo-tendineux *(Accident vasculaire cérébral)*
+> 	- [ ] Signe de Babinski *(Accident vasculaire cérébral)*
+> - [ ] **33. Signes méningés *(Accident vasculaire cérébral)***
+> - [ ] **34. Évaluation globale de la qualité de l'examen clinique *(Accident vasculaire cérébral, Chute multifactorielle)***
+> 	- [ ] Examen neurologique ciblé et bien conduit *(Accident vasculaire cérébral)*
+> 	- [ ] Examen ciblé et bien conduit *(Chute multifactorielle)*
+> - [ ] **35. Status cardiaque et pulmonaire *(Chute multifactorielle)***
+> - [ ] **36. Neurostatus *(Chute multifactorielle)***
+> 	- [ ] Ataxie *(Chute multifactorielle)*
+> 	- [ ] Tests cérébelleux *(Chute multifactorielle)*
+> 	- [ ] Sensibilité *(Chute multifactorielle)*
+> 	- [ ] Motricité *(Chute multifactorielle)*
+> - [ ] **37. Test de vision *(Chute multifactorielle)***
+> - [ ] **38. Observation avec comparaison des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **39. Palpation des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Coudes *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Bras et épaules *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Avant-bras et poignets *(Fracture du membre supérieur (humérus, tête radiale))*
+> - [ ] **40. Perfusion distale des 2 membres supérieurs, avec comparaison *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Pouls périphériques *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Temps de recoloration ou gradient thermique *(Fracture du membre supérieur (humérus, tête radiale))*
+> - [ ] **41. Sensibilité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Radial *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Médian *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Ulnaire *(Fracture du membre supérieur (humérus, tête radiale))*
+> - [ ] **42. Motricité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Radial *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Médian *(Fracture du membre supérieur (humérus, tête radiale))*
+> 	- [ ] Ulnaire *(Fracture du membre supérieur (humérus, tête radiale))*

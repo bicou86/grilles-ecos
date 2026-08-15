@@ -4,12 +4,35 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import lib_fusion
+import lib_rendu
 
 A = {"id": "A", "sections": {"a": [("item", "a1", "1. Caractérisation de la douleur",
                                     ["Localisation", "Irradiation"])]}}
 B = {"id": "B", "sections": {"a": [("item", "a1", "Caractérisation de la Douleur",
                                     ["Localisation", "Facteurs déclenchants"])]}}
 C = {"id": "C", "sections": {"a": [("item", "a1", "Anamnèse familiale", [])]}}
+
+
+def verifier_marquage():
+    ecarts = []
+    diag = {"A": "STEMI", "B": "Péricardite", "C": "Embolie"}
+    partout = {"titre": "Localisation", "cas": {"A", "B", "C"}}
+    partiel = {"titre": "Soulagement en antéflexion", "cas": {"B"}}
+    deux = {"titre": "Facteurs déclenchants", "cas": {"A", "B"}}
+
+    if lib_rendu.marque(partout, 3, diag) != "Localisation":
+        ecarts.append("un item porte par tous les cas ne doit pas etre suffixe")
+    if lib_rendu.marque(partiel, 3, diag) != "Soulagement en antéflexion *(Péricardite)*":
+        ecarts.append(f"suffixe simple errone : {lib_rendu.marque(partiel, 3, diag)}")
+    attendu = "Facteurs déclenchants *(Péricardite, STEMI)*"
+    if lib_rendu.marque(deux, 3, diag) != attendu:
+        ecarts.append(f"suffixe multiple errone : {lib_rendu.marque(deux, 3, diag)}")
+
+    quatre = {"titre": "Dyspnée", "cas": {"A", "B", "C", "D"}}
+    d4 = dict(diag, D="Pneumothorax", E="Angor")
+    if lib_rendu.marque(quatre, 5, d4) != "Dyspnée *(4 diagnostics)*":
+        ecarts.append(f"abreviation au-dela de 3 non appliquee : {lib_rendu.marque(quatre, 5, d4)}")
+    return ecarts
 
 
 def main():
@@ -49,6 +72,8 @@ def main():
     if (lib_fusion.signature(lib_fusion.canonique("1. Caractérisation de la douleur"))
             != lib_fusion.signature(lib_fusion.canonique("Caractérisation de la Douleur"))):
         ecarts.append("numerotation et casse devraient etre neutralisees")
+
+    ecarts += verifier_marquage()
 
     if ecarts:
         print("ECHEC —", len(ecarts), "ecart(s) :")
