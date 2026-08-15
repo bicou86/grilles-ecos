@@ -116,9 +116,14 @@ def items(bloc):
 
 
 def identifiant(chemin):
-    """« AMBOSS-1 » depuis un nom de fichier de grille."""
+    """« AMBOSS-1 » ou « German-45 » depuis un nom de fichier de grille.
+
+    Ancre en debut de nom : le prefixe de corpus (une majuscule initiale,
+    puis des lettres quelconques — AMBOSS, German, RESCOS, AZYGOS...) suivi
+    d'un numero et, pour certains corpus, d'un suffixe d'une lettre.
+    """
     nom = Path(chemin).name
-    m = re.match(r"([A-Z]+-\d+[a-z]?)", nom)
+    m = re.match(r"([A-Z][A-Za-z]*-\d+[a-z]?)", nom)
     return m.group(1) if m else Path(chemin).stem[:40]
 
 
