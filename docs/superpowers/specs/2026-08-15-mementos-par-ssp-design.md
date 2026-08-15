@@ -32,6 +32,51 @@ difficultés :
 La clé de regroupement est **(SSP, diagnostic)** : deux cas de corpus différents portant
 le même diagnostic sous la même SSP fusionnent en un seul sous-bloc de management.
 
+## Les neuf grilles officielles comme référentiel
+
+C'est le principe directeur de tout le reste. Les 257 grilles à traiter n'ont jamais été
+validées par un jury ; les neuf grilles officielles, si. Elles ne servent donc pas
+seulement de modèle de mise en forme : **elles sont l'autorité sur ce qui constitue un
+item de mémento**, et chaque décision d'inclusion, de granularité ou de vocabulaire doit
+pouvoir s'y adosser.
+
+Ce qu'elles enseignent, et qui doit être transposé aux grilles non officielles :
+
+- **La granularité.** Un item est un titre court (3 à 10 mots) éventuellement suivi de
+  sous-items d'un ou deux mots — « Caractérisation de la fatigue » puis « Durée · Évolution ·
+  Chronologie sur la journée · Circonstances de survenue ». Un libellé qui n'entre pas dans
+  ce moule vient d'une grille qui mélange l'item et son commentaire, et doit être ramené à
+  cette forme.
+- **La structure d'une anamnèse.** Caractérisation du symptôme principal, puis symptômes
+  associés, puis facteurs de risque et antécédents, puis habitudes, puis les questions de
+  sécurité. Les neuf grilles suivent toutes cet ordre ; il donne l'ossature attendue d'un
+  mémento fusionné.
+- **La structure d'un management.** Hypothèse diagnostique, diagnostics différentiels,
+  examens complémentaires, traitement, suivi. C'est ce squelette qui fonde le partage
+  🔬 / 💊 : la table `EXAMENS` du générateur actuel, écrite ligne à ligne pour les neuf
+  grilles, est la **semence** de la classification à généraliser.
+- **Ce qui n'est pas un item.** Les lignes de synthèse (« Anamnèse en général »), les
+  consignes destinées à l'expert·e, les réponses du patient et le barème sont exclus. Ces
+  quatre règles d'exclusion sont déjà implémentées et éprouvées sur les neuf grilles ; elles
+  s'appliquent telles quelles au reste.
+- **Le vocabulaire.** Les libellés officiels sont les **formes canoniques par défaut** de
+  `docs/ecos-vocabulaire.yaml`. Quand un libellé non officiel désigne la même chose qu'un
+  libellé officiel, c'est le second qui l'emporte — pas une forme moyenne inventée. La table
+  `NOMENCLATURE` du générateur actuel (« Formule sanguine complète » → `FSC`, « Paramètres
+  inflammatoires (VS ou CRP) » → `VS / CRP`) est le premier morceau de ce vocabulaire.
+
+Conséquence opératoire, à appliquer à chaque étape : **un item d'une grille non officielle
+qui n'a aucun répondant dans les neuf grilles officielles est suspect**. Il n'est pas
+supprimé d'office — le corpus officiel ne couvre que neuf SSP et ne peut pas tout prévoir —
+mais il est signalé dans un rapport de contrôle, pour qu'une relecture décide s'il s'agit
+d'un apport réel ou d'un artefact du corpus d'origine (les « Question initiale » d'AZYGOS,
+les rubriques pédagogiques d'AMBOSS). Le rapport est produit à l'étape 1 et relu avant la
+fusion.
+
+Les neuf grilles officielles restent par ailleurs le **test de non-régression** de toute la
+chaîne : leur mémento doit rester identique au bit près après chaque évolution du
+générateur.
+
 ## Périmètre
 
 **Inclus** (257 grilles) :
@@ -116,7 +161,9 @@ unique et raisonnable jusqu'à 3 cas.
 **Couche B — vocabulaire canonique curé, par SSP.** Une table
 `docs/ecos-vocabulaire.yaml` fait correspondre les libellés bruts d'une SSP à un item
 canonique. Elle n'est ouverte **que là où A échoue visiblement**, c'est-à-dire d'abord sur
-les dix SSP à 4 cas et plus.
+les dix SSP à 4 cas et plus. **Ses formes canoniques sont d'abord celles des neuf grilles
+officielles** (voir le référentiel ci-dessus) : on ne réinvente un libellé que lorsque le
+corpus officiel n'en propose aucun.
 
 ```yaml
 "Douleur Thoracique":
@@ -182,8 +229,10 @@ Structure d'une SSP à plusieurs diagnostics :
 ## Les cinq étapes
 
 1. **Généraliser l'extracteur** aux quatre corpus, ajouter le lecteur JSON AZYGOS,
-   l'adosser au mapping SSP. Sortie de contrôle : un mémento par SSP **sans fusion**,
-   cas juxtaposés, pour vérifier que l'extraction tient sur 257 grilles.
+   l'adosser au mapping SSP, rattacher les 39 grilles RESCOS absentes. Deux sorties de
+   contrôle : un mémento par SSP **sans fusion**, cas juxtaposés, pour vérifier que
+   l'extraction tient sur 257 grilles ; et le **rapport d'écart au référentiel** listant
+   les items sans répondant dans les neuf grilles officielles, à relire avant l'étape 3.
 2. **Résoudre le diagnostic** par la cascade ci-dessus → `docs/ecos-diagnostics.yaml`,
    à relire avant de continuer.
 3. **Fusionner** : appariement socle A, mise en commun anamnèse/status avec marquage,
@@ -205,6 +254,9 @@ la seule qui doive tenir sur les 257 grilles avant qu'on aille plus loin.
   mémento ; tout cas non rattaché est listé explicitement, jamais perdu en silence.
 - **Comptage** : le nombre d'items d'un mémento non fusionné égale la somme des items de
   ses grilles, lignes de synthèse et consignes expert·e exclues.
+- **Conformité au référentiel** : la part d'items sans répondant officiel est mesurée et
+  suivie SSP par SSP. Une SSP dont la majorité des items n'a aucun répondant signale une
+  grille source hors format, pas un apport clinique.
 
 ## Risques et limites
 
@@ -222,6 +274,7 @@ la seule qui doive tenir sur les 257 grilles avant qu'on aille plus loin.
 
 ## Décisions prises
 
+- Les **neuf grilles officielles font autorité** sur ce qui constitue un item : granularité, ossature des sections, vocabulaire canonique, règles d'exclusion. Tout item sans répondant officiel est signalé pour relecture, jamais supprimé en silence.
 - Approche **B sur socle A** pour l'appariement.
 - Marquage par **suffixe `*(diagnostic)*`**, pas par surlignage.
 - Découpage en **cinq étapes**, chacune relue avant la suivante.
