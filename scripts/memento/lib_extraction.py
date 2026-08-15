@@ -144,16 +144,43 @@ def lire_html(chemin):
     }
 
 
-# Les onglets AZYGOS, ramenes aux trois sections du memento. « Diagnostic »
-# porte les examens complementaires, « Procedure » le raisonnement et le
-# traitement : les deux alimentent le management. Certains cas sont des
-# stations en deux parties dont les onglets portent un prefixe
-# "Partie 1\n"/"Partie 2\n" et nomment l'examen clinique autrement
-# ("Statut clinique", "Status clinique") : on normalise avant de chercher.
-ONGLETS_AZYGOS = {"Anamnèse": "a", "Examen clinique": "e",
-                  "Statut clinique": "e", "Status clinique": "e",
-                  "Diagnostic": "m", "Procédure": "m"}
+# Les onglets AZYGOS, ramenes aux trois sections du memento. « Diagnostic »,
+# « Prise en charge », « Conduite (a tenir) », « Raisonnement clinique » et
+# leurs variantes portent les examens complementaires et le raisonnement :
+# tous alimentent le management. Certains cas sont des stations en deux
+# parties dont les onglets portent un prefixe "Partie 1\n"/"Partie 2\n" et
+# nomment l'examen clinique autrement ("Statut clinique", "Status clinique",
+# "Etat clinique") : on normalise ce prefixe avant de chercher.
+#
+# Un onglet du JSON qui n'est ni dans cette table, ni dans les exclusions
+# ci-dessous, est un onglet inconnu : check_azygos.py doit echouer plutot
+# que de le laisser disparaitre silencieusement.
+ONGLETS_AZYGOS = {
+    "Anamnèse": "a",
+    "Examen clinique": "e", "Statut clinique": "e", "Status clinique": "e",
+    "État clinique": "e",
+    "Diagnostic": "m", "Diagnostics": "m", "Diagnostique": "m",
+    "Procédure": "m", "Prise en charge": "m",
+    "Conduite": "m", "Conduite à tenir": "m", "Conseil & Procédure": "m",
+    "Raisonnement clinique": "m", "Clinical Reasoning": "m",
+}
+
+# Onglets qui ne portent ni anamnese, ni examen, ni management — presentation
+# orale du cas et communication avec l'examinateur, ou pur habillage
+# (infos du cas, preparation). Volontairement hors des trois sections.
+ONGLETS_AZYGOS_EXCLUS = {
+    "Infos du cas", "Préparation", "Présentation de cas",
+    "Communication", "Communication Poste 1", "Communication poste 1",
+    "Communication Poste 2", "Communication poste 2",
+}
+
 _PREFIXE_PARTIE = re.compile(r"^Partie \d+\n")
+
+
+def normalise_onglet(nom):
+    """Nom d'onglet AZYGOS sans son prefixe de partie ("Partie 1\\n...")."""
+    return _PREFIXE_PARTIE.sub("", nom)
+
 
 _FICHIERS_AZYGOS = None
 
@@ -171,6 +198,28 @@ def _numero_azygos(nom_fichier):
     return _FICHIERS_AZYGOS.get(nom_fichier)
 
 
+def classifie_onglets(chemin):
+    """Classe les onglets bruts d'un JSON AZYGOS.
+
+    Sert de garde-fou a check_azygos.py : renvoie `candidats`, qui associe
+    chaque section (a/e/m) presente aux noms d'onglets qui l'alimentent, et
+    `inconnus`, la liste des noms d'onglets qui ne sont ni dans
+    ONGLETS_AZYGOS ni dans ONGLETS_AZYGOS_EXCLUS — un onglet inconnu doit
+    faire echouer le checker plutot que de disparaitre en silence.
+    """
+    chemin = Path(chemin)
+    donnees = json.loads(chemin.read_text(encoding="utf8"))
+    candidats, inconnus = {}, []
+    for onglet in donnees["onglets"]:
+        nom = normalise_onglet(onglet)
+        prefixe = ONGLETS_AZYGOS.get(nom)
+        if prefixe is not None:
+            candidats.setdefault(prefixe, []).append(onglet)
+        elif nom not in ONGLETS_AZYGOS_EXCLUS:
+            inconnus.append(onglet)
+    return candidats, inconnus
+
+
 def lire_azygos(chemin):
     """Extraction JSON AZYGOS -> structure de cas pivot.
 
@@ -181,10 +230,10 @@ def lire_azygos(chemin):
     """
     chemin = Path(chemin)
     donnees = json.loads(chemin.read_text(encoding="utf8"))
-    identifiant = _numero_azygos(chemin.name) or donnees["meta"]["id"][:8]
+    ident = _numero_azygos(chemin.name) or donnees["meta"]["id"][:8]
     sections_out = {}
     for onglet, groupes in donnees["onglets"].items():
-        prefixe = ONGLETS_AZYGOS.get(_PREFIXE_PARTIE.sub("", onglet))
+        prefixe = ONGLETS_AZYGOS.get(normalise_onglet(onglet))
         if prefixe is None:
             continue
         lignes = sections_out.setdefault(prefixe, [])
@@ -202,7 +251,7 @@ def lire_azygos(chemin):
                 sous = [v.strip() for v in item.get("valeurs", []) if v and v.strip()]
                 lignes.append(("item", cid, titre, harmonise(sous)))
     return {
-        "id": identifiant,
+        "id": ident,
         "corpus": "azygos",
         "fichier": str(chemin.relative_to(REPO)),
         "ssp": None,
