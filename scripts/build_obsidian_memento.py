@@ -176,8 +176,13 @@ def bloc_cas(fichier, page, specialite_defaut, titre, source):
 
 if __name__ == "__main__":
     SORTIE.mkdir(parents=True, exist_ok=True)
-    for vieux in SORTIE.glob("*.md"):
-        vieux.unlink()
+    # PAS DE MENAGE PAR GLOB ici. Ce script partage desormais SORTIE avec
+    # scripts/memento/build_memento.py, qui y ecrit un memento par SSP :
+    # un `SORTIE.glob("*.md")` les effacerait tous a chaque execution — et
+    # check_fusion.py relance ce script a chaque controle. Ce generateur
+    # n'ecrit qu'un fichier, de nom constant, que l'ecriture finale remplace :
+    # il n'a aucune sortie obsolete a balayer. La sortie produite est
+    # inchangee, a l'octet pres (empreinte epinglee par check_fusion.py).
 
     groupes, ordre = {}, []
     nb = 0
