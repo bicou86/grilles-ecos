@@ -118,8 +118,20 @@ def scinder_management(cas_list, diag_par_cas, ssp=None, attendus=()):
     ne se declenchait que sur 2 des 23 SSP a plusieurs diagnostics : au-dela
     de trois diagnostics, aucun item lexicalement identique ne les couvre
     tous, si bien que « Diagnostics differentiels » etait recopie dans huit
-    sous-blocs de « Douleur Abdominale ». Le seuil a deux retire 31 % des
-    lignes de ce memento, et ce sont les lignes creuses qui partent.
+    sous-blocs de « Douleur Abdominale ». Le seuil a deux retire ces lignes
+    creuses.
+
+    LE SEUIL PORTE SUR LE CONTENU, PAS SUR LE SEUL TITRE (ronde 2). Applique
+    au seul item de tete, il deportait des sous-items qui, eux, n'etaient
+    partages par personne : 90 % des lignes de sous-item de l'encadre partage
+    ne portaient qu'un diagnostic, et seize diagnostics avaient plus de lignes
+    LA-HAUT que dans leur propre sous-bloc — le reflux gastro-oesophagien
+    voyait ses dix-neuf lignes propres (IPP, fundoplicature, Barrett) rangees
+    sous « Prise en charge therapeutique » dans le partage, pendant que son
+    sous-bloc annoncait « aucun item propre a ce diagnostic ». Un item ne
+    monte donc que si son CONTENU l'est aussi : aucun sous-item, ou aucun
+    sous-item propre a un seul diagnostic. Sinon il reste duplique dans les
+    sous-blocs, comme avant le seuil.
 
     LA CONTREPARTIE, et elle est reelle : l'encadre partage se lit AVEC le
     sous-bloc de son diagnostic, plus a sa place. C'est pourquoi chaque item
@@ -139,21 +151,46 @@ def scinder_management(cas_list, diag_par_cas, ssp=None, attendus=()):
     l'appariement n'a aucun moyen d'interpreter.
 
     UN ITEM DONT AUCUNE GRILLE PORTEUSE N'A DE DIAGNOSTIC RESOLU part dans le
-    partage : le renvoyer vers un sous-bloc est impossible (il n'y en a aucun
-    a nommer) et l'ecarter le supprimerait du memento. C'est la seule raison
-    pour laquelle le test porte sur `len(porteurs) != 1` et non `>= 2`.
+    partage quoi qu'il arrive : le renvoyer vers un sous-bloc est impossible
+    (il n'y en a aucun a nommer) et l'ecarter le supprimerait du memento.
     """
     apparies = apparier(cas_list, "m", ssp)
     diagnostics = {diag_par_cas[c["id"]] for c in cas_list if c["id"] in diag_par_cas}
 
     partage, propres = [], {d: [] for d in diagnostics | set(attendus)}
     for item in apparies:
-        porteurs = {diag_par_cas[c] for c in item["cas"] if c in diag_par_cas}
-        if len(porteurs) != 1:
+        porteurs = _porteurs(item, diag_par_cas)
+        if not porteurs or (len(porteurs) > 1 and contenu_partage(item, diag_par_cas)):
             partage.append(item)
         else:
-            propres[porteurs.pop()].append(item)
+            for d in porteurs:
+                propres[d].append(item)
     return partage, propres
+
+
+def _porteurs(item, diag_par_cas):
+    """Les diagnostics qu'un item apparie porte, via ses grilles."""
+    return {diag_par_cas[c] for c in item["cas"] if c in diag_par_cas}
+
+
+def contenu_partage(item, diag_par_cas):
+    """Aucun sous-item de cet item n'est propre a un seul diagnostic.
+
+    LA CONDITION QUI MANQUAIT au seuil de la ronde 1. Un item de tete porte
+    par deux diagnostics peut n'avoir que des sous-items mono-diagnostic :
+    « Examens complementaires - Fonction respiratoire » est cote par la grille
+    d'asthme ET par celle de BPCO, mais ses huit sous-items se repartissent
+    quatre pour l'asthme, quatre pour la BPCO. Monter l'item entier deportait
+    le contenu du sous-bloc vers un encadre qui ne le concerne pas — jusqu'a
+    dix-neuf lignes strictement RGO annoncees comme partagees, pendant que le
+    sous-bloc RGO disait « aucun item propre a ce diagnostic ».
+
+    Un sous-item qu'aucun diagnostic ne porte (aucune grille porteuse n'a de
+    diagnostic resolu) n'empeche pas la montee : il n'appartient a aucun
+    sous-bloc, donc le laisser en haut ne prive personne. Meme raisonnement
+    que pour l'item de tete, d'ou le meme test `!= 1`.
+    """
+    return all(len(_porteurs(sous, diag_par_cas)) != 1 for sous in item.get("sous", []))
 
 
 def restreindre(items, cas_cible):

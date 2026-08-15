@@ -100,16 +100,22 @@ CONVENTION = """>
 > `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
 > de la SSP.
 >
-> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
-> recopié dans chaque sous-bloc : il remonte dans un encadré
-> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
-> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
-> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
-> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
-> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
-> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
-> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
-> se rejoignent pas.
+> Un item porté par **deux diagnostics ou plus** remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête — **mais
+> seulement si son contenu l'est aussi** : dès qu'un seul de ses sous-items
+> n'appartient qu'à un diagnostic, l'item reste dans les sous-blocs, répété.
+> Un item de tête partagé aux sous-items privés déménagerait votre révision
+> dans un encadré qui ne vous concerne pas.
+>
+> Le suffixe d'un item partagé **nomme les diagnostics concernés** :
+> `*(3 grilles sur 12)* — *Angor · STEMI*` se lit « 3 des 12 grilles de la SSP
+> portent cet item, dont au moins une d'Angor et une de STEMI ». Le compte
+> vient en tête, les noms après le tiret : il ne dit **pas** que toutes les
+> grilles de ces diagnostics le portent. ⚠️ **Cet encadré se lit *avec* le
+> sous-bloc de votre diagnostic, pas à sa place.** Il est absent quand aucun
+> item n'est partagé, ce qui arrive souvent : le rapprochement entre grilles
+> reste purement lexical, et deux grilles qui prescrivent la même chose
+> autrement ne se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
 > (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
@@ -446,7 +452,14 @@ def memento(ssp, cas_list, attendus=(), ailleurs=None, rendues=()):
     diag_par_cas = {c["id"]: c["diagnostic"] for c in cas_list if c["diagnostic"]}
     documentes = set(diag_par_cas.values())
     total = len(documentes)
-    attendus_sans_grille = len(set(attendus) - documentes)
+    # DEUX COMPTES, PAS UN. « attendus_sans_grille » amalgamait deux
+    # situations qui n'appellent pas la meme revision : 17 des diagnostics
+    # comptes ONT des grilles, dans une autre SSP, et le sous-bloc y renvoie.
+    manquants = sorted(set(attendus) - documentes, key=tri_clinique)
+    table = ailleurs or {}
+    ailleurs_n = sum(1 for d in manquants
+                     if {s for s in table.get(d, ()) if s != ssp})
+    absents_n = len(manquants) - ailleurs_n
     specialite = lib_ssp.specialite(ssp)
     etoile = " ⭐️" if lib_ssp.priorite(ssp) in ("Top 18", "Haut rendement") else ""
 
@@ -469,9 +482,12 @@ def memento(ssp, cas_list, attendus=(), ailleurs=None, rendues=()):
     # « 2 diagnostics distincts » au-dessus d'une section 💊 qui en aligne cinq.
     ligne = [f"{len(cas_list)} grille{'s' if len(cas_list) > 1 else ''}",
              f"{total} diagnostic{'s' if total > 1 else ''} documenté{'s' if total > 1 else ''}"]
-    if attendus_sans_grille:
-        ligne.append(f"{attendus_sans_grille} attendu"
-                     f"{'s' if attendus_sans_grille > 1 else ''} sans grille")
+    if ailleurs_n:
+        ligne.append(f"{ailleurs_n} attendu{'s' if ailleurs_n > 1 else ''} "
+                     "documenté" + ("s" if ailleurs_n > 1 else "") + " ailleurs")
+    if absents_n:
+        ligne.append(f"{absents_n} attendu{'s' if absents_n > 1 else ''} "
+                     "absent" + ("s" if absents_n > 1 else "") + " du corpus")
     if specialite != "Non classé":
         ligne.insert(0, specialite)
     corps = [f"# {ssp}{etoile}", "", "*" + " · ".join(ligne) + f"* — [[SSP — {ssp}]]", "",
@@ -482,7 +498,8 @@ def memento(ssp, cas_list, attendus=(), ailleurs=None, rendues=()):
         champs.append(f'specialite: "{specialite}"')
     champs.append(f"cas: {len(cas_list)}")
     champs.append(f"diagnostics: {total}")
-    champs.append(f"attendus_sans_grille: {attendus_sans_grille}")
+    champs.append(f"attendus_documentes_ailleurs: {ailleurs_n}")
+    champs.append(f"attendus_absents_du_corpus: {absents_n}")
     tags = ["  - ecos/memento"]
     if any(c["id"] in lib_ssp.OFFICIELLES for c in cas_list):
         tags.append("  - ecos/grille-officielle")

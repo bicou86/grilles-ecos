@@ -141,9 +141,29 @@ def marque_partage(item, cas_ssp, diag_par_cas):
     CE QUE LE SUFFIXE AFFIRME ICI, et rien de plus : au moins une grille de
     chacun des diagnostics nommes porte cet item. Il n'affirme PAS que toutes
     les grilles de ces diagnostics le portent — c'est la difference avec
-    `marque()`, et c'est pourquoi le compte de grilles est imprime dans le
-    meme suffixe : « *(Angor · STEMI — 3 grilles sur 12)* » ne peut pas se
-    lire comme « les grilles d'Angor et de STEMI, toutes ».
+    `marque()`, et c'est pourquoi le compte de grilles accompagne toujours les
+    noms : « *(3 grilles sur 12)* — *Angor · STEMI* » ne peut pas se lire
+    comme « les grilles d'Angor et de STEMI, toutes ».
+
+    LE COMPTE VIENT EN TETE, ET LES NOMS HORS DE SA PARENTHESE (ronde 2). La
+    forme «  *(Angor · STEMI — 3 grilles sur 12)* » enfermait tout dans une
+    parenthese unique, si bien qu'au-dela de trois diagnostics — 26 suffixes
+    depassaient 90 caracteres, le plus long 257 — l'oeil rattachait le compte
+    au dernier libelle nomme, d'autant que les libelles portent eux-memes des
+    parentheses (« Purpura de Schönlein-Henoch (vascularite à IgA) ») qui
+    s'imbriquaient dans la premiere. Le compte est desormais isole dans la
+    forme « n grilles sur m » que le lecteur connait deja des encadres 📋 et
+    🩺 ; les noms le suivent apres un tiret cadratin, sans parenthese propre,
+    et peuvent donc porter les leurs sans ambiguite.
+
+    AU-DELA DE `SEUIL_ABREGE`, LA LISTE ANNONCE SA TAILLE avant de se derouler
+    (« — 6 diagnostics : *A · B · …* ») : le lecteur sait alors s'il lit ou
+    s'il saute, ce qu'une enumeration nue de 250 caracteres ne lui permet pas.
+    On ne TRONQUE pas pour autant — c'est le contraire de `marque()`, et c'est
+    le sens meme de l'encadre partage : ces noms sont l'information que les
+    sous-blocs recopies portaient. Le comptage restreint aux items au contenu
+    reellement partage a par ailleurs ramene de 26 a 11 les suffixes de plus
+    de 90 caracteres.
 
     Un item porte par TOUTES les grilles de la SSP reste nu, comme partout
     ailleurs. Un item qu'aucun diagnostic ne porte (aucune grille porteuse
@@ -156,8 +176,9 @@ def marque_partage(item, cas_ssp, diag_par_cas):
     if not diags:
         return marque(item, cas_ssp, diag_par_cas)
     pluriel = "s" if len(porteurs) > 1 else ""
-    return (f"{item['titre']} *({SEPARATEUR.join(diags)} — "
-            f"{len(porteurs)} grille{pluriel} sur {len(cas_ssp)})*")
+    annonce = f"{len(diags)} diagnostics : " if len(diags) > SEUIL_ABREGE else ""
+    return (f"{item['titre']} *({len(porteurs)} grille{pluriel} sur {len(cas_ssp)})*"
+            f" — {annonce}*{SEPARATEUR.join(diags)}*")
 
 
 def _suffixe(item, rendu):

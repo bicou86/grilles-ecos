@@ -6,7 +6,8 @@ ssp: "Douleur Thoracique"
 specialite: "Cardiologie & Vasculaire"
 cas: 12
 diagnostics: 7
-attendus_sans_grille: 1
+attendus_documentes_ailleurs: 0
+attendus_absents_du_corpus: 1
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -48,16 +49,22 @@ cssclasses:
 > `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
 > de la SSP.
 >
-> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
-> recopié dans chaque sous-bloc : il remonte dans un encadré
-> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
-> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
-> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
-> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
-> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
-> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
-> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
-> se rejoignent pas.
+> Un item porté par **deux diagnostics ou plus** remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête — **mais
+> seulement si son contenu l'est aussi** : dès qu'un seul de ses sous-items
+> n'appartient qu'à un diagnostic, l'item reste dans les sous-blocs, répété.
+> Un item de tête partagé aux sous-items privés déménagerait votre révision
+> dans un encadré qui ne vous concerne pas.
+>
+> Le suffixe d'un item partagé **nomme les diagnostics concernés** :
+> `*(3 grilles sur 12)* — *Angor · STEMI*` se lit « 3 des 12 grilles de la SSP
+> portent cet item, dont au moins une d'Angor et une de STEMI ». Le compte
+> vient en tête, les noms après le tiret : il ne dit **pas** que toutes les
+> grilles de ces diagnostics le portent. ⚠️ **Cet encadré se lit *avec* le
+> sous-bloc de votre diagnostic, pas à sa place.** Il est absent quand aucun
+> item n'est partagé, ce qui arrive souvent : le rapprochement entre grilles
+> reste purement lexical, et deux grilles qui prescrivent la même chose
+> autrement ne se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
 > (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
@@ -76,7 +83,7 @@ cssclasses:
 
 # Douleur Thoracique ⭐️
 
-*Cardiologie & Vasculaire · 12 grilles · 7 diagnostics documentés · 1 attendu sans grille* — [[SSP — Douleur Thoracique]]
+*Cardiologie & Vasculaire · 12 grilles · 7 diagnostics documentés · 1 attendu absent du corpus* — [[SSP — Douleur Thoracique]]
 
 > [!abstract] Les 12 grilles fusionnées
 > - **AMBOSS-12** — Embolie pulmonaire `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-12_-_Douleur_thoracique_-_Femme_35_ans_-_Grille_ECOS.html>)
@@ -548,81 +555,17 @@ cssclasses:
 > 	- [ ] Corrélation avec examen cardiaque
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Hypothèses diagnostiques *(Embolie pulmonaire · Infarctus du myocarde / SCA · Pneumothorax · Péricardite / Myopéricardite — 4 grilles sur 12)***
-> 	- [ ] Péricardite aiguë *(Péricardite / Myopéricardite — 1 grille sur 12)*
-> - [ ] **2. Examens complémentaires urgents *(Embolie pulmonaire · Infarctus du myocarde / SCA · Pneumothorax — 3 grilles sur 12)***
-> 	- [ ] ECG
-> 	- [ ] Troponine T, CK-MB *(Embolie pulmonaire — 1 grille sur 12)*
-> 	- [ ] Gaz du sang artériel, oxymétrie de pouls *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] FSC *(Infarctus du myocarde / SCA — 1 grille sur 12)*
-> 	- [ ] Échocardiographie *(Infarctus du myocarde / SCA — 1 grille sur 12)*
-> - [ ] **3. Examens d'imagerie *(Embolie pulmonaire · Pneumothorax — 2 grilles sur 12)***
-> 	- [ ] Échographie Doppler de compression des jambes *(Embolie pulmonaire — 1 grille sur 12)*
-> 	- [ ] Échocardiographie transthoracique *(Embolie pulmonaire — 1 grille sur 12)*
-> 	- [ ] Radiographie thoracique *(Embolie pulmonaire — 1 grille sur 12)*
-> 	- [ ] Angiographie pulmonaire par CT *(Embolie pulmonaire — 1 grille sur 12)*
-> 	- [ ] CT thoracique *(Pneumothorax — 1 grille sur 12)*
-> - [ ] **4. Conseil et soutien *(Embolie pulmonaire · Pneumothorax — 2 grilles sur 12)***
-> 	- [ ] Conseil sur l'arrêt du tabac
-> 	- [ ] Réaction appropriée au défi concernant l'anxiété *(Embolie pulmonaire — 1 grille sur 12)*
-> 	- [ ] Rassurer la patiente sur la prise en charge *(Embolie pulmonaire — 1 grille sur 12)*
-> 	- [ ] Proposer présence famille/amis pour soutien *(Embolie pulmonaire — 1 grille sur 12)*
-> 	- [ ] Réaction appropriée au défi de la radiographie *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Rassurer le patient sur la prise en charge *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Expliquer les prochaines étapes du traitement *(Pneumothorax — 1 grille sur 12)*
-> - [ ] **5. Communication avec le patient *(Infarctus du myocarde / SCA · Pneumothorax — 2 grilles sur 12)***
+> - [ ] **1. Communication avec le patient *(2 grilles sur 12)* — *Infarctus du myocarde / SCA · Pneumothorax***
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **6. Diagnostics différentiels *(Angor stable / Maladie coronarienne · Contusion costale · Embolie pulmonaire · Pneumothorax · Reflux gastro-œsophagien — 5 grilles sur 12)***
-> 	- [ ] Contusion costale *(Contusion costale — 1 grille sur 12)*
-> 	- [ ] Fracture de côte *(Contusion costale — 1 grille sur 12)*
-> 	- [ ] Pneumothorax *(Contusion costale · Embolie pulmonaire — 2 grilles sur 12)*
-> 	- [ ] Embolie pulmonaire *(Embolie pulmonaire · Pneumothorax — 2 grilles sur 12)*
-> 	- [ ] Syndrome coronarien aigu *(Embolie pulmonaire — 1 grille sur 12)*
-> 	- [ ] Pneumonie *(Embolie pulmonaire — 1 grille sur 12)*
-> 	- [ ] Douleur musculosquelettique *(Embolie pulmonaire · Pneumothorax — 2 grilles sur 12)*
-> 	- [ ] Reflux gastro-œsophagien *(Embolie pulmonaire — 1 grille sur 12)*
-> 	- [ ] Pneumothorax spontané primaire *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Crise d'asthme *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Cardiomyopathie/myocardite *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Œsophagite peptique *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> 	- [ ] Hernie hiatale *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> 	- [ ] Angor stable *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> 	- [ ] Pathologie œsophagienne (sténose, cancer) *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> - [ ] **7. Énonce le diagnostic de suspicion principal *(Embolie pulmonaire · Pneumothorax · Reflux gastro-œsophagien — 3 grilles sur 12)***
-> - [ ] **8. Examens diagnostiques *(Pneumothorax · Reflux gastro-œsophagien — 2 grilles sur 12)***
-> 	- [ ] Radiographie thoracique (image typique de pneumothorax) *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Biologie : FSC, CRP, troponine, CK
-> 	- [ ] Gazométrie artérielle *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] ECG *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] US thoracique si doute diagnostique *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] ECG (éliminer cause cardiaque) *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> 	- [ ] Radiographie thoracique *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> 	- [ ] PH-métrie des 24 heures *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> 	- [ ] Endoscopie digestive haute (si signes d'alarme ou échec du traitement) *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> - [ ] **9. Prise en charge thérapeutique *(Pneumothorax · Reflux gastro-œsophagien — 2 grilles sur 12)***
-> 	- [ ] Oxygénothérapie haut débit *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Analgésie adaptée *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Surveillance monitoring cardio-respiratoire *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Si pneumothorax < 2cm : observation *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Si pneumothorax > 2cm ou symptomatique : drainage thoracique *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Mesures hygiéno-diététiques *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> 	- [ ] Inhibiteurs de la pompe à protons (IPP) *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> - [ ] **10. Information du patient *(Pneumothorax · Reflux gastro-œsophagien — 2 grilles sur 12)***
-> 	- [ ] Expliquer le diagnostic et le mécanisme *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Risque de récidive (30% à 2 ans) *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Importance de l'arrêt du tabac *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Signes d'alarme nécessitant une reconsultation urgente *(Pneumothorax — 1 grille sur 12)*
-> 	- [ ] Expliquer la nature bénigne du RGO *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> 	- [ ] Importance des mesures hygiéno-diététiques *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> 	- [ ] Observance du traitement IPP *(Reflux gastro-œsophagien — 1 grille sur 12)*
-> 	- [ ] Consulter si apparition de signes d'alarme *(Reflux gastro-œsophagien — 1 grille sur 12)*
+> - [ ] **2. Énonce le diagnostic de suspicion principal *(3 grilles sur 12)* — *Embolie pulmonaire · Pneumothorax · Reflux gastro-œsophagien***
 
 > [!success] 💊 Management — si Angor stable / Maladie coronarienne
-> - [ ] **1. Stratification du risque cardiovasculaire**
+> - [ ] **1. Diagnostics différentiels *(1 grille sur 2)***
+> - [ ] **2. Stratification du risque cardiovasculaire**
 > 	- [ ] Score de risque SCORE2 ou Framingham *(1 grille sur 2)*
 > 	- [ ] Évaluation du risque à 10 ans *(1 grille sur 2)*
 > 	- [ ] Patient à haut risque (> 20%) *(1 grille sur 2)*
@@ -632,7 +575,7 @@ cssclasses:
 > 	- [ ] Urgence de la prise en charge *(1 grille sur 2)*
 > 	- [ ] Nécessité d'explorations rapides *(1 grille sur 2)*
 > 	- [ ] Évaluation pronostic à court et long terme *(1 grille sur 2)*
-> - [ ] **2. Examens complémentaires *(1 grille sur 2)***
+> - [ ] **3. Examens complémentaires *(1 grille sur 2)***
 > 	- [ ] ECG de repos 12 dérivations
 > 	- [ ] Test d'effort sur tapis ou vélo
 > 	- [ ] Échocardiographie de repos
@@ -642,46 +585,46 @@ cssclasses:
 > 	- [ ] Bilan lipidique complet
 > 	- [ ] Glycémie à jeun, HbA1c
 > 	- [ ] Créatinine, microalbuminurie
-> - [ ] **3. Traitement médical de l'angor stable *(1 grille sur 2)***
-> - [ ] **4. Indications de revascularisation *(1 grille sur 2)***
+> - [ ] **4. Traitement médical de l'angor stable *(1 grille sur 2)***
+> - [ ] **5. Indications de revascularisation *(1 grille sur 2)***
 > 	- [ ] Angor réfractaire au traitement médical optimal
 > 	- [ ] Test d'ischémie fortement positif
 > 	- [ ] Sténose du tronc commun > 50%
 > 	- [ ] Sténose tritronculaire avec dysfonction VG
 > 	- [ ] Sténose IVA proximale > 70%
 > 	- [ ] Score SYNTAX pour choisir entre angioplastie et pontage
-> - [ ] **5. Signes d'alarme nécessitant une prise en charge urgente *(1 grille sur 2)***
-> - [ ] **6. Interprétation des symptômes et diagnostic principal *(1 grille sur 2)***
+> - [ ] **6. Signes d'alarme nécessitant une prise en charge urgente *(1 grille sur 2)***
+> - [ ] **7. Interprétation des symptômes et diagnostic principal *(1 grille sur 2)***
 > 	- [ ] Évoque angor d'effort stable
 > 	- [ ] Classe II selon classification CCS
 > 	- [ ] Corrélation symptômes-effort
 > 	- [ ] Élimination angor instable (pas de repos)
-> - [ ] **7. Identification des facteurs de risque cardiovasculaire *(1 grille sur 2)***
+> - [ ] **8. Identification des facteurs de risque cardiovasculaire *(1 grille sur 2)***
 > 	- [ ] Diabète non traité
 > 	- [ ] Hypertension probable
 > 	- [ ] Dyslipidémie
 > 	- [ ] Tabagisme ancien
 > 	- [ ] Surpoids
 > 	- [ ] Sédentarité
-> - [ ] **8. Proposition d'examens complémentaires appropriés *(1 grille sur 2)***
+> - [ ] **9. Proposition d'examens complémentaires appropriés *(1 grille sur 2)***
 > 	- [ ] ECG de repos 12 dérivations
 > 	- [ ] Test d'effort ou imagerie de stress
 > 	- [ ] Bilan biologique
 > 	- [ ] Échocardiographie de repos
 > 	- [ ] Radiographie thoracique
-> - [ ] **9. Initiation du traitement médical optimal *(1 grille sur 2)***
+> - [ ] **10. Initiation du traitement médical optimal *(1 grille sur 2)***
 > 	- [ ] Antiagrégation plaquettaire
 > 	- [ ] Bêta-bloquant
 > 	- [ ] Statine
 > 	- [ ] Dérivés nitrés
 > 	- [ ] Traitement des facteurs de risque
-> - [ ] **10. Conseils de prévention et modification du mode de vie *(1 grille sur 2)***
+> - [ ] **11. Conseils de prévention et modification du mode de vie *(1 grille sur 2)***
 > 	- [ ] Arrêt tabac définitif
 > 	- [ ] Activité physique régulière
 > 	- [ ] Contrôle pondéral
 > 	- [ ] Régime méditerranéen
 > 	- [ ] Éducation thérapeutique
-> - [ ] **11. Information du patient et planification du suivi *(1 grille sur 2)***
+> - [ ] **12. Information du patient et planification du suivi *(1 grille sur 2)***
 > 	- [ ] Explication du diagnostic d'angor stable
 > 	- [ ] Information sur l'évolution et le pronostic
 > 	- [ ] Conseils pour la vie quotidienne
@@ -690,16 +633,20 @@ cssclasses:
 
 > [!success] 💊 Management — si Contusion costale
 > - [ ] **1. Énonce le diagnostic de suspicion**
-> - [ ] **2. Nomme les examens diagnostiques**
-> - [ ] **3. Thérapie**
+> - [ ] **2. Diagnostics différentiels**
+> 	- [ ] Contusion costale
+> 	- [ ] Fracture de côte
+> 	- [ ] Pneumothorax
+> - [ ] **3. Nomme les examens diagnostiques**
+> - [ ] **4. Thérapie**
 > 	- [ ] Analgésie adaptée (paracétamol, AINS, opioïdes si nécessaire)
 > 	- [ ] Immobilisation relative
 > 	- [ ] Physiothérapie respiratoire pour prévenir les complications
-> - [ ] **4. Explique l'évolution naturelle et le pronostic**
+> - [ ] **5. Explique l'évolution naturelle et le pronostic**
 > 	- [ ] Pas d'autre thérapie spécifique nécessaire
 > 	- [ ] Guérison spontanée en 3-6 semaines
 > 	- [ ] Pronostic excellent
-> - [ ] **5. Rédige un certificat d'incapacité de travail**
+> - [ ] **6. Rédige un certificat d'incapacité de travail**
 > 	- [ ] 1 semaine d'arrêt initial
 > 	- [ ] Contrôle prévu pour réévaluation
 > 	- [ ] Adaptation selon l'évolution clinique
@@ -708,90 +655,171 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Embolie pulmonaire
-> - [ ] **1. Examens biologiques *(1 grille sur 3)***
+> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 3)***
+> - [ ] **2. Examens complémentaires urgents *(1 grille sur 3)***
+> 	- [ ] ECG
+> 	- [ ] Troponine T, CK-MB
+> - [ ] **3. Examens d'imagerie *(1 grille sur 3)***
+> 	- [ ] Échographie Doppler de compression des jambes
+> 	- [ ] Échocardiographie transthoracique
+> 	- [ ] Radiographie thoracique
+> 	- [ ] Angiographie pulmonaire par CT
+> - [ ] **4. Examens biologiques *(1 grille sur 3)***
 > 	- [ ] FSC, VS, hémocultures
 > 	- [ ] Gaz du sang artériel
-> - [ ] **2. Communication avec la patiente *(1 grille sur 3)***
+> - [ ] **5. Communication avec la patiente *(1 grille sur 3)***
 > 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions de la patiente
-> - [ ] **3. Examens diagnostiques urgents *(1 grille sur 3)***
+> - [ ] **6. Conseil et soutien *(1 grille sur 3)***
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Réaction appropriée au défi concernant l'anxiété
+> 	- [ ] Rassurer la patiente sur la prise en charge
+> 	- [ ] Proposer présence famille/amis pour soutien
+> - [ ] **7. Diagnostics différentiels *(1 grille sur 3)***
+> 	- [ ] Pneumothorax
+> 	- [ ] Embolie pulmonaire
+> 	- [ ] Syndrome coronarien aigu
+> 	- [ ] Pneumonie
+> 	- [ ] Douleur musculosquelettique
+> 	- [ ] Reflux gastro-œsophagien
+> - [ ] **8. Examens diagnostiques urgents *(1 grille sur 3)***
 > 	- [ ] ECG (éliminer SCA)
 > 	- [ ] Radiographie thoracique
 > 	- [ ] D-dimères (si probabilité faible/intermédiaire)
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] FSC, CRP, troponine
 > 	- [ ] Angio-CT thoracique si D-dimères positifs ou haute probabilité
-> - [ ] **4. Prise en charge thérapeutique initiale *(1 grille sur 3)***
+> - [ ] **9. Prise en charge thérapeutique initiale *(1 grille sur 3)***
 > 	- [ ] Oxygénothérapie si SpO2 < 94%
 > 	- [ ] Analgésie adaptée
 > 	- [ ] Anticoagulation si forte suspicion d'EP
 > 	- [ ] Surveillance monitoring
-> - [ ] **5. Information et suivi *(1 grille sur 3)***
+> - [ ] **10. Information et suivi *(1 grille sur 3)***
 > 	- [ ] Expliquer la gravité potentielle
 > 	- [ ] Nécessité d'hospitalisation pour surveillance
 > 	- [ ] Importance de l'observance thérapeutique
 > 	- [ ] Contrôle INR si AVK, surveillance hémorragique
-> - [ ] **6. Prévention secondaire *(1 grille sur 3)***
+> - [ ] **11. Prévention secondaire *(1 grille sur 3)***
 > 	- [ ] Arrêt du tabac impératif
 > 	- [ ] Contrôle des facteurs de risque cardiovasculaire
 > 	- [ ] Éviter immobilisation prolongée
 > 	- [ ] Prophylaxie lors de voyages prolongés
-> - [ ] **7. Indique à la patiente qu'elle devrait se rendre rapidement à l'hôpital *(1 grille sur 3)***
-> - [ ] **8. Évoque le diagnostic d'embolie pulmonaire *(1 grille sur 3)***
-> - [ ] **9. Évoque un diagnostic différentiel cohérent *(1 grille sur 3)***
+> - [ ] **12. Indique à la patiente qu'elle devrait se rendre rapidement à l'hôpital *(1 grille sur 3)***
+> - [ ] **13. Évoque le diagnostic d'embolie pulmonaire *(1 grille sur 3)***
+> - [ ] **14. Évoque un diagnostic différentiel cohérent *(1 grille sur 3)***
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] Pneumothorax
 > 	- [ ] Œdème aigu pulmonaire
 > 	- [ ] Pneumonie/bronchite
 
 > [!success] 💊 Management — si Infarctus du myocarde / SCA
-> - [ ] **1. Examens biologiques et toxicologiques**
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens complémentaires urgents**
+> 	- [ ] ECG
+> 	- [ ] FSC
+> 	- [ ] Échocardiographie
+> - [ ] **3. Examens biologiques et toxicologiques**
 > 	- [ ] Toxicologie urinaire
 > 	- [ ] Troponine T, CK-MB
-> - [ ] **2. Examens invasifs si indiqués**
+> - [ ] **4. Examens invasifs si indiqués**
 > 	- [ ] Coronarographie
-> - [ ] **3. Conseil et prévention**
+> - [ ] **5. Conseil et prévention**
 > 	- [ ] Conseil sur l'arrêt des drogues illicites
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant les médicaments
 > 	- [ ] Éducation sur les facteurs de risque cardiovasculaires
 
 > [!success] 💊 Management — si Péricardite / Myopéricardite
-> - [ ] **1. Examens complémentaires demandés**
+> - [ ] **1. Hypothèses diagnostiques**
+> 	- [ ] Péricardite aiguë
+> - [ ] **2. Examens complémentaires demandés**
 > 	- [ ] Laboratoires
 > 	- [ ] ECG
 > 	- [ ] Radiographie du thorax
-> - [ ] **2. Réponse à la demande d'hospitalisation**
+> - [ ] **3. Réponse à la demande d'hospitalisation**
 > 	- [ ] A répondu positivement à la demande du patient concernant l'hospitalisation
 
 > [!success] 💊 Management — si Pneumothorax
-> - [ ] **1. Laboratoire de base *(1 grille sur 3)***
-> - [ ] **2. Gazométrie artérielle *(1 grille sur 3)***
-> - [ ] **3. Radiographie thoracique (2 incidences) *(1 grille sur 3)***
-> - [ ] **4. Échographie thoracique *(1 grille sur 3)***
-> - [ ] **5. ECG *(1 grille sur 3)***
-> - [ ] **6. Diagnostic de travail *(1 grille sur 3)***
-> - [ ] **7. Oxygénothérapie *(1 grille sur 3)***
-> - [ ] **8. Drainage thoracique *(1 grille sur 3)***
-> - [ ] **9. Analgésie *(1 grille sur 3)***
-> - [ ] **10. Position semi-assise *(1 grille sur 3)***
-> - [ ] **11. Monitoring *(1 grille sur 3)***
-> - [ ] **12. Hospitalisation *(1 grille sur 3)***
-> - [ ] **13. Arrêt du tabac *(1 grille sur 3)***
-> - [ ] **14. Radiographie de contrôle *(1 grille sur 3)***
-> - [ ] **15. Prophylaxie des récidives *(1 grille sur 3)***
-> - [ ] **16. Critères d'hospitalisation *(1 grille sur 3)***
+> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 3)***
+> - [ ] **2. Examens complémentaires urgents *(1 grille sur 3)***
+> 	- [ ] ECG
+> 	- [ ] Gaz du sang artériel, oxymétrie de pouls
+> - [ ] **3. Examens d'imagerie *(1 grille sur 3)***
+> 	- [ ] CT thoracique
+> - [ ] **4. Conseil et soutien *(1 grille sur 3)***
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Réaction appropriée au défi de la radiographie
+> 	- [ ] Rassurer le patient sur la prise en charge
+> 	- [ ] Expliquer les prochaines étapes du traitement
+> - [ ] **5. Laboratoire de base *(1 grille sur 3)***
+> - [ ] **6. Gazométrie artérielle *(1 grille sur 3)***
+> - [ ] **7. Radiographie thoracique (2 incidences) *(1 grille sur 3)***
+> - [ ] **8. Échographie thoracique *(1 grille sur 3)***
+> - [ ] **9. ECG *(1 grille sur 3)***
+> - [ ] **10. Diagnostic de travail *(1 grille sur 3)***
+> - [ ] **11. Oxygénothérapie *(1 grille sur 3)***
+> - [ ] **12. Drainage thoracique *(1 grille sur 3)***
+> - [ ] **13. Analgésie *(1 grille sur 3)***
+> - [ ] **14. Position semi-assise *(1 grille sur 3)***
+> - [ ] **15. Monitoring *(1 grille sur 3)***
+> - [ ] **16. Hospitalisation *(1 grille sur 3)***
+> - [ ] **17. Arrêt du tabac *(1 grille sur 3)***
+> - [ ] **18. Radiographie de contrôle *(1 grille sur 3)***
+> - [ ] **19. Prophylaxie des récidives *(1 grille sur 3)***
+> - [ ] **20. Diagnostics différentiels *(1 grille sur 3)***
+> 	- [ ] Embolie pulmonaire
+> 	- [ ] Douleur musculosquelettique
+> 	- [ ] Pneumothorax spontané primaire
+> 	- [ ] Crise d'asthme
+> 	- [ ] Cardiomyopathie/myocardite
+> - [ ] **21. Examens diagnostiques *(1 grille sur 3)***
+> 	- [ ] Radiographie thoracique (image typique de pneumothorax)
+> 	- [ ] Biologie : FSC, CRP, troponine, CK
+> 	- [ ] Gazométrie artérielle
+> 	- [ ] ECG
+> 	- [ ] US thoracique si doute diagnostique
+> - [ ] **22. Prise en charge thérapeutique *(1 grille sur 3)***
+> 	- [ ] Oxygénothérapie haut débit
+> 	- [ ] Analgésie adaptée
+> 	- [ ] Surveillance monitoring cardio-respiratoire
+> 	- [ ] Si pneumothorax < 2cm : observation
+> 	- [ ] Si pneumothorax > 2cm ou symptomatique : drainage thoracique
+> - [ ] **23. Critères d'hospitalisation *(1 grille sur 3)***
 > 	- [ ] Pneumothorax > 20%
 > 	- [ ] Pneumothorax symptomatique
 > 	- [ ] Pneumothorax bilatéral
 > 	- [ ] Pneumothorax sous tension
 > 	- [ ] Comorbidités pulmonaires
+> - [ ] **24. Information du patient *(1 grille sur 3)***
+> 	- [ ] Expliquer le diagnostic et le mécanisme
+> 	- [ ] Risque de récidive (30% à 2 ans)
+> 	- [ ] Importance de l'arrêt du tabac
+> 	- [ ] Signes d'alarme nécessitant une reconsultation urgente
 
 > [!success] 💊 Management — si Reflux gastro-œsophagien
-> - [ ] **1. Suivi et surveillance**
+> - [ ] **1. Diagnostics différentiels**
+> 	- [ ] Œsophagite peptique
+> 	- [ ] Hernie hiatale
+> 	- [ ] Angor stable
+> 	- [ ] Pathologie œsophagienne (sténose, cancer)
+> - [ ] **2. Examens diagnostiques**
+> 	- [ ] Biologie : FSC, CRP, troponine, CK
+> 	- [ ] ECG (éliminer cause cardiaque)
+> 	- [ ] Radiographie thoracique
+> 	- [ ] PH-métrie des 24 heures
+> 	- [ ] Endoscopie digestive haute (si signes d'alarme ou échec du traitement)
+> - [ ] **3. Prise en charge thérapeutique**
+> 	- [ ] Mesures hygiéno-diététiques
+> 	- [ ] Inhibiteurs de la pompe à protons (IPP)
+> - [ ] **4. Information du patient**
+> 	- [ ] Expliquer la nature bénigne du RGO
+> 	- [ ] Importance des mesures hygiéno-diététiques
+> 	- [ ] Observance du traitement IPP
+> 	- [ ] Consulter si apparition de signes d'alarme
+> - [ ] **5. Suivi et surveillance**
 > 	- [ ] Réévaluation à 4-8 semaines
 > 	- [ ] Si amélioration : traitement à la demande
 > 	- [ ] Si échec : endoscopie digestive haute

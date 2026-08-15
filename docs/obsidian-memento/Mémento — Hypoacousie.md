@@ -5,7 +5,8 @@ type: memento-ecos-ssp
 ssp: "Hypoacousie"
 cas: 4
 diagnostics: 2
-attendus_sans_grille: 1
+attendus_documentes_ailleurs: 0
+attendus_absents_du_corpus: 1
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -47,16 +48,22 @@ cssclasses:
 > `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
 > de la SSP.
 >
-> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
-> recopié dans chaque sous-bloc : il remonte dans un encadré
-> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
-> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
-> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
-> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
-> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
-> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
-> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
-> se rejoignent pas.
+> Un item porté par **deux diagnostics ou plus** remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête — **mais
+> seulement si son contenu l'est aussi** : dès qu'un seul de ses sous-items
+> n'appartient qu'à un diagnostic, l'item reste dans les sous-blocs, répété.
+> Un item de tête partagé aux sous-items privés déménagerait votre révision
+> dans un encadré qui ne vous concerne pas.
+>
+> Le suffixe d'un item partagé **nomme les diagnostics concernés** :
+> `*(3 grilles sur 12)* — *Angor · STEMI*` se lit « 3 des 12 grilles de la SSP
+> portent cet item, dont au moins une d'Angor et une de STEMI ». Le compte
+> vient en tête, les noms après le tiret : il ne dit **pas** que toutes les
+> grilles de ces diagnostics le portent. ⚠️ **Cet encadré se lit *avec* le
+> sous-bloc de votre diagnostic, pas à sa place.** Il est absent quand aucun
+> item n'est partagé, ce qui arrive souvent : le rapprochement entre grilles
+> reste purement lexical, et deux grilles qui prescrivent la même chose
+> autrement ne se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
 > (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
@@ -75,7 +82,7 @@ cssclasses:
 
 # Hypoacousie
 
-*4 grilles · 2 diagnostics documentés · 1 attendu sans grille* — [[SSP — Hypoacousie]]
+*4 grilles · 2 diagnostics documentés · 1 attendu absent du corpus* — [[SSP — Hypoacousie]]
 
 > [!abstract] Les 4 grilles fusionnées
 > - **AMBOSS-23** — Presbyacousie `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-23_-_Perte_auditive_-_Homme_65_ans_-_Grille_ECOS.html>)
@@ -293,63 +300,66 @@ cssclasses:
 > 	- [ ] Coordination
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Examens complémentaires *(Presbyacousie · Surdité brusque idiopathique gauche — 3 grilles sur 4)***
-> 	- [ ] Audiométrie *(Presbyacousie — 1 grille sur 4)*
-> 	- [ ] Audiométrie tonale en urgence *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
-> 	- [ ] Audiométrie vocale *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
-> 	- [ ] Tympanométrie *(Presbyacousie · Surdité brusque idiopathique gauche — 2 grilles sur 4)*
-> 	- [ ] Diagnostic vestibulaire (nystagmus, épreuve calorique) *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
-> 	- [ ] Bilan biologique (FSC, CRP, VS, glycémie) *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
-> 	- [ ] Recherche d'hypertension artérielle *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
-> 	- [ ] Recherche d'hyperlipidémie *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
-> 	- [ ] IRM cérébrale et du conduit auditif interne si pas d'amélioration *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
-> 	- [ ] Audiométrie tonale (courbe typique avec chute dans les aigus) *(Presbyacousie — 1 grille sur 4)*
-> 	- [ ] Audiométrie vocale (mauvaise discrimination) *(Presbyacousie — 1 grille sur 4)*
-> 	- [ ] Potentiels évoqués auditifs si doute diagnostique *(Presbyacousie — 1 grille sur 4)*
-> - [ ] **2. Diagnostic principal *(Presbyacousie · Surdité brusque idiopathique gauche — 2 grilles sur 4)***
-> 	- [ ] Surdité brusque idiopathique gauche *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
-> 	- [ ] Surdité de perception unilatérale gauche *(Surdité brusque idiopathique gauche — 1 grille sur 4)*
-> 	- [ ] Presbyacousie bilatérale *(Presbyacousie — 1 grille sur 4)*
-> - [ ] **3. Diagnostics différentiels *(Presbyacousie · Surdité brusque idiopathique gauche — 2 grilles sur 4)***
+> - [ ] **1. Diagnostics différentiels *(2 grilles sur 4)* — *Presbyacousie · Surdité brusque idiopathique gauche***
 
 > [!success] 💊 Management — si Otosclérose
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Presbyacousie
 > - [ ] **1. Hypothèses diagnostiques *(1 grille sur 3)***
-> - [ ] **2. Communication avec le patient *(1 grille sur 3)***
+> - [ ] **2. Examens complémentaires *(2 grilles sur 3)***
+> 	- [ ] Audiométrie *(1 grille sur 3)*
+> 	- [ ] Tympanométrie *(1 grille sur 3)*
+> 	- [ ] Audiométrie tonale (courbe typique avec chute dans les aigus) *(1 grille sur 3)*
+> 	- [ ] Audiométrie vocale (mauvaise discrimination) *(1 grille sur 3)*
+> 	- [ ] Potentiels évoqués auditifs si doute diagnostique *(1 grille sur 3)*
+> - [ ] **3. Communication avec le patient *(1 grille sur 3)***
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **3. Conseil et soutien *(1 grille sur 3)***
+> - [ ] **4. Conseil et soutien *(1 grille sur 3)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Conseil pour réduire la prise d'aspirine
 > 	- [ ] Réaction appropriée au défi : articuler clairement, parler fort
 > 	- [ ] Éducation sur les aides auditives
 > 	- [ ] Stratégies de communication
-> - [ ] **4. Audiométrie *(1 grille sur 3)***
-> - [ ] **5. Presbyacousie *(1 grille sur 3)***
-> - [ ] **6. Orientation vers une spécialiste ORL / un spécialiste ORL pour l’appareillage auditif *(1 grille sur 3)***
-> - [ ] **7. Filet de sécurité *(1 grille sur 3)***
-> - [ ] **8. Caractéristiques diagnostiques de la presbyacousie *(1 grille sur 3)***
+> - [ ] **5. Audiométrie *(1 grille sur 3)***
+> - [ ] **6. Presbyacousie *(1 grille sur 3)***
+> - [ ] **7. Orientation vers une spécialiste ORL / un spécialiste ORL pour l’appareillage auditif *(1 grille sur 3)***
+> - [ ] **8. Filet de sécurité *(1 grille sur 3)***
+> - [ ] **9. Diagnostic principal *(1 grille sur 3)***
+> 	- [ ] Presbyacousie bilatérale
+> - [ ] **10. Caractéristiques diagnostiques de la presbyacousie *(1 grille sur 3)***
 > 	- [ ] Surdité de perception symétrique bilatérale
 > 	- [ ] Atteinte prédominante des fréquences aiguës
 > 	- [ ] Limitation de la compréhension de la parole
 > 	- [ ] Difficultés accrues en environnement bruyant
 > 	- [ ] Évolution progressive avec l'âge
 > 	- [ ] Possible association avec des acouphènes
-> - [ ] **9. Traitement et prise en charge *(1 grille sur 3)***
-> - [ ] **10. Information et pronostic *(1 grille sur 3)***
+> - [ ] **11. Traitement et prise en charge *(1 grille sur 3)***
+> - [ ] **12. Information et pronostic *(1 grille sur 3)***
 > 	- [ ] Évolution progressive mais appareillage efficace
 > 	- [ ] Importance de l'observance pour éviter l'isolement social
 > 	- [ ] Réévaluation audiométrique annuelle
 > 	- [ ] Adaptation possible des réglages de l'appareil
 
 > [!success] 💊 Management — si Surdité brusque idiopathique gauche
-> - [ ] **1. Traitement**
-> - [ ] **2. Information du patient et pronostic**
+> - [ ] **1. Examens complémentaires**
+> 	- [ ] Audiométrie tonale en urgence
+> 	- [ ] Audiométrie vocale
+> 	- [ ] Tympanométrie
+> 	- [ ] Diagnostic vestibulaire (nystagmus, épreuve calorique)
+> 	- [ ] Bilan biologique (FSC, CRP, VS, glycémie)
+> 	- [ ] Recherche d'hypertension artérielle
+> 	- [ ] Recherche d'hyperlipidémie
+> 	- [ ] IRM cérébrale et du conduit auditif interne si pas d'amélioration
+> - [ ] **2. Diagnostic principal**
+> 	- [ ] Surdité brusque idiopathique gauche
+> 	- [ ] Surdité de perception unilatérale gauche
+> - [ ] **3. Traitement**
+> - [ ] **4. Information du patient et pronostic**
 > 	- [ ] Récupération complète dans 60% des cas
 > 	- [ ] Récupération partielle dans 20% des cas
 > 	- [ ] Possibilité de récidive

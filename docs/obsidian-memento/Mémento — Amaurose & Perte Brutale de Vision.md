@@ -5,7 +5,8 @@ type: memento-ecos-ssp
 ssp: "Amaurose & Perte Brutale de Vision"
 cas: 5
 diagnostics: 5
-attendus_sans_grille: 1
+attendus_documentes_ailleurs: 0
+attendus_absents_du_corpus: 1
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -47,16 +48,22 @@ cssclasses:
 > `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
 > de la SSP.
 >
-> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
-> recopié dans chaque sous-bloc : il remonte dans un encadré
-> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
-> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
-> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
-> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
-> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
-> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
-> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
-> se rejoignent pas.
+> Un item porté par **deux diagnostics ou plus** remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête — **mais
+> seulement si son contenu l'est aussi** : dès qu'un seul de ses sous-items
+> n'appartient qu'à un diagnostic, l'item reste dans les sous-blocs, répété.
+> Un item de tête partagé aux sous-items privés déménagerait votre révision
+> dans un encadré qui ne vous concerne pas.
+>
+> Le suffixe d'un item partagé **nomme les diagnostics concernés** :
+> `*(3 grilles sur 12)* — *Angor · STEMI*` se lit « 3 des 12 grilles de la SSP
+> portent cet item, dont au moins une d'Angor et une de STEMI ». Le compte
+> vient en tête, les noms après le tiret : il ne dit **pas** que toutes les
+> grilles de ces diagnostics le portent. ⚠️ **Cet encadré se lit *avec* le
+> sous-bloc de votre diagnostic, pas à sa place.** Il est absent quand aucun
+> item n'est partagé, ce qui arrive souvent : le rapprochement entre grilles
+> reste purement lexical, et deux grilles qui prescrivent la même chose
+> autrement ne se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
 > (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
@@ -75,7 +82,7 @@ cssclasses:
 
 # Amaurose & Perte Brutale de Vision
 
-*5 grilles · 5 diagnostics documentés · 1 attendu sans grille* — [[SSP — Amaurose & Perte Brutale de Vision]]
+*5 grilles · 5 diagnostics documentés · 1 attendu absent du corpus* — [[SSP — Amaurose & Perte Brutale de Vision]]
 
 > [!abstract] Les 5 grilles fusionnées
 > - **AMBOSS-34** — AVC `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-34_-_Perte_de_vision_-_Homme_66_ans_-_Grille_ECOS.html>)
@@ -423,10 +430,7 @@ cssclasses:
 > 	- [ ] Auscultation des carotides des deux côtés
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Imagerie cérébrale *(AVC · OACR / Occlusion rétinienne — 2 grilles sur 5)***
-> 	- [ ] CT cérébral sans contraste *(AVC — 1 grille sur 5)*
-> 	- [ ] IRM cérébrale *(AVC — 1 grille sur 5)*
-> - [ ] **2. Diagnostic de travail *(Décollement de rétine · OACR / Occlusion rétinienne — 2 grilles sur 5)***
+> - [ ] **1. Diagnostic de travail *(2 grilles sur 5)* — *Décollement de rétine · OACR / Occlusion rétinienne***
 
 > [!success] 💊 Management — si AVC
 > - [ ] **1. Hypothèses diagnostiques**
@@ -437,13 +441,16 @@ cssclasses:
 > 	- [ ] TP, TCA
 > 	- [ ] Électrolytes, glucose sérique
 > 	- [ ] Troponine
-> - [ ] **3. Communication avec le patient**
+> - [ ] **3. Imagerie cérébrale**
+> 	- [ ] CT cérébral sans contraste
+> 	- [ ] IRM cérébrale
+> - [ ] **4. Communication avec le patient**
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **4. Conseil et soutien**
+> - [ ] **5. Conseil et soutien**
 > 	- [ ] Réaction appropriée au défi concernant la peur de mourir
 
 > [!success] 💊 Management — si Cataracte
@@ -498,18 +505,19 @@ cssclasses:
 > - [ ] **7. Propose une hospitalisation**
 
 > [!success] 💊 Management — si OACR / Occlusion rétinienne
-> - [ ] **1. Laboratoire**
-> - [ ] **2. Hémogramme**
-> - [ ] **3. Paramètres inflammatoires**
-> - [ ] **4. ECG**
-> - [ ] **5. Pas de thérapie fondée sur des preuves**
-> - [ ] **6. Adressage Stroke Center**
-> - [ ] **7. Investigations complémentaires**
-> - [ ] **8. Échocardiographie**
-> - [ ] **9. Doppler des carotides**
-> - [ ] **10. ECG de longue durée**
-> - [ ] **11. Prévention secondaire**
-> - [ ] **12. Anticoagulation orale**
-> - [ ] **13. Statine**
-> - [ ] **14. Contrôle de la tension artérielle**
-> - [ ] **15. Arrêt du tabac**
+> - [ ] **1. Imagerie cérébrale**
+> - [ ] **2. Laboratoire**
+> - [ ] **3. Hémogramme**
+> - [ ] **4. Paramètres inflammatoires**
+> - [ ] **5. ECG**
+> - [ ] **6. Pas de thérapie fondée sur des preuves**
+> - [ ] **7. Adressage Stroke Center**
+> - [ ] **8. Investigations complémentaires**
+> - [ ] **9. Échocardiographie**
+> - [ ] **10. Doppler des carotides**
+> - [ ] **11. ECG de longue durée**
+> - [ ] **12. Prévention secondaire**
+> - [ ] **13. Anticoagulation orale**
+> - [ ] **14. Statine**
+> - [ ] **15. Contrôle de la tension artérielle**
+> - [ ] **16. Arrêt du tabac**

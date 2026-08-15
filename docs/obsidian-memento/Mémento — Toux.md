@@ -5,7 +5,8 @@ type: memento-ecos-ssp
 ssp: "Toux"
 cas: 13
 diagnostics: 8
-attendus_sans_grille: 2
+attendus_documentes_ailleurs: 1
+attendus_absents_du_corpus: 1
 tags:
   - ecos/memento
   - ecos/grille-officielle
@@ -49,16 +50,22 @@ cssclasses:
 > `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
 > de la SSP.
 >
-> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
-> recopié dans chaque sous-bloc : il remonte dans un encadré
-> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
-> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
-> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
-> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
-> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
-> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
-> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
-> se rejoignent pas.
+> Un item porté par **deux diagnostics ou plus** remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête — **mais
+> seulement si son contenu l'est aussi** : dès qu'un seul de ses sous-items
+> n'appartient qu'à un diagnostic, l'item reste dans les sous-blocs, répété.
+> Un item de tête partagé aux sous-items privés déménagerait votre révision
+> dans un encadré qui ne vous concerne pas.
+>
+> Le suffixe d'un item partagé **nomme les diagnostics concernés** :
+> `*(3 grilles sur 12)* — *Angor · STEMI*` se lit « 3 des 12 grilles de la SSP
+> portent cet item, dont au moins une d'Angor et une de STEMI ». Le compte
+> vient en tête, les noms après le tiret : il ne dit **pas** que toutes les
+> grilles de ces diagnostics le portent. ⚠️ **Cet encadré se lit *avec* le
+> sous-bloc de votre diagnostic, pas à sa place.** Il est absent quand aucun
+> item n'est partagé, ce qui arrive souvent : le rapprochement entre grilles
+> reste purement lexical, et deux grilles qui prescrivent la même chose
+> autrement ne se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
 > (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
@@ -77,7 +84,7 @@ cssclasses:
 
 # Toux
 
-*13 grilles · 8 diagnostics documentés · 2 attendus sans grille* — [[SSP — Toux]]
+*13 grilles · 8 diagnostics documentés · 1 attendu documenté ailleurs · 1 attendu absent du corpus* — [[SSP — Toux]]
 
 > [!abstract] Les 13 grilles fusionnées
 > - **AMBOSS-18** — Asthme `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-18_-_Toux_chronique_-_Femme_21_ans_-_Grille_ECOS.html>)
@@ -893,283 +900,294 @@ cssclasses:
 > 	- [ ] Évaluation neurologique de base
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Hypothèses diagnostiques *(Asthme · BPCO · Cancer pulmonaire — 3 grilles sur 13)***
-> - [ ] **2. Examens complémentaires de première intention *(Asthme · BPCO · Cancer pulmonaire · Pneumonie — 4 grilles sur 13)***
-> 	- [ ] Gaz du sang artériel, oxymétrie de pouls *(Asthme · BPCO — 2 grilles sur 13)*
-> 	- [ ] FSC avec différentielle *(Asthme — 1 grille sur 13)*
-> 	- [ ] ECG *(BPCO — 1 grille sur 13)*
-> 	- [ ] Échocardiographie transthoracique *(BPCO — 1 grille sur 13)*
-> 	- [ ] BNP, NT-pro BNP *(BPCO — 1 grille sur 13)*
-> 	- [ ] Radiographie thoracique *(BPCO · Cancer pulmonaire — 2 grilles sur 13)*
-> 	- [ ] Oxymétrie de pouls *(Cancer pulmonaire — 1 grille sur 13)*
-> 	- [ ] Gazométrie artérielle *(Cancer pulmonaire — 1 grille sur 13)*
-> 	- [ ] Radiographie thorax *(Pneumonie — 1 grille sur 13)*
-> 	- [ ] FSC *(Pneumonie — 1 grille sur 13)*
-> 	- [ ] CRP *(Pneumonie — 1 grille sur 13)*
-> 	- [ ] Saturation O2 *(Pneumonie — 1 grille sur 13)*
-> 	- [ ] Bandelette urinaire *(Pneumonie — 1 grille sur 13)*
-> - [ ] **3. Examens d'imagerie *(Asthme · Insuffisance cardiaque (décompensée) — 2 grilles sur 13)***
-> 	- [ ] Radiographie thoracique
-> 	- [ ] Signes de surcharge (cardiomégalie, redistribution vasculaire) *(Insuffisance cardiaque (décompensée) — 1 grille sur 13)*
-> 	- [ ] Lignes de Kerley *(Insuffisance cardiaque (décompensée) — 1 grille sur 13)*
-> 	- [ ] Épanchement pleural *(Insuffisance cardiaque (décompensée) — 1 grille sur 13)*
-> - [ ] **4. Communication avec la patiente *(Asthme · BPCO — 2 grilles sur 13)***
+> - [ ] **1. Hypothèses diagnostiques *(3 grilles sur 13)* — *Asthme · BPCO · Cancer pulmonaire***
+> - [ ] **2. Communication avec la patiente *(2 grilles sur 13)* — *Asthme · BPCO***
 > 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions de la patiente
-> - [ ] **5. Conseil et soutien *(Asthme · BPCO · Cancer pulmonaire — 3 grilles sur 13)***
-> 	- [ ] Conseil sur les drogues récréatives *(Asthme — 1 grille sur 13)*
-> 	- [ ] Offrir mouchoir et/ou eau pendant la crise de toux de la patiente *(Asthme — 1 grille sur 13)*
-> 	- [ ] Réaction appropriée au défi concernant la guérison *(Asthme — 1 grille sur 13)*
-> 	- [ ] Rassurer sur les options thérapeutiques *(Asthme — 1 grille sur 13)*
-> 	- [ ] Éducation sur l'asthme si confirmé *(Asthme — 1 grille sur 13)*
-> 	- [ ] Offrir mouchoir et eau lors de la crise de toux *(BPCO — 1 grille sur 13)*
-> 	- [ ] Conseil sur l'arrêt du tabac *(BPCO · Cancer pulmonaire — 2 grilles sur 13)*
-> 	- [ ] Conseil sur les options de soutien pour l'exercice régulier *(BPCO — 1 grille sur 13)*
-> 	- [ ] Réaction appropriée au défi concernant l'arrêt du tabac *(BPCO — 1 grille sur 13)*
-> 	- [ ] Éducation sur les risques du tabagisme *(BPCO — 1 grille sur 13)*
-> 	- [ ] Réaction appropriée au défi sur les coûts *(Cancer pulmonaire — 1 grille sur 13)*
-> 	- [ ] Orientation vers services sociaux *(Cancer pulmonaire — 1 grille sur 13)*
-> 	- [ ] Soutien émotionnel face à l'inquiétude *(Cancer pulmonaire — 1 grille sur 13)*
-> 	- [ ] Information sur l'urgence du diagnostic *(Cancer pulmonaire — 1 grille sur 13)*
-> - [ ] **6. Diagnostic principal suspecté *(Insuffisance cardiaque (décompensée) · Tuberculose — 2 grilles sur 13)***
-> 	- [ ] Tuberculose pulmonaire *(Tuberculose — 1 grille sur 13)*
-> 	- [ ] Justification épidémiologique *(Tuberculose — 1 grille sur 13)*
-> 	- [ ] Justification clinique *(Tuberculose — 1 grille sur 13)*
-> 	- [ ] Degré de contagiosité *(Tuberculose — 1 grille sur 13)*
-> 	- [ ] Insuffisance cardiaque congestive *(Insuffisance cardiaque (décompensée) — 1 grille sur 13)*
-> 	- [ ] Type (gauche, droite, globale) *(Insuffisance cardiaque (décompensée) — 1 grille sur 13)*
-> 	- [ ] Étiologie probable (valvulaire) *(Insuffisance cardiaque (décompensée) — 1 grille sur 13)*
-> 	- [ ] Classification NYHA *(Insuffisance cardiaque (décompensée) — 1 grille sur 13)*
-> - [ ] **7. Diagnostics différentiels (au moins 2-3) *(Insuffisance cardiaque (décompensée) · Pneumonie · Tuberculose — 3 grilles sur 13)***
-> - [ ] **8. Diagnostic principal évoqué *(Asthme · Faux-croup · Pneumonie — 3 grilles sur 13)***
-> - [ ] **9. Examens complémentaires proposés *(Asthme · Pneumonie — 2 grilles sur 13)***
-> 	- [ ] Radiographie thoracique
-> 	- [ ] Bilan biologique (FSC, marqueurs inflammatoires) *(Pneumonie — 1 grille sur 13)*
-> 	- [ ] Hémocultures *(Pneumonie — 1 grille sur 13)*
-> 	- [ ] Gazométrie artérielle *(Asthme — 1 grille sur 13)*
-> 	- [ ] Bilan sanguin (FSC, CRP, CK, troponines, D-dimères) *(Asthme — 1 grille sur 13)*
-> 	- [ ] Épreuves fonctionnelles respiratoires avec test de provocation bronchique *(Asthme — 1 grille sur 13)*
-> 	- [ ] ECG/Échocardiographie *(Asthme — 1 grille sur 13)*
-> 	- [ ] Tests d'allergie *(Asthme — 1 grille sur 13)*
-> - [ ] **10. Traitement proposé *(Asthme · Pneumonie — 2 grilles sur 13)***
-> 	- [ ] Antibiothérapie (amoxicilline, Augmentin ou macrolide) *(Pneumonie — 1 grille sur 13)*
-> 	- [ ] Traitement symptomatique (antipyrétique, hydratation) *(Pneumonie — 1 grille sur 13)*
-> 	- [ ] Bêta-2-mimétiques (salbutamol) en inhalation *(Asthme — 1 grille sur 13)*
-> 	- [ ] Éducation thérapeutique *(Asthme — 1 grille sur 13)*
-> 	- [ ] Éviction des facteurs déclenchants *(Asthme — 1 grille sur 13)*
-> - [ ] **11. Diagnostics différentiels *(Coqueluche · Faux-croup — 3 grilles sur 13)***
-> 	- [ ] Bronchiolite *(Coqueluche — 2 grilles sur 13)*
-> 	- [ ] Pneumonie *(Coqueluche — 2 grilles sur 13)*
-> 	- [ ] Faux croup *(Coqueluche — 2 grilles sur 13)*
-> 	- [ ] Infection virale des voies respiratoires supérieures *(Coqueluche — 2 grilles sur 13)*
-> - [ ] **12. Prise en charge immédiate *(Cancer pulmonaire · Coqueluche — 3 grilles sur 13)***
-> 	- [ ] Hospitalisation *(Coqueluche — 2 grilles sur 13)*
-> 	- [ ] Hydratation *(Coqueluche — 2 grilles sur 13)*
-> 	- [ ] Alimentation *(Coqueluche — 2 grilles sur 13)*
-> 	- [ ] Antibiotiques *(Coqueluche — 2 grilles sur 13)*
-> 	- [ ] Arrêt du tabac immédiat et accompagnement *(Cancer pulmonaire — 1 grille sur 13)*
-> 	- [ ] Consultation pneumologique urgente *(Cancer pulmonaire — 1 grille sur 13)*
-> 	- [ ] Surveillance clinique (quantité hémoptysie, état respiratoire) *(Cancer pulmonaire — 1 grille sur 13)*
-> 	- [ ] Information et rassurance de la patiente *(Cancer pulmonaire — 1 grille sur 13)*
+> - [ ] **3. Diagnostics différentiels (au moins 2-3) *(3 grilles sur 13)* — *Insuffisance cardiaque (décompensée) · Pneumonie · Tuberculose***
+> - [ ] **4. Diagnostic principal évoqué *(3 grilles sur 13)* — *Asthme · Faux-croup · Pneumonie***
 
 > [!success] 💊 Management — si Asthme
-> - [ ] **1. Examens de fonction respiratoire *(1 grille sur 2)***
+> - [ ] **1. Examens complémentaires de première intention *(1 grille sur 2)***
+> 	- [ ] Gaz du sang artériel, oxymétrie de pouls
+> 	- [ ] FSC avec différentielle
+> - [ ] **2. Examens de fonction respiratoire *(1 grille sur 2)***
 > 	- [ ] Mesure du débit de pointe
 > 	- [ ] Tests de fonction pulmonaire (EFR)
 > 	- [ ] Test de provocation à la méthacholine
-> - [ ] **2. Diagnostics différentiels cardiaques *(1 grille sur 2)***
-> - [ ] **3. Diagnostics différentiels pulmonaires *(1 grille sur 2)***
-> - [ ] **4. Interprétation des épreuves fonctionnelles respiratoires *(1 grille sur 2)***
+> - [ ] **3. Examens d'imagerie *(1 grille sur 2)***
+> 	- [ ] Radiographie thoracique
+> - [ ] **4. Conseil et soutien *(1 grille sur 2)***
+> 	- [ ] Conseil sur les drogues récréatives
+> 	- [ ] Offrir mouchoir et/ou eau pendant la crise de toux de la patiente
+> 	- [ ] Réaction appropriée au défi concernant la guérison
+> 	- [ ] Rassurer sur les options thérapeutiques
+> 	- [ ] Éducation sur l'asthme si confirmé
+> - [ ] **5. Examens complémentaires proposés *(1 grille sur 2)***
+> 	- [ ] Radiographie thoracique
+> 	- [ ] Gazométrie artérielle
+> 	- [ ] Bilan sanguin (FSC, CRP, CK, troponines, D-dimères)
+> 	- [ ] Épreuves fonctionnelles respiratoires avec test de provocation bronchique
+> 	- [ ] ECG/Échocardiographie
+> 	- [ ] Tests d'allergie
+> - [ ] **6. Traitement proposé *(1 grille sur 2)***
+> 	- [ ] Bêta-2-mimétiques (salbutamol) en inhalation
+> 	- [ ] Éducation thérapeutique
+> 	- [ ] Éviction des facteurs déclenchants
+> - [ ] **7. Diagnostics différentiels cardiaques *(1 grille sur 2)***
+> - [ ] **8. Diagnostics différentiels pulmonaires *(1 grille sur 2)***
+> - [ ] **9. Interprétation des épreuves fonctionnelles respiratoires *(1 grille sur 2)***
 > 	- [ ] Syndrome obstructif
 > 	- [ ] Résistances centrales augmentées
 > 	- [ ] Volume résiduel augmenté
 > 	- [ ] Test de réversibilité
 
 > [!success] 💊 Management — si BPCO
-> - [ ] **1. Tests de fonction pulmonaire**
+> - [ ] **1. Examens complémentaires de première intention**
+> 	- [ ] Gaz du sang artériel, oxymétrie de pouls
+> 	- [ ] ECG
+> 	- [ ] Échocardiographie transthoracique
+> 	- [ ] BNP, NT-pro BNP
+> 	- [ ] Radiographie thoracique
+> - [ ] **2. Conseil et soutien**
+> 	- [ ] Offrir mouchoir et eau lors de la crise de toux
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Conseil sur les options de soutien pour l'exercice régulier
+> 	- [ ] Réaction appropriée au défi concernant l'arrêt du tabac
+> 	- [ ] Éducation sur les risques du tabagisme
+> - [ ] **3. Tests de fonction pulmonaire**
 > 	- [ ] Spirométrie avec test de réversibilité
 
 > [!success] 💊 Management — si Bronchiolite
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Cancer pulmonaire
-> - [ ] **1. Examens microbiologiques *(1 grille sur 2)***
+> - [ ] **1. Examens complémentaires de première intention *(1 grille sur 2)***
+> 	- [ ] Radiographie thoracique
+> 	- [ ] Oxymétrie de pouls
+> 	- [ ] Gazométrie artérielle
+> - [ ] **2. Conseil et soutien *(1 grille sur 2)***
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Réaction appropriée au défi sur les coûts
+> 	- [ ] Orientation vers services sociaux
+> 	- [ ] Soutien émotionnel face à l'inquiétude
+> 	- [ ] Information sur l'urgence du diagnostic
+> - [ ] **3. Examens microbiologiques *(1 grille sur 2)***
 > 	- [ ] Coloration de Gram des expectorations, microscopie avec coloration acido-résistante, cytologie, et culture de routine et mycobactérienne
-> - [ ] **2. Examens biologiques et imagerie avancée *(1 grille sur 2)***
+> - [ ] **4. Examens biologiques et imagerie avancée *(1 grille sur 2)***
 > 	- [ ] FSC avec formule
 > 	- [ ] CT thoracique
-> - [ ] **3. Communication avec le patient *(1 grille sur 2)***
+> - [ ] **5. Communication avec le patient *(1 grille sur 2)***
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **4. Diagnostic principal et diagnostics différentiels *(1 grille sur 2)***
+> - [ ] **6. Prise en charge immédiate *(1 grille sur 2)***
+> 	- [ ] Arrêt du tabac immédiat et accompagnement
+> 	- [ ] Consultation pneumologique urgente
+> 	- [ ] Surveillance clinique (quantité hémoptysie, état respiratoire)
+> 	- [ ] Information et rassurance de la patiente
+> - [ ] **7. Diagnostic principal et diagnostics différentiels *(1 grille sur 2)***
 > 	- [ ] Cancer pulmonaire (forte suspicion)
 > 	- [ ] BPCO avec exacerbation
 > 	- [ ] Tuberculose pulmonaire
 > 	- [ ] Bronchectasies
-> - [ ] **5. Examens de première intention *(1 grille sur 2)***
+> - [ ] **8. Examens de première intention *(1 grille sur 2)***
 > 	- [ ] Radiographie thoracique (face et profil)
 > 	- [ ] FSC avec plaquettes
 > 	- [ ] Bilan de coagulation (TP, TCA)
 > 	- [ ] Ionogramme, créatinine, urée
-> - [ ] **6. Examens de seconde intention *(1 grille sur 2)***
+> - [ ] **9. Examens de seconde intention *(1 grille sur 2)***
 > 	- [ ] CT thoracique avec injection
 > 	- [ ] Fibroscopie bronchique avec lavage et biopsie
 > 	- [ ] Recherche de BK dans les expectorations (3 prélèvements)
 > 	- [ ] Spirométrie complète
-> - [ ] **7. Examens complémentaires selon orientation *(1 grille sur 2)***
+> - [ ] **10. Examens complémentaires selon orientation *(1 grille sur 2)***
 > 	- [ ] CT thoraco-abdomino-pelvien (si suspicion néoplasique)
 > 	- [ ] PET scan (bilan d'extension)
 > 	- [ ] Échocardiographie (si suspicion cardiaque)
 > 	- [ ] Angio-CT pulmonaire (si suspicion d'embolie)
-> - [ ] **8. Surveillance et suivi *(1 grille sur 2)***
+> - [ ] **11. Surveillance et suivi *(1 grille sur 2)***
 > 	- [ ] Surveillance de l'abondance de l'hémoptysie
 > 	- [ ] Réévaluation rapide si aggravation
 > 	- [ ] Coordination avec le pneumologue
 > 	- [ ] Planification des examens complémentaires
 
 > [!success] 💊 Management — si Coqueluche
-> - [ ] **1. Hypothèse diagnostique : Coqueluche**
-> - [ ] **2. Examens complémentaires**
+> - [ ] **1. Diagnostics différentiels**
+> 	- [ ] Bronchiolite
+> 	- [ ] Pneumonie
+> 	- [ ] Faux croup
+> 	- [ ] Infection virale des voies respiratoires supérieures
+> - [ ] **2. Hypothèse diagnostique : Coqueluche**
+> - [ ] **3. Examens complémentaires**
 > 	- [ ] Prise de sang (FSC, CRP, Hémoculture)
 > 	- [ ] Recherche bactério dans les expectorations
 > 	- [ ] Radiographie/Ultrason thoracique
+> - [ ] **4. Prise en charge immédiate**
+> 	- [ ] Hospitalisation
+> 	- [ ] Hydratation
+> 	- [ ] Alimentation
+> 	- [ ] Antibiotiques
 
 > [!success] 💊 Management — si Faux-croup
-> - [ ] **1. Évaluation de l'urgence**
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Évaluation de l'urgence**
 > 	- [ ] Mentionne la possibilité d'une consultation urgente
 > 	- [ ] Reconnaît l'impossibilité de déplacement immédiat
 > 	- [ ] Propose surveillance et rappel dans 1 heure
-> - [ ] **2. Conseils thérapeutiques**
+> - [ ] **3. Conseils thérapeutiques**
 > 	- [ ] Mesurer la fièvre, si présente donner paracétamol/Algifor sirop
 > 	- [ ] Assurer une bonne humidification de l'air
 > 	- [ ] Remèdes maison : lait au miel, tisanes, compresses de pommes de terre
 > 	- [ ] Installer l'enfant dans la salle de bain avec eau chaude qui coule
 > 	- [ ] Calmer l'enfant
-> - [ ] **3. Signes d'alarme à surveiller**
+> - [ ] **4. Signes d'alarme à surveiller**
 > 	- [ ] Tirage intercostal ou sus-sternal
 > 	- [ ] Peau bleutée (cyanose)
 > 	- [ ] Pas d'amélioration malgré les mesures
 > 	- [ ] Refus de boire
 > 	- [ ] Dégradation de l'état général
 > 	- [ ] Expectorations sanglantes
-> - [ ] **4. Organisation du suivi**
+> - [ ] **5. Organisation du suivi**
 > 	- [ ] Proposer rappel dans 1 heure
 > 	- [ ] Si aggravation, envoyer ambulance pour chercher l'enfant
 > 	- [ ] Disponibilité pour nouveau contact si besoin
-> - [ ] **5. Vérification de la compréhension**
+> - [ ] **6. Vérification de la compréhension**
 > 	- [ ] Fait répéter les recommandations par l'appelant
 > 	- [ ] Demande accord avec les recommandations
 > 	- [ ] Demande s'il y a des questions ou points peu clairs
-> - [ ] **6. Clôture appropriée**
+> - [ ] **7. Clôture appropriée**
 > 	- [ ] Encourage à rappeler en cas d'incertitude
 > 	- [ ] Encourage à se présenter si nécessaire
 > 	- [ ] Attitude rassurante et professionnelle
 
 > [!success] 💊 Management — si Insuffisance cardiaque (décompensée)
-> - [ ] **1. Examens biologiques**
+> - [ ] **1. Examens d'imagerie**
+> 	- [ ] Radiographie thoracique
+> 	- [ ] Signes de surcharge (cardiomégalie, redistribution vasculaire)
+> 	- [ ] Lignes de Kerley
+> 	- [ ] Épanchement pleural
+> - [ ] **2. Diagnostic principal suspecté**
+> 	- [ ] Insuffisance cardiaque congestive
+> 	- [ ] Type (gauche, droite, globale)
+> 	- [ ] Étiologie probable (valvulaire)
+> 	- [ ] Classification NYHA
+> - [ ] **3. Examens biologiques**
 > 	- [ ] BNP ou NT-proBNP
 > 	- [ ] Troponine
 > 	- [ ] Marqueurs inflammatoires (CRP)
 > 	- [ ] Fonction rénale et ionogramme
 > 	- [ ] FSC
-> - [ ] **2. Examens cardiologiques**
+> - [ ] **4. Examens cardiologiques**
 > 	- [ ] ECG (troubles du rythme, HVG)
 > 	- [ ] Échocardiographie
 > 	- [ ] Évaluation de la FEVG
 > 	- [ ] Évaluation valvulaire (sténose aortique?)
-> - [ ] **3. Traitement médicamenteux de l'IC**
+> - [ ] **5. Traitement médicamenteux de l'IC**
 > 	- [ ] Optimisation IEC (déjà sous Lisinopril)
 > 	- [ ] Diurétiques de l'anse (furosémide)
 > 	- [ ] Bêtabloquant (déjà sous métoprolol)
 > 	- [ ] Antagoniste de l'aldostérone si indiqué
-> - [ ] **4. Traitement symptomatique**
+> - [ ] **6. Traitement symptomatique**
 > 	- [ ] Restriction hydrosodée
 > 	- [ ] Oxygénothérapie si hypoxémie
 > 	- [ ] Position semi-assise
 > 	- [ ] Surveillance du poids quotidien
-> - [ ] **5. Évaluation de la sévérité**
+> - [ ] **7. Évaluation de la sévérité**
 > 	- [ ] Critères d'hospitalisation
 > 	- [ ] Signes de décompensation aiguë
 > 	- [ ] Stabilité hémodynamique
 > 	- [ ] Compliance thérapeutique
-> - [ ] **6. Prise en charge étiologique**
+> - [ ] **8. Prise en charge étiologique**
 > 	- [ ] Évaluation chirurgicale si sténose aortique sévère
 > 	- [ ] Remplacement valvulaire aortique
 > 	- [ ] TAVI si risque chirurgical élevé
 > 	- [ ] Optimisation du traitement médical
-> - [ ] **7. Organisation du transfert si nécessaire**
+> - [ ] **9. Organisation du transfert si nécessaire**
 > 	- [ ] Indication d'hospitalisation
 > 	- [ ] Service de cardiologie
 > 	- [ ] Transport médicalisé
 > 	- [ ] Information du patient et de la famille
-> - [ ] **8. Suivi et éducation thérapeutique**
+> - [ ] **10. Suivi et éducation thérapeutique**
 > 	- [ ] Surveillance des symptômes
 > 	- [ ] Pesée quotidienne
 > 	- [ ] Signes d'alarme
 > 	- [ ] Observance médicamenteuse
 
 > [!success] 💊 Management — si Pneumonie
-> - [ ] **1. Laboratoire *(1 grille sur 3)***
-> - [ ] **2. Hémogramme *(1 grille sur 3)***
-> - [ ] **3. Valeurs inflammatoires (CRP) *(1 grille sur 3)***
-> - [ ] **4. Fonction rénale *(1 grille sur 3)***
-> - [ ] **5. Gazométrie artérielle *(1 grille sur 3)***
-> - [ ] **6. Radiographie *(1 grille sur 3)***
-> - [ ] **7. ECG *(1 grille sur 3)***
-> - [ ] **8. Diagnostic de travail *(1 grille sur 3)***
-> - [ ] **9. Antibiothérapie intraveineuse *(1 grille sur 3)***
-> - [ ] **10. Oxygénothérapie *(1 grille sur 3)***
-> - [ ] **11. Apport hydrique *(1 grille sur 3)***
-> - [ ] **12. Analgésie et antipyrèse *(1 grille sur 3)***
-> - [ ] **13. Hospitalisation *(1 grille sur 3)***
-> - [ ] **14. Suivi évolutif *(1 grille sur 3)***
-> - [ ] **15. Recommandation vaccinale *(1 grille sur 3)***
-> - [ ] **16. Diagnostic étiologique *(1 grille sur 3)***
-> - [ ] **17. Hémocultures *(1 grille sur 3)***
-> - [ ] **18. Prélèvement Covid/Influenza *(1 grille sur 3)***
-> - [ ] **19. Diagnostic des expectorations *(1 grille sur 3)***
-> - [ ] **20. Évaluation du score CURB-65 *(1 grille sur 3)***
+> - [ ] **1. Examens complémentaires de première intention *(1 grille sur 3)***
+> 	- [ ] Radiographie thorax
+> 	- [ ] FSC
+> 	- [ ] CRP
+> 	- [ ] Saturation O2
+> 	- [ ] Bandelette urinaire
+> - [ ] **2. Laboratoire *(1 grille sur 3)***
+> - [ ] **3. Hémogramme *(1 grille sur 3)***
+> - [ ] **4. Valeurs inflammatoires (CRP) *(1 grille sur 3)***
+> - [ ] **5. Fonction rénale *(1 grille sur 3)***
+> - [ ] **6. Gazométrie artérielle *(1 grille sur 3)***
+> - [ ] **7. Radiographie *(1 grille sur 3)***
+> - [ ] **8. ECG *(1 grille sur 3)***
+> - [ ] **9. Diagnostic de travail *(1 grille sur 3)***
+> - [ ] **10. Antibiothérapie intraveineuse *(1 grille sur 3)***
+> - [ ] **11. Oxygénothérapie *(1 grille sur 3)***
+> - [ ] **12. Apport hydrique *(1 grille sur 3)***
+> - [ ] **13. Analgésie et antipyrèse *(1 grille sur 3)***
+> - [ ] **14. Hospitalisation *(1 grille sur 3)***
+> - [ ] **15. Suivi évolutif *(1 grille sur 3)***
+> - [ ] **16. Recommandation vaccinale *(1 grille sur 3)***
+> - [ ] **17. Diagnostic étiologique *(1 grille sur 3)***
+> - [ ] **18. Hémocultures *(1 grille sur 3)***
+> - [ ] **19. Prélèvement Covid/Influenza *(1 grille sur 3)***
+> - [ ] **20. Diagnostic des expectorations *(1 grille sur 3)***
+> - [ ] **21. Examens complémentaires proposés *(1 grille sur 3)***
+> 	- [ ] Radiographie thoracique
+> 	- [ ] Bilan biologique (FSC, marqueurs inflammatoires)
+> 	- [ ] Hémocultures
+> - [ ] **22. Traitement proposé *(1 grille sur 3)***
+> 	- [ ] Antibiothérapie (amoxicilline, Augmentin ou macrolide)
+> 	- [ ] Traitement symptomatique (antipyrétique, hydratation)
+> - [ ] **23. Évaluation du score CURB-65 *(1 grille sur 3)***
 > 	- [ ] C - Confusion
 > 	- [ ] U - Urée > 7 mmol/L
 > 	- [ ] R - Fréquence respiratoire ≥ 30/min
 > 	- [ ] B - TA < 90/60 mmHg
 > 	- [ ] 65 - Âge ≥ 65 ans
-> - [ ] **21. Organisation de la prise en charge *(1 grille sur 3)***
+> - [ ] **24. Organisation de la prise en charge *(1 grille sur 3)***
 > 	- [ ] Traitement ambulatoire vs hospitalisation
 > 	- [ ] Arrêt de travail
 > 	- [ ] Contrôle à prévoir (48-72h)
-> - [ ] **22. Orientation diagnostique principale *(1 grille sur 3)***
+> - [ ] **25. Orientation diagnostique principale *(1 grille sur 3)***
 > 	- [ ] Pneumonie communautaire
 > 	- [ ] Évaluation de la gravité
 > 	- [ ] Scores de gravité
 > 	- [ ] Indication d'hospitalisation
-> - [ ] **23. Diagnostic différentiel respiratoire *(1 grille sur 3)***
-> - [ ] **24. Examens complémentaires selon gravité *(1 grille sur 3)***
+> - [ ] **26. Diagnostic différentiel respiratoire *(1 grille sur 3)***
+> - [ ] **27. Examens complémentaires selon gravité *(1 grille sur 3)***
 > 	- [ ] Hémocultures
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] PCT
 > 	- [ ] PCR respiratoire
 > 	- [ ] ECBC
-> - [ ] **25. Traitement antibiotique ambulatoire *(1 grille sur 3)***
-> - [ ] **26. Traitements symptomatiques et mesures générales *(1 grille sur 3)***
+> - [ ] **28. Traitement antibiotique ambulatoire *(1 grille sur 3)***
+> - [ ] **29. Traitements symptomatiques et mesures générales *(1 grille sur 3)***
 > 	- [ ] Antipyrétiques
 > 	- [ ] Hydratation
 > 	- [ ] Repos et arrêt de travail
 > 	- [ ] Oxygénothérapie si SpO2 < 92%
 > 	- [ ] Kinésithérapie respiratoire si encombrement
-> - [ ] **27. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
+> - [ ] **30. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
 > 	- [ ] Réévaluation clinique à 48-72h
 > 	- [ ] Critères CURB-65 ≥ 2
 > 	- [ ] Désaturation < 90% en air ambiant
 > 	- [ ] Comorbidités décompensées
 > 	- [ ] Échec traitement ambulatoire
-> - [ ] **28. Prévention et conseils *(1 grille sur 3)***
+> - [ ] **31. Prévention et conseils *(1 grille sur 3)***
 > 	- [ ] Sevrage tabagique
 > 	- [ ] Vaccination antigrippale annuelle
 > 	- [ ] Vaccination antipneumococcique
@@ -1180,37 +1198,42 @@ cssclasses:
 > *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Éruption Cutanée]] (1 grille).
 
 > [!success] 💊 Management — si Tuberculose
-> - [ ] **1. Examens diagnostiques pour la tuberculose**
+> - [ ] **1. Diagnostic principal suspecté**
+> 	- [ ] Tuberculose pulmonaire
+> 	- [ ] Justification épidémiologique
+> 	- [ ] Justification clinique
+> 	- [ ] Degré de contagiosité
+> - [ ] **2. Examens diagnostiques pour la tuberculose**
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Test de Mantoux/IGRA
 > 	- [ ] Culture des expectorations (3 échantillons)
 > 	- [ ] PCR tuberculose
-> - [ ] **2. Reconnaissance radiologique**
+> - [ ] **3. Reconnaissance radiologique**
 > 	- [ ] Identification des lésions tuberculeuses
 > 	- [ ] Localisation (apex)
 > 	- [ ] Cavernes
 > 	- [ ] Infiltrats
-> - [ ] **3. Autres examens complémentaires**
+> - [ ] **4. Autres examens complémentaires**
 > 	- [ ] FSC, CRP
 > 	- [ ] Fonction hépatique et rénale (pré-thérapeutique)
 > 	- [ ] Sérologie VIH
 > 	- [ ] Test de grossesse si femme en âge de procréer
-> - [ ] **4. Traitement antituberculeux**
+> - [ ] **5. Traitement antituberculeux**
 > 	- [ ] Quadrithérapie initiale (RHEZ)
 > 	- [ ] Durée du traitement (6 mois minimum)
 > 	- [ ] Surveillance des effets secondaires
 > 	- [ ] DOT (Directly Observed Therapy)
-> - [ ] **5. Mesures d'isolement et de santé publique**
+> - [ ] **6. Mesures d'isolement et de santé publique**
 > 	- [ ] Hospitalisation en chambre d'isolement respiratoire
 > 	- [ ] Port du masque FFP2
 > 	- [ ] Déclaration obligatoire
 > 	- [ ] Enquête d'entourage
-> - [ ] **6. Information et éducation du patient**
+> - [ ] **7. Information et éducation du patient**
 > 	- [ ] Explication de la maladie
 > 	- [ ] Importance de l'observance
 > 	- [ ] Durée du traitement
 > 	- [ ] Mesures de protection de l'entourage
-> - [ ] **7. Suivi prévu**
+> - [ ] **8. Suivi prévu**
 > 	- [ ] Contrôles réguliers
 > 	- [ ] Surveillance de l'efficacité
 > 	- [ ] Dépistage des effets secondaires

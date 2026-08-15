@@ -6,7 +6,8 @@ ssp: "Dysurie"
 specialite: "Néphro-Urologie"
 cas: 4
 diagnostics: 4
-attendus_sans_grille: 2
+attendus_documentes_ailleurs: 1
+attendus_absents_du_corpus: 1
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -48,16 +49,22 @@ cssclasses:
 > `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
 > de la SSP.
 >
-> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
-> recopié dans chaque sous-bloc : il remonte dans un encadré
-> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
-> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
-> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
-> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
-> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
-> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
-> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
-> se rejoignent pas.
+> Un item porté par **deux diagnostics ou plus** remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête — **mais
+> seulement si son contenu l'est aussi** : dès qu'un seul de ses sous-items
+> n'appartient qu'à un diagnostic, l'item reste dans les sous-blocs, répété.
+> Un item de tête partagé aux sous-items privés déménagerait votre révision
+> dans un encadré qui ne vous concerne pas.
+>
+> Le suffixe d'un item partagé **nomme les diagnostics concernés** :
+> `*(3 grilles sur 12)* — *Angor · STEMI*` se lit « 3 des 12 grilles de la SSP
+> portent cet item, dont au moins une d'Angor et une de STEMI ». Le compte
+> vient en tête, les noms après le tiret : il ne dit **pas** que toutes les
+> grilles de ces diagnostics le portent. ⚠️ **Cet encadré se lit *avec* le
+> sous-bloc de votre diagnostic, pas à sa place.** Il est absent quand aucun
+> item n'est partagé, ce qui arrive souvent : le rapprochement entre grilles
+> reste purement lexical, et deux grilles qui prescrivent la même chose
+> autrement ne se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
 > (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
@@ -76,7 +83,7 @@ cssclasses:
 
 # Dysurie
 
-*Néphro-Urologie · 4 grilles · 4 diagnostics documentés · 2 attendus sans grille* — [[SSP — Dysurie]]
+*Néphro-Urologie · 4 grilles · 4 diagnostics documentés · 1 attendu documenté ailleurs · 1 attendu absent du corpus* — [[SSP — Dysurie]]
 
 > [!abstract] Les 4 grilles fusionnées
 > - **AZYGOS-8** — Suspicion d'hyperplasie bénigne de la prostate `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/f5e3b513-caf4-4300-ad3e-bde97d0d54ab.json>)
@@ -309,47 +316,43 @@ cssclasses:
 > - [ ] **35. Simulation - palpation vésicale *(Infection urinaire (cystite))***
 > 	- [ ] Réaction appropriée si palpation vessie
 
-> [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Prévention et conseils *(Infection à Chlamydia trachomatis · Urétrite sexuellement transmissible — 2 grilles sur 4)***
-> 	- [ ] Utilisation systématique du préservatif *(Urétrite sexuellement transmissible — 1 grille sur 4)*
-> 	- [ ] Dépistage régulier si comportements à risque *(Urétrite sexuellement transmissible — 1 grille sur 4)*
-> 	- [ ] Information sur les IST *(Urétrite sexuellement transmissible — 1 grille sur 4)*
-> 	- [ ] Vaccination hépatite B si non fait *(Urétrite sexuellement transmissible — 1 grille sur 4)*
-> 	- [ ] Utilisation du préservatif *(Infection à Chlamydia trachomatis — 1 grille sur 4)*
-> 	- [ ] Dépistage régulier si partenaires multiples *(Infection à Chlamydia trachomatis — 1 grille sur 4)*
-> 	- [ ] Notification des partenaires *(Infection à Chlamydia trachomatis — 1 grille sur 4)*
-> 	- [ ] Suivi après traitement *(Infection à Chlamydia trachomatis — 1 grille sur 4)*
-> - [ ] **2. Diagnostics différentiels évoqués *(Infection urinaire (cystite) · Infection à Chlamydia trachomatis — 2 grilles sur 4)***
-> 	- [ ] Infection à Neisseria gonorrhoeae *(Infection à Chlamydia trachomatis — 1 grille sur 4)*
-> 	- [ ] Infection à Trichomonas vaginalis *(Infection à Chlamydia trachomatis — 1 grille sur 4)*
-> 	- [ ] Infection à Mycoplasma *(Infection à Chlamydia trachomatis — 1 grille sur 4)*
-> 	- [ ] Cystite simple *(Infection à Chlamydia trachomatis — 1 grille sur 4)*
-> 	- [ ] Pyélonéphrite *(Infection urinaire (cystite) — 1 grille sur 4)*
-> 	- [ ] Infections sexuellement transmissibles (gonorrhée, chlamydia, syphilis, VIH) *(Infection urinaire (cystite) — 1 grille sur 4)*
-> - [ ] **3. Traitement proposé *(Infection urinaire (cystite) · Infection à Chlamydia trachomatis — 2 grilles sur 4)***
-> 	- [ ] Azithromycine 1g dose unique *(Infection à Chlamydia trachomatis — 1 grille sur 4)*
-> 	- [ ] ± Ceftriaxone 250mg IM *(Infection à Chlamydia trachomatis — 1 grille sur 4)*
-> 	- [ ] Traitement du partenaire *(Infection à Chlamydia trachomatis — 1 grille sur 4)*
-> 	- [ ] Abstinence/protection pendant traitement *(Infection à Chlamydia trachomatis — 1 grille sur 4)*
-> 	- [ ] Antibiothérapie pour infection urinaire *(Infection urinaire (cystite) — 1 grille sur 4)*
-
 > [!success] 💊 Management — si Infection à Chlamydia trachomatis
-> - [ ] **1. Hypothèse diagnostique principale**
+> - [ ] **1. Prévention et conseils**
+> 	- [ ] Utilisation du préservatif
+> 	- [ ] Dépistage régulier si partenaires multiples
+> 	- [ ] Notification des partenaires
+> 	- [ ] Suivi après traitement
+> - [ ] **2. Hypothèse diagnostique principale**
 > 	- [ ] Infection à Chlamydia trachomatis
 > 	- [ ] Explication adaptée à la patiente
-> - [ ] **2. Examens complémentaires**
+> - [ ] **3. Diagnostics différentiels évoqués**
+> 	- [ ] Infection à Neisseria gonorrhoeae
+> 	- [ ] Infection à Trichomonas vaginalis
+> 	- [ ] Infection à Mycoplasma
+> 	- [ ] Cystite simple
+> - [ ] **4. Examens complémentaires**
 > 	- [ ] PCR Chlamydia/Gonocoque
 > 	- [ ] Analyse d'urine
 > 	- [ ] Test de grossesse si indiqué
 > 	- [ ] Dépistage IST complet
-> - [ ] **3. Réponse aux inquiétudes**
+> - [ ] **5. Traitement proposé**
+> 	- [ ] Azithromycine 1g dose unique
+> 	- [ ] ± Ceftriaxone 250mg IM
+> 	- [ ] Traitement du partenaire
+> 	- [ ] Abstinence/protection pendant traitement
+> - [ ] **6. Réponse aux inquiétudes**
 > 	- [ ] Rassurer sur la gravité
 > 	- [ ] Expliquer les complications possibles si non traité
 > 	- [ ] Importance du traitement du partenaire
 
 > [!success] 💊 Management — si Infection urinaire (cystite)
-> - [ ] **1. Évoque le diagnostic d'infection urinaire basse**
-> - [ ] **2. Propose des investigations paracliniques**
+> - [ ] **1. Diagnostics différentiels évoqués**
+> 	- [ ] Pyélonéphrite
+> 	- [ ] Infections sexuellement transmissibles (gonorrhée, chlamydia, syphilis, VIH)
+> - [ ] **2. Traitement proposé**
+> 	- [ ] Antibiothérapie pour infection urinaire
+> - [ ] **3. Évoque le diagnostic d'infection urinaire basse**
+> - [ ] **4. Propose des investigations paracliniques**
 > 	- [ ] Analyse d'urine/ECBU
 > 	- [ ] Dépistage IST (gonorrhée, chlamydia, syphilis, VIH)
 
@@ -402,7 +405,12 @@ cssclasses:
 > 	- [ ] Traitement empirique des partenaires
 > 	- [ ] Période de notification : 60 jours
 > 	- [ ] Anonymat respecté si souhaité
-> - [ ] **6. Suivi**
+> - [ ] **6. Prévention et conseils**
+> 	- [ ] Utilisation systématique du préservatif
+> 	- [ ] Dépistage régulier si comportements à risque
+> 	- [ ] Information sur les IST
+> 	- [ ] Vaccination hépatite B si non fait
+> - [ ] **7. Suivi**
 > 	- [ ] Contrôle clinique à 1 semaine
 > 	- [ ] Test de guérison à 3-4 semaines
 > 	- [ ] Contrôle VIH à 3 mois (fenêtre sérologique)

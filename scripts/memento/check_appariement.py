@@ -168,9 +168,17 @@ def verifier_reponses_patient():
 
 
 def _cas_m(cid, titres):
-    """Un cas construit reduit a sa section management."""
-    return {"id": cid, "sections": {"m": [("item", f"m{i}", t, [])
-                                          for i, t in enumerate(titres, 1)]}}
+    """Un cas construit reduit a sa section management.
+
+    Un titre peut etre un couple (titre, [sous-items]) : le seuil du partage
+    porte desormais sur le CONTENU d'un item, et aucun controle ne pouvait
+    l'observer tant que les cas construits n'avaient que des items nus.
+    """
+    lignes = []
+    for i, t in enumerate(titres, 1):
+        titre, sous = t if isinstance(t, tuple) else (t, [])
+        lignes.append(("item", f"m{i}", titre, list(sous)))
+    return {"id": cid, "sections": {"m": lignes}}
 
 
 def verifier_management():
@@ -231,11 +239,36 @@ def verifier_management():
     if [i["titre"] for i in propres.get("Embolie", [])] != ["Corticoïdes"]:
         ecarts.append("un item propre a un seul diagnostic doit rester dans son sous-bloc")
 
+    # LE SEUIL PORTE SUR LE CONTENU. « Fonction respiratoire » est cote par
+    # les deux grilles, mais chacun de ses sous-items n'appartient qu'a un
+    # diagnostic : le monter deporterait la revision de l'asthme dans un
+    # encadre partage. Il reste donc duplique dans les deux sous-blocs.
+    contenu = [_cas_m("A", [("Fonction respiratoire", ["Spirométrie"]),
+                            ("Diagnostics différentiels", [])]),
+               _cas_m("B", [("Fonction respiratoire", ["Gazométrie"]),
+                            ("Diagnostics différentiels", [])])]
+    d2 = {"A": "Asthme", "B": "BPCO"}
+    partage, propres = lib_fusion.scinder_management(contenu, d2, None)
+    if [c["titre"] for c in partage] != ["Diagnostics différentiels"]:
+        ecarts.append("seul l'item au contenu partage doit monter : "
+                      f"{[c['titre'] for c in partage]}")
+    if ([i["titre"] for i in propres.get("Asthme", [])] != ["Fonction respiratoire"]
+            or [i["titre"] for i in propres.get("BPCO", [])] != ["Fonction respiratoire"]):
+        ecarts.append("un item aux sous-items mono-diagnostic doit rester dans les sous-blocs : "
+                      f"{ {d: [i['titre'] for i in v] for d, v in propres.items()} }")
+
+    # … et il monte des que TOUS ses sous-items sont eux-memes partages.
+    partout = [_cas_m("A", [("Fonction respiratoire", ["Spirométrie"])]),
+               _cas_m("B", [("Fonction respiratoire", ["Spirométrie"])])]
+    partage, propres = lib_fusion.scinder_management(partout, d2, None)
+    if [c["titre"] for c in partage] != ["Fonction respiratoire"]:
+        ecarts.append(f"un item au contenu entierement partage doit monter : {partage}")
+
     # AUCUN ITEM NE DOIT DISPARAITRE quand aucune grille porteuse n'a de
     # diagnostic resolu : la formule du brief (`if porteurs and ...`) l'aurait
     # laisse tomber dans le vide — ni partage, ni sous-bloc. C'est aussi la
-    # raison pour laquelle le test s'ecrit `len(porteurs) != 1` et non `>= 2`.
-    orphelin = [_cas_m("A", ["Réévaluation à 48 h"])]
+    # raison pour laquelle le partage accueille `not porteurs` sans condition.
+    orphelin = [_cas_m("A", [("Réévaluation à 48 h", ["Bilan"])])]
     partage, propres = lib_fusion.scinder_management(orphelin, {}, None)
     if [c["titre"] for c in partage] != ["Réévaluation à 48 h"]:
         ecarts.append(f"un item sans diagnostic porteur a ete perdu : {partage} / {propres}")
@@ -263,7 +296,8 @@ def verifier_marque_partage():
         ecarts.append("un item porte par toutes les grilles doit rester nu")
 
     # quatre diagnostics : `marque()` aurait ecrit « *(4 diagnostics)* »
-    attendu = "Oxygène *(Embolie · Pneumothorax · Péricardite · STEMI — 4 grilles sur 5)*"
+    attendu = ("Oxygène *(4 grilles sur 5)* — 4 diagnostics : "
+               "*Embolie · Pneumothorax · Péricardite · STEMI*")
     if rendu("Oxygène", "ABCD") != attendu:
         ecarts.append(f"abreviation non levee dans le partage : {rendu('Oxygène', 'ABCD')}")
     if lib_rendu.marque({"titre": "Oxygène", "cas": set("ABCD")}, cas, diag) \
@@ -275,7 +309,7 @@ def verifier_marque_partage():
     diag2 = {"A": "STEMI", "B": "STEMI", "C": "Embolie"}
     cas2 = ["A", "B", "C"]
     item = {"titre": "Héparine", "cas": {"A", "C"}}
-    if lib_rendu.marque_partage(item, cas2, diag2) != "Héparine *(Embolie · STEMI — 2 grilles sur 3)*":
+    if lib_rendu.marque_partage(item, cas2, diag2) != "Héparine *(2 grilles sur 3)* — *Embolie · STEMI*":
         ecarts.append(f"noms perdus dans le partage : {lib_rendu.marque_partage(item, cas2, diag2)}")
     if lib_rendu.marque(item, cas2, diag2) != "Héparine *(2 grilles sur 3)*":
         ecarts.append("marque() ne doit PAS changer : elle refuse de nommer ici")
@@ -369,16 +403,25 @@ def verifier_sous_blocs():
     """
     import build_memento as B
 
-    # CINQ GRILLES, QUATRE PORTEUSES DE L'ITEM PARTAGE : le montage est choisi
-    # pour que `marque()` et `marque_partage()` DIVERGENT visiblement sur cette
-    # ligne — la premiere abrege en « *(4 diagnostics)* », la seconde les
-    # nomme. Avec un item porte par toutes les grilles, les deux rendaient un
-    # libelle nu et retirer `marquage=` du point d'appel passait inapercu.
-    # « Péricardite » avant « Pneumothorax » verifie au passage le tri sans
-    # accent : trie sur les points de code, « é » passerait apres « n ».
+    # CINQ GRILLES, QUATRE PORTEUSES DE L'ITEM PARTAGE, QUI PORTE UN SOUS-ITEM
+    # DE PORTEE DIFFERENTE. Trois pieges tiennent a ce montage precis :
+    #
+    #  - l'ITEM diverge entre `marque()` (qui abrege en « *(4 diagnostics)* »)
+    #    et `marque_partage()` (qui nomme). Avec un item porte par toutes les
+    #    grilles, les deux rendaient un libelle nu et retirer `marquage=` du
+    #    point d'appel passait inapercu ;
+    #  - le SOUS-ITEM diverge aussi, et c'est le trou que la ronde 2 a trouve :
+    #    aucun fixture n'avait de sous-item dans l'encadre partage, si bien que
+    #    marquer les sous-items avec `marque()` au lieu de `marquage` passait
+    #    les onze verificateurs en changeant 958 lignes du corpus — la
+    #    confusion des deux semantiques, reintroduite DANS un meme encadre ;
+    #  - « Péricardite » avant « Pneumothorax » verifie le tri sans accent :
+    #    trie sur les points de code, « é » passerait apres « n ».
     ecarts = []
-    cas = [_cas_m("A", ["Hypothèses diagnostiques", "Aspirine + P2Y12"]),
-           _cas_m("B", ["Hypothèses diagnostiques", "AINS et colchicine"]),
+    cas = [_cas_m("A", [("Hypothèses diagnostiques", ["Score de Wells"]),
+                        "Aspirine + P2Y12"]),
+           _cas_m("B", [("Hypothèses diagnostiques", ["Score de Wells"]),
+                        "AINS et colchicine"]),
            _cas_m("C", ["Hypothèses diagnostiques"]),
            _cas_m("D", ["Hypothèses diagnostiques", "Drainage thoracique"]),
            _cas_m("E", ["Test d'effort"])]
@@ -386,8 +429,9 @@ def verifier_sous_blocs():
             "D": "Pneumothorax", "E": "Angor"}
     attendu = [
         "> [!success] 💊 Management — partagé par plusieurs diagnostics\n"
-        "> - [ ] **1. Hypothèses diagnostiques "
-        "*(Embolie · Pneumothorax · Péricardite · STEMI — 4 grilles sur 5)***",
+        "> - [ ] **1. Hypothèses diagnostiques *(4 grilles sur 5)*"
+        " — 4 diagnostics : *Embolie · Pneumothorax · Péricardite · STEMI***\n"
+        "> \t- [ ] Score de Wells *(2 grilles sur 5)* — *Péricardite · STEMI*",
         "> [!success] 💊 Management — si Angor\n> - [ ] **1. Test d'effort**",
         f"> [!success] 💊 Management — si Dissection aortique\n> {B.SANS_GRILLE}",
         f"> [!success] 💊 Management — si Embolie\n> {B.TOUT_PARTAGE}",
@@ -453,21 +497,23 @@ def verifier_tri_clinique():
     return ecarts
 
 
-def verifier_renvoi_hors_lot():
-    """Un diagnostic que seules des SSP HORS LOT documentent doit rester un renvoi.
+def verifier_renvois_du_corpus():
+    """Tout diagnostic attendu et documente ailleurs renvoie vers TOUTES ses porteuses.
 
     L'index des porteuses se calcule sur le CORPUS ENTIER, le rendu sur le
-    LOT : le remplacer par un index du lot seul transformerait en « trou de
-    revision » huit diagnostics que le corpus documente bel et bien — le
-    « Fracture du bassin (hemorragique) » de « Chute & Évaluation
-    Geriatrique » n'est porte que par « AVP (Accident de la Voie Publique) »,
-    qui n'est pas du lot prioritaire.
+    LOT : le remplacer par un index du lot seul degraderait huit renvois. La
+    version precedente de ce controle n'en attrapait que quatre — ceux dont
+    TOUTES les porteuses sont hors lot. Les quatre mixtes (Cervicalgies,
+    Dysurie, Fatigue, Palpitations) perdaient en silence leur porteuse hors
+    lot : « Dysurie — si Pyelonephrite » aurait cesse de citer « Colique
+    Nephretique » (2 grilles) sans qu'aucun controle bronche. La propriete
+    verifiee est donc « CHAQUE porteuse est nommee », et non « le sous-bloc
+    n'annonce pas un trou ».
 
     LE CONTROLE NE FIGE AUCUN LIBELLE DE DONNEE : il recalcule les couples
-    (SSP, diagnostic) concernes depuis le corpus et exige que le memento rendu
-    ne leur oppose pas la mention « aucune grille du corpus ». S'il n'en existe
-    aucun un jour, le controle est vide et le dit — il ne devient pas faussement
-    vert sur une propriete qu'il ne verifie plus.
+    (SSP, diagnostic) depuis le corpus. Il exige en outre qu'il subsiste au
+    moins un couple a porteuse hors lot — sans quoi il deviendrait vert sur
+    une propriete qu'il ne verifie plus.
     """
     import build_memento as B
 
@@ -478,25 +524,63 @@ def verifier_renvoi_hors_lot():
     ailleurs = B.documente_ailleurs(tous)
     docs, _, _ = B.documents(lot)
 
-    couples = []
+    couples, mixtes = [], 0
     for ssp in sorted(docs):
         documentes = {c["diagnostic"] for c in tous[ssp] if c["diagnostic"]}
         for diagnostic in sorted(attendus.get(ssp, ())):
             porteuses = {s for s in ailleurs.get(diagnostic, ()) if s != ssp}
-            if diagnostic not in documentes and porteuses and not porteuses & set(lot):
+            if diagnostic not in documentes and porteuses:
                 couples.append((ssp, diagnostic, sorted(porteuses)))
+                mixtes += bool(porteuses - set(lot))
 
     for ssp, diagnostic, porteuses in couples:
-        bloc = f"> [!success] 💊 Management — si {diagnostic}\n> "
+        entete = f"> [!success] 💊 Management — si {diagnostic}\n> "
         texte = docs[ssp]
-        if bloc + B.SANS_GRILLE in texte:
+        if entete not in texte:
+            ecarts.append(f"{ssp} — si {diagnostic} : sous-bloc absent")
+            continue
+        mention = texte.split(entete, 1)[1].split("\n", 1)[0]
+        if B.SANS_GRILLE in mention:
             ecarts.append(f"{ssp} — si {diagnostic} : annonce un trou du corpus alors que "
                           f"{porteuses} le documente(nt)")
-        elif bloc not in texte or porteuses[0] not in texte.split(bloc)[1][:400]:
-            ecarts.append(f"{ssp} — si {diagnostic} : le renvoi ne nomme pas {porteuses}")
-    if not couples:
-        ecarts.append("aucun couple (SSP, diagnostic documente seulement hors lot) — "
-                      "ce controle ne verifie plus rien, le relire")
+            continue
+        oubliees = [p for p in porteuses if p not in mention]
+        if oubliees:
+            ecarts.append(f"{ssp} — si {diagnostic} : le renvoi oublie {oubliees}")
+    if not mixtes:
+        ecarts.append("aucun couple (SSP, diagnostic documente par une SSP hors lot) — "
+                      "ce controle ne verifie plus le perimetre de l'index, le relire")
+    return ecarts
+
+
+def verifier_liens_resolus():
+    """Aucun lien « [[Mémento — X]] » ne pointe vers un memento qui ne sera pas ecrit.
+
+    `rendues` existe pour cela, et rien ne l'epinglait : lui passer l'ensemble
+    des SSP du corpus au lieu des seules SSP rendues laissait tous les
+    verificateurs verts en semant huit liens Obsidian morts — cliquer sur
+    « [[Mémento — AVP (Accident de la Voie Publique)]] » aurait propose de
+    creer une page vide. L'invariant se lit sur les documents produits, pas
+    sur le cablage : c'est le seul endroit ou un lien mort est observable.
+
+    Les liens « [[SSP — X]] » ne sont PAS concernes : ils visent le coffre
+    Obsidian de l'utilisateur, dont ce depot ne sait rien, et 11 des pages
+    visees n'existent pas encore — c'est connu et voulu.
+    """
+    import re
+
+    import build_memento as B
+
+    ecarts = []
+    docs, _, _ = B.documents(lib_ssp.lot_prioritaire())
+    motif = re.compile(re.escape(f"[[{B.PREFIXE}") + r"([^\]]+)\]\]")
+    for ssp in sorted(docs):
+        for cible in motif.findall(docs[ssp]):
+            if cible not in docs:
+                ecarts.append(f"{ssp} : lien mort vers « {B.PREFIXE}{cible} »")
+    if not any("hors lot" in d for d in docs.values()):
+        ecarts.append("aucun renvoi « hors lot » dans le lot prioritaire — "
+                      "ce controle ne distingue plus rien, le relire")
     return ecarts
 
 
@@ -582,7 +666,8 @@ def main():
     ecarts += verifier_mention()
     ecarts += verifier_sous_blocs()
     ecarts += verifier_tri_clinique()
-    ecarts += verifier_renvoi_hors_lot()
+    ecarts += verifier_renvois_du_corpus()
+    ecarts += verifier_liens_resolus()
     ecarts += verifier_attendus_du_corpus()
 
     if ecarts:

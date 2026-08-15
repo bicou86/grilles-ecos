@@ -6,7 +6,8 @@ ssp: "Céphalée"
 specialite: "Neurologie"
 cas: 6
 diagnostics: 5
-attendus_sans_grille: 2
+attendus_documentes_ailleurs: 0
+attendus_absents_du_corpus: 2
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -48,16 +49,22 @@ cssclasses:
 > `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
 > de la SSP.
 >
-> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
-> recopié dans chaque sous-bloc : il remonte dans un encadré
-> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
-> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
-> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
-> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
-> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
-> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
-> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
-> se rejoignent pas.
+> Un item porté par **deux diagnostics ou plus** remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête — **mais
+> seulement si son contenu l'est aussi** : dès qu'un seul de ses sous-items
+> n'appartient qu'à un diagnostic, l'item reste dans les sous-blocs, répété.
+> Un item de tête partagé aux sous-items privés déménagerait votre révision
+> dans un encadré qui ne vous concerne pas.
+>
+> Le suffixe d'un item partagé **nomme les diagnostics concernés** :
+> `*(3 grilles sur 12)* — *Angor · STEMI*` se lit « 3 des 12 grilles de la SSP
+> portent cet item, dont au moins une d'Angor et une de STEMI ». Le compte
+> vient en tête, les noms après le tiret : il ne dit **pas** que toutes les
+> grilles de ces diagnostics le portent. ⚠️ **Cet encadré se lit *avec* le
+> sous-bloc de votre diagnostic, pas à sa place.** Il est absent quand aucun
+> item n'est partagé, ce qui arrive souvent : le rapprochement entre grilles
+> reste purement lexical, et deux grilles qui prescrivent la même chose
+> autrement ne se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
 > (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
@@ -76,7 +83,7 @@ cssclasses:
 
 # Céphalée ⭐️
 
-*Neurologie · 6 grilles · 5 diagnostics documentés · 2 attendus sans grille* — [[SSP — Céphalée]]
+*Neurologie · 6 grilles · 5 diagnostics documentés · 2 attendus absents du corpus* — [[SSP — Céphalée]]
 
 > [!abstract] Les 6 grilles fusionnées
 > - **AMBOSS-26** — Migraine `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-26_-_Ce_phale_e_-_Homme_29_ans_-_Grille_ECOS.html>)
@@ -381,51 +388,40 @@ cssclasses:
 > 	- [ ] Recherche d'un rash cutané
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Hypothèses diagnostiques *(Hémorragie sous-arachnoïdienne · Migraine — 2 grilles sur 6)***
-> - [ ] **2. Conseil et soutien *(Hémorragie sous-arachnoïdienne · Migraine — 2 grilles sur 6)***
-> 	- [ ] Conseil sur l'arrêt du tabac *(Migraine — 1 grille sur 6)*
-> 	- [ ] Donner l'option de s'allonger et proposer de tamiser la lumière *(Migraine — 1 grille sur 6)*
-> 	- [ ] Réaction appropriée au défi concernant l'entretien d'embauche *(Migraine — 1 grille sur 6)*
-> 	- [ ] Éducation sur les facteurs déclenchants *(Migraine — 1 grille sur 6)*
-> 	- [ ] Conseils hygiène de vie *(Migraine — 1 grille sur 6)*
-> 	- [ ] Proposer d'aider la patiente à s'allonger *(Hémorragie sous-arachnoïdienne — 1 grille sur 6)*
-> 	- [ ] Proposer de diminuer l'éclairage dans la salle d'examen *(Hémorragie sous-arachnoïdienne — 1 grille sur 6)*
-> 	- [ ] Réaction appropriée au défi concernant le mari *(Hémorragie sous-arachnoïdienne — 1 grille sur 6)*
-> 	- [ ] Soutien émotionnel face à la gravité *(Hémorragie sous-arachnoïdienne — 1 grille sur 6)*
-> 	- [ ] Information sur l'urgence de la situation *(Hémorragie sous-arachnoïdienne — 1 grille sur 6)*
-> - [ ] **3. Diagnostic de suspicion *(Céphalée du restaurant chinois · Méningite — 2 grilles sur 6)***
-> - [ ] **4. Diagnostics différentiels *(Céphalée du restaurant chinois · Méningite · Thrombose veineuse cérébrale — 3 grilles sur 6)***
-> 	- [ ] AVC ischémique/hémorragique *(Thrombose veineuse cérébrale — 1 grille sur 6)*
-> 	- [ ] Migraine avec aura *(Thrombose veineuse cérébrale — 1 grille sur 6)*
-> 	- [ ] Méningite/encéphalite *(Thrombose veineuse cérébrale — 1 grille sur 6)*
-> 	- [ ] Hémorragie sous-arachnoïdienne *(Thrombose veineuse cérébrale — 1 grille sur 6)*
-> 	- [ ] Dissection artérielle *(Thrombose veineuse cérébrale — 1 grille sur 6)*
-> 	- [ ] Hypertension intracrânienne *(Thrombose veineuse cérébrale — 1 grille sur 6)*
+> - [ ] **1. Hypothèses diagnostiques *(2 grilles sur 6)* — *Hémorragie sous-arachnoïdienne · Migraine***
+> - [ ] **2. Diagnostic de suspicion *(2 grilles sur 6)* — *Céphalée du restaurant chinois · Méningite***
 
 > [!success] 💊 Management — si Algie vasculaire (cluster)
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Céphalée du restaurant chinois
-> - [ ] **1. Examens diagnostiques**
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Examens diagnostiques**
 > 	- [ ] VS (CRP)
 > 	- [ ] FSC
-> - [ ] **2. CT cérébral**
-> - [ ] **3. Traitement/Prise en charge**
+> - [ ] **3. CT cérébral**
+> - [ ] **4. Traitement/Prise en charge**
 > 	- [ ] Si maladie de Horton : corticoïdes et référence
 > 	- [ ] Sinon : antalgiques et contrôle
 
 > [!success] 💊 Management — si Hémorragie sous-arachnoïdienne
-> - [ ] **1. Examens complémentaires urgents**
+> - [ ] **1. Conseil et soutien**
+> 	- [ ] Proposer d'aider la patiente à s'allonger
+> 	- [ ] Proposer de diminuer l'éclairage dans la salle d'examen
+> 	- [ ] Réaction appropriée au défi concernant le mari
+> 	- [ ] Soutien émotionnel face à la gravité
+> 	- [ ] Information sur l'urgence de la situation
+> - [ ] **2. Examens complémentaires urgents**
 > 	- [ ] CT cérébral sans contraste
 > 	- [ ] FSC
 > 	- [ ] Glucose, électrolytes
-> - [ ] **2. Examens complémentaires biologiques et microbiologiques**
+> - [ ] **3. Examens complémentaires biologiques et microbiologiques**
 > 	- [ ] TP, TCA
 > 	- [ ] Hémocultures
-> - [ ] **3. Ponction lombaire et imagerie spécialisée**
+> - [ ] **4. Ponction lombaire et imagerie spécialisée**
 > 	- [ ] Ponction lombaire avec analyse du LCR
 > 	- [ ] Angiographie
-> - [ ] **4. Communication avec la patiente**
+> - [ ] **5. Communication avec la patiente**
 > 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
@@ -434,18 +430,19 @@ cssclasses:
 > 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
 
 > [!success] 💊 Management — si Méningite
-> - [ ] **1. Examens de laboratoire**
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Examens de laboratoire**
 > 	- [ ] FSC
 > 	- [ ] CRP
 > 	- [ ] Électrolytes
 > 	- [ ] Glucose
-> - [ ] **2. Diagnostic du liquide céphalo-rachidien**
+> - [ ] **3. Diagnostic du liquide céphalo-rachidien**
 > 	- [ ] Liquide clair
 > 	- [ ] Lymphocytose
 > 	- [ ] Glucose normale
 > 	- [ ] Protéines
 > 	- [ ] Lactate
-> - [ ] **3. Traitement**
+> - [ ] **4. Traitement**
 
 > [!success] 💊 Management — si Migraine
 > - [ ] **1. Drapeaux rouges à rechercher *(1 grille sur 2)***
@@ -468,48 +465,61 @@ cssclasses:
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **4. Pas d'imagerie *(1 grille sur 2)***
-> - [ ] **5. Diagnostic de travail *(1 grille sur 2)***
-> - [ ] **6. Information sur le diagnostic *(1 grille sur 2)***
-> - [ ] **7. Traitement de la crise par AINS *(1 grille sur 2)***
-> - [ ] **8. Traitement de la crise par triptan *(1 grille sur 2)***
-> - [ ] **9. Mesures non médicamenteuses *(1 grille sur 2)***
-> - [ ] **10. Filet de sécurité *(1 grille sur 2)***
-> - [ ] **11. Journal des migraines *(1 grille sur 2)***
-> - [ ] **12. Conseils sur le mode de vie *(1 grille sur 2)***
-> - [ ] **13. Information sur la contraception *(1 grille sur 2)***
-> - [ ] **14. Contrôle de suivi *(1 grille sur 2)***
-> - [ ] **15. Évaluer l'indication à une prophylaxie *(1 grille sur 2)***
-> - [ ] **16. Orientation vers la neurologie *(1 grille sur 2)***
+> - [ ] **4. Conseil et soutien *(1 grille sur 2)***
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Donner l'option de s'allonger et proposer de tamiser la lumière
+> 	- [ ] Réaction appropriée au défi concernant l'entretien d'embauche
+> 	- [ ] Éducation sur les facteurs déclenchants
+> 	- [ ] Conseils hygiène de vie
+> - [ ] **5. Pas d'imagerie *(1 grille sur 2)***
+> - [ ] **6. Diagnostic de travail *(1 grille sur 2)***
+> - [ ] **7. Information sur le diagnostic *(1 grille sur 2)***
+> - [ ] **8. Traitement de la crise par AINS *(1 grille sur 2)***
+> - [ ] **9. Traitement de la crise par triptan *(1 grille sur 2)***
+> - [ ] **10. Mesures non médicamenteuses *(1 grille sur 2)***
+> - [ ] **11. Filet de sécurité *(1 grille sur 2)***
+> - [ ] **12. Journal des migraines *(1 grille sur 2)***
+> - [ ] **13. Conseils sur le mode de vie *(1 grille sur 2)***
+> - [ ] **14. Information sur la contraception *(1 grille sur 2)***
+> - [ ] **15. Contrôle de suivi *(1 grille sur 2)***
+> - [ ] **16. Évaluer l'indication à une prophylaxie *(1 grille sur 2)***
+> - [ ] **17. Orientation vers la neurologie *(1 grille sur 2)***
 
 > [!success] 💊 Management — si Prééclampsie
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Thrombose veineuse cérébrale
-> - [ ] **1. Hypothèse diagnostique principale**
+> - [ ] **1. Diagnostics différentiels**
+> 	- [ ] AVC ischémique/hémorragique
+> 	- [ ] Migraine avec aura
+> 	- [ ] Méningite/encéphalite
+> 	- [ ] Hémorragie sous-arachnoïdienne
+> 	- [ ] Dissection artérielle
+> 	- [ ] Hypertension intracrânienne
+> - [ ] **2. Hypothèse diagnostique principale**
 > 	- [ ] Thrombose veineuse cérébrale
-> - [ ] **2. Examens complémentaires - laboratoire**
+> - [ ] **3. Examens complémentaires - laboratoire**
 > 	- [ ] FSC, CRP/VS
 > 	- [ ] Coagulation (TP, PTT)
 > 	- [ ] D-dimères
 > 	- [ ] Fonction rénale, ionogramme
 > 	- [ ] Test de grossesse si doute
-> - [ ] **3. Examens complémentaires - imagerie**
+> - [ ] **4. Examens complémentaires - imagerie**
 > 	- [ ] CT cérébral en urgence
 > 	- [ ] CT avec temps veineux/angio-CT
 > 	- [ ] IRM cérébrale si disponible
 > 	- [ ] Veinographie par résonance magnétique
-> - [ ] **4. Prise en charge immédiate**
+> - [ ] **5. Prise en charge immédiate**
 > 	- [ ] Voie veineuse périphérique
 > 	- [ ] Analgésie adaptée
 > 	- [ ] Antiémétiques si nécessaire
 > 	- [ ] Surveillance neurologique
-> - [ ] **5. Traitement spécifique si thrombose confirmée**
+> - [ ] **6. Traitement spécifique si thrombose confirmée**
 > 	- [ ] Anticoagulation par HBPM dose thérapeutique
 > 	- [ ] Même si lésion hémorragique
 > 	- [ ] Hospitalisation
 > 	- [ ] Arrêt contraception orale
-> - [ ] **6. Réponse aux demandes de la patiente**
+> - [ ] **7. Réponse aux demandes de la patiente**
 > 	- [ ] Certificat médical pour examen
 > 	- [ ] Explication du diagnostic suspecté
 > 	- [ ] Rassurer sur la prise en charge

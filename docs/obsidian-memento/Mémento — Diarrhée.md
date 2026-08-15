@@ -6,7 +6,8 @@ ssp: "Diarrhée"
 specialite: "Gastro-Hépatologie"
 cas: 5
 diagnostics: 4
-attendus_sans_grille: 2
+attendus_documentes_ailleurs: 0
+attendus_absents_du_corpus: 2
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -48,16 +49,22 @@ cssclasses:
 > `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
 > de la SSP.
 >
-> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
-> recopié dans chaque sous-bloc : il remonte dans un encadré
-> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
-> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
-> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
-> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
-> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
-> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
-> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
-> se rejoignent pas.
+> Un item porté par **deux diagnostics ou plus** remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête — **mais
+> seulement si son contenu l'est aussi** : dès qu'un seul de ses sous-items
+> n'appartient qu'à un diagnostic, l'item reste dans les sous-blocs, répété.
+> Un item de tête partagé aux sous-items privés déménagerait votre révision
+> dans un encadré qui ne vous concerne pas.
+>
+> Le suffixe d'un item partagé **nomme les diagnostics concernés** :
+> `*(3 grilles sur 12)* — *Angor · STEMI*` se lit « 3 des 12 grilles de la SSP
+> portent cet item, dont au moins une d'Angor et une de STEMI ». Le compte
+> vient en tête, les noms après le tiret : il ne dit **pas** que toutes les
+> grilles de ces diagnostics le portent. ⚠️ **Cet encadré se lit *avec* le
+> sous-bloc de votre diagnostic, pas à sa place.** Il est absent quand aucun
+> item n'est partagé, ce qui arrive souvent : le rapprochement entre grilles
+> reste purement lexical, et deux grilles qui prescrivent la même chose
+> autrement ne se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
 > (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
@@ -76,7 +83,7 @@ cssclasses:
 
 # Diarrhée ⭐️
 
-*Gastro-Hépatologie · 5 grilles · 4 diagnostics documentés · 2 attendus sans grille* — [[SSP — Diarrhée]]
+*Gastro-Hépatologie · 5 grilles · 4 diagnostics documentés · 2 attendus absents du corpus* — [[SSP — Diarrhée]]
 
 > [!abstract] Les 5 grilles fusionnées
 > - **AMBOSS-8** — MICI (Crohn / RCUH) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-8_-_Troubles_du_transit_-_Homme_32_ans_-_Grille_ECOS.html>)
@@ -477,11 +484,8 @@ cssclasses:
 > 	- [ ] Sensibilité à la palpation
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Énonce le diagnostic principal *(Diarrhée chronique par malabsorption · Déshydratation — 2 grilles sur 5)***
-> 	- [ ] Insuffisance pancréatique exocrine (sur pancréatites chroniques) *(Diarrhée chronique par malabsorption — 1 grille sur 5)*
-> 	- [ ] Déshydratation aiguë *(Déshydratation — 1 grille sur 5)*
-> - [ ] **2. Évoque les diagnostics différentiels pertinents *(Diarrhée chronique par malabsorption · Déshydratation — 2 grilles sur 5)***
-> - [ ] **3. Propose une prise en charge thérapeutique adaptée *(Diarrhée chronique par malabsorption · Déshydratation — 2 grilles sur 5)***
+> - [ ] **1. Évoque les diagnostics différentiels pertinents *(2 grilles sur 5)* — *Diarrhée chronique par malabsorption · Déshydratation***
+> - [ ] **2. Propose une prise en charge thérapeutique adaptée *(2 grilles sur 5)* — *Diarrhée chronique par malabsorption · Déshydratation***
 
 > [!success] 💊 Management — si Cancer colorectal
 > - [ ] **1. Diagnostics différentiels des troubles du transit**
@@ -524,32 +528,36 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Déshydratation
-> - [ ] **1. Propose les examens complémentaires appropriés**
+> - [ ] **1. Énonce le diagnostic principal**
+> 	- [ ] Déshydratation aiguë
+> - [ ] **2. Propose les examens complémentaires appropriés**
 > 	- [ ] Ionogramme sanguin (Na, K, Cl)
 > 	- [ ] Fonction rénale (créatinine, urée)
 > 	- [ ] FSC (hémoconcentration : Hb, Ht)
 > 	- [ ] Glycémie
 > 	- [ ] Analyse d'urine si suspicion d'infection
-> - [ ] **2. Organise le suivi et l'orientation**
+> - [ ] **3. Organise le suivi et l'orientation**
 > 	- [ ] Critères d'hospitalisation définis
 > 	- [ ] Transfert à l'hôpital si nécessaire
 > 	- [ ] Surveillance de la réhydratation
 > 	- [ ] Éducation des parents/soignants
 
 > [!success] 💊 Management — si Diarrhée chronique par malabsorption
-> - [ ] **1. Propose les examens complémentaires de première intention**
+> - [ ] **1. Énonce le diagnostic principal**
+> 	- [ ] Insuffisance pancréatique exocrine (sur pancréatites chroniques)
+> - [ ] **2. Propose les examens complémentaires de première intention**
 > 	- [ ] Biologie : FSC, CRP, ionogramme (Na, K, Ca)
 > 	- [ ] Fonction rénale : créatinine, urée
 > 	- [ ] Fonction hépatique : transaminases, GGT, phosphatases alcalines (PAL), albumine
 > 	- [ ] Bilan de coagulation : TP/INR, TCA
 > 	- [ ] Fonction thyroïdienne : TSH
-> - [ ] **2. Propose les examens complémentaires spécifiques**
+> - [ ] **3. Propose les examens complémentaires spécifiques**
 > 	- [ ] Élastase fécale (insuffisance pancréatique)
 > 	- [ ] Calprotectine fécale (inflammation intestinale)
 > 	- [ ] Coproculture et recherche de parasites
 > 	- [ ] US abdominal ou CT abdominal
 > 	- [ ] Coloscopie avec biopsies
-> - [ ] **3. Organise le suivi et reconnaît les complications**
+> - [ ] **4. Organise le suivi et reconnaît les complications**
 > 	- [ ] Surveillance de l'état nutritionnel
 > 	- [ ] Dépistage du cancer colorectal si indiqué
 > 	- [ ] Orientation spécialisée si nécessaire (gastro-entérologie)

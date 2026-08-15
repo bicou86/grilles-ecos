@@ -6,7 +6,8 @@ ssp: "Dyspnée"
 specialite: "Pneumologie"
 cas: 5
 diagnostics: 3
-attendus_sans_grille: 3
+attendus_documentes_ailleurs: 1
+attendus_absents_du_corpus: 2
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -48,16 +49,22 @@ cssclasses:
 > `*(n grilles sur m)*` compte les grilles **de ce diagnostic-là**, pas celles
 > de la SSP.
 >
-> Quand un item est porté par **deux diagnostics ou plus**, il n'est pas
-> recopié dans chaque sous-bloc : il remonte dans un encadré
-> `💊 Management — partagé par plusieurs diagnostics`, en tête, où son suffixe
-> **nomme les diagnostics concernés** — `*(Angor · STEMI — 3 grilles sur 12)*`
-> se lit « au moins une grille d'Angor et une de STEMI le portent, 3 des
-> 12 grilles de la SSP au total ». ⚠️ **Cet encadré se lit *avec* le sous-bloc
-> de votre diagnostic, pas à sa place.** Il est absent quand aucun item n'est
-> partagé, ce qui arrive souvent : le rapprochement entre grilles reste
-> purement lexical, et deux grilles qui prescrivent la même chose autrement ne
-> se rejoignent pas.
+> Un item porté par **deux diagnostics ou plus** remonte dans un encadré
+> `💊 Management — partagé par plusieurs diagnostics`, en tête — **mais
+> seulement si son contenu l'est aussi** : dès qu'un seul de ses sous-items
+> n'appartient qu'à un diagnostic, l'item reste dans les sous-blocs, répété.
+> Un item de tête partagé aux sous-items privés déménagerait votre révision
+> dans un encadré qui ne vous concerne pas.
+>
+> Le suffixe d'un item partagé **nomme les diagnostics concernés** :
+> `*(3 grilles sur 12)* — *Angor · STEMI*` se lit « 3 des 12 grilles de la SSP
+> portent cet item, dont au moins une d'Angor et une de STEMI ». Le compte
+> vient en tête, les noms après le tiret : il ne dit **pas** que toutes les
+> grilles de ces diagnostics le portent. ⚠️ **Cet encadré se lit *avec* le
+> sous-bloc de votre diagnostic, pas à sa place.** Il est absent quand aucun
+> item n'est partagé, ce qui arrive souvent : le rapprochement entre grilles
+> reste purement lexical, et deux grilles qui prescrivent la même chose
+> autrement ne se rejoignent pas.
 >
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
 > (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
@@ -76,7 +83,7 @@ cssclasses:
 
 # Dyspnée ⭐️
 
-*Pneumologie · 5 grilles · 3 diagnostics documentés · 3 attendus sans grille* — [[SSP — Dyspnée]]
+*Pneumologie · 5 grilles · 3 diagnostics documentés · 1 attendu documenté ailleurs · 2 attendus absents du corpus* — [[SSP — Dyspnée]]
 
 > [!abstract] Les 5 grilles fusionnées
 > - **AZYGOS-23** — Insuffisance cardiaque (décompensée) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/60e62ee5-98b7-4679-91e1-6f82bb0678fe.json>)
@@ -515,25 +522,7 @@ cssclasses:
 > - [ ] **40. Technique d'examen intégré cardio-respiratoire *(1 grille sur 5)***
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Diagnostics différentiels (au moins 2-3) *(Asthme · BPCO — 2 grilles sur 5)***
-> - [ ] **2. Examens complémentaires - Fonction respiratoire *(Asthme · BPCO — 2 grilles sur 5)***
-> 	- [ ] Spirométrie de base *(Asthme — 1 grille sur 5)*
-> 	- [ ] Test de réversibilité aux bêta-2 mimétiques *(Asthme — 1 grille sur 5)*
-> 	- [ ] Test de provocation si nécessaire *(Asthme — 1 grille sur 5)*
-> 	- [ ] Peak-flow en ambulatoire *(Asthme — 1 grille sur 5)*
-> 	- [ ] Spirométrie complète *(BPCO — 1 grille sur 5)*
-> 	- [ ] Test de réversibilité aux bronchodilatateurs *(BPCO — 1 grille sur 5)*
-> 	- [ ] Gazométrie artérielle *(BPCO — 1 grille sur 5)*
-> 	- [ ] Test de marche de 6 minutes *(BPCO — 1 grille sur 5)*
-> - [ ] **3. Mesures non médicamenteuses *(Asthme · BPCO — 2 grilles sur 5)***
-> 	- [ ] Éviction des allergènes identifiés *(Asthme — 1 grille sur 5)*
-> 	- [ ] Arrêt du tabac (accompagnement) *(Asthme — 1 grille sur 5)*
-> 	- [ ] Échauffement avant l'effort *(Asthme — 1 grille sur 5)*
-> 	- [ ] Éducation thérapeutique *(Asthme — 1 grille sur 5)*
-> 	- [ ] Sevrage tabagique (priorité absolue) *(BPCO — 1 grille sur 5)*
-> 	- [ ] Vaccination antigrippale et antipneumococcique *(BPCO — 1 grille sur 5)*
-> 	- [ ] Réhabilitation respiratoire *(BPCO — 1 grille sur 5)*
-> 	- [ ] Activité physique adaptée *(BPCO — 1 grille sur 5)*
+> - [ ] **1. Diagnostics différentiels (au moins 2-3) *(2 grilles sur 5)* — *Asthme · BPCO***
 
 > [!success] 💊 Management — si Asthme
 > - [ ] **1. Diagnostic principal évoqué**
@@ -541,54 +530,74 @@ cssclasses:
 > 	- [ ] Justification du diagnostic
 > 	- [ ] Éléments cliniques en faveur
 > 	- [ ] Terrain atopique
-> - [ ] **2. Examens complémentaires - Imagerie et biologie**
+> - [ ] **2. Examens complémentaires - Fonction respiratoire**
+> 	- [ ] Spirométrie de base
+> 	- [ ] Test de réversibilité aux bêta-2 mimétiques
+> 	- [ ] Test de provocation si nécessaire
+> 	- [ ] Peak-flow en ambulatoire
+> - [ ] **3. Examens complémentaires - Imagerie et biologie**
 > 	- [ ] Radiographie thoracique
 > 	- [ ] FSC avec éosinophiles
 > 	- [ ] IgE totales et spécifiques
 > 	- [ ] Tests cutanés allergologiques
-> - [ ] **3. Traitement aigu proposé**
+> - [ ] **4. Traitement aigu proposé**
 > 	- [ ] Bêta-2 mimétiques à courte durée d'action à la demande
 > 	- [ ] Technique d'inhalation
 > 	- [ ] Utilisation avant l'effort
 > 	- [ ] Plan d'action en cas de crise
-> - [ ] **4. Traitement de fond éventuel**
+> - [ ] **5. Traitement de fond éventuel**
 > 	- [ ] Corticoïdes inhalés si symptômes fréquents
 > 	- [ ] Association fixe si besoin
 > 	- [ ] Adaptation selon contrôle
 > 	- [ ] Réévaluation régulière
-> - [ ] **5. Planification du suivi**
+> - [ ] **6. Mesures non médicamenteuses**
+> 	- [ ] Éviction des allergènes identifiés
+> 	- [ ] Arrêt du tabac (accompagnement)
+> 	- [ ] Échauffement avant l'effort
+> 	- [ ] Éducation thérapeutique
+> - [ ] **7. Planification du suivi**
 > 	- [ ] Rendez-vous de contrôle
 > 	- [ ] Surveillance de l'efficacité
 > 	- [ ] Ajustement thérapeutique
 > 	- [ ] Orientation pneumologique si besoin
 
 > [!success] 💊 Management — si BPCO
-> - [ ] **1. Diagnostic principal**
+> - [ ] **1. Examens complémentaires - Fonction respiratoire**
+> 	- [ ] Spirométrie complète
+> 	- [ ] Test de réversibilité aux bronchodilatateurs
+> 	- [ ] Gazométrie artérielle
+> 	- [ ] Test de marche de 6 minutes
+> - [ ] **2. Mesures non médicamenteuses**
+> 	- [ ] Sevrage tabagique (priorité absolue)
+> 	- [ ] Vaccination antigrippale et antipneumococcique
+> 	- [ ] Réhabilitation respiratoire
+> 	- [ ] Activité physique adaptée
+> - [ ] **3. Diagnostic principal**
 > 	- [ ] BPCO légère (GOLD stade I)
 > 	- [ ] Justification clinique
 > 	- [ ] Facteurs de risque identifiés
 > 	- [ ] Présentation typique
-> - [ ] **2. Examens complémentaires - Microbiologie et imagerie**
+> - [ ] **4. Examens complémentaires - Microbiologie et imagerie**
 > 	- [ ] Culture des crachats (ECBC)
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Scanner thoracique si indiqué
 > 	- [ ] ECG
-> - [ ] **3. Interprétation correcte de la spirométrie**
+> - [ ] **5. Interprétation correcte de la spirométrie**
 > 	- [ ] Classification GOLD stade I
 > 	- [ ] VEMS < 80% de la valeur prédite
 > 	- [ ] VEMS/CVF < 70%
 > 	- [ ] Absence de réversibilité significative
-> - [ ] **4. Traitement médicamenteux proposé**
+> - [ ] **6. Traitement médicamenteux proposé**
 > 	- [ ] Bêta-2 agoniste de courte durée d'action (SABA)
 > 	- [ ] Anticholinergique de courte durée d'action (SAMA)
 > 	- [ ] Association éventuelle
 > 	- [ ] Technique d'inhalation
-> - [ ] **5. Prise en charge des comorbidités**
+> - [ ] **7. Prise en charge des comorbidités**
 > 	- [ ] Suivi du programme méthadone
 > 	- [ ] Dépistage des complications
 > 	- [ ] Support psychosocial
 > 	- [ ] Prévention des exacerbations
-> - [ ] **6. Plan de suivi**
+> - [ ] **8. Plan de suivi**
 > 	- [ ] Consultation de contrôle
 > 	- [ ] Surveillance spirométrique
 > 	- [ ] Éducation thérapeutique
