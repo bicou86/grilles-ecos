@@ -73,14 +73,33 @@ DD_PREMIER = re.compile(r'<li>\s*<strong[^>]*>(.*?)</strong>', re.S)
 
 # GERMAN seulement : le bloc pedagogique <h4>Diagnostic</h4> nomme le
 # diagnostic RETENU pour cette vignette precise (le « corrige »), dans le
-# <p> qui suit immediatement. Le nom lui-meme est toujours porte par le
-# premier <span class="c-red"> de ce paragraphe — les spans qui precedent
-# (c-pink : symptome/examen, c-purple : facteur de risque/demographie) ne
-# sont jamais le diagnostic ; verifie sur 84/88 fichiers GERMAN. Les 4
-# fichiers sans ce bloc sont des consultations de prevention/counseling
-# sans maladie a nommer (tabac, vaccination, voyage x2).
+# <p> qui suit immediatement. Le nom lui-meme est porte par un
+# <span class="c-red"> de ce paragraphe — les spans qui precedent (c-pink :
+# symptome/examen, c-purple : facteur de risque/demographie) ne sont jamais
+# le diagnostic. Les 4 fichiers sans ce bloc sont des consultations de
+# prevention/counseling sans maladie a nommer (tabac, vaccination, voyage x2).
+#
+# UN SEUL c-red (60/88 fichiers) : c'est lui, sans ambiguite.
+#
+# PLUSIEURS c-red (28/88 fichiers) : le premier n'est pas toujours le bon —
+# ronde de correction 2/5, German-20 et German-52 avaient une comorbidite ou
+# un antecedent etiquete c-red par erreur (fibrillation auriculaire, BPCO)
+# AVANT le vrai diagnostic. Quand le paragraphe porte une formule assertive
+# du corrige (« le corrige TRAITE/RETIENT/ORIENTE VERS X »), c'est le
+# premier c-red qui SUIT cette formule qui est retenu, pas le premier du
+# paragraphe. Verifie sur les 28 fichiers a c-red multiples : seuls
+# German-18, 20 et 52 portent cette formule ; German-18 avait deja le bon
+# diagnostic en premiere position (aucun changement), German-20 et
+# German-52 sont corriges par cette regle. Les 25 autres, sans formule,
+# gardent le premier c-red — comportement inchange, revalide un par un.
+#
+# Un verbe plus faible (« le corrige EVOQUE X ou Y », German-50) n'est PAS
+# un marqueur : il introduit un differentiel non tranche, pas une reponse
+# unique — German-50 garde deliberement son premier c-red (« Syndrome
+# nephrotique »), choix explicite et non un effet de bord de la regle.
 GERMAN_DIAGNOSTIC_H4 = re.compile(r"<h4>Diagnostic</h4>\s*<p>(.*?)</p>", re.S)
 GERMAN_DIAGNOSTIC_SPAN = re.compile(r'<span class="c-red">(.*?)</span>', re.S)
+GERMAN_MARQUEUR_CORRIGE = re.compile(r"corrig[ée]\s+(?:traite|retient|oriente\s+vers)", re.I)
 
 # Qualificatif de raisonnement colle au nom dans le span (« carcinome
 # vesical A EXCLURE ») : ce n'est pas le nom du diagnostic, a retirer.
@@ -96,6 +115,26 @@ AZYGOS_TRAVAIL = re.compile(rf"diagnostic de travail|diagnostic pr[ée]sum[ée]|
 def _texte(fragment):
     fragment = re.sub(r"<[^>]+>", " ", fragment)
     return re.sub(r"\s+", " ", H.unescape(fragment)).strip()
+
+
+def _diagnostic_corrige_german(paragraphe):
+    """Choisit LE c-red du paragraphe <h4>Diagnostic</h4> de GERMAN.
+
+    Un seul c-red : pas d'ambiguite, c'est lui. Plusieurs : le premier n'est
+    pas toujours le bon (une comorbidite ou un antecedent peut y etre
+    etiquete c-red par erreur) — si une formule assertive du corrige
+    (« traite »/« retient »/« oriente vers ») est presente, le c-red qui la
+    SUIT est retenu ; sinon repli sur le premier c-red du paragraphe.
+    """
+    spans = list(GERMAN_DIAGNOSTIC_SPAN.finditer(paragraphe))
+    if not spans:
+        return None
+    marqueur = GERMAN_MARQUEUR_CORRIGE.search(paragraphe)
+    if marqueur:
+        for m in spans:
+            if m.start() > marqueur.end():
+                return m.group(1)
+    return spans[0].group(1)
 
 
 def _raccourci(nom):
@@ -168,9 +207,9 @@ def resoudre(cas, html_brut=None):
         if html_brut and cas["corpus"] == "german":
             m0 = GERMAN_DIAGNOSTIC_H4.search(html_brut)
             if m0:
-                m1 = GERMAN_DIAGNOSTIC_SPAN.search(m0.group(1))
-                if m1:
-                    nom = _texte(m1.group(1))
+                brut_span = _diagnostic_corrige_german(m0.group(1))
+                if brut_span:
+                    nom = _texte(brut_span)
                     nom = _QUALIFICATIF_CORRIGE.sub("", nom)
                     nom = _raccourci(nom)
                     if nom and len(nom.split()) <= 8:
@@ -204,6 +243,38 @@ def resoudre(cas, html_brut=None):
 
 def charger_table():
     return lib_yaml.lire_plat(TABLE)
+
+
+def signalements_multi_cred():
+    """Grilles GERMAN a plusieurs c-red dans <h4>Diagnostic</h4> sans marqueur.
+
+    Recalcule a chaque appel depuis les fichiers HTML (pas une liste figee) :
+    detecte a l'avenir tout fichier GERMAN, nouveau ou modifie, ou le
+    diagnostic depend d'un choix entre plusieurs c-red que la formule
+    assertive du corrige (« traite »/« retient »/« oriente vers ») ne
+    tranche pas. Repli mecanique sur le premier c-red pour ces cas-la — pas
+    une erreur en soi (souvent correct, cf. ronde de correction 2/5), mais
+    une liste a relire plutot qu'un choix silencieux.
+
+    Renvoie une liste triee de (identifiant, nombre de c-red).
+    """
+    import glob
+    import lib_extraction as L
+
+    out = []
+    for f in sorted(glob.glob(str(REPO / "cases" / "german" / "*.html"))):
+        brut = Path(f).read_text(encoding="utf8", errors="replace")
+        m0 = GERMAN_DIAGNOSTIC_H4.search(brut)
+        if not m0:
+            continue
+        spans = list(GERMAN_DIAGNOSTIC_SPAN.finditer(m0.group(1)))
+        if len(spans) <= 1:
+            continue
+        marqueur = GERMAN_MARQUEUR_CORRIGE.search(m0.group(1))
+        tranche = marqueur and any(m.start() > marqueur.end() for m in spans)
+        if not tranche:
+            out.append((L.identifiant(f), len(spans)))
+    return sorted(out, key=lambda x: int(re.search(r"\d+", x[0]).group()))
 
 
 def ecrire_table():

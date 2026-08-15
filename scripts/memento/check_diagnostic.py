@@ -55,6 +55,17 @@ def main():
         for cid in deduits:
             print(f"   {cid}: {parsed[cid][0]}")
 
+    # Signalement, pas un echec : une grille GERMAN dont le bloc diagnostic
+    # porte plusieurs c-red sans formule assertive du corrige pour trancher
+    # retombe sur le premier c-red (repli mecanique) — souvent correct, mais
+    # a relire plutot qu'a accepter en silence (ronde de correction 2/5).
+    multi_cred = lib_diagnostic.signalements_multi_cred()
+    if multi_cred:
+        print(f"\n{len(multi_cred)} grille(s) GERMAN à c-red multiples sans "
+              f"marqueur (repli sur le premier, à relire) :")
+        for cid, n in multi_cred:
+            print(f"   {cid} ({n} c-red) : {parsed[cid][0]}")
+
     vides = sorted(cid for cid, (diag, _) in parsed.items() if not diag)
     if vides:
         print(f"\nECHEC — {len(vides)} entrée(s) sans diagnostic : {vides[:8]}")
