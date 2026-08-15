@@ -55,7 +55,12 @@ _RANG = re.compile(r"^([A-Za-z]+)-(\d+)(.*)$")
 # `nettoyer()` : le NOM d'un fichier ne prouve rien (« Mémento — Toux (mes
 # notes).md » est exactement le nom qu'un humain choisirait), le type declare,
 # lui, n'est ecrit que par ce generateur.
-_TYPE_DECLARE = re.compile(rf"\A---\n(?:.*\n)*?type:\s*{TYPE}\s*\n(?:.*\n)*?---\n")
+# Le « (?!---\n) » interdit de franchir la fermeture du frontmatter : sans lui,
+# une note qui a SON PROPRE frontmatter et cite `type: memento-ecos-ssp` plus
+# bas — dans un bloc de code documentant la convention — serait reconnue comme
+# produite ici, donc effacee.
+_LIGNE = r"(?:(?!---\n).*\n)"
+_TYPE_DECLARE = re.compile(rf"\A---\n{_LIGNE}*?type:\s*{TYPE}\s*\n{_LIGNE}*?---\n")
 
 ENTETE_NON_OFFICIEL = """> [!warning] Mémento dérivé de grilles NON officielles
 > Ces items viennent de grilles d'entraînement (RESCOS, AMBOSS, GERMAN,

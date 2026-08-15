@@ -216,8 +216,8 @@ def items(bloc):
         # antibiotique » et « Pas d'imagerie en urgence si le tableau est
         # typique » des decisions — cette derniere figure d'ailleurs, presque
         # mot pour mot, en item de TETE du memento officiel (RESCOS-70b).
-        # Mesure a l'appui : le filtre non restreint coutait 25 libelles
-        # legitimes, dont 24 en management.
+        # Mesure a l'appui : restreindre le filtre aux sections a/e epargne
+        # 32 libelles de management (33 occurrences) qu'il ecartait a tort.
         sous = [x for x in sous if x]
         if cid[:1] in "ae":
             garde = [x for x in sous if not reponse_patient(x, cid[:1])]
