@@ -13,12 +13,28 @@ import re
 
 LIGNE = re.compile(r'^(?P<indent>\s*)(?P<cle>"[^"]+"|[^:#]+?)\s*:\s*(?P<val>.*?)\s*$')
 
+# Un '#' n'introduit un commentaire que s'il est isole par des espaces (ou en
+# debut/fin de valeur) — sinon c'est un caractere ordinaire, comme dans
+# "Grade #3 sur 4".
+_COMMENTAIRE = re.compile(r'(?:^|(?<=\s))#(?=\s|$)')
 
-def _valeur(brut):
-    """Retire le commentaire de fin de ligne et les guillemets."""
-    if not brut.startswith('"'):
-        brut = brut.split("#")[0].strip()
-    return brut.strip().strip('"')
+
+def _valeur(brut, chemin, numero):
+    """Nettoie une valeur : retire les guillemets ou le commentaire de fin de ligne."""
+    if brut.startswith('"'):
+        fin = brut.find('"', 1)
+        if fin == -1:
+            raise ValueError(f"{chemin}:{numero} — guillemet non fermé dans la valeur : {brut!r}")
+        valeur, reste = brut[1:fin], brut[fin + 1:].strip()
+        if reste and not reste.startswith("#"):
+            raise ValueError(
+                f"{chemin}:{numero} — caractères inattendus après la valeur quotée : {reste!r}"
+            )
+        return valeur
+    m = _COMMENTAIRE.search(brut)
+    if m:
+        brut = brut[:m.start()]
+    return brut.strip()
 
 
 def _cle(brut):
@@ -36,7 +52,11 @@ def _lignes(chemin):
         m = LIGNE.match(ligne)
         if not m:
             raise ValueError(f"{chemin}:{numero} — ligne non reconnue : {ligne!r}")
-        yield numero, len(m.group("indent")), _cle(m.group("cle")), _valeur(m.group("val"))
+        cle = _cle(m.group("cle"))
+        if not cle:
+            raise ValueError(f"{chemin}:{numero} — clé vide")
+        val = _valeur(m.group("val"), chemin, numero)
+        yield numero, len(m.group("indent")), cle, val
 
 
 def lire_plat(chemin):
@@ -50,15 +70,23 @@ def lire_plat(chemin):
 
 
 def lire_groupe(chemin):
-    """`groupe:` puis `cle: valeur` indentes."""
-    out, courant = {}, None
+    """`groupe:` puis `cle: valeur` indentes (un seul niveau)."""
+    out, courant, indent_enfant = {}, None, None
     for numero, indent, cle, val in _lignes(chemin):
         if indent == 0:
             if val:
                 raise ValueError(f"{chemin}:{numero} — un groupe ne porte pas de valeur")
             courant = out.setdefault(cle, {})
+            indent_enfant = None
         else:
             if courant is None:
-                raise ValueError(f"{chemin}:{numero} — entree hors groupe")
+                raise ValueError(f"{chemin}:{numero} — entrée hors groupe")
+            if indent_enfant is None:
+                indent_enfant = indent
+            elif indent != indent_enfant:
+                raise ValueError(
+                    f"{chemin}:{numero} — profondeur d'indentation incohérente "
+                    "(un seul niveau est permis)"
+                )
             courant[cle] = val
     return out
