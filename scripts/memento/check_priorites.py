@@ -15,7 +15,7 @@ COFFRE = Path.home() / "Documents/Damien/Medecine/Obsidian/SSP ECOS"
 def main():
     table = lib_yaml.lire_groupe(TABLE)
     if not table:
-        print("ECHEC — docs/ecos-priorites-2026.yaml est vide ou absent")
+        print("ÉCHEC — docs/ecos-priorites-2026.yaml est vide ou absent")
         return 1
 
     ecarts, sans_ssp, ssp_inconnues = [], [], []
@@ -33,13 +33,13 @@ def main():
     if ssp_inconnues:
         ecarts.append(f"{len(ssp_inconnues)} SSP inexistante(s) dans le coffre : {ssp_inconnues}")
 
-    print(f"{len(table)} plaintes prioritaires · {len({c.get('ssp') for c in table.values()})} SSP visees")
+    print(f"{len(table)} plaintes prioritaires · {len({c.get('ssp') for c in table.values()})} SSP visées")
     if ecarts:
-        print("\nECHEC —", len(ecarts), "ecart(s) :")
+        print("\nÉCHEC —", len(ecarts), "écart(s) :")
         for e in ecarts:
             print("  ", e)
         return 1
-    print("OK — table de priorites complete")
+    print("OK — table de priorités complète")
     return 0
 
 
