@@ -7,6 +7,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import lib_rescos as lib
 
+# Meme lecture des valeurs de points que le simulateur d'atteignabilite, dont
+# elle est importee pour que les deux controles ne puissent pas diverger.
+nombre = lib.amboss_module("check_reachability").nombre
+
 # `section_counts` ne depend d'aucune particularite de corpus : il lit
 # `window.caseConfig.sectionInfo`, dont les 39 grilles RESCOS qui portent un
 # `caseConfig` ont exactement la meme forme que les 40 grilles AMBOSS.
@@ -40,12 +44,18 @@ def section_counts(html):
 
 
 def max_scores(html):
-    """`maxScores` par section, forme declarative ou imperative."""
+    """`maxScores` par section, forme declarative ou imperative.
+
+    Les valeurs ne sont pas toutes entieres : la grille officielle de la
+    station 2 note une ligne 0.5 point, d'ou un `anamnese: 18.5`. Un `int()`
+    aurait lu 18 en silence. `lib.nombre` rend un `int` quand la valeur l'est,
+    afin que le snapshot des 77 autres grilles reste identique au bit pres.
+    """
     m = re.search(r"maxScores:\s*\{([^}]*)\}", html)
     if m:
-        return {k: int(v) for k, v in re.findall(r"(\w+):\s*(\d+)", m.group(1))}
-    return {k: int(v) for k, v in
-            re.findall(r'maxScores\["(\w+)"\]\s*=\s*(\d+)', html)}
+        return {k: nombre(v) for k, v in re.findall(r"(\w+):\s*([\d.]+)", m.group(1))}
+    return {k: nombre(v) for k, v in
+            re.findall(r'maxScores\["(\w+)"\]\s*=\s*([\d.]+)', html)}
 
 
 def coefs(html):
@@ -78,14 +88,14 @@ def coefs(html):
 def snapshot_one(path):
     html = path.read_text(encoding="utf-8")
     spans = dict(re.findall(
-        r'<span class="score">Score : <span id="(\w+)">0</span>/(\d+)</span>', html))
+        r'<span class="score">Score : <span id="(\w+)">0</span>/([\d.]+)</span>', html))
     stripped = lib.strip_base64(html)
     return {
         "maxScores": max_scores(html),
         # Le champ qui a produit le defaut de RESCOS-12 et RESCOS-13 : une
         # section vide gardant son quart de coefficient. Voir `coefs()`.
         "coef": coefs(html),
-        "scoreSpans": {k: int(v) for k, v in spans.items()},
+        "scoreSpans": {k: nombre(v) for k, v in spans.items()},
         # `sectionInfo[].count` — le nombre de criteres que le calcul itere.
         # C'est ce champ, longtemps hors snapshot, qui rendait le bareme
         # d'AMBOSS-9 inatteignable sans qu'aucun controle puisse le voir.

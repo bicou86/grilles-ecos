@@ -60,6 +60,20 @@ import lib_amboss as lib
 COMM = {"A": 4, "B": 3, "C": 2, "D": 1, "E": 0}
 
 
+def nombre(txt):
+    """Valeur de point : entier quand elle l'est, flottant sinon.
+
+    Les grilles papier ne notent pas toutes en entiers — station 2, item 4
+    « Douleurs soulagees par cannabis » vaut 0.5 point. `scoring.js` s'en
+    accommode (`Number(value)`), mais un `int()` ici ferait sauter la ligne.
+    Rendre un `int` quand la valeur est entiere garde les comparaisons et les
+    affichages identiques pour les 300+ grilles qui n'utilisent que des
+    entiers.
+    """
+    val = float(txt)
+    return int(val) if val == int(val) else val
+
+
 def detail_rules(html):
     """Seuils optionnels `detailRules`, identiques a scoring.js:officialDetailScore.
 
@@ -123,7 +137,7 @@ def detail_points(rule, coches):
 def parse_config(html):
     """maxScores, coef, sectionInfo et denominateurs affiches d'une grille."""
     m = re.search(r"maxScores:\s*\{([^}]*)\}", html)
-    max_scores = {k: int(v) for k, v in re.findall(r"(\w+):\s*(\d+)", m.group(1))} if m else {}
+    max_scores = {k: nombre(v) for k, v in re.findall(r"(\w+):\s*([\d.]+)", m.group(1))} if m else {}
 
     m = re.search(r"coef:\s*\{([^}]*)\}", html)
     coef = {k: float(v) for k, v in re.findall(r"(\w+):\s*([\d.]+)", m.group(1))} if m else {}
@@ -146,8 +160,8 @@ def parse_config(html):
             "isComm": re.search(r"isComm:\s*true", blob) is not None,
         })
 
-    spans = {k: int(v) for k, v in re.findall(
-        r'<span class="score">Score : <span id="(\w+)">0</span>/(\d+)</span>', html)}
+    spans = {k: nombre(v) for k, v in re.findall(
+        r'<span class="score">Score : <span id="(\w+)">0</span>/([\d.]+)</span>', html)}
     return max_scores, coef, sections, spans
 
 
@@ -170,9 +184,9 @@ def section_max(html, section):
             best = max((COMM.get(v, 0) for v in levels), default=None)
         else:
             checks = re.findall(
-                r'<input type="checkbox" id="%s-detail-\d+"[^>]*value="(\d+)"' % cid, html)
+                r'<input type="checkbox" id="%s-detail-\d+"[^>]*value="([\d.]+)"' % cid, html)
             if checks:
-                coches = sum(int(v) for v in checks)
+                coches = sum(nombre(v) for v in checks)
                 if cid in rules:
                     best = detail_points(rules[cid], coches)
                     detail.append(
@@ -182,8 +196,8 @@ def section_max(html, section):
                     detail.append(f"{cid} = {best} ({len(checks)} case(s) de detail)")
             else:
                 radios = re.findall(
-                    r'<input type="radio"[^>]*name="%s"[^>]*value="(\d+)"' % cid, html)
-                best = max((int(v) for v in radios), default=None)
+                    r'<input type="radio"[^>]*name="%s"[^>]*value="([\d.]+)"' % cid, html)
+                best = max((nombre(v) for v in radios), default=None)
                 if best is not None:
                     detail.append(f"{cid} = {best} (radio)")
         if best is None:
