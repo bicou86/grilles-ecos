@@ -30,6 +30,10 @@ HORS_PERIMETRE = {
                 "aucun a/e/m) — cf. rapport tache 4",
     "RESCOS-4": "grille ABCDE de reanimation sans diagnostic identifiable "
                 "(le mot 'diagnostic' n'apparait nulle part) — cf. relecture tache 6",
+    "German-73": "exclue sur decision de l'auteur — le premier c-red est le "
+                 "symptome (« Saignement vaginal du premier trimestre »), pas "
+                 "un diagnostic tranche",
+    "RESCOS-55": "exclue sur decision de l'auteur",
 }
 
 

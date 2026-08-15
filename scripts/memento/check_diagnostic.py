@@ -59,7 +59,9 @@ def main():
     # porte plusieurs c-red sans formule assertive du corrige pour trancher
     # retombe sur le premier c-red (repli mecanique) — souvent correct, mais
     # a relire plutot qu'a accepter en silence (ronde de correction 2/5).
-    multi_cred = lib_diagnostic.signalements_multi_cred()
+    # Une grille hors perimetre n'a pas de ligne dans la table : rien a relire.
+    multi_cred = [(cid, n) for cid, n in lib_diagnostic.signalements_multi_cred()
+                  if cid in parsed]
     if multi_cred:
         print(f"\n{len(multi_cred)} grille(s) GERMAN à c-red multiples sans "
               f"marqueur (repli sur le premier, à relire) :")

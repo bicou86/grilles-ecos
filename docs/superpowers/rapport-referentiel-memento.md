@@ -1,25 +1,25 @@
 # Écart au référentiel officiel — mémentos
 
 456 formes canoniques tirées des 9 grilles officielles trouvées.
-8907 items non officiels, dont **7470 sans répondant** (83 %).
+8838 items non officiels, dont **7403 sans répondant** (83 %).
 
 | Corpus | Items orphelins |
 |---|---|
 | azygos | 2919 |
-| german | 2768 |
-| rescos | 1155 |
+| german | 2735 |
+| rescos | 1121 |
 | amboss | 628 |
 
 ## Les 60 libellés orphelins les plus fréquents
 
-- `Évaluation globale de la qualité de l'anamnèse` — 89×
-- `Évaluation globale de la qualité de l'examen clinique` — 88×
-- `Évaluation globale de la qualité de la prise en charge` — 85×
-- `Présentation avec nom, fonction et tâche` — 58×
-- `Anamnèse sociale` — 50×
+- `Évaluation globale de la qualité de l'anamnèse` — 88×
+- `Évaluation globale de la qualité de l'examen clinique` — 87×
+- `Évaluation globale de la qualité de la prise en charge` — 84×
+- `Présentation avec nom, fonction et tâche` — 57×
+- `Anamnèse sociale` — 49×
 - `Examen cardiovasculaire` — 45×
 - `Motif principal` — 41×
-- `Examen abdominal` — 41×
+- `Examen abdominal` — 40×
 - `Habitudes et mode de vie` — 40×
 - `Antécédents chirurgicaux` — 37×
 - `Mesures d'hygiène` — 37×
@@ -29,13 +29,13 @@
 - `Médicaments actuels` — 29×
 - `Noxes` — 29×
 - `Diagnostic de travail` — 28×
-- `Symptômes généraux` — 27×
 - `Habitudes de vie` — 26×
-- `Examens complémentaires urgents` — 25×
+- `Symptômes généraux` — 26×
 - `Recherche de symptômes spécifiques` — 25×
 - `Conseil et soutien` — 25×
 - `Symptômes B` — 25×
 - `Diagnostic principal` — 25×
+- `Examens complémentaires urgents` — 24×
 - `Examen neurologique` — 24×
 - `Examens complémentaires de première intention` — 23×
 - `Antécédents personnels` — 23×
@@ -50,11 +50,11 @@
 - `Tabagisme` — 19×
 - `Communication avec le patient` — 18×
 - `Motif de consultation` — 18×
-- `Signes vitaux` — 18×
 - `Prise en charge thérapeutique` — 18×
 - `Toxiques` — 18×
 - `Examen cutané` — 18×
 - `Examen du cou` — 18×
+- `Signes vitaux` — 17×
 - `Examens d'imagerie` — 17×
 - `Facteurs de risque cardiovasculaire` — 17×
 - `⊖ Facteurs soulageants` — 17×
