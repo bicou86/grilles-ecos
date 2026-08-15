@@ -17,9 +17,19 @@ REPO = Path(__file__).resolve().parents[2]
 # un cas a une section unique. Exclue explicitement plutot que masquee par
 # lib_extraction, qui reste inchangee (elle est partagee et figee par
 # check_identifiants.py / check_fusion.py).
+#
+# RESCOS-4 est une seconde raison d'exclusion : une grille ABCDE de
+# reanimation (stabilisation, voies aeriennes, circulation...) qui a bien des
+# items a/e/m, mais dont aucun ne nomme un diagnostic — le mot « diagnostic »
+# n'apparait nulle part dans le fichier. La tache 6 (resolution du
+# diagnostic par cascade) avait invente une valeur a partir d'un bloc
+# « Mesures immediates » ; exclue ici plutot que de porter un diagnostic
+# fabrique, meme constat que RESCOS-7 cote couverture.
 HORS_PERIMETRE = {
     "RESCOS-7": "grille purement communication (criteres 'c' uniquement, "
                 "aucun a/e/m) — cf. rapport tache 4",
+    "RESCOS-4": "grille ABCDE de reanimation sans diagnostic identifiable "
+                "(le mot 'diagnostic' n'apparait nulle part) — cf. relecture tache 6",
 }
 
 

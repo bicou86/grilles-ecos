@@ -37,7 +37,7 @@ def main():
     confiances = Counter(conf for _, conf in parsed.values())
     resolus = sum(n for c, n in confiances.items() if c != "absent")
     part = 100 * resolus // len(table)
-    print(f"{len(table)} cas · {resolus} diagnostics resolus ({part} %)")
+    print(f"{len(table)} cas · {resolus} diagnostics résolus ({part} %)")
     for c, n in confiances.most_common():
         print(f"   {c:20s} {n}")
 
@@ -51,18 +51,18 @@ def main():
 
     deduits = sorted(cid for cid, (_, conf) in parsed.items() if conf == "deduit")
     if deduits:
-        print(f"\n{len(deduits)} diagnostic(s) « deduit » a relire :")
+        print(f"\n{len(deduits)} diagnostic(s) « deduit » à relire :")
         for cid in deduits:
             print(f"   {cid}: {parsed[cid][0]}")
 
     vides = sorted(cid for cid, (diag, _) in parsed.items() if not diag)
     if vides:
-        print(f"\nECHEC — {len(vides)} entree(s) sans diagnostic : {vides[:8]}")
+        print(f"\nECHEC — {len(vides)} entrée(s) sans diagnostic : {vides[:8]}")
         return 1
     if part < SEUIL:
         print(f"\nECHEC — couverture {part} % sous le seuil de {SEUIL} %")
         return 1
-    print("\nOK — table de diagnostics complete")
+    print("\nOK — table de diagnostics complète")
     return 0
 
 
