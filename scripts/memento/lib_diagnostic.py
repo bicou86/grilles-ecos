@@ -305,7 +305,7 @@ def ecrire_table():
               "# confiance : explicite | corrige | premier-dd | diagnostic-travail | deduit | absent",
               "# corrige = bloc <h4>Diagnostic</h4> de GERMAN (reponse dediee par vignette).",
               "# Une valeur corrigee a la main n'est jamais ecrasee par une reexecution.",
-              "# RESCOS-7 et RESCOS-4 sont hors perimetre (cf. HORS_PERIMETRE) et n'apparaissent pas ici.",
+              "# Cinq grilles sont hors perimetre (cf. HORS_PERIMETRE) et n'apparaissent pas ici.",
               ""]
     for cid in sorted(out, key=lambda x: (x.split("-")[0], int(re.search(r"\d+", x).group()))):
         lignes.append(f"{cid}: {out[cid]}")

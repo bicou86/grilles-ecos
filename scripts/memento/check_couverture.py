@@ -34,6 +34,11 @@ HORS_PERIMETRE = {
                  "symptome (« Saignement vaginal du premier trimestre »), pas "
                  "un diagnostic tranche",
     "RESCOS-55": "exclue sur decision de l'auteur",
+    "RESCOS-64-2": "station de PRESENTATION DE CAS, pas de rencontre clinique : "
+                   "ses criteres portent les prefixes 'r' (raisonnement : « Arguments "
+                   "POUR/CONTRE le cancer pulmonaire ») et 'p' (presentation : "
+                   "« Identite, motif de consultation »), aucun a/e/m. Meme motif que "
+                   "RESCOS-7. C'est la seule grille du corpus hors du schema a/e/m/c.",
 }
 
 

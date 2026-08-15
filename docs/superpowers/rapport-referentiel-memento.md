@@ -1,13 +1,13 @@
 # Écart au référentiel officiel — mémentos
 
 456 formes canoniques tirées des 9 grilles officielles trouvées.
-8838 items non officiels, dont **7403 sans répondant** (83 %).
+8825 items non officiels, dont **7398 sans répondant** (83 %).
 
 | Corpus | Items orphelins |
 |---|---|
 | azygos | 2919 |
 | german | 2735 |
-| rescos | 1121 |
+| rescos | 1116 |
 | amboss | 628 |
 
 ## Les 60 libellés orphelins les plus fréquents
@@ -98,9 +98,9 @@ Les 44 SSP de `docs/ecos-priorites-2026.yaml`, triées par part décroissante d'
 | Incontinence Urinaire | 42 | 36 | 85 % |
 | Plaie & Ulcère Cutané | 84 | 72 | 85 % |
 | Lombalgies | 317 | 268 | 84 % |
+| Toux | 413 | 348 | 84 % |
 | Douleur du Genou | 137 | 115 | 83 % |
 | Ictère | 54 | 45 | 83 % |
-| Toux | 426 | 353 | 82 % |
 | Constipation | 35 | 29 | 82 % |
 | Chute & Évaluation Gériatrique | 163 | 135 | 82 % |
 | Amaurose & Perte Brutale de Vision | 209 | 171 | 81 % |
