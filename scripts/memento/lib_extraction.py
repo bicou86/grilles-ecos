@@ -116,16 +116,31 @@ def items(bloc):
     return lignes
 
 
+# Une station double porte le meme numero sur ses deux grilles : sans le rang,
+# « RESCOS-64 - Toux - Station double 1 » et « ... Station double 2 » rendent
+# le meme identifiant. Les deux grilles restent alors indiscernables partout
+# ou un cas est designe par son identifiant — et comme l'appariement retient
+# les cas dans un `set`, un item present dans les deux ne serait compte qu'une
+# fois (« 13/14 » pour une SSP qui porte bien 14 grilles). Le rang est donc
+# repris dans l'identifiant : RESCOS-64-1 et RESCOS-64-2.
+_STATION_DOUBLE = re.compile(r"Station double (\d+)", re.I)
+
+
 def identifiant(chemin):
-    """« AMBOSS-1 » ou « German-45 » depuis un nom de fichier de grille.
+    """« AMBOSS-1 », « German-45 » ou « RESCOS-64-2 » depuis un nom de fichier.
 
     Ancre en debut de nom : le prefixe de corpus (une majuscule initiale,
     puis des lettres quelconques — AMBOSS, German, RESCOS, AZYGOS...) suivi
-    d'un numero et, pour certains corpus, d'un suffixe d'une lettre.
+    d'un numero et, pour certains corpus, d'un suffixe d'une lettre. Le rang
+    de station double, quand il est present, est ajoute en fin (voir
+    _STATION_DOUBLE).
     """
     nom = Path(chemin).name
     m = re.match(r"([A-Z][A-Za-z]*-\d+[a-z]?)", nom)
-    return m.group(1) if m else Path(chemin).stem[:40]
+    if not m:
+        return Path(chemin).stem[:40]
+    rang = _STATION_DOUBLE.search(nom)
+    return f"{m.group(1)}-{rang.group(1)}" if rang else m.group(1)
 
 
 def lire_html(chemin):
@@ -227,6 +242,26 @@ def lire_azygos(chemin):
     meme `detail-text` de 100 a 250 mots. Le JSON garde la separation : les
     `label` sont les items, les paragraphes vivent a part dans `infos` et ne
     sont pas repris.
+
+    LES `valeurs` NE SONT PAS DES SOUS-CRITERES — ce sont les reponses du·de
+    la patient·e, et elles ne sont donc pas reprises non plus. Le JSON separe
+    les deux natures par la structure, pas par une heuristique de longueur :
+    scripts/azygos/extract.js prend le libelle dans `span.font-medium` et les
+    `valeurs` dans les `<p>` du meme conteneur, qui portent le texte de la
+    reponse (« Aucune allergie connue. », « 5/10 au repos, 8/10 a la
+    marche. »). Verifie sur le corpus : 2 valeurs sur 4 973 coincident avec
+    un libelle d'item existant ailleurs, et les deux se lisent comme des
+    reponses en contexte.
+
+    Les vrais sous-criteres ne sont pas perdus pour autant : ils sont deja
+    des items a part entiere de la meme liste. `nbEnfants` compte les
+    libelles imbriques dans le conteneur, et ces enfants suivent le parent
+    comme freres — « Noxes » (nbEnfants=3) est suivi de « Tabac », « Alcool »
+    et « Drogues », dont il ne fait qu'agreger les reponses (verifie : 442
+    parents sur 492 ont exactement pour `valeurs` la concatenation de celles
+    de leurs n suivants). Aucune reconstruction de hierarchie n'est tentee
+    ici : `nbEnfants` deborde du groupe pour 46 parents sur 538, ce qui en
+    fait un compteur d'affichage, pas un compte d'enfants fiable.
     """
     chemin = Path(chemin)
     donnees = json.loads(chemin.read_text(encoding="utf8"))
@@ -248,8 +283,7 @@ def lire_azygos(chemin):
                 if not titre:
                     continue
                 cid = f"{prefixe}{len(lignes) + 1}"
-                sous = [v.strip() for v in item.get("valeurs", []) if v and v.strip()]
-                lignes.append(("item", cid, titre, harmonise(sous)))
+                lignes.append(("item", cid, titre, []))
     return {
         "id": ident,
         "corpus": "azygos",

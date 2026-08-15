@@ -24,11 +24,15 @@ def main():
     if not douleur:
         ecarts.append("les deux libelles « Caracterisation de la douleur » n'ont pas fusionne")
     else:
+        # Les ensembles sont TRIES avant affichage : le repr d'un set de
+        # chaines depend de PYTHONHASHSEED, et deux executions d'une meme
+        # regression afficheraient sinon le meme ecart dans deux ordres
+        # differents — illisible a comparer, et faussement instable.
         if douleur["cas"] != {"A", "B"}:
-            ecarts.append(f"cas portes attendus {{A, B}}, obtenu {douleur['cas']}")
+            ecarts.append(f"cas portes attendus {{A, B}}, obtenu {sorted(douleur['cas'])}")
         sous = {s["titre"] for s in douleur["sous"]}
         if sous != {"Localisation", "Irradiation", "Facteurs déclenchants"}:
-            ecarts.append(f"sous-items mal fusionnes : {sous}")
+            ecarts.append(f"sous-items mal fusionnes : {sorted(sous)}")
         loc = next(s for s in douleur["sous"] if s["titre"] == "Localisation")
         if loc["cas"] != {"A", "B"}:
             ecarts.append("« Localisation » devrait etre porte par A et B")
@@ -39,9 +43,9 @@ def main():
     # La neutralisation porte sur la CLE d'appariement, pas sur le libelle
     # affiche : `canonique()` rend un libelle destine a etre lu, dont la casse
     # et les accents sont ceux du premier cas rencontre (les verifications de
-    # sous-items ci-dessus l'exigent, « Localisation » et « Facteurs
-    # déclenchants » y sont compares au caractere pres). C'est
-    # `signature(canonique(...))` qui doit rapprocher les deux libelles.
+    # sous-items ci-dessus l'exigent : leurs libelles y sont compares au
+    # caractere pres). C'est `signature(canonique(...))` qui doit rapprocher
+    # les deux libelles.
     if (lib_fusion.signature(lib_fusion.canonique("1. Caractérisation de la douleur"))
             != lib_fusion.signature(lib_fusion.canonique("Caractérisation de la Douleur"))):
         ecarts.append("numerotation et casse devraient etre neutralisees")

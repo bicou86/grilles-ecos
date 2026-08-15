@@ -52,12 +52,24 @@ def _table():
 def signature(titre):
     """Cle d'appariement du socle A.
 
-    Le repli sur le titre nu couvre le libelle qui ne laisse aucun token une
-    fois les mots vides retires : sans lui, deux libelles vides de sens
-    lexical fusionneraient sur la cle vide.
+    Le repli couvre le libelle qui ne laisse aucun token une fois les mots
+    vides retires : sans lui, tous ces libelles partageraient la cle vide et
+    fusionneraient entre eux. Il se fait en deux temps parce que la
+    numerotation retiree peut etre tout le libelle — « 2. » donne un titre nu
+    vide, et sans le second repli sur le titre d'origine, « 2. » et « 3. »
+    fusionneraient. Ne restent alors confondus que deux libelles reellement
+    identiques, ce qui est le comportement voulu.
+
+    Ce repli garde accents et ponctuation, deliberement : arrive la, le
+    libelle n'a plus aucun contenu lexical, sa graphie brute est la seule
+    information qui subsiste. La consequence ne peut etre que de SEPARER deux
+    libelles degeneres, jamais d'en rapprocher deux a tort — le seul sens ou
+    se tromper soit sans danger pour un appariement clinique. Normaliser
+    davantage supposerait de recopier ici la normalisation de lib_cle, la
+    duplication meme que ce module refuse.
     """
     nu = _NUMEROTATION.sub("", titre)
-    return cle(nu) or nu.strip().lower()
+    return cle(nu) or nu.strip().lower() or titre.strip().lower()
 
 
 def canonique(titre, ssp=None):
