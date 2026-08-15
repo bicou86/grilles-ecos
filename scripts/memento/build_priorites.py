@@ -64,7 +64,7 @@ def main():
                    f'  pct: {e["pct"]}',
                    f'  diagnostics: {" · ".join(sorted(e["diagnostics"]))}']
     TABLE.write_text("\n".join(lignes) + "\n", encoding="utf8")
-    print(f"{len(par_plainte)} priorités -> {TABLE.relative_to(REPO)}")
+    print(f"{len(par_plainte)} plaintes prioritaires -> {TABLE.relative_to(REPO)}")
 
 
 if __name__ == "__main__":
