@@ -525,7 +525,9 @@ cssclasses:
 > 	- [ ] Inspection: pas de distension *(Colique néphrétique sur lithiase)*
 > 	- [ ] Palpation: sensibilité flanc gauche *(Colique néphrétique sur lithiase)*
 > 	- [ ] Défense absente *(Colique néphrétique sur lithiase)*
+> 	- [ ] Pas de masse palpable *(Colique néphrétique sur lithiase)*
 > 	- [ ] Bruits hydroaériques présents *(Colique néphrétique sur lithiase)*
+> 	- [ ] Pas de globe vésical *(Colique néphrétique sur lithiase)*
 > - [ ] **56. Palpation des points urétéraux *(Colique néphrétique gauche · Colique néphrétique sur lithiase)***
 > 	- [ ] Point urétéral supérieur
 > 	- [ ] Point urétéral moyen

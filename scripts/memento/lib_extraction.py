@@ -92,11 +92,30 @@ _REPONSE_VALEUR = re.compile(
 _PARENTHESES = re.compile(r"\([^)]*\)")
 
 
-def reponse_patient(libelle):
-    """Vrai si ce SOUS-critere enonce une reponse et non un geste a couvrir."""
+def reponse_patient(libelle, section="a"):
+    """Vrai si ce SOUS-critere enonce une reponse et non un geste a couvrir.
+
+    LA NEGATION NE VAUT QU'EN ANAMNESE, et la distinction est clinique et non
+    lexicale. En anamnese, une negation est ce que le·la patient·e REPOND
+    (« Pas de voyage recent », « Pas d'hepatite connue »). En status, on ne
+    peut ecrire « pas de frottement pericardique » qu'APRES avoir ausculte :
+    la forme negative y decrit le geste et le signe cherche, pas une reponse.
+
+    Mesure a l'appui sur les trois corpus HTML : la regle de negation rend au
+    status 41 libelles (52 occurrences), dont 40 sont des signes physiques
+    exigeant un geste — auscultation (frottement, galop, rales, sibilants,
+    souffle), inspection (cyanose, angiomes stellaires, erythrose palmaire,
+    xanthelasmas), palpation (splenomegalie, globe vesical, masse, defense,
+    detente), recherche ciblee (phlebite, foyer infectieux). Le seul cout est
+    « Aucun » (2 occurrences), un libelle degenere qui ne porte rien.
+
+    Les deux autres regles — valeur chiffree et constat de normalite —
+    continuent de valoir dans les DEUX sections : « TA 138/85 mmHg » et
+    « Murmure vesiculaire normal » restent des reponses ou qu'elles figurent.
+    """
     if ":" in libelle:
         return False
-    if _REPONSE_NEGATION.match(libelle):
+    if section == "a" and _REPONSE_NEGATION.match(libelle):
         return True
     # Les parentheses sont neutralisees pour le constat de normalite comme
     # pour la valeur chiffree : entre parentheses, le constat PRECISE un geste
@@ -201,7 +220,7 @@ def items(bloc):
         # legitimes, dont 24 en management.
         sous = [x for x in sous if x]
         if cid[:1] in "ae":
-            garde = [x for x in sous if not reponse_patient(x)]
+            garde = [x for x in sous if not reponse_patient(x, cid[:1])]
             # INVARIANT DUR : le filtre ne vide JAMAIS un item de tous ses
             # sous-items. Quand l'enumeration entiere est ecartee, c'est
             # qu'elle EST l'information — « Recherche de signes

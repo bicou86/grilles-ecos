@@ -341,10 +341,12 @@ cssclasses:
 > 	- [ ] Râles crépitants bilatéraux *(1 grille sur 5)*
 > 	- [ ] Diminution du murmure vésiculaire *(1 grille sur 5)*
 > 	- [ ] Matité des bases *(1 grille sur 5)*
+> 	- [ ] Pas de sibilants *(1 grille sur 5)*
 > - [ ] **8. Auscultation cardiaque *(2 grilles sur 5)***
 > 	- [ ] Bruits du cœur assourdis *(1 grille sur 5)*
 > 	- [ ] Galop (B3) *(1 grille sur 5)*
 > 	- [ ] Souffle systolique d'insuffisance mitrale *(1 grille sur 5)*
+> 	- [ ] Pas de frottement péricardique *(1 grille sur 5)*
 > - [ ] **9. Palpation du pouls *(1 grille sur 5)***
 > - [ ] **10. Veines jugulaires *(1 grille sur 5)***
 > - [ ] **11. Reflux hépato-jugulaire *(1 grille sur 5)***
@@ -438,11 +440,13 @@ cssclasses:
 > 	- [ ] Hépatomégalie
 > 	- [ ] Sensibilité hépatique
 > 	- [ ] Ascite modérée
+> 	- [ ] Pas de splénomégalie
 > - [ ] **32. Examen des membres inférieurs *(1 grille sur 5)***
 > 	- [ ] Œdèmes bilatéraux prenant le godet
 > 	- [ ] Symétriques et blancs
 > 	- [ ] Mous et indolores
 > 	- [ ] Pouls périphériques présents
+> 	- [ ] Pas de signes de phlébite
 > - [ ] **33. Inspection générale intégrée *(1 grille sur 5)***
 > 	- [ ] État général
 > 	- [ ] Fréquence respiratoire

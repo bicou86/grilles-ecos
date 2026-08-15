@@ -407,6 +407,9 @@ cssclasses:
 > 	- [ ] Mitral *(1 grille sur 12)*
 > 	- [ ] Tricuspide *(1 grille sur 12)*
 > 	- [ ] Bruits du cœur réguliers *(1 grille sur 12)*
+> 	- [ ] Pas de souffle audible *(1 grille sur 12)*
+> 	- [ ] Pas de galop *(1 grille sur 12)*
+> 	- [ ] Pas de frottement péricardique *(1 grille sur 12)*
 > - [ ] **23. Pouls périphériques *(1 grille sur 12)***
 > - [ ] **24. Palpation *(Contusion costale)***
 > - [ ] **25. Poumons *(Contusion costale)***
@@ -418,6 +421,9 @@ cssclasses:
 > 	- [ ] Excursions thoraciques symétriques et régulières *(1 grille sur 12)*
 > 	- [ ] Fréquence respiratoire *(1 grille sur 12)*
 > 	- [ ] Patient en bon état général *(1 grille sur 12)*
+> 	- [ ] Pas de détresse respiratoire *(1 grille sur 12)*
+> 	- [ ] Pas de cyanose *(1 grille sur 12)*
+> 	- [ ] Pas de xanthélasmas *(1 grille sur 12)*
 > 	- [ ] Arc cornéen *(1 grille sur 12)*
 > - [ ] **30. État cardiopulmonaire *(3 grilles sur 12)***
 > - [ ] **31. Inspection des membres inférieurs *(1 grille sur 12)***
@@ -476,12 +482,15 @@ cssclasses:
 > - [ ] **46. Signes vitaux *(1 grille sur 12)***
 > 	- [ ] SpO2 98% en air ambiant
 > - [ ] **47. Auscultation pulmonaire *(1 grille sur 12)***
+> 	- [ ] Pas de râles
+> 	- [ ] Pas de sibilants
 > 	- [ ] Symétrique bilatéralement
 > - [ ] **48. Palpation des pouls périphériques *(1 grille sur 12)***
 > 	- [ ] Pouls carotidiens symétriques
 > 	- [ ] Pouls fémoraux présents
 > 	- [ ] Pouls pédieux présents
 > 	- [ ] Pouls tibiaux postérieurs présents
+> 	- [ ] Pas de souffle abdominal
 > - [ ] **49. Signes vitaux et mesures anthropométriques *(1 grille sur 12)***
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Tension artérielle

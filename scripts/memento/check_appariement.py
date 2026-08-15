@@ -105,8 +105,76 @@ def verifier_invariant_sous_items():
     bloc = ('<div class="criteria-row" id="criteria-e1">'
             '<div class="criteria-text">Signes d\'hypertension portale<button>'
             '</button></div>'
-            '<div class="detail-text criteria-detail">Pas d\'ascite</div>'
-            '<div class="detail-text criteria-detail">Pas de splénomégalie</div>'
+            '<div class="detail-text criteria-detail">Foie de taille normale</div>'
+            '<div class="detail-text criteria-detail">Rate normale non palpable</div>'
+            '<div class="detail-text criteria-detail">Circulation collatérale normale</div>')
+    lignes = lib_extraction.items(bloc)
+    if not lignes:
+        return ["le bloc de controle n'a produit aucun item"]
+    _, _, titre, sous = lignes[0]
+    if len(sous) != 3:
+        ecarts.append(f"l'item a ete vide de ses sous-items : {titre!r} -> {sous}")
+    return ecarts
+
+
+def verifier_nettoyage():
+    """Glyphes decoratifs et enonciateur a la 3e personne sont retires."""
+    ecarts = []
+    for brut, attendu in (("⊕ Facteurs aggravants", "Facteurs aggravants"),
+                          ("Facteurs soulageants ⊖", "Facteurs soulageants"),
+                          ("L'étudiant évoque le toucher rectal",
+                           "Évoque le toucher rectal"),
+                          ("Localisation", "Localisation")):
+        obtenu = lib_rendu.nettoie_libelle(brut)
+        if obtenu != attendu:
+            ecarts.append(f"nettoyage errone : {brut!r} -> {obtenu!r}")
+    return ecarts
+
+
+def verifier_reponses_patient():
+    """Les reponses du·de la patient·e ne sont pas des sous-criteres a cocher."""
+    ecarts = []
+    # valeur chiffree et constat de normalite : reponses dans les DEUX sections
+    for section in ("a", "e"):
+        for libelle in ("TA 138/85 mmHg", "Murmure vésiculaire normal",
+                        "Température 36.5°C"):
+            if not lib_extraction.reponse_patient(libelle, section):
+                ecarts.append(f"reponse non reconnue en {section} : {libelle!r}")
+    # negation : une reponse en ANAMNESE, un signe cherche en STATUS
+    for libelle in ("Pas de voyage récent", "Absence de fièvre",
+                    "Pas d'hépatite connue"):
+        if not lib_extraction.reponse_patient(libelle, "a"):
+            ecarts.append(f"negation d'anamnese non reconnue : {libelle!r}")
+    for libelle in ("Pas de frottement péricardique", "Pas de galop",
+                    "Pas de splénomégalie", "Pas d'angiomes stellaires"):
+        if lib_extraction.reponse_patient(libelle, "e"):
+            ecarts.append(f"signe cherche a l'examen ecarte a tort : {libelle!r}")
+    # epargnes : seuil entre parentheses, echelle introduite par « : », et
+    # « Sans… », volontairement hors du motif
+    for libelle in ("Interprétation du test (chute ≥20/10 mmHg)",
+                    "Normal: 0.9-1.3", "Classe I: Activités quotidiennes normales",
+                    "Sans correction", "Bêtabloquant (bisoprolol 5mg/j)",
+                    "Localisation"):
+        if lib_extraction.reponse_patient(libelle, "a"):
+            ecarts.append(f"libelle legitime ecarte a tort : {libelle!r}")
+    return ecarts
+
+
+def verifier_invariant_sous_items():
+    """Le filtre des reponses ne vide JAMAIS un item de tous ses sous-items.
+
+    Garantie STRUCTURELLE, pas heuristique : quand toute l'enumeration se lit
+    comme une reponse, c'est qu'elle EST l'information que l'item annonce
+    (« Recherche de signes d'insuffisance hepatocellulaire » suivi de ses six
+    signes). Le bloc HTML ci-dessous est celui, minimal, que `items()` sait
+    lire ; ses trois sous-criteres sont tous des reponses.
+    """
+    ecarts = []
+    bloc = ('<div class="criteria-row" id="criteria-e1">'
+            '<div class="criteria-text">Signes d\'hypertension portale<button>'
+            '</button></div>'
+            '<div class="detail-text criteria-detail">Foie de taille normale</div>'
+            '<div class="detail-text criteria-detail">Rate normale non palpable</div>'
             '<div class="detail-text criteria-detail">Circulation collatérale normale</div>')
     lignes = lib_extraction.items(bloc)
     if not lignes:

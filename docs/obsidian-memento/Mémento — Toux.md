@@ -770,6 +770,7 @@ cssclasses:
 > 	- [ ] Gorge
 > 	- [ ] Oreilles
 > 	- [ ] Nez
+> 	- [ ] Absence de foyer infectieux
 > - [ ] **38. Palpation ganglionnaire *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Aires cervicales
 > 	- [ ] Aires axillaires

@@ -99,6 +99,8 @@ cssclasses:
 > 	- [ ] Sclérotiques ictériques
 > 	- [ ] Excoriations cutanées
 > 	- [ ] État général
+> 	- [ ] Pas d'angiomes stellaires
+> 	- [ ] Pas d'érythrose palmaire
 > - [ ] **2. Signes vitaux**
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence cardiaque

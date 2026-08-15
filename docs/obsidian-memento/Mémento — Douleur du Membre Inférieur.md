@@ -255,6 +255,7 @@ cssclasses:
 > 	- [ ] Paresis
 > - [ ] **13. Examen physique général *(Embolie pulmonaire)***
 > 	- [ ] État général conservé
+> 	- [ ] Pas de cyanose
 > 	- [ ] Dyspnée modérée en parlant
 > - [ ] **14. Mesure des périmètres des membres inférieurs *(Embolie pulmonaire)***
 > 	- [ ] Cheville gauche > droite
@@ -275,7 +276,9 @@ cssclasses:
 > 	- [ ] Frottement pleural
 > 	- [ ] Épanchement pleural
 > 	- [ ] Fréquence respiratoire
+> 	- [ ] Pas de râles
 > - [ ] **18. Examen cardiovasculaire *(Embolie pulmonaire)***
 > 	- [ ] Tachycardie
 > 	- [ ] Tachyarythmie
 > 	- [ ] Éclat B2 pulmonaire
+> 	- [ ] Pas de signes d'insuffisance cardiaque droite
