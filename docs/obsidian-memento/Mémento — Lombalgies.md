@@ -29,16 +29,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Lombalgies ⭐️
 
@@ -141,7 +152,7 @@ cssclasses:
 > - [ ] **27. Retentissement des symptômes *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **28. Douleur nocturne *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **29. Raideur matinale *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **30. Symptômes neurologiques *(Cancer prostatique métastatique, Colique néphrétique gauche, Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **30. Symptômes neurologiques *(Cancer prostatique métastatique · Colique néphrétique gauche · Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > 	- [ ] Faiblesse musculaire *(Colique néphrétique gauche)*
 > 	- [ ] Troubles sensitifs *(Colique néphrétique gauche)*
 > 	- [ ] Déficit moteur *(Cancer prostatique métastatique)*
@@ -189,7 +200,7 @@ cssclasses:
 > 	- [ ] Facteur déclenchant *(Fracture vertébrale)*
 > 	- [ ] Durée *(2 grilles sur 8)*
 > 	- [ ] Évolution *(1 grille sur 8)*
-> - [ ] **67. Localisation précise *(Colique néphrétique gauche, Fracture vertébrale)***
+> - [ ] **67. Localisation précise *(Colique néphrétique gauche · Fracture vertébrale)***
 > 	- [ ] Localisation *(Fracture vertébrale)*
 > 	- [ ] Irradiation *(Fracture vertébrale)*
 > - [ ] **68. Type et intensité de la douleur *(Fracture vertébrale)***
@@ -225,7 +236,7 @@ cssclasses:
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
-> - [ ] **76. Statut hormonal *(Colique néphrétique gauche, Fracture vertébrale)***
+> - [ ] **76. Statut hormonal *(Colique néphrétique gauche · Fracture vertébrale)***
 > - [ ] **77. Facteurs de risque d'ostéoporose *(Fracture vertébrale)***
 > 	- [ ] Ménopause précoce
 > 	- [ ] Tabagisme important
@@ -239,7 +250,7 @@ cssclasses:
 > 	- [ ] Ostéoporose *(1 grille sur 8)*
 > 	- [ ] Pathologies cardiovasculaires *(1 grille sur 8)*
 > 	- [ ] Autres pathologies pertinentes *(1 grille sur 8)*
-> - [ ] **79. Anamnèse sociale *(Colique néphrétique gauche, Fracture vertébrale)***
+> - [ ] **79. Anamnèse sociale *(Colique néphrétique gauche · Fracture vertébrale)***
 > 	- [ ] Profession
 > 	- [ ] Activité physique
 > 	- [ ] Autonomie *(Fracture vertébrale)*
@@ -279,7 +290,7 @@ cssclasses:
 > 	- [ ] Au repos et en mouvement
 > 	- [ ] Épisodes antérieurs
 > - [ ] **94. Événement déclenchant ou traumatisme *(Colique néphrétique gauche)***
-> - [ ] **95. Symptômes urinaires associés *(Colique néphrétique gauche, Colique néphrétique sur lithiase)***
+> - [ ] **95. Symptômes urinaires associés *(Colique néphrétique gauche · Colique néphrétique sur lithiase)***
 > 	- [ ] Hématurie macroscopique *(Colique néphrétique gauche)*
 > 	- [ ] Dysurie *(Colique néphrétique gauche)*
 > 	- [ ] Incontinence *(Colique néphrétique gauche)*
@@ -293,7 +304,7 @@ cssclasses:
 > - [ ] **96. Symptômes digestifs *(Colique néphrétique gauche)***
 > 	- [ ] Transit intestinal
 > 	- [ ] Nausées/vomissements
-> - [ ] **97. Symptômes généraux *(Colique néphrétique gauche, Colique néphrétique sur lithiase)***
+> - [ ] **97. Symptômes généraux *(Colique néphrétique gauche · Colique néphrétique sur lithiase)***
 > 	- [ ] Fièvre *(Colique néphrétique gauche)*
 > 	- [ ] Frissons *(Colique néphrétique gauche)*
 > 	- [ ] Perte de poids *(Colique néphrétique gauche)*
@@ -311,7 +322,7 @@ cssclasses:
 > 	- [ ] Alimentation riche en oxalates
 > 	- [ ] Consommation de sel
 > - [ ] **100. Motif de consultation *(Colique néphrétique sur lithiase)***
-> - [ ] **101. Caractérisation de la douleur *(Cancer prostatique métastatique, Colique néphrétique sur lithiase)***
+> - [ ] **101. Caractérisation de la douleur *(Cancer prostatique métastatique · Colique néphrétique sur lithiase)***
 > 	- [ ] Début *(Colique néphrétique sur lithiase)*
 > 	- [ ] Localisation
 > 	- [ ] Irradiation
@@ -506,7 +517,7 @@ cssclasses:
 > - [ ] **54. Recherche du signe de Giordano *(Colique néphrétique gauche)***
 > 	- [ ] Percussion des fosses lombaires
 > 	- [ ] Résultat
-> - [ ] **55. Examen abdominal *(Colique néphrétique gauche, Colique néphrétique sur lithiase)***
+> - [ ] **55. Examen abdominal *(Colique néphrétique gauche · Colique néphrétique sur lithiase)***
 > 	- [ ] Inspection *(Colique néphrétique gauche)*
 > 	- [ ] Auscultation *(Colique néphrétique gauche)*
 > 	- [ ] Palpation superficielle et profonde *(Colique néphrétique gauche)*
@@ -515,13 +526,13 @@ cssclasses:
 > 	- [ ] Palpation: sensibilité flanc gauche *(Colique néphrétique sur lithiase)*
 > 	- [ ] Défense absente *(Colique néphrétique sur lithiase)*
 > 	- [ ] Bruits hydroaériques présents *(Colique néphrétique sur lithiase)*
-> - [ ] **56. Palpation des points urétéraux *(Colique néphrétique gauche, Colique néphrétique sur lithiase)***
+> - [ ] **56. Palpation des points urétéraux *(Colique néphrétique gauche · Colique néphrétique sur lithiase)***
 > 	- [ ] Point urétéral supérieur
 > 	- [ ] Point urétéral moyen
 > 	- [ ] Point urétéral inférieur
 > 	- [ ] Douleur provoquée le long du trajet urétéral *(Colique néphrétique sur lithiase)*
 > 	- [ ] Comparaison bilatérale *(Colique néphrétique sur lithiase)*
-> - [ ] **57. Examen des organes génitaux externes *(Colique néphrétique gauche, Colique néphrétique sur lithiase)***
+> - [ ] **57. Examen des organes génitaux externes *(Colique néphrétique gauche · Colique néphrétique sur lithiase)***
 > 	- [ ] Inspection vulvaire *(Colique néphrétique gauche)*
 > 	- [ ] Recherche d'écoulement *(Colique néphrétique gauche)*
 > 	- [ ] Inspection: testicules symétriques *(Colique néphrétique sur lithiase)*

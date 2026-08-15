@@ -29,16 +29,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Dyspnée ⭐️
 
@@ -75,14 +86,14 @@ cssclasses:
 > - [ ] **21. Événement d'aspiration (fausse route) *(1 grille sur 5)***
 > - [ ] **22. Fièvre *(1 grille sur 5)***
 > - [ ] **23. Expectoration purulente *(1 grille sur 5)***
-> - [ ] **24. Présentation avec nom, fonction et tâche *(Asthme, BPCO)***
+> - [ ] **24. Présentation avec nom, fonction et tâche *(Asthme · BPCO)***
 > - [ ] **25. Question d'entrée ouverte - Symptômes principaux *(Asthme)***
 > - [ ] **26. Circonstances de survenue et facteurs déclenchants *(Asthme)***
 > 	- [ ] Moment de survenue
 > 	- [ ] Type d'apparition
 > 	- [ ] Facteurs déclenchants identifiés
 > 	- [ ] Lien avec l'effort physique
-> - [ ] **27. Évolution temporelle des symptômes *(Asthme, BPCO)***
+> - [ ] **27. Évolution temporelle des symptômes *(Asthme · BPCO)***
 > 	- [ ] Durée des épisodes *(Asthme)*
 > 	- [ ] Évolution pendant la crise *(Asthme)*
 > 	- [ ] Amélioration *(Asthme)*
@@ -137,7 +148,7 @@ cssclasses:
 > 	- [ ] Voyages récents
 > 	- [ ] Contact avec malades
 > 	- [ ] Exposition professionnelle
-> - [ ] **37. Antécédents médicaux personnels *(Asthme, BPCO)***
+> - [ ] **37. Antécédents médicaux personnels *(Asthme · BPCO)***
 > 	- [ ] Maladies antérieures *(Asthme)*
 > 	- [ ] Problèmes respiratoires antérieurs *(Asthme)*
 > 	- [ ] Hospitalisations *(Asthme)*
@@ -157,7 +168,7 @@ cssclasses:
 > 	- [ ] Manifestations cutanées
 > 	- [ ] Croûtes de lait
 > 	- [ ] Diagnostic d'asthme antérieur
-> - [ ] **40. Antécédents familiaux *(Asthme, BPCO)***
+> - [ ] **40. Antécédents familiaux *(Asthme · BPCO)***
 > 	- [ ] Allergies familiales
 > 	- [ ] Maladies respiratoires *(Asthme)*
 > 	- [ ] Asthme familial *(Asthme)*

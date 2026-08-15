@@ -36,6 +36,15 @@ LEGENDE = """> [!info] Légende
 
 SEUIL_ABREGE = 3   # au-dela, on compte au lieu d'enumerer
 
+# SEPARATEUR ENTRE DIAGNOSTICS D'UN MEME SUFFIXE. La virgule etait ambigue :
+# « *(Fracture du membre superieur (humerus, tete radiale))* » se lit comme
+# deux diagnostics alors qu'il n'y en a qu'un, et 885 lignes portent un
+# libelle a virgule ou a parenthese. Cette ambiguite a fait tomber trois
+# regexes d'analyse successives, dont deux des miennes. Le point median ne
+# figure dans aucun libelle de diagnostic de la table (verifie sur les 194) et
+# le projet l'emploie deja comme separateur dans ecos-priorites-2026.yaml.
+SEPARATEUR = " · "
+
 # Glyphes decoratifs herites des grilles (⊕ = aggravant, ⊖ = soulageant) : ils
 # doublent un libelle qui dit deja la meme chose (« ⊕ Facteurs aggravants »).
 _GLYPHES = re.compile(r"[⊕⊖⊗⊘]")
@@ -94,7 +103,7 @@ def marque(item, cas_ssp, diag_par_cas):
     if fidele:
         if len(diags) > SEUIL_ABREGE:
             return f"{item['titre']} *({len(diags)} diagnostics)*"
-        return f"{item['titre']} *({', '.join(sorted(diags))})*"
+        return f"{item['titre']} *({SEPARATEUR.join(sorted(diags))})*"
     pluriel = "s" if len(porteurs) > 1 else ""
     return f"{item['titre']} *({len(porteurs)} grille{pluriel} sur {len(cas_ssp)})*"
 

@@ -31,16 +31,27 @@ cssclasses:
 > qu'aucun jury n'a validées.
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Éruption Cutanée ⭐️
 
@@ -57,15 +68,15 @@ cssclasses:
 > - **RESCOS-68b** ⭐️ **officielle** — Zona `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-68b%20-%20Eruption%20cutanée%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Question d’entrée *(Psoriasis, Syphilis)***
-> - [ ] **2. Dimension temporelle *(Dermatite périorale, Psoriasis, Syphilis)***
-> - [ ] **3. Début / durée *(Psoriasis, Syphilis)***
-> - [ ] **4. Évolution *(Dermatite périorale, Psoriasis, Syphilis)***
-> - [ ] **5. Épisodes *(Dermatite périorale, Psoriasis, Syphilis)***
-> - [ ] **6. Localisation *(Dermatite périorale, Psoriasis, Syphilis)***
-> - [ ] **7. Facteurs aggravants *(Dermatite périorale, Psoriasis, Syphilis)***
-> - [ ] **8. Facteurs soulageants *(Dermatite périorale, Psoriasis, Syphilis)***
-> - [ ] **9. Mesures déjà prises *(Psoriasis, Syphilis)***
+> - [ ] **1. Question d’entrée *(Psoriasis · Syphilis)***
+> - [ ] **2. Dimension temporelle *(Dermatite périorale · Psoriasis · Syphilis)***
+> - [ ] **3. Début / durée *(Psoriasis · Syphilis)***
+> - [ ] **4. Évolution *(Dermatite périorale · Psoriasis · Syphilis)***
+> - [ ] **5. Épisodes *(Dermatite périorale · Psoriasis · Syphilis)***
+> - [ ] **6. Localisation *(Dermatite périorale · Psoriasis · Syphilis)***
+> - [ ] **7. Facteurs aggravants *(Dermatite périorale · Psoriasis · Syphilis)***
+> - [ ] **8. Facteurs soulageants *(Dermatite périorale · Psoriasis · Syphilis)***
+> - [ ] **9. Mesures déjà prises *(Psoriasis · Syphilis)***
 > - [ ] **10. Symptômes associés *(5 grilles sur 8)***
 > 	- [ ] Fièvre et frissons *(Scarlatine / Angine streptococcique)*
 > 	- [ ] Mal de gorge *(Scarlatine / Angine streptococcique)*
@@ -79,7 +90,7 @@ cssclasses:
 > 	- [ ] Toux *(1 grille sur 8)*
 > - [ ] **11. Prurit *(4 grilles sur 8)***
 > 	- [ ] Début & Évolution *(1 grille sur 8)*
-> - [ ] **12. Douleurs *(Psoriasis, Syphilis, Zona)***
+> - [ ] **12. Douleurs *(Psoriasis · Syphilis · Zona)***
 > 	- [ ] Début *(Zona)*
 > 	- [ ] Précise moment par rapport aux lésions *(Zona)*
 > 	- [ ] Caractère *(Zona)*
@@ -94,16 +105,16 @@ cssclasses:
 > - [ ] **16. Atopie *(Psoriasis)***
 > - [ ] **17. Anamnèse environnementale *(Psoriasis)***
 > - [ ] **18. Infection préalable *(Psoriasis)***
-> - [ ] **19. Antécédents *(Psoriasis, Syphilis)***
+> - [ ] **19. Antécédents *(Psoriasis · Syphilis)***
 > - [ ] **20. Maladies cutanées *(Psoriasis)***
-> - [ ] **21. Médicaments *(Dermatite périorale, Psoriasis, Syphilis)***
-> - [ ] **22. Allergies *(Dermatite périorale, Psoriasis, Syphilis)***
-> - [ ] **23. Noxes *(Psoriasis, Syphilis)***
-> - [ ] **24. Alcool *(Dermatite périorale, Psoriasis, Syphilis)***
-> - [ ] **25. Tabac *(Dermatite périorale, Psoriasis, Syphilis)***
-> - [ ] **26. Drogues *(Dermatite périorale, Psoriasis, Syphilis)***
+> - [ ] **21. Médicaments *(Dermatite périorale · Psoriasis · Syphilis)***
+> - [ ] **22. Allergies *(Dermatite périorale · Psoriasis · Syphilis)***
+> - [ ] **23. Noxes *(Psoriasis · Syphilis)***
+> - [ ] **24. Alcool *(Dermatite périorale · Psoriasis · Syphilis)***
+> - [ ] **25. Tabac *(Dermatite périorale · Psoriasis · Syphilis)***
+> - [ ] **26. Drogues *(Dermatite périorale · Psoriasis · Syphilis)***
 > - [ ] **27. Antécédents familiaux *(5 diagnostics)***
-> - [ ] **28. Profession *(Dermatite périorale, Psoriasis, Syphilis)***
+> - [ ] **28. Profession *(Dermatite périorale · Psoriasis · Syphilis)***
 > - [ ] **29. Facteurs de stress psychosociaux *(Psoriasis)***
 > - [ ] **30. Apparition *(Syphilis)***
 > - [ ] **31. Déclencheurs *(Syphilis)***
@@ -148,8 +159,8 @@ cssclasses:
 > - [ ] **70. Antécédents médicaux *(Dermatite périorale)***
 > - [ ] **71. Toxiques *(Dermatite périorale)***
 > - [ ] **72. Charge psychosociale *(Dermatite périorale)***
-> - [ ] **73. Se présente avec nom, fonction et but de la consultation *(Scarlatine / Angine streptococcique, Tinea corporis)***
-> - [ ] **74. Exploration du symptôme principal : éruption cutanée *(Scarlatine / Angine streptococcique, Tinea corporis)***
+> - [ ] **73. Se présente avec nom, fonction et but de la consultation *(Scarlatine / Angine streptococcique · Tinea corporis)***
+> - [ ] **74. Exploration du symptôme principal : éruption cutanée *(Scarlatine / Angine streptococcique · Tinea corporis)***
 > - [ ] **75. Évolution temporelle *(Tinea corporis)***
 > - [ ] **76. Évolution et extension des lésions *(Tinea corporis)***
 > - [ ] **77. Localisation précise *(Tinea corporis)***
@@ -159,12 +170,12 @@ cssclasses:
 > 	- [ ] Symptômes associés (prurit, douleur)
 > - [ ] **80. Facteurs d'exposition ou déclenchants *(Tinea corporis)***
 > - [ ] **81. Symptômes B (fièvre, sueurs nocturnes, perte de poids) *(Tinea corporis)***
-> - [ ] **82. Allergies connues *(Scarlatine / Angine streptococcique, Tinea corporis)***
-> - [ ] **83. Médicaments actuels *(Lupus érythémateux cutané, Tinea corporis)***
+> - [ ] **82. Allergies connues *(Scarlatine / Angine streptococcique · Tinea corporis)***
+> - [ ] **83. Médicaments actuels *(Lupus érythémateux cutané · Tinea corporis)***
 > - [ ] **84. Antécédents médicaux personnels *(Tinea corporis)***
 > 	- [ ] Maladies antérieures
 > 	- [ ] Interventions chirurgicales
-> - [ ] **85. Habitudes de vie *(Lupus érythémateux cutané, Tinea corporis)***
+> - [ ] **85. Habitudes de vie *(Lupus érythémateux cutané · Tinea corporis)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
@@ -233,7 +244,7 @@ cssclasses:
 > - [ ] **112. Prurit — début ET évolution *(1 grille sur 8)***
 
 > [!tip] 🩺 Status
-> - [ ] **1. Paramètres vitaux *(Psoriasis, Syphilis)***
+> - [ ] **1. Paramètres vitaux *(Psoriasis · Syphilis)***
 > - [ ] **2. Inspection cutanée *(Psoriasis)***
 > - [ ] **3. Inspection du cuir chevelu *(Psoriasis)***
 > - [ ] **4. Signes de grattage *(Psoriasis)***
@@ -247,7 +258,7 @@ cssclasses:
 > - [ ] **12. Mains *(Syphilis)***
 > - [ ] **13. Pieds *(Syphilis)***
 > - [ ] **14. Examen anogénital *(Syphilis)***
-> - [ ] **15. Cuir chevelu *(Dermatite périorale, Syphilis)***
+> - [ ] **15. Cuir chevelu *(Dermatite périorale · Syphilis)***
 > - [ ] **16. Ongles des doigts *(Syphilis)***
 > - [ ] **17. Ganglions lymphatiques *(Syphilis)***
 > - [ ] **18. État général *(Dermatite périorale)***
@@ -273,7 +284,7 @@ cssclasses:
 > 	- [ ] Yeux enfoncés
 > 	- [ ] Muqueuses sèches
 > 	- [ ] Pli cutané
-> - [ ] **30. Examen cutané détaillé *(Lupus érythémateux cutané, Scarlatine / Angine streptococcique)***
+> - [ ] **30. Examen cutané détaillé *(Lupus érythémateux cutané · Scarlatine / Angine streptococcique)***
 > 	- [ ] Description de l'érythème *(Lupus érythémateux cutané)*
 > 	- [ ] Localisation *(Lupus érythémateux cutané)*
 > 	- [ ] Aspect *(Lupus érythémateux cutané)*

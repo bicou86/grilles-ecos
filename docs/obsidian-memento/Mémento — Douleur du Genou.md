@@ -28,16 +28,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Douleur du Genou
 
@@ -78,17 +89,17 @@ cssclasses:
 > 	- [ ] Vertiges
 > 	- [ ] Chaleur du membre inférieur
 > 	- [ ] Faiblesse/engourdissement/picotements
-> - [ ] **4. Antécédents médicaux *(Déchirure méniscale / ligamentaire, Thrombose veineuse profonde (TVP))***
+> - [ ] **4. Antécédents médicaux *(Déchirure méniscale / ligamentaire · Thrombose veineuse profonde (TVP))***
 > 	- [ ] Antécédents médicaux *(Thrombose veineuse profonde (TVP))*
 > 	- [ ] Thrombose dans le passé *(Thrombose veineuse profonde (TVP))*
-> - [ ] **5. Allergies *(Déchirure méniscale / ligamentaire, Thrombose veineuse profonde (TVP))***
-> - [ ] **6. Médicaments *(Déchirure méniscale / ligamentaire, Thrombose veineuse profonde (TVP))***
+> - [ ] **5. Allergies *(Déchirure méniscale / ligamentaire · Thrombose veineuse profonde (TVP))***
+> - [ ] **6. Médicaments *(Déchirure méniscale / ligamentaire · Thrombose veineuse profonde (TVP))***
 > - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Thrombose veineuse profonde (TVP))***
 > 	- [ ] Hospitalisations
 > 	- [ ] Grossesses antérieures/fausses couches
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **8. Antécédents familiaux *(Déchirure méniscale / ligamentaire, Thrombose veineuse profonde (TVP))***
-> - [ ] **9. Habitudes et mode de vie *(Lésion méniscale médiale du genou droit, Thrombose veineuse profonde (TVP))***
+> - [ ] **8. Antécédents familiaux *(Déchirure méniscale / ligamentaire · Thrombose veineuse profonde (TVP))***
+> - [ ] **9. Habitudes et mode de vie *(Lésion méniscale médiale du genou droit · Thrombose veineuse profonde (TVP))***
 > 	- [ ] Travail *(Thrombose veineuse profonde (TVP))*
 > 	- [ ] Domicile *(Thrombose veineuse profonde (TVP))*
 > 	- [ ] Alcool *(Thrombose veineuse profonde (TVP))*
@@ -192,7 +203,7 @@ cssclasses:
 > - [ ] **14. Mobilité *(Déchirure méniscale / ligamentaire)***
 > - [ ] **15. Flexion / extension *(Déchirure méniscale / ligamentaire)***
 > - [ ] **16. Rotation *(Déchirure méniscale / ligamentaire)***
-> - [ ] **17. Tests méniscaux *(Déchirure méniscale / ligamentaire, Lésion méniscale médiale du genou droit)***
+> - [ ] **17. Tests méniscaux *(Déchirure méniscale / ligamentaire · Lésion méniscale médiale du genou droit)***
 > 	- [ ] Test de Steinmann I *(Lésion méniscale médiale du genou droit)*
 > 	- [ ] Test de McMurray *(Lésion méniscale médiale du genou droit)*
 > 	- [ ] Test d'Apley (Grinding test) *(Lésion méniscale médiale du genou droit)*

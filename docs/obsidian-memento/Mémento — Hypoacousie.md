@@ -28,16 +28,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Hypoacousie
 
@@ -62,9 +73,9 @@ cssclasses:
 > 	- [ ] Facteurs améliorants *(1 grille sur 4)*
 > 	- [ ] Facteurs aggravants *(1 grille sur 4)*
 > 	- [ ] Symptômes associés *(1 grille sur 4)*
-> 	- [ ] Apparition temporelle *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
+> 	- [ ] Apparition temporelle *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)*
 > 	- [ ] Évolution temporelle *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Latéralisation *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
+> 	- [ ] Latéralisation *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)*
 > 	- [ ] Intensité de la perte auditive *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Évolution *(Presbyacousie bilatérale)*
 > 	- [ ] Sévérité *(Presbyacousie bilatérale)*
@@ -85,7 +96,7 @@ cssclasses:
 > - [ ] **4. Antécédents médicaux *(1 grille sur 4)***
 > 	- [ ] Antécédents médicaux
 > 	- [ ] Type de chimiothérapie
-> - [ ] **5. Allergies *(Presbyacousie, Surdité brusque idiopathique gauche)***
+> - [ ] **5. Allergies *(Presbyacousie · Surdité brusque idiopathique gauche)***
 > 	- [ ] Allergies *(1 grille sur 4)*
 > 	- [ ] Description de la réaction allergique *(1 grille sur 4)*
 > 	- [ ] Allergies connues *(Surdité brusque idiopathique gauche)*
@@ -136,15 +147,15 @@ cssclasses:
 > - [ ] **37. Hypoacousie familiale *(1 grille sur 4)***
 > - [ ] **38. Profession *(1 grille sur 4)***
 > - [ ] **39. Situation sociale *(1 grille sur 4)***
-> - [ ] **40. Présentation avec nom, fonction et tâche *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
+> - [ ] **40. Présentation avec nom, fonction et tâche *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
 > - [ ] **41. Question d'entrée ouverte *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Qu'est-ce qui vous amène aujourd'hui ?
-> - [ ] **42. Symptômes associés ORL *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
+> - [ ] **42. Symptômes associés ORL *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
 > 	- [ ] Sécrétions auriculaires (cérumen, sang, pus)
 > 	- [ ] Douleurs auriculaires
 > 	- [ ] Acouphènes
 > 	- [ ] Vertiges
-> - [ ] **43. Symptômes généraux *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
+> - [ ] **43. Symptômes généraux *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
 > 	- [ ] Fièvre
 > 	- [ ] Toux
 > 	- [ ] Rhinite *(Surdité brusque idiopathique gauche)*
@@ -158,12 +169,12 @@ cssclasses:
 > 	- [ ] Antécédents de maladies auriculaires
 > 	- [ ] Exposition professionnelle au bruit
 > 	- [ ] Traumatismes auditifs antérieurs
-> - [ ] **46. Anamnèse médicamenteuse *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
+> - [ ] **46. Anamnèse médicamenteuse *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Médicaments ototoxiques
 > 	- [ ] Automédication récente *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Traitement cardiovasculaire *(Presbyacousie bilatérale)*
-> - [ ] **47. Anamnèse systémique *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
+> - [ ] **47. Anamnèse systémique *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Diabète
 > 	- [ ] Troubles neurologiques
@@ -218,7 +229,7 @@ cssclasses:
 > - [ ] **13. Examen du facial *(1 grille sur 4)***
 > - [ ] **14. Status complet des nerfs crâniens *(1 grille sur 4)***
 > - [ ] **15. Motricité / sensibilité / coordination *(1 grille sur 4)***
-> - [ ] **16. Inspection de l'oreille *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
+> - [ ] **16. Inspection de l'oreille *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
 > 	- [ ] Inspection du pavillon auriculaire *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Inspection du conduit auditif externe visible *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Pavillon auriculaire droit *(Presbyacousie bilatérale)*
@@ -229,17 +240,17 @@ cssclasses:
 > 	- [ ] Traction du pavillon auriculaire
 > 	- [ ] Palpation mastoïdienne
 > 	- [ ] Recherche d'adénopathies cervicales
-> - [ ] **18. Otoscopie bilatérale *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
+> - [ ] **18. Otoscopie bilatérale *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
 > 	- [ ] Conduit auditif externe droit
 > 	- [ ] Tympan droit
 > 	- [ ] Conduit auditif externe gauche
 > 	- [ ] Tympan gauche
-> - [ ] **19. Tests auditifs au diapason *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
+> - [ ] **19. Tests auditifs au diapason *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
 > 	- [ ] Test de Weber
 > 	- [ ] Test de Rinne à droite *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Test de Rinne à gauche
 > 	- [ ] Test de Rinne droit *(Presbyacousie bilatérale)*
-> - [ ] **20. Test de la voix chuchotée *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
+> - [ ] **20. Test de la voix chuchotée *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
 > 	- [ ] Oreille droite *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Oreille gauche *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Compréhension à droite *(Presbyacousie bilatérale)*

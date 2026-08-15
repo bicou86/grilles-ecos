@@ -30,16 +30,27 @@ cssclasses:
 > qu'aucun jury n'a validées.
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Toux
 
@@ -143,8 +154,8 @@ cssclasses:
 > 	- [ ] Drogues illicites *(1 grille sur 13)*
 > 	- [ ] Tabac
 > 	- [ ] Exercice *(2 grilles sur 13)*
-> 	- [ ] Travail *(BPCO, Cancer du poumon)*
-> 	- [ ] Drogues récréatives *(BPCO, Cancer du poumon)*
+> 	- [ ] Travail *(BPCO · Cancer du poumon)*
+> 	- [ ] Drogues récréatives *(BPCO · Cancer du poumon)*
 > - [ ] **12. Caractérisation de la toux et des expectorations *(Cancer du poumon)***
 > 	- [ ] Productive
 > 	- [ ] Couleur
@@ -244,7 +255,7 @@ cssclasses:
 > 	- [ ] Évolution
 > 	- [ ] Prédominance horaire
 > 	- [ ] Caractère continu ou paroxystique
-> - [ ] **58. Caractéristiques de la toux et des expectorations *(Insuffisance cardiaque (décompensée), Tuberculose)***
+> - [ ] **58. Caractéristiques de la toux et des expectorations *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Type de toux
 > 	- [ ] Aspect des expectorations *(Tuberculose)*
 > 	- [ ] Quantité
@@ -259,7 +270,7 @@ cssclasses:
 > 	- [ ] Présence de sang franc *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Expectorations rosées *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Quantification *(Insuffisance cardiaque (décompensée))*
-> - [ ] **60. Symptômes respiratoires associés *(Cancer pulmonaire, Tuberculose)***
+> - [ ] **60. Symptômes respiratoires associés *(Cancer pulmonaire · Tuberculose)***
 > 	- [ ] Dyspnée *(Tuberculose)*
 > 	- [ ] Sifflements respiratoires *(Tuberculose)*
 > 	- [ ] Douleurs thoraciques
@@ -287,7 +298,7 @@ cssclasses:
 > 	- [ ] Fièvre
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Anorexie
-> - [ ] **65. Symptômes cardiovasculaires *(Insuffisance cardiaque (décompensée), Tuberculose)***
+> - [ ] **65. Symptômes cardiovasculaires *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Palpitations
 > 	- [ ] Œdèmes *(Tuberculose)*
 > 	- [ ] Orthopnée *(Tuberculose)*
@@ -295,7 +306,7 @@ cssclasses:
 > 	- [ ] Douleurs thoraciques *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Syncopes ou malaises *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Claudication intermittente *(Insuffisance cardiaque (décompensée))*
-> - [ ] **66. Symptômes gastro-œsophagiens *(Insuffisance cardiaque (décompensée), Tuberculose)***
+> - [ ] **66. Symptômes gastro-œsophagiens *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Reflux gastro-œsophagien
 > 	- [ ] Pyrosis
 > 	- [ ] Régurgitations
@@ -305,7 +316,7 @@ cssclasses:
 > 	- [ ] Autres expositions antérieures
 > 	- [ ] Protection utilisée
 > 	- [ ] Dépistages antérieurs
-> - [ ] **68. Exposition environnementale *(Insuffisance cardiaque (décompensée), Tuberculose)***
+> - [ ] **68. Exposition environnementale *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Poussières/irritants *(Tuberculose)*
 > 	- [ ] Animaux
 > 	- [ ] Moisissures *(Tuberculose)*
@@ -398,7 +409,7 @@ cssclasses:
 > 	- [ ] Antiagrégant
 > 	- [ ] Statine
 > 	- [ ] Observance thérapeutique
-> - [ ] **87. Habitudes et facteurs de risque *(Cancer pulmonaire, Insuffisance cardiaque (décompensée))***
+> - [ ] **87. Habitudes et facteurs de risque *(Cancer pulmonaire · Insuffisance cardiaque (décompensée))***
 > 	- [ ] Tabagisme *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Alcool *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Drogues *(Insuffisance cardiaque (décompensée))*
@@ -511,7 +522,7 @@ cssclasses:
 > - [ ] **132. Antécédents similaires *(Faux-croup)***
 > - [ ] **133. Maladies de base *(Faux-croup)***
 > - [ ] **134. Hospitalisations antérieures *(Faux-croup)***
-> - [ ] **135. Médicaments et allergies *(Cancer pulmonaire, Faux-croup)***
+> - [ ] **135. Médicaments et allergies *(Cancer pulmonaire · Faux-croup)***
 > - [ ] **136. Anamnèse de l'entourage *(Faux-croup)***
 > - [ ] **137. Résumé et confirmation *(Faux-croup)***
 > 	- [ ] Fait un bref résumé de la situation
@@ -597,6 +608,10 @@ cssclasses:
 > - [ ] **154. Symptômes généraux et signes d'alarme *(Cancer pulmonaire)***
 > 	- [ ] Perte de poids
 > - [ ] **155. Signes négatifs importants *(Cancer pulmonaire)***
+> 	- [ ] Pas d'œdèmes des membres inférieurs
+> 	- [ ] Pas de troubles du sommeil respiratoires
+> 	- [ ] Pas de voyage récent
+> 	- [ ] Pas d'immobilisation ou antécédent thromboembolique
 > - [ ] **156. Antécédents personnels et familiaux *(Cancer pulmonaire)***
 > 	- [ ] Antécédents familiaux
 > 	- [ ] Suivi gynécologique régulier
@@ -659,7 +674,7 @@ cssclasses:
 > - [ ] **19. Auscultation cardiaque *(1 grille sur 13)***
 > - [ ] **20. Veines jugulaires *(1 grille sur 13)***
 > - [ ] **21. Inspection et palpation périphérie *(1 grille sur 13)***
-> - [ ] **22. Signes vitaux *(Insuffisance cardiaque (décompensée), Tuberculose)***
+> - [ ] **22. Signes vitaux *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Pression artérielle
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Température
@@ -672,26 +687,26 @@ cssclasses:
 > 	- [ ] Pouls périphériques *(Tuberculose)*
 > 	- [ ] Auscultation *(1 grille sur 13)*
 > 	- [ ] Pouls *(1 grille sur 13)*
-> - [ ] **24. Examen pulmonaire - Inspection *(Insuffisance cardiaque (décompensée), Tuberculose)***
+> - [ ] **24. Examen pulmonaire - Inspection *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Symétrie thoracique
 > 	- [ ] Utilisation des muscles accessoires *(Tuberculose)*
 > 	- [ ] Type de respiration
 > 	- [ ] Déformations
 > 	- [ ] Tirage *(Insuffisance cardiaque (décompensée))*
-> - [ ] **25. Examen pulmonaire - Palpation *(Insuffisance cardiaque (décompensée), Tuberculose)***
+> - [ ] **25. Examen pulmonaire - Palpation *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Vibrations vocales (frémitus) *(Tuberculose)*
 > 	- [ ] Points douloureux
 > 	- [ ] Adénopathies sus-claviculaires *(Tuberculose)*
 > 	- [ ] Ampliation thoracique
 > 	- [ ] Vibrations vocales *(Insuffisance cardiaque (décompensée))*
-> - [ ] **26. Examen pulmonaire - Percussion *(Insuffisance cardiaque (décompensée), Tuberculose)***
+> - [ ] **26. Examen pulmonaire - Percussion *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Percussion systématique *(Tuberculose)*
 > 	- [ ] Recherche de matité *(Tuberculose)*
 > 	- [ ] Comparaison bilatérale
 > 	- [ ] Limites pulmonaires *(Tuberculose)*
 > 	- [ ] Matité des bases *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Épanchement pleural *(Insuffisance cardiaque (décompensée))*
-> - [ ] **27. Examen pulmonaire - Auscultation *(Insuffisance cardiaque (décompensée), Tuberculose)***
+> - [ ] **27. Examen pulmonaire - Auscultation *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Auscultation antérieure systématique
 > 	- [ ] Auscultation postérieure systématique
 > 	- [ ] Bruits surajoutés *(Tuberculose)*
@@ -702,7 +717,7 @@ cssclasses:
 > 	- [ ] Turgescence des veines jugulaires
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Circulation collatérale
-> - [ ] **29. Recherche d'œdèmes *(Insuffisance cardiaque (décompensée), Tuberculose)***
+> - [ ] **29. Recherche d'œdèmes *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Signe du godet
 > 	- [ ] Symétrie *(Tuberculose)*

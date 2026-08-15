@@ -29,16 +29,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Palpitations ⭐️
 
@@ -51,7 +62,7 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Présentation avec nom, fonction et tâche**
-> - [ ] **2. Question d'entrée ouverte → Symptôme principal *(Fibrillation auriculaire, Insuffisance cardiaque (décompensée))***
+> - [ ] **2. Question d'entrée ouverte → Symptôme principal *(Fibrillation auriculaire · Insuffisance cardiaque (décompensée))***
 > - [ ] **3. Apparition temporelle *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Début soudain – insidieux
 > 	- [ ] Durée
@@ -74,7 +85,7 @@ cssclasses:
 > 	- [ ] Prise de poids
 > 	- [ ] Constipation
 > 	- [ ] Peau/cheveux
-> - [ ] **10. Facteurs de risque cardiovasculaire *(Fibrillation auriculaire, Insuffisance cardiaque (décompensée))***
+> - [ ] **10. Facteurs de risque cardiovasculaire *(Fibrillation auriculaire · Insuffisance cardiaque (décompensée))***
 > 	- [ ] Hypertension *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Tabagisme *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Diabète
@@ -96,7 +107,7 @@ cssclasses:
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **16. Anamnèse familiale *(Insuffisance cardiaque (décompensée), Palpitations liées au stress et aux stimulants)***
+> - [ ] **16. Anamnèse familiale *(Insuffisance cardiaque (décompensée) · Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Maladies cardiovasculaires (coronaropathie, artériopathie, cérébrovasculaire, infarctus du myocarde) *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Diabète, hypertension *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Maladies thyroïdiennes *(Insuffisance cardiaque (décompensée))*
@@ -105,7 +116,7 @@ cssclasses:
 > 	- [ ] Situation familiale *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Mère *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Fratrie *(Palpitations liées au stress et aux stimulants)*
-> - [ ] **17. Anamnèse sociale *(Insuffisance cardiaque (décompensée), Palpitations liées au stress et aux stimulants)***
+> - [ ] **17. Anamnèse sociale *(Insuffisance cardiaque (décompensée) · Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Famille *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Profession *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Habitudes alimentaires *(Insuffisance cardiaque (décompensée))*
@@ -125,7 +136,7 @@ cssclasses:
 > 	- [ ] Fréquence
 > 	- [ ] Régularité
 > - [ ] **22. Irradiation *(Palpitations liées au stress et aux stimulants)***
-> - [ ] **23. Symptômes cardiovasculaires associés *(Fibrillation auriculaire, Palpitations liées au stress et aux stimulants)***
+> - [ ] **23. Symptômes cardiovasculaires associés *(Fibrillation auriculaire · Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Vertiges *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Syncope/malaise *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Dyspnée *(Palpitations liées au stress et aux stimulants)*
@@ -133,7 +144,7 @@ cssclasses:
 > 	- [ ] Oppression thoracique *(Fibrillation auriculaire)*
 > 	- [ ] Irradiation éventuelle *(Fibrillation auriculaire)*
 > 	- [ ] Lien avec l'effort *(Fibrillation auriculaire)*
-> - [ ] **24. Symptômes neurovégétatifs *(Fibrillation auriculaire, Palpitations liées au stress et aux stimulants)***
+> - [ ] **24. Symptômes neurovégétatifs *(Fibrillation auriculaire · Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Transpiration *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Sensation de chaleur *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Tremblements *(Palpitations liées au stress et aux stimulants)*
@@ -162,7 +173,7 @@ cssclasses:
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
-> - [ ] **29. Traitements actuels *(Fibrillation auriculaire, Palpitations liées au stress et aux stimulants)***
+> - [ ] **29. Traitements actuels *(Fibrillation auriculaire · Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Antihypertenseurs *(Fibrillation auriculaire)*
 > 	- [ ] Hypolipémiants *(Fibrillation auriculaire)*
 > 	- [ ] Anticoagulants/antiagrégants *(Fibrillation auriculaire)*
@@ -173,7 +184,7 @@ cssclasses:
 > 	- [ ] Niveau de stress
 > 	- [ ] Charge de travail
 > 	- [ ] Sentiment de surcharge
-> - [ ] **32. Questions de clôture et résumé *(Fibrillation auriculaire, Palpitations liées au stress et aux stimulants)***
+> - [ ] **32. Questions de clôture et résumé *(Fibrillation auriculaire · Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Résumer les points importants *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Avez-vous des questions ? *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Autres informations importantes *(Fibrillation auriculaire)*
@@ -291,7 +302,7 @@ cssclasses:
 > 	- [ ] Palpation
 > 	- [ ] Percussion
 > 	- [ ] Auscultation
-> - [ ] **3. Examen thyroïdien *(Insuffisance cardiaque (décompensée), Palpitations liées au stress et aux stimulants)***
+> - [ ] **3. Examen thyroïdien *(Insuffisance cardiaque (décompensée) · Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Palpation
 > 	- [ ] Auscultation *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Inspection *(Palpitations liées au stress et aux stimulants)*

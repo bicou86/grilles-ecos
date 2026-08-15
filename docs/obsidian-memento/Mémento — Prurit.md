@@ -29,16 +29,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Prurit
 
@@ -75,6 +86,12 @@ cssclasses:
 > 	- [ ] Pathologies hépatiques héréditaires
 > 	- [ ] Maladies auto-immunes
 > - [ ] **7. Revue des systèmes**
+> 	- [ ] Pas de méléna
+> 	- [ ] Pas d'hématémèse
+> 	- [ ] Pas de rectorragies
+> 	- [ ] Transit intestinal normal
+> 	- [ ] Pas de troubles urinaires
+> 	- [ ] Pas de dyspnée
 
 > [!tip] 🩺 Status
 > - [ ] **1. Inspection générale**
@@ -127,4 +144,15 @@ cssclasses:
 > 	- [ ] Vésicule biliaire
 > 	- [ ] Points douloureux épigastriques
 > - [ ] **9. Recherche de signes d'insuffisance hépatocellulaire**
+> 	- [ ] Absence d'ascite
+> 	- [ ] Pas d'angiomes stellaires
+> 	- [ ] Pas d'érythrose palmaire
+> 	- [ ] Pas d'ongles blancs
+> 	- [ ] Pas de foetor hépatique
+> 	- [ ] Pas d'encéphalopathie
 > - [ ] **10. Recherche de signes d'hypertension portale**
+> 	- [ ] Pas de splénomégalie
+> 	- [ ] Pas de circulation collatérale abdominale
+> 	- [ ] Pas d'ascite
+> 	- [ ] Pas de gynécomastie
+> 	- [ ] Pas d'atrophie testiculaire

@@ -29,16 +29,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Diarrhée ⭐️
 
@@ -62,7 +73,7 @@ cssclasses:
 > 	- [ ] Fréquence
 > 	- [ ] Facteurs améliorants
 > 	- [ ] Facteurs aggravants
-> - [ ] **3. Caractéristiques des selles *(Diarrhée chronique par malabsorption, MICI (Crohn / RCUH))***
+> - [ ] **3. Caractéristiques des selles *(Diarrhée chronique par malabsorption · MICI (Crohn / RCUH))***
 > 	- [ ] Diarrhée (couleur/consistance) *(MICI (Crohn / RCUH))*
 > 	- [ ] Sang dans les selles *(MICI (Crohn / RCUH))*
 > 	- [ ] Couleur du sang *(MICI (Crohn / RCUH))*
@@ -113,7 +124,7 @@ cssclasses:
 > 	- [ ] Tabac
 > 	- [ ] Exercice
 > 	- [ ] Alimentation
-> - [ ] **13. Présentation avec nom, fonction et objectif de la consultation *(Diarrhée chronique par malabsorption, Déshydratation)***
+> - [ ] **13. Présentation avec nom, fonction et objectif de la consultation *(Diarrhée chronique par malabsorption · Déshydratation)***
 > - [ ] **14. Question ouverte pour identifier le symptôme principal *(Diarrhée chronique par malabsorption)***
 > - [ ] **15. Question de clarification : "Que comprenez-vous par diarrhée ?" *(Diarrhée chronique par malabsorption)***
 > - [ ] **16. Caractérisation temporelle de la diarrhée *(Diarrhée chronique par malabsorption)***
@@ -248,6 +259,11 @@ cssclasses:
 > 	- [ ] Tabagisme
 > 	- [ ] Médicaments gastrotoxiques
 > - [ ] **48. Anamnèse systémique *(Rectocolite ulcéro-hémorragique (RCUH))***
+> 	- [ ] Pas de symptômes urinaires
+> 	- [ ] Pas de douleurs articulaires
+> 	- [ ] Pas d'atteinte cutanée
+> 	- [ ] Pas d'atteinte oculaire
+> 	- [ ] Pas de notion de contage
 > - [ ] **49. Anamnèse médicale et chirurgicale *(Rectocolite ulcéro-hémorragique (RCUH))***
 > 	- [ ] Reflux gastro-œsophagien
 > 	- [ ] Lombalgies chroniques
@@ -316,7 +332,7 @@ cssclasses:
 > 	- [ ] Inspection de l'oropharynx
 > - [ ] **3. Examen cardiovasculaire *(MICI (Crohn / RCUH))***
 > - [ ] **4. Examen pulmonaire *(MICI (Crohn / RCUH))***
-> - [ ] **5. Examen abdominal *(MICI (Crohn / RCUH), Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **5. Examen abdominal *(MICI (Crohn / RCUH) · Rectocolite ulcéro-hémorragique (RCUH))***
 > 	- [ ] Inspection de l'abdomen
 > 	- [ ] Auscultation de l'abdomen *(MICI (Crohn / RCUH))*
 > 	- [ ] Percussion de l'abdomen *(MICI (Crohn / RCUH))*
@@ -338,8 +354,8 @@ cssclasses:
 > 	- [ ] Érythème noueux
 > 	- [ ] Pyoderma gangrenosum
 > 	- [ ] Autres manifestations extra-intestinales
-> - [ ] **10. Toucher rectal *(Cancer colorectal, Diarrhée chronique par malabsorption, Rectocolite ulcéro-hémorragique (RCUH))***
-> 	- [ ] Tonus sphinctérien *(Cancer colorectal, Diarrhée chronique par malabsorption)*
+> - [ ] **10. Toucher rectal *(Cancer colorectal · Diarrhée chronique par malabsorption · Rectocolite ulcéro-hémorragique (RCUH))***
+> 	- [ ] Tonus sphinctérien *(Cancer colorectal · Diarrhée chronique par malabsorption)*
 > 	- [ ] Présence de sang *(Diarrhée chronique par malabsorption)*
 > 	- [ ] Masses rectales *(Diarrhée chronique par malabsorption)*
 > 	- [ ] Fécalome *(Diarrhée chronique par malabsorption)*

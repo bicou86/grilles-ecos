@@ -29,16 +29,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Douleur Thoracique ⭐️
 
@@ -347,7 +358,7 @@ cssclasses:
 > 	- [ ] Auscultation cardiaque *(3 grilles sur 12)*
 > 	- [ ] Inspection du thorax *(Infarctus du myocarde / SCA)*
 > 	- [ ] Palpation du thorax *(Infarctus du myocarde / SCA)*
-> 	- [ ] Palpation du choc de pointe *(Infarctus du myocarde / SCA, Péricardite / Myopéricardite)*
+> 	- [ ] Palpation du choc de pointe *(Infarctus du myocarde / SCA · Péricardite / Myopéricardite)*
 > 	- [ ] Observation des extrémités *(Péricardite / Myopéricardite)*
 > 	- [ ] Auscultation des foyers cardiaques *(Péricardite / Myopéricardite)*
 > 	- [ ] Prise des pouls aux 4 extrémités *(Péricardite / Myopéricardite)*
@@ -454,6 +465,11 @@ cssclasses:
 > 	- [ ] Œdèmes des membres inférieurs (signe du godet) *(1 grille sur 12)*
 > 	- [ ] Turgescence jugulaire *(1 grille sur 12)*
 > 	- [ ] Reflux hépato-jugulaire *(2 grilles sur 12)*
+> 	- [ ] Pas de turgescence jugulaire *(1 grille sur 12)*
+> 	- [ ] Pas de reflux hépato-jugulaire *(1 grille sur 12)*
+> 	- [ ] Pas d'hépatomégalie *(1 grille sur 12)*
+> 	- [ ] Pas d'œdèmes des membres inférieurs *(1 grille sur 12)*
+> 	- [ ] Pas d'ascite *(1 grille sur 12)*
 > 	- [ ] Œdèmes prétibiaux *(1 grille sur 12)*
 > 	- [ ] Hépatomégalie *(1 grille sur 12)*
 > 	- [ ] Auscultation pulmonaire *(1 grille sur 12)*

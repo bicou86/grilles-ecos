@@ -29,16 +29,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Chute & Évaluation Gériatrique ⭐️
 
@@ -53,7 +64,7 @@ cssclasses:
 > [!note] 📋 Anamnèse
 > - [ ] **1. Déroulement de la chute *(HypoTA orthostatique)***
 > - [ ] **2. Vertiges *(HypoTA orthostatique)***
-> - [ ] **3. Perte de connaissance *(Chute multifactorielle, HypoTA orthostatique)***
+> - [ ] **3. Perte de connaissance *(Chute multifactorielle · HypoTA orthostatique)***
 > - [ ] **4. Symptômes cardiaques *(HypoTA orthostatique)***
 > - [ ] **5. Impact crânien *(HypoTA orthostatique)***
 > - [ ] **6. Aide après la chute *(HypoTA orthostatique)***
@@ -75,11 +86,11 @@ cssclasses:
 > - [ ] **22. Courses *(HypoTA orthostatique)***
 > - [ ] **23. Cuisine *(HypoTA orthostatique)***
 > - [ ] **24. Ménage *(HypoTA orthostatique)***
-> - [ ] **25. Médicaments *(Accident vasculaire cérébral, Chute multifactorielle, HypoTA orthostatique)***
+> - [ ] **25. Médicaments *(Accident vasculaire cérébral · Chute multifactorielle · HypoTA orthostatique)***
 > - [ ] **26. Finances *(HypoTA orthostatique)***
 > - [ ] **27. Transports *(HypoTA orthostatique)***
 > - [ ] **28. Rendez-vous *(HypoTA orthostatique)***
-> - [ ] **29. Anamnèse sociale *(Accident vasculaire cérébral, Chute multifactorielle, HypoTA orthostatique)***
+> - [ ] **29. Anamnèse sociale *(Accident vasculaire cérébral · Chute multifactorielle · HypoTA orthostatique)***
 > - [ ] **30. État civil *(HypoTA orthostatique)***
 > - [ ] **31. Profession *(HypoTA orthostatique)***
 > - [ ] **32. Loisirs *(HypoTA orthostatique)***
@@ -97,9 +108,9 @@ cssclasses:
 > - [ ] **44. Miction *(HypoTA orthostatique)***
 > - [ ] **45. Continence *(HypoTA orthostatique)***
 > - [ ] **46. Vertiges et sensorialité *(HypoTA orthostatique)***
-> - [ ] **47. Vision *(Accident vasculaire cérébral, Chute multifactorielle, HypoTA orthostatique)***
-> - [ ] **48. Audition *(Accident vasculaire cérébral, HypoTA orthostatique)***
-> - [ ] **49. Présentation avec nom, fonction et tâche *(Accident vasculaire cérébral, Chute multifactorielle)***
+> - [ ] **47. Vision *(Accident vasculaire cérébral · Chute multifactorielle · HypoTA orthostatique)***
+> - [ ] **48. Audition *(Accident vasculaire cérébral · HypoTA orthostatique)***
+> - [ ] **49. Présentation avec nom, fonction et tâche *(Accident vasculaire cérébral · Chute multifactorielle)***
 > - [ ] **50. Moment de l'événement *(Accident vasculaire cérébral)***
 > - [ ] **51. Dernier moment où la patiente était normale *(Accident vasculaire cérébral)***
 > - [ ] **52. Circonstances de la chute *(Accident vasculaire cérébral)***
@@ -110,12 +121,12 @@ cssclasses:
 > - [ ] **57. Antécédents personnels *(Accident vasculaire cérébral)***
 > 	- [ ] AVC antérieurs
 > 	- [ ] Autres pathologies
-> - [ ] **58. Toxiques *(Accident vasculaire cérébral, Chute multifactorielle)***
+> - [ ] **58. Toxiques *(Accident vasculaire cérébral · Chute multifactorielle)***
 > - [ ] **59. Facteurs de risque cardiovasculaire *(Accident vasculaire cérébral)***
 > 	- [ ] Hypertension
 > 	- [ ] Hyperlipidémie
 > - [ ] **60. Activités sportives, loisirs *(Accident vasculaire cérébral)***
-> - [ ] **61. Anamnèse familiale *(Accident vasculaire cérébral, Chute multifactorielle)***
+> - [ ] **61. Anamnèse familiale *(Accident vasculaire cérébral · Chute multifactorielle)***
 > 	- [ ] AVC *(Accident vasculaire cérébral)*
 > 	- [ ] Maladies cardiaques *(Accident vasculaire cérébral)*
 > 	- [ ] Hypertension *(Accident vasculaire cérébral)*
@@ -133,7 +144,7 @@ cssclasses:
 > 	- [ ] Vertiges
 > 	- [ ] Palpitations
 > 	- [ ] Dyspnée
-> - [ ] **69. Antécédents médicaux *(Chute multifactorielle, Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **69. Antécédents médicaux *(Chute multifactorielle · Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Diabète *(Chute multifactorielle)*
 > 	- [ ] Gonarthrose bilatérale *(Chute multifactorielle)*
 > 	- [ ] Hypertension artérielle *(Chute multifactorielle)*
@@ -174,7 +185,7 @@ cssclasses:
 
 > [!tip] 🩺 Status
 > - [ ] **1. MMS *(HypoTA orthostatique)***
-> - [ ] **2. Nerfs crâniens *(Accident vasculaire cérébral, HypoTA orthostatique)***
+> - [ ] **2. Nerfs crâniens *(Accident vasculaire cérébral · HypoTA orthostatique)***
 > - [ ] **3. Acuité visuelle *(HypoTA orthostatique)***
 > - [ ] **4. Audition *(HypoTA orthostatique)***
 > - [ ] **5. Motricité *(HypoTA orthostatique)***
@@ -192,7 +203,7 @@ cssclasses:
 > - [ ] **17. Pouls des pieds *(HypoTA orthostatique)***
 > - [ ] **18. Voie orale *(HypoTA orthostatique)***
 > - [ ] **19. Inspection *(HypoTA orthostatique)***
-> - [ ] **20. Auscultation *(Accident vasculaire cérébral, HypoTA orthostatique)***
+> - [ ] **20. Auscultation *(Accident vasculaire cérébral · HypoTA orthostatique)***
 > 	- [ ] Auscultation cardiaque *(Accident vasculaire cérébral)*
 > 	- [ ] Auscultation des carotides *(Accident vasculaire cérébral)*
 > - [ ] **21. Palpation *(HypoTA orthostatique)***

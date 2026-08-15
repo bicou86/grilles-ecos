@@ -28,16 +28,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Œil Rouge & Douleur Oculaire
 
@@ -50,19 +61,19 @@ cssclasses:
 > - **RESCOS-32** — Kératite herpétique `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-32_-_Douleur_oculaire_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Question d’entrée *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
-> - [ ] **2. Dimension temporelle *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
-> - [ ] **3. Début / durée *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **1. Question d’entrée *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **2. Dimension temporelle *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **3. Début / durée *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **4. Mode d’apparition *(Glaucome aigu)***
-> - [ ] **5. Évolution *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **5. Évolution *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **6. Déclencheurs *(Glaucome aigu)***
 > - [ ] **7. Traumatisme oculaire *(Glaucome aigu)***
 > - [ ] **8. Localisation *(Glaucome aigu)***
 > - [ ] **9. Irradiation *(Glaucome aigu)***
 > - [ ] **10. Qualité *(Glaucome aigu)***
 > - [ ] **11. Intensité *(Glaucome aigu)***
-> - [ ] **12. Facteurs aggravants *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
-> - [ ] **13. Facteurs soulageants *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **12. Facteurs aggravants *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **13. Facteurs soulageants *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **14. Symptômes associés *(Glaucome aigu)***
 > - [ ] **15. Acuité visuelle *(Glaucome aigu)***
 > - [ ] **16. Baisse du visus unilatérale *(Glaucome aigu)***
@@ -73,13 +84,13 @@ cssclasses:
 > - [ ] **21. Segment antérieur de l’œil *(Glaucome aigu)***
 > - [ ] **22. Rougeur *(Glaucome aigu)***
 > - [ ] **23. Photophobie *(Glaucome aigu)***
-> - [ ] **24. Sécrétions / larmoiement *(Conjonctivite allergique, Glaucome aigu)***
+> - [ ] **24. Sécrétions / larmoiement *(Conjonctivite allergique · Glaucome aigu)***
 > 	- [ ] Larmoiement *(Conjonctivite allergique)*
 > 	- [ ] Type de sécrétions (claires, purulentes) *(Conjonctivite allergique)*
 > 	- [ ] Paupières collées le matin *(Conjonctivite allergique)*
 > 	- [ ] Croûtes sur les cils *(Conjonctivite allergique)*
 > - [ ] **25. Sensation de corps étranger *(Glaucome aigu)***
-> - [ ] **26. Prurit *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **26. Prurit *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **27. Segment postérieur de l’œil *(Glaucome aigu)***
 > - [ ] **28. Mouches volantes / éclairs lumineux *(Glaucome aigu)***
 > - [ ] **29. Scotomes / déficits du champ visuel *(Glaucome aigu)***
@@ -96,22 +107,22 @@ cssclasses:
 > - [ ] **40. Douleurs à la mastication *(Glaucome aigu)***
 > - [ ] **41. Amaurosis fugax *(Glaucome aigu)***
 > - [ ] **42. Symptômes B *(Glaucome aigu)***
-> - [ ] **43. Antécédents *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **43. Antécédents *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **44. Antécédents généraux *(Glaucome aigu)***
 > - [ ] **45. Antécédents ophtalmologiques *(Glaucome aigu)***
 > - [ ] **46. Antécédents chirurgicaux oculaires *(Glaucome aigu)***
 > - [ ] **47. Aides visuelles *(Glaucome aigu)***
-> - [ ] **48. Médicaments *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **48. Médicaments *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **49. Médicaments généraux *(Glaucome aigu)***
 > - [ ] **50. Médicaments à risque de glaucome *(Glaucome aigu)***
 > - [ ] **51. Collyres *(Glaucome aigu)***
-> - [ ] **52. Allergies *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
-> - [ ] **53. Noxes *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
-> - [ ] **54. Alcool *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
-> - [ ] **55. Tabagisme *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **52. Allergies *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **53. Noxes *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **54. Alcool *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **55. Tabagisme *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **56. Anamnèse familiale de glaucome *(Glaucome aigu)***
 > - [ ] **57. Profession *(Glaucome aigu)***
-> - [ ] **58. Situation sociale *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **58. Situation sociale *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **59. Dynamique journalière *(Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **60. Localisation / latéralisation *(Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **61. Mesures prises jusqu’ici *(Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
@@ -235,7 +246,7 @@ cssclasses:
 > - [ ] **2. Visus droit *(Glaucome aigu)***
 > - [ ] **3. Visus gauche *(Glaucome aigu)***
 > - [ ] **4. Aide visuelle utilisée *(Glaucome aigu)***
-> - [ ] **5. Inspection *(Glaucome aigu, Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **5. Inspection *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **6. Évaluation des pupilles *(Glaucome aigu)***
 > - [ ] **7. Réaction directe à la lumière *(Glaucome aigu)***
 > - [ ] **8. Réaction consensuelle à la lumière *(Glaucome aigu)***

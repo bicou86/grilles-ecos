@@ -45,7 +45,7 @@ def verifier_marquage():
     if rendu("Frottement", "B") != "Frottement *(1 grille sur 4)*":
         ecarts.append(f"couverture partielle mal dite : {rendu('Frottement', 'B')}")
 
-    attendu = "Facteurs déclenchants *(Péricardite, STEMI)*"
+    attendu = "Facteurs déclenchants *(Péricardite · STEMI)*"
     if rendu("Facteurs déclenchants", "ABC") != attendu:
         ecarts.append(f"suffixe multiple errone : {rendu('Facteurs déclenchants', 'ABC')}")
 
@@ -83,12 +83,37 @@ def verifier_elision():
         "> [!note] 📋 Anamnèse",
         "> - [ ] **1. Frottement péricardique *(Péricardite)***",
         "> \t- [ ] Auscultation en antéflexion",
-        "> - [ ] **2. Caractérisation de la douleur *(Péricardite, STEMI)***",
+        "> - [ ] **2. Caractérisation de la douleur *(Péricardite · STEMI)***",
         "> \t- [ ] Irradiation *(STEMI)*",
     ])
     rendu = lib_rendu.encadre("note", "📋 Anamnèse", items, cas, diag)
     if rendu != attendu:
         ecarts.append("suffixe herite mal elide — obtenu :\n" + str(rendu))
+    return ecarts
+
+
+def verifier_invariant_sous_items():
+    """Le filtre des reponses ne vide JAMAIS un item de tous ses sous-items.
+
+    Garantie STRUCTURELLE, pas heuristique : quand toute l'enumeration se lit
+    comme une reponse, c'est qu'elle EST l'information que l'item annonce
+    (« Recherche de signes d'insuffisance hepatocellulaire » suivi de ses six
+    signes). Le bloc HTML ci-dessous est celui, minimal, que `items()` sait
+    lire ; ses trois sous-criteres sont tous des reponses.
+    """
+    ecarts = []
+    bloc = ('<div class="criteria-row" id="criteria-e1">'
+            '<div class="criteria-text">Signes d\'hypertension portale<button>'
+            '</button></div>'
+            '<div class="detail-text criteria-detail">Pas d\'ascite</div>'
+            '<div class="detail-text criteria-detail">Pas de splénomégalie</div>'
+            '<div class="detail-text criteria-detail">Circulation collatérale normale</div>')
+    lignes = lib_extraction.items(bloc)
+    if not lignes:
+        return ["le bloc de controle n'a produit aucun item"]
+    _, _, titre, sous = lignes[0]
+    if len(sous) != 3:
+        ecarts.append(f"l'item a ete vide de ses sous-items : {titre!r} -> {sous}")
     return ecarts
 
 
@@ -167,6 +192,7 @@ def main():
     ecarts += verifier_elision()
     ecarts += verifier_nettoyage()
     ecarts += verifier_reponses_patient()
+    ecarts += verifier_invariant_sous_items()
 
     if ecarts:
         print("ECHEC —", len(ecarts), "ecart(s) :")

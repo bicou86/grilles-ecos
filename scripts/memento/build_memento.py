@@ -55,7 +55,7 @@ _RANG = re.compile(r"^([A-Za-z]+)-(\d+)(.*)$")
 # `nettoyer()` : le NOM d'un fichier ne prouve rien (« Mémento — Toux (mes
 # notes).md » est exactement le nom qu'un humain choisirait), le type declare,
 # lui, n'est ecrit que par ce generateur.
-_TYPE_DECLARE = re.compile(rf"^type:\s*{TYPE}\s*$", re.M)
+_TYPE_DECLARE = re.compile(rf"\A---\n(?:.*\n)*?type:\s*{TYPE}\s*\n(?:.*\n)*?---\n")
 
 ENTETE_NON_OFFICIEL = """> [!warning] Mémento dérivé de grilles NON officielles
 > Ces items viennent de grilles d'entraînement (RESCOS, AMBOSS, GERMAN,
@@ -70,16 +70,27 @@ ENTETE_MIXTE = """> [!warning] Mémento mixte — {n} grille{s} officielle{s}, {
 
 CONVENTION = """>
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
->   porte un."""
+>   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble."""
 
 
 def rang(cid):
@@ -272,9 +283,13 @@ def memento(ssp, cas_list):
 def nettoyer():
     """Efface les mementos produits par CE generateur, eux seuls.
 
-    L'appartenance se lit dans le frontmatter (`type: memento-ecos-ssp`), pas
+    L'appartenance se lit dans le FRONTMATTER (`type: memento-ecos-ssp`), pas
     dans le nom : « Mémento — Toux (mes notes).md » est precisement le nom
     qu'une note ecrite a la main porterait, et un glob l'emporterait.
+
+    La lecture est ancree sur le bloc de frontmatter, pas cherchee dans tout
+    le fichier : une note qui DOCUMENTE la convention (« les mementos portent
+    type: memento-ecos-ssp ») serait sinon supprimee parce qu'elle en parle.
     """
     for vieux in SORTIE.glob("*.md"):
         if _TYPE_DECLARE.search(vieux.read_text(encoding="utf8")):

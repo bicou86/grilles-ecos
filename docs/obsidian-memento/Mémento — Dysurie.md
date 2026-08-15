@@ -29,16 +29,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Dysurie
 
@@ -81,14 +92,14 @@ cssclasses:
 > - [ ] **28. Troubles de l'érection *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **29. Transit / Constipation *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **30. Symptômes neurologiques *(Suspicion d'hyperplasie bénigne de la prostate)***
-> - [ ] **31. Antécédents médicaux *(Suspicion d'hyperplasie bénigne de la prostate, Urétrite sexuellement transmissible)***
+> - [ ] **31. Antécédents médicaux *(Suspicion d'hyperplasie bénigne de la prostate · Urétrite sexuellement transmissible)***
 > - [ ] **32. Antécédents chirurgicaux *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **33. Anamnèse médicamenteuse *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **34. Toxiques *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **35. Alcool *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **36. Tabac *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **37. Drogues *(Suspicion d'hyperplasie bénigne de la prostate)***
-> - [ ] **38. Allergies *(Suspicion d'hyperplasie bénigne de la prostate, Urétrite sexuellement transmissible)***
+> - [ ] **38. Allergies *(Suspicion d'hyperplasie bénigne de la prostate · Urétrite sexuellement transmissible)***
 > - [ ] **39. Antécédents familiaux *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **40. Profession *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **41. Situation sociale *(Suspicion d'hyperplasie bénigne de la prostate)***
@@ -128,7 +139,7 @@ cssclasses:
 > 	- [ ] Épisodes similaires antérieurs
 > 	- [ ] Anomalies congénitales
 > - [ ] **52. Médicaments actuels *(Urétrite sexuellement transmissible)***
-> - [ ] **53. Habitudes de vie *(Infection à Chlamydia trachomatis, Urétrite sexuellement transmissible)***
+> - [ ] **53. Habitudes de vie *(Infection à Chlamydia trachomatis · Urétrite sexuellement transmissible)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
@@ -145,7 +156,7 @@ cssclasses:
 > 	- [ ] Dyspareunie
 > 	- [ ] Écoulements vaginaux
 > 	- [ ] Prurit vulvaire
-> - [ ] **58. Anamnèse sexuelle *(Infection urinaire (cystite), Infection à Chlamydia trachomatis)***
+> - [ ] **58. Anamnèse sexuelle *(Infection urinaire (cystite) · Infection à Chlamydia trachomatis)***
 > 	- [ ] Nouveau partenaire *(Infection à Chlamydia trachomatis)*
 > 	- [ ] Fréquence des rapports *(Infection à Chlamydia trachomatis)*
 > 	- [ ] Protection *(Infection à Chlamydia trachomatis)*
@@ -225,7 +236,7 @@ cssclasses:
 > - [ ] **21. Organes génitaux externes *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **22. Périnée / Région périanale *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **23. Réflexe anal *(Suspicion d'hyperplasie bénigne de la prostate)***
-> - [ ] **24. Examen abdominal *(Infection à Chlamydia trachomatis, Urétrite sexuellement transmissible)***
+> - [ ] **24. Examen abdominal *(Infection à Chlamydia trachomatis · Urétrite sexuellement transmissible)***
 > 	- [ ] Palpation abdominale
 > 	- [ ] Palpation vésicale *(Urétrite sexuellement transmissible)*
 > 	- [ ] Percussion vésicale *(Urétrite sexuellement transmissible)*

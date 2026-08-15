@@ -31,16 +31,27 @@ cssclasses:
 > qu'aucun jury n'a validées.
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Fatigue
 
@@ -60,20 +71,20 @@ cssclasses:
 > - **RESCOS-67b** ⭐️ **officielle** — Hypothyroïdie `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-67b%20-%20Fatigue%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(Hépatite B et/ou C aiguë, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))***
+> - [ ] **1. Motif principal *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > - [ ] **2. Caractérisation de la fatigue *(5 diagnostics)***
-> 	- [ ] Début *(Hépatite B et/ou C aiguë, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Évolution temporelle *(Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Événements précipitants *(Hépatite B et/ou C aiguë, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Progression *(Hépatite B et/ou C aiguë, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Épisodes antérieurs *(Hépatite B et/ou C aiguë, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Facteurs améliorants *(Hépatite B et/ou C aiguë, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Facteurs aggravants *(Hépatite B et/ou C aiguë, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Symptômes associés *(Hépatite B et/ou C aiguë, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Début *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Évolution temporelle *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Événements précipitants *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Progression *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Épisodes antérieurs *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Facteurs améliorants *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Facteurs aggravants *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Symptômes associés *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Constante/intermittente *(Hépatite B et/ou C aiguë)*
 > 	- [ ] Apparition *(Diabète de type 2)*
 > 	- [ ] Intensité *(Diabète de type 2)*
-> 	- [ ] Évolution *(Diabète de type 2, Hypothyroïdie)*
+> 	- [ ] Évolution *(Diabète de type 2 · Hypothyroïdie)*
 > 	- [ ] Fluctuence *(Diabète de type 2)*
 > 	- [ ] Impact sur l'AVQ *(Diabète de type 2)*
 > 	- [ ] Premier épisode? *(Diabète de type 2)*
@@ -97,7 +108,7 @@ cssclasses:
 > 	- [ ] Vertiges
 > 	- [ ] Cheveux secs
 > 	- [ ] Allaitement
-> - [ ] **4. Évaluation de l'humeur et symptômes dépressifs *(Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))***
+> - [ ] **4. Évaluation de l'humeur et symptômes dépressifs *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > 	- [ ] Humeur
 > 	- [ ] Perte d'intérêt
 > 	- [ ] Culpabilité/faible estime de soi
@@ -110,20 +121,20 @@ cssclasses:
 > - [ ] **5. Antécédents médicaux *(4 diagnostics)***
 > - [ ] **6. Allergies *(4 diagnostics)***
 > - [ ] **7. Médicaments *(4 diagnostics)***
-> - [ ] **8. Hospitalisations et antécédents chirurgicaux *(Hépatite B et/ou C aiguë, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))***
+> - [ ] **8. Hospitalisations et antécédents chirurgicaux *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **9. Antécédents familiaux *(Anémie, SAOS, Syndrome de Sheehan (hypopituitarisme post-partum))***
+> - [ ] **9. Antécédents familiaux *(Anémie · SAOS · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > 	- [ ] Anémies héréditaires *(Anémie)*
 > 	- [ ] Maladies hématologiques *(Anémie)*
-> - [ ] **10. Habitudes et mode de vie *(Hépatite B et/ou C aiguë, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))***
+> - [ ] **10. Habitudes et mode de vie *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > 	- [ ] Travail
 > 	- [ ] Alcool
 > 	- [ ] Drogues récréatives
 > 	- [ ] Tabac
-> 	- [ ] Exercice *(Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Exercice *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Alimentation *(Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Domicile *(Hépatite B et/ou C aiguë, Mononucléose)*
+> 	- [ ] Domicile *(Hépatite B et/ou C aiguë · Mononucléose)*
 > 	- [ ] Ressenti besoin de réduire votre consommation ? *(Hépatite B et/ou C aiguë)*
 > 	- [ ] Agacé par les critiques sur votre consommation ? *(Hépatite B et/ou C aiguë)*
 > 	- [ ] Culpabilité à propos de la consommation ? *(Hépatite B et/ou C aiguë)*
@@ -155,7 +166,7 @@ cssclasses:
 > 	- [ ] Changements capillaires
 > 	- [ ] Changements de voix
 > 	- [ ] Crampes musculaires
-> - [ ] **13. Contacts malades et antécédents familiaux *(Hépatite B et/ou C aiguë, Mononucléose)***
+> - [ ] **13. Contacts malades et antécédents familiaux *(Hépatite B et/ou C aiguë · Mononucléose)***
 > 	- [ ] Contacts malades
 > 	- [ ] Antécédents familiaux
 > - [ ] **14. Antécédents gynécologiques *(Mononucléose)***
@@ -192,7 +203,7 @@ cssclasses:
 > - [ ] **19. Évolution *(Hémorragie digestive haute sur ulcère peptique)***
 > - [ ] **20. Vertiges *(Hémorragie digestive haute sur ulcère peptique)***
 > - [ ] **21. Dyspnée d’effort *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **22. Symptômes associés *(Hémorragie digestive haute sur ulcère peptique, SAOS)***
+> - [ ] **22. Symptômes associés *(Hémorragie digestive haute sur ulcère peptique · SAOS)***
 > 	- [ ] Fièvre, infection *(SAOS)*
 > 	- [ ] Perte/prise de poids *(SAOS)*
 > 	- [ ] Polyurie/polydipsie *(SAOS)*
@@ -212,12 +223,12 @@ cssclasses:
 > - [ ] **34. DD fatigue *(Hémorragie digestive haute sur ulcère peptique)***
 > - [ ] **35. Thyroïde *(Hémorragie digestive haute sur ulcère peptique)***
 > - [ ] **36. Humeur *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **37. Sommeil *(Hypothyroïdie, Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **37. Sommeil *(Hypothyroïdie · Hémorragie digestive haute sur ulcère peptique)***
 > 	- [ ] Durée *(Hypothyroïdie)*
 > 	- [ ] Qualité *(Hypothyroïdie)*
 > 	- [ ] Impact sur la fatigue *(Hypothyroïdie)*
 > - [ ] **38. Polyurie / polydipsie *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **39. Antécédents *(Hypothyroïdie, Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **39. Antécédents *(Hypothyroïdie · Hémorragie digestive haute sur ulcère peptique)***
 > 	- [ ] Antécédents médicaux *(Hypothyroïdie)*
 > 	- [ ] Traitement *(Hypothyroïdie)*
 > - [ ] **40. Antécédents opératoires *(Hémorragie digestive haute sur ulcère peptique)***
@@ -228,16 +239,16 @@ cssclasses:
 > - [ ] **45. Noxes *(Hémorragie digestive haute sur ulcère peptique)***
 > - [ ] **46. Alcool *(Hémorragie digestive haute sur ulcère peptique)***
 > - [ ] **47. Tabac *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **48. Anamnèse familiale *(Hypothyroïdie, Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **49. Anamnèse sociale *(Anémie, Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **48. Anamnèse familiale *(Hypothyroïdie · Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **49. Anamnèse sociale *(Anémie · Hémorragie digestive haute sur ulcère peptique)***
 > 	- [ ] Situation professionnelle/études *(Anémie)*
 > 	- [ ] Conditions de vie *(Anémie)*
 > 	- [ ] Stress psychosocial *(Anémie)*
-> - [ ] **50. Se présente avec nom, fonction et but de la consultation *(Anémie, Dépression, SAOS)***
+> - [ ] **50. Se présente avec nom, fonction et but de la consultation *(Anémie · Dépression · SAOS)***
 > - [ ] **51. Question ouverte d'introduction → Symptôme principal *(SAOS)***
 > - [ ] **52. Évolution temporelle *(SAOS)***
 > - [ ] **53. Évolution dans la journée *(SAOS)***
-> - [ ] **54. Facteurs déclenchants identifiés *(Dépression, SAOS)***
+> - [ ] **54. Facteurs déclenchants identifiés *(Dépression · SAOS)***
 > - [ ] **55. Exploration du sommeil - Qualité *(SAOS)***
 > 	- [ ] Qualité subjective
 > 	- [ ] Durée de sommeil
@@ -271,7 +282,7 @@ cssclasses:
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
-> - [ ] **64. Médicaments actuels *(Dépression, SAOS)***
+> - [ ] **64. Médicaments actuels *(Dépression · SAOS)***
 > - [ ] **65. Anamnèse sociale et professionnelle *(SAOS)***
 > - [ ] **66. Problème actuel et plaintes subjectives *(Anémie)***
 > - [ ] **67. Symptômes cardiovasculaires *(Anémie)***
@@ -314,7 +325,7 @@ cssclasses:
 > - [ ] **77. Médicaments et exposition à des toxiques *(Anémie)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Exposition professionnelle
-> - [ ] **78. Habitudes de vie *(Anémie, Dépression)***
+> - [ ] **78. Habitudes de vie *(Anémie · Dépression)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
@@ -464,7 +475,7 @@ cssclasses:
 > 	- [ ] Activité physique
 
 > [!tip] 🩺 Status
-> - [ ] **1. Mesures d'hygiène *(Hépatite B et/ou C aiguë, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))***
+> - [ ] **1. Mesures d'hygiène *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
 > - [ ] **2. Examen de la tête et du cou *(Syndrome de Sheehan (hypopituitarisme post-partum))***
@@ -474,18 +485,18 @@ cssclasses:
 > - [ ] **3. Examen cardiovasculaire *(Syndrome de Sheehan (hypopituitarisme post-partum))***
 > 	- [ ] Palpation du pouls radial
 > 	- [ ] Auscultation cardiaque
-> - [ ] **4. Examen des extrémités et cutané *(Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))***
+> - [ ] **4. Examen des extrémités et cutané *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > 	- [ ] Inspection des membres inférieurs
 > 	- [ ] Examen cutané
-> - [ ] **5. Examen neurologique *(Anémie, Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))***
+> - [ ] **5. Examen neurologique *(Anémie · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > 	- [ ] Évaluation de l'orientation dans le temps, l'espace et les personnes *(Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Examen ciblé de l'état mental *(Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Examen ciblé des mouvements passifs et actifs *(Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(Mononucléose, Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Sensibilité profonde *(Anémie)*
 > 	- [ ] Réflexes ostéo-tendineux *(Anémie)*
 > 	- [ ] Signe de Romberg *(Anémie)*
-> - [ ] **6. Examen de la tête, yeux, oreilles, nez et gorge *(Hépatite B et/ou C aiguë, Mononucléose)***
+> - [ ] **6. Examen de la tête, yeux, oreilles, nez et gorge *(Hépatite B et/ou C aiguë · Mononucléose)***
 > 	- [ ] Inspection des conjonctives *(Mononucléose)*
 > 	- [ ] Inspection de l'oropharynx *(Mononucléose)*
 > 	- [ ] Inspection des sclères *(Hépatite B et/ou C aiguë)*
@@ -493,9 +504,9 @@ cssclasses:
 > 	- [ ] Inspection du cou
 > 	- [ ] Palpation des ganglions lymphatiques de la tête et du cou
 > 	- [ ] Examen de la glande thyroïde
-> - [ ] **8. Examen abdominal *(Hépatite B et/ou C aiguë, Mononucléose, SAOS)***
-> 	- [ ] Palpation du foie *(Hépatite B et/ou C aiguë, Mononucléose)*
-> 	- [ ] Palpation de la rate *(Hépatite B et/ou C aiguë, Mononucléose)*
+> - [ ] **8. Examen abdominal *(Hépatite B et/ou C aiguë · Mononucléose · SAOS)***
+> 	- [ ] Palpation du foie *(Hépatite B et/ou C aiguë · Mononucléose)*
+> 	- [ ] Palpation de la rate *(Hépatite B et/ou C aiguë · Mononucléose)*
 > 	- [ ] Inspection de l'abdomen *(Hépatite B et/ou C aiguë)*
 > 	- [ ] Auscultation de l'abdomen *(Hépatite B et/ou C aiguë)*
 > 	- [ ] Percussion de l'abdomen *(Hépatite B et/ou C aiguë)*
@@ -516,7 +527,7 @@ cssclasses:
 > - [ ] **18. Auscultation *(Hémorragie digestive haute sur ulcère peptique)***
 > - [ ] **19. Percussion *(Hémorragie digestive haute sur ulcère peptique)***
 > - [ ] **20. Palpation *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **21. Palpation abdominale *(Anémie, Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **21. Palpation abdominale *(Anémie · Hémorragie digestive haute sur ulcère peptique)***
 > 	- [ ] Hépatomégalie *(Anémie)*
 > 	- [ ] Splénomégalie *(Anémie)*
 > - [ ] **22. Signes de péritonisme *(Hémorragie digestive haute sur ulcère peptique)***
@@ -550,7 +561,7 @@ cssclasses:
 > 	- [ ] Tension artérielle
 > 	- [ ] Souffle cardiaque
 > 	- [ ] Bruits vasculaires
-> - [ ] **37. Palpation des aires ganglionnaires *(Anémie, Diabète de type 2)***
+> - [ ] **37. Palpation des aires ganglionnaires *(Anémie · Diabète de type 2)***
 > 	- [ ] Cervicales *(Diabète de type 2)*
 > 	- [ ] Axillaires *(Diabète de type 2)*
 > 	- [ ] Inguinales *(Diabète de type 2)*

@@ -96,9 +96,16 @@ def reponse_patient(libelle):
     """Vrai si ce SOUS-critere enonce une reponse et non un geste a couvrir."""
     if ":" in libelle:
         return False
-    if _REPONSE_NEGATION.match(libelle) or _REPONSE_NORMAL.search(libelle):
+    if _REPONSE_NEGATION.match(libelle):
         return True
-    return bool(_REPONSE_VALEUR.search(_PARENTHESES.sub(" ", libelle)))
+    # Les parentheses sont neutralisees pour le constat de normalite comme
+    # pour la valeur chiffree : entre parentheses, le constat PRECISE un geste
+    # legitime au lieu d'etre le constat lui-meme — « Regarder (pas de
+    # cyanose, respiration normale...) » est une consigne d'examen, pas une
+    # reponse (RESCOS-4, aujourd'hui hors perimetre, mais la regle ne doit pas
+    # dependre du perimetre du jour).
+    nu = _PARENTHESES.sub(" ", libelle)
+    return bool(_REPONSE_NORMAL.search(nu) or _REPONSE_VALEUR.search(nu))
 
 
 def sans_accent(t):
@@ -192,8 +199,20 @@ def items(bloc):
         # mot pour mot, en item de TETE du memento officiel (RESCOS-70b).
         # Mesure a l'appui : le filtre non restreint coutait 25 libelles
         # legitimes, dont 24 en management.
-        sous = [x for x in sous
-                if x and not (cid[:1] in "ae" and reponse_patient(x))]
+        sous = [x for x in sous if x]
+        if cid[:1] in "ae":
+            garde = [x for x in sous if not reponse_patient(x)]
+            # INVARIANT DUR : le filtre ne vide JAMAIS un item de tous ses
+            # sous-items. Quand l'enumeration entiere est ecartee, c'est
+            # qu'elle EST l'information — « Recherche de signes
+            # d'insuffisance hepatocellulaire » suivi de ses six signes
+            # (angiomes stellaires, erythrose palmaire, ongles blancs,
+            # foetor, encephalopathie, ascite) devenait un titre nu qui ne
+            # dit plus quoi chercher, et « Signes negatifs importants »
+            # (Toux) perdait les quatre signes qu'il annonce. Aucune
+            # heuristique ici : la garantie est structurelle, et
+            # check_appariement.py l'epingle.
+            sous = garde or sous
         lignes.append(("item", cid, titre, harmonise(sous)))
     return lignes
 

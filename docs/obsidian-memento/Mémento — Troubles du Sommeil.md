@@ -29,16 +29,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Troubles du Sommeil
 
@@ -59,7 +70,7 @@ cssclasses:
 > 	- [ ] Épisodes antérieurs
 > 	- [ ] Facteurs améliorants
 > 	- [ ] Facteurs aggravants
-> - [ ] **3. Symptômes associés *(Dépression, Trouble anxieux)***
+> - [ ] **3. Symptômes associés *(Dépression · Trouble anxieux)***
 > - [ ] **4. Recherche de symptômes spécifiques *(Trouble anxieux)***
 > 	- [ ] Céphalées
 > 	- [ ] Fatigue
@@ -246,7 +257,7 @@ cssclasses:
 > 	- [ ] Inspection des conjonctives
 > - [ ] **3. Examen du cou *(Trouble anxieux)***
 > 	- [ ] Examen de la glande thyroïde
-> - [ ] **4. Examen cardiovasculaire *(Hyperthyroïdie, Trouble anxieux)***
+> - [ ] **4. Examen cardiovasculaire *(Hyperthyroïdie · Trouble anxieux)***
 > 	- [ ] Inspection du thorax *(Trouble anxieux)*
 > 	- [ ] Palpation du pouls radial *(Trouble anxieux)*
 > 	- [ ] Auscultation cardiaque
@@ -254,7 +265,7 @@ cssclasses:
 > 	- [ ] Pouls périphériques *(Hyperthyroïdie)*
 > - [ ] **5. Examen des extrémités *(Trouble anxieux)***
 > 	- [ ] Inspection des mains
-> - [ ] **6. Examen neurologique *(Hyperthyroïdie, Trouble anxieux)***
+> - [ ] **6. Examen neurologique *(Hyperthyroïdie · Trouble anxieux)***
 > 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(Trouble anxieux)*
 > 	- [ ] Réflexes ostéo-tendineux *(Hyperthyroïdie)*
 > 	- [ ] Recherche de tremblements fins *(Hyperthyroïdie)*

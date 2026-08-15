@@ -29,16 +29,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Douleur Abdominale ⭐️
 
@@ -78,8 +89,8 @@ cssclasses:
 > 	- [ ] Facteurs améliorants *(3 grilles sur 20)*
 > 	- [ ] Facteurs aggravants *(5 grilles sur 20)*
 > 	- [ ] Épisodes antérieurs similaires *(3 grilles sur 20)*
-> 	- [ ] Événements précipitants *(Appendicite aiguë, Cancer de l'ovaire)*
-> 	- [ ] Facteurs aggravant/soulageant *(Cholangite, Pyélonéphrite)*
+> 	- [ ] Événements précipitants *(Appendicite aiguë · Cancer de l'ovaire)*
+> 	- [ ] Facteurs aggravant/soulageant *(Cholangite · Pyélonéphrite)*
 > 	- [ ] Quantité *(Cholangite)*
 > 	- [ ] Chronologie *(Cholangite)*
 > 	- [ ] Facteurs soulageants *(2 grilles sur 20)*
@@ -90,7 +101,7 @@ cssclasses:
 > 	- [ ] Caractéristiques des vomissements *(1 grille sur 20)*
 > 	- [ ] Fièvre *(3 grilles sur 20)*
 > 	- [ ] Fièvre/frissons *(Appendicite aiguë)*
-> 	- [ ] Appétit *(Appendicite aiguë, Cancer de l'ovaire)*
+> 	- [ ] Appétit *(Appendicite aiguë · Cancer de l'ovaire)*
 > 	- [ ] Ballonnements *(Cancer de l'ovaire)*
 > 	- [ ] Prise de poids *(Cancer de l'ovaire)*
 > 	- [ ] Diarrhée *(Douleurs abdominales non spécifiques)*
@@ -115,8 +126,8 @@ cssclasses:
 > 	- [ ] Fièvre/frissons *(Cancer de l'ovaire)*
 > 	- [ ] Sueurs nocturnes *(Cancer de l'ovaire)*
 > 	- [ ] Dyspnée *(Cancer de l'ovaire)*
-> - [ ] **5. Antécédents médicaux *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)***
-> - [ ] **6. Antécédents chirurgicaux *(Appendicite aiguë, Cancer de l'ovaire, Cholécystite aiguë)***
+> - [ ] **5. Antécédents médicaux *(Appendicite aiguë · Cancer de l'ovaire · Cholécystite aiguë)***
+> - [ ] **6. Antécédents chirurgicaux *(Appendicite aiguë · Cancer de l'ovaire · Cholécystite aiguë)***
 > - [ ] **7. Allergies *(9 diagnostics)***
 > - [ ] **8. Médicaments *(5 diagnostics)***
 > 	- [ ] Antiacides *(1 grille sur 20)*
@@ -140,7 +151,7 @@ cssclasses:
 > 	- [ ] Drogues illicites
 > 	- [ ] Exercice physique *(1 grille sur 20)*
 > 	- [ ] Régime alimentaire *(2 grilles sur 20)*
-> - [ ] **13. Histoire sexuelle et gynécologique *(Appendicite aiguë, Cancer de l'ovaire)***
+> - [ ] **13. Histoire sexuelle et gynécologique *(Appendicite aiguë · Cancer de l'ovaire)***
 > 	- [ ] Activité sexuelle
 > 	- [ ] Partenaire *(Appendicite aiguë)*
 > 	- [ ] Douleur pendant les rapports *(Appendicite aiguë)*
@@ -156,21 +167,21 @@ cssclasses:
 > 	- [ ] Sécheresse vaginale *(Appendicite aiguë)*
 > 	- [ ] Grossesses
 > 	- [ ] Dernier frottis
-> - [ ] **14. Caractérisation de la douleur abdominale *(Gastroentérite, Maladie cœliaque, Perforation d'ulcère gastro-duodénal)***
+> - [ ] **14. Caractérisation de la douleur abdominale *(Gastroentérite · Maladie cœliaque · Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Localisation
 > 	- [ ] Intensité (échelle 0-10) *(Maladie cœliaque)*
 > 	- [ ] Qualité *(Maladie cœliaque)*
-> 	- [ ] Début *(Maladie cœliaque, Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Début *(Maladie cœliaque · Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Événements précipitants *(Maladie cœliaque)*
 > 	- [ ] Symptômes associés à la consommation de certains aliments *(Maladie cœliaque)*
 > 	- [ ] Progression/constant/intermittent *(Maladie cœliaque)*
 > 	- [ ] Épisodes antérieurs *(Maladie cœliaque)*
-> 	- [ ] Irradiation *(Gastroentérite, Maladie cœliaque)*
+> 	- [ ] Irradiation *(Gastroentérite · Maladie cœliaque)*
 > 	- [ ] Facteurs améliorants *(Maladie cœliaque)*
 > 	- [ ] Facteurs aggravants *(Maladie cœliaque)*
 > 	- [ ] Horaire *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Type *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Intensité *(Gastroentérite, Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Intensité *(Gastroentérite · Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Évolution *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Début et progression *(Gastroentérite)*
 > 	- [ ] Caractère *(Gastroentérite)*
@@ -206,7 +217,7 @@ cssclasses:
 > 	- [ ] Croissance et développement
 > 	- [ ] Garderie/école
 > 	- [ ] Problèmes à l'école/notes
-> - [ ] **21. Habitudes alimentaires *(Maladie cœliaque, Reflux gastro-œsophagien (RGO))***
+> - [ ] **21. Habitudes alimentaires *(Maladie cœliaque · Reflux gastro-œsophagien (RGO))***
 > 	- [ ] Habitudes alimentaires *(Maladie cœliaque)*
 > 	- [ ] Appétit *(Maladie cœliaque)*
 > 	- [ ] Dernier contrôle *(Maladie cœliaque)*
@@ -269,7 +280,7 @@ cssclasses:
 > - [ ] **77. Caractéristiques du résultat cutané *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **78. Éruption *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **79. Urines *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **80. Miction *(Endométriose pelvienne, Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **80. Miction *(Endométriose pelvienne · Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **81. Caractéristiques du résultat urinaire *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **82. Comportement d’hydratation *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **83. Articulations *(Purpura de Schönlein-Henoch (vascularite à IgA))***
@@ -280,7 +291,7 @@ cssclasses:
 > - [ ] **88. Douleurs osseuses *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **89. Fièvre / EG *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **90. Traumatisme *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **91. Antécédents *(Cholangite, Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **91. Antécédents *(Cholangite · Purpura de Schönlein-Henoch (vascularite à IgA))***
 > 	- [ ] Médicaux (maladies) *(Cholangite)*
 > 	- [ ] Hospitalisations *(Cholangite)*
 > 	- [ ] Opérations *(Cholangite)*
@@ -382,32 +393,32 @@ cssclasses:
 > - [ ] **117. Consommation de substances *(6 diagnostics)***
 > 	- [ ] Alcool *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Tabac *(Reflux gastro-œsophagien (RGO))*
-> - [ ] **118. Activités sportives et loisirs *(Douleurs abdominales non spécifiques, Reflux gastro-œsophagien (RGO))***
+> - [ ] **118. Activités sportives et loisirs *(Douleurs abdominales non spécifiques · Reflux gastro-œsophagien (RGO))***
 > - [ ] **119. Anamnèse sociale *(6 diagnostics)***
-> - [ ] **120. Identification des symptômes principaux *(Endométriose pelvienne, Rectocolite ulcéro-hémorragique)***
+> - [ ] **120. Identification des symptômes principaux *(Endométriose pelvienne · Rectocolite ulcéro-hémorragique)***
 > - [ ] **121. Début des symptômes *(4 diagnostics)***
 > - [ ] **122. Fréquence et périodicité *(4 diagnostics)***
 > - [ ] **123. Caractère de la douleur *(5 diagnostics)***
 > - [ ] **124. Facteurs aggravants ou soulageants *(4 diagnostics)***
-> - [ ] **125. Douleurs liées à l'alimentation *(Endométriose pelvienne, Ischémie mésentérique aiguë, Rectocolite ulcéro-hémorragique)***
-> - [ ] **126. Symptômes généraux *(Endométriose pelvienne, Infection génitale haute, Rectocolite ulcéro-hémorragique)***
-> 	- [ ] Fièvre *(Endométriose pelvienne, Rectocolite ulcéro-hémorragique)*
+> - [ ] **125. Douleurs liées à l'alimentation *(Endométriose pelvienne · Ischémie mésentérique aiguë · Rectocolite ulcéro-hémorragique)***
+> - [ ] **126. Symptômes généraux *(Endométriose pelvienne · Infection génitale haute · Rectocolite ulcéro-hémorragique)***
+> 	- [ ] Fièvre *(Endométriose pelvienne · Rectocolite ulcéro-hémorragique)*
 > 	- [ ] Perte de poids
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Fièvre prolongée *(Infection génitale haute)*
-> - [ ] **127. Symptômes digestifs *(Endométriose pelvienne, Infection génitale haute, Rectocolite ulcéro-hémorragique)***
+> - [ ] **127. Symptômes digestifs *(Endométriose pelvienne · Infection génitale haute · Rectocolite ulcéro-hémorragique)***
 > 	- [ ] Transit intestinal *(Endométriose pelvienne)*
 > 	- [ ] Gaz *(Endométriose pelvienne)*
 > 	- [ ] Nausées/Vomissements
 > 	- [ ] Sang dans les vomissements
-> 	- [ ] Constipation *(Endométriose pelvienne, Rectocolite ulcéro-hémorragique)*
-> 	- [ ] Diarrhée *(Endométriose pelvienne, Rectocolite ulcéro-hémorragique)*
-> 	- [ ] Sang dans les selles *(Endométriose pelvienne, Infection génitale haute)*
-> 	- [ ] Transit intestinal et gaz *(Infection génitale haute, Rectocolite ulcéro-hémorragique)*
+> 	- [ ] Constipation *(Endométriose pelvienne · Rectocolite ulcéro-hémorragique)*
+> 	- [ ] Diarrhée *(Endométriose pelvienne · Rectocolite ulcéro-hémorragique)*
+> 	- [ ] Sang dans les selles *(Endométriose pelvienne · Infection génitale haute)*
+> 	- [ ] Transit intestinal et gaz *(Infection génitale haute · Rectocolite ulcéro-hémorragique)*
 > 	- [ ] Diarrhée/Constipation *(Infection génitale haute)*
 > 	- [ ] Aspect des selles *(Rectocolite ulcéro-hémorragique)*
 > - [ ] **128. Antécédent de chirurgie abdominale *(4 diagnostics)***
-> - [ ] **129. Anamnèse gynécologique *(Endométriose pelvienne, Infection génitale haute)***
+> - [ ] **129. Anamnèse gynécologique *(Endométriose pelvienne · Infection génitale haute)***
 > 	- [ ] Dernières règles *(Endométriose pelvienne)*
 > 	- [ ] Durée du cycle *(Endométriose pelvienne)*
 > 	- [ ] Durée des menstruations *(Endométriose pelvienne)*
@@ -424,8 +435,8 @@ cssclasses:
 > 	- [ ] Nouveau partenaire sexuel *(Infection génitale haute)*
 > - [ ] **130. Anamnèse personnelle *(4 diagnostics)***
 > - [ ] **131. Médication actuelle *(5 diagnostics)***
-> - [ ] **132. Migration de la douleur *(Infection génitale haute, Ischémie mésentérique aiguë, Rectocolite ulcéro-hémorragique)***
-> - [ ] **133. Mode de début *(Infection génitale haute, Ischémie mésentérique aiguë, Rectocolite ulcéro-hémorragique)***
+> - [ ] **132. Migration de la douleur *(Infection génitale haute · Ischémie mésentérique aiguë · Rectocolite ulcéro-hémorragique)***
+> - [ ] **133. Mode de début *(Infection génitale haute · Ischémie mésentérique aiguë · Rectocolite ulcéro-hémorragique)***
 > - [ ] **134. Fièvre *(Infection génitale haute)***
 > - [ ] **135. Symptômes extra-intestinaux *(Rectocolite ulcéro-hémorragique)***
 > 	- [ ] Aphtes
@@ -695,8 +706,8 @@ cssclasses:
 > - [ ] **13. Non disponible dans les cas téléphoniques *(Maladie cœliaque)***
 > - [ ] **14. Paramètres vitaux *(1 grille sur 20)***
 > - [ ] **15. Inspection *(5 grilles sur 20)***
-> 	- [ ] Teint *(Infection génitale haute, Rectocolite ulcéro-hémorragique)*
-> 	- [ ] État général *(Infection génitale haute, Reflux gastro-œsophagien (RGO))*
+> 	- [ ] Teint *(Infection génitale haute · Rectocolite ulcéro-hémorragique)*
+> 	- [ ] État général *(Infection génitale haute · Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Abdomen *(Infection génitale haute)*
 > 	- [ ] Cavité buccale *(Rectocolite ulcéro-hémorragique)*
 > 	- [ ] Peau *(Rectocolite ulcéro-hémorragique)*
@@ -732,7 +743,7 @@ cssclasses:
 > - [ ] **28. McBurney *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **29. Douleur à la décompression *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **30. Douleur à la secousse *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **31. Palpation du foie *(Purpura de Schönlein-Henoch (vascularite à IgA), Reflux gastro-œsophagien (RGO))***
+> - [ ] **31. Palpation du foie *(Purpura de Schönlein-Henoch (vascularite à IgA) · Reflux gastro-œsophagien (RGO))***
 > 	- [ ] Taille et consistance du foie *(Reflux gastro-œsophagien (RGO))*
 > - [ ] **32. Inspection cutanée *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **33. Endobuccal / muqueuses *(Purpura de Schönlein-Henoch (vascularite à IgA))***
@@ -740,7 +751,7 @@ cssclasses:
 > - [ ] **35. Douleur à la percussion rénale *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **36. Méningisme *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **37. Examen neurologique *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **38. Inspection générale et signes vitaux *(Diverticulite sigmoïdienne non compliquée, Gastroentérite)***
+> - [ ] **38. Inspection générale et signes vitaux *(Diverticulite sigmoïdienne non compliquée · Gastroentérite)***
 > 	- [ ] État général
 > 	- [ ] Position antalgique *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Faciès douloureux *(Diverticulite sigmoïdienne non compliquée)*
@@ -748,7 +759,7 @@ cssclasses:
 > 	- [ ] Signes vitaux complets *(Gastroentérite)*
 > 	- [ ] Signes de déshydratation *(Gastroentérite)*
 > 	- [ ] Recherche d'ictère *(Gastroentérite)*
-> - [ ] **39. Inspection abdominale *(Diverticulite sigmoïdienne non compliquée, Perforation d'ulcère gastro-duodénal)***
+> - [ ] **39. Inspection abdominale *(Diverticulite sigmoïdienne non compliquée · Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Distension abdominale *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Asymétrie *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Cicatrices
@@ -775,10 +786,10 @@ cssclasses:
 > 	- [ ] Évaluation de la fréquence des bruits intestinaux *(Gastroentérite)*
 > 	- [ ] Tonalité des bruits *(Gastroentérite)*
 > 	- [ ] Intensité des bruits intestinaux *(Gastroentérite)*
-> - [ ] **41. Percussion abdominale *(Diverticulite sigmoïdienne non compliquée, Gastroentérite, Perforation d'ulcère gastro-duodénal)***
+> - [ ] **41. Percussion abdominale *(Diverticulite sigmoïdienne non compliquée · Gastroentérite · Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Tympanisme généralisé *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Matité déclive *(Diverticulite sigmoïdienne non compliquée, Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Douleur à la percussion *(Diverticulite sigmoïdienne non compliquée, Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Matité déclive *(Diverticulite sigmoïdienne non compliquée · Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Douleur à la percussion *(Diverticulite sigmoïdienne non compliquée · Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Signe du flot *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Tympanisme diffus *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Disparition de la matité pré-hépatique *(Perforation d'ulcère gastro-duodénal)*
@@ -806,7 +817,7 @@ cssclasses:
 > 	- [ ] Hernies inguinales
 > 	- [ ] Hernie crurale
 > 	- [ ] Hernie ombilicale
-> - [ ] **46. Toucher rectal *(Diverticulite sigmoïdienne non compliquée, Infection génitale haute, Ischémie mésentérique aiguë)***
+> - [ ] **46. Toucher rectal *(Diverticulite sigmoïdienne non compliquée · Infection génitale haute · Ischémie mésentérique aiguë)***
 > 	- [ ] Tonus sphinctérien *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Masses rectales *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Sang au doigtier *(Diverticulite sigmoïdienne non compliquée)*
@@ -831,7 +842,7 @@ cssclasses:
 > 	- [ ] Palpation superficielle et profonde *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Recherche de masse *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Recherche de douleur épigastrique *(Reflux gastro-œsophagien (RGO))*
-> - [ ] **58. Signes péritonéaux *(Infection génitale haute, Ischémie mésentérique aiguë, Rectocolite ulcéro-hémorragique)***
+> - [ ] **58. Signes péritonéaux *(Infection génitale haute · Ischémie mésentérique aiguë · Rectocolite ulcéro-hémorragique)***
 > - [ ] **59. Recherche de signes hémorragiques *(Infection génitale haute)***
 > - [ ] **60. Toucher rectal avec inspection de l'anus *(Rectocolite ulcéro-hémorragique)***
 > - [ ] **61. Inspection de l'abdomen et de la peau *(Ischémie mésentérique aiguë)***

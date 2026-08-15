@@ -29,16 +29,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Céphalée ⭐️
 
@@ -53,19 +64,19 @@ cssclasses:
 > - **RESCOS-10** — Thrombose veineuse cérébrale `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-10_-_Ce_phale_e_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(Crise migraineuse, Hémorragie sous-arachnoïdienne)***
-> - [ ] **2. Caractérisation de la céphalée *(Crise migraineuse, Hémorragie sous-arachnoïdienne, Thrombose veineuse cérébrale)***
+> - [ ] **1. Motif principal *(Crise migraineuse · Hémorragie sous-arachnoïdienne)***
+> - [ ] **2. Caractérisation de la céphalée *(Crise migraineuse · Hémorragie sous-arachnoïdienne · Thrombose veineuse cérébrale)***
 > 	- [ ] Localisation
-> 	- [ ] Intensité (échelle 0-10) *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Intensité (échelle 0-10) *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
 > 	- [ ] Qualité
 > 	- [ ] Début
-> 	- [ ] Événements précipitants *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Progression/constant/intermittent *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Épisodes antérieurs *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Irradiation *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Facteurs améliorants *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Facteurs aggravants *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Symptômes associés *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Événements précipitants *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Progression/constant/intermittent *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Épisodes antérieurs *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Irradiation *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Facteurs améliorants *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Facteurs aggravants *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Symptômes associés *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
 > 	- [ ] Intensité *(Thrombose veineuse cérébrale)*
 > 	- [ ] Évolution *(Thrombose veineuse cérébrale)*
 > 	- [ ] Durée *(Thrombose veineuse cérébrale)*
@@ -92,11 +103,11 @@ cssclasses:
 > - [ ] **6. Médicaments *(5 diagnostics)***
 > 	- [ ] Antihypertenseurs *(Céphalée du restaurant chinois)*
 > 	- [ ] Antalgiques *(Céphalée du restaurant chinois)*
-> - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Crise migraineuse, Hémorragie sous-arachnoïdienne)***
+> - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Crise migraineuse · Hémorragie sous-arachnoïdienne)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **8. Antécédents familiaux *(Crise migraineuse, Céphalée du restaurant chinois, Migraine)***
-> - [ ] **9. Habitudes et mode de vie *(Crise migraineuse, Hémorragie sous-arachnoïdienne)***
+> - [ ] **8. Antécédents familiaux *(Crise migraineuse · Céphalée du restaurant chinois · Migraine)***
+> - [ ] **9. Habitudes et mode de vie *(Crise migraineuse · Hémorragie sous-arachnoïdienne)***
 > 	- [ ] Travail
 > 	- [ ] Domicile
 > 	- [ ] Alcool
@@ -128,14 +139,14 @@ cssclasses:
 > - [ ] **16. Durée des crises *(Migraine)***
 > - [ ] **17. Fréquence et évolution *(Migraine)***
 > - [ ] **18. Localisation *(Migraine)***
-> - [ ] **19. Irradiation *(Céphalée du restaurant chinois, Migraine)***
+> - [ ] **19. Irradiation *(Céphalée du restaurant chinois · Migraine)***
 > - [ ] **20. Qualité *(Migraine)***
-> - [ ] **21. Intensité de la douleur *(Céphalée du restaurant chinois, Migraine)***
-> - [ ] **22. Facteurs aggravants *(Céphalée du restaurant chinois, Migraine)***
+> - [ ] **21. Intensité de la douleur *(Céphalée du restaurant chinois · Migraine)***
+> - [ ] **22. Facteurs aggravants *(Céphalée du restaurant chinois · Migraine)***
 > - [ ] **23. Facteurs soulageants *(Migraine)***
 > - [ ] **24. Bilans neurologiques antérieurs *(Migraine)***
 > - [ ] **25. Retentissement des symptômes *(Migraine)***
-> - [ ] **26. Symptômes associés *(Migraine, Thrombose veineuse cérébrale)***
+> - [ ] **26. Symptômes associés *(Migraine · Thrombose veineuse cérébrale)***
 > 	- [ ] Nausées/vomissements *(Thrombose veineuse cérébrale)*
 > 	- [ ] Photophobie/phonophobie *(Thrombose veineuse cérébrale)*
 > 	- [ ] Symptômes neurologiques *(Thrombose veineuse cérébrale)*
@@ -154,12 +165,12 @@ cssclasses:
 > - [ ] **37. Signes d'alarme des céphalées *(Migraine)***
 > - [ ] **38. Début en coup de tonnerre *(Migraine)***
 > - [ ] **39. Céphalée maximale *(Migraine)***
-> - [ ] **40. Fièvre *(Céphalée du restaurant chinois, Migraine)***
-> - [ ] **41. Raideur de nuque *(Céphalée du restaurant chinois, Migraine)***
+> - [ ] **40. Fièvre *(Céphalée du restaurant chinois · Migraine)***
+> - [ ] **41. Raideur de nuque *(Céphalée du restaurant chinois · Migraine)***
 > - [ ] **42. Trouble de la conscience *(Migraine)***
 > - [ ] **43. Déficit neurologique focal *(Migraine)***
 > - [ ] **44. Grossesse *(Migraine)***
-> - [ ] **45. Traumatisme *(Céphalée du restaurant chinois, Migraine)***
+> - [ ] **45. Traumatisme *(Céphalée du restaurant chinois · Migraine)***
 > - [ ] **46. Abus médicamenteux *(Migraine)***
 > - [ ] **47. Dépistage de l'artérite à cellules géantes *(Migraine)***
 > - [ ] **48. Diagnostic antérieur de céphalées *(Migraine)***
@@ -172,7 +183,7 @@ cssclasses:
 > - [ ] **55. Profession *(Migraine)***
 > - [ ] **56. Facteurs de stress psychosociaux *(Migraine)***
 > - [ ] **57. Situation sociale *(Migraine)***
-> - [ ] **58. Présentation avec nom, fonction et tâche *(Céphalée du restaurant chinois, Méningite)***
+> - [ ] **58. Présentation avec nom, fonction et tâche *(Céphalée du restaurant chinois · Méningite)***
 > - [ ] **59. Question ouverte d'introduction → Symptôme principal *(Céphalée du restaurant chinois)***
 > - [ ] **60. Localisation des douleurs *(Céphalée du restaurant chinois)***
 > 	- [ ] Unilatérale/bilatérale
@@ -184,7 +195,7 @@ cssclasses:
 > - [ ] **62. Variation dans la journée *(Céphalée du restaurant chinois)***
 > - [ ] **63. Caractère de la douleur *(Céphalée du restaurant chinois)***
 > - [ ] **64. Facteurs de soulagement *(Céphalée du restaurant chinois)***
-> - [ ] **65. Symptômes d'accompagnement *(Céphalée du restaurant chinois, Méningite)***
+> - [ ] **65. Symptômes d'accompagnement *(Céphalée du restaurant chinois · Méningite)***
 > 	- [ ] Nausées *(Céphalée du restaurant chinois)*
 > 	- [ ] Vomissements *(Céphalée du restaurant chinois)*
 > 	- [ ] Photophobie
@@ -255,10 +266,10 @@ cssclasses:
 > 	- [ ] État psychique
 
 > [!tip] 🩺 Status
-> - [ ] **1. Mesures d'hygiène *(Crise migraineuse, Hémorragie sous-arachnoïdienne)***
+> - [ ] **1. Mesures d'hygiène *(Crise migraineuse · Hémorragie sous-arachnoïdienne)***
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
-> - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(Crise migraineuse, Hémorragie sous-arachnoïdienne)***
+> - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(Crise migraineuse · Hémorragie sous-arachnoïdienne)***
 > 	- [ ] Inspection de la tête
 > 	- [ ] Palpation de la tête
 > 	- [ ] Inspection des conjonctives *(Crise migraineuse)*
@@ -267,7 +278,7 @@ cssclasses:
 > - [ ] **3. Examen du cou *(Crise migraineuse)***
 > 	- [ ] Inspection du cou
 > 	- [ ] Palpation du cou
-> - [ ] **4. Examen neurologique *(Crise migraineuse, Hémorragie sous-arachnoïdienne)***
+> - [ ] **4. Examen neurologique *(Crise migraineuse · Hémorragie sous-arachnoïdienne)***
 > 	- [ ] Évaluation de l'orientation dans le temps, l'espace et les personnes
 > 	- [ ] Examen ciblé des nerfs crâniens
 > 	- [ ] Recherche de méningisme *(Crise migraineuse)*
@@ -285,7 +296,7 @@ cssclasses:
 > 	- [ ] Signe de Brudzinski *(Hémorragie sous-arachnoïdienne)*
 > - [ ] **5. Examen cardiovasculaire *(Hémorragie sous-arachnoïdienne)***
 > 	- [ ] Auscultation cardiaque
-> - [ ] **6. Méningisme *(Céphalée du restaurant chinois, Migraine)***
+> - [ ] **6. Méningisme *(Céphalée du restaurant chinois · Migraine)***
 > - [ ] **7. Pupilles *(Migraine)***
 > - [ ] **8. Oculomotricité *(Migraine)***
 > - [ ] **9. Mouvements oculaires *(Migraine)***

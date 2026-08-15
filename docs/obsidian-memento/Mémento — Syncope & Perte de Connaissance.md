@@ -28,16 +28,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Syncope & Perte de Connaissance
 
@@ -86,10 +97,10 @@ cssclasses:
 > - [ ] **28. Symptômes cardiaques *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **29. Prodromes de syncope *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **30. Fièvre/infection *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **31. Symptômes B *(BAV, Première crise convulsive tonico-clonique, Première crise épileptique focale bilatéralisée)***
-> 	- [ ] Fièvre *(BAV, Première crise convulsive tonico-clonique)*
-> 	- [ ] Sueurs nocturnes *(BAV, Première crise convulsive tonico-clonique)*
-> 	- [ ] Perte de poids *(BAV, Première crise convulsive tonico-clonique)*
+> - [ ] **31. Symptômes B *(BAV · Première crise convulsive tonico-clonique · Première crise épileptique focale bilatéralisée)***
+> 	- [ ] Fièvre *(BAV · Première crise convulsive tonico-clonique)*
+> 	- [ ] Sueurs nocturnes *(BAV · Première crise convulsive tonico-clonique)*
+> 	- [ ] Perte de poids *(BAV · Première crise convulsive tonico-clonique)*
 > 	- [ ] Anorexie *(BAV)*
 > - [ ] **32. Antécédents *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **33. Antécédents généraux *(Première crise épileptique focale bilatéralisée)***
@@ -100,8 +111,8 @@ cssclasses:
 > - [ ] **38. Alcool *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **39. Tabagisme *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **40. Drogues *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **41. Allergies *(Première crise convulsive tonico-clonique, Première crise épileptique focale bilatéralisée)***
-> - [ ] **42. Anamnèse familiale *(Première crise convulsive tonico-clonique, Première crise épileptique focale bilatéralisée)***
+> - [ ] **41. Allergies *(Première crise convulsive tonico-clonique · Première crise épileptique focale bilatéralisée)***
+> - [ ] **42. Anamnèse familiale *(Première crise convulsive tonico-clonique · Première crise épileptique focale bilatéralisée)***
 > 	- [ ] Père *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Mère *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Fratrie *(Première crise convulsive tonico-clonique)*
@@ -152,7 +163,7 @@ cssclasses:
 > 	- [ ] Déficits neurologiques/AIT/AVC
 > 	- [ ] Changement de personnalité
 > 	- [ ] Cardiopathie connue
-> - [ ] **59. Antécédents médicaux personnels *(BAV, Première crise convulsive tonico-clonique)***
+> - [ ] **59. Antécédents médicaux personnels *(BAV · Première crise convulsive tonico-clonique)***
 > 	- [ ] Diabète
 > 	- [ ] Addiction *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Cancer actif *(Première crise convulsive tonico-clonique)*
@@ -162,7 +173,7 @@ cssclasses:
 > 	- [ ] Maladies cardiovasculaires *(BAV)*
 > 	- [ ] Maladies respiratoires *(BAV)*
 > 	- [ ] Autres pathologies chroniques *(BAV)*
-> - [ ] **60. Médicaments actuels *(BAV, Première crise convulsive tonico-clonique)***
+> - [ ] **60. Médicaments actuels *(BAV · Première crise convulsive tonico-clonique)***
 > 	- [ ] Attention : antidépresseurs, neuroleptiques, tramadol abaissent le seuil épileptogène *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Antihypertenseurs *(BAV)*
 > 	- [ ] Antidiabétiques *(BAV)*
@@ -244,7 +255,7 @@ cssclasses:
 > 	- [ ] Loisirs
 > 	- [ ] Niveau d'autonomie
 > 	- [ ] Mobilité générale
-> - [ ] **77. Antécédents familiaux *(BAV, HypoTA orthostatique)***
+> - [ ] **77. Antécédents familiaux *(BAV · HypoTA orthostatique)***
 > 	- [ ] Maladies cardiovasculaires familiales *(1 grille sur 6)*
 > 	- [ ] Hypotension familiale *(1 grille sur 6)*
 > 	- [ ] Autres pathologies héréditaires *(1 grille sur 6)*
@@ -253,6 +264,7 @@ cssclasses:
 > 	- [ ] Maladies cardiaques *(BAV)*
 > 	- [ ] Troubles du rythme familiaux *(BAV)*
 > 	- [ ] État de santé de la mère *(BAV)*
+> 	- [ ] Pas d'antécédents familiaux de syncope, épilepsie ou pathologie cardiaque *(1 grille sur 6)*
 > - [ ] **78. Contexte social *(1 grille sur 6)***
 > 	- [ ] Situation familiale
 > 	- [ ] Enfants
@@ -358,7 +370,7 @@ cssclasses:
 > - [ ] **1. Inspection après chute *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **2. Inspection de la langue *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **3. Tonus cervical *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **4. Examen cardio-pulmonaire *(Première crise convulsive tonico-clonique, Première crise épileptique focale bilatéralisée)***
+> - [ ] **4. Examen cardio-pulmonaire *(Première crise convulsive tonico-clonique · Première crise épileptique focale bilatéralisée)***
 > 	- [ ] Auscultation cardiaque *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Auscultation pulmonaire *(Première crise convulsive tonico-clonique)*
 > - [ ] **5. Auscultation cardiaque *(Première crise épileptique focale bilatéralisée)***

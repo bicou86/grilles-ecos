@@ -28,16 +28,27 @@ cssclasses:
 > officielles fait autorité — [[Mémento ECOS — Grilles officielles]].
 >
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
-> toutes les grilles de la SSP.
+> toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
+> **cette formulation-là** :
 >
-> - un item **nu** est porté par **toutes** les grilles de la SSP ;
-> - `*(Diagnostic)*` : porté par **exactement toutes** les grilles de ce
->   diagnostic, et par elles seules — au-delà de trois, ils sont comptés ;
-> - `*(n grilles sur m)*` : porté par une partie des grilles, que les
+> - un item **nu** : **toutes** les grilles de la SSP portent cette
+>   formulation ;
+> - `*(Diagnostic)*` : exactement toutes les grilles de ce diagnostic la
+>   portent, et elles seules — au-delà de trois, ils sont comptés ;
+> - `*(n grilles sur m)*` : une partie des grilles la porte, que les
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
+> rapprochement entre grilles est encore purement lexical : deux grilles qui
+> disent la même chose autrement (« Motif de consultation » et « Motif de
+> consultation principal », « Allergies » et « Allergies connues ») donnent
+> **deux items distincts**, chacun marqué comme partiel. Un `*(1 grille sur 2)*`
+> ne veut donc pas dire que l'autre grille néglige la question — seulement
+> qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
+> rempli, lisez les libellés voisins ensemble.
 
 # Amaurose & Perte Brutale de Vision
 
@@ -95,11 +106,11 @@ cssclasses:
 > 	- [ ] Picotements
 > 	- [ ] Convulsion
 > 	- [ ] Problèmes d'élocution
-> - [ ] **5. Antécédents médicaux *(AVC, Décollement de rétine)***
+> - [ ] **5. Antécédents médicaux *(AVC · Décollement de rétine)***
 > - [ ] **6. Allergies *(4 diagnostics)***
 > 	- [ ] Allergies médicamenteuses *(Cataracte)*
 > 	- [ ] Autres allergies *(Cataracte)*
-> - [ ] **7. Médicaments *(AVC, Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **7. Médicaments *(AVC · Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **8. Hospitalisations et antécédents chirurgicaux *(AVC)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
@@ -115,13 +126,13 @@ cssclasses:
 > 	- [ ] Exercice
 > 	- [ ] Alimentation
 > - [ ] **11. Question d’entrée *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **12. Dimension temporelle *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **13. Début / Durée *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **12. Dimension temporelle *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **13. Début / Durée *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **14. Mode de survenue *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **15. Évolution *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **15. Évolution *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **16. Épisodes antérieurs *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **17. Déclencheur *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **18. Localisation *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **18. Localisation *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **19. Intensité / Sévérité *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **20. Qualité *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **21. Mesures déjà prises *(Occlusion de l'artère centrale de la rétine (embolique))***
@@ -145,21 +156,21 @@ cssclasses:
 > - [ ] **39. Neurologique *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **40. Trouble du langage *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **41. Paralysie *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **42. Trouble de la sensibilité *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **42. Trouble de la sensibilité *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **43. Vertiges *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **44. Antécédents *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **45. Yeux / Cœur *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **46. Opérations antérieures *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **47. Noxes *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **48. Alcool *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **48. Alcool *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **49. Tabac *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **50. Drogues *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **51. Antécédents familiaux *(Cataracte, Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **50. Drogues *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **51. Antécédents familiaux *(Cataracte · Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
 > 	- [ ] Pathologies oculaires familiales *(Cataracte)*
 > 	- [ ] Inquiétude du patient *(Cataracte)*
 > 	- [ ] Cataracte familiale *(Cataracte)*
-> - [ ] **52. Profession *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **53. Situation sociale *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **52. Profession *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **53. Situation sociale *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **54. Question initiale *(Décollement de rétine)***
 > - [ ] **55. Apparition *(Décollement de rétine)***
 > - [ ] **56. Facteur déclenchant / Traumatisme *(Décollement de rétine)***
@@ -297,15 +308,15 @@ cssclasses:
 > 	- [ ] Signe de Babinski
 > 	- [ ] Test de Romberg
 > - [ ] **7. Status neuro orientant *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **8. Acuité visuelle *(Cataracte, Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **8. Acuité visuelle *(Cataracte · Occlusion de l'artère centrale de la rétine (embolique))***
 > 	- [ ] Vision de loin avec correction *(Cataracte)*
 > 	- [ ] Vision de près avec correction *(Cataracte)*
 > 	- [ ] Test du trou sténopéique *(Cataracte)*
 > - [ ] **9. Réflexe pupillaire *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **10. Champ visuel *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **10. Champ visuel *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **11. Motilité oculaire *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **12. Segments antérieurs *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **13. Pression intraoculaire *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **13. Pression intraoculaire *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **14. Fundoscopie *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **15. Artères temporales *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **16. Auscultation cardiaque *(Occlusion de l'artère centrale de la rétine (embolique))***
