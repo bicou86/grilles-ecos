@@ -1610,8 +1610,15 @@ et ne survit pas a l'export."
 - Modify: `scripts/memento/check_appariement.py`
 
 **Interfaces:**
-- Consumes: `apparier`
-- Produces: `scinder_management(cas_list, diag_par_cas, ssp) -> (commun, {diagnostic: items})`
+- Consumes: `apparier`, `docs/ecos-priorites-2026.yaml`
+- Produces: `scinder_management(cas_list, diag_par_cas, ssp, diagnostics_attendus) -> (commun, {diagnostic: items})`
+
+**Décision du 2026-08-15** : les sous-blocs couvrent **tous les diagnostics attendus de la
+SSP**, lus dans le champ `diagnostics` de `docs/ecos-priorites-2026.yaml`, et pas seulement
+ceux qu'une grille documente. Un diagnostic sans grille produit un sous-bloc **vide portant
+une mention explicite** du type « *aucune grille du corpus ne couvre ce diagnostic* » : c'est
+un signal de lacune de révision, pas un défaut. `scinder_management` reçoit donc la liste
+attendue en quatrième argument et garantit une entrée par diagnostic attendu.
 
 - [ ] **Step 1: Écrire le checker qui échoue**
 

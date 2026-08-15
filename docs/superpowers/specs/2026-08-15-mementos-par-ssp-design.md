@@ -27,7 +27,11 @@ difficultés :
 
 - **Anamnèse et status** : items mis en commun. Un item qui n'apparaît que dans une
   partie des cas est suffixé du ou des diagnostics qui le portent.
-- **Management** : un bloc commun, puis un sous-bloc par diagnostic.
+- **Management** : un bloc commun, puis **un sous-bloc par diagnostic attendu de la SSP**,
+  y compris ceux qu'aucune grille du corpus ne documente — un sous-bloc vide signale alors
+  une lacune de révision (« ce diagnostic tombe à l'ECOS, tu n'as aucune grille dessus »)
+  et non un défaut de génération. La liste des diagnostics attendus vient de
+  `docs/ecos-priorites-2026.yaml`, pas seulement des grilles.
 
 La clé de regroupement est **(SSP, diagnostic)** : deux cas de corpus différents portant
 le même diagnostic sous la même SSP fusionnent en un seul sous-bloc de management.
@@ -285,4 +289,8 @@ la seule qui doive tenir sur les 257 grilles avant qu'on aille plus loin.
 - Marquage par **suffixe `*(diagnostic)*`**, pas par surlignage.
 - Découpage en **cinq étapes**, chacune relue avant la suivante.
 - Les **32 SSP à cas unique sont générées** malgré l'absence de fusion.
+- **Un sous-bloc de management par diagnostic attendu**, même sans grille pour le couvrir
+  (décision du 2026-08-15). Le vide est une information, pas un trou.
+- La table des priorités est **écrite et maintenue à la main** ; son `ssp` peut nommer une
+  page SSP qui n'existe pas encore, à créer pour les plaintes fréquentes à l'ECOS.
 - `rescos-locales` et `casecos` **reportés**, pas abandonnés.
