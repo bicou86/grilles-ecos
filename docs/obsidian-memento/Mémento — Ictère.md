@@ -289,13 +289,13 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Néoplasie des voies biliaires/pancréatique
-> - [ ] **1. Évoque le diagnostic principal de néoplasie des voies biliaires/pancréatique**
-> - [ ] **2. Évoque un diagnostic différentiel cohérent**
+> - [ ] **1. Diagnostics différentiels**
 > 	- [ ] Néoplasie pancréatique
 > 	- [ ] Cholangite/cholecystite
 > 	- [ ] Pancréatite
 > 	- [ ] Hépatite
 > 	- [ ] Hémolyse
+> - [ ] **2. Évoque le diagnostic principal de néoplasie des voies biliaires/pancréatique**
 > - [ ] **3. Propose des examens complémentaires appropriés**
 > 	- [ ] Laboratoire (bilirubine totale et directe, transaminases, PAL, GGT)
 > 	- [ ] Échographie abdominale

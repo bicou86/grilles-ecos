@@ -357,29 +357,28 @@ cssclasses:
 > 	- [ ] Inspection de l'oropharynx
 > - [ ] **3. Examen cardiovasculaire *(1 grille sur 5)***
 > - [ ] **4. Examen pulmonaire *(1 grille sur 5)***
-> - [ ] **5. Examen abdominal *(MICI (Crohn / RCUH))***
-> 	- [ ] Inspection de l'abdomen
+> - [ ] **5. Examen abdominal complet *(Diarrhée chronique par malabsorption · MICI (Crohn / RCUH))***
+> 	- [ ] Inspection de l'abdomen *(MICI (Crohn / RCUH))*
 > 	- [ ] Auscultation de l'abdomen *(1 grille sur 5)*
 > 	- [ ] Percussion de l'abdomen *(1 grille sur 5)*
 > 	- [ ] Palpation de l'abdomen *(1 grille sur 5)*
+> 	- [ ] Inspection (distension, cicatrices) *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Auscultation (bruits hydroaériques) *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Palpation (masses, douleur, défense) *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Percussion (matité, tympanisme) *(Diarrhée chronique par malabsorption)*
 > 	- [ ] Auscultation des bruits intestinaux *(1 grille sur 5)*
 > 	- [ ] Palpation des 4 quadrants *(1 grille sur 5)*
 > 	- [ ] Recherche de défense ou détente *(1 grille sur 5)*
 > 	- [ ] Recherche de masses *(1 grille sur 5)*
 > - [ ] **6. Examen cutané *(1 grille sur 5)***
-> - [ ] **7. Examen abdominal complet *(Diarrhée chronique par malabsorption)***
-> 	- [ ] Inspection (distension, cicatrices)
-> 	- [ ] Auscultation (bruits hydroaériques)
-> 	- [ ] Palpation (masses, douleur, défense)
-> 	- [ ] Percussion (matité, tympanisme)
-> - [ ] **8. Évaluation de l'état d'hydratation *(Diarrhée chronique par malabsorption)***
+> - [ ] **7. Évaluation de l'état d'hydratation *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Turgor cutané
 > 	- [ ] État des muqueuses
-> - [ ] **9. Recherche de signes cutanés *(Diarrhée chronique par malabsorption)***
+> - [ ] **8. Recherche de signes cutanés *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Érythème noueux
 > 	- [ ] Pyoderma gangrenosum
 > 	- [ ] Autres manifestations extra-intestinales
-> - [ ] **10. Toucher rectal *(3 grilles sur 5)***
+> - [ ] **9. Toucher rectal *(3 grilles sur 5)***
 > 	- [ ] Tonus sphinctérien *(Cancer colorectal · Diarrhée chronique par malabsorption)*
 > 	- [ ] Présence de sang *(Diarrhée chronique par malabsorption)*
 > 	- [ ] Masses rectales *(Diarrhée chronique par malabsorption)*
@@ -393,85 +392,85 @@ cssclasses:
 > 	- [ ] Masses rectales palpables *(Cancer colorectal)*
 > 	- [ ] Sang au doigtier *(Cancer colorectal)*
 > 	- [ ] Douleur provoquée *(Cancer colorectal)*
-> - [ ] **11. Examen thyroïdien *(Diarrhée chronique par malabsorption)***
+> - [ ] **10. Examen thyroïdien *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Palpation de la thyroïde
 > 	- [ ] Recherche de nodules
-> - [ ] **12. Auscultation cardiopulmonaire *(Diarrhée chronique par malabsorption)***
-> - [ ] **13. Évaluation clinique de l'état d'hydratation *(Déshydratation)***
+> - [ ] **11. Auscultation cardiopulmonaire *(Diarrhée chronique par malabsorption)***
+> - [ ] **12. Évaluation clinique de l'état d'hydratation *(Déshydratation)***
 > 	- [ ] Pli cutané (temps de recoloration)
 > 	- [ ] État des muqueuses (sèches/humides)
 > 	- [ ] Yeux enfoncés
 > 	- [ ] Fontanelle déprimée (nourrisson)
-> - [ ] **14. Palpation vésicale *(Déshydratation)***
+> - [ ] **13. Palpation vésicale *(Déshydratation)***
 > 	- [ ] Globe vésical
 > 	- [ ] Douleur sus-pubienne
-> - [ ] **15. Examen rénal *(Déshydratation)***
+> - [ ] **14. Examen rénal *(Déshydratation)***
 > 	- [ ] Palpation des fosses lombaires
 > 	- [ ] Recherche de douleur à l'ébranlement
-> - [ ] **16. Mesure de la tension artérielle *(Déshydratation)***
+> - [ ] **15. Mesure de la tension artérielle *(Déshydratation)***
 > 	- [ ] Recherche d'hypotension orthostatique
-> - [ ] **17. Évaluation de l'état général *(Déshydratation)***
+> - [ ] **16. Évaluation de l'état général *(Déshydratation)***
 > 	- [ ] Poids actuel (si possible)
 > 	- [ ] État de conscience
 > 	- [ ] Température
-> - [ ] **18. Signes vitaux et état général *(1 grille sur 5)***
+> - [ ] **17. Signes vitaux et état général *(1 grille sur 5)***
 > 	- [ ] Prise des signes vitaux
 > 	- [ ] Évaluation de l'état général
 > 	- [ ] Recherche de signes de déshydratation
-> - [ ] **19. Recherche de complications *(1 grille sur 5)***
+> - [ ] **18. Recherche de complications *(1 grille sur 5)***
 > 	- [ ] Signes de péritonite
 > 	- [ ] Signes de mégacôlon toxique
 > 	- [ ] État hémodynamique
-> - [ ] **20. Recherche de manifestations extra-intestinales *(1 grille sur 5)***
+> - [ ] **19. Recherche de manifestations extra-intestinales *(1 grille sur 5)***
 > 	- [ ] Examen cutané
 > 	- [ ] Examen articulaire
 > 	- [ ] Examen oculaire si indiqué
-> - [ ] **21. Inspection générale *(Cancer colorectal)***
+> - [ ] **20. Inspection générale *(Cancer colorectal)***
 > 	- [ ] Ambiance générale
 > 	- [ ] Faciès
 > 	- [ ] Pâleur cutanéo-muqueuse
 > 	- [ ] Ictère
 > 	- [ ] État d'hydratation
 > 	- [ ] Signes de carences
-> - [ ] **22. Signes vitaux *(Cancer colorectal)***
+> - [ ] **21. Signes vitaux *(Cancer colorectal)***
 > 	- [ ] Pulsations, tension artérielle
 > 	- [ ] Rythme et amplitude respiratoires
 > 	- [ ] Température
 > 	- [ ] Poids actuel et évolution
-> - [ ] **23. Inspection abdominale *(Cancer colorectal)***
+> - [ ] **22. Inspection abdominale *(Cancer colorectal)***
 > 	- [ ] Morphologie
 > 	- [ ] Symétrie vs asymétrie
 > 	- [ ] Cicatrices
 > 	- [ ] Hernies
 > 	- [ ] Veines superficielles
 > 	- [ ] Mouvements respiratoires
-> - [ ] **24. Auscultation abdominale *(Cancer colorectal)***
+> - [ ] **23. Auscultation abdominale *(Cancer colorectal)***
 > 	- [ ] Patience
 > 	- [ ] Fréquence des bruits
 > 	- [ ] Tonalité
 > 	- [ ] Silence abdominal
 > 	- [ ] Hyperactivité
-> - [ ] **25. Percussion abdominale *(Cancer colorectal)***
+> - [ ] **24. Percussion abdominale *(Cancer colorectal)***
 > 	- [ ] Patient allongé
 > 	- [ ] Tympanisme
 > 	- [ ] Distension gazeuse
 > 	- [ ] Matité
 > 	- [ ] Mesure de la taille du foie, de la rate
-> - [ ] **26. Palpation superficielle *(Cancer colorectal)***
+> - [ ] **25. Palpation superficielle *(Cancer colorectal)***
 > 	- [ ] Main à plat, doigts serrés
 > 	- [ ] Tonus pariétal spontané et en réponse
 > 	- [ ] Douleur localisée
 > 	- [ ] Défense ou contracture
 > 	- [ ] Extension
 > 	- [ ] Douleur à l'ébranlement
-> - [ ] **27. Palpation profonde *(Cancer colorectal)***
+> - [ ] **26. Palpation profonde *(Cancer colorectal)***
 > 	- [ ] Recherche masse abdominale
 > 	- [ ] Mobilité de la masse
 > 	- [ ] Pulsations
 > 	- [ ] Aorte
 > 	- [ ] Taille des organes
 > 	- [ ] Points douloureux spécifiques
-> - [ ] **28. Palpation spécifique du côlon *(Cancer colorectal)***
+> - [ ] **27. Palpation spécifique du côlon *(Cancer colorectal)***
 > 	- [ ] Cadre colique
 > 	- [ ] Sigmoïde
 > 	- [ ] Cordon induré douloureux
@@ -574,12 +573,16 @@ cssclasses:
 > 	- [ ] US abdominale
 > 	- [ ] Radiographie abdominale simple
 > 	- [ ] Coloscopie
-> - [ ] **5. Communication avec le patient *(1 grille sur 2)***
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **5. Communication avec le patient**
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires *(1 grille sur 2)*
+> 	- [ ] Explication du plan de prise en charge *(1 grille sur 2)*
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux *(1 grille sur 2)*
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique *(1 grille sur 2)*
+> 	- [ ] Recherche des préoccupations et questions du patient *(1 grille sur 2)*
+> 	- [ ] Réponse à la question sur le cancer *(1 grille sur 2)*
+> 	- [ ] Explication du caractère chronique de la maladie *(1 grille sur 2)*
+> 	- [ ] Rassurance sur les options thérapeutiques *(1 grille sur 2)*
+> 	- [ ] Information sur les groupes de soutien *(1 grille sur 2)*
 > - [ ] **6. Conseil et prévention *(1 grille sur 2)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant le travail
@@ -608,8 +611,3 @@ cssclasses:
 > 	- [ ] Surveillance des complications
 > 	- [ ] Protocole de dépistage du cancer colorectal
 > 	- [ ] Soutien psychologique
-> - [ ] **12. Communication avec la patiente *(1 grille sur 2)***
-> 	- [ ] Réponse à la question sur le cancer
-> 	- [ ] Explication du caractère chronique de la maladie
-> 	- [ ] Rassurance sur les options thérapeutiques
-> 	- [ ] Information sur les groupes de soutien

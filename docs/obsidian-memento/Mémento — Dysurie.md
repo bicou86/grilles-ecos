@@ -313,19 +313,19 @@ cssclasses:
 > 	- [ ] Réaction appropriée si palpation vessie
 
 > [!success] 💊 Management — si Infection à Chlamydia trachomatis
-> - [ ] **1. Prévention et conseils**
-> 	- [ ] Utilisation du préservatif
-> 	- [ ] Dépistage régulier si partenaires multiples
-> 	- [ ] Notification des partenaires
-> 	- [ ] Suivi après traitement
-> - [ ] **2. Hypothèse diagnostique principale**
-> 	- [ ] Infection à Chlamydia trachomatis
-> 	- [ ] Explication adaptée à la patiente
-> - [ ] **3. Diagnostics différentiels évoqués**
+> - [ ] **1. Diagnostics différentiels**
 > 	- [ ] Infection à Neisseria gonorrhoeae
 > 	- [ ] Infection à Trichomonas vaginalis
 > 	- [ ] Infection à Mycoplasma
 > 	- [ ] Cystite simple
+> - [ ] **2. Prévention et conseils**
+> 	- [ ] Utilisation du préservatif
+> 	- [ ] Dépistage régulier si partenaires multiples
+> 	- [ ] Notification des partenaires
+> 	- [ ] Suivi après traitement
+> - [ ] **3. Hypothèse diagnostique principale**
+> 	- [ ] Infection à Chlamydia trachomatis
+> 	- [ ] Explication adaptée à la patiente
 > - [ ] **4. Examens complémentaires**
 > 	- [ ] PCR Chlamydia/Gonocoque
 > 	- [ ] Analyse d'urine
@@ -342,12 +342,12 @@ cssclasses:
 > 	- [ ] Importance du traitement du partenaire
 
 > [!success] 💊 Management — si Infection urinaire (cystite)
-> - [ ] **1. Diagnostics différentiels évoqués**
+> - [ ] **1. Traitement proposé**
+> 	- [ ] Antibiothérapie pour infection urinaire
+> - [ ] **2. Évoque le diagnostic d'infection urinaire basse**
+> - [ ] **3. Évoque les diagnostics différentiels**
 > 	- [ ] Pyélonéphrite
 > 	- [ ] Infections sexuellement transmissibles (gonorrhée, chlamydia, syphilis, VIH)
-> - [ ] **2. Traitement proposé**
-> 	- [ ] Antibiothérapie pour infection urinaire
-> - [ ] **3. Évoque le diagnostic d'infection urinaire basse**
 > - [ ] **4. Propose des investigations paracliniques**
 > 	- [ ] Analyse d'urine/ECBU
 > 	- [ ] Dépistage IST (gonorrhée, chlamydia, syphilis, VIH)

@@ -722,7 +722,12 @@ cssclasses:
 > - [ ] **11. Signe de Rovsing *(Appendicite aiguë)***
 > - [ ] **12. Éviter de répéter les manœuvres douloureuses *(Cancer de l'ovaire)***
 > - [ ] **13. Non disponible dans les cas téléphoniques *(Maladie cœliaque)***
-> - [ ] **14. Paramètres vitaux *(1 grille sur 20)***
+> - [ ] **14. Signes vitaux *(2 grilles sur 20)***
+> 	- [ ] Pulsations *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Tension artérielle *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Rythme respiratoire *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Amplitude respiratoire *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Température *(Perforation d'ulcère gastro-duodénal)*
 > - [ ] **15. Inspection *(5 grilles sur 20)***
 > 	- [ ] Teint *(Infection génitale haute · MICI (Crohn / RCUH))*
 > 	- [ ] État général *(Infection génitale haute · Reflux gastro-œsophagien (RGO))*
@@ -942,93 +947,87 @@ cssclasses:
 > 	- [ ] Faciès douloureux, crispé
 > 	- [ ] Pâleur, sueurs froides
 > 	- [ ] État de choc
-> - [ ] **81. Signes vitaux *(Perforation d'ulcère gastro-duodénal)***
-> 	- [ ] Pulsations
-> 	- [ ] Tension artérielle
-> 	- [ ] Rythme respiratoire
-> 	- [ ] Amplitude respiratoire
-> 	- [ ] Température
-> - [ ] **82. Examen cutané et muqueux *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **81. Examen cutané et muqueux *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Peau
 > 	- [ ] Langue
 > 	- [ ] Signes de dénutrition
 > 	- [ ] Signes de déshydratation
-> - [ ] **83. Palpation superficielle *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **82. Palpation superficielle *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Défense généralisée
 > 	- [ ] Contracture abdominale
 > 	- [ ] Hyperesthésie cutanée
 > 	- [ ] Douleur maximale épigastrique
 > 	- [ ] Extension de la contracture
-> - [ ] **84. Palpation profonde *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **83. Palpation profonde *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Impossible si contracture
 > 	- [ ] Recherche masse si possible
 > 	- [ ] Foie et rate
 > 	- [ ] Points douloureux spécifiques
 > 	- [ ] Douleur à l'ébranlement
-> - [ ] **85. Signes péritonéaux spécifiques *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **84. Signes péritonéaux spécifiques *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Contracture abdominale généralisée
 > 	- [ ] Signe du rebond positif
 > 	- [ ] Douleur à la décompression brutale
 > 	- [ ] Douleur à la toux
 > 	- [ ] Douleur à la percussion du talon
 > 	- [ ] Position antalgique en chien de fusil
-> - [ ] **86. Touchers pelviens *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **85. Touchers pelviens *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Toucher rectal
 > 	- [ ] Bombement douloureux
 > 	- [ ] Recherche de sang
 > 	- [ ] Toucher vaginal
-> - [ ] **87. Inspection abdominale systématique *(Gastroentérite)***
+> - [ ] **86. Inspection abdominale systématique *(Gastroentérite)***
 > 	- [ ] Identification des 4 quadrants et 9 régions
 > 	- [ ] Abdomen plat vs distendu, symétrique vs asymétrique
 > 	- [ ] Recherche de cicatrices chirurgicales
 > 	- [ ] Observation lors de la respiration
 > 	- [ ] Réaction à la toux
-> - [ ] **88. Palpation superficielle de l'abdomen *(Gastroentérite)***
+> - [ ] **87. Palpation superficielle de l'abdomen *(Gastroentérite)***
 > 	- [ ] Commencer à l'opposé de la zone douloureuse
 > 	- [ ] Palpation avec main à plat dans chaque région
 > 	- [ ] Évaluation du tonus pariétal spontané
 > 	- [ ] Recherche de douleur localisée
 > 	- [ ] Recherche de défense ou contracture
-> - [ ] **89. Palpation profonde et recherche de masses *(Gastroentérite)***
+> - [ ] **88. Palpation profonde et recherche de masses *(Gastroentérite)***
 > 	- [ ] Recherche de masses
 > 	- [ ] Palpation de l'aorte abdominale
 > 	- [ ] Douleur à l'ébranlement et à la détente
 > 	- [ ] Évaluation de la douleur provoquée
-> - [ ] **90. Palpation des organes (foie, rate, reins) *(Gastroentérite)***
+> - [ ] **89. Palpation des organes (foie, rate, reins) *(Gastroentérite)***
 > 	- [ ] Palpation du bord inférieur du foie
 > 	- [ ] Palpation de la rate
 > 	- [ ] Palpation bimanuelle des loges rénales
 > 	- [ ] Mention du toucher rectal si indiqué
-> - [ ] **91. Inspection générale et recherche d'ictère *(1 grille sur 20)***
+> - [ ] **90. Inspection générale et recherche d'ictère *(1 grille sur 20)***
 > 	- [ ] Inspection de la peau
 > 	- [ ] Examen des sclères
 > 	- [ ] État général
 > 	- [ ] Signes vitaux complets
-> - [ ] **92. Recherche des signes d'insuffisance hépatocellulaire *(1 grille sur 20)***
+> - [ ] **91. Recherche des signes d'insuffisance hépatocellulaire *(1 grille sur 20)***
 > 	- [ ] Angiomes stellaires
 > 	- [ ] Erythrose palmaire
 > 	- [ ] Gynécomastie
 > 	- [ ] Ongles blancs
 > 	- [ ] Ecchymoses
-> - [ ] **93. Recherche des signes d'hypertension portale *(1 grille sur 20)***
+> - [ ] **92. Recherche des signes d'hypertension portale *(1 grille sur 20)***
 > 	- [ ] Collatérales porto-systémiques
 > 	- [ ] Splénomégalie
 > 	- [ ] Ascite
-> - [ ] **94. Recherche des signes de cholestase chronique *(1 grille sur 20)***
+> - [ ] **93. Recherche des signes de cholestase chronique *(1 grille sur 20)***
 > 	- [ ] Lésions de grattage
 > 	- [ ] Xanthélasma
 > 	- [ ] Hyperpigmentation cutanée
-> - [ ] **95. Examen spécialisé du foie *(1 grille sur 20)***
+> - [ ] **94. Examen spécialisé du foie *(1 grille sur 20)***
 > 	- [ ] Flèche hépatique
 > 	- [ ] Palpation du bord inférieur du foie
 > 	- [ ] Signe de Murphy
 > 	- [ ] Caractéristiques du foie palpé
-> - [ ] **96. Recherche d'ascite *(1 grille sur 20)***
+> - [ ] **95. Recherche d'ascite *(1 grille sur 20)***
 > 	- [ ] Matité déclive à la percussion
 > 	- [ ] Patient couché : percussion ligne horizontale ombilic
 > 	- [ ] Patient tourné 30-45° : recherche déplacement limite
 > 	- [ ] Technique de matité déclive correcte
-> - [ ] **97. Examen abdominal général *(1 grille sur 20)***
+> - [ ] **96. Examen abdominal général *(1 grille sur 20)***
 > 	- [ ] Séquence inspection-auscultation-percussion-palpation
 > 	- [ ] 4 quadrants et 9 régions de l'abdomen
 > 	- [ ] Technique de percussion et palpation correcte
@@ -1041,9 +1040,8 @@ cssclasses:
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **3. Laboratoire *(2 grilles sur 20)* — *Cholécystite aiguë · Purpura de Schönlein-Henoch (vascularite à IgA)***
-> - [ ] **4. Échographie *(2 grilles sur 20)* — *Cholécystite aiguë · Purpura de Schönlein-Henoch (vascularite à IgA)***
-> - [ ] **5. Diagnostics différentiels *(8 grilles sur 20)* — 8 diagnostics : *Diverticulite sigmoïdienne non compliquée · Douleurs abdominales non spécifiques · Endométriose pelvienne · Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH) · Pyélonéphrite · Reflux gastro-œsophagien (RGO)***
+> - [ ] **3. Échographie *(2 grilles sur 20)* — *Cholécystite aiguë · Purpura de Schönlein-Henoch (vascularite à IgA)***
+> - [ ] **4. Diagnostics différentiels *(8 grilles sur 20)* — 8 diagnostics : *Diverticulite sigmoïdienne non compliquée · Douleurs abdominales non spécifiques · Endométriose pelvienne · Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH) · Pyélonéphrite · Reflux gastro-œsophagien (RGO)***
 
 > [!success] 💊 Management — si Appendicite aiguë
 > - [ ] **1. Examens complémentaires urgents**
@@ -1100,60 +1098,61 @@ cssclasses:
 > - [ ] **3. Conseil et défis *(1 grille sur 4)***
 > 	- [ ] Conseil sur les options de soutien pour les changements de poids et d'alimentation
 > 	- [ ] Réaction appropriée au défi concernant le poids
-> - [ ] **4. Formule sanguine *(1 grille sur 4)***
-> - [ ] **5. Status urinaire *(1 grille sur 4)***
-> - [ ] **6. ECG *(1 grille sur 4)***
-> - [ ] **7. Diagnostic de travail *(1 grille sur 4)***
-> - [ ] **8. Cholécysectomie laparoscopique *(1 grille sur 4)***
-> - [ ] **9. Antibiothérapie i.v. *(1 grille sur 4)***
-> - [ ] **10. Réhydratation i.v. *(1 grille sur 4)***
-> - [ ] **11. Analgésie *(1 grille sur 4)***
-> - [ ] **12. Hospitalisation *(1 grille sur 4)***
-> - [ ] **13. Laisser à jeun *(1 grille sur 4)***
-> - [ ] **14. Evoque un diagnostic différentiel plausible *(1 grille sur 4)***
+> - [ ] **4. Examens biologiques *(1 grille sur 4)***
+> - [ ] **5. Formule sanguine *(1 grille sur 4)***
+> - [ ] **6. Status urinaire *(1 grille sur 4)***
+> - [ ] **7. ECG *(1 grille sur 4)***
+> - [ ] **8. Diagnostic de travail *(1 grille sur 4)***
+> - [ ] **9. Cholécysectomie laparoscopique *(1 grille sur 4)***
+> - [ ] **10. Antibiothérapie i.v. *(1 grille sur 4)***
+> - [ ] **11. Réhydratation i.v. *(1 grille sur 4)***
+> - [ ] **12. Analgésie *(1 grille sur 4)***
+> - [ ] **13. Hospitalisation *(1 grille sur 4)***
+> - [ ] **14. Laisser à jeun *(1 grille sur 4)***
+> - [ ] **15. Evoque un diagnostic différentiel plausible *(1 grille sur 4)***
 > 	- [ ] Cholangite
 > 	- [ ] Hépatite
 > 	- [ ] Cholécystite
 > 	- [ ] Néoplasie
 > 	- [ ] Gastrite / inflammation du tube digestif
 > 	- [ ] Stase biliaire sur compression néoplasique (p.ex. cancer pancréatique)
-> - [ ] **15. Mentionne l'hypothèse diagnostique cholélithiase / cholédocholithiase *(1 grille sur 4)***
-> - [ ] **16. Évaluation de la sévérité et des complications *(1 grille sur 4)***
+> - [ ] **16. Mentionne l'hypothèse diagnostique cholélithiase / cholédocholithiase *(1 grille sur 4)***
+> - [ ] **17. Évaluation de la sévérité et des complications *(1 grille sur 4)***
 > 	- [ ] Recherche signes de cholécystite
 > 	- [ ] Exclusion angiocholite
 > 	- [ ] Évaluation retentissement général
 > 	- [ ] Recherche signes de péritonite
-> - [ ] **17. Proposition d'examens complémentaires *(1 grille sur 4)***
+> - [ ] **18. Proposition d'examens complémentaires *(1 grille sur 4)***
 > 	- [ ] Bilan biologique
 > 	- [ ] Échographie abdominale
 > 	- [ ] FSC, CRP
 > 	- [ ] Lipasémie
-> - [ ] **18. Prise en charge thérapeutique immédiate *(1 grille sur 4)***
+> - [ ] **19. Prise en charge thérapeutique immédiate *(1 grille sur 4)***
 > 	- [ ] Antalgiques
 > 	- [ ] Antispasmodiques
 > 	- [ ] Antiémétiques si vomissements
 > 	- [ ] Mise à jeun initiale
-> - [ ] **19. Surveillance et critères d'hospitalisation *(1 grille sur 4)***
+> - [ ] **20. Surveillance et critères d'hospitalisation *(1 grille sur 4)***
 > 	- [ ] Critères d'hospitalisation
 > 	- [ ] Surveillance clinique
 > 	- [ ] Signes d'alarme
 > 	- [ ] Suivi ambulatoire programmé
-> - [ ] **20. Diagnostic principal et classification *(1 grille sur 4)***
+> - [ ] **21. Diagnostic principal et classification *(1 grille sur 4)***
 > 	- [ ] Évoque colique hépatique/cholécystite
 > 	- [ ] Classification selon durée
 > 	- [ ] Différenciation avec angiocholite
 > 	- [ ] Facteurs de risque
-> - [ ] **21. Traitement spécifique selon diagnostic *(1 grille sur 4)***
+> - [ ] **22. Traitement spécifique selon diagnostic *(1 grille sur 4)***
 > 	- [ ] Cholécystectomie
 > 	- [ ] Timing chirurgical
 > 	- [ ] Antibiothérapie si cholécystite
 > 	- [ ] CPRE si angiocholite
-> - [ ] **22. Conseils diététiques et préventifs *(1 grille sur 4)***
+> - [ ] **23. Conseils diététiques et préventifs *(1 grille sur 4)***
 > 	- [ ] Régime pauvre en graisses
 > 	- [ ] Perte de poids progressive
 > 	- [ ] Repas fractionnés
 > 	- [ ] Éviter jeûne prolongé
-> - [ ] **23. Information du patient et planification *(1 grille sur 4)***
+> - [ ] **24. Information du patient et planification *(1 grille sur 4)***
 > 	- [ ] Explication du diagnostic probable
 > 	- [ ] Information sur évolution et traitement
 > 	- [ ] Conseils pour récidive
@@ -1364,14 +1363,14 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Perforation d'ulcère gastro-duodénal
-> - [ ] **1. Diagnostics différentiels de l'abdomen aigu**
-> - [ ] **2. Examens complémentaires en urgence**
+> - [ ] **1. Examens complémentaires urgents**
 > 	- [ ] ASP debout face (ou thorax debout): croissant gazeux sous-diaphragmatique
 > 	- [ ] CT abdominal sans et avec injection: pneumopéritoine, liquide libre
 > 	- [ ] FSC: hyperleucocytose, hémoconcentration
 > 	- [ ] Ionogramme, urée, créatinine: déshydratation, insuffisance rénale
 > 	- [ ] Bilan préopératoire: groupe sanguin, RAI, TP, TCA
 > 	- [ ] Gazométrie artérielle: acidose métabolique si choc
+> - [ ] **2. Diagnostics différentiels de l'abdomen aigu**
 > - [ ] **3. Signes radiologiques de pneumopéritoine**
 > 	- [ ] ASP/Thorax debout: croissant gazeux sous les coupoles
 > 	- [ ] Signe de Rigler: double contour des anses (air des deux côtés)
@@ -1403,18 +1402,19 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Purpura de Schönlein-Henoch (vascularite à IgA)
-> - [ ] **1. Créatinine**
-> - [ ] **2. CRP**
-> - [ ] **3. Hémogramme**
-> - [ ] **4. Urine**
-> - [ ] **5. Diagnostic présumé**
-> - [ ] **6. Atteinte rénale**
-> - [ ] **7. Antalgie**
-> - [ ] **8. Instruction**
-> - [ ] **9. Glucocorticoïdes**
-> - [ ] **10. Surveillance hospitalière**
-> - [ ] **11. Contrôle rénal**
-> - [ ] **12. Avis néphrologique**
+> - [ ] **1. Examens biologiques**
+> - [ ] **2. Créatinine**
+> - [ ] **3. CRP**
+> - [ ] **4. Hémogramme**
+> - [ ] **5. Urine**
+> - [ ] **6. Diagnostic présumé**
+> - [ ] **7. Atteinte rénale**
+> - [ ] **8. Antalgie**
+> - [ ] **9. Instruction**
+> - [ ] **10. Glucocorticoïdes**
+> - [ ] **11. Surveillance hospitalière**
+> - [ ] **12. Contrôle rénal**
+> - [ ] **13. Avis néphrologique**
 
 > [!success] 💊 Management — si Pyélonéphrite
 > - [ ] **1. Hypothèse diagnostique principale**

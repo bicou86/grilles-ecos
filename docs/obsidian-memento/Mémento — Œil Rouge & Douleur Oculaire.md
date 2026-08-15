@@ -392,17 +392,17 @@ cssclasses:
 > - [ ] **1. Diagnostic de travail *(2 grilles sur 4)* — *Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom)***
 
 > [!success] 💊 Management — si Conjonctivite allergique
-> - [ ] **1. Diagnostic principal évoqué**
-> 	- [ ] Conjonctivite allergique saisonnière
-> 	- [ ] Arguments en faveur du diagnostic
-> 	- [ ] Corrélation avec le terrain atopique
-> - [ ] **2. Diagnostics différentiels pertinents**
-> - [ ] **3. Examens complémentaires proposés**
+> - [ ] **1. Examens complémentaires**
 > 	- [ ] Prélèvement conjonctival pour bactériologie
 > 	- [ ] Recherche de Chlamydia si indiqué
 > 	- [ ] Tests allergologiques cutanés (prick tests)
 > 	- [ ] IgE spécifiques si nécessaire
 > 	- [ ] Frottis conjonctival (éosinophiles)
+> - [ ] **2. Diagnostic principal évoqué**
+> 	- [ ] Conjonctivite allergique saisonnière
+> 	- [ ] Arguments en faveur du diagnostic
+> 	- [ ] Corrélation avec le terrain atopique
+> - [ ] **3. Diagnostics différentiels pertinents**
 > - [ ] **4. Traitement antiallergique local**
 > 	- [ ] Antihistaminiques topiques (lévocabastine, azélastine)
 > 	- [ ] Stabilisateurs de mastocytes (cromoglycate, nédocromil)

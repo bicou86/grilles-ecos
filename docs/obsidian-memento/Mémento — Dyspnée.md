@@ -524,7 +524,7 @@ cssclasses:
 > - [ ] **1. Diagnostics différentiels *(3 grilles sur 5)* — *Asthme · BPCO · Insuffisance cardiaque (décompensée)***
 
 > [!success] 💊 Management — si Asthme
-> - [ ] **1. Diagnostic principal évoqué**
+> - [ ] **1. Diagnostic principal**
 > 	- [ ] Asthme d'effort / asthme induit par l'exercice
 > 	- [ ] Justification du diagnostic
 > 	- [ ] Éléments cliniques en faveur
@@ -561,46 +561,46 @@ cssclasses:
 > 	- [ ] Orientation pneumologique si besoin
 
 > [!success] 💊 Management — si BPCO
-> - [ ] **1. Examens complémentaires - Fonction respiratoire**
-> 	- [ ] Spirométrie complète
-> 	- [ ] Test de réversibilité aux bronchodilatateurs
-> 	- [ ] Gazométrie artérielle
-> 	- [ ] Test de marche de 6 minutes
-> - [ ] **2. Mesures non médicamenteuses**
-> 	- [ ] Sevrage tabagique (priorité absolue)
-> 	- [ ] Vaccination antigrippale et antipneumococcique
-> 	- [ ] Réhabilitation respiratoire
-> 	- [ ] Activité physique adaptée
-> - [ ] **3. Diagnostic principal**
+> - [ ] **1. Diagnostic principal**
 > 	- [ ] BPCO légère (GOLD stade I)
 > 	- [ ] Justification clinique
 > 	- [ ] Facteurs de risque identifiés
 > 	- [ ] Présentation typique
-> - [ ] **4. Examens complémentaires - Microbiologie et imagerie**
-> 	- [ ] Culture des crachats (ECBC)
-> 	- [ ] Radiographie thoracique
-> 	- [ ] Scanner thoracique si indiqué
-> 	- [ ] ECG
-> - [ ] **5. Interprétation correcte de la spirométrie**
-> 	- [ ] Classification GOLD stade I
-> 	- [ ] VEMS < 80% de la valeur prédite
-> 	- [ ] VEMS/CVF < 70%
-> 	- [ ] Absence de réversibilité significative
-> - [ ] **6. Traitement médicamenteux proposé**
-> 	- [ ] Bêta-2 agoniste de courte durée d'action (SABA)
-> 	- [ ] Anticholinergique de courte durée d'action (SAMA)
-> 	- [ ] Association éventuelle
-> 	- [ ] Technique d'inhalation
-> - [ ] **7. Prise en charge des comorbidités**
-> 	- [ ] Suivi du programme méthadone
-> 	- [ ] Dépistage des complications
-> 	- [ ] Support psychosocial
-> 	- [ ] Prévention des exacerbations
-> - [ ] **8. Plan de suivi**
+> - [ ] **2. Examens complémentaires - Fonction respiratoire**
+> 	- [ ] Spirométrie complète
+> 	- [ ] Test de réversibilité aux bronchodilatateurs
+> 	- [ ] Gazométrie artérielle
+> 	- [ ] Test de marche de 6 minutes
+> - [ ] **3. Mesures non médicamenteuses**
+> 	- [ ] Sevrage tabagique (priorité absolue)
+> 	- [ ] Vaccination antigrippale et antipneumococcique
+> 	- [ ] Réhabilitation respiratoire
+> 	- [ ] Activité physique adaptée
+> - [ ] **4. Planification du suivi**
 > 	- [ ] Consultation de contrôle
 > 	- [ ] Surveillance spirométrique
 > 	- [ ] Éducation thérapeutique
 > 	- [ ] Plan d'action en cas d'exacerbation
+> - [ ] **5. Examens complémentaires - Microbiologie et imagerie**
+> 	- [ ] Culture des crachats (ECBC)
+> 	- [ ] Radiographie thoracique
+> 	- [ ] Scanner thoracique si indiqué
+> 	- [ ] ECG
+> - [ ] **6. Interprétation correcte de la spirométrie**
+> 	- [ ] Classification GOLD stade I
+> 	- [ ] VEMS < 80% de la valeur prédite
+> 	- [ ] VEMS/CVF < 70%
+> 	- [ ] Absence de réversibilité significative
+> - [ ] **7. Traitement médicamenteux proposé**
+> 	- [ ] Bêta-2 agoniste de courte durée d'action (SABA)
+> 	- [ ] Anticholinergique de courte durée d'action (SAMA)
+> 	- [ ] Association éventuelle
+> 	- [ ] Technique d'inhalation
+> - [ ] **8. Prise en charge des comorbidités**
+> 	- [ ] Suivi du programme méthadone
+> 	- [ ] Dépistage des complications
+> 	- [ ] Support psychosocial
+> 	- [ ] Prévention des exacerbations
 
 > [!success] 💊 Management — si Bronchiolite
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

@@ -527,9 +527,11 @@ cssclasses:
 > 	- [ ] Test de Bragard
 > - [ ] **49. Examen vasculaire périphérique *(1 grille sur 8)***
 > 	- [ ] Palpation des pouls périphériques (si irradiation dans les jambes)
-> - [ ] **50. Toucher rectal si indiqué *(2 grilles sur 8)***
-> 	- [ ] Tonus sphinctérien *(1 grille sur 8)*
+> - [ ] **50. Toucher rectal *(3 grilles sur 8)***
+> 	- [ ] Tonus sphinctérien *(2 grilles sur 8)*
 > 	- [ ] Sensibilité péri-anale *(1 grille sur 8)*
+> 	- [ ] Palpation de la prostate *(Cancer prostatique métastatique)*
+> 	- [ ] Recherche de sang *(Cancer prostatique métastatique)*
 > - [ ] **51. Inspection générale *(1 grille sur 8)***
 > 	- [ ] État général
 > 	- [ ] Faciès douloureux
@@ -610,10 +612,6 @@ cssclasses:
 > 	- [ ] Réflexes ostéo-tendineux
 > 	- [ ] Signe de Babinski
 > 	- [ ] Marche
-> - [ ] **66. Toucher rectal *(Cancer prostatique métastatique)***
-> 	- [ ] Tonus sphinctérien
-> 	- [ ] Palpation de la prostate
-> 	- [ ] Recherche de sang
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Hypothèses diagnostiques *(2 grilles sur 8)* — *Hernie discale · Spondylarthrite ankylosante***
@@ -631,35 +629,40 @@ cssclasses:
 > 	- [ ] Échographie résidu post-mictionnel
 > 	- [ ] Échographie rénale
 > 	- [ ] Imagerie selon PSA (CT TAP, scintigraphie osseuse, PET-PSMA)
-> - [ ] **2. Examens de laboratoire**
-> 	- [ ] FSC
-> 	- [ ] Fonction rénale
-> 	- [ ] PSA
-> 	- [ ] Phosphatases alcalines
-> 	- [ ] Calcium
-> - [ ] **3. Hypothèse diagnostique principale**
-> 	- [ ] Cancer prostatique métastatique
-> 	- [ ] Justification basée sur l'anamnèse et l'examen
-> - [ ] **4. Diagnostics différentiels évoqués**
+> - [ ] **2. Diagnostics différentiels**
 > 	- [ ] Syndrome de la queue de cheval
 > 	- [ ] Métastases osseuses d'autre origine
 > 	- [ ] Myélome multiple
 > 	- [ ] Sténose spinale
 > 	- [ ] Infection (ostéomyélite, abcès épidural)
+> - [ ] **3. Examens de laboratoire**
+> 	- [ ] FSC
+> 	- [ ] Fonction rénale
+> 	- [ ] PSA
+> 	- [ ] Phosphatases alcalines
+> 	- [ ] Calcium
+> - [ ] **4. Hypothèse diagnostique principale**
+> 	- [ ] Cancer prostatique métastatique
+> 	- [ ] Justification basée sur l'anamnèse et l'examen
 > - [ ] **5. Prise en charge proposée**
 > 	- [ ] Référer à l'urologue
 > 	- [ ] Antalgie adaptée
 > 	- [ ] Évaluation urgence relative
 
 > [!success] 💊 Management — si Colique néphrétique sur lithiase
-> - [ ] **1. Examens complémentaires urgents *(1 grille sur 2)***
-> 	- [ ] Bandelette urinaire (confirmer hématurie)
-> 	- [ ] ECBU avec recherche de cristaux
+> - [ ] **1. Examens complémentaires urgents**
+> 	- [ ] Bandelette urinaire (confirmer hématurie) *(1 grille sur 2)*
+> 	- [ ] ECBU avec recherche de cristaux *(1 grille sur 2)*
 > 	- [ ] Créatinine, urée (fonction rénale)
-> 	- [ ] Ionogramme sanguin
-> 	- [ ] FSC, CRP (éliminer infection)
-> 	- [ ] Échographie rénale et vésicale en urgence
-> 	- [ ] CT abdomen sans contraste (gold standard) si doute
+> 	- [ ] Ionogramme sanguin *(1 grille sur 2)*
+> 	- [ ] FSC, CRP (éliminer infection) *(1 grille sur 2)*
+> 	- [ ] Échographie rénale et vésicale en urgence *(1 grille sur 2)*
+> 	- [ ] CT abdomen sans contraste (gold standard) si doute *(1 grille sur 2)*
+> 	- [ ] Bandelette urinaire: hématurie dans 90% des cas *(1 grille sur 2)*
+> 	- [ ] ECBU: hématurie microscopique, cristallurie, pH urinaire *(1 grille sur 2)*
+> 	- [ ] Ionogramme sanguin, calcémie *(1 grille sur 2)*
+> 	- [ ] FSC, CRP: syndrome inflammatoire si complication *(1 grille sur 2)*
+> 	- [ ] Échographie rénale et vésicale: dilatation des cavités pyélocalicielles *(1 grille sur 2)*
 > - [ ] **2. Diagnostics différentiels *(1 grille sur 2)***
 > 	- [ ] Pyélonéphrite aiguë
 > 	- [ ] Fracture vertébrale ostéoporotique
@@ -703,14 +706,7 @@ cssclasses:
 > 	- [ ] Signes d'alerte nécessitant reconsultation
 > 	- [ ] Remise de documentation écrite
 > - [ ] **8. Diagnostics différentiels de la colique néphrétique *(1 grille sur 2)***
-> - [ ] **9. Examens complémentaires en urgence *(1 grille sur 2)***
-> 	- [ ] Bandelette urinaire: hématurie dans 90% des cas
-> 	- [ ] ECBU: hématurie microscopique, cristallurie, pH urinaire
-> 	- [ ] Créatinine, urée: fonction rénale
-> 	- [ ] Ionogramme sanguin, calcémie
-> 	- [ ] FSC, CRP: syndrome inflammatoire si complication
-> 	- [ ] Échographie rénale et vésicale: dilatation des cavités pyélocalicielles
-> - [ ] **10. Imagerie pour confirmation diagnostique *(1 grille sur 2)***
+> - [ ] **9. Imagerie pour confirmation diagnostique *(1 grille sur 2)***
 > 	- [ ] TDM abdomino-pelvien sans injection (examen de référence)
 > 	- [ ] Visualise 95% des calculs radio-opaques et radio-transparents
 > 	- [ ] Localise précisément le calcul
@@ -718,22 +714,22 @@ cssclasses:
 > 	- [ ] Mesure la taille du calcul
 > 	- [ ] ASP (Abdomen Sans Préparation): calculs radio-opaques seulement (80%)
 > 	- [ ] Échographie: alternative si contre-indication TDM (grossesse)
-> - [ ] **11. Traitement symptomatique de la crise *(1 grille sur 2)***
-> - [ ] **12. Indications d'hospitalisation *(1 grille sur 2)***
+> - [ ] **10. Traitement symptomatique de la crise *(1 grille sur 2)***
+> - [ ] **11. Indications d'hospitalisation *(1 grille sur 2)***
 > 	- [ ] Colique néphrétique fébrile (urgence urologique)
 > 	- [ ] Anurie (obstruction bilatérale ou rein unique)
 > 	- [ ] Colique néphrétique hyperalgique résistante
 > 	- [ ] Insuffisance rénale aiguë obstructive
 > 	- [ ] Terrain particulier: grossesse, rein unique, transplanté
 > 	- [ ] Impossibilité de prise en charge ambulatoire
-> - [ ] **13. Traitement urologique spécifique *(1 grille sur 2)***
+> - [ ] **12. Traitement urologique spécifique *(1 grille sur 2)***
 > 	- [ ] Calculs < 5mm: expulsion spontanée dans 70% des cas
 > 	- [ ] Calculs 5-10mm: expulsion dans 50% des cas
 > 	- [ ] Lithotripsie extracorporelle (LEC) si calcul < 20mm
 > 	- [ ] Urétéroscopie avec extraction ou fragmentation laser
 > 	- [ ] Néphrostomie percutanée si infection + obstruction
 > 	- [ ] Chirurgie ouverte exceptionnelle
-> - [ ] **14. Complications à rechercher *(1 grille sur 2)***
+> - [ ] **13. Complications à rechercher *(1 grille sur 2)***
 
 > [!success] 💊 Management — si Fracture vertébrale
 > - [ ] **1. Examens d'imagerie**

@@ -409,7 +409,7 @@ cssclasses:
 
 > [!success] 💊 Management — si Fibrillation auriculaire
 > - [ ] **1. Diagnostics différentiels**
-> - [ ] **2. Diagnostic principal suspecté**
+> - [ ] **2. Diagnostic principal**
 > 	- [ ] Fibrillation auriculaire paroxystique
 > 	- [ ] Justification clinique
 > 	- [ ] Éléments en faveur

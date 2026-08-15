@@ -683,7 +683,12 @@ cssclasses:
 > 	- [ ] Temps de recoloration capillaire *(Insuffisance cardiaque (décompensée))*
 > - [ ] **7. Examen du dos *(1 grille sur 13)***
 > 	- [ ] Examen de la colonne vertébrale
-> - [ ] **8. Paramètres vitaux *(1 grille sur 13)***
+> - [ ] **8. Signes vitaux *(3 grilles sur 13)***
+> 	- [ ] Pression artérielle *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Fréquence cardiaque *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Température *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Fréquence respiratoire *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Saturation en oxygène *(Insuffisance cardiaque (décompensée))*
 > - [ ] **9. Orientation *(1 grille sur 13)***
 > - [ ] **10. Inspection *(1 grille sur 13)***
 > - [ ] **11. Pattern respiratoire *(1 grille sur 13)***
@@ -697,39 +702,33 @@ cssclasses:
 > - [ ] **19. Auscultation cardiaque *(1 grille sur 13)***
 > - [ ] **20. Veines jugulaires *(1 grille sur 13)***
 > - [ ] **21. Inspection et palpation périphérie *(1 grille sur 13)***
-> - [ ] **22. Signes vitaux *(Insuffisance cardiaque (décompensée) · Tuberculose)***
-> 	- [ ] Pression artérielle
-> 	- [ ] Fréquence cardiaque
-> 	- [ ] Température
-> 	- [ ] Fréquence respiratoire
-> 	- [ ] Saturation en oxygène *(Insuffisance cardiaque (décompensée))*
-> - [ ] **23. Examen cardiaque *(3 grilles sur 13)***
+> - [ ] **22. Examen cardiaque *(3 grilles sur 13)***
 > 	- [ ] Palpation du précordium *(2 grilles sur 13)*
 > 	- [ ] Auscultation cardiaque *(2 grilles sur 13)*
 > 	- [ ] Recherche de signes d'insuffisance cardiaque droite *(Tuberculose)*
 > 	- [ ] Pouls périphériques *(Tuberculose)*
 > 	- [ ] Auscultation *(1 grille sur 13)*
 > 	- [ ] Pouls *(1 grille sur 13)*
-> - [ ] **24. Examen pulmonaire - Inspection *(Insuffisance cardiaque (décompensée) · Tuberculose)***
+> - [ ] **23. Examen pulmonaire - Inspection *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Symétrie thoracique
 > 	- [ ] Utilisation des muscles accessoires *(Tuberculose)*
 > 	- [ ] Type de respiration
 > 	- [ ] Déformations
 > 	- [ ] Tirage *(Insuffisance cardiaque (décompensée))*
-> - [ ] **25. Examen pulmonaire - Palpation *(Insuffisance cardiaque (décompensée) · Tuberculose)***
+> - [ ] **24. Examen pulmonaire - Palpation *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Vibrations vocales (frémitus) *(Tuberculose)*
 > 	- [ ] Points douloureux
 > 	- [ ] Adénopathies sus-claviculaires *(Tuberculose)*
 > 	- [ ] Ampliation thoracique
 > 	- [ ] Vibrations vocales *(Insuffisance cardiaque (décompensée))*
-> - [ ] **26. Examen pulmonaire - Percussion *(Insuffisance cardiaque (décompensée) · Tuberculose)***
+> - [ ] **25. Examen pulmonaire - Percussion *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Percussion systématique *(Tuberculose)*
 > 	- [ ] Recherche de matité *(Tuberculose)*
 > 	- [ ] Comparaison bilatérale
 > 	- [ ] Limites pulmonaires *(Tuberculose)*
 > 	- [ ] Matité des bases *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Épanchement pleural *(Insuffisance cardiaque (décompensée))*
-> - [ ] **27. Auscultation pulmonaire *(5 grilles sur 13)***
+> - [ ] **26. Auscultation pulmonaire *(5 grilles sur 13)***
 > 	- [ ] Auscultation antérieure systématique *(Insuffisance cardiaque (décompensée) · Tuberculose)*
 > 	- [ ] Auscultation postérieure systématique *(Insuffisance cardiaque (décompensée) · Tuberculose)*
 > 	- [ ] Bruits surajoutés *(Tuberculose)*
@@ -745,18 +744,18 @@ cssclasses:
 > 	- [ ] Identification des sibilances *(1 grille sur 13)*
 > 	- [ ] Recherche de râles crépitants ou sous-crépitants *(1 grille sur 13)*
 > 	- [ ] Évaluation du murmure vésiculaire *(1 grille sur 13)*
-> - [ ] **28. Inspection veineuse *(Tuberculose)***
+> - [ ] **27. Inspection veineuse *(Tuberculose)***
 > 	- [ ] Turgescence des veines jugulaires
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Circulation collatérale
-> - [ ] **29. Recherche d'œdèmes *(Insuffisance cardiaque (décompensée) · Tuberculose)***
+> - [ ] **28. Recherche d'œdèmes *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Signe du godet
 > 	- [ ] Symétrie *(Tuberculose)*
 > 	- [ ] Ascension *(Tuberculose)*
 > 	- [ ] Bilatéralité et symétrie *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Œdème sacré *(Insuffisance cardiaque (décompensée))*
-> - [ ] **30. Examen ORL *(2 grilles sur 13)***
+> - [ ] **29. Examen ORL *(2 grilles sur 13)***
 > 	- [ ] Inspection de la gorge *(Tuberculose)*
 > 	- [ ] Otoscopie *(Tuberculose)*
 > 	- [ ] Rhinoscopie antérieure *(Tuberculose)*
@@ -764,12 +763,12 @@ cssclasses:
 > 	- [ ] Gorge *(1 grille sur 13)*
 > 	- [ ] Oreilles *(1 grille sur 13)*
 > 	- [ ] Nez *(1 grille sur 13)*
-> - [ ] **31. Palpation des aires ganglionnaires *(Tuberculose)***
-> 	- [ ] Ganglions cervicaux
-> 	- [ ] Ganglions sus-claviculaires
-> 	- [ ] Ganglions axillaires
-> 	- [ ] Autres territoires
-> - [ ] **32. Examen abdominal *(3 grilles sur 13)***
+> - [ ] **30. Palpation des ganglions lymphatiques *(2 grilles sur 13)***
+> 	- [ ] Ganglions cervicaux *(Tuberculose)*
+> 	- [ ] Ganglions sus-claviculaires *(Tuberculose)*
+> 	- [ ] Ganglions axillaires *(Tuberculose)*
+> 	- [ ] Autres territoires *(Tuberculose)*
+> - [ ] **31. Examen abdominal *(3 grilles sur 13)***
 > 	- [ ] Inspection *(Tuberculose)*
 > 	- [ ] Auscultation *(Tuberculose)*
 > 	- [ ] Palpation (hépatomégalie, splénomégalie) *(Tuberculose)*
@@ -778,70 +777,69 @@ cssclasses:
 > 	- [ ] Ascite *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Circulation collatérale *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Masses *(Insuffisance cardiaque (décompensée))*
-> - [ ] **33. Inspection générale *(Insuffisance cardiaque (décompensée))***
+> - [ ] **32. Inspection générale *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] État général
 > 	- [ ] Coloration (cyanose, pâleur)
 > 	- [ ] Position de confort
 > 	- [ ] Utilisation des muscles accessoires
-> - [ ] **34. Examen cardiaque - Palpation *(Insuffisance cardiaque (décompensée))***
+> - [ ] **33. Examen cardiaque - Palpation *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Palpation du précordium
 > 	- [ ] Choc de pointe (déplacé?)
 > 	- [ ] Frémissements
 > 	- [ ] Soulèvement parasternal
-> - [ ] **35. Examen cardiaque - Auscultation *(Insuffisance cardiaque (décompensée))***
+> - [ ] **34. Examen cardiaque - Auscultation *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] B1 et B2
 > 	- [ ] Bruits surajoutés (B3, B4)
 > 	- [ ] Souffles (sténose aortique?)
 > 	- [ ] Frottement péricardique
-> - [ ] **36. Signes d'insuffisance cardiaque droite *(Insuffisance cardiaque (décompensée))***
+> - [ ] **35. Signes d'insuffisance cardiaque droite *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Turgescence des veines jugulaires
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Hépatomégalie
 > 	- [ ] Ascite
-> - [ ] **37. Examen ORL rapide *(Insuffisance cardiaque (décompensée))***
+> - [ ] **36. Examen ORL rapide *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Gorge
 > 	- [ ] Oreilles
 > 	- [ ] Nez
 > 	- [ ] Absence de foyer infectieux
-> - [ ] **38. Palpation ganglionnaire *(Insuffisance cardiaque (décompensée))***
+> - [ ] **37. Palpation ganglionnaire *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Aires cervicales
 > 	- [ ] Aires axillaires
 > 	- [ ] Autres territoires
-> - [ ] **39. Signes vitaux mesurés *(1 grille sur 13)***
-> - [ ] **40. Examen pulmonaire *(1 grille sur 13)***
+> - [ ] **38. Signes vitaux mesurés *(1 grille sur 13)***
+> - [ ] **39. Examen pulmonaire *(1 grille sur 13)***
 > 	- [ ] Palpation (frémissement vocal)
 > 	- [ ] Percussion thoracique
 > 	- [ ] Auscultation systématique antérieure et postérieure
-> - [ ] **41. Inspection des veines jugulaires *(1 grille sur 13)***
-> - [ ] **42. Recherche d'œdèmes des membres inférieurs *(1 grille sur 13)***
-> - [ ] **43. Palpation des ganglions lymphatiques *(1 grille sur 13)***
-> - [ ] **44. Hygiène des mains *(1 grille sur 13)***
-> - [ ] **45. Inspection thoracique *(2 grilles sur 13)***
+> - [ ] **40. Inspection des veines jugulaires *(1 grille sur 13)***
+> - [ ] **41. Recherche d'œdèmes des membres inférieurs *(1 grille sur 13)***
+> - [ ] **42. Hygiène des mains *(1 grille sur 13)***
+> - [ ] **43. Inspection thoracique *(2 grilles sur 13)***
 > 	- [ ] Inspection statique du thorax *(1 grille sur 13)*
 > 	- [ ] Évaluation de la symétrie respiratoire *(1 grille sur 13)*
 > 	- [ ] Recherche de déformation thoracique *(1 grille sur 13)*
 > 	- [ ] Évaluation du tirage et de l'ampliation *(1 grille sur 13)*
-> - [ ] **46. Examen des extrémités (recherche d'embolie pulmonaire) *(1 grille sur 13)***
-> - [ ] **47. Examens complémentaires si pertinents *(1 grille sur 13)***
+> - [ ] **44. Examen des extrémités (recherche d'embolie pulmonaire) *(1 grille sur 13)***
+> - [ ] **45. Examens complémentaires si pertinents *(1 grille sur 13)***
 > 	- [ ] Peau
 > 	- [ ] Gorge
 > 	- [ ] Ganglions lymphatiques
-> - [ ] **48. Note: Examen clinique non réalisable par téléphone *(Faux-croup)***
+> - [ ] **46. Note: Examen clinique non réalisable par téléphone *(Faux-croup)***
 > 	- [ ] Évaluation indirecte basée sur les observations parentales
-> - [ ] **49. Inspection générale - patient couché *(1 grille sur 13)***
+> - [ ] **47. Inspection générale - patient couché *(1 grille sur 13)***
 > 	- [ ] Aspect général
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Cycle respiratoire
 > 	- [ ] Détresse respiratoire
 > 	- [ ] Cyanose centrale et périphérique
 > 	- [ ] Hippocratisme digital
-> - [ ] **50. Inspection thoracique - patient assis *(1 grille sur 13)***
+> - [ ] **48. Inspection thoracique - patient assis *(1 grille sur 13)***
 > 	- [ ] Forme du thorax
 > 	- [ ] Asymétrie thoracique
 > 	- [ ] Déformations rachidiennes
 > 	- [ ] Cicatrices
 > 	- [ ] Respiration paradoxale
-> - [ ] **51. Palpation thoracique *(2 grilles sur 13)***
+> - [ ] **49. Palpation thoracique *(2 grilles sur 13)***
 > 	- [ ] Ampliation thoracique *(1 grille sur 13)*
 > 	- [ ] Localisation précise de la douleur *(1 grille sur 13)*
 > 	- [ ] Vibrations vocales *(1 grille sur 13)*
@@ -851,41 +849,41 @@ cssclasses:
 > 	- [ ] Recherche de douleur à la palpation *(1 grille sur 13)*
 > 	- [ ] Évaluation de l'ampliation thoracique *(1 grille sur 13)*
 > 	- [ ] Palpation des aires ganglionnaires (sus-claviculaires, axillaires) *(1 grille sur 13)*
-> - [ ] **52. Percussion thoracique *(1 grille sur 13)***
+> - [ ] **50. Percussion thoracique *(1 grille sur 13)***
 > 	- [ ] Limite inférieure poumons
 > 	- [ ] Comparaison sonorité G/D
 > 	- [ ] Reconnaissance des sons
 > 	- [ ] Technique correcte
 > 	- [ ] Interprétation
-> - [ ] **53. Identification des bruits pathologiques *(1 grille sur 13)***
+> - [ ] **51. Identification des bruits pathologiques *(1 grille sur 13)***
 > 	- [ ] Sibilances
 > 	- [ ] Ronchi
 > 	- [ ] Râles fins
 > 	- [ ] Râles grossiers
 > 	- [ ] Frottement pleural
 > 	- [ ] Stridor
-> - [ ] **54. Examen cardiovasculaire complémentaire *(1 grille sur 13)***
+> - [ ] **52. Examen cardiovasculaire complémentaire *(1 grille sur 13)***
 > 	- [ ] Palpation choc de pointe
 > 	- [ ] Auscultation cardiaque
 > 	- [ ] Œdèmes membres inférieurs
 > 	- [ ] Turgescence jugulaire
 > 	- [ ] Reflux hépato-jugulaire
-> - [ ] **55. Examen général et signes vitaux *(1 grille sur 13)***
+> - [ ] **53. Examen général et signes vitaux *(1 grille sur 13)***
 > 	- [ ] Évaluation de l'état général
 > 	- [ ] Mesure de la fréquence respiratoire
 > 	- [ ] Évaluation des signes de détresse respiratoire
 > 	- [ ] Recherche de cyanose
-> - [ ] **56. Percussion pulmonaire *(1 grille sur 13)***
+> - [ ] **54. Percussion pulmonaire *(1 grille sur 13)***
 > 	- [ ] Percussion systématique des deux champs pulmonaires
 > 	- [ ] Recherche de matité
 > 	- [ ] Évaluation de la sonorité pulmonaire
 > 	- [ ] Délimitation des bases pulmonaires
-> - [ ] **57. Examen ORL et recherche d'adénopathies *(1 grille sur 13)***
+> - [ ] **55. Examen ORL et recherche d'adénopathies *(1 grille sur 13)***
 > 	- [ ] Palpation des aires ganglionnaires cervicales
 > 	- [ ] Examen de la cavité buccale
 > 	- [ ] Palpation des aires ganglionnaires sus-claviculaires
 > 	- [ ] Recherche d'adénopathies axillaires
-> - [ ] **58. Recherche de signes extrarespiratoires *(1 grille sur 13)***
+> - [ ] **56. Recherche de signes extrarespiratoires *(1 grille sur 13)***
 > 	- [ ] Recherche d'hippocratisme digital
 > 	- [ ] Examen cutané (recherche de métastases)
 > 	- [ ] Palpation abdominale (hépatomégalie)
@@ -893,13 +891,6 @@ cssclasses:
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Hypothèses diagnostiques *(3 grilles sur 13)* — *Asthme · BPCO · Cancer pulmonaire***
-> - [ ] **2. Communication avec la patiente *(2 grilles sur 13)* — *Asthme · BPCO***
-> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions de la patiente
-> - [ ] **3. Diagnostic principal évoqué *(3 grilles sur 13)* — *Asthme · Faux-croup · Pneumonie***
 
 > [!success] 💊 Management — si Asthme
 > - [ ] **1. Examens complémentaires de première intention *(1 grille sur 2)***
@@ -911,26 +902,33 @@ cssclasses:
 > 	- [ ] Test de provocation à la méthacholine
 > - [ ] **3. Examens d'imagerie *(1 grille sur 2)***
 > 	- [ ] Radiographie thoracique
-> - [ ] **4. Conseil et soutien *(1 grille sur 2)***
+> - [ ] **4. Communication avec le patient *(1 grille sur 2)***
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> - [ ] **5. Conseil et soutien *(1 grille sur 2)***
 > 	- [ ] Conseil sur les drogues récréatives
 > 	- [ ] Offrir mouchoir et/ou eau pendant la crise de toux de la patiente
 > 	- [ ] Réaction appropriée au défi concernant la guérison
 > 	- [ ] Rassurer sur les options thérapeutiques
 > 	- [ ] Éducation sur l'asthme si confirmé
-> - [ ] **5. Examens complémentaires proposés *(1 grille sur 2)***
+> - [ ] **6. Diagnostic principal évoqué *(1 grille sur 2)***
+> - [ ] **7. Examens complémentaires *(1 grille sur 2)***
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] Bilan sanguin (FSC, CRP, CK, troponines, D-dimères)
 > 	- [ ] Épreuves fonctionnelles respiratoires avec test de provocation bronchique
 > 	- [ ] ECG/Échocardiographie
 > 	- [ ] Tests d'allergie
-> - [ ] **6. Traitement proposé *(1 grille sur 2)***
+> - [ ] **8. Traitement proposé *(1 grille sur 2)***
 > 	- [ ] Bêta-2-mimétiques (salbutamol) en inhalation
 > 	- [ ] Éducation thérapeutique
 > 	- [ ] Éviction des facteurs déclenchants
-> - [ ] **7. Diagnostics différentiels cardiaques *(1 grille sur 2)***
-> - [ ] **8. Diagnostics différentiels pulmonaires *(1 grille sur 2)***
-> - [ ] **9. Interprétation des épreuves fonctionnelles respiratoires *(1 grille sur 2)***
+> - [ ] **9. Diagnostics différentiels cardiaques *(1 grille sur 2)***
+> - [ ] **10. Diagnostics différentiels pulmonaires *(1 grille sur 2)***
+> - [ ] **11. Interprétation des épreuves fonctionnelles respiratoires *(1 grille sur 2)***
 > 	- [ ] Syndrome obstructif
 > 	- [ ] Résistances centrales augmentées
 > 	- [ ] Volume résiduel augmenté
@@ -943,13 +941,19 @@ cssclasses:
 > 	- [ ] Échocardiographie transthoracique
 > 	- [ ] BNP, NT-pro BNP
 > 	- [ ] Radiographie thoracique
-> - [ ] **2. Conseil et soutien**
+> - [ ] **2. Communication avec le patient**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> - [ ] **3. Conseil et soutien**
 > 	- [ ] Offrir mouchoir et eau lors de la crise de toux
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Conseil sur les options de soutien pour l'exercice régulier
 > 	- [ ] Réaction appropriée au défi concernant l'arrêt du tabac
 > 	- [ ] Éducation sur les risques du tabagisme
-> - [ ] **3. Tests de fonction pulmonaire**
+> - [ ] **4. Tests de fonction pulmonaire**
 > 	- [ ] Spirométrie avec test de réversibilité
 
 > [!success] 💊 Management — si Bronchiolite
@@ -960,23 +964,23 @@ cssclasses:
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Oxymétrie de pouls
 > 	- [ ] Gazométrie artérielle
-> - [ ] **2. Conseil et soutien *(1 grille sur 2)***
+> - [ ] **2. Communication avec le patient *(1 grille sur 2)***
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **3. Conseil et soutien *(1 grille sur 2)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi sur les coûts
 > 	- [ ] Orientation vers services sociaux
 > 	- [ ] Soutien émotionnel face à l'inquiétude
 > 	- [ ] Information sur l'urgence du diagnostic
-> - [ ] **3. Examens microbiologiques *(1 grille sur 2)***
+> - [ ] **4. Examens microbiologiques *(1 grille sur 2)***
 > 	- [ ] Coloration de Gram des expectorations, microscopie avec coloration acido-résistante, cytologie, et culture de routine et mycobactérienne
-> - [ ] **4. Examens biologiques et imagerie avancée *(1 grille sur 2)***
+> - [ ] **5. Examens biologiques et imagerie avancée *(1 grille sur 2)***
 > 	- [ ] FSC avec formule
 > 	- [ ] CT thoracique
-> - [ ] **5. Communication avec le patient *(1 grille sur 2)***
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du patient
 > - [ ] **6. Prise en charge immédiate *(1 grille sur 2)***
 > 	- [ ] Arrêt du tabac immédiat et accompagnement
 > 	- [ ] Consultation pneumologique urgente
@@ -1014,11 +1018,11 @@ cssclasses:
 > 	- [ ] Pneumonie
 > 	- [ ] Faux croup
 > 	- [ ] Infection virale des voies respiratoires supérieures
-> - [ ] **2. Hypothèse diagnostique : Coqueluche**
-> - [ ] **3. Examens complémentaires**
+> - [ ] **2. Examens complémentaires**
 > 	- [ ] Prise de sang (FSC, CRP, Hémoculture)
 > 	- [ ] Recherche bactério dans les expectorations
 > 	- [ ] Radiographie/Ultrason thoracique
+> - [ ] **3. Hypothèse diagnostique : Coqueluche**
 > - [ ] **4. Prise en charge immédiate**
 > 	- [ ] Hospitalisation
 > 	- [ ] Hydratation
@@ -1026,33 +1030,34 @@ cssclasses:
 > 	- [ ] Antibiotiques
 
 > [!success] 💊 Management — si Faux-croup
-> - [ ] **1. Diagnostics différentiels**
-> - [ ] **2. Évaluation de l'urgence**
+> - [ ] **1. Diagnostic principal évoqué**
+> - [ ] **2. Diagnostics différentiels**
+> - [ ] **3. Évaluation de l'urgence**
 > 	- [ ] Mentionne la possibilité d'une consultation urgente
 > 	- [ ] Reconnaît l'impossibilité de déplacement immédiat
 > 	- [ ] Propose surveillance et rappel dans 1 heure
-> - [ ] **3. Conseils thérapeutiques**
+> - [ ] **4. Conseils thérapeutiques**
 > 	- [ ] Mesurer la fièvre, si présente donner paracétamol/Algifor sirop
 > 	- [ ] Assurer une bonne humidification de l'air
 > 	- [ ] Remèdes maison : lait au miel, tisanes, compresses de pommes de terre
 > 	- [ ] Installer l'enfant dans la salle de bain avec eau chaude qui coule
 > 	- [ ] Calmer l'enfant
-> - [ ] **4. Signes d'alarme à surveiller**
+> - [ ] **5. Signes d'alarme à surveiller**
 > 	- [ ] Tirage intercostal ou sus-sternal
 > 	- [ ] Peau bleutée (cyanose)
 > 	- [ ] Pas d'amélioration malgré les mesures
 > 	- [ ] Refus de boire
 > 	- [ ] Dégradation de l'état général
 > 	- [ ] Expectorations sanglantes
-> - [ ] **5. Organisation du suivi**
+> - [ ] **6. Organisation du suivi**
 > 	- [ ] Proposer rappel dans 1 heure
 > 	- [ ] Si aggravation, envoyer ambulance pour chercher l'enfant
 > 	- [ ] Disponibilité pour nouveau contact si besoin
-> - [ ] **6. Vérification de la compréhension**
+> - [ ] **7. Vérification de la compréhension**
 > 	- [ ] Fait répéter les recommandations par l'appelant
 > 	- [ ] Demande accord avec les recommandations
 > 	- [ ] Demande s'il y a des questions ou points peu clairs
-> - [ ] **7. Clôture appropriée**
+> - [ ] **8. Clôture appropriée**
 > 	- [ ] Encourage à rappeler en cas d'incertitude
 > 	- [ ] Encourage à se présenter si nécessaire
 > 	- [ ] Attitude rassurante et professionnelle
@@ -1063,18 +1068,18 @@ cssclasses:
 > 	- [ ] Signes de surcharge (cardiomégalie, redistribution vasculaire)
 > 	- [ ] Lignes de Kerley
 > 	- [ ] Épanchement pleural
-> - [ ] **2. Diagnostic principal suspecté**
-> 	- [ ] Insuffisance cardiaque congestive
-> 	- [ ] Type (gauche, droite, globale)
-> 	- [ ] Étiologie probable (valvulaire)
-> 	- [ ] Classification NYHA
-> - [ ] **3. Diagnostics différentiels**
-> - [ ] **4. Examens biologiques**
+> - [ ] **2. Examens biologiques**
 > 	- [ ] BNP ou NT-proBNP
 > 	- [ ] Troponine
 > 	- [ ] Marqueurs inflammatoires (CRP)
 > 	- [ ] Fonction rénale et ionogramme
 > 	- [ ] FSC
+> - [ ] **3. Diagnostic principal évoqué**
+> 	- [ ] Insuffisance cardiaque congestive
+> 	- [ ] Type (gauche, droite, globale)
+> 	- [ ] Étiologie probable (valvulaire)
+> 	- [ ] Classification NYHA
+> - [ ] **4. Diagnostics différentiels**
 > - [ ] **5. Examens cardiologiques**
 > 	- [ ] ECG (troubles du rythme, HVG)
 > 	- [ ] Échocardiographie
@@ -1118,7 +1123,7 @@ cssclasses:
 > 	- [ ] CRP
 > 	- [ ] Saturation O2
 > 	- [ ] Bandelette urinaire
-> - [ ] **2. Laboratoire *(1 grille sur 3)***
+> - [ ] **2. Examens biologiques *(1 grille sur 3)***
 > - [ ] **3. Hémogramme *(1 grille sur 3)***
 > - [ ] **4. Valeurs inflammatoires (CRP) *(1 grille sur 3)***
 > - [ ] **5. Fonction rénale *(1 grille sur 3)***
@@ -1137,50 +1142,51 @@ cssclasses:
 > - [ ] **18. Hémocultures *(1 grille sur 3)***
 > - [ ] **19. Prélèvement Covid/Influenza *(1 grille sur 3)***
 > - [ ] **20. Diagnostic des expectorations *(1 grille sur 3)***
-> - [ ] **21. Diagnostics différentiels *(1 grille sur 3)***
-> - [ ] **22. Examens complémentaires proposés *(1 grille sur 3)***
+> - [ ] **21. Diagnostic principal évoqué *(1 grille sur 3)***
+> - [ ] **22. Diagnostics différentiels *(1 grille sur 3)***
+> - [ ] **23. Examens complémentaires *(1 grille sur 3)***
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Bilan biologique (FSC, marqueurs inflammatoires)
 > 	- [ ] Hémocultures
-> - [ ] **23. Traitement proposé *(1 grille sur 3)***
+> - [ ] **24. Traitement proposé *(1 grille sur 3)***
 > 	- [ ] Antibiothérapie (amoxicilline, Augmentin ou macrolide)
 > 	- [ ] Traitement symptomatique (antipyrétique, hydratation)
-> - [ ] **24. Évaluation du score CURB-65 *(1 grille sur 3)***
+> - [ ] **25. Évaluation du score CURB-65 *(1 grille sur 3)***
 > 	- [ ] C - Confusion
 > 	- [ ] U - Urée > 7 mmol/L
 > 	- [ ] R - Fréquence respiratoire ≥ 30/min
 > 	- [ ] B - TA < 90/60 mmHg
 > 	- [ ] 65 - Âge ≥ 65 ans
-> - [ ] **25. Organisation de la prise en charge *(1 grille sur 3)***
+> - [ ] **26. Organisation de la prise en charge *(1 grille sur 3)***
 > 	- [ ] Traitement ambulatoire vs hospitalisation
 > 	- [ ] Arrêt de travail
 > 	- [ ] Contrôle à prévoir (48-72h)
-> - [ ] **26. Orientation diagnostique principale *(1 grille sur 3)***
+> - [ ] **27. Orientation diagnostique principale *(1 grille sur 3)***
 > 	- [ ] Pneumonie communautaire
 > 	- [ ] Évaluation de la gravité
 > 	- [ ] Scores de gravité
 > 	- [ ] Indication d'hospitalisation
-> - [ ] **27. Diagnostic différentiel respiratoire *(1 grille sur 3)***
-> - [ ] **28. Examens complémentaires selon gravité *(1 grille sur 3)***
+> - [ ] **28. Diagnostic différentiel respiratoire *(1 grille sur 3)***
+> - [ ] **29. Examens complémentaires selon gravité *(1 grille sur 3)***
 > 	- [ ] Hémocultures
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] PCT
 > 	- [ ] PCR respiratoire
 > 	- [ ] ECBC
-> - [ ] **29. Traitement antibiotique ambulatoire *(1 grille sur 3)***
-> - [ ] **30. Traitements symptomatiques et mesures générales *(1 grille sur 3)***
+> - [ ] **30. Traitement antibiotique ambulatoire *(1 grille sur 3)***
+> - [ ] **31. Traitements symptomatiques et mesures générales *(1 grille sur 3)***
 > 	- [ ] Antipyrétiques
 > 	- [ ] Hydratation
 > 	- [ ] Repos et arrêt de travail
 > 	- [ ] Oxygénothérapie si SpO2 < 92%
 > 	- [ ] Kinésithérapie respiratoire si encombrement
-> - [ ] **31. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
+> - [ ] **32. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
 > 	- [ ] Réévaluation clinique à 48-72h
 > 	- [ ] Critères CURB-65 ≥ 2
 > 	- [ ] Désaturation < 90% en air ambiant
 > 	- [ ] Comorbidités décompensées
 > 	- [ ] Échec traitement ambulatoire
-> - [ ] **32. Prévention et conseils *(1 grille sur 3)***
+> - [ ] **33. Prévention et conseils *(1 grille sur 3)***
 > 	- [ ] Sevrage tabagique
 > 	- [ ] Vaccination antigrippale annuelle
 > 	- [ ] Vaccination antipneumococcique
@@ -1191,7 +1197,7 @@ cssclasses:
 > *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Éruption Cutanée]] (1 grille).
 
 > [!success] 💊 Management — si Tuberculose
-> - [ ] **1. Diagnostic principal suspecté**
+> - [ ] **1. Diagnostic principal évoqué**
 > 	- [ ] Tuberculose pulmonaire
 > 	- [ ] Justification épidémiologique
 > 	- [ ] Justification clinique

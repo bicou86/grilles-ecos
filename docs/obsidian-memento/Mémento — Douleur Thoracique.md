@@ -408,7 +408,8 @@ cssclasses:
 > 	- [ ] Examen des muscles oculomoteurs
 > - [ ] **8. Examen neurologique *(1 grille sur 12)***
 > 	- [ ] Examen de l'orientation dans le temps, l'espace et envers les personnes
-> - [ ] **9. Paramètres vitaux *(1 grille sur 12)***
+> - [ ] **9. Signes vitaux *(2 grilles sur 12)***
+> 	- [ ] SpO2 98% en air ambiant *(1 grille sur 12)*
 > - [ ] **10. Inspection de l'état général *(1 grille sur 12)***
 > - [ ] **11. Inspection du thorax *(2 grilles sur 12)***
 > - [ ] **12. Excursion thoracique *(1 grille sur 12)***
@@ -507,53 +508,45 @@ cssclasses:
 > 	- [ ] Œdèmes prétibiaux *(1 grille sur 12)*
 > 	- [ ] Hépatomégalie *(1 grille sur 12)*
 > 	- [ ] Auscultation pulmonaire *(1 grille sur 12)*
-> - [ ] **46. Signes vitaux *(1 grille sur 12)***
-> 	- [ ] SpO2 98% en air ambiant
-> - [ ] **47. Auscultation pulmonaire *(1 grille sur 12)***
+> - [ ] **46. Auscultation pulmonaire *(1 grille sur 12)***
 > 	- [ ] Pas de râles
 > 	- [ ] Pas de sibilants
 > 	- [ ] Symétrique bilatéralement
-> - [ ] **48. Signes vitaux et mesures anthropométriques *(1 grille sur 12)***
+> - [ ] **47. Signes vitaux et mesures anthropométriques *(1 grille sur 12)***
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Poids et taille
-> - [ ] **49. Inspection générale et recherche de signes cardiovasculaires *(1 grille sur 12)***
+> - [ ] **48. Inspection générale et recherche de signes cardiovasculaires *(1 grille sur 12)***
 > 	- [ ] Cyanose centrale
 > 	- [ ] Cyanose périphérique
 > 	- [ ] Signes cutanés
 > 	- [ ] Inspection thoracique
 > 	- [ ] Température des extrémités
-> - [ ] **50. Évaluation du pouls veineux jugulaire *(1 grille sur 12)***
+> - [ ] **49. Évaluation du pouls veineux jugulaire *(1 grille sur 12)***
 > 	- [ ] Positionnement du patient
 > 	- [ ] Respiration par la bouche
 > 	- [ ] Niveau du collapsus veineux
 > 	- [ ] Réflux hépato-jugulaire
-> - [ ] **51. Palpation cardiovasculaire *(1 grille sur 12)***
+> - [ ] **50. Palpation cardiovasculaire *(1 grille sur 12)***
 > 	- [ ] Pouls artériels
 > 	- [ ] Choc de pointe
 > 	- [ ] Aire précordiale
 > 	- [ ] 2ème espace intercostal droit
 > 	- [ ] Creux épigastrique
-> - [ ] **52. Auscultation cardiaque systématique *(1 grille sur 12)***
+> - [ ] **51. Auscultation cardiaque systématique *(1 grille sur 12)***
 > 	- [ ] 5 foyers d'auscultation
 > 	- [ ] Identification B1 et B2
 > 	- [ ] Utilisation cloche et membrane
 > 	- [ ] Position du patient
 > 	- [ ] Recherche de souffles et bruits surajoutés
-> - [ ] **53. Auscultation des carotides *(1 grille sur 12)***
+> - [ ] **52. Auscultation des carotides *(1 grille sur 12)***
 > 	- [ ] Auscultation bilatérale des carotides
 > 	- [ ] Recherche de souffles carotidiens
 > 	- [ ] Corrélation avec examen cardiaque
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Communication avec le patient *(2 grilles sur 12)* — *Infarctus du myocarde / SCA · Pneumothorax***
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **2. Énonce le diagnostic de suspicion principal *(3 grilles sur 12)* — *Embolie pulmonaire · Pneumothorax · Reflux gastro-œsophagien***
+> - [ ] **1. Énonce le diagnostic de suspicion principal *(3 grilles sur 12)* — *Embolie pulmonaire · Pneumothorax · Reflux gastro-œsophagien***
 
 > [!success] 💊 Management — si Angor stable / Maladie coronarienne
 > - [ ] **1. Diagnostics différentiels *(1 grille sur 2)***
@@ -659,7 +652,7 @@ cssclasses:
 > - [ ] **4. Examens biologiques *(1 grille sur 3)***
 > 	- [ ] FSC, VS, hémocultures
 > 	- [ ] Gaz du sang artériel
-> - [ ] **5. Communication avec la patiente *(1 grille sur 3)***
+> - [ ] **5. Communication avec le patient *(1 grille sur 3)***
 > 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
@@ -670,13 +663,16 @@ cssclasses:
 > 	- [ ] Réaction appropriée au défi concernant l'anxiété
 > 	- [ ] Rassurer la patiente sur la prise en charge
 > 	- [ ] Proposer présence famille/amis pour soutien
-> - [ ] **7. Diagnostics différentiels *(1 grille sur 3)***
+> - [ ] **7. Diagnostics différentiels *(2 grilles sur 3)***
 > 	- [ ] Pneumothorax
-> 	- [ ] Embolie pulmonaire
-> 	- [ ] Syndrome coronarien aigu
-> 	- [ ] Pneumonie
-> 	- [ ] Douleur musculosquelettique
-> 	- [ ] Reflux gastro-œsophagien
+> 	- [ ] Embolie pulmonaire *(1 grille sur 3)*
+> 	- [ ] Syndrome coronarien aigu *(1 grille sur 3)*
+> 	- [ ] Pneumonie *(1 grille sur 3)*
+> 	- [ ] Douleur musculosquelettique *(1 grille sur 3)*
+> 	- [ ] Reflux gastro-œsophagien *(1 grille sur 3)*
+> 	- [ ] Infarctus du myocarde *(1 grille sur 3)*
+> 	- [ ] Œdème aigu pulmonaire *(1 grille sur 3)*
+> 	- [ ] Pneumonie/bronchite *(1 grille sur 3)*
 > - [ ] **8. Examens diagnostiques urgents *(1 grille sur 3)***
 > 	- [ ] ECG (éliminer SCA)
 > 	- [ ] Radiographie thoracique
@@ -701,11 +697,6 @@ cssclasses:
 > 	- [ ] Prophylaxie lors de voyages prolongés
 > - [ ] **12. Indique à la patiente qu'elle devrait se rendre rapidement à l'hôpital *(1 grille sur 3)***
 > - [ ] **13. Évoque le diagnostic d'embolie pulmonaire *(1 grille sur 3)***
-> - [ ] **14. Évoque un diagnostic différentiel cohérent *(1 grille sur 3)***
-> 	- [ ] Infarctus du myocarde
-> 	- [ ] Pneumothorax
-> 	- [ ] Œdème aigu pulmonaire
-> 	- [ ] Pneumonie/bronchite
 
 > [!success] 💊 Management — si Infarctus du myocarde / SCA
 > - [ ] **1. Hypothèses diagnostiques**
@@ -713,12 +704,18 @@ cssclasses:
 > 	- [ ] ECG
 > 	- [ ] FSC
 > 	- [ ] Échocardiographie
-> - [ ] **3. Examens biologiques et toxicologiques**
+> - [ ] **3. Communication avec le patient**
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **4. Examens biologiques et toxicologiques**
 > 	- [ ] Toxicologie urinaire
 > 	- [ ] Troponine T, CK-MB
-> - [ ] **4. Examens invasifs si indiqués**
+> - [ ] **5. Examens invasifs si indiqués**
 > 	- [ ] Coronarographie
-> - [ ] **5. Conseil et prévention**
+> - [ ] **6. Conseil et prévention**
 > 	- [ ] Conseil sur l'arrêt des drogues illicites
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant les médicaments
@@ -741,51 +738,57 @@ cssclasses:
 > 	- [ ] Gaz du sang artériel, oxymétrie de pouls
 > - [ ] **3. Examens d'imagerie *(1 grille sur 3)***
 > 	- [ ] CT thoracique
-> - [ ] **4. Conseil et soutien *(1 grille sur 3)***
+> - [ ] **4. Communication avec le patient *(1 grille sur 3)***
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **5. Conseil et soutien *(1 grille sur 3)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi de la radiographie
 > 	- [ ] Rassurer le patient sur la prise en charge
 > 	- [ ] Expliquer les prochaines étapes du traitement
-> - [ ] **5. Laboratoire de base *(1 grille sur 3)***
-> - [ ] **6. Gazométrie artérielle *(1 grille sur 3)***
-> - [ ] **7. Radiographie thoracique (2 incidences) *(1 grille sur 3)***
-> - [ ] **8. Échographie thoracique *(1 grille sur 3)***
-> - [ ] **9. ECG *(1 grille sur 3)***
-> - [ ] **10. Diagnostic de travail *(1 grille sur 3)***
-> - [ ] **11. Oxygénothérapie *(1 grille sur 3)***
-> - [ ] **12. Drainage thoracique *(1 grille sur 3)***
-> - [ ] **13. Analgésie *(1 grille sur 3)***
-> - [ ] **14. Position semi-assise *(1 grille sur 3)***
-> - [ ] **15. Monitoring *(1 grille sur 3)***
-> - [ ] **16. Hospitalisation *(1 grille sur 3)***
-> - [ ] **17. Arrêt du tabac *(1 grille sur 3)***
-> - [ ] **18. Radiographie de contrôle *(1 grille sur 3)***
-> - [ ] **19. Prophylaxie des récidives *(1 grille sur 3)***
-> - [ ] **20. Diagnostics différentiels *(1 grille sur 3)***
+> - [ ] **6. Laboratoire de base *(1 grille sur 3)***
+> - [ ] **7. Gazométrie artérielle *(1 grille sur 3)***
+> - [ ] **8. Radiographie thoracique (2 incidences) *(1 grille sur 3)***
+> - [ ] **9. Échographie thoracique *(1 grille sur 3)***
+> - [ ] **10. ECG *(1 grille sur 3)***
+> - [ ] **11. Diagnostic de travail *(1 grille sur 3)***
+> - [ ] **12. Oxygénothérapie *(1 grille sur 3)***
+> - [ ] **13. Drainage thoracique *(1 grille sur 3)***
+> - [ ] **14. Analgésie *(1 grille sur 3)***
+> - [ ] **15. Position semi-assise *(1 grille sur 3)***
+> - [ ] **16. Monitoring *(1 grille sur 3)***
+> - [ ] **17. Hospitalisation *(1 grille sur 3)***
+> - [ ] **18. Arrêt du tabac *(1 grille sur 3)***
+> - [ ] **19. Radiographie de contrôle *(1 grille sur 3)***
+> - [ ] **20. Prophylaxie des récidives *(1 grille sur 3)***
+> - [ ] **21. Diagnostics différentiels *(1 grille sur 3)***
 > 	- [ ] Embolie pulmonaire
 > 	- [ ] Douleur musculosquelettique
 > 	- [ ] Pneumothorax spontané primaire
 > 	- [ ] Crise d'asthme
 > 	- [ ] Cardiomyopathie/myocardite
-> - [ ] **21. Examens diagnostiques *(1 grille sur 3)***
+> - [ ] **22. Examens diagnostiques *(1 grille sur 3)***
 > 	- [ ] Radiographie thoracique (image typique de pneumothorax)
 > 	- [ ] Biologie : FSC, CRP, troponine, CK
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] ECG
 > 	- [ ] US thoracique si doute diagnostique
-> - [ ] **22. Prise en charge thérapeutique *(1 grille sur 3)***
+> - [ ] **23. Prise en charge thérapeutique *(1 grille sur 3)***
 > 	- [ ] Oxygénothérapie haut débit
 > 	- [ ] Analgésie adaptée
 > 	- [ ] Surveillance monitoring cardio-respiratoire
 > 	- [ ] Si pneumothorax < 2cm : observation
 > 	- [ ] Si pneumothorax > 2cm ou symptomatique : drainage thoracique
-> - [ ] **23. Critères d'hospitalisation *(1 grille sur 3)***
+> - [ ] **24. Critères d'hospitalisation *(1 grille sur 3)***
 > 	- [ ] Pneumothorax > 20%
 > 	- [ ] Pneumothorax symptomatique
 > 	- [ ] Pneumothorax bilatéral
 > 	- [ ] Pneumothorax sous tension
 > 	- [ ] Comorbidités pulmonaires
-> - [ ] **24. Information du patient *(1 grille sur 3)***
+> - [ ] **25. Information du patient *(1 grille sur 3)***
 > 	- [ ] Expliquer le diagnostic et le mécanisme
 > 	- [ ] Risque de récidive (30% à 2 ans)
 > 	- [ ] Importance de l'arrêt du tabac

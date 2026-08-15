@@ -363,8 +363,7 @@ cssclasses:
 > - [ ] **2. Diagnostic de travail *(2 grilles sur 8)* — *Psoriasis · Syphilis***
 > - [ ] **3. Filet de sécurité *(2 grilles sur 8)* — *Psoriasis · Syphilis***
 > - [ ] **4. Diagnostic de suspicion principal *(3 grilles sur 8)* — *Lupus érythémateux cutané · Scarlatine / Angine streptococcique · Tinea corporis***
-> - [ ] **5. Diagnostics différentiels évoqués *(3 grilles sur 8)* — *Lupus érythémateux cutané · Scarlatine / Angine streptococcique · Tinea corporis***
-> - [ ] **6. Traitement proposé *(3 grilles sur 8)* — *Lupus érythémateux cutané · Scarlatine / Angine streptococcique · Tinea corporis***
+> - [ ] **5. Traitement proposé *(3 grilles sur 8)* — *Lupus érythémateux cutané · Scarlatine / Angine streptococcique · Tinea corporis***
 
 > [!success] 💊 Management — si Dermatite périorale
 > - [ ] **1. Diagnostic de travail : dermatite périorale**
@@ -405,16 +404,17 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Lupus érythémateux cutané
-> - [ ] **1. Examens complémentaires proposés**
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Examens complémentaires proposés**
 > 	- [ ] Biologie sanguine
 > 	- [ ] Analyse d'urine
 > 	- [ ] Fonction rénale
-> - [ ] **2. Justification des examens**
+> - [ ] **3. Justification des examens**
 > 	- [ ] Recherche de signes de lupus systémique
 > 	- [ ] Évaluation de l'inflammation
 > 	- [ ] Dépistage d'atteinte rénale (néphrite lupique)
-> - [ ] **3. Information sur l'évolution possible**
-> - [ ] **4. Surveillance et suivi recommandés**
+> - [ ] **4. Information sur l'évolution possible**
+> - [ ] **5. Surveillance et suivi recommandés**
 > 	- [ ] Contrôle dans 4-6 semaines avec résultats
 > 	- [ ] Surveillance biologique régulière si ANA positifs
 > 	- [ ] Examen des autres systèmes à chaque consultation
@@ -438,18 +438,19 @@ cssclasses:
 > - [ ] **12. Revue médicamenteuse**
 
 > [!success] 💊 Management — si Scarlatine / Angine streptococcique
-> - [ ] **1. Examens complémentaires proposés**
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Examens complémentaires proposés**
 > 	- [ ] Test rapide streptocoque
 > 	- [ ] Culture bactériologique
-> - [ ] **2. Planification du suivi**
+> - [ ] **3. Planification du suivi**
 > 	- [ ] Surveillance de l'efficacité du traitement
 > 	- [ ] Vérification de la disparition des symptômes
 > 	- [ ] Dépistage des complications tardives (glomérulonéphrite, RAA)
-> - [ ] **3. Mesures préventives et prophylaxie**
+> - [ ] **4. Mesures préventives et prophylaxie**
 > 	- [ ] Prophylaxie de l'entourage
 > 	- [ ] Éviction scolaire
 > 	- [ ] Mesures d'hygiène
-> - [ ] **4. Information aux parents et surveillance**
+> - [ ] **5. Information aux parents et surveillance**
 > 	- [ ] Explication de la maladie
 > 	- [ ] Importance de l'observance du traitement
 > 	- [ ] Signes d'alerte (complications)
@@ -474,16 +475,17 @@ cssclasses:
 > - [ ] **13. Reconsultation immédiate en cas de signes d’alarme**
 
 > [!success] 💊 Management — si Tinea corporis
-> - [ ] **1. Examens complémentaires proposés**
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Examens complémentaires proposés**
 > 	- [ ] Prélèvement mycologique
 > 	- [ ] Culture mycologique
-> - [ ] **2. Interprétation des examens**
-> - [ ] **3. Mesures préventives et conseils**
+> - [ ] **3. Interprétation des examens**
+> - [ ] **4. Mesures préventives et conseils**
 > 	- [ ] Éviter les environnements humides
 > 	- [ ] Sécher soigneusement la peau
 > 	- [ ] Éviter le partage de serviettes
 > 	- [ ] Traiter les contacts si nécessaire
-> - [ ] **4. Planification du suivi**
+> - [ ] **5. Planification du suivi**
 > 	- [ ] Contrôle après 2 semaines de traitement
 > 	- [ ] Vérification de la guérison mycologique
 > 	- [ ] Adaptation du traitement si nécessaire
