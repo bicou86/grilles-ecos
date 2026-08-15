@@ -5,7 +5,7 @@ type: memento-ecos-ssp
 ssp: "Lombalgies"
 specialite: "Musculo-Squelettique"
 cas: 8
-diagnostics: 7
+diagnostics: 6
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -64,7 +64,7 @@ cssclasses:
 
 # Lombalgies ⭐️
 
-*Musculo-Squelettique · 8 grilles · 7 diagnostics distincts* — [[SSP — Lombalgies]]
+*Musculo-Squelettique · 8 grilles · 6 diagnostics distincts* — [[SSP — Lombalgies]]
 
 > [!abstract] Les 8 grilles fusionnées
 > - **AMBOSS-9** — Hernie discale `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-9_-_Douleurs_dorsales_-_Homme_71_ans_-_Grille_ECOS.html>)
@@ -72,7 +72,7 @@ cssclasses:
 > - **AZYGOS-20** — Suspicion de myélome multiple (confirmation par ponction médullaire) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/41ad9d6e-557b-49f5-a3a7-0ce3e57d1ba2.json>)
 > - **German-57** — Fracture vertébrale `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-57_-_Lombalgie_-_Grille_ECOS.html>)
 > - **German-58** — Hernie discale `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-58_-_Lombalgie_-_Grille_ECOS.html>)
-> - **German-59** — Colique néphrétique gauche `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-59_-_Lombalgie_-_Grille_ECOS.html>)
+> - **German-59** — Colique néphrétique sur lithiase `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-59_-_Lombalgie_-_Grille_ECOS.html>)
 > - **RESCOS-31** — Colique néphrétique sur lithiase `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-31_-_Douleur_lombaire_-_Grille_ECOS.html>)
 > - **RESCOS-48** — Cancer prostatique métastatique `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-48%20-%20Lombalgie%20-%20Grille%20ECOS.html>)
 
@@ -109,8 +109,8 @@ cssclasses:
 > 	- [ ] Engourdissement (particulièrement membres inférieurs)
 > 	- [ ] Dysfonction érectile
 > - [ ] **6. Antécédents médicaux *(3 grilles sur 8)***
-> - [ ] **7. Antécédents chirurgicaux *(4 diagnostics)***
-> - [ ] **8. Allergies *(5 diagnostics)***
+> - [ ] **7. Antécédents chirurgicaux *(5 grilles sur 8)***
+> - [ ] **8. Allergies *(6 grilles sur 8)***
 > - [ ] **9. Médicaments *(3 grilles sur 8)***
 > 	- [ ] Médicaments actuels *(1 grille sur 8)*
 > 	- [ ] Quantité de Dafalgan® *(1 grille sur 8)*
@@ -163,9 +163,9 @@ cssclasses:
 > - [ ] **27. Retentissement des symptômes *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **28. Douleur nocturne *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **29. Raideur matinale *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **30. Symptômes neurologiques *(Cancer prostatique métastatique · Colique néphrétique gauche · Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> 	- [ ] Faiblesse musculaire *(Colique néphrétique gauche)*
-> 	- [ ] Troubles sensitifs *(Colique néphrétique gauche)*
+> - [ ] **30. Symptômes neurologiques *(3 grilles sur 8)***
+> 	- [ ] Faiblesse musculaire *(1 grille sur 8)*
+> 	- [ ] Troubles sensitifs *(1 grille sur 8)*
 > 	- [ ] Déficit moteur *(Cancer prostatique métastatique)*
 > 	- [ ] Déficit sensitif *(Cancer prostatique métastatique)*
 > 	- [ ] Troubles du transit *(Cancer prostatique métastatique)*
@@ -211,7 +211,7 @@ cssclasses:
 > 	- [ ] Facteur déclenchant *(Fracture vertébrale)*
 > 	- [ ] Durée *(2 grilles sur 8)*
 > 	- [ ] Évolution *(1 grille sur 8)*
-> - [ ] **67. Localisation précise *(Colique néphrétique gauche · Fracture vertébrale)***
+> - [ ] **67. Localisation précise *(2 grilles sur 8)***
 > 	- [ ] Localisation *(Fracture vertébrale)*
 > 	- [ ] Irradiation *(Fracture vertébrale)*
 > - [ ] **68. Type et intensité de la douleur *(Fracture vertébrale)***
@@ -239,7 +239,7 @@ cssclasses:
 > 	- [ ] Pathologies connues *(2 grilles sur 8)*
 > 	- [ ] Immunosuppression *(1 grille sur 8)*
 > 	- [ ] Cancer *(1 grille sur 8)*
-> 	- [ ] Antécédents de lombalgies *(Colique néphrétique gauche)*
+> 	- [ ] Antécédents de lombalgies *(1 grille sur 8)*
 > - [ ] **74. Traitements actuels *(3 grilles sur 8)***
 > 	- [ ] Médicaments réguliers *(1 grille sur 8)*
 > 	- [ ] Antalgiques à la demande *(1 grille sur 8)*
@@ -247,7 +247,7 @@ cssclasses:
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
-> - [ ] **76. Statut hormonal *(Colique néphrétique gauche · Fracture vertébrale)***
+> - [ ] **76. Statut hormonal *(2 grilles sur 8)***
 > - [ ] **77. Facteurs de risque d'ostéoporose *(Fracture vertébrale)***
 > 	- [ ] Ménopause précoce
 > 	- [ ] Tabagisme important
@@ -261,11 +261,11 @@ cssclasses:
 > 	- [ ] Ostéoporose *(1 grille sur 8)*
 > 	- [ ] Pathologies cardiovasculaires *(1 grille sur 8)*
 > 	- [ ] Autres pathologies pertinentes *(1 grille sur 8)*
-> - [ ] **79. Anamnèse sociale *(Colique néphrétique gauche · Fracture vertébrale)***
+> - [ ] **79. Anamnèse sociale *(2 grilles sur 8)***
 > 	- [ ] Profession
 > 	- [ ] Activité physique
 > 	- [ ] Autonomie *(Fracture vertébrale)*
-> 	- [ ] Situation familiale *(Colique néphrétique gauche)*
+> 	- [ ] Situation familiale *(1 grille sur 8)*
 > - [ ] **80. Questions de clôture *(3 grilles sur 8)***
 > 	- [ ] Avez-vous quelque chose à ajouter ?
 > 	- [ ] Avez-vous des questions ?
@@ -296,71 +296,71 @@ cssclasses:
 > 	- [ ] Profession
 > 	- [ ] Stress, situation de charge
 > 	- [ ] Capacité de travail actuelle
-> - [ ] **93. Pattern et évolution *(Colique néphrétique gauche)***
+> - [ ] **93. Pattern et évolution *(1 grille sur 8)***
 > 	- [ ] Type
 > 	- [ ] Au repos et en mouvement
 > 	- [ ] Épisodes antérieurs
-> - [ ] **94. Événement déclenchant ou traumatisme *(Colique néphrétique gauche)***
-> - [ ] **95. Symptômes urinaires associés *(Colique néphrétique gauche · Colique néphrétique sur lithiase)***
-> 	- [ ] Hématurie macroscopique *(Colique néphrétique gauche)*
-> 	- [ ] Dysurie *(Colique néphrétique gauche)*
-> 	- [ ] Incontinence *(Colique néphrétique gauche)*
-> 	- [ ] Pollakiurie *(Colique néphrétique gauche)*
-> 	- [ ] Urgences mictionnelles *(Colique néphrétique gauche)*
-> 	- [ ] Besoin impérieux d'uriner *(Colique néphrétique sur lithiase)*
-> 	- [ ] Difficultés mictionnelles *(Colique néphrétique sur lithiase)*
-> 	- [ ] Urines troubles ou hématuriques *(Colique néphrétique sur lithiase)*
-> 	- [ ] Sensation de vidange incomplète *(Colique néphrétique sur lithiase)*
-> 	- [ ] Brûlures mictionnelles possibles *(Colique néphrétique sur lithiase)*
-> - [ ] **96. Symptômes digestifs *(Colique néphrétique gauche)***
+> - [ ] **94. Événement déclenchant ou traumatisme *(1 grille sur 8)***
+> - [ ] **95. Symptômes urinaires associés *(Colique néphrétique sur lithiase)***
+> 	- [ ] Hématurie macroscopique *(1 grille sur 8)*
+> 	- [ ] Dysurie *(1 grille sur 8)*
+> 	- [ ] Incontinence *(1 grille sur 8)*
+> 	- [ ] Pollakiurie *(1 grille sur 8)*
+> 	- [ ] Urgences mictionnelles *(1 grille sur 8)*
+> 	- [ ] Besoin impérieux d'uriner *(1 grille sur 8)*
+> 	- [ ] Difficultés mictionnelles *(1 grille sur 8)*
+> 	- [ ] Urines troubles ou hématuriques *(1 grille sur 8)*
+> 	- [ ] Sensation de vidange incomplète *(1 grille sur 8)*
+> 	- [ ] Brûlures mictionnelles possibles *(1 grille sur 8)*
+> - [ ] **96. Symptômes digestifs *(1 grille sur 8)***
 > 	- [ ] Transit intestinal
 > 	- [ ] Nausées/vomissements
-> - [ ] **97. Symptômes généraux *(Colique néphrétique gauche · Colique néphrétique sur lithiase)***
-> 	- [ ] Fièvre *(Colique néphrétique gauche)*
-> 	- [ ] Frissons *(Colique néphrétique gauche)*
-> 	- [ ] Perte de poids *(Colique néphrétique gauche)*
-> 	- [ ] Sueurs nocturnes *(Colique néphrétique gauche)*
-> 	- [ ] Agitation motrice *(Colique néphrétique sur lithiase)*
-> 	- [ ] Nausées *(Colique néphrétique sur lithiase)*
-> 	- [ ] Vomissements *(Colique néphrétique sur lithiase)*
-> 	- [ ] Sueurs froides *(Colique néphrétique sur lithiase)*
-> - [ ] **98. Antécédents de lithiase *(Colique néphrétique gauche)***
+> - [ ] **97. Symptômes généraux *(Colique néphrétique sur lithiase)***
+> 	- [ ] Fièvre *(1 grille sur 8)*
+> 	- [ ] Frissons *(1 grille sur 8)*
+> 	- [ ] Perte de poids *(1 grille sur 8)*
+> 	- [ ] Sueurs nocturnes *(1 grille sur 8)*
+> 	- [ ] Agitation motrice *(1 grille sur 8)*
+> 	- [ ] Nausées *(1 grille sur 8)*
+> 	- [ ] Vomissements *(1 grille sur 8)*
+> 	- [ ] Sueurs froides *(1 grille sur 8)*
+> - [ ] **98. Antécédents de lithiase *(1 grille sur 8)***
 > 	- [ ] Dépistage pour ostéoporose
 > 	- [ ] Fractures antérieures
 > 	- [ ] Calculs rénaux antérieurs
-> - [ ] **99. Hydratation et habitudes alimentaires *(Colique néphrétique gauche)***
+> - [ ] **99. Hydratation et habitudes alimentaires *(1 grille sur 8)***
 > 	- [ ] Apports hydriques quotidiens
 > 	- [ ] Alimentation riche en oxalates
 > 	- [ ] Consommation de sel
-> - [ ] **100. Motif de consultation *(Colique néphrétique sur lithiase)***
-> - [ ] **101. Caractérisation de la douleur *(Cancer prostatique métastatique · Colique néphrétique sur lithiase)***
-> 	- [ ] Début *(Colique néphrétique sur lithiase)*
+> - [ ] **100. Motif de consultation *(1 grille sur 8)***
+> - [ ] **101. Caractérisation de la douleur *(2 grilles sur 8)***
+> 	- [ ] Début *(1 grille sur 8)*
 > 	- [ ] Localisation
 > 	- [ ] Irradiation
-> 	- [ ] Type *(Colique néphrétique sur lithiase)*
+> 	- [ ] Type *(1 grille sur 8)*
 > 	- [ ] Intensité
-> 	- [ ] Évolution *(Colique néphrétique sur lithiase)*
+> 	- [ ] Évolution *(1 grille sur 8)*
 > 	- [ ] Qualité *(Cancer prostatique métastatique)*
 > 	- [ ] Chronologie *(Cancer prostatique métastatique)*
 > 	- [ ] Facteurs atténuants/aggravants *(Cancer prostatique métastatique)*
-> - [ ] **102. Facteurs déclenchants et contexte *(Colique néphrétique sur lithiase)***
+> - [ ] **102. Facteurs déclenchants et contexte *(1 grille sur 8)***
 > 	- [ ] Activité sportive récente
 > 	- [ ] Déshydratation relative
 > 	- [ ] Consommation de bière
-> - [ ] **103. Antécédents urologiques *(Colique néphrétique sur lithiase)***
+> - [ ] **103. Antécédents urologiques *(1 grille sur 8)***
 > 	- [ ] Épisodes similaires antérieurs
 > 	- [ ] Antécédents de lithiase urinaire
 > 	- [ ] Infections urinaires récurrentes
 > 	- [ ] Malformations urologiques connues
 > 	- [ ] Antécédents familiaux de lithiase
-> - [ ] **104. Facteurs de risque lithiasique *(Colique néphrétique sur lithiase)***
+> - [ ] **104. Facteurs de risque lithiasique *(1 grille sur 8)***
 > 	- [ ] Hydratation habituelle insuffisante
 > 	- [ ] Alimentation riche en protéines
 > 	- [ ] Consommation de sel importante
 > 	- [ ] Supplémentation vitaminique
 > 	- [ ] Climat chaud, transpiration importante
 > 	- [ ] Sédentarité alternant avec sport intense
-> - [ ] **105. Médicaments et habitudes *(Colique néphrétique sur lithiase)***
+> - [ ] **105. Médicaments et habitudes *(1 grille sur 8)***
 > 	- [ ] Prise d'antalgiques
 > 	- [ ] Suppléments protéinés
 > 	- [ ] Consommation d'alcool
@@ -516,69 +516,69 @@ cssclasses:
 > - [ ] **50. Toucher rectal si indiqué *(2 grilles sur 8)***
 > 	- [ ] Tonus sphinctérien *(1 grille sur 8)*
 > 	- [ ] Sensibilité péri-anale *(1 grille sur 8)*
-> - [ ] **51. Inspection générale *(Colique néphrétique gauche)***
+> - [ ] **51. Inspection générale *(1 grille sur 8)***
 > 	- [ ] État général
 > 	- [ ] Faciès douloureux
 > 	- [ ] Position antalgique
-> - [ ] **52. Examen du rachis *(Colique néphrétique gauche)***
+> - [ ] **52. Examen du rachis *(1 grille sur 8)***
 > 	- [ ] Inspection
 > 	- [ ] Palpation des processus épineux
 > 	- [ ] Recherche de contracture paravertébrale
-> - [ ] **53. Test de Lasègue *(Colique néphrétique gauche)***
-> - [ ] **54. Recherche du signe de Giordano *(Colique néphrétique gauche)***
+> - [ ] **53. Test de Lasègue *(1 grille sur 8)***
+> - [ ] **54. Recherche du signe de Giordano *(1 grille sur 8)***
 > 	- [ ] Percussion des fosses lombaires
 > 	- [ ] Résultat
-> - [ ] **55. Examen abdominal *(Colique néphrétique gauche · Colique néphrétique sur lithiase)***
-> 	- [ ] Inspection *(Colique néphrétique gauche)*
-> 	- [ ] Auscultation *(Colique néphrétique gauche)*
-> 	- [ ] Palpation superficielle et profonde *(Colique néphrétique gauche)*
-> 	- [ ] Recherche d'un globe vésical *(Colique néphrétique gauche)*
-> 	- [ ] Inspection: pas de distension *(Colique néphrétique sur lithiase)*
-> 	- [ ] Palpation: sensibilité flanc gauche *(Colique néphrétique sur lithiase)*
-> 	- [ ] Défense absente *(Colique néphrétique sur lithiase)*
-> 	- [ ] Pas de masse palpable *(Colique néphrétique sur lithiase)*
-> 	- [ ] Bruits hydroaériques présents *(Colique néphrétique sur lithiase)*
-> 	- [ ] Pas de globe vésical *(Colique néphrétique sur lithiase)*
-> - [ ] **56. Palpation des points urétéraux *(Colique néphrétique gauche · Colique néphrétique sur lithiase)***
+> - [ ] **55. Examen abdominal *(Colique néphrétique sur lithiase)***
+> 	- [ ] Inspection *(1 grille sur 8)*
+> 	- [ ] Auscultation *(1 grille sur 8)*
+> 	- [ ] Palpation superficielle et profonde *(1 grille sur 8)*
+> 	- [ ] Recherche d'un globe vésical *(1 grille sur 8)*
+> 	- [ ] Inspection: pas de distension *(1 grille sur 8)*
+> 	- [ ] Palpation: sensibilité flanc gauche *(1 grille sur 8)*
+> 	- [ ] Défense absente *(1 grille sur 8)*
+> 	- [ ] Pas de masse palpable *(1 grille sur 8)*
+> 	- [ ] Bruits hydroaériques présents *(1 grille sur 8)*
+> 	- [ ] Pas de globe vésical *(1 grille sur 8)*
+> - [ ] **56. Palpation des points urétéraux *(Colique néphrétique sur lithiase)***
 > 	- [ ] Point urétéral supérieur
 > 	- [ ] Point urétéral moyen
 > 	- [ ] Point urétéral inférieur
-> 	- [ ] Douleur provoquée le long du trajet urétéral *(Colique néphrétique sur lithiase)*
-> 	- [ ] Comparaison bilatérale *(Colique néphrétique sur lithiase)*
-> - [ ] **57. Examen des organes génitaux externes *(Colique néphrétique gauche · Colique néphrétique sur lithiase)***
-> 	- [ ] Inspection vulvaire *(Colique néphrétique gauche)*
-> 	- [ ] Recherche d'écoulement *(Colique néphrétique gauche)*
-> 	- [ ] Inspection: testicules symétriques *(Colique néphrétique sur lithiase)*
-> 	- [ ] Palpation testiculaire: indolore, pas de masse *(Colique néphrétique sur lithiase)*
-> 	- [ ] Cordons spermatiques sans anomalie *(Colique néphrétique sur lithiase)*
-> 	- [ ] Réflexe crémastérien présent *(Colique néphrétique sur lithiase)*
-> - [ ] **58. Signes vitaux complémentaires *(Colique néphrétique gauche)***
+> 	- [ ] Douleur provoquée le long du trajet urétéral *(1 grille sur 8)*
+> 	- [ ] Comparaison bilatérale *(1 grille sur 8)*
+> - [ ] **57. Examen des organes génitaux externes *(Colique néphrétique sur lithiase)***
+> 	- [ ] Inspection vulvaire *(1 grille sur 8)*
+> 	- [ ] Recherche d'écoulement *(1 grille sur 8)*
+> 	- [ ] Inspection: testicules symétriques *(1 grille sur 8)*
+> 	- [ ] Palpation testiculaire: indolore, pas de masse *(1 grille sur 8)*
+> 	- [ ] Cordons spermatiques sans anomalie *(1 grille sur 8)*
+> 	- [ ] Réflexe crémastérien présent *(1 grille sur 8)*
+> - [ ] **58. Signes vitaux complémentaires *(1 grille sur 8)***
 > 	- [ ] Température
 > 	- [ ] État d'hydratation
-> - [ ] **59. État général et comportement *(Colique néphrétique sur lithiase)***
+> - [ ] **59. État général et comportement *(1 grille sur 8)***
 > 	- [ ] Patient agité, ne trouve pas de position antalgique
 > 	- [ ] Faciès douloureux
 > 	- [ ] Pâleur, sueurs
 > 	- [ ] Déambulation incessante
 > 	- [ ] Anxiété manifeste
-> - [ ] **60. Signes vitaux *(Colique néphrétique sur lithiase)***
+> - [ ] **60. Signes vitaux *(1 grille sur 8)***
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Température
 > 	- [ ] Fréquence respiratoire
-> - [ ] **61. Examen des fosses lombaires *(Colique néphrétique sur lithiase)***
+> - [ ] **61. Examen des fosses lombaires *(1 grille sur 8)***
 > 	- [ ] Inspection: pas d'ecchymose, pas de tuméfaction
 > 	- [ ] Palpation douce: sensibilité
 > 	- [ ] Percussion: douleur à l'ébranlement lombaire gauche
 > 	- [ ] Comparaison avec côté controlatéral
 > 	- [ ] Recherche d'un contact lombaire
-> - [ ] **62. Recherche de complications *(Colique néphrétique sur lithiase)***
+> - [ ] **62. Recherche de complications *(1 grille sur 8)***
 > 	- [ ] Signes de pyélonéphrite
 > 	- [ ] Signes de sepsis
 > 	- [ ] Anurie
 > 	- [ ] Rétention aiguë d'urine
 > 	- [ ] État de choc
-> - [ ] **63. Examens différentiels *(Colique néphrétique sur lithiase)***
+> - [ ] **63. Examens différentiels *(1 grille sur 8)***
 > 	- [ ] Recherche appendicite
 > 	- [ ] Éliminer anévrisme aorte
 > 	- [ ] Examen vasculaire périphérique
@@ -626,8 +626,8 @@ cssclasses:
 > 	- [ ] Antalgie adaptée
 > 	- [ ] Évaluation urgence relative
 
-> [!success] 💊 Management — si Colique néphrétique gauche
-> - [ ] **1. Examens complémentaires urgents**
+> [!success] 💊 Management — si Colique néphrétique sur lithiase
+> - [ ] **1. Examens complémentaires urgents *(1 grille sur 2)***
 > 	- [ ] Bandelette urinaire (confirmer hématurie)
 > 	- [ ] ECBU avec recherche de cristaux
 > 	- [ ] Créatinine, urée (fonction rénale)
@@ -635,8 +635,8 @@ cssclasses:
 > 	- [ ] FSC, CRP (éliminer infection)
 > 	- [ ] Échographie rénale et vésicale en urgence
 > 	- [ ] CT abdomen sans contraste (gold standard) si doute
-> - [ ] **2. Diagnostic principal**
-> - [ ] **3. Diagnostics différentiels**
+> - [ ] **2. Diagnostic principal *(1 grille sur 2)***
+> - [ ] **3. Diagnostics différentiels *(1 grille sur 2)***
 > 	- [ ] Pyélonéphrite aiguë
 > 	- [ ] Fracture vertébrale ostéoporotique
 > 	- [ ] Lombalgie musculaire
@@ -645,51 +645,48 @@ cssclasses:
 > 	- [ ] Appendicite rétrocæcale (si à droite)
 > 	- [ ] Diverticulite sigmoïdienne
 > - [ ] **4. Prévention des récidives**
-> 	- [ ] Hydratation abondante (> 2L/jour)
-> 	- [ ] Régime adapté selon type de calcul
-> 	- [ ] Réduction apports sodés
-> 	- [ ] Normalisation apports calciques
-> 	- [ ] Traitement spécifique selon lithiase
-> - [ ] **5. Critères d'hospitalisation**
+> 	- [ ] Hydratation abondante (> 2L/jour) *(1 grille sur 2)*
+> 	- [ ] Régime adapté selon type de calcul *(1 grille sur 2)*
+> 	- [ ] Réduction apports sodés *(1 grille sur 2)*
+> 	- [ ] Normalisation apports calciques *(1 grille sur 2)*
+> 	- [ ] Traitement spécifique selon lithiase *(1 grille sur 2)*
+> 	- [ ] Analyse spectrophotométrique du calcul expulsé *(1 grille sur 2)*
+> 	- [ ] Bilan métabolique à distance (calcémie, uricémie, oxalurie) *(1 grille sur 2)*
+> 	- [ ] Hyperhydratation: 2-3L/jour à vie *(1 grille sur 2)*
+> 	- [ ] Régime adapté selon composition du calcul *(1 grille sur 2)*
+> 	- [ ] Oxalate de calcium: limiter oxalates (chocolat, thé) *(1 grille sur 2)*
+> 	- [ ] Acide urique: alcalinisation urines, allopurinol *(1 grille sur 2)*
+> 	- [ ] Phosphate de calcium: acidification urines *(1 grille sur 2)*
+> 	- [ ] Surveillance régulière: échographie annuelle *(1 grille sur 2)*
+> - [ ] **5. Critères d'hospitalisation *(1 grille sur 2)***
 > 	- [ ] Signes infectieux associés (urgence)
 > 	- [ ] Rein unique fonctionnel
 > 	- [ ] Insuffisance rénale aiguë
 > 	- [ ] Douleur réfractaire au traitement
 > 	- [ ] Calcul > 10 mm
 > 	- [ ] Obstruction bilatérale
-> - [ ] **6. Prise en charge thérapeutique ambulatoire**
-> - [ ] **7. Prise en charge à distance**
+> - [ ] **6. Prise en charge thérapeutique ambulatoire *(1 grille sur 2)***
+> - [ ] **7. Prise en charge à distance *(1 grille sur 2)***
 > 	- [ ] Analyse du calcul si récupéré
 > 	- [ ] Bilan métabolique à 6 semaines
 > 	- [ ] Calcium, phosphate, acide urique sanguins
 > 	- [ ] Calciurie, phosphaturie, uraturie des 24h
 > 	- [ ] PH urinaire, densité urinaire
-> - [ ] **8. Information et éducation**
+> - [ ] **8. Information et éducation *(1 grille sur 2)***
 > 	- [ ] Expliquer l'évolution naturelle
 > 	- [ ] Calcul 90%
 > 	- [ ] Importance de filtrer les urines
 > 	- [ ] Signes d'alerte nécessitant reconsultation
 > 	- [ ] Remise de documentation écrite
-
-> [!success] 💊 Management — si Colique néphrétique sur lithiase
-> - [ ] **1. Prévention des récidives**
-> 	- [ ] Analyse spectrophotométrique du calcul expulsé
-> 	- [ ] Bilan métabolique à distance (calcémie, uricémie, oxalurie)
-> 	- [ ] Hyperhydratation: 2-3L/jour à vie
-> 	- [ ] Régime adapté selon composition du calcul
-> 	- [ ] Oxalate de calcium: limiter oxalates (chocolat, thé)
-> 	- [ ] Acide urique: alcalinisation urines, allopurinol
-> 	- [ ] Phosphate de calcium: acidification urines
-> 	- [ ] Surveillance régulière: échographie annuelle
-> - [ ] **2. Diagnostics différentiels de la colique néphrétique**
-> - [ ] **3. Examens complémentaires en urgence**
+> - [ ] **9. Diagnostics différentiels de la colique néphrétique *(1 grille sur 2)***
+> - [ ] **10. Examens complémentaires en urgence *(1 grille sur 2)***
 > 	- [ ] Bandelette urinaire: hématurie dans 90% des cas
 > 	- [ ] ECBU: hématurie microscopique, cristallurie, pH urinaire
 > 	- [ ] Créatinine, urée: fonction rénale
 > 	- [ ] Ionogramme sanguin, calcémie
 > 	- [ ] FSC, CRP: syndrome inflammatoire si complication
 > 	- [ ] Échographie rénale et vésicale: dilatation des cavités pyélocalicielles
-> - [ ] **4. Imagerie pour confirmation diagnostique**
+> - [ ] **11. Imagerie pour confirmation diagnostique *(1 grille sur 2)***
 > 	- [ ] TDM abdomino-pelvien sans injection (examen de référence)
 > 	- [ ] Visualise 95% des calculs radio-opaques et radio-transparents
 > 	- [ ] Localise précisément le calcul
@@ -697,22 +694,22 @@ cssclasses:
 > 	- [ ] Mesure la taille du calcul
 > 	- [ ] ASP (Abdomen Sans Préparation): calculs radio-opaques seulement (80%)
 > 	- [ ] Échographie: alternative si contre-indication TDM (grossesse)
-> - [ ] **5. Traitement symptomatique de la crise**
-> - [ ] **6. Indications d'hospitalisation**
+> - [ ] **12. Traitement symptomatique de la crise *(1 grille sur 2)***
+> - [ ] **13. Indications d'hospitalisation *(1 grille sur 2)***
 > 	- [ ] Colique néphrétique fébrile (urgence urologique)
 > 	- [ ] Anurie (obstruction bilatérale ou rein unique)
 > 	- [ ] Colique néphrétique hyperalgique résistante
 > 	- [ ] Insuffisance rénale aiguë obstructive
 > 	- [ ] Terrain particulier: grossesse, rein unique, transplanté
 > 	- [ ] Impossibilité de prise en charge ambulatoire
-> - [ ] **7. Traitement urologique spécifique**
+> - [ ] **14. Traitement urologique spécifique *(1 grille sur 2)***
 > 	- [ ] Calculs < 5mm: expulsion spontanée dans 70% des cas
 > 	- [ ] Calculs 5-10mm: expulsion dans 50% des cas
 > 	- [ ] Lithotripsie extracorporelle (LEC) si calcul < 20mm
 > 	- [ ] Urétéroscopie avec extraction ou fragmentation laser
 > 	- [ ] Néphrostomie percutanée si infection + obstruction
 > 	- [ ] Chirurgie ouverte exceptionnelle
-> - [ ] **8. Complications à rechercher**
+> - [ ] **15. Complications à rechercher *(1 grille sur 2)***
 
 > [!success] 💊 Management — si Fracture vertébrale
 > - [ ] **1. Examens d'imagerie**

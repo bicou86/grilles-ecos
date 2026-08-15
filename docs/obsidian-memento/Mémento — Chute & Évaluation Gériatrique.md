@@ -4,8 +4,8 @@ aliases:
 type: memento-ecos-ssp
 ssp: "Chute & Évaluation Gériatrique"
 specialite: "Musculo-Squelettique"
-cas: 4
-diagnostics: 4
+cas: 5
+diagnostics: 5
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -64,201 +64,268 @@ cssclasses:
 
 # Chute & Évaluation Gériatrique ⭐️
 
-*Musculo-Squelettique · 4 grilles · 4 diagnostics distincts* — [[SSP — Chute & Évaluation Gériatrique]]
+*Musculo-Squelettique · 5 grilles · 5 diagnostics distincts* — [[SSP — Chute & Évaluation Gériatrique]]
 
-> [!abstract] Les 4 grilles fusionnées
+> [!abstract] Les 5 grilles fusionnées
+> - **AMBOSS-24** — Violence domestique `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-24_-_E_valuation_apre_s_chute_-_Femme_30_ans_-_Grille_ECOS.html>)
 > - **AZYGOS-4** — HypoTA orthostatique `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/a8012490-bf2d-48f1-85c0-35662fd010b5.json>)
 > - **German-10** — Accident vasculaire cérébral `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-10_-_Chute_-_Grille_ECOS.html>)
 > - **German-11** — Chute multifactorielle `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-11_-_Chute_-_Grille_ECOS.html>)
 > - **RESCOS-11** — Fracture du membre supérieur (humérus, tête radiale) `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-11_-_Chute_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Déroulement de la chute *(HypoTA orthostatique)***
-> - [ ] **2. Vertiges *(HypoTA orthostatique)***
-> - [ ] **3. Perte de connaissance *(Chute multifactorielle · HypoTA orthostatique)***
-> - [ ] **4. Symptômes cardiaques *(HypoTA orthostatique)***
-> - [ ] **5. Impact crânien *(HypoTA orthostatique)***
-> - [ ] **6. Aide après la chute *(HypoTA orthostatique)***
-> - [ ] **7. Chutes antérieures *(HypoTA orthostatique)***
-> - [ ] **8. Peur de chuter *(HypoTA orthostatique)***
-> - [ ] **9. Mobilité et habitat *(HypoTA orthostatique)***
-> - [ ] **10. Aides techniques *(HypoTA orthostatique)***
-> - [ ] **11. Distance de marche *(HypoTA orthostatique)***
-> - [ ] **12. Situation de logement *(HypoTA orthostatique)***
-> - [ ] **13. Escaliers *(HypoTA orthostatique)***
-> - [ ] **14. Seuils *(HypoTA orthostatique)***
-> - [ ] **15. BADL *(HypoTA orthostatique)***
-> - [ ] **16. Transferts *(HypoTA orthostatique)***
-> - [ ] **17. Toilette et douche *(HypoTA orthostatique)***
-> - [ ] **18. Habillage *(HypoTA orthostatique)***
-> - [ ] **19. Aller aux toilettes *(HypoTA orthostatique)***
-> - [ ] **20. Alimentation *(HypoTA orthostatique)***
-> - [ ] **21. IADL *(HypoTA orthostatique)***
-> - [ ] **22. Courses *(HypoTA orthostatique)***
-> - [ ] **23. Cuisine *(HypoTA orthostatique)***
-> - [ ] **24. Ménage *(HypoTA orthostatique)***
-> - [ ] **25. Médicaments *(Accident vasculaire cérébral · Chute multifactorielle · HypoTA orthostatique)***
-> - [ ] **26. Finances *(HypoTA orthostatique)***
-> - [ ] **27. Transports *(HypoTA orthostatique)***
-> - [ ] **28. Rendez-vous *(HypoTA orthostatique)***
-> - [ ] **29. Anamnèse sociale *(Accident vasculaire cérébral · Chute multifactorielle · HypoTA orthostatique)***
-> - [ ] **30. État civil *(HypoTA orthostatique)***
-> - [ ] **31. Profession *(HypoTA orthostatique)***
-> - [ ] **32. Loisirs *(HypoTA orthostatique)***
-> - [ ] **33. Proches *(HypoTA orthostatique)***
-> - [ ] **34. Cognition, psychisme et sommeil *(HypoTA orthostatique)***
-> - [ ] **35. Cognition *(HypoTA orthostatique)***
-> - [ ] **36. Humeur *(HypoTA orthostatique)***
-> - [ ] **37. Sommeil *(HypoTA orthostatique)***
-> - [ ] **38. Nutrition, poids et appareil locomoteur *(HypoTA orthostatique)***
-> - [ ] **39. Nutrition *(HypoTA orthostatique)***
-> - [ ] **40. Évolution pondérale *(HypoTA orthostatique)***
-> - [ ] **41. Douleurs articulaires et squelettiques *(HypoTA orthostatique)***
-> - [ ] **42. Élimination et continence *(HypoTA orthostatique)***
-> - [ ] **43. Selles *(HypoTA orthostatique)***
-> - [ ] **44. Miction *(HypoTA orthostatique)***
-> - [ ] **45. Continence *(HypoTA orthostatique)***
-> - [ ] **46. Vertiges et sensorialité *(HypoTA orthostatique)***
-> - [ ] **47. Vision *(Accident vasculaire cérébral · Chute multifactorielle · HypoTA orthostatique)***
-> - [ ] **48. Audition *(Accident vasculaire cérébral · HypoTA orthostatique)***
-> - [ ] **49. Présentation avec nom, fonction et tâche *(Accident vasculaire cérébral · Chute multifactorielle)***
-> - [ ] **50. Moment de l'événement *(Accident vasculaire cérébral)***
-> - [ ] **51. Dernier moment où la patiente était normale *(Accident vasculaire cérébral)***
-> - [ ] **52. Circonstances de la chute *(Accident vasculaire cérébral)***
-> - [ ] **53. Force musculaire *(Accident vasculaire cérébral)***
-> - [ ] **54. Sensibilité *(Accident vasculaire cérébral)***
-> - [ ] **55. Motricité fine *(Accident vasculaire cérébral)***
-> - [ ] **56. Langage *(Accident vasculaire cérébral)***
-> - [ ] **57. Antécédents personnels *(Accident vasculaire cérébral)***
+> - [ ] **1. Motif principal *(Fracture du membre supérieur (humérus, tête radiale) · Violence domestique)***
+> - [ ] **2. Caractérisation du traumatisme *(Violence domestique)***
+> 	- [ ] Début/moment de l'événement
+> 	- [ ] Événements précipitants/mécanisme de la chute
+> 	- [ ] Perte de connaissance
+> 	- [ ] Progression
+> 	- [ ] Épisodes antérieurs
+> 	- [ ] Fréquence
+> 	- [ ] Facteurs améliorants
+> 	- [ ] Facteurs aggravants
+> 	- [ ] Symptômes associés
+> - [ ] **3. Recherche de symptômes spécifiques *(Violence domestique)***
+> 	- [ ] Céphalées
+> 	- [ ] Nausées/vomissements
+> 	- [ ] Fièvre/frissons
+> 	- [ ] Sueurs nocturnes
+> 	- [ ] Fatigue
+> 	- [ ] Éruption cutanée/changements cutanés
+> 	- [ ] Douleurs articulaires
+> 	- [ ] Problèmes urinaires
+> 	- [ ] Problèmes intestinaux
+> 	- [ ] Problèmes de sommeil
+> 	- [ ] Appétit
+> 	- [ ] Variations pondérales
+> 	- [ ] Vertiges
+> - [ ] **4. Antécédents hémorragiques *(Violence domestique)***
+> 	- [ ] Saignements accrus après blessures mineures
+> 	- [ ] Saignements accrus pendant l'accouchement
+> 	- [ ] Saignements accrus pendant les règles
+> 	- [ ] Saignements de nez
+> 	- [ ] Saignements des gencives après brossage
+> 	- [ ] Saignements dans muscles, articulations ou tissus profonds
+> - [ ] **5. Antécédents médicaux *(Chute multifactorielle · Fracture du membre supérieur (humérus, tête radiale) · Violence domestique)***
+> 	- [ ] Diabète *(Chute multifactorielle)*
+> 	- [ ] Gonarthrose bilatérale *(Chute multifactorielle)*
+> 	- [ ] Hypertension artérielle *(Chute multifactorielle)*
+> 	- [ ] Problème cardiaque *(Chute multifactorielle)*
+> - [ ] **6. Allergies *(Chute multifactorielle · Violence domestique)***
+> - [ ] **7. Médicaments *(4 diagnostics)***
+> - [ ] **8. Hospitalisations et antécédents chirurgicaux *(Violence domestique)***
+> 	- [ ] Hospitalisations
+> 	- [ ] Antécédents chirurgicaux
+> - [ ] **9. Antécédents familiaux *(Violence domestique)***
+> - [ ] **10. Habitudes et mode de vie *(Violence domestique)***
+> 	- [ ] Travail
+> 	- [ ] Domicile
+> 	- [ ] Alcool
+> 	- [ ] Drogues récréatives
+> 	- [ ] Tabac
+> - [ ] **11. Histoire spécifique de violence domestique *(Violence domestique)***
+> 	- [ ] Relation avec le conjoint
+> 	- [ ] Peur pour sa sécurité/celle des enfants
+> 	- [ ] Arme à feu à la maison
+> 	- [ ] Plan d'urgence
+> 	- [ ] Système de soutien
+> 	- [ ] Consommation alcool/drogues du conjoint
+> 	- [ ] Dépression
+> 	- [ ] Régularité des abus
+> - [ ] **12. Déroulement de la chute *(HypoTA orthostatique)***
+> - [ ] **13. Vertiges *(HypoTA orthostatique)***
+> - [ ] **14. Perte de connaissance *(Chute multifactorielle · HypoTA orthostatique)***
+> - [ ] **15. Symptômes cardiaques *(HypoTA orthostatique)***
+> - [ ] **16. Impact crânien *(HypoTA orthostatique)***
+> - [ ] **17. Aide après la chute *(HypoTA orthostatique)***
+> - [ ] **18. Chutes antérieures *(HypoTA orthostatique)***
+> - [ ] **19. Peur de chuter *(HypoTA orthostatique)***
+> - [ ] **20. Mobilité et habitat *(HypoTA orthostatique)***
+> - [ ] **21. Aides techniques *(HypoTA orthostatique)***
+> - [ ] **22. Distance de marche *(HypoTA orthostatique)***
+> - [ ] **23. Situation de logement *(HypoTA orthostatique)***
+> - [ ] **24. Escaliers *(HypoTA orthostatique)***
+> - [ ] **25. Seuils *(HypoTA orthostatique)***
+> - [ ] **26. BADL *(HypoTA orthostatique)***
+> - [ ] **27. Transferts *(HypoTA orthostatique)***
+> - [ ] **28. Toilette et douche *(HypoTA orthostatique)***
+> - [ ] **29. Habillage *(HypoTA orthostatique)***
+> - [ ] **30. Aller aux toilettes *(HypoTA orthostatique)***
+> - [ ] **31. Alimentation *(HypoTA orthostatique)***
+> - [ ] **32. IADL *(HypoTA orthostatique)***
+> - [ ] **33. Courses *(HypoTA orthostatique)***
+> - [ ] **34. Cuisine *(HypoTA orthostatique)***
+> - [ ] **35. Ménage *(HypoTA orthostatique)***
+> - [ ] **36. Finances *(HypoTA orthostatique)***
+> - [ ] **37. Transports *(HypoTA orthostatique)***
+> - [ ] **38. Rendez-vous *(HypoTA orthostatique)***
+> - [ ] **39. Anamnèse sociale *(Accident vasculaire cérébral · Chute multifactorielle · HypoTA orthostatique)***
+> - [ ] **40. État civil *(HypoTA orthostatique)***
+> - [ ] **41. Profession *(HypoTA orthostatique)***
+> - [ ] **42. Loisirs *(HypoTA orthostatique)***
+> - [ ] **43. Proches *(HypoTA orthostatique)***
+> - [ ] **44. Cognition, psychisme et sommeil *(HypoTA orthostatique)***
+> - [ ] **45. Cognition *(HypoTA orthostatique)***
+> - [ ] **46. Humeur *(HypoTA orthostatique)***
+> - [ ] **47. Sommeil *(HypoTA orthostatique)***
+> - [ ] **48. Nutrition, poids et appareil locomoteur *(HypoTA orthostatique)***
+> - [ ] **49. Nutrition *(HypoTA orthostatique)***
+> - [ ] **50. Évolution pondérale *(HypoTA orthostatique)***
+> - [ ] **51. Douleurs articulaires et squelettiques *(HypoTA orthostatique)***
+> - [ ] **52. Élimination et continence *(HypoTA orthostatique)***
+> - [ ] **53. Selles *(HypoTA orthostatique)***
+> - [ ] **54. Miction *(HypoTA orthostatique)***
+> - [ ] **55. Continence *(HypoTA orthostatique)***
+> - [ ] **56. Vertiges et sensorialité *(HypoTA orthostatique)***
+> - [ ] **57. Vision *(Accident vasculaire cérébral · Chute multifactorielle · HypoTA orthostatique)***
+> - [ ] **58. Audition *(Accident vasculaire cérébral · HypoTA orthostatique)***
+> - [ ] **59. Présentation avec nom, fonction et tâche *(Accident vasculaire cérébral · Chute multifactorielle)***
+> - [ ] **60. Moment de l'événement *(Accident vasculaire cérébral)***
+> - [ ] **61. Dernier moment où la patiente était normale *(Accident vasculaire cérébral)***
+> - [ ] **62. Circonstances de la chute *(Accident vasculaire cérébral)***
+> - [ ] **63. Force musculaire *(Accident vasculaire cérébral)***
+> - [ ] **64. Sensibilité *(Accident vasculaire cérébral)***
+> - [ ] **65. Motricité fine *(Accident vasculaire cérébral)***
+> - [ ] **66. Langage *(Accident vasculaire cérébral)***
+> - [ ] **67. Antécédents personnels *(Accident vasculaire cérébral)***
 > 	- [ ] AVC antérieurs
 > 	- [ ] Autres pathologies
-> - [ ] **58. Toxiques *(Accident vasculaire cérébral · Chute multifactorielle)***
-> - [ ] **59. Facteurs de risque cardiovasculaire *(Accident vasculaire cérébral)***
+> - [ ] **68. Toxiques *(Accident vasculaire cérébral · Chute multifactorielle)***
+> - [ ] **69. Facteurs de risque cardiovasculaire *(Accident vasculaire cérébral)***
 > 	- [ ] Hypertension
 > 	- [ ] Hyperlipidémie
-> - [ ] **60. Activités sportives, loisirs *(Accident vasculaire cérébral)***
-> - [ ] **61. Anamnèse familiale *(Accident vasculaire cérébral · Chute multifactorielle)***
+> - [ ] **70. Activités sportives, loisirs *(Accident vasculaire cérébral)***
+> - [ ] **71. Anamnèse familiale *(Accident vasculaire cérébral · Chute multifactorielle)***
 > 	- [ ] AVC *(Accident vasculaire cérébral)*
 > 	- [ ] Maladies cardiaques *(Accident vasculaire cérébral)*
 > 	- [ ] Hypertension *(Accident vasculaire cérébral)*
 > 	- [ ] Diabète *(Accident vasculaire cérébral)*
-> - [ ] **62. Événement *(Chute multifactorielle)***
-> - [ ] **63. Temporalité *(Chute multifactorielle)***
-> - [ ] **64. Premier épisode *(Chute multifactorielle)***
-> - [ ] **65. Douleurs *(Chute multifactorielle)***
-> - [ ] **66. Fièvre *(Chute multifactorielle)***
-> - [ ] **67. Sensation de malaise *(Chute multifactorielle)***
-> - [ ] **68. Autres symptômes *(Chute multifactorielle)***
+> - [ ] **72. Événement *(Chute multifactorielle)***
+> - [ ] **73. Temporalité *(Chute multifactorielle)***
+> - [ ] **74. Premier épisode *(Chute multifactorielle)***
+> - [ ] **75. Douleurs *(Chute multifactorielle)***
+> - [ ] **76. Fièvre *(Chute multifactorielle)***
+> - [ ] **77. Sensation de malaise *(Chute multifactorielle)***
+> - [ ] **78. Autres symptômes *(Chute multifactorielle)***
 > 	- [ ] Faiblesse
 > 	- [ ] Troubles sensitifs
 > 	- [ ] Céphalées
 > 	- [ ] Vertiges
 > 	- [ ] Palpitations
 > 	- [ ] Dyspnée
-> - [ ] **69. Antécédents médicaux *(Chute multifactorielle · Fracture du membre supérieur (humérus, tête radiale))***
-> 	- [ ] Diabète *(Chute multifactorielle)*
-> 	- [ ] Gonarthrose bilatérale *(Chute multifactorielle)*
-> 	- [ ] Hypertension artérielle *(Chute multifactorielle)*
-> 	- [ ] Problème cardiaque *(Chute multifactorielle)*
-> - [ ] **70. Médicaments actuels *(Chute multifactorielle)***
+> - [ ] **79. Médicaments actuels *(Chute multifactorielle)***
 > 	- [ ] Tramadol
 > 	- [ ] Somnifère
 > 	- [ ] Sulfonylurée
 > 	- [ ] Aspirine
-> - [ ] **71. Maladies récentes/Hospitalisations *(Chute multifactorielle)***
-> - [ ] **72. Habitudes alimentaires *(Chute multifactorielle)***
-> - [ ] **73. Condition physique *(Chute multifactorielle)***
-> - [ ] **74. Allergies *(Chute multifactorielle)***
-> - [ ] **75. Motif principal *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **76. Mécanisme du traumatisme *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **80. Maladies récentes/Hospitalisations *(Chute multifactorielle)***
+> - [ ] **81. Habitudes alimentaires *(Chute multifactorielle)***
+> - [ ] **82. Condition physique *(Chute multifactorielle)***
+> - [ ] **83. Mécanisme du traumatisme *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Circonstance
 > 	- [ ] Énergie
 > 	- [ ] Position lors de la réception
 > 	- [ ] Autres blessures que coude
-> - [ ] **77. Caractérisation de la douleur *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **84. Caractérisation de la douleur *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Localisation
 > 	- [ ] Intensité
 > 	- [ ] Qualité
 > 	- [ ] Évolution
 > 	- [ ] Irradiation
 > 	- [ ] Facteurs atténuants/aggravants
-> - [ ] **78. Présence de symptômes neuro-vasculaires associés au trauma *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **85. Présence de symptômes neuro-vasculaires associés au trauma *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Impotence
 > 	- [ ] Symptômes neuro-vasculaires
-> - [ ] **79. Antécédents chirurgicaux *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **80. Santé actuelle *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **86. Antécédents chirurgicaux *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **87. Santé actuelle *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Maladies actuelles
 > 	- [ ] Médicaments
 > 	- [ ] Allergies
-> - [ ] **81. Impact du traumatisme sur le quotidien de la patiente *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **88. Impact du traumatisme sur le quotidien de la patiente *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Membre dominant
 > 	- [ ] Activités quotidiennes affectées
 
 > [!tip] 🩺 Status
-> - [ ] **1. MMS *(HypoTA orthostatique)***
-> - [ ] **2. Nerfs crâniens *(Accident vasculaire cérébral · HypoTA orthostatique)***
-> - [ ] **3. Acuité visuelle *(HypoTA orthostatique)***
-> - [ ] **4. Audition *(HypoTA orthostatique)***
-> - [ ] **5. Motricité *(HypoTA orthostatique)***
-> - [ ] **6. Sensibilité *(HypoTA orthostatique)***
-> - [ ] **7. Épreuve des bras tendus *(HypoTA orthostatique)***
-> - [ ] **8. Doigt-nez *(HypoTA orthostatique)***
-> - [ ] **9. Diadococinésie *(HypoTA orthostatique)***
-> - [ ] **10. Vibrations *(HypoTA orthostatique)***
-> - [ ] **11. Auscultation cardiaque *(HypoTA orthostatique)***
-> - [ ] **12. Auscultation pulmonaire *(HypoTA orthostatique)***
-> - [ ] **13. Veines jugulaires *(HypoTA orthostatique)***
-> - [ ] **14. Recherche d’œdèmes *(HypoTA orthostatique)***
-> - [ ] **15. TA couché-debout (Schellong) *(HypoTA orthostatique)***
-> - [ ] **16. Pouls radial *(HypoTA orthostatique)***
-> - [ ] **17. Pouls des pieds *(HypoTA orthostatique)***
-> - [ ] **18. Voie orale *(HypoTA orthostatique)***
-> - [ ] **19. Inspection *(HypoTA orthostatique)***
-> - [ ] **20. Auscultation *(Accident vasculaire cérébral · HypoTA orthostatique)***
+> - [ ] **1. Mesures d'hygiène *(Violence domestique)***
+> 	- [ ] Lavage des mains
+> 	- [ ] Respect de la pudeur avec drap
+> - [ ] **2. Vérification corporelle complète *(Violence domestique)***
+> - [ ] **3. Examen de la tête, yeux, oreilles, nez et gorge *(Violence domestique)***
+> 	- [ ] Inspection de la tête
+> 	- [ ] Palpation de la tête
+> 	- [ ] Inspection des conjonctives
+> 	- [ ] Inspection des sclères
+> 	- [ ] Examen des pupilles
+> 	- [ ] Examen des muscles oculomoteurs
+> - [ ] **4. Examen des extrémités *(Violence domestique)***
+> 	- [ ] Inspection des membres supérieurs
+> 	- [ ] Inspection des mains
+> 	- [ ] Inspection des membres inférieurs
+> - [ ] **5. Examen cutané *(Violence domestique)***
+> - [ ] **6. MMS *(HypoTA orthostatique)***
+> - [ ] **7. Nerfs crâniens *(Accident vasculaire cérébral · HypoTA orthostatique)***
+> - [ ] **8. Acuité visuelle *(HypoTA orthostatique)***
+> - [ ] **9. Audition *(HypoTA orthostatique)***
+> - [ ] **10. Motricité *(HypoTA orthostatique)***
+> - [ ] **11. Sensibilité *(HypoTA orthostatique)***
+> - [ ] **12. Épreuve des bras tendus *(HypoTA orthostatique)***
+> - [ ] **13. Doigt-nez *(HypoTA orthostatique)***
+> - [ ] **14. Diadococinésie *(HypoTA orthostatique)***
+> - [ ] **15. Vibrations *(HypoTA orthostatique)***
+> - [ ] **16. Auscultation cardiaque *(HypoTA orthostatique)***
+> - [ ] **17. Auscultation pulmonaire *(HypoTA orthostatique)***
+> - [ ] **18. Veines jugulaires *(HypoTA orthostatique)***
+> - [ ] **19. Recherche d’œdèmes *(HypoTA orthostatique)***
+> - [ ] **20. TA couché-debout (Schellong) *(HypoTA orthostatique)***
+> - [ ] **21. Pouls radial *(HypoTA orthostatique)***
+> - [ ] **22. Pouls des pieds *(HypoTA orthostatique)***
+> - [ ] **23. Voie orale *(HypoTA orthostatique)***
+> - [ ] **24. Inspection *(HypoTA orthostatique)***
+> - [ ] **25. Auscultation *(Accident vasculaire cérébral · HypoTA orthostatique)***
 > 	- [ ] Auscultation cardiaque *(Accident vasculaire cérébral)*
 > 	- [ ] Auscultation des carotides *(Accident vasculaire cérébral)*
-> - [ ] **21. Palpation *(HypoTA orthostatique)***
-> - [ ] **22. Redressement *(HypoTA orthostatique)***
-> - [ ] **23. Transfert *(HypoTA orthostatique)***
-> - [ ] **24. Station debout *(HypoTA orthostatique)***
-> - [ ] **25. Analyse de la marche *(HypoTA orthostatique)***
-> - [ ] **26. Orientation et état de conscience *(Accident vasculaire cérébral)***
-> - [ ] **27. Examen de la marche *(Accident vasculaire cérébral)***
+> - [ ] **26. Palpation *(HypoTA orthostatique)***
+> - [ ] **27. Redressement *(HypoTA orthostatique)***
+> - [ ] **28. Transfert *(HypoTA orthostatique)***
+> - [ ] **29. Station debout *(HypoTA orthostatique)***
+> - [ ] **30. Analyse de la marche *(HypoTA orthostatique)***
+> - [ ] **31. Orientation et état de conscience *(Accident vasculaire cérébral)***
+> - [ ] **32. Examen de la marche *(Accident vasculaire cérébral)***
 > 	- [ ] Marche en tandem
-> - [ ] **28. Tests de coordination *(Accident vasculaire cérébral)***
+> - [ ] **33. Tests de coordination *(Accident vasculaire cérébral)***
 > 	- [ ] Test de Romberg
 > 	- [ ] Test d'Unterberger
 > 	- [ ] Diadococinésie
 > 	- [ ] Test de préhension des bras
 > 	- [ ] Épreuve doigt-nez
 > 	- [ ] Épreuve talon-genou
-> - [ ] **29. Examen moteur *(Accident vasculaire cérébral)***
-> - [ ] **30. Examen sensitif *(Accident vasculaire cérébral)***
-> - [ ] **31. Recherche d'apraxie *(Accident vasculaire cérébral)***
-> - [ ] **32. Réflexes *(Accident vasculaire cérébral)***
+> - [ ] **34. Examen moteur *(Accident vasculaire cérébral)***
+> - [ ] **35. Examen sensitif *(Accident vasculaire cérébral)***
+> - [ ] **36. Recherche d'apraxie *(Accident vasculaire cérébral)***
+> - [ ] **37. Réflexes *(Accident vasculaire cérébral)***
 > 	- [ ] Réflexes ostéo-tendineux
 > 	- [ ] Signe de Babinski
-> - [ ] **33. Signes méningés *(Accident vasculaire cérébral)***
-> - [ ] **34. Status cardiaque et pulmonaire *(Chute multifactorielle)***
-> - [ ] **35. Neurostatus *(Chute multifactorielle)***
+> - [ ] **38. Signes méningés *(Accident vasculaire cérébral)***
+> - [ ] **39. Status cardiaque et pulmonaire *(Chute multifactorielle)***
+> - [ ] **40. Neurostatus *(Chute multifactorielle)***
 > 	- [ ] Ataxie
 > 	- [ ] Tests cérébelleux
 > 	- [ ] Sensibilité
 > 	- [ ] Motricité
-> - [ ] **36. Test de vision *(Chute multifactorielle)***
-> - [ ] **37. Observation avec comparaison des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **38. Palpation des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **41. Test de vision *(Chute multifactorielle)***
+> - [ ] **42. Observation avec comparaison des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **43. Palpation des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Coudes
 > 	- [ ] Bras et épaules
 > 	- [ ] Avant-bras et poignets
-> - [ ] **39. Perfusion distale des 2 membres supérieurs, avec comparaison *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **44. Perfusion distale des 2 membres supérieurs, avec comparaison *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Pouls périphériques
 > 	- [ ] Temps de recoloration ou gradient thermique
-> - [ ] **40. Sensibilité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **45. Sensibilité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Radial
 > 	- [ ] Médian
 > 	- [ ] Ulnaire
-> - [ ] **41. Motricité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **46. Motricité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Radial
 > 	- [ ] Médian
 > 	- [ ] Ulnaire
@@ -279,15 +346,15 @@ cssclasses:
 > - [ ] **5. Information du neurologue**
 
 > [!success] 💊 Management — si Chute multifactorielle
-> - [ ] **1. Diagnostics différentiels - Chute chez patient âgé**
-> - [ ] **2. Examens de laboratoire**
+> - [ ] **1. Examens complémentaires**
+> 	- [ ] ECG
+> 	- [ ] Radiographie thoracique
+> - [ ] **2. Diagnostics différentiels - Chute chez patient âgé**
+> - [ ] **3. Examens de laboratoire**
 > 	- [ ] FSC
 > 	- [ ] Marqueurs inflammatoires
 > 	- [ ] Vitamine B12
 > 	- [ ] Glycémie
-> - [ ] **3. Examens complémentaires**
-> 	- [ ] ECG
-> 	- [ ] Radiographie thoracique
 > - [ ] **4. Bilan urinaire**
 > - [ ] **5. Imagerie cérébrale**
 > - [ ] **6. Échographie des carotides**
@@ -325,3 +392,28 @@ cssclasses:
 
 > [!success] 💊 Management — si Pneumothorax
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Violence domestique
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens complémentaires**
+> 	- [ ] FSC
+> 	- [ ] Frottis sanguin périphérique
+> 	- [ ] Temps de saignement, TP, TCA
+> - [ ] **3. Tests spécifiques maladie de von Willebrand**
+> 	- [ ] Dosage de l'activité du facteur VIII
+> 	- [ ] Dosage de l'antigène du facteur von Willebrand
+> 	- [ ] Dosage du cofacteur de la ristocétine
+> - [ ] **4. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
+> - [ ] **5. Conseil et soutien**
+> 	- [ ] Conseil sur les options de soutien pour la violence domestique
+> 	- [ ] Réaction appropriée au défi
+> 	- [ ] Approche empathique et non-jugeante
+> 	- [ ] Information sur la confidentialité
+> 	- [ ] Évaluation du plan de sécurité
+> 	- [ ] Documentation appropriée

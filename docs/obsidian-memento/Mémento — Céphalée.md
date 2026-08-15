@@ -5,7 +5,7 @@ type: memento-ecos-ssp
 ssp: "Céphalée"
 specialite: "Neurologie"
 cas: 6
-diagnostics: 6
+diagnostics: 5
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -64,10 +64,10 @@ cssclasses:
 
 # Céphalée ⭐️
 
-*Neurologie · 6 grilles · 6 diagnostics distincts* — [[SSP — Céphalée]]
+*Neurologie · 6 grilles · 5 diagnostics distincts* — [[SSP — Céphalée]]
 
 > [!abstract] Les 6 grilles fusionnées
-> - **AMBOSS-26** — Crise migraineuse `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-26_-_Ce_phale_e_-_Homme_29_ans_-_Grille_ECOS.html>)
+> - **AMBOSS-26** — Migraine `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-26_-_Ce_phale_e_-_Homme_29_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-33** — Hémorragie sous-arachnoïdienne `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-33_-_Ce_phale_e_-_Femme_55_ans_-_Grille_ECOS.html>)
 > - **AZYGOS-3** — Migraine `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/74108006-36f7-4056-8383-2346f553295e.json>)
 > - **German-8** — Céphalée du restaurant chinois `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-8_-_Ce_phale_es_-_Grille_ECOS.html>)
@@ -75,23 +75,23 @@ cssclasses:
 > - **RESCOS-10** — Thrombose veineuse cérébrale `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-10_-_Ce_phale_e_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(Crise migraineuse · Hémorragie sous-arachnoïdienne)***
-> - [ ] **2. Caractérisation de la céphalée *(Crise migraineuse · Hémorragie sous-arachnoïdienne · Thrombose veineuse cérébrale)***
+> - [ ] **1. Motif principal *(2 grilles sur 6)***
+> - [ ] **2. Caractérisation de la céphalée *(3 grilles sur 6)***
 > 	- [ ] Localisation
-> 	- [ ] Intensité (échelle 0-10) *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Intensité (échelle 0-10) *(2 grilles sur 6)*
 > 	- [ ] Qualité
 > 	- [ ] Début
-> 	- [ ] Événements précipitants *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Progression/constant/intermittent *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Épisodes antérieurs *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Irradiation *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Facteurs améliorants *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Facteurs aggravants *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Symptômes associés *(Crise migraineuse · Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Événements précipitants *(2 grilles sur 6)*
+> 	- [ ] Progression/constant/intermittent *(2 grilles sur 6)*
+> 	- [ ] Épisodes antérieurs *(2 grilles sur 6)*
+> 	- [ ] Irradiation *(2 grilles sur 6)*
+> 	- [ ] Facteurs améliorants *(2 grilles sur 6)*
+> 	- [ ] Facteurs aggravants *(2 grilles sur 6)*
+> 	- [ ] Symptômes associés *(2 grilles sur 6)*
 > 	- [ ] Intensité *(Thrombose veineuse cérébrale)*
 > 	- [ ] Évolution *(Thrombose veineuse cérébrale)*
 > 	- [ ] Durée *(Thrombose veineuse cérébrale)*
-> - [ ] **3. Recherche de symptômes spécifiques *(Crise migraineuse)***
+> - [ ] **3. Recherche de symptômes spécifiques *(1 grille sur 6)***
 > 	- [ ] Traumatisme
 > 	- [ ] Fièvre/frissons
 > 	- [ ] Problèmes de sommeil
@@ -107,18 +107,18 @@ cssclasses:
 > 	- [ ] Congestion nasale/nez qui coule
 > 	- [ ] Agitation
 > 	- [ ] Transpiration
-> - [ ] **4. Antécédents médicaux *(4 diagnostics)***
-> - [ ] **5. Allergies *(5 diagnostics)***
-> 	- [ ] Allergies *(Crise migraineuse)*
-> 	- [ ] Type de réaction *(Crise migraineuse)*
-> - [ ] **6. Médicaments *(5 diagnostics)***
+> - [ ] **4. Antécédents médicaux *(Hémorragie sous-arachnoïdienne · Migraine · Méningite)***
+> - [ ] **5. Allergies *(4 diagnostics)***
+> 	- [ ] Allergies *(1 grille sur 6)*
+> 	- [ ] Type de réaction *(1 grille sur 6)*
+> - [ ] **6. Médicaments *(4 diagnostics)***
 > 	- [ ] Antihypertenseurs *(Céphalée du restaurant chinois)*
 > 	- [ ] Antalgiques *(Céphalée du restaurant chinois)*
-> - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Crise migraineuse · Hémorragie sous-arachnoïdienne)***
+> - [ ] **7. Hospitalisations et antécédents chirurgicaux *(2 grilles sur 6)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **8. Antécédents familiaux *(Crise migraineuse · Céphalée du restaurant chinois · Migraine)***
-> - [ ] **9. Habitudes et mode de vie *(Crise migraineuse · Hémorragie sous-arachnoïdienne)***
+> - [ ] **8. Antécédents familiaux *(Céphalée du restaurant chinois · Migraine)***
+> - [ ] **9. Habitudes et mode de vie *(2 grilles sur 6)***
 > 	- [ ] Travail
 > 	- [ ] Domicile
 > 	- [ ] Alcool
@@ -143,57 +143,57 @@ cssclasses:
 > - [ ] **11. Contacts malades et antécédents familiaux *(Hémorragie sous-arachnoïdienne)***
 > 	- [ ] Contacts malades
 > 	- [ ] Antécédents familiaux
-> - [ ] **12. Question d'ouverture *(Migraine)***
-> - [ ] **13. Dimension temporelle *(Migraine)***
-> - [ ] **14. Épisode actuel *(Migraine)***
-> - [ ] **15. Début *(Migraine)***
-> - [ ] **16. Durée des crises *(Migraine)***
-> - [ ] **17. Fréquence et évolution *(Migraine)***
-> - [ ] **18. Localisation *(Migraine)***
-> - [ ] **19. Irradiation *(Céphalée du restaurant chinois · Migraine)***
-> - [ ] **20. Qualité *(Migraine)***
-> - [ ] **21. Intensité de la douleur *(Céphalée du restaurant chinois · Migraine)***
-> - [ ] **22. Facteurs aggravants *(Céphalée du restaurant chinois · Migraine)***
-> - [ ] **23. Facteurs soulageants *(Migraine)***
-> - [ ] **24. Bilans neurologiques antérieurs *(Migraine)***
-> - [ ] **25. Retentissement des symptômes *(Migraine)***
-> - [ ] **26. Symptômes associés *(Migraine · Thrombose veineuse cérébrale)***
+> - [ ] **12. Question d'ouverture *(1 grille sur 6)***
+> - [ ] **13. Dimension temporelle *(1 grille sur 6)***
+> - [ ] **14. Épisode actuel *(1 grille sur 6)***
+> - [ ] **15. Début *(1 grille sur 6)***
+> - [ ] **16. Durée des crises *(1 grille sur 6)***
+> - [ ] **17. Fréquence et évolution *(1 grille sur 6)***
+> - [ ] **18. Localisation *(1 grille sur 6)***
+> - [ ] **19. Irradiation *(2 grilles sur 6)***
+> - [ ] **20. Qualité *(1 grille sur 6)***
+> - [ ] **21. Intensité de la douleur *(2 grilles sur 6)***
+> - [ ] **22. Facteurs aggravants *(2 grilles sur 6)***
+> - [ ] **23. Facteurs soulageants *(1 grille sur 6)***
+> - [ ] **24. Bilans neurologiques antérieurs *(1 grille sur 6)***
+> - [ ] **25. Retentissement des symptômes *(1 grille sur 6)***
+> - [ ] **26. Symptômes associés *(2 grilles sur 6)***
 > 	- [ ] Nausées/vomissements *(Thrombose veineuse cérébrale)*
 > 	- [ ] Photophobie/phonophobie *(Thrombose veineuse cérébrale)*
 > 	- [ ] Symptômes neurologiques *(Thrombose veineuse cérébrale)*
 > 	- [ ] Fièvre *(Thrombose veineuse cérébrale)*
 > 	- [ ] Éruption cutanée *(Thrombose veineuse cérébrale)*
-> - [ ] **27. Nausées / vomissements *(Migraine)***
-> - [ ] **28. Photophobie *(Migraine)***
-> - [ ] **29. Phonophobie *(Migraine)***
-> - [ ] **30. Symptômes d'aura *(Migraine)***
-> - [ ] **31. Symptômes autonomes *(Migraine)***
-> - [ ] **32. Anamnèse des déclencheurs *(Migraine)***
-> - [ ] **33. Sommeil *(Migraine)***
-> - [ ] **34. Stress *(Migraine)***
-> - [ ] **35. Menstruation *(Migraine)***
-> - [ ] **36. Alimentation / caféine / alcool *(Migraine)***
-> - [ ] **37. Signes d'alarme des céphalées *(Migraine)***
-> - [ ] **38. Début en coup de tonnerre *(Migraine)***
-> - [ ] **39. Céphalée maximale *(Migraine)***
-> - [ ] **40. Fièvre *(Céphalée du restaurant chinois · Migraine)***
-> - [ ] **41. Raideur de nuque *(Céphalée du restaurant chinois · Migraine)***
-> - [ ] **42. Trouble de la conscience *(Migraine)***
-> - [ ] **43. Déficit neurologique focal *(Migraine)***
-> - [ ] **44. Grossesse *(Migraine)***
-> - [ ] **45. Traumatisme *(Céphalée du restaurant chinois · Migraine)***
-> - [ ] **46. Abus médicamenteux *(Migraine)***
-> - [ ] **47. Dépistage de l'artérite à cellules géantes *(Migraine)***
-> - [ ] **48. Diagnostic antérieur de céphalées *(Migraine)***
-> - [ ] **49. Antécédents chirurgicaux *(Migraine)***
-> - [ ] **50. Désir de grossesse *(Migraine)***
-> - [ ] **51. Noxes *(Migraine)***
-> - [ ] **52. Tabagisme *(Migraine)***
-> - [ ] **53. Drogues *(Migraine)***
-> - [ ] **54. Migraine dans la famille *(Migraine)***
-> - [ ] **55. Profession *(Migraine)***
-> - [ ] **56. Facteurs de stress psychosociaux *(Migraine)***
-> - [ ] **57. Situation sociale *(Migraine)***
+> - [ ] **27. Nausées / vomissements *(1 grille sur 6)***
+> - [ ] **28. Photophobie *(1 grille sur 6)***
+> - [ ] **29. Phonophobie *(1 grille sur 6)***
+> - [ ] **30. Symptômes d'aura *(1 grille sur 6)***
+> - [ ] **31. Symptômes autonomes *(1 grille sur 6)***
+> - [ ] **32. Anamnèse des déclencheurs *(1 grille sur 6)***
+> - [ ] **33. Sommeil *(1 grille sur 6)***
+> - [ ] **34. Stress *(1 grille sur 6)***
+> - [ ] **35. Menstruation *(1 grille sur 6)***
+> - [ ] **36. Alimentation / caféine / alcool *(1 grille sur 6)***
+> - [ ] **37. Signes d'alarme des céphalées *(1 grille sur 6)***
+> - [ ] **38. Début en coup de tonnerre *(1 grille sur 6)***
+> - [ ] **39. Céphalée maximale *(1 grille sur 6)***
+> - [ ] **40. Fièvre *(2 grilles sur 6)***
+> - [ ] **41. Raideur de nuque *(2 grilles sur 6)***
+> - [ ] **42. Trouble de la conscience *(1 grille sur 6)***
+> - [ ] **43. Déficit neurologique focal *(1 grille sur 6)***
+> - [ ] **44. Grossesse *(1 grille sur 6)***
+> - [ ] **45. Traumatisme *(2 grilles sur 6)***
+> - [ ] **46. Abus médicamenteux *(1 grille sur 6)***
+> - [ ] **47. Dépistage de l'artérite à cellules géantes *(1 grille sur 6)***
+> - [ ] **48. Diagnostic antérieur de céphalées *(1 grille sur 6)***
+> - [ ] **49. Antécédents chirurgicaux *(1 grille sur 6)***
+> - [ ] **50. Désir de grossesse *(1 grille sur 6)***
+> - [ ] **51. Noxes *(1 grille sur 6)***
+> - [ ] **52. Tabagisme *(1 grille sur 6)***
+> - [ ] **53. Drogues *(1 grille sur 6)***
+> - [ ] **54. Migraine dans la famille *(1 grille sur 6)***
+> - [ ] **55. Profession *(1 grille sur 6)***
+> - [ ] **56. Facteurs de stress psychosociaux *(1 grille sur 6)***
+> - [ ] **57. Situation sociale *(1 grille sur 6)***
 > - [ ] **58. Présentation avec nom, fonction et tâche *(Céphalée du restaurant chinois · Méningite)***
 > - [ ] **59. Question ouverte d'introduction → Symptôme principal *(Céphalée du restaurant chinois)***
 > - [ ] **60. Localisation des douleurs *(Céphalée du restaurant chinois)***
@@ -277,22 +277,22 @@ cssclasses:
 > 	- [ ] État psychique
 
 > [!tip] 🩺 Status
-> - [ ] **1. Mesures d'hygiène *(Crise migraineuse · Hémorragie sous-arachnoïdienne)***
+> - [ ] **1. Mesures d'hygiène *(2 grilles sur 6)***
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
-> - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(Crise migraineuse · Hémorragie sous-arachnoïdienne)***
+> - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(2 grilles sur 6)***
 > 	- [ ] Inspection de la tête
 > 	- [ ] Palpation de la tête
-> 	- [ ] Inspection des conjonctives *(Crise migraineuse)*
-> 	- [ ] Évaluation de l'acuité visuelle (échelle de Snellen) *(Crise migraineuse)*
+> 	- [ ] Inspection des conjonctives *(1 grille sur 6)*
+> 	- [ ] Évaluation de l'acuité visuelle (échelle de Snellen) *(1 grille sur 6)*
 > 	- [ ] Fond d'œil direct
-> - [ ] **3. Examen du cou *(Crise migraineuse)***
+> - [ ] **3. Examen du cou *(1 grille sur 6)***
 > 	- [ ] Inspection du cou
 > 	- [ ] Palpation du cou
-> - [ ] **4. Examen neurologique *(Crise migraineuse · Hémorragie sous-arachnoïdienne)***
+> - [ ] **4. Examen neurologique *(2 grilles sur 6)***
 > 	- [ ] Évaluation de l'orientation dans le temps, l'espace et les personnes
 > 	- [ ] Examen ciblé des nerfs crâniens
-> 	- [ ] Recherche de méningisme *(Crise migraineuse)*
+> 	- [ ] Recherche de méningisme *(1 grille sur 6)*
 > 	- [ ] Examen ciblé des mouvements passifs et actifs
 > 	- [ ] Examen ciblé de la sensibilité
 > 	- [ ] Examen ciblé des réflexes ostéo-tendineux
@@ -307,27 +307,27 @@ cssclasses:
 > 	- [ ] Signe de Brudzinski *(Hémorragie sous-arachnoïdienne)*
 > - [ ] **5. Examen cardiovasculaire *(Hémorragie sous-arachnoïdienne)***
 > 	- [ ] Auscultation cardiaque
-> - [ ] **6. Méningisme *(Céphalée du restaurant chinois · Migraine)***
-> - [ ] **7. Pupilles *(Migraine)***
-> - [ ] **8. Oculomotricité *(Migraine)***
-> - [ ] **9. Mouvements oculaires *(Migraine)***
-> - [ ] **10. Acuité visuelle / champ visuel *(Migraine)***
-> - [ ] **11. Nerfs crâniens *(Migraine)***
-> - [ ] **12. Nerf VII | Facial *(Migraine)***
-> - [ ] **13. Nerfs IX-XII | Tronc cérébral *(Migraine)***
-> - [ ] **14. Nerf V | Trijumeau *(Migraine)***
-> - [ ] **15. Motricité *(Migraine)***
-> - [ ] **16. Sensibilité *(Migraine)***
-> - [ ] **17. Réflexes *(Migraine)***
-> - [ ] **18. Coordination *(Migraine)***
-> - [ ] **19. Démarche *(Migraine)***
-> - [ ] **20. Tête *(Migraine)***
-> - [ ] **21. Examen des sinus *(Migraine)***
-> - [ ] **22. Inspection *(Migraine)***
-> - [ ] **23. Palpation de la voûte crânienne *(Migraine)***
-> - [ ] **24. Colonne cervicale *(Migraine)***
-> - [ ] **25. Articulation temporo-mandibulaire *(Migraine)***
-> - [ ] **26. Artère temporale *(Migraine)***
+> - [ ] **6. Méningisme *(2 grilles sur 6)***
+> - [ ] **7. Pupilles *(1 grille sur 6)***
+> - [ ] **8. Oculomotricité *(1 grille sur 6)***
+> - [ ] **9. Mouvements oculaires *(1 grille sur 6)***
+> - [ ] **10. Acuité visuelle / champ visuel *(1 grille sur 6)***
+> - [ ] **11. Nerfs crâniens *(1 grille sur 6)***
+> - [ ] **12. Nerf VII | Facial *(1 grille sur 6)***
+> - [ ] **13. Nerfs IX-XII | Tronc cérébral *(1 grille sur 6)***
+> - [ ] **14. Nerf V | Trijumeau *(1 grille sur 6)***
+> - [ ] **15. Motricité *(1 grille sur 6)***
+> - [ ] **16. Sensibilité *(1 grille sur 6)***
+> - [ ] **17. Réflexes *(1 grille sur 6)***
+> - [ ] **18. Coordination *(1 grille sur 6)***
+> - [ ] **19. Démarche *(1 grille sur 6)***
+> - [ ] **20. Tête *(1 grille sur 6)***
+> - [ ] **21. Examen des sinus *(1 grille sur 6)***
+> - [ ] **22. Inspection *(1 grille sur 6)***
+> - [ ] **23. Palpation de la voûte crânienne *(1 grille sur 6)***
+> - [ ] **24. Colonne cervicale *(1 grille sur 6)***
+> - [ ] **25. Articulation temporo-mandibulaire *(1 grille sur 6)***
+> - [ ] **26. Artère temporale *(1 grille sur 6)***
 > - [ ] **27. Signes vitaux *(Céphalée du restaurant chinois)***
 > - [ ] **28. Neurostatus *(Céphalée du restaurant chinois)***
 > 	- [ ] Pupilles
@@ -371,35 +371,6 @@ cssclasses:
 > [!success] 💊 Management — si Algie vasculaire (cluster)
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
-> [!success] 💊 Management — si Crise migraineuse
-> - [ ] **1. Hypothèses diagnostiques**
-> - [ ] **2. Drapeaux rouges à rechercher**
-> 	- [ ] Céphalée sévère implacable
-> 	- [ ] Fièvre
-> 	- [ ] Déficits neurologiques focaux
-> 	- [ ] Convulsions
-> 	- [ ] Troubles de conscience
-> 	- [ ] Signes d'hypertension intracrânienne (ex: perte de connaissance, œdème papillaire)
-> 	- [ ] Signes de méningisme
-> 	- [ ] Symptômes psychiatriques
-> 	- [ ] Douleur oculaire
-> - [ ] **3. Prise en charge**
-> 	- [ ] Migraine, céphalée de tension et algie vasculaire = diagnostics cliniques basés sur l'histoire et l'examen physique
-> 	- [ ] Ne pas faire d'examens diagnostiques sauf si drapeaux rouges présents
-> 	- [ ] Proposer au patient de s'allonger et tamiser la lumière
-> - [ ] **4. Communication avec le patient**
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **5. Conseil et soutien**
-> 	- [ ] Conseil sur l'arrêt du tabac
-> 	- [ ] Donner l'option de s'allonger et proposer de tamiser la lumière
-> 	- [ ] Réaction appropriée au défi concernant l'entretien d'embauche
-> 	- [ ] Éducation sur les facteurs déclenchants
-> 	- [ ] Conseils hygiène de vie
-
 > [!success] 💊 Management — si Céphalée du restaurant chinois
 > - [ ] **1. Diagnostic de suspicion**
 > - [ ] **2. Diagnostics différentiels**
@@ -438,19 +409,46 @@ cssclasses:
 > 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
 
 > [!success] 💊 Management — si Migraine
-> - [ ] **1. Pas d'imagerie**
-> - [ ] **2. Diagnostic de travail**
-> - [ ] **3. Information sur le diagnostic**
-> - [ ] **4. Traitement de la crise par AINS**
-> - [ ] **5. Traitement de la crise par triptan**
-> - [ ] **6. Mesures non médicamenteuses**
-> - [ ] **7. Filet de sécurité**
-> - [ ] **8. Journal des migraines**
-> - [ ] **9. Conseils sur le mode de vie**
-> - [ ] **10. Information sur la contraception**
-> - [ ] **11. Contrôle de suivi**
-> - [ ] **12. Évaluer l'indication à une prophylaxie**
-> - [ ] **13. Orientation vers la neurologie**
+> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 2)***
+> - [ ] **2. Drapeaux rouges à rechercher *(1 grille sur 2)***
+> 	- [ ] Céphalée sévère implacable
+> 	- [ ] Fièvre
+> 	- [ ] Déficits neurologiques focaux
+> 	- [ ] Convulsions
+> 	- [ ] Troubles de conscience
+> 	- [ ] Signes d'hypertension intracrânienne (ex: perte de connaissance, œdème papillaire)
+> 	- [ ] Signes de méningisme
+> 	- [ ] Symptômes psychiatriques
+> 	- [ ] Douleur oculaire
+> - [ ] **3. Prise en charge *(1 grille sur 2)***
+> 	- [ ] Migraine, céphalée de tension et algie vasculaire = diagnostics cliniques basés sur l'histoire et l'examen physique
+> 	- [ ] Ne pas faire d'examens diagnostiques sauf si drapeaux rouges présents
+> 	- [ ] Proposer au patient de s'allonger et tamiser la lumière
+> - [ ] **4. Communication avec le patient *(1 grille sur 2)***
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **5. Conseil et soutien *(1 grille sur 2)***
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Donner l'option de s'allonger et proposer de tamiser la lumière
+> 	- [ ] Réaction appropriée au défi concernant l'entretien d'embauche
+> 	- [ ] Éducation sur les facteurs déclenchants
+> 	- [ ] Conseils hygiène de vie
+> - [ ] **6. Pas d'imagerie *(1 grille sur 2)***
+> - [ ] **7. Diagnostic de travail *(1 grille sur 2)***
+> - [ ] **8. Information sur le diagnostic *(1 grille sur 2)***
+> - [ ] **9. Traitement de la crise par AINS *(1 grille sur 2)***
+> - [ ] **10. Traitement de la crise par triptan *(1 grille sur 2)***
+> - [ ] **11. Mesures non médicamenteuses *(1 grille sur 2)***
+> - [ ] **12. Filet de sécurité *(1 grille sur 2)***
+> - [ ] **13. Journal des migraines *(1 grille sur 2)***
+> - [ ] **14. Conseils sur le mode de vie *(1 grille sur 2)***
+> - [ ] **15. Information sur la contraception *(1 grille sur 2)***
+> - [ ] **16. Contrôle de suivi *(1 grille sur 2)***
+> - [ ] **17. Évaluer l'indication à une prophylaxie *(1 grille sur 2)***
+> - [ ] **18. Orientation vers la neurologie *(1 grille sur 2)***
 
 > [!success] 💊 Management — si Méningite
 > - [ ] **1. Diagnostic de suspicion**

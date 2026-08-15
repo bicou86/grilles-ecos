@@ -67,75 +67,75 @@ cssclasses:
 *Gastro-Hépatologie · 2 grilles · 2 diagnostics distincts* — [[SSP — Ictère]]
 
 > [!abstract] Les 2 grilles fusionnées
-> - **German-55** — Hépatite virale aiguë A `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-55_-_Icte_re_-_Grille_ECOS.html>)
+> - **German-55** — Hépatite (virale/alcoolique) `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-55_-_Icte_re_-_Grille_ECOS.html>)
 > - **RESCOS-47** — Néoplasie des voies biliaires/pancréatique `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-47%20-%20Ictère%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Présentation avec nom, fonction et objectif *(Hépatite virale aiguë A)***
-> - [ ] **2. Motif de consultation principal *(Hépatite virale aiguë A)***
-> - [ ] **3. Caractéristiques de l'ictère *(Hépatite virale aiguë A)***
+> - [ ] **1. Présentation avec nom, fonction et objectif *(Hépatite (virale/alcoolique))***
+> - [ ] **2. Motif de consultation principal *(Hépatite (virale/alcoolique))***
+> - [ ] **3. Caractéristiques de l'ictère *(Hépatite (virale/alcoolique))***
 > 	- [ ] Début et évolution
 > 	- [ ] Localisation
 > 	- [ ] Progression
 > 	- [ ] Coloration des sclérotiques
-> - [ ] **4. Symptômes digestifs *(Hépatite virale aiguë A)***
+> - [ ] **4. Symptômes digestifs *(Hépatite (virale/alcoolique))***
 > 	- [ ] Douleurs abdominales
 > 	- [ ] Nausées/vomissements
 > 	- [ ] Troubles du transit
 > 	- [ ] Ballonnements
-> - [ ] **5. Caractéristiques des selles et urines *(Hépatite virale aiguë A)***
+> - [ ] **5. Caractéristiques des selles et urines *(Hépatite (virale/alcoolique))***
 > 	- [ ] Couleur des selles
 > 	- [ ] Consistance des selles
 > 	- [ ] Couleur des urines
 > 	- [ ] Fréquence urinaire
-> - [ ] **6. Symptômes généraux *(Hépatite virale aiguë A)***
+> - [ ] **6. Symptômes généraux *(Hépatite (virale/alcoolique))***
 > 	- [ ] Fièvre/frissons
 > 	- [ ] Asthénie
 > 	- [ ] Perte de poids
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Anorexie
-> - [ ] **7. Événements récents *(Hépatite virale aiguë A)***
+> - [ ] **7. Événements récents *(Hépatite (virale/alcoolique))***
 > 	- [ ] Maladie récente
 > 	- [ ] Prise médicamenteuse
 > 	- [ ] Traumatisme
 > 	- [ ] Stress particulier
-> - [ ] **8. Prurit *(Hépatite virale aiguë A)***
-> - [ ] **9. Signes d'hépatopathie chronique *(Hépatite virale aiguë A)***
+> - [ ] **8. Prurit *(Hépatite (virale/alcoolique))***
+> - [ ] **9. Signes d'hépatopathie chronique *(Hépatite (virale/alcoolique))***
 > 	- [ ] Ascite
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Circulation collatérale
 > 	- [ ] Gynécomastie
-> - [ ] **10. Facteurs de risque hépatiques *(Hépatite virale aiguë A)***
+> - [ ] **10. Facteurs de risque hépatiques *(Hépatite (virale/alcoolique))***
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Toxicomanie IV
 > 	- [ ] Tatouages/piercings
 > 	- [ ] Transfusions
 > 	- [ ] Rapports sexuels à risque
-> - [ ] **11. Antécédents médicaux *(Hépatite virale aiguë A)***
+> - [ ] **11. Antécédents médicaux *(Hépatite (virale/alcoolique))***
 > 	- [ ] Diabète
 > 	- [ ] Maladies hépatiques
 > 	- [ ] Chirurgies abdominales
 > 	- [ ] Lithiase biliaire
-> - [ ] **12. Médicaments et allergies *(Hépatite virale aiguë A)***
+> - [ ] **12. Médicaments et allergies *(Hépatite (virale/alcoolique))***
 > 	- [ ] Traitements en cours
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Phytothérapie
 > 	- [ ] Compléments alimentaires
-> - [ ] **13. Statut vaccinal *(Hépatite virale aiguë A)***
+> - [ ] **13. Statut vaccinal *(Hépatite (virale/alcoolique))***
 > 	- [ ] Vaccination hépatite A
 > 	- [ ] Vaccination hépatite B
-> - [ ] **14. Voyages récents *(Hépatite virale aiguë A)***
+> - [ ] **14. Voyages récents *(Hépatite (virale/alcoolique))***
 > 	- [ ] Destination
 > 	- [ ] Durée du séjour
 > 	- [ ] Conditions sanitaires
 > 	- [ ] Alimentation sur place
 > - [ ] **15. Antécédents familiaux**
-> 	- [ ] Maladies hépatiques familiales *(Hépatite virale aiguë A)*
-> 	- [ ] Cancers digestifs *(Hépatite virale aiguë A)*
-> 	- [ ] Maladies génétiques *(Hépatite virale aiguë A)*
+> 	- [ ] Maladies hépatiques familiales *(Hépatite (virale/alcoolique))*
+> 	- [ ] Cancers digestifs *(Hépatite (virale/alcoolique))*
+> 	- [ ] Maladies génétiques *(Hépatite (virale/alcoolique))*
 > 	- [ ] Père décédé d'un cancer du pancréas diagnostiqué après ictère *(Néoplasie des voies biliaires/pancréatique)*
 > 	- [ ] Mère décédée d'un AVC *(Néoplasie des voies biliaires/pancréatique)*
-> - [ ] **16. Anamnèse sociale *(Hépatite virale aiguë A)***
+> - [ ] **16. Anamnèse sociale *(Hépatite (virale/alcoolique))***
 > 	- [ ] Profession
 > 	- [ ] Conditions de vie
 > 	- [ ] Statut en Suisse
@@ -179,32 +179,32 @@ cssclasses:
 > 	- [ ] Médicaments
 
 > [!tip] 🩺 Status
-> - [ ] **1. État général et signes vitaux *(Hépatite virale aiguë A)***
+> - [ ] **1. État général et signes vitaux *(Hépatite (virale/alcoolique))***
 > 	- [ ] État général
 > 	- [ ] Température
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence cardiaque
-> - [ ] **2. Examen cutanéo-muqueux *(Hépatite virale aiguë A)***
+> - [ ] **2. Examen cutanéo-muqueux *(Hépatite (virale/alcoolique))***
 > 	- [ ] Ictère conjonctival
 > 	- [ ] Ictère cutané (localisation)
 > 	- [ ] Signes cutanés d'hépatopathie (angiomes stellaires, érythrose palmaire)
 > 	- [ ] Traces de grattage
-> - [ ] **3. Examen abdominal complet *(Hépatite virale aiguë A)***
+> - [ ] **3. Examen abdominal complet *(Hépatite (virale/alcoolique))***
 > 	- [ ] Inspection (distension, circulation collatérale)
 > 	- [ ] Palpation hépatique (taille, consistance, bord)
 > 	- [ ] Palpation splénique
 > 	- [ ] Recherche d'ascite (matité déclive)
 > 	- [ ] Douleur à la palpation (Murphy)
-> - [ ] **4. Examen ganglionnaire *(Hépatite virale aiguë A)***
+> - [ ] **4. Examen ganglionnaire *(Hépatite (virale/alcoolique))***
 > 	- [ ] Aires cervicales
 > 	- [ ] Aires axillaires
 > 	- [ ] Aires inguinales
 > 	- [ ] Ganglion de Troisier
-> - [ ] **5. Examen cardio-pulmonaire *(Hépatite virale aiguë A)***
+> - [ ] **5. Examen cardio-pulmonaire *(Hépatite (virale/alcoolique))***
 > 	- [ ] Auscultation cardiaque
 > 	- [ ] Auscultation pulmonaire
 > 	- [ ] Recherche d'œdèmes périphériques
-> - [ ] **6. Examen neurologique sommaire *(Hépatite virale aiguë A)***
+> - [ ] **6. Examen neurologique sommaire *(Hépatite (virale/alcoolique))***
 > 	- [ ] État de conscience
 > 	- [ ] Astérixis (flapping tremor)
 > 	- [ ] Réflexes ostéo-tendineux
@@ -236,9 +236,6 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Hépatite (virale/alcoolique)
-> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
-
-> [!success] 💊 Management — si Hépatite virale aiguë A
 > - [ ] **1. Diagnostic principal suspecté**
 > - [ ] **2. Diagnostics différentiels**
 > - [ ] **3. Examens biologiques de première intention**

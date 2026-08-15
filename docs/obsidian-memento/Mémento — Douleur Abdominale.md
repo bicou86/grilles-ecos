@@ -5,7 +5,7 @@ type: memento-ecos-ssp
 ssp: "Douleur Abdominale"
 specialite: "Gastro-Hépatologie"
 cas: 20
-diagnostics: 18
+diagnostics: 17
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -64,7 +64,7 @@ cssclasses:
 
 # Douleur Abdominale ⭐️
 
-*Gastro-Hépatologie · 20 grilles · 18 diagnostics distincts* — [[SSP — Douleur Abdominale]]
+*Gastro-Hépatologie · 20 grilles · 17 diagnostics distincts* — [[SSP — Douleur Abdominale]]
 
 > [!abstract] Les 20 grilles fusionnées
 > - **AMBOSS-1** — Cholécystite aiguë `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-1_-_Douleurs_abdominales_-_Femme_47_ans_-_Grille_ECOS.html>)
@@ -77,16 +77,16 @@ cssclasses:
 > - **German-16** — Douleurs abdominales non spécifiques `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-16_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **German-17** — Endométriose pelvienne `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-17_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **German-18** — Infection génitale haute `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-18_-_Douleur_abdominale_-_Grille_ECOS.html>)
-> - **German-19** — Rectocolite ulcéro-hémorragique `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-19_-_Douleur_abdominale_-_Grille_ECOS.html>)
+> - **German-19** — MICI (Crohn / RCUH) `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-19_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **German-20** — Ischémie mésentérique aiguë `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-20_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **German-21** — Reflux gastro-œsophagien (RGO) `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-21_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **RESCOS-17** — Pyélonéphrite `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-17_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **RESCOS-18** — Cholangite `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-18_-_Douleur_abdominale_-_Grille_ECOS.html>)
-> - **RESCOS-19** — Cholécystite `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-19_-_Douleur_abdominale_-_Grille_ECOS.html>)
+> - **RESCOS-19** — Cholécystite aiguë `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-19_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **RESCOS-20** — Torsion ovarienne `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-20_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **RESCOS-21** — Perforation d'ulcère gastro-duodénal `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-21_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **RESCOS-22** — Gastroentérite `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-22_-_Douleur_abdominale_-_ECC_Digestion_-_Grille_ECOS.html>)
-> - **RESCOS-23** — Cholécystite `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-23_-_Douleur_abdominale_-_ECC_Digestion_-_Grille_ECOS.html>)
+> - **RESCOS-23** — Cholécystite aiguë `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-23_-_Douleur_abdominale_-_ECC_Digestion_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(4 grilles sur 20)***
@@ -137,15 +137,15 @@ cssclasses:
 > 	- [ ] Fièvre/frissons *(Cancer de l'ovaire)*
 > 	- [ ] Sueurs nocturnes *(Cancer de l'ovaire)*
 > 	- [ ] Dyspnée *(Cancer de l'ovaire)*
-> - [ ] **5. Antécédents médicaux *(Appendicite aiguë · Cancer de l'ovaire · Cholécystite aiguë)***
-> - [ ] **6. Antécédents chirurgicaux *(Appendicite aiguë · Cancer de l'ovaire · Cholécystite aiguë)***
-> - [ ] **7. Allergies *(9 diagnostics)***
-> - [ ] **8. Médicaments *(5 diagnostics)***
+> - [ ] **5. Antécédents médicaux *(4 grilles sur 20)***
+> - [ ] **6. Antécédents chirurgicaux *(4 grilles sur 20)***
+> - [ ] **7. Allergies *(10 grilles sur 20)***
+> - [ ] **8. Médicaments *(6 grilles sur 20)***
 > 	- [ ] Antiacides *(1 grille sur 20)*
 > 	- [ ] Fréquence *(1 grille sur 20)*
 > - [ ] **9. Hospitalisations *(3 grilles sur 20)***
 > - [ ] **10. Contacts malades *(3 grilles sur 20)***
-> - [ ] **11. Antécédents familiaux *(4 diagnostics)***
+> - [ ] **11. Antécédents familiaux *(5 grilles sur 20)***
 > 	- [ ] Père *(2 grilles sur 20)*
 > 	- [ ] Mère *(2 grilles sur 20)*
 > 	- [ ] Sœur *(Cancer de l'ovaire)*
@@ -406,28 +406,28 @@ cssclasses:
 > 	- [ ] Tabac *(Reflux gastro-œsophagien (RGO))*
 > - [ ] **118. Activités sportives et loisirs *(Douleurs abdominales non spécifiques · Reflux gastro-œsophagien (RGO))***
 > - [ ] **119. Anamnèse sociale *(6 diagnostics)***
-> - [ ] **120. Identification des symptômes principaux *(Endométriose pelvienne · Rectocolite ulcéro-hémorragique)***
+> - [ ] **120. Identification des symptômes principaux *(Endométriose pelvienne · MICI (Crohn / RCUH))***
 > - [ ] **121. Début des symptômes *(4 diagnostics)***
 > - [ ] **122. Fréquence et périodicité *(4 diagnostics)***
 > - [ ] **123. Caractère de la douleur *(5 diagnostics)***
 > - [ ] **124. Facteurs aggravants ou soulageants *(4 diagnostics)***
-> - [ ] **125. Douleurs liées à l'alimentation *(Endométriose pelvienne · Ischémie mésentérique aiguë · Rectocolite ulcéro-hémorragique)***
-> - [ ] **126. Symptômes généraux *(Endométriose pelvienne · Infection génitale haute · Rectocolite ulcéro-hémorragique)***
-> 	- [ ] Fièvre *(Endométriose pelvienne · Rectocolite ulcéro-hémorragique)*
+> - [ ] **125. Douleurs liées à l'alimentation *(Endométriose pelvienne · Ischémie mésentérique aiguë · MICI (Crohn / RCUH))***
+> - [ ] **126. Symptômes généraux *(Endométriose pelvienne · Infection génitale haute · MICI (Crohn / RCUH))***
+> 	- [ ] Fièvre *(Endométriose pelvienne · MICI (Crohn / RCUH))*
 > 	- [ ] Perte de poids
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Fièvre prolongée *(Infection génitale haute)*
-> - [ ] **127. Symptômes digestifs *(Endométriose pelvienne · Infection génitale haute · Rectocolite ulcéro-hémorragique)***
+> - [ ] **127. Symptômes digestifs *(Endométriose pelvienne · Infection génitale haute · MICI (Crohn / RCUH))***
 > 	- [ ] Transit intestinal *(Endométriose pelvienne)*
 > 	- [ ] Gaz *(Endométriose pelvienne)*
 > 	- [ ] Nausées/Vomissements
 > 	- [ ] Sang dans les vomissements
-> 	- [ ] Constipation *(Endométriose pelvienne · Rectocolite ulcéro-hémorragique)*
-> 	- [ ] Diarrhée *(Endométriose pelvienne · Rectocolite ulcéro-hémorragique)*
+> 	- [ ] Constipation *(Endométriose pelvienne · MICI (Crohn / RCUH))*
+> 	- [ ] Diarrhée *(Endométriose pelvienne · MICI (Crohn / RCUH))*
 > 	- [ ] Sang dans les selles *(Endométriose pelvienne · Infection génitale haute)*
-> 	- [ ] Transit intestinal et gaz *(Infection génitale haute · Rectocolite ulcéro-hémorragique)*
+> 	- [ ] Transit intestinal et gaz *(Infection génitale haute · MICI (Crohn / RCUH))*
 > 	- [ ] Diarrhée/Constipation *(Infection génitale haute)*
-> 	- [ ] Aspect des selles *(Rectocolite ulcéro-hémorragique)*
+> 	- [ ] Aspect des selles *(MICI (Crohn / RCUH))*
 > - [ ] **128. Antécédent de chirurgie abdominale *(4 diagnostics)***
 > - [ ] **129. Anamnèse gynécologique *(Endométriose pelvienne · Infection génitale haute)***
 > 	- [ ] Dernières règles *(Endométriose pelvienne)*
@@ -446,10 +446,10 @@ cssclasses:
 > 	- [ ] Nouveau partenaire sexuel *(Infection génitale haute)*
 > - [ ] **130. Anamnèse personnelle *(4 diagnostics)***
 > - [ ] **131. Médication actuelle *(5 diagnostics)***
-> - [ ] **132. Migration de la douleur *(Infection génitale haute · Ischémie mésentérique aiguë · Rectocolite ulcéro-hémorragique)***
-> - [ ] **133. Mode de début *(Infection génitale haute · Ischémie mésentérique aiguë · Rectocolite ulcéro-hémorragique)***
+> - [ ] **132. Migration de la douleur *(Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH))***
+> - [ ] **133. Mode de début *(Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH))***
 > - [ ] **134. Fièvre *(Infection génitale haute)***
-> - [ ] **135. Symptômes extra-intestinaux *(Rectocolite ulcéro-hémorragique)***
+> - [ ] **135. Symptômes extra-intestinaux *(MICI (Crohn / RCUH))***
 > 	- [ ] Aphtes
 > 	- [ ] Inflammation oculaire
 > 	- [ ] Troubles articulaires
@@ -717,11 +717,11 @@ cssclasses:
 > - [ ] **13. Non disponible dans les cas téléphoniques *(Maladie cœliaque)***
 > - [ ] **14. Paramètres vitaux *(1 grille sur 20)***
 > - [ ] **15. Inspection *(5 grilles sur 20)***
-> 	- [ ] Teint *(Infection génitale haute · Rectocolite ulcéro-hémorragique)*
+> 	- [ ] Teint *(Infection génitale haute · MICI (Crohn / RCUH))*
 > 	- [ ] État général *(Infection génitale haute · Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Abdomen *(Infection génitale haute)*
-> 	- [ ] Cavité buccale *(Rectocolite ulcéro-hémorragique)*
-> 	- [ ] Peau *(Rectocolite ulcéro-hémorragique)*
+> 	- [ ] Cavité buccale *(MICI (Crohn / RCUH))*
+> 	- [ ] Peau *(MICI (Crohn / RCUH))*
 > 	- [ ] Recherche de signes d'alarme *(Reflux gastro-œsophagien (RGO))*
 > - [ ] **16. Sclérotiques *(1 grille sur 20)***
 > - [ ] **17. Peau / Abdomen *(1 grille sur 20)***
@@ -853,9 +853,9 @@ cssclasses:
 > 	- [ ] Palpation superficielle et profonde *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Recherche de masse *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Recherche de douleur épigastrique *(Reflux gastro-œsophagien (RGO))*
-> - [ ] **58. Signes péritonéaux *(Infection génitale haute · Ischémie mésentérique aiguë · Rectocolite ulcéro-hémorragique)***
+> - [ ] **58. Signes péritonéaux *(Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH))***
 > - [ ] **59. Recherche de signes hémorragiques *(Infection génitale haute)***
-> - [ ] **60. Toucher rectal avec inspection de l'anus *(Rectocolite ulcéro-hémorragique)***
+> - [ ] **60. Toucher rectal avec inspection de l'anus *(MICI (Crohn / RCUH))***
 > - [ ] **61. Inspection de l'abdomen et de la peau *(Ischémie mésentérique aiguë)***
 > 	- [ ] État général
 > - [ ] **62. Status cardio-pulmonaire *(Ischémie mésentérique aiguë)***
@@ -1082,89 +1082,87 @@ cssclasses:
 > 	- [ ] Pyélonéphrite
 > 	- [ ] Trouble gynécologique
 
-> [!success] 💊 Management — si Cholécystite
-> - [ ] **1. Evoque un diagnostic différentiel plausible *(1 grille sur 2)***
-> 	- [ ] Cholangite
-> 	- [ ] Hépatite
-> 	- [ ] Cholécystite
-> 	- [ ] Néoplasie
-> 	- [ ] Gastrite / inflammation du tube digestif
-> 	- [ ] Stase biliaire sur compression néoplasique (p.ex. cancer pancréatique)
-> - [ ] **2. Mentionne l'hypothèse diagnostique cholélithiase / cholédocholithiase *(1 grille sur 2)***
-> - [ ] **3. Évaluation de la sévérité et des complications *(1 grille sur 2)***
-> 	- [ ] Recherche signes de cholécystite
-> 	- [ ] Exclusion angiocholite
-> 	- [ ] Évaluation retentissement général
-> 	- [ ] Recherche signes de péritonite
-> - [ ] **4. Proposition d'examens complémentaires *(1 grille sur 2)***
-> 	- [ ] Bilan biologique
-> 	- [ ] Échographie abdominale
-> 	- [ ] FSC, CRP
-> 	- [ ] Lipasémie
-> - [ ] **5. Prise en charge thérapeutique immédiate *(1 grille sur 2)***
-> 	- [ ] Antalgiques
-> 	- [ ] Antispasmodiques
-> 	- [ ] Antiémétiques si vomissements
-> 	- [ ] Mise à jeun initiale
-> - [ ] **6. Surveillance et critères d'hospitalisation *(1 grille sur 2)***
-> 	- [ ] Critères d'hospitalisation
-> 	- [ ] Surveillance clinique
-> 	- [ ] Signes d'alarme
-> 	- [ ] Suivi ambulatoire programmé
-> - [ ] **7. Diagnostic principal et classification *(1 grille sur 2)***
-> 	- [ ] Évoque colique hépatique/cholécystite
-> 	- [ ] Classification selon durée
-> 	- [ ] Différenciation avec angiocholite
-> 	- [ ] Facteurs de risque
-> - [ ] **8. Traitement spécifique selon diagnostic *(1 grille sur 2)***
-> 	- [ ] Cholécystectomie
-> 	- [ ] Timing chirurgical
-> 	- [ ] Antibiothérapie si cholécystite
-> 	- [ ] CPRE si angiocholite
-> - [ ] **9. Conseils diététiques et préventifs *(1 grille sur 2)***
-> 	- [ ] Régime pauvre en graisses
-> 	- [ ] Perte de poids progressive
-> 	- [ ] Repas fractionnés
-> 	- [ ] Éviter jeûne prolongé
-> - [ ] **10. Information du patient et planification *(1 grille sur 2)***
-> 	- [ ] Explication du diagnostic probable
-> 	- [ ] Information sur évolution et traitement
-> 	- [ ] Conseils pour récidive
-> 	- [ ] Planification chirurgicale si indiquée
-
 > [!success] 💊 Management — si Cholécystite aiguë
-> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 2)***
-> - [ ] **2. Examens complémentaires initiaux *(1 grille sur 2)***
+> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 4)***
+> - [ ] **2. Examens complémentaires initiaux *(1 grille sur 4)***
 > 	- [ ] US abdominale
 > 	- [ ] Bilan hépatique complet
 > 	- [ ] Transaminases
 > 	- [ ] Enzymes pancréatiques
 > 	- [ ] FSC
 > 	- [ ] Ionogramme et calcium
-> - [ ] **3. Examens complémentaires de seconde ligne *(1 grille sur 2)***
+> - [ ] **3. Examens complémentaires de seconde ligne *(1 grille sur 4)***
 > 	- [ ] CT abdominal
 > 	- [ ] ERCP
-> - [ ] **4. Communication avec la patiente *(1 grille sur 2)***
+> - [ ] **4. Communication avec la patiente *(1 grille sur 4)***
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **5. Conseil et défis *(1 grille sur 2)***
+> - [ ] **5. Conseil et défis *(1 grille sur 4)***
 > 	- [ ] Conseil sur les options de soutien pour les changements de poids et d'alimentation
 > 	- [ ] Réaction appropriée au défi concernant le poids
-> - [ ] **6. Laboratoire *(1 grille sur 2)***
-> - [ ] **7. Formule sanguine *(1 grille sur 2)***
-> - [ ] **8. Status urinaire *(1 grille sur 2)***
-> - [ ] **9. Échographie *(1 grille sur 2)***
-> - [ ] **10. ECG *(1 grille sur 2)***
-> - [ ] **11. Diagnostic de travail *(1 grille sur 2)***
-> - [ ] **12. Cholécysectomie laparoscopique *(1 grille sur 2)***
-> - [ ] **13. Antibiothérapie i.v. *(1 grille sur 2)***
-> - [ ] **14. Réhydratation i.v. *(1 grille sur 2)***
-> - [ ] **15. Analgésie *(1 grille sur 2)***
-> - [ ] **16. Hospitalisation *(1 grille sur 2)***
-> - [ ] **17. Laisser à jeun *(1 grille sur 2)***
+> - [ ] **6. Laboratoire *(1 grille sur 4)***
+> - [ ] **7. Formule sanguine *(1 grille sur 4)***
+> - [ ] **8. Status urinaire *(1 grille sur 4)***
+> - [ ] **9. Échographie *(1 grille sur 4)***
+> - [ ] **10. ECG *(1 grille sur 4)***
+> - [ ] **11. Diagnostic de travail *(1 grille sur 4)***
+> - [ ] **12. Cholécysectomie laparoscopique *(1 grille sur 4)***
+> - [ ] **13. Antibiothérapie i.v. *(1 grille sur 4)***
+> - [ ] **14. Réhydratation i.v. *(1 grille sur 4)***
+> - [ ] **15. Analgésie *(1 grille sur 4)***
+> - [ ] **16. Hospitalisation *(1 grille sur 4)***
+> - [ ] **17. Laisser à jeun *(1 grille sur 4)***
+> - [ ] **18. Evoque un diagnostic différentiel plausible *(1 grille sur 4)***
+> 	- [ ] Cholangite
+> 	- [ ] Hépatite
+> 	- [ ] Cholécystite
+> 	- [ ] Néoplasie
+> 	- [ ] Gastrite / inflammation du tube digestif
+> 	- [ ] Stase biliaire sur compression néoplasique (p.ex. cancer pancréatique)
+> - [ ] **19. Mentionne l'hypothèse diagnostique cholélithiase / cholédocholithiase *(1 grille sur 4)***
+> - [ ] **20. Évaluation de la sévérité et des complications *(1 grille sur 4)***
+> 	- [ ] Recherche signes de cholécystite
+> 	- [ ] Exclusion angiocholite
+> 	- [ ] Évaluation retentissement général
+> 	- [ ] Recherche signes de péritonite
+> - [ ] **21. Proposition d'examens complémentaires *(1 grille sur 4)***
+> 	- [ ] Bilan biologique
+> 	- [ ] Échographie abdominale
+> 	- [ ] FSC, CRP
+> 	- [ ] Lipasémie
+> - [ ] **22. Prise en charge thérapeutique immédiate *(1 grille sur 4)***
+> 	- [ ] Antalgiques
+> 	- [ ] Antispasmodiques
+> 	- [ ] Antiémétiques si vomissements
+> 	- [ ] Mise à jeun initiale
+> - [ ] **23. Surveillance et critères d'hospitalisation *(1 grille sur 4)***
+> 	- [ ] Critères d'hospitalisation
+> 	- [ ] Surveillance clinique
+> 	- [ ] Signes d'alarme
+> 	- [ ] Suivi ambulatoire programmé
+> - [ ] **24. Diagnostic principal et classification *(1 grille sur 4)***
+> 	- [ ] Évoque colique hépatique/cholécystite
+> 	- [ ] Classification selon durée
+> 	- [ ] Différenciation avec angiocholite
+> 	- [ ] Facteurs de risque
+> - [ ] **25. Traitement spécifique selon diagnostic *(1 grille sur 4)***
+> 	- [ ] Cholécystectomie
+> 	- [ ] Timing chirurgical
+> 	- [ ] Antibiothérapie si cholécystite
+> 	- [ ] CPRE si angiocholite
+> - [ ] **26. Conseils diététiques et préventifs *(1 grille sur 4)***
+> 	- [ ] Régime pauvre en graisses
+> 	- [ ] Perte de poids progressive
+> 	- [ ] Repas fractionnés
+> 	- [ ] Éviter jeûne prolongé
+> - [ ] **27. Information du patient et planification *(1 grille sur 4)***
+> 	- [ ] Explication du diagnostic probable
+> 	- [ ] Information sur évolution et traitement
+> 	- [ ] Conseils pour récidive
+> 	- [ ] Planification chirurgicale si indiquée
 
 > [!success] 💊 Management — si Diverticulite sigmoïdienne non compliquée
 > - [ ] **1. Examens d'imagerie**
@@ -1333,7 +1331,24 @@ cssclasses:
 > 	- [ ] Réévaluation du traitement médicamenteux
 
 > [!success] 💊 Management — si MICI (Crohn / RCUH)
-> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Prise en charge thérapeutique**
+> 	- [ ] Conseils nutritionnels pour prévenir les carences
+> 	- [ ] Induction de rémission
+> 	- [ ] Maintien de rémission
+> 	- [ ] Coloscopies de contrôle régulières
+> - [ ] **3. Diagnostic suspecté**
+> 	- [ ] Colite ulcéreuse (diagnostic primaire)
+> - [ ] **4. Examens diagnostiques**
+> 	- [ ] Analyses sanguines
+> 	- [ ] Examen bactériologique des selles
+> 	- [ ] Échographie abdominale
+> 	- [ ] Iléo-coloscopie avec biopsies
+> - [ ] **5. Information sur les complications**
+> 	- [ ] Mégacôlon toxique
+> 	- [ ] Perforation
+> 	- [ ] Hémorragie sévère
+> 	- [ ] Cancer du côlon
 
 > [!success] 💊 Management — si Maladie cœliaque
 > - [ ] **1. Hypothèses diagnostiques**
@@ -1423,26 +1438,6 @@ cssclasses:
 
 > [!success] 💊 Management — si Péritonite
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
-
-> [!success] 💊 Management — si Rectocolite ulcéro-hémorragique
-> - [ ] **1. Diagnostics différentiels**
-> - [ ] **2. Prise en charge thérapeutique**
-> 	- [ ] Conseils nutritionnels pour prévenir les carences
-> 	- [ ] Induction de rémission
-> 	- [ ] Maintien de rémission
-> 	- [ ] Coloscopies de contrôle régulières
-> - [ ] **3. Diagnostic suspecté**
-> 	- [ ] Colite ulcéreuse (diagnostic primaire)
-> - [ ] **4. Examens diagnostiques**
-> 	- [ ] Analyses sanguines
-> 	- [ ] Examen bactériologique des selles
-> 	- [ ] Échographie abdominale
-> 	- [ ] Iléo-coloscopie avec biopsies
-> - [ ] **5. Information sur les complications**
-> 	- [ ] Mégacôlon toxique
-> 	- [ ] Perforation
-> 	- [ ] Hémorragie sévère
-> 	- [ ] Cancer du côlon
 
 > [!success] 💊 Management — si Reflux gastro-œsophagien (RGO)
 > - [ ] **1. Diagnostic principal**

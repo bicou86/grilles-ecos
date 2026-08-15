@@ -70,7 +70,7 @@ cssclasses:
 
 > [!abstract] Les 4 grilles fusionnées
 > - **RESCOS-52** — AIT `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-52%20-%20Paralysie%20-%20Grille%20ECOS.html>)
-> - **RESCOS-53** — Infarctus sylvien superficiel `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-53%20-%20Parésie%20facio-brachiale%20-%20ECC%20Neurologie%20-%20Grille%20ECOS.html>)
+> - **RESCOS-53** — AVC `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-53%20-%20Parésie%20facio-brachiale%20-%20ECC%20Neurologie%20-%20Grille%20ECOS.html>)
 > - **RESCOS-70** — Paralysie de Bell `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-70%20-%20Paralysie%20faciale%20-%20Grille%20ECOS.html>)
 > - **RESCOS-70b** ⭐️ **officielle** — Paralysie de Bell `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-70b%20-%20Paralysie%20faciale%20-%20Grille%20ECOS.html>)
 
@@ -105,37 +105,37 @@ cssclasses:
 > - [ ] **8. Antécédents familiaux *(AIT)***
 > 	- [ ] Père décédé d'une tumeur cérébrale il y a 2 ans
 > 	- [ ] Très inquiet d'avoir la même chose que son père
-> - [ ] **9. Caractérisation de l'épisode neurologique aigu *(Infarctus sylvien superficiel)***
+> - [ ] **9. Caractérisation de l'épisode neurologique aigu *(AVC)***
 > 	- [ ] Mode d'installation
 > 	- [ ] Heure précise de début
 > 	- [ ] Circonstances de découverte
 > 	- [ ] Évolution depuis le début
 > 	- [ ] Premiers symptômes remarqués
-> - [ ] **10. Analyse sémiologique détaillée *(Infarctus sylvien superficiel)***
+> - [ ] **10. Analyse sémiologique détaillée *(AVC)***
 > 	- [ ] Troubles moteurs
 > 	- [ ] Troubles de la parole
 > 	- [ ] Troubles sensitifs associés
 > 	- [ ] Troubles visuels
 > 	- [ ] Autres déficits neurologiques
-> - [ ] **11. Recherche de facteurs de risque cardiovasculaire *(Infarctus sylvien superficiel)***
+> - [ ] **11. Recherche de facteurs de risque cardiovasculaire *(AVC)***
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Diabète
 > 	- [ ] Hypercholestérolémie
 > 	- [ ] Tabagisme
 > 	- [ ] Fibrillation auriculaire
-> - [ ] **12. Antécédents neurologiques et vasculaires *(Infarctus sylvien superficiel)***
+> - [ ] **12. Antécédents neurologiques et vasculaires *(AVC)***
 > 	- [ ] AVC ou AIT antérieurs
 > 	- [ ] Pathologies carotidiennes
 > 	- [ ] Cardiopathies emboligènes
 > 	- [ ] Maladies hémorragiques
 > 	- [ ] Traumatismes crâniens récents
-> - [ ] **13. Médicaments et traitements en cours *(Infarctus sylvien superficiel)***
+> - [ ] **13. Médicaments et traitements en cours *(AVC)***
 > 	- [ ] Anticoagulants
 > 	- [ ] Antiagrégants plaquettaires
 > 	- [ ] Antihypertenseurs
 > 	- [ ] Antidiabétiques
 > 	- [ ] Autres traitements
-> - [ ] **14. Signes fonctionnels associés et état antérieur *(Infarctus sylvien superficiel)***
+> - [ ] **14. Signes fonctionnels associés et état antérieur *(AVC)***
 > 	- [ ] Céphalées
 > 	- [ ] Nausées, vomissements
 > 	- [ ] Troubles de la conscience
@@ -235,43 +235,43 @@ cssclasses:
 > 	- [ ] Rotulien
 > 	- [ ] Achilléen
 > - [ ] **8. Réflexe cutané plantaire (Babinski) des deux côtés *(AIT)***
-> - [ ] **9. Évaluation de l'état de conscience et fonctions supérieures *(Infarctus sylvien superficiel)***
+> - [ ] **9. Évaluation de l'état de conscience et fonctions supérieures *(AVC)***
 > 	- [ ] Score de Glasgow
 > 	- [ ] Orientation temporo-spatiale
 > 	- [ ] Attention et concentration
 > 	- [ ] Langage
 > 	- [ ] Reconnaissance visuelle et négligence
-> - [ ] **10. Examen des nerfs crâniens *(Infarctus sylvien superficiel)***
+> - [ ] **10. Examen des nerfs crâniens *(AVC)***
 > 	- [ ] Nerf facial (VII)
 > 	- [ ] Nerfs oculomoteurs (III, IV, VI)
 > 	- [ ] Nerf trijumeau (V)
 > 	- [ ] Nerfs bulbaires (IX, X, XII)
 > 	- [ ] Champ visuel
-> - [ ] **11. Examen de la motricité *(Infarctus sylvien superficiel)***
+> - [ ] **11. Examen de la motricité *(AVC)***
 > 	- [ ] Testing musculaire analytique
 > 	- [ ] Manœuvre de Barré
 > 	- [ ] Tonus musculaire
 > 	- [ ] Réflexes ostéotendineux
 > 	- [ ] Réflexes cutanés
-> - [ ] **12. Examen de la sensibilité *(Infarctus sylvien superficiel)***
+> - [ ] **12. Examen de la sensibilité *(AVC)***
 > 	- [ ] Sensibilité tactile superficielle
 > 	- [ ] Sensibilité douloureuse
 > 	- [ ] Sensibilité proprioceptive
 > 	- [ ] Sensibilité vibratoire
 > 	- [ ] Discrimination tactile
-> - [ ] **13. Examen de la coordination et équilibre *(Infarctus sylvien superficiel)***
+> - [ ] **13. Examen de la coordination et équilibre *(AVC)***
 > 	- [ ] Épreuves index-nez et talon-genou
 > 	- [ ] Mouvements alternés rapides
 > 	- [ ] Station debout
 > 	- [ ] Marche et demi-tour
 > 	- [ ] Dystonie, mouvements anormaux
-> - [ ] **14. Recherche de signes méningés et d'HTIC *(Infarctus sylvien superficiel)***
+> - [ ] **14. Recherche de signes méningés et d'HTIC *(AVC)***
 > 	- [ ] Raideur de nuque
 > 	- [ ] Signes de Kernig et Brudzinski
 > 	- [ ] Photophobie et phonophobie
 > 	- [ ] Œdème papillaire
 > 	- [ ] Signes végétatifs
-> - [ ] **15. Examen cardiovasculaire orienté *(Infarctus sylvien superficiel)***
+> - [ ] **15. Examen cardiovasculaire orienté *(AVC)***
 > 	- [ ] Auscultation cardiaque
 > 	- [ ] Auscultation carotidienne
 > 	- [ ] Pouls périphériques
@@ -352,9 +352,6 @@ cssclasses:
 > 	- [ ] Différencie AIT des tumeurs cérébrales
 
 > [!success] 💊 Management — si AVC
-> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
-
-> [!success] 💊 Management — si Infarctus sylvien superficiel
 > - [ ] **1. Diagnostic topographique et syndromique**
 > 	- [ ] Syndrome facio-brachial droit
 > 	- [ ] Localisation : territoire sylvien superficiel gauche

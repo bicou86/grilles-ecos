@@ -101,9 +101,9 @@ Les 44 SSP de `docs/ecos-priorites-2026.yaml`, triées par part décroissante d'
 | Toux | 396 | 331 | 83 % |
 | Douleur du Genou | 134 | 112 | 83 % |
 | Ictère | 51 | 42 | 82 % |
-| Chute & Évaluation Gériatrique | 157 | 129 | 82 % |
 | Amaurose & Perte Brutale de Vision | 206 | 168 | 81 % |
 | Constipation | 32 | 26 | 81 % |
+| Chute & Évaluation Gériatrique | 178 | 144 | 80 % |
 | Douleur Thoracique | 342 | 276 | 80 % |
 | Douleur Abdominale | 618 | 484 | 78 % |
 | Hypoacousie | 112 | 87 | 77 % |
@@ -111,9 +111,9 @@ Les 44 SSP de `docs/ecos-priorites-2026.yaml`, triées par part décroissante d'
 | Fatigue | 298 | 228 | 76 % |
 | Troubles Cognitifs & Démence | 25 | 19 | 76 % |
 | Céphalée | 202 | 153 | 75 % |
-| Capacité de Discernement & Décision Partagée | 21 | 15 | 71 % |
 | Baisse d'Acuité Visuelle Progressive | 0 | 0 | — (aucun item) |
 | Bilan de Santé & Dépistage | 0 | 0 | — (aucun item) |
+| Capacité de Discernement & Décision Partagée | 0 | 0 | — (aucun item) |
 | Contraception & Conseil Préconceptionnel | 0 | 0 | — (aucun item) |
 | Déficit Sensitivo-Moteur | 0 | 0 | — (aucun item) |
 | Fièvre & État Fébrile | 0 | 0 | — (aucun item) |

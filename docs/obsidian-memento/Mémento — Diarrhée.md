@@ -5,7 +5,7 @@ type: memento-ecos-ssp
 ssp: "Diarrhée"
 specialite: "Gastro-Hépatologie"
 cas: 5
-diagnostics: 5
+diagnostics: 4
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -64,18 +64,18 @@ cssclasses:
 
 # Diarrhée ⭐️
 
-*Gastro-Hépatologie · 5 grilles · 5 diagnostics distincts* — [[SSP — Diarrhée]]
+*Gastro-Hépatologie · 5 grilles · 4 diagnostics distincts* — [[SSP — Diarrhée]]
 
 > [!abstract] Les 5 grilles fusionnées
 > - **AMBOSS-8** — MICI (Crohn / RCUH) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-8_-_Troubles_du_transit_-_Homme_32_ans_-_Grille_ECOS.html>)
 > - **German-13** — Diarrhée chronique par malabsorption `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-13_-_Diarrhe_e_-_Grille_ECOS.html>)
 > - **German-85** — Déshydratation `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-85_-_Vomissements_et_diarrhe_e_-_Pe_diatrie_-_Grille_ECOS.html>)
-> - **RESCOS-14** — Rectocolite ulcéro-hémorragique (RCUH) `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-14_-_Diarrhe_es_-_Grille_ECOS.html>)
+> - **RESCOS-14** — MICI (Crohn / RCUH) `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-14_-_Diarrhe_es_-_Grille_ECOS.html>)
 > - **RESCOS-15** — Cancer colorectal `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-15_-_Diarrhe_es_et_constipation_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(MICI (Crohn / RCUH))***
-> - [ ] **2. Caractérisation des troubles du transit *(MICI (Crohn / RCUH))***
+> - [ ] **1. Motif principal *(1 grille sur 5)***
+> - [ ] **2. Caractérisation des troubles du transit *(1 grille sur 5)***
 > 	- [ ] Début
 > 	- [ ] Constant/intermittent
 > 	- [ ] Événements précipitants
@@ -84,17 +84,17 @@ cssclasses:
 > 	- [ ] Fréquence
 > 	- [ ] Facteurs améliorants
 > 	- [ ] Facteurs aggravants
-> - [ ] **3. Caractéristiques des selles *(Diarrhée chronique par malabsorption · MICI (Crohn / RCUH))***
-> 	- [ ] Diarrhée (couleur/consistance) *(MICI (Crohn / RCUH))*
-> 	- [ ] Sang dans les selles *(MICI (Crohn / RCUH))*
-> 	- [ ] Couleur du sang *(MICI (Crohn / RCUH))*
-> 	- [ ] Quantité (mélangé, en surface) *(MICI (Crohn / RCUH))*
-> 	- [ ] Constant/intermittent *(MICI (Crohn / RCUH))*
-> 	- [ ] Début du saignement *(MICI (Crohn / RCUH))*
+> - [ ] **3. Caractéristiques des selles *(2 grilles sur 5)***
+> 	- [ ] Diarrhée (couleur/consistance) *(1 grille sur 5)*
+> 	- [ ] Sang dans les selles *(1 grille sur 5)*
+> 	- [ ] Couleur du sang *(1 grille sur 5)*
+> 	- [ ] Quantité (mélangé, en surface) *(1 grille sur 5)*
+> 	- [ ] Constant/intermittent *(1 grille sur 5)*
+> 	- [ ] Début du saignement *(1 grille sur 5)*
 > 	- [ ] Fréquence *(Diarrhée chronique par malabsorption)*
 > 	- [ ] Consistance : liquide - pâteuse - moulée - dure *(Diarrhée chronique par malabsorption)*
 > 	- [ ] Volume *(Diarrhée chronique par malabsorption)*
-> - [ ] **4. Symptômes associés - Douleurs abdominales *(MICI (Crohn / RCUH))***
+> - [ ] **4. Symptômes associés - Douleurs abdominales *(1 grille sur 5)***
 > 	- [ ] Présence
 > 	- [ ] Localisation
 > 	- [ ] Intensité (échelle 0-10)
@@ -106,7 +106,7 @@ cssclasses:
 > 	- [ ] Irradiation
 > 	- [ ] Facteurs améliorants
 > 	- [ ] Facteurs aggravants
-> - [ ] **5. Recherche de symptômes spécifiques *(MICI (Crohn / RCUH))***
+> - [ ] **5. Recherche de symptômes spécifiques *(1 grille sur 5)***
 > 	- [ ] Voyage récent
 > 	- [ ] Eau non purifiée, randonnée
 > 	- [ ] Nausées/vomissements
@@ -119,15 +119,15 @@ cssclasses:
 > 	- [ ] Variations pondérales
 > 	- [ ] Infection récente
 > 	- [ ] Vision floue
-> - [ ] **6. Antécédents médicaux *(MICI (Crohn / RCUH))***
-> - [ ] **7. Antécédents chirurgicaux *(MICI (Crohn / RCUH))***
-> - [ ] **8. Allergies *(MICI (Crohn / RCUH))***
-> - [ ] **9. Médicaments *(MICI (Crohn / RCUH))***
-> - [ ] **10. Hospitalisations et contacts malades *(MICI (Crohn / RCUH))***
+> - [ ] **6. Antécédents médicaux *(1 grille sur 5)***
+> - [ ] **7. Antécédents chirurgicaux *(1 grille sur 5)***
+> - [ ] **8. Allergies *(1 grille sur 5)***
+> - [ ] **9. Médicaments *(1 grille sur 5)***
+> - [ ] **10. Hospitalisations et contacts malades *(1 grille sur 5)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Contacts malades
-> - [ ] **11. Antécédents familiaux *(MICI (Crohn / RCUH))***
-> - [ ] **12. Habitudes et mode de vie *(MICI (Crohn / RCUH))***
+> - [ ] **11. Antécédents familiaux *(1 grille sur 5)***
+> - [ ] **12. Habitudes et mode de vie *(1 grille sur 5)***
 > 	- [ ] Occupation
 > 	- [ ] Domicile
 > 	- [ ] Alcool
@@ -241,41 +241,41 @@ cssclasses:
 > 	- [ ] Conditions de vie
 > 	- [ ] Autonomie (personne âgée)
 > 	- [ ] Garde d'enfant/crèche
-> - [ ] **43. Caractérisation de la plainte principale *(Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **43. Caractérisation de la plainte principale *(1 grille sur 5)***
 > 	- [ ] Localisation de la douleur
 > 	- [ ] Type de douleur
 > 	- [ ] Intensité
 > 	- [ ] Durée et fréquence
 > 	- [ ] Facteurs aggravants
-> - [ ] **44. Caractérisation des rectorragies *(Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **44. Caractérisation des rectorragies *(1 grille sur 5)***
 > 	- [ ] Présence de sang frais
 > 	- [ ] Quantité et fréquence
 > 	- [ ] Glaires
 > 	- [ ] Diarrhées nocturnes
 > 	- [ ] Ténesmes et urgences fécales
-> - [ ] **45. Symptômes associés *(Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **45. Symptômes associés *(1 grille sur 5)***
 > 	- [ ] Perte de poids
 > 	- [ ] Inappétence
 > 	- [ ] Nausées et vomissements
 > 	- [ ] Fatigue
 > 	- [ ] Palpitations
-> - [ ] **46. Retentissement fonctionnel *(Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **46. Retentissement fonctionnel *(1 grille sur 5)***
 > 	- [ ] Impact socioprofessionnel
 > 	- [ ] Isolement social
 > 	- [ ] Adaptation comportementale
-> - [ ] **47. Antécédents et facteurs de risque *(Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **47. Antécédents et facteurs de risque *(1 grille sur 5)***
 > 	- [ ] Voyage récent
 > 	- [ ] Relations sexuelles non protégées
 > 	- [ ] Consommation d'aliments à risque
 > 	- [ ] Tabagisme
 > 	- [ ] Médicaments gastrotoxiques
-> - [ ] **48. Anamnèse systémique *(Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **48. Anamnèse systémique *(1 grille sur 5)***
 > 	- [ ] Pas de symptômes urinaires
 > 	- [ ] Pas de douleurs articulaires
 > 	- [ ] Pas d'atteinte cutanée
 > 	- [ ] Pas d'atteinte oculaire
 > 	- [ ] Pas de notion de contage
-> - [ ] **49. Anamnèse médicale et chirurgicale *(Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **49. Anamnèse médicale et chirurgicale *(1 grille sur 5)***
 > 	- [ ] Reflux gastro-œsophagien
 > 	- [ ] Lombalgies chroniques
 > 	- [ ] Appendicectomie
@@ -334,25 +334,25 @@ cssclasses:
 > 	- [ ] Maladies inflammatoires intestinales
 
 > [!tip] 🩺 Status
-> - [ ] **1. Mesures d'hygiène *(MICI (Crohn / RCUH))***
+> - [ ] **1. Mesures d'hygiène *(1 grille sur 5)***
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
-> - [ ] **2. Examen tête et cou *(MICI (Crohn / RCUH))***
+> - [ ] **2. Examen tête et cou *(1 grille sur 5)***
 > 	- [ ] Inspection des conjonctives
 > 	- [ ] Examen des pupilles
 > 	- [ ] Inspection de l'oropharynx
-> - [ ] **3. Examen cardiovasculaire *(MICI (Crohn / RCUH))***
-> - [ ] **4. Examen pulmonaire *(MICI (Crohn / RCUH))***
-> - [ ] **5. Examen abdominal *(MICI (Crohn / RCUH) · Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **3. Examen cardiovasculaire *(1 grille sur 5)***
+> - [ ] **4. Examen pulmonaire *(1 grille sur 5)***
+> - [ ] **5. Examen abdominal *(MICI (Crohn / RCUH))***
 > 	- [ ] Inspection de l'abdomen
-> 	- [ ] Auscultation de l'abdomen *(MICI (Crohn / RCUH))*
-> 	- [ ] Percussion de l'abdomen *(MICI (Crohn / RCUH))*
-> 	- [ ] Palpation de l'abdomen *(MICI (Crohn / RCUH))*
-> 	- [ ] Auscultation des bruits intestinaux *(Rectocolite ulcéro-hémorragique (RCUH))*
-> 	- [ ] Palpation des 4 quadrants *(Rectocolite ulcéro-hémorragique (RCUH))*
-> 	- [ ] Recherche de défense ou détente *(Rectocolite ulcéro-hémorragique (RCUH))*
-> 	- [ ] Recherche de masses *(Rectocolite ulcéro-hémorragique (RCUH))*
-> - [ ] **6. Examen cutané *(MICI (Crohn / RCUH))***
+> 	- [ ] Auscultation de l'abdomen *(1 grille sur 5)*
+> 	- [ ] Percussion de l'abdomen *(1 grille sur 5)*
+> 	- [ ] Palpation de l'abdomen *(1 grille sur 5)*
+> 	- [ ] Auscultation des bruits intestinaux *(1 grille sur 5)*
+> 	- [ ] Palpation des 4 quadrants *(1 grille sur 5)*
+> 	- [ ] Recherche de défense ou détente *(1 grille sur 5)*
+> 	- [ ] Recherche de masses *(1 grille sur 5)*
+> - [ ] **6. Examen cutané *(1 grille sur 5)***
 > - [ ] **7. Examen abdominal complet *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Inspection (distension, cicatrices)
 > 	- [ ] Auscultation (bruits hydroaériques)
@@ -365,15 +365,15 @@ cssclasses:
 > 	- [ ] Érythème noueux
 > 	- [ ] Pyoderma gangrenosum
 > 	- [ ] Autres manifestations extra-intestinales
-> - [ ] **10. Toucher rectal *(Cancer colorectal · Diarrhée chronique par malabsorption · Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **10. Toucher rectal *(3 grilles sur 5)***
 > 	- [ ] Tonus sphinctérien *(Cancer colorectal · Diarrhée chronique par malabsorption)*
 > 	- [ ] Présence de sang *(Diarrhée chronique par malabsorption)*
 > 	- [ ] Masses rectales *(Diarrhée chronique par malabsorption)*
 > 	- [ ] Fécalome *(Diarrhée chronique par malabsorption)*
-> 	- [ ] Inspection de la marge anale *(Rectocolite ulcéro-hémorragique (RCUH))*
-> 	- [ ] Recherche de sang frais *(Rectocolite ulcéro-hémorragique (RCUH))*
-> 	- [ ] Évaluation du tonus sphinctérien *(Rectocolite ulcéro-hémorragique (RCUH))*
-> 	- [ ] Palpation rectale *(Rectocolite ulcéro-hémorragique (RCUH))*
+> 	- [ ] Inspection de la marge anale *(1 grille sur 5)*
+> 	- [ ] Recherche de sang frais *(1 grille sur 5)*
+> 	- [ ] Évaluation du tonus sphinctérien *(1 grille sur 5)*
+> 	- [ ] Palpation rectale *(1 grille sur 5)*
 > 	- [ ] Position genu-pectorale ou décubitus latéral *(Cancer colorectal)*
 > 	- [ ] Ampoule rectale *(Cancer colorectal)*
 > 	- [ ] Masses rectales palpables *(Cancer colorectal)*
@@ -400,15 +400,15 @@ cssclasses:
 > 	- [ ] Poids actuel (si possible)
 > 	- [ ] État de conscience
 > 	- [ ] Température
-> - [ ] **18. Signes vitaux et état général *(Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **18. Signes vitaux et état général *(1 grille sur 5)***
 > 	- [ ] Prise des signes vitaux
 > 	- [ ] Évaluation de l'état général
 > 	- [ ] Recherche de signes de déshydratation
-> - [ ] **19. Recherche de complications *(Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **19. Recherche de complications *(1 grille sur 5)***
 > 	- [ ] Signes de péritonite
 > 	- [ ] Signes de mégacôlon toxique
 > 	- [ ] État hémodynamique
-> - [ ] **20. Recherche de manifestations extra-intestinales *(Rectocolite ulcéro-hémorragique (RCUH))***
+> - [ ] **20. Recherche de manifestations extra-intestinales *(1 grille sur 5)***
 > 	- [ ] Examen cutané
 > 	- [ ] Examen articulaire
 > 	- [ ] Examen oculaire si indiqué
@@ -548,55 +548,53 @@ cssclasses:
 > 	- [ ] Éducation des parents/soignants
 
 > [!success] 💊 Management — si MICI (Crohn / RCUH)
-> - [ ] **1. Hypothèses diagnostiques**
-> - [ ] **2. Examens complémentaires urgents**
+> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 2)***
+> - [ ] **2. Examens complémentaires urgents *(1 grille sur 2)***
 > 	- [ ] Examen rectal
 > 	- [ ] Recherche de sang occulte dans les selles
 > 	- [ ] FSC, électrolytes
 > 	- [ ] VS, CRP
-> - [ ] **3. Examens microbiologiques**
+> - [ ] **3. Examens microbiologiques *(1 grille sur 2)***
 > 	- [ ] Coproculture; microscopie des selles pour œufs et parasites
-> - [ ] **4. Examens d'imagerie et endoscopie**
+> - [ ] **4. Examens d'imagerie et endoscopie *(1 grille sur 2)***
 > 	- [ ] US abdominale
 > 	- [ ] Radiographie abdominale simple
 > 	- [ ] Coloscopie
-> - [ ] **5. Communication avec le patient**
+> - [ ] **5. Communication avec le patient *(1 grille sur 2)***
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **6. Conseil et prévention**
+> - [ ] **6. Conseil et prévention *(1 grille sur 2)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant le travail
 > 	- [ ] Discussion sur l'importance du dépistage familial (cancer colorectal)
-
-> [!success] 💊 Management — si Rectocolite ulcéro-hémorragique (RCUH)
-> - [ ] **1. Hypothèse diagnostique principale**
+> - [ ] **7. Hypothèse diagnostique principale *(1 grille sur 2)***
 > 	- [ ] Rectocolite ulcéro-hémorragique (RCUH)
 > 	- [ ] Justification basée sur les symptômes
 > 	- [ ] Explication adaptée à la patiente
-> - [ ] **2. Diagnostics différentiels évoqués**
+> - [ ] **8. Diagnostics différentiels évoqués *(1 grille sur 2)***
 > 	- [ ] Maladie de Crohn
 > 	- [ ] Colite infectieuse (bactérienne, parasitaire)
 > 	- [ ] Colite médicamenteuse (AINS)
 > 	- [ ] Carcinome colorectal
-> - [ ] **3. Examens complémentaires**
+> - [ ] **9. Examens complémentaires *(1 grille sur 2)***
 > 	- [ ] Bilan biologique (FSC, CRP, électrolytes, fonction rénale)
 > 	- [ ] Cultures de selles et parasitologie
 > 	- [ ] Calprotectine fécale
 > 	- [ ] Colonoscopie avec biopsies
-> - [ ] **4. Prise en charge immédiate**
+> - [ ] **10. Prise en charge immédiate *(1 grille sur 2)***
 > 	- [ ] Critères d'hospitalisation évalués
 > 	- [ ] Réhydratation IV
 > 	- [ ] Corticothérapie IV si colite sévère
 > 	- [ ] Arrêt des AINS
-> - [ ] **5. Plan de suivi**
+> - [ ] **11. Plan de suivi *(1 grille sur 2)***
 > 	- [ ] Consultation gastro-entérologie
 > 	- [ ] Surveillance des complications
 > 	- [ ] Protocole de dépistage du cancer colorectal
 > 	- [ ] Soutien psychologique
-> - [ ] **6. Communication avec la patiente**
+> - [ ] **12. Communication avec la patiente *(1 grille sur 2)***
 > 	- [ ] Réponse à la question sur le cancer
 > 	- [ ] Explication du caractère chronique de la maladie
 > 	- [ ] Rassurance sur les options thérapeutiques

@@ -4,7 +4,7 @@ aliases:
 type: memento-ecos-ssp
 ssp: "Douleur du Genou"
 cas: 3
-diagnostics: 3
+diagnostics: 2
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -63,12 +63,12 @@ cssclasses:
 
 # Douleur du Genou
 
-*3 grilles · 3 diagnostics distincts* — [[SSP — Douleur du Genou]]
+*3 grilles · 2 diagnostics distincts* — [[SSP — Douleur du Genou]]
 
 > [!abstract] Les 3 grilles fusionnées
 > - **AMBOSS-25** — Thrombose veineuse profonde (TVP) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-25_-_Douleur_au_genou_-_Femme_47_ans_-_Grille_ECOS.html>)
 > - **AZYGOS-17** — Déchirure méniscale / ligamentaire `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/03534eb4-8ba8-409e-a9c2-6b04c555a00b.json>)
-> - **German-23** — Lésion méniscale médiale du genou droit `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-23_-_Douleur_au_genou_-_Grille_ECOS.html>)
+> - **German-23** — Déchirure méniscale / ligamentaire `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-23_-_Douleur_au_genou_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(Thrombose veineuse profonde (TVP))***
@@ -100,17 +100,17 @@ cssclasses:
 > 	- [ ] Vertiges
 > 	- [ ] Chaleur du membre inférieur
 > 	- [ ] Faiblesse/engourdissement/picotements
-> - [ ] **4. Antécédents médicaux *(Déchirure méniscale / ligamentaire · Thrombose veineuse profonde (TVP))***
+> - [ ] **4. Antécédents médicaux *(2 grilles sur 3)***
 > 	- [ ] Antécédents médicaux *(Thrombose veineuse profonde (TVP))*
 > 	- [ ] Thrombose dans le passé *(Thrombose veineuse profonde (TVP))*
-> - [ ] **5. Allergies *(Déchirure méniscale / ligamentaire · Thrombose veineuse profonde (TVP))***
-> - [ ] **6. Médicaments *(Déchirure méniscale / ligamentaire · Thrombose veineuse profonde (TVP))***
+> - [ ] **5. Allergies *(2 grilles sur 3)***
+> - [ ] **6. Médicaments *(2 grilles sur 3)***
 > - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Thrombose veineuse profonde (TVP))***
 > 	- [ ] Hospitalisations
 > 	- [ ] Grossesses antérieures/fausses couches
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **8. Antécédents familiaux *(Déchirure méniscale / ligamentaire · Thrombose veineuse profonde (TVP))***
-> - [ ] **9. Habitudes et mode de vie *(Lésion méniscale médiale du genou droit · Thrombose veineuse profonde (TVP))***
+> - [ ] **8. Antécédents familiaux *(2 grilles sur 3)***
+> - [ ] **9. Habitudes et mode de vie *(2 grilles sur 3)***
 > 	- [ ] Travail *(Thrombose veineuse profonde (TVP))*
 > 	- [ ] Domicile *(Thrombose veineuse profonde (TVP))*
 > 	- [ ] Alcool *(Thrombose veineuse profonde (TVP))*
@@ -118,66 +118,66 @@ cssclasses:
 > 	- [ ] Tabac *(Thrombose veineuse profonde (TVP))*
 > 	- [ ] Exercice *(Thrombose veineuse profonde (TVP))*
 > 	- [ ] Alimentation *(Thrombose veineuse profonde (TVP))*
-> - [ ] **10. Question initiale *(Déchirure méniscale / ligamentaire)***
-> - [ ] **11. Dimension temporelle *(Déchirure méniscale / ligamentaire)***
-> - [ ] **12. Début *(Déchirure méniscale / ligamentaire)***
-> - [ ] **13. Évolution *(Déchirure méniscale / ligamentaire)***
-> - [ ] **14. Déclencheur *(Déchirure méniscale / ligamentaire)***
-> - [ ] **15. Localisation *(Déchirure méniscale / ligamentaire)***
-> - [ ] **16. Irradiation *(Déchirure méniscale / ligamentaire)***
-> - [ ] **17. Qualité *(Déchirure méniscale / ligamentaire)***
-> - [ ] **18. Intensité / sévérité *(Déchirure méniscale / ligamentaire)***
-> - [ ] **19. Facteurs aggravants *(Déchirure méniscale / ligamentaire)***
-> - [ ] **20. Facteurs soulageants *(Déchirure méniscale / ligamentaire)***
-> - [ ] **21. Mesures déjà prises *(Déchirure méniscale / ligamentaire)***
-> - [ ] **22. Retentissement au quotidien *(Déchirure méniscale / ligamentaire)***
-> - [ ] **23. Symptômes associés *(Déchirure méniscale / ligamentaire)***
-> - [ ] **24. Blessures antérieures *(Déchirure méniscale / ligamentaire)***
-> - [ ] **25. Activité sportive *(Déchirure méniscale / ligamentaire)***
-> - [ ] **26. Mécanisme de la blessure *(Déchirure méniscale / ligamentaire)***
-> - [ ] **27. Symptômes mécaniques *(Déchirure méniscale / ligamentaire)***
-> - [ ] **28. Clic / phénomène de ressaut *(Déchirure méniscale / ligamentaire)***
-> - [ ] **29. Blocage / sensation de coincement *(Déchirure méniscale / ligamentaire)***
-> - [ ] **30. Limitation de l’extension *(Déchirure méniscale / ligamentaire)***
-> - [ ] **31. Dynamique du gonflement *(Déchirure méniscale / ligamentaire)***
-> - [ ] **32. DD lésion ligamentaire *(Déchirure méniscale / ligamentaire)***
-> - [ ] **33. Giving-way / dérobement *(Déchirure méniscale / ligamentaire)***
-> - [ ] **34. Pop / claquement sonore *(Déchirure méniscale / ligamentaire)***
-> - [ ] **35. Sensation d’instabilité *(Déchirure méniscale / ligamentaire)***
-> - [ ] **36. DD fracture, Règles d’Ottawa pour le genou *(Déchirure méniscale / ligamentaire)***
-> - [ ] **37. Capacité de charge après le traumatisme *(Déchirure méniscale / ligamentaire)***
-> - [ ] **38. Flexion au-delà de 90° *(Déchirure méniscale / ligamentaire)***
-> - [ ] **39. Antécédents chirurgicaux *(Déchirure méniscale / ligamentaire)***
-> - [ ] **40. Noxes *(Déchirure méniscale / ligamentaire)***
-> - [ ] **41. Tabac *(Déchirure méniscale / ligamentaire)***
-> - [ ] **42. Alcool *(Déchirure méniscale / ligamentaire)***
-> - [ ] **43. Drogues *(Déchirure méniscale / ligamentaire)***
-> - [ ] **44. Anamnèse psychosociale *(Déchirure méniscale / ligamentaire)***
-> - [ ] **45. Profession / loisirs *(Déchirure méniscale / ligamentaire)***
-> - [ ] **46. Charge psychosociale *(Déchirure méniscale / ligamentaire)***
-> - [ ] **47. Situation sociale *(Déchirure méniscale / ligamentaire)***
-> - [ ] **48. Présentation avec nom, fonction et tâche *(Lésion méniscale médiale du genou droit)***
-> - [ ] **49. Symptômes actuels *(Lésion méniscale médiale du genou droit)***
-> - [ ] **50. Début et évolution temporelle *(Lésion méniscale médiale du genou droit)***
-> - [ ] **51. Facteur déclenchant/circonstances *(Lésion méniscale médiale du genou droit)***
-> - [ ] **52. Évolution depuis le début *(Lésion méniscale médiale du genou droit)***
-> - [ ] **53. Localisation précise de la douleur *(Lésion méniscale médiale du genou droit)***
-> - [ ] **54. Intensité de la douleur (échelle 0-10) *(Lésion méniscale médiale du genou droit)***
-> - [ ] **55. Caractère de la douleur *(Lésion méniscale médiale du genou droit)***
-> - [ ] **56. Présence de gonflement *(Lésion méniscale médiale du genou droit)***
-> - [ ] **57. Irradiation de la douleur *(Lésion méniscale médiale du genou droit)***
-> - [ ] **58. Douleur au repos *(Lésion méniscale médiale du genou droit)***
-> - [ ] **59. Capacité de marche/mobilité *(Lésion méniscale médiale du genou droit)***
-> - [ ] **60. Limitation des mouvements *(Lésion méniscale médiale du genou droit)***
-> - [ ] **61. Auto-traitement déjà entrepris *(Lésion méniscale médiale du genou droit)***
-> - [ ] **62. Symptômes associés (fièvre, signes d'infection) *(Lésion méniscale médiale du genou droit)***
-> - [ ] **63. Morsure de tique *(Lésion méniscale médiale du genou droit)***
-> - [ ] **64. Douleurs dans d'autres articulations *(Lésion méniscale médiale du genou droit)***
-> - [ ] **65. Antécédents de pathologie du genou *(Lésion méniscale médiale du genou droit)***
-> - [ ] **66. Antécédents personnels *(Lésion méniscale médiale du genou droit)***
-> - [ ] **67. Médicaments actuels *(Lésion méniscale médiale du genou droit)***
-> - [ ] **68. Anamnèse familiale *(Lésion méniscale médiale du genou droit)***
-> - [ ] **69. Anamnèse sociale et professionnelle *(Lésion méniscale médiale du genou droit)***
+> - [ ] **10. Question initiale *(1 grille sur 3)***
+> - [ ] **11. Dimension temporelle *(1 grille sur 3)***
+> - [ ] **12. Début *(1 grille sur 3)***
+> - [ ] **13. Évolution *(1 grille sur 3)***
+> - [ ] **14. Déclencheur *(1 grille sur 3)***
+> - [ ] **15. Localisation *(1 grille sur 3)***
+> - [ ] **16. Irradiation *(1 grille sur 3)***
+> - [ ] **17. Qualité *(1 grille sur 3)***
+> - [ ] **18. Intensité / sévérité *(1 grille sur 3)***
+> - [ ] **19. Facteurs aggravants *(1 grille sur 3)***
+> - [ ] **20. Facteurs soulageants *(1 grille sur 3)***
+> - [ ] **21. Mesures déjà prises *(1 grille sur 3)***
+> - [ ] **22. Retentissement au quotidien *(1 grille sur 3)***
+> - [ ] **23. Symptômes associés *(1 grille sur 3)***
+> - [ ] **24. Blessures antérieures *(1 grille sur 3)***
+> - [ ] **25. Activité sportive *(1 grille sur 3)***
+> - [ ] **26. Mécanisme de la blessure *(1 grille sur 3)***
+> - [ ] **27. Symptômes mécaniques *(1 grille sur 3)***
+> - [ ] **28. Clic / phénomène de ressaut *(1 grille sur 3)***
+> - [ ] **29. Blocage / sensation de coincement *(1 grille sur 3)***
+> - [ ] **30. Limitation de l’extension *(1 grille sur 3)***
+> - [ ] **31. Dynamique du gonflement *(1 grille sur 3)***
+> - [ ] **32. DD lésion ligamentaire *(1 grille sur 3)***
+> - [ ] **33. Giving-way / dérobement *(1 grille sur 3)***
+> - [ ] **34. Pop / claquement sonore *(1 grille sur 3)***
+> - [ ] **35. Sensation d’instabilité *(1 grille sur 3)***
+> - [ ] **36. DD fracture, Règles d’Ottawa pour le genou *(1 grille sur 3)***
+> - [ ] **37. Capacité de charge après le traumatisme *(1 grille sur 3)***
+> - [ ] **38. Flexion au-delà de 90° *(1 grille sur 3)***
+> - [ ] **39. Antécédents chirurgicaux *(1 grille sur 3)***
+> - [ ] **40. Noxes *(1 grille sur 3)***
+> - [ ] **41. Tabac *(1 grille sur 3)***
+> - [ ] **42. Alcool *(1 grille sur 3)***
+> - [ ] **43. Drogues *(1 grille sur 3)***
+> - [ ] **44. Anamnèse psychosociale *(1 grille sur 3)***
+> - [ ] **45. Profession / loisirs *(1 grille sur 3)***
+> - [ ] **46. Charge psychosociale *(1 grille sur 3)***
+> - [ ] **47. Situation sociale *(1 grille sur 3)***
+> - [ ] **48. Présentation avec nom, fonction et tâche *(1 grille sur 3)***
+> - [ ] **49. Symptômes actuels *(1 grille sur 3)***
+> - [ ] **50. Début et évolution temporelle *(1 grille sur 3)***
+> - [ ] **51. Facteur déclenchant/circonstances *(1 grille sur 3)***
+> - [ ] **52. Évolution depuis le début *(1 grille sur 3)***
+> - [ ] **53. Localisation précise de la douleur *(1 grille sur 3)***
+> - [ ] **54. Intensité de la douleur (échelle 0-10) *(1 grille sur 3)***
+> - [ ] **55. Caractère de la douleur *(1 grille sur 3)***
+> - [ ] **56. Présence de gonflement *(1 grille sur 3)***
+> - [ ] **57. Irradiation de la douleur *(1 grille sur 3)***
+> - [ ] **58. Douleur au repos *(1 grille sur 3)***
+> - [ ] **59. Capacité de marche/mobilité *(1 grille sur 3)***
+> - [ ] **60. Limitation des mouvements *(1 grille sur 3)***
+> - [ ] **61. Auto-traitement déjà entrepris *(1 grille sur 3)***
+> - [ ] **62. Symptômes associés (fièvre, signes d'infection) *(1 grille sur 3)***
+> - [ ] **63. Morsure de tique *(1 grille sur 3)***
+> - [ ] **64. Douleurs dans d'autres articulations *(1 grille sur 3)***
+> - [ ] **65. Antécédents de pathologie du genou *(1 grille sur 3)***
+> - [ ] **66. Antécédents personnels *(1 grille sur 3)***
+> - [ ] **67. Médicaments actuels *(1 grille sur 3)***
+> - [ ] **68. Anamnèse familiale *(1 grille sur 3)***
+> - [ ] **69. Anamnèse sociale et professionnelle *(1 grille sur 3)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Thrombose veineuse profonde (TVP))***
@@ -202,59 +202,59 @@ cssclasses:
 > 	- [ ] Examen ciblé de la sensibilité des membres inférieurs
 > 	- [ ] Palpation des pouls pédieux
 > 	- [ ] Signe de Homans
-> - [ ] **5. Démarche *(Déchirure méniscale / ligamentaire)***
-> - [ ] **6. Tests globaux *(Déchirure méniscale / ligamentaire)***
-> - [ ] **7. Test d’extension *(Déchirure méniscale / ligamentaire)***
-> - [ ] **8. Test d’accroupissement *(Déchirure méniscale / ligamentaire)***
-> - [ ] **9. Inspection globale *(Déchirure méniscale / ligamentaire)***
-> - [ ] **10. Inspection *(Déchirure méniscale / ligamentaire)***
-> - [ ] **11. PDMS *(Déchirure méniscale / ligamentaire)***
-> - [ ] **12. Palpation *(Déchirure méniscale / ligamentaire)***
-> - [ ] **13. Phénomène de ballottement rotulien *(Déchirure méniscale / ligamentaire)***
-> - [ ] **14. Mobilité *(Déchirure méniscale / ligamentaire)***
-> - [ ] **15. Flexion / extension *(Déchirure méniscale / ligamentaire)***
-> - [ ] **16. Rotation *(Déchirure méniscale / ligamentaire)***
-> - [ ] **17. Tests méniscaux *(Déchirure méniscale / ligamentaire · Lésion méniscale médiale du genou droit)***
-> 	- [ ] Test de Steinmann I *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Test de McMurray *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Test d'Apley (Grinding test) *(Lésion méniscale médiale du genou droit)*
-> - [ ] **18. Test de McMurray *(Déchirure méniscale / ligamentaire)***
-> - [ ] **19. Test de Steinmann I *(Déchirure méniscale / ligamentaire)***
-> - [ ] **20. Ligaments croisés *(Déchirure méniscale / ligamentaire)***
-> - [ ] **21. Lachman *(Déchirure méniscale / ligamentaire)***
-> - [ ] **22. Tiroir antérieur *(Déchirure méniscale / ligamentaire)***
-> - [ ] **23. Tiroir postérieur *(Déchirure méniscale / ligamentaire)***
-> - [ ] **24. Ligaments latéraux *(Déchirure méniscale / ligamentaire)***
-> - [ ] **25. Stress en valgus *(Déchirure méniscale / ligamentaire)***
-> - [ ] **26. Stress en varus *(Déchirure méniscale / ligamentaire)***
-> - [ ] **27. Inspection générale *(Lésion méniscale médiale du genou droit)***
+> - [ ] **5. Démarche *(1 grille sur 3)***
+> - [ ] **6. Tests globaux *(1 grille sur 3)***
+> - [ ] **7. Test d’extension *(1 grille sur 3)***
+> - [ ] **8. Test d’accroupissement *(1 grille sur 3)***
+> - [ ] **9. Inspection globale *(1 grille sur 3)***
+> - [ ] **10. Inspection *(1 grille sur 3)***
+> - [ ] **11. PDMS *(1 grille sur 3)***
+> - [ ] **12. Palpation *(1 grille sur 3)***
+> - [ ] **13. Phénomène de ballottement rotulien *(1 grille sur 3)***
+> - [ ] **14. Mobilité *(1 grille sur 3)***
+> - [ ] **15. Flexion / extension *(1 grille sur 3)***
+> - [ ] **16. Rotation *(1 grille sur 3)***
+> - [ ] **17. Tests méniscaux *(Déchirure méniscale / ligamentaire)***
+> 	- [ ] Test de Steinmann I *(1 grille sur 3)*
+> 	- [ ] Test de McMurray *(1 grille sur 3)*
+> 	- [ ] Test d'Apley (Grinding test) *(1 grille sur 3)*
+> - [ ] **18. Test de McMurray *(1 grille sur 3)***
+> - [ ] **19. Test de Steinmann I *(1 grille sur 3)***
+> - [ ] **20. Ligaments croisés *(1 grille sur 3)***
+> - [ ] **21. Lachman *(1 grille sur 3)***
+> - [ ] **22. Tiroir antérieur *(1 grille sur 3)***
+> - [ ] **23. Tiroir postérieur *(1 grille sur 3)***
+> - [ ] **24. Ligaments latéraux *(1 grille sur 3)***
+> - [ ] **25. Stress en valgus *(1 grille sur 3)***
+> - [ ] **26. Stress en varus *(1 grille sur 3)***
+> - [ ] **27. Inspection générale *(1 grille sur 3)***
 > 	- [ ] Axes des membres inférieurs
 > 	- [ ] Longueur des jambes et position du bassin
 > 	- [ ] Analyse de la marche
 > 	- [ ] Recherche de gonflement et rotule dansante
-> - [ ] **28. Palpation systématique *(Lésion méniscale médiale du genou droit)***
+> - [ ] **28. Palpation systématique *(1 grille sur 3)***
 > 	- [ ] Structures osseuses (tubérosité tibiale antérieure, rotule, condyles fémoraux)
 > 	- [ ] Interligne articulaire
 > 	- [ ] Ligaments collatéraux
 > 	- [ ] Tendon rotulien
 > 	- [ ] Recherche d'épanchement (signe du glaçon)
-> - [ ] **29. Examen fonctionnel - Mobilité articulaire *(Lésion méniscale médiale du genou droit)***
+> - [ ] **29. Examen fonctionnel - Mobilité articulaire *(1 grille sur 3)***
 > 	- [ ] Flexion-extension active et passive
 > 	- [ ] Méthode Neutre-Zéro
-> - [ ] **30. Tests des ligaments croisés *(Lésion méniscale médiale du genou droit)***
+> - [ ] **30. Tests des ligaments croisés *(1 grille sur 3)***
 > 	- [ ] Ligament croisé antérieur - Test de Lachman
 > 	- [ ] Ligament croisé postérieur - Test du tiroir postérieur, Gravity-Sign
-> - [ ] **31. Test de stabilité ligamentaire collatérale *(Lésion méniscale médiale du genou droit)***
+> - [ ] **31. Test de stabilité ligamentaire collatérale *(1 grille sur 3)***
 > 	- [ ] Stress varus-valgus en extension complète
 > 	- [ ] Stress varus-valgus en flexion 20-30°
-> - [ ] **32. Examen de l'appareil extenseur *(Lésion méniscale médiale du genou droit)***
+> - [ ] **32. Examen de l'appareil extenseur *(1 grille sur 3)***
 > 	- [ ] Palpation du tubercule des adducteurs
 > 	- [ ] Test d'appréhension pour luxation patellaire en flexion 30°
 > 	- [ ] Mobilité de la rotule
-> - [ ] **33. Test de force musculaire *(Lésion méniscale médiale du genou droit)***
+> - [ ] **33. Test de force musculaire *(1 grille sur 3)***
 > 	- [ ] Flexion/extension contre résistance
 > 	- [ ] Quadriceps et ischio-jambiers
-> - [ ] **34. Évaluation vasculo-nerveuse périphérique *(Lésion méniscale médiale du genou droit)***
+> - [ ] **34. Évaluation vasculo-nerveuse périphérique *(1 grille sur 3)***
 > 	- [ ] Pouls pédieux et tibial postérieur
 > 	- [ ] Sensibilité
 > 	- [ ] Motricité distale
@@ -263,44 +263,42 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Déchirure méniscale / ligamentaire
-> - [ ] **1. Radiographie du genou**
-> - [ ] **2. IRM du genou**
-> - [ ] **3. Diagnostic de travail**
-> - [ ] **4. Information sur le diagnostic**
-> - [ ] **5. Analgésie**
-> - [ ] **6. Refroidissement**
-> - [ ] **7. Décharge**
-> - [ ] **8. Orthèse de genou**
-> - [ ] **9. Indication opératoire**
-> - [ ] **10. Technique opératoire**
-> - [ ] **11. Avis orthopédique**
-> - [ ] **12. Filet de sécurité**
-> - [ ] **13. Contrôle d’évolution**
-
-> [!success] 💊 Management — si Lésion méniscale médiale du genou droit
-> - [ ] **1. Diagnostic principal**
-> - [ ] **2. Diagnostics différentiels (au moins 2)**
-> - [ ] **3. Examens complémentaires**
+> - [ ] **1. Radiographie du genou *(1 grille sur 2)***
+> - [ ] **2. IRM du genou *(1 grille sur 2)***
+> - [ ] **3. Diagnostic de travail *(1 grille sur 2)***
+> - [ ] **4. Information sur le diagnostic *(1 grille sur 2)***
+> - [ ] **5. Analgésie *(1 grille sur 2)***
+> - [ ] **6. Refroidissement *(1 grille sur 2)***
+> - [ ] **7. Décharge *(1 grille sur 2)***
+> - [ ] **8. Orthèse de genou *(1 grille sur 2)***
+> - [ ] **9. Indication opératoire *(1 grille sur 2)***
+> - [ ] **10. Technique opératoire *(1 grille sur 2)***
+> - [ ] **11. Avis orthopédique *(1 grille sur 2)***
+> - [ ] **12. Filet de sécurité *(1 grille sur 2)***
+> - [ ] **13. Contrôle d’évolution *(1 grille sur 2)***
+> - [ ] **14. Diagnostic principal *(1 grille sur 2)***
+> - [ ] **15. Diagnostics différentiels (au moins 2) *(1 grille sur 2)***
+> - [ ] **16. Examens complémentaires *(1 grille sur 2)***
 > 	- [ ] Radiographie du genou (face/profil) pour exclure une lésion osseuse
 > 	- [ ] IRM du genou pour confirmation diagnostique
 > 	- [ ] Éventuellement arthroscopie diagnostique et thérapeutique
-> - [ ] **4. Traitement aigu**
+> - [ ] **17. Traitement aigu *(1 grille sur 2)***
 > 	- [ ] Protocole RICE (repos, glace, compression, élévation)
 > 	- [ ] AINS (ex: ibuprofène 600mg 3x/jour)
 > 	- [ ] Antalgiques si nécessaire
 > 	- [ ] Décharge partielle avec cannes anglaises
 > 	- [ ] Immobilisation relative (attelle articulée si nécessaire)
-> - [ ] **5. Prise en charge à moyen terme**
+> - [ ] **18. Prise en charge à moyen terme *(1 grille sur 2)***
 > 	- [ ] Référence à l'orthopédiste
 > 	- [ ] Physiothérapie pour renforcement musculaire et proprioception
 > 	- [ ] Décision thérapeutique selon IRM: conservateur vs chirurgical
 > 	- [ ] Si chirurgie: suture méniscale, résection partielle ou remplacement selon lésion
-> - [ ] **6. Information du patient**
+> - [ ] **19. Information du patient *(1 grille sur 2)***
 > 	- [ ] Explication du diagnostic probable
 > 	- [ ] Évolution attendue
 > 	- [ ] Importance du repos sportif temporaire
 > 	- [ ] Plan de traitement proposé
-> - [ ] **7. Suivi**
+> - [ ] **20. Suivi *(1 grille sur 2)***
 > 	- [ ] Contrôle clinique dans 1-2 semaines
 > 	- [ ] Adaptation du traitement selon évolution
 > 	- [ ] Certificat médical pour arrêt sportif

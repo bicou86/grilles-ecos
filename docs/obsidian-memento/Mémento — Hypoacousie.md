@@ -4,7 +4,7 @@ aliases:
 type: memento-ecos-ssp
 ssp: "Hypoacousie"
 cas: 4
-diagnostics: 3
+diagnostics: 2
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -63,13 +63,13 @@ cssclasses:
 
 # Hypoacousie
 
-*4 grilles · 3 diagnostics distincts* — [[SSP — Hypoacousie]]
+*4 grilles · 2 diagnostics distincts* — [[SSP — Hypoacousie]]
 
 > [!abstract] Les 4 grilles fusionnées
 > - **AMBOSS-23** — Presbyacousie `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-23_-_Perte_auditive_-_Homme_65_ans_-_Grille_ECOS.html>)
 > - **AZYGOS-33** — Presbyacousie `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/8fdeb650-3127-4f13-9ec7-1d50b1a6af35.json>)
 > - **German-67** — Surdité brusque idiopathique gauche `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-67_-_Perte_auditive_-_Grille_ECOS.html>)
-> - **German-68** — Presbyacousie bilatérale `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-68_-_Perte_auditive_-_Grille_ECOS.html>)
+> - **German-68** — Presbyacousie `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-68_-_Perte_auditive_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(1 grille sur 4)***
@@ -84,12 +84,12 @@ cssclasses:
 > 	- [ ] Facteurs améliorants *(1 grille sur 4)*
 > 	- [ ] Facteurs aggravants *(1 grille sur 4)*
 > 	- [ ] Symptômes associés *(1 grille sur 4)*
-> 	- [ ] Apparition temporelle *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)*
+> 	- [ ] Apparition temporelle *(2 grilles sur 4)*
 > 	- [ ] Évolution temporelle *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Latéralisation *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)*
+> 	- [ ] Latéralisation *(2 grilles sur 4)*
 > 	- [ ] Intensité de la perte auditive *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Évolution *(Presbyacousie bilatérale)*
-> 	- [ ] Sévérité *(Presbyacousie bilatérale)*
+> 	- [ ] Évolution *(1 grille sur 4)*
+> 	- [ ] Sévérité *(1 grille sur 4)*
 > - [ ] **3. Recherche de symptômes spécifiques *(1 grille sur 4)***
 > 	- [ ] Traumatisme
 > 	- [ ] Céphalées
@@ -107,11 +107,11 @@ cssclasses:
 > - [ ] **4. Antécédents médicaux *(1 grille sur 4)***
 > 	- [ ] Antécédents médicaux
 > 	- [ ] Type de chimiothérapie
-> - [ ] **5. Allergies *(Presbyacousie · Surdité brusque idiopathique gauche)***
+> - [ ] **5. Allergies *(3 grilles sur 4)***
 > 	- [ ] Allergies *(1 grille sur 4)*
 > 	- [ ] Description de la réaction allergique *(1 grille sur 4)*
 > 	- [ ] Allergies connues *(Surdité brusque idiopathique gauche)*
-> - [ ] **6. Médicaments *(Presbyacousie)***
+> - [ ] **6. Médicaments *(2 grilles sur 4)***
 > - [ ] **7. Hospitalisations et antécédents chirurgicaux *(1 grille sur 4)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
@@ -142,9 +142,9 @@ cssclasses:
 > - [ ] **24. Vertiges *(1 grille sur 4)***
 > - [ ] **25. Acouphènes / bourdonnements *(1 grille sur 4)***
 > - [ ] **26. Exposition au bruit *(2 grilles sur 4)***
-> 	- [ ] Exposition professionnelle antérieure *(Presbyacousie bilatérale)*
-> 	- [ ] Loisirs bruyants *(Presbyacousie bilatérale)*
-> 	- [ ] Traumatismes acoustiques *(Presbyacousie bilatérale)*
+> 	- [ ] Exposition professionnelle antérieure *(1 grille sur 4)*
+> 	- [ ] Loisirs bruyants *(1 grille sur 4)*
+> 	- [ ] Traumatismes acoustiques *(1 grille sur 4)*
 > - [ ] **27. Céphalées *(1 grille sur 4)***
 > - [ ] **28. Symptômes neurologiques focaux *(1 grille sur 4)***
 > - [ ] **29. Infections passées *(1 grille sur 4)***
@@ -158,20 +158,20 @@ cssclasses:
 > - [ ] **37. Hypoacousie familiale *(1 grille sur 4)***
 > - [ ] **38. Profession *(1 grille sur 4)***
 > - [ ] **39. Situation sociale *(1 grille sur 4)***
-> - [ ] **40. Présentation avec nom, fonction et tâche *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
+> - [ ] **40. Présentation avec nom, fonction et tâche *(2 grilles sur 4)***
 > - [ ] **41. Question d'entrée ouverte *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Qu'est-ce qui vous amène aujourd'hui ?
-> - [ ] **42. Symptômes associés ORL *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
+> - [ ] **42. Symptômes associés ORL *(2 grilles sur 4)***
 > 	- [ ] Sécrétions auriculaires (cérumen, sang, pus)
 > 	- [ ] Douleurs auriculaires
 > 	- [ ] Acouphènes
 > 	- [ ] Vertiges
-> - [ ] **43. Symptômes généraux *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
+> - [ ] **43. Symptômes généraux *(2 grilles sur 4)***
 > 	- [ ] Fièvre
 > 	- [ ] Toux
 > 	- [ ] Rhinite *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Vomissements
-> 	- [ ] Rhinorrhée *(Presbyacousie bilatérale)*
+> 	- [ ] Rhinorrhée *(1 grille sur 4)*
 > - [ ] **44. Facteurs déclenchants et traumatismes *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Facteur déclenchant identifiable
 > 	- [ ] Traumatisme récent
@@ -180,12 +180,12 @@ cssclasses:
 > 	- [ ] Antécédents de maladies auriculaires
 > 	- [ ] Exposition professionnelle au bruit
 > 	- [ ] Traumatismes auditifs antérieurs
-> - [ ] **46. Anamnèse médicamenteuse *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
+> - [ ] **46. Anamnèse médicamenteuse *(2 grilles sur 4)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Médicaments ototoxiques
 > 	- [ ] Automédication récente *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Traitement cardiovasculaire *(Presbyacousie bilatérale)*
-> - [ ] **47. Anamnèse systémique *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
+> 	- [ ] Traitement cardiovasculaire *(1 grille sur 4)*
+> - [ ] **47. Anamnèse systémique *(2 grilles sur 4)***
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Diabète
 > 	- [ ] Troubles neurologiques
@@ -194,23 +194,23 @@ cssclasses:
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Stress professionnel
-> - [ ] **49. Motif de consultation *(Presbyacousie bilatérale)***
+> - [ ] **49. Motif de consultation *(1 grille sur 4)***
 > 	- [ ] Qu'est-ce qui vous amène aujourd'hui ?
 > 	- [ ] Avez-vous des problèmes particuliers ?
-> - [ ] **50. Antécédents médicaux et ORL *(Presbyacousie bilatérale)***
+> - [ ] **50. Antécédents médicaux et ORL *(1 grille sur 4)***
 > 	- [ ] Otite moyenne dans l'enfance
 > 	- [ ] Méningite
 > 	- [ ] Cardiopathie ischémique
 > 	- [ ] Autres antécédents ORL
-> - [ ] **51. Impact fonctionnel sur la communication *(Presbyacousie bilatérale)***
+> - [ ] **51. Impact fonctionnel sur la communication *(1 grille sur 4)***
 > 	- [ ] Capacité à téléphoner
 > 	- [ ] Volume de la télévision/radio
 > 	- [ ] Compréhension en groupe
-> - [ ] **52. Anamnèse sociale et impact psychosocial *(Presbyacousie bilatérale)***
+> - [ ] **52. Anamnèse sociale et impact psychosocial *(1 grille sur 4)***
 > 	- [ ] Situation de vie
 > 	- [ ] Animaux de compagnie
 > 	- [ ] Condition physique
-> - [ ] **53. Activités sociales et loisirs *(Presbyacousie bilatérale)***
+> - [ ] **53. Activités sociales et loisirs *(1 grille sur 4)***
 > 	- [ ] Participation sociale actuelle
 > 	- [ ] Activités abandonnées
 > 	- [ ] Isolement social
@@ -240,42 +240,42 @@ cssclasses:
 > - [ ] **13. Examen du facial *(1 grille sur 4)***
 > - [ ] **14. Status complet des nerfs crâniens *(1 grille sur 4)***
 > - [ ] **15. Motricité / sensibilité / coordination *(1 grille sur 4)***
-> - [ ] **16. Inspection de l'oreille *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
+> - [ ] **16. Inspection de l'oreille *(2 grilles sur 4)***
 > 	- [ ] Inspection du pavillon auriculaire *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Inspection du conduit auditif externe visible *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Pavillon auriculaire droit *(Presbyacousie bilatérale)*
-> 	- [ ] Pavillon auriculaire gauche *(Presbyacousie bilatérale)*
-> 	- [ ] Conduit auditif externe visible *(Presbyacousie bilatérale)*
+> 	- [ ] Pavillon auriculaire droit *(1 grille sur 4)*
+> 	- [ ] Pavillon auriculaire gauche *(1 grille sur 4)*
+> 	- [ ] Conduit auditif externe visible *(1 grille sur 4)*
 > - [ ] **17. Palpation de l'oreille et recherche d'adénopathies *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Palpation du tragus
 > 	- [ ] Traction du pavillon auriculaire
 > 	- [ ] Palpation mastoïdienne
 > 	- [ ] Recherche d'adénopathies cervicales
-> - [ ] **18. Otoscopie bilatérale *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
+> - [ ] **18. Otoscopie bilatérale *(2 grilles sur 4)***
 > 	- [ ] Conduit auditif externe droit
 > 	- [ ] Tympan droit
 > 	- [ ] Conduit auditif externe gauche
 > 	- [ ] Tympan gauche
-> - [ ] **19. Tests auditifs au diapason *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
+> - [ ] **19. Tests auditifs au diapason *(2 grilles sur 4)***
 > 	- [ ] Test de Weber
 > 	- [ ] Test de Rinne à droite *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Test de Rinne à gauche
-> 	- [ ] Test de Rinne droit *(Presbyacousie bilatérale)*
-> - [ ] **20. Test de la voix chuchotée *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)***
+> 	- [ ] Test de Rinne droit *(1 grille sur 4)*
+> - [ ] **20. Test de la voix chuchotée *(2 grilles sur 4)***
 > 	- [ ] Oreille droite *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Oreille gauche *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Compréhension à droite *(Presbyacousie bilatérale)*
-> 	- [ ] Compréhension à gauche *(Presbyacousie bilatérale)*
-> 	- [ ] Nécessité de répéter fort *(Presbyacousie bilatérale)*
+> 	- [ ] Compréhension à droite *(1 grille sur 4)*
+> 	- [ ] Compréhension à gauche *(1 grille sur 4)*
+> 	- [ ] Nécessité de répéter fort *(1 grille sur 4)*
 > - [ ] **21. Examen de l'équilibre et coordination *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Équilibre statique
 > 	- [ ] Marche
 > 	- [ ] Recherche de nystagmus
-> - [ ] **22. Palpation auriculaire *(Presbyacousie bilatérale)***
+> - [ ] **22. Palpation auriculaire *(1 grille sur 4)***
 > 	- [ ] Pression du tragus
 > 	- [ ] Traction du pavillon
 > 	- [ ] Palpation mastoïdienne
-> - [ ] **23. Examen neurologique de base *(Presbyacousie bilatérale)***
+> - [ ] **23. Examen neurologique de base *(1 grille sur 4)***
 > 	- [ ] Nerfs crâniens
 > 	- [ ] Équilibre
 > 	- [ ] Coordination
@@ -285,63 +285,59 @@ cssclasses:
 > 	- [ ] Audiométrie *(1 grille sur 4)*
 > 	- [ ] Audiométrie tonale en urgence *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Audiométrie vocale *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Tympanométrie *(Presbyacousie bilatérale · Surdité brusque idiopathique gauche)*
+> 	- [ ] Tympanométrie *(2 grilles sur 4)*
 > 	- [ ] Diagnostic vestibulaire (nystagmus, épreuve calorique) *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Bilan biologique (FSC, CRP, VS, glycémie) *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Recherche d'hypertension artérielle *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Recherche d'hyperlipidémie *(Surdité brusque idiopathique gauche)*
 > 	- [ ] IRM cérébrale et du conduit auditif interne si pas d'amélioration *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Audiométrie tonale (courbe typique avec chute dans les aigus) *(Presbyacousie bilatérale)*
-> 	- [ ] Audiométrie vocale (mauvaise discrimination) *(Presbyacousie bilatérale)*
-> 	- [ ] Potentiels évoqués auditifs si doute diagnostique *(Presbyacousie bilatérale)*
+> 	- [ ] Audiométrie tonale (courbe typique avec chute dans les aigus) *(1 grille sur 4)*
+> 	- [ ] Audiométrie vocale (mauvaise discrimination) *(1 grille sur 4)*
+> 	- [ ] Potentiels évoqués auditifs si doute diagnostique *(1 grille sur 4)*
+> - [ ] **2. Diagnostic principal *(2 grilles sur 4)***
+> 	- [ ] Surdité brusque idiopathique gauche *(Surdité brusque idiopathique gauche)*
+> 	- [ ] Surdité de perception unilatérale gauche *(Surdité brusque idiopathique gauche)*
+> 	- [ ] Presbyacousie bilatérale *(1 grille sur 4)*
+> - [ ] **3. Diagnostics différentiels *(2 grilles sur 4)***
 
 > [!success] 💊 Management — si Otosclérose
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Presbyacousie
-> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 2)***
-> - [ ] **2. Communication avec le patient *(1 grille sur 2)***
+> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 3)***
+> - [ ] **2. Communication avec le patient *(1 grille sur 3)***
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **3. Conseil et soutien *(1 grille sur 2)***
+> - [ ] **3. Conseil et soutien *(1 grille sur 3)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Conseil pour réduire la prise d'aspirine
 > 	- [ ] Réaction appropriée au défi : articuler clairement, parler fort
 > 	- [ ] Éducation sur les aides auditives
 > 	- [ ] Stratégies de communication
-> - [ ] **4. Audiométrie *(1 grille sur 2)***
-> - [ ] **5. Presbyacousie *(1 grille sur 2)***
-> - [ ] **6. Orientation vers une spécialiste ORL / un spécialiste ORL pour l’appareillage auditif *(1 grille sur 2)***
-> - [ ] **7. Filet de sécurité *(1 grille sur 2)***
-
-> [!success] 💊 Management — si Presbyacousie bilatérale
-> - [ ] **1. Diagnostic principal**
-> 	- [ ] Presbyacousie bilatérale
-> - [ ] **2. Diagnostics différentiels**
-> - [ ] **3. Caractéristiques diagnostiques de la presbyacousie**
+> - [ ] **4. Audiométrie *(1 grille sur 3)***
+> - [ ] **5. Presbyacousie *(1 grille sur 3)***
+> - [ ] **6. Orientation vers une spécialiste ORL / un spécialiste ORL pour l’appareillage auditif *(1 grille sur 3)***
+> - [ ] **7. Filet de sécurité *(1 grille sur 3)***
+> - [ ] **8. Caractéristiques diagnostiques de la presbyacousie *(1 grille sur 3)***
 > 	- [ ] Surdité de perception symétrique bilatérale
 > 	- [ ] Atteinte prédominante des fréquences aiguës
 > 	- [ ] Limitation de la compréhension de la parole
 > 	- [ ] Difficultés accrues en environnement bruyant
 > 	- [ ] Évolution progressive avec l'âge
 > 	- [ ] Possible association avec des acouphènes
-> - [ ] **4. Traitement et prise en charge**
-> - [ ] **5. Information et pronostic**
+> - [ ] **9. Traitement et prise en charge *(1 grille sur 3)***
+> - [ ] **10. Information et pronostic *(1 grille sur 3)***
 > 	- [ ] Évolution progressive mais appareillage efficace
 > 	- [ ] Importance de l'observance pour éviter l'isolement social
 > 	- [ ] Réévaluation audiométrique annuelle
 > 	- [ ] Adaptation possible des réglages de l'appareil
 
 > [!success] 💊 Management — si Surdité brusque idiopathique gauche
-> - [ ] **1. Diagnostic principal**
-> 	- [ ] Surdité brusque idiopathique gauche
-> 	- [ ] Surdité de perception unilatérale gauche
-> - [ ] **2. Diagnostics différentiels**
-> - [ ] **3. Traitement**
-> - [ ] **4. Information du patient et pronostic**
+> - [ ] **1. Traitement**
+> - [ ] **2. Information du patient et pronostic**
 > 	- [ ] Récupération complète dans 60% des cas
 > 	- [ ] Récupération partielle dans 20% des cas
 > 	- [ ] Possibilité de récidive

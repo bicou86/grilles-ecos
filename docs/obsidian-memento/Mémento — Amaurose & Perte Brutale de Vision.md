@@ -67,7 +67,7 @@ cssclasses:
 
 > [!abstract] Les 5 grilles fusionnées
 > - **AMBOSS-34** — AVC `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-34_-_Perte_de_vision_-_Homme_66_ans_-_Grille_ECOS.html>)
-> - **AZYGOS-40** — Occlusion de l'artère centrale de la rétine (embolique) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/f0f3ec7f-0c04-4307-a694-3f4a12c6eb9c.json>)
+> - **AZYGOS-40** — OACR / Occlusion rétinienne `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/f0f3ec7f-0c04-4307-a694-3f4a12c6eb9c.json>)
 > - **AZYGOS-48** — Décollement de rétine `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/68e9d154-8aea-43fd-a9fe-29bb5f8335f6.json>)
 > - **German-69** — Cataracte `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-69_-_Perte_de_vision_-_Grille_ECOS.html>)
 > - **RESCOS-3** — Horton (artérite à cellules géantes) `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-3_-_Amaurose_-_Grille_ECOS.html>)
@@ -121,7 +121,7 @@ cssclasses:
 > - [ ] **6. Allergies *(4 diagnostics)***
 > 	- [ ] Allergies médicamenteuses *(Cataracte)*
 > 	- [ ] Autres allergies *(Cataracte)*
-> - [ ] **7. Médicaments *(AVC · Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **7. Médicaments *(AVC · Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **8. Hospitalisations et antécédents chirurgicaux *(AVC)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
@@ -136,52 +136,52 @@ cssclasses:
 > 	- [ ] Tabac
 > 	- [ ] Exercice
 > 	- [ ] Alimentation
-> - [ ] **11. Question d’entrée *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **12. Dimension temporelle *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **13. Début / Durée *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **14. Mode de survenue *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **15. Évolution *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **16. Épisodes antérieurs *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **17. Déclencheur *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **18. Localisation *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **19. Intensité / Sévérité *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **20. Qualité *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **21. Mesures déjà prises *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **22. Symptômes associés *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **23. Douleur *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **24. Lunettes / Lentilles de contact *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **25. Segments antérieurs *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **26. Rougeur *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **27. Photophobie *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **28. Sensation de corps étranger *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **29. Décollement de rétine *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **30. Éclairs lumineux *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **31. Rideau *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **32. Pluie de suie *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **33. Mouches volantes *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **34. Artérite à cellules géantes *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **35. Céphalées *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **36. Douleurs à la mastication *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **37. Douleurs ceintures scapulaire / pelvienne *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **38. Symptômes généraux *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **39. Neurologique *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **40. Trouble du langage *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **41. Paralysie *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **42. Trouble de la sensibilité *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **43. Vertiges *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **44. Antécédents *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **45. Yeux / Cœur *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **46. Opérations antérieures *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **47. Noxes *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **48. Alcool *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **49. Tabac *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **50. Drogues *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **51. Antécédents familiaux *(Cataracte · Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **11. Question d’entrée *(OACR / Occlusion rétinienne)***
+> - [ ] **12. Dimension temporelle *(Décollement de rétine · OACR / Occlusion rétinienne)***
+> - [ ] **13. Début / Durée *(Décollement de rétine · OACR / Occlusion rétinienne)***
+> - [ ] **14. Mode de survenue *(OACR / Occlusion rétinienne)***
+> - [ ] **15. Évolution *(Décollement de rétine · OACR / Occlusion rétinienne)***
+> - [ ] **16. Épisodes antérieurs *(OACR / Occlusion rétinienne)***
+> - [ ] **17. Déclencheur *(OACR / Occlusion rétinienne)***
+> - [ ] **18. Localisation *(Décollement de rétine · OACR / Occlusion rétinienne)***
+> - [ ] **19. Intensité / Sévérité *(OACR / Occlusion rétinienne)***
+> - [ ] **20. Qualité *(OACR / Occlusion rétinienne)***
+> - [ ] **21. Mesures déjà prises *(OACR / Occlusion rétinienne)***
+> - [ ] **22. Symptômes associés *(OACR / Occlusion rétinienne)***
+> - [ ] **23. Douleur *(OACR / Occlusion rétinienne)***
+> - [ ] **24. Lunettes / Lentilles de contact *(OACR / Occlusion rétinienne)***
+> - [ ] **25. Segments antérieurs *(OACR / Occlusion rétinienne)***
+> - [ ] **26. Rougeur *(OACR / Occlusion rétinienne)***
+> - [ ] **27. Photophobie *(OACR / Occlusion rétinienne)***
+> - [ ] **28. Sensation de corps étranger *(OACR / Occlusion rétinienne)***
+> - [ ] **29. Décollement de rétine *(OACR / Occlusion rétinienne)***
+> - [ ] **30. Éclairs lumineux *(OACR / Occlusion rétinienne)***
+> - [ ] **31. Rideau *(OACR / Occlusion rétinienne)***
+> - [ ] **32. Pluie de suie *(OACR / Occlusion rétinienne)***
+> - [ ] **33. Mouches volantes *(OACR / Occlusion rétinienne)***
+> - [ ] **34. Artérite à cellules géantes *(OACR / Occlusion rétinienne)***
+> - [ ] **35. Céphalées *(OACR / Occlusion rétinienne)***
+> - [ ] **36. Douleurs à la mastication *(OACR / Occlusion rétinienne)***
+> - [ ] **37. Douleurs ceintures scapulaire / pelvienne *(OACR / Occlusion rétinienne)***
+> - [ ] **38. Symptômes généraux *(OACR / Occlusion rétinienne)***
+> - [ ] **39. Neurologique *(OACR / Occlusion rétinienne)***
+> - [ ] **40. Trouble du langage *(OACR / Occlusion rétinienne)***
+> - [ ] **41. Paralysie *(OACR / Occlusion rétinienne)***
+> - [ ] **42. Trouble de la sensibilité *(Décollement de rétine · OACR / Occlusion rétinienne)***
+> - [ ] **43. Vertiges *(OACR / Occlusion rétinienne)***
+> - [ ] **44. Antécédents *(OACR / Occlusion rétinienne)***
+> - [ ] **45. Yeux / Cœur *(OACR / Occlusion rétinienne)***
+> - [ ] **46. Opérations antérieures *(OACR / Occlusion rétinienne)***
+> - [ ] **47. Noxes *(OACR / Occlusion rétinienne)***
+> - [ ] **48. Alcool *(Décollement de rétine · OACR / Occlusion rétinienne)***
+> - [ ] **49. Tabac *(OACR / Occlusion rétinienne)***
+> - [ ] **50. Drogues *(Décollement de rétine · OACR / Occlusion rétinienne)***
+> - [ ] **51. Antécédents familiaux *(Cataracte · Décollement de rétine · OACR / Occlusion rétinienne)***
 > 	- [ ] Pathologies oculaires familiales *(Cataracte)*
 > 	- [ ] Inquiétude du patient *(Cataracte)*
 > 	- [ ] Cataracte familiale *(Cataracte)*
-> - [ ] **52. Profession *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **53. Situation sociale *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **52. Profession *(Décollement de rétine · OACR / Occlusion rétinienne)***
+> - [ ] **53. Situation sociale *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **54. Question initiale *(Décollement de rétine)***
 > - [ ] **55. Apparition *(Décollement de rétine)***
 > - [ ] **56. Facteur déclenchant / Traumatisme *(Décollement de rétine)***
@@ -318,20 +318,20 @@ cssclasses:
 > 	- [ ] Test doigt-nez
 > 	- [ ] Signe de Babinski
 > 	- [ ] Test de Romberg
-> - [ ] **7. Status neuro orientant *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **8. Acuité visuelle *(Cataracte · Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **7. Status neuro orientant *(OACR / Occlusion rétinienne)***
+> - [ ] **8. Acuité visuelle *(Cataracte · OACR / Occlusion rétinienne)***
 > 	- [ ] Vision de loin avec correction *(Cataracte)*
 > 	- [ ] Vision de près avec correction *(Cataracte)*
 > 	- [ ] Test du trou sténopéique *(Cataracte)*
-> - [ ] **9. Réflexe pupillaire *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **10. Champ visuel *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **11. Motilité oculaire *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **12. Segments antérieurs *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **13. Pression intraoculaire *(Décollement de rétine · Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **14. Fundoscopie *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **15. Artères temporales *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **16. Auscultation cardiaque *(Occlusion de l'artère centrale de la rétine (embolique))***
-> - [ ] **17. Auscultation des carotides *(Occlusion de l'artère centrale de la rétine (embolique))***
+> - [ ] **9. Réflexe pupillaire *(OACR / Occlusion rétinienne)***
+> - [ ] **10. Champ visuel *(Décollement de rétine · OACR / Occlusion rétinienne)***
+> - [ ] **11. Motilité oculaire *(OACR / Occlusion rétinienne)***
+> - [ ] **12. Segments antérieurs *(OACR / Occlusion rétinienne)***
+> - [ ] **13. Pression intraoculaire *(Décollement de rétine · OACR / Occlusion rétinienne)***
+> - [ ] **14. Fundoscopie *(OACR / Occlusion rétinienne)***
+> - [ ] **15. Artères temporales *(OACR / Occlusion rétinienne)***
+> - [ ] **16. Auscultation cardiaque *(OACR / Occlusion rétinienne)***
+> - [ ] **17. Auscultation des carotides *(OACR / Occlusion rétinienne)***
 > - [ ] **18. Examen de l'acuité visuelle *(Décollement de rétine)***
 > - [ ] **19. Acuité visuelle de loin à droite *(Décollement de rétine)***
 > - [ ] **20. Acuité visuelle de loin à gauche *(Décollement de rétine)***
@@ -484,9 +484,6 @@ cssclasses:
 > - [ ] **7. Propose une hospitalisation**
 
 > [!success] 💊 Management — si OACR / Occlusion rétinienne
-> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
-
-> [!success] 💊 Management — si Occlusion de l'artère centrale de la rétine (embolique)
 > - [ ] **1. Imagerie cérébrale**
 > - [ ] **2. Laboratoire**
 > - [ ] **3. Hémogramme**

@@ -67,12 +67,12 @@ cssclasses:
 *Neurologie · 2 grilles · 2 diagnostics distincts* — [[SSP — Vertiges]]
 
 > [!abstract] Les 2 grilles fusionnées
-> - **AMBOSS-40** — Zona `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-40_-_Vertiges_-_Homme_25_ans_-_Grille_ECOS.html>)
+> - **AMBOSS-40** — Zona auriculaire (syndrome de Ramsay Hunt) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-40_-_Vertiges_-_Homme_25_ans_-_Grille_ECOS.html>)
 > - **RESCOS-66** — Maladie de Parkinson `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-66%20-%20Troubles%20de%20l'équilibre%20-%20ECC%20Neurologie%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(Zona)***
-> - [ ] **2. Caractérisation des vertiges *(Zona)***
+> - [ ] **1. Motif principal *(Zona auriculaire (syndrome de Ramsay Hunt))***
+> - [ ] **2. Caractérisation des vertiges *(Zona auriculaire (syndrome de Ramsay Hunt))***
 > 	- [ ] Description des vertiges
 > 	- [ ] Début
 > 	- [ ] Constant/intermittent
@@ -82,7 +82,7 @@ cssclasses:
 > 	- [ ] Facteurs améliorants
 > 	- [ ] Facteurs aggravants
 > 	- [ ] Symptômes associés
-> - [ ] **3. Recherche de symptômes spécifiques pour vertiges *(Zona)***
+> - [ ] **3. Recherche de symptômes spécifiques pour vertiges *(Zona auriculaire (syndrome de Ramsay Hunt))***
 > 	- [ ] Traumatisme
 > 	- [ ] Céphalée
 > 	- [ ] Fièvre/frissons
@@ -95,18 +95,18 @@ cssclasses:
 > 	- [ ] Changements de vision
 > 	- [ ] Engourdissement/faiblesse/picotements
 > 	- [ ] Prurit
-> - [ ] **4. Antécédents médicaux *(Zona)***
+> - [ ] **4. Antécédents médicaux *(Zona auriculaire (syndrome de Ramsay Hunt))***
 > 	- [ ] Antécédents médicaux
 > 	- [ ] Varicelle dans le passé
-> - [ ] **5. Allergies *(Zona)***
-> - [ ] **6. Médicaments *(Zona)***
-> - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Zona)***
+> - [ ] **5. Allergies *(Zona auriculaire (syndrome de Ramsay Hunt))***
+> - [ ] **6. Médicaments *(Zona auriculaire (syndrome de Ramsay Hunt))***
+> - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Zona auriculaire (syndrome de Ramsay Hunt))***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **8. Contacts malades et antécédents familiaux *(Zona)***
+> - [ ] **8. Contacts malades et antécédents familiaux *(Zona auriculaire (syndrome de Ramsay Hunt))***
 > 	- [ ] Contacts malades
 > 	- [ ] Antécédents familiaux
-> - [ ] **9. Habitudes et mode de vie *(Zona)***
+> - [ ] **9. Habitudes et mode de vie *(Zona auriculaire (syndrome de Ramsay Hunt))***
 > 	- [ ] Travail
 > 	- [ ] Domicile
 > 	- [ ] Alcool
@@ -150,19 +150,19 @@ cssclasses:
 > 	- [ ] Alcoolisme
 
 > [!tip] 🩺 Status
-> - [ ] **1. Mesures d'hygiène *(Zona)***
+> - [ ] **1. Mesures d'hygiène *(Zona auriculaire (syndrome de Ramsay Hunt))***
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
-> - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(Zona)***
+> - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(Zona auriculaire (syndrome de Ramsay Hunt))***
 > 	- [ ] Inspection de la tête
 > 	- [ ] Palpation de la tête
 > 	- [ ] Inspection des oreilles
 > 	- [ ] Palpation des oreilles
 > 	- [ ] Otoscopie
-> - [ ] **3. Tests auditifs *(Zona)***
+> - [ ] **3. Tests auditifs *(Zona auriculaire (syndrome de Ramsay Hunt))***
 > 	- [ ] Test de Rinne et test de Weber
 > 	- [ ] Test de Dix-Hallpike
-> - [ ] **4. Examen neurologique *(Zona)***
+> - [ ] **4. Examen neurologique *(Zona auriculaire (syndrome de Ramsay Hunt))***
 > 	- [ ] Examen ciblé des nerfs crâniens
 > 	- [ ] Examen ciblé de l'audition
 > 	- [ ] Examen ciblé des mouvements passifs et actifs
@@ -255,7 +255,7 @@ cssclasses:
 > [!success] 💊 Management — si Névrite vestibulaire / Ménière
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
-> [!success] 💊 Management — si Zona
+> [!success] 💊 Management — si Zona auriculaire (syndrome de Ramsay Hunt)
 > - [ ] **1. Hypothèses diagnostiques**
 > - [ ] **2. Examens complémentaires**
 > 	- [ ] Audiométrie tonale

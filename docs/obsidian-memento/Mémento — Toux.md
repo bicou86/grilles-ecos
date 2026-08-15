@@ -4,7 +4,7 @@ aliases:
 type: memento-ecos-ssp
 ssp: "Toux"
 cas: 13
-diagnostics: 9
+diagnostics: 8
 tags:
   - ecos/memento
   - ecos/grille-officielle
@@ -65,12 +65,12 @@ cssclasses:
 
 # Toux
 
-*13 grilles · 9 diagnostics distincts* — [[SSP — Toux]]
+*13 grilles · 8 diagnostics distincts* — [[SSP — Toux]]
 
 > [!abstract] Les 13 grilles fusionnées
 > - **AMBOSS-18** — Asthme `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-18_-_Toux_chronique_-_Femme_21_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-19** — BPCO `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-19_-_Toux_chronique_-_Femme_53_ans_-_Grille_ECOS.html>)
-> - **AMBOSS-31** — Cancer du poumon `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-31_-_Toux_-_Homme_58_ans_-_Grille_ECOS.html>)
+> - **AMBOSS-31** — Cancer pulmonaire `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-31_-_Toux_-_Homme_58_ans_-_Grille_ECOS.html>)
 > - **AZYGOS-47** — Pneumonie `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/ccef5f83-9402-4ac8-ac18-913d834bc565.json>)
 > - **German-75** — Tuberculose `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-75_-_Toux_-_Grille_ECOS.html>)
 > - **German-76** — Insuffisance cardiaque (décompensée) `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-76_-_Toux_-_Grille_ECOS.html>)
@@ -139,8 +139,8 @@ cssclasses:
 > 	- [ ] Traitements antiallergiques *(Tuberculose)*
 > 	- [ ] Tests allergologiques antérieurs *(Tuberculose)*
 > - [ ] **7. Médicaments *(4 grilles sur 13)***
-> 	- [ ] Médicaments actuels *(Cancer du poumon)*
-> 	- [ ] Efficacité contre symptômes actuels *(Cancer du poumon)*
+> 	- [ ] Médicaments actuels *(1 grille sur 13)*
+> 	- [ ] Efficacité contre symptômes actuels *(1 grille sur 13)*
 > - [ ] **8. Hospitalisations et antécédents chirurgicaux *(3 grilles sur 13)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
@@ -165,9 +165,9 @@ cssclasses:
 > 	- [ ] Drogues illicites *(1 grille sur 13)*
 > 	- [ ] Tabac
 > 	- [ ] Exercice *(2 grilles sur 13)*
-> 	- [ ] Travail *(BPCO · Cancer du poumon)*
-> 	- [ ] Drogues récréatives *(BPCO · Cancer du poumon)*
-> - [ ] **12. Caractérisation de la toux et des expectorations *(Cancer du poumon)***
+> 	- [ ] Travail *(2 grilles sur 13)*
+> 	- [ ] Drogues récréatives *(2 grilles sur 13)*
+> - [ ] **12. Caractérisation de la toux et des expectorations *(1 grille sur 13)***
 > 	- [ ] Productive
 > 	- [ ] Couleur
 > 	- [ ] Sang
@@ -181,7 +181,7 @@ cssclasses:
 > 	- [ ] Facteurs améliorants
 > 	- [ ] Facteurs aggravants
 > 	- [ ] Symptômes associés
-> - [ ] **13. Recherche de symptômes spécifiques pour toux chronique et hémoptysie *(Cancer du poumon)***
+> - [ ] **13. Recherche de symptômes spécifiques pour toux chronique et hémoptysie *(1 grille sur 13)***
 > 	- [ ] Voyage récent
 > 	- [ ] Fièvre/frissons
 > 	- [ ] Sueurs nocturnes
@@ -196,15 +196,15 @@ cssclasses:
 > 	- [ ] Perte de poids intentionnelle
 > 	- [ ] Infections récentes
 > 	- [ ] Symptômes d'infection respiratoire haute
-> - [ ] **14. Exposition à la tuberculose et dépistage *(Cancer du poumon)***
+> - [ ] **14. Exposition à la tuberculose et dépistage *(1 grille sur 13)***
 > 	- [ ] Exposition à la tuberculose
 > 	- [ ] Dernier test tuberculinique
-> - [ ] **15. Expositions environnementales et symptômes neurologiques *(Cancer du poumon)***
+> - [ ] **15. Expositions environnementales et symptômes neurologiques *(1 grille sur 13)***
 > 	- [ ] Exposition aux animaux
 > 	- [ ] Exposition aux moisissures
 > 	- [ ] Faiblesse musculaire
 > 	- [ ] Picotements/engourdissements
-> - [ ] **16. Contacts malades et antécédents familiaux *(Cancer du poumon)***
+> - [ ] **16. Contacts malades et antécédents familiaux *(1 grille sur 13)***
 > 	- [ ] Contacts malades
 > 	- [ ] Antécédents familiaux
 > - [ ] **17. Question d’introduction *(1 grille sur 13)***
@@ -281,14 +281,14 @@ cssclasses:
 > 	- [ ] Présence de sang franc *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Expectorations rosées *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Quantification *(Insuffisance cardiaque (décompensée))*
-> - [ ] **60. Symptômes respiratoires associés *(Cancer pulmonaire · Tuberculose)***
+> - [ ] **60. Symptômes respiratoires associés *(2 grilles sur 13)***
 > 	- [ ] Dyspnée *(Tuberculose)*
 > 	- [ ] Sifflements respiratoires *(Tuberculose)*
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Sensation d'oppression *(Tuberculose)*
-> 	- [ ] Dyspnée d'effort *(Cancer pulmonaire)*
-> 	- [ ] Sibilances *(Cancer pulmonaire)*
-> 	- [ ] Caractère de la douleur *(Cancer pulmonaire)*
+> 	- [ ] Dyspnée d'effort *(1 grille sur 13)*
+> 	- [ ] Sibilances *(1 grille sur 13)*
+> 	- [ ] Caractère de la douleur *(1 grille sur 13)*
 > - [ ] **61. Facteurs modulateurs *(Tuberculose)***
 > 	- [ ] Facteurs aggravants
 > 	- [ ] Facteurs améliorants
@@ -420,14 +420,14 @@ cssclasses:
 > 	- [ ] Antiagrégant
 > 	- [ ] Statine
 > 	- [ ] Observance thérapeutique
-> - [ ] **87. Habitudes et facteurs de risque *(Cancer pulmonaire · Insuffisance cardiaque (décompensée))***
+> - [ ] **87. Habitudes et facteurs de risque *(2 grilles sur 13)***
 > 	- [ ] Tabagisme *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Alcool *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Drogues *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Activité physique actuelle *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Tabagisme actif *(Cancer pulmonaire)*
-> 	- [ ] Profession *(Cancer pulmonaire)*
-> 	- [ ] Consommation d'alcool *(Cancer pulmonaire)*
+> 	- [ ] Tabagisme actif *(1 grille sur 13)*
+> 	- [ ] Profession *(1 grille sur 13)*
+> 	- [ ] Consommation d'alcool *(1 grille sur 13)*
 > - [ ] **88. Allergies et intolérances *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Allergies environnementales
@@ -533,7 +533,7 @@ cssclasses:
 > - [ ] **132. Antécédents similaires *(Faux-croup)***
 > - [ ] **133. Maladies de base *(Faux-croup)***
 > - [ ] **134. Hospitalisations antérieures *(Faux-croup)***
-> - [ ] **135. Médicaments et allergies *(Cancer pulmonaire · Faux-croup)***
+> - [ ] **135. Médicaments et allergies *(2 grilles sur 13)***
 > - [ ] **136. Anamnèse de l'entourage *(Faux-croup)***
 > - [ ] **137. Résumé et confirmation *(Faux-croup)***
 > 	- [ ] Fait un bref résumé de la situation
@@ -602,31 +602,31 @@ cssclasses:
 > 	- [ ] Vaccins
 > 	- [ ] Médicaments
 > - [ ] **150. Contage *(Coqueluche)***
-> - [ ] **151. Caractérisation de l'hémoptysie *(Cancer pulmonaire)***
+> - [ ] **151. Caractérisation de l'hémoptysie *(1 grille sur 13)***
 > 	- [ ] Début et durée
 > 	- [ ] Quantité
 > 	- [ ] Aspect du sang
 > 	- [ ] Évolution
-> - [ ] **152. Histoire de la toux chronique *(Cancer pulmonaire)***
+> - [ ] **152. Histoire de la toux chronique *(1 grille sur 13)***
 > 	- [ ] Ancienneté
 > 	- [ ] Horaire habituel
 > 	- [ ] Évolution récente
 > 	- [ ] Caractère des expectorations habituelles
-> - [ ] **153. Antécédents respiratoires *(Cancer pulmonaire)***
+> - [ ] **153. Antécédents respiratoires *(1 grille sur 13)***
 > 	- [ ] BPCO suspectée par médecin traitant
 > 	- [ ] Épisodes de bronchite
 > 	- [ ] Participation aux campagnes de dépistage
-> - [ ] **154. Symptômes généraux et signes d'alarme *(Cancer pulmonaire)***
+> - [ ] **154. Symptômes généraux et signes d'alarme *(1 grille sur 13)***
 > 	- [ ] Perte de poids
-> - [ ] **155. Signes négatifs importants *(Cancer pulmonaire)***
+> - [ ] **155. Signes négatifs importants *(1 grille sur 13)***
 > 	- [ ] Pas d'œdèmes des membres inférieurs
 > 	- [ ] Pas de troubles du sommeil respiratoires
 > 	- [ ] Pas de voyage récent
 > 	- [ ] Pas d'immobilisation ou antécédent thromboembolique
-> - [ ] **156. Antécédents personnels et familiaux *(Cancer pulmonaire)***
+> - [ ] **156. Antécédents personnels et familiaux *(1 grille sur 13)***
 > 	- [ ] Antécédents familiaux
 > 	- [ ] Suivi gynécologique régulier
-> - [ ] **157. Contexte social et professionnel *(Cancer pulmonaire)***
+> - [ ] **157. Contexte social et professionnel *(1 grille sur 13)***
 > 	- [ ] Situation familiale
 > 	- [ ] Profession
 > 	- [ ] Impact sur la qualité de vie
@@ -645,10 +645,10 @@ cssclasses:
 > 	- [ ] Palpation du pouls radial *(BPCO)*
 > 	- [ ] Palpation du choc apexien *(BPCO)*
 > 	- [ ] Recherche du reflux hépato-jugulaire *(BPCO)*
-> 	- [ ] Auscultation cardiaque systématique *(Cancer pulmonaire)*
-> 	- [ ] Recherche de signes d'insuffisance cardiaque droite *(Cancer pulmonaire)*
-> 	- [ ] Évaluation des pouls périphériques *(Cancer pulmonaire)*
-> 	- [ ] Recherche d'œdèmes des membres inférieurs *(Cancer pulmonaire)*
+> 	- [ ] Auscultation cardiaque systématique *(1 grille sur 13)*
+> 	- [ ] Recherche de signes d'insuffisance cardiaque droite *(1 grille sur 13)*
+> 	- [ ] Évaluation des pouls périphériques *(1 grille sur 13)*
+> 	- [ ] Recherche d'œdèmes des membres inférieurs *(1 grille sur 13)*
 > - [ ] **5. Examen thoracique *(3 grilles sur 13)***
 > 	- [ ] Inspection du thorax
 > 	- [ ] Palpation du thorax
@@ -656,8 +656,8 @@ cssclasses:
 > 	- [ ] Auscultation pulmonaire
 > 	- [ ] Recherche de frémitus *(1 grille sur 13)*
 > 	- [ ] Recherche de frémitus vocal *(BPCO)*
-> 	- [ ] Examen du frémissement *(Cancer du poumon)*
-> 	- [ ] Inspection du mouchoir du patient *(Cancer du poumon)*
+> 	- [ ] Examen du frémissement *(1 grille sur 13)*
+> 	- [ ] Inspection du mouchoir du patient *(1 grille sur 13)*
 > - [ ] **6. Examen des extrémités *(6 grilles sur 13)***
 > 	- [ ] Inspection des mains *(3 grilles sur 13)*
 > 	- [ ] Recherche d'œdème déclive *(BPCO)*
@@ -669,7 +669,7 @@ cssclasses:
 > 	- [ ] Cyanose périphérique *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Température *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Temps de recoloration capillaire *(Insuffisance cardiaque (décompensée))*
-> - [ ] **7. Examen du dos *(Cancer du poumon)***
+> - [ ] **7. Examen du dos *(1 grille sur 13)***
 > 	- [ ] Examen de la colonne vertébrale
 > - [ ] **8. Paramètres vitaux *(1 grille sur 13)***
 > - [ ] **9. Orientation *(1 grille sur 13)***
@@ -796,20 +796,20 @@ cssclasses:
 > - [ ] **43. Palpation des ganglions lymphatiques *(1 grille sur 13)***
 > - [ ] **44. Hygiène des mains *(1 grille sur 13)***
 > - [ ] **45. Inspection thoracique *(2 grilles sur 13)***
-> 	- [ ] Inspection statique du thorax *(Cancer pulmonaire)*
-> 	- [ ] Évaluation de la symétrie respiratoire *(Cancer pulmonaire)*
-> 	- [ ] Recherche de déformation thoracique *(Cancer pulmonaire)*
-> 	- [ ] Évaluation du tirage et de l'ampliation *(Cancer pulmonaire)*
+> 	- [ ] Inspection statique du thorax *(1 grille sur 13)*
+> 	- [ ] Évaluation de la symétrie respiratoire *(1 grille sur 13)*
+> 	- [ ] Recherche de déformation thoracique *(1 grille sur 13)*
+> 	- [ ] Évaluation du tirage et de l'ampliation *(1 grille sur 13)*
 > - [ ] **46. Auscultation pulmonaire *(3 grilles sur 13)***
 > 	- [ ] Demande respiration bouche ouverte *(1 grille sur 13)*
 > 	- [ ] Points d'auscultation *(1 grille sur 13)*
 > 	- [ ] Comparaison symétrique G/D systématique *(1 grille sur 13)*
 > 	- [ ] Murmure vésiculaire *(1 grille sur 13)*
 > 	- [ ] Souffle tubaire *(1 grille sur 13)*
-> 	- [ ] Auscultation systématique des deux champs pulmonaires *(Cancer pulmonaire)*
-> 	- [ ] Identification des sibilances *(Cancer pulmonaire)*
-> 	- [ ] Recherche de râles crépitants ou sous-crépitants *(Cancer pulmonaire)*
-> 	- [ ] Évaluation du murmure vésiculaire *(Cancer pulmonaire)*
+> 	- [ ] Auscultation systématique des deux champs pulmonaires *(1 grille sur 13)*
+> 	- [ ] Identification des sibilances *(1 grille sur 13)*
+> 	- [ ] Recherche de râles crépitants ou sous-crépitants *(1 grille sur 13)*
+> 	- [ ] Évaluation du murmure vésiculaire *(1 grille sur 13)*
 > - [ ] **47. Examen des extrémités (recherche d'embolie pulmonaire) *(1 grille sur 13)***
 > - [ ] **48. Examens complémentaires si pertinents *(1 grille sur 13)***
 > 	- [ ] Peau
@@ -836,10 +836,10 @@ cssclasses:
 > 	- [ ] Vibrations vocales *(1 grille sur 13)*
 > 	- [ ] Technique correcte *(1 grille sur 13)*
 > 	- [ ] Recherche d'emphysème sous-cutané *(1 grille sur 13)*
-> 	- [ ] Palpation des vibrations vocales *(Cancer pulmonaire)*
-> 	- [ ] Recherche de douleur à la palpation *(Cancer pulmonaire)*
-> 	- [ ] Évaluation de l'ampliation thoracique *(Cancer pulmonaire)*
-> 	- [ ] Palpation des aires ganglionnaires (sus-claviculaires, axillaires) *(Cancer pulmonaire)*
+> 	- [ ] Palpation des vibrations vocales *(1 grille sur 13)*
+> 	- [ ] Recherche de douleur à la palpation *(1 grille sur 13)*
+> 	- [ ] Évaluation de l'ampliation thoracique *(1 grille sur 13)*
+> 	- [ ] Palpation des aires ganglionnaires (sus-claviculaires, axillaires) *(1 grille sur 13)*
 > - [ ] **53. Percussion thoracique *(1 grille sur 13)***
 > 	- [ ] Limite inférieure poumons
 > 	- [ ] Comparaison sonorité G/D
@@ -859,22 +859,22 @@ cssclasses:
 > 	- [ ] Œdèmes membres inférieurs
 > 	- [ ] Turgescence jugulaire
 > 	- [ ] Reflux hépato-jugulaire
-> - [ ] **56. Examen général et signes vitaux *(Cancer pulmonaire)***
+> - [ ] **56. Examen général et signes vitaux *(1 grille sur 13)***
 > 	- [ ] Évaluation de l'état général
 > 	- [ ] Mesure de la fréquence respiratoire
 > 	- [ ] Évaluation des signes de détresse respiratoire
 > 	- [ ] Recherche de cyanose
-> - [ ] **57. Percussion pulmonaire *(Cancer pulmonaire)***
+> - [ ] **57. Percussion pulmonaire *(1 grille sur 13)***
 > 	- [ ] Percussion systématique des deux champs pulmonaires
 > 	- [ ] Recherche de matité
 > 	- [ ] Évaluation de la sonorité pulmonaire
 > 	- [ ] Délimitation des bases pulmonaires
-> - [ ] **58. Examen ORL et recherche d'adénopathies *(Cancer pulmonaire)***
+> - [ ] **58. Examen ORL et recherche d'adénopathies *(1 grille sur 13)***
 > 	- [ ] Palpation des aires ganglionnaires cervicales
 > 	- [ ] Examen de la cavité buccale
 > 	- [ ] Palpation des aires ganglionnaires sus-claviculaires
 > 	- [ ] Recherche d'adénopathies axillaires
-> - [ ] **59. Recherche de signes extrarespiratoires *(Cancer pulmonaire)***
+> - [ ] **59. Recherche de signes extrarespiratoires *(1 grille sur 13)***
 > 	- [ ] Recherche d'hippocratisme digital
 > 	- [ ] Examen cutané (recherche de métastases)
 > 	- [ ] Palpation abdominale (hépatomégalie)
@@ -949,57 +949,55 @@ cssclasses:
 > [!success] 💊 Management — si Bronchiolite
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
-> [!success] 💊 Management — si Cancer du poumon
-> - [ ] **1. Hypothèses diagnostiques**
-> - [ ] **2. Examens complémentaires de première intention**
+> [!success] 💊 Management — si Cancer pulmonaire
+> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 2)***
+> - [ ] **2. Examens complémentaires de première intention *(1 grille sur 2)***
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Oxymétrie de pouls
 > 	- [ ] Gazométrie artérielle
-> - [ ] **3. Conseil et soutien**
+> - [ ] **3. Conseil et soutien *(1 grille sur 2)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi sur les coûts
 > 	- [ ] Orientation vers services sociaux
 > 	- [ ] Soutien émotionnel face à l'inquiétude
 > 	- [ ] Information sur l'urgence du diagnostic
-> - [ ] **4. Examens microbiologiques**
+> - [ ] **4. Examens microbiologiques *(1 grille sur 2)***
 > 	- [ ] Coloration de Gram des expectorations, microscopie avec coloration acido-résistante, cytologie, et culture de routine et mycobactérienne
-> - [ ] **5. Examens biologiques et imagerie avancée**
+> - [ ] **5. Examens biologiques et imagerie avancée *(1 grille sur 2)***
 > 	- [ ] FSC avec formule
 > 	- [ ] CT thoracique
-> - [ ] **6. Communication avec le patient**
+> - [ ] **6. Communication avec le patient *(1 grille sur 2)***
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-
-> [!success] 💊 Management — si Cancer pulmonaire
-> - [ ] **1. Prise en charge immédiate**
+> - [ ] **7. Prise en charge immédiate *(1 grille sur 2)***
 > 	- [ ] Arrêt du tabac immédiat et accompagnement
 > 	- [ ] Consultation pneumologique urgente
 > 	- [ ] Surveillance clinique (quantité hémoptysie, état respiratoire)
 > 	- [ ] Information et rassurance de la patiente
-> - [ ] **2. Diagnostic principal et diagnostics différentiels**
+> - [ ] **8. Diagnostic principal et diagnostics différentiels *(1 grille sur 2)***
 > 	- [ ] Cancer pulmonaire (forte suspicion)
 > 	- [ ] BPCO avec exacerbation
 > 	- [ ] Tuberculose pulmonaire
 > 	- [ ] Bronchectasies
-> - [ ] **3. Examens de première intention**
+> - [ ] **9. Examens de première intention *(1 grille sur 2)***
 > 	- [ ] Radiographie thoracique (face et profil)
 > 	- [ ] FSC avec plaquettes
 > 	- [ ] Bilan de coagulation (TP, TCA)
 > 	- [ ] Ionogramme, créatinine, urée
-> - [ ] **4. Examens de seconde intention**
+> - [ ] **10. Examens de seconde intention *(1 grille sur 2)***
 > 	- [ ] CT thoracique avec injection
 > 	- [ ] Fibroscopie bronchique avec lavage et biopsie
 > 	- [ ] Recherche de BK dans les expectorations (3 prélèvements)
 > 	- [ ] Spirométrie complète
-> - [ ] **5. Examens complémentaires selon orientation**
+> - [ ] **11. Examens complémentaires selon orientation *(1 grille sur 2)***
 > 	- [ ] CT thoraco-abdomino-pelvien (si suspicion néoplasique)
 > 	- [ ] PET scan (bilan d'extension)
 > 	- [ ] Échocardiographie (si suspicion cardiaque)
 > 	- [ ] Angio-CT pulmonaire (si suspicion d'embolie)
-> - [ ] **6. Surveillance et suivi**
+> - [ ] **12. Surveillance et suivi *(1 grille sur 2)***
 > 	- [ ] Surveillance de l'abondance de l'hémoptysie
 > 	- [ ] Réévaluation rapide si aggravation
 > 	- [ ] Coordination avec le pneumologue
