@@ -60,6 +60,66 @@ import lib_amboss as lib
 COMM = {"A": 4, "B": 3, "C": 2, "D": 1, "E": 0}
 
 
+def detail_rules(html):
+    """Seuils optionnels `detailRules`, identiques a scoring.js:officialDetailScore.
+
+    Par defaut un critere a cases de detail vaut 1 point par case cochee. Une
+    grille peut declarer des seuils pour retomber sur la notation 2/1/0 de la
+    grille papier — `{a1: {oui: 3, partiel: 1}}` = « au moins 3 = oui, 1-2 = ±,
+    aucun = non ». Absent partout ailleurs : le dictionnaire vide preserve
+    exactement le calcul historique.
+
+    `points` surcharge les valeurs 2/1 quand la grille papier plafonne la ligne
+    plus bas — station 6, item 7 « troubles cognitifs » : `au moins 1 = Oui`
+    vaut 1 point et non 2, colonne ± grisee.
+    """
+    m = re.search(r"detailRules:\s*\{", html)
+    if not m:
+        return {}
+    # Equilibrage strict des accolades : le bloc contient des sous-objets, un
+    # motif de fin non equilibre s'arreterait au premier `}` interne.
+    depth, start = 0, m.end() - 1
+    for i in range(start, len(html)):
+        if html[i] == "{":
+            depth += 1
+        elif html[i] == "}":
+            depth -= 1
+            if depth == 0:
+                blob = html[start + 1:i]
+                break
+    else:
+        return {}
+
+    rules = {}
+    # `points: {...}` est un sous-objet : le capturer d'abord et le retirer du
+    # corps, sinon `(\w+):\s*\{([^{}]*)\}` lirait `points` comme un critere.
+    for cid, body in re.findall(r"(\w+):\s*\{((?:[^{}]|\{[^{}]*\})*)\}", blob):
+        sur = re.search(r"points:\s*\{([^{}]*)\}", body)
+        body = body[:sur.start()] + body[sur.end():] if sur else body
+        oui = re.search(r"oui:\s*(\d+)", body)
+        if not oui:
+            continue
+        partiel = re.search(r"partiel:\s*(\d+)", body)
+        pts_oui = re.search(r"oui:\s*(\d+)", sur.group(1)) if sur else None
+        pts_part = re.search(r"partiel:\s*(\d+)", sur.group(1)) if sur else None
+        rules[cid] = {
+            "oui": int(oui.group(1)),
+            "partiel": int(partiel.group(1)) if partiel else None,
+            "pointsOui": int(pts_oui.group(1)) if pts_oui else 2,
+            "pointsPartiel": int(pts_part.group(1)) if pts_part else 1,
+        }
+    return rules
+
+
+def detail_points(rule, coches):
+    """Points d'un critere a seuils — meme branchement que scoring.js."""
+    if coches >= rule["oui"]:
+        return rule["pointsOui"]
+    if rule["partiel"] is not None and coches >= rule["partiel"]:
+        return rule["pointsPartiel"]
+    return 0
+
+
 def parse_config(html):
     """maxScores, coef, sectionInfo et denominateurs affiches d'une grille."""
     m = re.search(r"maxScores:\s*\{([^}]*)\}", html)
@@ -101,6 +161,7 @@ def section_max(html, section):
     « ABSENT », qui rend le bareme inatteignable.
     """
     total, detail, missing = 0, [], []
+    rules = detail_rules(html)
     for i in range(1, section["count"] + 1):
         cid = f'{section["prefix"]}{i}'
         if section["isComm"]:
@@ -111,8 +172,14 @@ def section_max(html, section):
             checks = re.findall(
                 r'<input type="checkbox" id="%s-detail-\d+"[^>]*value="(\d+)"' % cid, html)
             if checks:
-                best = sum(int(v) for v in checks)
-                detail.append(f"{cid} = {best} ({len(checks)} case(s) de detail)")
+                coches = sum(int(v) for v in checks)
+                if cid in rules:
+                    best = detail_points(rules[cid], coches)
+                    detail.append(
+                        f"{cid} = {best} ({len(checks)} case(s) de detail, seuils officiels)")
+                else:
+                    best = coches
+                    detail.append(f"{cid} = {best} ({len(checks)} case(s) de detail)")
             else:
                 radios = re.findall(
                     r'<input type="radio"[^>]*name="%s"[^>]*value="(\d+)"' % cid, html)

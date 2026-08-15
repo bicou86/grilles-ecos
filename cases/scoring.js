@@ -36,15 +36,20 @@
                 // Mettre à jour la classe de couleur pour autres critères
                 const criteriaRow = document.getElementById("criteria-" + name);
                 if (criteriaRow) {
-                    criteriaRow.classList.remove("score-0", "score-1", "score-2", "lacune-rouge", "lacune-orange", "lacune-verte");
-                    criteriaRow.classList.add("score-" + value);
-                    // Ajouter les classes lacune pour critères normaux
-                    if (pointValue === 0) {
-                        criteriaRow.classList.add("lacune-rouge");
-                    } else if (pointValue === 1) {
-                        criteriaRow.classList.add("lacune-orange");
-                    } else if (pointValue >= 2) {
-                        criteriaRow.classList.add("lacune-verte");
+                    criteriaRow.classList.remove("score-0", "score-1", "score-2", "score-max", "lacune-rouge", "lacune-orange", "lacune-verte");
+                    // La couleur suit le RATIO au maximum de la ligne, pas la valeur
+                    // absolue : une ligne que la grille officielle plafonne à 1 point
+                    // est verte quand elle vaut 1, pas orange. Sur les lignes 2/1/0
+                    // et 2/0 historiques, le rendu est strictement identique.
+                    const maxValue = Math.max.apply(null, Array.prototype.map.call(
+                        document.querySelectorAll('input[name="' + name + '"]'),
+                        radio => Number(radio.value) || 0));
+                    if (pointValue <= 0) {
+                        criteriaRow.classList.add("score-0", "lacune-rouge");
+                    } else if (pointValue >= maxValue) {
+                        criteriaRow.classList.add("score-max", "lacune-verte");
+                    } else {
+                        criteriaRow.classList.add("score-1", "lacune-orange");
                     }
                 }
             }
@@ -57,17 +62,42 @@
             calculateScores();
         }
 
+        // Barème « grille officielle » (optionnel). Par défaut un critère à détails
+        // vaut 1 point par détail coché. Un cas peut déclarer des seuils dans
+        // window.caseConfig.detailRules pour retomber sur la notation 2/1/0 des
+        // grilles papier, p. ex. {a1: {oui: 3, partiel: 1}} = « au moins 3 = oui,
+        // 1-2 = ±, aucun = non ». Renvoie null quand le cas n'en déclare pas, ce
+        // qui préserve le comportement historique.
+        function officialDetailScore(criterionId, checkedCount) {
+            const rules = window.caseConfig && window.caseConfig.detailRules;
+            const rule = rules && rules[criterionId];
+            if (!rule) return null;
+            const points = rule.points || {};
+            if (checkedCount >= rule.oui) {
+                return points.oui != null ? points.oui : 2;
+            }
+            if (rule.partiel != null && checkedCount >= rule.partiel) {
+                return points.partiel != null ? points.partiel : 1;
+            }
+            return 0;
+        }
+
         function updateDetailScore(criterionId, prefix) {
-            let totalScore = 0;
+            let checkedCount = 0;
             const detailCheckboxes = document.querySelectorAll('input[id^="' + criterionId + '-detail-"]');
-            const maxDetailsScore = detailCheckboxes.length;
-            
+
             detailCheckboxes.forEach(checkbox => {
                 if (checkbox.checked) {
-                    totalScore += Number(checkbox.value) || 0;
+                    checkedCount += Number(checkbox.value) || 0;
                 }
             });
-            
+
+            const officialScore = officialDetailScore(criterionId, checkedCount);
+            const totalScore = officialScore === null ? checkedCount : officialScore;
+            const maxDetailsScore = officialScore === null
+                ? detailCheckboxes.length
+                : officialDetailScore(criterionId, detailCheckboxes.length);
+
             const pointsElement = document.getElementById("points-" + criterionId);
             if (pointsElement) {
                 pointsElement.textContent = totalScore;
@@ -146,8 +176,9 @@
                                     hasCheckedDetail = true;
                                 }
                             });
-                            sectionScore += detailScore;
-                            
+                            const officialScore = officialDetailScore(criterionId, detailScore);
+                            sectionScore += officialScore === null ? detailScore : officialScore;
+
                             if (!hasCheckedDetail) {
                                 const criteria = document.querySelector("input[name=\"" + criterionId + "\"][data-criteria]");
                                 if (criteria) {
@@ -424,15 +455,20 @@
                 row.classList.remove('criteria-zero-points', 'criteria-one-point', 'criteria-full-points', 'criteria-not-answered', 'lacune-rouge', 'lacune-orange', 'lacune-verte');
                 if (checkedRadio) {
                     const score = Number(checkedRadio.value) || 0;
-                    if (score === 0) {
+                    // Meme regle de ratio que updateScore : « plein » veut dire
+                    // « le maximum de CETTE ligne », pas « 2 points ».
+                    const maxValue = Math.max.apply(null, Array.prototype.map.call(
+                        document.querySelectorAll('input[name="' + criteriaName + '"]'),
+                        radio => Number(radio.value) || 0));
+                    if (score <= 0) {
                         row.classList.add('criteria-zero-points');
                         row.classList.add('lacune-rouge');
-                    } else if (score === 1) {
-                        row.classList.add('criteria-one-point');
-                        row.classList.add('lacune-orange');
-                    } else if (score >= 2) {
+                    } else if (score >= maxValue) {
                         row.classList.add('criteria-full-points');
                         row.classList.add('lacune-verte');
+                    } else {
+                        row.classList.add('criteria-one-point');
+                        row.classList.add('lacune-orange');
                     }
                 } else {
                     row.classList.add('criteria-not-answered');

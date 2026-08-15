@@ -8,7 +8,9 @@
 // Symptôme quand on l'oublie : la correction est visible en ouvrant le fichier
 // en local, et invisible sur le site déployé après un `git pull` — c'est ce qui
 // est arrivé à la correction des bulles d'information (v15 → v16).
-var CACHE_NAME = "ecos-v16";
+// v16 → v17 : scoring.js gère le barème 2/1/0 des grilles officielles
+// (window.caseConfig.detailRules).
+var CACHE_NAME = "ecos-v17";
 var APP_SHELL = [
   "/",
   "/index.html",
