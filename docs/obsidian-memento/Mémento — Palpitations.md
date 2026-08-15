@@ -315,47 +315,52 @@ cssclasses:
 > - [ ] **8. Examen pulmonaire *(Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Auscultation antérieure systématique
 > 	- [ ] Auscultation postérieure systématique
-> - [ ] **9. Examen neurologique sommaire *(Palpitations liées au stress et aux stimulants)***
+> - [ ] **9. Examen général *(Palpitations liées au stress et aux stimulants)***
+> 	- [ ] État général
+> 	- [ ] Peau
+> 	- [ ] Tremblements
+> 	- [ ] Exophtalmie
+> - [ ] **10. Examen neurologique sommaire *(Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Réflexes ostéo-tendineux
 > 	- [ ] Tremblements fins des extrémités
-> - [ ] **10. Inspection cardiovasculaire *(Fibrillation auriculaire)***
+> - [ ] **11. Inspection cardiovasculaire *(Fibrillation auriculaire)***
 > 	- [ ] Veines jugulaires
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Cyanose
 > 	- [ ] Œdèmes périphériques
-> - [ ] **11. Palpation cardiovasculaire *(Fibrillation auriculaire)***
+> - [ ] **12. Palpation cardiovasculaire *(Fibrillation auriculaire)***
 > 	- [ ] Pouls périphérique
 > 	- [ ] Intensité du pouls
 > 	- [ ] Déficit de pouls
 > 	- [ ] Choc de pointe
-> - [ ] **12. Percussion cardiaque *(Fibrillation auriculaire)***
+> - [ ] **13. Percussion cardiaque *(Fibrillation auriculaire)***
 > 	- [ ] Matité cardiaque
 > 	- [ ] Cardiomégalie
 > 	- [ ] Épanchement péricardique
-> - [ ] **13. Auscultation cardiaque *(Fibrillation auriculaire)***
+> - [ ] **14. Auscultation cardiaque *(Fibrillation auriculaire)***
 > 	- [ ] Bruits cardiaques
 > 	- [ ] Souffles
 > 	- [ ] Galop (B3/B4)
 > 	- [ ] Frottement péricardique
-> - [ ] **14. Examen pulmonaire complet *(Fibrillation auriculaire)***
+> - [ ] **15. Examen pulmonaire complet *(Fibrillation auriculaire)***
 > 	- [ ] Inspection thoracique
 > 	- [ ] Palpation (vibrations vocales)
 > 	- [ ] Percussion pulmonaire
 > 	- [ ] Auscultation bilatérale
-> - [ ] **15. Palpation thyroïdienne *(Fibrillation auriculaire)***
+> - [ ] **16. Palpation thyroïdienne *(Fibrillation auriculaire)***
 > 	- [ ] Volume thyroïdien
 > 	- [ ] Nodules
 > 	- [ ] Consistance
 > 	- [ ] Mobilité
-> - [ ] **16. Auscultation thyroïdienne *(Fibrillation auriculaire)***
+> - [ ] **17. Auscultation thyroïdienne *(Fibrillation auriculaire)***
 > 	- [ ] Souffle thyroïdien
 > 	- [ ] Thrill
-> - [ ] **17. Examen cutanéo-muqueux *(Fibrillation auriculaire)***
+> - [ ] **18. Examen cutanéo-muqueux *(Fibrillation auriculaire)***
 > 	- [ ] Coloration cutanée
 > 	- [ ] Conjonctives
 > 	- [ ] Muqueuses
 > 	- [ ] Temps de recoloration capillaire
-> - [ ] **18. Signes périphériques d'insuffisance cardiaque *(Fibrillation auriculaire)***
+> - [ ] **19. Signes périphériques d'insuffisance cardiaque *(Fibrillation auriculaire)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Hépatomégalie
 > 	- [ ] Ascite

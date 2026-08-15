@@ -451,13 +451,16 @@ cssclasses:
 > 	- [ ] Plages postérieures (min 4)
 > 	- [ ] Plages latérales des deux côtés
 > 	- [ ] Réalise l'examen en comparant systématiquement les deux côtés
-> - [ ] **43. Examen vasculaire périphérique *(Embolie pulmonaire)***
+> - [ ] **43. Examen général *(Embolie pulmonaire)***
+> 	- [ ] Extrémités dont les ongles
+> 	- [ ] Langue
+> - [ ] **44. Examen vasculaire périphérique *(Embolie pulmonaire)***
 > 	- [ ] Pouls périphériques aux 4 extrémités
 > 	- [ ] Temps de recoloration des extrémités
 > 	- [ ] Recherche de souffle carotidien
 > 	- [ ] Recherche de souffles fémoraux
 > 	- [ ] Recherche de souffle abdominal
-> - [ ] **44. Recherche de signes d'insuffisance cardiaque *(Angor stable / Maladie coronarienne, Embolie pulmonaire)***
+> - [ ] **45. Recherche de signes d'insuffisance cardiaque *(Angor stable / Maladie coronarienne, Embolie pulmonaire)***
 > 	- [ ] Œdèmes des membres inférieurs (signe du godet) *(Embolie pulmonaire)*
 > 	- [ ] Turgescence jugulaire *(Embolie pulmonaire)*
 > 	- [ ] Reflux hépato-jugulaire
@@ -469,53 +472,53 @@ cssclasses:
 > 	- [ ] Œdèmes prétibiaux *(Angor stable / Maladie coronarienne)*
 > 	- [ ] Hépatomégalie *(Angor stable / Maladie coronarienne)*
 > 	- [ ] Auscultation pulmonaire *(Angor stable / Maladie coronarienne)*
-> - [ ] **45. Signes vitaux *(Angor stable / Maladie coronarienne)***
+> - [ ] **46. Signes vitaux *(Angor stable / Maladie coronarienne)***
 > 	- [ ] TA 138/85 mmHg
 > 	- [ ] FC 78 bpm, régulier
 > 	- [ ] FR 16/min
 > 	- [ ] SpO2 98% en air ambiant
 > 	- [ ] Température 36.5°C
 > 	- [ ] IMC 27 kg/m²
-> - [ ] **46. Auscultation pulmonaire *(Angor stable / Maladie coronarienne)***
+> - [ ] **47. Auscultation pulmonaire *(Angor stable / Maladie coronarienne)***
 > 	- [ ] Murmure vésiculaire normal
 > 	- [ ] Pas de râles
 > 	- [ ] Pas de sibilants
 > 	- [ ] Symétrique bilatéralement
-> - [ ] **47. Palpation des pouls périphériques *(Angor stable / Maladie coronarienne)***
+> - [ ] **48. Palpation des pouls périphériques *(Angor stable / Maladie coronarienne)***
 > 	- [ ] Pouls carotidiens symétriques
 > 	- [ ] Pouls fémoraux présents
 > 	- [ ] Pouls pédieux présents
 > 	- [ ] Pouls tibiaux postérieurs présents
 > 	- [ ] Pas de souffle abdominal
-> - [ ] **48. Signes vitaux et mesures anthropométriques *(Angor stable / Maladie coronarienne)***
+> - [ ] **49. Signes vitaux et mesures anthropométriques *(Angor stable / Maladie coronarienne)***
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Poids et taille
-> - [ ] **49. Inspection générale et recherche de signes cardiovasculaires *(Angor stable / Maladie coronarienne)***
+> - [ ] **50. Inspection générale et recherche de signes cardiovasculaires *(Angor stable / Maladie coronarienne)***
 > 	- [ ] Cyanose centrale
 > 	- [ ] Cyanose périphérique
 > 	- [ ] Signes cutanés
 > 	- [ ] Inspection thoracique
 > 	- [ ] Température des extrémités
-> - [ ] **50. Évaluation du pouls veineux jugulaire *(Angor stable / Maladie coronarienne)***
+> - [ ] **51. Évaluation du pouls veineux jugulaire *(Angor stable / Maladie coronarienne)***
 > 	- [ ] Positionnement du patient
 > 	- [ ] Respiration par la bouche
 > 	- [ ] Niveau du collapsus veineux
 > 	- [ ] Réflux hépato-jugulaire
-> - [ ] **51. Palpation cardiovasculaire *(Angor stable / Maladie coronarienne)***
+> - [ ] **52. Palpation cardiovasculaire *(Angor stable / Maladie coronarienne)***
 > 	- [ ] Pouls artériels
 > 	- [ ] Choc de pointe
 > 	- [ ] Aire précordiale
 > 	- [ ] 2ème espace intercostal droit
 > 	- [ ] Creux épigastrique
-> - [ ] **52. Auscultation cardiaque systématique *(Angor stable / Maladie coronarienne)***
+> - [ ] **53. Auscultation cardiaque systématique *(Angor stable / Maladie coronarienne)***
 > 	- [ ] 5 foyers d'auscultation
 > 	- [ ] Identification B1 et B2
 > 	- [ ] Utilisation cloche et membrane
 > 	- [ ] Position du patient
 > 	- [ ] Recherche de souffles et bruits surajoutés
-> - [ ] **53. Auscultation des carotides *(Angor stable / Maladie coronarienne)***
+> - [ ] **54. Auscultation des carotides *(Angor stable / Maladie coronarienne)***
 > 	- [ ] Auscultation bilatérale des carotides
 > 	- [ ] Recherche de souffles carotidiens
 > 	- [ ] Corrélation avec examen cardiaque

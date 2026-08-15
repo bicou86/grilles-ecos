@@ -41,7 +41,7 @@ REPO = Path(__file__).resolve().parents[2]
 # Les neuf grilles officielles ne portent aucun libelle en « Évaluation
 # globale » : leur memento est inchange a l'octet pres (md5 epingle par
 # check_fusion.py). Verifie.
-SYNTHESE = re.compile(r"en g[ée]n[ée]ral|^[ée]valuation globale", re.I)
+SYNTHESE = re.compile(r"\ben g[ée]n[ée]ral|^[ée]valuation globale", re.I)
 
 # HARMONISATION DE NOMENCLATURE. Les neuf grilles nomment les memes examens
 # de trois facons ; un memento qui les compare a besoin d'un vocabulaire

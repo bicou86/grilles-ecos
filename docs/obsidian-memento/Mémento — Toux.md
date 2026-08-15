@@ -839,17 +839,22 @@ cssclasses:
 > 	- [ ] Œdèmes membres inférieurs
 > 	- [ ] Turgescence jugulaire
 > 	- [ ] Reflux hépato-jugulaire
-> - [ ] **56. Percussion pulmonaire *(Cancer pulmonaire)***
+> - [ ] **56. Examen général et signes vitaux *(Cancer pulmonaire)***
+> 	- [ ] Évaluation de l'état général
+> 	- [ ] Mesure de la fréquence respiratoire
+> 	- [ ] Évaluation des signes de détresse respiratoire
+> 	- [ ] Recherche de cyanose
+> - [ ] **57. Percussion pulmonaire *(Cancer pulmonaire)***
 > 	- [ ] Percussion systématique des deux champs pulmonaires
 > 	- [ ] Recherche de matité
 > 	- [ ] Évaluation de la sonorité pulmonaire
 > 	- [ ] Délimitation des bases pulmonaires
-> - [ ] **57. Examen ORL et recherche d'adénopathies *(Cancer pulmonaire)***
+> - [ ] **58. Examen ORL et recherche d'adénopathies *(Cancer pulmonaire)***
 > 	- [ ] Palpation des aires ganglionnaires cervicales
 > 	- [ ] Examen de la cavité buccale
 > 	- [ ] Palpation des aires ganglionnaires sus-claviculaires
 > 	- [ ] Recherche d'adénopathies axillaires
-> - [ ] **58. Recherche de signes extrarespiratoires *(Cancer pulmonaire)***
+> - [ ] **59. Recherche de signes extrarespiratoires *(Cancer pulmonaire)***
 > 	- [ ] Recherche d'hippocratisme digital
 > 	- [ ] Examen cutané (recherche de métastases)
 > 	- [ ] Palpation abdominale (hépatomégalie)

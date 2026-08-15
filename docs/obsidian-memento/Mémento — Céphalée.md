@@ -313,27 +313,31 @@ cssclasses:
 > 	- [ ] Signe de Kernig
 > 	- [ ] Signe de Lasègue
 > - [ ] **33. Neurostatus par ailleurs *(Méningite)***
-> - [ ] **34. Examen neurologique - nerfs crâniens *(Thrombose veineuse cérébrale)***
+> - [ ] **34. Examen général *(Thrombose veineuse cérébrale)***
+> 	- [ ] État de conscience/niveau attentionnel
+> 	- [ ] Signes vitaux
+> 	- [ ] Aspect général
+> - [ ] **35. Examen neurologique - nerfs crâniens *(Thrombose veineuse cérébrale)***
 > 	- [ ] Acuité visuelle
 > 	- [ ] Champs visuels
 > 	- [ ] Réflexes pupillaires
 > 	- [ ] Oculomotricité
 > 	- [ ] Sensibilité faciale
 > 	- [ ] Motricité faciale
-> - [ ] **35. Examen neurologique - voies longues *(Thrombose veineuse cérébrale)***
+> - [ ] **36. Examen neurologique - voies longues *(Thrombose veineuse cérébrale)***
 > 	- [ ] Force motrice 4 membres
 > 	- [ ] Sensibilité
 > 	- [ ] Réflexes ostéotendineux
 > 	- [ ] Réflexe cutané plantaire
-> - [ ] **36. Recherche de méningisme *(Thrombose veineuse cérébrale)***
+> - [ ] **37. Recherche de méningisme *(Thrombose veineuse cérébrale)***
 > 	- [ ] Raideur de nuque
 > 	- [ ] Signe de Kernig
 > 	- [ ] Signe de Brudzinski
-> - [ ] **37. Examen vasculaire *(Thrombose veineuse cérébrale)***
+> - [ ] **38. Examen vasculaire *(Thrombose veineuse cérébrale)***
 > 	- [ ] Palpation artères temporales
 > 	- [ ] Auscultation carotidienne
 > 	- [ ] Recherche de souffle vasculaire
-> - [ ] **38. Autres examens pertinents *(Thrombose veineuse cérébrale)***
+> - [ ] **39. Autres examens pertinents *(Thrombose veineuse cérébrale)***
 > 	- [ ] Fond d'œil/œdème papillaire
 > 	- [ ] Démarche et épreuves cérébelleuses
 > 	- [ ] Recherche d'un rash cutané

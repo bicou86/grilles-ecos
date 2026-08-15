@@ -1,13 +1,13 @@
 # Écart au référentiel officiel — mémentos
 
 456 formes canoniques tirées des 9 grilles officielles trouvées.
-8561 items non officiels, dont **7134 sans répondant** (83 %).
+8569 items non officiels, dont **7142 sans répondant** (83 %).
 
 | Corpus | Items orphelins |
 |---|---|
 | azygos | 2919 |
-| german | 2474 |
-| rescos | 1113 |
+| german | 2477 |
+| rescos | 1118 |
 | amboss | 628 |
 
 ## Les 60 libellés orphelins les plus fréquents
@@ -87,7 +87,7 @@ Les 44 SSP de `docs/ecos-priorites-2026.yaml`, triées par part décroissante d'
 | Dépendance & Addictions (Alcool, Tabac, Drogues) | 97 | 88 | 90 % |
 | Troubles du Sommeil | 151 | 136 | 90 % |
 | Parésie - AVC | 70 | 63 | 90 % |
-| Palpitations | 106 | 94 | 88 % |
+| Palpitations | 107 | 95 | 88 % |
 | Douleur du Membre Inférieur | 61 | 54 | 88 % |
 | Diarrhée | 120 | 106 | 88 % |
 | Dysurie | 143 | 126 | 88 % |
@@ -98,19 +98,19 @@ Les 44 SSP de `docs/ecos-priorites-2026.yaml`, triées par part décroissante d'
 | Plaie & Ulcère Cutané | 84 | 72 | 85 % |
 | Incontinence Urinaire | 39 | 33 | 84 % |
 | Lombalgies | 308 | 259 | 84 % |
+| Toux | 396 | 331 | 83 % |
 | Douleur du Genou | 134 | 112 | 83 % |
-| Toux | 395 | 330 | 83 % |
 | Ictère | 51 | 42 | 82 % |
 | Chute & Évaluation Gériatrique | 157 | 129 | 82 % |
 | Amaurose & Perte Brutale de Vision | 206 | 168 | 81 % |
 | Constipation | 32 | 26 | 81 % |
-| Douleur Thoracique | 341 | 275 | 80 % |
+| Douleur Thoracique | 342 | 276 | 80 % |
 | Douleur Abdominale | 618 | 484 | 78 % |
 | Hypoacousie | 112 | 87 | 77 % |
 | Éruption Cutanée | 305 | 236 | 77 % |
 | Fatigue | 298 | 228 | 76 % |
 | Troubles Cognitifs & Démence | 25 | 19 | 76 % |
-| Céphalée | 201 | 152 | 75 % |
+| Céphalée | 202 | 153 | 75 % |
 | Capacité de Discernement & Décision Partagée | 21 | 15 | 71 % |
 | Baisse d'Acuité Visuelle Progressive | 0 | 0 | — (aucun item) |
 | Bilan de Santé & Dépistage | 0 | 0 | — (aucun item) |
