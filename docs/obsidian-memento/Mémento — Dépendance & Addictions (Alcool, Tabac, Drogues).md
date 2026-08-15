@@ -98,115 +98,107 @@ cssclasses:
 > - [ ] **51. Présentation avec nom, fonction et objectif de la consultation *(Addiction / Sevrage OH)***
 > - [ ] **52. Question ouverte pour identifier le motif de consultation *(Addiction / Sevrage OH)***
 > - [ ] **53. Caractérisation temporelle de la consommation *(Addiction / Sevrage OH)***
-> 	- [ ] Durée du problème *(Addiction / Sevrage OH)*
-> 	- [ ] Évolution : intermittente ou continue *(Addiction / Sevrage OH)*
+> 	- [ ] Durée du problème
+> 	- [ ] Évolution : intermittente ou continue
 > - [ ] **54. Quantification de la consommation *(Addiction / Sevrage OH)***
-> 	- [ ] Quantité quotidienne *(Addiction / Sevrage OH)*
-> 	- [ ] Type de boissons consommées *(Addiction / Sevrage OH)*
-> 	- [ ] Horaires de consommation *(Addiction / Sevrage OH)*
+> 	- [ ] Quantité quotidienne
+> 	- [ ] Type de boissons consommées
+> 	- [ ] Horaires de consommation
 > - [ ] **55. Contexte de consommation *(Addiction / Sevrage OH)***
-> 	- [ ] Circonstances : en société ou seul *(Addiction / Sevrage OH)*
-> 	- [ ] Effet recherché *(Addiction / Sevrage OH)*
-> 	- [ ] Association avec d'autres substances *(Addiction / Sevrage OH)*
+> 	- [ ] Circonstances : en société ou seul
+> 	- [ ] Effet recherché
+> 	- [ ] Association avec d'autres substances
 > - [ ] **56. Critères de dépendance (≥3/6 pour le diagnostic) *(Addiction / Sevrage OH)***
-> 	- [ ] Désir puissant de consommer (craving) *(Addiction / Sevrage OH)*
-> 	- [ ] Perte de contrôle *(Addiction / Sevrage OH)*
-> 	- [ ] Tolérance *(Addiction / Sevrage OH)*
-> 	- [ ] Syndrome de sevrage *(Addiction / Sevrage OH)*
-> 	- [ ] Abandon d'autres activités *(Addiction / Sevrage OH)*
-> 	- [ ] Poursuite malgré conséquences négatives *(Addiction / Sevrage OH)*
+> 	- [ ] Désir puissant de consommer (craving)
+> 	- [ ] Perte de contrôle
+> 	- [ ] Tolérance
+> 	- [ ] Syndrome de sevrage
+> 	- [ ] Abandon d'autres activités
+> 	- [ ] Poursuite malgré conséquences négatives
 > - [ ] **57. Questionnaire CAGE (≥2/4 = positif) *(Addiction / Sevrage OH)***
-> 	- [ ] Cut down - Avez-vous déjà essayé de réduire ? *(Addiction / Sevrage OH)*
-> 	- [ ] Annoyed - Agacé par les critiques ? *(Addiction / Sevrage OH)*
-> 	- [ ] Guilty - Sentiment de culpabilité ? *(Addiction / Sevrage OH)*
-> 	- [ ] Eye opener - Boire le matin pour se sentir bien ? *(Addiction / Sevrage OH)*
+> 	- [ ] Cut down - Avez-vous déjà essayé de réduire ?
+> 	- [ ] Annoyed - Agacé par les critiques ?
+> 	- [ ] Guilty - Sentiment de culpabilité ?
+> 	- [ ] Eye opener - Boire le matin pour se sentir bien ?
 > - [ ] **58. Tentatives de sevrage antérieures *(Addiction / Sevrage OH)***
-> 	- [ ] Sevrages ambulatoires ou hospitaliers *(Addiction / Sevrage OH)*
-> 	- [ ] Pharmacothérapies anti-craving *(Addiction / Sevrage OH)*
-> 	- [ ] Groupes d'entraide (AA, Croix-Bleue) *(Addiction / Sevrage OH)*
-> 	- [ ] Accompagnement psychiatrique *(Addiction / Sevrage OH)*
+> 	- [ ] Sevrages ambulatoires ou hospitaliers
+> 	- [ ] Pharmacothérapies anti-craving
+> 	- [ ] Groupes d'entraide (AA, Croix-Bleue)
+> 	- [ ] Accompagnement psychiatrique
 > - [ ] **59. Habitudes alimentaires et symptômes B *(Addiction / Sevrage OH)***
-> 	- [ ] Alimentation *(Addiction / Sevrage OH)*
-> 	- [ ] Fièvre *(Addiction / Sevrage OH)*
-> 	- [ ] Sueurs nocturnes *(Addiction / Sevrage OH)*
-> 	- [ ] Perte de poids *(Addiction / Sevrage OH)*
+> 	- [ ] Alimentation
+> 	- [ ] Fièvre
+> 	- [ ] Sueurs nocturnes
+> 	- [ ] Perte de poids
 > - [ ] **60. Symptômes somatiques associés *(Addiction / Sevrage OH)***
-> 	- [ ] Tendance hémorragique *(Addiction / Sevrage OH)*
-> 	- [ ] Ictère *(Addiction / Sevrage OH)*
-> 	- [ ] Encéphalopathie hépatique *(Addiction / Sevrage OH)*
-> 	- [ ] Œdèmes/ascite *(Addiction / Sevrage OH)*
-> 	- [ ] Douleurs abdominales *(Addiction / Sevrage OH)*
-> 	- [ ] RGO/œsophagite *(Addiction / Sevrage OH)*
-> 	- [ ] Dysphagie/odynophagie *(Addiction / Sevrage OH)*
-> 	- [ ] Gastrite/ulcère *(Addiction / Sevrage OH)*
-> 	- [ ] Saignements digestifs (méléna, hématochézie) *(Addiction / Sevrage OH)*
+> 	- [ ] Tendance hémorragique
+> 	- [ ] Ictère
+> 	- [ ] Encéphalopathie hépatique
+> 	- [ ] Œdèmes/ascite
+> 	- [ ] Douleurs abdominales
+> 	- [ ] RGO/œsophagite
+> 	- [ ] Dysphagie/odynophagie
+> 	- [ ] Gastrite/ulcère
+> 	- [ ] Saignements digestifs (méléna, hématochézie)
 > - [ ] **61. Symptômes neurologiques *(Addiction / Sevrage OH)***
-> 	- [ ] Douleurs/faiblesse musculaire *(Addiction / Sevrage OH)*
-> 	- [ ] Chutes *(Addiction / Sevrage OH)*
-> 	- [ ] Polyneuropathie (douleurs pieds, hypoesthésie) *(Addiction / Sevrage OH)*
-> 	- [ ] Troubles mnésiques/diplopie *(Addiction / Sevrage OH)*
-> 	- [ ] Troubles de coordination/ataxie *(Addiction / Sevrage OH)*
+> 	- [ ] Douleurs/faiblesse musculaire
+> 	- [ ] Chutes
+> 	- [ ] Polyneuropathie (douleurs pieds, hypoesthésie)
+> 	- [ ] Troubles mnésiques/diplopie
+> 	- [ ] Troubles de coordination/ataxie
 > - [ ] **62. Symptômes urinaires et généraux *(Addiction / Sevrage OH)***
-> 	- [ ] Production/couleur urinaire *(Addiction / Sevrage OH)*
-> 	- [ ] Vertiges *(Addiction / Sevrage OH)*
+> 	- [ ] Production/couleur urinaire
+> 	- [ ] Vertiges
 > - [ ] **63. Antécédents personnels *(Addiction / Sevrage OH)***
-> 	- [ ] Maladies préexistantes *(Addiction / Sevrage OH)*
-> 	- [ ] Troubles psychiatriques/autres addictions *(Addiction / Sevrage OH)*
-> 	- [ ] Pathologies hépatiques/pancréatiques *(Addiction / Sevrage OH)*
-> 	- [ ] Chirurgies *(Addiction / Sevrage OH)*
-> 	- [ ] Allergies *(Addiction / Sevrage OH)*
-> 	- [ ] Médicaments actuels *(Addiction / Sevrage OH)*
+> 	- [ ] Maladies préexistantes
+> 	- [ ] Troubles psychiatriques/autres addictions
+> 	- [ ] Pathologies hépatiques/pancréatiques
+> 	- [ ] Chirurgies
+> 	- [ ] Allergies
+> 	- [ ] Médicaments actuels
 > - [ ] **64. Autres toxiques *(Addiction / Sevrage OH)***
-> 	- [ ] Tabac *(Addiction / Sevrage OH)*
-> 	- [ ] Drogues *(Addiction / Sevrage OH)*
+> 	- [ ] Tabac
+> 	- [ ] Drogues
 > - [ ] **65. Antécédents familiaux *(Addiction / Sevrage OH)***
-> 	- [ ] Troubles psychiatriques *(Addiction / Sevrage OH)*
-> 	- [ ] Alcoolisme familial *(Addiction / Sevrage OH)*
-> 	- [ ] Pathologies hépatiques/pancréatiques *(Addiction / Sevrage OH)*
+> 	- [ ] Troubles psychiatriques
+> 	- [ ] Alcoolisme familial
+> 	- [ ] Pathologies hépatiques/pancréatiques
 > - [ ] **66. Contexte socio-professionnel *(Addiction / Sevrage OH)***
-> 	- [ ] Formation/parcours professionnel *(Addiction / Sevrage OH)*
-> 	- [ ] Situation professionnelle actuelle *(Addiction / Sevrage OH)*
-> 	- [ ] Réseau social *(Addiction / Sevrage OH)*
-> 	- [ ] Logement *(Addiction / Sevrage OH)*
-> 	- [ ] Situation financière *(Addiction / Sevrage OH)*
+> 	- [ ] Formation/parcours professionnel
+> 	- [ ] Situation professionnelle actuelle
+> 	- [ ] Réseau social
+> 	- [ ] Logement
+> 	- [ ] Situation financière
 > - [ ] **67. Anamnèse par systèmes *(Addiction / Sevrage OH)***
-> - [ ] **68. Évaluation globale de la qualité de l'anamnèse *(Addiction / Sevrage OH)***
-> 	- [ ] Anamnèse complète et systématique *(Addiction / Sevrage OH)*
-> 	- [ ] Exploration des critères de dépendance *(Addiction / Sevrage OH)*
-> 	- [ ] Évaluation du retentissement bio-psycho-social *(Addiction / Sevrage OH)*
 
 > [!tip] 🩺 Status
 > - [ ] **1. Examen abdominal complet *(Addiction / Sevrage OH)***
-> 	- [ ] Inspection (distension, circulation collatérale) *(Addiction / Sevrage OH)*
-> 	- [ ] Palpation (hépatomégalie, splénomégalie, douleur) *(Addiction / Sevrage OH)*
-> 	- [ ] Percussion (matité, ascite) *(Addiction / Sevrage OH)*
-> 	- [ ] Signes cutanés hépatiques (angiomes stellaires, érythème palmaire) *(Addiction / Sevrage OH)*
+> 	- [ ] Inspection (distension, circulation collatérale)
+> 	- [ ] Palpation (hépatomégalie, splénomégalie, douleur)
+> 	- [ ] Percussion (matité, ascite)
+> 	- [ ] Signes cutanés hépatiques (angiomes stellaires, érythème palmaire)
 > - [ ] **2. Inspection de la cavité buccale *(Addiction / Sevrage OH)***
-> 	- [ ] Recherche de leucoplasie *(Addiction / Sevrage OH)*
-> 	- [ ] Recherche d'érythroplasie *(Addiction / Sevrage OH)*
-> 	- [ ] État dentaire *(Addiction / Sevrage OH)*
-> 	- [ ] Hypertrophie parotidienne *(Addiction / Sevrage OH)*
+> 	- [ ] Recherche de leucoplasie
+> 	- [ ] Recherche d'érythroplasie
+> 	- [ ] État dentaire
+> 	- [ ] Hypertrophie parotidienne
 > - [ ] **3. Mini-examen neurologique *(Addiction / Sevrage OH)***
-> 	- [ ] Orientation temporo-spatiale *(Addiction / Sevrage OH)*
-> 	- [ ] Motricité oculaire *(Addiction / Sevrage OH)*
-> 	- [ ] Force musculaire *(Addiction / Sevrage OH)*
-> 	- [ ] Coordination (épreuve doigt-nez) *(Addiction / Sevrage OH)*
-> 	- [ ] Sensibilité vibratoire *(Addiction / Sevrage OH)*
+> 	- [ ] Orientation temporo-spatiale
+> 	- [ ] Motricité oculaire
+> 	- [ ] Force musculaire
+> 	- [ ] Coordination (épreuve doigt-nez)
+> 	- [ ] Sensibilité vibratoire
 > - [ ] **4. Auscultation cardiopulmonaire *(Addiction / Sevrage OH)***
-> 	- [ ] Auscultation cardiaque *(Addiction / Sevrage OH)*
-> 	- [ ] Auscultation pulmonaire *(Addiction / Sevrage OH)*
-> 	- [ ] Recherche de signes d'insuffisance cardiaque *(Addiction / Sevrage OH)*
+> 	- [ ] Auscultation cardiaque
+> 	- [ ] Auscultation pulmonaire
+> 	- [ ] Recherche de signes d'insuffisance cardiaque
 > - [ ] **5. Toucher rectal si indiqué *(Addiction / Sevrage OH)***
 > - [ ] **6. Recherche de signes d'intoxication chronique *(Addiction / Sevrage OH)***
-> 	- [ ] Tremblements *(Addiction / Sevrage OH)*
-> 	- [ ] Érythrose faciale *(Addiction / Sevrage OH)*
-> 	- [ ] Télangiectasies *(Addiction / Sevrage OH)*
-> 	- [ ] Haleine alcoolisée *(Addiction / Sevrage OH)*
+> 	- [ ] Tremblements
+> 	- [ ] Érythrose faciale
+> 	- [ ] Télangiectasies
+> 	- [ ] Haleine alcoolisée
 > - [ ] **7. Évaluation de l'état général *(Addiction / Sevrage OH)***
-> 	- [ ] État nutritionnel *(Addiction / Sevrage OH)*
-> 	- [ ] Hydratation *(Addiction / Sevrage OH)*
-> 	- [ ] Hygiène corporelle *(Addiction / Sevrage OH)*
-> - [ ] **8. Évaluation globale de la qualité de l'examen clinique *(Addiction / Sevrage OH)***
-> 	- [ ] Examen ciblé et complet *(Addiction / Sevrage OH)*
-> 	- [ ] Recherche des complications *(Addiction / Sevrage OH)*
-> 	- [ ] Techniques adaptées *(Addiction / Sevrage OH)*
+> 	- [ ] État nutritionnel
+> 	- [ ] Hydratation
+> 	- [ ] Hygiène corporelle

@@ -101,15 +101,13 @@ cssclasses:
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Niveau de stress
-> - [ ] **12. Évaluation globale de la qualité de l'anamnèse**
-> 	- [ ] Anamnèse ciblée et bien conduite
-> - [ ] **13. Motif de consultation**
-> - [ ] **14. Évolution de l'hypertension**
+> - [ ] **12. Motif de consultation**
+> - [ ] **13. Évolution de l'hypertension**
 > 	- [ ] Hypertension connue depuis quand
 > 	- [ ] Valeurs tensionnelles habituelles
 > 	- [ ] Contrôle régulier
 > 	- [ ] Compliance au traitement
-> - [ ] **15. Symptômes actuels**
+> - [ ] **14. Symptômes actuels**
 > 	- [ ] Céphalées
 > 	- [ ] Vertiges
 > 	- [ ] Dyspnée d'effort
@@ -117,25 +115,25 @@ cssclasses:
 > 	- [ ] Palpitations
 > 	- [ ] Œdèmes
 > 	- [ ] Troubles visuels
-> - [ ] **16. Facteurs d'aggravation**
+> - [ ] **15. Facteurs d'aggravation**
 > 	- [ ] Stress récent
 > 	- [ ] Modification du régime alimentaire
 > 	- [ ] Prise de poids
 > 	- [ ] Consommation de sel
 > 	- [ ] Autres médicaments
-> - [ ] **17. Complications cardiovasculaires**
+> - [ ] **16. Complications cardiovasculaires**
 > 	- [ ] Antécédents d'AVC/AIT
 > 	- [ ] Cardiopathie ischémique
 > 	- [ ] Insuffisance cardiaque
 > 	- [ ] Artériopathie périphérique
 > 	- [ ] Néphropathie
-> - [ ] **18. Comorbidités**
+> - [ ] **17. Comorbidités**
 > 	- [ ] Diabète
 > 	- [ ] Dyslipidémie
 > 	- [ ] Obésité
 > 	- [ ] Syndrome d'apnée du sommeil
 > 	- [ ] Insuffisance rénale
-> - [ ] **19. Antécédents familiaux cardiovasculaires**
+> - [ ] **18. Antécédents familiaux cardiovasculaires**
 > 	- [ ] Hypertension familiale
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] AVC
@@ -176,24 +174,22 @@ cssclasses:
 > 	- [ ] Calcul de l'IMC
 > 	- [ ] Tour de taille
 > 	- [ ] Évaluation de l'obésité abdominale
-> - [ ] **6. Évaluation globale de la qualité de l'examen clinique**
-> 	- [ ] Examen clinique ciblé et bien conduit
-> - [ ] **7. Hygiène et préparation**
+> - [ ] **6. Hygiène et préparation**
 > 	- [ ] Désinfection des mains
 > 	- [ ] Installation correcte du patient
-> - [ ] **8. Évaluation générale**
+> - [ ] **7. Évaluation générale**
 > 	- [ ] État général
 > 	- [ ] Poids et taille (IMC)
 > 	- [ ] Tour de taille
-> - [ ] **9. Examen pulmonaire**
+> - [ ] **8. Examen pulmonaire**
 > 	- [ ] Auscultation pulmonaire
 > 	- [ ] Recherche de râles
 > 	- [ ] Signes d'insuffisance cardiaque
-> - [ ] **10. Recherche d'œdèmes**
+> - [ ] **9. Recherche d'œdèmes**
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Signe du godet
 > 	- [ ] Bilatéralité
-> - [ ] **11. Examen des organes cibles**
+> - [ ] **10. Examen des organes cibles**
 > 	- [ ] Fond d'œil (ou mention)
 > 	- [ ] Examen neurologique sommaire
 > 	- [ ] Palpation rénale

@@ -35,6 +35,35 @@ def verifier_marquage():
     return ecarts
 
 
+def verifier_elision():
+    """Un sous-item herite de la portee de son parent : il ne la repete pas.
+
+    Le suffixe n'est reaffiche sur un sous-item que s'il DIFFERE de celui du
+    parent — c'est le seul cas ou il apprend quelque chose. Les deux items
+    ci-dessous couvrent les deux sens : portee identique (elidee) et portee
+    plus etroite que celle du parent (conservee).
+    """
+    ecarts = []
+    diag = {"A": "STEMI", "B": "Péricardite", "C": "Embolie"}
+    items = [
+        {"titre": "Frottement péricardique", "cas": {"B"},
+         "sous": [{"titre": "Auscultation en antéflexion", "cas": {"B"}}]},
+        {"titre": "Caractérisation de la douleur", "cas": {"A", "B"},
+         "sous": [{"titre": "Irradiation", "cas": {"A"}}]},
+    ]
+    attendu = "\n".join([
+        "> [!note] 📋 Anamnèse",
+        "> - [ ] **1. Frottement péricardique *(Péricardite)***",
+        "> \t- [ ] Auscultation en antéflexion",
+        "> - [ ] **2. Caractérisation de la douleur *(Péricardite, STEMI)***",
+        "> \t- [ ] Irradiation *(STEMI)*",
+    ])
+    rendu = lib_rendu.encadre("note", "📋 Anamnèse", items, 3, diag)
+    if rendu != attendu:
+        ecarts.append("suffixe herite mal elide — obtenu :\n" + str(rendu))
+    return ecarts
+
+
 def main():
     ecarts = []
     fusion = lib_fusion.apparier([A, B, C], "a")
@@ -74,6 +103,7 @@ def main():
         ecarts.append("numerotation et casse devraient etre neutralisees")
 
     ecarts += verifier_marquage()
+    ecarts += verifier_elision()
 
     if ecarts:
         print("ECHEC —", len(ecarts), "ecart(s) :")

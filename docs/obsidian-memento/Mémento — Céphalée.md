@@ -51,10 +51,10 @@ cssclasses:
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(Crise migraineuse, Hémorragie sous-arachnoïdienne)***
 > - [ ] **2. Caractérisation de la céphalée *(Crise migraineuse, Hémorragie sous-arachnoïdienne, Thrombose veineuse cérébrale)***
-> 	- [ ] Localisation *(Crise migraineuse, Hémorragie sous-arachnoïdienne, Thrombose veineuse cérébrale)*
+> 	- [ ] Localisation
 > 	- [ ] Intensité (échelle 0-10) *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Qualité *(Crise migraineuse, Hémorragie sous-arachnoïdienne, Thrombose veineuse cérébrale)*
-> 	- [ ] Début *(Crise migraineuse, Hémorragie sous-arachnoïdienne, Thrombose veineuse cérébrale)*
+> 	- [ ] Qualité
+> 	- [ ] Début
 > 	- [ ] Événements précipitants *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
 > 	- [ ] Progression/constant/intermittent *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
 > 	- [ ] Épisodes antérieurs *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
@@ -66,21 +66,21 @@ cssclasses:
 > 	- [ ] Évolution *(Thrombose veineuse cérébrale)*
 > 	- [ ] Durée *(Thrombose veineuse cérébrale)*
 > - [ ] **3. Recherche de symptômes spécifiques *(Crise migraineuse)***
-> 	- [ ] Traumatisme *(Crise migraineuse)*
-> 	- [ ] Fièvre/frissons *(Crise migraineuse)*
-> 	- [ ] Problèmes de sommeil *(Crise migraineuse)*
-> 	- [ ] Appétit *(Crise migraineuse)*
-> 	- [ ] Infections récentes *(Crise migraineuse)*
-> 	- [ ] Vertiges *(Crise migraineuse)*
-> 	- [ ] Troubles visuels *(Crise migraineuse)*
-> 	- [ ] Difficultés à parler *(Crise migraineuse)*
-> 	- [ ] Faiblesse *(Crise migraineuse)*
-> 	- [ ] Picotements/engourdissements *(Crise migraineuse)*
-> 	- [ ] Humeur *(Crise migraineuse)*
-> 	- [ ] Larmoiement *(Crise migraineuse)*
-> 	- [ ] Congestion nasale/nez qui coule *(Crise migraineuse)*
-> 	- [ ] Agitation *(Crise migraineuse)*
-> 	- [ ] Transpiration *(Crise migraineuse)*
+> 	- [ ] Traumatisme
+> 	- [ ] Fièvre/frissons
+> 	- [ ] Problèmes de sommeil
+> 	- [ ] Appétit
+> 	- [ ] Infections récentes
+> 	- [ ] Vertiges
+> 	- [ ] Troubles visuels
+> 	- [ ] Difficultés à parler
+> 	- [ ] Faiblesse
+> 	- [ ] Picotements/engourdissements
+> 	- [ ] Humeur
+> 	- [ ] Larmoiement
+> 	- [ ] Congestion nasale/nez qui coule
+> 	- [ ] Agitation
+> 	- [ ] Transpiration
 > - [ ] **4. Antécédents médicaux *(4 diagnostics)***
 > - [ ] **5. Allergies *(5 diagnostics)***
 > 	- [ ] Allergies *(Crise migraineuse)*
@@ -89,34 +89,34 @@ cssclasses:
 > 	- [ ] Antihypertenseurs *(Céphalée du restaurant chinois)*
 > 	- [ ] Antalgiques *(Céphalée du restaurant chinois)*
 > - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Crise migraineuse, Hémorragie sous-arachnoïdienne)***
-> 	- [ ] Hospitalisations *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Antécédents chirurgicaux *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Hospitalisations
+> 	- [ ] Antécédents chirurgicaux
 > - [ ] **8. Antécédents familiaux *(Crise migraineuse, Céphalée du restaurant chinois, Migraine)***
 > - [ ] **9. Habitudes et mode de vie *(Crise migraineuse, Hémorragie sous-arachnoïdienne)***
-> 	- [ ] Travail *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Domicile *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Alcool *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Drogues récréatives *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Tabac *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Exercice *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Alimentation *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Travail
+> 	- [ ] Domicile
+> 	- [ ] Alcool
+> 	- [ ] Drogues récréatives
+> 	- [ ] Tabac
+> 	- [ ] Exercice
+> 	- [ ] Alimentation
 > 	- [ ] Quantité avant d'arrêter *(Hémorragie sous-arachnoïdienne)*
 > - [ ] **10. Recherche de symptômes spécifiques pour céphalée sévère aiguë *(Hémorragie sous-arachnoïdienne)***
-> 	- [ ] Fièvre/frissons *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Palpitations *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Éruption cutanée/changements cutanés *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Douleur thoracique *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Dyspnée *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Infections récentes *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Vertiges *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Engourdissement *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Picotements *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Faiblesse *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Vision altérée *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Convulsions *(Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Fièvre/frissons
+> 	- [ ] Palpitations
+> 	- [ ] Éruption cutanée/changements cutanés
+> 	- [ ] Douleur thoracique
+> 	- [ ] Dyspnée
+> 	- [ ] Infections récentes
+> 	- [ ] Vertiges
+> 	- [ ] Engourdissement
+> 	- [ ] Picotements
+> 	- [ ] Faiblesse
+> 	- [ ] Vision altérée
+> 	- [ ] Convulsions
 > - [ ] **11. Contacts malades et antécédents familiaux *(Hémorragie sous-arachnoïdienne)***
-> 	- [ ] Contacts malades *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Antécédents familiaux *(Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Contacts malades
+> 	- [ ] Antécédents familiaux
 > - [ ] **12. Question d'ouverture *(Migraine)***
 > - [ ] **13. Dimension temporelle *(Migraine)***
 > - [ ] **14. Épisode actuel *(Migraine)***
@@ -171,19 +171,19 @@ cssclasses:
 > - [ ] **58. Présentation avec nom, fonction et tâche *(Céphalée du restaurant chinois, Méningite)***
 > - [ ] **59. Question ouverte d'introduction → Symptôme principal *(Céphalée du restaurant chinois)***
 > - [ ] **60. Localisation des douleurs *(Céphalée du restaurant chinois)***
-> 	- [ ] Unilatérale/bilatérale *(Céphalée du restaurant chinois)*
-> 	- [ ] Tête ou visage *(Céphalée du restaurant chinois)*
+> 	- [ ] Unilatérale/bilatérale
+> 	- [ ] Tête ou visage
 > - [ ] **61. Caractéristiques temporelles *(Céphalée du restaurant chinois)***
-> 	- [ ] Début de la douleur *(Céphalée du restaurant chinois)*
-> 	- [ ] Durée *(Céphalée du restaurant chinois)*
-> 	- [ ] Constante/intermittente *(Céphalée du restaurant chinois)*
+> 	- [ ] Début de la douleur
+> 	- [ ] Durée
+> 	- [ ] Constante/intermittente
 > - [ ] **62. Variation dans la journée *(Céphalée du restaurant chinois)***
 > - [ ] **63. Caractère de la douleur *(Céphalée du restaurant chinois)***
 > - [ ] **64. Facteurs de soulagement *(Céphalée du restaurant chinois)***
 > - [ ] **65. Symptômes d'accompagnement *(Céphalée du restaurant chinois, Méningite)***
 > 	- [ ] Nausées *(Céphalée du restaurant chinois)*
 > 	- [ ] Vomissements *(Céphalée du restaurant chinois)*
-> 	- [ ] Photophobie *(Céphalée du restaurant chinois, Méningite)*
+> 	- [ ] Photophobie
 > 	- [ ] Larmoiement *(Céphalée du restaurant chinois)*
 > 	- [ ] Douleurs à la mastication *(Céphalée du restaurant chinois)*
 > 	- [ ] Troubles visuels *(Céphalée du restaurant chinois)*
@@ -198,91 +198,89 @@ cssclasses:
 > - [ ] **71. Alimentation *(Céphalée du restaurant chinois)***
 > - [ ] **72. Piqûre de tique *(Céphalée du restaurant chinois)***
 > - [ ] **73. Antécédents personnels *(Céphalée du restaurant chinois)***
-> 	- [ ] Néoplasie *(Céphalée du restaurant chinois)*
-> 	- [ ] Hypertension *(Céphalée du restaurant chinois)*
+> 	- [ ] Néoplasie
+> 	- [ ] Hypertension
 > - [ ] **74. Contraceptifs oraux (chez la femme) *(Céphalée du restaurant chinois)***
 > - [ ] **75. Toxiques *(Céphalée du restaurant chinois)***
 > - [ ] **76. Anamnèse sociale, profession *(Céphalée du restaurant chinois)***
-> - [ ] **77. Évaluation globale de la qualité de l'anamnèse *(Céphalée du restaurant chinois, Méningite)***
-> 	- [ ] Anamnèse ciblée et bien conduite *(Céphalée du restaurant chinois, Méningite)*
-> - [ ] **78. Question d'entrée ouverte → Symptôme principal *(Méningite)***
-> - [ ] **79. Caractéristiques des céphalées *(Méningite)***
-> 	- [ ] Temporalité *(Méningite)*
-> 	- [ ] Caractère *(Méningite)*
-> 	- [ ] Intensité EVA *(Méningite)*
-> 	- [ ] Facteurs aggravants *(Méningite)*
-> 	- [ ] Facteurs améliorants *(Méningite)*
-> - [ ] **80. Anamnèse personnelle *(Méningite)***
-> 	- [ ] Alcool *(Méningite)*
-> 	- [ ] Tabac *(Méningite)*
-> 	- [ ] Drogues *(Méningite)*
-> - [ ] **81. Symptômes B *(Méningite)***
-> - [ ] **82. Questions sur infections herpétiques *(Méningite)***
-> 	- [ ] Herpès *(Méningite)*
-> 	- [ ] Varicelle-zona (VZV) *(Méningite)*
-> - [ ] **83. Anamnèse familiale *(Méningite)***
-> - [ ] **84. Anamnèse sociale *(Méningite)***
-> 	- [ ] Vit avec sa femme *(Méningite)*
-> 	- [ ] Visite récente chez les petits-enfants il y a 2 semaines *(Méningite)*
-> - [ ] **85. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
-> 	- [ ] Céphalée nouvelle/différente *(Thrombose veineuse cérébrale)*
-> 	- [ ] Céphalée décrite comme la pire *(Thrombose veineuse cérébrale)*
-> 	- [ ] Céphalée en coup de tonnerre *(Thrombose veineuse cérébrale)*
-> 	- [ ] Céphalée déclenchée par effort/exercice/activité sexuelle *(Thrombose veineuse cérébrale)*
-> 	- [ ] Céphalée déclenchée/aggravée par Valsalva ou position *(Thrombose veineuse cérébrale)*
-> - [ ] **86. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
-> 	- [ ] Migraines chroniques *(Thrombose veineuse cérébrale)*
-> 	- [ ] Caractéristiques des migraines habituelles *(Thrombose veineuse cérébrale)*
-> 	- [ ] Traitement habituel *(Thrombose veineuse cérébrale)*
-> 	- [ ] Efficacité du traitement actuel *(Thrombose veineuse cérébrale)*
-> - [ ] **87. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
-> 	- [ ] Contraception orale *(Thrombose veineuse cérébrale)*
-> 	- [ ] Tabagisme *(Thrombose veineuse cérébrale)*
-> 	- [ ] Antécédents familiaux vasculaires *(Thrombose veineuse cérébrale)*
-> 	- [ ] HTA/diabète/dyslipidémie *(Thrombose veineuse cérébrale)*
-> - [ ] **88. Contexte *(Thrombose veineuse cérébrale)***
-> 	- [ ] Grossesse/post-partum *(Thrombose veineuse cérébrale)*
-> 	- [ ] Immunosuppression/cancer *(Thrombose veineuse cérébrale)*
-> 	- [ ] Traumatisme crânien récent *(Thrombose veineuse cérébrale)*
-> 	- [ ] Voyage/contage *(Thrombose veineuse cérébrale)*
-> 	- [ ] Vaccins *(Thrombose veineuse cérébrale)*
-> - [ ] **89. Anamnèse par système *(Thrombose veineuse cérébrale)***
-> 	- [ ] État général *(Thrombose veineuse cérébrale)*
-> 	- [ ] Système digestif *(Thrombose veineuse cérébrale)*
-> 	- [ ] Système gynécologique *(Thrombose veineuse cérébrale)*
-> 	- [ ] État psychique *(Thrombose veineuse cérébrale)*
+> - [ ] **77. Question d'entrée ouverte → Symptôme principal *(Méningite)***
+> - [ ] **78. Caractéristiques des céphalées *(Méningite)***
+> 	- [ ] Temporalité
+> 	- [ ] Caractère
+> 	- [ ] Intensité EVA
+> 	- [ ] Facteurs aggravants
+> 	- [ ] Facteurs améliorants
+> - [ ] **79. Anamnèse personnelle *(Méningite)***
+> 	- [ ] Alcool
+> 	- [ ] Tabac
+> 	- [ ] Drogues
+> - [ ] **80. Symptômes B *(Méningite)***
+> - [ ] **81. Questions sur infections herpétiques *(Méningite)***
+> 	- [ ] Herpès
+> 	- [ ] Varicelle-zona (VZV)
+> - [ ] **82. Anamnèse familiale *(Méningite)***
+> - [ ] **83. Anamnèse sociale *(Méningite)***
+> 	- [ ] Vit avec sa femme
+> 	- [ ] Visite récente chez les petits-enfants il y a 2 semaines
+> - [ ] **84. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
+> 	- [ ] Céphalée nouvelle/différente
+> 	- [ ] Céphalée décrite comme la pire
+> 	- [ ] Céphalée en coup de tonnerre
+> 	- [ ] Céphalée déclenchée par effort/exercice/activité sexuelle
+> 	- [ ] Céphalée déclenchée/aggravée par Valsalva ou position
+> - [ ] **85. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
+> 	- [ ] Migraines chroniques
+> 	- [ ] Caractéristiques des migraines habituelles
+> 	- [ ] Traitement habituel
+> 	- [ ] Efficacité du traitement actuel
+> - [ ] **86. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
+> 	- [ ] Contraception orale
+> 	- [ ] Tabagisme
+> 	- [ ] Antécédents familiaux vasculaires
+> 	- [ ] HTA/diabète/dyslipidémie
+> - [ ] **87. Contexte *(Thrombose veineuse cérébrale)***
+> 	- [ ] Grossesse/post-partum
+> 	- [ ] Immunosuppression/cancer
+> 	- [ ] Traumatisme crânien récent
+> 	- [ ] Voyage/contage
+> 	- [ ] Vaccins
+> - [ ] **88. Anamnèse par système *(Thrombose veineuse cérébrale)***
+> 	- [ ] État général
+> 	- [ ] Système digestif
+> 	- [ ] Système gynécologique
+> 	- [ ] État psychique
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Crise migraineuse, Hémorragie sous-arachnoïdienne)***
-> 	- [ ] Lavage des mains *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Respect de la pudeur avec drap *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Lavage des mains
+> 	- [ ] Respect de la pudeur avec drap
 > - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(Crise migraineuse, Hémorragie sous-arachnoïdienne)***
-> 	- [ ] Inspection de la tête *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Palpation de la tête *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Inspection de la tête
+> 	- [ ] Palpation de la tête
 > 	- [ ] Inspection des conjonctives *(Crise migraineuse)*
 > 	- [ ] Évaluation de l'acuité visuelle (échelle de Snellen) *(Crise migraineuse)*
-> 	- [ ] Fond d'œil direct *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Fond d'œil direct
 > - [ ] **3. Examen du cou *(Crise migraineuse)***
-> 	- [ ] Inspection du cou *(Crise migraineuse)*
-> 	- [ ] Palpation du cou *(Crise migraineuse)*
+> 	- [ ] Inspection du cou
+> 	- [ ] Palpation du cou
 > - [ ] **4. Examen neurologique *(Crise migraineuse, Hémorragie sous-arachnoïdienne)***
-> 	- [ ] Évaluation de l'orientation dans le temps, l'espace et les personnes *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Examen ciblé des nerfs crâniens *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Évaluation de l'orientation dans le temps, l'espace et les personnes
+> 	- [ ] Examen ciblé des nerfs crâniens
 > 	- [ ] Recherche de méningisme *(Crise migraineuse)*
-> 	- [ ] Examen ciblé des mouvements passifs et actifs *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Examen ciblé de la sensibilité *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Examen ciblé de la marche *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Test des mouvements alternés rapides *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Test doigt-nez *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Signe de Babinski *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Test de Romberg *(Crise migraineuse, Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Examen ciblé des mouvements passifs et actifs
+> 	- [ ] Examen ciblé de la sensibilité
+> 	- [ ] Examen ciblé des réflexes ostéo-tendineux
+> 	- [ ] Examen ciblé de la marche
+> 	- [ ] Test des mouvements alternés rapides
+> 	- [ ] Test doigt-nez
+> 	- [ ] Signe de Babinski
+> 	- [ ] Test de Romberg
 > 	- [ ] Évaluation du niveau de conscience *(Hémorragie sous-arachnoïdienne)*
 > 	- [ ] Méningisme *(Hémorragie sous-arachnoïdienne)*
 > 	- [ ] Signe de Kernig *(Hémorragie sous-arachnoïdienne)*
 > 	- [ ] Signe de Brudzinski *(Hémorragie sous-arachnoïdienne)*
 > - [ ] **5. Examen cardiovasculaire *(Hémorragie sous-arachnoïdienne)***
-> 	- [ ] Auscultation cardiaque *(Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Auscultation cardiaque
 > - [ ] **6. Méningisme *(Céphalée du restaurant chinois, Migraine)***
 > - [ ] **7. Pupilles *(Migraine)***
 > - [ ] **8. Oculomotricité *(Migraine)***
@@ -306,38 +304,36 @@ cssclasses:
 > - [ ] **26. Artère temporale *(Migraine)***
 > - [ ] **27. Signes vitaux *(Céphalée du restaurant chinois)***
 > - [ ] **28. Neurostatus *(Céphalée du restaurant chinois)***
-> 	- [ ] Pupilles *(Céphalée du restaurant chinois)*
-> 	- [ ] Fond d'œil *(Céphalée du restaurant chinois)*
+> 	- [ ] Pupilles
+> 	- [ ] Fond d'œil
 > - [ ] **29. Palpation artère temporale *(Céphalée du restaurant chinois)***
 > - [ ] **30. Auscultation cardiaque avec artères carotides *(Céphalée du restaurant chinois)***
-> - [ ] **31. Évaluation globale de la qualité de l'examen clinique *(Céphalée du restaurant chinois, Méningite)***
-> 	- [ ] Examen ciblé et bien conduit *(Céphalée du restaurant chinois, Méningite)*
-> - [ ] **32. Signe de Brudzinski *(Méningite)***
-> - [ ] **33. Autres signes méningés *(Méningite)***
-> 	- [ ] Signe de Kernig *(Méningite)*
-> 	- [ ] Signe de Lasègue *(Méningite)*
-> - [ ] **34. Neurostatus par ailleurs *(Méningite)***
-> - [ ] **35. Examen neurologique - nerfs crâniens *(Thrombose veineuse cérébrale)***
-> 	- [ ] Acuité visuelle *(Thrombose veineuse cérébrale)*
-> 	- [ ] Champs visuels *(Thrombose veineuse cérébrale)*
-> 	- [ ] Réflexes pupillaires *(Thrombose veineuse cérébrale)*
-> 	- [ ] Oculomotricité *(Thrombose veineuse cérébrale)*
-> 	- [ ] Sensibilité faciale *(Thrombose veineuse cérébrale)*
-> 	- [ ] Motricité faciale *(Thrombose veineuse cérébrale)*
-> - [ ] **36. Examen neurologique - voies longues *(Thrombose veineuse cérébrale)***
-> 	- [ ] Force motrice 4 membres *(Thrombose veineuse cérébrale)*
-> 	- [ ] Sensibilité *(Thrombose veineuse cérébrale)*
-> 	- [ ] Réflexes ostéotendineux *(Thrombose veineuse cérébrale)*
-> 	- [ ] Réflexe cutané plantaire *(Thrombose veineuse cérébrale)*
-> - [ ] **37. Recherche de méningisme *(Thrombose veineuse cérébrale)***
-> 	- [ ] Raideur de nuque *(Thrombose veineuse cérébrale)*
-> 	- [ ] Signe de Kernig *(Thrombose veineuse cérébrale)*
-> 	- [ ] Signe de Brudzinski *(Thrombose veineuse cérébrale)*
-> - [ ] **38. Examen vasculaire *(Thrombose veineuse cérébrale)***
-> 	- [ ] Palpation artères temporales *(Thrombose veineuse cérébrale)*
-> 	- [ ] Auscultation carotidienne *(Thrombose veineuse cérébrale)*
-> 	- [ ] Recherche de souffle vasculaire *(Thrombose veineuse cérébrale)*
-> - [ ] **39. Autres examens pertinents *(Thrombose veineuse cérébrale)***
-> 	- [ ] Fond d'œil/œdème papillaire *(Thrombose veineuse cérébrale)*
-> 	- [ ] Démarche et épreuves cérébelleuses *(Thrombose veineuse cérébrale)*
-> 	- [ ] Recherche d'un rash cutané *(Thrombose veineuse cérébrale)*
+> - [ ] **31. Signe de Brudzinski *(Méningite)***
+> - [ ] **32. Autres signes méningés *(Méningite)***
+> 	- [ ] Signe de Kernig
+> 	- [ ] Signe de Lasègue
+> - [ ] **33. Neurostatus par ailleurs *(Méningite)***
+> - [ ] **34. Examen neurologique - nerfs crâniens *(Thrombose veineuse cérébrale)***
+> 	- [ ] Acuité visuelle
+> 	- [ ] Champs visuels
+> 	- [ ] Réflexes pupillaires
+> 	- [ ] Oculomotricité
+> 	- [ ] Sensibilité faciale
+> 	- [ ] Motricité faciale
+> - [ ] **35. Examen neurologique - voies longues *(Thrombose veineuse cérébrale)***
+> 	- [ ] Force motrice 4 membres
+> 	- [ ] Sensibilité
+> 	- [ ] Réflexes ostéotendineux
+> 	- [ ] Réflexe cutané plantaire
+> - [ ] **36. Recherche de méningisme *(Thrombose veineuse cérébrale)***
+> 	- [ ] Raideur de nuque
+> 	- [ ] Signe de Kernig
+> 	- [ ] Signe de Brudzinski
+> - [ ] **37. Examen vasculaire *(Thrombose veineuse cérébrale)***
+> 	- [ ] Palpation artères temporales
+> 	- [ ] Auscultation carotidienne
+> 	- [ ] Recherche de souffle vasculaire
+> - [ ] **38. Autres examens pertinents *(Thrombose veineuse cérébrale)***
+> 	- [ ] Fond d'œil/œdème papillaire
+> 	- [ ] Démarche et épreuves cérébelleuses
+> 	- [ ] Recherche d'un rash cutané

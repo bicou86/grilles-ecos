@@ -104,71 +104,69 @@ cssclasses:
 > - [ ] **55. Motricité fine *(Accident vasculaire cérébral)***
 > - [ ] **56. Langage *(Accident vasculaire cérébral)***
 > - [ ] **57. Antécédents personnels *(Accident vasculaire cérébral)***
-> 	- [ ] AVC antérieurs *(Accident vasculaire cérébral)*
-> 	- [ ] Autres pathologies *(Accident vasculaire cérébral)*
+> 	- [ ] AVC antérieurs
+> 	- [ ] Autres pathologies
 > - [ ] **58. Toxiques *(Accident vasculaire cérébral, Chute multifactorielle)***
 > - [ ] **59. Facteurs de risque cardiovasculaire *(Accident vasculaire cérébral)***
-> 	- [ ] Hypertension *(Accident vasculaire cérébral)*
-> 	- [ ] Hyperlipidémie *(Accident vasculaire cérébral)*
+> 	- [ ] Hypertension
+> 	- [ ] Hyperlipidémie
 > - [ ] **60. Activités sportives, loisirs *(Accident vasculaire cérébral)***
 > - [ ] **61. Anamnèse familiale *(Accident vasculaire cérébral, Chute multifactorielle)***
 > 	- [ ] AVC *(Accident vasculaire cérébral)*
 > 	- [ ] Maladies cardiaques *(Accident vasculaire cérébral)*
 > 	- [ ] Hypertension *(Accident vasculaire cérébral)*
 > 	- [ ] Diabète *(Accident vasculaire cérébral)*
-> - [ ] **62. Évaluation globale de la qualité de l'anamnèse *(Accident vasculaire cérébral, Chute multifactorielle)***
-> 	- [ ] Anamnèse ciblée et bien conduite *(Accident vasculaire cérébral, Chute multifactorielle)*
-> - [ ] **63. Événement *(Chute multifactorielle)***
-> - [ ] **64. Temporalité *(Chute multifactorielle)***
-> - [ ] **65. Premier épisode *(Chute multifactorielle)***
-> - [ ] **66. Douleurs *(Chute multifactorielle)***
-> - [ ] **67. Fièvre *(Chute multifactorielle)***
-> - [ ] **68. Sensation de malaise *(Chute multifactorielle)***
-> - [ ] **69. Autres symptômes *(Chute multifactorielle)***
-> 	- [ ] Faiblesse *(Chute multifactorielle)*
-> 	- [ ] Troubles sensitifs *(Chute multifactorielle)*
-> 	- [ ] Céphalées *(Chute multifactorielle)*
-> 	- [ ] Vertiges *(Chute multifactorielle)*
-> 	- [ ] Palpitations *(Chute multifactorielle)*
-> 	- [ ] Dyspnée *(Chute multifactorielle)*
-> - [ ] **70. Antécédents médicaux *(Chute multifactorielle, Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **62. Événement *(Chute multifactorielle)***
+> - [ ] **63. Temporalité *(Chute multifactorielle)***
+> - [ ] **64. Premier épisode *(Chute multifactorielle)***
+> - [ ] **65. Douleurs *(Chute multifactorielle)***
+> - [ ] **66. Fièvre *(Chute multifactorielle)***
+> - [ ] **67. Sensation de malaise *(Chute multifactorielle)***
+> - [ ] **68. Autres symptômes *(Chute multifactorielle)***
+> 	- [ ] Faiblesse
+> 	- [ ] Troubles sensitifs
+> 	- [ ] Céphalées
+> 	- [ ] Vertiges
+> 	- [ ] Palpitations
+> 	- [ ] Dyspnée
+> - [ ] **69. Antécédents médicaux *(Chute multifactorielle, Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Diabète *(Chute multifactorielle)*
 > 	- [ ] Gonarthrose bilatérale *(Chute multifactorielle)*
 > 	- [ ] Hypertension artérielle *(Chute multifactorielle)*
 > 	- [ ] Problème cardiaque *(Chute multifactorielle)*
-> - [ ] **71. Médicaments actuels *(Chute multifactorielle)***
-> 	- [ ] Tramadol *(Chute multifactorielle)*
-> 	- [ ] Somnifère *(Chute multifactorielle)*
-> 	- [ ] Sulfonylurée *(Chute multifactorielle)*
-> 	- [ ] Aspirine *(Chute multifactorielle)*
-> - [ ] **72. Maladies récentes/Hospitalisations *(Chute multifactorielle)***
-> - [ ] **73. Habitudes alimentaires *(Chute multifactorielle)***
-> - [ ] **74. Condition physique *(Chute multifactorielle)***
-> - [ ] **75. Allergies *(Chute multifactorielle)***
-> - [ ] **76. Motif principal *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **77. Mécanisme du traumatisme *(Fracture du membre supérieur (humérus, tête radiale))***
-> 	- [ ] Circonstance *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Énergie *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Position lors de la réception *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Autres blessures que coude *(Fracture du membre supérieur (humérus, tête radiale))*
-> - [ ] **78. Caractérisation de la douleur *(Fracture du membre supérieur (humérus, tête radiale))***
-> 	- [ ] Localisation *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Intensité *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Qualité *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Évolution *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Irradiation *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Facteurs atténuants/aggravants *(Fracture du membre supérieur (humérus, tête radiale))*
-> - [ ] **79. Présence de symptômes neuro-vasculaires associés au trauma *(Fracture du membre supérieur (humérus, tête radiale))***
-> 	- [ ] Impotence *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Symptômes neuro-vasculaires *(Fracture du membre supérieur (humérus, tête radiale))*
-> - [ ] **80. Antécédents chirurgicaux *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **81. Santé actuelle *(Fracture du membre supérieur (humérus, tête radiale))***
-> 	- [ ] Maladies actuelles *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Médicaments *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Allergies *(Fracture du membre supérieur (humérus, tête radiale))*
-> - [ ] **82. Impact du traumatisme sur le quotidien de la patiente *(Fracture du membre supérieur (humérus, tête radiale))***
-> 	- [ ] Membre dominant *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Activités quotidiennes affectées *(Fracture du membre supérieur (humérus, tête radiale))*
+> - [ ] **70. Médicaments actuels *(Chute multifactorielle)***
+> 	- [ ] Tramadol
+> 	- [ ] Somnifère
+> 	- [ ] Sulfonylurée
+> 	- [ ] Aspirine
+> - [ ] **71. Maladies récentes/Hospitalisations *(Chute multifactorielle)***
+> - [ ] **72. Habitudes alimentaires *(Chute multifactorielle)***
+> - [ ] **73. Condition physique *(Chute multifactorielle)***
+> - [ ] **74. Allergies *(Chute multifactorielle)***
+> - [ ] **75. Motif principal *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **76. Mécanisme du traumatisme *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Circonstance
+> 	- [ ] Énergie
+> 	- [ ] Position lors de la réception
+> 	- [ ] Autres blessures que coude
+> - [ ] **77. Caractérisation de la douleur *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Localisation
+> 	- [ ] Intensité
+> 	- [ ] Qualité
+> 	- [ ] Évolution
+> 	- [ ] Irradiation
+> 	- [ ] Facteurs atténuants/aggravants
+> - [ ] **78. Présence de symptômes neuro-vasculaires associés au trauma *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Impotence
+> 	- [ ] Symptômes neuro-vasculaires
+> - [ ] **79. Antécédents chirurgicaux *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **80. Santé actuelle *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Maladies actuelles
+> 	- [ ] Médicaments
+> 	- [ ] Allergies
+> - [ ] **81. Impact du traumatisme sur le quotidien de la patiente *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Membre dominant
+> 	- [ ] Activités quotidiennes affectées
 
 > [!tip] 🩺 Status
 > - [ ] **1. MMS *(HypoTA orthostatique)***
@@ -200,45 +198,42 @@ cssclasses:
 > - [ ] **25. Analyse de la marche *(HypoTA orthostatique)***
 > - [ ] **26. Orientation et état de conscience *(Accident vasculaire cérébral)***
 > - [ ] **27. Examen de la marche *(Accident vasculaire cérébral)***
-> 	- [ ] Marche normale *(Accident vasculaire cérébral)*
-> 	- [ ] Marche en tandem *(Accident vasculaire cérébral)*
+> 	- [ ] Marche normale
+> 	- [ ] Marche en tandem
 > - [ ] **28. Tests de coordination *(Accident vasculaire cérébral)***
-> 	- [ ] Test de Romberg *(Accident vasculaire cérébral)*
-> 	- [ ] Test d'Unterberger *(Accident vasculaire cérébral)*
-> 	- [ ] Diadococinésie *(Accident vasculaire cérébral)*
-> 	- [ ] Test de préhension des bras *(Accident vasculaire cérébral)*
-> 	- [ ] Épreuve doigt-nez *(Accident vasculaire cérébral)*
-> 	- [ ] Épreuve talon-genou *(Accident vasculaire cérébral)*
+> 	- [ ] Test de Romberg
+> 	- [ ] Test d'Unterberger
+> 	- [ ] Diadococinésie
+> 	- [ ] Test de préhension des bras
+> 	- [ ] Épreuve doigt-nez
+> 	- [ ] Épreuve talon-genou
 > - [ ] **29. Examen moteur *(Accident vasculaire cérébral)***
 > - [ ] **30. Examen sensitif *(Accident vasculaire cérébral)***
 > - [ ] **31. Recherche d'apraxie *(Accident vasculaire cérébral)***
 > - [ ] **32. Réflexes *(Accident vasculaire cérébral)***
-> 	- [ ] Réflexes ostéo-tendineux *(Accident vasculaire cérébral)*
-> 	- [ ] Signe de Babinski *(Accident vasculaire cérébral)*
+> 	- [ ] Réflexes ostéo-tendineux
+> 	- [ ] Signe de Babinski
 > - [ ] **33. Signes méningés *(Accident vasculaire cérébral)***
-> - [ ] **34. Évaluation globale de la qualité de l'examen clinique *(Accident vasculaire cérébral, Chute multifactorielle)***
-> 	- [ ] Examen neurologique ciblé et bien conduit *(Accident vasculaire cérébral)*
-> 	- [ ] Examen ciblé et bien conduit *(Chute multifactorielle)*
-> - [ ] **35. Status cardiaque et pulmonaire *(Chute multifactorielle)***
-> - [ ] **36. Neurostatus *(Chute multifactorielle)***
-> 	- [ ] Ataxie *(Chute multifactorielle)*
-> 	- [ ] Tests cérébelleux *(Chute multifactorielle)*
-> 	- [ ] Sensibilité *(Chute multifactorielle)*
-> 	- [ ] Motricité *(Chute multifactorielle)*
-> - [ ] **37. Test de vision *(Chute multifactorielle)***
-> - [ ] **38. Observation avec comparaison des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **39. Palpation des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
-> 	- [ ] Coudes *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Bras et épaules *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Avant-bras et poignets *(Fracture du membre supérieur (humérus, tête radiale))*
-> - [ ] **40. Perfusion distale des 2 membres supérieurs, avec comparaison *(Fracture du membre supérieur (humérus, tête radiale))***
-> 	- [ ] Pouls périphériques *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Temps de recoloration ou gradient thermique *(Fracture du membre supérieur (humérus, tête radiale))*
-> - [ ] **41. Sensibilité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
-> 	- [ ] Radial *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Médian *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Ulnaire *(Fracture du membre supérieur (humérus, tête radiale))*
-> - [ ] **42. Motricité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
-> 	- [ ] Radial *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Médian *(Fracture du membre supérieur (humérus, tête radiale))*
-> 	- [ ] Ulnaire *(Fracture du membre supérieur (humérus, tête radiale))*
+> - [ ] **34. Status cardiaque et pulmonaire *(Chute multifactorielle)***
+> - [ ] **35. Neurostatus *(Chute multifactorielle)***
+> 	- [ ] Ataxie
+> 	- [ ] Tests cérébelleux
+> 	- [ ] Sensibilité
+> 	- [ ] Motricité
+> - [ ] **36. Test de vision *(Chute multifactorielle)***
+> - [ ] **37. Observation avec comparaison des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **38. Palpation des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Coudes
+> 	- [ ] Bras et épaules
+> 	- [ ] Avant-bras et poignets
+> - [ ] **39. Perfusion distale des 2 membres supérieurs, avec comparaison *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Pouls périphériques
+> 	- [ ] Temps de recoloration ou gradient thermique
+> - [ ] **40. Sensibilité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Radial
+> 	- [ ] Médian
+> 	- [ ] Ulnaire
+> - [ ] **41. Motricité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
+> 	- [ ] Radial
+> 	- [ ] Médian
+> 	- [ ] Ulnaire

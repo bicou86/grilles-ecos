@@ -47,144 +47,144 @@ cssclasses:
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(Zona)***
 > - [ ] **2. Caractérisation des vertiges *(Zona)***
-> 	- [ ] Description des vertiges *(Zona)*
-> 	- [ ] Début *(Zona)*
-> 	- [ ] Constant/intermittent *(Zona)*
-> 	- [ ] Événements précipitants *(Zona)*
-> 	- [ ] Progression *(Zona)*
-> 	- [ ] Épisodes antérieurs *(Zona)*
-> 	- [ ] Facteurs améliorants *(Zona)*
-> 	- [ ] Facteurs aggravants *(Zona)*
-> 	- [ ] Symptômes associés *(Zona)*
+> 	- [ ] Description des vertiges
+> 	- [ ] Début
+> 	- [ ] Constant/intermittent
+> 	- [ ] Événements précipitants
+> 	- [ ] Progression
+> 	- [ ] Épisodes antérieurs
+> 	- [ ] Facteurs améliorants
+> 	- [ ] Facteurs aggravants
+> 	- [ ] Symptômes associés
 > - [ ] **3. Recherche de symptômes spécifiques pour vertiges *(Zona)***
-> 	- [ ] Traumatisme *(Zona)*
-> 	- [ ] Céphalée *(Zona)*
-> 	- [ ] Fièvre/frissons *(Zona)*
-> 	- [ ] Éruption cutanée/changements cutanés *(Zona)*
-> 	- [ ] Toux *(Zona)*
-> 	- [ ] Infections récentes *(Zona)*
-> 	- [ ] Acouphènes *(Zona)*
-> 	- [ ] Plénitude auriculaire *(Zona)*
-> 	- [ ] Perte auditive *(Zona)*
-> 	- [ ] Changements de vision *(Zona)*
-> 	- [ ] Engourdissement/faiblesse/picotements *(Zona)*
-> 	- [ ] Prurit *(Zona)*
+> 	- [ ] Traumatisme
+> 	- [ ] Céphalée
+> 	- [ ] Fièvre/frissons
+> 	- [ ] Éruption cutanée/changements cutanés
+> 	- [ ] Toux
+> 	- [ ] Infections récentes
+> 	- [ ] Acouphènes
+> 	- [ ] Plénitude auriculaire
+> 	- [ ] Perte auditive
+> 	- [ ] Changements de vision
+> 	- [ ] Engourdissement/faiblesse/picotements
+> 	- [ ] Prurit
 > - [ ] **4. Antécédents médicaux *(Zona)***
-> 	- [ ] Antécédents médicaux *(Zona)*
-> 	- [ ] Varicelle dans le passé *(Zona)*
+> 	- [ ] Antécédents médicaux
+> 	- [ ] Varicelle dans le passé
 > - [ ] **5. Allergies *(Zona)***
 > - [ ] **6. Médicaments *(Zona)***
 > - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Zona)***
-> 	- [ ] Hospitalisations *(Zona)*
-> 	- [ ] Antécédents chirurgicaux *(Zona)*
+> 	- [ ] Hospitalisations
+> 	- [ ] Antécédents chirurgicaux
 > - [ ] **8. Contacts malades et antécédents familiaux *(Zona)***
-> 	- [ ] Contacts malades *(Zona)*
-> 	- [ ] Antécédents familiaux *(Zona)*
+> 	- [ ] Contacts malades
+> 	- [ ] Antécédents familiaux
 > - [ ] **9. Habitudes et mode de vie *(Zona)***
-> 	- [ ] Travail *(Zona)*
-> 	- [ ] Domicile *(Zona)*
-> 	- [ ] Alcool *(Zona)*
-> 	- [ ] Drogues récréatives *(Zona)*
-> 	- [ ] Tabac *(Zona)*
+> 	- [ ] Travail
+> 	- [ ] Domicile
+> 	- [ ] Alcool
+> 	- [ ] Drogues récréatives
+> 	- [ ] Tabac
 > - [ ] **10. Caractérisation des troubles de l'équilibre *(Maladie de Parkinson)***
-> 	- [ ] Type de déséquilibre *(Maladie de Parkinson)*
-> 	- [ ] Circonstances d'apparition *(Maladie de Parkinson)*
-> 	- [ ] Évolution temporelle *(Maladie de Parkinson)*
-> 	- [ ] Facteurs aggravants *(Maladie de Parkinson)*
-> 	- [ ] Retentissement fonctionnel *(Maladie de Parkinson)*
+> 	- [ ] Type de déséquilibre
+> 	- [ ] Circonstances d'apparition
+> 	- [ ] Évolution temporelle
+> 	- [ ] Facteurs aggravants
+> 	- [ ] Retentissement fonctionnel
 > - [ ] **11. Analyse de l'amaigrissement *(Maladie de Parkinson)***
-> 	- [ ] Perte de poids chiffrée *(Maladie de Parkinson)*
-> 	- [ ] Modification de l'appétit *(Maladie de Parkinson)*
-> 	- [ ] Troubles de la déglutition *(Maladie de Parkinson)*
-> 	- [ ] Troubles digestifs *(Maladie de Parkinson)*
-> 	- [ ] Contexte psychologique *(Maladie de Parkinson)*
+> 	- [ ] Perte de poids chiffrée
+> 	- [ ] Modification de l'appétit
+> 	- [ ] Troubles de la déglutition
+> 	- [ ] Troubles digestifs
+> 	- [ ] Contexte psychologique
 > - [ ] **12. Symptômes neurologiques associés *(Maladie de Parkinson)***
-> 	- [ ] Troubles cognitifs *(Maladie de Parkinson)*
-> 	- [ ] Troubles moteurs *(Maladie de Parkinson)*
-> 	- [ ] Troubles sensitifs *(Maladie de Parkinson)*
-> 	- [ ] Troubles visuels *(Maladie de Parkinson)*
-> 	- [ ] Troubles de la parole *(Maladie de Parkinson)*
+> 	- [ ] Troubles cognitifs
+> 	- [ ] Troubles moteurs
+> 	- [ ] Troubles sensitifs
+> 	- [ ] Troubles visuels
+> 	- [ ] Troubles de la parole
 > - [ ] **13. Recherche de signes d'alarme oncologique *(Maladie de Parkinson)***
-> 	- [ ] Altération état général *(Maladie de Parkinson)*
-> 	- [ ] Douleurs *(Maladie de Parkinson)*
-> 	- [ ] Antécédents néoplasiques *(Maladie de Parkinson)*
-> 	- [ ] Symptômes spécifiques d'organe *(Maladie de Parkinson)*
-> 	- [ ] Facteurs de risque *(Maladie de Parkinson)*
+> 	- [ ] Altération état général
+> 	- [ ] Douleurs
+> 	- [ ] Antécédents néoplasiques
+> 	- [ ] Symptômes spécifiques d'organe
+> 	- [ ] Facteurs de risque
 > - [ ] **14. Antécédents et comorbidités *(Maladie de Parkinson)***
-> 	- [ ] Maladies neurodégénératives *(Maladie de Parkinson)*
-> 	- [ ] Pathologies cardiovasculaires *(Maladie de Parkinson)*
-> 	- [ ] Troubles métaboliques *(Maladie de Parkinson)*
-> 	- [ ] Maladies auto-immunes *(Maladie de Parkinson)*
-> 	- [ ] Chirurgies antérieures *(Maladie de Parkinson)*
+> 	- [ ] Maladies neurodégénératives
+> 	- [ ] Pathologies cardiovasculaires
+> 	- [ ] Troubles métaboliques
+> 	- [ ] Maladies auto-immunes
+> 	- [ ] Chirurgies antérieures
 > - [ ] **15. Médicaments et toxiques *(Maladie de Parkinson)***
-> 	- [ ] Psychotropes *(Maladie de Parkinson)*
-> 	- [ ] Antiépileptiques *(Maladie de Parkinson)*
-> 	- [ ] Antihypertenseurs *(Maladie de Parkinson)*
-> 	- [ ] Oto-toxiques *(Maladie de Parkinson)*
-> 	- [ ] Alcoolisme *(Maladie de Parkinson)*
+> 	- [ ] Psychotropes
+> 	- [ ] Antiépileptiques
+> 	- [ ] Antihypertenseurs
+> 	- [ ] Oto-toxiques
+> 	- [ ] Alcoolisme
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Zona)***
-> 	- [ ] Lavage des mains *(Zona)*
-> 	- [ ] Respect de la pudeur avec drap *(Zona)*
+> 	- [ ] Lavage des mains
+> 	- [ ] Respect de la pudeur avec drap
 > - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(Zona)***
-> 	- [ ] Inspection de la tête *(Zona)*
-> 	- [ ] Palpation de la tête *(Zona)*
-> 	- [ ] Inspection des oreilles *(Zona)*
-> 	- [ ] Palpation des oreilles *(Zona)*
-> 	- [ ] Otoscopie *(Zona)*
+> 	- [ ] Inspection de la tête
+> 	- [ ] Palpation de la tête
+> 	- [ ] Inspection des oreilles
+> 	- [ ] Palpation des oreilles
+> 	- [ ] Otoscopie
 > - [ ] **3. Tests auditifs *(Zona)***
-> 	- [ ] Test de Rinne et test de Weber *(Zona)*
-> 	- [ ] Test de Dix-Hallpike *(Zona)*
+> 	- [ ] Test de Rinne et test de Weber
+> 	- [ ] Test de Dix-Hallpike
 > - [ ] **4. Examen neurologique *(Zona)***
-> 	- [ ] Examen ciblé des nerfs crâniens *(Zona)*
-> 	- [ ] Examen ciblé de l'audition *(Zona)*
-> 	- [ ] Examen ciblé des mouvements passifs et actifs *(Zona)*
-> 	- [ ] Examen ciblé de la sensibilité *(Zona)*
-> 	- [ ] Examen ciblé des réflexes ostéotendineux *(Zona)*
-> 	- [ ] Examen ciblé de la marche *(Zona)*
-> 	- [ ] Test d'alternance rapide des mouvements *(Zona)*
-> 	- [ ] Test doigt-nez *(Zona)*
-> 	- [ ] Test de Romberg *(Zona)*
+> 	- [ ] Examen ciblé des nerfs crâniens
+> 	- [ ] Examen ciblé de l'audition
+> 	- [ ] Examen ciblé des mouvements passifs et actifs
+> 	- [ ] Examen ciblé de la sensibilité
+> 	- [ ] Examen ciblé des réflexes ostéotendineux
+> 	- [ ] Examen ciblé de la marche
+> 	- [ ] Test d'alternance rapide des mouvements
+> 	- [ ] Test doigt-nez
+> 	- [ ] Test de Romberg
 > - [ ] **5. Évaluation de l'état général et nutritionnel *(Maladie de Parkinson)***
-> 	- [ ] Poids et taille *(Maladie de Parkinson)*
-> 	- [ ] État d'hydratation *(Maladie de Parkinson)*
-> 	- [ ] Pâleur *(Maladie de Parkinson)*
-> 	- [ ] Adénopathies *(Maladie de Parkinson)*
-> 	- [ ] Signes vitaux *(Maladie de Parkinson)*
+> 	- [ ] Poids et taille
+> 	- [ ] État d'hydratation
+> 	- [ ] Pâleur
+> 	- [ ] Adénopathies
+> 	- [ ] Signes vitaux
 > - [ ] **6. Examen de la statique et de la marche *(Maladie de Parkinson)***
-> 	- [ ] Station debout *(Maladie de Parkinson)*
-> 	- [ ] Marche spontanée *(Maladie de Parkinson)*
-> 	- [ ] Demi-tour *(Maladie de Parkinson)*
-> 	- [ ] Marche sur ligne droite *(Maladie de Parkinson)*
-> 	- [ ] Marche yeux fermés *(Maladie de Parkinson)*
+> 	- [ ] Station debout
+> 	- [ ] Marche spontanée
+> 	- [ ] Demi-tour
+> 	- [ ] Marche sur ligne droite
+> 	- [ ] Marche yeux fermés
 > - [ ] **7. Examen de la coordination cérébelleuse *(Maladie de Parkinson)***
-> 	- [ ] Épreuves index-nez *(Maladie de Parkinson)*
-> 	- [ ] Épreuves talon-genou *(Maladie de Parkinson)*
-> 	- [ ] Mouvements alternés rapides *(Maladie de Parkinson)*
-> 	- [ ] Écriture *(Maladie de Parkinson)*
-> 	- [ ] Dysarthrie cérébelleuse *(Maladie de Parkinson)*
+> 	- [ ] Épreuves index-nez
+> 	- [ ] Épreuves talon-genou
+> 	- [ ] Mouvements alternés rapides
+> 	- [ ] Écriture
+> 	- [ ] Dysarthrie cérébelleuse
 > - [ ] **8. Examen du système extrapyramidal *(Maladie de Parkinson)***
-> 	- [ ] Tonus musculaire *(Maladie de Parkinson)*
-> 	- [ ] Tremblements *(Maladie de Parkinson)*
-> 	- [ ] Bradykinésie *(Maladie de Parkinson)*
-> 	- [ ] Réflexes posturaux *(Maladie de Parkinson)*
-> 	- [ ] Micrographie, hypomimie faciale *(Maladie de Parkinson)*
+> 	- [ ] Tonus musculaire
+> 	- [ ] Tremblements
+> 	- [ ] Bradykinésie
+> 	- [ ] Réflexes posturaux
+> 	- [ ] Micrographie, hypomimie faciale
 > - [ ] **9. Examen de la sensibilité proprioceptive *(Maladie de Parkinson)***
-> 	- [ ] Sensibilité positionnelle *(Maladie de Parkinson)*
-> 	- [ ] Sensibilité vibratoire *(Maladie de Parkinson)*
-> 	- [ ] Romberg *(Maladie de Parkinson)*
-> 	- [ ] Marche aveugle *(Maladie de Parkinson)*
-> 	- [ ] Pseudo-athétose *(Maladie de Parkinson)*
+> 	- [ ] Sensibilité positionnelle
+> 	- [ ] Sensibilité vibratoire
+> 	- [ ] Romberg
+> 	- [ ] Marche aveugle
+> 	- [ ] Pseudo-athétose
 > - [ ] **10. Examen vestibulaire et oculomoteur *(Maladie de Parkinson)***
-> 	- [ ] Nystagmus *(Maladie de Parkinson)*
-> 	- [ ] Mouvements oculaires *(Maladie de Parkinson)*
-> 	- [ ] Manœuvre de Dix-Hallpike *(Maladie de Parkinson)*
-> 	- [ ] Head impulse test *(Maladie de Parkinson)*
-> 	- [ ] Coordination œil-tête *(Maladie de Parkinson)*
+> 	- [ ] Nystagmus
+> 	- [ ] Mouvements oculaires
+> 	- [ ] Manœuvre de Dix-Hallpike
+> 	- [ ] Head impulse test
+> 	- [ ] Coordination œil-tête
 > - [ ] **11. Examen neurologique général *(Maladie de Parkinson)***
-> 	- [ ] Fonctions supérieures *(Maladie de Parkinson)*
-> 	- [ ] Nerfs crâniens *(Maladie de Parkinson)*
-> 	- [ ] Force musculaire *(Maladie de Parkinson)*
-> 	- [ ] Réflexes ostéotendineux *(Maladie de Parkinson)*
-> 	- [ ] Signes pyramidaux *(Maladie de Parkinson)*
+> 	- [ ] Fonctions supérieures
+> 	- [ ] Nerfs crâniens
+> 	- [ ] Force musculaire
+> 	- [ ] Réflexes ostéotendineux
+> 	- [ ] Signes pyramidaux

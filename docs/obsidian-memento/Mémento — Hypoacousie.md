@@ -66,40 +66,40 @@ cssclasses:
 > 	- [ ] Évolution *(Presbyacousie bilatérale)*
 > 	- [ ] Sévérité *(Presbyacousie bilatérale)*
 > - [ ] **3. Recherche de symptômes spécifiques *(Presbyacousie)***
-> 	- [ ] Traumatisme *(Presbyacousie)*
-> 	- [ ] Céphalées *(Presbyacousie)*
-> 	- [ ] Nausées/vomissements *(Presbyacousie)*
-> 	- [ ] Éruption cutanée/changements cutanés *(Presbyacousie)*
-> 	- [ ] Infections récentes *(Presbyacousie)*
-> 	- [ ] Vertiges *(Presbyacousie)*
-> 	- [ ] Exposition récente à un bruit fort soudain *(Presbyacousie)*
-> 	- [ ] Acouphènes *(Presbyacousie)*
-> 	- [ ] Douleur auriculaire *(Presbyacousie)*
-> 	- [ ] Écoulement auriculaire *(Presbyacousie)*
-> 	- [ ] Faiblesse *(Presbyacousie)*
-> 	- [ ] Engourdissement *(Presbyacousie)*
-> 	- [ ] Picotements *(Presbyacousie)*
+> 	- [ ] Traumatisme
+> 	- [ ] Céphalées
+> 	- [ ] Nausées/vomissements
+> 	- [ ] Éruption cutanée/changements cutanés
+> 	- [ ] Infections récentes
+> 	- [ ] Vertiges
+> 	- [ ] Exposition récente à un bruit fort soudain
+> 	- [ ] Acouphènes
+> 	- [ ] Douleur auriculaire
+> 	- [ ] Écoulement auriculaire
+> 	- [ ] Faiblesse
+> 	- [ ] Engourdissement
+> 	- [ ] Picotements
 > - [ ] **4. Antécédents médicaux *(Presbyacousie)***
-> 	- [ ] Antécédents médicaux *(Presbyacousie)*
-> 	- [ ] Type de chimiothérapie *(Presbyacousie)*
+> 	- [ ] Antécédents médicaux
+> 	- [ ] Type de chimiothérapie
 > - [ ] **5. Allergies *(Presbyacousie, Surdité brusque idiopathique gauche)***
 > 	- [ ] Allergies *(Presbyacousie)*
 > 	- [ ] Description de la réaction allergique *(Presbyacousie)*
 > 	- [ ] Allergies connues *(Surdité brusque idiopathique gauche)*
 > - [ ] **6. Médicaments *(Presbyacousie)***
 > - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Presbyacousie)***
-> 	- [ ] Hospitalisations *(Presbyacousie)*
-> 	- [ ] Antécédents chirurgicaux *(Presbyacousie)*
+> 	- [ ] Hospitalisations
+> 	- [ ] Antécédents chirurgicaux
 > - [ ] **8. Antécédents familiaux *(Presbyacousie, Surdité brusque idiopathique gauche)***
 > 	- [ ] Surdité familiale *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Autres pathologies ORL familiales *(Surdité brusque idiopathique gauche)*
 > - [ ] **9. Habitudes et mode de vie *(Presbyacousie)***
-> 	- [ ] Travail *(Presbyacousie)*
-> 	- [ ] Niveau sonore au travail, protection auditive *(Presbyacousie)*
-> 	- [ ] Domicile *(Presbyacousie)*
-> 	- [ ] Alcool *(Presbyacousie)*
-> 	- [ ] Drogues récréatives *(Presbyacousie)*
-> 	- [ ] Tabac *(Presbyacousie)*
+> 	- [ ] Travail
+> 	- [ ] Niveau sonore au travail, protection auditive
+> 	- [ ] Domicile
+> 	- [ ] Alcool
+> 	- [ ] Drogues récréatives
+> 	- [ ] Tabac
 > - [ ] **10. Question d’entrée *(Presbyacousie)***
 > - [ ] **11. Localisation (unilatérale / bilatérale) *(Presbyacousie)***
 > - [ ] **12. Dimension temporelle *(Presbyacousie)***
@@ -135,76 +135,74 @@ cssclasses:
 > - [ ] **39. Situation sociale *(Presbyacousie)***
 > - [ ] **40. Présentation avec nom, fonction et tâche *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
 > - [ ] **41. Question d'entrée ouverte *(Surdité brusque idiopathique gauche)***
-> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ? *(Surdité brusque idiopathique gauche)*
+> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ?
 > - [ ] **42. Symptômes associés ORL *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
-> 	- [ ] Sécrétions auriculaires (cérumen, sang, pus) *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
-> 	- [ ] Douleurs auriculaires *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
-> 	- [ ] Acouphènes *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
-> 	- [ ] Vertiges *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
+> 	- [ ] Sécrétions auriculaires (cérumen, sang, pus)
+> 	- [ ] Douleurs auriculaires
+> 	- [ ] Acouphènes
+> 	- [ ] Vertiges
 > - [ ] **43. Symptômes généraux *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
-> 	- [ ] Fièvre *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
-> 	- [ ] Toux *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
+> 	- [ ] Fièvre
+> 	- [ ] Toux
 > 	- [ ] Rhinite *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Vomissements *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
+> 	- [ ] Vomissements
 > 	- [ ] Rhinorrhée *(Presbyacousie bilatérale)*
 > - [ ] **44. Facteurs déclenchants et traumatismes *(Surdité brusque idiopathique gauche)***
-> 	- [ ] Facteur déclenchant identifiable *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Traumatisme récent *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Situation particulière *(Surdité brusque idiopathique gauche)*
+> 	- [ ] Facteur déclenchant identifiable
+> 	- [ ] Traumatisme récent
+> 	- [ ] Situation particulière
 > - [ ] **45. Antécédents ORL et exposition *(Surdité brusque idiopathique gauche)***
-> 	- [ ] Antécédents de maladies auriculaires *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Exposition professionnelle au bruit *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Traumatismes auditifs antérieurs *(Surdité brusque idiopathique gauche)*
+> 	- [ ] Antécédents de maladies auriculaires
+> 	- [ ] Exposition professionnelle au bruit
+> 	- [ ] Traumatismes auditifs antérieurs
 > - [ ] **46. Anamnèse médicamenteuse *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
-> 	- [ ] Médicaments actuels *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
-> 	- [ ] Médicaments ototoxiques *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
+> 	- [ ] Médicaments actuels
+> 	- [ ] Médicaments ototoxiques
 > 	- [ ] Automédication récente *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Traitement cardiovasculaire *(Presbyacousie bilatérale)*
 > - [ ] **47. Anamnèse systémique *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
-> 	- [ ] Hypertension artérielle *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
-> 	- [ ] Diabète *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
-> 	- [ ] Troubles neurologiques *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
+> 	- [ ] Hypertension artérielle
+> 	- [ ] Diabète
+> 	- [ ] Troubles neurologiques
 > 	- [ ] Facteurs psychosociaux *(Surdité brusque idiopathique gauche)*
 > - [ ] **48. Anamnèse sociale et professionnelle *(Surdité brusque idiopathique gauche)***
-> 	- [ ] Profession *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Situation familiale *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Stress professionnel *(Surdité brusque idiopathique gauche)*
-> - [ ] **49. Évaluation globale de la qualité de l'anamnèse *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
-> 	- [ ] Anamnèse ciblée et bien conduite *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
-> - [ ] **50. Motif de consultation *(Presbyacousie bilatérale)***
-> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ? *(Presbyacousie bilatérale)*
-> 	- [ ] Avez-vous des problèmes particuliers ? *(Presbyacousie bilatérale)*
-> - [ ] **51. Antécédents médicaux et ORL *(Presbyacousie bilatérale)***
-> 	- [ ] Otite moyenne dans l'enfance *(Presbyacousie bilatérale)*
-> 	- [ ] Méningite *(Presbyacousie bilatérale)*
-> 	- [ ] Cardiopathie ischémique *(Presbyacousie bilatérale)*
-> 	- [ ] Autres antécédents ORL *(Presbyacousie bilatérale)*
-> - [ ] **52. Impact fonctionnel sur la communication *(Presbyacousie bilatérale)***
-> 	- [ ] Capacité à téléphoner *(Presbyacousie bilatérale)*
-> 	- [ ] Volume de la télévision/radio *(Presbyacousie bilatérale)*
-> 	- [ ] Compréhension en groupe *(Presbyacousie bilatérale)*
-> - [ ] **53. Anamnèse sociale et impact psychosocial *(Presbyacousie bilatérale)***
-> 	- [ ] Situation de vie *(Presbyacousie bilatérale)*
-> 	- [ ] Animaux de compagnie *(Presbyacousie bilatérale)*
-> 	- [ ] Condition physique *(Presbyacousie bilatérale)*
-> - [ ] **54. Activités sociales et loisirs *(Presbyacousie bilatérale)***
-> 	- [ ] Participation sociale actuelle *(Presbyacousie bilatérale)*
-> 	- [ ] Activités abandonnées *(Presbyacousie bilatérale)*
-> 	- [ ] Isolement social *(Presbyacousie bilatérale)*
+> 	- [ ] Profession
+> 	- [ ] Situation familiale
+> 	- [ ] Stress professionnel
+> - [ ] **49. Motif de consultation *(Presbyacousie bilatérale)***
+> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ?
+> 	- [ ] Avez-vous des problèmes particuliers ?
+> - [ ] **50. Antécédents médicaux et ORL *(Presbyacousie bilatérale)***
+> 	- [ ] Otite moyenne dans l'enfance
+> 	- [ ] Méningite
+> 	- [ ] Cardiopathie ischémique
+> 	- [ ] Autres antécédents ORL
+> - [ ] **51. Impact fonctionnel sur la communication *(Presbyacousie bilatérale)***
+> 	- [ ] Capacité à téléphoner
+> 	- [ ] Volume de la télévision/radio
+> 	- [ ] Compréhension en groupe
+> - [ ] **52. Anamnèse sociale et impact psychosocial *(Presbyacousie bilatérale)***
+> 	- [ ] Situation de vie
+> 	- [ ] Animaux de compagnie
+> 	- [ ] Condition physique
+> - [ ] **53. Activités sociales et loisirs *(Presbyacousie bilatérale)***
+> 	- [ ] Participation sociale actuelle
+> 	- [ ] Activités abandonnées
+> 	- [ ] Isolement social
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Presbyacousie)***
-> 	- [ ] Lavage des mains *(Presbyacousie)*
-> 	- [ ] Respect de la pudeur avec drap *(Presbyacousie)*
+> 	- [ ] Lavage des mains
+> 	- [ ] Respect de la pudeur avec drap
 > - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(Presbyacousie)***
-> 	- [ ] Palpation de la tête *(Presbyacousie)*
-> 	- [ ] Inspection des oreilles *(Presbyacousie)*
-> 	- [ ] Palpation des oreilles *(Presbyacousie)*
-> 	- [ ] Otoscopie *(Presbyacousie)*
-> 	- [ ] Tests de Rinne et Weber *(Presbyacousie)*
+> 	- [ ] Palpation de la tête
+> 	- [ ] Inspection des oreilles
+> 	- [ ] Palpation des oreilles
+> 	- [ ] Otoscopie
+> 	- [ ] Tests de Rinne et Weber
 > - [ ] **3. Examen neurologique *(Presbyacousie)***
-> 	- [ ] Examen ciblé des nerfs crâniens *(Presbyacousie)*
-> 	- [ ] Examen ciblé de l'audition *(Presbyacousie)*
+> 	- [ ] Examen ciblé des nerfs crâniens
+> 	- [ ] Examen ciblé de l'audition
 > - [ ] **4. Tension artérielle *(Presbyacousie)***
 > - [ ] **5. Inspection *(Presbyacousie)***
 > - [ ] **6. Palpation (tragus / helix) *(Presbyacousie)***
@@ -224,19 +222,19 @@ cssclasses:
 > 	- [ ] Pavillon auriculaire gauche *(Presbyacousie bilatérale)*
 > 	- [ ] Conduit auditif externe visible *(Presbyacousie bilatérale)*
 > - [ ] **17. Palpation de l'oreille et recherche d'adénopathies *(Surdité brusque idiopathique gauche)***
-> 	- [ ] Palpation du tragus *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Traction du pavillon auriculaire *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Palpation mastoïdienne *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Recherche d'adénopathies cervicales *(Surdité brusque idiopathique gauche)*
+> 	- [ ] Palpation du tragus
+> 	- [ ] Traction du pavillon auriculaire
+> 	- [ ] Palpation mastoïdienne
+> 	- [ ] Recherche d'adénopathies cervicales
 > - [ ] **18. Otoscopie bilatérale *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
-> 	- [ ] Conduit auditif externe droit *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
-> 	- [ ] Tympan droit *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
-> 	- [ ] Conduit auditif externe gauche *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
-> 	- [ ] Tympan gauche *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
+> 	- [ ] Conduit auditif externe droit
+> 	- [ ] Tympan droit
+> 	- [ ] Conduit auditif externe gauche
+> 	- [ ] Tympan gauche
 > - [ ] **19. Tests auditifs au diapason *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
-> 	- [ ] Test de Weber *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
+> 	- [ ] Test de Weber
 > 	- [ ] Test de Rinne à droite *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Test de Rinne à gauche *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
+> 	- [ ] Test de Rinne à gauche
 > 	- [ ] Test de Rinne droit *(Presbyacousie bilatérale)*
 > - [ ] **20. Test de la voix chuchotée *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
 > 	- [ ] Oreille droite *(Surdité brusque idiopathique gauche)*
@@ -245,16 +243,14 @@ cssclasses:
 > 	- [ ] Compréhension à gauche *(Presbyacousie bilatérale)*
 > 	- [ ] Nécessité de répéter fort *(Presbyacousie bilatérale)*
 > - [ ] **21. Examen de l'équilibre et coordination *(Surdité brusque idiopathique gauche)***
-> 	- [ ] Équilibre statique *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Marche *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Recherche de nystagmus *(Surdité brusque idiopathique gauche)*
-> - [ ] **22. Évaluation globale de la qualité de l'examen clinique *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)***
-> 	- [ ] Examen clinique ciblé et bien conduit *(Presbyacousie bilatérale, Surdité brusque idiopathique gauche)*
-> - [ ] **23. Palpation auriculaire *(Presbyacousie bilatérale)***
-> 	- [ ] Pression du tragus *(Presbyacousie bilatérale)*
-> 	- [ ] Traction du pavillon *(Presbyacousie bilatérale)*
-> 	- [ ] Palpation mastoïdienne *(Presbyacousie bilatérale)*
-> - [ ] **24. Examen neurologique de base *(Presbyacousie bilatérale)***
-> 	- [ ] Nerfs crâniens *(Presbyacousie bilatérale)*
-> 	- [ ] Équilibre *(Presbyacousie bilatérale)*
-> 	- [ ] Coordination *(Presbyacousie bilatérale)*
+> 	- [ ] Équilibre statique
+> 	- [ ] Marche
+> 	- [ ] Recherche de nystagmus
+> - [ ] **22. Palpation auriculaire *(Presbyacousie bilatérale)***
+> 	- [ ] Pression du tragus
+> 	- [ ] Traction du pavillon
+> 	- [ ] Palpation mastoïdienne
+> - [ ] **23. Examen neurologique de base *(Presbyacousie bilatérale)***
+> 	- [ ] Nerfs crâniens
+> 	- [ ] Équilibre
+> 	- [ ] Coordination

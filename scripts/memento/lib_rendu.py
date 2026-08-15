@@ -39,13 +39,37 @@ def marque(item, diagnostics_total, diag_par_cas):
     return f"{item['titre']} *({', '.join(diags)})*"
 
 
+def _suffixe(item, rendu):
+    """La part de suffixe d'un libelle rendu — vide si l'item est nu.
+
+    Deduite du rendu plutot que recalculee : `marque()` reste la seule regle
+    de marquage, et il ne peut pas y avoir deux facons de fabriquer un
+    suffixe qui divergeraient un jour l'une de l'autre.
+    """
+    return rendu[len(item["titre"]):]
+
+
 def encadre(genre, entete, items, diagnostics_total, diag_par_cas):
-    """Un callout dont la liste est numerotee a partir de 1."""
+    """Un callout dont la liste est numerotee a partir de 1.
+
+    UN SOUS-ITEM HERITE DE LA PORTEE DE SON PARENT et ne la repete pas : son
+    suffixe n'est reaffiche que s'il DIFFERE de celui du parent, seul cas ou
+    il apprend quelque chose (un sous-item plus etroit que l'item qui le
+    porte). Sans cette elision, un item specifique a un diagnostic recopiait
+    le meme suffixe sur chacun de ses sous-items — quatre repetitions d'une
+    information deja lue une ligne plus haut, qui noyaient les rares lignes
+    ou le suffixe disait vraiment quelque chose.
+    """
     if not items:
         return None
     out = [f"> [!{genre}] {entete}"]
     for numero, item in enumerate(items, 1):
-        out.append(f"> - [ ] **{numero}. {marque(item, diagnostics_total, diag_par_cas)}**")
+        rendu = marque(item, diagnostics_total, diag_par_cas)
+        out.append(f"> - [ ] **{numero}. {rendu}**")
+        herite = _suffixe(item, rendu)
         for sous in item["sous"]:
-            out.append(f"> \t- [ ] {marque(sous, diagnostics_total, diag_par_cas)}")
+            rendu_sous = marque(sous, diagnostics_total, diag_par_cas)
+            if _suffixe(sous, rendu_sous) == herite:
+                rendu_sous = sous["titre"]
+            out.append(f"> \t- [ ] {rendu_sous}")
     return "\n".join(out)

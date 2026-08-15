@@ -149,85 +149,82 @@ cssclasses:
 > - [ ] **77. Localisation précise *(Tinea corporis)***
 > - [ ] **78. Évolution clinique (amélioration/aggravation) *(Tinea corporis)***
 > - [ ] **79. Caractéristiques des lésions *(Tinea corporis)***
-> 	- [ ] Aspect (squameux, vésiculeux, etc.) *(Tinea corporis)*
-> 	- [ ] Symptômes associés (prurit, douleur) *(Tinea corporis)*
+> 	- [ ] Aspect (squameux, vésiculeux, etc.)
+> 	- [ ] Symptômes associés (prurit, douleur)
 > - [ ] **80. Facteurs d'exposition ou déclenchants *(Tinea corporis)***
 > - [ ] **81. Symptômes B (fièvre, sueurs nocturnes, perte de poids) *(Tinea corporis)***
 > - [ ] **82. Allergies connues *(Scarlatine / Angine streptococcique, Tinea corporis)***
 > - [ ] **83. Médicaments actuels *(Lupus érythémateux cutané, Tinea corporis)***
 > - [ ] **84. Antécédents médicaux personnels *(Tinea corporis)***
-> 	- [ ] Maladies antérieures *(Tinea corporis)*
-> 	- [ ] Interventions chirurgicales *(Tinea corporis)*
+> 	- [ ] Maladies antérieures
+> 	- [ ] Interventions chirurgicales
 > - [ ] **85. Habitudes de vie *(Lupus érythémateux cutané, Tinea corporis)***
-> 	- [ ] Alcool *(Lupus érythémateux cutané, Tinea corporis)*
-> 	- [ ] Tabac *(Lupus érythémateux cutané, Tinea corporis)*
-> 	- [ ] Drogues *(Lupus érythémateux cutané, Tinea corporis)*
+> 	- [ ] Alcool
+> 	- [ ] Tabac
+> 	- [ ] Drogues
 > - [ ] **86. Anamnèse sociale et professionnelle *(Tinea corporis)***
-> - [ ] **87. Évaluation globale de la qualité de l'anamnèse *(Lupus érythémateux cutané, Scarlatine / Angine streptococcique, Tinea corporis)***
-> 	- [ ] Anamnèse ciblée et bien conduite *(Lupus érythémateux cutané, Tinea corporis)*
-> 	- [ ] Anamnèse pédiatrique ciblée et bien conduite *(Scarlatine / Angine streptococcique)*
-> - [ ] **88. Évolution temporelle de l'éruption *(Scarlatine / Angine streptococcique)***
-> - [ ] **89. Localisation de l'éruption *(Scarlatine / Angine streptococcique)***
-> - [ ] **90. Caractéristiques de l'éruption *(Scarlatine / Angine streptococcique)***
-> 	- [ ] Prurit *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Texture au toucher *(Scarlatine / Angine streptococcique)*
-> - [ ] **91. État général et symptômes systémiques *(Scarlatine / Angine streptococcique)***
-> 	- [ ] Comportement général *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Céphalées *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Problèmes respiratoires *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Autres symptômes systémiques *(Scarlatine / Angine streptococcique)*
-> - [ ] **92. Antécédents médicaux et traitements *(Scarlatine / Angine streptococcique)***
-> 	- [ ] Médicaments actuels *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Maladies antérieures *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Interventions chirurgicales *(Scarlatine / Angine streptococcique)*
-> - [ ] **93. Statut vaccinal *(Scarlatine / Angine streptococcique)***
-> - [ ] **94. Examens préventifs récents *(Scarlatine / Angine streptococcique)***
-> - [ ] **95. Anamnèse sociale et exposition *(Scarlatine / Angine streptococcique)***
-> 	- [ ] Fréquentation collective *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Contacts malades *(Scarlatine / Angine streptococcique)*
-> - [ ] **96. Désinfection des mains, présentation avec nom, fonction et but de la consultation *(Lupus érythémateux cutané)***
-> - [ ] **97. Exploration du symptôme principal *(Lupus érythémateux cutané)***
-> - [ ] **98. Caractéristiques de l'érythème *(Lupus érythémateux cutané)***
-> 	- [ ] Douleur *(Lupus érythémateux cutané)*
-> 	- [ ] Sensation de brûlure *(Lupus érythémateux cutané)*
-> 	- [ ] Prurit *(Lupus érythémateux cutané)*
-> - [ ] **99. Évolution temporelle et facteurs déclenchants *(Lupus érythémateux cutané)***
-> 	- [ ] Durée *(Lupus érythémateux cutané)*
-> 	- [ ] Facteur déclenchant *(Lupus érythémateux cutané)*
-> 	- [ ] Évolution *(Lupus érythémateux cutané)*
-> - [ ] **100. Antécédents d'épisodes similaires *(Lupus érythémateux cutané)***
-> - [ ] **101. Revue des systèmes *(Lupus érythémateux cutané)***
-> - [ ] **102. Antécédents médicaux et chirurgicaux *(Lupus érythémateux cutané)***
-> - [ ] **103. Anamnèse sociale *(Lupus érythémateux cutané)***
-> - [ ] **104. Anamnèse de voyage et exposition solaire *(Lupus érythémateux cutané)***
-> 	- [ ] Voyage récent *(Lupus érythémateux cutané)*
-> 	- [ ] Évolution pendant le voyage *(Lupus érythémateux cutané)*
-> 	- [ ] Fièvre au retour *(Lupus érythémateux cutané)*
-> 	- [ ] Exposition solaire *(Lupus érythémateux cutané)*
-> - [ ] **105. Lésions *(ZONA, Zona)***
-> 	- [ ] Début *(ZONA, Zona)*
-> 	- [ ] Évolution en nombre *(ZONA, Zona)*
-> 	- [ ] Évolution en caractère *(ZONA, Zona)*
-> 	- [ ] Localisation *(ZONA, Zona)*
-> - [ ] **106. Premier épisode *(ZONA, Zona)***
+> - [ ] **87. Évolution temporelle de l'éruption *(Scarlatine / Angine streptococcique)***
+> - [ ] **88. Localisation de l'éruption *(Scarlatine / Angine streptococcique)***
+> - [ ] **89. Caractéristiques de l'éruption *(Scarlatine / Angine streptococcique)***
+> 	- [ ] Prurit
+> 	- [ ] Texture au toucher
+> - [ ] **90. État général et symptômes systémiques *(Scarlatine / Angine streptococcique)***
+> 	- [ ] Comportement général
+> 	- [ ] Céphalées
+> 	- [ ] Problèmes respiratoires
+> 	- [ ] Autres symptômes systémiques
+> - [ ] **91. Antécédents médicaux et traitements *(Scarlatine / Angine streptococcique)***
+> 	- [ ] Médicaments actuels
+> 	- [ ] Maladies antérieures
+> 	- [ ] Interventions chirurgicales
+> - [ ] **92. Statut vaccinal *(Scarlatine / Angine streptococcique)***
+> - [ ] **93. Examens préventifs récents *(Scarlatine / Angine streptococcique)***
+> - [ ] **94. Anamnèse sociale et exposition *(Scarlatine / Angine streptococcique)***
+> 	- [ ] Fréquentation collective
+> 	- [ ] Contacts malades
+> - [ ] **95. Désinfection des mains, présentation avec nom, fonction et but de la consultation *(Lupus érythémateux cutané)***
+> - [ ] **96. Exploration du symptôme principal *(Lupus érythémateux cutané)***
+> - [ ] **97. Caractéristiques de l'érythème *(Lupus érythémateux cutané)***
+> 	- [ ] Douleur
+> 	- [ ] Sensation de brûlure
+> 	- [ ] Prurit
+> - [ ] **98. Évolution temporelle et facteurs déclenchants *(Lupus érythémateux cutané)***
+> 	- [ ] Durée
+> 	- [ ] Facteur déclenchant
+> 	- [ ] Évolution
+> - [ ] **99. Antécédents d'épisodes similaires *(Lupus érythémateux cutané)***
+> - [ ] **100. Revue des systèmes *(Lupus érythémateux cutané)***
+> - [ ] **101. Antécédents médicaux et chirurgicaux *(Lupus érythémateux cutané)***
+> - [ ] **102. Anamnèse sociale *(Lupus érythémateux cutané)***
+> - [ ] **103. Anamnèse de voyage et exposition solaire *(Lupus érythémateux cutané)***
+> 	- [ ] Voyage récent
+> 	- [ ] Évolution pendant le voyage
+> 	- [ ] Fièvre au retour
+> 	- [ ] Exposition solaire
+> - [ ] **104. Lésions *(ZONA, Zona)***
+> 	- [ ] Début
+> 	- [ ] Évolution en nombre
+> 	- [ ] Évolution en caractère
+> 	- [ ] Localisation
+> - [ ] **105. Premier épisode *(ZONA, Zona)***
 > 	- [ ] A demandé si ATCD similaire *(Zona)*
-> - [ ] **107. Symptômes associés : Fièvre/fatigue/toux/céphalées *(Zona)***
-> - [ ] **108. Facteurs de risque *(ZONA, Zona)***
+> - [ ] **106. Symptômes associés : Fièvre/fatigue/toux/céphalées *(Zona)***
+> - [ ] **107. Facteurs de risque *(ZONA, Zona)***
 > 	- [ ] Trauma/stress *(Zona)*
 > 	- [ ] Traitement immunosuppresseur/infection récente/maladie (cancer, VIH, Immuno) *(Zona)*
-> 	- [ ] Fatigue importante *(ZONA, Zona)*
+> 	- [ ] Fatigue importante
 > 	- [ ] Trauma *(ZONA)*
 > 	- [ ] Stress *(ZONA)*
 > 	- [ ] Traitement immunosuppresseur *(ZONA)*
 > 	- [ ] Infection récente *(ZONA)*
 > 	- [ ] Maladie (cancer, VIH, immunosuppression) *(ZONA)*
-> - [ ] **109. Anamnèse personnelle *(ZONA, Zona)***
-> 	- [ ] Allergie *(ZONA, Zona)*
-> 	- [ ] Vaccins *(ZONA, Zona)*
-> - [ ] **110. Anamnèse de varicelle *(ZONA, Zona)***
-> - [ ] **111. Contage *(ZONA, Zona)***
-> - [ ] **112. Douleurs soulagées par cannabis *(ZONA)***
-> - [ ] **113. Prurit — début ET évolution *(ZONA)***
+> - [ ] **108. Anamnèse personnelle *(ZONA, Zona)***
+> 	- [ ] Allergie
+> 	- [ ] Vaccins
+> - [ ] **109. Anamnèse de varicelle *(ZONA, Zona)***
+> - [ ] **110. Contage *(ZONA, Zona)***
+> - [ ] **111. Douleurs soulagées par cannabis *(ZONA)***
+> - [ ] **112. Prurit — début ET évolution *(ZONA)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Paramètres vitaux *(Psoriasis, Syphilis)***
@@ -254,68 +251,65 @@ cssclasses:
 > - [ ] **22. Conjonctives *(Dermatite périorale)***
 > - [ ] **23. Muqueuse buccale *(Dermatite périorale)***
 > - [ ] **24. Inspection cutanée détaillée *(Tinea corporis)***
-> 	- [ ] Description des lésions *(Tinea corporis)*
-> 	- [ ] Distribution et morphologie *(Tinea corporis)*
-> 	- [ ] Caractéristiques spécifiques *(Tinea corporis)*
+> 	- [ ] Description des lésions
+> 	- [ ] Distribution et morphologie
+> 	- [ ] Caractéristiques spécifiques
 > - [ ] **25. Dermographisme *(Tinea corporis)***
 > - [ ] **26. Évaluation du statut cutané général *(Tinea corporis)***
-> 	- [ ] Recherche d'autres lésions *(Tinea corporis)*
-> 	- [ ] État de la peau saine *(Tinea corporis)*
-> 	- [ ] Signes de grattage *(Tinea corporis)*
+> 	- [ ] Recherche d'autres lésions
+> 	- [ ] État de la peau saine
+> 	- [ ] Signes de grattage
 > - [ ] **27. Palpation des ganglions lymphatiques régionaux *(Tinea corporis)***
 > - [ ] **28. Signes d'infection secondaire *(Tinea corporis)***
-> - [ ] **29. Évaluation globale de la qualité de l'examen clinique *(Lupus érythémateux cutané, Scarlatine / Angine streptococcique, Tinea corporis)***
-> 	- [ ] Examen ciblé et bien conduit *(Lupus érythémateux cutané, Tinea corporis)*
-> 	- [ ] Examen pédiatrique ciblé et bien conduit *(Scarlatine / Angine streptococcique)*
-> - [ ] **30. Évaluation des signes de déshydratation *(Scarlatine / Angine streptococcique)***
-> 	- [ ] Diurèse *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Fontanelle *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Yeux enfoncés *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Muqueuses sèches *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Pli cutané *(Scarlatine / Angine streptococcique)*
-> - [ ] **31. Examen cutané détaillé *(Lupus érythémateux cutané, Scarlatine / Angine streptococcique)***
+> - [ ] **29. Évaluation des signes de déshydratation *(Scarlatine / Angine streptococcique)***
+> 	- [ ] Diurèse
+> 	- [ ] Fontanelle
+> 	- [ ] Yeux enfoncés
+> 	- [ ] Muqueuses sèches
+> 	- [ ] Pli cutané
+> - [ ] **30. Examen cutané détaillé *(Lupus érythémateux cutané, Scarlatine / Angine streptococcique)***
 > 	- [ ] Description de l'érythème *(Lupus érythémateux cutané)*
 > 	- [ ] Localisation *(Lupus érythémateux cutané)*
 > 	- [ ] Aspect *(Lupus érythémateux cutané)*
-> - [ ] **32. Examen ORL *(Scarlatine / Angine streptococcique)***
-> 	- [ ] Aspect de la langue *(Scarlatine / Angine streptococcique)*
-> 	- [ ] État des amygdales *(Scarlatine / Angine streptococcique)*
-> - [ ] **33. Auscultation pulmonaire *(Scarlatine / Angine streptococcique)***
-> - [ ] **34. Recherche de signes de gravité *(Scarlatine / Angine streptococcique)***
-> 	- [ ] État de conscience *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Signes méningés *(Scarlatine / Angine streptococcique)*
-> 	- [ ] Signes de choc *(Scarlatine / Angine streptococcique)*
-> - [ ] **35. Inspection générale *(Lupus érythémateux cutané)***
-> 	- [ ] État des yeux *(Lupus érythémateux cutané)*
-> 	- [ ] Muqueuses *(Lupus érythémateux cutané)*
-> - [ ] **36. Examen articulaire *(Lupus érythémateux cutané)***
-> 	- [ ] Douleur à la palpation *(Lupus érythémateux cutané)*
-> 	- [ ] Épanchement articulaire *(Lupus érythémateux cutané)*
-> 	- [ ] Limitation des mouvements *(Lupus érythémateux cutané)*
-> - [ ] **37. Examen cardio-pulmonaire *(Lupus érythémateux cutané)***
-> - [ ] **38. Examen neurologique *(Lupus érythémateux cutané)***
-> - [ ] **39. Recherche de signes évocateurs de lupus *(Lupus érythémateux cutané)***
-> 	- [ ] Éruption malaire *(Lupus érythémateux cutané)*
-> 	- [ ] Ulcérations buccales *(Lupus érythémateux cutané)*
-> 	- [ ] Alopécie *(Lupus érythémateux cutané)*
-> 	- [ ] Phénomène de Raynaud *(Lupus érythémateux cutané)*
-> - [ ] **40. Inspection des lésions *(ZONA, Zona)***
-> - [ ] **41. Inspection des paumes des mains/plantes des pieds *(ZONA, Zona)***
+> - [ ] **31. Examen ORL *(Scarlatine / Angine streptococcique)***
+> 	- [ ] Aspect de la langue
+> 	- [ ] État des amygdales
+> - [ ] **32. Auscultation pulmonaire *(Scarlatine / Angine streptococcique)***
+> - [ ] **33. Recherche de signes de gravité *(Scarlatine / Angine streptococcique)***
+> 	- [ ] État de conscience
+> 	- [ ] Signes méningés
+> 	- [ ] Signes de choc
+> - [ ] **34. Inspection générale *(Lupus érythémateux cutané)***
+> 	- [ ] État des yeux
+> 	- [ ] Muqueuses
+> - [ ] **35. Examen articulaire *(Lupus érythémateux cutané)***
+> 	- [ ] Douleur à la palpation
+> 	- [ ] Épanchement articulaire
+> 	- [ ] Limitation des mouvements
+> - [ ] **36. Examen cardio-pulmonaire *(Lupus érythémateux cutané)***
+> - [ ] **37. Examen neurologique *(Lupus érythémateux cutané)***
+> - [ ] **38. Recherche de signes évocateurs de lupus *(Lupus érythémateux cutané)***
+> 	- [ ] Éruption malaire
+> 	- [ ] Ulcérations buccales
+> 	- [ ] Alopécie
+> 	- [ ] Phénomène de Raynaud
+> - [ ] **39. Inspection des lésions *(ZONA, Zona)***
+> - [ ] **40. Inspection des paumes des mains/plantes des pieds *(ZONA, Zona)***
 > 	- [ ] Paumes des mains *(ZONA)*
 > 	- [ ] Plantes des pieds *(ZONA)*
-> - [ ] **42. Examen des aires ganglionnaires : Axillaires/Inguinales/Cervicales *(Zona)***
-> - [ ] **43. Palpation du thorax pour reproduire les douleurs *(ZONA, Zona)***
-> - [ ] **44. Examen des muqueuses : Bouche/Nez/OGE (intention) *(Zona)***
-> - [ ] **45. Intention de faire status ORL, pulmonaire ou cardio *(Zona)***
-> - [ ] **46. Examen des aires ganglionnaires *(ZONA)***
-> 	- [ ] Axillaires *(ZONA)*
-> 	- [ ] Inguinales *(ZONA)*
-> 	- [ ] Cervicales *(ZONA)*
-> - [ ] **47. Examen des muqueuses (intention) *(ZONA)***
-> 	- [ ] Bouche *(ZONA)*
-> 	- [ ] Nez *(ZONA)*
-> 	- [ ] OGE *(ZONA)*
-> - [ ] **48. Intention de faire un status ORL, pulmonaire ou cardiaque *(ZONA)***
-> 	- [ ] ORL *(ZONA)*
-> 	- [ ] Pulmonaire *(ZONA)*
-> 	- [ ] Cardiaque *(ZONA)*
+> - [ ] **41. Examen des aires ganglionnaires : Axillaires/Inguinales/Cervicales *(Zona)***
+> - [ ] **42. Palpation du thorax pour reproduire les douleurs *(ZONA, Zona)***
+> - [ ] **43. Examen des muqueuses : Bouche/Nez/OGE (intention) *(Zona)***
+> - [ ] **44. Intention de faire status ORL, pulmonaire ou cardio *(Zona)***
+> - [ ] **45. Examen des aires ganglionnaires *(ZONA)***
+> 	- [ ] Axillaires
+> 	- [ ] Inguinales
+> 	- [ ] Cervicales
+> - [ ] **46. Examen des muqueuses (intention) *(ZONA)***
+> 	- [ ] Bouche
+> 	- [ ] Nez
+> 	- [ ] OGE
+> - [ ] **47. Intention de faire un status ORL, pulmonaire ou cardiaque *(ZONA)***
+> 	- [ ] ORL
+> 	- [ ] Pulmonaire
+> 	- [ ] Cardiaque

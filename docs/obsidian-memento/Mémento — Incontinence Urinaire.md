@@ -112,8 +112,6 @@ cssclasses:
 > 	- [ ] Avez-vous quelque chose à ajouter ?
 > 	- [ ] Avons-nous oublié quelque chose d'important ?
 > 	- [ ] Avez-vous des questions ?
-> - [ ] **29. Évaluation globale de la qualité de l'anamnèse**
-> 	- [ ] Anamnèse ciblée et bien conduite
 
 > [!tip] 🩺 Status
 > - [ ] **1. Examen abdominal complet**
@@ -136,5 +134,3 @@ cssclasses:
 > 	- [ ] Sensibilité périnéale
 > 	- [ ] Réflexes des membres inférieurs
 > 	- [ ] Force musculaire des membres inférieurs
-> - [ ] **7. Évaluation globale de la qualité de l'examen clinique**
-> 	- [ ] Examen clinique ciblé et bien conduit

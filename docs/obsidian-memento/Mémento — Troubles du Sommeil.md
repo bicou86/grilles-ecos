@@ -48,58 +48,58 @@ cssclasses:
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(Trouble anxieux)***
 > - [ ] **2. Caractérisation des troubles du sommeil *(Trouble anxieux)***
-> 	- [ ] Début *(Trouble anxieux)*
-> 	- [ ] Constant/intermittent *(Trouble anxieux)*
-> 	- [ ] Événements précipitants *(Trouble anxieux)*
-> 	- [ ] Progression *(Trouble anxieux)*
-> 	- [ ] Épisodes antérieurs *(Trouble anxieux)*
-> 	- [ ] Facteurs améliorants *(Trouble anxieux)*
-> 	- [ ] Facteurs aggravants *(Trouble anxieux)*
+> 	- [ ] Début
+> 	- [ ] Constant/intermittent
+> 	- [ ] Événements précipitants
+> 	- [ ] Progression
+> 	- [ ] Épisodes antérieurs
+> 	- [ ] Facteurs améliorants
+> 	- [ ] Facteurs aggravants
 > - [ ] **3. Symptômes associés *(Dépression, Trouble anxieux)***
 > - [ ] **4. Recherche de symptômes spécifiques *(Trouble anxieux)***
-> 	- [ ] Céphalées *(Trouble anxieux)*
-> 	- [ ] Fatigue *(Trouble anxieux)*
-> 	- [ ] Palpitations *(Trouble anxieux)*
-> 	- [ ] Douleur thoracique *(Trouble anxieux)*
-> 	- [ ] Dyspnée *(Trouble anxieux)*
-> 	- [ ] Problèmes intestinaux *(Trouble anxieux)*
-> 	- [ ] Appétit *(Trouble anxieux)*
-> 	- [ ] Variations pondérales *(Trouble anxieux)*
-> 	- [ ] Vertiges *(Trouble anxieux)*
+> 	- [ ] Céphalées
+> 	- [ ] Fatigue
+> 	- [ ] Palpitations
+> 	- [ ] Douleur thoracique
+> 	- [ ] Dyspnée
+> 	- [ ] Problèmes intestinaux
+> 	- [ ] Appétit
+> 	- [ ] Variations pondérales
+> 	- [ ] Vertiges
 > - [ ] **5. Analyse détaillée du sommeil *(Trouble anxieux)***
-> 	- [ ] Difficulté d'endormissement *(Trouble anxieux)*
-> 	- [ ] Réveils nocturnes fréquents *(Trouble anxieux)*
-> 	- [ ] Réveil précoce *(Trouble anxieux)*
-> 	- [ ] Sensation de fatigue au réveil *(Trouble anxieux)*
+> 	- [ ] Difficulté d'endormissement
+> 	- [ ] Réveils nocturnes fréquents
+> 	- [ ] Réveil précoce
+> 	- [ ] Sensation de fatigue au réveil
 > - [ ] **6. Hygiène du sommeil *(Trouble anxieux)***
-> 	- [ ] Routine du coucher *(Trouble anxieux)*
-> 	- [ ] Alcool avant le coucher *(Trouble anxieux)*
-> 	- [ ] Boissons caféinées *(Trouble anxieux)*
-> 	- [ ] Gros repas avant le coucher *(Trouble anxieux)*
-> 	- [ ] Exercice avant le coucher *(Trouble anxieux)*
-> 	- [ ] TV dans la chambre *(Trouble anxieux)*
+> 	- [ ] Routine du coucher
+> 	- [ ] Alcool avant le coucher
+> 	- [ ] Boissons caféinées
+> 	- [ ] Gros repas avant le coucher
+> 	- [ ] Exercice avant le coucher
+> 	- [ ] TV dans la chambre
 > - [ ] **7. État psychologique *(Trouble anxieux)***
-> 	- [ ] Humeur *(Trouble anxieux)*
-> 	- [ ] Durée de l'anxiété *(Trouble anxieux)*
+> 	- [ ] Humeur
+> 	- [ ] Durée de l'anxiété
 > - [ ] **8. Symptômes d'hyperthyroïdie *(Trouble anxieux)***
-> 	- [ ] Transpiration excessive/intolérance à la chaleur *(Trouble anxieux)*
-> 	- [ ] Tremblements *(Trouble anxieux)*
+> 	- [ ] Transpiration excessive/intolérance à la chaleur
+> 	- [ ] Tremblements
 > - [ ] **9. Antécédents médicaux et chirurgicaux *(Trouble anxieux)***
-> 	- [ ] Antécédents médicaux *(Trouble anxieux)*
-> 	- [ ] Antécédents chirurgicaux *(Trouble anxieux)*
-> 	- [ ] Hospitalisations *(Trouble anxieux)*
+> 	- [ ] Antécédents médicaux
+> 	- [ ] Antécédents chirurgicaux
+> 	- [ ] Hospitalisations
 > - [ ] **10. Allergies et médicaments *(Trouble anxieux)***
-> 	- [ ] Allergies *(Trouble anxieux)*
-> 	- [ ] Médicaments *(Trouble anxieux)*
+> 	- [ ] Allergies
+> 	- [ ] Médicaments
 > - [ ] **11. Antécédents familiaux**
 > 	- [ ] Maladies thyroïdiennes *(Hyperthyroïdie)*
 > 	- [ ] Autres maladies héréditaires *(Hyperthyroïdie)*
 > - [ ] **12. Habitudes et mode de vie *(Trouble anxieux)***
-> 	- [ ] Occupation *(Trouble anxieux)*
-> 	- [ ] Domicile *(Trouble anxieux)*
-> 	- [ ] Alcool *(Trouble anxieux)*
-> 	- [ ] Drogues illicites *(Trouble anxieux)*
-> 	- [ ] Tabac *(Trouble anxieux)*
+> 	- [ ] Occupation
+> 	- [ ] Domicile
+> 	- [ ] Alcool
+> 	- [ ] Drogues illicites
+> 	- [ ] Tabac
 > - [ ] **13. Question d'entrée *(Dépression)***
 > - [ ] **14. Dimension temporelle *(Dépression)***
 > - [ ] **15. Évolution *(Dépression)***
@@ -183,102 +183,98 @@ cssclasses:
 > - [ ] **93. Facteurs de stress psychosociaux *(Dépression)***
 > - [ ] **94. Facteur de personnalité *(Dépression)***
 > - [ ] **95. Présentation du médecin *(Hyperthyroïdie)***
-> 	- [ ] Se présenter avec nom, fonction et tâche *(Hyperthyroïdie)*
+> 	- [ ] Se présenter avec nom, fonction et tâche
 > - [ ] **96. Caractérisation du problème principal *(Hyperthyroïdie)***
-> 	- [ ] Nature du trouble du sommeil *(Hyperthyroïdie)*
-> 	- [ ] Durée *(Hyperthyroïdie)*
-> 	- [ ] Évolution *(Hyperthyroïdie)*
-> 	- [ ] Horaire des troubles (endormissement, réveils nocturnes, réveil précoce) *(Hyperthyroïdie)*
+> 	- [ ] Nature du trouble du sommeil
+> 	- [ ] Durée
+> 	- [ ] Évolution
+> 	- [ ] Horaire des troubles (endormissement, réveils nocturnes, réveil précoce)
 > - [ ] **97. Symptômes cardiocirculatoires *(Hyperthyroïdie)***
-> 	- [ ] Palpitations *(Hyperthyroïdie)*
-> 	- [ ] Transpiration excessive *(Hyperthyroïdie)*
-> 	- [ ] Sensation de chaleur *(Hyperthyroïdie)*
+> 	- [ ] Palpitations
+> 	- [ ] Transpiration excessive
+> 	- [ ] Sensation de chaleur
 > - [ ] **98. Symptômes digestifs *(Hyperthyroïdie)***
-> 	- [ ] Modification du transit intestinal *(Hyperthyroïdie)*
-> 	- [ ] Diarrhée ou constipation *(Hyperthyroïdie)*
+> 	- [ ] Modification du transit intestinal
+> 	- [ ] Diarrhée ou constipation
 > - [ ] **99. Symptômes pondéraux et alimentaires *(Hyperthyroïdie)***
-> 	- [ ] Appétit *(Hyperthyroïdie)*
-> 	- [ ] Évolution pondérale *(Hyperthyroïdie)*
-> 	- [ ] Quantification de la perte de poids *(Hyperthyroïdie)*
+> 	- [ ] Appétit
+> 	- [ ] Évolution pondérale
+> 	- [ ] Quantification de la perte de poids
 > - [ ] **100. Symptômes oculaires et cutanés *(Hyperthyroïdie)***
-> 	- [ ] Sensation oculaire *(Hyperthyroïdie)*
-> 	- [ ] Changements visuels *(Hyperthyroïdie)*
-> 	- [ ] Modifications cutanées *(Hyperthyroïdie)*
+> 	- [ ] Sensation oculaire
+> 	- [ ] Changements visuels
+> 	- [ ] Modifications cutanées
 > - [ ] **101. Symptômes généraux *(Hyperthyroïdie)***
-> 	- [ ] Sueurs nocturnes *(Hyperthyroïdie)*
-> 	- [ ] Fièvre *(Hyperthyroïdie)*
-> 	- [ ] Perte de poids *(Hyperthyroïdie)*
+> 	- [ ] Sueurs nocturnes
+> 	- [ ] Fièvre
+> 	- [ ] Perte de poids
 > - [ ] **102. Symptômes neurologiques et psychiques *(Hyperthyroïdie)***
-> 	- [ ] Nervosité, irritabilité *(Hyperthyroïdie)*
-> 	- [ ] Tremblements *(Hyperthyroïdie)*
-> 	- [ ] Troubles de concentration *(Hyperthyroïdie)*
-> 	- [ ] Anxiété *(Hyperthyroïdie)*
+> 	- [ ] Nervosité, irritabilité
+> 	- [ ] Tremblements
+> 	- [ ] Troubles de concentration
+> 	- [ ] Anxiété
 > - [ ] **103. Médicaments et substances *(Hyperthyroïdie)***
-> 	- [ ] Médicaments actuels *(Hyperthyroïdie)*
-> 	- [ ] Alcool *(Hyperthyroïdie)*
-> 	- [ ] Tabac *(Hyperthyroïdie)*
-> 	- [ ] Drogues *(Hyperthyroïdie)*
-> 	- [ ] Caféine *(Hyperthyroïdie)*
+> 	- [ ] Médicaments actuels
+> 	- [ ] Alcool
+> 	- [ ] Tabac
+> 	- [ ] Drogues
+> 	- [ ] Caféine
 > - [ ] **104. Antécédents personnels *(Hyperthyroïdie)***
-> 	- [ ] Maladies antérieures *(Hyperthyroïdie)*
-> 	- [ ] Hospitalisations *(Hyperthyroïdie)*
-> 	- [ ] Allergies *(Hyperthyroïdie)*
+> 	- [ ] Maladies antérieures
+> 	- [ ] Hospitalisations
+> 	- [ ] Allergies
 > - [ ] **105. Antécédents chirurgicaux *(Hyperthyroïdie)***
 > - [ ] **106. Anamnèse sociale et professionnelle *(Hyperthyroïdie)***
-> 	- [ ] Profession *(Hyperthyroïdie)*
-> 	- [ ] Situation familiale *(Hyperthyroïdie)*
-> 	- [ ] Stress professionnel ou familial *(Hyperthyroïdie)*
+> 	- [ ] Profession
+> 	- [ ] Situation familiale
+> 	- [ ] Stress professionnel ou familial
 > - [ ] **107. Anamnèse gynécologique *(Hyperthyroïdie)***
-> 	- [ ] Cycles menstruels réguliers *(Hyperthyroïdie)*
-> 	- [ ] Contraception *(Hyperthyroïdie)*
-> 	- [ ] Possibilité de grossesse *(Hyperthyroïdie)*
-> - [ ] **108. Évaluation globale de la qualité de l'anamnèse *(Hyperthyroïdie)***
-> 	- [ ] Anamnèse ciblée et bien conduite *(Hyperthyroïdie)*
+> 	- [ ] Cycles menstruels réguliers
+> 	- [ ] Contraception
+> 	- [ ] Possibilité de grossesse
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Trouble anxieux)***
-> 	- [ ] Lavage des mains *(Trouble anxieux)*
-> 	- [ ] Respect de la pudeur avec drap *(Trouble anxieux)*
+> 	- [ ] Lavage des mains
+> 	- [ ] Respect de la pudeur avec drap
 > - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(Trouble anxieux)***
-> 	- [ ] Examen des pupilles *(Trouble anxieux)*
-> 	- [ ] Inspection des conjonctives *(Trouble anxieux)*
+> 	- [ ] Examen des pupilles
+> 	- [ ] Inspection des conjonctives
 > - [ ] **3. Examen du cou *(Trouble anxieux)***
-> 	- [ ] Examen de la glande thyroïde *(Trouble anxieux)*
+> 	- [ ] Examen de la glande thyroïde
 > - [ ] **4. Examen cardiovasculaire *(Hyperthyroïdie, Trouble anxieux)***
 > 	- [ ] Inspection du thorax *(Trouble anxieux)*
 > 	- [ ] Palpation du pouls radial *(Trouble anxieux)*
-> 	- [ ] Auscultation cardiaque *(Hyperthyroïdie, Trouble anxieux)*
+> 	- [ ] Auscultation cardiaque
 > 	- [ ] Recherche d'arythmie *(Hyperthyroïdie)*
 > 	- [ ] Pouls périphériques *(Hyperthyroïdie)*
 > - [ ] **5. Examen des extrémités *(Trouble anxieux)***
-> 	- [ ] Inspection des mains *(Trouble anxieux)*
+> 	- [ ] Inspection des mains
 > - [ ] **6. Examen neurologique *(Hyperthyroïdie, Trouble anxieux)***
 > 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(Trouble anxieux)*
 > 	- [ ] Réflexes ostéo-tendineux *(Hyperthyroïdie)*
 > 	- [ ] Recherche de tremblements fins *(Hyperthyroïdie)*
 > 	- [ ] Force musculaire *(Hyperthyroïdie)*
 > - [ ] **7. Signes vitaux *(Hyperthyroïdie)***
-> 	- [ ] Tension artérielle *(Hyperthyroïdie)*
-> 	- [ ] Fréquence cardiaque *(Hyperthyroïdie)*
-> 	- [ ] Température *(Hyperthyroïdie)*
-> 	- [ ] Poids et taille (BMI) *(Hyperthyroïdie)*
+> 	- [ ] Tension artérielle
+> 	- [ ] Fréquence cardiaque
+> 	- [ ] Température
+> 	- [ ] Poids et taille (BMI)
 > - [ ] **8. Inspection générale *(Hyperthyroïdie)***
-> 	- [ ] État général *(Hyperthyroïdie)*
-> 	- [ ] Morphologie *(Hyperthyroïdie)*
-> 	- [ ] Agitation psychomotrice *(Hyperthyroïdie)*
-> 	- [ ] Tremblements *(Hyperthyroïdie)*
+> 	- [ ] État général
+> 	- [ ] Morphologie
+> 	- [ ] Agitation psychomotrice
+> 	- [ ] Tremblements
 > - [ ] **9. Examen ophtalmologique *(Hyperthyroïdie)***
-> 	- [ ] Recherche d'exophtalmie *(Hyperthyroïdie)*
-> 	- [ ] Rétraction palpébrale *(Hyperthyroïdie)*
-> 	- [ ] Regard brillant *(Hyperthyroïdie)*
+> 	- [ ] Recherche d'exophtalmie
+> 	- [ ] Rétraction palpébrale
+> 	- [ ] Regard brillant
 > - [ ] **10. Examen thyroïdien *(Hyperthyroïdie)***
-> 	- [ ] Inspection du cou *(Hyperthyroïdie)*
-> 	- [ ] Palpation thyroïdienne *(Hyperthyroïdie)*
-> 	- [ ] Recherche de nodules *(Hyperthyroïdie)*
-> 	- [ ] Auscultation (souffle thyroïdien) *(Hyperthyroïdie)*
+> 	- [ ] Inspection du cou
+> 	- [ ] Palpation thyroïdienne
+> 	- [ ] Recherche de nodules
+> 	- [ ] Auscultation (souffle thyroïdien)
 > - [ ] **11. Examen cutané *(Hyperthyroïdie)***
-> 	- [ ] Texture de la peau *(Hyperthyroïdie)*
-> 	- [ ] Chaleur cutanée *(Hyperthyroïdie)*
-> 	- [ ] Myxœdème prétibial *(Hyperthyroïdie)*
-> - [ ] **12. Évaluation globale de la qualité de l'examen clinique *(Hyperthyroïdie)***
-> 	- [ ] Examen clinique ciblé et bien conduit *(Hyperthyroïdie)*
+> 	- [ ] Texture de la peau
+> 	- [ ] Chaleur cutanée
+> 	- [ ] Myxœdème prétibial

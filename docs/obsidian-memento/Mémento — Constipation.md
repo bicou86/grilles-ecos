@@ -115,8 +115,6 @@ cssclasses:
 > 	- [ ] Profession
 > 	- [ ] Loisirs/activité physique
 > - [ ] **21. Anamnèse systémique**
-> - [ ] **22. Évaluation globale de la qualité de l'anamnèse**
-> 	- [ ] Anamnèse ciblée et bien conduite
 
 > [!tip] 🩺 Status
 > - [ ] **1. Examen abdominal**
@@ -130,5 +128,3 @@ cssclasses:
 > - [ ] **4. Examen cardio-pulmonaire**
 > 	- [ ] Auscultation cardiaque
 > 	- [ ] Auscultation pulmonaire
-> - [ ] **5. Évaluation globale de la qualité de l'examen clinique**
-> 	- [ ] Examen ciblé et bien conduit

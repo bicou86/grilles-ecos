@@ -48,42 +48,42 @@ cssclasses:
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(Thrombose veineuse profonde (TVP))***
 > - [ ] **2. Caractérisation de la douleur *(Thrombose veineuse profonde (TVP))***
-> 	- [ ] Localisation *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Intensité (échelle 0-10) *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Qualité *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Début *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Événements précipitants *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Autres blessures lors de la chute *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Perte de connaissance *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Progression/constant/intermittent *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Épisodes antérieurs *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Irradiation *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Facteurs améliorants *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Facteurs aggravants *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Symptômes associés *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Localisation
+> 	- [ ] Intensité (échelle 0-10)
+> 	- [ ] Qualité
+> 	- [ ] Début
+> 	- [ ] Événements précipitants
+> 	- [ ] Autres blessures lors de la chute
+> 	- [ ] Perte de connaissance
+> 	- [ ] Progression/constant/intermittent
+> 	- [ ] Épisodes antérieurs
+> 	- [ ] Irradiation
+> 	- [ ] Facteurs améliorants
+> 	- [ ] Facteurs aggravants
+> 	- [ ] Symptômes associés
 > - [ ] **3. Recherche de symptômes spécifiques *(Thrombose veineuse profonde (TVP))***
-> 	- [ ] Voyage récent *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Fièvre/frissons *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Éruption cutanée/changements cutanés *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Douleur thoracique *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Toux *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Dyspnée *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Douleurs articulaires *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Problèmes urinaires *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Variations pondérales *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Infections récentes *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Vertiges *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Chaleur du membre inférieur *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Faiblesse/engourdissement/picotements *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Voyage récent
+> 	- [ ] Fièvre/frissons
+> 	- [ ] Éruption cutanée/changements cutanés
+> 	- [ ] Douleur thoracique
+> 	- [ ] Toux
+> 	- [ ] Dyspnée
+> 	- [ ] Douleurs articulaires
+> 	- [ ] Problèmes urinaires
+> 	- [ ] Variations pondérales
+> 	- [ ] Infections récentes
+> 	- [ ] Vertiges
+> 	- [ ] Chaleur du membre inférieur
+> 	- [ ] Faiblesse/engourdissement/picotements
 > - [ ] **4. Antécédents médicaux *(Déchirure méniscale / ligamentaire, Thrombose veineuse profonde (TVP))***
 > 	- [ ] Antécédents médicaux *(Thrombose veineuse profonde (TVP))*
 > 	- [ ] Thrombose dans le passé *(Thrombose veineuse profonde (TVP))*
 > - [ ] **5. Allergies *(Déchirure méniscale / ligamentaire, Thrombose veineuse profonde (TVP))***
 > - [ ] **6. Médicaments *(Déchirure méniscale / ligamentaire, Thrombose veineuse profonde (TVP))***
 > - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Thrombose veineuse profonde (TVP))***
-> 	- [ ] Hospitalisations *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Grossesses antérieures/fausses couches *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Antécédents chirurgicaux *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Hospitalisations
+> 	- [ ] Grossesses antérieures/fausses couches
+> 	- [ ] Antécédents chirurgicaux
 > - [ ] **8. Antécédents familiaux *(Déchirure méniscale / ligamentaire, Thrombose veineuse profonde (TVP))***
 > - [ ] **9. Habitudes et mode de vie *(Lésion méniscale médiale du genou droit, Thrombose veineuse profonde (TVP))***
 > 	- [ ] Travail *(Thrombose veineuse profonde (TVP))*
@@ -153,32 +153,30 @@ cssclasses:
 > - [ ] **67. Médicaments actuels *(Lésion méniscale médiale du genou droit)***
 > - [ ] **68. Anamnèse familiale *(Lésion méniscale médiale du genou droit)***
 > - [ ] **69. Anamnèse sociale et professionnelle *(Lésion méniscale médiale du genou droit)***
-> - [ ] **70. Évaluation globale de la qualité de l'anamnèse *(Lésion méniscale médiale du genou droit)***
-> 	- [ ] Anamnèse ciblée et bien structurée *(Lésion méniscale médiale du genou droit)*
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Thrombose veineuse profonde (TVP))***
-> 	- [ ] Lavage des mains *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Respect de la pudeur avec drap *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Lavage des mains
+> 	- [ ] Respect de la pudeur avec drap
 > - [ ] **2. Examen cardiovasculaire *(Thrombose veineuse profonde (TVP))***
-> 	- [ ] Palpation du pouls radial *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Auscultation cardiaque *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Évaluation de la distension veineuse jugulaire *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Palpation du pouls radial
+> 	- [ ] Auscultation cardiaque
+> 	- [ ] Évaluation de la distension veineuse jugulaire
 > - [ ] **3. Examen thoracique *(Thrombose veineuse profonde (TVP))***
-> 	- [ ] Auscultation pulmonaire *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Auscultation pulmonaire
 > - [ ] **4. Examen des extrémités *(Thrombose veineuse profonde (TVP))***
-> 	- [ ] Retrait du bandage de la patiente *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Inspection des membres inférieurs *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Recherche d'œdème déclive *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Palpation des membres inférieurs *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Examen ciblé des mouvements passifs et actifs des membres inférieurs *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Test de Lachman *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Test du tiroir postérieur *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Test de stress en valgus *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Test de stress en varus *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Examen ciblé de la sensibilité des membres inférieurs *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Palpation des pouls pédieux *(Thrombose veineuse profonde (TVP))*
-> 	- [ ] Signe de Homans *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Retrait du bandage de la patiente
+> 	- [ ] Inspection des membres inférieurs
+> 	- [ ] Recherche d'œdème déclive
+> 	- [ ] Palpation des membres inférieurs
+> 	- [ ] Examen ciblé des mouvements passifs et actifs des membres inférieurs
+> 	- [ ] Test de Lachman
+> 	- [ ] Test du tiroir postérieur
+> 	- [ ] Test de stress en valgus
+> 	- [ ] Test de stress en varus
+> 	- [ ] Examen ciblé de la sensibilité des membres inférieurs
+> 	- [ ] Palpation des pouls pédieux
+> 	- [ ] Signe de Homans
 > - [ ] **5. Démarche *(Déchirure méniscale / ligamentaire)***
 > - [ ] **6. Tests globaux *(Déchirure méniscale / ligamentaire)***
 > - [ ] **7. Test d’extension *(Déchirure méniscale / ligamentaire)***
@@ -205,35 +203,33 @@ cssclasses:
 > - [ ] **25. Stress en valgus *(Déchirure méniscale / ligamentaire)***
 > - [ ] **26. Stress en varus *(Déchirure méniscale / ligamentaire)***
 > - [ ] **27. Inspection générale *(Lésion méniscale médiale du genou droit)***
-> 	- [ ] Axes des membres inférieurs *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Longueur des jambes et position du bassin *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Analyse de la marche *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Recherche de gonflement et rotule dansante *(Lésion méniscale médiale du genou droit)*
+> 	- [ ] Axes des membres inférieurs
+> 	- [ ] Longueur des jambes et position du bassin
+> 	- [ ] Analyse de la marche
+> 	- [ ] Recherche de gonflement et rotule dansante
 > - [ ] **28. Palpation systématique *(Lésion méniscale médiale du genou droit)***
-> 	- [ ] Structures osseuses (tubérosité tibiale antérieure, rotule, condyles fémoraux) *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Interligne articulaire *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Ligaments collatéraux *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Tendon rotulien *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Recherche d'épanchement (signe du glaçon) *(Lésion méniscale médiale du genou droit)*
+> 	- [ ] Structures osseuses (tubérosité tibiale antérieure, rotule, condyles fémoraux)
+> 	- [ ] Interligne articulaire
+> 	- [ ] Ligaments collatéraux
+> 	- [ ] Tendon rotulien
+> 	- [ ] Recherche d'épanchement (signe du glaçon)
 > - [ ] **29. Examen fonctionnel - Mobilité articulaire *(Lésion méniscale médiale du genou droit)***
-> 	- [ ] Flexion-extension active et passive *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Méthode Neutre-Zéro *(Lésion méniscale médiale du genou droit)*
+> 	- [ ] Flexion-extension active et passive
+> 	- [ ] Méthode Neutre-Zéro
 > - [ ] **30. Tests des ligaments croisés *(Lésion méniscale médiale du genou droit)***
-> 	- [ ] Ligament croisé antérieur - Test de Lachman *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Ligament croisé postérieur - Test du tiroir postérieur, Gravity-Sign *(Lésion méniscale médiale du genou droit)*
+> 	- [ ] Ligament croisé antérieur - Test de Lachman
+> 	- [ ] Ligament croisé postérieur - Test du tiroir postérieur, Gravity-Sign
 > - [ ] **31. Test de stabilité ligamentaire collatérale *(Lésion méniscale médiale du genou droit)***
-> 	- [ ] Stress varus-valgus en extension complète *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Stress varus-valgus en flexion 20-30° *(Lésion méniscale médiale du genou droit)*
+> 	- [ ] Stress varus-valgus en extension complète
+> 	- [ ] Stress varus-valgus en flexion 20-30°
 > - [ ] **32. Examen de l'appareil extenseur *(Lésion méniscale médiale du genou droit)***
-> 	- [ ] Palpation du tubercule des adducteurs *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Test d'appréhension pour luxation patellaire en flexion 30° *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Mobilité de la rotule *(Lésion méniscale médiale du genou droit)*
+> 	- [ ] Palpation du tubercule des adducteurs
+> 	- [ ] Test d'appréhension pour luxation patellaire en flexion 30°
+> 	- [ ] Mobilité de la rotule
 > - [ ] **33. Test de force musculaire *(Lésion méniscale médiale du genou droit)***
-> 	- [ ] Flexion/extension contre résistance *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Quadriceps et ischio-jambiers *(Lésion méniscale médiale du genou droit)*
+> 	- [ ] Flexion/extension contre résistance
+> 	- [ ] Quadriceps et ischio-jambiers
 > - [ ] **34. Évaluation vasculo-nerveuse périphérique *(Lésion méniscale médiale du genou droit)***
-> 	- [ ] Pouls pédieux et tibial postérieur *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Sensibilité *(Lésion méniscale médiale du genou droit)*
-> 	- [ ] Motricité distale *(Lésion méniscale médiale du genou droit)*
-> - [ ] **35. Évaluation globale de la qualité de l'examen clinique *(Lésion méniscale médiale du genou droit)***
-> 	- [ ] Examen clinique ciblé et systématique *(Lésion méniscale médiale du genou droit)*
+> 	- [ ] Pouls pédieux et tibial postérieur
+> 	- [ ] Sensibilité
+> 	- [ ] Motricité distale

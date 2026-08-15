@@ -13,7 +13,35 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 
-SYNTHESE = re.compile(r"en g[ée]n[ée]ral", re.I)
+# LIGNES DE SYNTHESE GLOBALE — du bareme, pas des items a couvrir : elles
+# notent la MANIERE (« l'anamnese a-t-elle ete bien conduite ? »), pas un geste
+# ou une question. Deux formulations coexistent dans le corpus :
+#
+#   « Anamnese en general », « Management en general »        (9 officielles)
+#   « Évaluation globale de la qualite de l'anamnese »        (RESCOS/GERMAN…)
+#
+# La seconde branche est ANCREE EN DEBUT DE LIBELLE, et c'est essentiel :
+# non ancree, elle emporterait des gestes legitimes. Releve exhaustif du
+# corpus (4 665 libelles d'items distincts, 9 108 occurrences) — ce que la
+# branche ancree fait tomber, et rien d'autre :
+#
+#     89x  Évaluation globale de la qualité de l'anamnèse
+#     88x  Évaluation globale de la qualité de l'examen clinique
+#     85x  Évaluation globale de la qualité de la prise en charge
+#      4x  Évaluation globale de la prise en charge
+#      1x  Évaluation globale de la démarche téléphonique
+#
+# et ce qu'elle laisse passer, alors qu'un motif plus gourmand les prendrait :
+# « Inspection globale », « Inspection globale du pied en position debout »,
+# « Sensibilite des membres inferieurs - evalue globalement la sensibilite... »
+# (idem membres superieurs), « Impression generale et proportions », les
+# quinze libelles en « Qualite... » et les quatre en « Synthese... ».
+# « Appreciation globale » et « qualite globale de » n'existent nulle part.
+#
+# Les neuf grilles officielles ne portent aucun libelle en « Évaluation
+# globale » : leur memento est inchange a l'octet pres (md5 epingle par
+# check_fusion.py). Verifie.
+SYNTHESE = re.compile(r"en g[ée]n[ée]ral|^[ée]valuation globale", re.I)
 
 # HARMONISATION DE NOMENCLATURE. Les neuf grilles nomment les memes examens
 # de trois facons ; un memento qui les compare a besoin d'un vocabulaire

@@ -1,20 +1,17 @@
 # Écart au référentiel officiel — mémentos
 
 456 formes canoniques tirées des 9 grilles officielles trouvées.
-8825 items non officiels, dont **7398 sans répondant** (83 %).
+8561 items non officiels, dont **7134 sans répondant** (83 %).
 
 | Corpus | Items orphelins |
 |---|---|
 | azygos | 2919 |
-| german | 2735 |
-| rescos | 1116 |
+| german | 2474 |
+| rescos | 1113 |
 | amboss | 628 |
 
 ## Les 60 libellés orphelins les plus fréquents
 
-- `Évaluation globale de la qualité de l'anamnèse` — 88×
-- `Évaluation globale de la qualité de l'examen clinique` — 87×
-- `Évaluation globale de la qualité de la prise en charge` — 84×
 - `Présentation avec nom, fonction et tâche` — 57×
 - `Anamnèse sociale` — 49×
 - `Examen cardiovasculaire` — 45×
@@ -72,6 +69,9 @@
 - `Examens diagnostiques` — 14×
 - `Question initiale` — 14×
 - `Paramètres vitaux` — 14×
+- `Retentissement des symptômes` — 13×
+- `Symptômes d'accompagnement` — 12×
+- `Sensibilité` — 12×
 
 ## Part d'items sans répondant, par SSP prioritaire
 
@@ -80,37 +80,37 @@ Les 44 SSP de `docs/ecos-priorites-2026.yaml`, triées par part décroissante d'
 | SSP prioritaire | Items | Sans répondant | Part |
 |---|---|---|---|
 | Annonce de Mauvaise Nouvelle (SPIKES) | 13 | 13 | 100 % |
-| HTA (Suivi & Crise Hypertensive) | 58 | 55 | 94 % |
 | Cervicalgies | 53 | 50 | 94 % |
-| Dyspnée | 173 | 159 | 91 % |
-| Syncope & Perte de Connaissance | 240 | 219 | 91 % |
-| Dépendance & Addictions (Alcool, Tabac, Drogues) | 100 | 91 | 91 % |
-| Troubles du Sommeil | 154 | 139 | 90 % |
+| HTA (Suivi & Crise Hypertensive) | 52 | 49 | 94 % |
+| Dyspnée | 167 | 153 | 91 % |
+| Syncope & Perte de Connaissance | 231 | 210 | 90 % |
+| Dépendance & Addictions (Alcool, Tabac, Drogues) | 97 | 88 | 90 % |
+| Troubles du Sommeil | 151 | 136 | 90 % |
 | Parésie - AVC | 70 | 63 | 90 % |
-| Palpitations | 115 | 103 | 89 % |
-| Diarrhée | 126 | 112 | 88 % |
+| Palpitations | 106 | 94 | 88 % |
 | Douleur du Membre Inférieur | 61 | 54 | 88 % |
-| Dysurie | 146 | 129 | 88 % |
-| Dysfonction Érectile | 34 | 30 | 88 % |
+| Diarrhée | 120 | 106 | 88 % |
+| Dysurie | 143 | 126 | 88 % |
 | Prurit | 24 | 21 | 87 % |
-| Œil Rouge & Douleur Oculaire | 217 | 189 | 87 % |
+| Dysfonction Érectile | 31 | 27 | 87 % |
+| Œil Rouge & Douleur Oculaire | 214 | 186 | 86 % |
 | Vertiges | 38 | 33 | 86 % |
-| Incontinence Urinaire | 42 | 36 | 85 % |
 | Plaie & Ulcère Cutané | 84 | 72 | 85 % |
-| Lombalgies | 317 | 268 | 84 % |
-| Toux | 413 | 348 | 84 % |
-| Douleur du Genou | 137 | 115 | 83 % |
-| Ictère | 54 | 45 | 83 % |
-| Constipation | 35 | 29 | 82 % |
-| Chute & Évaluation Gériatrique | 163 | 135 | 82 % |
-| Amaurose & Perte Brutale de Vision | 209 | 171 | 81 % |
-| Douleur Thoracique | 353 | 287 | 81 % |
-| Douleur Abdominale | 639 | 505 | 79 % |
-| Hypoacousie | 118 | 93 | 78 % |
-| Éruption Cutanée | 314 | 245 | 78 % |
-| Fatigue | 307 | 237 | 77 % |
-| Céphalée | 207 | 158 | 76 % |
+| Incontinence Urinaire | 39 | 33 | 84 % |
+| Lombalgies | 308 | 259 | 84 % |
+| Douleur du Genou | 134 | 112 | 83 % |
+| Toux | 395 | 330 | 83 % |
+| Ictère | 51 | 42 | 82 % |
+| Chute & Évaluation Gériatrique | 157 | 129 | 82 % |
+| Amaurose & Perte Brutale de Vision | 206 | 168 | 81 % |
+| Constipation | 32 | 26 | 81 % |
+| Douleur Thoracique | 341 | 275 | 80 % |
+| Douleur Abdominale | 618 | 484 | 78 % |
+| Hypoacousie | 112 | 87 | 77 % |
+| Éruption Cutanée | 305 | 236 | 77 % |
+| Fatigue | 298 | 228 | 76 % |
 | Troubles Cognitifs & Démence | 25 | 19 | 76 % |
+| Céphalée | 201 | 152 | 75 % |
 | Capacité de Discernement & Décision Partagée | 21 | 15 | 71 % |
 | Baisse d'Acuité Visuelle Progressive | 0 | 0 | — (aucun item) |
 | Bilan de Santé & Dépistage | 0 | 0 | — (aucun item) |

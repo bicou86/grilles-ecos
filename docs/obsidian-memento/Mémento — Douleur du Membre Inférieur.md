@@ -48,26 +48,26 @@ cssclasses:
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif de consultation**
 > - [ ] **2. Caractérisation de la claudication intermittente *(AOMI)***
-> 	- [ ] Début *(AOMI)*
-> 	- [ ] Caractère répétitif des symptômes *(AOMI)*
-> 	- [ ] Accentuation à la marche rapide ou montée *(AOMI)*
-> 	- [ ] Disparition rapide à l'arrêt *(AOMI)*
-> 	- [ ] Apparition après environ 50 mètres de marche *(AOMI)*
-> 	- [ ] Crampe qui s'estompe en moins d'une minute à l'arrêt *(AOMI)*
+> 	- [ ] Début
+> 	- [ ] Caractère répétitif des symptômes
+> 	- [ ] Accentuation à la marche rapide ou montée
+> 	- [ ] Disparition rapide à l'arrêt
+> 	- [ ] Apparition après environ 50 mètres de marche
+> 	- [ ] Crampe qui s'estompe en moins d'une minute à l'arrêt
 > - [ ] **3. Recherche de symptômes associés *(AOMI)***
-> 	- [ ] Douleurs de repos *(AOMI)*
-> 	- [ ] Douleurs nocturnes en position couchée *(AOMI)*
-> 	- [ ] Troubles trophiques des extrémités *(AOMI)*
-> 	- [ ] Paresthésies *(AOMI)*
-> 	- [ ] Impuissance *(AOMI)*
+> 	- [ ] Douleurs de repos
+> 	- [ ] Douleurs nocturnes en position couchée
+> 	- [ ] Troubles trophiques des extrémités
+> 	- [ ] Paresthésies
+> 	- [ ] Impuissance
 > - [ ] **4. Facteurs de risque cardiovasculaire *(AOMI)***
-> 	- [ ] Tabagisme *(AOMI)*
-> 	- [ ] Diabète *(AOMI)*
-> 	- [ ] HTA *(AOMI)*
-> 	- [ ] Dyslipidémie *(AOMI)*
-> 	- [ ] Antécédents familiaux *(AOMI)*
-> 	- [ ] Surpoids/obésité *(AOMI)*
-> 	- [ ] Sédentarité *(AOMI)*
+> 	- [ ] Tabagisme
+> 	- [ ] Diabète
+> 	- [ ] HTA
+> 	- [ ] Dyslipidémie
+> 	- [ ] Antécédents familiaux
+> 	- [ ] Surpoids/obésité
+> 	- [ ] Sédentarité
 > - [ ] **5. Antécédents médicaux**
 > 	- [ ] Arthrose genou gauche *(AOMI)*
 > 	- [ ] Affection PTT *(AOMI)*
@@ -79,195 +79,195 @@ cssclasses:
 > 	- [ ] Ménopause *(Embolie pulmonaire)*
 > - [ ] **6. Contexte professionnel et social *(AOMI)***
 > - [ ] **7. Recherche d'ischémie aiguë (5 P) *(AOMI)***
-> 	- [ ] Pain (douleur) *(AOMI)*
-> 	- [ ] Pulselessness (absence de pouls) *(AOMI)*
-> 	- [ ] Pallor (pâleur) *(AOMI)*
-> 	- [ ] Paresthesia (paresthésies) *(AOMI)*
-> 	- [ ] Paresia (parésie) *(AOMI)*
+> 	- [ ] Pain (douleur)
+> 	- [ ] Pulselessness (absence de pouls)
+> 	- [ ] Pallor (pâleur)
+> 	- [ ] Paresthesia (paresthésies)
+> 	- [ ] Paresia (parésie)
 > - [ ] **8. Caractérisation de la douleur du mollet *(AOMI)***
-> 	- [ ] Localisation *(AOMI)*
-> 	- [ ] Irradiation *(AOMI)*
-> 	- [ ] Intensité *(AOMI)*
-> 	- [ ] Type de douleur *(AOMI)*
-> 	- [ ] Facteur déclenchant *(AOMI)*
-> 	- [ ] Facteur aggravant *(AOMI)*
-> 	- [ ] Facteur soulageant *(AOMI)*
-> 	- [ ] Décours temporel *(AOMI)*
+> 	- [ ] Localisation
+> 	- [ ] Irradiation
+> 	- [ ] Intensité
+> 	- [ ] Type de douleur
+> 	- [ ] Facteur déclenchant
+> 	- [ ] Facteur aggravant
+> 	- [ ] Facteur soulageant
+> 	- [ ] Décours temporel
 > - [ ] **9. Évolution et périmètre de marche *(AOMI)***
-> 	- [ ] Début des symptômes *(AOMI)*
-> 	- [ ] Évolution *(AOMI)*
-> 	- [ ] Périmètre de marche *(AOMI)*
-> 	- [ ] Caractère répétitif *(AOMI)*
-> 	- [ ] Symptômes bilatéraux *(AOMI)*
-> 	- [ ] Impact fonctionnel *(AOMI)*
+> 	- [ ] Début des symptômes
+> 	- [ ] Évolution
+> 	- [ ] Périmètre de marche
+> 	- [ ] Caractère répétitif
+> 	- [ ] Symptômes bilatéraux
+> 	- [ ] Impact fonctionnel
 > - [ ] **10. Symptômes associés et sévérité *(AOMI)***
-> 	- [ ] Douleurs de repos *(AOMI)*
-> 	- [ ] Douleurs nocturnes *(AOMI)*
-> 	- [ ] Position couchée/membre surélevé *(AOMI)*
-> 	- [ ] Sensation de froid *(AOMI)*
-> 	- [ ] Troubles trophiques *(AOMI)*
-> 	- [ ] Pâleur des extrémités *(AOMI)*
+> 	- [ ] Douleurs de repos
+> 	- [ ] Douleurs nocturnes
+> 	- [ ] Position couchée/membre surélevé
+> 	- [ ] Sensation de froid
+> 	- [ ] Troubles trophiques
+> 	- [ ] Pâleur des extrémités
 > - [ ] **11. Antécédents personnels cardiovasculaires *(AOMI)***
-> 	- [ ] Infarctus du myocarde *(AOMI)*
-> 	- [ ] AVC/AIT *(AOMI)*
-> 	- [ ] Angor *(AOMI)*
-> 	- [ ] Interventions vasculaires *(AOMI)*
-> 	- [ ] Thromboses veineuses *(AOMI)*
-> 	- [ ] Autres pathologies cardiovasculaires *(AOMI)*
+> 	- [ ] Infarctus du myocarde
+> 	- [ ] AVC/AIT
+> 	- [ ] Angor
+> 	- [ ] Interventions vasculaires
+> 	- [ ] Thromboses veineuses
+> 	- [ ] Autres pathologies cardiovasculaires
 > - [ ] **12. Antécédents familiaux cardiovasculaires *(AOMI)***
-> 	- [ ] Père *(AOMI)*
-> 	- [ ] Mère *(AOMI)*
-> 	- [ ] Fratrie *(AOMI)*
-> 	- [ ] Mort subite familiale *(AOMI)*
-> 	- [ ] AVC familiaux *(AOMI)*
-> 	- [ ] Artériopathie familiale *(AOMI)*
+> 	- [ ] Père
+> 	- [ ] Mère
+> 	- [ ] Fratrie
+> 	- [ ] Mort subite familiale
+> 	- [ ] AVC familiaux
+> 	- [ ] Artériopathie familiale
 > - [ ] **13. Médicaments et allergies *(AOMI)***
-> 	- [ ] Antihypertenseurs *(AOMI)*
-> 	- [ ] Antiagrégants plaquettaires *(AOMI)*
-> 	- [ ] Statines *(AOMI)*
-> 	- [ ] Antidiabétiques *(AOMI)*
-> 	- [ ] Allergies médicamenteuses *(AOMI)*
-> 	- [ ] Observance thérapeutique *(AOMI)*
+> 	- [ ] Antihypertenseurs
+> 	- [ ] Antiagrégants plaquettaires
+> 	- [ ] Statines
+> 	- [ ] Antidiabétiques
+> 	- [ ] Allergies médicamenteuses
+> 	- [ ] Observance thérapeutique
 > - [ ] **14. Habitudes de vie *(AOMI)***
-> 	- [ ] Alcool *(AOMI)*
-> 	- [ ] Alimentation *(AOMI)*
-> 	- [ ] Activité physique *(AOMI)*
-> 	- [ ] Stress professionnel *(AOMI)*
-> 	- [ ] Sommeil *(AOMI)*
+> 	- [ ] Alcool
+> 	- [ ] Alimentation
+> 	- [ ] Activité physique
+> 	- [ ] Stress professionnel
+> 	- [ ] Sommeil
 > - [ ] **15. Histoire de la maladie actuelle *(Embolie pulmonaire)***
-> 	- [ ] Début cheville gauche puis jambe *(Embolie pulmonaire)*
-> 	- [ ] Gonflement progressif et douloureux *(Embolie pulmonaire)*
-> 	- [ ] Mise au lit pendant 2 jours *(Embolie pulmonaire)*
-> 	- [ ] Jambe gauche nettement plus grosse que la droite *(Embolie pulmonaire)*
-> 	- [ ] Peur d'attraper gangrène *(Embolie pulmonaire)*
-> 	- [ ] Varices depuis des années *(Embolie pulmonaire)*
+> 	- [ ] Début cheville gauche puis jambe
+> 	- [ ] Gonflement progressif et douloureux
+> 	- [ ] Mise au lit pendant 2 jours
+> 	- [ ] Jambe gauche nettement plus grosse que la droite
+> 	- [ ] Peur d'attraper gangrène
+> 	- [ ] Varices depuis des années
 > - [ ] **16. Contexte du voyage récent *(Embolie pulmonaire)***
-> 	- [ ] Tour d'Italie en car *(Embolie pulmonaire)*
-> 	- [ ] Voyage avec groupes du 3e âge *(Embolie pulmonaire)*
-> 	- [ ] Retour il y a 4 jours *(Embolie pulmonaire)*
-> 	- [ ] Position assise prolongée dans le car *(Embolie pulmonaire)*
+> 	- [ ] Tour d'Italie en car
+> 	- [ ] Voyage avec groupes du 3e âge
+> 	- [ ] Retour il y a 4 jours
+> 	- [ ] Position assise prolongée dans le car
 > - [ ] **17. Symptômes associés *(Embolie pulmonaire)***
-> 	- [ ] Dyspnée d'effort *(Embolie pulmonaire)*
-> 	- [ ] Excès de poids *(Embolie pulmonaire)*
-> 	- [ ] Tachypnée *(Embolie pulmonaire)*
-> 	- [ ] Pas de douleur thoracique *(Embolie pulmonaire)*
-> 	- [ ] Pas d'hémoptysie *(Embolie pulmonaire)*
+> 	- [ ] Dyspnée d'effort
+> 	- [ ] Excès de poids
+> 	- [ ] Tachypnée
+> 	- [ ] Pas de douleur thoracique
+> 	- [ ] Pas d'hémoptysie
 > - [ ] **18. Facteurs de risque thromboembolique *(Embolie pulmonaire)***
-> 	- [ ] Voyage prolongé en position assise *(Embolie pulmonaire)*
-> 	- [ ] Obésité *(Embolie pulmonaire)*
-> 	- [ ] Âge *(Embolie pulmonaire)*
-> 	- [ ] Varices opérées *(Embolie pulmonaire)*
-> 	- [ ] Cancer du sein *(Embolie pulmonaire)*
-> 	- [ ] Immobilisation relative *(Embolie pulmonaire)*
+> 	- [ ] Voyage prolongé en position assise
+> 	- [ ] Obésité
+> 	- [ ] Âge
+> 	- [ ] Varices opérées
+> 	- [ ] Cancer du sein
+> 	- [ ] Immobilisation relative
 > - [ ] **19. Antécédents familiaux *(Embolie pulmonaire)***
-> 	- [ ] Père décédé à 78 ans *(Embolie pulmonaire)*
-> 	- [ ] Mère décédée à 94 ans *(Embolie pulmonaire)*
-> 	- [ ] Sœur opérée cancer du sein *(Embolie pulmonaire)*
+> 	- [ ] Père décédé à 78 ans
+> 	- [ ] Mère décédée à 94 ans
+> 	- [ ] Sœur opérée cancer du sein
 > - [ ] **20. Score de Wells pour TVP *(Embolie pulmonaire)***
-> 	- [ ] Cancer actif (+1) *(Embolie pulmonaire)*
-> 	- [ ] Immobilisation/voyage (+1) *(Embolie pulmonaire)*
-> 	- [ ] Gonflement unilatéral (+1) *(Embolie pulmonaire)*
-> 	- [ ] Œdème prenant le godet (+1) *(Embolie pulmonaire)*
-> 	- [ ] Veines superficielles collatérales (+1) *(Embolie pulmonaire)*
-> 	- [ ] Diagnostic alternatif moins probable (+2) *(Embolie pulmonaire)*
+> 	- [ ] Cancer actif (+1)
+> 	- [ ] Immobilisation/voyage (+1)
+> 	- [ ] Gonflement unilatéral (+1)
+> 	- [ ] Œdème prenant le godet (+1)
+> 	- [ ] Veines superficielles collatérales (+1)
+> 	- [ ] Diagnostic alternatif moins probable (+2)
 
 > [!tip] 🩺 Status
 > - [ ] **1. Signes vitaux *(AOMI)***
-> 	- [ ] TA droite 152/88 mmHg *(AOMI)*
-> 	- [ ] TA gauche 150/86 mmHg *(AOMI)*
+> 	- [ ] TA droite 152/88 mmHg
+> 	- [ ] TA gauche 150/86 mmHg
 > - [ ] **2. Inspection des membres inférieurs *(AOMI)***
-> 	- [ ] Téguments, ongles et pilosité *(AOMI)*
-> 	- [ ] Symétrie *(AOMI)*
-> 	- [ ] Coloration cutanée *(AOMI)*
-> 	- [ ] Température *(AOMI)*
+> 	- [ ] Téguments, ongles et pilosité
+> 	- [ ] Symétrie
+> 	- [ ] Coloration cutanée
+> 	- [ ] Température
 > - [ ] **3. Palpation des pouls périphériques *(AOMI)***
-> 	- [ ] Artères fémorales *(AOMI)*
-> 	- [ ] Artères poplitées *(AOMI)*
-> 	- [ ] Artères tibiales postérieures *(AOMI)*
-> 	- [ ] Artères pédieuses *(AOMI)*
+> 	- [ ] Artères fémorales
+> 	- [ ] Artères poplitées
+> 	- [ ] Artères tibiales postérieures
+> 	- [ ] Artères pédieuses
 > - [ ] **4. Auscultation vasculaire *(AOMI)***
-> 	- [ ] Souffle inguinal gauche *(AOMI)*
-> 	- [ ] Râpeux et irradiant jusqu'à mi-cuisse *(AOMI)*
-> 	- [ ] Artères carotides *(AOMI)*
-> 	- [ ] Aorte abdominale *(AOMI)*
-> 	- [ ] Artères fémorales *(AOMI)*
-> 	- [ ] Artères rénales *(AOMI)*
-> 	- [ ] Artères sous-clavières *(AOMI)*
-> 	- [ ] Comparaison bilatérale *(AOMI)*
+> 	- [ ] Souffle inguinal gauche
+> 	- [ ] Râpeux et irradiant jusqu'à mi-cuisse
+> 	- [ ] Artères carotides
+> 	- [ ] Aorte abdominale
+> 	- [ ] Artères fémorales
+> 	- [ ] Artères rénales
+> 	- [ ] Artères sous-clavières
+> 	- [ ] Comparaison bilatérale
 > - [ ] **5. Test d'Allen (perméabilité artères radiale, cubitale, arcade palmaire) *(AOMI)***
 > - [ ] **6. Mesure de l'index de pression systolique (IPS/ABI) *(AOMI)***
-> 	- [ ] Rapport pression cheville/bras *(AOMI)*
-> 	- [ ] Normal: 0.9-1.3 *(AOMI)*
-> 	- [ ] < 0.9: artériopathie *(AOMI)*
-> 	- [ ] < 0.4: ischémie critique *(AOMI)*
+> 	- [ ] Rapport pression cheville/bras
+> 	- [ ] Normal: 0.9-1.3
+> 	- [ ] < 0.9: artériopathie
+> 	- [ ] < 0.4: ischémie critique
 > - [ ] **7. Inspection générale et des membres *(AOMI)***
-> 	- [ ] État général du patient *(AOMI)*
-> 	- [ ] Téguments *(AOMI)*
-> 	- [ ] Ongles *(AOMI)*
-> 	- [ ] Plante des pieds/talons *(AOMI)*
-> 	- [ ] Xanthélasma *(AOMI)*
-> 	- [ ] Coloration jaune des doigts *(AOMI)*
+> 	- [ ] État général du patient
+> 	- [ ] Téguments
+> 	- [ ] Ongles
+> 	- [ ] Plante des pieds/talons
+> 	- [ ] Xanthélasma
+> 	- [ ] Coloration jaune des doigts
 > - [ ] **8. Palpation des pouls périphériques - membres supérieurs *(AOMI)***
-> 	- [ ] Température des extrémités *(AOMI)*
-> 	- [ ] Pouls carotidien *(AOMI)*
-> 	- [ ] Pouls brachial *(AOMI)*
-> 	- [ ] Pouls radial *(AOMI)*
-> 	- [ ] Pouls ulnaire *(AOMI)*
-> 	- [ ] Test d'Allen *(AOMI)*
+> 	- [ ] Température des extrémités
+> 	- [ ] Pouls carotidien
+> 	- [ ] Pouls brachial
+> 	- [ ] Pouls radial
+> 	- [ ] Pouls ulnaire
+> 	- [ ] Test d'Allen
 > - [ ] **9. Palpation des pouls périphériques - membres inférieurs *(AOMI)***
-> 	- [ ] Aorte abdominale *(AOMI)*
-> 	- [ ] Pouls fémoral *(AOMI)*
-> 	- [ ] Pouls poplité *(AOMI)*
-> 	- [ ] Pouls pédieux *(AOMI)*
-> 	- [ ] Pouls tibial postérieur *(AOMI)*
-> 	- [ ] Comparaison droite/gauche systématique *(AOMI)*
+> 	- [ ] Aorte abdominale
+> 	- [ ] Pouls fémoral
+> 	- [ ] Pouls poplité
+> 	- [ ] Pouls pédieux
+> 	- [ ] Pouls tibial postérieur
+> 	- [ ] Comparaison droite/gauche systématique
 > - [ ] **10. Prise de tension artérielle selon recommandations OMS *(AOMI)***
-> 	- [ ] Position assise, bras horizontal *(AOMI)*
-> 	- [ ] Palpation pouls brachial *(AOMI)*
-> 	- [ ] Placement brassard *(AOMI)*
-> 	- [ ] Gonflage suprasystolique *(AOMI)*
-> 	- [ ] Dégonflage lent *(AOMI)*
-> 	- [ ] Mesure systolique/diastolique *(AOMI)*
-> 	- [ ] Mesure aux deux bras *(AOMI)*
+> 	- [ ] Position assise, bras horizontal
+> 	- [ ] Palpation pouls brachial
+> 	- [ ] Placement brassard
+> 	- [ ] Gonflage suprasystolique
+> 	- [ ] Dégonflage lent
+> 	- [ ] Mesure systolique/diastolique
+> 	- [ ] Mesure aux deux bras
 > - [ ] **11. Évaluation de la sévérité - Classification Leriche-Fontaine *(AOMI)***
-> 	- [ ] Stade 1 *(AOMI)*
-> 	- [ ] Stade 2 *(AOMI)*
-> 	- [ ] Stade 3 *(AOMI)*
-> 	- [ ] Stade 4 *(AOMI)*
-> 	- [ ] Classification correcte du patient *(AOMI)*
+> 	- [ ] Stade 1
+> 	- [ ] Stade 2
+> 	- [ ] Stade 3
+> 	- [ ] Stade 4
+> 	- [ ] Classification correcte du patient
 > - [ ] **12. Recherche des 5P de l'insuffisance artérielle aiguë *(AOMI)***
-> 	- [ ] Pain *(AOMI)*
-> 	- [ ] Pulselessness *(AOMI)*
-> 	- [ ] Pallor *(AOMI)*
-> 	- [ ] Paresthesia *(AOMI)*
-> 	- [ ] Paresis *(AOMI)*
+> 	- [ ] Pain
+> 	- [ ] Pulselessness
+> 	- [ ] Pallor
+> 	- [ ] Paresthesia
+> 	- [ ] Paresis
 > - [ ] **13. Examen physique général *(Embolie pulmonaire)***
-> 	- [ ] État général conservé *(Embolie pulmonaire)*
-> 	- [ ] Pas de cyanose *(Embolie pulmonaire)*
-> 	- [ ] Dyspnée modérée en parlant *(Embolie pulmonaire)*
-> 	- [ ] Tachypnée 22/min *(Embolie pulmonaire)*
+> 	- [ ] État général conservé
+> 	- [ ] Pas de cyanose
+> 	- [ ] Dyspnée modérée en parlant
+> 	- [ ] Tachypnée 22/min
 > - [ ] **14. Mesure des périmètres des membres inférieurs *(Embolie pulmonaire)***
-> 	- [ ] Cheville gauche > droite *(Embolie pulmonaire)*
-> 	- [ ] Mollet gauche > droit *(Embolie pulmonaire)*
-> 	- [ ] Cuisse gauche > droite *(Embolie pulmonaire)*
+> 	- [ ] Cheville gauche > droite
+> 	- [ ] Mollet gauche > droit
+> 	- [ ] Cuisse gauche > droite
 > - [ ] **15. Inspection et palpation membre inférieur gauche *(Embolie pulmonaire)***
-> 	- [ ] Œdème unilatéral *(Embolie pulmonaire)*
-> 	- [ ] Rougeur *(Embolie pulmonaire)*
-> 	- [ ] Chaleur locale *(Embolie pulmonaire)*
-> 	- [ ] Douleur à la palpation du mollet *(Embolie pulmonaire)*
-> 	- [ ] Cyanose déclive *(Embolie pulmonaire)*
+> 	- [ ] Œdème unilatéral
+> 	- [ ] Rougeur
+> 	- [ ] Chaleur locale
+> 	- [ ] Douleur à la palpation du mollet
+> 	- [ ] Cyanose déclive
 > - [ ] **16. Signes cliniques spécifiques de TVP *(Embolie pulmonaire)***
-> 	- [ ] Signe de Homans *(Embolie pulmonaire)*
-> 	- [ ] Ballant du mollet *(Embolie pulmonaire)*
-> 	- [ ] Turgescence veines superficielles *(Embolie pulmonaire)*
-> 	- [ ] Circulation collatérale visible *(Embolie pulmonaire)*
+> 	- [ ] Signe de Homans
+> 	- [ ] Ballant du mollet
+> 	- [ ] Turgescence veines superficielles
+> 	- [ ] Circulation collatérale visible
 > - [ ] **17. Auscultation pulmonaire *(Embolie pulmonaire)***
-> 	- [ ] Frottement pleural *(Embolie pulmonaire)*
-> 	- [ ] Épanchement pleural *(Embolie pulmonaire)*
-> 	- [ ] Fréquence respiratoire *(Embolie pulmonaire)*
-> 	- [ ] Pas de râles *(Embolie pulmonaire)*
+> 	- [ ] Frottement pleural
+> 	- [ ] Épanchement pleural
+> 	- [ ] Fréquence respiratoire
+> 	- [ ] Pas de râles
 > - [ ] **18. Examen cardiovasculaire *(Embolie pulmonaire)***
-> 	- [ ] Tachycardie *(Embolie pulmonaire)*
-> 	- [ ] Tachyarythmie *(Embolie pulmonaire)*
-> 	- [ ] Éclat B2 pulmonaire *(Embolie pulmonaire)*
-> 	- [ ] Pas de signes d'insuffisance cardiaque droite *(Embolie pulmonaire)*
+> 	- [ ] Tachycardie
+> 	- [ ] Tachyarythmie
+> 	- [ ] Éclat B2 pulmonaire
+> 	- [ ] Pas de signes d'insuffisance cardiaque droite

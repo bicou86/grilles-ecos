@@ -50,67 +50,67 @@ cssclasses:
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(AVC)***
 > - [ ] **2. Caractérisation de la perte de vision *(AVC)***
-> 	- [ ] Début *(AVC)*
-> 	- [ ] Constante/intermittente *(AVC)*
-> 	- [ ] Événements précipitants *(AVC)*
-> 	- [ ] Progression *(AVC)*
-> 	- [ ] Épisodes antérieurs *(AVC)*
-> 	- [ ] Fréquence *(AVC)*
-> 	- [ ] Facteurs améliorants *(AVC)*
-> 	- [ ] Facteurs aggravants *(AVC)*
-> 	- [ ] Symptômes associés *(AVC)*
+> 	- [ ] Début
+> 	- [ ] Constante/intermittente
+> 	- [ ] Événements précipitants
+> 	- [ ] Progression
+> 	- [ ] Épisodes antérieurs
+> 	- [ ] Fréquence
+> 	- [ ] Facteurs améliorants
+> 	- [ ] Facteurs aggravants
+> 	- [ ] Symptômes associés
 > - [ ] **3. Caractérisation de la céphalée associée *(AVC)***
-> 	- [ ] Localisation *(AVC)*
-> 	- [ ] Intensité (sur une échelle de 0-10) *(AVC)*
-> 	- [ ] Qualité *(AVC)*
-> 	- [ ] Début *(AVC)*
-> 	- [ ] Événements précipitants *(AVC)*
-> 	- [ ] Progression/constante/intermittente *(AVC)*
-> 	- [ ] Irradiation *(AVC)*
-> 	- [ ] Facteurs améliorants *(AVC)*
-> 	- [ ] Facteurs aggravants *(AVC)*
+> 	- [ ] Localisation
+> 	- [ ] Intensité (sur une échelle de 0-10)
+> 	- [ ] Qualité
+> 	- [ ] Début
+> 	- [ ] Événements précipitants
+> 	- [ ] Progression/constante/intermittente
+> 	- [ ] Irradiation
+> 	- [ ] Facteurs améliorants
+> 	- [ ] Facteurs aggravants
 > - [ ] **4. Recherche de symptômes spécifiques pour perte de vision récurrente et céphalée *(AVC)***
-> 	- [ ] Traumatisme *(AVC)*
-> 	- [ ] Nausées/vomissements *(AVC)*
-> 	- [ ] Fièvre/frissons *(AVC)*
-> 	- [ ] Sueurs nocturnes *(AVC)*
-> 	- [ ] Fatigue *(AVC)*
-> 	- [ ] Palpitations *(AVC)*
-> 	- [ ] Éruption cutanée/changements cutanés *(AVC)*
-> 	- [ ] Toux *(AVC)*
-> 	- [ ] Essoufflement *(AVC)*
-> 	- [ ] Problèmes urinaires *(AVC)*
-> 	- [ ] Problèmes intestinaux *(AVC)*
-> 	- [ ] Problèmes de sommeil *(AVC)*
-> 	- [ ] Appétit *(AVC)*
-> 	- [ ] Changements de poids *(AVC)*
-> 	- [ ] Infections récentes *(AVC)*
-> 	- [ ] Vertiges *(AVC)*
-> 	- [ ] Chutes *(AVC)*
-> 	- [ ] Faiblesse *(AVC)*
-> 	- [ ] Engourdissement *(AVC)*
-> 	- [ ] Picotements *(AVC)*
-> 	- [ ] Convulsion *(AVC)*
-> 	- [ ] Problèmes d'élocution *(AVC)*
+> 	- [ ] Traumatisme
+> 	- [ ] Nausées/vomissements
+> 	- [ ] Fièvre/frissons
+> 	- [ ] Sueurs nocturnes
+> 	- [ ] Fatigue
+> 	- [ ] Palpitations
+> 	- [ ] Éruption cutanée/changements cutanés
+> 	- [ ] Toux
+> 	- [ ] Essoufflement
+> 	- [ ] Problèmes urinaires
+> 	- [ ] Problèmes intestinaux
+> 	- [ ] Problèmes de sommeil
+> 	- [ ] Appétit
+> 	- [ ] Changements de poids
+> 	- [ ] Infections récentes
+> 	- [ ] Vertiges
+> 	- [ ] Chutes
+> 	- [ ] Faiblesse
+> 	- [ ] Engourdissement
+> 	- [ ] Picotements
+> 	- [ ] Convulsion
+> 	- [ ] Problèmes d'élocution
 > - [ ] **5. Antécédents médicaux *(AVC, Décollement de rétine)***
 > - [ ] **6. Allergies *(4 diagnostics)***
 > 	- [ ] Allergies médicamenteuses *(Cataracte)*
 > 	- [ ] Autres allergies *(Cataracte)*
 > - [ ] **7. Médicaments *(AVC, Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **8. Hospitalisations et antécédents chirurgicaux *(AVC)***
-> 	- [ ] Hospitalisations *(AVC)*
-> 	- [ ] Antécédents chirurgicaux *(AVC)*
+> 	- [ ] Hospitalisations
+> 	- [ ] Antécédents chirurgicaux
 > - [ ] **9. Contacts malades et antécédents familiaux *(AVC)***
-> 	- [ ] Contacts malades *(AVC)*
-> 	- [ ] Antécédents familiaux *(AVC)*
+> 	- [ ] Contacts malades
+> 	- [ ] Antécédents familiaux
 > - [ ] **10. Habitudes et mode de vie *(AVC)***
-> 	- [ ] Travail *(AVC)*
-> 	- [ ] Domicile *(AVC)*
-> 	- [ ] Alcool *(AVC)*
-> 	- [ ] Drogues récréatives *(AVC)*
-> 	- [ ] Tabac *(AVC)*
-> 	- [ ] Exercice *(AVC)*
-> 	- [ ] Alimentation *(AVC)*
+> 	- [ ] Travail
+> 	- [ ] Domicile
+> 	- [ ] Alcool
+> 	- [ ] Drogues récréatives
+> 	- [ ] Tabac
+> 	- [ ] Exercice
+> 	- [ ] Alimentation
 > - [ ] **11. Question d’entrée *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **12. Dimension temporelle *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **13. Début / Durée *(Décollement de rétine, Occlusion de l'artère centrale de la rétine (embolique))***
@@ -180,121 +180,119 @@ cssclasses:
 > - [ ] **74. Facteurs de stress psychosociaux *(Décollement de rétine)***
 > - [ ] **75. Présentation avec nom, fonction et tâche *(Cataracte)***
 > - [ ] **76. Question d'entrée ouverte *(Cataracte)***
-> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ? *(Cataracte)*
+> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ?
 > - [ ] **77. Caractérisation de la baisse de vision *(Cataracte)***
-> 	- [ ] Apparition *(Cataracte)*
-> 	- [ ] Évolution *(Cataracte)*
-> 	- [ ] Unilatérale ou bilatérale *(Cataracte)*
-> 	- [ ] Prédominance vision de loin ou de près *(Cataracte)*
+> 	- [ ] Apparition
+> 	- [ ] Évolution
+> 	- [ ] Unilatérale ou bilatérale
+> 	- [ ] Prédominance vision de loin ou de près
 > - [ ] **78. Symptômes visuels associés *(Cataracte)***
-> 	- [ ] Photosensibilité *(Cataracte)*
-> 	- [ ] Amélioration paradoxale vision de près *(Cataracte)*
-> 	- [ ] Vision des couleurs *(Cataracte)*
-> 	- [ ] Halos lumineux *(Cataracte)*
-> 	- [ ] Vision double *(Cataracte)*
-> 	- [ ] Vision trouble/voilée *(Cataracte)*
+> 	- [ ] Photosensibilité
+> 	- [ ] Amélioration paradoxale vision de près
+> 	- [ ] Vision des couleurs
+> 	- [ ] Halos lumineux
+> 	- [ ] Vision double
+> 	- [ ] Vision trouble/voilée
 > - [ ] **79. Symptômes oculaires associés *(Cataracte)***
-> 	- [ ] Douleurs oculaires *(Cataracte)*
-> 	- [ ] Rougeur oculaire *(Cataracte)*
-> 	- [ ] Larmoiement *(Cataracte)*
-> 	- [ ] Sécrétions *(Cataracte)*
-> 	- [ ] Sensation de corps étranger *(Cataracte)*
+> 	- [ ] Douleurs oculaires
+> 	- [ ] Rougeur oculaire
+> 	- [ ] Larmoiement
+> 	- [ ] Sécrétions
+> 	- [ ] Sensation de corps étranger
 > - [ ] **80. Symptômes généraux et drapeaux rouges *(Cataracte)***
-> 	- [ ] Céphalées *(Cataracte)*
-> 	- [ ] Claudication de la mâchoire *(Cataracte)*
-> 	- [ ] Douleurs temporales *(Cataracte)*
-> 	- [ ] Symptômes B (fièvre, sueurs nocturnes, perte de poids) *(Cataracte)*
+> 	- [ ] Céphalées
+> 	- [ ] Claudication de la mâchoire
+> 	- [ ] Douleurs temporales
+> 	- [ ] Symptômes B (fièvre, sueurs nocturnes, perte de poids)
 > - [ ] **81. Facteurs de risque cardiovasculaire *(Cataracte)***
-> 	- [ ] Hypertension artérielle *(Cataracte)*
-> 	- [ ] Diabète *(Cataracte)*
-> 	- [ ] Dyslipidémie *(Cataracte)*
-> 	- [ ] Tabagisme *(Cataracte)*
-> 	- [ ] Consommation d'alcool *(Cataracte)*
+> 	- [ ] Hypertension artérielle
+> 	- [ ] Diabète
+> 	- [ ] Dyslipidémie
+> 	- [ ] Tabagisme
+> 	- [ ] Consommation d'alcool
 > - [ ] **82. Anamnèse médicamenteuse *(Cataracte)***
-> 	- [ ] Corticothérapie systémique *(Cataracte)*
-> 	- [ ] Collyre myotique *(Cataracte)*
-> 	- [ ] Autres médicaments *(Cataracte)*
+> 	- [ ] Corticothérapie systémique
+> 	- [ ] Collyre myotique
+> 	- [ ] Autres médicaments
 > - [ ] **83. Antécédents ophtalmologiques *(Cataracte)***
-> 	- [ ] Chirurgie oculaire antérieure *(Cataracte)*
-> 	- [ ] Traumatisme oculaire *(Cataracte)*
-> 	- [ ] Glaucome *(Cataracte)*
-> 	- [ ] Myopie/hypermétropie *(Cataracte)*
+> 	- [ ] Chirurgie oculaire antérieure
+> 	- [ ] Traumatisme oculaire
+> 	- [ ] Glaucome
+> 	- [ ] Myopie/hypermétropie
 > - [ ] **84. Antécédents médicaux personnels *(Cataracte)***
-> 	- [ ] Diabète *(Cataracte)*
-> 	- [ ] Pathologies systémiques *(Cataracte)*
-> 	- [ ] Chirurgies antérieures *(Cataracte)*
+> 	- [ ] Diabète
+> 	- [ ] Pathologies systémiques
+> 	- [ ] Chirurgies antérieures
 > - [ ] **85. Anamnèse sociale et impact fonctionnel *(Cataracte)***
-> 	- [ ] Situation de vie *(Cataracte)*
-> 	- [ ] Autonomie *(Cataracte)*
-> 	- [ ] Activités quotidiennes *(Cataracte)*
-> 	- [ ] Conduite automobile *(Cataracte)*
-> - [ ] **86. Évaluation globale de la qualité de l'anamnèse *(Cataracte)***
-> 	- [ ] Anamnèse ciblée et bien conduite *(Cataracte)*
-> - [ ] **87. Caractérisation cécité *(Horton (artérite à cellules géantes))***
-> 	- [ ] Localisation *(Horton (artérite à cellules géantes))*
-> 	- [ ] Chronologie *(Horton (artérite à cellules géantes))*
-> 	- [ ] Développement (subit / progressif) *(Horton (artérite à cellules géantes))*
-> 	- [ ] Circonstance de survenue *(Horton (artérite à cellules géantes))*
-> 	- [ ] Perte de connaissance associée *(Horton (artérite à cellules géantes))*
-> - [ ] **88. Caractérisation céphalées *(Horton (artérite à cellules géantes))***
-> 	- [ ] Localisation *(Horton (artérite à cellules géantes))*
-> 	- [ ] Irradiation *(Horton (artérite à cellules géantes))*
-> 	- [ ] Qualité *(Horton (artérite à cellules géantes))*
-> 	- [ ] Quantité *(Horton (artérite à cellules géantes))*
-> 	- [ ] Chronologie *(Horton (artérite à cellules géantes))*
-> 	- [ ] Développement *(Horton (artérite à cellules géantes))*
-> - [ ] **89. Anamnèse par système - générale *(Horton (artérite à cellules géantes))***
-> 	- [ ] Fièvre *(Horton (artérite à cellules géantes))*
-> 	- [ ] Sudation nocturne *(Horton (artérite à cellules géantes))*
-> 	- [ ] Perte de poids *(Horton (artérite à cellules géantes))*
-> - [ ] **90. Anamnèse par système - neurologique *(Horton (artérite à cellules géantes))***
-> 	- [ ] Diplopie *(Horton (artérite à cellules géantes))*
-> 	- [ ] Perte de force *(Horton (artérite à cellules géantes))*
-> 	- [ ] Perte de sensibilité *(Horton (artérite à cellules géantes))*
-> 	- [ ] Paresthésies *(Horton (artérite à cellules géantes))*
-> 	- [ ] Vertiges *(Horton (artérite à cellules géantes))*
-> - [ ] **91. Habitudes *(Horton (artérite à cellules géantes))***
-> 	- [ ] Tabagisme *(Horton (artérite à cellules géantes))*
-> 	- [ ] Drogues *(Horton (artérite à cellules géantes))*
-> 	- [ ] Médicaments *(Horton (artérite à cellules géantes))*
-> - [ ] **92. Antécédents et comorbidités *(Horton (artérite à cellules géantes))***
-> 	- [ ] Maladies actuelles *(Horton (artérite à cellules géantes))*
-> 	- [ ] Antécédents médico-chirurgicaux *(Horton (artérite à cellules géantes))*
-> 	- [ ] Allergies *(Horton (artérite à cellules géantes))*
+> 	- [ ] Situation de vie
+> 	- [ ] Autonomie
+> 	- [ ] Activités quotidiennes
+> 	- [ ] Conduite automobile
+> - [ ] **86. Caractérisation cécité *(Horton (artérite à cellules géantes))***
+> 	- [ ] Localisation
+> 	- [ ] Chronologie
+> 	- [ ] Développement (subit / progressif)
+> 	- [ ] Circonstance de survenue
+> 	- [ ] Perte de connaissance associée
+> - [ ] **87. Caractérisation céphalées *(Horton (artérite à cellules géantes))***
+> 	- [ ] Localisation
+> 	- [ ] Irradiation
+> 	- [ ] Qualité
+> 	- [ ] Quantité
+> 	- [ ] Chronologie
+> 	- [ ] Développement
+> - [ ] **88. Anamnèse par système - générale *(Horton (artérite à cellules géantes))***
+> 	- [ ] Fièvre
+> 	- [ ] Sudation nocturne
+> 	- [ ] Perte de poids
+> - [ ] **89. Anamnèse par système - neurologique *(Horton (artérite à cellules géantes))***
+> 	- [ ] Diplopie
+> 	- [ ] Perte de force
+> 	- [ ] Perte de sensibilité
+> 	- [ ] Paresthésies
+> 	- [ ] Vertiges
+> - [ ] **90. Habitudes *(Horton (artérite à cellules géantes))***
+> 	- [ ] Tabagisme
+> 	- [ ] Drogues
+> 	- [ ] Médicaments
+> - [ ] **91. Antécédents et comorbidités *(Horton (artérite à cellules géantes))***
+> 	- [ ] Maladies actuelles
+> 	- [ ] Antécédents médico-chirurgicaux
+> 	- [ ] Allergies
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(AVC)***
-> 	- [ ] Lavage des mains *(AVC)*
-> 	- [ ] Respect de la pudeur avec drap *(AVC)*
+> 	- [ ] Lavage des mains
+> 	- [ ] Respect de la pudeur avec drap
 > - [ ] **2. Examen de la tête, yeux, oreilles, nez et gorge *(AVC)***
-> 	- [ ] Inspection de la tête *(AVC)*
-> 	- [ ] Palpation de la tête *(AVC)*
-> 	- [ ] Évaluation de l'acuité visuelle (échelle de Snellen) *(AVC)*
-> 	- [ ] Fundoscopie directe *(AVC)*
-> 	- [ ] Examen du champ visuel *(AVC)*
+> 	- [ ] Inspection de la tête
+> 	- [ ] Palpation de la tête
+> 	- [ ] Évaluation de l'acuité visuelle (échelle de Snellen)
+> 	- [ ] Fundoscopie directe
+> 	- [ ] Examen du champ visuel
 > - [ ] **3. Examen du cou *(AVC)***
-> 	- [ ] Auscultation des artères carotides *(AVC)*
+> 	- [ ] Auscultation des artères carotides
 > - [ ] **4. Examen cardiovasculaire *(AVC)***
-> 	- [ ] Palpation du pouls radial *(AVC)*
-> 	- [ ] Auscultation du cœur *(AVC)*
+> 	- [ ] Palpation du pouls radial
+> 	- [ ] Auscultation du cœur
 > - [ ] **5. Examen thoracique *(AVC)***
-> 	- [ ] Auscultation des poumons *(AVC)*
+> 	- [ ] Auscultation des poumons
 > - [ ] **6. Examen neurologique *(AVC)***
-> 	- [ ] Évaluation du niveau de conscience *(AVC)*
-> 	- [ ] Examen de l'orientation dans le temps, l'espace et les personnes *(AVC)*
-> 	- [ ] Évaluation du langage *(AVC)*
-> 	- [ ] Examen ciblé des nerfs crâniens *(AVC)*
-> 	- [ ] Signe de Kernig *(AVC)*
-> 	- [ ] Signe de Brudzinski *(AVC)*
-> 	- [ ] Méningisme *(AVC)*
-> 	- [ ] Examen ciblé des mouvements passifs et actifs *(AVC)*
-> 	- [ ] Examen ciblé de la sensibilité *(AVC)*
-> 	- [ ] Examen ciblé des réflexes ostéotendineux *(AVC)*
-> 	- [ ] Examen ciblé de la marche *(AVC)*
-> 	- [ ] Test d'alternance rapide des mouvements *(AVC)*
-> 	- [ ] Test doigt-nez *(AVC)*
-> 	- [ ] Signe de Babinski *(AVC)*
-> 	- [ ] Test de Romberg *(AVC)*
+> 	- [ ] Évaluation du niveau de conscience
+> 	- [ ] Examen de l'orientation dans le temps, l'espace et les personnes
+> 	- [ ] Évaluation du langage
+> 	- [ ] Examen ciblé des nerfs crâniens
+> 	- [ ] Signe de Kernig
+> 	- [ ] Signe de Brudzinski
+> 	- [ ] Méningisme
+> 	- [ ] Examen ciblé des mouvements passifs et actifs
+> 	- [ ] Examen ciblé de la sensibilité
+> 	- [ ] Examen ciblé des réflexes ostéotendineux
+> 	- [ ] Examen ciblé de la marche
+> 	- [ ] Test d'alternance rapide des mouvements
+> 	- [ ] Test doigt-nez
+> 	- [ ] Signe de Babinski
+> 	- [ ] Test de Romberg
 > - [ ] **7. Status neuro orientant *(Occlusion de l'artère centrale de la rétine (embolique))***
 > - [ ] **8. Acuité visuelle *(Cataracte, Occlusion de l'artère centrale de la rétine (embolique))***
 > 	- [ ] Vision de loin avec correction *(Cataracte)*
@@ -328,63 +326,61 @@ cssclasses:
 > - [ ] **34. Fond d'œil droit *(Décollement de rétine)***
 > - [ ] **35. Fond d'œil gauche *(Décollement de rétine)***
 > - [ ] **36. Examen des annexes et segment antérieur *(Cataracte)***
-> 	- [ ] Paupières *(Cataracte)*
-> 	- [ ] Conjonctive *(Cataracte)*
-> 	- [ ] Cornée *(Cataracte)*
-> 	- [ ] Chambre antérieure *(Cataracte)*
+> 	- [ ] Paupières
+> 	- [ ] Conjonctive
+> 	- [ ] Cornée
+> 	- [ ] Chambre antérieure
 > - [ ] **37. Examen à la lampe à fente *(Cataracte)***
-> 	- [ ] Cristallin *(Cataracte)*
-> 	- [ ] Type d'opacité *(Cataracte)*
-> 	- [ ] Densité *(Cataracte)*
+> 	- [ ] Cristallin
+> 	- [ ] Type d'opacité
+> 	- [ ] Densité
 > - [ ] **38. Test du reflet rouge rétinien *(Cataracte)***
-> 	- [ ] Reflet rouge *(Cataracte)*
-> 	- [ ] Symétrie *(Cataracte)*
+> 	- [ ] Reflet rouge
+> 	- [ ] Symétrie
 > - [ ] **39. Pupilles et réflexes pupillaires *(Cataracte)***
-> 	- [ ] Taille et symétrie *(Cataracte)*
-> 	- [ ] Réflexe photomoteur direct *(Cataracte)*
-> 	- [ ] Réflexe consensuel *(Cataracte)*
-> 	- [ ] Défaut pupillaire afférent relatif *(Cataracte)*
+> 	- [ ] Taille et symétrie
+> 	- [ ] Réflexe photomoteur direct
+> 	- [ ] Réflexe consensuel
+> 	- [ ] Défaut pupillaire afférent relatif
 > - [ ] **40. Tonus oculaire *(Cataracte)***
-> 	- [ ] Palpation bidigitale *(Cataracte)*
-> 	- [ ] Mesure si disponible *(Cataracte)*
+> 	- [ ] Palpation bidigitale
+> 	- [ ] Mesure si disponible
 > - [ ] **41. Fond d'œil *(Cataracte)***
-> 	- [ ] Visualisation *(Cataracte)*
-> 	- [ ] Ce qui est visible *(Cataracte)*
-> 	- [ ] Exclusion de pathologie rétinienne évidente *(Cataracte)*
+> 	- [ ] Visualisation
+> 	- [ ] Ce qui est visible
+> 	- [ ] Exclusion de pathologie rétinienne évidente
 > - [ ] **42. Examen neurologique de base *(Cataracte)***
-> 	- [ ] Champs visuels par confrontation *(Cataracte)*
-> 	- [ ] Oculomotricité *(Cataracte)*
-> 	- [ ] Nerfs crâniens *(Cataracte)*
-> - [ ] **43. Évaluation globale de la qualité de l'examen clinique *(Cataracte)***
-> 	- [ ] Examen clinique ciblé et bien conduit *(Cataracte)*
-> - [ ] **44. Ophtalmologique - observation *(Horton (artérite à cellules géantes))***
-> 	- [ ] Sclère *(Horton (artérite à cellules géantes))*
-> 	- [ ] Paupière *(Horton (artérite à cellules géantes))*
-> - [ ] **45. Ophtalmologique - acuité visuelle *(Horton (artérite à cellules géantes))***
-> 	- [ ] Œil droit *(Horton (artérite à cellules géantes))*
-> 	- [ ] Œil gauche *(Horton (artérite à cellules géantes))*
-> - [ ] **46. Ophtalmologique - fond d'œil *(Horton (artérite à cellules géantes))***
-> - [ ] **47. Neuro-ophtalmologique *(Horton (artérite à cellules géantes))***
-> 	- [ ] Champs visuels *(Horton (artérite à cellules géantes))*
-> 	- [ ] Poursuite oculaire / oculomotricité *(Horton (artérite à cellules géantes))*
-> - [ ] **48. Neuro-ophtalmologique - réflexes pupillaires *(Horton (artérite à cellules géantes))***
-> 	- [ ] Direct *(Horton (artérite à cellules géantes))*
-> 	- [ ] Croisé *(Horton (artérite à cellules géantes))*
-> - [ ] **49. Neurologique - orientation aux 4 modes *(Horton (artérite à cellules géantes))***
-> 	- [ ] Temps *(Horton (artérite à cellules géantes))*
-> 	- [ ] Localisation *(Horton (artérite à cellules géantes))*
-> 	- [ ] Personne *(Horton (artérite à cellules géantes))*
-> 	- [ ] Situation *(Horton (artérite à cellules géantes))*
-> - [ ] **50. Neurologique - motricité & sensibilité grossière *(Horton (artérite à cellules géantes))***
-> 	- [ ] Motricité *(Horton (artérite à cellules géantes))*
-> 	- [ ] Sensibilité *(Horton (artérite à cellules géantes))*
-> - [ ] **51. DD AVC - Test de Cincinnati (Stroke Scale) *(Horton (artérite à cellules géantes))***
-> 	- [ ] Motricité de la face (NC VII) *(Horton (artérite à cellules géantes))*
-> 	- [ ] Épreuve des bras tendus *(Horton (artérite à cellules géantes))*
-> 	- [ ] Répétition d'une phrase *(Horton (artérite à cellules géantes))*
-> - [ ] **52. DD artérite de Horton *(Horton (artérite à cellules géantes))***
-> 	- [ ] Percussion de l'artère temporale *(Horton (artérite à cellules géantes))*
-> 	- [ ] Palpation de la mâchoire *(Horton (artérite à cellules géantes))*
-> - [ ] **53. Cardiaque *(Horton (artérite à cellules géantes))***
-> 	- [ ] Auscultation des 4 foyers *(Horton (artérite à cellules géantes))*
-> 	- [ ] Auscultation des carotides des deux côtés *(Horton (artérite à cellules géantes))*
+> 	- [ ] Champs visuels par confrontation
+> 	- [ ] Oculomotricité
+> 	- [ ] Nerfs crâniens
+> - [ ] **43. Ophtalmologique - observation *(Horton (artérite à cellules géantes))***
+> 	- [ ] Sclère
+> 	- [ ] Paupière
+> - [ ] **44. Ophtalmologique - acuité visuelle *(Horton (artérite à cellules géantes))***
+> 	- [ ] Œil droit
+> 	- [ ] Œil gauche
+> - [ ] **45. Ophtalmologique - fond d'œil *(Horton (artérite à cellules géantes))***
+> - [ ] **46. Neuro-ophtalmologique *(Horton (artérite à cellules géantes))***
+> 	- [ ] Champs visuels
+> 	- [ ] Poursuite oculaire / oculomotricité
+> - [ ] **47. Neuro-ophtalmologique - réflexes pupillaires *(Horton (artérite à cellules géantes))***
+> 	- [ ] Direct
+> 	- [ ] Croisé
+> - [ ] **48. Neurologique - orientation aux 4 modes *(Horton (artérite à cellules géantes))***
+> 	- [ ] Temps
+> 	- [ ] Localisation
+> 	- [ ] Personne
+> 	- [ ] Situation
+> - [ ] **49. Neurologique - motricité & sensibilité grossière *(Horton (artérite à cellules géantes))***
+> 	- [ ] Motricité
+> 	- [ ] Sensibilité
+> - [ ] **50. DD AVC - Test de Cincinnati (Stroke Scale) *(Horton (artérite à cellules géantes))***
+> 	- [ ] Motricité de la face (NC VII)
+> 	- [ ] Épreuve des bras tendus
+> 	- [ ] Répétition d'une phrase
+> - [ ] **51. DD artérite de Horton *(Horton (artérite à cellules géantes))***
+> 	- [ ] Percussion de l'artère temporale
+> 	- [ ] Palpation de la mâchoire
+> - [ ] **52. Cardiaque *(Horton (artérite à cellules géantes))***
+> 	- [ ] Auscultation des 4 foyers
+> 	- [ ] Auscultation des carotides des deux côtés

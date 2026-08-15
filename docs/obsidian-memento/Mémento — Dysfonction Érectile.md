@@ -91,8 +91,6 @@ cssclasses:
 > 	- [ ] Situation familiale
 > 	- [ ] Profession
 > 	- [ ] Soutien social
-> - [ ] **15. Évaluation globale de la qualité de l'anamnèse**
-> 	- [ ] Anamnèse ciblée et bien conduite
 
 > [!tip] 🩺 Status
 > - [ ] **1. Hygiène et préparation**
@@ -116,5 +114,3 @@ cssclasses:
 > 	- [ ] Réflexes ostéo-tendineux
 > - [ ] **8. Toucher rectal**
 > 	- [ ] Examen de la prostate
-> - [ ] **9. Évaluation globale de la qualité de l'examen clinique**
-> 	- [ ] Examen clinique ciblé et bien conduit
