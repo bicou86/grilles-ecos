@@ -9,7 +9,7 @@ des sous-items. Un rapport limite aux titres de tete en aurait montre une.
 CHAQUE LIBELLE EST SUIVI DE SES GRILLES PORTEUSES. Sans elles, une paire ne se
 juge pas : deux libelles portes par LA MEME grille sont deux questions que
 cette grille a voulu distinguer, et les reunir effacerait une distinction que
-son auteur a posee exprès. Deux libelles portes par des grilles DISJOINTES sont
+son auteur a posee expres. Deux libelles portes par des grilles DISJOINTES sont
 le cas ou la couche B est utile. La similarite lexicale ne dit rien de cela, et
 c'est pourtant le premier tri a faire.
 
