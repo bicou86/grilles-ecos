@@ -18,8 +18,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -43,6 +42,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -330,3 +341,160 @@ cssclasses:
 > 	- [ ] ORL
 > 	- [ ] Pulmonaire
 > 	- [ ] Cardiaque
+
+> [!success] 💊 Management — si Dermatite périorale
+> - [ ] **1. Diagnostic clinique**
+> - [ ] **2. Diagnostic de travail : dermatite périorale**
+> - [ ] **3. Indices anamnestiques**
+> - [ ] **4. Cosmétiques**
+> - [ ] **5. Profil de rebond stéroïdien**
+> - [ ] **6. Caractère des symptômes**
+> - [ ] **7. Résultats cliniques**
+> - [ ] **8. Localisation périorale**
+> - [ ] **9. Lisière des lèvres respectée**
+> - [ ] **10. Papules érythémateuses monomorphes**
+> - [ ] **11. DD Acné vulgaire**
+> - [ ] **12. Pour**
+> - [ ] **13. Contre**
+> - [ ] **14. DD Eczéma de contact**
+> - [ ] **15. DD Rosacée**
+> - [ ] **16. Absence d'examens complémentaires**
+> - [ ] **17. Prise en charge de base : thérapie zéro correcte**
+> - [ ] **18. Arrêt des stéroïdes**
+> - [ ] **19. Réduction des soins**
+> - [ ] **20. Éducation de la patiente**
+> - [ ] **21. Cause**
+> - [ ] **22. Évolution et gestion des attentes**
+> - [ ] **23. Contrôle d'évolution**
+> - [ ] **24. Traitement élargi**
+> - [ ] **25. Traitement topique anti-inflammatoire**
+> - [ ] **26. Escalade systémique en cas d'échec thérapeutique**
+> - [ ] **27. Complications / Signes d'alarme**
+> - [ ] **28. Atteinte oculaire**
+> - [ ] **29. Résistance au traitement**
+> - [ ] **30. Infection secondaire**
+> - [ ] **31. Symptômes généraux**
+
+> [!success] 💊 Management — si Eczéma / Dermatite
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Gale
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Lupus érythémateux cutané
+> - [ ] **1. Diagnostic de suspicion principal**
+> - [ ] **2. Diagnostics différentiels évoqués**
+> - [ ] **3. Examens complémentaires proposés**
+> 	- [ ] Biologie sanguine
+> 	- [ ] Analyse d'urine
+> 	- [ ] Fonction rénale
+> - [ ] **4. Traitement proposé**
+> - [ ] **5. Justification des examens**
+> 	- [ ] Recherche de signes de lupus systémique
+> 	- [ ] Évaluation de l'inflammation
+> 	- [ ] Dépistage d'atteinte rénale (néphrite lupique)
+> - [ ] **6. Information sur l'évolution possible**
+> - [ ] **7. Surveillance et suivi recommandés**
+> 	- [ ] Contrôle dans 4-6 semaines avec résultats
+> 	- [ ] Surveillance biologique régulière si ANA positifs
+> 	- [ ] Examen des autres systèmes à chaque consultation
+> 	- [ ] Référence en dermatologie si évolution défavorable
+
+> [!success] 💊 Management — si Pityriasis versicolor
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Psoriasis
+> - [ ] **1. Diagnostic clinique**
+> - [ ] **2. Examen à l’état frais**
+> - [ ] **3. Dermatoscopie**
+> - [ ] **4. Diagnostic de travail**
+> - [ ] **5. Diagnostics différentiels**
+> - [ ] **6. Traitement de base**
+> - [ ] **7. Soins cutanés**
+> - [ ] **8. Kératolyse**
+> - [ ] **9. Éviter les déclencheurs**
+> - [ ] **10. Thérapie topique**
+> - [ ] **11. Information**
+> - [ ] **12. Suivi de l’évolution**
+> - [ ] **13. Orientation en dermatologie**
+> - [ ] **14. Revue médicamenteuse**
+> - [ ] **15. Filet de sécurité**
+
+> [!success] 💊 Management — si Scarlatine / Angine streptococcique
+> - [ ] **1. Diagnostic de suspicion principal**
+> - [ ] **2. Diagnostics différentiels évoqués**
+> - [ ] **3. Examens complémentaires proposés**
+> 	- [ ] Test rapide streptocoque
+> 	- [ ] Culture bactériologique
+> - [ ] **4. Traitement proposé**
+> - [ ] **5. Planification du suivi**
+> 	- [ ] Surveillance de l'efficacité du traitement
+> 	- [ ] Vérification de la disparition des symptômes
+> 	- [ ] Dépistage des complications tardives (glomérulonéphrite, RAA)
+> - [ ] **6. Mesures préventives et prophylaxie**
+> 	- [ ] Prophylaxie de l'entourage
+> 	- [ ] Éviction scolaire
+> 	- [ ] Mesures d'hygiène
+> - [ ] **7. Information aux parents et surveillance**
+> 	- [ ] Explication de la maladie
+> 	- [ ] Importance de l'observance du traitement
+> 	- [ ] Signes d'alerte (complications)
+> 	- [ ] Quand reconsulter
+
+> [!success] 💊 Management — si Syndrome de Stevens-Johnson / Lyell
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Syphilis
+> - [ ] **1. Diagnostic de travail**
+> - [ ] **2. Filet de sécurité**
+> - [ ] **3. Bilan de base étendu**
+> - [ ] **4. Dépistage IST**
+> - [ ] **5. Sérologie syphilis**
+> - [ ] **6. TPPA / TPHA comme test de dépistage**
+> - [ ] **7. FTA-ABS comme test de confirmation**
+> - [ ] **8. VDRL ou RPR pour évaluer l’activité**
+> - [ ] **9. Anticorps IgM comme indice d’infection récente**
+> - [ ] **10. Pénicilline G i.m.**
+> - [ ] **11. Recueillir l’anamnèse des partenaires et recommander un traitement des partenaires**
+> - [ ] **12. Information sur la contagion et les mesures de protection**
+> - [ ] **13. Planifier des contrôles sérologiques de suivi**
+> - [ ] **14. Informer sur une possible réaction de Jarisch-Herxheimer**
+> - [ ] **15. Reconsultation immédiate en cas de signes d’alarme**
+
+> [!success] 💊 Management — si Tinea corporis
+> - [ ] **1. Diagnostic de suspicion principal**
+> - [ ] **2. Diagnostics différentiels évoqués**
+> - [ ] **3. Examens complémentaires proposés**
+> 	- [ ] Prélèvement mycologique
+> 	- [ ] Culture mycologique
+> - [ ] **4. Interprétation des examens**
+> - [ ] **5. Traitement proposé**
+> - [ ] **6. Mesures préventives et conseils**
+> 	- [ ] Éviter les environnements humides
+> 	- [ ] Sécher soigneusement la peau
+> 	- [ ] Éviter le partage de serviettes
+> 	- [ ] Traiter les contacts si nécessaire
+> - [ ] **7. Planification du suivi**
+> 	- [ ] Contrôle après 2 semaines de traitement
+> 	- [ ] Vérification de la guérison mycologique
+> 	- [ ] Adaptation du traitement si nécessaire
+
+> [!success] 💊 Management — si Zona
+> - [ ] **1. Diagnostics différentiels *(1 grille sur 2)***
+> 	- [ ] Eczéma
+> 	- [ ] Impétigo
+> 	- [ ] Varicelle
+> 	- [ ] Dermatite de contact
+> - [ ] **2. Présentation du cas**
+> 	- [ ] Synthétique
+> 	- [ ] Éléments pertinent de l'anamnèse et du status *(1 grille sur 2)*
+> 	- [ ] Avec les éléments pertinents de l'anamnèse et du status *(1 grille sur 2)*
+> - [ ] **3. Hypothèse Diagnostique *(1 grille sur 2)***
+> - [ ] **4. Diagnostic principal et diagnostics différentiels *(1 grille sur 2)***
+> - [ ] **5. Argumentation pour les DD *(1 grille sur 2)***
+> - [ ] **6. Examens complémentaires indiqués**
+> 	- [ ] Frottis des lésions *(1 grille sur 2)*
+> - [ ] **7. Dépistage Immunologique (VIH ou autre)**
+> - [ ] **8. Hypothèse diagnostique : ZONA *(1 grille sur 2)***
+> - [ ] **9. Argumentation *(1 grille sur 2)***
+> 	- [ ] Pour le zona : pas de contage, douleurs intenses antérieures aux lésions, antécédent de varicelle, lésions vésiculo-papuleuses limitées à un dermatome ne dépassant pas la ligne médiane. Contre : jeune âge, pas de traitement immunosuppresseur ni de maladie immunologique connue, lésions très croûteuses, pas d'adénopathie.

@@ -18,8 +18,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -43,6 +42,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -624,3 +635,208 @@ cssclasses:
 > 	- [ ] Recherche d'hépatosplénomégalie *(1 grille sur 11)*
 > - [ ] **58. Examen des ROT au niveau du genou ou de la cheville ou au moins sur 1 site *(Hypothyroïdie)***
 > 	- [ ] Ralentissement de la phase de relaxation des ROT
+
+> [!success] 💊 Management — si Anémie
+> - [ ] **1. Diagnostics différentiels évoqués**
+> - [ ] **2. Examens complémentaires proposés**
+> 	- [ ] FSC complète
+> 	- [ ] Bilan martial
+> 	- [ ] Bilan inflammatoire
+> 	- [ ] Bilan d'hémolyse
+> 	- [ ] Frottis sanguin
+> 	- [ ] Test de recherche de sang occulte dans les selles
+> - [ ] **3. Reconnaissance d'une anémie ferriprive**
+> 	- [ ] Caractéristiques biologiques
+> 	- [ ] Ferritine basse
+> - [ ] **4. Traitement de l'anémie ferriprive**
+> - [ ] **5. Reconnaissance d'une carence en vitamine B12/folates**
+> 	- [ ] Caractéristiques biologiques
+> 	- [ ] Dosages spécifiques
+> - [ ] **6. Examens étiologiques selon l'orientation**
+> 	- [ ] Si suspicion saignement GI
+> 	- [ ] Si suspicion maladie médullaire
+> 	- [ ] Si hyperménorrhée
+> - [ ] **7. Surveillance et suivi**
+> 	- [ ] Contrôle de l'efficacité
+> 	- [ ] Contrôle de la ferritine
+> 	- [ ] Recherche et traitement de la cause
+
+> [!success] 💊 Management — si Diabète de type 2
+> - [ ] **1. L'étudiant/e a-t-elle/il évoqué comme diagnostic principal le diabète?**
+> - [ ] **2. Évoquer un diagnostic différentiel plausible**
+> 	- [ ] Syndrome d'apnée du sommeil obstructif
+> 	- [ ] Hypothyroïdie
+> 	- [ ] Psychiatrique (burnout/dépression)
+> 	- [ ] Anémie
+> 	- [ ] Infection (ex: EBV, CMV, VIH)
+
+> [!success] 💊 Management — si Diabète inaugural / Acido-cétose
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Dépression
+> - [ ] **1. Diagnostic de suspicion principal**
+> - [ ] **2. Diagnostics différentiels évoqués**
+> - [ ] **3. Examens complémentaires proposés**
+> 	- [ ] FSC
+> 	- [ ] TSH
+> 	- [ ] Bilan métabolique de base
+> - [ ] **4. Traitement proposé**
+> - [ ] **5. Évaluation de la sévérité et du risque**
+> 	- [ ] Risque suicidaire élevé (idées actives, antécédents familiaux)
+> 	- [ ] Isolement social important
+> 	- [ ] Facteurs de protection limités
+> - [ ] **6. Plan de sécurité et suivi**
+> 	- [ ] Contrat de non-passage à l'acte
+> 	- [ ] Numéros d'urgence fournis
+> 	- [ ] Prochain rendez-vous fixé dans 3-7 jours
+> 	- [ ] Implication d'un proche si possible
+> - [ ] **7. Critères d'hospitalisation**
+> 	- [ ] Risque suicidaire imminent
+> 	- [ ] Absence de soutien social
+> 	- [ ] Incapacité à garantir sa sécurité
+
+> [!success] 💊 Management — si Dépression gériatrique
+> - [ ] **1. Un laboratoire (pas besoin de préciser)**
+> - [ ] **2. Évoqué à voix haute une dépression / demandé à la patiente si elle se sentait déprimée**
+> - [ ] **3. Évoquer l'aide à domicile**
+> - [ ] **4. Proposé une prise en charge psycho-gériatrique**
+> - [ ] **5. Expliqué qu'il fallait activement rechercher une cause organique à la fatigue**
+> - [ ] **6. Refusé de prescrire des somnifères pour le moment**
+
+> [!success] 💊 Management — si Hypothyroïdie
+> - [ ] **1. Demande un laboratoire**
+> 	- [ ] FSC
+> 	- [ ] Ferritine
+> 	- [ ] VS / CRP
+> 	- [ ] Fonction rénale
+> 	- [ ] Fonction hépatique
+> 	- [ ] Électrolytes
+> 	- [ ] Glycémie
+> - [ ] **2. Demande des tests thyroïdiens (TSH seule ou avec T4 libre)**
+> - [ ] **3. Interprète correctement les résultats de laboratoire (TSH augmentée et T4 libre abaissée = hypothyroïdie)**
+> - [ ] **4. Diagnostic : hypothyroïdie - primaire OU d'origine autoimmune probable**
+> 	- [ ] Hypothyroïdie primaire *(1 grille sur 2)*
+> 	- [ ] D'origine auto-immune probable *(1 grille sur 2)*
+> - [ ] **5. Cite le diagnostic mentionné au point 4 comme diagnostic plus probable**
+> - [ ] **6. Propose un dosage des anticorps anti-TPO**
+> - [ ] **7. Traitement : substitution par hormones thyroïdiennes (lévothyroxine)**
+> - [ ] **8. Suivi : prévoir un contrôle biologique dans un délai de 6-8 semaines - informations sur symptômes de surdosage**
+> 	- [ ] Contrôle biologique dans un délai de 6-8 semaines *(1 grille sur 2)*
+> 	- [ ] Informations sur les symptômes de surdosage *(1 grille sur 2)*
+
+> [!success] 💊 Management — si Hémorragie digestive haute sur ulcère peptique
+> - [ ] **1. Laboratoire**
+> - [ ] **2. Hb et hémogramme**
+> - [ ] **3. CRP**
+> - [ ] **4. Statut martial**
+> - [ ] **5. Ferritine**
+> - [ ] **6. Diagnostic de travail**
+> - [ ] **7. Évaluation du risque**
+> - [ ] **8. Adapter la médication**
+> - [ ] **9. Arrêt des AINS**
+> - [ ] **10. Pause de l’ASA**
+> - [ ] **11. Pause de l’anticoagulation**
+> - [ ] **12. Laisser à jeun**
+> - [ ] **13. Orientation hospitalière**
+> - [ ] **14. Mesures hospitalières**
+> - [ ] **15. IPP i.v.**
+> - [ ] **16. Remplissage i.v.**
+> - [ ] **17. Bilan H. pylori**
+> - [ ] **18. Œsophagogastroduodénoscopie**
+
+> [!success] 💊 Management — si Hépatite B et/ou C aiguë
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Conseil et soutien**
+> 	- [ ] Conseil sur les drogues illicites
+> 	- [ ] Conseil sur l'abus d'alcool
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Réaction appropriée au défi concernant le test VIH
+> - [ ] **3. Examens complémentaires urgents**
+> 	- [ ] US abdominal
+> 	- [ ] FSC
+> 	- [ ] TP, TCA
+> 	- [ ] ASAT, ALAT, bilirubine, phosphatases alcalines, Gamma-GT, lipase
+> 	- [ ] Albumine
+> 	- [ ] Sérologies virales hépatites (HAV, HBV, HCV)
+> 	- [ ] Test VIH
+> - [ ] **4. Examens complémentaires différés**
+> 	- [ ] CT abdominal avec contraste
+> - [ ] **5. Communication avec le patient**
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+
+> [!success] 💊 Management — si Insuffisance cardiaque (décompensée)
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Mononucléose
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens complémentaires de première intention**
+> 	- [ ] Test monospot
+> 	- [ ] Sérologie EBV
+> 	- [ ] FSC et frottis sanguin
+> - [ ] **3. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> - [ ] **4. Conseil et soutien**
+> 	- [ ] Conseil sur l'évitement des sports de contact en cas de mononucléose suspectée
+> 	- [ ] Réaction appropriée au défi sur l'expérience du médecin
+> 	- [ ] Éducation sur le repos nécessaire
+> 	- [ ] Information sur la durée possible de la fatigue
+> 	- [ ] Conseils de prévention transmission
+> - [ ] **5. Examens complémentaires biologiques**
+> 	- [ ] LDH, ASAT, ALAT
+> 	- [ ] Fer sérique, ferritine, transferrine, capacité totale de fixation du fer (TIBC)
+> 	- [ ] TSH, T3 libre, T4 libre
+
+> [!success] 💊 Management — si SAOS
+> - [ ] **1. Diagnostic de suspicion principal**
+> - [ ] **2. Diagnostics différentiels évoqués**
+> - [ ] **3. Examens complémentaires proposés**
+> 	- [ ] Biologie
+> 	- [ ] Gazométrie artérielle
+> 	- [ ] ECG
+> 	- [ ] Radiographie thoracique
+> 	- [ ] Polysomnographie
+> - [ ] **4. Information sur les risques et complications**
+> 	- [ ] Risque cardiovasculaire augmenté
+> 	- [ ] Hypertension artérielle
+> 	- [ ] Risque d'infarctus du myocarde
+> 	- [ ] Risque d'accident vasculaire cérébral
+> - [ ] **5. Traitement proposé**
+> - [ ] **6. Planification du suivi**
+> 	- [ ] Consultation pneumologique pour polysomnographie
+> 	- [ ] Suivi tensionnel régulier
+> 	- [ ] Réévaluation après mise en place du traitement
+
+> [!success] 💊 Management — si Syndrome de Sheehan (hypopituitarisme post-partum)
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens complémentaires de première intention**
+> 	- [ ] Dosages hormonaux hypophysaires : cortisol sérique, ACTH
+> 	- [ ] Dosages hormonaux gonadiques : œstradiol, FSH, LH
+> 	- [ ] IGF-1
+> 	- [ ] TSH
+> 	- [ ] Électrolytes sériques, glucose
+> - [ ] **3. Examens complémentaires hématologiques**
+> 	- [ ] FSC, VGM, TCMH
+> 	- [ ] Fer sérique, ferritine, TIBC
+> 	- [ ] Frottis sanguin
+> - [ ] **4. Imagerie spécialisée**
+> 	- [ ] IRM cérébrale
+> - [ ] **5. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> - [ ] **6. Conseil et soutien**
+> 	- [ ] Conseil sur les modifications du mode de vie pour améliorer l'humeur
+> 	- [ ] Réaction appropriée au défi sur la maternité
+> 	- [ ] Orientation vers assistance sociale
+> 	- [ ] Éducation sur l'importance du soutien familial
+> 	- [ ] Information sur les ressources de soutien post-partum

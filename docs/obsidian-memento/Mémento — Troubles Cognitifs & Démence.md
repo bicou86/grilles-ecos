@@ -16,8 +16,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -40,6 +39,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -153,3 +164,28 @@ cssclasses:
 > 	- [ ] Écrire une phrase sur le papier
 > 	- [ ] Maintenant plier le papier et le mettre par terre
 > 	- [ ] Copier l'image de deux pentagones entrecroisés
+
+> [!success] 💊 Management
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens d'imagerie**
+> 	- [ ] IRM cérébrale
+> 	- [ ] CT cérébral
+> - [ ] **3. Examens biologiques**
+> 	- [ ] FSC
+> 	- [ ] TSH
+> 	- [ ] Vitamine B12 sérique
+> 	- [ ] Glycémie, électrolytes
+> - [ ] **4. Examens spécialisés**
+> 	- [ ] Ponction lombaire
+> - [ ] **5. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> - [ ] **6. Conseil et soutien**
+> 	- [ ] Conseil pour patients avec perte de mémoire et/ou troubles cognitifs
+> 	- [ ] Réaction appropriée au défi (être aimable, paraître intéressé par l'histoire de la patiente, ne pas interrompre)
+> 	- [ ] Discussion du rôle de l'aidante (fille)
+> 	- [ ] Planification du suivi
+> 	- [ ] Ressources de soutien disponibles

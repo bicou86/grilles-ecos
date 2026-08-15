@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -251,3 +262,66 @@ cssclasses:
 > 	- [ ] Radial
 > 	- [ ] Médian
 > 	- [ ] Ulnaire
+
+> [!success] 💊 Management — si Accident vasculaire cérébral
+> - [ ] **1. Diagnostic de suspicion**
+> - [ ] **2. Diagnostics différentiels**
+> - [ ] **3. Examens diagnostiques**
+> 	- [ ] Laboratoire
+> 	- [ ] ECG
+> 	- [ ] Imagerie cérébrale / CT
+> - [ ] **4. Traitement d'urgence**
+> 	- [ ] Position allongée
+> 	- [ ] Oxygénothérapie
+> 	- [ ] Thrombolyse
+> 	- [ ] Contrôle glycémique
+> 	- [ ] Ne pas trop abaisser la tension artérielle
+> - [ ] **5. Information du neurologue**
+
+> [!success] 💊 Management — si Chute multifactorielle
+> - [ ] **1. Diagnostics différentiels - Chute chez patient âgé**
+> - [ ] **2. Examens de laboratoire**
+> 	- [ ] FSC
+> 	- [ ] Marqueurs inflammatoires
+> 	- [ ] Vitamine B12
+> 	- [ ] Glycémie
+> - [ ] **3. Examens complémentaires**
+> 	- [ ] ECG
+> 	- [ ] Radiographie thoracique
+> - [ ] **4. Bilan urinaire**
+> - [ ] **5. Imagerie cérébrale**
+> - [ ] **6. Échographie des carotides**
+
+> [!success] 💊 Management — si Fracture du bassin (hémorragique)
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Fracture du membre supérieur (humérus, tête radiale)
+> - [ ] **1. Demande une radiographie du coude gauche avec les incidences**
+> 	- [ ] Face
+> 	- [ ] Profil
+> - [ ] **2. Demande un examen CT-scan ou l'a évoqué dans la suite de la prise en charge**
+> - [ ] **3. Évalue le risque de grossesse avant de proposer des examens radiologiques**
+> - [ ] **4. Analyse de la radiographie, identifie**
+> 	- [ ] Luxation
+> 	- [ ] Fracture de la tête radiale
+> 	- [ ] Fracture du processus coronoïde
+> - [ ] **5. Propose une antalgie**
+> - [ ] **6. Prise en charge immédiate**
+> 	- [ ] Référer au spécialiste
+> 	- [ ] Immobilisation du membre
+> - [ ] **7. Évoque une possible prise en charge chirurgicale**
+
+> [!success] 💊 Management — si Fracture du scaphoïde
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si HypoTA orthostatique
+> *La ou les grilles de ce diagnostic ne cotent aucun item de management* — elles s'arrêtent à l'anamnèse et au status.
+
+> [!success] 💊 Management — si Hématome sous-dural
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Hémorragie sous-arachnoïdienne
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Pneumothorax
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

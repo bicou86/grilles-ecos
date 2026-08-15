@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -293,3 +304,85 @@ cssclasses:
 > 	- [ ] Texture de la peau
 > 	- [ ] Chaleur cutanée
 > 	- [ ] Myxœdème prétibial
+
+> [!success] 💊 Management — si Dépression
+> - [ ] **1. Diagnostic présumé**
+> - [ ] **2. Évaluation du risque suicidaire**
+> - [ ] **3. Interventions de base**
+> - [ ] **4. Activation comportementale**
+> - [ ] **5. Psychoéducation**
+> - [ ] **6. Hygiène du sommeil**
+> - [ ] **7. Options thérapeutiques (Décision partagée)**
+> - [ ] **8. Antidépresseur**
+> - [ ] **9. Psychothérapie**
+> - [ ] **10. Thérapie combinée**
+> - [ ] **11. Éventuel arrêt de travail de courte durée**
+> - [ ] **12. Contrôle de l'évolution**
+> - [ ] **13. Filet de sécurité**
+
+> [!success] 💊 Management — si Hyperthyroïdie
+> - [ ] **1. Diagnostic principal suspecté**
+> 	- [ ] Maladie de Basedow (hyperthyroïdie auto-immune)
+> - [ ] **2. Diagnostics différentiels**
+> - [ ] **3. Examens biologiques thyroïdiens**
+> 	- [ ] TSH (thyréostimuline)
+> 	- [ ] T3 libre (fT3)
+> 	- [ ] T4 libre (fT4)
+> 	- [ ] Anticorps anti-récepteurs de la TSH (TRAK)
+> 	- [ ] Anticorps anti-TPO
+> - [ ] **4. Autres examens biologiques**
+> 	- [ ] FSC
+> 	- [ ] Ionogramme
+> 	- [ ] Fonction hépatique
+> 	- [ ] Glycémie
+> - [ ] **5. Examens d'imagerie**
+> 	- [ ] Échographie thyroïdienne
+> 	- [ ] Scintigraphie thyroïdienne
+> - [ ] **6. Traitement médical**
+> 	- [ ] Traitement thyréostatique (antithyroïdiens de synthèse)
+> 	- [ ] Durée du traitement
+> 	- [ ] Surveillance biologique régulière
+> 	- [ ] Bêtabloquants si nécessaire (symptômes cardiovasculaires)
+> - [ ] **7. Surveillance et évolution**
+> 	- [ ] Contrôles biologiques réguliers
+> 	- [ ] Tentative d'arrêt après 12-18 mois
+> 	- [ ] Options en cas de récidive ou persistance
+> 	- [ ] Éducation thérapeutique
+> - [ ] **8. Options thérapeutiques alternatives**
+> 	- [ ] Iode radioactif
+> 	- [ ] Chirurgie (thyroïdectomie)
+> 	- [ ] Indications et contre-indications
+> - [ ] **9. Prise en charge symptomatique**
+> 	- [ ] Repos
+> 	- [ ] Éviter les stimulants
+> 	- [ ] Soutien psychologique si nécessaire
+> 	- [ ] Arrêt de travail si indiqué
+
+> [!success] 💊 Management — si SAOS
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Trouble anxieux
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens complémentaires de première intention**
+> 	- [ ] Agenda du sommeil
+> 	- [ ] ECG
+> 	- [ ] Toxicologie urinaire
+> - [ ] **3. Examens biologiques**
+> 	- [ ] Mesure de la pression artérielle sur 24 heures
+> 	- [ ] TSH, T3 libre, T4 libre
+> 	- [ ] FSC
+> - [ ] **4. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> - [ ] **5. Conseil et éducation**
+> 	- [ ] Conseil sur l'hygiène du sommeil
+> 	- [ ] Réaction appropriée au défi concernant l'arrêt de travail
+> 	- [ ] Proposer des solutions à long terme
+> 	- [ ] Éducation sur la gestion du stress
+> 	- [ ] Discussion des options thérapeutiques
+
+> [!success] 💊 Management — si Trouble du sommeil / Insomnie
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

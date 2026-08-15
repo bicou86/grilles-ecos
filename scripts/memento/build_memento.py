@@ -10,10 +10,14 @@ du memento des neuf grilles officielles, qui reste la reference de forme et le
 test de non-regression de la chaine (check_fusion.py l'epingle par md5).
 check_mementos.py, lui, garde ces fichiers-ci : il les regenere et compare.
 
-CE QUE CE GENERATEUR PRODUIT AUJOURD'HUI : les encadres 📋 anamnese et 🩺
-status, fusionnes entre tous les cas de la SSP. Le management (🔬 / 💊) suivra,
-avec ses sous-blocs par diagnostic ; `encadre()` et `marque()` sont deja
-partages avec lui via lib_rendu.
+CE QUE CE GENERATEUR PRODUIT : les encadres 📋 anamnese et 🩺 status, fusionnes
+entre tous les cas de la SSP, puis le management 💊, qui ne se fusionne PAS —
+la prise en charge depend du diagnostic. Il se scinde en un encadre commun et
+un sous-bloc par diagnostic (voir `blocs_management`).
+
+UN SEUL ENCADRE 💊, pas le partage 🔬 / 💊 du memento officiel : celui-ci est
+declare a la main, critere par critere, et ne se devine pas a 252 grilles.
+Le raisonnement et son cout sont en tete de lib_rendu, au-dessus de LEGENDE.
 
 LE MARQUAGE porte sur les GRILLES et non sur les diagnostics — voir
 lib_rendu.marque() pour l'invariant. Deux grilles portent le meme diagnostic
@@ -44,6 +48,7 @@ from lib_extraction import sans_accent                   # noqa: E402
 REPO = Path(__file__).resolve().parents[2]
 SORTIE = REPO / "docs" / "obsidian-memento"
 ALIAS = REPO / "docs" / "ecos-diagnostics-alias.yaml"
+PRIORITES = REPO / "docs" / "ecos-priorites-2026.yaml"
 PREFIXE = "Mémento — "
 TYPE = "memento-ecos-ssp"     # marque d'appartenance, dans le frontmatter
 
@@ -87,6 +92,18 @@ CONVENTION = """>
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -162,6 +179,34 @@ def _table_diagnostics():
     formes = Counter(d for d, _ in brut.values() if d)
     graphie = reconcilie_orthographe(formes, alias)
     return {cid: (graphie.get(d, d), c) for cid, (d, c) in brut.items()}
+
+
+def diagnostics_attendus():
+    """SSP -> les diagnostics que la table de priorites 2026 attend d'elle.
+
+    Lus dans le champ `diagnostics`, dont le SEPARATEUR EST LE POINT MEDIAN et
+    non la virgule : plusieurs libelles portent virgules et parentheses
+    (« Fracture du membre supérieur (humérus, tête radiale) »), qu'une
+    decoupe a la virgule scinderait en trois faux diagnostics.
+
+    L'union par SSP, et non la derniere plainte lue : deux plaintes distinctes
+    peuvent viser la meme page SSP, et leurs listes se completent alors. Aucun
+    cas de ce genre dans la table du 2026-08-16 ; l'union coute une ligne et
+    ne se trompera pas le jour ou il s'en presentera un.
+
+    Ces libelles ne passent PAS par `canonique_diagnostic()` : la table des
+    alias les prend deja pour CIBLES (elle traduit le libelle precis d'un cas
+    vers celui d'ici), et aucun n'est par ailleurs une de ses cles — verifie.
+    check_appariement.verifier_attendus_du_corpus() garde la jointure.
+    """
+    out = {}
+    for champs in lib_yaml.lire_groupe(PRIORITES).values():
+        ssp = champs.get("ssp", "?").strip()
+        if not ssp or ssp == "?":
+            continue
+        noms = {d.strip() for d in champs.get("diagnostics", "").split("·")}
+        out.setdefault(ssp, set()).update(n for n in noms if n)
+    return out
 
 
 def tous_les_cas():
@@ -244,7 +289,80 @@ def _nettoie(groupe):
     return groupe
 
 
-def memento(ssp, cas_list):
+SANS_GRILLE = ("*Aucune grille du corpus ne documente ce diagnostic* — il est "
+               "pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**")
+
+TOUT_COMMUN = ("*Aucun item propre à ce diagnostic* — tout son management "
+               "figure dans l'encadré commun ci-dessus.")
+
+SANS_MANAGEMENT = ("*La ou les grilles de ce diagnostic ne cotent aucun item de "
+                   "management* — elles s'arrêtent à l'anamnèse et au status.")
+
+
+def blocs_management(cas_list, cas_ssp, diag_par_cas, ssp, attendus):
+    """Les encadres 💊 d'une SSP : le commun, puis un sous-bloc par diagnostic.
+
+    QUATRE SORTES DE SOUS-BLOCS, et le lecteur doit pouvoir les distinguer :
+
+      - avec items       le management propre au diagnostic ;
+      - sans grille      le diagnostic est attendu de la SSP mais aucune grille
+                         ne le documente. Le sous-bloc reste, et le dit : c'est
+                         une lacune de revision, pas un defaut du memento
+                         (decision de l'auteur du 2026-08-15) ;
+      - sans management  des grilles documentent le diagnostic, mais aucune ne
+                         cote d'item de management (AZYGOS-4, HypoTA
+                         orthostatique, s'arrete au status). NE PAS confondre
+                         avec le suivant : dire « tout figure dans le commun »
+                         renverrait le lecteur vers un encadre qui, dans ce
+                         cas-la, peut ne pas exister du tout ;
+      - tout commun      le diagnostic est documente, ses grilles cotent bien
+                         du management, mais rien ne lui est propre. L'encadre
+                         commun existe alors forcement, et le contient.
+
+    Le dernier cas n'est rendu qu'a partir de DEUX diagnostics documentes : en
+    dessous, « commun » ne distingue rien et le sous-bloc repeterait l'encadre
+    qui le precede immediatement.
+
+    Chaque sous-bloc est marque sur les GRILLES DE SON DIAGNOSTIC, via
+    `lib_fusion.restreindre()` : « 2 grilles sur 3 » y compte les grilles de
+    ce diagnostic, pas celles de la SSP. Le commun, lui, se marque sur toute
+    la SSP, comme l'anamnese et le status.
+    """
+    commun, propres = lib_fusion.scinder_management(cas_list, diag_par_cas, ssp, attendus)
+    documentes = set(diag_par_cas.values())
+    cotes = {diag_par_cas[c["id"]] for c in cas_list if c["id"] in diag_par_cas
+             and any(genre == "item" for genre, _, _, _ in c["sections"].get("m", []))}
+    titre = ("💊 Management — commun aux diagnostics" if len(documentes) > 1
+             else "💊 Management")
+
+    blocs = []
+    bloc = lib_rendu.encadre("success", titre, [_nettoie(g) for g in commun],
+                             cas_ssp, diag_par_cas)
+    if bloc:
+        blocs.append(bloc)
+
+    for diagnostic in sorted(documentes | set(attendus)):
+        items = [_nettoie(g) for g in propres.get(diagnostic, [])]
+        cas_diag = sorted(c for c, d in diag_par_cas.items() if d == diagnostic)
+        mention = None
+        if not items:
+            if diagnostic not in documentes:
+                mention = SANS_GRILLE
+            elif diagnostic not in cotes:
+                mention = SANS_MANAGEMENT
+            elif len(documentes) < 2:
+                continue
+            else:
+                mention = TOUT_COMMUN
+        bloc = lib_rendu.encadre("success", f"💊 Management — si {diagnostic}",
+                                 lib_fusion.restreindre(items, cas_diag),
+                                 cas_diag, diag_par_cas, mention=mention)
+        if bloc:
+            blocs.append(bloc)
+    return blocs
+
+
+def memento(ssp, cas_list, attendus=()):
     """Le document Markdown complet d'une SSP."""
     cas_ssp = sorted(c["id"] for c in cas_list)
     diag_par_cas = {c["id"]: c["diagnostic"] for c in cas_list if c["diagnostic"]}
@@ -258,6 +376,8 @@ def memento(ssp, cas_list):
         bloc = lib_rendu.encadre(genre, titre, groupes, cas_ssp, diag_par_cas)
         if bloc:
             blocs += [bloc, ""]
+    for bloc in blocs_management(cas_list, cas_ssp, diag_par_cas, ssp, attendus):
+        blocs += [bloc, ""]
 
     # LE TITRE DE NIVEAU 1 EST LA SSP, pas la specialite : un fichier ne porte
     # qu'une SSP, la specialite n'y groupe rien, et 11 des 33 SSP n'ont pas
@@ -309,6 +429,7 @@ def main():
         return 2
     lot = None if argv else lib_ssp.lot_prioritaire()
     groupes = par_ssp(lot)
+    attendus = diagnostics_attendus()
 
     # TOUT EST CONSTRUIT AVANT D'EFFACER QUOI QUE CE SOIT : une exception a la
     # vingtieme SSP laissait sinon 33 fichiers effaces et 19 reecrits.
@@ -320,7 +441,7 @@ def main():
             ignorees.append(ssp)
             continue
         docs[SORTIE / unicodedata.normalize("NFC", f"{PREFIXE}{ssp}.md")] = memento(
-            ssp, groupes[ssp])
+            ssp, groupes[ssp], attendus.get(ssp, ()))
 
     SORTIE.mkdir(parents=True, exist_ok=True)
     nettoyer()

@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -452,3 +463,141 @@ cssclasses:
 > 	- [ ] Cordon induré douloureux
 > 	- [ ] Masses palpables
 > 	- [ ] Sensibilité à la palpation
+
+> [!success] 💊 Management — si Cancer colorectal
+> - [ ] **1. Diagnostics différentiels des troubles du transit**
+> - [ ] **2. Signes d'alarme (Red Flags)**
+> - [ ] **3. Examens complémentaires de première intention**
+> 	- [ ] FSC: recherche anémie ferriprive (saignement chronique)
+> 	- [ ] Ferritine, fer sérique, transferrine
+> 	- [ ] CRP, VS: syndrome inflammatoire
+> 	- [ ] Ionogramme, urée, créatinine: déshydratation
+> 	- [ ] Bilan hépatique: pathologie associée
+> 	- [ ] TSH: dysthyroïdie cause de troubles du transit
+> 	- [ ] Albumine: dénutrition, malabsorption
+> - [ ] **4. Imagerie et endoscopie**
+> 	- [ ] ASP debout face et profil: niveaux hydro-aériques si occlusion
+> 	- [ ] CT abdomino-pelvien avec injection: bilan d'extension si tumeur
+> 	- [ ] Coloscopie totale: examen de référence pour la pathologie colique
+> 	- [ ] Visualisation directe des lésions
+> 	- [ ] Biopsies multiples
+> 	- [ ] Polypectomie thérapeutique
+> 	- [ ] Gastroscopie si méléna: recherche saignement haut
+> 	- [ ] Entéro-IRM ou vidéocapsule si suspicion grêle
+> - [ ] **5. Marqueurs tumoraux et examens spécialisés**
+> 	- [ ] ACE (antigène carcino-embryonnaire): cancer colorectal
+> 	- [ ] CA 19-9: tumeurs digestives
+> 	- [ ] Calprotectine fécale: inflammation intestinale
+> 	- [ ] Test immunologique fécal (recherche de sang occulte dans les selles)
+> 	- [ ] Coproculture si diarrhée fébrile
+> 	- [ ] Recherche parasites si contexte évocateur
+> 	- [ ] Test respiratoire lactose/fructose si malabsorption
+> - [ ] **6. Traitement symptomatique des troubles du transit**
+> - [ ] **7. Surveillance et suivi**
+> 	- [ ] Contrôle biologique après traitement martial
+> 	- [ ] Coloscopie de contrôle selon findings initiaux
+> 	- [ ] Surveillance post-polypectomie selon recommandations
+> 	- [ ] Dépistage famille si cancer colorectal
+> 	- [ ] Éducation signes d'alarme
+> 	- [ ] Suivi nutritionnel si dénutrition
+
+> [!success] 💊 Management — si Colite à Clostridium
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Diarrhée chronique par malabsorption
+> - [ ] **1. Énonce le diagnostic principal**
+> 	- [ ] Insuffisance pancréatique exocrine (sur pancréatites chroniques)
+> - [ ] **2. Évoque les diagnostics différentiels pertinents**
+> - [ ] **3. Propose les examens complémentaires de première intention**
+> 	- [ ] Biologie : FSC, CRP, ionogramme (Na, K, Ca)
+> 	- [ ] Fonction rénale : créatinine, urée
+> 	- [ ] Fonction hépatique : transaminases, GGT, phosphatases alcalines (PAL), albumine
+> 	- [ ] Bilan de coagulation : TP/INR, TCA
+> 	- [ ] Fonction thyroïdienne : TSH
+> - [ ] **4. Propose les examens complémentaires spécifiques**
+> 	- [ ] Élastase fécale (insuffisance pancréatique)
+> 	- [ ] Calprotectine fécale (inflammation intestinale)
+> 	- [ ] Coproculture et recherche de parasites
+> 	- [ ] US abdominal ou CT abdominal
+> 	- [ ] Coloscopie avec biopsies
+> - [ ] **5. Propose une prise en charge thérapeutique adaptée**
+> - [ ] **6. Organise le suivi et reconnaît les complications**
+> 	- [ ] Surveillance de l'état nutritionnel
+> 	- [ ] Dépistage du cancer colorectal si indiqué
+> 	- [ ] Orientation spécialisée si nécessaire (gastro-entérologie)
+> 	- [ ] Hospitalisation si déshydratation sévère
+
+> [!success] 💊 Management — si Diarrhée du voyageur
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Déshydratation
+> - [ ] **1. Énonce le diagnostic principal**
+> 	- [ ] Déshydratation aiguë
+> - [ ] **2. Évoque les diagnostics différentiels pertinents**
+> - [ ] **3. Propose une prise en charge thérapeutique adaptée**
+> - [ ] **4. Propose les examens complémentaires appropriés**
+> 	- [ ] Ionogramme sanguin (Na, K, Cl)
+> 	- [ ] Fonction rénale (créatinine, urée)
+> 	- [ ] FSC (hémoconcentration : Hb, Ht)
+> 	- [ ] Glycémie
+> 	- [ ] Analyse d'urine si suspicion d'infection
+> - [ ] **5. Organise le suivi et l'orientation**
+> 	- [ ] Critères d'hospitalisation définis
+> 	- [ ] Transfert à l'hôpital si nécessaire
+> 	- [ ] Surveillance de la réhydratation
+> 	- [ ] Éducation des parents/soignants
+
+> [!success] 💊 Management — si MICI (Crohn / RCUH)
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens complémentaires urgents**
+> 	- [ ] Examen rectal
+> 	- [ ] Recherche de sang occulte dans les selles
+> 	- [ ] FSC, électrolytes
+> 	- [ ] VS, CRP
+> - [ ] **3. Examens microbiologiques**
+> 	- [ ] Coproculture; microscopie des selles pour œufs et parasites
+> - [ ] **4. Examens d'imagerie et endoscopie**
+> 	- [ ] US abdominale
+> 	- [ ] Radiographie abdominale simple
+> 	- [ ] Coloscopie
+> - [ ] **5. Communication avec le patient**
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **6. Conseil et prévention**
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Réaction appropriée au défi concernant le travail
+> 	- [ ] Discussion sur l'importance du dépistage familial (cancer colorectal)
+
+> [!success] 💊 Management — si Rectocolite ulcéro-hémorragique (RCUH)
+> - [ ] **1. Hypothèse diagnostique principale**
+> 	- [ ] Rectocolite ulcéro-hémorragique (RCUH)
+> 	- [ ] Justification basée sur les symptômes
+> 	- [ ] Explication adaptée à la patiente
+> - [ ] **2. Diagnostics différentiels évoqués**
+> 	- [ ] Maladie de Crohn
+> 	- [ ] Colite infectieuse (bactérienne, parasitaire)
+> 	- [ ] Colite médicamenteuse (AINS)
+> 	- [ ] Carcinome colorectal
+> - [ ] **3. Examens complémentaires**
+> 	- [ ] Bilan biologique (FSC, CRP, électrolytes, fonction rénale)
+> 	- [ ] Cultures de selles et parasitologie
+> 	- [ ] Calprotectine fécale
+> 	- [ ] Colonoscopie avec biopsies
+> - [ ] **4. Prise en charge immédiate**
+> 	- [ ] Critères d'hospitalisation évalués
+> 	- [ ] Réhydratation IV
+> 	- [ ] Corticothérapie IV si colite sévère
+> 	- [ ] Arrêt des AINS
+> - [ ] **5. Plan de suivi**
+> 	- [ ] Consultation gastro-entérologie
+> 	- [ ] Surveillance des complications
+> 	- [ ] Protocole de dépistage du cancer colorectal
+> 	- [ ] Soutien psychologique
+> - [ ] **6. Communication avec la patiente**
+> 	- [ ] Réponse à la question sur le cancer
+> 	- [ ] Explication du caractère chronique de la maladie
+> 	- [ ] Rassurance sur les options thérapeutiques
+> 	- [ ] Information sur les groupes de soutien

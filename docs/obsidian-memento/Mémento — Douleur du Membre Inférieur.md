@@ -16,8 +16,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -40,6 +39,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -282,3 +293,110 @@ cssclasses:
 > 	- [ ] Tachyarythmie
 > 	- [ ] Éclat B2 pulmonaire
 > 	- [ ] Pas de signes d'insuffisance cardiaque droite
+
+> [!success] 💊 Management — commun aux diagnostics
+> - [ ] **1. Diagnostics différentiels *(2 grilles sur 3)***
+
+> [!success] 💊 Management — si AOMI
+> - [ ] **1. Examens complémentaires *(1 grille sur 2)***
+> 	- [ ] Echo-Doppler artériel membres inférieurs
+> 	- [ ] Mesure index pression systolique (IPS)
+> 	- [ ] Bilan lipidique complet
+> 	- [ ] Glycémie à jeun, HbA1c
+> 	- [ ] Créatinine, DFG
+> 	- [ ] ECG de repos
+> 	- [ ] Test de marche sur tapis
+> - [ ] **2. Classification de l'artériopathie (Leriche-Fontaine) *(1 grille sur 2)***
+> 	- [ ] Stade I: Asymptomatique
+> 	- [ ] Stade II: Claudication intermittente
+> 	- [ ] Stade IIa: > 200m
+> 	- [ ] Stade IIb: < 200m
+> 	- [ ] Stade III: Douleur de repos
+> 	- [ ] Stade IV: Troubles trophiques
+> - [ ] **3. Prise en charge thérapeutique *(1 grille sur 2)***
+> - [ ] **4. Surveillance et suivi *(1 grille sur 2)***
+> 	- [ ] Contrôle facteurs de risque CV
+> 	- [ ] IPS annuel
+> 	- [ ] Echo-Doppler si aggravation
+> 	- [ ] Dépistage autres localisations (coronaire, carotidienne)
+> 	- [ ] Éducation thérapeutique
+> - [ ] **5. Diagnostic principal et stadification *(1 grille sur 2)***
+> 	- [ ] Artériopathie oblitérante des membres inférieurs (AOMI)
+> 	- [ ] Claudication intermittente du mollet droit
+> 	- [ ] Classification Leriche-Fontaine stade 2
+> 	- [ ] Périmètre de marche 150m
+> 	- [ ] Absence de signes d'ischémie critique
+> - [ ] **6. Diagnostic différentiel de la claudication *(1 grille sur 2)***
+> - [ ] **7. Examens complémentaires de première intention *(1 grille sur 2)***
+> 	- [ ] Index de pression systolique cheville-bras (IPS)
+> 	- [ ] Écho-Doppler artériel membres inférieurs
+> 	- [ ] Bilan lipidique complet
+> 	- [ ] Glycémie à jeun, HbA1c
+> 	- [ ] Créatinine, DFG
+> 	- [ ] FSC, plaquettes
+> - [ ] **8. Examens d'imagerie vasculaire *(1 grille sur 2)***
+> 	- [ ] Test de marche sur tapis roulant
+> 	- [ ] Angio-CT membres inférieurs si indication
+> 	- [ ] Angio-IRM si contre-indication produit contraste
+> 	- [ ] Artériographie si geste endovasculaire envisagé
+> 	- [ ] Recherche autres localisations athéromateuses
+> - [ ] **9. Traitement médical de l'AOMI *(1 grille sur 2)***
+> - [ ] **10. Mesures hygiéno-diététiques *(1 grille sur 2)***
+> 	- [ ] Sevrage tabagique impératif
+> 	- [ ] Régime méditerranéen
+> 	- [ ] Activité physique régulière
+> 	- [ ] Réduction pondérale si surpoids
+> 	- [ ] Limitation alcool
+> 	- [ ] Soins des pieds
+> - [ ] **11. Indications de revascularisation *(1 grille sur 2)***
+> 	- [ ] Échec traitement médical optimal 3-6 mois
+> 	- [ ] Claudication invalidante malgré réhabilitation
+> 	- [ ] Ischémie critique (stade 3-4)
+> 	- [ ] Lésions accessibles à revascularisation
+> 	- [ ] Rapport bénéfice/risque favorable
+> 	- [ ] Choix endovasculaire vs chirurgie selon lésions
+> - [ ] **12. Surveillance et prévention secondaire *(1 grille sur 2)***
+> 	- [ ] Suivi clinique régulier
+> 	- [ ] IPS annuel
+> 	- [ ] Contrôle facteurs de risque
+> 	- [ ] Dépistage autres localisations
+> 	- [ ] Observance thérapeutique
+> 	- [ ] Éducation patient
+
+> [!success] 💊 Management — si Dermohypodermite / Érysipèle
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Embolie pulmonaire
+> - [ ] **1. Stratégie diagnostique selon probabilité clinique**
+> 	- [ ] Probabilité forte (Wells ≥ 2): Echo-Doppler d'emblée
+> 	- [ ] Si écho négatif mais forte suspicion: répéter à J7
+> 	- [ ] D-dimères: peu utiles si probabilité forte
+> 	- [ ] Si dyspnée: angio-CT thoracique ou scintigraphie V/Q
+> - [ ] **2. Examens complémentaires urgents**
+> 	- [ ] Echo-Doppler veineux membres inférieurs
+> 	- [ ] D-dimères (si probabilité faible/intermédiaire)
+> 	- [ ] Angio-CT thoracique (si dyspnée)
+> 	- [ ] ECG, radiographie thoracique
+> 	- [ ] Gazométrie artérielle
+> 	- [ ] Bilan de coagulation (TP, TCA)
+> 	- [ ] FSC, plaquettes, créatinine
+> - [ ] **3. Traitement anticoagulant**
+> - [ ] **4. Critères d'hospitalisation**
+> 	- [ ] Embolie pulmonaire associée
+> 	- [ ] TVP massive/phlegmatia
+> 	- [ ] Risque hémorragique élevé
+> 	- [ ] Insuffisance rénale sévère
+> 	- [ ] Contexte social défavorable
+> 	- [ ] Mauvaise observance prévisible
+> - [ ] **5. Bilan étiologique de la MTEV**
+> 	- [ ] Recherche cancer occulte (> 50 ans, idiopathique)
+> 	- [ ] Bilan thrombophilie si < 50 ans ou récidive
+> 	- [ ] Syndrome des antiphospholipides
+> 	- [ ] Mutation facteur V Leiden, facteur II
+> 	- [ ] Déficit en protéines C, S, antithrombine
+
+> [!success] 💊 Management — si Fracture du membre inférieur
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Syndrome des loges
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

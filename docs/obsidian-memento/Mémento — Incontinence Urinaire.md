@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -149,3 +160,29 @@ cssclasses:
 > 	- [ ] Sensibilité périnéale
 > 	- [ ] Réflexes des membres inférieurs
 > 	- [ ] Force musculaire des membres inférieurs
+
+> [!success] 💊 Management
+> - [ ] **1. Diagnostic principal**
+> 	- [ ] Incontinence urinaire d'effort (probable)
+> - [ ] **2. Diagnostics différentiels**
+> 	- [ ] Vessie hyperactive (syndrome d'hyperactivité vésicale)
+> 	- [ ] Incontinence urinaire mixte
+> 	- [ ] Incontinence par regorgement (vessie de trop-plein)
+> 	- [ ] Vessie neurogène
+> 	- [ ] Fistule vésico-vaginale (post-chirurgicale)
+> - [ ] **3. Examens complémentaires**
+> 	- [ ] Calendrier mictionnel (3 jours)
+> 	- [ ] Bandelette urinaire + ECBU si positif
+> 	- [ ] Mesure du résidu post-mictionnel (échographie)
+> 	- [ ] Glycémie à jeun (contrôle diabète)
+> 	- [ ] Questionnaire de qualité de vie (ICIQ-SF)
+> 	- [ ] Pad-test (quantification objective des fuites)
+> 	- [ ] Examen gynécologique complet (atrophie, prolapsus)
+> 	- [ ] Bilan urodynamique si échec du traitement conservateur
+> 	- [ ] Cystoscopie si hématurie ou suspicion de pathologie vésicale
+> - [ ] **4. Prise en charge thérapeutique**
+> - [ ] **5. Suivi et orientation**
+> 	- [ ] Contrôle à 3 mois avec calendrier mictionnel
+> 	- [ ] Orientation gynécologie/urologie si nécessaire
+> 	- [ ] Évaluation de l'efficacité du traitement conservateur
+> 	- [ ] Adaptation thérapeutique selon évolution

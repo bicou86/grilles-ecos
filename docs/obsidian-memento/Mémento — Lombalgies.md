@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -589,3 +600,250 @@ cssclasses:
 > 	- [ ] Tonus sphinctérien
 > 	- [ ] Palpation de la prostate
 > 	- [ ] Recherche de sang
+
+> [!success] 💊 Management — si Cancer prostatique métastatique
+> - [ ] **1. Examens d'imagerie**
+> 	- [ ] Échographie résidu post-mictionnel
+> 	- [ ] Échographie rénale
+> 	- [ ] Imagerie selon PSA (CT TAP, scintigraphie osseuse, PET-PSMA)
+> - [ ] **2. Examens de laboratoire**
+> 	- [ ] FSC
+> 	- [ ] Fonction rénale
+> 	- [ ] PSA
+> 	- [ ] Phosphatases alcalines
+> 	- [ ] Calcium
+> - [ ] **3. Hypothèse diagnostique principale**
+> 	- [ ] Cancer prostatique métastatique
+> 	- [ ] Justification basée sur l'anamnèse et l'examen
+> - [ ] **4. Diagnostics différentiels évoqués**
+> 	- [ ] Syndrome de la queue de cheval
+> 	- [ ] Métastases osseuses d'autre origine
+> 	- [ ] Myélome multiple
+> 	- [ ] Sténose spinale
+> 	- [ ] Infection (ostéomyélite, abcès épidural)
+> - [ ] **5. Prise en charge proposée**
+> 	- [ ] Référer à l'urologue
+> 	- [ ] Antalgie adaptée
+> 	- [ ] Évaluation urgence relative
+
+> [!success] 💊 Management — si Colique néphrétique gauche
+> - [ ] **1. Examens complémentaires urgents**
+> 	- [ ] Bandelette urinaire (confirmer hématurie)
+> 	- [ ] ECBU avec recherche de cristaux
+> 	- [ ] Créatinine, urée (fonction rénale)
+> 	- [ ] Ionogramme sanguin
+> 	- [ ] FSC, CRP (éliminer infection)
+> 	- [ ] Échographie rénale et vésicale en urgence
+> 	- [ ] CT abdomen sans contraste (gold standard) si doute
+> - [ ] **2. Diagnostic principal**
+> - [ ] **3. Diagnostics différentiels**
+> 	- [ ] Pyélonéphrite aiguë
+> 	- [ ] Fracture vertébrale ostéoporotique
+> 	- [ ] Lombalgie musculaire
+> 	- [ ] Pathologie gynécologique (kyste ovarien tordu)
+> 	- [ ] Anévrisme de l'aorte abdominale
+> 	- [ ] Appendicite rétrocæcale (si à droite)
+> 	- [ ] Diverticulite sigmoïdienne
+> - [ ] **4. Prévention des récidives**
+> 	- [ ] Hydratation abondante (> 2L/jour)
+> 	- [ ] Régime adapté selon type de calcul
+> 	- [ ] Réduction apports sodés
+> 	- [ ] Normalisation apports calciques
+> 	- [ ] Traitement spécifique selon lithiase
+> - [ ] **5. Critères d'hospitalisation**
+> 	- [ ] Signes infectieux associés (urgence)
+> 	- [ ] Rein unique fonctionnel
+> 	- [ ] Insuffisance rénale aiguë
+> 	- [ ] Douleur réfractaire au traitement
+> 	- [ ] Calcul > 10 mm
+> 	- [ ] Obstruction bilatérale
+> - [ ] **6. Prise en charge thérapeutique ambulatoire**
+> - [ ] **7. Prise en charge à distance**
+> 	- [ ] Analyse du calcul si récupéré
+> 	- [ ] Bilan métabolique à 6 semaines
+> 	- [ ] Calcium, phosphate, acide urique sanguins
+> 	- [ ] Calciurie, phosphaturie, uraturie des 24h
+> 	- [ ] PH urinaire, densité urinaire
+> - [ ] **8. Information et éducation**
+> 	- [ ] Expliquer l'évolution naturelle
+> 	- [ ] Calcul 90%
+> 	- [ ] Importance de filtrer les urines
+> 	- [ ] Signes d'alerte nécessitant reconsultation
+> 	- [ ] Remise de documentation écrite
+
+> [!success] 💊 Management — si Colique néphrétique sur lithiase
+> - [ ] **1. Prévention des récidives**
+> 	- [ ] Analyse spectrophotométrique du calcul expulsé
+> 	- [ ] Bilan métabolique à distance (calcémie, uricémie, oxalurie)
+> 	- [ ] Hyperhydratation: 2-3L/jour à vie
+> 	- [ ] Régime adapté selon composition du calcul
+> 	- [ ] Oxalate de calcium: limiter oxalates (chocolat, thé)
+> 	- [ ] Acide urique: alcalinisation urines, allopurinol
+> 	- [ ] Phosphate de calcium: acidification urines
+> 	- [ ] Surveillance régulière: échographie annuelle
+> - [ ] **2. Diagnostics différentiels de la colique néphrétique**
+> - [ ] **3. Examens complémentaires en urgence**
+> 	- [ ] Bandelette urinaire: hématurie dans 90% des cas
+> 	- [ ] ECBU: hématurie microscopique, cristallurie, pH urinaire
+> 	- [ ] Créatinine, urée: fonction rénale
+> 	- [ ] Ionogramme sanguin, calcémie
+> 	- [ ] FSC, CRP: syndrome inflammatoire si complication
+> 	- [ ] Échographie rénale et vésicale: dilatation des cavités pyélocalicielles
+> - [ ] **4. Imagerie pour confirmation diagnostique**
+> 	- [ ] TDM abdomino-pelvien sans injection (examen de référence)
+> 	- [ ] Visualise 95% des calculs radio-opaques et radio-transparents
+> 	- [ ] Localise précisément le calcul
+> 	- [ ] Évalue le retentissement (dilatation)
+> 	- [ ] Mesure la taille du calcul
+> 	- [ ] ASP (Abdomen Sans Préparation): calculs radio-opaques seulement (80%)
+> 	- [ ] Échographie: alternative si contre-indication TDM (grossesse)
+> - [ ] **5. Traitement symptomatique de la crise**
+> - [ ] **6. Indications d'hospitalisation**
+> 	- [ ] Colique néphrétique fébrile (urgence urologique)
+> 	- [ ] Anurie (obstruction bilatérale ou rein unique)
+> 	- [ ] Colique néphrétique hyperalgique résistante
+> 	- [ ] Insuffisance rénale aiguë obstructive
+> 	- [ ] Terrain particulier: grossesse, rein unique, transplanté
+> 	- [ ] Impossibilité de prise en charge ambulatoire
+> - [ ] **7. Traitement urologique spécifique**
+> 	- [ ] Calculs < 5mm: expulsion spontanée dans 70% des cas
+> 	- [ ] Calculs 5-10mm: expulsion dans 50% des cas
+> 	- [ ] Lithotripsie extracorporelle (LEC) si calcul < 20mm
+> 	- [ ] Urétéroscopie avec extraction ou fragmentation laser
+> 	- [ ] Néphrostomie percutanée si infection + obstruction
+> 	- [ ] Chirurgie ouverte exceptionnelle
+> - [ ] **8. Complications à rechercher**
+
+> [!success] 💊 Management — si Fracture vertébrale
+> - [ ] **1. Examens d'imagerie**
+> 	- [ ] Radiographie du rachis lombaire (face et profil)
+> 	- [ ] Densitométrie osseuse (DMO)
+> 	- [ ] IRM rachidienne si doute diagnostique
+> 	- [ ] Scintigraphie osseuse si suspicion métastases multiples
+> - [ ] **2. Diagnostic principal**
+> - [ ] **3. Diagnostics différentiels**
+> 	- [ ] Fracture vertébrale traumatique
+> 	- [ ] Métastase vertébrale (antécédent de cancer du sein)
+> 	- [ ] Fracture pathologique sur autre cause (myélome, hyperparathyroïdie)
+> 	- [ ] Spondylodiscite infectieuse
+> 	- [ ] Lombalgie mécanique commune
+> - [ ] **4. Examens complémentaires biologiques**
+> 	- [ ] FSC, CRP, VS (exclusion processus inflammatoire)
+> 	- [ ] Phosphatases alcalines (PAL), Gamma-GT (si PAL élevées)
+> 	- [ ] Calcémie, phosphatémie
+> 	- [ ] 25-OH vitamine D
+> 	- [ ] TSH
+> 	- [ ] Créatinine (fonction rénale, ostéopathie rénale)
+> 	- [ ] Électrophorèse des protéines sériques (si suspicion myélome)
+> - [ ] **5. Prise en charge thérapeutique**
+> - [ ] **6. Suivi et surveillance**
+> 	- [ ] Contrôle clinique à 4-6 semaines
+> 	- [ ] Contrôle radiologique si aggravation
+> 	- [ ] DMO de contrôle à 2 ans
+> 	- [ ] Surveillance observance traitement
+> 	- [ ] Dépistage nouvelles fractures
+
+> [!success] 💊 Management — si Hernie discale
+> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 2)***
+> - [ ] **2. Examens complémentaires urgents *(1 grille sur 2)***
+> 	- [ ] Examen rectal
+> - [ ] **3. Examens d'imagerie *(1 grille sur 2)***
+> 	- [ ] IRM du rachis
+> 	- [ ] Radiographie du rachis
+> 	- [ ] CT du rachis
+> - [ ] **4. Examens spécialisés *(1 grille sur 2)***
+> 	- [ ] Absorptiométrie biphotonique (DEXA)
+> - [ ] **5. Communication avec le patient *(1 grille sur 2)***
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **6. Conseil et prévention *(1 grille sur 2)***
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Réaction appropriée au défi concernant la dépendance aux antalgiques
+> - [ ] **7. Diagnostic principal *(1 grille sur 2)***
+> - [ ] **8. Diagnostics différentiels *(1 grille sur 2)***
+> 	- [ ] Protrusion discale sans hernie franche
+> 	- [ ] Canal lombaire étroit
+> 	- [ ] Spondylolisthésis
+> 	- [ ] Fracture vertébrale
+> 	- [ ] Contracture musculaire paravertébrale
+> 	- [ ] Processus inflammatoire/infectieux (spondylodiscite)
+> 	- [ ] Processus tumoral (métastase, tumeur primitive)
+> - [ ] **9. Prise en charge thérapeutique *(1 grille sur 2)***
+> - [ ] **10. Examens complémentaires *(1 grille sur 2)***
+> 	- [ ] Examens biologiques pour exclure processus inflammatoire (FSC, CRP, VS)
+> 	- [ ] IRM lombaire selon évolution clinique et déficit neurologique
+> 	- [ ] Radiographie lombaire si suspicion de spondylolisthésis
+> 	- [ ] EMG si doute diagnostique après 6 semaines
+> - [ ] **11. Orientation et suivi *(1 grille sur 2)***
+> 	- [ ] Orientation orthopédie/neurochirurgie selon évolution
+> 	- [ ] Contrôle à 2 semaines
+> 	- [ ] IRM si pas d'amélioration à 4-6 semaines
+> 	- [ ] Arrêt de travail selon profession
+> 	- [ ] Éducation sur l'évolution naturelle favorable (90% à 6 semaines)
+> - [ ] **12. Prévention des récidives *(1 grille sur 2)***
+> 	- [ ] École du dos
+> 	- [ ] Renforcement musculaire après phase aiguë
+> 	- [ ] Ergonomie au travail
+> 	- [ ] Perte de poids si surcharge pondérale
+> 	- [ ] Activité physique régulière
+
+> [!success] 💊 Management — si Métastases osseuses
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Ostéoporose
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Spondylarthrite ankylosante
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens complémentaires urgents**
+> 	- [ ] Examen génital
+> 	- [ ] FSC, VS
+> - [ ] **3. Examens d'imagerie**
+> 	- [ ] Radiographie du rachis et des articulations sacro-iliaques
+> 	- [ ] Radiographie des mains et du genou droit
+> - [ ] **4. Communication avec le patient**
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **5. Conseil et prévention**
+> 	- [ ] Conseil sur les drogues récréatives
+> 	- [ ] Conseil sur les pratiques sexuelles sûres
+> 	- [ ] Réaction appropriée au défi concernant le manque d'exercice
+> - [ ] **6. Examens immunologiques**
+> 	- [ ] Facteur rhumatoïde, anticorps anti-nucléaires, HLA-B27
+> - [ ] **7. Examens microbiologiques**
+> 	- [ ] Tests d'amplification des acides nucléiques pour chlamydia et gonocoque
+> 	- [ ] Cultures de selles et d'urine
+> 	- [ ] Test VIH
+
+> [!success] 💊 Management — si Suspicion de myélome multiple (confirmation par ponction médullaire)
+> - [ ] **1. Radiographie conventionnelle**
+> - [ ] **2. Fracture atraumatique**
+> - [ ] **3. Indice de maladie osseuse**
+> - [ ] **4. Bilan complémentaire nécessaire**
+> - [ ] **5. Résultats de laboratoire**
+> - [ ] **6. Protéines sériques**
+> - [ ] **7. Résultat du CT**
+> - [ ] **8. Commentaire des résultats**
+> - [ ] **9. Constellation CRAB**
+> - [ ] **10. Gammapathie monoclonale (IgG) avec restriction des chaînes légères**
+> - [ ] **11. Diagnostic de travail**
+> - [ ] **12. Affections ostéométaboliques**
+> - [ ] **13. Ostéoporose primaire**
+> - [ ] **14. Endocriniennes**
+> - [ ] **15. Métaboliques / nutritionnelles**
+> - [ ] **16. Médicamenteuses**
+> - [ ] **17. Systémiques / inflammatoires**
+> - [ ] **18. Autres**
+> - [ ] **19. Causes infectieuses**
+> - [ ] **20. Spondylodiscite / ostéomyélite**
+> - [ ] **21. Causes néoplasiques**
+> - [ ] **22. Myélome multiple**
+> - [ ] **23. Métastases osseuses**
+> - [ ] **24. Tumeurs osseuses primitives**
+> - [ ] **25. Autres néoplasies hématologiques**

@@ -103,3 +103,71 @@ def apparier(cas_list, prefixe, ssp=None):
             if genre == "item":
                 entrees.append((titre, sous or [], cas["id"]))
     return _fusionner(entrees, ssp)
+
+
+def scinder_management(cas_list, diag_par_cas, ssp=None, attendus=()):
+    """Management -> (items communs a tous les diagnostics, {diagnostic: items propres}).
+
+    L'anamnese d'une SSP est presque superposable d'un cas a l'autre ; son
+    management ne l'est pas — il depend du diagnostic. Un item porte par TOUS
+    les diagnostics de la SSP est commun. Les autres vont dans le sous-bloc de
+    chaque diagnostic qui les porte : un item partage par deux diagnostics sur
+    cinq apparait donc dans deux sous-blocs, ce qui est voulu.
+
+    `attendus` — decision de l'auteur du 2026-08-15 — est la liste des
+    diagnostics que la SSP DEVRAIT couvrir (champ `diagnostics` de
+    docs/ecos-priorites-2026.yaml). Chacun recoit une entree, meme si aucune
+    grille du corpus ne le documente : le memento doit dire a l'etudiant ce
+    qu'il devrait savoir, pas seulement ce que le corpus contient. Les
+    attendus n'entrent PAS dans le calcul du commun — les y faire entrer
+    viderait celui-ci entierement, puisqu'aucune grille ne porte un diagnostic
+    que le corpus ignore.
+
+    Une entree vide est donc ambigue ici : elle dit « aucun item PROPRE », que
+    ce soit faute de grille ou parce que tout le management de ce diagnostic
+    est commun. Les deux se distinguent en lisant `diag_par_cas`, ce que fait
+    le rendu — plutot que de rendre deux structures que l'appariement n'a
+    aucun moyen d'interpreter.
+
+    UN ITEM DONT AUCUNE GRILLE PORTEUSE N'A DE DIAGNOSTIC RESOLU part dans le
+    commun : le renvoyer vers un sous-bloc est impossible (il n'y en a aucun a
+    nommer) et l'ecarter le supprimerait du memento. Meme traitement quand la
+    SSP entiere n'a aucun diagnostic resolu.
+    """
+    apparies = apparier(cas_list, "m", ssp)
+    diagnostics = {diag_par_cas[c["id"]] for c in cas_list if c["id"] in diag_par_cas}
+
+    commun, propres = [], {d: [] for d in diagnostics | set(attendus)}
+    for item in apparies:
+        porteurs = {diag_par_cas[c] for c in item["cas"] if c in diag_par_cas}
+        if not porteurs or porteurs == diagnostics:
+            commun.append(item)
+        else:
+            for d in porteurs:
+                propres[d].append(item)
+    return commun, propres
+
+
+def restreindre(items, cas_cible):
+    """Vue d'items limitee aux grilles de `cas_cible`, sans toucher aux originaux.
+
+    Un item apparie porte les grilles de TOUTE la SSP. Dans un sous-bloc de
+    diagnostic, le lire tel quel ferait dire a `lib_rendu.marque()` « 3 grilles
+    sur 2 » : un numerateur compte sur la SSP, un denominateur compte sur le
+    seul diagnostic. La vue restreinte rend les deux comparables.
+
+    Un item qu'aucune grille cible ne porte disparait de la vue, et un
+    sous-item non plus porte — « 0 grille sur 2 » ne dit rien. Les originaux
+    sont recopies, pas modifies : les memes items servent plusieurs sous-blocs.
+    """
+    cible = set(cas_cible)
+    vue = []
+    for item in items:
+        porteurs = set(item["cas"]) & cible
+        if not porteurs:
+            continue
+        sous = [{"titre": s["titre"], "cas": set(s["cas"]) & cible}
+                for s in item.get("sous", [])]
+        vue.append({"titre": item["titre"], "cas": porteurs,
+                    "sous": [s for s in sous if s["cas"]]})
+    return vue

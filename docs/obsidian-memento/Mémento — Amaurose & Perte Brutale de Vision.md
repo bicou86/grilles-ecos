@@ -16,8 +16,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -40,6 +39,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -398,3 +409,98 @@ cssclasses:
 > - [ ] **52. Cardiaque *(Horton (artérite à cellules géantes))***
 > 	- [ ] Auscultation des 4 foyers
 > 	- [ ] Auscultation des carotides des deux côtés
+
+> [!success] 💊 Management — si AVC
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens complémentaires urgents**
+> 	- [ ] Oxymétrie de pouls
+> 	- [ ] ECG et monitoring cardiaque
+> 	- [ ] FSC
+> 	- [ ] TP, TCA
+> 	- [ ] Électrolytes, glucose sérique
+> 	- [ ] Troponine
+> - [ ] **3. Imagerie cérébrale**
+> 	- [ ] CT cérébral sans contraste
+> 	- [ ] IRM cérébrale
+> - [ ] **4. Communication avec le patient**
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **5. Conseil et soutien**
+> 	- [ ] Réaction appropriée au défi concernant la peur de mourir
+
+> [!success] 💊 Management — si Cataracte
+> - [ ] **1. Diagnostic principal**
+> 	- [ ] Cataracte sénile bilatérale
+> 	- [ ] Type nucléaire prédominant
+> - [ ] **2. Diagnostics différentiels**
+> - [ ] **3. Examens complémentaires**
+> 	- [ ] Biométrie oculaire (si chirurgie envisagée)
+> 	- [ ] Échographie oculaire mode B (si fond d'œil non visible)
+> 	- [ ] OCT maculaire (pour exclure pathologie maculaire associée)
+> 	- [ ] Glycémie (dépistage diabète)
+> 	- [ ] Bilan préopératoire si chirurgie planifiée
+> - [ ] **4. Traitement**
+> - [ ] **5. Information du patient**
+> 	- [ ] Explication de la nature de la cataracte
+> 	- [ ] Rassurer : pas la même pathologie que son père (DMLA)
+> 	- [ ] Excellent pronostic avec la chirurgie (>95% de succès)
+> 	- [ ] Risques chirurgicaux faibles mais existants
+> 	- [ ] Récupération visuelle habituelle en quelques semaines
+> - [ ] **6. Suivi et orientation**
+> 	- [ ] Référence en ophtalmologie pour évaluation chirurgicale
+> 	- [ ] Suivi régulier en attendant la chirurgie
+> 	- [ ] Surveillance de la progression
+> 	- [ ] Contrôle postopératoire après chirurgie
+
+> [!success] 💊 Management — si DMLA
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Décollement de rétine
+> - [ ] **1. Diagnostic de travail**
+> - [ ] **2. OCT**
+> - [ ] **3. Échographie oculaire**
+> - [ ] **4. Information sur le diagnostic de travail**
+> - [ ] **5. Contacter la chirurgie vitréo-rétinienne**
+> - [ ] **6. Examens diagnostiques complémentaires**
+> - [ ] **7. Consignes préopératoires**
+
+> [!success] 💊 Management — si Horton (artérite à cellules géantes)
+> - [ ] **1. Demande de laboratoire**
+> 	- [ ] Formule sanguine simple (FSS)
+> 	- [ ] Vitesse de sédimentation (VS)
+> 	- [ ] CRP
+> - [ ] **2. Demande de biopsie de l'artère temporale**
+> - [ ] **3. Évoque la nécessité d'exclure une dissection aortique en proposant**
+> 	- [ ] Imagerie
+> 	- [ ] Prise de tension aux 2 bras
+> - [ ] **4. Évoque le diagnostic d'artérite de Horton / maladie de Horton / artérite temporale**
+> - [ ] **5. Propose l'introduction immédiate d'une corticothérapie**
+> - [ ] **6. Propose en parallèle l'introduction de**
+> 	- [ ] Calcium / vitamine D
+> 	- [ ] Protection gastrique
+> - [ ] **7. Propose une hospitalisation**
+
+> [!success] 💊 Management — si OACR / Occlusion rétinienne
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Occlusion de l'artère centrale de la rétine (embolique)
+> - [ ] **1. Imagerie cérébrale**
+> - [ ] **2. Laboratoire**
+> - [ ] **3. Hémogramme**
+> - [ ] **4. Paramètres inflammatoires**
+> - [ ] **5. ECG**
+> - [ ] **6. Diagnostic de travail**
+> - [ ] **7. Pas de thérapie fondée sur des preuves**
+> - [ ] **8. Adressage Stroke Center**
+> - [ ] **9. Investigations complémentaires**
+> - [ ] **10. Échocardiographie**
+> - [ ] **11. Doppler des carotides**
+> - [ ] **12. ECG de longue durée**
+> - [ ] **13. Prévention secondaire**
+> - [ ] **14. Anticoagulation orale**
+> - [ ] **15. Statine**
+> - [ ] **16. Contrôle de la tension artérielle**
+> - [ ] **17. Arrêt du tabac**

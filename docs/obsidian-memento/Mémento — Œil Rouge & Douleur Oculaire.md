@@ -16,8 +16,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -40,6 +39,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -357,3 +368,93 @@ cssclasses:
 > - [ ] **55. Acuité visuelle de loin OU de près *(Kératite herpétique)***
 > - [ ] **56. Propose une ophtalmoscopie directe *(Kératite herpétique)***
 > - [ ] **57. Propose un examen à la lampe à fente *(Kératite herpétique)***
+
+> [!success] 💊 Management — si Conjonctivite allergique
+> - [ ] **1. Diagnostic principal évoqué**
+> 	- [ ] Conjonctivite allergique saisonnière
+> 	- [ ] Arguments en faveur du diagnostic
+> 	- [ ] Corrélation avec le terrain atopique
+> - [ ] **2. Diagnostics différentiels pertinents**
+> - [ ] **3. Examens complémentaires proposés**
+> 	- [ ] Prélèvement conjonctival pour bactériologie
+> 	- [ ] Recherche de Chlamydia si indiqué
+> 	- [ ] Tests allergologiques cutanés (prick tests)
+> 	- [ ] IgE spécifiques si nécessaire
+> 	- [ ] Frottis conjonctival (éosinophiles)
+> - [ ] **4. Traitement antiallergique local**
+> 	- [ ] Antihistaminiques topiques (lévocabastine, azélastine)
+> 	- [ ] Stabilisateurs de mastocytes (cromoglycate, nédocromil)
+> 	- [ ] Associations antihistaminique/stabilisateur
+> 	- [ ] Collyres corticoïdes en cure courte si sévère
+> 	- [ ] Larmes artificielles
+> 	- [ ] Compresses froides
+> - [ ] **5. Traitement systémique**
+> 	- [ ] Antihistaminiques oraux (cétirizine, loratadine)
+> 	- [ ] Optimisation du traitement de l'asthme
+> 	- [ ] Corticoïdes nasaux si rhinite associée
+> - [ ] **6. Mesures préventives et conseils**
+> 	- [ ] Éviction des allergènes identifiés
+> 	- [ ] Port de lunettes de soleil
+> 	- [ ] Lavage des cheveux le soir
+> 	- [ ] Fenêtres fermées en période pollinique
+> 	- [ ] Arrêt temporaire des lentilles
+> 	- [ ] Hygiène palpébrale
+> 	- [ ] Sevrage tabagique conseillé
+> - [ ] **7. Éducation sur les IST**
+> 	- [ ] Information sur les risques
+> 	- [ ] Importance de la protection
+> 	- [ ] Proposition de dépistage IST
+> 	- [ ] Conseils de prévention
+> - [ ] **8. Planification du suivi**
+> 	- [ ] Réévaluation si persistance des symptômes
+> 	- [ ] Consultation ophtalmologique si aggravation
+> 	- [ ] Suivi allergologique
+> 	- [ ] Contrôle de l'observance
+> - [ ] **9. Critères de référence spécialisée**
+> 	- [ ] Baisse d'acuité visuelle
+> 	- [ ] Douleur oculaire importante
+> 	- [ ] Photophobie marquée
+> 	- [ ] Échec du traitement
+> 	- [ ] Suspicion de complication
+
+> [!success] 💊 Management — si Glaucome aigu
+> - [ ] **1. Laboratoire de routine**
+> - [ ] **2. Diagnostic de travail**
+> - [ ] **3. Baisse médicamenteuse de la pression intraoculaire**
+> - [ ] **4. Analgésie**
+> - [ ] **5. Antiemèse**
+> - [ ] **6. Avis d’ophtalmologue**
+> - [ ] **7. Transfert en clinique ophtalmologique**
+> - [ ] **8. Information sur le risque de cécité**
+> - [ ] **9. Clinique ophtalmologique**
+> - [ ] **10. Collyres locaux**
+> - [ ] **11. Tonométrie de Goldmann**
+> - [ ] **12. Répéter le fond d’œil**
+> - [ ] **13. Gonioscopie**
+> - [ ] **14. Iridotomie au laser**
+
+> [!success] 💊 Management — si Kératite herpétique
+> - [ ] **1. Diagnostic de suspicion**
+> - [ ] **2. Origine**
+> - [ ] **3. Propose un traitement topique**
+> - [ ] **4. Propose un avis ophtalmologique**
+
+> [!success] 💊 Management — si Kératite photoélectrique
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Sécheresse oculaire évaporative (dysfonction des glandes de Meibom)
+> - [ ] **1. Diagnostic de travail**
+> - [ ] **2. Laboratoire uniquement en cas de suspicion systémique**
+> - [ ] **3. Pas d’imagerie**
+> - [ ] **4. Test de Schirmer**
+> - [ ] **5. Information du patient**
+> - [ ] **6. Hygiène des bords palpébraux**
+> - [ ] **7. Larmes artificielles**
+> - [ ] **8. Déclencheurs et hygiène de vie**
+> - [ ] **9. Adapter le traitement de l’allergie**
+> - [ ] **10. Contrôle évolutif**
+> - [ ] **11. Examens complémentaires**
+> - [ ] **12. Filet de sécurité**
+
+> [!success] 💊 Management — si Zona
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

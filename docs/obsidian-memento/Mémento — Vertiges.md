@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -203,3 +214,59 @@ cssclasses:
 > 	- [ ] Force musculaire
 > 	- [ ] Réflexes ostéotendineux
 > 	- [ ] Signes pyramidaux
+
+> [!success] 💊 Management — si HypoTA orthostatique
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Maladie de Parkinson
+> - [ ] **1. Diagnostic syndromique des troubles de l'équilibre**
+> 	- [ ] Ataxie cérébelleuse
+> 	- [ ] Ataxie sensitive
+> 	- [ ] Syndrome extrapyramidal
+> 	- [ ] Atteinte vestibulaire
+> - [ ] **2. Diagnostic étiologique - causes des troubles de l'équilibre**
+> - [ ] **3. Bilan étiologique de l'amaigrissement**
+> 	- [ ] Recherche néoplasique
+> 	- [ ] Bilan inflammatoire
+> 	- [ ] Endoscopies digestives
+> 	- [ ] Bilan thyroïdien
+> - [ ] **4. Examens complémentaires neurologiques**
+> 	- [ ] IRM cérébrale
+> 	- [ ] Électromyogramme
+> 	- [ ] Ponction lombaire
+> 	- [ ] Anticorps paranéoplasiques
+> - [ ] **5. Prise en charge symptomatique**
+> 	- [ ] Rééducation équilibre
+> 	- [ ] Aides techniques
+> 	- [ ] Aménagement domicile
+> 	- [ ] Support nutritionnel
+> - [ ] **6. Traitement étiologique selon la cause**
+> - [ ] **7. Prévention des chutes et sécurité**
+> 	- [ ] Évaluation risque de chute
+> 	- [ ] Révision médicamenteuse
+> 	- [ ] Correction déficits sensoriels
+> 	- [ ] Programme d'exercices adaptés
+> - [ ] **8. Surveillance et orientation**
+> 	- [ ] Suivi neurologique spécialisé
+> 	- [ ] Oncologie
+> 	- [ ] Gériatrie
+> 	- [ ] Rééducation fonctionnelle
+
+> [!success] 💊 Management — si Névrite vestibulaire / Ménière
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Zona
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens complémentaires**
+> 	- [ ] Audiométrie tonale
+> 	- [ ] Potentiels évoqués auditifs du tronc cérébral
+> - [ ] **3. Communication avec le patient**
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **4. Conseil et soutien**
+> 	- [ ] Conseil sur les drogues récréatives
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Réaction appropriée au défi concernant le départ

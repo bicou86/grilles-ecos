@@ -16,8 +16,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -40,6 +39,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -130,3 +141,31 @@ cssclasses:
 > 	- [ ] Inspection des mains
 > 	- [ ] Inspection des membres inférieurs
 > - [ ] **5. Examen cutané**
+
+> [!success] 💊 Management
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens complémentaires**
+> 	- [ ] FSC
+> 	- [ ] Frottis sanguin périphérique
+> 	- [ ] Temps de saignement, TP, TCA
+> - [ ] **3. Tests spécifiques maladie de von Willebrand**
+> 	- [ ] Dosage de l'activité du facteur VIII
+> 	- [ ] Dosage de l'antigène du facteur von Willebrand
+> 	- [ ] Dosage du cofacteur de la ristocétine
+> - [ ] **4. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
+> - [ ] **5. Conseil et soutien**
+> 	- [ ] Conseil sur les options de soutien pour la violence domestique
+> 	- [ ] Réaction appropriée au défi
+> 	- [ ] Approche empathique et non-jugeante
+> 	- [ ] Information sur la confidentialité
+> 	- [ ] Évaluation du plan de sécurité
+> 	- [ ] Documentation appropriée
+
+> [!success] 💊 Management — si Capacité de discernement / Consentement
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

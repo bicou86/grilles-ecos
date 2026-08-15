@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -356,3 +367,142 @@ cssclasses:
 > 	- [ ] Fond d'œil/œdème papillaire
 > 	- [ ] Démarche et épreuves cérébelleuses
 > 	- [ ] Recherche d'un rash cutané
+
+> [!success] 💊 Management — si Algie vasculaire (cluster)
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Crise migraineuse
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Drapeaux rouges à rechercher**
+> 	- [ ] Céphalée sévère implacable
+> 	- [ ] Fièvre
+> 	- [ ] Déficits neurologiques focaux
+> 	- [ ] Convulsions
+> 	- [ ] Troubles de conscience
+> 	- [ ] Signes d'hypertension intracrânienne (ex: perte de connaissance, œdème papillaire)
+> 	- [ ] Signes de méningisme
+> 	- [ ] Symptômes psychiatriques
+> 	- [ ] Douleur oculaire
+> - [ ] **3. Prise en charge**
+> 	- [ ] Migraine, céphalée de tension et algie vasculaire = diagnostics cliniques basés sur l'histoire et l'examen physique
+> 	- [ ] Ne pas faire d'examens diagnostiques sauf si drapeaux rouges présents
+> 	- [ ] Proposer au patient de s'allonger et tamiser la lumière
+> - [ ] **4. Communication avec le patient**
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **5. Conseil et soutien**
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Donner l'option de s'allonger et proposer de tamiser la lumière
+> 	- [ ] Réaction appropriée au défi concernant l'entretien d'embauche
+> 	- [ ] Éducation sur les facteurs déclenchants
+> 	- [ ] Conseils hygiène de vie
+
+> [!success] 💊 Management — si Céphalée du restaurant chinois
+> - [ ] **1. Diagnostic de suspicion**
+> - [ ] **2. Diagnostics différentiels**
+> - [ ] **3. Examens diagnostiques**
+> 	- [ ] VS (CRP)
+> 	- [ ] FSC
+> - [ ] **4. CT cérébral**
+> - [ ] **5. Traitement/Prise en charge**
+> 	- [ ] Si maladie de Horton : corticoïdes et référence
+> 	- [ ] Sinon : antalgiques et contrôle
+
+> [!success] 💊 Management — si Hémorragie sous-arachnoïdienne
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Conseil et soutien**
+> 	- [ ] Proposer d'aider la patiente à s'allonger
+> 	- [ ] Proposer de diminuer l'éclairage dans la salle d'examen
+> 	- [ ] Réaction appropriée au défi concernant le mari
+> 	- [ ] Soutien émotionnel face à la gravité
+> 	- [ ] Information sur l'urgence de la situation
+> - [ ] **3. Examens complémentaires urgents**
+> 	- [ ] CT cérébral sans contraste
+> 	- [ ] FSC
+> 	- [ ] Glucose, électrolytes
+> - [ ] **4. Examens complémentaires biologiques et microbiologiques**
+> 	- [ ] TP, TCA
+> 	- [ ] Hémocultures
+> - [ ] **5. Ponction lombaire et imagerie spécialisée**
+> 	- [ ] Ponction lombaire avec analyse du LCR
+> 	- [ ] Angiographie
+> - [ ] **6. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
+
+> [!success] 💊 Management — si Migraine
+> - [ ] **1. Pas d'imagerie**
+> - [ ] **2. Diagnostic de travail**
+> - [ ] **3. Information sur le diagnostic**
+> - [ ] **4. Traitement de la crise par AINS**
+> - [ ] **5. Traitement de la crise par triptan**
+> - [ ] **6. Mesures non médicamenteuses**
+> - [ ] **7. Filet de sécurité**
+> - [ ] **8. Journal des migraines**
+> - [ ] **9. Conseils sur le mode de vie**
+> - [ ] **10. Information sur la contraception**
+> - [ ] **11. Contrôle de suivi**
+> - [ ] **12. Évaluer l'indication à une prophylaxie**
+> - [ ] **13. Orientation vers la neurologie**
+
+> [!success] 💊 Management — si Méningite
+> - [ ] **1. Diagnostic de suspicion**
+> - [ ] **2. Diagnostics différentiels**
+> - [ ] **3. Examens de laboratoire**
+> 	- [ ] FSC
+> 	- [ ] CRP
+> 	- [ ] Électrolytes
+> 	- [ ] Glucose
+> - [ ] **4. Diagnostic du liquide céphalo-rachidien**
+> 	- [ ] Liquide clair
+> 	- [ ] Lymphocytose
+> 	- [ ] Glucose normale
+> 	- [ ] Protéines
+> 	- [ ] Lactate
+> - [ ] **5. Traitement**
+
+> [!success] 💊 Management — si Prééclampsie
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Thrombose veineuse cérébrale
+> - [ ] **1. Diagnostics différentiels**
+> 	- [ ] AVC ischémique/hémorragique
+> 	- [ ] Migraine avec aura
+> 	- [ ] Méningite/encéphalite
+> 	- [ ] Hémorragie sous-arachnoïdienne
+> 	- [ ] Dissection artérielle
+> 	- [ ] Hypertension intracrânienne
+> - [ ] **2. Hypothèse diagnostique principale**
+> 	- [ ] Thrombose veineuse cérébrale
+> - [ ] **3. Examens complémentaires - laboratoire**
+> 	- [ ] FSC, CRP/VS
+> 	- [ ] Coagulation (TP, PTT)
+> 	- [ ] D-dimères
+> 	- [ ] Fonction rénale, ionogramme
+> 	- [ ] Test de grossesse si doute
+> - [ ] **4. Examens complémentaires - imagerie**
+> 	- [ ] CT cérébral en urgence
+> 	- [ ] CT avec temps veineux/angio-CT
+> 	- [ ] IRM cérébrale si disponible
+> 	- [ ] Veinographie par résonance magnétique
+> - [ ] **5. Prise en charge immédiate**
+> 	- [ ] Voie veineuse périphérique
+> 	- [ ] Analgésie adaptée
+> 	- [ ] Antiémétiques si nécessaire
+> 	- [ ] Surveillance neurologique
+> - [ ] **6. Traitement spécifique si thrombose confirmée**
+> 	- [ ] Anticoagulation par HBPM dose thérapeutique
+> 	- [ ] Même si lésion hémorragique
+> 	- [ ] Hospitalisation
+> 	- [ ] Arrêt contraception orale
+> - [ ] **7. Réponse aux demandes de la patiente**
+> 	- [ ] Certificat médical pour examen
+> 	- [ ] Explication du diagnostic suspecté
+> 	- [ ] Rassurer sur la prise en charge

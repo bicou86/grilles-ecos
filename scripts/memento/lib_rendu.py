@@ -24,12 +24,25 @@ cesseraient d'etre idempotents.
 
 import re
 
+# LA LEGENDE DES MEMENTOS PAR SSP N'EST PLUS CELLE DU MEMENTO OFFICIEL : elle
+# ne porte qu'un 💊, la ou l'officiel partage le management en 🔬 (examens) et
+# 💊 (prise en charge). Ce partage n'existe pas dans les grilles ; le memento
+# officiel le declare A LA MAIN, critere par critere (table EXAMENS de
+# scripts/build_obsidian_memento.py, 55 lignes pour 9 grilles). A 252 grilles
+# et 1 988 items de management, il faudrait le deviner — et un motif lexical
+# eprouve sur le seul echantillon etiquete qui existe (ces 9 grilles) se
+# trompe sur 5 lignes de 55, dans les deux sens : « Propose un dosage des
+# anticorps anti-TPO » (un examen) tomberait en 💊, « Suivi : prevoir un
+# controle biologique dans 6-8 semaines » (un suivi) en 🔬. Une erreur de
+# rangement ne se voit pas a la lecture, contrairement a un suffixe faux.
+# Annoncer un 🔬 qui se trompe une fois sur onze vaut moins qu'un 💊 qui ne
+# promet rien. Le cout est reel et assume : le lecteur d'un memento par SSP
+# doit trier lui-meme examens et traitement dans l'encadre 💊.
 LEGENDE = """> [!info] Légende
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS"""
@@ -118,7 +131,7 @@ def _suffixe(item, rendu):
     return rendu[len(item["titre"]):]
 
 
-def encadre(genre, entete, items, cas_ssp, diag_par_cas):
+def encadre(genre, entete, items, cas_ssp, diag_par_cas, mention=None):
     """Un callout dont la liste est numerotee a partir de 1.
 
     UN SOUS-ITEM HERITE DE LA PORTEE DE SON PARENT et ne la repete pas : son
@@ -128,9 +141,14 @@ def encadre(genre, entete, items, cas_ssp, diag_par_cas):
     le meme suffixe sur chacun de ses sous-items — quatre repetitions d'une
     information deja lue une ligne plus haut, qui noyaient les rares lignes
     ou le suffixe disait vraiment quelque chose.
+
+    `mention` est le texte que rend un encadre SANS AUCUN ITEM. Sans elle, un
+    encadre vide reste absent, comme avant ; avec elle, il subsiste pour dire
+    pourquoi il est vide — c'est ce qui permet au sous-bloc d'un diagnostic
+    qu'aucune grille ne documente d'exister quand meme.
     """
     if not items:
-        return None
+        return f"> [!{genre}] {entete}\n> {mention}" if mention else None
     out = [f"> [!{genre}] {entete}"]
     for numero, item in enumerate(items, 1):
         rendu = marque(item, cas_ssp, diag_par_cas)

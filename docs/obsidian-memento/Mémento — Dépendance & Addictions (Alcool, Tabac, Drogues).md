@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -217,3 +228,53 @@ cssclasses:
 > 	- [ ] État nutritionnel
 > 	- [ ] Hydratation
 > 	- [ ] Hygiène corporelle
+
+> [!success] 💊 Management — si Addiction / Sevrage OH
+> - [ ] **1. Énonce le diagnostic principal**
+> 	- [ ] Trouble de l'usage de l'alcool / Dépendance à l'alcool
+> - [ ] **2. Évoque les diagnostics différentiels**
+> 	- [ ] Usage nocif d'alcool (sans dépendance)
+> 	- [ ] Polytoxicomanie
+> 	- [ ] Trouble psychiatrique sous-jacent avec alcoolisation secondaire
+> - [ ] **3. Propose les examens complémentaires appropriés**
+> 	- [ ] Biologie de base : FSC, CRP, ionogramme (Na, K, Ca), créatinine
+> 	- [ ] Bilan hépatique : transaminases (ASAT, ALAT), GGT, phosphatases alcalines (PAL), albumine
+> 	- [ ] Bilan de coagulation : TP/INR, TCA
+> 	- [ ] Fonction pancréatique : lipase, amylase
+> 	- [ ] TSH (diagnostic différentiel)
+> 	- [ ] Vitamines B1, B12, folates (carences fréquentes)
+> - [ ] **4. Propose des examens morphologiques si indiqués**
+> 	- [ ] Échographie abdominale
+> 	- [ ] CT abdominal si suspicion de complication
+> 	- [ ] Gastroscopie si symptômes digestifs hauts
+> 	- [ ] Examen ORL si facteurs de risque
+> - [ ] **5. Propose une prise en charge thérapeutique adaptée**
+> - [ ] **6. Organise le suivi et la prévention**
+> 	- [ ] Consultations régulières en addictologie
+> 	- [ ] Surveillance biologique (fonction hépatique)
+> 	- [ ] Dépistage des complications (cirrhose, neuropathie)
+> 	- [ ] Vaccination hépatite B
+> 	- [ ] Prévention des rechutes
+> - [ ] **7. Propose une hospitalisation si nécessaire**
+> 	- [ ] Risque de sevrage sévère
+> 	- [ ] Comorbidités somatiques graves
+> 	- [ ] Échec du sevrage ambulatoire
+> 	- [ ] Absence de soutien social
+
+> [!success] 💊 Management — si Dépendance à l'alcool
+> - [ ] **1. Annoncer le diagnostic**
+> - [ ] **2. Reconnaître la recherche d’aide**
+> - [ ] **3. Valoriser les ressources**
+> - [ ] **4. Change Talk**
+> - [ ] **5. Volonté de changement**
+> - [ ] **6. Arguments en faveur du changement**
+> - [ ] **7. Ambivalence / Craintes**
+> - [ ] **8. Fixer l’objectif thérapeutique**
+> - [ ] **9. Initier le sevrage**
+> - [ ] **10. Information sur les risques du sevrage**
+> - [ ] **11. Assurer la thiamine**
+> - [ ] **12. Conseil en addictologie**
+> - [ ] **13. Rendez-vous de suivi**
+> - [ ] **14. Prise en charge à long terme**
+> - [ ] **15. Impliquer les proches**
+> - [ ] **16. Thérapie cognitivo-comportementale**

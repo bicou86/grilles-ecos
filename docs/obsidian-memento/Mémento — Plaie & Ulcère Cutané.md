@@ -16,8 +16,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -40,6 +39,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -127,3 +138,25 @@ cssclasses:
 > - [ ] **14. Douleur à la pression le long des veines profondes**
 > - [ ] **15. Signe de Meyer**
 > - [ ] **16. Signe de Homans**
+
+> [!success] 💊 Management
+> - [ ] **1. Résultat de laboratoire**
+> - [ ] **2. CRP et VS**
+> - [ ] **3. Hémogramme**
+> - [ ] **4. HbA1c**
+> - [ ] **5. Mesure de l’ABI**
+> - [ ] **6. Échographie duplex veineuse**
+> - [ ] **7. Diagnostic de travail**
+> - [ ] **8. Soin local de la plaie**
+> - [ ] **9. Contrôle de l’évolution et documentation photographique**
+> - [ ] **10. Débridement / enduits**
+> - [ ] **11. Thérapie de compression**
+> - [ ] **12. Mobilisation / surélévation**
+> - [ ] **13. Optimiser les facteurs de risque**
+> - [ ] **14. Renoncer aux antibiotiques**
+> - [ ] **15. Orientation consultation de plaies**
+> - [ ] **16. Évaluer une intervention veineuse**
+> - [ ] **17. Filet de sécurité**
+
+> [!success] 💊 Management — si Morsure de chien
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

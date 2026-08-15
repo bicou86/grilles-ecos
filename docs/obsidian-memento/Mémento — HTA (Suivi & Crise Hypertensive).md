@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -209,3 +220,84 @@ cssclasses:
 > 	- [ ] Examen neurologique sommaire
 > 	- [ ] Palpation rénale
 > 	- [ ] Recherche de souffles vasculaires
+
+> [!success] 💊 Management
+> - [ ] **1. Diagnostic principal**
+> - [ ] **2. Diagnostics différentiels d'HTA secondaire *(1 grille sur 2)***
+> - [ ] **3. Facteurs de risque cardiovasculaire identifiés *(1 grille sur 2)***
+> 	- [ ] Âge (femme > 55 ans)
+> 	- [ ] Antécédents familiaux
+> 	- [ ] Surpoids
+> 	- [ ] Sédentarité
+> 	- [ ] Consommation de sel élevée
+> 	- [ ] Stress
+> - [ ] **4. Examens complémentaires *(1 grille sur 2)***
+> 	- [ ] Bilan biologique (FSC, ionogramme, créatinine, glycémie)
+> 	- [ ] Bilan lipidique complet
+> 	- [ ] TSH
+> 	- [ ] Analyse d'urine (protéinurie, hématurie)
+> 	- [ ] ECG de repos
+> 	- [ ] MAPA ou automesure tensionnelle
+> - [ ] **5. Examens de retentissement *(1 grille sur 2)***
+> 	- [ ] Échocardiographie
+> 	- [ ] Fond d'œil
+> 	- [ ] Écho-Doppler des artères rénales si suspicion
+> 	- [ ] Radiographie thoracique
+> - [ ] **6. Mesures hygiéno-diététiques**
+> 	- [ ] Régime sans sel strict *(1 grille sur 2)*
+> 	- [ ] Réduction pondérale progressive *(1 grille sur 2)*
+> 	- [ ] Activité physique adaptée *(1 grille sur 2)*
+> 	- [ ] Gestion du stress *(1 grille sur 2)*
+> 	- [ ] Éviter les médicaments néphrotoxiques *(1 grille sur 2)*
+> - [ ] **7. Stratégie médicamenteuse *(1 grille sur 2)***
+> 	- [ ] Confirmation par MAPA avant traitement
+> 	- [ ] Si confirmé : IEC ou ARA2 en première intention
+> 	- [ ] Alternative : diurétique thiazidique ou inhibiteur calcique
+> 	- [ ] Bithérapie si objectif non atteint
+> 	- [ ] Surveillance de la fonction rénale et kaliémie
+> - [ ] **8. Objectifs thérapeutiques *(1 grille sur 2)***
+> 	- [ ] TA < 140/90 mmHg en consultation
+> 	- [ ] TA < 135/85 mmHg en automesure
+> 	- [ ] Réduction du risque cardiovasculaire global
+> - [ ] **9. Suivi et éducation *(1 grille sur 2)***
+> 	- [ ] Contrôle dans 1 mois
+> 	- [ ] Éducation à l'automesure
+> 	- [ ] Importance de l'observance
+> 	- [ ] Carnet de suivi tensionnel
+> 	- [ ] Consultation annuelle systématique
+> - [ ] **10. Facteurs de décompensation identifiés *(1 grille sur 2)***
+> 	- [ ] Mauvaise observance thérapeutique
+> 	- [ ] Prise d'AINS
+> 	- [ ] Augmentation de la consommation de sel
+> 	- [ ] Stress psychosocial
+> 	- [ ] Prise de poids
+> - [ ] **11. Examens complémentaires urgents *(1 grille sur 2)***
+> 	- [ ] ECG
+> 	- [ ] Bilan biologique (ionogramme, créatinine)
+> 	- [ ] BNP ou NT-proBNP
+> 	- [ ] Radiographie thoracique
+> 	- [ ] Échocardiographie
+> - [ ] **12. Adaptation thérapeutique immédiate *(1 grille sur 2)***
+> - [ ] **13. Éducation thérapeutique renforcée *(1 grille sur 2)***
+> 	- [ ] Importance de l'observance
+> 	- [ ] Utilisation d'un pilulier
+> 	- [ ] Reconnaissance des signes d'alarme
+> 	- [ ] Automesure tensionnelle
+> 	- [ ] Carnet de suivi
+> - [ ] **14. Critères d'hospitalisation *(1 grille sur 2)***
+> 	- [ ] TA > 180/110 avec signes de souffrance
+> 	- [ ] Insuffisance cardiaque décompensée
+> 	- [ ] Suspicion d'urgence hypertensive
+> 	- [ ] Mauvaise réponse au traitement
+> - [ ] **15. Plan de suivi *(1 grille sur 2)***
+> 	- [ ] Contrôle dans 1 semaine
+> 	- [ ] Puis tous les 15 jours jusqu'à stabilisation
+> 	- [ ] Surveillance fonction rénale et ionogramme
+> 	- [ ] Ajustement thérapeutique selon évolution
+> 	- [ ] Référence cardiologue si nécessaire
+> - [ ] **16. Information et motivation du patient *(1 grille sur 2)***
+> 	- [ ] Expliquer les risques de l'HTA non contrôlée
+> 	- [ ] Importance du traitement à vie
+> 	- [ ] Bénéfices attendus
+> 	- [ ] Impliquer l'entourage
+> 	- [ ] Groupe de soutien si nécessaire

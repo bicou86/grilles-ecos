@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -1015,3 +1026,458 @@ cssclasses:
 > 	- [ ] Séquence inspection-auscultation-percussion-palpation
 > 	- [ ] 4 quadrants et 9 régions de l'abdomen
 > 	- [ ] Technique de percussion et palpation correcte
+
+> [!success] 💊 Management — si Appendicite aiguë
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Communication avec la patiente**
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **3. Examens complémentaires urgents**
+> 	- [ ] Test de grossesse urinaire
+> 	- [ ] FSC avec différentielle
+> 	- [ ] VS, CRP
+> 	- [ ] Analyse d'urine et ECBU
+> 	- [ ] US abdominale et pelvienne
+> - [ ] **4. Examens complémentaires secondaires**
+> 	- [ ] Examen pelvien
+> 	- [ ] Prélèvements cervicaux et urétraux
+> 	- [ ] CT abdominal
+> - [ ] **5. Conseil et prévention**
+> 	- [ ] Conseil sur les pratiques sexuelles sûres
+> 	- [ ] Réaction appropriée au défi concernant la grossesse
+
+> [!success] 💊 Management — si Cancer de l'ovaire
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Communication avec la patiente**
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **3. Examens complémentaires urgents**
+> 	- [ ] Examen pelvien
+> 	- [ ] Β-hCG sérique
+> 	- [ ] FSC
+> - [ ] **4. Examens complémentaires secondaires**
+> 	- [ ] CA-125
+> 	- [ ] Laparoscopie
+> 	- [ ] Test génétique BRCA
+> - [ ] **5. Conseil et prévention**
+> 	- [ ] Conseil sur les options de contraception
+> 	- [ ] Réaction appropriée au défi concernant la chirurgie
+> - [ ] **6. Examens d'imagerie**
+> 	- [ ] US transvaginale
+> 	- [ ] US transabdominale
+
+> [!success] 💊 Management — si Cholangite
+> - [ ] **1. Mentionne une cholécystite comme hypothèse diagnostique principale**
+> - [ ] **2. Evoque un diagnostic différentiel plausible**
+> 	- [ ] Cholangite
+> 	- [ ] Pancréatite
+> 	- [ ] Appendicite
+> 	- [ ] Hépatite
+> 	- [ ] Pyélonéphrite
+> 	- [ ] Trouble gynécologique
+
+> [!success] 💊 Management — si Cholécystite
+> - [ ] **1. Evoque un diagnostic différentiel plausible *(1 grille sur 2)***
+> 	- [ ] Cholangite
+> 	- [ ] Hépatite
+> 	- [ ] Cholécystite
+> 	- [ ] Néoplasie
+> 	- [ ] Gastrite / inflammation du tube digestif
+> 	- [ ] Stase biliaire sur compression néoplasique (p.ex. cancer pancréatique)
+> - [ ] **2. Mentionne l'hypothèse diagnostique cholélithiase / cholédocholithiase *(1 grille sur 2)***
+> - [ ] **3. Évaluation de la sévérité et des complications *(1 grille sur 2)***
+> 	- [ ] Recherche signes de cholécystite
+> 	- [ ] Exclusion angiocholite
+> 	- [ ] Évaluation retentissement général
+> 	- [ ] Recherche signes de péritonite
+> - [ ] **4. Proposition d'examens complémentaires *(1 grille sur 2)***
+> 	- [ ] Bilan biologique
+> 	- [ ] Échographie abdominale
+> 	- [ ] FSC, CRP
+> 	- [ ] Lipasémie
+> - [ ] **5. Prise en charge thérapeutique immédiate *(1 grille sur 2)***
+> 	- [ ] Antalgiques
+> 	- [ ] Antispasmodiques
+> 	- [ ] Antiémétiques si vomissements
+> 	- [ ] Mise à jeun initiale
+> - [ ] **6. Surveillance et critères d'hospitalisation *(1 grille sur 2)***
+> 	- [ ] Critères d'hospitalisation
+> 	- [ ] Surveillance clinique
+> 	- [ ] Signes d'alarme
+> 	- [ ] Suivi ambulatoire programmé
+> - [ ] **7. Diagnostic principal et classification *(1 grille sur 2)***
+> 	- [ ] Évoque colique hépatique/cholécystite
+> 	- [ ] Classification selon durée
+> 	- [ ] Différenciation avec angiocholite
+> 	- [ ] Facteurs de risque
+> - [ ] **8. Traitement spécifique selon diagnostic *(1 grille sur 2)***
+> 	- [ ] Cholécystectomie
+> 	- [ ] Timing chirurgical
+> 	- [ ] Antibiothérapie si cholécystite
+> 	- [ ] CPRE si angiocholite
+> - [ ] **9. Conseils diététiques et préventifs *(1 grille sur 2)***
+> 	- [ ] Régime pauvre en graisses
+> 	- [ ] Perte de poids progressive
+> 	- [ ] Repas fractionnés
+> 	- [ ] Éviter jeûne prolongé
+> - [ ] **10. Information du patient et planification *(1 grille sur 2)***
+> 	- [ ] Explication du diagnostic probable
+> 	- [ ] Information sur évolution et traitement
+> 	- [ ] Conseils pour récidive
+> 	- [ ] Planification chirurgicale si indiquée
+
+> [!success] 💊 Management — si Cholécystite aiguë
+> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 2)***
+> - [ ] **2. Examens complémentaires initiaux *(1 grille sur 2)***
+> 	- [ ] US abdominale
+> 	- [ ] Bilan hépatique complet
+> 	- [ ] Transaminases
+> 	- [ ] Enzymes pancréatiques
+> 	- [ ] FSC
+> 	- [ ] Ionogramme et calcium
+> - [ ] **3. Examens complémentaires de seconde ligne *(1 grille sur 2)***
+> 	- [ ] CT abdominal
+> 	- [ ] ERCP
+> - [ ] **4. Communication avec la patiente *(1 grille sur 2)***
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **5. Conseil et défis *(1 grille sur 2)***
+> 	- [ ] Conseil sur les options de soutien pour les changements de poids et d'alimentation
+> 	- [ ] Réaction appropriée au défi concernant le poids
+> - [ ] **6. Laboratoire *(1 grille sur 2)***
+> - [ ] **7. Formule sanguine *(1 grille sur 2)***
+> - [ ] **8. Status urinaire *(1 grille sur 2)***
+> - [ ] **9. Échographie *(1 grille sur 2)***
+> - [ ] **10. ECG *(1 grille sur 2)***
+> - [ ] **11. Diagnostic de travail *(1 grille sur 2)***
+> - [ ] **12. Cholécysectomie laparoscopique *(1 grille sur 2)***
+> - [ ] **13. Antibiothérapie i.v. *(1 grille sur 2)***
+> - [ ] **14. Réhydratation i.v. *(1 grille sur 2)***
+> - [ ] **15. Analgésie *(1 grille sur 2)***
+> - [ ] **16. Hospitalisation *(1 grille sur 2)***
+> - [ ] **17. Laisser à jeun *(1 grille sur 2)***
+
+> [!success] 💊 Management — si Diverticulite sigmoïdienne non compliquée
+> - [ ] **1. Examens d'imagerie**
+> 	- [ ] Échographie abdominale
+> 	- [ ] CT abdominal avec contraste (gold standard)
+> 	- [ ] Radiographie abdominale si suspicion de perforation
+> 	- [ ] IRM si contre-indication au CT
+> - [ ] **2. Examens biologiques**
+> 	- [ ] FSC avec formule
+> 	- [ ] CRP
+> 	- [ ] VS si disponible
+> 	- [ ] Ionogramme, urée, créatinine
+> 	- [ ] Analyse d'urine (ECBU)
+> 	- [ ] Test de grossesse si approprié
+> - [ ] **3. Diagnostic principal**
+> - [ ] **4. Diagnostics différentiels**
+> - [ ] **5. Classification de la diverticulite**
+> 	- [ ] Classification de Hinchey
+> 	- [ ] Diverticulite non compliquée
+> 	- [ ] Diverticulite compliquée (abcès, perforation, péritonite)
+> - [ ] **6. Prise en charge thérapeutique**
+> - [ ] **7. Suivi et surveillance**
+> 	- [ ] Contrôle clinique à 48-72h si ambulatoire
+> 	- [ ] Contrôle biologique si pas d'amélioration
+> 	- [ ] Coloscopie 6-8 semaines après l'épisode
+> 	- [ ] Éducation sur les signes d'alarme
+> - [ ] **8. Critères d'hospitalisation**
+> - [ ] **9. Complications potentielles**
+> 	- [ ] Abcès péricolique
+> 	- [ ] Perforation avec péritonite
+> 	- [ ] Fistules (colovésicale, colovaginale)
+> 	- [ ] Sténose colique
+> 	- [ ] Hémorragie diverticulaire
+> - [ ] **10. Éducation du patient**
+> 	- [ ] Explication de la pathologie diverticulaire
+> 	- [ ] Importance de l'observance thérapeutique
+> 	- [ ] Modifications du mode de vie
+> 	- [ ] Signes nécessitant une reconsultation urgente
+> 	- [ ] Prévention des récidives
+
+> [!success] 💊 Management — si Douleurs abdominales non spécifiques
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Diagnostic suspecté**
+> 	- [ ] Hidden agenda (demande cachée)
+> - [ ] **3. Prescription médicamenteuse**
+> 	- [ ] Pilule contraceptive combinée
+> 	- [ ] Explication sur la prise : 1ère pilule le 1er jour des règles
+> 	- [ ] Puis 3 semaines chaque jour
+> 	- [ ] Puis 1 semaine de pause
+> - [ ] **4. Information sur les effets secondaires**
+> 	- [ ] Effets secondaires bénins
+> 	- [ ] Situations d'urgence
+> - [ ] **5. Conseils et éducation**
+> 	- [ ] Protection contre les infections sexuellement transmissibles non assurée par la pilule
+> 	- [ ] Contraception post-coïtale mentionnée en cas de grossesse possible
+> 	- [ ] Recommandation de contrôle chez le gynécologue
+> 	- [ ] Promesse de secret médical, mais encouragement à parler avec les parents
+> 	- [ ] Si pilule oubliée 1x : préservatif pendant 7-14 jours
+> 	- [ ] Attention en cas de diarrhée/vomissements, antibiotiques, millepertuis, pamplemousse
+
+> [!success] 💊 Management — si Endométriose pelvienne
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Prise en charge thérapeutique**
+> 	- [ ] Analgésiques
+> 	- [ ] Contraceptifs oraux (inhibiteurs de l'ovulation)
+> 	- [ ] Thérapie endocrinienne
+> 	- [ ] Ablation chirurgicale en cas de complications ou stades très avancés
+> - [ ] **3. Diagnostic suspecté**
+> 	- [ ] Endométriose
+> - [ ] **4. Examens diagnostiques**
+> 	- [ ] Analyses sanguines
+> 	- [ ] Test de grossesse
+> 	- [ ] Prélèvement vaginal et cervical
+> 	- [ ] Échographie vaginale
+> 	- [ ] Laparoscopie diagnostique
+> - [ ] **5. Information et éducation de la patiente**
+> 	- [ ] Explication que les symptômes disparaissent souvent lors de l'aménorrhée ou de la grossesse
+> 	- [ ] Information sur les complications possibles
+> 	- [ ] Information sur les récidives possibles après traitement
+
+> [!success] 💊 Management — si Gastroentérite
+> - [ ] **1. Diagnostic principal et différentiel**
+> 	- [ ] Évoque gastro-entérite aiguë
+> 	- [ ] Probablement d'origine infectieuse
+> 	- [ ] Contexte de voyage en zone tropicale
+> 	- [ ] Diagnostic différentiel
+> - [ ] **2. Évaluation de la sévérité et des complications**
+> 	- [ ] Évaluation du degré de déshydratation
+> 	- [ ] Recherche de signes de choc
+> 	- [ ] Évaluation de la perte pondérale
+> 	- [ ] Exclusion de complications
+> - [ ] **3. Proposition d'examens complémentaires**
+> 	- [ ] Bilan biologique
+> 	- [ ] Coproculture et recherche de parasites
+> 	- [ ] Bandelette urinaire
+> 	- [ ] Imagerie abdominale si doute diagnostique
+> - [ ] **4. Prise en charge thérapeutique immédiate**
+> 	- [ ] Réhydratation
+> 	- [ ] Correction des pertes électrolytiques
+> 	- [ ] Traitement symptomatique
+> 	- [ ] Repos digestif initial puis réalimentation progressive
+> - [ ] **5. Traitement spécifique et antibiotiques**
+> 	- [ ] Indication d'antibiothérapie
+> 	- [ ] Choix antibiotique adapté
+> 	- [ ] Traitement antiparasitaire si indiqué
+> 	- [ ] Probiotiques pour restaurer flore intestinale
+> - [ ] **6. Conseils diététiques et de prévention**
+> 	- [ ] Réalimentation progressive
+> 	- [ ] Conseils d'hygiène
+> 	- [ ] Éviction professionnelle si nécessaire
+> 	- [ ] Prévention pour futurs voyages
+> - [ ] **7. Surveillance et critères d'hospitalisation**
+> 	- [ ] Critères d'hospitalisation
+> 	- [ ] Surveillance clinique
+> 	- [ ] Critères d'amélioration
+> 	- [ ] Planification du suivi ambulatoire
+> - [ ] **8. Information du patient et éducation**
+> 	- [ ] Explication du diagnostic et évolution probable
+> 	- [ ] Signes d'alarme nécessitant reconsultation
+> 	- [ ] Importance de la compliance thérapeutique
+> 	- [ ] Conseils pour la reprise du travail
+
+> [!success] 💊 Management — si Hépatite (virale/alcoolique)
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Infarctus du myocarde / SCA
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Infection génitale haute
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Prise en charge thérapeutique**
+> 	- [ ] Doxycycline / Azithromycine
+> 	- [ ] Traitement du partenaire
+> 	- [ ] Chirurgie en cas d'abcès ou autres complications
+> - [ ] **3. Diagnostic suspecté**
+> 	- [ ] Annexite aiguë (salpingite)
+> - [ ] **4. Examens diagnostiques**
+> 	- [ ] Analyses sanguines
+> 	- [ ] Test de grossesse
+> 	- [ ] Échographie abdominale/vaginale
+> 	- [ ] Consultation gynécologique pour examen au spéculum avec prélèvement
+> 	- [ ] Recherche de Chlamydia/Gonocoque
+> 	- [ ] Examen bimanuel
+> - [ ] **5. Information de la patiente**
+> 	- [ ] Information sur les complications possibles
+> 	- [ ] Douleurs pelviennes chroniques possibles
+> 	- [ ] Risque accru de grossesse extra-utérine
+
+> [!success] 💊 Management — si Ischémie mésentérique aiguë
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Diagnostic suspecté**
+> 	- [ ] Infarctus mésentérique aigu
+> - [ ] **3. Examens diagnostiques**
+> 	- [ ] Analyses sanguines
+> 	- [ ] Échographie abdominale
+> 	- [ ] Radiographie thoracique
+> 	- [ ] ECG
+> 	- [ ] Radiographie abdominale
+> 	- [ ] Doppler couleur, angio-IRM
+> 	- [ ] Coloscopie
+> - [ ] **4. Prise en charge thérapeutique urgente**
+> 	- [ ] Tolérance à l'ischémie intestinale maximale 6 heures !
+> 	- [ ] Dès la suspicion clinique
+> 	- [ ] Angiographie et laparotomie exploratrice
+> 	- [ ] Selon les constatations : embolectomie, désobstruction, pontage
+> 	- [ ] Réévaluation du traitement médicamenteux
+
+> [!success] 💊 Management — si MICI (Crohn / RCUH)
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Maladie cœliaque
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens complémentaires de première intention**
+> 	- [ ] Examen physique
+> 	- [ ] Anticorps anti-transglutaminase tissulaire IgA (tTG)
+> 	- [ ] IgA quantitatives
+> - [ ] **3. Examens biologiques**
+> 	- [ ] FSC, VGM, TCMH
+> 	- [ ] Panel IgE allergies pédiatriques
+> - [ ] **4. Communication avec le parent**
+> 	- [ ] Explications au parent des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du parent avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du parent
+> - [ ] **5. Soutien et conseils parentaux**
+> 	- [ ] Réaction appropriée au défi concernant la frustration parentale
+> 	- [ ] Conseils pour rester calme lors des épisodes
+> 	- [ ] Éviter punitions et récompenses liées aux symptômes
+> 	- [ ] Importance du suivi médical
+> 	- [ ] Rassurer sur la démarche diagnostique
+
+> [!success] 💊 Management — si Pancréatite aiguë
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Perforation d'ulcère gastro-duodénal
+> - [ ] **1. Diagnostics différentiels de l'abdomen aigu**
+> - [ ] **2. Examens complémentaires en urgence**
+> 	- [ ] ASP debout face (ou thorax debout): croissant gazeux sous-diaphragmatique
+> 	- [ ] CT abdominal sans et avec injection: pneumopéritoine, liquide libre
+> 	- [ ] FSC: hyperleucocytose, hémoconcentration
+> 	- [ ] Ionogramme, urée, créatinine: déshydratation, insuffisance rénale
+> 	- [ ] Bilan préopératoire: groupe sanguin, RAI, TP, TCA
+> 	- [ ] Gazométrie artérielle: acidose métabolique si choc
+> - [ ] **3. Signes radiologiques de pneumopéritoine**
+> 	- [ ] ASP/Thorax debout: croissant gazeux sous les coupoles
+> 	- [ ] Signe de Rigler: double contour des anses (air des deux côtés)
+> 	- [ ] Ligament falciforme visible
+> 	- [ ] Air péri-hépatique
+> 	- [ ] CT: sensibilité maximale pour air libre
+> 	- [ ] Recherche du site de perforation
+> - [ ] **4. Prise en charge initiale d'urgence**
+> - [ ] **5. Traitement chirurgical en urgence**
+> 	- [ ] Indication formelle: péritonite généralisée
+> 	- [ ] Laparotomie ou laparoscopie selon expertise
+> 	- [ ] Suture simple de la perforation
+> 	- [ ] Épiplooplastie (patch épiploïque)
+> 	- [ ] Toilette péritonéale abondante
+> 	- [ ] Drainage de la cavité péritonéale
+> 	- [ ] Biopsie des berges (éliminer cancer)
+> - [ ] **6. Complications et surveillance**
+> - [ ] **7. Traitement post-opératoire et prévention**
+> 	- [ ] IPP per os 8 semaines minimum
+> 	- [ ] Éradication H. pylori si positive
+> 	- [ ] Trithérapie: IPP + amoxicilline + clarithromycine 14j
+> 	- [ ] Quadrithérapie si échec: IPP + bismuth + tétracycline + métronidazole
+> 	- [ ] Arrêt AINS, aspirine si possible
+> 	- [ ] Sevrage tabagique impératif
+> 	- [ ] Contrôle endoscopique à 6-8 semaines
+> 	- [ ] Surveillance cicatrisation et biopsies
+
+> [!success] 💊 Management — si Purpura de Schönlein-Henoch (vascularite à IgA)
+> - [ ] **1. Laboratoire**
+> - [ ] **2. Échographie**
+> - [ ] **3. Créatinine**
+> - [ ] **4. CRP**
+> - [ ] **5. Hémogramme**
+> - [ ] **6. Urine**
+> - [ ] **7. Diagnostic présumé**
+> - [ ] **8. Atteinte rénale**
+> - [ ] **9. Antalgie**
+> - [ ] **10. Instruction**
+> - [ ] **11. Glucocorticoïdes**
+> - [ ] **12. Surveillance hospitalière**
+> - [ ] **13. Contrôle rénal**
+> - [ ] **14. Avis néphrologique**
+
+> [!success] 💊 Management — si Pyélonéphrite
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Hypothèse diagnostique principale**
+> - [ ] **3. Examens complémentaires proposés**
+> 	- [ ] Imagerie (US/CT) pour déterminer la meilleure prise en charge
+> 	- [ ] Bandelette urinaire / analyse d'urine
+> 	- [ ] Bilan sanguin (formule sanguine, fonction rénale, CRP)
+> - [ ] **4. Antalgie proposée**
+
+> [!success] 💊 Management — si Péritonite
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Rectocolite ulcéro-hémorragique
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Prise en charge thérapeutique**
+> 	- [ ] Conseils nutritionnels pour prévenir les carences
+> 	- [ ] Induction de rémission
+> 	- [ ] Maintien de rémission
+> 	- [ ] Coloscopies de contrôle régulières
+> - [ ] **3. Diagnostic suspecté**
+> 	- [ ] Colite ulcéreuse (diagnostic primaire)
+> - [ ] **4. Examens diagnostiques**
+> 	- [ ] Analyses sanguines
+> 	- [ ] Examen bactériologique des selles
+> 	- [ ] Échographie abdominale
+> 	- [ ] Iléo-coloscopie avec biopsies
+> - [ ] **5. Information sur les complications**
+> 	- [ ] Mégacôlon toxique
+> 	- [ ] Perforation
+> 	- [ ] Hémorragie sévère
+> 	- [ ] Cancer du côlon
+
+> [!success] 💊 Management — si Reflux gastro-œsophagien (RGO)
+> - [ ] **1. Diagnostic principal**
+> 	- [ ] Reflux gastro-œsophagien (RGO)
+> - [ ] **2. Diagnostics différentiels**
+> - [ ] **3. Prise en charge thérapeutique**
+> 	- [ ] Mesures hygiéno-diététiques
+> 	- [ ] Lit : surélévation de la tête de lit
+> 	- [ ] Restriction de la consommation de café et d'alcool
+> 	- [ ] Éviter les aliments acides
+> 	- [ ] Éviter les repas tardifs
+> 	- [ ] Perte de poids
+> 	- [ ] Éviter les médicaments diminuant la pression du sphincter
+> 	- [ ] Traitement médicamenteux
+> 	- [ ] Inhibiteurs de la pompe à protons (IPP)
+> 	- [ ] Éventuellement antagonistes des récepteurs H2
+> 	- [ ] En cas de résistance thérapeutique
+> 	- [ ] Fundoplicature
+> 	- [ ] En cas d'œsophage de Barrett
+> 	- [ ] Contrôles endoscopiques réguliers
+> - [ ] **4. Examens diagnostiques**
+> 	- [ ] Analyses sanguines
+> 	- [ ] Gastroscopie
+> 	- [ ] PH-métrie œsophagienne
+> 	- [ ] Test à l'uréase avec biopsie
+> 	- [ ] Radiographie ou CT
+
+> [!success] 💊 Management — si Torsion ovarienne
+> - [ ] **1. Demande un test de grossesse**
+> - [ ] **2. Demande un examen de laboratoire**
+> 	- [ ] FSC
+> 	- [ ] CRP
+> - [ ] **3. Demande un US ou un CT**
+> - [ ] **4. Évoque le diagnostic de torsion ovarienne**
+> - [ ] **5. Propose une consultation immédiate aux urgences de gynécologie**
+
+> [!success] 💊 Management — si Ulcère gastro-duodénal
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

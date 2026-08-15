@@ -16,8 +16,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -40,6 +39,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -526,3 +537,184 @@ cssclasses:
 > 	- [ ] Coloration des conjonctives
 > 	- [ ] Coloration des muqueuses
 > 	- [ ] Recherche de pâleur cutanée
+
+> [!success] 💊 Management — si BAV
+> - [ ] **1. Diagnostics différentiels**
+> - [ ] **2. Diagnostic principal**
+> 	- [ ] Sévérité évaluée
+> 	- [ ] Trouble du rythme cardiaque : bloc auriculo-ventriculaire
+> 	- [ ] Type de bloc AV suspecté
+> 	- [ ] Risque vital immédiat
+> - [ ] **3. ECG - Réalisation et interprétation**
+> 	- [ ] ECG 12 dérivations en urgence
+> 	- [ ] Identification du bloc AV type Mobitz
+> 	- [ ] Analyse de l'intervalle PR
+> 	- [ ] Recherche d'autres anomalies
+> - [ ] **4. Examens biologiques urgents**
+> 	- [ ] Troponine
+> 	- [ ] BNP/NT-proBNP
+> 	- [ ] Ionogramme et fonction rénale
+> 	- [ ] FSC
+> 	- [ ] TSH si indication
+> - [ ] **5. Examens complémentaires cardiologiques**
+> 	- [ ] Échocardiographie (exclure infarctus, cardiomyopathie)
+> 	- [ ] Monitoring ECG continu
+> 	- [ ] Holter ECG 24h si sortie
+> 	- [ ] Test d'effort différé
+> - [ ] **6. Prise en charge immédiate**
+> 	- [ ] Mise sous scope cardiaque
+> 	- [ ] Voie veineuse périphérique
+> 	- [ ] Oxygénothérapie si besoin
+> 	- [ ] Atropine prête si bradycardie symptomatique
+> - [ ] **7. Traitement définitif**
+> 	- [ ] Indication de stimulateur cardiaque permanent
+> 	- [ ] Type de pacemaker approprié
+> 	- [ ] Délai d'implantation
+> 	- [ ] Pacing temporaire si nécessaire
+> - [ ] **8. Révision du traitement médicamenteux**
+> 	- [ ] Arrêt des médicaments bradycardisants
+> 	- [ ] Adaptation du Valsartan
+> 	- [ ] Gestion des antidiabétiques
+> 	- [ ] Prévention secondaire cardiovasculaire
+> - [ ] **9. Éducation et prévention**
+> 	- [ ] Explication de la pathologie
+> 	- [ ] Signes d'alarme à reconnaître
+> 	- [ ] Conduite automobile temporairement interdite
+> 	- [ ] Port de la carte de porteur de pacemaker
+> - [ ] **10. Organisation du suivi**
+> 	- [ ] Consultation cardiologie urgente
+> 	- [ ] Suivi post-implantation
+> 	- [ ] Contrôles réguliers du pacemaker
+> 	- [ ] Coordination avec le médecin traitant
+
+> [!success] 💊 Management — si HypoTA orthostatique
+> - [ ] **1. Diagnostics différentiels *(1 grille sur 2)***
+> - [ ] **2. Diagnostic principal *(1 grille sur 2)***
+> 	- [ ] Hypotension orthostatique
+> 	- [ ] Justification clinique
+> 	- [ ] Critères diagnostiques (chute TA >20/10 mmHg)
+> 	- [ ] Sévérité évaluée
+> - [ ] **3. Examens complémentaires - Monitoring *(1 grille sur 2)***
+> 	- [ ] Mesure de la TA sur 3 jours différents
+> 	- [ ] Holter tensionnel 24h
+> 	- [ ] Test de Schellong standardisé
+> 	- [ ] Tilt-test si nécessaire
+> - [ ] **4. Examens complémentaires - Biologie *(1 grille sur 2)***
+> 	- [ ] FSC (anémie)
+> 	- [ ] Ionogramme (déshydratation)
+> 	- [ ] Fonction rénale
+> 	- [ ] TSH (hypothyroïdie)
+> 	- [ ] Cortisol (insuffisance surrénalienne)
+> - [ ] **5. Examens complémentaires - Cardiologie *(1 grille sur 2)***
+> 	- [ ] ECG de repos
+> 	- [ ] Échocardiographie
+> 	- [ ] Holter ECG si suspicion de troubles du rythme
+> 	- [ ] Test d'effort si indiqué
+> - [ ] **6. Mesures non médicamenteuses *(1 grille sur 2)***
+> 	- [ ] Hydratation adéquate (>1,5L/jour)
+> 	- [ ] Augmentation des apports en sel
+> 	- [ ] Lever progressif en 3 temps
+> 	- [ ] Éviter la station debout prolongée
+> 	- [ ] Bas de contention si varices
+> 	- [ ] Surélévation de la tête du lit
+> - [ ] **7. Révision médicamenteuse *(1 grille sur 2)***
+> 	- [ ] Identification des médicaments hypotenseurs
+> 	- [ ] Ajustement posologique
+> 	- [ ] Changement d'horaire de prise
+> 	- [ ] Substitution si nécessaire
+> - [ ] **8. Traitement médicamenteux spécifique *(1 grille sur 2)***
+> 	- [ ] Fludrocortisone (Florinef® 0,1mg/jour)
+> 	- [ ] Posologie progressive (max 0,5mg/jour)
+> 	- [ ] Surveillance des effets secondaires
+> 	- [ ] Alternatives (midodrine si échec)
+> - [ ] **9. Éducation du patient et prévention *(1 grille sur 2)***
+> 	- [ ] Explication de la pathologie
+> 	- [ ] Reconnaissance des symptômes d'alerte
+> 	- [ ] Prévention des chutes
+> 	- [ ] Adaptation de l'environnement
+> - [ ] **10. Planification du suivi *(1 grille sur 2)***
+> 	- [ ] Rendez-vous de contrôle programmé
+> 	- [ ] Surveillance de l'efficacité thérapeutique
+> 	- [ ] Ajustement selon l'évolution
+> 	- [ ] Coordination avec le médecin traitant
+> - [ ] **11. Évoque le diagnostic principal de syncope orthostatique *(1 grille sur 2)***
+> - [ ] **12. Évoque un diagnostic différentiel cohérent *(1 grille sur 2)***
+> 	- [ ] Syncope cardiogène (troubles du rythme)
+> 	- [ ] Syncope vasovagale
+> 	- [ ] Épilepsie
+> 	- [ ] AIT (accident ischémique transitoire)
+> - [ ] **13. Propose des examens complémentaires appropriés *(1 grille sur 2)***
+> 	- [ ] ECG 12 dérivations
+> 	- [ ] Bilan sanguin (FSC, ionogramme, glycémie)
+> 	- [ ] Dosage de l'hémoglobine (contrôle anémie)
+> 	- [ ] Holter ECG si suspicion cardiaque
+> - [ ] **14. Propose une prise en charge adaptée *(1 grille sur 2)***
+> 	- [ ] Correction de l'anémie (optimisation traitement martial)
+> 	- [ ] Conseils préventifs (lever progressif, hydratation)
+> 	- [ ] Éviction des facteurs favorisants
+> 	- [ ] Suivi médical rapproché
+> - [ ] **15. Rassurance et explication au patient *(1 grille sur 2)***
+> 	- [ ] Explique le lien avec l'anémie
+> 	- [ ] Rassure sur le caractère bénin probable
+> 	- [ ] Explique l'importance du suivi
+
+> [!success] 💊 Management — si Hypoglycémie
+> - [ ] **1. Équipement - propose de mettre un accès veineux (voie veineuse périphérique)**
+> - [ ] **2. Demande prélèvement sanguin pour test de laboratoire / gazométrie**
+> - [ ] **3. Stratégie de resucrage**
+> 	- [ ] Propose sucre per os
+> 	- [ ] Propose glucose IV
+> - [ ] **4. Modalité d'injection du glucose - choisit**
+> 	- [ ] Vitesse : bolus
+> 	- [ ] Concentration : 40%
+> - [ ] **5. Propose une injection de glucagon IM**
+> - [ ] **6. Propose un suivi rapproché de la glycémie**
+
+> [!success] 💊 Management — si Première crise convulsive tonico-clonique
+> - [ ] **1. Diagnostic principal évoqué**
+> - [ ] **2. Diagnostics différentiels (au moins 2-3)**
+> - [ ] **3. Examens complémentaires proposés**
+> 	- [ ] Biologie : ionogramme, calcium, TSH, CK
+> 	- [ ] Bilan hépatique : transaminases, Gamma-GT, phosphatases alcalines, albumine, Quick/aPTT
+> 	- [ ] Toxicologie : dépistage drogues, alcoolémie, glycémie
+> 	- [ ] Imagerie : échographie carotides, CT/IRM cérébral
+> - [ ] **4. Traitement d'urgence du status epilepticus**
+> 	- [ ] Lorazépam (Temesta®) 0.1 mg/kg IV
+> 	- [ ] Si persistance : Propofol/Thiopental/Phénytoïne
+> - [ ] **5. Traitement antiépileptique de fond**
+> 	- [ ] Épilepsie focale : Lamotrigine (aussi pendant grossesse)
+> 	- [ ] Épilepsie généralisée : Valproate
+> 	- [ ] Alternatives : Carbamazépine/Oxcarbazépine
+> 	- [ ] Autres : Prégabaline, Gabapentine, Tiagabine/Vigabatrine
+> - [ ] **6. Traitements spécifiques selon étiologie**
+> 	- [ ] Chirurgie si tumeur
+> 	- [ ] Shunt si hydrocéphalie
+> 	- [ ] Antibiothérapie/antiviraux si méningite
+> - [ ] **7. Orientation et suivi**
+
+> [!success] 💊 Management — si Première crise épileptique focale bilatéralisée
+> - [ ] **1. Glycémie capillaire**
+> - [ ] **2. Bilan de base**
+> - [ ] **3. CT cérébral**
+> - [ ] **4. Perfusion CT**
+> - [ ] **5. ECG**
+> - [ ] **6. Diagnostic de travail**
+> - [ ] **7. Diagnostics différentiels**
+> - [ ] **8. AVC cérébral / AIT**
+> - [ ] **9. Syncope cardiogène**
+> - [ ] **10. Processus expansif cérébral / métastase**
+> - [ ] **11. Monitoring**
+> - [ ] **12. Accès iv**
+> - [ ] **13. Médication de réserve lorazépam**
+> - [ ] **14. Hospitalisation**
+> - [ ] **15. Demande d’EEG**
+> - [ ] **16. Avis neurologique**
+> - [ ] **17. IRM cérébrale**
+> - [ ] **18. Information sur l’inaptitude à la conduite**
+> - [ ] **19. Conseils de sécurité**
+
+> [!success] 💊 Management — si Sténose aortique
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Syncope vaso-vagale
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

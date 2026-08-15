@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -129,3 +140,42 @@ cssclasses:
 > 	- [ ] Réflexes ostéo-tendineux
 > - [ ] **8. Toucher rectal**
 > 	- [ ] Examen de la prostate
+
+> [!success] 💊 Management
+> - [ ] **1. Diagnostic principal**
+> 	- [ ] Dysfonction érectile
+> - [ ] **2. Diagnostics différentiels et étiologies**
+> - [ ] **3. Identification des facteurs de risque**
+> 	- [ ] Maladie coronarienne
+> 	- [ ] Surpoids
+> 	- [ ] Sédentarité
+> 	- [ ] Consommation d'alcool
+> 	- [ ] Hypercholestérolémie
+> 	- [ ] Tabagisme
+> - [ ] **4. Examens complémentaires - Biologie**
+> 	- [ ] FSC
+> 	- [ ] Bilan lipidique (cholestérol)
+> 	- [ ] Électrolytes
+> 	- [ ] Glycémie
+> - [ ] **5. Examens complémentaires - Autres**
+> 	- [ ] Analyse d'urine (exclure infection urinaire)
+> 	- [ ] PSA si indiqué
+> - [ ] **6. Bilan cardiologique**
+> 	- [ ] ECG
+> 	- [ ] Échocardiographie
+> 	- [ ] Radiographie thoracique si indiquée
+> - [ ] **7. Prise en charge non médicamenteuse**
+> 	- [ ] Réduction pondérale
+> 	- [ ] Régime pauvre en sel
+> 	- [ ] Activité physique régulière
+> 	- [ ] Arrêt du tabac
+> - [ ] **8. Prise en charge médicamenteuse**
+> 	- [ ] Inhibiteurs de la phosphodiestérase 5 (Viagra®)
+> 	- [ ] Après bilan cardiologique
+> 	- [ ] Explication des modalités de prise
+> 	- [ ] Contre-indications et précautions
+> - [ ] **9. Suivi et accompagnement**
+> 	- [ ] Rendez-vous de contrôle dans 2 semaines
+> 	- [ ] Évaluation de l'efficacité du traitement
+> 	- [ ] Soutien psychologique si nécessaire
+> 	- [ ] Implication du/de la partenaire si souhaité

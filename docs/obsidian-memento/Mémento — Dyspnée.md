@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -490,3 +501,175 @@ cssclasses:
 > 	- [ ] Examen complet sans répétitions inutiles
 > 	- [ ] Éléments prioritaires selon contexte
 > - [ ] **40. Technique d'examen intégré cardio-respiratoire *(1 grille sur 5)***
+
+> [!success] 💊 Management — si Asthme
+> - [ ] **1. Diagnostic principal évoqué**
+> 	- [ ] Asthme d'effort / asthme induit par l'exercice
+> 	- [ ] Justification du diagnostic
+> 	- [ ] Éléments cliniques en faveur
+> 	- [ ] Terrain atopique
+> - [ ] **2. Diagnostics différentiels (au moins 2-3)**
+> - [ ] **3. Examens complémentaires - Fonction respiratoire**
+> 	- [ ] Spirométrie de base
+> 	- [ ] Test de réversibilité aux bêta-2 mimétiques
+> 	- [ ] Test de provocation si nécessaire
+> 	- [ ] Peak-flow en ambulatoire
+> - [ ] **4. Examens complémentaires - Imagerie et biologie**
+> 	- [ ] Radiographie thoracique
+> 	- [ ] FSC avec éosinophiles
+> 	- [ ] IgE totales et spécifiques
+> 	- [ ] Tests cutanés allergologiques
+> - [ ] **5. Traitement aigu proposé**
+> 	- [ ] Bêta-2 mimétiques à courte durée d'action à la demande
+> 	- [ ] Technique d'inhalation
+> 	- [ ] Utilisation avant l'effort
+> 	- [ ] Plan d'action en cas de crise
+> - [ ] **6. Traitement de fond éventuel**
+> 	- [ ] Corticoïdes inhalés si symptômes fréquents
+> 	- [ ] Association fixe si besoin
+> 	- [ ] Adaptation selon contrôle
+> 	- [ ] Réévaluation régulière
+> - [ ] **7. Mesures non médicamenteuses**
+> 	- [ ] Éviction des allergènes identifiés
+> 	- [ ] Arrêt du tabac (accompagnement)
+> 	- [ ] Échauffement avant l'effort
+> 	- [ ] Éducation thérapeutique
+> - [ ] **8. Planification du suivi**
+> 	- [ ] Rendez-vous de contrôle
+> 	- [ ] Surveillance de l'efficacité
+> 	- [ ] Ajustement thérapeutique
+> 	- [ ] Orientation pneumologique si besoin
+
+> [!success] 💊 Management — si BPCO
+> - [ ] **1. Diagnostics différentiels (au moins 2-3)**
+> - [ ] **2. Examens complémentaires - Fonction respiratoire**
+> 	- [ ] Spirométrie complète
+> 	- [ ] Test de réversibilité aux bronchodilatateurs
+> 	- [ ] Gazométrie artérielle
+> 	- [ ] Test de marche de 6 minutes
+> - [ ] **3. Mesures non médicamenteuses**
+> 	- [ ] Sevrage tabagique (priorité absolue)
+> 	- [ ] Vaccination antigrippale et antipneumococcique
+> 	- [ ] Réhabilitation respiratoire
+> 	- [ ] Activité physique adaptée
+> - [ ] **4. Diagnostic principal**
+> 	- [ ] BPCO légère (GOLD stade I)
+> 	- [ ] Justification clinique
+> 	- [ ] Facteurs de risque identifiés
+> 	- [ ] Présentation typique
+> - [ ] **5. Examens complémentaires - Microbiologie et imagerie**
+> 	- [ ] Culture des crachats (ECBC)
+> 	- [ ] Radiographie thoracique
+> 	- [ ] Scanner thoracique si indiqué
+> 	- [ ] ECG
+> - [ ] **6. Interprétation correcte de la spirométrie**
+> 	- [ ] Classification GOLD stade I
+> 	- [ ] VEMS < 80% de la valeur prédite
+> 	- [ ] VEMS/CVF < 70%
+> 	- [ ] Absence de réversibilité significative
+> - [ ] **7. Traitement médicamenteux proposé**
+> 	- [ ] Bêta-2 agoniste de courte durée d'action (SABA)
+> 	- [ ] Anticholinergique de courte durée d'action (SAMA)
+> 	- [ ] Association éventuelle
+> 	- [ ] Technique d'inhalation
+> - [ ] **8. Prise en charge des comorbidités**
+> 	- [ ] Suivi du programme méthadone
+> 	- [ ] Dépistage des complications
+> 	- [ ] Support psychosocial
+> 	- [ ] Prévention des exacerbations
+> - [ ] **9. Plan de suivi**
+> 	- [ ] Consultation de contrôle
+> 	- [ ] Surveillance spirométrique
+> 	- [ ] Éducation thérapeutique
+> 	- [ ] Plan d'action en cas d'exacerbation
+
+> [!success] 💊 Management — si Bronchiolite
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Embolie pulmonaire
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Insuffisance cardiaque (décompensée)
+> - [ ] **1. Laboratoire *(1 grille sur 3)***
+> - [ ] **2. Formule sanguine *(1 grille sur 3)***
+> - [ ] **3. GSA *(1 grille sur 3)***
+> - [ ] **4. Radiographie du thorax AP au lit *(1 grille sur 3)***
+> - [ ] **5. Résultat *(1 grille sur 3)***
+> - [ ] **6. Hypothèse diagnostique *(1 grille sur 3)***
+> - [ ] **7. Oxygénothérapie *(1 grille sur 3)***
+> - [ ] **8. Traitement diurétique *(1 grille sur 3)***
+> - [ ] **9. Diminution de la précharge *(1 grille sur 3)***
+> - [ ] **10. Bilan hydrique *(1 grille sur 3)***
+> - [ ] **11. Suivi de l'évolution *(1 grille sur 3)***
+> - [ ] **12. Réévaluation *(1 grille sur 3)***
+> - [ ] **13. Contrôle biologique *(1 grille sur 3)***
+> - [ ] **14. Relais *(1 grille sur 3)***
+> - [ ] **15. Diagnostics différentiels *(1 grille sur 3)***
+> - [ ] **16. Examens complémentaires urgents *(1 grille sur 3)***
+> 	- [ ] ECG 12 dérivations
+> 	- [ ] Radiographie thoracique
+> 	- [ ] BNP ou NT-proBNP
+> 	- [ ] Échocardiographie transthoracique
+> 	- [ ] Bilan biologique: FSC, ionogramme, créatinine, BNP
+> 	- [ ] Troponines si suspicion de SCA
+> 	- [ ] Gazométrie artérielle si dyspnée sévère
+> - [ ] **17. Critères diagnostiques d'insuffisance cardiaque *(1 grille sur 3)***
+> 	- [ ] Critères de Framingham majeurs
+> 	- [ ] Dyspnée paroxystique nocturne
+> 	- [ ] Turgescence jugulaire
+> 	- [ ] Râles crépitants
+> 	- [ ] Cardiomégalie radiologique
+> 	- [ ] Œdème aigu du poumon
+> 	- [ ] Galop B3
+> 	- [ ] Reflux hépato-jugulaire
+> - [ ] **18. Traitement de l'insuffisance cardiaque *(1 grille sur 3)***
+> - [ ] **19. Signes d'alarme (red flags) *(1 grille sur 3)***
+> - [ ] **20. Éducation thérapeutique *(1 grille sur 3)***
+> 	- [ ] Reconnaissance des signes d'alarme
+> 	- [ ] Importance de l'observance thérapeutique
+> 	- [ ] Auto-surveillance du poids
+> 	- [ ] Régime pauvre en sel
+> 	- [ ] Limitation des apports hydriques
+> 	- [ ] Activité physique régulière adaptée
+> - [ ] **21. Synthèse diagnostique principale *(1 grille sur 3)***
+> 	- [ ] Insuffisance cardiaque décompensée
+> 	- [ ] Sténose aortique sévère
+> 	- [ ] Insuffisance mitrale modérée
+> 	- [ ] Dysfonction VG sévère
+> 	- [ ] Possible syndrome obstructif associé
+> - [ ] **22. Diagnostic différentiel dyspnée cardio-pulmonaire *(1 grille sur 3)***
+> - [ ] **23. Examens complémentaires cardiaques *(1 grille sur 3)***
+> 	- [ ] ECG
+> 	- [ ] Radiographie thorax
+> 	- [ ] Échocardiographie
+> 	- [ ] BNP ou NT-proBNP
+> 	- [ ] Coronarographie si chirurgie envisagée
+> - [ ] **24. Examens complémentaires respiratoires *(1 grille sur 3)***
+> 	- [ ] Spirométrie
+> 	- [ ] Gazométrie artérielle
+> 	- [ ] Test de marche 6 minutes
+> 	- [ ] Scanner thoracique si indication
+> 	- [ ] Polysomnographie si suspicion SAOS
+> - [ ] **25. Prise en charge de l'insuffisance cardiaque *(1 grille sur 3)***
+> - [ ] **26. Prise en charge respiratoire *(1 grille sur 3)***
+> 	- [ ] Oxygénothérapie si hypoxémie
+> 	- [ ] Bronchodilatateurs si obstruction
+> 	- [ ] Sevrage tabagique impératif
+> 	- [ ] Kinésithérapie respiratoire
+> 	- [ ] Vaccination grippe/pneumocoque
+> - [ ] **27. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
+> 	- [ ] Hospitalisation pour décompensation aiguë
+> 	- [ ] Monitoring poids quotidien
+> 	- [ ] Surveillance diurèse et ionogramme
+> 	- [ ] Évaluation pré-opératoire si chirurgie
+> 	- [ ] Suivi multidisciplinaire cardio-pneumo
+> - [ ] **28. Aspects psychosociaux et éducation *(1 grille sur 3)***
+> 	- [ ] Soutien psychologique
+> 	- [ ] Aide sociale
+> 	- [ ] Éducation thérapeutique
+> 	- [ ] Aménagement domicile si besoin
+> 	- [ ] Coordination avec médecin traitant
+> - [ ] **29. Management intégré cardio-respiratoire *(1 grille sur 3)***
+
+> [!success] 💊 Management — si Tachycardie supraventriculaire (TSV/WPW)
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

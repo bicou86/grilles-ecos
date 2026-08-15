@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -285,3 +296,103 @@ cssclasses:
 > 	- [ ] Propose examen gynécologique pour IST
 > - [ ] **35. Simulation - palpation vésicale *(Infection urinaire (cystite))***
 > 	- [ ] Réaction appropriée si palpation vessie
+
+> [!success] 💊 Management — si Infection urinaire (cystite)
+> - [ ] **1. Diagnostics différentiels évoqués**
+> 	- [ ] Pyélonéphrite
+> 	- [ ] Infections sexuellement transmissibles (gonorrhée, chlamydia, syphilis, VIH)
+> - [ ] **2. Traitement proposé**
+> 	- [ ] Antibiothérapie pour infection urinaire
+> - [ ] **3. Évoque le diagnostic d'infection urinaire basse**
+> - [ ] **4. Propose des investigations paracliniques**
+> 	- [ ] Analyse d'urine/ECBU
+> 	- [ ] Dépistage IST (gonorrhée, chlamydia, syphilis, VIH)
+
+> [!success] 💊 Management — si Infection à Chlamydia trachomatis
+> - [ ] **1. Prévention et conseils**
+> 	- [ ] Utilisation du préservatif
+> 	- [ ] Dépistage régulier si partenaires multiples
+> 	- [ ] Notification des partenaires
+> 	- [ ] Suivi après traitement
+> - [ ] **2. Hypothèse diagnostique principale**
+> 	- [ ] Infection à Chlamydia trachomatis
+> 	- [ ] Explication adaptée à la patiente
+> - [ ] **3. Diagnostics différentiels évoqués**
+> 	- [ ] Infection à Neisseria gonorrhoeae
+> 	- [ ] Infection à Trichomonas vaginalis
+> 	- [ ] Infection à Mycoplasma
+> 	- [ ] Cystite simple
+> - [ ] **4. Examens complémentaires**
+> 	- [ ] PCR Chlamydia/Gonocoque
+> 	- [ ] Analyse d'urine
+> 	- [ ] Test de grossesse si indiqué
+> 	- [ ] Dépistage IST complet
+> - [ ] **5. Traitement proposé**
+> 	- [ ] Azithromycine 1g dose unique
+> 	- [ ] ± Ceftriaxone 250mg IM
+> 	- [ ] Traitement du partenaire
+> 	- [ ] Abstinence/protection pendant traitement
+> - [ ] **6. Réponse aux inquiétudes**
+> 	- [ ] Rassurer sur la gravité
+> 	- [ ] Expliquer les complications possibles si non traité
+> 	- [ ] Importance du traitement du partenaire
+
+> [!success] 💊 Management — si Prostatite
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Pyélonéphrite
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Suspicion d'hyperplasie bénigne de la prostate
+> - [ ] **1. Prise de sang**
+> - [ ] **2. Valeurs de rétention rénale**
+> - [ ] **3. Formule sanguine et paramètres inflammatoires**
+> - [ ] **4. Analyse d'urine**
+> - [ ] **5. Status urinaire**
+> - [ ] **6. Échographie vésicale avec mesure du résidu post-mictionnel**
+> - [ ] **7. Échographie des reins / des voies urinaires supérieures**
+> - [ ] **8. Hypothèse diagnostique**
+> - [ ] **9. Information du patient**
+> - [ ] **10. Instructions**
+> - [ ] **11. Traitement médicamenteux**
+> - [ ] **12. Alpha-bloquants**
+> - [ ] **13. Inhibiteurs de la 5-alpha-réductase**
+> - [ ] **14. Calendrier mictionnel**
+> - [ ] **15. Examens diagnostiques complémentaires**
+> - [ ] **16. Orientation vers un spécialiste**
+> - [ ] **17. Contrôle d'évolution**
+> - [ ] **18. Filet de sécurité**
+
+> [!success] 💊 Management — si Urétrite sexuellement transmissible
+> - [ ] **1. Énonce le diagnostic principal**
+> - [ ] **2. Diagnostics différentiels**
+> 	- [ ] Cystite
+> 	- [ ] Prostatite
+> 	- [ ] Urétrite non gonococcique
+> 	- [ ] Infection urinaire haute
+> - [ ] **3. Examens diagnostiques**
+> 	- [ ] Bandelette urinaire et ECBU
+> 	- [ ] Test des 3 ou 4 verres si nécessaire
+> 	- [ ] Prélèvement de l'écoulement urétral (gonocoques et Chlamydia)
+> 	- [ ] Biologie : FSC, CRP, créatinine
+> 	- [ ] Test VIH obligatoire !
+> 	- [ ] Sérologies IST (syphilis, hépatites B et C)
+> - [ ] **4. Traitement antibiotique**
+> 	- [ ] Ceftriaxone 500mg IM dose unique (gonocoque)
+> 	- [ ] + Azithromycine 1g PO dose unique (Chlamydia)
+> 	- [ ] Alternative : doxycycline 100mg 2x/j pendant 7 jours
+> - [ ] **5. Notification des partenaires**
+> 	- [ ] Information obligatoire des partenaires
+> 	- [ ] Traitement empirique des partenaires
+> 	- [ ] Période de notification : 60 jours
+> 	- [ ] Anonymat respecté si souhaité
+> - [ ] **6. Prévention et conseils**
+> 	- [ ] Utilisation systématique du préservatif
+> 	- [ ] Dépistage régulier si comportements à risque
+> 	- [ ] Information sur les IST
+> 	- [ ] Vaccination hépatite B si non fait
+> - [ ] **7. Suivi**
+> 	- [ ] Contrôle clinique à 1 semaine
+> 	- [ ] Test de guérison à 3-4 semaines
+> 	- [ ] Contrôle VIH à 3 mois (fenêtre sérologique)
+> 	- [ ] Support psychologique si nécessaire (contexte de séparation)

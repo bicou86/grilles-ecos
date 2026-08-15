@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -220,3 +231,66 @@ cssclasses:
 > - [ ] **13. Tests spécifiques *(Néoplasie des voies biliaires/pancréatique)***
 > 	- [ ] Défense ET détente
 > 	- [ ] Signe de Murphy
+
+> [!success] 💊 Management — si Carcinome hépatocellulaire
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Hépatite (virale/alcoolique)
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Hépatite virale aiguë A
+> - [ ] **1. Diagnostic principal suspecté**
+> - [ ] **2. Diagnostics différentiels**
+> - [ ] **3. Examens biologiques de première intention**
+> 	- [ ] Bilan hépatique complet (ASAT, ALAT, GGT, PAL, bilirubine totale/conjuguée)
+> 	- [ ] FSC, plaquettes
+> 	- [ ] TP, TCA (fonction hépatique)
+> 	- [ ] Créatinine, ionogramme
+> - [ ] **4. Sérologies virales**
+> 	- [ ] IgM anti-VHA
+> 	- [ ] Ag HBs, Ac anti-HBc IgM
+> 	- [ ] Ac anti-VHC
+> 	- [ ] Ac anti-VHE si indiqué
+> - [ ] **5. Examens d'imagerie**
+> 	- [ ] Échographie abdominale
+> 	- [ ] Recherche de lithiase
+> 	- [ ] Évaluation du parenchyme hépatique
+> 	- [ ] Voies biliaires
+> - [ ] **6. Prise en charge thérapeutique**
+> - [ ] **7. Critères d'hospitalisation**
+> 	- [ ] TP < 50%
+> 	- [ ] Encéphalopathie hépatique
+> 	- [ ] Vomissements incoercibles
+> 	- [ ] Contexte social défavorable
+> 	- [ ] Doute diagnostique
+> - [ ] **8. Suivi et pronostic**
+> 	- [ ] Contrôle biologique à 1 semaine
+> 	- [ ] Normalisation attendue en 4-6 semaines
+> 	- [ ] Guérison complète habituelle pour hépatite A
+> 	- [ ] Vaccination ultérieure hépatites A et B
+> - [ ] **9. Information du patient**
+> 	- [ ] Explication du diagnostic probable
+> 	- [ ] Évolution favorable habituelle
+> 	- [ ] Mesures d'hygiène
+> 	- [ ] Arrêt de travail nécessaire
+> 	- [ ] Signes d'alarme à surveiller
+
+> [!success] 💊 Management — si Ictère du nouveau-né
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Néoplasie des voies biliaires/pancréatique
+> - [ ] **1. Évoque le diagnostic principal de néoplasie des voies biliaires/pancréatique**
+> - [ ] **2. Évoque un diagnostic différentiel cohérent**
+> 	- [ ] Néoplasie pancréatique
+> 	- [ ] Cholangite/cholecystite
+> 	- [ ] Pancréatite
+> 	- [ ] Hépatite
+> 	- [ ] Hémolyse
+> - [ ] **3. Propose des examens complémentaires appropriés**
+> 	- [ ] Laboratoire (bilirubine totale et directe, transaminases, PAL, GGT)
+> 	- [ ] Échographie abdominale
+> 	- [ ] CT abdominale avec contraste
+> 	- [ ] CPRE/cholangio-IRM si indiqué
+> - [ ] **4. Informe la patiente de l'hypothèse diagnostique**
+> 	- [ ] Explique la suspicion de problème au niveau du foie/voies biliaires
+> 	- [ ] Mentionne la nécessité d'examens complémentaires

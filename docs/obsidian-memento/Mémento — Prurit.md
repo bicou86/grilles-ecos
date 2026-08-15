@@ -17,8 +17,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -41,6 +40,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -158,3 +169,49 @@ cssclasses:
 > 	- [ ] Pas d'ascite
 > 	- [ ] Pas de gynécomastie
 > 	- [ ] Pas d'atrophie testiculaire
+
+> [!success] 💊 Management
+> - [ ] **1. Diagnostics différentiels de l'ictère**
+> - [ ] **2. Examens complémentaires de première intention**
+> 	- [ ] Bilan hépatique complet: bilirubine totale et conjuguée
+> 	- [ ] Transaminases (ALAT/ASAT)
+> 	- [ ] Phosphatases alcalines (PAL) et Gamma-GT
+> 	- [ ] Albumine, TP/INR
+> 	- [ ] FSC: recherche anémie, hyperleucocytose
+> 	- [ ] Lipase
+> - [ ] **3. Imagerie biliaire**
+> 	- [ ] Échographie abdominale en première intention
+> 	- [ ] Dilatation des voies biliaires intra et extra-hépatiques
+> 	- [ ] Recherche de calcul résiduel dans le cholédoque
+> 	- [ ] Masse pancréatique ou péri-hilaire
+> 	- [ ] État du parenchyme hépatique
+> 	- [ ] CT abdominal avec injection
+> 	- [ ] Meilleure visualisation des masses
+> 	- [ ] Staging si néoplasie
+> 	- [ ] Cholangio-IRM (cholangio-pancréatographie par résonance magnétique)
+> 	- [ ] Visualisation non invasive de l'arbre biliaire
+> 	- [ ] Localisation précise de l'obstacle
+> - [ ] **4. Marqueurs tumoraux et examens spécialisés**
+> 	- [ ] CA 19-9
+> 	- [ ] ACE
+> 	- [ ] Alpha-foetoprotéine
+> 	- [ ] IgG4
+> 	- [ ] CPRE diagnostique et thérapeutique
+> 	- [ ] Sphinctérotomie si calcul
+> 	- [ ] Pose de prothèse biliaire si sténose
+> 	- [ ] Biopsies/brossage cytologique
+> - [ ] **5. Traitement symptomatique du prurit**
+> - [ ] **6. Surveillance et complications**
+> - [ ] **7. Orientation et prise en charge**
+> 	- [ ] Hospitalisation si angiocholite ou altération état général
+> 	- [ ] Référence gastro-entérologie pour CPRE
+> 	- [ ] Référence chirurgie si tumeur résécable
+> 	- [ ] Référence oncologie si tumeur non résécable
+> 	- [ ] Suivi rapproché si traitement ambulatoire
+> 	- [ ] Supplémentation vitamines liposolubles (A,D,E,K)
+
+> [!success] 💊 Management — si Eczéma / Dermatite
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Urticaire
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

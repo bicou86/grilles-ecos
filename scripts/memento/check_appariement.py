@@ -1,4 +1,10 @@
-"""Comportement de l'appariement sur des cas construits. Sortie 1 si ecart."""
+"""Comportement de l'appariement sur des cas construits. Sortie 1 si ecart.
+
+Une seule verification part du corpus reel et non de cas construits :
+`verifier_attendus_du_corpus()`. Elle garde la jointure entre le libelle de
+diagnostic de la table de priorites et celui que la table des diagnostics
+resout, parce qu'aucun cas construit ne peut la surveiller.
+"""
 import sys
 from pathlib import Path
 
@@ -160,6 +166,192 @@ def verifier_reponses_patient():
     return ecarts
 
 
+def _cas_m(cid, titres):
+    """Un cas construit reduit a sa section management."""
+    return {"id": cid, "sections": {"m": [("item", f"m{i}", t, [])
+                                          for i, t in enumerate(titres, 1)]}}
+
+
+def verifier_management():
+    """Le management se scinde en commun et en sous-blocs par diagnostic.
+
+    Ce bloc ETEND celui du brief (deux cas, deux diagnostics, aucun attendu)
+    des trois situations que la decision du 2026-08-15 introduit : un
+    diagnostic attendu sans grille, un diagnostic attendu dont tout le
+    management est commun, et un item porte par une partie seulement des
+    diagnostics.
+    """
+    ecarts = []
+    cas = [_cas_m("A", ["Hypothèses diagnostiques", "Aspirine + P2Y12"]),
+           _cas_m("B", ["Hypothèses diagnostiques", "AINS et colchicine"])]
+    diag = {"A": "STEMI", "B": "Péricardite"}
+    commun, propres = lib_fusion.scinder_management(cas, diag, None)
+
+    if [c["titre"] for c in commun] != ["Hypothèses diagnostiques"]:
+        ecarts.append(f"le commun devrait etre le seul item partage : {[c['titre'] for c in commun]}")
+    if set(propres) != {"STEMI", "Péricardite"}:
+        ecarts.append(f"sous-blocs attendus STEMI et Pericardite : {sorted(propres)}")
+    if [i["titre"] for i in propres.get("STEMI", [])] != ["Aspirine + P2Y12"]:
+        ecarts.append("le sous-bloc STEMI est faux")
+
+    # UN DIAGNOSTIC ATTENDU SANS GRILLE reste un sous-bloc, vide : c'est la
+    # lacune de revision que le memento doit nommer, pas taire.
+    commun, propres = lib_fusion.scinder_management(
+        cas, diag, None, ["STEMI", "Péricardite", "Dissection aortique"])
+    if propres.get("Dissection aortique") != []:
+        ecarts.append("un diagnostic attendu sans grille doit produire un sous-bloc vide : "
+                      f"{propres.get('Dissection aortique')!r}")
+    if [c["titre"] for c in commun] != ["Hypothèses diagnostiques"]:
+        ecarts.append("les attendus ne doivent pas changer le commun")
+
+    # UN DIAGNOSTIC DONT TOUT LE MANAGEMENT EST COMMUN rend une liste vide,
+    # elle aussi : c'est au rendu de distinguer les deux vides, en lisant
+    # `diag_par_cas`. Sans cette entree, le generateur ne pourrait pas dire
+    # « tout figure dans le commun » plutot que « aucune grille ».
+    tout_commun = [_cas_m("A", ["Filet de sécurité"]), _cas_m("B", ["Filet de sécurité"])]
+    _, propres = lib_fusion.scinder_management(tout_commun, diag, None, ["STEMI"])
+    if propres.get("STEMI") != [] or propres.get("Péricardite") != []:
+        ecarts.append(f"un diagnostic entierement commun doit rendre une liste vide : {propres}")
+
+    # UN ITEM PORTE PAR DEUX DIAGNOSTICS SUR TROIS figure dans les deux
+    # sous-blocs — c'est le comportement voulu, pas un doublon.
+    trois = [_cas_m("A", ["Anticoagulation"]), _cas_m("B", ["Anticoagulation"]),
+             _cas_m("C", ["Corticoïdes"])]
+    d3 = {"A": "STEMI", "B": "Péricardite", "C": "Embolie"}
+    commun, propres = lib_fusion.scinder_management(trois, d3, None)
+    if commun:
+        ecarts.append(f"aucun item n'est porte par les trois diagnostics : {commun}")
+    if ([i["titre"] for i in propres.get("STEMI", [])] != ["Anticoagulation"]
+            or [i["titre"] for i in propres.get("Péricardite", [])] != ["Anticoagulation"]):
+        ecarts.append("un item partage par deux diagnostics doit figurer dans les deux sous-blocs")
+
+    # AUCUN ITEM NE DOIT DISPARAITRE quand aucune grille porteuse n'a de
+    # diagnostic resolu : la formule du brief (`if porteurs and ...`) l'aurait
+    # laisse tomber dans le vide — ni commun, ni sous-bloc.
+    orphelin = [_cas_m("A", ["Réévaluation à 48 h"])]
+    commun, propres = lib_fusion.scinder_management(orphelin, {}, None)
+    if [c["titre"] for c in commun] != ["Réévaluation à 48 h"]:
+        ecarts.append(f"un item sans diagnostic porteur a ete perdu : {commun} / {propres}")
+    return ecarts
+
+
+def verifier_restriction():
+    """Dans un sous-bloc, le compte de grilles est celui du diagnostic.
+
+    Sans restriction, « 3 grilles sur 2 » : `marque()` comparerait des
+    porteurs comptes sur toute la SSP a un denominateur compte sur le seul
+    diagnostic. La restriction retire aussi les sous-items qu'aucune grille du
+    diagnostic ne porte — un sous-item a « 0 grille sur 2 » ne veut rien dire.
+    """
+    ecarts = []
+    items = [{"titre": "Anticoagulation", "cas": {"A", "B", "C"},
+              "sous": [{"titre": "HBPM", "cas": {"A"}},
+                       {"titre": "Relais AVK", "cas": {"C"}}]}]
+    vue = lib_fusion.restreindre(items, ["A", "B"])
+    if len(vue) != 1 or vue[0]["cas"] != {"A", "B"}:
+        ecarts.append(f"restriction des porteurs erronee : {vue}")
+    elif [s["titre"] for s in vue[0]["sous"]] != ["HBPM"]:
+        ecarts.append(f"sous-item hors diagnostic non retire : {vue[0]['sous']}")
+    if lib_fusion.restreindre(items, ["Z"]) != []:
+        ecarts.append("un item qu'aucune grille cible ne porte doit disparaitre de la vue")
+    # l'original n'est pas modifie : la meme liste sert plusieurs sous-blocs
+    if items[0]["cas"] != {"A", "B", "C"} or len(items[0]["sous"]) != 2:
+        ecarts.append("restreindre() a modifie les items d'origine")
+
+    rendu = lib_rendu.encadre("success", "💊", vue, ["A", "B"], {"A": "TVP", "B": "TVP"})
+    if rendu != "> [!success] 💊\n> - [ ] **1. Anticoagulation**\n> \t- [ ] HBPM *(1 grille sur 2)*":
+        ecarts.append("marquage errone dans un sous-bloc restreint :\n" + str(rendu))
+    return ecarts
+
+
+def verifier_mention():
+    """Un encadre sans item rend sa mention, et rien si aucune n'est fournie."""
+    ecarts = []
+    if lib_rendu.encadre("success", "💊 — si X", [], ["A"], {}) is not None:
+        ecarts.append("un encadre vide sans mention doit rester absent")
+    attendu = "> [!success] 💊 — si X\n> *rien à dire*"
+    obtenu = lib_rendu.encadre("success", "💊 — si X", [], ["A"], {}, mention="*rien à dire*")
+    if obtenu != attendu:
+        ecarts.append(f"mention mal rendue : {obtenu!r}")
+    return ecarts
+
+
+def verifier_sous_blocs():
+    """Les quatre sortes de sous-bloc 💊, rendues au caractere pres.
+
+    Deux SSP construites, parce que deux des quatre mentions ne peuvent PAS
+    coexister : des qu'un diagnostic ne cote aucun management, plus aucun item
+    n'est porte par tous les diagnostics, donc le commun est vide et personne
+    ne peut etre « tout commun ». C'est exactement le piege qu'une premiere
+    version a paye — elle renvoyait AZYGOS-4 (HypoTA orthostatique, sans
+    section management) vers « l'encadre commun ci-dessus », qui n'existait pas.
+    """
+    import build_memento as B
+
+    ecarts = []
+    cas = [_cas_m("A", ["Hypothèses diagnostiques", "Aspirine + P2Y12"]),
+           _cas_m("B", ["Hypothèses diagnostiques", "AINS et colchicine"]),
+           _cas_m("C", ["Hypothèses diagnostiques"])]
+    diag = {"A": "STEMI", "B": "Péricardite", "C": "Embolie"}
+    attendu = [
+        "> [!success] 💊 Management — commun aux diagnostics\n"
+        "> - [ ] **1. Hypothèses diagnostiques**",
+        f"> [!success] 💊 Management — si Dissection aortique\n> {B.SANS_GRILLE}",
+        f"> [!success] 💊 Management — si Embolie\n> {B.TOUT_COMMUN}",
+        "> [!success] 💊 Management — si Péricardite\n> - [ ] **1. AINS et colchicine**",
+        "> [!success] 💊 Management — si STEMI\n> - [ ] **1. Aspirine + P2Y12**",
+    ]
+    obtenu = B.blocs_management(cas, ["A", "B", "C"], diag, None,
+                                ["STEMI", "Péricardite", "Embolie", "Dissection aortique"])
+    if obtenu != attendu:
+        ecarts.append("sous-blocs 💊 errones — obtenu :\n" + "\n\n".join(obtenu))
+
+    # UNE GRILLE SANS SECTION MANAGEMENT (le cas AZYGOS-4) : son diagnostic
+    # garde un sous-bloc, qui dit pourquoi il est vide sans renvoyer vers un
+    # commun inexistant.
+    muet = [_cas_m("A", ["Aspirine + P2Y12"]), {"id": "B", "sections": {}}]
+    obtenu = B.blocs_management(muet, ["A", "B"], {"A": "STEMI", "B": "HypoTA"}, None, ())
+    # Aucun encadre commun ici : rien n'est porte par les deux diagnostics.
+    attendu = [
+        f"> [!success] 💊 Management — si HypoTA\n> {B.SANS_MANAGEMENT}",
+        "> [!success] 💊 Management — si STEMI\n> - [ ] **1. Aspirine + P2Y12**",
+    ]
+    if obtenu != attendu:
+        ecarts.append("sous-bloc d'un diagnostic sans management errone — obtenu :\n"
+                      + "\n\n".join(obtenu))
+    return ecarts
+
+
+def verifier_attendus_du_corpus():
+    """Aucun diagnostic attendu ne double un diagnostic observe par la graphie.
+
+    Les deux libelles viennent de deux tables differentes : `diagnostics` dans
+    docs/ecos-priorites-2026.yaml pour les attendus, docs/ecos-diagnostics.yaml
+    (via docs/ecos-diagnostics-alias.yaml) pour les observes. S'ils ne
+    different que par la CASSE ou les ACCENTS, le memento afficherait DEUX
+    sous-blocs pour un seul diagnostic, dont l'un annoncerait faussement
+    qu'aucune grille ne le documente. Aucun cas construit ne peut surveiller
+    cette jointure : elle se verifie sur le corpus, ce que fait ce bloc.
+
+    Une divergence reelle de vocabulaire (« MICI (Crohn / RCUH) » contre
+    « Rectocolite ulcero-hemorragique ») n'est PAS un ecart ici : elle se
+    corrige dans docs/ecos-diagnostics-alias.yaml, et le sous-bloc vide la
+    signale au lecteur. Seule la graphie est gardee.
+    """
+    import build_memento
+
+    ecarts = []
+    attendus = build_memento.diagnostics_attendus()
+    normalise = lambda t: lib_extraction.sans_accent(t).lower()
+    for ssp, cas_list in build_memento.par_ssp(None).items():
+        observes = {c["diagnostic"] for c in cas_list if c["diagnostic"]}
+        vus = {normalise(d): d for d in observes}
+        for attendu in sorted(attendus.get(ssp, ())):
+            jumeau = vus.get(normalise(attendu))
+            if jumeau is not None and jumeau != attendu:
+                ecarts.append(f"{ssp} : « {attendu} » (priorités) et « {jumeau} » (corpus) "
+                              "ne different que par la graphie")
+    return ecarts
 
 
 def main():
@@ -205,6 +397,11 @@ def main():
     ecarts += verifier_nettoyage()
     ecarts += verifier_reponses_patient()
     ecarts += verifier_invariant_sous_items()
+    ecarts += verifier_management()
+    ecarts += verifier_restriction()
+    ecarts += verifier_mention()
+    ecarts += verifier_sous_blocs()
+    ecarts += verifier_attendus_du_corpus()
 
     if ecarts:
         print("ECHEC —", len(ecarts), "ecart(s) :")

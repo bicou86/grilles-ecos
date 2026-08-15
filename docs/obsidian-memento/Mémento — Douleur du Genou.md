@@ -16,8 +16,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -40,6 +39,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -247,3 +258,76 @@ cssclasses:
 > 	- [ ] Pouls pédieux et tibial postérieur
 > 	- [ ] Sensibilité
 > 	- [ ] Motricité distale
+
+> [!success] 💊 Management — si Arthrite septique
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Déchirure méniscale / ligamentaire
+> - [ ] **1. Radiographie du genou**
+> - [ ] **2. IRM du genou**
+> - [ ] **3. Diagnostic de travail**
+> - [ ] **4. Information sur le diagnostic**
+> - [ ] **5. Analgésie**
+> - [ ] **6. Refroidissement**
+> - [ ] **7. Décharge**
+> - [ ] **8. Orthèse de genou**
+> - [ ] **9. Indication opératoire**
+> - [ ] **10. Technique opératoire**
+> - [ ] **11. Avis orthopédique**
+> - [ ] **12. Filet de sécurité**
+> - [ ] **13. Contrôle d’évolution**
+
+> [!success] 💊 Management — si Lésion méniscale médiale du genou droit
+> - [ ] **1. Diagnostic principal**
+> - [ ] **2. Diagnostics différentiels (au moins 2)**
+> - [ ] **3. Examens complémentaires**
+> 	- [ ] Radiographie du genou (face/profil) pour exclure une lésion osseuse
+> 	- [ ] IRM du genou pour confirmation diagnostique
+> 	- [ ] Éventuellement arthroscopie diagnostique et thérapeutique
+> - [ ] **4. Traitement aigu**
+> 	- [ ] Protocole RICE (repos, glace, compression, élévation)
+> 	- [ ] AINS (ex: ibuprofène 600mg 3x/jour)
+> 	- [ ] Antalgiques si nécessaire
+> 	- [ ] Décharge partielle avec cannes anglaises
+> 	- [ ] Immobilisation relative (attelle articulée si nécessaire)
+> - [ ] **5. Prise en charge à moyen terme**
+> 	- [ ] Référence à l'orthopédiste
+> 	- [ ] Physiothérapie pour renforcement musculaire et proprioception
+> 	- [ ] Décision thérapeutique selon IRM: conservateur vs chirurgical
+> 	- [ ] Si chirurgie: suture méniscale, résection partielle ou remplacement selon lésion
+> - [ ] **6. Information du patient**
+> 	- [ ] Explication du diagnostic probable
+> 	- [ ] Évolution attendue
+> 	- [ ] Importance du repos sportif temporaire
+> 	- [ ] Plan de traitement proposé
+> - [ ] **7. Suivi**
+> 	- [ ] Contrôle clinique dans 1-2 semaines
+> 	- [ ] Adaptation du traitement selon évolution
+> 	- [ ] Certificat médical pour arrêt sportif
+
+> [!success] 💊 Management — si Ostéomyélite
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Thrombose veineuse profonde (TVP)
+> - [ ] **1. Hypothèses diagnostiques**
+> - [ ] **2. Examens complémentaires de première intention**
+> 	- [ ] D-dimères
+> 	- [ ] Échographie de compression avec Doppler jambe droite
+> 	- [ ] Échographie mollet droit
+> - [ ] **3. Examens d'imagerie ostéo-articulaire**
+> 	- [ ] Radiographie genou droit
+> 	- [ ] IRM genou droit
+> - [ ] **4. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
+> 	- [ ] Remettre le bandage de la patiente
+> - [ ] **5. Conseil et soutien**
+> 	- [ ] Conseil sur les options de soutien pour les changements de poids et de régime
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Réaction appropriée au défi
+> 	- [ ] Éducation sur l'importance de la mobilisation précoce
+> 	- [ ] Information sur la prévention des TVP

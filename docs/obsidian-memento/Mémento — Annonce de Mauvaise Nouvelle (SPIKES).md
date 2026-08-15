@@ -16,8 +16,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -40,6 +39,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -102,3 +113,44 @@ cssclasses:
 > 	- [ ] Ne pas donner de faux espoirs
 > 	- [ ] Éviter les euphémismes confus
 > 	- [ ] Être honnête mais empathique
+
+> [!success] 💊 Management
+> - [ ] **1. E - Emotions : Réagir aux émotions**
+> 	- [ ] Observer les réactions
+> 	- [ ] Respecter le temps et le silence
+> 	- [ ] Nommer l'émotion
+> 	- [ ] Valider l'émotion
+> 	- [ ] Offrir du soutien
+> - [ ] **2. Techniques de soutien émotionnel**
+> 	- [ ] Empathie verbale
+> 	- [ ] Empathie non-verbale
+> 	- [ ] Toucher thérapeutique si approprié
+> 	- [ ] Offrir des mouchoirs
+> 	- [ ] Ne pas précipiter la suite
+> - [ ] **3. S - Strategy : Plan thérapeutique immédiat**
+> 	- [ ] Avis chirurgical pour lever l'obstacle
+> 	- [ ] Sonde naso-gastrique pour soulagement
+> 	- [ ] Anti-émétiques
+> 	- [ ] Corticoïdes hautes doses
+> 	- [ ] Hospitalisation nécessaire
+> - [ ] **4. Options oncologiques**
+> 	- [ ] Chimiothérapie palliative toutes les 3 semaines
+> 	- [ ] But: améliorer qualité de vie
+> 	- [ ] Réduction douleurs et ascite
+> 	- [ ] Prolongation survie possible
+> 	- [ ] Décision à discuter avec oncologie
+> - [ ] **5. Discussion du pronostic**
+> 	- [ ] Espérance de vie difficile à estimer
+> 	- [ ] Médiane 12-18 mois
+> 	- [ ] Incertitude inhérente au pronostic
+> 	- [ ] Focus sur qualité de vie
+> 	- [ ] Accompagnement palliatif disponible
+> - [ ] **6. S - Summary : Résumé et prochaines étapes**
+> 	- [ ] Récapituler les points principaux
+> 	- [ ] Vérifier compréhension globale
+> 	- [ ] Plan pour les prochaines 24-48h
+> 	- [ ] Rendez-vous de suivi
+> 	- [ ] Coordonnées pour questions
+
+> [!success] 💊 Management — si Diabète inaugural / Acido-cétose
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

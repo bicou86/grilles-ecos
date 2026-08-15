@@ -18,8 +18,7 @@ cssclasses:
 >
 > - 📋 = Anamnèse — ce qu'il faut absolument avoir demandé
 > - 🩺 = Status — le geste ou le signe qui fait la différence
-> - 🔬 = Management : examens complémentaires
-> - 💊 = Management : prise en charge attendue
+> - 💊 = Management — examens complémentaires **et** prise en charge
 > - 🚨 = urgence
 > - 🚩 = red flag à ne jamais rater
 > - ⭐️ = SSP ou diagnostic fréquemment rencontré à l'ECOS
@@ -43,6 +42,18 @@ cssclasses:
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
 >   porte un.
+>
+> **Le management, lui, ne fusionne pas.** La prise en charge dépend du
+> diagnostic : l'encadré 💊 se scinde en un bloc **commun** — ce que tous les
+> diagnostics de la SSP partagent — puis un bloc **par diagnostic**. Un item
+> porté par deux diagnostics sur cinq figure donc dans **deux** sous-blocs.
+> À l'intérieur d'un sous-bloc, `*(n grilles sur m)*` compte les grilles **de
+> ce diagnostic-là**, pas celles de la SSP.
+>
+> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
+> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille du corpus
+> ne documente : ce sous-bloc vide est un **trou de révision** à combler
+> ailleurs, pas un défaut du mémento.
 >
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
@@ -318,3 +329,101 @@ cssclasses:
 > 	- [ ] Gonfler les joues
 > - [ ] **39. Envisage de tester la force ou les réflexes aux extrémités (exclusion atteinte centrale) *(1 grille sur 4)***
 > - [ ] **40. Envisage de tester la sensibilité aux extrémités *(1 grille sur 4)***
+
+> [!success] 💊 Management — si AIT
+> - [ ] **1. Évoque le diagnostic principal d'accident ischémique transitoire (AIT)**
+> - [ ] **2. Évoque un diagnostic différentiel cohérent**
+> 	- [ ] AVC ischémique
+> 	- [ ] Saignement intracrânien
+> 	- [ ] Abus d'alcool/drogues/médicaments
+> 	- [ ] Vasoconstriction cérébrale
+> 	- [ ] Syndrome psychiatrique (trouble de conversion)
+> - [ ] **3. Propose des examens complémentaires appropriés**
+> 	- [ ] IRM cérébrale (examen de référence)
+> 	- [ ] CT scan cérébral
+> 	- [ ] Bilan sanguin complet
+> 	- [ ] ECG
+> 	- [ ] Échographie carotidienne
+> - [ ] **4. Évoque la nécessité d'une prise en charge urgente**
+> 	- [ ] AIT doit être traité avec autant d'importance qu'un AVC
+> 	- [ ] Hospitalisation pour bilan et surveillance
+> - [ ] **5. Rassure le patient concernant l'inquiétude liée au père**
+> 	- [ ] Explique que tumeur cérébrale très peu probable avec apparition aussi brusque
+> 	- [ ] Différencie AIT des tumeurs cérébrales
+
+> [!success] 💊 Management — si AVC
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
+
+> [!success] 💊 Management — si Infarctus sylvien superficiel
+> - [ ] **1. Diagnostic topographique et syndromique**
+> 	- [ ] Syndrome facio-brachial droit
+> 	- [ ] Localisation : territoire sylvien superficiel gauche
+> 	- [ ] Différenciation centrale vs périphérique
+> 	- [ ] Évaluation sévérité
+> - [ ] **2. Diagnostic étiologique - AVC ischémique vs hémorragique**
+> - [ ] **3. Urgence thérapeutique - thrombolyse**
+> 	- [ ] Fenêtre thérapeutique
+> 	- [ ] Critères d'inclusion thrombolyse
+> 	- [ ] Critères d'exclusion
+> 	- [ ] Score NIHSS et évaluation bénéfice/risque
+> - [ ] **4. Examens complémentaires en urgence**
+> 	- [ ] CT cérébral sans contraste
+> 	- [ ] Bilan biologique
+> 	- [ ] ECG
+> 	- [ ] IRM cérébrale avec diffusion
+> - [ ] **5. Prise en charge aiguë et surveillance**
+> 	- [ ] Monitoring neurologique
+> 	- [ ] Surveillance cardiorespiratoire
+> 	- [ ] Position demi-assise
+> 	- [ ] Contrôle glycémique
+> 	- [ ] Contrôle tensionnel
+> - [ ] **6. Recherche étiologique de l'AVC ischémique**
+> 	- [ ] Écho-Doppler des troncs supra-aortiques
+> 	- [ ] Échocardiographie
+> 	- [ ] Holter ECG
+> 	- [ ] Bilan thrombophilie si sujet jeune
+> - [ ] **7. Prévention secondaire**
+> 	- [ ] Antiagrégation plaquettaire
+> 	- [ ] Statine
+> 	- [ ] Contrôle facteurs de risque
+> 	- [ ] Rééducation précoce
+> - [ ] **8. Pronostic et planification de sortie**
+> 	- [ ] Évaluation fonctionnelle
+> 	- [ ] Orientation
+> 	- [ ] Information famille
+> 	- [ ] Suivi spécialisé
+
+> [!success] 💊 Management — si Paralysie de Bell
+> - [ ] **1. Présentation du cas *(1 grille sur 2)***
+> 	- [ ] Synthétique
+> 	- [ ] Éléments pertinents de l'anamnèse et du status
+> - [ ] **2. Hypothèse diagnostique**
+> 	- [ ] Paralysie de Bell *(1 grille sur 2)*
+> 	- [ ] AVC *(1 grille sur 2)*
+> 	- [ ] Ramsay-Hunt *(1 grille sur 2)*
+> 	- [ ] Lyme *(1 grille sur 2)*
+> 	- [ ] Cause otologique / parotidienne *(1 grille sur 2)*
+> - [ ] **3. Argumente le caractère périphérique *(1 grille sur 2)***
+> - [ ] **4. Diagnostics différentiels et argumentation *(1 grille sur 2)***
+> - [ ] **5. Examens complémentaires *(1 grille sur 2)***
+> 	- [ ] Sérologie de Lyme selon l'exposition
+> 	- [ ] Sérologies VIH et syphilis selon l'anamnèse
+> 	- [ ] Glycémie
+> 	- [ ] Pas d'imagerie en urgence si le tableau est typique
+> - [ ] **6. Traitement *(1 grille sur 2)***
+> 	- [ ] Corticothérapie précoce (dans les 72 h)
+> 	- [ ] Antiviral seulement si suspicion de zona ou forme sévère
+> 	- [ ] Antalgie
+> - [ ] **7. Protection oculaire *(1 grille sur 2)***
+> 	- [ ] Larmes artificielles la journée
+> 	- [ ] Pommade et occlusion palpébrale nocturne
+> 	- [ ] Consigne de consulter en urgence si douleur, rougeur ou baisse de vue
+> - [ ] **8. Information, pronostic et suivi *(1 grille sur 2)***
+> - [ ] **9. Reconnaît une paralysie faciale PÉRIPHÉRIQUE et la distingue d'une atteinte centrale (atteinte du front) *(1 grille sur 2)***
+> - [ ] **10. Propose la paralysie de Bell comme hypothèse principale (diagnostic clinique d'exclusion) *(1 grille sur 2)***
+> - [ ] **11. Reconnaît qu'aucune imagerie / laboratoire de routine n'est nécessaire dans la forme typique (examens ciblés seulement si atypie) *(1 grille sur 2)***
+> - [ ] **12. Corticothérapie orale précoce (moins de 72 h) *(1 grille sur 2)***
+> - [ ] **13. Protection oculaire (larmes artificielles / occlusion nocturne) pour prévenir la kératite d'exposition *(1 grille sur 2)***
+
+> [!success] 💊 Management — si Sclérose en plaques
+> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
