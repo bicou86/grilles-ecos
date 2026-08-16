@@ -151,10 +151,9 @@ cssclasses:
 > - [ ] **59. Caractère de la douleur *(Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
 > - [ ] **60. Facteurs d'amélioration ou d'aggravation *(Épicondylite latérale)***
 > - [ ] **61. Apparition temporelle et contexte *(Épicondylite latérale)***
-> - [ ] **62. Antécédents de traumatisme *(Polyarthrite rhumatoïde · Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
+> - [ ] **62. Antécédents de traumatisme *(Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
 > 	- [ ] Traumatisme actuel *(Épicondylite latérale)*
 > 	- [ ] Traumatisme antérieur *(Épicondylite latérale)*
-> 	- [ ] Antécédents personnels et familiaux sans particularité *(Polyarthrite rhumatoïde)*
 > - [ ] **63. Déficit fonctionnel et gonflement *(Épicondylite latérale)***
 > - [ ] **64. Modalités des symptômes *(Épicondylite latérale)***
 > 	- [ ] À l'effort
@@ -193,7 +192,9 @@ cssclasses:
 > - [ ] **81. Traitement essayé *(Polyarthrite rhumatoïde)***
 > 	- [ ] Anti-inflammatoires (antalgiques)
 > 	- [ ] Nécessité de prise régulière
-> - [ ] **82. Facteurs de risque et exposition *(Polyarthrite rhumatoïde)***
+> - [ ] **82. Antécédents et terrain *(Polyarthrite rhumatoïde)***
+> 	- [ ] Antécédents personnels et familiaux sans particularité
+> - [ ] **83. Facteurs de risque et exposition *(Polyarthrite rhumatoïde)***
 > 	- [ ] Sexe féminin
 > 	- [ ] Âge 45 ans (pic d'incidence 40-60 ans)
 > 	- [ ] Recherche tabagisme

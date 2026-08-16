@@ -254,13 +254,7 @@ cssclasses:
 > - [ ] **23. Tests de provocation GTPS (Hanche - Tests de fonction / provocation (décubitus latéral)) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **24. Resisted Abduction Test (ADD-R-Test) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **25. Mobilité de la hanche (Hanche - Tests de fonction / provocation (décubitus ventral)) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
-> - [ ] **26. Palpation de la hanche *(Coxarthrose (arthrose de hanche) · Syndrome douloureux du grand trochanter (tendinopathie fessière))***
-> 	- [ ] Repères anatomiques: crête iliaque, épine iliaque antéro-supérieure *(Coxarthrose (arthrose de hanche))*
-> 	- [ ] Pubis, ligament inguinal, symphyse pubienne *(Coxarthrose (arthrose de hanche))*
-> 	- [ ] Muscles rectus femoris (droit fémoral), quadriceps *(Coxarthrose (arthrose de hanche))*
-> 	- [ ] Insertion des adducteurs *(Coxarthrose (arthrose de hanche))*
-> 	- [ ] Grand trochanter *(Coxarthrose (arthrose de hanche))*
-> 	- [ ] Épine iliaque postéro-supérieure, sacrum, muscle grand glutéal *(Coxarthrose (arthrose de hanche))*
+> - [ ] **26. Extension de la hanche *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **27. DD Hanche, ISG, lombo-sacré (3 phases de Mennell - test d’hyperextension) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **28. Phase 1: Articulation de la hanche *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **29. Phase 2: ISG (signe classique de Mennell) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
@@ -324,30 +318,37 @@ cssclasses:
 > 	- [ ] Palpation des pouls périphériques
 > 	- [ ] Recherche de signes d'insuffisance artérielle
 > 	- [ ] Recherche de varices
-> - [ ] **40. Recherche de points douloureux *(Coxarthrose (arthrose de hanche))***
+> - [ ] **40. Palpation de la hanche *(Coxarthrose (arthrose de hanche))***
+> 	- [ ] Repères anatomiques: crête iliaque, épine iliaque antéro-supérieure
+> 	- [ ] Pubis, ligament inguinal, symphyse pubienne
+> 	- [ ] Muscles rectus femoris (droit fémoral), quadriceps
+> 	- [ ] Insertion des adducteurs
+> 	- [ ] Grand trochanter
+> 	- [ ] Épine iliaque postéro-supérieure, sacrum, muscle grand glutéal
+> - [ ] **41. Recherche de points douloureux *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Chaleur
 > 	- [ ] Tuméfaction
 > 	- [ ] Douleur à la palpation profonde
 > 	- [ ] Crépitations possibles
-> - [ ] **41. Examen fonctionnel - Mobilité passive *(Coxarthrose (arthrose de hanche))***
+> - [ ] **42. Examen fonctionnel - Mobilité passive *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Flexion
 > 	- [ ] Abduction
 > 	- [ ] Adduction
 > 	- [ ] Rotation interne
 > 	- [ ] Rotation externe
 > 	- [ ] Extension
-> - [ ] **42. Examen fonctionnel - Mobilité active *(Coxarthrose (arthrose de hanche))***
+> - [ ] **43. Examen fonctionnel - Mobilité active *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Pas ou peu d'examen actif nécessaire
 > 	- [ ] Mesures d'amplitudes si changements de position
 > 	- [ ] Démarche logique pour éviter allers-retours position
-> - [ ] **43. Tests de force musculaire *(Coxarthrose (arthrose de hanche))***
+> - [ ] **44. Tests de force musculaire *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Fléchisseurs de hanche
 > 	- [ ] Extenseurs de hanche
 > 	- [ ] Abducteurs (moyen fessier)
 > 	- [ ] Adducteurs
 > 	- [ ] Rotateurs internes
 > 	- [ ] Rotateurs externes
-> - [ ] **44. Mesure de l'inégalité de longueur des membres *(Coxarthrose (arthrose de hanche))***
+> - [ ] **45. Mesure de l'inégalité de longueur des membres *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Mesure vraie: épine iliaque antéro-supérieure à malléole interne
 > 	- [ ] Mesure apparente: ombilic à malléole interne
 > 	- [ ] Recherche d'une bascule du bassin

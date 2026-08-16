@@ -743,12 +743,7 @@ cssclasses:
 > - [ ] **35. Inspection des veines jugulaires *(1 grille sur 13)***
 > - [ ] **36. Recherche d'œdèmes des membres inférieurs *(1 grille sur 13)***
 > - [ ] **37. Hygiène des mains *(1 grille sur 13)***
-> - [ ] **38. Percussion thoracique *(3 grilles sur 13)***
-> 	- [ ] Limite inférieure poumons *(1 grille sur 13)*
-> 	- [ ] Comparaison sonorité G/D *(1 grille sur 13)*
-> 	- [ ] Reconnaissance des sons *(1 grille sur 13)*
-> 	- [ ] Technique correcte *(1 grille sur 13)*
-> 	- [ ] Interprétation *(1 grille sur 13)*
+> - [ ] **38. Inspection thoracique *(2 grilles sur 13)***
 > 	- [ ] Inspection statique du thorax *(1 grille sur 13)*
 > 	- [ ] Évaluation de la symétrie respiratoire *(1 grille sur 13)*
 > 	- [ ] Recherche de déformation thoracique *(1 grille sur 13)*
@@ -782,29 +777,35 @@ cssclasses:
 > 	- [ ] Palpation des vibrations vocales *(1 grille sur 13)*
 > 	- [ ] Recherche de douleur à la palpation *(1 grille sur 13)*
 > 	- [ ] Palpation des aires ganglionnaires (sus-claviculaires, axillaires) *(1 grille sur 13)*
-> - [ ] **45. Identification des bruits pathologiques *(1 grille sur 13)***
+> - [ ] **45. Percussion thoracique *(1 grille sur 13)***
+> 	- [ ] Limite inférieure poumons
+> 	- [ ] Comparaison sonorité G/D
+> 	- [ ] Reconnaissance des sons
+> 	- [ ] Technique correcte
+> 	- [ ] Interprétation
+> - [ ] **46. Identification des bruits pathologiques *(1 grille sur 13)***
 > 	- [ ] Sibilances
 > 	- [ ] Ronchi
 > 	- [ ] Râles fins
 > 	- [ ] Râles grossiers
 > 	- [ ] Frottement pleural
 > 	- [ ] Stridor
-> - [ ] **46. Examen général et signes vitaux *(1 grille sur 13)***
+> - [ ] **47. Examen général et signes vitaux *(1 grille sur 13)***
 > 	- [ ] Évaluation de l'état général
 > 	- [ ] Mesure de la fréquence respiratoire
 > 	- [ ] Évaluation des signes de détresse respiratoire
 > 	- [ ] Recherche de cyanose
-> - [ ] **47. Percussion pulmonaire *(1 grille sur 13)***
+> - [ ] **48. Percussion pulmonaire *(1 grille sur 13)***
 > 	- [ ] Percussion systématique des deux champs pulmonaires
 > 	- [ ] Recherche de matité
 > 	- [ ] Évaluation de la sonorité pulmonaire
 > 	- [ ] Délimitation des bases pulmonaires
-> - [ ] **48. Examen ORL et recherche d'adénopathies *(1 grille sur 13)***
+> - [ ] **49. Examen ORL et recherche d'adénopathies *(1 grille sur 13)***
 > 	- [ ] Palpation des aires ganglionnaires cervicales
 > 	- [ ] Examen de la cavité buccale
 > 	- [ ] Palpation des aires ganglionnaires sus-claviculaires
 > 	- [ ] Recherche d'adénopathies axillaires
-> - [ ] **49. Recherche de signes extrarespiratoires *(1 grille sur 13)***
+> - [ ] **50. Recherche de signes extrarespiratoires *(1 grille sur 13)***
 > 	- [ ] Recherche d'hippocratisme digital
 > 	- [ ] Examen cutané (recherche de métastases)
 > 	- [ ] Palpation abdominale (hépatomégalie)

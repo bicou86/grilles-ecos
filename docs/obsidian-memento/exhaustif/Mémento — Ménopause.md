@@ -121,20 +121,14 @@ cssclasses:
 > 	- [ ] Dyspnée
 > 	- [ ] Toux
 > 	- [ ] Wheezing
-> - [ ] **10. Symptômes ostéo-articulaires**
-> 	- [ ] Palpitations *(Périménopause probable)*
-> 	- [ ] Douleurs thoraciques *(Périménopause probable)*
-> 	- [ ] Œdèmes *(Périménopause probable)*
-> 	- [ ] Douleurs articulaires *(Ménopause physiologique confirmée)*
-> 	- [ ] Antécédents de fractures *(Ménopause physiologique confirmée)*
-> - [ ] **11. Symptômes psychologiques**
-> 	- [ ] Céphalées *(Périménopause probable)*
-> 	- [ ] Vertiges *(Périménopause probable)*
-> 	- [ ] Paresthésies *(Périménopause probable)*
-> 	- [ ] Humeur *(Ménopause physiologique confirmée)*
-> 	- [ ] Tension intérieure *(Ménopause physiologique confirmée)*
-> 	- [ ] Agressivité *(Ménopause physiologique confirmée)*
-> 	- [ ] Anxiété *(Ménopause physiologique confirmée)*
+> - [ ] **10. Symptômes cardiovasculaires *(Périménopause probable)***
+> 	- [ ] Palpitations
+> 	- [ ] Douleurs thoraciques
+> 	- [ ] Œdèmes
+> - [ ] **11. Symptômes neurologiques *(Périménopause probable)***
+> 	- [ ] Céphalées
+> 	- [ ] Vertiges
+> 	- [ ] Paresthésies
 > - [ ] **12. Symptômes B *(Périménopause probable)***
 > 	- [ ] Perte de poids
 > 	- [ ] Sueurs nocturnes
@@ -195,20 +189,28 @@ cssclasses:
 > - [ ] **26. Sexualité *(Ménopause physiologique confirmée)***
 > 	- [ ] Libido
 > 	- [ ] Qualité des rapports
-> - [ ] **27. Fonction cognitive *(Ménopause physiologique confirmée)***
+> - [ ] **27. Symptômes psychologiques *(Ménopause physiologique confirmée)***
+> 	- [ ] Humeur
+> 	- [ ] Tension intérieure
+> 	- [ ] Agressivité
+> 	- [ ] Anxiété
+> - [ ] **28. Fonction cognitive *(Ménopause physiologique confirmée)***
 > 	- [ ] Concentration
 > 	- [ ] Mémoire
 > 	- [ ] Performance générale
-> - [ ] **28. Troubles du sommeil *(Ménopause physiologique confirmée)***
-> - [ ] **29. Anamnèse gynéco-obstétricale *(Ménopause physiologique confirmée)***
+> - [ ] **29. Troubles du sommeil *(Ménopause physiologique confirmée)***
+> - [ ] **30. Symptômes ostéo-articulaires *(Ménopause physiologique confirmée)***
+> 	- [ ] Douleurs articulaires
+> 	- [ ] Antécédents de fractures
+> - [ ] **31. Anamnèse gynéco-obstétricale *(Ménopause physiologique confirmée)***
 > 	- [ ] Parité
 > 	- [ ] Ménarche
 > 	- [ ] Cycles antérieurs
 > 	- [ ] Contraception
-> - [ ] **30. Revue des systèmes *(Ménopause physiologique confirmée)***
+> - [ ] **32. Revue des systèmes *(Ménopause physiologique confirmée)***
 > 	- [ ] Symptômes B (fièvre, perte de poids, sueurs nocturnes)
 > 	- [ ] Autres symptômes
-> - [ ] **31. Questions de clôture *(Ménopause physiologique confirmée)***
+> - [ ] **33. Questions de clôture *(Ménopause physiologique confirmée)***
 > 	- [ ] Avez-vous quelque chose à ajouter ?
 > 	- [ ] Avez-vous des questions ?
 
@@ -221,12 +223,9 @@ cssclasses:
 > 	- [ ] Auscultation cardiaque
 > 	- [ ] Pouls périphériques
 > 	- [ ] Signes d'insuffisance cardiaque
-> - [ ] **3. Examen pulmonaire**
-> 	- [ ] Auscultation pulmonaire *(Périménopause probable)*
-> 	- [ ] Signes de détresse respiratoire *(Périménopause probable)*
-> 	- [ ] Inspection des seins *(Ménopause physiologique confirmée)*
-> 	- [ ] Palpation mammaire bilatérale *(Ménopause physiologique confirmée)*
-> 	- [ ] Palpation des aires ganglionnaires axillaires *(Ménopause physiologique confirmée)*
+> - [ ] **3. Examen pulmonaire *(Périménopause probable)***
+> 	- [ ] Auscultation pulmonaire
+> 	- [ ] Signes de détresse respiratoire
 > - [ ] **4. Examen cutané *(Périménopause probable)***
 > 	- [ ] Modifications cutanées actuelles
 > 	- [ ] Télangiectasies
@@ -240,14 +239,10 @@ cssclasses:
 > - [ ] **6. Examen thyroïdien *(Périménopause probable)***
 > 	- [ ] Palpation thyroïdienne
 > 	- [ ] Signes d'hyperthyroïdie
-> - [ ] **7. Examen gynécologique**
-> 	- [ ] État de conscience *(Périménopause probable)*
-> 	- [ ] Tremblements *(Périménopause probable)*
-> 	- [ ] Réflexes *(Périménopause probable)*
-> 	- [ ] Examen vulvaire (atrophie, sécheresse) *(Ménopause physiologique confirmée)*
-> 	- [ ] Examen au spéculum *(Ménopause physiologique confirmée)*
-> 	- [ ] Inspection du col utérin *(Ménopause physiologique confirmée)*
-> 	- [ ] Palpation bimanuelle *(Ménopause physiologique confirmée)*
+> - [ ] **7. Examen neurologique *(Périménopause probable)***
+> 	- [ ] État de conscience
+> 	- [ ] Tremblements
+> 	- [ ] Réflexes
 > - [ ] **8. Examen général *(Ménopause physiologique confirmée)***
 > 	- [ ] État général
 > 	- [ ] Poids et taille
@@ -257,7 +252,16 @@ cssclasses:
 > 	- [ ] Recherche de diminution de taille
 > 	- [ ] Recherche de cyphose dorsale
 > 	- [ ] Évaluation du risque d'ostéoporose
-> - [ ] **10. Prélèvements *(Ménopause physiologique confirmée)***
+> - [ ] **10. Examen mammaire *(Ménopause physiologique confirmée)***
+> 	- [ ] Inspection des seins
+> 	- [ ] Palpation mammaire bilatérale
+> 	- [ ] Palpation des aires ganglionnaires axillaires
+> - [ ] **11. Examen gynécologique *(Ménopause physiologique confirmée)***
+> 	- [ ] Examen vulvaire (atrophie, sécheresse)
+> 	- [ ] Examen au spéculum
+> 	- [ ] Inspection du col utérin
+> 	- [ ] Palpation bimanuelle
+> - [ ] **12. Prélèvements *(Ménopause physiologique confirmée)***
 > 	- [ ] Frottis cervico-vaginal
 > 	- [ ] Prélèvements microbiologiques si indiqués
 

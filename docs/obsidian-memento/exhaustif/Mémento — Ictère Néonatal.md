@@ -120,15 +120,15 @@ cssclasses:
 > 	- [ ] Groupe sanguin maternel
 > 	- [ ] Groupe sanguin paternel
 > 	- [ ] Groupe sanguin de l'enfant
-> - [ ] **6. Antécédents médicaux et de naissance**
-> 	- [ ] Antécédents médicaux *(Ictère d'allaitement (breastfeeding jaundice))*
-> 	- [ ] Antécédents chirurgicaux *(Ictère d'allaitement (breastfeeding jaundice))*
-> 	- [ ] Hospitalisations antérieures *(Ictère d'allaitement (breastfeeding jaundice))*
-> 	- [ ] Histoire prénatale *(Ictère d'allaitement (breastfeeding jaundice))*
-> 	- [ ] Autres enfants, grossesses *(Ictère d'allaitement (breastfeeding jaundice))*
-> 	- [ ] Histoire de la naissance *(Ictère d'allaitement (breastfeeding jaundice))*
-> 	- [ ] Poids de naissance *(Ictère d'allaitement (breastfeeding jaundice))*
-> 	- [ ] Poids au dernier contrôle *(Ictère d'allaitement (breastfeeding jaundice))*
+> - [ ] **6. Antécédents médicaux et de naissance *(Ictère d'allaitement (breastfeeding jaundice))***
+> 	- [ ] Antécédents médicaux
+> 	- [ ] Antécédents chirurgicaux
+> 	- [ ] Hospitalisations antérieures
+> 	- [ ] Histoire prénatale
+> 	- [ ] Autres enfants, grossesses
+> 	- [ ] Histoire de la naissance
+> 	- [ ] Poids de naissance
+> 	- [ ] Poids au dernier contrôle
 > - [ ] **7. Allergies et médicaments *(Ictère d'allaitement (breastfeeding jaundice))***
 > 	- [ ] Allergies
 > 	- [ ] Médicaments
@@ -152,11 +152,12 @@ cssclasses:
 > - [ ] **20. Élimination *(Ictère néonatal physiologique)***
 > - [ ] **21. Couleur des selles *(Ictère néonatal physiologique)***
 > - [ ] **22. Miction *(Ictère néonatal physiologique)***
-> - [ ] **23. Grossesse *(Ictère néonatal physiologique)***
-> - [ ] **24. Infections pendant la grossesse *(Ictère néonatal physiologique)***
-> - [ ] **25. Médicaments pendant la grossesse *(Ictère néonatal physiologique)***
-> - [ ] **26. Hémolyse familiale *(Ictère néonatal physiologique)***
-> - [ ] **27. Origine ethnique *(Ictère néonatal physiologique)***
+> - [ ] **23. Antécédents médicaux de la mère *(Ictère néonatal physiologique)***
+> - [ ] **24. Grossesse *(Ictère néonatal physiologique)***
+> - [ ] **25. Infections pendant la grossesse *(Ictère néonatal physiologique)***
+> - [ ] **26. Médicaments pendant la grossesse *(Ictère néonatal physiologique)***
+> - [ ] **27. Hémolyse familiale *(Ictère néonatal physiologique)***
+> - [ ] **28. Origine ethnique *(Ictère néonatal physiologique)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Examen physique *(Ictère d'allaitement (breastfeeding jaundice))***

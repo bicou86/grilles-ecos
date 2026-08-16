@@ -9,7 +9,7 @@ controle : trois variantes erronees d'un meme libelle, zero effet, zero
 message. Une table de curation silencieusement morte est pire que pas de table
 du tout, parce qu'on cesse de regarder le rendu.
 
-DIX PROPRIETES, de la plus grossiere a la plus fine :
+ONZE PROPRIETES, de la plus grossiere a la plus fine :
 
   1. STRUCTURE     le fichier se lit avec le lecteur du projet.
   2. SSP REELLE    chaque groupe nomme une SSP que le corpus rattache.
@@ -51,24 +51,30 @@ DIX PROPRIETES, de la plus grossiere a la plus fine :
                    precedent vivait. Voir `couverture()`.
  10. SANS NEGATION la forme canonique retenue ne NIE pas ce que la cle
                    affirmait. Voir `negations_retenues()`.
+ 11. SANS SUBSTITUTION DE DENOMINATION  dans « Signe de X » / « Test de X »,
+                   la table ne remplace pas X par un Y qui ne partage aucun mot
+                   avec lui. Un signe EST son nom. Voir
+                   `denominations_disjointes()` — c'est la propriete qui aurait
+                   attrape « Signe de Murphy » -> « Signe de McBurney ».
 
 CE QUE CE CONTROLE NE PEUT TOUJOURS PAS VERIFIER, et qui reste a la relecture
 humaine. La propriete 8 exige un TEMOIN : une grille qui porte les deux
 libelles. Quand les grilles sont disjointes, rien ne voit rien — et
 « Signes d'hyperthyroidie » (German-74) rabattu sur « Signes d'hypothyroidie »
-(German-7) passe les neuf proprietes au vert. L'information qui manque n'est pas
+(German-7) passe toutes les autres proprietes au vert. L'information qui manque n'est pas
 dans le code, elle est ABSENTE DU CORPUS : deux grilles qui distinguent sans
 jamais se croiser sont hors d'atteinte de tout controle automatique.
 `report_doublons.py` en signale une partie par un filtre antonymique ; il
 signale, il ne ferme pas.
 
-LA PROPRIETE 10 EST NEE D'UNE CORRECTION MANUELLE, et c'est ce qui la justifie.
+LES PROPRIETES 10 ET 11 SONT NEES D'UNE CORRECTION MANUELLE, et c'est ce qui la justifie.
 La ronde 1 de curation a produit cinq entrees dont la forme canonique retenue
 etait la forme NEGATIVE — « Hepatomegalie » -> « Pas d'hepatomegalie » — et les
 neuf proprietes les ont toutes declarees valides, a juste titre : la REUNION est
 bonne, c'est le SENS DE L'ENTREE qui ne l'est pas. Il a fallu les inverser a la
 main. La propriete 10 refuse ce sens-la, et rien d'autre.
 """
+import re
 import sys
 from pathlib import Path
 
@@ -175,6 +181,7 @@ def _verifier(vocabulaire, inventaire, groupes):
     ecarts += collisions(vocabulaire, positions)
     ecarts += couverture(vocabulaire, groupes, positions)
     ecarts += negations_retenues(vocabulaire)
+    ecarts += denominations_disjointes(vocabulaire)
     ecarts += _sans_effet(vocabulaire, groupes)
     return ecarts
 
@@ -214,6 +221,99 @@ def negations_retenues(vocabulaire):
                     + ") : le mémento afficherait un résultat là où la grille demande un "
                     "geste. Réunir ces deux libellés reste légitime — visez la forme "
                     "positive, c'est-à-dire l'entrée inverse")
+    return ecarts
+
+
+# Les constructions ou un NOM porte tout le sens clinique : « Signe de X »,
+# « Test de X », « Manoeuvre de X », « Point de X », « Score de X »... Ce qui
+# suit le « de » n'est pas un qualificatif, c'est la denomination.
+_TETES_NOMMEES = (r"(?:signes?|tests?|manoeuvres?|manœuvres?|points?|scores?"
+                  r"|crit[eè]res?|r[ée]flexes?|[ée]preuves?|[ée]chelles?|triades?"
+                  r"|indices?|classifications?)")
+_DENOMINATION = re.compile(rf"\b{_TETES_NOMMEES}\s+d[eu']\s*(?:la\s+|l'\s*)?([^,;:()]+)",
+                           re.I)
+
+
+def denomination(libelle):
+    """Les mots que ce libelle NOMME, ou None s'il ne nomme rien.
+
+    Rendus dans l'espace des jetons de la cle (`lib_fusion.cle`), pour que la
+    comparaison ignore accents, casse et pluriels comme partout ailleurs.
+    """
+    m = _DENOMINATION.search(libelle)
+    return set(lib_fusion.cle(m.group(1)).split()) if m else None
+
+
+def denominations_disjointes(vocabulaire):
+    """PROPRIETE 11 : deux denominations sans un mot commun sont deux choses.
+
+    C'EST LA PROPRIETE QUI AURAIT ATTRAPE LE SIGNE DE MURPHY, et le cas merite
+    d'etre raconte parce qu'il a coute une SSP entiere. La table portait
+    « Signe de Murphy » -> « Signe de McBurney » sur Douleur Abdominale. SEPT
+    grilles cotent le signe de Murphy sur cette SSP (AMBOSS-1, AZYGOS-14,
+    German-15, RESCOS-17, RESCOS-18, RESCOS-19, RESCOS-23), dont quatre portent
+    une cholecystite : le memento exhaustif n'en gardait aucune trace, et
+    rangeait un « Signe de McBurney » sous « Examen specialise du foie », ce qui
+    n'a aucun sens clinique.
+
+    LES DIX AUTRES PROPRIETES ETAIENT VERTES, toutes a juste titre. La
+    propriete 8 exige un TEMOIN — une grille qui porte les DEUX libelles — et
+    aucune ne porte « Signe de Murphy » avec « Signe de McBurney » : RESCOS-17
+    porte bien les deux notions, mais ecrit la seconde « Palpation du point de
+    McBurney », dont la signature differe. Le controle regardait exactement au
+    bon endroit et ne voyait rien. C'est le defaut que le docstring de tete
+    annonce comme « hors d'atteinte de tout controle automatique » ; la presente
+    propriete en ferme une tranche, celle ou la table est fausse TOUTE SEULE,
+    sans que le corpus ait a en temoigner.
+
+    LA REGLE EST LA DISJONCTION, PAS LA DIFFERENCE, et la nuance fait tout le
+    travail. Exiger l'egalite des denominations refusait vingt entrees
+    legitimes : « Test de Rinne droit » / « Test de Rinne a droite »,
+    « Test de Schellong » / « Test de Schellong complet », « Test d'effort si
+    indique » / « Test d'effort differe » — un mot commun, un qualificatif qui
+    change. Exiger seulement qu'elles PARTAGENT UN MOT laisse passer celles-la
+    et ne retient que les substitutions pures : murphy/mcburney, tinel/tenodese,
+    choc/cholecystite, anemie/hypovolemie, alarme/deshydratation. Mesure sur la
+    table livree : zero faux positif.
+
+    CE QUE LA PROPRIETE NE COUVRE PAS. Elle ne voit que les libelles batis sur
+    une tete nommee. « Examen mammaire » -> « Examen pulmonaire » (Menopause) ou
+    « Antecedents ORL » -> « Antecedents sexuels » (Mal de Gorge) sont tout
+    aussi faux et lui echappent : aucune regle lexicale ne separe « Tabac » ->
+    « Tabagisme », qui est juste, de « Examen monoculaire » -> « Examen
+    cardiovasculaire », qui ne l'est pas. Ces entrees-la ont ete retirees a la
+    main, et la relecture clinique reste le seul recours pour leurs pareilles.
+    """
+    ecarts, temoins = [], 0
+    for ssp in sorted(vocabulaire):
+        for cle in sorted(vocabulaire[ssp]):
+            valeur = vocabulaire[ssp][cle]
+            da, db = denomination(cle), denomination(valeur)
+            if not (da and db) or da == db:
+                continue
+            if da & db:
+                temoins += 1
+                continue
+            ecarts.append(
+                f"{ssp} / « {cle} » → « {valeur} » — SUBSTITUTION DE DÉNOMINATION : "
+                f"« {' '.join(sorted(da))} » et « {' '.join(sorted(db))} » ne "
+                "partagent aucun mot. Un signe, un test ou un score EST son nom ; "
+                "en remplacer un par un autre ne rapproche pas deux graphies, cela "
+                "escamote un item")
+
+    # PARADE AU CONTROLE VIDE, et elle est ici particuliere : le risque n'est
+    # pas que la propriete ne trouve rien, c'est qu'elle DEVIENNE UNE REGLE
+    # D'EGALITE sans que personne le remarque — il suffirait d'ecrire `da != db`
+    # au lieu de `not (da & db)`. Elle refuserait alors cinq entrees legitimes
+    # de la table livree, dont « Test de Rinne droit » -> « Test de Rinne a
+    # droite ». Ces cinq-la sont donc comptees : ce sont les temoins qui
+    # prouvent que la regle discrimine au lieu de tout refuser.
+    if temoins < 3:
+        ecarts.append(
+            f"témoin absent — {temoins} entrée(s) dont les dénominations diffèrent MAIS "
+            "se recoupent. La propriété 11 ne distingue plus une substitution de nom "
+            "d'un simple changement de qualificatif : vérifiez qu'elle teste bien la "
+            "DISJONCTION et non l'égalité")
     return ecarts
 
 

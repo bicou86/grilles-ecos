@@ -144,7 +144,7 @@ cssclasses:
 > - [ ] **41. Amaurosis fugax *(Glaucome aigu)***
 > - [ ] **42. Symptômes B *(Glaucome aigu)***
 > - [ ] **43. Antécédents *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
-> - [ ] **44. Antécédents familiaux *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **44. Antécédents généraux *(Glaucome aigu)***
 > - [ ] **45. Antécédents ophtalmologiques *(Glaucome aigu)***
 > - [ ] **46. Antécédents chirurgicaux oculaires *(Glaucome aigu)***
 > - [ ] **47. Aides visuelles *(Glaucome aigu)***
@@ -156,11 +156,7 @@ cssclasses:
 > - [ ] **53. Noxes *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **54. Alcool *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **55. Tabagisme *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
-> - [ ] **56. Anamnèse familiale de glaucome *(Conjonctivite allergique · Glaucome aigu)***
-> 	- [ ] Allergies dans la famille *(Conjonctivite allergique)*
-> 	- [ ] Asthme familial *(Conjonctivite allergique)*
-> 	- [ ] Eczéma/dermatite atopique *(Conjonctivite allergique)*
-> 	- [ ] Rhinite allergique familiale *(Conjonctivite allergique)*
+> - [ ] **56. Anamnèse familiale de glaucome *(Glaucome aigu)***
 > - [ ] **57. Profession *(Glaucome aigu)***
 > - [ ] **58. Situation sociale *(Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **59. Dynamique journalière *(Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
@@ -179,93 +175,99 @@ cssclasses:
 > - [ ] **72. Autres signes de sicca *(Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **73. Opérations antérieures *(Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
 > - [ ] **74. Drogues *(Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
-> - [ ] **75. Profession et environnement de travail *(Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
-> - [ ] **76. Présentation avec nom, fonction et objectif de la consultation *(Conjonctivite allergique)***
-> - [ ] **77. Caractérisation du symptôme principal *(Conjonctivite allergique)***
+> - [ ] **75. Antécédents familiaux *(Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **76. Profession et environnement de travail *(Sécheresse oculaire évaporative (dysfonction des glandes de Meibom))***
+> - [ ] **77. Présentation avec nom, fonction et objectif de la consultation *(Conjonctivite allergique)***
+> - [ ] **78. Caractérisation du symptôme principal *(Conjonctivite allergique)***
 > 	- [ ] Yeux rouges bilatéraux
 > 	- [ ] Démangeaisons importantes
 > 	- [ ] Latéralité et symétrie
-> - [ ] **78. Chronologie et évolution *(Conjonctivite allergique)***
+> - [ ] **79. Chronologie et évolution *(Conjonctivite allergique)***
 > 	- [ ] Début des symptômes
 > 	- [ ] Mode d'installation (brutal/progressif)
 > 	- [ ] Évolution
 > 	- [ ] Variations journalières
 > 	- [ ] Facteurs déclenchants ou améliorants
-> - [ ] **79. Symptômes ORL et respiratoires associés *(Conjonctivite allergique)***
+> - [ ] **80. Symptômes ORL et respiratoires associés *(Conjonctivite allergique)***
 > 	- [ ] Rhinorrhée
 > 	- [ ] Éternuements fréquents
 > 	- [ ] Obstruction nasale
 > 	- [ ] Prurit nasal
 > 	- [ ] Symptômes de sinusite
-> - [ ] **80. Contexte environnemental et saisonnier *(Conjonctivite allergique)***
+> - [ ] **81. Contexte environnemental et saisonnier *(Conjonctivite allergique)***
 > 	- [ ] Période de l'année (printemps/été)
 > 	- [ ] Exposition à des allergènes
 > 	- [ ] Animaux domestiques
 > 	- [ ] Changements récents d'environnement
 > 	- [ ] Exposition professionnelle/scolaire
-> - [ ] **81. Port et entretien des lentilles de contact *(Conjonctivite allergique)***
+> - [ ] **82. Port et entretien des lentilles de contact *(Conjonctivite allergique)***
 > 	- [ ] Port de lentilles
 > 	- [ ] Type de lentilles (souples/rigides)
 > 	- [ ] Port aujourd'hui
 > 	- [ ] Durée de port quotidien
 > 	- [ ] Hygiène et entretien
 > 	- [ ] Changements récents de produits
-> - [ ] **82. Antécédents personnels d'atopie *(Conjonctivite allergique)***
+> - [ ] **83. Anamnèse familiale d'allergie *(Conjonctivite allergique)***
+> 	- [ ] Allergies dans la famille
+> 	- [ ] Asthme familial
+> 	- [ ] Eczéma/dermatite atopique
+> 	- [ ] Rhinite allergique familiale
+> - [ ] **84. Antécédents personnels d'atopie *(Conjonctivite allergique)***
 > 	- [ ] Asthme personnel
 > 	- [ ] Eczéma/dermatite atopique
 > 	- [ ] Rhinite allergique
 > 	- [ ] Allergies alimentaires
 > 	- [ ] Allergies aux animaux
 > 	- [ ] Autres allergies
-> - [ ] **83. Correction optique et réfraction *(Conjonctivite allergique)***
+> - [ ] **85. Correction optique et réfraction *(Conjonctivite allergique)***
 > 	- [ ] Port de lunettes/lentilles
 > 	- [ ] Degré de myopie
 > 	- [ ] Dernière consultation ophtalmologique
-> - [ ] **84. Médicaments et traitements *(Conjonctivite allergique)***
+> - [ ] **86. Médicaments et traitements *(Conjonctivite allergique)***
 > 	- [ ] Bronchodilatateurs
 > 	- [ ] Corticoïdes inhalés
 > 	- [ ] Antihistaminiques
 > 	- [ ] Collyres utilisés
 > 	- [ ] Automédication
-> - [ ] **85. Habitudes et toxiques *(Conjonctivite allergique)***
+> - [ ] **87. Habitudes et toxiques *(Conjonctivite allergique)***
 > 	- [ ] Tabagisme
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Cannabis
 > 	- [ ] Autres substances
-> - [ ] **86. Contexte social et activités *(Conjonctivite allergique)***
+> - [ ] **88. Contexte social et activités *(Conjonctivite allergique)***
 > 	- [ ] Scolarité
 > 	- [ ] Intégration sociale
 > 	- [ ] Sports et loisirs
 > 	- [ ] Stress/examens
-> - [ ] **87. Anamnèse sexuelle et IST *(Conjonctivite allergique)***
+> - [ ] **89. Anamnèse sexuelle et IST *(Conjonctivite allergique)***
 > 	- [ ] Activité sexuelle récente
 > 	- [ ] Protection utilisée
 > 	- [ ] Symptômes urogénitaux
 > 	- [ ] Antécédents d'IST
-> - [ ] **88. Symptômes généraux *(Conjonctivite allergique)***
+> - [ ] **90. Symptômes généraux *(Conjonctivite allergique)***
 > 	- [ ] État général
 > 	- [ ] Fièvre
 > 	- [ ] Asthénie
 > 	- [ ] Arthralgies
-> - [ ] **89. Caractéristiques de la douleur : Début / Durée / Fréquence *(Kératite herpétique)***
-> - [ ] **90. Caractéristiques de la douleur : Évolution / Qualité / Intensité / Localisation / Irradiation *(Kératite herpétique)***
-> - [ ] **91. Douleur : Facteurs aggravants / Facteurs atténuants *(Kératite herpétique)***
-> - [ ] **92. Symptômes associés : Vision floue / Photophobie *(Kératite herpétique)***
-> - [ ] **93. Caractéristiques troubles de la vision *(Kératite herpétique)***
+> - [ ] **91. Caractéristiques de la douleur : Début / Durée / Fréquence *(Kératite herpétique)***
+> - [ ] **92. Caractéristiques de la douleur : Évolution / Qualité / Intensité / Localisation / Irradiation *(Kératite herpétique)***
+> - [ ] **93. Douleur : Facteurs aggravants / Facteurs atténuants *(Kératite herpétique)***
+> - [ ] **94. Symptômes associés : Vision floue / Photophobie *(Kératite herpétique)***
+> - [ ] **95. Caractéristiques troubles de la vision *(Kératite herpétique)***
 > 	- [ ] Mono-binoculaire
 > 	- [ ] Diplopie
 > 	- [ ] Myodésopsies (mouches volantes)
-> - [ ] **94. Altération du champ visuel *(Kératite herpétique)***
-> - [ ] **95. Antécédent similaire par le passé *(Kératite herpétique)***
-> - [ ] **96. Notion de *(Kératite herpétique)***
+> - [ ] **96. Altération du champ visuel *(Kératite herpétique)***
+> - [ ] **97. Antécédent similaire par le passé *(Kératite herpétique)***
+> - [ ] **98. Notion de *(Kératite herpétique)***
 > 	- [ ] Contage dans l'entourage
 > 	- [ ] Port de lentilles
 > 	- [ ] Traumatisme
 > 	- [ ] Exposition agent irritant/UV
-> - [ ] **97. Histoire médicale *(Kératite herpétique)***
+> - [ ] **99. Histoire médicale *(Kératite herpétique)***
 > 	- [ ] ATCD médico-chirurgicaux
 > 	- [ ] Allergies
-> - [ ] **98. Traitement en cours *(Kératite herpétique)***
+> - [ ] **100. Traitement en cours *(Kératite herpétique)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Évaluation du visus *(Glaucome aigu)***
@@ -283,14 +285,7 @@ cssclasses:
 > - [ ] **13. Central *(Glaucome aigu)***
 > - [ ] **14. Médio-périphérique *(Glaucome aigu)***
 > - [ ] **15. Périphérique *(Glaucome aigu)***
-> - [ ] **16. Réflexe pupillaire *(Conjonctivite allergique · Glaucome aigu · Kératite herpétique)***
-> 	- [ ] Taille et symétrie des pupilles *(Conjonctivite allergique)*
-> 	- [ ] Réflexe photomoteur direct *(Conjonctivite allergique)*
-> 	- [ ] Réflexe consensuel *(Conjonctivite allergique)*
-> 	- [ ] Déficit pupillaire afférent relatif *(Conjonctivite allergique)*
-> 	- [ ] Direct *(Kératite herpétique)*
-> 	- [ ] Consensuel *(Kératite herpétique)*
-> 	- [ ] À la convergence *(Kératite herpétique)*
+> - [ ] **16. Examen monoculaire *(Glaucome aigu)***
 > - [ ] **17. Test des quadrants *(Glaucome aigu)***
 > - [ ] **18. Pression intraoculaire**
 > 	- [ ] Palpation comparative *(Conjonctivite allergique)*
@@ -332,51 +327,59 @@ cssclasses:
 > 	- [ ] Nature des sécrétions (muqueuses, purulentes, aqueuses)
 > 	- [ ] Quantité
 > 	- [ ] Localisation (angle interne/externe)
-> - [ ] **40. Mesure de l'acuité visuelle *(Conjonctivite allergique)***
+> - [ ] **40. Réflexe pupillaire *(Conjonctivite allergique · Kératite herpétique)***
+> 	- [ ] Taille et symétrie des pupilles *(Conjonctivite allergique)*
+> 	- [ ] Réflexe photomoteur direct *(Conjonctivite allergique)*
+> 	- [ ] Réflexe consensuel *(Conjonctivite allergique)*
+> 	- [ ] Déficit pupillaire afférent relatif *(Conjonctivite allergique)*
+> 	- [ ] Direct *(Kératite herpétique)*
+> 	- [ ] Consensuel *(Kératite herpétique)*
+> 	- [ ] À la convergence *(Kératite herpétique)*
+> - [ ] **41. Mesure de l'acuité visuelle *(Conjonctivite allergique)***
 > 	- [ ] Sans correction
 > 	- [ ] Avec correction
 > 	- [ ] Vision de près
 > 	- [ ] Champ visuel par confrontation
-> - [ ] **41. Propose un examen à la lampe à fente *(Conjonctivite allergique · Kératite herpétique)***
+> - [ ] **42. Propose un examen à la lampe à fente *(Conjonctivite allergique · Kératite herpétique)***
 > 	- [ ] Examen des paupières et cils *(Conjonctivite allergique)*
 > 	- [ ] Film lacrymal *(Conjonctivite allergique)*
 > 	- [ ] Conjonctive bulbaire et tarsale *(Conjonctivite allergique)*
 > 	- [ ] Cornée (transparence, épithélium) *(Conjonctivite allergique)*
 > 	- [ ] Chambre antérieure (profondeur, Tyndall) *(Conjonctivite allergique)*
 > 	- [ ] Iris et cristallin *(Conjonctivite allergique)*
-> - [ ] **42. Test à la fluorescéine *(Conjonctivite allergique)***
+> - [ ] **43. Test à la fluorescéine *(Conjonctivite allergique)***
 > 	- [ ] Recherche d'érosion cornéenne
 > 	- [ ] Recherche d'ulcère
 > 	- [ ] Temps de rupture du film lacrymal
 > 	- [ ] Pattern de coloration
-> - [ ] **43. Examen ORL complémentaire *(Conjonctivite allergique)***
+> - [ ] **44. Examen ORL complémentaire *(Conjonctivite allergique)***
 > 	- [ ] Rhinoscopie antérieure
 > 	- [ ] Muqueuse nasale (pâle, œdématiée)
 > 	- [ ] Cornets
 > 	- [ ] Sécrétions
-> - [ ] **44. Auscultation pulmonaire *(Conjonctivite allergique)***
+> - [ ] **45. Auscultation pulmonaire *(Conjonctivite allergique)***
 > 	- [ ] Auscultation systématique antérieure
 > 	- [ ] Auscultation systématique postérieure
 > 	- [ ] Recherche de sibilants
 > 	- [ ] Recherche de signes d'exacerbation asthmatique
-> - [ ] **45. Examen cutané *(Conjonctivite allergique)***
+> - [ ] **46. Examen cutané *(Conjonctivite allergique)***
 > 	- [ ] Recherche de lésions eczémateuses
 > 	- [ ] Dermographisme
 > 	- [ ] Signes de dermatite atopique
-> - [ ] **46. Observation des yeux *(Kératite herpétique)***
+> - [ ] **47. Observation des yeux *(Kératite herpétique)***
 > 	- [ ] Sous paupière supérieure
 > 	- [ ] Sous paupière inférieure
-> - [ ] **47. Champ visuel *(Kératite herpétique)***
+> - [ ] **48. Champ visuel *(Kératite herpétique)***
 > 	- [ ] Les 4 quadrants
 > 	- [ ] La périphérie
-> - [ ] **48. Oculomotricité *(Kératite herpétique)***
+> - [ ] **49. Oculomotricité *(Kératite herpétique)***
 > 	- [ ] Convergence
 > 	- [ ] 6 directions
-> - [ ] **49. Nerfs crâniens *(Kératite herpétique)***
+> - [ ] **50. Nerfs crâniens *(Kératite herpétique)***
 > 	- [ ] Sensibilité de la face (V)
 > 	- [ ] Mobilité de la face (VII)
-> - [ ] **50. Acuité visuelle de loin OU de près *(Kératite herpétique)***
-> - [ ] **51. Propose une ophtalmoscopie directe *(Kératite herpétique)***
+> - [ ] **51. Acuité visuelle de loin OU de près *(Kératite herpétique)***
+> - [ ] **52. Propose une ophtalmoscopie directe *(Kératite herpétique)***
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Diagnostic de travail *(2 grilles sur 4)* — *Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom)***

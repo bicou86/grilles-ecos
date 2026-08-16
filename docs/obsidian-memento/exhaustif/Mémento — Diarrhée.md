@@ -229,12 +229,12 @@ cssclasses:
 > 	- [ ] Douleurs abdominales
 > 	- [ ] Douleurs rectales
 > 	- [ ] Incontinence fécale
-> - [ ] **23. Antécédents familiaux pertinents *(Diarrhée chronique par malabsorption · Déshydratation)***
-> 	- [ ] Maladies préexistantes *(Diarrhée chronique par malabsorption)*
-> 	- [ ] Diabète *(Diarrhée chronique par malabsorption)*
-> 	- [ ] Chirurgies abdominales *(Diarrhée chronique par malabsorption)*
-> 	- [ ] Pathologie thyroïdienne *(Diarrhée chronique par malabsorption)*
-> 	- [ ] Radiothérapie abdominale *(Diarrhée chronique par malabsorption)*
+> - [ ] **23. Antécédents médicaux pertinents *(Diarrhée chronique par malabsorption)***
+> 	- [ ] Maladies préexistantes
+> 	- [ ] Diabète
+> 	- [ ] Chirurgies abdominales
+> 	- [ ] Pathologie thyroïdienne
+> 	- [ ] Radiothérapie abdominale
 > - [ ] **24. Médicaments et allergies *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Antibiotiques récents
@@ -277,58 +277,59 @@ cssclasses:
 > 	- [ ] Cas similaires dans l'entourage
 > 	- [ ] Voyage récent
 > 	- [ ] Consommation d'aliments suspects
-> - [ ] **35. Anamnèse sociale *(Déshydratation)***
+> - [ ] **35. Antécédents familiaux pertinents *(Déshydratation)***
+> - [ ] **36. Anamnèse sociale *(Déshydratation)***
 > 	- [ ] Conditions de vie
 > 	- [ ] Autonomie (personne âgée)
 > 	- [ ] Garde d'enfant/crèche
-> - [ ] **36. Caractérisation de la plainte principale *(1 grille sur 5)***
+> - [ ] **37. Caractérisation de la plainte principale *(1 grille sur 5)***
 > 	- [ ] Localisation de la douleur
 > 	- [ ] Type de douleur
 > 	- [ ] Intensité
 > 	- [ ] Durée et fréquence
 > 	- [ ] Facteurs aggravants
-> - [ ] **37. Retentissement fonctionnel *(1 grille sur 5)***
+> - [ ] **38. Retentissement fonctionnel *(1 grille sur 5)***
 > 	- [ ] Impact socioprofessionnel
 > 	- [ ] Isolement social
 > 	- [ ] Adaptation comportementale
-> - [ ] **38. Antécédents et facteurs de risque *(1 grille sur 5)***
+> - [ ] **39. Antécédents et facteurs de risque *(1 grille sur 5)***
 > 	- [ ] Voyage récent
 > 	- [ ] Relations sexuelles non protégées
 > 	- [ ] Consommation d'aliments à risque
 > 	- [ ] Tabagisme
 > 	- [ ] Médicaments gastrotoxiques
-> - [ ] **39. Anamnèse systémique *(1 grille sur 5)***
+> - [ ] **40. Anamnèse systémique *(1 grille sur 5)***
 > 	- [ ] Pas de symptômes urinaires
 > 	- [ ] Pas de douleurs articulaires
 > 	- [ ] Pas d'atteinte cutanée
 > 	- [ ] Pas d'atteinte oculaire
 > 	- [ ] Pas de notion de contage
-> - [ ] **40. Anamnèse médicale et chirurgicale *(1 grille sur 5)***
+> - [ ] **41. Anamnèse médicale et chirurgicale *(1 grille sur 5)***
 > 	- [ ] Reflux gastro-œsophagien
 > 	- [ ] Lombalgies chroniques
 > 	- [ ] Appendicectomie
 > 	- [ ] Cure de tunnel carpien
-> - [ ] **41. Caractérisation de la modification du transit *(Cancer colorectal)***
+> - [ ] **42. Caractérisation de la modification du transit *(Cancer colorectal)***
 > 	- [ ] Évolution générale
 > 	- [ ] Nombre de selles par 24h
 > 	- [ ] Modification récente du transit
 > 	- [ ] Selles noires déféquées
 > 	- [ ] Selles nauséabondes
-> - [ ] **42. Éléments anormaux dans les selles *(Cancer colorectal)***
+> - [ ] **43. Éléments anormaux dans les selles *(Cancer colorectal)***
 > 	- [ ] Glaires
 > 	- [ ] Pus
 > 	- [ ] Sang noir
 > 	- [ ] Sang rouge
 > 	- [ ] Graisses
 > 	- [ ] Aliments non digérés
-> - [ ] **43. Retentissement général *(Cancer colorectal)***
+> - [ ] **44. Retentissement général *(Cancer colorectal)***
 > 	- [ ] Asthénie
 > 	- [ ] Perte de poids
 > 	- [ ] Anorexie
 > 	- [ ] Fièvre
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Altération de l'état général
-> - [ ] **44. Facteurs favorisants et antécédents *(Cancer colorectal)***
+> - [ ] **45. Facteurs favorisants et antécédents *(Cancer colorectal)***
 > 	- [ ] Alimentation récente
 > 	- [ ] Voyage récent
 > 	- [ ] Prise médicamenteuse
@@ -388,12 +389,7 @@ cssclasses:
 > - [ ] **10. Examen thyroïdien *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Palpation de la thyroïde
 > 	- [ ] Recherche de nodules
-> - [ ] **11. Auscultation cardiopulmonaire *(Cancer colorectal · Diarrhée chronique par malabsorption)***
-> 	- [ ] Patience *(Cancer colorectal)*
-> 	- [ ] Fréquence des bruits *(Cancer colorectal)*
-> 	- [ ] Tonalité *(Cancer colorectal)*
-> 	- [ ] Silence abdominal *(Cancer colorectal)*
-> 	- [ ] Hyperactivité *(Cancer colorectal)*
+> - [ ] **11. Auscultation cardiopulmonaire *(Diarrhée chronique par malabsorption)***
 > - [ ] **12. Palpation superficielle *(Cancer colorectal · Déshydratation)***
 > 	- [ ] Globe vésical *(Déshydratation)*
 > 	- [ ] Douleur sus-pubienne *(Déshydratation)*
@@ -443,20 +439,26 @@ cssclasses:
 > 	- [ ] Hernies
 > 	- [ ] Veines superficielles
 > 	- [ ] Mouvements respiratoires
-> - [ ] **22. Percussion abdominale *(Cancer colorectal)***
+> - [ ] **22. Auscultation abdominale *(Cancer colorectal)***
+> 	- [ ] Patience
+> 	- [ ] Fréquence des bruits
+> 	- [ ] Tonalité
+> 	- [ ] Silence abdominal
+> 	- [ ] Hyperactivité
+> - [ ] **23. Percussion abdominale *(Cancer colorectal)***
 > 	- [ ] Patient allongé
 > 	- [ ] Tympanisme
 > 	- [ ] Distension gazeuse
 > 	- [ ] Matité
 > 	- [ ] Mesure de la taille du foie, de la rate
-> - [ ] **23. Palpation profonde *(Cancer colorectal)***
+> - [ ] **24. Palpation profonde *(Cancer colorectal)***
 > 	- [ ] Recherche masse abdominale
 > 	- [ ] Mobilité de la masse
 > 	- [ ] Pulsations
 > 	- [ ] Aorte
 > 	- [ ] Taille des organes
 > 	- [ ] Points douloureux spécifiques
-> - [ ] **24. Palpation spécifique du côlon *(Cancer colorectal)***
+> - [ ] **25. Palpation spécifique du côlon *(Cancer colorectal)***
 > 	- [ ] Cadre colique
 > 	- [ ] Sigmoïde
 > 	- [ ] Cordon induré douloureux

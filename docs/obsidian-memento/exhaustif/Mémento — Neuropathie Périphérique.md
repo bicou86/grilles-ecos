@@ -191,11 +191,7 @@ cssclasses:
 > - [ ] **31. Dysarthrie *(Syndrome de Guillain-Barré)***
 > - [ ] **32. Paralysie faciale *(Syndrome de Guillain-Barré)***
 > - [ ] **33. Dysphagie *(Syndrome de Guillain-Barré)***
-> - [ ] **34. Symptômes autonomes *(Polyneuropathie · Syndrome de Guillain-Barré)***
-> 	- [ ] Troubles visuels *(Polyneuropathie)*
-> 	- [ ] Port de lunettes *(Polyneuropathie)*
-> 	- [ ] Vision floue *(Polyneuropathie)*
-> 	- [ ] Baisse d'acuité *(Polyneuropathie)*
+> - [ ] **34. Symptômes autonomes *(Syndrome de Guillain-Barré)***
 > - [ ] **35. Troubles vésico-sphinctériens *(Syndrome de Guillain-Barré)***
 > - [ ] **36. Palpitations *(Syndrome de Guillain-Barré)***
 > - [ ] **37. Hypotension orthostatique / vertiges *(Syndrome de Guillain-Barré)***
@@ -239,75 +235,80 @@ cssclasses:
 > 	- [ ] Dernière consultation
 > 	- [ ] Raison de l'absence de suivi
 > 	- [ ] Attitude face aux consultations
-> - [ ] **61. Symptômes urinaires *(Polyneuropathie)***
+> - [ ] **61. Symptômes visuels *(Polyneuropathie)***
+> 	- [ ] Troubles visuels
+> 	- [ ] Port de lunettes
+> 	- [ ] Vision floue
+> 	- [ ] Baisse d'acuité
+> - [ ] **62. Symptômes urinaires *(Polyneuropathie)***
 > 	- [ ] Jet urinaire
 > 	- [ ] Urines mousseuses
 > 	- [ ] Polyurie
 > 	- [ ] Pollakiurie
-> - [ ] **62. Symptômes cardiovasculaires *(Polyneuropathie)***
+> - [ ] **63. Symptômes cardiovasculaires *(Polyneuropathie)***
 > 	- [ ] Palpitations
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Dyspnée
 > 	- [ ] État depuis l'infarctus
-> - [ ] **63. Facteurs de risque cardiovasculaire *(Polyneuropathie)***
+> - [ ] **64. Facteurs de risque cardiovasculaire *(Polyneuropathie)***
 > 	- [ ] Diabète
 > 	- [ ] Hypertension
 > 	- [ ] Hypercholestérolémie
 > 	- [ ] Tabagisme
 > 	- [ ] Antécédents familiaux
-> - [ ] **64. Revue des systèmes - Neurologique *(Polyneuropathie)***
+> - [ ] **65. Revue des systèmes - Neurologique *(Polyneuropathie)***
 > 	- [ ] Céphalées
 > 	- [ ] Vision
 > 	- [ ] Audition
-> - [ ] **65. Revue des systèmes - Digestif *(Polyneuropathie)***
+> - [ ] **66. Revue des systèmes - Digestif *(Polyneuropathie)***
 > 	- [ ] Dysphagie
 > 	- [ ] Digestion
 > 	- [ ] Transit intestinal
 > 	- [ ] Poids
 > 	- [ ] Appétit
-> - [ ] **66. Revue des systèmes - Respiratoire *(Polyneuropathie)***
+> - [ ] **67. Revue des systèmes - Respiratoire *(Polyneuropathie)***
 > 	- [ ] Dyspnée
 > 	- [ ] Toux
-> - [ ] **67. Revue des systèmes - Locomoteur *(Polyneuropathie)***
+> - [ ] **68. Revue des systèmes - Locomoteur *(Polyneuropathie)***
 > 	- [ ] Douleurs articulaires
 > 	- [ ] Raideur matinale
 > 	- [ ] Gonflement articulaire
-> - [ ] **68. État cutané et œdèmes *(Polyneuropathie)***
+> - [ ] **69. État cutané et œdèmes *(Polyneuropathie)***
 > 	- [ ] Peau
 > 	- [ ] Œdèmes des membres inférieurs
-> - [ ] **69. Fonction sexuelle *(Polyneuropathie)***
-> - [ ] **70. Habitudes et toxiques *(Polyneuropathie)***
+> - [ ] **70. Fonction sexuelle *(Polyneuropathie)***
+> - [ ] **71. Habitudes et toxiques *(Polyneuropathie)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Digestif
 > 	- [ ] Drogues
-> - [ ] **71. Anamnèse sociale *(Polyneuropathie)***
+> - [ ] **72. Anamnèse sociale *(Polyneuropathie)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Enfants
 > 	- [ ] Activité physique
-> - [ ] **72. Questions supplémentaires *(Polyneuropathie)***
+> - [ ] **73. Questions supplémentaires *(Polyneuropathie)***
 > 	- [ ] Autres préoccupations
 > 	- [ ] Questions du patient
-> - [ ] **73. Analyse sémiologique neurologique *(Hernie discale)***
+> - [ ] **74. Analyse sémiologique neurologique *(Hernie discale)***
 > 	- [ ] Troubles sensitifs
 > 	- [ ] Déficit moteur associé
 > 	- [ ] Troubles trophiques
 > 	- [ ] Réflexes ostéotendineux
 > 	- [ ] Signes d'irritation radiculaire
-> - [ ] **74. Recherche d'étiologies rachidiennes *(Hernie discale)***
+> - [ ] **75. Recherche d'étiologies rachidiennes *(Hernie discale)***
 > 	- [ ] Lombalgie associée
 > 	- [ ] Traumatisme rachidien
 > 	- [ ] Efforts de soulèvement
 > 	- [ ] Positions profesionnelles
 > 	- [ ] Antécédents chirurgicaux rachidiens
-> - [ ] **75. Facteurs de risque et comorbidités *(Hernie discale)***
+> - [ ] **76. Facteurs de risque et comorbidités *(Hernie discale)***
 > 	- [ ] Diabète
 > 	- [ ] Maladies auto-immunes
 > 	- [ ] Néoplasies
 > 	- [ ] Maladies infectieuses
 > 	- [ ] Insuffisance rénale
-> - [ ] **76. Retentissement fonctionnel et qualité de vie *(Hernie discale)***
+> - [ ] **77. Retentissement fonctionnel et qualité de vie *(Hernie discale)***
 > 	- [ ] Sommeil
 > 	- [ ] Activités professionnelles
 > 	- [ ] Mobilité
