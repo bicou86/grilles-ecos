@@ -47,7 +47,10 @@ from check_couverture import HORS_PERIMETRE              # noqa: E402
 from lib_extraction import sans_accent                   # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
-SORTIE = REPO / "docs" / "obsidian-memento"
+# Les mementos EXHAUSTIFS — l'union mecanique des grilles d'une SSP. Ils
+# sont la matiere premiere, pas le livrable : la fiche de revision concise
+# est REDIGEE a partir d'eux et vit dans le dossier parent.
+SORTIE = REPO / "docs" / "obsidian-memento" / "exhaustif"
 ALIAS = REPO / "docs" / "ecos-diagnostics-alias.yaml"
 PRIORITES = REPO / "docs" / "ecos-priorites-2026.yaml"
 VOISINES = REPO / "docs" / "ecos-ssp-voisines.yaml"
