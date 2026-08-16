@@ -230,8 +230,7 @@ def diagnostics_attendus():
 def tous_les_cas():
     """Les cas des quatre corpus, hors perimetre exclu, dans un ordre stable."""
     for corpus in lib_ssp.CORPUS:
-        motif = (str(REPO / ".azygos-extraction" / "*.json") if corpus == "azygos"
-                 else str(REPO / "cases" / corpus / "*.html"))
+        motif = L.motif(corpus)
         for f in sorted(glob.glob(motif)):
             cas = L.lire_azygos(f) if corpus == "azygos" else L.lire_html(f)
             if cas["id"] not in HORS_PERIMETRE:

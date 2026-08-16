@@ -89,7 +89,7 @@ cssclasses:
 > - **AMBOSS-12** — Embolie pulmonaire `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-12_-_Douleur_thoracique_-_Femme_35_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-13** — Pneumothorax `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-13_-_Douleur_thoracique_-_Homme_35_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-14** — Infarctus du myocarde / SCA `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-14_-_Douleur_thoracique_-_Homme_45_ans_-_Grille_ECOS.html>)
-> - **AZYGOS-22** — Pneumothorax `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/36c2f5c1-90b6-4677-9a14-9d758632e1df.json>)
+> - **AZYGOS-22** — Pneumothorax `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/36c2f5c1-90b6-4677-9a14-9d758632e1df.json>)
 > - **German-30** — Contusion costale `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-30_-_Douleur_thoracique_-_Grille_ECOS.html>)
 > - **German-31** — Embolie pulmonaire `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-31_-_Douleur_thoracique_-_Grille_ECOS.html>)
 > - **German-32** — Pneumothorax `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-32_-_Douleur_thoracique_-_Grille_ECOS.html>)

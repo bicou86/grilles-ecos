@@ -88,7 +88,7 @@ cssclasses:
 > [!abstract] Les 8 grilles fusionnées
 > - **AMBOSS-9** — Hernie discale `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-9_-_Douleurs_dorsales_-_Homme_71_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-10** — Spondylarthrite ankylosante `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-10_-_Douleurs_dorsales_et_raideur_-_Homme_26_ans_-_Grille_ECOS.html>)
-> - **AZYGOS-20** — Suspicion de myélome multiple (confirmation par ponction médullaire) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/41ad9d6e-557b-49f5-a3a7-0ce3e57d1ba2.json>)
+> - **AZYGOS-20** — Suspicion de myélome multiple (confirmation par ponction médullaire) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/41ad9d6e-557b-49f5-a3a7-0ce3e57d1ba2.json>)
 > - **German-57** — Fracture vertébrale `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-57_-_Lombalgie_-_Grille_ECOS.html>)
 > - **German-58** — Hernie discale `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-58_-_Lombalgie_-_Grille_ECOS.html>)
 > - **German-59** — Colique néphrétique sur lithiase `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-59_-_Lombalgie_-_Grille_ECOS.html>)

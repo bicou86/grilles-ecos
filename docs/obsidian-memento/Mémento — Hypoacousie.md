@@ -86,7 +86,7 @@ cssclasses:
 
 > [!abstract] Les 4 grilles fusionnées
 > - **AMBOSS-23** — Presbyacousie `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-23_-_Perte_auditive_-_Homme_65_ans_-_Grille_ECOS.html>)
-> - **AZYGOS-33** — Presbyacousie `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/8fdeb650-3127-4f13-9ec7-1d50b1a6af35.json>)
+> - **AZYGOS-33** — Presbyacousie `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/8fdeb650-3127-4f13-9ec7-1d50b1a6af35.json>)
 > - **German-67** — Surdité brusque idiopathique gauche `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-67_-_Perte_auditive_-_Grille_ECOS.html>)
 > - **German-68** — Presbyacousie `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-68_-_Perte_auditive_-_Grille_ECOS.html>)
 

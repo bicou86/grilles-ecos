@@ -90,7 +90,7 @@ cssclasses:
 > - **AMBOSS-18** — Asthme `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-18_-_Toux_chronique_-_Femme_21_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-19** — BPCO `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-19_-_Toux_chronique_-_Femme_53_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-31** — Cancer pulmonaire `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-31_-_Toux_-_Homme_58_ans_-_Grille_ECOS.html>)
-> - **AZYGOS-47** — Pneumonie `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/ccef5f83-9402-4ac8-ac18-913d834bc565.json>)
+> - **AZYGOS-47** — Pneumonie `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/ccef5f83-9402-4ac8-ac18-913d834bc565.json>)
 > - **German-75** — Tuberculose `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-75_-_Toux_-_Grille_ECOS.html>)
 > - **German-76** — Insuffisance cardiaque (décompensée) `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-76_-_Toux_-_Grille_ECOS.html>)
 > - **German-77** — Pneumonie `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-77_-_Toux_-_Grille_ECOS.html>)

@@ -86,7 +86,7 @@ cssclasses:
 *Néphro-Urologie · 4 grilles · 4 diagnostics documentés · 1 attendu documenté ailleurs · 1 attendu absent du corpus* — [[SSP — Dysurie]]
 
 > [!abstract] Les 4 grilles fusionnées
-> - **AZYGOS-8** — Suspicion d'hyperplasie bénigne de la prostate `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/f5e3b513-caf4-4300-ad3e-bde97d0d54ab.json>)
+> - **AZYGOS-8** — Suspicion d'hyperplasie bénigne de la prostate `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/f5e3b513-caf4-4300-ad3e-bde97d0d54ab.json>)
 > - **German-37** — Urétrite sexuellement transmissible `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-37_-_Dysurie_-_Grille_ECOS.html>)
 > - **RESCOS-41** — Infection à Chlamydia trachomatis `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-41%20-%20Dysurie%20-%20Grille%20ECOS.html>)
 > - **RESCOS-42** — Infection urinaire (cystite) `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-42%20-%20Dysurie%20-%20Grille%20ECOS.html>)

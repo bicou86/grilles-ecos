@@ -22,8 +22,7 @@ OFFICIELLES = lib_ssp.OFFICIELLES
 
 def tous_les_cas():
     for corpus in lib_ssp.CORPUS:
-        motif = (str(REPO / ".azygos-extraction" / "*.json") if corpus == "azygos"
-                 else str(REPO / "cases" / corpus / "*.html"))
+        motif = L.motif(corpus)
         for f in sorted(glob.glob(motif)):
             yield L.lire_azygos(f) if corpus == "azygos" else L.lire_html(f)
 

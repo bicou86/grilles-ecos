@@ -85,8 +85,8 @@ cssclasses:
 *4 grilles · 4 diagnostics documentés · 1 attendu documenté ailleurs · 1 attendu absent du corpus* — [[SSP — Œil Rouge & Douleur Oculaire]]
 
 > [!abstract] Les 4 grilles fusionnées
-> - **AZYGOS-10** — Glaucome aigu `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/8d674409-0b72-4e3f-bcd2-4507b3d27a1e.json>)
-> - **AZYGOS-45** — Sécheresse oculaire évaporative (dysfonction des glandes de Meibom) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/7aa130b4-975d-44fa-9dbb-6a83e36aa6d0.json>)
+> - **AZYGOS-10** — Glaucome aigu `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/8d674409-0b72-4e3f-bcd2-4507b3d27a1e.json>)
+> - **AZYGOS-45** — Sécheresse oculaire évaporative (dysfonction des glandes de Meibom) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/7aa130b4-975d-44fa-9dbb-6a83e36aa6d0.json>)
 > - **German-88** — Conjonctivite allergique `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-88_-_Yeux_rouges_-_Grille_ECOS.html>)
 > - **RESCOS-32** — Kératite herpétique `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-32_-_Douleur_oculaire_-_Grille_ECOS.html>)
 

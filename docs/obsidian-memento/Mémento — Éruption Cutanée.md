@@ -88,9 +88,9 @@ cssclasses:
 *Dermatologie · 8 grilles · 7 diagnostics documentés · 4 attendus absents du corpus* — [[SSP — Éruption Cutanée]]
 
 > [!abstract] Les 8 grilles fusionnées
-> - **AZYGOS-1** — Psoriasis `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/79a2e44d-a59f-4244-8729-c5a64fedbef0.json>)
-> - **AZYGOS-26** — Syphilis `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/f9ad6e9b-bdf5-4dcc-b66f-b7001601a5d0.json>)
-> - **AZYGOS-27** — Dermatite périorale `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/070f75f5-44ec-46b0-8df3-960bb134d4ee.json>)
+> - **AZYGOS-1** — Psoriasis `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/79a2e44d-a59f-4244-8729-c5a64fedbef0.json>)
+> - **AZYGOS-26** — Syphilis `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/f9ad6e9b-bdf5-4dcc-b66f-b7001601a5d0.json>)
+> - **AZYGOS-27** — Dermatite périorale `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/070f75f5-44ec-46b0-8df3-960bb134d4ee.json>)
 > - **German-42** — Tinea corporis `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-42_-_Eruption_cutane_e_-_Grille_ECOS.html>)
 > - **German-43** — Scarlatine / Angine streptococcique `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-43_-_Eruption_cutane_e_-_Grille_ECOS.html>)
 > - **German-44** — Lupus érythémateux cutané `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-44_-_Erythe_me_-_Grille_ECOS.html>)

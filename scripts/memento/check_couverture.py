@@ -66,8 +66,7 @@ def main():
     recap_lot1(rattache)
     total, sans_ssp, sans_items = 0, [], []
     for corpus in lib_ssp.CORPUS:
-        motif = (str(REPO / ".azygos-extraction" / "*.json") if corpus == "azygos"
-                 else str(REPO / "cases" / corpus / "*.html"))
+        motif = L.motif(corpus)
         for f in sorted(glob.glob(motif)):
             cas = L.lire_azygos(f) if corpus == "azygos" else L.lire_html(f)
             total += 1

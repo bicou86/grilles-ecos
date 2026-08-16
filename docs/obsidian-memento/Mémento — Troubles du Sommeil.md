@@ -87,7 +87,7 @@ cssclasses:
 
 > [!abstract] Les 3 grilles fusionnées
 > - **AMBOSS-16** — Trouble anxieux `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-16_-_Troubles_du_sommeil_-_Femme_32_ans_-_Grille_ECOS.html>)
-> - **AZYGOS-49** — Dépression `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/2895ae8e-443e-472c-acf0-c597e27cd05b.json>)
+> - **AZYGOS-49** — Dépression `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/2895ae8e-443e-472c-acf0-c597e27cd05b.json>)
 > - **German-82** — Hyperthyroïdie `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-82_-_Troubles_du_sommeil_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse

@@ -86,7 +86,7 @@ cssclasses:
 *Musculo-Squelettique · 1 grille · 1 diagnostic documenté · 1 attendu documenté ailleurs · 1 attendu absent du corpus* — [[SSP — Cervicalgies]]
 
 > [!abstract] La seule grille de cette SSP
-> - **AZYGOS-18** — Radiculopathie cervicale C6 `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/9eb8cf72-3d4f-427a-82f1-d538d46c91d0.json>)
+> - **AZYGOS-18** — Radiculopathie cervicale C6 `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/9eb8cf72-3d4f-427a-82f1-d538d46c91d0.json>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Question initiale sur l’évolution**

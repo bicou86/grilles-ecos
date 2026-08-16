@@ -287,8 +287,7 @@ def ecrire_table():
     existant = charger_table()
     out = dict(existant)
     for corpus in lib_ssp.CORPUS:
-        motif = (str(REPO / ".azygos-extraction" / "*.json") if corpus == "azygos"
-                 else str(REPO / "cases" / corpus / "*.html"))
+        motif = L.motif(corpus)
         for f in sorted(glob.glob(motif)):
             if corpus == "azygos":
                 cas, brut = L.lire_azygos(f), None

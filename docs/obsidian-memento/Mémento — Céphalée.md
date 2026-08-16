@@ -88,7 +88,7 @@ cssclasses:
 > [!abstract] Les 6 grilles fusionnées
 > - **AMBOSS-26** — Migraine `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-26_-_Ce_phale_e_-_Homme_29_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-33** — Hémorragie sous-arachnoïdienne `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-33_-_Ce_phale_e_-_Femme_55_ans_-_Grille_ECOS.html>)
-> - **AZYGOS-3** — Migraine `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/74108006-36f7-4056-8383-2346f553295e.json>)
+> - **AZYGOS-3** — Migraine `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/74108006-36f7-4056-8383-2346f553295e.json>)
 > - **German-8** — Céphalée du restaurant chinois `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-8_-_Ce_phale_es_-_Grille_ECOS.html>)
 > - **German-9** — Méningite `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-9_-_Ce_phale_es_-_Grille_ECOS.html>)
 > - **RESCOS-10** — Thrombose veineuse cérébrale `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-10_-_Ce_phale_e_-_Grille_ECOS.html>)

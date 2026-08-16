@@ -91,7 +91,7 @@ cssclasses:
 > - **AMBOSS-27** — Syndrome de Sheehan (hypopituitarisme post-partum) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-27_-_Fatigue_-_Femme_28_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-29** — Mononucléose `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-29_-_Fatigue_-_Femme_18_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-36** — Hépatite B et/ou C aiguë `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-36_-_Fatigue_-_Homme_54_ans_-_Grille_ECOS.html>)
-> - **AZYGOS-30** — Hémorragie digestive haute sur ulcère peptique `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/c02797e2-7f49-43bf-bd93-bf93fb65966a.json>)
+> - **AZYGOS-30** — Hémorragie digestive haute sur ulcère peptique `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/c02797e2-7f49-43bf-bd93-bf93fb65966a.json>)
 > - **German-45** — SAOS `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-45_-_Fatigue_-_Grille_ECOS.html>)
 > - **German-46** — Anémie `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-46_-_Fatigue_-_Grille_ECOS.html>)
 > - **German-47** — Dépression `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-47_-_Fatigue_-_Grille_ECOS.html>)

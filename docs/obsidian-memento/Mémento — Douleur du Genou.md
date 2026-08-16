@@ -86,7 +86,7 @@ cssclasses:
 
 > [!abstract] Les 3 grilles fusionnées
 > - **AMBOSS-25** — Thrombose veineuse profonde (TVP) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-25_-_Douleur_au_genou_-_Femme_47_ans_-_Grille_ECOS.html>)
-> - **AZYGOS-17** — Déchirure méniscale / ligamentaire `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/03534eb4-8ba8-409e-a9c2-6b04c555a00b.json>)
+> - **AZYGOS-17** — Déchirure méniscale / ligamentaire `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/03534eb4-8ba8-409e-a9c2-6b04c555a00b.json>)
 > - **German-23** — Déchirure méniscale / ligamentaire `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-23_-_Douleur_au_genou_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse

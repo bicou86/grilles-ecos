@@ -85,7 +85,7 @@ cssclasses:
 *6 grilles · 5 diagnostics documentés · 2 attendus absents du corpus* — [[SSP — Syncope & Perte de Connaissance]]
 
 > [!abstract] Les 6 grilles fusionnées
-> - **AZYGOS-38** — Première crise épileptique focale bilatéralisée `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/c99ece2f-dc30-4162-815d-060732943dca.json>)
+> - **AZYGOS-38** — Première crise épileptique focale bilatéralisée `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/c99ece2f-dc30-4162-815d-060732943dca.json>)
 > - **German-41** — Première crise convulsive tonico-clonique `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-41_-_Epilepsie_-_Grille_ECOS.html>)
 > - **German-60** — HypoTA orthostatique `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-60_-_Malaise_-_Grille_ECOS.html>)
 > - **German-61** — BAV `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-61_-_Malaise_-_Grille_ECOS.html>)

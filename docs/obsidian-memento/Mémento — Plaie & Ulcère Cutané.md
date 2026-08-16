@@ -85,7 +85,7 @@ cssclasses:
 *1 grille · 1 diagnostic documenté · 1 attendu absent du corpus* — [[SSP — Plaie & Ulcère Cutané]]
 
 > [!abstract] La seule grille de cette SSP
-> - **AZYGOS-41** — Ulcère veineux `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/59029bb1-3d31-49ac-8502-ee66e30447cd.json>)
+> - **AZYGOS-41** — Ulcère veineux `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/59029bb1-3d31-49ac-8502-ee66e30447cd.json>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Question d’ouverture**

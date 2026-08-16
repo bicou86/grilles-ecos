@@ -13,6 +13,25 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 
+
+def motif(corpus):
+    """Le glob des fichiers source d'un corpus. SOURCE UNIQUE, ne pas recopier.
+
+    Cette ternaire a vecu recopiee dans cinq modules (build_memento,
+    check_couverture, check_referentiel, lib_diagnostic, check_azygos). Elle
+    est ici parce que le chemin AZYGOS a change une fois et qu'il pouvait
+    changer dans quatre fichiers sur cinq sans que rien ne le signale.
+
+    AZYGOS lit `docs/azygos-grilles/`, VERSIONNE, et non `.azygos-extraction/`,
+    que .gitignore exclut : la chaine ne doit pas dependre d'un dossier absent
+    d'un clone frais. Le miroir versionne est produit par fige_azygos.py, qui
+    documente pourquoi le brut ne peut pas etre commite tel quel (URL signees
+    porteuses de jetons).
+    """
+    if corpus == "azygos":
+        return str(REPO / "docs" / "azygos-grilles" / "*.json")
+    return str(REPO / "cases" / corpus / "*.html")
+
 # LIGNES DE SYNTHESE GLOBALE — du bareme, pas des items a couvrir : elles
 # notent la MANIERE (« l'anamnese a-t-elle ete bien conduite ? »), pas un geste
 # ou une question. Deux formulations coexistent dans le corpus :

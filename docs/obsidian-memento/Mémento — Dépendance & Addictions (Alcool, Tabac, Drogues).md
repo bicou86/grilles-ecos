@@ -86,7 +86,7 @@ cssclasses:
 *Psychiatrie · 2 grilles · 2 diagnostics documentés* — [[SSP — Dépendance & Addictions (Alcool, Tabac, Drogues)]]
 
 > [!abstract] Les 2 grilles fusionnées
-> - **AZYGOS-7** — Dépendance à l'alcool `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/fe897a6f-db49-4b0b-9302-fdb57a1e0dc4.json>)
+> - **AZYGOS-7** — Dépendance à l'alcool `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/fe897a6f-db49-4b0b-9302-fdb57a1e0dc4.json>)
 > - **German-1** — Addiction / Sevrage OH `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-1_-_Abus_d_alcool_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse

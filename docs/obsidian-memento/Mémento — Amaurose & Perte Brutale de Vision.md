@@ -86,8 +86,8 @@ cssclasses:
 
 > [!abstract] Les 5 grilles fusionnées
 > - **AMBOSS-34** — AVC `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-34_-_Perte_de_vision_-_Homme_66_ans_-_Grille_ECOS.html>)
-> - **AZYGOS-40** — OACR / Occlusion rétinienne `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/f0f3ec7f-0c04-4307-a694-3f4a12c6eb9c.json>)
-> - **AZYGOS-48** — Décollement de rétine `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/.azygos-extraction/68e9d154-8aea-43fd-a9fe-29bb5f8335f6.json>)
+> - **AZYGOS-40** — OACR / Occlusion rétinienne `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/f0f3ec7f-0c04-4307-a694-3f4a12c6eb9c.json>)
+> - **AZYGOS-48** — Décollement de rétine `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/68e9d154-8aea-43fd-a9fe-29bb5f8335f6.json>)
 > - **German-69** — Cataracte `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-69_-_Perte_de_vision_-_Grille_ECOS.html>)
 > - **RESCOS-3** — Horton (artérite à cellules géantes) `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-3_-_Amaurose_-_Grille_ECOS.html>)
 
