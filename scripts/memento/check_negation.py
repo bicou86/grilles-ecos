@@ -53,8 +53,12 @@ TEMOINS = [
      "Pas de turgescence jugulaire", "Turgescence jugulaire"),
     ("pas", "Œdèmes des Membres Inférieurs",
      "Pas de reflux hépato-jugulaire", "Reflux hépato-jugulaire"),
-    ("non", "Amaurose & Perte Brutale de Vision",
-     "Non ophtalmologiques", "Antécédents ophtalmologiques"),
+    # RETIRE : « Non ophtalmologiques » (AZYGOS-48) et « Antecedents
+    # ophtalmologiques » (German-69) ne cohabitaient dans « Amaurose » que par
+    # une erreur de rattachement — German-69 est une cataracte senile, donc une
+    # baisse PROGRESSIVE. La grille recadree, les deux libelles vivent dans deux
+    # SSP differentes et la paire n'est plus un temoin. Le mot « non » en garde
+    # deux autres, tous deux plus nets.
     ("non", "Toux", "Productive ou non", "Productive ou sèche"),
     # « non » sur une meme grille, a 0,94 de similarite : le cas le plus net du
     # corpus, et celui ou l'inversion serait la plus tentante.

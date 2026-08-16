@@ -92,7 +92,7 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(AVC)***
-> - [ ] **2. Caractérisation de la baisse de vision *(AVC)***
+> - [ ] **2. Caractérisation de la perte de vision *(AVC)***
 > 	- [ ] Début
 > 	- [ ] Constante/intermittente
 > 	- [ ] Événements précipitants
@@ -138,7 +138,7 @@ cssclasses:
 > 	- [ ] Picotements
 > 	- [ ] Convulsion
 > 	- [ ] Problèmes d'élocution
-> - [ ] **5. Antécédents médicaux personnels *(AVC · Décollement de rétine)***
+> - [ ] **5. Antécédents médicaux *(AVC · Décollement de rétine)***
 > - [ ] **6. Allergies *(AVC · Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **7. Médicaments *(AVC · Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **8. Hospitalisations et antécédents chirurgicaux *(AVC)***
@@ -157,7 +157,7 @@ cssclasses:
 > 	- [ ] Alimentation *(AVC)*
 > 	- [ ] Drogues *(Horton (artérite à cellules géantes))*
 > 	- [ ] Médicaments *(Horton (artérite à cellules géantes))*
-> - [ ] **11. Question d'entrée ouverte *(OACR / Occlusion rétinienne)***
+> - [ ] **11. Question d’entrée *(OACR / Occlusion rétinienne)***
 > - [ ] **12. Dimension temporelle *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **13. Début / Durée *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **14. Mode de survenue *(OACR / Occlusion rétinienne)***
@@ -211,7 +211,7 @@ cssclasses:
 > - [ ] **62. Symptômes neurologiques *(Décollement de rétine)***
 > - [ ] **63. Déficits moteurs *(Décollement de rétine)***
 > - [ ] **64. Maux de tête / Vertiges *(Décollement de rétine)***
-> - [ ] **65. Antécédents ophtalmologiques *(Décollement de rétine)***
+> - [ ] **65. Ophtalmologiques *(Décollement de rétine)***
 > - [ ] **66. Non ophtalmologiques *(Décollement de rétine)***
 > - [ ] **67. Correction visuelle *(Décollement de rétine)***
 > - [ ] **68. Toxiques *(Décollement de rétine)***
@@ -254,7 +254,7 @@ cssclasses:
 > 	- [ ] Auscultation du cœur *(AVC)*
 > - [ ] **5. Examen thoracique *(AVC)***
 > 	- [ ] Auscultation des poumons
-> - [ ] **6. Examen neurologique de base *(AVC)***
+> - [ ] **6. Examen neurologique *(AVC)***
 > 	- [ ] Évaluation du niveau de conscience
 > 	- [ ] Examen de l'orientation dans le temps, l'espace et les personnes
 > 	- [ ] Évaluation du langage
