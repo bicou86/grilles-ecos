@@ -374,11 +374,11 @@ cssclasses:
 > 	- [ ] Observation d'une turgescence jugulaire *(Péricardite / Myopéricardite)*
 > 	- [ ] Recherche d'œdème *(Péricardite / Myopéricardite)*
 > 	- [ ] Recherche d'un reflux hépato-jugulaire *(Péricardite / Myopéricardite)*
-> - [ ] **4. Examen thoracique *(3 grilles sur 12)***
+> - [ ] **4. Excursion thoracique *(4 grilles sur 12)***
 > 	- [ ] Inspection du thorax *(2 grilles sur 12)*
 > 	- [ ] Palpation du thorax *(2 grilles sur 12)*
 > 	- [ ] Percussion des champs pulmonaires *(2 grilles sur 12)*
-> 	- [ ] Auscultation pulmonaire
+> 	- [ ] Auscultation pulmonaire *(3 grilles sur 12)*
 > 	- [ ] Recherche de frémitus *(2 grilles sur 12)*
 > - [ ] **5. Examen des extrémités *(2 grilles sur 12)***
 > 	- [ ] Inspection des membres inférieurs *(1 grille sur 12)*
@@ -406,17 +406,16 @@ cssclasses:
 > 	- [ ] Pas de xanthélasmas *(1 grille sur 12)*
 > 	- [ ] Arc cornéen *(1 grille sur 12)*
 > - [ ] **11. Inspection du thorax *(2 grilles sur 12)***
-> - [ ] **12. Excursion thoracique *(1 grille sur 12)***
-> - [ ] **13. Muscles respiratoires accessoires *(1 grille sur 12)***
-> - [ ] **14. Signes de traumatisme *(1 grille sur 12)***
-> - [ ] **15. Palpation du thorax *(1 grille sur 12)***
-> - [ ] **16. Douleur à la pression *(1 grille sur 12)***
-> - [ ] **17. Frémissement vocal *(1 grille sur 12)***
-> - [ ] **18. Emphysème sous-cutané *(1 grille sur 12)***
-> - [ ] **19. Percussion *(1 grille sur 12)***
-> - [ ] **20. Auscultation *(1 grille sur 12)***
-> - [ ] **21. Veines jugulaires *(1 grille sur 12)***
-> - [ ] **22. Auscultation cardiaque systématique *(5 grilles sur 12)***
+> - [ ] **12. Muscles respiratoires accessoires *(1 grille sur 12)***
+> - [ ] **13. Signes de traumatisme *(1 grille sur 12)***
+> - [ ] **14. Palpation du thorax *(1 grille sur 12)***
+> - [ ] **15. Douleur à la pression *(1 grille sur 12)***
+> - [ ] **16. Frémissement vocal *(1 grille sur 12)***
+> - [ ] **17. Emphysème sous-cutané *(1 grille sur 12)***
+> - [ ] **18. Percussion *(1 grille sur 12)***
+> - [ ] **19. Auscultation *(1 grille sur 12)***
+> - [ ] **20. Veines jugulaires *(1 grille sur 12)***
+> - [ ] **21. Auscultation cardiaque systématique *(5 grilles sur 12)***
 > 	- [ ] Recherche de souffle *(1 grille sur 12)*
 > 	- [ ] Rythme régulier *(1 grille sur 12)*
 > 	- [ ] B3/B4 *(1 grille sur 12)*
@@ -433,56 +432,56 @@ cssclasses:
 > 	- [ ] Utilisation cloche et membrane *(1 grille sur 12)*
 > 	- [ ] Position du patient *(1 grille sur 12)*
 > 	- [ ] Recherche de souffles et bruits surajoutés *(1 grille sur 12)*
-> - [ ] **23. Palpation des pouls périphériques *(2 grilles sur 12)***
+> - [ ] **22. Palpation des pouls périphériques *(2 grilles sur 12)***
 > 	- [ ] Pouls carotidiens symétriques *(1 grille sur 12)*
 > 	- [ ] Pouls fémoraux présents *(1 grille sur 12)*
 > 	- [ ] Pouls pédieux présents *(1 grille sur 12)*
 > 	- [ ] Pouls tibiaux postérieurs présents *(1 grille sur 12)*
 > 	- [ ] Pas de souffle abdominal *(1 grille sur 12)*
-> - [ ] **24. Palpation *(Contusion costale)***
-> - [ ] **25. Poumons *(Contusion costale)***
-> - [ ] **26. Cœur *(Contusion costale)***
-> - [ ] **27. Examen sommaire du rachis et des extrémités *(Contusion costale)***
-> - [ ] **28. État cardiopulmonaire *(3 grilles sur 12)***
-> - [ ] **29. Inspection des membres inférieurs *(1 grille sur 12)***
+> - [ ] **23. Palpation *(Contusion costale)***
+> - [ ] **24. Poumons *(Contusion costale)***
+> - [ ] **25. Cœur *(Contusion costale)***
+> - [ ] **26. Examen sommaire du rachis et des extrémités *(Contusion costale)***
+> - [ ] **27. État cardiopulmonaire *(3 grilles sur 12)***
+> - [ ] **28. Inspection des membres inférieurs *(1 grille sur 12)***
 > 	- [ ] Recherche de signes de TVP
 > 	- [ ] Œdème, chaleur, rougeur
 > 	- [ ] Signe de Homans
-> - [ ] **30. Palpation abdominale *(1 grille sur 12)***
+> - [ ] **29. Palpation abdominale *(1 grille sur 12)***
 > 	- [ ] Recherche d'organomégalie
 > 	- [ ] Douleur épigastrique
-> - [ ] **31. Inspection des jambes *(1 grille sur 12)***
-> - [ ] **32. Signes spécifiques du pneumothorax *(1 grille sur 12)***
+> - [ ] **30. Inspection des jambes *(1 grille sur 12)***
+> - [ ] **31. Signes spécifiques du pneumothorax *(1 grille sur 12)***
 > 	- [ ] Asymétrie thoracique
 > 	- [ ] Diminution de l'ampliation thoracique du côté atteint
 > 	- [ ] Déviation trachéale (si pneumothorax sous tension)
-> - [ ] **33. Examen vasculaire *(Reflux gastro-œsophagien)***
-> - [ ] **34. Examen abdominal *(Reflux gastro-œsophagien)***
-> - [ ] **35. Recherche de signes d'alarme *(Reflux gastro-œsophagien)***
+> - [ ] **32. Examen vasculaire *(Reflux gastro-œsophagien)***
+> - [ ] **33. Examen abdominal *(Reflux gastro-œsophagien)***
+> - [ ] **34. Recherche de signes d'alarme *(Reflux gastro-œsophagien)***
 > 	- [ ] Dysphagie
 > 	- [ ] Amaigrissement
 > 	- [ ] Anémie
 > 	- [ ] Hémorragie digestive
-> - [ ] **36. Désinfection des mains *(Péricardite / Myopéricardite)***
-> - [ ] **37. Examen pulmonaire *(Péricardite / Myopéricardite)***
+> - [ ] **35. Désinfection des mains *(Péricardite / Myopéricardite)***
+> - [ ] **36. Examen pulmonaire *(Péricardite / Myopéricardite)***
 > 	- [ ] Auscultation plages antérieures, postérieures et latérales
 > 	- [ ] Percussion
-> - [ ] **38. Position du patient pendant l'examen *(Péricardite / Myopéricardite)***
+> - [ ] **37. Position du patient pendant l'examen *(Péricardite / Myopéricardite)***
 > 	- [ ] A fait coucher le patient à un moment du status
-> - [ ] **39. Examen pulmonaire - inspection et percussion *(1 grille sur 12)***
+> - [ ] **38. Examen pulmonaire - inspection et percussion *(1 grille sur 12)***
 > 	- [ ] Percussion
 > 	- [ ] Ampliation thoracique
-> - [ ] **40. Examen pulmonaire - auscultation *(1 grille sur 12)***
+> - [ ] **39. Examen pulmonaire - auscultation *(1 grille sur 12)***
 > 	- [ ] Plages postérieures (min 4)
 > 	- [ ] Plages latérales des deux côtés
 > 	- [ ] Réalise l'examen en comparant systématiquement les deux côtés
-> - [ ] **41. Examen vasculaire périphérique *(1 grille sur 12)***
+> - [ ] **40. Examen vasculaire périphérique *(1 grille sur 12)***
 > 	- [ ] Pouls périphériques aux 4 extrémités
 > 	- [ ] Temps de recoloration des extrémités
 > 	- [ ] Recherche de souffle carotidien
 > 	- [ ] Recherche de souffles fémoraux
 > 	- [ ] Recherche de souffle abdominal
-> - [ ] **42. Recherche de signes d'insuffisance cardiaque *(3 grilles sur 12)***
+> - [ ] **41. Recherche de signes d'insuffisance cardiaque *(3 grilles sur 12)***
 > 	- [ ] Œdèmes des membres inférieurs (signe du godet) *(1 grille sur 12)*
 > 	- [ ] Pas de turgescence jugulaire *(2 grilles sur 12)*
 > 	- [ ] Pas de reflux hépato-jugulaire
@@ -491,33 +490,33 @@ cssclasses:
 > 	- [ ] Pas d'ascite *(1 grille sur 12)*
 > 	- [ ] Œdèmes prétibiaux *(1 grille sur 12)*
 > 	- [ ] Auscultation pulmonaire *(1 grille sur 12)*
-> - [ ] **43. Auscultation pulmonaire *(1 grille sur 12)***
+> - [ ] **42. Auscultation pulmonaire *(1 grille sur 12)***
 > 	- [ ] Pas de râles
 > 	- [ ] Pas de sibilants
 > 	- [ ] Symétrique bilatéralement
-> - [ ] **44. Signes vitaux et mesures anthropométriques *(1 grille sur 12)***
+> - [ ] **43. Signes vitaux et mesures anthropométriques *(1 grille sur 12)***
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Poids et taille
-> - [ ] **45. Inspection générale et recherche de signes cardiovasculaires *(1 grille sur 12)***
+> - [ ] **44. Inspection générale et recherche de signes cardiovasculaires *(1 grille sur 12)***
 > 	- [ ] Cyanose centrale
 > 	- [ ] Cyanose périphérique
 > 	- [ ] Signes cutanés
 > 	- [ ] Inspection thoracique
 > 	- [ ] Température des extrémités
-> - [ ] **46. Évaluation du pouls veineux jugulaire *(1 grille sur 12)***
+> - [ ] **45. Évaluation du pouls veineux jugulaire *(1 grille sur 12)***
 > 	- [ ] Positionnement du patient
 > 	- [ ] Respiration par la bouche
 > 	- [ ] Niveau du collapsus veineux
 > 	- [ ] Réflux hépato-jugulaire
-> - [ ] **47. Palpation cardiovasculaire *(1 grille sur 12)***
+> - [ ] **46. Palpation cardiovasculaire *(1 grille sur 12)***
 > 	- [ ] Pouls artériels
 > 	- [ ] Choc de pointe
 > 	- [ ] Aire précordiale
 > 	- [ ] 2ème espace intercostal droit
 > 	- [ ] Creux épigastrique
-> - [ ] **48. Auscultation des carotides *(1 grille sur 12)***
+> - [ ] **47. Auscultation des carotides *(1 grille sur 12)***
 > 	- [ ] Auscultation bilatérale des carotides
 > 	- [ ] Recherche de souffles carotidiens
 > 	- [ ] Corrélation avec examen cardiaque

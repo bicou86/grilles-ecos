@@ -139,8 +139,9 @@ cssclasses:
 > - [ ] **8. Petit poing *(Fracture du scaphoïde)***
 > - [ ] **9. Prise en clé *(Fracture du scaphoïde)***
 > - [ ] **10. Pince de précision (stylo) *(Fracture du scaphoïde)***
-> - [ ] **11. Test de ténodèse *(Fracture du scaphoïde)***
-> - [ ] **12. Inspection de la main *(Fracture du scaphoïde)***
+> - [ ] **11. Test de ténodèse**
+> 	- [ ] Percussion du canal carpien *(Syndrome du canal carpien)*
+> - [ ] **12. Désinfection des mains**
 > - [ ] **13. Triade du scaphoïde (palpation + provocation) *(Fracture du scaphoïde)***
 > - [ ] **14. Douleur à la pression tabatière *(Fracture du scaphoïde)***
 > - [ ] **15. Douleur à la pression tuberculum scaphoidei (palmaire) *(Fracture du scaphoïde)***
@@ -156,30 +157,27 @@ cssclasses:
 > - [ ] **25. Opposition vers D2–D5 *(Fracture du scaphoïde)***
 > - [ ] **26. Perfusion *(Fracture du scaphoïde)***
 > - [ ] **27. Sensibilité *(Fracture du scaphoïde)***
-> - [ ] **28. Désinfection des mains *(Syndrome du canal carpien)***
-> - [ ] **29. Inspection *(Syndrome du canal carpien)***
+> - [ ] **28. Inspection *(Syndrome du canal carpien)***
 > 	- [ ] Recherche de rougeur
 > 	- [ ] Recherche de gonflement
 > 	- [ ] État de la peau
 > 	- [ ] Position antalgique
 > 	- [ ] Évaluation de la musculature
-> - [ ] **30. Test de Tinel *(Syndrome du canal carpien)***
-> 	- [ ] Percussion du canal carpien
-> - [ ] **31. Test de Phalen *(Syndrome du canal carpien)***
+> - [ ] **29. Test de Phalen *(Syndrome du canal carpien)***
 > 	- [ ] Flexion du poignet maintenue 1 minute
-> - [ ] **32. Évaluation de la sensibilité *(Syndrome du canal carpien)***
+> - [ ] **30. Évaluation de la sensibilité *(Syndrome du canal carpien)***
 > 	- [ ] Discrimination à deux points
 > 	- [ ] Sensibilité au toucher léger
 > 	- [ ] Distribution du nerf médian (pouce, index, majeur, face radiale de l'annulaire)
-> - [ ] **33. Évaluation de la force *(Syndrome du canal carpien)***
+> - [ ] **31. Évaluation de la force *(Syndrome du canal carpien)***
 > 	- [ ] Opposition du pouce
 > 	- [ ] Abduction du pouce contre résistance
 > 	- [ ] Force de préhension globale
-> - [ ] **34. Amplitude des mouvements *(Syndrome du canal carpien)***
+> - [ ] **32. Amplitude des mouvements *(Syndrome du canal carpien)***
 > 	- [ ] Flexion/extension du poignet
 > 	- [ ] Déviation radiale/ulnaire
 > 	- [ ] Pronation/supination
-> - [ ] **35. Tests complémentaires *(Syndrome du canal carpien)***
+> - [ ] **33. Tests complémentaires *(Syndrome du canal carpien)***
 > 	- [ ] Test de compression directe du canal carpien (test de Durkan)
 > 	- [ ] Test de l'élévation des bras (test de Roos)
 > 	- [ ] Recherche du signe de la bouteille de Lüthy

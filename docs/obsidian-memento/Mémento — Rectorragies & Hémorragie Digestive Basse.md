@@ -203,9 +203,9 @@ cssclasses:
 > - [ ] **11. Palpation superficielle *(Cancer du rectum · Cancer rectal)***
 > 	- [ ] Effectué dans les 4 quadrants
 > 	- [ ] Pas ou incomplètement effectué = non *(Cancer rectal)*
-> - [ ] **12. Palpation profonde bimanuelle *(Cancer rectal)***
+> - [ ] **12. Palpation profonde *(Cancer du rectum · Cancer rectal)***
 > 	- [ ] Effectué dans les 4 quadrants
-> 	- [ ] Pas ou incomplètement effectué = non
+> 	- [ ] Pas ou incomplètement effectué = non *(Cancer rectal)*
 > - [ ] **13. Recherche signes péritonéaux : Défense / Détente *(Cancer du rectum · Cancer rectal)***
 > 	- [ ] Oui = les 2 *(Cancer rectal)*
 > 	- [ ] Non = pas ou incomplètement effectué *(Cancer rectal)*
@@ -221,8 +221,6 @@ cssclasses:
 > - [ ] **16. Auscultation *(Cancer du rectum)***
 > 	- [ ] Bruits dans les 4 quadrants
 > - [ ] **17. Souffles vasculaires (aorte, artères iliaques et artères rénales) *(Cancer du rectum)***
-> - [ ] **18. Palpation profonde *(Cancer du rectum)***
-> 	- [ ] Effectué dans les 4 quadrants
 
 > [!success] 💊 Management — si Cancer du rectum
 > - [ ] **1. Hypothèses diagnostiques**

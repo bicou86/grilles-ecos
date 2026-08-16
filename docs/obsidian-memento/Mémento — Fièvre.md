@@ -185,7 +185,9 @@ cssclasses:
 > [!tip] 🩺 Status
 > - [ ] **1. État général *(Pyélonéphrite)***
 > - [ ] **2. Temps de recoloration capillaire *(Fuite anastomotique · Pyélonéphrite)***
-> - [ ] **3. Coloration cutanée *(Pyélonéphrite)***
+> - [ ] **3. Inspection cutanée *(Endocardite infectieuse · Pyélonéphrite)***
+> 	- [ ] Recherche d'affection/éruption cutanées (point d'entrée infectieux) *(Endocardite infectieuse)*
+> 	- [ ] Recherche systématique sur tout le corps (sauf zones intimes) *(Endocardite infectieuse)*
 > - [ ] **4. Hydratation *(Pyélonéphrite)***
 > - [ ] **5. Muqueuses *(Pyélonéphrite)***
 > - [ ] **6. Turgescence cutanée *(Pyélonéphrite)***
@@ -236,10 +238,7 @@ cssclasses:
 > 	- [ ] Amplitude
 > - [ ] **38. Inspection de la cavité buccale *(Endocardite infectieuse)***
 > - [ ] **39. Rigidité nucale (méningisme) *(Endocardite infectieuse)***
-> - [ ] **40. Inspection cutanée *(Endocardite infectieuse)***
-> 	- [ ] Recherche d'affection/éruption cutanées (point d'entrée infectieux)
-> 	- [ ] Recherche systématique sur tout le corps (sauf zones intimes)
-> - [ ] **41. Palpations des aires ganglionnaires *(Endocardite infectieuse)***
+> - [ ] **40. Palpations des aires ganglionnaires *(Endocardite infectieuse)***
 > 	- [ ] Cervicales
 > 	- [ ] Axillaires
 > 	- [ ] Inguinales

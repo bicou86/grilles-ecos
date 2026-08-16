@@ -192,7 +192,7 @@ cssclasses:
 > 	- [ ] Médicaments actuels *(Scarlatine / Angine streptococcique)*
 > - [ ] **69. Toxiques *(Dermatite périorale)***
 > - [ ] **70. Charge psychosociale *(Dermatite périorale)***
-> - [ ] **71. Se présente avec nom, fonction et but de la consultation *(Scarlatine / Angine streptococcique · Tinea corporis)***
+> - [ ] **71. Désinfection des mains, présentation avec nom, fonction et but de la consultation *(Lupus érythémateux cutané · Scarlatine / Angine streptococcique · Tinea corporis)***
 > - [ ] **72. Exploration du symptôme principal : éruption cutanée *(Scarlatine / Angine streptococcique · Tinea corporis)***
 > - [ ] **73. Évolution temporelle de l'éruption *(Scarlatine / Angine streptococcique · Tinea corporis)***
 > - [ ] **74. Évolution et extension des lésions *(Tinea corporis)***
@@ -222,33 +222,32 @@ cssclasses:
 > - [ ] **87. Anamnèse sociale et exposition *(Scarlatine / Angine streptococcique)***
 > 	- [ ] Fréquentation collective
 > 	- [ ] Contacts malades
-> - [ ] **88. Désinfection des mains, présentation avec nom, fonction et but de la consultation *(Lupus érythémateux cutané)***
-> - [ ] **89. Exploration du symptôme principal *(Lupus érythémateux cutané)***
-> - [ ] **90. Caractéristiques de l'érythème *(Lupus érythémateux cutané)***
+> - [ ] **88. Exploration du symptôme principal *(Lupus érythémateux cutané)***
+> - [ ] **89. Caractéristiques de l'érythème *(Lupus érythémateux cutané)***
 > 	- [ ] Douleur
 > 	- [ ] Sensation de brûlure
 > 	- [ ] Prurit
-> - [ ] **91. Évolution temporelle et facteurs déclenchants *(Lupus érythémateux cutané)***
+> - [ ] **90. Évolution temporelle et facteurs déclenchants *(Lupus érythémateux cutané)***
 > 	- [ ] Durée
 > 	- [ ] Facteur déclenchant
 > 	- [ ] Évolution
-> - [ ] **92. Antécédents d'épisodes similaires *(Lupus érythémateux cutané)***
-> - [ ] **93. Revue des systèmes *(Lupus érythémateux cutané)***
-> - [ ] **94. Antécédents médicaux et chirurgicaux *(Lupus érythémateux cutané)***
-> - [ ] **95. Anamnèse de voyage et exposition solaire *(Lupus érythémateux cutané)***
+> - [ ] **91. Antécédents d'épisodes similaires *(Lupus érythémateux cutané)***
+> - [ ] **92. Revue des systèmes *(Lupus érythémateux cutané)***
+> - [ ] **93. Antécédents médicaux et chirurgicaux *(Lupus érythémateux cutané)***
+> - [ ] **94. Anamnèse de voyage et exposition solaire *(Lupus érythémateux cutané)***
 > 	- [ ] Voyage récent
 > 	- [ ] Évolution pendant le voyage
 > 	- [ ] Fièvre au retour
 > 	- [ ] Exposition solaire
-> - [ ] **96. Lésions *(Zona)***
+> - [ ] **95. Lésions *(Zona)***
 > 	- [ ] Début
 > 	- [ ] Évolution en nombre
 > 	- [ ] Évolution en caractère
 > 	- [ ] Localisation
-> - [ ] **97. Premier épisode *(Zona)***
+> - [ ] **96. Premier épisode *(Zona)***
 > 	- [ ] A demandé si ATCD similaire *(1 grille sur 8)*
-> - [ ] **98. Symptômes associés : Fièvre/fatigue/toux/céphalées *(1 grille sur 8)***
-> - [ ] **99. Facteurs de risque *(Zona)***
+> - [ ] **97. Symptômes associés : Fièvre/fatigue/toux/céphalées *(1 grille sur 8)***
+> - [ ] **98. Facteurs de risque *(Zona)***
 > 	- [ ] Trauma/stress *(1 grille sur 8)*
 > 	- [ ] Traitement immunosuppresseur/infection récente/maladie (cancer, VIH, Immuno) *(1 grille sur 8)*
 > 	- [ ] Fatigue importante
@@ -257,10 +256,10 @@ cssclasses:
 > 	- [ ] Traitement immunosuppresseur *(1 grille sur 8)*
 > 	- [ ] Infection récente *(1 grille sur 8)*
 > 	- [ ] Maladie (cancer, VIH, immunosuppression) *(1 grille sur 8)*
-> - [ ] **100. Anamnèse de varicelle *(Zona)***
-> - [ ] **101. Contage *(Zona)***
-> - [ ] **102. Douleurs soulagées par cannabis *(1 grille sur 8)***
-> - [ ] **103. Prurit — début ET évolution *(1 grille sur 8)***
+> - [ ] **99. Anamnèse de varicelle *(Zona)***
+> - [ ] **100. Contage *(Zona)***
+> - [ ] **101. Douleurs soulagées par cannabis *(1 grille sur 8)***
+> - [ ] **102. Prurit — début ET évolution *(1 grille sur 8)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Paramètres vitaux *(Psoriasis · Syphilis)***

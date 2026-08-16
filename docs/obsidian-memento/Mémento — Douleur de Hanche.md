@@ -253,7 +253,13 @@ cssclasses:
 > - [ ] **21. Test de Lasègue *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **22. Test de force des abducteurs de hanche *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **23. Resisted Abduction Test (ADD-R-Test) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
-> - [ ] **24. Extension de la hanche *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
+> - [ ] **24. Palpation de la hanche *(Coxarthrose (arthrose de hanche) · Syndrome douloureux du grand trochanter (tendinopathie fessière))***
+> 	- [ ] Repères anatomiques: crête iliaque, épine iliaque antéro-supérieure *(Coxarthrose (arthrose de hanche))*
+> 	- [ ] Pubis, ligament inguinal, symphyse pubienne *(Coxarthrose (arthrose de hanche))*
+> 	- [ ] Muscles rectus femoris (droit fémoral), quadriceps *(Coxarthrose (arthrose de hanche))*
+> 	- [ ] Insertion des adducteurs *(Coxarthrose (arthrose de hanche))*
+> 	- [ ] Grand trochanter *(Coxarthrose (arthrose de hanche))*
+> 	- [ ] Épine iliaque postéro-supérieure, sacrum, muscle grand glutéal *(Coxarthrose (arthrose de hanche))*
 > - [ ] **25. DD Hanche, ISG, lombo-sacré (3 phases de Mennell - test d’hyperextension) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **26. Phase 1: Articulation de la hanche *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **27. Phase 2: ISG (signe classique de Mennell) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
@@ -317,37 +323,30 @@ cssclasses:
 > 	- [ ] Palpation des pouls périphériques
 > 	- [ ] Recherche de signes d'insuffisance artérielle
 > 	- [ ] Recherche de varices
-> - [ ] **38. Palpation de la hanche *(Coxarthrose (arthrose de hanche))***
-> 	- [ ] Repères anatomiques: crête iliaque, épine iliaque antéro-supérieure
-> 	- [ ] Pubis, ligament inguinal, symphyse pubienne
-> 	- [ ] Muscles rectus femoris (droit fémoral), quadriceps
-> 	- [ ] Insertion des adducteurs
-> 	- [ ] Grand trochanter
-> 	- [ ] Épine iliaque postéro-supérieure, sacrum, muscle grand glutéal
-> - [ ] **39. Recherche de points douloureux *(Coxarthrose (arthrose de hanche))***
+> - [ ] **38. Recherche de points douloureux *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Chaleur
 > 	- [ ] Tuméfaction
 > 	- [ ] Douleur à la palpation profonde
 > 	- [ ] Crépitations possibles
-> - [ ] **40. Examen fonctionnel - Mobilité passive *(Coxarthrose (arthrose de hanche))***
+> - [ ] **39. Examen fonctionnel - Mobilité passive *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Flexion
 > 	- [ ] Abduction
 > 	- [ ] Adduction
 > 	- [ ] Rotation interne
 > 	- [ ] Rotation externe
 > 	- [ ] Extension
-> - [ ] **41. Examen fonctionnel - Mobilité active *(Coxarthrose (arthrose de hanche))***
+> - [ ] **40. Examen fonctionnel - Mobilité active *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Pas ou peu d'examen actif nécessaire
 > 	- [ ] Mesures d'amplitudes si changements de position
 > 	- [ ] Démarche logique pour éviter allers-retours position
-> - [ ] **42. Tests de force musculaire *(Coxarthrose (arthrose de hanche))***
+> - [ ] **41. Tests de force musculaire *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Fléchisseurs de hanche
 > 	- [ ] Extenseurs de hanche
 > 	- [ ] Abducteurs (moyen fessier)
 > 	- [ ] Adducteurs
 > 	- [ ] Rotateurs internes
 > 	- [ ] Rotateurs externes
-> - [ ] **43. Mesure de l'inégalité de longueur des membres *(Coxarthrose (arthrose de hanche))***
+> - [ ] **42. Mesure de l'inégalité de longueur des membres *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Mesure vraie: épine iliaque antéro-supérieure à malléole interne
 > 	- [ ] Mesure apparente: ombilic à malléole interne
 > 	- [ ] Recherche d'une bascule du bassin
@@ -357,7 +356,7 @@ cssclasses:
 > - [ ] **2. Prise en charge thérapeutique *(2 grilles sur 3)* — *Coxarthrose (arthrose de hanche) · Nécrose aseptique de la tête fémorale gauche***
 
 > [!success] 💊 Management — si Coxarthrose (arthrose de hanche)
-> - [ ] **1. Examens complémentaires**
+> - [ ] **1. Examens complémentaires d'imagerie**
 > 	- [ ] Radiographie bassin face debout
 > 	- [ ] Radiographie hanche face et profil (faux profil de Lequesne)
 > 	- [ ] Signes radiologiques: pincement articulaire, ostéophytes, géodes, condensation
