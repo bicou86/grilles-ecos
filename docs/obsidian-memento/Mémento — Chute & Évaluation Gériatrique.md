@@ -86,7 +86,7 @@ cssclasses:
 *Musculo-Squelettique · 5 grilles · 5 diagnostics documentés · 4 attendus documentés ailleurs · 1 attendu absent du corpus* — [[SSP — Chute & Évaluation Gériatrique]]
 
 > [!abstract] Les 5 grilles fusionnées
-> - **AMBOSS-24** — Violence domestique `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-24_-_E_valuation_apre_s_chute_-_Femme_30_ans_-_Grille_ECOS.html>)
+> - **AMBOSS-24** — Violence domestique `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-24_-_E_valuation_apre_s_chute_-_Femme_30_ans_-_Grille_ECOS.html>)
 > - **AZYGOS-4** — HypoTA orthostatique `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/a8012490-bf2d-48f1-85c0-35662fd010b5.json>)
 > - **German-10** — Accident vasculaire cérébral `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-10_-_Chute_-_Grille_ECOS.html>)
 > - **German-11** — Chute multifactorielle `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-11_-_Chute_-_Grille_ECOS.html>)

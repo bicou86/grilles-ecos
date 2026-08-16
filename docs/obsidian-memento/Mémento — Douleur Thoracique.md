@@ -96,7 +96,7 @@ cssclasses:
 > - **German-33** — Reflux gastro-œsophagien `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-33_-_Douleur_thoracique_-_Grille_ECOS.html>)
 > - **RESCOS-34** — Péricardite / Myopéricardite `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-34_-_Douleur_thoracique_-_Grille_ECOS.html>)
 > - **RESCOS-35** — Embolie pulmonaire `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-35_-_Douleur_thoracique_-_Grille_ECOS.html>)
-> - **RESCOS-36** — Angor stable / Maladie coronarienne `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-36_-_Douleur_thoracique_-_Grille_ECOS.html>)
+> - **RESCOS-36** — Angor stable / Maladie coronarienne `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-36_-_Douleur_thoracique_-_Grille_ECOS.html>)
 > - **RESCOS-37** — Angor stable / Maladie coronarienne `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-37_-_Douleur_thoracique_-_ECC_Cardiologie_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse

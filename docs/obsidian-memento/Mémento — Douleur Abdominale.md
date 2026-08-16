@@ -99,11 +99,11 @@ cssclasses:
 > - **German-19** — MICI (Crohn / RCUH) `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-19_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **German-20** — Ischémie mésentérique aiguë `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-20_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **German-21** — Reflux gastro-œsophagien (RGO) `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-21_-_Douleur_abdominale_-_Grille_ECOS.html>)
-> - **RESCOS-17** — Pyélonéphrite `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-17_-_Douleur_abdominale_-_Grille_ECOS.html>)
-> - **RESCOS-18** — Cholangite `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-18_-_Douleur_abdominale_-_Grille_ECOS.html>)
-> - **RESCOS-19** — Cholécystite aiguë `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-19_-_Douleur_abdominale_-_Grille_ECOS.html>)
+> - **RESCOS-17** — Colique néphrétique droite `enonce` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-17_-_Douleur_abdominale_-_Grille_ECOS.html>)
+> - **RESCOS-18** — Cholécystite aiguë `enonce` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-18_-_Douleur_abdominale_-_Grille_ECOS.html>)
+> - **RESCOS-19** — Cholédocholithiase `enonce` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-19_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **RESCOS-20** — Torsion ovarienne `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-20_-_Douleur_abdominale_-_Grille_ECOS.html>)
-> - **RESCOS-21** — Perforation d'ulcère gastro-duodénal `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-21_-_Douleur_abdominale_-_Grille_ECOS.html>)
+> - **RESCOS-21** — Perforation d'ulcère gastro-duodénal `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-21_-_Douleur_abdominale_-_Grille_ECOS.html>)
 > - **RESCOS-22** — Gastroentérite `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-22_-_Douleur_abdominale_-_ECC_Digestion_-_Grille_ECOS.html>)
 > - **RESCOS-23** — Cholécystite aiguë `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-23_-_Douleur_abdominale_-_ECC_Digestion_-_Grille_ECOS.html>)
 
@@ -120,10 +120,10 @@ cssclasses:
 > 	- [ ] Facteurs aggravants *(5 grilles sur 20)*
 > 	- [ ] Épisodes antérieurs similaires *(3 grilles sur 20)*
 > 	- [ ] Événements précipitants *(Appendicite aiguë · Cancer de l'ovaire)*
-> 	- [ ] Facteurs aggravant/soulageant *(Cholangite · Pyélonéphrite)*
-> 	- [ ] Quantité *(Cholangite)*
-> 	- [ ] Chronologie *(Cholangite)*
-> 	- [ ] Facteurs soulageants *(2 grilles sur 20)*
+> 	- [ ] Facteurs aggravant/soulageant *(2 grilles sur 20)*
+> 	- [ ] Quantité *(1 grille sur 20)*
+> 	- [ ] Chronologie *(1 grille sur 20)*
+> 	- [ ] Facteurs soulageants *(Cholédocholithiase · Torsion ovarienne)*
 > 	- [ ] Localisation précise *(Torsion ovarienne)*
 > - [ ] **3. Symptômes associés *(7 grilles sur 20)***
 > 	- [ ] Nausées *(4 grilles sur 20)*
@@ -161,14 +161,14 @@ cssclasses:
 > 	- [ ] Chirurgies abdominales antérieures *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Coloscopie de dépistage *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Antécédents de diverticulose *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Maladies / comorbidités *(Pyélonéphrite)*
-> 	- [ ] Hospitalisations / opérations *(2 grilles sur 20)*
-> 	- [ ] Diète *(1 grille sur 20)*
-> 	- [ ] Médicaments actuels *(1 grille sur 20)*
-> 	- [ ] Alcool *(1 grille sur 20)*
-> 	- [ ] Tabac *(1 grille sur 20)*
-> 	- [ ] Drogues *(1 grille sur 20)*
-> 	- [ ] Comorbidités *(1 grille sur 20)*
+> 	- [ ] Maladies / comorbidités *(Colique néphrétique droite)*
+> 	- [ ] Hospitalisations / opérations *(Cholédocholithiase · Colique néphrétique droite)*
+> 	- [ ] Diète *(Cholédocholithiase)*
+> 	- [ ] Médicaments actuels *(Cholédocholithiase)*
+> 	- [ ] Alcool *(Cholédocholithiase)*
+> 	- [ ] Tabac *(Cholédocholithiase)*
+> 	- [ ] Drogues *(Cholédocholithiase)*
+> 	- [ ] Comorbidités *(Cholédocholithiase)*
 > - [ ] **6. Antécédents chirurgicaux *(4 grilles sur 20)***
 > - [ ] **7. Allergies *(10 grilles sur 20)***
 > - [ ] **8. Médicaments actuels *(11 grilles sur 20)***
@@ -204,9 +204,9 @@ cssclasses:
 > 	- [ ] Drogues illicites *(3 grilles sur 20)*
 > 	- [ ] Exercice physique *(1 grille sur 20)*
 > 	- [ ] Régime alimentaire *(2 grilles sur 20)*
-> 	- [ ] Diète *(Pyélonéphrite)*
-> 	- [ ] Médicaments actuels *(Pyélonéphrite)*
-> 	- [ ] Drogues *(Pyélonéphrite)*
+> 	- [ ] Diète *(Colique néphrétique droite)*
+> 	- [ ] Médicaments actuels *(Colique néphrétique droite)*
+> 	- [ ] Drogues *(Colique néphrétique droite)*
 > - [ ] **13. Histoire sexuelle et gynécologique *(Appendicite aiguë · Cancer de l'ovaire)***
 > 	- [ ] Activité sexuelle
 > 	- [ ] Partenaire *(Appendicite aiguë)*
@@ -347,10 +347,10 @@ cssclasses:
 > - [ ] **88. Douleurs osseuses *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **89. Fièvre / EG *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **90. Traumatisme *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **91. Antécédents *(Cholangite · Purpura de Schönlein-Henoch (vascularite à IgA))***
-> 	- [ ] Médicaux (maladies) *(Cholangite)*
-> 	- [ ] Hospitalisations *(Cholangite)*
-> 	- [ ] Opérations *(Cholangite)*
+> - [ ] **91. Antécédents *(2 grilles sur 20)***
+> 	- [ ] Médicaux (maladies) *(1 grille sur 20)*
+> 	- [ ] Hospitalisations *(1 grille sur 20)*
+> 	- [ ] Opérations *(1 grille sur 20)*
 > - [ ] **92. Statut vaccinal *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **93. Prise en charge *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **94. Présentation avec nom, fonction et tâche *(7 diagnostics)***
@@ -515,59 +515,59 @@ cssclasses:
 > - [ ] **144. Changements de poids et symptômes B *(Reflux gastro-œsophagien (RGO))***
 > - [ ] **145. Anamnèse systémique *(Reflux gastro-œsophagien (RGO))***
 > 	- [ ] De la tête aux pieds incluant fièvre et symptômes B
-> - [ ] **146. Chronologie de la douleur *(3 grilles sur 20)***
-> 	- [ ] Début/durée *(Pyélonéphrite)*
-> 	- [ ] Fluctuation *(Pyélonéphrite)*
+> - [ ] **146. Chronologie de la douleur *(Cholédocholithiase · Colique néphrétique droite · Torsion ovarienne)***
+> 	- [ ] Début/durée *(Colique néphrétique droite)*
+> 	- [ ] Fluctuation *(Colique néphrétique droite)*
 > 	- [ ] Circonstances de survenue
-> 	- [ ] Début *(2 grilles sur 20)*
-> 	- [ ] Progression *(2 grilles sur 20)*
-> - [ ] **147. Anamnèse actuelle - présence de *(Pyélonéphrite)***
+> 	- [ ] Début *(Cholédocholithiase · Torsion ovarienne)*
+> 	- [ ] Progression *(Cholédocholithiase · Torsion ovarienne)*
+> - [ ] **147. Anamnèse actuelle - présence de *(Colique néphrétique droite)***
 > 	- [ ] Fièvre
 > 	- [ ] Frissons
-> - [ ] **148. Par système - urinaire *(2 grilles sur 20)***
+> - [ ] **148. Par système - urinaire *(Cholédocholithiase · Colique néphrétique droite)***
 > 	- [ ] Quantité d'urine
-> 	- [ ] Fréquence mictionnelle *(Pyélonéphrite)*
+> 	- [ ] Fréquence mictionnelle *(Colique néphrétique droite)*
 > 	- [ ] Couleur de l'urine
-> 	- [ ] Présence de sang *(Pyélonéphrite)*
-> 	- [ ] Douleur à la miction *(Pyélonéphrite)*
-> 	- [ ] Hématurie *(1 grille sur 20)*
-> 	- [ ] Dysurie *(1 grille sur 20)*
-> 	- [ ] Algurie *(1 grille sur 20)*
-> 	- [ ] Pollakiurie *(1 grille sur 20)*
-> - [ ] **149. Par système - digestif *(2 grilles sur 20)***
+> 	- [ ] Présence de sang *(Colique néphrétique droite)*
+> 	- [ ] Douleur à la miction *(Colique néphrétique droite)*
+> 	- [ ] Hématurie *(Cholédocholithiase)*
+> 	- [ ] Dysurie *(Cholédocholithiase)*
+> 	- [ ] Algurie *(Cholédocholithiase)*
+> 	- [ ] Pollakiurie *(Cholédocholithiase)*
+> - [ ] **149. Par système - digestif *(Cholédocholithiase · Colique néphrétique droite)***
 > 	- [ ] Nausées
 > 	- [ ] Vomissements
 > 	- [ ] Consistance des selles
-> 	- [ ] Fréquence du transit *(Pyélonéphrite)*
+> 	- [ ] Fréquence du transit *(Colique néphrétique droite)*
 > 	- [ ] Couleur des selles
-> 	- [ ] Présence de sang dans les selles *(Pyélonéphrite)*
-> 	- [ ] Dernier transit *(1 grille sur 20)*
-> 	- [ ] Sang dans les selles *(1 grille sur 20)*
-> - [ ] **150. Symptômes associés - fièvre *(Cholangite)***
+> 	- [ ] Présence de sang dans les selles *(Colique néphrétique droite)*
+> 	- [ ] Dernier transit *(Cholédocholithiase)*
+> 	- [ ] Sang dans les selles *(Cholédocholithiase)*
+> - [ ] **150. Symptômes associés - fièvre *(1 grille sur 20)***
 > 	- [ ] Début/chronologie
 > 	- [ ] Intensité
 > 	- [ ] Fluctuation
 > 	- [ ] Présence de frissons
 > 	- [ ] Présence de transpiration
-> - [ ] **151. Symptômes associés - nausées *(Cholangite)***
+> - [ ] **151. Symptômes associés - nausées *(1 grille sur 20)***
 > 	- [ ] Présence de nausée
 > 	- [ ] Présence de vomissement
 > 	- [ ] Début/durée des nausées
-> - [ ] **152. Symptômes similaires par le passé *(Cholangite)***
-> - [ ] **153. Anamnèse par système - digestives (selles) *(Cholangite)***
+> - [ ] **152. Symptômes similaires par le passé *(1 grille sur 20)***
+> - [ ] **153. Anamnèse par système - digestives (selles) *(1 grille sur 20)***
 > 	- [ ] Quantité
 > 	- [ ] Fréquence
 > 	- [ ] Couleur
 > 	- [ ] Présence de sang
-> - [ ] **154. Habitudes - alimentation *(Cholangite)***
+> - [ ] **154. Habitudes - alimentation *(1 grille sur 20)***
 > 	- [ ] Alimentation habituelle
 > 	- [ ] Contenu du dernier repas
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Allergies
-> - [ ] **155. État général *(2 grilles sur 20)***
-> 	- [ ] Fièvre et frissons *(1 grille sur 20)*
+> - [ ] **155. État général *(Cholédocholithiase · Torsion ovarienne)***
+> 	- [ ] Fièvre et frissons *(Cholédocholithiase)*
 > 	- [ ] Fatigue
-> 	- [ ] Forme (perte de poids) *(1 grille sur 20)*
+> 	- [ ] Forme (perte de poids) *(Cholédocholithiase)*
 > 	- [ ] Fièvre *(Torsion ovarienne)*
 > 	- [ ] Perte/prise de poids récente *(Torsion ovarienne)*
 > - [ ] **156. Système reproducteur (DD: grossesse extra-utérine, torsion ovarienne) *(Torsion ovarienne)***
@@ -740,26 +740,26 @@ cssclasses:
 > - [ ] **18. Auscultation *(4 grilles sur 20)***
 > 	- [ ] Auscultation abdominale *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Auscultation cardio-pulmonaire *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Les 4 quadrants *(1 grille sur 20)*
-> 	- [ ] Auscultation avant toute autre partie du status *(1 grille sur 20)*
+> 	- [ ] Les 4 quadrants *(Cholédocholithiase)*
+> 	- [ ] Auscultation avant toute autre partie du status *(Cholédocholithiase)*
 > - [ ] **19. Percussion *(5 grilles sur 20)***
 > 	- [ ] Percussion abdominale *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Des 4 quadrants *(2 grilles sur 20)*
-> 	- [ ] Délimitation de la taille du foie à la percussion (ou autre technique appropriée) *(Cholangite)*
-> 	- [ ] Délimite la taille du foie en percutant (ou autre technique appropriée) *(1 grille sur 20)*
+> 	- [ ] Délimitation de la taille du foie à la percussion (ou autre technique appropriée) *(1 grille sur 20)*
+> 	- [ ] Délimite la taille du foie en percutant (ou autre technique appropriée) *(Cholédocholithiase)*
 > - [ ] **20. Palpation *(4 grilles sur 20)***
 > 	- [ ] Superficielle *(2 grilles sur 20)*
-> 	- [ ] Profonde (à deux mains) *(Cholangite)*
-> 	- [ ] Teste la détente *(Cholangite)*
-> 	- [ ] Commence par le côté non douloureux *(Cholangite)*
-> 	- [ ] Profonde *(1 grille sur 20)*
-> 	- [ ] Détente *(1 grille sur 20)*
+> 	- [ ] Profonde (à deux mains) *(1 grille sur 20)*
+> 	- [ ] Teste la détente *(1 grille sur 20)*
+> 	- [ ] Commence par le côté non douloureux *(1 grille sur 20)*
+> 	- [ ] Profonde *(Cholédocholithiase)*
+> 	- [ ] Détente *(Cholédocholithiase)*
 > - [ ] **21. Douleur directe à la décompression *(1 grille sur 20)***
 > - [ ] **22. Douleur à la décompression controlatérale *(1 grille sur 20)***
 > - [ ] **23. Douleur à l'ébranlement *(1 grille sur 20)***
 > - [ ] **24. Loges rénales *(3 grilles sur 20)***
-> 	- [ ] Palpation *(2 grilles sur 20)*
-> 	- [ ] Percussion *(2 grilles sur 20)*
+> 	- [ ] Palpation *(Cholédocholithiase · Colique néphrétique droite)*
+> 	- [ ] Percussion *(Cholédocholithiase · Colique néphrétique droite)*
 > - [ ] **25. État général *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **26. Examen de base *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **27. Signes de péritonisme *(Purpura de Schönlein-Henoch (vascularite à IgA))***
@@ -793,13 +793,13 @@ cssclasses:
 > 	- [ ] Hernies *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Veines superficielles *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Respiration abdominale *(Perforation d'ulcère gastro-duodénal)*
-> - [ ] **40. Auscultation abdominale *(7 diagnostics)***
+> - [ ] **40. Auscultation abdominale *(7 grilles sur 20)***
 > 	- [ ] Bruits hydroaériques *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Qualité (gargouillis, cliquetis) *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Quantité (5-34/min) *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Souffles vasculaires *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Ausculte les 4 quadrants *(Cholangite)*
-> 	- [ ] Auscultation avant toute autre partie de l'examen clinique *(Cholangite)*
+> 	- [ ] Ausculte les 4 quadrants *(1 grille sur 20)*
+> 	- [ ] Auscultation avant toute autre partie de l'examen clinique *(1 grille sur 20)*
 > 	- [ ] Patience *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Silence abdominal *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Bruits intestinaux *(Perforation d'ulcère gastro-duodénal)*
@@ -891,36 +891,36 @@ cssclasses:
 > - [ ] **66. Inspection buccale *(Reflux gastro-œsophagien (RGO))***
 > 	- [ ] Recherche de signes d'œsophagite
 > 	- [ ] État dentaire
-> - [ ] **67. Status abdominal - installation *(2 grilles sur 20)***
+> - [ ] **67. Status abdominal - installation *(Cholédocholithiase · Colique néphrétique droite)***
 > 	- [ ] Bras & jambes décroisées
 > 	- [ ] Tête légèrement surélevée
 > 	- [ ] Abdomen entièrement visible (premier bouton du pantalon déboutonné ou patient en sous-vêtements)
 > 	- [ ] Se place à droite du patient
-> - [ ] **68. Status abdominal - auscultation *(Pyélonéphrite)***
+> - [ ] **68. Status abdominal - auscultation *(Colique néphrétique droite)***
 > 	- [ ] Les 4 quadrants
 > 	- [ ] Auscultation avant toute autre partie du status
-> - [ ] **69. Status abdominal - percussion *(Pyélonéphrite)***
+> - [ ] **69. Status abdominal - percussion *(Colique néphrétique droite)***
 > 	- [ ] Les 4 quadrants
 > 	- [ ] Délimite la taille du foie en percutant (ou autre technique appropriée)
-> - [ ] **70. Status abdominal - palpation *(Pyélonéphrite)***
+> - [ ] **70. Status abdominal - palpation *(Colique néphrétique droite)***
 > 	- [ ] Superficielle
 > 	- [ ] Profonde
 > 	- [ ] Détente
-> - [ ] **71. Status abdominal - tests spécifiques *(Pyélonéphrite)***
+> - [ ] **71. Status abdominal - tests spécifiques *(Colique néphrétique droite)***
 > 	- [ ] Palpation du point de McBurney
 > 	- [ ] Signe du Psoas
 > 	- [ ] Signe de Murphy
-> - [ ] **72. Installation du patient *(Cholangite)***
+> - [ ] **72. Installation du patient *(1 grille sur 20)***
 > 	- [ ] Jambes décroisées
 > 	- [ ] Bras le long du corps
 > 	- [ ] Tête légèrement surélevée
 > 	- [ ] Abdomen visible en entier (si nécessaire, premier bouton du pantalon enlevé)
 > 	- [ ] Se positionne à droite de la patiente
-> - [ ] **73. Tests spécifiques *(Cholangite)***
+> - [ ] **73. Tests spécifiques *(1 grille sur 20)***
 > 	- [ ] Signe de Murphy
 > 	- [ ] Palpation du point de McBurney
 > 	- [ ] Signe du Psoas
-> - [ ] **74. DD : appendicite *(1 grille sur 20)***
+> - [ ] **74. DD : appendicite *(Cholédocholithiase)***
 > 	- [ ] Palpation du point de McBurney
 > 	- [ ] Signe du Psoas
 > - [ ] **75. S'assure du confort d'installation de la patiente *(Torsion ovarienne)***
@@ -1041,7 +1041,7 @@ cssclasses:
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
 > - [ ] **3. Échographie *(2 grilles sur 20)* — *Cholécystite aiguë · Purpura de Schönlein-Henoch (vascularite à IgA)***
-> - [ ] **4. Diagnostics différentiels *(8 grilles sur 20)* — 8 diagnostics : *Diverticulite sigmoïdienne non compliquée · Douleurs abdominales non spécifiques · Endométriose pelvienne · Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH) · Pyélonéphrite · Reflux gastro-œsophagien (RGO)***
+> - [ ] **4. Diagnostics différentiels *(8 grilles sur 20)* — 8 diagnostics : *Colique néphrétique droite · Diverticulite sigmoïdienne non compliquée · Douleurs abdominales non spécifiques · Endométriose pelvienne · Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH) · Reflux gastro-œsophagien (RGO)***
 
 > [!success] 💊 Management — si Appendicite aiguë
 > - [ ] **1. Examens complémentaires urgents**
@@ -1074,16 +1074,6 @@ cssclasses:
 > 	- [ ] US transvaginale
 > 	- [ ] US transabdominale
 
-> [!success] 💊 Management — si Cholangite
-> - [ ] **1. Mentionne une cholécystite comme hypothèse diagnostique principale**
-> - [ ] **2. Evoque un diagnostic différentiel plausible**
-> 	- [ ] Cholangite
-> 	- [ ] Pancréatite
-> 	- [ ] Appendicite
-> 	- [ ] Hépatite
-> 	- [ ] Pyélonéphrite
-> 	- [ ] Trouble gynécologique
-
 > [!success] 💊 Management — si Cholécystite aiguë
 > - [ ] **1. Examens complémentaires initiaux *(1 grille sur 4)***
 > 	- [ ] US abdominale
@@ -1109,14 +1099,14 @@ cssclasses:
 > - [ ] **12. Analgésie *(1 grille sur 4)***
 > - [ ] **13. Hospitalisation *(1 grille sur 4)***
 > - [ ] **14. Laisser à jeun *(1 grille sur 4)***
-> - [ ] **15. Evoque un diagnostic différentiel plausible *(1 grille sur 4)***
+> - [ ] **15. Mentionne une cholécystite comme hypothèse diagnostique principale *(1 grille sur 4)***
+> - [ ] **16. Evoque un diagnostic différentiel plausible *(1 grille sur 4)***
 > 	- [ ] Cholangite
+> 	- [ ] Pancréatite
+> 	- [ ] Appendicite
 > 	- [ ] Hépatite
-> 	- [ ] Cholécystite
-> 	- [ ] Néoplasie
-> 	- [ ] Gastrite / inflammation du tube digestif
-> 	- [ ] Stase biliaire sur compression néoplasique (p.ex. cancer pancréatique)
-> - [ ] **16. Mentionne l'hypothèse diagnostique cholélithiase / cholédocholithiase *(1 grille sur 4)***
+> 	- [ ] Pyélonéphrite
+> 	- [ ] Trouble gynécologique
 > - [ ] **17. Évaluation de la sévérité et des complications *(1 grille sur 4)***
 > 	- [ ] Recherche signes de cholécystite
 > 	- [ ] Exclusion angiocholite
@@ -1157,6 +1147,24 @@ cssclasses:
 > 	- [ ] Information sur évolution et traitement
 > 	- [ ] Conseils pour récidive
 > 	- [ ] Planification chirurgicale si indiquée
+
+> [!success] 💊 Management — si Cholédocholithiase
+> - [ ] **1. Evoque un diagnostic différentiel plausible**
+> 	- [ ] Cholangite
+> 	- [ ] Hépatite
+> 	- [ ] Cholécystite
+> 	- [ ] Néoplasie
+> 	- [ ] Gastrite / inflammation du tube digestif
+> 	- [ ] Stase biliaire sur compression néoplasique (p.ex. cancer pancréatique)
+> - [ ] **2. Mentionne l'hypothèse diagnostique cholélithiase / cholédocholithiase**
+
+> [!success] 💊 Management — si Colique néphrétique droite
+> - [ ] **1. Hypothèse diagnostique principale**
+> - [ ] **2. Examens complémentaires proposés**
+> 	- [ ] Imagerie (US/CT) pour déterminer la meilleure prise en charge
+> 	- [ ] Bandelette urinaire / analyse d'urine
+> 	- [ ] Bilan sanguin (formule sanguine, fonction rénale, CRP)
+> - [ ] **3. Antalgie proposée**
 
 > [!success] 💊 Management — si Diverticulite sigmoïdienne non compliquée
 > - [ ] **1. Examens d'imagerie**
@@ -1415,14 +1423,6 @@ cssclasses:
 > - [ ] **11. Surveillance hospitalière**
 > - [ ] **12. Contrôle rénal**
 > - [ ] **13. Avis néphrologique**
-
-> [!success] 💊 Management — si Pyélonéphrite
-> - [ ] **1. Hypothèse diagnostique principale**
-> - [ ] **2. Examens complémentaires proposés**
-> 	- [ ] Imagerie (US/CT) pour déterminer la meilleure prise en charge
-> 	- [ ] Bandelette urinaire / analyse d'urine
-> 	- [ ] Bilan sanguin (formule sanguine, fonction rénale, CRP)
-> - [ ] **3. Antalgie proposée**
 
 > [!success] 💊 Management — si Reflux gastro-œsophagien (RGO)
 > - [ ] **1. Diagnostic principal**

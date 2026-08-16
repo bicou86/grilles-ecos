@@ -79,84 +79,84 @@ cssclasses:
 *Gynéco-Obstétrique · 2 grilles · 2 diagnostics documentés · aucun diagnostic attendu déclaré* — [[SSP — Ménopause]]
 
 > [!abstract] Les 2 grilles fusionnées
-> - **German-6** — Phéochromocytome `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-6_-_Bouffe_es_de_chaleur_-_Grille_ECOS.html>)
+> - **German-6** — Périménopause probable `enonce` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-6_-_Bouffe_es_de_chaleur_-_Grille_ECOS.html>)
 > - **German-63** — Ménopause physiologique confirmée `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-63_-_Me_nopause_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Présentation avec nom, fonction et tâche**
-> - [ ] **2. Caractéristiques temporelles des symptômes *(Phéochromocytome)***
+> - [ ] **2. Caractéristiques temporelles des symptômes *(Périménopause probable)***
 > 	- [ ] Depuis quand
 > 	- [ ] Fréquence
 > 	- [ ] Durée des épisodes
-> - [ ] **3. Facteurs déclenchants *(Phéochromocytome)***
+> - [ ] **3. Facteurs déclenchants *(Périménopause probable)***
 > 	- [ ] Stress/excitation
 > 	- [ ] Alcool
 > 	- [ ] Aliments épicés
 > 	- [ ] Chaleur ambiante
-> - [ ] **4. Modifications cutanées lors des épisodes *(Phéochromocytome)***
+> - [ ] **4. Modifications cutanées lors des épisodes *(Périménopause probable)***
 > 	- [ ] Coloration
 > 	- [ ] Reste du corps
 > 	- [ ] Extrémités
 > 	- [ ] Prurit/démangeaisons
-> - [ ] **5. Symptômes végétatifs *(Phéochromocytome)***
+> - [ ] **5. Symptômes végétatifs *(Périménopause probable)***
 > 	- [ ] Transpiration
 > 	- [ ] Bouffées de chaleur
 > 	- [ ] Frissons
-> - [ ] **6. Symptômes généraux *(Phéochromocytome)***
+> - [ ] **6. Symptômes généraux *(Périménopause probable)***
 > 	- [ ] Faiblesse physique
 > 	- [ ] Fatigue
 > 	- [ ] Malaise
-> - [ ] **7. Symptômes neuropsychiatriques *(Phéochromocytome)***
+> - [ ] **7. Symptômes neuropsychiatriques *(Périménopause probable)***
 > 	- [ ] Agitation interne
 > 	- [ ] Tremblements
 > 	- [ ] Troubles du sommeil
 > 	- [ ] Irritabilité
-> - [ ] **8. Symptômes gastro-intestinaux *(Phéochromocytome)***
+> - [ ] **8. Symptômes gastro-intestinaux *(Périménopause probable)***
 > 	- [ ] Diarrhée
 > 	- [ ] Constipation
 > 	- [ ] Nausées
 > 	- [ ] Vomissements
 > 	- [ ] Crampes abdominales
-> - [ ] **9. Symptômes respiratoires *(Phéochromocytome)***
+> - [ ] **9. Symptômes respiratoires *(Périménopause probable)***
 > 	- [ ] Dyspnée
 > 	- [ ] Toux
 > 	- [ ] Wheezing
-> - [ ] **10. Symptômes cardiovasculaires *(Phéochromocytome)***
+> - [ ] **10. Symptômes cardiovasculaires *(Périménopause probable)***
 > 	- [ ] Palpitations
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Œdèmes
-> - [ ] **11. Symptômes neurologiques *(Phéochromocytome)***
+> - [ ] **11. Symptômes neurologiques *(Périménopause probable)***
 > 	- [ ] Céphalées
 > 	- [ ] Vertiges
 > 	- [ ] Paresthésies
-> - [ ] **12. Symptômes B *(Phéochromocytome)***
+> - [ ] **12. Symptômes B *(Périménopause probable)***
 > 	- [ ] Perte de poids
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Fièvre
-> - [ ] **13. Symptômes urogénitaux *(Phéochromocytome)***
+> - [ ] **13. Symptômes urogénitaux *(Périménopause probable)***
 > 	- [ ] Nycturie
 > 	- [ ] Polyurie
 > 	- [ ] Troubles mictionnels
-> - [ ] **14. Symptômes thyroïdiens *(Phéochromocytome)***
+> - [ ] **14. Symptômes thyroïdiens *(Périménopause probable)***
 > 	- [ ] Intolérance à la chaleur
 > 	- [ ] Modifications oculaires
 > 	- [ ] Tremblements fins
 > 	- [ ] Goitre
-> - [ ] **15. Statut gynécologique *(Phéochromocytome)***
+> - [ ] **15. Statut gynécologique *(Périménopause probable)***
 > 	- [ ] Statut menstruel
 > 	- [ ] Âge
 > 	- [ ] Contraception
 > - [ ] **16. Antécédents médicaux personnels**
-> 	- [ ] Maladies cardiovasculaires *(Phéochromocytome)*
-> 	- [ ] Maladies thyroïdiennes *(Phéochromocytome)*
-> 	- [ ] Maladies rénales *(Phéochromocytome)*
-> 	- [ ] Diabète *(Phéochromocytome)*
-> 	- [ ] Cancer *(Phéochromocytome)*
+> 	- [ ] Maladies cardiovasculaires *(Périménopause probable)*
+> 	- [ ] Maladies thyroïdiennes *(Périménopause probable)*
+> 	- [ ] Maladies rénales *(Périménopause probable)*
+> 	- [ ] Diabète *(Périménopause probable)*
+> 	- [ ] Cancer *(Périménopause probable)*
 > 	- [ ] Interventions chirurgicales
 > 	- [ ] Pathologies chroniques *(Ménopause physiologique confirmée)*
 > 	- [ ] Traitements actuels *(Ménopause physiologique confirmée)*
-> - [ ] **17. Médicaments actuels *(Phéochromocytome)***
-> - [ ] **18. Allergies *(Phéochromocytome)***
+> - [ ] **17. Médicaments actuels *(Périménopause probable)***
+> - [ ] **18. Allergies *(Périménopause probable)***
 > - [ ] **19. Habitudes de vie**
 > 	- [ ] Alcool
 > 	- [ ] Tabac
@@ -164,15 +164,15 @@ cssclasses:
 > 	- [ ] Activité physique
 > 	- [ ] Alimentation *(Ménopause physiologique confirmée)*
 > - [ ] **20. Antécédents familiaux**
-> 	- [ ] Autres cancers familiaux *(Phéochromocytome)*
+> 	- [ ] Autres cancers familiaux *(Périménopause probable)*
 > 	- [ ] Maladies cardiovasculaires
-> 	- [ ] Maladies endocriniennes *(Phéochromocytome)*
+> 	- [ ] Maladies endocriniennes *(Périménopause probable)*
 > 	- [ ] Cancers familiaux *(Ménopause physiologique confirmée)*
 > 	- [ ] Ostéoporose familiale *(Ménopause physiologique confirmée)*
 > - [ ] **21. Anamnèse sociale**
-> 	- [ ] Profession *(Phéochromocytome)*
-> 	- [ ] Situation familiale *(Phéochromocytome)*
-> 	- [ ] Stress psychosocial *(Phéochromocytome)*
+> 	- [ ] Profession *(Périménopause probable)*
+> 	- [ ] Situation familiale *(Périménopause probable)*
+> 	- [ ] Stress psychosocial *(Périménopause probable)*
 > - [ ] **22. Motif de consultation *(Ménopause physiologique confirmée)***
 > - [ ] **23. Anamnèse menstruelle *(Ménopause physiologique confirmée)***
 > 	- [ ] Date des dernières règles
@@ -218,31 +218,31 @@ cssclasses:
 > 	- [ ] Avez-vous des questions ?
 
 > [!tip] 🩺 Status
-> - [ ] **1. Signes vitaux *(Phéochromocytome)***
+> - [ ] **1. Signes vitaux *(Périménopause probable)***
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Température
-> - [ ] **2. Examen cardiovasculaire *(Phéochromocytome)***
+> - [ ] **2. Examen cardiovasculaire *(Périménopause probable)***
 > 	- [ ] Auscultation cardiaque
 > 	- [ ] Pouls périphériques
 > 	- [ ] Signes d'insuffisance cardiaque
-> - [ ] **3. Examen pulmonaire *(Phéochromocytome)***
+> - [ ] **3. Examen pulmonaire *(Périménopause probable)***
 > 	- [ ] Auscultation pulmonaire
 > 	- [ ] Signes de détresse respiratoire
-> - [ ] **4. Examen cutané *(Phéochromocytome)***
+> - [ ] **4. Examen cutané *(Périménopause probable)***
 > 	- [ ] Modifications cutanées actuelles
 > 	- [ ] Télangiectasies
 > 	- [ ] Érythème
 > 	- [ ] Flush observable
-> - [ ] **5. Examen abdominal *(Phéochromocytome)***
+> - [ ] **5. Examen abdominal *(Périménopause probable)***
 > 	- [ ] Hépatomégalie
 > 	- [ ] Splénomégalie
 > 	- [ ] Masses abdominales
 > 	- [ ] Douleur/défense
-> - [ ] **6. Examen thyroïdien *(Phéochromocytome)***
+> - [ ] **6. Examen thyroïdien *(Périménopause probable)***
 > 	- [ ] Palpation thyroïdienne
 > 	- [ ] Signes d'hyperthyroïdie
-> - [ ] **7. Examen neurologique *(Phéochromocytome)***
+> - [ ] **7. Examen neurologique *(Périménopause probable)***
 > 	- [ ] État de conscience
 > 	- [ ] Tremblements
 > 	- [ ] Réflexes
@@ -308,7 +308,7 @@ cssclasses:
 > 	- [ ] DMO selon facteurs de risque
 > 	- [ ] Surveillance tensionnelle et métabolique
 
-> [!success] 💊 Management — si Phéochromocytome
+> [!success] 💊 Management — si Périménopause probable
 > - [ ] **1. Diagnostic principal évoqué**
 > - [ ] **2. Diagnostics différentiels**
 > 	- [ ] Ménopause/périménopause

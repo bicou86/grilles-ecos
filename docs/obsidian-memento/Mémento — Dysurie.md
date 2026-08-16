@@ -356,7 +356,7 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Pyélonéphrite
-> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Colique Néphrétique]] (2 grilles) · [[Mémento — Douleur Abdominale]] (1 grille) · [[Mémento — Fièvre]] (1 grille).
+> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Colique Néphrétique]] (2 grilles) · [[Mémento — Fièvre]] (1 grille).
 
 > [!success] 💊 Management — si Suspicion d'hyperplasie bénigne de la prostate
 > - [ ] **1. Prise de sang**

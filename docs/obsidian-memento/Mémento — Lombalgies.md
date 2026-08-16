@@ -92,7 +92,7 @@ cssclasses:
 > - **German-57** — Fracture vertébrale `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-57_-_Lombalgie_-_Grille_ECOS.html>)
 > - **German-58** — Hernie discale `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-58_-_Lombalgie_-_Grille_ECOS.html>)
 > - **German-59** — Colique néphrétique sur lithiase `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-59_-_Lombalgie_-_Grille_ECOS.html>)
-> - **RESCOS-31** — Colique néphrétique sur lithiase `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-31_-_Douleur_lombaire_-_Grille_ECOS.html>)
+> - **RESCOS-31** — Colique néphrétique sur lithiase `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-31_-_Douleur_lombaire_-_Grille_ECOS.html>)
 > - **RESCOS-48** — Cancer prostatique métastatique `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-48%20-%20Lombalgie%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse

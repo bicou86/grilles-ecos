@@ -89,7 +89,7 @@ cssclasses:
 > - **AZYGOS-23** — Insuffisance cardiaque (décompensée) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/60e62ee5-98b7-4679-91e1-6f82bb0678fe.json>)
 > - **German-35** — Asthme `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-35_-_Dyspne_e_-_Grille_ECOS.html>)
 > - **German-36** — BPCO `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-36_-_Dyspne_e_-_Grille_ECOS.html>)
-> - **RESCOS-39** — Insuffisance cardiaque (décompensée) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-39_-_Dyspne_e_-_Grille_ECOS.html>)
+> - **RESCOS-39** — Insuffisance cardiaque (décompensée) `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-39_-_Dyspne_e_-_Grille_ECOS.html>)
 > - **RESCOS-40** — Insuffisance cardiaque (décompensée) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-40_-_Dyspne_e_-_ECC_Cardio-pulmonaire_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse

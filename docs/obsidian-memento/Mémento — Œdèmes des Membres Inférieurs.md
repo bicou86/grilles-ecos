@@ -79,7 +79,7 @@ cssclasses:
 *Cardiologie & Vasculaire · 2 grilles · 2 diagnostics documentés · aucun diagnostic attendu déclaré* — [[SSP — Œdèmes des Membres Inférieurs]]
 
 > [!abstract] Les 2 grilles fusionnées
-> - **RESCOS-51** — Syndrome néphrotique `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-51%20-%20Oedèmes%20des%20MI%20-%20Grille%20ECOS.html>)
+> - **RESCOS-51** — Syndrome néphrotique `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-51%20-%20Oedèmes%20des%20MI%20-%20Grille%20ECOS.html>)
 > - **RESCOS-54** — Insuffisance cardiaque (décompensée) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-54%20-%20Présentation%20au%20CDC%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse

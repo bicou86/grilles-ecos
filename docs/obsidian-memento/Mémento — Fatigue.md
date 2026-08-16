@@ -90,7 +90,7 @@ cssclasses:
 > [!abstract] Les 11 grilles fusionnées
 > - **AMBOSS-27** — Syndrome de Sheehan (hypopituitarisme post-partum) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-27_-_Fatigue_-_Femme_28_ans_-_Grille_ECOS.html>)
 > - **AMBOSS-29** — Mononucléose `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-29_-_Fatigue_-_Femme_18_ans_-_Grille_ECOS.html>)
-> - **AMBOSS-36** — Hépatite B et/ou C aiguë `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-36_-_Fatigue_-_Homme_54_ans_-_Grille_ECOS.html>)
+> - **AMBOSS-36** — Hépatite C aiguë `enonce` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-36_-_Fatigue_-_Homme_54_ans_-_Grille_ECOS.html>)
 > - **AZYGOS-30** — Hémorragie digestive haute sur ulcère peptique `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/c02797e2-7f49-43bf-bd93-bf93fb65966a.json>)
 > - **German-45** — SAOS `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-45_-_Fatigue_-_Grille_ECOS.html>)
 > - **German-46** — Anémie `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-46_-_Fatigue_-_Grille_ECOS.html>)
@@ -101,17 +101,17 @@ cssclasses:
 > - **RESCOS-67b** ⭐️ **officielle** — Hypothyroïdie `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-67b%20-%20Fatigue%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
+> - [ ] **1. Motif principal *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > - [ ] **2. Caractérisation de la fatigue *(5 diagnostics)***
-> 	- [ ] Début *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Début *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Évolution temporelle *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Événements précipitants *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Progression *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Épisodes antérieurs *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Facteurs améliorants *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Facteurs aggravants *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Symptômes associés *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Constante/intermittente *(Hépatite B et/ou C aiguë)*
+> 	- [ ] Événements précipitants *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Progression *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Épisodes antérieurs *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Facteurs améliorants *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Facteurs aggravants *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Symptômes associés *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Constante/intermittente *(Hépatite C aiguë)*
 > 	- [ ] Apparition *(Diabète de type 2)*
 > 	- [ ] Intensité *(Diabète de type 2)*
 > 	- [ ] Évolution *(Diabète de type 2 · Hypothyroïdie)*
@@ -154,25 +154,25 @@ cssclasses:
 > 	- [ ] Événement marquant récent *(SAOS)*
 > - [ ] **6. Allergies *(4 diagnostics)***
 > - [ ] **7. Médicaments actuels *(6 diagnostics)***
-> - [ ] **8. Hospitalisations et antécédents chirurgicaux *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
+> - [ ] **8. Hospitalisations et antécédents chirurgicaux *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
 > - [ ] **9. Antécédents familiaux *(5 diagnostics)***
 > 	- [ ] Anémies héréditaires *(Anémie)*
 > 	- [ ] Maladies hématologiques *(Anémie)*
 > - [ ] **10. Habitudes et mode de vie *(6 diagnostics)***
-> 	- [ ] Travail *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Travail *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Alcool
-> 	- [ ] Drogues récréatives *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Drogues récréatives *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Tabac *(5 diagnostics)*
 > 	- [ ] Exercice *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Alimentation *(Diabète de type 2 · Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Domicile *(Hépatite B et/ou C aiguë · Mononucléose)*
-> 	- [ ] Ressenti besoin de réduire votre consommation ? *(Hépatite B et/ou C aiguë)*
-> 	- [ ] Agacé par les critiques sur votre consommation ? *(Hépatite B et/ou C aiguë)*
-> 	- [ ] Culpabilité à propos de la consommation ? *(Hépatite B et/ou C aiguë)*
-> 	- [ ] Besoin de boire dès le matin ? *(Hépatite B et/ou C aiguë)*
-> 	- [ ] Usage de drogues intraveineuses *(Hépatite B et/ou C aiguë)*
+> 	- [ ] Domicile *(Hépatite C aiguë · Mononucléose)*
+> 	- [ ] Ressenti besoin de réduire votre consommation ? *(Hépatite C aiguë)*
+> 	- [ ] Agacé par les critiques sur votre consommation ? *(Hépatite C aiguë)*
+> 	- [ ] Culpabilité à propos de la consommation ? *(Hépatite C aiguë)*
+> 	- [ ] Besoin de boire dès le matin ? *(Hépatite C aiguë)*
+> 	- [ ] Usage de drogues intraveineuses *(Hépatite C aiguë)*
 > 	- [ ] Drogues *(Anémie · Diabète de type 2 · Dépression)*
 > 	- [ ] Médicaments actuels *(Diabète de type 2)*
 > - [ ] **11. Antécédents gynéco-obstétricaux *(Syndrome de Sheehan (hypopituitarisme post-partum))***
@@ -201,7 +201,7 @@ cssclasses:
 > 	- [ ] Changements capillaires
 > 	- [ ] Changements de voix
 > 	- [ ] Crampes musculaires
-> - [ ] **13. Contacts malades et antécédents familiaux *(Hépatite B et/ou C aiguë · Mononucléose)***
+> - [ ] **13. Contacts malades et antécédents familiaux *(Hépatite C aiguë · Mononucléose)***
 > 	- [ ] Contacts malades
 > 	- [ ] Antécédents familiaux
 > - [ ] **14. Antécédents gynécologiques *(Mononucléose)***
@@ -216,7 +216,7 @@ cssclasses:
 > 	- [ ] Règles régulières
 > 	- [ ] Combien de tampons par jour
 > 	- [ ] Grossesses
-> - [ ] **15. Recherche de symptômes spécifiques pour fatigue après fièvre et vomissements *(Hépatite B et/ou C aiguë)***
+> - [ ] **15. Recherche de symptômes spécifiques pour fatigue après fièvre et vomissements *(Hépatite C aiguë)***
 > 	- [ ] Voyage récent
 > 	- [ ] Nausées/vomissements
 > 	- [ ] Fièvre/frissons
@@ -495,7 +495,7 @@ cssclasses:
 > 	- [ ] Activité physique
 
 > [!tip] 🩺 Status
-> - [ ] **1. Mesures d'hygiène *(Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
+> - [ ] **1. Mesures d'hygiène *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
 > - [ ] **2. Examen de la tête et du cou *(Syndrome de Sheehan (hypopituitarisme post-partum))***
@@ -516,25 +516,25 @@ cssclasses:
 > 	- [ ] Sensibilité profonde *(Anémie)*
 > 	- [ ] Réflexes ostéo-tendineux *(Anémie)*
 > 	- [ ] Signe de Romberg *(Anémie)*
-> - [ ] **6. Examen de la tête, yeux, oreilles, nez et gorge *(Hépatite B et/ou C aiguë · Mononucléose)***
+> - [ ] **6. Examen de la tête, yeux, oreilles, nez et gorge *(Hépatite C aiguë · Mononucléose)***
 > 	- [ ] Inspection des conjonctives *(Mononucléose)*
 > 	- [ ] Inspection de l'oropharynx *(Mononucléose)*
-> 	- [ ] Inspection des sclères *(Hépatite B et/ou C aiguë)*
+> 	- [ ] Inspection des sclères *(Hépatite C aiguë)*
 > - [ ] **7. Examen du cou *(Mononucléose)***
 > 	- [ ] Inspection du cou
 > 	- [ ] Palpation des ganglions lymphatiques de la tête et du cou
 > 	- [ ] Examen de la glande thyroïde
-> - [ ] **8. Examen abdominal *(Hépatite B et/ou C aiguë · Mononucléose · SAOS)***
-> 	- [ ] Palpation du foie *(Hépatite B et/ou C aiguë · Mononucléose)*
-> 	- [ ] Palpation de la rate *(Hépatite B et/ou C aiguë · Mononucléose)*
-> 	- [ ] Inspection de l'abdomen *(Hépatite B et/ou C aiguë)*
-> 	- [ ] Auscultation de l'abdomen *(Hépatite B et/ou C aiguë)*
-> 	- [ ] Percussion de l'abdomen *(Hépatite B et/ou C aiguë)*
-> 	- [ ] Palpation de l'abdomen *(Hépatite B et/ou C aiguë)*
-> 	- [ ] Matité déclive *(Hépatite B et/ou C aiguë)*
-> - [ ] **9. Examen thoracique *(Hépatite B et/ou C aiguë)***
+> - [ ] **8. Examen abdominal *(Hépatite C aiguë · Mononucléose · SAOS)***
+> 	- [ ] Palpation du foie *(Hépatite C aiguë · Mononucléose)*
+> 	- [ ] Palpation de la rate *(Hépatite C aiguë · Mononucléose)*
+> 	- [ ] Inspection de l'abdomen *(Hépatite C aiguë)*
+> 	- [ ] Auscultation de l'abdomen *(Hépatite C aiguë)*
+> 	- [ ] Percussion de l'abdomen *(Hépatite C aiguë)*
+> 	- [ ] Palpation de l'abdomen *(Hépatite C aiguë)*
+> 	- [ ] Matité déclive *(Hépatite C aiguë)*
+> - [ ] **9. Examen thoracique *(Hépatite C aiguë)***
 > 	- [ ] Inspection du thorax
-> - [ ] **10. Examen des extrémités *(Hépatite B et/ou C aiguë)***
+> - [ ] **10. Examen des extrémités *(Hépatite C aiguë)***
 > 	- [ ] Inspection des mains
 > 	- [ ] Inspection des membres inférieurs
 > - [ ] **11. État général *(Hémorragie digestive haute sur ulcère peptique)***
@@ -646,7 +646,7 @@ cssclasses:
 > 	- [ ] Ralentissement de la phase de relaxation des ROT
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Hypothèses diagnostiques *(3 grilles sur 11)* — *Hépatite B et/ou C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum)***
+> - [ ] **1. Hypothèses diagnostiques *(3 grilles sur 11)* — *Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum)***
 > - [ ] **2. Communication avec la patiente *(2 grilles sur 11)* — *Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum)***
 > 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
@@ -740,7 +740,7 @@ cssclasses:
 > - [ ] **17. Bilan H. pylori**
 > - [ ] **18. Œsophagogastroduodénoscopie**
 
-> [!success] 💊 Management — si Hépatite B et/ou C aiguë
+> [!success] 💊 Management — si Hépatite C aiguë
 > - [ ] **1. Conseil et soutien**
 > 	- [ ] Conseil sur les drogues illicites
 > 	- [ ] Conseil sur l'abus d'alcool

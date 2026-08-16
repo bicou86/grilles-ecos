@@ -58,7 +58,7 @@ cssclasses:
 *Neurologie · 2 grilles · 1 diagnostic documenté · aucun diagnostic attendu déclaré* — [[SSP — Confusion - État Confusionnel Aigu]]
 
 > [!abstract] Les 2 grilles fusionnées
-> - **RESCOS-57** — Gastroentérite `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-57%20-%20Ralentissement%20-%20Consultation%20téléphonique%20EMS%20-%20Grille%20ECOS.html>)
+> - **RESCOS-57** — Gastroentérite `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-57%20-%20Ralentissement%20-%20Consultation%20téléphonique%20EMS%20-%20Grille%20ECOS.html>)
 > - **RESCOS-57b** ⭐️ **officielle** — Gastroentérite `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-57b%20-%20Ralentissement%20-%20Consultation%20téléphonique%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse

@@ -81,7 +81,7 @@ cssclasses:
 > [!abstract] Les 3 grilles fusionnées
 > - **AZYGOS-19** — Syndrome douloureux du grand trochanter (tendinopathie fessière) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/ceeacba8-b3e4-45bc-bdf0-56e960d1cd32.json>)
 > - **German-29** — Nécrose aseptique de la tête fémorale gauche `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-29_-_Douleur_a__la_hanche_-_Grille_ECOS.html>)
-> - **RESCOS-28** — Coxarthrose (arthrose de hanche) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-28_-_Douleur_a__la_hanche_-_Grille_ECOS.html>)
+> - **RESCOS-28** — Coxarthrose (arthrose de hanche) `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-28_-_Douleur_a__la_hanche_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Question d’introduction *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***

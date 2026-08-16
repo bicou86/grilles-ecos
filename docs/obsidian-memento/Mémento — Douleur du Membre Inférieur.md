@@ -85,9 +85,9 @@ cssclasses:
 *3 grilles · 2 diagnostics documentés · 3 attendus absents du corpus* — [[SSP — Douleur du Membre Inférieur]]
 
 > [!abstract] Les 3 grilles fusionnées
-> - **RESCOS-26** — AOMI `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-26_-_Douleur_au_mollet_-_Grille_ECOS.html>)
+> - **RESCOS-26** — AOMI `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-26_-_Douleur_au_mollet_-_Grille_ECOS.html>)
 > - **RESCOS-27** — AOMI `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-27_-_Douleur_au_mollet_-_ECC_Vasculaire_-_Grille_ECOS.html>)
-> - **RESCOS-29** — Embolie pulmonaire `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-29_-_Douleur_a__la_jambe_-_Grille_ECOS.html>)
+> - **RESCOS-29** — Embolie pulmonaire `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-29_-_Douleur_a__la_jambe_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif de consultation *(2 grilles sur 3)***

@@ -90,7 +90,7 @@ cssclasses:
 > [!abstract] Les 4 grilles fusionnées
 > - **RESCOS-52** — AIT `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-52%20-%20Paralysie%20-%20Grille%20ECOS.html>)
 > - **RESCOS-53** — AVC `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-53%20-%20Parésie%20facio-brachiale%20-%20ECC%20Neurologie%20-%20Grille%20ECOS.html>)
-> - **RESCOS-70** — Paralysie de Bell `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-70%20-%20Paralysie%20faciale%20-%20Grille%20ECOS.html>)
+> - **RESCOS-70** — Paralysie de Bell `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-70%20-%20Paralysie%20faciale%20-%20Grille%20ECOS.html>)
 > - **RESCOS-70b** ⭐️ **officielle** — Paralysie de Bell `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-70b%20-%20Paralysie%20faciale%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse

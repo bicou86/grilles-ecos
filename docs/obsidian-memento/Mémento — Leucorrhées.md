@@ -33,7 +33,7 @@ cssclasses:
 *Gynéco-Obstétrique · 1 grille · 1 diagnostic documenté · aucun diagnostic attendu déclaré* — [[SSP — Leucorrhées]]
 
 > [!abstract] La seule grille de cette SSP
-> - **AMBOSS-32** — Infection au papillomavirus humain (VPH) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-32_-_Le_sion_ge_nitale_-_Femme_17_ans_-_Grille_ECOS.html>)
+> - **AMBOSS-32** — Co-infection VPH et Chlamydia trachomatis `enonce` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-32_-_Le_sion_ge_nitale_-_Femme_17_ans_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal**
@@ -117,7 +117,7 @@ cssclasses:
 > 	- [ ] Palpation des ganglions lymphatiques inguinaux
 > - [ ] **6. Examen cutané**
 
-> [!success] 💊 Management — si Infection au papillomavirus humain (VPH)
+> [!success] 💊 Management — si Co-infection VPH et Chlamydia trachomatis
 > - [ ] **1. Hypothèses diagnostiques**
 > - [ ] **2. Examens complémentaires de première intention**
 > 	- [ ] Examen pelvien

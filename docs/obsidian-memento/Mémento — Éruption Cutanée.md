@@ -94,7 +94,7 @@ cssclasses:
 > - **German-42** — Tinea corporis `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-42_-_Eruption_cutane_e_-_Grille_ECOS.html>)
 > - **German-43** — Scarlatine / Angine streptococcique `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-43_-_Eruption_cutane_e_-_Grille_ECOS.html>)
 > - **German-44** — Lupus érythémateux cutané `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-44_-_Erythe_me_-_Grille_ECOS.html>)
-> - **RESCOS-68** — Zona `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-68%20-%20Eruption%20cutanée%20-%20Grille%20ECOS.html>)
+> - **RESCOS-68** — Zona `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-68%20-%20Eruption%20cutanée%20-%20Grille%20ECOS.html>)
 > - **RESCOS-68b** ⭐️ **officielle** — Zona `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-68b%20-%20Eruption%20cutanée%20-%20Grille%20ECOS.html>)
 
 > [!note] 📋 Anamnèse

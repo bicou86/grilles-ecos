@@ -32,7 +32,7 @@ cssclasses:
 *1 grille · 1 diagnostic documenté · aucun diagnostic attendu déclaré* — [[SSP — Nausées, Vomissements & Hématémèse]]
 
 > [!abstract] La seule grille de cette SSP
-> - **AMBOSS-5** — Grossesse (suivi/conseils) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-5_-_Nause_es_-_Femme_19_ans_-_Grille_ECOS.html>)
+> - **AMBOSS-5** — Grossesse intra-utérine précoce `enonce` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-5_-_Nause_es_-_Femme_19_ans_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal**
@@ -113,7 +113,7 @@ cssclasses:
 > - [ ] **6. Signes d'appendicite**
 > - [ ] **7. Examen cutané**
 
-> [!success] 💊 Management — si Grossesse (suivi/conseils)
+> [!success] 💊 Management — si Grossesse intra-utérine précoce
 > - [ ] **1. Hypothèses diagnostiques**
 > - [ ] **2. Examens complémentaires urgents**
 > 	- [ ] Examen pelvien

@@ -82,7 +82,7 @@ cssclasses:
 > - **AZYGOS-42** — Polymyalgia rheumatica `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/44388e66-5e9f-4e3e-b9f7-f65f35b8a920.json>)
 > - **German-22** — Épicondylite latérale `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-22_-_Douleur_au_coude_-_Grille_ECOS.html>)
 > - **German-25** — Tendinopathie d'insertion du tendon d'Achille `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-25_-_Douleur_au_talon_-_Grille_ECOS.html>)
-> - **RESCOS-38** — Polyarthrite rhumatoïde `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-38_-_Douleurs_articulaires_-_Grille_ECOS.html>)
+> - **RESCOS-38** — Polyarthrite rhumatoïde `dd-principal` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-38_-_Douleurs_articulaires_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Question d'introduction *(Polymyalgia rheumatica)***
