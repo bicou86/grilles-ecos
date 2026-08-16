@@ -392,9 +392,9 @@ cssclasses:
 > [!success] 💊 Management — si Hémorragie sous-arachnoïdienne
 > - [ ] **1. Hypothèse diagnostique principale**
 > - [ ] **2. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
 > 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions de la patiente
 > 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
@@ -447,11 +447,11 @@ cssclasses:
 > 	- [ ] Ne pas faire d'examens diagnostiques sauf si drapeaux rouges présents
 > 	- [ ] Proposer au patient de s'allonger et tamiser la lumière
 > - [ ] **4. Communication avec la patiente *(1 grille sur 2)***
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du patient
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
 > - [ ] **5. Conseil et soutien *(1 grille sur 2)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Donner l'option de s'allonger et proposer de tamiser la lumière

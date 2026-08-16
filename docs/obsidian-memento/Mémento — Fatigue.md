@@ -623,9 +623,15 @@ cssclasses:
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Hypothèses diagnostiques *(3 grilles sur 11)* — *Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum)***
-> - [ ] **2. Diagnostic de suspicion principal *(2 grilles sur 11)* — *Dépression · SAOS***
-> - [ ] **3. Diagnostics différentiels évoqués *(3 grilles sur 11)* — *Anémie · Dépression · SAOS***
-> - [ ] **4. Traitement proposé *(2 grilles sur 11)* — *Dépression · SAOS***
+> - [ ] **2. Communication avec la patiente *(3 grilles sur 11)* — *Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum)***
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> - [ ] **3. Diagnostic de suspicion principal *(2 grilles sur 11)* — *Dépression · SAOS***
+> - [ ] **4. Diagnostics différentiels évoqués *(3 grilles sur 11)* — *Anémie · Dépression · SAOS***
+> - [ ] **5. Traitement proposé *(2 grilles sur 11)* — *Dépression · SAOS***
 
 > [!success] 💊 Management — si Anémie
 > - [ ] **1. Examens complémentaires proposés**
@@ -719,18 +725,12 @@ cssclasses:
 > 	- [ ] Albumine
 > 	- [ ] Sérologies virales hépatites (HAV, HBV, HCV)
 > 	- [ ] Test VIH
-> - [ ] **2. Communication avec la patiente**
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **3. Conseil et soutien**
+> - [ ] **2. Conseil et soutien**
 > 	- [ ] Conseil sur les drogues illicites
 > 	- [ ] Conseil sur l'abus d'alcool
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant le test VIH
-> - [ ] **4. Examens complémentaires proposés**
+> - [ ] **3. Examens complémentaires proposés**
 > 	- [ ] CT abdominal avec contraste
 
 > [!success] 💊 Management — si Hypothyroïdie
@@ -766,13 +766,7 @@ cssclasses:
 > 	- [ ] LDH, ASAT, ALAT
 > 	- [ ] Fer sérique, ferritine, transferrine, capacité totale de fixation du fer (TIBC)
 > 	- [ ] TSH, T3 libre, T4 libre
-> - [ ] **3. Communication avec la patiente**
-> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions de la patiente
-> - [ ] **4. Conseil et soutien**
+> - [ ] **3. Conseil et soutien**
 > 	- [ ] Réaction appropriée au défi sur l'expérience du médecin
 > 	- [ ] Conseil sur l'évitement des sports de contact en cas de mononucléose suspectée
 > 	- [ ] Éducation sur le repos nécessaire
@@ -809,13 +803,7 @@ cssclasses:
 > 	- [ ] Frottis sanguin
 > - [ ] **3. Imagerie spécialisée**
 > 	- [ ] IRM cérébrale
-> - [ ] **4. Communication avec la patiente**
-> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions de la patiente
-> - [ ] **5. Conseil et soutien**
+> - [ ] **4. Conseil et soutien**
 > 	- [ ] Conseil sur les modifications du mode de vie pour améliorer l'humeur
 > 	- [ ] Réaction appropriée au défi sur l'expérience du médecin
 > 	- [ ] Orientation vers assistance sociale
