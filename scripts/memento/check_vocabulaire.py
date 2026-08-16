@@ -9,7 +9,7 @@ controle : trois variantes erronees d'un meme libelle, zero effet, zero
 message. Une table de curation silencieusement morte est pire que pas de table
 du tout, parce qu'on cesse de regarder le rendu.
 
-HUIT PROPRIETES, de la plus grossiere a la plus fine :
+NEUF PROPRIETES, de la plus grossiere a la plus fine :
 
   1. STRUCTURE     le fichier se lit avec le lecteur du projet.
   2. SSP REELLE    chaque groupe nomme une SSP que le corpus rattache.
@@ -35,15 +35,30 @@ HUIT PROPRIETES, de la plus grossiere a la plus fine :
                    ranges sous des PARENTS differents ne se rejoindront jamais,
                    quoi qu'en dise la table.
 
-  8. SANS COLLISION aucune grille ne porte la cle ET sa cible dans la MEME
-                   section. C'est LE COMPTEUR DE SURETE, il doit rester a zero.
-                   Voir `collisions()` : la regle etait appliquee a la main, et
-                   deux rapprochements franchement abusifs passaient au vert.
+  8. SANS COLLISION dans un seau (grille, section), deux libelles que le socle A
+                   DISTINGUAIT ne se retrouvent pas CONFONDUS une fois la table
+                   appliquee. C'est LE COMPTEUR DE SURETE, il doit rester a
+                   zero. La regle porte sur `signature(canonique(x))` et NON sur
+                   les chaines brutes : une redaction anterieure demandait a la
+                   grille d'ecrire la cible au caractere pres, et laissait donc
+                   passer 37 fusions abusives — dont douze antonymes — des que
+                   la grille en ecrivait une variante. Voir `collisions()`.
+  9. COUVERTURE    tout ce qu'une grille verse dans un meme groupe d'`apparier()`
+                   tombe dans un seul seau de la propriete 8 — 23 005 temoins
+                   sur le corpus. C'est le garde-fou de la propriete 8 elle-meme :
+                   elle RECONSTRUIT la comparaison du moteur au lieu de
+                   l'appeler, et c'est exactement dans cet ecart que le defaut
+                   precedent vivait. Voir `couverture()`.
 
-Ce que ce controle ne peut toujours PAS verifier, et qui reste a la relecture
-humaine : que deux libelles qu'aucune grille ne porte ENSEMBLE parlent bien de
-la meme chose. La propriete 8 ferme la classe ou une grille a explicitement
-distingue ; elle ne dit rien de deux grilles qui distinguent sans se croiser.
+CE QUE CE CONTROLE NE PEUT TOUJOURS PAS VERIFIER, et qui reste a la relecture
+humaine. La propriete 8 exige un TEMOIN : une grille qui porte les deux
+libelles. Quand les grilles sont disjointes, rien ne voit rien — et
+« Signes d'hyperthyroidie » (German-74) rabattu sur « Signes d'hypothyroidie »
+(German-7) passe les neuf proprietes au vert. L'information qui manque n'est pas
+dans le code, elle est ABSENTE DU CORPUS : deux grilles qui distinguent sans
+jamais se croiser sont hors d'atteinte de tout controle automatique.
+`report_doublons.py` en signale une partie par un filtre antonymique ; il
+signale, il ne ferme pas.
 """
 import sys
 from pathlib import Path
@@ -147,8 +162,90 @@ def _verifier(vocabulaire, inventaire, groupes):
                 ecarts.append(f"{ou} — canonique() rend « {rendu} » au lieu de "
                               f"« {valeur} » : la table n'est pas consultée comme prévu")
 
-    ecarts += collisions(vocabulaire, lib_vocabulaire.positions_par_ssp(groupes))
+    positions = lib_vocabulaire.positions_par_ssp(groupes)
+    ecarts += collisions(vocabulaire, positions)
+    ecarts += couverture(vocabulaire, groupes, positions)
     ecarts += _sans_effet(vocabulaire, groupes)
+    return ecarts
+
+
+def fentes(cas_list, prefixe, ssp):
+    """[(grille, {libelles bruts})] — ce que chaque grille verse dans chaque groupe.
+
+    Rejoue la semantique de `lib_fusion._fusionner` en gardant trace du libelle
+    BRUT de chaque contribution : un item de tete est classe par
+    `signature(canonique(titre))`, un sous-item par la meme cle mais A
+    L'INTERIEUR du groupe de son parent. Une « fente » est un endroit ou le
+    moteur peut confondre : tout ce qu'une meme grille verse au meme endroit.
+
+    ON REND TOUTES LES CONTRIBUTIONS, PAS SEULEMENT CELLES QUI CONFONDENT, et
+    c'est ce qui fait la difference entre un controle et un controle vide. Une
+    premiere redaction ne signalait que les fentes ou deux signatures differentes
+    se rencontraient : sur une table saine il n'y en a AUCUNE, si bien que le
+    controle passait au vert sans jamais rien examiner — et une mutation qui
+    amputait les seaux de leurs sous-items passait elle aussi. Rendre toutes les
+    contributions donne des dizaines de milliers de temoins, vrais aujourd'hui,
+    dont la moindre disparition signalerait que la propriete 8 a cesse de
+    regarder ou le moteur travaille.
+    """
+    groupes = {}
+    for cas in cas_list:
+        for genre, _, titre, sous in cas["sections"].get(prefixe, []):
+            if genre != "item":
+                continue
+            cle_t = lib_fusion.signature(lib_fusion.canonique(titre, ssp))
+            g = groupes.setdefault(cle_t, {"tete": {}, "sous": {}})
+            g["tete"].setdefault(cas["id"], set()).add(lib_vocabulaire.libelle_nu(titre))
+            for brut in (sous or []):
+                cle_s = lib_fusion.signature(lib_fusion.canonique(brut, ssp))
+                g["sous"].setdefault(cle_s, {}).setdefault(cas["id"], set()).add(
+                    lib_vocabulaire.libelle_nu(brut))
+
+    out = []
+    for g in groupes.values():
+        for par_grille in [g["tete"]] + list(g["sous"].values()):
+            out.extend(par_grille.items())
+    return out
+
+
+def couverture(vocabulaire, groupes, positions):
+    """La propriete 8 couvre-t-elle tout ce que le moteur peut confondre ?
+
+    LE GARDE-FOU DU GARDE-FOU. `collisions()` RECONSTRUIT la comparaison de
+    `lib_fusion._fusionner` au lieu de l'appeler, et c'est precisement dans cet
+    ecart que le defaut de la ronde 3 vivait : la regle comparait des chaines
+    brutes quand le moteur comparait des signatures. Rien n'empeche un
+    changement futur de `_fusionner` — un appariement qui traverserait les
+    sections, une cle de groupe modifiee — de rouvrir le meme genre d'ecart en
+    silence.
+
+    Ce controle ferme la porte par l'autre bout : il demande au MOTEUR ou il
+    confond, et verifie que chaque endroit tombe dans un seau que la propriete 8
+    inspecte. La propriete 8 est aujourd'hui un SUR-ENSEMBLE STRICT de ce que
+    `apparier()` peut confondre (elle refuse aussi des paires que le moteur ne
+    reunirait pas, faute de partager un parent) : ce controle garde l'inclusion,
+    pas l'egalite.
+
+    POURQUOI NE PAS BRANCHER `collisions()` SUR `apparier()` PLUTOT. Parce que
+    ce serait un ASSOUPLISSEMENT, pas un durcissement : la regle actuelle refuse
+    des centaines de milliers de paires de plus, et se tromper dans ce sens est
+    sans danger pour un appariement clinique. Le test d'inclusion donne la
+    protection anti-derive sans rien lacher, et coute un dixieme de seconde.
+    """
+    ecarts = []
+    with installee(vocabulaire):
+        for ssp in sorted(groupes):
+            for prefixe in lib_vocabulaire.SECTIONS:
+                for cid, bruts in fentes(groupes[ssp], prefixe, ssp):
+                    seau = positions.get(ssp, {}).get((cid, prefixe), {})
+                    absents = sorted(b for b in bruts if b not in seau)
+                    if absents:
+                        ecarts.append(
+                            f"{ssp} / {cid} / section « {prefixe} » — l'appariement réunit "
+                            + ", ".join(f"« {b} »" for b in sorted(bruts))
+                            + ", mais la propriété 8 ne regarde pas "
+                            + ", ".join(f"« {b} »" for b in absents)
+                            + " dans ce seau : la règle a divergé du moteur")
     return ecarts
 
 
