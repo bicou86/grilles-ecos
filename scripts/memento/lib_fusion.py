@@ -4,7 +4,7 @@ SOCLE A — normalisation lexicale, sans curation : la numerotation de tete est
 retiree, puis `lib_cle.cle()` fait le reste (minuscules, accents, ponctuation,
 mots vides francais, pluriel simple, ordre des mots neutralise). Deux libelles
 de meme signature sont le meme item. La regle N'EST PAS redefinie ici : elle
-est importee de lib_cle, source unique partagee avec check_referentiel.py
+est importee de lib_cle, source unique partagee avec rapport_referentiel.py
 (tache 5). Une copie locale divergerait au premier correctif — c'est
 exactement ce qui est arrive a l'ancienne regle « plus de trois lettres »,
 abandonnee pour une liste explicite de mots vides (voir lib_cle).

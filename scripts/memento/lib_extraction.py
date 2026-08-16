@@ -18,7 +18,7 @@ def motif(corpus):
     """Le glob des fichiers source d'un corpus. SOURCE UNIQUE, ne pas recopier.
 
     Cette ternaire a vecu recopiee dans cinq modules (build_memento,
-    check_couverture, check_referentiel, lib_diagnostic, check_azygos). Elle
+    check_couverture, rapport_referentiel, lib_diagnostic, check_azygos). Elle
     est ici parce que le chemin AZYGOS a change une fois et qu'il pouvait
     changer dans quatre fichiers sur cinq sans que rien ne le signale.
 

@@ -1,8 +1,23 @@
 """Mesure l'ecart des grilles non officielles au corpus officiel.
 
-Les neuf grilles officielles font autorite sur ce qu'est un item de memento
-(spec § referentiel). Ce rapport ne bloque rien : il NOMME ce qui s'en ecarte,
-pour qu'une relecture decide. Sortie 0 toujours : ce n'est pas une barriere.
+CE FICHIER EST UN RAPPORT, PAS UN VERIFICATEUR — d'ou son nom. Les neuf
+grilles officielles font autorite sur ce qu'est un item de memento (spec
+§ referentiel), et ce qui s'en ecarte n'est pas une faute : c'est une
+mesure a lire. Aucun chiffre de ce rapport n'est un seuil, et les 7 142
+items sans repondant officiel ne font echouer personne.
+
+Il s'appelait `check_referentiel.py`, et c'etait un piege : une boucle CI
+« for c in check_*.py » en tirait un vert de plus, et il ne contenait aucun
+`return 1`. Preuve par temoin positif : en rendant les neuf grilles
+officielles introuvables, 100 % des items deviennent orphelins — il
+imprimait un avertissement et sortait 0.
+
+IL A DESORMAIS UNE CONDITION D'ECHEC, une seule, et elle ne porte pas sur
+la mesure mais sur sa possibilite : zero grille officielle trouvee, il n'y
+a plus de referentiel du tout, et les chiffres qui suivraient seraient
+calcules sur l'ensemble vide. La sortie est alors 1. Une grille officielle
+manquante sur neuf reste, elle, un avertissement : le rapport le dit en
+tete et poursuit sur les huit autres.
 """
 import glob
 import sys
@@ -85,6 +100,11 @@ def main():
                     autres.append((cas["id"], cas["corpus"], titre))
 
     manquantes = sorted(OFFICIELLES - trouvees)
+    if not trouvees:
+        print(f"ECHEC — aucune des {len(OFFICIELLES)} grilles officielles n'a été "
+              "trouvée parmi les cas lus : il n'y a plus de référentiel, et tout "
+              "item serait déclaré orphelin par construction. Rapport non écrit.")
+        return 1
 
     orphelins = [(i, c, t) for i, c, t in autres if cle(t) not in reference]
     par_corpus = Counter(c for _, c, _ in orphelins)

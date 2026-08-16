@@ -2,7 +2,7 @@
 
 Sert a comparer deux libelles au-dela des differences de mise en forme
 (accents, casse, ordre des mots, pluriel simple) sans fusionner des libelles
-cliniquement distincts. Utilisee par `check_referentiel.py` (tache 5, ecart
+cliniquement distincts. Utilisee par `rapport_referentiel.py` (tache 5, ecart
 au referentiel officiel) et par `signature()` (tache 7, fusion inter-grilles)
 : une seule regle, importee des deux cotes, plutot que deux copies qui
 divergeraient au premier correctif.

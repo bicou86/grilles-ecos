@@ -30,8 +30,8 @@ CORPUS = ("rescos", "amboss", "german", "azygos")
 # autorite sur ce qu'est un item de memento, servent de test de non-regression
 # et sont les seules validees par un jury — un memento par SSP qui en fusionne
 # une doit le dire, sous peine de faire ecarter comme non valide un item qui
-# vient precisement du referentiel. Source unique : check_referentiel.py et
-# build_memento.py lisent cette liste, aucun des deux n'en garde de copie.
+# vient precisement du referentiel. Source unique : rapport_referentiel.py
+# et build_memento.py lisent cette liste, aucun des deux n'en garde de copie.
 OFFICIELLES = {"RESCOS-9b", "RESCOS-12b", "RESCOS-57b", "RESCOS-58b", "RESCOS-63b",
                "RESCOS-67b", "RESCOS-68b", "RESCOS-69b", "RESCOS-70b"}
 
