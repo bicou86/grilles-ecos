@@ -59,6 +59,10 @@ cssclasses:
 > - **German-86** — Consultation de médecine du voyage `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-86_-_Voyage_au_Bre_sil_-_Grille_ECOS.html>)
 > - **German-87** — Consultation de médecine du voyage `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-87_-_Voyage_a__Madagascar_-_Grille_ECOS.html>)
 
+> [!question] Plaintes voisines
+> La même plainte, ou une forme voisine, est documentée ailleurs :
+> - [[Mémento — Fièvre]] (3 grilles) — hors contexte de voyage
+
 > [!note] 📋 Anamnèse
 > - [ ] **1. Présentation avec nom, fonction et objectif de la consultation *(1 grille sur 2)***
 > - [ ] **2. Identification du projet de voyage *(1 grille sur 2)***

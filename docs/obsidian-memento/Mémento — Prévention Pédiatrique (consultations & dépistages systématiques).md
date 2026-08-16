@@ -35,6 +35,10 @@ cssclasses:
 > [!abstract] La seule grille de cette SSP
 > - **German-3** — Difficultés alimentaires avec prise insuffisante `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-3_-_Allaitement_-_Pe_diatrie_-_Grille_ECOS.html>)
 
+> [!question] Plaintes voisines
+> La même plainte, ou une forme voisine, est documentée ailleurs :
+> - [[Mémento — Vaccination & Prévention Pédiatrique]] (1 grille) — même plainte, scindée en deux pages
+
 > [!note] 📋 Anamnèse
 > - [ ] **1. Présentation avec nom, fonction et tâche**
 > - [ ] **2. Motif de consultation - plaintes de la mère**

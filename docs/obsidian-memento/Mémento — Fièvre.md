@@ -83,6 +83,11 @@ cssclasses:
 > - **AZYGOS-32** — Fuite anastomotique `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/4be4b3cf-70a5-4b07-a07b-3d125310420d.json>)
 > - **RESCOS-46** — Endocardite infectieuse `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-46%20-%20Fièvre%20-%20Grille%20ECOS.html>)
 
+> [!question] Plaintes voisines
+> La même plainte, ou une forme voisine, est documentée ailleurs :
+> - [[Mémento — Fièvre au Retour de Voyage]] (2 grilles) — contexte de voyage, diagnostic différentiel distinct
+> - [[Mémento — Fièvre du Nourrisson]] (3 grilles) — forme du nourrisson, diagnostic différentiel distinct
+
 > [!note] 📋 Anamnèse
 > - [ ] **1. Question d'ouverture *(Pyélonéphrite)***
 > - [ ] **2. Dimension temporelle *(Fuite anastomotique · Pyélonéphrite)***

@@ -35,6 +35,10 @@ cssclasses:
 > [!abstract] La seule grille de cette SSP
 > - **German-39** — Conseil en vaccination du nourrisson `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-39_-_EM_Vaccinations_-_Pe_diatrie_-_Grille_ECOS.html>)
 
+> [!question] Plaintes voisines
+> La même plainte, ou une forme voisine, est documentée ailleurs :
+> - [[Mémento — Prévention Pédiatrique (consultations & dépistages systématiques)]] (1 grille) — même plainte, scindée en deux pages
+
 > [!note] 📋 Anamnèse
 > - [ ] **1. Présentation avec nom, fonction et objectif de la consultation**
 > - [ ] **2. Explorer les questions de la mère**

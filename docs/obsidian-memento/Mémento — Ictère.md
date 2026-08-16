@@ -89,6 +89,10 @@ cssclasses:
 > - **German-55** — Hépatite (virale/alcoolique) `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-55_-_Icte_re_-_Grille_ECOS.html>)
 > - **RESCOS-47** — Néoplasie des voies biliaires/pancréatique `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-47%20-%20Ictère%20-%20Grille%20ECOS.html>)
 
+> [!question] Plaintes voisines
+> La même plainte, ou une forme voisine, est documentée ailleurs :
+> - [[Mémento — Ictère Néonatal]] (2 grilles) — forme néonatale, diagnostic différentiel distinct
+
 > [!note] 📋 Anamnèse
 > - [ ] **1. Présentation avec nom, fonction et objectif *(Hépatite (virale/alcoolique))***
 > - [ ] **2. Motif de consultation principal *(Hépatite (virale/alcoolique))***

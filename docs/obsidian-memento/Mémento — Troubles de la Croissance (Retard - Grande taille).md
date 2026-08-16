@@ -82,6 +82,10 @@ cssclasses:
 > - **AZYGOS-34** — Retard constitutionnel de croissance et de la puberté (RCCP) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/839c4d5d-f637-4ff1-a45f-9e4cbc66865a.json>)
 > - **German-72** — Maladie cœliaque `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-72_-_Retard_de_croissance_-_Pe_diatrie_-_Grille_ECOS.html>)
 
+> [!question] Plaintes voisines
+> La même plainte, ou une forme voisine, est documentée ailleurs :
+> - [[Mémento — Troubles du Développement & Croissance]] (1 grille) — noms qui se recouvrent, contenus distincts
+
 > [!note] 📋 Anamnèse
 > - [ ] **1. Question d’entrée *(Retard constitutionnel de croissance et de la puberté (RCCP))***
 > - [ ] **2. Évolution de la croissance *(Retard constitutionnel de croissance et de la puberté (RCCP))***

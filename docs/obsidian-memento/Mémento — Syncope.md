@@ -35,6 +35,10 @@ cssclasses:
 > [!abstract] La seule grille de cette SSP
 > - **AZYGOS-46** — Syncope avec suspicion d’origine arythmogène (syndrome de Brugada) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/0621c04a-0d48-4b2e-bb2f-7a87487f2115.json>)
 
+> [!question] Plaintes voisines
+> La même plainte, ou une forme voisine, est documentée ailleurs :
+> - [[Mémento — Syncope & Perte de Connaissance]] (6 grilles) — même plainte, scindée en deux pages
+
 > [!note] 📋 Anamnèse
 > - [ ] **1. Question initiale**
 > - [ ] **2. Moment**

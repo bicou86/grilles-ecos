@@ -35,6 +35,10 @@ cssclasses:
 > [!abstract] La seule grille de cette SSP
 > - **German-14** — Trouble du déficit de l'attention avec hyperactivité `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-14_-_Difficulte_s_scolaires_-_Pe_diatrie_-_Grille_ECOS.html>)
 
+> [!question] Plaintes voisines
+> La même plainte, ou une forme voisine, est documentée ailleurs :
+> - [[Mémento — Troubles de la Croissance (Retard - Grande taille)]] (2 grilles) — noms qui se recouvrent, contenus distincts
+
 > [!note] 📋 Anamnèse
 > - [ ] **1. Présentation avec nom, fonction et tâche**
 > - [ ] **2. Problème principal**

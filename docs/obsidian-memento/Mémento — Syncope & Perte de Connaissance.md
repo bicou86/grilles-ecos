@@ -92,6 +92,10 @@ cssclasses:
 > - **RESCOS-49** — Hypoglycémie `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-49%20-%20Malaise%20-%20Grille%20ECOS.html>)
 > - **RESCOS-50** — HypoTA orthostatique `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-50%20-%20Malaise%20-%20Grille%20ECOS.html>)
 
+> [!question] Plaintes voisines
+> La même plainte, ou une forme voisine, est documentée ailleurs :
+> - [[Mémento — Syncope]] (1 grille) — même plainte, scindée en deux pages
+
 > [!note] 📋 Anamnèse
 > - [ ] **1. Question d’ouverture *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **2. Traumatisme de chute *(Première crise épileptique focale bilatéralisée)***

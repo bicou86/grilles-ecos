@@ -1,0 +1,57 @@
+# Plaintes voisines — renvois croisés entre mémentos par SSP.
+#
+# Forme : "SSP": { "SSP voisine": "motif, en une ligne" }
+# La relation doit être SYMÉTRIQUE : check_couverture.py le vérifie, parce
+# qu'un renvoi à sens unique laisse la moitié des lecteurs dans le trou.
+#
+# POURQUOI CE FICHIER EXISTE. L'ouverture du lot 2 fait apparaître des plaintes
+# que la taxonomie coupe en deux. L'étudiant qui révise « Syncope » obtient une
+# grille (Brugada) et ne voit jamais l'hypoglycémie, le BAV ni l'hypoTA
+# orthostatique, qui sont rangés sous « Syncope & Perte de Connaissance ».
+#
+# CE FICHIER NE FUSIONNE RIEN, IL RENVOIE. Fusionner deux SSP est une décision
+# de taxonomie qui appartient à l'auteur du projet ; un renvoi ne coûte rien et
+# ne détruit rien. La liste est CURÉE À LA MAIN et non déduite d'une
+# ressemblance de noms : « Douleur Thoracique » et « Douleur de Hanche » se
+# ressemblent à 0,75 sans avoir le moindre rapport.
+#
+# Deux natures, et elles n'appellent pas la même décision :
+#
+#   MÊME PLAINTE, SCINDÉE — rien ne distingue cliniquement les deux pages.
+#   Candidates à une fusion, si l'auteur le décide.
+#
+#   FORME PARTICULIÈRE — la seconde page est une entité clinique distincte
+#   (nourrisson, néonatal, retour de voyage), avec son propre diagnostic
+#   différentiel. Il ne faut PAS les fusionner ; le renvoi suffit.
+
+# --- même plainte, scindée ---
+"Syncope":
+  "Syncope & Perte de Connaissance": "même plainte, scindée en deux pages"
+"Syncope & Perte de Connaissance":
+  "Syncope": "même plainte, scindée en deux pages"
+"Prévention Pédiatrique (consultations & dépistages systématiques)":
+  "Vaccination & Prévention Pédiatrique": "même plainte, scindée en deux pages"
+"Vaccination & Prévention Pédiatrique":
+  "Prévention Pédiatrique (consultations & dépistages systématiques)": "même plainte, scindée en deux pages"
+
+# Les noms se recouvrent sur « Croissance », les contenus non : AZYGOS-34
+# (retard de croissance) et German-72 (maladie cœliaque) d'un côté, German-14
+# (TDAH, purement développemental) de l'autre. Renvoi, pas fusion — et c'est
+# le nom de la seconde page qui mériterait d'être revu.
+"Troubles de la Croissance (Retard - Grande taille)":
+  "Troubles du Développement & Croissance": "noms qui se recouvrent, contenus distincts"
+"Troubles du Développement & Croissance":
+  "Troubles de la Croissance (Retard - Grande taille)": "noms qui se recouvrent, contenus distincts"
+
+# --- forme particulière : ne PAS fusionner ---
+"Ictère":
+  "Ictère Néonatal": "forme néonatale, diagnostic différentiel distinct"
+"Ictère Néonatal":
+  "Ictère": "forme de l'adulte"
+"Fièvre":
+  "Fièvre du Nourrisson": "forme du nourrisson, diagnostic différentiel distinct"
+  "Fièvre au Retour de Voyage": "contexte de voyage, diagnostic différentiel distinct"
+"Fièvre du Nourrisson":
+  "Fièvre": "forme de l'adulte"
+"Fièvre au Retour de Voyage":
+  "Fièvre": "hors contexte de voyage"

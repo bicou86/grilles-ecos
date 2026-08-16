@@ -59,6 +59,52 @@ def recap_lot1(rattache):
     print()
 
 
+def _voisines():
+    import build_memento
+    return build_memento.voisines()
+
+
+def _nb_paires():
+    table = _voisines()
+    return len({frozenset((a, b)) for a, liens in table.items() for b in liens})
+
+
+def verifier_voisines():
+    """La table des plaintes voisines nomme des SSP reelles, et elle est SYMETRIQUE.
+
+    TROIS PROPRIETES, et la symetrie est celle qui compte. Un renvoi a sens
+    unique laisse la moitie des lecteurs dans le trou qu'il existe pour
+    combler : l'etudiant qui part de « Syncope & Perte de Connaissance » doit
+    apprendre l'existence de « Syncope » autant que l'inverse. Rien ne le
+    signalerait a la lecture du fichier, ou les deux groupes sont eloignes de
+    vingt lignes.
+
+    Les SSP sont celles que le CORPUS rattache — pas celles du coffre : une
+    SSP nommee ici sans grille n'aurait pas de memento, et le renvoi pointerait
+    vers rien.
+    """
+    import build_memento
+    table = _voisines()
+    reelles = set(build_memento.par_ssp(None))
+    ecarts = []
+    for ssp in sorted(table):
+        if ssp not in reelles:
+            ecarts.append(f"« {ssp} » n'est pas une SSP du corpus")
+            continue
+        for autre, motif in sorted(table[ssp].items()):
+            if autre not in reelles:
+                ecarts.append(f"« {ssp} » renvoie a « {autre} », "
+                              "qui n'est pas une SSP du corpus")
+            elif autre == ssp:
+                ecarts.append(f"« {ssp} » se renvoie a elle-meme")
+            elif ssp not in table.get(autre, {}):
+                ecarts.append(f"renvoi a sens unique : « {ssp} » -> « {autre} », "
+                              f"mais « {autre} » ne renvoie pas a « {ssp} »")
+            if not motif.strip():
+                ecarts.append(f"« {ssp} » -> « {autre} » : motif vide")
+    return ecarts
+
+
 def main():
     tout = "--lot" in sys.argv and "tout" in sys.argv
     lot = None if tout else lib_ssp.lot_prioritaire()
@@ -96,7 +142,16 @@ def main():
             print("   ", x)
         print("\n  Completer docs/ecos-ssp-complements.yaml.")
         return 1
-    print("OK — toutes les grilles sont extraites et rattachees")
+    ecarts_voisines = verifier_voisines()
+    if ecarts_voisines:
+        print(f"\nECHEC — {len(ecarts_voisines)} ecart(s) dans "
+              "docs/ecos-ssp-voisines.yaml :")
+        for x in ecarts_voisines:
+            print("   ", x)
+        return 1
+
+    print("OK — toutes les grilles sont extraites et rattachees ; "
+          f"table des plaintes voisines coherente ({_nb_paires()} paires)")
     return 0
 
 

@@ -83,6 +83,10 @@ cssclasses:
 > - **German-48** — Exanthème subit `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-48_-_Fie_vre_-_Pe_diatrie_-_Grille_ECOS.html>)
 > - **German-84** — Gastroentérite `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-84_-_Vomissements_-_Consultation_te_le_phonique_-_Pe_diatrie_-_Grille_ECOS.html>)
 
+> [!question] Plaintes voisines
+> La même plainte, ou une forme voisine, est documentée ailleurs :
+> - [[Mémento — Fièvre]] (3 grilles) — forme de l'adulte
+
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(Bronchite aiguë)***
 > - [ ] **2. Caractérisation de la toux et de la fièvre *(Bronchite aiguë)***

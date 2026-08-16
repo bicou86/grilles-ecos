@@ -82,6 +82,10 @@ cssclasses:
 > - **AMBOSS-37** — Ictère d'allaitement (breastfeeding jaundice) `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-37_-_Changements_cutane_s_-_Nouveau-ne_e_4_jours_-_Grille_ECOS.html>)
 > - **AZYGOS-35** — Ictère néonatal physiologique `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/fa2d7097-7c0f-46d2-aa5d-74550b1e5952.json>)
 
+> [!question] Plaintes voisines
+> La même plainte, ou une forme voisine, est documentée ailleurs :
+> - [[Mémento — Ictère]] (2 grilles) — forme de l'adulte
+
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(Ictère d'allaitement (breastfeeding jaundice))***
 > - [ ] **2. Caractérisation des changements cutanés *(Ictère d'allaitement (breastfeeding jaundice))***

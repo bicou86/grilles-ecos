@@ -50,6 +50,7 @@ REPO = Path(__file__).resolve().parents[2]
 SORTIE = REPO / "docs" / "obsidian-memento"
 ALIAS = REPO / "docs" / "ecos-diagnostics-alias.yaml"
 PRIORITES = REPO / "docs" / "ecos-priorites-2026.yaml"
+VOISINES = REPO / "docs" / "ecos-ssp-voisines.yaml"
 PREFIXE = "Mémento — "
 TYPE = "memento-ecos-ssp"     # marque d'appartenance, dans le frontmatter
 
@@ -336,6 +337,41 @@ def inventaire(cas_list):
     return "\n".join(out)
 
 
+def voisines():
+    """SSP -> {SSP voisine: motif}. Table curee, docs/ecos-ssp-voisines.yaml.
+
+    CUREE ET NON DEDUITE. Une ressemblance de noms ne prouve rien : sur les 88
+    SSP, un rapprochement lexical rend « Douleur Thoracique » ⟷ « Douleur de
+    Hanche » a 0,75 et « Lombalgies » ⟷ « Otalgie » a 0,71. Seule l'inclusion
+    des mots portait un signal, et il fallait encore lire les grilles pour
+    separer la plainte SCINDEE (« Syncope » / « Syncope & Perte de
+    Connaissance », rien ne les distingue) de la FORME PARTICULIERE
+    (« Ictère » / « Ictère Néonatal », qu'il ne faut surtout pas fusionner).
+    """
+    return lib_yaml.lire_groupe(VOISINES)
+
+
+def bloc_voisines(ssp, table, groupes, rendues):
+    """L'encadre « Plaintes voisines », ou "" si la SSP n'en a pas.
+
+    Meme convention de lien que `renvois()` : une SSP qui n'aura pas de memento
+    a l'issue de cette execution est NOMMEE, pas liee — un lien Obsidian non
+    resolu proposerait de creer une page vide au premier clic.
+    """
+    liens = table.get(ssp) or {}
+    if not liens:
+        return ""
+    out = ["> [!question] Plaintes voisines",
+           "> La même plainte, ou une forme voisine, est documentée ailleurs :"]
+    for autre in sorted(liens, key=tri_clinique):
+        n = len(groupes.get(autre, ()))
+        grilles = f"{n} grille{'s' if n > 1 else ''}"
+        nom = (f"[[{PREFIXE}{autre}]]" if autre in rendues else f"« {autre} »")
+        hors = "" if autre in rendues else ", hors lot"
+        out.append(f"> - {nom} ({grilles}{hors}) — {liens[autre]}")
+    return "\n".join(out)
+
+
 def _nettoie(groupe):
     """Applique le nettoyage des libelles a un groupe apparie et a ses sous-items."""
     groupe["titre"] = lib_rendu.nettoie_libelle(groupe["titre"])
@@ -483,7 +519,8 @@ def blocs_management(cas_list, cas_ssp, diag_par_cas, ssp, attendus,
     return blocs
 
 
-def memento(ssp, cas_list, attendus=None, ailleurs=None, rendues=()):
+def memento(ssp, cas_list, attendus=None, ailleurs=None, rendues=(),
+            voisins=None, grilles_par_ssp=None):
     """Le document Markdown complet d'une SSP.
 
     `attendus=None` veut dire « cette SSP ne figure pas dans la table des
@@ -542,8 +579,13 @@ def memento(ssp, cas_list, attendus=None, ailleurs=None, rendues=()):
         ligne.append("aucun diagnostic attendu déclaré")
     if specialite != "Non classé":
         ligne.insert(0, specialite)
-    corps = [f"# {ssp}{etoile}", "", "*" + " · ".join(ligne) + f"* — [[SSP — {ssp}]]", "",
-             inventaire(cas_list), ""] + blocs
+    tete = [f"# {ssp}{etoile}", "",
+            "*" + " · ".join(ligne) + f"* — [[SSP — {ssp}]]", "",
+            inventaire(cas_list), ""]
+    voisin = bloc_voisines(ssp, voisins or {}, grilles_par_ssp or {}, rendues)
+    if voisin:
+        tete += [voisin, ""]
+    corps = tete + blocs
 
     champs = [f'aliases:\n  - "Mémento {ssp}"', f"type: {TYPE}", f'ssp: "{ssp}"']
     if specialite != "Non classé":
@@ -600,7 +642,9 @@ def documents(lot):
     rendues = {s for s in groupes if s not in ignorees}
     # `attendus.get(ssp)` et NON `.get(ssp, ())` : None distingue « SSP absente
     # de la table des priorites » de « SSP presente qui n'attend rien ».
-    docs = {ssp: memento(ssp, groupes[ssp], attendus.get(ssp), ailleurs, rendues)
+    voisins = voisines()
+    docs = {ssp: memento(ssp, groupes[ssp], attendus.get(ssp), ailleurs, rendues,
+                         voisins, groupes)
             for ssp in sorted(rendues)}
     return docs, groupes, ignorees
 
