@@ -282,6 +282,26 @@ la seule qui doive tenir sur les 257 grilles avant qu'on aille plus loin.
 - **Le vocabulaire canonique est un travail sans fin naturelle.** Le critère d'arrêt
   retenu est fonctionnel : on cure tant que le mémento d'une SSP contient des doublons
   visibles, pas au-delà.
+- ~~**Les mémentos dépendent du coffre Obsidian.**~~ **Levé le 2026-08-16, ronde 1.**
+  `lib_ssp.specialite()` et `priorite()` lisaient `~/Documents/…/SSP ECOS`, hors dépôt,
+  et ces deux champs entrent dans les **octets** de 74 des 89 mémentos versionnés. Pire :
+  `check_mementos.py` appelle le générateur, donc un clone frais **réécrivait** les 74 en
+  version dégradée avant de les déclarer en écart. `docs/ecos-ssp-coffre.yaml` porte
+  l'instantané des 135 pages, `fige_coffre.py` le rafraîchit, `check_priorites.py` le
+  re-vérifie quand le coffre est là et **dit** qu'il ne l'a pas fait sinon. Les 89
+  mémentos rendent la même empreinte avec et sans coffre.
+- **La légende ne s'affiche que là où elle s'applique**, et un contrôle sans témoin ne
+  s'affiche plus comme un zéro. 56 des 88 SSP n'ont aucun diagnostic attendu déclaré :
+  elles portent `attendus: "non déclarés"` au lieu de deux `0` qui se lisaient comme un
+  constat. Cas témoin : `Pyrosis (RGO)`, dont la seule grille travaille un diagnostic
+  cardiaque. Et la convention de lecture est découpée en trois blocs conditionnés —
+  aucun des 31 mémentos à une grille ne peut porter de suffixe (mesuré, témoin positif
+  à l'appui), il est donc nuisible de leur en expliquer la notation.
+- **Les plaintes voisines se renvoient l'une à l'autre** (`docs/ecos-ssp-voisines.yaml`,
+  6 paires curées à la main). Trois sont la **même plainte scindée** — candidates à une
+  fusion, décision de taxonomie qui revient à l'auteur — et trois sont des **formes
+  particulières** (néonatal, nourrisson, retour de voyage) qu'il ne faut **pas**
+  fusionner. La relation est vérifiée symétrique.
 - ~~**AZYGOS dépend d'un dossier non versionné.**~~ **Levé le 2026-08-16.** La branche
   « recopier le contenu utile » a été retenue contre `git add -f` : les 49 fichiers bruts
   portent 43 URL Supabase signées dont la query-string contient un JWT, et une
