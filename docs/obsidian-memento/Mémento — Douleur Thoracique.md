@@ -493,15 +493,12 @@ cssclasses:
 > 	- [ ] Recherche de souffle abdominal
 > - [ ] **42. Recherche de signes d'insuffisance cardiaque *(3 grilles sur 12)***
 > 	- [ ] Œdèmes des membres inférieurs (signe du godet) *(1 grille sur 12)*
-> 	- [ ] Turgescence jugulaire *(1 grille sur 12)*
-> 	- [ ] Reflux hépato-jugulaire *(2 grilles sur 12)*
-> 	- [ ] Pas de turgescence jugulaire *(1 grille sur 12)*
-> 	- [ ] Pas de reflux hépato-jugulaire *(1 grille sur 12)*
-> 	- [ ] Pas d'hépatomégalie *(1 grille sur 12)*
+> 	- [ ] Pas de turgescence jugulaire *(2 grilles sur 12)*
+> 	- [ ] Pas de reflux hépato-jugulaire
+> 	- [ ] Pas d'hépatomégalie *(Angor stable / Maladie coronarienne)*
 > 	- [ ] Pas d'œdèmes des membres inférieurs *(1 grille sur 12)*
 > 	- [ ] Pas d'ascite *(1 grille sur 12)*
 > 	- [ ] Œdèmes prétibiaux *(1 grille sur 12)*
-> 	- [ ] Hépatomégalie *(1 grille sur 12)*
 > 	- [ ] Auscultation pulmonaire *(1 grille sur 12)*
 > - [ ] **43. Auscultation pulmonaire *(1 grille sur 12)***
 > 	- [ ] Pas de râles

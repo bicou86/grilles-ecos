@@ -409,37 +409,37 @@ cssclasses:
 > 	- [ ] Justification clinique
 > 	- [ ] Éléments en faveur
 > 	- [ ] Score CHA2DS2-VASc à calculer
-> - [ ] **3. ECG - Réalisation et interprétation**
+> - [ ] **3. Prise en charge non médicamenteuse**
+> 	- [ ] Surveillance scopée si disponible
+> 	- [ ] Contrôle de la fréquence cardiaque
+> 	- [ ] Anticoagulation selon score CHA2DS2-VASc
+> 	- [ ] Cardioversion si instable
+> - [ ] **4. ECG - Réalisation et interprétation**
 > 	- [ ] ECG 12 dérivations immédiat
 > 	- [ ] Reconnaissance du trouble du rythme
 > 	- [ ] Analyse des intervalles
 > 	- [ ] Recherche de signes d'ischémie
-> - [ ] **4. Examens biologiques - Urgence**
+> - [ ] **5. Examens biologiques - Urgence**
 > 	- [ ] Troponine I
 > 	- [ ] CK-MB
 > 	- [ ] BNP/NT-proBNP
 > 	- [ ] D-dimères si suspicion EP
-> - [ ] **5. Examens biologiques - Bilan étiologique**
+> - [ ] **6. Examens biologiques - Bilan étiologique**
 > 	- [ ] FSC (anémie)
 > 	- [ ] CRP (inflammation)
 > 	- [ ] Ionogramme (Na, K, Ca)
 > 	- [ ] Créatinine et DFG
 > 	- [ ] TSH (hyperthyroïdie)
-> - [ ] **6. Examens biologiques - Bilan pré-thérapeutique**
+> - [ ] **7. Examens biologiques - Bilan pré-thérapeutique**
 > 	- [ ] Transaminases (ASAT, ALAT)
 > 	- [ ] Gamma-GT, PAL
 > 	- [ ] Albumine
 > 	- [ ] TP/INR, aPTT
-> - [ ] **7. Imagerie et examens complémentaires**
+> - [ ] **8. Imagerie et examens complémentaires**
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Échocardiographie transthoracique
 > 	- [ ] Holter ECG 24h si diagnostic incertain
 > 	- [ ] Angio-TDM thoracique si suspicion EP
-> - [ ] **8. Prise en charge immédiate**
-> 	- [ ] Surveillance scopée si disponible
-> 	- [ ] Contrôle de la fréquence cardiaque
-> 	- [ ] Anticoagulation selon score CHA2DS2-VASc
-> 	- [ ] Cardioversion si instable
 > - [ ] **9. Traitement médicamenteux au long cours**
 > 	- [ ] Bêtabloquants ou inhibiteurs calciques
 > 	- [ ] Anticoagulation orale (AOD ou AVK)

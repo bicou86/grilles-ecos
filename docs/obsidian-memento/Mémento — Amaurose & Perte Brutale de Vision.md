@@ -223,7 +223,11 @@ cssclasses:
 > - [ ] **64. Déficits moteurs *(Décollement de rétine)***
 > - [ ] **65. Maux de tête / Vertiges *(Décollement de rétine)***
 > - [ ] **66. Ophtalmologiques *(Décollement de rétine)***
-> - [ ] **67. Non ophtalmologiques *(Décollement de rétine)***
+> - [ ] **67. Antécédents ophtalmologiques *(Cataracte · Décollement de rétine)***
+> 	- [ ] Chirurgie oculaire antérieure *(Cataracte)*
+> 	- [ ] Traumatisme oculaire *(Cataracte)*
+> 	- [ ] Glaucome *(Cataracte)*
+> 	- [ ] Myopie/hypermétropie *(Cataracte)*
 > - [ ] **68. Correction visuelle *(Décollement de rétine)***
 > - [ ] **69. Toxiques *(Décollement de rétine)***
 > - [ ] **70. Facteurs de stress psychosociaux *(Décollement de rétine)***
@@ -261,33 +265,28 @@ cssclasses:
 > 	- [ ] Corticothérapie systémique
 > 	- [ ] Collyre myotique
 > 	- [ ] Autres médicaments
-> - [ ] **78. Antécédents ophtalmologiques *(Cataracte)***
-> 	- [ ] Chirurgie oculaire antérieure
-> 	- [ ] Traumatisme oculaire
-> 	- [ ] Glaucome
-> 	- [ ] Myopie/hypermétropie
-> - [ ] **79. Anamnèse sociale et impact fonctionnel *(Cataracte)***
+> - [ ] **78. Anamnèse sociale et impact fonctionnel *(Cataracte)***
 > 	- [ ] Situation de vie
 > 	- [ ] Autonomie
 > 	- [ ] Activités quotidiennes
 > 	- [ ] Conduite automobile
-> - [ ] **80. Caractérisation cécité *(Horton (artérite à cellules géantes))***
+> - [ ] **79. Caractérisation cécité *(Horton (artérite à cellules géantes))***
 > 	- [ ] Localisation
 > 	- [ ] Chronologie
 > 	- [ ] Développement (subit / progressif)
 > 	- [ ] Circonstance de survenue
 > 	- [ ] Perte de connaissance associée
-> - [ ] **81. Anamnèse par système - générale *(Horton (artérite à cellules géantes))***
+> - [ ] **80. Anamnèse par système - générale *(Horton (artérite à cellules géantes))***
 > 	- [ ] Fièvre
 > 	- [ ] Sudation nocturne
 > 	- [ ] Perte de poids
-> - [ ] **82. Anamnèse par système - neurologique *(Horton (artérite à cellules géantes))***
+> - [ ] **81. Anamnèse par système - neurologique *(Horton (artérite à cellules géantes))***
 > 	- [ ] Diplopie
 > 	- [ ] Perte de force
 > 	- [ ] Perte de sensibilité
 > 	- [ ] Paresthésies
 > 	- [ ] Vertiges
-> - [ ] **83. Antécédents et comorbidités *(Horton (artérite à cellules géantes))***
+> - [ ] **82. Antécédents et comorbidités *(Horton (artérite à cellules géantes))***
 > 	- [ ] Maladies actuelles
 > 	- [ ] Antécédents médico-chirurgicaux
 > 	- [ ] Allergies

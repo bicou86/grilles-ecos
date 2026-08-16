@@ -197,13 +197,11 @@ cssclasses:
 > - [ ] **7. Examen cardiovasculaire**
 > 	- [ ] Auscultation cardiaque *(Syndrome néphrotique)*
 > 	- [ ] Recherche signes d'insuffisance cardiaque *(Syndrome néphrotique)*
-> 	- [ ] Turgescence jugulaire *(Syndrome néphrotique)*
-> 	- [ ] Reflux hépato-jugulaire *(Syndrome néphrotique)*
+> 	- [ ] Pas de turgescence jugulaire
+> 	- [ ] Pas de reflux hépato-jugulaire
 > 	- [ ] Pouls irrégulier *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] B1B2 bien frappés *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Souffle holosystolique 3/6 *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Pas de turgescence jugulaire *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Pas de reflux hépato-jugulaire *(Insuffisance cardiaque (décompensée))*
 > - [ ] **8. Examen abdominal *(Syndrome néphrotique)***
 > 	- [ ] Recherche ascite
 > 	- [ ] Hépatomégalie

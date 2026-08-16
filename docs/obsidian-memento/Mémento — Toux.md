@@ -117,12 +117,11 @@ cssclasses:
 > 	- [ ] Facteurs d'amélioration *(2 grilles sur 13)*
 > 	- [ ] Facteurs aggravants *(2 grilles sur 13)*
 > 	- [ ] Toux productive *(BPCO)*
-> 	- [ ] Productive ou sèche *(1 grille sur 13)*
+> 	- [ ] Productive ou sèche *(2 grilles sur 13)*
 > 	- [ ] Début et fréquence *(1 grille sur 13)*
 > 	- [ ] Antécédents similaires *(1 grille sur 13)*
 > 	- [ ] Son *(Faux-croup)*
 > 	- [ ] Type *(Faux-croup)*
-> 	- [ ] Productive ou non *(Faux-croup)*
 > 	- [ ] Type de toux *(1 grille sur 13)*
 > 	- [ ] Horaire *(1 grille sur 13)*
 > 	- [ ] Facteurs déclenchants *(1 grille sur 13)*
