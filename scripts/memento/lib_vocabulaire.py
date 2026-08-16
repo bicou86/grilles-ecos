@@ -56,6 +56,38 @@ def libelles_par_ssp(groupes):
     return out
 
 
+def positions_par_ssp(groupes):
+    """SSP -> {(grille, section): {libelle: {emplacements}}}.
+
+    L'emplacement est « en tête » ou « sous « <parent> » ». Il sert au controle
+    de collision : deux libelles qu'UNE MEME grille porte dans UNE MEME section
+    ne sont pas deux facons de dire la meme chose, ce sont deux questions que
+    l'auteur de cette grille a voulu distinguer. Les reunir effacerait sa
+    distinction — et rien, au rendu, ne le dirait.
+
+    LA SECTION SUFFIT A DELIMITER, PAS BESOIN DU PARENT. Un libelle de tete et
+    un sous-item d'une meme section entrent aussi en concurrence : German-75
+    (Toux) porte « Allergies » en tete AVEC « Allergies connues » en sous-item,
+    et rabattre le second sur le premier ferait avaler a l'item son propre
+    sous-item. L'emplacement est donc rapporte pour le diagnostic, pas retenu
+    comme critere.
+    """
+    out = {}
+    for ssp, cas_list in groupes.items():
+        table = out.setdefault(ssp, {})
+        for cas in cas_list:
+            for prefixe in SECTIONS:
+                seau = table.setdefault((cas["id"], prefixe), {})
+                for genre, _, titre, sous in cas["sections"].get(prefixe, []):
+                    if genre != "item":
+                        continue
+                    tete = libelle_nu(titre)
+                    seau.setdefault(tete, set()).add("en tête")
+                    for brut in (sous or []):
+                        seau.setdefault(libelle_nu(brut), set()).add(f"sous « {tete} »")
+    return out
+
+
 def inventaire(lot=None):
     """Raccourci : l'inventaire du corpus entier (ou du lot donne)."""
     return libelles_par_ssp(build_memento.par_ssp(lot))

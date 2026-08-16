@@ -98,6 +98,38 @@ def main():
             f"message d'erreur non accentue pour une entree hors groupe : {message!r}"
         )
 
+    # Cas 7 (CRITIQUE) : une cle dupliquee disparaissait en silence — la
+    # seconde ecrasait la premiere sans un mot. C'est la panne muette meme que
+    # ces tables curees existent pour fermer : une entree ecrite, relue,
+    # commitee, et sans effet. Les trois formes doivent lever.
+    message = attend_erreur(
+        lib_yaml.lire_plat, ecrire("AMBOSS-1: Cholecystite\nAMBOSS-1: Appendicite\n"))
+    if message is None or "Cholecystite" not in message:
+        ecarts.append(
+            f"une clé dupliquée à plat aurait dû lever, en nommant la valeur perdue : {message!r}")
+
+    message = attend_erreur(
+        lib_yaml.lire_groupe,
+        ecrire('"Toux":\n  "Tabac": Tabagisme\n  "Tabac": Noxes\n'))
+    if message is None or "Toux" not in message:
+        ecarts.append(
+            f"une clé dupliquée dans un groupe aurait dû lever, en nommant le groupe : {message!r}")
+
+    message = attend_erreur(
+        lib_yaml.lire_groupe,
+        ecrire('"Toux":\n  "Tabac": Tabagisme\n"Toux":\n  "Alcool": Noxes\n'))
+    if message is None:
+        ecarts.append("un groupe rouvert plus bas aurait dû lever ValueError")
+
+    # Cas 8 (important) : deux cles DISTINCTES dans un meme groupe restent
+    # valides — le refus du doublon ne doit pas interdire un groupe normal.
+    groupe = lib_yaml.lire_groupe(
+        ecrire('"Toux":\n  "Tabac": Tabagisme\n  "Alcool": Noxes\n'))
+    attendu = {"Toux": {"Tabac": "Tabagisme", "Alcool": "Noxes"}}
+    if groupe != attendu:
+        ecarts.append(f"groupe a deux cles distinctes\n    attendu : {attendu}\n"
+                      f"    obtenu  : {groupe}")
+
     if ecarts:
         print("ÉCHEC —", len(ecarts), "écart(s) :")
         for e in ecarts:

@@ -9,7 +9,7 @@ controle : trois variantes erronees d'un meme libelle, zero effet, zero
 message. Une table de curation silencieusement morte est pire que pas de table
 du tout, parce qu'on cesse de regarder le rendu.
 
-SEPT PROPRIETES, de la plus grossiere a la plus fine :
+HUIT PROPRIETES, de la plus grossiere a la plus fine :
 
   1. STRUCTURE     le fichier se lit avec le lecteur du projet.
   2. SSP REELLE    chaque groupe nomme une SSP que le corpus rattache.
@@ -35,9 +35,15 @@ SEPT PROPRIETES, de la plus grossiere a la plus fine :
                    ranges sous des PARENTS differents ne se rejoindront jamais,
                    quoi qu'en dise la table.
 
-Ce que ce controle ne peut PAS verifier, et qui reste a la relecture humaine :
-que les deux libelles reunis parlent bien de la meme chose. Un rapprochement
-abusif efface de l'information sans laisser de trace ; aucun test ne le voit.
+  8. SANS COLLISION aucune grille ne porte la cle ET sa cible dans la MEME
+                   section. C'est LE COMPTEUR DE SURETE, il doit rester a zero.
+                   Voir `collisions()` : la regle etait appliquee a la main, et
+                   deux rapprochements franchement abusifs passaient au vert.
+
+Ce que ce controle ne peut toujours PAS verifier, et qui reste a la relecture
+humaine : que deux libelles qu'aucune grille ne porte ENSEMBLE parlent bien de
+la meme chose. La propriete 8 ferme la classe ou une grille a explicitement
+distingue ; elle ne dit rien de deux grilles qui distinguent sans se croiser.
 """
 import sys
 from pathlib import Path
@@ -141,7 +147,48 @@ def _verifier(vocabulaire, inventaire, groupes):
                 ecarts.append(f"{ou} — canonique() rend « {rendu} » au lieu de "
                               f"« {valeur} » : la table n'est pas consultée comme prévu")
 
+    ecarts += collisions(vocabulaire, lib_vocabulaire.positions_par_ssp(groupes))
     ecarts += _sans_effet(vocabulaire, groupes)
+    return ecarts
+
+
+def collisions(vocabulaire, positions):
+    """LE COMPTEUR DE SURETE : il doit rester a zero.
+
+    Une entree est un rapprochement abusif des qu'UNE grille porte ses DEUX
+    libelles dans UNE MEME SECTION : l'auteur de cette grille les a distingues
+    expres, et les reunir efface sa distinction sans laisser de trace. C'est le
+    seul defaut de cette table qu'aucun autre controle ne voit — l'entree
+    « mord » (la partition change), elle vise des libelles reels, elle ne
+    chaine pas : tout est vert, et deux questions cliniques distinctes ont
+    fusionne.
+
+    LA REGLE ETAIT APPLIQUEE A LA MAIN, VINGT-TROIS FOIS, ET C'EST PRECISEMENT
+    LE PROBLEME. Deux mutations le montrent, toutes deux vertes avant ce
+    controle :
+
+      - « Drogues » -> « Noxes » sur Cephalee : AZYGOS-3 porte les deux en
+        items de TETE, section anamnese. « Noxes » est le bloc tabac + alcool +
+        drogues, « Drogues » en est une ligne ;
+      - « Alcool » -> « Drogues » sur Douleur Abdominale : RESCOS-17 porte les
+        deux comme FRERES sous « Habitudes ». Deux noxes distinctes.
+
+    Un successeur qui ajoute l'une ou l'autre en tache 11 voyait tous les
+    controles passer. Il ne les voit plus.
+    """
+    ecarts = []
+    for ssp in sorted(vocabulaire):
+        seaux = positions.get(ssp, {})
+        for cle in sorted(vocabulaire[ssp]):
+            valeur = vocabulaire[ssp][cle]
+            for (cid, prefixe), seau in sorted(seaux.items()):
+                if cle in seau and valeur in seau:
+                    ecarts.append(
+                        f"{ssp} / « {cle} » → « {valeur} » — RAPPROCHEMENT ABUSIF : "
+                        f"{cid} porte les deux dans la section « {prefixe} » "
+                        f"({' et '.join(sorted(seau[cle]))} / "
+                        f"{' et '.join(sorted(seau[valeur]))}). Cette grille les "
+                        "distingue, la table ne peut pas les réunir")
     return ecarts
 
 
@@ -222,7 +269,9 @@ def main():
             print("  ", e)
         return 1
     print(f"OK — {entrees} entrée(s) sur {len(vocabulaire)} SSP, toutes adossées à des "
-          "libellés réels du corpus et toutes agissantes")
+          "libellés réels du corpus et toutes agissantes · "
+          "0 rapprochement abusif (aucune grille ne porte les deux libellés "
+          "d'une entrée dans la même section)")
     return 0
 
 
