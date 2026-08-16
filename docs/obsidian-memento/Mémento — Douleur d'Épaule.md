@@ -359,11 +359,9 @@ cssclasses:
 > 	- [ ] Fracture de l'humérus
 > 	- [ ] Spiroïde
 > 	- [ ] De diaphyse
-> 	- [ ] Déplacé *(1 grille sur 2)*
-> 	- [ ] Distal *(1 grille sur 2)*
+> 	- [ ] Déplacée
+> 	- [ ] Distale
 > 	- [ ] Multifragmentaire
-> 	- [ ] Déplacée *(1 grille sur 2)*
-> 	- [ ] Distale *(1 grille sur 2)*
 > - [ ] **2. Demande des radiographies du MSD ou CT du MSD**
 > 	- [ ] Fracture spiroïde de l'humérus droit (diaphysaire, déplacée, distal, multifragmentaire) *(1 grille sur 2)*
 > - [ ] **3. Prise en charge**

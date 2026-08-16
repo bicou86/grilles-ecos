@@ -344,7 +344,10 @@ cssclasses:
 > - [ ] **41. Examen des aires ganglionnaires : Axillaires/Inguinales/Cervicales *(1 grille sur 8)***
 > - [ ] **42. Palpation du thorax pour reproduire les douleurs *(Zona)***
 > - [ ] **43. Examen des muqueuses : Bouche/Nez/OGE (intention) *(1 grille sur 8)***
-> - [ ] **44. Intention de faire status ORL, pulmonaire ou cardio *(1 grille sur 8)***
+> - [ ] **44. Intention de faire un status ORL, pulmonaire ou cardiaque *(Zona)***
+> 	- [ ] ORL *(1 grille sur 8)*
+> 	- [ ] Pulmonaire *(1 grille sur 8)*
+> 	- [ ] Cardiaque *(1 grille sur 8)*
 > - [ ] **45. Examen des aires ganglionnaires *(1 grille sur 8)***
 > 	- [ ] Axillaires
 > 	- [ ] Inguinales
@@ -353,10 +356,6 @@ cssclasses:
 > 	- [ ] Bouche
 > 	- [ ] Nez
 > 	- [ ] OGE
-> - [ ] **47. Intention de faire un status ORL, pulmonaire ou cardiaque *(1 grille sur 8)***
-> 	- [ ] ORL
-> 	- [ ] Pulmonaire
-> 	- [ ] Cardiaque
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Diagnostic clinique *(2 grilles sur 8)* — *Dermatite périorale · Psoriasis***

@@ -175,7 +175,7 @@ cssclasses:
 > - [ ] **20. Qualité *(1 grille sur 6)***
 > - [ ] **21. Intensité de la douleur *(2 grilles sur 6)***
 > - [ ] **22. Facteurs aggravants *(2 grilles sur 6)***
-> - [ ] **23. Facteurs soulageants *(1 grille sur 6)***
+> - [ ] **23. Facteurs de soulagement *(2 grilles sur 6)***
 > - [ ] **24. Bilans neurologiques antérieurs *(1 grille sur 6)***
 > - [ ] **25. Retentissement des symptômes *(1 grille sur 6)***
 > - [ ] **26. Symptômes associés *(4 grilles sur 6)***
@@ -237,55 +237,54 @@ cssclasses:
 > 	- [ ] Constante/intermittente
 > - [ ] **62. Variation dans la journée *(Céphalée du restaurant chinois)***
 > - [ ] **63. Caractère de la douleur *(Céphalée du restaurant chinois)***
-> - [ ] **64. Facteurs de soulagement *(Céphalée du restaurant chinois)***
-> - [ ] **65. Première fois ou connu *(Céphalée du restaurant chinois)***
-> - [ ] **66. Maladies récentes *(Céphalée du restaurant chinois)***
-> - [ ] **67. Crises convulsives *(Céphalée du restaurant chinois)***
-> - [ ] **68. Douleurs aux épaules et muscles *(Céphalée du restaurant chinois)***
-> - [ ] **69. Stress, consommation de caféine *(Céphalée du restaurant chinois)***
-> - [ ] **70. Alimentation *(Céphalée du restaurant chinois)***
-> - [ ] **71. Piqûre de tique *(Céphalée du restaurant chinois)***
-> - [ ] **72. Contraceptifs oraux (chez la femme) *(Céphalée du restaurant chinois)***
-> - [ ] **73. Toxiques *(Céphalée du restaurant chinois)***
-> - [ ] **74. Anamnèse sociale, profession *(Céphalée du restaurant chinois)***
-> - [ ] **75. Question d'entrée ouverte → Symptôme principal *(Méningite)***
-> - [ ] **76. Caractéristiques des céphalées *(Méningite)***
+> - [ ] **64. Première fois ou connu *(Céphalée du restaurant chinois)***
+> - [ ] **65. Maladies récentes *(Céphalée du restaurant chinois)***
+> - [ ] **66. Crises convulsives *(Céphalée du restaurant chinois)***
+> - [ ] **67. Douleurs aux épaules et muscles *(Céphalée du restaurant chinois)***
+> - [ ] **68. Stress, consommation de caféine *(Céphalée du restaurant chinois)***
+> - [ ] **69. Alimentation *(Céphalée du restaurant chinois)***
+> - [ ] **70. Piqûre de tique *(Céphalée du restaurant chinois)***
+> - [ ] **71. Contraceptifs oraux (chez la femme) *(Céphalée du restaurant chinois)***
+> - [ ] **72. Toxiques *(Céphalée du restaurant chinois)***
+> - [ ] **73. Anamnèse sociale, profession *(Céphalée du restaurant chinois)***
+> - [ ] **74. Question d'entrée ouverte → Symptôme principal *(Méningite)***
+> - [ ] **75. Caractéristiques des céphalées *(Méningite)***
 > 	- [ ] Temporalité
 > 	- [ ] Caractère
 > 	- [ ] Intensité EVA
 > 	- [ ] Facteurs aggravants
 > 	- [ ] Facteurs améliorants
-> - [ ] **77. Anamnèse personnelle *(Méningite)***
+> - [ ] **76. Anamnèse personnelle *(Méningite)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **78. Symptômes B *(Méningite)***
-> - [ ] **79. Questions sur infections herpétiques *(Méningite)***
+> - [ ] **77. Symptômes B *(Méningite)***
+> - [ ] **78. Questions sur infections herpétiques *(Méningite)***
 > 	- [ ] Herpès
 > 	- [ ] Varicelle-zona (VZV)
-> - [ ] **80. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
+> - [ ] **79. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
 > 	- [ ] Céphalée nouvelle/différente
 > 	- [ ] Céphalée décrite comme la pire
 > 	- [ ] Céphalée en coup de tonnerre
 > 	- [ ] Céphalée déclenchée par effort/exercice/activité sexuelle
 > 	- [ ] Céphalée déclenchée/aggravée par Valsalva ou position
-> - [ ] **81. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
+> - [ ] **80. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
 > 	- [ ] Migraines chroniques
 > 	- [ ] Caractéristiques des migraines habituelles
 > 	- [ ] Traitement habituel
 > 	- [ ] Efficacité du traitement actuel
-> - [ ] **82. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
+> - [ ] **81. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
 > 	- [ ] Contraception orale
 > 	- [ ] Tabagisme
 > 	- [ ] Antécédents familiaux vasculaires
 > 	- [ ] HTA/diabète/dyslipidémie
-> - [ ] **83. Contexte *(Thrombose veineuse cérébrale)***
+> - [ ] **82. Contexte *(Thrombose veineuse cérébrale)***
 > 	- [ ] Grossesse/post-partum
 > 	- [ ] Immunosuppression/cancer
 > 	- [ ] Traumatisme crânien récent
 > 	- [ ] Voyage/contage
 > 	- [ ] Vaccins
-> - [ ] **84. Anamnèse par système *(Thrombose veineuse cérébrale)***
+> - [ ] **83. Anamnèse par système *(Thrombose veineuse cérébrale)***
 > 	- [ ] État général
 > 	- [ ] Système digestif
 > 	- [ ] Système gynécologique
@@ -401,29 +400,29 @@ cssclasses:
 > 	- [ ] Sinon : antalgiques et contrôle
 
 > [!success] 💊 Management — si Hémorragie sous-arachnoïdienne
-> - [ ] **1. Conseil et soutien**
+> - [ ] **1. Communication avec la patiente**
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
+> - [ ] **2. Conseil et soutien**
 > 	- [ ] Proposer d'aider la patiente à s'allonger
 > 	- [ ] Proposer de diminuer l'éclairage dans la salle d'examen
 > 	- [ ] Réaction appropriée au défi concernant le mari
 > 	- [ ] Soutien émotionnel face à la gravité
 > 	- [ ] Information sur l'urgence de la situation
-> - [ ] **2. Examens complémentaires urgents**
+> - [ ] **3. Examens complémentaires urgents**
 > 	- [ ] CT cérébral sans contraste
 > 	- [ ] FSC
 > 	- [ ] Glucose, électrolytes
-> - [ ] **3. Examens complémentaires biologiques et microbiologiques**
+> - [ ] **4. Examens complémentaires biologiques et microbiologiques**
 > 	- [ ] TP, TCA
 > 	- [ ] Hémocultures
-> - [ ] **4. Ponction lombaire et imagerie spécialisée**
+> - [ ] **5. Ponction lombaire et imagerie spécialisée**
 > 	- [ ] Ponction lombaire avec analyse du LCR
 > 	- [ ] Angiographie
-> - [ ] **5. Communication avec la patiente**
-> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions de la patiente
-> 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
 
 > [!success] 💊 Management — si Méningite
 > - [ ] **1. Diagnostics différentiels**
@@ -455,7 +454,7 @@ cssclasses:
 > 	- [ ] Migraine, céphalée de tension et algie vasculaire = diagnostics cliniques basés sur l'histoire et l'examen physique
 > 	- [ ] Ne pas faire d'examens diagnostiques sauf si drapeaux rouges présents
 > 	- [ ] Proposer au patient de s'allonger et tamiser la lumière
-> - [ ] **3. Communication avec le patient *(1 grille sur 2)***
+> - [ ] **3. Communication avec la patiente *(1 grille sur 2)***
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux

@@ -276,9 +276,8 @@ cssclasses:
 > 	- [ ] Tympan gauche
 > - [ ] **19. Tests auditifs au diapason *(2 grilles sur 4)***
 > 	- [ ] Test de Weber
-> 	- [ ] Test de Rinne à droite *(Surdité brusque idiopathique gauche)*
+> 	- [ ] Test de Rinne à droite
 > 	- [ ] Test de Rinne à gauche
-> 	- [ ] Test de Rinne droit *(1 grille sur 4)*
 > - [ ] **20. Test de la voix chuchotée *(2 grilles sur 4)***
 > 	- [ ] Oreille droite *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Oreille gauche *(Surdité brusque idiopathique gauche)*

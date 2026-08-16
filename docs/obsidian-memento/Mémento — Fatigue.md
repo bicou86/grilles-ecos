@@ -647,15 +647,9 @@ cssclasses:
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Hypothèses diagnostiques *(3 grilles sur 11)* — *Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum)***
-> - [ ] **2. Communication avec la patiente *(2 grilles sur 11)* — *Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum)***
-> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions de la patiente
-> - [ ] **3. Diagnostic de suspicion principal *(2 grilles sur 11)* — *Dépression · SAOS***
-> - [ ] **4. Diagnostics différentiels évoqués *(3 grilles sur 11)* — *Anémie · Dépression · SAOS***
-> - [ ] **5. Traitement proposé *(2 grilles sur 11)* — *Dépression · SAOS***
+> - [ ] **2. Diagnostic de suspicion principal *(2 grilles sur 11)* — *Dépression · SAOS***
+> - [ ] **3. Diagnostics différentiels évoqués *(3 grilles sur 11)* — *Anémie · Dépression · SAOS***
+> - [ ] **4. Traitement proposé *(2 grilles sur 11)* — *Dépression · SAOS***
 
 > [!success] 💊 Management — si Anémie
 > - [ ] **1. Examens complémentaires proposés**
@@ -741,12 +735,18 @@ cssclasses:
 > - [ ] **18. Œsophagogastroduodénoscopie**
 
 > [!success] 💊 Management — si Hépatite C aiguë
-> - [ ] **1. Conseil et soutien**
+> - [ ] **1. Communication avec la patiente**
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **2. Conseil et soutien**
 > 	- [ ] Conseil sur les drogues illicites
 > 	- [ ] Conseil sur l'abus d'alcool
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant le test VIH
-> - [ ] **2. Examens complémentaires urgents**
+> - [ ] **3. Examens complémentaires urgents**
 > 	- [ ] US abdominal
 > 	- [ ] FSC
 > 	- [ ] TP, TCA
@@ -754,14 +754,8 @@ cssclasses:
 > 	- [ ] Albumine
 > 	- [ ] Sérologies virales hépatites (HAV, HBV, HCV)
 > 	- [ ] Test VIH
-> - [ ] **3. Examens complémentaires différés**
+> - [ ] **4. Examens complémentaires différés**
 > 	- [ ] CT abdominal avec contraste
-> - [ ] **4. Communication avec le patient**
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du patient
 
 > [!success] 💊 Management — si Hypothyroïdie
 > - [ ] **1. Demande un laboratoire**
@@ -792,13 +786,19 @@ cssclasses:
 > 	- [ ] Test monospot
 > 	- [ ] Sérologie EBV
 > 	- [ ] FSC et frottis sanguin
-> - [ ] **2. Conseil et soutien**
+> - [ ] **2. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> - [ ] **3. Conseil et soutien**
 > 	- [ ] Conseil sur l'évitement des sports de contact en cas de mononucléose suspectée
 > 	- [ ] Réaction appropriée au défi sur l'expérience du médecin
 > 	- [ ] Éducation sur le repos nécessaire
 > 	- [ ] Information sur la durée possible de la fatigue
 > 	- [ ] Conseils de prévention transmission
-> - [ ] **3. Examens complémentaires biologiques**
+> - [ ] **4. Examens complémentaires biologiques**
 > 	- [ ] LDH, ASAT, ALAT
 > 	- [ ] Fer sérique, ferritine, transferrine, capacité totale de fixation du fer (TIBC)
 > 	- [ ] TSH, T3 libre, T4 libre
@@ -833,7 +833,13 @@ cssclasses:
 > 	- [ ] Frottis sanguin
 > - [ ] **3. Imagerie spécialisée**
 > 	- [ ] IRM cérébrale
-> - [ ] **4. Conseil et soutien**
+> - [ ] **4. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> - [ ] **5. Conseil et soutien**
 > 	- [ ] Conseil sur les modifications du mode de vie pour améliorer l'humeur
 > 	- [ ] Réaction appropriée au défi sur la maternité
 > 	- [ ] Orientation vers assistance sociale

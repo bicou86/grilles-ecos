@@ -162,7 +162,13 @@ cssclasses:
 > 	- [ ] Logement *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Études *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Support social *(Palpitations liées au stress et aux stimulants)*
-> - [ ] **18. Anamnèse systémique *(Insuffisance cardiaque (décompensée))***
+> - [ ] **18. Anamnèse par systèmes *(Insuffisance cardiaque (décompensée) · Palpitations liées au stress et aux stimulants)***
+> 	- [ ] Neurologique (AIT, troubles sensitifs, langage) *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Psychiatrique *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Cardiaque *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Thyroïdien *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Digestif *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Uro-génital *(Palpitations liées au stress et aux stimulants)*
 > - [ ] **19. Motif de consultation *(Palpitations liées au stress et aux stimulants)***
 > - [ ] **20. Caractéristiques temporelles *(Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Début
@@ -190,130 +196,123 @@ cssclasses:
 > 	- [ ] Vertiges/malaises *(Fibrillation auriculaire)*
 > 	- [ ] Syncope ou présyncope *(Fibrillation auriculaire)*
 > 	- [ ] Sueurs *(Fibrillation auriculaire)*
-> - [ ] **25. Anamnèse par systèmes *(Palpitations liées au stress et aux stimulants)***
-> 	- [ ] Neurologique (AIT, troubles sensitifs, langage)
-> 	- [ ] Psychiatrique
-> 	- [ ] Cardiaque
-> 	- [ ] Thyroïdien
-> 	- [ ] Digestif
-> 	- [ ] Uro-génital
-> - [ ] **26. Habitudes alimentaires et hydratation *(Palpitations liées au stress et aux stimulants)***
+> - [ ] **25. Habitudes alimentaires et hydratation *(Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Hydratation
 > 	- [ ] Café
 > 	- [ ] Appétit
 > 	- [ ] Alimentation
 > 	- [ ] Poids et taille
-> - [ ] **27. Habitudes de vie et toxiques *(Palpitations liées au stress et aux stimulants)***
+> - [ ] **26. Habitudes de vie et toxiques *(Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
-> - [ ] **28. Activité physique et loisirs *(Palpitations liées au stress et aux stimulants)***
-> - [ ] **29. État psychologique et stress *(Palpitations liées au stress et aux stimulants)***
+> - [ ] **27. Activité physique et loisirs *(Palpitations liées au stress et aux stimulants)***
+> - [ ] **28. État psychologique et stress *(Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Niveau de stress
 > 	- [ ] Charge de travail
 > 	- [ ] Sentiment de surcharge
-> - [ ] **30. Questions de clôture et résumé *(Fibrillation auriculaire · Palpitations liées au stress et aux stimulants)***
+> - [ ] **29. Questions de clôture et résumé *(Fibrillation auriculaire · Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Résumer les points importants *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Avez-vous des questions ? *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Autres informations importantes *(Fibrillation auriculaire)*
 > 	- [ ] Questions du patient *(Fibrillation auriculaire)*
 > 	- [ ] Résumé de l'anamnèse *(Fibrillation auriculaire)*
-> - [ ] **31. Caractérisation temporelle de l'épisode actuel *(Fibrillation auriculaire)***
+> - [ ] **30. Caractérisation temporelle de l'épisode actuel *(Fibrillation auriculaire)***
 > 	- [ ] Début
 > 	- [ ] Durée actuelle
 > 	- [ ] Évolution
 > 	- [ ] Fin de l'épisode (spontanée ou provoquée)
-> - [ ] **32. Récurrence et historique *(Fibrillation auriculaire)***
+> - [ ] **31. Récurrence et historique *(Fibrillation auriculaire)***
 > 	- [ ] Épisodes antérieurs
 > 	- [ ] Fréquence des épisodes
 > 	- [ ] Durée habituelle
 > 	- [ ] Évolution dans le temps
-> - [ ] **33. Caractéristiques du rythme cardiaque *(Fibrillation auriculaire)***
+> - [ ] **32. Caractéristiques du rythme cardiaque *(Fibrillation auriculaire)***
 > 	- [ ] Fréquence estimée
 > 	- [ ] Régularité du rythme
 > 	- [ ] Sensations de pauses
 > 	- [ ] Battements manqués ou supplémentaires
-> - [ ] **34. Facteurs déclenchants et modulateurs *(Fibrillation auriculaire)***
+> - [ ] **33. Facteurs déclenchants et modulateurs *(Fibrillation auriculaire)***
 > 	- [ ] Stress
 > 	- [ ] Caféine
 > 	- [ ] Alcool
 > 	- [ ] Effort physique
 > 	- [ ] Position
 > 	- [ ] Repas copieux
-> - [ ] **35. Symptômes respiratoires *(Fibrillation auriculaire)***
+> - [ ] **34. Symptômes respiratoires *(Fibrillation auriculaire)***
 > 	- [ ] Dyspnée
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
 > 	- [ ] Toux
-> - [ ] **36. Signes d'insuffisance cardiaque *(Fibrillation auriculaire)***
+> - [ ] **35. Signes d'insuffisance cardiaque *(Fibrillation auriculaire)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Prise de poids récente
 > 	- [ ] Fatigue inhabituelle
 > 	- [ ] Diminution de la tolérance à l'effort
-> - [ ] **37. Symptôme spécifique post-critique *(Fibrillation auriculaire)***
+> - [ ] **36. Symptôme spécifique post-critique *(Fibrillation auriculaire)***
 > 	- [ ] Polyurie post-paroxystique
 > 	- [ ] Fatigue après l'épisode
 > 	- [ ] Durée de récupération
-> - [ ] **38. Signes d'hyperthyroïdie *(Fibrillation auriculaire)***
+> - [ ] **37. Signes d'hyperthyroïdie *(Fibrillation auriculaire)***
 > 	- [ ] Intolérance à la chaleur
 > 	- [ ] Perte de poids
 > 	- [ ] Diarrhée
 > 	- [ ] Tremblements
-> - [ ] **39. Symptômes généraux *(Fibrillation auriculaire)***
+> - [ ] **38. Symptômes généraux *(Fibrillation auriculaire)***
 > 	- [ ] Fièvre
 > 	- [ ] Asthénie
 > 	- [ ] Anorexie
 > 	- [ ] Modifications récentes
-> - [ ] **40. Statut ménopausique et hormonal *(Fibrillation auriculaire)***
+> - [ ] **39. Statut ménopausique et hormonal *(Fibrillation auriculaire)***
 > 	- [ ] Dernières menstruations
 > 	- [ ] Symptômes de ménopause
 > 	- [ ] Traitement hormonal substitutif
 > 	- [ ] Bouffées de chaleur
-> - [ ] **41. Contexte psychosocial *(Fibrillation auriculaire)***
+> - [ ] **40. Contexte psychosocial *(Fibrillation auriculaire)***
 > 	- [ ] Stress aigu récent
 > 	- [ ] Charge mentale
 > 	- [ ] Anxiété associée
 > 	- [ ] Qualité du sommeil
-> - [ ] **42. Tabagisme détaillé *(Fibrillation auriculaire)***
+> - [ ] **41. Tabagisme détaillé *(Fibrillation auriculaire)***
 > 	- [ ] Consommation actuelle
 > 	- [ ] Durée
 > 	- [ ] Paquets-années
 > 	- [ ] Tentatives d'arrêt
-> - [ ] **43. Score de Wells pour embolie pulmonaire *(Fibrillation auriculaire)***
+> - [ ] **42. Score de Wells pour embolie pulmonaire *(Fibrillation auriculaire)***
 > 	- [ ] Œdème du mollet
 > 	- [ ] Immobilisation récente/chirurgie
 > 	- [ ] Cancer actif
 > 	- [ ] Antécédent de TVP/EP
 > 	- [ ] Hémoptysie
-> - [ ] **44. Antécédents cardiovasculaires personnels *(Fibrillation auriculaire)***
+> - [ ] **43. Antécédents cardiovasculaires personnels *(Fibrillation auriculaire)***
 > 	- [ ] Cardiopathie ischémique
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] Troubles du rythme connus
 > 	- [ ] Valvulopathies
-> - [ ] **45. Antécédents neurologiques *(Fibrillation auriculaire)***
+> - [ ] **44. Antécédents neurologiques *(Fibrillation auriculaire)***
 > 	- [ ] AVC/AIT
 > 	- [ ] Déficit neurologique
 > 	- [ ] Céphalées
 > 	- [ ] Épilepsie
-> - [ ] **46. Autres antécédents médicaux *(Fibrillation auriculaire)***
+> - [ ] **45. Autres antécédents médicaux *(Fibrillation auriculaire)***
 > 	- [ ] Pathologie thyroïdienne
 > 	- [ ] MVTE
 > 	- [ ] Pathologies psychiatriques/anxiété
 > 	- [ ] Autres maladies chroniques
-> - [ ] **47. Antécédents chirurgicaux *(Fibrillation auriculaire)***
+> - [ ] **46. Antécédents chirurgicaux *(Fibrillation auriculaire)***
 > 	- [ ] Interventions antérieures
 > 	- [ ] Complications
 > 	- [ ] Anesthésies
-> - [ ] **48. Allergies médicamenteuses *(Fibrillation auriculaire)***
+> - [ ] **47. Allergies médicamenteuses *(Fibrillation auriculaire)***
 > 	- [ ] Allergies connues
 > 	- [ ] Intolérances
 > 	- [ ] Réactions antérieures
-> - [ ] **49. Antécédents familiaux cardiovasculaires *(Fibrillation auriculaire)***
+> - [ ] **48. Antécédents familiaux cardiovasculaires *(Fibrillation auriculaire)***
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] Mort subite
 > 	- [ ] Troubles du rythme
 > 	- [ ] AVC
-> - [ ] **50. Habitudes de vie *(Fibrillation auriculaire)***
+> - [ ] **49. Habitudes de vie *(Fibrillation auriculaire)***
 > 	- [ ] Consommation de café
 > 	- [ ] Activité physique
 > 	- [ ] Alimentation

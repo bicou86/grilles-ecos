@@ -114,7 +114,7 @@ cssclasses:
 > 	- [ ] Progression *(2 grilles sur 13)*
 > 	- [ ] Épisodes antérieurs *(2 grilles sur 13)*
 > 	- [ ] Fréquence *(2 grilles sur 13)*
-> 	- [ ] Facteurs améliorants *(2 grilles sur 13)*
+> 	- [ ] Facteurs d'amélioration *(2 grilles sur 13)*
 > 	- [ ] Facteurs aggravants *(2 grilles sur 13)*
 > 	- [ ] Toux productive *(BPCO)*
 > 	- [ ] Productive ou sèche *(1 grille sur 13)*
@@ -210,7 +210,7 @@ cssclasses:
 > 	- [ ] Progression
 > 	- [ ] Épisodes antérieurs
 > 	- [ ] Fréquence
-> 	- [ ] Facteurs améliorants
+> 	- [ ] Facteurs d'amélioration
 > 	- [ ] Facteurs aggravants
 > 	- [ ] Symptômes associés
 > - [ ] **13. Recherche de symptômes spécifiques pour toux chronique et hémoptysie *(1 grille sur 13)***
@@ -323,7 +323,7 @@ cssclasses:
 > 	- [ ] Caractère de la douleur *(1 grille sur 13)*
 > - [ ] **61. Facteurs modulateurs *(Tuberculose)***
 > 	- [ ] Facteurs aggravants
-> 	- [ ] Facteurs améliorants
+> 	- [ ] Facteurs d'amélioration
 > 	- [ ] Position
 > 	- [ ] Activité physique
 > - [ ] **62. Symptômes ORL associés *(Tuberculose)***
@@ -401,11 +401,11 @@ cssclasses:
 > 	- [ ] Aggravation nocturne
 > 	- [ ] Aggravation à l'effort
 > 	- [ ] Nombre d'oreillers utilisés
-> - [ ] **77. Facteurs d'amélioration *(Insuffisance cardiaque (décompensée))***
-> 	- [ ] Position assise
-> 	- [ ] Repos
-> 	- [ ] Fenêtre ouverte
-> 	- [ ] Autres positions
+> - [ ] **77. Facteurs d'amélioration *(2 grilles sur 13)***
+> 	- [ ] Position assise *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Repos *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Fenêtre ouverte *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Autres positions *(Insuffisance cardiaque (décompensée))*
 > - [ ] **78. Orthopnée et dyspnée paroxystique nocturne *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Orthopnée (nombre d'oreillers)
 > 	- [ ] Réveils nocturnes avec dyspnée
@@ -470,175 +470,174 @@ cssclasses:
 > 	- [ ] Quand
 > 	- [ ] Comment
 > - [ ] **92. Facteurs aggravants *(1 grille sur 13)***
-> - [ ] **93. Facteurs améliorants *(1 grille sur 13)***
-> - [ ] **94. Anamnèse de l'entourage (contagion) *(1 grille sur 13)***
-> - [ ] **95. Symptômes associés - Infection ORL *(1 grille sur 13)***
+> - [ ] **93. Anamnèse de l'entourage (contagion) *(1 grille sur 13)***
+> - [ ] **94. Symptômes associés - Infection ORL *(1 grille sur 13)***
 > 	- [ ] Rhinorrhée
 > 	- [ ] Mal de gorge
-> - [ ] **96. Symptômes associés - Baisse de performance *(1 grille sur 13)***
-> - [ ] **97. Symptômes associés - Écoulement postnasal *(1 grille sur 13)***
-> - [ ] **98. Symptômes associés - Douleurs thoraciques *(1 grille sur 13)***
+> - [ ] **95. Symptômes associés - Baisse de performance *(1 grille sur 13)***
+> - [ ] **96. Symptômes associés - Écoulement postnasal *(1 grille sur 13)***
+> - [ ] **97. Symptômes associés - Douleurs thoraciques *(1 grille sur 13)***
 > 	- [ ] Présence
 > 	- [ ] Caractéristiques
-> - [ ] **99. Symptômes associés - Symptômes cardiaques *(1 grille sur 13)***
-> - [ ] **100. Symptômes associés - Sibilances *(1 grille sur 13)***
-> - [ ] **101. Symptômes associés - Reflux gastro-œsophagien *(1 grille sur 13)***
-> - [ ] **102. Symptômes associés - Œdèmes des membres inférieurs *(1 grille sur 13)***
-> - [ ] **103. Exposition (professionnelle, environnementale) *(1 grille sur 13)***
-> - [ ] **104. Médicaments actuels *(2 grilles sur 13)***
-> - [ ] **105. Anamnèse sociale *(2 grilles sur 13)***
+> - [ ] **98. Symptômes associés - Symptômes cardiaques *(1 grille sur 13)***
+> - [ ] **99. Symptômes associés - Sibilances *(1 grille sur 13)***
+> - [ ] **100. Symptômes associés - Reflux gastro-œsophagien *(1 grille sur 13)***
+> - [ ] **101. Symptômes associés - Œdèmes des membres inférieurs *(1 grille sur 13)***
+> - [ ] **102. Exposition (professionnelle, environnementale) *(1 grille sur 13)***
+> - [ ] **103. Médicaments actuels *(2 grilles sur 13)***
+> - [ ] **104. Anamnèse sociale *(2 grilles sur 13)***
 > 	- [ ] État civil
 > 	- [ ] Enfants
 > 	- [ ] Situation professionnelle *(1 grille sur 13)*
 > 	- [ ] Profession *(1 grille sur 13)*
-> - [ ] **106. État actuel *(1 grille sur 13)***
-> - [ ] **107. Type de dyspnée *(1 grille sur 13)***
+> - [ ] **105. État actuel *(1 grille sur 13)***
+> - [ ] **106. Type de dyspnée *(1 grille sur 13)***
 > 	- [ ] Repos ou effort
 > 	- [ ] Circonstances de début
-> - [ ] **108. Douleurs *(1 grille sur 13)***
+> - [ ] **107. Douleurs *(1 grille sur 13)***
 > 	- [ ] Douleurs à la toux
 > 	- [ ] Autres douleurs
-> - [ ] **109. Infection préalable ou concomitante *(1 grille sur 13)***
-> - [ ] **110. Symptômes infectieux *(1 grille sur 13)***
+> - [ ] **108. Infection préalable ou concomitante *(1 grille sur 13)***
+> - [ ] **109. Symptômes infectieux *(1 grille sur 13)***
 > 	- [ ] Fièvre
 > 	- [ ] Rhinorrhée
-> - [ ] **111. Allergies connues *(1 grille sur 13)***
-> - [ ] **112. Antécédents cardiaques *(1 grille sur 13)***
-> - [ ] **113. Autres antécédents médicaux *(1 grille sur 13)***
-> - [ ] **114. Activités sportives et loisirs *(1 grille sur 13)***
-> - [ ] **115. Présentation avec nom et fonction *(Faux-croup)***
-> - [ ] **116. Identification complète *(Faux-croup)***
+> - [ ] **110. Allergies connues *(1 grille sur 13)***
+> - [ ] **111. Antécédents cardiaques *(1 grille sur 13)***
+> - [ ] **112. Autres antécédents médicaux *(1 grille sur 13)***
+> - [ ] **113. Activités sportives et loisirs *(1 grille sur 13)***
+> - [ ] **114. Présentation avec nom et fonction *(Faux-croup)***
+> - [ ] **115. Identification complète *(Faux-croup)***
 > 	- [ ] Nom, âge et sexe de l'enfant
 > 	- [ ] Numéro de téléphone de l'appelant pour rappel
-> - [ ] **117. Question ouverte initiale *(Faux-croup)***
-> - [ ] **118. Début et circonstances *(Faux-croup)***
+> - [ ] **116. Question ouverte initiale *(Faux-croup)***
+> - [ ] **117. Début et circonstances *(Faux-croup)***
 > 	- [ ] Début
 > 	- [ ] Activités précédentes
 > 	- [ ] État actuel
-> - [ ] **119. État général actuel de l'enfant *(Faux-croup)***
+> - [ ] **118. État général actuel de l'enfant *(Faux-croup)***
 > 	- [ ] Léthargie
 > 	- [ ] Réactivité
-> - [ ] **120. Signes de détresse respiratoire *(Faux-croup)***
+> - [ ] **119. Signes de détresse respiratoire *(Faux-croup)***
 > 	- [ ] Tirage intercostal
 > 	- [ ] Tirage sus-sternal
 > 	- [ ] Respiration rapide et superficielle
-> - [ ] **121. Température *(Faux-croup)***
+> - [ ] **120. Température *(Faux-croup)***
 > 	- [ ] Fièvre mesurée
 > 	- [ ] Sensation thermique
 > 	- [ ] Site de mesure si mesuré
-> - [ ] **122. Signes d'infection ORL *(Faux-croup)***
+> - [ ] **121. Signes d'infection ORL *(Faux-croup)***
 > 	- [ ] Nez
 > 	- [ ] Gorge
 > 	- [ ] Cou
 > 	- [ ] Trachée
-> - [ ] **123. Caractéristiques de la respiration *(Faux-croup)***
-> - [ ] **124. Possibilité d'aspiration de corps étranger *(Faux-croup)***
-> - [ ] **125. Coloration cutanée *(Faux-croup)***
-> - [ ] **126. Tentatives thérapeutiques *(Faux-croup)***
-> - [ ] **127. Recherche de drapeaux rouges (RED FLAGS) *(Faux-croup)***
+> - [ ] **122. Caractéristiques de la respiration *(Faux-croup)***
+> - [ ] **123. Possibilité d'aspiration de corps étranger *(Faux-croup)***
+> - [ ] **124. Coloration cutanée *(Faux-croup)***
+> - [ ] **125. Tentatives thérapeutiques *(Faux-croup)***
+> - [ ] **126. Recherche de drapeaux rouges (RED FLAGS) *(Faux-croup)***
 > 	- [ ] État général, troubles de conscience
 > 	- [ ] Foyers fébriles ORL (troubles déglutition, otalgie)
 > 	- [ ] Méningisme
 > 	- [ ] Signes urinaires
 > 	- [ ] Éruption cutanée
 > 	- [ ] Traumatisme crânien récent
-> - [ ] **128. Antécédents similaires *(Faux-croup)***
-> - [ ] **129. Maladies de base *(Faux-croup)***
-> - [ ] **130. Hospitalisations antérieures *(Faux-croup)***
-> - [ ] **131. Médicaments et allergies *(2 grilles sur 13)***
-> - [ ] **132. Anamnèse de l'entourage *(Faux-croup)***
-> - [ ] **133. Résumé et confirmation *(Faux-croup)***
+> - [ ] **127. Antécédents similaires *(Faux-croup)***
+> - [ ] **128. Maladies de base *(Faux-croup)***
+> - [ ] **129. Hospitalisations antérieures *(Faux-croup)***
+> - [ ] **130. Médicaments et allergies *(2 grilles sur 13)***
+> - [ ] **131. Anamnèse de l'entourage *(Faux-croup)***
+> - [ ] **132. Résumé et confirmation *(Faux-croup)***
 > 	- [ ] Fait un bref résumé de la situation
 > 	- [ ] Demande confirmation de l'exactitude
-> - [ ] **134. Caractérisation des expectorations *(1 grille sur 13)***
+> - [ ] **133. Caractérisation des expectorations *(1 grille sur 13)***
 > 	- [ ] Couleur des crachats
 > 	- [ ] Quantité
 > 	- [ ] Odeur
 > 	- [ ] Présence de sang
 > 	- [ ] Évolution dans le temps
-> - [ ] **135. Caractérisation de la douleur thoracique *(1 grille sur 13)***
+> - [ ] **134. Caractérisation de la douleur thoracique *(1 grille sur 13)***
 > 	- [ ] Localisation
 > 	- [ ] Reproductible à la palpation
 > 	- [ ] Variation avec la respiration
 > 	- [ ] Irradiation
 > 	- [ ] Intensité
 > 	- [ ] Durée et circonstances
-> - [ ] **136. Évaluation de la dyspnée *(1 grille sur 13)***
+> - [ ] **135. Évaluation de la dyspnée *(1 grille sur 13)***
 > 	- [ ] Circonstances
 > 	- [ ] Classification NYHA ou mMRC
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
 > 	- [ ] Évolution dans le temps
 > 	- [ ] Sifflements ou bruits associés
-> - [ ] **137. Signes généraux et symptômes associés *(1 grille sur 13)***
+> - [ ] **136. Signes généraux et symptômes associés *(1 grille sur 13)***
 > 	- [ ] Fièvre
 > 	- [ ] Asthénie et perte de poids
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Signes d'insuffisance cardiaque
 > 	- [ ] Autres symptômes respiratoires
-> - [ ] **138. Antécédents personnels et facteurs de risque *(1 grille sur 13)***
+> - [ ] **137. Antécédents personnels et facteurs de risque *(1 grille sur 13)***
 > 	- [ ] Pathologies chroniques
 > 	- [ ] Antécédents pulmonaires
 > 	- [ ] Hospitalisations antérieures
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Vaccinations
-> - [ ] **139. Habitudes et expositions *(1 grille sur 13)***
+> - [ ] **138. Habitudes et expositions *(1 grille sur 13)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
 > 	- [ ] Exposition professionnelle
 > 	- [ ] Exposition infectieuse
-> - [ ] **140. Toux *(Coqueluche)***
+> - [ ] **139. Toux *(Coqueluche)***
 > 	- [ ] Début
 > 	- [ ] Évolution
 > 	- [ ] Qualité
 > 	- [ ] Fréquence
 > 	- [ ] Cyanose
-> - [ ] **141. Vomissements *(Coqueluche)***
+> - [ ] **140. Vomissements *(Coqueluche)***
 > 	- [ ] Début
 > 	- [ ] Évolution
 > 	- [ ] Association avec toux
 > 	- [ ] Contenu
-> - [ ] **142. Alimentation/Hydratation *(Coqueluche)***
+> - [ ] **141. Alimentation/Hydratation *(Coqueluche)***
 > 	- [ ] Allaitement
 > 	- [ ] Couches mouillées
-> - [ ] **143. État général *(Coqueluche)***
+> - [ ] **142. État général *(Coqueluche)***
 > 	- [ ] Apathie et/ou fatigue
-> - [ ] **144. Anamnèse personnelle *(Coqueluche)***
+> - [ ] **143. Anamnèse personnelle *(Coqueluche)***
 > 	- [ ] Grossesse
 > 	- [ ] Accouchement
 > 	- [ ] Néonatale
 > 	- [ ] Croissance
 > 	- [ ] Développement
-> - [ ] **145. Vaccins/Médicaments *(Coqueluche)***
+> - [ ] **144. Vaccins/Médicaments *(Coqueluche)***
 > 	- [ ] Vaccins
 > 	- [ ] Médicaments
-> - [ ] **146. Contage *(Coqueluche)***
-> - [ ] **147. Caractérisation de l'hémoptysie *(1 grille sur 13)***
+> - [ ] **145. Contage *(Coqueluche)***
+> - [ ] **146. Caractérisation de l'hémoptysie *(1 grille sur 13)***
 > 	- [ ] Début et durée
 > 	- [ ] Quantité
 > 	- [ ] Aspect du sang
 > 	- [ ] Évolution
-> - [ ] **148. Histoire de la toux chronique *(1 grille sur 13)***
+> - [ ] **147. Histoire de la toux chronique *(1 grille sur 13)***
 > 	- [ ] Ancienneté
 > 	- [ ] Horaire habituel
 > 	- [ ] Évolution récente
 > 	- [ ] Caractère des expectorations habituelles
-> - [ ] **149. Antécédents respiratoires *(1 grille sur 13)***
+> - [ ] **148. Antécédents respiratoires *(1 grille sur 13)***
 > 	- [ ] BPCO suspectée par médecin traitant
 > 	- [ ] Épisodes de bronchite
 > 	- [ ] Participation aux campagnes de dépistage
-> - [ ] **150. Symptômes généraux et signes d'alarme *(1 grille sur 13)***
+> - [ ] **149. Symptômes généraux et signes d'alarme *(1 grille sur 13)***
 > 	- [ ] Perte de poids
-> - [ ] **151. Signes négatifs importants *(1 grille sur 13)***
+> - [ ] **150. Signes négatifs importants *(1 grille sur 13)***
 > 	- [ ] Pas d'œdèmes des membres inférieurs
 > 	- [ ] Pas de troubles du sommeil respiratoires
 > 	- [ ] Pas de voyage récent
 > 	- [ ] Pas d'immobilisation ou antécédent thromboembolique
-> - [ ] **152. Antécédents personnels et familiaux *(1 grille sur 13)***
+> - [ ] **151. Antécédents personnels et familiaux *(1 grille sur 13)***
 > 	- [ ] Antécédents familiaux
 > 	- [ ] Suivi gynécologique régulier
-> - [ ] **153. Contexte social et professionnel *(1 grille sur 13)***
+> - [ ] **152. Contexte social et professionnel *(1 grille sur 13)***
 > 	- [ ] Situation familiale
 > 	- [ ] Profession
 > 	- [ ] Impact sur la qualité de vie
@@ -891,12 +890,6 @@ cssclasses:
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Hypothèses diagnostiques *(3 grilles sur 13)* — *Asthme · BPCO · Cancer pulmonaire***
-> - [ ] **2. Communication avec la patiente *(2 grilles sur 13)* — *Asthme · BPCO***
-> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions de la patiente
 
 > [!success] 💊 Management — si Asthme
 > - [ ] **1. Examens complémentaires de première intention *(1 grille sur 2)***
@@ -908,27 +901,33 @@ cssclasses:
 > 	- [ ] Test de provocation à la méthacholine
 > - [ ] **3. Examens d'imagerie *(1 grille sur 2)***
 > 	- [ ] Radiographie thoracique
-> - [ ] **4. Conseil et soutien *(1 grille sur 2)***
+> - [ ] **4. Communication avec la patiente *(1 grille sur 2)***
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> - [ ] **5. Conseil et soutien *(1 grille sur 2)***
 > 	- [ ] Conseil sur les drogues récréatives
 > 	- [ ] Offrir mouchoir et/ou eau pendant la crise de toux de la patiente
 > 	- [ ] Réaction appropriée au défi concernant la guérison
 > 	- [ ] Rassurer sur les options thérapeutiques
 > 	- [ ] Éducation sur l'asthme si confirmé
-> - [ ] **5. Diagnostic principal évoqué *(1 grille sur 2)***
-> - [ ] **6. Examens complémentaires *(1 grille sur 2)***
+> - [ ] **6. Diagnostic principal évoqué *(1 grille sur 2)***
+> - [ ] **7. Examens complémentaires *(1 grille sur 2)***
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] Bilan sanguin (FSC, CRP, CK, troponines, D-dimères)
 > 	- [ ] Épreuves fonctionnelles respiratoires avec test de provocation bronchique
 > 	- [ ] ECG/Échocardiographie
 > 	- [ ] Tests d'allergie
-> - [ ] **7. Traitement proposé *(1 grille sur 2)***
+> - [ ] **8. Traitement proposé *(1 grille sur 2)***
 > 	- [ ] Bêta-2-mimétiques (salbutamol) en inhalation
 > 	- [ ] Éducation thérapeutique
 > 	- [ ] Éviction des facteurs déclenchants
-> - [ ] **8. Diagnostics différentiels cardiaques *(1 grille sur 2)***
-> - [ ] **9. Diagnostics différentiels pulmonaires *(1 grille sur 2)***
-> - [ ] **10. Interprétation des épreuves fonctionnelles respiratoires *(1 grille sur 2)***
+> - [ ] **9. Diagnostics différentiels cardiaques *(1 grille sur 2)***
+> - [ ] **10. Diagnostics différentiels pulmonaires *(1 grille sur 2)***
+> - [ ] **11. Interprétation des épreuves fonctionnelles respiratoires *(1 grille sur 2)***
 > 	- [ ] Syndrome obstructif
 > 	- [ ] Résistances centrales augmentées
 > 	- [ ] Volume résiduel augmenté
@@ -941,13 +940,19 @@ cssclasses:
 > 	- [ ] Échocardiographie transthoracique
 > 	- [ ] BNP, NT-pro BNP
 > 	- [ ] Radiographie thoracique
-> - [ ] **2. Conseil et soutien**
+> - [ ] **2. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> - [ ] **3. Conseil et soutien**
 > 	- [ ] Offrir mouchoir et eau lors de la crise de toux
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Conseil sur les options de soutien pour l'exercice régulier
 > 	- [ ] Réaction appropriée au défi concernant l'arrêt du tabac
 > 	- [ ] Éducation sur les risques du tabagisme
-> - [ ] **3. Tests de fonction pulmonaire**
+> - [ ] **4. Tests de fonction pulmonaire**
 > 	- [ ] Spirométrie avec test de réversibilité
 
 > [!success] 💊 Management — si Bronchiolite
@@ -958,23 +963,23 @@ cssclasses:
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Oxymétrie de pouls
 > 	- [ ] Gazométrie artérielle
-> - [ ] **2. Conseil et soutien *(1 grille sur 2)***
+> - [ ] **2. Communication avec la patiente *(1 grille sur 2)***
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **3. Conseil et soutien *(1 grille sur 2)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi sur les coûts
 > 	- [ ] Orientation vers services sociaux
 > 	- [ ] Soutien émotionnel face à l'inquiétude
 > 	- [ ] Information sur l'urgence du diagnostic
-> - [ ] **3. Examens microbiologiques *(1 grille sur 2)***
+> - [ ] **4. Examens microbiologiques *(1 grille sur 2)***
 > 	- [ ] Coloration de Gram des expectorations, microscopie avec coloration acido-résistante, cytologie, et culture de routine et mycobactérienne
-> - [ ] **4. Examens biologiques et imagerie avancée *(1 grille sur 2)***
+> - [ ] **5. Examens biologiques et imagerie avancée *(1 grille sur 2)***
 > 	- [ ] FSC avec formule
 > 	- [ ] CT thoracique
-> - [ ] **5. Communication avec le patient *(1 grille sur 2)***
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du patient
 > - [ ] **6. Prise en charge immédiate *(1 grille sur 2)***
 > 	- [ ] Arrêt du tabac immédiat et accompagnement
 > 	- [ ] Consultation pneumologique urgente
