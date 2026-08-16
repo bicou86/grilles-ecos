@@ -35,11 +35,11 @@ cssclasses:
 > 	- [ ] Acouphènes : quel côté, permanents ou rythmés par les crises
 > 	- [ ] Plénitude auriculaire, sensation d'oreille bouchée
 > 	- [ ] Otalgie, prurit du conduit, otorrhée
-> 	- [ ] Éruption, vésicules ou croûtes du pavillon et du conduit
+> 	- [ ] Éruption, vésicules ou croûtes du pavillon et du conduit 🚩
 > 	- [ ] Infection récente des voies aériennes : rhume, toux, angine dans les jours précédents
 > 	- [ ] Fièvre, frissons
 > 	- [ ] Traumatisme crânien ou de l'oreille
-> - [ ] **4. Signes neurologiques d'alarme** (ils font sortir du cadre vestibulaire)
+> - [ ] **4. 🚩 Signes neurologiques d'alarme** (ils font sortir du cadre vestibulaire)
 > 	- [ ] Céphalée inhabituelle, cervicalgie
 > 	- [ ] Diplopie, baisse d'acuité visuelle, amputation du champ visuel
 > 	- [ ] Dysarthrie, dysphonie, dysphagie ou fausses routes
@@ -47,7 +47,7 @@ cssclasses:
 > 	- [ ] Asymétrie du visage
 > 	- [ ] Impossibilité de tenir debout ou de marcher sans aide
 > 	- [ ] Troubles cognitifs : mémoire, concentration, orientation
-> - [ ] **5. Retentissement et signes généraux d'alarme**
+> - [ ] **5. 🚩 Retentissement et signes généraux d'alarme**
 > 	- [ ] Retentissement fonctionnel : activités limitées, peur de chuter, chutes déjà survenues
 > 	- [ ] Perte de poids chiffrée et involontaire (combien de kg, sur combien de mois)
 > 	- [ ] Appétit, dégoût alimentaire ; troubles de la déglutition ; transit
@@ -88,10 +88,10 @@ cssclasses:
 > - [ ] **3. Examen vestibulaire et oculomoteur**
 > 	- [ ] Nystagmus, regard de face puis excentré : sens de la phase rapide, caractère
 > 		- [ ] Horizonto-rotatoire, unidirectionnel, atténué par la fixation : périphérique
-> 		- [ ] Vertical, ou changeant de sens selon la direction du regard : central
+> 		- [ ] Vertical, ou changeant de sens selon la direction du regard : central 🚩
 > 	- [ ] Head impulse test : saccade de rattrapage = déficit vestibulaire périphérique ;
->         **test normal chez un patient en vertige aigu persistant = alarme centrale**
-> 	- [ ] Test of skew (cover-test alterné) : réajustement vertical à la découverte = alarme centrale
+>         **test normal chez un patient en vertige aigu persistant = alarme centrale** 🚩
+> 	- [ ] Test of skew (cover-test alterné) : réajustement vertical à la découverte = alarme centrale 🚩
 > 	- [ ] Les trois précédents forment le **HINTS**, à réaliser devant tout vertige aigu persistant
 > 	- [ ] Poursuite oculaire lente, saccades, motilité dans les six directions, diplopie
 > 	- [ ] Stabilité du regard sur une cible pendant rotation passive de la tête (réflexe vestibulo-oculaire)

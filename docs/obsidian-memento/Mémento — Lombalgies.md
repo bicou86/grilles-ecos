@@ -1,6 +1,4 @@
 ---
-aliases:
-  - "Mémento Lombalgies (poche)"
 type: memento-ecos-pocket
 ssp: "Lombalgies"
 specialite: "Musculo-Squelettique"
@@ -40,7 +38,7 @@ cssclasses:
 > 	- [ ] Démarche instable
 > 	- [ ] Atteinte d'un seul côté ou des deux (une atteinte bilatérale fait craindre la queue de cheval)
 > - [ ] **4. 🚩 Drapeaux rouges — à demander devant TOUTE lombalgie**
-> 	- [ ] 🚨 **Syndrome de la queue de cheval** — urgence, imagerie et avis neurochirurgical sous 24 h :
+> 	- [ ] 🚩 **Syndrome de la queue de cheval** — urgence, imagerie et avis neurochirurgical sous 24 h :
 > 		- [ ] Troubles mictionnels : incontinence, rétention, difficulté à uriner ou à percevoir le besoin
 > 		- [ ] Incontinence fécale, perte du besoin d'aller à selle
 > 		- [ ] Anesthésie en selle (périnée, face interne des cuisses)
@@ -113,7 +111,7 @@ cssclasses:
 > 	- [ ] Sensibilité tactile, douloureuse et vibratoire
 > 	- [ ] Coordination : épreuve talon-genou
 > - [ ] **6. 🚩 Ce qu'il ne faut pas manquer**
-> 	- [ ] 🚨 Toucher rectal devant tout trouble mictionnel ou toute suspicion de queue de cheval : tonus sphinctérien, sensibilité péri-anale, prostate (taille, consistance, nodule), recherche de sang
+> 	- [ ] Toucher rectal devant tout trouble mictionnel ou toute suspicion de queue de cheval : tonus sphinctérien, sensibilité péri-anale, prostate (taille, consistance, nodule), recherche de sang
 > 	- [ ] Recherche d'un globe vésical
 > 	- [ ] Pouls périphériques (fémoraux, poplités, pédieux) si la douleur irradie dans les jambes
 > 	- [ ] Examen abdominal : auscultation, palpation superficielle et profonde, défense, masse pulsatile (anévrisme de l'aorte abdominale)

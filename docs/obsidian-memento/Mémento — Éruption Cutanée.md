@@ -1,6 +1,4 @@
 ---
-aliases:
-  - "Mémento Éruption Cutanée"
 type: memento-ecos-pocket
 ssp: "Éruption Cutanée"
 specialite: "Dermatologie"
@@ -66,10 +64,10 @@ cssclasses:
 > 	- [ ] Consommations : alcool, tabac, drogues
 > - [ ] **6. 🚩 Questions d'alarme, à poser devant toute éruption fébrile**
 > 	- [ ] Bouche, yeux, organes génitaux : brûlures, douleur à la déglutition, œil rouge, dysurie — l'atteinte de deux muqueuses doit faire évoquer un Stevens-Johnson
-> 	- [ ] Peau qui se décolle, cloques qui se rompent 🚨
+> 	- [ ] Peau qui se décolle, cloques qui se rompent
 > 	- [ ] Douleur cutanée disproportionnée par rapport à ce que l'on voit
 > 	- [ ] Fièvre élevée avec éruption d'extension rapide
-> 	- [ ] Gonflement du visage, des lèvres ou de la langue, gêne respiratoire 🚨
+> 	- [ ] Gonflement du visage, des lèvres ou de la langue, gêne respiratoire
 
 > [!tip] 🩺 Status
 > - [ ] **1. État général et constantes**
@@ -112,7 +110,7 @@ cssclasses:
 > 	- [ ] Palper les lésions : infiltration, relief, chaleur locale, douleur provoquée
 > 	- [ ] Texture au toucher : rugueuse « comme du papier de verre », rêche, sèche, suintante
 > 	- [ ] Vitropression : distinguer un érythème d'un purpura 🚩
-> 	- [ ] **Signe de Nikolsky** : la pression tangentielle sur peau saine décolle l'épiderme 🚨
+> 	- [ ] **Signe de Nikolsky** : la pression tangentielle sur peau saine décolle l'épiderme 🚩
 > 	- [ ] Reproduire la douleur en palpant le territoire atteint (thorax, dermatome)
 > 	- [ ] Grattage méthodique d'une plaque : signe de la bougie, dernière lamelle décollable, puis piqueté hémorragique (signe d'Auspitz)
 > 	- [ ] Dermographisme : tracer une ligne sur peau saine et attendre la réaction
@@ -125,9 +123,9 @@ cssclasses:
 > 	- [ ] Signes évocateurs d'une maladie systémique : éruption malaire, ulcérations buccales, alopécie, phénomène de Raynaud
 > 	- [ ] Signes de surinfection : suintement, pustules, croûtes mélicériques, lymphangite
 > - [ ] **6. 🚩 Signes à ne pas rater**
-> 	- [ ] Atteinte d'au moins deux muqueuses (buccale, oculaire, génitale) 🚨
-> 	- [ ] Bulles, décollement cutané, signe de Nikolsky positif, cocardes atypiques 🚨 Stevens-Johnson / Lyell
-> 	- [ ] Purpura ne s'effaçant pas à la vitropression, a fortiori nécrotique 🚨
+> 	- [ ] Atteinte d'au moins deux muqueuses (buccale, oculaire, génitale)
+> 	- [ ] Bulles, décollement cutané, signe de Nikolsky positif, cocardes atypiques : Stevens-Johnson / Lyell
+> 	- [ ] Purpura ne s'effaçant pas à la vitropression, a fortiori nécrotique
 > 	- [ ] Fièvre élevée, altération de l'état général, éruption d'extension rapide
 > 	- [ ] Douleur cutanée disproportionnée par rapport aux lésions visibles
-> 	- [ ] Œdème du visage, des lèvres ou de la langue, stridor, dyspnée 🚨
+> 	- [ ] Œdème du visage, des lèvres ou de la langue, stridor, dyspnée

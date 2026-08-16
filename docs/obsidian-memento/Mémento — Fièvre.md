@@ -1,6 +1,4 @@
 ---
-aliases:
-  - "Mémento Fièvre"
 type: memento-ecos-pocket
 ssp: "Fièvre"
 specialite: "Médecine Interne"

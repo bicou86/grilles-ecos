@@ -1,6 +1,4 @@
 ---
-aliases:
-  - "Mémento Douleur Abdominale"
 type: memento-ecos-pocket
 ssp: "Douleur Abdominale"
 specialite: "Gastro-Hépatologie"
@@ -27,7 +25,7 @@ cssclasses:
 > 	- [ ] Facteurs calmants, position antalgique, effet des antalgiques déjà pris
 > 	- [ ] Épisodes antérieurs identiques, fréquence, périodicité (saisonnière pour l'ulcère)
 > - [ ] **2. Symptômes digestifs associés**
-> 	- [ ] Nausées, vomissements : nombre, contenu (alimentaires, bilieux, fécaloïdes), sang rouge ou en marc de café
+> 	- [ ] Nausées, vomissements : nombre, contenu (alimentaires, bilieux, fécaloïdes), sang rouge ou en marc de café 🚩
 > 	- [ ] Perte d'appétit, dégoût pour la nourriture, satiété précoce
 > 	- [ ] Relation avec les repas : douleur post-prandiale, à jeun, calmée par l'alimentation ou le lait
 > 	- [ ] Pyrosis, réveil matinal avec goût acide, éructations, hoquet, ballonnements, flatulences
@@ -41,10 +39,10 @@ cssclasses:
 > 	- [ ] Aspect des selles :
 > 		- [ ] Glaires, pus, odeur anormale
 > 		- [ ] Sang rouge mêlé ou coiffant les selles : hématochézie
-> 		- [ ] Selles noires luisantes : méléna (hémorragie digestive haute)
+> 		- [ ] Selles noires luisantes : méléna (hémorragie digestive haute) 🚩
 > 		- [ ] Selles jaunes-grisâtres, pâteuses, flottantes : stéatorrhée
-> 	- [ ] Symptômes d'occlusion : arrêt des gaz **et** des matières, ballonnement, vomissements devenant fécaloïdes
-> - [ ] **4. État général et signes d'alarme**
+> 	- [ ] Symptômes d'occlusion : arrêt des gaz **et** des matières, ballonnement, vomissements devenant fécaloïdes 🚩
+> - [ ] **4. 🚩 État général et signes d'alarme**
 > 	- [ ] Fièvre (valeur de la dernière mesure), frissons solennels, sueurs
 > 	- [ ] Symptômes B : perte de poids involontaire quantifiée, sueurs nocturnes, asthénie
 > 	- [ ] Déshydratation : soif, apports hydriques, diurèse, vertiges, orthostatisme
@@ -57,7 +55,7 @@ cssclasses:
 > 	- [ ] Troubles mictionnels : dysurie, algurie, pollakiurie, urgenturie, hématurie ; volume, couleur et odeur des urines
 > 	- [ ] Chez la femme :
 > 		- [ ] Dernières règles, régularité, abondance, aménorrhée
-> 		- [ ] Risque de grossesse, contraception, test de grossesse déjà fait
+> 		- [ ] Risque de grossesse, contraception, test de grossesse déjà fait 🚩
 > 		- [ ] Pertes vaginales, dyspareunie, nouveau partenaire ou partenaires multiples, protection
 > 		- [ ] Métrorragies, en particulier post-ménopausiques
 > 		- [ ] Grossesses, parité, ménopause, chirurgie gynécologique, dernier frottis
@@ -102,7 +100,7 @@ cssclasses:
 > 	- [ ] Foie : bord inférieur lors d'une inspiration profonde, taille et consistance
 > 	- [ ] Rate : décubitus dorsal puis latéral droit, technique bimanuelle
 > 	- [ ] Reins (bimanuelle, pôle inférieur) et vessie (globe)
-> 	- [ ] Aorte abdominale : largeur, caractère expansif
+> 	- [ ] Aorte abdominale : largeur, caractère expansif 🚩
 > 	- [ ] Pouls périphériques, aires ganglionnaires (dont sus-claviculaires et inguinales)
 > 	- [ ] Orifices herniaires : inguinaux, cruraux, ombilical
 > - [ ] **5. Manœuvres spécifiques et touchers**
@@ -116,7 +114,7 @@ cssclasses:
 > 	- [ ] Examen gynécologique si indiqué : inspection du périnée, spéculum lubrifié à 45°, col, toucher vaginal, mobilisation utérine douloureuse, masses annexielles
 > 	- [ ] Compléter par un status cardio-pulmonaire, et neurologique si troubles de l'état de conscience
 > 	- [ ] Ne pas répéter inutilement les manœuvres douloureuses
-> - [ ] **6. Signes à ne pas rater**
+> - [ ] **6. 🚩 Signes à ne pas rater**
 > 	- [ ] État de choc : tachycardie, hypotension, marbrures, pâleur, sueurs froides
 > 	- [ ] Contracture généralisée (« ventre de bois ») ou défense : péritonite
 > 	- [ ] Silence abdominal, ou bruits de lutte avec météorisme : occlusion

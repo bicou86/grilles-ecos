@@ -1,6 +1,4 @@
 ---
-aliases:
-  - "Mémento Chute & Évaluation Gériatrique"
 type: memento-ecos-pocket
 ssp: "Chute & Évaluation Gériatrique"
 specialite: "Musculo-Squelettique"
@@ -20,17 +18,17 @@ cssclasses:
 > 	- [ ] Quand, où, en faisant quoi (domicile, escaliers, salle de bain, extérieur, institution) ; y avait-il un témoin
 > 	- [ ] Mécanisme rapporté : a-t-il buté sur quelque chose, glissé, ou les jambes ont-elles lâché
 > 	- [ ] Énergie : chute de sa hauteur, d'un escalier ; partie du corps qui a touché le sol en premier (main tendue, hanche, tête)
-> 	- [ ] Temps passé au sol sans pouvoir se relever, à demander explicitement — au-delà d'une heure, rhabdomyolyse, insuffisance rénale et déshydratation
+> 	- [ ] Temps passé au sol sans pouvoir se relever, à demander explicitement — au-delà d'une heure, rhabdomyolyse, insuffisance rénale et déshydratation 🚩
 > 	- [ ] Qui l'a relevé, qui a donné l'alerte
 > 	- [ ] Chutes antérieures : nombre, circonstances, se répètent-elles au même endroit
 > - [ ] **2. Pourquoi est-il tombé — le prodrome décide de tout**
-> 	- [ ] Perte de connaissance : si oui, l'enquête devient celle d'une syncope — durée, récupération complète, morsure de langue, perte d'urine, confusion au réveil
+> 	- [ ] Perte de connaissance : si oui, l'enquête devient celle d'une syncope — durée, récupération complète, morsure de langue, perte d'urine, confusion au réveil 🚩
 > 	- [ ] Sensation de malaise, de tête vide, de voile devant les yeux juste avant
 > 	- [ ] Survenue au lever brutal ou après le repas : hypotension orthostatique
 > 	- [ ] Palpitations, douleur thoracique, dyspnée, sueurs : cause cardiaque (arythmie, sténose aortique)
 > 	- [ ] Vertige — rotatoire (vestibulaire, positionnel) ou simple déséquilibre : deux pistes différentes
-> 	- [ ] Déficit focal : faiblesse d'un côté, trouble sensitif, trouble du langage, trouble de la vue — évoque l'AVC ou l'AIT ; préciser le dernier moment où le patient était normal
-> 	- [ ] Fièvre, confusion récente, troubles urinaires : chez le sujet âgé, une infection se dit souvent par une chute
+> 	- [ ] Déficit focal : faiblesse d'un côté, trouble sensitif, trouble du langage, trouble de la vue — évoque l'AVC ou l'AIT ; préciser le dernier moment où le patient était normal 🚩
+> 	- [ ] Fièvre, confusion récente, troubles urinaires : chez le sujet âgé, une infection se dit souvent par une chute 🚩
 > 	- [ ] Vision et audition : acuité, correction portée, dernier contrôle
 > 	- [ ] Troubles de l'équilibre et de la marche préexistants, douleurs articulaires des membres inférieurs, faiblesse des cuisses au lever
 > 	- [ ] Environnement : obstacle, tapis, seuil, éclairage nocturne, chaussures
@@ -40,7 +38,7 @@ cssclasses:
 > 		- [ ] Psychotropes : benzodiazépines et somnifères apparentés, neuroleptiques, antidépresseurs, anticholinergiques
 > 		- [ ] Opiacés et antiépileptiques, souvent oubliés dans la revue
 > 		- [ ] Insuline et sulfonylurées, qui exposent à l'hypoglycémie
-> 		- [ ] Anticoagulant ou antiagrégant : la réponse change la gravité d'un choc à la tête
+> 		- [ ] Anticoagulant ou antiagrégant : la réponse change la gravité d'un choc à la tête 🚩
 > 		- [ ] Nombre total : quatre médicaments ou plus est un facteur de risque en soi
 > 	- [ ] Antécédents médicaux : hypertension, diabète, problème cardiaque, AVC, arthrose, ostéoporose ou fracture de fragilité antérieure
 > 	- [ ] Facteurs de risque cardiovasculaire : hypertension, hyperlipidémie, diabète, tabac
@@ -49,7 +47,7 @@ cssclasses:
 > 	- [ ] Anamnèse familiale : AVC, maladies cardiaques, hypertension, diabète
 > 	- [ ] Alcool, tabac, drogues
 > - [ ] **4. Ce que la chute a causé**
-> 	- [ ] Choc à la tête : le demander même s'il n'est pas rapporté spontanément
+> 	- [ ] Choc à la tête : le demander même s'il n'est pas rapporté spontanément 🚩
 > 		- [ ] Antithrombotique, perte de connaissance, amnésie de l'épisode, vomissements, céphalée, somnolence ou déficit : autant de raisons de scanner
 > 		- [ ] L'hématome sous-dural du sujet âgé se révèle des semaines plus tard, par une confusion ou de nouvelles chutes, sans céphalée ni déficit
 > 	- [ ] Douleurs : localisation, intensité, caractère, irradiation, évolution depuis la chute, facteurs aggravants et atténuants
@@ -69,7 +67,7 @@ cssclasses:
 > 	- [ ] Cognition, humeur, sommeil
 > 	- [ ] Continence urinaire et fécale, transit, mictions nocturnes — et le trajet vers les toilettes la nuit
 > 	- [ ] Peur de retomber et restriction d'activité qui s'ensuit : elle immobilise autant que la lésion
-> 	- [ ] Maltraitance : histoire incohérente avec les lésions, lésions d'âges différents, peur pour sa sécurité ou celle des proches — interroger la personne seule
+> 	- [ ] Maltraitance : histoire incohérente avec les lésions, lésions d'âges différents, peur pour sa sécurité ou celle des proches — interroger la personne seule 🚩
 
 > [!tip] 🩺 Status
 > - [ ] **1. Constantes, tension debout-couché comprise**
@@ -83,9 +81,9 @@ cssclasses:
 > 	- [ ] Rachis cervical palpé selon la règle canadienne, puis rachis dorso-lombaire
 > 	- [ ] Membres supérieurs comparés côte à côte : épaule, bras, coude, avant-bras, poignet, main — la réception sur la main tendue les lèse ensemble, palper au-dessus et en dessous du point douloureux
 > 	- [ ] Grill costal, puis bassin : compression latérale et palpation de la symphyse
-> 	- [ ] Hanche : une jambe raccourcie et tournée en dehors désigne le col fémoral
+> 	- [ ] Hanche : une jambe raccourcie et tournée en dehors désigne le col fémoral 🚩
 > 	- [ ] Membres inférieurs : déformation, œdème, ecchymoses
-> 	- [ ] Peau sur tout le corps, pudeur respectée : ecchymoses d'âges différents, lésions inexpliquées
+> 	- [ ] Peau sur tout le corps, pudeur respectée : ecchymoses d'âges différents, lésions inexpliquées 🚩
 > - [ ] **3. Examen neurologique**
 > 	- [ ] Orientation, état de conscience, langage ; cognition (MMS ou test bref)
 > 	- [ ] Nerfs crâniens, recherche d'un nystagmus
@@ -96,7 +94,7 @@ cssclasses:
 > 	- [ ] Romberg, Unterberger
 > 	- [ ] Recherche d'apraxie ; signes méningés
 > - [ ] **4. Cardio-vasculaire, sensoriel et général**
-> 	- [ ] Auscultation cardiaque aux quatre foyers : un souffle fait chercher une sténose aortique ; rythme régulier ou non
+> 	- [ ] Auscultation cardiaque aux quatre foyers : un souffle fait chercher une sténose aortique 🚩 ; rythme régulier ou non
 > 	- [ ] Pouls radial et pouls des pieds ; auscultation des carotides
 > 	- [ ] Veines jugulaires, recherche d'œdèmes des membres inférieurs
 > 	- [ ] Auscultation pulmonaire

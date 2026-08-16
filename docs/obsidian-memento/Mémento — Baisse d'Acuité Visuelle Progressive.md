@@ -13,8 +13,6 @@ cssclasses:
 
 ## Baisse d'Acuité Visuelle Progressive
 
-> Voir aussi [[Mémento — Amaurose & Perte Brutale de Vision]]
-
 > [!note] 📋 Anamnèse
 > - [ ] **1. Caractérisation de la baisse de vision**
 > 	- [ ] Question d'entrée ouverte — « Qu'est-ce qui vous amène aujourd'hui ? » —

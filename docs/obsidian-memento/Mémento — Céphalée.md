@@ -1,6 +1,4 @@
 ---
-aliases:
-  - "Mémento Céphalée"
 type: memento-ecos-pocket
 ssp: "Céphalée"
 specialite: "Neurologie"

@@ -1,6 +1,4 @@
 ---
-aliases:
-  - "Mémento Dyspnée"
 type: memento-ecos-pocket
 ssp: "Dyspnée"
 specialite: "Pneumologie"
@@ -25,7 +23,7 @@ cssclasses:
 > 	- [ ] Influence de la position ; ce qui soulage (position assise ou debout, air frais, repos, médicament pris)
 > 	- [ ] Saisonnalité, périodes d'amélioration, épisodes antérieurs et leur fréquence
 > 	- [ ] Durée d'un épisode et temps de récupération après l'arrêt de l'effort
-> 	- [ ] Gravité et stabilité : dyspnée présente au repos, patient incapable de finir une phrase 🚨
+> 	- [ ] Gravité et stabilité : dyspnée présente au repos, patient incapable de finir une phrase 🚩
 > - [ ] **2. Éléments d'orientation cardiaque**
 > 	- [ ] Orthopnée : faire préciser le **nombre d'oreillers** pour dormir
 > 	- [ ] Dyspnée paroxystique nocturne : réveil en étouffant, soulagé en s'asseyant ou en ouvrant la fenêtre
@@ -76,7 +74,7 @@ cssclasses:
 > 	- [ ] **SpO2 en air ambiant**, température
 > 	- [ ] État général, position spontanée (semi-assise), dyspnée présente au repos
 > 	- [ ] Coloration cutanée : cyanose péribuccale et des extrémités 🚩
-> 	- [ ] Signes de lutte : tirage sus-sternal, recrutement des scalènes et des sterno-cléido-mastoïdiens, respiration abdominale paradoxale 🚨
+> 	- [ ] Signes de lutte : tirage sus-sternal, recrutement des scalènes et des sterno-cléido-mastoïdiens, respiration abdominale paradoxale 🚩
 > 	- [ ] Thorax : morphologie (thorax en tonneau = distension), type de respiration, symétrie des mouvements
 > 	- [ ] Turgescence jugulaire et hauteur du pouls jugulaire, patient à 45° 🚩
 > - [ ] **2. Palpation du thorax et du cœur**
@@ -99,7 +97,7 @@ cssclasses:
 > 	- [ ] Crépitants fins des bases, dits « velcro » : œdème pulmonaire ou fibrose
 > 	- [ ] Crépitants grossiers : sécrétions, bronchectasies, pneumonie
 > 	- [ ] Souffle tubaire et bronchophonie : condensation
-> 	- [ ] Frottement pleural : pleurésie — **stridor** : obstruction des voies aériennes hautes 🚨
+> 	- [ ] Frottement pleural : pleurésie — **stridor** : obstruction des voies aériennes hautes 🚩
 > - [ ] **5. Auscultation cardiaque**
 > 	- [ ] Les **quatre foyers**, en décubitus dorsal à 45°
 > 	- [ ] B1 et B2 : présents, assourdis, inaudibles

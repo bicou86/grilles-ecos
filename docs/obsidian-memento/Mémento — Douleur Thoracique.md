@@ -1,6 +1,4 @@
 ---
-aliases:
-  - "Pocketcard Douleur Thoracique"
 type: memento-ecos-pocket
 ssp: "Douleur Thoracique"
 specialite: "Cardiologie & Vasculaire"
@@ -19,7 +17,7 @@ cssclasses:
 > - [ ] **1. Caractérisation de la douleur thoracique**
 > 	- [ ] Localisation (faire montrer avec la main : main à plat ou poing sur le sternum → viscérale ; un doigt → pariétale)
 > 	- [ ] Irradiation : bras, épaule, mâchoire, dos interscapulaire, épigastre
-> 	- [ ] Début : heure exacte, installation brutale ou progressive
+> 	- [ ] Début : heure exacte, installation brutale ou progressive 🚩
 > 	- [ ] Durée et évolution : constante, intermittente, croissante, stable depuis
 > 	- [ ] Qualité : oppressive/constrictive, sourde, piquante/lancinante, brûlante
 > 	- [ ] Intensité (échelle 0-10) et impact fonctionnel
@@ -34,15 +32,15 @@ cssclasses:
 > 		- [ ] Décubitus, position couchée : oriente vers le péricarde ou le reflux
 > 		- [ ] Effort, montée d'escaliers, froid : origine coronarienne
 > 	- [ ] Facteurs calmants : repos, position penchée en avant, respiration superficielle, antalgiques déjà pris, dérivés nitrés, antiacides
-> 	- [ ] Épisodes antérieurs : premier épisode ou récidive, fréquence croissante, seuil d'effort qui baisse
+> 	- [ ] Épisodes antérieurs : premier épisode ou récidive, fréquence croissante, seuil d'effort qui baisse 🚩
 > 	- [ ] Retentissement à l'effort (classe CCS) : I activités normales · II limitation légère · III limitation marquée · IV moindre effort ou repos
 > - [ ] **2. Symptômes associés**
 > 	- [ ] Dyspnée : circonstances de survenue, chronologie, sévérité (NYHA)
 > 		- [ ] Orthopnée, dyspnée paroxystique nocturne, dyspnée d'effort
 > 	- [ ] Symptômes végétatifs : nausées, vomissements, sueurs, pâleur, malaise
 > 	- [ ] Palpitations
-> 	- [ ] Vertiges, lipothymie, syncope, perte de connaissance
-> 	- [ ] Toux, expectorations, hémoptysie
+> 	- [ ] Vertiges, lipothymie, syncope, perte de connaissance 🚩
+> 	- [ ] Toux, expectorations, hémoptysie 🚩
 > 	- [ ] Fièvre, frissons · état grippal ou infection respiratoire récente, contage
 > 	- [ ] Pyrosis, régurgitations, douleurs épigastriques
 > 	- [ ] Œdèmes bilatéraux des chevilles et des membres inférieurs
@@ -61,7 +59,7 @@ cssclasses:
 > 	- [ ] Diabète
 > 	- [ ] Dyslipidémie, hypercholestérolémie
 > 	- [ ] Surpoids (poids, taille, IMC), sédentarité, activité physique
-> 	- [ ] Alcool · cocaïne et amphétamines (durée, fréquence, dernière prise : risque de spasme coronaire)
+> 	- [ ] Alcool · cocaïne et amphétamines (durée, fréquence, dernière prise : risque de spasme coronaire) 🚩
 > 	- [ ] Stress professionnel
 > 	- [ ] Antécédents personnels : angor, infarctus, AVC, affection cardiaque connue
 > 	- [ ] Antécédents familiaux : infarctus ou mort subite — préciser le lien de parenté et l'âge de survenue
@@ -94,7 +92,7 @@ cssclasses:
 > 	- [ ] Membres inférieurs : œdème, asymétrie de volume, chaleur, rougeur
 > - [ ] **3. Palpation**
 > 	- [ ] Thorax : douleur reproductible à la pression (côtes, jonctions chondro-costales) — argument pariétal fort
-> 	- [ ] Emphysème sous-cutané (crépitation neigeuse sous les doigts)
+> 	- [ ] Emphysème sous-cutané (crépitation neigeuse sous les doigts) 🚩
 > 	- [ ] Frémitus vocal et tactile, comparé des deux côtés (faire dire « trente-trois »)
 > 	- [ ] Choc de pointe : localisation, amplitude, frémissement
 > 	- [ ] Aire précordiale, 2ᵉ espace intercostal droit, creux épigastrique (choc systolique du ventricule droit)
@@ -121,7 +119,7 @@ cssclasses:
 > 	- [ ] Signe de Homans et recherche de thrombose veineuse profonde
 > 	- [ ] Bref examen neurologique : orientation temps / espace / personnes, force et sensibilité des extrémités
 > 	- [ ] Contexte traumatique : examen sommaire du rachis, des quatre membres, des pupilles et de l'oculomotricité
-> - [ ] **7. Signes à ne pas rater**
+> - [ ] **7. 🚩 Signes à ne pas rater**
 > 	- [ ] Du même côté : ampliation diminuée + tympanisme + murmure vésiculaire aboli + frémitus diminué — épanchement aérique
 > 	- [ ] Déviation trachéale du côté opposé, turgescence jugulaire et collapsus : forme sous tension, urgence immédiate
 > 	- [ ] Asymétrie de tension artérielle ou de pouls entre les deux bras
