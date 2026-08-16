@@ -63,9 +63,14 @@ REPO = Path(__file__).resolve().parents[1]
 SEUIL_DEFAUT = 1100
 
 OUVRE_WRAP = '<div class="images-wrapper">'
-RE_ITEM = re.compile(r'<div class="annexe-item"(?=[ >])[^>]*>')
+RE_ITEM = re.compile(r'<div class="([^"]*\bannexe-item\b[^"]*)"[^>]*>')
 RE_BLOC = re.compile(r'<div class="annexe-(title|description|image)">')
 RE_SRC = re.compile(r'<img[^>]*\ssrc="([^"]*)"')
+# Classe posee par le socle AMBOSS pour forcer la pleine largeur d'un panneau de
+# texte en image (cases/case-styles.css : flex 0 0 100%). Elle est conservee
+# telle quelle et vaut decision : un item qui la porte ne prend jamais de
+# data-image-id, quelle que soit la largeur mesuree.
+PLEINE_LARGEUR = "annexe-message-cle"
 
 
 def _fin_equilibree(html, debut):
@@ -99,7 +104,7 @@ def _wrappers(html):
 def _blocs(seg):
     """Rend la suite des blocs annexe-title/description/image d'un segment.
 
-    Chaque element est le couple (genre, texte_integral_du_div).
+    Chaque element est le triplet (genre, texte_integral_du_div, position).
     """
     out = []
     pos = 0
@@ -110,18 +115,39 @@ def _blocs(seg):
         fin = _fin_equilibree(seg, m.start())
         if fin < 0:
             return out
-        out.append((m.group(1), seg[m.start():fin + len("</div>")]))
+        out.append((m.group(1), seg[m.start():fin + len("</div>")], m.start()))
+        pos = fin + len("</div>")
+
+
+def _classes_par_position(seg):
+    """Rend les tranches (debut, fin, classes_en_plus) de chaque annexe-item.
+
+    Sert a retrouver les classes de l'item qui contenait une unite donnee — le
+    socle AMBOSS en pose une, `annexe-message-cle`, qui vaut decision de mise en
+    page et ne doit pas disparaitre a la reecriture.
+    """
+    out = []
+    pos = 0
+    while True:
+        m = RE_ITEM.search(seg, pos)
+        if not m:
+            return out
+        fin = _fin_equilibree(seg, m.start())
+        if fin < 0:
+            return out
+        sup = [c for c in m.group(1).split() if c != "annexe-item"]
+        out.append((m.end(), fin, sup))
         pos = fin + len("</div>")
 
 
 def _unites(blocs):
     """Groupe les blocs en unites, une par image : title, [description], image."""
     unites, courante = [], []
-    for genre, texte in blocs:
-        if genre == "title" and courante:
+    for bloc in blocs:
+        if bloc[0] == "title" and courante:
             unites.append(courante)
             courante = []
-        courante.append((genre, texte))
+        courante.append(bloc)
     if courante:
         unites.append(courante)
     return unites
@@ -151,21 +177,27 @@ def convertit(html, chemin, seuil):
         unites = _unites(_blocs(seg))
         if not unites:
             continue
+        tranches = _classes_par_position(seg)
         morceaux, rang = [], 0
         for unite in unites:
-            srcs = [m.group(1) for _, t in unite for m in RE_SRC.finditer(t)]
+            ou = unite[0][2]
+            sup = next((c for d, f, c in tranches if d <= ou < f), [])
+            srcs = [m.group(1) for _, t, _ in unite for m in RE_SRC.finditer(t)]
             largeurs = [largeur_native(s, racine) for s in srcs]
-            # Une image illisible, ou plus large que le seuil, garde la pleine largeur.
-            colonne = bool(largeurs) and all(
-                l is not None and l <= seuil for l in largeurs)
+            # Une image illisible, plus large que le seuil, ou dont l'item porte
+            # deja la classe pleine largeur, n'est pas mise en colonne.
+            colonne = (bool(largeurs)
+                       and PLEINE_LARGEUR not in sup
+                       and all(l is not None and l <= seuil for l in largeurs))
+            classe = " ".join(["annexe-item"] + sup)
             if colonne:
                 rang += 1
                 n_col += 1
-                ouvre = '<div class="annexe-item" data-image-id="img%d">' % rang
+                ouvre = '<div class="%s" data-image-id="img%d">' % (classe, rang)
             else:
                 n_plein += 1
-                ouvre = '<div class="annexe-item">'
-            corps = "".join("\n    " + t for _, t in unite)
+                ouvre = '<div class="%s">' % classe
+            corps = "".join("\n    " + t for _, t, _ in unite)
             morceaux.append(ouvre + corps + "\n</div>")
         sortie = sortie[:deb] + "\n" + "\n".join(morceaux) + "\n" + sortie[fin:]
 
@@ -176,7 +208,8 @@ def convertit(html, chemin, seuil):
     def compte(s, motif):
         return len(re.findall(motif, s))
 
-    for motif, nom in ((r"<img\b", "img"), (r'<span class="c-', "spans semantiques")):
+    for motif, nom in ((r"<img\b", "img"), (r'<span class="c-', "spans semantiques"),
+                       (r'\b' + PLEINE_LARGEUR + r'\b', PLEINE_LARGEUR)):
         if compte(html, motif) != compte(sortie, motif):
             return html, 0, 0, "compte de %s modifie (%d -> %d)" % (
                 nom, compte(html, motif), compte(sortie, motif))
@@ -186,7 +219,7 @@ def convertit(html, chemin, seuil):
         return html, 0, 0, "solde des <div> modifie"
 
     def corps_wrappers(s):
-        return [b for deb, fin in _wrappers(s) for b in _blocs(s[deb:fin])]
+        return [b[:2] for deb, fin in _wrappers(s) for b in _blocs(s[deb:fin])]
 
     if corps_wrappers(html) != corps_wrappers(sortie):
         return html, 0, 0, "contenu des blocs modifie"

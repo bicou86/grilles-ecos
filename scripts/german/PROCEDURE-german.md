@@ -574,19 +574,20 @@ Il **s'arrête bruyamment** au lieu de livrer quelque chose de faux :
 `--check` diagnostique sans rien copier ; `--verify` vérifie que tous les `src`
 des 88 grilles pointent vers un fichier existant, et signale les orphelines.
 
-**Une seule `<div class="annexe-item">` par grille — une « planche » — dans
-l'`images-wrapper` existant**, portant N triplets `annexe-title` +
-`annexe-description` + `annexe-image` :
+**Un `<div class="annexe-item">` par image**, dans l'`images-wrapper` existant,
+portant son triplet `annexe-title` + `annexe-description` + `annexe-image` :
 
 ```html
 <div class="images-wrapper">
-<div class="annexe-item">
+<div class="annexe-item" data-image-id="img1">      <!-- image ≤ 1100 px -->
     <div class="annexe-title">…</div>
     <div class="annexe-description">…</div>
     <div class="annexe-image">
         <img src="../img/german/general-score-audit-c.png" alt="…" />
     </div>
-    <div class="annexe-title">…</div>   <!-- image 2, même item -->
+</div>
+<div class="annexe-item">                            <!-- image > 1100 px -->
+    <div class="annexe-title">…</div>
     …
 </div>
 </div>
@@ -597,17 +598,32 @@ l'`images-wrapper` existant**, portant N triplets `annexe-title` +
 les images dans `cases/img/german/` : un seul niveau à remonter, comme
 `../img/commcard-sbar.jpg` des cartes de communication.
 
-**Pourquoi une seule et non N.** `BLOCKS` compte les segments `annexe-image` à
-partir de `<div class="annexe-item"` : **N items feraient N segments**, donc
-`blocks` changerait, donc `baseline.json` serait à re-snapshoter — sur les 88
-grilles. L'invariant qui protège les bornes pendant tout le chantier perdrait sa
-valeur au moment précis où on en a le plus besoin. Une planche unique le laisse
-gelé : German-1 passe de 1 à 3 images avec `annexe-image` toujours à **1
-segment**, `check_invariants.py` OK, `baseline.json` non touché. (German-68 porte
-deux `annexe-item` — c'est l'état d'import, pas le gabarit.)
+**`data-image-id` se pose selon la largeur native de l'image, pas selon son
+rôle.** L'attribut déclenche `width: 49% !important` ; `max-width: 100%` plafonne
+sans étirer. Une image de 520 px s'affiche donc à 520 px qu'elle occupe une
+colonne ou toute la planche — la colonne ne lui coûte rien et récupère la moitié
+de page qu'elle laissait vide. Un panneau de texte de 2040 px, lui, tomberait de
+1078 px à ~500 px et deviendrait illisible : il reste sans attribut, donc pleine
+largeur. **Le seuil est 1100 px**, et c'est `scripts/plates_widths.py` qui
+applique la règle sur tout un corpus — ne pas la reproduire à la main.
 
-**Ne pas poser `data-image-id`** : l'attribut déclenche `width: 49% !important`
-et écraserait un panneau de texte de 2040 px dans ~380 px, illisible.
+**Ce paragraphe remplace la règle « une seule planche par grille ».** Elle tenait
+à ceci : `BLOCKS` compte les segments `annexe-image` à partir de
+`<div class="annexe-item"`, donc N items font N segments, donc `blocks` change et
+`baseline.json` est à re-snapshoter sur les 88 grilles — ce qu'on refusait
+pendant le chantier d'import, quand l'invariant des bornes servait le plus. Le
+chantier est terminé : le re-snapshot a été fait et vérifié champ par champ, seul
+le compte de `annexe-image` a bougé, sur 78 grilles, aucun autre champ, et
+`boundsAnomalies` comme `uncoveredContent` sont restés vides. La règle avait un
+coût permanent — pas de colonnes — pour un bénéfice qui a expiré.
+
+**Le corpus casecos ne suit PAS cette règle** et garde ses planches d'un seul
+item : son `BLOCKS` n'a pas d'entrée `annexe-image`, la planche y est couverte
+par l'entrée générique `annexe-nu` (`<div class="annexe-item">`, queue sur
+`images-wrapper` ou l'`END_MARK`). Éclater la planche y produit 65
+`boundsAnomalies` et 172 `uncoveredContent` — exactement l'angle mort
+d'AMBOSS-34. L'y étendre demande d'abord d'ajouter une entrée `annexe-image` à
+`lib_casecos.py`, ce qui touche le contrat structurel du corpus.
 
 **Octets recopiés tels quels du vault, jamais ré-encodés ni recompressés** — le
 sha256 du fichier livré doit être celui du fichier du vault. C'est ce qui rend la
