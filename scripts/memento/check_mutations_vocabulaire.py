@@ -31,6 +31,10 @@ import lib_yaml                                           # noqa: E402
 # (motif attendu, SSP, cle, valeur, cle a retirer d'abord)
 #   "collision" -> propriete 8, la table confondrait deux libelles qu'une
 #                  grille distingue. C'est le refus GRAVE.
+#   "negation"  -> propriete 10, la forme canonique retenue NIE ce que la cle
+#                  affirmait. La reunion est bonne, le sens de l'entree ne l'est
+#                  pas : le memento afficherait « Pas de turgescence jugulaire »
+#                  la ou la grille demande de CHERCHER le signe.
 #   "inerte"    -> propriete 7, l'entree ne rapprocherait rien.
 #   "cle"       -> propriete 3, la cle n'existe pas dans cette SSP.
 #   "cible"     -> propriete 4, la forme canonique est inventee.
@@ -74,10 +78,23 @@ MUTATIONS = [
     # Une vraie chaine, sans collision : « Habitudes de vie » est deja la cle
     # d'une entree de Hématurie, la viser comme CIBLE ferait A->B et B->C.
     ("chaine", "Hématurie", "Habitudes et mode de vie", "Habitudes de vie", None),
+    # NEGATION RETENUE — les deux fixtures sont, mot pour mot, deux des cinq
+    # entrees que la ronde 1 a produites et qu'il a fallu inverser a la main.
+    # Elles etaient VERTES sur les neuf proprietes de l'epoque : elles visent des
+    # libelles reels, elles mordent, elles ne chainent pas, aucune grille ne
+    # porte les deux libelles donc la propriete 8 n'avait pas de temoin. La
+    # table livree porte aujourd'hui l'entree INVERSE, qui est la bonne ; chaque
+    # mutation la retire d'abord, sans quoi elle serait refusee comme chaine et
+    # le motif de refus ne prouverait rien de la propriete 10.
+    ("negation", "Douleur Thoracique",
+     "Hépatomégalie", "Pas d'hépatomégalie", "Pas d'hépatomégalie"),
+    ("negation", "Toux",
+     "Productive ou sèche", "Productive ou non", "Productive ou non"),
 ]
 
 MOTIFS = {
     "collision": lambda e: "RAPPROCHEMENT ABUSIF" in e,
+    "negation": lambda e: "la forme NÉGATIVE" in e,
     "inerte": lambda e: "ne rapproche aucune grille" in e,
     "cle": lambda e: "aucune grille de cette SSP ne porte ce libellé" in e,
     "cible": lambda e: "la forme canonique n'est portée par aucune grille" in e,
@@ -91,7 +108,15 @@ MOTIFS = {
 # verifie par mutation de ce fichier meme, elle passait au vert. Or c'est
 # exactement l'erreur a ne pas refaire : « inerte » se lit « inoffensif »,
 # « collision » se lit « cela aurait efface une distinction ».
-GRAVITE = {"collision": 3, "cle": 2, "cible": 2, "chaine": 2, "inerte": 1}
+#
+# L'ECHELLE EST CELLE DE CE QUI ATTEINT LE LECTEUR DU MEMENTO, pas celle de la
+# difficulte du diagnostic. « collision » efface une distinction clinique sans
+# trace ; « negation » lui fait lire un resultat la ou la grille demandait un
+# geste — les deux produisent un memento qu'on croira. Les fautes de saisie
+# (« cle », « cible », « chaine ») rendent l'entree inoperante, ce qui est
+# genant mais visible ; « inerte » ne coute qu'un libelle inutile.
+GRAVITE = {"collision": 4, "negation": 3, "cle": 2, "cible": 2, "chaine": 2,
+           "inerte": 1}
 
 
 def concerne(ecart, ssp, cle):
@@ -141,8 +166,10 @@ def main():
             print("  ", e)
         return 1
     collisions = sum(1 for m in MUTATIONS if m[0] == "collision")
+    negations = sum(1 for m in MUTATIONS if m[0] == "negation")
     print(f"OK — {len(MUTATIONS)} mutations du vocabulaire détectées avec le bon "
-          f"motif (dont {collisions} collisions), témoin vert")
+          f"motif (dont {collisions} collisions et {negations} négations retenues), "
+          "témoin vert")
     return 0
 
 

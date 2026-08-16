@@ -91,3 +91,69 @@ def positions_par_ssp(groupes):
 def inventaire(lot=None):
     """Raccourci : l'inventaire du corpus entier (ou du lot donne)."""
     return libelles_par_ssp(build_memento.par_ssp(lot))
+
+
+# NEGATION ASYMETRIQUE — l'angle mort que la ronde 1 de curation a paye cinq
+# fois, et la raison pour laquelle cette regle vit ICI et non dans l'un de ses
+# deux consommateurs.
+#
+# `report_doublons.antonymie()` exige un mot de CHAQUE cote : elle compare les
+# mots propres a l'un aux mots propres a l'autre, et rend None des que l'un des
+# deux ensembles est vide. Or « Hepatomegalie » et « Pas d'hepatomegalie » ne
+# different que par un mot present d'UN SEUL cote. TROIS mecanismes regardaient
+# exactement la sans rien voir : `ANTONYMES` ne connait ni « pas » ni « sans » ;
+# `lib_cle.MOTS_VIDES` ne les efface pas ; et aucune grille ne portant les deux
+# libelles, la propriete 8 de `check_vocabulaire` n'avait pas de temoin.
+# Resultat mesure : cinq entrees ont retenu la forme NEGATIVE comme intitule, et
+# il a fallu les inverser a la main apres coup — dans une checklist, « Pas de
+# turgescence jugulaire » se lit comme un RESULTAT, pas comme un geste a faire.
+#
+# EFFACER CES MOTS DANS `lib_cle.MOTS_VIDES` SERAIT LE MAUVAIS CORRECTIF, et
+# c'est le seul des trois angles morts qu'il ne faut SURTOUT PAS boucher ainsi :
+# « Pas d'hepatomegalie » et « Hepatomegalie » partageraient alors leur
+# SIGNATURE, et le socle A les confondrait tout seul, sans table, sans entree et
+# sans trace. La negation doit rester VISIBLE dans la cle ; elle est SIGNALEE
+# par `report_doublons` et REFUSEE par la propriete 10 de `check_vocabulaire` —
+# deux consommateurs, une seule liste, comme lib_cle pour la cle.
+#
+# LES MOTS SONT DECLARES EN FRANCAIS PUIS CANONISES, JAMAIS ECRITS EN JETONS.
+# `lib_cle._singulier` ampute le « s » final de tout mot de plus de trois
+# lettres : « sans » devient « san » et « jamais » devient « jamai ». Une liste
+# ecrite a la main en jetons aurait rate ces deux-la en silence.
+#
+# DEUX MOTS ONT ETE ECARTES APRES COMPTAGE SUR LE CORPUS, et le motif est garde
+# pour qu'on ne les rajoute pas par reflexe :
+#
+#   « ni »                — ses trois occurrences accompagnent TOUTES une autre
+#                           negation (« Jamais hospitalise ni opere », « Pas de
+#                           si, ni de mais »). Le retirer de la liste ne change
+#                           la reponse du detecteur sur aucun libelle du corpus :
+#                           il serait un mot decoratif, que `check_negation.py`
+#                           refuse par construction.
+#   « negatif/negative »  — deux de ses sept occurrences ne nient rien, elles
+#                           qualifient (« Poursuite malgre consequences
+#                           NEGATIVES », « pression sociale NEGATIVE ») ; les
+#                           cinq autres nient bien un resultat (« Criteres
+#                           d'Ottawa negatifs »). Aucune paire candidate du
+#                           rapport ne les oppose aujourd'hui : le mot
+#                           n'apporterait que ses faux positifs.
+NEGATIONS_MOTS = ("absence", "aucun", "aucune", "jamais", "non", "pas", "sans")
+NEGATIONS = frozenset(t for m in NEGATIONS_MOTS for t in lib_fusion.cle(m).split())
+
+
+def nie(libelle):
+    """Les mots de negation que ce libelle porte, dans l'espace des jetons de la cle."""
+    return set(lib_fusion.cle(libelle).split()) & NEGATIONS
+
+
+def negation(a, b):
+    """Le mot de negation qu'UN SEUL des deux libelles porte, ou None.
+
+    Le test porte sur l'ASYMETRIE et non sur la presence : deux libelles qui
+    nient tous les deux (« Pas de fievre » / « Pas de frissons ») ne sont pas
+    signales, leur ecart n'etant pas la negation mais ce qui la suit.
+    """
+    na, nb = nie(a), nie(b)
+    if bool(na) == bool(nb):
+        return None
+    return sorted(na | nb)[0]

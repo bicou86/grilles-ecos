@@ -47,6 +47,15 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
   aussi les variantes et les fusions indirectes), soit les deux libellés
   ont **déjà la même signature** pour le socle A (propriété 6).
 
+## Négation asymétrique — un signal, pas un seau
+
+Une paire dont **un seul côté nie** (`pas`, `sans`, `non`, `absence`,
+`aucun`, `ni`, `jamais`, `négatif`) porte désormais une marque ⚠️ **sur sa
+propre ligne**, dans le seau où elle tombe. Elle n'est pas écartée : la
+réunion se défend souvent, c'est l'**intitulé retenu** qui ne se défend pas.
+La règle est donc : réunir si l'on veut, mais **retenir la forme
+POSITIVE**. La classe complète est listée en fin de document.
+
 ## AVP (Accident de la Voie Publique) — 3 cas · 1 à juger (0 de forme, 1 de contenu), 24 ⚠️, 17 ⛔
 
 **À juger — écart de contenu** (un mot de contenu diffère : réunir efface une distinction, à examiner de près)
@@ -79,7 +88,7 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⚠️ `Évaluation hémodynamique` (RESCOS-6)  ⟷  `Évaluation phonation` (RESCOS-5) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⛔ `ABCDE - Breathing` (RESCOS-6)  ⟷  `ABCDE - Circulation` (RESCOS-6) — **RESCOS-6, section « a »** distingue ces deux items
 - ⛔ `Anamnèse familiale` (German-5)  ⟷  `Anamnèse sociale` (German-5) — **German-5, section « a »** distingue ces deux items
-- ⛔ `Antécédents médicaux` (German-5, RESCOS-5, RESCOS-6)  ⟷  `Antécédents médicaux et allergies` (RESCOS-5) — **German-5, section « a »** distingue ces deux items
+- ⛔ `Antécédents médicaux` (German-5, RESCOS-5, RESCOS-6)  ⟷  `Antécédents médicaux et allergies` (RESCOS-5) — **RESCOS-5, section « a »** distingue ces deux items
 - ⛔ `En extension` (German-5)  ⟷  `En flexion` (German-5) — **German-5, section « e »** distingue ces deux items
 - ⛔ `En extension` (German-5)  ⟷  `Extension` (German-5) — **même signature socle A**, déjà appariés dans leur section
 - ⛔ `En flexion` (German-5)  ⟷  `Flexion` (German-5) — **même signature socle A**, déjà appariés dans leur section
@@ -95,11 +104,12 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Rotation en extension (teste rachis cervical inférieur)` (German-5)  ⟷  `Rotation en flexion (teste rachis cervical supérieur)` (German-5) — **German-5, section « e »** distingue ces deux items
 - ⛔ `Test de mobilité cervicale active` (German-5)  ⟷  `Test de mobilité cervicale passive` (German-5) — **German-5, section « e »** distingue ces deux items
 
-## Adénopathie — 2 cas · 1 à juger (0 de forme, 1 de contenu), 11 ⚠️, 11 ⛔
+## Adénopathie — 2 cas · 2 à juger (0 de forme, 2 de contenu), 11 ⚠️, 11 ⛔
 
 **À juger — écart de contenu** (un mot de contenu diffère : réunir efface une distinction, à examiner de près)
 
 - `Radiographie thoracique` (RESCOS-1)  ⟷  `Radiographie thoracique face et profil` (RESCOS-2)
+- `Examen des aires axillaires` (RESCOS-1)  ⟷  `Examen des autres aires ganglionnaires` (RESCOS-2)
 
 - ⚠️ `Antécédents personnels et familiaux` (RESCOS-1)  ⟷  `Cancers personnels ou familiaux` (RESCOS-2) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `CT scan thoraco-abdomino-pelvien` (RESCOS-1)  ⟷  `CT thoraco-abdomino-pelvien` (RESCOS-2) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -124,7 +134,12 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Sueurs nocturnes` (RESCOS-1, RESCOS-2)  ⟷  `Sueurs nocturnes profuses` (RESCOS-2) — **RESCOS-2, section « a »** distingue ces deux items
 - ⛔ `Voyage récent` (RESCOS-1)  ⟷  `Voyages récents` (RESCOS-2) — **même signature socle A**, déjà appariés dans leur section
 
-## Amaurose & Perte Brutale de Vision — 5 cas · 0 à juger (0 de forme, 0 de contenu), 27 ⚠️, 23 ⛔
+## Amaurose & Perte Brutale de Vision — 5 cas · 2 à juger (0 de forme, 2 de contenu), 28 ⚠️, 23 ⛔
+
+**À juger — écart de contenu** (un mot de contenu diffère : réunir efface une distinction, à examiner de près)
+
+- `Antécédents ophtalmologiques` (German-69)  ⟷  `Non ophtalmologiques` (AZYGOS-48)  ⚠️ **négation asymétrique** (« non ») : un seul des deux libellés nie. Réunir reste possible, mais **le libellé retenu doit être la forme POSITIVE** — dans une checklist, « Pas de turgescence jugulaire » se lit comme un résultat, pas comme un geste à faire.
+- `Antécédents ophtalmologiques` (German-69)  ⟷  `Ophtalmologiques` (AZYGOS-48)
 
 - ⚠️ `Antécédents chirurgicaux` (AMBOSS-34, AZYGOS-48)  ⟷  `Antécédents médico-chirurgicaux` (RESCOS-3) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Auscultation des 4 foyers` (RESCOS-3)  ⟷  `Auscultation des carotides` (AZYGOS-40) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -145,6 +160,7 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⚠️ `Motilité` (AZYGOS-48)  ⟷  `Motricité` (RESCOS-3) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Motricité` (RESCOS-3)  ⟷  `Oculomotricité` (German-69) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Neuro-ophtalmologique` (RESCOS-3)  ⟷  `Neurologique` (AZYGOS-40) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
+- ⚠️ `Neuro-ophtalmologique` (RESCOS-3)  ⟷  `Non ophtalmologiques` (AZYGOS-48) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Neuro-ophtalmologique` (RESCOS-3)  ⟷  `Ophtalmologiques` (AZYGOS-48) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Palpation de la mâchoire` (RESCOS-3)  ⟷  `Palpation de la tête` (AMBOSS-34) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Perte de sensibilité` (RESCOS-3)  ⟷  `Photosensibilité` (German-69) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -158,7 +174,6 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Allergies médicamenteuses` (German-69)  ⟷  `Autres médicaments` (German-69) — **German-69, section « a »** distingue ces deux items
 - ⛔ `Anamnèse par système - générale` (RESCOS-3)  ⟷  `Anamnèse par système - neurologique` (RESCOS-3) — **RESCOS-3, section « a »** distingue ces deux items
 - ⛔ `Antécédents chirurgicaux` (AMBOSS-34, AZYGOS-48)  ⟷  `Antécédents familiaux` (AMBOSS-34, AZYGOS-40, AZYGOS-48, German-69) — **AMBOSS-34, section « a »** distingue ces deux items
-- ⛔ `Antécédents ophtalmologiques` (German-69)  ⟷  `Ophtalmologiques` (AZYGOS-48) — **AZYGOS-48, section « a »** distingue ces deux items
 - ⛔ `Auscultation cardiaque` (AZYGOS-40)  ⟷  `Auscultation des carotides` (AZYGOS-40) — **AZYGOS-40, section « e »** distingue ces deux items
 - ⛔ `Auscultation des poumons` (AMBOSS-34)  ⟷  `Auscultation du cœur` (AMBOSS-34) — **AMBOSS-34, section « e »** distingue ces deux items
 - ⛔ `Champ visuel` (AZYGOS-40, AZYGOS-48)  ⟷  `Champs visuels` (RESCOS-3) — **même signature socle A**, déjà appariés dans leur section
@@ -169,6 +184,7 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Facteurs aggravants` (AMBOSS-34)  ⟷  `Facteurs améliorants` (AMBOSS-34) — **AMBOSS-34, section « a »** distingue ces deux items
 - ⛔ `IRM cérébrale` (AMBOSS-34)  ⟷  `Imagerie cérébrale` (AMBOSS-34, AZYGOS-40) — **AMBOSS-34, section « m »** distingue ces deux items
 - ⛔ `Inspection de la tête` (AMBOSS-34)  ⟷  `Palpation de la tête` (AMBOSS-34) — **AMBOSS-34, section « e »** distingue ces deux items
+- ⛔ `Non ophtalmologiques` (AZYGOS-48)  ⟷  `Ophtalmologiques` (AZYGOS-48) — **AZYGOS-48, section « a »** distingue ces deux items
 - ⛔ `Paupière` (RESCOS-3)  ⟷  `Paupières` (German-69) — **même signature socle A**, déjà appariés dans leur section
 - ⛔ `Qualité` (AMBOSS-34, AZYGOS-40, RESCOS-3)  ⟷  `Quantité` (RESCOS-3) — **RESCOS-3, section « a »** distingue ces deux items
 - ⛔ `Segments antérieurs de l'œil` (AZYGOS-48)  ⟷  `Segments externes de l'œil` (AZYGOS-48) — **AZYGOS-48, section « e »** distingue ces deux items
@@ -271,7 +287,7 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Se renseigne sur l'état du patient` (RESCOS-57b)  ⟷  `Se renseigne sur le patient : nom, âge` (RESCOS-57b) — **RESCOS-57b, section « a »** distingue ces deux items
 - ⛔ `Vomissements` (RESCOS-57, RESCOS-57b)  ⟷  `Vomissements, nausées` (RESCOS-57b) — **RESCOS-57b, section « a »** distingue ces deux items
 
-## Céphalée — 6 cas · 5 à juger (3 de forme, 2 de contenu), 13 ⚠️, 22 ⛔
+## Céphalée — 6 cas · 6 à juger (3 de forme, 3 de contenu), 13 ⚠️, 24 ⛔
 
 **À juger — écart de forme** (accord, genre, graphie : réunir n'efface rien)
 
@@ -283,6 +299,7 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 
 - `Intensité` (RESCOS-10)  ⟷  `Intensité EVA` (German-9)
 - `Auscultation cardiaque` (AMBOSS-33)  ⟷  `Auscultation carotidienne` (RESCOS-10)
+- `Alimentation` (AMBOSS-26, AMBOSS-33, German-8)  ⟷  `Menstruation` (AZYGOS-3)
 
 - ⚠️ `Agitation` (AMBOSS-26)  ⟷  `Palpitations` (AMBOSS-33) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Antécédents familiaux` (AMBOSS-26, AMBOSS-33, AZYGOS-3, German-8)  ⟷  `Antécédents familiaux vasculaires` (RESCOS-10) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -297,6 +314,8 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⚠️ `Fond d'œil` (German-8)  ⟷  `Fond d'œil direct` (AMBOSS-26, AMBOSS-33) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Glucose, électrolytes` (AMBOSS-33)  ⟷  `Électrolytes` (German-9) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Inspection` (AZYGOS-3)  ⟷  `Inspection du cou` (AMBOSS-26) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
+- ⛔ `Agitation` (AMBOSS-26)  ⟷  `Alimentation` (AMBOSS-26, AMBOSS-33, German-8) — **AMBOSS-26, section « a »** distingue ces deux items
+- ⛔ `Alimentation` (AMBOSS-26, AMBOSS-33, German-8)  ⟷  `Palpitations` (AMBOSS-33) — **AMBOSS-33, section « a »** distingue ces deux items
 - ⛔ `Anamnèse personnelle` (German-9)  ⟷  `Anamnèse sociale` (German-9) — **German-9, section « a »** distingue ces deux items
 - ⛔ `Antécédents chirurgicaux` (AMBOSS-26, AMBOSS-33, AZYGOS-3)  ⟷  `Antécédents familiaux` (AMBOSS-26, AMBOSS-33, AZYGOS-3, German-8) — **AMBOSS-26, section « a »** distingue ces deux items
 - ⛔ `Antécédents chirurgicaux` (AMBOSS-26, AMBOSS-33, AZYGOS-3)  ⟷  `Antécédents médicaux` (AMBOSS-26, AMBOSS-33, AZYGOS-3, German-9) — **AMBOSS-26, section « a »** distingue ces deux items
@@ -686,7 +705,7 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `US transabdominale` (AMBOSS-3)  ⟷  `US transvaginale` (AMBOSS-3) — **AMBOSS-3, section « m »** distingue ces deux items
 - ⛔ `Urine` (AZYGOS-16)  ⟷  `Urines` (AZYGOS-16) — **même signature socle A**, déjà appariés dans leur section
 
-## Douleur Thoracique — 12 cas · 5 à juger (3 de forme, 2 de contenu), 71 ⚠️, 45 ⛔
+## Douleur Thoracique — 12 cas · 5 à juger (3 de forme, 2 de contenu), 69 ⚠️, 46 ⛔
 
 **À juger — écart de forme** (accord, genre, graphie : réunir n'efface rien)
 
@@ -743,7 +762,6 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⚠️ `Inspection des membres inférieurs` (AMBOSS-12, German-31)  ⟷  `Œdèmes membres inférieurs` (RESCOS-37) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Inspection du thorax` (AMBOSS-12, AMBOSS-13, AMBOSS-14, AZYGOS-22, German-30)  ⟷  `Inspection thoracique` (RESCOS-37) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Laboratoire de base` (AZYGOS-22)  ⟷  `Laboratoires` (RESCOS-34) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
-- ⚠️ `Observation d'une turgescence jugulaire` (RESCOS-34)  ⟷  `Pas de turgescence jugulaire` (RESCOS-36) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Observation des extrémités` (RESCOS-34)  ⟷  `Température des extrémités` (RESCOS-37) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Occupation` (AMBOSS-12, AMBOSS-13, AMBOSS-14)  ⟷  `Préoccupations` (RESCOS-37) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Oxygénothérapie` (AZYGOS-22)  ⟷  `Oxygénothérapie haut débit` (German-32) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -752,8 +770,6 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⚠️ `Palpation des membres inférieurs` (AMBOSS-12)  ⟷  `Œdèmes membres inférieurs` (RESCOS-37) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Palpation des pouls pédieux` (AMBOSS-12)  ⟷  `Palpation des pouls périphériques` (RESCOS-36) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Pas d'œdèmes des membres inférieurs` (RESCOS-36)  ⟷  `Œdèmes membres inférieurs` (RESCOS-37) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
-- ⚠️ `Pas de reflux hépato-jugulaire` (RESCOS-36)  ⟷  `Recherche d'un reflux hépato-jugulaire` (RESCOS-34) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
-- ⚠️ `Pas de reflux hépato-jugulaire` (RESCOS-36)  ⟷  `Réflux hépato-jugulaire` (RESCOS-37) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Pas de souffle abdominal` (RESCOS-36)  ⟷  `Recherche de souffle abdominal` (RESCOS-35) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Pneumonie` (German-31, RESCOS-34)  ⟷  `Pulmonaire` (RESCOS-35) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Pneumothorax` (German-30, German-31, RESCOS-35)  ⟷  `Pneumothorax > 20%` (German-32) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -761,6 +777,7 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⚠️ `Radiographie du thorax` (RESCOS-34)  ⟷  `Radiographie thoracique` (AMBOSS-12, German-31, German-33, RESCOS-37) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Radiographie thoracique` (AMBOSS-12, German-31, German-33, RESCOS-37)  ⟷  `Radiographie thoracique (2 incidences)` (AZYGOS-22) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Radiographie thoracique` (AMBOSS-12, German-31, German-33, RESCOS-37)  ⟷  `Échographie thoracique` (AZYGOS-22) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
+- ⚠️ `Recherche d'un reflux hépato-jugulaire` (RESCOS-34)  ⟷  `Reflux hépato-jugulaire` (RESCOS-35, RESCOS-37) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Recherche d'un reflux hépato-jugulaire` (RESCOS-34)  ⟷  `Réflux hépato-jugulaire` (RESCOS-37) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Recherche de souffle` (German-31)  ⟷  `Recherche de souffle abdominal` (RESCOS-35) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Recherche de souffle` (German-31)  ⟷  `Recherche de souffle carotidien` (RESCOS-35) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -812,6 +829,7 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Recherche de souffle carotidien` (RESCOS-35)  ⟷  `Recherche de souffles carotidiens` (RESCOS-37) — **même signature socle A**, déjà appariés dans leur section
 - ⛔ `Recherche de souffle carotidien` (RESCOS-35)  ⟷  `Recherche de souffles fémoraux` (RESCOS-35) — **RESCOS-35, section « e »** distingue ces deux items
 - ⛔ `Recherche de souffles carotidiens` (RESCOS-37)  ⟷  `Recherche de souffles fémoraux` (RESCOS-35) — **RESCOS-35, section « e »** distingue ces deux items
+- ⛔ `Reflux hépato-jugulaire` (RESCOS-35, RESCOS-37)  ⟷  `Réflux hépato-jugulaire` (RESCOS-37) — **même signature socle A**, déjà appariés dans leur section
 - ⛔ `Stress professionnel` (RESCOS-36)  ⟷  `Stress émotionnel` (RESCOS-36) — **RESCOS-36, section « a »** distingue ces deux items
 - ⛔ `Voyage récent` (AMBOSS-12, AMBOSS-14, German-31, German-32, German-33)  ⟷  `Voyages récents` (RESCOS-34, RESCOS-35) — **même signature socle A**, déjà appariés dans leur section
 - ⛔ `⊕ Facteurs aggravants` (AZYGOS-22)  ⟷  `⊖ Facteurs soulageants` (AZYGOS-22) — **AZYGOS-22, section « a »** distingue ces deux items
@@ -1263,13 +1281,17 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Reflet complexe` (RESCOS-43)  ⟷  `Reflet simple` (RESCOS-43) — **RESCOS-43, section « e »** distingue ces deux items
 - ⛔ `Stratégies comportementales proposées` (German-38)  ⟷  `Thérapies comportementales` (German-38) — **German-38, section « m »** distingue ces deux items
 
-## Fatigue — 11 cas · 3 à juger (3 de forme, 0 de contenu), 56 ⚠️, 35 ⛔
+## Fatigue — 11 cas · 4 à juger (3 de forme, 1 de contenu), 58 ⚠️, 35 ⛔
 
 **À juger — écart de forme** (accord, genre, graphie : réunir n'efface rien)
 
 - `Explications au patient des impressions diagnostiques préliminaires` (AMBOSS-36)  ⟷  `Explications à la patiente des impressions diagnostiques préliminaires` (AMBOSS-27, AMBOSS-29)
 - `Évaluation de l'accord de la patiente avec le plan diagnostique` (AMBOSS-27, AMBOSS-29)  ⟷  `Évaluation de l'accord du patient avec le plan diagnostique` (AMBOSS-36)
 - `Recherche des préoccupations et questions de la patiente` (AMBOSS-27, AMBOSS-29)  ⟷  `Recherche des préoccupations et questions du patient` (AMBOSS-36)
+
+**À juger — écart de contenu** (un mot de contenu diffère : réunir efface une distinction, à examiner de près)
+
+- `Inspection des conjonctives` (AMBOSS-27, AMBOSS-29)  ⟷  `Inspection des sclères` (AMBOSS-36)
 
 - ⚠️ `Activité physique` (RESCOS-67, RESCOS-67b)  ⟷  `Activité physique régulière` (German-45) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Allaitement` (AMBOSS-27)  ⟷  `Traitement` (RESCOS-67, RESCOS-67b) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -1307,6 +1329,8 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⚠️ `Inspection de l'oropharynx` (AMBOSS-29)  ⟷  `Inspection du thorax` (AMBOSS-36) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Inspection de la pâleur` (German-46)  ⟷  `Inspection de la tête` (AMBOSS-27) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Inspection de la tête` (AMBOSS-27)  ⟷  `Inspection des mains` (AMBOSS-36) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
+- ⚠️ `Inspection de la tête` (AMBOSS-27)  ⟷  `Inspection des sclères` (AMBOSS-36) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
+- ⚠️ `Inspection des conjonctives` (AMBOSS-27, AMBOSS-29)  ⟷  `Inspection des mains` (AMBOSS-36) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Inspection du cou` (AMBOSS-29)  ⟷  `Inspection du thorax` (AMBOSS-36) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Intolérance au froid` (AMBOSS-29, RESCOS-67, RESCOS-67b)  ⟷  `Transpiration/intolérance au froid` (German-47) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Mesure de la tension artérielle` (German-45)  ⟷  `Tension artérielle` (German-46) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -1351,7 +1375,7 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Inspection de l'abdomen` (AMBOSS-36)  ⟷  `Inspection des mains` (AMBOSS-36) — **AMBOSS-36, section « e »** distingue ces deux items
 - ⛔ `Inspection de l'abdomen` (AMBOSS-36)  ⟷  `Palpation de l'abdomen` (AMBOSS-36) — **AMBOSS-36, section « e »** distingue ces deux items
 - ⛔ `Inspection de l'abdomen` (AMBOSS-36)  ⟷  `Percussion de l'abdomen` (AMBOSS-36) — **AMBOSS-36, section « e »** distingue ces deux items
-- ⛔ `Inspection des conjonctives` (AMBOSS-27, AMBOSS-29)  ⟷  `Inspection des mains` (AMBOSS-36) — **AMBOSS-36, section « e »** distingue ces deux items
+- ⛔ `Inspection des mains` (AMBOSS-36)  ⟷  `Inspection des sclères` (AMBOSS-36) — **AMBOSS-36, section « e »** distingue ces deux items
 - ⛔ `Nausées / vomissements` (AZYGOS-30)  ⟷  `Nausées/vomissements` (AMBOSS-27, AMBOSS-36) — **même signature socle A**, déjà appariés dans leur section
 - ⛔ `Palpation de l'abdomen` (AMBOSS-36)  ⟷  `Palpation de la rate` (AMBOSS-29, AMBOSS-36) — **AMBOSS-36, section « e »** distingue ces deux items
 - ⛔ `Palpation de l'abdomen` (AMBOSS-36)  ⟷  `Percussion de l'abdomen` (AMBOSS-36) — **AMBOSS-36, section « e »** distingue ces deux items
@@ -1626,7 +1650,7 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Infections pendant la grossesse` (AZYGOS-35)  ⟷  `Médicaments pendant la grossesse` (AZYGOS-35) — **AZYGOS-35, section « a »** distingue ces deux items
 - ⛔ `Écoulement auriculaire` (AMBOSS-37)  ⟷  `Écoulement oculaire` (AMBOSS-37) — **AMBOSS-37, section « a »** distingue ces deux items
 
-## Lombalgies — 8 cas · 4 à juger (0 de forme, 4 de contenu), 58 ⚠️, 37 ⛔
+## Lombalgies — 8 cas · 5 à juger (0 de forme, 5 de contenu), 60 ⚠️, 38 ⛔
 
 **À juger — écart de contenu** (un mot de contenu diffère : réunir efface une distinction, à examiner de près)
 
@@ -1634,10 +1658,13 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - `Facteurs aggravants` (AMBOSS-10, AMBOSS-9)  ⟷  `Facteurs atténuants/aggravants` (RESCOS-48)
 - `Inspection` (AZYGOS-20, German-59)  ⟷  `Inspection du dos` (AMBOSS-10, AMBOSS-9)
 - `Examen ciblé des réflexes ostéo-tendineux` (AMBOSS-9)  ⟷  `Réflexes ostéo-tendineux` (German-57, RESCOS-48)
+- `Antécédents de fractures` (German-58)  ⟷  `Antécédents de lithiase` (German-59)
 
 - ⚠️ `Activité physique` (German-57, German-59, RESCOS-48)  ⟷  `Activité physique régulière` (German-58) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Alimentation riche en oxalates` (German-59)  ⟷  `Alimentation riche en protéines` (RESCOS-31) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Allergies médicamenteuses` (RESCOS-31)  ⟷  `Médicamenteuses` (AZYGOS-20) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
+- ⚠️ `Antécédents de lithiase` (German-59)  ⟷  `Antécédents de lithiase urinaire` (RESCOS-31) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
+- ⚠️ `Antécédents de lithiase` (German-59)  ⟷  `Antécédents familiaux de lithiase` (RESCOS-31) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Antécédents familiaux` (AMBOSS-10, AMBOSS-9, AZYGOS-20)  ⟷  `Antécédents familiaux de lithiase` (RESCOS-31) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Antécédents néoplasiques` (RESCOS-48)  ⟷  `Causes néoplasiques` (AZYGOS-20) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Autres pathologies` (German-57)  ⟷  `Autres pathologies pertinentes` (German-58) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -1696,6 +1723,7 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Antécédent de fracture` (German-57)  ⟷  `Antécédents de fractures` (German-58) — **même signature socle A**, déjà appariés dans leur section
 - ⛔ `Antécédents chirurgicaux` (AMBOSS-10, AMBOSS-9, German-57, German-58, German-59)  ⟷  `Antécédents familiaux` (AMBOSS-10, AMBOSS-9, AZYGOS-20) — **AMBOSS-10, section « a »** distingue ces deux items
 - ⛔ `Antécédents de fractures` (German-58)  ⟷  `Antécédents de lombalgies` (German-58, German-59) — **German-58, section « a »** distingue ces deux items
+- ⛔ `Antécédents de lithiase` (German-59)  ⟷  `Antécédents de lombalgies` (German-58, German-59) — **German-59, section « a »** distingue ces deux items
 - ⛔ `CT du rachis` (AMBOSS-9)  ⟷  `IRM du rachis` (AMBOSS-9) — **AMBOSS-9, section « m »** distingue ces deux items
 - ⛔ `Calculs 5-10mm: expulsion dans 50% des cas` (RESCOS-31)  ⟷  `Calculs < 5mm: expulsion spontanée dans 70% des cas` (RESCOS-31) — **RESCOS-31, section « m »** distingue ces deux items
 - ⛔ `Consommation de bière` (RESCOS-31)  ⟷  `Consommation de sel importante` (RESCOS-31) — **RESCOS-31, section « a »** distingue ces deux items
@@ -1933,10 +1961,11 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Palpation auriculaire` (German-28, German-65)  ⟷  `Pavillon auriculaire` (German-28) — **German-28, section « e »** distingue ces deux items
 - ⛔ `Recherche d'hépatomégalie` (German-28)  ⟷  `Recherche de splénomégalie` (German-28) — **German-28, section « e »** distingue ces deux items
 
-## Palpitations — 3 cas · 2 à juger (0 de forme, 2 de contenu), 28 ⚠️, 25 ⛔
+## Palpitations — 3 cas · 3 à juger (0 de forme, 3 de contenu), 28 ⚠️, 25 ⛔
 
 **À juger — écart de contenu** (un mot de contenu diffère : réunir efface une distinction, à examiner de près)
 
+- `Prise en charge immédiate` (German-74)  ⟷  `Prise en charge non médicamenteuse` (German-66)  ⚠️ **négation asymétrique** (« non ») : un seul des deux libellés nie. Réunir reste possible, mais **le libellé retenu doit être la forme POSITIVE** — dans une checklist, « Pas de turgescence jugulaire » se lit comme un résultat, pas comme un geste à faire.
 - `Artériopathie périphérique` (German-7)  ⟷  `Cardiopathie ischémique` (German-74)
 - `Échocardiographie si anomalie ECG` (German-66)  ⟷  `Échocardiographie transthoracique` (German-74)
 
@@ -2396,7 +2425,12 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Évaluation de la symétrie respiratoire` (RESCOS-64-1)  ⟷  `Évaluation des signes de détresse respiratoire` (RESCOS-64-1) — **RESCOS-64-1, section « e »** distingue ces deux items
 - ⛔ `Œdèmes des membres inférieurs` (German-75, German-76)  ⟷  `Œdèmes membres inférieurs` (RESCOS-62) — **même signature socle A**, déjà appariés dans leur section
 
-## Tremblement — 2 cas · 0 à juger (0 de forme, 0 de contenu), 16 ⚠️, 17 ⛔
+## Tremblement — 2 cas · 2 à juger (0 de forme, 2 de contenu), 16 ⚠️, 17 ⛔
+
+**À juger — écart de contenu** (un mot de contenu diffère : réunir efface une distinction, à examiner de près)
+
+- `Troubles de l'humeur` (RESCOS-65)  ⟷  `Troubles de l'odorat` (German-80)
+- `Troubles de l'odorat` (German-80)  ⟷  `Troubles de l'olfaction` (RESCOS-65)
 
 - ⚠️ `Adaptation posologique` (RESCOS-65)  ⟷  `Adaptation posturale` (RESCOS-65) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Asymétrie initiale` (RESCOS-65)  ⟷  `Asymétrie tonique` (RESCOS-65) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -2430,7 +2464,7 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Tremblement de repos` (German-80, RESCOS-65)  ⟷  `Tremblement postural` (German-80) — **German-80, section « e »** distingue ces deux items
 - ⛔ `Tremblement de repos` (German-80, RESCOS-65)  ⟷  `Tremblements autres` (RESCOS-65) — **RESCOS-65, section « e »** distingue ces deux items
 - ⛔ `Troubles cognitifs` (German-80, RESCOS-65)  ⟷  `Troubles digestifs` (RESCOS-65) — **RESCOS-65, section « a »** distingue ces deux items
-- ⛔ `Troubles de l'odorat` (German-80)  ⟷  `Troubles de l'olfaction` (RESCOS-65) — **RESCOS-65, section « a »** distingue ces deux items
+- ⛔ `Troubles de l'humeur` (RESCOS-65)  ⟷  `Troubles de la marche` (RESCOS-65) — **RESCOS-65, section « a »** distingue ces deux items
 
 ## Trouble Anxieux — 4 cas · 0 à juger (0 de forme, 0 de contenu), 21 ⚠️, 13 ⛔
 
@@ -2548,7 +2582,11 @@ Suivent deux catégories à ne lire **que si tout le reste est traité** :
 - ⛔ `Moticité des membres inférieurs` (AZYGOS-25)  ⟷  `Sensibilité des membres inférieurs` (AZYGOS-25) — **AZYGOS-25, section « e »** distingue ces deux items
 - ⛔ `Mère` (German-40)  ⟷  `Père` (German-40) — **German-40, section « a »** distingue ces deux items
 
-## Éruption Cutanée — 8 cas · 0 à juger (0 de forme, 0 de contenu), 11 ⚠️, 9 ⛔
+## Éruption Cutanée — 8 cas · 1 à juger (0 de forme, 1 de contenu), 11 ⚠️, 9 ⛔
+
+**À juger — écart de contenu** (un mot de contenu diffère : réunir efface une distinction, à examiner de près)
+
+- `Culture bactériologique` (German-43)  ⟷  `Culture mycologique` (German-42)
 
 - ⚠️ `DD Eczéma de contact` (AZYGOS-27)  ⟷  `Dermatite de contact` (RESCOS-68b) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Description des lésions` (German-42)  ⟷  `Inspection des lésions` (RESCOS-68, RESCOS-68b) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -2647,4 +2685,39 @@ il ne les juge pas, et il ne prétend pas les avoir tous.
 - **Palpitations** — `Signes d'hyperthyroïdie` ⟷ `Signes d'hypothyroïdie` *(hyper / hypo)* — **l'entrée mordrait**
 - **Toux** — `Asymétrie thoracique` ⟷ `Symétrie thoracique` *(préfixe privatif « a- »)* — par ailleurs inerte
 - **Toux** — `Tabagisme actif` ⟷ `Tabagisme passif` *(actif / passif)* — par ailleurs inerte
+
+## ⚠️ Négations asymétriques — la classe complète
+
+Un seul des deux libellés nie. La réunion n'est pas interdite ; ce qui
+l'est, c'est de retenir la forme **négative** comme intitulé du mémento.
+La ronde 1 l'a fait cinq fois, et les cinq ont dû être inversées après
+coup. `check_vocabulaire` refuse maintenant ce sens-là (propriété 10),
+mais il ne peut pas deviner qu'une paire mérite d'être réunie : c'est
+cette liste-ci qui le dit.
+
+- **Amaurose & Perte Brutale de Vision** — `Antécédents ophtalmologiques` ⟷ `Non ophtalmologiques` *(« non »)*
+- **Amaurose & Perte Brutale de Vision** — `Neuro-ophtalmologique` ⟷ `Non ophtalmologiques` *(« non »)*
+- **Amaurose & Perte Brutale de Vision** — `Non ophtalmologiques` ⟷ `Ophtalmologiques` *(« non »)*
+- **Diarrhée** — `Douleurs articulaires` ⟷ `Pas de douleurs articulaires` *(« pas »)*
+- **Douleur Thoracique** — `Douleurs ou œdèmes des membres inférieurs` ⟷ `Pas d'œdèmes des membres inférieurs` *(« pas »)*
+- **Douleur Thoracique** — `Inspection des membres inférieurs` ⟷ `Pas d'œdèmes des membres inférieurs` *(« pas »)*
+- **Douleur Thoracique** — `Palpation des membres inférieurs` ⟷ `Pas d'œdèmes des membres inférieurs` *(« pas »)*
+- **Douleur Thoracique** — `Pas d'œdèmes des membres inférieurs` ⟷ `Œdèmes membres inférieurs` *(« pas »)*
+- **Douleur Thoracique** — `Pas de souffle abdominal` ⟷ `Recherche de souffle abdominal` *(« pas »)*
+- **Douleur de Hanche** — `Asthénie importante` ⟷ `Pas d'asthénie importante` *(« pas »)*
+- **Douleur de Hanche** — `Douleurs nocturnes` ⟷ `Pas de sueurs nocturnes` *(« pas »)*
+- **Douleur de Hanche** — `Pas de sueurs nocturnes` ⟷ `Sueurs nocturnes` *(« pas »)*
+- **Douleurs Articulaires** — `Traitement médicamenteux` ⟷ `Traitement non médicamenteux` *(« non »)*
+- **Dyspnée** — `Classe I: Pas de limitation` ⟷ `Classe II: Limitation légère` *(« pas »)*
+- **Dyspnée** — `Frottement péricardique` ⟷ `Pas de frottement péricardique` *(« pas »)*
+- **Fièvre du Nourrisson** — `Éruption cutanée purpurique` ⟷ `Éruption cutanée purpurique non effaçable` *(« non »)*
+- **Palpitations** — `Prise en charge immédiate` ⟷ `Prise en charge non médicamenteuse` *(« non »)*
+- **Toux** — `Pas d'œdèmes des membres inférieurs` ⟷ `Recherche d'œdèmes des membres inférieurs` *(« pas »)*
+- **Toux** — `Pas d'œdèmes des membres inférieurs` ⟷ `Symptômes associés - Œdèmes des membres inférieurs` *(« pas »)*
+- **Toux** — `Pas d'œdèmes des membres inférieurs` ⟷ `Œdèmes des membres inférieurs` *(« pas »)*
+- **Toux** — `Pas d'œdèmes des membres inférieurs` ⟷ `Œdèmes membres inférieurs` *(« pas »)*
+- **Toux** — `Pas de voyage récent` ⟷ `Voyage récent` *(« pas »)*
+- **Toux** — `Pas de voyage récent` ⟷ `Voyages récents` *(« pas »)*
+- **Tremblement** — `Symptômes moteurs associés` ⟷ `Symptômes non-moteurs` *(« non »)*
+- **Œil Rouge & Douleur Oculaire** — `Avec correction` ⟷ `Sans correction` *(« san »)*
 

@@ -33,6 +33,13 @@ maintenant « a juger », et il est SCINDE selon la nature de l'ecart, pour que
 la partie ou il n'y a rien a perdre se distingue de celle ou il y a une
 distinction clinique a effacer.
 
+LA NEGATION ASYMETRIQUE EST UNE MARQUE, PAS UN SEAU. Une paire dont un seul
+cote nie reste dans le seau ou elle tombe — elle merite souvent d'etre reunie —
+mais sa ligne porte un ⚠️ qui dit la seule chose qui compte : retenir la forme
+POSITIVE. La ronde 1 a retenu cinq fois la negative, faute que quoi que ce soit
+dans la chaine la voie. Voir `NEGATIONS` et la propriete 10 de
+`check_vocabulaire`.
+
 Il a fallu deux redactions pour que « qui passerait le controle » soit meme
 vrai. La premiere annoncait 2 014 paires dont deux sur trois tombaient en
 realite sur la propriete 7 : le seau promettait un gisement qu'il ne mesurait
@@ -92,6 +99,31 @@ ANTONYMES = [
 # « douloureux ». Testes sur les tokens de la cle, pas sur la chaine, pour ne
 # pas confondre « anamnese » avec un « a- » privatif.
 PRIVATIFS = ("a", "in", "im", "non", "dys", "anti")
+
+
+# NEGATION ASYMETRIQUE — la regle vit dans `lib_vocabulaire`, avec l'inventaire
+# des libelles, parce qu'elle a DEUX consommateurs : ce rapport, qui la SIGNALE,
+# et la propriete 10 de `check_vocabulaire`, qui la REFUSE. Une copie locale
+# divergerait au premier mot ajoute. Voir `lib_vocabulaire.NEGATIONS` pour le
+# detail de l'angle mort qu'elle ferme, et pour la raison de ne SURTOUT PAS la
+# boucher du cote de `lib_cle.MOTS_VIDES`.
+negation = lib_vocabulaire.negation
+
+
+def signal_negation(a, b):
+    """Le fragment de ligne que le rapport imprime pour une negation, ou "".
+
+    Rendu par une fonction plutot qu'ecrit sur place pour que `check_negation.py`
+    puisse verifier CE QUE LE RAPPORT DIT, et pas seulement ce que le detecteur
+    trouve : un detecteur juste dont le resultat n'est pas affiche ne garde rien.
+    """
+    mot = negation(a, b)
+    if not mot:
+        return ""
+    return (f"  ⚠️ **négation asymétrique** (« {mot} ») : un seul des deux libellés "
+            "nie. Réunir reste possible, mais **le libellé retenu doit être la forme "
+            "POSITIVE** — dans une checklist, « Pas de turgescence jugulaire » se lit "
+            "comme un résultat, pas comme un geste à faire.")
 
 
 def _tokens(libelle):
@@ -311,9 +343,17 @@ def main():
               "  libellés qu'une grille distingue **dans une même section** (propriété 8",
               "  — le test porte sur les signatures **après** la table, donc il attrape",
               "  aussi les variantes et les fusions indirectes), soit les deux libellés",
-              "  ont **déjà la même signature** pour le socle A (propriété 6).", ""]
+              "  ont **déjà la même signature** pour le socle A (propriété 6).", "",
+              "## Négation asymétrique — un signal, pas un seau", "",
+              "Une paire dont **un seul côté nie** (`pas`, `sans`, `non`, `absence`,",
+              "`aucun`, `ni`, `jamais`, `négatif`) porte désormais une marque ⚠️ **sur sa",
+              "propre ligne**, dans le seau où elle tombe. Elle n'est pas écartée : la",
+              "réunion se défend souvent, c'est l'**intitulé retenu** qui ne se défend pas.",
+              "La règle est donc : réunir si l'on veut, mais **retenir la forme",
+              "POSITIVE**. La classe complète est listée en fin de document.", ""]
     total = refusees = forme_total = contenu_total = 0
     antonymiques = []
+    negations = []
     groupes = build_memento.par_ssp()
     inventaire = lib_vocabulaire.libelles_par_ssp(groupes)
     positions = lib_vocabulaire.positions_par_ssp(groupes)
@@ -339,6 +379,15 @@ def main():
             # l'autre, et rien ne dit lequel un successeur choisira.
             ou = irrecevable(a, b, index, ssp) or irrecevable(b, a, index, ssp)
             oppose = antonymie(a, b)
+            nie = negation(a, b)
+            if nie:
+                # LA CLASSE ENTIERE EST RELEVEE, quel que soit le seau ou la
+                # paire tombe. Une negation dans un seau ⚠️ ou ⛔ ne demande
+                # aucune decision aujourd'hui, mais elle en demandera une le
+                # jour ou la table bougera autour d'elle — et c'est precisement
+                # ce qui est arrive en ronde 1 : les paires devenues voisines
+                # apres coup sont celles qu'aucune relecture n'avait vues.
+                negations.append((ssp, a, b, nie))
             if ou:
                 bloquees.append(f"- ⛔ {ligne} — **{ou}** distingue ces deux items")
             elif lib_fusion.signature(a) == lib_fusion.signature(b):
@@ -372,7 +421,7 @@ def main():
                 # Mais la similarite ne dit rien de ce qu'on perdrait : d'ou la
                 # partition forme/contenu, qui, elle, le dit.
                 seau = (de_forme if nature_de_lecart(a, b) == "forme" else de_contenu)
-                seau.append((-similarite(a, b), a, b, f"- {ligne}"))
+                seau.append((-similarite(a, b), a, b, f"- {ligne}{signal_negation(a, b)}"))
         total += len(candidates)
         refusees += len(bloquees) + len(douteuses)
         a_juger = len(de_forme) + len(de_contenu)
@@ -402,10 +451,22 @@ def main():
                    + ("**l'entrée mordrait**" if agit else "par ailleurs inerte")
                    for ssp, a, b, motif, agit in antonymiques] + [""]
 
+    if negations:
+        lignes += ["## ⚠️ Négations asymétriques — la classe complète", "",
+                   "Un seul des deux libellés nie. La réunion n'est pas interdite ; ce qui",
+                   "l'est, c'est de retenir la forme **négative** comme intitulé du mémento.",
+                   "La ronde 1 l'a fait cinq fois, et les cinq ont dû être inversées après",
+                   "coup. `check_vocabulaire` refuse maintenant ce sens-là (propriété 10),",
+                   "mais il ne peut pas deviner qu'une paire mérite d'être réunie : c'est",
+                   "cette liste-ci qui le dit.", ""]
+        lignes += [f"- **{ssp}** — `{a}` ⟷ `{b}` *(« {mot} »)*"
+                   for ssp, a, b, mot in negations] + [""]
+
     SORTIE.write_text("\n".join(lignes) + "\n", encoding="utf8")
     print(f"{total} paires candidates dont {total - refusees} à juger "
           f"({forme_total} de forme, {contenu_total} de contenu), "
-          f"{refusees} écartées ({len(antonymiques)} antonymes présumés) "
+          f"{refusees} écartées ({len(antonymiques)} antonymes présumés, "
+          f"{len(negations)} négations asymétriques tous seaux confondus) "
           f"-> {SORTIE.relative_to(REPO)}")
     return 0
 

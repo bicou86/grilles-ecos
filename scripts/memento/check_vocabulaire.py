@@ -9,7 +9,7 @@ controle : trois variantes erronees d'un meme libelle, zero effet, zero
 message. Une table de curation silencieusement morte est pire que pas de table
 du tout, parce qu'on cesse de regarder le rendu.
 
-NEUF PROPRIETES, de la plus grossiere a la plus fine :
+DIX PROPRIETES, de la plus grossiere a la plus fine :
 
   1. STRUCTURE     le fichier se lit avec le lecteur du projet.
   2. SSP REELLE    chaque groupe nomme une SSP que le corpus rattache.
@@ -49,6 +49,8 @@ NEUF PROPRIETES, de la plus grossiere a la plus fine :
                    elle RECONSTRUIT la comparaison du moteur au lieu de
                    l'appeler, et c'est exactement dans cet ecart que le defaut
                    precedent vivait. Voir `couverture()`.
+ 10. SANS NEGATION la forme canonique retenue ne NIE pas ce que la cle
+                   affirmait. Voir `negations_retenues()`.
 
 CE QUE CE CONTROLE NE PEUT TOUJOURS PAS VERIFIER, et qui reste a la relecture
 humaine. La propriete 8 exige un TEMOIN : une grille qui porte les deux
@@ -59,6 +61,13 @@ dans le code, elle est ABSENTE DU CORPUS : deux grilles qui distinguent sans
 jamais se croiser sont hors d'atteinte de tout controle automatique.
 `report_doublons.py` en signale une partie par un filtre antonymique ; il
 signale, il ne ferme pas.
+
+LA PROPRIETE 10 EST NEE D'UNE CORRECTION MANUELLE, et c'est ce qui la justifie.
+La ronde 1 de curation a produit cinq entrees dont la forme canonique retenue
+etait la forme NEGATIVE — « Hepatomegalie » -> « Pas d'hepatomegalie » — et les
+neuf proprietes les ont toutes declarees valides, a juste titre : la REUNION est
+bonne, c'est le SENS DE L'ENTREE qui ne l'est pas. Il a fallu les inverser a la
+main. La propriete 10 refuse ce sens-la, et rien d'autre.
 """
 import sys
 from pathlib import Path
@@ -165,7 +174,46 @@ def _verifier(vocabulaire, inventaire, groupes):
     positions = lib_vocabulaire.positions_par_ssp(groupes)
     ecarts += collisions(vocabulaire, positions)
     ecarts += couverture(vocabulaire, groupes, positions)
+    ecarts += negations_retenues(vocabulaire)
     ecarts += _sans_effet(vocabulaire, groupes)
+    return ecarts
+
+
+def negations_retenues(vocabulaire):
+    """PROPRIETE 10 : la forme canonique ne NIE pas ce que la cle affirmait.
+
+    LA REUNION PEUT ETRE BONNE ET L'ENTREE QUAND MEME FAUSSE, et c'est tout le
+    sujet. « Hepatomegalie » et « Pas d'hepatomegalie » designent bien le meme
+    item de grille, donc les reunir a du sens ; mais le memento affiche la
+    CIBLE, et un lecteur qui lit « Pas d'hepatomegalie » dans une checklist y
+    lit un RESULTAT DEJA CONSTATE au lieu du geste a faire. Les neuf autres
+    proprietes declaraient ces entrees valides — a juste titre : elles visent
+    des libelles reels, elles mordent, elles ne chainent pas, elles ne
+    collisionnent pas. Cinq d'entre elles ont du etre inversees a la main apres
+    la ronde 1 de curation.
+
+    LE SENS EST GARDE, PAS LA PAIRE. Une entree qui va de la forme NEGATIVE vers
+    la forme POSITIVE (« Pas d'hepatomegalie » -> « Hepatomegalie ») est la
+    bonne, et six entrees de la table courante sont exactement celles-la : elles
+    sont le TEMOIN POSITIF de cette propriete, et les inverser la ferait rougir.
+
+    LE TEST PORTE SUR LES MOTS QUE LA CIBLE AJOUTE, pas sur la simple presence :
+    « Pas de fievre » -> « Pas de fievre au retour » nie des deux cotes et ne
+    doit rien declencher.
+    """
+    ecarts = []
+    for ssp in sorted(vocabulaire):
+        for cle in sorted(vocabulaire[ssp]):
+            valeur = vocabulaire[ssp][cle]
+            ajoutes = sorted(lib_vocabulaire.nie(valeur) - lib_vocabulaire.nie(cle))
+            if ajoutes:
+                ecarts.append(
+                    f"{ssp} / « {cle} » → « {valeur} » — la forme canonique retenue est "
+                    "la forme NÉGATIVE ("
+                    + ", ".join(f"« {m} »" for m in ajoutes)
+                    + ") : le mémento afficherait un résultat là où la grille demande un "
+                    "geste. Réunir ces deux libellés reste légitime — visez la forme "
+                    "positive, c'est-à-dire l'entrée inverse")
     return ecarts
 
 
@@ -400,10 +448,14 @@ def main():
         for e in ecarts:
             print("  ", e)
         return 1
+    positives = sum(1 for s in vocabulaire for k in vocabulaire[s]
+                    if lib_vocabulaire.nie(k) - lib_vocabulaire.nie(vocabulaire[s][k]))
     print(f"OK — {entrees} entrée(s) sur {len(vocabulaire)} SSP, toutes adossées à des "
           "libellés réels du corpus et toutes agissantes · "
           "0 rapprochement abusif (aucune grille ne voit deux de ses libellés, "
-          "distincts pour le socle A, confondus par la table)")
+          "distincts pour le socle A, confondus par la table) · "
+          f"0 forme négative retenue ({positives} entrée(s) redressent une négation "
+          "vers la forme positive — témoin de la propriété 10)")
     return 0
 
 
