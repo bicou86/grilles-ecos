@@ -170,25 +170,60 @@ def collisions(vocabulaire, positions):
       - « Drogues » -> « Noxes » sur Cephalee : AZYGOS-3 porte les deux en
         items de TETE, section anamnese. « Noxes » est le bloc tabac + alcool +
         drogues, « Drogues » en est une ligne ;
-      - « Alcool » -> « Drogues » sur Douleur Abdominale : RESCOS-17 porte les
-        deux comme FRERES sous « Habitudes ». Deux noxes distinctes.
+      - « Alcool » -> « Drogues » sur Douleur Abdominale : trois grilles les
+        distinguent — AZYGOS-14 en tete, RESCOS-17 sous « Habitudes »,
+        RESCOS-19 sous « Antecedents personnels ».
 
-    Un successeur qui ajoute l'une ou l'autre en tache 11 voyait tous les
-    controles passer. Il ne les voit plus.
+    LA REGLE PORTE SUR LES SIGNATURES APRES LA TABLE, PAS SUR LES CHAINES
+    BRUTES, et la premiere redaction se trompait exactement la. Comparer
+    `cle in seau and valeur in seau` demandait a la grille d'ecrire la cible AU
+    CARACTERE PRES : des qu'elle en ecrit une VARIANTE — casse, accent, pluriel,
+    ou un libelle que la table aliase deja vers la meme cible — le controle ne
+    voyait rien alors que la fusion avait bien lieu. Mesure de la breche : 37
+    entrees d'une seule ligne passaient les huit proprietes au vert tout en
+    fusionnant deux items qu'une grille distingue, dont DOUZE ANTONYMES
+    (« Facteurs calmants » -> « Facteurs aggravants »,
+    « Flexion de hanche » -> « Extension de la hanche »,
+    « Uroculture » -> « Hemocultures »). Cas d'ecole :
+
+        Douleur Thoracique / « Antecedents cardiaques » -> « Antecedents familiaux »
+        German-32 ecrit « Antecedents cardiaques » ET « Anamnese familiale »,
+        section a — et la table aliase deja « Anamnese familiale » vers
+        « Antecedents familiaux ». Les deux items fusionnent, l'antecedent
+        CARDIAQUE est avale par le FAMILIAL, zero ecart signale.
+
+    Elle attrape aussi la FUSION INDIRECTE, qu'aucune entree ne trahit seule :
+    « Drogues » -> « Toxiques » ET « Noxes » -> « Toxiques » sur Cephalee ne
+    collisionnent ni l'une ni l'autre au sens des chaines brutes, et reunissent
+    pourtant « Drogues » et « Noxes » d'AZYGOS-3 par un tiers libelle.
+
+    D'ou la formulation retenue, qui ne parle plus d'entrees mais d'EFFET : dans
+    un seau, deux libelles que le socle A distinguait
+    (`signature(x) != signature(y)`) ne doivent pas se retrouver confondus une
+    fois la table appliquee (`signature(canonique(x)) == signature(canonique(y))`).
     """
     ecarts = []
-    for ssp in sorted(vocabulaire):
-        seaux = positions.get(ssp, {})
-        for cle in sorted(vocabulaire[ssp]):
-            valeur = vocabulaire[ssp][cle]
-            for (cid, prefixe), seau in sorted(seaux.items()):
-                if cle in seau and valeur in seau:
+    with installee(vocabulaire):
+        for ssp in sorted(positions):
+            if ssp not in vocabulaire:
+                continue      # sans entree, canonique() est l'identite
+            for (cid, prefixe), seau in sorted(positions[ssp].items()):
+                paquets = {}
+                for libelle in sorted(seau):
+                    apres = lib_fusion.signature(lib_fusion.canonique(libelle, ssp))
+                    paquets.setdefault(apres, {})[lib_fusion.signature(libelle)] = libelle
+                for apres, avant in sorted(paquets.items()):
+                    if len(avant) < 2:
+                        continue
+                    confondus = [avant[s] for s in sorted(avant)]
                     ecarts.append(
-                        f"{ssp} / « {cle} » → « {valeur} » — RAPPROCHEMENT ABUSIF : "
-                        f"{cid} porte les deux dans la section « {prefixe} » "
-                        f"({' et '.join(sorted(seau[cle]))} / "
-                        f"{' et '.join(sorted(seau[valeur]))}). Cette grille les "
-                        "distingue, la table ne peut pas les réunir")
+                        f"{ssp} — RAPPROCHEMENT ABUSIF : {cid} distingue "
+                        + " / ".join(f"« {x} » ({' et '.join(sorted(seau[x]))})"
+                                     for x in confondus)
+                        + f" dans la section « {prefixe} », et la table les confond. "
+                        + "Entrée(s) en cause : "
+                        + ", ".join(f"« {x} » → « {vocabulaire[ssp][x]} »"
+                                    for x in confondus if x in vocabulaire[ssp]))
     return ecarts
 
 
@@ -270,8 +305,8 @@ def main():
         return 1
     print(f"OK — {entrees} entrée(s) sur {len(vocabulaire)} SSP, toutes adossées à des "
           "libellés réels du corpus et toutes agissantes · "
-          "0 rapprochement abusif (aucune grille ne porte les deux libellés "
-          "d'une entrée dans la même section)")
+          "0 rapprochement abusif (aucune grille ne voit deux de ses libellés, "
+          "distincts pour le socle A, confondus par la table)")
     return 0
 
 
