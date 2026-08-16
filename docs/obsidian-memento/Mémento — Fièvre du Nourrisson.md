@@ -126,10 +126,13 @@ cssclasses:
 > 	- [ ] Bouche sèche, yeux enfoncés, apports liquidiens (déshydratation)
 > 	- [ ] Nombre de couches mouillées/24h
 > 	- [ ] Voyage récent
-> - [ ] **6. Antécédents médicaux personnels *(Bronchite aiguë · Exanthème subit)***
+> - [ ] **6. Antécédents médicaux personnels**
 > 	- [ ] Maladies antérieures *(Exanthème subit)*
 > 	- [ ] Hospitalisations *(Exanthème subit)*
-> 	- [ ] Chirurgies *(Exanthème subit)*
+> 	- [ ] Chirurgies *(Exanthème subit · Gastroentérite)*
+> 	- [ ] Épisodes similaires antérieurs *(Gastroentérite)*
+> 	- [ ] Maladies chroniques *(Gastroentérite)*
+> 	- [ ] Hospitalisations antérieures *(Gastroentérite)*
 > - [ ] **7. Antécédents chirurgicaux et hospitalisations *(Bronchite aiguë)***
 > 	- [ ] Chirurgie
 > 	- [ ] Hospitalisations
@@ -252,23 +255,18 @@ cssclasses:
 > 	- [ ] Symptômes urinaires (pleurs à la miction, odeur)
 > 	- [ ] Symptômes respiratoires (toux, dyspnée, tirage)
 > 	- [ ] Éruption cutanée/exanthème
-> - [ ] **41. Antécédents médicaux pertinents *(Gastroentérite)***
-> 	- [ ] Épisodes similaires antérieurs
-> 	- [ ] Maladies chroniques
-> 	- [ ] Hospitalisations antérieures
-> 	- [ ] Chirurgies
-> - [ ] **42. Médications et allergies *(Gastroentérite)***
+> - [ ] **41. Médications et allergies *(Gastroentérite)***
 > 	- [ ] Traitements en cours
 > 	- [ ] Prises médicamenteuses récentes
 > 	- [ ] Allergies connues
 > 	- [ ] Vaccinations à jour
-> - [ ] **43. Contexte épidémiologique *(Gastroentérite)***
+> - [ ] **42. Contexte épidémiologique *(Gastroentérite)***
 > 	- [ ] Santé de l'entourage familial
 > 	- [ ] Collectivité (crèche, garderie)
 > 	- [ ] Cas similaires dans l'entourage
 > 	- [ ] Voyages récents
 > 	- [ ] Contact avec animaux
-> - [ ] **44. Évaluation du contexte de l'appel *(Gastroentérite)***
+> - [ ] **43. Évaluation du contexte de l'appel *(Gastroentérite)***
 > 	- [ ] Adulte responsable présent
 > 	- [ ] Autres adultes disponibles
 > 	- [ ] Possibilité de transport si nécessaire

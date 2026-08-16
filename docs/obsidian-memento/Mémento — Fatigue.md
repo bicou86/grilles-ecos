@@ -789,8 +789,8 @@ cssclasses:
 > 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions de la patiente
 > - [ ] **3. Conseil et soutien**
-> 	- [ ] Conseil sur l'évitement des sports de contact en cas de mononucléose suspectée
 > 	- [ ] Réaction appropriée au défi sur l'expérience du médecin
+> 	- [ ] Conseil sur l'évitement des sports de contact en cas de mononucléose suspectée
 > 	- [ ] Éducation sur le repos nécessaire
 > 	- [ ] Information sur la durée possible de la fatigue
 > 	- [ ] Conseils de prévention transmission
@@ -837,7 +837,7 @@ cssclasses:
 > 	- [ ] Recherche des préoccupations et questions de la patiente
 > - [ ] **5. Conseil et soutien**
 > 	- [ ] Conseil sur les modifications du mode de vie pour améliorer l'humeur
-> 	- [ ] Réaction appropriée au défi sur la maternité
+> 	- [ ] Réaction appropriée au défi sur l'expérience du médecin
 > 	- [ ] Orientation vers assistance sociale
 > 	- [ ] Éducation sur l'importance du soutien familial
 > 	- [ ] Information sur les ressources de soutien post-partum

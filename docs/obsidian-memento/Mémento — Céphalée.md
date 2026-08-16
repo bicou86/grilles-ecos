@@ -402,9 +402,9 @@ cssclasses:
 > 	- [ ] Recherche des préoccupations et questions de la patiente
 > 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
 > - [ ] **3. Conseil et soutien**
+> 	- [ ] Réaction appropriée au défi concernant l'entretien d'embauche
 > 	- [ ] Proposer d'aider la patiente à s'allonger
 > 	- [ ] Proposer de diminuer l'éclairage dans la salle d'examen
-> 	- [ ] Réaction appropriée au défi concernant le mari
 > 	- [ ] Soutien émotionnel face à la gravité
 > 	- [ ] Information sur l'urgence de la situation
 > - [ ] **4. Examens complémentaires urgents**

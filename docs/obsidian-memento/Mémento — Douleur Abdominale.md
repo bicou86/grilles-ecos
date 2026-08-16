@@ -420,12 +420,16 @@ cssclasses:
 > 	- [ ] Médicaments actuels
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Automédication récente
-> - [ ] **103. Habitudes de vie et facteurs de risque *(Diverticulite sigmoïdienne non compliquée)***
-> 	- [ ] Tabagisme
-> 	- [ ] Consommation d'alcool
-> 	- [ ] Toxicomanie
-> 	- [ ] Activité physique
-> 	- [ ] Régime alimentaire (fibres)
+> - [ ] **103. Antécédents personnels et facteurs de risque *(2 grilles sur 20)***
+> 	- [ ] Tabagisme *(Diverticulite sigmoïdienne non compliquée)*
+> 	- [ ] Consommation d'alcool *(Diverticulite sigmoïdienne non compliquée)*
+> 	- [ ] Toxicomanie *(Diverticulite sigmoïdienne non compliquée)*
+> 	- [ ] Activité physique *(Diverticulite sigmoïdienne non compliquée)*
+> 	- [ ] Régime alimentaire (fibres) *(Diverticulite sigmoïdienne non compliquée)*
+> 	- [ ] Épisodes similaires antérieurs *(1 grille sur 20)*
+> 	- [ ] Surpoids *(1 grille sur 20)*
+> 	- [ ] Régime en cours *(1 grille sur 20)*
+> 	- [ ] Bonne santé habituelle *(1 grille sur 20)*
 > - [ ] **104. Contexte psychosocial *(Diverticulite sigmoïdienne non compliquée)***
 > 	- [ ] Situation familiale
 > 	- [ ] Autonomie
@@ -672,18 +676,13 @@ cssclasses:
 > 	- [ ] Aspect des selles
 > 	- [ ] Troubles urinaires
 > 	- [ ] Dernière prise alimentaire
-> - [ ] **168. Antécédents personnels et facteurs de risque *(1 grille sur 20)***
-> 	- [ ] Épisodes similaires antérieurs
-> 	- [ ] Surpoids
-> 	- [ ] Régime en cours
-> 	- [ ] Bonne santé habituelle
-> - [ ] **169. Antécédents familiaux et habitudes *(1 grille sur 20)***
+> - [ ] **168. Antécédents familiaux et habitudes *(1 grille sur 20)***
 > 	- [ ] Antécédents familiaux
 > 	- [ ] Père avec cholestérol élevé
 > 	- [ ] Tabagisme
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
-> - [ ] **170. Anamnèse socioprofessionnelle et impact *(1 grille sur 20)***
+> - [ ] **169. Anamnèse socioprofessionnelle et impact *(1 grille sur 20)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Impact professionnel
@@ -1077,19 +1076,19 @@ cssclasses:
 > 	- [ ] Repas fractionnés
 > 	- [ ] Éviter jeûne prolongé
 > - [ ] **5. Examens biologiques *(1 grille sur 4)***
-> - [ ] **6. Formule sanguine *(1 grille sur 4)***
-> - [ ] **7. Status urinaire *(1 grille sur 4)***
-> - [ ] **8. ECG *(1 grille sur 4)***
-> - [ ] **9. Diagnostic de travail *(1 grille sur 4)***
-> - [ ] **10. Cholécysectomie laparoscopique *(1 grille sur 4)***
-> - [ ] **11. Antibiothérapie i.v. *(1 grille sur 4)***
-> - [ ] **12. Réhydratation i.v. *(1 grille sur 4)***
-> - [ ] **13. Laisser à jeun *(1 grille sur 4)***
-> - [ ] **14. Information et éducation de la patiente *(1 grille sur 4)***
+> - [ ] **6. Information et éducation de la patiente *(1 grille sur 4)***
 > 	- [ ] Explication du diagnostic probable
 > 	- [ ] Information sur évolution et traitement
 > 	- [ ] Conseils pour récidive
 > 	- [ ] Planification chirurgicale si indiquée
+> - [ ] **7. Formule sanguine *(1 grille sur 4)***
+> - [ ] **8. Status urinaire *(1 grille sur 4)***
+> - [ ] **9. ECG *(1 grille sur 4)***
+> - [ ] **10. Diagnostic de travail *(1 grille sur 4)***
+> - [ ] **11. Cholécysectomie laparoscopique *(1 grille sur 4)***
+> - [ ] **12. Antibiothérapie i.v. *(1 grille sur 4)***
+> - [ ] **13. Réhydratation i.v. *(1 grille sur 4)***
+> - [ ] **14. Laisser à jeun *(1 grille sur 4)***
 > - [ ] **15. Mentionne une cholécystite comme hypothèse diagnostique principale *(1 grille sur 4)***
 > - [ ] **16. Evoque un diagnostic différentiel plausible *(1 grille sur 4)***
 > 	- [ ] Cholangite
@@ -1203,23 +1202,23 @@ cssclasses:
 > 	- [ ] Situations d'urgence
 
 > [!success] 💊 Management — si Endométriose pelvienne
-> - [ ] **1. Diagnostic suspecté**
+> - [ ] **1. Information et éducation de la patiente**
+> 	- [ ] Explication que les symptômes disparaissent souvent lors de l'aménorrhée ou de la grossesse
+> 	- [ ] Information sur les complications possibles
+> 	- [ ] Information sur les récidives possibles après traitement
+> - [ ] **2. Diagnostic suspecté**
 > 	- [ ] Endométriose
-> - [ ] **2. Prise en charge thérapeutique**
+> - [ ] **3. Prise en charge thérapeutique**
 > 	- [ ] Analgésiques
 > 	- [ ] Contraceptifs oraux (inhibiteurs de l'ovulation)
 > 	- [ ] Thérapie endocrinienne
 > 	- [ ] Ablation chirurgicale en cas de complications ou stades très avancés
-> - [ ] **3. Examens diagnostiques**
+> - [ ] **4. Examens diagnostiques**
 > 	- [ ] Analyses sanguines
 > 	- [ ] Test de grossesse
 > 	- [ ] Prélèvement vaginal et cervical
 > 	- [ ] Échographie vaginale
 > 	- [ ] Laparoscopie diagnostique
-> - [ ] **4. Information et éducation de la patiente**
-> 	- [ ] Explication que les symptômes disparaissent souvent lors de l'aménorrhée ou de la grossesse
-> 	- [ ] Information sur les complications possibles
-> 	- [ ] Information sur les récidives possibles après traitement
 
 > [!success] 💊 Management — si Gastroentérite
 > - [ ] **1. Conseils diététiques et de prévention**
@@ -1270,23 +1269,23 @@ cssclasses:
 > *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Douleur Thoracique]] (1 grille).
 
 > [!success] 💊 Management — si Infection génitale haute
-> - [ ] **1. Diagnostic suspecté**
+> - [ ] **1. Information et éducation de la patiente**
+> 	- [ ] Information sur les complications possibles
+> 	- [ ] Douleurs pelviennes chroniques possibles
+> 	- [ ] Risque accru de grossesse extra-utérine
+> - [ ] **2. Diagnostic suspecté**
 > 	- [ ] Annexite aiguë (salpingite)
-> - [ ] **2. Prise en charge thérapeutique**
+> - [ ] **3. Prise en charge thérapeutique**
 > 	- [ ] Doxycycline / Azithromycine
 > 	- [ ] Traitement du partenaire
 > 	- [ ] Chirurgie en cas d'abcès ou autres complications
-> - [ ] **3. Examens diagnostiques**
+> - [ ] **4. Examens diagnostiques**
 > 	- [ ] Analyses sanguines
 > 	- [ ] Test de grossesse
 > 	- [ ] Échographie abdominale/vaginale
 > 	- [ ] Consultation gynécologique pour examen au spéculum avec prélèvement
 > 	- [ ] Recherche de Chlamydia/Gonocoque
 > 	- [ ] Examen bimanuel
-> - [ ] **4. Information et éducation de la patiente**
-> 	- [ ] Information sur les complications possibles
-> 	- [ ] Douleurs pelviennes chroniques possibles
-> 	- [ ] Risque accru de grossesse extra-utérine
 
 > [!success] 💊 Management — si Ischémie mésentérique aiguë
 > - [ ] **1. Diagnostic suspecté**
@@ -1314,7 +1313,7 @@ cssclasses:
 > - [ ] **2. Examens biologiques**
 > 	- [ ] FSC, VGM, TCMH
 > 	- [ ] Panel IgE allergies pédiatriques
-> - [ ] **3. Communication avec le parent**
+> - [ ] **3. Information et éducation de la patiente**
 > 	- [ ] Explications au parent des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux

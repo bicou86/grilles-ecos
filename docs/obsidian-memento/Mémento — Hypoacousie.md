@@ -326,19 +326,19 @@ cssclasses:
 > - [ ] **8. Filet de sécurité *(1 grille sur 3)***
 > - [ ] **9. Diagnostic principal *(1 grille sur 3)***
 > 	- [ ] Presbyacousie bilatérale
-> - [ ] **10. Caractéristiques diagnostiques de la presbyacousie *(1 grille sur 3)***
+> - [ ] **10. Information du patient et pronostic *(1 grille sur 3)***
+> 	- [ ] Évolution progressive mais appareillage efficace
+> 	- [ ] Importance de l'observance pour éviter l'isolement social
+> 	- [ ] Réévaluation audiométrique annuelle
+> 	- [ ] Adaptation possible des réglages de l'appareil
+> - [ ] **11. Caractéristiques diagnostiques de la presbyacousie *(1 grille sur 3)***
 > 	- [ ] Surdité de perception symétrique bilatérale
 > 	- [ ] Atteinte prédominante des fréquences aiguës
 > 	- [ ] Limitation de la compréhension de la parole
 > 	- [ ] Difficultés accrues en environnement bruyant
 > 	- [ ] Évolution progressive avec l'âge
 > 	- [ ] Possible association avec des acouphènes
-> - [ ] **11. Traitement et prise en charge *(1 grille sur 3)***
-> - [ ] **12. Information et pronostic *(1 grille sur 3)***
-> 	- [ ] Évolution progressive mais appareillage efficace
-> 	- [ ] Importance de l'observance pour éviter l'isolement social
-> 	- [ ] Réévaluation audiométrique annuelle
-> 	- [ ] Adaptation possible des réglages de l'appareil
+> - [ ] **12. Traitement et prise en charge *(1 grille sur 3)***
 
 > [!success] 💊 Management — si Surdité brusque idiopathique gauche
 > - [ ] **1. Examens complémentaires**

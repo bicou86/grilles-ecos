@@ -209,7 +209,18 @@ cssclasses:
 > - [ ] **83. Perte d’urines / selles *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **84. Symptômes neurologiques focaux *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **85. Longs voyages / immobilisation *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **86. Antécédents médicaux *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **86. Antécédents médicaux personnels *(4 grilles sur 7)***
+> 	- [ ] Diabète *(3 grilles sur 7)*
+> 	- [ ] Addiction *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Cancer actif *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Épilepsie *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Tumeur cérébrale *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Convulsions fébriles enfant *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Maladies rénales *(1 grille sur 7)*
+> 	- [ ] Maladies neurologiques *(1 grille sur 7)*
+> 	- [ ] Autres pathologies chroniques *(2 grilles sur 7)*
+> 	- [ ] Maladies cardiovasculaires *(BAV)*
+> 	- [ ] Maladies respiratoires *(BAV)*
 > - [ ] **87. Antécédents cardiaques / troubles du rythme *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **88. Drogues / stimulants *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **89. Maladies familiales générales *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
@@ -260,80 +271,65 @@ cssclasses:
 > 	- [ ] Déficits neurologiques/AIT/AVC
 > 	- [ ] Changement de personnalité
 > 	- [ ] Cardiopathie connue
-> - [ ] **105. Antécédents médicaux personnels *(BAV · Première crise convulsive tonico-clonique)***
-> 	- [ ] Diabète
-> 	- [ ] Addiction *(Première crise convulsive tonico-clonique)*
-> 	- [ ] Cancer actif *(Première crise convulsive tonico-clonique)*
-> 	- [ ] Épilepsie *(Première crise convulsive tonico-clonique)*
-> 	- [ ] Tumeur cérébrale *(Première crise convulsive tonico-clonique)*
-> 	- [ ] Convulsions fébriles enfant *(Première crise convulsive tonico-clonique)*
-> 	- [ ] Maladies cardiovasculaires *(BAV)*
-> 	- [ ] Maladies respiratoires *(BAV)*
-> 	- [ ] Autres pathologies chroniques *(BAV)*
-> - [ ] **106. Habitudes de vie *(Première crise convulsive tonico-clonique)***
+> - [ ] **105. Habitudes de vie *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **107. Anamnèse sociale *(Première crise convulsive tonico-clonique)***
+> - [ ] **106. Anamnèse sociale *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Formation
 > 	- [ ] Famille
 > 	- [ ] Profession
 > 	- [ ] Domicile
 > 	- [ ] Loisirs
-> - [ ] **108. Revue des systèmes *(Première crise convulsive tonico-clonique)***
-> - [ ] **109. Question d'entrée ouverte - Motif de consultation *(1 grille sur 7)***
-> - [ ] **110. Caractérisation des symptômes principaux *(1 grille sur 7)***
+> - [ ] **107. Revue des systèmes *(Première crise convulsive tonico-clonique)***
+> - [ ] **108. Question d'entrée ouverte - Motif de consultation *(1 grille sur 7)***
+> - [ ] **109. Caractérisation des symptômes principaux *(1 grille sur 7)***
 > 	- [ ] Déclenchement par changements de position
 > 	- [ ] Amélioration en position allongée
 > 	- [ ] Prédominance horaire
 > 	- [ ] Durée des symptômes
-> - [ ] **111. Symptômes neurovégétatifs associés *(1 grille sur 7)***
+> - [ ] **110. Symptômes neurovégétatifs associés *(1 grille sur 7)***
 > 	- [ ] Vertiges
 > 	- [ ] Tachycardie
 > 	- [ ] Sueurs
 > 	- [ ] Pâleur
-> - [ ] **112. Épisodes syncopaux et chutes *(1 grille sur 7)***
+> - [ ] **111. Épisodes syncopaux et chutes *(1 grille sur 7)***
 > 	- [ ] Nombre de chutes
 > 	- [ ] Perte de connaissance complète
 > 	- [ ] Gravité des chutes
 > 	- [ ] Traumatismes associés
-> - [ ] **113. Symptômes cognitifs et généraux *(1 grille sur 7)***
+> - [ ] **112. Symptômes cognitifs et généraux *(1 grille sur 7)***
 > 	- [ ] Problèmes de concentration
 > 	- [ ] Fatigue inhabituelle
 > 	- [ ] Céphalées
 > 	- [ ] Modifications récentes
-> - [ ] **114. Symptômes cardiovasculaires *(1 grille sur 7)***
+> - [ ] **113. Symptômes cardiovasculaires *(1 grille sur 7)***
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Dyspnée
 > 	- [ ] Palpitations
 > 	- [ ] Œdèmes des membres inférieurs
-> - [ ] **115. Symptômes évocateurs d'autres causes *(1 grille sur 7)***
+> - [ ] **114. Symptômes évocateurs d'autres causes *(1 grille sur 7)***
 > 	- [ ] Intolérance au froid
 > 	- [ ] Acrocyanose
 > 	- [ ] Signes d'hypothyroïdie
 > 	- [ ] Signes d'insuffisance surrénalienne
-> - [ ] **116. Antécédents cardiovasculaires *(1 grille sur 7)***
+> - [ ] **115. Antécédents cardiovasculaires *(1 grille sur 7)***
 > 	- [ ] Maladies cardiaques connues
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Insuffisance cardiaque
 > 	- [ ] Troubles du rythme
-> - [ ] **117. Antécédents médicaux autres *(1 grille sur 7)***
-> 	- [ ] Maladies rénales
-> 	- [ ] Diabète
-> 	- [ ] Maladies neurologiques
-> 	- [ ] Autres pathologies chroniques
-> - [ ] **118. Traitements médicamenteux *(1 grille sur 7)***
+> - [ ] **116. Traitements médicamenteux *(1 grille sur 7)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Antihypertenseurs
 > 	- [ ] Diurétiques
 > 	- [ ] Psychotropes
 > 	- [ ] Observance thérapeutique
-> - [ ] **119. Habitudes de vie et hydratation *(1 grille sur 7)***
+> - [ ] **117. Habitudes de vie et hydratation *(1 grille sur 7)***
 > 	- [ ] Apports alimentaires
 > 	- [ ] Hydratation quotidienne
 > 	- [ ] Consommation de sel
 > 	- [ ] Modifications récentes
-> - [ ] **120. Substances et habitudes *(2 grilles sur 7)***
+> - [ ] **118. Substances et habitudes *(2 grilles sur 7)***
 > 	- [ ] Tabagisme *(1 grille sur 7)*
 > 	- [ ] Alcool
 > 	- [ ] Café/thé *(1 grille sur 7)*
@@ -341,99 +337,99 @@ cssclasses:
 > 	- [ ] Tabac actuel *(BAV)*
 > 	- [ ] Café *(BAV)*
 > 	- [ ] Drogues illicites *(BAV)*
-> - [ ] **121. Activités physiques et mode de vie *(1 grille sur 7)***
+> - [ ] **119. Activités physiques et mode de vie *(1 grille sur 7)***
 > 	- [ ] Activités sportives
 > 	- [ ] Loisirs
 > 	- [ ] Niveau d'autonomie
 > 	- [ ] Mobilité générale
-> - [ ] **122. Contexte social *(1 grille sur 7)***
+> - [ ] **120. Contexte social *(1 grille sur 7)***
 > 	- [ ] Situation familiale
 > 	- [ ] Enfants
 > 	- [ ] Profession antérieure
 > 	- [ ] Conditions de vie actuelles
-> - [ ] **123. Question d'entrée ouverte - Symptôme principal *(BAV)***
-> - [ ] **124. Caractérisation de l'épisode syncopal *(BAV)***
+> - [ ] **121. Question d'entrée ouverte - Symptôme principal *(BAV)***
+> - [ ] **122. Caractérisation de l'épisode syncopal *(BAV)***
 > 	- [ ] Prodromes
 > 	- [ ] Durée de la perte de connaissance
 > 	- [ ] Récupération (rapide ou progressive)
 > 	- [ ] Confusion post-critique
-> - [ ] **125. Fréquence et récurrence *(BAV)***
+> - [ ] **123. Fréquence et récurrence *(BAV)***
 > 	- [ ] Nombre d'épisodes
 > 	- [ ] Premier épisode (date)
 > 	- [ ] Augmentation de la fréquence
 > 	- [ ] Circonstances similaires
-> - [ ] **126. Symptômes cardiovasculaires associés *(BAV)***
+> - [ ] **124. Symptômes cardiovasculaires associés *(BAV)***
 > 	- [ ] Palpitations avant/après
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Sensation de battements irréguliers
 > 	- [ ] Pause cardiaque ressentie
-> - [ ] **127. Symptômes généraux récents *(BAV)***
+> - [ ] **125. Symptômes généraux récents *(BAV)***
 > 	- [ ] Fatigue inhabituelle
 > 	- [ ] Faiblesse générale
 > 	- [ ] Diminution de la tolérance à l'effort
 > 	- [ ] Modifications récentes
-> - [ ] **128. Symptômes respiratoires *(BAV)***
+> - [ ] **126. Symptômes respiratoires *(BAV)***
 > 	- [ ] Dyspnée d'effort
 > 	- [ ] Dyspnée de repos
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
-> - [ ] **129. Symptômes neurologiques *(BAV)***
+> - [ ] **127. Symptômes neurologiques *(BAV)***
 > 	- [ ] Vertiges
 > 	- [ ] Troubles visuels avant la syncope
 > 	- [ ] Céphalées
 > 	- [ ] Déficit neurologique focal
-> - [ ] **130. Circonstances déclenchantes *(BAV)***
+> - [ ] **128. Circonstances déclenchantes *(BAV)***
 > 	- [ ] Position lors de la syncope
 > 	- [ ] Effort physique
 > 	- [ ] Émotion forte
 > 	- [ ] Miction, défécation, toux
-> - [ ] **131. Facteurs de risque cardiovasculaire *(BAV)***
+> - [ ] **129. Facteurs de risque cardiovasculaire *(BAV)***
 > 	- [ ] Diabète
 > 	- [ ] Hypertension
 > 	- [ ] Dyslipidémie
 > 	- [ ] Tabagisme
 > 	- [ ] Obésité
-> - [ ] **132. Allergies médicamenteuses *(BAV)***
+> - [ ] **130. Allergies médicamenteuses *(BAV)***
 > 	- [ ] Allergies connues
 > 	- [ ] Intolérances
 > 	- [ ] Réactions antérieures
-> - [ ] **133. Contexte social et professionnel *(BAV)***
+> - [ ] **131. Contexte social et professionnel *(BAV)***
 > 	- [ ] Profession
 > 	- [ ] Niveau d'activité actuel
 > 	- [ ] Stress récent
 > 	- [ ] Support social
-> - [ ] **134. Orientation du patient *(Hypoglycémie)***
+> - [ ] **132. Orientation du patient *(Hypoglycémie)***
 > 	- [ ] Personne
 > 	- [ ] Temporalité
 > 	- [ ] Espace
-> - [ ] **135. Présence de douleur *(Hypoglycémie)***
-> - [ ] **136. Notion d'intoxication aiguë ("avez-vous pris ?") *(Hypoglycémie)***
+> - [ ] **133. Présence de douleur *(Hypoglycémie)***
+> - [ ] **134. Notion d'intoxication aiguë ("avez-vous pris ?") *(Hypoglycémie)***
 > 	- [ ] Drogue
 > 	- [ ] Alcool
-> - [ ] **137. Hétéro-anamnèse avec infirmier/-ère - anamnèse actuelle *(Hypoglycémie)***
+> - [ ] **135. Hétéro-anamnèse avec infirmier/-ère - anamnèse actuelle *(Hypoglycémie)***
 > 	- [ ] Circonstances du début du malaise
 > 	- [ ] Notion de perte de connaissance / syncope
 > 	- [ ] Notion de traumatisme crânien
-> - [ ] **138. Hétéroanamnèse avec infirmier/-ère - infos sur le/la patient·e *(Hypoglycémie)***
+> - [ ] **136. Hétéroanamnèse avec infirmier/-ère - infos sur le/la patient·e *(Hypoglycémie)***
 > 	- [ ] Médicaments habituels
 > 	- [ ] Antécédents / comorbidités
-> - [ ] **139. Anamnèse avec patient·e (post resucrage efficace) *(Hypoglycémie)***
+> - [ ] **137. Anamnèse avec patient·e (post resucrage efficace) *(Hypoglycémie)***
 > 	- [ ] Circonstance du malaise
 > 	- [ ] Compliance / modalité du traitement anti-diabétique
-> - [ ] **140. Caractérisation de la perte de connaissance *(1 grille sur 7)***
+> - [ ] **138. Caractérisation de la perte de connaissance *(1 grille sur 7)***
 > 	- [ ] Chronologie/durée
 > 	- [ ] Développement
 > 	- [ ] Circonstances de survenue
 > 	- [ ] Fréquence
-> - [ ] **141. Recherche de signes d'hypotension orthostatique *(1 grille sur 7)***
+> - [ ] **139. Recherche de signes d'hypotension orthostatique *(1 grille sur 7)***
 > 	- [ ] Épisode en se levant (changement de position)
 > 	- [ ] Vertiges et voile devant les yeux
-> - [ ] **142. Antécédents médicaux et facteurs prédisposants *(1 grille sur 7)***
+> - [ ] **140. Antécédents médicaux et facteurs prédisposants *(1 grille sur 7)***
 > 	- [ ] Anémie ferriprive en traitement (fer per os et IV)
 > 	- [ ] Jamais hospitalisé ni opéré
 > 	- [ ] Allergie au pollen
 > 	- [ ] Vaccins à jour
-> - [ ] **143. Habitudes et facteurs de risque *(1 grille sur 7)***
+> - [ ] **141. Habitudes et facteurs de risque *(1 grille sur 7)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Alimentation
 > 	- [ ] Activité physique
@@ -636,42 +632,42 @@ cssclasses:
 > 	- [ ] Consultation cardiologie urgente
 > 	- [ ] Suivi post-implantation
 > 	- [ ] Contrôles réguliers du pacemaker
-> - [ ] **4. ECG - Réalisation et interprétation**
+> - [ ] **4. Éducation du patient et prévention**
+> 	- [ ] Explication de la pathologie
+> 	- [ ] Signes d'alarme à reconnaître
+> 	- [ ] Conduite automobile temporairement interdite
+> 	- [ ] Port de la carte de porteur de pacemaker
+> - [ ] **5. ECG - Réalisation et interprétation**
 > 	- [ ] ECG 12 dérivations en urgence
 > 	- [ ] Identification du bloc AV type Mobitz
 > 	- [ ] Analyse de l'intervalle PR
 > 	- [ ] Recherche d'autres anomalies
-> - [ ] **5. Examens biologiques urgents**
+> - [ ] **6. Examens biologiques urgents**
 > 	- [ ] Troponine
 > 	- [ ] BNP/NT-proBNP
 > 	- [ ] Ionogramme et fonction rénale
 > 	- [ ] FSC
 > 	- [ ] TSH si indication
-> - [ ] **6. Examens complémentaires cardiologiques**
+> - [ ] **7. Examens complémentaires cardiologiques**
 > 	- [ ] Échocardiographie (exclure infarctus, cardiomyopathie)
 > 	- [ ] Monitoring ECG continu
 > 	- [ ] Holter ECG 24h si sortie
 > 	- [ ] Test d'effort différé
-> - [ ] **7. Prise en charge immédiate**
+> - [ ] **8. Prise en charge immédiate**
 > 	- [ ] Mise sous scope cardiaque
 > 	- [ ] Voie veineuse périphérique
 > 	- [ ] Oxygénothérapie si besoin
 > 	- [ ] Atropine prête si bradycardie symptomatique
-> - [ ] **8. Traitement définitif**
+> - [ ] **9. Traitement définitif**
 > 	- [ ] Indication de stimulateur cardiaque permanent
 > 	- [ ] Type de pacemaker approprié
 > 	- [ ] Délai d'implantation
 > 	- [ ] Pacing temporaire si nécessaire
-> - [ ] **9. Révision du traitement médicamenteux**
+> - [ ] **10. Révision du traitement médicamenteux**
 > 	- [ ] Arrêt des médicaments bradycardisants
 > 	- [ ] Adaptation du Valsartan
 > 	- [ ] Gestion des antidiabétiques
 > 	- [ ] Prévention secondaire cardiovasculaire
-> - [ ] **10. Éducation et prévention**
-> 	- [ ] Explication de la pathologie
-> 	- [ ] Signes d'alarme à reconnaître
-> 	- [ ] Conduite automobile temporairement interdite
-> 	- [ ] Port de la carte de porteur de pacemaker
 
 > [!success] 💊 Management — si Hypoglycémie
 > - [ ] **1. Équipement - propose de mettre un accès veineux (voie veineuse périphérique)**

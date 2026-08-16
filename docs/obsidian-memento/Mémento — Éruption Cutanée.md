@@ -133,7 +133,9 @@ cssclasses:
 > - [ ] **14. Phénomène de Köbner *(Psoriasis)***
 > - [ ] **15. Plaintes articulaires *(Psoriasis)***
 > - [ ] **16. Atopie *(Psoriasis)***
-> - [ ] **17. Anamnèse environnementale *(Psoriasis)***
+> - [ ] **17. Anamnèse personnelle *(4 diagnostics)***
+> 	- [ ] Allergie *(Zona)*
+> 	- [ ] Vaccins *(Zona)*
 > - [ ] **18. Infection préalable *(Psoriasis)***
 > - [ ] **19. Antécédents *(Psoriasis · Syphilis)***
 > - [ ] **20. Maladies cutanées *(Psoriasis)***
@@ -164,94 +166,89 @@ cssclasses:
 > - [ ] **45. Douloureux *(Syphilis)***
 > - [ ] **46. Anamnèse de l’entourage *(Syphilis)***
 > - [ ] **47. Exposition médicamenteuse derniers jours/semaines *(Syphilis)***
-> - [ ] **48. Anamnèse sexuelle *(Syphilis)***
-> - [ ] **49. Partenaires sexuels multiples *(Syphilis)***
-> - [ ] **50. Rapports sexuels non protégés *(Syphilis)***
-> - [ ] **51. Symptômes génitaux *(Syphilis)***
-> - [ ] **52. Écoulement/Dysurie *(Syphilis)***
-> - [ ] **53. Modifications génitales / chancre primaire *(Syphilis)***
-> - [ ] **54. Symptômes B *(Syphilis)***
-> - [ ] **55. Exposition solaire *(Syphilis)***
-> - [ ] **56. Nouveaux produits cosmétiques/d’hygiène *(Syphilis)***
-> - [ ] **57. Question initiale *(Dermatite périorale)***
-> - [ ] **58. Début *(Dermatite périorale)***
-> - [ ] **59. Facteur déclenchant *(Dermatite périorale)***
-> - [ ] **60. Gravité *(Dermatite périorale)***
-> - [ ] **61. Traitement médical préalable *(Dermatite périorale)***
-> - [ ] **62. Stéroïdes topiques *(Dermatite périorale)***
-> - [ ] **63. Cosmétiques *(Dermatite périorale)***
-> - [ ] **64. Douleurs / Brûlures *(Dermatite périorale)***
-> - [ ] **65. Peau *(Dermatite périorale)***
-> - [ ] **66. Comédons *(Dermatite périorale)***
-> - [ ] **67. Autres plaintes cutanées *(Dermatite périorale)***
-> - [ ] **68. Symptômes généraux *(Dermatite périorale)***
-> - [ ] **69. Antécédents médicaux personnels *(Dermatite périorale · Tinea corporis)***
-> 	- [ ] Maladies antérieures *(Tinea corporis)*
-> 	- [ ] Interventions chirurgicales *(Tinea corporis)*
-> - [ ] **70. Toxiques *(Dermatite périorale)***
-> - [ ] **71. Charge psychosociale *(Dermatite périorale)***
-> - [ ] **72. Se présente avec nom, fonction et but de la consultation *(Scarlatine / Angine streptococcique · Tinea corporis)***
-> - [ ] **73. Exploration du symptôme principal : éruption cutanée *(Scarlatine / Angine streptococcique · Tinea corporis)***
-> - [ ] **74. Évolution temporelle de l'éruption *(Scarlatine / Angine streptococcique · Tinea corporis)***
-> - [ ] **75. Évolution et extension des lésions *(Tinea corporis)***
-> - [ ] **76. Évolution clinique (amélioration/aggravation) *(Tinea corporis)***
-> - [ ] **77. Caractéristiques des lésions *(Tinea corporis)***
+> - [ ] **48. Partenaires sexuels multiples *(Syphilis)***
+> - [ ] **49. Rapports sexuels non protégés *(Syphilis)***
+> - [ ] **50. Symptômes génitaux *(Syphilis)***
+> - [ ] **51. Écoulement/Dysurie *(Syphilis)***
+> - [ ] **52. Modifications génitales / chancre primaire *(Syphilis)***
+> - [ ] **53. Symptômes B *(Syphilis)***
+> - [ ] **54. Exposition solaire *(Syphilis)***
+> - [ ] **55. Nouveaux produits cosmétiques/d’hygiène *(Syphilis)***
+> - [ ] **56. Question initiale *(Dermatite périorale)***
+> - [ ] **57. Début *(Dermatite périorale)***
+> - [ ] **58. Facteur déclenchant *(Dermatite périorale)***
+> - [ ] **59. Gravité *(Dermatite périorale)***
+> - [ ] **60. Traitement médical préalable *(Dermatite périorale)***
+> - [ ] **61. Stéroïdes topiques *(Dermatite périorale)***
+> - [ ] **62. Cosmétiques *(Dermatite périorale)***
+> - [ ] **63. Douleurs / Brûlures *(Dermatite périorale)***
+> - [ ] **64. Peau *(Dermatite périorale)***
+> - [ ] **65. Comédons *(Dermatite périorale)***
+> - [ ] **66. Autres plaintes cutanées *(Dermatite périorale)***
+> - [ ] **67. Symptômes généraux *(Dermatite périorale)***
+> - [ ] **68. Antécédents médicaux personnels *(Dermatite périorale · Scarlatine / Angine streptococcique · Tinea corporis)***
+> 	- [ ] Maladies antérieures *(Scarlatine / Angine streptococcique · Tinea corporis)*
+> 	- [ ] Interventions chirurgicales *(Scarlatine / Angine streptococcique · Tinea corporis)*
+> 	- [ ] Médicaments actuels *(Scarlatine / Angine streptococcique)*
+> - [ ] **69. Toxiques *(Dermatite périorale)***
+> - [ ] **70. Charge psychosociale *(Dermatite périorale)***
+> - [ ] **71. Se présente avec nom, fonction et but de la consultation *(Scarlatine / Angine streptococcique · Tinea corporis)***
+> - [ ] **72. Exploration du symptôme principal : éruption cutanée *(Scarlatine / Angine streptococcique · Tinea corporis)***
+> - [ ] **73. Évolution temporelle de l'éruption *(Scarlatine / Angine streptococcique · Tinea corporis)***
+> - [ ] **74. Évolution et extension des lésions *(Tinea corporis)***
+> - [ ] **75. Évolution clinique (amélioration/aggravation) *(Tinea corporis)***
+> - [ ] **76. Caractéristiques des lésions *(Tinea corporis)***
 > 	- [ ] Aspect (squameux, vésiculeux, etc.)
 > 	- [ ] Symptômes associés (prurit, douleur)
-> - [ ] **78. Facteurs d'exposition ou déclenchants *(Tinea corporis)***
-> - [ ] **79. Symptômes B (fièvre, sueurs nocturnes, perte de poids) *(Tinea corporis)***
-> - [ ] **80. Allergies connues *(Scarlatine / Angine streptococcique · Tinea corporis)***
-> - [ ] **81. Habitudes de vie *(Lupus érythémateux cutané · Tinea corporis)***
+> - [ ] **77. Facteurs d'exposition ou déclenchants *(Tinea corporis)***
+> - [ ] **78. Symptômes B (fièvre, sueurs nocturnes, perte de poids) *(Tinea corporis)***
+> - [ ] **79. Allergies connues *(Scarlatine / Angine streptococcique · Tinea corporis)***
+> - [ ] **80. Habitudes de vie *(Lupus érythémateux cutané · Tinea corporis)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **82. Anamnèse sociale et professionnelle *(Tinea corporis)***
-> - [ ] **83. Localisation de l'éruption *(Scarlatine / Angine streptococcique)***
-> - [ ] **84. Caractéristiques de l'éruption *(Scarlatine / Angine streptococcique)***
+> - [ ] **81. Anamnèse sociale et professionnelle *(Tinea corporis)***
+> - [ ] **82. Localisation de l'éruption *(Scarlatine / Angine streptococcique)***
+> - [ ] **83. Caractéristiques de l'éruption *(Scarlatine / Angine streptococcique)***
 > 	- [ ] Prurit
 > 	- [ ] Texture au toucher
-> - [ ] **85. État général et symptômes systémiques *(Scarlatine / Angine streptococcique)***
+> - [ ] **84. État général et symptômes systémiques *(Scarlatine / Angine streptococcique)***
 > 	- [ ] Comportement général
 > 	- [ ] Céphalées
 > 	- [ ] Problèmes respiratoires
 > 	- [ ] Autres symptômes systémiques
-> - [ ] **86. Antécédents médicaux et traitements *(Scarlatine / Angine streptococcique)***
-> 	- [ ] Médicaments actuels
-> 	- [ ] Maladies antérieures
-> 	- [ ] Interventions chirurgicales
-> - [ ] **87. Statut vaccinal *(Scarlatine / Angine streptococcique)***
-> - [ ] **88. Examens préventifs récents *(Scarlatine / Angine streptococcique)***
-> - [ ] **89. Anamnèse sociale et exposition *(Scarlatine / Angine streptococcique)***
+> - [ ] **85. Statut vaccinal *(Scarlatine / Angine streptococcique)***
+> - [ ] **86. Examens préventifs récents *(Scarlatine / Angine streptococcique)***
+> - [ ] **87. Anamnèse sociale et exposition *(Scarlatine / Angine streptococcique)***
 > 	- [ ] Fréquentation collective
 > 	- [ ] Contacts malades
-> - [ ] **90. Désinfection des mains, présentation avec nom, fonction et but de la consultation *(Lupus érythémateux cutané)***
-> - [ ] **91. Exploration du symptôme principal *(Lupus érythémateux cutané)***
-> - [ ] **92. Caractéristiques de l'érythème *(Lupus érythémateux cutané)***
+> - [ ] **88. Désinfection des mains, présentation avec nom, fonction et but de la consultation *(Lupus érythémateux cutané)***
+> - [ ] **89. Exploration du symptôme principal *(Lupus érythémateux cutané)***
+> - [ ] **90. Caractéristiques de l'érythème *(Lupus érythémateux cutané)***
 > 	- [ ] Douleur
 > 	- [ ] Sensation de brûlure
 > 	- [ ] Prurit
-> - [ ] **93. Évolution temporelle et facteurs déclenchants *(Lupus érythémateux cutané)***
+> - [ ] **91. Évolution temporelle et facteurs déclenchants *(Lupus érythémateux cutané)***
 > 	- [ ] Durée
 > 	- [ ] Facteur déclenchant
 > 	- [ ] Évolution
-> - [ ] **94. Antécédents d'épisodes similaires *(Lupus érythémateux cutané)***
-> - [ ] **95. Revue des systèmes *(Lupus érythémateux cutané)***
-> - [ ] **96. Antécédents médicaux et chirurgicaux *(Lupus érythémateux cutané)***
-> - [ ] **97. Anamnèse sociale *(Lupus érythémateux cutané)***
-> - [ ] **98. Anamnèse de voyage et exposition solaire *(Lupus érythémateux cutané)***
+> - [ ] **92. Antécédents d'épisodes similaires *(Lupus érythémateux cutané)***
+> - [ ] **93. Revue des systèmes *(Lupus érythémateux cutané)***
+> - [ ] **94. Antécédents médicaux et chirurgicaux *(Lupus érythémateux cutané)***
+> - [ ] **95. Anamnèse de voyage et exposition solaire *(Lupus érythémateux cutané)***
 > 	- [ ] Voyage récent
 > 	- [ ] Évolution pendant le voyage
 > 	- [ ] Fièvre au retour
 > 	- [ ] Exposition solaire
-> - [ ] **99. Lésions *(Zona)***
+> - [ ] **96. Lésions *(Zona)***
 > 	- [ ] Début
 > 	- [ ] Évolution en nombre
 > 	- [ ] Évolution en caractère
 > 	- [ ] Localisation
-> - [ ] **100. Premier épisode *(Zona)***
+> - [ ] **97. Premier épisode *(Zona)***
 > 	- [ ] A demandé si ATCD similaire *(1 grille sur 8)*
-> - [ ] **101. Symptômes associés : Fièvre/fatigue/toux/céphalées *(1 grille sur 8)***
-> - [ ] **102. Facteurs de risque *(Zona)***
+> - [ ] **98. Symptômes associés : Fièvre/fatigue/toux/céphalées *(1 grille sur 8)***
+> - [ ] **99. Facteurs de risque *(Zona)***
 > 	- [ ] Trauma/stress *(1 grille sur 8)*
 > 	- [ ] Traitement immunosuppresseur/infection récente/maladie (cancer, VIH, Immuno) *(1 grille sur 8)*
 > 	- [ ] Fatigue importante
@@ -260,13 +257,10 @@ cssclasses:
 > 	- [ ] Traitement immunosuppresseur *(1 grille sur 8)*
 > 	- [ ] Infection récente *(1 grille sur 8)*
 > 	- [ ] Maladie (cancer, VIH, immunosuppression) *(1 grille sur 8)*
-> - [ ] **103. Anamnèse personnelle *(Zona)***
-> 	- [ ] Allergie
-> 	- [ ] Vaccins
-> - [ ] **104. Anamnèse de varicelle *(Zona)***
-> - [ ] **105. Contage *(Zona)***
-> - [ ] **106. Douleurs soulagées par cannabis *(1 grille sur 8)***
-> - [ ] **107. Prurit — début ET évolution *(1 grille sur 8)***
+> - [ ] **100. Anamnèse de varicelle *(Zona)***
+> - [ ] **101. Contage *(Zona)***
+> - [ ] **102. Douleurs soulagées par cannabis *(1 grille sur 8)***
+> - [ ] **103. Prurit — début ET évolution *(1 grille sur 8)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Paramètres vitaux *(Psoriasis · Syphilis)***

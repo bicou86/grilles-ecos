@@ -110,7 +110,12 @@ cssclasses:
 > - [ ] **7. Allergies *(Léiomyome utérin (fibromes))***
 > - [ ] **8. Médicaments *(Léiomyome utérin (fibromes))***
 > - [ ] **9. Hospitalisations *(Léiomyome utérin (fibromes))***
-> - [ ] **10. Antécédents familiaux *(Léiomyome utérin (fibromes))***
+> - [ ] **10. Antécédents personnels et familiaux**
+> 	- [ ] Antécédents médicaux *(Dysménorrhée primaire)*
+> 	- [ ] Antécédents chirurgicaux *(Dysménorrhée primaire)*
+> 	- [ ] Allergies *(Dysménorrhée primaire)*
+> 	- [ ] Antécédents familiaux oncologiques *(Dysménorrhée primaire)*
+> 	- [ ] Dépistage des violences *(Dysménorrhée primaire)*
 > - [ ] **11. Habitudes et mode de vie *(Léiomyome utérin (fibromes))***
 > 	- [ ] Occupation
 > 	- [ ] Domicile
@@ -158,13 +163,7 @@ cssclasses:
 > 	- [ ] Dernier contrôle gynécologique
 > 	- [ ] Antécédents d'IST
 > 	- [ ] Ménopause
-> - [ ] **17. Antécédents personnels et familiaux *(Dysménorrhée primaire)***
-> 	- [ ] Antécédents médicaux
-> 	- [ ] Antécédents chirurgicaux
-> 	- [ ] Allergies
-> 	- [ ] Antécédents familiaux oncologiques
-> 	- [ ] Dépistage des violences
-> - [ ] **18. Anamnèse socioprofessionnelle et habitudes *(Dysménorrhée primaire)***
+> - [ ] **17. Anamnèse socioprofessionnelle et habitudes *(Dysménorrhée primaire)***
 > 	- [ ] Profession
 > 	- [ ] Tabac/alcool/substances
 > 	- [ ] Activité physique

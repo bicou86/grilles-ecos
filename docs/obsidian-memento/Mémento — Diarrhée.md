@@ -200,12 +200,12 @@ cssclasses:
 > 	- [ ] Douleurs abdominales
 > 	- [ ] Douleurs rectales
 > 	- [ ] Incontinence fécale
-> - [ ] **23. Antécédents médicaux pertinents *(Diarrhée chronique par malabsorption)***
-> 	- [ ] Maladies préexistantes
-> 	- [ ] Diabète
-> 	- [ ] Chirurgies abdominales
-> 	- [ ] Pathologie thyroïdienne
-> 	- [ ] Radiothérapie abdominale
+> - [ ] **23. Antécédents familiaux pertinents *(Diarrhée chronique par malabsorption · Déshydratation)***
+> 	- [ ] Maladies préexistantes *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Diabète *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Chirurgies abdominales *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Pathologie thyroïdienne *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Radiothérapie abdominale *(Diarrhée chronique par malabsorption)*
 > - [ ] **24. Médicaments et allergies *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Antibiotiques récents
@@ -262,57 +262,56 @@ cssclasses:
 > 	- [ ] Cas similaires dans l'entourage
 > 	- [ ] Voyage récent
 > 	- [ ] Consommation d'aliments suspects
-> - [ ] **37. Antécédents familiaux pertinents *(Déshydratation)***
-> - [ ] **38. Anamnèse sociale *(Déshydratation)***
+> - [ ] **37. Anamnèse sociale *(Déshydratation)***
 > 	- [ ] Conditions de vie
 > 	- [ ] Autonomie (personne âgée)
 > 	- [ ] Garde d'enfant/crèche
-> - [ ] **39. Caractérisation de la plainte principale *(1 grille sur 5)***
+> - [ ] **38. Caractérisation de la plainte principale *(1 grille sur 5)***
 > 	- [ ] Localisation de la douleur
 > 	- [ ] Type de douleur
 > 	- [ ] Intensité
 > 	- [ ] Durée et fréquence
 > 	- [ ] Facteurs aggravants
-> - [ ] **40. Caractérisation des rectorragies *(1 grille sur 5)***
+> - [ ] **39. Caractérisation des rectorragies *(1 grille sur 5)***
 > 	- [ ] Présence de sang frais
 > 	- [ ] Quantité et fréquence
 > 	- [ ] Glaires
 > 	- [ ] Diarrhées nocturnes
 > 	- [ ] Ténesmes et urgences fécales
-> - [ ] **41. Symptômes associés *(1 grille sur 5)***
+> - [ ] **40. Symptômes associés *(1 grille sur 5)***
 > 	- [ ] Perte de poids
 > 	- [ ] Inappétence
 > 	- [ ] Nausées et vomissements
 > 	- [ ] Fatigue
 > 	- [ ] Palpitations
-> - [ ] **42. Retentissement fonctionnel *(1 grille sur 5)***
+> - [ ] **41. Retentissement fonctionnel *(1 grille sur 5)***
 > 	- [ ] Impact socioprofessionnel
 > 	- [ ] Isolement social
 > 	- [ ] Adaptation comportementale
-> - [ ] **43. Antécédents et facteurs de risque *(1 grille sur 5)***
+> - [ ] **42. Antécédents et facteurs de risque *(1 grille sur 5)***
 > 	- [ ] Voyage récent
 > 	- [ ] Relations sexuelles non protégées
 > 	- [ ] Consommation d'aliments à risque
 > 	- [ ] Tabagisme
 > 	- [ ] Médicaments gastrotoxiques
-> - [ ] **44. Anamnèse systémique *(1 grille sur 5)***
+> - [ ] **43. Anamnèse systémique *(1 grille sur 5)***
 > 	- [ ] Pas de symptômes urinaires
 > 	- [ ] Pas de douleurs articulaires
 > 	- [ ] Pas d'atteinte cutanée
 > 	- [ ] Pas d'atteinte oculaire
 > 	- [ ] Pas de notion de contage
-> - [ ] **45. Anamnèse médicale et chirurgicale *(1 grille sur 5)***
+> - [ ] **44. Anamnèse médicale et chirurgicale *(1 grille sur 5)***
 > 	- [ ] Reflux gastro-œsophagien
 > 	- [ ] Lombalgies chroniques
 > 	- [ ] Appendicectomie
 > 	- [ ] Cure de tunnel carpien
-> - [ ] **46. Caractérisation de la modification du transit *(Cancer colorectal)***
+> - [ ] **45. Caractérisation de la modification du transit *(Cancer colorectal)***
 > 	- [ ] Évolution générale
 > 	- [ ] Nombre de selles par 24h
 > 	- [ ] Modification récente du transit
 > 	- [ ] Selles noires déféquées
 > 	- [ ] Selles nauséabondes
-> - [ ] **47. Caractéristiques des selles - Aspect anormal *(Cancer colorectal)***
+> - [ ] **46. Caractéristiques des selles - Aspect anormal *(Cancer colorectal)***
 > 	- [ ] Selles de couleur habituelle mélée à du sang rouge
 > 	- [ ] Selles rouges avec caillots
 > 	- [ ] Selles noires luisantes
@@ -320,21 +319,21 @@ cssclasses:
 > 	- [ ] Selles jaunes-grisâtres, pâteuses
 > 	- [ ] Selles en pétoles, dures
 > 	- [ ] Selles rubanées de calibre diminué
-> - [ ] **48. Éléments anormaux dans les selles *(Cancer colorectal)***
+> - [ ] **47. Éléments anormaux dans les selles *(Cancer colorectal)***
 > 	- [ ] Glaires
 > 	- [ ] Pus
 > 	- [ ] Sang noir
 > 	- [ ] Sang rouge
 > 	- [ ] Graisses
 > 	- [ ] Aliments non digérés
-> - [ ] **49. Retentissement général *(Cancer colorectal)***
+> - [ ] **48. Retentissement général *(Cancer colorectal)***
 > 	- [ ] Asthénie
 > 	- [ ] Perte de poids
 > 	- [ ] Anorexie
 > 	- [ ] Fièvre
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Altération de l'état général
-> - [ ] **50. Facteurs favorisants et antécédents *(Cancer colorectal)***
+> - [ ] **49. Facteurs favorisants et antécédents *(Cancer colorectal)***
 > 	- [ ] Alimentation récente
 > 	- [ ] Voyage récent
 > 	- [ ] Prise médicamenteuse

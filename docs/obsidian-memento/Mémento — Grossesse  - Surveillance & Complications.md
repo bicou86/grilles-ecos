@@ -98,7 +98,12 @@ cssclasses:
 > - [ ] **13. Cytologie cervicale *(Grossesse (suivi/conseils))***
 > - [ ] **14. Antécédents gynécologiques *(Grossesse (suivi/conseils))***
 > - [ ] **15. Grossesses antérieures *(Grossesse (suivi/conseils))***
-> - [ ] **16. Antécédents médicaux *(Grossesse (suivi/conseils))***
+> - [ ] **16. Antécédents familiaux**
+> 	- [ ] Maladies héréditaires *(Fausse couche menacée/en cours)*
+> 	- [ ] Thromboembolies veineuses *(Fausse couche menacée/en cours)*
+> 	- [ ] Pathologies cardiovasculaires *(Fausse couche menacée/en cours)*
+> 	- [ ] Cancers *(Fausse couche menacée/en cours)*
+> 	- [ ] Complications obstétricales familiales *(Fausse couche menacée/en cours)*
 > - [ ] **17. Médicaments *(Grossesse (suivi/conseils))***
 > - [ ] **18. Suppléments *(Grossesse (suivi/conseils))***
 > - [ ] **19. Acide folique *(Grossesse (suivi/conseils))***
@@ -141,19 +146,13 @@ cssclasses:
 > 	- [ ] Hospitalisations antérieures
 > 	- [ ] Allergies
 > 	- [ ] Traitements actuels
-> - [ ] **35. Antécédents familiaux *(Fausse couche menacée/en cours)***
-> 	- [ ] Maladies héréditaires
-> 	- [ ] Thromboembolies veineuses
-> 	- [ ] Pathologies cardiovasculaires
-> 	- [ ] Cancers
-> 	- [ ] Complications obstétricales familiales
-> - [ ] **36. Anamnèse socioprofessionnelle et habitudes *(Fausse couche menacée/en cours)***
+> - [ ] **35. Anamnèse socioprofessionnelle et habitudes *(Fausse couche menacée/en cours)***
 > 	- [ ] Activité professionnelle
 > 	- [ ] Situation familiale
 > 	- [ ] Habitudes de vie
 > 	- [ ] Conditions de logement
 > 	- [ ] Violences
-> - [ ] **37. Suivi de grossesse actuelle *(Fausse couche menacée/en cours)***
+> - [ ] **36. Suivi de grossesse actuelle *(Fausse couche menacée/en cours)***
 > 	- [ ] Terme de grossesse
 > 	- [ ] Échographies et dépistages
 > 	- [ ] Sérologies

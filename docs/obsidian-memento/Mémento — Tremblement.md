@@ -268,11 +268,15 @@ cssclasses:
 > 	- [ ] Pas d'initiation de traitement en urgence
 > 	- [ ] Rassurer le patient
 > 	- [ ] Expliquer la nécessité d'un bilan spécialisé
-> - [ ] **6. Information au patient *(1 grille sur 2)***
-> 	- [ ] Explication de la suspicion diagnostique
-> 	- [ ] Importance du suivi neurologique
-> 	- [ ] Pronostic généralement favorable avec traitement
-> 	- [ ] Soutien psychologique
+> - [ ] **6. Information patient et famille**
+> 	- [ ] Explication de la suspicion diagnostique *(1 grille sur 2)*
+> 	- [ ] Importance du suivi neurologique *(1 grille sur 2)*
+> 	- [ ] Pronostic généralement favorable avec traitement *(1 grille sur 2)*
+> 	- [ ] Soutien psychologique *(1 grille sur 2)*
+> 	- [ ] Explication diagnostic *(1 grille sur 2)*
+> 	- [ ] Pronostic *(1 grille sur 2)*
+> 	- [ ] Conseils hygiène de vie *(1 grille sur 2)*
+> 	- [ ] Associations patients *(1 grille sur 2)*
 > - [ ] **7. Conseils pratiques *(1 grille sur 2)***
 > 	- [ ] Maintien de l'activité physique
 > 	- [ ] Précautions pour éviter les chutes
@@ -295,12 +299,7 @@ cssclasses:
 > 	- [ ] Orthophonie
 > 	- [ ] Ergothérapie
 > 	- [ ] Activité physique
-> - [ ] **13. Information patient et famille *(1 grille sur 2)***
-> 	- [ ] Explication diagnostic
-> 	- [ ] Pronostic
-> 	- [ ] Conseils hygiène de vie
-> 	- [ ] Associations patients
-> - [ ] **14. Suivi spécialisé et long terme *(1 grille sur 2)***
+> - [ ] **13. Suivi spécialisé et long terme *(1 grille sur 2)***
 > 	- [ ] Neurologie
 > 	- [ ] Surveillance complications
 > 	- [ ] Neurochirurgie

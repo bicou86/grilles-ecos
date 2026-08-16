@@ -178,15 +178,19 @@ cssclasses:
 > 	- [ ] Voyages récents
 > 	- [ ] Contact avec malades
 > 	- [ ] Exposition professionnelle
-> - [ ] **37. Antécédents médicaux personnels *(Asthme · BPCO)***
+> - [ ] **37. Antécédents médicaux pertinents *(3 grilles sur 5)***
 > 	- [ ] Maladies antérieures *(Asthme)*
 > 	- [ ] Problèmes respiratoires antérieurs *(Asthme)*
 > 	- [ ] Hospitalisations *(Asthme)*
-> 	- [ ] Interventions chirurgicales *(Asthme)*
+> 	- [ ] Interventions chirurgicales *(2 grilles sur 5)*
 > 	- [ ] Maladies chroniques connues *(BPCO)*
 > 	- [ ] Pathologies cardiovasculaires *(BPCO)*
 > 	- [ ] Autres problèmes de santé *(BPCO)*
 > 	- [ ] Chirurgies antérieures *(BPCO)*
+> 	- [ ] Pathologies cardiaques préexistantes *(1 grille sur 5)*
+> 	- [ ] Pathologies respiratoires *(1 grille sur 5)*
+> 	- [ ] Hospitalisations antérieures *(1 grille sur 5)*
+> 	- [ ] Allergies médicamenteuses *(1 grille sur 5)*
 > - [ ] **38. Traitements et habitudes *(Asthme)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Tabagisme
@@ -200,11 +204,10 @@ cssclasses:
 > 	- [ ] Diagnostic d'asthme antérieur
 > - [ ] **40. Antécédents familiaux *(Asthme · BPCO)***
 > 	- [ ] Allergies familiales
-> 	- [ ] Maladies respiratoires *(Asthme)*
+> 	- [ ] Maladies respiratoires familiales
 > 	- [ ] Asthme familial *(Asthme)*
 > 	- [ ] Autres maladies héréditaires *(Asthme)*
 > 	- [ ] Cancer bronchique *(BPCO)*
-> 	- [ ] Maladies respiratoires familiales *(BPCO)*
 > 	- [ ] Pathologies cardiovasculaires *(BPCO)*
 > - [ ] **41. Contexte social et environnemental *(Asthme)***
 > 	- [ ] Situation familiale
@@ -340,25 +343,19 @@ cssclasses:
 > 	- [ ] Hémoptysie
 > 	- [ ] Sifflements respiratoires
 > 	- [ ] Infections respiratoires récurrentes
-> - [ ] **66. Antécédents médicaux pertinents *(1 grille sur 5)***
-> 	- [ ] Pathologies cardiaques préexistantes
-> 	- [ ] Pathologies respiratoires
-> 	- [ ] Hospitalisations antérieures
-> 	- [ ] Interventions chirurgicales
-> 	- [ ] Allergies médicamenteuses
-> - [ ] **67. Habitudes et mode de vie *(1 grille sur 5)***
+> - [ ] **66. Habitudes et mode de vie *(1 grille sur 5)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
 > 	- [ ] Médicaments actuels
 > 	- [ ] Expositions professionnelles
-> - [ ] **68. Contexte psychosocial *(1 grille sur 5)***
+> - [ ] **67. Contexte psychosocial *(1 grille sur 5)***
 > 	- [ ] Situation professionnelle
 > 	- [ ] Situation financière
 > 	- [ ] Isolement social
 > 	- [ ] Stress et anxiété
 > 	- [ ] Observance thérapeutique potentielle
-> - [ ] **69. Intégration anamnèse cardio-respiratoire *(1 grille sur 5)***
+> - [ ] **68. Intégration anamnèse cardio-respiratoire *(1 grille sur 5)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Palpation *(1 grille sur 5)***

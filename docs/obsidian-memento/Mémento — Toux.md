@@ -482,11 +482,16 @@ cssclasses:
 > - [ ] **99. Symptômes associés - Œdèmes des membres inférieurs *(1 grille sur 13)***
 > - [ ] **100. Exposition (professionnelle, environnementale) *(1 grille sur 13)***
 > - [ ] **101. Médicaments actuels *(2 grilles sur 13)***
-> - [ ] **102. Anamnèse sociale *(2 grilles sur 13)***
-> 	- [ ] État civil
-> 	- [ ] Enfants
+> - [ ] **102. Anamnèse personnelle *(4 grilles sur 13)***
+> 	- [ ] État civil *(2 grilles sur 13)*
+> 	- [ ] Enfants *(2 grilles sur 13)*
 > 	- [ ] Situation professionnelle *(1 grille sur 13)*
 > 	- [ ] Profession *(1 grille sur 13)*
+> 	- [ ] Grossesse *(Coqueluche)*
+> 	- [ ] Accouchement *(Coqueluche)*
+> 	- [ ] Néonatale *(Coqueluche)*
+> 	- [ ] Croissance *(Coqueluche)*
+> 	- [ ] Développement *(Coqueluche)*
 > - [ ] **103. État actuel *(1 grille sur 13)***
 > - [ ] **104. Type de dyspnée *(1 grille sur 13)***
 > 	- [ ] Repos ou effort
@@ -570,12 +575,14 @@ cssclasses:
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Signes d'insuffisance cardiaque
 > 	- [ ] Autres symptômes respiratoires
-> - [ ] **133. Antécédents personnels et facteurs de risque *(1 grille sur 13)***
-> 	- [ ] Pathologies chroniques
-> 	- [ ] Antécédents pulmonaires
-> 	- [ ] Hospitalisations antérieures
-> 	- [ ] Allergies médicamenteuses
-> 	- [ ] Vaccinations
+> - [ ] **133. Antécédents personnels et facteurs de risque *(2 grilles sur 13)***
+> 	- [ ] Pathologies chroniques *(1 grille sur 13)*
+> 	- [ ] Antécédents pulmonaires *(1 grille sur 13)*
+> 	- [ ] Hospitalisations antérieures *(1 grille sur 13)*
+> 	- [ ] Allergies médicamenteuses *(1 grille sur 13)*
+> 	- [ ] Vaccinations *(1 grille sur 13)*
+> 	- [ ] Antécédents familiaux *(1 grille sur 13)*
+> 	- [ ] Suivi gynécologique régulier *(1 grille sur 13)*
 > - [ ] **134. Habitudes et expositions *(1 grille sur 13)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
@@ -598,41 +605,32 @@ cssclasses:
 > 	- [ ] Couches mouillées
 > - [ ] **138. État général *(Coqueluche)***
 > 	- [ ] Apathie et/ou fatigue
-> - [ ] **139. Anamnèse personnelle *(Coqueluche)***
-> 	- [ ] Grossesse
-> 	- [ ] Accouchement
-> 	- [ ] Néonatale
-> 	- [ ] Croissance
-> 	- [ ] Développement
-> - [ ] **140. Vaccins/Médicaments *(Coqueluche)***
+> - [ ] **139. Vaccins/Médicaments *(Coqueluche)***
 > 	- [ ] Vaccins
 > 	- [ ] Médicaments
-> - [ ] **141. Contage *(Coqueluche)***
-> - [ ] **142. Caractérisation de l'hémoptysie *(1 grille sur 13)***
+> - [ ] **140. Contage *(Coqueluche)***
+> - [ ] **141. Caractérisation de l'hémoptysie *(1 grille sur 13)***
 > 	- [ ] Début et durée
 > 	- [ ] Quantité
 > 	- [ ] Aspect du sang
 > 	- [ ] Évolution
-> - [ ] **143. Histoire de la toux chronique *(1 grille sur 13)***
+> - [ ] **142. Histoire de la toux chronique *(1 grille sur 13)***
 > 	- [ ] Ancienneté
 > 	- [ ] Horaire habituel
 > 	- [ ] Évolution récente
 > 	- [ ] Caractère des expectorations habituelles
-> - [ ] **144. Antécédents respiratoires *(1 grille sur 13)***
+> - [ ] **143. Antécédents respiratoires *(1 grille sur 13)***
 > 	- [ ] BPCO suspectée par médecin traitant
 > 	- [ ] Épisodes de bronchite
 > 	- [ ] Participation aux campagnes de dépistage
-> - [ ] **145. Symptômes généraux et signes d'alarme *(1 grille sur 13)***
+> - [ ] **144. Symptômes généraux et signes d'alarme *(1 grille sur 13)***
 > 	- [ ] Perte de poids
-> - [ ] **146. Signes négatifs importants *(1 grille sur 13)***
+> - [ ] **145. Signes négatifs importants *(1 grille sur 13)***
 > 	- [ ] Pas d'œdèmes des membres inférieurs
 > 	- [ ] Pas de troubles du sommeil respiratoires
 > 	- [ ] Pas de voyage récent
 > 	- [ ] Pas d'immobilisation ou antécédent thromboembolique
-> - [ ] **147. Antécédents personnels et familiaux *(1 grille sur 13)***
-> 	- [ ] Antécédents familiaux
-> 	- [ ] Suivi gynécologique régulier
-> - [ ] **148. Contexte social et professionnel *(1 grille sur 13)***
+> - [ ] **146. Contexte social et professionnel *(1 grille sur 13)***
 > 	- [ ] Situation familiale
 > 	- [ ] Profession
 > 	- [ ] Impact sur la qualité de vie
