@@ -69,12 +69,55 @@ def rattachements():
     return {cid: alias.get(ssp, ssp) for cid, ssp in out.items()}
 
 
+CHAMPS_COFFRE = ("specialite", "priorite")
+INSTANTANE = REPO / "docs" / "ecos-ssp-coffre.yaml"
+_INSTANTANE = None
+
+
+def champ_texte(texte, champ):
+    """La valeur d'un champ dans le texte d'une page SSP, ou None.
+
+    SOURCE UNIQUE de la regle de lecture, partagee par le lecteur et par
+    fige_coffre.py qui produit l'instantane. Une copie divergerait au premier
+    correctif et l'instantane cesserait de valoir la page sans que rien ne le
+    dise. La recherche porte sur TOUT le fichier et non sur le seul
+    frontmatter, et rend la PREMIERE occurrence : c'est le comportement
+    d'origine, conserve tel quel pour que l'instantane reproduise a l'octet ce
+    que le coffre donnait.
+    """
+    m = re.search(rf"^{champ}:\s*(.+)$", texte, re.M)
+    return m.group(1).strip() if m else None
+
+
+def _instantane():
+    """SSP -> {champ: valeur}, lu du DEPOT et non du coffre.
+
+    POURQUOI PAS LE COFFRE. `specialite()` et `priorite()` decident du
+    frontmatter `specialite:` et de l'etoile ⭐️ des mementos : ils entrent donc
+    dans les octets de 74 des 89 fichiers VERSIONNES. Les lire dans
+    ~/Documents/... rendait le depot non reproductible — et pire,
+    check_mementos.py appelle le generateur, si bien qu'un clone frais
+    REECRIVAIT les 74 fichiers en version degradee avant de les declarer en
+    ecart. Meme remede qu'AZYGOS : le depot porte l'instantane, le coffre
+    reste la source de RAFRAICHISSEMENT (fige_coffre.py).
+
+    Une SSP absente de l'instantane est une page absente du coffre ; un champ
+    absent de son groupe est un champ absent de la page. Les deux rendent le
+    defaut, comme avant.
+    """
+    global _INSTANTANE
+    if _INSTANTANE is None:
+        _INSTANTANE = lib_yaml.lire_groupe(INSTANTANE)
+    return _INSTANTANE
+
+
+def pages_connues():
+    """Les noms de SSP pour lesquels le coffre avait une page au dernier figeage."""
+    return set(_instantane())
+
+
 def _champ(ssp, champ, defaut=""):
-    fichier = COFFRE / f"SSP — {ssp}.md"
-    if not fichier.exists():
-        return defaut
-    m = re.search(rf"^{champ}:\s*(.+)$", fichier.read_text(encoding="utf8"), re.M)
-    return m.group(1).strip() if m else defaut
+    return _instantane().get(ssp, {}).get(champ) or defaut
 
 
 def specialite(ssp):
