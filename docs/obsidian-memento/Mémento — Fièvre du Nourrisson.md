@@ -132,11 +132,10 @@ cssclasses:
 > 	- [ ] Voyage récent
 > - [ ] **6. Antécédents médicaux personnels**
 > 	- [ ] Maladies antérieures *(Exanthème subit)*
-> 	- [ ] Hospitalisations *(Exanthème subit)*
+> 	- [ ] Hospitalisations *(Exanthème subit · Gastroentérite)*
 > 	- [ ] Chirurgies *(Exanthème subit · Gastroentérite)*
 > 	- [ ] Épisodes similaires antérieurs *(Gastroentérite)*
 > 	- [ ] Maladies chroniques *(Gastroentérite)*
-> 	- [ ] Hospitalisations antérieures *(Gastroentérite)*
 > - [ ] **7. Antécédents chirurgicaux et hospitalisations *(Bronchite aiguë)***
 > 	- [ ] Chirurgie
 > 	- [ ] Hospitalisations

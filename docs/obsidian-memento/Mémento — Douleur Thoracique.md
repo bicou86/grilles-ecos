@@ -148,7 +148,7 @@ cssclasses:
 > 	- [ ] Fièvre/frissons
 > 	- [ ] Fatigue *(2 grilles sur 12)*
 > 	- [ ] Palpitations
-> 	- [ ] Éruption/changements cutanés *(2 grilles sur 12)*
+> 	- [ ] Éruption/changements cutanés
 > 	- [ ] Toux
 > 	- [ ] Toux productive *(1 grille sur 12)*
 > 	- [ ] Sang dans les crachats *(1 grille sur 12)*
@@ -156,7 +156,6 @@ cssclasses:
 > 	- [ ] Vertiges
 > 	- [ ] Douleur aux jambes *(1 grille sur 12)*
 > 	- [ ] Céphalées *(1 grille sur 12)*
-> 	- [ ] Éruption/changements cutanés (ecchymoses) *(1 grille sur 12)*
 > 	- [ ] Perte de connaissance *(1 grille sur 12)*
 > 	- [ ] Blessure à une autre partie du corps *(1 grille sur 12)*
 > 	- [ ] Consommation d'alcool ou de drogues avant le traumatisme *(1 grille sur 12)*
@@ -523,9 +522,9 @@ cssclasses:
 
 > [!success] 💊 Management — si Angor stable / Maladie coronarienne
 > - [ ] **1. Examens complémentaires demandés *(1 grille sur 2)***
+> 	- [ ] Échocardiographie
 > 	- [ ] ECG de repos 12 dérivations
 > 	- [ ] Test d'effort sur tapis ou vélo
-> 	- [ ] Échocardiographie de repos
 > 	- [ ] Score calcique coronaire si doute
 > 	- [ ] Coroscanner si test d'effort non concluant
 > 	- [ ] Coronarographie si test positif
@@ -567,7 +566,7 @@ cssclasses:
 > 	- [ ] ECG de repos 12 dérivations
 > 	- [ ] Test d'effort ou imagerie de stress
 > 	- [ ] Bilan biologique
-> 	- [ ] Échocardiographie de repos
+> 	- [ ] Échocardiographie
 > 	- [ ] Radiographie thoracique
 > - [ ] **10. Initiation du traitement médical optimal *(1 grille sur 2)***
 > 	- [ ] Antiagrégation plaquettaire

@@ -109,8 +109,7 @@ cssclasses:
 > 	- [ ] Symptômes associés *(2 grilles sur 6)*
 > 	- [ ] Temporalité *(Méningite)*
 > 	- [ ] Caractère *(Méningite)*
-> 	- [ ] Intensité EVA *(Méningite)*
-> 	- [ ] Intensité *(Thrombose veineuse cérébrale)*
+> 	- [ ] Intensité *(Méningite · Thrombose veineuse cérébrale)*
 > 	- [ ] Évolution *(Thrombose veineuse cérébrale)*
 > 	- [ ] Durée *(Thrombose veineuse cérébrale)*
 > - [ ] **3. Recherche de symptômes spécifiques *(1 grille sur 6)***

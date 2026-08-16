@@ -403,12 +403,11 @@ cssclasses:
 > - [ ] **5. Examen neurologique complet *(3 grilles sur 8)***
 > 	- [ ] Examen ciblé des mouvements passifs et actifs *(2 grilles sur 8)*
 > 	- [ ] Examen ciblé de la sensibilité *(1 grille sur 8)*
-> 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(1 grille sur 8)*
+> 	- [ ] Réflexes ostéo-tendineux *(2 grilles sur 8)*
 > 	- [ ] Examen ciblé de la marche *(2 grilles sur 8)*
 > 	- [ ] Signe de Babinski *(1 grille sur 8)*
 > 	- [ ] Sensibilité (tact, douleur, vibration) *(Fracture vertébrale)*
 > 	- [ ] Force musculaire segmentaire *(Fracture vertébrale)*
-> 	- [ ] Réflexes ostéo-tendineux *(Fracture vertébrale)*
 > 	- [ ] Réflexe cutané plantaire *(Fracture vertébrale)*
 > - [ ] **6. Examen tête et cou *(Spondylarthrite ankylosante)***
 > 	- [ ] Inspection des conjonctives
@@ -651,14 +650,13 @@ cssclasses:
 > - [ ] **4. Indications d'hospitalisation**
 > 	- [ ] Signes infectieux associés (urgence) *(1 grille sur 2)*
 > 	- [ ] Rein unique fonctionnel *(1 grille sur 2)*
-> 	- [ ] Insuffisance rénale aiguë *(1 grille sur 2)*
+> 	- [ ] Insuffisance rénale aiguë
 > 	- [ ] Douleur réfractaire au traitement *(1 grille sur 2)*
 > 	- [ ] Calcul > 10 mm *(1 grille sur 2)*
 > 	- [ ] Obstruction bilatérale *(1 grille sur 2)*
 > 	- [ ] Colique néphrétique fébrile (urgence urologique) *(1 grille sur 2)*
 > 	- [ ] Anurie (obstruction bilatérale ou rein unique) *(1 grille sur 2)*
 > 	- [ ] Colique néphrétique hyperalgique résistante *(1 grille sur 2)*
-> 	- [ ] Insuffisance rénale aiguë obstructive *(1 grille sur 2)*
 > 	- [ ] Terrain particulier: grossesse, rein unique, transplanté *(1 grille sur 2)*
 > 	- [ ] Impossibilité de prise en charge ambulatoire *(1 grille sur 2)*
 > - [ ] **5. Prise en charge à distance *(1 grille sur 2)***

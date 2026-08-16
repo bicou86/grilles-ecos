@@ -118,12 +118,11 @@ cssclasses:
 > 	- [ ] Irradiation *(11 grilles sur 20)*
 > 	- [ ] Facteurs améliorants *(4 grilles sur 20)*
 > 	- [ ] Facteurs aggravant/soulageant *(8 grilles sur 20)*
-> 	- [ ] Épisodes antérieurs similaires *(3 grilles sur 20)*
+> 	- [ ] Épisodes antérieurs *(4 grilles sur 20)*
 > 	- [ ] Événements précipitants *(Appendicite aiguë · Cancer de l'ovaire · Maladie cœliaque)*
 > 	- [ ] Intensité (échelle 0-10) *(Maladie cœliaque)*
 > 	- [ ] Symptômes associés à la consommation de certains aliments *(Maladie cœliaque)*
 > 	- [ ] Progression/constant/intermittent *(Maladie cœliaque)*
-> 	- [ ] Épisodes antérieurs *(Maladie cœliaque)*
 > 	- [ ] Type/caractère *(3 grilles sur 20)*
 > 	- [ ] Quantité *(1 grille sur 20)*
 > 	- [ ] Chronologie *(1 grille sur 20)*
@@ -302,14 +301,13 @@ cssclasses:
 > 	- [ ] Modifications mictionnelles *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Dysurie, pollakiurie *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Hématurie *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Pertes vaginales anormales *(Diverticulite sigmoïdienne non compliquée)*
+> 	- [ ] Pertes vaginales *(Diverticulite sigmoïdienne non compliquée · Endométriose pelvienne)*
 > 	- [ ] Métrorragies post-ménopausiques *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Dernières règles *(Endométriose pelvienne · Gastroentérite)*
 > 	- [ ] Durée du cycle *(Endométriose pelvienne)*
 > 	- [ ] Durée des menstruations *(Endométriose pelvienne)*
 > 	- [ ] Intensité des saignements *(Endométriose pelvienne)*
 > 	- [ ] Symptômes vaginaux *(Endométriose pelvienne · Infection génitale haute)*
-> 	- [ ] Pertes vaginales *(Endométriose pelvienne)*
 > 	- [ ] Partenaire stable *(Endométriose pelvienne)*
 > 	- [ ] Dyspareunie *(Endométriose pelvienne)*
 > 	- [ ] Contraception *(Endométriose pelvienne · Gastroentérite)*
@@ -1107,7 +1105,7 @@ cssclasses:
 > 	- [ ] VS si disponible
 > 	- [ ] Ionogramme, urée, créatinine
 > 	- [ ] Analyse d'urine (ECBU)
-> 	- [ ] Test de grossesse si approprié
+> 	- [ ] Test de grossesse
 > - [ ] **3. Diagnostic principal**
 > - [ ] **4. Classification de la diverticulite**
 > 	- [ ] Classification de Hinchey
@@ -1157,8 +1155,8 @@ cssclasses:
 > 	- [ ] Information sur les complications possibles
 > 	- [ ] Information sur les récidives possibles après traitement
 > - [ ] **2. Examens biologiques**
-> 	- [ ] Analyses sanguines
 > 	- [ ] Test de grossesse
+> 	- [ ] Analyses sanguines
 > 	- [ ] Prélèvement vaginal et cervical
 > 	- [ ] Échographie abdominale/vaginale
 > 	- [ ] Laparoscopie diagnostique
@@ -1172,7 +1170,7 @@ cssclasses:
 
 > [!success] 💊 Management — si Gastroentérite
 > - [ ] **1. Information et éducation de la patiente**
-> 	- [ ] Explication du diagnostic et évolution probable
+> 	- [ ] Explication du diagnostic probable
 > 	- [ ] Signes d'alarme nécessitant reconsultation
 > 	- [ ] Importance de la compliance thérapeutique
 > 	- [ ] Conseils pour la reprise du travail
@@ -1224,8 +1222,8 @@ cssclasses:
 > 	- [ ] Douleurs pelviennes chroniques possibles
 > 	- [ ] Risque accru de grossesse extra-utérine
 > - [ ] **2. Examens biologiques**
-> 	- [ ] Analyses sanguines
 > 	- [ ] Test de grossesse
+> 	- [ ] Analyses sanguines
 > 	- [ ] Échographie abdominale/vaginale
 > 	- [ ] Consultation gynécologique pour examen au spéculum avec prélèvement
 > 	- [ ] Recherche de Chlamydia/Gonocoque

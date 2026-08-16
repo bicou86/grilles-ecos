@@ -250,12 +250,12 @@ cssclasses:
 > [!success] 💊 Management — si Cancer gastrique
 > - [ ] **1. Proposition d'examens complémentaires de première intention**
 > 	- [ ] LDH, β2-microglobuline
+> 	- [ ] Radiographie thoracique
 > 	- [ ] FSC avec plaquettes et frottis
 > 	- [ ] VS, CRP
 > 	- [ ] Ionogramme, créatinine
 > 	- [ ] Bilan hépatique (ASAT, ALAT, PAL, GGT, bilirubine)
 > 	- [ ] Protéinogramme
-> 	- [ ] Radiographie thoracique face et profil
 > - [ ] **2. Diagnostics différentiels des adénopathies**
 > - [ ] **3. Examens complémentaires orientés**
 > 	- [ ] Fibroscopie œso-gastro-duodénale si suspicion cancer gastrique

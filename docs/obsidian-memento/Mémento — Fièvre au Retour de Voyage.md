@@ -80,14 +80,13 @@ cssclasses:
 > 	- [ ] Vaccinations requises *(1 grille sur 2)*
 > 	- [ ] Spécificités pédiatriques *(1 grille sur 2)*
 > - [ ] **4. Évaluation détaillée du statut vaccinal**
-> 	- [ ] Vaccinations de base *(1 grille sur 2)*
+> 	- [ ] Vaccinations de base
 > 	- [ ] Hépatite A *(1 grille sur 2)*
 > 	- [ ] Hépatite B *(1 grille sur 2)*
 > 	- [ ] Tétanos *(1 grille sur 2)*
 > 	- [ ] Fièvre jaune *(1 grille sur 2)*
 > 	- [ ] Vérification du carnet de vaccination *(1 grille sur 2)*
 > 	- [ ] Carnet de vaccination à jour *(1 grille sur 2)*
-> 	- [ ] Vaccinations de base complètes *(1 grille sur 2)*
 > 	- [ ] Vaccinations spécifiques voyages antérieures *(1 grille sur 2)*
 > 	- [ ] Date du dernier rappel tétanos *(1 grille sur 2)*
 > - [ ] **5. Antécédents médicaux et état de santé**
@@ -206,7 +205,7 @@ cssclasses:
 > 	- [ ] Contraception d'urgence
 > - [ ] **7. Trousse de pharmacie complète**
 > 	- [ ] Protection solaire haute protection *(1 grille sur 2)*
-> 	- [ ] Antalgiques/antipyrétiques (paracétamol, ibuprofène) *(1 grille sur 2)*
+> 	- [ ] Antalgiques/antipyrétiques (paracétamol)
 > 	- [ ] Antidiarrhéiques (lopéramide) *(1 grille sur 2)*
 > 	- [ ] Antibiotique large spectre (ciprofloxacine ou azithromycine)
 > 	- [ ] Antiémétiques *(1 grille sur 2)*
@@ -218,7 +217,6 @@ cssclasses:
 > 	- [ ] Thermomètre
 > 	- [ ] Préservatifs *(1 grille sur 2)*
 > 	- [ ] Protection solaire indice 50+ *(1 grille sur 2)*
-> 	- [ ] Antalgiques/antipyrétiques (paracétamol) *(1 grille sur 2)*
 > 	- [ ] Antidiarrhéiques (lopéramide avec prudence chez l'enfant) *(1 grille sur 2)*
 > 	- [ ] Antiseptique cutané et compresses *(1 grille sur 2)*
 > 	- [ ] Pansements et bandages *(1 grille sur 2)*
@@ -306,11 +304,10 @@ cssclasses:
 > 	- [ ] Check-up avant départ *(1 grille sur 2)*
 > 	- [ ] Bilan au retour si symptômes *(1 grille sur 2)*
 > 	- [ ] Test VIH 3 mois après retour *(1 grille sur 2)*
-> 	- [ ] Disponibilité questions par email *(1 grille sur 2)*
+> 	- [ ] Disponibilité pour questions
 > 	- [ ] Rendez-vous pour vaccinations manquantes *(1 grille sur 2)*
 > 	- [ ] Consultation au retour si symptômes *(1 grille sur 2)*
 > 	- [ ] Rappel surveillance fièvre jusqu'à 3 mois post-retour *(1 grille sur 2)*
-> 	- [ ] Disponibilité pour questions *(1 grille sur 2)*
 > - [ ] **8. Prescriptions médicamenteuses *(1 grille sur 2)***
 > 	- [ ] Ordonnance chimioprophylaxie antipaludique
 > 	- [ ] Ordonnance trousse de pharmacie

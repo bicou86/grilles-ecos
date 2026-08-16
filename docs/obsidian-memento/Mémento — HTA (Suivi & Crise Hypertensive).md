@@ -213,14 +213,13 @@ cssclasses:
 > 	- [ ] Consommation de sel élevée
 > 	- [ ] Stress
 > - [ ] **4. Examens complémentaires urgents**
-> 	- [ ] Bilan biologique (FSC, ionogramme, créatinine, glycémie) *(1 grille sur 2)*
+> 	- [ ] Bilan biologique (ionogramme, créatinine)
 > 	- [ ] Bilan lipidique complet *(1 grille sur 2)*
 > 	- [ ] TSH *(1 grille sur 2)*
 > 	- [ ] Analyse d'urine (protéinurie, hématurie) *(1 grille sur 2)*
 > 	- [ ] ECG de repos *(1 grille sur 2)*
 > 	- [ ] MAPA ou automesure tensionnelle *(1 grille sur 2)*
 > 	- [ ] ECG *(1 grille sur 2)*
-> 	- [ ] Bilan biologique (ionogramme, créatinine) *(1 grille sur 2)*
 > 	- [ ] BNP ou NT-proBNP *(1 grille sur 2)*
 > 	- [ ] Radiographie thoracique *(1 grille sur 2)*
 > 	- [ ] Échocardiographie *(1 grille sur 2)*

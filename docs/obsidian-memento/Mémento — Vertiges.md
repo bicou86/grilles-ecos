@@ -186,7 +186,7 @@ cssclasses:
 > 	- [ ] Examen ciblé de l'audition *(Zona auriculaire (syndrome de Ramsay Hunt))*
 > 	- [ ] Examen ciblé des mouvements passifs et actifs *(Zona auriculaire (syndrome de Ramsay Hunt))*
 > 	- [ ] Examen ciblé de la sensibilité *(Zona auriculaire (syndrome de Ramsay Hunt))*
-> 	- [ ] Examen ciblé des réflexes ostéotendineux *(Zona auriculaire (syndrome de Ramsay Hunt))*
+> 	- [ ] Réflexes ostéotendineux
 > 	- [ ] Examen ciblé de la marche *(Zona auriculaire (syndrome de Ramsay Hunt))*
 > 	- [ ] Test d'alternance rapide des mouvements *(Zona auriculaire (syndrome de Ramsay Hunt))*
 > 	- [ ] Test doigt-nez *(Zona auriculaire (syndrome de Ramsay Hunt))*
@@ -194,7 +194,6 @@ cssclasses:
 > 	- [ ] Fonctions supérieures *(Maladie de Parkinson)*
 > 	- [ ] Nerfs crâniens *(Maladie de Parkinson)*
 > 	- [ ] Force musculaire *(Maladie de Parkinson)*
-> 	- [ ] Réflexes ostéotendineux *(Maladie de Parkinson)*
 > 	- [ ] Signes pyramidaux *(Maladie de Parkinson)*
 > - [ ] **5. Évaluation de l'état général et nutritionnel *(Maladie de Parkinson)***
 > 	- [ ] Poids et taille

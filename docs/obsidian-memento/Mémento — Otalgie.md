@@ -84,11 +84,10 @@ cssclasses:
 > 	- [ ] Chirurgies ORL
 > - [ ] **7. Antécédents médicaux généraux**
 > 	- [ ] Maladies chroniques *(1 grille sur 2)*
-> 	- [ ] Hospitalisations antérieures *(1 grille sur 2)*
+> 	- [ ] Hospitalisations
 > 	- [ ] Allergies connues *(1 grille sur 2)*
 > 	- [ ] Pathologies antérieures *(1 grille sur 2)*
 > 	- [ ] Épisodes d'otite antérieurs *(1 grille sur 2)*
-> 	- [ ] Hospitalisations *(1 grille sur 2)*
 > - [ ] **8. Statut vaccinal**
 > 	- [ ] Vaccin pneumocoque à jour *(1 grille sur 2)*
 > - [ ] **9. Traitements déjà administrés *(1 grille sur 2)***
@@ -201,11 +200,10 @@ cssclasses:
 > - [ ] **4. Propose une stratégie thérapeutique adaptée *(1 grille sur 2)***
 > - [ ] **5. Informe sur les complications possibles**
 > 	- [ ] Mastoïdite *(1 grille sur 2)*
-> 	- [ ] Paralysie faciale périphérique (par œdème) *(1 grille sur 2)*
+> 	- [ ] Paralysie faciale (par œdème du nerf)
 > 	- [ ] Thrombose du sinus latéral
 > 	- [ ] Complications intracrâniennes (méningite, abcès cérébral)
 > 	- [ ] Mastoïdite (tuméfaction rétro-auriculaire) *(1 grille sur 2)*
-> 	- [ ] Paralysie faciale (par œdème du nerf) *(1 grille sur 2)*
 > 	- [ ] Labyrinthite *(1 grille sur 2)*
 > - [ ] **6. Organise le suivi *(1 grille sur 2)***
 > 	- [ ] Contrôle à 48-72h si surveillance

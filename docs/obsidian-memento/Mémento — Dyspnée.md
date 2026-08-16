@@ -200,7 +200,7 @@ cssclasses:
 > - [ ] **37. Antécédents médicaux pertinents *(3 grilles sur 5)***
 > 	- [ ] Maladies antérieures *(Asthme)*
 > 	- [ ] Problèmes respiratoires antérieurs *(Asthme)*
-> 	- [ ] Hospitalisations *(Asthme)*
+> 	- [ ] Hospitalisations *(2 grilles sur 5)*
 > 	- [ ] Interventions chirurgicales *(2 grilles sur 5)*
 > 	- [ ] Maladies chroniques connues *(BPCO)*
 > 	- [ ] Pathologies cardiovasculaires *(BPCO)*
@@ -208,7 +208,6 @@ cssclasses:
 > 	- [ ] Chirurgies antérieures *(BPCO)*
 > 	- [ ] Pathologies cardiaques préexistantes *(1 grille sur 5)*
 > 	- [ ] Pathologies respiratoires *(1 grille sur 5)*
-> 	- [ ] Hospitalisations antérieures *(1 grille sur 5)*
 > 	- [ ] Allergies médicamenteuses *(1 grille sur 5)*
 > - [ ] **38. Traitements et habitudes *(2 grilles sur 5)***
 > 	- [ ] Médicaments actuels *(Asthme)*
@@ -359,13 +358,11 @@ cssclasses:
 > 	- [ ] Identification de sibilants *(Asthme)*
 > 	- [ ] Bronchophonie *(Asthme)*
 > 	- [ ] Bruits surajoutés *(BPCO)*
-> 	- [ ] Murmure vésiculaire *(2 grilles sur 5)*
-> 	- [ ] Râles crépitants bilatéraux *(1 grille sur 5)*
-> 	- [ ] Diminution du murmure vésiculaire *(1 grille sur 5)*
+> 	- [ ] Murmure vésiculaire *(3 grilles sur 5)*
+> 	- [ ] Râles crépitants *(2 grilles sur 5)*
 > 	- [ ] Matité des bases *(1 grille sur 5)*
 > 	- [ ] Pas de sibilants *(1 grille sur 5)*
 > 	- [ ] Sibilances expiratoires *(1 grille sur 5)*
-> 	- [ ] Râles crépitants *(1 grille sur 5)*
 > 	- [ ] Ronchi *(1 grille sur 5)*
 > 	- [ ] Expiration prolongée *(1 grille sur 5)*
 > - [ ] **8. Auscultation cardiaque *(2 grilles sur 5)***
@@ -380,10 +377,9 @@ cssclasses:
 > - [ ] **13. Contrôle d'hématome *(1 grille sur 5)***
 > - [ ] **14. Examen cardiovasculaire *(Asthme · BPCO)***
 > 	- [ ] Palpation du choc de pointe *(Asthme)*
-> 	- [ ] Auscultation cardiaque systématique *(Asthme)*
+> 	- [ ] Auscultation cardiaque
 > 	- [ ] Recherche de souffles *(Asthme)*
 > 	- [ ] Rythme et fréquence *(Asthme)*
-> 	- [ ] Auscultation cardiaque *(BPCO)*
 > 	- [ ] Recherche de signes d'HTAP *(BPCO)*
 > 	- [ ] Pouls périphériques *(BPCO)*
 > 	- [ ] Pression artérielle *(BPCO)*
@@ -506,7 +502,7 @@ cssclasses:
 > 	- [ ] Éléments cliniques en faveur
 > 	- [ ] Terrain atopique
 > - [ ] **2. Examens complémentaires - Fonction respiratoire**
-> 	- [ ] Spirométrie de base
+> 	- [ ] Spirométrie
 > 	- [ ] Test de réversibilité aux bêta-2 mimétiques
 > 	- [ ] Test de provocation si nécessaire
 > 	- [ ] Peak-flow en ambulatoire
@@ -606,9 +602,9 @@ cssclasses:
 > 	- [ ] Dysfonction VG sévère
 > 	- [ ] Possible syndrome obstructif associé
 > - [ ] **16. Examens complémentaires - Fonction respiratoire *(1 grille sur 3)***
+> 	- [ ] Spirométrie
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] Test de marche de 6 minutes
-> 	- [ ] Spirométrie
 > 	- [ ] Scanner thoracique si indication
 > 	- [ ] Polysomnographie si suspicion SAOS
 > - [ ] **17. Examens complémentaires cardiaques *(2 grilles sur 3)***
