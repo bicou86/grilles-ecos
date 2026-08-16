@@ -175,7 +175,8 @@ cssclasses:
 > - [ ] **50. Alcool *(Suspicion de cancer de l'endomètre)***
 > - [ ] **51. Tabagisme *(Suspicion de cancer de l'endomètre)***
 > - [ ] **52. Drogues *(Suspicion de cancer de l'endomètre)***
-> - [ ] **53. Situation sociale *(Suspicion de cancer de l'endomètre)***
+> - [ ] **53. Affections tumorales (Anamnèse familiale) *(Suspicion de cancer de l'endomètre)***
+> - [ ] **54. Situation sociale *(Suspicion de cancer de l'endomètre)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Cancer du col de l'utérus)***
@@ -201,12 +202,13 @@ cssclasses:
 > - [ ] **13. Toucher rectal *(Suspicion de cancer de l'endomètre)***
 > - [ ] **14. Inspection de la vulve *(Suspicion de cancer de l'endomètre)***
 > - [ ] **15. Examen au spéculum *(Suspicion de cancer de l'endomètre)***
-> - [ ] **16. Frottis à l'état frais *(Suspicion de cancer de l'endomètre)***
-> - [ ] **17. Test à la potasse (Sniff test) *(Suspicion de cancer de l'endomètre)***
-> - [ ] **18. Frottis cervical *(Suspicion de cancer de l'endomètre)***
-> - [ ] **19. Palpation bimanuelle *(Suspicion de cancer de l'endomètre)***
-> - [ ] **20. Utérus *(Suspicion de cancer de l'endomètre)***
-> - [ ] **21. Paramètres / Annexes *(Suspicion de cancer de l'endomètre)***
+> - [ ] **16. Inspection (Gynécologie) *(Suspicion de cancer de l'endomètre)***
+> - [ ] **17. Frottis à l'état frais *(Suspicion de cancer de l'endomètre)***
+> - [ ] **18. Test à la potasse (Sniff test) *(Suspicion de cancer de l'endomètre)***
+> - [ ] **19. Frottis cervical *(Suspicion de cancer de l'endomètre)***
+> - [ ] **20. Palpation bimanuelle *(Suspicion de cancer de l'endomètre)***
+> - [ ] **21. Utérus *(Suspicion de cancer de l'endomètre)***
+> - [ ] **22. Paramètres / Annexes *(Suspicion de cancer de l'endomètre)***
 
 > [!success] 💊 Management — si Cancer du col de l'utérus
 > - [ ] **1. Hypothèses diagnostiques**

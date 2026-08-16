@@ -445,62 +445,64 @@ cssclasses:
 > - [ ] **11. Membre supérieur *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **12. Membre inférieur *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **13. Réflexes ostéo-tendineux comparés *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **14. Signe de Babinski *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **15. Sensibilité *(Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **16. Nerfs crâniens orientation *(Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **17. I. Olfaction *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **18. II. Visus *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **19. II. Champ visuel *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **20. III. Réaction pupillaire *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **21. III/IV/VI. Motilité oculaire *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **22. V. Sensibilité faciale *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **23. VII. Facial *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **24. VIII. Audition *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **25. IX/X. Déglutition *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **26. XI. Accessoire *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **27. XII. Déviation linguale *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **28. Station et marche *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **29. Inspection des conséquences de la chute *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **30. Bouche / pharynx *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **31. Ganglions cervicaux *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **32. Inspection *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **33. Peau / muqueuses *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **34. Mains *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **35. Thorax / travail respiratoire / cicatrices *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **36. Signes de stase *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **37. Turgescence jugulaire *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **38. Œdèmes périphériques *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **39. Reflux hépato-jugulaire *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **40. Perfusion périphérique / pouls *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **41. Auscultation *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **42. Test de Schellong complet *(2 grilles sur 7)***
+> - [ ] **14. Membre supérieur (Réflexes) *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **15. Membre inférieur (Réflexes) *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **16. Signe de Babinski *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **17. Sensibilité *(Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **18. Nerfs crâniens orientation *(Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **19. I. Olfaction *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **20. II. Visus *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **21. II. Champ visuel *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **22. III. Réaction pupillaire *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **23. III/IV/VI. Motilité oculaire *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **24. V. Sensibilité faciale *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **25. VII. Facial *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **26. VIII. Audition *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **27. IX/X. Déglutition *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **28. XI. Accessoire *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **29. XII. Déviation linguale *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **30. Station et marche *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **31. Inspection des conséquences de la chute *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **32. Bouche / pharynx *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **33. Ganglions cervicaux *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **34. Inspection *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **35. Peau / muqueuses *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **36. Mains *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **37. Thorax / travail respiratoire / cicatrices *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **38. Signes de stase *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **39. Turgescence jugulaire *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **40. Œdèmes périphériques *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **41. Reflux hépato-jugulaire *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **42. Perfusion périphérique / pouls *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **43. Auscultation *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **44. Test de Schellong complet *(2 grilles sur 7)***
 > 	- [ ] Position couchée 10 minutes *(1 grille sur 7)*
 > 	- [ ] Mesures répétées en orthostatisme *(1 grille sur 7)*
 > 	- [ ] Documentation des symptômes *(1 grille sur 7)*
 > 	- [ ] Interprétation correcte *(1 grille sur 7)*
-> - [ ] **43. Auscultation pulmonaire bilatérale *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **44. Conscience / orientation *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **45. Meningisme *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **46. Motricité *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **47. Épreuve des bras tendus *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **48. Épreuve des jambes tendues *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **49. Coordination *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **50. Doigt-nez *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **51. Talon-genou *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **52. Romberg *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **53. Examen neurologique (incluant orientation) *(Première crise convulsive tonico-clonique)***
+> - [ ] **45. Auscultation pulmonaire bilatérale *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **46. Conscience / orientation *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **47. Meningisme *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **48. Motricité *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **49. Épreuve des bras tendus *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **50. Épreuve des jambes tendues *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **51. Coordination *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **52. Doigt-nez *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **53. Talon-genou *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **54. Romberg *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **55. Examen neurologique (incluant orientation) *(Première crise convulsive tonico-clonique)***
 > 	- [ ] État de conscience
 > 	- [ ] Force motrice
 > 	- [ ] Tonus
 > 	- [ ] Réflexes ostéo-tendineux
-> - [ ] **54. Hygiène des mains *(1 grille sur 7)***
+> - [ ] **56. Hygiène des mains *(1 grille sur 7)***
 > 	- [ ] Désinfection des mains avant l'examen
-> - [ ] **55. Mesure de la pression artérielle orthostatique *(1 grille sur 7)***
+> - [ ] **57. Mesure de la pression artérielle orthostatique *(1 grille sur 7)***
 > 	- [ ] Mesure en position couchée (après 5 min de repos)
 > 	- [ ] Mesure en position debout (immédiatement)
 > 	- [ ] Mesure en position debout (après 3 min)
 > 	- [ ] Calcul de la différence
-> - [ ] **56. Examen cardiovasculaire *(BAV · HypoTA orthostatique)***
+> - [ ] **58. Examen cardiovasculaire *(BAV · HypoTA orthostatique)***
 > 	- [ ] Auscultation cardiaque (4 foyers) *(HypoTA orthostatique)*
 > 	- [ ] Palpation du pouls (fréquence et régularité) *(1 grille sur 7)*
 > 	- [ ] Recherche de souffles *(1 grille sur 7)*
@@ -511,12 +513,12 @@ cssclasses:
 > 	- [ ] Signes d'artériopathie *(BAV)*
 > 	- [ ] Recherche de souffle ou trouble du rythme *(1 grille sur 7)*
 > 	- [ ] Palpation des pouls périphériques *(1 grille sur 7)*
-> - [ ] **57. Inspection cutanée et vasculaire *(1 grille sur 7)***
+> - [ ] **59. Inspection cutanée et vasculaire *(1 grille sur 7)***
 > 	- [ ] Recherche de pâleur
 > 	- [ ] Présence de varices
 > 	- [ ] État d'hydratation cutanée
 > 	- [ ] Temps de recoloration capillaire
-> - [ ] **58. Examen neurologique de dépistage *(BAV · HypoTA orthostatique)***
+> - [ ] **60. Examen neurologique de dépistage *(BAV · HypoTA orthostatique)***
 > 	- [ ] Orientation temporo-spatiale *(1 grille sur 7)*
 > 	- [ ] Équilibre et coordination *(1 grille sur 7)*
 > 	- [ ] Réflexes ostéo-tendineux *(2 grilles sur 7)*
@@ -527,7 +529,7 @@ cssclasses:
 > 	- [ ] État de conscience et orientation *(1 grille sur 7)*
 > 	- [ ] Recherche de déficit neurologique focal *(1 grille sur 7)*
 > 	- [ ] Reflexes pupillaires *(1 grille sur 7)*
-> - [ ] **59. Recherche de signes d'hypovolémie *(HypoTA orthostatique)***
+> - [ ] **61. Recherche de signes d'hypovolémie *(HypoTA orthostatique)***
 > 	- [ ] Pli cutané *(1 grille sur 7)*
 > 	- [ ] Sécheresse des muqueuses *(1 grille sur 7)*
 > 	- [ ] Yeux enfoncés *(1 grille sur 7)*
@@ -535,7 +537,7 @@ cssclasses:
 > 	- [ ] Coloration des conjonctives *(1 grille sur 7)*
 > 	- [ ] Coloration des muqueuses *(1 grille sur 7)*
 > 	- [ ] Recherche de pâleur cutanée *(1 grille sur 7)*
-> - [ ] **60. Constantes vitales et état général *(2 grilles sur 7)***
+> - [ ] **62. Constantes vitales et état général *(2 grilles sur 7)***
 > 	- [ ] État de conscience actuel *(BAV)*
 > 	- [ ] Pression artérielle *(BAV)*
 > 	- [ ] Saturation en oxygène *(BAV)*
@@ -544,55 +546,55 @@ cssclasses:
 > 	- [ ] Fréquence cardiaque et pouls *(1 grille sur 7)*
 > 	- [ ] État d'hydratation *(1 grille sur 7)*
 > 	- [ ] Évaluation générale *(1 grille sur 7)*
-> - [ ] **61. Examen cardiaque approfondi *(BAV)***
+> - [ ] **63. Examen cardiaque approfondi *(BAV)***
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Régularité du rythme
 > 	- [ ] Auscultation des bruits cardiaques
 > 	- [ ] Recherche de souffles
-> - [ ] **62. Palpation des pouls périphériques *(BAV)***
+> - [ ] **64. Palpation des pouls périphériques *(BAV)***
 > 	- [ ] Pouls carotidiens (bilatéral)
 > 	- [ ] Pouls radiaux (synchronisme)
 > 	- [ ] Pouls fémoraux
 > 	- [ ] Pouls pédieux
-> - [ ] **63. Recherche de signes d'insuffisance cardiaque *(BAV)***
+> - [ ] **65. Recherche de signes d'insuffisance cardiaque *(BAV)***
 > 	- [ ] Turgescence jugulaire
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Hépatomégalie
-> - [ ] **64. Inspection générale *(BAV)***
+> - [ ] **66. Inspection générale *(BAV)***
 > 	- [ ] Coloration cutanée
 > 	- [ ] Signes de traumatisme (chute)
 > 	- [ ] Morsure de langue
 > 	- [ ] Perte d'urines
-> - [ ] **65. A - Airways - initie une prise en charge ABCDE *(Hypoglycémie)***
+> - [ ] **67. A - Airways - initie une prise en charge ABCDE *(Hypoglycémie)***
 > 	- [ ] Dans les 3 premières minutes après le début station
 > 	- [ ] Si patient·e en phase agitée - déclare à voix haute que le A est ok
 > 	- [ ] Si patient·e en phase endormie - inspecte l'intérieur de la cavité buccale
-> - [ ] **66. B - Breathing *(Hypoglycémie)***
+> - [ ] **68. B - Breathing *(Hypoglycémie)***
 > 	- [ ] Mesure ou demande la fréquence respiratoire
 > 	- [ ] Demande la mesure de saturation de l'hémoglobine (SpO2)
 > 	- [ ] Auscultation de min 4 plages pulmonaires
 > 	- [ ] Thorax visible durant l'examen clinique (pas recouvert)
-> - [ ] **67. C - Circulation *(Hypoglycémie)***
+> - [ ] **69. C - Circulation *(Hypoglycémie)***
 > 	- [ ] Mesure ou demande la fréquence cardiaque
 > 	- [ ] Demande la mesure de la tension artérielle
 > 	- [ ] Palpations des pouls périphériques aux 4 extrémités
 > 	- [ ] Recherche des signes d'hémorragie
 > 	- [ ] Mesure du temps de recoloration
-> - [ ] **68. D - Disability (1) - Glasgow Coma Scale *(Hypoglycémie)***
+> - [ ] **70. D - Disability (1) - Glasgow Coma Scale *(Hypoglycémie)***
 > 	- [ ] Ouverture des yeux
 > 	- [ ] Réponse verbale
 > 	- [ ] Réponse motrice
-> - [ ] **69. D - Disability (2) - Examen neurologique basique *(Hypoglycémie)***
+> - [ ] **71. D - Disability (2) - Examen neurologique basique *(Hypoglycémie)***
 > 	- [ ] Réflexes pupillaires
 > 	- [ ] Observation des pupilles (recherche anisocorie)
 > 	- [ ] Motricité globale des 4 membres
 > 	- [ ] Signes méningés
-> - [ ] **70. D - Disability (3) - mesure du glucose capillaire *(Hypoglycémie)***
-> - [ ] **71. E - Exposure *(Hypoglycémie)***
+> - [ ] **72. D - Disability (3) - mesure du glucose capillaire *(Hypoglycémie)***
+> - [ ] **73. E - Exposure *(Hypoglycémie)***
 > 	- [ ] Demande mesure T°
 > 	- [ ] Examen sommaire "tête aux pieds"
-> - [ ] **72. Test d'hypotension orthostatique *(1 grille sur 7)***
+> - [ ] **74. Test d'hypotension orthostatique *(1 grille sur 7)***
 > 	- [ ] Mesure TA en position couchée
 > 	- [ ] Mesure TA après 3 minutes debout
 > 	- [ ] Recherche de symptômes au lever

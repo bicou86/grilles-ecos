@@ -382,38 +382,41 @@ cssclasses:
 > - [ ] **36. Coordination MS *(Syndrome de Guillain-Barré)***
 > - [ ] **37. Doigt-nez *(Syndrome de Guillain-Barré)***
 > - [ ] **38. Tonus musculaire MS *(Syndrome de Guillain-Barré)***
-> - [ ] **39. Motricité MI *(Syndrome de Guillain-Barré)***
-> - [ ] **40. Réflexes MI *(Syndrome de Guillain-Barré)***
-> - [ ] **41. Réflexe rotulien *(Syndrome de Guillain-Barré)***
-> - [ ] **42. Réflexe achilléen *(Syndrome de Guillain-Barré)***
-> - [ ] **43. Babinski *(Syndrome de Guillain-Barré)***
-> - [ ] **44. Sensibilité MI *(Syndrome de Guillain-Barré)***
-> - [ ] **45. Coordination MI *(Syndrome de Guillain-Barré)***
-> - [ ] **46. Talon-genou *(Syndrome de Guillain-Barré)***
-> - [ ] **47. Tonus musculaire *(Syndrome de Guillain-Barré)***
-> - [ ] **48. Signes cliniques d’atteinte des muscles respiratoires *(Syndrome de Guillain-Barré)***
-> - [ ] **49. Inspection / Mode respiratoire *(Syndrome de Guillain-Barré)***
-> - [ ] **50. Tirage de toux *(Syndrome de Guillain-Barré)***
-> - [ ] **51. Single-breath count *(Syndrome de Guillain-Barré)***
-> - [ ] **52. Auscultation *(Syndrome de Guillain-Barré)***
-> - [ ] **53. Status vasculaire périphérique *(Polyneuropathie)***
+> - [ ] **39. Inspection (Neurostatus – Membres inférieurs) *(Syndrome de Guillain-Barré)***
+> - [ ] **40. Motricité MI *(Syndrome de Guillain-Barré)***
+> - [ ] **41. Force proximale (Neurostatus – Membres inférieurs) *(Syndrome de Guillain-Barré)***
+> - [ ] **42. Force distale (Neurostatus – Membres inférieurs) *(Syndrome de Guillain-Barré)***
+> - [ ] **43. Réflexes MI *(Syndrome de Guillain-Barré)***
+> - [ ] **44. Réflexe rotulien *(Syndrome de Guillain-Barré)***
+> - [ ] **45. Réflexe achilléen *(Syndrome de Guillain-Barré)***
+> - [ ] **46. Babinski *(Syndrome de Guillain-Barré)***
+> - [ ] **47. Sensibilité MI *(Syndrome de Guillain-Barré)***
+> - [ ] **48. Coordination MI *(Syndrome de Guillain-Barré)***
+> - [ ] **49. Talon-genou *(Syndrome de Guillain-Barré)***
+> - [ ] **50. Tonus musculaire *(Syndrome de Guillain-Barré)***
+> - [ ] **51. Signes cliniques d’atteinte des muscles respiratoires *(Syndrome de Guillain-Barré)***
+> - [ ] **52. Inspection / Mode respiratoire *(Syndrome de Guillain-Barré)***
+> - [ ] **53. Tirage de toux *(Syndrome de Guillain-Barré)***
+> - [ ] **54. Single-breath count *(Syndrome de Guillain-Barré)***
+> - [ ] **55. Auscultation *(Syndrome de Guillain-Barré)***
+> - [ ] **56. Status vasculaire périphérique *(Polyneuropathie)***
 > 	- [ ] Pouls pédieux
 > 	- [ ] Pouls tibial postérieur
 > 	- [ ] Pouls poplités
 > 	- [ ] Temps de recoloration capillaire
 > 	- [ ] Température des pieds
-> - [ ] **54. Inspection des pieds *(Polyneuropathie)***
+> - [ ] **57. Inspection des pieds *(Polyneuropathie)***
 > 	- [ ] Aspect général
 > 	- [ ] Déformations
 > 	- [ ] Ongles
 > 	- [ ] Espaces interdigitaux
 > 	- [ ] Hyperkératose
-> - [ ] **55. Inspection de la plaie *(Polyneuropathie)***
+> - [ ] **58. Inspection de la plaie *(Polyneuropathie)***
 > 	- [ ] Localisation
 > 	- [ ] Aspect
 > 	- [ ] Signes d'infection
 > 	- [ ] Tissus nécrotiques
-> - [ ] **56. Examen de la sensibilité *(Hernie discale · Polyneuropathie)***
+> - [ ] **59. Examen de la sensibilité *(Hernie discale · Polyneuropathie)***
 > 	- [ ] Sensibilité vibratoire (diapason)
 > 	- [ ] Sensibilité au monofilament *(Polyneuropathie)*
 > 	- [ ] Sensibilité thermique
@@ -422,44 +425,44 @@ cssclasses:
 > 	- [ ] Cartographie sensitive *(Hernie discale)*
 > 	- [ ] Sensibilité tactile *(Hernie discale)*
 > 	- [ ] Sensibilité proprioceptive *(Hernie discale)*
-> - [ ] **57. Examen des réflexes *(Polyneuropathie)***
+> - [ ] **60. Examen des réflexes *(Polyneuropathie)***
 > 	- [ ] Réflexes achilléens
 > 	- [ ] Réflexes rotuliens
 > 	- [ ] Babinski
-> - [ ] **58. Fond d'œil *(Polyneuropathie)***
+> - [ ] **61. Fond d'œil *(Polyneuropathie)***
 > 	- [ ] Rétinopathie diabétique
 > 	- [ ] Signes d'hypertension
-> - [ ] **59. Inspection et observation de la marche *(Hernie discale)***
+> - [ ] **62. Inspection et observation de la marche *(Hernie discale)***
 > 	- [ ] Démarche antalgique
 > 	- [ ] Amyotrophie
 > 	- [ ] Troubles trophiques
 > 	- [ ] Position spontanée
 > 	- [ ] Déformation des pieds
-> - [ ] **60. Testing moteur analytique *(Hernie discale)***
+> - [ ] **63. Testing moteur analytique *(Hernie discale)***
 > 	- [ ] Dorsiflexion du pied
 > 	- [ ] Extension du gros orteil
 > 	- [ ] Flexion plantaire
 > 	- [ ] Éversion du pied
 > 	- [ ] Flexion des orteils
-> - [ ] **61. Réflexes ostéotendineux des membres inférieurs *(Hernie discale)***
+> - [ ] **64. Réflexes ostéotendineux des membres inférieurs *(Hernie discale)***
 > 	- [ ] Réflexe rotulien
 > 	- [ ] Réflexe achilléen
 > 	- [ ] Réflexe cutané plantaire
 > 	- [ ] Réflexe médio-plantaire
 > 	- [ ] Polycinétisme, diffusion des réflexes
-> - [ ] **62. Examen rachidien et signes radiculaires *(Hernie discale)***
+> - [ ] **65. Examen rachidien et signes radiculaires *(Hernie discale)***
 > 	- [ ] Inspection rachis
 > 	- [ ] Mobilité rachis lombaire
 > 	- [ ] Signe de Lasègue
 > 	- [ ] Signe de Léri
 > 	- [ ] Palpation processus épineux
-> - [ ] **63. Recherche de signes de compression médullaire *(Hernie discale)***
+> - [ ] **66. Recherche de signes de compression médullaire *(Hernie discale)***
 > 	- [ ] Syndrome de la queue de cheval
 > 	- [ ] Troubles sphinctériens
 > 	- [ ] Réflexes cutanés abdominaux
 > 	- [ ] Signe de Babinski bilatéral
 > 	- [ ] Niveau sensitif abdominal
-> - [ ] **64. Examen vasculaire des membres inférieurs *(Hernie discale)***
+> - [ ] **67. Examen vasculaire des membres inférieurs *(Hernie discale)***
 > 	- [ ] Pouls périphériques
 > 	- [ ] Signes d'ischémie
 > 	- [ ] Trophicité cutanée

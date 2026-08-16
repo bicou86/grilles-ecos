@@ -96,16 +96,17 @@ cssclasses:
 > - [ ] **9. Rhinoscopie antérieure**
 > - [ ] **10. Rhinoscopie postérieure**
 > - [ ] **11. Otoscopie y compris manœuvre de Valsalva**
-> - [ ] **12. Palpation des ganglions lymphatiques**
-> - [ ] **13. Statut oculaire**
-> - [ ] **14. Réflexe pupillaire**
-> - [ ] **15. Acuité visuelle**
-> - [ ] **16. Saturation du rouge**
-> - [ ] **17. Oculomotricité**
-> - [ ] **18. Nerf trijumeau**
-> - [ ] **19. Sensibilité**
-> - [ ] **20. Points d'émergence**
-> - [ ] **21. Examen du nerf facial**
+> - [ ] **12. Inspection (Bouche)**
+> - [ ] **13. Palpation des ganglions lymphatiques**
+> - [ ] **14. Statut oculaire**
+> - [ ] **15. Réflexe pupillaire**
+> - [ ] **16. Acuité visuelle**
+> - [ ] **17. Saturation du rouge**
+> - [ ] **18. Oculomotricité**
+> - [ ] **19. Nerf trijumeau**
+> - [ ] **20. Sensibilité**
+> - [ ] **21. Points d'émergence**
+> - [ ] **22. Examen du nerf facial**
 
 > [!success] 💊 Management — si Rhinosinusite post-virale
 > - [ ] **1. Diagnostic de travail**

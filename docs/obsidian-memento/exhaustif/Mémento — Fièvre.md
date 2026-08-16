@@ -194,49 +194,52 @@ cssclasses:
 > - [ ] **9. Auscultation *(Pyélonéphrite)***
 > - [ ] **10. Palpation *(Fuite anastomotique · Pyélonéphrite)***
 > - [ ] **11. Fosses lombaires *(Pyélonéphrite)***
-> - [ ] **12. Statut ORL *(Pyélonéphrite)***
-> - [ ] **13. Oreilles *(Pyélonéphrite)***
-> - [ ] **14. Nez *(Pyélonéphrite)***
-> - [ ] **15. Pharynx *(Pyélonéphrite)***
-> - [ ] **16. Méningisme *(Pyélonéphrite)***
-> - [ ] **17. Motricité spontanée *(Pyélonéphrite)***
-> - [ ] **18. Paramètres vitaux *(Fuite anastomotique)***
-> - [ ] **19. Situation circulatoire *(Fuite anastomotique)***
-> - [ ] **20. Température des extrémités *(Fuite anastomotique)***
-> - [ ] **21. Inspection des plaies opératoires *(Fuite anastomotique)***
-> - [ ] **22. Inspection du drain de Douglas *(Fuite anastomotique)***
-> - [ ] **23. Inspection / palpation VVP *(Fuite anastomotique)***
-> - [ ] **24. Inspection de l’abdomen *(Fuite anastomotique)***
-> - [ ] **25. Auscultation des bruits intestinaux *(Fuite anastomotique)***
-> - [ ] **26. Percussion de l’abdomen *(Fuite anastomotique)***
-> - [ ] **27. Palpation douce *(Fuite anastomotique)***
-> - [ ] **28. Douleur au relâchement direct *(Fuite anastomotique)***
-> - [ ] **29. Douleur au relâchement croisée *(Fuite anastomotique)***
-> - [ ] **30. Douleur à la secousse / à l’ébranlement *(Fuite anastomotique)***
-> - [ ] **31. Toucher rectal *(Fuite anastomotique)***
-> - [ ] **32. Auscultation pulmonaire *(Fuite anastomotique)***
-> - [ ] **33. Douleur à la percussion des fosses rénales *(Fuite anastomotique)***
-> - [ ] **34. Examen des jambes *(Fuite anastomotique)***
-> - [ ] **35. Auscultation cardiaque *(Endocardite infectieuse)***
+> - [ ] **12. Inspection (Organes génitaux) *(Pyélonéphrite)***
+> - [ ] **13. Statut ORL *(Pyélonéphrite)***
+> - [ ] **14. Oreilles *(Pyélonéphrite)***
+> - [ ] **15. Nez *(Pyélonéphrite)***
+> - [ ] **16. Pharynx *(Pyélonéphrite)***
+> - [ ] **17. Auscultation (Poumons) *(Pyélonéphrite)***
+> - [ ] **18. Auscultation (Cœur) *(Pyélonéphrite)***
+> - [ ] **19. Méningisme *(Pyélonéphrite)***
+> - [ ] **20. Motricité spontanée *(Pyélonéphrite)***
+> - [ ] **21. Paramètres vitaux *(Fuite anastomotique)***
+> - [ ] **22. Situation circulatoire *(Fuite anastomotique)***
+> - [ ] **23. Température des extrémités *(Fuite anastomotique)***
+> - [ ] **24. Inspection des plaies opératoires *(Fuite anastomotique)***
+> - [ ] **25. Inspection du drain de Douglas *(Fuite anastomotique)***
+> - [ ] **26. Inspection / palpation VVP *(Fuite anastomotique)***
+> - [ ] **27. Inspection de l’abdomen *(Fuite anastomotique)***
+> - [ ] **28. Auscultation des bruits intestinaux *(Fuite anastomotique)***
+> - [ ] **29. Percussion de l’abdomen *(Fuite anastomotique)***
+> - [ ] **30. Palpation douce *(Fuite anastomotique)***
+> - [ ] **31. Douleur au relâchement direct *(Fuite anastomotique)***
+> - [ ] **32. Douleur au relâchement croisée *(Fuite anastomotique)***
+> - [ ] **33. Douleur à la secousse / à l’ébranlement *(Fuite anastomotique)***
+> - [ ] **34. Toucher rectal *(Fuite anastomotique)***
+> - [ ] **35. Auscultation pulmonaire *(Fuite anastomotique)***
+> - [ ] **36. Douleur à la percussion des fosses rénales *(Fuite anastomotique)***
+> - [ ] **37. Examen des jambes *(Fuite anastomotique)***
+> - [ ] **38. Auscultation cardiaque *(Endocardite infectieuse)***
 > 	- [ ] Foyer aortique
 > 	- [ ] Foyer pulmonaire
 > 	- [ ] Foyer mitral
 > 	- [ ] Foyer tricuspidien
-> - [ ] **36. Status vasculaire *(Endocardite infectieuse)***
+> - [ ] **39. Status vasculaire *(Endocardite infectieuse)***
 > 	- [ ] Palpation des pouls périphériques
 > 	- [ ] Temps de recoloration des extrémités
 > 	- [ ] Présence d'œdème/angiœdème
 > 	- [ ] Auscultation des carotides
-> - [ ] **37. Pulmonaire *(Endocardite infectieuse)***
+> - [ ] **40. Pulmonaire *(Endocardite infectieuse)***
 > 	- [ ] Auscultation postérieure (min 6 foyers, 3 de chaque côté)
 > 	- [ ] En auscultant, compare systématiquement gauche et droite
 > 	- [ ] Auscultation latérale (des deux côtés)
 > 	- [ ] Auscultation antérieure
 > 	- [ ] Percussion
 > 	- [ ] Amplitude
-> - [ ] **38. Inspection de la cavité buccale *(Endocardite infectieuse)***
-> - [ ] **39. Rigidité nucale (méningisme) *(Endocardite infectieuse)***
-> - [ ] **40. Palpations des aires ganglionnaires *(Endocardite infectieuse)***
+> - [ ] **41. Inspection de la cavité buccale *(Endocardite infectieuse)***
+> - [ ] **42. Rigidité nucale (méningisme) *(Endocardite infectieuse)***
+> - [ ] **43. Palpations des aires ganglionnaires *(Endocardite infectieuse)***
 > 	- [ ] Cervicales
 > 	- [ ] Axillaires
 > 	- [ ] Inguinales

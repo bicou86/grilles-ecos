@@ -348,11 +348,13 @@ cssclasses:
 > [!tip] 🩺 Status
 > - [ ] **1. Palpation *(1 grille sur 5)***
 > - [ ] **2. Inspection *(1 grille sur 5)***
-> - [ ] **3. Comparaison de la circonférence *(1 grille sur 5)***
-> - [ ] **4. Inspection du thorax *(1 grille sur 5)***
-> - [ ] **5. Vibrations vocales *(1 grille sur 5)***
-> - [ ] **6. Percussion du thorax *(1 grille sur 5)***
-> - [ ] **7. Auscultation pulmonaire**
+> - [ ] **3. Inspection (Membres inférieurs) *(1 grille sur 5)***
+> - [ ] **4. Palpation (Membres inférieurs) *(1 grille sur 5)***
+> - [ ] **5. Comparaison de la circonférence *(1 grille sur 5)***
+> - [ ] **6. Inspection du thorax *(1 grille sur 5)***
+> - [ ] **7. Vibrations vocales *(1 grille sur 5)***
+> - [ ] **8. Percussion du thorax *(1 grille sur 5)***
+> - [ ] **9. Auscultation pulmonaire**
 > 	- [ ] Auscultation antérieure systématique *(Asthme · BPCO)*
 > 	- [ ] Auscultation postérieure systématique *(Asthme · BPCO)*
 > 	- [ ] Identification de sibilants *(Asthme)*
@@ -365,17 +367,17 @@ cssclasses:
 > 	- [ ] Sibilances expiratoires *(1 grille sur 5)*
 > 	- [ ] Ronchi *(1 grille sur 5)*
 > 	- [ ] Expiration prolongée *(1 grille sur 5)*
-> - [ ] **8. Auscultation cardiaque *(2 grilles sur 5)***
+> - [ ] **10. Auscultation cardiaque *(2 grilles sur 5)***
 > 	- [ ] Bruits du cœur assourdis *(1 grille sur 5)*
 > 	- [ ] Galop (B3) *(1 grille sur 5)*
 > 	- [ ] Souffle systolique d'insuffisance mitrale *(1 grille sur 5)*
 > 	- [ ] Pas de frottement péricardique *(1 grille sur 5)*
-> - [ ] **9. Palpation du pouls *(1 grille sur 5)***
-> - [ ] **10. Veines jugulaires *(1 grille sur 5)***
-> - [ ] **11. Reflux hépato-jugulaire *(1 grille sur 5)***
-> - [ ] **12. Contrôle de la plaie *(1 grille sur 5)***
-> - [ ] **13. Contrôle d'hématome *(1 grille sur 5)***
-> - [ ] **14. Examen cardiovasculaire *(Asthme · BPCO)***
+> - [ ] **11. Palpation du pouls *(1 grille sur 5)***
+> - [ ] **12. Veines jugulaires *(1 grille sur 5)***
+> - [ ] **13. Reflux hépato-jugulaire *(1 grille sur 5)***
+> - [ ] **14. Contrôle de la plaie *(1 grille sur 5)***
+> - [ ] **15. Contrôle d'hématome *(1 grille sur 5)***
+> - [ ] **16. Examen cardiovasculaire *(Asthme · BPCO)***
 > 	- [ ] Palpation du choc de pointe *(Asthme)*
 > 	- [ ] Auscultation cardiaque
 > 	- [ ] Recherche de souffles *(Asthme)*
@@ -383,37 +385,37 @@ cssclasses:
 > 	- [ ] Recherche de signes d'HTAP *(BPCO)*
 > 	- [ ] Pouls périphériques *(BPCO)*
 > 	- [ ] Pression artérielle *(BPCO)*
-> - [ ] **15. Examen pulmonaire - Inspection *(Asthme)***
+> - [ ] **17. Examen pulmonaire - Inspection *(Asthme)***
 > 	- [ ] Symétrie des mouvements respiratoires
 > 	- [ ] Utilisation des muscles accessoires
 > 	- [ ] Type de respiration
 > 	- [ ] Déformations thoraciques
-> - [ ] **16. Examen pulmonaire - Palpation *(Asthme)***
+> - [ ] **18. Examen pulmonaire - Palpation *(Asthme)***
 > 	- [ ] Vibrations vocales (frémitus)
 > 	- [ ] Points douloureux
 > 	- [ ] Ampliation thoracique
 > 	- [ ] Adénopathies sus-claviculaires
-> - [ ] **17. Examen pulmonaire - Percussion *(Asthme)***
+> - [ ] **19. Examen pulmonaire - Percussion *(Asthme)***
 > 	- [ ] Percussion systématique
 > 	- [ ] Détermination des bases pulmonaires
 > 	- [ ] Recherche de matité
 > 	- [ ] Comparaison bilatérale
-> - [ ] **18. Examen des extrémités *(Asthme)***
+> - [ ] **20. Examen des extrémités *(Asthme)***
 > 	- [ ] Recherche d'hippocratisme digital
 > 	- [ ] Recherche de cyanose
 > 	- [ ] État des ongles
 > 	- [ ] Temps de recoloration capillaire
-> - [ ] **19. Examen ORL succinct *(Asthme)***
+> - [ ] **21. Examen ORL succinct *(Asthme)***
 > 	- [ ] Inspection de la gorge
 > 	- [ ] Examen des oreilles
 > 	- [ ] Examen du nez
 > 	- [ ] État de la muqueuse
-> - [ ] **20. Palpation des aires ganglionnaires *(Asthme)***
+> - [ ] **22. Palpation des aires ganglionnaires *(Asthme)***
 > 	- [ ] Ganglions cervicaux
 > 	- [ ] Ganglions sous-mandibulaires
 > 	- [ ] Ganglions sus-claviculaires
 > 	- [ ] Ganglions axillaires
-> - [ ] **21. Inspection générale et pulmonaire *(3 grilles sur 5)***
+> - [ ] **23. Inspection générale et pulmonaire *(3 grilles sur 5)***
 > 	- [ ] État général du patient *(BPCO)*
 > 	- [ ] Coloration cutanée *(2 grilles sur 5)*
 > 	- [ ] Morphologie thoracique *(BPCO)*
@@ -428,69 +430,69 @@ cssclasses:
 > 	- [ ] Pouls jugulaire *(1 grille sur 5)*
 > 	- [ ] Tirage sus-sternal *(1 grille sur 5)*
 > 	- [ ] Extrémités *(1 grille sur 5)*
-> - [ ] **22. Palpation thoracique *(BPCO)***
+> - [ ] **24. Palpation thoracique *(BPCO)***
 > 	- [ ] Vibrations vocales
 > 	- [ ] Ampliation thoracique
 > 	- [ ] Points douloureux
 > 	- [ ] Déformations
-> - [ ] **23. Évaluation des muscles respiratoires accessoires *(BPCO)***
+> - [ ] **25. Évaluation des muscles respiratoires accessoires *(BPCO)***
 > 	- [ ] Utilisation des scalènes
 > 	- [ ] Utilisation des sterno-cléido-mastoïdiens
 > 	- [ ] Respiration abdominale paradoxale
 > 	- [ ] Tirage
-> - [ ] **24. Recherche de signes d'insuffisance cardiaque droite *(BPCO)***
+> - [ ] **26. Recherche de signes d'insuffisance cardiaque droite *(BPCO)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Turgescence jugulaire
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Hépatomégalie
-> - [ ] **25. Recherche de cyanose et modifications des extrémités *(BPCO)***
+> - [ ] **27. Recherche de cyanose et modifications des extrémités *(BPCO)***
 > 	- [ ] Cyanose péribuccale
 > 	- [ ] Cyanose des extrémités
 > 	- [ ] Hippocratisme digital
 > 	- [ ] Température des extrémités
-> - [ ] **26. Signes vitaux *(1 grille sur 5)***
+> - [ ] **28. Signes vitaux *(1 grille sur 5)***
 > 	- [ ] SpO2 94% en air ambiant
-> - [ ] **27. Examen abdominal *(1 grille sur 5)***
+> - [ ] **29. Examen abdominal *(1 grille sur 5)***
 > 	- [ ] Hépatomégalie
 > 	- [ ] Sensibilité hépatique
 > 	- [ ] Ascite modérée
 > 	- [ ] Pas de splénomégalie
-> - [ ] **28. Examen des membres inférieurs *(1 grille sur 5)***
+> - [ ] **30. Examen des membres inférieurs *(1 grille sur 5)***
 > 	- [ ] Œdèmes bilatéraux prenant le godet
 > 	- [ ] Symétriques et blancs
 > 	- [ ] Mous et indolores
 > 	- [ ] Pouls périphériques présents
 > 	- [ ] Pas de signes de phlébite
-> - [ ] **29. Examen cardiovasculaire - position couchée 45° *(1 grille sur 5)***
+> - [ ] **31. Examen cardiovasculaire - position couchée 45° *(1 grille sur 5)***
 > 	- [ ] Inspection aire cardiaque et pouls jugulaire
 > 	- [ ] Palpation précordiale et choc de pointe
 > 	- [ ] Palpation pouls carotidien
 > 	- [ ] Auscultation 4 foyers en décubitus dorsal
 > 	- [ ] Recherche B3/B4 en décubitus latéral gauche
-> - [ ] **30. Auscultation cardiaque - bruits pathologiques *(1 grille sur 5)***
+> - [ ] **32. Auscultation cardiaque - bruits pathologiques *(1 grille sur 5)***
 > 	- [ ] B1 et B2
 > 	- [ ] Souffle systolique aortique
 > 	- [ ] Souffle systolique mitral
 > 	- [ ] Galop B3 ou B4
 > 	- [ ] Frottement péricardique
-> - [ ] **31. Examen respiratoire - position assise *(1 grille sur 5)***
+> - [ ] **33. Examen respiratoire - position assise *(1 grille sur 5)***
 > 	- [ ] Inspection mouvements respiratoires
 > 	- [ ] Inspection forme thorax
 > 	- [ ] Palpation ampliation thoracique
 > 	- [ ] Palpation vibrations vocales
 > 	- [ ] Percussion postérieure et antérieure
-> - [ ] **32. Signes périphériques d'insuffisance cardiaque *(1 grille sur 5)***
+> - [ ] **34. Signes périphériques d'insuffisance cardiaque *(1 grille sur 5)***
 > 	- [ ] Œdèmes membres inférieurs
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Hépatomégalie
 > 	- [ ] Ascite
 > 	- [ ] Pouls périphériques
-> - [ ] **33. Intégration de l'examen physique *(1 grille sur 5)***
+> - [ ] **35. Intégration de l'examen physique *(1 grille sur 5)***
 > 	- [ ] Séquence optimale pour confort patient
 > 	- [ ] Passage fluide entre positions
 > 	- [ ] Examen complet sans répétitions inutiles
 > 	- [ ] Éléments prioritaires selon contexte
-> - [ ] **34. Technique d'examen intégré cardio-respiratoire *(1 grille sur 5)***
+> - [ ] **36. Technique d'examen intégré cardio-respiratoire *(1 grille sur 5)***
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Diagnostics différentiels *(3 grilles sur 5)* — *Asthme · BPCO · Insuffisance cardiaque (décompensée)***

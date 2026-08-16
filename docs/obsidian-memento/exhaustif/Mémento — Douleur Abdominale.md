@@ -698,19 +698,21 @@ cssclasses:
 > - [ ] **23. Loges rénales *(3 grilles sur 20)***
 > 	- [ ] Palpation *(Cholédocholithiase · Colique néphrétique droite)*
 > 	- [ ] Percussion *(Cholédocholithiase · Colique néphrétique droite)*
-> - [ ] **24. État général *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **25. Examen de base *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **26. Signes de péritonisme *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **27. McBurney *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **28. Douleur à la secousse *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **29. Palpation profonde *(Perforation d'ulcère gastro-duodénal · Purpura de Schönlein-Henoch (vascularite à IgA) · Reflux gastro-œsophagien (RGO))***
+> - [ ] **24. Auscultation (Cœur (orientation)) *(1 grille sur 20)***
+> - [ ] **25. Auscultation (Poumons (orientation)) *(1 grille sur 20)***
+> - [ ] **26. État général *(Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **27. Examen de base *(Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **28. Signes de péritonisme *(Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **29. McBurney *(Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **30. Douleur à la secousse *(Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **31. Palpation profonde *(Perforation d'ulcère gastro-duodénal · Purpura de Schönlein-Henoch (vascularite à IgA) · Reflux gastro-œsophagien (RGO))***
 > 	- [ ] Taille et consistance du foie *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Impossible si contracture *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Recherche masse si possible *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Foie et rate *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Points douloureux spécifiques *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Douleur à l'ébranlement *(Perforation d'ulcère gastro-duodénal)*
-> - [ ] **30. Inspection générale - Ambiance *(4 diagnostics)***
+> - [ ] **32. Inspection générale - Ambiance *(4 diagnostics)***
 > 	- [ ] Recherche de signes d'œsophagite *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] État dentaire *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Agitation ou prostration *(Perforation d'ulcère gastro-duodénal)*
@@ -718,21 +720,21 @@ cssclasses:
 > 	- [ ] Faciès douloureux, crispé *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Pâleur, sueurs froides *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] État de choc *(Perforation d'ulcère gastro-duodénal)*
-> - [ ] **31. Endobuccal / muqueuses *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **32. Statut articulaire *(Ischémie mésentérique aiguë · Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **33. Endobuccal / muqueuses *(Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **34. Statut articulaire *(Ischémie mésentérique aiguë · Purpura de Schönlein-Henoch (vascularite à IgA))***
 > 	- [ ] Recherche de pouls périphériques *(Ischémie mésentérique aiguë)*
 > 	- [ ] Recherche d'anévrisme de l'aorte abdominale *(Ischémie mésentérique aiguë)*
-> - [ ] **33. Douleur à la percussion rénale *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **34. Méningisme *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **35. Examen neurologique *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **36. Inspection générale et signes vitaux *(Diverticulite sigmoïdienne non compliquée · Gastroentérite)***
+> - [ ] **35. Douleur à la percussion rénale *(Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **36. Méningisme *(Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **37. Examen neurologique *(Purpura de Schönlein-Henoch (vascularite à IgA))***
+> - [ ] **38. Inspection générale et signes vitaux *(Diverticulite sigmoïdienne non compliquée · Gastroentérite)***
 > 	- [ ] État général
 > 	- [ ] Position antalgique *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Faciès douloureux *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Signes vitaux
 > 	- [ ] Signes de déshydratation *(Gastroentérite)*
 > 	- [ ] Recherche d'ictère *(Gastroentérite)*
-> - [ ] **37. Inspection abdominale systématique *(7 diagnostics)***
+> - [ ] **39. Inspection abdominale systématique *(7 diagnostics)***
 > 	- [ ] Respiration abdominale *(Diverticulite sigmoïdienne non compliquée · Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Asymétrie *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Cicatrices *(Diverticulite sigmoïdienne non compliquée · Perforation d'ulcère gastro-duodénal)*
@@ -750,7 +752,7 @@ cssclasses:
 > 	- [ ] Recherche de cicatrices chirurgicales *(Gastroentérite)*
 > 	- [ ] Observation lors de la respiration *(Gastroentérite)*
 > 	- [ ] Réaction à la toux *(Gastroentérite)*
-> - [ ] **38. Auscultation pulmonaire *(8 grilles sur 20)***
+> - [ ] **40. Auscultation pulmonaire *(8 grilles sur 20)***
 > 	- [ ] Bruits hydroaériques *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Qualité (gargouillis, cliquetis) *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Quantité (5-34/min) *(Diverticulite sigmoïdienne non compliquée)*
@@ -766,7 +768,7 @@ cssclasses:
 > 	- [ ] Évaluation de la fréquence des bruits intestinaux *(Gastroentérite)*
 > 	- [ ] Tonalité des bruits *(Gastroentérite)*
 > 	- [ ] Intensité des bruits intestinaux *(Gastroentérite)*
-> - [ ] **39. Percussion abdominale *(Diverticulite sigmoïdienne non compliquée · Gastroentérite · Perforation d'ulcère gastro-duodénal)***
+> - [ ] **41. Percussion abdominale *(Diverticulite sigmoïdienne non compliquée · Gastroentérite · Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Tympanisme généralisé *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Matité déclive *(Diverticulite sigmoïdienne non compliquée · Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Douleur à la percussion *(Diverticulite sigmoïdienne non compliquée · Perforation d'ulcère gastro-duodénal)*
@@ -776,7 +778,7 @@ cssclasses:
 > 	- [ ] Technique correcte *(Gastroentérite)*
 > 	- [ ] Matité *(Gastroentérite)*
 > 	- [ ] Flèche hépatique *(Gastroentérite)*
-> - [ ] **40. Palpation superficielle de l'abdomen *(Diverticulite sigmoïdienne non compliquée · Gastroentérite · Perforation d'ulcère gastro-duodénal)***
+> - [ ] **42. Palpation superficielle de l'abdomen *(Diverticulite sigmoïdienne non compliquée · Gastroentérite · Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Douleur à la pression *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Résistance/masse palpable *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Défense musculaire *(Diverticulite sigmoïdienne non compliquée)*
@@ -790,13 +792,13 @@ cssclasses:
 > 	- [ ] Évaluation du tonus pariétal spontané *(Gastroentérite)*
 > 	- [ ] Recherche de douleur localisée *(Gastroentérite)*
 > 	- [ ] Recherche de défense ou contracture *(Gastroentérite)*
-> - [ ] **41. Recherche de signes hémorragiques *(Diverticulite sigmoïdienne non compliquée · Infection génitale haute)***
+> - [ ] **43. Recherche de signes hémorragiques *(Diverticulite sigmoïdienne non compliquée · Infection génitale haute)***
 > 	- [ ] Douleur à la décompression (Blumberg) *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Signe de McBurney *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Signe du psoas *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Signe de l'obturateur *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Signe de Rovsing *(Diverticulite sigmoïdienne non compliquée)*
-> - [ ] **42. Palpation des organes *(3 grilles sur 20)***
+> - [ ] **44. Palpation des organes *(3 grilles sur 20)***
 > 	- [ ] Foie *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Rate *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Reins *(Diverticulite sigmoïdienne non compliquée)*
@@ -806,53 +808,53 @@ cssclasses:
 > 	- [ ] Main antérieure sous rebord costal *(1 grille sur 20)*
 > 	- [ ] Palpation lors inspiration profonde *(1 grille sur 20)*
 > 	- [ ] Évaluation pôle inférieur rein droit *(1 grille sur 20)*
-> - [ ] **43. Examen des orifices herniaires *(Diverticulite sigmoïdienne non compliquée)***
+> - [ ] **45. Examen des orifices herniaires *(Diverticulite sigmoïdienne non compliquée)***
 > 	- [ ] Hernies inguinales
 > 	- [ ] Hernie crurale
 > 	- [ ] Hernie ombilicale
-> - [ ] **44. Toucher rectal *(6 grilles sur 20)***
+> - [ ] **46. Toucher rectal *(6 grilles sur 20)***
 > 	- [ ] Tonus sphinctérien *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Masses rectales *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Sang au doigtier *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Douglas douloureux *(Diverticulite sigmoïdienne non compliquée)*
-> - [ ] **45. Examen gynécologique si indiqué *(Diverticulite sigmoïdienne non compliquée)***
+> - [ ] **47. Examen gynécologique si indiqué *(Diverticulite sigmoïdienne non compliquée)***
 > 	- [ ] Toucher vaginal
 > 	- [ ] Mobilité utérine douloureuse
 > 	- [ ] Masses annexielles
-> - [ ] **46. Désinfection des mains *(Douleurs abdominales non spécifiques)***
-> - [ ] **47. Prise de la tension artérielle *(Douleurs abdominales non spécifiques)***
-> - [ ] **48. Auscultation cardiaque et prise du pouls *(Douleurs abdominales non spécifiques)***
-> - [ ] **49. Évaluation de la capacité de discernement *(Douleurs abdominales non spécifiques)***
+> - [ ] **48. Désinfection des mains *(Douleurs abdominales non spécifiques)***
+> - [ ] **49. Prise de la tension artérielle *(Douleurs abdominales non spécifiques)***
+> - [ ] **50. Auscultation cardiaque et prise du pouls *(Douleurs abdominales non spécifiques)***
+> - [ ] **51. Évaluation de la capacité de discernement *(Douleurs abdominales non spécifiques)***
 > 	- [ ] Évaluation pendant l'entretien
-> - [ ] **50. Inspection de la vulve, du vagin et du col *(Endométriose pelvienne)***
-> - [ ] **51. Examen bimanuel recto-vaginal *(Endométriose pelvienne)***
+> - [ ] **52. Inspection de la vulve, du vagin et du col *(Endométriose pelvienne)***
+> - [ ] **53. Examen bimanuel recto-vaginal *(Endométriose pelvienne)***
 > 	- [ ] Utérus
 > 	- [ ] Cul-de-sac de Douglas
-> - [ ] **52. Palpation des ganglions lymphatiques *(4 diagnostics)***
-> - [ ] **53. Toucher rectal avec inspection de l'anus *(MICI (Crohn / RCUH))***
-> - [ ] **54. Inspection de l'abdomen et de la peau *(Ischémie mésentérique aiguë)***
+> - [ ] **54. Palpation des ganglions lymphatiques *(4 diagnostics)***
+> - [ ] **55. Toucher rectal avec inspection de l'anus *(MICI (Crohn / RCUH))***
+> - [ ] **56. Inspection de l'abdomen et de la peau *(Ischémie mésentérique aiguë)***
 > 	- [ ] État général
-> - [ ] **55. Status cardio-pulmonaire *(Ischémie mésentérique aiguë)***
+> - [ ] **57. Status cardio-pulmonaire *(Ischémie mésentérique aiguë)***
 > 	- [ ] Examen cardiovasculaire
 > 	- [ ] Examen pulmonaire
-> - [ ] **56. Palpation de la rate *(2 grilles sur 20)***
+> - [ ] **58. Palpation de la rate *(2 grilles sur 20)***
 > 	- [ ] Recherche de splénomégalie *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Décubitus dorsal *(1 grille sur 20)*
 > 	- [ ] Décubitus latéral droit *(1 grille sur 20)*
 > 	- [ ] Technique bimanuelle correcte *(1 grille sur 20)*
 > 	- [ ] Évaluation taille et consistance si palpable *(1 grille sur 20)*
-> - [ ] **57. Status abdominal - installation *(Cholédocholithiase · Colique néphrétique droite)***
+> - [ ] **59. Status abdominal - installation *(Cholédocholithiase · Colique néphrétique droite)***
 > 	- [ ] Bras & jambes décroisées
 > 	- [ ] Tête légèrement surélevée
 > 	- [ ] Abdomen entièrement visible (premier bouton du pantalon déboutonné ou patient en sous-vêtements)
 > 	- [ ] Se place à droite du patient
-> - [ ] **58. Status abdominal - auscultation *(Colique néphrétique droite)***
+> - [ ] **60. Status abdominal - auscultation *(Colique néphrétique droite)***
 > 	- [ ] Les 4 quadrants
 > 	- [ ] Auscultation avant toute autre partie du status
-> - [ ] **59. Status abdominal - percussion *(Colique néphrétique droite)***
+> - [ ] **61. Status abdominal - percussion *(Colique néphrétique droite)***
 > 	- [ ] Les 4 quadrants
 > 	- [ ] Délimitation de la taille du foie à la percussion (ou autre technique appropriée)
-> - [ ] **60. Status abdominal - palpation *(Colique néphrétique droite · Torsion ovarienne)***
+> - [ ] **62. Status abdominal - palpation *(Colique néphrétique droite · Torsion ovarienne)***
 > 	- [ ] Superficielle *(Colique néphrétique droite)*
 > 	- [ ] Profonde *(Colique néphrétique droite)*
 > 	- [ ] Détente *(Colique néphrétique droite)*
@@ -861,87 +863,87 @@ cssclasses:
 > 	- [ ] Palpation superficielle de l'abdomen *(Torsion ovarienne)*
 > 	- [ ] Palpation profonde *(Torsion ovarienne)*
 > 	- [ ] Percussion foie et rate *(Torsion ovarienne)*
-> - [ ] **61. Status abdominal - tests spécifiques *(Colique néphrétique droite)***
+> - [ ] **63. Status abdominal - tests spécifiques *(Colique néphrétique droite)***
 > 	- [ ] Palpation du point de McBurney
 > 	- [ ] Signe du Psoas
 > 	- [ ] Signe de McBurney
-> - [ ] **62. Installation du patient *(1 grille sur 20)***
+> - [ ] **64. Installation du patient *(1 grille sur 20)***
 > 	- [ ] Jambes décroisées
 > 	- [ ] Bras le long du corps
 > 	- [ ] Tête légèrement surélevée
 > 	- [ ] Abdomen visible en entier (si nécessaire, premier bouton du pantalon enlevé)
 > 	- [ ] Se positionne à droite de la patiente
-> - [ ] **63. Tests spécifiques *(1 grille sur 20)***
+> - [ ] **65. Tests spécifiques *(1 grille sur 20)***
 > 	- [ ] Signe de McBurney
 > 	- [ ] Palpation du point de McBurney
 > 	- [ ] Signe du Psoas
-> - [ ] **64. DD : appendicite *(Cholédocholithiase)***
+> - [ ] **66. DD : appendicite *(Cholédocholithiase)***
 > 	- [ ] Palpation du point de McBurney
 > 	- [ ] Signe du Psoas
-> - [ ] **65. S'assure du confort d'installation de la patiente *(Torsion ovarienne)***
-> - [ ] **66. Status urinaire - percussion des loges rénales *(Torsion ovarienne)***
-> - [ ] **67. Status gynécologique - 1 *(Torsion ovarienne)***
+> - [ ] **67. S'assure du confort d'installation de la patiente *(Torsion ovarienne)***
+> - [ ] **68. Status urinaire - percussion des loges rénales *(Torsion ovarienne)***
+> - [ ] **69. Status gynécologique - 1 *(Torsion ovarienne)***
 > 	- [ ] Met des gants
 > 	- [ ] Observation du périnée, vestibule
 > 	- [ ] Lubrification correcte du spéculum
-> - [ ] **68. Status gynécologique - 2 *(Torsion ovarienne)***
+> - [ ] **70. Status gynécologique - 2 *(Torsion ovarienne)***
 > 	- [ ] Insertion du spéculum avec angle de 45°
 > 	- [ ] Observation du col
 > 	- [ ] Palpation bi-manuelle
 > 	- [ ] Mobilisation du col à une main
 > 	- [ ] Retire le spéculum sans le fermer
-> - [ ] **69. Examen cutané et muqueux *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **71. Examen cutané et muqueux *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Peau
 > 	- [ ] Langue
 > 	- [ ] Signes de dénutrition
 > 	- [ ] Signes de déshydratation
-> - [ ] **70. Signes péritonéaux spécifiques *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **72. Signes péritonéaux spécifiques *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Contracture abdominale généralisée
 > 	- [ ] Signe du rebond positif
 > 	- [ ] Douleur à la décompression brutale
 > 	- [ ] Douleur à la toux
 > 	- [ ] Douleur à la percussion du talon
 > 	- [ ] Position antalgique en chien de fusil
-> - [ ] **71. Touchers pelviens *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **73. Touchers pelviens *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Toucher rectal
 > 	- [ ] Bombement douloureux
 > 	- [ ] Recherche de sang
 > 	- [ ] Toucher vaginal
-> - [ ] **72. Palpation profonde et recherche de masses *(Gastroentérite)***
+> - [ ] **74. Palpation profonde et recherche de masses *(Gastroentérite)***
 > 	- [ ] Recherche de masses
 > 	- [ ] Palpation de l'aorte abdominale
 > 	- [ ] Douleur à l'ébranlement et à la détente
 > 	- [ ] Évaluation de la douleur provoquée
-> - [ ] **73. Palpation des organes (foie, rate, reins) *(Gastroentérite)***
+> - [ ] **75. Palpation des organes (foie, rate, reins) *(Gastroentérite)***
 > 	- [ ] Palpation du bord inférieur du foie
 > 	- [ ] Palpation de la rate
 > 	- [ ] Palpation bimanuelle des loges rénales
 > 	- [ ] Mention du toucher rectal si indiqué
-> - [ ] **74. Inspection générale et recherche d'ictère *(1 grille sur 20)***
+> - [ ] **76. Inspection générale et recherche d'ictère *(1 grille sur 20)***
 > 	- [ ] Inspection de la peau
 > 	- [ ] Examen des sclères
 > 	- [ ] État général
 > 	- [ ] Signes vitaux
-> - [ ] **75. Recherche des signes d'insuffisance hépatocellulaire *(1 grille sur 20)***
+> - [ ] **77. Recherche des signes d'insuffisance hépatocellulaire *(1 grille sur 20)***
 > 	- [ ] Angiomes stellaires
 > 	- [ ] Erythrose palmaire
 > 	- [ ] Gynécomastie
 > 	- [ ] Ongles blancs
 > 	- [ ] Ecchymoses
-> - [ ] **76. Recherche des signes d'hypertension portale *(1 grille sur 20)***
+> - [ ] **78. Recherche des signes d'hypertension portale *(1 grille sur 20)***
 > 	- [ ] Collatérales porto-systémiques
 > 	- [ ] Splénomégalie
 > 	- [ ] Ascite
-> - [ ] **77. Recherche des signes de cholestase chronique *(1 grille sur 20)***
+> - [ ] **79. Recherche des signes de cholestase chronique *(1 grille sur 20)***
 > 	- [ ] Lésions de grattage
 > 	- [ ] Xanthélasma
 > 	- [ ] Hyperpigmentation cutanée
-> - [ ] **78. Examen spécialisé du foie *(1 grille sur 20)***
+> - [ ] **80. Examen spécialisé du foie *(1 grille sur 20)***
 > 	- [ ] Flèche hépatique
 > 	- [ ] Palpation du bord inférieur du foie
 > 	- [ ] Signe de McBurney
 > 	- [ ] Caractéristiques du foie palpé
-> - [ ] **79. Recherche d'ascite *(1 grille sur 20)***
+> - [ ] **81. Recherche d'ascite *(1 grille sur 20)***
 > 	- [ ] Matité déclive à la percussion
 > 	- [ ] Patient couché : percussion ligne horizontale ombilic
 > 	- [ ] Patient tourné 30-45° : recherche déplacement limite

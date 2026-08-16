@@ -30,11 +30,18 @@ def _corpus():
     Les proprietes de ce fichier travaillent sur des cas CONSTRUITS ; celles
     qui ont besoin d'un temoin reel passent par ici, pour ne pas relire les
     252 grilles une fois par propriete.
+
+    LE `list()` N'EST PAS COSMETIQUE : `tous_les_cas()` rend un GENERATEUR.
+    Mis en cache tel quel, il est vide des la DEUXIEME propriete qui le lit —
+    laquelle passe alors au vert sans avoir rien examine. Le defaut a eu lieu
+    pendant l'ecriture de ce fichier, et c'est le temoin nomme de
+    `verifier_homonymes_par_groupe` qui l'a signale ; une propriete sans
+    temoin ne l'aurait pas vu.
     """
     global _CORPUS
     if _CORPUS is None:
         import build_memento
-        _CORPUS = build_memento.tous_les_cas()
+        _CORPUS = list(build_memento.tous_les_cas())
     return _CORPUS
 
 
@@ -215,6 +222,58 @@ def verifier_drapeaux_rouges():
                       " dans le HTML, le controle ne verifie plus rien")
     for m in manquants[:5]:
         ecarts.append(f"drapeau rouge perdu entre le HTML et le pivot — {m}")
+    return ecarts
+
+
+def verifier_homonymes_par_groupe():
+    """Un libelle qu'une grille repete dans DEUX groupes designe deux gestes.
+
+    Sans la qualification, les trois « Inspection » d'AZYGOS-24 (Respiration,
+    Bouche, Cou) partageaient une signature et fusionnaient entre elles :
+    l'inspection du cou disparaissait du memento en tant que geste cote.
+
+    Trois choses se cassent separement, donc trois assertions :
+
+      1. deux groupes distincts -> le PREMIER garde le libelle nu, le suivant
+         est qualifie (la correction reste strictement additive) ;
+      2. un libelle repete DANS UN MEME groupe n'est PAS qualifie — c'est un
+         doublon, pas une ambiguite, et le suffixer casserait son appariement
+         avec les autres grilles pour ne rien distinguer ;
+      3. la qualification porte sur la forme CANONIQUE, pas sur le libelle
+         brut : la couche B doit avoir dit son mot avant qu'on suffixe. Le
+         temoin est la numerotation de tete, que `canonique()` retire — si le
+         suffixe s'appliquait au brut, « 4. » survivrait dans le libelle.
+    """
+    ecarts = []
+    cas = {"id": "A", "sections": {"e": [
+        ("titre", None, "Respiration", None),
+        ("item", "e1", "1. Inspection", []),
+        ("titre", None, "Cou", None),
+        ("item", "e2", "4. Inspection", []),
+        ("item", "e3", "5. Palpation", []),
+        ("item", "e4", "6. Palpation", []),
+    ]}}
+    obtenu = [t for t, _ in lib_fusion.desambigue(cas, "e")]
+    attendu = ["Inspection", "Inspection (Cou)", "Palpation", "Palpation"]
+    if obtenu != attendu:
+        ecarts.append(f"qualification par groupe erronee : {obtenu}")
+
+    # sans groupe, rien a quoi se raccrocher : le libelle reste nu
+    nu = {"id": "B", "sections": {"e": [("item", "e1", "Inspection", []),
+                                        ("item", "e2", "Inspection", [])]}}
+    if [t for t, _ in lib_fusion.desambigue(nu, "e")] != ["Inspection", "Inspection"]:
+        ecarts.append("un item sans groupe ne doit pas etre qualifie")
+
+    # CONTRE-EPREUVE DU CONTROLE VIDE — un temoin reel, nomme. AZYGOS-24
+    # (Dysphonie) porte trois « Inspection » et deux « Palpation ».
+    vus = [lib_fusion.desambigue(r, "e", "Dysphonie")
+           for r in _corpus() if r["id"] == "AZYGOS-24"]
+    if not vus:
+        ecarts.append("temoin AZYGOS-24 absent du corpus : le controle ne verifie plus rien")
+    else:
+        inspections = [t for t, _ in vus[0] if t.startswith("Inspection")]
+        if sorted(inspections) != ["Inspection", "Inspection (Bouche)", "Inspection (Cou)"]:
+            ecarts.append(f"AZYGOS-24 devrait porter trois inspections distinctes : {inspections}")
     return ecarts
 
 
@@ -759,6 +818,7 @@ def main():
     ecarts += verifier_elision()
     ecarts += verifier_nettoyage()
     ecarts += verifier_drapeaux_rouges()
+    ecarts += verifier_homonymes_par_groupe()
     ecarts += verifier_reponses_patient()
     ecarts += verifier_invariant_sous_items()
     ecarts += verifier_management()

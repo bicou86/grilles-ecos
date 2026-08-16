@@ -222,27 +222,32 @@ cssclasses:
 > 	- [ ] Évaluation des axes des jambes *(Tendinopathie d'insertion du tendon d'Achille)*
 > 	- [ ] Évaluation des axes de l'arrière-pied *(Tendinopathie d'insertion du tendon d'Achille)*
 > 	- [ ] Évaluation de la musculature *(Tendinopathie d'insertion du tendon d'Achille)*
-> - [ ] **8. Mobilité des articulations de la hanche *(Polymyalgia rheumatica)***
-> - [ ] **9. Examen orienté des mains et des poignets *(Polyarthrite rhumatoïde · Polymyalgia rheumatica)***
+> - [ ] **8. Inspection (Hanche) *(Polymyalgia rheumatica)***
+> - [ ] **9. Palpation (Hanche) *(Polymyalgia rheumatica)***
+> - [ ] **10. Mobilité des articulations de la hanche *(Polymyalgia rheumatica)***
+> - [ ] **11. Test de force orienté (Hanche) *(Polymyalgia rheumatica)***
+> - [ ] **12. Examen orienté des mains et des poignets *(Polyarthrite rhumatoïde · Polymyalgia rheumatica)***
 > 	- [ ] Tuméfaction des articulations MCP *(Polyarthrite rhumatoïde)*
 > 	- [ ] Tuméfaction des articulations IPP *(Polyarthrite rhumatoïde)*
 > 	- [ ] Aspect fusiforme des doigts *(Polyarthrite rhumatoïde)*
 > 	- [ ] Synovite du poignet *(Polyarthrite rhumatoïde)*
 > 	- [ ] Chaleur locale *(Polyarthrite rhumatoïde)*
 > 	- [ ] Pas de déformation fixée (stade précoce) *(Polyarthrite rhumatoïde)*
-> - [ ] **10. Palpation de l'artère temporale *(Polymyalgia rheumatica)***
-> - [ ] **11. Autre atteinte vasculaire *(Polymyalgia rheumatica)***
-> - [ ] **12. Mesure de la tension artérielle bilatérale *(Polymyalgia rheumatica)***
-> - [ ] **13. Palpation des artères périphériques *(Polymyalgia rheumatica)***
-> - [ ] **14. Auscultation des vaisseaux périphériques *(Polymyalgia rheumatica)***
-> - [ ] **15. Désinfection des mains *(Épicondylite latérale)***
-> - [ ] **16. Amplitude des mouvements *(Épicondylite latérale)***
+> - [ ] **13. Inspection (Articulations périphériques et mains) *(Polymyalgia rheumatica)***
+> - [ ] **14. Palpation (Articulations périphériques et mains) *(Polymyalgia rheumatica)***
+> - [ ] **15. Palpation de l'artère temporale *(Polymyalgia rheumatica)***
+> - [ ] **16. Autre atteinte vasculaire *(Polymyalgia rheumatica)***
+> - [ ] **17. Mesure de la tension artérielle bilatérale *(Polymyalgia rheumatica)***
+> - [ ] **18. Palpation des artères périphériques *(Polymyalgia rheumatica)***
+> - [ ] **19. Auscultation des vaisseaux périphériques *(Polymyalgia rheumatica)***
+> - [ ] **20. Désinfection des mains *(Épicondylite latérale)***
+> - [ ] **21. Amplitude des mouvements *(Épicondylite latérale)***
 > 	- [ ] Flexion-Extension (130-30-0)
 > 	- [ ] Pronation-Neutre-Supination
-> - [ ] **17. Tests de stabilité ligamentaire *(Épicondylite latérale)***
+> - [ ] **22. Tests de stabilité ligamentaire *(Épicondylite latérale)***
 > 	- [ ] Stress en valgus
 > 	- [ ] Stress en varus
-> - [ ] **18. Tests neurologiques *(Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
+> - [ ] **23. Tests neurologiques *(Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
 > 	- [ ] Sensibilité *(Épicondylite latérale)*
 > 	- [ ] Réflexes : biceps (C5) *(Épicondylite latérale)*
 > 	- [ ] Réflexes : triceps (C7) *(Épicondylite latérale)*
@@ -250,7 +255,7 @@ cssclasses:
 > 	- [ ] Signe de Tinel sur le nerf tibial postérieur *(Tendinopathie d'insertion du tendon d'Achille)*
 > 	- [ ] Sensibilité plantaire *(Tendinopathie d'insertion du tendon d'Achille)*
 > 	- [ ] Réflexe achilléen *(Tendinopathie d'insertion du tendon d'Achille)*
-> - [ ] **19. Inspection globale du pied en position debout *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **24. Inspection globale du pied en position debout *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Recherche de pied étalé (Spreizfuss)
 > 	- [ ] Recherche de pied plat (Senkfuss)
 > 	- [ ] Recherche de pied valgus (Knickfuss)
@@ -258,63 +263,63 @@ cssclasses:
 > 	- [ ] Recherche de pied bot (Klumpfuss)
 > 	- [ ] Abduction du médio-pied (signe 'too-many-toes')
 > 	- [ ] Forme des orteils (marteau, griffe)
-> - [ ] **20. Inspection de la plante du pied en position assise *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **25. Inspection de la plante du pied en position assise *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Recherche d'hyperkératose
 > 	- [ ] Recherche d'exanthèmes
 > 	- [ ] Recherche de mycoses
-> - [ ] **21. Palpation systématique *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **26. Palpation systématique *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Articulation tibio-tarsienne
 > 	- [ ] Test de Gänslen
 > 	- [ ] Tendon d'Achille (recherche de nodules, points douloureux)
 > 	- [ ] Tendon du tibial postérieur
 > 	- [ ] Fascia plantaire
-> - [ ] **22. Examen de la mobilité articulaire *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **27. Examen de la mobilité articulaire *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Extension/flexion de la cheville
 > 	- [ ] Inversion/éversion
 > 	- [ ] Pronation/supination
-> - [ ] **23. Examen fonctionnel - Tests de force *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **28. Examen fonctionnel - Tests de force *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Contraction résistive isométrique de l'extenseur de l'hallux
 > 	- [ ] Test des muscles péroniers
 > 	- [ ] Test de montée sur la pointe des pieds (heel rise test)
-> - [ ] **24. Tests ligamentaires *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **29. Tests ligamentaires *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Stabilité des ligaments collatéraux latéraux
 > 	- [ ] Test du tiroir antérieur
 > 	- [ ] Test de varus-valgus
-> - [ ] **25. Test de Thompson *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **30. Test de Thompson *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Compression du mollet pour évaluer l'intégrité du tendon d'Achille
-> - [ ] **26. Pouls périphériques *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **31. Pouls périphériques *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Pouls tibial postérieur
 > 	- [ ] Pouls pédieux
-> - [ ] **27. Inspection générale *(Polyarthrite rhumatoïde)***
+> - [ ] **32. Inspection générale *(Polyarthrite rhumatoïde)***
 > 	- [ ] État général conservé
 > 	- [ ] Pas de pâleur
 > 	- [ ] Pas d'amaigrissement visible
 > 	- [ ] Attitude antalgique des mains
-> - [ ] **28. Palpation articulaire des mains *(Polyarthrite rhumatoïde)***
+> - [ ] **33. Palpation articulaire des mains *(Polyarthrite rhumatoïde)***
 > 	- [ ] Douleur à la pression des MCP
 > 	- [ ] Douleur à la pression des IPP
 > 	- [ ] Squeeze test positif
 > 	- [ ] Synovite palpable
 > 	- [ ] Ténosynovite des fléchisseurs/extenseurs possible
-> - [ ] **29. Mobilité articulaire des mains *(Polyarthrite rhumatoïde)***
+> - [ ] **34. Mobilité articulaire des mains *(Polyarthrite rhumatoïde)***
 > 	- [ ] Limitation de la flexion des doigts
 > 	- [ ] Limitation de l'extension
 > 	- [ ] Déficit de fermeture du poing
 > 	- [ ] Douleur à la mobilisation passive
 > 	- [ ] Raideur matinale objective lors de l'examen matinal
-> - [ ] **30. Examen des autres articulations *(Polyarthrite rhumatoïde)***
+> - [ ] **35. Examen des autres articulations *(Polyarthrite rhumatoïde)***
 > 	- [ ] Genoux: épanchement articulaire possible
 > 	- [ ] Coudes: synovite, nodules rhumatoïdes
 > 	- [ ] Épaules: limitation des mouvements
 > 	- [ ] Pieds: douleur des MTP
 > 	- [ ] Rachis cervical: recherche subluxation C1-C2
-> - [ ] **31. Recherche de manifestations extra-articulaires *(Polyarthrite rhumatoïde)***
+> - [ ] **36. Recherche de manifestations extra-articulaires *(Polyarthrite rhumatoïde)***
 > 	- [ ] Nodules rhumatoïdes
 > 	- [ ] Syndrome sec
 > 	- [ ] Vascularite
 > 	- [ ] Atteinte pulmonaire
 > 	- [ ] Syndrome de Raynaud
-> - [ ] **32. Tests fonctionnels spécifiques *(Polyarthrite rhumatoïde)***
+> - [ ] **37. Tests fonctionnels spécifiques *(Polyarthrite rhumatoïde)***
 > 	- [ ] Force de préhension
 > 	- [ ] Test de Finkelstein
 > 	- [ ] Test de Phalen

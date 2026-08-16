@@ -296,9 +296,10 @@ cssclasses:
 > - [ ] **16. Filet de sécurité**
 > - [ ] **17. Contrôle urologique**
 > - [ ] **18. Prophylaxie des récidives**
-> - [ ] **19. Alcalinisation**
-> - [ ] **20. Alimentation**
-> - [ ] **21. Uricostatique**
+> - [ ] **19. Apport hydrique (Conduite)**
+> - [ ] **20. Alcalinisation**
+> - [ ] **21. Alimentation**
+> - [ ] **22. Uricostatique**
 
 > [!success] 💊 Management — si Pyélonéphrite
 > - [ ] **1. Labo : Formule sanguine simple (FSC) *(1 grille sur 2)***

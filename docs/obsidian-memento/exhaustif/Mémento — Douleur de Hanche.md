@@ -251,19 +251,21 @@ cssclasses:
 > - [ ] **20. DD lombo-radiculaire *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **21. Test de Lasègue *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **22. Test de force des abducteurs de hanche *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
-> - [ ] **23. Resisted Abduction Test (ADD-R-Test) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
-> - [ ] **24. Palpation de la hanche *(Coxarthrose (arthrose de hanche) · Syndrome douloureux du grand trochanter (tendinopathie fessière))***
+> - [ ] **23. Tests de provocation GTPS (Hanche - Tests de fonction / provocation (décubitus latéral)) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
+> - [ ] **24. Resisted Abduction Test (ADD-R-Test) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
+> - [ ] **25. Mobilité de la hanche (Hanche - Tests de fonction / provocation (décubitus ventral)) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
+> - [ ] **26. Palpation de la hanche *(Coxarthrose (arthrose de hanche) · Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > 	- [ ] Repères anatomiques: crête iliaque, épine iliaque antéro-supérieure *(Coxarthrose (arthrose de hanche))*
 > 	- [ ] Pubis, ligament inguinal, symphyse pubienne *(Coxarthrose (arthrose de hanche))*
 > 	- [ ] Muscles rectus femoris (droit fémoral), quadriceps *(Coxarthrose (arthrose de hanche))*
 > 	- [ ] Insertion des adducteurs *(Coxarthrose (arthrose de hanche))*
 > 	- [ ] Grand trochanter *(Coxarthrose (arthrose de hanche))*
 > 	- [ ] Épine iliaque postéro-supérieure, sacrum, muscle grand glutéal *(Coxarthrose (arthrose de hanche))*
-> - [ ] **25. DD Hanche, ISG, lombo-sacré (3 phases de Mennell - test d’hyperextension) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
-> - [ ] **26. Phase 1: Articulation de la hanche *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
-> - [ ] **27. Phase 2: ISG (signe classique de Mennell) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
-> - [ ] **28. Phase 3: Jonction lombo-sacrée *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
-> - [ ] **29. Observation de la marche et de la posture *(Coxarthrose (arthrose de hanche) · Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **27. DD Hanche, ISG, lombo-sacré (3 phases de Mennell - test d’hyperextension) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
+> - [ ] **28. Phase 1: Articulation de la hanche *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
+> - [ ] **29. Phase 2: ISG (signe classique de Mennell) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
+> - [ ] **30. Phase 3: Jonction lombo-sacrée *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
+> - [ ] **31. Observation de la marche et de la posture *(Coxarthrose (arthrose de hanche) · Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Analyse de la démarche *(Nécrose aseptique de la tête fémorale gauche)*
 > 	- [ ] Phase d'appui et de balancement *(Nécrose aseptique de la tête fémorale gauche)*
 > 	- [ ] Utilisation d'aide à la marche *(Nécrose aseptique de la tête fémorale gauche)*
@@ -273,26 +275,26 @@ cssclasses:
 > 	- [ ] Déformation membre inférieur en rotation asymétrique *(Coxarthrose (arthrose de hanche))*
 > 	- [ ] Cicatrices *(Coxarthrose (arthrose de hanche))*
 > 	- [ ] Tuméfaction *(Coxarthrose (arthrose de hanche))*
-> - [ ] **30. Inspection de la hanche (bilatérale comparative) *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **32. Inspection de la hanche (bilatérale comparative) *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Recherche de déformation
 > 	- [ ] Gonflement localisé
 > 	- [ ] Rougeur cutanée
 > 	- [ ] Position spontanée du membre
 > 	- [ ] Amyotrophie
-> - [ ] **31. Palpation systématique *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **33. Palpation systématique *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Palpation du pli inguinal
 > 	- [ ] Palpation du grand trochanter
 > 	- [ ] Recherche de chaleur locale
 > 	- [ ] Palpation des reliefs osseux
 > 	- [ ] Recherche d'adénopathies inguinales
-> - [ ] **32. Mobilisation passive - amplitudes articulaires *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **34. Mobilisation passive - amplitudes articulaires *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Flexion de hanche
 > 	- [ ] Extension de hanche
 > 	- [ ] Abduction
 > 	- [ ] Adduction
 > 	- [ ] Rotation interne
 > 	- [ ] Rotation externe
-> - [ ] **33. Tests spécifiques de la hanche *(Coxarthrose (arthrose de hanche) · Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **35. Tests spécifiques de la hanche *(Coxarthrose (arthrose de hanche) · Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Test FADIR (impingement) *(Nécrose aseptique de la tête fémorale gauche)*
 > 	- [ ] Test FABER/Patrick (signe du 4) *(Nécrose aseptique de la tête fémorale gauche)*
 > 	- [ ] Test de Thomas (flexum de hanche) *(Nécrose aseptique de la tête fémorale gauche)*
@@ -302,50 +304,50 @@ cssclasses:
 > 	- [ ] Distance inter-malléolaire en position du lotus *(Coxarthrose (arthrose de hanche))*
 > 	- [ ] Test FADIR (Flexion-Adduction-Internal-Rotation) pour conflit fémoro-acétabulaire *(Coxarthrose (arthrose de hanche))*
 > 	- [ ] Force des abducteurs *(Coxarthrose (arthrose de hanche))*
-> - [ ] **34. Évaluation musculaire et neurologique *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **36. Évaluation musculaire et neurologique *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Force des fléchisseurs de hanche
 > 	- [ ] Force des abducteurs (moyen fessier)
 > 	- [ ] Force des rotateurs
 > 	- [ ] Réflexes ostéo-tendineux membres inférieurs
 > 	- [ ] Sensibilité du territoire L2-L3
-> - [ ] **35. Examen du rachis lombaire *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **37. Examen du rachis lombaire *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Mobilité rachidienne
 > 	- [ ] Points douloureux paravertébraux
 > 	- [ ] Test de Lasègue
 > 	- [ ] Test de Léri
-> - [ ] **36. Examen comparatif controlatéral *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **38. Examen comparatif controlatéral *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Comparaison des amplitudes
 > 	- [ ] Comparaison de la force
 > 	- [ ] Recherche d'asymétrie
 > 	- [ ] Mesure de l'inégalité de longueur des membres
-> - [ ] **37. Examen vasculaire des membres inférieurs *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **39. Examen vasculaire des membres inférieurs *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Palpation des pouls périphériques
 > 	- [ ] Recherche de signes d'insuffisance artérielle
 > 	- [ ] Recherche de varices
-> - [ ] **38. Recherche de points douloureux *(Coxarthrose (arthrose de hanche))***
+> - [ ] **40. Recherche de points douloureux *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Chaleur
 > 	- [ ] Tuméfaction
 > 	- [ ] Douleur à la palpation profonde
 > 	- [ ] Crépitations possibles
-> - [ ] **39. Examen fonctionnel - Mobilité passive *(Coxarthrose (arthrose de hanche))***
+> - [ ] **41. Examen fonctionnel - Mobilité passive *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Flexion
 > 	- [ ] Abduction
 > 	- [ ] Adduction
 > 	- [ ] Rotation interne
 > 	- [ ] Rotation externe
 > 	- [ ] Extension
-> - [ ] **40. Examen fonctionnel - Mobilité active *(Coxarthrose (arthrose de hanche))***
+> - [ ] **42. Examen fonctionnel - Mobilité active *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Pas ou peu d'examen actif nécessaire
 > 	- [ ] Mesures d'amplitudes si changements de position
 > 	- [ ] Démarche logique pour éviter allers-retours position
-> - [ ] **41. Tests de force musculaire *(Coxarthrose (arthrose de hanche))***
+> - [ ] **43. Tests de force musculaire *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Fléchisseurs de hanche
 > 	- [ ] Extenseurs de hanche
 > 	- [ ] Abducteurs (moyen fessier)
 > 	- [ ] Adducteurs
 > 	- [ ] Rotateurs internes
 > 	- [ ] Rotateurs externes
-> - [ ] **42. Mesure de l'inégalité de longueur des membres *(Coxarthrose (arthrose de hanche))***
+> - [ ] **44. Mesure de l'inégalité de longueur des membres *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Mesure vraie: épine iliaque antéro-supérieure à malléole interne
 > 	- [ ] Mesure apparente: ombilic à malléole interne
 > 	- [ ] Recherche d'une bascule du bassin

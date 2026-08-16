@@ -95,13 +95,78 @@ def _fusionner(entrees, ssp):
             for g in groupes.values()]
 
 
+def desambigue(cas, prefixe, ssp=None):
+    """Les items d'une section d'UNE grille, homonymes qualifies par leur groupe.
+
+    LE GROUPE EST UNE INFORMATION DE LA GRILLE, PAS UNE DECORATION. AZYGOS-24
+    (Dysphonie) cote « Inspection » TROIS fois — sous « Respiration », sous
+    « Bouche », sous « Cou » — et « Palpation » deux fois. Le socle A ne voit
+    que le libelle : les trois inspections partageaient une signature et
+    fusionnaient entre elles, si bien que l'inspection du cou et la palpation
+    cervicale disparaissaient du memento en tant que gestes cotes distincts.
+    Meme perte sur AZYGOS-44 (« Inspection » de l'abdomen contre celle du col
+    au speculum ; « Affections tumorales » personnelles contre familiales),
+    AZYGOS-36 (« Inspection » du nez contre celle de la bouche), AZYGOS-21
+    (« Antecedents » deux fois) et AZYGOS-27 (« Arguments POUR » / « CONTRE »,
+    repetes pour chacun de ses trois diagnostics differentiels).
+
+    Releve du corpus : 85 occurrences surnumeraires, 80 dans AZYGOS et 5 dans
+    RESCOS, reparties sur 42 couples (grille, section).
+
+    LA QUALIFICATION PORTE SUR LA FORME CANONIQUE, pas sur le libelle brut :
+    la couche B doit avoir dit son mot AVANT qu'on suffixe, sinon un homonyme
+    perdrait la reecriture que la table lui destine.
+
+    SEULS LES HOMONYMES QUI CHANGENT DE GROUPE SONT QUALIFIES. Un libelle
+    repete DANS UN MEME groupe n'est pas ambigu, c'est un doublon : AZYGOS-36
+    cote « Douleur faciale » deux fois sous « Anamnese orientee sur le
+    probleme », et le suffixer n'aurait rien distingue — seulement enlaidi le
+    libelle et casse son appariement avec les autres grilles. Le critere est
+    donc le nombre de GROUPES distincts, jamais le nombre d'occurrences.
+
+    LE PREMIER GROUPE GARDE LE LIBELLE NU, et c'est ce qui rend la correction
+    STRICTEMENT ADDITIVE : aucun libelle qui existait ne disparait, seules
+    s'ajoutent les occurrences qui se perdaient. Qualifier AUSSI la premiere
+    a ete essaye et coute plus qu'il ne rapporte — « Antecedents medicaux »
+    d'AZYGOS-27, qualifie, cessait de rejoindre « Antecedents medicaux
+    personnels » de German-42, et deux entrees du vocabulaire devenaient
+    inertes du meme coup (check_vocabulaire l'a dit). Le groupe suivant est
+    ce que le corpus perdait ; le premier, lui, s'appariait deja.
+
+    Un item sans groupe ne peut pas etre qualifie : il reste nu, et le
+    comportement d'avant vaut pour lui.
+    """
+    lignes = cas["sections"].get(prefixe, [])
+    groupe_de, groupe = [], None
+    for genre, _, titre, _ in lignes:
+        if genre == "titre":
+            groupe = titre
+        else:
+            groupe_de.append(groupe)
+
+    items = [(t, s or []) for g, _, t, s in lignes if g == "item"]
+    # Premier groupe rencontre pour chaque signature, dans l'ordre du document
+    # — pas de dependance a l'ordre d'un `set`, donc pas de dependance a
+    # PYTHONHASHSEED.
+    premier = {}
+    for (titre, _), groupe in zip(items, groupe_de):
+        premier.setdefault(signature(canonique(titre, ssp)), groupe)
+
+    out = []
+    for (titre, sous), groupe in zip(items, groupe_de):
+        nom = canonique(titre, ssp)
+        if groupe and premier[signature(nom)] != groupe:
+            nom = f"{nom} ({groupe})"
+        out.append((nom, sous))
+    return out
+
+
 def apparier(cas_list, prefixe, ssp=None):
     """Items d'une section, apparies entre tous les cas fournis."""
     entrees = []
     for cas in cas_list:
-        for genre, _, titre, sous in cas["sections"].get(prefixe, []):
-            if genre == "item":
-                entrees.append((titre, sous or [], cas["id"]))
+        for titre, sous in desambigue(cas, prefixe, ssp):
+            entrees.append((titre, sous, cas["id"]))
     return _fusionner(entrees, ssp)
 
 

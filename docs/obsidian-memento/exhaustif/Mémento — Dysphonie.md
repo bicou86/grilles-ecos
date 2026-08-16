@@ -79,24 +79,27 @@ cssclasses:
 > - [ ] **2. Auscultation**
 > - [ ] **3. Larynx / trachée**
 > - [ ] **4. Poumons**
-> - [ ] **5. Cavité buccale / vestibule**
-> - [ ] **6. Oropharynx**
-> - [ ] **7. Nerfs crâniens**
-> - [ ] **8. Glossopharyngien / vague (IX, X)**
-> - [ ] **9. Hypoglosse (XII)**
-> - [ ] **10. Palpation**
-> - [ ] **11. Plancher buccal / base de la langue**
-> - [ ] **12. Réalisation de la laryngoscopie au miroir**
-> - [ ] **13. Information du patient et positionnement**
-> - [ ] **14. Lampe frontale**
-> - [ ] **15. Chauffer le miroir**
-> - [ ] **16. Saisir la langue**
-> - [ ] **17. Introduire le miroir**
-> - [ ] **18. Test de phonation**
-> - [ ] **19. Résultat de la laryngoscopie**
-> - [ ] **20. Ganglions lymphatiques**
-> - [ ] **21. Thyroïde**
-> - [ ] **22. Larynx**
+> - [ ] **5. Inspection (Bouche)**
+> - [ ] **6. Cavité buccale / vestibule**
+> - [ ] **7. Oropharynx**
+> - [ ] **8. Nerfs crâniens**
+> - [ ] **9. Glossopharyngien / vague (IX, X)**
+> - [ ] **10. Hypoglosse (XII)**
+> - [ ] **11. Palpation**
+> - [ ] **12. Plancher buccal / base de la langue**
+> - [ ] **13. Réalisation de la laryngoscopie au miroir**
+> - [ ] **14. Information du patient et positionnement**
+> - [ ] **15. Lampe frontale**
+> - [ ] **16. Chauffer le miroir**
+> - [ ] **17. Saisir la langue**
+> - [ ] **18. Introduire le miroir**
+> - [ ] **19. Test de phonation**
+> - [ ] **20. Résultat de la laryngoscopie**
+> - [ ] **21. Inspection (Cou)**
+> - [ ] **22. Palpation (Cou)**
+> - [ ] **23. Ganglions lymphatiques**
+> - [ ] **24. Thyroïde**
+> - [ ] **25. Larynx**
 
 > [!success] 💊 Management — si Suspicion de carcinome glottique
 > - [ ] **1. Diagnostic présumé**
