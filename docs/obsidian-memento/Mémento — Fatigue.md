@@ -502,7 +502,7 @@ cssclasses:
 > 	- [ ] Évaluation de l'orientation dans le temps, l'espace et les personnes *(Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Examen ciblé de l'état mental *(Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Examen ciblé des mouvements passifs et actifs *(Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(Anémie · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Réflexes ostéo-tendineux *(Anémie · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Sensibilité profonde *(Anémie)*
 > 	- [ ] Signe de Romberg *(Anémie)*
 > - [ ] **6. Examen de la tête, yeux, oreilles, nez et gorge *(Hépatite C aiguë · Mononucléose)***

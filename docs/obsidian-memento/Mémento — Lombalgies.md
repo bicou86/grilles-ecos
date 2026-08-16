@@ -246,19 +246,11 @@ cssclasses:
 > - [ ] **58. Drogues i.v. *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **59. Maladies tumorales *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **60. Profession *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **61. Anamnèse sociale *(4 grilles sur 8)***
+> - [ ] **61. Anamnèse sociale *(3 grilles sur 8)***
 > 	- [ ] Profession *(2 grilles sur 8)*
 > 	- [ ] Activité physique *(2 grilles sur 8)*
 > 	- [ ] Autonomie *(Fracture vertébrale)*
 > 	- [ ] Situation familiale *(1 grille sur 8)*
-> 	- [ ] Troubles de la vidange *(Cancer prostatique métastatique)*
-> 	- [ ] Temps de latence *(Cancer prostatique métastatique)*
-> 	- [ ] Jet faible *(Cancer prostatique métastatique)*
-> 	- [ ] Gouttes terminales *(Cancer prostatique métastatique)*
-> 	- [ ] Nycturie *(Cancer prostatique métastatique)*
-> 	- [ ] Brûlures mictionnelles *(Cancer prostatique métastatique)*
-> 	- [ ] Hématurie *(Cancer prostatique métastatique)*
-> 	- [ ] Urgences/incontinence *(Cancer prostatique métastatique)*
 > - [ ] **62. Présentation avec nom, fonction et tâche *(3 grilles sur 8)***
 > - [ ] **63. Caractéristiques temporelles *(3 grilles sur 8)***
 > 	- [ ] Début
@@ -367,11 +359,20 @@ cssclasses:
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Tabagisme
 > 	- [ ] Allergies médicamenteuses
-> - [ ] **87. Impact fonctionnel *(Cancer prostatique métastatique)***
+> - [ ] **87. Anamnèse uro-génitale *(Cancer prostatique métastatique)***
+> 	- [ ] Troubles de la vidange
+> 	- [ ] Temps de latence
+> 	- [ ] Jet faible
+> 	- [ ] Gouttes terminales
+> 	- [ ] Nycturie
+> 	- [ ] Brûlures mictionnelles
+> 	- [ ] Hématurie
+> 	- [ ] Urgences/incontinence
+> - [ ] **88. Impact fonctionnel *(Cancer prostatique métastatique)***
 > 	- [ ] Mobilité réduite
 > 	- [ ] Autonomie affectée
 > 	- [ ] Qualité du sommeil
-> - [ ] **88. Habitudes et antécédents *(Cancer prostatique métastatique)***
+> - [ ] **89. Habitudes et antécédents *(Cancer prostatique métastatique)***
 > 	- [ ] Médicaments
 > 	- [ ] Tabac
 > 	- [ ] Alcool

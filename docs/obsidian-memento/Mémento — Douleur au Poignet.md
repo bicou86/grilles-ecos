@@ -87,7 +87,7 @@ cssclasses:
 > - [ ] **2. Dimension temporelle *(Fracture du scaphoïde)***
 > - [ ] **3. Début / durée *(Fracture du scaphoïde)***
 > - [ ] **4. Évolution *(Fracture du scaphoïde)***
-> - [ ] **5. Localisation précise**
+> - [ ] **5. Localisation**
 > - [ ] **6. Latéralité dominante *(Fracture du scaphoïde)***
 > - [ ] **7. Qualité *(Fracture du scaphoïde)***
 > - [ ] **8. Intensité *(Fracture du scaphoïde)***

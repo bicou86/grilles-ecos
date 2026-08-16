@@ -599,7 +599,7 @@ cssclasses:
 > 	- [ ] Palpation des ganglions lymphatiques de la tête et du cou
 > 	- [ ] Évaluation de la distension veineuse jugulaire *(BPCO)*
 > - [ ] **4. Examen cardiovasculaire complémentaire *(9 grilles sur 13)***
-> 	- [ ] Auscultation cardiaque systématique *(7 grilles sur 13)*
+> 	- [ ] Auscultation cardiaque *(7 grilles sur 13)*
 > 	- [ ] Palpation du pouls radial *(BPCO)*
 > 	- [ ] Palpation du choc apexien *(2 grilles sur 13)*
 > 	- [ ] Recherche du reflux hépato-jugulaire *(2 grilles sur 13)*
@@ -650,7 +650,7 @@ cssclasses:
 > - [ ] **16. Fremitus vocal augmenté *(1 grille sur 13)***
 > - [ ] **17. Bronchophonie *(1 grille sur 13)***
 > - [ ] **18. Auscultation *(1 grille sur 13)***
-> - [ ] **19. Auscultation cardiaque systématique *(1 grille sur 13)***
+> - [ ] **19. Auscultation cardiaque *(1 grille sur 13)***
 > - [ ] **20. Veines jugulaires *(1 grille sur 13)***
 > - [ ] **21. Inspection et palpation périphérie *(1 grille sur 13)***
 > - [ ] **22. Examen pulmonaire - Inspection *(Insuffisance cardiaque (décompensée) · Tuberculose)***

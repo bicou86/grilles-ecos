@@ -357,7 +357,7 @@ cssclasses:
 > 	- [ ] Auscultation des artères carotides *(Infarctus du myocarde / SCA)*
 > - [ ] **3. Examen vasculaire périphérique *(7 grilles sur 12)***
 > 	- [ ] Palpation du pouls radial *(3 grilles sur 12)*
-> 	- [ ] Auscultation cardiaque systématique *(4 grilles sur 12)*
+> 	- [ ] Auscultation cardiaque *(4 grilles sur 12)*
 > 	- [ ] Inspection du thorax *(Infarctus du myocarde / SCA)*
 > 	- [ ] Palpation du thorax *(Infarctus du myocarde / SCA)*
 > 	- [ ] Palpation du choc de pointe *(Infarctus du myocarde / SCA · Péricardite / Myopéricardite)*
@@ -419,7 +419,7 @@ cssclasses:
 > - [ ] **18. Percussion *(1 grille sur 12)***
 > - [ ] **19. Auscultation *(1 grille sur 12)***
 > - [ ] **20. Veines jugulaires *(1 grille sur 12)***
-> - [ ] **21. Auscultation cardiaque systématique *(5 grilles sur 12)***
+> - [ ] **21. Auscultation cardiaque *(5 grilles sur 12)***
 > 	- [ ] Recherche de souffle *(1 grille sur 12)*
 > 	- [ ] Rythme régulier *(1 grille sur 12)*
 > 	- [ ] B3/B4 *(1 grille sur 12)*

@@ -197,7 +197,7 @@ cssclasses:
 > 	- [ ] Voyages récents
 > 	- [ ] Contact avec malades
 > 	- [ ] Exposition professionnelle
-> - [ ] **37. Antécédents médicaux pertinents *(3 grilles sur 5)***
+> - [ ] **37. Antécédents médicaux personnels *(3 grilles sur 5)***
 > 	- [ ] Maladies antérieures *(Asthme)*
 > 	- [ ] Problèmes respiratoires antérieurs *(Asthme)*
 > 	- [ ] Hospitalisations *(2 grilles sur 5)*

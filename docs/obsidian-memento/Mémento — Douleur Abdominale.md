@@ -110,7 +110,7 @@ cssclasses:
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif de consultation *(5 grilles sur 20)***
 > - [ ] **2. Caractérisation de la douleur abdominale *(17 grilles sur 20)***
-> 	- [ ] Localisation précise *(12 grilles sur 20)*
+> 	- [ ] Localisation *(12 grilles sur 20)*
 > 	- [ ] Intensité *(10 grilles sur 20)*
 > 	- [ ] Qualité *(8 grilles sur 20)*
 > 	- [ ] Début *(5 grilles sur 20)*
@@ -277,7 +277,7 @@ cssclasses:
 > - [ ] **22. Évolution *(2 grilles sur 20)***
 > - [ ] **23. Épisode *(1 grille sur 20)***
 > - [ ] **24. Facteur déclenchant *(1 grille sur 20)***
-> - [ ] **25. Localisation précise *(6 grilles sur 20)***
+> - [ ] **25. Localisation *(6 grilles sur 20)***
 > - [ ] **26. Qualité *(2 grilles sur 20)***
 > - [ ] **27. Irradiation *(7 grilles sur 20)***
 > - [ ] **28. Intensité / Sévérité *(1 grille sur 20)***
