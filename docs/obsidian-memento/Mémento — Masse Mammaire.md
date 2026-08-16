@@ -179,7 +179,10 @@ cssclasses:
 > - [ ] **8. Expression des mamelons *(Nodule suspect de malignité dans le sein droit)***
 > - [ ] **9. Palpation du côté opposé *(Nodule suspect de malignité dans le sein droit)***
 > - [ ] **10. Résultat concernant le nodule *(Nodule suspect de malignité dans le sein droit)***
-> - [ ] **11. Palpation des ganglions *(Nodule suspect de malignité dans le sein droit)***
+> - [ ] **11. Palpation des ganglions lymphatiques**
+> 	- [ ] Ganglions axillaires *(Masse mammaire suspecte de carcinome)*
+> 	- [ ] Ganglions sus-claviculaires *(Masse mammaire suspecte de carcinome)*
+> 	- [ ] Ganglions sous-claviculaires *(Masse mammaire suspecte de carcinome)*
 > - [ ] **12. Axillaires des deux côtés *(Nodule suspect de malignité dans le sein droit)***
 > - [ ] **13. Sus-claviculaires des deux côtés *(Nodule suspect de malignité dans le sein droit)***
 > - [ ] **14. Sous-claviculaires des deux côtés *(Nodule suspect de malignité dans le sein droit)***
@@ -190,10 +193,6 @@ cssclasses:
 > 	- [ ] Palpation systématique des deux seins
 > 	- [ ] Expression des mamelons
 > - [ ] **18. Examen gynécologique mentionné *(Masse mammaire suspecte de carcinome)***
-> - [ ] **19. Palpation des ganglions lymphatiques *(Masse mammaire suspecte de carcinome)***
-> 	- [ ] Ganglions axillaires
-> 	- [ ] Ganglions sus-claviculaires
-> 	- [ ] Ganglions sous-claviculaires
 
 > [!success] 💊 Management — si Masse mammaire suspecte de carcinome
 > - [ ] **1. Diagnostic de suspicion**

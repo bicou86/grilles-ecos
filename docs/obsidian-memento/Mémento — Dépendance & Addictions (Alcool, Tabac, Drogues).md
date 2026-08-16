@@ -97,7 +97,10 @@ cssclasses:
 > - [ ] **5. Déclencheur *(Dépendance à l'alcool)***
 > - [ ] **6. Schéma de consommation *(Dépendance à l'alcool)***
 > - [ ] **7. Quantité/fréquence *(Dépendance à l'alcool)***
-> - [ ] **8. Circonstances de la consommation *(Dépendance à l'alcool)***
+> - [ ] **8. Circonstances de la consommation**
+> 	- [ ] Circonstances : en société ou seul *(Addiction / Sevrage OH)*
+> 	- [ ] Effet recherché *(Addiction / Sevrage OH)*
+> 	- [ ] Association avec d'autres substances *(Addiction / Sevrage OH)*
 > - [ ] **9. Effet recherché *(Dépendance à l'alcool)***
 > - [ ] **10. Traitements de sevrage antérieurs *(Dépendance à l'alcool)***
 > - [ ] **11. Complications de sevrage *(Dépendance à l'alcool)***
@@ -149,33 +152,29 @@ cssclasses:
 > 	- [ ] Quantité quotidienne
 > 	- [ ] Type de boissons consommées
 > 	- [ ] Horaires de consommation
-> - [ ] **55. Contexte de consommation *(Addiction / Sevrage OH)***
-> 	- [ ] Circonstances : en société ou seul
-> 	- [ ] Effet recherché
-> 	- [ ] Association avec d'autres substances
-> - [ ] **56. Critères de dépendance (≥3/6 pour le diagnostic) *(Addiction / Sevrage OH)***
+> - [ ] **55. Critères de dépendance (≥3/6 pour le diagnostic) *(Addiction / Sevrage OH)***
 > 	- [ ] Désir puissant de consommer (craving)
 > 	- [ ] Perte de contrôle
 > 	- [ ] Tolérance
 > 	- [ ] Syndrome de sevrage
 > 	- [ ] Abandon d'autres activités
 > 	- [ ] Poursuite malgré conséquences négatives
-> - [ ] **57. Questionnaire CAGE (≥2/4 = positif) *(Addiction / Sevrage OH)***
+> - [ ] **56. Questionnaire CAGE (≥2/4 = positif) *(Addiction / Sevrage OH)***
 > 	- [ ] Cut down - Avez-vous déjà essayé de réduire ?
 > 	- [ ] Annoyed - Agacé par les critiques ?
 > 	- [ ] Guilty - Sentiment de culpabilité ?
 > 	- [ ] Eye opener - Boire le matin pour se sentir bien ?
-> - [ ] **58. Tentatives de sevrage antérieures *(Addiction / Sevrage OH)***
+> - [ ] **57. Tentatives de sevrage antérieures *(Addiction / Sevrage OH)***
 > 	- [ ] Sevrages ambulatoires ou hospitaliers
 > 	- [ ] Pharmacothérapies anti-craving
 > 	- [ ] Groupes d'entraide (AA, Croix-Bleue)
 > 	- [ ] Accompagnement psychiatrique
-> - [ ] **59. Habitudes alimentaires et symptômes B *(Addiction / Sevrage OH)***
+> - [ ] **58. Habitudes alimentaires et symptômes B *(Addiction / Sevrage OH)***
 > 	- [ ] Alimentation
 > 	- [ ] Fièvre
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Perte de poids
-> - [ ] **60. Symptômes somatiques associés *(Addiction / Sevrage OH)***
+> - [ ] **59. Symptômes somatiques associés *(Addiction / Sevrage OH)***
 > 	- [ ] Tendance hémorragique
 > 	- [ ] Ictère
 > 	- [ ] Encéphalopathie hépatique
@@ -185,36 +184,36 @@ cssclasses:
 > 	- [ ] Dysphagie/odynophagie
 > 	- [ ] Gastrite/ulcère
 > 	- [ ] Saignements digestifs (méléna, hématochézie)
-> - [ ] **61. Symptômes neurologiques *(Addiction / Sevrage OH)***
+> - [ ] **60. Symptômes neurologiques *(Addiction / Sevrage OH)***
 > 	- [ ] Douleurs/faiblesse musculaire
 > 	- [ ] Chutes
 > 	- [ ] Polyneuropathie (douleurs pieds, hypoesthésie)
 > 	- [ ] Troubles mnésiques/diplopie
 > 	- [ ] Troubles de coordination/ataxie
-> - [ ] **62. Symptômes urinaires et généraux *(Addiction / Sevrage OH)***
+> - [ ] **61. Symptômes urinaires et généraux *(Addiction / Sevrage OH)***
 > 	- [ ] Production/couleur urinaire
 > 	- [ ] Vertiges
-> - [ ] **63. Antécédents personnels *(Addiction / Sevrage OH)***
+> - [ ] **62. Antécédents personnels *(Addiction / Sevrage OH)***
 > 	- [ ] Maladies préexistantes
 > 	- [ ] Troubles psychiatriques/autres addictions
 > 	- [ ] Pathologies hépatiques/pancréatiques
 > 	- [ ] Chirurgies
 > 	- [ ] Allergies
 > 	- [ ] Médicaments actuels
-> - [ ] **64. Autres toxiques *(Addiction / Sevrage OH)***
+> - [ ] **63. Autres toxiques *(Addiction / Sevrage OH)***
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **65. Antécédents familiaux *(Addiction / Sevrage OH)***
+> - [ ] **64. Antécédents familiaux *(Addiction / Sevrage OH)***
 > 	- [ ] Troubles psychiatriques
 > 	- [ ] Alcoolisme familial
 > 	- [ ] Pathologies hépatiques/pancréatiques
-> - [ ] **66. Contexte socio-professionnel *(Addiction / Sevrage OH)***
+> - [ ] **65. Contexte socio-professionnel *(Addiction / Sevrage OH)***
 > 	- [ ] Formation/parcours professionnel
 > 	- [ ] Situation professionnelle actuelle
 > 	- [ ] Réseau social
 > 	- [ ] Logement
 > 	- [ ] Situation financière
-> - [ ] **67. Anamnèse par systèmes *(Addiction / Sevrage OH)***
+> - [ ] **66. Anamnèse par systèmes *(Addiction / Sevrage OH)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Examen abdominal complet *(Addiction / Sevrage OH)***

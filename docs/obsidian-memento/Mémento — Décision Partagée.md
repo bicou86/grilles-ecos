@@ -124,12 +124,17 @@ cssclasses:
 > 	- [ ] Ascite et inconfort associé
 
 > [!tip] 🩺 Status
-> - [ ] **1. Présentation des options (Option Talk) *(Hypercholestérolémie)***
-> 	- [ ] Lister clairement les options disponibles
-> 	- [ ] Option 1: Mesures hygiéno-diététiques seules
-> 	- [ ] Option 2: Traitement par statine
-> 	- [ ] Option 3: Combinaison des deux approches
-> 	- [ ] Possibilité de différer la décision
+> - [ ] **1. Présentation des options thérapeutiques (Option Talk)**
+> 	- [ ] Lister clairement les options disponibles *(Hypercholestérolémie)*
+> 	- [ ] Option 1: Mesures hygiéno-diététiques seules *(Hypercholestérolémie)*
+> 	- [ ] Option 2: Traitement par statine *(Hypercholestérolémie)*
+> 	- [ ] Option 3: Combinaison des deux approches *(Hypercholestérolémie)*
+> 	- [ ] Possibilité de différer la décision *(Hypercholestérolémie)*
+> 	- [ ] Expliciter qu'il y a 3 options possibles *(Iléus sur carcinose péritonéale)*
+> 	- [ ] Option 1: Gastrostomie de décharge *(Iléus sur carcinose péritonéale)*
+> 	- [ ] Option 2: Sonde naso-gastrique à demeure *(Iléus sur carcinose péritonéale)*
+> 	- [ ] Option 3: Traitement symptomatique seul *(Iléus sur carcinose péritonéale)*
+> 	- [ ] Toutes visent le confort, pas la guérison *(Iléus sur carcinose péritonéale)*
 > - [ ] **2. Communication des risques absolus *(Hypercholestérolémie)***
 > 	- [ ] Risque cardiovasculaire de base du patient
 > 	- [ ] Réduction absolue du risque avec statines
@@ -148,27 +153,21 @@ cssclasses:
 > 	- [ ] Prise quotidienne de médicament
 > 	- [ ] Surveillance biologique
 > 	- [ ] Coûts financiers
-> - [ ] **5. Présentation des options thérapeutiques (Option Talk) *(Iléus sur carcinose péritonéale)***
-> 	- [ ] Expliciter qu'il y a 3 options possibles
-> 	- [ ] Option 1: Gastrostomie de décharge
-> 	- [ ] Option 2: Sonde naso-gastrique à demeure
-> 	- [ ] Option 3: Traitement symptomatique seul
-> 	- [ ] Toutes visent le confort, pas la guérison
-> - [ ] **6. Option 1: Gastrostomie de décharge *(Iléus sur carcinose péritonéale)***
+> - [ ] **5. Option 1: Gastrostomie de décharge *(Iléus sur carcinose péritonéale)***
 > 	- [ ] Avantages: bien tolérée, pas visible
 > 	- [ ] Permet douche et bain
 > 	- [ ] Inconvénients: intervention chirurgicale
 > 	- [ ] Risque infection péristomiale
 > 	- [ ] Souvent impossible si ascite importante
 > 	- [ ] Risque hémorragie ou fuites
-> - [ ] **7. Option 2: Sonde naso-gastrique *(Iléus sur carcinose péritonéale)***
+> - [ ] **6. Option 2: Sonde naso-gastrique *(Iléus sur carcinose péritonéale)***
 > 	- [ ] Avantages: facile à poser
 > 	- [ ] Peut être enlevée à tout moment
 > 	- [ ] Inconvénients: gêne au visage
 > 	- [ ] Parfois douloureuse
 > 	- [ ] Changement de narine nécessaire
 > 	- [ ] Aspiration difficile à domicile
-> - [ ] **8. Option 3: Traitement symptomatique seul *(Iléus sur carcinose péritonéale)***
+> - [ ] **7. Option 3: Traitement symptomatique seul *(Iléus sur carcinose péritonéale)***
 > 	- [ ] Antalgie par opiacés
 > 	- [ ] Augmentation anti-émétiques
 > 	- [ ] Dexaméthasone
@@ -177,7 +176,7 @@ cssclasses:
 > 	- [ ] Focus sur le confort
 
 > [!success] 💊 Management — si Hypercholestérolémie
-> - [ ] **1. Explorer valeurs et préférences (Decision Talk)**
+> - [ ] **1. Explorer les préférences pour chaque option (Decision Talk)**
 > 	- [ ] Qu'est-ce qui compte le plus pour vous?
 > 	- [ ] Préférence médicaments vs changements mode de vie
 > 	- [ ] Impact sur activités quotidiennes
@@ -209,18 +208,18 @@ cssclasses:
 > 	- [ ] Documentation remise au patient
 
 > [!success] 💊 Management — si Iléus sur carcinose péritonéale
-> - [ ] **1. Accompagner la décision**
-> 	- [ ] Proposer un temps de réflexion si besoin
-> 	- [ ] Résumer les préférences exprimées
-> 	- [ ] Valider le choix de la patiente
-> 	- [ ] Impliquer les proches si souhaité
-> 	- [ ] Assurer la réversibilité du choix
-> - [ ] **2. Explorer les préférences pour chaque option (Decision Talk)**
+> - [ ] **1. Explorer les préférences pour chaque option (Decision Talk)**
 > 	- [ ] Comment voyez-vous chaque option?
 > 	- [ ] Laquelle correspond le mieux à vos valeurs?
 > 	- [ ] Impact sur autonomie et mobilité
 > 	- [ ] Possibilité de rentrer à domicile
 > 	- [ ] Charge des soins pour les proches
+> - [ ] **2. Accompagner la décision**
+> 	- [ ] Proposer un temps de réflexion si besoin
+> 	- [ ] Résumer les préférences exprimées
+> 	- [ ] Valider le choix de la patiente
+> 	- [ ] Impliquer les proches si souhaité
+> 	- [ ] Assurer la réversibilité du choix
 > - [ ] **3. Considérations pratiques**
 > 	- [ ] Faisabilité à domicile de chaque option
 > 	- [ ] Soutien des proches disponible

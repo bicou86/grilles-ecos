@@ -122,11 +122,17 @@ cssclasses:
 > 	- [ ] Appétit
 > 	- [ ] Variations pondérales
 > 	- [ ] Infections récentes
-> - [ ] **5. Recherche de symptômes neurologiques *(1 grille sur 8)***
-> 	- [ ] Sensation de picotements
-> 	- [ ] Faiblesse musculaire
-> 	- [ ] Engourdissement (particulièrement membres inférieurs)
-> 	- [ ] Dysfonction érectile
+> - [ ] **5. Recherche de symptômes neurologiques *(4 grilles sur 8)***
+> 	- [ ] Sensation de picotements *(1 grille sur 8)*
+> 	- [ ] Faiblesse musculaire *(2 grilles sur 8)*
+> 	- [ ] Engourdissement (particulièrement membres inférieurs) *(1 grille sur 8)*
+> 	- [ ] Dysfonction érectile *(1 grille sur 8)*
+> 	- [ ] Troubles sensitifs *(1 grille sur 8)*
+> 	- [ ] Déficit moteur *(Cancer prostatique métastatique)*
+> 	- [ ] Déficit sensitif *(Cancer prostatique métastatique)*
+> 	- [ ] Troubles du transit *(Cancer prostatique métastatique)*
+> 	- [ ] Incontinence fécale *(Cancer prostatique métastatique)*
+> 	- [ ] Anesthésie en selle *(Cancer prostatique métastatique)*
 > - [ ] **6. Antécédents médicaux personnels *(6 grilles sur 8)***
 > 	- [ ] Néoplasie *(Fracture vertébrale)*
 > 	- [ ] Autres pathologies *(Fracture vertébrale)*
@@ -194,129 +200,126 @@ cssclasses:
 > - [ ] **27. Retentissement des symptômes *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **28. Douleur nocturne *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **29. Raideur matinale *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **30. Symptômes neurologiques *(3 grilles sur 8)***
-> 	- [ ] Faiblesse musculaire *(1 grille sur 8)*
-> 	- [ ] Troubles sensitifs *(1 grille sur 8)*
-> 	- [ ] Déficit moteur *(Cancer prostatique métastatique)*
-> 	- [ ] Déficit sensitif *(Cancer prostatique métastatique)*
-> 	- [ ] Troubles du transit *(Cancer prostatique métastatique)*
-> 	- [ ] Incontinence fécale *(Cancer prostatique métastatique)*
-> 	- [ ] Anesthésie en selle *(Cancer prostatique métastatique)*
-> - [ ] **31. Sensibilité *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **32. Motricité *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **33. Troubles vésico-sphinctériens *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **34. Troubles de l’érection *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **35. Démarche instable *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **36. Symptomatologie B *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **37. Fièvre *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **38. Perte de poids *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **39. Sueurs nocturnes *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **40. Anamnèse systématique *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **41. Général *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **42. Infections passées *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **43. Tête *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **44. Yeux *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **45. Gorge / Nez / Oreilles / Bouche *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **46. Thorax *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **47. Abdomen *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **48. Urogénital *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **49. Peau *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **50. Extrémités *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **51. Maladies osseuses ou tumorales *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **52. Examens de dépistage *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **53. Dépistage par coloscopie *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **54. Contrôle urologique *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **55. CT thoracique basse dose *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **56. Antécédents opératoires *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **57. Noxes *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **58. Alcool *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **59. Tabac *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **60. Drogues i.v. *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **61. Maladies tumorales *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **62. Profession *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **63. Anamnèse sociale *(3 grilles sur 8)***
+> - [ ] **30. Sensibilité *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **31. Motricité *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **32. Troubles vésico-sphinctériens *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **33. Troubles de l’érection *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **34. Démarche instable *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **35. Symptomatologie B *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **36. Fièvre *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **37. Perte de poids *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **38. Sueurs nocturnes *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **39. Anamnèse systématique *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **40. Général *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **41. Infections passées *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **42. Tête *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **43. Yeux *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **44. Gorge / Nez / Oreilles / Bouche *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **45. Thorax *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **46. Abdomen *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **47. Urogénital *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **48. Peau *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **49. Extrémités *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **50. Maladies osseuses ou tumorales *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **51. Examens de dépistage *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **52. Dépistage par coloscopie *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **53. Contrôle urologique *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **54. CT thoracique basse dose *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **55. Antécédents opératoires *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **56. Noxes *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **57. Alcool *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **58. Tabac *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **59. Drogues i.v. *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **60. Maladies tumorales *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **61. Profession *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **62. Anamnèse sociale *(3 grilles sur 8)***
 > 	- [ ] Profession *(2 grilles sur 8)*
 > 	- [ ] Activité physique *(2 grilles sur 8)*
 > 	- [ ] Autonomie *(Fracture vertébrale)*
 > 	- [ ] Situation familiale *(1 grille sur 8)*
-> - [ ] **64. Présentation avec nom, fonction et tâche *(3 grilles sur 8)***
-> - [ ] **65. Caractéristiques temporelles *(3 grilles sur 8)***
+> - [ ] **63. Présentation avec nom, fonction et tâche *(3 grilles sur 8)***
+> - [ ] **64. Caractéristiques temporelles *(3 grilles sur 8)***
 > 	- [ ] Début
 > 	- [ ] Facteur déclenchant *(Fracture vertébrale)*
 > 	- [ ] Durée *(2 grilles sur 8)*
 > 	- [ ] Évolution *(1 grille sur 8)*
-> - [ ] **66. Localisation précise *(2 grilles sur 8)***
+> - [ ] **65. Localisation précise *(2 grilles sur 8)***
 > 	- [ ] Localisation *(Fracture vertébrale)*
 > 	- [ ] Irradiation *(Fracture vertébrale)*
-> - [ ] **67. Type et intensité de la douleur *(Fracture vertébrale)***
-> 	- [ ] Type
-> 	- [ ] Intensité
-> - [ ] **68. Facteurs modulants *(3 grilles sur 8)***
+> - [ ] **66. Type et intensité de la douleur *(3 grilles sur 8)***
+> 	- [ ] Type *(Fracture vertébrale)*
+> 	- [ ] Intensité *(Fracture vertébrale)*
+> - [ ] **67. Facteurs modulants *(3 grilles sur 8)***
 > 	- [ ] Amélioration *(2 grilles sur 8)*
 > 	- [ ] Aggravation *(2 grilles sur 8)*
-> - [ ] **69. Recherche des drapeaux rouges (red flags) *(Fracture vertébrale)***
-> 	- [ ] Signes infectieux
-> 	- [ ] Syndrome de la queue de cheval
-> 	- [ ] Déficits neurologiques
-> 	- [ ] Incontinence urinaire ou fécale
-> 	- [ ] Anesthésie en selle
-> - [ ] **70. Symptômes généraux (symptômes B) *(2 grilles sur 8)***
+> - [ ] **68. Recherche des drapeaux rouges (red flags) *(Cancer prostatique métastatique · Fracture vertébrale)***
+> 	- [ ] Signes infectieux *(Fracture vertébrale)*
+> 	- [ ] Syndrome de la queue de cheval *(Fracture vertébrale)*
+> 	- [ ] Déficits neurologiques *(Fracture vertébrale)*
+> 	- [ ] Incontinence urinaire ou fécale *(Fracture vertébrale)*
+> 	- [ ] Anesthésie en selle *(Fracture vertébrale)*
+> 	- [ ] Âge *(Cancer prostatique métastatique)*
+> 	- [ ] Traumatisme *(Cancer prostatique métastatique)*
+> 	- [ ] Perte de poids *(Cancer prostatique métastatique)*
+> 	- [ ] Sudations nocturnes *(Cancer prostatique métastatique)*
+> 	- [ ] Fièvre *(Cancer prostatique métastatique)*
+> 	- [ ] Antécédents néoplasiques *(Cancer prostatique métastatique)*
+> - [ ] **69. Symptômes généraux (symptômes B) *(2 grilles sur 8)***
 > 	- [ ] Fièvre
 > 	- [ ] Perte de poids non intentionnelle *(Fracture vertébrale)*
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Asthénie *(Fracture vertébrale)*
 > 	- [ ] Perte de poids *(1 grille sur 8)*
-> - [ ] **71. Autres symptômes associés *(Fracture vertébrale)***
-> - [ ] **72. Traitements actuels *(3 grilles sur 8)***
+> - [ ] **70. Autres symptômes associés *(Fracture vertébrale)***
+> - [ ] **71. Traitements actuels *(3 grilles sur 8)***
 > 	- [ ] Médicaments réguliers *(1 grille sur 8)*
 > 	- [ ] Antalgiques à la demande *(1 grille sur 8)*
-> - [ ] **73. Habitudes de vie et toxiques *(3 grilles sur 8)***
+> - [ ] **72. Habitudes de vie et toxiques *(3 grilles sur 8)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
-> - [ ] **74. Statut hormonal *(2 grilles sur 8)***
-> - [ ] **75. Facteurs de risque d'ostéoporose *(Fracture vertébrale)***
+> - [ ] **73. Statut hormonal *(2 grilles sur 8)***
+> - [ ] **74. Facteurs de risque d'ostéoporose *(Fracture vertébrale)***
 > 	- [ ] Ménopause précoce
 > 	- [ ] Tabagisme important
 > 	- [ ] Antécédent de fracture
 > 	- [ ] Corticothérapie prolongée
 > 	- [ ] Faible poids corporel
-> - [ ] **76. Questions de clôture *(3 grilles sur 8)***
+> - [ ] **75. Questions de clôture *(3 grilles sur 8)***
 > 	- [ ] Avez-vous quelque chose à ajouter ?
 > 	- [ ] Avez-vous des questions ?
-> - [ ] **77. Question ouverte d'introduction *(2 grilles sur 8)***
-> - [ ] **78. Localisation précise de la douleur *(1 grille sur 8)***
-> - [ ] **79. Pattern de la douleur *(1 grille sur 8)***
+> - [ ] **76. Question ouverte d'introduction *(2 grilles sur 8)***
+> - [ ] **77. Localisation précise de la douleur *(1 grille sur 8)***
+> - [ ] **78. Pattern de la douleur *(1 grille sur 8)***
 > 	- [ ] Type
 > 	- [ ] Épisodes antérieurs
 > 	- [ ] Douleurs nocturnes
-> - [ ] **80. Qualité de la douleur *(2 grilles sur 8)***
-> - [ ] **81. Intensité de la douleur *(2 grilles sur 8)***
-> - [ ] **82. Événement déclenchant *(1 grille sur 8)***
+> - [ ] **79. Qualité de la douleur *(2 grilles sur 8)***
+> - [ ] **80. Événement déclenchant *(1 grille sur 8)***
 > 	- [ ] Circonstances
 > 	- [ ] Port de charge lourde
 > 	- [ ] Traumatisme
-> - [ ] **83. Symptômes neurologiques - Force *(1 grille sur 8)***
+> - [ ] **81. Symptômes neurologiques - Force *(1 grille sur 8)***
 > 	- [ ] Faiblesse musculaire
 > 	- [ ] Localisation
-> - [ ] **84. Symptômes neurologiques - Sensibilité *(1 grille sur 8)***
-> - [ ] **85. Recherche syndrome de la queue de cheval *(1 grille sur 8)***
+> - [ ] **82. Symptômes neurologiques - Sensibilité *(1 grille sur 8)***
+> - [ ] **83. Recherche syndrome de la queue de cheval *(1 grille sur 8)***
 > 	- [ ] Incontinence urinaire
 > 	- [ ] Rétention urinaire
 > 	- [ ] Incontinence fécale
 > 	- [ ] Anesthésie en selle
-> - [ ] **86. Antécédents de fractures *(1 grille sur 8)***
-> - [ ] **87. Antécédents de lombalgies *(1 grille sur 8)***
-> - [ ] **88. Anamnèse sociale et professionnelle *(1 grille sur 8)***
+> - [ ] **84. Antécédents de fractures *(1 grille sur 8)***
+> - [ ] **85. Antécédents de lombalgies *(1 grille sur 8)***
+> - [ ] **86. Anamnèse sociale et professionnelle *(1 grille sur 8)***
 > 	- [ ] Profession
 > 	- [ ] Stress, situation de charge
 > 	- [ ] Capacité de travail actuelle
-> - [ ] **89. Pattern et évolution *(1 grille sur 8)***
+> - [ ] **87. Pattern et évolution *(1 grille sur 8)***
 > 	- [ ] Type
 > 	- [ ] Au repos et en mouvement
 > 	- [ ] Épisodes antérieurs
-> - [ ] **90. Événement déclenchant ou traumatisme *(1 grille sur 8)***
-> - [ ] **91. Symptômes urinaires associés *(Colique néphrétique sur lithiase)***
+> - [ ] **88. Événement déclenchant ou traumatisme *(1 grille sur 8)***
+> - [ ] **89. Symptômes urinaires associés *(Colique néphrétique sur lithiase)***
 > 	- [ ] Hématurie macroscopique *(1 grille sur 8)*
 > 	- [ ] Dysurie *(1 grille sur 8)*
 > 	- [ ] Incontinence *(1 grille sur 8)*
@@ -327,10 +330,10 @@ cssclasses:
 > 	- [ ] Urines troubles ou hématuriques *(1 grille sur 8)*
 > 	- [ ] Sensation de vidange incomplète *(1 grille sur 8)*
 > 	- [ ] Brûlures mictionnelles possibles *(1 grille sur 8)*
-> - [ ] **92. Symptômes digestifs *(1 grille sur 8)***
+> - [ ] **90. Symptômes digestifs *(1 grille sur 8)***
 > 	- [ ] Transit intestinal
 > 	- [ ] Nausées/vomissements
-> - [ ] **93. Symptômes généraux *(Colique néphrétique sur lithiase)***
+> - [ ] **91. Symptômes généraux *(Colique néphrétique sur lithiase)***
 > 	- [ ] Fièvre *(1 grille sur 8)*
 > 	- [ ] Frissons *(1 grille sur 8)*
 > 	- [ ] Perte de poids *(1 grille sur 8)*
@@ -339,15 +342,15 @@ cssclasses:
 > 	- [ ] Nausées *(1 grille sur 8)*
 > 	- [ ] Vomissements *(1 grille sur 8)*
 > 	- [ ] Sueurs froides *(1 grille sur 8)*
-> - [ ] **94. Antécédents de lithiase *(1 grille sur 8)***
+> - [ ] **92. Antécédents de lithiase *(1 grille sur 8)***
 > 	- [ ] Dépistage pour ostéoporose
 > 	- [ ] Fractures antérieures
 > 	- [ ] Calculs rénaux antérieurs
-> - [ ] **95. Hydratation et habitudes alimentaires *(1 grille sur 8)***
+> - [ ] **93. Hydratation et habitudes alimentaires *(1 grille sur 8)***
 > 	- [ ] Apports hydriques quotidiens
 > 	- [ ] Alimentation riche en oxalates
 > 	- [ ] Consommation de sel
-> - [ ] **96. Caractérisation de la douleur *(2 grilles sur 8)***
+> - [ ] **94. Caractérisation de la douleur *(2 grilles sur 8)***
 > 	- [ ] Début *(1 grille sur 8)*
 > 	- [ ] Localisation
 > 	- [ ] Irradiation
@@ -357,37 +360,30 @@ cssclasses:
 > 	- [ ] Qualité *(Cancer prostatique métastatique)*
 > 	- [ ] Chronologie *(Cancer prostatique métastatique)*
 > 	- [ ] Facteurs atténuants/aggravants *(Cancer prostatique métastatique)*
-> - [ ] **97. Facteurs déclenchants et contexte *(1 grille sur 8)***
+> - [ ] **95. Facteurs déclenchants et contexte *(1 grille sur 8)***
 > 	- [ ] Activité sportive récente
 > 	- [ ] Déshydratation relative
 > 	- [ ] Consommation de bière
-> - [ ] **98. Antécédents urologiques *(1 grille sur 8)***
+> - [ ] **96. Antécédents urologiques *(1 grille sur 8)***
 > 	- [ ] Épisodes similaires antérieurs
 > 	- [ ] Antécédents de lithiase urinaire
 > 	- [ ] Infections urinaires récurrentes
 > 	- [ ] Malformations urologiques connues
 > 	- [ ] Antécédents familiaux de lithiase
-> - [ ] **99. Facteurs de risque lithiasique *(1 grille sur 8)***
+> - [ ] **97. Facteurs de risque lithiasique *(1 grille sur 8)***
 > 	- [ ] Hydratation habituelle insuffisante
 > 	- [ ] Alimentation riche en protéines
 > 	- [ ] Consommation de sel importante
 > 	- [ ] Supplémentation vitaminique
 > 	- [ ] Climat chaud, transpiration importante
 > 	- [ ] Sédentarité alternant avec sport intense
-> - [ ] **100. Médicaments et habitudes *(1 grille sur 8)***
+> - [ ] **98. Médicaments et habitudes *(1 grille sur 8)***
 > 	- [ ] Prise d'antalgiques
 > 	- [ ] Suppléments protéinés
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Tabagisme
 > 	- [ ] Allergies médicamenteuses
-> - [ ] **101. Recherche des drapeaux rouges *(Cancer prostatique métastatique)***
-> 	- [ ] Âge
-> 	- [ ] Traumatisme
-> 	- [ ] Perte de poids
-> 	- [ ] Sudations nocturnes
-> 	- [ ] Fièvre
-> 	- [ ] Antécédents néoplasiques
-> - [ ] **102. Anamnèse uro-génitale *(Cancer prostatique métastatique)***
+> - [ ] **99. Anamnèse uro-génitale *(Cancer prostatique métastatique)***
 > 	- [ ] Troubles de la vidange
 > 	- [ ] Temps de latence
 > 	- [ ] Jet faible
@@ -396,11 +392,11 @@ cssclasses:
 > 	- [ ] Brûlures mictionnelles
 > 	- [ ] Hématurie
 > 	- [ ] Urgences/incontinence
-> - [ ] **103. Impact fonctionnel *(Cancer prostatique métastatique)***
+> - [ ] **100. Impact fonctionnel *(Cancer prostatique métastatique)***
 > 	- [ ] Mobilité réduite
 > 	- [ ] Autonomie affectée
 > 	- [ ] Qualité du sommeil
-> - [ ] **104. Habitudes et antécédents *(Cancer prostatique métastatique)***
+> - [ ] **101. Habitudes et antécédents *(Cancer prostatique métastatique)***
 > 	- [ ] Médicaments
 > 	- [ ] Tabac
 > 	- [ ] Alcool
@@ -423,12 +419,16 @@ cssclasses:
 > 	- [ ] Inspection des mains *(Spondylarthrite ankylosante)*
 > 	- [ ] Examen du genou *(Spondylarthrite ankylosante)*
 > 	- [ ] Examen de la cheville *(Spondylarthrite ankylosante)*
-> - [ ] **5. Examen neurologique *(2 grilles sur 8)***
-> 	- [ ] Examen ciblé des mouvements passifs et actifs
+> - [ ] **5. Examen neurologique complet *(3 grilles sur 8)***
+> 	- [ ] Examen ciblé des mouvements passifs et actifs *(2 grilles sur 8)*
 > 	- [ ] Examen ciblé de la sensibilité *(1 grille sur 8)*
 > 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(1 grille sur 8)*
-> 	- [ ] Examen ciblé de la marche
+> 	- [ ] Examen ciblé de la marche *(2 grilles sur 8)*
 > 	- [ ] Signe de Babinski *(1 grille sur 8)*
+> 	- [ ] Sensibilité (tact, douleur, vibration) *(Fracture vertébrale)*
+> 	- [ ] Force musculaire segmentaire *(Fracture vertébrale)*
+> 	- [ ] Réflexes ostéo-tendineux *(Fracture vertébrale)*
+> 	- [ ] Réflexe cutané plantaire *(Fracture vertébrale)*
 > - [ ] **6. Examen tête et cou *(Spondylarthrite ankylosante)***
 > 	- [ ] Inspection des conjonctives
 > 	- [ ] Inspection de l'oropharynx
@@ -460,91 +460,84 @@ cssclasses:
 > - [ ] **28. Sensibilité *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **29. Réflexes *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **30. Signes radiculaires *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **31. Signe de Lasègue *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **31. Signe de Lasègue *(2 grilles sur 8)***
 > - [ ] **32. Statut interniste *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **33. Inspection du rachis *(Fracture vertébrale)***
 > - [ ] **34. Palpation du rachis *(Fracture vertébrale)***
 > 	- [ ] Palpation des processus épineux
 > 	- [ ] Douleur à la percussion
 > 	- [ ] Recherche de contracture paravertébrale
-> - [ ] **35. Mobilité rachidienne *(Fracture vertébrale)***
-> 	- [ ] Flexion antérieure
-> 	- [ ] Extension
-> 	- [ ] Inclinaisons latérales
-> 	- [ ] Rotations
-> 	- [ ] Résultat
+> - [ ] **35. Tests de mobilité rachidienne *(2 grilles sur 8)***
+> 	- [ ] Flexion antérieure *(Fracture vertébrale)*
+> 	- [ ] Extension *(Fracture vertébrale)*
+> 	- [ ] Inclinaisons latérales *(Fracture vertébrale)*
+> 	- [ ] Rotations *(Fracture vertébrale)*
+> 	- [ ] Résultat *(Fracture vertébrale)*
+> 	- [ ] Test de Schober *(1 grille sur 8)*
+> 	- [ ] Test d'Ott *(1 grille sur 8)*
+> 	- [ ] Distance doigts-sol *(1 grille sur 8)*
 > - [ ] **36. Test de compression axiale *(Fracture vertébrale)***
-> - [ ] **37. Examen neurologique complet *(Fracture vertébrale)***
-> 	- [ ] Sensibilité (tact, douleur, vibration)
-> 	- [ ] Force musculaire segmentaire
-> 	- [ ] Réflexes ostéo-tendineux
-> 	- [ ] Réflexe cutané plantaire
-> - [ ] **38. Tests spécifiques *(Fracture vertébrale)***
-> 	- [ ] Test de Lasègue
+> - [ ] **37. Tests spécifiques *(Fracture vertébrale)***
+> 	- [ ] Signe de Lasègue
 > 	- [ ] Test de Lasègue controlatéral
 > 	- [ ] Test de Bragard
-> - [ ] **39. Examen des hanches *(2 grilles sur 8)***
+> - [ ] **38. Examen des hanches *(2 grilles sur 8)***
 > 	- [ ] Mobilité passive
 > 	- [ ] Douleur à la mobilisation *(Fracture vertébrale)*
 > 	- [ ] Recherche de douleur *(1 grille sur 8)*
-> - [ ] **40. Pouls périphériques *(Fracture vertébrale)***
+> - [ ] **39. Pouls périphériques *(Fracture vertébrale)***
 > 	- [ ] Pouls fémoraux
 > 	- [ ] Pouls poplités
 > 	- [ ] Pouls pédieux
-> - [ ] **41. Observation de la marche *(1 grille sur 8)***
+> - [ ] **40. Observation de la marche *(1 grille sur 8)***
 > 	- [ ] Schéma de marche
 > 	- [ ] Marche sur la pointe des pieds
 > 	- [ ] Marche sur les talons
-> - [ ] **42. Examen en position debout *(1 grille sur 8)***
+> - [ ] **41. Examen en position debout *(1 grille sur 8)***
 > 	- [ ] Statique (alignement, symétrie)
 > 	- [ ] Dynamique (mouvements actifs)
 > 	- [ ] Recherche de scoliose
 > 	- [ ] Recherche de déformation étagée
-> - [ ] **43. Tests de mobilité rachidienne *(1 grille sur 8)***
-> 	- [ ] Test de Schober
-> 	- [ ] Test d'Ott
-> 	- [ ] Distance doigts-sol
-> - [ ] **44. Examen en position assise *(1 grille sur 8)***
+> - [ ] **42. Examen en position assise *(1 grille sur 8)***
 > 	- [ ] Palpation des processus épineux
 > 	- [ ] Percussion vertébrale
 > 	- [ ] Recherche de points douloureux
-> - [ ] **45. Testing des réflexes *(1 grille sur 8)***
+> - [ ] **43. Testing des réflexes *(1 grille sur 8)***
 > 	- [ ] Réflexe rotulien (L3-L4)
 > 	- [ ] Réflexe achilléen (S1)
-> - [ ] **46. Testing musculaire segmentaire *(1 grille sur 8)***
+> - [ ] **44. Testing musculaire segmentaire *(1 grille sur 8)***
 > 	- [ ] L3/L4 : Quadriceps fémoral
 > 	- [ ] L5 : Extenseur propre du gros orteil
 > 	- [ ] S1 : Triceps sural
-> - [ ] **47. Testing sensitif par dermatomes *(1 grille sur 8)***
+> - [ ] **45. Testing sensitif par dermatomes *(1 grille sur 8)***
 > 	- [ ] L3 : Face interne de la cuisse
 > 	- [ ] L4 : Face interne du mollet
 > 	- [ ] L5 : Face dorsale du pied
 > 	- [ ] S1 : Face latérale du pied
-> - [ ] **48. Examen en décubitus *(1 grille sur 8)***
+> - [ ] **46. Examen en décubitus *(1 grille sur 8)***
 > 	- [ ] Recherche de contracture musculaire
-> 	- [ ] Test de Lasègue
+> 	- [ ] Signe de Lasègue
 > 	- [ ] Test de Lasègue controlatéral
 > 	- [ ] Test de Bragard
-> - [ ] **49. Examen vasculaire périphérique *(1 grille sur 8)***
+> - [ ] **47. Examen vasculaire périphérique *(1 grille sur 8)***
 > 	- [ ] Palpation des pouls périphériques (si irradiation dans les jambes)
-> - [ ] **50. Toucher rectal *(3 grilles sur 8)***
+> - [ ] **48. Toucher rectal *(3 grilles sur 8)***
 > 	- [ ] Tonus sphinctérien *(2 grilles sur 8)*
 > 	- [ ] Sensibilité péri-anale *(1 grille sur 8)*
 > 	- [ ] Palpation de la prostate *(Cancer prostatique métastatique)*
 > 	- [ ] Recherche de sang *(Cancer prostatique métastatique)*
-> - [ ] **51. Inspection générale *(1 grille sur 8)***
+> - [ ] **49. Inspection générale *(1 grille sur 8)***
 > 	- [ ] État général
 > 	- [ ] Faciès douloureux
 > 	- [ ] Position antalgique
-> - [ ] **52. Examen du rachis *(1 grille sur 8)***
+> - [ ] **50. Examen du rachis *(1 grille sur 8)***
 > 	- [ ] Inspection
 > 	- [ ] Palpation des processus épineux
 > 	- [ ] Recherche de contracture paravertébrale
-> - [ ] **53. Test de Lasègue *(1 grille sur 8)***
-> - [ ] **54. Recherche du signe de Giordano *(1 grille sur 8)***
+> - [ ] **51. Recherche du signe de Giordano *(1 grille sur 8)***
 > 	- [ ] Percussion des fosses lombaires
 > 	- [ ] Résultat
-> - [ ] **55. Examen abdominal *(Colique néphrétique sur lithiase)***
+> - [ ] **52. Examen abdominal *(Colique néphrétique sur lithiase)***
 > 	- [ ] Inspection *(1 grille sur 8)*
 > 	- [ ] Auscultation *(1 grille sur 8)*
 > 	- [ ] Palpation superficielle et profonde *(1 grille sur 8)*
@@ -555,58 +548,58 @@ cssclasses:
 > 	- [ ] Pas de masse palpable *(1 grille sur 8)*
 > 	- [ ] Bruits hydroaériques présents *(1 grille sur 8)*
 > 	- [ ] Pas de globe vésical *(1 grille sur 8)*
-> - [ ] **56. Palpation des points urétéraux *(Colique néphrétique sur lithiase)***
+> - [ ] **53. Palpation des points urétéraux *(Colique néphrétique sur lithiase)***
 > 	- [ ] Point urétéral supérieur
 > 	- [ ] Point urétéral moyen
 > 	- [ ] Point urétéral inférieur
 > 	- [ ] Douleur provoquée le long du trajet urétéral *(1 grille sur 8)*
 > 	- [ ] Comparaison bilatérale *(1 grille sur 8)*
-> - [ ] **57. Examen des organes génitaux externes *(Colique néphrétique sur lithiase)***
+> - [ ] **54. Examen des organes génitaux externes *(Colique néphrétique sur lithiase)***
 > 	- [ ] Inspection vulvaire *(1 grille sur 8)*
 > 	- [ ] Recherche d'écoulement *(1 grille sur 8)*
 > 	- [ ] Inspection: testicules symétriques *(1 grille sur 8)*
 > 	- [ ] Palpation testiculaire: indolore, pas de masse *(1 grille sur 8)*
 > 	- [ ] Cordons spermatiques sans anomalie *(1 grille sur 8)*
 > 	- [ ] Réflexe crémastérien présent *(1 grille sur 8)*
-> - [ ] **58. Signes vitaux complémentaires *(1 grille sur 8)***
+> - [ ] **55. Signes vitaux complémentaires *(1 grille sur 8)***
 > 	- [ ] Température
 > 	- [ ] État d'hydratation
-> - [ ] **59. État général et comportement *(1 grille sur 8)***
+> - [ ] **56. État général et comportement *(1 grille sur 8)***
 > 	- [ ] Patient agité, ne trouve pas de position antalgique
 > 	- [ ] Faciès douloureux
 > 	- [ ] Pâleur, sueurs
 > 	- [ ] Déambulation incessante
 > 	- [ ] Anxiété manifeste
-> - [ ] **60. Signes vitaux *(1 grille sur 8)***
+> - [ ] **57. Signes vitaux *(1 grille sur 8)***
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Température
 > 	- [ ] Fréquence respiratoire
-> - [ ] **61. Examen des fosses lombaires *(1 grille sur 8)***
+> - [ ] **58. Examen des fosses lombaires *(1 grille sur 8)***
 > 	- [ ] Inspection: pas d'ecchymose, pas de tuméfaction
 > 	- [ ] Palpation douce: sensibilité
 > 	- [ ] Percussion: douleur à l'ébranlement lombaire gauche
 > 	- [ ] Comparaison avec côté controlatéral
 > 	- [ ] Recherche d'un contact lombaire
-> - [ ] **62. Recherche de complications *(1 grille sur 8)***
+> - [ ] **59. Recherche de complications *(1 grille sur 8)***
 > 	- [ ] Signes de pyélonéphrite
 > 	- [ ] Signes de sepsis
 > 	- [ ] Anurie
 > 	- [ ] Rétention aiguë d'urine
 > 	- [ ] État de choc
-> - [ ] **63. Examens différentiels *(1 grille sur 8)***
+> - [ ] **60. Examens différentiels *(1 grille sur 8)***
 > 	- [ ] Recherche appendicite
 > 	- [ ] Éliminer anévrisme aorte
 > 	- [ ] Examen vasculaire périphérique
 > 	- [ ] Examen neurologique sommaire
 > 	- [ ] Auscultation cardio-pulmonaire
-> - [ ] **64. Examen ostéo-articulaire *(Cancer prostatique métastatique)***
+> - [ ] **61. Examen ostéo-articulaire *(Cancer prostatique métastatique)***
 > 	- [ ] Inspection du rachis
 > 	- [ ] Palpation/percussion du rachis
 > 	- [ ] Palpation muscles paravertébraux
 > 	- [ ] Mobilité rachidienne (flexion/extension/rotation)
-> 	- [ ] Test de Lasègue
-> - [ ] **65. Examen neurologique des membres inférieurs *(Cancer prostatique métastatique)***
+> 	- [ ] Signe de Lasègue
+> - [ ] **62. Examen neurologique des membres inférieurs *(Cancer prostatique métastatique)***
 > 	- [ ] Force motrice
 > 	- [ ] Sensibilité
 > 	- [ ] Réflexes ostéo-tendineux
@@ -614,36 +607,35 @@ cssclasses:
 > 	- [ ] Marche
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Hypothèses diagnostiques *(2 grilles sur 8)* — *Hernie discale · Spondylarthrite ankylosante***
-> - [ ] **2. Communication avec le patient *(2 grilles sur 8)* — *Hernie discale · Spondylarthrite ankylosante***
+> - [ ] **1. Communication avec le patient *(2 grilles sur 8)* — *Hernie discale · Spondylarthrite ankylosante***
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **3. Diagnostic principal *(3 grilles sur 8)* — *Colique néphrétique sur lithiase · Fracture vertébrale · Hernie discale***
-> - [ ] **4. Prise en charge thérapeutique *(2 grilles sur 8)* — *Fracture vertébrale · Hernie discale***
+> - [ ] **2. Diagnostic principal *(3 grilles sur 8)* — *Colique néphrétique sur lithiase · Fracture vertébrale · Hernie discale***
+> - [ ] **3. Prise en charge thérapeutique *(2 grilles sur 8)* — *Fracture vertébrale · Hernie discale***
 
 > [!success] 💊 Management — si Cancer prostatique métastatique
-> - [ ] **1. Examens d'imagerie**
+> - [ ] **1. Hypothèse diagnostique principale**
+> 	- [ ] Cancer prostatique métastatique
+> 	- [ ] Justification basée sur l'anamnèse et l'examen
+> - [ ] **2. Examens d'imagerie**
 > 	- [ ] Échographie résidu post-mictionnel
 > 	- [ ] Échographie rénale
 > 	- [ ] Imagerie selon PSA (CT TAP, scintigraphie osseuse, PET-PSMA)
-> - [ ] **2. Diagnostics différentiels**
-> 	- [ ] Syndrome de la queue de cheval
-> 	- [ ] Métastases osseuses d'autre origine
-> 	- [ ] Myélome multiple
-> 	- [ ] Sténose spinale
-> 	- [ ] Infection (ostéomyélite, abcès épidural)
-> - [ ] **3. Examens de laboratoire**
+> - [ ] **3. Résultats de laboratoire**
 > 	- [ ] FSC
 > 	- [ ] Fonction rénale
 > 	- [ ] PSA
 > 	- [ ] Phosphatases alcalines
 > 	- [ ] Calcium
-> - [ ] **4. Hypothèse diagnostique principale**
-> 	- [ ] Cancer prostatique métastatique
-> 	- [ ] Justification basée sur l'anamnèse et l'examen
+> - [ ] **4. Diagnostics différentiels**
+> 	- [ ] Syndrome de la queue de cheval
+> 	- [ ] Métastases osseuses d'autre origine
+> 	- [ ] Myélome multiple
+> 	- [ ] Sténose spinale
+> 	- [ ] Infection (ostéomyélite, abcès épidural)
 > - [ ] **5. Prise en charge proposée**
 > 	- [ ] Référer à l'urologue
 > 	- [ ] Antalgie adaptée
@@ -673,25 +665,30 @@ cssclasses:
 > 	- [ ] Diverticulite sigmoïdienne
 > - [ ] **3. Prévention des récidives**
 > 	- [ ] Hydratation abondante (> 2L/jour) *(1 grille sur 2)*
-> 	- [ ] Régime adapté selon type de calcul *(1 grille sur 2)*
+> 	- [ ] Régime adapté selon composition du calcul
 > 	- [ ] Réduction apports sodés *(1 grille sur 2)*
 > 	- [ ] Normalisation apports calciques *(1 grille sur 2)*
 > 	- [ ] Traitement spécifique selon lithiase *(1 grille sur 2)*
 > 	- [ ] Analyse spectrophotométrique du calcul expulsé *(1 grille sur 2)*
 > 	- [ ] Bilan métabolique à distance (calcémie, uricémie, oxalurie) *(1 grille sur 2)*
 > 	- [ ] Hyperhydratation: 2-3L/jour à vie *(1 grille sur 2)*
-> 	- [ ] Régime adapté selon composition du calcul *(1 grille sur 2)*
 > 	- [ ] Oxalate de calcium: limiter oxalates (chocolat, thé) *(1 grille sur 2)*
 > 	- [ ] Acide urique: alcalinisation urines, allopurinol *(1 grille sur 2)*
 > 	- [ ] Phosphate de calcium: acidification urines *(1 grille sur 2)*
 > 	- [ ] Surveillance régulière: échographie annuelle *(1 grille sur 2)*
-> - [ ] **4. Critères d'hospitalisation *(1 grille sur 2)***
-> 	- [ ] Signes infectieux associés (urgence)
-> 	- [ ] Rein unique fonctionnel
-> 	- [ ] Insuffisance rénale aiguë
-> 	- [ ] Douleur réfractaire au traitement
-> 	- [ ] Calcul > 10 mm
-> 	- [ ] Obstruction bilatérale
+> - [ ] **4. Indications d'hospitalisation**
+> 	- [ ] Signes infectieux associés (urgence) *(1 grille sur 2)*
+> 	- [ ] Rein unique fonctionnel *(1 grille sur 2)*
+> 	- [ ] Insuffisance rénale aiguë *(1 grille sur 2)*
+> 	- [ ] Douleur réfractaire au traitement *(1 grille sur 2)*
+> 	- [ ] Calcul > 10 mm *(1 grille sur 2)*
+> 	- [ ] Obstruction bilatérale *(1 grille sur 2)*
+> 	- [ ] Colique néphrétique fébrile (urgence urologique) *(1 grille sur 2)*
+> 	- [ ] Anurie (obstruction bilatérale ou rein unique) *(1 grille sur 2)*
+> 	- [ ] Colique néphrétique hyperalgique résistante *(1 grille sur 2)*
+> 	- [ ] Insuffisance rénale aiguë obstructive *(1 grille sur 2)*
+> 	- [ ] Terrain particulier: grossesse, rein unique, transplanté *(1 grille sur 2)*
+> 	- [ ] Impossibilité de prise en charge ambulatoire *(1 grille sur 2)*
 > - [ ] **5. Prise en charge thérapeutique ambulatoire *(1 grille sur 2)***
 > - [ ] **6. Prise en charge à distance *(1 grille sur 2)***
 > 	- [ ] Analyse du calcul si récupéré
@@ -715,21 +712,14 @@ cssclasses:
 > 	- [ ] ASP (Abdomen Sans Préparation): calculs radio-opaques seulement (80%)
 > 	- [ ] Échographie: alternative si contre-indication TDM (grossesse)
 > - [ ] **10. Traitement symptomatique de la crise *(1 grille sur 2)***
-> - [ ] **11. Indications d'hospitalisation *(1 grille sur 2)***
-> 	- [ ] Colique néphrétique fébrile (urgence urologique)
-> 	- [ ] Anurie (obstruction bilatérale ou rein unique)
-> 	- [ ] Colique néphrétique hyperalgique résistante
-> 	- [ ] Insuffisance rénale aiguë obstructive
-> 	- [ ] Terrain particulier: grossesse, rein unique, transplanté
-> 	- [ ] Impossibilité de prise en charge ambulatoire
-> - [ ] **12. Traitement urologique spécifique *(1 grille sur 2)***
+> - [ ] **11. Traitement urologique spécifique *(1 grille sur 2)***
 > 	- [ ] Calculs < 5mm: expulsion spontanée dans 70% des cas
 > 	- [ ] Calculs 5-10mm: expulsion dans 50% des cas
 > 	- [ ] Lithotripsie extracorporelle (LEC) si calcul < 20mm
 > 	- [ ] Urétéroscopie avec extraction ou fragmentation laser
 > 	- [ ] Néphrostomie percutanée si infection + obstruction
 > 	- [ ] Chirurgie ouverte exceptionnelle
-> - [ ] **13. Complications à rechercher *(1 grille sur 2)***
+> - [ ] **12. Complications à rechercher *(1 grille sur 2)***
 
 > [!success] 💊 Management — si Fracture vertébrale
 > - [ ] **1. Examens d'imagerie**
@@ -759,18 +749,19 @@ cssclasses:
 > 	- [ ] Dépistage nouvelles fractures
 
 > [!success] 💊 Management — si Hernie discale
-> - [ ] **1. Examens complémentaires urgents *(1 grille sur 2)***
+> - [ ] **1. Hypothèse diagnostique principale *(1 grille sur 2)***
+> - [ ] **2. Examens complémentaires urgents *(1 grille sur 2)***
 > 	- [ ] Examen rectal
-> - [ ] **2. Examens d'imagerie *(1 grille sur 2)***
+> - [ ] **3. Examens d'imagerie *(1 grille sur 2)***
 > 	- [ ] IRM du rachis
 > 	- [ ] Radiographie du rachis
 > 	- [ ] CT du rachis
-> - [ ] **3. Examens spécialisés *(1 grille sur 2)***
+> - [ ] **4. Examens spécialisés *(1 grille sur 2)***
 > 	- [ ] Absorptiométrie biphotonique (DEXA)
-> - [ ] **4. Conseil et prévention *(1 grille sur 2)***
+> - [ ] **5. Conseil et prévention *(1 grille sur 2)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant la dépendance aux antalgiques
-> - [ ] **5. Diagnostics différentiels *(1 grille sur 2)***
+> - [ ] **6. Diagnostics différentiels *(1 grille sur 2)***
 > 	- [ ] Protrusion discale sans hernie franche
 > 	- [ ] Canal lombaire étroit
 > 	- [ ] Spondylolisthésis
@@ -778,18 +769,18 @@ cssclasses:
 > 	- [ ] Contracture musculaire paravertébrale
 > 	- [ ] Processus inflammatoire/infectieux (spondylodiscite)
 > 	- [ ] Processus tumoral (métastase, tumeur primitive)
-> - [ ] **6. Examens complémentaires *(1 grille sur 2)***
+> - [ ] **7. Examens complémentaires *(1 grille sur 2)***
 > 	- [ ] Examens biologiques pour exclure processus inflammatoire (FSC, CRP, VS)
 > 	- [ ] IRM lombaire selon évolution clinique et déficit neurologique
 > 	- [ ] Radiographie lombaire si suspicion de spondylolisthésis
 > 	- [ ] EMG si doute diagnostique après 6 semaines
-> - [ ] **7. Orientation et suivi *(1 grille sur 2)***
+> - [ ] **8. Orientation et suivi *(1 grille sur 2)***
 > 	- [ ] Orientation orthopédie/neurochirurgie selon évolution
 > 	- [ ] Contrôle à 2 semaines
 > 	- [ ] IRM si pas d'amélioration à 4-6 semaines
 > 	- [ ] Arrêt de travail selon profession
 > 	- [ ] Éducation sur l'évolution naturelle favorable (90% à 6 semaines)
-> - [ ] **8. Prévention des récidives *(1 grille sur 2)***
+> - [ ] **9. Prévention des récidives *(1 grille sur 2)***
 > 	- [ ] École du dos
 > 	- [ ] Renforcement musculaire après phase aiguë
 > 	- [ ] Ergonomie au travail
@@ -803,19 +794,20 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Spondylarthrite ankylosante
-> - [ ] **1. Examens complémentaires urgents**
+> - [ ] **1. Hypothèse diagnostique principale**
+> - [ ] **2. Examens complémentaires urgents**
 > 	- [ ] Examen génital
 > 	- [ ] FSC, VS
-> - [ ] **2. Examens d'imagerie**
+> - [ ] **3. Examens d'imagerie**
 > 	- [ ] Radiographie du rachis et des articulations sacro-iliaques
 > 	- [ ] Radiographie des mains et du genou droit
-> - [ ] **3. Conseil et prévention**
+> - [ ] **4. Conseil et prévention**
 > 	- [ ] Conseil sur les drogues récréatives
 > 	- [ ] Conseil sur les pratiques sexuelles sûres
 > 	- [ ] Réaction appropriée au défi concernant le manque d'exercice
-> - [ ] **4. Examens immunologiques**
+> - [ ] **5. Examens immunologiques**
 > 	- [ ] Facteur rhumatoïde, anticorps anti-nucléaires, HLA-B27
-> - [ ] **5. Examens microbiologiques**
+> - [ ] **6. Examens microbiologiques**
 > 	- [ ] Tests d'amplification des acides nucléiques pour chlamydia et gonocoque
 > 	- [ ] Cultures de selles et d'urine
 > 	- [ ] Test VIH

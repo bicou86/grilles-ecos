@@ -126,7 +126,7 @@ cssclasses:
 > 	- [ ] Vertiges
 > 	- [ ] Nouvelles masses
 > - [ ] **5. Antécédents médicaux *(Ulcère gastro-duodénal)***
-> - [ ] **6. Antécédents chirurgicaux *(Ulcère gastro-duodénal)***
+> - [ ] **6. Antécédents médicaux-chirurgicaux**
 > - [ ] **7. Allergies *(Ulcère gastro-duodénal)***
 > 	- [ ] Allergies
 > 	- [ ] Réaction allergique spécifique
@@ -171,12 +171,11 @@ cssclasses:
 > 	- [ ] Fièvre
 > 	- [ ] Frissons
 > 	- [ ] Perte de poids (quantifié)
-> - [ ] **16. Antécédents médicaux-chirurgicaux *(Cancer du rectum · Cancer rectal)***
-> - [ ] **17. Habitudes : Tabac / OH / Quantité *(Cancer rectal)***
+> - [ ] **16. Habitudes : Tabac / OH / Quantité *(Cancer rectal)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
-> - [ ] **18. Anamnèse familiale (cancers) *(Cancer du rectum)***
+> - [ ] **17. Anamnèse familiale (cancers) *(Cancer du rectum)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Ulcère gastro-duodénal)***
@@ -199,15 +198,14 @@ cssclasses:
 > 	- [ ] Souffles vasculaires (aorte, a. iliaques et a. rénales)
 > - [ ] **9. Percussion *(Cancer du rectum · Cancer rectal)***
 > 	- [ ] 4 quadrants
-> 	- [ ] Effectué dans les 4 quadrants = oui *(Cancer rectal)*
+> 	- [ ] Effectué dans les 4 quadrants *(Cancer rectal)*
 > 	- [ ] Pas ou incomplètement effectué = non *(Cancer rectal)*
 > - [ ] **10. Percussion du foie (de haut en bas, sur la ligne médioclaviculaire, mesure de la taille) *(Cancer du rectum · Cancer rectal)***
 > - [ ] **11. Palpation superficielle *(Cancer du rectum · Cancer rectal)***
-> 	- [ ] Effectué dans les 4 quadrants = oui *(Cancer rectal)*
+> 	- [ ] Effectué dans les 4 quadrants
 > 	- [ ] Pas ou incomplètement effectué = non *(Cancer rectal)*
-> 	- [ ] Effectué dans les 4 quadrants *(Cancer du rectum)*
 > - [ ] **12. Palpation profonde bimanuelle *(Cancer rectal)***
-> 	- [ ] Effectué dans les 4 quadrants = oui
+> 	- [ ] Effectué dans les 4 quadrants
 > 	- [ ] Pas ou incomplètement effectué = non
 > - [ ] **13. Recherche signes péritonéaux : Défense / Détente *(Cancer du rectum · Cancer rectal)***
 > 	- [ ] Oui = les 2 *(Cancer rectal)*

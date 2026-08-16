@@ -86,16 +86,21 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(Déficit en vitamine B12)***
-> - [ ] **2. Caractérisation des symptômes sensitifs *(Déficit en vitamine B12)***
-> 	- [ ] Début
-> 	- [ ] Constant/intermittent
-> 	- [ ] Événements précipitants
-> 	- [ ] Progression
-> 	- [ ] Épisodes antérieurs
-> 	- [ ] Facteurs améliorants
-> 	- [ ] Facteurs aggravants
-> 	- [ ] Symptômes associés
-> 	- [ ] Localisation
+> - [ ] **2. Caractéristiques des troubles sensitifs *(Déficit en vitamine B12 · Polyneuropathie)***
+> 	- [ ] Début *(Déficit en vitamine B12)*
+> 	- [ ] Constant/intermittent *(Déficit en vitamine B12)*
+> 	- [ ] Événements précipitants *(Déficit en vitamine B12)*
+> 	- [ ] Progression *(Déficit en vitamine B12)*
+> 	- [ ] Épisodes antérieurs *(Déficit en vitamine B12)*
+> 	- [ ] Facteurs améliorants *(Déficit en vitamine B12)*
+> 	- [ ] Facteurs aggravants *(Déficit en vitamine B12)*
+> 	- [ ] Symptômes associés *(Déficit en vitamine B12)*
+> 	- [ ] Localisation *(Déficit en vitamine B12)*
+> 	- [ ] Type de sensations *(Polyneuropathie)*
+> 	- [ ] À la marche *(Polyneuropathie)*
+> 	- [ ] Picotements *(Polyneuropathie)*
+> 	- [ ] Engourdissement *(Polyneuropathie)*
+> 	- [ ] Distribution *(Polyneuropathie)*
 > - [ ] **3. Caractérisation de la douleur *(Déficit en vitamine B12)***
 > 	- [ ] Intensité (échelle 0-10)
 > 	- [ ] Qualité
@@ -197,123 +202,117 @@ cssclasses:
 > 	- [ ] Probable durée réelle
 > 	- [ ] Évolution
 > 	- [ ] Facteur déclencheur
-> - [ ] **57. Caractéristiques des troubles sensitifs *(Polyneuropathie)***
-> 	- [ ] Type de sensations
-> 	- [ ] À la marche
-> 	- [ ] Picotements
-> 	- [ ] Engourdissement
-> 	- [ ] Distribution
-> - [ ] **58. Extension et localisation *(Polyneuropathie)***
+> - [ ] **57. Extension et localisation *(Polyneuropathie)***
 > 	- [ ] Limite supérieure
 > 	- [ ] Bilatéral
 > 	- [ ] Symétrique
-> - [ ] **59. Facteurs modulants *(Polyneuropathie)***
+> - [ ] **58. Facteurs modulants *(Polyneuropathie)***
 > 	- [ ] Facteurs améliorants
 > 	- [ ] Facteurs aggravants
 > 	- [ ] Variation selon l'heure
-> - [ ] **60. Symptômes moteurs associés *(Polyneuropathie)***
+> - [ ] **59. Symptômes moteurs associés *(Polyneuropathie)***
 > 	- [ ] Perte de force
 > 	- [ ] Difficultés à la marche
 > 	- [ ] Chutes
-> - [ ] **61. Douleur *(Polyneuropathie)***
+> - [ ] **60. Douleur *(Polyneuropathie)***
 > 	- [ ] Présence de douleur
 > 	- [ ] Type
 > 	- [ ] Intensité
-> - [ ] **62. Plaie au pied *(Polyneuropathie)***
+> - [ ] **61. Plaie au pied *(Polyneuropathie)***
 > 	- [ ] Présence d'une plaie
 > 	- [ ] Circonstances
 > 	- [ ] Cicatrisation
 > 	- [ ] Localisation
-> - [ ] **63. Suivi médical *(Polyneuropathie)***
+> - [ ] **62. Suivi médical *(Polyneuropathie)***
 > 	- [ ] Dernière consultation
 > 	- [ ] Raison de l'absence de suivi
 > 	- [ ] Attitude face aux consultations
-> - [ ] **64. Symptômes visuels *(Polyneuropathie)***
+> - [ ] **63. Symptômes visuels *(Polyneuropathie)***
 > 	- [ ] Troubles visuels
 > 	- [ ] Port de lunettes
 > 	- [ ] Vision floue
 > 	- [ ] Baisse d'acuité
-> - [ ] **65. Symptômes urinaires *(Polyneuropathie)***
+> - [ ] **64. Symptômes urinaires *(Polyneuropathie)***
 > 	- [ ] Jet urinaire
 > 	- [ ] Urines mousseuses
 > 	- [ ] Polyurie
 > 	- [ ] Pollakiurie
-> - [ ] **66. Symptômes cardiovasculaires *(Polyneuropathie)***
+> - [ ] **65. Symptômes cardiovasculaires *(Polyneuropathie)***
 > 	- [ ] Palpitations
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Dyspnée
 > 	- [ ] État depuis l'infarctus
-> - [ ] **67. Facteurs de risque cardiovasculaire *(Polyneuropathie)***
+> - [ ] **66. Facteurs de risque cardiovasculaire *(Polyneuropathie)***
 > 	- [ ] Diabète
 > 	- [ ] Hypertension
 > 	- [ ] Hypercholestérolémie
 > 	- [ ] Tabagisme
 > 	- [ ] Antécédents familiaux
-> - [ ] **68. Revue des systèmes - Neurologique *(Polyneuropathie)***
+> - [ ] **67. Revue des systèmes - Neurologique *(Polyneuropathie)***
 > 	- [ ] Céphalées
 > 	- [ ] Vision
 > 	- [ ] Audition
-> - [ ] **69. Revue des systèmes - Digestif *(Polyneuropathie)***
+> - [ ] **68. Revue des systèmes - Digestif *(Polyneuropathie)***
 > 	- [ ] Dysphagie
 > 	- [ ] Digestion
 > 	- [ ] Transit intestinal
 > 	- [ ] Poids
 > 	- [ ] Appétit
-> - [ ] **70. Revue des systèmes - Respiratoire *(Polyneuropathie)***
+> - [ ] **69. Revue des systèmes - Respiratoire *(Polyneuropathie)***
 > 	- [ ] Dyspnée
 > 	- [ ] Toux
-> - [ ] **71. Revue des systèmes - Locomoteur *(Polyneuropathie)***
+> - [ ] **70. Revue des systèmes - Locomoteur *(Polyneuropathie)***
 > 	- [ ] Douleurs articulaires
 > 	- [ ] Raideur matinale
 > 	- [ ] Gonflement articulaire
-> - [ ] **72. État cutané et œdèmes *(Polyneuropathie)***
+> - [ ] **71. État cutané et œdèmes *(Polyneuropathie)***
 > 	- [ ] Peau
 > 	- [ ] Œdèmes des membres inférieurs
-> - [ ] **73. Fonction sexuelle *(Polyneuropathie)***
-> - [ ] **74. Habitudes et toxiques *(Polyneuropathie)***
+> - [ ] **72. Fonction sexuelle *(Polyneuropathie)***
+> - [ ] **73. Habitudes et toxiques *(Polyneuropathie)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Digestif
 > 	- [ ] Drogues
-> - [ ] **75. Anamnèse sociale *(Polyneuropathie)***
+> - [ ] **74. Anamnèse sociale *(Polyneuropathie)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Enfants
 > 	- [ ] Activité physique
-> - [ ] **76. Questions supplémentaires *(Polyneuropathie)***
+> - [ ] **75. Questions supplémentaires *(Polyneuropathie)***
 > 	- [ ] Autres préoccupations
 > 	- [ ] Questions du patient
-> - [ ] **77. Caractérisation de la douleur neuropathique *(Hernie discale)***
+> - [ ] **76. Caractérisation de la douleur neuropathique *(Hernie discale)***
 > 	- [ ] Type de douleur
 > 	- [ ] Localisation précise
 > 	- [ ] Intensité
 > 	- [ ] Évolution temporelle
 > 	- [ ] Facteurs déclenchants
-> - [ ] **78. Analyse sémiologique neurologique *(Hernie discale)***
+> - [ ] **77. Analyse sémiologique neurologique *(Hernie discale)***
 > 	- [ ] Troubles sensitifs
 > 	- [ ] Déficit moteur associé
 > 	- [ ] Troubles trophiques
 > 	- [ ] Réflexes ostéotendineux
 > 	- [ ] Signes d'irritation radiculaire
-> - [ ] **79. Recherche d'étiologies rachidiennes *(Hernie discale)***
+> - [ ] **78. Recherche d'étiologies rachidiennes *(Hernie discale)***
 > 	- [ ] Lombalgie associée
 > 	- [ ] Traumatisme rachidien
 > 	- [ ] Efforts de soulèvement
 > 	- [ ] Positions profesionnelles
 > 	- [ ] Antécédents chirurgicaux rachidiens
-> - [ ] **80. Facteurs de risque et comorbidités *(Hernie discale)***
+> - [ ] **79. Facteurs de risque et comorbidités *(Hernie discale)***
 > 	- [ ] Diabète
 > 	- [ ] Maladies auto-immunes
 > 	- [ ] Néoplasies
 > 	- [ ] Maladies infectieuses
 > 	- [ ] Insuffisance rénale
-> - [ ] **81. Médicaments et toxiques *(Hernie discale)***
+> - [ ] **80. Médicaments et toxiques *(Hernie discale)***
 > 	- [ ] Chimiothérapie
 > 	- [ ] Antibiotiques
 > 	- [ ] Anticonvulsivants
 > 	- [ ] Alcoolisme chronique
 > 	- [ ] Produits industriels
-> - [ ] **82. Retentissement fonctionnel et qualité de vie *(Hernie discale)***
+> - [ ] **81. Retentissement fonctionnel et qualité de vie *(Hernie discale)***
 > 	- [ ] Sommeil
 > 	- [ ] Activités professionnelles
 > 	- [ ] Mobilité
@@ -420,14 +419,13 @@ cssclasses:
 > 	- [ ] Signes d'infection
 > 	- [ ] Tissus nécrotiques
 > - [ ] **56. Examen de la sensibilité *(Hernie discale · Polyneuropathie)***
-> 	- [ ] Sensibilité vibratoire (diapason) *(Polyneuropathie)*
+> 	- [ ] Sensibilité vibratoire (diapason)
 > 	- [ ] Sensibilité au monofilament *(Polyneuropathie)*
 > 	- [ ] Sensibilité thermique
 > 	- [ ] Sensibilité douloureuse
 > 	- [ ] Distribution *(Polyneuropathie)*
 > 	- [ ] Cartographie sensitive *(Hernie discale)*
 > 	- [ ] Sensibilité tactile *(Hernie discale)*
-> 	- [ ] Sensibilité vibratoire *(Hernie discale)*
 > 	- [ ] Sensibilité proprioceptive *(Hernie discale)*
 > - [ ] **57. Examen des réflexes *(Polyneuropathie)***
 > 	- [ ] Réflexes achilléens
@@ -500,38 +498,38 @@ cssclasses:
 > 	- [ ] Support nutritionnel
 
 > [!success] 💊 Management — si Hernie discale
-> - [ ] **1. Diagnostic topographique et syndromique**
-> 	- [ ] Radiculopathie L5 ou S1
-> 	- [ ] Neuropathie distale vs radiculopathie
-> 	- [ ] Mononeuropathie vs polyneuropathie
-> 	- [ ] Atteinte sensitive pure vs sensitivomotrice
-> - [ ] **2. Diagnostic étiologique - causes de neuropathie douloureuse**
-> - [ ] **3. Examens complémentaires spécialisés**
-> 	- [ ] Électromyogramme
-> 	- [ ] IRM lombaire
-> 	- [ ] Bilan métabolique
-> 	- [ ] Sérologies
-> - [ ] **4. Traitement pharmacologique de la douleur neuropathique**
-> - [ ] **5. Traitement étiologique selon la cause**
-> 	- [ ] Chirurgie rachidienne
-> 	- [ ] Équilibration diabète
-> 	- [ ] Infiltrations épidurales
-> 	- [ ] Kinésithérapie
-> - [ ] **6. Approches non médicamenteuses**
-> 	- [ ] Kinésithérapie
-> 	- [ ] Stimulation électrique transcutanée (TENS)
-> 	- [ ] Thérapies cognitivo-comportementales
-> 	- [ ] École du dos
-> - [ ] **7. Surveillance et adaptation thérapeutique**
-> 	- [ ] Évaluation de l'efficacité
-> 	- [ ] Surveillance effets secondaires
-> 	- [ ] Adaptation posologique progressive
-> 	- [ ] Critères d'arrêt ou changement de traitement
-> - [ ] **8. Orientation et suivi spécialisé**
+> - [ ] **1. Orientation et suivi spécialisé**
 > 	- [ ] Centre de la douleur
 > 	- [ ] Neurochirurgie
 > 	- [ ] Rhumatologie
 > 	- [ ] Suivi neurologique
+> - [ ] **2. Diagnostic topographique et syndromique**
+> 	- [ ] Radiculopathie L5 ou S1
+> 	- [ ] Neuropathie distale vs radiculopathie
+> 	- [ ] Mononeuropathie vs polyneuropathie
+> 	- [ ] Atteinte sensitive pure vs sensitivomotrice
+> - [ ] **3. Diagnostic étiologique - causes de neuropathie douloureuse**
+> - [ ] **4. Examens complémentaires spécialisés**
+> 	- [ ] Électromyogramme
+> 	- [ ] IRM lombaire
+> 	- [ ] Bilan métabolique
+> 	- [ ] Sérologies
+> - [ ] **5. Traitement pharmacologique de la douleur neuropathique**
+> - [ ] **6. Traitement étiologique selon la cause**
+> 	- [ ] Chirurgie rachidienne
+> 	- [ ] Équilibration diabète
+> 	- [ ] Infiltrations épidurales
+> 	- [ ] Kinésithérapie
+> - [ ] **7. Approches non médicamenteuses**
+> 	- [ ] Kinésithérapie
+> 	- [ ] Stimulation électrique transcutanée (TENS)
+> 	- [ ] Thérapies cognitivo-comportementales
+> 	- [ ] École du dos
+> - [ ] **8. Surveillance et adaptation thérapeutique**
+> 	- [ ] Évaluation de l'efficacité
+> 	- [ ] Surveillance effets secondaires
+> 	- [ ] Adaptation posologique progressive
+> 	- [ ] Critères d'arrêt ou changement de traitement
 
 > [!success] 💊 Management — si Polyneuropathie
 > - [ ] **1. Examens complémentaires additionnels**
@@ -551,7 +549,7 @@ cssclasses:
 > 	- [ ] TSH
 > 	- [ ] Vitamine B12
 > 	- [ ] FSC
-> - [ ] **6. Orientations spécialisées**
+> - [ ] **6. Orientation et suivi spécialisé**
 > 	- [ ] Ophtalmologue
 > 	- [ ] Diabétologue/endocrinologue
 > 	- [ ] Consultation plaies et cicatrisation

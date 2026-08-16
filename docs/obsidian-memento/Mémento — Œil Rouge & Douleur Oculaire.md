@@ -337,13 +337,13 @@ cssclasses:
 > 	- [ ] Avec correction
 > 	- [ ] Vision de près
 > 	- [ ] Champ visuel par confrontation
-> - [ ] **43. Examen à la lampe à fente *(Conjonctivite allergique)***
-> 	- [ ] Examen des paupières et cils
-> 	- [ ] Film lacrymal
-> 	- [ ] Conjonctive bulbaire et tarsale
-> 	- [ ] Cornée (transparence, épithélium)
-> 	- [ ] Chambre antérieure (profondeur, Tyndall)
-> 	- [ ] Iris et cristallin
+> - [ ] **43. Propose un examen à la lampe à fente *(Conjonctivite allergique · Kératite herpétique)***
+> 	- [ ] Examen des paupières et cils *(Conjonctivite allergique)*
+> 	- [ ] Film lacrymal *(Conjonctivite allergique)*
+> 	- [ ] Conjonctive bulbaire et tarsale *(Conjonctivite allergique)*
+> 	- [ ] Cornée (transparence, épithélium) *(Conjonctivite allergique)*
+> 	- [ ] Chambre antérieure (profondeur, Tyndall) *(Conjonctivite allergique)*
+> 	- [ ] Iris et cristallin *(Conjonctivite allergique)*
 > - [ ] **44. Test à la fluorescéine *(Conjonctivite allergique)***
 > 	- [ ] Recherche d'érosion cornéenne
 > 	- [ ] Recherche d'ulcère
@@ -386,7 +386,6 @@ cssclasses:
 > 	- [ ] Mobilité de la face (VII)
 > - [ ] **55. Acuité visuelle de loin OU de près *(Kératite herpétique)***
 > - [ ] **56. Propose une ophtalmoscopie directe *(Kératite herpétique)***
-> - [ ] **57. Propose un examen à la lampe à fente *(Kératite herpétique)***
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Diagnostic de travail *(2 grilles sur 4)* — *Glaucome aigu · Sécheresse oculaire évaporative (dysfonction des glandes de Meibom)***

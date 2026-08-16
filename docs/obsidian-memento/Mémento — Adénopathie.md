@@ -83,24 +83,28 @@ cssclasses:
 > - **RESCOS-2** — Cancer gastrique `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-2_-_Ade_nopathie_sus-claviculaire_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Caractérisation de la plainte principale *(Lymphome)***
-> 	- [ ] Apparition de la grosseur
+> - [ ] **1. Caractéristiques de la plainte principale**
+> 	- [ ] Apparition de la grosseur *(Lymphome)*
 > 	- [ ] Durée des symptômes
 > 	- [ ] Cinétique de croissance
 > 	- [ ] Douleurs associées
-> 	- [ ] Lourdeur dans l'estomac
+> 	- [ ] Lourdeur dans l'estomac *(Lymphome)*
+> 	- [ ] Date d'apparition des ganglions *(Cancer gastrique)*
+> 	- [ ] Taille actuelle *(Cancer gastrique)*
+> 	- [ ] Localisation précise *(Cancer gastrique)*
 > - [ ] **2. Recherche d'autres adénopathies *(Lymphome)***
 > 	- [ ] Autres ganglions palpés par le patient
 > 	- [ ] Évolution d'autres grosseurs
 > 	- [ ] Localisation des autres adénopathies
 > 	- [ ] Taille comparative des différents ganglions
-> - [ ] **3. Symptômes d'accompagnement généraux *(Lymphome)***
+> - [ ] **3. Symptômes d'accompagnement généraux**
 > 	- [ ] Amaigrissement
 > 	- [ ] Anorexie
 > 	- [ ] Asthénie
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Prurit
-> 	- [ ] Fièvre
+> 	- [ ] Fièvre *(Lymphome)*
+> 	- [ ] Température *(Cancer gastrique)*
 > - [ ] **4. Facteurs de risque infectieux *(Lymphome)***
 > 	- [ ] Infections récentes
 > 	- [ ] Voyage récent
@@ -129,45 +133,31 @@ cssclasses:
 > 	- [ ] Animaux domestiques
 > 	- [ ] Conditions de logement
 > - [ ] **9. Motif de consultation *(Cancer gastrique)***
-> - [ ] **10. Caractéristiques de la plainte principale *(Cancer gastrique)***
-> 	- [ ] Durée des symptômes
-> 	- [ ] Date d'apparition des ganglions
-> 	- [ ] Cinétique de croissance
-> 	- [ ] Douleurs associées
-> 	- [ ] Taille actuelle
-> 	- [ ] Localisation précise
-> - [ ] **11. Symptômes d'accompagnement *(Cancer gastrique)***
-> 	- [ ] Amaigrissement
-> 	- [ ] Anorexie
-> 	- [ ] Asthénie
-> 	- [ ] Sueurs nocturnes
-> 	- [ ] Prurit
-> 	- [ ] Température
-> - [ ] **12. Symptômes B (lymphome) *(Cancer gastrique)***
+> - [ ] **10. Symptômes B (lymphome) *(Cancer gastrique)***
 > 	- [ ] Sueurs nocturnes profuses
 > 	- [ ] Perte de poids > 10% en 6 mois
-> - [ ] **13. Symptômes digestifs *(Cancer gastrique)***
+> - [ ] **11. Symptômes digestifs *(Cancer gastrique)***
 > 	- [ ] Lourdeur épigastrique
 > 	- [ ] Dysphagie
 > 	- [ ] Régurgitations
 > 	- [ ] Douleurs abdominales
 > 	- [ ] Modification du transit
 > 	- [ ] Méléna ou rectorragies
-> - [ ] **14. Caractéristiques du patient *(Cancer gastrique)***
+> - [ ] **12. Caractéristiques du patient *(Cancer gastrique)***
 > 	- [ ] Âge
 > 	- [ ] Habitudes de vie
 > 	- [ ] Anamnèse sexuelle
 > 	- [ ] Facteurs de risque VIH
 > 	- [ ] Animaux à la maison
 > 	- [ ] Prise de médicaments
-> - [ ] **15. Antécédents médicaux et chirurgicaux *(Cancer gastrique)***
+> - [ ] **13. Antécédents médicaux et chirurgicaux *(Cancer gastrique)***
 > 	- [ ] Maladies infectieuses récentes
 > 	- [ ] Tuberculose ou contact
 > 	- [ ] Maladies auto-immunes
 > 	- [ ] Cancers personnels ou familiaux
 > 	- [ ] Immunosuppression
 > 	- [ ] Chirurgies antérieures
-> - [ ] **16. Exposition et voyages *(Cancer gastrique)***
+> - [ ] **14. Exposition et voyages *(Cancer gastrique)***
 > 	- [ ] Voyages récents
 > 	- [ ] Contact avec malades
 > 	- [ ] Exposition professionnelle
@@ -185,11 +175,17 @@ cssclasses:
 > 	- [ ] Chaînes cervicales
 > 	- [ ] Ganglions sous-maxillaires et sous-mentonniers
 > 	- [ ] Éviter compression symétrique
-> - [ ] **3. Palpation des aires sus-claviculaires *(Lymphome)***
-> 	- [ ] Patient en position assise
-> 	- [ ] Palpation symétrique possible
-> 	- [ ] Palpation profonde derrière clavicules
-> 	- [ ] Faire inspirer le patient
+> - [ ] **3. Examen des ganglions sus-claviculaires**
+> 	- [ ] Patient en position assise *(Lymphome)*
+> 	- [ ] Palpation symétrique possible *(Lymphome)*
+> 	- [ ] Palpation profonde derrière clavicules *(Lymphome)*
+> 	- [ ] Faire inspirer le patient *(Lymphome)*
+> 	- [ ] Position du patient *(Cancer gastrique)*
+> 	- [ ] Palpation avec pulpe des doigts *(Cancer gastrique)*
+> 	- [ ] Recherche ganglions occipitaux *(Cancer gastrique)*
+> 	- [ ] Puis région auriculaire postérieure et inférieure *(Cancer gastrique)*
+> 	- [ ] Chaînes ganglionnaires cervicales *(Cancer gastrique)*
+> 	- [ ] Ganglions sous-mentonniers et sous-maxillaires *(Cancer gastrique)*
 > - [ ] **4. Examen des aires axillaires *(Lymphome)***
 > 	- [ ] Patient en position assise
 > 	- [ ] Porter le bras du patient
@@ -209,14 +205,12 @@ cssclasses:
 > 	- [ ] Sensibilité
 > 	- [ ] Aspect
 > - [ ] **7. Palpation de la rate**
-> 	- [ ] Inspection et auscultation préalables *(Lymphome)*
-> 	- [ ] Décubitus dorsal *(Lymphome)*
+> 	- [ ] Inspection et auscultation préalables
+> 	- [ ] Technique décubitus dorsal
 > 	- [ ] Main antérieure sous rebord costal *(Lymphome)*
 > 	- [ ] Décubitus latéral droit *(Lymphome)*
 > 	- [ ] Caractérisation si rate palpable *(Lymphome)*
 > 	- [ ] Inspection préalable *(Cancer gastrique)*
-> 	- [ ] Auscultation préalable *(Cancer gastrique)*
-> 	- [ ] Technique décubitus dorsal *(Cancer gastrique)*
 > 	- [ ] Faire inspirer le patient *(Cancer gastrique)*
 > 	- [ ] Technique décubitus latéral droit si nécessaire *(Cancer gastrique)*
 > - [ ] **8. Examen complémentaire selon contexte *(Lymphome)***
@@ -224,52 +218,45 @@ cssclasses:
 > 	- [ ] Auscultation cardiaque
 > 	- [ ] Examen cutané
 > 	- [ ] Palpation abdominale
-> - [ ] **9. Examen des ganglions sus-claviculaires *(Cancer gastrique)***
-> 	- [ ] Position du patient
-> 	- [ ] Palpation avec pulpe des doigts
-> 	- [ ] Recherche ganglions occipitaux
-> 	- [ ] Puis région auriculaire postérieure et inférieure
-> 	- [ ] Chaînes ganglionnaires cervicales
-> 	- [ ] Ganglions sous-mentonniers et sous-maxillaires
-> - [ ] **10. Caractéristiques du ganglion sus-claviculaire gauche (ganglion de Troisier) *(Cancer gastrique)***
+> - [ ] **9. Caractéristiques du ganglion sus-claviculaire gauche (ganglion de Troisier) *(Cancer gastrique)***
 > 	- [ ] Taille
 > 	- [ ] Consistance
 > 	- [ ] Mobilité
 > 	- [ ] Sensibilité
 > 	- [ ] Surface
 > 	- [ ] Adhérence aux plans profonds
-> - [ ] **11. Examen des autres aires ganglionnaires *(Cancer gastrique)***
+> - [ ] **10. Examen des autres aires ganglionnaires *(Cancer gastrique)***
 > 	- [ ] Aires sous-claviculaires
 > 	- [ ] Ganglions épitrochléens
 > 	- [ ] Ganglions axillaires
 > 	- [ ] Ganglions inguinaux
-> - [ ] **12. Recherche d'une splénomégalie *(Cancer gastrique)***
+> - [ ] **11. Recherche d'une splénomégalie *(Cancer gastrique)***
 > 	- [ ] Si palpable: mesurer débord sous-costal
 > 	- [ ] Percussion de la rate
 > 	- [ ] Recherche syndrome tumoral associé
-> - [ ] **13. Examen général *(Cancer gastrique)***
+> - [ ] **12. Examen général *(Cancer gastrique)***
 > 	- [ ] État général
 > 	- [ ] Pâleur cutanéo-muqueuse
 > 	- [ ] Ictère conjonctival
 > 	- [ ] Lésions cutanées
 > 	- [ ] Hépatomégalie
 > 	- [ ] Masse abdominale
-> - [ ] **14. Examen ORL et stomatologique *(Cancer gastrique)***
+> - [ ] **13. Examen ORL et stomatologique *(Cancer gastrique)***
 > 	- [ ] Cavité buccale
 > 	- [ ] Pharynx
 > 	- [ ] État dentaire
 > 	- [ ] Thyroïde
 
 > [!success] 💊 Management — si Cancer gastrique
-> - [ ] **1. Diagnostics différentiels des adénopathies**
-> - [ ] **2. Examens complémentaires de première intention**
+> - [ ] **1. Proposition d'examens complémentaires de première intention**
+> 	- [ ] LDH, β2-microglobuline
 > 	- [ ] FSC avec plaquettes et frottis
 > 	- [ ] VS, CRP
 > 	- [ ] Ionogramme, créatinine
 > 	- [ ] Bilan hépatique (ASAT, ALAT, PAL, GGT, bilirubine)
-> 	- [ ] LDH, β2-microglobuline
 > 	- [ ] Protéinogramme
 > 	- [ ] Radiographie thoracique face et profil
+> - [ ] **2. Diagnostics différentiels des adénopathies**
 > - [ ] **3. Examens complémentaires orientés**
 > 	- [ ] Fibroscopie œso-gastro-duodénale si suspicion cancer gastrique
 > 	- [ ] CT thoraco-abdomino-pelvien

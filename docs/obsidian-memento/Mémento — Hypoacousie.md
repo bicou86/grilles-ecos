@@ -146,7 +146,8 @@ cssclasses:
 > 	- [ ] Alcool
 > 	- [ ] Drogues récréatives
 > 	- [ ] Tabac
-> - [ ] **10. Question d’entrée *(1 grille sur 4)***
+> - [ ] **10. Question d'entrée ouverte *(2 grilles sur 4)***
+> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ? *(Surdité brusque idiopathique gauche)*
 > - [ ] **11. Localisation (unilatérale / bilatérale) *(1 grille sur 4)***
 > - [ ] **12. Dimension temporelle *(1 grille sur 4)***
 > - [ ] **13. Durée (depuis quand ?) *(1 grille sur 4)***
@@ -180,55 +181,53 @@ cssclasses:
 > - [ ] **38. Profession *(1 grille sur 4)***
 > - [ ] **39. Situation sociale *(1 grille sur 4)***
 > - [ ] **40. Présentation avec nom, fonction et tâche *(2 grilles sur 4)***
-> - [ ] **41. Question d'entrée ouverte *(Surdité brusque idiopathique gauche)***
-> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ?
-> - [ ] **42. Symptômes associés ORL *(2 grilles sur 4)***
+> - [ ] **41. Symptômes associés ORL *(2 grilles sur 4)***
 > 	- [ ] Sécrétions auriculaires (cérumen, sang, pus)
 > 	- [ ] Douleurs auriculaires
 > 	- [ ] Acouphènes
 > 	- [ ] Vertiges
-> - [ ] **43. Symptômes généraux *(2 grilles sur 4)***
+> - [ ] **42. Symptômes généraux *(2 grilles sur 4)***
 > 	- [ ] Fièvre
 > 	- [ ] Toux
 > 	- [ ] Rhinite *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Vomissements
 > 	- [ ] Rhinorrhée *(1 grille sur 4)*
-> - [ ] **44. Facteurs déclenchants et traumatismes *(Surdité brusque idiopathique gauche)***
+> - [ ] **43. Facteurs déclenchants et traumatismes *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Facteur déclenchant identifiable
 > 	- [ ] Traumatisme récent
 > 	- [ ] Situation particulière
-> - [ ] **45. Antécédents ORL et exposition *(Surdité brusque idiopathique gauche)***
+> - [ ] **44. Antécédents ORL et exposition *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Antécédents de maladies auriculaires
 > 	- [ ] Exposition professionnelle au bruit
 > 	- [ ] Traumatismes auditifs antérieurs
-> - [ ] **46. Anamnèse médicamenteuse *(2 grilles sur 4)***
+> - [ ] **45. Anamnèse médicamenteuse *(2 grilles sur 4)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Médicaments ototoxiques
 > 	- [ ] Automédication récente *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Traitement cardiovasculaire *(1 grille sur 4)*
-> - [ ] **47. Anamnèse systémique *(2 grilles sur 4)***
+> - [ ] **46. Anamnèse systémique *(2 grilles sur 4)***
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Diabète
 > 	- [ ] Troubles neurologiques
 > 	- [ ] Facteurs psychosociaux *(Surdité brusque idiopathique gauche)*
-> - [ ] **48. Anamnèse sociale et professionnelle *(Surdité brusque idiopathique gauche)***
+> - [ ] **47. Anamnèse sociale et professionnelle *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Stress professionnel
-> - [ ] **49. Antécédents médicaux et ORL *(1 grille sur 4)***
+> - [ ] **48. Antécédents médicaux et ORL *(1 grille sur 4)***
 > 	- [ ] Otite moyenne dans l'enfance
 > 	- [ ] Méningite
 > 	- [ ] Cardiopathie ischémique
 > 	- [ ] Autres antécédents ORL
-> - [ ] **50. Impact fonctionnel sur la communication *(1 grille sur 4)***
+> - [ ] **49. Impact fonctionnel sur la communication *(1 grille sur 4)***
 > 	- [ ] Capacité à téléphoner
 > 	- [ ] Volume de la télévision/radio
 > 	- [ ] Compréhension en groupe
-> - [ ] **51. Anamnèse sociale et impact psychosocial *(1 grille sur 4)***
+> - [ ] **50. Anamnèse sociale et impact psychosocial *(1 grille sur 4)***
 > 	- [ ] Situation de vie
 > 	- [ ] Animaux de compagnie
 > 	- [ ] Condition physique
-> - [ ] **52. Activités sociales et loisirs *(1 grille sur 4)***
+> - [ ] **51. Activités sociales et loisirs *(1 grille sur 4)***
 > 	- [ ] Participation sociale actuelle
 > 	- [ ] Activités abandonnées
 > 	- [ ] Isolement social
@@ -243,9 +242,12 @@ cssclasses:
 > 	- [ ] Palpation des oreilles
 > 	- [ ] Otoscopie
 > 	- [ ] Tests de Rinne et Weber
-> - [ ] **3. Examen neurologique *(1 grille sur 4)***
-> 	- [ ] Examen ciblé des nerfs crâniens
-> 	- [ ] Examen ciblé de l'audition
+> - [ ] **3. Examen neurologique de base *(2 grilles sur 4)***
+> 	- [ ] Examen ciblé des nerfs crâniens *(1 grille sur 4)*
+> 	- [ ] Examen ciblé de l'audition *(1 grille sur 4)*
+> 	- [ ] Nerfs crâniens *(1 grille sur 4)*
+> 	- [ ] Équilibre *(1 grille sur 4)*
+> 	- [ ] Coordination *(1 grille sur 4)*
 > - [ ] **4. Tension artérielle *(1 grille sur 4)***
 > - [ ] **5. Inspection *(1 grille sur 4)***
 > - [ ] **6. Palpation (tragus / helix) *(1 grille sur 4)***
@@ -260,10 +262,9 @@ cssclasses:
 > - [ ] **15. Motricité / sensibilité / coordination *(1 grille sur 4)***
 > - [ ] **16. Inspection de l'oreille *(2 grilles sur 4)***
 > 	- [ ] Inspection du pavillon auriculaire *(Surdité brusque idiopathique gauche)*
-> 	- [ ] Inspection du conduit auditif externe visible *(Surdité brusque idiopathique gauche)*
+> 	- [ ] Inspection du conduit auditif externe visible
 > 	- [ ] Pavillon auriculaire droit *(1 grille sur 4)*
 > 	- [ ] Pavillon auriculaire gauche *(1 grille sur 4)*
-> 	- [ ] Conduit auditif externe visible *(1 grille sur 4)*
 > - [ ] **17. Palpation de l'oreille et recherche d'adénopathies *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Palpation du tragus
 > 	- [ ] Traction du pavillon auriculaire
@@ -292,10 +293,6 @@ cssclasses:
 > 	- [ ] Pression du tragus
 > 	- [ ] Traction du pavillon
 > 	- [ ] Palpation mastoïdienne
-> - [ ] **23. Examen neurologique de base *(1 grille sur 4)***
-> 	- [ ] Nerfs crâniens
-> 	- [ ] Équilibre
-> 	- [ ] Coordination
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Diagnostics différentiels *(2 grilles sur 4)* — *Presbyacousie · Surdité brusque idiopathique gauche***

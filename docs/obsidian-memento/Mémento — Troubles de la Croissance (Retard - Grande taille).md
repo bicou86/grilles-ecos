@@ -102,7 +102,11 @@ cssclasses:
 > - [ ] **13. Symptômes thyroïdiens *(Retard constitutionnel de croissance et de la puberté (RCCP))***
 > - [ ] **14. Odorat *(Retard constitutionnel de croissance et de la puberté (RCCP))***
 > - [ ] **15. Naissance et période périnatale *(Retard constitutionnel de croissance et de la puberté (RCCP))***
-> - [ ] **16. Jalons du développement *(Retard constitutionnel de croissance et de la puberté (RCCP))***
+> - [ ] **16. Anamnèse du développement**
+> 	- [ ] Développement moteur *(Maladie cœliaque)*
+> 	- [ ] Développement langagier *(Maladie cœliaque)*
+> 	- [ ] Interaction sociale *(Maladie cœliaque)*
+> 	- [ ] Préhension *(Maladie cœliaque)*
 > - [ ] **17. Antécédents *(Retard constitutionnel de croissance et de la puberté (RCCP))***
 > - [ ] **18. Médicaments *(Retard constitutionnel de croissance et de la puberté (RCCP))***
 > - [ ] **19. Taille des parents *(Retard constitutionnel de croissance et de la puberté (RCCP))***
@@ -165,23 +169,18 @@ cssclasses:
 > - [ ] **35. Vaccinations et infections *(Maladie cœliaque)***
 > 	- [ ] Vaccinations
 > 	- [ ] Infections récurrentes
-> - [ ] **36. Anamnèse du développement *(Maladie cœliaque)***
-> 	- [ ] Développement moteur
-> 	- [ ] Développement langagier
-> 	- [ ] Interaction sociale
-> 	- [ ] Préhension
-> - [ ] **37. Exposition à des toxiques *(Maladie cœliaque)***
+> - [ ] **36. Exposition à des toxiques *(Maladie cœliaque)***
 > 	- [ ] Tabagisme passif
 > 	- [ ] Alcool pendant la grossesse
 > 	- [ ] Drogues
 > 	- [ ] Médicaments
-> - [ ] **38. Anamnèse familiale *(Maladie cœliaque)***
+> - [ ] **37. Anamnèse familiale *(Maladie cœliaque)***
 > 	- [ ] Retard de croissance familial
 > 	- [ ] Puberté tardive chez les parents
 > 	- [ ] Maladies digestives
 > 	- [ ] Maladies endocriniennes
 > 	- [ ] Maladies génétiques
-> - [ ] **39. Anamnèse sociale *(Maladie cœliaque)***
+> - [ ] **38. Anamnèse sociale *(Maladie cœliaque)***
 > 	- [ ] Situation familiale
 > 	- [ ] Conditions de vie
 > 	- [ ] Garde de l'enfant

@@ -108,8 +108,8 @@ cssclasses:
 > 	- [ ] Troubles auditifs
 > - [ ] **3. Présence de douleurs *(AIT)***
 > 	- [ ] Pas de douleur associée aux symptômes neurologiques
-> - [ ] **4. Symptômes similaires par le passé *(AIT)***
-> 	- [ ] Premier épisode, jamais eu de symptômes similaires
+> - [ ] **4. Épisodes similaires par le passé *(2 grilles sur 4)***
+> 	- [ ] Premier épisode, jamais eu de symptômes similaires *(AIT)*
 > - [ ] **5. Antécédents médicaux et comorbidités *(AIT)***
 > 	- [ ] Maladies
 > 	- [ ] Hospitalisations
@@ -210,21 +210,20 @@ cssclasses:
 > 	- [ ] Durée / évolution
 > 	- [ ] Réponse aux symptômes (ce qui a été fait)
 > - [ ] **28. Recherche d'un état fébrile avant ou après l'épisode *(1 grille sur 4)***
-> - [ ] **29. Épisodes similaires par le passé *(1 grille sur 4)***
-> - [ ] **30. Recherche des signes d'alerte neurologiques (exclusion atteinte centrale) *(1 grille sur 4)***
+> - [ ] **29. Recherche des signes d'alerte neurologiques (exclusion atteinte centrale) *(1 grille sur 4)***
 > 	- [ ] Déficit d'un membre
 > 	- [ ] Trouble du langage
 > 	- [ ] Diplopie
 > 	- [ ] Trouble de la marche / équilibre
 > 	- [ ] Céphalée inhabituelle
-> - [ ] **31. Évalue le risque de complication oculaire par défaut de fermeture palpébrale *(1 grille sur 4)***
+> - [ ] **30. Évalue le risque de complication oculaire par défaut de fermeture palpébrale *(1 grille sur 4)***
 > 	- [ ] Recherche de symptômes oculaires (larmoiement, sécheresse, rougeur, douleur)
 > 	- [ ] Intention de protéger l'œil
-> - [ ] **32. État de santé *(1 grille sur 4)***
+> - [ ] **31. État de santé *(1 grille sur 4)***
 > 	- [ ] Maladies actuelles
 > 	- [ ] Antécédents médico-chirurgicaux
 > 	- [ ] Médicaments
-> - [ ] **33. Investigue les facteurs de risque / causes possibles *(1 grille sur 4)***
+> - [ ] **32. Investigue les facteurs de risque / causes possibles *(1 grille sur 4)***
 > 	- [ ] Herpès Zoster
 > 	- [ ] Maladie de Lyme
 > 	- [ ] IST (VIH, syphilis)

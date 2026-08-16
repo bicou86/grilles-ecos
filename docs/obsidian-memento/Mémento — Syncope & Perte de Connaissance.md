@@ -225,12 +225,15 @@ cssclasses:
 > - [ ] **96. Caractéristiques de la crise *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Localisation
 > 	- [ ] Type
-> - [ ] **97. Phase post-critique *(Première crise convulsive tonico-clonique)***
-> 	- [ ] Désorientation
-> 	- [ ] Somnolence
-> 	- [ ] Agitation
-> 	- [ ] Myalgies
-> 	- [ ] Amnésie
+> - [ ] **97. Phase post-critique *(2 grilles sur 7)***
+> 	- [ ] Désorientation *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Somnolence *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Agitation *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Myalgies *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Amnésie *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Réveil avec famille autour de lui *(1 grille sur 7)*
+> 	- [ ] Orientation conservée (sait où il est, reconnaît ses parents) *(1 grille sur 7)*
+> 	- [ ] Récupération rapide et complète *(1 grille sur 7)*
 > - [ ] **98. Facteurs de provocation *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Privation de sommeil
 > 	- [ ] Consommation d'alcool/drogues
@@ -422,19 +425,15 @@ cssclasses:
 > 	- [ ] Développement
 > 	- [ ] Circonstances de survenue
 > 	- [ ] Fréquence
-> - [ ] **141. État post-critique *(1 grille sur 7)***
-> 	- [ ] Réveil avec famille autour de lui
-> 	- [ ] Orientation conservée (sait où il est, reconnaît ses parents)
-> 	- [ ] Récupération rapide et complète
-> - [ ] **142. Recherche de signes d'hypotension orthostatique *(1 grille sur 7)***
+> - [ ] **141. Recherche de signes d'hypotension orthostatique *(1 grille sur 7)***
 > 	- [ ] Épisode en se levant (changement de position)
 > 	- [ ] Vertiges et voile devant les yeux
-> - [ ] **143. Antécédents médicaux et facteurs prédisposants *(1 grille sur 7)***
+> - [ ] **142. Antécédents médicaux et facteurs prédisposants *(1 grille sur 7)***
 > 	- [ ] Anémie ferriprive en traitement (fer per os et IV)
 > 	- [ ] Jamais hospitalisé ni opéré
 > 	- [ ] Allergie au pollen
 > 	- [ ] Vaccins à jour
-> - [ ] **144. Habitudes et facteurs de risque *(1 grille sur 7)***
+> - [ ] **143. Habitudes et facteurs de risque *(1 grille sur 7)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Alimentation
 > 	- [ ] Activité physique
@@ -448,7 +447,7 @@ cssclasses:
 > 	- [ ] Auscultation cardiaque *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Auscultation pulmonaire *(Première crise convulsive tonico-clonique)*
 > - [ ] **5. Auscultation cardiaque *(Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **6. Auscultation des carotides *(Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **6. Auscultation des carotides *(Première crise convulsive tonico-clonique · Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **7. Épreuves de maintien *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **8. Épreuve de maintien des bras *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **9. Épreuve de maintien des jambes *(Première crise épileptique focale bilatéralisée)***
@@ -484,7 +483,11 @@ cssclasses:
 > - [ ] **39. Reflux hépato-jugulaire *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **40. Perfusion périphérique / pouls *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **41. Auscultation *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **42. Test de Schellong *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **42. Test de Schellong complet *(2 grilles sur 7)***
+> 	- [ ] Position couchée 10 minutes *(1 grille sur 7)*
+> 	- [ ] Mesures répétées en orthostatisme *(1 grille sur 7)*
+> 	- [ ] Documentation des symptômes *(1 grille sur 7)*
+> 	- [ ] Interprétation correcte *(1 grille sur 7)*
 > - [ ] **43. Auscultation pulmonaire *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **44. Conscience / orientation *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **45. Meningisme *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
@@ -500,28 +503,21 @@ cssclasses:
 > 	- [ ] Force motrice
 > 	- [ ] Tonus
 > 	- [ ] Réflexes ostéo-tendineux
-> - [ ] **54. Auscultation carotidienne *(Première crise convulsive tonico-clonique)***
-> - [ ] **55. Hygiène des mains *(1 grille sur 7)***
+> - [ ] **54. Hygiène des mains *(1 grille sur 7)***
 > 	- [ ] Désinfection des mains avant l'examen
-> - [ ] **56. Mesure de la pression artérielle orthostatique *(1 grille sur 7)***
+> - [ ] **55. Mesure de la pression artérielle orthostatique *(1 grille sur 7)***
 > 	- [ ] Mesure en position couchée (après 5 min de repos)
 > 	- [ ] Mesure en position debout (immédiatement)
 > 	- [ ] Mesure en position debout (après 3 min)
 > 	- [ ] Calcul de la différence
-> - [ ] **57. Test de Schellong complet *(1 grille sur 7)***
-> 	- [ ] Position couchée 10 minutes
-> 	- [ ] Mesures répétées en orthostatisme
-> 	- [ ] Documentation des symptômes
-> 	- [ ] Interprétation correcte
-> - [ ] **58. Examen cardiovasculaire *(HypoTA orthostatique)***
+> - [ ] **56. Examen cardiovasculaire *(HypoTA orthostatique)***
 > 	- [ ] Auscultation cardiaque (4 foyers)
 > 	- [ ] Palpation du pouls (fréquence et régularité) *(1 grille sur 7)*
 > 	- [ ] Recherche de souffles *(1 grille sur 7)*
-> 	- [ ] Signes d'insuffisance cardiaque *(1 grille sur 7)*
+> 	- [ ] Recherche de signes d'insuffisance cardiaque
 > 	- [ ] Recherche de souffle ou trouble du rythme *(1 grille sur 7)*
 > 	- [ ] Palpation des pouls périphériques *(1 grille sur 7)*
-> 	- [ ] Recherche de signes d'insuffisance cardiaque *(1 grille sur 7)*
-> - [ ] **59. Examen pulmonaire *(2 grilles sur 7)***
+> - [ ] **57. Examen pulmonaire *(2 grilles sur 7)***
 > 	- [ ] Inspection thoracique *(1 grille sur 7)*
 > 	- [ ] Auscultation pulmonaire bilatérale *(1 grille sur 7)*
 > 	- [ ] Recherche de râles *(1 grille sur 7)*
@@ -530,12 +526,12 @@ cssclasses:
 > 	- [ ] Recherche de râles crépitants *(BAV)*
 > 	- [ ] Signes de congestion *(BAV)*
 > 	- [ ] Épanchement pleural *(BAV)*
-> - [ ] **60. Inspection cutanée et vasculaire *(1 grille sur 7)***
+> - [ ] **58. Inspection cutanée et vasculaire *(1 grille sur 7)***
 > 	- [ ] Recherche de pâleur
 > 	- [ ] Présence de varices
 > 	- [ ] État d'hydratation cutanée
 > 	- [ ] Temps de recoloration capillaire
-> - [ ] **61. Examen neurologique de dépistage *(2 grilles sur 7)***
+> - [ ] **59. Examen neurologique de dépistage *(2 grilles sur 7)***
 > 	- [ ] Orientation temporo-spatiale *(1 grille sur 7)*
 > 	- [ ] Équilibre et coordination *(1 grille sur 7)*
 > 	- [ ] Réflexes ostéo-tendineux
@@ -543,84 +539,83 @@ cssclasses:
 > 	- [ ] État de conscience (score de Glasgow) *(BAV)*
 > 	- [ ] Déficit focal *(BAV)*
 > 	- [ ] Signes méningés *(BAV)*
-> - [ ] **62. Recherche de signes d'hypovolémie *(1 grille sur 7)***
+> - [ ] **60. Recherche de signes d'hypovolémie *(1 grille sur 7)***
 > 	- [ ] Pli cutané
 > 	- [ ] Sécheresse des muqueuses
 > 	- [ ] Yeux enfoncés
 > 	- [ ] Pression veineuse jugulaire
-> - [ ] **63. Signes vitaux et état général *(BAV)***
-> 	- [ ] État de conscience actuel
-> 	- [ ] Pression artérielle
-> 	- [ ] Saturation en oxygène
-> 	- [ ] Température
-> - [ ] **64. Examen cardiaque approfondi *(BAV)***
+> - [ ] **61. Constantes vitales et état général *(2 grilles sur 7)***
+> 	- [ ] État de conscience actuel *(BAV)*
+> 	- [ ] Pression artérielle *(BAV)*
+> 	- [ ] Saturation en oxygène *(BAV)*
+> 	- [ ] Température *(BAV)*
+> 	- [ ] Mesure de la tension artérielle *(1 grille sur 7)*
+> 	- [ ] Fréquence cardiaque et pouls *(1 grille sur 7)*
+> 	- [ ] État d'hydratation *(1 grille sur 7)*
+> 	- [ ] Évaluation générale *(1 grille sur 7)*
+> - [ ] **62. Examen cardiaque approfondi *(BAV)***
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Régularité du rythme
 > 	- [ ] Auscultation des bruits cardiaques
 > 	- [ ] Recherche de souffles
-> - [ ] **65. Palpation des pouls périphériques *(BAV)***
+> - [ ] **63. Palpation des pouls périphériques *(BAV)***
 > 	- [ ] Pouls carotidiens (bilatéral)
 > 	- [ ] Pouls radiaux (synchronisme)
 > 	- [ ] Pouls fémoraux
 > 	- [ ] Pouls pédieux
-> - [ ] **66. Recherche de signes d'insuffisance cardiaque *(BAV)***
+> - [ ] **64. Recherche de signes d'insuffisance cardiaque *(BAV)***
 > 	- [ ] Turgescence jugulaire
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Hépatomégalie
-> - [ ] **67. Examen vasculaire *(BAV)***
+> - [ ] **65. Examen vasculaire *(BAV)***
 > 	- [ ] Auscultation carotidienne (souffles)
 > 	- [ ] Palpation aortique
 > 	- [ ] Recherche d'anévrisme
 > 	- [ ] Signes d'artériopathie
-> - [ ] **68. Inspection générale *(BAV)***
+> - [ ] **66. Inspection générale *(BAV)***
 > 	- [ ] Coloration cutanée
 > 	- [ ] Signes de traumatisme (chute)
 > 	- [ ] Morsure de langue
 > 	- [ ] Perte d'urines
-> - [ ] **69. A - Airways - initie une prise en charge ABCDE *(Hypoglycémie)***
+> - [ ] **67. A - Airways - initie une prise en charge ABCDE *(Hypoglycémie)***
 > 	- [ ] Dans les 3 premières minutes après le début station
 > 	- [ ] Si patient·e en phase agitée - déclare à voix haute que le A est ok
 > 	- [ ] Si patient·e en phase endormie - inspecte l'intérieur de la cavité buccale
-> - [ ] **70. B - Breathing *(Hypoglycémie)***
+> - [ ] **68. B - Breathing *(Hypoglycémie)***
 > 	- [ ] Mesure ou demande la fréquence respiratoire
 > 	- [ ] Demande la mesure de saturation de l'hémoglobine (SpO2)
 > 	- [ ] Auscultation de min 4 plages pulmonaires
 > 	- [ ] Thorax visible durant l'examen clinique (pas recouvert)
-> - [ ] **71. C - Circulation *(Hypoglycémie)***
+> - [ ] **69. C - Circulation *(Hypoglycémie)***
 > 	- [ ] Mesure ou demande la fréquence cardiaque
 > 	- [ ] Demande la mesure de la tension artérielle
 > 	- [ ] Palpations des pouls périphériques aux 4 extrémités
 > 	- [ ] Recherche des signes d'hémorragie
 > 	- [ ] Mesure du temps de recoloration
-> - [ ] **72. D - Disability (1) - Glasgow Coma Scale *(Hypoglycémie)***
+> - [ ] **70. D - Disability (1) - Glasgow Coma Scale *(Hypoglycémie)***
 > 	- [ ] Ouverture des yeux
 > 	- [ ] Réponse verbale
 > 	- [ ] Réponse motrice
-> - [ ] **73. D - Disability (2) - Examen neurologique basique *(Hypoglycémie)***
+> - [ ] **71. D - Disability (2) - Examen neurologique basique *(Hypoglycémie)***
 > 	- [ ] Réflexes pupillaires
 > 	- [ ] Observation des pupilles (recherche anisocorie)
 > 	- [ ] Motricité globale des 4 membres
 > 	- [ ] Signes méningés
-> - [ ] **74. D - Disability (3) - mesure du glucose capillaire *(Hypoglycémie)***
-> - [ ] **75. E - Exposure *(Hypoglycémie)***
+> - [ ] **72. D - Disability (3) - mesure du glucose capillaire *(Hypoglycémie)***
+> - [ ] **73. E - Exposure *(Hypoglycémie)***
 > 	- [ ] Demande mesure T°
 > 	- [ ] Examen sommaire "tête aux pieds"
-> - [ ] **76. Constantes vitales et état général *(1 grille sur 7)***
-> 	- [ ] Mesure de la tension artérielle
-> 	- [ ] Fréquence cardiaque et pouls
-> 	- [ ] État d'hydratation
-> 	- [ ] Évaluation générale
-> - [ ] **77. Test d'hypotension orthostatique *(1 grille sur 7)***
+> - [ ] **74. Test d'hypotension orthostatique *(1 grille sur 7)***
 > 	- [ ] Mesure TA en position couchée
 > 	- [ ] Mesure TA après 3 minutes debout
 > 	- [ ] Recherche de symptômes au lever
 > 	- [ ] Interprétation du test (chute ≥20/10 mmHg)
-> - [ ] **78. Examen neurologique de base *(1 grille sur 7)***
+> - [ ] **75. Examen neurologique de base *(1 grille sur 7)***
 > 	- [ ] État de conscience et orientation
 > 	- [ ] Recherche de déficit neurologique focal
 > 	- [ ] Reflexes pupillaires
-> - [ ] **79. Recherche de signes d'anémie *(1 grille sur 7)***
+> - [ ] **76. Recherche de signes d'anémie *(1 grille sur 7)***
 > 	- [ ] Coloration des conjonctives
 > 	- [ ] Coloration des muqueuses
 > 	- [ ] Recherche de pâleur cutanée
@@ -636,47 +631,47 @@ cssclasses:
 > 	- [ ] Trouble du rythme cardiaque : bloc auriculo-ventriculaire
 > 	- [ ] Type de bloc AV suspecté
 > 	- [ ] Risque vital immédiat
-> - [ ] **3. ECG - Réalisation et interprétation**
+> - [ ] **3. Planification du suivi**
+> 	- [ ] Coordination avec le médecin traitant
+> 	- [ ] Consultation cardiologie urgente
+> 	- [ ] Suivi post-implantation
+> 	- [ ] Contrôles réguliers du pacemaker
+> - [ ] **4. ECG - Réalisation et interprétation**
 > 	- [ ] ECG 12 dérivations en urgence
 > 	- [ ] Identification du bloc AV type Mobitz
 > 	- [ ] Analyse de l'intervalle PR
 > 	- [ ] Recherche d'autres anomalies
-> - [ ] **4. Examens biologiques urgents**
+> - [ ] **5. Examens biologiques urgents**
 > 	- [ ] Troponine
 > 	- [ ] BNP/NT-proBNP
 > 	- [ ] Ionogramme et fonction rénale
 > 	- [ ] FSC
 > 	- [ ] TSH si indication
-> - [ ] **5. Examens complémentaires cardiologiques**
+> - [ ] **6. Examens complémentaires cardiologiques**
 > 	- [ ] Échocardiographie (exclure infarctus, cardiomyopathie)
 > 	- [ ] Monitoring ECG continu
 > 	- [ ] Holter ECG 24h si sortie
 > 	- [ ] Test d'effort différé
-> - [ ] **6. Prise en charge immédiate**
+> - [ ] **7. Prise en charge immédiate**
 > 	- [ ] Mise sous scope cardiaque
 > 	- [ ] Voie veineuse périphérique
 > 	- [ ] Oxygénothérapie si besoin
 > 	- [ ] Atropine prête si bradycardie symptomatique
-> - [ ] **7. Traitement définitif**
+> - [ ] **8. Traitement définitif**
 > 	- [ ] Indication de stimulateur cardiaque permanent
 > 	- [ ] Type de pacemaker approprié
 > 	- [ ] Délai d'implantation
 > 	- [ ] Pacing temporaire si nécessaire
-> - [ ] **8. Révision du traitement médicamenteux**
+> - [ ] **9. Révision du traitement médicamenteux**
 > 	- [ ] Arrêt des médicaments bradycardisants
 > 	- [ ] Adaptation du Valsartan
 > 	- [ ] Gestion des antidiabétiques
 > 	- [ ] Prévention secondaire cardiovasculaire
-> - [ ] **9. Éducation et prévention**
+> - [ ] **10. Éducation et prévention**
 > 	- [ ] Explication de la pathologie
 > 	- [ ] Signes d'alarme à reconnaître
 > 	- [ ] Conduite automobile temporairement interdite
 > 	- [ ] Port de la carte de porteur de pacemaker
-> - [ ] **10. Organisation du suivi**
-> 	- [ ] Consultation cardiologie urgente
-> 	- [ ] Suivi post-implantation
-> 	- [ ] Contrôles réguliers du pacemaker
-> 	- [ ] Coordination avec le médecin traitant
 
 > [!success] 💊 Management — si Hypoglycémie
 > - [ ] **1. Équipement - propose de mettre un accès veineux (voie veineuse périphérique)**
@@ -701,55 +696,55 @@ cssclasses:
 > 	- [ ] Justification clinique
 > 	- [ ] Critères diagnostiques (chute TA >20/10 mmHg)
 > 	- [ ] Sévérité évaluée
-> - [ ] **3. Examens complémentaires - Monitoring *(1 grille sur 2)***
+> - [ ] **3. Propose des examens complémentaires appropriés *(1 grille sur 2)***
+> 	- [ ] ECG 12 dérivations
+> 	- [ ] Bilan sanguin (FSC, ionogramme, glycémie)
+> 	- [ ] Dosage de l'hémoglobine (contrôle anémie)
+> 	- [ ] Holter ECG si suspicion cardiaque
+> - [ ] **4. Planification du suivi *(1 grille sur 2)***
+> 	- [ ] Rendez-vous de contrôle programmé
+> 	- [ ] Surveillance de l'efficacité thérapeutique
+> 	- [ ] Ajustement selon l'évolution
+> 	- [ ] Coordination avec le médecin traitant
+> - [ ] **5. Examens complémentaires - Monitoring *(1 grille sur 2)***
 > 	- [ ] Mesure de la TA sur 3 jours différents
 > 	- [ ] Holter tensionnel 24h
 > 	- [ ] Test de Schellong standardisé
 > 	- [ ] Tilt-test si nécessaire
-> - [ ] **4. Examens complémentaires - Biologie *(1 grille sur 2)***
+> - [ ] **6. Examens complémentaires - Biologie *(1 grille sur 2)***
 > 	- [ ] FSC (anémie)
 > 	- [ ] Ionogramme (déshydratation)
 > 	- [ ] Fonction rénale
 > 	- [ ] TSH (hypothyroïdie)
 > 	- [ ] Cortisol (insuffisance surrénalienne)
-> - [ ] **5. Examens complémentaires - Cardiologie *(1 grille sur 2)***
+> - [ ] **7. Examens complémentaires - Cardiologie *(1 grille sur 2)***
 > 	- [ ] ECG de repos
 > 	- [ ] Échocardiographie
 > 	- [ ] Holter ECG si suspicion de troubles du rythme
 > 	- [ ] Test d'effort si indiqué
-> - [ ] **6. Mesures non médicamenteuses *(1 grille sur 2)***
+> - [ ] **8. Mesures non médicamenteuses *(1 grille sur 2)***
 > 	- [ ] Hydratation adéquate (>1,5L/jour)
 > 	- [ ] Augmentation des apports en sel
 > 	- [ ] Lever progressif en 3 temps
 > 	- [ ] Éviter la station debout prolongée
 > 	- [ ] Bas de contention si varices
 > 	- [ ] Surélévation de la tête du lit
-> - [ ] **7. Révision médicamenteuse *(1 grille sur 2)***
+> - [ ] **9. Révision médicamenteuse *(1 grille sur 2)***
 > 	- [ ] Identification des médicaments hypotenseurs
 > 	- [ ] Ajustement posologique
 > 	- [ ] Changement d'horaire de prise
 > 	- [ ] Substitution si nécessaire
-> - [ ] **8. Traitement médicamenteux spécifique *(1 grille sur 2)***
+> - [ ] **10. Traitement médicamenteux spécifique *(1 grille sur 2)***
 > 	- [ ] Fludrocortisone (Florinef® 0,1mg/jour)
 > 	- [ ] Posologie progressive (max 0,5mg/jour)
 > 	- [ ] Surveillance des effets secondaires
 > 	- [ ] Alternatives (midodrine si échec)
-> - [ ] **9. Éducation du patient et prévention *(1 grille sur 2)***
+> - [ ] **11. Éducation du patient et prévention *(1 grille sur 2)***
 > 	- [ ] Explication de la pathologie
 > 	- [ ] Reconnaissance des symptômes d'alerte
 > 	- [ ] Prévention des chutes
 > 	- [ ] Adaptation de l'environnement
-> - [ ] **10. Planification du suivi *(1 grille sur 2)***
-> 	- [ ] Rendez-vous de contrôle programmé
-> 	- [ ] Surveillance de l'efficacité thérapeutique
-> 	- [ ] Ajustement selon l'évolution
-> 	- [ ] Coordination avec le médecin traitant
-> - [ ] **11. Évoque le diagnostic principal de syncope orthostatique *(1 grille sur 2)***
-> - [ ] **12. Propose des examens complémentaires appropriés *(1 grille sur 2)***
-> 	- [ ] ECG 12 dérivations
-> 	- [ ] Bilan sanguin (FSC, ionogramme, glycémie)
-> 	- [ ] Dosage de l'hémoglobine (contrôle anémie)
-> 	- [ ] Holter ECG si suspicion cardiaque
+> - [ ] **12. Évoque le diagnostic principal de syncope orthostatique *(1 grille sur 2)***
 > - [ ] **13. Propose une prise en charge adaptée *(1 grille sur 2)***
 > 	- [ ] Correction de l'anémie (optimisation traitement martial)
 > 	- [ ] Conseils préventifs (lever progressif, hydratation)
@@ -763,7 +758,7 @@ cssclasses:
 > [!success] 💊 Management — si Première crise convulsive tonico-clonique
 > - [ ] **1. Diagnostics différentiels**
 > - [ ] **2. Diagnostic principal**
-> - [ ] **3. Examens complémentaires proposés**
+> - [ ] **3. Propose des examens complémentaires appropriés**
 > 	- [ ] Biologie : ionogramme, calcium, TSH, CK
 > 	- [ ] Bilan hépatique : transaminases, Gamma-GT, phosphatases alcalines, albumine, Quick/aPTT
 > 	- [ ] Toxicologie : dépistage drogues, alcoolémie, glycémie
@@ -780,7 +775,7 @@ cssclasses:
 > 	- [ ] Chirurgie si tumeur
 > 	- [ ] Shunt si hydrocéphalie
 > 	- [ ] Antibiothérapie/antiviraux si méningite
-> - [ ] **7. Orientation et suivi**
+> - [ ] **7. Planification du suivi**
 
 > [!success] 💊 Management — si Première crise épileptique focale bilatéralisée
 > - [ ] **1. Glycémie capillaire**

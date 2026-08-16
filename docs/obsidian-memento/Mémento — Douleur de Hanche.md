@@ -258,11 +258,16 @@ cssclasses:
 > - [ ] **26. Phase 1: Articulation de la hanche *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **27. Phase 2: ISG (signe classique de Mennell) *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **28. Phase 3: Jonction lombo-sacrée *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
-> - [ ] **29. Observation de la marche et de la posture *(Nécrose aseptique de la tête fémorale gauche)***
-> 	- [ ] Analyse de la démarche
-> 	- [ ] Phase d'appui et de balancement
-> 	- [ ] Utilisation d'aide à la marche
-> 	- [ ] Signe de Trendelenburg en position debout
+> - [ ] **29. Observation de la marche et de la posture *(Coxarthrose (arthrose de hanche) · Nécrose aseptique de la tête fémorale gauche)***
+> 	- [ ] Analyse de la démarche *(Nécrose aseptique de la tête fémorale gauche)*
+> 	- [ ] Phase d'appui et de balancement *(Nécrose aseptique de la tête fémorale gauche)*
+> 	- [ ] Utilisation d'aide à la marche *(Nécrose aseptique de la tête fémorale gauche)*
+> 	- [ ] Signe de Trendelenburg en position debout *(Nécrose aseptique de la tête fémorale gauche)*
+> 	- [ ] Marche avec boiterie de Duchenne *(Coxarthrose (arthrose de hanche))*
+> 	- [ ] Signe de Trendelenburg *(Coxarthrose (arthrose de hanche))*
+> 	- [ ] Déformation membre inférieur en rotation asymétrique *(Coxarthrose (arthrose de hanche))*
+> 	- [ ] Cicatrices *(Coxarthrose (arthrose de hanche))*
+> 	- [ ] Tuméfaction *(Coxarthrose (arthrose de hanche))*
 > - [ ] **30. Inspection de la hanche (bilatérale comparative) *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Recherche de déformation
 > 	- [ ] Gonflement localisé
@@ -312,43 +317,37 @@ cssclasses:
 > 	- [ ] Palpation des pouls périphériques
 > 	- [ ] Recherche de signes d'insuffisance artérielle
 > 	- [ ] Recherche de varices
-> - [ ] **38. Inspection de la marche et posture *(Coxarthrose (arthrose de hanche))***
-> 	- [ ] Marche avec boiterie de Duchenne
-> 	- [ ] Signe de Trendelenburg
-> 	- [ ] Déformation membre inférieur en rotation asymétrique
-> 	- [ ] Cicatrices
-> 	- [ ] Tuméfaction
-> - [ ] **39. Palpation de la hanche *(Coxarthrose (arthrose de hanche))***
+> - [ ] **38. Palpation de la hanche *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Repères anatomiques: crête iliaque, épine iliaque antéro-supérieure
 > 	- [ ] Pubis, ligament inguinal, symphyse pubienne
 > 	- [ ] Muscles rectus femoris (droit fémoral), quadriceps
 > 	- [ ] Insertion des adducteurs
 > 	- [ ] Grand trochanter
 > 	- [ ] Épine iliaque postéro-supérieure, sacrum, muscle grand glutéal
-> - [ ] **40. Recherche de points douloureux *(Coxarthrose (arthrose de hanche))***
+> - [ ] **39. Recherche de points douloureux *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Chaleur
 > 	- [ ] Tuméfaction
 > 	- [ ] Douleur à la palpation profonde
 > 	- [ ] Crépitations possibles
-> - [ ] **41. Examen fonctionnel - Mobilité passive *(Coxarthrose (arthrose de hanche))***
+> - [ ] **40. Examen fonctionnel - Mobilité passive *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Flexion
 > 	- [ ] Abduction
 > 	- [ ] Adduction
 > 	- [ ] Rotation interne
 > 	- [ ] Rotation externe
 > 	- [ ] Extension
-> - [ ] **42. Examen fonctionnel - Mobilité active *(Coxarthrose (arthrose de hanche))***
+> - [ ] **41. Examen fonctionnel - Mobilité active *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Pas ou peu d'examen actif nécessaire
 > 	- [ ] Mesures d'amplitudes si changements de position
 > 	- [ ] Démarche logique pour éviter allers-retours position
-> - [ ] **43. Tests de force musculaire *(Coxarthrose (arthrose de hanche))***
+> - [ ] **42. Tests de force musculaire *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Fléchisseurs de hanche
 > 	- [ ] Extenseurs de hanche
 > 	- [ ] Abducteurs (moyen fessier)
 > 	- [ ] Adducteurs
 > 	- [ ] Rotateurs internes
 > 	- [ ] Rotateurs externes
-> - [ ] **44. Mesure de l'inégalité de longueur des membres *(Coxarthrose (arthrose de hanche))***
+> - [ ] **43. Mesure de l'inégalité de longueur des membres *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Mesure vraie: épine iliaque antéro-supérieure à malléole interne
 > 	- [ ] Mesure apparente: ombilic à malléole interne
 > 	- [ ] Recherche d'une bascule du bassin

@@ -88,12 +88,17 @@ cssclasses:
 > - [ ] **2. Question ouverte d'entrée *(Entorse cervicale)***
 > - [ ] **3. Clarification du terme « coup du lapin » *(Entorse cervicale)***
 > - [ ] **4. Date de l'accident *(Entorse cervicale)***
-> - [ ] **5. Circonstances détaillées de l'accident *(Entorse cervicale)***
-> 	- [ ] Mécanisme précis
-> 	- [ ] Vitesse estimée de l'impact
-> 	- [ ] Port de la ceinture
-> 	- [ ] Impact sur la tête
-> 	- [ ] Prise en charge immédiate
+> - [ ] **5. Circonstances détaillées de l'accident *(2 grilles sur 3)***
+> 	- [ ] Mécanisme précis *(Entorse cervicale)*
+> 	- [ ] Vitesse estimée de l'impact *(Entorse cervicale)*
+> 	- [ ] Port de la ceinture *(Entorse cervicale)*
+> 	- [ ] Impact sur la tête *(Entorse cervicale)*
+> 	- [ ] Prise en charge immédiate *(Entorse cervicale)*
+> 	- [ ] Mécanisme *(1 grille sur 3)*
+> 	- [ ] Réception *(1 grille sur 3)*
+> 	- [ ] Port du casque *(1 grille sur 3)*
+> 	- [ ] Perte de connaissance *(1 grille sur 3)*
+> 	- [ ] Heure de l'accident *(1 grille sur 3)*
 > - [ ] **6. Caractérisation des céphalées *(Entorse cervicale)***
 > 	- [ ] Localisation
 > 	- [ ] Évolution dans la journée
@@ -128,69 +133,60 @@ cssclasses:
 > - [ ] **18. Résumé et questions du patient *(Entorse cervicale)***
 > 	- [ ] Résumé de la situation
 > 	- [ ] Réponse aux inquiétudes
-> - [ ] **19. Circonstances de l'accident *(1 grille sur 3)***
-> 	- [ ] Mécanisme
-> 	- [ ] Réception
-> 	- [ ] Port du casque
-> 	- [ ] Perte de connaissance
-> 	- [ ] Heure de l'accident
-> - [ ] **20. Plaintes principales du patient *(1 grille sur 3)***
+> - [ ] **19. Plaintes principales du patient *(1 grille sur 3)***
 > 	- [ ] Douleur épaule droite
 > 	- [ ] Douleur pelvienne
 > 	- [ ] Capacité de marche
 > 	- [ ] Évolution des symptômes
-> - [ ] **21. Anamnèse par systèmes - symptômes associés *(1 grille sur 3)***
+> - [ ] **20. Anamnèse par systèmes - symptômes associés *(1 grille sur 3)***
 > 	- [ ] Nausées
 > 	- [ ] Vomissements
 > 	- [ ] Vertiges
 > 	- [ ] Céphalées
 > 	- [ ] Troubles visuels
 > 	- [ ] Douleur abdominale
-> - [ ] **22. Antécédents médicaux et allergies *(1 grille sur 3)***
+> - [ ] **21. Antécédents médicaux et allergies *(Fracture du bassin (hémorragique))***
 > 	- [ ] Antécédents médicaux
-> 	- [ ] Chirurgies antérieures
-> 	- [ ] Médicaments actuels
+> 	- [ ] Chirurgies antérieures *(1 grille sur 3)*
+> 	- [ ] Médicaments actuels *(1 grille sur 3)*
 > 	- [ ] Allergies
-> - [ ] **23. Habitudes et contexte social *(1 grille sur 3)***
+> 	- [ ] Médicaments *(1 grille sur 3)*
+> 	- [ ] Vaccins *(1 grille sur 3)*
+> - [ ] **22. Habitudes et contexte social *(1 grille sur 3)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
 > 	- [ ] Profession
-> - [ ] **24. ABCDE - Airways *(1 grille sur 3)***
+> - [ ] **23. ABCDE - Airways *(1 grille sur 3)***
 > 	- [ ] Vérifier la perméabilité des voies aériennes
 > 	- [ ] Stabilisation de la colonne cervicale
 > 	- [ ] Évaluation de la capacité de parler
-> - [ ] **25. ABCDE - Breathing *(1 grille sur 3)***
+> - [ ] **24. ABCDE - Breathing *(1 grille sur 3)***
 > 	- [ ] Évaluation de la respiration
 > 	- [ ] Administration d'oxygène à haut débit
 > 	- [ ] Recherche de signes de détresse respiratoire
-> - [ ] **26. ABCDE - Circulation *(1 grille sur 3)***
+> - [ ] **25. ABCDE - Circulation *(1 grille sur 3)***
 > 	- [ ] Évaluation hémodynamique
 > 	- [ ] Recherche d'hémorragie externe
 > 	- [ ] Mise en place de voies veineuses
-> - [ ] **27. ABCDE - Disability *(1 grille sur 3)***
+> - [ ] **26. ABCDE - Disability *(1 grille sur 3)***
 > 	- [ ] Évaluation neurologique
 > 	- [ ] Glasgow Coma Scale
 > 	- [ ] Examen des pupilles
-> - [ ] **28. ABCDE - Exposure *(1 grille sur 3)***
+> - [ ] **27. ABCDE - Exposure *(1 grille sur 3)***
 > 	- [ ] Déshabillage complet du patient
 > 	- [ ] Prévention de l'hypothermie
 > 	- [ ] Recherche de lésions cachées
-> - [ ] **29. Anamnèse ciblée trauma *(1 grille sur 3)***
+> - [ ] **28. Anamnèse ciblée trauma *(1 grille sur 3)***
 > 	- [ ] Mécanisme de l'accident
 > 	- [ ] Port de la ceinture de sécurité
 > 	- [ ] Perte de connaissance
 > 	- [ ] Douleur principale
-> - [ ] **30. Toxiques *(1 grille sur 3)***
+> - [ ] **29. Toxiques *(1 grille sur 3)***
 > 	- [ ] Alcool
 > 	- [ ] Cannabis
 > 	- [ ] Autres substances
 > 	- [ ] Heure de la dernière consommation
-> - [ ] **31. Antécédents et allergies *(1 grille sur 3)***
-> 	- [ ] Antécédents médicaux
-> 	- [ ] Médicaments
-> 	- [ ] Allergies
-> 	- [ ] Vaccins
 
 > [!tip] 🩺 Status
 > - [ ] **1. Examen sommaire des nerfs crâniens *(Entorse cervicale)***

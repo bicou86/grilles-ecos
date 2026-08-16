@@ -98,7 +98,13 @@ cssclasses:
 > - [ ] **12. Facteurs aggravants *(Colique néphrétique sur calcul urétéral distal gauche)***
 > - [ ] **13. Facteurs soulageants / Mesures prises *(Colique néphrétique sur calcul urétéral distal gauche)***
 > - [ ] **14. Retentissement *(Colique néphrétique sur calcul urétéral distal gauche)***
-> - [ ] **15. Symptômes associés *(2 grilles sur 3)***
+> - [ ] **15. Symptômes associés et généraux**
+> 	- [ ] Fièvre *(1 grille sur 3)*
+> 	- [ ] Frissons *(1 grille sur 3)*
+> 	- [ ] Troubles du transit *(1 grille sur 3)*
+> 	- [ ] Pneumaturie *(1 grille sur 3)*
+> 	- [ ] Fécalurie *(1 grille sur 3)*
+> 	- [ ] État général *(1 grille sur 3)*
 > - [ ] **16. Miction *(Colique néphrétique sur calcul urétéral distal gauche)***
 > - [ ] **17. Hématurie *(Colique néphrétique sur calcul urétéral distal gauche)***
 > - [ ] **18. Dysurie / pollakiurie *(Colique néphrétique sur calcul urétéral distal gauche)***
@@ -172,32 +178,25 @@ cssclasses:
 > 	- [ ] Faiblesse du jet
 > 	- [ ] Pollakiurie habituelle
 > 	- [ ] Incontinence par regorgement
-> - [ ] **71. Symptômes associés et généraux *(1 grille sur 3)***
-> 	- [ ] Fièvre
-> 	- [ ] Frissons
-> 	- [ ] Troubles du transit
-> 	- [ ] Pneumaturie
-> 	- [ ] Fécalurie
-> 	- [ ] État général
-> - [ ] **72. Recherche des types d'hématurie *(1 grille sur 3)***
+> - [ ] **71. Recherche des types d'hématurie *(1 grille sur 3)***
 > 	- [ ] Hématurie initiale
 > 	- [ ] Hématurie terminale
 > 	- [ ] Hématurie totale
 > 	- [ ] Quantification
 > 	- [ ] Chronologie
-> - [ ] **73. Évaluation de l'incontinence urinaire *(1 grille sur 3)***
+> - [ ] **72. Évaluation de l'incontinence urinaire *(1 grille sur 3)***
 > 	- [ ] Incontinence par regorgement
 > 	- [ ] Incontinence de stress
 > 	- [ ] Incontinence d'urgence
 > 	- [ ] Circonstances déclenchantes
 > 	- [ ] Retentissement sur la qualité de vie
-> - [ ] **74. Antécédents médicaux et facteurs de risque *(1 grille sur 3)***
+> - [ ] **73. Antécédents médicaux et facteurs de risque *(1 grille sur 3)***
 > 	- [ ] Antécédents urologiques
 > 	- [ ] Pathologies chroniques
 > 	- [ ] Interventions chirurgicales antérieures
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Traitements actuels
-> - [ ] **75. Habitudes et mode de vie *(1 grille sur 3)***
+> - [ ] **74. Habitudes et mode de vie *(1 grille sur 3)***
 > 	- [ ] Tabagisme
 > 	- [ ] Hydratation quotidienne
 > 	- [ ] Activité sexuelle

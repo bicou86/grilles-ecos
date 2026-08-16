@@ -175,10 +175,14 @@ cssclasses:
 > 	- [ ] Moment d'apparition
 > 	- [ ] Durée des épisodes
 > 	- [ ] Fréquence
-> - [ ] **21. Caractérisation du rythme cardiaque *(Palpitations liées au stress et aux stimulants)***
-> 	- [ ] Faire taper le rythme par la patiente
-> 	- [ ] Fréquence
-> 	- [ ] Régularité
+> - [ ] **21. Caractéristiques du rythme cardiaque *(Fibrillation auriculaire · Palpitations liées au stress et aux stimulants)***
+> 	- [ ] Faire taper le rythme par la patiente *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Fréquence *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Régularité *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Fréquence estimée *(Fibrillation auriculaire)*
+> 	- [ ] Régularité du rythme *(Fibrillation auriculaire)*
+> 	- [ ] Sensations de pauses *(Fibrillation auriculaire)*
+> 	- [ ] Battements manqués ou supplémentaires *(Fibrillation auriculaire)*
 > - [ ] **22. Irradiation *(Palpitations liées au stress et aux stimulants)***
 > - [ ] **23. Symptômes cardiovasculaires associés *(Fibrillation auriculaire · Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Vertiges *(Palpitations liées au stress et aux stimulants)*
@@ -227,103 +231,102 @@ cssclasses:
 > 	- [ ] Fréquence des épisodes
 > 	- [ ] Durée habituelle
 > 	- [ ] Évolution dans le temps
-> - [ ] **32. Caractéristiques du rythme cardiaque *(Fibrillation auriculaire)***
-> 	- [ ] Fréquence estimée
-> 	- [ ] Régularité du rythme
-> 	- [ ] Sensations de pauses
-> 	- [ ] Battements manqués ou supplémentaires
-> - [ ] **33. Facteurs déclenchants et modulateurs *(Fibrillation auriculaire)***
+> - [ ] **32. Facteurs déclenchants et modulateurs *(Fibrillation auriculaire)***
 > 	- [ ] Stress
 > 	- [ ] Caféine
 > 	- [ ] Alcool
 > 	- [ ] Effort physique
 > 	- [ ] Position
 > 	- [ ] Repas copieux
-> - [ ] **34. Symptômes respiratoires *(Fibrillation auriculaire)***
+> - [ ] **33. Symptômes respiratoires *(Fibrillation auriculaire)***
 > 	- [ ] Dyspnée
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
 > 	- [ ] Toux
-> - [ ] **35. Signes d'insuffisance cardiaque *(Fibrillation auriculaire)***
+> - [ ] **34. Signes d'insuffisance cardiaque *(Fibrillation auriculaire)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Prise de poids récente
 > 	- [ ] Fatigue inhabituelle
 > 	- [ ] Diminution de la tolérance à l'effort
-> - [ ] **36. Symptôme spécifique post-critique *(Fibrillation auriculaire)***
+> - [ ] **35. Symptôme spécifique post-critique *(Fibrillation auriculaire)***
 > 	- [ ] Polyurie post-paroxystique
 > 	- [ ] Fatigue après l'épisode
 > 	- [ ] Durée de récupération
-> - [ ] **37. Signes d'hyperthyroïdie *(Fibrillation auriculaire)***
+> - [ ] **36. Signes d'hyperthyroïdie *(Fibrillation auriculaire)***
 > 	- [ ] Intolérance à la chaleur
 > 	- [ ] Perte de poids
 > 	- [ ] Diarrhée
 > 	- [ ] Tremblements
-> - [ ] **38. Symptômes généraux *(Fibrillation auriculaire)***
+> - [ ] **37. Symptômes généraux *(Fibrillation auriculaire)***
 > 	- [ ] Fièvre
 > 	- [ ] Asthénie
 > 	- [ ] Anorexie
 > 	- [ ] Modifications récentes
-> - [ ] **39. Statut ménopausique et hormonal *(Fibrillation auriculaire)***
+> - [ ] **38. Statut ménopausique et hormonal *(Fibrillation auriculaire)***
 > 	- [ ] Dernières menstruations
 > 	- [ ] Symptômes de ménopause
 > 	- [ ] Traitement hormonal substitutif
 > 	- [ ] Bouffées de chaleur
-> - [ ] **40. Contexte psychosocial *(Fibrillation auriculaire)***
+> - [ ] **39. Contexte psychosocial *(Fibrillation auriculaire)***
 > 	- [ ] Stress aigu récent
 > 	- [ ] Charge mentale
 > 	- [ ] Anxiété associée
 > 	- [ ] Qualité du sommeil
-> - [ ] **41. Tabagisme détaillé *(Fibrillation auriculaire)***
+> - [ ] **40. Tabagisme détaillé *(Fibrillation auriculaire)***
 > 	- [ ] Consommation actuelle
 > 	- [ ] Durée
 > 	- [ ] Paquets-années
 > 	- [ ] Tentatives d'arrêt
-> - [ ] **42. Score de Wells pour embolie pulmonaire *(Fibrillation auriculaire)***
+> - [ ] **41. Score de Wells pour embolie pulmonaire *(Fibrillation auriculaire)***
 > 	- [ ] Œdème du mollet
 > 	- [ ] Immobilisation récente/chirurgie
 > 	- [ ] Cancer actif
 > 	- [ ] Antécédent de TVP/EP
 > 	- [ ] Hémoptysie
-> - [ ] **43. Antécédents cardiovasculaires personnels *(Fibrillation auriculaire)***
+> - [ ] **42. Antécédents cardiovasculaires personnels *(Fibrillation auriculaire)***
 > 	- [ ] Cardiopathie ischémique
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] Troubles du rythme connus
 > 	- [ ] Valvulopathies
-> - [ ] **44. Antécédents neurologiques *(Fibrillation auriculaire)***
+> - [ ] **43. Antécédents neurologiques *(Fibrillation auriculaire)***
 > 	- [ ] AVC/AIT
 > 	- [ ] Déficit neurologique
 > 	- [ ] Céphalées
 > 	- [ ] Épilepsie
-> - [ ] **45. Autres antécédents médicaux *(Fibrillation auriculaire)***
+> - [ ] **44. Autres antécédents médicaux *(Fibrillation auriculaire)***
 > 	- [ ] Pathologie thyroïdienne
 > 	- [ ] MVTE
 > 	- [ ] Pathologies psychiatriques/anxiété
 > 	- [ ] Autres maladies chroniques
-> - [ ] **46. Antécédents chirurgicaux *(Fibrillation auriculaire)***
+> - [ ] **45. Antécédents chirurgicaux *(Fibrillation auriculaire)***
 > 	- [ ] Interventions antérieures
 > 	- [ ] Complications
 > 	- [ ] Anesthésies
-> - [ ] **47. Allergies médicamenteuses *(Fibrillation auriculaire)***
+> - [ ] **46. Allergies médicamenteuses *(Fibrillation auriculaire)***
 > 	- [ ] Allergies connues
 > 	- [ ] Intolérances
 > 	- [ ] Réactions antérieures
-> - [ ] **48. Antécédents familiaux cardiovasculaires *(Fibrillation auriculaire)***
+> - [ ] **47. Antécédents familiaux cardiovasculaires *(Fibrillation auriculaire)***
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] Mort subite
 > 	- [ ] Troubles du rythme
 > 	- [ ] AVC
-> - [ ] **49. Habitudes de vie *(Fibrillation auriculaire)***
+> - [ ] **48. Habitudes de vie *(Fibrillation auriculaire)***
 > 	- [ ] Consommation de café
 > 	- [ ] Activité physique
 > 	- [ ] Alimentation
 > 	- [ ] Consommation d'alcool
 
 > [!tip] 🩺 Status
-> - [ ] **1. Status cardiaque *(Insuffisance cardiaque (décompensée))***
-> 	- [ ] Inspection
-> 	- [ ] Palpation
-> 	- [ ] Percussion
-> 	- [ ] Auscultation
+> - [ ] **1. Auscultation cardiaque *(Fibrillation auriculaire · Insuffisance cardiaque (décompensée))***
+> 	- [ ] Inspection *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Palpation *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Percussion *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Auscultation *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Bruits cardiaques *(Fibrillation auriculaire)*
+> 	- [ ] Souffles *(Fibrillation auriculaire)*
+> 	- [ ] Galop (B3/B4) *(Fibrillation auriculaire)*
+> 	- [ ] Frottement péricardique *(Fibrillation auriculaire)*
 > - [ ] **2. Status pulmonaire *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Inspection
 > 	- [ ] Palpation
@@ -341,20 +344,28 @@ cssclasses:
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Température
-> - [ ] **6. Examen cardiovasculaire *(Palpitations liées au stress et aux stimulants)***
-> 	- [ ] Palpation précordiale
-> 	- [ ] Auscultation cardiaque en au moins 3 positions
-> 	- [ ] Rythme
-> 	- [ ] Souffles
-> 	- [ ] Bruits surajoutés
+> - [ ] **6. Palpation cardiovasculaire *(Fibrillation auriculaire · Palpitations liées au stress et aux stimulants)***
+> 	- [ ] Palpation précordiale *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Auscultation cardiaque en au moins 3 positions *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Rythme *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Souffles *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Bruits surajoutés *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Pouls périphérique *(Fibrillation auriculaire)*
+> 	- [ ] Intensité du pouls *(Fibrillation auriculaire)*
+> 	- [ ] Déficit de pouls *(Fibrillation auriculaire)*
+> 	- [ ] Choc de pointe *(Fibrillation auriculaire)*
 > - [ ] **7. Examen du pouls *(Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Pouls radial
 > 	- [ ] Régularité
 > 	- [ ] Amplitude
 > 	- [ ] Symétrie
-> - [ ] **8. Examen pulmonaire *(Palpitations liées au stress et aux stimulants)***
-> 	- [ ] Auscultation antérieure systématique
-> 	- [ ] Auscultation postérieure systématique
+> - [ ] **8. Examen pulmonaire complet *(Fibrillation auriculaire · Palpitations liées au stress et aux stimulants)***
+> 	- [ ] Auscultation antérieure systématique *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Auscultation postérieure systématique *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Inspection thoracique *(Fibrillation auriculaire)*
+> 	- [ ] Palpation (vibrations vocales) *(Fibrillation auriculaire)*
+> 	- [ ] Percussion pulmonaire *(Fibrillation auriculaire)*
+> 	- [ ] Auscultation bilatérale *(Fibrillation auriculaire)*
 > - [ ] **9. Examen général *(Palpitations liées au stress et aux stimulants)***
 > 	- [ ] État général
 > 	- [ ] Peau
@@ -368,39 +379,24 @@ cssclasses:
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Cyanose
 > 	- [ ] Œdèmes périphériques
-> - [ ] **12. Palpation cardiovasculaire *(Fibrillation auriculaire)***
-> 	- [ ] Pouls périphérique
-> 	- [ ] Intensité du pouls
-> 	- [ ] Déficit de pouls
-> 	- [ ] Choc de pointe
-> - [ ] **13. Percussion cardiaque *(Fibrillation auriculaire)***
+> - [ ] **12. Percussion cardiaque *(Fibrillation auriculaire)***
 > 	- [ ] Matité cardiaque
 > 	- [ ] Cardiomégalie
 > 	- [ ] Épanchement péricardique
-> - [ ] **14. Auscultation cardiaque *(Fibrillation auriculaire)***
-> 	- [ ] Bruits cardiaques
-> 	- [ ] Souffles
-> 	- [ ] Galop (B3/B4)
-> 	- [ ] Frottement péricardique
-> - [ ] **15. Examen pulmonaire complet *(Fibrillation auriculaire)***
-> 	- [ ] Inspection thoracique
-> 	- [ ] Palpation (vibrations vocales)
-> 	- [ ] Percussion pulmonaire
-> 	- [ ] Auscultation bilatérale
-> - [ ] **16. Palpation thyroïdienne *(Fibrillation auriculaire)***
+> - [ ] **13. Palpation thyroïdienne *(Fibrillation auriculaire)***
 > 	- [ ] Volume thyroïdien
 > 	- [ ] Nodules
 > 	- [ ] Consistance
 > 	- [ ] Mobilité
-> - [ ] **17. Auscultation thyroïdienne *(Fibrillation auriculaire)***
+> - [ ] **14. Auscultation thyroïdienne *(Fibrillation auriculaire)***
 > 	- [ ] Souffle thyroïdien
 > 	- [ ] Thrill
-> - [ ] **18. Examen cutanéo-muqueux *(Fibrillation auriculaire)***
+> - [ ] **15. Examen cutanéo-muqueux *(Fibrillation auriculaire)***
 > 	- [ ] Coloration cutanée
 > 	- [ ] Conjonctives
 > 	- [ ] Muqueuses
 > 	- [ ] Temps de recoloration capillaire
-> - [ ] **19. Signes périphériques d'insuffisance cardiaque *(Fibrillation auriculaire)***
+> - [ ] **16. Signes périphériques d'insuffisance cardiaque *(Fibrillation auriculaire)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Hépatomégalie
 > 	- [ ] Ascite

@@ -89,7 +89,7 @@ cssclasses:
 > - [[Mémento — Fièvre du Nourrisson]] (3 grilles) — forme du nourrisson, diagnostic différentiel distinct
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Question d'ouverture *(Pyélonéphrite)***
+> - [ ] **1. Question ouverte d’entrée *(Fuite anastomotique · Pyélonéphrite)***
 > - [ ] **2. Dimension temporelle *(Fuite anastomotique · Pyélonéphrite)***
 > - [ ] **3. Début / Durée *(Fuite anastomotique · Pyélonéphrite)***
 > - [ ] **4. Évolution *(Fuite anastomotique · Pyélonéphrite)***
@@ -123,60 +123,59 @@ cssclasses:
 > - [ ] **28. Général *(Pyélonéphrite)***
 > - [ ] **29. Reins et voies urinaires *(Pyélonéphrite)***
 > - [ ] **30. Situation sociale *(Pyélonéphrite)***
-> - [ ] **31. Question ouverte d’entrée *(Fuite anastomotique)***
-> - [ ] **32. Mode d’apparition *(Fuite anastomotique)***
-> - [ ] **33. Localisation de la douleur *(Fuite anastomotique)***
-> - [ ] **34. Type de douleur *(Fuite anastomotique)***
-> - [ ] **35. Intensité de la douleur *(Fuite anastomotique)***
-> - [ ] **36. Facteurs soulageants *(Fuite anastomotique)***
-> - [ ] **37. Mesures déjà prises *(Fuite anastomotique)***
-> - [ ] **38. Facteurs aggravants *(Fuite anastomotique)***
-> - [ ] **39. Frissons / sensation de fièvre *(Fuite anastomotique)***
-> - [ ] **40. Symptômes abdominaux associés *(Fuite anastomotique)***
-> - [ ] **41. Nausées / vomissements *(Fuite anastomotique)***
-> - [ ] **42. Sensation de tension / ballonnement *(Fuite anastomotique)***
-> - [ ] **43. Selles *(Fuite anastomotique)***
-> - [ ] **44. Flatulences *(Fuite anastomotique)***
-> - [ ] **45. DD Wind | Poumon *(Fuite anastomotique)***
-> - [ ] **46. Toux *(Fuite anastomotique)***
-> - [ ] **47. Dyspnée *(Fuite anastomotique)***
-> - [ ] **48. DD Water | Voies urinaires *(Fuite anastomotique)***
-> - [ ] **49. Troubles mictionnels *(Fuite anastomotique)***
-> - [ ] **50. DD Walking | Thrombose / embolie *(Fuite anastomotique)***
-> - [ ] **51. Symptômes des membres / œdème de jambe *(Fuite anastomotique)***
-> - [ ] **52. Douleurs thoraciques *(Fuite anastomotique)***
-> - [ ] **53. DD Wound | Plaie *(Fuite anastomotique)***
-> - [ ] **54. Anomalies plaie OP (douleur, rougeur, écoulement) *(Fuite anastomotique)***
-> - [ ] **55. DD « What did we do? » | Dispositifs, médicaments, etc. *(Fuite anastomotique)***
-> - [ ] **56. Douleur / rougeur à la voie veineuse *(Fuite anastomotique)***
-> - [ ] **57. Niveau fonctionnel antérieur *(Fuite anastomotique)***
-> - [ ] **58. Caractérisation de la fièvre *(Endocardite infectieuse)***
+> - [ ] **31. Mode d’apparition *(Fuite anastomotique)***
+> - [ ] **32. Localisation de la douleur *(Fuite anastomotique)***
+> - [ ] **33. Type de douleur *(Fuite anastomotique)***
+> - [ ] **34. Intensité de la douleur *(Fuite anastomotique)***
+> - [ ] **35. Facteurs soulageants *(Fuite anastomotique)***
+> - [ ] **36. Mesures déjà prises *(Fuite anastomotique)***
+> - [ ] **37. Facteurs aggravants *(Fuite anastomotique)***
+> - [ ] **38. Frissons / sensation de fièvre *(Fuite anastomotique)***
+> - [ ] **39. Symptômes abdominaux associés *(Fuite anastomotique)***
+> - [ ] **40. Nausées / vomissements *(Fuite anastomotique)***
+> - [ ] **41. Sensation de tension / ballonnement *(Fuite anastomotique)***
+> - [ ] **42. Selles *(Fuite anastomotique)***
+> - [ ] **43. Flatulences *(Fuite anastomotique)***
+> - [ ] **44. DD Wind | Poumon *(Fuite anastomotique)***
+> - [ ] **45. Toux *(Fuite anastomotique)***
+> - [ ] **46. Dyspnée *(Fuite anastomotique)***
+> - [ ] **47. DD Water | Voies urinaires *(Fuite anastomotique)***
+> - [ ] **48. Troubles mictionnels *(Fuite anastomotique)***
+> - [ ] **49. DD Walking | Thrombose / embolie *(Fuite anastomotique)***
+> - [ ] **50. Symptômes des membres / œdème de jambe *(Fuite anastomotique)***
+> - [ ] **51. Douleurs thoraciques *(Fuite anastomotique)***
+> - [ ] **52. DD Wound | Plaie *(Fuite anastomotique)***
+> - [ ] **53. Anomalies plaie OP (douleur, rougeur, écoulement) *(Fuite anastomotique)***
+> - [ ] **54. DD « What did we do? » | Dispositifs, médicaments, etc. *(Fuite anastomotique)***
+> - [ ] **55. Douleur / rougeur à la voie veineuse *(Fuite anastomotique)***
+> - [ ] **56. Niveau fonctionnel antérieur *(Fuite anastomotique)***
+> - [ ] **57. Caractérisation de la fièvre *(Endocardite infectieuse)***
 > 	- [ ] Début/durée
 > 	- [ ] Intensité
 > 	- [ ] Évolution
 > 	- [ ] Fluctuation
 > 	- [ ] Facteurs soulageants
-> - [ ] **59. Présence de douleurs (tous types) *(Endocardite infectieuse)***
+> - [ ] **58. Présence de douleurs (tous types) *(Endocardite infectieuse)***
 > 	- [ ] Pas de douleur thoracique, pas de céphalée, pas de douleur nucale
-> - [ ] **60. Symptômes associés à la fièvre *(Endocardite infectieuse)***
+> - [ ] **59. Symptômes associés à la fièvre *(Endocardite infectieuse)***
 > 	- [ ] Frissons
 > 	- [ ] Transpiration
 > 	- [ ] Toux
 > 	- [ ] Dyspnée
 > 	- [ ] Disparition du goût et/ou odorat COVID-19
-> - [ ] **61. Caractérisation de la toux *(Endocardite infectieuse)***
+> - [ ] **60. Caractérisation de la toux *(Endocardite infectieuse)***
 > 	- [ ] Chronologie (durée)
 > 	- [ ] Fréquence
 > 	- [ ] Qualité (sèche/grasse)
 > 	- [ ] Expectorations
 > 	- [ ] Couleur des expectorations
 > 	- [ ] Présence de sang dans les expectorations
-> - [ ] **62. Anamnèse par système *(Endocardite infectieuse)***
+> - [ ] **61. Anamnèse par système *(Endocardite infectieuse)***
 > 	- [ ] Éruptions cutanées
 > 	- [ ] Douleurs articulaires
 > 	- [ ] Symptômes digestifs
 > 	- [ ] Symptômes urinaires
-> - [ ] **63. Habitudes *(Endocardite infectieuse)***
+> - [ ] **62. Habitudes *(Endocardite infectieuse)***
 > 	- [ ] Médicaments
 > 	- [ ] Tabac
 > 	- [ ] Voyages
@@ -185,7 +184,7 @@ cssclasses:
 
 > [!tip] 🩺 Status
 > - [ ] **1. État général *(Pyélonéphrite)***
-> - [ ] **2. Temps de recoloration capillaire *(Pyélonéphrite)***
+> - [ ] **2. Temps de recoloration capillaire *(Fuite anastomotique · Pyélonéphrite)***
 > - [ ] **3. Coloration cutanée *(Pyélonéphrite)***
 > - [ ] **4. Hydratation *(Pyélonéphrite)***
 > - [ ] **5. Muqueuses *(Pyélonéphrite)***
@@ -203,45 +202,44 @@ cssclasses:
 > - [ ] **17. Motricité spontanée *(Pyélonéphrite)***
 > - [ ] **18. Paramètres vitaux *(Fuite anastomotique)***
 > - [ ] **19. Situation circulatoire *(Fuite anastomotique)***
-> - [ ] **20. Recoloration capillaire *(Fuite anastomotique)***
-> - [ ] **21. Température des extrémités *(Fuite anastomotique)***
-> - [ ] **22. Inspection des plaies opératoires *(Fuite anastomotique)***
-> - [ ] **23. Inspection du drain de Douglas *(Fuite anastomotique)***
-> - [ ] **24. Inspection / palpation VVP *(Fuite anastomotique)***
-> - [ ] **25. Inspection de l’abdomen *(Fuite anastomotique)***
-> - [ ] **26. Auscultation des bruits intestinaux *(Fuite anastomotique)***
-> - [ ] **27. Percussion de l’abdomen *(Fuite anastomotique)***
-> - [ ] **28. Palpation douce *(Fuite anastomotique)***
-> - [ ] **29. Douleur au relâchement direct *(Fuite anastomotique)***
-> - [ ] **30. Douleur au relâchement croisée *(Fuite anastomotique)***
-> - [ ] **31. Douleur à la secousse / à l’ébranlement *(Fuite anastomotique)***
-> - [ ] **32. Toucher rectal *(Fuite anastomotique)***
-> - [ ] **33. Auscultation pulmonaire *(Fuite anastomotique)***
-> - [ ] **34. Douleur à la percussion des fosses rénales *(Fuite anastomotique)***
-> - [ ] **35. Examen des jambes *(Fuite anastomotique)***
-> - [ ] **36. Auscultation cardiaque *(Endocardite infectieuse)***
+> - [ ] **20. Température des extrémités *(Fuite anastomotique)***
+> - [ ] **21. Inspection des plaies opératoires *(Fuite anastomotique)***
+> - [ ] **22. Inspection du drain de Douglas *(Fuite anastomotique)***
+> - [ ] **23. Inspection / palpation VVP *(Fuite anastomotique)***
+> - [ ] **24. Inspection de l’abdomen *(Fuite anastomotique)***
+> - [ ] **25. Auscultation des bruits intestinaux *(Fuite anastomotique)***
+> - [ ] **26. Percussion de l’abdomen *(Fuite anastomotique)***
+> - [ ] **27. Palpation douce *(Fuite anastomotique)***
+> - [ ] **28. Douleur au relâchement direct *(Fuite anastomotique)***
+> - [ ] **29. Douleur au relâchement croisée *(Fuite anastomotique)***
+> - [ ] **30. Douleur à la secousse / à l’ébranlement *(Fuite anastomotique)***
+> - [ ] **31. Toucher rectal *(Fuite anastomotique)***
+> - [ ] **32. Auscultation pulmonaire *(Fuite anastomotique)***
+> - [ ] **33. Douleur à la percussion des fosses rénales *(Fuite anastomotique)***
+> - [ ] **34. Examen des jambes *(Fuite anastomotique)***
+> - [ ] **35. Auscultation cardiaque *(Endocardite infectieuse)***
 > 	- [ ] Foyer aortique
 > 	- [ ] Foyer pulmonaire
 > 	- [ ] Foyer mitral
 > 	- [ ] Foyer tricuspidien
-> - [ ] **37. Status vasculaire *(Endocardite infectieuse)***
+> - [ ] **36. Status vasculaire *(Endocardite infectieuse)***
 > 	- [ ] Palpation des pouls périphériques
 > 	- [ ] Temps de recoloration des extrémités
 > 	- [ ] Présence d'œdème/angiœdème
 > 	- [ ] Auscultation des carotides
-> - [ ] **38. Pulmonaire *(Endocardite infectieuse)***
+> - [ ] **37. Pulmonaire *(Endocardite infectieuse)***
 > 	- [ ] Auscultation postérieure (min 6 foyers, 3 de chaque côté)
 > 	- [ ] En auscultant, compare systématiquement gauche et droite
 > 	- [ ] Auscultation latérale (des deux côtés)
 > 	- [ ] Auscultation antérieure
 > 	- [ ] Percussion
 > 	- [ ] Amplitude
-> - [ ] **39. Inspection de la cavité buccale *(Endocardite infectieuse)***
-> - [ ] **40. Rigidité nucale (méningisme) *(Endocardite infectieuse)***
-> - [ ] **41. Inspection cutanée *(Endocardite infectieuse)***
+> - [ ] **38. Inspection de la cavité buccale *(Endocardite infectieuse)***
+> - [ ] **39. Rigidité nucale (méningisme) *(Endocardite infectieuse)***
+> - [ ] **40. Inspection cutanée *(Endocardite infectieuse)***
 > 	- [ ] Recherche d'affection/éruption cutanées (point d'entrée infectieux)
 > 	- [ ] Recherche systématique sur tout le corps (sauf zones intimes)
-> - [ ] **42. Palpations des aires ganglionnaires *(Endocardite infectieuse)***
+> - [ ] **41. Palpations des aires ganglionnaires *(Endocardite infectieuse)***
 > 	- [ ] Cervicales
 > 	- [ ] Axillaires
 > 	- [ ] Inguinales

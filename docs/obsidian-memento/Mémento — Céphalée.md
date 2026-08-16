@@ -95,18 +95,21 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(2 grilles sur 6)***
-> - [ ] **2. Caractérisation de la céphalée *(3 grilles sur 6)***
-> 	- [ ] Localisation
+> - [ ] **2. Caractéristiques des céphalées *(4 grilles sur 6)***
+> 	- [ ] Localisation *(3 grilles sur 6)*
 > 	- [ ] Intensité (échelle 0-10) *(2 grilles sur 6)*
-> 	- [ ] Qualité
-> 	- [ ] Début
+> 	- [ ] Qualité *(3 grilles sur 6)*
+> 	- [ ] Début *(3 grilles sur 6)*
 > 	- [ ] Événements précipitants *(2 grilles sur 6)*
 > 	- [ ] Progression/constant/intermittent *(2 grilles sur 6)*
 > 	- [ ] Épisodes antérieurs *(2 grilles sur 6)*
 > 	- [ ] Irradiation *(2 grilles sur 6)*
-> 	- [ ] Facteurs améliorants *(2 grilles sur 6)*
-> 	- [ ] Facteurs aggravants *(2 grilles sur 6)*
+> 	- [ ] Facteurs améliorants *(3 grilles sur 6)*
+> 	- [ ] Facteurs aggravants *(3 grilles sur 6)*
 > 	- [ ] Symptômes associés *(2 grilles sur 6)*
+> 	- [ ] Temporalité *(Méningite)*
+> 	- [ ] Caractère *(Méningite)*
+> 	- [ ] Intensité EVA *(Méningite)*
 > 	- [ ] Intensité *(Thrombose veineuse cérébrale)*
 > 	- [ ] Évolution *(Thrombose veineuse cérébrale)*
 > 	- [ ] Durée *(Thrombose veineuse cérébrale)*
@@ -223,11 +226,11 @@ cssclasses:
 > - [ ] **54. Migraine dans la famille *(1 grille sur 6)***
 > - [ ] **55. Profession *(1 grille sur 6)***
 > - [ ] **56. Facteurs de stress psychosociaux *(1 grille sur 6)***
-> - [ ] **57. Anamnèse sociale *(2 grilles sur 6)***
+> - [ ] **57. Anamnèse sociale *(3 grilles sur 6)***
 > 	- [ ] Vit avec sa femme *(Méningite)*
 > 	- [ ] Visite récente chez les petits-enfants il y a 2 semaines *(Méningite)*
 > - [ ] **58. Présentation avec nom, fonction et tâche *(Céphalée du restaurant chinois · Méningite)***
-> - [ ] **59. Question ouverte d'introduction → Symptôme principal *(Céphalée du restaurant chinois)***
+> - [ ] **59. Question ouverte d'introduction → Symptôme principal *(Céphalée du restaurant chinois · Méningite)***
 > - [ ] **60. Localisation des douleurs *(Céphalée du restaurant chinois)***
 > 	- [ ] Unilatérale/bilatérale
 > 	- [ ] Tête ou visage
@@ -246,45 +249,37 @@ cssclasses:
 > - [ ] **70. Piqûre de tique *(Céphalée du restaurant chinois)***
 > - [ ] **71. Contraceptifs oraux (chez la femme) *(Céphalée du restaurant chinois)***
 > - [ ] **72. Toxiques *(Céphalée du restaurant chinois)***
-> - [ ] **73. Anamnèse sociale, profession *(Céphalée du restaurant chinois)***
-> - [ ] **74. Question d'entrée ouverte → Symptôme principal *(Méningite)***
-> - [ ] **75. Caractéristiques des céphalées *(Méningite)***
-> 	- [ ] Temporalité
-> 	- [ ] Caractère
-> 	- [ ] Intensité EVA
-> 	- [ ] Facteurs aggravants
-> 	- [ ] Facteurs améliorants
-> - [ ] **76. Anamnèse personnelle *(Méningite)***
+> - [ ] **73. Anamnèse personnelle *(Méningite)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **77. Symptômes B *(Méningite)***
-> - [ ] **78. Questions sur infections herpétiques *(Méningite)***
+> - [ ] **74. Symptômes B *(Méningite)***
+> - [ ] **75. Questions sur infections herpétiques *(Méningite)***
 > 	- [ ] Herpès
 > 	- [ ] Varicelle-zona (VZV)
-> - [ ] **79. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
+> - [ ] **76. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
 > 	- [ ] Céphalée nouvelle/différente
 > 	- [ ] Céphalée décrite comme la pire
 > 	- [ ] Céphalée en coup de tonnerre
 > 	- [ ] Céphalée déclenchée par effort/exercice/activité sexuelle
 > 	- [ ] Céphalée déclenchée/aggravée par Valsalva ou position
-> - [ ] **80. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
+> - [ ] **77. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
 > 	- [ ] Migraines chroniques
 > 	- [ ] Caractéristiques des migraines habituelles
 > 	- [ ] Traitement habituel
 > 	- [ ] Efficacité du traitement actuel
-> - [ ] **81. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
+> - [ ] **78. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
 > 	- [ ] Contraception orale
 > 	- [ ] Tabagisme
 > 	- [ ] Antécédents familiaux vasculaires
 > 	- [ ] HTA/diabète/dyslipidémie
-> - [ ] **82. Contexte *(Thrombose veineuse cérébrale)***
+> - [ ] **79. Contexte *(Thrombose veineuse cérébrale)***
 > 	- [ ] Grossesse/post-partum
 > 	- [ ] Immunosuppression/cancer
 > 	- [ ] Traumatisme crânien récent
 > 	- [ ] Voyage/contage
 > 	- [ ] Vaccins
-> - [ ] **83. Anamnèse par système *(Thrombose veineuse cérébrale)***
+> - [ ] **80. Anamnèse par système *(Thrombose veineuse cérébrale)***
 > 	- [ ] État général
 > 	- [ ] Système digestif
 > 	- [ ] Système gynécologique
@@ -341,86 +336,85 @@ cssclasses:
 > - [ ] **23. Palpation de la voûte crânienne *(1 grille sur 6)***
 > - [ ] **24. Colonne cervicale *(1 grille sur 6)***
 > - [ ] **25. Articulation temporo-mandibulaire *(1 grille sur 6)***
-> - [ ] **26. Artère temporale *(1 grille sur 6)***
+> - [ ] **26. Palpation artère temporale *(2 grilles sur 6)***
 > - [ ] **27. Signes vitaux *(Céphalée du restaurant chinois)***
 > - [ ] **28. Neurostatus *(Céphalée du restaurant chinois)***
 > 	- [ ] Pupilles
 > 	- [ ] Fond d'œil
-> - [ ] **29. Palpation artère temporale *(Céphalée du restaurant chinois)***
-> - [ ] **30. Auscultation cardiaque avec artères carotides *(Céphalée du restaurant chinois)***
-> - [ ] **31. Signe de Brudzinski *(Méningite)***
-> - [ ] **32. Autres signes méningés *(Méningite)***
+> - [ ] **29. Auscultation cardiaque avec artères carotides *(Céphalée du restaurant chinois)***
+> - [ ] **30. Signe de Brudzinski *(Méningite)***
+> - [ ] **31. Autres signes méningés *(Méningite)***
 > 	- [ ] Signe de Kernig
 > 	- [ ] Signe de Lasègue
-> - [ ] **33. Neurostatus par ailleurs *(Méningite)***
-> - [ ] **34. Examen général *(Thrombose veineuse cérébrale)***
+> - [ ] **32. Neurostatus par ailleurs *(Méningite)***
+> - [ ] **33. Examen général *(Thrombose veineuse cérébrale)***
 > 	- [ ] État de conscience/niveau attentionnel
 > 	- [ ] Signes vitaux
 > 	- [ ] Aspect général
-> - [ ] **35. Examen neurologique - nerfs crâniens *(Thrombose veineuse cérébrale)***
+> - [ ] **34. Examen neurologique - nerfs crâniens *(Thrombose veineuse cérébrale)***
 > 	- [ ] Acuité visuelle
 > 	- [ ] Champs visuels
 > 	- [ ] Réflexes pupillaires
 > 	- [ ] Oculomotricité
 > 	- [ ] Sensibilité faciale
 > 	- [ ] Motricité faciale
-> - [ ] **36. Examen neurologique - voies longues *(Thrombose veineuse cérébrale)***
+> - [ ] **35. Examen neurologique - voies longues *(Thrombose veineuse cérébrale)***
 > 	- [ ] Force motrice 4 membres
 > 	- [ ] Sensibilité
 > 	- [ ] Réflexes ostéotendineux
 > 	- [ ] Réflexe cutané plantaire
-> - [ ] **37. Recherche de méningisme *(Thrombose veineuse cérébrale)***
+> - [ ] **36. Recherche de méningisme *(Thrombose veineuse cérébrale)***
 > 	- [ ] Raideur de nuque
 > 	- [ ] Signe de Kernig
 > 	- [ ] Signe de Brudzinski
-> - [ ] **38. Examen vasculaire *(Thrombose veineuse cérébrale)***
+> - [ ] **37. Examen vasculaire *(Thrombose veineuse cérébrale)***
 > 	- [ ] Palpation artères temporales
 > 	- [ ] Auscultation carotidienne
 > 	- [ ] Recherche de souffle vasculaire
-> - [ ] **39. Autres examens pertinents *(Thrombose veineuse cérébrale)***
+> - [ ] **38. Autres examens pertinents *(Thrombose veineuse cérébrale)***
 > 	- [ ] Fond d'œil/œdème papillaire
 > 	- [ ] Démarche et épreuves cérébelleuses
 > 	- [ ] Recherche d'un rash cutané
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Hypothèses diagnostiques *(2 grilles sur 6)* — *Hémorragie sous-arachnoïdienne · Migraine***
-> - [ ] **2. Diagnostic de suspicion *(2 grilles sur 6)* — *Céphalée du restaurant chinois · Méningite***
+> - [ ] **1. Diagnostic de suspicion *(2 grilles sur 6)* — *Céphalée du restaurant chinois · Méningite***
 
 > [!success] 💊 Management — si Algie vasculaire (cluster)
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Céphalée du restaurant chinois
-> - [ ] **1. Diagnostics différentiels**
-> - [ ] **2. Examens diagnostiques**
-> 	- [ ] VS (CRP)
-> 	- [ ] FSC
-> - [ ] **3. CT cérébral**
-> - [ ] **4. Traitement/Prise en charge**
+> - [ ] **1. Traitement/Prise en charge**
 > 	- [ ] Si maladie de Horton : corticoïdes et référence
 > 	- [ ] Sinon : antalgiques et contrôle
+> - [ ] **2. Diagnostics différentiels**
+> - [ ] **3. Examens diagnostiques**
+> 	- [ ] VS (CRP)
+> 	- [ ] FSC
+> - [ ] **4. CT cérébral**
 
 > [!success] 💊 Management — si Hémorragie sous-arachnoïdienne
-> - [ ] **1. Communication avec la patiente**
+> - [ ] **1. Hypothèse diagnostique principale**
+> - [ ] **2. Communication avec la patiente**
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
 > 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions de la patiente
 > 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
-> - [ ] **2. Conseil et soutien**
+> - [ ] **3. Conseil et soutien**
 > 	- [ ] Proposer d'aider la patiente à s'allonger
 > 	- [ ] Proposer de diminuer l'éclairage dans la salle d'examen
 > 	- [ ] Réaction appropriée au défi concernant le mari
 > 	- [ ] Soutien émotionnel face à la gravité
 > 	- [ ] Information sur l'urgence de la situation
-> - [ ] **3. Examens complémentaires urgents**
+> - [ ] **4. Examens complémentaires urgents**
 > 	- [ ] CT cérébral sans contraste
 > 	- [ ] FSC
 > 	- [ ] Glucose, électrolytes
-> - [ ] **4. Examens complémentaires biologiques et microbiologiques**
+> - [ ] **5. Examens complémentaires biologiques et microbiologiques**
 > 	- [ ] TP, TCA
 > 	- [ ] Hémocultures
-> - [ ] **5. Ponction lombaire et imagerie spécialisée**
+> - [ ] **6. Ponction lombaire et imagerie spécialisée**
 > 	- [ ] Ponction lombaire avec analyse du LCR
 > 	- [ ] Angiographie
 
@@ -440,7 +434,8 @@ cssclasses:
 > - [ ] **4. Traitement**
 
 > [!success] 💊 Management — si Migraine
-> - [ ] **1. Drapeaux rouges à rechercher *(1 grille sur 2)***
+> - [ ] **1. Hypothèse diagnostique principale *(1 grille sur 2)***
+> - [ ] **2. Drapeaux rouges à rechercher *(1 grille sur 2)***
 > 	- [ ] Céphalée sévère implacable
 > 	- [ ] Fièvre
 > 	- [ ] Déficits neurologiques focaux
@@ -450,49 +445,49 @@ cssclasses:
 > 	- [ ] Signes de méningisme
 > 	- [ ] Symptômes psychiatriques
 > 	- [ ] Douleur oculaire
-> - [ ] **2. Prise en charge *(1 grille sur 2)***
+> - [ ] **3. Traitement/Prise en charge *(1 grille sur 2)***
 > 	- [ ] Migraine, céphalée de tension et algie vasculaire = diagnostics cliniques basés sur l'histoire et l'examen physique
 > 	- [ ] Ne pas faire d'examens diagnostiques sauf si drapeaux rouges présents
 > 	- [ ] Proposer au patient de s'allonger et tamiser la lumière
-> - [ ] **3. Communication avec la patiente *(1 grille sur 2)***
+> - [ ] **4. Communication avec la patiente *(1 grille sur 2)***
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **4. Conseil et soutien *(1 grille sur 2)***
+> - [ ] **5. Conseil et soutien *(1 grille sur 2)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Donner l'option de s'allonger et proposer de tamiser la lumière
 > 	- [ ] Réaction appropriée au défi concernant l'entretien d'embauche
 > 	- [ ] Éducation sur les facteurs déclenchants
 > 	- [ ] Conseils hygiène de vie
-> - [ ] **5. Pas d'imagerie *(1 grille sur 2)***
-> - [ ] **6. Diagnostic de travail *(1 grille sur 2)***
-> - [ ] **7. Information sur le diagnostic *(1 grille sur 2)***
-> - [ ] **8. Traitement de la crise par AINS *(1 grille sur 2)***
-> - [ ] **9. Traitement de la crise par triptan *(1 grille sur 2)***
-> - [ ] **10. Mesures non médicamenteuses *(1 grille sur 2)***
-> - [ ] **11. Filet de sécurité *(1 grille sur 2)***
-> - [ ] **12. Journal des migraines *(1 grille sur 2)***
-> - [ ] **13. Conseils sur le mode de vie *(1 grille sur 2)***
-> - [ ] **14. Information sur la contraception *(1 grille sur 2)***
-> - [ ] **15. Contrôle de suivi *(1 grille sur 2)***
-> - [ ] **16. Évaluer l'indication à une prophylaxie *(1 grille sur 2)***
-> - [ ] **17. Orientation vers la neurologie *(1 grille sur 2)***
+> - [ ] **6. Pas d'imagerie *(1 grille sur 2)***
+> - [ ] **7. Diagnostic de travail *(1 grille sur 2)***
+> - [ ] **8. Information sur le diagnostic *(1 grille sur 2)***
+> - [ ] **9. Traitement de la crise par AINS *(1 grille sur 2)***
+> - [ ] **10. Traitement de la crise par triptan *(1 grille sur 2)***
+> - [ ] **11. Mesures non médicamenteuses *(1 grille sur 2)***
+> - [ ] **12. Filet de sécurité *(1 grille sur 2)***
+> - [ ] **13. Journal des migraines *(1 grille sur 2)***
+> - [ ] **14. Conseils sur le mode de vie *(1 grille sur 2)***
+> - [ ] **15. Information sur la contraception *(1 grille sur 2)***
+> - [ ] **16. Contrôle de suivi *(1 grille sur 2)***
+> - [ ] **17. Évaluer l'indication à une prophylaxie *(1 grille sur 2)***
+> - [ ] **18. Orientation vers la neurologie *(1 grille sur 2)***
 
 > [!success] 💊 Management — si Prééclampsie
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Thrombose veineuse cérébrale
-> - [ ] **1. Diagnostics différentiels**
+> - [ ] **1. Hypothèse diagnostique principale**
+> 	- [ ] Thrombose veineuse cérébrale
+> - [ ] **2. Diagnostics différentiels**
 > 	- [ ] AVC ischémique/hémorragique
 > 	- [ ] Migraine avec aura
 > 	- [ ] Méningite/encéphalite
 > 	- [ ] Hémorragie sous-arachnoïdienne
 > 	- [ ] Dissection artérielle
 > 	- [ ] Hypertension intracrânienne
-> - [ ] **2. Hypothèse diagnostique principale**
-> 	- [ ] Thrombose veineuse cérébrale
 > - [ ] **3. Examens complémentaires - laboratoire**
 > 	- [ ] FSC, CRP/VS
 > 	- [ ] Coagulation (TP, PTT)

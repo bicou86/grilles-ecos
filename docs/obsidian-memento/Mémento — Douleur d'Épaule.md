@@ -276,7 +276,10 @@ cssclasses:
 > - [ ] **24. Tests sous-acromiaux *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **25. Test de Neer *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **26. Test de Hawkins-Kennedy *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
-> - [ ] **27. Tests de la coiffe des rotateurs *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
+> - [ ] **27. Tests spécifiques de la coiffe des rotateurs *(Syndrome de conflit sous-acromial · Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
+> 	- [ ] Test de Jobe (supra-épineux) *(Syndrome de conflit sous-acromial)*
+> 	- [ ] Test lift-off (subscapulaire) *(Syndrome de conflit sous-acromial)*
+> 	- [ ] Test de Patte (infra-épineux/petit rond) - rotation externe contrariée *(Syndrome de conflit sous-acromial)*
 > - [ ] **28. Test de Jobe (Empty Can) *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **29. Test de l’infra-épineux *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **30. Lift-off *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
@@ -306,43 +309,39 @@ cssclasses:
 > 	- [ ] Rotation externe
 > 	- [ ] Rotation interne
 > 	- [ ] Tests fonctionnels (main-nuque, main-dos)
-> - [ ] **43. Tests spécifiques de la coiffe des rotateurs *(Syndrome de conflit sous-acromial)***
-> 	- [ ] Test de Jobe (supra-épineux)
-> 	- [ ] Test lift-off (subscapulaire)
-> 	- [ ] Test de Patte (infra-épineux/petit rond) - rotation externe contrariée
-> - [ ] **44. Tests de conflit sous-acromial *(Syndrome de conflit sous-acromial)***
+> - [ ] **43. Tests de conflit sous-acromial *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Test de Neer
 > 	- [ ] Test de Hawkins-Kennedy
 > 	- [ ] Test de Yocum
-> - [ ] **45. Tests d'instabilité *(Syndrome de conflit sous-acromial)***
+> - [ ] **44. Tests d'instabilité *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Test d'appréhension antérieur
 > 	- [ ] Test d'appréhension postérieur
 > 	- [ ] Test du sulcus (instabilité inférieure)
-> - [ ] **46. Examen de l'articulation acromio-claviculaire *(Syndrome de conflit sous-acromial)***
+> - [ ] **45. Examen de l'articulation acromio-claviculaire *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Palpation directe
 > 	- [ ] Test de compression horizontale (cross-arm test)
-> - [ ] **47. Examen du tendon du long biceps *(Syndrome de conflit sous-acromial)***
+> - [ ] **46. Examen du tendon du long biceps *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Palm-up test (Speed test)
 > 	- [ ] Test de Yergason
-> - [ ] **48. Examen neurologique et vasculaire *(Syndrome de conflit sous-acromial)***
+> - [ ] **47. Examen neurologique et vasculaire *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Sensibilité
 > 	- [ ] Force musculaire
 > 	- [ ] Réflexes
 > 	- [ ] Pouls périphériques
-> - [ ] **49. Inspection bras D *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **48. Inspection bras D *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Importante tuméfaction avec déformation du tiers inférieur au niveau de l'humérus droit *(1 grille sur 5)*
 > 	- [ ] Peau intacte *(1 grille sur 5)*
 > 	- [ ] Pas de lésion cutanée *(1 grille sur 5)*
-> - [ ] **50. Contrôle neurologique et vasculaire distal à la lésion du MSD *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **49. Contrôle neurologique et vasculaire distal à la lésion du MSD *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Les deux *(1 grille sur 5)*
 > 	- [ ] Un *(1 grille sur 5)*
 > 	- [ ] Aucun *(1 grille sur 5)*
-> - [ ] **51. Vérifie motricité de la main et des doigts du MSD *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **50. Vérifie motricité de la main et des doigts du MSD *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Les deux *(1 grille sur 5)*
 > 	- [ ] Un *(1 grille sur 5)*
 > 	- [ ] Aucun *(1 grille sur 5)*
-> - [ ] **52. Examen pour d'autres lésions de la peau *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **53. Examen sommaire corps *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **51. Examen pour d'autres lésions de la peau *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **52. Examen sommaire corps *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Abdomen
 > 	- [ ] Thorax
 > 	- [ ] Bassin
@@ -352,7 +351,7 @@ cssclasses:
 > 	- [ ] Visage *(1 grille sur 5)*
 > 	- [ ] Cavité buccale *(1 grille sur 5)*
 > 	- [ ] Dents *(1 grille sur 5)*
-> - [ ] **54. Envisage de faire des photos pour la documentation *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **53. Envisage de faire des photos pour la documentation *(Fracture du membre supérieur (humérus, tête radiale))***
 
 > [!success] 💊 Management — si Fracture du membre supérieur (humérus, tête radiale)
 > - [ ] **1. Hypothèses diagnostiques**

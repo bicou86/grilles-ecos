@@ -104,7 +104,7 @@ cssclasses:
 > - [ ] **1. Motif principal *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > - [ ] **2. Caractérisation de la fatigue *(5 diagnostics)***
 > 	- [ ] Début *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Évolution temporelle *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Évolution temporelle des symptômes *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Événements précipitants *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Progression *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Épisodes antérieurs *(Hépatite C aiguë · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
@@ -280,7 +280,7 @@ cssclasses:
 > 	- [ ] Stress psychosocial *(Anémie)*
 > - [ ] **49. Se présente avec nom, fonction et but de la consultation *(Anémie · Dépression · SAOS)***
 > - [ ] **50. Question ouverte d'introduction → Symptôme principal *(SAOS)***
-> - [ ] **51. Évolution temporelle *(SAOS)***
+> - [ ] **51. Évolution temporelle des symptômes *(Dépression · SAOS)***
 > - [ ] **52. Évolution dans la journée *(SAOS)***
 > - [ ] **53. Facteurs déclenchants identifiés *(Dépression · SAOS)***
 > - [ ] **54. Exploration du sommeil - Qualité *(SAOS)***
@@ -354,42 +354,41 @@ cssclasses:
 > - [ ] **74. Médicaments et exposition à des toxiques *(Anémie)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Exposition professionnelle
-> - [ ] **75. Évolution temporelle des symptômes *(Dépression)***
-> - [ ] **76. Symptômes principaux *(Dépression)***
+> - [ ] **75. Symptômes principaux *(Dépression)***
 > 	- [ ] Fatigue
 > 	- [ ] Faiblesse
 > 	- [ ] Troubles de concentration
-> - [ ] **77. Variation diurne des symptômes *(Dépression)***
+> - [ ] **76. Variation diurne des symptômes *(Dépression)***
 > 	- [ ] Moment d'amélioration/aggravation
 > 	- [ ] Présence d'une baisse matinale
-> - [ ] **78. Impact fonctionnel sur la vie quotidienne *(Dépression)***
-> - [ ] **79. Qualité du sommeil *(Dépression)***
-> - [ ] **80. Appétit et alimentation *(Dépression)***
-> - [ ] **81. Autres symptômes ou maladie récente *(Dépression)***
-> - [ ] **82. Dépistage de dépression *(Dépression)***
+> - [ ] **77. Impact fonctionnel sur la vie quotidienne *(Dépression)***
+> - [ ] **78. Qualité du sommeil *(Dépression)***
+> - [ ] **79. Appétit et alimentation *(Dépression)***
+> - [ ] **80. Autres symptômes ou maladie récente *(Dépression)***
+> - [ ] **81. Dépistage de dépression *(Dépression)***
 > 	- [ ] Humeur dépressive
 > 	- [ ] Anhédonie
 > 	- [ ] Épisodes dépressifs antérieurs
 > 	- [ ] Troubles du sommeil
-> - [ ] **83. Dépistage d'hypothyroïdie *(Dépression)***
+> - [ ] **82. Dépistage d'hypothyroïdie *(Dépression)***
 > 	- [ ] État de la peau
 > 	- [ ] État des cheveux
 > 	- [ ] Troubles gastro-intestinaux
 > 	- [ ] Transpiration/intolérance au froid
-> - [ ] **84. Dépistage d'anémie *(Dépression)***
+> - [ ] **83. Dépistage d'anémie *(Dépression)***
 > 	- [ ] Dyspnée
 > 	- [ ] Palpitations
 > 	- [ ] Impact du végétarisme
-> - [ ] **85. Dépistage de pathologie maligne *(Dépression)***
+> - [ ] **84. Dépistage de pathologie maligne *(Dépression)***
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Fièvre
 > 	- [ ] Perte de poids
 > 	- [ ] Adénopathies
-> - [ ] **86. Dépistage de diabète *(Dépression)***
+> - [ ] **85. Dépistage de diabète *(Dépression)***
 > 	- [ ] Polydipsie
 > 	- [ ] Polyurie
 > 	- [ ] Infections récurrentes
-> - [ ] **87. Évaluation structurée du risque suicidaire *(Dépression)***
+> - [ ] **86. Évaluation structurée du risque suicidaire *(Dépression)***
 > 	- [ ] Pensées de ne plus vouloir vivre ainsi
 > 	- [ ] Désir de changement
 > 	- [ ] Pensées de mort
@@ -398,99 +397,99 @@ cssclasses:
 > 	- [ ] Méthode envisagée
 > 	- [ ] Tentatives antérieures
 > 	- [ ] Antécédents familiaux de suicide
-> - [ ] **88. Symptômes psychiatriques associés *(Dépression)***
+> - [ ] **87. Symptômes psychiatriques associés *(Dépression)***
 > 	- [ ] Anxiété
 > 	- [ ] Troubles obsessionnels-compulsifs
 > 	- [ ] Troubles de la pensée
 > 	- [ ] Idées délirantes
 > 	- [ ] Hallucinations
 > 	- [ ] Troubles du moi
-> - [ ] **89. Antécédents familiaux psychiatriques *(Dépression)***
-> - [ ] **90. Anamnèse sociale et réseau de soutien *(Dépression)***
+> - [ ] **88. Antécédents familiaux psychiatriques *(Dépression)***
+> - [ ] **89. Anamnèse sociale et réseau de soutien *(Dépression)***
 > 	- [ ] Soutien social
 > 	- [ ] Situation de logement
 > 	- [ ] Situation professionnelle
-> - [ ] **91. Caractérisation du sommeil *(Diabète de type 2)***
+> - [ ] **90. Caractérisation du sommeil *(Diabète de type 2)***
 > 	- [ ] Durée du sommeil
 > 	- [ ] Qualité du sommeil
 > 	- [ ] Réveils durant la nuit
 > 	- [ ] Ronflement
-> - [ ] **92. Anamnèse uro-génitale *(Diabète de type 2)***
+> - [ ] **91. Anamnèse uro-génitale *(Diabète de type 2)***
 > 	- [ ] Couleur
 > 	- [ ] Quantité
 > 	- [ ] Douleur
 > 	- [ ] Fréquence
 > 	- [ ] Urgence mictionnelle
-> - [ ] **93. Anamnèse alimentaire *(Diabète de type 2)***
+> - [ ] **92. Anamnèse alimentaire *(Diabète de type 2)***
 > 	- [ ] Quels aliments?
 > 	- [ ] Plats types
 > 	- [ ] Grignotages
-> - [ ] **94. DD - dépression *(Diabète de type 2)***
+> - [ ] **93. DD - dépression *(Diabète de type 2)***
 > 	- [ ] Perte de plaisir
 > 	- [ ] Tristesse
 > 	- [ ] Idées noires
 > 	- [ ] Arrêt d'activités
 > 	- [ ] Envies suicidaires
-> - [ ] **95. DD - cancer *(Diabète de type 2)***
+> - [ ] **94. DD - cancer *(Diabète de type 2)***
 > 	- [ ] Perte de poids
 > 	- [ ] Fièvre
 > 	- [ ] Sudation nocturne
-> - [ ] **96. DD - maladie infectieuse *(Diabète de type 2)***
+> - [ ] **95. DD - maladie infectieuse *(Diabète de type 2)***
 > 	- [ ] Douleurs abdominales
 > 	- [ ] Rapports sexuels à risque
 > 	- [ ] Voyage dans un pays à risque
-> - [ ] **97. DD - insuffisance cardiovasculaire *(Diabète de type 2)***
+> - [ ] **96. DD - insuffisance cardiovasculaire *(Diabète de type 2)***
 > 	- [ ] Dyspnée à l'effort
 > 	- [ ] Orthopnée paroxystique nocturne
 > 	- [ ] Jambes gonflées
 > 	- [ ] Toux sèche
-> - [ ] **98. Raison de la visite *(Dépression gériatrique)***
-> - [ ] **99. Type d'insomnie : sommeil court, léger *(Dépression gériatrique)***
-> - [ ] **100. Chronologie (durée, fréquence) *(Dépression gériatrique)***
-> - [ ] **101. Développement : progressif *(Dépression gériatrique)***
-> - [ ] **102. Symptômes associés : tristesse, anhédonie *(Dépression gériatrique)***
-> - [ ] **103. Situation familiale / statut marital *(Dépression gériatrique)***
-> - [ ] **104. Ana. générale : sudation nocturne *(Dépression gériatrique)***
-> - [ ] **105. Ana. générale : ronflement *(Dépression gériatrique)***
-> - [ ] **106. Ana. générale : prise/perte de poids *(Dépression gériatrique)***
-> - [ ] **107. Ana. cardio-vasc : hypertension *(Dépression gériatrique)***
-> - [ ] **108. Ana. digestive : mange peu *(Dépression gériatrique)***
-> - [ ] **109. Ana. ostéo-articulaire : gonarthrose bilatérale *(Dépression gériatrique)***
-> - [ ] **110. Ana. suicide : présence de pensées suicidaires ? *(Dépression gériatrique)***
-> - [ ] **111. Histoire médicale : antécédent cancer *(Dépression gériatrique)***
-> - [ ] **112. Histoire médicale : opérations *(Dépression gériatrique)***
-> - [ ] **113. Habitudes : médicaments *(Dépression gériatrique)***
-> - [ ] **114. Habitudes : alcool / drogues *(Dépression gériatrique)***
-> - [ ] **115. Conséquences de la fatigue sur le quotidien *(Hypothyroïdie)***
-> - [ ] **116. Symptômes B associés *(Hypothyroïdie)***
+> - [ ] **97. Raison de la visite *(Dépression gériatrique)***
+> - [ ] **98. Type d'insomnie : sommeil court, léger *(Dépression gériatrique)***
+> - [ ] **99. Chronologie (durée, fréquence) *(Dépression gériatrique)***
+> - [ ] **100. Développement : progressif *(Dépression gériatrique)***
+> - [ ] **101. Symptômes associés : tristesse, anhédonie *(Dépression gériatrique)***
+> - [ ] **102. Situation familiale / statut marital *(Dépression gériatrique)***
+> - [ ] **103. Ana. générale : sudation nocturne *(Dépression gériatrique)***
+> - [ ] **104. Ana. générale : ronflement *(Dépression gériatrique)***
+> - [ ] **105. Ana. générale : prise/perte de poids *(Dépression gériatrique)***
+> - [ ] **106. Ana. cardio-vasc : hypertension *(Dépression gériatrique)***
+> - [ ] **107. Ana. digestive : mange peu *(Dépression gériatrique)***
+> - [ ] **108. Ana. ostéo-articulaire : gonarthrose bilatérale *(Dépression gériatrique)***
+> - [ ] **109. Ana. suicide : présence de pensées suicidaires ? *(Dépression gériatrique)***
+> - [ ] **110. Histoire médicale : antécédent cancer *(Dépression gériatrique)***
+> - [ ] **111. Histoire médicale : opérations *(Dépression gériatrique)***
+> - [ ] **112. Habitudes : médicaments *(Dépression gériatrique)***
+> - [ ] **113. Habitudes : alcool / drogues *(Dépression gériatrique)***
+> - [ ] **114. Conséquences de la fatigue sur le quotidien *(Hypothyroïdie)***
+> - [ ] **115. Symptômes B associés *(Hypothyroïdie)***
 > 	- [ ] Fièvre
 > 	- [ ] Variation de poids
 > 	- [ ] Sueurs nocturnes
-> - [ ] **117. Symptômes d'hypothyroïdie *(Hypothyroïdie)***
+> - [ ] **116. Symptômes d'hypothyroïdie *(Hypothyroïdie)***
 > 	- [ ] Intolérance au froid
 > 	- [ ] Transit ralenti
-> - [ ] **118. Autres symptômes associés *(Hypothyroïdie)***
+> - [ ] **117. Autres symptômes associés *(Hypothyroïdie)***
 > 	- [ ] Toux
 > 	- [ ] Douleurs abdominales
 > 	- [ ] Modifications de l'appétit
 > 	- [ ] Douleurs musculaires ou articulaires
 > 	- [ ] Polyurie ou polydipsie
-> - [ ] **119. Situation menstruelle *(Hypothyroïdie)***
+> - [ ] **118. Situation menstruelle *(Hypothyroïdie)***
 > 	- [ ] Durée des règles
 > 	- [ ] Abondance
-> - [ ] **120. Anamnèse psychiatrique *(Hypothyroïdie)***
+> - [ ] **119. Anamnèse psychiatrique *(Hypothyroïdie)***
 > 	- [ ] Humeur
 > 	- [ ] Stress
 > 	- [ ] Perte d'intérêt
 > 	- [ ] Troubles de la concentration
 > 	- [ ] Anxiété
-> - [ ] **121. Alimentation *(1 grille sur 11)***
+> - [ ] **120. Alimentation *(1 grille sur 11)***
 > 	- [ ] Activité physique
-> - [ ] **122. Consommations *(Hypothyroïdie)***
+> - [ ] **121. Consommations *(Hypothyroïdie)***
 > 	- [ ] Tabac
 > 	- [ ] OH
 > 	- [ ] Drogues
-> - [ ] **123. Alimentation – activité physique *(1 grille sur 11)***
+> - [ ] **122. Alimentation – activité physique *(1 grille sur 11)***
 > 	- [ ] Alimentation
 > 	- [ ] Activité physique
 
@@ -508,13 +507,12 @@ cssclasses:
 > - [ ] **4. Examen des extrémités et cutané *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > 	- [ ] Inspection des membres inférieurs
 > 	- [ ] Examen cutané
-> - [ ] **5. Examen neurologique *(Anémie · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
+> - [ ] **5. Examen neurologique sommaire *(4 diagnostics)***
 > 	- [ ] Évaluation de l'orientation dans le temps, l'espace et les personnes *(Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Examen ciblé de l'état mental *(Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Examen ciblé des mouvements passifs et actifs *(Syndrome de Sheehan (hypopituitarisme post-partum))*
-> 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(Anémie · Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Sensibilité profonde *(Anémie)*
-> 	- [ ] Réflexes ostéo-tendineux *(Anémie)*
 > 	- [ ] Signe de Romberg *(Anémie)*
 > - [ ] **6. Examen de la tête, yeux, oreilles, nez et gorge *(Hépatite C aiguë · Mononucléose)***
 > 	- [ ] Inspection des conjonctives *(Mononucléose)*
@@ -557,92 +555,90 @@ cssclasses:
 > - [ ] **26. Auscultation cardiopulmonaire *(Hémorragie digestive haute sur ulcère peptique)***
 > - [ ] **27. Perfusion périphérique *(Hémorragie digestive haute sur ulcère peptique)***
 > - [ ] **28. Examen cardio-pulmonaire *(SAOS)***
-> - [ ] **29. Examen neurologique sommaire *(SAOS)***
-> - [ ] **30. Mesure de la tension artérielle *(SAOS)***
-> - [ ] **31. Inspection ORL *(SAOS)***
+> - [ ] **29. Mesure de la tension artérielle *(SAOS)***
+> - [ ] **30. Inspection ORL *(SAOS)***
 > 	- [ ] Évaluation des voies aériennes supérieures
 > 	- [ ] Recherche d'hypertrophie amygdalienne
 > 	- [ ] Évaluation du palais
-> - [ ] **32. Évaluation morphologique *(SAOS)***
+> - [ ] **31. Évaluation morphologique *(SAOS)***
 > 	- [ ] IMC calculé (29 kg/m² - surpoids)
 > 	- [ ] Circonférence cervicale
 > 	- [ ] Morphologie faciale
-> - [ ] **33. Inspection de la pâleur *(Anémie)***
+> - [ ] **32. Inspection de la pâleur *(Anémie)***
 > 	- [ ] Pâleur cutanée
 > 	- [ ] Pâleur des muqueuses
 > 	- [ ] Pâleur des plis palmaires
-> - [ ] **34. Recherche d'ictère *(Anémie)***
-> - [ ] **35. Examen de la cavité buccale *(Anémie)***
+> - [ ] **33. Recherche d'ictère *(Anémie)***
+> - [ ] **34. Examen de la cavité buccale *(Anémie)***
 > 	- [ ] Chéilite angulaire
 > 	- [ ] Aspect de la langue
 > 	- [ ] Glossite
-> - [ ] **36. Auscultation cardiovasculaire *(Anémie)***
+> - [ ] **35. Auscultation cardiovasculaire *(Anémie)***
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Tension artérielle
 > 	- [ ] Souffle cardiaque
 > 	- [ ] Bruits vasculaires
-> - [ ] **37. Palpation des aires ganglionnaires *(Anémie · Diabète de type 2)***
+> - [ ] **36. Palpation des aires ganglionnaires *(Anémie · Diabète de type 2)***
 > 	- [ ] Cervicales *(Diabète de type 2)*
 > 	- [ ] Axillaires *(Diabète de type 2)*
 > 	- [ ] Inguinales *(Diabète de type 2)*
-> - [ ] **38. État mental et présentation *(Dépression)***
+> - [ ] **37. État mental et présentation *(Dépression)***
 > 	- [ ] Contact visuel
 > 	- [ ] Hygiène et tenue vestimentaire
 > 	- [ ] Attitude générale
 > 	- [ ] Collaboration
-> - [ ] **39. Humeur et affect *(Dépression)***
+> - [ ] **38. Humeur et affect *(Dépression)***
 > 	- [ ] Humeur subjective
 > 	- [ ] Affect observé
 > 	- [ ] Congruence humeur-affect
-> - [ ] **40. Discours et pensée *(Dépression)***
+> - [ ] **39. Discours et pensée *(Dépression)***
 > 	- [ ] Débit et quantité
 > 	- [ ] Organisation de la pensée
 > 	- [ ] Contenu (idées suicidaires, délirantes)
-> - [ ] **41. Perceptions *(Dépression)***
+> - [ ] **40. Perceptions *(Dépression)***
 > 	- [ ] Hallucinations
 > 	- [ ] Illusions
 > 	- [ ] Déréalisation/dépersonnalisation
-> - [ ] **42. Fonctions cognitives *(Dépression)***
+> - [ ] **41. Fonctions cognitives *(Dépression)***
 > 	- [ ] Orientation temporo-spatiale
 > 	- [ ] Attention et concentration
 > 	- [ ] Mémoire
-> - [ ] **43. Jugement et insight *(Dépression)***
+> - [ ] **42. Jugement et insight *(Dépression)***
 > 	- [ ] Conscience du trouble
 > 	- [ ] Capacité de jugement
-> - [ ] **44. Examen physique de base *(Dépression)***
+> - [ ] **43. Examen physique de base *(Dépression)***
 > 	- [ ] Signes vitaux
 > 	- [ ] Examen neurologique sommaire
 > 	- [ ] Recherche de signes d'automutilation
-> - [ ] **45. Palpation de la thyroïde *(Diabète de type 2)***
-> - [ ] **46. Palpation et percussion des loges rénales *(Diabète de type 2)***
-> - [ ] **47. Status cardiaque *(Diabète de type 2)***
+> - [ ] **44. Palpation de la glande thyroïde *(Diabète de type 2 · Hypothyroïdie)***
+> - [ ] **45. Palpation et percussion des loges rénales *(Diabète de type 2)***
+> - [ ] **46. Status cardiaque *(Diabète de type 2)***
 > 	- [ ] Auscultation des aires cardiaques (les quatre)
 > 	- [ ] Auscultation de la carotide
 > 	- [ ] Signe du godet
 > 	- [ ] Palpation du choc de pointe
 > 	- [ ] Vérification de la présence d'une cyanose périphérique ou centrale
-> - [ ] **48. Désinfection des mains *(Dépression gériatrique)***
-> - [ ] **49. Posé ≥ 1 question relatif au status psychiatrique *(Dépression gériatrique)***
-> - [ ] **50. Palpation thyroïde (médecin derrière le patient) *(Dépression gériatrique)***
-> - [ ] **51. Palpation ganglions cervicaux & axillaires *(Dépression gériatrique)***
-> - [ ] **52. Général : examen rapide de la peau - examen des sclères *(Hypothyroïdie)***
+> - [ ] **47. Désinfection des mains *(Dépression gériatrique)***
+> - [ ] **48. Posé ≥ 1 question relatif au status psychiatrique *(Dépression gériatrique)***
+> - [ ] **49. Palpation thyroïde (médecin derrière le patient) *(Dépression gériatrique)***
+> - [ ] **50. Palpation ganglions cervicaux & axillaires *(Dépression gériatrique)***
+> - [ ] **51. Général : examen rapide de la peau - examen des sclères *(Hypothyroïdie)***
 > 	- [ ] Si réalisé, dire *(1 grille sur 11)*
 > 	- [ ] Examen rapide de la peau *(1 grille sur 11)*
 > 	- [ ] Examen des sclères *(1 grille sur 11)*
-> - [ ] **53. Recherche d'adénopathies cervicales - sus-claviculaires *(Hypothyroïdie)***
+> - [ ] **52. Recherche d'adénopathies cervicales - sus-claviculaires *(Hypothyroïdie)***
 > 	- [ ] Cervicales *(1 grille sur 11)*
 > 	- [ ] Sus-claviculaires *(1 grille sur 11)*
-> - [ ] **54. Palpation de la glande thyroïde *(Hypothyroïdie)***
-> - [ ] **55. Auscultation cardiaque correctement réalisé *(Hypothyroïdie)***
+> - [ ] **53. Auscultation cardiaque correctement réalisé *(Hypothyroïdie)***
 > 	- [ ] 4 foyers *(1 grille sur 11)*
 > 	- [ ] NON = incomplet ou non réalisé *(1 grille sur 11)*
 > 	- [ ] ET postérieur *(1 grille sur 11)*
 > 	- [ ] Auscultation des 4 foyers *(1 grille sur 11)*
-> - [ ] **56. Auscultation pulmonaire (antérieure et postérieure) *(Hypothyroïdie)***
-> - [ ] **57. Examen abdominal : palpation 4 quadrants - recherche d'hépatosplénomégalie *(Hypothyroïdie)***
+> - [ ] **54. Auscultation pulmonaire (antérieure et postérieure) *(Hypothyroïdie)***
+> - [ ] **55. Examen abdominal : palpation 4 quadrants - recherche d'hépatosplénomégalie *(Hypothyroïdie)***
 > 	- [ ] Palpation des 4 quadrants *(1 grille sur 11)*
 > 	- [ ] Recherche d'hépatosplénomégalie *(1 grille sur 11)*
-> - [ ] **58. Examen des ROT au niveau du genou ou de la cheville ou au moins sur 1 site *(Hypothyroïdie)***
+> - [ ] **56. Examen des ROT au niveau du genou ou de la cheville ou au moins sur 1 site *(Hypothyroïdie)***
 > 	- [ ] Ralentissement de la phase de relaxation des ROT
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics

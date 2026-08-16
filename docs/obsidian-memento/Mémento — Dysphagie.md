@@ -60,7 +60,7 @@ cssclasses:
 > - **German-34** — Cancer de l'œsophage `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-34_-_Dysphagie_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(1 grille sur 2)***
+> - [ ] **1. Symptôme principal**
 > - [ ] **2. Caractérisation de la dysphagie *(1 grille sur 2)***
 > 	- [ ] Début
 > 	- [ ] Constant/intermittent
@@ -106,25 +106,24 @@ cssclasses:
 > 	- [ ] Alimentation *(1 grille sur 2)*
 > 	- [ ] Drogues *(1 grille sur 2)*
 > - [ ] **11. Présentation avec nom, fonction et tâche *(1 grille sur 2)***
-> - [ ] **12. Symptôme principal *(1 grille sur 2)***
-> - [ ] **13. Type d'aliments concernés *(1 grille sur 2)***
-> - [ ] **14. Chronologie des symptômes *(1 grille sur 2)***
+> - [ ] **12. Type d'aliments concernés *(1 grille sur 2)***
+> - [ ] **13. Chronologie des symptômes *(1 grille sur 2)***
 > 	- [ ] Début
 > 	- [ ] Mode d'installation
 > 	- [ ] Évolution
-> - [ ] **15. Odynophagie (douleur à la déglutition) *(1 grille sur 2)***
-> - [ ] **16. Habitudes alimentaires et masticatoires *(1 grille sur 2)***
-> - [ ] **17. Symptômes associés ORL *(1 grille sur 2)***
+> - [ ] **14. Odynophagie (douleur à la déglutition) *(1 grille sur 2)***
+> - [ ] **15. Habitudes alimentaires et masticatoires *(1 grille sur 2)***
+> - [ ] **16. Symptômes associés ORL *(1 grille sur 2)***
 > 	- [ ] Fièvre
 > 	- [ ] Dysphonie
 > 	- [ ] Hémoptysie
 > 	- [ ] Sensation de pression au cou, globe pharyngé
-> - [ ] **18. Symptômes respiratoires et digestifs *(1 grille sur 2)***
+> - [ ] **17. Symptômes respiratoires et digestifs *(1 grille sur 2)***
 > 	- [ ] Fausses routes, toux lors des repas
 > 	- [ ] Régurgitations
 > 	- [ ] Pyrosis, reflux
 > 	- [ ] Perte de poids
-> - [ ] **19. Anamnèse sociale *(1 grille sur 2)***
+> - [ ] **18. Anamnèse sociale *(1 grille sur 2)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(1 grille sur 2)***

@@ -64,7 +64,8 @@ cssclasses:
 > - **RESCOS-12b** ⭐️ **officielle** — Trouble anxieux `confirme` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-12b_-_Crise_de_panique_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Question d’ouverture *(1 grille sur 4)***
+> - [ ] **1. Question d'entrée ouverte *(2 grilles sur 4)***
+> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ? *(1 grille sur 4)*
 > - [ ] **2. Dimension temporelle *(1 grille sur 4)***
 > - [ ] **3. Début / durée *(1 grille sur 4)***
 > - [ ] **4. Évolution *(1 grille sur 4)***
@@ -131,81 +132,79 @@ cssclasses:
 > - [ ] **61. Ressources sociales / partenaire *(1 grille sur 4)***
 > - [ ] **62. Situation de logement *(1 grille sur 4)***
 > - [ ] **63. Présentation avec nom, fonction et tâche *(1 grille sur 4)***
-> - [ ] **64. Question d'entrée ouverte *(1 grille sur 4)***
-> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ?
-> - [ ] **65. Exploration des symptômes anxieux *(1 grille sur 4)***
+> - [ ] **64. Exploration des symptômes anxieux *(1 grille sur 4)***
 > 	- [ ] Nature de l'anxiété
 > 	- [ ] Situations déclenchantes
 > 	- [ ] Contenu spécifique des peurs
 > 	- [ ] Peur de situation embarrassante
-> - [ ] **66. Retentissement fonctionnel *(1 grille sur 4)***
+> - [ ] **65. Retentissement fonctionnel *(1 grille sur 4)***
 > 	- [ ] Impact sur la vie quotidienne
 > 	- [ ] Impact professionnel
 > 	- [ ] Ressenti personnel
 > 	- [ ] Stratégies d'évitement
-> - [ ] **67. Anamnèse temporelle *(1 grille sur 4)***
+> - [ ] **66. Anamnèse temporelle *(1 grille sur 4)***
 > 	- [ ] Début des symptômes
 > 	- [ ] Évolution
 > 	- [ ] Antécédents similaires
 > 	- [ ] Facteur précipitant temporel
-> - [ ] **68. Exploration des attaques de panique *(1 grille sur 4)***
+> - [ ] **67. Exploration des attaques de panique *(1 grille sur 4)***
 > 	- [ ] Présence d'attaques de panique
 > 	- [ ] Symptômes physiques
 > 	- [ ] Symptômes psychiques
 > 	- [ ] Palpitations
 > 	- [ ] Sensation d'étouffement
 > 	- [ ] Perte de connaissance
-> - [ ] **69. Comportement dans les espaces confinés *(1 grille sur 4)***
+> - [ ] **68. Comportement dans les espaces confinés *(1 grille sur 4)***
 > 	- [ ] Réaction aux espaces clos
 > 	- [ ] Ascenseurs
 > 	- [ ] Petites pièces
-> - [ ] **70. Événements de vie et facteurs de stress *(1 grille sur 4)***
+> - [ ] **69. Événements de vie et facteurs de stress *(1 grille sur 4)***
 > 	- [ ] Décès de la sœur
 > 	- [ ] Perte d'emploi
 > 	- [ ] Raison des retards
 > 	- [ ] Autres stress récents
-> - [ ] **71. Processus de deuil et adaptation *(1 grille sur 4)***
+> - [ ] **70. Processus de deuil et adaptation *(1 grille sur 4)***
 > 	- [ ] Réaction au décès de la sœur
 > 	- [ ] Soutien psychologique
 > 	- [ ] Rituels de deuil
 > 	- [ ] Sentiments de culpabilité
-> - [ ] **72. Initiative de consultation *(1 grille sur 4)***
+> - [ ] **71. Initiative de consultation *(1 grille sur 4)***
 > 	- [ ] Qui a suggéré la consultation
 > 	- [ ] Motivation personnelle
-> - [ ] **73. Évaluation du risque suicidaire *(1 grille sur 4)***
+> - [ ] **72. Évaluation du risque suicidaire *(1 grille sur 4)***
 > 	- [ ] Idées suicidaires actuelles
 > 	- [ ] Antécédents d'idées suicidaires
 > 	- [ ] Plans ou gestes suicidaires
 > 	- [ ] Facteurs protecteurs
-> - [ ] **74. Stratégies d'adaptation et automédication *(1 grille sur 4)***
+> - [ ] **73. Stratégies d'adaptation et automédication *(1 grille sur 4)***
 > 	- [ ] Automédication
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Consommation de drogues
 > 	- [ ] Stratégies personnelles
-> - [ ] **75. Représentation de la maladie *(1 grille sur 4)***
+> - [ ] **74. Représentation de la maladie *(1 grille sur 4)***
 > 	- [ ] Compréhension du problème
 > 	- [ ] Attentes vis-à-vis du traitement
 > 	- [ ] Croyances sur l'origine
-> - [ ] **76. Antécédents médicaux et psychiatriques *(1 grille sur 4)***
+> - [ ] **75. Antécédents médicaux et psychiatriques *(1 grille sur 4)***
 > 	- [ ] Antécédents médicaux
 > 	- [ ] Antécédents psychiatriques personnels
 > 	- [ ] Hospitalisations
 > 	- [ ] Suivis psychologiques antérieurs
-> - [ ] **77. Médicaments actuels *(1 grille sur 4)***
+> - [ ] **76. Médicaments actuels *(1 grille sur 4)***
 > 	- [ ] Traitements en cours
 > 	- [ ] Contraception
 > 	- [ ] Allergies médicamenteuses
-> - [ ] **78. Antécédents familiaux psychiatriques *(3 grilles sur 4)***
+> - [ ] **77. Antécédents familiaux psychiatriques *(3 grilles sur 4)***
 > 	- [ ] Maladies psychiatriques familiales *(1 grille sur 4)*
 > 	- [ ] Dépression maternelle *(1 grille sur 4)*
 > 	- [ ] Antécédents de suicide familiaux *(1 grille sur 4)*
-> - [ ] **79. Anamnèse sociale *(1 grille sur 4)***
+> - [ ] **78. Anamnèse sociale *(1 grille sur 4)***
 > 	- [ ] Situation de logement
 > 	- [ ] Relation de couple
 > 	- [ ] Réseau social
 > 	- [ ] Situation professionnelle
-> - [ ] **80. Résumé et questions de la patiente *(1 grille sur 4)***
-> - [ ] **81. Explore les plaintes principales actuelles : Crises de paniques *(2 grilles sur 4)***
+> - [ ] **79. Résumé et questions de la patiente *(1 grille sur 4)***
+> - [ ] **80. Explore les plaintes principales actuelles : Crises de paniques *(2 grilles sur 4)***
 > 	- [ ] Début
 > 	- [ ] Intensité
 > 	- [ ] Durée
@@ -213,43 +212,43 @@ cssclasses:
 > 	- [ ] Contexte
 > 	- [ ] Facteurs déclencheurs
 > 	- [ ] Facteurs atténuants
-> - [ ] **82. Répercussion des symptômes dans le quotidien du/de la patient·e *(2 grilles sur 4)***
+> - [ ] **81. Répercussion des symptômes dans le quotidien du/de la patient·e *(2 grilles sur 4)***
 > 	- [ ] Emploi
 > 	- [ ] Relations
-> - [ ] **83. Anamnèse cardio-respiratoire (afin d'exclure cette origine) *(2 grilles sur 4)***
-> - [ ] **84. Antécédents psychiatriques personnels (éventuels suivis, hospitalisations, traitements...) *(2 grilles sur 4)***
-> - [ ] **85. Anamnèse socioprofessionnelle ET familiale *(2 grilles sur 4)***
+> - [ ] **82. Anamnèse cardio-respiratoire (afin d'exclure cette origine) *(2 grilles sur 4)***
+> - [ ] **83. Antécédents psychiatriques personnels (éventuels suivis, hospitalisations, traitements...) *(2 grilles sur 4)***
+> - [ ] **84. Anamnèse socioprofessionnelle ET familiale *(2 grilles sur 4)***
 > 	- [ ] Profession
 > 	- [ ] Couple
-> - [ ] **86. Évaluation de troubles cognitifs *(2 grilles sur 4)***
+> - [ ] **85. Évaluation de troubles cognitifs *(2 grilles sur 4)***
 > 	- [ ] Trouble de la mémoire
 > 	- [ ] Trouble de la concentration
-> - [ ] **87. Éléments thymiques *(2 grilles sur 4)***
+> - [ ] **86. Éléments thymiques *(2 grilles sur 4)***
 > 	- [ ] Humeur dépressive
 > 	- [ ] Perte d'intérêt
 > 	- [ ] Perte de plaisir
 > 	- [ ] Réduction d'énergie
-> - [ ] **88. Présence d'idées suicidaires *(2 grilles sur 4)***
-> - [ ] **89. Syndrome somatique *(2 grilles sur 4)***
+> - [ ] **87. Présence d'idées suicidaires *(2 grilles sur 4)***
+> - [ ] **88. Syndrome somatique *(2 grilles sur 4)***
 > 	- [ ] Trouble du sommeil
 > 	- [ ] Modification de l'appétit
 > 	- [ ] Perte/prise de poids
-> - [ ] **90. Éléments de trouble de panique *(2 grilles sur 4)***
+> - [ ] **89. Éléments de trouble de panique *(2 grilles sur 4)***
 > 	- [ ] Angoisses intenses d'apparition brutale
 > 	- [ ] Imprévisible
 > 	- [ ] Montée progressive
 > 	- [ ] Dans situations variables d'apparition (travail, maison, sorties)
-> - [ ] **91. Symptômes neurovégétatifs *(2 grilles sur 4)***
+> - [ ] **90. Symptômes neurovégétatifs *(2 grilles sur 4)***
 > 	- [ ] Palpitations
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Sensation d'étouffement
 > 	- [ ] Étourdissement
 > 	- [ ] Déréalisation/dépersonnalisation
 > 	- [ ] Peur de mourir ou perdre le contrôle de soi ou devenir fou
-> - [ ] **92. Absence de symptômes entre les crises *(2 grilles sur 4)***
-> - [ ] **93. Éléments hypo/maniaques (fluctuation de l'humeur, humeur euphorique, baisse des besoins de sommeil, surplus d'énergie, désinhibition, ...) *(2 grilles sur 4)***
-> - [ ] **94. Évaluation de consommation de toxiques (alcool, drogue) *(2 grilles sur 4)***
-> - [ ] **95. Symptômes psychotiques (délire, troubles perceptifs) *(2 grilles sur 4)***
+> - [ ] **91. Absence de symptômes entre les crises *(2 grilles sur 4)***
+> - [ ] **92. Éléments hypo/maniaques (fluctuation de l'humeur, humeur euphorique, baisse des besoins de sommeil, surplus d'énergie, désinhibition, ...) *(2 grilles sur 4)***
+> - [ ] **93. Évaluation de consommation de toxiques (alcool, drogue) *(2 grilles sur 4)***
+> - [ ] **94. Symptômes psychotiques (délire, troubles perceptifs) *(2 grilles sur 4)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Examen de l'état mental - Conscience et orientation *(1 grille sur 4)***

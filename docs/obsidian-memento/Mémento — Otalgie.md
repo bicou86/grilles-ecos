@@ -65,11 +65,13 @@ cssclasses:
 > - [ ] **3. Caractérisation temporelle des symptômes *(1 grille sur 2)***
 > 	- [ ] Début des symptômes
 > 	- [ ] Évolution/aggravation
-> - [ ] **4. Symptômes auriculaires spécifiques *(1 grille sur 2)***
+> - [ ] **4. Symptômes auriculaires spécifiques**
 > 	- [ ] Hypoacousie
-> 	- [ ] Otorrhée (cérumen, sang, pus)
+> 	- [ ] Otorrhée (cérumen, sang, pus) *(1 grille sur 2)*
 > 	- [ ] Douleur
-> 	- [ ] Acouphènes ou vertiges
+> 	- [ ] Acouphènes ou vertiges *(1 grille sur 2)*
+> 	- [ ] Acouphènes *(1 grille sur 2)*
+> 	- [ ] Vertiges *(1 grille sur 2)*
 > - [ ] **5. Symptômes associés *(1 grille sur 2)***
 > 	- [ ] Fièvre
 > 	- [ ] Toux
@@ -80,10 +82,13 @@ cssclasses:
 > 	- [ ] Épisodes antérieurs d'otite
 > 	- [ ] Autres maladies ORL
 > 	- [ ] Chirurgies ORL
-> - [ ] **7. Antécédents médicaux généraux *(1 grille sur 2)***
-> 	- [ ] Maladies chroniques
-> 	- [ ] Hospitalisations antérieures
-> 	- [ ] Allergies connues
+> - [ ] **7. Antécédents médicaux généraux**
+> 	- [ ] Maladies chroniques *(1 grille sur 2)*
+> 	- [ ] Hospitalisations antérieures *(1 grille sur 2)*
+> 	- [ ] Allergies connues *(1 grille sur 2)*
+> 	- [ ] Pathologies antérieures *(1 grille sur 2)*
+> 	- [ ] Épisodes d'otite antérieurs *(1 grille sur 2)*
+> 	- [ ] Hospitalisations *(1 grille sur 2)*
 > - [ ] **8. Statut vaccinal**
 > 	- [ ] Vaccin pneumocoque à jour *(1 grille sur 2)*
 > - [ ] **9. Traitements déjà administrés *(1 grille sur 2)***
@@ -120,31 +125,22 @@ cssclasses:
 > 	- [ ] Aspect
 > 	- [ ] Odeur
 > 	- [ ] Quantité
-> - [ ] **18. Symptômes auriculaires associés *(1 grille sur 2)***
-> 	- [ ] Douleur
-> 	- [ ] Hypoacousie
-> 	- [ ] Acouphènes
-> 	- [ ] Vertiges
-> - [ ] **19. Symptômes généraux *(1 grille sur 2)***
+> - [ ] **18. Symptômes généraux *(1 grille sur 2)***
 > 	- [ ] Fièvre
 > 	- [ ] Toux
 > 	- [ ] Rhinorrhée
 > 	- [ ] Vomissements
 > 	- [ ] État général
-> - [ ] **20. Antécédents médicaux *(1 grille sur 2)***
-> 	- [ ] Pathologies antérieures
-> 	- [ ] Épisodes d'otite antérieurs
-> 	- [ ] Hospitalisations
-> - [ ] **21. Traitements en cours *(1 grille sur 2)***
+> - [ ] **19. Traitements en cours *(1 grille sur 2)***
 > 	- [ ] Antibiotiques
 > 	- [ ] Paracétamol
 > 	- [ ] Lavage nasal
 > 	- [ ] Amélioration avec traitement
-> - [ ] **22. Contexte environnemental *(1 grille sur 2)***
+> - [ ] **20. Contexte environnemental *(1 grille sur 2)***
 > 	- [ ] État de santé familial
 > 	- [ ] Fréquentation de collectivité
 > 	- [ ] Fratrie
-> - [ ] **23. Questions de clôture *(1 grille sur 2)***
+> - [ ] **21. Questions de clôture *(1 grille sur 2)***
 > 	- [ ] Avez-vous des questions ?
 > 	- [ ] Y a-t-il autre chose d'important ?
 
@@ -163,18 +159,18 @@ cssclasses:
 > 	- [ ] Tympan droit *(1 grille sur 2)*
 > 	- [ ] Tympan gauche *(1 grille sur 2)*
 > 	- [ ] Présence d'épanchement *(1 grille sur 2)*
-> 	- [ ] État du conduit auditif externe *(1 grille sur 2)*
+> 	- [ ] État du conduit auditif externe
 > 	- [ ] Oreille droite *(1 grille sur 2)*
 > 	- [ ] Oreille gauche *(1 grille sur 2)*
-> 	- [ ] Conduit auditif externe *(1 grille sur 2)*
 > - [ ] **4. Examen de l'oropharynx *(1 grille sur 2)***
 > 	- [ ] Pharynx
 > 	- [ ] Amygdales
 > 	- [ ] Présence d'exsudat
-> - [ ] **5. Palpation des aires ganglionnaires *(1 grille sur 2)***
+> - [ ] **5. Palpation des aires ganglionnaires**
 > 	- [ ] Ganglions cervicaux
 > 	- [ ] Ganglions rétro-auriculaires
-> 	- [ ] Ganglions sous-mandibulaires
+> 	- [ ] Ganglions sous-mandibulaires *(1 grille sur 2)*
+> 	- [ ] Ganglions pré-auriculaires *(1 grille sur 2)*
 > - [ ] **6. Auscultation cardiopulmonaire *(1 grille sur 2)***
 > 	- [ ] Auscultation pulmonaire
 > 	- [ ] Auscultation cardiaque
@@ -190,14 +186,10 @@ cssclasses:
 > - [ ] **9. Examen ORL complémentaire *(1 grille sur 2)***
 > 	- [ ] Oropharynx
 > 	- [ ] Rhinoscopie antérieure
-> - [ ] **10. Palpation ganglionnaire *(1 grille sur 2)***
-> 	- [ ] Ganglions cervicaux
-> 	- [ ] Ganglions rétro-auriculaires
-> 	- [ ] Ganglions pré-auriculaires
-> - [ ] **11. Auscultation cardio-pulmonaire *(1 grille sur 2)***
+> - [ ] **10. Auscultation cardio-pulmonaire *(1 grille sur 2)***
 > 	- [ ] Auscultation pulmonaire
 > 	- [ ] Auscultation cardiaque
-> - [ ] **12. Recherche de complications *(1 grille sur 2)***
+> - [ ] **11. Recherche de complications *(1 grille sur 2)***
 > 	- [ ] Signes de mastoïdite
 > 	- [ ] Signes méningés
 > 	- [ ] Paralysie faciale
@@ -212,11 +204,14 @@ cssclasses:
 > 	- [ ] Test rapide streptocoque si suspicion d'angine associée
 > 	- [ ] Tympanométrie si doute diagnostique
 > - [ ] **4. Propose une stratégie thérapeutique adaptée *(1 grille sur 2)***
-> - [ ] **5. Informe sur les complications possibles *(1 grille sur 2)***
-> 	- [ ] Mastoïdite
-> 	- [ ] Paralysie faciale périphérique (par œdème)
+> - [ ] **5. Informe sur les complications possibles**
+> 	- [ ] Mastoïdite *(1 grille sur 2)*
+> 	- [ ] Paralysie faciale périphérique (par œdème) *(1 grille sur 2)*
 > 	- [ ] Thrombose du sinus latéral
 > 	- [ ] Complications intracrâniennes (méningite, abcès cérébral)
+> 	- [ ] Mastoïdite (tuméfaction rétro-auriculaire) *(1 grille sur 2)*
+> 	- [ ] Paralysie faciale (par œdème du nerf) *(1 grille sur 2)*
+> 	- [ ] Labyrinthite *(1 grille sur 2)*
 > - [ ] **6. Organise le suivi *(1 grille sur 2)***
 > 	- [ ] Contrôle à 48-72h si surveillance
 > 	- [ ] Contrôle à 1 semaine si antibiotiques
@@ -235,28 +230,22 @@ cssclasses:
 > 	- [ ] Otite moyenne chronique avec cholestéatome (écoulement fétide)
 > 	- [ ] Corps étranger surinfecté
 > - [ ] **10. Prise en charge thérapeutique *(1 grille sur 2)***
-> - [ ] **11. Information sur les complications possibles *(1 grille sur 2)***
-> 	- [ ] Mastoïdite (tuméfaction rétro-auriculaire)
-> 	- [ ] Paralysie faciale (par œdème du nerf)
-> 	- [ ] Thrombose du sinus latéral
-> 	- [ ] Complications intracrâniennes (méningite, abcès cérébral)
-> 	- [ ] Labyrinthite
-> - [ ] **12. Rassurer la mère *(1 grille sur 2)***
+> - [ ] **11. Rassurer la mère *(1 grille sur 2)***
 > 	- [ ] Perforation tympanique souvent bénéfique (drainage)
 > 	- [ ] Cicatrisation spontanée habituelle en 2-3 semaines
 > 	- [ ] Amélioration attendue sous antibiotiques
 > 	- [ ] Surveillance simple nécessaire
-> - [ ] **13. Suivi et surveillance *(1 grille sur 2)***
+> - [ ] **12. Suivi et surveillance *(1 grille sur 2)***
 > 	- [ ] Contrôle clinique dans 48-72h si pas d'amélioration
 > 	- [ ] Contrôle ORL à 1 semaine
 > 	- [ ] Contrôle de la cicatrisation tympanique à 1 mois
 > 	- [ ] Audiométrie si doute sur l'audition
-> - [ ] **14. Conseils de prévention *(1 grille sur 2)***
+> - [ ] **13. Conseils de prévention *(1 grille sur 2)***
 > 	- [ ] Vaccination antipneumococcique à jour
 > 	- [ ] Éviter le tabagisme passif
 > 	- [ ] Limiter l'usage de la tétine
 > 	- [ ] Position semi-assise pour les biberons
-> - [ ] **15. Critères de reconsultation urgente *(1 grille sur 2)***
+> - [ ] **14. Critères de reconsultation urgente *(1 grille sur 2)***
 > 	- [ ] Tuméfaction rétro-auriculaire
 > 	- [ ] Paralysie faciale
 > 	- [ ] Vertiges importants

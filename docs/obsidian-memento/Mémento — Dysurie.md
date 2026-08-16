@@ -313,24 +313,24 @@ cssclasses:
 > 	- [ ] Réaction appropriée si palpation vessie
 
 > [!success] 💊 Management — si Infection à Chlamydia trachomatis
-> - [ ] **1. Diagnostics différentiels**
-> 	- [ ] Infection à Neisseria gonorrhoeae
-> 	- [ ] Infection à Trichomonas vaginalis
-> 	- [ ] Infection à Mycoplasma
-> 	- [ ] Cystite simple
-> - [ ] **2. Prévention et conseils**
-> 	- [ ] Utilisation du préservatif
-> 	- [ ] Dépistage régulier si partenaires multiples
-> 	- [ ] Notification des partenaires
-> 	- [ ] Suivi après traitement
-> - [ ] **3. Hypothèse diagnostique principale**
+> - [ ] **1. Hypothèse diagnostique principale**
 > 	- [ ] Infection à Chlamydia trachomatis
 > 	- [ ] Explication adaptée à la patiente
-> - [ ] **4. Examens complémentaires**
+> - [ ] **2. Examens diagnostiques complémentaires**
 > 	- [ ] PCR Chlamydia/Gonocoque
 > 	- [ ] Analyse d'urine
 > 	- [ ] Test de grossesse si indiqué
 > 	- [ ] Dépistage IST complet
+> - [ ] **3. Diagnostics différentiels**
+> 	- [ ] Infection à Neisseria gonorrhoeae
+> 	- [ ] Infection à Trichomonas vaginalis
+> 	- [ ] Infection à Mycoplasma
+> 	- [ ] Cystite simple
+> - [ ] **4. Prévention et conseils**
+> 	- [ ] Utilisation systématique du préservatif
+> 	- [ ] Dépistage régulier si partenaires multiples
+> 	- [ ] Notification des partenaires
+> 	- [ ] Suivi après traitement
 > - [ ] **5. Traitement proposé**
 > 	- [ ] Azithromycine 1g dose unique
 > 	- [ ] ± Ceftriaxone 250mg IM
@@ -342,12 +342,12 @@ cssclasses:
 > 	- [ ] Importance du traitement du partenaire
 
 > [!success] 💊 Management — si Infection urinaire (cystite)
-> - [ ] **1. Traitement proposé**
-> 	- [ ] Antibiothérapie pour infection urinaire
-> - [ ] **2. Évoque le diagnostic d'infection urinaire basse**
-> - [ ] **3. Évoque les diagnostics différentiels**
+> - [ ] **1. Diagnostics différentiels**
 > 	- [ ] Pyélonéphrite
 > 	- [ ] Infections sexuellement transmissibles (gonorrhée, chlamydia, syphilis, VIH)
+> - [ ] **2. Traitement proposé**
+> 	- [ ] Antibiothérapie pour infection urinaire
+> - [ ] **3. Évoque le diagnostic d'infection urinaire basse**
 > - [ ] **4. Propose des investigations paracliniques**
 > 	- [ ] Analyse d'urine/ECBU
 > 	- [ ] Dépistage IST (gonorrhée, chlamydia, syphilis, VIH)
@@ -366,7 +366,7 @@ cssclasses:
 > - [ ] **5. Status urinaire**
 > - [ ] **6. Échographie vésicale avec mesure du résidu post-mictionnel**
 > - [ ] **7. Échographie des reins / des voies urinaires supérieures**
-> - [ ] **8. Hypothèse diagnostique**
+> - [ ] **8. Hypothèse diagnostique principale**
 > - [ ] **9. Information du patient**
 > - [ ] **10. Instructions**
 > - [ ] **11. Traitement médicamenteux**
@@ -379,19 +379,19 @@ cssclasses:
 > - [ ] **18. Filet de sécurité**
 
 > [!success] 💊 Management — si Urétrite sexuellement transmissible
-> - [ ] **1. Énonce le diagnostic principal**
-> - [ ] **2. Diagnostics différentiels**
-> 	- [ ] Cystite
-> 	- [ ] Prostatite
-> 	- [ ] Urétrite non gonococcique
-> 	- [ ] Infection urinaire haute
-> - [ ] **3. Examens diagnostiques**
+> - [ ] **1. Examens diagnostiques complémentaires**
 > 	- [ ] Bandelette urinaire et ECBU
 > 	- [ ] Test des 3 ou 4 verres si nécessaire
 > 	- [ ] Prélèvement de l'écoulement urétral (gonocoques et Chlamydia)
 > 	- [ ] Biologie : FSC, CRP, créatinine
 > 	- [ ] Test VIH obligatoire !
 > 	- [ ] Sérologies IST (syphilis, hépatites B et C)
+> - [ ] **2. Énonce le diagnostic principal**
+> - [ ] **3. Diagnostics différentiels**
+> 	- [ ] Cystite
+> 	- [ ] Prostatite
+> 	- [ ] Urétrite non gonococcique
+> 	- [ ] Infection urinaire haute
 > - [ ] **4. Traitement antibiotique**
 > 	- [ ] Ceftriaxone 500mg IM dose unique (gonocoque)
 > 	- [ ] + Azithromycine 1g PO dose unique (Chlamydia)

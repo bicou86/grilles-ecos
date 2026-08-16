@@ -98,12 +98,15 @@ cssclasses:
 > 	- [ ] Disparition rapide à l'arrêt
 > 	- [ ] Apparition après environ 50 mètres de marche
 > 	- [ ] Crampe qui s'estompe en moins d'une minute à l'arrêt
-> - [ ] **3. Recherche de symptômes associés *(1 grille sur 3)***
-> 	- [ ] Douleurs de repos
-> 	- [ ] Douleurs nocturnes en position couchée
-> 	- [ ] Troubles trophiques des extrémités
-> 	- [ ] Paresthésies
-> 	- [ ] Impuissance
+> - [ ] **3. Recherche de symptômes associés *(2 grilles sur 3)***
+> 	- [ ] Douleurs de repos *(1 grille sur 3)*
+> 	- [ ] Douleurs nocturnes en position couchée *(1 grille sur 3)*
+> 	- [ ] Troubles trophiques des extrémités *(1 grille sur 3)*
+> 	- [ ] Paresthésies *(1 grille sur 3)*
+> 	- [ ] Impuissance *(1 grille sur 3)*
+> 	- [ ] Dyspnée d'effort *(Embolie pulmonaire)*
+> 	- [ ] Excès de poids *(Embolie pulmonaire)*
+> 	- [ ] Tachypnée *(Embolie pulmonaire)*
 > - [ ] **4. Facteurs de risque cardiovasculaire *(AOMI)***
 > 	- [ ] Tabagisme
 > 	- [ ] Diabète
@@ -190,22 +193,18 @@ cssclasses:
 > 	- [ ] Voyage avec groupes du 3e âge
 > 	- [ ] Retour il y a 4 jours
 > 	- [ ] Position assise prolongée dans le car
-> - [ ] **17. Symptômes associés *(Embolie pulmonaire)***
-> 	- [ ] Dyspnée d'effort
-> 	- [ ] Excès de poids
-> 	- [ ] Tachypnée
-> - [ ] **18. Facteurs de risque thromboembolique *(Embolie pulmonaire)***
+> - [ ] **17. Facteurs de risque thromboembolique *(Embolie pulmonaire)***
 > 	- [ ] Voyage prolongé en position assise
 > 	- [ ] Obésité
 > 	- [ ] Âge
 > 	- [ ] Varices opérées
 > 	- [ ] Cancer du sein
 > 	- [ ] Immobilisation relative
-> - [ ] **19. Antécédents familiaux *(Embolie pulmonaire)***
+> - [ ] **18. Antécédents familiaux *(Embolie pulmonaire)***
 > 	- [ ] Père décédé à 78 ans
 > 	- [ ] Mère décédée à 94 ans
 > 	- [ ] Sœur opérée cancer du sein
-> - [ ] **20. Score de Wells pour TVP *(Embolie pulmonaire)***
+> - [ ] **19. Score de Wells pour TVP *(Embolie pulmonaire)***
 > 	- [ ] Cancer actif (+1)
 > 	- [ ] Immobilisation/voyage (+1)
 > 	- [ ] Gonflement unilatéral (+1)

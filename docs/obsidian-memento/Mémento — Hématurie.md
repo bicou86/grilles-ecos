@@ -84,15 +84,19 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif de consultation principal**
-> - [ ] **2. Caractérisation de l'hématurie *(Glomérulonéphrite post-streptococcique)***
-> 	- [ ] Début
-> 	- [ ] Constant/intermittent
-> 	- [ ] Événements précipitants
-> 	- [ ] Progression
-> 	- [ ] Épisodes antérieurs
-> 	- [ ] Facteurs améliorants
-> 	- [ ] Facteurs aggravants
-> 	- [ ] Symptômes associés
+> - [ ] **2. Caractéristiques de l'hématurie**
+> 	- [ ] Début *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Constant/intermittent *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Événements précipitants *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Progression *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Épisodes antérieurs *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Facteurs améliorants *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Facteurs aggravants *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Symptômes associés *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Début et évolution *(Carcinome vésical)*
+> 	- [ ] Quantité de sang *(Carcinome vésical)*
+> 	- [ ] Aspect (caillots) *(Carcinome vésical)*
+> 	- [ ] Moment dans le jet urinaire *(Carcinome vésical)*
 > - [ ] **3. Caractérisation de la toux *(Glomérulonéphrite post-streptococcique)***
 > 	- [ ] Début
 > 	- [ ] Progression
@@ -140,32 +144,27 @@ cssclasses:
 > 	- [ ] Substances illicites *(Carcinome vésical)*
 > 	- [ ] Médicaments *(Carcinome vésical)*
 > - [ ] **12. Présentation avec nom, fonction et objectif *(Carcinome vésical)***
-> - [ ] **13. Caractéristiques de l'hématurie *(Carcinome vésical)***
-> 	- [ ] Début et évolution
-> 	- [ ] Quantité de sang
-> 	- [ ] Aspect (caillots)
-> 	- [ ] Moment dans le jet urinaire
-> - [ ] **14. Symptômes mictionnels *(Carcinome vésical)***
+> - [ ] **13. Symptômes mictionnels *(Carcinome vésical)***
 > 	- [ ] Fréquence mictionnelle
 > 	- [ ] Dysurie
 > 	- [ ] Rétention urinaire
 > 	- [ ] Gouttes post-mictionnelles
-> - [ ] **15. Symptômes associés *(Carcinome vésical)***
+> - [ ] **14. Symptômes associés *(Carcinome vésical)***
 > 	- [ ] Douleurs abdominales ou lombaires
 > 	- [ ] Traumatisme génito-urinaire
 > 	- [ ] Manipulations urétrales
-> - [ ] **16. Revue des systèmes *(Carcinome vésical)***
+> - [ ] **15. Revue des systèmes *(Carcinome vésical)***
 > 	- [ ] Symptômes B
 > 	- [ ] Symptômes neurologiques
 > 	- [ ] Symptômes cardio-pulmonaires
 > 	- [ ] Troubles digestifs
 > 	- [ ] Appétit et évolution pondérale
-> - [ ] **17. Activités et expositions *(Carcinome vésical)***
+> - [ ] **16. Activités et expositions *(Carcinome vésical)***
 > 	- [ ] Activités sportives intenses
 > 	- [ ] Voyages récents
 > 	- [ ] Exposition professionnelle
-> - [ ] **18. Anamnèse sociale *(Carcinome vésical)***
-> - [ ] **19. Résumé et questions complémentaires *(Carcinome vésical)***
+> - [ ] **17. Anamnèse sociale *(Carcinome vésical)***
+> - [ ] **18. Résumé et questions complémentaires *(Carcinome vésical)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Glomérulonéphrite post-streptococcique)***

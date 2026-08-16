@@ -94,15 +94,21 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif de consultation *(2 grilles sur 5)***
-> - [ ] **2. Caractérisation des troubles du transit *(1 grille sur 5)***
-> 	- [ ] Début
-> 	- [ ] Constant/intermittent
-> 	- [ ] Événements précipitants
-> 	- [ ] Progression
-> 	- [ ] Épisodes antérieurs
-> 	- [ ] Fréquence
-> 	- [ ] Facteurs améliorants
-> 	- [ ] Facteurs aggravants
+> - [ ] **2. Caractérisation des troubles du transit *(2 grilles sur 5)***
+> 	- [ ] Début *(1 grille sur 5)*
+> 	- [ ] Constant/intermittent *(1 grille sur 5)*
+> 	- [ ] Événements précipitants *(1 grille sur 5)*
+> 	- [ ] Progression *(1 grille sur 5)*
+> 	- [ ] Épisodes antérieurs *(1 grille sur 5)*
+> 	- [ ] Fréquence *(1 grille sur 5)*
+> 	- [ ] Facteurs améliorants *(1 grille sur 5)*
+> 	- [ ] Facteurs aggravants *(1 grille sur 5)*
+> 	- [ ] Diarrhée aiguë *(Cancer colorectal)*
+> 	- [ ] Diarrhée chronique *(Cancer colorectal)*
+> 	- [ ] Diarrhée *(Cancer colorectal)*
+> 	- [ ] Constipation *(Cancer colorectal)*
+> 	- [ ] Syndrome dysentérique *(Cancer colorectal)*
+> 	- [ ] Syndrome cholérique *(Cancer colorectal)*
 > - [ ] **3. Caractéristiques des selles *(2 grilles sur 5)***
 > 	- [ ] Diarrhée (couleur/consistance) *(1 grille sur 5)*
 > 	- [ ] Sang dans les selles *(1 grille sur 5)*
@@ -159,7 +165,7 @@ cssclasses:
 > 	- [ ] Alimentation *(1 grille sur 5)*
 > 	- [ ] Drogues *(Diarrhée chronique par malabsorption)*
 > - [ ] **13. Présentation avec nom, fonction et objectif de la consultation *(Diarrhée chronique par malabsorption · Déshydratation)***
-> - [ ] **14. Question ouverte pour identifier le symptôme principal *(Diarrhée chronique par malabsorption)***
+> - [ ] **14. Question ouverte pour identifier le motif de consultation *(Diarrhée chronique par malabsorption · Déshydratation)***
 > - [ ] **15. Question de clarification : "Que comprenez-vous par diarrhée ?" *(Diarrhée chronique par malabsorption)***
 > - [ ] **16. Caractérisation temporelle de la diarrhée *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Durée
@@ -178,9 +184,12 @@ cssclasses:
 > 	- [ ] Céphalées
 > 	- [ ] Douleurs musculaires/articulaires
 > 	- [ ] Éruption cutanée
-> - [ ] **20. Signes de déshydratation *(Diarrhée chronique par malabsorption)***
-> 	- [ ] Production/couleur urinaire
-> 	- [ ] Vertiges/hypotension orthostatique
+> - [ ] **20. Signes cliniques de déshydratation *(Diarrhée chronique par malabsorption · Déshydratation)***
+> 	- [ ] Production/couleur urinaire *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Vertiges/hypotension orthostatique *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Pli cutané persistant *(Déshydratation)*
+> 	- [ ] Muqueuses sèches *(Déshydratation)*
+> 	- [ ] Oligurie *(Déshydratation)*
 > - [ ] **21. Symptômes constitutionnels *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Symptômes B (sueurs nocturnes, perte de poids)
 > 	- [ ] Intolérance à la chaleur/transpiration excessive/tremblements
@@ -214,94 +223,96 @@ cssclasses:
 > 	- [ ] Entourage affecté
 > 	- [ ] Voyages récents
 > - [ ] **27. Contexte social et professionnel *(Diarrhée chronique par malabsorption)***
-> - [ ] **28. Question ouverte pour identifier le motif de consultation *(Déshydratation)***
-> - [ ] **29. Signes cliniques de déshydratation *(Déshydratation)***
-> 	- [ ] Pli cutané persistant
-> 	- [ ] Muqueuses sèches
-> 	- [ ] Oligurie
-> - [ ] **30. Symptômes digestifs *(Déshydratation)***
-> 	- [ ] Vomissements (fréquence, aspect)
-> 	- [ ] Diarrhée (fréquence, consistance)
-> - [ ] **31. Bilan des entrées et sorties *(Déshydratation)***
+> - [ ] **28. Symptômes digestifs associés *(Cancer colorectal · Déshydratation)***
+> 	- [ ] Vomissements (fréquence, aspect) *(Déshydratation)*
+> 	- [ ] Diarrhée (fréquence, consistance) *(Déshydratation)*
+> 	- [ ] Distension abdominale douloureuse *(Cancer colorectal)*
+> 	- [ ] Difficultés à s'alimenter *(Cancer colorectal)*
+> 	- [ ] Ténesme *(Cancer colorectal)*
+> 	- [ ] Épreintes *(Cancer colorectal)*
+> 	- [ ] Douleurs abdominales *(Cancer colorectal)*
+> 	- [ ] Ballonnements *(Cancer colorectal)*
+> 	- [ ] Flatulences *(Cancer colorectal)*
+> - [ ] **29. Bilan des entrées et sorties *(Déshydratation)***
 > 	- [ ] Quantité de boissons ingérées
 > 	- [ ] Fréquence et volume des urines
 > 	- [ ] Présence de larmes lors des pleurs
-> - [ ] **32. État neurologique *(Déshydratation)***
+> - [ ] **30. État neurologique *(Déshydratation)***
 > 	- [ ] Confusion
 > 	- [ ] Somnolence
 > 	- [ ] Sopor
-> - [ ] **33. Recherche de causes infectieuses *(Déshydratation)***
+> - [ ] **31. Recherche de causes infectieuses *(Déshydratation)***
 > 	- [ ] Signes d'infection urinaire
 > 	- [ ] Fièvre associée
 > 	- [ ] Environnement épidémique
-> - [ ] **34. Recherche de causes métaboliques - Diabète sucré *(Déshydratation)***
+> - [ ] **32. Recherche de causes métaboliques - Diabète sucré *(Déshydratation)***
 > 	- [ ] Polyurie-polydipsie
 > 	- [ ] Perte de poids récente
 > 	- [ ] Antécédents familiaux de diabète
-> - [ ] **35. Recherche de causes endocriniennes - Insuffisance surrénalienne *(Déshydratation)***
+> - [ ] **33. Recherche de causes endocriniennes - Insuffisance surrénalienne *(Déshydratation)***
 > 	- [ ] Asthénie chronique
 > 	- [ ] Hypotension
 > 	- [ ] Hyperpigmentation cutanée
-> - [ ] **36. Habitudes alimentaires et hydratation habituelle *(Déshydratation)***
-> - [ ] **37. Toxiques et médicaments *(Déshydratation)***
+> - [ ] **34. Habitudes alimentaires et hydratation habituelle *(Déshydratation)***
+> - [ ] **35. Toxiques et médicaments *(Déshydratation)***
 > 	- [ ] Diurétiques
 > 	- [ ] Laxatifs
 > 	- [ ] Autres médicaments
-> - [ ] **38. Anamnèse de l'entourage *(Déshydratation)***
+> - [ ] **36. Anamnèse de l'entourage *(Déshydratation)***
 > 	- [ ] Cas similaires dans l'entourage
 > 	- [ ] Voyage récent
 > 	- [ ] Consommation d'aliments suspects
-> - [ ] **39. Antécédents familiaux pertinents *(Déshydratation)***
-> - [ ] **40. Anamnèse sociale *(Déshydratation)***
+> - [ ] **37. Antécédents familiaux pertinents *(Déshydratation)***
+> - [ ] **38. Anamnèse sociale *(Déshydratation)***
 > 	- [ ] Conditions de vie
 > 	- [ ] Autonomie (personne âgée)
 > 	- [ ] Garde d'enfant/crèche
-> - [ ] **41. Caractérisation de la plainte principale *(1 grille sur 5)***
+> - [ ] **39. Caractérisation de la plainte principale *(1 grille sur 5)***
 > 	- [ ] Localisation de la douleur
 > 	- [ ] Type de douleur
 > 	- [ ] Intensité
 > 	- [ ] Durée et fréquence
 > 	- [ ] Facteurs aggravants
-> - [ ] **42. Caractérisation des rectorragies *(1 grille sur 5)***
+> - [ ] **40. Caractérisation des rectorragies *(1 grille sur 5)***
 > 	- [ ] Présence de sang frais
 > 	- [ ] Quantité et fréquence
 > 	- [ ] Glaires
 > 	- [ ] Diarrhées nocturnes
 > 	- [ ] Ténesmes et urgences fécales
-> - [ ] **43. Symptômes associés *(1 grille sur 5)***
+> - [ ] **41. Symptômes associés *(1 grille sur 5)***
 > 	- [ ] Perte de poids
 > 	- [ ] Inappétence
 > 	- [ ] Nausées et vomissements
 > 	- [ ] Fatigue
 > 	- [ ] Palpitations
-> - [ ] **44. Retentissement fonctionnel *(1 grille sur 5)***
+> - [ ] **42. Retentissement fonctionnel *(1 grille sur 5)***
 > 	- [ ] Impact socioprofessionnel
 > 	- [ ] Isolement social
 > 	- [ ] Adaptation comportementale
-> - [ ] **45. Antécédents et facteurs de risque *(1 grille sur 5)***
+> - [ ] **43. Antécédents et facteurs de risque *(1 grille sur 5)***
 > 	- [ ] Voyage récent
 > 	- [ ] Relations sexuelles non protégées
 > 	- [ ] Consommation d'aliments à risque
 > 	- [ ] Tabagisme
 > 	- [ ] Médicaments gastrotoxiques
-> - [ ] **46. Anamnèse systémique *(1 grille sur 5)***
+> - [ ] **44. Anamnèse systémique *(1 grille sur 5)***
 > 	- [ ] Pas de symptômes urinaires
 > 	- [ ] Pas de douleurs articulaires
 > 	- [ ] Pas d'atteinte cutanée
 > 	- [ ] Pas d'atteinte oculaire
 > 	- [ ] Pas de notion de contage
-> - [ ] **47. Anamnèse médicale et chirurgicale *(1 grille sur 5)***
+> - [ ] **45. Anamnèse médicale et chirurgicale *(1 grille sur 5)***
 > 	- [ ] Reflux gastro-œsophagien
 > 	- [ ] Lombalgies chroniques
 > 	- [ ] Appendicectomie
 > 	- [ ] Cure de tunnel carpien
-> - [ ] **48. Caractérisation de la modification du transit *(Cancer colorectal)***
+> - [ ] **46. Caractérisation de la modification du transit *(Cancer colorectal)***
 > 	- [ ] Évolution générale
 > 	- [ ] Nombre de selles par 24h
 > 	- [ ] Modification récente du transit
 > 	- [ ] Selles noires déféquées
 > 	- [ ] Selles nauséabondes
-> - [ ] **49. Caractéristiques des selles - Aspect anormal *(Cancer colorectal)***
+> - [ ] **47. Caractéristiques des selles - Aspect anormal *(Cancer colorectal)***
 > 	- [ ] Selles de couleur habituelle mélée à du sang rouge
 > 	- [ ] Selles rouges avec caillots
 > 	- [ ] Selles noires luisantes
@@ -309,36 +320,21 @@ cssclasses:
 > 	- [ ] Selles jaunes-grisâtres, pâteuses
 > 	- [ ] Selles en pétoles, dures
 > 	- [ ] Selles rubanées de calibre diminué
-> - [ ] **50. Symptômes digestifs associés *(Cancer colorectal)***
-> 	- [ ] Distension abdominale douloureuse
-> 	- [ ] Difficultés à s'alimenter
-> 	- [ ] Ténesme
-> 	- [ ] Épreintes
-> 	- [ ] Douleurs abdominales
-> 	- [ ] Ballonnements
-> 	- [ ] Flatulences
-> - [ ] **51. Éléments anormaux dans les selles *(Cancer colorectal)***
+> - [ ] **48. Éléments anormaux dans les selles *(Cancer colorectal)***
 > 	- [ ] Glaires
 > 	- [ ] Pus
 > 	- [ ] Sang noir
 > 	- [ ] Sang rouge
 > 	- [ ] Graisses
 > 	- [ ] Aliments non digérés
-> - [ ] **52. Retentissement général *(Cancer colorectal)***
+> - [ ] **49. Retentissement général *(Cancer colorectal)***
 > 	- [ ] Asthénie
 > 	- [ ] Perte de poids
 > 	- [ ] Anorexie
 > 	- [ ] Fièvre
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Altération de l'état général
-> - [ ] **53. Définitions des troubles du transit *(Cancer colorectal)***
-> 	- [ ] Diarrhée aiguë
-> 	- [ ] Diarrhée chronique
-> 	- [ ] Diarrhée
-> 	- [ ] Constipation
-> 	- [ ] Syndrome dysentérique
-> 	- [ ] Syndrome cholérique
-> - [ ] **54. Facteurs favorisants et antécédents *(Cancer colorectal)***
+> - [ ] **50. Facteurs favorisants et antécédents *(Cancer colorectal)***
 > 	- [ ] Alimentation récente
 > 	- [ ] Voyage récent
 > 	- [ ] Prise médicamenteuse
@@ -371,9 +367,13 @@ cssclasses:
 > 	- [ ] Recherche de défense ou détente *(1 grille sur 5)*
 > 	- [ ] Recherche de masses *(1 grille sur 5)*
 > - [ ] **6. Examen cutané *(1 grille sur 5)***
-> - [ ] **7. Évaluation de l'état d'hydratation *(Diarrhée chronique par malabsorption)***
-> 	- [ ] Turgor cutané
-> 	- [ ] État des muqueuses
+> - [ ] **7. Évaluation clinique de l'état d'hydratation *(Diarrhée chronique par malabsorption · Déshydratation)***
+> 	- [ ] Turgor cutané *(Diarrhée chronique par malabsorption)*
+> 	- [ ] État des muqueuses *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Pli cutané (temps de recoloration) *(Déshydratation)*
+> 	- [ ] État des muqueuses (sèches/humides) *(Déshydratation)*
+> 	- [ ] Yeux enfoncés *(Déshydratation)*
+> 	- [ ] Fontanelle déprimée (nourrisson) *(Déshydratation)*
 > - [ ] **8. Recherche de signes cutanés *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Érythème noueux
 > 	- [ ] Pyoderma gangrenosum
@@ -381,7 +381,7 @@ cssclasses:
 > - [ ] **9. Toucher rectal *(3 grilles sur 5)***
 > 	- [ ] Tonus sphinctérien *(Cancer colorectal · Diarrhée chronique par malabsorption)*
 > 	- [ ] Présence de sang *(Diarrhée chronique par malabsorption)*
-> 	- [ ] Masses rectales *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Masses rectales palpables *(Cancer colorectal · Diarrhée chronique par malabsorption)*
 > 	- [ ] Fécalome *(Diarrhée chronique par malabsorption)*
 > 	- [ ] Inspection de la marge anale *(1 grille sur 5)*
 > 	- [ ] Recherche de sang frais *(1 grille sur 5)*
@@ -389,88 +389,82 @@ cssclasses:
 > 	- [ ] Palpation rectale *(1 grille sur 5)*
 > 	- [ ] Position genu-pectorale ou décubitus latéral *(Cancer colorectal)*
 > 	- [ ] Ampoule rectale *(Cancer colorectal)*
-> 	- [ ] Masses rectales palpables *(Cancer colorectal)*
 > 	- [ ] Sang au doigtier *(Cancer colorectal)*
 > 	- [ ] Douleur provoquée *(Cancer colorectal)*
 > - [ ] **10. Examen thyroïdien *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Palpation de la thyroïde
 > 	- [ ] Recherche de nodules
 > - [ ] **11. Auscultation cardiopulmonaire *(Diarrhée chronique par malabsorption)***
-> - [ ] **12. Évaluation clinique de l'état d'hydratation *(Déshydratation)***
-> 	- [ ] Pli cutané (temps de recoloration)
-> 	- [ ] État des muqueuses (sèches/humides)
-> 	- [ ] Yeux enfoncés
-> 	- [ ] Fontanelle déprimée (nourrisson)
-> - [ ] **13. Palpation vésicale *(Déshydratation)***
+> - [ ] **12. Palpation vésicale *(Déshydratation)***
 > 	- [ ] Globe vésical
 > 	- [ ] Douleur sus-pubienne
-> - [ ] **14. Examen rénal *(Déshydratation)***
+> - [ ] **13. Examen rénal *(Déshydratation)***
 > 	- [ ] Palpation des fosses lombaires
 > 	- [ ] Recherche de douleur à l'ébranlement
-> - [ ] **15. Mesure de la tension artérielle *(Déshydratation)***
+> - [ ] **14. Mesure de la tension artérielle *(Déshydratation)***
 > 	- [ ] Recherche d'hypotension orthostatique
-> - [ ] **16. Évaluation de l'état général *(Déshydratation)***
+> - [ ] **15. Évaluation de l'état général *(Déshydratation)***
 > 	- [ ] Poids actuel (si possible)
 > 	- [ ] État de conscience
 > 	- [ ] Température
-> - [ ] **17. Signes vitaux et état général *(1 grille sur 5)***
+> - [ ] **16. Signes vitaux et état général *(1 grille sur 5)***
 > 	- [ ] Prise des signes vitaux
 > 	- [ ] Évaluation de l'état général
 > 	- [ ] Recherche de signes de déshydratation
-> - [ ] **18. Recherche de complications *(1 grille sur 5)***
+> - [ ] **17. Recherche de complications *(1 grille sur 5)***
 > 	- [ ] Signes de péritonite
 > 	- [ ] Signes de mégacôlon toxique
 > 	- [ ] État hémodynamique
-> - [ ] **19. Recherche de manifestations extra-intestinales *(1 grille sur 5)***
+> - [ ] **18. Recherche de manifestations extra-intestinales *(1 grille sur 5)***
 > 	- [ ] Examen cutané
 > 	- [ ] Examen articulaire
 > 	- [ ] Examen oculaire si indiqué
-> - [ ] **20. Inspection générale *(Cancer colorectal)***
+> - [ ] **19. Inspection générale *(Cancer colorectal)***
 > 	- [ ] Ambiance générale
 > 	- [ ] Faciès
 > 	- [ ] Pâleur cutanéo-muqueuse
 > 	- [ ] Ictère
 > 	- [ ] État d'hydratation
 > 	- [ ] Signes de carences
-> - [ ] **21. Signes vitaux *(Cancer colorectal)***
+> - [ ] **20. Signes vitaux *(Cancer colorectal)***
 > 	- [ ] Pulsations, tension artérielle
 > 	- [ ] Rythme et amplitude respiratoires
 > 	- [ ] Température
 > 	- [ ] Poids actuel et évolution
-> - [ ] **22. Inspection abdominale *(Cancer colorectal)***
+> - [ ] **21. Inspection abdominale *(Cancer colorectal)***
 > 	- [ ] Morphologie
 > 	- [ ] Symétrie vs asymétrie
 > 	- [ ] Cicatrices
 > 	- [ ] Hernies
 > 	- [ ] Veines superficielles
 > 	- [ ] Mouvements respiratoires
-> - [ ] **23. Auscultation abdominale *(Cancer colorectal)***
+> - [ ] **22. Auscultation abdominale *(Cancer colorectal)***
 > 	- [ ] Patience
 > 	- [ ] Fréquence des bruits
 > 	- [ ] Tonalité
 > 	- [ ] Silence abdominal
 > 	- [ ] Hyperactivité
-> - [ ] **24. Percussion abdominale *(Cancer colorectal)***
+> - [ ] **23. Percussion abdominale *(Cancer colorectal)***
 > 	- [ ] Patient allongé
 > 	- [ ] Tympanisme
 > 	- [ ] Distension gazeuse
 > 	- [ ] Matité
 > 	- [ ] Mesure de la taille du foie, de la rate
-> - [ ] **25. Palpation superficielle *(Cancer colorectal)***
+> - [ ] **24. Palpation superficielle *(Cancer colorectal)***
 > 	- [ ] Main à plat, doigts serrés
 > 	- [ ] Tonus pariétal spontané et en réponse
 > 	- [ ] Douleur localisée
 > 	- [ ] Défense ou contracture
 > 	- [ ] Extension
 > 	- [ ] Douleur à l'ébranlement
-> - [ ] **26. Palpation profonde *(Cancer colorectal)***
+> - [ ] **25. Palpation profonde *(Cancer colorectal)***
 > 	- [ ] Recherche masse abdominale
 > 	- [ ] Mobilité de la masse
 > 	- [ ] Pulsations
 > 	- [ ] Aorte
 > 	- [ ] Taille des organes
 > 	- [ ] Points douloureux spécifiques
-> - [ ] **27. Palpation spécifique du côlon *(Cancer colorectal)***
+> - [ ] **26. Palpation spécifique du côlon *(Cancer colorectal)***
 > 	- [ ] Cadre colique
 > 	- [ ] Sigmoïde
 > 	- [ ] Cordon induré douloureux
@@ -482,17 +476,7 @@ cssclasses:
 > - [ ] **2. Propose une prise en charge thérapeutique adaptée *(2 grilles sur 5)* — *Diarrhée chronique par malabsorption · Déshydratation***
 
 > [!success] 💊 Management — si Cancer colorectal
-> - [ ] **1. Diagnostics différentiels des troubles du transit**
-> - [ ] **2. Signes d'alarme (Red Flags)**
-> - [ ] **3. Examens complémentaires de première intention**
-> 	- [ ] FSC: recherche anémie ferriprive (saignement chronique)
-> 	- [ ] Ferritine, fer sérique, transferrine
-> 	- [ ] CRP, VS: syndrome inflammatoire
-> 	- [ ] Ionogramme, urée, créatinine: déshydratation
-> 	- [ ] Bilan hépatique: pathologie associée
-> 	- [ ] TSH: dysthyroïdie cause de troubles du transit
-> 	- [ ] Albumine: dénutrition, malabsorption
-> - [ ] **4. Imagerie et endoscopie**
+> - [ ] **1. Examens d'imagerie et endoscopie**
 > 	- [ ] ASP debout face et profil: niveaux hydro-aériques si occlusion
 > 	- [ ] CT abdomino-pelvien avec injection: bilan d'extension si tumeur
 > 	- [ ] Coloscopie totale: examen de référence pour la pathologie colique
@@ -501,6 +485,16 @@ cssclasses:
 > 	- [ ] Polypectomie thérapeutique
 > 	- [ ] Gastroscopie si méléna: recherche saignement haut
 > 	- [ ] Entéro-IRM ou vidéocapsule si suspicion grêle
+> - [ ] **2. Propose les examens complémentaires de première intention**
+> 	- [ ] FSC: recherche anémie ferriprive (saignement chronique)
+> 	- [ ] Ferritine, fer sérique, transferrine
+> 	- [ ] CRP, VS: syndrome inflammatoire
+> 	- [ ] Ionogramme, urée, créatinine: déshydratation
+> 	- [ ] Bilan hépatique: pathologie associée
+> 	- [ ] TSH: dysthyroïdie cause de troubles du transit
+> 	- [ ] Albumine: dénutrition, malabsorption
+> - [ ] **3. Diagnostics différentiels des troubles du transit**
+> - [ ] **4. Signes d'alarme (Red Flags)**
 > - [ ] **5. Marqueurs tumoraux et examens spécialisés**
 > 	- [ ] ACE (antigène carcino-embryonnaire): cancer colorectal
 > 	- [ ] CA 19-9: tumeurs digestives
@@ -524,7 +518,7 @@ cssclasses:
 > [!success] 💊 Management — si Déshydratation
 > - [ ] **1. Énonce le diagnostic principal**
 > 	- [ ] Déshydratation aiguë
-> - [ ] **2. Propose les examens complémentaires appropriés**
+> - [ ] **2. Propose les examens complémentaires spécifiques**
 > 	- [ ] Ionogramme sanguin (Na, K, Cl)
 > 	- [ ] Fonction rénale (créatinine, urée)
 > 	- [ ] FSC (hémoconcentration : Hb, Ht)
@@ -561,7 +555,10 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si MICI (Crohn / RCUH)
-> - [ ] **1. Hypothèses diagnostiques *(1 grille sur 2)***
+> - [ ] **1. Hypothèse diagnostique principale**
+> 	- [ ] Rectocolite ulcéro-hémorragique (RCUH) *(1 grille sur 2)*
+> 	- [ ] Justification basée sur les symptômes *(1 grille sur 2)*
+> 	- [ ] Explication adaptée à la patiente *(1 grille sur 2)*
 > - [ ] **2. Examens complémentaires urgents *(1 grille sur 2)***
 > 	- [ ] Examen rectal
 > 	- [ ] Recherche de sang occulte dans les selles
@@ -587,26 +584,22 @@ cssclasses:
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant le travail
 > 	- [ ] Discussion sur l'importance du dépistage familial (cancer colorectal)
-> - [ ] **7. Hypothèse diagnostique principale *(1 grille sur 2)***
-> 	- [ ] Rectocolite ulcéro-hémorragique (RCUH)
-> 	- [ ] Justification basée sur les symptômes
-> 	- [ ] Explication adaptée à la patiente
-> - [ ] **8. Diagnostics différentiels évoqués *(1 grille sur 2)***
+> - [ ] **7. Diagnostics différentiels évoqués *(1 grille sur 2)***
 > 	- [ ] Maladie de Crohn
 > 	- [ ] Colite infectieuse (bactérienne, parasitaire)
 > 	- [ ] Colite médicamenteuse (AINS)
 > 	- [ ] Carcinome colorectal
-> - [ ] **9. Examens complémentaires *(1 grille sur 2)***
+> - [ ] **8. Examens complémentaires *(1 grille sur 2)***
 > 	- [ ] Bilan biologique (FSC, CRP, électrolytes, fonction rénale)
 > 	- [ ] Cultures de selles et parasitologie
 > 	- [ ] Calprotectine fécale
 > 	- [ ] Colonoscopie avec biopsies
-> - [ ] **10. Prise en charge immédiate *(1 grille sur 2)***
+> - [ ] **9. Prise en charge immédiate *(1 grille sur 2)***
 > 	- [ ] Critères d'hospitalisation évalués
 > 	- [ ] Réhydratation IV
 > 	- [ ] Corticothérapie IV si colite sévère
 > 	- [ ] Arrêt des AINS
-> - [ ] **11. Plan de suivi *(1 grille sur 2)***
+> - [ ] **10. Plan de suivi *(1 grille sur 2)***
 > 	- [ ] Consultation gastro-entérologie
 > 	- [ ] Surveillance des complications
 > 	- [ ] Protocole de dépistage du cancer colorectal

@@ -69,18 +69,27 @@ cssclasses:
 > 	- [ ] Destination et durée
 > 	- [ ] Délai avant le départ
 > 	- [ ] Nombre de voyageurs
-> - [ ] **3. Questions et préoccupations de la patiente *(1 grille sur 2)***
-> 	- [ ] Vaccinations nécessaires
-> 	- [ ] Pharmacie de voyage
-> 	- [ ] Autres précautions
-> 	- [ ] Risques spécifiques au Brésil
-> - [ ] **4. Évaluation détaillée du statut vaccinal *(1 grille sur 2)***
-> 	- [ ] Vaccinations de base
-> 	- [ ] Hépatite A
-> 	- [ ] Hépatite B
-> 	- [ ] Tétanos
-> 	- [ ] Fièvre jaune
-> 	- [ ] Vérification du carnet de vaccination
+> - [ ] **3. Questions et préoccupations spécifiques du patient**
+> 	- [ ] Vaccinations nécessaires *(1 grille sur 2)*
+> 	- [ ] Pharmacie de voyage *(1 grille sur 2)*
+> 	- [ ] Autres précautions *(1 grille sur 2)*
+> 	- [ ] Risques spécifiques au Brésil *(1 grille sur 2)*
+> 	- [ ] Précautions générales *(1 grille sur 2)*
+> 	- [ ] Fièvre jaune *(1 grille sur 2)*
+> 	- [ ] Médicaments à emporter *(1 grille sur 2)*
+> 	- [ ] Vaccinations requises *(1 grille sur 2)*
+> 	- [ ] Spécificités pédiatriques *(1 grille sur 2)*
+> - [ ] **4. Évaluation détaillée du statut vaccinal**
+> 	- [ ] Vaccinations de base *(1 grille sur 2)*
+> 	- [ ] Hépatite A *(1 grille sur 2)*
+> 	- [ ] Hépatite B *(1 grille sur 2)*
+> 	- [ ] Tétanos *(1 grille sur 2)*
+> 	- [ ] Fièvre jaune *(1 grille sur 2)*
+> 	- [ ] Vérification du carnet de vaccination *(1 grille sur 2)*
+> 	- [ ] Carnet de vaccination à jour *(1 grille sur 2)*
+> 	- [ ] Vaccinations de base complètes *(1 grille sur 2)*
+> 	- [ ] Vaccinations spécifiques voyages antérieures *(1 grille sur 2)*
+> 	- [ ] Date du dernier rappel tétanos *(1 grille sur 2)*
 > - [ ] **5. Antécédents médicaux et état de santé *(1 grille sur 2)***
 > 	- [ ] Maladies chroniques
 > 	- [ ] Allergies médicamenteuses
@@ -116,39 +125,28 @@ cssclasses:
 > 	- [ ] Destination et durée
 > 	- [ ] Délai avant le départ
 > 	- [ ] Nombre et âge des voyageurs
-> - [ ] **12. Questions et préoccupations spécifiques du patient *(1 grille sur 2)***
-> 	- [ ] Précautions générales
-> 	- [ ] Fièvre jaune
-> 	- [ ] Médicaments à emporter
-> 	- [ ] Vaccinations requises
-> 	- [ ] Spécificités pédiatriques
-> - [ ] **13. Évaluation du statut vaccinal actuel *(1 grille sur 2)***
-> 	- [ ] Carnet de vaccination à jour
-> 	- [ ] Vaccinations de base complètes
-> 	- [ ] Vaccinations spécifiques voyages antérieures
-> 	- [ ] Date du dernier rappel tétanos
-> - [ ] **14. Antécédents médicaux et allergies *(1 grille sur 2)***
+> - [ ] **12. Antécédents médicaux et allergies *(1 grille sur 2)***
 > 	- [ ] Maladies chroniques père
 > 	- [ ] Maladies chroniques fils
 > 	- [ ] Allergies père
 > 	- [ ] Allergies fils
 > 	- [ ] Médicaments réguliers
-> - [ ] **15. Expériences de voyages internationaux antérieurs *(1 grille sur 2)***
+> - [ ] **13. Expériences de voyages internationaux antérieurs *(1 grille sur 2)***
 > 	- [ ] Destinations visitées
 > 	- [ ] Problèmes de santé lors de voyages précédents
 > 	- [ ] Tolérance aux antipaludiques si déjà pris
 > 	- [ ] Adaptation de l'enfant aux voyages
-> - [ ] **16. Type et conditions du voyage planifié *(1 grille sur 2)***
+> - [ ] **14. Type et conditions du voyage planifié *(1 grille sur 2)***
 > 	- [ ] Activités prévues
 > 	- [ ] Type d'hébergement
 > 	- [ ] Zones visitées (urbaines/rurales)
 > 	- [ ] Altitude des destinations
 > 	- [ ] Contact avec animaux prévu
-> - [ ] **17. Durée et période du voyage *(1 grille sur 2)***
+> - [ ] **15. Durée et période du voyage *(1 grille sur 2)***
 > 	- [ ] Saison à Madagascar
 > 	- [ ] Durée totale
 > 	- [ ] Itinéraire prévu
-> - [ ] **18. État de santé actuel des voyageurs *(1 grille sur 2)***
+> - [ ] **16. État de santé actuel des voyageurs *(1 grille sur 2)***
 > 	- [ ] Symptômes actuels
 > 	- [ ] Capacité physique pour les activités prévues
 > 	- [ ] Grossesse (non applicable ici)
@@ -176,14 +174,20 @@ cssclasses:
 > 	- [ ] Début prophylaxie *(1 grille sur 2)*
 > 	- [ ] Durée post-voyage *(1 grille sur 2)*
 > 	- [ ] Alternatives si contre-indication (Malarone, Doxycycline) *(1 grille sur 2)*
-> - [ ] **3. Protection anti-vectorielle complète *(1 grille sur 2)***
-> 	- [ ] Importance cruciale de la protection
-> 	- [ ] Moustiquaire imprégnée indispensable
-> 	- [ ] Répulsifs efficaces (DEET 30-50%)
-> 	- [ ] Vêtements couvrants clairs
-> 	- [ ] Insecticides pour la chambre
-> 	- [ ] Protection renforcée au crépuscule
-> 	- [ ] Prévention dengue, Zika, chikungunya
+> - [ ] **3. Protection anti-vectorielle complète**
+> 	- [ ] Importance cruciale de la protection *(1 grille sur 2)*
+> 	- [ ] Moustiquaire imprégnée indispensable *(1 grille sur 2)*
+> 	- [ ] Répulsifs efficaces (DEET 30-50%) *(1 grille sur 2)*
+> 	- [ ] Vêtements couvrants clairs *(1 grille sur 2)*
+> 	- [ ] Insecticides pour la chambre *(1 grille sur 2)*
+> 	- [ ] Protection renforcée au crépuscule *(1 grille sur 2)*
+> 	- [ ] Prévention dengue, Zika, chikungunya *(1 grille sur 2)*
+> 	- [ ] Importance de la protection contre les moustiques *(1 grille sur 2)*
+> 	- [ ] Moustiquaire imprégnée pour la nuit *(1 grille sur 2)*
+> 	- [ ] Répulsifs cutanés (DEET 30-50%, adaptés enfants) *(1 grille sur 2)*
+> 	- [ ] Vêtements longs imprégnés de perméthrine *(1 grille sur 2)*
+> 	- [ ] Climatisation/ventilateur *(1 grille sur 2)*
+> 	- [ ] Heures de protection renforcée (crépuscule) *(1 grille sur 2)*
 > - [ ] **4. Prévention des risques alimentaires *(1 grille sur 2)***
 > 	- [ ] Règle: "Cook it, boil it, peel it or forget it"
 > 	- [ ] Eau embouteillée uniquement
@@ -205,19 +209,25 @@ cssclasses:
 > 	- [ ] Éviter partenaires à risque
 > 	- [ ] Prophylaxie post-exposition si nécessaire
 > 	- [ ] Contraception d'urgence
-> - [ ] **7. Trousse de pharmacie complète *(1 grille sur 2)***
-> 	- [ ] Protection solaire haute protection
-> 	- [ ] Antalgiques/antipyrétiques (paracétamol, ibuprofène)
-> 	- [ ] Antidiarrhéiques (lopéramide)
+> - [ ] **7. Trousse de pharmacie complète**
+> 	- [ ] Protection solaire haute protection *(1 grille sur 2)*
+> 	- [ ] Antalgiques/antipyrétiques (paracétamol, ibuprofène) *(1 grille sur 2)*
+> 	- [ ] Antidiarrhéiques (lopéramide) *(1 grille sur 2)*
 > 	- [ ] Antibiotique large spectre (ciprofloxacine ou azithromycine)
-> 	- [ ] Antiémétiques
+> 	- [ ] Antiémétiques *(1 grille sur 2)*
 > 	- [ ] Solutions de réhydratation orale
-> 	- [ ] Antiseptique et matériel de pansement
-> 	- [ ] Spray nasal décongestionnant
+> 	- [ ] Antiseptique et matériel de pansement *(1 grille sur 2)*
+> 	- [ ] Spray nasal décongestionnant *(1 grille sur 2)*
 > 	- [ ] Antihistaminiques (cétirizine)
 > 	- [ ] Comprimés purification d'eau
 > 	- [ ] Thermomètre
-> 	- [ ] Préservatifs
+> 	- [ ] Préservatifs *(1 grille sur 2)*
+> 	- [ ] Protection solaire indice 50+ *(1 grille sur 2)*
+> 	- [ ] Antalgiques/antipyrétiques (paracétamol) *(1 grille sur 2)*
+> 	- [ ] Antidiarrhéiques (lopéramide avec prudence chez l'enfant) *(1 grille sur 2)*
+> 	- [ ] Antiseptique cutané et compresses *(1 grille sur 2)*
+> 	- [ ] Pansements et bandages *(1 grille sur 2)*
+> 	- [ ] Pince à épiler *(1 grille sur 2)*
 > - [ ] **8. État de santé actuel et aptitude au voyage *(1 grille sur 2)***
 > 	- [ ] Examen clinique général
 > 	- [ ] Vérification absence de contre-indications
@@ -232,40 +242,21 @@ cssclasses:
 > 	- [ ] Fièvre jaune
 > 	- [ ] Grippe saisonnière
 > 	- [ ] Rappel DTPa si nécessaire
-> - [ ] **10. Protection anti-vectorielle *(1 grille sur 2)***
-> 	- [ ] Importance de la protection contre les moustiques
-> 	- [ ] Moustiquaire imprégnée pour la nuit
-> 	- [ ] Répulsifs cutanés (DEET 30-50%, adaptés enfants)
-> 	- [ ] Vêtements longs imprégnés de perméthrine
-> 	- [ ] Climatisation/ventilateur
-> 	- [ ] Heures de protection renforcée (crépuscule)
-> - [ ] **11. Conseils d'hygiène alimentaire et hydrique *(1 grille sur 2)***
+> - [ ] **10. Conseils d'hygiène alimentaire et hydrique *(1 grille sur 2)***
 > 	- [ ] Règle d'or: "Cook it, boil it, peel it or forget it"
 > 	- [ ] Eau en bouteille capsulée uniquement
 > 	- [ ] Éviter glaçons, glaces artisanales
 > 	- [ ] Éviter crudités, fruits non pelés
 > 	- [ ] Éviter viandes peu cuites
 > 	- [ ] Hygiène des mains systématique
-> - [ ] **12. Risques spécifiques à Madagascar *(1 grille sur 2)***
+> - [ ] **11. Risques spécifiques à Madagascar *(1 grille sur 2)***
 > 	- [ ] Peste endémique
 > 	- [ ] Mesures préventives contre la peste
 > 	- [ ] Bilharziose (éviter baignades eau douce)
 > 	- [ ] Accidents de la circulation
 > 	- [ ] Exposition solaire intense
 > 	- [ ] Risques liés aux activités (plongée, trek)
-> - [ ] **13. Trousse à pharmacie adaptée *(1 grille sur 2)***
-> 	- [ ] Protection solaire indice 50+
-> 	- [ ] Antalgiques/antipyrétiques (paracétamol)
-> 	- [ ] Antidiarrhéiques (lopéramide avec prudence chez l'enfant)
-> 	- [ ] Antibiotique à large spectre (ciprofloxacine ou azithromycine)
-> 	- [ ] Solutions de réhydratation orale
-> 	- [ ] Antiseptique cutané et compresses
-> 	- [ ] Pansements et bandages
-> 	- [ ] Comprimés de purification d'eau
-> 	- [ ] Antihistaminiques (cétirizine)
-> 	- [ ] Thermomètre
-> 	- [ ] Pince à épiler
-> - [ ] **14. Précautions sexuelles et protection IST *(1 grille sur 2)***
+> - [ ] **12. Précautions sexuelles et protection IST *(1 grille sur 2)***
 > 	- [ ] Information sur les risques IST/VIH
 > 	- [ ] Préservatifs si relations
 > 	- [ ] Éviter tatouages/piercings
@@ -274,13 +265,12 @@ cssclasses:
 > [!success] 💊 Management — si Consultation de médecine du voyage
 > - [ ] **1. Plan de vaccination personnalisé**
 > 	- [ ] Calendrier vaccinal avec délais *(1 grille sur 2)*
-> 	- [ ] Ordonnances pour tous les vaccins *(1 grille sur 2)*
+> 	- [ ] Ordonnances pour tous les vaccins
 > 	- [ ] Coûts et prise en charge *(1 grille sur 2)*
 > 	- [ ] Carnet de vaccination international
 > 	- [ ] Certificat fièvre jaune officiel *(1 grille sur 2)*
 > 	- [ ] Calendrier des vaccinations à faire *(1 grille sur 2)*
 > 	- [ ] Délais nécessaires avant le départ *(1 grille sur 2)*
-> 	- [ ] Ordonnances pour les vaccins *(1 grille sur 2)*
 > - [ ] **2. Prescription antipaludiques et médicaments *(1 grille sur 2)***
 > 	- [ ] Choix de l'antipaludique adapté
 > 	- [ ] Ordonnance avec posologie claire

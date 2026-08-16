@@ -295,8 +295,7 @@ cssclasses:
 > - [ ] **5. Examen des extrémités *(Trouble anxieux)***
 > 	- [ ] Inspection des mains
 > - [ ] **6. Examen neurologique *(Hyperthyroïdie · Trouble anxieux)***
-> 	- [ ] Examen ciblé des réflexes ostéo-tendineux *(Trouble anxieux)*
-> 	- [ ] Réflexes ostéo-tendineux *(Hyperthyroïdie)*
+> 	- [ ] Examen ciblé des réflexes ostéo-tendineux
 > 	- [ ] Recherche de tremblements fins *(Hyperthyroïdie)*
 > 	- [ ] Force musculaire *(Hyperthyroïdie)*
 > - [ ] **7. Signes vitaux *(Hyperthyroïdie)***

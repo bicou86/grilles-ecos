@@ -87,7 +87,7 @@ cssclasses:
 > - [ ] **2. Dimension temporelle *(Fracture du scaphoïde)***
 > - [ ] **3. Début / durée *(Fracture du scaphoïde)***
 > - [ ] **4. Évolution *(Fracture du scaphoïde)***
-> - [ ] **5. Localisation *(Fracture du scaphoïde)***
+> - [ ] **5. Localisation précise**
 > - [ ] **6. Latéralité dominante *(Fracture du scaphoïde)***
 > - [ ] **7. Qualité *(Fracture du scaphoïde)***
 > - [ ] **8. Intensité *(Fracture du scaphoïde)***
@@ -114,20 +114,19 @@ cssclasses:
 > - [ ] **29. Sport de compétition *(Fracture du scaphoïde)***
 > - [ ] **30. Présentation avec nom, fonction et tâche *(Syndrome du canal carpien)***
 > - [ ] **31. Symptômes principaux *(Syndrome du canal carpien)***
-> - [ ] **32. Localisation précise *(Syndrome du canal carpien)***
-> - [ ] **33. Intensité de la douleur (échelle 0-10) *(Syndrome du canal carpien)***
-> - [ ] **34. Caractère de la douleur *(Syndrome du canal carpien)***
-> - [ ] **35. Irradiation *(Syndrome du canal carpien)***
-> - [ ] **36. Facteurs améliorant/aggravant *(Syndrome du canal carpien)***
-> - [ ] **37. Évolution temporelle et début *(Syndrome du canal carpien)***
-> - [ ] **38. Troubles sensitifs *(Syndrome du canal carpien)***
-> - [ ] **39. Traumatisme actuel ou ancien *(Syndrome du canal carpien)***
-> - [ ] **40. Durée des symptômes *(Syndrome du canal carpien)***
-> - [ ] **41. Déficit fonctionnel *(Syndrome du canal carpien)***
-> - [ ] **42. Activités et habitudes *(Syndrome du canal carpien)***
-> - [ ] **43. Maladies systémiques *(Syndrome du canal carpien)***
-> - [ ] **44. Habitudes et toxiques *(Syndrome du canal carpien)***
-> - [ ] **45. Anamnèse sociale et professionnelle *(Syndrome du canal carpien)***
+> - [ ] **32. Intensité de la douleur (échelle 0-10) *(Syndrome du canal carpien)***
+> - [ ] **33. Caractère de la douleur *(Syndrome du canal carpien)***
+> - [ ] **34. Irradiation *(Syndrome du canal carpien)***
+> - [ ] **35. Facteurs améliorant/aggravant *(Syndrome du canal carpien)***
+> - [ ] **36. Évolution temporelle et début *(Syndrome du canal carpien)***
+> - [ ] **37. Troubles sensitifs *(Syndrome du canal carpien)***
+> - [ ] **38. Traumatisme actuel ou ancien *(Syndrome du canal carpien)***
+> - [ ] **39. Durée des symptômes *(Syndrome du canal carpien)***
+> - [ ] **40. Déficit fonctionnel *(Syndrome du canal carpien)***
+> - [ ] **41. Activités et habitudes *(Syndrome du canal carpien)***
+> - [ ] **42. Maladies systémiques *(Syndrome du canal carpien)***
+> - [ ] **43. Habitudes et toxiques *(Syndrome du canal carpien)***
+> - [ ] **44. Anamnèse sociale et professionnelle *(Syndrome du canal carpien)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Inspection avant-bras / coude *(Fracture du scaphoïde)***

@@ -305,44 +305,43 @@ cssclasses:
 > - [ ] **27. Redressement *(HypoTA orthostatique)***
 > - [ ] **28. Transfert *(HypoTA orthostatique)***
 > - [ ] **29. Station debout *(HypoTA orthostatique)***
-> - [ ] **30. Analyse de la marche *(HypoTA orthostatique)***
+> - [ ] **30. Analyse de la marche *(Accident vasculaire cérébral · HypoTA orthostatique)***
+> 	- [ ] Marche en tandem *(Accident vasculaire cérébral)*
 > - [ ] **31. Orientation et état de conscience *(Accident vasculaire cérébral)***
-> - [ ] **32. Examen de la marche *(Accident vasculaire cérébral)***
-> 	- [ ] Marche en tandem
-> - [ ] **33. Tests de coordination *(Accident vasculaire cérébral)***
+> - [ ] **32. Tests de coordination *(Accident vasculaire cérébral)***
 > 	- [ ] Test de Romberg
 > 	- [ ] Test d'Unterberger
 > 	- [ ] Diadococinésie
 > 	- [ ] Test de préhension des bras
 > 	- [ ] Épreuve doigt-nez
 > 	- [ ] Épreuve talon-genou
-> - [ ] **34. Examen moteur *(Accident vasculaire cérébral)***
-> - [ ] **35. Examen sensitif *(Accident vasculaire cérébral)***
-> - [ ] **36. Recherche d'apraxie *(Accident vasculaire cérébral)***
-> - [ ] **37. Réflexes *(Accident vasculaire cérébral)***
+> - [ ] **33. Examen moteur *(Accident vasculaire cérébral)***
+> - [ ] **34. Examen sensitif *(Accident vasculaire cérébral)***
+> - [ ] **35. Recherche d'apraxie *(Accident vasculaire cérébral)***
+> - [ ] **36. Réflexes *(Accident vasculaire cérébral)***
 > 	- [ ] Réflexes ostéo-tendineux
 > 	- [ ] Signe de Babinski
-> - [ ] **38. Signes méningés *(Accident vasculaire cérébral)***
-> - [ ] **39. Status cardiaque et pulmonaire *(Chute multifactorielle)***
-> - [ ] **40. Neurostatus *(Chute multifactorielle)***
+> - [ ] **37. Signes méningés *(Accident vasculaire cérébral)***
+> - [ ] **38. Status cardiaque et pulmonaire *(Chute multifactorielle)***
+> - [ ] **39. Neurostatus *(Chute multifactorielle)***
 > 	- [ ] Ataxie
 > 	- [ ] Tests cérébelleux
 > 	- [ ] Sensibilité
 > 	- [ ] Motricité
-> - [ ] **41. Test de vision *(Chute multifactorielle)***
-> - [ ] **42. Observation avec comparaison des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **43. Palpation des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **40. Test de vision *(Chute multifactorielle)***
+> - [ ] **41. Observation avec comparaison des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **42. Palpation des deux membres supérieurs *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Coudes
 > 	- [ ] Bras et épaules
 > 	- [ ] Avant-bras et poignets
-> - [ ] **44. Perfusion distale des 2 membres supérieurs, avec comparaison *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **43. Perfusion distale des 2 membres supérieurs, avec comparaison *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Pouls périphériques
 > 	- [ ] Temps de recoloration ou gradient thermique
-> - [ ] **45. Sensibilité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **44. Sensibilité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Radial
 > 	- [ ] Médian
 > 	- [ ] Ulnaire
-> - [ ] **46. Motricité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **45. Motricité sur les terrains des nerfs *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Radial
 > 	- [ ] Médian
 > 	- [ ] Ulnaire

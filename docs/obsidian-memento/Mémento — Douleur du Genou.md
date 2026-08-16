@@ -222,7 +222,11 @@ cssclasses:
 > - [ ] **6. Tests globaux *(1 grille sur 3)***
 > - [ ] **7. Test d’extension *(1 grille sur 3)***
 > - [ ] **8. Test d’accroupissement *(1 grille sur 3)***
-> - [ ] **9. Inspection globale *(1 grille sur 3)***
+> - [ ] **9. Inspection générale *(Déchirure méniscale / ligamentaire)***
+> 	- [ ] Axes des membres inférieurs *(1 grille sur 3)*
+> 	- [ ] Longueur des jambes et position du bassin *(1 grille sur 3)*
+> 	- [ ] Analyse de la marche *(1 grille sur 3)*
+> 	- [ ] Recherche de gonflement et rotule dansante *(1 grille sur 3)*
 > - [ ] **10. Inspection *(1 grille sur 3)***
 > - [ ] **11. PDMS *(1 grille sur 3)***
 > - [ ] **12. Palpation *(1 grille sur 3)***
@@ -236,41 +240,35 @@ cssclasses:
 > 	- [ ] Test d'Apley (Grinding test) *(1 grille sur 3)*
 > - [ ] **18. Test de McMurray *(1 grille sur 3)***
 > - [ ] **19. Test de Steinmann I *(1 grille sur 3)***
-> - [ ] **20. Ligaments croisés *(1 grille sur 3)***
+> - [ ] **20. Tests des ligaments croisés *(Déchirure méniscale / ligamentaire)***
+> 	- [ ] Ligament croisé antérieur - Test de Lachman *(1 grille sur 3)*
+> 	- [ ] Ligament croisé postérieur - Test du tiroir postérieur, Gravity-Sign *(1 grille sur 3)*
 > - [ ] **21. Lachman *(1 grille sur 3)***
 > - [ ] **22. Tiroir antérieur *(1 grille sur 3)***
 > - [ ] **23. Tiroir postérieur *(1 grille sur 3)***
 > - [ ] **24. Ligaments latéraux *(1 grille sur 3)***
 > - [ ] **25. Stress en valgus *(1 grille sur 3)***
 > - [ ] **26. Stress en varus *(1 grille sur 3)***
-> - [ ] **27. Inspection générale *(1 grille sur 3)***
-> 	- [ ] Axes des membres inférieurs
-> 	- [ ] Longueur des jambes et position du bassin
-> 	- [ ] Analyse de la marche
-> 	- [ ] Recherche de gonflement et rotule dansante
-> - [ ] **28. Palpation systématique *(1 grille sur 3)***
+> - [ ] **27. Palpation systématique *(1 grille sur 3)***
 > 	- [ ] Structures osseuses (tubérosité tibiale antérieure, rotule, condyles fémoraux)
 > 	- [ ] Interligne articulaire
 > 	- [ ] Ligaments collatéraux
 > 	- [ ] Tendon rotulien
 > 	- [ ] Recherche d'épanchement (signe du glaçon)
-> - [ ] **29. Examen fonctionnel - Mobilité articulaire *(1 grille sur 3)***
+> - [ ] **28. Examen fonctionnel - Mobilité articulaire *(1 grille sur 3)***
 > 	- [ ] Flexion-extension active et passive
 > 	- [ ] Méthode Neutre-Zéro
-> - [ ] **30. Tests des ligaments croisés *(1 grille sur 3)***
-> 	- [ ] Ligament croisé antérieur - Test de Lachman
-> 	- [ ] Ligament croisé postérieur - Test du tiroir postérieur, Gravity-Sign
-> - [ ] **31. Test de stabilité ligamentaire collatérale *(1 grille sur 3)***
+> - [ ] **29. Test de stabilité ligamentaire collatérale *(1 grille sur 3)***
 > 	- [ ] Stress varus-valgus en extension complète
 > 	- [ ] Stress varus-valgus en flexion 20-30°
-> - [ ] **32. Examen de l'appareil extenseur *(1 grille sur 3)***
+> - [ ] **30. Examen de l'appareil extenseur *(1 grille sur 3)***
 > 	- [ ] Palpation du tubercule des adducteurs
 > 	- [ ] Test d'appréhension pour luxation patellaire en flexion 30°
 > 	- [ ] Mobilité de la rotule
-> - [ ] **33. Test de force musculaire *(1 grille sur 3)***
+> - [ ] **31. Test de force musculaire *(1 grille sur 3)***
 > 	- [ ] Flexion/extension contre résistance
 > 	- [ ] Quadriceps et ischio-jambiers
-> - [ ] **34. Évaluation vasculo-nerveuse périphérique *(1 grille sur 3)***
+> - [ ] **32. Évaluation vasculo-nerveuse périphérique *(1 grille sur 3)***
 > 	- [ ] Pouls pédieux et tibial postérieur
 > 	- [ ] Sensibilité
 > 	- [ ] Motricité distale

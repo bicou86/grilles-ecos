@@ -62,11 +62,13 @@ cssclasses:
 > [!note] 📋 Anamnèse
 > - [ ] **1. Présentation avec nom, fonction et tâche *(1 grille sur 2)***
 > - [ ] **2. Symptôme principal *(1 grille sur 2)***
-> - [ ] **3. Caractéristiques du tremblement *(1 grille sur 2)***
+> - [ ] **3. Caractéristiques du tremblement**
 > 	- [ ] Localisation
-> 	- [ ] Durée
+> 	- [ ] Durée *(1 grille sur 2)*
 > 	- [ ] Fréquence
 > 	- [ ] Amplitude
+> 	- [ ] Circonstances d'apparition *(1 grille sur 2)*
+> 	- [ ] Facteurs modulateurs *(1 grille sur 2)*
 > - [ ] **4. Circonstances de survenue *(1 grille sur 2)***
 > 	- [ ] Au repos
 > 	- [ ] À l'effort
@@ -147,25 +149,19 @@ cssclasses:
 > 	- [ ] Conditions de vie
 > 	- [ ] Profession
 > 	- [ ] Activités
-> - [ ] **20. Caractérisation du tremblement *(1 grille sur 2)***
-> 	- [ ] Localisation
-> 	- [ ] Circonstances d'apparition
-> 	- [ ] Fréquence
-> 	- [ ] Amplitude
-> 	- [ ] Facteurs modulateurs
-> - [ ] **21. Évolution temporelle et progression *(1 grille sur 2)***
+> - [ ] **20. Évolution temporelle et progression *(1 grille sur 2)***
 > 	- [ ] Date d'apparition
 > 	- [ ] Progression
 > 	- [ ] Fluctuations
 > 	- [ ] Retentissement fonctionnel
 > 	- [ ] Gêne sociale
-> - [ ] **22. Antécédents et facteurs de risque *(1 grille sur 2)***
+> - [ ] **21. Antécédents et facteurs de risque *(1 grille sur 2)***
 > 	- [ ] Antécédents familiaux
 > 	- [ ] Traumatisme crânien
 > 	- [ ] Expositions toxiques
 > 	- [ ] Infections
 > 	- [ ] Troubles vasculaires cérébraux
-> - [ ] **23. Médicaments et substances *(1 grille sur 2)***
+> - [ ] **22. Médicaments et substances *(1 grille sur 2)***
 > 	- [ ] Neuroleptiques
 > 	- [ ] Antiémétiques
 > 	- [ ] Antidépresseurs
@@ -184,15 +180,23 @@ cssclasses:
 > 	- [ ] Nerf facial
 > 	- [ ] Nerf trijumeau
 > 	- [ ] Autres nerfs crâniens
-> - [ ] **3. Observation du tremblement *(1 grille sur 2)***
+> - [ ] **3. Observation et caractérisation du tremblement**
 > 	- [ ] Tremblement de repos
-> 	- [ ] Tremblement postural
-> 	- [ ] Tremblement d'action
-> 	- [ ] Caractère pilulaire
-> - [ ] **4. Tonus musculaire *(1 grille sur 2)***
-> 	- [ ] Rigidité
-> 	- [ ] Prédominance
+> 	- [ ] Tremblement postural *(1 grille sur 2)*
+> 	- [ ] Tremblement d'action *(1 grille sur 2)*
+> 	- [ ] Caractère pilulaire *(1 grille sur 2)*
+> 	- [ ] Asymétrie *(1 grille sur 2)*
+> 	- [ ] Fréquence *(1 grille sur 2)*
+> 	- [ ] Amplitude *(1 grille sur 2)*
+> 	- [ ] Manœuvres d'activation *(1 grille sur 2)*
+> - [ ] **4. Examen du tonus musculaire**
+> 	- [ ] Rigidité *(1 grille sur 2)*
+> 	- [ ] Prédominance *(1 grille sur 2)*
 > 	- [ ] Phénomène de la roue dentée
+> 	- [ ] Rigidité plastique *(1 grille sur 2)*
+> 	- [ ] Asymétrie tonique *(1 grille sur 2)*
+> 	- [ ] Manœuvre de Froment *(1 grille sur 2)*
+> 	- [ ] Test du ballottement *(1 grille sur 2)*
 > - [ ] **5. Bradykinésie *(1 grille sur 2)***
 > 	- [ ] Mouvements alternés rapides
 > 	- [ ] Tapping des doigts
@@ -208,54 +212,38 @@ cssclasses:
 > 	- [ ] Test talon-genou
 > 	- [ ] Diadococinésie
 > 	- [ ] Romberg
-> - [ ] **8. Examen de la marche *(1 grille sur 2)***
-> 	- [ ] Initiation de la marche
+> - [ ] **8. Examen de la marche et posture**
+> 	- [ ] Initiation de la marche *(1 grille sur 2)*
 > 	- [ ] Ballant des bras
-> 	- [ ] Longueur du pas
+> 	- [ ] Longueur du pas *(1 grille sur 2)*
 > 	- [ ] Demi-tour
 > 	- [ ] Posture
-> - [ ] **9. Examens complémentaires *(1 grille sur 2)***
+> 	- [ ] Démarche *(1 grille sur 2)*
+> 	- [ ] Freezing *(1 grille sur 2)*
+> - [ ] **9. Examens complémentaires diagnostiques *(1 grille sur 2)***
 > 	- [ ] Auscultation carotidienne
 > 	- [ ] Inspection oculaire
 > 	- [ ] Auscultation cardiaque
 > 	- [ ] Auscultation pulmonaire
-> - [ ] **10. Observation et caractérisation du tremblement *(1 grille sur 2)***
-> 	- [ ] Tremblement de repos
-> 	- [ ] Asymétrie
-> 	- [ ] Fréquence
-> 	- [ ] Amplitude
-> 	- [ ] Manœuvres d'activation
-> - [ ] **11. Examen du tonus musculaire *(1 grille sur 2)***
-> 	- [ ] Rigidité plastique
-> 	- [ ] Phénomène de la roue dentée
-> 	- [ ] Asymétrie tonique
-> 	- [ ] Manœuvre de Froment
-> 	- [ ] Test du ballottement
-> - [ ] **12. Évaluation de la bradykinésie *(1 grille sur 2)***
+> - [ ] **10. Évaluation de la bradykinésie *(1 grille sur 2)***
 > 	- [ ] Mouvements alternés rapides
 > 	- [ ] Ouverture-fermeture mains
 > 	- [ ] Mouvements pieds
 > 	- [ ] Mimique faciale
 > 	- [ ] Déglutition
-> - [ ] **13. Examen de la marche et posture *(1 grille sur 2)***
-> 	- [ ] Démarche
-> 	- [ ] Ballant des bras
-> 	- [ ] Demi-tour
-> 	- [ ] Posture
-> 	- [ ] Freezing
-> - [ ] **14. Tests des réflexes posturaux *(1 grille sur 2)***
+> - [ ] **11. Tests des réflexes posturaux *(1 grille sur 2)***
 > 	- [ ] Test de la poussée
 > 	- [ ] Réflexe de rétropulsion
 > 	- [ ] Station unipodale
 > 	- [ ] Réactions parachute
 > 	- [ ] Adaptation posturale
-> - [ ] **15. Recherche d'autres mouvements anormaux *(1 grille sur 2)***
+> - [ ] **12. Recherche d'autres mouvements anormaux *(1 grille sur 2)***
 > 	- [ ] Dyskinésies
 > 	- [ ] Tics
 > 	- [ ] Myoclonies
 > 	- [ ] Tremblements autres
 > 	- [ ] Mouvements stéréotypés
-> - [ ] **16. Examen neurologique général *(1 grille sur 2)***
+> - [ ] **13. Examen neurologique général *(1 grille sur 2)***
 > 	- [ ] Fonctions supérieures
 > 	- [ ] Nerfs crâniens
 > 	- [ ] Force musculaire
@@ -265,12 +253,16 @@ cssclasses:
 > [!success] 💊 Management — si Maladie de Parkinson
 > - [ ] **1. Diagnostic principal évoqué *(1 grille sur 2)***
 > - [ ] **2. Diagnostics différentiels *(1 grille sur 2)***
-> - [ ] **3. Examens complémentaires *(1 grille sur 2)***
-> 	- [ ] Biologie de base (FSC, ionogramme)
-> 	- [ ] TSH
-> 	- [ ] Bilan hépatique et cuprémie (si < 50 ans)
-> 	- [ ] IRM cérébrale (si doute diagnostique)
-> 	- [ ] DaTSCAN (si diagnostic incertain)
+> - [ ] **3. Examens complémentaires diagnostiques**
+> 	- [ ] Biologie de base (FSC, ionogramme) *(1 grille sur 2)*
+> 	- [ ] TSH *(1 grille sur 2)*
+> 	- [ ] Bilan hépatique et cuprémie (si < 50 ans) *(1 grille sur 2)*
+> 	- [ ] IRM cérébrale (si doute diagnostique) *(1 grille sur 2)*
+> 	- [ ] DaTSCAN (si diagnostic incertain) *(1 grille sur 2)*
+> 	- [ ] DaTscan *(1 grille sur 2)*
+> 	- [ ] IRM cérébrale *(1 grille sur 2)*
+> 	- [ ] Test thérapeutique L-DOPA *(1 grille sur 2)*
+> 	- [ ] Tests olfactifs *(1 grille sur 2)*
 > - [ ] **4. Orientation spécialisée *(1 grille sur 2)***
 > - [ ] **5. Traitement symptomatique initial *(1 grille sur 2)***
 > 	- [ ] Pas d'initiation de traitement en urgence
@@ -292,28 +284,23 @@ cssclasses:
 > 	- [ ] Tremblement de repos
 > 	- [ ] Absence signes atypiques
 > - [ ] **9. Diagnostic étiologique - causes de syndrome parkinsonien *(1 grille sur 2)***
-> - [ ] **10. Examens complémentaires diagnostiques *(1 grille sur 2)***
-> 	- [ ] DaTscan
-> 	- [ ] IRM cérébrale
-> 	- [ ] Test thérapeutique L-DOPA
-> 	- [ ] Tests olfactifs
-> - [ ] **11. Traitement dopaminergique - première intention *(1 grille sur 2)***
-> - [ ] **12. Surveillance et adaptation thérapeutique *(1 grille sur 2)***
+> - [ ] **10. Traitement dopaminergique - première intention *(1 grille sur 2)***
+> - [ ] **11. Surveillance et adaptation thérapeutique *(1 grille sur 2)***
 > 	- [ ] Évaluation efficacité
 > 	- [ ] Surveillance effets secondaires
 > 	- [ ] Adaptation posologique
 > 	- [ ] Prévention complications
-> - [ ] **13. Prise en charge non médicamenteuse *(1 grille sur 2)***
+> - [ ] **12. Prise en charge non médicamenteuse *(1 grille sur 2)***
 > 	- [ ] Kinésithérapie
 > 	- [ ] Orthophonie
 > 	- [ ] Ergothérapie
 > 	- [ ] Activité physique
-> - [ ] **14. Information patient et famille *(1 grille sur 2)***
+> - [ ] **13. Information patient et famille *(1 grille sur 2)***
 > 	- [ ] Explication diagnostic
 > 	- [ ] Pronostic
 > 	- [ ] Conseils hygiène de vie
 > 	- [ ] Associations patients
-> - [ ] **15. Suivi spécialisé et long terme *(1 grille sur 2)***
+> - [ ] **14. Suivi spécialisé et long terme *(1 grille sur 2)***
 > 	- [ ] Neurologie
 > 	- [ ] Surveillance complications
 > 	- [ ] Neurochirurgie

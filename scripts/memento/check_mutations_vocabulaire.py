@@ -51,8 +51,17 @@ MUTATIONS = [
     # Inertes : sous-items de parents differents, l'entree ne reunirait rien.
     ("inerte", "Neuropathie Périphérique",
      "Opérations antérieures", "Antécédents chirurgicaux", None),
+    # CETTE LIGNE A CHANGE DE FIXTURE LE 2026-08-16, et le motif du changement
+    # vaut d'etre garde. Elle portait « Médicaments » -> « Médicaments actuels »
+    # sur AVP, inerte parce que les deux libelles vivaient sous des parents
+    # differents. La curation en masse a reuni ces parents : la mutation est
+    # devenue une entree VALIDE, donc plus une mutation du tout, et le banc
+    # signalait « NON DETECTEE » — a juste titre. Une fixture de propriete 7
+    # depend de la table qu'elle observe ; celle-ci la remplace sur la meme SSP
+    # et garde exactement le meme piege : deux libelles qu'un relecteur
+    # rapprocherait sans hesiter, et qui ne se rencontrent jamais.
     ("inerte", "AVP (Accident de la Voie Publique)",
-     "Médicaments", "Médicaments actuels", None),
+     "Radiographie du bassin", "Radiographie du bassin de face", None),
     ("inerte", "Adénopathie", "Habitudes de vie", "Habitudes", None),
     # Fautes de saisie, sur des SSP du lot 2.
     ("cle", "Dysphagie", "Anamnese familiale", "Antécédents familiaux", None),

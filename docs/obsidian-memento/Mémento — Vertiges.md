@@ -181,16 +181,21 @@ cssclasses:
 > - [ ] **3. Tests auditifs *(Zona auriculaire (syndrome de Ramsay Hunt))***
 > 	- [ ] Test de Rinne et test de Weber
 > 	- [ ] Test de Dix-Hallpike
-> - [ ] **4. Examen neurologique *(Zona auriculaire (syndrome de Ramsay Hunt))***
-> 	- [ ] Examen ciblé des nerfs crâniens
-> 	- [ ] Examen ciblé de l'audition
-> 	- [ ] Examen ciblé des mouvements passifs et actifs
-> 	- [ ] Examen ciblé de la sensibilité
-> 	- [ ] Examen ciblé des réflexes ostéotendineux
-> 	- [ ] Examen ciblé de la marche
-> 	- [ ] Test d'alternance rapide des mouvements
-> 	- [ ] Test doigt-nez
-> 	- [ ] Test de Romberg
+> - [ ] **4. Examen neurologique général**
+> 	- [ ] Examen ciblé des nerfs crâniens *(Zona auriculaire (syndrome de Ramsay Hunt))*
+> 	- [ ] Examen ciblé de l'audition *(Zona auriculaire (syndrome de Ramsay Hunt))*
+> 	- [ ] Examen ciblé des mouvements passifs et actifs *(Zona auriculaire (syndrome de Ramsay Hunt))*
+> 	- [ ] Examen ciblé de la sensibilité *(Zona auriculaire (syndrome de Ramsay Hunt))*
+> 	- [ ] Examen ciblé des réflexes ostéotendineux *(Zona auriculaire (syndrome de Ramsay Hunt))*
+> 	- [ ] Examen ciblé de la marche *(Zona auriculaire (syndrome de Ramsay Hunt))*
+> 	- [ ] Test d'alternance rapide des mouvements *(Zona auriculaire (syndrome de Ramsay Hunt))*
+> 	- [ ] Test doigt-nez *(Zona auriculaire (syndrome de Ramsay Hunt))*
+> 	- [ ] Test de Romberg *(Zona auriculaire (syndrome de Ramsay Hunt))*
+> 	- [ ] Fonctions supérieures *(Maladie de Parkinson)*
+> 	- [ ] Nerfs crâniens *(Maladie de Parkinson)*
+> 	- [ ] Force musculaire *(Maladie de Parkinson)*
+> 	- [ ] Réflexes ostéotendineux *(Maladie de Parkinson)*
+> 	- [ ] Signes pyramidaux *(Maladie de Parkinson)*
 > - [ ] **5. Évaluation de l'état général et nutritionnel *(Maladie de Parkinson)***
 > 	- [ ] Poids et taille
 > 	- [ ] État d'hydratation
@@ -227,12 +232,6 @@ cssclasses:
 > 	- [ ] Manœuvre de Dix-Hallpike
 > 	- [ ] Head impulse test
 > 	- [ ] Coordination œil-tête
-> - [ ] **11. Examen neurologique général *(Maladie de Parkinson)***
-> 	- [ ] Fonctions supérieures
-> 	- [ ] Nerfs crâniens
-> 	- [ ] Force musculaire
-> 	- [ ] Réflexes ostéotendineux
-> 	- [ ] Signes pyramidaux
 
 > [!success] 💊 Management — si HypoTA orthostatique
 > *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Syncope & Perte de Connaissance]] (2 grilles) · [[Mémento — Chute & Évaluation Gériatrique]] (1 grille).
