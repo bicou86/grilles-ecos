@@ -387,6 +387,11 @@ cssclasses:
 > - [ ] **4. Conseil et soutien**
 > 	- [ ] Conseil sur l'utilisation d'opioïdes sur ordonnance
 > 	- [ ] Réaction appropriée au défi concernant le retour au sport
+> 	- [ ] Rupture massive irréparable
+> 	- [ ] Arthropathie de rupture
+> 	- [ ] Épaule pseudo-paralytique
+> 	- [ ] Atrophie musculaire
+> 	- [ ] Capsulite adhésive secondaire
 
 > [!success] 💊 Management — si Syndrome de conflit sous-acromial
 > - [ ] **1. Énonce le diagnostic principal**

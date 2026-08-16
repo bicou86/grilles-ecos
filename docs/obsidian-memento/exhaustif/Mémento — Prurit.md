@@ -178,6 +178,11 @@ cssclasses:
 > 	- [ ] Biopsies/brossage cytologique
 > - [ ] **5. Traitement symptomatique du prurit**
 > - [ ] **6. Surveillance et complications**
+> 	- [ ] Angiocholite
+> 	- [ ] Insuffisance rénale
+> 	- [ ] Coagulopathie
+> 	- [ ] Sepsis biliaire
+> 	- [ ] Pancréatite obstructive
 > - [ ] **7. Orientation et prise en charge**
 > 	- [ ] Hospitalisation si angiocholite ou altération état général
 > 	- [ ] Référence gastro-entérologie pour CPRE

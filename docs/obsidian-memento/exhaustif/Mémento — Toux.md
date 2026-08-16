@@ -889,6 +889,10 @@ cssclasses:
 > 	- [ ] Orientation vers services sociaux
 > 	- [ ] Soutien émotionnel face à l'inquiétude
 > 	- [ ] Information sur l'urgence du diagnostic
+> 	- [ ] Hémoptysie massive
+> 	- [ ] Détresse respiratoire aiguë
+> 	- [ ] Syndrome cave supérieur
+> 	- [ ] Signes neurologiques
 > - [ ] **3. Examens biologiques *(1 grille sur 2)***
 > 	- [ ] Coloration de Gram des expectorations, microscopie avec coloration acido-résistante, cytologie, et culture de routine et mycobactérienne
 > - [ ] **4. Examens biologiques et imagerie avancée *(1 grille sur 2)***

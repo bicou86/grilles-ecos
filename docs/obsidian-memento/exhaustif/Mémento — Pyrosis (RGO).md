@@ -122,3 +122,8 @@ cssclasses:
 > - [ ] **5. Conseil et soutien**
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant le retour à la maison
+> 	- [ ] Syndrome coronarien aigu
+> 	- [ ] Angor instable
+> 	- [ ] Insuffisance cardiaque aiguë
+> 	- [ ] Arythmie ventriculaire
+> 	- [ ] Épuisement de l'aidant

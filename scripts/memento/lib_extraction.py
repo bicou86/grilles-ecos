@@ -226,6 +226,29 @@ def items(bloc):
             sous.append(propre(s.group(1)))
         sous += [propre(d) for d in
                  re.findall(r'class="detail-text criteria-detail">(.*?)</div>', corps, re.S)]
+        # LES DRAPEAUX ROUGES SONT LE CONTENU D'UN CRITERE NOTE, pas une annexe.
+        # Un `redflags-section` vit A L'INTERIEUR du `criteria-row` : il porte
+        # l'enumeration que le titre annonce et ne dit rien tout seul. Sans lui,
+        # « Signes d'alarme (Red Flags) » (Diarrhee), « Signes d'alerte
+        # necessitant une prise en charge urgente » (Acouphenes) ou « Criteres
+        # d'hospitalisation » (Prevention pediatrique) arrivaient au memento en
+        # TITRE NU — l'etudiant lit qu'il y a des drapeaux rouges sans savoir
+        # lesquels. Releve du corpus : 37 criteres notes, 181 lignes.
+        #
+        # Seul `redflags-text` est repris, pas `redflags-description` : le
+        # premier est l'item (« Melena »), le second sa glose (« Selles noires
+        # = hemorragie digestive haute necessitant endoscopie »). La glose est
+        # de la meme nature que les paragraphes didactiques deja laisses de
+        # cote par `lire_azygos`.
+        #
+        # LES NEUF GRILLES OFFICIELLES N'EN PORTENT AUCUN — verifie en
+        # delimitant les `criteria-row` par equilibrage des <div> : leur
+        # memento est inchange a l'octet pres (md5 epingle par check_fusion).
+        # `therapy-section`, qui vit au meme endroit, reste dehors pour la
+        # raison inverse : DEUX officielles en portent (RESCOS-58b, RESCOS-67b),
+        # et c'est de la prose de protocole, pas une ligne a cocher.
+        sous += [propre(d) for d in
+                 re.findall(r'class="redflags-text">(.*?)</div>', corps, re.S)]
         titre = harmonise([titre])[0]
         cid = m.group(2)
         # Le filtre des reponses ne vaut QUE pour l'anamnese et le status. La

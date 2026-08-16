@@ -283,3 +283,7 @@ cssclasses:
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Conseil sur l'importance d'arrêter les antalgiques et proposition d'alternative (ex: paracétamol)
 > 	- [ ] Réaction appropriée au défi concernant le manque de temps
+> 	- [ ] Instabilité hémodynamique
+> 	- [ ] Anémie sévère
+> 	- [ ] Saignement actif
+> 	- [ ] Comorbidités graves

@@ -403,6 +403,10 @@ cssclasses:
 > 	- [ ] Proposer de diminuer l'éclairage dans la salle d'examen
 > 	- [ ] Soutien émotionnel face à la gravité
 > 	- [ ] Information sur l'urgence de la situation
+> 	- [ ] Dégradation neurologique
+> 	- [ ] Signes d'engagement cérébral
+> 	- [ ] Hydrocéphalie aiguë
+> 	- [ ] Vasospasme (J4-14)
 > - [ ] **4. Examens complémentaires - imagerie**
 > 	- [ ] CT cérébral sans contraste
 > 	- [ ] FSC
@@ -441,6 +445,12 @@ cssclasses:
 > 	- [ ] Signes de méningisme
 > 	- [ ] Symptômes psychiatriques
 > 	- [ ] Douleur oculaire
+> 	- [ ] Céphalée en coup de tonnerre
+> 	- [ ] Céphalée nouvelle > 50 ans
+> 	- [ ] Changement de pattern
+> 	- [ ] Céphalée positionnelle
+> 	- [ ] Immunodépression
+> 	- [ ] Déficit neurologique
 > - [ ] **3. Traitement/Prise en charge *(1 grille sur 2)***
 > 	- [ ] Migraine, céphalée de tension et algie vasculaire = diagnostics cliniques basés sur l'histoire et l'examen physique
 > 	- [ ] Ne pas faire d'examens diagnostiques sauf si drapeaux rouges présents

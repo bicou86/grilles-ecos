@@ -171,6 +171,11 @@ cssclasses:
 > 	- [ ] Adapter la posologie si nécessaire
 > - [ ] **8. Orientation spécialisée**
 > 	- [ ] Suivi conjoint avec rhumatologue (lupus)
+> 	- [ ] Insuffisance rénale aiguë
+> 	- [ ] Syndrome néphrotique sévère avec anasarque
+> 	- [ ] Complications thromboemboliques
+> 	- [ ] Signes de glomérulonéphrite rapidement progressive
+> 	- [ ] Hypertension sévère
 > - [ ] **9. Information et éducation du patient**
 > 	- [ ] Explication du diagnostic suspecté
 > 	- [ ] Importance du suivi néphrologique

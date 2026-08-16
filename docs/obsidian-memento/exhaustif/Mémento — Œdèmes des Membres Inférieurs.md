@@ -251,6 +251,11 @@ cssclasses:
 > 	- [ ] Question précise
 > - [ ] **5. Plan de prise en charge proposé**
 > - [ ] **6. Complications à surveiller**
+> 	- [ ] Œdème aigu du poumon
+> 	- [ ] Insuffisance rénale sur diurétiques
+> 	- [ ] Troubles du rythme
+> 	- [ ] Infection de la plaie
+> 	- [ ] Chutes
 
 > [!success] 💊 Management — si Syndrome néphrotique
 > - [ ] **1. Diagnostics différentiels du syndrome œdémateux**
@@ -283,3 +288,8 @@ cssclasses:
 > 	- [ ] HTA sévère
 > 	- [ ] Signes extra-rénaux évocateurs de maladie systémique
 > - [ ] **7. Complications du syndrome néphrotique**
+> 	- [ ] Thrombose veineuse rénale
+> 	- [ ] Embolie pulmonaire
+> 	- [ ] Infections sévères
+> 	- [ ] Insuffisance rénale aiguë
+> 	- [ ] Hypovolémie sévère

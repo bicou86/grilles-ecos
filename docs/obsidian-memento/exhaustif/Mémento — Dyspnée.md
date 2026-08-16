@@ -629,6 +629,11 @@ cssclasses:
 > 	- [ ] Reflux hépato-jugulaire
 > - [ ] **19. Prise en charge de l'insuffisance cardiaque *(2 grilles sur 3)***
 > - [ ] **20. Signes d'alarme (red flags) *(1 grille sur 3)***
+> 	- [ ] Œdème aigu du poumon
+> 	- [ ] Choc cardiogénique
+> 	- [ ] Syndrome coronarien aigu
+> 	- [ ] Arythmie ventriculaire
+> 	- [ ] Insuffisance rénale aiguë
 > - [ ] **21. Éducation thérapeutique *(1 grille sur 3)***
 > 	- [ ] Reconnaissance des signes d'alarme
 > 	- [ ] Importance de l'observance thérapeutique

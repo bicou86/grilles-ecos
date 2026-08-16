@@ -287,3 +287,8 @@ cssclasses:
 > 	- [ ] Conseil sur les drogues récréatives
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant le départ
+> 	- [ ] Paralysie faciale
+> 	- [ ] Surdité définitive
+> 	- [ ] Névralgie post-zostérienne
+> 	- [ ] Extension méningée
+> 	- [ ] Schwannome vestibulaire

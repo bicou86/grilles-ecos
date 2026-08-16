@@ -339,6 +339,10 @@ cssclasses:
 > 	- [ ] Gynécologue pour bilan ménopause
 > 	- [ ] Hospitalisation si urgence hypertensive
 > 	- [ ] Cardiologue si HTA sévère
+> 	- [ ] TA > 180/110 mmHg avec signes d'atteinte d'organe
+> 	- [ ] Suspicion forte de phéochromocytome avec crise
+> 	- [ ] Altération de l'état général marquée
+> 	- [ ] Anxiété majeure avec risque suicidaire
 > - [ ] **7. Planification du suivi**
 > 	- [ ] Consultation de contrôle avec résultats
 > 	- [ ] Carnet de surveillance tensionnelle

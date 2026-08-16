@@ -248,3 +248,7 @@ cssclasses:
 > 	- [ ] Éducation sur l'utilisation appropriée des antibiotiques
 > 	- [ ] Information sur les mesures de confort
 > 	- [ ] Conseils de prévention transmission
+> 	- [ ] Abcès péri-amygdalien
+> 	- [ ] Rhumatisme articulaire aigu
+> 	- [ ] Glomérulonéphrite post-streptococcique
+> 	- [ ] Rupture splénique (si MNI)

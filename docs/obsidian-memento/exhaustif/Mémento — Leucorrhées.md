@@ -143,3 +143,7 @@ cssclasses:
 > 	- [ ] Recommandation de compléter la série de vaccination VPH
 > 	- [ ] Réaction appropriée au défi sur la confidentialité
 > 	- [ ] Éducation sur la prévention des IST
+> 	- [ ] Maladie inflammatoire pelvienne
+> 	- [ ] Grossesse ectopique
+> 	- [ ] Infertilité tubaire
+> 	- [ ] Transmission VIH

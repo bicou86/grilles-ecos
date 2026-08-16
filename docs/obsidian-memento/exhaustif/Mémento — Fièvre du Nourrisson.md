@@ -346,6 +346,10 @@ cssclasses:
 > 	- [ ] Réaction appropriée au défi concernant la visite à l'hôpital
 > 	- [ ] Conseil sur l'urgence de la consultation
 > 	- [ ] Proposition de solutions pour la garde du frère
+> 	- [ ] Détresse respiratoire
+> 	- [ ] Déshydratation sévère
+> 	- [ ] Altération de l'état de conscience
+> 	- [ ] Convulsions fébriles
 
 > [!success] 💊 Management — si Exanthème subit
 > - [ ] **1. Diagnostic principal évoqué**
@@ -373,6 +377,11 @@ cssclasses:
 > 	- [ ] Signes de déshydratation
 > 	- [ ] Détresse respiratoire
 > 	- [ ] Éruption cutanée purpurique
+> 	- [ ] Somnolence excessive ou difficultés à réveiller l'enfant
+> 	- [ ] Convulsions fébriles
+> 	- [ ] Refus de boire ou signes de déshydratation
+> 	- [ ] Difficultés respiratoires
+> 	- [ ] Éruption cutanée ne blanchissant pas à la vitropression
 > - [ ] **7. Mesures préventives**
 > 	- [ ] Éviction de la crèche jusqu'à 24h après défervescence
 > 	- [ ] Hygiène des mains

@@ -5,6 +5,7 @@ Une seule verification part du corpus reel et non de cas construits :
 diagnostic de la table de priorites et celui que la table des diagnostics
 resout, parce qu'aucun cas construit ne peut la surveiller.
 """
+import re
 import sys
 from pathlib import Path
 
@@ -19,6 +20,22 @@ A = {"id": "A", "sections": {"a": [("item", "a1", "1. Caractérisation de la dou
 B = {"id": "B", "sections": {"a": [("item", "a1", "Caractérisation de la Douleur",
                                     ["Localisation", "Facteurs déclenchants"])]}}
 C = {"id": "C", "sections": {"a": [("item", "a1", "Anamnèse familiale", [])]}}
+
+_CORPUS = None
+
+
+def _corpus():
+    """Les cas pivots du corpus entier, lus une fois.
+
+    Les proprietes de ce fichier travaillent sur des cas CONSTRUITS ; celles
+    qui ont besoin d'un temoin reel passent par ici, pour ne pas relire les
+    252 grilles une fois par propriete.
+    """
+    global _CORPUS
+    if _CORPUS is None:
+        import build_memento
+        _CORPUS = build_memento.tous_les_cas()
+    return _CORPUS
 
 
 def verifier_marquage():
@@ -121,6 +138,83 @@ def verifier_invariant_sous_items():
     _, _, titre, sous = lignes[0]
     if len(sous) != 3:
         ecarts.append(f"l'item a ete vide de ses sous-items : {titre!r} -> {sous}")
+    return ecarts
+
+
+def verifier_drapeaux_rouges():
+    """Les drapeaux rouges d'un critere note sont des sous-items, pas du decor.
+
+    TROIS CHOSES A LA FOIS, parce qu'elles se cassent separement :
+
+      1. `redflags-text` est moissonne — sans lui, « Signes d'alarme (Red
+         Flags) » arrivait au memento en titre nu ;
+      2. `redflags-description` ne l'est PAS — c'est la glose, pas l'item ;
+      3. `therapy-section` ne l'est pas non plus. Ce n'est pas un oubli : DEUX
+         des neuf grilles officielles en portent (RESCOS-58b, RESCOS-67b), et
+         la moissonner deplacerait le memento que le jury a valide.
+
+    Le bloc est celui, minimal, que `items()` sait lire.
+    """
+    ecarts = []
+    bloc = ('<div class="criteria-row" id="criteria-m1">'
+            '<div class="criteria-text">Signes d\'alarme (Red Flags)<button>'
+            '</button></div>'
+            '<div class="detail-text criteria-detail">Toucher rectal</div>'
+            '<div class="redflags-section">'
+            '<div class="redflags-title">⚠️ Exploration urgente</div>'
+            '<div class="redflags-item">'
+            '<div class="redflags-text">1. Méléna</div>'
+            '<div class="redflags-description">Selles noires = endoscopie</div>'
+            '</div>'
+            '<div class="redflags-item">'
+            '<div class="redflags-text">2. Anémie ferriprive</div>'
+            '</div></div>'
+            '<div class="therapy-section">'
+            '<div class="therapy-title">Traitement de première ligne</div>'
+            '</div>')
+    lignes = lib_extraction.items(bloc)
+    if not lignes:
+        return ["le bloc de controle n'a produit aucun item"]
+    _, _, _, sous = lignes[0]
+    if sous != ["Toucher rectal", "1. Méléna", "2. Anémie ferriprive"]:
+        ecarts.append(f"drapeaux rouges mal moissonnes : {sous}")
+    if any("endoscopie" in x for x in sous):
+        ecarts.append("la glose d'un drapeau rouge a ete prise pour un item")
+    if any("première ligne" in x for x in sous):
+        ecarts.append("`therapy-section` moissonnee — le memento officiel bougerait")
+
+    # CONTRE-EPREUVE DU CONTROLE VIDE. Un bloc construit prouve que le code
+    # SAIT lire un `redflags-section` ; il ne prouve pas qu'il en RENCONTRE.
+    # La verification se refait donc de bout en bout sur le corpus : chaque
+    # `redflags-text` du HTML doit se retrouver en sous-item du pivot.
+    #
+    # LE COMPTE PLANCHER EST LA PARADE AU CONTROLE VIDE. Sans lui, une
+    # extraction qui cesserait de lire les `redflags-section` rendrait la
+    # boucle ci-dessous vide, donc verte. Le corpus en porte 181 ; le plancher
+    # est mis a 150 pour tolerer un retrait de grille sans tolerer une panne.
+    attendus, manquants = 0, []
+    for cas in _corpus():
+        brut = (lib_extraction.REPO / cas["fichier"])
+        if brut.suffix != ".html":
+            continue
+        texte = brut.read_text(encoding="utf8", errors="replace")
+        portes = set()
+        for lignes_s in cas["sections"].values():
+            for genre, _, _, sous in lignes_s:
+                if genre == "item":
+                    portes.update(sous or [])
+        for m in re.finditer(r'class="redflags-text">(.*?)</div>', texte, re.S):
+            drapeau = lib_extraction.propre(m.group(1))
+            if not drapeau:
+                continue
+            attendus += 1
+            if drapeau not in portes:
+                manquants.append(f"{cas['id']} : « {drapeau} »")
+    if attendus < 150:
+        ecarts.append(f"temoin de corpus absent : {attendus} drapeau(x) rouge(s) lu(s)"
+                      " dans le HTML, le controle ne verifie plus rien")
+    for m in manquants[:5]:
+        ecarts.append(f"drapeau rouge perdu entre le HTML et le pivot — {m}")
     return ecarts
 
 
@@ -664,6 +758,7 @@ def main():
     ecarts += verifier_marquage()
     ecarts += verifier_elision()
     ecarts += verifier_nettoyage()
+    ecarts += verifier_drapeaux_rouges()
     ecarts += verifier_reponses_patient()
     ecarts += verifier_invariant_sous_items()
     ecarts += verifier_management()

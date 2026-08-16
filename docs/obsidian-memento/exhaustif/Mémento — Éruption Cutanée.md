@@ -391,6 +391,8 @@ cssclasses:
 > 	- [ ] Évaluation de l'inflammation
 > 	- [ ] Dépistage d'atteinte rénale (néphrite lupique)
 > - [ ] **4. Information sur l'évolution possible**
+> 	- [ ] Évolution vers lupus systémique
+> 	- [ ] Signes d'alerte
 > - [ ] **5. Surveillance et suivi recommandés**
 > 	- [ ] Contrôle dans 4-6 semaines avec résultats
 > 	- [ ] Surveillance biologique régulière si ANA positifs

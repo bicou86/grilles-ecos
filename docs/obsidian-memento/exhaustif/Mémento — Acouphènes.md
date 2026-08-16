@@ -154,3 +154,9 @@ cssclasses:
 > 	- [ ] Orientation psychologique si retentissement important
 > 	- [ ] Groupe de soutien pour patients acouphéniques
 > - [ ] **7. Signes d'alerte nécessitant une prise en charge urgente**
+> 	- [ ] Acouphènes pulsatiles unilatéraux
+> 	- [ ] Surdité brusque associée
+> 	- [ ] Vertiges invalidants
+> 	- [ ] Signes neurologiques focaux
+> 	- [ ] Céphalées inhabituelles
+> 	- [ ] Acouphènes avec otorrhée ou otalgie

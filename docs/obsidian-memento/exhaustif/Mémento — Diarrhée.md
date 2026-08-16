@@ -487,6 +487,11 @@ cssclasses:
 > 	- [ ] Entéro-IRM ou vidéocapsule si suspicion grêle
 > - [ ] **3. Diagnostics différentiels des troubles du transit**
 > - [ ] **4. Signes d'alarme (Red Flags)**
+> 	- [ ] Méléna
+> 	- [ ] Modification récente du transit après 50 ans
+> 	- [ ] Occlusion intestinale
+> 	- [ ] Perte de poids inexpliquée
+> 	- [ ] Anémie ferriprive
 > - [ ] **5. Marqueurs tumoraux et examens spécialisés**
 > 	- [ ] ACE (antigène carcino-embryonnaire): cancer colorectal
 > 	- [ ] CA 19-9: tumeurs digestives

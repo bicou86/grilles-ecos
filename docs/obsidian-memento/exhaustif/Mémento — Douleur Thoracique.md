@@ -550,6 +550,11 @@ cssclasses:
 > 	- [ ] Sténose IVA proximale > 70%
 > 	- [ ] Score SYNTAX pour choisir entre angioplastie et pontage
 > - [ ] **6. Signes d'alarme nécessitant une prise en charge urgente *(1 grille sur 2)***
+> 	- [ ] Angor de novo < 2 mois
+> 	- [ ] Angor crescendo
+> 	- [ ] Angor de repos
+> 	- [ ] Angor prolongé > 20 minutes
+> 	- [ ] Signes d'insuffisance cardiaque
 > - [ ] **7. Interprétation des symptômes et diagnostic principal *(1 grille sur 2)***
 > 	- [ ] Évoque angor d'effort stable
 > 	- [ ] Classe II selon classification CCS

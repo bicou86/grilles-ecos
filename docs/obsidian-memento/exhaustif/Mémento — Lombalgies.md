@@ -649,13 +649,14 @@ cssclasses:
 > - [ ] **4. Indications d'hospitalisation**
 > 	- [ ] Signes infectieux associés (urgence) *(1 grille sur 2)*
 > 	- [ ] Rein unique fonctionnel *(1 grille sur 2)*
-> 	- [ ] Insuffisance rénale aiguë
+> 	- [ ] Insuffisance rénale aiguë *(1 grille sur 2)*
 > 	- [ ] Douleur réfractaire au traitement *(1 grille sur 2)*
 > 	- [ ] Calcul > 10 mm *(1 grille sur 2)*
 > 	- [ ] Obstruction bilatérale *(1 grille sur 2)*
 > 	- [ ] Colique néphrétique fébrile (urgence urologique) *(1 grille sur 2)*
 > 	- [ ] Anurie (obstruction bilatérale ou rein unique) *(1 grille sur 2)*
 > 	- [ ] Colique néphrétique hyperalgique résistante *(1 grille sur 2)*
+> 	- [ ] Insuffisance rénale aiguë obstructive *(1 grille sur 2)*
 > 	- [ ] Terrain particulier: grossesse, rein unique, transplanté *(1 grille sur 2)*
 > 	- [ ] Impossibilité de prise en charge ambulatoire *(1 grille sur 2)*
 > - [ ] **5. Prise en charge à distance *(1 grille sur 2)***
@@ -688,6 +689,11 @@ cssclasses:
 > 	- [ ] Néphrostomie percutanée si infection + obstruction
 > 	- [ ] Chirurgie ouverte exceptionnelle
 > - [ ] **11. Complications à rechercher *(1 grille sur 2)***
+> 	- [ ] Pyélonéphrite obstructive
+> 	- [ ] Rupture de la voie excrétrice
+> 	- [ ] Anurie obstructive
+> 	- [ ] Insuffisance rénale aiguë
+> 	- [ ] Sepsis/choc septique
 
 > [!success] 💊 Management — si Fracture vertébrale
 > - [ ] **1. Examens complémentaires urgents**
@@ -733,6 +739,11 @@ cssclasses:
 > - [ ] **5. Conseil et prévention *(1 grille sur 2)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant la dépendance aux antalgiques
+> 	- [ ] Syndrome de la queue de cheval
+> 	- [ ] Déficit neurologique progressif
+> 	- [ ] Suspicion de malignité
+> 	- [ ] Infection
+> 	- [ ] Fracture
 > - [ ] **6. Diagnostics différentiels *(1 grille sur 2)***
 > 	- [ ] Fracture vertébrale ostéoporotique
 > 	- [ ] Protrusion discale sans hernie franche

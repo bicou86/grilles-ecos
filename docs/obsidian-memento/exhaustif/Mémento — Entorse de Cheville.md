@@ -187,6 +187,11 @@ cssclasses:
 > 	- [ ] Recherche des préoccupations et questions de la patiente
 > - [ ] **4. Prise en charge immédiate**
 > 	- [ ] Réapplication appropriée du bandage après examen ou information que l'infirmière viendra réappliquer le bandage
+> 	- [ ] Syndrome des loges
+> 	- [ ] Lésion vasculo-nerveuse
+> 	- [ ] Fracture-luxation
+> 	- [ ] Instabilité chronique
+> 	- [ ] Algodystrophie
 
 > [!success] 💊 Management — si Entorse de la cheville droite (ligament latéral)
 > - [ ] **1. Examens complémentaires**

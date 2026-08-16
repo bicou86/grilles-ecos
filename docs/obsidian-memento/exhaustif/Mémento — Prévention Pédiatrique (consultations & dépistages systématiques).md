@@ -192,6 +192,12 @@ cssclasses:
 > 	- [ ] Normalité des variations individuelles
 > 	- [ ] Ressources disponibles (consultante en lactation, groupes de soutien)
 > - [ ] **7. Critères d'hospitalisation**
+> 	- [ ] Perte de poids > 10% du poids de naissance
+> 	- [ ] Déshydratation clinique
+> 	- [ ] Léthargie ou altération de l'état général
+> 	- [ ] Vomissements répétés
+> 	- [ ] Absence de prise de poids après 2 semaines
+> 	- [ ] Signes de malnutrition sévère
 > - [ ] **8. Alternatives si échec de l'allaitement**
 > 	- [ ] Compléments au lait maternel tiré
 > 	- [ ] Utilisation du DAL (dispositif d'aide à la lactation)

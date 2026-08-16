@@ -730,6 +730,11 @@ cssclasses:
 > 	- [ ] Conseil sur l'abus d'alcool
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant le test VIH
+> 	- [ ] Hépatite fulminante
+> 	- [ ] Syndrome hépatorénal
+> 	- [ ] Péritonite bactérienne spontanée
+> 	- [ ] Hémorragie digestive haute
+> 	- [ ] Syndrome de sevrage alcoolique
 > - [ ] **3. Examens complémentaires proposés**
 > 	- [ ] CT abdominal avec contraste
 
@@ -772,6 +777,10 @@ cssclasses:
 > 	- [ ] Éducation sur le repos nécessaire
 > 	- [ ] Information sur la durée possible de la fatigue
 > 	- [ ] Conseils de prévention transmission
+> 	- [ ] Rupture splénique
+> 	- [ ] Obstruction voies aériennes
+> 	- [ ] Syndrome hémophagocytaire
+> 	- [ ] Complications neurologiques
 
 > [!success] 💊 Management — si SAOS
 > - [ ] **1. Examens complémentaires proposés**

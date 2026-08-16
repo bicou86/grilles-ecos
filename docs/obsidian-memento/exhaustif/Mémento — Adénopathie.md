@@ -273,6 +273,11 @@ cssclasses:
 > 	- [ ] Cytogénétique si lymphome
 > - [ ] **5. Prise en charge selon l'étiologie**
 > - [ ] **6. Signes d'alarme nécessitant une prise en charge urgente**
+> 	- [ ] Syndrome cave supérieur
+> 	- [ ] Compression médullaire
+> 	- [ ] Syndrome de lyse tumorale
+> 	- [ ] Adénopathie > 3cm dure et fixée
+> 	- [ ] Altération rapide de l'état général
 
 > [!success] 💊 Management — si Lymphome
 > - [ ] **1. Analyse sémiologique et diagnostic différentiel**

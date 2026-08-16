@@ -951,8 +951,7 @@ cssclasses:
 > - [ ] **1. Hypothèse diagnostique principale *(5 grilles sur 20)* — 5 diagnostics : *Appendicite aiguë · Cancer de l'ovaire · Cholécystite aiguë · Colique néphrétique droite · Maladie cœliaque***
 > - [ ] **2. Échographie *(2 grilles sur 20)* — *Cholécystite aiguë · Purpura de Schönlein-Henoch (vascularite à IgA)***
 > - [ ] **3. Analgésie *(2 grilles sur 20)* — *Cholécystite aiguë · Purpura de Schönlein-Henoch (vascularite à IgA)***
-> - [ ] **4. Critères d'hospitalisation *(2 grilles sur 20)* — *Cholécystite aiguë · Diverticulite sigmoïdienne non compliquée***
-> - [ ] **5. Diagnostics différentiels de l'abdomen aigu *(9 grilles sur 20)* — 9 diagnostics : *Colique néphrétique droite · Diverticulite sigmoïdienne non compliquée · Douleurs abdominales non spécifiques · Endométriose pelvienne · Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH) · Perforation d'ulcère gastro-duodénal · Reflux gastro-œsophagien (RGO)***
+> - [ ] **4. Diagnostics différentiels de l'abdomen aigu *(9 grilles sur 20)* — 9 diagnostics : *Colique néphrétique droite · Diverticulite sigmoïdienne non compliquée · Douleurs abdominales non spécifiques · Endométriose pelvienne · Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH) · Perforation d'ulcère gastro-duodénal · Reflux gastro-œsophagien (RGO)***
 
 > [!success] 💊 Management — si Appendicite aiguë
 > - [ ] **1. Examens complémentaires urgents**
@@ -1034,41 +1033,42 @@ cssclasses:
 > - [ ] **11. Cholécysectomie laparoscopique *(1 grille sur 4)***
 > - [ ] **12. Antibiothérapie i.v. *(1 grille sur 4)***
 > - [ ] **13. Réhydratation i.v. *(1 grille sur 4)***
-> - [ ] **14. Laisser à jeun *(1 grille sur 4)***
-> - [ ] **15. Prise en charge thérapeutique immédiate *(1 grille sur 4)***
+> - [ ] **14. Critères d'hospitalisation *(1 grille sur 4)***
+> - [ ] **15. Laisser à jeun *(1 grille sur 4)***
+> - [ ] **16. Prise en charge thérapeutique immédiate *(1 grille sur 4)***
 > 	- [ ] Analgésiques
 > 	- [ ] Antispasmodiques
 > 	- [ ] Antiémétiques si vomissements
 > 	- [ ] Mise à jeun initiale
-> - [ ] **16. Mentionne une cholécystite comme hypothèse diagnostique principale *(1 grille sur 4)***
-> - [ ] **17. Evoque un diagnostic différentiel plausible *(1 grille sur 4)***
+> - [ ] **17. Mentionne une cholécystite comme hypothèse diagnostique principale *(1 grille sur 4)***
+> - [ ] **18. Evoque un diagnostic différentiel plausible *(1 grille sur 4)***
 > 	- [ ] Cholangite
 > 	- [ ] Pancréatite
 > 	- [ ] Appendicite
 > 	- [ ] Hépatite
 > 	- [ ] Pyélonéphrite
 > 	- [ ] Trouble gynécologique
-> - [ ] **18. Diagnostic principal et classification *(1 grille sur 4)***
+> - [ ] **19. Diagnostic principal et classification *(1 grille sur 4)***
 > 	- [ ] Évoque colique hépatique/cholécystite
 > 	- [ ] Classification selon durée
 > 	- [ ] Différenciation avec angiocholite
 > 	- [ ] Facteurs de risque
-> - [ ] **19. Évaluation de la sévérité et des complications *(1 grille sur 4)***
+> - [ ] **20. Évaluation de la sévérité et des complications *(1 grille sur 4)***
 > 	- [ ] Recherche signes de cholécystite
 > 	- [ ] Exclusion angiocholite
 > 	- [ ] Évaluation retentissement général
 > 	- [ ] Recherche signes de péritonite
-> - [ ] **20. Proposition d'examens complémentaires *(1 grille sur 4)***
+> - [ ] **21. Proposition d'examens complémentaires *(1 grille sur 4)***
 > 	- [ ] Bilan biologique
 > 	- [ ] Échographie abdominale/vaginale
 > 	- [ ] FSC, CRP
 > 	- [ ] Lipasémie
-> - [ ] **21. Traitement spécifique selon diagnostic *(1 grille sur 4)***
+> - [ ] **22. Traitement spécifique selon diagnostic *(1 grille sur 4)***
 > 	- [ ] Cholécystectomie
 > 	- [ ] Timing chirurgical
 > 	- [ ] Antibiothérapie si cholécystite
 > 	- [ ] CPRE si angiocholite
-> - [ ] **22. Surveillance et critères d'hospitalisation *(1 grille sur 4)***
+> - [ ] **23. Surveillance et critères d'hospitalisation *(1 grille sur 4)***
 > 	- [ ] Critères d'hospitalisation
 > 	- [ ] Surveillance clinique
 > 	- [ ] Signes d'alarme
@@ -1104,24 +1104,32 @@ cssclasses:
 > 	- [ ] Ionogramme, urée, créatinine
 > 	- [ ] Analyse d'urine (ECBU)
 > 	- [ ] Test de grossesse
-> - [ ] **3. Diagnostic principal**
-> - [ ] **4. Classification de la diverticulite**
+> - [ ] **3. Critères d'hospitalisation**
+> 	- [ ] Signes de péritonite ou sepsis
+> 	- [ ] Échec du traitement ambulatoire à 72h
+> 	- [ ] Impossibilité de s'alimenter ou de s'hydrater
+> 	- [ ] Comorbidités importantes (immunosuppression)
+> 	- [ ] Doute diagnostique
+> 	- [ ] Âge > 85 ans avec facteurs de risque
+> 	- [ ] Complications à l'imagerie
+> - [ ] **4. Diagnostic principal**
+> - [ ] **5. Classification de la diverticulite**
 > 	- [ ] Classification de Hinchey
 > 	- [ ] Diverticulite non compliquée
 > 	- [ ] Diverticulite compliquée (abcès, perforation, péritonite)
-> - [ ] **5. Prise en charge thérapeutique immédiate**
-> - [ ] **6. Suivi et surveillance**
+> - [ ] **6. Prise en charge thérapeutique immédiate**
+> - [ ] **7. Suivi et surveillance**
 > 	- [ ] Contrôle clinique à 48-72h si ambulatoire
 > 	- [ ] Contrôle biologique si pas d'amélioration
 > 	- [ ] Coloscopie 6-8 semaines après l'épisode
 > 	- [ ] Éducation sur les signes d'alarme
-> - [ ] **7. Complications et surveillance**
+> - [ ] **8. Complications et surveillance**
 > 	- [ ] Abcès péricolique
 > 	- [ ] Perforation avec péritonite
 > 	- [ ] Fistules (colovésicale, colovaginale)
 > 	- [ ] Sténose colique
 > 	- [ ] Hémorragie diverticulaire
-> - [ ] **8. Éducation du patient**
+> - [ ] **9. Éducation du patient**
 > 	- [ ] Explication de la pathologie diverticulaire
 > 	- [ ] Importance de l'observance thérapeutique
 > 	- [ ] Modifications du mode de vie
@@ -1304,6 +1312,11 @@ cssclasses:
 > 	- [ ] Gazométrie artérielle: acidose métabolique si choc
 > - [ ] **2. Prise en charge thérapeutique immédiate**
 > - [ ] **3. Complications et surveillance**
+> 	- [ ] Choc septique
+> 	- [ ] Abcès intra-abdominal
+> 	- [ ] Péritonite tertiaire
+> 	- [ ] Fistule digestive
+> 	- [ ] Syndrome compartimental abdominal
 > - [ ] **4. Signes radiologiques de pneumopéritoine**
 > 	- [ ] ASP/Thorax debout: croissant gazeux sous les coupoles
 > 	- [ ] Signe de Rigler: double contour des anses (air des deux côtés)

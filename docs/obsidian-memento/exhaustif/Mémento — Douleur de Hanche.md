@@ -413,6 +413,12 @@ cssclasses:
 > 	- [ ] Suivi multidisciplinaire
 > 	- [ ] Rééducation fonctionnelle adaptée
 > - [ ] **7. Éducation du patient**
+> 	- [ ] Augmentation brutale de la douleur
+> 	- [ ] Impossibilité de poser le pied
+> 	- [ ] Fièvre (risque infectieux sous immunosuppression)
+> 	- [ ] Déformation visible
+> 	- [ ] Douleur nocturne invalidante
+> 	- [ ] Apparition de symptômes controlatéraux
 
 > [!success] 💊 Management — si Syndrome douloureux du grand trochanter (tendinopathie fessière)
 > - [ ] **1. Renoncement à l’IRM**

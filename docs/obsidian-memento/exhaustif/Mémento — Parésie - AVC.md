@@ -186,6 +186,9 @@ cssclasses:
 > 	- [ ] Diplopie
 > 	- [ ] Trouble de l'équilibre ou de la marche
 > 	- [ ] Céphalée inhabituelle ou perte de connaissance
+> 	- [ ] Épargne du front Une atteinte centrale (AVC) épargne le territoire facial supérieur : le patient plisse encore le front. Ici le front est atteint, ce qui signe le caractère périphérique.
+> 	- [ ] Déficit d'un membre ou trouble du langage Toute atteinte associée d'un membre, du langage ou de la vision impose la filière AVC en urgence, quel que soit l'aspect du visage.
+> 	- [ ] Installation « à la seconde » Une paralysie de Bell s'installe sur quelques heures à 72 h. Un déficit maximal d'emblée oriente vers une cause vasculaire.
 > - [ ] **20. Dépistage d'un syndrome de Ramsay-Hunt *(1 grille sur 4)***
 > 	- [ ] Vésicules du pavillon ou du conduit auditif
 > 	- [ ] Otalgie ou otorrhée

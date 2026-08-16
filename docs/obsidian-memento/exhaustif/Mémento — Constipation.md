@@ -138,6 +138,14 @@ cssclasses:
 > - [ ] **1. Diagnostic de suspicion**
 > - [ ] **2. Diagnostics différentiels**
 > - [ ] **3. Red flags - Signaux d'alarme**
+> 	- [ ] Âge > 50 ans
+> 	- [ ] Début aigu/récent
+> 	- [ ] Perte de poids / Fièvre / Sueurs nocturnes
+> 	- [ ] Douleurs abdominales/crampes
+> 	- [ ] Saignement rectal
+> 	- [ ] Nausées/vomissements
+> 	- [ ] Douleurs rectales
+> 	- [ ] Modification du calibre des selles
 > - [ ] **4. Examens diagnostiques**
 > 	- [ ] Laboratoire : FSC, CRP, leucocytes, créatinine, électrolytes (Na, K, Ca), TSH, glucose
 > 	- [ ] Transaminases, Gamma-GT, phosphatases alcalines (PAL), albumine, Quick/aPTT

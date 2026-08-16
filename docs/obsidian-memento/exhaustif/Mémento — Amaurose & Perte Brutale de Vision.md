@@ -352,6 +352,11 @@ cssclasses:
 > 	- [ ] Recherche des préoccupations et questions du patient
 > - [ ] **5. Conseil et soutien**
 > 	- [ ] Réaction appropriée au défi concernant la peur de mourir
+> 	- [ ] Transformation hémorragique
+> 	- [ ] Œdème cérébral malin
+> 	- [ ] Extension de l'infarctus
+> 	- [ ] Pneumonie d'aspiration
+> 	- [ ] Crise hypertensive
 
 > [!success] 💊 Management — si Décollement de rétine
 > - [ ] **1. Examens diagnostiques complémentaires**

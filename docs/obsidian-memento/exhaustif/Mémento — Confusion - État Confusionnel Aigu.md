@@ -178,6 +178,11 @@ cssclasses:
 > 	- [ ] Bandelette urinaire
 > - [ ] **5. Traitement proposé *(1 grille sur 2)***
 > - [ ] **6. Red flags à surveiller *(1 grille sur 2)***
+> 	- [ ] Hypotension < 90/60 mmHg
+> 	- [ ] Confusion aiguë ou somnolence
+> 	- [ ] Oligurie < 500ml/24h
+> 	- [ ] Fièvre > 38.5°C persistante
+> 	- [ ] Sang dans les selles
 > - [ ] **7. Questionne sur l'examen clinique réalisé et le fait préciser *(1 grille sur 2)***
 > 	- [ ] Constantes
 > 	- [ ] Status neurologique

@@ -195,6 +195,11 @@ cssclasses:
 > 	- [ ] Risque d'étranglement
 > 	- [ ] Complications post-opératoires
 > 	- [ ] Récidive possible
+> 	- [ ] Douleur soudaine et intense au niveau de la hernie
+> 	- [ ] Hernie devenant irréductible et douloureuse
+> 	- [ ] Nausées et vomissements associés
+> 	- [ ] Arrêt des matières et des gaz
+> 	- [ ] Rougeur et chaleur locale
 > - [ ] **6. Prise en charge des facteurs de risque**
 > 	- [ ] Perte de poids recommandée
 > 	- [ ] Éviter les efforts de soulèvement

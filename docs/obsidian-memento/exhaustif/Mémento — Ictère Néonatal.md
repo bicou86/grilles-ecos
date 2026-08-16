@@ -199,6 +199,11 @@ cssclasses:
 > 	- [ ] Conseil sur la mort subite du nourrisson
 > 	- [ ] Conseil supplémentaire sur la gestion de l'allaitement
 > 	- [ ] Réaction appropriée au défi concernant la culpabilité
+> 	- [ ] Ictère précoce < 24h
+> 	- [ ] Hyperbilirubinémie sévère
+> 	- [ ] Signes neurologiques
+> 	- [ ] Déshydratation > 10%
+> 	- [ ] Selles décolorées
 
 > [!success] 💊 Management — si Ictère néonatal physiologique
 > - [ ] **1. Laboratoire**
