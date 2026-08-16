@@ -672,9 +672,10 @@ POSITIVE**. La classe complète est listée en fin de document.
 - ⛔ `US transabdominale` (AMBOSS-3)  ⟷  `US transvaginale` (AMBOSS-3) — **AMBOSS-3, section « m »** distingue ces deux items
 - ⛔ `Urine` (AZYGOS-16)  ⟷  `Urines` (AZYGOS-16) — **même signature socle A**, déjà appariés dans leur section
 
-## Douleur Thoracique — 12 cas · 0 à juger (0 de forme, 0 de contenu), 69 ⚠️, 46 ⛔
+## Douleur Thoracique — 12 cas · 0 à juger (0 de forme, 0 de contenu), 70 ⚠️, 47 ⛔
 
 - ⚠️ `Activité physique` (RESCOS-37)  ⟷  `Activité physique régulière` (RESCOS-37) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
+- ⚠️ `Affections cardiaques` (RESCOS-37)  ⟷  `Auscultation cardiaque` (AMBOSS-12, AMBOSS-13, AMBOSS-14, AZYGOS-22, German-31, RESCOS-35, RESCOS-36) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Ampliation thoracique` (RESCOS-35)  ⟷  `Inspection thoracique` (RESCOS-37) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Ampliation thoracique` (RESCOS-35)  ⟷  `Traumatisme thoracique` (German-31, German-32, German-33) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `Arrêt du tabac` (AZYGOS-22)  ⟷  `Arrêt du tabac impératif` (German-31) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -751,6 +752,7 @@ POSITIVE**. La classe complète est listée en fin de document.
 - ⛔ `Antécédents familiaux` (AMBOSS-12, AMBOSS-13, AMBOSS-14, AZYGOS-22, RESCOS-36)  ⟷  `Antécédents médicaux` (AMBOSS-12, AMBOSS-13, AMBOSS-14, AZYGOS-22, German-30) — **AMBOSS-12, section « a »** distingue ces deux items
 - ⛔ `Antécédents familiaux cardiovasculaires` (RESCOS-37)  ⟷  `Antécédents personnels cardiovasculaires` (RESCOS-37) — **RESCOS-37, section « a »** distingue ces deux items
 - ⛔ `Auscultation bilatérale des carotides` (RESCOS-37)  ⟷  `Auscultation des carotides` (RESCOS-37) — **RESCOS-37, section « e »** distingue ces deux items
+- ⛔ `Auscultation cardiaque` (AMBOSS-12, AMBOSS-13, AMBOSS-14, AZYGOS-22, German-31, RESCOS-35, RESCOS-36)  ⟷  `Auscultation des carotides` (RESCOS-37) — **RESCOS-37, section « e »** distingue ces deux items
 - ⛔ `Caractère de la douleur` (German-31, German-32, German-33)  ⟷  `Localisation de la douleur` (German-30, German-31, German-32, German-33) — **German-31, section « a »** distingue ces deux items
 - ⛔ `Classe II: Limitation légère` (RESCOS-36)  ⟷  `Classe III: Limitation marquée` (RESCOS-36) — **RESCOS-36, section « a »** distingue ces deux items
 - ⛔ `Coronarographie` (AMBOSS-14)  ⟷  `Échocardiographie` (AMBOSS-14) — **AMBOSS-14, section « m »** distingue ces deux items
@@ -1536,7 +1538,11 @@ POSITIVE**. La classe complète est listée en fin de document.
 - ⛔ `Inspection du nez` (AMBOSS-21)  ⟷  `Inspection du thorax` (AMBOSS-21) — **AMBOSS-21, section « e »** distingue ces deux items
 - ⛔ `Inspection du thorax` (AMBOSS-21)  ⟷  `Palpation du thorax` (AMBOSS-21) — **AMBOSS-21, section « e »** distingue ces deux items
 
-## Ictère — 2 cas · 0 à juger (0 de forme, 0 de contenu), 7 ⚠️, 8 ⛔
+## Ictère — 2 cas · 1 à juger (0 de forme, 1 de contenu), 7 ⚠️, 8 ⛔
+
+**À juger — écart de contenu** (un mot de contenu diffère : réunir efface une distinction, à examiner de près)
+
+- `Anamnèse sociale` (German-55)  ⟷  `Anamnèse uro-génitale` (RESCOS-47)
 
 - ⚠️ `Chirurgies abdominales` (German-55)  ⟷  `Échographie abdominale` (German-55, RESCOS-47) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
 - ⚠️ `DD : hépatites` (RESCOS-47)  ⟷  `Hépatite` (RESCOS-47) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -1568,10 +1574,11 @@ POSITIVE**. La classe complète est listée en fin de document.
 - ⛔ `Infections pendant la grossesse` (AZYGOS-35)  ⟷  `Médicaments pendant la grossesse` (AZYGOS-35) — **AZYGOS-35, section « a »** distingue ces deux items
 - ⛔ `Écoulement auriculaire` (AMBOSS-37)  ⟷  `Écoulement oculaire` (AMBOSS-37) — **AMBOSS-37, section « a »** distingue ces deux items
 
-## Lombalgies — 8 cas · 1 à juger (0 de forme, 1 de contenu), 58 ⚠️, 33 ⛔
+## Lombalgies — 8 cas · 2 à juger (0 de forme, 2 de contenu), 58 ⚠️, 33 ⛔
 
 **À juger — écart de contenu** (un mot de contenu diffère : réunir efface une distinction, à examiner de près)
 
+- `Anamnèse sociale` (German-57, German-59)  ⟷  `Anamnèse uro-génitale` (RESCOS-48)
 - `Antécédents de fractures` (German-58)  ⟷  `Antécédents de lithiase` (German-59)
 
 - ⚠️ `Activité physique` (German-57, German-59, RESCOS-48)  ⟷  `Activité physique régulière` (German-58) — **inerte** : ces deux titres ne vivent pas au même endroit (section ou parent différents), l'entrée ne réunirait rien
@@ -2109,7 +2116,7 @@ POSITIVE**. La classe complète est listée en fin de document.
 - ⛔ `Obésité familiale` (German-64)  ⟷  `Situation familiale` (German-64) — **German-64, section « a »** distingue ces deux items
 - ⛔ `Symptômes évocateurs d'endocrinopathie` (German-64)  ⟷  `Symptômes évocateurs de diabète` (German-64) — **German-64, section « a »** distingue ces deux items
 
-## Toux — 13 cas · 2 à juger (0 de forme, 2 de contenu), 131 ⚠️, 61 ⛔
+## Toux — 13 cas · 2 à juger (0 de forme, 2 de contenu), 131 ⚠️, 59 ⛔
 
 **À juger — écart de contenu** (un mot de contenu diffère : réunir efface une distinction, à examiner de près)
 
@@ -2253,9 +2260,7 @@ POSITIVE**. La classe complète est listée en fin de document.
 - ⛔ `Antécédents cardiovasculaires` (German-76)  ⟷  `Symptômes cardiovasculaires` (German-75, German-76) — **German-76, section « a »** distingue ces deux items
 - ⛔ `Antécédents cardiovasculaires` (German-76)  ⟷  `Traitements cardiovasculaires actuels` (German-76) — **German-76, section « a »** distingue ces deux items
 - ⛔ `Antécédents chirurgicaux` (AMBOSS-18, AMBOSS-19, AMBOSS-31)  ⟷  `Antécédents familiaux` (AMBOSS-18, AMBOSS-19, AMBOSS-31, AZYGOS-47, German-75, German-76, RESCOS-62, RESCOS-64-1) — **AMBOSS-18, section « a »** distingue ces deux items
-- ⛔ `Auscultation antérieure systématique` (German-75, German-76)  ⟷  `Auscultation cardiaque systématique` (RESCOS-64-1) — **German-75, section « e »** distingue ces deux items
 - ⛔ `Auscultation antérieure systématique` (German-75, German-76)  ⟷  `Auscultation postérieure systématique` (German-75, German-76) — **German-75, section « e »** distingue ces deux items
-- ⛔ `Auscultation cardiaque systématique` (RESCOS-64-1)  ⟷  `Auscultation postérieure systématique` (German-75, German-76) — **German-75, section « e »** distingue ces deux items
 - ⛔ `Auscultation pulmonaire` (AMBOSS-18, AMBOSS-19, AMBOSS-31, German-78, RESCOS-62, RESCOS-64-1)  ⟷  `Percussion pulmonaire` (RESCOS-64-1) — **RESCOS-64-1, section « e »** distingue ces deux items
 - ⛔ `Auscultation systématique des deux champs pulmonaires` (RESCOS-64-1)  ⟷  `Percussion systématique des deux champs pulmonaires` (RESCOS-64-1) — **RESCOS-64-1, section « e »** distingue ces deux items
 - ⛔ `Autres positions` (German-76)  ⟷  `Facteurs positionnels` (German-76) — **German-76, section « a »** distingue ces deux items
