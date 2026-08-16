@@ -313,13 +313,12 @@ cssclasses:
 > [!success] 💊 Management — si AOMI
 > - [ ] **1. Examens complémentaires de première intention**
 > 	- [ ] Echo-Doppler artériel membres inférieurs
-> 	- [ ] Mesure index pression systolique (IPS) *(1 grille sur 2)*
+> 	- [ ] Index de pression systolique cheville-bras (IPS)
 > 	- [ ] Bilan lipidique complet
 > 	- [ ] Glycémie à jeun, HbA1c
 > 	- [ ] Créatinine, DFG
 > 	- [ ] ECG de repos *(1 grille sur 2)*
 > 	- [ ] Test de marche sur tapis *(1 grille sur 2)*
-> 	- [ ] Index de pression systolique cheville-bras (IPS) *(1 grille sur 2)*
 > 	- [ ] FSC, plaquettes *(1 grille sur 2)*
 > - [ ] **2. Classification de l'artériopathie (Leriche-Fontaine) *(1 grille sur 2)***
 > 	- [ ] Stade I: Asymptomatique

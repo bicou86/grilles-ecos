@@ -223,11 +223,10 @@ cssclasses:
 > 	- [ ] Facteurs aggravants *(1 grille sur 13)*
 > 	- [ ] Symptômes associés - Sibilances *(1 grille sur 13)*
 > 	- [ ] Type de toux *(Insuffisance cardiaque (décompensée) · Tuberculose)*
-> 	- [ ] Couleur des expectorations *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Couleur des expectorations *(3 grilles sur 13)*
 > 	- [ ] Quantité *(3 grilles sur 13)*
 > 	- [ ] Odeur *(2 grilles sur 13)*
 > 	- [ ] Aspect (mousseux, rosé) *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Couleur des crachats *(1 grille sur 13)*
 > 	- [ ] Présence de sang franc *(1 grille sur 13)*
 > 	- [ ] Évolution dans le temps *(1 grille sur 13)*
 > - [ ] **13. Recherche de symptômes spécifiques pour toux chronique et hémoptysie *(1 grille sur 13)***
@@ -602,8 +601,8 @@ cssclasses:
 > - [ ] **4. Examen cardiovasculaire complémentaire *(9 grilles sur 13)***
 > 	- [ ] Auscultation cardiaque systématique *(7 grilles sur 13)*
 > 	- [ ] Palpation du pouls radial *(BPCO)*
-> 	- [ ] Palpation du choc apexien *(BPCO)*
-> 	- [ ] Recherche du reflux hépato-jugulaire *(BPCO)*
+> 	- [ ] Palpation du choc apexien *(2 grilles sur 13)*
+> 	- [ ] Recherche du reflux hépato-jugulaire *(2 grilles sur 13)*
 > 	- [ ] Palpation du précordium *(3 grilles sur 13)*
 > 	- [ ] Recherche de signes d'insuffisance cardiaque droite *(2 grilles sur 13)*
 > 	- [ ] Pouls périphériques *(Tuberculose)*
@@ -612,12 +611,9 @@ cssclasses:
 > 	- [ ] Soulèvement parasternal *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Auscultation *(1 grille sur 13)*
 > 	- [ ] Pouls *(1 grille sur 13)*
-> 	- [ ] Palpation choc de pointe *(1 grille sur 13)*
-> 	- [ ] Œdèmes membres inférieurs *(1 grille sur 13)*
+> 	- [ ] Recherche d'œdèmes des membres inférieurs *(2 grilles sur 13)*
 > 	- [ ] Turgescence jugulaire *(1 grille sur 13)*
-> 	- [ ] Reflux hépato-jugulaire *(1 grille sur 13)*
 > 	- [ ] Évaluation des pouls périphériques *(1 grille sur 13)*
-> 	- [ ] Recherche d'œdèmes des membres inférieurs *(1 grille sur 13)*
 > - [ ] **5. Examen thoracique *(3 grilles sur 13)***
 > 	- [ ] Inspection du thorax
 > 	- [ ] Palpation du thorax
@@ -693,7 +689,7 @@ cssclasses:
 > 	- [ ] Recherche de râles crépitants ou sous-crépitants *(1 grille sur 13)*
 > - [ ] **26. Inspection veineuse *(Tuberculose)***
 > 	- [ ] Turgescence des veines jugulaires
-> 	- [ ] Reflux hépato-jugulaire
+> 	- [ ] Recherche du reflux hépato-jugulaire
 > 	- [ ] Circulation collatérale
 > - [ ] **27. Recherche d'œdèmes *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Œdèmes des membres inférieurs
@@ -737,7 +733,7 @@ cssclasses:
 > 	- [ ] Frottement péricardique
 > - [ ] **33. Signes d'insuffisance cardiaque droite *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Turgescence des veines jugulaires
-> 	- [ ] Reflux hépato-jugulaire
+> 	- [ ] Recherche du reflux hépato-jugulaire
 > 	- [ ] Hépatomégalie
 > 	- [ ] Ascite
 > - [ ] **34. Palpation ganglionnaire *(Insuffisance cardiaque (décompensée))***

@@ -148,9 +148,8 @@ cssclasses:
 > - [ ] **21. Antécédents médicaux et allergies *(Fracture du bassin (hémorragique))***
 > 	- [ ] Antécédents médicaux
 > 	- [ ] Chirurgies antérieures *(1 grille sur 3)*
-> 	- [ ] Médicaments actuels *(1 grille sur 3)*
+> 	- [ ] Médicaments actuels
 > 	- [ ] Allergies
-> 	- [ ] Médicaments *(1 grille sur 3)*
 > 	- [ ] Vaccins *(1 grille sur 3)*
 > - [ ] **22. Habitudes et contexte social *(1 grille sur 3)***
 > 	- [ ] Tabac

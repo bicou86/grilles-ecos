@@ -91,10 +91,9 @@ cssclasses:
 > - [ ] **7. Symptômes non-moteurs**
 > 	- [ ] Troubles du sommeil
 > 	- [ ] Constipation *(1 grille sur 2)*
-> 	- [ ] Troubles de l'odorat *(1 grille sur 2)*
+> 	- [ ] Troubles de l'olfaction
 > 	- [ ] Dépression *(1 grille sur 2)*
 > 	- [ ] Troubles cognitifs
-> 	- [ ] Troubles de l'olfaction *(1 grille sur 2)*
 > 	- [ ] Troubles de l'humeur *(1 grille sur 2)*
 > 	- [ ] Troubles digestifs *(1 grille sur 2)*
 > - [ ] **8. Activités de la vie quotidienne *(1 grille sur 2)***

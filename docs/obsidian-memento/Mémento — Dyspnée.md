@@ -354,12 +354,10 @@ cssclasses:
 > - [ ] **5. Vibrations vocales *(1 grille sur 5)***
 > - [ ] **6. Percussion du thorax *(1 grille sur 5)***
 > - [ ] **7. Auscultation pulmonaire**
-> 	- [ ] Auscultation antérieure systématique *(Asthme)*
-> 	- [ ] Auscultation postérieure systématique *(Asthme)*
+> 	- [ ] Auscultation antérieure systématique *(Asthme · BPCO)*
+> 	- [ ] Auscultation postérieure systématique *(Asthme · BPCO)*
 > 	- [ ] Identification de sibilants *(Asthme)*
 > 	- [ ] Bronchophonie *(Asthme)*
-> 	- [ ] Auscultation antérieure complète *(BPCO)*
-> 	- [ ] Auscultation postérieure complète *(BPCO)*
 > 	- [ ] Bruits surajoutés *(BPCO)*
 > 	- [ ] Murmure vésiculaire *(2 grilles sur 5)*
 > 	- [ ] Râles crépitants bilatéraux *(1 grille sur 5)*
@@ -615,14 +613,13 @@ cssclasses:
 > 	- [ ] Polysomnographie si suspicion SAOS
 > - [ ] **17. Examens complémentaires cardiaques *(2 grilles sur 3)***
 > 	- [ ] ECG 12 dérivations *(1 grille sur 3)*
-> 	- [ ] Radiographie thoracique *(1 grille sur 3)*
+> 	- [ ] Radiographie thoracique
 > 	- [ ] BNP ou NT-proBNP
 > 	- [ ] Échocardiographie transthoracique *(1 grille sur 3)*
 > 	- [ ] Bilan biologique: FSC, ionogramme, créatinine, BNP *(1 grille sur 3)*
 > 	- [ ] Troponines si suspicion de SCA *(1 grille sur 3)*
 > 	- [ ] Gazométrie artérielle si dyspnée sévère *(1 grille sur 3)*
 > 	- [ ] ECG *(1 grille sur 3)*
-> 	- [ ] Radiographie thorax *(1 grille sur 3)*
 > 	- [ ] Échocardiographie *(1 grille sur 3)*
 > 	- [ ] Coronarographie si chirurgie envisagée *(1 grille sur 3)*
 > - [ ] **18. Critères diagnostiques d'insuffisance cardiaque *(1 grille sur 3)***

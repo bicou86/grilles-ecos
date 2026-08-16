@@ -93,14 +93,13 @@ cssclasses:
 > - [ ] **5. Antécédents médicaux et état de santé**
 > 	- [ ] Maladies chroniques *(1 grille sur 2)*
 > 	- [ ] Allergies médicamenteuses *(1 grille sur 2)*
-> 	- [ ] Médicaments actuels *(1 grille sur 2)*
+> 	- [ ] Médicaments actuels
 > 	- [ ] Contraception *(1 grille sur 2)*
 > 	- [ ] Antécédents chirurgicaux *(1 grille sur 2)*
 > 	- [ ] Maladies chroniques père *(1 grille sur 2)*
 > 	- [ ] Maladies chroniques fils *(1 grille sur 2)*
 > 	- [ ] Allergies père *(1 grille sur 2)*
 > 	- [ ] Allergies fils *(1 grille sur 2)*
-> 	- [ ] Médicaments réguliers *(1 grille sur 2)*
 > - [ ] **6. Expériences de voyages internationaux antérieurs**
 > 	- [ ] Voyages précédents *(1 grille sur 2)*
 > 	- [ ] Premier grand voyage *(1 grille sur 2)*
@@ -177,14 +176,13 @@ cssclasses:
 > 	- [ ] Répulsifs efficaces (DEET 30-50%) *(1 grille sur 2)*
 > 	- [ ] Vêtements couvrants clairs *(1 grille sur 2)*
 > 	- [ ] Insecticides pour la chambre *(1 grille sur 2)*
-> 	- [ ] Protection renforcée au crépuscule *(1 grille sur 2)*
+> 	- [ ] Heures de protection renforcée (crépuscule)
 > 	- [ ] Prévention dengue, Zika, chikungunya *(1 grille sur 2)*
 > 	- [ ] Importance de la protection contre les moustiques *(1 grille sur 2)*
 > 	- [ ] Moustiquaire imprégnée pour la nuit *(1 grille sur 2)*
 > 	- [ ] Répulsifs cutanés (DEET 30-50%, adaptés enfants) *(1 grille sur 2)*
 > 	- [ ] Vêtements longs imprégnés de perméthrine *(1 grille sur 2)*
 > 	- [ ] Climatisation/ventilateur *(1 grille sur 2)*
-> 	- [ ] Heures de protection renforcée (crépuscule) *(1 grille sur 2)*
 > - [ ] **4. Prévention des risques alimentaires *(1 grille sur 2)***
 > 	- [ ] Règle: "Cook it, boil it, peel it or forget it"
 > 	- [ ] Eau embouteillée uniquement
@@ -285,9 +283,8 @@ cssclasses:
 > 	- [ ] Assistance rapatriement incluse *(1 grille sur 2)*
 > 	- [ ] Couverture activités à risque *(1 grille sur 2)*
 > 	- [ ] Copie documents importants *(1 grille sur 2)*
-> 	- [ ] Contacts ambassade/consulat *(1 grille sur 2)*
+> 	- [ ] Coordonnées ambassade/consulat
 > 	- [ ] Brochures d'information sur Madagascar *(1 grille sur 2)*
-> 	- [ ] Coordonnées ambassade/consulat *(1 grille sur 2)*
 > 	- [ ] Assurance voyage et rapatriement *(1 grille sur 2)*
 > 	- [ ] Centres médicaux sur place *(1 grille sur 2)*
 > 	- [ ] Application mobile conseils voyageurs *(1 grille sur 2)*

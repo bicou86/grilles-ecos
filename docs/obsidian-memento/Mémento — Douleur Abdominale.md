@@ -109,30 +109,29 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif de consultation *(5 grilles sur 20)***
-> - [ ] **2. Caractérisation de la douleur abdominale *(16 grilles sur 20)***
-> 	- [ ] Localisation précise *(11 grilles sur 20)*
-> 	- [ ] Intensité *(9 grilles sur 20)*
-> 	- [ ] Qualité *(7 grilles sur 20)*
+> - [ ] **2. Caractérisation de la douleur abdominale *(17 grilles sur 20)***
+> 	- [ ] Localisation précise *(12 grilles sur 20)*
+> 	- [ ] Intensité *(10 grilles sur 20)*
+> 	- [ ] Qualité *(8 grilles sur 20)*
 > 	- [ ] Début *(5 grilles sur 20)*
 > 	- [ ] Évolution temporelle *(3 grilles sur 20)*
-> 	- [ ] Irradiation *(10 grilles sur 20)*
+> 	- [ ] Irradiation *(11 grilles sur 20)*
 > 	- [ ] Facteurs améliorants *(4 grilles sur 20)*
-> 	- [ ] Facteurs aggravant/soulageant *(7 grilles sur 20)*
+> 	- [ ] Facteurs aggravant/soulageant *(8 grilles sur 20)*
 > 	- [ ] Épisodes antérieurs similaires *(3 grilles sur 20)*
 > 	- [ ] Événements précipitants *(Appendicite aiguë · Cancer de l'ovaire · Maladie cœliaque)*
 > 	- [ ] Intensité (échelle 0-10) *(Maladie cœliaque)*
 > 	- [ ] Symptômes associés à la consommation de certains aliments *(Maladie cœliaque)*
 > 	- [ ] Progression/constant/intermittent *(Maladie cœliaque)*
 > 	- [ ] Épisodes antérieurs *(Maladie cœliaque)*
-> 	- [ ] Type/caractère *(Diverticulite sigmoïdienne non compliquée)*
+> 	- [ ] Type/caractère *(3 grilles sur 20)*
 > 	- [ ] Quantité *(1 grille sur 20)*
 > 	- [ ] Chronologie *(1 grille sur 20)*
-> 	- [ ] Facteurs soulageants *(Torsion ovarienne)*
+> 	- [ ] Facteurs soulageants *(Cholédocholithiase · Torsion ovarienne)*
 > 	- [ ] Horaire *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Type *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Évolution *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Début et progression *(2 grilles sur 20)*
-> 	- [ ] Caractère *(2 grilles sur 20)*
 > - [ ] **3. Symptômes associés - Souillures *(9 grilles sur 20)***
 > 	- [ ] Nausées *(4 grilles sur 20)*
 > 	- [ ] Vomissements *(5 grilles sur 20)*
@@ -543,50 +542,43 @@ cssclasses:
 > 	- [ ] Fréquence
 > 	- [ ] Couleur
 > 	- [ ] Présence de sang
-> - [ ] **138. Caractérisation des douleurs *(Cholédocholithiase)***
-> 	- [ ] Localisation précise
-> 	- [ ] Irradiation
-> 	- [ ] Qualité
-> 	- [ ] Intensité
-> 	- [ ] Facteurs aggravant/soulageant
-> 	- [ ] Facteurs soulageants
-> - [ ] **139. État général *(Cholédocholithiase · Torsion ovarienne)***
+> - [ ] **138. État général *(Cholédocholithiase · Torsion ovarienne)***
 > 	- [ ] Fièvre et frissons *(Cholédocholithiase)*
 > 	- [ ] Fatigue
 > 	- [ ] Forme (perte de poids) *(Cholédocholithiase)*
 > 	- [ ] Fièvre *(Torsion ovarienne)*
 > 	- [ ] Perte/prise de poids récente *(Torsion ovarienne)*
-> - [ ] **140. Système reproducteur (DD: grossesse extra-utérine, torsion ovarienne) *(Torsion ovarienne)***
+> - [ ] **139. Système reproducteur (DD: grossesse extra-utérine, torsion ovarienne) *(Torsion ovarienne)***
 > 	- [ ] Test de grossesse (la patiente en a-t-elle fait un ?)
 > 	- [ ] Contraception
 > 	- [ ] Antécédent de césarienne/de grossesse
 > 	- [ ] Aménorrhée
 > 	- [ ] Métrorragie/ménorragie
 > 	- [ ] Pertes vaginales
-> - [ ] **141. Système digestif (DD: colite, appendicite, diverticulite) *(Torsion ovarienne)***
+> - [ ] **140. Système digestif (DD: colite, appendicite, diverticulite) *(Torsion ovarienne)***
 > 	- [ ] Nausées
 > 	- [ ] Vomissements
 > 	- [ ] Dernier transit
 > 	- [ ] Diarrhées
 > 	- [ ] Diarrhée/Constipation
 > 	- [ ] Présence de sang dans les selles
-> - [ ] **142. Système urinaire: (DD: lithiase rénale, cystite, pyélonéphrite) *(Torsion ovarienne)***
+> - [ ] **141. Système urinaire: (DD: lithiase rénale, cystite, pyélonéphrite) *(Torsion ovarienne)***
 > 	- [ ] Dysurie/algurie
 > 	- [ ] Urgenturie
 > 	- [ ] Couleur des urines
 > 	- [ ] Hématurie
-> - [ ] **143. Habitudes et antécédents personnels *(Torsion ovarienne)***
+> - [ ] **142. Habitudes et antécédents personnels *(Torsion ovarienne)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Maladies connues
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **144. Caractéristiques spécifiques de la douleur *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **143. Caractéristiques spécifiques de la douleur *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Coliques
 > 	- [ ] Continues
 > 	- [ ] Irradiation
 > 	- [ ] Sans irradiation actuellement
 > 	- [ ] Exacerbée par
 > 	- [ ] Non calmée par
-> - [ ] **145. Antécédents de maladie ulcéreuse *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **144. Antécédents de maladie ulcéreuse *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Maladie ulcéreuse connue
 > 	- [ ] Sensation de faim douloureuse
 > 	- [ ] Brûlure épigastrique
@@ -594,55 +586,55 @@ cssclasses:
 > 	- [ ] Réveils nocturnes à 02h
 > 	- [ ] Calmée par alimentation ou lait
 > 	- [ ] Printemps et automne
-> - [ ] **146. Traitement antérieur *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **145. Traitement antérieur *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Ranitidine prescrite
 > 	- [ ] Prise irrégulière
 > 	- [ ] Interruption du traitement antibiotique d'éradication
 > 	- [ ] Intolérance après 48 heures
 > 	- [ ] Automédication fréquente
-> - [ ] **147. Troubles urinaires associés *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **146. Troubles urinaires associés *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Dysurie
 > 	- [ ] Pollakiurie
 > 	- [ ] Hématurie
 > 	- [ ] Volume des urines
 > 	- [ ] Fréquence mictionnelle
 > 	- [ ] Odeur anormale
-> - [ ] **148. Anamnèse du transit intestinal et aspect des selles *(Gastroentérite)***
+> - [ ] **147. Anamnèse du transit intestinal et aspect des selles *(Gastroentérite)***
 > 	- [ ] Fréquence des selles
 > 	- [ ] Aspect des selles
 > 	- [ ] Odeur
 > 	- [ ] Présence de glaires, sang, pus
 > 	- [ ] Horaire
-> - [ ] **149. Symptômes associés digestifs *(2 grilles sur 20)***
+> - [ ] **148. Symptômes associés digestifs *(2 grilles sur 20)***
 > 	- [ ] Vomissements
 > 	- [ ] Perte d'appétit
 > 	- [ ] Perte de poids *(Gastroentérite)*
 > 	- [ ] Hoquet, éructations
 > 	- [ ] Nausées *(1 grille sur 20)*
 > 	- [ ] Dégoût pour la nourriture *(1 grille sur 20)*
-> - [ ] **150. Recherche de complications et symptômes d'alarme *(Gastroentérite)***
+> - [ ] **149. Recherche de complications et symptômes d'alarme *(Gastroentérite)***
 > 	- [ ] Troubles urinaires
 > 	- [ ] Signes d'occlusion
 > 	- [ ] Douleur à la détente
 > 	- [ ] Signes de péritonisme
-> - [ ] **151. Antécédents et contexte épidémiologique *(Gastroentérite)***
+> - [ ] **150. Antécédents et contexte épidémiologique *(Gastroentérite)***
 > 	- [ ] Antécédents similaires
 > 	- [ ] Voyage récent
 > 	- [ ] Contage
 > 	- [ ] Antécédents familiaux
 > 	- [ ] Médicaments et habitudes
-> - [ ] **152. Transit et fonction digestive *(1 grille sur 20)***
+> - [ ] **151. Transit et fonction digestive *(1 grille sur 20)***
 > 	- [ ] Transit conservé
 > 	- [ ] Aspect des selles
 > 	- [ ] Troubles urinaires
 > 	- [ ] Dernière prise alimentaire
-> - [ ] **153. Antécédents familiaux et habitudes *(1 grille sur 20)***
+> - [ ] **152. Antécédents familiaux et habitudes *(1 grille sur 20)***
 > 	- [ ] Antécédents familiaux
 > 	- [ ] Père avec cholestérol élevé
 > 	- [ ] Tabagisme
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
-> - [ ] **154. Anamnèse socioprofessionnelle et impact *(1 grille sur 20)***
+> - [ ] **153. Anamnèse socioprofessionnelle et impact *(1 grille sur 20)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Impact professionnel
@@ -1048,7 +1040,7 @@ cssclasses:
 > - [ ] **13. Réhydratation i.v. *(1 grille sur 4)***
 > - [ ] **14. Laisser à jeun *(1 grille sur 4)***
 > - [ ] **15. Prise en charge thérapeutique immédiate *(1 grille sur 4)***
-> 	- [ ] Antalgiques
+> 	- [ ] Analgésiques
 > 	- [ ] Antispasmodiques
 > 	- [ ] Antiémétiques si vomissements
 > 	- [ ] Mise à jeun initiale

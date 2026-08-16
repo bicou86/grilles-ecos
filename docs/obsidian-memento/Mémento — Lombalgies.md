@@ -384,14 +384,13 @@ cssclasses:
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
 > - [ ] **2. Examen des hanches *(5 grilles sur 8)***
-> 	- [ ] Inspection du dos *(2 grilles sur 8)*
+> 	- [ ] Inspection du dos *(3 grilles sur 8)*
 > 	- [ ] Examen de la colonne vertébrale *(2 grilles sur 8)*
 > 	- [ ] Test d'élévation jambe tendue (signe de Lasègue) *(Spondylarthrite ankylosante)*
 > 	- [ ] Signe de Mennell *(Spondylarthrite ankylosante)*
 > 	- [ ] Mobilité passive *(2 grilles sur 8)*
 > 	- [ ] Douleur à la mobilisation *(Fracture vertébrale)*
 > 	- [ ] Recherche de douleur *(1 grille sur 8)*
-> 	- [ ] Inspection *(1 grille sur 8)*
 > 	- [ ] Palpation des processus épineux *(1 grille sur 8)*
 > 	- [ ] Recherche de contracture paravertébrale *(1 grille sur 8)*
 > - [ ] **3. Test de Lasègue (élévation jambe tendue) *(1 grille sur 8)***
@@ -420,7 +419,7 @@ cssclasses:
 > 	- [ ] Percussion des champs pulmonaires
 > 	- [ ] Auscultation des poumons
 > - [ ] **8. Examen cutané *(Spondylarthrite ankylosante)***
-> - [ ] **9. Inspection *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **9. Inspection du dos *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **10. Douleur à la percussion et à la palpation *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **11. Mobilité *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **12. Inclinaison *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
@@ -512,7 +511,7 @@ cssclasses:
 > 	- [ ] Percussion des fosses lombaires
 > 	- [ ] Résultat
 > - [ ] **50. Examen abdominal *(Colique néphrétique sur lithiase)***
-> 	- [ ] Inspection *(1 grille sur 8)*
+> 	- [ ] Inspection du dos *(1 grille sur 8)*
 > 	- [ ] Auscultation *(1 grille sur 8)*
 > 	- [ ] Palpation superficielle et profonde *(1 grille sur 8)*
 > 	- [ ] Recherche d'un globe vésical *(1 grille sur 8)*
