@@ -13,18 +13,30 @@ annoncait recevables 37 paires qui fusionnaient en realite deux items qu'une
 grille distingue, dont douze antonymes (« Facteurs calmants » et « Facteurs
 aggravants »). Le test porte donc sur les SIGNATURES APRES LA TABLE.
 
-Trois seaux, dans cet ordre de lecture. Les RECEVABLES d'abord, triees par
+Quatre seaux, dans cet ordre de lecture. Les paires A JUGER d'abord, scindees
+en ecart de FORME puis ecart de CONTENU (cf. `nature_de_lecart`), triees par
 similarite DECROISSANTE — mais A L'INTERIEUR DE CHAQUE SSP seulement, le
 document restant alphabetique : la premiere paire du fichier n'est PAS la plus
 plausible du corpus, et le dire evite de le laisser croire. Puis les ⚠️, qui
 melangent deux motifs distincts : l'INERTE (les deux titres ne vivent pas au
 meme endroit, la propriete 7 refuserait) et l'ANTONYME PRESUME. Puis les ⛔.
 
-« RECEVABLE » VEUT DIRE « QUI PASSERAIT LE CONTROLE », et il a fallu deux
-redactions pour que ce soit vrai. La premiere annoncait 2 014 recevables dont
-deux sur trois tombaient en realite sur la propriete 7 : le seau promettait un
-gisement qu'il ne mesurait pas. `contextes()` tranche maintenant la question
-avant l'affichage.
+CE SEAU S'EST APPELE « RECEVABLE », ET LE MOT INVITAIT AU TRAITEMENT EN LOT.
+Il ne voulait dire que « qui passerait `check_vocabulaire` » — jamais « qu'il
+faut fusionner ». Combine au tri par similarite decroissante, il se lisait
+comme une file d'attente a vider, alors que les neuf proprietes du controle
+sont faites pour attraper ce qu'une GRILLE distingue, pas ce qu'un CLINICIEN
+distingue : « Echographie abdominale » ⟷ « Echographie vaginale »,
+« Examens complementaires initiaux » ⟷ « ... urgents », « Palpation des
+organes » ⟷ « ... des reins » les passent toutes les neuf. Le seau s'appelle
+maintenant « a juger », et il est SCINDE selon la nature de l'ecart, pour que
+la partie ou il n'y a rien a perdre se distingue de celle ou il y a une
+distinction clinique a effacer.
+
+Il a fallu deux redactions pour que « qui passerait le controle » soit meme
+vrai. La premiere annoncait 2 014 paires dont deux sur trois tombaient en
+realite sur la propriete 7 : le seau promettait un gisement qu'il ne mesurait
+pas. `contextes()` tranche maintenant la question avant l'affichage.
 
 LA PORTEE DES COMPTES, parce que deux perimetres coexistent dans ce projet et
 que les confondre a deja coute cinq erreurs de mesure : CE SCRIPT parcourt les
@@ -107,6 +119,78 @@ def antonymie(a, b):
                 if x == prefixe + y or y == prefixe + x:
                     return f"préfixe privatif « {prefixe}- »"
     return None
+
+
+# NATURE DE L'ECART, entre deux libelles que rien n'interdit de reunir.
+#
+# Le seau « candidats a juger » ne dit qu'une chose : `check_vocabulaire` ne
+# les refuserait pas. Il ne dit RIEN de l'opportunite clinique — et ses neuf
+# proprietes ne le peuvent pas, elles sont faites pour attraper ce qu'une
+# GRILLE distingue, pas ce qu'un CLINICIEN distingue. Echantillon reel de
+# Douleur Abdominale : « Echographie abdominale » ⟷ « Echographie vaginale »,
+# « Palpation des organes » ⟷ « Palpation des reins », « Examens
+# complementaires initiaux » ⟷ « ... urgents » passent les neuf.
+#
+# D'ou cette partition, qui porte sur les MOTS QUI DIFFERENT, une fois les
+# mots vides et les pluriels simples deja neutralises par lib_cle.cle() :
+#
+#   ecart de FORME    — les deux libelles disent les memes mots, a l'accord,
+#                       au genre ou a la graphie pres (« familial » /
+#                       « familiaux », « bi-manuelle » / « bimanuelle »).
+#                       Reunir n'efface rien.
+#   ecart de CONTENU  — au moins un mot present d'un cote n'a pas de
+#                       correspondant de l'autre, ou les deux mots qui se
+#                       repondent sont des mots differents (« abdominale » /
+#                       « vaginale »). Reunir efface une distinction.
+#
+# La partition ne tranche pas a la place du relecteur : elle met devant lui,
+# en tete, les paires ou il n'y a rien a perdre.
+_LONGUEUR_RACINE = 4   # prefixe commun minimal pour parler de meme mot
+_LONGUEUR_FLEXION = 4  # ce qui reste apres la racine, au plus, de chaque cote
+
+
+def _meme_mot(x, y):
+    """Vrai si x et y sont deux formes d'un meme mot (accord, genre, graphie).
+
+    « familial »/« familiaux » : racine « famil », restes « ial »/« iaux ».
+    « veineuse »/« veineux » : racine « veineu ». En revanche
+    « cholecystite »/« choledocholithiase » partagent « chole » mais laissent
+    « cystite » et « docholithiase » : deux mots, pas deux accords.
+    """
+    n = 0
+    while n < min(len(x), len(y)) and x[n] == y[n]:
+        n += 1
+    return (n >= _LONGUEUR_RACINE
+            and len(x) - n <= _LONGUEUR_FLEXION
+            and len(y) - n <= _LONGUEUR_FLEXION)
+
+
+def _appariables(propres_a, propres_b):
+    """Vrai si chaque mot propre d'un cote a son accord de l'autre, un pour un."""
+    if len(propres_a) != len(propres_b):
+        return False
+    restants = list(propres_b)
+    for x in propres_a:
+        jumeau = next((y for y in restants if _meme_mot(x, y)), None)
+        if jumeau is None:
+            return False
+        restants.remove(jumeau)
+    return True
+
+
+def nature_de_lecart(a, b):
+    """« forme » ou « contenu ». Deterministe, sans dictionnaire ni corpus."""
+    propres_a = sorted(_tokens(a) - _tokens(b))
+    propres_b = sorted(_tokens(b) - _tokens(a))
+    if not propres_a or not propres_b:
+        # Un cote porte un mot que l'autre n'a pas du tout : « Palpation » et
+        # « Palpation profonde » ne disent pas la meme chose.
+        return "contenu"
+    if "".join(propres_a) == "".join(propres_b):
+        # Une seule difference : ou passe la coupure entre les mots.
+        # « cardio pulmonaire » et « cardiopulmonaire ».
+        return "forme"
+    return "forme" if _appariables(propres_a, propres_b) else "contenu"
 
 
 def similarite(a, b):
@@ -194,12 +278,27 @@ def main():
               f"mais dont la similarité dépasse {SEUIL}.", "",
               "Titres de tête **et** sous-items confondus : la couche B s'applique aux",
               "deux. Les grilles porteuses suivent chaque libellé.", "",
-              "Les paires recevables viennent d'abord, **triées par similarité",
-              "décroissante à l'intérieur de chaque SSP**. ⚠️ Le tri est **local à la",
-              "section** : le document, lui, est alphabétique par SSP, donc la première",
-              "paire du fichier n'est **pas** la plus plausible du corpus. Les dix plus",
-              "similaires (0,983 → 0,964) sont ailleurs — `Auscultation cardio-pulmonaire`",
-              "⟷ `cardiopulmonaire`, `Palpation bi-manuelle` ⟷ `bimanuelle`.", "",
+              "## Ce que « à juger » veut dire, et ce que ça ne veut pas dire", "",
+              "Les paires **à juger** viennent d'abord. « À juger » signifie **une seule",
+              "chose** : `check_vocabulaire` ne les refuserait pas. Ce n'est **pas** une",
+              "recommandation de les fusionner, et surtout pas en lot. Les neuf propriétés",
+              "du contrôle attrapent ce qu'une **grille** distingue ; elles ne voient pas",
+              "ce qu'un **clinicien** distingue. `Échographie abdominale` ⟷ `Échographie",
+              "vaginale` les passe toutes les neuf.", "",
+              "D'où deux sous-seaux, et lire le second **une paire à la fois** :", "",
+              "- **écart de forme** — les deux libellés disent les mêmes mots, à l'accord,",
+              "  au genre ou à la graphie près (`familial` / `familiaux`, `bi-manuelle` /",
+              "  `bimanuelle`). Réunir n'efface rien ;",
+              "- **écart de contenu** — un mot de contenu diffère, ou n'existe que d'un",
+              "  côté (`abdominale` / `vaginale`, `initiaux` / `urgents`, `des organes` /",
+              "  `des reins`). Réunir **efface une distinction clinique** : chaque paire",
+              "  est un jugement, pas une ligne d'une liste.", "",
+              "À l'intérieur de chaque sous-seau, tri par similarité **décroissante**.",
+              "⚠️ Ce tri est **local à la section** : le document, lui, est alphabétique",
+              "par SSP, donc la première paire du fichier n'est **pas** la plus plausible",
+              "du corpus. Les dix plus similaires (0,983 → 0,964) sont ailleurs —",
+              "`Auscultation cardio-pulmonaire` ⟷ `cardiopulmonaire`, `Palpation",
+              "bi-manuelle` ⟷ `bimanuelle`.", "",
               "Suivent deux catégories à ne lire **que si tout le reste est traité** :", "",
               "- **⚠️ inerte ou antonyme présumé**. *Inerte* : les deux titres ne vivent",
               "  pas au même endroit (section ou parent différents), donc l'entrée ne",
@@ -213,7 +312,7 @@ def main():
               "  — le test porte sur les signatures **après** la table, donc il attrape",
               "  aussi les variantes et les fusions indirectes), soit les deux libellés",
               "  ont **déjà la même signature** pour le socle A (propriété 6).", ""]
-    total = refusees = 0
+    total = refusees = forme_total = contenu_total = 0
     antonymiques = []
     groupes = build_memento.par_ssp()
     inventaire = lib_vocabulaire.libelles_par_ssp(groupes)
@@ -232,7 +331,7 @@ def main():
             continue
         index = seaux_indexes(positions[ssp], ssp)
         ou_vit = contextes(cas, ssp)
-        recevables, douteuses, bloquees = [], [], []
+        de_forme, de_contenu, douteuses, bloquees = [], [], [], []
         for a, b in candidates:
             ligne = (f"`{a}` {porteuses(a, inventaire[ssp])}"
                      f"  ⟷  `{b}` {porteuses(b, inventaire[ssp])}")
@@ -270,12 +369,29 @@ def main():
                 # TRI PAR PLAUSIBILITE DECROISSANTE. L'ordre alphabetique mettait
                 # un faux positif en tete aussi souvent qu'un vrai ; la
                 # similarite, deja calculee pour le seuil, ordonne gratuitement.
-                recevables.append((-similarite(a, b), a, b, f"- {ligne}"))
+                # Mais la similarite ne dit rien de ce qu'on perdrait : d'ou la
+                # partition forme/contenu, qui, elle, le dit.
+                seau = (de_forme if nature_de_lecart(a, b) == "forme" else de_contenu)
+                seau.append((-similarite(a, b), a, b, f"- {ligne}"))
         total += len(candidates)
         refusees += len(bloquees) + len(douteuses)
-        lignes.append(f"## {ssp} — {len(cas)} cas · {len(recevables)} recevable(s), "
+        a_juger = len(de_forme) + len(de_contenu)
+        forme_total += len(de_forme)
+        contenu_total += len(de_contenu)
+        lignes.append(f"## {ssp} — {len(cas)} cas · {a_juger} à juger "
+                      f"({len(de_forme)} de forme, {len(de_contenu)} de contenu), "
                       f"{len(douteuses)} ⚠️, {len(bloquees)} ⛔")
-        lignes += [x[3] for x in sorted(recevables)] + douteuses + bloquees + [""]
+        if de_forme:
+            lignes += ["", "**À juger — écart de forme** (accord, genre, graphie : "
+                       "réunir n'efface rien)", ""]
+            lignes += [x[3] for x in sorted(de_forme)]
+        if de_contenu:
+            lignes += ["", "**À juger — écart de contenu** (un mot de contenu diffère : "
+                       "réunir efface une distinction, à examiner de près)", ""]
+            lignes += [x[3] for x in sorted(de_contenu)]
+        if douteuses or bloquees:
+            lignes.append("")
+        lignes += douteuses + bloquees + [""]
 
     if antonymiques:
         lignes += ["## ⚠️ Antonymes présumés — la classe que rien n'automatise", "",
@@ -287,7 +403,8 @@ def main():
                    for ssp, a, b, motif, agit in antonymiques] + [""]
 
     SORTIE.write_text("\n".join(lignes) + "\n", encoding="utf8")
-    print(f"{total} paires candidates dont {total - refusees} recevables, "
+    print(f"{total} paires candidates dont {total - refusees} à juger "
+          f"({forme_total} de forme, {contenu_total} de contenu), "
           f"{refusees} écartées ({len(antonymiques)} antonymes présumés) "
           f"-> {SORTIE.relative_to(REPO)}")
     return 0
