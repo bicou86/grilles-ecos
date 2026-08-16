@@ -417,7 +417,7 @@ cssclasses:
 > 	- [ ] Percussion des champs pulmonaires
 > 	- [ ] Auscultation des poumons
 > - [ ] **8. Examen cutané *(Spondylarthrite ankylosante)***
-> - [ ] **9. Inspection du dos *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
+> - [ ] **9. Inspection du dos *(Fracture vertébrale · Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **10. Douleur à la percussion et à la palpation *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **11. Mobilité *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **12. Inclinaison *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
@@ -441,12 +441,11 @@ cssclasses:
 > - [ ] **30. Signes radiculaires *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **31. Signe de Lasègue *(2 grilles sur 8)***
 > - [ ] **32. Statut interniste *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **33. Inspection du rachis *(Fracture vertébrale)***
-> - [ ] **34. Palpation du rachis *(Fracture vertébrale)***
+> - [ ] **33. Palpation du rachis *(Fracture vertébrale)***
 > 	- [ ] Palpation des processus épineux
 > 	- [ ] Douleur à la percussion
 > 	- [ ] Recherche de contracture paravertébrale
-> - [ ] **35. Tests de mobilité rachidienne *(2 grilles sur 8)***
+> - [ ] **34. Tests de mobilité rachidienne *(2 grilles sur 8)***
 > 	- [ ] Flexion antérieure *(Fracture vertébrale)*
 > 	- [ ] Extension *(Fracture vertébrale)*
 > 	- [ ] Inclinaisons latérales *(Fracture vertébrale)*
@@ -455,60 +454,60 @@ cssclasses:
 > 	- [ ] Test de Schober *(1 grille sur 8)*
 > 	- [ ] Test d'Ott *(1 grille sur 8)*
 > 	- [ ] Distance doigts-sol *(1 grille sur 8)*
-> - [ ] **36. Test de compression axiale *(Fracture vertébrale)***
-> - [ ] **37. Tests spécifiques *(Fracture vertébrale)***
+> - [ ] **35. Test de compression axiale *(Fracture vertébrale)***
+> - [ ] **36. Tests spécifiques *(Fracture vertébrale)***
 > 	- [ ] Signe de Lasègue
 > 	- [ ] Test de Lasègue controlatéral
 > 	- [ ] Test de Bragard
-> - [ ] **38. Pouls périphériques *(Fracture vertébrale)***
+> - [ ] **37. Pouls périphériques *(Fracture vertébrale)***
 > 	- [ ] Pouls fémoraux
 > 	- [ ] Pouls poplités
 > 	- [ ] Pouls pédieux
-> - [ ] **39. Observation de la marche *(1 grille sur 8)***
+> - [ ] **38. Observation de la marche *(1 grille sur 8)***
 > 	- [ ] Schéma de marche
 > 	- [ ] Marche sur la pointe des pieds
 > 	- [ ] Marche sur les talons
-> - [ ] **40. Examen en position debout *(1 grille sur 8)***
+> - [ ] **39. Examen en position debout *(1 grille sur 8)***
 > 	- [ ] Statique (alignement, symétrie)
 > 	- [ ] Dynamique (mouvements actifs)
 > 	- [ ] Recherche de scoliose
 > 	- [ ] Recherche de déformation étagée
-> - [ ] **41. Examen en position assise *(1 grille sur 8)***
+> - [ ] **40. Examen en position assise *(1 grille sur 8)***
 > 	- [ ] Palpation des processus épineux
 > 	- [ ] Percussion vertébrale
 > 	- [ ] Recherche de points douloureux
-> - [ ] **42. Testing des réflexes *(1 grille sur 8)***
+> - [ ] **41. Testing des réflexes *(1 grille sur 8)***
 > 	- [ ] Réflexe rotulien (L3-L4)
 > 	- [ ] Réflexe achilléen (S1)
-> - [ ] **43. Testing musculaire segmentaire *(1 grille sur 8)***
+> - [ ] **42. Testing musculaire segmentaire *(1 grille sur 8)***
 > 	- [ ] L3/L4 : Quadriceps fémoral
 > 	- [ ] L5 : Extenseur propre du gros orteil
 > 	- [ ] S1 : Triceps sural
-> - [ ] **44. Testing sensitif par dermatomes *(1 grille sur 8)***
+> - [ ] **43. Testing sensitif par dermatomes *(1 grille sur 8)***
 > 	- [ ] L3 : Face interne de la cuisse
 > 	- [ ] L4 : Face interne du mollet
 > 	- [ ] L5 : Face dorsale du pied
 > 	- [ ] S1 : Face latérale du pied
-> - [ ] **45. Examen en décubitus *(1 grille sur 8)***
+> - [ ] **44. Examen en décubitus *(1 grille sur 8)***
 > 	- [ ] Recherche de contracture musculaire
 > 	- [ ] Signe de Lasègue
 > 	- [ ] Test de Lasègue controlatéral
 > 	- [ ] Test de Bragard
-> - [ ] **46. Examen vasculaire périphérique *(1 grille sur 8)***
+> - [ ] **45. Examen vasculaire périphérique *(1 grille sur 8)***
 > 	- [ ] Palpation des pouls périphériques (si irradiation dans les jambes)
-> - [ ] **47. Toucher rectal *(3 grilles sur 8)***
+> - [ ] **46. Toucher rectal *(3 grilles sur 8)***
 > 	- [ ] Tonus sphinctérien *(2 grilles sur 8)*
 > 	- [ ] Sensibilité péri-anale *(1 grille sur 8)*
 > 	- [ ] Palpation de la prostate *(Cancer prostatique métastatique)*
 > 	- [ ] Recherche de sang *(Cancer prostatique métastatique)*
-> - [ ] **48. Inspection générale *(1 grille sur 8)***
+> - [ ] **47. Inspection générale *(1 grille sur 8)***
 > 	- [ ] État général
 > 	- [ ] Faciès douloureux
 > 	- [ ] Position antalgique
-> - [ ] **49. Recherche du signe de Giordano *(1 grille sur 8)***
+> - [ ] **48. Recherche du signe de Giordano *(1 grille sur 8)***
 > 	- [ ] Percussion des fosses lombaires
 > 	- [ ] Résultat
-> - [ ] **50. Examen abdominal *(Colique néphrétique sur lithiase)***
+> - [ ] **49. Examen abdominal *(Colique néphrétique sur lithiase)***
 > 	- [ ] Inspection du dos *(1 grille sur 8)*
 > 	- [ ] Auscultation *(1 grille sur 8)*
 > 	- [ ] Palpation superficielle et profonde *(1 grille sur 8)*
@@ -519,58 +518,58 @@ cssclasses:
 > 	- [ ] Pas de masse palpable *(1 grille sur 8)*
 > 	- [ ] Bruits hydroaériques présents *(1 grille sur 8)*
 > 	- [ ] Pas de globe vésical *(1 grille sur 8)*
-> - [ ] **51. Palpation des points urétéraux *(Colique néphrétique sur lithiase)***
+> - [ ] **50. Palpation des points urétéraux *(Colique néphrétique sur lithiase)***
 > 	- [ ] Point urétéral supérieur
 > 	- [ ] Point urétéral moyen
 > 	- [ ] Point urétéral inférieur
 > 	- [ ] Douleur provoquée le long du trajet urétéral *(1 grille sur 8)*
 > 	- [ ] Comparaison bilatérale *(1 grille sur 8)*
-> - [ ] **52. Examen des organes génitaux externes *(Colique néphrétique sur lithiase)***
+> - [ ] **51. Examen des organes génitaux externes *(Colique néphrétique sur lithiase)***
 > 	- [ ] Inspection vulvaire *(1 grille sur 8)*
 > 	- [ ] Recherche d'écoulement *(1 grille sur 8)*
 > 	- [ ] Inspection: testicules symétriques *(1 grille sur 8)*
 > 	- [ ] Palpation testiculaire: indolore, pas de masse *(1 grille sur 8)*
 > 	- [ ] Cordons spermatiques sans anomalie *(1 grille sur 8)*
 > 	- [ ] Réflexe crémastérien présent *(1 grille sur 8)*
-> - [ ] **53. Signes vitaux complémentaires *(1 grille sur 8)***
+> - [ ] **52. Signes vitaux complémentaires *(1 grille sur 8)***
 > 	- [ ] Température
 > 	- [ ] État d'hydratation
-> - [ ] **54. État général et comportement *(1 grille sur 8)***
+> - [ ] **53. État général et comportement *(1 grille sur 8)***
 > 	- [ ] Patient agité, ne trouve pas de position antalgique
 > 	- [ ] Faciès douloureux
 > 	- [ ] Pâleur, sueurs
 > 	- [ ] Déambulation incessante
 > 	- [ ] Anxiété manifeste
-> - [ ] **55. Signes vitaux *(1 grille sur 8)***
+> - [ ] **54. Signes vitaux *(1 grille sur 8)***
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Température
 > 	- [ ] Fréquence respiratoire
-> - [ ] **56. Examen des fosses lombaires *(1 grille sur 8)***
+> - [ ] **55. Examen des fosses lombaires *(1 grille sur 8)***
 > 	- [ ] Inspection: pas d'ecchymose, pas de tuméfaction
 > 	- [ ] Palpation douce: sensibilité
 > 	- [ ] Percussion: douleur à l'ébranlement lombaire gauche
 > 	- [ ] Comparaison avec côté controlatéral
 > 	- [ ] Recherche d'un contact lombaire
-> - [ ] **57. Recherche de complications *(1 grille sur 8)***
+> - [ ] **56. Recherche de complications *(1 grille sur 8)***
 > 	- [ ] Signes de pyélonéphrite
 > 	- [ ] Signes de sepsis
 > 	- [ ] Anurie
 > 	- [ ] Rétention aiguë d'urine
 > 	- [ ] État de choc
-> - [ ] **58. Examens différentiels *(1 grille sur 8)***
+> - [ ] **57. Examens différentiels *(1 grille sur 8)***
 > 	- [ ] Recherche appendicite
 > 	- [ ] Éliminer anévrisme aorte
 > 	- [ ] Examen vasculaire périphérique
 > 	- [ ] Examen neurologique sommaire
 > 	- [ ] Auscultation cardio-pulmonaire
-> - [ ] **59. Examen ostéo-articulaire *(Cancer prostatique métastatique)***
-> 	- [ ] Inspection du rachis
+> - [ ] **58. Examen ostéo-articulaire *(Cancer prostatique métastatique)***
+> 	- [ ] Inspection du dos
 > 	- [ ] Palpation/percussion du rachis
 > 	- [ ] Palpation muscles paravertébraux
 > 	- [ ] Mobilité rachidienne (flexion/extension/rotation)
 > 	- [ ] Signe de Lasègue
-> - [ ] **60. Examen neurologique des membres inférieurs *(Cancer prostatique métastatique)***
+> - [ ] **59. Examen neurologique des membres inférieurs *(Cancer prostatique métastatique)***
 > 	- [ ] Force motrice
 > 	- [ ] Sensibilité
 > 	- [ ] Réflexes ostéo-tendineux
