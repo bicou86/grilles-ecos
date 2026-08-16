@@ -104,7 +104,7 @@ cssclasses:
 > 	- [ ] Épisodes antérieurs *(1 grille sur 4)*
 > 	- [ ] Facteurs améliorants *(1 grille sur 4)*
 > 	- [ ] Facteurs aggravants *(1 grille sur 4)*
-> 	- [ ] Symptômes associés *(1 grille sur 4)*
+> 	- [ ] Symptômes associés ORL *(1 grille sur 4)*
 > 	- [ ] Apparition temporelle *(2 grilles sur 4)*
 > 	- [ ] Évolution temporelle *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Latéralisation *(2 grilles sur 4)*
@@ -125,9 +125,13 @@ cssclasses:
 > 	- [ ] Faiblesse
 > 	- [ ] Engourdissement
 > 	- [ ] Picotements
-> - [ ] **4. Antécédents médicaux *(1 grille sur 4)***
-> 	- [ ] Antécédents médicaux
-> 	- [ ] Type de chimiothérapie
+> - [ ] **4. Antécédents médicaux et ORL *(2 grilles sur 4)***
+> 	- [ ] Antécédents médicaux et ORL *(1 grille sur 4)*
+> 	- [ ] Type de chimiothérapie *(1 grille sur 4)*
+> 	- [ ] Otite moyenne dans l'enfance *(1 grille sur 4)*
+> 	- [ ] Méningite *(1 grille sur 4)*
+> 	- [ ] Cardiopathie ischémique *(1 grille sur 4)*
+> 	- [ ] Autres antécédents ORL *(1 grille sur 4)*
 > - [ ] **5. Allergies *(3 grilles sur 4)***
 > 	- [ ] Allergies *(1 grille sur 4)*
 > 	- [ ] Description de la réaction allergique *(1 grille sur 4)*
@@ -158,7 +162,11 @@ cssclasses:
 > - [ ] **18. Intensité / retentissement de l’hypoacousie *(1 grille sur 4)***
 > - [ ] **19. Facteurs améliorants *(1 grille sur 4)***
 > - [ ] **20. Facteurs aggravants *(1 grille sur 4)***
-> - [ ] **21. Symptômes associés *(1 grille sur 4)***
+> - [ ] **21. Symptômes associés ORL *(3 grilles sur 4)***
+> 	- [ ] Sécrétions auriculaires (cérumen, sang, pus) *(2 grilles sur 4)*
+> 	- [ ] Douleurs auriculaires *(2 grilles sur 4)*
+> 	- [ ] Acouphènes *(2 grilles sur 4)*
+> 	- [ ] Vertiges *(2 grilles sur 4)*
 > - [ ] **22. Otalgies *(1 grille sur 4)***
 > - [ ] **23. Otorrhée *(1 grille sur 4)***
 > - [ ] **24. Vertiges *(1 grille sur 4)***
@@ -181,53 +189,43 @@ cssclasses:
 > - [ ] **38. Profession *(1 grille sur 4)***
 > - [ ] **39. Situation sociale *(1 grille sur 4)***
 > - [ ] **40. Présentation avec nom, fonction et tâche *(2 grilles sur 4)***
-> - [ ] **41. Symptômes associés ORL *(2 grilles sur 4)***
-> 	- [ ] Sécrétions auriculaires (cérumen, sang, pus)
-> 	- [ ] Douleurs auriculaires
-> 	- [ ] Acouphènes
-> 	- [ ] Vertiges
-> - [ ] **42. Symptômes généraux *(2 grilles sur 4)***
+> - [ ] **41. Symptômes généraux *(2 grilles sur 4)***
 > 	- [ ] Fièvre
 > 	- [ ] Toux
 > 	- [ ] Rhinite *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Vomissements
 > 	- [ ] Rhinorrhée *(1 grille sur 4)*
-> - [ ] **43. Facteurs déclenchants et traumatismes *(Surdité brusque idiopathique gauche)***
+> - [ ] **42. Facteurs déclenchants et traumatismes *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Facteur déclenchant identifiable
 > 	- [ ] Traumatisme récent
 > 	- [ ] Situation particulière
-> - [ ] **44. Antécédents ORL et exposition *(Surdité brusque idiopathique gauche)***
+> - [ ] **43. Antécédents ORL et exposition *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Antécédents de maladies auriculaires
 > 	- [ ] Exposition professionnelle au bruit
 > 	- [ ] Traumatismes auditifs antérieurs
-> - [ ] **45. Anamnèse médicamenteuse *(2 grilles sur 4)***
+> - [ ] **44. Anamnèse médicamenteuse *(2 grilles sur 4)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Médicaments ototoxiques
 > 	- [ ] Automédication récente *(Surdité brusque idiopathique gauche)*
 > 	- [ ] Traitement cardiovasculaire *(1 grille sur 4)*
-> - [ ] **46. Anamnèse systémique *(2 grilles sur 4)***
+> - [ ] **45. Anamnèse systémique *(2 grilles sur 4)***
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Diabète
 > 	- [ ] Troubles neurologiques
 > 	- [ ] Facteurs psychosociaux *(Surdité brusque idiopathique gauche)*
-> - [ ] **47. Anamnèse sociale et professionnelle *(Surdité brusque idiopathique gauche)***
+> - [ ] **46. Anamnèse sociale et professionnelle *(Surdité brusque idiopathique gauche)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Stress professionnel
-> - [ ] **48. Antécédents médicaux et ORL *(1 grille sur 4)***
-> 	- [ ] Otite moyenne dans l'enfance
-> 	- [ ] Méningite
-> 	- [ ] Cardiopathie ischémique
-> 	- [ ] Autres antécédents ORL
-> - [ ] **49. Impact fonctionnel sur la communication *(1 grille sur 4)***
+> - [ ] **47. Impact fonctionnel sur la communication *(1 grille sur 4)***
 > 	- [ ] Capacité à téléphoner
 > 	- [ ] Volume de la télévision/radio
 > 	- [ ] Compréhension en groupe
-> - [ ] **50. Anamnèse sociale et impact psychosocial *(1 grille sur 4)***
+> - [ ] **48. Anamnèse sociale et impact psychosocial *(1 grille sur 4)***
 > 	- [ ] Situation de vie
 > 	- [ ] Animaux de compagnie
 > 	- [ ] Condition physique
-> - [ ] **51. Activités sociales et loisirs *(1 grille sur 4)***
+> - [ ] **49. Activités sociales et loisirs *(1 grille sur 4)***
 > 	- [ ] Participation sociale actuelle
 > 	- [ ] Activités abandonnées
 > 	- [ ] Isolement social
@@ -303,7 +301,7 @@ cssclasses:
 > [!success] 💊 Management — si Presbyacousie
 > - [ ] **1. Hypothèses diagnostiques *(1 grille sur 3)***
 > - [ ] **2. Examens complémentaires *(2 grilles sur 3)***
-> 	- [ ] Audiométrie *(1 grille sur 3)*
+> 	- [ ] Audiométrie vocale *(1 grille sur 3)*
 > 	- [ ] Tympanométrie *(1 grille sur 3)*
 > 	- [ ] Audiométrie tonale (courbe typique avec chute dans les aigus) *(1 grille sur 3)*
 > 	- [ ] Audiométrie vocale (mauvaise discrimination) *(1 grille sur 3)*
@@ -320,7 +318,7 @@ cssclasses:
 > 	- [ ] Réaction appropriée au défi : articuler clairement, parler fort
 > 	- [ ] Éducation sur les aides auditives
 > 	- [ ] Stratégies de communication
-> - [ ] **5. Audiométrie *(1 grille sur 3)***
+> - [ ] **5. Audiométrie vocale *(1 grille sur 3)***
 > - [ ] **6. Presbyacousie *(1 grille sur 3)***
 > - [ ] **7. Orientation vers une spécialiste ORL / un spécialiste ORL pour l’appareillage auditif *(1 grille sur 3)***
 > - [ ] **8. Filet de sécurité *(1 grille sur 3)***
@@ -342,8 +340,8 @@ cssclasses:
 
 > [!success] 💊 Management — si Surdité brusque idiopathique gauche
 > - [ ] **1. Examens complémentaires**
-> 	- [ ] Audiométrie tonale en urgence
 > 	- [ ] Audiométrie vocale
+> 	- [ ] Audiométrie tonale en urgence
 > 	- [ ] Tympanométrie
 > 	- [ ] Diagnostic vestibulaire (nystagmus, épreuve calorique)
 > 	- [ ] Bilan biologique (FSC, CRP, VS, glycémie)

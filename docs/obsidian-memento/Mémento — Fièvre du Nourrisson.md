@@ -89,14 +89,18 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(Bronchite aiguë)***
-> - [ ] **2. Caractérisation de la toux et de la fièvre *(Bronchite aiguë)***
-> 	- [ ] Début
-> 	- [ ] Constant/intermittent
-> 	- [ ] Événements précipitants
-> 	- [ ] Progression
-> 	- [ ] Épisodes antérieurs
-> 	- [ ] Facteurs améliorants
-> 	- [ ] Facteurs aggravants
+> - [ ] **2. Caractérisation de la toux et de la fièvre *(Bronchite aiguë · Gastroentérite)***
+> 	- [ ] Début *(Bronchite aiguë)*
+> 	- [ ] Constant/intermittent *(Bronchite aiguë)*
+> 	- [ ] Événements précipitants *(Bronchite aiguë)*
+> 	- [ ] Progression *(Bronchite aiguë)*
+> 	- [ ] Épisodes antérieurs *(Bronchite aiguë)*
+> 	- [ ] Facteurs améliorants *(Bronchite aiguë)*
+> 	- [ ] Facteurs aggravants *(Bronchite aiguë)*
+> 	- [ ] Température mesurée *(Gastroentérite)*
+> 	- [ ] Site de mesure *(Gastroentérite)*
+> 	- [ ] Évolution (stable, montante, oscillante) *(Gastroentérite)*
+> 	- [ ] Réponse aux antipyrétiques si donnés *(Gastroentérite)*
 > - [ ] **3. Symptômes associés - Diarrhée *(Bronchite aiguë)***
 > 	- [ ] Symptôme principal
 > 	- [ ] Début et fréquence
@@ -202,12 +206,7 @@ cssclasses:
 > 	- [ ] Début des symptômes
 > 	- [ ] Ordre d'apparition (fièvre puis vomissements ou inverse)
 > 	- [ ] Évolution dans le temps
-> - [ ] **33. Caractérisation de la fièvre *(Gastroentérite)***
-> 	- [ ] Température mesurée
-> 	- [ ] Site de mesure
-> 	- [ ] Évolution (stable, montante, oscillante)
-> 	- [ ] Réponse aux antipyrétiques si donnés
-> - [ ] **34. Caractérisation détaillée des vomissements *(Gastroentérite)***
+> - [ ] **33. Caractérisation détaillée des vomissements *(Gastroentérite)***
 > 	- [ ] Nombre d'épisodes
 > 	- [ ] Volume approximatif
 > 	- [ ] Aspect du vomi
@@ -215,7 +214,7 @@ cssclasses:
 > 	- [ ] Vomissements en jet ou régurgitations
 > 	- [ ] Relation temporelle avec les repas
 > 	- [ ] Contenu du dernier repas
-> - [ ] **35. Symptômes digestifs associés *(Gastroentérite)***
+> - [ ] **34. Symptômes digestifs associés *(Gastroentérite)***
 > 	- [ ] Nausées (difficile à évaluer à cet âge)
 > 	- [ ] Diarrhée
 > 	- [ ] Aspect des selles
@@ -223,25 +222,25 @@ cssclasses:
 > 	- [ ] Odeur particulière
 > 	- [ ] Douleurs abdominales (pleurs, position antalgique)
 > 	- [ ] Ballonnement abdominal
-> - [ ] **36. État général et comportement de l'enfant *(Gastroentérite)***
+> - [ ] **35. État général et comportement de l'enfant *(Gastroentérite)***
 > 	- [ ] Niveau de conscience
 > 	- [ ] Comportement actuel
 > 	- [ ] Irritabilité/consolabilité
 > 	- [ ] Jeu et interactions
 > 	- [ ] Tonus musculaire
-> - [ ] **37. Évaluation précise de l'hydratation *(Gastroentérite)***
+> - [ ] **36. Évaluation précise de l'hydratation *(Gastroentérite)***
 > 	- [ ] Prise de liquides
 > 	- [ ] Tolérance des liquides
 > 	- [ ] Production de larmes lors des pleurs
 > 	- [ ] Nombre de couches mouillées aujourd'hui
 > 	- [ ] Aspect des muqueuses (si observable)
 > 	- [ ] Pli cutané (si les parents peuvent vérifier)
-> - [ ] **38. Traitements déjà tentés *(Gastroentérite)***
+> - [ ] **37. Traitements déjà tentés *(Gastroentérite)***
 > 	- [ ] Médicaments administrés
 > 	- [ ] Mesures de confort
 > 	- [ ] Tentatives de réhydratation
 > 	- [ ] Ce qui semble soulager l'enfant
-> - [ ] **39. Red flags neurologiques et généraux *(Gastroentérite)***
+> - [ ] **38. Red flags neurologiques et généraux *(Gastroentérite)***
 > 	- [ ] Altération de l'état de conscience
 > 	- [ ] Convulsions/mouvements anormaux
 > 	- [ ] Raideur de nuque/méningisme
@@ -249,24 +248,24 @@ cssclasses:
 > 	- [ ] Photophobie/phonophobie
 > 	- [ ] Traumatisme crânien récent
 > 	- [ ] Léthargie importante
-> - [ ] **40. Recherche systématique des foyers infectieux *(Gastroentérite)***
+> - [ ] **39. Recherche systématique des foyers infectieux *(Gastroentérite)***
 > 	- [ ] Symptômes ORL (otalgies, rhinorrhée, pharyngite)
 > 	- [ ] Difficultés de déglutition
 > 	- [ ] Symptômes urinaires (pleurs à la miction, odeur)
 > 	- [ ] Symptômes respiratoires (toux, dyspnée, tirage)
 > 	- [ ] Éruption cutanée/exanthème
-> - [ ] **41. Médications et allergies *(Gastroentérite)***
+> - [ ] **40. Médications et allergies *(Gastroentérite)***
 > 	- [ ] Traitements en cours
 > 	- [ ] Prises médicamenteuses récentes
 > 	- [ ] Allergies connues
 > 	- [ ] Vaccinations à jour
-> - [ ] **42. Contexte épidémiologique *(Gastroentérite)***
+> - [ ] **41. Contexte épidémiologique *(Gastroentérite)***
 > 	- [ ] Santé de l'entourage familial
 > 	- [ ] Collectivité (crèche, garderie)
 > 	- [ ] Cas similaires dans l'entourage
 > 	- [ ] Voyages récents
 > 	- [ ] Contact avec animaux
-> - [ ] **43. Évaluation du contexte de l'appel *(Gastroentérite)***
+> - [ ] **42. Évaluation du contexte de l'appel *(Gastroentérite)***
 > 	- [ ] Adulte responsable présent
 > 	- [ ] Autres adultes disponibles
 > 	- [ ] Possibilité de transport si nécessaire

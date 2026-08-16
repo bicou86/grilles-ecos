@@ -94,7 +94,7 @@ cssclasses:
 > 	- [ ] Facteurs améliorants
 > 	- [ ] Facteurs aggravants
 > 	- [ ] Événements précipitants
-> - [ ] **3. Symptômes associés *(Cancer du col de l'utérus)***
+> - [ ] **3. Symptômes vaginaux associés**
 > - [ ] **4. Recherche de symptômes spécifiques *(Cancer du col de l'utérus)***
 > 	- [ ] Traumatisme pelvien
 > 	- [ ] Œdème des chevilles
@@ -151,32 +151,31 @@ cssclasses:
 > - [ ] **26. Ménarche *(Suspicion de cancer de l'endomètre)***
 > - [ ] **27. Cycle avant la ménopause *(Suspicion de cancer de l'endomètre)***
 > - [ ] **28. Gravidität / Parität (SAFT-Score) *(Suspicion de cancer de l'endomètre)***
-> - [ ] **29. Symptômes vaginaux associés *(Suspicion de cancer de l'endomètre)***
-> - [ ] **30. Douleurs *(Suspicion de cancer de l'endomètre)***
-> - [ ] **31. Prurit *(Suspicion de cancer de l'endomètre)***
-> - [ ] **32. Pertes vaginales *(Suspicion de cancer de l'endomètre)***
-> - [ ] **33. Symptômes B *(Suspicion de cancer de l'endomètre)***
-> - [ ] **34. Fièvre *(Suspicion de cancer de l'endomètre)***
-> - [ ] **35. Sueurs nocturnes *(Suspicion de cancer de l'endomètre)***
-> - [ ] **36. Perte de poids involontaire *(Suspicion de cancer de l'endomètre)***
-> - [ ] **37. Dernier contrôle gynécologique *(Suspicion de cancer de l'endomètre)***
-> - [ ] **38. Troubles de la miction *(Suspicion de cancer de l'endomètre)***
-> - [ ] **39. Troubles du transit *(Suspicion de cancer de l'endomètre)***
-> - [ ] **40. Symptômes d'anémie *(Suspicion de cancer de l'endomètre)***
-> - [ ] **41. Dyspnée d'effort *(Suspicion de cancer de l'endomètre)***
-> - [ ] **42. Palpitations *(Suspicion de cancer de l'endomètre)***
-> - [ ] **43. Douleurs thoraciques *(Suspicion de cancer de l'endomètre)***
-> - [ ] **44. Pâleur *(Suspicion de cancer de l'endomètre)***
-> - [ ] **45. Fatigue / Baisse de performance *(Suspicion de cancer de l'endomètre)***
-> - [ ] **46. Céphalées / Troubles de la concentration *(Suspicion de cancer de l'endomètre)***
-> - [ ] **47. Vertiges / Syncope *(Suspicion de cancer de l'endomètre)***
-> - [ ] **48. Affections tumorales *(Suspicion de cancer de l'endomètre)***
-> - [ ] **49. Traitement hormonal de substitution *(Suspicion de cancer de l'endomètre)***
-> - [ ] **50. Toxiques *(Suspicion de cancer de l'endomètre)***
-> - [ ] **51. Alcool *(Suspicion de cancer de l'endomètre)***
-> - [ ] **52. Tabagisme *(Suspicion de cancer de l'endomètre)***
-> - [ ] **53. Drogues *(Suspicion de cancer de l'endomètre)***
-> - [ ] **54. Situation sociale *(Suspicion de cancer de l'endomètre)***
+> - [ ] **29. Douleurs *(Suspicion de cancer de l'endomètre)***
+> - [ ] **30. Prurit *(Suspicion de cancer de l'endomètre)***
+> - [ ] **31. Pertes vaginales *(Suspicion de cancer de l'endomètre)***
+> - [ ] **32. Symptômes B *(Suspicion de cancer de l'endomètre)***
+> - [ ] **33. Fièvre *(Suspicion de cancer de l'endomètre)***
+> - [ ] **34. Sueurs nocturnes *(Suspicion de cancer de l'endomètre)***
+> - [ ] **35. Perte de poids involontaire *(Suspicion de cancer de l'endomètre)***
+> - [ ] **36. Dernier contrôle gynécologique *(Suspicion de cancer de l'endomètre)***
+> - [ ] **37. Troubles de la miction *(Suspicion de cancer de l'endomètre)***
+> - [ ] **38. Troubles du transit *(Suspicion de cancer de l'endomètre)***
+> - [ ] **39. Symptômes d'anémie *(Suspicion de cancer de l'endomètre)***
+> - [ ] **40. Dyspnée d'effort *(Suspicion de cancer de l'endomètre)***
+> - [ ] **41. Palpitations *(Suspicion de cancer de l'endomètre)***
+> - [ ] **42. Douleurs thoraciques *(Suspicion de cancer de l'endomètre)***
+> - [ ] **43. Pâleur *(Suspicion de cancer de l'endomètre)***
+> - [ ] **44. Fatigue / Baisse de performance *(Suspicion de cancer de l'endomètre)***
+> - [ ] **45. Céphalées / Troubles de la concentration *(Suspicion de cancer de l'endomètre)***
+> - [ ] **46. Vertiges / Syncope *(Suspicion de cancer de l'endomètre)***
+> - [ ] **47. Affections tumorales *(Suspicion de cancer de l'endomètre)***
+> - [ ] **48. Traitement hormonal de substitution *(Suspicion de cancer de l'endomètre)***
+> - [ ] **49. Toxiques *(Suspicion de cancer de l'endomètre)***
+> - [ ] **50. Alcool *(Suspicion de cancer de l'endomètre)***
+> - [ ] **51. Tabagisme *(Suspicion de cancer de l'endomètre)***
+> - [ ] **52. Drogues *(Suspicion de cancer de l'endomètre)***
+> - [ ] **53. Situation sociale *(Suspicion de cancer de l'endomètre)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Cancer du col de l'utérus)***

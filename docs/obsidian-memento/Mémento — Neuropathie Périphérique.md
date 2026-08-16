@@ -94,22 +94,27 @@ cssclasses:
 > 	- [ ] Épisodes antérieurs *(Déficit en vitamine B12)*
 > 	- [ ] Facteurs améliorants *(Déficit en vitamine B12)*
 > 	- [ ] Facteurs aggravants *(Déficit en vitamine B12)*
-> 	- [ ] Symptômes associés *(Déficit en vitamine B12)*
+> 	- [ ] Symptômes moteurs associés *(Déficit en vitamine B12)*
 > 	- [ ] Localisation *(Déficit en vitamine B12)*
 > 	- [ ] Type de sensations *(Polyneuropathie)*
 > 	- [ ] À la marche *(Polyneuropathie)*
 > 	- [ ] Picotements *(Polyneuropathie)*
 > 	- [ ] Engourdissement *(Polyneuropathie)*
 > 	- [ ] Distribution *(Polyneuropathie)*
-> - [ ] **3. Caractérisation de la douleur *(Déficit en vitamine B12)***
-> 	- [ ] Intensité (échelle 0-10)
-> 	- [ ] Qualité
-> 	- [ ] Début
-> 	- [ ] Progression/constant/intermittent
-> 	- [ ] Épisodes antérieurs
-> 	- [ ] Irradiation
-> 	- [ ] Facteurs améliorants
-> 	- [ ] Facteurs aggravants
+> - [ ] **3. Caractérisation de la douleur neuropathique *(Déficit en vitamine B12 · Hernie discale)***
+> 	- [ ] Intensité (échelle 0-10) *(Déficit en vitamine B12)*
+> 	- [ ] Qualité *(Déficit en vitamine B12)*
+> 	- [ ] Début *(Déficit en vitamine B12)*
+> 	- [ ] Progression/constant/intermittent *(Déficit en vitamine B12)*
+> 	- [ ] Épisodes antérieurs *(Déficit en vitamine B12)*
+> 	- [ ] Irradiation *(Déficit en vitamine B12)*
+> 	- [ ] Facteurs améliorants *(Déficit en vitamine B12)*
+> 	- [ ] Facteurs aggravants *(Déficit en vitamine B12)*
+> 	- [ ] Type de douleur *(Hernie discale)*
+> 	- [ ] Localisation précise *(Hernie discale)*
+> 	- [ ] Intensité *(Hernie discale)*
+> 	- [ ] Évolution temporelle *(Hernie discale)*
+> 	- [ ] Facteurs déclenchants *(Hernie discale)*
 > - [ ] **4. Recherche de symptômes spécifiques *(Déficit en vitamine B12)***
 > 	- [ ] Traumatisme
 > 	- [ ] Voyage récent
@@ -132,7 +137,12 @@ cssclasses:
 > 	- [ ] Troubles de mémoire
 > - [ ] **5. Antécédents médicaux *(Déficit en vitamine B12 · Polyneuropathie)***
 > - [ ] **6. Allergies *(Déficit en vitamine B12 · Polyneuropathie · Syndrome de Guillain-Barré)***
-> - [ ] **7. Médicaments actuels *(Déficit en vitamine B12 · Polyneuropathie · Syndrome de Guillain-Barré)***
+> - [ ] **7. Médicaments actuels**
+> 	- [ ] Chimiothérapie *(Hernie discale)*
+> 	- [ ] Antibiotiques *(Hernie discale)*
+> 	- [ ] Anticonvulsivants *(Hernie discale)*
+> 	- [ ] Alcoolisme chronique *(Hernie discale)*
+> 	- [ ] Produits industriels *(Hernie discale)*
 > - [ ] **8. Hospitalisations et antécédents chirurgicaux *(Déficit en vitamine B12)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
@@ -164,8 +174,14 @@ cssclasses:
 > - [ ] **20. Intensité / Retentissement *(Syndrome de Guillain-Barré)***
 > - [ ] **21. Facteurs déclenchants *(Syndrome de Guillain-Barré)***
 > - [ ] **22. Facteurs aggravants *(Syndrome de Guillain-Barré)***
-> - [ ] **23. Facteurs soulageants *(Syndrome de Guillain-Barré)***
-> - [ ] **24. Symptômes associés *(Syndrome de Guillain-Barré)***
+> - [ ] **23. Facteurs soulageants *(Polyneuropathie · Syndrome de Guillain-Barré)***
+> 	- [ ] Facteurs améliorants *(Polyneuropathie)*
+> 	- [ ] Facteurs aggravants *(Polyneuropathie)*
+> 	- [ ] Variation selon l'heure *(Polyneuropathie)*
+> - [ ] **24. Symptômes moteurs associés *(Polyneuropathie · Syndrome de Guillain-Barré)***
+> 	- [ ] Perte de force *(Polyneuropathie)*
+> 	- [ ] Difficultés à la marche *(Polyneuropathie)*
+> 	- [ ] Chutes *(Polyneuropathie)*
 > - [ ] **25. Douleurs lumbo(radiculaires) *(Syndrome de Guillain-Barré)***
 > - [ ] **26. Troubles sensitifs *(Syndrome de Guillain-Barré)***
 > - [ ] **27. Troubles de l’équilibre *(Syndrome de Guillain-Barré)***
@@ -175,7 +191,11 @@ cssclasses:
 > - [ ] **31. Dysarthrie *(Syndrome de Guillain-Barré)***
 > - [ ] **32. Paralysie faciale *(Syndrome de Guillain-Barré)***
 > - [ ] **33. Dysphagie *(Syndrome de Guillain-Barré)***
-> - [ ] **34. Symptômes autonomes *(Syndrome de Guillain-Barré)***
+> - [ ] **34. Symptômes autonomes *(Polyneuropathie · Syndrome de Guillain-Barré)***
+> 	- [ ] Troubles visuels *(Polyneuropathie)*
+> 	- [ ] Port de lunettes *(Polyneuropathie)*
+> 	- [ ] Vision floue *(Polyneuropathie)*
+> 	- [ ] Baisse d'acuité *(Polyneuropathie)*
 > - [ ] **35. Troubles vésico-sphinctériens *(Syndrome de Guillain-Barré)***
 > - [ ] **36. Palpitations *(Syndrome de Guillain-Barré)***
 > - [ ] **37. Hypotension orthostatique / vertiges *(Syndrome de Guillain-Barré)***
@@ -206,113 +226,88 @@ cssclasses:
 > 	- [ ] Limite supérieure
 > 	- [ ] Bilatéral
 > 	- [ ] Symétrique
-> - [ ] **58. Facteurs modulants *(Polyneuropathie)***
-> 	- [ ] Facteurs améliorants
-> 	- [ ] Facteurs aggravants
-> 	- [ ] Variation selon l'heure
-> - [ ] **59. Symptômes moteurs associés *(Polyneuropathie)***
-> 	- [ ] Perte de force
-> 	- [ ] Difficultés à la marche
-> 	- [ ] Chutes
-> - [ ] **60. Douleur *(Polyneuropathie)***
+> - [ ] **58. Douleur *(Polyneuropathie)***
 > 	- [ ] Présence de douleur
 > 	- [ ] Type
 > 	- [ ] Intensité
-> - [ ] **61. Plaie au pied *(Polyneuropathie)***
+> - [ ] **59. Plaie au pied *(Polyneuropathie)***
 > 	- [ ] Présence d'une plaie
 > 	- [ ] Circonstances
 > 	- [ ] Cicatrisation
 > 	- [ ] Localisation
-> - [ ] **62. Suivi médical *(Polyneuropathie)***
+> - [ ] **60. Suivi médical *(Polyneuropathie)***
 > 	- [ ] Dernière consultation
 > 	- [ ] Raison de l'absence de suivi
 > 	- [ ] Attitude face aux consultations
-> - [ ] **63. Symptômes visuels *(Polyneuropathie)***
-> 	- [ ] Troubles visuels
-> 	- [ ] Port de lunettes
-> 	- [ ] Vision floue
-> 	- [ ] Baisse d'acuité
-> - [ ] **64. Symptômes urinaires *(Polyneuropathie)***
+> - [ ] **61. Symptômes urinaires *(Polyneuropathie)***
 > 	- [ ] Jet urinaire
 > 	- [ ] Urines mousseuses
 > 	- [ ] Polyurie
 > 	- [ ] Pollakiurie
-> - [ ] **65. Symptômes cardiovasculaires *(Polyneuropathie)***
+> - [ ] **62. Symptômes cardiovasculaires *(Polyneuropathie)***
 > 	- [ ] Palpitations
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Dyspnée
 > 	- [ ] État depuis l'infarctus
-> - [ ] **66. Facteurs de risque cardiovasculaire *(Polyneuropathie)***
+> - [ ] **63. Facteurs de risque cardiovasculaire *(Polyneuropathie)***
 > 	- [ ] Diabète
 > 	- [ ] Hypertension
 > 	- [ ] Hypercholestérolémie
 > 	- [ ] Tabagisme
 > 	- [ ] Antécédents familiaux
-> - [ ] **67. Revue des systèmes - Neurologique *(Polyneuropathie)***
+> - [ ] **64. Revue des systèmes - Neurologique *(Polyneuropathie)***
 > 	- [ ] Céphalées
 > 	- [ ] Vision
 > 	- [ ] Audition
-> - [ ] **68. Revue des systèmes - Digestif *(Polyneuropathie)***
+> - [ ] **65. Revue des systèmes - Digestif *(Polyneuropathie)***
 > 	- [ ] Dysphagie
 > 	- [ ] Digestion
 > 	- [ ] Transit intestinal
 > 	- [ ] Poids
 > 	- [ ] Appétit
-> - [ ] **69. Revue des systèmes - Respiratoire *(Polyneuropathie)***
+> - [ ] **66. Revue des systèmes - Respiratoire *(Polyneuropathie)***
 > 	- [ ] Dyspnée
 > 	- [ ] Toux
-> - [ ] **70. Revue des systèmes - Locomoteur *(Polyneuropathie)***
+> - [ ] **67. Revue des systèmes - Locomoteur *(Polyneuropathie)***
 > 	- [ ] Douleurs articulaires
 > 	- [ ] Raideur matinale
 > 	- [ ] Gonflement articulaire
-> - [ ] **71. État cutané et œdèmes *(Polyneuropathie)***
+> - [ ] **68. État cutané et œdèmes *(Polyneuropathie)***
 > 	- [ ] Peau
 > 	- [ ] Œdèmes des membres inférieurs
-> - [ ] **72. Fonction sexuelle *(Polyneuropathie)***
-> - [ ] **73. Habitudes et toxiques *(Polyneuropathie)***
+> - [ ] **69. Fonction sexuelle *(Polyneuropathie)***
+> - [ ] **70. Habitudes et toxiques *(Polyneuropathie)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Digestif
 > 	- [ ] Drogues
-> - [ ] **74. Anamnèse sociale *(Polyneuropathie)***
+> - [ ] **71. Anamnèse sociale *(Polyneuropathie)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Enfants
 > 	- [ ] Activité physique
-> - [ ] **75. Questions supplémentaires *(Polyneuropathie)***
+> - [ ] **72. Questions supplémentaires *(Polyneuropathie)***
 > 	- [ ] Autres préoccupations
 > 	- [ ] Questions du patient
-> - [ ] **76. Caractérisation de la douleur neuropathique *(Hernie discale)***
-> 	- [ ] Type de douleur
-> 	- [ ] Localisation précise
-> 	- [ ] Intensité
-> 	- [ ] Évolution temporelle
-> 	- [ ] Facteurs déclenchants
-> - [ ] **77. Analyse sémiologique neurologique *(Hernie discale)***
+> - [ ] **73. Analyse sémiologique neurologique *(Hernie discale)***
 > 	- [ ] Troubles sensitifs
 > 	- [ ] Déficit moteur associé
 > 	- [ ] Troubles trophiques
 > 	- [ ] Réflexes ostéotendineux
 > 	- [ ] Signes d'irritation radiculaire
-> - [ ] **78. Recherche d'étiologies rachidiennes *(Hernie discale)***
+> - [ ] **74. Recherche d'étiologies rachidiennes *(Hernie discale)***
 > 	- [ ] Lombalgie associée
 > 	- [ ] Traumatisme rachidien
 > 	- [ ] Efforts de soulèvement
 > 	- [ ] Positions profesionnelles
 > 	- [ ] Antécédents chirurgicaux rachidiens
-> - [ ] **79. Facteurs de risque et comorbidités *(Hernie discale)***
+> - [ ] **75. Facteurs de risque et comorbidités *(Hernie discale)***
 > 	- [ ] Diabète
 > 	- [ ] Maladies auto-immunes
 > 	- [ ] Néoplasies
 > 	- [ ] Maladies infectieuses
 > 	- [ ] Insuffisance rénale
-> - [ ] **80. Médicaments et toxiques *(Hernie discale)***
-> 	- [ ] Chimiothérapie
-> 	- [ ] Antibiotiques
-> 	- [ ] Anticonvulsivants
-> 	- [ ] Alcoolisme chronique
-> 	- [ ] Produits industriels
-> - [ ] **81. Retentissement fonctionnel et qualité de vie *(Hernie discale)***
+> - [ ] **76. Retentissement fonctionnel et qualité de vie *(Hernie discale)***
 > 	- [ ] Sommeil
 > 	- [ ] Activités professionnelles
 > 	- [ ] Mobilité

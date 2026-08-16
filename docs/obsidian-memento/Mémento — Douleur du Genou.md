@@ -91,20 +91,20 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(Thrombose veineuse profonde (TVP))***
-> - [ ] **2. Caractérisation de la douleur *(Thrombose veineuse profonde (TVP))***
-> 	- [ ] Localisation
-> 	- [ ] Intensité (échelle 0-10)
-> 	- [ ] Qualité
-> 	- [ ] Début
-> 	- [ ] Événements précipitants
-> 	- [ ] Autres blessures lors de la chute
-> 	- [ ] Perte de connaissance
-> 	- [ ] Progression/constant/intermittent
-> 	- [ ] Épisodes antérieurs
-> 	- [ ] Irradiation
-> 	- [ ] Facteurs améliorants
-> 	- [ ] Facteurs aggravants
-> 	- [ ] Symptômes associés
+> - [ ] **2. Caractérisation de la douleur *(2 grilles sur 3)***
+> 	- [ ] Localisation *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Intensité (échelle 0-10) *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Qualité *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Début *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Événements précipitants *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Autres blessures lors de la chute *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Perte de connaissance *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Progression/constant/intermittent *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Épisodes antérieurs *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Irradiation *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Facteurs améliorants *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Facteurs aggravants *(Thrombose veineuse profonde (TVP))*
+> 	- [ ] Symptômes associés *(Thrombose veineuse profonde (TVP))*
 > - [ ] **3. Recherche de symptômes spécifiques *(Thrombose veineuse profonde (TVP))***
 > 	- [ ] Voyage récent
 > 	- [ ] Fièvre/frissons
@@ -154,7 +154,7 @@ cssclasses:
 > - [ ] **24. Blessures antérieures *(1 grille sur 3)***
 > - [ ] **25. Activité sportive *(1 grille sur 3)***
 > - [ ] **26. Mécanisme de la blessure *(1 grille sur 3)***
-> - [ ] **27. Symptômes mécaniques *(1 grille sur 3)***
+> - [ ] **27. Symptômes mécaniques *(Déchirure méniscale / ligamentaire)***
 > - [ ] **28. Clic / phénomène de ressaut *(1 grille sur 3)***
 > - [ ] **29. Blocage / sensation de coincement *(1 grille sur 3)***
 > - [ ] **30. Limitation de l’extension *(1 grille sur 3)***
@@ -176,24 +176,22 @@ cssclasses:
 > - [ ] **46. Charge psychosociale *(1 grille sur 3)***
 > - [ ] **47. Situation sociale *(1 grille sur 3)***
 > - [ ] **48. Présentation avec nom, fonction et tâche *(1 grille sur 3)***
-> - [ ] **49. Symptômes actuels *(1 grille sur 3)***
-> - [ ] **50. Début et évolution temporelle *(1 grille sur 3)***
-> - [ ] **51. Facteur déclenchant/circonstances *(1 grille sur 3)***
-> - [ ] **52. Évolution depuis le début *(1 grille sur 3)***
-> - [ ] **53. Localisation précise de la douleur *(1 grille sur 3)***
-> - [ ] **54. Intensité de la douleur (échelle 0-10) *(1 grille sur 3)***
-> - [ ] **55. Caractère de la douleur *(1 grille sur 3)***
-> - [ ] **56. Présence de gonflement *(1 grille sur 3)***
-> - [ ] **57. Irradiation de la douleur *(1 grille sur 3)***
-> - [ ] **58. Douleur au repos *(1 grille sur 3)***
-> - [ ] **59. Capacité de marche/mobilité *(1 grille sur 3)***
-> - [ ] **60. Limitation des mouvements *(1 grille sur 3)***
-> - [ ] **61. Auto-traitement déjà entrepris *(1 grille sur 3)***
-> - [ ] **62. Symptômes associés (fièvre, signes d'infection) *(1 grille sur 3)***
-> - [ ] **63. Morsure de tique *(1 grille sur 3)***
-> - [ ] **64. Douleurs dans d'autres articulations *(1 grille sur 3)***
-> - [ ] **65. Antécédents de pathologie du genou *(1 grille sur 3)***
-> - [ ] **66. Anamnèse sociale et professionnelle *(1 grille sur 3)***
+> - [ ] **49. Début et évolution temporelle *(1 grille sur 3)***
+> - [ ] **50. Facteur déclenchant/circonstances *(1 grille sur 3)***
+> - [ ] **51. Évolution depuis le début *(1 grille sur 3)***
+> - [ ] **52. Localisation précise de la douleur *(1 grille sur 3)***
+> - [ ] **53. Intensité de la douleur (échelle 0-10) *(1 grille sur 3)***
+> - [ ] **54. Caractère de la douleur *(1 grille sur 3)***
+> - [ ] **55. Présence de gonflement *(1 grille sur 3)***
+> - [ ] **56. Douleur au repos *(1 grille sur 3)***
+> - [ ] **57. Capacité de marche/mobilité *(1 grille sur 3)***
+> - [ ] **58. Limitation des mouvements *(1 grille sur 3)***
+> - [ ] **59. Auto-traitement déjà entrepris *(1 grille sur 3)***
+> - [ ] **60. Symptômes associés (fièvre, signes d'infection) *(1 grille sur 3)***
+> - [ ] **61. Morsure de tique *(1 grille sur 3)***
+> - [ ] **62. Douleurs dans d'autres articulations *(1 grille sur 3)***
+> - [ ] **63. Antécédents de pathologie du genou *(1 grille sur 3)***
+> - [ ] **64. Anamnèse sociale et professionnelle *(1 grille sur 3)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Thrombose veineuse profonde (TVP))***

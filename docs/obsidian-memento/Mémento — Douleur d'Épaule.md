@@ -221,10 +221,9 @@ cssclasses:
 > 	- [ ] Localisation
 > 	- [ ] Intensité
 > 	- [ ] Évolution
-> 	- [ ] Facteurs aggravant/atténuant *(1 grille sur 5)*
+> 	- [ ] Facteurs aggravant
 > 	- [ ] Médicaments pris ou reçus
 > 	- [ ] Caractère
-> 	- [ ] Facteurs aggravant *(1 grille sur 5)*
 > 	- [ ] Facteurs atténuant *(1 grille sur 5)*
 > - [ ] **65. Douleurs ailleurs *(Fracture du membre supérieur (humérus, tête radiale))***
 > - [ ] **66. Propose une antalgie *(Fracture du membre supérieur (humérus, tête radiale))***
@@ -361,10 +360,9 @@ cssclasses:
 > - [ ] **2. Demande des radiographies du MSD ou CT du MSD**
 > 	- [ ] Fracture spiroïde de l'humérus droit (diaphysaire, déplacée, distal, multifragmentaire) *(1 grille sur 2)*
 > - [ ] **3. Prise en charge**
-> 	- [ ] Réduction fermée, plâtre, consultation et suivi orthopédique *(1 grille sur 2)*
+> 	- [ ] Consultation et suivi orthopédique
 > 	- [ ] Réduction fermée *(1 grille sur 2)*
 > 	- [ ] Plâtre *(1 grille sur 2)*
-> 	- [ ] Consultation et suivi orthopédique *(1 grille sur 2)*
 > - [ ] **4. Informe de la possibilité de porter plainte**
 > - [ ] **5. Quittance et prend en charge le trauma psychologique**
 > - [ ] **6. Informe des offres de soutien à disposition (organisations aides aux victimes de violence, soutien psychologique)**

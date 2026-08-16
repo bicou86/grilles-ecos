@@ -132,12 +132,12 @@ cssclasses:
 > 	- [ ] Drogues récréatives
 > 	- [ ] Tabac
 > 	- [ ] Exercice
-> - [ ] **11. Antécédents sexuels *(Pharyngite streptococcique (SGA))***
-> 	- [ ] Activité sexuelle
-> 	- [ ] Avec qui
-> 	- [ ] Hommes ou femmes
-> 	- [ ] Nombre de partenaires au cours de la dernière année
-> 	- [ ] Protection
+> - [ ] **11. Antécédents sexuels**
+> 	- [ ] Activité sexuelle *(Pharyngite streptococcique (SGA))*
+> 	- [ ] Avec qui *(Pharyngite streptococcique (SGA))*
+> 	- [ ] Hommes ou femmes *(Pharyngite streptococcique (SGA))*
+> 	- [ ] Nombre de partenaires au cours de la dernière année *(Pharyngite streptococcique (SGA))*
+> 	- [ ] Protection *(Pharyngite streptococcique (SGA))*
 > - [ ] **12. Question d’introduction *(Abcès périamygdalien droit)***
 > - [ ] **13. Dimension temporelle *(Abcès périamygdalien droit)***
 > - [ ] **14. Début *(Abcès périamygdalien droit)***
@@ -164,16 +164,15 @@ cssclasses:
 > - [ ] **35. Symptômes B *(Abcès périamygdalien droit)***
 > - [ ] **36. Voyage à l’étranger *(Abcès périamygdalien droit)***
 > - [ ] **37. Antécédents *(Abcès périamygdalien droit)***
-> - [ ] **38. Antécédents ORL *(Abcès périamygdalien droit)***
-> - [ ] **39. Opérations antérieures *(Abcès périamygdalien droit)***
-> - [ ] **40. Noxes *(Abcès périamygdalien droit)***
-> - [ ] **41. Tabagisme *(Abcès périamygdalien droit)***
-> - [ ] **42. Alcool *(Abcès périamygdalien droit)***
-> - [ ] **43. Drogues *(Abcès périamygdalien droit)***
-> - [ ] **44. Anamnèse environnementale *(Abcès périamygdalien droit)***
-> - [ ] **45. Antécédents familiaux *(Abcès périamygdalien droit)***
-> - [ ] **46. Profession *(Abcès périamygdalien droit)***
-> - [ ] **47. Situation sociale *(Abcès périamygdalien droit)***
+> - [ ] **38. Opérations antérieures *(Abcès périamygdalien droit)***
+> - [ ] **39. Noxes *(Abcès périamygdalien droit)***
+> - [ ] **40. Tabagisme *(Abcès périamygdalien droit)***
+> - [ ] **41. Alcool *(Abcès périamygdalien droit)***
+> - [ ] **42. Drogues *(Abcès périamygdalien droit)***
+> - [ ] **43. Anamnèse environnementale *(Abcès périamygdalien droit)***
+> - [ ] **44. Antécédents familiaux *(Abcès périamygdalien droit)***
+> - [ ] **45. Profession *(Abcès périamygdalien droit)***
+> - [ ] **46. Situation sociale *(Abcès périamygdalien droit)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Pharyngite streptococcique (SGA))***

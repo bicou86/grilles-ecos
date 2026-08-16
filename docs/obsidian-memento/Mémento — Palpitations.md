@@ -124,7 +124,7 @@ cssclasses:
 > 	- [ ] Hypertension artérielle *(Fibrillation auriculaire)*
 > 	- [ ] Obésité (IMC) *(Fibrillation auriculaire)*
 > - [ ] **11. Résumé avec retour au patient *(Insuffisance cardiaque (décompensée))***
-> - [ ] **12. Antécédents médicaux personnels *(Insuffisance cardiaque (décompensée) · Palpitations liées au stress et aux stimulants)***
+> - [ ] **12. Antécédents médicaux personnels**
 > 	- [ ] Maladies cardiaques (coronaropathie, infarctus du myocarde)/chirurgie cardiaque *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Maladies cérébrovasculaires (AIT, AVC) *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Artériopathie périphérique *(Insuffisance cardiaque (décompensée))*
@@ -133,6 +133,10 @@ cssclasses:
 > 	- [ ] Pathologies connues *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Hospitalisations *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Interventions chirurgicales *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Cardiopathie ischémique *(Fibrillation auriculaire)*
+> 	- [ ] Infarctus du myocarde *(Fibrillation auriculaire)*
+> 	- [ ] Troubles du rythme connus *(Fibrillation auriculaire)*
+> 	- [ ] Valvulopathies *(Fibrillation auriculaire)*
 > - [ ] **13. Allergies *(Insuffisance cardiaque (décompensée))***
 > - [ ] **14. Traitements actuels**
 > 	- [ ] Euthyrox 50 μg *(Insuffisance cardiaque (décompensée))*
@@ -206,10 +210,14 @@ cssclasses:
 > 	- [ ] Appétit
 > 	- [ ] Alimentation
 > 	- [ ] Poids et taille
-> - [ ] **26. Habitudes de vie et toxiques *(Palpitations liées au stress et aux stimulants)***
-> 	- [ ] Tabac
-> 	- [ ] Alcool
-> 	- [ ] Drogues
+> - [ ] **26. Habitudes de vie et toxiques *(Fibrillation auriculaire · Palpitations liées au stress et aux stimulants)***
+> 	- [ ] Tabac *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Alcool *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Drogues *(Palpitations liées au stress et aux stimulants)*
+> 	- [ ] Consommation de café *(Fibrillation auriculaire)*
+> 	- [ ] Activité physique *(Fibrillation auriculaire)*
+> 	- [ ] Alimentation *(Fibrillation auriculaire)*
+> 	- [ ] Consommation d'alcool *(Fibrillation auriculaire)*
 > - [ ] **27. Activité physique et loisirs *(Palpitations liées au stress et aux stimulants)***
 > - [ ] **28. État psychologique et stress *(Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Niveau de stress
@@ -283,39 +291,29 @@ cssclasses:
 > 	- [ ] Cancer actif
 > 	- [ ] Antécédent de TVP/EP
 > 	- [ ] Hémoptysie
-> - [ ] **42. Antécédents cardiovasculaires personnels *(Fibrillation auriculaire)***
-> 	- [ ] Cardiopathie ischémique
-> 	- [ ] Infarctus du myocarde
-> 	- [ ] Troubles du rythme connus
-> 	- [ ] Valvulopathies
-> - [ ] **43. Antécédents neurologiques *(Fibrillation auriculaire)***
+> - [ ] **42. Antécédents neurologiques *(Fibrillation auriculaire)***
 > 	- [ ] AVC/AIT
 > 	- [ ] Déficit neurologique
 > 	- [ ] Céphalées
 > 	- [ ] Épilepsie
-> - [ ] **44. Autres antécédents médicaux *(Fibrillation auriculaire)***
+> - [ ] **43. Autres antécédents médicaux *(Fibrillation auriculaire)***
 > 	- [ ] Pathologie thyroïdienne
 > 	- [ ] MVTE
 > 	- [ ] Pathologies psychiatriques/anxiété
 > 	- [ ] Autres maladies chroniques
-> - [ ] **45. Antécédents chirurgicaux *(Fibrillation auriculaire)***
+> - [ ] **44. Antécédents chirurgicaux *(Fibrillation auriculaire)***
 > 	- [ ] Interventions antérieures
 > 	- [ ] Complications
 > 	- [ ] Anesthésies
-> - [ ] **46. Allergies médicamenteuses *(Fibrillation auriculaire)***
+> - [ ] **45. Allergies médicamenteuses *(Fibrillation auriculaire)***
 > 	- [ ] Allergies connues
 > 	- [ ] Intolérances
 > 	- [ ] Réactions antérieures
-> - [ ] **47. Antécédents familiaux cardiovasculaires *(Fibrillation auriculaire)***
+> - [ ] **46. Antécédents familiaux cardiovasculaires *(Fibrillation auriculaire)***
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] Mort subite
 > 	- [ ] Troubles du rythme
 > 	- [ ] AVC
-> - [ ] **48. Habitudes de vie *(Fibrillation auriculaire)***
-> 	- [ ] Consommation de café
-> 	- [ ] Activité physique
-> 	- [ ] Alimentation
-> 	- [ ] Consommation d'alcool
 
 > [!tip] 🩺 Status
 > - [ ] **1. Auscultation cardiaque *(Fibrillation auriculaire · Insuffisance cardiaque (décompensée))***
@@ -338,7 +336,11 @@ cssclasses:
 > 	- [ ] Inspection *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Recherche de nodules *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Recherche de goitre *(Palpitations liées au stress et aux stimulants)*
-> - [ ] **4. Examen cutané *(Insuffisance cardiaque (décompensée))***
+> - [ ] **4. Examen cutanéo-muqueux *(Fibrillation auriculaire · Insuffisance cardiaque (décompensée))***
+> 	- [ ] Coloration cutanée *(Fibrillation auriculaire)*
+> 	- [ ] Conjonctives *(Fibrillation auriculaire)*
+> 	- [ ] Muqueuses *(Fibrillation auriculaire)*
+> 	- [ ] Temps de recoloration capillaire *(Fibrillation auriculaire)*
 > - [ ] **5. Signes vitaux *(Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Tension artérielle
@@ -391,12 +393,7 @@ cssclasses:
 > - [ ] **14. Auscultation thyroïdienne *(Fibrillation auriculaire)***
 > 	- [ ] Souffle thyroïdien
 > 	- [ ] Thrill
-> - [ ] **15. Examen cutanéo-muqueux *(Fibrillation auriculaire)***
-> 	- [ ] Coloration cutanée
-> 	- [ ] Conjonctives
-> 	- [ ] Muqueuses
-> 	- [ ] Temps de recoloration capillaire
-> - [ ] **16. Signes périphériques d'insuffisance cardiaque *(Fibrillation auriculaire)***
+> - [ ] **15. Signes périphériques d'insuffisance cardiaque *(Fibrillation auriculaire)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Hépatomégalie
 > 	- [ ] Ascite

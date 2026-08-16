@@ -237,22 +237,22 @@ cssclasses:
 > *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Syncope & Perte de Connaissance]] (2 grilles) · [[Mémento — Chute & Évaluation Gériatrique]] (1 grille).
 
 > [!success] 💊 Management — si Maladie de Parkinson
-> - [ ] **1. Diagnostic syndromique des troubles de l'équilibre**
-> 	- [ ] Ataxie cérébelleuse
-> 	- [ ] Ataxie sensitive
-> 	- [ ] Syndrome extrapyramidal
-> 	- [ ] Atteinte vestibulaire
-> - [ ] **2. Diagnostic étiologique - causes des troubles de l'équilibre**
-> - [ ] **3. Bilan étiologique de l'amaigrissement**
-> 	- [ ] Recherche néoplasique
-> 	- [ ] Bilan inflammatoire
-> 	- [ ] Endoscopies digestives
-> 	- [ ] Bilan thyroïdien
-> - [ ] **4. Examens complémentaires neurologiques**
+> - [ ] **1. Examens complémentaires neurologiques**
 > 	- [ ] IRM cérébrale
 > 	- [ ] Électromyogramme
 > 	- [ ] Ponction lombaire
 > 	- [ ] Anticorps paranéoplasiques
+> - [ ] **2. Diagnostic syndromique des troubles de l'équilibre**
+> 	- [ ] Ataxie cérébelleuse
+> 	- [ ] Ataxie sensitive
+> 	- [ ] Syndrome extrapyramidal
+> 	- [ ] Atteinte vestibulaire
+> - [ ] **3. Diagnostic étiologique - causes des troubles de l'équilibre**
+> - [ ] **4. Bilan étiologique de l'amaigrissement**
+> 	- [ ] Recherche néoplasique
+> 	- [ ] Bilan inflammatoire
+> 	- [ ] Endoscopies digestives
+> 	- [ ] Bilan thyroïdien
 > - [ ] **5. Prise en charge symptomatique**
 > 	- [ ] Rééducation équilibre
 > 	- [ ] Aides techniques
@@ -275,7 +275,7 @@ cssclasses:
 
 > [!success] 💊 Management — si Zona auriculaire (syndrome de Ramsay Hunt)
 > - [ ] **1. Hypothèses diagnostiques**
-> - [ ] **2. Examens complémentaires**
+> - [ ] **2. Examens complémentaires neurologiques**
 > 	- [ ] Audiométrie tonale
 > 	- [ ] Potentiels évoqués auditifs du tronc cérébral
 > - [ ] **3. Communication avec le patient**

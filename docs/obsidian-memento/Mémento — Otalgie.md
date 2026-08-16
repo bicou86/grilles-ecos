@@ -150,11 +150,9 @@ cssclasses:
 > 	- [ ] Région rétro-auriculaire *(1 grille sur 2)*
 > 	- [ ] Signes inflammatoires externes *(1 grille sur 2)*
 > - [ ] **2. Palpation auriculaire**
-> 	- [ ] Douleur à la pression du tragus *(1 grille sur 2)*
-> 	- [ ] Douleur à la traction du pavillon *(1 grille sur 2)*
+> 	- [ ] Douleur à la pression du tragus
+> 	- [ ] Douleur à la traction du pavillon
 > 	- [ ] Palpation mastoïdienne
-> 	- [ ] Pression du tragus *(1 grille sur 2)*
-> 	- [ ] Traction du pavillon *(1 grille sur 2)*
 > - [ ] **3. Otoscopie bilatérale**
 > 	- [ ] Tympan droit *(1 grille sur 2)*
 > 	- [ ] Tympan gauche *(1 grille sur 2)*
@@ -171,7 +169,7 @@ cssclasses:
 > 	- [ ] Ganglions rétro-auriculaires
 > 	- [ ] Ganglions sous-mandibulaires *(1 grille sur 2)*
 > 	- [ ] Ganglions pré-auriculaires *(1 grille sur 2)*
-> - [ ] **6. Auscultation cardiopulmonaire *(1 grille sur 2)***
+> - [ ] **6. Auscultation cardio-pulmonaire**
 > 	- [ ] Auscultation pulmonaire
 > 	- [ ] Auscultation cardiaque
 > - [ ] **7. Examen abdominal**
@@ -186,10 +184,7 @@ cssclasses:
 > - [ ] **9. Examen ORL complémentaire *(1 grille sur 2)***
 > 	- [ ] Oropharynx
 > 	- [ ] Rhinoscopie antérieure
-> - [ ] **10. Auscultation cardio-pulmonaire *(1 grille sur 2)***
-> 	- [ ] Auscultation pulmonaire
-> 	- [ ] Auscultation cardiaque
-> - [ ] **11. Recherche de complications *(1 grille sur 2)***
+> - [ ] **10. Recherche de complications *(1 grille sur 2)***
 > 	- [ ] Signes de mastoïdite
 > 	- [ ] Signes méningés
 > 	- [ ] Paralysie faciale

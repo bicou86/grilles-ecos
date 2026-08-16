@@ -98,12 +98,17 @@ cssclasses:
 > 	- [ ] Disparition rapide à l'arrêt
 > 	- [ ] Apparition après environ 50 mètres de marche
 > 	- [ ] Crampe qui s'estompe en moins d'une minute à l'arrêt
-> - [ ] **3. Recherche de symptômes associés *(2 grilles sur 3)***
-> 	- [ ] Douleurs de repos *(1 grille sur 3)*
+> - [ ] **3. Recherche de symptômes associés**
+> 	- [ ] Douleurs de repos *(AOMI)*
 > 	- [ ] Douleurs nocturnes en position couchée *(1 grille sur 3)*
 > 	- [ ] Troubles trophiques des extrémités *(1 grille sur 3)*
 > 	- [ ] Paresthésies *(1 grille sur 3)*
 > 	- [ ] Impuissance *(1 grille sur 3)*
+> 	- [ ] Douleurs nocturnes *(1 grille sur 3)*
+> 	- [ ] Position couchée/membre surélevé *(1 grille sur 3)*
+> 	- [ ] Sensation de froid *(1 grille sur 3)*
+> 	- [ ] Troubles trophiques *(1 grille sur 3)*
+> 	- [ ] Pâleur des extrémités *(1 grille sur 3)*
 > 	- [ ] Dyspnée d'effort *(Embolie pulmonaire)*
 > 	- [ ] Excès de poids *(Embolie pulmonaire)*
 > 	- [ ] Tachypnée *(Embolie pulmonaire)*
@@ -147,64 +152,57 @@ cssclasses:
 > 	- [ ] Caractère répétitif
 > 	- [ ] Symptômes bilatéraux
 > 	- [ ] Impact fonctionnel
-> - [ ] **10. Symptômes associés et sévérité *(1 grille sur 3)***
-> 	- [ ] Douleurs de repos
-> 	- [ ] Douleurs nocturnes
-> 	- [ ] Position couchée/membre surélevé
-> 	- [ ] Sensation de froid
-> 	- [ ] Troubles trophiques
-> 	- [ ] Pâleur des extrémités
-> - [ ] **11. Antécédents personnels cardiovasculaires *(1 grille sur 3)***
+> - [ ] **10. Antécédents personnels cardiovasculaires *(1 grille sur 3)***
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] AVC/AIT
 > 	- [ ] Angor
 > 	- [ ] Interventions vasculaires
 > 	- [ ] Thromboses veineuses
 > 	- [ ] Autres pathologies cardiovasculaires
-> - [ ] **12. Antécédents familiaux cardiovasculaires *(1 grille sur 3)***
+> - [ ] **11. Antécédents familiaux cardiovasculaires *(1 grille sur 3)***
 > 	- [ ] Père
 > 	- [ ] Mère
 > 	- [ ] Fratrie
 > 	- [ ] Mort subite familiale
 > 	- [ ] AVC familiaux
 > 	- [ ] Artériopathie familiale
-> - [ ] **13. Médicaments et allergies *(1 grille sur 3)***
+> - [ ] **12. Médicaments et allergies *(1 grille sur 3)***
 > 	- [ ] Antihypertenseurs
 > 	- [ ] Antiagrégants plaquettaires
 > 	- [ ] Statines
 > 	- [ ] Antidiabétiques
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Observance thérapeutique
-> - [ ] **14. Habitudes de vie *(1 grille sur 3)***
+> - [ ] **13. Habitudes de vie *(1 grille sur 3)***
 > 	- [ ] Alcool
 > 	- [ ] Alimentation
 > 	- [ ] Activité physique
 > 	- [ ] Stress professionnel
 > 	- [ ] Sommeil
-> - [ ] **15. Histoire de la maladie actuelle *(Embolie pulmonaire)***
+> - [ ] **14. Histoire de la maladie actuelle *(Embolie pulmonaire)***
 > 	- [ ] Début cheville gauche puis jambe
 > 	- [ ] Gonflement progressif et douloureux
 > 	- [ ] Mise au lit pendant 2 jours
 > 	- [ ] Jambe gauche nettement plus grosse que la droite
 > 	- [ ] Peur d'attraper gangrène
 > 	- [ ] Varices depuis des années
-> - [ ] **16. Contexte du voyage récent *(Embolie pulmonaire)***
+> - [ ] **15. Contexte du voyage récent *(Embolie pulmonaire)***
 > 	- [ ] Tour d'Italie en car
 > 	- [ ] Voyage avec groupes du 3e âge
 > 	- [ ] Retour il y a 4 jours
 > 	- [ ] Position assise prolongée dans le car
-> - [ ] **17. Facteurs de risque thromboembolique *(Embolie pulmonaire)***
+> - [ ] **16. Facteurs de risque thromboembolique *(Embolie pulmonaire)***
 > 	- [ ] Voyage prolongé en position assise
 > 	- [ ] Obésité
 > 	- [ ] Âge
 > 	- [ ] Varices opérées
 > 	- [ ] Cancer du sein
 > 	- [ ] Immobilisation relative
-> - [ ] **18. Antécédents familiaux *(Embolie pulmonaire)***
+> - [ ] **17. Antécédents familiaux *(Embolie pulmonaire)***
 > 	- [ ] Père décédé à 78 ans
 > 	- [ ] Mère décédée à 94 ans
 > 	- [ ] Sœur opérée cancer du sein
-> - [ ] **19. Score de Wells pour TVP *(Embolie pulmonaire)***
+> - [ ] **18. Score de Wells pour TVP *(Embolie pulmonaire)***
 > 	- [ ] Cancer actif (+1)
 > 	- [ ] Immobilisation/voyage (+1)
 > 	- [ ] Gonflement unilatéral (+1)
@@ -237,15 +235,19 @@ cssclasses:
 > 	- [ ] Pouls pédieux *(1 grille sur 3)*
 > 	- [ ] Pouls tibial postérieur *(1 grille sur 3)*
 > 	- [ ] Comparaison droite/gauche systématique *(1 grille sur 3)*
-> - [ ] **4. Auscultation vasculaire *(AOMI)***
+> - [ ] **4. Auscultation vasculaire**
 > 	- [ ] Souffle inguinal gauche *(1 grille sur 3)*
 > 	- [ ] Râpeux et irradiant jusqu'à mi-cuisse *(1 grille sur 3)*
-> 	- [ ] Artères carotides
-> 	- [ ] Aorte abdominale
+> 	- [ ] Artères carotides *(AOMI)*
+> 	- [ ] Aorte abdominale *(AOMI)*
 > 	- [ ] Artères fémorales *(1 grille sur 3)*
 > 	- [ ] Artères rénales *(1 grille sur 3)*
 > 	- [ ] Artères sous-clavières *(1 grille sur 3)*
 > 	- [ ] Comparaison bilatérale *(1 grille sur 3)*
+> 	- [ ] Frottement pleural *(Embolie pulmonaire)*
+> 	- [ ] Épanchement pleural *(Embolie pulmonaire)*
+> 	- [ ] Fréquence respiratoire *(Embolie pulmonaire)*
+> 	- [ ] Pas de râles *(Embolie pulmonaire)*
 > - [ ] **5. Test d'Allen (perméabilité artères radiale, cubitale, arcade palmaire) *(1 grille sur 3)***
 > - [ ] **6. Mesure de l'index de pression systolique (IPS/ABI) *(1 grille sur 3)***
 > 	- [ ] Rapport pression cheville/bras
@@ -299,12 +301,7 @@ cssclasses:
 > 	- [ ] Ballant du mollet
 > 	- [ ] Turgescence veines superficielles
 > 	- [ ] Circulation collatérale visible
-> - [ ] **15. Auscultation pulmonaire *(Embolie pulmonaire)***
-> 	- [ ] Frottement pleural
-> 	- [ ] Épanchement pleural
-> 	- [ ] Fréquence respiratoire
-> 	- [ ] Pas de râles
-> - [ ] **16. Examen cardiovasculaire *(Embolie pulmonaire)***
+> - [ ] **15. Examen cardiovasculaire *(Embolie pulmonaire)***
 > 	- [ ] Tachycardie
 > 	- [ ] Tachyarythmie
 > 	- [ ] Éclat B2 pulmonaire

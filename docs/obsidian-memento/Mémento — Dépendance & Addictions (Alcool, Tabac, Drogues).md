@@ -102,7 +102,11 @@ cssclasses:
 > 	- [ ] Effet recherché *(Addiction / Sevrage OH)*
 > 	- [ ] Association avec d'autres substances *(Addiction / Sevrage OH)*
 > - [ ] **9. Effet recherché *(Dépendance à l'alcool)***
-> - [ ] **10. Traitements de sevrage antérieurs *(Dépendance à l'alcool)***
+> - [ ] **10. Traitements de sevrage antérieurs**
+> 	- [ ] Sevrages ambulatoires ou hospitaliers *(Addiction / Sevrage OH)*
+> 	- [ ] Pharmacothérapies anti-craving *(Addiction / Sevrage OH)*
+> 	- [ ] Groupes d'entraide (AA, Croix-Bleue) *(Addiction / Sevrage OH)*
+> 	- [ ] Accompagnement psychiatrique *(Addiction / Sevrage OH)*
 > - [ ] **11. Complications de sevrage *(Dépendance à l'alcool)***
 > - [ ] **12. CAGE *(Dépendance à l'alcool)***
 > - [ ] **13. Cutting down *(Dépendance à l'alcool)***
@@ -164,17 +168,12 @@ cssclasses:
 > 	- [ ] Annoyed - Agacé par les critiques ?
 > 	- [ ] Guilty - Sentiment de culpabilité ?
 > 	- [ ] Eye opener - Boire le matin pour se sentir bien ?
-> - [ ] **57. Tentatives de sevrage antérieures *(Addiction / Sevrage OH)***
-> 	- [ ] Sevrages ambulatoires ou hospitaliers
-> 	- [ ] Pharmacothérapies anti-craving
-> 	- [ ] Groupes d'entraide (AA, Croix-Bleue)
-> 	- [ ] Accompagnement psychiatrique
-> - [ ] **58. Habitudes alimentaires et symptômes B *(Addiction / Sevrage OH)***
+> - [ ] **57. Habitudes alimentaires et symptômes B *(Addiction / Sevrage OH)***
 > 	- [ ] Alimentation
 > 	- [ ] Fièvre
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Perte de poids
-> - [ ] **59. Symptômes somatiques associés *(Addiction / Sevrage OH)***
+> - [ ] **58. Symptômes somatiques associés *(Addiction / Sevrage OH)***
 > 	- [ ] Tendance hémorragique
 > 	- [ ] Ictère
 > 	- [ ] Encéphalopathie hépatique
@@ -184,36 +183,36 @@ cssclasses:
 > 	- [ ] Dysphagie/odynophagie
 > 	- [ ] Gastrite/ulcère
 > 	- [ ] Saignements digestifs (méléna, hématochézie)
-> - [ ] **60. Symptômes neurologiques *(Addiction / Sevrage OH)***
+> - [ ] **59. Symptômes neurologiques *(Addiction / Sevrage OH)***
 > 	- [ ] Douleurs/faiblesse musculaire
 > 	- [ ] Chutes
 > 	- [ ] Polyneuropathie (douleurs pieds, hypoesthésie)
 > 	- [ ] Troubles mnésiques/diplopie
 > 	- [ ] Troubles de coordination/ataxie
-> - [ ] **61. Symptômes urinaires et généraux *(Addiction / Sevrage OH)***
+> - [ ] **60. Symptômes urinaires et généraux *(Addiction / Sevrage OH)***
 > 	- [ ] Production/couleur urinaire
 > 	- [ ] Vertiges
-> - [ ] **62. Antécédents personnels *(Addiction / Sevrage OH)***
+> - [ ] **61. Antécédents personnels *(Addiction / Sevrage OH)***
 > 	- [ ] Maladies préexistantes
 > 	- [ ] Troubles psychiatriques/autres addictions
 > 	- [ ] Pathologies hépatiques/pancréatiques
 > 	- [ ] Chirurgies
 > 	- [ ] Allergies
 > 	- [ ] Médicaments actuels
-> - [ ] **63. Autres toxiques *(Addiction / Sevrage OH)***
+> - [ ] **62. Autres toxiques *(Addiction / Sevrage OH)***
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **64. Antécédents familiaux *(Addiction / Sevrage OH)***
+> - [ ] **63. Antécédents familiaux *(Addiction / Sevrage OH)***
 > 	- [ ] Troubles psychiatriques
 > 	- [ ] Alcoolisme familial
 > 	- [ ] Pathologies hépatiques/pancréatiques
-> - [ ] **65. Contexte socio-professionnel *(Addiction / Sevrage OH)***
+> - [ ] **64. Contexte socio-professionnel *(Addiction / Sevrage OH)***
 > 	- [ ] Formation/parcours professionnel
 > 	- [ ] Situation professionnelle actuelle
 > 	- [ ] Réseau social
 > 	- [ ] Logement
 > 	- [ ] Situation financière
-> - [ ] **66. Anamnèse par systèmes *(Addiction / Sevrage OH)***
+> - [ ] **65. Anamnèse par systèmes *(Addiction / Sevrage OH)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Examen abdominal complet *(Addiction / Sevrage OH)***

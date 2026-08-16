@@ -149,7 +149,7 @@ cssclasses:
 > 	- [ ] Drogues récréatives
 > 	- [ ] Tabac
 > 	- [ ] Exercice
-> 	- [ ] Alimentation
+> 	- [ ] Menstruation
 > 	- [ ] Quantité avant d'arrêter *(Hémorragie sous-arachnoïdienne)*
 > - [ ] **10. Recherche de symptômes spécifiques pour céphalée sévère aiguë *(Hémorragie sous-arachnoïdienne)***
 > 	- [ ] Fièvre/frissons
@@ -183,7 +183,7 @@ cssclasses:
 > - [ ] **25. Retentissement des symptômes *(1 grille sur 6)***
 > - [ ] **26. Symptômes associés *(4 grilles sur 6)***
 > 	- [ ] Nausées *(Céphalée du restaurant chinois)*
-> 	- [ ] Vomissements *(Céphalée du restaurant chinois)*
+> 	- [ ] Nausées/vomissements *(Céphalée du restaurant chinois · Thrombose veineuse cérébrale)*
 > 	- [ ] Photophobie *(Céphalée du restaurant chinois · Méningite)*
 > 	- [ ] Larmoiement *(Céphalée du restaurant chinois)*
 > 	- [ ] Douleurs à la mastication *(Céphalée du restaurant chinois)*
@@ -191,7 +191,6 @@ cssclasses:
 > 	- [ ] Transpiration *(Méningite)*
 > 	- [ ] Faiblesse générale *(Méningite)*
 > 	- [ ] Confusion légère *(Méningite)*
-> 	- [ ] Nausées/vomissements *(Thrombose veineuse cérébrale)*
 > 	- [ ] Photophobie/phonophobie *(Thrombose veineuse cérébrale)*
 > 	- [ ] Symptômes neurologiques *(Thrombose veineuse cérébrale)*
 > 	- [ ] Fièvre *(Thrombose veineuse cérébrale)*
@@ -199,12 +198,12 @@ cssclasses:
 > - [ ] **27. Nausées / vomissements *(1 grille sur 6)***
 > - [ ] **28. Photophobie *(1 grille sur 6)***
 > - [ ] **29. Phonophobie *(1 grille sur 6)***
-> - [ ] **30. Symptômes d'aura *(1 grille sur 6)***
+> - [ ] **30. Symptômes d'aura *(2 grilles sur 6)***
 > - [ ] **31. Symptômes autonomes *(1 grille sur 6)***
 > - [ ] **32. Anamnèse des déclencheurs *(1 grille sur 6)***
 > - [ ] **33. Sommeil *(1 grille sur 6)***
 > - [ ] **34. Stress *(1 grille sur 6)***
-> - [ ] **35. Menstruation *(1 grille sur 6)***
+> - [ ] **35. Menstruation *(2 grilles sur 6)***
 > - [ ] **36. Alimentation / caféine / alcool *(1 grille sur 6)***
 > - [ ] **37. Signes d'alarme des céphalées *(1 grille sur 6)***
 > - [ ] **38. Début en coup de tonnerre *(1 grille sur 6)***
@@ -245,41 +244,39 @@ cssclasses:
 > - [ ] **66. Crises convulsives *(Céphalée du restaurant chinois)***
 > - [ ] **67. Douleurs aux épaules et muscles *(Céphalée du restaurant chinois)***
 > - [ ] **68. Stress, consommation de caféine *(Céphalée du restaurant chinois)***
-> - [ ] **69. Alimentation *(Céphalée du restaurant chinois)***
-> - [ ] **70. Piqûre de tique *(Céphalée du restaurant chinois)***
-> - [ ] **71. Contraceptifs oraux (chez la femme) *(Céphalée du restaurant chinois)***
-> - [ ] **72. Toxiques *(Céphalée du restaurant chinois)***
-> - [ ] **73. Anamnèse personnelle *(Méningite)***
+> - [ ] **69. Piqûre de tique *(Céphalée du restaurant chinois)***
+> - [ ] **70. Contraceptifs oraux (chez la femme) *(Céphalée du restaurant chinois)***
+> - [ ] **71. Toxiques *(Céphalée du restaurant chinois)***
+> - [ ] **72. Anamnèse personnelle *(Méningite)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **74. Symptômes B *(Méningite)***
-> - [ ] **75. Questions sur infections herpétiques *(Méningite)***
+> - [ ] **73. Questions sur infections herpétiques *(Méningite)***
 > 	- [ ] Herpès
 > 	- [ ] Varicelle-zona (VZV)
-> - [ ] **76. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
+> - [ ] **74. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
 > 	- [ ] Céphalée nouvelle/différente
 > 	- [ ] Céphalée décrite comme la pire
 > 	- [ ] Céphalée en coup de tonnerre
 > 	- [ ] Céphalée déclenchée par effort/exercice/activité sexuelle
 > 	- [ ] Céphalée déclenchée/aggravée par Valsalva ou position
-> - [ ] **77. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
+> - [ ] **75. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
 > 	- [ ] Migraines chroniques
 > 	- [ ] Caractéristiques des migraines habituelles
 > 	- [ ] Traitement habituel
 > 	- [ ] Efficacité du traitement actuel
-> - [ ] **78. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
+> - [ ] **76. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
 > 	- [ ] Contraception orale
 > 	- [ ] Tabagisme
 > 	- [ ] Antécédents familiaux vasculaires
 > 	- [ ] HTA/diabète/dyslipidémie
-> - [ ] **79. Contexte *(Thrombose veineuse cérébrale)***
+> - [ ] **77. Contexte *(Thrombose veineuse cérébrale)***
 > 	- [ ] Grossesse/post-partum
 > 	- [ ] Immunosuppression/cancer
 > 	- [ ] Traumatisme crânien récent
 > 	- [ ] Voyage/contage
 > 	- [ ] Vaccins
-> - [ ] **80. Anamnèse par système *(Thrombose veineuse cérébrale)***
+> - [ ] **78. Anamnèse par système *(Thrombose veineuse cérébrale)***
 > 	- [ ] État général
 > 	- [ ] Système digestif
 > 	- [ ] Système gynécologique
@@ -314,8 +311,11 @@ cssclasses:
 > 	- [ ] Méningisme *(Hémorragie sous-arachnoïdienne)*
 > 	- [ ] Signe de Kernig *(Hémorragie sous-arachnoïdienne)*
 > 	- [ ] Signe de Brudzinski *(Hémorragie sous-arachnoïdienne)*
-> - [ ] **5. Examen cardiovasculaire *(Hémorragie sous-arachnoïdienne)***
-> 	- [ ] Auscultation cardiaque
+> - [ ] **5. Examen cardiovasculaire *(Hémorragie sous-arachnoïdienne · Thrombose veineuse cérébrale)***
+> 	- [ ] Auscultation cardiaque *(Hémorragie sous-arachnoïdienne)*
+> 	- [ ] Palpation artères temporales *(Thrombose veineuse cérébrale)*
+> 	- [ ] Auscultation carotidienne *(Thrombose veineuse cérébrale)*
+> 	- [ ] Recherche de souffle vasculaire *(Thrombose veineuse cérébrale)*
 > - [ ] **6. Méningisme *(2 grilles sur 6)***
 > - [ ] **7. Pupilles *(1 grille sur 6)***
 > - [ ] **8. Oculomotricité *(1 grille sur 6)***
@@ -367,11 +367,7 @@ cssclasses:
 > 	- [ ] Raideur de nuque
 > 	- [ ] Signe de Kernig
 > 	- [ ] Signe de Brudzinski
-> - [ ] **37. Examen vasculaire *(Thrombose veineuse cérébrale)***
-> 	- [ ] Palpation artères temporales
-> 	- [ ] Auscultation carotidienne
-> 	- [ ] Recherche de souffle vasculaire
-> - [ ] **38. Autres examens pertinents *(Thrombose veineuse cérébrale)***
+> - [ ] **37. Autres examens pertinents *(Thrombose veineuse cérébrale)***
 > 	- [ ] Fond d'œil/œdème papillaire
 > 	- [ ] Démarche et épreuves cérébelleuses
 > 	- [ ] Recherche d'un rash cutané

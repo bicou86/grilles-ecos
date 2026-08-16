@@ -117,7 +117,10 @@ cssclasses:
 > - [ ] **32. Alcool *(Nodule suspect de malignité dans le sein droit)***
 > - [ ] **33. Nicotine *(Nodule suspect de malignité dans le sein droit)***
 > - [ ] **34. Allergies *(Nodule suspect de malignité dans le sein droit)***
-> - [ ] **35. Cancers familiaux *(Nodule suspect de malignité dans le sein droit)***
+> - [ ] **35. Antécédents familiaux**
+> 	- [ ] Antécédents parentaux *(Masse mammaire suspecte de carcinome)*
+> 	- [ ] Cancer du sein familial *(Masse mammaire suspecte de carcinome)*
+> 	- [ ] Mutation génétique connue *(Masse mammaire suspecte de carcinome)*
 > - [ ] **36. Carcinome mammaire *(Nodule suspect de malignité dans le sein droit)***
 > - [ ] **37. Carcinome de l’ovaire *(Nodule suspect de malignité dans le sein droit)***
 > - [ ] **38. Test génétique *(Nodule suspect de malignité dans le sein droit)***
@@ -163,10 +166,6 @@ cssclasses:
 > 	- [ ] Consommation de substances
 > 	- [ ] Allergies connues
 > 	- [ ] Habitudes alimentaires
-> - [ ] **54. Antécédents familiaux *(Masse mammaire suspecte de carcinome)***
-> 	- [ ] Antécédents parentaux
-> 	- [ ] Cancer du sein familial
-> 	- [ ] Mutation génétique connue
 
 > [!tip] 🩺 Status
 > - [ ] **1. Réalisation *(Nodule suspect de malignité dans le sein droit)***

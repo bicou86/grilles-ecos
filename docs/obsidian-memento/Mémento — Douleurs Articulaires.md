@@ -95,7 +95,7 @@ cssclasses:
 > - [ ] **8. Irradiation *(Polymyalgia rheumatica · Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
 > - [ ] **9. Intensité / Sévérité *(Polymyalgia rheumatica)***
 > - [ ] **10. Qualité *(Polymyalgia rheumatica)***
-> - [ ] **11. Facteurs aggravants *(Polymyalgia rheumatica)***
+> - [ ] **11. Facteurs aggravants/atténuants *(Polymyalgia rheumatica · Tendinopathie d'insertion du tendon d'Achille)***
 > - [ ] **12. Facteurs soulageants *(Polymyalgia rheumatica)***
 > - [ ] **13. Mesures prises jusqu'à présent *(Polymyalgia rheumatica)***
 > - [ ] **14. Retentissement des plaintes *(Polymyalgia rheumatica)***
@@ -151,9 +151,10 @@ cssclasses:
 > - [ ] **59. Caractère de la douleur *(Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
 > - [ ] **60. Facteurs d'amélioration ou d'aggravation *(Épicondylite latérale)***
 > - [ ] **61. Apparition temporelle et contexte *(Épicondylite latérale)***
-> - [ ] **62. Antécédents de traumatisme *(Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
+> - [ ] **62. Antécédents de traumatisme *(Polyarthrite rhumatoïde · Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
 > 	- [ ] Traumatisme actuel *(Épicondylite latérale)*
 > 	- [ ] Traumatisme antérieur *(Épicondylite latérale)*
+> 	- [ ] Antécédents personnels et familiaux sans particularité *(Polyarthrite rhumatoïde)*
 > - [ ] **63. Déficit fonctionnel et gonflement *(Épicondylite latérale)***
 > - [ ] **64. Modalités des symptômes *(Épicondylite latérale)***
 > 	- [ ] À l'effort
@@ -166,36 +167,33 @@ cssclasses:
 > 	- [ ] Traitement déjà essayé
 > - [ ] **68. Consommation de substances *(Épicondylite latérale)***
 > - [ ] **69. Début et évolution temporelle *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **70. Facteurs aggravants/atténuants *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **71. Douleur à l'effort vs au repos *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **72. Retentissement sur les activités quotidiennes *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **73. Type de chaussures portées *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **74. Autres plaintes articulaires *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **75. Activités sportives *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **76. Habitudes et toxiques *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **77. Activité professionnelle *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **78. Motif de consultation *(Polyarthrite rhumatoïde)***
-> - [ ] **79. Caractérisation de la douleur - critères inflammatoires *(Polyarthrite rhumatoïde)***
+> - [ ] **70. Douleur à l'effort vs au repos *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **71. Retentissement sur les activités quotidiennes *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **72. Type de chaussures portées *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **73. Autres plaintes articulaires *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **74. Activités sportives *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **75. Habitudes et toxiques *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **76. Activité professionnelle *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **77. Motif de consultation *(Polyarthrite rhumatoïde)***
+> - [ ] **78. Caractérisation de la douleur - critères inflammatoires *(Polyarthrite rhumatoïde)***
 > 	- [ ] Début
 > 	- [ ] Localisation
 > 	- [ ] Extension
 > 	- [ ] Atteinte symétrique
 > 	- [ ] Type inflammatoire
 > 	- [ ] Horaire inflammatoire
-> - [ ] **80. Raideur matinale caractéristique *(Polyarthrite rhumatoïde)***
+> - [ ] **79. Raideur matinale caractéristique *(Polyarthrite rhumatoïde)***
 > 	- [ ] Raideur matinale importante
 > 	- [ ] Durée environ 2 heures
 > 	- [ ] Difficultés pour mouvoir les articulations le matin
 > 	- [ ] Amélioration progressive avec l'activité
 > 	- [ ] Mouvements plus faciles et douleurs diminuent après-midi
-> - [ ] **81. Symptômes généraux *(Polyarthrite rhumatoïde)***
+> - [ ] **80. Symptômes généraux *(Polyarthrite rhumatoïde)***
 > 	- [ ] Asthénie
-> - [ ] **82. Traitement essayé *(Polyarthrite rhumatoïde)***
+> - [ ] **81. Traitement essayé *(Polyarthrite rhumatoïde)***
 > 	- [ ] Anti-inflammatoires (antalgiques)
 > 	- [ ] Nécessité de prise régulière
-> - [ ] **83. Antécédents et terrain *(Polyarthrite rhumatoïde)***
-> 	- [ ] Antécédents personnels et familiaux sans particularité
-> - [ ] **84. Facteurs de risque et exposition *(Polyarthrite rhumatoïde)***
+> - [ ] **82. Facteurs de risque et exposition *(Polyarthrite rhumatoïde)***
 > 	- [ ] Sexe féminin
 > 	- [ ] Âge 45 ans (pic d'incidence 40-60 ans)
 > 	- [ ] Recherche tabagisme
@@ -217,7 +215,13 @@ cssclasses:
 > 	- [ ] Épicondyle médial de l'humérus *(Épicondylite latérale)*
 > - [ ] **5. Mobilité *(Polymyalgia rheumatica)***
 > - [ ] **6. Test de force orienté *(Polymyalgia rheumatica)***
-> - [ ] **7. Se lever / Analyse de la marche *(Polymyalgia rheumatica)***
+> - [ ] **7. Se lever / Analyse de la marche *(Polymyalgia rheumatica · Tendinopathie d'insertion du tendon d'Achille)***
+> 	- [ ] Marche sur les orteils *(Tendinopathie d'insertion du tendon d'Achille)*
+> 	- [ ] Marche sur les talons *(Tendinopathie d'insertion du tendon d'Achille)*
+> 	- [ ] Évaluation des axes du bassin *(Tendinopathie d'insertion du tendon d'Achille)*
+> 	- [ ] Évaluation des axes des jambes *(Tendinopathie d'insertion du tendon d'Achille)*
+> 	- [ ] Évaluation des axes de l'arrière-pied *(Tendinopathie d'insertion du tendon d'Achille)*
+> 	- [ ] Évaluation de la musculature *(Tendinopathie d'insertion du tendon d'Achille)*
 > - [ ] **8. Mobilité des articulations de la hanche *(Polymyalgia rheumatica)***
 > - [ ] **9. Examen orienté des mains et des poignets *(Polyarthrite rhumatoïde · Polymyalgia rheumatica)***
 > 	- [ ] Tuméfaction des articulations MCP *(Polyarthrite rhumatoïde)*
@@ -246,14 +250,7 @@ cssclasses:
 > 	- [ ] Signe de Tinel sur le nerf tibial postérieur *(Tendinopathie d'insertion du tendon d'Achille)*
 > 	- [ ] Sensibilité plantaire *(Tendinopathie d'insertion du tendon d'Achille)*
 > 	- [ ] Réflexe achilléen *(Tendinopathie d'insertion du tendon d'Achille)*
-> - [ ] **19. Analyse de la marche *(Tendinopathie d'insertion du tendon d'Achille)***
-> 	- [ ] Marche sur les orteils
-> 	- [ ] Marche sur les talons
-> 	- [ ] Évaluation des axes du bassin
-> 	- [ ] Évaluation des axes des jambes
-> 	- [ ] Évaluation des axes de l'arrière-pied
-> 	- [ ] Évaluation de la musculature
-> - [ ] **20. Inspection globale du pied en position debout *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **19. Inspection globale du pied en position debout *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Recherche de pied étalé (Spreizfuss)
 > 	- [ ] Recherche de pied plat (Senkfuss)
 > 	- [ ] Recherche de pied valgus (Knickfuss)
@@ -261,63 +258,63 @@ cssclasses:
 > 	- [ ] Recherche de pied bot (Klumpfuss)
 > 	- [ ] Abduction du médio-pied (signe 'too-many-toes')
 > 	- [ ] Forme des orteils (marteau, griffe)
-> - [ ] **21. Inspection de la plante du pied en position assise *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **20. Inspection de la plante du pied en position assise *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Recherche d'hyperkératose
 > 	- [ ] Recherche d'exanthèmes
 > 	- [ ] Recherche de mycoses
-> - [ ] **22. Palpation systématique *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **21. Palpation systématique *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Articulation tibio-tarsienne
 > 	- [ ] Test de Gänslen
 > 	- [ ] Tendon d'Achille (recherche de nodules, points douloureux)
 > 	- [ ] Tendon du tibial postérieur
 > 	- [ ] Fascia plantaire
-> - [ ] **23. Examen de la mobilité articulaire *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **22. Examen de la mobilité articulaire *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Extension/flexion de la cheville
 > 	- [ ] Inversion/éversion
 > 	- [ ] Pronation/supination
-> - [ ] **24. Examen fonctionnel - Tests de force *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **23. Examen fonctionnel - Tests de force *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Contraction résistive isométrique de l'extenseur de l'hallux
 > 	- [ ] Test des muscles péroniers
 > 	- [ ] Test de montée sur la pointe des pieds (heel rise test)
-> - [ ] **25. Tests ligamentaires *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **24. Tests ligamentaires *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Stabilité des ligaments collatéraux latéraux
 > 	- [ ] Test du tiroir antérieur
 > 	- [ ] Test de varus-valgus
-> - [ ] **26. Test de Thompson *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **25. Test de Thompson *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Compression du mollet pour évaluer l'intégrité du tendon d'Achille
-> - [ ] **27. Pouls périphériques *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **26. Pouls périphériques *(Tendinopathie d'insertion du tendon d'Achille)***
 > 	- [ ] Pouls tibial postérieur
 > 	- [ ] Pouls pédieux
-> - [ ] **28. Inspection générale *(Polyarthrite rhumatoïde)***
+> - [ ] **27. Inspection générale *(Polyarthrite rhumatoïde)***
 > 	- [ ] État général conservé
 > 	- [ ] Pas de pâleur
 > 	- [ ] Pas d'amaigrissement visible
 > 	- [ ] Attitude antalgique des mains
-> - [ ] **29. Palpation articulaire des mains *(Polyarthrite rhumatoïde)***
+> - [ ] **28. Palpation articulaire des mains *(Polyarthrite rhumatoïde)***
 > 	- [ ] Douleur à la pression des MCP
 > 	- [ ] Douleur à la pression des IPP
 > 	- [ ] Squeeze test positif
 > 	- [ ] Synovite palpable
 > 	- [ ] Ténosynovite des fléchisseurs/extenseurs possible
-> - [ ] **30. Mobilité articulaire des mains *(Polyarthrite rhumatoïde)***
+> - [ ] **29. Mobilité articulaire des mains *(Polyarthrite rhumatoïde)***
 > 	- [ ] Limitation de la flexion des doigts
 > 	- [ ] Limitation de l'extension
 > 	- [ ] Déficit de fermeture du poing
 > 	- [ ] Douleur à la mobilisation passive
 > 	- [ ] Raideur matinale objective lors de l'examen matinal
-> - [ ] **31. Examen des autres articulations *(Polyarthrite rhumatoïde)***
+> - [ ] **30. Examen des autres articulations *(Polyarthrite rhumatoïde)***
 > 	- [ ] Genoux: épanchement articulaire possible
 > 	- [ ] Coudes: synovite, nodules rhumatoïdes
 > 	- [ ] Épaules: limitation des mouvements
 > 	- [ ] Pieds: douleur des MTP
 > 	- [ ] Rachis cervical: recherche subluxation C1-C2
-> - [ ] **32. Recherche de manifestations extra-articulaires *(Polyarthrite rhumatoïde)***
+> - [ ] **31. Recherche de manifestations extra-articulaires *(Polyarthrite rhumatoïde)***
 > 	- [ ] Nodules rhumatoïdes
 > 	- [ ] Syndrome sec
 > 	- [ ] Vascularite
 > 	- [ ] Atteinte pulmonaire
 > 	- [ ] Syndrome de Raynaud
-> - [ ] **33. Tests fonctionnels spécifiques *(Polyarthrite rhumatoïde)***
+> - [ ] **32. Tests fonctionnels spécifiques *(Polyarthrite rhumatoïde)***
 > 	- [ ] Force de préhension
 > 	- [ ] Test de Finkelstein
 > 	- [ ] Test de Phalen
@@ -325,22 +322,21 @@ cssclasses:
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Traitement de la polyarthrite rhumatoïde *(2 grilles sur 4)* — *Polyarthrite rhumatoïde · Polymyalgia rheumatica***
+> - [ ] **2. Diagnostics différentiels des polyarthrites *(3 grilles sur 4)* — *Polyarthrite rhumatoïde · Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale***
 
 > [!success] 💊 Management — si Épicondylite latérale
 > - [ ] **1. Diagnostic suspecté**
 > 	- [ ] Épicondylite latérale (tennis elbow)
-> - [ ] **2. Diagnostics différentiels**
-> - [ ] **3. Examens diagnostiques**
+> - [ ] **2. Examens diagnostiques**
 > 	- [ ] Éventuellement radiographie pour exclure d'autres pathologies articulaires
-> - [ ] **4. Prise en charge thérapeutique conservatrice**
+> - [ ] **3. Prise en charge thérapeutique conservatrice**
 > 	- [ ] Application de froid
 > 	- [ ] Anti-inflammatoires locaux
 > 	- [ ] Bon pronostic, durée semaines à mois
 > 	- [ ] Charge sportive uniquement jusqu'à absence de douleur
 
 > [!success] 💊 Management — si Polyarthrite rhumatoïde
-> - [ ] **1. Diagnostics différentiels des polyarthrites**
-> - [ ] **2. Critères diagnostiques ACR/EULAR 2010**
+> - [ ] **1. Critères diagnostiques ACR/EULAR 2010**
 > 	- [ ] Atteinte articulaire (0-5 points)
 > 	- [ ] 2-10 grandes articulations: 1 point
 > 	- [ ] 1-3 petites articulations: 2 points
@@ -351,21 +347,21 @@ cssclasses:
 > 	- [ ] FR ou anti-CCP fortement positifs: 3 points
 > 	- [ ] Durée > 6 semaines: 1 point
 > 	- [ ] Syndrome inflammatoire (VS ou CRP élevées): 1 point
-> - [ ] **3. Examens complémentaires de première intention**
+> - [ ] **2. Examens complémentaires de première intention**
 > 	- [ ] Biologie inflammatoire: VS, CRP
 > 	- [ ] Auto-anticorps: Facteur rhumatoïde (FR), Anti-CCP
 > 	- [ ] FSC: recherche anémie inflammatoire
 > 	- [ ] Bilan hépatique et rénal (pré-thérapeutique)
 > 	- [ ] Radiographies mains/poignets face et pieds face
 > 	- [ ] Radiographie thorax (bilan pré-thérapeutique)
-> - [ ] **4. Surveillance et suivi**
+> - [ ] **3. Surveillance et suivi**
 > 	- [ ] Score d'activité DAS28 tous les 3 mois
 > 	- [ ] Objectif: rémission (DAS28 < 2.6)
 > 	- [ ] Surveillance tolérance traitement
 > 	- [ ] FSC, bilan hépatique sous méthotrexate
 > 	- [ ] Radiographies annuelles (progression structurale)
 > 	- [ ] Dépistage complications: ostéoporose, infections
-> - [ ] **5. Pronostic et complications**
+> - [ ] **4. Pronostic et complications**
 > 	- [ ] Évolution par poussées-rémissions
 > 	- [ ] Destruction articulaire progressive sans traitement
 > 	- [ ] Déformations: déviation cubitale, col de cygne
@@ -405,31 +401,30 @@ cssclasses:
 > 	- [ ] Évaluation de l'efficacité du traitement
 > 	- [ ] Orientation vers spécialiste si échec du traitement conservateur
 > - [ ] **2. Diagnostic principal**
-> - [ ] **3. Diagnostics différentiels (au moins 2)**
-> - [ ] **4. Examens complémentaires**
+> - [ ] **3. Examens complémentaires**
 > 	- [ ] Radiographie du talon (profil et face) pour exclure fracture ou calcifications
 > 	- [ ] Échographie du tendon d'Achille
 > 	- [ ] IRM si suspicion de rupture partielle ou si échec du traitement conservateur
-> - [ ] **5. Traitement médicamenteux**
+> - [ ] **4. Traitement médicamenteux**
 > 	- [ ] AINS (ex: ibuprofène 600mg 3x/jour ou diclofénac)
 > 	- [ ] Antalgiques si nécessaire
 > 	- [ ] Application locale d'anti-inflammatoires
-> - [ ] **6. Traitement non médicamenteux**
+> - [ ] **5. Traitement non médicamenteux**
 > 	- [ ] Repos relatif et arrêt temporaire du sport
 > 	- [ ] Adaptation des chaussures (éviter talons hauts, semelles amortissantes)
 > 	- [ ] Talonnette de décharge
 > 	- [ ] Application de glace (cryothérapie)
 > 	- [ ] Étirements progressifs du triceps sural
-> - [ ] **7. Mesures socio-professionnelles**
+> - [ ] **6. Mesures socio-professionnelles**
 > 	- [ ] Arrêt de travail temporaire
 > 	- [ ] Interdiction de sport pendant 4-6 semaines
 > 	- [ ] Adaptation du poste de travail (éviter station debout prolongée)
-> - [ ] **8. Prise en charge à moyen terme**
+> - [ ] **7. Prise en charge à moyen terme**
 > 	- [ ] Physiothérapie (renforcement excentrique, ondes de choc)
 > 	- [ ] Rééducation progressive
 > 	- [ ] Correction des troubles statiques du pied si nécessaire
 > 	- [ ] Infiltration de corticoïdes péri-tendineuse (pas intra-tendineuse)
-> - [ ] **9. Information et conseils au patient**
+> - [ ] **8. Information et conseils au patient**
 > 	- [ ] Explication du diagnostic et du mécanisme lésionnel
 > 	- [ ] Importance du repos et du traitement
 > 	- [ ] Évolution généralement favorable en 6-12 semaines

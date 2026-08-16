@@ -167,10 +167,13 @@ cssclasses:
 > 	- [ ] Maladies génétiques *(Hépatite (virale/alcoolique))*
 > 	- [ ] Père décédé d'un cancer du pancréas diagnostiqué après ictère *(Néoplasie des voies biliaires/pancréatique)*
 > 	- [ ] Mère décédée d'un AVC *(Néoplasie des voies biliaires/pancréatique)*
-> - [ ] **16. Anamnèse sociale *(Hépatite (virale/alcoolique))***
-> 	- [ ] Profession
-> 	- [ ] Conditions de vie
-> 	- [ ] Statut en Suisse
+> - [ ] **16. Anamnèse uro-génitale**
+> 	- [ ] Profession *(Hépatite (virale/alcoolique))*
+> 	- [ ] Conditions de vie *(Hépatite (virale/alcoolique))*
+> 	- [ ] Statut en Suisse *(Hépatite (virale/alcoolique))*
+> 	- [ ] Couleur des urines *(Néoplasie des voies biliaires/pancréatique)*
+> 	- [ ] Sang dans les urines *(Néoplasie des voies biliaires/pancréatique)*
+> 	- [ ] Dernières règles *(Néoplasie des voies biliaires/pancréatique)*
 > - [ ] **17. Ictère *(Néoplasie des voies biliaires/pancréatique)***
 > 	- [ ] Début
 > 	- [ ] Localisation
@@ -181,16 +184,12 @@ cssclasses:
 > - [ ] **18. Ictère - précisions *(Néoplasie des voies biliaires/pancréatique)***
 > 	- [ ] Symptômes associés
 > 	- [ ] Premier épisode vs récurrent
-> - [ ] **19. Anamnèse uro-génitale *(Néoplasie des voies biliaires/pancréatique)***
-> 	- [ ] Couleur des urines
-> 	- [ ] Sang dans les urines
-> 	- [ ] Dernières règles
-> - [ ] **20. DD : hépatites *(Néoplasie des voies biliaires/pancréatique)***
+> - [ ] **19. DD : hépatites *(Néoplasie des voies biliaires/pancréatique)***
 > 	- [ ] Vaccins hépatites A et B
 > 	- [ ] Drogues IV
 > 	- [ ] Rapports sexuels à risque
 > 	- [ ] Voyages dans des zones endémiques
-> - [ ] **21. Habitudes *(Néoplasie des voies biliaires/pancréatique)***
+> - [ ] **20. Habitudes *(Néoplasie des voies biliaires/pancréatique)***
 > 	- [ ] Alimentaires
 > 	- [ ] Médicaments
 

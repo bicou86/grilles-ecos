@@ -64,7 +64,7 @@ cssclasses:
 > - [[Mémento — Fièvre]] (3 grilles) — hors contexte de voyage
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Présentation avec nom, fonction et objectif de la consultation *(1 grille sur 2)***
+> - [ ] **1. Présentation professionnelle avec nom, fonction et objectif de la consultation**
 > - [ ] **2. Identification du projet de voyage *(1 grille sur 2)***
 > 	- [ ] Destination et durée
 > 	- [ ] Délai avant le départ
@@ -90,12 +90,17 @@ cssclasses:
 > 	- [ ] Vaccinations de base complètes *(1 grille sur 2)*
 > 	- [ ] Vaccinations spécifiques voyages antérieures *(1 grille sur 2)*
 > 	- [ ] Date du dernier rappel tétanos *(1 grille sur 2)*
-> - [ ] **5. Antécédents médicaux et état de santé *(1 grille sur 2)***
-> 	- [ ] Maladies chroniques
-> 	- [ ] Allergies médicamenteuses
-> 	- [ ] Médicaments actuels
-> 	- [ ] Contraception
-> 	- [ ] Antécédents chirurgicaux
+> - [ ] **5. Antécédents médicaux et état de santé**
+> 	- [ ] Maladies chroniques *(1 grille sur 2)*
+> 	- [ ] Allergies médicamenteuses *(1 grille sur 2)*
+> 	- [ ] Médicaments actuels *(1 grille sur 2)*
+> 	- [ ] Contraception *(1 grille sur 2)*
+> 	- [ ] Antécédents chirurgicaux *(1 grille sur 2)*
+> 	- [ ] Maladies chroniques père *(1 grille sur 2)*
+> 	- [ ] Maladies chroniques fils *(1 grille sur 2)*
+> 	- [ ] Allergies père *(1 grille sur 2)*
+> 	- [ ] Allergies fils *(1 grille sur 2)*
+> 	- [ ] Médicaments réguliers *(1 grille sur 2)*
 > - [ ] **6. Expériences de voyages internationaux antérieurs**
 > 	- [ ] Voyages précédents *(1 grille sur 2)*
 > 	- [ ] Premier grand voyage *(1 grille sur 2)*
@@ -124,28 +129,21 @@ cssclasses:
 > 	- [ ] Contacts sur place
 > 	- [ ] Niveau de portugais
 > 	- [ ] Budget santé/assurance
-> - [ ] **10. Présentation professionnelle avec nom, fonction et objectif de la consultation *(1 grille sur 2)***
-> - [ ] **11. Identification du motif de consultation *(1 grille sur 2)***
+> - [ ] **10. Identification du motif de consultation *(1 grille sur 2)***
 > 	- [ ] Destination et durée
 > 	- [ ] Délai avant le départ
 > 	- [ ] Nombre et âge des voyageurs
-> - [ ] **12. Antécédents médicaux et allergies *(1 grille sur 2)***
-> 	- [ ] Maladies chroniques père
-> 	- [ ] Maladies chroniques fils
-> 	- [ ] Allergies père
-> 	- [ ] Allergies fils
-> 	- [ ] Médicaments réguliers
-> - [ ] **13. Type et conditions du voyage planifié *(1 grille sur 2)***
+> - [ ] **11. Type et conditions du voyage planifié *(1 grille sur 2)***
 > 	- [ ] Activités prévues
 > 	- [ ] Type d'hébergement
 > 	- [ ] Zones visitées (urbaines/rurales)
 > 	- [ ] Altitude des destinations
 > 	- [ ] Contact avec animaux prévu
-> - [ ] **14. Durée et période du voyage *(1 grille sur 2)***
+> - [ ] **12. Durée et période du voyage *(1 grille sur 2)***
 > 	- [ ] Saison à Madagascar
 > 	- [ ] Durée totale
 > 	- [ ] Itinéraire prévu
-> - [ ] **15. État de santé actuel des voyageurs *(1 grille sur 2)***
+> - [ ] **13. État de santé actuel des voyageurs *(1 grille sur 2)***
 > 	- [ ] Symptômes actuels
 > 	- [ ] Capacité physique pour les activités prévues
 > 	- [ ] Grossesse (non applicable ici)
@@ -282,12 +280,17 @@ cssclasses:
 > 	- [ ] Contacts d'urgence locaux
 > 	- [ ] Comportement en soirée
 > 	- [ ] Transport sécurisé (Uber vs taxi)
-> - [ ] **4. Documentation et assurances *(1 grille sur 2)***
-> 	- [ ] Assurance voyage complète obligatoire
-> 	- [ ] Assistance rapatriement incluse
-> 	- [ ] Couverture activités à risque
-> 	- [ ] Copie documents importants
-> 	- [ ] Contacts ambassade/consulat
+> - [ ] **4. Documentation et ressources**
+> 	- [ ] Assurance voyage complète obligatoire *(1 grille sur 2)*
+> 	- [ ] Assistance rapatriement incluse *(1 grille sur 2)*
+> 	- [ ] Couverture activités à risque *(1 grille sur 2)*
+> 	- [ ] Copie documents importants *(1 grille sur 2)*
+> 	- [ ] Contacts ambassade/consulat *(1 grille sur 2)*
+> 	- [ ] Brochures d'information sur Madagascar *(1 grille sur 2)*
+> 	- [ ] Coordonnées ambassade/consulat *(1 grille sur 2)*
+> 	- [ ] Assurance voyage et rapatriement *(1 grille sur 2)*
+> 	- [ ] Centres médicaux sur place *(1 grille sur 2)*
+> 	- [ ] Application mobile conseils voyageurs *(1 grille sur 2)*
 > - [ ] **5. Conduite à tenir en cas de problème *(1 grille sur 2)***
 > 	- [ ] Fièvre au retour = consultation urgente
 > 	- [ ] Diarrhée persistante
@@ -301,12 +304,16 @@ cssclasses:
 > 	- [ ] Cours de portugais médical basique
 > 	- [ ] Forums voyageurs expérimentés
 > 	- [ ] Groupes Facebook Brésil
-> - [ ] **7. Planification du suivi médical *(1 grille sur 2)***
-> 	- [ ] Prochains RDV vaccinations
-> 	- [ ] Check-up avant départ
-> 	- [ ] Bilan au retour si symptômes
-> 	- [ ] Test VIH 3 mois après retour
-> 	- [ ] Disponibilité questions par email
+> - [ ] **7. Planification du suivi médical**
+> 	- [ ] Prochains RDV vaccinations *(1 grille sur 2)*
+> 	- [ ] Check-up avant départ *(1 grille sur 2)*
+> 	- [ ] Bilan au retour si symptômes *(1 grille sur 2)*
+> 	- [ ] Test VIH 3 mois après retour *(1 grille sur 2)*
+> 	- [ ] Disponibilité questions par email *(1 grille sur 2)*
+> 	- [ ] Rendez-vous pour vaccinations manquantes *(1 grille sur 2)*
+> 	- [ ] Consultation au retour si symptômes *(1 grille sur 2)*
+> 	- [ ] Rappel surveillance fièvre jusqu'à 3 mois post-retour *(1 grille sur 2)*
+> 	- [ ] Disponibilité pour questions *(1 grille sur 2)*
 > - [ ] **8. Prescriptions médicamenteuses *(1 grille sur 2)***
 > 	- [ ] Ordonnance chimioprophylaxie antipaludique
 > 	- [ ] Ordonnance trousse de pharmacie
@@ -318,19 +325,8 @@ cssclasses:
 > 	- [ ] Surveillance état général
 > 	- [ ] Activités adaptées à l'âge
 > 	- [ ] Gestion du décalage horaire
-> - [ ] **10. Documentation et ressources *(1 grille sur 2)***
-> 	- [ ] Brochures d'information sur Madagascar
-> 	- [ ] Coordonnées ambassade/consulat
-> 	- [ ] Assurance voyage et rapatriement
-> 	- [ ] Centres médicaux sur place
-> 	- [ ] Application mobile conseils voyageurs
-> - [ ] **11. Plan d'urgence et conduite à tenir *(1 grille sur 2)***
+> - [ ] **10. Plan d'urgence et conduite à tenir *(1 grille sur 2)***
 > 	- [ ] Signes d'alerte nécessitant consultation
 > 	- [ ] Conduite en cas de fièvre au retour
 > 	- [ ] Numéros d'urgence locaux
 > 	- [ ] Procédure rapatriement sanitaire
-> - [ ] **12. Planification du suivi *(1 grille sur 2)***
-> 	- [ ] Rendez-vous pour vaccinations manquantes
-> 	- [ ] Consultation au retour si symptômes
-> 	- [ ] Rappel surveillance fièvre jusqu'à 3 mois post-retour
-> 	- [ ] Disponibilité pour questions

@@ -205,7 +205,12 @@ cssclasses:
 
 > [!tip] 🩺 Status
 > - [ ] **1. Paramètres vitaux *(Colique néphrétique sur calcul urétéral distal gauche)***
-> - [ ] **2. Examen de base *(Colique néphrétique sur calcul urétéral distal gauche)***
+> - [ ] **2. Examen de la vessie *(2 grilles sur 3)***
+> 	- [ ] Percussion sus-pubienne *(1 grille sur 3)*
+> 	- [ ] Palpation sus-pubienne *(1 grille sur 3)*
+> 	- [ ] Évaluation du volume vésical *(1 grille sur 3)*
+> 	- [ ] Recherche de douleur vésicale *(1 grille sur 3)*
+> 	- [ ] Signes de rétention urinaire *(1 grille sur 3)*
 > - [ ] **3. Inspection *(Colique néphrétique sur calcul urétéral distal gauche)***
 > - [ ] **4. Auscultation *(Colique néphrétique sur calcul urétéral distal gauche)***
 > - [ ] **5. Percussion *(Colique néphrétique sur calcul urétéral distal gauche)***
@@ -245,33 +250,27 @@ cssclasses:
 > 	- [ ] Palpation superficielle
 > 	- [ ] Palpation profonde
 > 	- [ ] Recherche douleur et masses
-> - [ ] **31. Examen de la vessie *(1 grille sur 3)***
-> 	- [ ] Percussion sus-pubienne
-> 	- [ ] Palpation sus-pubienne
-> 	- [ ] Évaluation du volume vésical
-> 	- [ ] Recherche de douleur vésicale
-> 	- [ ] Signes de rétention urinaire
-> - [ ] **32. Examen des loges rénales *(1 grille sur 3)***
+> - [ ] **31. Examen des loges rénales *(1 grille sur 3)***
 > 	- [ ] Palpation bimanuelle
 > 	- [ ] Recherche rein palpable
 > 	- [ ] Percussion loges rénales
 > 	- [ ] Recherche douleur à la percussion
 > 	- [ ] Comparaison bilatérale
-> - [ ] **33. Toucher rectal - technique *(1 grille sur 3)***
+> - [ ] **32. Toucher rectal - technique *(1 grille sur 3)***
 > 	- [ ] Positionnement patient et explications
 > 	- [ ] Inspection péri-anale
 > 	- [ ] Évaluation tonus sphinctérien
 > 	- [ ] Palpation rectum
 > 	- [ ] Palpation cul-de-sac de Douglas
 > 	- [ ] Inspection doigtier
-> - [ ] **34. Examen de la prostate au toucher rectal *(1 grille sur 3)***
+> - [ ] **33. Examen de la prostate au toucher rectal *(1 grille sur 3)***
 > 	- [ ] Taille prostate
 > 	- [ ] Consistance
 > 	- [ ] Surface
 > 	- [ ] Sensibilité
 > 	- [ ] Masse suspecte
 > 	- [ ] Sillon médian
-> - [ ] **35. Examen complémentaire orienté *(1 grille sur 3)***
+> - [ ] **34. Examen complémentaire orienté *(1 grille sur 3)***
 > 	- [ ] Palpation ganglionnaire inguinale
 > 	- [ ] Examen des organes génitaux externes
 > 	- [ ] Recherche œdèmes membres inférieurs

@@ -137,37 +137,56 @@ cssclasses:
 > 	- [ ] Fréquence
 > 	- [ ] Évolution dans le temps
 > 	- [ ] Saisonnalité éventuelle
-> - [ ] **29. Facteurs d'amélioration et d'aggravation *(Asthme)***
-> 	- [ ] Ce qui améliore
-> 	- [ ] Ce qui aggrave
-> 	- [ ] Position particulière
-> 	- [ ] Influence de l'environnement
-> - [ ] **30. Caractéristiques de la toux *(Asthme)***
-> 	- [ ] Type de toux
+> - [ ] **29. Facteurs d'amélioration et d'aggravation *(Asthme · BPCO)***
+> 	- [ ] Ce qui améliore *(Asthme)*
+> 	- [ ] Ce qui aggrave *(Asthme)*
+> 	- [ ] Position particulière *(Asthme)*
+> 	- [ ] Influence de l'environnement *(Asthme)*
+> 	- [ ] Position assise/debout *(BPCO)*
+> 	- [ ] Air frais *(BPCO)*
+> 	- [ ] Repos *(BPCO)*
+> 	- [ ] Médicaments éventuels *(BPCO)*
+> - [ ] **30. Caractéristiques de l'expectoration *(Asthme · BPCO)***
+> 	- [ ] Type de toux *(Asthme)*
 > 	- [ ] Hémoptysie
-> 	- [ ] Moment de survenue
-> 	- [ ] Association avec la dyspnée
+> 	- [ ] Moment de survenue *(Asthme)*
+> 	- [ ] Association avec la dyspnée *(Asthme)*
+> 	- [ ] Aspect *(BPCO)*
+> 	- [ ] Quantité *(BPCO)*
+> 	- [ ] Odeur *(BPCO)*
 > - [ ] **31. Symptômes nocturnes et sommeil *(Asthme)***
 > 	- [ ] Réveils nocturnes
 > 	- [ ] Dyspnée nocturne
 > 	- [ ] Orthopnée
 > 	- [ ] Qualité du sommeil
-> - [ ] **32. Symptômes associés - ORL et respiratoires *(Asthme)***
-> 	- [ ] Infections ORL récentes
-> 	- [ ] Fréquence des infections
-> 	- [ ] Fièvre
-> 	- [ ] Rhinorrhée postérieure
+> - [ ] **32. Symptômes associés - ORL et respiratoires *(2 grilles sur 5)***
+> 	- [ ] Infections ORL récentes *(Asthme)*
+> 	- [ ] Fréquence des infections *(Asthme)*
+> 	- [ ] Fièvre *(Asthme)*
+> 	- [ ] Rhinorrhée postérieure *(Asthme)*
+> 	- [ ] Toux chronique *(1 grille sur 5)*
+> 	- [ ] Expectorations *(1 grille sur 5)*
+> 	- [ ] Hémoptysie *(1 grille sur 5)*
+> 	- [ ] Sifflements respiratoires *(1 grille sur 5)*
+> 	- [ ] Infections respiratoires récurrentes *(1 grille sur 5)*
 > - [ ] **33. Symptômes associés - État général *(Asthme)***
 > 	- [ ] Performance physique
 > 	- [ ] Appétit
 > 	- [ ] Évolution pondérale
 > 	- [ ] Fatigue inhabituelle
-> - [ ] **34. Symptômes associés - Autres *(Asthme)***
-> 	- [ ] Sensation de corps étranger
-> 	- [ ] Dysphagie
-> 	- [ ] Ronflement
-> 	- [ ] Douleurs thoraciques
-> 	- [ ] Bruits respiratoires
+> - [ ] **34. Symptômes associés cardiovasculaires *(3 grilles sur 5)***
+> 	- [ ] Sensation de corps étranger *(Asthme)*
+> 	- [ ] Dysphagie *(Asthme)*
+> 	- [ ] Ronflement *(Asthme)*
+> 	- [ ] Douleurs thoraciques *(2 grilles sur 5)*
+> 	- [ ] Bruits respiratoires *(Asthme)*
+> 	- [ ] Fatigue importante *(1 grille sur 5)*
+> 	- [ ] Toux sèche nocturne *(1 grille sur 5)*
+> 	- [ ] Palpitations *(2 grilles sur 5)*
+> 	- [ ] Nycturie *(1 grille sur 5)*
+> 	- [ ] Syncopes ou lipothymies *(1 grille sur 5)*
+> 	- [ ] Claudication intermittente *(1 grille sur 5)*
+> 	- [ ] Œdèmes membres inférieurs *(1 grille sur 5)*
 > - [ ] **35. Facteurs de risque thromboemboliques *(Asthme)***
 > 	- [ ] Vol long récent
 > 	- [ ] Immobilisation prolongée
@@ -191,11 +210,14 @@ cssclasses:
 > 	- [ ] Pathologies respiratoires *(1 grille sur 5)*
 > 	- [ ] Hospitalisations antérieures *(1 grille sur 5)*
 > 	- [ ] Allergies médicamenteuses *(1 grille sur 5)*
-> - [ ] **38. Traitements et habitudes *(Asthme)***
-> 	- [ ] Médicaments actuels
-> 	- [ ] Tabagisme
-> 	- [ ] Alcool
-> 	- [ ] Drogues
+> - [ ] **38. Traitements et habitudes *(2 grilles sur 5)***
+> 	- [ ] Médicaments actuels *(Asthme)*
+> 	- [ ] Tabagisme *(Asthme)*
+> 	- [ ] Alcool *(Asthme)*
+> 	- [ ] Drogues *(Asthme)*
+> 	- [ ] IEC (ramipril 5mg/j) *(1 grille sur 5)*
+> 	- [ ] Bêtabloquant (bisoprolol 5mg/j) *(1 grille sur 5)*
+> 	- [ ] Statine (atorvastatine 40mg/j) *(1 grille sur 5)*
 > - [ ] **39. Allergies détaillées *(Asthme)***
 > 	- [ ] Allergies respiratoires
 > 	- [ ] Allergies alimentaires
@@ -209,11 +231,14 @@ cssclasses:
 > 	- [ ] Autres maladies héréditaires *(Asthme)*
 > 	- [ ] Cancer bronchique *(BPCO)*
 > 	- [ ] Pathologies cardiovasculaires *(BPCO)*
-> - [ ] **41. Contexte social et environnemental *(Asthme)***
+> - [ ] **41. Contexte social et environnemental *(Asthme · BPCO)***
 > 	- [ ] Situation familiale
-> 	- [ ] Profession
-> 	- [ ] Projets
-> 	- [ ] Animaux domestiques
+> 	- [ ] Profession *(Asthme)*
+> 	- [ ] Projets *(Asthme)*
+> 	- [ ] Animaux domestiques *(Asthme)*
+> 	- [ ] Activité professionnelle actuelle *(BPCO)*
+> 	- [ ] Conditions de vie *(BPCO)*
+> 	- [ ] Antécédents judiciaires *(BPCO)*
 > - [ ] **42. Questions finales et résumé *(Asthme)***
 > 	- [ ] Autres informations importantes
 > 	- [ ] Questions du patient
@@ -236,53 +261,38 @@ cssclasses:
 > 	- [ ] Caractère
 > 	- [ ] Moment privilégié
 > 	- [ ] Évolution récente
-> - [ ] **46. Caractéristiques de l'expectoration *(BPCO)***
-> 	- [ ] Aspect
-> 	- [ ] Quantité
-> 	- [ ] Odeur
-> 	- [ ] Hémoptysie
-> - [ ] **47. Facteurs déclenchants et aggravants *(BPCO)***
+> - [ ] **46. Facteurs déclenchants et aggravants *(BPCO)***
 > 	- [ ] Temps froid
 > 	- [ ] Tabagisme passif
 > 	- [ ] Après refroidissements
 > 	- [ ] Effort physique
 > 	- [ ] Position couchée
-> - [ ] **48. Facteurs d'amélioration *(BPCO)***
-> 	- [ ] Position assise/debout
-> 	- [ ] Air frais
-> 	- [ ] Repos
-> 	- [ ] Médicaments éventuels
-> - [ ] **49. Impact fonctionnel *(BPCO)***
+> - [ ] **47. Impact fonctionnel *(BPCO)***
 > 	- [ ] Performance physique
 > 	- [ ] Activités quotidiennes limitées
 > 	- [ ] Qualité de vie
 > 	- [ ] Activités abandonnées
-> - [ ] **50. Exacerbations et hospitalisations *(BPCO)***
+> - [ ] **48. Exacerbations et hospitalisations *(BPCO)***
 > 	- [ ] Épisodes de bronchite
 > 	- [ ] Prise d'antibiotiques
 > 	- [ ] Hospitalisations
 > 	- [ ] Recours aux urgences
-> - [ ] **51. Activités physiques et loisirs *(BPCO)***
+> - [ ] **49. Activités physiques et loisirs *(BPCO)***
 > 	- [ ] Sport actuel
 > 	- [ ] Activités antérieures
 > 	- [ ] Limitations progressives
 > 	- [ ] Sédentarité
-> - [ ] **52. Habitudes et toxiques *(BPCO)***
+> - [ ] **50. Habitudes et toxiques *(BPCO)***
 > 	- [ ] Tabagisme actif
 > 	- [ ] Tentatives d'arrêt
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Toxicomanie
-> - [ ] **53. Allergies et traitements actuels *(BPCO)***
+> - [ ] **51. Allergies et traitements actuels *(BPCO)***
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Intolérances
 > 	- [ ] Médicaments actuels
 > 	- [ ] Observance thérapeutique
-> - [ ] **54. Contexte social et professionnel *(BPCO)***
-> 	- [ ] Situation familiale
-> 	- [ ] Activité professionnelle actuelle
-> 	- [ ] Conditions de vie
-> 	- [ ] Antécédents judiciaires
-> - [ ] **55. Facteurs de risque cardiovasculaire *(3 grilles sur 5)***
+> - [ ] **52. Facteurs de risque cardiovasculaire *(3 grilles sur 5)***
 > 	- [ ] Hypertension artérielle *(2 grilles sur 5)*
 > 	- [ ] Diabète *(2 grilles sur 5)*
 > 	- [ ] Dyslipidémie *(2 grilles sur 5)*
@@ -292,70 +302,49 @@ cssclasses:
 > 	- [ ] Surpoids *(1 grille sur 5)*
 > 	- [ ] Stress professionnel *(1 grille sur 5)*
 > 	- [ ] Antécédents familiaux *(1 grille sur 5)*
-> - [ ] **56. Symptômes d'insuffisance cardiaque *(BPCO)***
+> - [ ] **53. Symptômes d'insuffisance cardiaque *(BPCO)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Prise de poids récente
 > 	- [ ] Nycturie
 > 	- [ ] Fatigue inhabituelle
-> - [ ] **57. Motif de consultation *(1 grille sur 5)***
-> - [ ] **58. Œdèmes des membres inférieurs *(1 grille sur 5)***
+> - [ ] **54. Motif de consultation *(1 grille sur 5)***
+> - [ ] **55. Œdèmes des membres inférieurs *(1 grille sur 5)***
 > 	- [ ] Apparition progressive
 > 	- [ ] Bilatéraux et symétriques
 > 	- [ ] Prennent le godet
 > 	- [ ] Plus importants le soir
 > 	- [ ] Diminution le matin
 > 	- [ ] Prise de poids
-> - [ ] **59. Symptômes associés *(1 grille sur 5)***
-> 	- [ ] Fatigue importante
-> 	- [ ] Toux sèche nocturne
-> 	- [ ] Palpitations
-> 	- [ ] Nycturie
-> - [ ] **60. Classification NYHA *(1 grille sur 5)***
+> - [ ] **56. Classification NYHA *(1 grille sur 5)***
 > 	- [ ] Classe I: Pas de limitation
 > 	- [ ] Classe II: Limitation légère
 > 	- [ ] Classe III: Limitation marquée
 > 	- [ ] Classe IV: Symptômes au repos
-> - [ ] **61. Antécédents cardiovasculaires *(1 grille sur 5)***
+> - [ ] **57. Antécédents cardiovasculaires *(1 grille sur 5)***
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] Angioplastie coronaire
 > 	- [ ] Dyslipidémie
 > 	- [ ] Diabète type 2
-> - [ ] **62. Traitement actuel *(1 grille sur 5)***
-> 	- [ ] IEC (ramipril 5mg/j)
-> 	- [ ] Bêtabloquant (bisoprolol 5mg/j)
-> 	- [ ] Statine (atorvastatine 40mg/j)
-> - [ ] **63. Recherche d'éléments discriminants cardiaques vs respiratoires *(1 grille sur 5)***
+> - [ ] **58. Recherche d'éléments discriminants cardiaques vs respiratoires *(1 grille sur 5)***
 > 	- [ ] Éléments cardiaques
 > 	- [ ] Éléments respiratoires
 > 	- [ ] Prise de poids récente
 > 	- [ ] Position de sommeil
 > 	- [ ] Tolérance à l'effort antérieure
-> - [ ] **64. Symptômes associés cardiovasculaires *(1 grille sur 5)***
-> 	- [ ] Douleurs thoraciques
-> 	- [ ] Palpitations
-> 	- [ ] Syncopes ou lipothymies
-> 	- [ ] Claudication intermittente
-> 	- [ ] Œdèmes membres inférieurs
-> - [ ] **65. Symptômes associés respiratoires *(1 grille sur 5)***
-> 	- [ ] Toux chronique
-> 	- [ ] Expectorations
-> 	- [ ] Hémoptysie
-> 	- [ ] Sifflements respiratoires
-> 	- [ ] Infections respiratoires récurrentes
-> - [ ] **66. Habitudes et mode de vie *(1 grille sur 5)***
+> - [ ] **59. Habitudes et mode de vie *(1 grille sur 5)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
 > 	- [ ] Médicaments actuels
 > 	- [ ] Expositions professionnelles
-> - [ ] **67. Contexte psychosocial *(1 grille sur 5)***
+> - [ ] **60. Contexte psychosocial *(1 grille sur 5)***
 > 	- [ ] Situation professionnelle
 > 	- [ ] Situation financière
 > 	- [ ] Isolement social
 > 	- [ ] Stress et anxiété
 > 	- [ ] Observance thérapeutique potentielle
-> - [ ] **68. Intégration anamnèse cardio-respiratoire *(1 grille sur 5)***
+> - [ ] **61. Intégration anamnèse cardio-respiratoire *(1 grille sur 5)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Palpation *(1 grille sur 5)***
@@ -364,7 +353,7 @@ cssclasses:
 > - [ ] **4. Inspection du thorax *(1 grille sur 5)***
 > - [ ] **5. Vibrations vocales *(1 grille sur 5)***
 > - [ ] **6. Percussion du thorax *(1 grille sur 5)***
-> - [ ] **7. Auscultation pulmonaire *(4 grilles sur 5)***
+> - [ ] **7. Auscultation pulmonaire**
 > 	- [ ] Auscultation antérieure systématique *(Asthme)*
 > 	- [ ] Auscultation postérieure systématique *(Asthme)*
 > 	- [ ] Identification de sibilants *(Asthme)*
@@ -372,11 +361,15 @@ cssclasses:
 > 	- [ ] Auscultation antérieure complète *(BPCO)*
 > 	- [ ] Auscultation postérieure complète *(BPCO)*
 > 	- [ ] Bruits surajoutés *(BPCO)*
-> 	- [ ] Murmure vésiculaire *(BPCO)*
+> 	- [ ] Murmure vésiculaire *(2 grilles sur 5)*
 > 	- [ ] Râles crépitants bilatéraux *(1 grille sur 5)*
 > 	- [ ] Diminution du murmure vésiculaire *(1 grille sur 5)*
 > 	- [ ] Matité des bases *(1 grille sur 5)*
 > 	- [ ] Pas de sibilants *(1 grille sur 5)*
+> 	- [ ] Sibilances expiratoires *(1 grille sur 5)*
+> 	- [ ] Râles crépitants *(1 grille sur 5)*
+> 	- [ ] Ronchi *(1 grille sur 5)*
+> 	- [ ] Expiration prolongée *(1 grille sur 5)*
 > - [ ] **8. Auscultation cardiaque *(2 grilles sur 5)***
 > 	- [ ] Bruits du cœur assourdis *(1 grille sur 5)*
 > 	- [ ] Galop (B3) *(1 grille sur 5)*
@@ -387,11 +380,15 @@ cssclasses:
 > - [ ] **11. Reflux hépato-jugulaire *(1 grille sur 5)***
 > - [ ] **12. Contrôle de la plaie *(1 grille sur 5)***
 > - [ ] **13. Contrôle d'hématome *(1 grille sur 5)***
-> - [ ] **14. Examen cardiaque *(Asthme)***
-> 	- [ ] Palpation du choc de pointe
-> 	- [ ] Auscultation cardiaque systématique
-> 	- [ ] Recherche de souffles
-> 	- [ ] Rythme et fréquence
+> - [ ] **14. Examen cardiovasculaire *(Asthme · BPCO)***
+> 	- [ ] Palpation du choc de pointe *(Asthme)*
+> 	- [ ] Auscultation cardiaque systématique *(Asthme)*
+> 	- [ ] Recherche de souffles *(Asthme)*
+> 	- [ ] Rythme et fréquence *(Asthme)*
+> 	- [ ] Auscultation cardiaque *(BPCO)*
+> 	- [ ] Recherche de signes d'HTAP *(BPCO)*
+> 	- [ ] Pouls périphériques *(BPCO)*
+> 	- [ ] Pression artérielle *(BPCO)*
 > - [ ] **15. Examen pulmonaire - Inspection *(Asthme)***
 > 	- [ ] Symétrie des mouvements respiratoires
 > 	- [ ] Utilisation des muscles accessoires
@@ -422,12 +419,21 @@ cssclasses:
 > 	- [ ] Ganglions sous-mandibulaires
 > 	- [ ] Ganglions sus-claviculaires
 > 	- [ ] Ganglions axillaires
-> - [ ] **21. Inspection générale et pulmonaire *(BPCO)***
-> 	- [ ] État général du patient
-> 	- [ ] Coloration cutanée
-> 	- [ ] Morphologie thoracique
-> 	- [ ] Type de respiration
-> 	- [ ] Fréquence respiratoire
+> - [ ] **21. Inspection générale et pulmonaire *(3 grilles sur 5)***
+> 	- [ ] État général du patient *(BPCO)*
+> 	- [ ] Coloration cutanée *(2 grilles sur 5)*
+> 	- [ ] Morphologie thoracique *(BPCO)*
+> 	- [ ] Type de respiration *(BPCO)*
+> 	- [ ] Fréquence respiratoire *(2 grilles sur 5)*
+> 	- [ ] Patient en position semi-assise *(1 grille sur 5)*
+> 	- [ ] Dyspnée de repos modérée *(1 grille sur 5)*
+> 	- [ ] Cyanose légère des extrémités *(1 grille sur 5)*
+> 	- [ ] Turgescence jugulaire *(1 grille sur 5)*
+> 	- [ ] Reflux hépato-jugulaire *(1 grille sur 5)*
+> 	- [ ] État général *(1 grille sur 5)*
+> 	- [ ] Pouls jugulaire *(1 grille sur 5)*
+> 	- [ ] Tirage sus-sternal *(1 grille sur 5)*
+> 	- [ ] Extrémités *(1 grille sur 5)*
 > - [ ] **22. Palpation thoracique *(BPCO)***
 > 	- [ ] Vibrations vocales
 > 	- [ ] Ampliation thoracique
@@ -448,73 +454,49 @@ cssclasses:
 > 	- [ ] Cyanose des extrémités
 > 	- [ ] Hippocratisme digital
 > 	- [ ] Température des extrémités
-> - [ ] **26. Examen cardiovasculaire *(BPCO)***
-> 	- [ ] Auscultation cardiaque
-> 	- [ ] Recherche de signes d'HTAP
-> 	- [ ] Pouls périphériques
-> 	- [ ] Pression artérielle
-> - [ ] **27. Signes vitaux *(1 grille sur 5)***
+> - [ ] **26. Signes vitaux *(1 grille sur 5)***
 > 	- [ ] SpO2 94% en air ambiant
-> - [ ] **28. Inspection générale *(1 grille sur 5)***
-> 	- [ ] Patient en position semi-assise
-> 	- [ ] Dyspnée de repos modérée
-> 	- [ ] Cyanose légère des extrémités
-> 	- [ ] Turgescence jugulaire
-> 	- [ ] Reflux hépato-jugulaire
-> - [ ] **29. Examen abdominal *(1 grille sur 5)***
+> - [ ] **27. Examen abdominal *(1 grille sur 5)***
 > 	- [ ] Hépatomégalie
 > 	- [ ] Sensibilité hépatique
 > 	- [ ] Ascite modérée
 > 	- [ ] Pas de splénomégalie
-> - [ ] **30. Examen des membres inférieurs *(1 grille sur 5)***
+> - [ ] **28. Examen des membres inférieurs *(1 grille sur 5)***
 > 	- [ ] Œdèmes bilatéraux prenant le godet
 > 	- [ ] Symétriques et blancs
 > 	- [ ] Mous et indolores
 > 	- [ ] Pouls périphériques présents
 > 	- [ ] Pas de signes de phlébite
-> - [ ] **31. Inspection générale intégrée *(1 grille sur 5)***
-> 	- [ ] État général
-> 	- [ ] Fréquence respiratoire
-> 	- [ ] Coloration cutanée
-> 	- [ ] Pouls jugulaire
-> 	- [ ] Tirage sus-sternal
-> 	- [ ] Extrémités
-> - [ ] **32. Examen cardiovasculaire - position couchée 45° *(1 grille sur 5)***
+> - [ ] **29. Examen cardiovasculaire - position couchée 45° *(1 grille sur 5)***
 > 	- [ ] Inspection aire cardiaque et pouls jugulaire
 > 	- [ ] Palpation précordiale et choc de pointe
 > 	- [ ] Palpation pouls carotidien
 > 	- [ ] Auscultation 4 foyers en décubitus dorsal
 > 	- [ ] Recherche B3/B4 en décubitus latéral gauche
-> - [ ] **33. Auscultation cardiaque - bruits pathologiques *(1 grille sur 5)***
+> - [ ] **30. Auscultation cardiaque - bruits pathologiques *(1 grille sur 5)***
 > 	- [ ] B1 et B2
 > 	- [ ] Souffle systolique aortique
 > 	- [ ] Souffle systolique mitral
 > 	- [ ] Galop B3 ou B4
 > 	- [ ] Frottement péricardique
-> - [ ] **34. Examen respiratoire - position assise *(1 grille sur 5)***
+> - [ ] **31. Examen respiratoire - position assise *(1 grille sur 5)***
 > 	- [ ] Inspection mouvements respiratoires
 > 	- [ ] Inspection forme thorax
 > 	- [ ] Palpation ampliation thoracique
 > 	- [ ] Palpation vibrations vocales
 > 	- [ ] Percussion postérieure et antérieure
-> - [ ] **35. Auscultation pulmonaire - bruits pathologiques *(1 grille sur 5)***
-> 	- [ ] Murmure vésiculaire
-> 	- [ ] Sibilances expiratoires
-> 	- [ ] Râles crépitants
-> 	- [ ] Ronchi
-> 	- [ ] Expiration prolongée
-> - [ ] **36. Signes périphériques d'insuffisance cardiaque *(1 grille sur 5)***
+> - [ ] **32. Signes périphériques d'insuffisance cardiaque *(1 grille sur 5)***
 > 	- [ ] Œdèmes membres inférieurs
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Hépatomégalie
 > 	- [ ] Ascite
 > 	- [ ] Pouls périphériques
-> - [ ] **37. Intégration de l'examen physique *(1 grille sur 5)***
+> - [ ] **33. Intégration de l'examen physique *(1 grille sur 5)***
 > 	- [ ] Séquence optimale pour confort patient
 > 	- [ ] Passage fluide entre positions
 > 	- [ ] Examen complet sans répétitions inutiles
 > 	- [ ] Éléments prioritaires selon contexte
-> - [ ] **38. Technique d'examen intégré cardio-respiratoire *(1 grille sur 5)***
+> - [ ] **34. Technique d'examen intégré cardio-respiratoire *(1 grille sur 5)***
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Diagnostics différentiels *(3 grilles sur 5)* — *Asthme · BPCO · Insuffisance cardiaque (décompensée)***
@@ -563,8 +545,8 @@ cssclasses:
 > 	- [ ] Facteurs de risque identifiés
 > 	- [ ] Présentation typique
 > - [ ] **2. Examens complémentaires - Fonction respiratoire**
+> 	- [ ] Test de réversibilité aux bêta-2 mimétiques
 > 	- [ ] Spirométrie complète
-> 	- [ ] Test de réversibilité aux bronchodilatateurs
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] Test de marche de 6 minutes
 > - [ ] **3. Traitement médicamenteux proposé**

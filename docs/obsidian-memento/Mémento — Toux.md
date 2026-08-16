@@ -103,7 +103,7 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(3 grilles sur 13)***
-> - [ ] **2. Caractérisation de la toux *(8 grilles sur 13)***
+> - [ ] **2. Caractérisation de la toux *(9 grilles sur 13)***
 > 	- [ ] Toux productive d'expectorations *(1 grille sur 13)*
 > 	- [ ] Couleur des expectorations *(3 grilles sur 13)*
 > 	- [ ] Volume des expectorations *(2 grilles sur 13)*
@@ -114,24 +114,30 @@ cssclasses:
 > 	- [ ] Progression *(2 grilles sur 13)*
 > 	- [ ] Épisodes antérieurs *(2 grilles sur 13)*
 > 	- [ ] Fréquence *(2 grilles sur 13)*
-> 	- [ ] Facteurs d'amélioration *(2 grilles sur 13)*
+> 	- [ ] Facteurs d'amélioration *(3 grilles sur 13)*
 > 	- [ ] Facteurs aggravants *(2 grilles sur 13)*
 > 	- [ ] Toux productive *(BPCO)*
-> 	- [ ] Évolution *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Évolution *(3 grilles sur 13)*
 > 	- [ ] Prédominance horaire *(Insuffisance cardiaque (décompensée) · Tuberculose)*
 > 	- [ ] Caractère continu ou paroxystique *(Tuberculose)*
 > 	- [ ] Installation *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Productive ou sèche *(2 grilles sur 13)*
 > 	- [ ] Début et fréquence *(1 grille sur 13)*
-> 	- [ ] Antécédents similaires *(1 grille sur 13)*
+> 	- [ ] Antécédents respiratoires *(1 grille sur 13)*
 > 	- [ ] Son *(Faux-croup)*
 > 	- [ ] Type *(Faux-croup)*
 > 	- [ ] Type de toux *(1 grille sur 13)*
 > 	- [ ] Horaire *(1 grille sur 13)*
-> 	- [ ] Facteurs déclenchants *(1 grille sur 13)*
 > 	- [ ] Durée et évolution *(1 grille sur 13)*
 > 	- [ ] Efficacité de la toux *(1 grille sur 13)*
-> - [ ] **3. Symptômes associés *(4 grilles sur 13)***
+> 	- [ ] Début et durée *(1 grille sur 13)*
+> 	- [ ] Quantité *(1 grille sur 13)*
+> 	- [ ] Aspect du sang *(1 grille sur 13)*
+> - [ ] **3. Symptômes associés - Sibilances *(6 grilles sur 13)***
+> 	- [ ] Rhinite *(Tuberculose)*
+> 	- [ ] Pharyngite *(Tuberculose)*
+> 	- [ ] Écoulement post-nasal *(Tuberculose)*
+> 	- [ ] Douleurs sinusiennes *(Tuberculose)*
 > 	- [ ] Anxiété *(1 grille sur 13)*
 > 	- [ ] Nervosité *(1 grille sur 13)*
 > 	- [ ] Sueurs *(1 grille sur 13)*
@@ -181,28 +187,28 @@ cssclasses:
 > 	- [ ] Maladies pulmonaires familiales *(Tuberculose)*
 > 	- [ ] Tuberculose familiale *(Tuberculose)*
 > 	- [ ] Allergies familiales *(2 grilles sur 13)*
-> 	- [ ] Maladies génétiques *(Tuberculose)*
-> 	- [ ] Maladies cardiovasculaires *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Maladies héréditaires *(2 grilles sur 13)*
+> 	- [ ] Pathologies cardiovasculaires *(2 grilles sur 13)*
 > 	- [ ] Diabète *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Hypertension *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Mort subite *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Mère *(1 grille sur 13)*
 > 	- [ ] Père *(1 grille sur 13)*
 > 	- [ ] Pathologies pulmonaires *(1 grille sur 13)*
-> 	- [ ] Pathologies cardiovasculaires *(1 grille sur 13)*
 > 	- [ ] Cancers *(1 grille sur 13)*
-> 	- [ ] Maladies héréditaires *(1 grille sur 13)*
-> - [ ] **11. Habitudes et mode de vie *(5 grilles sur 13)***
+> - [ ] **11. Habitudes et mode de vie *(6 grilles sur 13)***
 > 	- [ ] Occupation *(1 grille sur 13)*
 > 	- [ ] Domicile *(3 grilles sur 13)*
 > 	- [ ] Alcool
 > 	- [ ] Drogues illicites *(1 grille sur 13)*
-> 	- [ ] Tabac
+> 	- [ ] Tabac *(5 grilles sur 13)*
 > 	- [ ] Exercice *(2 grilles sur 13)*
 > 	- [ ] Travail *(2 grilles sur 13)*
 > 	- [ ] Drogues récréatives *(2 grilles sur 13)*
-> 	- [ ] Drogues *(2 grilles sur 13)*
-> - [ ] **12. Caractéristiques de la toux et des expectorations *(3 grilles sur 13)***
+> 	- [ ] Tabagisme *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Drogues *(3 grilles sur 13)*
+> 	- [ ] Activité physique actuelle *(Insuffisance cardiaque (décompensée))*
+> - [ ] **12. Caractéristiques de la toux et des expectorations *(5 grilles sur 13)***
 > 	- [ ] Productive *(1 grille sur 13)*
 > 	- [ ] Couleur *(1 grille sur 13)*
 > 	- [ ] Sang *(1 grille sur 13)*
@@ -215,13 +221,15 @@ cssclasses:
 > 	- [ ] Fréquence *(1 grille sur 13)*
 > 	- [ ] Facteurs d'amélioration *(1 grille sur 13)*
 > 	- [ ] Facteurs aggravants *(1 grille sur 13)*
-> 	- [ ] Symptômes associés *(1 grille sur 13)*
+> 	- [ ] Symptômes associés - Sibilances *(1 grille sur 13)*
 > 	- [ ] Type de toux *(Insuffisance cardiaque (décompensée) · Tuberculose)*
-> 	- [ ] Aspect des expectorations *(Tuberculose)*
-> 	- [ ] Quantité *(Insuffisance cardiaque (décompensée) · Tuberculose)*
-> 	- [ ] Odeur *(Tuberculose)*
-> 	- [ ] Couleur des expectorations *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Couleur des expectorations *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Quantité *(3 grilles sur 13)*
+> 	- [ ] Odeur *(2 grilles sur 13)*
 > 	- [ ] Aspect (mousseux, rosé) *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Couleur des crachats *(1 grille sur 13)*
+> 	- [ ] Présence de sang franc *(1 grille sur 13)*
+> 	- [ ] Évolution dans le temps *(1 grille sur 13)*
 > - [ ] **13. Recherche de symptômes spécifiques pour toux chronique et hémoptysie *(1 grille sur 13)***
 > 	- [ ] Voyage récent
 > 	- [ ] Fièvre/frissons
@@ -263,7 +271,11 @@ cssclasses:
 > - [ ] **27. Survenue situationnelle *(1 grille sur 13)***
 > - [ ] **28. Expectoration *(2 grilles sur 13)***
 > - [ ] **29. Aspect / couleur / hémoptysie *(1 grille sur 13)***
-> - [ ] **30. Signes d’infection *(1 grille sur 13)***
+> - [ ] **30. Signes d'infection ORL *(2 grilles sur 13)***
+> 	- [ ] Nez *(Faux-croup)*
+> 	- [ ] Gorge *(Faux-croup)*
+> 	- [ ] Cou *(Faux-croup)*
+> 	- [ ] Trachée *(Faux-croup)*
 > - [ ] **31. Fièvre *(3 grilles sur 13)***
 > 	- [ ] Début *(Coqueluche)*
 > 	- [ ] Évolution *(Coqueluche)*
@@ -282,13 +294,22 @@ cssclasses:
 > - [ ] **38. Dépendance respiratoire *(1 grille sur 13)***
 > - [ ] **39. Irradiation *(1 grille sur 13)***
 > - [ ] **40. Caractère de pression/serrements *(1 grille sur 13)***
-> - [ ] **41. Symptômes végétatifs associés *(1 grille sur 13)***
+> - [ ] **41. Symptômes respiratoires associés *(4 grilles sur 13)***
+> 	- [ ] Dyspnée *(Tuberculose)*
+> 	- [ ] Sifflements respiratoires *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Douleurs thoraciques *(2 grilles sur 13)*
+> 	- [ ] Sensation d'oppression *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Écoulement post-nasal *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Toux nocturne *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Dyspnée d'effort *(1 grille sur 13)*
+> 	- [ ] Sibilances *(1 grille sur 13)*
+> 	- [ ] Caractère de la douleur *(1 grille sur 13)*
 > - [ ] **42. Diagnostic différentiel facteurs de risque de thrombo-embolie *(1 grille sur 13)***
 > - [ ] **43. ATCD de MTEV *(1 grille sur 13)***
 > - [ ] **44. Immobilisation / opération *(1 grille sur 13)***
 > - [ ] **45. Voyage longue distance *(1 grille sur 13)***
 > - [ ] **46. Gonflement/douleur unilatéral(e) de jambe *(1 grille sur 13)***
-> - [ ] **47. Opérations antérieures *(1 grille sur 13)***
+> - [ ] **47. Hospitalisations antérieures *(2 grilles sur 13)***
 > - [ ] **48. Noxes *(1 grille sur 13)***
 > - [ ] **49. Alcool *(1 grille sur 13)***
 > - [ ] **50. Tabac *(1 grille sur 13)***
@@ -297,48 +318,37 @@ cssclasses:
 > - [ ] **53. Environnement / contexte social *(1 grille sur 13)***
 > - [ ] **54. Présentation avec nom, fonction et tâche *(5 grilles sur 13)***
 > - [ ] **55. Question d'entrée ouverte - Symptôme principal *(Insuffisance cardiaque (décompensée) · Tuberculose)***
-> - [ ] **56. Épisodes antérieurs de toux ou problèmes respiratoires *(Tuberculose)***
-> 	- [ ] Bronchites récurrentes
-> 	- [ ] Fréquence des épisodes
-> 	- [ ] Sévérité antérieure
-> 	- [ ] Traitements utilisés
+> - [ ] **56. Épisodes antérieurs de toux ou problèmes respiratoires *(3 grilles sur 13)***
+> 	- [ ] Bronchites récurrentes *(Tuberculose)*
+> 	- [ ] Fréquence des épisodes *(Tuberculose)*
+> 	- [ ] Sévérité antérieure *(Tuberculose)*
+> 	- [ ] Traitements utilisés *(Tuberculose)*
+> 	- [ ] Première fois avec ces caractéristiques *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Problèmes respiratoires antérieurs *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Hospitalisations pour dyspnée *(Insuffisance cardiaque (décompensée))*
 > - [ ] **57. Hémoptysie *(3 grilles sur 13)***
-> 	- [ ] Présence de sang *(Tuberculose)*
+> 	- [ ] Présence de sang franc *(Insuffisance cardiaque (décompensée) · Tuberculose)*
 > 	- [ ] Quantité si présente *(Tuberculose)*
 > 	- [ ] Aspect (strié, franc) *(Tuberculose)*
 > 	- [ ] Fréquence *(Tuberculose)*
-> 	- [ ] Présence de sang franc *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Expectorations rosées *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Quantification *(Insuffisance cardiaque (décompensée))*
-> - [ ] **58. Symptômes respiratoires associés *(2 grilles sur 13)***
-> 	- [ ] Dyspnée *(Tuberculose)*
-> 	- [ ] Sifflements respiratoires *(Tuberculose)*
-> 	- [ ] Douleurs thoraciques
-> 	- [ ] Sensation d'oppression *(Tuberculose)*
-> 	- [ ] Dyspnée d'effort *(1 grille sur 13)*
-> 	- [ ] Sibilances *(1 grille sur 13)*
-> 	- [ ] Caractère de la douleur *(1 grille sur 13)*
-> - [ ] **59. Facteurs modulateurs *(Tuberculose)***
+> - [ ] **58. Facteurs modulateurs *(Tuberculose)***
 > 	- [ ] Facteurs aggravants
 > 	- [ ] Facteurs d'amélioration
 > 	- [ ] Position
 > 	- [ ] Activité physique
-> - [ ] **60. Symptômes ORL associés *(Tuberculose)***
-> 	- [ ] Rhinite
-> 	- [ ] Pharyngite
-> 	- [ ] Écoulement post-nasal
-> 	- [ ] Douleurs sinusiennes
-> - [ ] **61. Symptômes généraux - Performance *(Tuberculose)***
+> - [ ] **59. Symptômes généraux - Performance *(Tuberculose)***
 > 	- [ ] Baisse de performance
 > 	- [ ] Fatigue inhabituelle
 > 	- [ ] Tolérance à l'effort diminuée
 > 	- [ ] Impact sur le travail
-> - [ ] **62. Symptômes généraux - Signes B *(Tuberculose)***
-> 	- [ ] Perte de poids
-> 	- [ ] Fièvre
-> 	- [ ] Sueurs nocturnes
-> 	- [ ] Anorexie
-> - [ ] **63. Symptômes cardiovasculaires *(Insuffisance cardiaque (décompensée) · Tuberculose)***
+> - [ ] **60. Symptômes généraux et signes d'alarme *(5 grilles sur 13)***
+> 	- [ ] Perte de poids *(3 grilles sur 13)*
+> 	- [ ] Fièvre *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Sueurs nocturnes *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Anorexie *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> - [ ] **61. Symptômes cardiovasculaires *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Palpitations
 > 	- [ ] Œdèmes *(Tuberculose)*
 > 	- [ ] Orthopnée *(Tuberculose)*
@@ -346,137 +356,113 @@ cssclasses:
 > 	- [ ] Douleurs thoraciques *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Syncopes ou malaises *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Claudication intermittente *(Insuffisance cardiaque (décompensée))*
-> - [ ] **64. Symptômes gastro-œsophagiens *(Insuffisance cardiaque (décompensée) · Tuberculose)***
-> 	- [ ] Reflux gastro-œsophagien
-> 	- [ ] Pyrosis
-> 	- [ ] Régurgitations
-> 	- [ ] Dysphagie
-> - [ ] **65. Exposition professionnelle et contages *(Tuberculose)***
-> 	- [ ] Contact avec patients tuberculeux
-> 	- [ ] Autres expositions antérieures
-> 	- [ ] Protection utilisée
-> 	- [ ] Dépistages antérieurs
-> - [ ] **66. Exposition environnementale *(Insuffisance cardiaque (décompensée) · Tuberculose)***
+> - [ ] **62. Symptômes associés - Reflux gastro-œsophagien *(3 grilles sur 13)***
+> 	- [ ] Reflux gastro-œsophagien *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Pyrosis *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Régurgitations *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> 	- [ ] Dysphagie *(Insuffisance cardiaque (décompensée) · Tuberculose)*
+> - [ ] **63. Exposition (professionnelle, environnementale) *(2 grilles sur 13)***
+> 	- [ ] Contact avec patients tuberculeux *(Tuberculose)*
+> 	- [ ] Autres expositions antérieures *(Tuberculose)*
+> 	- [ ] Protection utilisée *(Tuberculose)*
+> 	- [ ] Dépistages antérieurs *(Tuberculose)*
+> - [ ] **64. Exposition environnementale *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Poussières/irritants *(Tuberculose)*
 > 	- [ ] Animaux
 > 	- [ ] Moisissures *(Tuberculose)*
 > 	- [ ] Tabagisme passif
 > 	- [ ] Professionnelle (peintre) *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Amiante, solvants *(Insuffisance cardiaque (décompensée))*
-> - [ ] **67. Traitements médicamenteux *(Tuberculose)***
+> - [ ] **65. Traitements médicamenteux *(Tuberculose)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] IEC (toux médicamenteuse)
 > 	- [ ] Immunosuppresseurs
 > 	- [ ] Antibiotiques récents
-> - [ ] **68. Habitudes et toxiques *(Tuberculose)***
+> - [ ] **66. Habitudes et toxiques *(Tuberculose)***
 > 	- [ ] Tabagisme
 > 	- [ ] Alcool
 > 	- [ ] Drogues
 > 	- [ ] Exposition professionnelle aux toxiques
-> - [ ] **69. Contexte social *(Tuberculose)***
+> - [ ] **67. Contexte social *(Tuberculose)***
 > 	- [ ] Situation familiale
 > 	- [ ] Profession
 > 	- [ ] Conditions de logement
 > 	- [ ] Voyages récents
-> - [ ] **70. Épisodes antérieurs similaires *(Insuffisance cardiaque (décompensée))***
-> 	- [ ] Première fois avec ces caractéristiques
-> 	- [ ] Problèmes respiratoires antérieurs
-> 	- [ ] Hospitalisations pour dyspnée
-> - [ ] **71. Dyspnée - Caractérisation détaillée *(Insuffisance cardiaque (décompensée))***
+> - [ ] **68. Dyspnée - Caractérisation détaillée *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Présence
 > 	- [ ] Type
 > 	- [ ] Classe NYHA
 > 	- [ ] Progression récente
-> - [ ] **72. Facteurs positionnels *(Insuffisance cardiaque (décompensée))***
+> - [ ] **69. Facteurs positionnels *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Aggravation en décubitus
 > 	- [ ] Aggravation nocturne
 > 	- [ ] Aggravation à l'effort
 > 	- [ ] Nombre d'oreillers utilisés
-> - [ ] **73. Facteurs d'amélioration *(2 grilles sur 13)***
+> - [ ] **70. Facteurs d'amélioration *(2 grilles sur 13)***
 > 	- [ ] Position assise *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Repos *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Fenêtre ouverte *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Autres positions *(Insuffisance cardiaque (décompensée))*
-> - [ ] **74. Orthopnée et dyspnée paroxystique nocturne *(Insuffisance cardiaque (décompensée))***
+> - [ ] **71. Orthopnée et dyspnée paroxystique nocturne *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Orthopnée (nombre d'oreillers)
 > 	- [ ] Réveils nocturnes avec dyspnée
 > 	- [ ] Besoin de se lever la nuit
 > 	- [ ] Amélioration en position assise
-> - [ ] **75. Symptômes ORL et infectieux *(Insuffisance cardiaque (décompensée))***
-> 	- [ ] Infection ORL récente
-> 	- [ ] Rhinite
-> 	- [ ] Pharyngite
+> - [ ] **72. Symptômes ORL et infectieux *(2 grilles sur 13)***
+> 	- [ ] Infection ORL récente *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Rhinite *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Pharyngite *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Fièvre
-> - [ ] **76. Performance physique et fatigue *(Insuffisance cardiaque (décompensée))***
+> 	- [ ] Rhinorrhée *(1 grille sur 13)*
+> - [ ] **73. Performance physique et fatigue *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Baisse de performance
 > 	- [ ] Fatigue inhabituelle
 > 	- [ ] Limitation des activités quotidiennes
 > 	- [ ] Autonomie actuelle
-> - [ ] **77. Autres symptômes respiratoires *(Insuffisance cardiaque (décompensée))***
-> 	- [ ] Écoulement post-nasal
-> 	- [ ] Sifflements respiratoires
-> 	- [ ] Sensation d'oppression
-> 	- [ ] Toux nocturne
-> - [ ] **78. Œdèmes et prise de poids *(Insuffisance cardiaque (décompensée))***
+> - [ ] **74. Œdèmes et prise de poids *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Prise de poids récente
 > 	- [ ] Abdomen gonflé
 > 	- [ ] Dyspnée après les repas
-> - [ ] **79. Symptômes généraux *(Insuffisance cardiaque (décompensée))***
-> 	- [ ] Perte de poids
-> 	- [ ] Fièvre
-> 	- [ ] Sueurs nocturnes
-> 	- [ ] Anorexie
-> - [ ] **80. Antécédents cardiovasculaires *(Insuffisance cardiaque (décompensée))***
-> 	- [ ] Pathologie cardiaque connue
-> 	- [ ] Valvulopathie
-> 	- [ ] Infarctus du myocarde
-> 	- [ ] Chirurgie cardiaque
-> - [ ] **81. Traitements cardiovasculaires actuels *(Insuffisance cardiaque (décompensée))***
+> - [ ] **75. Antécédents cardiovasculaires *(2 grilles sur 13)***
+> 	- [ ] Pathologie cardiaque connue *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Valvulopathie *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Infarctus du myocarde *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Chirurgie cardiaque *(Insuffisance cardiaque (décompensée))*
+> - [ ] **76. Traitements cardiovasculaires actuels *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] IEC
 > 	- [ ] Bêtabloquant
 > 	- [ ] Antiagrégant
 > 	- [ ] Statine
 > 	- [ ] Observance thérapeutique
-> - [ ] **82. Habitudes et facteurs de risque *(2 grilles sur 13)***
-> 	- [ ] Tabagisme *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Alcool *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Drogues *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Activité physique actuelle *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Tabagisme actif *(1 grille sur 13)*
-> 	- [ ] Profession *(1 grille sur 13)*
-> 	- [ ] Consommation d'alcool *(1 grille sur 13)*
-> - [ ] **83. Allergies et intolérances *(Insuffisance cardiaque (décompensée))***
+> - [ ] **77. Allergies et intolérances *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Allergies environnementales
 > 	- [ ] Intolérances alimentaires
-> - [ ] **84. Contexte social et autonomie *(Insuffisance cardiaque (décompensée))***
+> - [ ] **78. Contexte social et professionnel *(2 grilles sur 13)***
 > 	- [ ] Situation familiale
-> 	- [ ] Vit avec
-> 	- [ ] Aide à domicile
-> 	- [ ] Autonomie pour les AVQ
-> - [ ] **85. Symptômes principaux *(2 grilles sur 13)***
-> - [ ] **86. Épisodes antérieurs de symptômes similaires *(1 grille sur 13)***
-> - [ ] **87. Début et mode d'apparition *(1 grille sur 13)***
+> 	- [ ] Vit avec *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Aide à domicile *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Autonomie pour les AVQ *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Profession *(1 grille sur 13)*
+> 	- [ ] Impact sur la qualité de vie *(1 grille sur 13)*
+> - [ ] **79. Début et mode d'apparition *(1 grille sur 13)***
 > 	- [ ] Quand
 > 	- [ ] Comment
-> - [ ] **88. Facteurs aggravants *(1 grille sur 13)***
-> - [ ] **89. Anamnèse de l'entourage (contagion) *(2 grilles sur 13)***
-> - [ ] **90. Symptômes associés - Infection ORL *(1 grille sur 13)***
+> - [ ] **80. Facteurs aggravants *(1 grille sur 13)***
+> - [ ] **81. Anamnèse de l'entourage (contagion) *(2 grilles sur 13)***
+> - [ ] **82. Symptômes associés - Infection ORL *(1 grille sur 13)***
 > 	- [ ] Rhinorrhée
 > 	- [ ] Mal de gorge
-> - [ ] **91. Symptômes associés - Baisse de performance *(1 grille sur 13)***
-> - [ ] **92. Symptômes associés - Écoulement postnasal *(1 grille sur 13)***
-> - [ ] **93. Symptômes associés - Douleurs thoraciques *(1 grille sur 13)***
+> - [ ] **83. Symptômes associés - Baisse de performance *(1 grille sur 13)***
+> - [ ] **84. Symptômes associés - Écoulement postnasal *(1 grille sur 13)***
+> - [ ] **85. Symptômes associés - Douleurs thoraciques *(1 grille sur 13)***
 > 	- [ ] Présence
 > 	- [ ] Caractéristiques
-> - [ ] **94. Symptômes associés - Symptômes cardiaques *(1 grille sur 13)***
-> - [ ] **95. Symptômes associés - Sibilances *(1 grille sur 13)***
-> - [ ] **96. Symptômes associés - Reflux gastro-œsophagien *(1 grille sur 13)***
-> - [ ] **97. Symptômes associés - Œdèmes des membres inférieurs *(1 grille sur 13)***
-> - [ ] **98. Exposition (professionnelle, environnementale) *(1 grille sur 13)***
-> - [ ] **99. Médicaments actuels *(2 grilles sur 13)***
-> - [ ] **100. Anamnèse personnelle *(4 grilles sur 13)***
+> - [ ] **86. Symptômes associés - Symptômes cardiaques *(1 grille sur 13)***
+> - [ ] **87. Symptômes associés - Œdèmes des membres inférieurs *(1 grille sur 13)***
+> - [ ] **88. Médicaments actuels *(2 grilles sur 13)***
+> - [ ] **89. Anamnèse personnelle *(4 grilles sur 13)***
 > 	- [ ] État civil *(2 grilles sur 13)*
 > 	- [ ] Enfants *(2 grilles sur 13)*
 > 	- [ ] Situation professionnelle *(1 grille sur 13)*
@@ -486,90 +472,76 @@ cssclasses:
 > 	- [ ] Néonatale *(Coqueluche)*
 > 	- [ ] Croissance *(Coqueluche)*
 > 	- [ ] Développement *(Coqueluche)*
-> - [ ] **101. État actuel *(1 grille sur 13)***
-> - [ ] **102. Type de dyspnée *(1 grille sur 13)***
+> - [ ] **90. État actuel *(1 grille sur 13)***
+> - [ ] **91. Type de dyspnée *(1 grille sur 13)***
 > 	- [ ] Repos ou effort
 > 	- [ ] Circonstances de début
-> - [ ] **103. Douleurs *(1 grille sur 13)***
+> - [ ] **92. Douleurs *(1 grille sur 13)***
 > 	- [ ] Douleurs à la toux
 > 	- [ ] Autres douleurs
-> - [ ] **104. Infection préalable ou concomitante *(1 grille sur 13)***
-> - [ ] **105. Symptômes infectieux *(1 grille sur 13)***
-> 	- [ ] Fièvre
-> 	- [ ] Rhinorrhée
-> - [ ] **106. Allergies connues *(1 grille sur 13)***
-> - [ ] **107. Antécédents cardiaques *(1 grille sur 13)***
-> - [ ] **108. Autres antécédents médicaux *(1 grille sur 13)***
-> - [ ] **109. Activités sportives et loisirs *(1 grille sur 13)***
-> - [ ] **110. Identification complète *(Faux-croup)***
+> - [ ] **93. Infection préalable ou concomitante *(1 grille sur 13)***
+> - [ ] **94. Allergies connues *(1 grille sur 13)***
+> - [ ] **95. Autres antécédents médicaux *(1 grille sur 13)***
+> - [ ] **96. Activités sportives et loisirs *(1 grille sur 13)***
+> - [ ] **97. Identification complète *(Faux-croup)***
 > 	- [ ] Nom, âge et sexe de l'enfant
 > 	- [ ] Numéro de téléphone de l'appelant pour rappel
-> - [ ] **111. Question ouverte initiale *(Faux-croup)***
-> - [ ] **112. Début et circonstances *(Faux-croup)***
+> - [ ] **98. Question ouverte initiale *(Faux-croup)***
+> - [ ] **99. Début et circonstances *(Faux-croup)***
 > 	- [ ] Début
 > 	- [ ] Activités précédentes
 > 	- [ ] État actuel
-> - [ ] **113. État général actuel de l'enfant *(Faux-croup)***
+> - [ ] **100. État général actuel de l'enfant *(Faux-croup)***
 > 	- [ ] Léthargie
 > 	- [ ] Réactivité
-> - [ ] **114. Signes de détresse respiratoire *(Faux-croup)***
+> - [ ] **101. Signes de détresse respiratoire *(Faux-croup)***
 > 	- [ ] Tirage intercostal
 > 	- [ ] Tirage sus-sternal
 > 	- [ ] Respiration rapide et superficielle
-> - [ ] **115. Température *(Faux-croup)***
+> - [ ] **102. Température *(Faux-croup)***
 > 	- [ ] Fièvre mesurée
 > 	- [ ] Sensation thermique
 > 	- [ ] Site de mesure si mesuré
-> - [ ] **116. Signes d'infection ORL *(Faux-croup)***
-> 	- [ ] Nez
-> 	- [ ] Gorge
-> 	- [ ] Cou
-> 	- [ ] Trachée
-> - [ ] **117. Caractéristiques de la respiration *(Faux-croup)***
-> - [ ] **118. Possibilité d'aspiration de corps étranger *(Faux-croup)***
-> - [ ] **119. Coloration cutanée *(Faux-croup)***
-> - [ ] **120. Tentatives thérapeutiques *(Faux-croup)***
-> - [ ] **121. Recherche de drapeaux rouges (RED FLAGS) *(Faux-croup)***
+> - [ ] **103. Possibilité d'aspiration de corps étranger *(Faux-croup)***
+> - [ ] **104. Coloration cutanée *(Faux-croup)***
+> - [ ] **105. Tentatives thérapeutiques *(Faux-croup)***
+> - [ ] **106. Recherche de drapeaux rouges (RED FLAGS) *(Faux-croup)***
 > 	- [ ] État général, troubles de conscience
 > 	- [ ] Foyers fébriles ORL (troubles déglutition, otalgie)
 > 	- [ ] Méningisme
 > 	- [ ] Signes urinaires
 > 	- [ ] Éruption cutanée
 > 	- [ ] Traumatisme crânien récent
-> - [ ] **122. Antécédents similaires *(Faux-croup)***
-> - [ ] **123. Maladies de base *(Faux-croup)***
-> - [ ] **124. Hospitalisations antérieures *(Faux-croup)***
-> - [ ] **125. Médicaments et allergies *(2 grilles sur 13)***
-> - [ ] **126. Résumé et confirmation *(Faux-croup)***
+> - [ ] **107. Antécédents respiratoires *(2 grilles sur 13)***
+> 	- [ ] BPCO suspectée par médecin traitant *(1 grille sur 13)*
+> 	- [ ] Épisodes de bronchite *(1 grille sur 13)*
+> 	- [ ] Participation aux campagnes de dépistage *(1 grille sur 13)*
+> - [ ] **108. Maladies de base *(Faux-croup)***
+> - [ ] **109. Médicaments et allergies *(2 grilles sur 13)***
+> - [ ] **110. Résumé et confirmation *(Faux-croup)***
 > 	- [ ] Fait un bref résumé de la situation
 > 	- [ ] Demande confirmation de l'exactitude
-> - [ ] **127. Caractérisation des expectorations *(1 grille sur 13)***
-> 	- [ ] Couleur des crachats
-> 	- [ ] Quantité
-> 	- [ ] Odeur
-> 	- [ ] Présence de sang
-> 	- [ ] Évolution dans le temps
-> - [ ] **128. Caractérisation de la douleur thoracique *(1 grille sur 13)***
+> - [ ] **111. Caractérisation de la douleur thoracique *(1 grille sur 13)***
 > 	- [ ] Localisation
 > 	- [ ] Reproductible à la palpation
 > 	- [ ] Variation avec la respiration
 > 	- [ ] Irradiation
 > 	- [ ] Intensité
 > 	- [ ] Durée et circonstances
-> - [ ] **129. Évaluation de la dyspnée *(1 grille sur 13)***
+> - [ ] **112. Évaluation de la dyspnée *(1 grille sur 13)***
 > 	- [ ] Circonstances
 > 	- [ ] Classification NYHA ou mMRC
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
 > 	- [ ] Évolution dans le temps
 > 	- [ ] Sifflements ou bruits associés
-> - [ ] **130. Signes généraux et symptômes associés *(1 grille sur 13)***
+> - [ ] **113. Signes généraux et symptômes associés *(1 grille sur 13)***
 > 	- [ ] Fièvre
 > 	- [ ] Asthénie et perte de poids
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Signes d'insuffisance cardiaque
-> 	- [ ] Autres symptômes respiratoires
-> - [ ] **131. Antécédents personnels et facteurs de risque *(2 grilles sur 13)***
+> 	- [ ] Symptômes respiratoires associés
+> - [ ] **114. Antécédents personnels et facteurs de risque *(2 grilles sur 13)***
 > 	- [ ] Pathologies chroniques *(1 grille sur 13)*
 > 	- [ ] Antécédents pulmonaires *(1 grille sur 13)*
 > 	- [ ] Hospitalisations antérieures *(1 grille sur 13)*
@@ -577,57 +549,46 @@ cssclasses:
 > 	- [ ] Vaccinations *(1 grille sur 13)*
 > 	- [ ] Antécédents familiaux *(1 grille sur 13)*
 > 	- [ ] Suivi gynécologique régulier *(1 grille sur 13)*
-> - [ ] **132. Habitudes et expositions *(1 grille sur 13)***
+> - [ ] **115. Habitudes et expositions *(1 grille sur 13)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
 > 	- [ ] Exposition professionnelle
 > 	- [ ] Exposition infectieuse
-> - [ ] **133. Toux *(Coqueluche)***
+> - [ ] **116. Toux *(Coqueluche)***
 > 	- [ ] Début
 > 	- [ ] Évolution
 > 	- [ ] Qualité
 > 	- [ ] Fréquence
 > 	- [ ] Cyanose
-> - [ ] **134. Vomissements *(Coqueluche)***
+> - [ ] **117. Vomissements *(Coqueluche)***
 > 	- [ ] Début
 > 	- [ ] Évolution
 > 	- [ ] Association avec toux
 > 	- [ ] Contenu
-> - [ ] **135. Alimentation/Hydratation *(Coqueluche)***
+> - [ ] **118. Alimentation/Hydratation *(Coqueluche)***
 > 	- [ ] Allaitement
 > 	- [ ] Couches mouillées
-> - [ ] **136. État général *(Coqueluche)***
+> - [ ] **119. État général *(Coqueluche)***
 > 	- [ ] Apathie et/ou fatigue
-> - [ ] **137. Vaccins/Médicaments *(Coqueluche)***
+> - [ ] **120. Vaccins/Médicaments *(Coqueluche)***
 > 	- [ ] Vaccins
 > 	- [ ] Médicaments
-> - [ ] **138. Contage *(Coqueluche)***
-> - [ ] **139. Caractérisation de l'hémoptysie *(1 grille sur 13)***
-> 	- [ ] Début et durée
-> 	- [ ] Quantité
-> 	- [ ] Aspect du sang
-> 	- [ ] Évolution
-> - [ ] **140. Histoire de la toux chronique *(1 grille sur 13)***
+> - [ ] **121. Contage *(Coqueluche)***
+> - [ ] **122. Histoire de la toux chronique *(1 grille sur 13)***
 > 	- [ ] Ancienneté
 > 	- [ ] Horaire habituel
 > 	- [ ] Évolution récente
 > 	- [ ] Caractère des expectorations habituelles
-> - [ ] **141. Antécédents respiratoires *(1 grille sur 13)***
-> 	- [ ] BPCO suspectée par médecin traitant
-> 	- [ ] Épisodes de bronchite
-> 	- [ ] Participation aux campagnes de dépistage
-> - [ ] **142. Symptômes généraux et signes d'alarme *(1 grille sur 13)***
-> 	- [ ] Perte de poids
-> - [ ] **143. Signes négatifs importants *(1 grille sur 13)***
+> - [ ] **123. Facteurs de risque et habitudes *(1 grille sur 13)***
+> 	- [ ] Tabagisme actif
+> 	- [ ] Profession
+> 	- [ ] Consommation d'alcool
+> - [ ] **124. Signes négatifs importants *(1 grille sur 13)***
 > 	- [ ] Pas d'œdèmes des membres inférieurs
 > 	- [ ] Pas de troubles du sommeil respiratoires
 > 	- [ ] Pas de voyage récent
 > 	- [ ] Pas d'immobilisation ou antécédent thromboembolique
-> - [ ] **144. Contexte social et professionnel *(1 grille sur 13)***
-> 	- [ ] Situation familiale
-> 	- [ ] Profession
-> 	- [ ] Impact sur la qualité de vie
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(3 grilles sur 13)***
@@ -638,16 +599,23 @@ cssclasses:
 > - [ ] **3. Examen du cou *(3 grilles sur 13)***
 > 	- [ ] Palpation des ganglions lymphatiques de la tête et du cou
 > 	- [ ] Évaluation de la distension veineuse jugulaire *(BPCO)*
-> - [ ] **4. Examen cardiovasculaire complémentaire *(5 grilles sur 13)***
-> 	- [ ] Auscultation cardiaque systématique
+> - [ ] **4. Examen cardiovasculaire complémentaire *(9 grilles sur 13)***
+> 	- [ ] Auscultation cardiaque systématique *(7 grilles sur 13)*
 > 	- [ ] Palpation du pouls radial *(BPCO)*
 > 	- [ ] Palpation du choc apexien *(BPCO)*
 > 	- [ ] Recherche du reflux hépato-jugulaire *(BPCO)*
+> 	- [ ] Palpation du précordium *(3 grilles sur 13)*
+> 	- [ ] Recherche de signes d'insuffisance cardiaque droite *(2 grilles sur 13)*
+> 	- [ ] Pouls périphériques *(Tuberculose)*
+> 	- [ ] Choc de pointe (déplacé?) *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Frémissements *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Soulèvement parasternal *(Insuffisance cardiaque (décompensée))*
+> 	- [ ] Auscultation *(1 grille sur 13)*
+> 	- [ ] Pouls *(1 grille sur 13)*
 > 	- [ ] Palpation choc de pointe *(1 grille sur 13)*
 > 	- [ ] Œdèmes membres inférieurs *(1 grille sur 13)*
 > 	- [ ] Turgescence jugulaire *(1 grille sur 13)*
 > 	- [ ] Reflux hépato-jugulaire *(1 grille sur 13)*
-> 	- [ ] Recherche de signes d'insuffisance cardiaque droite *(1 grille sur 13)*
 > 	- [ ] Évaluation des pouls périphériques *(1 grille sur 13)*
 > 	- [ ] Recherche d'œdèmes des membres inférieurs *(1 grille sur 13)*
 > - [ ] **5. Examen thoracique *(3 grilles sur 13)***
@@ -689,20 +657,13 @@ cssclasses:
 > - [ ] **19. Auscultation cardiaque systématique *(1 grille sur 13)***
 > - [ ] **20. Veines jugulaires *(1 grille sur 13)***
 > - [ ] **21. Inspection et palpation périphérie *(1 grille sur 13)***
-> - [ ] **22. Examen cardiaque *(3 grilles sur 13)***
-> 	- [ ] Palpation du précordium *(2 grilles sur 13)*
-> 	- [ ] Auscultation cardiaque systématique *(2 grilles sur 13)*
-> 	- [ ] Recherche de signes d'insuffisance cardiaque droite *(Tuberculose)*
-> 	- [ ] Pouls périphériques *(Tuberculose)*
-> 	- [ ] Auscultation *(1 grille sur 13)*
-> 	- [ ] Pouls *(1 grille sur 13)*
-> - [ ] **23. Examen pulmonaire - Inspection *(Insuffisance cardiaque (décompensée) · Tuberculose)***
+> - [ ] **22. Examen pulmonaire - Inspection *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Symétrie thoracique
 > 	- [ ] Utilisation des muscles accessoires *(Tuberculose)*
 > 	- [ ] Type de respiration
 > 	- [ ] Déformations
 > 	- [ ] Tirage *(Insuffisance cardiaque (décompensée))*
-> - [ ] **24. Examen pulmonaire - Palpation *(3 grilles sur 13)***
+> - [ ] **23. Examen pulmonaire - Palpation *(3 grilles sur 13)***
 > 	- [ ] Vibrations vocales (frémitus) *(Insuffisance cardiaque (décompensée) · Tuberculose)*
 > 	- [ ] Points douloureux *(Insuffisance cardiaque (décompensée) · Tuberculose)*
 > 	- [ ] Adénopathies sus-claviculaires *(Tuberculose)*
@@ -710,41 +671,38 @@ cssclasses:
 > 	- [ ] Palpation (frémissement vocal) *(1 grille sur 13)*
 > 	- [ ] Percussion thoracique *(1 grille sur 13)*
 > 	- [ ] Auscultation systématique antérieure et postérieure *(1 grille sur 13)*
-> - [ ] **25. Examen pulmonaire - Percussion *(Insuffisance cardiaque (décompensée) · Tuberculose)***
+> - [ ] **24. Examen pulmonaire - Percussion *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Percussion systématique *(Tuberculose)*
 > 	- [ ] Recherche de matité *(Tuberculose)*
 > 	- [ ] Comparaison bilatérale
 > 	- [ ] Limites pulmonaires *(Tuberculose)*
 > 	- [ ] Matité des bases *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Épanchement pleural *(Insuffisance cardiaque (décompensée))*
-> - [ ] **26. Auscultation pulmonaire *(5 grilles sur 13)***
+> - [ ] **25. Auscultation pulmonaire *(5 grilles sur 13)***
 > 	- [ ] Auscultation antérieure systématique *(Insuffisance cardiaque (décompensée) · Tuberculose)*
 > 	- [ ] Auscultation postérieure systématique *(Insuffisance cardiaque (décompensée) · Tuberculose)*
 > 	- [ ] Bruits surajoutés *(Tuberculose)*
-> 	- [ ] Modifications du murmure vésiculaire *(Tuberculose)*
+> 	- [ ] Modifications du murmure vésiculaire *(4 grilles sur 13)*
 > 	- [ ] Râles crépitants des bases *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Diminution du murmure vésiculaire *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Demande respiration bouche ouverte *(1 grille sur 13)*
 > 	- [ ] Points d'auscultation *(1 grille sur 13)*
 > 	- [ ] Comparaison symétrique G/D systématique *(1 grille sur 13)*
-> 	- [ ] Murmure vésiculaire *(1 grille sur 13)*
 > 	- [ ] Souffle tubaire *(1 grille sur 13)*
 > 	- [ ] Auscultation systématique des deux champs pulmonaires *(1 grille sur 13)*
 > 	- [ ] Identification des sibilances *(1 grille sur 13)*
 > 	- [ ] Recherche de râles crépitants ou sous-crépitants *(1 grille sur 13)*
-> 	- [ ] Évaluation du murmure vésiculaire *(1 grille sur 13)*
-> - [ ] **27. Inspection veineuse *(Tuberculose)***
+> - [ ] **26. Inspection veineuse *(Tuberculose)***
 > 	- [ ] Turgescence des veines jugulaires
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Circulation collatérale
-> - [ ] **28. Recherche d'œdèmes *(Insuffisance cardiaque (décompensée) · Tuberculose)***
+> - [ ] **27. Recherche d'œdèmes *(Insuffisance cardiaque (décompensée) · Tuberculose)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Signe du godet
 > 	- [ ] Symétrie *(Tuberculose)*
 > 	- [ ] Ascension *(Tuberculose)*
 > 	- [ ] Bilatéralité et symétrie *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Œdème sacré *(Insuffisance cardiaque (décompensée))*
-> - [ ] **29. Examen ORL rapide *(3 grilles sur 13)***
+> - [ ] **28. Examen ORL rapide *(3 grilles sur 13)***
 > 	- [ ] Inspection de la gorge *(Tuberculose)*
 > 	- [ ] Otoscopie *(Tuberculose)*
 > 	- [ ] Rhinoscopie antérieure *(Tuberculose)*
@@ -753,12 +711,12 @@ cssclasses:
 > 	- [ ] Oreilles *(2 grilles sur 13)*
 > 	- [ ] Nez *(2 grilles sur 13)*
 > 	- [ ] Absence de foyer infectieux *(Insuffisance cardiaque (décompensée))*
-> - [ ] **30. Palpation des ganglions lymphatiques *(2 grilles sur 13)***
+> - [ ] **29. Palpation des ganglions lymphatiques *(2 grilles sur 13)***
 > 	- [ ] Ganglions cervicaux *(Tuberculose)*
 > 	- [ ] Ganglions sus-claviculaires *(Tuberculose)*
 > 	- [ ] Ganglions axillaires *(Tuberculose)*
 > 	- [ ] Autres territoires *(Tuberculose)*
-> - [ ] **31. Examen abdominal *(3 grilles sur 13)***
+> - [ ] **30. Examen abdominal *(3 grilles sur 13)***
 > 	- [ ] Inspection *(Tuberculose)*
 > 	- [ ] Auscultation *(Tuberculose)*
 > 	- [ ] Palpation (hépatomégalie, splénomégalie) *(Tuberculose)*
@@ -767,34 +725,29 @@ cssclasses:
 > 	- [ ] Ascite *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Circulation collatérale *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Masses *(Insuffisance cardiaque (décompensée))*
-> - [ ] **32. Inspection générale *(Insuffisance cardiaque (décompensée))***
+> - [ ] **31. Inspection générale *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] État général
 > 	- [ ] Coloration (cyanose, pâleur)
 > 	- [ ] Position de confort
 > 	- [ ] Utilisation des muscles accessoires
-> - [ ] **33. Examen cardiaque - Palpation *(Insuffisance cardiaque (décompensée))***
-> 	- [ ] Palpation du précordium
-> 	- [ ] Choc de pointe (déplacé?)
-> 	- [ ] Frémissements
-> 	- [ ] Soulèvement parasternal
-> - [ ] **34. Examen cardiaque - Auscultation *(Insuffisance cardiaque (décompensée))***
+> - [ ] **32. Examen cardiaque - Auscultation *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] B1 et B2
 > 	- [ ] Bruits surajoutés (B3, B4)
 > 	- [ ] Souffles (sténose aortique?)
 > 	- [ ] Frottement péricardique
-> - [ ] **35. Signes d'insuffisance cardiaque droite *(Insuffisance cardiaque (décompensée))***
+> - [ ] **33. Signes d'insuffisance cardiaque droite *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Turgescence des veines jugulaires
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Hépatomégalie
 > 	- [ ] Ascite
-> - [ ] **36. Palpation ganglionnaire *(Insuffisance cardiaque (décompensée))***
+> - [ ] **34. Palpation ganglionnaire *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Aires cervicales
 > 	- [ ] Aires axillaires
 > 	- [ ] Autres territoires
-> - [ ] **37. Inspection des veines jugulaires *(1 grille sur 13)***
-> - [ ] **38. Recherche d'œdèmes des membres inférieurs *(1 grille sur 13)***
-> - [ ] **39. Hygiène des mains *(1 grille sur 13)***
-> - [ ] **40. Percussion thoracique *(3 grilles sur 13)***
+> - [ ] **35. Inspection des veines jugulaires *(1 grille sur 13)***
+> - [ ] **36. Recherche d'œdèmes des membres inférieurs *(1 grille sur 13)***
+> - [ ] **37. Hygiène des mains *(1 grille sur 13)***
+> - [ ] **38. Percussion thoracique *(3 grilles sur 13)***
 > 	- [ ] Limite inférieure poumons *(1 grille sur 13)*
 > 	- [ ] Comparaison sonorité G/D *(1 grille sur 13)*
 > 	- [ ] Reconnaissance des sons *(1 grille sur 13)*
@@ -804,27 +757,27 @@ cssclasses:
 > 	- [ ] Évaluation de la symétrie respiratoire *(1 grille sur 13)*
 > 	- [ ] Recherche de déformation thoracique *(1 grille sur 13)*
 > 	- [ ] Évaluation du tirage et de l'ampliation *(1 grille sur 13)*
-> - [ ] **41. Examen des extrémités (recherche d'embolie pulmonaire) *(1 grille sur 13)***
-> - [ ] **42. Examens complémentaires si pertinents *(1 grille sur 13)***
+> - [ ] **39. Examen des extrémités (recherche d'embolie pulmonaire) *(1 grille sur 13)***
+> - [ ] **40. Examens complémentaires si pertinents *(1 grille sur 13)***
 > 	- [ ] Peau
 > 	- [ ] Gorge
 > 	- [ ] Ganglions lymphatiques
-> - [ ] **43. Note: Examen clinique non réalisable par téléphone *(Faux-croup)***
+> - [ ] **41. Note: Examen clinique non réalisable par téléphone *(Faux-croup)***
 > 	- [ ] Évaluation indirecte basée sur les observations parentales
-> - [ ] **44. Inspection générale - patient couché *(1 grille sur 13)***
+> - [ ] **42. Inspection générale - patient couché *(1 grille sur 13)***
 > 	- [ ] Aspect général
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Cycle respiratoire
 > 	- [ ] Détresse respiratoire
 > 	- [ ] Cyanose centrale et périphérique
 > 	- [ ] Recherche d'hippocratisme digital
-> - [ ] **45. Inspection thoracique - patient assis *(1 grille sur 13)***
+> - [ ] **43. Inspection thoracique - patient assis *(1 grille sur 13)***
 > 	- [ ] Forme du thorax
 > 	- [ ] Asymétrie thoracique
 > 	- [ ] Déformations rachidiennes
 > 	- [ ] Cicatrices
 > 	- [ ] Respiration paradoxale
-> - [ ] **46. Palpation thoracique *(2 grilles sur 13)***
+> - [ ] **44. Palpation thoracique *(2 grilles sur 13)***
 > 	- [ ] Évaluation de l'ampliation thoracique
 > 	- [ ] Localisation précise de la douleur *(1 grille sur 13)*
 > 	- [ ] Vibrations vocales (frémitus) *(1 grille sur 13)*
@@ -833,36 +786,36 @@ cssclasses:
 > 	- [ ] Palpation des vibrations vocales *(1 grille sur 13)*
 > 	- [ ] Recherche de douleur à la palpation *(1 grille sur 13)*
 > 	- [ ] Palpation des aires ganglionnaires (sus-claviculaires, axillaires) *(1 grille sur 13)*
-> - [ ] **47. Identification des bruits pathologiques *(1 grille sur 13)***
+> - [ ] **45. Identification des bruits pathologiques *(1 grille sur 13)***
 > 	- [ ] Sibilances
 > 	- [ ] Ronchi
 > 	- [ ] Râles fins
 > 	- [ ] Râles grossiers
 > 	- [ ] Frottement pleural
 > 	- [ ] Stridor
-> - [ ] **48. Examen général et signes vitaux *(1 grille sur 13)***
+> - [ ] **46. Examen général et signes vitaux *(1 grille sur 13)***
 > 	- [ ] Évaluation de l'état général
 > 	- [ ] Mesure de la fréquence respiratoire
 > 	- [ ] Évaluation des signes de détresse respiratoire
 > 	- [ ] Recherche de cyanose
-> - [ ] **49. Percussion pulmonaire *(1 grille sur 13)***
+> - [ ] **47. Percussion pulmonaire *(1 grille sur 13)***
 > 	- [ ] Percussion systématique des deux champs pulmonaires
 > 	- [ ] Recherche de matité
 > 	- [ ] Évaluation de la sonorité pulmonaire
 > 	- [ ] Délimitation des bases pulmonaires
-> - [ ] **50. Examen ORL et recherche d'adénopathies *(1 grille sur 13)***
+> - [ ] **48. Examen ORL et recherche d'adénopathies *(1 grille sur 13)***
 > 	- [ ] Palpation des aires ganglionnaires cervicales
 > 	- [ ] Examen de la cavité buccale
 > 	- [ ] Palpation des aires ganglionnaires sus-claviculaires
 > 	- [ ] Recherche d'adénopathies axillaires
-> - [ ] **51. Recherche de signes extrarespiratoires *(1 grille sur 13)***
+> - [ ] **49. Recherche de signes extrarespiratoires *(1 grille sur 13)***
 > 	- [ ] Recherche d'hippocratisme digital
 > 	- [ ] Examen cutané (recherche de métastases)
 > 	- [ ] Palpation abdominale (hépatomégalie)
 > 	- [ ] Évaluation neurologique de base
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Hypothèses diagnostiques *(3 grilles sur 13)* — *Asthme · BPCO · Cancer pulmonaire***
+> - [ ] **1. Hypothèse diagnostique : Coqueluche *(5 grilles sur 13)* — 4 diagnostics : *Asthme · BPCO · Cancer pulmonaire · Coqueluche***
 
 > [!success] 💊 Management — si Asthme
 > - [ ] **1. Examens complémentaires de première intention *(1 grille sur 2)***
@@ -883,22 +836,22 @@ cssclasses:
 > - [ ] **5. Conseil et soutien *(1 grille sur 2)***
 > 	- [ ] Conseil sur les drogues récréatives
 > 	- [ ] Offrir mouchoir et/ou eau pendant la crise de toux de la patiente
-> 	- [ ] Réaction appropriée au défi concernant la guérison
+> 	- [ ] Réaction appropriée au défi concernant l'arrêt du tabac
 > 	- [ ] Rassurer sur les options thérapeutiques
 > 	- [ ] Éducation sur l'asthme si confirmé
 > - [ ] **6. Diagnostic principal évoqué *(1 grille sur 2)***
-> - [ ] **7. Examens complémentaires *(1 grille sur 2)***
+> - [ ] **7. Diagnostics différentiels *(1 grille sur 2)***
+> - [ ] **8. Examens complémentaires *(1 grille sur 2)***
 > 	- [ ] Radiographie/Ultrason thoracique
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] Bilan sanguin (FSC, CRP, CK, troponines, D-dimères)
 > 	- [ ] Épreuves fonctionnelles respiratoires avec test de provocation bronchique
 > 	- [ ] ECG/Échocardiographie
 > 	- [ ] Tests d'allergie
-> - [ ] **8. Traitement proposé *(1 grille sur 2)***
+> - [ ] **9. Traitement proposé *(1 grille sur 2)***
 > 	- [ ] Bêta-2-mimétiques (salbutamol) en inhalation
 > 	- [ ] Éducation thérapeutique
 > 	- [ ] Éviction des facteurs déclenchants
-> - [ ] **9. Diagnostics différentiels cardiaques *(1 grille sur 2)***
 > - [ ] **10. Diagnostics différentiels pulmonaires *(1 grille sur 2)***
 > - [ ] **11. Interprétation des épreuves fonctionnelles respiratoires *(1 grille sur 2)***
 > 	- [ ] Syndrome obstructif
@@ -921,9 +874,9 @@ cssclasses:
 > 	- [ ] Recherche des préoccupations et questions de la patiente
 > - [ ] **3. Conseil et soutien**
 > 	- [ ] Offrir mouchoir et/ou eau pendant la crise de toux de la patiente
+> 	- [ ] Réaction appropriée au défi concernant l'arrêt du tabac
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Conseil sur les options de soutien pour l'exercice régulier
-> 	- [ ] Réaction appropriée au défi concernant l'arrêt du tabac
 > 	- [ ] Éducation sur les risques du tabagisme
 > - [ ] **4. Tests de fonction pulmonaire**
 > 	- [ ] Spirométrie avec test de réversibilité
@@ -952,21 +905,21 @@ cssclasses:
 > 	- [ ] Orientation vers services sociaux
 > 	- [ ] Soutien émotionnel face à l'inquiétude
 > 	- [ ] Information sur l'urgence du diagnostic
-> - [ ] **4. Examens microbiologiques *(1 grille sur 2)***
+> - [ ] **4. Examens biologiques *(1 grille sur 2)***
 > 	- [ ] Coloration de Gram des expectorations, microscopie avec coloration acido-résistante, cytologie, et culture de routine et mycobactérienne
 > - [ ] **5. Examens biologiques et imagerie avancée *(1 grille sur 2)***
 > 	- [ ] FSC avec formule
 > 	- [ ] CT thoracique
-> - [ ] **6. Prise en charge immédiate *(1 grille sur 2)***
-> 	- [ ] Arrêt du tabac immédiat et accompagnement
-> 	- [ ] Consultation pneumologique urgente
-> 	- [ ] Surveillance clinique (quantité hémoptysie, état respiratoire)
-> 	- [ ] Information et rassurance de la patiente
-> - [ ] **7. Examens complémentaires *(1 grille sur 2)***
+> - [ ] **6. Examens complémentaires *(1 grille sur 2)***
 > 	- [ ] CT thoraco-abdomino-pelvien (si suspicion néoplasique)
 > 	- [ ] PET scan (bilan d'extension)
 > 	- [ ] Échocardiographie (si suspicion cardiaque)
 > 	- [ ] Angio-CT pulmonaire (si suspicion d'embolie)
+> - [ ] **7. Prise en charge immédiate *(1 grille sur 2)***
+> 	- [ ] Arrêt du tabac immédiat et accompagnement
+> 	- [ ] Consultation pneumologique urgente
+> 	- [ ] Surveillance clinique (quantité hémoptysie, état respiratoire)
+> 	- [ ] Information et rassurance de la patiente
 > - [ ] **8. Diagnostic principal et diagnostics différentiels *(1 grille sur 2)***
 > 	- [ ] Cancer pulmonaire (forte suspicion)
 > 	- [ ] BPCO avec exacerbation
@@ -989,16 +942,15 @@ cssclasses:
 > 	- [ ] Pneumonie
 > 	- [ ] Faux croup
 > 	- [ ] Infection virale des voies respiratoires supérieures
-> - [ ] **2. Prise en charge immédiate**
+> - [ ] **2. Examens complémentaires**
+> 	- [ ] Radiographie/Ultrason thoracique
+> 	- [ ] Prise de sang (FSC, CRP, Hémoculture)
+> 	- [ ] Recherche bactério dans les expectorations
+> - [ ] **3. Prise en charge immédiate**
 > 	- [ ] Hospitalisation
 > 	- [ ] Hydratation
 > 	- [ ] Alimentation
 > 	- [ ] Antibiotiques
-> - [ ] **3. Examens complémentaires**
-> 	- [ ] Radiographie/Ultrason thoracique
-> 	- [ ] Prise de sang (FSC, CRP, Hémoculture)
-> 	- [ ] Recherche bactério dans les expectorations
-> - [ ] **4. Hypothèse diagnostique : Coqueluche**
 
 > [!success] 💊 Management — si Faux-croup
 > - [ ] **1. Diagnostic principal évoqué**
@@ -1114,7 +1066,7 @@ cssclasses:
 > - [ ] **19. Prélèvement Covid/Influenza *(1 grille sur 3)***
 > - [ ] **20. Diagnostic des expectorations *(1 grille sur 3)***
 > - [ ] **21. Diagnostic principal évoqué *(1 grille sur 3)***
-> - [ ] **22. Diagnostics différentiels *(1 grille sur 3)***
+> - [ ] **22. Diagnostics différentiels *(2 grilles sur 3)***
 > - [ ] **23. Examens complémentaires *(2 grilles sur 3)***
 > 	- [ ] Radiographie/Ultrason thoracique *(1 grille sur 3)*
 > 	- [ ] Bilan biologique (FSC, marqueurs inflammatoires) *(1 grille sur 3)*
@@ -1141,21 +1093,20 @@ cssclasses:
 > 	- [ ] Évaluation de la gravité
 > 	- [ ] Scores de gravité
 > 	- [ ] Indication d'hospitalisation
-> - [ ] **28. Diagnostic différentiel respiratoire *(1 grille sur 3)***
-> - [ ] **29. Traitement antibiotique ambulatoire *(1 grille sur 3)***
-> - [ ] **30. Traitements symptomatiques et mesures générales *(1 grille sur 3)***
+> - [ ] **28. Traitement antibiotique ambulatoire *(1 grille sur 3)***
+> - [ ] **29. Traitements symptomatiques et mesures générales *(1 grille sur 3)***
 > 	- [ ] Antipyrétiques
 > 	- [ ] Hydratation
 > 	- [ ] Repos et arrêt de travail
 > 	- [ ] Oxygénothérapie si SpO2 < 92%
 > 	- [ ] Kinésithérapie respiratoire si encombrement
-> - [ ] **31. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
+> - [ ] **30. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
 > 	- [ ] Réévaluation clinique à 48-72h
 > 	- [ ] Critères CURB-65 ≥ 2
 > 	- [ ] Désaturation < 90% en air ambiant
 > 	- [ ] Comorbidités décompensées
 > 	- [ ] Échec traitement ambulatoire
-> - [ ] **32. Prévention et conseils *(1 grille sur 3)***
+> - [ ] **31. Prévention et conseils *(1 grille sur 3)***
 > 	- [ ] Sevrage tabagique
 > 	- [ ] Vaccination antigrippale annuelle
 > 	- [ ] Vaccination antipneumococcique
@@ -1182,7 +1133,7 @@ cssclasses:
 > 	- [ ] Localisation (apex)
 > 	- [ ] Cavernes
 > 	- [ ] Infiltrats
-> - [ ] **5. Autres examens complémentaires**
+> - [ ] **5. Examens complémentaires**
 > 	- [ ] FSC, CRP
 > 	- [ ] Fonction hépatique et rénale (pré-thérapeutique)
 > 	- [ ] Sérologie VIH

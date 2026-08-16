@@ -186,12 +186,16 @@ cssclasses:
 > 	- [ ] Puis région auriculaire postérieure et inférieure *(Cancer gastrique)*
 > 	- [ ] Chaînes ganglionnaires cervicales *(Cancer gastrique)*
 > 	- [ ] Ganglions sous-mentonniers et sous-maxillaires *(Cancer gastrique)*
-> - [ ] **4. Examen des aires axillaires *(Lymphome)***
-> 	- [ ] Patient en position assise
-> 	- [ ] Porter le bras du patient
-> 	- [ ] Palpation creux axillaire
-> 	- [ ] Progression de haut en bas jusqu'au creux
-> 	- [ ] Mouvements circulaires surface côtes
+> - [ ] **4. Examen des autres aires ganglionnaires**
+> 	- [ ] Patient en position assise *(Lymphome)*
+> 	- [ ] Porter le bras du patient *(Lymphome)*
+> 	- [ ] Palpation creux axillaire *(Lymphome)*
+> 	- [ ] Progression de haut en bas jusqu'au creux *(Lymphome)*
+> 	- [ ] Mouvements circulaires surface côtes *(Lymphome)*
+> 	- [ ] Aires sous-claviculaires *(Cancer gastrique)*
+> 	- [ ] Ganglions épitrochléens *(Cancer gastrique)*
+> 	- [ ] Ganglions axillaires *(Cancer gastrique)*
+> 	- [ ] Ganglions inguinaux *(Cancer gastrique)*
 > - [ ] **5. Palpation des ganglions épitrochléens et inguinaux *(Lymphome)***
 > 	- [ ] Ganglions épitrochléens
 > 	- [ ] Ganglions inguinaux
@@ -225,23 +229,18 @@ cssclasses:
 > 	- [ ] Sensibilité
 > 	- [ ] Surface
 > 	- [ ] Adhérence aux plans profonds
-> - [ ] **10. Examen des autres aires ganglionnaires *(Cancer gastrique)***
-> 	- [ ] Aires sous-claviculaires
-> 	- [ ] Ganglions épitrochléens
-> 	- [ ] Ganglions axillaires
-> 	- [ ] Ganglions inguinaux
-> - [ ] **11. Recherche d'une splénomégalie *(Cancer gastrique)***
+> - [ ] **10. Recherche d'une splénomégalie *(Cancer gastrique)***
 > 	- [ ] Si palpable: mesurer débord sous-costal
 > 	- [ ] Percussion de la rate
 > 	- [ ] Recherche syndrome tumoral associé
-> - [ ] **12. Examen général *(Cancer gastrique)***
+> - [ ] **11. Examen général *(Cancer gastrique)***
 > 	- [ ] État général
 > 	- [ ] Pâleur cutanéo-muqueuse
 > 	- [ ] Ictère conjonctival
 > 	- [ ] Lésions cutanées
 > 	- [ ] Hépatomégalie
 > 	- [ ] Masse abdominale
-> - [ ] **13. Examen ORL et stomatologique *(Cancer gastrique)***
+> - [ ] **12. Examen ORL et stomatologique *(Cancer gastrique)***
 > 	- [ ] Cavité buccale
 > 	- [ ] Pharynx
 > 	- [ ] État dentaire

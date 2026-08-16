@@ -94,7 +94,7 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif de consultation *(2 grilles sur 5)***
-> - [ ] **2. Caractérisation des troubles du transit *(2 grilles sur 5)***
+> - [ ] **2. Caractérisation des troubles du transit *(Cancer colorectal · MICI (Crohn / RCUH))***
 > 	- [ ] Début *(1 grille sur 5)*
 > 	- [ ] Constant/intermittent *(1 grille sur 5)*
 > 	- [ ] Événements précipitants *(1 grille sur 5)*
@@ -103,13 +103,18 @@ cssclasses:
 > 	- [ ] Fréquence *(1 grille sur 5)*
 > 	- [ ] Facteurs améliorants *(1 grille sur 5)*
 > 	- [ ] Facteurs aggravants *(1 grille sur 5)*
+> 	- [ ] Présence de sang frais *(1 grille sur 5)*
+> 	- [ ] Quantité et fréquence *(1 grille sur 5)*
+> 	- [ ] Glaires *(1 grille sur 5)*
+> 	- [ ] Diarrhées nocturnes *(1 grille sur 5)*
+> 	- [ ] Ténesmes et urgences fécales *(1 grille sur 5)*
 > 	- [ ] Diarrhée aiguë *(Cancer colorectal)*
 > 	- [ ] Diarrhée chronique *(Cancer colorectal)*
 > 	- [ ] Diarrhée *(Cancer colorectal)*
 > 	- [ ] Constipation *(Cancer colorectal)*
 > 	- [ ] Syndrome dysentérique *(Cancer colorectal)*
 > 	- [ ] Syndrome cholérique *(Cancer colorectal)*
-> - [ ] **3. Caractéristiques des selles *(2 grilles sur 5)***
+> - [ ] **3. Caractéristiques des selles - Aspect anormal *(3 grilles sur 5)***
 > 	- [ ] Diarrhée (couleur/consistance) *(1 grille sur 5)*
 > 	- [ ] Sang dans les selles *(1 grille sur 5)*
 > 	- [ ] Couleur du sang *(1 grille sur 5)*
@@ -119,6 +124,13 @@ cssclasses:
 > 	- [ ] Fréquence *(Diarrhée chronique par malabsorption)*
 > 	- [ ] Consistance : liquide - pâteuse - moulée - dure *(Diarrhée chronique par malabsorption)*
 > 	- [ ] Volume *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Selles de couleur habituelle mélée à du sang rouge *(Cancer colorectal)*
+> 	- [ ] Selles rouges avec caillots *(Cancer colorectal)*
+> 	- [ ] Selles noires luisantes *(Cancer colorectal)*
+> 	- [ ] Selles couleur mastic *(Cancer colorectal)*
+> 	- [ ] Selles jaunes-grisâtres, pâteuses *(Cancer colorectal)*
+> 	- [ ] Selles en pétoles, dures *(Cancer colorectal)*
+> 	- [ ] Selles rubanées de calibre diminué *(Cancer colorectal)*
 > - [ ] **4. Symptômes associés - Douleurs abdominales *(1 grille sur 5)***
 > 	- [ ] Présence
 > 	- [ ] Localisation
@@ -154,7 +166,10 @@ cssclasses:
 > - [ ] **10. Hospitalisations et contacts malades *(1 grille sur 5)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Contacts malades
-> - [ ] **11. Antécédents familiaux *(1 grille sur 5)***
+> - [ ] **11. Antécédents familiaux digestifs *(2 grilles sur 5)***
+> 	- [ ] Cancer colorectal *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Maladie cœliaque *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Maladies inflammatoires intestinales (MICI) *(Diarrhée chronique par malabsorption)*
 > - [ ] **12. Habitudes et mode de vie *(2 grilles sur 5)***
 > 	- [ ] Occupation *(1 grille sur 5)*
 > 	- [ ] Domicile *(1 grille sur 5)*
@@ -179,11 +194,25 @@ cssclasses:
 > - [ ] **18. Facteurs influençants *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Alimentation, gluten
 > 	- [ ] Changements alimentaires récents
-> - [ ] **19. Symptômes associés généraux *(Diarrhée chronique par malabsorption)***
-> 	- [ ] Fièvre
-> 	- [ ] Céphalées
-> 	- [ ] Douleurs musculaires/articulaires
-> 	- [ ] Éruption cutanée
+> - [ ] **19. Symptômes digestifs associés *(4 grilles sur 5)***
+> 	- [ ] Fièvre *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Céphalées *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Douleurs musculaires/articulaires *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Éruption cutanée *(Diarrhée chronique par malabsorption)*
+> 	- [ ] Vomissements (fréquence, aspect) *(Déshydratation)*
+> 	- [ ] Diarrhée (fréquence, consistance) *(Déshydratation)*
+> 	- [ ] Perte de poids *(1 grille sur 5)*
+> 	- [ ] Inappétence *(1 grille sur 5)*
+> 	- [ ] Nausées et vomissements *(1 grille sur 5)*
+> 	- [ ] Fatigue *(1 grille sur 5)*
+> 	- [ ] Palpitations *(1 grille sur 5)*
+> 	- [ ] Distension abdominale douloureuse *(Cancer colorectal)*
+> 	- [ ] Difficultés à s'alimenter *(Cancer colorectal)*
+> 	- [ ] Ténesme *(Cancer colorectal)*
+> 	- [ ] Épreintes *(Cancer colorectal)*
+> 	- [ ] Douleurs abdominales *(Cancer colorectal)*
+> 	- [ ] Ballonnements *(Cancer colorectal)*
+> 	- [ ] Flatulences *(Cancer colorectal)*
 > - [ ] **20. Signes cliniques de déshydratation *(Diarrhée chronique par malabsorption · Déshydratation)***
 > 	- [ ] Production/couleur urinaire *(Diarrhée chronique par malabsorption)*
 > 	- [ ] Vertiges/hypotension orthostatique *(Diarrhée chronique par malabsorption)*
@@ -212,128 +241,94 @@ cssclasses:
 > 	- [ ] Laxatifs
 > 	- [ ] Autres médicaments pertinents
 > 	- [ ] Allergies
-> - [ ] **25. Antécédents familiaux digestifs *(Diarrhée chronique par malabsorption)***
-> 	- [ ] Cancer colorectal
-> 	- [ ] Maladie cœliaque
-> 	- [ ] Maladies inflammatoires intestinales (MICI)
-> - [ ] **26. Contexte épidémiologique *(Diarrhée chronique par malabsorption)***
+> - [ ] **25. Contexte épidémiologique *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Restauration collective
 > 	- [ ] Consommation de viande crue
 > 	- [ ] Eau non potable
 > 	- [ ] Entourage affecté
 > 	- [ ] Voyages récents
-> - [ ] **27. Contexte social et professionnel *(Diarrhée chronique par malabsorption)***
-> - [ ] **28. Symptômes digestifs associés *(Cancer colorectal · Déshydratation)***
-> 	- [ ] Vomissements (fréquence, aspect) *(Déshydratation)*
-> 	- [ ] Diarrhée (fréquence, consistance) *(Déshydratation)*
-> 	- [ ] Distension abdominale douloureuse *(Cancer colorectal)*
-> 	- [ ] Difficultés à s'alimenter *(Cancer colorectal)*
-> 	- [ ] Ténesme *(Cancer colorectal)*
-> 	- [ ] Épreintes *(Cancer colorectal)*
-> 	- [ ] Douleurs abdominales *(Cancer colorectal)*
-> 	- [ ] Ballonnements *(Cancer colorectal)*
-> 	- [ ] Flatulences *(Cancer colorectal)*
-> - [ ] **29. Bilan des entrées et sorties *(Déshydratation)***
+> - [ ] **26. Contexte social et professionnel *(Diarrhée chronique par malabsorption)***
+> - [ ] **27. Bilan des entrées et sorties *(Déshydratation)***
 > 	- [ ] Quantité de boissons ingérées
 > 	- [ ] Fréquence et volume des urines
 > 	- [ ] Présence de larmes lors des pleurs
-> - [ ] **30. État neurologique *(Déshydratation)***
+> - [ ] **28. État neurologique *(Déshydratation)***
 > 	- [ ] Confusion
 > 	- [ ] Somnolence
 > 	- [ ] Sopor
-> - [ ] **31. Recherche de causes infectieuses *(Déshydratation)***
+> - [ ] **29. Recherche de causes infectieuses *(Déshydratation)***
 > 	- [ ] Signes d'infection urinaire
 > 	- [ ] Fièvre associée
 > 	- [ ] Environnement épidémique
-> - [ ] **32. Recherche de causes métaboliques - Diabète sucré *(Déshydratation)***
+> - [ ] **30. Recherche de causes métaboliques - Diabète sucré *(Déshydratation)***
 > 	- [ ] Polyurie-polydipsie
 > 	- [ ] Perte de poids récente
 > 	- [ ] Antécédents familiaux de diabète
-> - [ ] **33. Recherche de causes endocriniennes - Insuffisance surrénalienne *(Déshydratation)***
+> - [ ] **31. Recherche de causes endocriniennes - Insuffisance surrénalienne *(Déshydratation)***
 > 	- [ ] Asthénie chronique
 > 	- [ ] Hypotension
 > 	- [ ] Hyperpigmentation cutanée
-> - [ ] **34. Habitudes alimentaires et hydratation habituelle *(Déshydratation)***
-> - [ ] **35. Toxiques et médicaments *(Déshydratation)***
+> - [ ] **32. Habitudes alimentaires et hydratation habituelle *(Déshydratation)***
+> - [ ] **33. Toxiques et médicaments *(Déshydratation)***
 > 	- [ ] Diurétiques
 > 	- [ ] Laxatifs
 > 	- [ ] Autres médicaments
-> - [ ] **36. Anamnèse de l'entourage *(Déshydratation)***
+> - [ ] **34. Anamnèse de l'entourage *(Déshydratation)***
 > 	- [ ] Cas similaires dans l'entourage
 > 	- [ ] Voyage récent
 > 	- [ ] Consommation d'aliments suspects
-> - [ ] **37. Anamnèse sociale *(Déshydratation)***
+> - [ ] **35. Anamnèse sociale *(Déshydratation)***
 > 	- [ ] Conditions de vie
 > 	- [ ] Autonomie (personne âgée)
 > 	- [ ] Garde d'enfant/crèche
-> - [ ] **38. Caractérisation de la plainte principale *(1 grille sur 5)***
+> - [ ] **36. Caractérisation de la plainte principale *(1 grille sur 5)***
 > 	- [ ] Localisation de la douleur
 > 	- [ ] Type de douleur
 > 	- [ ] Intensité
 > 	- [ ] Durée et fréquence
 > 	- [ ] Facteurs aggravants
-> - [ ] **39. Caractérisation des rectorragies *(1 grille sur 5)***
-> 	- [ ] Présence de sang frais
-> 	- [ ] Quantité et fréquence
-> 	- [ ] Glaires
-> 	- [ ] Diarrhées nocturnes
-> 	- [ ] Ténesmes et urgences fécales
-> - [ ] **40. Symptômes associés *(1 grille sur 5)***
-> 	- [ ] Perte de poids
-> 	- [ ] Inappétence
-> 	- [ ] Nausées et vomissements
-> 	- [ ] Fatigue
-> 	- [ ] Palpitations
-> - [ ] **41. Retentissement fonctionnel *(1 grille sur 5)***
+> - [ ] **37. Retentissement fonctionnel *(1 grille sur 5)***
 > 	- [ ] Impact socioprofessionnel
 > 	- [ ] Isolement social
 > 	- [ ] Adaptation comportementale
-> - [ ] **42. Antécédents et facteurs de risque *(1 grille sur 5)***
+> - [ ] **38. Antécédents et facteurs de risque *(1 grille sur 5)***
 > 	- [ ] Voyage récent
 > 	- [ ] Relations sexuelles non protégées
 > 	- [ ] Consommation d'aliments à risque
 > 	- [ ] Tabagisme
 > 	- [ ] Médicaments gastrotoxiques
-> - [ ] **43. Anamnèse systémique *(1 grille sur 5)***
+> - [ ] **39. Anamnèse systémique *(1 grille sur 5)***
 > 	- [ ] Pas de symptômes urinaires
 > 	- [ ] Pas de douleurs articulaires
 > 	- [ ] Pas d'atteinte cutanée
 > 	- [ ] Pas d'atteinte oculaire
 > 	- [ ] Pas de notion de contage
-> - [ ] **44. Anamnèse médicale et chirurgicale *(1 grille sur 5)***
+> - [ ] **40. Anamnèse médicale et chirurgicale *(1 grille sur 5)***
 > 	- [ ] Reflux gastro-œsophagien
 > 	- [ ] Lombalgies chroniques
 > 	- [ ] Appendicectomie
 > 	- [ ] Cure de tunnel carpien
-> - [ ] **45. Caractérisation de la modification du transit *(Cancer colorectal)***
+> - [ ] **41. Caractérisation de la modification du transit *(Cancer colorectal)***
 > 	- [ ] Évolution générale
 > 	- [ ] Nombre de selles par 24h
 > 	- [ ] Modification récente du transit
 > 	- [ ] Selles noires déféquées
 > 	- [ ] Selles nauséabondes
-> - [ ] **46. Caractéristiques des selles - Aspect anormal *(Cancer colorectal)***
-> 	- [ ] Selles de couleur habituelle mélée à du sang rouge
-> 	- [ ] Selles rouges avec caillots
-> 	- [ ] Selles noires luisantes
-> 	- [ ] Selles couleur mastic
-> 	- [ ] Selles jaunes-grisâtres, pâteuses
-> 	- [ ] Selles en pétoles, dures
-> 	- [ ] Selles rubanées de calibre diminué
-> - [ ] **47. Éléments anormaux dans les selles *(Cancer colorectal)***
+> - [ ] **42. Éléments anormaux dans les selles *(Cancer colorectal)***
 > 	- [ ] Glaires
 > 	- [ ] Pus
 > 	- [ ] Sang noir
 > 	- [ ] Sang rouge
 > 	- [ ] Graisses
 > 	- [ ] Aliments non digérés
-> - [ ] **48. Retentissement général *(Cancer colorectal)***
+> - [ ] **43. Retentissement général *(Cancer colorectal)***
 > 	- [ ] Asthénie
 > 	- [ ] Perte de poids
 > 	- [ ] Anorexie
 > 	- [ ] Fièvre
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Altération de l'état général
-> - [ ] **49. Facteurs favorisants et antécédents *(Cancer colorectal)***
+> - [ ] **44. Facteurs favorisants et antécédents *(Cancer colorectal)***
 > 	- [ ] Alimentation récente
 > 	- [ ] Voyage récent
 > 	- [ ] Prise médicamenteuse
@@ -393,7 +388,12 @@ cssclasses:
 > - [ ] **10. Examen thyroïdien *(Diarrhée chronique par malabsorption)***
 > 	- [ ] Palpation de la thyroïde
 > 	- [ ] Recherche de nodules
-> - [ ] **11. Auscultation cardiopulmonaire *(Diarrhée chronique par malabsorption)***
+> - [ ] **11. Auscultation cardiopulmonaire *(Cancer colorectal · Diarrhée chronique par malabsorption)***
+> 	- [ ] Patience *(Cancer colorectal)*
+> 	- [ ] Fréquence des bruits *(Cancer colorectal)*
+> 	- [ ] Tonalité *(Cancer colorectal)*
+> 	- [ ] Silence abdominal *(Cancer colorectal)*
+> 	- [ ] Hyperactivité *(Cancer colorectal)*
 > - [ ] **12. Palpation superficielle *(Cancer colorectal · Déshydratation)***
 > 	- [ ] Globe vésical *(Déshydratation)*
 > 	- [ ] Douleur sus-pubienne *(Déshydratation)*
@@ -443,26 +443,20 @@ cssclasses:
 > 	- [ ] Hernies
 > 	- [ ] Veines superficielles
 > 	- [ ] Mouvements respiratoires
-> - [ ] **22. Auscultation abdominale *(Cancer colorectal)***
-> 	- [ ] Patience
-> 	- [ ] Fréquence des bruits
-> 	- [ ] Tonalité
-> 	- [ ] Silence abdominal
-> 	- [ ] Hyperactivité
-> - [ ] **23. Percussion abdominale *(Cancer colorectal)***
+> - [ ] **22. Percussion abdominale *(Cancer colorectal)***
 > 	- [ ] Patient allongé
 > 	- [ ] Tympanisme
 > 	- [ ] Distension gazeuse
 > 	- [ ] Matité
 > 	- [ ] Mesure de la taille du foie, de la rate
-> - [ ] **24. Palpation profonde *(Cancer colorectal)***
+> - [ ] **23. Palpation profonde *(Cancer colorectal)***
 > 	- [ ] Recherche masse abdominale
 > 	- [ ] Mobilité de la masse
 > 	- [ ] Pulsations
 > 	- [ ] Aorte
 > 	- [ ] Taille des organes
 > 	- [ ] Points douloureux spécifiques
-> - [ ] **25. Palpation spécifique du côlon *(Cancer colorectal)***
+> - [ ] **24. Palpation spécifique du côlon *(Cancer colorectal)***
 > 	- [ ] Cadre colique
 > 	- [ ] Sigmoïde
 > 	- [ ] Cordon induré douloureux
@@ -522,7 +516,7 @@ cssclasses:
 > 	- [ ] FSC (hémoconcentration : Hb, Ht)
 > 	- [ ] Glycémie
 > 	- [ ] Analyse d'urine si suspicion d'infection
-> - [ ] **3. Organise le suivi et l'orientation**
+> - [ ] **3. Organise le suivi et reconnaît les complications**
 > 	- [ ] Critères d'hospitalisation définis
 > 	- [ ] Transfert à l'hôpital si nécessaire
 > 	- [ ] Surveillance de la réhydratation

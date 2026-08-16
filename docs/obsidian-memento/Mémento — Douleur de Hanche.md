@@ -103,7 +103,13 @@ cssclasses:
 > - [ ] **17. Facteurs soulageants *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **18. Essais de traitement *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **19. Retentissement *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
-> - [ ] **20. Symptômes associés *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
+> - [ ] **20. Symptômes associés locomoteurs *(Nécrose aseptique de la tête fémorale gauche · Syndrome douloureux du grand trochanter (tendinopathie fessière))***
+> 	- [ ] Boiterie *(Nécrose aseptique de la tête fémorale gauche)*
+> 	- [ ] Raideur matinale *(Nécrose aseptique de la tête fémorale gauche)*
+> 	- [ ] Blocages articulaires *(Nécrose aseptique de la tête fémorale gauche)*
+> 	- [ ] Dérobements *(Nécrose aseptique de la tête fémorale gauche)*
+> 	- [ ] Gonflement articulaire *(Nécrose aseptique de la tête fémorale gauche)*
+> 	- [ ] Limitation fonctionnelle *(Nécrose aseptique de la tête fémorale gauche)*
 > - [ ] **21. Signes inflammatoires *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **22. Rougeur *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
 > - [ ] **23. Tuméfaction *(Syndrome douloureux du grand trochanter (tendinopathie fessière))***
@@ -152,78 +158,71 @@ cssclasses:
 > 	- [ ] Traumatisme récent
 > 	- [ ] Effort physique inhabituel
 > 	- [ ] Chute ou accident
-> - [ ] **51. Symptômes associés locomoteurs *(Nécrose aseptique de la tête fémorale gauche)***
-> 	- [ ] Boiterie
-> 	- [ ] Raideur matinale
-> 	- [ ] Blocages articulaires
-> 	- [ ] Dérobements
-> 	- [ ] Gonflement articulaire
-> 	- [ ] Limitation fonctionnelle
-> - [ ] **52. Signes généraux et drapeaux rouges *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **51. Signes généraux et drapeaux rouges *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Fièvre
 > 	- [ ] Perte de poids inexpliquée
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Asthénie importante
 > 	- [ ] Douleurs multiples articulaires
-> - [ ] **53. Antécédents personnels médicaux *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **52. Antécédents personnels médicaux *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Maladies chroniques
 > 	- [ ] Antécédents chirurgicaux
 > 	- [ ] Fractures antérieures
 > 	- [ ] Pathologies rhumatismales
-> - [ ] **54. Traitement actuel et allergies *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **53. Traitement actuel et allergies *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Immunosuppresseurs
 > 	- [ ] Antalgiques
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Autres traitements
-> - [ ] **55. Facteurs de risque et habitudes *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **54. Facteurs de risque et habitudes *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Tabagisme
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Toxicomanie
 > 	- [ ] Activité physique habituelle
 > 	- [ ] Profession et sollicitation physique
-> - [ ] **56. Contexte particulier du patient *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **55. Contexte particulier du patient *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Immunosuppression
 > 	- [ ] Risque infectieux augmenté
 > 	- [ ] Corticothérapie au long cours
 > 	- [ ] Antécédents néoplasiques
-> - [ ] **57. Contexte psychosocial *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **56. Contexte psychosocial *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Situation professionnelle et capacité de travail
 > 	- [ ] Stress et charge psychologique
 > 	- [ ] Retentissement sur les activités quotidiennes
 > 	- [ ] Support social
-> - [ ] **58. Anamnèse par systèmes *(Nécrose aseptique de la tête fémorale gauche)***
+> - [ ] **57. Anamnèse par systèmes *(Nécrose aseptique de la tête fémorale gauche)***
 > 	- [ ] Symptômes urinaires
 > 	- [ ] Symptômes digestifs
 > 	- [ ] Symptômes neurologiques
 > 	- [ ] Symptômes vasculaires
-> - [ ] **59. Motif de consultation *(Coxarthrose (arthrose de hanche))***
-> - [ ] **60. Caractérisation de la douleur - critères mécaniques *(Coxarthrose (arthrose de hanche))***
+> - [ ] **58. Motif de consultation *(Coxarthrose (arthrose de hanche))***
+> - [ ] **59. Caractérisation de la douleur - critères mécaniques *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Localisation
 > 	- [ ] Type de douleur
 > 	- [ ] Début progressif
 > 	- [ ] Horaire mécanique
 > 	- [ ] Dérouillage matinal court
-> - [ ] **61. Facteurs déclenchants et soulageants *(Coxarthrose (arthrose de hanche))***
+> - [ ] **60. Facteurs déclenchants et soulageants *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Douleur à la marche et à l'effort
 > 	- [ ] Part du pli inguinal et irradie dans la cuisse et souvent vers le genou
 > 	- [ ] Généralement absente au repos et pendant la nuit
 > 	- [ ] Réactivée par la marche et les autres activités en charge
 > 	- [ ] Activités sportives (tennis, course à pied, pratiqués ~1x/semaine)
-> - [ ] **62. Évolution de la douleur *(Coxarthrose (arthrose de hanche))***
+> - [ ] **61. Évolution de la douleur *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Apparue très progressivement
 > 	- [ ] La pratique de sports n'était que peu gênée au début
 > 	- [ ] Depuis quelques semaines, n'est plus possible
 > 	- [ ] Progression de l'impotence fonctionnelle
-> - [ ] **63. Traitement essayé *(Coxarthrose (arthrose de hanche))***
+> - [ ] **62. Traitement essayé *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Douleur partiellement calmée par l'aspirine
 > 	- [ ] Autres anti-inflammatoires
-> - [ ] **64. Antécédents et facteurs de risque *(Coxarthrose (arthrose de hanche))***
+> - [ ] **63. Antécédents et facteurs de risque *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Pas d'accident ou traumatisme
 > 	- [ ] Pas d'autres articulations douloureuses
 > 	- [ ] Pas de maladies récemment
 > 	- [ ] Pas d'autres médicaments
 > 	- [ ] Pas de rhumatisme connu dans la famille
-> - [ ] **65. Recherche de signes inflammatoires systémiques *(Coxarthrose (arthrose de hanche))***
+> - [ ] **64. Recherche de signes inflammatoires systémiques *(Coxarthrose (arthrose de hanche))***
 > 	- [ ] Pas de fièvre
 > 	- [ ] Pas de sueurs nocturnes
 > 	- [ ] Pas d'amaigrissement
@@ -362,7 +361,13 @@ cssclasses:
 > 	- [ ] Signes radiologiques: pincement articulaire, ostéophytes, géodes, condensation
 > 	- [ ] Biologie si doute inflammatoire: FSC, VS, CRP
 > 	- [ ] IRM si radiographie normale et forte suspicion clinique
-> - [ ] **2. Classification de la coxarthrose**
+> - [ ] **2. Surveillance et pronostic**
+> 	- [ ] Évaluation régulière de la douleur (EVA)
+> 	- [ ] Évaluation fonctionnelle (périmètre de marche)
+> 	- [ ] Indices fonctionnels (WOMAC, Lequesne)
+> 	- [ ] Radiographie annuelle si évolutive
+> 	- [ ] Adaptation thérapeutique selon évolution
+> - [ ] **3. Classification de la coxarthrose**
 > 	- [ ] Primitive: idiopathique, liée à l'âge
 > 	- [ ] Secondaire: dysplasie, traumatisme, nécrose
 > 	- [ ] Stades radiologiques (Kellgren-Lawrence)
@@ -370,12 +375,6 @@ cssclasses:
 > 	- [ ] Stade 2: pincement articulaire débutant
 > 	- [ ] Stade 3: pincement marqué, géodes
 > 	- [ ] Stade 4: disparition interligne, déformations
-> - [ ] **3. Surveillance et suivi**
-> 	- [ ] Évaluation régulière de la douleur (EVA)
-> 	- [ ] Évaluation fonctionnelle (périmètre de marche)
-> 	- [ ] Indices fonctionnels (WOMAC, Lequesne)
-> 	- [ ] Radiographie annuelle si évolutive
-> 	- [ ] Adaptation thérapeutique selon évolution
 > - [ ] **4. Complications et évolution**
 > 	- [ ] Évolution généralement lente sur plusieurs années
 > 	- [ ] Aggravation progressive de l'impotence fonctionnelle

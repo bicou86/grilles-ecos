@@ -338,20 +338,20 @@ cssclasses:
 > - [ ] **13. Filet de sécurité**
 
 > [!success] 💊 Management — si Hyperthyroïdie
-> - [ ] **1. Diagnostic principal suspecté**
+> - [ ] **1. Autres examens biologiques**
+> 	- [ ] FSC
+> 	- [ ] Ionogramme
+> 	- [ ] Fonction hépatique
+> 	- [ ] Glycémie
+> - [ ] **2. Diagnostic principal suspecté**
 > 	- [ ] Maladie de Basedow (hyperthyroïdie auto-immune)
-> - [ ] **2. Diagnostics différentiels**
-> - [ ] **3. Examens biologiques thyroïdiens**
+> - [ ] **3. Diagnostics différentiels**
+> - [ ] **4. Examens biologiques thyroïdiens**
 > 	- [ ] TSH (thyréostimuline)
 > 	- [ ] T3 libre (fT3)
 > 	- [ ] T4 libre (fT4)
 > 	- [ ] Anticorps anti-récepteurs de la TSH (TRAK)
 > 	- [ ] Anticorps anti-TPO
-> - [ ] **4. Autres examens biologiques**
-> 	- [ ] FSC
-> 	- [ ] Ionogramme
-> 	- [ ] Fonction hépatique
-> 	- [ ] Glycémie
 > - [ ] **5. Examens d'imagerie**
 > 	- [ ] Échographie thyroïdienne
 > 	- [ ] Scintigraphie thyroïdienne
@@ -384,7 +384,7 @@ cssclasses:
 > 	- [ ] Agenda du sommeil
 > 	- [ ] ECG
 > 	- [ ] Toxicologie urinaire
-> - [ ] **3. Examens biologiques**
+> - [ ] **3. Autres examens biologiques**
 > 	- [ ] Mesure de la pression artérielle sur 24 heures
 > 	- [ ] TSH, T3 libre, T4 libre
 > 	- [ ] FSC

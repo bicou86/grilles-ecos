@@ -95,14 +95,18 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Question d’ouverture *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **2. Traumatisme de chute *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **2. Traumatisme de chute *(Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **3. Dimension temporelle *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **4. Moment *(Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **5. Durée *(Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **6. Premier événement *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **7. Répétition *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **8. Déclencheurs *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **9. Symptômes associés *(2 grilles sur 7)***
+> - [ ] **9. Symptômes associés - Infectieux *(3 grilles sur 7)***
+> 	- [ ] Fièvre *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Céphalées *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Photophobie/phonophobie *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Nausées/vomissements *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Sensations vertigineuses avant la perte de connaissance *(1 grille sur 7)*
 > 	- [ ] Voile noir et étoiles avant l'épisode *(1 grille sur 7)*
 > 	- [ ] Tremblements pendant l'épisode selon les parents *(1 grille sur 7)*
@@ -125,7 +129,17 @@ cssclasses:
 > - [ ] **25. Trouble sensitif *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **26. Paralysies *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **27. Bilan de syncope *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **28. Symptômes cardiaques *(Première crise épileptique focale bilatéralisée)***
+> - [ ] **28. Symptômes neurologiques et cardiovasculaires *(5 grilles sur 7)***
+> 	- [ ] Déficits neurologiques/AIT/AVC *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Changement de personnalité *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Cardiopathie connue *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Douleurs thoraciques *(2 grilles sur 7)*
+> 	- [ ] Dyspnée *(1 grille sur 7)*
+> 	- [ ] Palpitations *(1 grille sur 7)*
+> 	- [ ] Œdèmes des membres inférieurs *(1 grille sur 7)*
+> 	- [ ] Palpitations avant/après *(BAV)*
+> 	- [ ] Sensation de battements irréguliers *(BAV)*
+> 	- [ ] Pause cardiaque ressentie *(BAV)*
 > - [ ] **29. Prodromes de syncope *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **30. Fièvre/infection *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **31. Symptômes B *(BAV · Première crise convulsive tonico-clonique · Première crise épileptique focale bilatéralisée)***
@@ -172,44 +186,50 @@ cssclasses:
 > - [ ] **46. Réseau social *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **47. Question initiale *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **48. Déroulement (hétéro-anamnèse) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **49. Mécanisme de chute *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **50. Secousses / crampes *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **51. Déviation oculaire *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **52. Réorientation *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **53. Choc cranien *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **54. Activité immédiatement avant la perte de connaissance *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **55. Déclencheurs / triggers *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **56. Orthostatisme / changement de position *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **57. Déclencheurs situationnels (toux / éternuement / déglutition) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **58. Déclencheurs vasovagaux (émotion / excitation / douleur) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **59. Temps d’avertissement *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **60. Prodromes *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **61. Vertiges / étourdissements *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **62. Visuel (voile noir / tunnel / scintillement) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **63. Auditif (sourd / bourdonnement) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **64. Végétatif (nausées / sueurs / sensation de chaleur) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **65. Symptômes accompagnants *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **66. Syncopes / présyncopes antérieures *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **67. Symptômes thoraciques (actuels / péri-syncope / à l’effort) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **68. Douleurs thoraciques / oppression *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **69. Dyspnée *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **70. Palpitations *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **71. Douleurs liées à la chute *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **72. Gonflement / douleur des jambes *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **73. Symptômes infectieux / généraux *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **74. Fièvre / température *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **75. Anamnèse d’infection *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **76. Voies respiratoires supérieures (maux de gorge / rhume) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **77. Voies respiratoires inférieures (toux / expectoration) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **78. Céphalées / raideur de nuque *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **79. Myalgies *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **80. Anamnèse environnementale *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **81. DD Symptômes neurologiques *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **82. Morsure de langue *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **83. Perte d’urines / selles *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **84. Symptômes neurologiques focaux *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **85. Longs voyages / immobilisation *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **86. Antécédents médicaux personnels *(4 grilles sur 7)***
+> - [ ] **49. Secousses / crampes *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **50. Déviation oculaire *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **51. Réorientation *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **52. Choc cranien *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **53. Activité immédiatement avant la perte de connaissance *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **54. Déclencheurs / triggers *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **55. Orthostatisme / changement de position *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **56. Déclencheurs situationnels (toux / éternuement / déglutition) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **57. Déclencheurs vasovagaux (émotion / excitation / douleur) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **58. Temps d’avertissement *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **59. Prodromes *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **60. Vertiges / étourdissements *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **61. Visuel (voile noir / tunnel / scintillement) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **62. Auditif (sourd / bourdonnement) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **63. Végétatif (nausées / sueurs / sensation de chaleur) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **64. Symptômes accompagnants *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **65. Syncopes / présyncopes antérieures *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **66. Symptômes thoraciques (actuels / péri-syncope / à l’effort) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **67. Douleurs thoraciques / oppression *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **68. Dyspnée *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **69. Palpitations *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **70. Douleurs liées à la chute *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **71. Gonflement / douleur des jambes *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **72. Symptômes infectieux / généraux *(2 grilles sur 7)***
+> 	- [ ] Problèmes de concentration *(1 grille sur 7)*
+> 	- [ ] Fatigue inhabituelle *(1 grille sur 7)*
+> 	- [ ] Céphalées *(1 grille sur 7)*
+> 	- [ ] Modifications récentes *(1 grille sur 7)*
+> - [ ] **73. Fièvre / température *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **74. Anamnèse d’infection *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **75. Voies respiratoires supérieures (maux de gorge / rhume) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **76. Voies respiratoires inférieures (toux / expectoration) *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **77. Céphalées / raideur de nuque *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **78. Myalgies *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **79. Anamnèse environnementale *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **80. DD Symptômes neurologiques *(BAV · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> 	- [ ] Vertiges *(BAV)*
+> 	- [ ] Troubles visuels avant la syncope *(BAV)*
+> 	- [ ] Céphalées *(BAV)*
+> 	- [ ] Déficit neurologique focal *(BAV)*
+> - [ ] **81. Morsure de langue *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **82. Perte d’urines / selles *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **83. Longs voyages / immobilisation *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **84. Antécédents médicaux personnels *(4 grilles sur 7)***
 > 	- [ ] Diabète *(3 grilles sur 7)*
 > 	- [ ] Addiction *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Cancer actif *(Première crise convulsive tonico-clonique)*
@@ -221,22 +241,22 @@ cssclasses:
 > 	- [ ] Autres pathologies chroniques *(2 grilles sur 7)*
 > 	- [ ] Maladies cardiovasculaires *(BAV)*
 > 	- [ ] Maladies respiratoires *(BAV)*
-> - [ ] **87. Antécédents cardiaques / troubles du rythme *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **88. Drogues / stimulants *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **89. Maladies familiales générales *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **90. Mort subite cardiaque dans la famille *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **91. Profession *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **92. Situation sociale *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
-> - [ ] **93. Présentation avec nom, fonction et tâche *(3 grilles sur 7)***
-> - [ ] **94. Question ouverte initiale → symptôme principal *(BAV · Première crise convulsive tonico-clonique)***
-> - [ ] **95. Évolution temporelle de la crise *(Première crise convulsive tonico-clonique)***
+> - [ ] **85. Antécédents cardiaques / troubles du rythme *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **86. Drogues / stimulants *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **87. Maladies familiales générales *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **88. Mort subite cardiaque dans la famille *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **89. Profession *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **90. Situation sociale *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **91. Présentation avec nom, fonction et tâche *(3 grilles sur 7)***
+> - [ ] **92. Question ouverte initiale → symptôme principal *(BAV · Première crise convulsive tonico-clonique)***
+> - [ ] **93. Évolution temporelle de la crise *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Début
 > 	- [ ] Durée de la crise
 > 	- [ ] Fréquence
-> - [ ] **96. Caractéristiques de la crise *(Première crise convulsive tonico-clonique)***
+> - [ ] **94. Caractéristiques de la crise *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Localisation
 > 	- [ ] Type
-> - [ ] **97. Phase post-critique *(2 grilles sur 7)***
+> - [ ] **95. Phase post-critique *(2 grilles sur 7)***
 > 	- [ ] Désorientation *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Somnolence *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Agitation *(Première crise convulsive tonico-clonique)*
@@ -245,91 +265,71 @@ cssclasses:
 > 	- [ ] Réveil avec famille autour de lui *(1 grille sur 7)*
 > 	- [ ] Orientation conservée (sait où il est, reconnaît ses parents) *(1 grille sur 7)*
 > 	- [ ] Récupération rapide et complète *(1 grille sur 7)*
-> - [ ] **98. Facteurs de provocation *(Première crise convulsive tonico-clonique)***
+> - [ ] **96. Facteurs de provocation *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Privation de sommeil
 > 	- [ ] Consommation d'alcool/drogues
 > 	- [ ] Stress émotionnel
 > 	- [ ] Photostimulation
 > 	- [ ] Traumatisme crânien
-> - [ ] **99. Prodromes et aura *(Première crise convulsive tonico-clonique)***
+> - [ ] **97. Prodromes et aura *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Aura épigastrique
 > 	- [ ] Aura olfactive
 > 	- [ ] Aura visuelle
 > 	- [ ] Aura auditive
-> - [ ] **100. Signes accompagnateurs de la crise *(Première crise convulsive tonico-clonique)***
+> - [ ] **98. Signes accompagnateurs de la crise *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Cri initial
 > 	- [ ] Morsure de langue
 > 	- [ ] Perte d'urine/selles
-> - [ ] **101. Chutes ou traumatismes antérieurs *(Première crise convulsive tonico-clonique)***
-> - [ ] **102. Symptômes associés - Infectieux *(Première crise convulsive tonico-clonique)***
-> 	- [ ] Fièvre
-> 	- [ ] Céphalées
-> 	- [ ] Photophobie/phonophobie
-> 	- [ ] Nausées/vomissements
-> - [ ] **103. Symptômes végétatifs *(Première crise convulsive tonico-clonique)***
-> - [ ] **104. Symptômes neurologiques et cardiovasculaires *(Première crise convulsive tonico-clonique)***
-> 	- [ ] Déficits neurologiques/AIT/AVC
-> 	- [ ] Changement de personnalité
-> 	- [ ] Cardiopathie connue
-> - [ ] **105. Habitudes de vie *(Première crise convulsive tonico-clonique)***
+> - [ ] **99. Chutes ou traumatismes antérieurs *(Première crise convulsive tonico-clonique)***
+> - [ ] **100. Symptômes neurovégétatifs associés *(2 grilles sur 7)***
+> 	- [ ] Vertiges *(1 grille sur 7)*
+> 	- [ ] Tachycardie *(1 grille sur 7)*
+> 	- [ ] Sueurs *(1 grille sur 7)*
+> 	- [ ] Pâleur *(1 grille sur 7)*
+> - [ ] **101. Habitudes de vie *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **106. Anamnèse sociale *(Première crise convulsive tonico-clonique)***
+> - [ ] **102. Anamnèse sociale *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Formation
 > 	- [ ] Famille
 > 	- [ ] Profession
 > 	- [ ] Domicile
 > 	- [ ] Loisirs
-> - [ ] **107. Revue des systèmes *(Première crise convulsive tonico-clonique)***
-> - [ ] **108. Question d'entrée ouverte - Motif de consultation *(1 grille sur 7)***
-> - [ ] **109. Caractérisation des symptômes principaux *(1 grille sur 7)***
+> - [ ] **103. Revue des systèmes *(Première crise convulsive tonico-clonique)***
+> - [ ] **104. Question d'entrée ouverte - Motif de consultation *(1 grille sur 7)***
+> - [ ] **105. Caractérisation des symptômes principaux *(1 grille sur 7)***
 > 	- [ ] Déclenchement par changements de position
 > 	- [ ] Amélioration en position allongée
 > 	- [ ] Prédominance horaire
 > 	- [ ] Durée des symptômes
-> - [ ] **110. Symptômes neurovégétatifs associés *(1 grille sur 7)***
-> 	- [ ] Vertiges
-> 	- [ ] Tachycardie
-> 	- [ ] Sueurs
-> 	- [ ] Pâleur
-> - [ ] **111. Épisodes syncopaux et chutes *(1 grille sur 7)***
+> - [ ] **106. Épisodes syncopaux et chutes *(1 grille sur 7)***
 > 	- [ ] Nombre de chutes
 > 	- [ ] Perte de connaissance complète
 > 	- [ ] Gravité des chutes
 > 	- [ ] Traumatismes associés
-> - [ ] **112. Symptômes cognitifs et généraux *(1 grille sur 7)***
-> 	- [ ] Problèmes de concentration
-> 	- [ ] Fatigue inhabituelle
-> 	- [ ] Céphalées
-> 	- [ ] Modifications récentes
-> - [ ] **113. Symptômes cardiovasculaires *(1 grille sur 7)***
-> 	- [ ] Douleurs thoraciques
-> 	- [ ] Dyspnée
-> 	- [ ] Palpitations
-> 	- [ ] Œdèmes des membres inférieurs
-> - [ ] **114. Symptômes évocateurs d'autres causes *(1 grille sur 7)***
+> - [ ] **107. Symptômes évocateurs d'autres causes *(1 grille sur 7)***
 > 	- [ ] Intolérance au froid
 > 	- [ ] Acrocyanose
 > 	- [ ] Signes d'hypothyroïdie
 > 	- [ ] Signes d'insuffisance surrénalienne
-> - [ ] **115. Antécédents cardiovasculaires *(1 grille sur 7)***
+> - [ ] **108. Antécédents cardiovasculaires *(1 grille sur 7)***
 > 	- [ ] Maladies cardiaques connues
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Insuffisance cardiaque
 > 	- [ ] Troubles du rythme
-> - [ ] **116. Traitements médicamenteux *(1 grille sur 7)***
+> - [ ] **109. Traitements médicamenteux *(1 grille sur 7)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Antihypertenseurs
 > 	- [ ] Diurétiques
 > 	- [ ] Psychotropes
 > 	- [ ] Observance thérapeutique
-> - [ ] **117. Habitudes de vie et hydratation *(1 grille sur 7)***
+> - [ ] **110. Habitudes de vie et hydratation *(1 grille sur 7)***
 > 	- [ ] Apports alimentaires
 > 	- [ ] Hydratation quotidienne
 > 	- [ ] Consommation de sel
 > 	- [ ] Modifications récentes
-> - [ ] **118. Substances et habitudes *(2 grilles sur 7)***
+> - [ ] **111. Substances et habitudes *(2 grilles sur 7)***
 > 	- [ ] Tabagisme *(1 grille sur 7)*
 > 	- [ ] Alcool
 > 	- [ ] Café/thé *(1 grille sur 7)*
@@ -337,98 +337,88 @@ cssclasses:
 > 	- [ ] Tabac actuel *(BAV)*
 > 	- [ ] Café *(BAV)*
 > 	- [ ] Drogues illicites *(BAV)*
-> - [ ] **119. Activités physiques et mode de vie *(1 grille sur 7)***
+> - [ ] **112. Activités physiques et mode de vie *(1 grille sur 7)***
 > 	- [ ] Activités sportives
 > 	- [ ] Loisirs
 > 	- [ ] Niveau d'autonomie
 > 	- [ ] Mobilité générale
-> - [ ] **120. Contexte social *(1 grille sur 7)***
+> - [ ] **113. Contexte social *(1 grille sur 7)***
 > 	- [ ] Situation familiale
 > 	- [ ] Enfants
 > 	- [ ] Profession antérieure
 > 	- [ ] Conditions de vie actuelles
-> - [ ] **121. Caractérisation de l'épisode syncopal *(BAV)***
+> - [ ] **114. Caractérisation de l'épisode syncopal *(BAV)***
 > 	- [ ] Prodromes
 > 	- [ ] Durée de la perte de connaissance
 > 	- [ ] Récupération (rapide ou progressive)
 > 	- [ ] Confusion post-critique
-> - [ ] **122. Fréquence et récurrence *(BAV)***
+> - [ ] **115. Fréquence et récurrence *(BAV)***
 > 	- [ ] Nombre d'épisodes
 > 	- [ ] Premier épisode (date)
 > 	- [ ] Augmentation de la fréquence
 > 	- [ ] Circonstances similaires
-> - [ ] **123. Symptômes cardiovasculaires associés *(BAV)***
-> 	- [ ] Palpitations avant/après
-> 	- [ ] Douleurs thoraciques
-> 	- [ ] Sensation de battements irréguliers
-> 	- [ ] Pause cardiaque ressentie
-> - [ ] **124. Symptômes généraux récents *(BAV)***
+> - [ ] **116. Symptômes généraux récents *(BAV)***
 > 	- [ ] Fatigue inhabituelle
 > 	- [ ] Faiblesse générale
 > 	- [ ] Diminution de la tolérance à l'effort
 > 	- [ ] Modifications récentes
-> - [ ] **125. Symptômes respiratoires *(BAV)***
+> - [ ] **117. Symptômes respiratoires *(BAV)***
 > 	- [ ] Dyspnée d'effort
 > 	- [ ] Dyspnée de repos
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
-> - [ ] **126. Symptômes neurologiques *(BAV)***
-> 	- [ ] Vertiges
-> 	- [ ] Troubles visuels avant la syncope
-> 	- [ ] Céphalées
-> 	- [ ] Déficit neurologique focal
-> - [ ] **127. Circonstances déclenchantes *(BAV)***
+> - [ ] **118. Circonstances déclenchantes *(BAV)***
 > 	- [ ] Position lors de la syncope
 > 	- [ ] Effort physique
 > 	- [ ] Émotion forte
 > 	- [ ] Miction, défécation, toux
-> - [ ] **128. Facteurs de risque cardiovasculaire *(BAV)***
+> - [ ] **119. Facteurs de risque cardiovasculaire *(BAV)***
 > 	- [ ] Diabète
 > 	- [ ] Hypertension
 > 	- [ ] Dyslipidémie
 > 	- [ ] Tabagisme
 > 	- [ ] Obésité
-> - [ ] **129. Allergies médicamenteuses *(BAV)***
+> - [ ] **120. Allergies médicamenteuses *(BAV)***
 > 	- [ ] Allergies connues
 > 	- [ ] Intolérances
 > 	- [ ] Réactions antérieures
-> - [ ] **130. Contexte social et professionnel *(BAV)***
+> - [ ] **121. Contexte social et professionnel *(BAV)***
 > 	- [ ] Profession
 > 	- [ ] Niveau d'activité actuel
 > 	- [ ] Stress récent
 > 	- [ ] Support social
-> - [ ] **131. Orientation du patient *(Hypoglycémie)***
+> - [ ] **122. Orientation du patient *(Hypoglycémie)***
 > 	- [ ] Personne
 > 	- [ ] Temporalité
 > 	- [ ] Espace
-> - [ ] **132. Présence de douleur *(Hypoglycémie)***
-> - [ ] **133. Notion d'intoxication aiguë ("avez-vous pris ?") *(Hypoglycémie)***
+> - [ ] **123. Présence de douleur *(Hypoglycémie)***
+> - [ ] **124. Notion d'intoxication aiguë ("avez-vous pris ?") *(Hypoglycémie)***
 > 	- [ ] Drogue
 > 	- [ ] Alcool
-> - [ ] **134. Hétéro-anamnèse avec infirmier/-ère - anamnèse actuelle *(Hypoglycémie)***
+> - [ ] **125. Hétéro-anamnèse avec infirmier/-ère - anamnèse actuelle *(Hypoglycémie)***
 > 	- [ ] Circonstances du début du malaise
 > 	- [ ] Notion de perte de connaissance / syncope
 > 	- [ ] Notion de traumatisme crânien
-> - [ ] **135. Hétéroanamnèse avec infirmier/-ère - infos sur le/la patient·e *(Hypoglycémie)***
+> - [ ] **126. Hétéroanamnèse avec infirmier/-ère - infos sur le/la patient·e *(Hypoglycémie)***
 > 	- [ ] Médicaments habituels
 > 	- [ ] Antécédents / comorbidités
-> - [ ] **136. Anamnèse avec patient·e (post resucrage efficace) *(Hypoglycémie)***
+> - [ ] **127. Anamnèse avec patient·e (post resucrage efficace) *(Hypoglycémie)***
 > 	- [ ] Circonstance du malaise
 > 	- [ ] Compliance / modalité du traitement anti-diabétique
-> - [ ] **137. Caractérisation de la perte de connaissance *(1 grille sur 7)***
+> - [ ] **128. Caractérisation de la perte de connaissance *(1 grille sur 7)***
 > 	- [ ] Chronologie/durée
 > 	- [ ] Développement
 > 	- [ ] Circonstances de survenue
 > 	- [ ] Fréquence
-> - [ ] **138. Recherche de signes d'hypotension orthostatique *(1 grille sur 7)***
+> - [ ] **129. Recherche de signes d'hypotension orthostatique *(1 grille sur 7)***
 > 	- [ ] Épisode en se levant (changement de position)
 > 	- [ ] Vertiges et voile devant les yeux
-> - [ ] **139. Antécédents médicaux et facteurs prédisposants *(1 grille sur 7)***
+> - [ ] **130. Antécédents médicaux et facteurs prédisposants *(1 grille sur 7)***
 > 	- [ ] Anémie ferriprive en traitement (fer per os et IV)
 > 	- [ ] Jamais hospitalisé ni opéré
 > 	- [ ] Allergie au pollen
 > 	- [ ] Vaccins à jour
-> - [ ] **140. Habitudes et facteurs de risque *(1 grille sur 7)***
+> - [ ] **131. Habitudes et facteurs de risque *(1 grille sur 7)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Alimentation
 > 	- [ ] Activité physique
@@ -438,9 +428,15 @@ cssclasses:
 > - [ ] **1. Inspection après chute *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **2. Inspection de la langue *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **3. Tonus cervical *(Première crise épileptique focale bilatéralisée)***
-> - [ ] **4. Examen cardio-pulmonaire *(Première crise convulsive tonico-clonique · Première crise épileptique focale bilatéralisée)***
+> - [ ] **4. Examen cardio-pulmonaire *(4 grilles sur 7)***
 > 	- [ ] Auscultation cardiaque *(Première crise convulsive tonico-clonique)*
 > 	- [ ] Auscultation pulmonaire *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Inspection thoracique *(1 grille sur 7)*
+> 	- [ ] Auscultation pulmonaire bilatérale *(2 grilles sur 7)*
+> 	- [ ] Recherche de râles crépitants *(2 grilles sur 7)*
+> 	- [ ] Évaluation de la symétrie *(1 grille sur 7)*
+> 	- [ ] Signes de congestion *(BAV)*
+> 	- [ ] Épanchement pleural *(BAV)*
 > - [ ] **5. Auscultation cardiaque *(Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **6. Auscultation des carotides *(Première crise convulsive tonico-clonique · Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **7. Épreuves de maintien *(Première crise épileptique focale bilatéralisée)***
@@ -505,41 +501,42 @@ cssclasses:
 > 	- [ ] Mesure en position debout (immédiatement)
 > 	- [ ] Mesure en position debout (après 3 min)
 > 	- [ ] Calcul de la différence
-> - [ ] **56. Examen cardiovasculaire *(HypoTA orthostatique)***
-> 	- [ ] Auscultation cardiaque (4 foyers)
+> - [ ] **56. Examen cardiovasculaire *(BAV · HypoTA orthostatique)***
+> 	- [ ] Auscultation cardiaque (4 foyers) *(HypoTA orthostatique)*
 > 	- [ ] Palpation du pouls (fréquence et régularité) *(1 grille sur 7)*
 > 	- [ ] Recherche de souffles *(1 grille sur 7)*
-> 	- [ ] Recherche de signes d'insuffisance cardiaque
+> 	- [ ] Recherche de signes d'insuffisance cardiaque *(HypoTA orthostatique)*
+> 	- [ ] Auscultation carotidienne (souffles) *(BAV)*
+> 	- [ ] Palpation aortique *(BAV)*
+> 	- [ ] Recherche d'anévrisme *(BAV)*
+> 	- [ ] Signes d'artériopathie *(BAV)*
 > 	- [ ] Recherche de souffle ou trouble du rythme *(1 grille sur 7)*
 > 	- [ ] Palpation des pouls périphériques *(1 grille sur 7)*
-> - [ ] **57. Examen pulmonaire *(2 grilles sur 7)***
-> 	- [ ] Inspection thoracique *(1 grille sur 7)*
-> 	- [ ] Auscultation pulmonaire bilatérale *(1 grille sur 7)*
-> 	- [ ] Recherche de râles *(1 grille sur 7)*
-> 	- [ ] Évaluation de la symétrie *(1 grille sur 7)*
-> 	- [ ] Auscultation bilatérale *(BAV)*
-> 	- [ ] Recherche de râles crépitants *(BAV)*
-> 	- [ ] Signes de congestion *(BAV)*
-> 	- [ ] Épanchement pleural *(BAV)*
-> - [ ] **58. Inspection cutanée et vasculaire *(1 grille sur 7)***
+> - [ ] **57. Inspection cutanée et vasculaire *(1 grille sur 7)***
 > 	- [ ] Recherche de pâleur
 > 	- [ ] Présence de varices
 > 	- [ ] État d'hydratation cutanée
 > 	- [ ] Temps de recoloration capillaire
-> - [ ] **59. Examen neurologique de dépistage *(2 grilles sur 7)***
+> - [ ] **58. Examen neurologique de dépistage *(BAV · HypoTA orthostatique)***
 > 	- [ ] Orientation temporo-spatiale *(1 grille sur 7)*
 > 	- [ ] Équilibre et coordination *(1 grille sur 7)*
-> 	- [ ] Réflexes ostéo-tendineux
+> 	- [ ] Réflexes ostéo-tendineux *(2 grilles sur 7)*
 > 	- [ ] Force musculaire globale *(1 grille sur 7)*
 > 	- [ ] État de conscience (score de Glasgow) *(BAV)*
 > 	- [ ] Déficit focal *(BAV)*
 > 	- [ ] Signes méningés *(BAV)*
-> - [ ] **60. Recherche de signes d'hypovolémie *(1 grille sur 7)***
-> 	- [ ] Pli cutané
-> 	- [ ] Sécheresse des muqueuses
-> 	- [ ] Yeux enfoncés
-> 	- [ ] Pression veineuse jugulaire
-> - [ ] **61. Constantes vitales et état général *(2 grilles sur 7)***
+> 	- [ ] État de conscience et orientation *(1 grille sur 7)*
+> 	- [ ] Recherche de déficit neurologique focal *(1 grille sur 7)*
+> 	- [ ] Reflexes pupillaires *(1 grille sur 7)*
+> - [ ] **59. Recherche de signes d'hypovolémie *(HypoTA orthostatique)***
+> 	- [ ] Pli cutané *(1 grille sur 7)*
+> 	- [ ] Sécheresse des muqueuses *(1 grille sur 7)*
+> 	- [ ] Yeux enfoncés *(1 grille sur 7)*
+> 	- [ ] Pression veineuse jugulaire *(1 grille sur 7)*
+> 	- [ ] Coloration des conjonctives *(1 grille sur 7)*
+> 	- [ ] Coloration des muqueuses *(1 grille sur 7)*
+> 	- [ ] Recherche de pâleur cutanée *(1 grille sur 7)*
+> - [ ] **60. Constantes vitales et état général *(2 grilles sur 7)***
 > 	- [ ] État de conscience actuel *(BAV)*
 > 	- [ ] Pression artérielle *(BAV)*
 > 	- [ ] Saturation en oxygène *(BAV)*
@@ -548,76 +545,64 @@ cssclasses:
 > 	- [ ] Fréquence cardiaque et pouls *(1 grille sur 7)*
 > 	- [ ] État d'hydratation *(1 grille sur 7)*
 > 	- [ ] Évaluation générale *(1 grille sur 7)*
-> - [ ] **62. Examen cardiaque approfondi *(BAV)***
+> - [ ] **61. Examen cardiaque approfondi *(BAV)***
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Régularité du rythme
 > 	- [ ] Auscultation des bruits cardiaques
 > 	- [ ] Recherche de souffles
-> - [ ] **63. Palpation des pouls périphériques *(BAV)***
+> - [ ] **62. Palpation des pouls périphériques *(BAV)***
 > 	- [ ] Pouls carotidiens (bilatéral)
 > 	- [ ] Pouls radiaux (synchronisme)
 > 	- [ ] Pouls fémoraux
 > 	- [ ] Pouls pédieux
-> - [ ] **64. Recherche de signes d'insuffisance cardiaque *(BAV)***
+> - [ ] **63. Recherche de signes d'insuffisance cardiaque *(BAV)***
 > 	- [ ] Turgescence jugulaire
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Hépatomégalie
-> - [ ] **65. Examen vasculaire *(BAV)***
-> 	- [ ] Auscultation carotidienne (souffles)
-> 	- [ ] Palpation aortique
-> 	- [ ] Recherche d'anévrisme
-> 	- [ ] Signes d'artériopathie
-> - [ ] **66. Inspection générale *(BAV)***
+> - [ ] **64. Inspection générale *(BAV)***
 > 	- [ ] Coloration cutanée
 > 	- [ ] Signes de traumatisme (chute)
 > 	- [ ] Morsure de langue
 > 	- [ ] Perte d'urines
-> - [ ] **67. A - Airways - initie une prise en charge ABCDE *(Hypoglycémie)***
+> - [ ] **65. A - Airways - initie une prise en charge ABCDE *(Hypoglycémie)***
 > 	- [ ] Dans les 3 premières minutes après le début station
 > 	- [ ] Si patient·e en phase agitée - déclare à voix haute que le A est ok
 > 	- [ ] Si patient·e en phase endormie - inspecte l'intérieur de la cavité buccale
-> - [ ] **68. B - Breathing *(Hypoglycémie)***
+> - [ ] **66. B - Breathing *(Hypoglycémie)***
 > 	- [ ] Mesure ou demande la fréquence respiratoire
 > 	- [ ] Demande la mesure de saturation de l'hémoglobine (SpO2)
 > 	- [ ] Auscultation de min 4 plages pulmonaires
 > 	- [ ] Thorax visible durant l'examen clinique (pas recouvert)
-> - [ ] **69. C - Circulation *(Hypoglycémie)***
+> - [ ] **67. C - Circulation *(Hypoglycémie)***
 > 	- [ ] Mesure ou demande la fréquence cardiaque
 > 	- [ ] Demande la mesure de la tension artérielle
 > 	- [ ] Palpations des pouls périphériques aux 4 extrémités
 > 	- [ ] Recherche des signes d'hémorragie
 > 	- [ ] Mesure du temps de recoloration
-> - [ ] **70. D - Disability (1) - Glasgow Coma Scale *(Hypoglycémie)***
+> - [ ] **68. D - Disability (1) - Glasgow Coma Scale *(Hypoglycémie)***
 > 	- [ ] Ouverture des yeux
 > 	- [ ] Réponse verbale
 > 	- [ ] Réponse motrice
-> - [ ] **71. D - Disability (2) - Examen neurologique basique *(Hypoglycémie)***
+> - [ ] **69. D - Disability (2) - Examen neurologique basique *(Hypoglycémie)***
 > 	- [ ] Réflexes pupillaires
 > 	- [ ] Observation des pupilles (recherche anisocorie)
 > 	- [ ] Motricité globale des 4 membres
 > 	- [ ] Signes méningés
-> - [ ] **72. D - Disability (3) - mesure du glucose capillaire *(Hypoglycémie)***
-> - [ ] **73. E - Exposure *(Hypoglycémie)***
+> - [ ] **70. D - Disability (3) - mesure du glucose capillaire *(Hypoglycémie)***
+> - [ ] **71. E - Exposure *(Hypoglycémie)***
 > 	- [ ] Demande mesure T°
 > 	- [ ] Examen sommaire "tête aux pieds"
-> - [ ] **74. Test d'hypotension orthostatique *(1 grille sur 7)***
+> - [ ] **72. Test d'hypotension orthostatique *(1 grille sur 7)***
 > 	- [ ] Mesure TA en position couchée
 > 	- [ ] Mesure TA après 3 minutes debout
 > 	- [ ] Recherche de symptômes au lever
 > 	- [ ] Interprétation du test (chute ≥20/10 mmHg)
-> - [ ] **75. Examen neurologique de base *(1 grille sur 7)***
-> 	- [ ] État de conscience et orientation
-> 	- [ ] Recherche de déficit neurologique focal
-> 	- [ ] Reflexes pupillaires
-> - [ ] **76. Recherche de signes d'anémie *(1 grille sur 7)***
-> 	- [ ] Coloration des conjonctives
-> 	- [ ] Coloration des muqueuses
-> 	- [ ] Recherche de pâleur cutanée
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Diagnostic de travail *(2 grilles sur 7)* — *Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada)***
 > - [ ] **2. Hospitalisation *(2 grilles sur 7)* — *Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada)***
+> - [ ] **3. Avis de cardiologie *(2 grilles sur 7)* — *Première crise épileptique focale bilatéralisée · Syncope avec suspicion d’origine arythmogène (syndrome de Brugada)***
 
 > [!success] 💊 Management — si BAV
 > - [ ] **1. Diagnostics différentiels**
@@ -626,32 +611,32 @@ cssclasses:
 > 	- [ ] Trouble du rythme cardiaque : bloc auriculo-ventriculaire
 > 	- [ ] Type de bloc AV suspecté
 > 	- [ ] Risque vital immédiat
-> - [ ] **3. Planification du suivi**
+> - [ ] **3. Propose des examens complémentaires appropriés**
+> 	- [ ] Échocardiographie (exclure infarctus, cardiomyopathie)
+> 	- [ ] Monitoring ECG continu
+> 	- [ ] Holter ECG 24h si sortie
+> 	- [ ] Test d'effort différé
+> - [ ] **4. Planification du suivi**
 > 	- [ ] Coordination avec le médecin traitant
 > 	- [ ] Consultation cardiologie urgente
 > 	- [ ] Suivi post-implantation
 > 	- [ ] Contrôles réguliers du pacemaker
-> - [ ] **4. Éducation du patient et prévention**
+> - [ ] **5. Éducation du patient et prévention**
 > 	- [ ] Explication de la pathologie
 > 	- [ ] Signes d'alarme à reconnaître
 > 	- [ ] Conduite automobile temporairement interdite
 > 	- [ ] Port de la carte de porteur de pacemaker
-> - [ ] **5. ECG - Réalisation et interprétation**
+> - [ ] **6. ECG - Réalisation et interprétation**
 > 	- [ ] ECG 12 dérivations en urgence
 > 	- [ ] Identification du bloc AV type Mobitz
 > 	- [ ] Analyse de l'intervalle PR
 > 	- [ ] Recherche d'autres anomalies
-> - [ ] **6. Examens biologiques urgents**
+> - [ ] **7. Examens biologiques urgents**
 > 	- [ ] Troponine
 > 	- [ ] BNP/NT-proBNP
 > 	- [ ] Ionogramme et fonction rénale
 > 	- [ ] FSC
 > 	- [ ] TSH si indication
-> - [ ] **7. Examens complémentaires cardiologiques**
-> 	- [ ] Échocardiographie (exclure infarctus, cardiomyopathie)
-> 	- [ ] Monitoring ECG continu
-> 	- [ ] Holter ECG 24h si sortie
-> 	- [ ] Test d'effort différé
 > - [ ] **8. Prise en charge immédiate**
 > 	- [ ] Mise sous scope cardiaque
 > 	- [ ] Voie veineuse périphérique
@@ -691,11 +676,15 @@ cssclasses:
 > 	- [ ] Justification clinique
 > 	- [ ] Critères diagnostiques (chute TA >20/10 mmHg)
 > 	- [ ] Sévérité évaluée
-> - [ ] **3. Propose des examens complémentaires appropriés *(1 grille sur 2)***
-> 	- [ ] ECG 12 dérivations
-> 	- [ ] Bilan sanguin (FSC, ionogramme, glycémie)
-> 	- [ ] Dosage de l'hémoglobine (contrôle anémie)
-> 	- [ ] Holter ECG si suspicion cardiaque
+> - [ ] **3. Propose des examens complémentaires appropriés**
+> 	- [ ] ECG de repos *(1 grille sur 2)*
+> 	- [ ] Échocardiographie *(1 grille sur 2)*
+> 	- [ ] Holter ECG si suspicion de troubles du rythme *(1 grille sur 2)*
+> 	- [ ] Test d'effort si indiqué *(1 grille sur 2)*
+> 	- [ ] ECG 12 dérivations *(1 grille sur 2)*
+> 	- [ ] Bilan sanguin (FSC, ionogramme, glycémie) *(1 grille sur 2)*
+> 	- [ ] Dosage de l'hémoglobine (contrôle anémie) *(1 grille sur 2)*
+> 	- [ ] Holter ECG si suspicion cardiaque *(1 grille sur 2)*
 > - [ ] **4. Planification du suivi *(1 grille sur 2)***
 > 	- [ ] Rendez-vous de contrôle programmé
 > 	- [ ] Surveillance de l'efficacité thérapeutique
@@ -712,40 +701,35 @@ cssclasses:
 > 	- [ ] Fonction rénale
 > 	- [ ] TSH (hypothyroïdie)
 > 	- [ ] Cortisol (insuffisance surrénalienne)
-> - [ ] **7. Examens complémentaires - Cardiologie *(1 grille sur 2)***
-> 	- [ ] ECG de repos
-> 	- [ ] Échocardiographie
-> 	- [ ] Holter ECG si suspicion de troubles du rythme
-> 	- [ ] Test d'effort si indiqué
-> - [ ] **8. Mesures non médicamenteuses *(1 grille sur 2)***
+> - [ ] **7. Mesures non médicamenteuses *(1 grille sur 2)***
 > 	- [ ] Hydratation adéquate (>1,5L/jour)
 > 	- [ ] Augmentation des apports en sel
 > 	- [ ] Lever progressif en 3 temps
 > 	- [ ] Éviter la station debout prolongée
 > 	- [ ] Bas de contention si varices
 > 	- [ ] Surélévation de la tête du lit
-> - [ ] **9. Révision médicamenteuse *(1 grille sur 2)***
+> - [ ] **8. Révision médicamenteuse *(1 grille sur 2)***
 > 	- [ ] Identification des médicaments hypotenseurs
 > 	- [ ] Ajustement posologique
 > 	- [ ] Changement d'horaire de prise
 > 	- [ ] Substitution si nécessaire
-> - [ ] **10. Traitement médicamenteux spécifique *(1 grille sur 2)***
+> - [ ] **9. Traitement médicamenteux spécifique *(1 grille sur 2)***
 > 	- [ ] Fludrocortisone (Florinef® 0,1mg/jour)
 > 	- [ ] Posologie progressive (max 0,5mg/jour)
 > 	- [ ] Surveillance des effets secondaires
 > 	- [ ] Alternatives (midodrine si échec)
-> - [ ] **11. Éducation du patient et prévention *(1 grille sur 2)***
+> - [ ] **10. Éducation du patient et prévention *(1 grille sur 2)***
 > 	- [ ] Explication de la pathologie
 > 	- [ ] Reconnaissance des symptômes d'alerte
 > 	- [ ] Prévention des chutes
 > 	- [ ] Adaptation de l'environnement
-> - [ ] **12. Évoque le diagnostic principal de syncope orthostatique *(1 grille sur 2)***
-> - [ ] **13. Propose une prise en charge adaptée *(1 grille sur 2)***
+> - [ ] **11. Évoque le diagnostic principal de syncope orthostatique *(1 grille sur 2)***
+> - [ ] **12. Propose une prise en charge adaptée *(1 grille sur 2)***
 > 	- [ ] Correction de l'anémie (optimisation traitement martial)
 > 	- [ ] Conseils préventifs (lever progressif, hydratation)
 > 	- [ ] Éviction des facteurs favorisants
 > 	- [ ] Suivi médical rapproché
-> - [ ] **14. Rassurance et explication au patient *(1 grille sur 2)***
+> - [ ] **13. Rassurance et explication au patient *(1 grille sur 2)***
 > 	- [ ] Explique le lien avec l'anémie
 > 	- [ ] Rassure sur le caractère bénin probable
 > 	- [ ] Explique l'importance du suivi
@@ -786,10 +770,9 @@ cssclasses:
 > - [ ] **11. Accès iv**
 > - [ ] **12. Médication de réserve lorazépam**
 > - [ ] **13. Demande d’EEG**
-> - [ ] **14. Avis neurologique**
-> - [ ] **15. IRM cérébrale**
-> - [ ] **16. Information sur l’inaptitude à la conduite**
-> - [ ] **17. Conseils de sécurité**
+> - [ ] **14. IRM cérébrale**
+> - [ ] **15. Information sur l’inaptitude à la conduite**
+> - [ ] **16. Conseils de sécurité**
 
 > [!success] 💊 Management — si Sténose aortique
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
@@ -800,7 +783,6 @@ cssclasses:
 > - [ ] **3. ECG 12 dérivations**
 > - [ ] **4. Antipyrèse**
 > - [ ] **5. Monitoring / télémétrie**
-> - [ ] **6. Avis de cardiologie**
 
 > [!success] 💊 Management — si Syncope vaso-vagale
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
