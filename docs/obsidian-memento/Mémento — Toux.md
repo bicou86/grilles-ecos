@@ -891,6 +891,12 @@ cssclasses:
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
 > - [ ] **1. Hypothèses diagnostiques *(3 grilles sur 13)* — *Asthme · BPCO · Cancer pulmonaire***
+> - [ ] **2. Communication avec la patiente *(2 grilles sur 13)* — *Asthme · BPCO***
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
 
 > [!success] 💊 Management — si Asthme
 > - [ ] **1. Examens complémentaires de première intention *(1 grille sur 2)***
@@ -902,33 +908,27 @@ cssclasses:
 > 	- [ ] Test de provocation à la méthacholine
 > - [ ] **3. Examens d'imagerie *(1 grille sur 2)***
 > 	- [ ] Radiographie thoracique
-> - [ ] **4. Communication avec le patient *(1 grille sur 2)***
-> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions de la patiente
-> - [ ] **5. Conseil et soutien *(1 grille sur 2)***
+> - [ ] **4. Conseil et soutien *(1 grille sur 2)***
 > 	- [ ] Conseil sur les drogues récréatives
 > 	- [ ] Offrir mouchoir et/ou eau pendant la crise de toux de la patiente
 > 	- [ ] Réaction appropriée au défi concernant la guérison
 > 	- [ ] Rassurer sur les options thérapeutiques
 > 	- [ ] Éducation sur l'asthme si confirmé
-> - [ ] **6. Diagnostic principal évoqué *(1 grille sur 2)***
-> - [ ] **7. Examens complémentaires *(1 grille sur 2)***
+> - [ ] **5. Diagnostic principal évoqué *(1 grille sur 2)***
+> - [ ] **6. Examens complémentaires *(1 grille sur 2)***
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] Bilan sanguin (FSC, CRP, CK, troponines, D-dimères)
 > 	- [ ] Épreuves fonctionnelles respiratoires avec test de provocation bronchique
 > 	- [ ] ECG/Échocardiographie
 > 	- [ ] Tests d'allergie
-> - [ ] **8. Traitement proposé *(1 grille sur 2)***
+> - [ ] **7. Traitement proposé *(1 grille sur 2)***
 > 	- [ ] Bêta-2-mimétiques (salbutamol) en inhalation
 > 	- [ ] Éducation thérapeutique
 > 	- [ ] Éviction des facteurs déclenchants
-> - [ ] **9. Diagnostics différentiels cardiaques *(1 grille sur 2)***
-> - [ ] **10. Diagnostics différentiels pulmonaires *(1 grille sur 2)***
-> - [ ] **11. Interprétation des épreuves fonctionnelles respiratoires *(1 grille sur 2)***
+> - [ ] **8. Diagnostics différentiels cardiaques *(1 grille sur 2)***
+> - [ ] **9. Diagnostics différentiels pulmonaires *(1 grille sur 2)***
+> - [ ] **10. Interprétation des épreuves fonctionnelles respiratoires *(1 grille sur 2)***
 > 	- [ ] Syndrome obstructif
 > 	- [ ] Résistances centrales augmentées
 > 	- [ ] Volume résiduel augmenté
@@ -941,19 +941,13 @@ cssclasses:
 > 	- [ ] Échocardiographie transthoracique
 > 	- [ ] BNP, NT-pro BNP
 > 	- [ ] Radiographie thoracique
-> - [ ] **2. Communication avec le patient**
-> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions de la patiente
-> - [ ] **3. Conseil et soutien**
+> - [ ] **2. Conseil et soutien**
 > 	- [ ] Offrir mouchoir et eau lors de la crise de toux
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Conseil sur les options de soutien pour l'exercice régulier
 > 	- [ ] Réaction appropriée au défi concernant l'arrêt du tabac
 > 	- [ ] Éducation sur les risques du tabagisme
-> - [ ] **4. Tests de fonction pulmonaire**
+> - [ ] **3. Tests de fonction pulmonaire**
 > 	- [ ] Spirométrie avec test de réversibilité
 
 > [!success] 💊 Management — si Bronchiolite
@@ -964,23 +958,23 @@ cssclasses:
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Oxymétrie de pouls
 > 	- [ ] Gazométrie artérielle
-> - [ ] **2. Communication avec le patient *(1 grille sur 2)***
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **3. Conseil et soutien *(1 grille sur 2)***
+> - [ ] **2. Conseil et soutien *(1 grille sur 2)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi sur les coûts
 > 	- [ ] Orientation vers services sociaux
 > 	- [ ] Soutien émotionnel face à l'inquiétude
 > 	- [ ] Information sur l'urgence du diagnostic
-> - [ ] **4. Examens microbiologiques *(1 grille sur 2)***
+> - [ ] **3. Examens microbiologiques *(1 grille sur 2)***
 > 	- [ ] Coloration de Gram des expectorations, microscopie avec coloration acido-résistante, cytologie, et culture de routine et mycobactérienne
-> - [ ] **5. Examens biologiques et imagerie avancée *(1 grille sur 2)***
+> - [ ] **4. Examens biologiques et imagerie avancée *(1 grille sur 2)***
 > 	- [ ] FSC avec formule
 > 	- [ ] CT thoracique
+> - [ ] **5. Communication avec le patient *(1 grille sur 2)***
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
 > - [ ] **6. Prise en charge immédiate *(1 grille sur 2)***
 > 	- [ ] Arrêt du tabac immédiat et accompagnement
 > 	- [ ] Consultation pneumologique urgente

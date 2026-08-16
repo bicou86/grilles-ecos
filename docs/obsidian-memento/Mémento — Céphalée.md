@@ -401,29 +401,29 @@ cssclasses:
 > 	- [ ] Sinon : antalgiques et contrôle
 
 > [!success] 💊 Management — si Hémorragie sous-arachnoïdienne
-> - [ ] **1. Communication avec le patient**
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
-> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions de la patiente
-> 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
-> - [ ] **2. Conseil et soutien**
+> - [ ] **1. Conseil et soutien**
 > 	- [ ] Proposer d'aider la patiente à s'allonger
 > 	- [ ] Proposer de diminuer l'éclairage dans la salle d'examen
 > 	- [ ] Réaction appropriée au défi concernant le mari
 > 	- [ ] Soutien émotionnel face à la gravité
 > 	- [ ] Information sur l'urgence de la situation
-> - [ ] **3. Examens complémentaires urgents**
+> - [ ] **2. Examens complémentaires urgents**
 > 	- [ ] CT cérébral sans contraste
 > 	- [ ] FSC
 > 	- [ ] Glucose, électrolytes
-> - [ ] **4. Examens complémentaires biologiques et microbiologiques**
+> - [ ] **3. Examens complémentaires biologiques et microbiologiques**
 > 	- [ ] TP, TCA
 > 	- [ ] Hémocultures
-> - [ ] **5. Ponction lombaire et imagerie spécialisée**
+> - [ ] **4. Ponction lombaire et imagerie spécialisée**
 > 	- [ ] Ponction lombaire avec analyse du LCR
 > 	- [ ] Angiographie
+> - [ ] **5. Communication avec la patiente**
+> 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions de la patiente
+> 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
 
 > [!success] 💊 Management — si Méningite
 > - [ ] **1. Diagnostics différentiels**

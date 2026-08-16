@@ -179,7 +179,7 @@ cssclasses:
 > 	- [ ] Bras à hauteur du cœur *(1 grille sur 2)*
 > 	- [ ] Brassard adapté
 > 	- [ ] Mesure aux deux bras
-> 	- [ ] Au moins 2 mesures
+> 	- [ ] Plusieurs mesures
 > 	- [ ] Repos 5 minutes avant mesure *(1 grille sur 2)*
 > 	- [ ] Position assise correcte *(1 grille sur 2)*
 > - [ ] **2. Examen cardiovasculaire**

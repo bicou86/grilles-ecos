@@ -357,7 +357,7 @@ cssclasses:
 > 	- [ ] Inspection de l'oropharynx
 > - [ ] **3. Examen cardiovasculaire *(1 grille sur 5)***
 > - [ ] **4. Examen pulmonaire *(1 grille sur 5)***
-> - [ ] **5. Examen abdominal complet *(Diarrhée chronique par malabsorption · MICI (Crohn / RCUH))***
+> - [ ] **5. Examen abdominal *(Diarrhée chronique par malabsorption · MICI (Crohn / RCUH))***
 > 	- [ ] Inspection de l'abdomen *(MICI (Crohn / RCUH))*
 > 	- [ ] Auscultation de l'abdomen *(1 grille sur 5)*
 > 	- [ ] Percussion de l'abdomen *(1 grille sur 5)*
@@ -573,16 +573,12 @@ cssclasses:
 > 	- [ ] US abdominale
 > 	- [ ] Radiographie abdominale simple
 > 	- [ ] Coloscopie
-> - [ ] **5. Communication avec le patient**
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires *(1 grille sur 2)*
-> 	- [ ] Explication du plan de prise en charge *(1 grille sur 2)*
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux *(1 grille sur 2)*
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique *(1 grille sur 2)*
-> 	- [ ] Recherche des préoccupations et questions du patient *(1 grille sur 2)*
-> 	- [ ] Réponse à la question sur le cancer *(1 grille sur 2)*
-> 	- [ ] Explication du caractère chronique de la maladie *(1 grille sur 2)*
-> 	- [ ] Rassurance sur les options thérapeutiques *(1 grille sur 2)*
-> 	- [ ] Information sur les groupes de soutien *(1 grille sur 2)*
+> - [ ] **5. Communication avec le patient *(1 grille sur 2)***
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
 > - [ ] **6. Conseil et prévention *(1 grille sur 2)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant le travail
@@ -611,3 +607,8 @@ cssclasses:
 > 	- [ ] Surveillance des complications
 > 	- [ ] Protocole de dépistage du cancer colorectal
 > 	- [ ] Soutien psychologique
+> - [ ] **12. Communication avec la patiente *(1 grille sur 2)***
+> 	- [ ] Réponse à la question sur le cancer
+> 	- [ ] Explication du caractère chronique de la maladie
+> 	- [ ] Rassurance sur les options thérapeutiques
+> 	- [ ] Information sur les groupes de soutien
