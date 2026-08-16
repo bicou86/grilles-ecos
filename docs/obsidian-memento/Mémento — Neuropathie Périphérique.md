@@ -498,22 +498,22 @@ cssclasses:
 > 	- [ ] Support nutritionnel
 
 > [!success] 💊 Management — si Hernie discale
-> - [ ] **1. Orientation et suivi spécialisé**
-> 	- [ ] Centre de la douleur
-> 	- [ ] Neurochirurgie
-> 	- [ ] Rhumatologie
-> 	- [ ] Suivi neurologique
-> - [ ] **2. Diagnostic topographique et syndromique**
-> 	- [ ] Radiculopathie L5 ou S1
-> 	- [ ] Neuropathie distale vs radiculopathie
-> 	- [ ] Mononeuropathie vs polyneuropathie
-> 	- [ ] Atteinte sensitive pure vs sensitivomotrice
-> - [ ] **3. Diagnostic étiologique - causes de neuropathie douloureuse**
-> - [ ] **4. Examens complémentaires spécialisés**
+> - [ ] **1. Examens complémentaires spécialisés**
 > 	- [ ] Électromyogramme
 > 	- [ ] IRM lombaire
 > 	- [ ] Bilan métabolique
 > 	- [ ] Sérologies
+> - [ ] **2. Orientation et suivi spécialisé**
+> 	- [ ] Centre de la douleur
+> 	- [ ] Neurochirurgie
+> 	- [ ] Rhumatologie
+> 	- [ ] Suivi neurologique
+> - [ ] **3. Diagnostic topographique et syndromique**
+> 	- [ ] Radiculopathie L5 ou S1
+> 	- [ ] Neuropathie distale vs radiculopathie
+> 	- [ ] Mononeuropathie vs polyneuropathie
+> 	- [ ] Atteinte sensitive pure vs sensitivomotrice
+> - [ ] **4. Diagnostic étiologique - causes de neuropathie douloureuse**
 > - [ ] **5. Traitement pharmacologique de la douleur neuropathique**
 > - [ ] **6. Traitement étiologique selon la cause**
 > 	- [ ] Chirurgie rachidienne
@@ -539,7 +539,7 @@ cssclasses:
 > - [ ] **2. Diagnostic principal évoqué**
 > - [ ] **3. Diagnostics différentiels**
 > - [ ] **4. Autres problèmes identifiés**
-> - [ ] **5. Examens complémentaires**
+> - [ ] **5. Examens complémentaires spécialisés**
 > 	- [ ] Glycémie à jeun
 > 	- [ ] HbA1c
 > 	- [ ] Bilan lipidique complet

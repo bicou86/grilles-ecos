@@ -314,14 +314,16 @@ cssclasses:
 > - [ ] **1. Diagnostics différentiels *(2 grilles sur 3)* — *AOMI · Embolie pulmonaire***
 
 > [!success] 💊 Management — si AOMI
-> - [ ] **1. Examens complémentaires *(1 grille sur 2)***
+> - [ ] **1. Examens complémentaires de première intention**
 > 	- [ ] Echo-Doppler artériel membres inférieurs
-> 	- [ ] Mesure index pression systolique (IPS)
+> 	- [ ] Mesure index pression systolique (IPS) *(1 grille sur 2)*
 > 	- [ ] Bilan lipidique complet
 > 	- [ ] Glycémie à jeun, HbA1c
 > 	- [ ] Créatinine, DFG
-> 	- [ ] ECG de repos
-> 	- [ ] Test de marche sur tapis
+> 	- [ ] ECG de repos *(1 grille sur 2)*
+> 	- [ ] Test de marche sur tapis *(1 grille sur 2)*
+> 	- [ ] Index de pression systolique cheville-bras (IPS) *(1 grille sur 2)*
+> 	- [ ] FSC, plaquettes *(1 grille sur 2)*
 > - [ ] **2. Classification de l'artériopathie (Leriche-Fontaine) *(1 grille sur 2)***
 > 	- [ ] Stade I: Asymptomatique
 > 	- [ ] Stade II: Claudication intermittente
@@ -343,35 +345,28 @@ cssclasses:
 > 	- [ ] Périmètre de marche 150m
 > 	- [ ] Absence de signes d'ischémie critique
 > - [ ] **6. Diagnostic différentiel de la claudication *(1 grille sur 2)***
-> - [ ] **7. Examens complémentaires de première intention *(1 grille sur 2)***
-> 	- [ ] Index de pression systolique cheville-bras (IPS)
-> 	- [ ] Écho-Doppler artériel membres inférieurs
-> 	- [ ] Bilan lipidique complet
-> 	- [ ] Glycémie à jeun, HbA1c
-> 	- [ ] Créatinine, DFG
-> 	- [ ] FSC, plaquettes
-> - [ ] **8. Examens d'imagerie vasculaire *(1 grille sur 2)***
+> - [ ] **7. Examens d'imagerie vasculaire *(1 grille sur 2)***
 > 	- [ ] Test de marche sur tapis roulant
 > 	- [ ] Angio-CT membres inférieurs si indication
 > 	- [ ] Angio-IRM si contre-indication produit contraste
 > 	- [ ] Artériographie si geste endovasculaire envisagé
 > 	- [ ] Recherche autres localisations athéromateuses
-> - [ ] **9. Traitement médical de l'AOMI *(1 grille sur 2)***
-> - [ ] **10. Mesures hygiéno-diététiques *(1 grille sur 2)***
+> - [ ] **8. Traitement médical de l'AOMI *(1 grille sur 2)***
+> - [ ] **9. Mesures hygiéno-diététiques *(1 grille sur 2)***
 > 	- [ ] Sevrage tabagique impératif
 > 	- [ ] Régime méditerranéen
 > 	- [ ] Activité physique régulière
 > 	- [ ] Réduction pondérale si surpoids
 > 	- [ ] Limitation alcool
 > 	- [ ] Soins des pieds
-> - [ ] **11. Indications de revascularisation *(1 grille sur 2)***
+> - [ ] **10. Indications de revascularisation *(1 grille sur 2)***
 > 	- [ ] Échec traitement médical optimal 3-6 mois
 > 	- [ ] Claudication invalidante malgré réhabilitation
 > 	- [ ] Ischémie critique (stade 3-4)
 > 	- [ ] Lésions accessibles à revascularisation
 > 	- [ ] Rapport bénéfice/risque favorable
 > 	- [ ] Choix endovasculaire vs chirurgie selon lésions
-> - [ ] **12. Surveillance et prévention secondaire *(1 grille sur 2)***
+> - [ ] **11. Surveillance et prévention secondaire *(1 grille sur 2)***
 > 	- [ ] Suivi clinique régulier
 > 	- [ ] IPS annuel
 > 	- [ ] Contrôle facteurs de risque
@@ -383,12 +378,7 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Embolie pulmonaire
-> - [ ] **1. Stratégie diagnostique selon probabilité clinique**
-> 	- [ ] Probabilité forte (Wells ≥ 2): Echo-Doppler d'emblée
-> 	- [ ] Si écho négatif mais forte suspicion: répéter à J7
-> 	- [ ] D-dimères: peu utiles si probabilité forte
-> 	- [ ] Si dyspnée: angio-CT thoracique ou scintigraphie V/Q
-> - [ ] **2. Examens complémentaires urgents**
+> - [ ] **1. Examens complémentaires de première intention**
 > 	- [ ] Echo-Doppler veineux membres inférieurs
 > 	- [ ] D-dimères (si probabilité faible/intermédiaire)
 > 	- [ ] Angio-CT thoracique (si dyspnée)
@@ -396,6 +386,11 @@ cssclasses:
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] Bilan de coagulation (TP, TCA)
 > 	- [ ] FSC, plaquettes, créatinine
+> - [ ] **2. Stratégie diagnostique selon probabilité clinique**
+> 	- [ ] Probabilité forte (Wells ≥ 2): Echo-Doppler d'emblée
+> 	- [ ] Si écho négatif mais forte suspicion: répéter à J7
+> 	- [ ] D-dimères: peu utiles si probabilité forte
+> 	- [ ] Si dyspnée: angio-CT thoracique ou scintigraphie V/Q
 > - [ ] **3. Traitement anticoagulant**
 > - [ ] **4. Critères d'hospitalisation**
 > 	- [ ] Embolie pulmonaire associée

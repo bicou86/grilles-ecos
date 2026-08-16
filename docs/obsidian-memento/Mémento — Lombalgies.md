@@ -614,7 +614,7 @@ cssclasses:
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
 > - [ ] **2. Diagnostic principal *(3 grilles sur 8)* — *Colique néphrétique sur lithiase · Fracture vertébrale · Hernie discale***
-> - [ ] **3. Prise en charge thérapeutique *(2 grilles sur 8)* — *Fracture vertébrale · Hernie discale***
+> - [ ] **3. Prise en charge thérapeutique ambulatoire *(3 grilles sur 8)* — *Colique néphrétique sur lithiase · Fracture vertébrale · Hernie discale***
 
 > [!success] 💊 Management — si Cancer prostatique métastatique
 > - [ ] **1. Hypothèse diagnostique principale**
@@ -689,21 +689,20 @@ cssclasses:
 > 	- [ ] Insuffisance rénale aiguë obstructive *(1 grille sur 2)*
 > 	- [ ] Terrain particulier: grossesse, rein unique, transplanté *(1 grille sur 2)*
 > 	- [ ] Impossibilité de prise en charge ambulatoire *(1 grille sur 2)*
-> - [ ] **5. Prise en charge thérapeutique ambulatoire *(1 grille sur 2)***
-> - [ ] **6. Prise en charge à distance *(1 grille sur 2)***
+> - [ ] **5. Prise en charge à distance *(1 grille sur 2)***
 > 	- [ ] Analyse du calcul si récupéré
 > 	- [ ] Bilan métabolique à 6 semaines
 > 	- [ ] Calcium, phosphate, acide urique sanguins
 > 	- [ ] Calciurie, phosphaturie, uraturie des 24h
 > 	- [ ] PH urinaire, densité urinaire
-> - [ ] **7. Information et éducation *(1 grille sur 2)***
+> - [ ] **6. Information et éducation *(1 grille sur 2)***
 > 	- [ ] Expliquer l'évolution naturelle
 > 	- [ ] Calcul 90%
 > 	- [ ] Importance de filtrer les urines
 > 	- [ ] Signes d'alerte nécessitant reconsultation
 > 	- [ ] Remise de documentation écrite
-> - [ ] **8. Diagnostics différentiels de la colique néphrétique *(1 grille sur 2)***
-> - [ ] **9. Imagerie pour confirmation diagnostique *(1 grille sur 2)***
+> - [ ] **7. Diagnostics différentiels de la colique néphrétique *(1 grille sur 2)***
+> - [ ] **8. Imagerie pour confirmation diagnostique *(1 grille sur 2)***
 > 	- [ ] TDM abdomino-pelvien sans injection (examen de référence)
 > 	- [ ] Visualise 95% des calculs radio-opaques et radio-transparents
 > 	- [ ] Localise précisément le calcul
@@ -711,29 +710,18 @@ cssclasses:
 > 	- [ ] Mesure la taille du calcul
 > 	- [ ] ASP (Abdomen Sans Préparation): calculs radio-opaques seulement (80%)
 > 	- [ ] Échographie: alternative si contre-indication TDM (grossesse)
-> - [ ] **10. Traitement symptomatique de la crise *(1 grille sur 2)***
-> - [ ] **11. Traitement urologique spécifique *(1 grille sur 2)***
+> - [ ] **9. Traitement symptomatique de la crise *(1 grille sur 2)***
+> - [ ] **10. Traitement urologique spécifique *(1 grille sur 2)***
 > 	- [ ] Calculs < 5mm: expulsion spontanée dans 70% des cas
 > 	- [ ] Calculs 5-10mm: expulsion dans 50% des cas
 > 	- [ ] Lithotripsie extracorporelle (LEC) si calcul < 20mm
 > 	- [ ] Urétéroscopie avec extraction ou fragmentation laser
 > 	- [ ] Néphrostomie percutanée si infection + obstruction
 > 	- [ ] Chirurgie ouverte exceptionnelle
-> - [ ] **12. Complications à rechercher *(1 grille sur 2)***
+> - [ ] **11. Complications à rechercher *(1 grille sur 2)***
 
 > [!success] 💊 Management — si Fracture vertébrale
-> - [ ] **1. Examens d'imagerie**
-> 	- [ ] Radiographie du rachis lombaire (face et profil)
-> 	- [ ] Densitométrie osseuse (DMO)
-> 	- [ ] IRM rachidienne si doute diagnostique
-> 	- [ ] Scintigraphie osseuse si suspicion métastases multiples
-> - [ ] **2. Diagnostics différentiels**
-> 	- [ ] Fracture vertébrale traumatique
-> 	- [ ] Métastase vertébrale (antécédent de cancer du sein)
-> 	- [ ] Fracture pathologique sur autre cause (myélome, hyperparathyroïdie)
-> 	- [ ] Spondylodiscite infectieuse
-> 	- [ ] Lombalgie mécanique commune
-> - [ ] **3. Examens complémentaires biologiques**
+> - [ ] **1. Examens complémentaires urgents**
 > 	- [ ] FSC, CRP, VS (exclusion processus inflammatoire)
 > 	- [ ] Phosphatases alcalines (PAL), Gamma-GT (si PAL élevées)
 > 	- [ ] Calcémie, phosphatémie
@@ -741,6 +729,17 @@ cssclasses:
 > 	- [ ] TSH
 > 	- [ ] Créatinine (fonction rénale, ostéopathie rénale)
 > 	- [ ] Électrophorèse des protéines sériques (si suspicion myélome)
+> - [ ] **2. Examens d'imagerie**
+> 	- [ ] Radiographie du rachis lombaire (face et profil)
+> 	- [ ] Densitométrie osseuse (DMO)
+> 	- [ ] IRM rachidienne si doute diagnostique
+> 	- [ ] Scintigraphie osseuse si suspicion métastases multiples
+> - [ ] **3. Diagnostics différentiels**
+> 	- [ ] Fracture vertébrale traumatique
+> 	- [ ] Métastase vertébrale (antécédent de cancer du sein)
+> 	- [ ] Fracture pathologique sur autre cause (myélome, hyperparathyroïdie)
+> 	- [ ] Spondylodiscite infectieuse
+> 	- [ ] Lombalgie mécanique commune
 > - [ ] **4. Suivi et surveillance**
 > 	- [ ] Contrôle clinique à 4-6 semaines
 > 	- [ ] Contrôle radiologique si aggravation
@@ -750,8 +749,12 @@ cssclasses:
 
 > [!success] 💊 Management — si Hernie discale
 > - [ ] **1. Hypothèse diagnostique principale *(1 grille sur 2)***
-> - [ ] **2. Examens complémentaires urgents *(1 grille sur 2)***
-> 	- [ ] Examen rectal
+> - [ ] **2. Examens complémentaires urgents**
+> 	- [ ] Examen rectal *(1 grille sur 2)*
+> 	- [ ] Examens biologiques pour exclure processus inflammatoire (FSC, CRP, VS) *(1 grille sur 2)*
+> 	- [ ] IRM lombaire selon évolution clinique et déficit neurologique *(1 grille sur 2)*
+> 	- [ ] Radiographie lombaire si suspicion de spondylolisthésis *(1 grille sur 2)*
+> 	- [ ] EMG si doute diagnostique après 6 semaines *(1 grille sur 2)*
 > - [ ] **3. Examens d'imagerie *(1 grille sur 2)***
 > 	- [ ] IRM du rachis
 > 	- [ ] Radiographie du rachis
@@ -769,18 +772,13 @@ cssclasses:
 > 	- [ ] Contracture musculaire paravertébrale
 > 	- [ ] Processus inflammatoire/infectieux (spondylodiscite)
 > 	- [ ] Processus tumoral (métastase, tumeur primitive)
-> - [ ] **7. Examens complémentaires *(1 grille sur 2)***
-> 	- [ ] Examens biologiques pour exclure processus inflammatoire (FSC, CRP, VS)
-> 	- [ ] IRM lombaire selon évolution clinique et déficit neurologique
-> 	- [ ] Radiographie lombaire si suspicion de spondylolisthésis
-> 	- [ ] EMG si doute diagnostique après 6 semaines
-> - [ ] **8. Orientation et suivi *(1 grille sur 2)***
+> - [ ] **7. Orientation et suivi *(1 grille sur 2)***
 > 	- [ ] Orientation orthopédie/neurochirurgie selon évolution
 > 	- [ ] Contrôle à 2 semaines
 > 	- [ ] IRM si pas d'amélioration à 4-6 semaines
 > 	- [ ] Arrêt de travail selon profession
 > 	- [ ] Éducation sur l'évolution naturelle favorable (90% à 6 semaines)
-> - [ ] **9. Prévention des récidives *(1 grille sur 2)***
+> - [ ] **8. Prévention des récidives *(1 grille sur 2)***
 > 	- [ ] École du dos
 > 	- [ ] Renforcement musculaire après phase aiguë
 > 	- [ ] Ergonomie au travail

@@ -149,8 +149,7 @@ cssclasses:
 > 	- [ ] Chronologie (depuis quand ?)
 > 	- [ ] Sang rouge ou noir
 > 	- [ ] Fréquence des selles
-> 	- [ ] 1er épisode *(Cancer rectal)*
-> 	- [ ] Première épisode *(Cancer du rectum)*
+> 	- [ ] Première épisode
 > - [ ] **13. Symptômes de gravité *(Cancer du rectum · Cancer rectal)***
 > 	- [ ] Perte de connaissance
 > 	- [ ] Fatigabilité inhabituelle

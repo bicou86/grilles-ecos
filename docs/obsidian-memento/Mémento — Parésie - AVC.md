@@ -124,12 +124,16 @@ cssclasses:
 > - [ ] **8. Antécédents familiaux *(AIT)***
 > 	- [ ] Père décédé d'une tumeur cérébrale il y a 2 ans
 > 	- [ ] Très inquiet d'avoir la même chose que son père
-> - [ ] **9. Caractérisation de l'épisode neurologique aigu *(AVC)***
-> 	- [ ] Mode d'installation
-> 	- [ ] Heure précise de début
-> 	- [ ] Circonstances de découverte
-> 	- [ ] Évolution depuis le début
-> 	- [ ] Premiers symptômes remarqués
+> - [ ] **9. Caractérisation de l'épisode *(2 grilles sur 4)***
+> 	- [ ] Mode d'installation *(AVC)*
+> 	- [ ] Heure précise de début *(AVC)*
+> 	- [ ] Circonstances de découverte *(AVC)*
+> 	- [ ] Évolution depuis le début *(AVC)*
+> 	- [ ] Premiers symptômes remarqués *(AVC)*
+> 	- [ ] Circonstances de survenue *(1 grille sur 4)*
+> 	- [ ] Localisation *(1 grille sur 4)*
+> 	- [ ] Type de symptômes *(1 grille sur 4)*
+> 	- [ ] Symptômes associés *(1 grille sur 4)*
 > - [ ] **10. Analyse sémiologique détaillée *(AVC)***
 > 	- [ ] Troubles moteurs
 > 	- [ ] Troubles de la parole
@@ -199,31 +203,26 @@ cssclasses:
 > - [ ] **23. Anamnèse générale, antécédents et habitudes *(1 grille sur 4)***
 > 	- [ ] État fébrile récent · Traitements et allergies · Alcool, tabac, drogues · Antécédents familiaux
 > - [ ] **24. Explore les préoccupations et représentations *(1 grille sur 4)***
-> - [ ] **25. Caractérisation de l'épisode *(1 grille sur 4)***
-> 	- [ ] Circonstances de survenue
-> 	- [ ] Localisation
-> 	- [ ] Type de symptômes
-> 	- [ ] Symptômes associés
-> - [ ] **26. Précise si les symptômes touchent TOUTE l'hémiface (front compris) ou seulement une partie *(1 grille sur 4)***
-> - [ ] **27. Chronologie *(1 grille sur 4)***
+> - [ ] **25. Précise si les symptômes touchent TOUTE l'hémiface (front compris) ou seulement une partie *(1 grille sur 4)***
+> - [ ] **26. Chronologie *(1 grille sur 4)***
 > 	- [ ] Cinétique d'installation
 > 	- [ ] Durée / évolution
 > 	- [ ] Réponse aux symptômes (ce qui a été fait)
-> - [ ] **28. Recherche d'un état fébrile avant ou après l'épisode *(1 grille sur 4)***
-> - [ ] **29. Recherche des signes d'alerte neurologiques (exclusion atteinte centrale) *(1 grille sur 4)***
+> - [ ] **27. Recherche d'un état fébrile avant ou après l'épisode *(1 grille sur 4)***
+> - [ ] **28. Recherche des signes d'alerte neurologiques (exclusion atteinte centrale) *(1 grille sur 4)***
 > 	- [ ] Déficit d'un membre
 > 	- [ ] Trouble du langage
 > 	- [ ] Diplopie
 > 	- [ ] Trouble de la marche / équilibre
 > 	- [ ] Céphalée inhabituelle
-> - [ ] **30. Évalue le risque de complication oculaire par défaut de fermeture palpébrale *(1 grille sur 4)***
+> - [ ] **29. Évalue le risque de complication oculaire par défaut de fermeture palpébrale *(1 grille sur 4)***
 > 	- [ ] Recherche de symptômes oculaires (larmoiement, sécheresse, rougeur, douleur)
 > 	- [ ] Intention de protéger l'œil
-> - [ ] **31. État de santé *(1 grille sur 4)***
+> - [ ] **30. État de santé *(1 grille sur 4)***
 > 	- [ ] Maladies actuelles
 > 	- [ ] Antécédents médico-chirurgicaux
 > 	- [ ] Médicaments
-> - [ ] **32. Investigue les facteurs de risque / causes possibles *(1 grille sur 4)***
+> - [ ] **31. Investigue les facteurs de risque / causes possibles *(1 grille sur 4)***
 > 	- [ ] Herpès Zoster
 > 	- [ ] Maladie de Lyme
 > 	- [ ] IST (VIH, syphilis)
@@ -409,22 +408,22 @@ cssclasses:
 > 	- [ ] Suivi spécialisé
 
 > [!success] 💊 Management — si Paralysie de Bell
-> - [ ] **1. Présentation du cas *(1 grille sur 2)***
+> - [ ] **1. Examens complémentaires en urgence *(1 grille sur 2)***
+> 	- [ ] Sérologie de Lyme selon l'exposition
+> 	- [ ] Sérologies VIH et syphilis selon l'anamnèse
+> 	- [ ] Glycémie
+> 	- [ ] Pas d'imagerie en urgence si le tableau est typique
+> - [ ] **2. Présentation du cas *(1 grille sur 2)***
 > 	- [ ] Synthétique
 > 	- [ ] Éléments pertinents de l'anamnèse et du status
-> - [ ] **2. Hypothèse diagnostique**
+> - [ ] **3. Hypothèse diagnostique**
 > 	- [ ] Paralysie de Bell *(1 grille sur 2)*
 > 	- [ ] AVC *(1 grille sur 2)*
 > 	- [ ] Ramsay-Hunt *(1 grille sur 2)*
 > 	- [ ] Lyme *(1 grille sur 2)*
 > 	- [ ] Cause otologique / parotidienne *(1 grille sur 2)*
-> - [ ] **3. Argumente le caractère périphérique *(1 grille sur 2)***
-> - [ ] **4. Diagnostics différentiels et argumentation *(1 grille sur 2)***
-> - [ ] **5. Examens complémentaires *(1 grille sur 2)***
-> 	- [ ] Sérologie de Lyme selon l'exposition
-> 	- [ ] Sérologies VIH et syphilis selon l'anamnèse
-> 	- [ ] Glycémie
-> 	- [ ] Pas d'imagerie en urgence si le tableau est typique
+> - [ ] **4. Argumente le caractère périphérique *(1 grille sur 2)***
+> - [ ] **5. Diagnostics différentiels et argumentation *(1 grille sur 2)***
 > - [ ] **6. Traitement *(1 grille sur 2)***
 > 	- [ ] Corticothérapie précoce (dans les 72 h)
 > 	- [ ] Antiviral seulement si suspicion de zona ou forme sévère

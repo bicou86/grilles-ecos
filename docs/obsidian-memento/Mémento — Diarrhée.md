@@ -474,7 +474,15 @@ cssclasses:
 > - [ ] **2. Propose une prise en charge thérapeutique adaptée *(2 grilles sur 5)* — *Diarrhée chronique par malabsorption · Déshydratation***
 
 > [!success] 💊 Management — si Cancer colorectal
-> - [ ] **1. Examens d'imagerie et endoscopie**
+> - [ ] **1. Propose les examens complémentaires de première intention**
+> 	- [ ] FSC: recherche anémie ferriprive (saignement chronique)
+> 	- [ ] Ferritine, fer sérique, transferrine
+> 	- [ ] CRP, VS: syndrome inflammatoire
+> 	- [ ] Ionogramme, urée, créatinine: déshydratation
+> 	- [ ] Bilan hépatique: pathologie associée
+> 	- [ ] TSH: dysthyroïdie cause de troubles du transit
+> 	- [ ] Albumine: dénutrition, malabsorption
+> - [ ] **2. Examens d'imagerie et endoscopie**
 > 	- [ ] ASP debout face et profil: niveaux hydro-aériques si occlusion
 > 	- [ ] CT abdomino-pelvien avec injection: bilan d'extension si tumeur
 > 	- [ ] Coloscopie totale: examen de référence pour la pathologie colique
@@ -483,14 +491,6 @@ cssclasses:
 > 	- [ ] Polypectomie thérapeutique
 > 	- [ ] Gastroscopie si méléna: recherche saignement haut
 > 	- [ ] Entéro-IRM ou vidéocapsule si suspicion grêle
-> - [ ] **2. Propose les examens complémentaires de première intention**
-> 	- [ ] FSC: recherche anémie ferriprive (saignement chronique)
-> 	- [ ] Ferritine, fer sérique, transferrine
-> 	- [ ] CRP, VS: syndrome inflammatoire
-> 	- [ ] Ionogramme, urée, créatinine: déshydratation
-> 	- [ ] Bilan hépatique: pathologie associée
-> 	- [ ] TSH: dysthyroïdie cause de troubles du transit
-> 	- [ ] Albumine: dénutrition, malabsorption
 > - [ ] **3. Diagnostics différentiels des troubles du transit**
 > - [ ] **4. Signes d'alarme (Red Flags)**
 > - [ ] **5. Marqueurs tumoraux et examens spécialisés**
@@ -529,14 +529,14 @@ cssclasses:
 > 	- [ ] Éducation des parents/soignants
 
 > [!success] 💊 Management — si Diarrhée chronique par malabsorption
-> - [ ] **1. Énonce le diagnostic principal**
-> 	- [ ] Insuffisance pancréatique exocrine (sur pancréatites chroniques)
-> - [ ] **2. Propose les examens complémentaires de première intention**
+> - [ ] **1. Propose les examens complémentaires de première intention**
 > 	- [ ] Biologie : FSC, CRP, ionogramme (Na, K, Ca)
 > 	- [ ] Fonction rénale : créatinine, urée
 > 	- [ ] Fonction hépatique : transaminases, GGT, phosphatases alcalines (PAL), albumine
 > 	- [ ] Bilan de coagulation : TP/INR, TCA
 > 	- [ ] Fonction thyroïdienne : TSH
+> - [ ] **2. Énonce le diagnostic principal**
+> 	- [ ] Insuffisance pancréatique exocrine (sur pancréatites chroniques)
 > - [ ] **3. Propose les examens complémentaires spécifiques**
 > 	- [ ] Élastase fécale (insuffisance pancréatique)
 > 	- [ ] Calprotectine fécale (inflammation intestinale)
@@ -557,11 +557,15 @@ cssclasses:
 > 	- [ ] Rectocolite ulcéro-hémorragique (RCUH) *(1 grille sur 2)*
 > 	- [ ] Justification basée sur les symptômes *(1 grille sur 2)*
 > 	- [ ] Explication adaptée à la patiente *(1 grille sur 2)*
-> - [ ] **2. Examens complémentaires urgents *(1 grille sur 2)***
-> 	- [ ] Examen rectal
-> 	- [ ] Recherche de sang occulte dans les selles
-> 	- [ ] FSC, électrolytes
-> 	- [ ] VS, CRP
+> - [ ] **2. Propose les examens complémentaires de première intention**
+> 	- [ ] Examen rectal *(1 grille sur 2)*
+> 	- [ ] Recherche de sang occulte dans les selles *(1 grille sur 2)*
+> 	- [ ] FSC, électrolytes *(1 grille sur 2)*
+> 	- [ ] VS, CRP *(1 grille sur 2)*
+> 	- [ ] Bilan biologique (FSC, CRP, électrolytes, fonction rénale) *(1 grille sur 2)*
+> 	- [ ] Cultures de selles et parasitologie *(1 grille sur 2)*
+> 	- [ ] Calprotectine fécale *(1 grille sur 2)*
+> 	- [ ] Colonoscopie avec biopsies *(1 grille sur 2)*
 > - [ ] **3. Examens microbiologiques *(1 grille sur 2)***
 > 	- [ ] Coproculture; microscopie des selles pour œufs et parasites
 > - [ ] **4. Examens d'imagerie et endoscopie *(1 grille sur 2)***
@@ -587,17 +591,12 @@ cssclasses:
 > 	- [ ] Colite infectieuse (bactérienne, parasitaire)
 > 	- [ ] Colite médicamenteuse (AINS)
 > 	- [ ] Carcinome colorectal
-> - [ ] **8. Examens complémentaires *(1 grille sur 2)***
-> 	- [ ] Bilan biologique (FSC, CRP, électrolytes, fonction rénale)
-> 	- [ ] Cultures de selles et parasitologie
-> 	- [ ] Calprotectine fécale
-> 	- [ ] Colonoscopie avec biopsies
-> - [ ] **9. Prise en charge immédiate *(1 grille sur 2)***
+> - [ ] **8. Prise en charge immédiate *(1 grille sur 2)***
 > 	- [ ] Critères d'hospitalisation évalués
 > 	- [ ] Réhydratation IV
 > 	- [ ] Corticothérapie IV si colite sévère
 > 	- [ ] Arrêt des AINS
-> - [ ] **10. Plan de suivi *(1 grille sur 2)***
+> - [ ] **9. Plan de suivi *(1 grille sur 2)***
 > 	- [ ] Consultation gastro-entérologie
 > 	- [ ] Surveillance des complications
 > 	- [ ] Protocole de dépistage du cancer colorectal

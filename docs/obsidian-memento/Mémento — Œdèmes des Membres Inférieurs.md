@@ -230,19 +230,19 @@ cssclasses:
 > 	- [ ] Neurologique: collaborante, orientée
 
 > [!success] 💊 Management — si Insuffisance cardiaque (décompensée)
-> - [ ] **1. Résumé et liste de problèmes**
-> 	- [ ] Patiente 92 ans, cardiopathie ischémique et rythmique
-> 	- [ ] Insuffisance veineuse des MI
-> 	- [ ] Hospitalisée pour aggravation OMI
-> 	- [ ] Contexte prise en charge difficile ambulatoirement
-> - [ ] **2. Problème principal: Aggravation OMI bilatéraux**
-> - [ ] **3. Examens complémentaires présentés**
+> - [ ] **1. Examens complémentaires de première intention**
 > 	- [ ] FSC: Hb 86 g/L , MCV 87.8 fl, MCHC 291 g/L
 > 	- [ ] Chimie: créatinine 93 μmol/L, albumine 26 g/L
 > 	- [ ] Fer 5 μmol/L, ferritine 17 μg/L
 > 	- [ ] ECG: FA 65/min, pas de troubles de repolarisation
 > 	- [ ] Rx thorax: cardiomégalie ICT 13/21, redistribution vasculaire
 > 	- [ ] Signes d'insuffisance cardiaque: augmentation trame interstitielle
+> - [ ] **2. Résumé et liste de problèmes**
+> 	- [ ] Patiente 92 ans, cardiopathie ischémique et rythmique
+> 	- [ ] Insuffisance veineuse des MI
+> 	- [ ] Hospitalisée pour aggravation OMI
+> 	- [ ] Contexte prise en charge difficile ambulatoirement
+> - [ ] **3. Problème principal: Aggravation OMI bilatéraux**
 > - [ ] **4. Présentation au radiologue**
 > 	- [ ] Résumé succinct
 > 	- [ ] Hypothèse à investiguer

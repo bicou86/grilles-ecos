@@ -121,23 +121,29 @@ cssclasses:
 > 	- [ ] Durée *(Hypothyroïdie)*
 > 	- [ ] Chronologie sur la journée *(Hypothyroïdie)*
 > 	- [ ] Circonstances de survenue *(Hypothyroïdie)*
-> - [ ] **3. Recherche de symptômes spécifiques post-partum *(Syndrome de Sheehan (hypopituitarisme post-partum))***
-> 	- [ ] Traumatisme
-> 	- [ ] Céphalées
-> 	- [ ] Nausées/vomissements
+> - [ ] **3. Recherche de symptômes spécifiques post-partum *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
+> 	- [ ] Traumatisme *(Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Céphalées *(Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Nausées/vomissements *(Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Fièvre/frissons
 > 	- [ ] Palpitations
 > 	- [ ] Éruption cutanée/changements cutanés
 > 	- [ ] Dyspnée
-> 	- [ ] Problèmes urinaires
+> 	- [ ] Problèmes urinaires *(Syndrome de Sheehan (hypopituitarisme post-partum))*
 > 	- [ ] Problèmes intestinaux
 > 	- [ ] Troubles du sommeil
 > 	- [ ] Appétit
 > 	- [ ] Variations pondérales
-> 	- [ ] Infections récentes
-> 	- [ ] Vertiges
-> 	- [ ] Cheveux secs
-> 	- [ ] Allaitement
+> 	- [ ] Infections récentes *(Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Vertiges *(Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Cheveux secs *(Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Allaitement *(Syndrome de Sheehan (hypopituitarisme post-partum))*
+> 	- [ ] Œdème des chevilles *(Mononucléose)*
+> 	- [ ] Douleur thoracique *(Mononucléose)*
+> 	- [ ] Intolérance au froid *(Mononucléose)*
+> 	- [ ] Changements capillaires *(Mononucléose)*
+> 	- [ ] Changements de voix *(Mononucléose)*
+> 	- [ ] Crampes musculaires *(Mononucléose)*
 > - [ ] **4. Évaluation de l'humeur et symptômes dépressifs *(Mononucléose · Syndrome de Sheehan (hypopituitarisme post-partum))***
 > 	- [ ] Humeur
 > 	- [ ] Perte d'intérêt
@@ -186,25 +192,10 @@ cssclasses:
 > 	- [ ] Grossesses
 > 	- [ ] Antécédents prénataux
 > 	- [ ] Antécédents d'accouchement
-> - [ ] **12. Recherche de symptômes spécifiques *(Mononucléose)***
-> 	- [ ] Œdème des chevilles
-> 	- [ ] Fièvre/frissons
-> 	- [ ] Palpitations
-> 	- [ ] Éruption cutanée/changements cutanés
-> 	- [ ] Douleur thoracique
-> 	- [ ] Dyspnée
-> 	- [ ] Problèmes intestinaux
-> 	- [ ] Troubles du sommeil
-> 	- [ ] Appétit
-> 	- [ ] Variations pondérales
-> 	- [ ] Intolérance au froid
-> 	- [ ] Changements capillaires
-> 	- [ ] Changements de voix
-> 	- [ ] Crampes musculaires
-> - [ ] **13. Contacts malades et antécédents familiaux *(Hépatite C aiguë · Mononucléose)***
+> - [ ] **12. Contacts malades et antécédents familiaux *(Hépatite C aiguë · Mononucléose)***
 > 	- [ ] Contacts malades
 > 	- [ ] Antécédents familiaux
-> - [ ] **14. Antécédents gynécologiques *(Mononucléose)***
+> - [ ] **13. Antécédents gynécologiques *(Mononucléose)***
 > 	- [ ] Activité sexuelle
 > 	- [ ] Avec qui
 > 	- [ ] Hommes ou femmes
@@ -216,7 +207,7 @@ cssclasses:
 > 	- [ ] Règles régulières
 > 	- [ ] Combien de tampons par jour
 > 	- [ ] Grossesses
-> - [ ] **15. Recherche de symptômes spécifiques pour fatigue après fièvre et vomissements *(Hépatite C aiguë)***
+> - [ ] **14. Recherche de symptômes spécifiques pour fatigue après fièvre et vomissements *(Hépatite C aiguë)***
 > 	- [ ] Voyage récent
 > 	- [ ] Nausées/vomissements
 > 	- [ ] Fièvre/frissons
@@ -232,163 +223,163 @@ cssclasses:
 > 	- [ ] Gonflement des seins
 > 	- [ ] Diminution de la pilosité corporelle
 > 	- [ ] Diminution de la libido
-> - [ ] **16. Question d’entrée *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **17. Dimension temporelle *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **18. Début *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **19. Évolution *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **20. Vertiges *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **21. Dyspnée d’effort *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **22. Symptômes associés *(Hémorragie digestive haute sur ulcère peptique · SAOS)***
+> - [ ] **15. Question d’entrée *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **16. Dimension temporelle *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **17. Début *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **18. Évolution *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **19. Vertiges *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **20. Dyspnée d’effort *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **21. Symptômes associés *(Hémorragie digestive haute sur ulcère peptique · SAOS)***
 > 	- [ ] Fièvre, infection *(SAOS)*
 > 	- [ ] Perte/prise de poids *(SAOS)*
 > 	- [ ] Polyurie/polydipsie *(SAOS)*
 > 	- [ ] Troubles digestifs, sang dans les selles *(SAOS)*
 > 	- [ ] Troubles mictionnels *(SAOS)*
-> - [ ] **23. Douleurs abdominales *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **24. Nausées / vomissements *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **25. Anamnèse des selles *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **26. Modification des selles *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **27. Consistance *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **28. Couleur *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **29. Mélange de sang *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **30. DD malignité *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **31. Symptômes B *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **32. Appétit *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **33. Dysphagie *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **34. DD fatigue *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **35. Thyroïde *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **36. Humeur *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **37. Sommeil *(Hypothyroïdie · Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **22. Douleurs abdominales *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **23. Nausées / vomissements *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **24. Anamnèse des selles *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **25. Modification des selles *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **26. Consistance *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **27. Couleur *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **28. Mélange de sang *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **29. DD malignité *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **30. Symptômes B *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **31. Appétit *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **32. Dysphagie *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **33. DD fatigue *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **34. Thyroïde *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **35. Humeur *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **36. Sommeil *(Hypothyroïdie · Hémorragie digestive haute sur ulcère peptique)***
 > 	- [ ] Durée *(Hypothyroïdie)*
 > 	- [ ] Qualité *(Hypothyroïdie)*
 > 	- [ ] Impact sur la fatigue *(Hypothyroïdie)*
-> - [ ] **38. Polyurie / polydipsie *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **39. Antécédents *(Hypothyroïdie · Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **37. Polyurie / polydipsie *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **38. Antécédents *(Hypothyroïdie · Hémorragie digestive haute sur ulcère peptique)***
 > 	- [ ] Antécédents médicaux *(Hypothyroïdie)*
 > 	- [ ] Traitement *(Hypothyroïdie)*
-> - [ ] **40. Antécédents opératoires *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **41. Automédication par AINS *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **42. Anticoagulants *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **43. Antihypertenseur *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **44. Coloscopie de dépistage *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **45. Noxes *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **46. Alcool *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **47. Tabac *(Hémorragie digestive haute sur ulcère peptique)***
-> - [ ] **48. Anamnèse sociale *(Anémie · Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **39. Antécédents opératoires *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **40. Automédication par AINS *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **41. Anticoagulants *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **42. Antihypertenseur *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **43. Coloscopie de dépistage *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **44. Noxes *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **45. Alcool *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **46. Tabac *(Hémorragie digestive haute sur ulcère peptique)***
+> - [ ] **47. Anamnèse sociale *(Anémie · Hémorragie digestive haute sur ulcère peptique)***
 > 	- [ ] Situation professionnelle/études *(Anémie)*
 > 	- [ ] Conditions de vie *(Anémie)*
 > 	- [ ] Stress psychosocial *(Anémie)*
-> - [ ] **49. Se présente avec nom, fonction et but de la consultation *(Anémie · Dépression · SAOS)***
-> - [ ] **50. Question ouverte d'introduction → Symptôme principal *(SAOS)***
-> - [ ] **51. Évolution temporelle des symptômes *(Dépression · SAOS)***
-> - [ ] **52. Évolution dans la journée *(SAOS)***
-> - [ ] **53. Facteurs déclenchants identifiés *(Dépression · SAOS)***
-> - [ ] **54. Exploration du sommeil - Qualité *(SAOS)***
+> - [ ] **48. Se présente avec nom, fonction et but de la consultation *(Anémie · Dépression · SAOS)***
+> - [ ] **49. Question ouverte d'introduction → Symptôme principal *(SAOS)***
+> - [ ] **50. Évolution temporelle des symptômes *(Dépression · SAOS)***
+> - [ ] **51. Évolution dans la journée *(SAOS)***
+> - [ ] **52. Facteurs déclenchants identifiés *(Dépression · SAOS)***
+> - [ ] **53. Exploration du sommeil - Qualité *(SAOS)***
 > 	- [ ] Qualité subjective
 > 	- [ ] Durée de sommeil
 > 	- [ ] Problèmes d'endormissement
 > 	- [ ] Problèmes de maintien du sommeil
 > 	- [ ] Activités avant le coucher
-> - [ ] **55. Caractéristiques du sommeil et somnolence *(SAOS)***
+> - [ ] **54. Caractéristiques du sommeil et somnolence *(SAOS)***
 > 	- [ ] Sommeil réparateur
 > 	- [ ] Somnolence diurne
 > 	- [ ] Situations à risque
-> - [ ] **56. Signes évocateurs de syndrome d'apnée du sommeil *(SAOS)***
+> - [ ] **55. Signes évocateurs de syndrome d'apnée du sommeil *(SAOS)***
 > 	- [ ] Ronflement
 > 	- [ ] Pauses respiratoires nocturnes
 > 	- [ ] Céphalées matinales
-> - [ ] **57. État psychique et humeur *(SAOS)***
+> - [ ] **56. État psychique et humeur *(SAOS)***
 > 	- [ ] Changements d'humeur
 > 	- [ ] Satisfaction avec la vie actuelle
 > 	- [ ] Manque d'élan/motivation
 > 	- [ ] Capacité de concentration
-> - [ ] **58. Performance et activités quotidiennes *(SAOS)***
+> - [ ] **57. Performance et activités quotidiennes *(SAOS)***
 > 	- [ ] Performance physique et mentale
 > 	- [ ] Déroulement journée type
 > 	- [ ] Activité physique régulière
-> - [ ] **59. Habitudes alimentaires et consommation *(SAOS)***
-> - [ ] **60. Automédication déjà tentée *(SAOS)***
-> - [ ] **61. Habitudes de vie (noxes) *(SAOS)***
+> - [ ] **58. Habitudes alimentaires et consommation *(SAOS)***
+> - [ ] **59. Automédication déjà tentée *(SAOS)***
+> - [ ] **60. Habitudes de vie (noxes) *(SAOS)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
-> - [ ] **62. Anamnèse sociale et professionnelle *(SAOS)***
-> - [ ] **63. Problème actuel et plaintes subjectives *(Anémie)***
-> - [ ] **64. Symptômes cardiovasculaires *(Anémie)***
+> - [ ] **61. Anamnèse sociale et professionnelle *(SAOS)***
+> - [ ] **62. Problème actuel et plaintes subjectives *(Anémie)***
+> - [ ] **63. Symptômes cardiovasculaires *(Anémie)***
 > 	- [ ] Dyspnée
 > 	- [ ] Palpitations
-> - [ ] **65. État général et performance *(Anémie)***
+> - [ ] **64. État général et performance *(Anémie)***
 > 	- [ ] Capacité de performance
 > 	- [ ] Fatigue
 > 	- [ ] État psychique
-> - [ ] **66. Symptômes fonctionnels *(Anémie)***
+> - [ ] **65. Symptômes fonctionnels *(Anémie)***
 > 	- [ ] Troubles orthostatiques
 > 	- [ ] Qualité du sommeil
 > 	- [ ] Pâleur remarquée
-> - [ ] **67. Épisodes antérieurs similaires et problèmes médicaux passés *(Anémie)***
-> - [ ] **68. Recherche de pathologies sous-jacentes *(Anémie)***
+> - [ ] **66. Épisodes antérieurs similaires et problèmes médicaux passés *(Anémie)***
+> - [ ] **67. Recherche de pathologies sous-jacentes *(Anémie)***
 > 	- [ ] Infection récente
 > 	- [ ] Maladie rénale connue
-> - [ ] **69. Anamnèse de pertes sanguines *(Anémie)***
+> - [ ] **68. Anamnèse de pertes sanguines *(Anémie)***
 > 	- [ ] Menstruations abondantes
 > 	- [ ] Méléna
 > 	- [ ] Hématémèse
 > 	- [ ] Autres saignements
-> - [ ] **70. Habitudes alimentaires et nutritionnelles *(Anémie)***
+> - [ ] **69. Habitudes alimentaires et nutritionnelles *(Anémie)***
 > 	- [ ] Alimentation équilibrée
 > 	- [ ] Régime végétarien/végétalien
 > 	- [ ] Consommation de viande rouge
 > 	- [ ] Consommation d'alcool
-> - [ ] **71. Troubles gastro-intestinaux *(Anémie)***
+> - [ ] **70. Troubles gastro-intestinaux *(Anémie)***
 > 	- [ ] Digestion
 > 	- [ ] Dysphagie
 > 	- [ ] Maladie ulcéreuse
 > 	- [ ] Chirurgie gastrique
-> - [ ] **72. Troubles neurologiques *(Anémie)***
+> - [ ] **71. Troubles neurologiques *(Anémie)***
 > 	- [ ] Troubles de la marche
 > 	- [ ] Paresthésies
 > 	- [ ] Troubles de la sensibilité profonde
-> - [ ] **73. Douleurs osseuses *(Anémie)***
+> - [ ] **72. Douleurs osseuses *(Anémie)***
 > 	- [ ] Localisation
 > 	- [ ] Intensité
-> - [ ] **74. Médicaments et exposition à des toxiques *(Anémie)***
+> - [ ] **73. Médicaments et exposition à des toxiques *(Anémie)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Exposition professionnelle
-> - [ ] **75. Symptômes principaux *(Dépression)***
+> - [ ] **74. Symptômes principaux *(Dépression)***
 > 	- [ ] Fatigue
 > 	- [ ] Faiblesse
 > 	- [ ] Troubles de concentration
-> - [ ] **76. Variation diurne des symptômes *(Dépression)***
+> - [ ] **75. Variation diurne des symptômes *(Dépression)***
 > 	- [ ] Moment d'amélioration/aggravation
 > 	- [ ] Présence d'une baisse matinale
-> - [ ] **77. Impact fonctionnel sur la vie quotidienne *(Dépression)***
-> - [ ] **78. Qualité du sommeil *(Dépression)***
-> - [ ] **79. Appétit et alimentation *(Dépression)***
-> - [ ] **80. Autres symptômes ou maladie récente *(Dépression)***
-> - [ ] **81. Dépistage de dépression *(Dépression)***
+> - [ ] **76. Impact fonctionnel sur la vie quotidienne *(Dépression)***
+> - [ ] **77. Qualité du sommeil *(Dépression)***
+> - [ ] **78. Appétit et alimentation *(Dépression)***
+> - [ ] **79. Autres symptômes ou maladie récente *(Dépression)***
+> - [ ] **80. Dépistage de dépression *(Dépression)***
 > 	- [ ] Humeur dépressive
 > 	- [ ] Anhédonie
 > 	- [ ] Épisodes dépressifs antérieurs
 > 	- [ ] Troubles du sommeil
-> - [ ] **82. Dépistage d'hypothyroïdie *(Dépression)***
+> - [ ] **81. Dépistage d'hypothyroïdie *(Dépression)***
 > 	- [ ] État de la peau
 > 	- [ ] État des cheveux
 > 	- [ ] Troubles gastro-intestinaux
 > 	- [ ] Transpiration/intolérance au froid
-> - [ ] **83. Dépistage d'anémie *(Dépression)***
+> - [ ] **82. Dépistage d'anémie *(Dépression)***
 > 	- [ ] Dyspnée
 > 	- [ ] Palpitations
 > 	- [ ] Impact du végétarisme
-> - [ ] **84. Dépistage de pathologie maligne *(Dépression)***
+> - [ ] **83. Dépistage de pathologie maligne *(Dépression)***
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Fièvre
 > 	- [ ] Perte de poids
 > 	- [ ] Adénopathies
-> - [ ] **85. Dépistage de diabète *(Dépression)***
+> - [ ] **84. Dépistage de diabète *(Dépression)***
 > 	- [ ] Polydipsie
 > 	- [ ] Polyurie
 > 	- [ ] Infections récurrentes
-> - [ ] **86. Évaluation structurée du risque suicidaire *(Dépression)***
+> - [ ] **85. Évaluation structurée du risque suicidaire *(Dépression)***
 > 	- [ ] Pensées de ne plus vouloir vivre ainsi
 > 	- [ ] Désir de changement
 > 	- [ ] Pensées de mort
@@ -397,99 +388,99 @@ cssclasses:
 > 	- [ ] Méthode envisagée
 > 	- [ ] Tentatives antérieures
 > 	- [ ] Antécédents familiaux de suicide
-> - [ ] **87. Symptômes psychiatriques associés *(Dépression)***
+> - [ ] **86. Symptômes psychiatriques associés *(Dépression)***
 > 	- [ ] Anxiété
 > 	- [ ] Troubles obsessionnels-compulsifs
 > 	- [ ] Troubles de la pensée
 > 	- [ ] Idées délirantes
 > 	- [ ] Hallucinations
 > 	- [ ] Troubles du moi
-> - [ ] **88. Antécédents familiaux psychiatriques *(Dépression)***
-> - [ ] **89. Anamnèse sociale et réseau de soutien *(Dépression)***
+> - [ ] **87. Antécédents familiaux psychiatriques *(Dépression)***
+> - [ ] **88. Anamnèse sociale et réseau de soutien *(Dépression)***
 > 	- [ ] Soutien social
 > 	- [ ] Situation de logement
 > 	- [ ] Situation professionnelle
-> - [ ] **90. Caractérisation du sommeil *(Diabète de type 2)***
+> - [ ] **89. Caractérisation du sommeil *(Diabète de type 2)***
 > 	- [ ] Durée du sommeil
 > 	- [ ] Qualité du sommeil
 > 	- [ ] Réveils durant la nuit
 > 	- [ ] Ronflement
-> - [ ] **91. Anamnèse uro-génitale *(Diabète de type 2)***
+> - [ ] **90. Anamnèse uro-génitale *(Diabète de type 2)***
 > 	- [ ] Couleur
 > 	- [ ] Quantité
 > 	- [ ] Douleur
 > 	- [ ] Fréquence
 > 	- [ ] Urgence mictionnelle
-> - [ ] **92. Anamnèse alimentaire *(Diabète de type 2)***
+> - [ ] **91. Anamnèse alimentaire *(Diabète de type 2)***
 > 	- [ ] Quels aliments?
 > 	- [ ] Plats types
 > 	- [ ] Grignotages
-> - [ ] **93. DD - dépression *(Diabète de type 2)***
+> - [ ] **92. DD - dépression *(Diabète de type 2)***
 > 	- [ ] Perte de plaisir
 > 	- [ ] Tristesse
 > 	- [ ] Idées noires
 > 	- [ ] Arrêt d'activités
 > 	- [ ] Envies suicidaires
-> - [ ] **94. DD - cancer *(Diabète de type 2)***
+> - [ ] **93. DD - cancer *(Diabète de type 2)***
 > 	- [ ] Perte de poids
 > 	- [ ] Fièvre
 > 	- [ ] Sudation nocturne
-> - [ ] **95. DD - maladie infectieuse *(Diabète de type 2)***
+> - [ ] **94. DD - maladie infectieuse *(Diabète de type 2)***
 > 	- [ ] Douleurs abdominales
 > 	- [ ] Rapports sexuels à risque
 > 	- [ ] Voyage dans un pays à risque
-> - [ ] **96. DD - insuffisance cardiovasculaire *(Diabète de type 2)***
+> - [ ] **95. DD - insuffisance cardiovasculaire *(Diabète de type 2)***
 > 	- [ ] Dyspnée à l'effort
 > 	- [ ] Orthopnée paroxystique nocturne
 > 	- [ ] Jambes gonflées
 > 	- [ ] Toux sèche
-> - [ ] **97. Raison de la visite *(Dépression gériatrique)***
-> - [ ] **98. Type d'insomnie : sommeil court, léger *(Dépression gériatrique)***
-> - [ ] **99. Chronologie (durée, fréquence) *(Dépression gériatrique)***
-> - [ ] **100. Développement : progressif *(Dépression gériatrique)***
-> - [ ] **101. Symptômes associés : tristesse, anhédonie *(Dépression gériatrique)***
-> - [ ] **102. Situation familiale / statut marital *(Dépression gériatrique)***
-> - [ ] **103. Ana. générale : sudation nocturne *(Dépression gériatrique)***
-> - [ ] **104. Ana. générale : ronflement *(Dépression gériatrique)***
-> - [ ] **105. Ana. générale : prise/perte de poids *(Dépression gériatrique)***
-> - [ ] **106. Ana. cardio-vasc : hypertension *(Dépression gériatrique)***
-> - [ ] **107. Ana. digestive : mange peu *(Dépression gériatrique)***
-> - [ ] **108. Ana. ostéo-articulaire : gonarthrose bilatérale *(Dépression gériatrique)***
-> - [ ] **109. Ana. suicide : présence de pensées suicidaires ? *(Dépression gériatrique)***
-> - [ ] **110. Histoire médicale : antécédent cancer *(Dépression gériatrique)***
-> - [ ] **111. Histoire médicale : opérations *(Dépression gériatrique)***
-> - [ ] **112. Habitudes : médicaments *(Dépression gériatrique)***
-> - [ ] **113. Habitudes : alcool / drogues *(Dépression gériatrique)***
-> - [ ] **114. Conséquences de la fatigue sur le quotidien *(Hypothyroïdie)***
-> - [ ] **115. Symptômes B associés *(Hypothyroïdie)***
+> - [ ] **96. Raison de la visite *(Dépression gériatrique)***
+> - [ ] **97. Type d'insomnie : sommeil court, léger *(Dépression gériatrique)***
+> - [ ] **98. Chronologie (durée, fréquence) *(Dépression gériatrique)***
+> - [ ] **99. Développement : progressif *(Dépression gériatrique)***
+> - [ ] **100. Symptômes associés : tristesse, anhédonie *(Dépression gériatrique)***
+> - [ ] **101. Situation familiale / statut marital *(Dépression gériatrique)***
+> - [ ] **102. Ana. générale : sudation nocturne *(Dépression gériatrique)***
+> - [ ] **103. Ana. générale : ronflement *(Dépression gériatrique)***
+> - [ ] **104. Ana. générale : prise/perte de poids *(Dépression gériatrique)***
+> - [ ] **105. Ana. cardio-vasc : hypertension *(Dépression gériatrique)***
+> - [ ] **106. Ana. digestive : mange peu *(Dépression gériatrique)***
+> - [ ] **107. Ana. ostéo-articulaire : gonarthrose bilatérale *(Dépression gériatrique)***
+> - [ ] **108. Ana. suicide : présence de pensées suicidaires ? *(Dépression gériatrique)***
+> - [ ] **109. Histoire médicale : antécédent cancer *(Dépression gériatrique)***
+> - [ ] **110. Histoire médicale : opérations *(Dépression gériatrique)***
+> - [ ] **111. Habitudes : médicaments *(Dépression gériatrique)***
+> - [ ] **112. Habitudes : alcool / drogues *(Dépression gériatrique)***
+> - [ ] **113. Conséquences de la fatigue sur le quotidien *(Hypothyroïdie)***
+> - [ ] **114. Symptômes B associés *(Hypothyroïdie)***
 > 	- [ ] Fièvre
 > 	- [ ] Variation de poids
 > 	- [ ] Sueurs nocturnes
-> - [ ] **116. Symptômes d'hypothyroïdie *(Hypothyroïdie)***
+> - [ ] **115. Symptômes d'hypothyroïdie *(Hypothyroïdie)***
 > 	- [ ] Intolérance au froid
 > 	- [ ] Transit ralenti
-> - [ ] **117. Autres symptômes associés *(Hypothyroïdie)***
+> - [ ] **116. Autres symptômes associés *(Hypothyroïdie)***
 > 	- [ ] Toux
 > 	- [ ] Douleurs abdominales
 > 	- [ ] Modifications de l'appétit
 > 	- [ ] Douleurs musculaires ou articulaires
 > 	- [ ] Polyurie ou polydipsie
-> - [ ] **118. Situation menstruelle *(Hypothyroïdie)***
+> - [ ] **117. Situation menstruelle *(Hypothyroïdie)***
 > 	- [ ] Durée des règles
 > 	- [ ] Abondance
-> - [ ] **119. Anamnèse psychiatrique *(Hypothyroïdie)***
+> - [ ] **118. Anamnèse psychiatrique *(Hypothyroïdie)***
 > 	- [ ] Humeur
 > 	- [ ] Stress
 > 	- [ ] Perte d'intérêt
 > 	- [ ] Troubles de la concentration
 > 	- [ ] Anxiété
-> - [ ] **120. Alimentation *(1 grille sur 11)***
+> - [ ] **119. Alimentation *(1 grille sur 11)***
 > 	- [ ] Activité physique
-> - [ ] **121. Consommations *(Hypothyroïdie)***
+> - [ ] **120. Consommations *(Hypothyroïdie)***
 > 	- [ ] Tabac
 > 	- [ ] OH
 > 	- [ ] Drogues
-> - [ ] **122. Alimentation – activité physique *(1 grille sur 11)***
+> - [ ] **121. Alimentation – activité physique *(1 grille sur 11)***
 > 	- [ ] Alimentation
 > 	- [ ] Activité physique
 
@@ -731,18 +722,7 @@ cssclasses:
 > - [ ] **18. Œsophagogastroduodénoscopie**
 
 > [!success] 💊 Management — si Hépatite C aiguë
-> - [ ] **1. Communication avec la patiente**
-> 	- [ ] Explication du plan de prise en charge
-> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
-> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **2. Conseil et soutien**
-> 	- [ ] Conseil sur les drogues illicites
-> 	- [ ] Conseil sur l'abus d'alcool
-> 	- [ ] Conseil sur l'arrêt du tabac
-> 	- [ ] Réaction appropriée au défi concernant le test VIH
-> - [ ] **3. Examens complémentaires urgents**
+> - [ ] **1. Examens complémentaires hématologiques**
 > 	- [ ] US abdominal
 > 	- [ ] FSC
 > 	- [ ] TP, TCA
@@ -750,7 +730,18 @@ cssclasses:
 > 	- [ ] Albumine
 > 	- [ ] Sérologies virales hépatites (HAV, HBV, HCV)
 > 	- [ ] Test VIH
-> - [ ] **4. Examens complémentaires différés**
+> - [ ] **2. Communication avec la patiente**
+> 	- [ ] Explication du plan de prise en charge
+> 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **3. Conseil et soutien**
+> 	- [ ] Conseil sur les drogues illicites
+> 	- [ ] Conseil sur l'abus d'alcool
+> 	- [ ] Conseil sur l'arrêt du tabac
+> 	- [ ] Réaction appropriée au défi concernant le test VIH
+> - [ ] **4. Examens complémentaires proposés**
 > 	- [ ] CT abdominal avec contraste
 
 > [!success] 💊 Management — si Hypothyroïdie

@@ -407,7 +407,7 @@ cssclasses:
 > 	- [ ] Proposer de diminuer l'éclairage dans la salle d'examen
 > 	- [ ] Soutien émotionnel face à la gravité
 > 	- [ ] Information sur l'urgence de la situation
-> - [ ] **4. Examens complémentaires urgents**
+> - [ ] **4. Examens complémentaires - imagerie**
 > 	- [ ] CT cérébral sans contraste
 > 	- [ ] FSC
 > 	- [ ] Glucose, électrolytes
@@ -481,29 +481,29 @@ cssclasses:
 > [!success] 💊 Management — si Thrombose veineuse cérébrale
 > - [ ] **1. Hypothèse diagnostique principale**
 > 	- [ ] Thrombose veineuse cérébrale
-> - [ ] **2. Diagnostics différentiels**
+> - [ ] **2. Traitement/Prise en charge**
+> 	- [ ] Voie veineuse périphérique
+> 	- [ ] Analgésie adaptée
+> 	- [ ] Antiémétiques si nécessaire
+> 	- [ ] Surveillance neurologique
+> - [ ] **3. Examens complémentaires - imagerie**
+> 	- [ ] CT cérébral en urgence
+> 	- [ ] CT avec temps veineux/angio-CT
+> 	- [ ] IRM cérébrale si disponible
+> 	- [ ] Veinographie par résonance magnétique
+> - [ ] **4. Diagnostics différentiels**
 > 	- [ ] AVC ischémique/hémorragique
 > 	- [ ] Migraine avec aura
 > 	- [ ] Méningite/encéphalite
 > 	- [ ] Hémorragie sous-arachnoïdienne
 > 	- [ ] Dissection artérielle
 > 	- [ ] Hypertension intracrânienne
-> - [ ] **3. Examens complémentaires - laboratoire**
+> - [ ] **5. Examens complémentaires - laboratoire**
 > 	- [ ] FSC, CRP/VS
 > 	- [ ] Coagulation (TP, PTT)
 > 	- [ ] D-dimères
 > 	- [ ] Fonction rénale, ionogramme
 > 	- [ ] Test de grossesse si doute
-> - [ ] **4. Examens complémentaires - imagerie**
-> 	- [ ] CT cérébral en urgence
-> 	- [ ] CT avec temps veineux/angio-CT
-> 	- [ ] IRM cérébrale si disponible
-> 	- [ ] Veinographie par résonance magnétique
-> - [ ] **5. Prise en charge immédiate**
-> 	- [ ] Voie veineuse périphérique
-> 	- [ ] Analgésie adaptée
-> 	- [ ] Antiémétiques si nécessaire
-> 	- [ ] Surveillance neurologique
 > - [ ] **6. Traitement spécifique si thrombose confirmée**
 > 	- [ ] Anticoagulation par HBPM dose thérapeutique
 > 	- [ ] Même si lésion hémorragique

@@ -281,9 +281,7 @@ cssclasses:
 > 	- [ ] Information sur les groupes de soutien
 
 > [!success] 💊 Management — si Surpoids d'origine multifactorielle
-> - [ ] **1. Diagnostic principal**
-> - [ ] **2. Diagnostics différentiels à exclure**
-> - [ ] **3. Examens complémentaires**
+> - [ ] **1. Examens complémentaires spécialisés**
 > 	- [ ] Glycémie à jeun
 > 	- [ ] HbA1c
 > 	- [ ] TSH
@@ -291,6 +289,8 @@ cssclasses:
 > 	- [ ] Transaminases hépatiques
 > 	- [ ] Créatinine
 > 	- [ ] Acide urique
+> - [ ] **2. Diagnostic principal**
+> - [ ] **3. Diagnostics différentiels à exclure**
 > - [ ] **4. Éducation sur les risques**
 > 	- [ ] Risque de diabète de type 2 (antécédent familial)
 > 	- [ ] Hypertension artérielle

@@ -535,7 +535,7 @@ cssclasses:
 > 	- [ ] FSC avec éosinophiles
 > 	- [ ] IgE totales et spécifiques
 > 	- [ ] Tests cutanés allergologiques
-> - [ ] **4. Traitement aigu proposé**
+> - [ ] **4. Traitement médicamenteux proposé**
 > 	- [ ] Bêta-2 mimétiques à courte durée d'action à la demande
 > 	- [ ] Technique d'inhalation
 > 	- [ ] Utilisation avant l'effort
@@ -567,31 +567,31 @@ cssclasses:
 > 	- [ ] Test de réversibilité aux bronchodilatateurs
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] Test de marche de 6 minutes
-> - [ ] **3. Mesures non médicamenteuses**
+> - [ ] **3. Traitement médicamenteux proposé**
+> 	- [ ] Technique d'inhalation
+> 	- [ ] Bêta-2 agoniste de courte durée d'action (SABA)
+> 	- [ ] Anticholinergique de courte durée d'action (SAMA)
+> 	- [ ] Association éventuelle
+> - [ ] **4. Mesures non médicamenteuses**
 > 	- [ ] Sevrage tabagique (priorité absolue)
 > 	- [ ] Vaccination antigrippale et antipneumococcique
 > 	- [ ] Réhabilitation respiratoire
 > 	- [ ] Activité physique adaptée
-> - [ ] **4. Planification du suivi**
+> - [ ] **5. Planification du suivi**
 > 	- [ ] Consultation de contrôle
 > 	- [ ] Surveillance spirométrique
 > 	- [ ] Éducation thérapeutique
 > 	- [ ] Plan d'action en cas d'exacerbation
-> - [ ] **5. Examens complémentaires - Microbiologie et imagerie**
+> - [ ] **6. Examens complémentaires - Microbiologie et imagerie**
 > 	- [ ] Culture des crachats (ECBC)
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Scanner thoracique si indiqué
 > 	- [ ] ECG
-> - [ ] **6. Interprétation correcte de la spirométrie**
+> - [ ] **7. Interprétation correcte de la spirométrie**
 > 	- [ ] Classification GOLD stade I
 > 	- [ ] VEMS < 80% de la valeur prédite
 > 	- [ ] VEMS/CVF < 70%
 > 	- [ ] Absence de réversibilité significative
-> - [ ] **7. Traitement médicamenteux proposé**
-> 	- [ ] Bêta-2 agoniste de courte durée d'action (SABA)
-> 	- [ ] Anticholinergique de courte durée d'action (SAMA)
-> 	- [ ] Association éventuelle
-> 	- [ ] Technique d'inhalation
 > - [ ] **8. Prise en charge des comorbidités**
 > 	- [ ] Suivi du programme méthadone
 > 	- [ ] Dépistage des complications
@@ -631,14 +631,18 @@ cssclasses:
 > 	- [ ] Spirométrie
 > 	- [ ] Scanner thoracique si indication
 > 	- [ ] Polysomnographie si suspicion SAOS
-> - [ ] **17. Examens complémentaires urgents *(1 grille sur 3)***
-> 	- [ ] ECG 12 dérivations
-> 	- [ ] Radiographie thoracique
+> - [ ] **17. Examens complémentaires cardiaques *(2 grilles sur 3)***
+> 	- [ ] ECG 12 dérivations *(1 grille sur 3)*
+> 	- [ ] Radiographie thoracique *(1 grille sur 3)*
 > 	- [ ] BNP ou NT-proBNP
-> 	- [ ] Échocardiographie transthoracique
-> 	- [ ] Bilan biologique: FSC, ionogramme, créatinine, BNP
-> 	- [ ] Troponines si suspicion de SCA
-> 	- [ ] Gazométrie artérielle si dyspnée sévère
+> 	- [ ] Échocardiographie transthoracique *(1 grille sur 3)*
+> 	- [ ] Bilan biologique: FSC, ionogramme, créatinine, BNP *(1 grille sur 3)*
+> 	- [ ] Troponines si suspicion de SCA *(1 grille sur 3)*
+> 	- [ ] Gazométrie artérielle si dyspnée sévère *(1 grille sur 3)*
+> 	- [ ] ECG *(1 grille sur 3)*
+> 	- [ ] Radiographie thorax *(1 grille sur 3)*
+> 	- [ ] Échocardiographie *(1 grille sur 3)*
+> 	- [ ] Coronarographie si chirurgie envisagée *(1 grille sur 3)*
 > - [ ] **18. Critères diagnostiques d'insuffisance cardiaque *(1 grille sur 3)***
 > 	- [ ] Critères de Framingham majeurs
 > 	- [ ] Dyspnée paroxystique nocturne
@@ -658,31 +662,25 @@ cssclasses:
 > 	- [ ] Limitation des apports hydriques
 > 	- [ ] Activité physique régulière adaptée
 > - [ ] **22. Diagnostic différentiel dyspnée cardio-pulmonaire *(1 grille sur 3)***
-> - [ ] **23. Examens complémentaires cardiaques *(1 grille sur 3)***
-> 	- [ ] ECG
-> 	- [ ] Radiographie thorax
-> 	- [ ] Échocardiographie
-> 	- [ ] BNP ou NT-proBNP
-> 	- [ ] Coronarographie si chirurgie envisagée
-> - [ ] **24. Prise en charge respiratoire *(1 grille sur 3)***
+> - [ ] **23. Prise en charge respiratoire *(1 grille sur 3)***
 > 	- [ ] Oxygénothérapie si hypoxémie
 > 	- [ ] Bronchodilatateurs si obstruction
 > 	- [ ] Sevrage tabagique impératif
 > 	- [ ] Kinésithérapie respiratoire
 > 	- [ ] Vaccination grippe/pneumocoque
-> - [ ] **25. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
+> - [ ] **24. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
 > 	- [ ] Hospitalisation pour décompensation aiguë
 > 	- [ ] Monitoring poids quotidien
 > 	- [ ] Surveillance diurèse et ionogramme
 > 	- [ ] Évaluation pré-opératoire si chirurgie
 > 	- [ ] Suivi multidisciplinaire cardio-pneumo
-> - [ ] **26. Aspects psychosociaux et éducation *(1 grille sur 3)***
+> - [ ] **25. Aspects psychosociaux et éducation *(1 grille sur 3)***
 > 	- [ ] Soutien psychologique
 > 	- [ ] Aide sociale
 > 	- [ ] Éducation thérapeutique
 > 	- [ ] Aménagement domicile si besoin
 > 	- [ ] Coordination avec médecin traitant
-> - [ ] **27. Management intégré cardio-respiratoire *(1 grille sur 3)***
+> - [ ] **26. Management intégré cardio-respiratoire *(1 grille sur 3)***
 
 > [!success] 💊 Management — si Tachycardie supraventriculaire (TSV/WPW)
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

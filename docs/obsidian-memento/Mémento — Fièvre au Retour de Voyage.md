@@ -96,11 +96,15 @@ cssclasses:
 > 	- [ ] Médicaments actuels
 > 	- [ ] Contraception
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **6. Expérience de voyages internationaux *(1 grille sur 2)***
-> 	- [ ] Voyages précédents
-> 	- [ ] Premier grand voyage
-> 	- [ ] Appréhensions particulières
-> 	- [ ] Expérience avec antipaludiques
+> - [ ] **6. Expériences de voyages internationaux antérieurs**
+> 	- [ ] Voyages précédents *(1 grille sur 2)*
+> 	- [ ] Premier grand voyage *(1 grille sur 2)*
+> 	- [ ] Appréhensions particulières *(1 grille sur 2)*
+> 	- [ ] Expérience avec antipaludiques *(1 grille sur 2)*
+> 	- [ ] Destinations visitées *(1 grille sur 2)*
+> 	- [ ] Problèmes de santé lors de voyages précédents *(1 grille sur 2)*
+> 	- [ ] Tolérance aux antipaludiques si déjà pris *(1 grille sur 2)*
+> 	- [ ] Adaptation de l'enfant aux voyages *(1 grille sur 2)*
 > - [ ] **7. Type de voyage et activités prévues *(1 grille sur 2)***
 > 	- [ ] École de langue à Rio de Janeiro
 > 	- [ ] Déplacements prévus
@@ -131,22 +135,17 @@ cssclasses:
 > 	- [ ] Allergies père
 > 	- [ ] Allergies fils
 > 	- [ ] Médicaments réguliers
-> - [ ] **13. Expériences de voyages internationaux antérieurs *(1 grille sur 2)***
-> 	- [ ] Destinations visitées
-> 	- [ ] Problèmes de santé lors de voyages précédents
-> 	- [ ] Tolérance aux antipaludiques si déjà pris
-> 	- [ ] Adaptation de l'enfant aux voyages
-> - [ ] **14. Type et conditions du voyage planifié *(1 grille sur 2)***
+> - [ ] **13. Type et conditions du voyage planifié *(1 grille sur 2)***
 > 	- [ ] Activités prévues
 > 	- [ ] Type d'hébergement
 > 	- [ ] Zones visitées (urbaines/rurales)
 > 	- [ ] Altitude des destinations
 > 	- [ ] Contact avec animaux prévu
-> - [ ] **15. Durée et période du voyage *(1 grille sur 2)***
+> - [ ] **14. Durée et période du voyage *(1 grille sur 2)***
 > 	- [ ] Saison à Madagascar
 > 	- [ ] Durée totale
 > 	- [ ] Itinéraire prévu
-> - [ ] **16. État de santé actuel des voyageurs *(1 grille sur 2)***
+> - [ ] **15. État de santé actuel des voyageurs *(1 grille sur 2)***
 > 	- [ ] Symptômes actuels
 > 	- [ ] Capacité physique pour les activités prévues
 > 	- [ ] Grossesse (non applicable ici)

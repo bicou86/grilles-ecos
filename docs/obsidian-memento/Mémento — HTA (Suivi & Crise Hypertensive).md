@@ -212,13 +212,18 @@ cssclasses:
 > 	- [ ] Sédentarité
 > 	- [ ] Consommation de sel élevée
 > 	- [ ] Stress
-> - [ ] **4. Examens complémentaires *(1 grille sur 2)***
-> 	- [ ] Bilan biologique (FSC, ionogramme, créatinine, glycémie)
-> 	- [ ] Bilan lipidique complet
-> 	- [ ] TSH
-> 	- [ ] Analyse d'urine (protéinurie, hématurie)
-> 	- [ ] ECG de repos
-> 	- [ ] MAPA ou automesure tensionnelle
+> - [ ] **4. Examens complémentaires urgents**
+> 	- [ ] Bilan biologique (FSC, ionogramme, créatinine, glycémie) *(1 grille sur 2)*
+> 	- [ ] Bilan lipidique complet *(1 grille sur 2)*
+> 	- [ ] TSH *(1 grille sur 2)*
+> 	- [ ] Analyse d'urine (protéinurie, hématurie) *(1 grille sur 2)*
+> 	- [ ] ECG de repos *(1 grille sur 2)*
+> 	- [ ] MAPA ou automesure tensionnelle *(1 grille sur 2)*
+> 	- [ ] ECG *(1 grille sur 2)*
+> 	- [ ] Bilan biologique (ionogramme, créatinine) *(1 grille sur 2)*
+> 	- [ ] BNP ou NT-proBNP *(1 grille sur 2)*
+> 	- [ ] Radiographie thoracique *(1 grille sur 2)*
+> 	- [ ] Échocardiographie *(1 grille sur 2)*
 > - [ ] **5. Examens de retentissement *(1 grille sur 2)***
 > 	- [ ] Échocardiographie
 > 	- [ ] Fond d'œil
@@ -252,31 +257,25 @@ cssclasses:
 > 	- [ ] Augmentation de la consommation de sel
 > 	- [ ] Stress psychosocial
 > 	- [ ] Prise de poids
-> - [ ] **11. Examens complémentaires urgents *(1 grille sur 2)***
-> 	- [ ] ECG
-> 	- [ ] Bilan biologique (ionogramme, créatinine)
-> 	- [ ] BNP ou NT-proBNP
-> 	- [ ] Radiographie thoracique
-> 	- [ ] Échocardiographie
-> - [ ] **12. Adaptation thérapeutique immédiate *(1 grille sur 2)***
-> - [ ] **13. Éducation thérapeutique renforcée *(1 grille sur 2)***
+> - [ ] **11. Adaptation thérapeutique immédiate *(1 grille sur 2)***
+> - [ ] **12. Éducation thérapeutique renforcée *(1 grille sur 2)***
 > 	- [ ] Importance de l'observance
 > 	- [ ] Utilisation d'un pilulier
 > 	- [ ] Reconnaissance des signes d'alarme
 > 	- [ ] Automesure tensionnelle
 > 	- [ ] Carnet de suivi
-> - [ ] **14. Critères d'hospitalisation *(1 grille sur 2)***
+> - [ ] **13. Critères d'hospitalisation *(1 grille sur 2)***
 > 	- [ ] TA > 180/110 avec signes de souffrance
 > 	- [ ] Insuffisance cardiaque décompensée
 > 	- [ ] Suspicion d'urgence hypertensive
 > 	- [ ] Mauvaise réponse au traitement
-> - [ ] **15. Plan de suivi *(1 grille sur 2)***
+> - [ ] **14. Plan de suivi *(1 grille sur 2)***
 > 	- [ ] Contrôle dans 1 semaine
 > 	- [ ] Puis tous les 15 jours jusqu'à stabilisation
 > 	- [ ] Surveillance fonction rénale et ionogramme
 > 	- [ ] Ajustement thérapeutique selon évolution
 > 	- [ ] Référence cardiologue si nécessaire
-> - [ ] **16. Information et motivation du patient *(1 grille sur 2)***
+> - [ ] **15. Information et motivation du patient *(1 grille sur 2)***
 > 	- [ ] Expliquer les risques de l'HTA non contrôlée
 > 	- [ ] Importance du traitement à vie
 > 	- [ ] Bénéfices attendus

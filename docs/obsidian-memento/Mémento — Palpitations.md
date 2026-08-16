@@ -404,47 +404,47 @@ cssclasses:
 
 > [!success] 💊 Management — si Fibrillation auriculaire
 > - [ ] **1. Diagnostics différentiels**
-> - [ ] **2. Diagnostic principal**
+> - [ ] **2. Traitement médicamenteux au long cours**
+> 	- [ ] Bêtabloquants ou inhibiteurs calciques
+> 	- [ ] Anticoagulation orale (AOD ou AVK)
+> 	- [ ] Antiarythmiques si échec
+> 	- [ ] Gestion des facteurs de risque
+> - [ ] **3. Diagnostic principal**
 > 	- [ ] Fibrillation auriculaire paroxystique
 > 	- [ ] Justification clinique
 > 	- [ ] Éléments en faveur
 > 	- [ ] Score CHA2DS2-VASc à calculer
-> - [ ] **3. Prise en charge non médicamenteuse**
+> - [ ] **4. Prise en charge non médicamenteuse**
 > 	- [ ] Surveillance scopée si disponible
 > 	- [ ] Contrôle de la fréquence cardiaque
 > 	- [ ] Anticoagulation selon score CHA2DS2-VASc
 > 	- [ ] Cardioversion si instable
-> - [ ] **4. ECG - Réalisation et interprétation**
+> - [ ] **5. ECG - Réalisation et interprétation**
 > 	- [ ] ECG 12 dérivations immédiat
 > 	- [ ] Reconnaissance du trouble du rythme
 > 	- [ ] Analyse des intervalles
 > 	- [ ] Recherche de signes d'ischémie
-> - [ ] **5. Examens biologiques - Urgence**
+> - [ ] **6. Examens biologiques - Urgence**
 > 	- [ ] Troponine I
 > 	- [ ] CK-MB
 > 	- [ ] BNP/NT-proBNP
 > 	- [ ] D-dimères si suspicion EP
-> - [ ] **6. Examens biologiques - Bilan étiologique**
+> - [ ] **7. Examens biologiques - Bilan étiologique**
 > 	- [ ] FSC (anémie)
 > 	- [ ] CRP (inflammation)
 > 	- [ ] Ionogramme (Na, K, Ca)
 > 	- [ ] Créatinine et DFG
 > 	- [ ] TSH (hyperthyroïdie)
-> - [ ] **7. Examens biologiques - Bilan pré-thérapeutique**
+> - [ ] **8. Examens biologiques - Bilan pré-thérapeutique**
 > 	- [ ] Transaminases (ASAT, ALAT)
 > 	- [ ] Gamma-GT, PAL
 > 	- [ ] Albumine
 > 	- [ ] TP/INR, aPTT
-> - [ ] **8. Imagerie et examens complémentaires**
+> - [ ] **9. Imagerie et examens complémentaires**
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Échocardiographie transthoracique
 > 	- [ ] Holter ECG 24h si diagnostic incertain
 > 	- [ ] Angio-TDM thoracique si suspicion EP
-> - [ ] **9. Traitement médicamenteux au long cours**
-> 	- [ ] Bêtabloquants ou inhibiteurs calciques
-> 	- [ ] Anticoagulation orale (AOD ou AVK)
-> 	- [ ] Antiarythmiques si échec
-> 	- [ ] Gestion des facteurs de risque
 > - [ ] **10. Orientation et suivi**
 > 	- [ ] Nécessité d'hospitalisation évaluée
 > 	- [ ] Consultation cardiologie
@@ -462,7 +462,7 @@ cssclasses:
 > 	- [ ] Éventuellement angio-CT (si suspicion d'embolie pulmonaire)
 > 	- [ ] Éventuellement dosage médicamenteux (bêta-bloquants)
 > - [ ] **4. Reconnaissance de pathologie**
-> - [ ] **5. Traitement médicamenteux**
+> - [ ] **5. Traitement médicamenteux au long cours**
 > 	- [ ] Parasympatholytiques : Atropine 0,5-1 mg IV
 > 	- [ ] Sympathomimétiques : Adrénaline 0,1 mg IV
 > - [ ] **6. Traitement par stimulateur cardiaque**
@@ -478,7 +478,7 @@ cssclasses:
 > 	- [ ] Arythmie induite par la cocaïne
 > 	- [ ] Anémie
 > 	- [ ] Phéochromocytome (rare)
-> - [ ] **2. Traitement médicamenteux**
+> - [ ] **2. Traitement médicamenteux au long cours**
 > 	- [ ] Bêta-bloquants si échec des mesures hygiéno-diététiques
 > 	- [ ] Anxiolytiques ponctuels si composante anxieuse marquée
 > 	- [ ] Traitement spécifique selon résultats (fer si anémie, etc.)

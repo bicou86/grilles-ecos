@@ -228,7 +228,7 @@ cssclasses:
 > - [ ] **91. Profession *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **92. Situation sociale *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **93. Présentation avec nom, fonction et tâche *(3 grilles sur 7)***
-> - [ ] **94. Question ouverte initiale → symptôme principal *(Première crise convulsive tonico-clonique)***
+> - [ ] **94. Question ouverte initiale → symptôme principal *(BAV · Première crise convulsive tonico-clonique)***
 > - [ ] **95. Évolution temporelle de la crise *(Première crise convulsive tonico-clonique)***
 > 	- [ ] Début
 > 	- [ ] Durée de la crise
@@ -347,89 +347,88 @@ cssclasses:
 > 	- [ ] Enfants
 > 	- [ ] Profession antérieure
 > 	- [ ] Conditions de vie actuelles
-> - [ ] **121. Question d'entrée ouverte - Symptôme principal *(BAV)***
-> - [ ] **122. Caractérisation de l'épisode syncopal *(BAV)***
+> - [ ] **121. Caractérisation de l'épisode syncopal *(BAV)***
 > 	- [ ] Prodromes
 > 	- [ ] Durée de la perte de connaissance
 > 	- [ ] Récupération (rapide ou progressive)
 > 	- [ ] Confusion post-critique
-> - [ ] **123. Fréquence et récurrence *(BAV)***
+> - [ ] **122. Fréquence et récurrence *(BAV)***
 > 	- [ ] Nombre d'épisodes
 > 	- [ ] Premier épisode (date)
 > 	- [ ] Augmentation de la fréquence
 > 	- [ ] Circonstances similaires
-> - [ ] **124. Symptômes cardiovasculaires associés *(BAV)***
+> - [ ] **123. Symptômes cardiovasculaires associés *(BAV)***
 > 	- [ ] Palpitations avant/après
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Sensation de battements irréguliers
 > 	- [ ] Pause cardiaque ressentie
-> - [ ] **125. Symptômes généraux récents *(BAV)***
+> - [ ] **124. Symptômes généraux récents *(BAV)***
 > 	- [ ] Fatigue inhabituelle
 > 	- [ ] Faiblesse générale
 > 	- [ ] Diminution de la tolérance à l'effort
 > 	- [ ] Modifications récentes
-> - [ ] **126. Symptômes respiratoires *(BAV)***
+> - [ ] **125. Symptômes respiratoires *(BAV)***
 > 	- [ ] Dyspnée d'effort
 > 	- [ ] Dyspnée de repos
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
-> - [ ] **127. Symptômes neurologiques *(BAV)***
+> - [ ] **126. Symptômes neurologiques *(BAV)***
 > 	- [ ] Vertiges
 > 	- [ ] Troubles visuels avant la syncope
 > 	- [ ] Céphalées
 > 	- [ ] Déficit neurologique focal
-> - [ ] **128. Circonstances déclenchantes *(BAV)***
+> - [ ] **127. Circonstances déclenchantes *(BAV)***
 > 	- [ ] Position lors de la syncope
 > 	- [ ] Effort physique
 > 	- [ ] Émotion forte
 > 	- [ ] Miction, défécation, toux
-> - [ ] **129. Facteurs de risque cardiovasculaire *(BAV)***
+> - [ ] **128. Facteurs de risque cardiovasculaire *(BAV)***
 > 	- [ ] Diabète
 > 	- [ ] Hypertension
 > 	- [ ] Dyslipidémie
 > 	- [ ] Tabagisme
 > 	- [ ] Obésité
-> - [ ] **130. Allergies médicamenteuses *(BAV)***
+> - [ ] **129. Allergies médicamenteuses *(BAV)***
 > 	- [ ] Allergies connues
 > 	- [ ] Intolérances
 > 	- [ ] Réactions antérieures
-> - [ ] **131. Contexte social et professionnel *(BAV)***
+> - [ ] **130. Contexte social et professionnel *(BAV)***
 > 	- [ ] Profession
 > 	- [ ] Niveau d'activité actuel
 > 	- [ ] Stress récent
 > 	- [ ] Support social
-> - [ ] **132. Orientation du patient *(Hypoglycémie)***
+> - [ ] **131. Orientation du patient *(Hypoglycémie)***
 > 	- [ ] Personne
 > 	- [ ] Temporalité
 > 	- [ ] Espace
-> - [ ] **133. Présence de douleur *(Hypoglycémie)***
-> - [ ] **134. Notion d'intoxication aiguë ("avez-vous pris ?") *(Hypoglycémie)***
+> - [ ] **132. Présence de douleur *(Hypoglycémie)***
+> - [ ] **133. Notion d'intoxication aiguë ("avez-vous pris ?") *(Hypoglycémie)***
 > 	- [ ] Drogue
 > 	- [ ] Alcool
-> - [ ] **135. Hétéro-anamnèse avec infirmier/-ère - anamnèse actuelle *(Hypoglycémie)***
+> - [ ] **134. Hétéro-anamnèse avec infirmier/-ère - anamnèse actuelle *(Hypoglycémie)***
 > 	- [ ] Circonstances du début du malaise
 > 	- [ ] Notion de perte de connaissance / syncope
 > 	- [ ] Notion de traumatisme crânien
-> - [ ] **136. Hétéroanamnèse avec infirmier/-ère - infos sur le/la patient·e *(Hypoglycémie)***
+> - [ ] **135. Hétéroanamnèse avec infirmier/-ère - infos sur le/la patient·e *(Hypoglycémie)***
 > 	- [ ] Médicaments habituels
 > 	- [ ] Antécédents / comorbidités
-> - [ ] **137. Anamnèse avec patient·e (post resucrage efficace) *(Hypoglycémie)***
+> - [ ] **136. Anamnèse avec patient·e (post resucrage efficace) *(Hypoglycémie)***
 > 	- [ ] Circonstance du malaise
 > 	- [ ] Compliance / modalité du traitement anti-diabétique
-> - [ ] **138. Caractérisation de la perte de connaissance *(1 grille sur 7)***
+> - [ ] **137. Caractérisation de la perte de connaissance *(1 grille sur 7)***
 > 	- [ ] Chronologie/durée
 > 	- [ ] Développement
 > 	- [ ] Circonstances de survenue
 > 	- [ ] Fréquence
-> - [ ] **139. Recherche de signes d'hypotension orthostatique *(1 grille sur 7)***
+> - [ ] **138. Recherche de signes d'hypotension orthostatique *(1 grille sur 7)***
 > 	- [ ] Épisode en se levant (changement de position)
 > 	- [ ] Vertiges et voile devant les yeux
-> - [ ] **140. Antécédents médicaux et facteurs prédisposants *(1 grille sur 7)***
+> - [ ] **139. Antécédents médicaux et facteurs prédisposants *(1 grille sur 7)***
 > 	- [ ] Anémie ferriprive en traitement (fer per os et IV)
 > 	- [ ] Jamais hospitalisé ni opéré
 > 	- [ ] Allergie au pollen
 > 	- [ ] Vaccins à jour
-> - [ ] **141. Habitudes et facteurs de risque *(1 grille sur 7)***
+> - [ ] **140. Habitudes et facteurs de risque *(1 grille sur 7)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Alimentation
 > 	- [ ] Activité physique

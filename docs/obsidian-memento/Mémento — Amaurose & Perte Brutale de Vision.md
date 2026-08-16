@@ -418,7 +418,7 @@ cssclasses:
 
 > [!success] 💊 Management — si AVC
 > - [ ] **1. Hypothèses diagnostiques**
-> - [ ] **2. Examens complémentaires urgents**
+> - [ ] **2. Examens diagnostiques complémentaires**
 > 	- [ ] Oxymétrie de pouls
 > 	- [ ] ECG et monitoring cardiaque
 > 	- [ ] FSC
@@ -489,14 +489,14 @@ cssclasses:
 > - [ ] **7. Propose une hospitalisation**
 
 > [!success] 💊 Management — si OACR / Occlusion rétinienne
-> - [ ] **1. Imagerie cérébrale**
-> - [ ] **2. Laboratoire**
-> - [ ] **3. Hémogramme**
-> - [ ] **4. Paramètres inflammatoires**
-> - [ ] **5. ECG**
-> - [ ] **6. Pas de thérapie fondée sur des preuves**
-> - [ ] **7. Adressage Stroke Center**
-> - [ ] **8. Examens diagnostiques complémentaires**
+> - [ ] **1. Examens diagnostiques complémentaires**
+> - [ ] **2. Imagerie cérébrale**
+> - [ ] **3. Laboratoire**
+> - [ ] **4. Hémogramme**
+> - [ ] **5. Paramètres inflammatoires**
+> - [ ] **6. ECG**
+> - [ ] **7. Pas de thérapie fondée sur des preuves**
+> - [ ] **8. Adressage Stroke Center**
 > - [ ] **9. Échocardiographie**
 > - [ ] **10. Doppler des carotides**
 > - [ ] **11. ECG de longue durée**
