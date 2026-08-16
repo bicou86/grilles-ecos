@@ -133,7 +133,7 @@ cssclasses:
 > 	- [ ] Début et progression *(2 grilles sur 20)*
 > - [ ] **3. Symptômes associés - Souillures *(9 grilles sur 20)***
 > 	- [ ] Nausées *(4 grilles sur 20)*
-> 	- [ ] Vomissements *(5 grilles sur 20)*
+> 	- [ ] Nausées/Vomissements *(5 grilles sur 20)*
 > 	- [ ] Caractéristiques des vomissements *(1 grille sur 20)*
 > 	- [ ] Fièvre *(3 grilles sur 20)*
 > 	- [ ] Fièvre/frissons *(Appendicite aiguë)*
@@ -173,7 +173,7 @@ cssclasses:
 > 	- [ ] Sueurs nocturnes *(Cancer de l'ovaire)*
 > 	- [ ] Dyspnée *(Cancer de l'ovaire)*
 > 	- [ ] Fièvre *(Maladie cœliaque)*
-> 	- [ ] Vomissements *(Maladie cœliaque)*
+> 	- [ ] Nausées/Vomissements *(Maladie cœliaque)*
 > 	- [ ] Éruption/changements cutanés *(Maladie cœliaque)*
 > 	- [ ] Pleurs/irritabilité *(Maladie cœliaque)*
 > 	- [ ] Problèmes urinaires/énurésie *(Maladie cœliaque)*
@@ -288,7 +288,7 @@ cssclasses:
 > - [ ] **33. Fièvre aiguë *(1 grille sur 20)***
 > - [ ] **34. Anamnèse de l'entourage *(5 grilles sur 20)***
 > - [ ] **35. Nausées *(1 grille sur 20)***
-> - [ ] **36. Vomissements *(2 grilles sur 20)***
+> - [ ] **36. Nausées/Vomissements *(2 grilles sur 20)***
 > - [ ] **37. Qualité (bilieux/sanglant/en marc de café) *(1 grille sur 20)***
 > - [ ] **38. Selles *(2 grilles sur 20)***
 > - [ ] **39. Dernières selles *(1 grille sur 20)***
@@ -379,13 +379,12 @@ cssclasses:
 > 	- [ ] Relation avec l'alimentation
 > - [ ] **94. Symptômes généraux et signes de déshydratation *(8 grilles sur 20)***
 > 	- [ ] Nausées *(Diverticulite sigmoïdienne non compliquée · Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Vomissements *(Diverticulite sigmoïdienne non compliquée · Reflux gastro-œsophagien (RGO))*
+> 	- [ ] Nausées/Vomissements *(6 diagnostics)*
 > 	- [ ] Transit intestinal - diarrhée *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Flatulences *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Diarrhée/Constipation *(5 diagnostics)*
 > 	- [ ] Transit intestinal et gaz *(4 diagnostics)*
 > 	- [ ] Gaz *(Endométriose pelvienne)*
-> 	- [ ] Nausées/Vomissements *(4 diagnostics)*
 > 	- [ ] Sang dans les vomissements *(4 diagnostics)*
 > 	- [ ] Diarrhée *(Endométriose pelvienne · MICI (Crohn / RCUH))*
 > 	- [ ] Présence de sang dans les selles *(Endométriose pelvienne · Infection génitale haute · Ischémie mésentérique aiguë)*
@@ -524,16 +523,22 @@ cssclasses:
 > 	- [ ] Pollakiurie *(Cholédocholithiase)*
 > - [ ] **134. Par système - digestif *(Cholédocholithiase · Colique néphrétique droite)***
 > 	- [ ] Nausées
-> 	- [ ] Vomissements
+> 	- [ ] Nausées/Vomissements
 > 	- [ ] Consistance des selles
 > 	- [ ] Fréquence du transit *(Colique néphrétique droite)*
 > 	- [ ] Couleur des selles
 > 	- [ ] Présence de sang dans les selles
 > 	- [ ] Dernier transit *(Cholédocholithiase)*
-> - [ ] **135. Symptômes associés - nausées *(1 grille sur 20)***
-> 	- [ ] Présence de nausée
-> 	- [ ] Présence de vomissement
-> 	- [ ] Début/durée des nausées
+> - [ ] **135. Symptômes associés digestifs *(3 grilles sur 20)***
+> 	- [ ] Présence de nausée *(1 grille sur 20)*
+> 	- [ ] Présence de vomissement *(1 grille sur 20)*
+> 	- [ ] Début/durée des nausées *(1 grille sur 20)*
+> 	- [ ] Nausées/Vomissements *(2 grilles sur 20)*
+> 	- [ ] Perte d'appétit *(2 grilles sur 20)*
+> 	- [ ] Perte de poids *(Gastroentérite)*
+> 	- [ ] Hoquet, éructations *(2 grilles sur 20)*
+> 	- [ ] Nausées *(1 grille sur 20)*
+> 	- [ ] Dégoût pour la nourriture *(1 grille sur 20)*
 > - [ ] **136. Symptômes similaires par le passé *(1 grille sur 20)***
 > - [ ] **137. Anamnèse par système - digestives (selles) *(1 grille sur 20)***
 > 	- [ ] Quantité
@@ -555,7 +560,7 @@ cssclasses:
 > 	- [ ] Pertes vaginales
 > - [ ] **140. Système digestif (DD: colite, appendicite, diverticulite) *(Torsion ovarienne)***
 > 	- [ ] Nausées
-> 	- [ ] Vomissements
+> 	- [ ] Nausées/Vomissements
 > 	- [ ] Dernier transit
 > 	- [ ] Diarrhées
 > 	- [ ] Diarrhée/Constipation
@@ -603,36 +608,29 @@ cssclasses:
 > 	- [ ] Odeur
 > 	- [ ] Présence de glaires, sang, pus
 > 	- [ ] Horaire
-> - [ ] **148. Symptômes associés digestifs *(2 grilles sur 20)***
-> 	- [ ] Vomissements
-> 	- [ ] Perte d'appétit
-> 	- [ ] Perte de poids *(Gastroentérite)*
-> 	- [ ] Hoquet, éructations
-> 	- [ ] Nausées *(1 grille sur 20)*
-> 	- [ ] Dégoût pour la nourriture *(1 grille sur 20)*
-> - [ ] **149. Recherche de complications et symptômes d'alarme *(Gastroentérite)***
+> - [ ] **148. Recherche de complications et symptômes d'alarme *(Gastroentérite)***
 > 	- [ ] Troubles urinaires
 > 	- [ ] Signes d'occlusion
 > 	- [ ] Douleur à la détente
 > 	- [ ] Signes de péritonisme
-> - [ ] **150. Antécédents et contexte épidémiologique *(Gastroentérite)***
+> - [ ] **149. Antécédents et contexte épidémiologique *(Gastroentérite)***
 > 	- [ ] Antécédents similaires
 > 	- [ ] Voyage récent
 > 	- [ ] Contage
 > 	- [ ] Antécédents familiaux
 > 	- [ ] Médicaments et habitudes
-> - [ ] **151. Transit et fonction digestive *(1 grille sur 20)***
+> - [ ] **150. Transit et fonction digestive *(1 grille sur 20)***
 > 	- [ ] Transit conservé
 > 	- [ ] Aspect des selles
 > 	- [ ] Troubles urinaires
 > 	- [ ] Dernière prise alimentaire
-> - [ ] **152. Antécédents familiaux et habitudes *(1 grille sur 20)***
+> - [ ] **151. Antécédents familiaux et habitudes *(1 grille sur 20)***
 > 	- [ ] Antécédents familiaux
 > 	- [ ] Père avec cholestérol élevé
 > 	- [ ] Tabagisme
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
-> - [ ] **153. Anamnèse socioprofessionnelle et impact *(1 grille sur 20)***
+> - [ ] **152. Anamnèse socioprofessionnelle et impact *(1 grille sur 20)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Impact professionnel
@@ -1251,7 +1249,7 @@ cssclasses:
 > 	- [ ] Dès la suspicion clinique
 > 	- [ ] Angiographie et laparotomie exploratrice
 > 	- [ ] Selon les constatations : embolectomie, désobstruction, pontage
-> 	- [ ] Réévaluation du traitement médicamenteux
+> 	- [ ] Traitement médicamenteux
 
 > [!success] 💊 Management — si Maladie cœliaque
 > - [ ] **1. Examens complémentaires de première intention**
@@ -1259,11 +1257,11 @@ cssclasses:
 > 	- [ ] Anticorps anti-transglutaminase tissulaire IgA (tTG)
 > 	- [ ] IgA quantitatives
 > - [ ] **2. Information et éducation de la patiente**
+> 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
-> 	- [ ] Explications au parent des impressions diagnostiques préliminaires
-> 	- [ ] Évaluation de l'accord du parent avec le plan diagnostique
-> 	- [ ] Recherche des préoccupations et questions du parent
+> 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
+> 	- [ ] Recherche des préoccupations et questions du patient
 > - [ ] **3. Examens biologiques**
 > 	- [ ] FSC, VGM, TCMH
 > 	- [ ] Panel IgE allergies pédiatriques
@@ -1358,6 +1356,7 @@ cssclasses:
 > - [ ] **2. Diagnostic principal**
 > 	- [ ] Reflux gastro-œsophagien (RGO)
 > - [ ] **3. Prise en charge thérapeutique immédiate**
+> 	- [ ] Traitement médicamenteux
 > 	- [ ] Mesures hygiéno-diététiques
 > 	- [ ] Lit : surélévation de la tête de lit
 > 	- [ ] Restriction de la consommation de café et d'alcool
@@ -1365,7 +1364,6 @@ cssclasses:
 > 	- [ ] Éviter les repas tardifs
 > 	- [ ] Perte de poids
 > 	- [ ] Éviter les médicaments diminuant la pression du sphincter
-> 	- [ ] Traitement médicamenteux
 > 	- [ ] Inhibiteurs de la pompe à protons (IPP)
 > 	- [ ] Éventuellement antagonistes des récepteurs H2
 > 	- [ ] En cas de résistance thérapeutique

@@ -302,11 +302,10 @@ cssclasses:
 > - [ ] **7. Planification du suivi médical**
 > 	- [ ] Prochains RDV vaccinations *(1 grille sur 2)*
 > 	- [ ] Check-up avant départ *(1 grille sur 2)*
-> 	- [ ] Bilan au retour si symptômes *(1 grille sur 2)*
+> 	- [ ] Consultation au retour si symptômes
 > 	- [ ] Test VIH 3 mois après retour *(1 grille sur 2)*
 > 	- [ ] Disponibilité pour questions
 > 	- [ ] Rendez-vous pour vaccinations manquantes *(1 grille sur 2)*
-> 	- [ ] Consultation au retour si symptômes *(1 grille sur 2)*
 > 	- [ ] Rappel surveillance fièvre jusqu'à 3 mois post-retour *(1 grille sur 2)*
 > - [ ] **8. Prescriptions médicamenteuses *(1 grille sur 2)***
 > 	- [ ] Ordonnance chimioprophylaxie antipaludique

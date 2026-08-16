@@ -107,12 +107,11 @@ cssclasses:
 > 	- [ ] Épisodes antérieurs *(2 grilles sur 8)*
 > 	- [ ] Irradiation *(5 grilles sur 8)*
 > 	- [ ] Facteurs améliorants *(2 grilles sur 8)*
-> 	- [ ] Facteurs aggravants *(2 grilles sur 8)*
+> 	- [ ] Facteurs atténuants/aggravants *(3 grilles sur 8)*
 > 	- [ ] Type *(1 grille sur 8)*
 > 	- [ ] Intensité *(2 grilles sur 8)*
 > 	- [ ] Évolution *(1 grille sur 8)*
 > 	- [ ] Chronologie *(Cancer prostatique métastatique)*
-> 	- [ ] Facteurs atténuants/aggravants *(Cancer prostatique métastatique)*
 > - [ ] **3. Symptômes urinaires associés *(6 grilles sur 8)***
 > 	- [ ] Hématurie macroscopique *(1 grille sur 8)*
 > 	- [ ] Dysurie *(1 grille sur 8)*

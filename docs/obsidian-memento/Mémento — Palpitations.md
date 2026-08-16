@@ -412,8 +412,8 @@ cssclasses:
 > 	- [ ] Éléments en faveur
 > 	- [ ] Score CHA2DS2-VASc à calculer
 > - [ ] **4. Imagerie et examens complémentaires**
-> 	- [ ] Radiographie thoracique
 > 	- [ ] Échocardiographie transthoracique
+> 	- [ ] Radiographie thoracique
 > 	- [ ] Holter ECG 24h si diagnostic incertain
 > 	- [ ] Angio-TDM thoracique si suspicion EP
 > - [ ] **5. ECG - Réalisation et interprétation**
@@ -484,7 +484,7 @@ cssclasses:
 > 	- [ ] Biologie : FSC (anémie), TSH (hyperthyroïdie), ionogramme
 > 	- [ ] ECG de repos
 > 	- [ ] Holter ECG 24h si récidive
-> 	- [ ] Échocardiographie si anomalie ECG
+> 	- [ ] Échocardiographie transthoracique
 > 	- [ ] Test toxicologique urinaire si besoin
 > - [ ] **5. Prise en charge non médicamenteuse**
 > - [ ] **6. Conseils spécifiques sur les substances**

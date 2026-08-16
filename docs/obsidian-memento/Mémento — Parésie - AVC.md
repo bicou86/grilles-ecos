@@ -127,10 +127,9 @@ cssclasses:
 > - [ ] **9. Caractérisation de l'épisode *(2 grilles sur 4)***
 > 	- [ ] Mode d'installation *(AVC)*
 > 	- [ ] Heure précise de début *(AVC)*
-> 	- [ ] Circonstances de découverte *(AVC)*
+> 	- [ ] Circonstances de survenue
 > 	- [ ] Évolution depuis le début *(AVC)*
 > 	- [ ] Premiers symptômes remarqués *(AVC)*
-> 	- [ ] Circonstances de survenue *(1 grille sur 4)*
 > 	- [ ] Localisation *(1 grille sur 4)*
 > 	- [ ] Type de symptômes *(1 grille sur 4)*
 > 	- [ ] Symptômes associés *(1 grille sur 4)*

@@ -430,9 +430,8 @@ cssclasses:
 > - [ ] **3. Tonus cervical *(Première crise épileptique focale bilatéralisée)***
 > - [ ] **4. Examen cardio-pulmonaire *(4 grilles sur 7)***
 > 	- [ ] Auscultation cardiaque *(Première crise convulsive tonico-clonique)*
-> 	- [ ] Auscultation pulmonaire *(Première crise convulsive tonico-clonique)*
+> 	- [ ] Auscultation pulmonaire bilatérale *(3 grilles sur 7)*
 > 	- [ ] Inspection thoracique *(1 grille sur 7)*
-> 	- [ ] Auscultation pulmonaire bilatérale *(2 grilles sur 7)*
 > 	- [ ] Recherche de râles crépitants *(2 grilles sur 7)*
 > 	- [ ] Évaluation de la symétrie *(1 grille sur 7)*
 > 	- [ ] Signes de congestion *(BAV)*
@@ -479,7 +478,7 @@ cssclasses:
 > 	- [ ] Mesures répétées en orthostatisme *(1 grille sur 7)*
 > 	- [ ] Documentation des symptômes *(1 grille sur 7)*
 > 	- [ ] Interprétation correcte *(1 grille sur 7)*
-> - [ ] **43. Auscultation pulmonaire *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
+> - [ ] **43. Auscultation pulmonaire bilatérale *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **44. Conscience / orientation *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **45. Meningisme *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
 > - [ ] **46. Motricité *(Syncope avec suspicion d’origine arythmogène (syndrome de Brugada))***
@@ -612,10 +611,10 @@ cssclasses:
 > 	- [ ] Type de bloc AV suspecté
 > 	- [ ] Risque vital immédiat
 > - [ ] **3. Propose des examens complémentaires appropriés**
+> 	- [ ] Test d'effort différé
 > 	- [ ] Échocardiographie (exclure infarctus, cardiomyopathie)
 > 	- [ ] Monitoring ECG continu
 > 	- [ ] Holter ECG 24h si sortie
-> 	- [ ] Test d'effort différé
 > - [ ] **4. Planification du suivi**
 > 	- [ ] Coordination avec le médecin traitant
 > 	- [ ] Consultation cardiologie urgente
@@ -680,7 +679,7 @@ cssclasses:
 > 	- [ ] ECG de repos *(1 grille sur 2)*
 > 	- [ ] Échocardiographie *(1 grille sur 2)*
 > 	- [ ] Holter ECG si suspicion de troubles du rythme *(1 grille sur 2)*
-> 	- [ ] Test d'effort si indiqué *(1 grille sur 2)*
+> 	- [ ] Test d'effort différé *(1 grille sur 2)*
 > 	- [ ] ECG 12 dérivations *(1 grille sur 2)*
 > 	- [ ] Bilan sanguin (FSC, ionogramme, glycémie) *(1 grille sur 2)*
 > 	- [ ] Dosage de l'hémoglobine (contrôle anémie) *(1 grille sur 2)*

@@ -227,13 +227,12 @@ cssclasses:
 > - [ ] **3. Palpation des pouls périphériques - membres inférieurs *(AOMI)***
 > 	- [ ] Artères fémorales *(1 grille sur 3)*
 > 	- [ ] Artères poplitées *(1 grille sur 3)*
-> 	- [ ] Artères tibiales postérieures *(1 grille sur 3)*
+> 	- [ ] Artères tibiales postérieures
 > 	- [ ] Artères pédieuses *(1 grille sur 3)*
 > 	- [ ] Aorte abdominale *(1 grille sur 3)*
 > 	- [ ] Pouls fémoral *(1 grille sur 3)*
 > 	- [ ] Pouls poplité *(1 grille sur 3)*
 > 	- [ ] Pouls pédieux *(1 grille sur 3)*
-> 	- [ ] Pouls tibial postérieur *(1 grille sur 3)*
 > 	- [ ] Comparaison droite/gauche systématique *(1 grille sur 3)*
 > - [ ] **4. Auscultation vasculaire**
 > 	- [ ] Souffle inguinal gauche *(1 grille sur 3)*
