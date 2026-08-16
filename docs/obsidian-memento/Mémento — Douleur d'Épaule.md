@@ -125,18 +125,19 @@ cssclasses:
 > 	- [ ] Pathologies rhumatologiques *(Syndrome de conflit sous-acromial)*
 > 	- [ ] Autres maladies chroniques *(Syndrome de conflit sous-acromial)*
 > - [ ] **5. Allergies *(Rupture de la coiffe des rotateurs · Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
-> - [ ] **6. Médicaments *(Rupture de la coiffe des rotateurs · Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
+> - [ ] **6. Médicaments actuels *(Rupture de la coiffe des rotateurs · Syndrome de conflit sous-acromial · Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **7. Hospitalisations et antécédents chirurgicaux *(Rupture de la coiffe des rotateurs)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
 > - [ ] **8. Antécédents familiaux *(Rupture de la coiffe des rotateurs · Syndrome de conflit sous-acromial · Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
-> - [ ] **9. Habitudes et mode de vie *(Rupture de la coiffe des rotateurs)***
-> 	- [ ] Travail
-> 	- [ ] Domicile
+> - [ ] **9. Habitudes et mode de vie *(Rupture de la coiffe des rotateurs · Syndrome de conflit sous-acromial)***
+> 	- [ ] Travail *(Rupture de la coiffe des rotateurs)*
+> 	- [ ] Domicile *(Rupture de la coiffe des rotateurs)*
 > 	- [ ] Alcool
-> 	- [ ] Drogues récréatives
+> 	- [ ] Drogues récréatives *(Rupture de la coiffe des rotateurs)*
 > 	- [ ] Tabac
-> 	- [ ] Exercice
+> 	- [ ] Exercice *(Rupture de la coiffe des rotateurs)*
+> 	- [ ] Autres toxiques *(Syndrome de conflit sous-acromial)*
 > - [ ] **10. Question d’entrée *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **11. Dynamique temporelle *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **12. Début / durée *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
@@ -171,7 +172,9 @@ cssclasses:
 > - [ ] **40. Symptomatologie B *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **41. Lésions antérieures *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **42. Prise en charge antérieure *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
-> - [ ] **43. Opérations antérieures *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
+> - [ ] **43. Antécédents chirurgicaux *(Syndrome de conflit sous-acromial · Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
+> 	- [ ] Chirurgies antérieures *(Syndrome de conflit sous-acromial)*
+> 	- [ ] Chirurgie thyroïdienne *(Syndrome de conflit sous-acromial)*
 > - [ ] **44. Noxes *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **45. Tabac *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **46. Alcool *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
@@ -201,37 +204,29 @@ cssclasses:
 > 	- [ ] Fatigue
 > 	- [ ] État général
 > - [ ] **58. Automédication et traitements essayés *(Syndrome de conflit sous-acromial)***
-> - [ ] **59. Antécédents chirurgicaux *(Syndrome de conflit sous-acromial)***
-> 	- [ ] Chirurgies antérieures
-> 	- [ ] Chirurgie thyroïdienne
-> - [ ] **60. Habitudes de vie *(Syndrome de conflit sous-acromial)***
-> 	- [ ] Tabac
-> 	- [ ] Alcool
-> 	- [ ] Autres toxiques
-> - [ ] **61. Médicaments actuels *(Syndrome de conflit sous-acromial)***
-> - [ ] **62. Contexte social et professionnel *(Syndrome de conflit sous-acromial)***
+> - [ ] **59. Contexte social et professionnel *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Enfants
-> - [ ] **63. Retentissement fonctionnel *(Syndrome de conflit sous-acromial)***
+> - [ ] **60. Retentissement fonctionnel *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Impact professionnel
 > 	- [ ] Gêne quotidienne
 > 	- [ ] Qualité de vie
-> - [ ] **64. Synthèse et questions de la patiente *(Syndrome de conflit sous-acromial)***
+> - [ ] **61. Synthèse et questions de la patiente *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Résumé des points clés
 > 	- [ ] Questions de la patiente
-> - [ ] **65. Moment et le lieu *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **62. Moment et le lieu *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Les deux *(1 grille sur 5)*
-> - [ ] **66. Déroulement *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **63. Déroulement *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Personnes impliquées
 > 	- [ ] Mécanisme du traumatisme
 > 	- [ ] Les 2 *(1 grille sur 5)*
-> - [ ] **67. Demande concernant autre lésion traumatique (coup) *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **64. Demande concernant autre lésion traumatique (coup) *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Cérébrale
 > 	- [ ] Abdominale
 > 	- [ ] Thoracique
 > 	- [ ] Autre
-> - [ ] **68. Douleurs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **65. Douleurs *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Localisation
 > 	- [ ] Intensité
 > 	- [ ] Évolution
@@ -240,14 +235,14 @@ cssclasses:
 > 	- [ ] Caractère
 > 	- [ ] Facteurs aggravant *(1 grille sur 5)*
 > 	- [ ] Facteurs atténuant *(1 grille sur 5)*
-> - [ ] **69. Douleurs ailleurs *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **70. Propose une antalgie *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **71. Prise d'alcool ou drogue ce soir là *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **66. Douleurs ailleurs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **67. Propose une antalgie *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **68. Prise d'alcool ou drogue ce soir là *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Les deux *(1 grille sur 5)*
-> - [ ] **72. Antécédents médicaux/chirurgicaux/médicaments/allergie/vaccins *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **69. Antécédents médicaux/chirurgicaux/médicaments/allergie/vaccins *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Au moins 3 *(1 grille sur 5)*
 > 	- [ ] Un *(1 grille sur 5)*
-> - [ ] **73. Contexte d'harcèlement de son équipier/-ère *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **70. Contexte d'harcèlement de son équipier/-ère *(Fracture du membre supérieur (humérus, tête radiale))***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Rupture de la coiffe des rotateurs)***

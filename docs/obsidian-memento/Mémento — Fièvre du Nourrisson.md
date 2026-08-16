@@ -129,7 +129,10 @@ cssclasses:
 > 	- [ ] Bouche sèche, yeux enfoncés, apports liquidiens (déshydratation)
 > 	- [ ] Nombre de couches mouillées/24h
 > 	- [ ] Voyage récent
-> - [ ] **6. Antécédents médicaux *(Bronchite aiguë)***
+> - [ ] **6. Antécédents médicaux personnels *(Bronchite aiguë · Exanthème subit)***
+> 	- [ ] Maladies antérieures *(Exanthème subit)*
+> 	- [ ] Hospitalisations *(Exanthème subit)*
+> 	- [ ] Chirurgies *(Exanthème subit)*
 > - [ ] **7. Antécédents chirurgicaux et hospitalisations *(Bronchite aiguë)***
 > 	- [ ] Chirurgie
 > 	- [ ] Hospitalisations
@@ -175,40 +178,36 @@ cssclasses:
 > 	- [ ] Langage
 > 	- [ ] Social
 > - [ ] **22. Comportement récent *(Exanthème subit)***
-> - [ ] **23. Antécédents médicaux personnels *(Exanthème subit)***
-> 	- [ ] Maladies antérieures
-> 	- [ ] Hospitalisations
-> 	- [ ] Chirurgies
-> - [ ] **24. Médicaments actuels *(Exanthème subit)***
-> - [ ] **25. Allergies *(Exanthème subit)***
-> - [ ] **26. Vaccinations *(Exanthème subit)***
-> - [ ] **27. Anamnèse d'environnement *(Exanthème subit)***
+> - [ ] **23. Médicaments actuels *(Exanthème subit)***
+> - [ ] **24. Allergies *(Exanthème subit)***
+> - [ ] **25. Vaccinations *(Exanthème subit)***
+> - [ ] **26. Anamnèse d'environnement *(Exanthème subit)***
 > 	- [ ] Famille
 > 	- [ ] Crèche
 > 	- [ ] Voyages récents
 > 	- [ ] Contact avec des malades
-> - [ ] **28. Antécédents familiaux *(Exanthème subit)***
-> - [ ] **29. Anamnèse psychosociale *(Exanthème subit)***
-> - [ ] **30. Présentation professionnelle au téléphone *(Gastroentérite)***
+> - [ ] **27. Antécédents familiaux *(Exanthème subit)***
+> - [ ] **28. Anamnèse psychosociale *(Exanthème subit)***
+> - [ ] **29. Présentation professionnelle au téléphone *(Gastroentérite)***
 > 	- [ ] Nom et fonction
 > 	- [ ] Service/cabinet
 > 	- [ ] Ton rassurant et professionnel
-> - [ ] **31. Identification complète de l'appelant et du patient *(Gastroentérite)***
+> - [ ] **30. Identification complète de l'appelant et du patient *(Gastroentérite)***
 > 	- [ ] Nom de l'appelant et lien avec l'enfant
 > 	- [ ] Nom, âge et sexe de l'enfant
 > 	- [ ] Numéro de téléphone pour rappel éventuel
 > 	- [ ] Adresse si déplacement nécessaire
-> - [ ] **32. Question ouverte sur le motif d'appel *(Gastroentérite)***
-> - [ ] **33. Chronologie des symptômes *(Gastroentérite)***
+> - [ ] **31. Question ouverte sur le motif d'appel *(Gastroentérite)***
+> - [ ] **32. Chronologie des symptômes *(Gastroentérite)***
 > 	- [ ] Début des symptômes
 > 	- [ ] Ordre d'apparition (fièvre puis vomissements ou inverse)
 > 	- [ ] Évolution dans le temps
-> - [ ] **34. Caractérisation de la fièvre *(Gastroentérite)***
+> - [ ] **33. Caractérisation de la fièvre *(Gastroentérite)***
 > 	- [ ] Température mesurée
 > 	- [ ] Site de mesure
 > 	- [ ] Évolution (stable, montante, oscillante)
 > 	- [ ] Réponse aux antipyrétiques si donnés
-> - [ ] **35. Caractérisation détaillée des vomissements *(Gastroentérite)***
+> - [ ] **34. Caractérisation détaillée des vomissements *(Gastroentérite)***
 > 	- [ ] Nombre d'épisodes
 > 	- [ ] Volume approximatif
 > 	- [ ] Aspect du vomi
@@ -216,7 +215,7 @@ cssclasses:
 > 	- [ ] Vomissements en jet ou régurgitations
 > 	- [ ] Relation temporelle avec les repas
 > 	- [ ] Contenu du dernier repas
-> - [ ] **36. Symptômes digestifs associés *(Gastroentérite)***
+> - [ ] **35. Symptômes digestifs associés *(Gastroentérite)***
 > 	- [ ] Nausées (difficile à évaluer à cet âge)
 > 	- [ ] Diarrhée
 > 	- [ ] Aspect des selles
@@ -224,25 +223,25 @@ cssclasses:
 > 	- [ ] Odeur particulière
 > 	- [ ] Douleurs abdominales (pleurs, position antalgique)
 > 	- [ ] Ballonnement abdominal
-> - [ ] **37. État général et comportement de l'enfant *(Gastroentérite)***
+> - [ ] **36. État général et comportement de l'enfant *(Gastroentérite)***
 > 	- [ ] Niveau de conscience
 > 	- [ ] Comportement actuel
 > 	- [ ] Irritabilité/consolabilité
 > 	- [ ] Jeu et interactions
 > 	- [ ] Tonus musculaire
-> - [ ] **38. Évaluation précise de l'hydratation *(Gastroentérite)***
+> - [ ] **37. Évaluation précise de l'hydratation *(Gastroentérite)***
 > 	- [ ] Prise de liquides
 > 	- [ ] Tolérance des liquides
 > 	- [ ] Production de larmes lors des pleurs
 > 	- [ ] Nombre de couches mouillées aujourd'hui
 > 	- [ ] Aspect des muqueuses (si observable)
 > 	- [ ] Pli cutané (si les parents peuvent vérifier)
-> - [ ] **39. Traitements déjà tentés *(Gastroentérite)***
+> - [ ] **38. Traitements déjà tentés *(Gastroentérite)***
 > 	- [ ] Médicaments administrés
 > 	- [ ] Mesures de confort
 > 	- [ ] Tentatives de réhydratation
 > 	- [ ] Ce qui semble soulager l'enfant
-> - [ ] **40. Red flags neurologiques et généraux *(Gastroentérite)***
+> - [ ] **39. Red flags neurologiques et généraux *(Gastroentérite)***
 > 	- [ ] Altération de l'état de conscience
 > 	- [ ] Convulsions/mouvements anormaux
 > 	- [ ] Raideur de nuque/méningisme
@@ -250,29 +249,29 @@ cssclasses:
 > 	- [ ] Photophobie/phonophobie
 > 	- [ ] Traumatisme crânien récent
 > 	- [ ] Léthargie importante
-> - [ ] **41. Recherche systématique des foyers infectieux *(Gastroentérite)***
+> - [ ] **40. Recherche systématique des foyers infectieux *(Gastroentérite)***
 > 	- [ ] Symptômes ORL (otalgies, rhinorrhée, pharyngite)
 > 	- [ ] Difficultés de déglutition
 > 	- [ ] Symptômes urinaires (pleurs à la miction, odeur)
 > 	- [ ] Symptômes respiratoires (toux, dyspnée, tirage)
 > 	- [ ] Éruption cutanée/exanthème
-> - [ ] **42. Antécédents médicaux pertinents *(Gastroentérite)***
+> - [ ] **41. Antécédents médicaux pertinents *(Gastroentérite)***
 > 	- [ ] Épisodes similaires antérieurs
 > 	- [ ] Maladies chroniques
 > 	- [ ] Hospitalisations antérieures
 > 	- [ ] Chirurgies
-> - [ ] **43. Médications et allergies *(Gastroentérite)***
+> - [ ] **42. Médications et allergies *(Gastroentérite)***
 > 	- [ ] Traitements en cours
 > 	- [ ] Prises médicamenteuses récentes
 > 	- [ ] Allergies connues
 > 	- [ ] Vaccinations à jour
-> - [ ] **44. Contexte épidémiologique *(Gastroentérite)***
+> - [ ] **43. Contexte épidémiologique *(Gastroentérite)***
 > 	- [ ] Santé de l'entourage familial
 > 	- [ ] Collectivité (crèche, garderie)
 > 	- [ ] Cas similaires dans l'entourage
 > 	- [ ] Voyages récents
 > 	- [ ] Contact avec animaux
-> - [ ] **45. Évaluation du contexte de l'appel *(Gastroentérite)***
+> - [ ] **44. Évaluation du contexte de l'appel *(Gastroentérite)***
 > 	- [ ] Adulte responsable présent
 > 	- [ ] Autres adultes disponibles
 > 	- [ ] Possibilité de transport si nécessaire

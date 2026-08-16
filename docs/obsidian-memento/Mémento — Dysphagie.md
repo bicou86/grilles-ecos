@@ -122,18 +122,19 @@ cssclasses:
 > 	- [ ] Masses au cou/gonflement du cou
 > - [ ] **5. Antécédents médicaux**
 > - [ ] **6. Allergies**
-> - [ ] **7. Médicaments *(1 grille sur 2)***
+> - [ ] **7. Médicaments actuels**
 > - [ ] **8. Hospitalisations et antécédents chirurgicaux *(1 grille sur 2)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **9. Antécédents familiaux *(1 grille sur 2)***
-> - [ ] **10. Habitudes et mode de vie *(1 grille sur 2)***
-> 	- [ ] Travail
-> 	- [ ] Domicile
+> - [ ] **9. Antécédents familiaux**
+> - [ ] **10. Habitudes et mode de vie**
+> 	- [ ] Travail *(1 grille sur 2)*
+> 	- [ ] Domicile *(1 grille sur 2)*
 > 	- [ ] Alcool
-> 	- [ ] Drogues récréatives
+> 	- [ ] Drogues récréatives *(1 grille sur 2)*
 > 	- [ ] Tabac
-> 	- [ ] Alimentation
+> 	- [ ] Alimentation *(1 grille sur 2)*
+> 	- [ ] Drogues *(1 grille sur 2)*
 > - [ ] **11. Présentation avec nom, fonction et tâche *(1 grille sur 2)***
 > - [ ] **12. Symptôme principal *(1 grille sur 2)***
 > - [ ] **13. Type d'aliments concernés *(1 grille sur 2)***
@@ -153,13 +154,7 @@ cssclasses:
 > 	- [ ] Régurgitations
 > 	- [ ] Pyrosis, reflux
 > 	- [ ] Perte de poids
-> - [ ] **19. Habitudes de vie *(1 grille sur 2)***
-> 	- [ ] Tabac
-> 	- [ ] Alcool
-> 	- [ ] Drogues
-> - [ ] **20. Médicaments actuels *(1 grille sur 2)***
-> - [ ] **21. Anamnèse familiale *(1 grille sur 2)***
-> - [ ] **22. Anamnèse sociale *(1 grille sur 2)***
+> - [ ] **19. Anamnèse sociale *(1 grille sur 2)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(1 grille sur 2)***

@@ -143,14 +143,15 @@ cssclasses:
 > - [ ] **9. Hospitalisations et contacts malades *(Ulcère gastro-duodénal)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Contacts malades
-> - [ ] **10. Antécédents familiaux *(Ulcère gastro-duodénal)***
-> - [ ] **11. Habitudes et mode de vie *(Ulcère gastro-duodénal)***
-> 	- [ ] Occupation
-> 	- [ ] Domicile
-> 	- [ ] Alcool
-> 	- [ ] Drogues illicites
-> 	- [ ] Tabac
-> 	- [ ] Alimentation
+> - [ ] **10. Antécédents familiaux *(Cancer rectal · Ulcère gastro-duodénal)***
+> - [ ] **11. Habitudes *(Cancer du rectum · Ulcère gastro-duodénal)***
+> 	- [ ] Occupation *(Ulcère gastro-duodénal)*
+> 	- [ ] Domicile *(Ulcère gastro-duodénal)*
+> 	- [ ] Alcool *(Ulcère gastro-duodénal)*
+> 	- [ ] Drogues illicites *(Ulcère gastro-duodénal)*
+> 	- [ ] Tabac *(Ulcère gastro-duodénal)*
+> 	- [ ] Alimentation *(Ulcère gastro-duodénal)*
+> 	- [ ] Tabac/OH/Quantité *(Cancer du rectum)*
 > - [ ] **12. Hématochésie *(Cancer du rectum · Cancer rectal)***
 > 	- [ ] Chronologie (depuis quand ?)
 > 	- [ ] Sang rouge ou noir
@@ -182,10 +183,7 @@ cssclasses:
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
-> - [ ] **18. Anamnèse familiale *(Cancer rectal)***
-> - [ ] **19. Habitudes *(Cancer du rectum)***
-> 	- [ ] Tabac/OH/Quantité
-> - [ ] **20. Anamnèse familiale (cancers) *(Cancer du rectum)***
+> - [ ] **18. Anamnèse familiale (cancers) *(Cancer du rectum)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Ulcère gastro-duodénal)***

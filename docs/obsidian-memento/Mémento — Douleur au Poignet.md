@@ -111,12 +111,12 @@ cssclasses:
 > - [ ] **19. Autres lésions associées *(Fracture du scaphoïde)***
 > - [ ] **20. Anciennes blessures / problèmes de la main *(Fracture du scaphoïde)***
 > - [ ] **21. Opérations antérieures de la main *(Fracture du scaphoïde)***
-> - [ ] **22. Médicaments *(Fracture du scaphoïde)***
+> - [ ] **22. Médicaments actuels**
 > - [ ] **23. Allergies *(Fracture du scaphoïde)***
 > - [ ] **24. Noxes *(Fracture du scaphoïde)***
 > - [ ] **25. Alcool *(Fracture du scaphoïde)***
 > - [ ] **26. Tabac *(Fracture du scaphoïde)***
-> - [ ] **27. Antécédents familiaux *(Fracture du scaphoïde)***
+> - [ ] **27. Antécédents familiaux**
 > - [ ] **28. Profession *(Fracture du scaphoïde)***
 > - [ ] **29. Sport de compétition *(Fracture du scaphoïde)***
 > - [ ] **30. Présentation avec nom, fonction et tâche *(Syndrome du canal carpien)***
@@ -133,10 +133,8 @@ cssclasses:
 > - [ ] **41. Déficit fonctionnel *(Syndrome du canal carpien)***
 > - [ ] **42. Activités et habitudes *(Syndrome du canal carpien)***
 > - [ ] **43. Maladies systémiques *(Syndrome du canal carpien)***
-> - [ ] **44. Médicaments actuels *(Syndrome du canal carpien)***
-> - [ ] **45. Habitudes et toxiques *(Syndrome du canal carpien)***
-> - [ ] **46. Anamnèse familiale *(Syndrome du canal carpien)***
-> - [ ] **47. Anamnèse sociale et professionnelle *(Syndrome du canal carpien)***
+> - [ ] **44. Habitudes et toxiques *(Syndrome du canal carpien)***
+> - [ ] **45. Anamnèse sociale et professionnelle *(Syndrome du canal carpien)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Inspection avant-bras / coude *(Fracture du scaphoïde)***

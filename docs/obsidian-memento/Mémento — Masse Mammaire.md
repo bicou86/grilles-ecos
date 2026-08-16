@@ -119,7 +119,7 @@ cssclasses:
 > - [ ] **27. Antécédents *(Nodule suspect de malignité dans le sein droit)***
 > - [ ] **28. Hypertension artérielle *(Nodule suspect de malignité dans le sein droit)***
 > - [ ] **29. Antécédents oncologiques *(Nodule suspect de malignité dans le sein droit)***
-> - [ ] **30. Médicaments *(Nodule suspect de malignité dans le sein droit)***
+> - [ ] **30. Médication actuelle**
 > - [ ] **31. Noxes *(Nodule suspect de malignité dans le sein droit)***
 > - [ ] **32. Alcool *(Nodule suspect de malignité dans le sein droit)***
 > - [ ] **33. Nicotine *(Nodule suspect de malignité dans le sein droit)***
@@ -166,12 +166,11 @@ cssclasses:
 > 	- [ ] Maladies mammaires antérieures
 > 	- [ ] Maladies gynécologiques
 > 	- [ ] Interventions chirurgicales
-> - [ ] **53. Médication actuelle *(Masse mammaire suspecte de carcinome)***
-> - [ ] **54. Habitudes de vie et allergies *(Masse mammaire suspecte de carcinome)***
+> - [ ] **53. Habitudes de vie et allergies *(Masse mammaire suspecte de carcinome)***
 > 	- [ ] Consommation de substances
 > 	- [ ] Allergies connues
 > 	- [ ] Habitudes alimentaires
-> - [ ] **55. Antécédents familiaux *(Masse mammaire suspecte de carcinome)***
+> - [ ] **54. Antécédents familiaux *(Masse mammaire suspecte de carcinome)***
 > 	- [ ] Antécédents parentaux
 > 	- [ ] Cancer du sein familial
 > 	- [ ] Mutation génétique connue

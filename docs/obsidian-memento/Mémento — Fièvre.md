@@ -108,7 +108,11 @@ cssclasses:
 > - [ ] **15. Gastro-intestinal *(Pyélonéphrite)***
 > - [ ] **16. Peau *(Pyélonéphrite)***
 > - [ ] **17. Convulsion *(Pyélonéphrite)***
-> - [ ] **18. Antécédents médicaux *(Pyélonéphrite)***
+> - [ ] **18. Antécédents médicaux *(Endocardite infectieuse · Pyélonéphrite)***
+> 	- [ ] Maladies *(Endocardite infectieuse)*
+> 	- [ ] Opérations/hospitalisations *(Endocardite infectieuse)*
+> 	- [ ] Vaccins *(Endocardite infectieuse)*
+> 	- [ ] Perte de poids récente *(Endocardite infectieuse)*
 > - [ ] **19. Antécédents chirurgicaux *(Pyélonéphrite)***
 > - [ ] **20. Médicaments *(Pyélonéphrite)***
 > - [ ] **21. Allergies *(Pyélonéphrite)***
@@ -174,12 +178,7 @@ cssclasses:
 > 	- [ ] Douleurs articulaires
 > 	- [ ] Symptômes digestifs
 > 	- [ ] Symptômes urinaires
-> - [ ] **63. Antécédents personnels *(Endocardite infectieuse)***
-> 	- [ ] Maladies
-> 	- [ ] Opérations/hospitalisations
-> 	- [ ] Vaccins
-> 	- [ ] Perte de poids récente
-> - [ ] **64. Habitudes *(Endocardite infectieuse)***
+> - [ ] **63. Habitudes *(Endocardite infectieuse)***
 > 	- [ ] Médicaments
 > 	- [ ] Tabac
 > 	- [ ] Voyages

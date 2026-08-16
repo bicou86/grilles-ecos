@@ -115,10 +115,9 @@ cssclasses:
 > 	- [ ] Fièvre/frissons *(Hépatite (virale/alcoolique))*
 > 	- [ ] Asthénie *(Hépatite (virale/alcoolique))*
 > 	- [ ] Perte de poids
-> 	- [ ] Sueurs nocturnes *(Hépatite (virale/alcoolique))*
+> 	- [ ] Sueurs nocturnes
 > 	- [ ] Anorexie *(Hépatite (virale/alcoolique))*
 > 	- [ ] Fièvre *(Néoplasie des voies biliaires/pancréatique)*
-> 	- [ ] Sudations nocturnes *(Néoplasie des voies biliaires/pancréatique)*
 > 	- [ ] Frissons *(Néoplasie des voies biliaires/pancréatique)*
 > - [ ] **7. Événements récents *(Hépatite (virale/alcoolique))***
 > 	- [ ] Maladie récente

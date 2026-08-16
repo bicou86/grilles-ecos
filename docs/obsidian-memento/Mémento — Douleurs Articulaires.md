@@ -147,9 +147,9 @@ cssclasses:
 > - [ ] **48. Tabac *(Polymyalgia rheumatica)***
 > - [ ] **49. Drogues *(Polymyalgia rheumatica)***
 > - [ ] **50. Allergies *(Polymyalgia rheumatica)***
-> - [ ] **51. Antécédents familiaux *(Polymyalgia rheumatica)***
+> - [ ] **51. Antécédents familiaux *(Polymyalgia rheumatica · Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
 > - [ ] **52. Maladies rhumatologiques *(Polymyalgia rheumatica)***
-> - [ ] **53. Situation sociale *(Polymyalgia rheumatica)***
+> - [ ] **53. Anamnèse sociale *(Polymyalgia rheumatica · Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
 > - [ ] **54. Niveau fonctionnel antérieur *(Polymyalgia rheumatica)***
 > - [ ] **55. Présentation avec nom, fonction et tâche *(Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
 > - [ ] **56. Identification du symptôme principal *(Épicondylite latérale)***
@@ -172,42 +172,40 @@ cssclasses:
 > 	- [ ] Médicaments actuels
 > 	- [ ] Traitement déjà essayé
 > - [ ] **68. Consommation de substances *(Épicondylite latérale)***
-> - [ ] **69. Anamnèse familiale *(Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
-> - [ ] **70. Anamnèse sociale *(Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale)***
-> - [ ] **71. Localisation précise de la douleur *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **72. Début et évolution temporelle *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **73. Caractère de la douleur *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **74. Facteurs aggravants/atténuants *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **75. Douleur à l'effort vs au repos *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **76. Retentissement sur les activités quotidiennes *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **77. Type de chaussures portées *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **78. Notion de traumatisme *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **79. Autres plaintes articulaires *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **80. Activités sportives *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **81. Habitudes et toxiques *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **82. Activité professionnelle *(Tendinopathie d'insertion du tendon d'Achille)***
-> - [ ] **83. Motif de consultation *(Polyarthrite rhumatoïde)***
-> - [ ] **84. Caractérisation de la douleur - critères inflammatoires *(Polyarthrite rhumatoïde)***
+> - [ ] **69. Localisation précise de la douleur *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **70. Début et évolution temporelle *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **71. Caractère de la douleur *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **72. Facteurs aggravants/atténuants *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **73. Douleur à l'effort vs au repos *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **74. Retentissement sur les activités quotidiennes *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **75. Type de chaussures portées *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **76. Notion de traumatisme *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **77. Autres plaintes articulaires *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **78. Activités sportives *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **79. Habitudes et toxiques *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **80. Activité professionnelle *(Tendinopathie d'insertion du tendon d'Achille)***
+> - [ ] **81. Motif de consultation *(Polyarthrite rhumatoïde)***
+> - [ ] **82. Caractérisation de la douleur - critères inflammatoires *(Polyarthrite rhumatoïde)***
 > 	- [ ] Début
 > 	- [ ] Localisation
 > 	- [ ] Extension
 > 	- [ ] Atteinte symétrique
 > 	- [ ] Type inflammatoire
 > 	- [ ] Horaire inflammatoire
-> - [ ] **85. Raideur matinale caractéristique *(Polyarthrite rhumatoïde)***
+> - [ ] **83. Raideur matinale caractéristique *(Polyarthrite rhumatoïde)***
 > 	- [ ] Raideur matinale importante
 > 	- [ ] Durée environ 2 heures
 > 	- [ ] Difficultés pour mouvoir les articulations le matin
 > 	- [ ] Amélioration progressive avec l'activité
 > 	- [ ] Mouvements plus faciles et douleurs diminuent après-midi
-> - [ ] **86. Symptômes généraux *(Polyarthrite rhumatoïde)***
+> - [ ] **84. Symptômes généraux *(Polyarthrite rhumatoïde)***
 > 	- [ ] Asthénie
-> - [ ] **87. Traitement essayé *(Polyarthrite rhumatoïde)***
+> - [ ] **85. Traitement essayé *(Polyarthrite rhumatoïde)***
 > 	- [ ] Anti-inflammatoires (antalgiques)
 > 	- [ ] Nécessité de prise régulière
-> - [ ] **88. Antécédents et terrain *(Polyarthrite rhumatoïde)***
+> - [ ] **86. Antécédents et terrain *(Polyarthrite rhumatoïde)***
 > 	- [ ] Antécédents personnels et familiaux sans particularité
-> - [ ] **89. Facteurs de risque et exposition *(Polyarthrite rhumatoïde)***
+> - [ ] **87. Facteurs de risque et exposition *(Polyarthrite rhumatoïde)***
 > 	- [ ] Sexe féminin
 > 	- [ ] Âge 45 ans (pic d'incidence 40-60 ans)
 > 	- [ ] Recherche tabagisme

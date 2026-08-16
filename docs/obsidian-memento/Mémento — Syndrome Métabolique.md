@@ -90,7 +90,7 @@ cssclasses:
 > - **German-64** — Surpoids d'origine multifactorielle `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-64_-_Obe_site__-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(Dépression)***
+> - [ ] **1. Motif de consultation**
 > - [ ] **2. Caractérisation de la prise de poids *(Dépression)***
 > 	- [ ] Début
 > 	- [ ] Événements précipitants
@@ -117,13 +117,17 @@ cssclasses:
 > 	- [ ] Agitation ou ralentissement psychomoteur
 > 	- [ ] Idées suicidaires
 > 	- [ ] Soutien social
-> - [ ] **5. Antécédents médicaux *(Dépression)***
+> - [ ] **5. Antécédents médicaux personnels**
 > - [ ] **6. Allergies**
 > - [ ] **7. Médicaments *(Dépression)***
 > - [ ] **8. Hospitalisations et antécédents chirurgicaux *(Dépression)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **9. Antécédents familiaux *(Dépression)***
+> - [ ] **9. Antécédents familiaux**
+> 	- [ ] Diabète familial *(Surpoids d'origine multifactorielle)*
+> 	- [ ] Obésité familiale *(Surpoids d'origine multifactorielle)*
+> 	- [ ] Maladies cardiovasculaires *(Surpoids d'origine multifactorielle)*
+> 	- [ ] Père *(Surpoids d'origine multifactorielle)*
 > - [ ] **10. Habitudes et mode de vie *(Dépression)***
 > 	- [ ] Travail
 > 	- [ ] Domicile
@@ -133,74 +137,67 @@ cssclasses:
 > 	- [ ] Exercice
 > 	- [ ] Alimentation
 > - [ ] **11. Présentation avec nom, fonction et tâche *(Surpoids d'origine multifactorielle)***
-> - [ ] **12. Motif de consultation *(Surpoids d'origine multifactorielle)***
-> - [ ] **13. Caractérisation du surpoids *(Surpoids d'origine multifactorielle)***
+> - [ ] **12. Caractérisation du surpoids *(Surpoids d'origine multifactorielle)***
 > 	- [ ] Poids actuel
 > 	- [ ] Taille
 > 	- [ ] IMC calculé
 > 	- [ ] Début de la prise de poids
 > 	- [ ] Évolution pondérale
-> - [ ] **14. Objectif de perte de poids *(Surpoids d'origine multifactorielle)***
-> - [ ] **15. Régimes antérieurs *(Surpoids d'origine multifactorielle)***
+> - [ ] **13. Objectif de perte de poids *(Surpoids d'origine multifactorielle)***
+> - [ ] **14. Régimes antérieurs *(Surpoids d'origine multifactorielle)***
 > 	- [ ] Types de régimes essayés
 > 	- [ ] Résultats obtenus
 > 	- [ ] Effet yo-yo
-> - [ ] **16. Habitudes alimentaires - Petit-déjeuner *(Surpoids d'origine multifactorielle)***
-> - [ ] **17. Habitudes alimentaires - Déjeuner *(Surpoids d'origine multifactorielle)***
-> - [ ] **18. Habitudes alimentaires - Dîner *(Surpoids d'origine multifactorielle)***
+> - [ ] **15. Habitudes alimentaires - Petit-déjeuner *(Surpoids d'origine multifactorielle)***
+> - [ ] **16. Habitudes alimentaires - Déjeuner *(Surpoids d'origine multifactorielle)***
+> - [ ] **17. Habitudes alimentaires - Dîner *(Surpoids d'origine multifactorielle)***
 > 	- [ ] Composition
 > 	- [ ] Quantité
 > 	- [ ] Portions
 > 	- [ ] Cuisine maison
-> - [ ] **19. Collations et grignotage *(Surpoids d'origine multifactorielle)***
+> - [ ] **18. Collations et grignotage *(Surpoids d'origine multifactorielle)***
 > 	- [ ] Matinée
 > 	- [ ] Après-midi
 > 	- [ ] Soirée
-> - [ ] **20. Hydratation et boissons *(Surpoids d'origine multifactorielle)***
+> - [ ] **19. Hydratation et boissons *(Surpoids d'origine multifactorielle)***
 > 	- [ ] Eau
 > 	- [ ] Boissons sucrées
 > 	- [ ] Quantité quotidienne
-> - [ ] **21. Comportement alimentaire *(Surpoids d'origine multifactorielle)***
+> - [ ] **20. Comportement alimentaire *(Surpoids d'origine multifactorielle)***
 > 	- [ ] Manger sans faim
 > 	- [ ] Alimentation émotionnelle
 > 	- [ ] Vitesse des repas
 > 	- [ ] Repas devant écran
-> - [ ] **22. Activité physique *(Surpoids d'origine multifactorielle)***
-> - [ ] **23. Symptômes évocateurs d'endocrinopathie *(Surpoids d'origine multifactorielle)***
+> - [ ] **21. Activité physique *(Surpoids d'origine multifactorielle)***
+> - [ ] **22. Symptômes évocateurs d'endocrinopathie *(Surpoids d'origine multifactorielle)***
 > 	- [ ] Fatigue inhabituelle
 > 	- [ ] Frilosité
 > 	- [ ] Constipation
 > 	- [ ] Peau sèche
 > 	- [ ] Chute de cheveux
 > 	- [ ] Troubles du cycle menstruel
-> - [ ] **24. Symptômes évocateurs de diabète *(Surpoids d'origine multifactorielle)***
+> - [ ] **23. Symptômes évocateurs de diabète *(Surpoids d'origine multifactorielle)***
 > 	- [ ] Polyurie
 > 	- [ ] Polydipsie
 > 	- [ ] Polyphagie
 > 	- [ ] Perte de poids paradoxale
-> - [ ] **25. Autres symptômes *(Surpoids d'origine multifactorielle)***
+> - [ ] **24. Autres symptômes *(Surpoids d'origine multifactorielle)***
 > 	- [ ] Hypertension
 > 	- [ ] Troubles du sommeil
 > 	- [ ] Ronflement/apnées
 > 	- [ ] Douleurs articulaires
-> - [ ] **26. Antécédents médicaux personnels *(Surpoids d'origine multifactorielle)***
-> - [ ] **27. Traitements actuels *(Surpoids d'origine multifactorielle)***
-> - [ ] **28. Habitudes de vie et toxiques *(Surpoids d'origine multifactorielle)***
+> - [ ] **25. Traitements actuels *(Surpoids d'origine multifactorielle)***
+> - [ ] **26. Habitudes de vie et toxiques *(Surpoids d'origine multifactorielle)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Drogues
-> - [ ] **29. Anamnèse familiale *(Surpoids d'origine multifactorielle)***
-> 	- [ ] Diabète familial
-> 	- [ ] Obésité familiale
-> 	- [ ] Maladies cardiovasculaires
-> 	- [ ] Père
-> - [ ] **30. Anamnèse psychosociale *(Surpoids d'origine multifactorielle)***
+> - [ ] **27. Anamnèse psychosociale *(Surpoids d'origine multifactorielle)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Enfants
 > 	- [ ] Stress/conflits
 > 	- [ ] Partenaire
-> - [ ] **31. Questions de clôture *(Surpoids d'origine multifactorielle)***
+> - [ ] **28. Questions de clôture *(Surpoids d'origine multifactorielle)***
 > 	- [ ] Avez-vous quelque chose à ajouter ?
 > 	- [ ] Avez-vous des questions ?
 

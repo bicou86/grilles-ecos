@@ -132,9 +132,9 @@ cssclasses:
 > 	- [ ] Dysfonction érectile
 > 	- [ ] Humeur
 > 	- [ ] Troubles de mémoire
-> - [ ] **5. Antécédents médicaux *(Déficit en vitamine B12)***
+> - [ ] **5. Antécédents médicaux *(Déficit en vitamine B12 · Polyneuropathie)***
 > - [ ] **6. Allergies *(Déficit en vitamine B12 · Polyneuropathie · Syndrome de Guillain-Barré)***
-> - [ ] **7. Médicaments *(Déficit en vitamine B12 · Syndrome de Guillain-Barré)***
+> - [ ] **7. Médicaments actuels *(Déficit en vitamine B12 · Polyneuropathie · Syndrome de Guillain-Barré)***
 > - [ ] **8. Hospitalisations et antécédents chirurgicaux *(Déficit en vitamine B12)***
 > 	- [ ] Hospitalisations
 > 	- [ ] Antécédents chirurgicaux
@@ -250,79 +250,77 @@ cssclasses:
 > 	- [ ] Douleurs thoraciques
 > 	- [ ] Dyspnée
 > 	- [ ] État depuis l'infarctus
-> - [ ] **67. Antécédents personnels *(Polyneuropathie)***
-> - [ ] **68. Facteurs de risque cardiovasculaire *(Polyneuropathie)***
+> - [ ] **67. Facteurs de risque cardiovasculaire *(Polyneuropathie)***
 > 	- [ ] Diabète
 > 	- [ ] Hypertension
 > 	- [ ] Hypercholestérolémie
 > 	- [ ] Tabagisme
 > 	- [ ] Antécédents familiaux
-> - [ ] **69. Revue des systèmes - Neurologique *(Polyneuropathie)***
+> - [ ] **68. Revue des systèmes - Neurologique *(Polyneuropathie)***
 > 	- [ ] Céphalées
 > 	- [ ] Vision
 > 	- [ ] Audition
-> - [ ] **70. Revue des systèmes - Digestif *(Polyneuropathie)***
+> - [ ] **69. Revue des systèmes - Digestif *(Polyneuropathie)***
 > 	- [ ] Dysphagie
 > 	- [ ] Digestion
 > 	- [ ] Transit intestinal
 > 	- [ ] Poids
 > 	- [ ] Appétit
-> - [ ] **71. Revue des systèmes - Respiratoire *(Polyneuropathie)***
+> - [ ] **70. Revue des systèmes - Respiratoire *(Polyneuropathie)***
 > 	- [ ] Dyspnée
 > 	- [ ] Toux
-> - [ ] **72. Revue des systèmes - Locomoteur *(Polyneuropathie)***
+> - [ ] **71. Revue des systèmes - Locomoteur *(Polyneuropathie)***
 > 	- [ ] Douleurs articulaires
 > 	- [ ] Raideur matinale
 > 	- [ ] Gonflement articulaire
-> - [ ] **73. État cutané et œdèmes *(Polyneuropathie)***
+> - [ ] **72. État cutané et œdèmes *(Polyneuropathie)***
 > 	- [ ] Peau
 > 	- [ ] Œdèmes des membres inférieurs
-> - [ ] **74. Fonction sexuelle *(Polyneuropathie)***
-> - [ ] **75. Médicaments actuels *(Polyneuropathie)***
-> - [ ] **76. Habitudes et toxiques *(Polyneuropathie)***
+> - [ ] **73. Fonction sexuelle *(Polyneuropathie)***
+> - [ ] **74. Habitudes et toxiques *(Polyneuropathie)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Digestif
 > 	- [ ] Drogues
-> - [ ] **77. Anamnèse sociale *(Polyneuropathie)***
+> - [ ] **75. Anamnèse sociale *(Polyneuropathie)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Enfants
 > 	- [ ] Activité physique
-> - [ ] **78. Questions supplémentaires *(Polyneuropathie)***
+> - [ ] **76. Questions supplémentaires *(Polyneuropathie)***
 > 	- [ ] Autres préoccupations
 > 	- [ ] Questions du patient
-> - [ ] **79. Caractérisation de la douleur neuropathique *(Hernie discale)***
+> - [ ] **77. Caractérisation de la douleur neuropathique *(Hernie discale)***
 > 	- [ ] Type de douleur
 > 	- [ ] Localisation précise
 > 	- [ ] Intensité
 > 	- [ ] Évolution temporelle
 > 	- [ ] Facteurs déclenchants
-> - [ ] **80. Analyse sémiologique neurologique *(Hernie discale)***
+> - [ ] **78. Analyse sémiologique neurologique *(Hernie discale)***
 > 	- [ ] Troubles sensitifs
 > 	- [ ] Déficit moteur associé
 > 	- [ ] Troubles trophiques
 > 	- [ ] Réflexes ostéotendineux
 > 	- [ ] Signes d'irritation radiculaire
-> - [ ] **81. Recherche d'étiologies rachidiennes *(Hernie discale)***
+> - [ ] **79. Recherche d'étiologies rachidiennes *(Hernie discale)***
 > 	- [ ] Lombalgie associée
 > 	- [ ] Traumatisme rachidien
 > 	- [ ] Efforts de soulèvement
 > 	- [ ] Positions profesionnelles
 > 	- [ ] Antécédents chirurgicaux rachidiens
-> - [ ] **82. Facteurs de risque et comorbidités *(Hernie discale)***
+> - [ ] **80. Facteurs de risque et comorbidités *(Hernie discale)***
 > 	- [ ] Diabète
 > 	- [ ] Maladies auto-immunes
 > 	- [ ] Néoplasies
 > 	- [ ] Maladies infectieuses
 > 	- [ ] Insuffisance rénale
-> - [ ] **83. Médicaments et toxiques *(Hernie discale)***
+> - [ ] **81. Médicaments et toxiques *(Hernie discale)***
 > 	- [ ] Chimiothérapie
 > 	- [ ] Antibiotiques
 > 	- [ ] Anticonvulsivants
 > 	- [ ] Alcoolisme chronique
 > 	- [ ] Produits industriels
-> - [ ] **84. Retentissement fonctionnel et qualité de vie *(Hernie discale)***
+> - [ ] **82. Retentissement fonctionnel et qualité de vie *(Hernie discale)***
 > 	- [ ] Sommeil
 > 	- [ ] Activités professionnelles
 > 	- [ ] Mobilité

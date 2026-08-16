@@ -90,7 +90,7 @@ cssclasses:
 > - **German-51** — Carcinome vésical `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-51_-_He_maturie_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Motif principal *(Glomérulonéphrite post-streptococcique)***
+> - [ ] **1. Motif de consultation principal**
 > - [ ] **2. Caractérisation de l'hématurie *(Glomérulonéphrite post-streptococcique)***
 > 	- [ ] Début
 > 	- [ ] Constant/intermittent
@@ -136,46 +136,43 @@ cssclasses:
 > - [ ] **10. Antécédents familiaux**
 > 	- [ ] Cancer urologique familial *(Carcinome vésical)*
 > 	- [ ] Maladies rénales héréditaires *(Carcinome vésical)*
-> - [ ] **11. Habitudes et mode de vie *(Glomérulonéphrite post-streptococcique)***
-> 	- [ ] Travail
-> 	- [ ] Domicile
-> 	- [ ] Alcool
-> 	- [ ] Drogues récréatives
-> 	- [ ] Tabac
-> 	- [ ] Exercice
+> - [ ] **11. Habitudes et mode de vie**
+> 	- [ ] Travail *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Domicile *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Alcool *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Drogues récréatives *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Tabagisme
+> 	- [ ] Exercice *(Glomérulonéphrite post-streptococcique)*
+> 	- [ ] Consommation d'alcool *(Carcinome vésical)*
+> 	- [ ] Substances illicites *(Carcinome vésical)*
+> 	- [ ] Médicaments *(Carcinome vésical)*
 > - [ ] **12. Présentation avec nom, fonction et objectif *(Carcinome vésical)***
-> - [ ] **13. Motif de consultation principal *(Carcinome vésical)***
-> - [ ] **14. Caractéristiques de l'hématurie *(Carcinome vésical)***
+> - [ ] **13. Caractéristiques de l'hématurie *(Carcinome vésical)***
 > 	- [ ] Début et évolution
 > 	- [ ] Quantité de sang
 > 	- [ ] Aspect (caillots)
 > 	- [ ] Moment dans le jet urinaire
-> - [ ] **15. Symptômes mictionnels *(Carcinome vésical)***
+> - [ ] **14. Symptômes mictionnels *(Carcinome vésical)***
 > 	- [ ] Fréquence mictionnelle
 > 	- [ ] Dysurie
 > 	- [ ] Rétention urinaire
 > 	- [ ] Gouttes post-mictionnelles
-> - [ ] **16. Symptômes associés *(Carcinome vésical)***
+> - [ ] **15. Symptômes associés *(Carcinome vésical)***
 > 	- [ ] Douleurs abdominales ou lombaires
 > 	- [ ] Traumatisme génito-urinaire
 > 	- [ ] Manipulations urétrales
-> - [ ] **17. Revue des systèmes *(Carcinome vésical)***
+> - [ ] **16. Revue des systèmes *(Carcinome vésical)***
 > 	- [ ] Symptômes B
 > 	- [ ] Symptômes neurologiques
 > 	- [ ] Symptômes cardio-pulmonaires
 > 	- [ ] Troubles digestifs
 > 	- [ ] Appétit et évolution pondérale
-> - [ ] **18. Habitudes de vie *(Carcinome vésical)***
-> 	- [ ] Tabagisme
-> 	- [ ] Consommation d'alcool
-> 	- [ ] Substances illicites
-> 	- [ ] Médicaments
-> - [ ] **19. Activités et expositions *(Carcinome vésical)***
+> - [ ] **17. Activités et expositions *(Carcinome vésical)***
 > 	- [ ] Activités sportives intenses
 > 	- [ ] Voyages récents
 > 	- [ ] Exposition professionnelle
-> - [ ] **20. Anamnèse sociale *(Carcinome vésical)***
-> - [ ] **21. Résumé et questions complémentaires *(Carcinome vésical)***
+> - [ ] **18. Anamnèse sociale *(Carcinome vésical)***
+> - [ ] **19. Résumé et questions complémentaires *(Carcinome vésical)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Glomérulonéphrite post-streptococcique)***

@@ -153,13 +153,15 @@ cssclasses:
 > 	- [ ] Statut menstruel
 > 	- [ ] Âge
 > 	- [ ] Contraception
-> - [ ] **16. Antécédents médicaux *(Phéochromocytome)***
-> 	- [ ] Maladies cardiovasculaires
-> 	- [ ] Maladies thyroïdiennes
-> 	- [ ] Maladies rénales
-> 	- [ ] Diabète
-> 	- [ ] Cancer
+> - [ ] **16. Antécédents médicaux personnels**
+> 	- [ ] Maladies cardiovasculaires *(Phéochromocytome)*
+> 	- [ ] Maladies thyroïdiennes *(Phéochromocytome)*
+> 	- [ ] Maladies rénales *(Phéochromocytome)*
+> 	- [ ] Diabète *(Phéochromocytome)*
+> 	- [ ] Cancer *(Phéochromocytome)*
 > 	- [ ] Interventions chirurgicales
+> 	- [ ] Pathologies chroniques *(Ménopause physiologique confirmée)*
+> 	- [ ] Traitements actuels *(Ménopause physiologique confirmée)*
 > - [ ] **17. Médicaments actuels *(Phéochromocytome)***
 > - [ ] **18. Allergies *(Phéochromocytome)***
 > - [ ] **19. Habitudes de vie**
@@ -168,10 +170,12 @@ cssclasses:
 > 	- [ ] Drogues
 > 	- [ ] Activité physique
 > 	- [ ] Alimentation *(Ménopause physiologique confirmée)*
-> - [ ] **20. Antécédents familiaux *(Phéochromocytome)***
-> 	- [ ] Autres cancers familiaux
+> - [ ] **20. Antécédents familiaux**
+> 	- [ ] Autres cancers familiaux *(Phéochromocytome)*
 > 	- [ ] Maladies cardiovasculaires
-> 	- [ ] Maladies endocriniennes
+> 	- [ ] Maladies endocriniennes *(Phéochromocytome)*
+> 	- [ ] Cancers familiaux *(Ménopause physiologique confirmée)*
+> 	- [ ] Ostéoporose familiale *(Ménopause physiologique confirmée)*
 > - [ ] **21. Anamnèse sociale**
 > 	- [ ] Profession *(Phéochromocytome)*
 > 	- [ ] Situation familiale *(Phéochromocytome)*
@@ -213,18 +217,10 @@ cssclasses:
 > 	- [ ] Ménarche
 > 	- [ ] Cycles antérieurs
 > 	- [ ] Contraception
-> - [ ] **33. Antécédents médicaux personnels *(Ménopause physiologique confirmée)***
-> 	- [ ] Interventions chirurgicales
-> 	- [ ] Pathologies chroniques
-> 	- [ ] Traitements actuels
-> - [ ] **34. Revue des systèmes *(Ménopause physiologique confirmée)***
+> - [ ] **33. Revue des systèmes *(Ménopause physiologique confirmée)***
 > 	- [ ] Symptômes B (fièvre, perte de poids, sueurs nocturnes)
 > 	- [ ] Autres symptômes
-> - [ ] **35. Anamnèse familiale *(Ménopause physiologique confirmée)***
-> 	- [ ] Cancers familiaux
-> 	- [ ] Maladies cardiovasculaires
-> 	- [ ] Ostéoporose familiale
-> - [ ] **36. Questions de clôture *(Ménopause physiologique confirmée)***
+> - [ ] **34. Questions de clôture *(Ménopause physiologique confirmée)***
 > 	- [ ] Avez-vous quelque chose à ajouter ?
 > 	- [ ] Avez-vous des questions ?
 
@@ -280,11 +276,7 @@ cssclasses:
 > 	- [ ] Prélèvements microbiologiques si indiqués
 
 > [!success] 💊 Management — si Ménopause physiologique confirmée
-> - [ ] **1. Utilisation correcte de la terminologie**
-> 	- [ ] Ménopause : arrêt définitif des règles depuis 12 mois
-> 	- [ ] Périménopause : période de transition avant la ménopause
-> 	- [ ] Climatère : ensemble de la période de transition
-> - [ ] **2. Examens complémentaires**
+> - [ ] **1. Examens complémentaires**
 > 	- [ ] Dosage FSH (> 30 UI/L)
 > 	- [ ] Dosage œstradiol (< 184 pmol/L)
 > 	- [ ] Bilan lipidique
@@ -292,6 +284,10 @@ cssclasses:
 > 	- [ ] TSH
 > 	- [ ] Mammographie de dépistage
 > 	- [ ] Densitométrie osseuse (DMO)
+> - [ ] **2. Utilisation correcte de la terminologie**
+> 	- [ ] Ménopause : arrêt définitif des règles depuis 12 mois
+> 	- [ ] Périménopause : période de transition avant la ménopause
+> 	- [ ] Climatère : ensemble de la période de transition
 > - [ ] **3. Traitement hormonal de la ménopause (THM)**
 > - [ ] **4. Alternatives non hormonales**
 > 	- [ ] ISRS/IRSN pour bouffées de chaleur
@@ -337,7 +333,7 @@ cssclasses:
 > 	- [ ] Sténose/insuffisance mitrale
 > 	- [ ] Œdème pulmonaire
 > 	- [ ] État fébrile
-> - [ ] **3. Examens complémentaires proposés**
+> - [ ] **3. Examens complémentaires**
 > 	- [ ] Biologie sanguine
 > 	- [ ] Dosages hormonaux spécifiques
 > 	- [ ] Examens urinaires
