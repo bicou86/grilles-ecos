@@ -1,13 +1,13 @@
 ---
 aliases:
-  - "Mémento Cervicalgies"
+  - "Mémento Dysménorrhée & Douleur Pelvienne"
 type: memento-ecos-ssp
-ssp: "Cervicalgies"
-specialite: "Musculo-Squelettique"
+ssp: "Dysménorrhée & Douleur Pelvienne"
+specialite: "Gynéco-Obstétrique"
 cas: 1
 diagnostics: 1
-attendus_documentes_ailleurs: 1
-attendus_absents_du_corpus: 1
+attendus_documentes_ailleurs: 0
+attendus_absents_du_corpus: 0
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -81,74 +81,94 @@ cssclasses:
 > qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
 > rempli, lisez les libellés voisins ensemble.
 
-# Cervicalgies
+# Dysménorrhée & Douleur Pelvienne ⭐️
 
-*Musculo-Squelettique · 1 grille · 1 diagnostic documenté · 1 attendu documenté ailleurs · 1 attendu absent du corpus* — [[SSP — Cervicalgies]]
+*Gynéco-Obstétrique · 1 grille · 1 diagnostic documenté* — [[SSP — Dysménorrhée & Douleur Pelvienne]]
 
 > [!abstract] La seule grille de cette SSP
-> - **AZYGOS-18** — Radiculopathie cervicale C6 `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/9eb8cf72-3d4f-427a-82f1-d538d46c91d0.json>)
+> - **AZYGOS-15** — Endométriose avec adénomyose et endométriome ovarien `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/3e23289a-3d85-4e1f-86ed-ecad0d43af86.json>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Question initiale sur l’évolution**
-> - [ ] **2. Degré de sévérité de l’évolution de la douleur**
-> - [ ] **3. Localisation et irradiation de la douleur**
-> - [ ] **4. Qualité de la douleur**
-> - [ ] **5. Facteurs déclenchants**
-> - [ ] **6. Mesures prises jusqu’ici**
-> - [ ] **7. Progression des symptômes neurologiques**
-> - [ ] **8. Trouble de la sensibilité – évolution**
-> - [ ] **9. Trouble de la sensibilité – localisation**
-> - [ ] **10. Symptômes moteurs**
-> - [ ] **11. Limitation fonctionnelle**
-> - [ ] **12. Trouble vésico-sphinctérien**
-> - [ ] **13. Trouble de la marche**
-> - [ ] **14. Symptômes bilatéraux**
-> - [ ] **15. Antécédents**
-> - [ ] **16. Opérations antérieures**
-> - [ ] **17. Médication actuelle**
-> - [ ] **18. Noxes**
-> - [ ] **19. Tabagisme**
-> - [ ] **20. Alcool**
-> - [ ] **21. Anamnèse familiale**
-> - [ ] **22. Profession / charge**
-> - [ ] **23. Situation de logement et au quotidien**
+> - [ ] **1. Question initiale**
+> - [ ] **2. Dimension temporelle**
+> - [ ] **3. Début / Durée**
+> - [ ] **4. Apparition**
+> - [ ] **5. Évolution**
+> - [ ] **6. Localisation**
+> - [ ] **7. Irradiation**
+> - [ ] **8. Type de douleur**
+> - [ ] **9. Intensité / Sévérité**
+> - [ ] **10. Facteurs d'aggravation**
+> - [ ] **11. Facteurs de soulagement**
+> - [ ] **12. Retentissement des symptômes**
+> - [ ] **13. Symptômes d'accompagnement**
+> - [ ] **14. Anamnèse menstruelle**
+> - [ ] **15. Abondance des saignements**
+> - [ ] **16. Durée du cycle**
+> - [ ] **17. Durée des saignements**
+> - [ ] **18. Dyspareunie**
+> - [ ] **19. Dyschésie**
+> - [ ] **20. Anamnèse obstétricale / Geste et Parité**
+> - [ ] **21. Contraception**
+> - [ ] **22. Désir de grossesse**
+> - [ ] **23. Dernier contrôle**
+> - [ ] **24. Possibilité de grossesse**
+> - [ ] **25. Infection / IST**
+> - [ ] **26. Partenaires sexuels multiples**
+> - [ ] **27. Fièvre aiguë**
+> - [ ] **28. Pertes vaginales**
+> - [ ] **29. Urogénital**
+> - [ ] **30. Dysurie**
+> - [ ] **31. Hématurie**
+> - [ ] **32. Gastro-intestinal**
+> - [ ] **33. Sang dans les selles**
+> - [ ] **34. Transit intestinal**
+> - [ ] **35. Symptômes B**
+> - [ ] **36. Antécédents médicaux**
+> - [ ] **37. Antécédents généraux**
+> - [ ] **38. Antécédents gynécologiques**
+> - [ ] **39. Antécédents chirurgicaux**
+> - [ ] **40. Médicaments**
+> - [ ] **41. Allergies**
+> - [ ] **42. Toxiques**
+> - [ ] **43. Alcool**
+> - [ ] **44. Drogues**
+> - [ ] **45. Tabagisme**
+> - [ ] **46. Vaccinations**
+> - [ ] **47. Antécédents familiaux**
+> - [ ] **48. Généraux**
+> - [ ] **49. Endométriose / règles très douloureuses**
+> - [ ] **50. Profession**
+> - [ ] **51. Situation sociale**
+> - [ ] **52. Facteurs de stress psychosociaux**
 
 > [!tip] 🩺 Status
-> - [ ] **1. Inspection du rachis cervical**
-> - [ ] **2. Mobilité du rachis cervical évaluée**
-> - [ ] **3. Test de Spurling**
-> - [ ] **4. Motricité**
-> - [ ] **5. C5 Abduction de l’épaule, des deux côtés**
-> - [ ] **6. C6 Flexion du coude, des deux côtés**
-> - [ ] **7. C6 Extension du poignet, des deux côtés**
-> - [ ] **8. C7 Extension du coude, des deux côtés**
-> - [ ] **9. C8–Th1 Écartement des doigts et abduction de l’auriculaire**
-> - [ ] **10. Test de sensibilité selon les dermatomes**
-> - [ ] **11. C5**
-> - [ ] **12. C6 Sensibilité au niveau de l’avant-bras radial**
-> - [ ] **13. C6 Sensibilité au niveau du pouce et du bord radial de l’index**
-> - [ ] **14. C7**
-> - [ ] **15. C8**
-> - [ ] **16. Th1**
-> - [ ] **17. Réflexe bicipital (BSR) des deux côtés**
-> - [ ] **18. Réflexe brachioradial (BRR) des deux côtés**
-> - [ ] **19. Réflexe tricipital (TSR) des deux côtés**
-> - [ ] **20. Signes pyramidaux (Babinski) des deux côtés**
-> - [ ] **21. Démarche**
-> - [ ] **22. Anomalies bilatérales exclues**
+> - [ ] **1. Inspection**
+> - [ ] **2. Auscultation**
+> - [ ] **3. Percussion**
+> - [ ] **4. Palpation**
+> - [ ] **5. Douleur à la décompression**
+> - [ ] **6. Fosses lombaires**
+> - [ ] **7. Ganglions lymphatiques inguinaux**
+> - [ ] **8. Inspection de la vulve**
+> - [ ] **9. Examen au spéculum**
+> - [ ] **10. Palpation bimanuelle**
+> - [ ] **11. Toucher rectal**
 
-> [!success] 💊 Management — si Cervicalgie
-> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
-
-> [!success] 💊 Management — si Hernie discale
-> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Lombalgies]] (2 grilles) · [[Mémento — Neuropathie Périphérique]] (1 grille).
-
-> [!success] 💊 Management — si Radiculopathie cervicale C6
-> - [ ] **1. Diagnostic de travail**
-> - [ ] **2. Progression neurologique**
-> - [ ] **3. Degré d’urgence**
-> - [ ] **4. Information sur le diagnostic de travail**
-> - [ ] **5. Analgésie de soutien**
-> - [ ] **6. IRM du rachis cervical**
-> - [ ] **7. Orientation neurochirurgicale**
-> - [ ] **8. Filet de sécurité**
+> [!success] 💊 Management — si Endométriose avec adénomyose et endométriome ovarien
+> - [ ] **1. Laboratoire**
+> - [ ] **2. Test de grossesse (bêta-hCG)**
+> - [ ] **3. Paramètres inflammatoires**
+> - [ ] **4. Formule sanguine**
+> - [ ] **5. Status urinaire**
+> - [ ] **6. Échographie transvaginale**
+> - [ ] **7. Diagnostic de travail**
+> - [ ] **8. Traitement hormonal**
+> - [ ] **9. Analgésie**
+> - [ ] **10. Orientation vers un centre de l'endométriose**
+> - [ ] **11. Conseil en fertilité**
+> - [ ] **12. Contrôle d'évolution**
+> - [ ] **13. Filet de sécurité**
+> - [ ] **14. Examens diagnostiques complémentaires**
+> - [ ] **15. IRM pelvienne**
+> - [ ] **16. Laparoscopie diagnostique**

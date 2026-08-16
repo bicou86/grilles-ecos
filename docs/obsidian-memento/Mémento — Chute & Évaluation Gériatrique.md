@@ -377,7 +377,7 @@ cssclasses:
 > - [ ] **6. Échographie des carotides**
 
 > [!success] 💊 Management — si Fracture du bassin (hémorragique)
-> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : « AVP (Accident de la Voie Publique) » (2 grilles, hors lot).
+> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — AVP (Accident de la Voie Publique)]] (2 grilles).
 
 > [!success] 💊 Management — si Fracture du membre supérieur (humérus, tête radiale)
 > - [ ] **1. Demande une radiographie du coude gauche avec les incidences**
@@ -396,7 +396,7 @@ cssclasses:
 > - [ ] **7. Évoque une possible prise en charge chirurgicale**
 
 > [!success] 💊 Management — si Fracture du scaphoïde
-> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : « Douleur au Poignet » (1 grille, hors lot).
+> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Douleur au Poignet]] (1 grille).
 
 > [!success] 💊 Management — si Hématome sous-dural
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

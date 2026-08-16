@@ -785,7 +785,7 @@ cssclasses:
 > 	- [ ] Informations sur les symptômes de surdosage *(1 grille sur 2)*
 
 > [!success] 💊 Management — si Insuffisance cardiaque (décompensée)
-> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Dyspnée]] (3 grilles) · [[Mémento — Palpitations]] (1 grille) · [[Mémento — Toux]] (1 grille) · « Œdèmes des Membres Inférieurs » (1 grille, hors lot).
+> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Dyspnée]] (3 grilles) · [[Mémento — Palpitations]] (1 grille) · [[Mémento — Toux]] (1 grille) · [[Mémento — Œdèmes des Membres Inférieurs]] (1 grille).
 
 > [!success] 💊 Management — si Mononucléose
 > - [ ] **1. Examens complémentaires de première intention**

@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """Genere un memento Obsidian par SSP, en fusionnant les cas de cette SSP.
 
-    python3 scripts/memento/build_memento.py            # lot prioritaire
-    python3 scripts/memento/build_memento.py --lot tout  # toutes les SSP
+    python3 scripts/memento/build_memento.py                    # les 88 SSP
+    python3 scripts/memento/build_memento.py --lot prioritaire  # les 32 du lot 1
 
 Un fichier « Mémento — <SSP>.md » par SSP dans docs/obsidian-memento/, a cote
 du memento des neuf grilles officielles, qui reste la reference de forme et le
@@ -560,12 +560,21 @@ def nettoyer():
 
 
 def main():
+    # LE DEFAUT EST LE LOT COMPLET DEPUIS L'OUVERTURE DU LOT 2, et l'inversion
+    # n'est pas cosmetique : `nettoyer()` efface TOUS les mementos avant de
+    # reecrire ceux du lot demande. Le depot commitant desormais les 88, un
+    # `build_memento.py` sans argument, sous l'ancien defaut, en supprimait 56
+    # en silence — et check_mementos.py, qui appelle le generateur sans
+    # argument, aurait declare obsolete ce qu'il venait lui-meme d'effacer.
     argv = sys.argv[1:]
-    if argv and argv != ["--lot", "tout"]:
+    lots = {(): None, ("--lot", "tout"): None,
+            ("--lot", "prioritaire"): "prioritaire"}
+    if tuple(argv) not in lots:
         print(f"Argument non reconnu : {' '.join(argv)}\n"
-              "Usage : build_memento.py [--lot tout]")
+              "Usage : build_memento.py [--lot tout|prioritaire]")
         return 2
-    lot = None if argv else lib_ssp.lot_prioritaire()
+    lot = (lib_ssp.lot_prioritaire() if lots[tuple(argv)] == "prioritaire"
+           else None)
     # TOUT EST CONSTRUIT AVANT D'EFFACER QUOI QUE CE SOIT : une exception a la
     # vingtieme SSP laissait sinon 33 fichiers effaces et 19 reecrits.
     docs, groupes, ignorees = documents(lot)

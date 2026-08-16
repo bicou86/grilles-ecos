@@ -1,13 +1,12 @@
 ---
 aliases:
-  - "Mémento Cervicalgies"
+  - "Mémento Rhinosinusite"
 type: memento-ecos-ssp
-ssp: "Cervicalgies"
-specialite: "Musculo-Squelettique"
+ssp: "Rhinosinusite"
 cas: 1
 diagnostics: 1
-attendus_documentes_ailleurs: 1
-attendus_absents_du_corpus: 1
+attendus_documentes_ailleurs: 0
+attendus_absents_du_corpus: 0
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -81,74 +80,93 @@ cssclasses:
 > qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
 > rempli, lisez les libellés voisins ensemble.
 
-# Cervicalgies
+# Rhinosinusite
 
-*Musculo-Squelettique · 1 grille · 1 diagnostic documenté · 1 attendu documenté ailleurs · 1 attendu absent du corpus* — [[SSP — Cervicalgies]]
+*1 grille · 1 diagnostic documenté* — [[SSP — Rhinosinusite]]
 
 > [!abstract] La seule grille de cette SSP
-> - **AZYGOS-18** — Radiculopathie cervicale C6 `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/9eb8cf72-3d4f-427a-82f1-d538d46c91d0.json>)
+> - **AZYGOS-36** — Rhinosinusite post-virale `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/f0fbf3ec-d0b2-4c9b-ae46-56ddbfb96c24.json>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Question initiale sur l’évolution**
-> - [ ] **2. Degré de sévérité de l’évolution de la douleur**
-> - [ ] **3. Localisation et irradiation de la douleur**
-> - [ ] **4. Qualité de la douleur**
-> - [ ] **5. Facteurs déclenchants**
-> - [ ] **6. Mesures prises jusqu’ici**
-> - [ ] **7. Progression des symptômes neurologiques**
-> - [ ] **8. Trouble de la sensibilité – évolution**
-> - [ ] **9. Trouble de la sensibilité – localisation**
-> - [ ] **10. Symptômes moteurs**
-> - [ ] **11. Limitation fonctionnelle**
-> - [ ] **12. Trouble vésico-sphinctérien**
-> - [ ] **13. Trouble de la marche**
-> - [ ] **14. Symptômes bilatéraux**
-> - [ ] **15. Antécédents**
-> - [ ] **16. Opérations antérieures**
-> - [ ] **17. Médication actuelle**
-> - [ ] **18. Noxes**
-> - [ ] **19. Tabagisme**
-> - [ ] **20. Alcool**
-> - [ ] **21. Anamnèse familiale**
-> - [ ] **22. Profession / charge**
-> - [ ] **23. Situation de logement et au quotidien**
+> - [ ] **1. Question initiale**
+> - [ ] **2. Dimension temporelle**
+> - [ ] **3. Début / Durée**
+> - [ ] **4. Apparition / Facteur déclenchant**
+> - [ ] **5. Évolution**
+> - [ ] **6. Épisodes**
+> - [ ] **7. Localisation**
+> - [ ] **8. Facteurs soulageants**
+> - [ ] **9. Mesures déjà prises**
+> - [ ] **10. Facteurs aggravants**
+> - [ ] **11. Retentissement des symptômes**
+> - [ ] **12. Symptômes d'accompagnement**
+> - [ ] **13. Trouble de l'odorat**
+> - [ ] **14. Rhinorrhée**
+> - [ ] **15. Qualité (aqueuse / muqueuse / sanglante)**
+> - [ ] **16. Antécédent de traumatisme nasal**
+> - [ ] **17. Douleur faciale**
+> - [ ] **18. Aggravation lors de la flexion**
+> - [ ] **19. Rhinorrhée postérieure**
+> - [ ] **20. Symptômes B**
+> - [ ] **21. Fièvre**
+> - [ ] **22. Signes de méningisme**
+> - [ ] **23. Maux de tête / Raideur de la nuque**
+> - [ ] **24. Photophobie**
+> - [ ] **25. Déficits neurologiques**
+> - [ ] **26. Troubles de la parole**
+> - [ ] **27. Paralysies**
+> - [ ] **28. Troubles de la sensibilité**
+> - [ ] **29. Troubles de la marche**
+> - [ ] **30. Symptômes oculaires**
+> - [ ] **31. Diplopie**
+> - [ ] **32. Baisse de l'acuité visuelle**
+> - [ ] **33. Perception du rouge**
+> - [ ] **34. Symptômes auriculaires / auditifs**
+> - [ ] **35. Voies respiratoires**
+> - [ ] **36. Maux de gorge**
+> - [ ] **37. Toux**
+> - [ ] **38. Dyspnée**
+> - [ ] **39. Antécédents médicaux**
+> - [ ] **40. Antécédents chirurgicaux**
+> - [ ] **41. Anamnèse médicamenteuse**
+> - [ ] **42. Toxiques**
+> - [ ] **43. Alcool**
+> - [ ] **44. Tabagisme**
+> - [ ] **45. Drogues**
+> - [ ] **46. Allergies**
+> - [ ] **47. Antécédents familiaux**
+> - [ ] **48. Profession**
 
 > [!tip] 🩺 Status
-> - [ ] **1. Inspection du rachis cervical**
-> - [ ] **2. Mobilité du rachis cervical évaluée**
-> - [ ] **3. Test de Spurling**
-> - [ ] **4. Motricité**
-> - [ ] **5. C5 Abduction de l’épaule, des deux côtés**
-> - [ ] **6. C6 Flexion du coude, des deux côtés**
-> - [ ] **7. C6 Extension du poignet, des deux côtés**
-> - [ ] **8. C7 Extension du coude, des deux côtés**
-> - [ ] **9. C8–Th1 Écartement des doigts et abduction de l’auriculaire**
-> - [ ] **10. Test de sensibilité selon les dermatomes**
-> - [ ] **11. C5**
-> - [ ] **12. C6 Sensibilité au niveau de l’avant-bras radial**
-> - [ ] **13. C6 Sensibilité au niveau du pouce et du bord radial de l’index**
-> - [ ] **14. C7**
-> - [ ] **15. C8**
-> - [ ] **16. Th1**
-> - [ ] **17. Réflexe bicipital (BSR) des deux côtés**
-> - [ ] **18. Réflexe brachioradial (BRR) des deux côtés**
-> - [ ] **19. Réflexe tricipital (TSR) des deux côtés**
-> - [ ] **20. Signes pyramidaux (Babinski) des deux côtés**
-> - [ ] **21. Démarche**
-> - [ ] **22. Anomalies bilatérales exclues**
+> - [ ] **1. Inspection**
+> - [ ] **2. Forme externe**
+> - [ ] **3. Soulever la pointe du nez**
+> - [ ] **4. Respiration nasale**
+> - [ ] **5. Palpation**
+> - [ ] **6. Nez**
+> - [ ] **7. Sinus paranasaux**
+> - [ ] **8. Rhinoscopie**
+> - [ ] **9. Rhinoscopie antérieure**
+> - [ ] **10. Rhinoscopie postérieure**
+> - [ ] **11. Otoscopie y compris manœuvre de Valsalva**
+> - [ ] **12. Palpation des ganglions lymphatiques**
+> - [ ] **13. Statut oculaire**
+> - [ ] **14. Réflexe pupillaire**
+> - [ ] **15. Acuité visuelle**
+> - [ ] **16. Saturation du rouge**
+> - [ ] **17. Oculomotricité**
+> - [ ] **18. Nerf trijumeau**
+> - [ ] **19. Sensibilité**
+> - [ ] **20. Points d'émergence**
+> - [ ] **21. Examen du nerf facial**
 
-> [!success] 💊 Management — si Cervicalgie
-> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
-
-> [!success] 💊 Management — si Hernie discale
-> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Lombalgies]] (2 grilles) · [[Mémento — Neuropathie Périphérique]] (1 grille).
-
-> [!success] 💊 Management — si Radiculopathie cervicale C6
+> [!success] 💊 Management — si Rhinosinusite post-virale
 > - [ ] **1. Diagnostic de travail**
-> - [ ] **2. Progression neurologique**
-> - [ ] **3. Degré d’urgence**
-> - [ ] **4. Information sur le diagnostic de travail**
-> - [ ] **5. Analgésie de soutien**
-> - [ ] **6. IRM du rachis cervical**
-> - [ ] **7. Orientation neurochirurgicale**
-> - [ ] **8. Filet de sécurité**
+> - [ ] **2. Spray nasal de glucocorticoïde**
+> - [ ] **3. Sécrétolytique d'origine végétale**
+> - [ ] **4. Mesures adjuvantes**
+> - [ ] **5. Lavage nasal**
+> - [ ] **6. Inhalation**
+> - [ ] **7. Housses anti-acariens**
+> - [ ] **8. Contrôle d'évolution**
+> - [ ] **9. Filet de sécurité**

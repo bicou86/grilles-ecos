@@ -8,9 +8,9 @@ autres verificateurs restant verts.
 Deux proprietes verifiees, dans cet ordre :
 
   1. FIDELITE — le contenu commite est exactement ce que
-     `build_memento.py` (sans argument, donc le lot prioritaire) produit
-     aujourd'hui. C'est la propriete qui attrape le « modifie sans
-     regenerer ».
+     `build_memento.py` (sans argument, donc les 88 SSP depuis l'ouverture du
+     lot 2) produit aujourd'hui. C'est la propriete qui attrape le « modifie
+     sans regenerer ».
   2. IDEMPOTENCE — deux executions consecutives donnent des fichiers
      identiques.
 

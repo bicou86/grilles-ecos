@@ -57,13 +57,22 @@ REPO = Path(__file__).resolve().parents[2]
 FUSIONNEES = ("a", "e")   # les sections que le memento fusionne entre grilles
 
 
-def lot_rendu():
-    """Les SSP du lot prioritaire qui recoivent effectivement un memento.
+def lot_rendu(prioritaire=False):
+    """Les SSP qui recoivent effectivement un memento.
 
     Meme filtre que `build_memento.documents()` : une SSP dont le nom porte / ou
     " n'est pas ecrite, et n'a donc pas a peser dans la mesure.
+
+    LE PERIMETRE PAR DEFAUT SUIT CE QUE LE DEPOT REND, et le depot rend les 88
+    SSP depuis l'ouverture du lot 2 : mesurer les 32 du lot 1 rendrait
+    l'indicateur aveugle a toute curation faite ailleurs. `prioritaire=True`
+    garde l'ancien perimetre, et ce n'est pas de la nostalgie : c'est le seul
+    moyen de REJOUER l'instrument sur un etat dont on connait deja la reponse
+    (2 743 / 1 480 / 1 579 sur 2 297, tache 10). Un instrument qu'on ne peut
+    plus recalibrer est un instrument qu'il faut croire sur parole.
     """
-    groupes = build_memento.par_ssp(lib_ssp.lot_prioritaire())
+    lot = lib_ssp.lot_prioritaire() if prioritaire else None
+    groupes = build_memento.par_ssp(lot)
     return {s: v for s, v in groupes.items() if "/" not in s and '"' not in s}
 
 
@@ -151,7 +160,12 @@ def surete():
 
 
 def main():
-    groupes = lot_rendu()
+    argv = sys.argv[1:]
+    if argv and argv != ["--lot", "prioritaire"]:
+        print(f"Argument non reconnu : {' '.join(argv)}\n"
+              "Usage : mesure_couche_b.py [--lot prioritaire]")
+        return 2
+    groupes = lot_rendu(prioritaire=bool(argv))
     inventaire = lib_vocabulaire.libelles_par_ssp(groupes)
     entrees = sum(len(v) for v in lib_yaml.lire_groupe(check_vocabulaire.TABLE).values())
 

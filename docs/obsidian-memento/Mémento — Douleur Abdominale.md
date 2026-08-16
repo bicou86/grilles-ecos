@@ -1459,4 +1459,4 @@ cssclasses:
 > - [ ] **5. Propose une consultation immédiate aux urgences de gynécologie**
 
 > [!success] 💊 Management — si Ulcère gastro-duodénal
-> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : « Rectorragies & Hémorragie Digestive Basse » (1 grille, hors lot).
+> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Rectorragies & Hémorragie Digestive Basse]] (1 grille).

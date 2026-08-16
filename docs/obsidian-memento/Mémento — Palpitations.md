@@ -515,4 +515,4 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Trouble anxieux
-> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : « Trouble Anxieux » (4 grilles, hors lot) · [[Mémento — Troubles du Sommeil]] (1 grille).
+> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Trouble Anxieux]] (4 grilles) · [[Mémento — Troubles du Sommeil]] (1 grille).

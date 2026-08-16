@@ -1,13 +1,13 @@
 ---
 aliases:
-  - "Mémento Cervicalgies"
+  - "Mémento Troubles Thyroïdiens"
 type: memento-ecos-ssp
-ssp: "Cervicalgies"
-specialite: "Musculo-Squelettique"
+ssp: "Troubles Thyroïdiens"
+specialite: "Endocrinologie"
 cas: 1
 diagnostics: 1
-attendus_documentes_ailleurs: 1
-attendus_absents_du_corpus: 1
+attendus_documentes_ailleurs: 0
+attendus_absents_du_corpus: 0
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -81,74 +81,102 @@ cssclasses:
 > qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
 > rempli, lisez les libellés voisins ensemble.
 
-# Cervicalgies
+# Troubles Thyroïdiens
 
-*Musculo-Squelettique · 1 grille · 1 diagnostic documenté · 1 attendu documenté ailleurs · 1 attendu absent du corpus* — [[SSP — Cervicalgies]]
+*Endocrinologie · 1 grille · 1 diagnostic documenté* — [[SSP — Troubles Thyroïdiens]]
 
 > [!abstract] La seule grille de cette SSP
-> - **AZYGOS-18** — Radiculopathie cervicale C6 `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/9eb8cf72-3d4f-427a-82f1-d538d46c91d0.json>)
+> - **AZYGOS-13** — Thyroïdite de De Quervain (thyroïdite granulomateuse subaiguë) `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/fb6aa38c-15da-406b-becf-dff6a82912ab.json>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Question initiale sur l’évolution**
-> - [ ] **2. Degré de sévérité de l’évolution de la douleur**
-> - [ ] **3. Localisation et irradiation de la douleur**
-> - [ ] **4. Qualité de la douleur**
-> - [ ] **5. Facteurs déclenchants**
-> - [ ] **6. Mesures prises jusqu’ici**
-> - [ ] **7. Progression des symptômes neurologiques**
-> - [ ] **8. Trouble de la sensibilité – évolution**
-> - [ ] **9. Trouble de la sensibilité – localisation**
-> - [ ] **10. Symptômes moteurs**
-> - [ ] **11. Limitation fonctionnelle**
-> - [ ] **12. Trouble vésico-sphinctérien**
-> - [ ] **13. Trouble de la marche**
-> - [ ] **14. Symptômes bilatéraux**
-> - [ ] **15. Antécédents**
-> - [ ] **16. Opérations antérieures**
-> - [ ] **17. Médication actuelle**
-> - [ ] **18. Noxes**
-> - [ ] **19. Tabagisme**
-> - [ ] **20. Alcool**
-> - [ ] **21. Anamnèse familiale**
-> - [ ] **22. Profession / charge**
-> - [ ] **23. Situation de logement et au quotidien**
+> - [ ] **1. Question d’entrée**
+> - [ ] **2. Dimension temporelle**
+> - [ ] **3. Début / durée**
+> - [ ] **4. Mode d’apparition**
+> - [ ] **5. Évolution**
+> - [ ] **6. Déclencheurs**
+> - [ ] **7. Localisation**
+> - [ ] **8. Irradiation**
+> - [ ] **9. Qualité**
+> - [ ] **10. Intensité / sévérité**
+> - [ ] **11. Facteurs aggravants**
+> - [ ] **12. Facteurs soulageants**
+> - [ ] **13. Mesures antérieures**
+> - [ ] **14. Retentissement des symptômes**
+> - [ ] **15. Symptômes associés**
+> - [ ] **16. Gonflement cervical / nodule**
+> - [ ] **17. Cavité buccale / pharynx**
+> - [ ] **18. Dysphagie**
+> - [ ] **19. Ouverture buccale**
+> - [ ] **20. Altération de la voix**
+> - [ ] **21. Hypersalivation**
+> - [ ] **22. Fièvre**
+> - [ ] **23. Douleurs diffuses / myalgies**
+> - [ ] **24. Fatigue / asthénie**
+> - [ ] **25. Infection antérieure**
+> - [ ] **26. Symptômes d’hyperthyroïdie**
+> - [ ] **27. Palpitations**
+> - [ ] **28. Sueurs / intolérance à la chaleur**
+> - [ ] **29. Tremor**
+> - [ ] **30. Nervosité / agitation intérieure**
+> - [ ] **31. Perte de poids**
+> - [ ] **32. Diarrhée**
+> - [ ] **33. Symptômes d’hypothyroïdie**
+> - [ ] **34. Intolérance au froid**
+> - [ ] **35. Prise de poids**
+> - [ ] **36. Constipation**
+> - [ ] **37. Peau sèche / chute de cheveux**
+> - [ ] **38. Apathie / humeur dépressive**
+> - [ ] **39. Symptômes B**
+> - [ ] **40. Troubles respiratoires**
+> - [ ] **41. Dyspnée**
+> - [ ] **42. Toux**
+> - [ ] **43. Antécédents**
+> - [ ] **44. Maladies de la thyroïde**
+> - [ ] **45. Opérations antérieures**
+> - [ ] **46. Médicaments**
+> - [ ] **47. Allergies**
+> - [ ] **48. Noxes**
+> - [ ] **49. Alcool**
+> - [ ] **50. Tabac**
+> - [ ] **51. Drogues**
+> - [ ] **52. Maladies thyroïdiennes familiales**
+> - [ ] **53. Profession**
+> - [ ] **54. Situation sociale**
+> - [ ] **55. Facteurs de stress psychosociaux**
 
 > [!tip] 🩺 Status
-> - [ ] **1. Inspection du rachis cervical**
-> - [ ] **2. Mobilité du rachis cervical évaluée**
-> - [ ] **3. Test de Spurling**
-> - [ ] **4. Motricité**
-> - [ ] **5. C5 Abduction de l’épaule, des deux côtés**
-> - [ ] **6. C6 Flexion du coude, des deux côtés**
-> - [ ] **7. C6 Extension du poignet, des deux côtés**
-> - [ ] **8. C7 Extension du coude, des deux côtés**
-> - [ ] **9. C8–Th1 Écartement des doigts et abduction de l’auriculaire**
-> - [ ] **10. Test de sensibilité selon les dermatomes**
-> - [ ] **11. C5**
-> - [ ] **12. C6 Sensibilité au niveau de l’avant-bras radial**
-> - [ ] **13. C6 Sensibilité au niveau du pouce et du bord radial de l’index**
-> - [ ] **14. C7**
-> - [ ] **15. C8**
-> - [ ] **16. Th1**
-> - [ ] **17. Réflexe bicipital (BSR) des deux côtés**
-> - [ ] **18. Réflexe brachioradial (BRR) des deux côtés**
-> - [ ] **19. Réflexe tricipital (TSR) des deux côtés**
-> - [ ] **20. Signes pyramidaux (Babinski) des deux côtés**
-> - [ ] **21. Démarche**
-> - [ ] **22. Anomalies bilatérales exclues**
+> - [ ] **1. Paramètres vitaux**
+> - [ ] **2. Inspection du cou**
+> - [ ] **3. Palpation du cou**
+> - [ ] **4. Thyroïde**
+> - [ ] **5. Mobilité à la déglutition**
+> - [ ] **6. Ganglions cervicaux**
+> - [ ] **7. Auscultation de la thyroïde**
+> - [ ] **8. Cavité buccale / pharynx**
+> - [ ] **9. Signes d’hyperthyroïdie**
+> - [ ] **10. Inspection des mains**
+> - [ ] **11. Aspect cutané**
+> - [ ] **12. Réflexes**
+> - [ ] **13. Cœur**
+> - [ ] **14. Poumons**
 
-> [!success] 💊 Management — si Cervicalgie
-> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
-
-> [!success] 💊 Management — si Hernie discale
-> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Lombalgies]] (2 grilles) · [[Mémento — Neuropathie Périphérique]] (1 grille).
-
-> [!success] 💊 Management — si Radiculopathie cervicale C6
-> - [ ] **1. Diagnostic de travail**
-> - [ ] **2. Progression neurologique**
-> - [ ] **3. Degré d’urgence**
-> - [ ] **4. Information sur le diagnostic de travail**
-> - [ ] **5. Analgésie de soutien**
-> - [ ] **6. IRM du rachis cervical**
-> - [ ] **7. Orientation neurochirurgicale**
-> - [ ] **8. Filet de sécurité**
+> [!success] 💊 Management — si Thyroïdite de De Quervain (thyroïdite granulomateuse subaiguë)
+> - [ ] **1. Laboratoire**
+> - [ ] **2. Hémogramme**
+> - [ ] **3. Fonction thyroïdienne**
+> - [ ] **4. Paramètres inflammatoires**
+> - [ ] **5. Anticorps thyroïdiens**
+> - [ ] **6. Échographie de la thyroïde**
+> - [ ] **7. ECG**
+> - [ ] **8. Diagnostic de travail**
+> - [ ] **9. Traitement symptomatique de la douleur**
+> - [ ] **10. Traitement symptomatique de l’hyperthyroïdie**
+> - [ ] **11. Pas d’antithyroïdiens de synthèse**
+> - [ ] **12. Glucocorticoïdes**
+> - [ ] **13. Instructions**
+> - [ ] **14. Hydratation suffisante**
+> - [ ] **15. Éviter la caféine**
+> - [ ] **16. Pas de suppléments iodés**
+> - [ ] **17. Suivi**
+> - [ ] **18. Filet de sécurité**

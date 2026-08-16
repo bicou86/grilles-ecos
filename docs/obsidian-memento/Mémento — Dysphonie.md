@@ -1,13 +1,13 @@
 ---
 aliases:
-  - "Mémento Cervicalgies"
+  - "Mémento Dysphonie"
 type: memento-ecos-ssp
-ssp: "Cervicalgies"
-specialite: "Musculo-Squelettique"
+ssp: "Dysphonie"
+specialite: "ORL"
 cas: 1
 diagnostics: 1
-attendus_documentes_ailleurs: 1
-attendus_absents_du_corpus: 1
+attendus_documentes_ailleurs: 0
+attendus_absents_du_corpus: 0
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -81,74 +81,82 @@ cssclasses:
 > qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
 > rempli, lisez les libellés voisins ensemble.
 
-# Cervicalgies
+# Dysphonie
 
-*Musculo-Squelettique · 1 grille · 1 diagnostic documenté · 1 attendu documenté ailleurs · 1 attendu absent du corpus* — [[SSP — Cervicalgies]]
+*ORL · 1 grille · 1 diagnostic documenté* — [[SSP — Dysphonie]]
 
 > [!abstract] La seule grille de cette SSP
-> - **AZYGOS-18** — Radiculopathie cervicale C6 `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/9eb8cf72-3d4f-427a-82f1-d538d46c91d0.json>)
+> - **AZYGOS-24** — Suspicion de carcinome glottique `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/95e8b791-ccf9-4b76-aacc-cd67d1ed3ea9.json>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Question initiale sur l’évolution**
-> - [ ] **2. Degré de sévérité de l’évolution de la douleur**
-> - [ ] **3. Localisation et irradiation de la douleur**
-> - [ ] **4. Qualité de la douleur**
-> - [ ] **5. Facteurs déclenchants**
-> - [ ] **6. Mesures prises jusqu’ici**
-> - [ ] **7. Progression des symptômes neurologiques**
-> - [ ] **8. Trouble de la sensibilité – évolution**
-> - [ ] **9. Trouble de la sensibilité – localisation**
-> - [ ] **10. Symptômes moteurs**
-> - [ ] **11. Limitation fonctionnelle**
-> - [ ] **12. Trouble vésico-sphinctérien**
-> - [ ] **13. Trouble de la marche**
-> - [ ] **14. Symptômes bilatéraux**
-> - [ ] **15. Antécédents**
-> - [ ] **16. Opérations antérieures**
-> - [ ] **17. Médication actuelle**
-> - [ ] **18. Noxes**
-> - [ ] **19. Tabagisme**
-> - [ ] **20. Alcool**
-> - [ ] **21. Anamnèse familiale**
-> - [ ] **22. Profession / charge**
-> - [ ] **23. Situation de logement et au quotidien**
+> - [ ] **1. Question d’ouverture**
+> - [ ] **2. Dimension temporelle**
+> - [ ] **3. Début / durée**
+> - [ ] **4. Déclencheur**
+> - [ ] **5. Évolution**
+> - [ ] **6. Intensité / gravité**
+> - [ ] **7. Facteurs aggravants**
+> - [ ] **8. Facteurs soulageants**
+> - [ ] **9. Mesures prises jusqu’ici**
+> - [ ] **10. Retentissement des symptômes**
+> - [ ] **11. Symptômes associés**
+> - [ ] **12. Charge vocale**
+> - [ ] **13. Sensation de globe**
+> - [ ] **14. Troubles de la déglutition**
+> - [ ] **15. Dysphagie**
+> - [ ] **16. Odynophagie**
+> - [ ] **17. Fausses routes répétées**
+> - [ ] **18. Dyspnée**
+> - [ ] **19. Hémoptysie**
+> - [ ] **20. Otalgie**
+> - [ ] **21. Tuméfaction cervicale**
+> - [ ] **22. Symptômes généraux**
+> - [ ] **23. Symptômes B**
+> - [ ] **24. Reflux**
+> - [ ] **25. Goutte post-nasale**
+> - [ ] **26. Antécédents**
+> - [ ] **27. Anamnèse tumorale**
+> - [ ] **28. Antécédents chirurgicaux**
+> - [ ] **29. Médicaments**
+> - [ ] **30. Noxes**
+> - [ ] **31. Tabac**
+> - [ ] **32. Alcool**
+> - [ ] **33. Drogues**
+> - [ ] **34. Allergies**
+> - [ ] **35. Antécédents familiaux**
+> - [ ] **36. Profession**
+> - [ ] **37. Situation sociale**
 
 > [!tip] 🩺 Status
-> - [ ] **1. Inspection du rachis cervical**
-> - [ ] **2. Mobilité du rachis cervical évaluée**
-> - [ ] **3. Test de Spurling**
-> - [ ] **4. Motricité**
-> - [ ] **5. C5 Abduction de l’épaule, des deux côtés**
-> - [ ] **6. C6 Flexion du coude, des deux côtés**
-> - [ ] **7. C6 Extension du poignet, des deux côtés**
-> - [ ] **8. C7 Extension du coude, des deux côtés**
-> - [ ] **9. C8–Th1 Écartement des doigts et abduction de l’auriculaire**
-> - [ ] **10. Test de sensibilité selon les dermatomes**
-> - [ ] **11. C5**
-> - [ ] **12. C6 Sensibilité au niveau de l’avant-bras radial**
-> - [ ] **13. C6 Sensibilité au niveau du pouce et du bord radial de l’index**
-> - [ ] **14. C7**
-> - [ ] **15. C8**
-> - [ ] **16. Th1**
-> - [ ] **17. Réflexe bicipital (BSR) des deux côtés**
-> - [ ] **18. Réflexe brachioradial (BRR) des deux côtés**
-> - [ ] **19. Réflexe tricipital (TSR) des deux côtés**
-> - [ ] **20. Signes pyramidaux (Babinski) des deux côtés**
-> - [ ] **21. Démarche**
-> - [ ] **22. Anomalies bilatérales exclues**
+> - [ ] **1. Inspection**
+> - [ ] **2. Auscultation**
+> - [ ] **3. Larynx / trachée**
+> - [ ] **4. Poumons**
+> - [ ] **5. Cavité buccale / vestibule**
+> - [ ] **6. Oropharynx**
+> - [ ] **7. Nerfs crâniens**
+> - [ ] **8. Glossopharyngien / vague (IX, X)**
+> - [ ] **9. Hypoglosse (XII)**
+> - [ ] **10. Palpation**
+> - [ ] **11. Plancher buccal / base de la langue**
+> - [ ] **12. Réalisation de la laryngoscopie au miroir**
+> - [ ] **13. Information du patient et positionnement**
+> - [ ] **14. Lampe frontale**
+> - [ ] **15. Chauffer le miroir**
+> - [ ] **16. Saisir la langue**
+> - [ ] **17. Introduire le miroir**
+> - [ ] **18. Test de phonation**
+> - [ ] **19. Résultat de la laryngoscopie**
+> - [ ] **20. Ganglions lymphatiques**
+> - [ ] **21. Thyroïde**
+> - [ ] **22. Larynx**
 
-> [!success] 💊 Management — si Cervicalgie
-> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
-
-> [!success] 💊 Management — si Hernie discale
-> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Lombalgies]] (2 grilles) · [[Mémento — Neuropathie Périphérique]] (1 grille).
-
-> [!success] 💊 Management — si Radiculopathie cervicale C6
-> - [ ] **1. Diagnostic de travail**
-> - [ ] **2. Progression neurologique**
-> - [ ] **3. Degré d’urgence**
-> - [ ] **4. Information sur le diagnostic de travail**
-> - [ ] **5. Analgésie de soutien**
-> - [ ] **6. IRM du rachis cervical**
-> - [ ] **7. Orientation neurochirurgicale**
+> [!success] 💊 Management — si Suspicion de carcinome glottique
+> - [ ] **1. Diagnostic présumé**
+> - [ ] **2. Classement DD**
+> - [ ] **3. Orientation en clinique ORL**
+> - [ ] **4. Examens complémentaires**
+> - [ ] **5. Vidéolaryngoscopie**
+> - [ ] **6. Biopsie**
+> - [ ] **7. Arrêt du tabac**
 > - [ ] **8. Filet de sécurité**

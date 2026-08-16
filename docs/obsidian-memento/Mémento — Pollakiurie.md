@@ -1,13 +1,13 @@
 ---
 aliases:
-  - "Mémento Cervicalgies"
+  - "Mémento Pollakiurie"
 type: memento-ecos-ssp
-ssp: "Cervicalgies"
-specialite: "Musculo-Squelettique"
+ssp: "Pollakiurie"
+specialite: "Néphro-Urologie"
 cas: 1
 diagnostics: 1
-attendus_documentes_ailleurs: 1
-attendus_absents_du_corpus: 1
+attendus_documentes_ailleurs: 0
+attendus_absents_du_corpus: 0
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -81,74 +81,106 @@ cssclasses:
 > qu'elle l'écrit autrement. Tant que le vocabulaire canonique n'est pas
 > rempli, lisez les libellés voisins ensemble.
 
-# Cervicalgies
+# Pollakiurie
 
-*Musculo-Squelettique · 1 grille · 1 diagnostic documenté · 1 attendu documenté ailleurs · 1 attendu absent du corpus* — [[SSP — Cervicalgies]]
+*Néphro-Urologie · 1 grille · 1 diagnostic documenté* — [[SSP — Pollakiurie]]
 
 > [!abstract] La seule grille de cette SSP
-> - **AZYGOS-18** — Radiculopathie cervicale C6 `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/9eb8cf72-3d4f-427a-82f1-d538d46c91d0.json>)
+> - **German-71** — Diabète de type 2 `corrige` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-71_-_Pollakiurie_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
-> - [ ] **1. Question initiale sur l’évolution**
-> - [ ] **2. Degré de sévérité de l’évolution de la douleur**
-> - [ ] **3. Localisation et irradiation de la douleur**
-> - [ ] **4. Qualité de la douleur**
-> - [ ] **5. Facteurs déclenchants**
-> - [ ] **6. Mesures prises jusqu’ici**
-> - [ ] **7. Progression des symptômes neurologiques**
-> - [ ] **8. Trouble de la sensibilité – évolution**
-> - [ ] **9. Trouble de la sensibilité – localisation**
-> - [ ] **10. Symptômes moteurs**
-> - [ ] **11. Limitation fonctionnelle**
-> - [ ] **12. Trouble vésico-sphinctérien**
-> - [ ] **13. Trouble de la marche**
-> - [ ] **14. Symptômes bilatéraux**
-> - [ ] **15. Antécédents**
-> - [ ] **16. Opérations antérieures**
-> - [ ] **17. Médication actuelle**
-> - [ ] **18. Noxes**
-> - [ ] **19. Tabagisme**
-> - [ ] **20. Alcool**
-> - [ ] **21. Anamnèse familiale**
-> - [ ] **22. Profession / charge**
-> - [ ] **23. Situation de logement et au quotidien**
+> - [ ] **1. Présentation du médecin**
+> 	- [ ] Se présenter avec nom, fonction et tâche
+> - [ ] **2. Problème actuel**
+> 	- [ ] Identifier le motif de consultation
+> - [ ] **3. Caractérisation des symptômes urinaires**
+> 	- [ ] Urgence mictionnelle
+> 	- [ ] Dysurie
+> 	- [ ] Couleur de l'urine
+> 	- [ ] Début précis des symptômes
+> - [ ] **4. Polydipsie et appétit**
+> 	- [ ] Habitudes de boisson
+> 	- [ ] Appétit
+> - [ ] **5. Évolution du poids**
+> - [ ] **6. Autres symptômes urogénitaux**
+> 	- [ ] Incontinence
+> 	- [ ] Troubles de l'érection
+> - [ ] **7. Symptômes généraux**
+> 	- [ ] Vertiges
+> 	- [ ] Douleurs
+> 	- [ ] Douleur thoracique/angine de poitrine
+> - [ ] **8. Symptômes neurologiques**
+> 	- [ ] Troubles sensitifs
+> 	- [ ] Engourdissement des mains ou des pieds
+> - [ ] **9. Antécédents médicaux personnels**
+> 	- [ ] Maladies antérieures
+> 	- [ ] Hospitalisations
+> 	- [ ] Chirurgies
+> - [ ] **10. Mode de vie et habitudes**
+> 	- [ ] Habitudes alimentaires
+> 	- [ ] Activités sportives
+> 	- [ ] Loisirs
+> - [ ] **11. Substances et médicaments**
+> 	- [ ] Tabac
+> 	- [ ] Alcool
+> 	- [ ] Drogues
+> 	- [ ] Médicaments actuels
+> - [ ] **12. Anamnèse familiale**
+> 	- [ ] Diabète sucré
+> 	- [ ] Maladies cardiovasculaires
+> 	- [ ] Autres maladies héréditaires
+> - [ ] **13. Anamnèse sociale**
+> 	- [ ] Situation professionnelle
+> 	- [ ] Situation familiale
 
 > [!tip] 🩺 Status
-> - [ ] **1. Inspection du rachis cervical**
-> - [ ] **2. Mobilité du rachis cervical évaluée**
-> - [ ] **3. Test de Spurling**
-> - [ ] **4. Motricité**
-> - [ ] **5. C5 Abduction de l’épaule, des deux côtés**
-> - [ ] **6. C6 Flexion du coude, des deux côtés**
-> - [ ] **7. C6 Extension du poignet, des deux côtés**
-> - [ ] **8. C7 Extension du coude, des deux côtés**
-> - [ ] **9. C8–Th1 Écartement des doigts et abduction de l’auriculaire**
-> - [ ] **10. Test de sensibilité selon les dermatomes**
-> - [ ] **11. C5**
-> - [ ] **12. C6 Sensibilité au niveau de l’avant-bras radial**
-> - [ ] **13. C6 Sensibilité au niveau du pouce et du bord radial de l’index**
-> - [ ] **14. C7**
-> - [ ] **15. C8**
-> - [ ] **16. Th1**
-> - [ ] **17. Réflexe bicipital (BSR) des deux côtés**
-> - [ ] **18. Réflexe brachioradial (BRR) des deux côtés**
-> - [ ] **19. Réflexe tricipital (TSR) des deux côtés**
-> - [ ] **20. Signes pyramidaux (Babinski) des deux côtés**
-> - [ ] **21. Démarche**
-> - [ ] **22. Anomalies bilatérales exclues**
+> - [ ] **1. Examen cardiovasculaire**
+> 	- [ ] Auscultation cardiaque
+> 	- [ ] Recherche de souffles
+> 	- [ ] Rythme et fréquence
+> - [ ] **2. Examen pulmonaire**
+> 	- [ ] Auscultation pulmonaire
+> 	- [ ] Recherche de râles
+> 	- [ ] Symétrie auscultatoire
+> - [ ] **3. Examen ophtalmologique**
+> 	- [ ] Fond d'œil
+> 	- [ ] Recherche de rétinopathie diabétique
+> - [ ] **4. Examen vasculaire périphérique**
+> 	- [ ] Palpation des pouls périphériques
+> 	- [ ] Recherche de signes d'artériopathie
+> - [ ] **5. Examen neurologique**
+> 	- [ ] Test de la sensibilité
+> 	- [ ] Sens vibratoire au diapason
+> 	- [ ] Test au monofilament
+> 	- [ ] Réflexes ostéo-tendineux
+> - [ ] **6. Mesure de la tension artérielle**
+> 	- [ ] Prise de tension
 
-> [!success] 💊 Management — si Cervicalgie
-> *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
-
-> [!success] 💊 Management — si Hernie discale
-> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Lombalgies]] (2 grilles) · [[Mémento — Neuropathie Périphérique]] (1 grille).
-
-> [!success] 💊 Management — si Radiculopathie cervicale C6
-> - [ ] **1. Diagnostic de travail**
-> - [ ] **2. Progression neurologique**
-> - [ ] **3. Degré d’urgence**
-> - [ ] **4. Information sur le diagnostic de travail**
-> - [ ] **5. Analgésie de soutien**
-> - [ ] **6. IRM du rachis cervical**
-> - [ ] **7. Orientation neurochirurgicale**
-> - [ ] **8. Filet de sécurité**
+> [!success] 💊 Management — si Diabète de type 2
+> - [ ] **1. Diagnostic principal suspecté**
+> 	- [ ] Diabète sucré de type 2
+> - [ ] **2. Diagnostics différentiels**
+> - [ ] **3. Examens complémentaires - Biologie**
+> 	- [ ] Formule sanguine complète (FSC)
+> 	- [ ] Glycémie à jeun
+> 	- [ ] CRP
+> 	- [ ] Nouvelle glycémie à jeun le lendemain
+> - [ ] **4. Examens complémentaires - Analyses urinaires**
+> 	- [ ] Recherche de corps cétoniques
+> 	- [ ] Recherche de glucose
+> 	- [ ] Recherche de signes d'infection
+> 	- [ ] Bandelette urinaire complète
+> - [ ] **5. Prise en charge thérapeutique**
+> 	- [ ] Changement de régime alimentaire
+> 	- [ ] Contrôle du poids
+> 	- [ ] Si échec : antidiabétiques oraux
+> 	- [ ] Contrôle de la tension artérielle
+> - [ ] **6. Gestion des complications potentielles**
+> 	- [ ] Évaluer la nécessité d'un transfert hospitalier
+> 	- [ ] Suspicion de coma diabétique
+> 	- [ ] Organiser le transfert si nécessaire
+> - [ ] **7. Suivi et accompagnement**
+> 	- [ ] Rassurer le patient
+> 	- [ ] Planifier des consultations régulières
+> 	- [ ] Proposer un soutien continu
+> 	- [ ] Éducation thérapeutique

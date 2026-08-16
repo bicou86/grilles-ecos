@@ -276,7 +276,7 @@ cssclasses:
 > 	- [ ] Motricité distale
 
 > [!success] 💊 Management — si Arthrite septique
-> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : « Boiterie de l'Enfant » (2 grilles, hors lot).
+> *Aucune grille de cette SSP ne documente ce diagnostic* — mais le corpus le documente ailleurs : [[Mémento — Boiterie de l'Enfant]] (2 grilles).
 
 > [!success] 💊 Management — si Déchirure méniscale / ligamentaire
 > - [ ] **1. Radiographie du genou *(1 grille sur 2)***
