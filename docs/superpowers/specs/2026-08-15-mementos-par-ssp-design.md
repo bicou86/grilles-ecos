@@ -101,7 +101,10 @@ dans le mapping ; les 39 autres — dont les 9 officielles, ajoutées après la 
 devront l'être à l'étape 1, sans quoi elles n'apparaîtront dans aucun mémento.
 
 `usmle` (44) et `triage` (40) sont **reportés de la même façon** : ils figurent au mapping
-SSP mais hors de la demande initiale. Décision prise le 2026-08-15.
+SSP mais hors de la demande initiale. Décision prise le 2026-08-15, **confirmée le
+2026-08-16** à l'ouverture du lot 2 : les quatre corpus reportés totalisent 414 grilles,
+soit plus que les 252 traitées, et aucune n'a été relue ni pour son rattachement SSP ni
+pour son diagnostic.
 
 **Livraison en deux lots.** Le lot 1 ne traite que les SSP portant un diagnostic
 « incontournable » ou « probable » de l'analyse de récurrence 2011-2025
@@ -128,8 +131,9 @@ l'extracteur écrit pour les 9 grilles officielles s'y applique sans modificatio
 
 **AZYGOS fait exception et demande une autre source.** Ses grilles HTML aplatissent le
 label court et le paragraphe didactique dans un même `detail-text` de 100 à 250 mots, ce
-qui les rend inexploitables telles quelles. Les 49 fichiers de `.azygos-extraction/*.json`
-gardent la séparation :
+qui les rend inexploitables telles quelles. Les 49 fichiers JSON — bruts dans
+`.azygos-extraction/`, versionnés et projetés dans `docs/azygos-grilles/` depuis le
+2026-08-16, cf. « Risques et limites » — gardent la séparation :
 
 ```
 onglets → { "Anamnèse": [ {groupe, items: [{label, valeurs}]} ], … }
@@ -278,9 +282,16 @@ la seule qui doive tenir sur les 257 grilles avant qu'on aille plus loin.
 - **Le vocabulaire canonique est un travail sans fin naturelle.** Le critère d'arrêt
   retenu est fonctionnel : on cure tant que le mémento d'une SSP contient des doublons
   visibles, pas au-delà.
-- **AZYGOS dépend d'un dossier non versionné.** `.azygos-extraction/` n'est pas dans git.
-  Si les mémentos AZYGOS en dépendent, ce dossier doit être versionné ou son contenu
-  utile recopié dans le dépôt.
+- ~~**AZYGOS dépend d'un dossier non versionné.**~~ **Levé le 2026-08-16.** La branche
+  « recopier le contenu utile » a été retenue contre `git add -f` : les 49 fichiers bruts
+  portent 43 URL Supabase signées dont la query-string contient un JWT, et une
+  ré-extraction en produit de nouvelles à chaque fois. `docs/azygos-grilles/` (0,29 Mo)
+  ne garde que `meta` et, par onglet, le nom de groupe et le `label` de chaque item —
+  exactement ce que `lire_azygos()` et `classifie_onglets()` lisent. Tous les noms
+  d'onglet sont conservés, y compris les exclus, sans quoi le garde-fou des onglets
+  inconnus n'aurait plus rien à examiner. `fige_azygos.py` prouve la fidélité en
+  comparant le cas pivot des deux côtés ; `check_azygos.py` rejoue la comparaison quand
+  le brut est présent et **dit** qu'il ne l'a pas faite quand il est absent.
 
 ## Décisions prises
 
@@ -294,3 +305,26 @@ la seule qui doive tenir sur les 257 grilles avant qu'on aille plus loin.
 - La table des priorités est **écrite et maintenue à la main** ; son `ssp` peut nommer une
   page SSP qui n'existe pas encore, à créer pour les plaintes fréquentes à l'ECOS.
 - `rescos-locales` et `casecos` **reportés**, pas abandonnés.
+- **Le lot 2 est ouvert (2026-08-16), en une seule fois.** Les 88 SSP reçoivent un
+  mémento — 56 s'ajoutent aux 32 du lot 1, pour 252 grilles. Le découpage en tranches a
+  été écarté sur un chiffre : des 56 SSP du lot 2, **23 ne portent qu'une seule grille**
+  et n'ont donc rien à fusionner, et 23 des 33 restantes n'en portent que deux. Générer
+  est gratuit et sans risque (aucune fusion à juger) ; c'est la **curation** qui coûte, et
+  elle se découpe toute seule par le rapport de doublons.
+- **`usmle` (44 grilles) et `triage` (40) restent hors périmètre**, comme
+  `rescos-locales` (132) et `casecos` (198). Décision confirmée le 2026-08-16 : la chaîne
+  a fait ses preuves sur 252 grilles, mais les quatre corpus doubleraient le corpus
+  (+414 grilles) sans qu'aucune ait été relue pour son rattachement SSP ni pour son
+  diagnostic. Ils entreront par un lot dédié, avec leur propre relecture.
+- **La curation du lot 2 n'ouvre aucune famille de synonymes nouvelle.** Elle applique
+  aux SSP qui entrent en périmètre les 25 familles propageables déjà adjugées en tâche 10,
+  chacune restant jugée séparément par les neuf propriétés de `check_vocabulaire`. Motif :
+  une famille nouvelle est un jugement clinique neuf, non relu ; une famille déjà adjugée
+  est un jugement déjà rendu et déjà relu. Trois familles sont déclarées **non
+  propageables** parce que la tâche 10 les avait acceptées pour une raison locale à HTA.
+- **Le défaut par défaut de `build_memento.py` est le lot complet.** `nettoyer()` efface
+  tous les mémentos avant de réécrire ceux du lot demandé : le dépôt commitant les 88, un
+  appel sans argument sous l'ancien défaut en supprimait 56 en silence. Le lot 1 reste
+  accessible par `--lot prioritaire`, et `mesure_couche_b.py` accepte le même drapeau —
+  c'est le seul moyen de **rejouer** l'instrument sur un état dont on connaît déjà la
+  réponse (2 743 / 1 480 / 1 579 sur 2 297, tâche 10).
