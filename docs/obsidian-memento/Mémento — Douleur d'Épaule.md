@@ -253,7 +253,10 @@ cssclasses:
 > 	- [ ] Test de l'arc douloureux
 > 	- [ ] Test de Neer
 > 	- [ ] Test de Jobe
-> - [ ] **4. Inspection *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
+> - [ ] **4. Inspection bras D *(Fracture du membre supérieur (humérus, tête radiale) · Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
+> 	- [ ] Importante tuméfaction avec déformation du tiers inférieur au niveau de l'humérus droit *(1 grille sur 5)*
+> 	- [ ] Peau intacte *(1 grille sur 5)*
+> 	- [ ] Pas de lésion cutanée *(1 grille sur 5)*
 > - [ ] **5. Palpation *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **6. Structures osseuses *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **7. Espace sous-acromial *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
@@ -328,20 +331,16 @@ cssclasses:
 > 	- [ ] Force musculaire
 > 	- [ ] Réflexes
 > 	- [ ] Pouls périphériques
-> - [ ] **48. Inspection bras D *(Fracture du membre supérieur (humérus, tête radiale))***
-> 	- [ ] Importante tuméfaction avec déformation du tiers inférieur au niveau de l'humérus droit *(1 grille sur 5)*
-> 	- [ ] Peau intacte *(1 grille sur 5)*
-> 	- [ ] Pas de lésion cutanée *(1 grille sur 5)*
-> - [ ] **49. Contrôle neurologique et vasculaire distal à la lésion du MSD *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **48. Contrôle neurologique et vasculaire distal à la lésion du MSD *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Les deux *(1 grille sur 5)*
 > 	- [ ] Un *(1 grille sur 5)*
 > 	- [ ] Aucun *(1 grille sur 5)*
-> - [ ] **50. Vérifie motricité de la main et des doigts du MSD *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **49. Vérifie motricité de la main et des doigts du MSD *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Les deux *(1 grille sur 5)*
 > 	- [ ] Un *(1 grille sur 5)*
 > 	- [ ] Aucun *(1 grille sur 5)*
-> - [ ] **51. Examen pour d'autres lésions de la peau *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **52. Examen sommaire corps *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **50. Examen pour d'autres lésions de la peau *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **51. Examen sommaire corps *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Abdomen
 > 	- [ ] Thorax
 > 	- [ ] Bassin
@@ -351,7 +350,7 @@ cssclasses:
 > 	- [ ] Visage *(1 grille sur 5)*
 > 	- [ ] Cavité buccale *(1 grille sur 5)*
 > 	- [ ] Dents *(1 grille sur 5)*
-> - [ ] **53. Envisage de faire des photos pour la documentation *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **52. Envisage de faire des photos pour la documentation *(Fracture du membre supérieur (humérus, tête radiale))***
 
 > [!success] 💊 Management — si Fracture du membre supérieur (humérus, tête radiale)
 > - [ ] **1. Hypothèses diagnostiques**

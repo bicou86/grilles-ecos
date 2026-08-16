@@ -216,16 +216,27 @@ cssclasses:
 > - [ ] **1. Signes vitaux *(1 grille sur 3)***
 > 	- [ ] TA droite 152/88 mmHg
 > 	- [ ] TA gauche 150/86 mmHg
-> - [ ] **2. Inspection des membres inférieurs *(1 grille sur 3)***
-> 	- [ ] Téguments, ongles et pilosité
-> 	- [ ] Symétrie
-> 	- [ ] Coloration cutanée
-> 	- [ ] Température
-> - [ ] **3. Palpation des pouls périphériques *(1 grille sur 3)***
-> 	- [ ] Artères fémorales
-> 	- [ ] Artères poplitées
-> 	- [ ] Artères tibiales postérieures
-> 	- [ ] Artères pédieuses
+> - [ ] **2. Inspection et palpation membre inférieur gauche *(2 grilles sur 3)***
+> 	- [ ] Téguments, ongles et pilosité *(1 grille sur 3)*
+> 	- [ ] Symétrie *(1 grille sur 3)*
+> 	- [ ] Coloration cutanée *(1 grille sur 3)*
+> 	- [ ] Température *(1 grille sur 3)*
+> 	- [ ] Œdème unilatéral *(Embolie pulmonaire)*
+> 	- [ ] Rougeur *(Embolie pulmonaire)*
+> 	- [ ] Chaleur locale *(Embolie pulmonaire)*
+> 	- [ ] Douleur à la palpation du mollet *(Embolie pulmonaire)*
+> 	- [ ] Cyanose déclive *(Embolie pulmonaire)*
+> - [ ] **3. Palpation des pouls périphériques - membres inférieurs *(AOMI)***
+> 	- [ ] Artères fémorales *(1 grille sur 3)*
+> 	- [ ] Artères poplitées *(1 grille sur 3)*
+> 	- [ ] Artères tibiales postérieures *(1 grille sur 3)*
+> 	- [ ] Artères pédieuses *(1 grille sur 3)*
+> 	- [ ] Aorte abdominale *(1 grille sur 3)*
+> 	- [ ] Pouls fémoral *(1 grille sur 3)*
+> 	- [ ] Pouls poplité *(1 grille sur 3)*
+> 	- [ ] Pouls pédieux *(1 grille sur 3)*
+> 	- [ ] Pouls tibial postérieur *(1 grille sur 3)*
+> 	- [ ] Comparaison droite/gauche systématique *(1 grille sur 3)*
 > - [ ] **4. Auscultation vasculaire *(AOMI)***
 > 	- [ ] Souffle inguinal gauche *(1 grille sur 3)*
 > 	- [ ] Râpeux et irradiant jusqu'à mi-cuisse *(1 grille sur 3)*
@@ -255,14 +266,7 @@ cssclasses:
 > 	- [ ] Pouls radial
 > 	- [ ] Pouls ulnaire
 > 	- [ ] Test d'Allen
-> - [ ] **9. Palpation des pouls périphériques - membres inférieurs *(1 grille sur 3)***
-> 	- [ ] Aorte abdominale
-> 	- [ ] Pouls fémoral
-> 	- [ ] Pouls poplité
-> 	- [ ] Pouls pédieux
-> 	- [ ] Pouls tibial postérieur
-> 	- [ ] Comparaison droite/gauche systématique
-> - [ ] **10. Prise de tension artérielle selon recommandations OMS *(1 grille sur 3)***
+> - [ ] **9. Prise de tension artérielle selon recommandations OMS *(1 grille sur 3)***
 > 	- [ ] Position assise, bras horizontal
 > 	- [ ] Palpation pouls brachial
 > 	- [ ] Placement brassard
@@ -270,43 +274,37 @@ cssclasses:
 > 	- [ ] Dégonflage lent
 > 	- [ ] Mesure systolique/diastolique
 > 	- [ ] Mesure aux deux bras
-> - [ ] **11. Évaluation de la sévérité - Classification Leriche-Fontaine *(1 grille sur 3)***
+> - [ ] **10. Évaluation de la sévérité - Classification Leriche-Fontaine *(1 grille sur 3)***
 > 	- [ ] Stade 1
 > 	- [ ] Stade 2
 > 	- [ ] Stade 3
 > 	- [ ] Stade 4
 > 	- [ ] Classification correcte du patient
-> - [ ] **12. Recherche des 5P de l'insuffisance artérielle aiguë *(1 grille sur 3)***
+> - [ ] **11. Recherche des 5P de l'insuffisance artérielle aiguë *(1 grille sur 3)***
 > 	- [ ] Pain
 > 	- [ ] Pulselessness
 > 	- [ ] Pallor
 > 	- [ ] Paresthesia
 > 	- [ ] Paresis
-> - [ ] **13. Examen physique général *(Embolie pulmonaire)***
+> - [ ] **12. Examen physique général *(Embolie pulmonaire)***
 > 	- [ ] État général conservé
 > 	- [ ] Pas de cyanose
 > 	- [ ] Dyspnée modérée en parlant
-> - [ ] **14. Mesure des périmètres des membres inférieurs *(Embolie pulmonaire)***
+> - [ ] **13. Mesure des périmètres des membres inférieurs *(Embolie pulmonaire)***
 > 	- [ ] Cheville gauche > droite
 > 	- [ ] Mollet gauche > droit
 > 	- [ ] Cuisse gauche > droite
-> - [ ] **15. Inspection et palpation membre inférieur gauche *(Embolie pulmonaire)***
-> 	- [ ] Œdème unilatéral
-> 	- [ ] Rougeur
-> 	- [ ] Chaleur locale
-> 	- [ ] Douleur à la palpation du mollet
-> 	- [ ] Cyanose déclive
-> - [ ] **16. Signes cliniques spécifiques de TVP *(Embolie pulmonaire)***
+> - [ ] **14. Signes cliniques spécifiques de TVP *(Embolie pulmonaire)***
 > 	- [ ] Signe de Homans
 > 	- [ ] Ballant du mollet
 > 	- [ ] Turgescence veines superficielles
 > 	- [ ] Circulation collatérale visible
-> - [ ] **17. Auscultation pulmonaire *(Embolie pulmonaire)***
+> - [ ] **15. Auscultation pulmonaire *(Embolie pulmonaire)***
 > 	- [ ] Frottement pleural
 > 	- [ ] Épanchement pleural
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Pas de râles
-> - [ ] **18. Examen cardiovasculaire *(Embolie pulmonaire)***
+> - [ ] **16. Examen cardiovasculaire *(Embolie pulmonaire)***
 > 	- [ ] Tachycardie
 > 	- [ ] Tachyarythmie
 > 	- [ ] Éclat B2 pulmonaire

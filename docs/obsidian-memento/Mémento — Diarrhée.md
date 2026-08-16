@@ -395,9 +395,15 @@ cssclasses:
 > 	- [ ] Palpation de la thyroïde
 > 	- [ ] Recherche de nodules
 > - [ ] **11. Auscultation cardiopulmonaire *(Diarrhée chronique par malabsorption)***
-> - [ ] **12. Palpation vésicale *(Déshydratation)***
-> 	- [ ] Globe vésical
-> 	- [ ] Douleur sus-pubienne
+> - [ ] **12. Palpation superficielle *(Cancer colorectal · Déshydratation)***
+> 	- [ ] Globe vésical *(Déshydratation)*
+> 	- [ ] Douleur sus-pubienne *(Déshydratation)*
+> 	- [ ] Main à plat, doigts serrés *(Cancer colorectal)*
+> 	- [ ] Tonus pariétal spontané et en réponse *(Cancer colorectal)*
+> 	- [ ] Douleur localisée *(Cancer colorectal)*
+> 	- [ ] Défense ou contracture *(Cancer colorectal)*
+> 	- [ ] Extension *(Cancer colorectal)*
+> 	- [ ] Douleur à l'ébranlement *(Cancer colorectal)*
 > - [ ] **13. Examen rénal *(Déshydratation)***
 > 	- [ ] Palpation des fosses lombaires
 > 	- [ ] Recherche de douleur à l'ébranlement
@@ -450,21 +456,14 @@ cssclasses:
 > 	- [ ] Distension gazeuse
 > 	- [ ] Matité
 > 	- [ ] Mesure de la taille du foie, de la rate
-> - [ ] **24. Palpation superficielle *(Cancer colorectal)***
-> 	- [ ] Main à plat, doigts serrés
-> 	- [ ] Tonus pariétal spontané et en réponse
-> 	- [ ] Douleur localisée
-> 	- [ ] Défense ou contracture
-> 	- [ ] Extension
-> 	- [ ] Douleur à l'ébranlement
-> - [ ] **25. Palpation profonde *(Cancer colorectal)***
+> - [ ] **24. Palpation profonde *(Cancer colorectal)***
 > 	- [ ] Recherche masse abdominale
 > 	- [ ] Mobilité de la masse
 > 	- [ ] Pulsations
 > 	- [ ] Aorte
 > 	- [ ] Taille des organes
 > 	- [ ] Points douloureux spécifiques
-> - [ ] **26. Palpation spécifique du côlon *(Cancer colorectal)***
+> - [ ] **25. Palpation spécifique du côlon *(Cancer colorectal)***
 > 	- [ ] Cadre colique
 > 	- [ ] Sigmoïde
 > 	- [ ] Cordon induré douloureux

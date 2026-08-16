@@ -356,7 +356,10 @@ cssclasses:
 > - [ ] **30. Motilité *(Décollement de rétine)***
 > - [ ] **31. Segments externes de l'œil *(Décollement de rétine)***
 > - [ ] **32. Vitré antérieur *(Décollement de rétine)***
-> - [ ] **33. Fond d'œil droit *(Décollement de rétine)***
+> - [ ] **33. Fond d'œil droit *(Cataracte · Décollement de rétine)***
+> 	- [ ] Visualisation *(Cataracte)*
+> 	- [ ] Ce qui est visible *(Cataracte)*
+> 	- [ ] Exclusion de pathologie rétinienne évidente *(Cataracte)*
 > - [ ] **34. Fond d'œil gauche *(Décollement de rétine)***
 > - [ ] **35. Examen des annexes et segment antérieur *(Cataracte)***
 > 	- [ ] Paupières
@@ -378,39 +381,35 @@ cssclasses:
 > - [ ] **39. Tonus oculaire *(Cataracte)***
 > 	- [ ] Palpation bidigitale
 > 	- [ ] Mesure si disponible
-> - [ ] **40. Fond d'œil *(Cataracte)***
-> 	- [ ] Visualisation
-> 	- [ ] Ce qui est visible
-> 	- [ ] Exclusion de pathologie rétinienne évidente
-> - [ ] **41. Ophtalmologique - observation *(Horton (artérite à cellules géantes))***
+> - [ ] **40. Ophtalmologique - observation *(Horton (artérite à cellules géantes))***
 > 	- [ ] Sclère
 > 	- [ ] Paupière
-> - [ ] **42. Ophtalmologique - acuité visuelle *(Horton (artérite à cellules géantes))***
+> - [ ] **41. Ophtalmologique - acuité visuelle *(Horton (artérite à cellules géantes))***
 > 	- [ ] Œil droit
 > 	- [ ] Œil gauche
-> - [ ] **43. Ophtalmologique - fond d'œil *(Horton (artérite à cellules géantes))***
-> - [ ] **44. Neuro-ophtalmologique *(Horton (artérite à cellules géantes))***
+> - [ ] **42. Ophtalmologique - fond d'œil *(Horton (artérite à cellules géantes))***
+> - [ ] **43. Neuro-ophtalmologique *(Horton (artérite à cellules géantes))***
 > 	- [ ] Champs visuels
 > 	- [ ] Poursuite oculaire / oculomotricité
-> - [ ] **45. Neuro-ophtalmologique - réflexes pupillaires *(Horton (artérite à cellules géantes))***
+> - [ ] **44. Neuro-ophtalmologique - réflexes pupillaires *(Horton (artérite à cellules géantes))***
 > 	- [ ] Direct
 > 	- [ ] Croisé
-> - [ ] **46. Neurologique - orientation aux 4 modes *(Horton (artérite à cellules géantes))***
+> - [ ] **45. Neurologique - orientation aux 4 modes *(Horton (artérite à cellules géantes))***
 > 	- [ ] Temps
 > 	- [ ] Localisation
 > 	- [ ] Personne
 > 	- [ ] Situation
-> - [ ] **47. Neurologique - motricité & sensibilité grossière *(Horton (artérite à cellules géantes))***
+> - [ ] **46. Neurologique - motricité & sensibilité grossière *(Horton (artérite à cellules géantes))***
 > 	- [ ] Motricité
 > 	- [ ] Sensibilité
-> - [ ] **48. DD AVC - Test de Cincinnati (Stroke Scale) *(Horton (artérite à cellules géantes))***
+> - [ ] **47. DD AVC - Test de Cincinnati (Stroke Scale) *(Horton (artérite à cellules géantes))***
 > 	- [ ] Motricité de la face (NC VII)
 > 	- [ ] Épreuve des bras tendus
 > 	- [ ] Répétition d'une phrase
-> - [ ] **49. DD artérite de Horton *(Horton (artérite à cellules géantes))***
+> - [ ] **48. DD artérite de Horton *(Horton (artérite à cellules géantes))***
 > 	- [ ] Percussion de l'artère temporale
 > 	- [ ] Palpation de la mâchoire
-> - [ ] **50. Cardiaque *(Horton (artérite à cellules géantes))***
+> - [ ] **49. Cardiaque *(Horton (artérite à cellules géantes))***
 > 	- [ ] Auscultation des 4 foyers
 > 	- [ ] Auscultation des carotides des deux côtés
 
