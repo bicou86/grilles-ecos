@@ -12,13 +12,24 @@ personnel. Vérifier que c'est toujours le cas avant toute reconstruction.
 
 ```
 navigateur authentifié
-   └─ extract.js  ───────────────►  .azygos-extraction/<uuid>.json
+   └─ extract.js  ───────────────►  .azygos-extraction/<uuid>.json   (NON versionné)
                                          │
                      build_grid.py ◄─────┤  (+ téléchargement des images)
+                                         │  │
+                                         │  └─►  cases/azygos/AZYGOS-N_-_….html
+                                         │       cases/img/azygos/*.jpg
                                          │
-                            cases/azygos/AZYGOS-N_-_….html
-                            cases/img/azygos/*.jpg
+                  fige_azygos.py ◄───────┘
+                        └─────────────►  docs/azygos-grilles/<uuid>.json  (VERSIONNÉ)
+                                              └─► chaîne des mémentos
 ```
+
+**Deux consommateurs, deux sources, et l'étape 6 est obligatoire.**
+`scripts/azygos/` lit l'extraction brute, parce qu'il a besoin des images. La
+chaîne des mémentos (`scripts/memento/`) lit `docs/azygos-grilles/`, le miroir
+versionné : le dépôt ne doit pas dépendre d'un dossier que `.gitignore` exclut.
+Une ré-extraction qui oublie l'étape 6 laisse les deux sources divergentes —
+`check_azygos.py` le détecte, mais **seulement sur une machine qui a les deux**.
 
 ## 1. Session authentifiée
 
@@ -194,6 +205,23 @@ python3 scripts/azygos/inject_index.py     # onglet, styles, cartes, JS
 `inject_index.py` est idempotent : le bloc HTML est délimité par
 `<!-- azygos:début -->` / `<!-- azygos:fin -->` et remplacé à chaque exécution ;
 les trois ajouts JavaScript sont gardés par un test de présence.
+
+## 7. Rafraîchir la source versionnée des mémentos
+
+**Obligatoire après toute ré-extraction**, sans quoi les mémentos continuent de
+se construire sur l'ancien contenu :
+
+```
+python3 scripts/memento/fige_azygos.py     # → docs/azygos-grilles/<uuid>.json
+python3 scripts/memento/check_azygos.py    # fidélité brut ↔ miroir
+python3 scripts/memento/build_memento.py   # les 88 mémentos
+```
+
+`fige_azygos.py` ne recopie pas le JSON brut : il en **projette** `meta` et,
+par onglet, le nom de groupe et le `label` de chaque item — tout ce que
+`lire_azygos()` lit, et rien d'autre. Sont laissés dehors les URL signées
+(elles portent un JWT, qu'on ne commite pas, et qui change à chaque
+extraction), les pavés didactiques, et les `valeurs` — les réponses du patient.
 
 ## Interdits
 

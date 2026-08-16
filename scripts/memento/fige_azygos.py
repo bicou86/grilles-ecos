@@ -21,7 +21,20 @@ ce que `lire_azygos()` et `classifie_onglets()` lisent. Sont laisses au brut :
   - `infos` — les paves didactiques d'AZYGOS, que `lire_azygos` ne reprend
     deja pas (docstring de `lire_azygos`), et dont le miroir n'a que faire ;
   - `valeurs` des items — les reponses du·de la patient·e, pas des criteres ;
-  - `ordre`, `nbInfos` — de l'affichage.
+  - `ordre`, `nbInfos` — de l'affichage ;
+  - `nbEnfants` et `cle` des items — VOIR CI-DESSOUS, c'est le seul abandon
+    qui ferme une porte.
+
+CE QUE LA PROJECTION FERME, ET QUI EST UNE DECISION, PAS UN OUBLI. `nbEnfants`
+est le seul indice de hierarchie parent/enfant du corpus AZYGOS. `lire_azygos()`
+ne s'en sert deja pas — son docstring explique pourquoi : le compteur DEBORDE
+du groupe pour 46 parents sur 538, ce qui en fait un compteur d'affichage et non
+un compte d'enfants fiable. Les items AZYGOS restent donc a plat, ici comme
+avant. Mais tant que le brut existait localement, une re-hierarchisation restait
+tentable ; avec le seul miroir, elle demande une nouvelle extraction. La
+re-hierarchisation est hors du perimetre de la tache 11 ; qui voudra la rouvrir
+devra rejouer scripts/azygos/extract.js, et c'est dit ici pour que la decision
+soit visible plutot que subie.
 
 1,46 Mo bruts deviennent 0,29 Mo, sans jeton, sans texte pedagogique tiers :
 il ne reste que les libelles de criteres, c'est-a-dire ce que `cases/*.html`
