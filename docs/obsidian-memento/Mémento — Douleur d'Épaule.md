@@ -6,8 +6,7 @@ ssp: "Douleur d'Épaule"
 specialite: "Musculo-Squelettique"
 cas: 5
 diagnostics: 4
-attendus_documentes_ailleurs: 0
-attendus_absents_du_corpus: 0
+attendus: "non déclarés"
 tags:
   - ecos/memento
   - ecos/grille-officielle
@@ -68,12 +67,6 @@ cssclasses:
 > reste purement lexical, et deux grilles qui prescrivent la même chose
 > autrement ne se rejoignent pas.
 >
-> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
-> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
-> ne documente. Ce sous-bloc vide dit alors laquelle des deux situations
-> s'applique : soit une **autre SSP** documente ce diagnostic, et il y renvoie ;
-> soit le corpus l'ignore, et c'est un **trou de révision** à combler ailleurs.
->
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
 > disent la même chose autrement (« Motif de consultation » et « Motif de
@@ -85,7 +78,7 @@ cssclasses:
 
 # Douleur d'Épaule
 
-*Musculo-Squelettique · 5 grilles · 4 diagnostics documentés* — [[SSP — Douleur d'Épaule]]
+*Musculo-Squelettique · 5 grilles · 4 diagnostics documentés · aucun diagnostic attendu déclaré* — [[SSP — Douleur d'Épaule]]
 
 > [!abstract] Les 5 grilles fusionnées
 > - **AMBOSS-39** — Rupture de la coiffe des rotateurs `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-39_-_Douleur_a__l_e_paule_-_Homme_52_ans_-_Grille_ECOS.html>)

@@ -6,8 +6,7 @@ ssp: "Douleurs Articulaires"
 specialite: "Musculo-Squelettique"
 cas: 4
 diagnostics: 4
-attendus_documentes_ailleurs: 0
-attendus_absents_du_corpus: 0
+attendus: "non déclarés"
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -66,12 +65,6 @@ cssclasses:
 > reste purement lexical, et deux grilles qui prescrivent la même chose
 > autrement ne se rejoignent pas.
 >
-> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
-> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
-> ne documente. Ce sous-bloc vide dit alors laquelle des deux situations
-> s'applique : soit une **autre SSP** documente ce diagnostic, et il y renvoie ;
-> soit le corpus l'ignore, et c'est un **trou de révision** à combler ailleurs.
->
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
 > disent la même chose autrement (« Motif de consultation » et « Motif de
@@ -83,7 +76,7 @@ cssclasses:
 
 # Douleurs Articulaires ⭐️
 
-*Musculo-Squelettique · 4 grilles · 4 diagnostics documentés* — [[SSP — Douleurs Articulaires]]
+*Musculo-Squelettique · 4 grilles · 4 diagnostics documentés · aucun diagnostic attendu déclaré* — [[SSP — Douleurs Articulaires]]
 
 > [!abstract] Les 4 grilles fusionnées
 > - **AZYGOS-42** — Polymyalgia rheumatica `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/44388e66-5e9f-4e3e-b9f7-f65f35b8a920.json>)

@@ -79,7 +79,21 @@ ENTETE_MIXTE = """> [!warning] Mémento mixte — {n} grille{s} officielle{s}, {
 > autres sont des grilles d'entraînement (RESCOS, AMBOSS, GERMAN, AZYGOS)
 > qu'aucun jury n'a validées."""
 
-CONVENTION = """>
+# LA CONVENTION EST DECOUPEE PARCE QU'ELLE NE S'APPLIQUE PAS PARTOUT. Elle
+# etait servie entiere dans les 89 mementos, y compris dans les 31 a UNE seule
+# grille, ou aucun suffixe ne peut apparaitre — mesure : 0 des 31 en porte un,
+# quand 26 des 27 SSP a deux grilles en portent. Sur les 177 lignes de
+# « Pyrosis (RGO) », 78 etaient du frontmatter et de la legende inapplicable.
+# Expliquer sur huit lignes une notation absente du document n'est pas neutre :
+# le lecteur cherche ce qu'on lui decrit, et conclut de son absence.
+#
+# Trois predicats, trois blocs, et chacun est verifiable sur le rendu :
+#   suffixes   -> au moins DEUX grilles (sinon tout item est nu) ;
+#   management -> au moins DEUX diagnostics (sinon un seul sous-bloc, jamais
+#                 d'encadre partage) ;
+#   attendus   -> la SSP figure dans docs/ecos-priorites-2026.yaml (sinon
+#                 aucun sous-bloc vide ne peut se presenter).
+CONV_SUFFIXES = """>
 > **Comment lire les suffixes.** Anamnèse et status sont fusionnés entre
 > toutes les grilles de la SSP. Le suffixe décrit quelles grilles portent
 > **cette formulation-là** :
@@ -92,8 +106,9 @@ CONVENTION = """>
 >   diagnostics ne suffisent pas à désigner sans mentir ;
 > - un **sous-item nu** hérite de la portée de son parent — il ne répète pas
 >   son suffixe. Seul un sous-item dont la portée **diffère** du parent en
->   porte un.
->
+>   porte un."""
+
+CONV_MANAGEMENT = """>
 > **Le management, lui, ne fusionne pas.** La prise en charge dépend du
 > diagnostic : l'encadré 💊 se découpe en **un sous-bloc par diagnostic**,
 > `💊 Management — si <diagnostic>`. À l'intérieur d'un sous-bloc,
@@ -115,14 +130,16 @@ CONVENTION = """>
 > sous-bloc de votre diagnostic, pas à sa place.** Il est absent quand aucun
 > item n'est partagé, ce qui arrive souvent : le rapprochement entre grilles
 > reste purement lexical, et deux grilles qui prescrivent la même chose
-> autrement ne se rejoignent pas.
->
+> autrement ne se rejoignent pas."""
+
+CONV_ATTENDUS = """>
 > Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
 > (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
 > ne documente. Ce sous-bloc vide dit alors laquelle des deux situations
 > s'applique : soit une **autre SSP** documente ce diagnostic, et il y renvoie ;
-> soit le corpus l'ignore, et c'est un **trou de révision** à combler ailleurs.
->
+> soit le corpus l'ignore, et c'est un **trou de révision** à combler ailleurs."""
+
+CONV_LEXICAL = """>
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
 > disent la même chose autrement (« Motif de consultation » et « Motif de
@@ -266,7 +283,26 @@ def lien(cas):
     return f"file://{REPO / cas['fichier']}".replace(" ", "%20")
 
 
-def entete(cas_list):
+def convention(cas_list, diagnostics, attendus_declares):
+    """Les seules parties de la convention qui parlent de ce document-ci.
+
+    Voir le commentaire de CONV_SUFFIXES : servir la convention entiere partout
+    faisait expliquer, dans 31 mementos, une notation qu'ils ne peuvent pas
+    porter.
+    """
+    parts = []
+    if len(cas_list) > 1:
+        parts.append(CONV_SUFFIXES)
+    if diagnostics > 1:
+        parts.append(CONV_MANAGEMENT)
+    if attendus_declares:
+        parts.append(CONV_ATTENDUS)
+    if len(cas_list) > 1:
+        parts.append(CONV_LEXICAL)
+    return "\n".join(parts)
+
+
+def entete(cas_list, diagnostics=2, attendus_declares=True):
     """L'avertissement de tete, selon que la SSP fusionne ou non une officielle.
 
     « Aucun jury n'a valide ces grilles » est FAUX des qu'une des neuf
@@ -277,12 +313,14 @@ def entete(cas_list):
     """
     off = [c for c in cas_list if c["id"] in lib_ssp.OFFICIELLES]
     if not off:
-        return ENTETE_NON_OFFICIEL + "\n" + CONVENTION
-    bloc = ENTETE_MIXTE.format(
-        officielles=", ".join(c["id"] for c in off),
-        n=len(off), s="s" if len(off) > 1 else "",
-        autres=len(cas_list) - len(off))
-    return bloc + "\n" + CONVENTION
+        bloc = ENTETE_NON_OFFICIEL
+    else:
+        bloc = ENTETE_MIXTE.format(
+            officielles=", ".join(c["id"] for c in off),
+            n=len(off), s="s" if len(off) > 1 else "",
+            autres=len(cas_list) - len(off))
+    suite = convention(cas_list, diagnostics, attendus_declares)
+    return bloc + "\n" + suite if suite else bloc
 
 
 def inventaire(cas_list):
@@ -445,8 +483,21 @@ def blocs_management(cas_list, cas_ssp, diag_par_cas, ssp, attendus,
     return blocs
 
 
-def memento(ssp, cas_list, attendus=(), ailleurs=None, rendues=()):
-    """Le document Markdown complet d'une SSP."""
+def memento(ssp, cas_list, attendus=None, ailleurs=None, rendues=()):
+    """Le document Markdown complet d'une SSP.
+
+    `attendus=None` veut dire « cette SSP ne figure pas dans la table des
+    priorites », et c'est DIFFERENT d'une liste vide, qui voudrait dire
+    « elle y figure et n'attend rien ». Les deux rendaient jusqu'ici les memes
+    deux zeros au frontmatter, et un zero se lit comme un CONSTAT (« aucun
+    diagnostic attendu ne manque ») la ou il n'y avait AUCUN examen.
+    56 des 88 SSP etaient dans ce cas. Cas temoin : « Pyrosis (RGO) » annoncait
+    `attendus_absents_du_corpus: 0` alors que sa seule grille travaille un
+    diagnostic CARDIAQUE (angor stable) — le memento aligne un bilan coronarien
+    et pas une ligne d'IPP, d'H. pylori ou d'endoscopie.
+    """
+    attendus_declares = attendus is not None
+    attendus = attendus if attendus_declares else ()
     cas_ssp = sorted(c["id"] for c in cas_list)
     diag_par_cas = {c["id"]: c["diagnostic"] for c in cas_list if c["diagnostic"]}
     documentes = set(diag_par_cas.values())
@@ -487,6 +538,8 @@ def memento(ssp, cas_list, attendus=(), ailleurs=None, rendues=()):
     if absents_n:
         ligne.append(f"{absents_n} attendu{'s' if absents_n > 1 else ''} "
                      "absent" + ("s" if absents_n > 1 else "") + " du corpus")
+    if not attendus_declares:
+        ligne.append("aucun diagnostic attendu déclaré")
     if specialite != "Non classé":
         ligne.insert(0, specialite)
     corps = [f"# {ssp}{etoile}", "", "*" + " · ".join(ligne) + f"* — [[SSP — {ssp}]]", "",
@@ -497,8 +550,14 @@ def memento(ssp, cas_list, attendus=(), ailleurs=None, rendues=()):
         champs.append(f'specialite: "{specialite}"')
     champs.append(f"cas: {len(cas_list)}")
     champs.append(f"diagnostics: {total}")
-    champs.append(f"attendus_documentes_ailleurs: {ailleurs_n}")
-    champs.append(f"attendus_absents_du_corpus: {absents_n}")
+    # UN CHAMP ABSENT PLUTOT QU'UN ZERO : voir le docstring. Le champ
+    # `attendus` dit laquelle des deux situations s'applique, et les deux
+    # comptes ne paraissent que quand ils comptent quelque chose.
+    if attendus_declares:
+        champs.append(f"attendus_documentes_ailleurs: {ailleurs_n}")
+        champs.append(f"attendus_absents_du_corpus: {absents_n}")
+    else:
+        champs.append('attendus: "non déclarés"')
     tags = ["  - ecos/memento"]
     if any(c["id"] in lib_ssp.OFFICIELLES for c in cas_list):
         tags.append("  - ecos/grille-officielle")
@@ -507,7 +566,8 @@ def memento(ssp, cas_list, attendus=(), ailleurs=None, rendues=()):
     champs.append("cssclasses:\n  - skill-ecos")
 
     return (f"---\n{chr(10).join(champs)}\n---\n\n{lib_rendu.LEGENDE}\n\n"
-            f"{entete(cas_list)}\n\n{chr(10).join(corps).rstrip()}\n")
+            f"{entete(cas_list, total, attendus_declares)}\n\n"
+            f"{chr(10).join(corps).rstrip()}\n")
 
 
 def documents(lot):
@@ -538,7 +598,9 @@ def documents(lot):
     # lien ou un simple nom — ne promette pas un fichier qui ne sera pas ecrit.
     ignorees = sorted(s for s in groupes if "/" in s or '"' in s)
     rendues = {s for s in groupes if s not in ignorees}
-    docs = {ssp: memento(ssp, groupes[ssp], attendus.get(ssp, ()), ailleurs, rendues)
+    # `attendus.get(ssp)` et NON `.get(ssp, ())` : None distingue « SSP absente
+    # de la table des priorites » de « SSP presente qui n'attend rien ».
+    docs = {ssp: memento(ssp, groupes[ssp], attendus.get(ssp), ailleurs, rendues)
             for ssp in sorted(rendues)}
     return docs, groupes, ignorees
 

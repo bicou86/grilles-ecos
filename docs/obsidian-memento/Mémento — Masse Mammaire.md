@@ -6,8 +6,7 @@ ssp: "Masse Mammaire"
 specialite: "Gynéco-Obstétrique"
 cas: 2
 diagnostics: 2
-attendus_documentes_ailleurs: 0
-attendus_absents_du_corpus: 0
+attendus: "non déclarés"
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -66,12 +65,6 @@ cssclasses:
 > reste purement lexical, et deux grilles qui prescrivent la même chose
 > autrement ne se rejoignent pas.
 >
-> Un sous-bloc existe pour **chacun des diagnostics attendus de la SSP**
-> (docs/ecos-priorites-2026.yaml), y compris ceux qu'aucune grille de la SSP
-> ne documente. Ce sous-bloc vide dit alors laquelle des deux situations
-> s'applique : soit une **autre SSP** documente ce diagnostic, et il y renvoie ;
-> soit le corpus l'ignore, et c'est un **trou de révision** à combler ailleurs.
->
 > ⚠️ **Le suffixe parle des formulations, pas du contenu clinique.** Le
 > rapprochement entre grilles est encore purement lexical : deux grilles qui
 > disent la même chose autrement (« Motif de consultation » et « Motif de
@@ -83,7 +76,7 @@ cssclasses:
 
 # Masse Mammaire ⭐️
 
-*Gynéco-Obstétrique · 2 grilles · 2 diagnostics documentés* — [[SSP — Masse Mammaire]]
+*Gynéco-Obstétrique · 2 grilles · 2 diagnostics documentés · aucun diagnostic attendu déclaré* — [[SSP — Masse Mammaire]]
 
 > [!abstract] Les 2 grilles fusionnées
 > - **AZYGOS-37** — Nodule suspect de malignité dans le sein droit `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/8b69fbb3-93d0-4ecc-aa93-f1fcdee0c6e0.json>)
