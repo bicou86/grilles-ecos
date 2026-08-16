@@ -279,9 +279,33 @@ la seule qui doive tenir sur les 257 grilles avant qu'on aille plus loin.
   obligatoire de l'étape 2 avant toute fusion.
 - **Ces mémentos ne sont pas officiels.** Ils extrapolent la forme des 9 grilles fédérales
   à des grilles qui n'ont jamais été validées par un jury. L'encadré de tête doit le dire.
-- **Le vocabulaire canonique est un travail sans fin naturelle.** Le critère d'arrêt
-  retenu est fonctionnel : on cure tant que le mémento d'une SSP contient des doublons
-  visibles, pas au-delà.
+- ~~**Le vocabulaire canonique est un travail sans fin naturelle.**~~ **Le point fixe est
+  atteint le 2026-08-16, au second tour.** Le critère d'arrêt n'est plus fonctionnel mais
+  mesuré : le rapport régénéré après le second tour ne propose **aucune paire neuve**. Les
+  20 « à juger » qui restent sont exactement les 20 que ce tour a **refusées** par
+  jugement clinique — deux examens, deux structures, deux personnes, deux options d'une
+  même décision. Elles reviendront à chaque régénération : ce n'est pas du stock, c'est du
+  bruit lexical permanent. Trajectoire : 643 paires traitées → 80 neuves (tour 1), 90
+  traitées → 1 neuve (tour 2), 1 traitée → 0 neuve. `RESTE` passe de 1 098 à 1 020 (borne
+  haute 1 249 → 1 170) ; `SÛRETÉ` reste à zéro.
+- **La négation est vue par la chaîne depuis le 2026-08-16, et ne doit pas être bouchée du
+  mauvais côté.** Le premier tour a retenu cinq fois la forme **négative** comme intitulé
+  (`Hépatomégalie` → `Pas d'hépatomégalie`) : dans une checklist, cela se lit comme un
+  résultat, pas comme un geste. Trois mécanismes regardaient au même endroit sans rien
+  voir — `report_doublons.ANTONYMES` (qui exige un mot de chaque côté),
+  `lib_cle.MOTS_VIDES`, et la propriété 8, sans témoin faute d'une grille portant les deux
+  libellés. `lib_vocabulaire.NEGATIONS` porte la liste, `report_doublons` la signale, la
+  **propriété 10** la refuse, `check_negation.py` la garde par mutation par mot.
+  **Ajouter ces mots à `lib_cle.MOTS_VIDES` serait le mauvais correctif** : `Pas
+  d'hépatomégalie` et `Hépatomégalie` partageraient alors leur signature et le socle A les
+  confondrait seul, sans table et sans trace.
+- **Le libellé retenu doit décrire l'union, pas être le plus long.** La règle du « plus
+  explicite » retient en pratique le plus long, donc parfois le plus **étroit**. Critère
+  appliqué depuis le second tour : le libellé retenu ne doit **pas ajouter une exigence
+  que l'autre grille n'a pas faite**. Il ne s'applique pas à un composé qui nomme les deux
+  pôles d'un même axe (`Nausées/Vomissements`), qui élargit. **88 entrées du premier tour
+  y contreviennent** ; elles sont listées dans le rapport du second tour et **n'ont pas
+  été modifiées** — ce sont des jugements déjà rendus par l'auteur.
 - ~~**Les mémentos dépendent du coffre Obsidian.**~~ **Levé le 2026-08-16, ronde 1.**
   `lib_ssp.specialite()` et `priorite()` lisaient `~/Documents/…/SSP ECOS`, hors dépôt,
   et ces deux champs entrent dans les **octets** de 74 des 89 mémentos versionnés. Pire :
