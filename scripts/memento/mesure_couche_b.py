@@ -27,13 +27,16 @@ Les trois indicateurs, et ce qu'on attend d'eux :
           SOUS-ENSEMBLE STRICT des grilles de leur SSP. C'est exactement la
           population des items dont le memento doit dire « seulement une partie
           des grilles » — reunir deux formulations la fait baisser de un.
-  RESTE   les paires candidates A GRILLES DISJOINTES, qui dit quand s'arreter.
-          Deux libelles que la MEME grille porte ne peuvent pas etre reunis
-          (voir `check_vocabulaire.collisions`) : ils ne sont pas du stock, ils
-          sont du bruit. Le reste atteignable, lui, est le vrai plafond de la
-          couche B. Quand il ne contient plus que du bruit lexical, c'est fini.
+  RESTE   les paires candidates que la propriete 8 LAISSE PASSER, qui dit
+          quand s'arreter. Deux libelles qu'une meme grille distingue ne
+          peuvent pas etre reunis : ils ne sont pas du stock, ils sont du
+          bruit. La borne haute « a grilles disjointes » est rendue a cote,
+          parce qu'elle est calibree et comparable d'une mesure a l'autre —
+          voir `reste()`. Quand le stock ne contient plus que du bruit
+          lexical, la couche B a fini.
   SURETE  le compteur de rapprochements abusifs de `check_vocabulaire`, qui
-          doit rester A ZERO.
+          doit rester A ZERO. Seul des trois a se mesurer sur le CORPUS ENTIER
+          — voir `surete()`.
 
 DETERMINISME : aucune date, aucun aleatoire, tout ensemble trie avant d'etre
 compte ou ecrit.
@@ -89,16 +92,26 @@ def gain(groupes):
     return total
 
 
-def reste(groupes, inventaire):
-    """(paires candidates, celles a grilles disjointes).
+def reste(groupes, inventaire, positions):
+    """(paires candidates, celles a grilles disjointes, celles reellement recevables).
 
-    Les porteurs se lisent dans l'INVENTAIRE DES LIBELLES BRUTS et non dans les
-    groupes appraies : la question posee est « ces deux ECRITURES cohabitent-
-    elles dans une grille ? », qui porte sur le corpus, pas sur l'etat courant
-    de la table. Un rapprochement deja fait ne doit pas changer retroactivement
-    le verdict de recevabilite d'une paire voisine.
+    DEUX BORNES, ET L'ECART ENTRE ELLES EST INSTRUCTIF.
+
+    « Grilles disjointes » — aucune grille ne porte les deux ECRITURES — est la
+    borne haute, et c'est celle qui a ete calibree contre un comptage
+    independant (1 573 / 2 291 sur la table de la ronde 1). Elle se lit dans
+    l'inventaire des libelles bruts, donc elle ne bouge pas quand la table
+    bouge : deux mesures successives restent comparables.
+
+    Elle SUR-ESTIME pourtant le gisement, et la propriete 8 dit de combien. Des
+    grilles disjointes ne garantissent pas l'absence de collision : German-32
+    ne porte pas « Antecedents familiaux », mais il porte « Anamnese
+    familiale », que la table aliase deja vers ce libelle — reunir
+    « Antecedents cardiaques » avec lui confondrait deux items que German-32
+    distingue. La seconde borne applique la regle exacte du controle et donne
+    le gisement REELLEMENT atteignable.
     """
-    candidates = disjointes = 0
+    candidates = disjointes = recevables = 0
     for ssp in sorted(groupes):
         cas_list = groupes[ssp]
         if len(cas_list) < 2:
@@ -107,17 +120,33 @@ def reste(groupes, inventaire):
                          for p in lib_vocabulaire.SECTIONS
                          for g in lib_fusion.apparier(cas_list, p, ssp)
                          for x in [g] + g["sous"]})
+        index = report_doublons.seaux_indexes(positions[ssp], ssp)
         for a, b in report_doublons.paires(titres):
             candidates += 1
-            if not (inventaire[ssp].get(a, set()) & inventaire[ssp].get(b, set())):
-                disjointes += 1
-    return candidates, disjointes
+            if inventaire[ssp].get(a, set()) & inventaire[ssp].get(b, set()):
+                continue
+            disjointes += 1
+            bloquee = (report_doublons.irrecevable(a, b, index, ssp)
+                       or report_doublons.irrecevable(b, a, index, ssp)
+                       or lib_fusion.signature(a) == lib_fusion.signature(b))
+            if not bloquee:
+                recevables += 1
+    return candidates, disjointes, recevables
 
 
-def surete(groupes):
-    """Le compteur de rapprochements abusifs — celui de check_vocabulaire, pas une copie."""
+def surete():
+    """Le compteur de rapprochements abusifs — celui de check_vocabulaire, pas une copie.
+
+    SUR LE CORPUS ENTIER, ET NON SUR LE LOT, contrairement aux deux autres
+    indicateurs. `check_vocabulaire` tourne sur `par_ssp(None)` : une entree
+    visant une SSP hors lot y serait comptee, et la compter zero ici ferait dire
+    a l'indicateur le contraire du controle qu'il pretend appeler. Les deux
+    autres indicateurs mesurent une PROGRESSION sur les mementos rendus, ce qui
+    justifie leur perimetre plus etroit ; celui-ci mesure une SURETE, qui n'a
+    pas de perimetre.
+    """
     vocabulaire = lib_yaml.lire_groupe(check_vocabulaire.TABLE)
-    positions = lib_vocabulaire.positions_par_ssp(groupes)
+    positions = lib_vocabulaire.positions_par_ssp(build_memento.par_ssp(None))
     return len(check_vocabulaire.collisions(vocabulaire, positions))
 
 
@@ -127,15 +156,18 @@ def main():
     entrees = sum(len(v) for v in lib_yaml.lire_groupe(check_vocabulaire.TABLE).values())
 
     g = gain(groupes)
-    candidates, disjointes = reste(groupes, inventaire)
-    abusifs = surete(groupes)
+    positions = lib_vocabulaire.positions_par_ssp(groupes)
+    candidates, disjointes, recevables = reste(groupes, inventaire, positions)
+    abusifs = surete()
 
     print(f"Couche B — {entrees} entrées, {len(groupes)} SSP rendues")
     print(f"  GAIN    {g:5d}  items de tête 📋+🩺 portés par une partie des grilles "
           "(à faire baisser)")
-    print(f"  RESTE   {disjointes:5d}  paires candidates à grilles disjointes, "
-          f"sur {candidates} (le plafond de la couche B)")
-    print(f"  SÛRETÉ  {abusifs:5d}  rapprochements abusifs "
+    print(f"  RESTE   {recevables:5d}  paires réellement recevables — celles que la "
+          f"propriété 8 laisse passer")
+    print(f"          {disjointes:5d}  à grilles disjointes, sur {candidates} candidates "
+          "(borne haute, calibrée)")
+    print(f"  SÛRETÉ  {abusifs:5d}  rapprochements abusifs, sur le corpus entier "
           f"({'conforme' if abusifs == 0 else 'DOIT ÊTRE ZÉRO'})")
     return 0
 
