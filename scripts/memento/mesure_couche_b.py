@@ -163,8 +163,8 @@ def main():
     print(f"Couche B — {entrees} entrées, {len(groupes)} SSP rendues")
     print(f"  GAIN    {g:5d}  items de tête 📋+🩺 portés par une partie des grilles "
           "(à faire baisser)")
-    print(f"  RESTE   {recevables:5d}  paires réellement recevables — celles que la "
-          f"propriété 8 laisse passer")
+    print(f"  RESTE   {recevables:5d}  paires que la propriété 8 laisse passer — "
+          "toutes ne passeraient pas les neuf")
     print(f"          {disjointes:5d}  à grilles disjointes, sur {candidates} candidates "
           "(borne haute, calibrée)")
     print(f"  SÛRETÉ  {abusifs:5d}  rapprochements abusifs, sur le corpus entier "
