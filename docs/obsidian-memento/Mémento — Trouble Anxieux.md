@@ -31,7 +31,7 @@ cssclasses:
 > - [ ] **2. Contenu de la peur, évitement et retentissement**
 > 	- [ ] Situations qui déclenchent : foules, grands espaces, transports, magasins, file d'attente, être seule hors de chez soi
 > 	- [ ] Contenu central de la peur : ne pas pouvoir s'échapper ou être secourue, être vue en train de perdre le contrôle, la sensation corporelle elle-même
-> 	- [ ] Espaces exigus, ascenseurs, petites pièces : les tester séparément des grands espaces et des foules — la peur d'être enfermée et la peur de ne pas pouvoir sortir ne portent pas sur les mêmes situations
+> 	- [ ] Espaces exigus, ascenseurs, petites pièces : à tester à part des grands espaces et des foules — la claustrophobie porte sur l'espace clos et l'étouffement qu'il provoque, l'agoraphobie sur l'impossibilité de s'en échapper ; bien tolérés, ils écartent la première, pas la seconde
 > 	- [ ] Comportement d'évitement : quelles situations sont désormais évitées, depuis quand, jusqu'où va la restriction (sort-elle encore de chez elle)
 > 	- [ ] Comportements de sécurité : sortir accompagnée, repérer les issues, emporter un médicament — ils soulagent sur le moment et entretiennent le trouble
 > 	- [ ] Retentissement sur le quotidien : activités, courses, transports, autonomie
@@ -80,8 +80,7 @@ cssclasses:
 > 	- [ ] Tenue vestimentaire, hygiène, soin apporté à l'apparence
 > 	- [ ] Contact visuel et qualité du contact : établi, fuyant, adhésif
 > 	- [ ] Attitude pendant l'entretien : collaborante, méfiante, ambivalente, sur ses gardes
-> 	- [ ] Venue seule ou accompagnée — chez une patiente qui évite, être venue seule est en soi une information
-> 	- [ ] Comportements de sécurité visibles en consultation : place choisie près de la porte, présence exigée du partenaire
+> 	- [ ] Comportements de sécurité visibles en consultation : venue accompagnée, place choisie près de la porte, présence exigée du partenaire
 > 	- [ ] Comportement psychomoteur : agitation, ralentissement, tremblement, hyperventilation, sursauts
 > 	- [ ] Signes végétatifs visibles : sudation, rougeur, voix tremblante, mains moites
 > - [ ] **2. Vigilance, orientation et fonctions cognitives**

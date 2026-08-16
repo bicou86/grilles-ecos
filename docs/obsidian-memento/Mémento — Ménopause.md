@@ -23,9 +23,9 @@ cssclasses:
 >         diagnostic, qui est clinique et rétrospectif
 > 	- [ ] L'âge tranche : au-delà de 45 ans le tableau est physiologique (moyenne 51 ans), entre 40
 >         et 45 ans il est précoce, avant 40 ans ce n'est jamais une ménopause 🚩
-> 	- [ ] Cycles antérieurs : régularité, raccourcissement — le marqueur de la transition —,
->         spotting ; des cycles encore présents mais irréguliers, c'est la périménopause, qui dure
->         deux à huit ans
+> 	- [ ] Cycles antérieurs : régularité, raccourcissement puis espacement — c'est la variabilité qui
+>         marque la transition, une aménorrhée de 60 jours ou plus la dit tardive —, spotting ; des
+>         cycles encore présents mais irréguliers, c'est la périménopause, qui dure deux à huit ans
 > 	- [ ] Tout saignement survenu depuis les douze mois d'aménorrhée : la question se pose
 >         systématiquement, la patiente ne l'amène presque jamais 🚩
 > 	- [ ] Contraception en cours : une pilule ou un stérilet hormonal masque l'arrêt des règles — on
@@ -42,7 +42,9 @@ cssclasses:
 > 	- [ ] Description de l'accès : rougeur du visage et du cou, teint du reste du corps, extrémités
 >         froides, prurit, frissons de fin d'accès
 > 	- [ ] Palpitations et sensation de chaleur soudaine pendant l'accès ; douleurs thoraciques,
->         dyspnée, œdèmes
+>         dyspnée, toux, œdèmes
+> 	- [ ] Signes digestifs pendant les accès : nausées, vomissements, crampes abdominales, transit —
+>         ils n'appartiennent pas au climatère et font chercher ailleurs
 > 	- [ ] Les quatre déclencheurs qu'on oublie de demander : alcool, caféine, repas épicés, chaleur
 >         ambiante — auxquels s'ajoutent le stress et l'émotion
 > 	- [ ] Ce qui a déjà été essayé, et avec quel résultat : vêtements, ventilation, phytothérapie,
@@ -77,12 +79,14 @@ cssclasses:
 > 	- [ ] Saignement après douze mois d'aménorrhée : cancer de l'endomètre jusqu'à preuve du
 >         contraire, à explorer avant toute prescription hormonale et jamais après
 > 	- [ ] Bouffées avec amaigrissement, palpitations, tremblements, intolérance à la chaleur,
->         transit accéléré : l'hyperthyroïdie imite tout le climatère, seule la perte de poids l'en
->         sépare
+>         transit accéléré : l'hyperthyroïdie imite tout le climatère — ce sont l'amaigrissement
+>         malgré l'appétit, le transit accéléré et les signes de l'examen (goitre, tremblement fin,
+>         signes oculaires) qui l'en séparent
 > 	- [ ] Bouffées avec céphalées, sueurs, palpitations et poussées tensionnelles par accès :
 >         phéochromocytome — faire préciser le mot « paroxystique », une tension élevée en
 >         permanence n'oriente pas de même
-> 	- [ ] Flush avec diarrhée et sifflement respiratoire : syndrome carcinoïde
+> 	- [ ] Flush avec diarrhée, crampes abdominales et sifflement respiratoire : syndrome carcinoïde —
+>         le flush seul ne suffit pas, ce sont les autres pièces qui font le tableau
 > 	- [ ] Rougeur du visage avec prurit déclenché par la douche : polyglobulie
 > 	- [ ] Fatigue, prise de poids, frilosité, constipation : l'hypothyroïdie prend l'autre versant
 >         du même tableau
@@ -117,9 +121,10 @@ cssclasses:
 > 	- [ ] Désinfection des mains avant tout contact ; annoncer chaque geste avant de le faire
 > 	- [ ] Tension artérielle au brassard adapté, aux deux bras la première fois — une valeur élevée
 >         se recontrôle avant de devenir un diagnostic
-> 	- [ ] Fréquence cardiaque et sa régularité, température
+> 	- [ ] Fréquence cardiaque et sa régularité, fréquence respiratoire, saturation, température
 > 	- [ ] Poids, taille, IMC, tour de taille ; état général, faciès, attitude
-> 	- [ ] Auscultation cardiaque aux quatre foyers et auscultation pulmonaire
+> 	- [ ] Auscultation cardiaque aux quatre foyers ; auscultation pulmonaire, sibilances et signes de
+>         détresse respiratoire (tirage, cyanose, parole hachée)
 > 	- [ ] Pouls périphériques ; signes d'insuffisance cardiaque : œdèmes des membres inférieurs,
 >         turgescence jugulaire, râles des bases
 > - [ ] **2. Ce qui traque l'imitateur : thyroïde, peau, abdomen**

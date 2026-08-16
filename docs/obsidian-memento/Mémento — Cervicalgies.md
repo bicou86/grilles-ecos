@@ -123,7 +123,8 @@ cssclasses:
 > 		- [ ] Brachio-radial (BRR) — C6
 > 		- [ ] Tricipital (TSR) — C7
 > 	- [ ] Un réflexe **aboli** est un signe, un réflexe « un peu diminué » n'en est pas un :
->         comparer, et renforcer par la manœuvre de Jendrassik avant de conclure
+>         comparer, et renforcer — au membre supérieur, faire serrer les dents ou les
+>         genoux — avant de conclure
 > 	- [ ] Les trois doivent converger : muscle faible, réflexe éteint, dermatome hypoesthésique
 > - [ ] **6. 🚩 Exclure une atteinte médullaire**
 > 	- [ ] Signes pyramidaux : Babinski recherché **des deux côtés**, réflexes vifs, diffusés

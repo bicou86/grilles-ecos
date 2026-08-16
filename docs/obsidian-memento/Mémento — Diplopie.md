@@ -41,7 +41,7 @@ cssclasses:
 > 	- [ ] Profil d'évolution : fluctuant d'un jour à l'autre, par poussées, lentement progressif, ou installé d'un coup 🚩
 > 	- [ ] **Ce qui a changé ces derniers jours** : dégradation récente, nouveaux muscles atteints, symptômes qui ne cèdent plus au repos 🚩
 > 	- [ ] Horaire dans la journée : comparer le réveil et la fin de journée ; effet d'une sieste ou d'une nuit de sommeil
-> 	- [ ] Facteurs d'aggravation : effort soutenu, chaleur, lumière vive, stress
+> 	- [ ] Facteurs d'aggravation : effort soutenu, chaleur, stress
 > 	- [ ] Épisodes identiques par le passé, même brefs et complètement résolutifs
 > - [ ] **5. Contexte systémique et facteurs de décompensation**
 > 	- [ ] Fièvre, frissons

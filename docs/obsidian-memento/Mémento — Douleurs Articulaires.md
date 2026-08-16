@@ -46,7 +46,7 @@ cssclasses:
 > - [ ] **4. 🚩 Signes généraux et drapeaux rouges**
 > 	- [ ] Symptômes B : fièvre chiffrée, sudations nocturnes, perte de poids involontaire (combien de kilos, sur combien de mois)
 > 	- [ ] Asthénie, altération de l'état général, appétit
-> 	- [ ] 🚩 **Une seule articulation chaude, rouge, tendue, avec fièvre** : arthrite septique jusqu'à preuve du contraire — ponction sans délai
+> 	- [ ] 🚩 **Une seule articulation chaude, rouge, tendue, avec fièvre** : arthrite septique jusqu'à preuve du contraire
 > 	- [ ] 🚩 **Signes d'atteinte des artères temporales**, à demander devant toute douleur des ceintures après 50 ans — risque de cécité définitive :
 > 		- [ ] Céphalée récente, inhabituelle, temporale ; cuir chevelu douloureux au peigne
 > 		- [ ] Claudication de la mâchoire : douleur des masséters qui oblige à interrompre le repas
@@ -65,6 +65,7 @@ cssclasses:
 > 	- [ ] Antécédents médicaux, chirurgicaux et opérations sur l'articulation concernée, hospitalisations, allergies
 > 	- [ ] Traitements en cours, y compris ceux pris à la demande, et corticoïdes déjà reçus
 > 	- [ ] Antécédents familiaux, en cherchant nommément les maladies rhumatologiques et auto-immunes
+> 	- [ ] Terrain des autres rhumatismes inflammatoires : rachialgie de rythme inflammatoire, psoriasis cutané ou atteinte des ongles, plaintes digestives chroniques
 > 	- [ ] Terrain : âge et sexe (les polyarthrites des petites articulations débutent surtout entre 40 et 60 ans, chez la femme)
 > 	- [ ] Tabac en paquets-années (facteur de risque reconnu des polyarthrites), alcool, drogues
 > 	- [ ] Profession : gestes répétés, charge portée, position de travail, outils, capacité de travail actuelle
@@ -115,11 +116,11 @@ cssclasses:
 > 	- [ ] Genou — recherche d'un épanchement : choc rotulien, signe du flot
 > 	- [ ] Examiner aussi les articulations sus- et sous-jacentes : une douleur projetée n'a pas sa cause là où elle se dit
 > - [ ] **6. 🚩 Ce qu'il ne faut pas manquer**
-> 	- [ ] 🚩 **Test de Thompson** : patient à plat ventre, pieds hors du lit, la compression du mollet doit fléchir le pied — l'absence de flexion signe une rupture du tendon d'Achille
+> 	- [ ] 🚩 **Test de Thompson** : patient à plat ventre, pieds hors du lit, la compression du mollet doit provoquer une flexion plantaire du pied — son absence signe une rupture du tendon d'Achille
 > 	- [ ] 🚩 **Palpation des deux artères temporales** : trajet induré, épaissi, sensible, pouls diminué ou aboli
 > 	- [ ] Tension artérielle **aux deux bras** (asymétrie), palpation et auscultation des axes vasculaires à la recherche d'un souffle
 > 	- [ ] Pouls périphériques comparés : radial, pédieux, tibial postérieur
 > 	- [ ] Examen neurologique en aval de l'articulation : sensibilité par territoires, réflexes (bicipital C5, brachio-radial C6, tricipital C7, achilléen S1), signe de Tinel sur le nerf tibial postérieur, sensibilité plantaire
 > 	- [ ] Manifestations extra-articulaires : nodules, syndrome sec, Raynaud, purpura, auscultation pulmonaire
 > 	- [ ] Rachis cervical : douleur et mobilité testées prudemment — une atteinte C1-C2 interdit toute manipulation forcée
-> 	- [ ] 🚩 Une articulation unique, chaude, tendue, exquisément douloureuse à la moindre mobilisation chez un patient fébrile : ne pas la mobiliser davantage, la ponctionner
+> 	- [ ] 🚩 Une articulation unique, chaude, tendue, exquisément douloureuse à la moindre mobilisation chez un patient fébrile : ne pas la mobiliser davantage

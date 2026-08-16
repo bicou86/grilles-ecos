@@ -38,7 +38,7 @@ cssclasses:
 > 	- [ ] Écoulement urétral, symptômes génitaux, dyspareunie
 > 	- [ ] Douleur lombaire ou abdominale : unilatérale et paroxystique (calcul ou caillot qui migre), ou sourde et bilatérale des deux flancs (distension des capsules rénales, glomérulonéphrite)
 > - [ ] **3. Orientation glomérulaire — le syndrome néphritique**
-> 	- [ ] Infection récente **et son délai** : angine, pharyngite, infection cutanée, contage dans l'entourage — 1 à 3 semaines avant (post-streptococcique), ou dès 1 à 5 jours (néphropathie à IgA)
+> 	- [ ] Infection récente **et son délai** : angine ou pharyngite 1 à 3 semaines avant, infection cutanée 3 à 6 semaines avant (post-streptococcique), ou dès 1 à 5 jours après le début de l'infection ORL (néphropathie à IgA) ; contage dans l'entourage
 > 	- [ ] Œdèmes : paupières bouffies au réveil, chevilles et jambes le soir, chaussures devenues trop serrées, prise de poids rapide
 > 	- [ ] Hypertension et son retentissement : céphalées, troubles de la vision, autres symptômes neurologiques
 > 	- [ ] Fatigue, essoufflement à l'effort, perte d'appétit — retentissement d'une insuffisance rénale qui s'installe
@@ -63,7 +63,6 @@ cssclasses:
 > 	- [ ] Médicaments, en nommant les anticoagulants et antiagrégants ; automédication, AINS
 > 	- [ ] Allergies, en précisant la réaction
 > 	- [ ] Alcool (quantité hebdomadaire réelle), drogues récréatives
-> 	- [ ] Alimentation, apports hydriques quotidiens
 > 	- [ ] Profession, situation familiale, conditions de vie, stress ressenti
 > 	- [ ] Anamnèse sexuelle, annoncée avant d'être posée : rapports récents, partenaires, IST
 > 	- [ ] Ce que le patient craint : le sang dans les urines fait d'abord penser au cancer — le faire dire permet de rassurer ou de préparer la suite
@@ -90,7 +89,6 @@ cssclasses:
 > 	- [ ] Percussion comparative des champs pulmonaires : matité d'un épanchement
 > 	- [ ] Auscultation pulmonaire, antérieure **et** postérieure : crépitants des bases (surcharge), foyer, frottement
 > 	- [ ] Auscultation cardiaque aux 4 foyers : souffle, galop, frottement péricardique
-> 	- [ ] Signes de surcharge : turgescence jugulaire, reflux hépato-jugulaire
 > - [ ] **4. Abdomen, fosses lombaires et vessie**
 > 	- [ ] Inspection : cicatrices, voussure hypogastrique, orifices herniaires, circulation collatérale
 > 	- [ ] Auscultation avant de toucher : bruits hydro-aériques, souffles de l'aorte et des artères rénales

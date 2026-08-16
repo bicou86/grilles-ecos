@@ -43,7 +43,7 @@ cssclasses:
 > 	- [ ] Sommeil, autonomie, activités quotidiennes, moral
 > - [ ] **4. Symptômes associés et pistes différentielles**
 > 	- [ ] Locomoteurs : blocages articulaires, dérobements, gonflement articulaire
-> 	- [ ] Lombo-radiculaires : lombalgies associées, irradiation en trajet sciatique (face postérieure jusqu'au pied) ou crural (face antérieure de cuisse), paresthésies, troubles de la sensibilité, faiblesse du membre
+> 	- [ ] Lombo-radiculaires : lombalgies associées, irradiation en trajet sciatique (face postérieure jusqu'au pied) ou crural (face antérieure de cuisse), paresthésies et fourmillements dans le même trajet
 > 	- [ ] Atteinte d'autres articulations, actuelle ou passée : une douleur polyarticulaire déplace le problème vers un rhumatisme inflammatoire
 > 	- [ ] Vasculaire : douleur de fesse ou de cuisse apparaissant à une distance de marche fixe et cédant à l'arrêt (claudication)
 > 	- [ ] Anamnèse par systèmes ciblée : urinaire et génital (une douleur inguinale peut être urologique ou herniaire), digestif, neurologique
@@ -53,7 +53,7 @@ cssclasses:
 > 	- [ ] **Fracture** : chute même de sa hauteur, ostéoporose connue, fracture antérieure, impotence d'emblée totale, corticothérapie prolongée
 > 	- [ ] **Ostéonécrose de la tête fémorale** : corticothérapie au long cours, alcool, transplantation d'organe et immunosuppression, chimiothérapie, drépanocytose, traumatisme ou plongée
 > 	- [ ] **Immunosuppression** ou risque infectieux augmenté : les signes locaux et généraux y sont émoussés, et une douleur banale ne l'est plus
-> 	- [ ] **Atteinte neurologique** : déficit moteur du membre inférieur, troubles sphinctériens, anesthésie en selle
+> 	- [ ] **Atteinte neurologique** : déficit moteur du membre inférieur ou hypoesthésie systématisée à un dermatome — un déficit objectif, et non de simples paresthésies
 > - [ ] **6. Antécédents, traitements et contexte**
 > 	- [ ] Antécédents médicaux : maladies chroniques, pathologies rhumatismales, fractures antérieures, néoplasies
 > 	- [ ] Antécédents chirurgicaux et opérations antérieures, en particulier hanche, bassin et rachis
@@ -86,7 +86,7 @@ cssclasses:
 > 		- [ ] Flexion (environ 120°)
 > 		- [ ] Abduction (environ 45°) / adduction (environ 30°)
 > 		- [ ] Rotations interne (environ 30°) et externe (environ 45°), hanche fléchie à 90°
-> 		- [ ] Extension, en décubitus ventral (environ 15°)
+> 		- [ ] Extension, en décubitus ventral (10 à 20°)
 > 	- [ ] La **rotation interne** est la première amplitude perdue dans une souffrance intra-articulaire : la mesurer et la comparer systématiquement
 > 	- [ ] Mobilité active : peu contributive ici — noter ce que le patient ne peut plus faire, et enchaîner les positions dans un ordre logique pour éviter les allers-retours
 > 	- [ ] Force segmentaire cotée de 0 à 5 : fléchisseurs, extenseurs, abducteurs (moyen fessier, contre résistance en décubitus latéral), adducteurs, rotateurs interne et externe

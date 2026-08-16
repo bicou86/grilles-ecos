@@ -15,8 +15,9 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Caractérisation de la plainte mictionnelle**
-> 	- [ ] Laisser raconter (question ouverte), puis faire préciser ce que le patient
->         appelle « dysurie » : brûlure **en** urinant, ou difficulté **à** uriner
+> 	- [ ] Se présenter (nom, fonction, tâche), question ouverte, laisser raconter
+> 	- [ ] Faire préciser ce que le patient appelle « dysurie » : brûlure **en** urinant,
+>         ou difficulté **à** uriner
 > 	- [ ] Début, mode d'apparition (brutal ou progressif), durée, évolution depuis lors
 > 	- [ ] Moment de la douleur dans la miction : au début, pendant tout le jet, à la
 >         fin (brûlure terminale, plutôt vésicale), après
@@ -52,7 +53,7 @@ cssclasses:
 > 	- [ ] Fièvre, frissons, sueurs : une dysurie fébrile n'est plus une cystite simple
 > 	- [ ] Douleur d'une fosse lombaire ou d'un flanc : atteinte du haut appareil
 > 	- [ ] Douleur hypogastrique permanente, périnéale ou à la défécation : origine prostatique
-> 	- [ ] Symptômes B : perte de poids chiffrée, sueurs nocturnes, asthénie
+> 	- [ ] Symptômes B : sueurs nocturnes, perte de poids involontaire chiffrée
 > 	- [ ] Symptômes neurologiques : déficit ou paresthésies des membres inférieurs,
 >         anesthésie en selle, incontinence fécale — atteinte de la queue de cheval
 > 	- [ ] Terrain qui interdit de banaliser : grossesse ou grossesse possible, homme,
@@ -64,7 +65,7 @@ cssclasses:
 > 	- [ ] Autres partenaires du ou de la partenaire, symptômes chez lui ou chez elle
 > 	- [ ] Protection : préservatif systématique, occasionnel, rupture
 > 	- [ ] Pratiques vaginales, orales, anales — elles décident des sites de prélèvement
-> 	- [ ] Antécédents d'IST, dépistages déjà faits, statut VIH connu
+> 	- [ ] Antécédents d'IST, dépistages déjà faits
 > 	- [ ] Contraception, date des dernières règles, grossesses antérieures
 > - [ ] **6. Terrain, traitements et mode de vie**
 > 	- [ ] Antécédents médicaux et comorbidités, dont lithiase urinaire
@@ -112,7 +113,7 @@ cssclasses:
 > 		- [ ] Tonus sphinctérien, réflexe anal
 > 		- [ ] Paroi rectale : masse, sang
 > 		- [ ] Prostate : taille, consistance (souple et élastique, ou dure et irrégulière),
->             surface, sillon médian conservé ou effacé, mobilité de la muqueuse
+>             surface, nodule palpable, sillon médian conservé ou effacé, mobilité de la muqueuse
 > 		- [ ] Douleur à la palpation prostatique : une prostate très douloureuse fait
 >             suspecter une prostatite aiguë — pas de massage prostatique 🚩
 > 	- [ ] Doigtier examiné au retrait : sang, glaires, selles

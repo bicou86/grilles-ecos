@@ -30,10 +30,10 @@ cssclasses:
 > 		- [ ] Effort déclenchant aujourd'hui comparé à celui du début — rire, puis escaliers,
 >             marche, port de charge : ce seuil qui baisse mesure l'aggravation
 > 	- [ ] Incontinence par urgenturie :
-> 		- [ ] Besoin impérieux, brutal, impossible à différer ; déclencheurs : bruit de l'eau,
+> 		- [ ] Besoin impérieux, brutal, difficile à différer ; déclencheurs : bruit de l'eau,
 >             froid, arrivée devant la porte
 > 		- [ ] Atteint-elle les toilettes à temps ? C'est la réponse à cette question, et non
->             le besoin lui-même, qui fait l'urgenturie
+>             le besoin lui-même, qui fait l'incontinence par urgenturie
 > 	- [ ] Incontinence mixte : les deux coexistent — faire dire laquelle gêne le plus
 > 	- [ ] Incontinence par regorgement : sensation de vidange vésicale incomplète, besoin de
 >         pousser, jet faible, gouttes retardataires, fuites goutte à goutte sans besoin

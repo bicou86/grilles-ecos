@@ -47,7 +47,7 @@ cssclasses:
 > 	- [ ] Une source traitée à charge virale indétectable ne transmet pas, et l'indication à la PEP tombe : le dire explicitement, c'est souvent ce qui rassure vraiment
 > 	- [ ] Contexte de risque de la source : région de haute prévalence, usage de drogues intraveineuses, homme ayant des rapports sexuels avec des hommes, travail du sexe, partenaires multiples, IST en cours
 > 	- [ ] Chez le patient : date et résultat du dernier test VIH, IST antérieures et leur traitement, PrEP en cours et régularité réelle des prises
-> 	- [ ] 🚩 Fièvre, pharyngite, éruption ou adénopathies dans les jours qui suivent l'exposition : ce n'est plus une prophylaxie, c'est une primo-infection à diagnostiquer
+> 	- [ ] 🚩 Fièvre, pharyngite, éruption ou adénopathies : le syndrome rétroviral aigu survient 2 à 4 semaines après la contamination, pas dans les jours qui suivent — de tels symptômes renvoient donc à une exposition plus ancienne et font chercher une primo-infection (test combiné antigène/anticorps, voire charge virale), sans retarder la prise en charge du jour
 > 	- [ ] Antécédents médicaux, atteinte rénale ou hépatique, grossesse possible ou allaitement
 > 	- [ ] Médicaments habituels et allergies : la trithérapie interagit (antiacides et inhibiteurs de la pompe à protons, contraception hormonale) — la liste se demande avant de prescrire
 > 	- [ ] Statut vaccinal, hépatite B en premier ; consommations : tabac, alcool, drogues

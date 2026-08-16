@@ -79,7 +79,7 @@ cssclasses:
 > 	- [ ] Constantes : TA, FC, température, fréquence respiratoire, saturation
 > 	- [ ] Attitude : patient agité qui ne trouve aucune position (colique), ou au contraire immobile, jambes fléchies (péritonisme)
 > 	- [ ] État général : faciès douloureux, pâleur, sueurs, marbrures, vigilance
-> 	- [ ] Coloration cutanée et sclères : absence d'ictère (écarte la piste biliaire)
+> 	- [ ] Coloration cutanée et sclères : absence d'ictère (contre une angiocholite ou un obstacle cholédocien — la cholécystite, elle, reste le plus souvent anictérique)
 > 	- [ ] Déshydratation : pli cutané, langue sèche, hypotension orthostatique
 > 	- [ ] Abdomen : cicatrices, distension, voussure sus-pubienne, orifices herniaires, péristaltisme visible
 > - [ ] **2. Auscultation — avant toute percussion ou palpation**
@@ -96,10 +96,10 @@ cssclasses:
 > 	- [ ] Superficielle puis profonde, les 4 quadrants : douleur provoquée, masse, empâtement
 > 	- [ ] Défense, détente (décompression brutale), contracture : signes de péritonisme — un ventre souple malgré une douleur intense reste la règle dans la colique
 > 	- [ ] Loges rénales, bimanuelle : main postérieure dans le flanc, main antérieure sous le rebord costal ; contact lombaire, rein palpable descendant à l'inspiration
-> 	- [ ] Points urétéraux (supérieur : bord externe du grand droit à hauteur de l'ombilic ; moyen : sur la ligne bi-iliaque)
+> 	- [ ] Points urétéraux (supérieur : bord externe du grand droit à hauteur de l'ombilic ; moyen : union du tiers externe et du tiers moyen de la ligne bi-iliaque)
 > 	- [ ] Sus-pubienne : globe vésical, volume, douleur vésicale, signes de rétention
 > 	- [ ] Foie, rate, vésicule biliaire (Murphy)
-> 	- [ ] Aorte abdominale : largeur, caractère battant et expansif
+> 	- [ ] Aorte abdominale, encadrée entre les deux mains de part et d'autre de la ligne médiane : largeur entre les deux bords (plus informative que la force du battement — au-delà de 3 cm, suspecter un anévrisme), caractère expansif
 > 	- [ ] Région inguinale : orifices herniaires, adénopathies
 > 	- [ ] Rachis lombaire et masses paravertébrales : une douleur reproduite à la palpation oriente vers une cause pariétale ou rachidienne
 > 	- [ ] Pouls périphériques, œdèmes des membres inférieurs

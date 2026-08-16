@@ -78,8 +78,6 @@ cssclasses:
 > - [ ] **1. Écouter la voix et regarder respirer**
 > 	- [ ] Écouter le timbre pendant toute l'anamnèse : rauque, soufflé, bitonal,
 >         éteint ; fatigabilité au fil de l'entretien ; toux claire ou aboyante
-> 	- [ ] Faire tenir un « a » le plus longtemps possible : moins de 10 secondes
->         témoigne d'une fuite d'air glottique
 > 	- [ ] État général : amaigrissement, teint, position de la tête, anxiété
 > 	- [ ] 🚩 Signes de lutte : tirage, battement des ailes du nez, cyanose,
 >         fréquence respiratoire et saturation
@@ -129,7 +127,8 @@ cssclasses:
 >         irrégularité ou ulcération, mobilité de chaque côté, sinus piriformes
 > - [ ] **6. 🚩 Signes à ne pas rater**
 > 	- [ ] Bruit inspiratoire, tirage ou dyspnée de repos : filière laryngée menacée
-> 	- [ ] Immobilité d'une corde vocale : atteinte du nerf récurrent
+> 	- [ ] Immobilité d'une corde vocale : fixation par envahissement tumoral de la
+>         corde et de l'espace paraglottique, ou paralysie récurrentielle
 > 	- [ ] Lésion bourgeonnante, ulcérée ou plaque blanche adhérente (larynx, bouche)
 > 	- [ ] Ganglion cervical dur, indolore et fixé, ou ganglion sus-claviculaire
 > 	- [ ] Craquement laryngé aboli, larynx peu mobile sur le rachis

@@ -17,7 +17,7 @@ cssclasses:
 > - [ ] **1. Caractérisation de la diarrhée**
 > 	- [ ] Question ouverte sur le motif, puis clarification : « Que comprenez-vous par diarrhée ? » — la plainte recouvre selles molles, urgences fécales, incontinence
 > 	- [ ] Définitions : diarrhée = plus de 3 selles non moulées par 24 h ou plus de 300 g/24 h ; constipation = moins de 3 selles par semaine ; référence = le transit habituel du patient
-> 	- [ ] Durée : aiguë (moins de 2 semaines), persistante (2 à 4 semaines), chronique (plus de 3 à 4 semaines)
+> 	- [ ] Durée : aiguë (moins de 2 semaines, champ presque entièrement infectieux), persistante (2 à 4 semaines), chronique (plus de 4 semaines, mécanisme durable) — quand une seule limite est retenue, elle est posée à 3 semaines
 > 	- [ ] Début, événement précipitant, évolution (intermittente, continue, croissante), épisodes antérieurs
 > 	- [ ] Fréquence par 24 h et volume par selle : petites selles impérieuses (recto-sigmoïde) ou selles abondantes (grêle, côlon droit)
 > 	- [ ] Horaire : matinal, post-prandial (délai après le repas), nocturne — une diarrhée qui réveille est un argument d'organicité 🚩
@@ -85,16 +85,15 @@ cssclasses:
 > - [ ] **2. Inspection — générale, extra-digestive et abdominale**
 > 	- [ ] Ambiance générale (agitation ou prostration), faciès : dénutrition, déshydratation
 > 	- [ ] Pâleur cutanéo-muqueuse et des conjonctives (anémie), ictère des sclères
-> 	- [ ] Signes de carence : chéilite, glossite, ongles cassants, œdèmes déclives
+> 	- [ ] Signes de carence : chéilite, glossite, œdèmes déclives
 > 	- [ ] Cavité buccale et oropharynx : aphtes
-> 	- [ ] Peau, sur tout le corps : érythème noueux, pyoderma gangrenosum, hyperpigmentation, lésions de grattage
+> 	- [ ] Peau, sur tout le corps : érythème noueux, pyoderma gangrenosum, hyperpigmentation
 > 	- [ ] Articulations (arthrite) et œil (uvéite, épisclérite) si point d'appel
 > 	- [ ] Palpation de la thyroïde : volume, nodules
 > 	- [ ] Abdomen : morphologie (plat ou distendu), symétrie, cicatrices, hernies (ombilicale, inguinales, crurales), veines superficielles, mouvements respiratoires
 > - [ ] **3. Auscultation puis percussion — avant toute palpation**
 > 	- [ ] Bruits hydro-aériques dans les 4 quadrants, en déplaçant le stéthoscope ; patienter au moins 1 minute avant de conclure au silence
 > 	- [ ] Fréquence, tonalité, intensité : silence abdominal (iléus paralytique), hyperactivité (diarrhée, obstruction partielle), bruits métalliques (distension)
-> 	- [ ] Souffles vasculaires : aorte, artères rénales et iliaques
 > 	- [ ] Auscultation cardiaque (tachycardie) et pulmonaire
 > 	- [ ] Percussion des 4 quadrants : tympanisme diffus (distension gazeuse), matité localisée
 > 	- [ ] Flèche hépatique sur la ligne médio-claviculaire, avec mesure ; taille de la rate

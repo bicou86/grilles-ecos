@@ -43,7 +43,8 @@ cssclasses:
 > 	- [ ] Antécédent de traumatisme nasal
 > - [ ] **3. Contexte infectieux, revue ORL et respiratoire**
 > 	- [ ] Fièvre : mesurée ou ressentie, valeur la plus haute, durée, frissons
-> 	- [ ] Symptômes B : sueurs nocturnes, perte de poids chiffrée, fatigue inhabituelle
+> 	- [ ] Symptômes B (avec la fièvre) : sueurs nocturnes qui trempent le linge, perte
+>         de poids de plus de 10 % en 6 mois — noter aussi l'asthénie inhabituelle
 > 	- [ ] Oreille : otalgie, oreille bouchée, baisse d'audition — la trompe d'Eustache
 >         souffre avec le nez
 > 	- [ ] Gorge : mal de gorge, douleur à la déglutition, voix modifiée

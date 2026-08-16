@@ -89,7 +89,7 @@ cssclasses:
 > 	- [ ] Muqueuse buccale et palais : intégrité, muguet, aphtes, énanthème
 > 	- [ ] Salivation abondante, menton et cou humides en permanence
 > 	- [ ] Joues : rougeur, sécheresse, eczéma ; menton et zone péribuccale : irritation, dermite de bave
-> 	- [ ] Doigts portés à la bouche et mâchouillement d'objets pendant l'examen — cela s'observe, cela ne se demande pas
+> 	- [ ] Doigts portés à la bouche et mâchouillement d'objets : demandés à la mère, puis confirmés en observant l'enfant pendant l'examen
 > - [ ] **4. Chercher la cause organique là où elle se cache**
 > 	- [ ] Otoscopie des **deux** tympans : bombement, rougeur vive, disparition du triangle lumineux et du manche du marteau — seul cet examen écarte l'otite
 > 	- [ ] ORL : oropharynx et amygdales, narines ; adénopathies cervicales et occipitales

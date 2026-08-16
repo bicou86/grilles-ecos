@@ -53,8 +53,8 @@ cssclasses:
 > 	- [ ] Signes évoquant un trouble du spectre autistique : pauvreté du contact visuel, absence de pointage et d'attention conjointe, intérêts restreints, comportements répétitifs — et surtout une régression du langage ou des acquis 🚩
 > 	- [ ] Trouble spécifique des apprentissages : la difficulté reste-t-elle circonscrite à la lecture, à l'écriture ou au calcul, ou déborde-t-elle sur le sommeil, la maison et les jeux
 > - [ ] **5. Développement psychomoteur, grossesse et période néonatale**
-> 	- [ ] Jalons datés, jamais qualifiés de « normaux » sans chiffre : tenue assise, marche autonome (attendue à 15 mois ; absence de marche à 18 mois = retard 🚩), premiers mots, phrases, propreté diurne puis nocturne
-> 	- [ ] Premiers mois : fixe et suit du regard (acquis à 6 semaines), réagit aux bruits, sourire-réponse
+> 	- [ ] Jalons datés, jamais qualifiés de « normaux » sans chiffre : tenue assise, marche autonome (acquise entre 12 et 18 mois ; absence de marche à 18 mois = retard 🚩), premiers mots, phrases, propreté diurne puis nocturne
+> 	- [ ] Premiers mois : fixation du regard dès les premiers jours de vie, puis poursuite oculaire et sourire-réponse vers 6 semaines ; réaction aux bruits
 > 	- [ ] Motricité fine et graphisme : tenue du crayon, découpage, lacets ; maladresse et chutes fréquentes
 > 	- [ ] Une acquisition tardive et ancienne déplace le diagnostic vers un trouble du développement, et non vers un trouble attentionnel révélé par l'école
 > 	- [ ] Grossesse : déroulement, infections, exposition au tabac, à l'alcool et aux drogues, médicaments pris

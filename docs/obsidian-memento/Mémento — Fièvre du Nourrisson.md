@@ -108,8 +108,8 @@ cssclasses:
 > - [ ] **5. Neuro-méningé, adapté à l'âge**
 > 	- [ ] Vigilance, contact visuel, qualité du cri, consolabilité dans les bras du parent
 > 	- [ ] Tonus axial et périphérique, motricité spontanée des quatre membres
-> 	- [ ] Raideur de nuque, Kernig et Brudzinski — peu fiables avant 18 mois : leur négativité
->         n'écarte pas une méningite 🚩
+> 	- [ ] Raideur de nuque, Kernig et Brudzinski — peu fiables chez le nourrisson : leur négativité
+>         n'écarte pas une méningite ; se fier davantage au comportement et à la fontanelle 🚩
 > 	- [ ] Photophobie, gêne à la mobilisation de la nuque pendant l'examen
 > 	- [ ] Après une convulsion : délai de retour à un contact normal, recherche d'un déficit focal
 > - [ ] **6. Quand l'examen se fait au téléphone**

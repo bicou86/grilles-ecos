@@ -53,10 +53,10 @@ cssclasses:
 > 	- [ ] Dépistage néonatal au talon (carte de Guthrie) : entre J3 et J5, jamais avant 72 h, le temps que le taux monte après le début de l'alimentation
 > 		- [ ] Phénylcétonurie, hypothyroïdie congénitale, mucoviscidose, déficit en MCAD
 > 		- [ ] Devant une croissance qui inquiète, vérifier le carnet passe avant tout dosage
-> 	- [ ] Vitamine K à la naissance ; vitamine D 400 UI par jour de 0 à 3 ans
+> 	- [ ] Vitamine K per os, trois doses : à la naissance, à J4 et à 4 semaines ; vitamine D 400 UI par jour la première année, puis 600 UI par jour de 1 à 3 ans
 > 	- [ ] Vaccinations reçues et prochaine échéance, contrôlées sur le carnet et non de mémoire
-> 	- [ ] Repères d'alimentation : sein exclusif jusqu'à 6 mois, diversification entre 4 et 6 mois — trop tôt expose à l'allergie, trop tard à la carence en fer
-> 	- [ ] Dépistage de l'anémie ferriprive entre 12 et 18 mois, surtout après un allaitement prolongé sans diversification
+> 	- [ ] Repères d'alimentation : allaitement exclusif jusqu'à environ 6 mois ; aliments de complément entre 4 et 6 mois révolus, jamais avant 4 mois — trop tôt expose à l'allergie, trop tard à la carence en fer
+> 	- [ ] Anémie ferriprive : hémoglobine ciblée vers 12 mois chez l'enfant à risque — prématurité, allaitement prolongé sans apport de fer
 > 	- [ ] Consultations de suivi déjà faites, mesures qui y ont été relevées, prochain contrôle prévu
 > - [ ] **6. La famille, le contexte — et la mère, qui est aussi à évaluer**
 > 	- [ ] Composition du foyer, présence et implication du second parent, qui relaie la mère au quotidien

@@ -110,8 +110,8 @@ cssclasses:
 > 	- [ ] Pouls périphériques des deux côtés
 > - [ ] **4. Cœur et jugulaires — écarter l'origine cardiaque**
 > 	- [ ] Auscultation cardiaque aux **quatre foyers** : B1 et B2, régularité, souffle, galop
-> 	- [ ] Turgescence jugulaire et **reflux hépato-jugulaire**, patient à 45° : pression maintenue une
->         trentaine de secondes sur l'hypochondre droit, en surveillant le pouls jugulaire
+> 	- [ ] Turgescence jugulaire et **reflux hépato-jugulaire**, patient à 45° : pression maintenue 10 à
+>         15 secondes sur l'hypochondre droit, en surveillant le pouls jugulaire
 > 	- [ ] Auscultation pulmonaire : crépitants des bases, signes de surcharge
 > 	- [ ] Chez un patient très œdématié, l'absence de tous ces signes est une information : la
 >         rétention ne vient pas du cœur

@@ -63,8 +63,8 @@ cssclasses:
 > 	- [ ] Opérations antérieures, vasculaires surtout (stripping, pontage) et orthopédiques du membre
 > 	- [ ] Médicaments : anticoagulant, antiagrégant, corticoïdes, immunosuppresseurs ; automédication
 > 	- [ ] Allergies, en insistant sur les pansements, antiseptiques et antibiotiques locaux
-> 	- [ ] Noxes : tabac (paquets-années, sevrage) — le seul facteur de risque encore modifiable ;
->         alcool ; autres toxiques
+> 	- [ ] Noxes : tabac (paquets-années, sevrage) — facteur de risque majeur d'AOMI et frein
+>         direct à la cicatrisation ; alcool ; autres toxiques
 > 	- [ ] Anamnèse familiale : thromboses, trouble connu de la coagulation
 > - [ ] **5. Mode de vie, retentissement et contexte de soin**
 > 	- [ ] Activité physique quotidienne, sédentarité, temps passé assis jambes pendantes

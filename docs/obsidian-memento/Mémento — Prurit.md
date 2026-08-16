@@ -96,7 +96,7 @@ cssclasses:
 > 	- [ ] Souffles vasculaires : aorte, artères rénales, artères iliaques
 > 	- [ ] Percussion des 4 quadrants, systématiquement : tympanisme, matité localisée
 > 	- [ ] Matité hépatique : limite supérieure **et** inférieure sur la ligne médio-claviculaire ; flèche hépatique mesurée et annoncée
-> 	- [ ] Aire de matité splénique — la rate n'est normalement pas percutable
+> 	- [ ] Matité splénique : ligne axillaire moyenne gauche, entre 9e et 11e côtes — une rate normale y donne déjà une matité, jusqu'à 7 cm ; c'est l'espace de Traube qui est normalement tympanique, sa matité évoque une splénomégalie
 > 	- [ ] Ascite : matité déclive des flancs, mobile aux changements de position ; signe du flot
 > - [ ] **5. Palpation superficielle, puis profonde**
 > 	- [ ] Commencer à distance de la zone douloureuse, main à plat, doigts serrés ; garder le contact visuel avec le visage du patient

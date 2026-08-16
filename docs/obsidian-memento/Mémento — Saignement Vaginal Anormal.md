@@ -45,8 +45,7 @@ cssclasses:
 >         couches, interruptions
 > 	- [ ] Dernier contrôle gynécologique : date — et ce qui a éloigné du suivi si l'écart
 >         est long
-> 	- [ ] Dernier frottis : date et résultat ; test HPV déjà réalisé ou jamais, statut
->         vaccinal
+> 	- [ ] Dernier frottis : date et résultat ; test HPV déjà réalisé ou jamais
 > - [ ] **3. Symptômes gynécologiques associés**
 > 	- [ ] Douleurs du bas-ventre ou sensation de pression pelvienne : localisation,
 >         rythme, rapport chronologique au saignement
@@ -78,7 +77,7 @@ cssclasses:
 >         abandonner la protection sans faire disparaître le risque infectieux
 > 	- [ ] IST antérieures : lesquelles, quand, traitées
 > 	- [ ] Antécédents médicaux : diabète, hypertension, obésité ; affections tumorales
->         personnelles ; saignements faciles ailleurs (gencives, ecchymoses)
+>         personnelles
 > 	- [ ] Antécédents chirurgicaux, utérins et pelviens en premier ; hospitalisations
 > 	- [ ] Médicaments : traitement hormonal de substitution (œstrogènes seuls ou combinés),
 >         contraception hormonale, tamoxifène, anticoagulants et antiagrégants
@@ -90,8 +89,8 @@ cssclasses:
 > 	- [ ] Tout saignement survenu plus de douze mois après les dernières règles : il
 >         s'explore systématiquement, même minime, même unique — le banaliser est le piège
 >         de la station
-> 	- [ ] Chez une femme non ménopausée, un retard de règles avec saignement impose
->         d'écarter une grossesse avant tout le reste
+> 	- [ ] Chez toute femme en âge de procréer, écarter une grossesse avant tout le reste :
+>         le saignement d'une grossesse extra-utérine se donne volontiers pour des règles
 > 	- [ ] Saignement abondant avec malaise, tachycardie, pâleur, hypotension :
 >         déglobulisation aiguë — les constantes passent avant l'interrogatoire
 > 	- [ ] Saignement provoqué par les rapports, chez une femme jamais dépistée ou dont le

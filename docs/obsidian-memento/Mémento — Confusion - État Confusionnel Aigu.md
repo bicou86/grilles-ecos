@@ -34,10 +34,11 @@ cssclasses:
 > 		- [ ] Confusion probable si **1 et 2** sont présents, avec le **3 ou le 4**
 > 	- [ ] Forme hypoactive (ralentissement, latence des réponses, apathie) ou hyperactive (agitation) : l'hypoactive est la plus fréquente, la plus souvent manquée, et de plus mauvais pronostic
 > 	- [ ] 🚩 Un déclin cognitif ou une démence connus prédisposent à l'état confusionnel mais ne l'expliquent jamais : le facteur déclenchant reste à trouver
-> 	- [ ] Ce qui le sépare de la démence : survenue abrupte, durée en heures-jours, conscience fluctuante, attention effondrée — la démence s'installe sur des mois, conscience intacte et attention d'abord préservée
+> 	- [ ] Ce qui le sépare de la démence : survenue abrupte en heures à jours, conscience fluctuante, attention effondrée — la démence s'installe sur des mois, conscience intacte et attention d'abord préservée
 > - [ ] **3. Chercher le facteur déclenchant — c'est tout l'enjeu de la consultation**
 > 	- [ ] 🚩 Ordonnance ligne par ligne, et surtout **ce qui a changé** : médicament nouvellement introduit, dose modifiée, erreur de délivrance ; diurétique, IEC ou sartan, hypnotique, anticholinergique, opiacé
 > 	- [ ] 🚩 Date des dernières urines et des dernières selles, volume de la diurèse : rétention urinaire et fécalome sont les deux causes réversibles les plus fréquentes chez le sujet âgé institutionnalisé
+> 	- [ ] Symptômes urinaires : brûlures mictionnelles, pollakiurie nouvelle, douleur sus-pubienne ou lombaire — une urine trouble ou malodorante n'en est pas un : après 80 ans, la bactériurie asymptomatique est banale et n'explique jamais à elle seule un état confusionnel ; avec un vrai point d'appel, l'infection urinaire redevient un différentiel chez un homme porteur d'une HBP
 > 	- [ ] Pertes digestives :
 > 		- [ ] Début, nombre de selles par 24 h, consistance
 > 		- [ ] Mucus, sang frais, méléna
@@ -46,7 +47,8 @@ cssclasses:
 > 	- [ ] Alimentation et boissons **réellement** prises, appétit, date du dernier repas ; soif — souvent absente chez la personne âgée
 > 	- [ ] Fièvre : présence au cours de la journée et valeur de la dernière mesure — après 80 ans la réponse thermique est atténuée, un fébricule peut valoir une fièvre
 > 	- [ ] Douleur : celui qui ne peut plus la dire la montre — gémissements, mains sur le ventre, grimaces à la mobilisation, refus des soins habituels
-> 	- [ ] Symptômes neurologiques : céphalées, vertiges, troubles visuels, paresthésies, déficit moteur ; chute ou choc à la tête, même remontant à plusieurs semaines
+> 	- [ ] Symptômes neurologiques : céphalées, vertiges, troubles visuels, paresthésies, déficit moteur
+> 	- [ ] 🚩 Chute ou choc à la tête, même remontant à plusieurs semaines — et un traumatisme non retrouvé n'écarte rien : chez le sujet âgé, l'hématome sous-dural chronique se révèle souvent par la seule confusion, sans chute rapportée
 > 	- [ ] 🚩 Alcool : consommation habituelle et date du dernier verre — le sevrage est la seule cause d'état confusionnel qu'une benzodiazépine améliore au lieu de l'aggraver ; tabac
 > 	- [ ] Contage et environnement : autre résident ou proche malade, antibiothérapie récente, voyage, chaleur ambiante
 > 	- [ ] Mesures déjà entreprises par l'équipe avant l'appel
@@ -73,16 +75,14 @@ cssclasses:
 > 	- [ ] Muqueuses et langue : sécheresse, langue rôtie
 > 	- [ ] Pli cutané persistant
 > 	- [ ] Temps de recoloration capillaire, chiffré en secondes — au-delà de 3 s, hypoperfusion périphérique
-> 	- [ ] Diurèse : volume, couleur, nombre de protections changées depuis la veille
+> 	- [ ] Diurèse : volume, couleur (une urine foncée et concentrée signe le déficit hydrique), nombre de protections changées depuis la veille
 > 	- [ ] Selles décrites de visu, et non de mémoire
-> 	- [ ] Peau des points d'appui, état bucco-dentaire
 > - [ ] **3. Examen neurologique**
 > 	- [ ] Vigilance et orientation aux quatre modes : temps, lieu, personnes, situation
 > 	- [ ] Latence des réponses, cohérence du discours
 > 	- [ ] Attention testée et non supposée : mois de l'année à rebours, répétition d'une consigne simple
 > 	- [ ] Motricité des quatre membres : latéralisation, parésie grossière
 > 	- [ ] Asymétrie faciale, langage, déviation du regard
-> 	- [ ] Pupilles, signes méningés
 > 	- [ ] 🚩 Tout déficit focal nouveau fait sortir du cadre de l'état confusionnel et impose l'imagerie
 > - [ ] **4. Abdomen — dont les deux causes qui se lèvent sur place**
 > 	- [ ] Inspection : ballonnement, cicatrices

@@ -49,7 +49,7 @@ cssclasses:
 > 	- [ ] Baisse récente de la tolérance à l'effort, fatigue inhabituelle, faiblesse générale
 > 	- [ ] Cardiopathie connue : coronaropathie, insuffisance cardiaque, valvulopathie, trouble du rythme, pacemaker
 > 	- [ ] Fièvre en cours — elle démasque un syndrome de Brugada, et se traite comme telle
-> 	- [ ] 🚩 Mort subite, noyade ou accident inexpliqué avant 45 ans dans la famille ; trouble du rythme héréditaire connu
+> 	- [ ] 🚩 Mort subite, noyade ou accident inexpliqué avant 40 ans dans la famille ; trouble du rythme héréditaire connu
 > - [ ] **5. Les autres causes à ne pas manquer**
 > 	- [ ] Hypoglycémie : diabète traité par insuline ou sulfonylurée, dose prise, dernier repas, sueurs, tremblements, faim — la question ne remplace pas la glycémie capillaire
 > 	- [ ] Hypovolémie et anémie : apports hydriques et sodés, diarrhée, vomissements, diurétique, anémie connue et traitement martial, règles abondantes, méléna ou rectorragies

@@ -34,7 +34,7 @@ cssclasses:
 > 	- [ ] Retentissement : sommeil, alimentation et boissons, jeu, école ou travail, activités abandonnées
 > - [ ] **3. Le travail respiratoire — le faire décrire, jamais le supposer**
 > 	- [ ] Faire compter la respiration sur **une minute pleine**, torse découvert, patient au repos
-> 	- [ ] Tachypnée lue contre les normes de l'âge (adulte > 20/min ; nourrisson > 50 ; 1 à 5 ans > 40 ; grand enfant > 30)
+> 	- [ ] Tachypnée lue contre les normes de l'âge (adulte > 20/min ; moins de 2 mois > 60 ; 2 à 12 mois > 50 ; 1 à 5 ans > 40 ; grand enfant > 30)
 > 	- [ ] Tirages : creux au-dessus du sternum, entre les côtes, sous les côtes ; battement des ailes du nez
 > 	- [ ] Geignement expiratoire, balancement du ventre et du thorax en sens inverse
 > 	- [ ] Bruit respiratoire et **temps** où il survient : à l'inspiration (obstacle haut) ou à l'expiration (obstacle bronchique)
@@ -123,4 +123,4 @@ cssclasses:
 > 	- [ ] Œdème de la langue ou de la luette, urticaire, hypotension
 > 	- [ ] Impossibilité de boire, de téter ou de finir une phrase
 > 	- [ ] Asymétrie auscultatoire brutale, thorax silencieux, trachée déviée
-> 	- [ ] Marbrures, extrémités froides, recoloration capillaire au-delà de 3 secondes
+> 	- [ ] Marbrures, extrémités froides, recoloration capillaire au-delà de 2 secondes

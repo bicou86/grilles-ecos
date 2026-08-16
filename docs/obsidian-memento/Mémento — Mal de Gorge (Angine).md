@@ -39,9 +39,10 @@ cssclasses:
 > 	- [ ] Abattement, altération de l'état général, incapacité à s'hydrater
 > - [ ] **3. Symptômes associés et orientation étiologique**
 > 	- [ ] Fièvre : chiffrée, depuis quand, frissons, réponse aux antipyrétiques
-> 	- [ ] **Les quatre questions de Centor** : fièvre au-dessus de 38 °C, **absence**
->          de toux, adénopathies cervicales sensibles, exsudat amygdalien — plus il y
->          en a, plus le streptocoque A est probable
+> 	- [ ] **Les quatre critères de Centor** : fièvre au-dessus de 38 °C et **absence**
+>          de toux se demandent ici ; adénopathies cervicales **antérieures** sensibles
+>          et exsudat amygdalien se constatent au status — plus il y en a, plus le
+>          streptocoque A est probable
 > 	- [ ] Plutôt viral : toux, rhinorrhée, enrouement, yeux rouges, aphtes
 > 	- [ ] Plutôt mononucléose : fatigue majeure et prolongée, ganglions diffus,
 >          douleurs abdominales (rate), éruption après une aminopénicilline
@@ -100,7 +101,8 @@ cssclasses:
 >          déglutitions pour un seul bol, toux ou voix mouillée après
 > - [ ] **3. Inspection de l'oropharynx**
 > 	- [ ] Abaisse-langue et lampe, personne assise face à la lumière, faire dire
->          « ah » sans tirer la langue
+>          « ah » sans tirer la langue — mais devant stridor, bave et position en
+>          tripode, **ne pas examiner la gorge** : risque d'obstruction complète
 > 	- [ ] Amygdales : taille, **symétrie**, érythème, exsudat ou enduit blanchâtre
 > 	- [ ] Voile et palais : pétéchies palatines, œdème, **bombement d'un pilier**
 > 	- [ ] Luette : refoulée **vers le côté sain** en cas d'abcès périamygdalien

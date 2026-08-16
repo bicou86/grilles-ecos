@@ -68,8 +68,8 @@ cssclasses:
 > 	- [ ] Traitements déjà administrés : molécule, dose, heure, lavage nasal — et surtout
 >         **avec quel effet et pour combien de temps**
 > 	- [ ] Antibiotique en cours : lequel, depuis quand, pris jusqu'au bout ou non
-> 	- [ ] Entourage : santé de la famille, crèche ou garde collective, fratrie, cas
->         semblables ; tabagisme passif au domicile
+> 	- [ ] Entourage : santé de la famille, crèche ou garde collective, fratrie,
+>         cas semblables
 > 	- [ ] Antécédents périnataux s'ils sont pertinents : grossesse, accouchement, néonatal
 > 	- [ ] Clôture : « avez-vous des questions ? », « y a-t-il autre chose d'important ? » ;
 >         ce que le parent redoute et ce qu'il attend de la consultation
@@ -119,8 +119,8 @@ cssclasses:
 >         cardiaque : fréquence, régularité, souffle
 > 	- [ ] Abdomen : palpation des quatre quadrants, défense ; recherche d'une
 >         hépatomégalie et d'une splénomégalie
-> 	- [ ] Signes de déshydratation : muqueuses sèches, absence de larmes, yeux enfoncés,
->         pli cutané, recoloration capillaire
+> 	- [ ] Hydratation : muqueuses sèches, absence de larmes, yeux enfoncés, pli cutané,
+>         recoloration capillaire allongée
 > - [ ] **6. 🚩 Signes à ne pas rater**
 > 	- [ ] Mastoïdite : douleur à la percussion mastoïdienne, tuméfaction et rougeur
 >         rétro-auriculaires, **décollement du pavillon**
@@ -128,7 +128,7 @@ cssclasses:
 >         peu fiables avant 18 mois, leur négativité n'écarte pas une méningite otogène
 > 	- [ ] Paralysie faciale périphérique : asymétrie **front compris**, œil qui ne se
 >         ferme pas du côté de l'oreille malade
-> 	- [ ] Nystagmus, ataxie, vertige objectivé
+> 	- [ ] Labyrinthite : nystagmus, ataxie, vertige objectivé
 > 	- [ ] Écoulement clair ou franchement sanglant après un traumatisme crânien
 > 	- [ ] Ces cinq signes ne se déduisent pas d'un examen « normal par ailleurs » : ils se
 >         cherchent un par un, avant de laisser repartir l'enfant

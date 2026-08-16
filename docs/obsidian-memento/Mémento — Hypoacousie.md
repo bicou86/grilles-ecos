@@ -1,7 +1,7 @@
 ---
 type: memento-ecos-pocket
 ssp: "Hypoacousie"
-specialite: "Hypoacousie"
+specialite: "ORL"
 tags:
   - ecos/memento
   - ecos/grille-non-officielle
@@ -9,7 +9,7 @@ cssclasses:
   - skill-ecos
 ---
 
-# Hypoacousie
+# ORL
 
 ## Hypoacousie
 
@@ -54,7 +54,8 @@ cssclasses:
 > 	- [ ] Antécédents de maladies auriculaires, opérations ORL antérieures
 > 	- [ ] Médicaments actuels et automédication récente
 > 	- [ ] 🚩 Ototoxiques, à demander nommément : aminosides, sels de platine
->         (cisplatine), diurétiques de l'anse, aspirine à forte dose, quinine
+>         (cisplatine), diurétiques de l'anse, aspirine à forte dose et AINS,
+>         quinine
 > 	- [ ] Hospitalisations et antécédents chirurgicaux
 > - [ ] **4. Terrain, antécédents et consommations**
 > 	- [ ] Antécédents : hypertension, diabète, cardiopathie ischémique traitée,

@@ -24,7 +24,7 @@ cssclasses:
 > - [ ] **2. Caractériser le déclin — décours et domaines touchés**
 > 	- [ ] Début : depuis quand, et surtout comment — installation insidieuse sur des mois ou des années, brutale, ou aggravation par paliers successifs
 > 	- [ ] Progression depuis le début : stable, lentement croissante, ou par à-coups ; l'entourage la perçoit mieux que le patient
-> 	- [ ] 🚩 Constant ou fluctuant : des troubles qui varient d'une heure ou d'un jour à l'autre, avec vigilance et attention altérées, ne sont pas une démence — c'est un état confusionnel aigu, et il se cherche en premier
+> 	- [ ] 🚩 Constant ou fluctuant : des troubles qui varient d'une heure ou d'un jour à l'autre, avec vigilance et attention altérées, font chercher en premier un état confusionnel aigu ; une fluctuation installée depuis des mois, avec hallucinations visuelles, oriente au contraire vers une démence à corps de Lewy
 > 	- [ ] Événements précipitants : maladie, hospitalisation, chirurgie, chute, deuil, déménagement, changement de traitement
 > 	- [ ] Épisodes antérieurs ; facteurs améliorants (une nuit de sommeil suffisante) et aggravants (fatigue, fin de journée, environnement inconnu)
 > 	- [ ] Mémoire : oublis récents (rendez-vous manqués, conversations, objets égarés), mêmes questions répétées dans la journée, souvenirs anciens intacts — la mémoire épisodique récente part la première
@@ -109,7 +109,7 @@ cssclasses:
 > 	- [ ] Praxie constructive (1) : copier deux pentagones entrecroisés
 > 	- [ ] Lecture du score : au-dessous de 24/30, trouble cognitif probable ; le résultat dépend du niveau de formation, de la langue, de la vue et de l'audition, et ne s'interprète jamais détaché de l'autonomie
 > - [ ] **5. 🚩 Signes à ne pas rater**
-> 	- [ ] Vigilance qui fluctue et attention effondrée pendant l'examen : c'est un état confusionnel aigu, il passe avant tout diagnostic de démence
+> 	- [ ] Vigilance qui fluctue et attention effondrée pendant l'examen : état confusionnel aigu jusqu'à preuve du contraire, il passe avant tout diagnostic de démence
 > 	- [ ] Marche à petits pas magnétique, incontinence urinaire et déclin cognitif réunis : la triade dont la cause se traite
 > 	- [ ] Déficit moteur ou sensitif focal, asymétrie franche des réflexes, Babinski : lésion structurelle, imagerie sans attendre
 > 	- [ ] Rigidité, tremblement de repos, bradykinésie

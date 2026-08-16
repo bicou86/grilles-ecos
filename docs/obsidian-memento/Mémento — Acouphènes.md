@@ -128,8 +128,9 @@ cssclasses:
 >         l'auscultation cervicale ou péri-auriculaire
 > 	- [ ] Weber latéralisé vers l'oreille **saine**, tympans normaux, installation
 >         brutale : perte auditive brusque — urgence ORL
-> 	- [ ] Acouphène unilatéral avec hypoacousie et Rinne non perturbé :
->         orientation rétrocochléaire
+> 	- [ ] Acouphène unilatéral avec hypoacousie et Rinne non perturbé : surdité de
+>         perception, cochléaire **ou** rétrocochléaire — impose l'IRM du rocher
+>         pour écarter un neurinome, jamais de réassurance immédiate
 > 	- [ ] Vertiges invalidants, nystagmus vertical ou multidirectionnel
 > 	- [ ] Paralysie faciale ou tout déficit neurologique focal
 > 	- [ ] Otorrhée, otorragie, ou otalgie fébrile avec douleur mastoïdienne

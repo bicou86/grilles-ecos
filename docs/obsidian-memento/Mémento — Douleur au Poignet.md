@@ -46,16 +46,15 @@ cssclasses:
 > 	- [ ] **Atteinte neurovasculaire** : main froide, pâle ou cyanosée, insensible, doigts qui ne bougent plus — à chercher d'emblée et à redemander après toute immobilisation
 > 	- [ ] **Loges de l'avant-bras** : gonflement tendu et douleur croissante malgré antalgie, surélévation et attelle, majorée par l'extension des doigts
 > 	- [ ] **Déficit moteur constitué** : fonte visible de la base du pouce, pouce qui ne s'oppose plus — la compression nerveuse n'est plus une simple gêne
-> 	- [ ] **Infection** : fièvre, frissons, poignet ou doigt rouge, chaud, tendu avec impotence ; plaie même minime, morsure, piqûre, injection
+> 	- [ ] **Infection** : fièvre, frissons, poignet ou doigt rouge, chaud, tendu avec impotence ; plaie même minime
 > 	- [ ] **Fracture** : déformation, impotence totale, peau ouverte ou menacée ; **chute sur la main avec douleur du versant radial, même sans gonflement ni déformation**
-> 	- [ ] **Terrain fragile** : sujet âgé, ostéoporose, corticoïdes au long cours — traumatisme minime pour une douleur majeure
 > 	- [ ] **Autres lésions** : demander explicitement s'il a mal ailleurs (crâne, thorax, abdomen, autres membres) — on ne s'arrête pas au poignet qui fait crier
 > - [ ] **5. Terrain, antécédents et mode de vie**
 > 	- [ ] Le poignet et la main avant cet épisode : anciennes fractures, entorses, blessures, **opérations de la main ou du poignet**, infiltrations, physiothérapie et leur résultat
 > 	- [ ] **Maladies systémiques qui font le lit d'une souffrance du nerf** : diabète, hypothyroïdie, insuffisance rénale et dialyse, polyarthrite rhumatoïde, goutte, grossesse en cours ou récente
 > 	- [ ] Autres antécédents médicaux et chirurgicaux, hospitalisations
 > 	- [ ] Médicaments, corticoïdes et anticoagulants en particulier ; automédication
-> 	- [ ] Allergies ; statut vaccinal, **tétanos** en cas de plaie
+> 	- [ ] Allergies
 > 	- [ ] Antécédents familiaux, rhumatologiques et métaboliques surtout
 > 	- [ ] Toxiques : tabac (paquets-années), alcool, drogues récréatives
 > 	- [ ] Profession et gestuelle de travail décrite précisément, sport et sa fréquence ; situation familiale, aides possibles à domicile

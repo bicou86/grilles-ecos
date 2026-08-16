@@ -28,7 +28,6 @@ cssclasses:
 > 	- [ ] Voyage seul ou accompagné, contacts sur place, langue parlée, budget santé et assurance
 > - [ ] **3. Faire le point sur chaque voyageur, l'un après l'autre**
 > 	- [ ] Maladies chroniques, antécédents chirurgicaux, traitements en cours, allergies (notamment médicamenteuses)
-> 	- [ ] Immunodépression 🚩 : contre-indique les vaccins vivants (fièvre jaune) et majore le risque infectieux sur place
 > 	- [ ] Contraception ; grossesse en cours ou envisagée pendant le voyage 🚩
 > 	- [ ] État de santé du jour, capacité physique pour les activités prévues
 > 	- [ ] État dentaire : conseiller un bilan avant un séjour long ou isolé
@@ -41,7 +40,7 @@ cssclasses:
 > 	- [ ] Hépatite B : séjour prolongé, soins sur place, risque sexuel, tatouage
 > 	- [ ] Fièvre typhoïde : recommandée quand l'hygiène alimentaire est précaire
 > 	- [ ] Rage : selon les activités et l'éloignement d'un centre de soins
-> 	- [ ] Fièvre jaune : exigée à l'entrée de certains pays, inutile pour d'autres — vérifier la destination ; certificat international officiel, valable dès le 10e jour
+> 	- [ ] Fièvre jaune : exigée à l'entrée de certains pays, inutile pour d'autres — vérifier la destination ; vaccin vivant, contre-indiqué en cas d'immunodépression ; certificat international officiel, valable dès le 10e jour
 > 	- [ ] Annoncer les délais : plusieurs vaccins demandent des semaines et des rappels
 > - [ ] **5. Moustiques et paludisme**
 > 	- [ ] Protection anti-vectorielle, quelle que soit la destination :
@@ -53,8 +52,8 @@ cssclasses:
 > 		- [ ] Situer la destination : pays entièrement impaludé, ou certaines régions seulement
 > 		- [ ] Chimioprophylaxie continue, ou traitement de réserve d'urgence à emporter
 > 		- [ ] Molécule selon tolérance, âge, poids et coût : méfloquine, atovaquone-proguanil, doxycycline
-> 		- [ ] Début avant le départ (1 à 2 semaines pour la méfloquine, prise hebdomadaire)
-> 		- [ ] Poursuite après le retour, 4 semaines — l'étape que tout le monde oublie
+> 		- [ ] Début avant le départ : 1 à 2 semaines pour la méfloquine (prise hebdomadaire), 1 à 2 jours pour l'atovaquone-proguanil et la doxycycline (prise quotidienne)
+> 		- [ ] Poursuite après le retour : 4 semaines (méfloquine, doxycycline), 7 jours seulement pour l'atovaquone-proguanil — l'étape que tout le monde oublie
 > 		- [ ] Effets secondaires annoncés, alternative prête si contre-indication
 > - [ ] **6. Eau, aliments et mains**
 > 	- [ ] Règle d'or : « Cook it, boil it, peel it or forget it »
@@ -66,7 +65,7 @@ cssclasses:
 > 	- [ ] Accidents de la circulation : première cause de rapatriement — ceinture, casque, pas de deux-roues, pas de conduite de nuit
 > 	- [ ] Exposition solaire : indice 50+, couvre-chef, heures d'ombre
 > 	- [ ] Baignades : courants et méduses en mer ; jamais d'eau douce en zone de bilharziose 🚩
-> 	- [ ] Morsure, griffure ou léchage d'un mammifère 🚩 : laver longuement et consulter sur place le jour même (rage)
+> 	- [ ] Morsure, griffure ou léchage d'un mammifère 🚩 : laver 15 minutes à l'eau et au savon, puis consulter sur place le jour même (rage)
 > 	- [ ] Endémies à nommer pour la destination : peste à Madagascar (rats et puces), dengue et fièvre jaune en Amazonie
 > 	- [ ] Sécurité : quartiers à éviter, sorties nocturnes, transport fiable plutôt que taxi de rue, pas de signes extérieurs de richesse
 > 	- [ ] IST et VIH : prévalence locale, préservatifs emportés de Suisse, où s'en procurer sur place, contraception d'urgence ; éviter tatouages, piercings et soins invasifs, prudence avec les transfusions

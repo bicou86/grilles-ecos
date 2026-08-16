@@ -81,7 +81,7 @@ cssclasses:
 > 	- [ ] Tour de taille : debout, mètre à même la peau, à mi-distance entre la dernière côte et la crête iliaque, en fin d'expiration douce — c'est le critère central du syndrome métabolique (au-delà de 94 cm chez l'homme, 80 cm chez la femme)
 > 	- [ ] Tour de hanches au niveau des grands trochanters, puis rapport taille/hanches : répartition androïde au-delà de 0,90 chez l'homme et 0,85 chez la femme
 > 	- [ ] Tension artérielle assis et au repos, **avec un brassard adapté à la circonférence du bras** — un brassard trop étroit surestime la tension chez le sujet obèse ; mesurer aux deux bras
-> 	- [ ] Fréquence cardiaque, fréquence respiratoire, température, saturation
+> 	- [ ] Fréquence cardiaque et saturation, relevées dans le même temps que la tension — une bradycardie chez quelqu'un qui prend du poids est un argument pour l'hypothyroïdie
 > - [ ] **2. Inspection générale et cutanée — les causes secondaires se voient avant de se doser**
 > 	- [ ] Impression générale : morphologie, aisance des mouvements, essoufflement au simple déshabillage
 > 	- [ ] Répartition de la graisse, androïde (abdominale, tronculaire) ou gynoïde (hanches et cuisses) — seule l'androïde porte le risque métabolique
@@ -95,7 +95,6 @@ cssclasses:
 > - [ ] **3. Cou, thyroïde et voies aériennes supérieures**
 > 	- [ ] Inspection du cou de face et pendant la déglutition ; cicatrice de cervicotomie
 > 	- [ ] Palpation thyroïdienne par-derrière en faisant déglutir : volume et symétrie, nodules, consistance, sensibilité, mobilité à la déglutition
-> 	- [ ] Aires ganglionnaires cervicales et sus-claviculaires
 > 	- [ ] Perméabilité nasale, obstruction chronique
 > 	- [ ] Oropharynx à l'abaisse-langue : macroglossie, amygdales volumineuses, voile bas et pharynx encombré — c'est là que se lit le terrain à apnées
 > - [ ] **4. Cœur, poumons et abdomen**
@@ -118,8 +117,8 @@ cssclasses:
 > 	- [ ] Graisse tronculaire avec membres grêles, vergetures pourpres, faciès lunaire, bosse de bison, ecchymoses : hypercorticisme, qu'aucun régime ne corrigera
 > 	- [ ] Acanthosis nigricans, a fortiori chez un sujet jeune : insulinorésistance déjà installée
 > 	- [ ] Tension élevée confirmée aux deux bras, avec un brassard de taille correcte
-> 	- [ ] Goitre, nodule dur ou fixé, adénopathie sus-claviculaire
-> 	- [ ] Abolition d'un pouls distal, souffle vasculaire, plaie ou mal perforant d'un pied
+> 	- [ ] Goitre, nodule dur ou fixé
+> 	- [ ] Abolition d'un pouls distal, souffle vasculaire
 > 	- [ ] Turgescence jugulaire, crépitants des bases, œdèmes bilatéraux prenant le godet
 > 	- [ ] Hépatomégalie ferme à bord tranchant, ascite, circulation veineuse collatérale
 > 	- [ ] Ralentissement psychomoteur, affect plat, discours désespéré : reprendre la question du risque suicidaire avant que la personne ne quitte le cabinet

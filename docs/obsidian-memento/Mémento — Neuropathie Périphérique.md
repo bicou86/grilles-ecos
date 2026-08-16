@@ -43,7 +43,7 @@ cssclasses:
 > 		- [ ] Malaises ou vertiges au lever (hypotension orthostatique), palpitations
 > 		- [ ] Sudation anormale, sécheresse buccale, pieds secs et fissurés
 > 		- [ ] Digestif : satiété précoce, ballonnements, alternance diarrhée-constipation
-> 		- [ ] Urinaire : jet faible, vidange incomplète, urines mousseuses ; dysfonction érectile
+> 		- [ ] Vésico-sphinctérien : envie d'uriner peu ressentie, mictions espacées, vidange incomplète ; dysfonction érectile
 > - [ ] **4. 🚩 Drapeaux rouges — à chercher devant toute neuropathie**
 > 	- [ ] **Paralysie ascendante** : déficit moteur bilatéral qui monte des pieds vers le tronc en quelques heures à quelques jours, ou qui s'aggrave d'un jour à l'autre
 > 	- [ ] **Atteinte respiratoire** : dyspnée, orthopnée, phrases écourtées, toux inefficace, difficulté à parler d'un seul trait — c'est l'urgence vitale de la neuropathie aiguë
@@ -55,6 +55,7 @@ cssclasses:
 > 	- [ ] **Plaie du pied** : depuis quand, comment elle est survenue (le patient ne l'a souvent pas sentie), si elle cicatrise, écoulement, odeur, fièvre
 > - [ ] **5. Recherche étiologique — citer les causes une à une**
 > 	- [ ] Diabète : connu ou non, depuis quand, dernière HbA1c, dernière consultation et **pourquoi le suivi s'est interrompu** ; complications déjà connues (rein, œil, pied)
+> 	- [ ] Signes d'appel du diabète et de ses complications : polyurie, pollakiurie ; **urines mousseuses** = protéinurie, donc néphropathie ; jet urinaire faible, qui chez l'homme évoque une hypertrophie prostatique autant qu'une vessie neurogène
 > 	- [ ] Autres facteurs de risque vasculaires : hypertension, dyslipidémie, tabac (paquets-années)
 > 	- [ ] Alcool : quantité exacte en verres par jour, depuis quand ; dépistage CAGE — besoin de réduire, agacé par les critiques, culpabilité, besoin de boire dès le matin
 > 	- [ ] Alimentation et carences : régime végétarien ou végétalien, dénutrition, chirurgie bariatrique ou gastrectomie, malabsorption, diarrhée chronique

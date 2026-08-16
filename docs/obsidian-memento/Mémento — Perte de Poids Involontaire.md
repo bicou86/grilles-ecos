@@ -79,7 +79,7 @@ cssclasses:
 > 	- [ ] Tension artérielle et fréquence cardiaque couché, puis debout après 1 et 3 minutes (hypotension orthostatique)
 > 	- [ ] Température, fréquence respiratoire, saturation
 > 	- [ ] État d'hydratation : muqueuses, pli cutané, temps de recoloration capillaire
-> - [ ] **2. Inspection — signes de dénutrition**
+> - [ ] **2. Inspection — dénutrition, purge, automutilation**
 > 	- [ ] Impression d'état général, morphotype, âge apparent ; tenue couvrante malgré la chaleur
 > 	- [ ] Fonte musculaire : creux temporaux, deltoïdes, espaces interosseux de la main, quadriceps
 > 	- [ ] Fonte du pannicule adipeux, saillie des reliefs osseux, aspect creusé du visage

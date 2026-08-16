@@ -79,8 +79,9 @@ cssclasses:
 > 	- [ ] Acuité visuelle de loin, **un œil après l'autre, l'autre occlus par la paume** —
 >         chiffrer OD puis OG, avec la correction habituelle, et noter l'aide utilisée
 > 	- [ ] Acuité de près
-> 	- [ ] Trou sténopéique si l'acuité est basse : une amélioration signe une cause
->         réfractive ou un film lacrymal instable, pas une atteinte cornéenne
+> 	- [ ] Trou sténopéique si l'acuité est basse : une amélioration oriente vers une cause
+>         optique — réfraction, film lacrymal instable, irrégularité de la cornée — et non
+>         vers une atteinte rétinienne ou du nerf optique
 > 	- [ ] **Champ visuel par confrontation, œil par œil** : central, médio-périphérique,
 >         périphérique, les quatre quadrants
 > - [ ] **2. Inspection de l'œil et des annexes**
@@ -90,8 +91,10 @@ cssclasses:
 > 	- [ ] Chémosis, hémorragie sous-conjonctivale
 > 	- [ ] Transparence de la cornée à l'œil nu — une cornée dépolie signe un œdème
 > 	- [ ] Sécrétions : nature (aqueuses, muqueuses, purulentes), quantité, localisation
-> 	- [ ] Paupières : œdème, érythème, croûtes et squames à la base des cils, position des
->         cils ; peau périoculaire — vésicules, éruption limitée à un dermatome
+> 	- [ ] Paupières : œdème, érythème, croûtes et squames à la base des cils, position des cils
+> 	- [ ] 🚩 Peau périoculaire : vésicules limitées à un dermatome, s'arrêtant à la ligne
+>         médiane — zona ophtalmique ; atteinte de l'aile ou de la pointe du nez
+>         (signe de Hutchinson) : risque élevé d'atteinte oculaire
 > 	- [ ] Bords palpébraux et orifices des glandes de Meibom ; hauteur du ménisque lacrymal
 > 	- [ ] **Éverser la paupière supérieure** et inspecter le cul-de-sac inférieur : corps
 >         étranger, papilles tarsales (allergie), follicules (viral)

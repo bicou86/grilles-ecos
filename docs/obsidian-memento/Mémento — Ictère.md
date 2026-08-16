@@ -28,7 +28,7 @@ cssclasses:
 > 	- [ ] Selles grasses, jaunes, abondantes, flottantes et difficiles à évacuer : stéatorrhée (insuffisance pancréatique exocrine)
 > 	- [ ] Consistance et fréquence des selles par 24 h ; sang dans les selles
 > 	- [ ] Prurit : présence, ancienneté par rapport à l'ictère, généralisé ou localisé, recrudescence nocturne, retentissement sur le sommeil, lésions de grattage
-> 	- [ ] Sang dans les urines ; urines foncées avec selles de couleur normale et sans prurit : penser hémolyse plutôt que cholestase
+> 	- [ ] Sang dans les urines ; puis lire le triplet urines-selles-prurit ensemble : urines foncées **+** selles normales **+** pas de prurit = atteinte hépatocellulaire ; selles décolorées **+** prurit = cholestase, extrahépatique (obstacle biliaire) ou intrahépatique (médicaments, hépatite cholestatique) ; urines claires malgré l'ictère (acholurique) = hémolyse, la bilirubine non conjuguée ne franchissant pas le filtre glomérulaire
 > - [ ] **3. Douleur abdominale, fièvre et signes de gravité**
 > 	- [ ] Douleur présente ou absente — l'absence oriente autant que la présence : ictère franchement indolore après 50 ans, penser obstacle tumoral ; douleur en colique, penser lithiase
 > 	- [ ] Localisation (faire montrer avec la main) : hypochondre droit, épigastre ; irradiation scapulaire droite ou transfixiante dans le dos

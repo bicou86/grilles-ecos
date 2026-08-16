@@ -53,7 +53,7 @@ cssclasses:
 > 	- [ ] Plaintes somatiques mises en avant : douleur thoracique, céphalées, douleurs diffuses — les caractériser (siège, intensité, durée, déclenchement, ce qui les calme) plutôt que les écarter d'emblée
 > 	- [ ] Anxiété associée, tension permanente, attaques de panique
 > - [ ] **4. Dépister ce qui n'est pas un épisode dépressif isolé**
-> 	- [ ] Épisode hypomaniaque ou maniaque passé 🚩 — un antidépresseur seul sur un trouble bipolaire expose au virage maniaque ; quatre questions suffisent :
+> 	- [ ] Épisode hypomaniaque ou maniaque passé 🚩 — un antidépresseur seul sur un trouble bipolaire expose au virage maniaque ; trois questions et l'histoire familiale suffisent :
 > 		- [ ] Périodes d'exaltation de l'humeur, d'hyperactivité ou d'irritabilité inhabituelle
 > 		- [ ] Dépenses inconsidérées, décisions ou engagements regrettés ensuite
 > 		- [ ] Besoin de sommeil réduit, avec sensation d'être particulièrement en forme
@@ -101,7 +101,7 @@ cssclasses:
 > 	- [ ] Cours de la pensée : cohérent, organisé, ralenti, digressif, incohérent
 > 	- [ ] Contenu : ruminations, culpabilité, autodévalorisation, sentiment d'incurabilité, désespoir
 > 	- [ ] Idées de mort ou idées suicidaires exprimées spontanément pendant l'examen : les reprendre aussitôt et entièrement
-> 	- [ ] Idées délirantes, en particulier congruentes à l'humeur (ruine, indignité, damnation, transformation du corps)
+> 	- [ ] Idées délirantes, en particulier congruentes à l'humeur (ruine, indignité, damnation, négation d'organe — syndrome de Cotard)
 > 	- [ ] Hallucinations ; troubles du moi (pensées imposées, sentiment d'être agi)
 > 	- [ ] Jugement et autocritique : reconnaît-il qu'il est malade et qu'un soin est nécessaire
 > - [ ] **5. Examen somatique minimal**

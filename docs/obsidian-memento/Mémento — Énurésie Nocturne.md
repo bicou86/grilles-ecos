@@ -21,9 +21,10 @@ cssclasses:
 > 	- [ ] Depuis quand : durée du problème, et évolution depuis le début (stable, s'espace, s'aggrave)
 > 	- [ ] **Périodes de propreté** — la question qui coupe le tableau en deux : l'enfant a-t-il déjà été sec ? **Primaire** = jamais propre plus de 6 mois d'affilée ; **secondaire** = rechute après au moins 6 mois de nuits sèches
 > 	- [ ] Si secondaire, facteur déclenchant à dater : naissance d'un puîné, séparation des parents, déménagement, entrée à l'école, hospitalisation, deuil
+> 	- [ ] 🚩 Maltraitance, abus, harcèlement : une énurésie secondaire peut en être le signal d'alerte — y penser devant une rechute qu'aucun autre événement n'explique, et se ménager un moment seul avec l'enfant
 > 	- [ ] Fréquence nocturne : nombre de nuits mouillées par semaine, sur une période de référence (« ces quatre dernières semaines ») plutôt qu'en impression générale
 > 	- [ ] Fréquence diurne : nombre d'accidents par semaine, et circonstances — en jouant, en riant, absorbé par une activité, sur le trajet des toilettes
-> 	- [ ] Quantité : culotte à peine humide ou lit traversé ; une seule fois par nuit ou plusieurs
+> 	- [ ] Quantité et horaire dans la nuit : culotte à peine humide ou lit traversé ; une seule fois par nuit ou plusieurs ; gros volume en début de nuit, en sommeil profond, ou petites fuites de fin de nuit — polyurie nocturne d'un côté, petite capacité vésicale de l'autre
 > 	- [ ] L'enfant se réveille-t-il après avoir mouillé, ou dort-il sans rien remarquer
 > 	- [ ] Port de couches : la nuit, le jour ; l'enfant les accepte-t-il ou les refuse-t-il
 > - [ ] **2. Le comportement mictionnel de la journée — monosymptomatique ou non**
@@ -43,6 +44,7 @@ cssclasses:
 > 	- [ ] Circonstances où les nuits sont sèches : vacances, week-ends, nuits ailleurs qu'à la maison
 > - [ ] **4. 🚩 Chercher une cause organique ou une énurésie secondaire**
 > 	- [ ] Polydipsie et polyurie : soif inhabituelle, se lève pour boire la nuit, urines abondantes et claires — c'est le couple qui fait sortir du cadre de l'énurésie banale
+> 	- [ ] Ronflement et pauses respiratoires nocturnes : le syndrome d'apnées obstructives du sommeil est une cause reconnue d'énurésie de l'enfant
 > 	- [ ] Fièvre sans foyer et douleurs lombaires — associées à l'énurésie, elles font de l'infection urinaire la première cause organique à écarter
 > 	- [ ] Douleurs abdominales : siège, horaire, lien avec la miction ou avec la selle
 > 	- [ ] Plaintes abdominales générales, nausées, vomissements
@@ -72,7 +74,8 @@ cssclasses:
 > 	- [ ] Annoncer chaque geste à l'enfant avant de le faire, avec des mots simples, et examiner en présence du parent — l'examen porte sur des régions intimes, l'accord se construit d'emblée
 > 	- [ ] Évaluation de l'état général : enfant éveillé, tonique, qui joue et interagit normalement
 > 	- [ ] État d'hydratation : peau, muqueuses buccales, langue, yeux
-> 	- [ ] Tension artérielle, brassard adapté à l'âge, lue contre les normes de l'âge — 🚩 une hypertension chez un enfant énurétique fait chercher une néphropathie
+> 	- [ ] Poids et taille mesurés et reportés sur les courbes de croissance — une cassure de la courbe déplace la question vers une maladie rénale ou un diabète
+> 	- [ ] Tension artérielle, brassard adapté au bras et non à l'âge (trop petit, il surestime), lue contre les normes d'âge, de sexe et de taille — 🚩 une hypertension chez un enfant énurétique fait chercher une néphropathie
 > 	- [ ] Pouls
 > 	- [ ] Température — une fièvre déplace la question vers l'infection urinaire
 > - [ ] **2. Abdomen et loges rénales — inspection, auscultation, puis palpation**
@@ -105,7 +108,7 @@ cssclasses:
 > 	- [ ] Sensibilité en selle (territoire sacré) et tonus de la marge anale, si le rachis ou la démarche ont montré quoi que ce soit
 > - [ ] **6. 🚩 Signes à ne pas rater**
 > 	- [ ] Anomalie cutanée de la ligne médiane lombo-sacrée **et** signe neurologique aux membres inférieurs : l'association ne s'explique par aucune énurésie banale
-> 	- [ ] Tension artérielle au-dessus des normes de l'âge : néphropathie, et non trouble fonctionnel de la continence
+> 	- [ ] Tension artérielle au-dessus des normes pédiatriques : néphropathie, et non trouble fonctionnel de la continence
 > 	- [ ] Vessie encore perceptible juste après une miction : résidu post-mictionnel, donc vessie qui ne se vide pas
 > 	- [ ] Rein palpable ou loge lombaire douloureuse : uropathie obstructive, hydronéphrose
 > 	- [ ] Abdomen encombré de masses stercorales et marge anale souillée : constipation méconnue, le facteur entretenant le plus fréquent

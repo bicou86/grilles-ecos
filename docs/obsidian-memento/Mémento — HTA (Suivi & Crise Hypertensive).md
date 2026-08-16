@@ -85,7 +85,7 @@ cssclasses:
 > 	- [ ] Membres inférieurs : œdèmes déclives, aspect cutané
 > 	- [ ] Thorax : ampliation, choc de pointe visible
 > - [ ] **3. Palpation**
-> 	- [ ] Choc de pointe : **dévié en bas et en dehors**, étalé — hypertrophie ventriculaire gauche
+> 	- [ ] Choc de pointe : **soutenu**, poussée prolongée sous le doigt, non déplacé — ventricule gauche épaissi ; **étalé et dévié en bas et en dehors** quand il se dilate
 > 	- [ ] Les **quatre pouls périphériques** : radiaux, fémoraux, poplités, pédieux — symétrie et amplitude
 > 	- [ ] 🚩 Pouls fémoraux faibles ou retardés par rapport aux radiaux : coarctation de l'aorte
 > 	- [ ] Thyroïde, par-derrière, patient assis, en le faisant déglutir : volume, nodule, consistance
@@ -101,7 +101,7 @@ cssclasses:
 > 	- [ ] 🚩 Souffle du flanc ou lombaire : sténose de l'artère rénale
 > - [ ] **5. Organes cibles — l'examen dirigé**
 > 	- [ ] **Fond d'œil** : le seul endroit du corps où l'on voit directement les artérioles — le faire, ou en énoncer la nécessité
-> 	- [ ] Gradation de Keith-Wagener : I croisements artério-veineux · II rétrécissement artériolaire · III hémorragies et exsudats · **IV œdème papillaire**
+> 	- [ ] Gradation de Keith-Wagener : I rétrécissement artériolaire · II croisements artério-veineux (signe de Gunn) · III hémorragies et exsudats · **IV œdème papillaire**
 > 	- [ ] Examen neurologique sommaire : vigilance, orientation, langage, force et sensibilité des quatre membres, marche
 > 	- [ ] Troubles cognitifs en cas de doute : MMSE ou MoCA
 > 	- [ ] Bandelette urinaire : protéinurie, hématurie

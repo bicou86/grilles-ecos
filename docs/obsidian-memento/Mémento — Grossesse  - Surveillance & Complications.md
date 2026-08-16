@@ -80,7 +80,7 @@ cssclasses:
 > 	- [ ] Inspection de l'abdomen : volume et forme de l'utérus, cicatrices (césarienne, cœlioscopie), vergetures, ligne brune
 > 	- [ ] Bandelette urinaire : protéinurie, nitrites, leucocytes, glucose, cétones
 > - [ ] **2. Examen abdominal obstétrical**
-> 	- [ ] Hauteur utérine au mètre ruban, du bord supérieur de la symphyse au fond utérin, reportée sur la courbe (entre 20 et 34 SA, hauteur en cm ≈ SA − 4)
+> 	- [ ] Hauteur utérine au mètre ruban, du bord supérieur de la symphyse au fond utérin, reportée sur la courbe (entre 16 et 32 SA, hauteur en cm ≈ SA − 4)
 > 	- [ ] Manœuvres de Leopold au 3e trimestre, en quatre temps : contenu du fond, côté du dos, présentation (céphalique, siège, transverse), engagement
 > 	- [ ] Palpation des contractions : fréquence, durée, intensité, et tonus utérin **entre** les contractions
 > 	- [ ] Auscultation des bruits du cœur fœtal au Doppler dès 12 SA — 110 à 160/min, à distinguer du pouls maternel pris en même temps

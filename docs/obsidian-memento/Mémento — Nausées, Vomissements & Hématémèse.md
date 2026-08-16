@@ -27,9 +27,10 @@ cssclasses:
 >             de la veille (stase gastrique) ; bilieux, vert-jaune et amer
 > 		- [ ] 🚩 Sang rouge vif ou grumeaux bruns « marc de café » : hématémèse —
 >             en faire estimer la quantité (filets, caillots, cuvette pleine)
-> 		- [ ] 🚩 Contenu fécaloïde, odeur de selles
-> 	- [ ] Devant du sang : écarter un sang dégluti (épistaxis, soins dentaires),
->         puis demander la couleur des selles — 🚩 selles noires et luisantes
+> 		- [ ] 🚩 Contenu fécaloïde, odeur de selles : obstacle sur le grêle
+> 	- [ ] Devant du sang : écarter un sang dégluti (épistaxis, soins dentaires), puis
+>         demander la couleur des selles — 🚩 selles noires et luisantes : méléna,
+>         hémorragie digestive haute
 > 	- [ ] Circonstances déclenchantes (repas, odeur, médicament, voyage) ; facteurs
 >         aggravants (odeurs fortes, aliments gras, estomac vide) et améliorants
 >         (manger un peu, position, antiémétique déjà pris)
@@ -38,7 +39,7 @@ cssclasses:
 > 	- [ ] Soif, quantité bue, diurèse : dernières mictions, urines rares et foncées
 > 	- [ ] Vertiges ou voile noir au lever, malaise, palpitations, essoufflement
 > 	- [ ] Variation de poids **chiffrée** : combien de kilos en combien de temps —
->         au-delà de 5 % du poids initial perdus, la sévérité change de niveau
+>         une perte ≥ 5 % du poids habituel est un critère de gravité
 > 	- [ ] Retentissement sur le quotidien : études ou travail, repas, sorties
 > - [ ] **3. Symptômes associés — balayer les appareils un par un**
 > 	- [ ] Digestif : douleurs abdominales (faire montrer avec la main, caractère
@@ -77,8 +78,9 @@ cssclasses:
 > - [ ] **1. Préalables, constantes et état d'hydratation**
 > 	- [ ] Lavage des mains ; respect de la pudeur avec un drap ; annoncer chaque geste
 > 	- [ ] Constantes : température, tension, fréquences cardiaque et respiratoire
-> 	- [ ] Tension couché puis debout à 1 et 3 minutes — l'orthostatisme est le signe
->         le plus rentable des pertes liquidiennes et de la spoliation sanguine
+> 	- [ ] Tension **et pouls**, couché après 5 min puis debout à 1 et 3 min : chute
+>         ≥ 20/10 mmHg ou accélération ≥ 30/min — c'est l'accélération du pouls qui
+>         signe le mieux la spoliation sanguine et les pertes liquidiennes
 > 	- [ ] Poids et taille, à confronter au poids habituel annoncé
 > 	- [ ] Déshydratation : muqueuses et langue sèches, pli cutané persistant, temps
 >         de recharge capillaire, yeux creux, urines concentrées

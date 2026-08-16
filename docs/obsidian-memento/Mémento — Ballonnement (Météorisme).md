@@ -91,8 +91,8 @@ cssclasses:
 > 	- [ ] Faire tousser, main posée sur la tuméfaction : **impulsion à la toux** et volume
 > 	- [ ] Valsalva (pousser bouche fermée, comme à la selle), puis recoucher le patient
 > - [ ] **3. Auscultation, puis percussion**
-> 	- [ ] Ausculter **avant** de palper : bruits hydro-aériques dans les 4 quadrants, au moins
->         une minute avant de conclure au silence
+> 	- [ ] Ausculter **avant** de palper : bruits hydro-aériques dans les 4 quadrants ; au moins
+>         2 minutes d'écoute continue, jusqu'à 5, avant de conclure au silence
 > 	- [ ] Ausculter la tuméfaction : des bruits hydro-aériques en son sein signent une anse herniée
 > 	- [ ] Souffles vasculaires : aorte, artères rénales, artères iliaques
 > 	- [ ] Percuter les 4 quadrants : tympanisme diffus = gaz ; matité = liquide ou masse

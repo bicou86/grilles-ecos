@@ -65,7 +65,7 @@ cssclasses:
 > 	- [ ] 🚩 **Avant 50 ans** : hépatopathie, ictère, troubles du comportement ou fléchissement scolaire, dysarthrie — cause métabolique curable, à ne pas manquer
 > - [ ] **6. Antécédents, terrain et contexte de vie**
 > 	- [ ] Antécédents ciblés : neurologiques, thyroïdiens, psychiatriques, cardiovasculaires (dont hypertension)
-> 	- [ ] Antécédents chirurgicaux et hospitalisations ; allergies ; vaccins
+> 	- [ ] Allergies connues
 > 	- [ ] Traitement actuel complet, automédication comprise ; traitements récemment introduits ou arrêtés
 > 	- [ ] Antécédents familiaux : tremblement, maladie de Parkinson, autre maladie neurologique — préciser chez qui (parents, fratrie, enfants)
 > 	- [ ] Symptômes généraux : fatigue, appétit, poids (stable ou perte chiffrée), fièvre
@@ -124,7 +124,7 @@ cssclasses:
 > 	- [ ] **Instabilité posturale ou chutes dans la première année** — précoces, elles sortent du cadre
 > 	- [ ] **Limitation du regard vers le bas**, lenteur des saccades verticales
 > 	- [ ] **Syndrome pyramidal** : réflexes vifs et diffusés, Babinski, spasticité
-> 	- [ ] **Syndrome cérébelleux** : dysmétrie, tremblement d'intention, adiadococinésie, parole scandée, ataxie
+> 	- [ ] **Syndrome cérébelleux** : dysmétrie, tremblement d'intention, adiadococinésie, parole scandée, nystagmus, ataxie avec élargissement du polygone de sustentation
 > 	- [ ] **Dysautonomie** : chute tensionnelle au lever sans accélération du pouls, globe vésical
 > 	- [ ] **Symétrie d'emblée**, sans côté prédominant, ou **absence de tout tremblement de repos** malgré rigidité et bradykinésie franches
 > 	- [ ] **Déficit neurologique focal** : asymétrie faciale front compris, hémiparésie, aphasie, amputation du champ visuel

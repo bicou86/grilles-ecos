@@ -49,7 +49,7 @@ cssclasses:
 > 	- [ ] Saignement digestif 🚩 : hématémèse, méléna, hématochézie — varices œsophagiennes, ulcère
 > 	- [ ] Pancréas : douleurs abdominales en barre, irradiant dans le dos, majorées après l'alcool
 > 	- [ ] Polyneuropathie : douleurs et engourdissement des pieds, hypoesthésie en chaussette, crampes ; faiblesse et douleurs musculaires proximales
-> 	- [ ] Troubles mnésiques, ataxie, maladresse (renverse, laisse tomber), diplopie 🚩 — l'association fait chercher un Wernicke
+> 	- [ ] Ataxie, maladresse (renverse, laisse tomber), diplopie 🚩 — avec la confusion, la triade de Wernicke ; les troubles mnésiques, eux, annoncent le Korsakoff
 > 	- [ ] Chutes et vertiges : fréquence, circonstances, seulement en état d'ivresse ou aussi à jeun, traumatisme crânien associé
 > - [ ] **5. Comorbidité psychiatrique et risque suicidaire**
 > 	- [ ] Humeur et affect : tristesse, perte d'intérêt et de plaisir, dévalorisation, honte, désespoir

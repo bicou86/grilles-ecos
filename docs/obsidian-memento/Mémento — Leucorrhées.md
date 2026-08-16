@@ -50,8 +50,8 @@ cssclasses:
 > 	- [ ] Contraception : laquelle, depuis quand, observance — une contraception hormonale
 >         protège de la grossesse et de rien d'autre
 > 	- [ ] Grossesses, accouchements, fausses couches, interruptions de grossesse
-> 	- [ ] Vaccination contre le VPH : reçue ou non, nombre de doses, série complétée — une dose
->         isolée ne protège pas ; suivi gynécologique et dernier frottis (date et résultat)
+> 	- [ ] Vaccination contre le VPH : reçue ou non, nombre de doses, série complétée — elle se
+>         rattrape jusqu'à 26 ans ; suivi gynécologique et dernier frottis (date et résultat)
 > - [ ] **4. Anamnèse sexuelle et risque d'IST**
 > 	- [ ] Demander la permission avant les questions intimes, dire pourquoi elles sont posées,
 >         rappeler la confidentialité — et la redire si la patiente la met à l'épreuve
@@ -78,8 +78,8 @@ cssclasses:
 > - [ ] **6. 🚩 Devant des leucorrhées, ce qu'il faut éliminer**
 > 	- [ ] Fièvre ou frissons avec douleur du bas-ventre : ce n'est plus une vaginite mais une
 >         infection génitale haute — se faire donner la dernière température mesurée
-> 	- [ ] Douleur pelvienne permanente, ou douleur de l'hypochondre droit chez une femme
->         suspecte d'IST : périhépatite (Fitz-Hugh-Curtis)
+> 	- [ ] Douleur de l'hypochondre droit chez une femme suspecte d'IST : périhépatite
+>         (Fitz-Hugh-Curtis), complication d'une infection génitale haute
 > 	- [ ] Retard de règles ou rapport non protégé récent : une grossesse s'écarte d'emblée
 > 	- [ ] Ulcération génitale, surtout unique, indurée et indolore
 > 	- [ ] Gonflement ou douleur de l'aine : adénopathie inguinale

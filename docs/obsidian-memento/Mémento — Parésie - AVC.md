@@ -34,9 +34,10 @@ cssclasses:
 > 	- [ ] Sensibilité : engourdissement, paresthésies, hypoesthésie ; négligence d'un côté
 > 	- [ ] Parole et langage : dysarthrie, manque du mot, trouble de la compréhension ou de l'expression
 > 	- [ ] Vision : amputation du champ visuel, vision double, flou, cécité transitoire d'un œil
+> 	- [ ] Vertige rotatoire, hypoacousie ou acouphène d'installation brutale — territoire vertébro-basilaire
 > 	- [ ] Équilibre et marche : instabilité, chute, maladresse ou incoordination d'un membre
 > 	- [ ] Déglutition, fausses routes, modification de la voix
-> 	- [ ] Céphalée inhabituelle, nausées, vomissements, trouble de la conscience, perte de connaissance ou convulsion 🚩
+> 	- [ ] Céphalée inhabituelle, nausées, vomissements, trouble de la conscience, perte de connaissance 🚩
 > 	- [ ] Devant une paralysie faciale, **un seul** de ces signes associés impose la filière AVC en urgence, quel que soit l'aspect du visage 🚩
 > - [ ] **3. Devant une atteinte faciale périphérique : étiologie et œil menacé**
 > 	- [ ] Douleur rétro-auriculaire, et son antériorité par rapport au déficit — la séquence classique de la paralysie de Bell
@@ -65,7 +66,7 @@ cssclasses:
 > 	- [ ] Allergies, vaccins
 > 	- [ ] Tabac, alcool (quantité, contexte), drogues récréatives
 > 	- [ ] État fonctionnel antérieur (autonomie, marche, troubles cognitifs), qualité de vie et projet thérapeutique
-> 	- [ ] Métier et retentissement du déficit : élocution, regard des autres, conduite automobile
+> 	- [ ] Métier et retentissement du déficit : élocution, regard des autres
 > 	- [ ] Explorer la crainte que le patient formule — « est-ce que je fais une attaque ? », « est-ce la
 >         même chose que mon père ? » — et y répondre explicitement
 
@@ -112,7 +113,8 @@ cssclasses:
 > 		- [ ] Rotulien, achilléen
 > 	- [ ] Réflexe cutané plantaire (Babinski) des deux côtés ; réflexes cutanés abdominaux
 > 	- [ ] Sensibilité superficielle sur tous les dermatomes, comparée des deux côtés : tact, piqûre
-> 	- [ ] Sensibilité profonde : sens de position du gros orteil, pallesthésie au diapason ; graphesthésie et stéréognosie
+> 	- [ ] Sensibilité profonde : sens de position du gros orteil, pallesthésie au diapason
+> 	- [ ] Discrimination tactile : graphesthésie, stéréognosie — sensibilités corticales, à ne pas confondre avec la proprioception
 > 	- [ ] Coordination : index-nez, talon-genou, mouvements alternés rapides (adiadococinésie)
 > 	- [ ] Station debout et Romberg ; marche spontanée et demi-tour (fauchage, instabilité) ; mouvements anormaux
 > - [ ] **6. 🚩 Signes à ne pas rater autour du déficit**
@@ -124,4 +126,3 @@ cssclasses:
 > 	- [ ] Signes végétatifs d'hypertension intracrânienne : bradycardie, poussée hypertensive, irrégularité respiratoire
 > 	- [ ] Otoscopie et inspection du pavillon : chercher **explicitement** les vésicules zostériennes de la conque et du conduit
 > 	- [ ] Palpation de la loge parotidienne et des aires ganglionnaires cervicales
-> 	- [ ] Inspection de la peau : érythème migrant, éruption

@@ -47,7 +47,7 @@ cssclasses:
 > 	- [ ] Hyperthyroïdie : intolérance à la chaleur, perte de poids, diarrhée, tremblements, nervosité
 > 	- [ ] Hypothyroïdie (le versant lent, celui de la bradycardie) : intolérance au froid, prise de poids, constipation, peau sèche et cheveux cassants
 > 	- [ ] Antécédent thyroïdien : goitre, nodule, chirurgie ou ablation — et sous quelle substitution depuis
-> 	- [ ] Anémie : pâleur, asthénie, dyspnée d'effort, règles abondantes, saignement digestif
+> 	- [ ] Anémie : pâleur, asthénie, dyspnée d'effort, règles abondantes
 > 	- [ ] 🚩 Embolie pulmonaire (critères de Wells) : œdème ou douleur d'un seul mollet, immobilisation ou chirurgie récente, cancer actif, antécédent de thrombose veineuse profonde ou d'embolie pulmonaire, hémoptysie
 > 	- [ ] Fièvre ou infection récente — elle accélère le cœur à elle seule
 > 	- [ ] Déshydratation : apports faibles, pertes digestives, chaleur
@@ -76,7 +76,7 @@ cssclasses:
 > - [ ] **1. Installation et constantes**
 > 	- [ ] Désinfection des mains, explications, pudeur respectée ; torse dégagé, patient assis puis couché, et à 45° pour les jugulaires
 > 	- [ ] Fréquence cardiaque : sur un pouls irrégulier, compter **une minute entière** — le raccourci 15 s × 4 fausse tout
-> 	- [ ] Tension artérielle, aux deux bras
+> 	- [ ] Tension artérielle : sur un pouls irrégulier, mesure manuelle et répétée — l'appareil automatique est pris en défaut par la fibrillation auriculaire
 > 	- [ ] Fréquence respiratoire, saturation en air ambiant, température
 > 	- [ ] Poids et taille (IMC), comparés au poids habituel
 > - [ ] **2. Inspection**

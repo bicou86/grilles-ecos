@@ -85,7 +85,8 @@ cssclasses:
 >         tuméfaction diffuse ou nodule, asymétrie, rougeur, cicatrice cervicale,
 >         circulation veineuse collatérale
 > 	- [ ] Faire déglutir un verre d'eau : une masse thyroïdienne monte avec la
->         déglutition, un ganglion ou un kyste ne bouge pas
+>         déglutition, un kyste du tractus thyréoglosse aussi, un ganglion ne bouge
+>         pas ; faire ensuite tirer la langue — seul le kyste thyréoglosse ascensionne
 > 	- [ ] Bras levés au-dessus de la tête une minute : congestion du visage,
 >         turgescence jugulaire ou gêne respiratoire signent un goitre compressif
 > 	- [ ] Ouverture buccale, état dentaire, amygdales, paroi pharyngée postérieure,

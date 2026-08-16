@@ -83,12 +83,14 @@ cssclasses:
 > - [ ] **2. Aires cervicales et sus-claviculaires, bouche et thyroïde**
 > 	- [ ] Examinateur derrière le patient assis ; palper de la **pulpe** des trois
 >         doigts médians, par petits cercles doux
-> 	- [ ] Comparer les deux côtés, mais **jamais de compression symétrique** (carotides)
+> 	- [ ] Comparer les deux côtés, mais sur les **chaînes cervicales** un côté après
+>         l'autre : jamais de compression symétrique (risque carotidien)
 > 	- [ ] Balayage dans l'ordre, sans en sauter : occipitaux → rétro-auriculaires puis
 >         pré-auriculaires → sous-mentonniers → sous-maxillaires → chaînes cervicales
 >         superficielles et profondes → sus-claviculaires
 > 	- [ ] Creux sus-claviculaires : palpation **profonde**, doigts en crochet derrière
->         les clavicules, des deux côtés
+>         les clavicules — ici la palpation **symétrique**, les deux côtés à la fois,
+>         est possible
 > 	- [ ] Faire **inspirer profondément** : l'inspiration mobilise le ganglion et le
 >         fait remonter sous les doigts
 > 	- [ ] 🚩 Sus-claviculaire **gauche** = ganglion de Troisier : il draine le thorax et
@@ -106,7 +108,8 @@ cssclasses:
 >         tranche entre adénopathie localisée et polyadénopathie
 > - [ ] **4. Caractérisation de chaque adénopathie palpée**
 > 	- [ ] Nombre d'aires atteintes, nombre de ganglions par aire
-> 	- [ ] Taille **mesurée en cm** — au-delà de 2 cm et persistante, elle relève de la biopsie
+> 	- [ ] Taille **mesurée en cm** — au-delà de 2 cm **ou** persistante plus de 4 à
+>         6 semaines, elle relève de la biopsie
 > 	- [ ] Consistance (molle, ferme, dure, pierreuse) et surface (lisse ou irrégulière)
 > 	- [ ] Mobilité : mobile ou fixée ; adhérence aux plans profonds et à la peau
 > 	- [ ] Sensibilité : douloureuse ou indolore

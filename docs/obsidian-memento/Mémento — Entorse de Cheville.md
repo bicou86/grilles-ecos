@@ -31,7 +31,7 @@ cssclasses:
 > 	- [ ] Évolution depuis le traumatisme : aggravation, plateau, régression ; caractère constant ou intermittent
 > 	- [ ] Facteurs aggravants : mise en charge, marche, mouvement de la cheville
 > 	- [ ] Facteurs soulageants : repos, immobilité, surélévation, glace
-> 	- [ ] Douleur de repos et douleur nocturne — inhabituelles dans une entorse simple
+> 	- [ ] Douleur au repos : une douleur de repos modérée est banale les premiers jours ; c'est une douleur de repos **intense**, ou qui réveille la nuit, qui sort du cadre de l'entorse simple
 > 	- [ ] Mesures déjà prises et leur effet : glace, bandage, attelle, béquilles, antalgiques et AINS (produit, dose réelle, efficacité)
 > - [ ] **3. Gravité et retentissement fonctionnel — l'anamnèse d'Ottawa**
 > 	- [ ] Poser le pied et faire quatre pas a-t-il été possible **juste après le traumatisme**, et **l'est-il encore aujourd'hui** ? Les deux moments comptent, et cette réponse à elle seule fait demander la radiographie

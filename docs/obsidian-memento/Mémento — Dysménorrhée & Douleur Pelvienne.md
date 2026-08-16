@@ -46,7 +46,8 @@ cssclasses:
 > 	- [ ] Dysurie et symptômes urinaires : brûlures, pollakiurie, urgenturie
 > 	- [ ] Difficulté à concevoir : durée réelle des essais sans contraception — un an sans
 >         grossesse (six mois après 35 ans) justifie un bilan de couple
-> 	- [ ] Sang cataménial ailleurs qu'au vagin : hématurie ou sang dans les selles 🚩
+> 	- [ ] Hématurie et sang dans les selles, demandés sans condition : cataméniaux, ils signent
+>         une endométriose vésicale ou digestive ; sinon, lésion urinaire ou colorectale à écarter 🚩
 > 	- [ ] Pertes vaginales : abondance, couleur, odeur ; prurit
 > - [ ] **4. 🚩 Ce qu'il faut éliminer avant de retenir une dysménorrhée**
 > 	- [ ] Grossesse possible : retard de règles, rapport non protégé, contraception mal

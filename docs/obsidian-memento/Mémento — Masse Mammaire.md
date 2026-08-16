@@ -67,7 +67,7 @@ cssclasses:
 > 	- [ ] 🚩 Mutation BRCA1/BRCA2 chez un apparenté ; test génétique familial et son résultat
 > 	- [ ] Antécédents des deux parents, et autres maladies familiales
 > - [ ] **6. Mode de vie, contexte psychosocial et vécu**
-> 	- [ ] Alcool : quantité réelle en verres par semaine — le risque modifiable le mieux établi
+> 	- [ ] Alcool : quantité réelle en verres par semaine — facteur de risque modifiable bien établi
 > 	- [ ] Tabac (paquets-années), autres substances
 > 	- [ ] Poids, taille, sédentarité, alimentation ; surcharge pondérale post-ménopausique
 > 	- [ ] Profession, logement, situation de couple, charge familiale et psychosociale, stress
@@ -82,10 +82,11 @@ cssclasses:
 > 	- [ ] Signes vitaux : tension artérielle, fréquence cardiaque, température ; poids et taille
 > 	- [ ] État général, coloration cutanée et conjonctivale
 > 	- [ ] Examiner **les deux seins**, en commençant par le côté que la patiente dit sain
-> - [ ] **2. Inspection, patiente assise — les trois positions**
+> - [ ] **2. Inspection, patiente assise — les quatre positions**
 > 	- [ ] Bras le long du corps, relâchés
 > 	- [ ] Mains sur les hanches, pectoraux contractés : révèle une rétraction que le repos masque
-> 	- [ ] Bras levés, mains derrière la tête ; puis buste penché en avant
+> 	- [ ] Bras levés, mains derrière la tête
+> 	- [ ] Buste penché en avant : le sein pend librement, une asymétrie ou un capiton se démasque
 > 	- [ ] Chercher : asymétrie de volume ou de galbe, capiton ou rétraction cutanée,
 >         peau d'orange, ulcération, circulation veineuse collatérale
 > 	- [ ] Mamelon et aréole : rétraction récente — la distinguer d'une ombilication congénitale,
@@ -93,7 +94,7 @@ cssclasses:
 > 	- [ ] Énoncer le résultat de l'inspection à voix haute
 > - [ ] **3. Palpation mammaire, patiente en décubitus**
 > 	- [ ] Décubitus dorsal, bras du côté examiné derrière la tête : le sein s'étale sur le
->         grill costal et la masse se laisse coincer contre un plan dur
+>         gril costal et la masse se laisse coincer contre un plan dur
 > 	- [ ] Pulpe des trois doigts médians, à plat — ne jamais pincer le sein entre pouce et
 >         index, cela fabrique de fausses masses
 > 	- [ ] Balayage systématique et reproductible : quadrillage en bandes verticales ou cercles

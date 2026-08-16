@@ -90,8 +90,8 @@ cssclasses:
 > 	- [ ] Creux poplité : kyste de Baker (un kyste rompu mime une thrombose), masse battante
 > 	- [ ] Mollet : empâtement, ballant, douleur sur le trajet veineux profond, signe de Homans
 > - [ ] **3. Épanchement et mobilité**
-> 	- [ ] Choc rotulien : refouler le cul-de-sac sous-quadricipital puis percuter la rotule — elle « flotte » si l'épanchement est abondant
-> 	- [ ] Signe du flot, ou du glaçon : pression latéro-médiale du cul-de-sac, vague palpée en face — épanchement modéré
+> 	- [ ] Choc rotulien — dit aussi signe du glaçon, ballottement rotulien ou rotule dansante : un seul et même test. Refouler le cul-de-sac sous-quadricipital puis percuter la rotule, elle « flotte » si l'épanchement est abondant (au moins 10 à 15 ml)
+> 	- [ ] Signe du flot (ou de la vague) : pression latéro-médiale du cul-de-sac, vague palpée en face — c'est le test de l'épanchement **minime**, celui qu'on fait quand le choc rotulien est négatif
 > 	- [ ] Flexion-extension actives puis passives, comparées, notées en méthode Neutre-Zéro (par exemple 160-0-5)
 > 	- [ ] Rechercher un flessum (extension complète impossible) et un blocage élastique
 > 	- [ ] Rotations tibiales, genou fléchi

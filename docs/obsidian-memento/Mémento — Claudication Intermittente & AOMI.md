@@ -120,13 +120,13 @@ cssclasses:
 >         axiale, perte du ballant, signe de Homans (dorsiflexion passive du pied, genou fléchi)
 > 	- [ ] 🚩 Devant les six P réunis, aucune de ces mesures ne doit retarder l'appel : la clinique suffit à décider
 > - [ ] **6. 🚩 Signes à ne pas rater**
-> 	- [ ] Les six P de l'ischémie aiguë, dans l'ordre où les tissus souffrent :
+> 	- [ ] Les six P de l'ischémie aiguë, dans l'ordre où on les constate :
 > 		- [ ] Pain — douleur brutale et permanente
 > 		- [ ] Pallor — pâleur cireuse
 > 		- [ ] Pulselessness — pouls distaux abolis
 > 		- [ ] Poikilothermia — membre froid
-> 		- [ ] Paresthesia puis Paralysis — signes **tardifs** : leur apparition ne dit pas que
->             l'ischémie s'aggrave, elle dit que le membre est menacé
+> 		- [ ] Paresthesia puis Paralysis — signes **tardifs** : leur apparition ne dit pas
+>             « l'ischémie s'aggrave », elle dit que le membre est déjà menacé
 > 	- [ ] Coter la viabilité (Rutherford) : viable · menacé marginalement · menacé immédiatement · irréversible
 > 	- [ ] Abolition unilatérale des pouls avec souffle fémoral homolatéral : la lésion est en amont
 > 	- [ ] Index de cheville supérieur à 1,3 chez un diabétique : il n'élimine rien, il rassure à tort

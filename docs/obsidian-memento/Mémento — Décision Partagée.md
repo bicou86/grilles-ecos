@@ -56,7 +56,7 @@ cssclasses:
 > 	- [ ] Réversibilité : peut-on arrêter, changer d'option, réévaluer — le dire pour chacune, y compris pour celle qui paraît la plus engageante
 > - [ ] **5. Chiffrer honnêtement, puis vérifier la compréhension**
 > 	- [ ] Chiffrer le risque de base AVANT de parler de traitement, avec un score validé quand il en existe un — un paramètre de laboratoire isolé ne décide de rien
-> 	- [ ] Donner la réduction ABSOLUE du risque, jamais un pourcentage relatif seul : « −30 % » fait accepter ce qu'un « 3 sur 100 au lieu de 4 » ferait refuser 🚩
+> 	- [ ] Donner la réduction ABSOLUE du risque, jamais un pourcentage relatif seul : « −25 % » fait accepter ce qu'un « 3 sur 100 au lieu de 4 » ferait refuser 🚩
 > 	- [ ] Fréquences naturelles (X sur 100), avec le même dénominateur d'un bout à l'autre de l'entretien
 > 	- [ ] Horizon temporel explicite, et NNT donné au MÊME horizon que le risque de base — sinon les deux chiffres ne se comparent pas
 > 	- [ ] Éviter le cadrage : donner les deux versants, bénéfice ET effet indésirable ; et les deux chiffres quand ils divergent (fréquence rapportée en observationnel contre excès réel sous placebo, effet nocebo)

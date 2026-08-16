@@ -32,12 +32,13 @@ cssclasses:
 > 	- [ ] Ce que la patiente redoute (gravité, fertilité) : le lui demander explicitement
 > - [ ] **2. Cycle menstruel et saignements**
 > 	- [ ] Relation de la douleur au cycle : strictement menstruelle, prémenstruelle, de milieu
->         de cycle, ou permanente et acyclique — c'est l'axe qui sépare une dysménorrhée
->         fonctionnelle d'une cause organique
+>         de cycle, ou permanente et acyclique — une douleur permanente ou acyclique sort du
+>         cadre de la dysménorrhée, et une douleur bien cyclique n'exclut pas pour autant une
+>         cause organique
 > 	- [ ] Ancienneté de la dysménorrhée : présente dès les premiers cycles, ou apparue après
 >         des années de règles supportables 🚩
 > 	- [ ] Ménarche (un âge précoce compte comme facteur de risque)
-> 	- [ ] Date des dernières règles — elle commande le test de grossesse
+> 	- [ ] Date des dernières règles, et si elles ont été normales en durée et en abondance
 > 	- [ ] Régularité et longueur du cycle, durée des règles en jours
 > 	- [ ] Abondance chiffrée : nombre de protections par 24 h, intervalle entre deux
 >         changements, double protection, caillots, souillure nocturne
@@ -54,8 +55,8 @@ cssclasses:
 >         d'essais infructueux (six mois après 35 ans) justifie un bilan de couple
 > 	- [ ] Symptômes de compression : pollakiurie, dysurie, urgenturie, constipation
 > 	- [ ] Pertes vaginales (abondance, couleur, odeur), prurit, sécheresse vaginale
-> 	- [ ] Retentissement des saignements : fatigue, dyspnée d'effort, palpitations, vertiges
-> 	- [ ] Fièvre et frissons 🚩 ; appétit, variations pondérales, sueurs nocturnes
+> 	- [ ] Retentissement des saignements : fatigue, dyspnée d'effort, palpitations
+> 	- [ ] Fièvre et frissons 🚩 ; appétit, variations pondérales
 > - [ ] **4. Anamnèse sexuelle et gynéco-obstétricale**
 > 	- [ ] Demander la permission avant les questions intimes, dire pourquoi elles sont posées,
 >         rappeler la confidentialité et le non-jugement
@@ -82,7 +83,7 @@ cssclasses:
 >         ne s'arrête pas aux frontières de la gynécologie
 > 	- [ ] Saignement abondant avec malaise, tachycardie, pâleur : déglobulisation aiguë
 > 	- [ ] Après la ménopause : toute masse pelvienne et tout saignement s'explorent
-> 	- [ ] Perte de poids, sueurs nocturnes, altération de l'état général
+> 	- [ ] Perte de poids, altération de l'état général
 > - [ ] **6. Terrain, antécédents et mode de vie**
 > 	- [ ] Antécédents médicaux ; antécédents chirurgicaux, surtout abdomino-pelviens (une
 >         appendicectomie change la lecture d'une fosse iliaque droite) ; hospitalisations
@@ -144,7 +145,7 @@ cssclasses:
 > 	- [ ] Cytologie cervicale : spatule sur l'exocol, brosse dans l'endocol
 > 	- [ ] Si pertes ou symptômes : PCR pour les IST, examen direct, cultures — le prélèvement
 >         se fait spéculum en place, pas après
-> 	- [ ] Retrait progressif, spéculum entrouvert, en inspectant les parois jusqu'au méat
+> 	- [ ] Retrait progressif, spéculum entrouvert, en inspectant les parois jusqu'à l'introïtus
 > - [ ] **6. Toucher vaginal bimanuel**
 > 	- [ ] Nouveau consentement ; deux doigts lubrifiés, main abdominale à plat au-dessus du pubis
 > 	- [ ] Col : position, taille, consistance, ouverture — et douleur à la mobilisation

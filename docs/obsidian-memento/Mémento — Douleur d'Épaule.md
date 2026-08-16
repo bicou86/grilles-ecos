@@ -72,12 +72,11 @@ cssclasses:
 > 	- [ ] Symétrie des reliefs : amyotrophie du deltoïde, creusement des fosses sus- et sous-épineuse
 > 	- [ ] Déformation : coup de hache externe, saillie de la clavicule (touche de piano), tuméfaction, raccourcissement du bras
 > 	- [ ] Signes inflammatoires locaux ; peau : ecchymose, plaie, éruption, cicatrices
-> 	- [ ] Statique scapulaire de dos, décollement de la scapula (scapula alata)
 > - [ ] **2. Palpation, de proche en proche**
 > 	- [ ] Articulation sterno-claviculaire, puis clavicule sur toute sa longueur
 > 	- [ ] Articulation acromio-claviculaire (douleur élective très évocatrice), acromion, épine de la scapula
 > 	- [ ] Espace sous-acromial, bras en légère rétropulsion pour dégager le tendon
-> 	- [ ] Tubercules majeur et mineur (insertions de la coiffe), gouttière bicipitale
+> 	- [ ] Processus coracoïde (2 cm sous la jonction tiers moyen–tiers latéral de la clavicule, en dedans de la tête humérale), tubercules majeur et mineur (insertions de la coiffe), gouttière bicipitale
 > 	- [ ] Corps musculaires et tendons : deltoïde, coiffe, trapèze, muscles cervicaux
 > 	- [ ] Chaleur locale et épanchement, comparés au côté sain
 > - [ ] **3. Mobilité — active d'abord, passive ensuite, toujours comparative**

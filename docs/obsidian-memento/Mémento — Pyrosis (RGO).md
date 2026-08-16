@@ -65,7 +65,7 @@ cssclasses:
 >         (< 55 ans chez l'homme, < 65 ans chez la femme) ; cancers digestifs
 > 	- [ ] Ménopause ; énumérer à voix haute les facteurs de risque cardiovasculaire réunis
 > - [ ] **6. Mode de vie, retentissement et contexte**
-> 	- [ ] Tabac : cigarettes/jour × années, **calculer les paquets-années** ; alcool, drogues
+> 	- [ ] Tabac : **paquets-années** = paquets/jour (20 cigarettes) × années ; alcool, drogues
 > 	- [ ] Alimentation : repas copieux, gras ou tardifs (moins de 3 h avant le coucher),
 >         café, chocolat, menthe, boissons gazeuses ; qui cuisine à la maison
 > 	- [ ] Poids et variations ; activité physique — la quantité réelle, et ce qui l'empêche
@@ -83,7 +83,6 @@ cssclasses:
 > 	- [ ] Tolérance à l'installation : se déshabiller et s'allonger sans être essoufflé·e
 > 	- [ ] Mains : chaleur et coloration, cyanose des ongles, doigts jaunis par le tabac,
 >         temps de recoloration capillaire
-> 	- [ ] Signes de dyslipidémie : arc cornéen, xanthélasma, xanthomes tendineux
 > - [ ] **2. Cou : jugulaires et carotides**
 > 	- [ ] Turgescence jugulaire, buste à 45°, tête à peine tournée du côté opposé, en
 >         lumière rasante : repérer le sommet de la colonne veineuse par rapport à l'angle
@@ -107,7 +106,6 @@ cssclasses:
 >         avant, expiration bloquée (insuffisance aortique, frottement péricardique)
 > 	- [ ] Auscultation pulmonaire **antérieure et postérieure**, comparative, à respiration
 >         ample bouche ouverte : murmure vésiculaire, crépitants des bases, sibilances
-> 	- [ ] Percussion comparée des champs pulmonaires : matité d'un épanchement
 > - [ ] **4. Abdomen**
 > 	- [ ] Patient·e à plat, genoux fléchis, mains réchauffées ; inspection : cicatrices,
 >         voussure, circulation collatérale
@@ -120,7 +118,7 @@ cssclasses:
 > 	- [ ] Œdème : appuyer 10 à 15 secondes en prétibial et en rétro-malléolaire ; noter le
 >         godet, sa hauteur et sa symétrie, au sacrum si la personne reste couchée
 > 	- [ ] Pouls pédieux et tibial postérieur des deux côtés : présence et symétrie
-> 	- [ ] Température et coloration des pieds ; mollets souples, ballant, douleur
+> 	- [ ] Température et coloration des pieds : perfusion distale
 > - [ ] **6. 🚩 Signes à ne pas rater**
 > 	- [ ] Sueurs, pâleur, teint gris, agitation : souffrance en cours — ECG 12 dérivations
 >         dans les 10 minutes, avant de poursuivre l'examen

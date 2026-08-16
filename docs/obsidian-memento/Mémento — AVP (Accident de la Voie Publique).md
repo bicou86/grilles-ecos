@@ -83,7 +83,6 @@ cssclasses:
 > 		- [ ] Glasgow détaillé — ouverture des yeux, réponse verbale, réponse motrice — plutôt que le seul total
 > 		- [ ] Pupilles : taille, symétrie, réactivité
 > 		- [ ] Déficit moteur ou sensitif focal, réflexes ostéo-tendineux
-> 		- [ ] Glycémie capillaire
 > 	- [ ] **E** — Exposition et environnement
 > 		- [ ] Déshabillage complet, pudeur respectée
 > 		- [ ] Regarder là où l'on ne regarde pas : cuir chevelu, derrière la tête et sous la minerve, dos, aisselles, plis, périnée
@@ -102,7 +101,7 @@ cssclasses:
 > 	- [ ] 🚩 Test de compression-décompression : une seule fois, sans force — et pas du tout si la fracture est déjà probable ; remobiliser un bassin instable décroche le caillot et relance l'hémorragie
 > 	- [ ] 🚩 Douleur pelvienne et instabilité hémodynamique sans hémorragie extériorisée : le patient saigne dans le rétropéritoine, où rien ne comprime
 > - [ ] **4. Rachis cervical — examen dirigé, chez le patient conscient et stable**
-> 	- [ ] 🚩 Il ne se mobilise qu'une fois la lésion osseuse écartée : au déchoc on s'en tient à la palpation, selon la règle canadienne du rachis cervical
+> 	- [ ] 🚩 Il ne se mobilise qu'une fois la lésion osseuse écartée : la règle canadienne du rachis cervical impose l'imagerie dès un facteur de haut risque (≥ 65 ans, mécanisme dangereux, paresthésies des extrémités) ; c'est seulement en leur absence, chez un patient qu'on peut évaluer, que l'on demande la rotation active à 45° de chaque côté
 > 	- [ ] Évaluation de la marche et de la station debout
 > 	- [ ] Inspection : hématome, rougeur, points de pression, symétrie musculaire
 > 	- [ ] Palpation des épineuses, puis des masses musculaires : sterno-cléido-mastoïdien, occipitaux, élévateur de la scapula

@@ -46,7 +46,7 @@ cssclasses:
 > 	- [ ] Enfant mou, ou au contraire raide, dos en arc
 > 	- [ ] Difficulté respiratoire, essoufflement pendant les tétées, difficulté à avaler
 > 	- [ ] Pleurs et irritabilité inhabituels, sommeil perturbé, niveau d'activité — est-elle aussi éveillée et enjouée que d'habitude
-> 	- [ ] Foyer infectieux : écoulement oculaire, auriculaire ou nasal, toux, éruption cutanée, ombilic qui coule, contacts malades dans l'entourage
+> 	- [ ] Foyer infectieux : écoulement oculaire, auriculaire ou nasal, toux, éruption cutanée, contacts malades dans l'entourage
 > - [ ] **4. Grossesse, naissance et risque hémolytique**
 > 	- [ ] Groupe sanguin et Rhésus de la mère : O ou Rhésus négatif expose à une incompatibilité — demander aussi celui du père et celui de l'enfant, souvent inconnus, et le dire à l'examinateur plutôt que de renoncer
 > 	- [ ] Terme exact en semaines : la prématurité, même modérée, abaisse le seuil de traitement
@@ -65,8 +65,6 @@ cssclasses:
 > 	- [ ] Vaccinations faites à la naissance et depuis
 > 	- [ ] Croissance et développement ; date du prochain contrôle déjà prévu
 > 	- [ ] Antécédents familiaux hors hémolyse : maladie hépatique, maladie thyroïdienne, maladies chroniques des parents
-> 	- [ ] Conditions de couchage : où et comment l'enfant dort, seul ou dans le lit des parents
-> 	- [ ] Anamnèse sociale : qui vit au foyer, qui peut amener l'enfant, distance et moyen de transport
 
 > [!tip] 🩺 Status
 > - [ ] **1. Triangle d'évaluation pédiatrique et constantes — depuis la porte, avant de déshabiller**
@@ -84,7 +82,7 @@ cssclasses:
 > 	- [ ] Pâleur cutanéo-muqueuse : une anémie associée à l'ictère oriente vers une hémolyse
 > 	- [ ] Ecchymoses étendues, pétéchies, purpura
 > 	- [ ] Hydratation : muqueuses, larmes, pli cutané, yeux enfoncés
-> 	- [ ] Éruption cutanée ; ombilic : rougeur périombilicale, écoulement, odeur
+> 	- [ ] Éruption cutanée
 > - [ ] **3. Tête et examen neurologique — chercher l'encéphalopathie à la bilirubine**
 > 	- [ ] Inspection de la tête et du crâne : bosse séro-sanguine, céphalhématome, ecchymoses du cuir chevelu — un hématome en résorption alimente la bilirubine
 > 	- [ ] Fontanelle antérieure, enfant calme et redressé : normotendue, déprimée (déshydratation), ou 🚩 bombée

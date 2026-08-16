@@ -20,7 +20,7 @@ cssclasses:
 > 	- [ ] Début : date, installation brutale ou progressive ; évolution depuis
 > 	- [ ] Extension et sens de progression : pieds, jambes, cuisses ; paroi abdominale, région lombaire et sacrée si alité ; paupières
 > 	- [ ] Quantification par le vécu : chaussures ou pantalon qui ne ferment plus, empreinte des chaussettes, bague devenue serrée
-> 	- [ ] **Prise pondérale chiffrée** : combien de kilos, en combien de temps — le poids est la seule mesure fiable de la rétention
+> 	- [ ] **Prise pondérale chiffrée** : combien de kilos, en combien de temps — le poids est la mesure la plus fiable de la rétention
 > 	- [ ] Évolution dans la journée : maximum le soir et régression nocturne (œdème déclive) ; paupières gonflées au réveil (origine rénale)
 > 	- [ ] Caractères : blancs, mous, symétriques, **indolores**, déclives, prenant le godet
 > 	- [ ] Ce qui ne colle pas avec un œdème de rétention : douleur, rougeur, chaleur locale, œdème dur ne prenant pas le godet
@@ -33,7 +33,7 @@ cssclasses:
 > 		- [ ] Nycturie et urgence mictionnelle : la rétention accumulée le jour se draine la nuit
 > 		- [ ] Douleur rétrosternale, palpitations, chute de la tolérance à l'effort par rapport à l'état antérieur
 > 	- [ ] **Rein** :
-> 		- [ ] **Urines mousseuses** : témoin d'une protéinurie abondante — à demander nommément, le patient ne le rapporte jamais spontanément
+> 		- [ ] **Urines mousseuses** : témoin d'une protéinurie abondante — à demander nommément, le patient y pense rarement de lui-même
 > 		- [ ] Diurèse : urines moins fréquentes et moins abondantes ; urines rouges ou brunes
 > 		- [ ] Toux ou gêne à plat, en position couchée : épanchement pleural débutant
 > 	- [ ] **Foie** : ictère, augmentation du périmètre abdominal, hépatopathie ou hépatite virale connue

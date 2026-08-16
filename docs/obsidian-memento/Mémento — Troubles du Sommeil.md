@@ -53,7 +53,7 @@ cssclasses:
 > 	- [ ] Stress post-traumatique : événement traumatique vécu, cauchemars répétitifs, intrusions et flashbacks
 > 	- [ ] Obsessions, impulsions obsessionnelles, compulsions et rituels du soir
 > 	- [ ] Symptômes psychotiques : idées délirantes, hallucinations, troubles du moi
-> 	- [ ] Contenu des ruminations au coucher : ce qui tourne dans la tête oriente vers l'anxiété, la dépression ou le deuil
+> 	- [ ] Contenu des ruminations au coucher : ce qui tourne dans la tête oriente vers l'anxiété, la dépression ou le deuil ; barrage de la pensée — le fil s'interrompt net, la phrase reste en suspens : autre chose qu'un ralentissement
 > - [ ] **5. Causes somatiques à écarter**
 > 	- [ ] Hyperthyroïdie : palpitations, intolérance à la chaleur, transpiration excessive, sueurs nocturnes
 > 	- [ ] Hyperthyroïdie : perte de poids à quantifier, MALGRÉ un appétit augmenté, avec transit accéléré — une perte de poids accompagnée d'une baisse de l'appétit dit autre chose
@@ -63,7 +63,7 @@ cssclasses:
 > 	- [ ] Impatiences des jambes le soir, obligeant à bouger pour être soulagée
 > 	- [ ] Symptômes généraux et cardio-respiratoires : fièvre, dyspnée, orthopnée, douleur thoracique, toux nocturne
 > 	- [ ] Digestif et urinaire : pyrosis nocturne, troubles du transit, dysurie et pollakiurie ; douleurs chroniques qui réveillent la nuit
-> 	- [ ] Gynécologique : régularité des cycles, contraception, possibilité de grossesse, bouffées de chaleur
+> 	- [ ] Gynécologique : régularité des cycles, contraception, possibilité de grossesse
 > - [ ] **6. Antécédents, traitements et contexte de vie**
 > 	- [ ] Antécédents médicaux et chirurgicaux, maladies chroniques en cours, hospitalisations
 > 	- [ ] Antécédents psychiatriques personnels : épisodes, suivis, hospitalisations, traitements reçus et leur efficacité

@@ -40,11 +40,11 @@ cssclasses:
 > 	- [ ] Rougeur, chaleur, tension de la peau
 > 	- [ ] Fièvre, frissons, porte d'entrée cutanée (intertrigo interorteils, plaie, piqûre)
 > 	- [ ] 🚩 Dyspnée d'apparition ou d'aggravation récente, douleur thoracique, hémoptysie, malaise
-> 	- [ ] Totaliser le score de Wells pour la TVP — chaque item vaut +1 sauf le dernier ; total
->         supérieur ou égal à 2 = probabilité clinique élevée : cancer actif · immobilisation,
->         alitement ou voyage prolongé · gonflement unilatéral de tout le membre · œdème prenant le
->         godet du côté douloureux · veines superficielles collatérales dilatées, non variqueuses ·
->         diagnostic alternatif moins probable (+2)
+> 	- [ ] Totaliser le score de Wells pour la TVP — chaque item vaut +1, sauf le dernier qui se
+>         retranche ; total supérieur ou égal à 2 = probabilité clinique élevée : cancer actif ·
+>         immobilisation, alitement ou voyage prolongé · gonflement unilatéral de tout le membre ·
+>         œdème prenant le godet du côté douloureux · veines superficielles collatérales dilatées,
+>         non variqueuses · diagnostic alternatif au moins aussi probable que la TVP (−2)
 > - [ ] **4. Facteurs de risque — couvrir les deux terrains, pas seulement le tabac**
 > 	- [ ] Athérome :
 > 		- [ ] Tabac : quantifier en paquets-années, tabagisme ancien compris
@@ -98,7 +98,7 @@ cssclasses:
 > 		- [ ] Tibial postérieur en arrière de la malléole interne
 > 		- [ ] Pédieux sur le dos du pied
 > 	- [ ] Aorte abdominale : pulsations, largeur, masse battante et expansive
-> 	- [ ] Pouls des membres supérieurs : carotidien, brachial, radial, ulnaire, puis test d'Allen
+> 	- [ ] Pouls carotidiens et des membres supérieurs : brachial, radial, ulnaire, puis test d'Allen
 >         (perméabilité des artères radiale, ulnaire et de l'arcade palmaire)
 > 	- [ ] Mollet : douleur provoquée, empâtement, perte du ballant
 > 	- [ ] Godet : pression du pouce dix secondes en regard de la crête tibiale

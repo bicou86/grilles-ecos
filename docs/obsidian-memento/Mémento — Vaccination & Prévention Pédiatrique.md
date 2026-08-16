@@ -41,7 +41,7 @@ cssclasses:
 > 	- [ ] Financement : vaccinations de base et recommandées prises en charge par l'assurance maladie
 > 	- [ ] Remettre en perspective : ces maladies graves sont devenues rares grâce aux vaccinations, et c'est cette rareté même qui les fait méconnaître, donc sous-estimer
 > - [ ] **4. Expliquer le calendrier vaccinal et les maladies évitées**
-> 	- [ ] Vaccin combiné DTPa-IPV-Hib-HBV — 2, 4, 6 et 15-24 mois, puis rappels à 4-7 ans, 11-15 ans et 25-29 ans :
+> 	- [ ] Vaccin combiné DTPa-IPV-Hib-HBV — 2, 4 et 12 mois (schéma 2+1), puis rappels à 4-7 ans, 11-15 ans et 25-29 ans :
 > 		- [ ] Diphtérie : croup, obstruction des voies respiratoires, myocardite, polyneuropathie
 > 		- [ ] Tétanos : contractions musculaires graves, potentiellement mortel
 > 		- [ ] 🚩 Coqueluche : risque d'apnée chez le nourrisson — le danger est maximal à l'âge exact où l'on envisage de repousser
@@ -49,8 +49,8 @@ cssclasses:
 > 		- [ ] Haemophilus influenzae b : méningite, épiglottite, pneumonie
 > 		- [ ] Hépatite B : c'est la précocité de la protection qui en fait tout l'intérêt
 > 	- [ ] Pneumocoques — 2, 4 et 12 mois : méningite, pneumonie, septicémie, particulièrement redoutables chez le nourrisson
-> 	- [ ] ROR — 12 mois puis 15-24 mois :
-> 		- [ ] Rougeole : plus d'un million de décès par an dans le monde ; otite, pneumonie, encéphalite (1 cas sur 1000, létalité 30 %)
+> 	- [ ] ROR — 9 mois puis 12 mois :
+> 		- [ ] Rougeole : environ 100 000 décès par an dans le monde ; otite, pneumonie, encéphalite (1 cas sur 1000, dont 10 à 15 % de décès et un quart de séquelles neurologiques définitives)
 > 		- [ ] Oreillons : méningite, surdité, orchite avec risque de stérilité
 > 		- [ ] Rubéole : encéphalite rubéoleuse, et surtout danger pour le fœtus pendant la grossesse
 > 	- [ ] Méningocoques — 12-15 mois puis 11-15 ans : méningite fulminante (létalité 10 %) et septicémie méningococcique, d'évolution très rapide

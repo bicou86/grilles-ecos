@@ -30,7 +30,8 @@ cssclasses:
 >         orientent vers le psychogène, **abolies** vers l'organique
 > 	- [ ] Trouble constant ou **situationnel** : lié à un lieu, à un contexte, à un·e partenaire
 > 	- [ ] Libido conservée ou effondrée ; éjaculation possible, retardée ou absente
-> 	- [ ] Quantification par le score IIEF-5 : au-dessous de 21, il y a dysfonction érectile
+> 	- [ ] Quantification par le score IIEF-5 : **21 ou moins** sur 25 = dysfonction érectile
+>         (22 à 25 : fonction normale)
 > 	- [ ] Douleurs et symptômes urogénitaux : jet faible, pollakiurie, nycturie, verge douloureuse
 > 	- [ ] Retentissement sur le couple et sur le moral ; ce qui a déjà été essayé
 > - [ ] **3. Terrain cardiovasculaire et métabolique — le vrai enjeu de la consultation**
@@ -86,7 +87,8 @@ cssclasses:
 > 	- [ ] Turgescence des veines jugulaires à 45°, œdèmes des membres inférieurs
 > - [ ] **2. Examen cardiovasculaire, vasculaire périphérique et pulmonaire**
 > 	- [ ] Auscultation cardiaque aux 4 foyers : rythme, régularité, souffle — un souffle
->         aortique témoigne directement de l'athérosclérose
+>         systolique aortique évoque une sclérose valvulaire dégénérative : même terrain
+>         que l'athérosclérose, pas la même lésion
 > 	- [ ] Auscultation pulmonaire, antérieure et postérieure : râles de surcharge
 > 	- [ ] Recherche de souffles vasculaires : carotides, aorte abdominale, artères rénales,
 >         artères fémorales

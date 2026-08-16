@@ -31,10 +31,10 @@ cssclasses:
 > 	- [ ] Puberté des parents, chiffrée : âge de la mue et de la poussée du père, âge des premières règles de la mère — une puberté tardive familiale est LE critère du retard constitutionnel, davantage que leur taille
 > - [ ] **3. Dépister les causes, appareil par appareil**
 > 	- [ ] Symptômes B : fièvre, sueurs nocturnes, perte de poids involontaire 🚩 (hémopathie, inflammation chronique)
-> 	- [ ] Digestif : douleurs abdominales, ballonnements, diarrhée chronique, constipation ; transit, fréquence, consistance et couleur des selles ; selles grasses, pâles et flottantes — maladie cœliaque, MICI
+> 	- [ ] Digestif : douleurs abdominales, ballonnements, diarrhée chronique, constipation — maladie cœliaque, MICI ; transit, fréquence, consistance et couleur des selles ; selles grasses, pâles et flottantes (stéatorrhée) — malabsorption, mucoviscidose
 > 	- [ ] Alimentation : allaitement, âge et contenu de la diversification (dont l'introduction du gluten), alimentation actuelle, appétit ; chez le grand, un vrai relevé de ce qu'il mange sur une journée
 > 	- [ ] Après les repas : vomissements, régurgitations, pâleur, sueurs, malaises d'allure hypoglycémique
-> 	- [ ] Thyroïdien : frilosité, constipation, peau sèche, baisse d'entrain et de résultats scolaires — l'hypothyroïdie est la cause traitable, à chercher activement
+> 	- [ ] Thyroïdien : frilosité, constipation, peau sèche, baisse d'entrain et de résultats scolaires — l'hypothyroïdie est une cause traitable, à chercher activement
 > 	- [ ] Neurologique et hypophysaire : céphalées, troubles visuels, vomissements matinaux 🚩 (processus expansif intracrânien ou hypophysaire)
 > 	- [ ] Capacité à l'effort : sport pratiqué et à quel niveau, endurance, baisse de performance ou fatigabilité récente — une pleine capacité physique éloigne les affections consomptives
 > 	- [ ] Respiratoire et infectieux : infections récurrentes, toux chronique (mucoviscidose, déficit immunitaire) ; vaccinations vérifiées sur le carnet
@@ -75,7 +75,6 @@ cssclasses:
 > 	- [ ] Fonte musculaire : fesses aplaties, racine des cuisses, masses temporales
 > 	- [ ] Œdèmes déclives 🚩 — dénutrition protéique évoluée
 > 	- [ ] Cheveux fins, cassants ou décolorés ; peau sèche, desquamante
-> 	- [ ] Abdomen distendu contrastant avec des membres maigres — évocateur de malabsorption
 > 	- [ ] Coloration : pâleur cutanéo-muqueuse, ictère
 > - [ ] **4. Palpation et auscultation — le status somatique orientatif**
 > 	- [ ] Thyroïde : goitre, nodule, consistance
@@ -89,7 +88,7 @@ cssclasses:
 > 	- [ ] Garçon : pilosité pubienne (stade de Tanner), verge, recherche d'hypospadias, testicules descendus des deux côtés
 > 	- [ ] Volume testiculaire à l'orchidomètre : moins de 4 ml = prépubère ; son augmentation est le premier signe objectif de puberté, avant la pilosité et avant la mue
 > 	- [ ] Fille : développement mammaire et pilosité pubienne (stades de Tanner)
-> 	- [ ] Confronter le stade à l'âge : aucun signe pubertaire au-delà de 14 ans chez le garçon dépasse la limite du retard simple 🚩
+> 	- [ ] Confronter le stade à l'âge : aucun signe pubertaire à 14 ans chez le garçon, à 13 ans chez la fille, définit le retard pubertaire et impose le bilan 🚩 — le retard constitutionnel de croissance et de puberté en reste la première cause
 > - [ ] **6. Nourrisson et petit enfant : neurologie et développement**
 > 	- [ ] Tonus axial et périphérique ; hypotonie
 > 	- [ ] Mouvements spontanés, symétriques ou non

@@ -83,12 +83,10 @@ cssclasses:
 > 	- [ ] État d'hydratation : pli cutané, muqueuses, soif observée pendant l'entretien
 > 	- [ ] Peau : lésions de grattage, mycoses des plis, plaie qui ne cicatrise pas
 > - [ ] **2. Abdomen, aire vésicale et fosses lombaires**
-> 	- [ ] Inspection : voussure hypogastrique, cicatrices, orifices herniaires
-> 	- [ ] Auscultation avant de palper : souffles de l'aorte abdominale et des artères rénales
+> 	- [ ] Inspection : voussure hypogastrique, cicatrices
 > 	- [ ] Percussion sus-pubienne : matité convexe vers le haut = globe vésical 🚩
 > 	- [ ] Percussion des fosses lombaires — signe de Giordano : sa positivité oriente
 >         vers le haut appareil 🚩
-> 	- [ ] Palpation des 4 quadrants, superficielle puis profonde : défense, détente
 > 	- [ ] Palpation de l'aire vésicale : masse rénitente sus-pubienne, douleur reproduite
 > 	- [ ] Palpation bilatérale et comparative des fosses lombaires
 > - [ ] **3. Examen génital et toucher rectal**
