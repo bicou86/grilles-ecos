@@ -3,8 +3,8 @@ aliases:
   - "Mémento Amaurose & Perte Brutale de Vision"
 type: memento-ecos-ssp
 ssp: "Amaurose & Perte Brutale de Vision"
-cas: 5
-diagnostics: 5
+cas: 4
+diagnostics: 4
 attendus_documentes_ailleurs: 0
 attendus_absents_du_corpus: 1
 tags:
@@ -82,31 +82,26 @@ cssclasses:
 
 # Amaurose & Perte Brutale de Vision
 
-*5 grilles · 5 diagnostics documentés · 1 attendu absent du corpus* — [[SSP — Amaurose & Perte Brutale de Vision]]
+*4 grilles · 4 diagnostics documentés · 1 attendu absent du corpus* — [[SSP — Amaurose & Perte Brutale de Vision]]
 
-> [!abstract] Les 5 grilles fusionnées
+> [!abstract] Les 4 grilles fusionnées
 > - **AMBOSS-34** — AVC `premier-dd` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/amboss/AMBOSS-34_-_Perte_de_vision_-_Homme_66_ans_-_Grille_ECOS.html>)
 > - **AZYGOS-40** — OACR / Occlusion rétinienne `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/f0f3ec7f-0c04-4307-a694-3f4a12c6eb9c.json>)
 > - **AZYGOS-48** — Décollement de rétine `diagnostic-travail` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/docs/azygos-grilles/68e9d154-8aea-43fd-a9fe-29bb5f8335f6.json>)
-> - **German-69** — Cataracte `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/german/German-69_-_Perte_de_vision_-_Grille_ECOS.html>)
 > - **RESCOS-3** — Horton (artérite à cellules géantes) `explicite` · [grille](<file:///Users/damienfulliquet/Developer/GitHub/grilles-ecos/cases/rescos/RESCOS-3_-_Amaurose_-_Grille_ECOS.html>)
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(AVC)***
-> - [ ] **2. Caractérisation de la baisse de vision *(AVC · Cataracte)***
-> 	- [ ] Début *(AVC)*
-> 	- [ ] Constante/intermittente *(AVC)*
-> 	- [ ] Événements précipitants *(AVC)*
-> 	- [ ] Progression *(AVC)*
-> 	- [ ] Épisodes antérieurs *(AVC)*
-> 	- [ ] Fréquence *(AVC)*
-> 	- [ ] Facteurs améliorants *(AVC)*
-> 	- [ ] Facteurs aggravants *(AVC)*
-> 	- [ ] Symptômes associés *(AVC)*
-> 	- [ ] Apparition *(Cataracte)*
-> 	- [ ] Évolution *(Cataracte)*
-> 	- [ ] Unilatérale ou bilatérale *(Cataracte)*
-> 	- [ ] Prédominance vision de loin ou de près *(Cataracte)*
+> - [ ] **2. Caractérisation de la baisse de vision *(AVC)***
+> 	- [ ] Début
+> 	- [ ] Constante/intermittente
+> 	- [ ] Événements précipitants
+> 	- [ ] Progression
+> 	- [ ] Épisodes antérieurs
+> 	- [ ] Fréquence
+> 	- [ ] Facteurs améliorants
+> 	- [ ] Facteurs aggravants
+> 	- [ ] Symptômes associés
 > - [ ] **3. Caractérisation de la céphalée associée *(AVC · Horton (artérite à cellules géantes))***
 > 	- [ ] Localisation
 > 	- [ ] Intensité (sur une échelle de 0-10) *(AVC)*
@@ -143,13 +138,8 @@ cssclasses:
 > 	- [ ] Picotements
 > 	- [ ] Convulsion
 > 	- [ ] Problèmes d'élocution
-> - [ ] **5. Antécédents médicaux personnels *(AVC · Cataracte · Décollement de rétine)***
-> 	- [ ] Diabète *(Cataracte)*
-> 	- [ ] Pathologies systémiques *(Cataracte)*
-> 	- [ ] Chirurgies antérieures *(Cataracte)*
-> - [ ] **6. Allergies *(4 diagnostics)***
-> 	- [ ] Allergies médicamenteuses *(Cataracte)*
-> 	- [ ] Autres allergies *(Cataracte)*
+> - [ ] **5. Antécédents médicaux personnels *(AVC · Décollement de rétine)***
+> - [ ] **6. Allergies *(AVC · Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **7. Médicaments *(AVC · Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **8. Hospitalisations et antécédents chirurgicaux *(AVC)***
 > 	- [ ] Hospitalisations
@@ -167,8 +157,7 @@ cssclasses:
 > 	- [ ] Alimentation *(AVC)*
 > 	- [ ] Drogues *(Horton (artérite à cellules géantes))*
 > 	- [ ] Médicaments *(Horton (artérite à cellules géantes))*
-> - [ ] **11. Question d'entrée ouverte *(Cataracte · OACR / Occlusion rétinienne)***
-> 	- [ ] Qu'est-ce qui vous amène aujourd'hui ? *(Cataracte)*
+> - [ ] **11. Question d'entrée ouverte *(OACR / Occlusion rétinienne)***
 > - [ ] **12. Dimension temporelle *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **13. Début / Durée *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **14. Mode de survenue *(OACR / Occlusion rétinienne)***
@@ -179,13 +168,7 @@ cssclasses:
 > - [ ] **19. Intensité / Sévérité *(OACR / Occlusion rétinienne)***
 > - [ ] **20. Qualité *(OACR / Occlusion rétinienne)***
 > - [ ] **21. Mesures déjà prises *(OACR / Occlusion rétinienne)***
-> - [ ] **22. Symptômes associés *(Cataracte · Décollement de rétine · OACR / Occlusion rétinienne)***
-> 	- [ ] Photosensibilité *(Cataracte)*
-> 	- [ ] Amélioration paradoxale vision de près *(Cataracte)*
-> 	- [ ] Vision des couleurs *(Cataracte)*
-> 	- [ ] Halos lumineux *(Cataracte)*
-> 	- [ ] Vision double *(Cataracte)*
-> 	- [ ] Vision trouble/voilée *(Cataracte)*
+> - [ ] **22. Symptômes associés *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **23. Douleur *(OACR / Occlusion rétinienne)***
 > - [ ] **24. Lunettes / Lentilles de contact *(OACR / Occlusion rétinienne)***
 > - [ ] **25. Segments antérieurs de l'œil *(OACR / Occlusion rétinienne)***
@@ -214,10 +197,7 @@ cssclasses:
 > - [ ] **48. Alcool *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **49. Tabagisme *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **50. Drogues *(Décollement de rétine · OACR / Occlusion rétinienne)***
-> - [ ] **51. Antécédents familiaux *(Cataracte · Décollement de rétine · OACR / Occlusion rétinienne)***
-> 	- [ ] Pathologies oculaires familiales *(Cataracte)*
-> 	- [ ] Inquiétude du patient *(Cataracte)*
-> 	- [ ] Cataracte familiale *(Cataracte)*
+> - [ ] **51. Antécédents familiaux *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **52. Profession *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **53. Situation sociale *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **54. Question initiale *(Décollement de rétine)***
@@ -231,59 +211,28 @@ cssclasses:
 > - [ ] **62. Symptômes neurologiques *(Décollement de rétine)***
 > - [ ] **63. Déficits moteurs *(Décollement de rétine)***
 > - [ ] **64. Maux de tête / Vertiges *(Décollement de rétine)***
-> - [ ] **65. Antécédents ophtalmologiques *(Cataracte · Décollement de rétine)***
-> 	- [ ] Chirurgie oculaire antérieure *(Cataracte)*
-> 	- [ ] Traumatisme oculaire *(Cataracte)*
-> 	- [ ] Glaucome *(Cataracte)*
-> 	- [ ] Myopie/hypermétropie *(Cataracte)*
+> - [ ] **65. Antécédents ophtalmologiques *(Décollement de rétine)***
 > - [ ] **66. Non ophtalmologiques *(Décollement de rétine)***
 > - [ ] **67. Correction visuelle *(Décollement de rétine)***
 > - [ ] **68. Toxiques *(Décollement de rétine)***
 > - [ ] **69. Facteurs de stress psychosociaux *(Décollement de rétine)***
-> - [ ] **70. Présentation avec nom, fonction et tâche *(Cataracte)***
-> - [ ] **71. Symptômes oculaires associés *(Cataracte)***
-> 	- [ ] Douleurs oculaires
-> 	- [ ] Rougeur oculaire
-> 	- [ ] Larmoiement
-> 	- [ ] Sécrétions
-> 	- [ ] Sensation de corps étranger
-> - [ ] **72. Symptômes généraux et drapeaux rouges *(Cataracte)***
-> 	- [ ] Céphalées
-> 	- [ ] Claudication de la mâchoire
-> 	- [ ] Douleurs temporales
-> 	- [ ] Symptômes B (fièvre, sueurs nocturnes, perte de poids)
-> - [ ] **73. Facteurs de risque cardiovasculaire *(Cataracte)***
-> 	- [ ] Hypertension artérielle
-> 	- [ ] Diabète
-> 	- [ ] Dyslipidémie
-> 	- [ ] Tabagisme
-> 	- [ ] Consommation d'alcool
-> - [ ] **74. Anamnèse médicamenteuse *(Cataracte)***
-> 	- [ ] Corticothérapie systémique
-> 	- [ ] Collyre myotique
-> 	- [ ] Autres médicaments
-> - [ ] **75. Anamnèse sociale et impact fonctionnel *(Cataracte)***
-> 	- [ ] Situation de vie
-> 	- [ ] Autonomie
-> 	- [ ] Activités quotidiennes
-> 	- [ ] Conduite automobile
-> - [ ] **76. Caractérisation cécité *(Horton (artérite à cellules géantes))***
+> - [ ] **70. Caractérisation cécité *(Horton (artérite à cellules géantes))***
 > 	- [ ] Localisation
 > 	- [ ] Chronologie
 > 	- [ ] Développement (subit / progressif)
 > 	- [ ] Circonstance de survenue
 > 	- [ ] Perte de connaissance associée
-> - [ ] **77. Anamnèse par système - générale *(Horton (artérite à cellules géantes))***
+> - [ ] **71. Anamnèse par système - générale *(Horton (artérite à cellules géantes))***
 > 	- [ ] Fièvre
 > 	- [ ] Sudation nocturne
 > 	- [ ] Perte de poids
-> - [ ] **78. Anamnèse par système - neurologique *(Horton (artérite à cellules géantes))***
+> - [ ] **72. Anamnèse par système - neurologique *(Horton (artérite à cellules géantes))***
 > 	- [ ] Diplopie
 > 	- [ ] Perte de force
 > 	- [ ] Perte de sensibilité
 > 	- [ ] Paresthésies
 > 	- [ ] Vertiges
-> - [ ] **79. Antécédents et comorbidités *(Horton (artérite à cellules géantes))***
+> - [ ] **73. Antécédents et comorbidités *(Horton (artérite à cellules géantes))***
 > 	- [ ] Maladies actuelles
 > 	- [ ] Antécédents médico-chirurgicaux
 > 	- [ ] Allergies
@@ -305,30 +254,24 @@ cssclasses:
 > 	- [ ] Auscultation du cœur *(AVC)*
 > - [ ] **5. Examen thoracique *(AVC)***
 > 	- [ ] Auscultation des poumons
-> - [ ] **6. Examen neurologique de base *(AVC · Cataracte)***
-> 	- [ ] Évaluation du niveau de conscience *(AVC)*
-> 	- [ ] Examen de l'orientation dans le temps, l'espace et les personnes *(AVC)*
-> 	- [ ] Évaluation du langage *(AVC)*
-> 	- [ ] Examen ciblé des nerfs crâniens *(AVC)*
-> 	- [ ] Signe de Kernig *(AVC)*
-> 	- [ ] Signe de Brudzinski *(AVC)*
-> 	- [ ] Méningisme *(AVC)*
-> 	- [ ] Examen ciblé des mouvements passifs et actifs *(AVC)*
-> 	- [ ] Examen ciblé de la sensibilité *(AVC)*
-> 	- [ ] Examen ciblé des réflexes ostéotendineux *(AVC)*
-> 	- [ ] Examen ciblé de la marche *(AVC)*
-> 	- [ ] Test d'alternance rapide des mouvements *(AVC)*
-> 	- [ ] Test doigt-nez *(AVC)*
-> 	- [ ] Signe de Babinski *(AVC)*
-> 	- [ ] Test de Romberg *(AVC)*
-> 	- [ ] Champs visuels par confrontation *(Cataracte)*
-> 	- [ ] Oculomotricité *(Cataracte)*
-> 	- [ ] Nerfs crâniens *(Cataracte)*
+> - [ ] **6. Examen neurologique de base *(AVC)***
+> 	- [ ] Évaluation du niveau de conscience
+> 	- [ ] Examen de l'orientation dans le temps, l'espace et les personnes
+> 	- [ ] Évaluation du langage
+> 	- [ ] Examen ciblé des nerfs crâniens
+> 	- [ ] Signe de Kernig
+> 	- [ ] Signe de Brudzinski
+> 	- [ ] Méningisme
+> 	- [ ] Examen ciblé des mouvements passifs et actifs
+> 	- [ ] Examen ciblé de la sensibilité
+> 	- [ ] Examen ciblé des réflexes ostéotendineux
+> 	- [ ] Examen ciblé de la marche
+> 	- [ ] Test d'alternance rapide des mouvements
+> 	- [ ] Test doigt-nez
+> 	- [ ] Signe de Babinski
+> 	- [ ] Test de Romberg
 > - [ ] **7. Status neuro orientant *(OACR / Occlusion rétinienne)***
-> - [ ] **8. Acuité visuelle *(Cataracte · OACR / Occlusion rétinienne)***
-> 	- [ ] Vision de loin avec correction *(Cataracte)*
-> 	- [ ] Vision de près avec correction *(Cataracte)*
-> 	- [ ] Test du trou sténopéique *(Cataracte)*
+> - [ ] **8. Acuité visuelle *(OACR / Occlusion rétinienne)***
 > - [ ] **9. Réflexe pupillaire *(OACR / Occlusion rétinienne)***
 > - [ ] **10. Champ visuel *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **11. Motilité oculaire *(OACR / Occlusion rétinienne)***
@@ -352,65 +295,42 @@ cssclasses:
 > - [ ] **29. Motilité *(Décollement de rétine)***
 > - [ ] **30. Segments externes de l'œil *(Décollement de rétine)***
 > - [ ] **31. Vitré antérieur *(Décollement de rétine)***
-> - [ ] **32. Fond d'œil droit *(Cataracte · Décollement de rétine)***
-> 	- [ ] Visualisation *(Cataracte)*
-> 	- [ ] Ce qui est visible *(Cataracte)*
-> 	- [ ] Exclusion de pathologie rétinienne évidente *(Cataracte)*
+> - [ ] **32. Fond d'œil droit *(Décollement de rétine)***
 > - [ ] **33. Fond d'œil gauche *(Décollement de rétine)***
-> - [ ] **34. Examen des annexes et segment antérieur *(Cataracte)***
-> 	- [ ] Paupières
-> 	- [ ] Conjonctive
-> 	- [ ] Cornée
-> 	- [ ] Chambre antérieure
-> - [ ] **35. Examen à la lampe à fente *(Cataracte)***
-> 	- [ ] Cristallin
-> 	- [ ] Type d'opacité
-> 	- [ ] Densité
-> - [ ] **36. Test du reflet rouge rétinien *(Cataracte)***
-> 	- [ ] Reflet rouge
-> 	- [ ] Symétrie
-> - [ ] **37. Pupilles et réflexes pupillaires *(Cataracte)***
-> 	- [ ] Taille et symétrie
-> 	- [ ] Réflexe photomoteur direct
-> 	- [ ] Réflexe consensuel
-> 	- [ ] Défaut pupillaire afférent relatif
-> - [ ] **38. Tonus oculaire *(Cataracte)***
-> 	- [ ] Palpation bidigitale
-> 	- [ ] Mesure si disponible
-> - [ ] **39. Ophtalmologique - observation *(Horton (artérite à cellules géantes))***
+> - [ ] **34. Ophtalmologique - observation *(Horton (artérite à cellules géantes))***
 > 	- [ ] Sclère
 > 	- [ ] Paupière
-> - [ ] **40. Ophtalmologique - acuité visuelle *(Horton (artérite à cellules géantes))***
+> - [ ] **35. Ophtalmologique - acuité visuelle *(Horton (artérite à cellules géantes))***
 > 	- [ ] Œil droit
 > 	- [ ] Œil gauche
-> - [ ] **41. Ophtalmologique - fond d'œil *(Horton (artérite à cellules géantes))***
-> - [ ] **42. Neuro-ophtalmologique *(Horton (artérite à cellules géantes))***
+> - [ ] **36. Ophtalmologique - fond d'œil *(Horton (artérite à cellules géantes))***
+> - [ ] **37. Neuro-ophtalmologique *(Horton (artérite à cellules géantes))***
 > 	- [ ] Champs visuels
 > 	- [ ] Poursuite oculaire / oculomotricité
-> - [ ] **43. Neuro-ophtalmologique - réflexes pupillaires *(Horton (artérite à cellules géantes))***
+> - [ ] **38. Neuro-ophtalmologique - réflexes pupillaires *(Horton (artérite à cellules géantes))***
 > 	- [ ] Direct
 > 	- [ ] Croisé
-> - [ ] **44. Neurologique - orientation aux 4 modes *(Horton (artérite à cellules géantes))***
+> - [ ] **39. Neurologique - orientation aux 4 modes *(Horton (artérite à cellules géantes))***
 > 	- [ ] Temps
 > 	- [ ] Localisation
 > 	- [ ] Personne
 > 	- [ ] Situation
-> - [ ] **45. Neurologique - motricité & sensibilité grossière *(Horton (artérite à cellules géantes))***
+> - [ ] **40. Neurologique - motricité & sensibilité grossière *(Horton (artérite à cellules géantes))***
 > 	- [ ] Motricité
 > 	- [ ] Sensibilité
-> - [ ] **46. DD AVC - Test de Cincinnati (Stroke Scale) *(Horton (artérite à cellules géantes))***
+> - [ ] **41. DD AVC - Test de Cincinnati (Stroke Scale) *(Horton (artérite à cellules géantes))***
 > 	- [ ] Motricité de la face (NC VII)
 > 	- [ ] Épreuve des bras tendus
 > 	- [ ] Répétition d'une phrase
-> - [ ] **47. DD artérite de Horton *(Horton (artérite à cellules géantes))***
+> - [ ] **42. DD artérite de Horton *(Horton (artérite à cellules géantes))***
 > 	- [ ] Percussion de l'artère temporale
 > 	- [ ] Palpation de la mâchoire
-> - [ ] **48. Cardiaque *(Horton (artérite à cellules géantes))***
+> - [ ] **43. Cardiaque *(Horton (artérite à cellules géantes))***
 > 	- [ ] Auscultation des 4 foyers
 > 	- [ ] Auscultation des carotides des deux côtés
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Diagnostic de travail *(2 grilles sur 5)* — *Décollement de rétine · OACR / Occlusion rétinienne***
+> - [ ] **1. Diagnostic de travail *(2 grilles sur 4)* — *Décollement de rétine · OACR / Occlusion rétinienne***
 
 > [!success] 💊 Management — si AVC
 > - [ ] **1. Hypothèses diagnostiques**
@@ -432,30 +352,6 @@ cssclasses:
 > 	- [ ] Recherche des préoccupations et questions du patient
 > - [ ] **5. Conseil et soutien**
 > 	- [ ] Réaction appropriée au défi concernant la peur de mourir
-
-> [!success] 💊 Management — si Cataracte
-> - [ ] **1. Examens diagnostiques complémentaires**
-> 	- [ ] Biométrie oculaire (si chirurgie envisagée)
-> 	- [ ] Échographie oculaire mode B (si fond d'œil non visible)
-> 	- [ ] OCT maculaire (pour exclure pathologie maculaire associée)
-> 	- [ ] Glycémie (dépistage diabète)
-> 	- [ ] Bilan préopératoire si chirurgie planifiée
-> - [ ] **2. Diagnostic principal**
-> 	- [ ] Cataracte sénile bilatérale
-> 	- [ ] Type nucléaire prédominant
-> - [ ] **3. Diagnostics différentiels**
-> - [ ] **4. Traitement**
-> - [ ] **5. Information du patient**
-> 	- [ ] Explication de la nature de la cataracte
-> 	- [ ] Rassurer : pas la même pathologie que son père (DMLA)
-> 	- [ ] Excellent pronostic avec la chirurgie (>95% de succès)
-> 	- [ ] Risques chirurgicaux faibles mais existants
-> 	- [ ] Récupération visuelle habituelle en quelques semaines
-> - [ ] **6. Suivi et orientation**
-> 	- [ ] Référence en ophtalmologie pour évaluation chirurgicale
-> 	- [ ] Suivi régulier en attendant la chirurgie
-> 	- [ ] Surveillance de la progression
-> 	- [ ] Contrôle postopératoire après chirurgie
 
 > [!success] 💊 Management — si Décollement de rétine
 > - [ ] **1. Examens diagnostiques complémentaires**
