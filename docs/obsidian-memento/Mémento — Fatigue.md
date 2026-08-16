@@ -506,8 +506,9 @@ cssclasses:
 > 	- [ ] Sensibilité profonde *(Anémie)*
 > 	- [ ] Signe de Romberg *(Anémie)*
 > - [ ] **6. Examen de la tête, yeux, oreilles, nez et gorge *(Hépatite C aiguë · Mononucléose)***
-> 	- [ ] Inspection des conjonctives
+> 	- [ ] Inspection des conjonctives *(Mononucléose)*
 > 	- [ ] Inspection de l'oropharynx *(Mononucléose)*
+> 	- [ ] Inspection des sclères *(Hépatite C aiguë)*
 > - [ ] **7. Examen du cou *(Mononucléose)***
 > 	- [ ] Inspection du cou
 > 	- [ ] Palpation des ganglions lymphatiques de la tête et du cou

@@ -467,9 +467,9 @@ cssclasses:
 > 	- [ ] Anémie *(Reflux gastro-œsophagien)*
 > 	- [ ] Hémorragie digestive *(Reflux gastro-œsophagien)*
 > 	- [ ] Œdèmes des membres inférieurs (signe du godet) *(1 grille sur 12)*
-> 	- [ ] Pas de turgescence jugulaire *(2 grilles sur 12)*
-> 	- [ ] Pas de reflux hépato-jugulaire *(3 grilles sur 12)*
-> 	- [ ] Pas d'hépatomégalie *(Angor stable / Maladie coronarienne)*
+> 	- [ ] Turgescence jugulaire *(2 grilles sur 12)*
+> 	- [ ] Reflux hépato-jugulaire *(3 grilles sur 12)*
+> 	- [ ] Hépatomégalie *(Angor stable / Maladie coronarienne)*
 > 	- [ ] Pas d'œdèmes des membres inférieurs *(1 grille sur 12)*
 > 	- [ ] Pas d'ascite *(1 grille sur 12)*
 > 	- [ ] Œdèmes prétibiaux *(1 grille sur 12)*

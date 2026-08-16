@@ -149,7 +149,7 @@ cssclasses:
 > 	- [ ] Drogues récréatives
 > 	- [ ] Tabac
 > 	- [ ] Exercice
-> 	- [ ] Menstruation
+> 	- [ ] Alimentation
 > 	- [ ] Quantité avant d'arrêter *(Hémorragie sous-arachnoïdienne)*
 > - [ ] **10. Recherche de symptômes spécifiques pour céphalée sévère aiguë *(Hémorragie sous-arachnoïdienne)***
 > 	- [ ] Fièvre/frissons
@@ -203,7 +203,7 @@ cssclasses:
 > - [ ] **32. Anamnèse des déclencheurs *(1 grille sur 6)***
 > - [ ] **33. Sommeil *(1 grille sur 6)***
 > - [ ] **34. Stress *(1 grille sur 6)***
-> - [ ] **35. Menstruation *(2 grilles sur 6)***
+> - [ ] **35. Menstruation *(1 grille sur 6)***
 > - [ ] **36. Alimentation / caféine / alcool *(1 grille sur 6)***
 > - [ ] **37. Signes d'alarme des céphalées *(1 grille sur 6)***
 > - [ ] **38. Début en coup de tonnerre *(1 grille sur 6)***
@@ -244,39 +244,40 @@ cssclasses:
 > - [ ] **66. Crises convulsives *(Céphalée du restaurant chinois)***
 > - [ ] **67. Douleurs aux épaules et muscles *(Céphalée du restaurant chinois)***
 > - [ ] **68. Stress, consommation de caféine *(Céphalée du restaurant chinois)***
-> - [ ] **69. Piqûre de tique *(Céphalée du restaurant chinois)***
-> - [ ] **70. Contraceptifs oraux (chez la femme) *(Céphalée du restaurant chinois)***
-> - [ ] **71. Toxiques *(Céphalée du restaurant chinois)***
-> - [ ] **72. Anamnèse personnelle *(Méningite)***
+> - [ ] **69. Alimentation *(Céphalée du restaurant chinois)***
+> - [ ] **70. Piqûre de tique *(Céphalée du restaurant chinois)***
+> - [ ] **71. Contraceptifs oraux (chez la femme) *(Céphalée du restaurant chinois)***
+> - [ ] **72. Toxiques *(Céphalée du restaurant chinois)***
+> - [ ] **73. Anamnèse personnelle *(Méningite)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **73. Questions sur infections herpétiques *(Méningite)***
+> - [ ] **74. Questions sur infections herpétiques *(Méningite)***
 > 	- [ ] Herpès
 > 	- [ ] Varicelle-zona (VZV)
-> - [ ] **74. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
+> - [ ] **75. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
 > 	- [ ] Céphalée nouvelle/différente
 > 	- [ ] Céphalée décrite comme la pire
 > 	- [ ] Céphalée en coup de tonnerre
 > 	- [ ] Céphalée déclenchée par effort/exercice/activité sexuelle
 > 	- [ ] Céphalée déclenchée/aggravée par Valsalva ou position
-> - [ ] **75. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
+> - [ ] **76. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
 > 	- [ ] Migraines chroniques
 > 	- [ ] Caractéristiques des migraines habituelles
 > 	- [ ] Traitement habituel
 > 	- [ ] Efficacité du traitement actuel
-> - [ ] **76. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
+> - [ ] **77. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
 > 	- [ ] Contraception orale
 > 	- [ ] Tabagisme
 > 	- [ ] Antécédents familiaux vasculaires
 > 	- [ ] HTA/diabète/dyslipidémie
-> - [ ] **77. Contexte *(Thrombose veineuse cérébrale)***
+> - [ ] **78. Contexte *(Thrombose veineuse cérébrale)***
 > 	- [ ] Grossesse/post-partum
 > 	- [ ] Immunosuppression/cancer
 > 	- [ ] Traumatisme crânien récent
 > 	- [ ] Voyage/contage
 > 	- [ ] Vaccins
-> - [ ] **78. Anamnèse par système *(Thrombose veineuse cérébrale)***
+> - [ ] **79. Anamnèse par système *(Thrombose veineuse cérébrale)***
 > 	- [ ] État général
 > 	- [ ] Système digestif
 > 	- [ ] Système gynécologique

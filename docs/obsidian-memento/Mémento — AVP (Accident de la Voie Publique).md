@@ -116,13 +116,7 @@ cssclasses:
 > 	- [ ] Troubles olfactifs
 > 	- [ ] Acouphènes
 > 	- [ ] Diplopie
-> - [ ] **9. Antécédents médicaux et allergies**
-> 	- [ ] Antécédents médicaux *(Fracture du bassin (hémorragique))*
-> 	- [ ] Chirurgies antérieures *(1 grille sur 3)*
-> 	- [ ] Médicaments actuels *(1 grille sur 3)*
-> 	- [ ] Allergies *(Fracture du bassin (hémorragique))*
-> 	- [ ] Médicaments *(1 grille sur 3)*
-> 	- [ ] Vaccins *(1 grille sur 3)*
+> - [ ] **9. Antécédents de céphalées *(Entorse cervicale)***
 > - [ ] **10. Symptômes généraux *(Entorse cervicale)***
 > 	- [ ] Fièvre
 > 	- [ ] Syndrome grippal
@@ -151,37 +145,44 @@ cssclasses:
 > 	- [ ] Céphalées
 > 	- [ ] Troubles visuels
 > 	- [ ] Douleur abdominale
-> - [ ] **21. Habitudes et contexte social *(1 grille sur 3)***
+> - [ ] **21. Antécédents médicaux et allergies *(Fracture du bassin (hémorragique))***
+> 	- [ ] Antécédents médicaux
+> 	- [ ] Chirurgies antérieures *(1 grille sur 3)*
+> 	- [ ] Médicaments actuels *(1 grille sur 3)*
+> 	- [ ] Allergies
+> 	- [ ] Médicaments *(1 grille sur 3)*
+> 	- [ ] Vaccins *(1 grille sur 3)*
+> - [ ] **22. Habitudes et contexte social *(1 grille sur 3)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
 > 	- [ ] Profession
-> - [ ] **22. ABCDE - Airways *(1 grille sur 3)***
+> - [ ] **23. ABCDE - Airways *(1 grille sur 3)***
 > 	- [ ] Vérifier la perméabilité des voies aériennes
 > 	- [ ] Stabilisation de la colonne cervicale
 > 	- [ ] Évaluation de la capacité de parler
-> - [ ] **23. ABCDE - Breathing *(1 grille sur 3)***
+> - [ ] **24. ABCDE - Breathing *(1 grille sur 3)***
 > 	- [ ] Évaluation de la respiration
 > 	- [ ] Administration d'oxygène à haut débit
 > 	- [ ] Recherche de signes de détresse respiratoire
-> - [ ] **24. ABCDE - Circulation *(1 grille sur 3)***
+> - [ ] **25. ABCDE - Circulation *(1 grille sur 3)***
 > 	- [ ] Évaluation hémodynamique
 > 	- [ ] Recherche d'hémorragie externe
 > 	- [ ] Mise en place de voies veineuses
-> - [ ] **25. ABCDE - Disability *(1 grille sur 3)***
+> - [ ] **26. ABCDE - Disability *(1 grille sur 3)***
 > 	- [ ] Évaluation neurologique
 > 	- [ ] Glasgow Coma Scale
 > 	- [ ] Examen des pupilles
-> - [ ] **26. ABCDE - Exposure *(1 grille sur 3)***
+> - [ ] **27. ABCDE - Exposure *(1 grille sur 3)***
 > 	- [ ] Déshabillage complet du patient
 > 	- [ ] Prévention de l'hypothermie
 > 	- [ ] Recherche de lésions cachées
-> - [ ] **27. Anamnèse ciblée trauma *(1 grille sur 3)***
+> - [ ] **28. Anamnèse ciblée trauma *(1 grille sur 3)***
 > 	- [ ] Mécanisme de l'accident
 > 	- [ ] Port de la ceinture de sécurité
 > 	- [ ] Perte de connaissance
 > 	- [ ] Douleur principale
-> - [ ] **28. Toxiques *(1 grille sur 3)***
+> - [ ] **29. Toxiques *(1 grille sur 3)***
 > 	- [ ] Alcool
 > 	- [ ] Cannabis
 > 	- [ ] Autres substances

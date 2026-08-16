@@ -240,10 +240,7 @@ cssclasses:
 > - [ ] **51. Dépistage par coloscopie *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **52. Contrôle urologique *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **53. CT thoracique basse dose *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
-> - [ ] **54. Antécédents de fractures *(3 grilles sur 8)***
-> 	- [ ] Dépistage pour ostéoporose *(1 grille sur 8)*
-> 	- [ ] Fractures antérieures *(1 grille sur 8)*
-> 	- [ ] Calculs rénaux antérieurs *(1 grille sur 8)*
+> - [ ] **54. Antécédents de fractures *(2 grilles sur 8)***
 > - [ ] **55. Noxes *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **56. Alcool *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
 > - [ ] **57. Tabac *(Suspicion de myélome multiple (confirmation par ponction médullaire))***
@@ -346,32 +343,36 @@ cssclasses:
 > 	- [ ] Nausées *(1 grille sur 8)*
 > 	- [ ] Vomissements *(1 grille sur 8)*
 > 	- [ ] Sueurs froides *(1 grille sur 8)*
-> - [ ] **82. Hydratation et habitudes alimentaires *(1 grille sur 8)***
+> - [ ] **82. Antécédents de lithiase *(1 grille sur 8)***
+> 	- [ ] Dépistage pour ostéoporose
+> 	- [ ] Fractures antérieures
+> 	- [ ] Calculs rénaux antérieurs
+> - [ ] **83. Hydratation et habitudes alimentaires *(1 grille sur 8)***
 > 	- [ ] Apports hydriques quotidiens
 > 	- [ ] Alimentation riche en oxalates
 > 	- [ ] Consommation de sel
-> - [ ] **83. Facteurs déclenchants et contexte *(1 grille sur 8)***
+> - [ ] **84. Facteurs déclenchants et contexte *(1 grille sur 8)***
 > 	- [ ] Activité sportive récente
 > 	- [ ] Déshydratation relative
 > 	- [ ] Consommation de bière
-> - [ ] **84. Facteurs de risque lithiasique *(1 grille sur 8)***
+> - [ ] **85. Facteurs de risque lithiasique *(1 grille sur 8)***
 > 	- [ ] Hydratation habituelle insuffisante
 > 	- [ ] Alimentation riche en protéines
 > 	- [ ] Consommation de sel importante
 > 	- [ ] Supplémentation vitaminique
 > 	- [ ] Climat chaud, transpiration importante
 > 	- [ ] Sédentarité alternant avec sport intense
-> - [ ] **85. Médicaments et habitudes *(1 grille sur 8)***
+> - [ ] **86. Médicaments et habitudes *(1 grille sur 8)***
 > 	- [ ] Prise d'antalgiques
 > 	- [ ] Suppléments protéinés
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Tabagisme
 > 	- [ ] Allergies médicamenteuses
-> - [ ] **86. Impact fonctionnel *(Cancer prostatique métastatique)***
+> - [ ] **87. Impact fonctionnel *(Cancer prostatique métastatique)***
 > 	- [ ] Mobilité réduite
 > 	- [ ] Autonomie affectée
 > 	- [ ] Qualité du sommeil
-> - [ ] **87. Habitudes et antécédents *(Cancer prostatique métastatique)***
+> - [ ] **88. Habitudes et antécédents *(Cancer prostatique métastatique)***
 > 	- [ ] Médicaments
 > 	- [ ] Tabac
 > 	- [ ] Alcool

@@ -197,8 +197,8 @@ cssclasses:
 > - [ ] **7. Examen cardiovasculaire**
 > 	- [ ] Auscultation cardiaque *(Syndrome néphrotique)*
 > 	- [ ] Recherche signes d'insuffisance cardiaque *(Syndrome néphrotique)*
-> 	- [ ] Pas de turgescence jugulaire
-> 	- [ ] Pas de reflux hépato-jugulaire
+> 	- [ ] Turgescence jugulaire
+> 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Pouls irrégulier *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] B1B2 bien frappés *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Souffle holosystolique 3/6 *(Insuffisance cardiaque (décompensée))*

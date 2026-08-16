@@ -417,8 +417,8 @@ cssclasses:
 > [!success] 💊 Management — si Scarlatine / Angine streptococcique
 > - [ ] **1. Diagnostics différentiels**
 > - [ ] **2. Examens complémentaires indiqués**
-> 	- [ ] Culture bactériologique
 > 	- [ ] Test rapide streptocoque
+> 	- [ ] Culture bactériologique
 > - [ ] **3. Mesures préventives et prophylaxie**
 > 	- [ ] Prophylaxie de l'entourage
 > 	- [ ] Éviction scolaire
@@ -455,7 +455,7 @@ cssclasses:
 > - [ ] **1. Diagnostics différentiels**
 > - [ ] **2. Examens complémentaires indiqués**
 > 	- [ ] Prélèvement mycologique
-> 	- [ ] Culture bactériologique
+> 	- [ ] Culture mycologique
 > - [ ] **3. Interprétation des examens**
 > - [ ] **4. Mesures préventives et prophylaxie**
 > 	- [ ] Éviter les environnements humides
